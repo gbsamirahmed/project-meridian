@@ -6,11 +6,13 @@ export interface ForecastDay {
 
 export interface WeatherData {
   temperature: number;
+  humidity: number;
+  pressure: number;
   windSpeed: number;
   windGusts: number;
   cloudCover: number;
-  humidity: number;
-  pressure: number;
   precipitation: number;
+  visibility: number;
+  dewPoint: number;
   forecast: ForecastDay[];
 }

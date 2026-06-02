@@ -6,8 +6,8 @@ export function generateGrid(
 ): SelectedLocation[] {
   const points: SelectedLocation[] = [];
 
-  for (let latOffset = -2; latOffset <= 2; latOffset++) {
-    for (let lonOffset = -2; lonOffset <= 2; lonOffset++) {
+  for (let latOffset = -4; latOffset <= 4; latOffset++) {
+    for (let lonOffset = -4; lonOffset <= 4; lonOffset++) {
       points.push({
         latitude: center.latitude + latOffset * spacing,
         longitude: center.longitude + lonOffset * spacing,

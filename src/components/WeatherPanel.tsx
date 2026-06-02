@@ -51,7 +51,7 @@ export default function WeatherPanel({
       />
 
       <div className="weather-card">
-        <h2>Selected location</h2>
+        <h2>Selected Location</h2>
 
         {selectedLocation ? (
           <>
@@ -68,17 +68,19 @@ export default function WeatherPanel({
       </div>
 
       <div className="weather-card">
-        <h2>Current weather</h2>
+        <h2>Current Weather</h2>
 
         {weather ? (
           <>
             <p>Temperature: {weather.temperature} °C</p>
             <p>Humidity: {weather.humidity} %</p>
+            <p>Dew Point: {weather.dewPoint} °C</p>
             <p>Pressure: {weather.pressure} hPa</p>
             <p>Wind: {weather.windSpeed} km/h</p>
             <p>Gusts: {weather.windGusts} km/h</p>
-            <p>Cloud cover: {weather.cloudCover} %</p>
+            <p>Cloud Cover: {weather.cloudCover} %</p>
             <p>Precipitation: {weather.precipitation} mm</p>
+            <p>Visibility: {weather.visibility.toFixed(1)} km</p>
           </>
         ) : (
           <p>Select a location.</p>

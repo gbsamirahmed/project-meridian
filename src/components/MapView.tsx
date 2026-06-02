@@ -1,6 +1,8 @@
 import { useEffect, useRef } from "react";
 import maplibregl from "maplibre-gl";
 
+import { renderTemperatureLayer } from "../services/temperatureLayer";
+
 import type { SelectedLocation } from "../types/location";
 import type { WeatherLayer } from "../types/layer";
 import type { GridPoint } from "../types/gridPoint";
@@ -60,22 +62,13 @@ export default function MapView({
       selectedLocation.latitude,
     ];
 
-    if (
-      selectedLayer === "temperature" &&
-      gridPoints.length > 0
-    ) {
-      const longitudes = gridPoints.map((p) => p.longitude);
-      const latitudes = gridPoints.map((p) => p.latitude);
+    if (selectedLayer === "temperature" && gridPoints.length > 0) {
+      const longitudes = gridPoints.map((point) => point.longitude);
+      const latitudes = gridPoints.map((point) => point.latitude);
 
       const bounds = new maplibregl.LngLatBounds(
-        [
-          Math.min(...longitudes),
-          Math.min(...latitudes),
-        ],
-        [
-          Math.max(...longitudes),
-          Math.max(...latitudes),
-        ]
+        [Math.min(...longitudes), Math.min(...latitudes)],
+        [Math.max(...longitudes), Math.max(...latitudes)]
       );
 
       mapRef.current.fitBounds(bounds, {
@@ -97,11 +90,7 @@ export default function MapView({
         .setLngLat(lngLat)
         .addTo(mapRef.current);
     }
-  }, [
-    selectedLocation,
-    selectedLayer,
-    gridPoints,
-  ]);
+  }, [selectedLocation, selectedLayer, gridPoints]);
 
   useEffect(() => {
     if (!mapRef.current) return;
@@ -112,56 +101,17 @@ export default function MapView({
     if (selectedLayer !== "temperature") return;
     if (gridPoints.length === 0) return;
 
-    const temperatures = gridPoints.map(
-      (p) => p.temperature
+    gridMarkersRef.current = renderTemperatureLayer(
+      mapRef.current,
+      gridPoints
     );
-
-    const minTemp = Math.min(...temperatures);
-    const maxTemp = Math.max(...temperatures);
-
-    gridPoints.forEach((point) => {
-      const element = document.createElement("div");
-
-      let ratio = 0.5;
-
-      if (maxTemp !== minTemp) {
-        ratio =
-          (point.temperature - minTemp) /
-          (maxTemp - minTemp);
-      }
-
-      const hue = 240 - ratio * 240;
-
-      element.className = "temperature-marker";
-      element.style.backgroundColor =
-        `hsl(${hue}, 85%, 50%)`;
-
-      element.textContent =
-        `${Math.round(point.temperature)}°`;
-
-      const marker = new maplibregl.Marker({
-        element,
-      })
-        .setLngLat([
-          point.longitude,
-          point.latitude,
-        ])
-        .addTo(mapRef.current!);
-
-      gridMarkersRef.current.push(marker);
-    });
   }, [gridPoints, selectedLayer]);
 
   return (
     <div className="map-container-wrapper">
-      <div
-        className="map-container"
-        ref={mapContainer}
-      />
+      <div className="map-container" ref={mapContainer} />
 
-      <div className="layer-badge">
-        Layer: {selectedLayer}
-      </div>
+      <div className="layer-badge">Layer: {selectedLayer}</div>
     </div>
   );
 }
