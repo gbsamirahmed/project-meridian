@@ -1,15 +1,19 @@
 import { useState } from "react";
 
 import ForecastPanel from "./ForecastPanel";
+import LayerPanel from "./LayerPanel";
 
 import type { SelectedLocation } from "../types/location";
 import type { WeatherData } from "../types/weather";
 import type { Place } from "../types/place";
+import type { WeatherLayer } from "../types/layer";
 
 interface WeatherPanelProps {
   selectedLocation: SelectedLocation | null;
   weather: WeatherData | null;
   place: Place | null;
+  selectedLayer: WeatherLayer;
+  onLayerChange: (layer: WeatherLayer) => void;
   onSearch: (query: string) => void;
 }
 
@@ -17,6 +21,8 @@ export default function WeatherPanel({
   selectedLocation,
   weather,
   place,
+  selectedLayer,
+  onLayerChange,
   onSearch,
 }: WeatherPanelProps) {
   const [query, setQuery] = useState("");
@@ -37,6 +43,11 @@ export default function WeatherPanel({
             setQuery("");
           }
         }}
+      />
+
+      <LayerPanel
+        selectedLayer={selectedLayer}
+        onLayerChange={onLayerChange}
       />
 
       <div className="weather-card">
@@ -62,8 +73,12 @@ export default function WeatherPanel({
         {weather ? (
           <>
             <p>Temperature: {weather.temperature} °C</p>
+            <p>Humidity: {weather.humidity} %</p>
+            <p>Pressure: {weather.pressure} hPa</p>
             <p>Wind: {weather.windSpeed} km/h</p>
+            <p>Gusts: {weather.windGusts} km/h</p>
             <p>Cloud cover: {weather.cloudCover} %</p>
+            <p>Precipitation: {weather.precipitation} mm</p>
           </>
         ) : (
           <p>Select a location.</p>

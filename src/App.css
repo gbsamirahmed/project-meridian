@@ -4,6 +4,7 @@ body,
   margin: 0;
   width: 100%;
   height: 100%;
+  overflow: hidden;
   font-family:
     Inter,
     system-ui,
@@ -15,8 +16,9 @@ body,
 
 .app-shell {
   position: relative;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 .map-container {
@@ -28,7 +30,9 @@ body,
   position: absolute;
   top: 24px;
   left: 24px;
-  width: 300px;
+  width: 360px;
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
   padding: 18px;
   border-radius: 18px;
   background: rgba(18, 24, 38, 0.88);
@@ -36,11 +40,7 @@ body,
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(12px);
   z-index: 10;
-}
-
-.weather-panel h1 {
-  margin: 0 0 16px;
-  font-size: 28px;
+  box-sizing: border-box;
 }
 
 .search-input {
@@ -57,6 +57,7 @@ body,
   padding: 14px;
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.12);
+  margin-bottom: 12px;
 }
 
 .weather-card h2 {
@@ -73,4 +74,71 @@ body,
   display: flex;
   justify-content: space-between;
   margin: 6px 0;
+}
+
+.layer-option {
+  display: block;
+  margin: 6px 0;
+}
+
+.map-container-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.layer-badge {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(18, 24, 38, 0.88);
+  color: white;
+  backdrop-filter: blur(12px);
+  font-size: 14px;
+  z-index: 10;
+}
+
+.map-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  transition: background 0.3s ease;
+}
+
+.overlay-temperature {
+  background: rgba(255, 80, 0, 0.15);
+}
+
+.overlay-clouds {
+  background: rgba(180, 180, 180, 0.2);
+}
+
+.overlay-wind {
+  background: rgba(0, 150, 255, 0.15);
+}
+
+.overlay-precipitation {
+  background: rgba(0, 255, 100, 0.15);
+}
+
+.temperature-marker {
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+
+  border: none;
+
+  opacity: 0.45;
 }
