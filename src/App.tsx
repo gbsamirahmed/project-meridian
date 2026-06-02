@@ -6,7 +6,7 @@ import WeatherPanel from "./components/WeatherPanel";
 import { getWeather } from "./services/weatherService";
 import { getLocationName } from "./services/locationService";
 import { searchLocation } from "./services/searchService";
-import { getTemperatureGrid } from "./services/gridWeatherService";
+import { getWeatherGrid } from "./services/gridWeatherService";
 
 import type { SelectedLocation } from "./types/location";
 import type { WeatherData } from "./types/weather";
@@ -40,8 +40,8 @@ function App() {
       .then((name) => setPlace({ name }))
       .catch(console.error);
 
-    if (selectedLayer === "temperature") {
-      getTemperatureGrid(selectedLocation)
+    if (selectedLayer === "temperature" || selectedLayer === "clouds") {
+      getWeatherGrid(selectedLocation)
         .then(setGridPoints)
         .catch(console.error);
     } else {

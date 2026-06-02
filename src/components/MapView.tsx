@@ -1,7 +1,15 @@
 import { useEffect, useRef } from "react";
 import maplibregl from "maplibre-gl";
 
-import { renderTemperatureLayer } from "../services/temperatureLayer";
+import {
+  removeTemperatureLayer,
+  updateTemperatureLayer,
+} from "../services/temperatureLayer";
+
+import {
+  removeCloudLayer,
+  updateCloudLayer,
+} from "../services/cloudLayer";
 
 import type { SelectedLocation } from "../types/location";
 import type { WeatherLayer } from "../types/layer";
@@ -25,7 +33,6 @@ export default function MapView({
   const mapContainer = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<maplibregl.Map | null>(null);
   const markerRef = useRef<maplibregl.Marker | null>(null);
-  const gridMarkersRef = useRef<maplibregl.Marker[]>([]);
 
   useEffect(() => {
     if (!mapContainer.current || mapRef.current) return;
@@ -49,6 +56,8 @@ export default function MapView({
     mapRef.current = map;
 
     return () => {
+      removeTemperatureLayer(map);
+      removeCloudLayer(map);
       map.remove();
       mapRef.current = null;
     };
@@ -62,7 +71,10 @@ export default function MapView({
       selectedLocation.latitude,
     ];
 
-    if (selectedLayer === "temperature" && gridPoints.length > 0) {
+    if (
+      (selectedLayer === "temperature" || selectedLayer === "clouds") &&
+      gridPoints.length > 0
+    ) {
       const longitudes = gridPoints.map((point) => point.longitude);
       const latitudes = gridPoints.map((point) => point.latitude);
 
@@ -95,16 +107,18 @@ export default function MapView({
   useEffect(() => {
     if (!mapRef.current) return;
 
-    gridMarkersRef.current.forEach((marker) => marker.remove());
-    gridMarkersRef.current = [];
+    removeTemperatureLayer(mapRef.current);
+    removeCloudLayer(mapRef.current);
 
-    if (selectedLayer !== "temperature") return;
     if (gridPoints.length === 0) return;
 
-    gridMarkersRef.current = renderTemperatureLayer(
-      mapRef.current,
-      gridPoints
-    );
+    if (selectedLayer === "temperature") {
+      updateTemperatureLayer(mapRef.current, gridPoints);
+    }
+
+    if (selectedLayer === "clouds") {
+      updateCloudLayer(mapRef.current, gridPoints);
+    }
   }, [gridPoints, selectedLayer]);
 
   return (
