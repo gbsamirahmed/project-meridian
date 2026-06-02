@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import ForecastPanel from "./ForecastPanel";
+
 import type { SelectedLocation } from "../types/location";
 import type { WeatherData } from "../types/weather";
 import type { Place } from "../types/place";
@@ -30,10 +32,10 @@ export default function WeatherPanel({
         value={query}
         onChange={(event) => setQuery(event.target.value)}
         onKeyDown={(event) => {
-            if (event.key === "Enter" && query.trim()) {
-                onSearch(query);
-                setQuery("");
-            }
+          if (event.key === "Enter" && query.trim()) {
+            onSearch(query);
+            setQuery("");
+          }
         }}
       />
 
@@ -67,6 +69,8 @@ export default function WeatherPanel({
           <p>Select a location.</p>
         )}
       </div>
+
+      {weather && <ForecastPanel forecast={weather.forecast} />}
     </aside>
   );
 }

@@ -68,3 +68,9 @@ body,
   margin: 6px 0;
   font-size: 14px;
 }
+
+.forecast-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 6px 0;
+}
