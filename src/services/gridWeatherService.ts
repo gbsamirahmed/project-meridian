@@ -10,28 +10,38 @@ export async function getWeatherGrid(
 
   const points = generateGrid(center);
 
-  const gridPoints = await Promise.all(
-    points.map(async (point) => {
-      const response = await fetch(
-        `https://api.open-meteo.com/v1/forecast?latitude=${point.latitude}&longitude=${point.longitude}&hourly=temperature_2m,cloud_cover,precipitation,pressure_msl,wind_speed_10m,wind_direction_10m&forecast_hours=25`
-      );
+  const latitudes = points
+    .map((point) => point.latitude)
+    .join(",");
 
-      const data = await response.json();
+  const longitudes = points
+    .map((point) => point.longitude)
+    .join(",");
 
-      return {
-        latitude: point.latitude,
-        longitude: point.longitude,
-
-        temperature: data.hourly.temperature_2m,
-        cloudCover: data.hourly.cloud_cover,
-        precipitation: data.hourly.precipitation,
-        pressure: data.hourly.pressure_msl,
-
-        windSpeed: data.hourly.wind_speed_10m,
-        windDirection: data.hourly.wind_direction_10m,
-      };
-    })
+  const response = await fetch(
+    `https://api.open-meteo.com/v1/forecast?latitude=${latitudes}&longitude=${longitudes}&hourly=temperature_2m,cloud_cover,precipitation,pressure_msl,wind_speed_10m,wind_direction_10m&forecast_hours=25`
   );
 
-  return gridPoints;
+  if (!response.ok) {
+    throw new Error(`Weather grid API error: ${response.status}`);
+  }
+
+  const data = await response.json();
+
+  if (!Array.isArray(data)) {
+    throw new Error("Expected weather grid API response to be an array");
+  }
+
+  return data.map((locationData, index) => ({
+    latitude: points[index].latitude,
+    longitude: points[index].longitude,
+
+    temperature: locationData.hourly.temperature_2m,
+    cloudCover: locationData.hourly.cloud_cover,
+    precipitation: locationData.hourly.precipitation,
+    pressure: locationData.hourly.pressure_msl,
+
+    windSpeed: locationData.hourly.wind_speed_10m,
+    windDirection: locationData.hourly.wind_direction_10m,
+  }));
 }
