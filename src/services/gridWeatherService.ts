@@ -6,12 +6,14 @@ import type { GridPoint } from "../types/gridPoint";
 export async function getWeatherGrid(
   center: SelectedLocation
 ): Promise<GridPoint[]> {
+  console.log("Fetching weather grid...");
+
   const points = generateGrid(center);
 
   const gridPoints = await Promise.all(
     points.map(async (point) => {
       const response = await fetch(
-        `https://api.open-meteo.com/v1/forecast?latitude=${point.latitude}&longitude=${point.longitude}&current=temperature_2m,cloud_cover,precipitation,pressure_msl`
+        `https://api.open-meteo.com/v1/forecast?latitude=${point.latitude}&longitude=${point.longitude}&current=temperature_2m,cloud_cover,precipitation,pressure_msl,wind_speed_10m,wind_direction_10m`
       );
 
       const data = await response.json();
@@ -24,6 +26,9 @@ export async function getWeatherGrid(
         cloudCover: data.current.cloud_cover,
         precipitation: data.current.precipitation,
         pressure: data.current.pressure_msl,
+
+        windSpeed: data.current.wind_speed_10m,
+        windDirection: data.current.wind_direction_10m,
       };
     })
   );

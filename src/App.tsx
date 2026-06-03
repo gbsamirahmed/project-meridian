@@ -21,6 +21,7 @@ const WEATHER_GRID_LAYERS: WeatherLayer[] = [
   "clouds",
   "precipitation",
   "pressure",
+  "wind",
 ];
 
 function App() {

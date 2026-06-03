@@ -6,4 +6,7 @@ export interface GridPoint {
   cloudCover: number;
   precipitation: number;
   pressure: number;
+
+  windSpeed: number;
+  windDirection: number;
 }

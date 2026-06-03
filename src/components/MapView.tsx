@@ -21,6 +21,11 @@ import {
   updatePressureLayer,
 } from "../services/pressureLayer";
 
+import {
+  removeWindLayer,
+  updateWindLayer,
+} from "../services/windLayer";
+
 import type { SelectedLocation } from "../types/location";
 import type { WeatherLayer } from "../types/layer";
 import type { GridPoint } from "../types/gridPoint";
@@ -70,6 +75,8 @@ export default function MapView({
       removeCloudLayer(map);
       removePrecipitationLayer(map);
       removePressureLayer(map);
+      removeWindLayer(map);
+
       map.remove();
       mapRef.current = null;
     };
@@ -84,14 +91,16 @@ export default function MapView({
     ];
 
     if (
-      (selectedLayer === "temperature" ||
-        selectedLayer === "clouds" ||
-        selectedLayer === "precipitation" ||
-        selectedLayer === "pressure") &&
+      selectedLayer !== "none" &&
       gridPoints.length > 0
     ) {
-      const longitudes = gridPoints.map((point) => point.longitude);
-      const latitudes = gridPoints.map((point) => point.latitude);
+      const longitudes = gridPoints.map(
+        (point) => point.longitude
+      );
+
+      const latitudes = gridPoints.map(
+        (point) => point.latitude
+      );
 
       const bounds = new maplibregl.LngLatBounds(
         [Math.min(...longitudes), Math.min(...latitudes)],
@@ -126,31 +135,56 @@ export default function MapView({
     removeCloudLayer(mapRef.current);
     removePrecipitationLayer(mapRef.current);
     removePressureLayer(mapRef.current);
+    removeWindLayer(mapRef.current);
 
     if (gridPoints.length === 0) return;
 
     if (selectedLayer === "temperature") {
-      updateTemperatureLayer(mapRef.current, gridPoints);
+      updateTemperatureLayer(
+        mapRef.current,
+        gridPoints
+      );
     }
 
     if (selectedLayer === "clouds") {
-      updateCloudLayer(mapRef.current, gridPoints);
+      updateCloudLayer(
+        mapRef.current,
+        gridPoints
+      );
     }
 
     if (selectedLayer === "precipitation") {
-      updatePrecipitationLayer(mapRef.current, gridPoints);
+      updatePrecipitationLayer(
+        mapRef.current,
+        gridPoints
+      );
     }
 
     if (selectedLayer === "pressure") {
-      updatePressureLayer(mapRef.current, gridPoints);
+      updatePressureLayer(
+        mapRef.current,
+        gridPoints
+      );
+    }
+
+    if (selectedLayer === "wind") {
+      updateWindLayer(
+        mapRef.current,
+        gridPoints
+      );
     }
   }, [gridPoints, selectedLayer]);
 
   return (
     <div className="map-container-wrapper">
-      <div className="map-container" ref={mapContainer} />
+      <div
+        className="map-container"
+        ref={mapContainer}
+      />
 
-      <div className="layer-badge">Layer: {selectedLayer}</div>
+      <div className="layer-badge">
+        Layer: {selectedLayer}
+      </div>
     </div>
   );
 }
