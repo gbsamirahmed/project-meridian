@@ -40,6 +40,9 @@ function App() {
   const [gridPoints, setGridPoints] =
     useState<GridPoint[]>([]);
 
+  const [forecastHour, setForecastHour] = 
+    useState(0);
+
   useEffect(() => {
     const timeoutId = window.setTimeout(() => {
       setDebouncedLocation(selectedLocation);
@@ -70,7 +73,6 @@ function App() {
     getWeatherGrid(debouncedLocation)
       .then(setGridPoints)
       .catch(console.error);
-      console.log("Fetching weather grid...");
   }, [debouncedLocation]);
 
   const handleSearch = async (query: string) => {
@@ -99,6 +101,8 @@ function App() {
         weather={weather}
         place={place}
         selectedLayer={selectedLayer}
+        forecastHour={forecastHour}
+        onForecastHourChange={setForecastHour}
         onLayerChange={setSelectedLayer}
         onSearch={handleSearch}
       />

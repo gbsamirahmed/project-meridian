@@ -136,3 +136,7 @@ body,
 
   pointer-events: none;
 }
+
+.time-slider {
+  width: 100%;
+}

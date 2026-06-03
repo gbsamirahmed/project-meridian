@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import ForecastPanel from "./ForecastPanel";
 import LayerPanel from "./LayerPanel";
+import TimeSlider from "./TimeSlider";
 
 import type { SelectedLocation } from "../types/location";
 import type { WeatherData } from "../types/weather";
@@ -13,6 +14,8 @@ interface WeatherPanelProps {
   weather: WeatherData | null;
   place: Place | null;
   selectedLayer: WeatherLayer;
+  forecastHour: number;
+  onForecastHourChange: (hour: number) => void;
   onLayerChange: (layer: WeatherLayer) => void;
   onSearch: (query: string) => void;
 }
@@ -22,6 +25,8 @@ export default function WeatherPanel({
   weather,
   place,
   selectedLayer,
+  forecastHour,
+  onForecastHourChange,
   onLayerChange,
   onSearch,
 }: WeatherPanelProps) {
@@ -48,6 +53,11 @@ export default function WeatherPanel({
       <LayerPanel
         selectedLayer={selectedLayer}
         onLayerChange={onLayerChange}
+      />
+
+      <TimeSlider
+        forecastHour={forecastHour}
+        onForecastHourChange={onForecastHourChange}
       />
 
       <div className="weather-card">
