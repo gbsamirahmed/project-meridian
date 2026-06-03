@@ -14,10 +14,11 @@ type PressureFeatureCollection = GeoJSON.FeatureCollection<
 >;
 
 function buildPressureGeoJson(
-  gridPoints: GridPoint[]
+  gridPoints: GridPoint[],
+  forecastHour: number
 ): PressureFeatureCollection {
   const pressures = gridPoints.map(
-    (point) => point.pressure
+    (point) => point.pressure[forecastHour]
   );
 
   const minPressure = Math.min(...pressures);
@@ -26,25 +27,22 @@ function buildPressureGeoJson(
   return {
     type: "FeatureCollection",
     features: gridPoints.map((point) => {
+      const pressure = point.pressure[forecastHour];
+
       let ratio = 0.5;
 
       if (maxPressure !== minPressure) {
-        ratio =
-          (point.pressure - minPressure) /
-          (maxPressure - minPressure);
+        ratio = (pressure - minPressure) / (maxPressure - minPressure);
       }
 
       return {
         type: "Feature",
         geometry: {
           type: "Point",
-          coordinates: [
-            point.longitude,
-            point.latitude,
-          ],
+          coordinates: [point.longitude, point.latitude],
         },
         properties: {
-          pressure: point.pressure,
+          pressure,
           ratio,
         },
       };
@@ -54,13 +52,14 @@ function buildPressureGeoJson(
 
 export function updatePressureLayer(
   map: maplibregl.Map,
-  gridPoints: GridPoint[]
+  gridPoints: GridPoint[],
+  forecastHour: number
 ): void {
-  const data = buildPressureGeoJson(gridPoints);
+  const data = buildPressureGeoJson(gridPoints, forecastHour);
 
-  const existingSource = map.getSource(
-    SOURCE_ID
-  ) as maplibregl.GeoJSONSource | undefined;
+  const existingSource = map.getSource(SOURCE_ID) as
+    | maplibregl.GeoJSONSource
+    | undefined;
 
   if (existingSource) {
     existingSource.setData(data);

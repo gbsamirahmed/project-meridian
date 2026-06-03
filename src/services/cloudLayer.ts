@@ -13,7 +13,8 @@ type CloudFeatureCollection = GeoJSON.FeatureCollection<
 >;
 
 function buildCloudGeoJson(
-  gridPoints: GridPoint[]
+  gridPoints: GridPoint[],
+  forecastHour: number
 ): CloudFeatureCollection {
   return {
     type: "FeatureCollection",
@@ -24,7 +25,7 @@ function buildCloudGeoJson(
         coordinates: [point.longitude, point.latitude],
       },
       properties: {
-        cloudCover: point.cloudCover,
+        cloudCover: point.cloudCover[forecastHour],
       },
     })),
   };
@@ -32,9 +33,10 @@ function buildCloudGeoJson(
 
 export function updateCloudLayer(
   map: maplibregl.Map,
-  gridPoints: GridPoint[]
+  gridPoints: GridPoint[],
+  forecastHour: number
 ): void {
-  const data = buildCloudGeoJson(gridPoints);
+  const data = buildCloudGeoJson(gridPoints, forecastHour);
 
   const existingSource = map.getSource(SOURCE_ID) as
     | maplibregl.GeoJSONSource

@@ -13,7 +13,8 @@ type PrecipitationFeatureCollection = GeoJSON.FeatureCollection<
 >;
 
 function buildPrecipitationGeoJson(
-  gridPoints: GridPoint[]
+  gridPoints: GridPoint[],
+  forecastHour: number
 ): PrecipitationFeatureCollection {
   return {
     type: "FeatureCollection",
@@ -24,7 +25,7 @@ function buildPrecipitationGeoJson(
         coordinates: [point.longitude, point.latitude],
       },
       properties: {
-        precipitation: point.precipitation,
+        precipitation: point.precipitation[forecastHour],
       },
     })),
   };
@@ -32,9 +33,10 @@ function buildPrecipitationGeoJson(
 
 export function updatePrecipitationLayer(
   map: maplibregl.Map,
-  gridPoints: GridPoint[]
+  gridPoints: GridPoint[],
+  forecastHour: number
 ): void {
-  const data = buildPrecipitationGeoJson(gridPoints);
+  const data = buildPrecipitationGeoJson(gridPoints, forecastHour);
 
   const existingSource = map.getSource(SOURCE_ID) as
     | maplibregl.GeoJSONSource

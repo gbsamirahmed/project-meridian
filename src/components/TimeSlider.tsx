@@ -7,6 +7,11 @@ export default function TimeSlider({
   forecastHour,
   onForecastHourChange,
 }: TimeSliderProps) {
+  const label =
+    forecastHour === 0
+      ? "Now"
+      : `+${forecastHour} hour${forecastHour === 1 ? "" : "s"}`;
+
   return (
     <div className="weather-card">
       <h2>Forecast Time</h2>
@@ -23,11 +28,7 @@ export default function TimeSlider({
         }
       />
 
-      <p>
-        {forecastHour === 0
-          ? "Now"
-          : `+${forecastHour} hour${forecastHour === 1 ? "" : "s"}`}
-      </p>
+      <p>{label}</p>
     </div>
   );
 }

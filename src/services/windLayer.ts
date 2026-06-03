@@ -14,7 +14,8 @@ type WindFeatureCollection = GeoJSON.FeatureCollection<
 >;
 
 function buildWindGeoJson(
-  gridPoints: GridPoint[]
+  gridPoints: GridPoint[],
+  forecastHour: number
 ): WindFeatureCollection {
   return {
     type: "FeatureCollection",
@@ -25,8 +26,8 @@ function buildWindGeoJson(
         coordinates: [point.longitude, point.latitude],
       },
       properties: {
-        windSpeed: point.windSpeed,
-        windDirection: point.windDirection,
+        windSpeed: point.windSpeed[forecastHour],
+        windDirection: point.windDirection[forecastHour],
       },
     })),
   };
@@ -34,9 +35,10 @@ function buildWindGeoJson(
 
 export function updateWindLayer(
   map: maplibregl.Map,
-  gridPoints: GridPoint[]
+  gridPoints: GridPoint[],
+  forecastHour: number
 ): void {
-  const data = buildWindGeoJson(gridPoints);
+  const data = buildWindGeoJson(gridPoints, forecastHour);
 
   const existingSource = map.getSource(SOURCE_ID) as
     | maplibregl.GeoJSONSource

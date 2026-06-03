@@ -94,6 +94,7 @@ function App() {
         selectedLayer={selectedLayer}
         gridPoints={visibleGridPoints}
         onLocationSelect={setSelectedLocation}
+        forecastHour={forecastHour}
       />
 
       <WeatherPanel

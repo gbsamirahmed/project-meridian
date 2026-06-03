@@ -14,9 +14,12 @@ type TemperatureFeatureCollection = GeoJSON.FeatureCollection<
 >;
 
 function buildTemperatureGeoJson(
-  gridPoints: GridPoint[]
+  gridPoints: GridPoint[],
+  forecastHour: number
 ): TemperatureFeatureCollection {
-  const temperatures = gridPoints.map((point) => point.temperature);
+  const temperatures = gridPoints.map(
+    (point) => point.temperature[forecastHour]
+  );
 
   const minTemp = Math.min(...temperatures);
   const maxTemp = Math.max(...temperatures);
@@ -24,10 +27,12 @@ function buildTemperatureGeoJson(
   return {
     type: "FeatureCollection",
     features: gridPoints.map((point) => {
+      const temperature = point.temperature[forecastHour];
+
       let ratio = 0.5;
 
       if (maxTemp !== minTemp) {
-        ratio = (point.temperature - minTemp) / (maxTemp - minTemp);
+        ratio = (temperature - minTemp) / (maxTemp - minTemp);
       }
 
       return {
@@ -37,7 +42,7 @@ function buildTemperatureGeoJson(
           coordinates: [point.longitude, point.latitude],
         },
         properties: {
-          temperature: point.temperature,
+          temperature,
           ratio,
         },
       };
@@ -47,9 +52,10 @@ function buildTemperatureGeoJson(
 
 export function updateTemperatureLayer(
   map: maplibregl.Map,
-  gridPoints: GridPoint[]
+  gridPoints: GridPoint[],
+  forecastHour: number
 ): void {
-  const data = buildTemperatureGeoJson(gridPoints);
+  const data = buildTemperatureGeoJson(gridPoints, forecastHour);
 
   const existingSource = map.getSource(SOURCE_ID) as
     | maplibregl.GeoJSONSource

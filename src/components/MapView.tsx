@@ -36,6 +36,7 @@ interface MapViewProps {
   selectedLocation: SelectedLocation | null;
   selectedLayer: WeatherLayer;
   gridPoints: GridPoint[];
+  forecastHour: number;
   onLocationSelect: (location: SelectedLocation) => void;
 }
 
@@ -43,6 +44,7 @@ export default function MapView({
   selectedLocation,
   selectedLayer,
   gridPoints,
+  forecastHour,
   onLocationSelect,
 }: MapViewProps) {
   const mapContainer = useRef<HTMLDivElement | null>(null);
@@ -90,17 +92,9 @@ export default function MapView({
       selectedLocation.latitude,
     ];
 
-    if (
-      selectedLayer !== "none" &&
-      gridPoints.length > 0
-    ) {
-      const longitudes = gridPoints.map(
-        (point) => point.longitude
-      );
-
-      const latitudes = gridPoints.map(
-        (point) => point.latitude
-      );
+    if (selectedLayer !== "none" && gridPoints.length > 0) {
+      const longitudes = gridPoints.map((point) => point.longitude);
+      const latitudes = gridPoints.map((point) => point.latitude);
 
       const bounds = new maplibregl.LngLatBounds(
         [Math.min(...longitudes), Math.min(...latitudes)],
@@ -142,45 +136,47 @@ export default function MapView({
     if (selectedLayer === "temperature") {
       updateTemperatureLayer(
         mapRef.current,
-        gridPoints
+        gridPoints,
+        forecastHour
       );
     }
 
     if (selectedLayer === "clouds") {
       updateCloudLayer(
         mapRef.current,
-        gridPoints
+        gridPoints,
+        forecastHour
       );
     }
 
     if (selectedLayer === "precipitation") {
       updatePrecipitationLayer(
         mapRef.current,
-        gridPoints
+        gridPoints,
+        forecastHour
       );
     }
 
     if (selectedLayer === "pressure") {
       updatePressureLayer(
         mapRef.current,
-        gridPoints
+        gridPoints,
+        forecastHour
       );
     }
 
     if (selectedLayer === "wind") {
       updateWindLayer(
         mapRef.current,
-        gridPoints
+        gridPoints,
+        forecastHour
       );
     }
-  }, [gridPoints, selectedLayer]);
+  }, [gridPoints, selectedLayer, forecastHour]);
 
   return (
     <div className="map-container-wrapper">
-      <div
-        className="map-container"
-        ref={mapContainer}
-      />
+      <div className="map-container" ref={mapContainer} />
 
       <div className="layer-badge">
         Layer: {selectedLayer}
