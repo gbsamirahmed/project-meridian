@@ -15,6 +15,7 @@ export default function LayerPanel({
     "clouds",
     "wind",
     "precipitation",
+    "pressure",
   ];
 
   return (

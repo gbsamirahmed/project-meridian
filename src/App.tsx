@@ -16,8 +16,18 @@ import type { GridPoint } from "./types/gridPoint";
 
 import "./App.css";
 
+const WEATHER_GRID_LAYERS: WeatherLayer[] = [
+  "temperature",
+  "clouds",
+  "precipitation",
+  "pressure",
+];
+
 function App() {
   const [selectedLocation, setSelectedLocation] =
+    useState<SelectedLocation | null>(null);
+
+  const [debouncedLocation, setDebouncedLocation] =
     useState<SelectedLocation | null>(null);
 
   const [weather, setWeather] = useState<WeatherData | null>(null);
@@ -30,24 +40,37 @@ function App() {
     useState<GridPoint[]>([]);
 
   useEffect(() => {
-    if (!selectedLocation) return;
+    const timeoutId = window.setTimeout(() => {
+      setDebouncedLocation(selectedLocation);
+    }, 500);
 
-    getWeather(selectedLocation.latitude, selectedLocation.longitude)
+    return () => {
+      window.clearTimeout(timeoutId);
+    };
+  }, [selectedLocation]);
+
+  useEffect(() => {
+    if (!debouncedLocation) return;
+
+    getWeather(
+      debouncedLocation.latitude,
+      debouncedLocation.longitude
+    )
       .then(setWeather)
       .catch(console.error);
 
-    getLocationName(selectedLocation.latitude, selectedLocation.longitude)
+    getLocationName(
+      debouncedLocation.latitude,
+      debouncedLocation.longitude
+    )
       .then((name) => setPlace({ name }))
       .catch(console.error);
 
-    if (selectedLayer === "temperature" || selectedLayer === "clouds") {
-      getWeatherGrid(selectedLocation)
-        .then(setGridPoints)
-        .catch(console.error);
-    } else {
-      setGridPoints([]);
-    }
-  }, [selectedLocation, selectedLayer]);
+    getWeatherGrid(debouncedLocation)
+      .then(setGridPoints)
+      .catch(console.error);
+      console.log("Fetching weather grid...");
+  }, [debouncedLocation]);
 
   const handleSearch = async (query: string) => {
     const location = await searchLocation(query);
@@ -57,12 +80,16 @@ function App() {
     }
   };
 
+  const visibleGridPoints = WEATHER_GRID_LAYERS.includes(selectedLayer)
+    ? gridPoints
+    : [];
+
   return (
     <main className="app-shell">
       <MapView
         selectedLocation={selectedLocation}
         selectedLayer={selectedLayer}
-        gridPoints={gridPoints}
+        gridPoints={visibleGridPoints}
         onLocationSelect={setSelectedLocation}
       />
 

@@ -11,6 +11,16 @@ import {
   updateCloudLayer,
 } from "../services/cloudLayer";
 
+import {
+  removePrecipitationLayer,
+  updatePrecipitationLayer,
+} from "../services/precipitationLayer";
+
+import {
+  removePressureLayer,
+  updatePressureLayer,
+} from "../services/pressureLayer";
+
 import type { SelectedLocation } from "../types/location";
 import type { WeatherLayer } from "../types/layer";
 import type { GridPoint } from "../types/gridPoint";
@@ -58,6 +68,8 @@ export default function MapView({
     return () => {
       removeTemperatureLayer(map);
       removeCloudLayer(map);
+      removePrecipitationLayer(map);
+      removePressureLayer(map);
       map.remove();
       mapRef.current = null;
     };
@@ -72,7 +84,10 @@ export default function MapView({
     ];
 
     if (
-      (selectedLayer === "temperature" || selectedLayer === "clouds") &&
+      (selectedLayer === "temperature" ||
+        selectedLayer === "clouds" ||
+        selectedLayer === "precipitation" ||
+        selectedLayer === "pressure") &&
       gridPoints.length > 0
     ) {
       const longitudes = gridPoints.map((point) => point.longitude);
@@ -109,6 +124,8 @@ export default function MapView({
 
     removeTemperatureLayer(mapRef.current);
     removeCloudLayer(mapRef.current);
+    removePrecipitationLayer(mapRef.current);
+    removePressureLayer(mapRef.current);
 
     if (gridPoints.length === 0) return;
 
@@ -118,6 +135,14 @@ export default function MapView({
 
     if (selectedLayer === "clouds") {
       updateCloudLayer(mapRef.current, gridPoints);
+    }
+
+    if (selectedLayer === "precipitation") {
+      updatePrecipitationLayer(mapRef.current, gridPoints);
+    }
+
+    if (selectedLayer === "pressure") {
+      updatePressureLayer(mapRef.current, gridPoints);
     }
   }, [gridPoints, selectedLayer]);
 

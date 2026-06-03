@@ -2,12 +2,12 @@ import type { SelectedLocation } from "../types/location";
 
 export function generateGrid(
   center: SelectedLocation,
-  spacing: number = 0.1
+  spacing: number = 0.15
 ): SelectedLocation[] {
   const points: SelectedLocation[] = [];
 
-  for (let latOffset = -4; latOffset <= 4; latOffset++) {
-    for (let lonOffset = -4; lonOffset <= 4; lonOffset++) {
+  for (let latOffset = -2; latOffset <= 2; latOffset++) {
+    for (let lonOffset = -2; lonOffset <= 2; lonOffset++) {
       points.push({
         latitude: center.latitude + latOffset * spacing,
         longitude: center.longitude + lonOffset * spacing,

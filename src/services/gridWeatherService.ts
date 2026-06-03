@@ -11,7 +11,7 @@ export async function getWeatherGrid(
   const gridPoints = await Promise.all(
     points.map(async (point) => {
       const response = await fetch(
-        `https://api.open-meteo.com/v1/forecast?latitude=${point.latitude}&longitude=${point.longitude}&current=temperature_2m,cloud_cover`
+        `https://api.open-meteo.com/v1/forecast?latitude=${point.latitude}&longitude=${point.longitude}&current=temperature_2m,cloud_cover,precipitation,pressure_msl`
       );
 
       const data = await response.json();
@@ -19,8 +19,11 @@ export async function getWeatherGrid(
       return {
         latitude: point.latitude,
         longitude: point.longitude,
+
         temperature: data.current.temperature_2m,
         cloudCover: data.current.cloud_cover,
+        precipitation: data.current.precipitation,
+        pressure: data.current.pressure_msl,
       };
     })
   );

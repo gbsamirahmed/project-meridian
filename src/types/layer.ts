@@ -3,4 +3,5 @@ export type WeatherLayer =
   | "temperature"
   | "clouds"
   | "wind"
-  | "precipitation";
+  | "precipitation"
+  | "pressure";

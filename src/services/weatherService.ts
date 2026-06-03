@@ -8,7 +8,15 @@ export async function getWeather(
     `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,precipitation,cloud_cover,pressure_msl,wind_speed_10m,wind_gusts_10m,visibility,dew_point_2m&daily=temperature_2m_max,temperature_2m_min&forecast_days=7`
   );
 
+  if (!response.ok) {
+    throw new Error(`Weather API error: ${response.status}`);
+  }
+
   const data = await response.json();
+
+  if (!data.current || !data.daily) {
+    throw new Error("Weather API response is missing current or daily data");
+  }
 
   const forecast: ForecastDay[] = data.daily.time.map(
     (date: string, index: number) => ({
