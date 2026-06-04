@@ -20,6 +20,8 @@ const WEATHER_GRID_LAYERS: WeatherLayer[] = [
   "temperature",
   "clouds",
   "precipitation",
+  "elevation",
+  "hillshade",
   "pressure",
   "wind",
 ];

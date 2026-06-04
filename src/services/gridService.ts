@@ -1,16 +1,17 @@
+import { GRID_RADIUS, GRID_SPACING } from "../config/gridConfig";
+
 import type { SelectedLocation } from "../types/location";
 
 export function generateGrid(
-  center: SelectedLocation,
-  spacing: number = 0.15
+  center: SelectedLocation
 ): SelectedLocation[] {
   const points: SelectedLocation[] = [];
 
-  for (let latOffset = -4; latOffset <= 4; latOffset++) {
-    for (let lonOffset = -4; lonOffset <= 4; lonOffset++) {
+  for (let latOffset = -GRID_RADIUS; latOffset <= GRID_RADIUS; latOffset++) {
+    for (let lonOffset = -GRID_RADIUS; lonOffset <= GRID_RADIUS; lonOffset++) {
       points.push({
-        latitude: center.latitude + latOffset * spacing,
-        longitude: center.longitude + lonOffset * spacing,
+        latitude: center.latitude + latOffset * GRID_SPACING,
+        longitude: center.longitude + lonOffset * GRID_SPACING,
       });
     }
   }

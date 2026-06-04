@@ -18,23 +18,41 @@ export async function getWeatherGrid(
     .map((point) => point.longitude)
     .join(",");
 
-  const response = await fetch(
+  const weatherResponse = await fetch(
     `https://api.open-meteo.com/v1/forecast?latitude=${latitudes}&longitude=${longitudes}&hourly=temperature_2m,cloud_cover,precipitation,pressure_msl,wind_speed_10m,wind_direction_10m&forecast_hours=25`
   );
 
-  if (!response.ok) {
-    throw new Error(`Weather grid API error: ${response.status}`);
+  if (!weatherResponse.ok) {
+    throw new Error(
+      `Weather grid API error: ${weatherResponse.status}`
+    );
   }
 
-  const data = await response.json();
+  const elevationResponse = await fetch(
+    `https://api.open-meteo.com/v1/elevation?latitude=${latitudes}&longitude=${longitudes}`
+  );
 
-  if (!Array.isArray(data)) {
+  if (!elevationResponse.ok) {
+    throw new Error(
+      `Elevation API error: ${elevationResponse.status}`
+    );
+  }
+
+  const weatherData = await weatherResponse.json();
+  const elevationData = await elevationResponse.json();
+
+  if (!Array.isArray(weatherData)) {
     throw new Error("Expected weather grid API response to be an array");
   }
 
-  return data.map((locationData, index) => ({
+  if (!Array.isArray(elevationData.elevation)) {
+    throw new Error("Expected elevation API response to include elevation array");
+  }
+
+  return weatherData.map((locationData, index) => ({
     latitude: points[index].latitude,
     longitude: points[index].longitude,
+    elevation: elevationData.elevation[index],
 
     temperature: locationData.hourly.temperature_2m,
     cloudCover: locationData.hourly.cloud_cover,

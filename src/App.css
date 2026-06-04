@@ -140,3 +140,55 @@ body,
 .time-slider {
   width: 100%;
 }
+
+.legend-bar {
+  margin-top: 0.5rem;
+}
+
+.legend-gradient {
+  height: 20px;
+  border-radius: 8px;
+}
+
+.legend-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+}
+
+.map-hover-card {
+  position: absolute;
+  z-index: 20;
+  pointer-events: none;
+
+  padding: 10px 12px;
+  border-radius: 12px;
+
+  background: rgba(18, 24, 38, 0.9);
+  color: white;
+
+  font-size: 12px;
+  line-height: 1.35;
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.map-hover-card p {
+  margin: 2px 0;
+}
+
+.animation-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.play-button {
+  width: 100px;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}

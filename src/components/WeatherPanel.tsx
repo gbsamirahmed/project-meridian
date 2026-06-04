@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import ForecastPanel from "./ForecastPanel";
 import LayerPanel from "./LayerPanel";
 import TimeSlider from "./TimeSlider";
+import TemperatureLegend from "./TemperatureLegend";
 
 import type { SelectedLocation } from "../types/location";
 import type { WeatherData } from "../types/weather";
@@ -31,6 +32,25 @@ export default function WeatherPanel({
   onSearch,
 }: WeatherPanelProps) {
   const [query, setQuery] = useState("");
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  useEffect(() => {
+    if (!isPlaying) return;
+
+    const interval = setInterval(() => {
+      onForecastHourChange(
+        forecastHour >= 24
+          ? 0
+          : forecastHour + 1
+      );
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [
+    isPlaying,
+    forecastHour,
+    onForecastHourChange,
+  ]);
 
   return (
     <aside className="weather-panel">
@@ -59,6 +79,21 @@ export default function WeatherPanel({
         forecastHour={forecastHour}
         onForecastHourChange={onForecastHourChange}
       />
+
+      <div className="animation-controls">
+        <button
+          className="play-button"
+          onClick={() =>
+            setIsPlaying(!isPlaying)
+          }
+        >
+          {isPlaying ? "Pause" : "Play"}
+        </button>
+      </div>
+
+      {selectedLayer === "temperature" && (
+        <TemperatureLegend />
+      )}
 
       <div className="weather-card">
         <h2>Selected Location</h2>
@@ -97,7 +132,11 @@ export default function WeatherPanel({
         )}
       </div>
 
-      {weather && <ForecastPanel forecast={weather.forecast} />}
+      {weather && (
+        <ForecastPanel
+          forecast={weather.forecast}
+        />
+      )}
     </aside>
   );
 }

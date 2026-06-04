@@ -13,8 +13,10 @@ export default function LayerPanel({
     "none",
     "temperature",
     "clouds",
-    "wind",
     "precipitation",
+    "elevation",
+    "hillshade",
+    "wind",
     "pressure",
   ];
 

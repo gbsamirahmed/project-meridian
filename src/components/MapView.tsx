@@ -1,20 +1,9 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import maplibregl from "maplibre-gl";
 
-import {
-  removeTemperatureLayer,
-  updateTemperatureLayer,
-} from "../services/temperatureLayer";
-
-import {
-  removeCloudLayer,
-  updateCloudLayer,
-} from "../services/cloudLayer";
-
-import {
-  removePrecipitationLayer,
-  updatePrecipitationLayer,
-} from "../services/precipitationLayer";
+import { removeTemperatureLayer } from "../services/temperatureLayer";
+import { removeCloudLayer } from "../services/cloudLayer";
+import { removePrecipitationLayer } from "../services/precipitationLayer";
 
 import {
   removePressureLayer,
@@ -25,6 +14,37 @@ import {
   removeWindLayer,
   updateWindLayer,
 } from "../services/windLayer";
+
+import {
+  removeRasterLayer,
+  updateRasterLayer,
+} from "../services/rasterLayer";
+
+import {
+  removeCloudRasterLayer,
+  updateCloudRasterLayer,
+} from "../services/cloudRasterLayer";
+
+import {
+  removePrecipitationRasterLayer,
+  updatePrecipitationRasterLayer,
+} from "../services/precipitationRasterLayer";
+
+import {
+  removeElevationRasterLayer,
+  updateElevationRasterLayer,
+} from "../services/elevationRasterLayer";
+
+import {
+  removeHillshadeRasterLayer,
+  updateHillshadeRasterLayer,
+} from "../services/hillshadeRasterLayer";
+
+import { getGridCoordinates } from "../services/gridCoordinates";
+import { interpolateGridValue } from "../services/interpolation";
+import { buildWeatherMatrix } from "../services/weatherMatrix";
+
+import { GRID_SIZE } from "../config/gridConfig";
 
 import type { SelectedLocation } from "../types/location";
 import type { WeatherLayer } from "../types/layer";
@@ -40,6 +60,103 @@ interface MapViewProps {
   onLocationSelect: (location: SelectedLocation) => void;
 }
 
+interface HoverInfo {
+  x: number;
+  y: number;
+  elevation: number;
+  temperature: number;
+  cloudCover: number;
+  precipitation: number;
+  pressure: number;
+  windSpeed: number;
+}
+
+function isInsideGridBounds(
+  latitude: number,
+  longitude: number,
+  gridPoints: GridPoint[]
+): boolean {
+  if (gridPoints.length === 0) return false;
+
+  const longitudes = gridPoints.map((point) => point.longitude);
+  const latitudes = gridPoints.map((point) => point.latitude);
+
+  const west = Math.min(...longitudes);
+  const east = Math.max(...longitudes);
+  const south = Math.min(...latitudes);
+  const north = Math.max(...latitudes);
+
+  return (
+    latitude >= south &&
+    latitude <= north &&
+    longitude >= west &&
+    longitude <= east
+  );
+}
+
+function getInterpolatedHoverValues(
+  latitude: number,
+  longitude: number,
+  gridPoints: GridPoint[],
+  forecastHour: number
+) {
+  const gridCoordinates = getGridCoordinates(
+    latitude,
+    longitude,
+    gridPoints
+  );
+
+  if (!gridCoordinates) return null;
+
+  const gridX = gridCoordinates.x * (GRID_SIZE - 1);
+  const gridY = gridCoordinates.y * (GRID_SIZE - 1);
+
+  const elevationMatrix = buildWeatherMatrix(
+    gridPoints,
+    forecastHour,
+    (point) => point.elevation
+  );
+
+  const temperatureMatrix = buildWeatherMatrix(
+    gridPoints,
+    forecastHour,
+    (point, hour) => point.temperature[hour]
+  );
+
+  const cloudCoverMatrix = buildWeatherMatrix(
+    gridPoints,
+    forecastHour,
+    (point, hour) => point.cloudCover[hour]
+  );
+
+  const precipitationMatrix = buildWeatherMatrix(
+    gridPoints,
+    forecastHour,
+    (point, hour) => point.precipitation[hour]
+  );
+
+  const pressureMatrix = buildWeatherMatrix(
+    gridPoints,
+    forecastHour,
+    (point, hour) => point.pressure[hour]
+  );
+
+  const windSpeedMatrix = buildWeatherMatrix(
+    gridPoints,
+    forecastHour,
+    (point, hour) => point.windSpeed[hour]
+  );
+
+  return {
+    elevation: interpolateGridValue(elevationMatrix, gridX, gridY),
+    temperature: interpolateGridValue(temperatureMatrix, gridX, gridY),
+    cloudCover: interpolateGridValue(cloudCoverMatrix, gridX, gridY),
+    precipitation: interpolateGridValue(precipitationMatrix, gridX, gridY),
+    pressure: interpolateGridValue(pressureMatrix, gridX, gridY),
+    windSpeed: interpolateGridValue(windSpeedMatrix, gridX, gridY),
+  };
+}
+
 export default function MapView({
   selectedLocation,
   selectedLayer,
@@ -47,9 +164,22 @@ export default function MapView({
   forecastHour,
   onLocationSelect,
 }: MapViewProps) {
+  const [hoverInfo, setHoverInfo] = useState<HoverInfo | null>(null);
+
   const mapContainer = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<maplibregl.Map | null>(null);
   const markerRef = useRef<maplibregl.Marker | null>(null);
+
+  const gridPointsRef = useRef<GridPoint[]>([]);
+  const forecastHourRef = useRef(0);
+
+  useEffect(() => {
+    gridPointsRef.current = gridPoints;
+  }, [gridPoints]);
+
+  useEffect(() => {
+    forecastHourRef.current = forecastHour;
+  }, [forecastHour]);
 
   useEffect(() => {
     if (!mapContainer.current || mapRef.current) return;
@@ -59,9 +189,28 @@ export default function MapView({
       style: "https://tiles.openfreemap.org/styles/liberty",
       center: [-0.1276, 51.5072],
       zoom: 9,
+      pitch: 55,
+      bearing: -20,
     });
 
     map.addControl(new maplibregl.NavigationControl(), "top-right");
+
+    map.on("load", () => {
+      map.addSource("terrain-dem", {
+        type: "raster-dem",
+        tiles: [
+          "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png",
+        ],
+        tileSize: 256,
+        encoding: "terrarium",
+        maxzoom: 14,
+      });
+
+      map.setTerrain({
+        source: "terrain-dem",
+        exaggeration: 1.5,
+      });
+    });
 
     map.on("click", (event) => {
       onLocationSelect({
@@ -70,12 +219,54 @@ export default function MapView({
       });
     });
 
+    map.on("mousemove", (event) => {
+      const currentGridPoints = gridPointsRef.current;
+
+      if (
+        !isInsideGridBounds(
+          event.lngLat.lat,
+          event.lngLat.lng,
+          currentGridPoints
+        )
+      ) {
+        setHoverInfo(null);
+        return;
+      }
+
+      const values = getInterpolatedHoverValues(
+        event.lngLat.lat,
+        event.lngLat.lng,
+        currentGridPoints,
+        forecastHourRef.current
+      );
+
+      if (!values) {
+        setHoverInfo(null);
+        return;
+      }
+
+      setHoverInfo({
+        x: event.point.x,
+        y: event.point.y,
+        ...values,
+      });
+    });
+
+    map.on("mouseleave", () => {
+      setHoverInfo(null);
+    });
+
     mapRef.current = map;
 
     return () => {
       removeTemperatureLayer(map);
+      removeRasterLayer(map);
       removeCloudLayer(map);
+      removeCloudRasterLayer(map);
       removePrecipitationLayer(map);
+      removePrecipitationRasterLayer(map);
+      removeElevationRasterLayer(map);
+      removeHillshadeRasterLayer(map);
       removePressureLayer(map);
       removeWindLayer(map);
 
@@ -126,51 +317,48 @@ export default function MapView({
     if (!mapRef.current) return;
 
     removeTemperatureLayer(mapRef.current);
+    removeRasterLayer(mapRef.current);
     removeCloudLayer(mapRef.current);
+    removeCloudRasterLayer(mapRef.current);
     removePrecipitationLayer(mapRef.current);
+    removePrecipitationRasterLayer(mapRef.current);
+    removeElevationRasterLayer(mapRef.current);
+    removeHillshadeRasterLayer(mapRef.current);
     removePressureLayer(mapRef.current);
     removeWindLayer(mapRef.current);
 
     if (gridPoints.length === 0) return;
 
     if (selectedLayer === "temperature") {
-      updateTemperatureLayer(
-        mapRef.current,
-        gridPoints,
-        forecastHour
-      );
+      updateRasterLayer(mapRef.current, gridPoints, forecastHour);
     }
 
     if (selectedLayer === "clouds") {
-      updateCloudLayer(
-        mapRef.current,
-        gridPoints,
-        forecastHour
-      );
+      updateCloudRasterLayer(mapRef.current, gridPoints, forecastHour);
     }
 
     if (selectedLayer === "precipitation") {
-      updatePrecipitationLayer(
+      updatePrecipitationRasterLayer(
         mapRef.current,
         gridPoints,
         forecastHour
       );
+    }
+
+    if (selectedLayer === "elevation") {
+      updateElevationRasterLayer(mapRef.current, gridPoints);
+    }
+
+    if (selectedLayer === "hillshade") {
+      updateHillshadeRasterLayer(mapRef.current, gridPoints);
     }
 
     if (selectedLayer === "pressure") {
-      updatePressureLayer(
-        mapRef.current,
-        gridPoints,
-        forecastHour
-      );
+      updatePressureLayer(mapRef.current, gridPoints, forecastHour);
     }
 
     if (selectedLayer === "wind") {
-      updateWindLayer(
-        mapRef.current,
-        gridPoints,
-        forecastHour
-      );
+      updateWindLayer(mapRef.current, gridPoints, forecastHour);
     }
   }, [gridPoints, selectedLayer, forecastHour]);
 
@@ -178,9 +366,24 @@ export default function MapView({
     <div className="map-container-wrapper">
       <div className="map-container" ref={mapContainer} />
 
-      <div className="layer-badge">
-        Layer: {selectedLayer}
-      </div>
+      <div className="layer-badge">Layer: {selectedLayer}</div>
+
+      {hoverInfo && (
+        <div
+          className="map-hover-card"
+          style={{
+            left: hoverInfo.x + 14,
+            top: hoverInfo.y + 14,
+          }}
+        >
+          <p>Elevation: {Math.round(hoverInfo.elevation)} m</p>
+          <p>Temp: {hoverInfo.temperature.toFixed(1)} °C</p>
+          <p>Cloud: {Math.round(hoverInfo.cloudCover)} %</p>
+          <p>Rain: {hoverInfo.precipitation.toFixed(1)} mm</p>
+          <p>Pressure: {Math.round(hoverInfo.pressure)} hPa</p>
+          <p>Wind: {Math.round(hoverInfo.windSpeed)} km/h</p>
+        </div>
+      )}
     </div>
   );
 }
