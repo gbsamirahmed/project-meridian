@@ -1,20 +1,35 @@
 interface TimeSliderProps {
   forecastHour: number;
+  forecastTimes?: string[];
   onForecastHourChange: (hour: number) => void;
+}
+
+function formatForecastTime(time?: string): string {
+  if (!time) return "Select a location";
+
+  const date = new Date(time);
+
+  return new Intl.DateTimeFormat("en-GB", {
+    weekday: "short",
+    hour: "2-digit",
+    minute: "2-digit",
+  }).format(date);
 }
 
 export default function TimeSlider({
   forecastHour,
+  forecastTimes,
   onForecastHourChange,
 }: TimeSliderProps) {
-  const label =
-    forecastHour === 0
-      ? "Now"
-      : `+${forecastHour} hour${forecastHour === 1 ? "" : "s"}`;
+  const label = formatForecastTime(
+    forecastTimes?.[forecastHour]
+  );
 
   return (
     <div className="weather-card">
       <h2>Forecast Time</h2>
+
+      <p>{label}</p>
 
       <input
         className="time-slider"
@@ -27,8 +42,6 @@ export default function TimeSlider({
           onForecastHourChange(Number(event.target.value))
         }
       />
-
-      <p>{label}</p>
     </div>
   );
 }

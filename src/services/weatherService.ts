@@ -5,7 +5,7 @@ export async function getWeather(
   longitude: number
 ): Promise<WeatherData> {
   const response = await fetch(
-    `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,precipitation,cloud_cover,pressure_msl,wind_speed_10m,wind_gusts_10m,visibility,dew_point_2m&daily=temperature_2m_max,temperature_2m_min&forecast_days=7`
+    `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,precipitation,cloud_cover,pressure_msl,wind_speed_10m,wind_gusts_10m,visibility,dew_point_2m&hourly=temperature_2m&forecast_hours=25&daily=temperature_2m_max,temperature_2m_min&forecast_days=7`
   );
 
   if (!response.ok) {
@@ -14,8 +14,10 @@ export async function getWeather(
 
   const data = await response.json();
 
-  if (!data.current || !data.daily) {
-    throw new Error("Weather API response is missing current or daily data");
+  if (!data.current || !data.daily || !data.hourly) {
+    throw new Error(
+      "Weather API response is missing current, hourly or daily data"
+    );
   }
 
   const forecast: ForecastDay[] = data.daily.time.map(
@@ -36,6 +38,7 @@ export async function getWeather(
     precipitation: data.current.precipitation,
     visibility: data.current.visibility / 1000,
     dewPoint: data.current.dew_point_2m,
+    forecastTimes: data.hourly.time,
     forecast,
   };
 }

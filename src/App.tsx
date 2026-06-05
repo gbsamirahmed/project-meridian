@@ -42,7 +42,10 @@ function App() {
   const [gridPoints, setGridPoints] =
     useState<GridPoint[]>([]);
 
-  const [forecastHour, setForecastHour] = 
+  const [forecastHour, setForecastHour] =
+    useState(0);
+
+  const [mapPitch, setMapPitch] =
     useState(0);
 
   useEffect(() => {
@@ -95,8 +98,9 @@ function App() {
         selectedLocation={selectedLocation}
         selectedLayer={selectedLayer}
         gridPoints={visibleGridPoints}
-        onLocationSelect={setSelectedLocation}
         forecastHour={forecastHour}
+        mapPitch={mapPitch}
+        onLocationSelect={setSelectedLocation}
       />
 
       <WeatherPanel
@@ -105,7 +109,9 @@ function App() {
         place={place}
         selectedLayer={selectedLayer}
         forecastHour={forecastHour}
+        mapPitch={mapPitch}
         onForecastHourChange={setForecastHour}
+        onPitchChange={setMapPitch}
         onLayerChange={setSelectedLayer}
         onSearch={handleSearch}
       />

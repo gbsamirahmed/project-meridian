@@ -57,6 +57,7 @@ interface MapViewProps {
   selectedLayer: WeatherLayer;
   gridPoints: GridPoint[];
   forecastHour: number;
+  mapPitch: number;
   onLocationSelect: (location: SelectedLocation) => void;
 }
 
@@ -162,6 +163,7 @@ export default function MapView({
   selectedLayer,
   gridPoints,
   forecastHour,
+  mapPitch,
   onLocationSelect,
 }: MapViewProps) {
   const [hoverInfo, setHoverInfo] = useState<HoverInfo | null>(null);
@@ -182,6 +184,12 @@ export default function MapView({
   }, [forecastHour]);
 
   useEffect(() => {
+    if (!mapRef.current) return;
+
+    mapRef.current.setPitch(mapPitch);
+  }, [mapPitch]);
+
+  useEffect(() => {
     if (!mapContainer.current || mapRef.current) return;
 
     const map = new maplibregl.Map({
@@ -189,22 +197,24 @@ export default function MapView({
       style: "https://tiles.openfreemap.org/styles/liberty",
       center: [-0.1276, 51.5072],
       zoom: 9,
-      pitch: 55,
-      bearing: -20,
+      pitch: 0,
+      bearing: 0,
     });
 
     map.addControl(new maplibregl.NavigationControl(), "top-right");
 
     map.on("load", () => {
-      map.addSource("terrain-dem", {
-        type: "raster-dem",
-        tiles: [
-          "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png",
-        ],
-        tileSize: 256,
-        encoding: "terrarium",
-        maxzoom: 14,
-      });
+      if (!map.getSource("terrain-dem")) {
+        map.addSource("terrain-dem", {
+          type: "raster-dem",
+          tiles: [
+            "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png",
+          ],
+          tileSize: 256,
+          encoding: "terrarium",
+          maxzoom: 14,
+        });
+      }
 
       map.setTerrain({
         source: "terrain-dem",

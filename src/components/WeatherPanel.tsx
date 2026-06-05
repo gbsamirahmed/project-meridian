@@ -16,10 +16,20 @@ interface WeatherPanelProps {
   place: Place | null;
   selectedLayer: WeatherLayer;
   forecastHour: number;
+  mapPitch: number;
   onForecastHourChange: (hour: number) => void;
+  onPitchChange: (pitch: number) => void;
   onLayerChange: (layer: WeatherLayer) => void;
   onSearch: (query: string) => void;
 }
+
+const TIME_DEPENDENT_LAYERS: WeatherLayer[] = [
+  "temperature",
+  "clouds",
+  "precipitation",
+  "wind",
+  "pressure",
+];
 
 export default function WeatherPanel({
   selectedLocation,
@@ -27,27 +37,37 @@ export default function WeatherPanel({
   place,
   selectedLayer,
   forecastHour,
+  mapPitch,
   onForecastHourChange,
+  onPitchChange,
   onLayerChange,
   onSearch,
 }: WeatherPanelProps) {
   const [query, setQuery] = useState("");
   const [isPlaying, setIsPlaying] = useState(false);
 
+  const isTimeDependentLayer =
+    TIME_DEPENDENT_LAYERS.includes(selectedLayer);
+
   useEffect(() => {
-    if (!isPlaying) return;
+    if (!isTimeDependentLayer && isPlaying) {
+      setIsPlaying(false);
+    }
+  }, [isTimeDependentLayer, isPlaying]);
+
+  useEffect(() => {
+    if (!isPlaying || !isTimeDependentLayer) return;
 
     const interval = setInterval(() => {
       onForecastHourChange(
-        forecastHour >= 24
-          ? 0
-          : forecastHour + 1
+        forecastHour >= 24 ? 0 : forecastHour + 1
       );
-    }, 1000);
+    }, 500);
 
     return () => clearInterval(interval);
   }, [
     isPlaying,
+    isTimeDependentLayer,
     forecastHour,
     onForecastHourChange,
   ]);
@@ -75,21 +95,42 @@ export default function WeatherPanel({
         onLayerChange={onLayerChange}
       />
 
-      <TimeSlider
-        forecastHour={forecastHour}
-        onForecastHourChange={onForecastHourChange}
-      />
+      <div className="weather-card">
+        <h2>Camera Angle</h2>
 
-      <div className="animation-controls">
-        <button
-          className="play-button"
-          onClick={() =>
-            setIsPlaying(!isPlaying)
+        <input
+          className="time-slider"
+          type="range"
+          min="0"
+          max="70"
+          step="1"
+          value={mapPitch}
+          onChange={(event) =>
+            onPitchChange(Number(event.target.value))
           }
-        >
-          {isPlaying ? "Pause" : "Play"}
-        </button>
+        />
+
+        <p>{mapPitch}°</p>
       </div>
+
+      {isTimeDependentLayer && (
+        <>
+          <TimeSlider
+            forecastHour={forecastHour}
+            forecastTimes={weather?.forecastTimes}
+            onForecastHourChange={onForecastHourChange}
+          />
+
+          <div className="animation-controls">
+            <button
+              className="play-button"
+              onClick={() => setIsPlaying(!isPlaying)}
+            >
+              {isPlaying ? "Pause" : "Play"}
+            </button>
+          </div>
+        </>
+      )}
 
       {selectedLayer === "temperature" && (
         <TemperatureLegend />

@@ -14,5 +14,6 @@ export interface WeatherData {
   precipitation: number;
   visibility: number;
   dewPoint: number;
+  forecastTimes: string[];
   forecast: ForecastDay[];
 }
