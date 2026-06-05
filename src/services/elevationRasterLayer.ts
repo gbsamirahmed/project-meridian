@@ -9,7 +9,6 @@ const SOURCE_ID = "elevation-raster-source";
 const LAYER_ID = "elevation-raster-layer";
 
 const CANVAS_SIZE = 200;
-const ALPHA = 165;
 
 interface Rgb {
   r: number;
@@ -28,19 +27,11 @@ const ELEVATION_SCALE = [
   { elevation: 3500, color: { r: 220, g: 220, b: 220 } },
 ];
 
-function interpolateNumber(
-  start: number,
-  end: number,
-  ratio: number
-): number {
+function interpolateNumber(start: number, end: number, ratio: number): number {
   return start + (end - start) * ratio;
 }
 
-function interpolateColor(
-  start: Rgb,
-  end: Rgb,
-  ratio: number
-): Rgb {
+function interpolateColor(start: Rgb, end: Rgb, ratio: number): Rgb {
   return {
     r: Math.round(interpolateNumber(start.r, end.r, ratio)),
     g: Math.round(interpolateNumber(start.g, end.g, ratio)),
@@ -144,7 +135,7 @@ function createElevationRaster(
       imageData.data[pixelIndex] = rgb.r;
       imageData.data[pixelIndex + 1] = rgb.g;
       imageData.data[pixelIndex + 2] = rgb.b;
-      imageData.data[pixelIndex + 3] = ALPHA;
+      imageData.data[pixelIndex + 3] = 255;
     }
   }
 
@@ -179,7 +170,8 @@ function getRasterCoordinates(
 
 export function updateElevationRasterLayer(
   map: maplibregl.Map,
-  gridPoints: GridPoint[]
+  gridPoints: GridPoint[],
+  opacity: number
 ): void {
   if (gridPoints.length === 0) return;
 
@@ -196,6 +188,14 @@ export function updateElevationRasterLayer(
       coordinates,
     });
 
+    if (map.getLayer(LAYER_ID)) {
+      map.setPaintProperty(
+        LAYER_ID,
+        "raster-opacity",
+        opacity
+      );
+    }
+
     return;
   }
 
@@ -210,7 +210,7 @@ export function updateElevationRasterLayer(
     type: "raster",
     source: SOURCE_ID,
     paint: {
-      "raster-opacity": 0.55,
+      "raster-opacity": opacity,
       "raster-resampling": "linear",
     },
   });

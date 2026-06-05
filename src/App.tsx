@@ -48,6 +48,9 @@ function App() {
   const [mapPitch, setMapPitch] =
     useState(0);
 
+  const [overlayOpacity, setOverlayOpacity] =
+    useState(0.55);
+
   useEffect(() => {
     const timeoutId = window.setTimeout(() => {
       setDebouncedLocation(selectedLocation);
@@ -100,6 +103,7 @@ function App() {
         gridPoints={visibleGridPoints}
         forecastHour={forecastHour}
         mapPitch={mapPitch}
+        overlayOpacity={overlayOpacity}
         onLocationSelect={setSelectedLocation}
       />
 
@@ -110,8 +114,10 @@ function App() {
         selectedLayer={selectedLayer}
         forecastHour={forecastHour}
         mapPitch={mapPitch}
+        overlayOpacity={overlayOpacity}
         onForecastHourChange={setForecastHour}
         onPitchChange={setMapPitch}
+        onOverlayOpacityChange={setOverlayOpacity}
         onLayerChange={setSelectedLayer}
         onSearch={handleSearch}
       />

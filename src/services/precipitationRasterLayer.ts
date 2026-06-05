@@ -162,7 +162,8 @@ function getRasterCoordinates(
 export function updatePrecipitationRasterLayer(
   map: maplibregl.Map,
   gridPoints: GridPoint[],
-  forecastHour: number
+  forecastHour: number,
+  opacity: number
 ): void {
   if (gridPoints.length === 0) return;
 
@@ -183,6 +184,14 @@ export function updatePrecipitationRasterLayer(
       coordinates,
     });
 
+    if (map.getLayer(LAYER_ID)) {
+      map.setPaintProperty(
+        LAYER_ID,
+        "raster-opacity",
+        opacity
+      );
+    }
+
     return;
   }
 
@@ -197,7 +206,7 @@ export function updatePrecipitationRasterLayer(
     type: "raster",
     source: SOURCE_ID,
     paint: {
-      "raster-opacity": 0.75,
+      "raster-opacity": opacity,
       "raster-resampling": "linear",
     },
   });

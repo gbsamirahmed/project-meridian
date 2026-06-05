@@ -58,6 +58,7 @@ interface MapViewProps {
   gridPoints: GridPoint[];
   forecastHour: number;
   mapPitch: number;
+  overlayOpacity: number;
   onLocationSelect: (location: SelectedLocation) => void;
 }
 
@@ -158,12 +159,98 @@ function getInterpolatedHoverValues(
   };
 }
 
+function applyLayerOpacity(
+  map: maplibregl.Map,
+  selectedLayer: WeatherLayer,
+  opacity: number
+): void {
+  const clampedOpacity = Math.max(0, Math.min(1, opacity));
+
+  if (
+    selectedLayer === "temperature" &&
+    map.getLayer("temperature-raster-layer")
+  ) {
+    map.setPaintProperty(
+      "temperature-raster-layer",
+      "raster-opacity",
+      clampedOpacity
+    );
+  }
+
+  if (
+    selectedLayer === "clouds" &&
+    map.getLayer("cloud-raster-layer")
+  ) {
+    map.setPaintProperty(
+      "cloud-raster-layer",
+      "raster-opacity",
+      clampedOpacity
+    );
+  }
+
+  if (
+    selectedLayer === "precipitation" &&
+    map.getLayer("precipitation-raster-layer")
+  ) {
+    map.setPaintProperty(
+      "precipitation-raster-layer",
+      "raster-opacity",
+      clampedOpacity
+    );
+  }
+
+  if (
+    selectedLayer === "elevation" &&
+    map.getLayer("elevation-raster-layer")
+  ) {
+    map.setPaintProperty(
+      "elevation-raster-layer",
+      "raster-opacity",
+      clampedOpacity
+    );
+  }
+
+  if (
+    selectedLayer === "hillshade" &&
+    map.getLayer("hillshade-raster-layer")
+  ) {
+    map.setPaintProperty(
+      "hillshade-raster-layer",
+      "raster-opacity",
+      clampedOpacity
+    );
+  }
+
+  if (
+    selectedLayer === "pressure" &&
+    map.getLayer("pressure-layer")
+  ) {
+    map.setPaintProperty(
+      "pressure-layer",
+      "circle-opacity",
+      clampedOpacity
+    );
+  }
+
+  if (
+    selectedLayer === "wind" &&
+    map.getLayer("wind-layer")
+  ) {
+    map.setPaintProperty(
+      "wind-layer",
+      "text-opacity",
+      clampedOpacity
+    );
+  }
+}
+
 export default function MapView({
   selectedLocation,
   selectedLayer,
   gridPoints,
   forecastHour,
   mapPitch,
+  overlayOpacity,
   onLocationSelect,
 }: MapViewProps) {
   const [hoverInfo, setHoverInfo] = useState<HoverInfo | null>(null);
@@ -188,6 +275,16 @@ export default function MapView({
 
     mapRef.current.setPitch(mapPitch);
   }, [mapPitch]);
+
+  useEffect(() => {
+    if (!mapRef.current) return;
+
+    applyLayerOpacity(
+      mapRef.current,
+      selectedLayer,
+      overlayOpacity
+    );
+  }, [selectedLayer, overlayOpacity]);
 
   useEffect(() => {
     if (!mapContainer.current || mapRef.current) return;
@@ -340,37 +437,74 @@ export default function MapView({
     if (gridPoints.length === 0) return;
 
     if (selectedLayer === "temperature") {
-      updateRasterLayer(mapRef.current, gridPoints, forecastHour);
+      updateRasterLayer(
+        mapRef.current,
+        gridPoints,
+        forecastHour,
+        overlayOpacity
+      );
     }
 
     if (selectedLayer === "clouds") {
-      updateCloudRasterLayer(mapRef.current, gridPoints, forecastHour);
+      updateCloudRasterLayer(
+        mapRef.current,
+        gridPoints,
+        forecastHour,
+        overlayOpacity
+      );
     }
 
     if (selectedLayer === "precipitation") {
       updatePrecipitationRasterLayer(
         mapRef.current,
         gridPoints,
-        forecastHour
+        forecastHour,
+        overlayOpacity
       );
     }
 
     if (selectedLayer === "elevation") {
-      updateElevationRasterLayer(mapRef.current, gridPoints);
+      updateElevationRasterLayer(
+        mapRef.current,
+        gridPoints,
+        overlayOpacity
+      );
     }
 
     if (selectedLayer === "hillshade") {
-      updateHillshadeRasterLayer(mapRef.current, gridPoints);
+      updateHillshadeRasterLayer(
+        mapRef.current,
+        gridPoints,
+        overlayOpacity
+      );
     }
 
     if (selectedLayer === "pressure") {
-      updatePressureLayer(mapRef.current, gridPoints, forecastHour);
+      updatePressureLayer(
+        mapRef.current,
+        gridPoints,
+        forecastHour
+      );
     }
 
     if (selectedLayer === "wind") {
-      updateWindLayer(mapRef.current, gridPoints, forecastHour);
+      updateWindLayer(
+        mapRef.current,
+        gridPoints,
+        forecastHour
+      );
     }
-  }, [gridPoints, selectedLayer, forecastHour]);
+
+    applyLayerOpacity(
+      mapRef.current,
+      selectedLayer,
+      overlayOpacity
+    );
+  }, [
+    gridPoints,
+    selectedLayer,
+    forecastHour,
+  ]);
 
   return (
     <div className="map-container-wrapper">

@@ -17,8 +17,10 @@ interface WeatherPanelProps {
   selectedLayer: WeatherLayer;
   forecastHour: number;
   mapPitch: number;
+  overlayOpacity: number;
   onForecastHourChange: (hour: number) => void;
   onPitchChange: (pitch: number) => void;
+  onOverlayOpacityChange: (opacity: number) => void;
   onLayerChange: (layer: WeatherLayer) => void;
   onSearch: (query: string) => void;
 }
@@ -38,8 +40,10 @@ export default function WeatherPanel({
   selectedLayer,
   forecastHour,
   mapPitch,
+  overlayOpacity,
   onForecastHourChange,
   onPitchChange,
+  onOverlayOpacityChange,
   onLayerChange,
   onSearch,
 }: WeatherPanelProps) {
@@ -48,6 +52,9 @@ export default function WeatherPanel({
 
   const isTimeDependentLayer =
     TIME_DEPENDENT_LAYERS.includes(selectedLayer);
+
+  const hasActiveOverlay =
+    selectedLayer !== "none";
 
   useEffect(() => {
     if (!isTimeDependentLayer && isPlaying) {
@@ -102,7 +109,7 @@ export default function WeatherPanel({
           className="time-slider"
           type="range"
           min="0"
-          max="70"
+          max="60"
           step="1"
           value={mapPitch}
           onChange={(event) =>
@@ -112,6 +119,28 @@ export default function WeatherPanel({
 
         <p>{mapPitch}°</p>
       </div>
+
+      {hasActiveOverlay && (
+        <div className="weather-card">
+          <h2>Layer Opacity</h2>
+
+          <input
+            className="time-slider"
+            type="range"
+            min="0"
+            max="100"
+            step="1"
+            value={Math.round(overlayOpacity * 100)}
+            onChange={(event) =>
+              onOverlayOpacityChange(
+                Number(event.target.value) / 100
+              )
+            }
+          />
+
+          <p>{Math.round(overlayOpacity * 100)}%</p>
+        </div>
+      )}
 
       {isTimeDependentLayer && (
         <>

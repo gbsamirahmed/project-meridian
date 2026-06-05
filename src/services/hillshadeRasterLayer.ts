@@ -136,7 +136,7 @@ function createHillshadeRaster(
       imageData.data[pixelIndex] = shade;
       imageData.data[pixelIndex + 1] = shade;
       imageData.data[pixelIndex + 2] = shade;
-      imageData.data[pixelIndex + 3] = 120;
+      imageData.data[pixelIndex + 3] = 255;
     }
   }
 
@@ -183,7 +183,8 @@ function getRasterCoordinates(
 
 export function updateHillshadeRasterLayer(
   map: maplibregl.Map,
-  gridPoints: GridPoint[]
+  gridPoints: GridPoint[],
+  opacity: number
 ): void {
   if (gridPoints.length === 0) return;
 
@@ -210,6 +211,14 @@ export function updateHillshadeRasterLayer(
       coordinates,
     });
 
+    if (map.getLayer(LAYER_ID)) {
+      map.setPaintProperty(
+        LAYER_ID,
+        "raster-opacity",
+        opacity
+      );
+    }
+
     return;
   }
 
@@ -224,7 +233,7 @@ export function updateHillshadeRasterLayer(
     type: "raster",
     source: SOURCE_ID,
     paint: {
-      "raster-opacity": 0.75,
+      "raster-opacity": opacity,
       "raster-resampling": "linear",
     },
   });

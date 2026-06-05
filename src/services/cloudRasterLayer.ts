@@ -90,7 +90,7 @@ function createCloudRaster(
         gridY
       );
 
-      const opacity = Math.max(
+      const pixelAlpha = Math.max(
         0,
         Math.min(180, (cloudCover / 100) * 180)
       );
@@ -101,7 +101,7 @@ function createCloudRaster(
       imageData.data[pixelIndex] = 230;
       imageData.data[pixelIndex + 1] = 235;
       imageData.data[pixelIndex + 2] = 240;
-      imageData.data[pixelIndex + 3] = opacity;
+      imageData.data[pixelIndex + 3] = pixelAlpha;
     }
   }
 
@@ -137,7 +137,8 @@ function getRasterCoordinates(
 export function updateCloudRasterLayer(
   map: maplibregl.Map,
   gridPoints: GridPoint[],
-  forecastHour: number
+  forecastHour: number,
+  opacity: number
 ): void {
   if (gridPoints.length === 0) return;
 
@@ -158,6 +159,14 @@ export function updateCloudRasterLayer(
       coordinates,
     });
 
+    if (map.getLayer(LAYER_ID)) {
+      map.setPaintProperty(
+        LAYER_ID,
+        "raster-opacity",
+        opacity
+      );
+    }
+
     return;
   }
 
@@ -172,7 +181,7 @@ export function updateCloudRasterLayer(
     type: "raster",
     source: SOURCE_ID,
     paint: {
-      "raster-opacity": 0.65,
+      "raster-opacity": opacity,
       "raster-resampling": "linear",
     },
   });

@@ -9,7 +9,6 @@ const SOURCE_ID = "temperature-raster-source";
 const LAYER_ID = "temperature-raster-layer";
 
 const CANVAS_SIZE = 200;
-const ALPHA = 180;
 
 interface Rgb {
   r: number;
@@ -27,19 +26,11 @@ const TEMPERATURE_SCALE = [
   { temperature: 40, color: { r: 126, g: 34, b: 206 } },
 ];
 
-function interpolateNumber(
-  start: number,
-  end: number,
-  ratio: number
-): number {
+function interpolateNumber(start: number, end: number, ratio: number): number {
   return start + (end - start) * ratio;
 }
 
-function interpolateColor(
-  start: Rgb,
-  end: Rgb,
-  ratio: number
-): Rgb {
+function interpolateColor(start: Rgb, end: Rgb, ratio: number): Rgb {
   return {
     r: Math.round(interpolateNumber(start.r, end.r, ratio)),
     g: Math.round(interpolateNumber(start.g, end.g, ratio)),
@@ -70,11 +61,7 @@ function temperatureToRgb(temperature: number): Rgb {
         (temperature - currentStop.temperature) /
         (nextStop.temperature - currentStop.temperature);
 
-      return interpolateColor(
-        currentStop.color,
-        nextStop.color,
-        ratio
-      );
+      return interpolateColor(currentStop.color, nextStop.color, ratio);
     }
   }
 
@@ -106,7 +93,6 @@ function createTemperatureRaster(
   forecastHour: number
 ): string {
   const canvas = document.createElement("canvas");
-
   canvas.width = CANVAS_SIZE;
   canvas.height = CANVAS_SIZE;
 
@@ -116,39 +102,23 @@ function createTemperatureRaster(
     throw new Error("Could not create raster canvas context");
   }
 
-  const matrix = buildTemperatureMatrix(
-    gridPoints,
-    forecastHour
-  );
-
-  const imageData = context.createImageData(
-    CANVAS_SIZE,
-    CANVAS_SIZE
-  );
+  const matrix = buildTemperatureMatrix(gridPoints, forecastHour);
+  const imageData = context.createImageData(CANVAS_SIZE, CANVAS_SIZE);
 
   for (let y = 0; y < CANVAS_SIZE; y++) {
     for (let x = 0; x < CANVAS_SIZE; x++) {
-      const gridX =
-        (x / (CANVAS_SIZE - 1)) * (GRID_SIZE - 1);
+      const gridX = (x / (CANVAS_SIZE - 1)) * (GRID_SIZE - 1);
+      const gridY = (y / (CANVAS_SIZE - 1)) * (GRID_SIZE - 1);
 
-      const gridY =
-        (y / (CANVAS_SIZE - 1)) * (GRID_SIZE - 1);
-
-      const temperature = interpolateGridValue(
-        matrix,
-        gridX,
-        gridY
-      );
-
+      const temperature = interpolateGridValue(matrix, gridX, gridY);
       const rgb = temperatureToRgb(temperature);
 
-      const pixelIndex =
-        (y * CANVAS_SIZE + x) * 4;
+      const pixelIndex = (y * CANVAS_SIZE + x) * 4;
 
       imageData.data[pixelIndex] = rgb.r;
       imageData.data[pixelIndex + 1] = rgb.g;
       imageData.data[pixelIndex + 2] = rgb.b;
-      imageData.data[pixelIndex + 3] = ALPHA;
+      imageData.data[pixelIndex + 3] = 255;
     }
   }
 
@@ -159,12 +129,7 @@ function createTemperatureRaster(
 
 function getRasterCoordinates(
   gridPoints: GridPoint[]
-): [
-  [number, number],
-  [number, number],
-  [number, number],
-  [number, number],
-] {
+): [[number, number], [number, number], [number, number], [number, number]] {
   const longitudes = gridPoints.map((point) => point.longitude);
   const latitudes = gridPoints.map((point) => point.latitude);
 
@@ -184,15 +149,12 @@ function getRasterCoordinates(
 export function updateRasterLayer(
   map: maplibregl.Map,
   gridPoints: GridPoint[],
-  forecastHour: number
+  forecastHour: number,
+  opacity: number
 ): void {
   if (gridPoints.length === 0) return;
 
-  const imageUrl = createTemperatureRaster(
-    gridPoints,
-    forecastHour
-  );
-
+  const imageUrl = createTemperatureRaster(gridPoints, forecastHour);
   const coordinates = getRasterCoordinates(gridPoints);
 
   const existingSource = map.getSource(SOURCE_ID) as
@@ -204,6 +166,10 @@ export function updateRasterLayer(
       url: imageUrl,
       coordinates,
     });
+
+    if (map.getLayer(LAYER_ID)) {
+      map.setPaintProperty(LAYER_ID, "raster-opacity", opacity);
+    }
 
     return;
   }
@@ -219,7 +185,7 @@ export function updateRasterLayer(
     type: "raster",
     source: SOURCE_ID,
     paint: {
-      "raster-opacity": 0.4,
+      "raster-opacity": opacity,
       "raster-resampling": "linear",
     },
   });
