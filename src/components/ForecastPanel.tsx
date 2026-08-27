@@ -18,19 +18,24 @@ export default function ForecastPanel({
   forecast,
 }: ForecastPanelProps) {
   return (
-    <div className="weather-card">
-      <h2>7 Day Forecast</h2>
+    <section className="weather-card forecast-card">
+      <div className="card-heading">
+        <div>
+          <p className="section-kicker">Looking ahead</p>
+          <h2>7 day forecast</h2>
+        </div>
+      </div>
 
       {forecast.map((day) => (
         <div key={day.date} className="forecast-row">
           <span>{formatDate(day.date)}</span>
 
-          <span>
-            {Math.round(day.maxTemperature)}° /{" "}
-            {Math.round(day.minTemperature)}°
+          <span className="forecast-temperature">
+            <strong>{Math.round(day.maxTemperature)}°</strong>
+            <span>{Math.round(day.minTemperature)}°</span>
           </span>
         </div>
       ))}
-    </div>
+    </section>
   );
 }

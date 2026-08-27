@@ -1,290 +1,256 @@
 import { useEffect, useRef, useState } from "react";
 import maplibregl from "maplibre-gl";
 
-import { removeTemperatureLayer } from "../services/temperatureLayer";
-import { removeCloudLayer } from "../services/cloudLayer";
-import { removePrecipitationLayer } from "../services/precipitationLayer";
-
+import { WEATHER_GRID_REQUEST_DELAY_MS } from "../config/gridConfig";
+import {
+  placeForecastOverlaysInOrder,
+} from "../services/mapLayerOrder";
+import {
+  removePrecipitationSymbols,
+  setPrecipitationSymbolCoverage,
+  updatePrecipitationSymbols,
+} from "../services/precipitationSymbols";
 import {
   removePressureLayer,
+  setPressureLayerCoverage,
   updatePressureLayer,
 } from "../services/pressureLayer";
-
+import {
+  applyTerrainLayerState,
+  configurePlanetAndTerrain,
+  TERRAIN_EXAGGERATION,
+  TERRAIN_MIN_ZOOM,
+  updateTerrainActivation,
+} from "../services/terrainLayers";
+import {
+  removeTemperatureContourLayer,
+  setTemperatureContourCoverage,
+  updateTemperatureContourLayer,
+} from "../services/temperatureContourLayer";
+import {
+  createWeatherGridRequest,
+  weatherGridContainsViewport,
+  weatherGridCoversViewport,
+} from "../services/weatherRegion";
+import {
+  formatWindDirection,
+  interpolateWeatherAtLocation,
+} from "../services/weatherInterpolation";
+import {
+  isWeatherSurfaceLayer,
+  removeWeatherSurface,
+  setWeatherSurfaceCoverage,
+  updateWeatherSurface,
+} from "../services/weatherSurface";
 import {
   removeWindLayer,
+  setWindLayerCoverage,
   updateWindLayer,
 } from "../services/windLayer";
 
-import {
-  removeRasterLayer,
-  updateRasterLayer,
-} from "../services/rasterLayer";
-
-import {
-  removeCloudRasterLayer,
-  updateCloudRasterLayer,
-} from "../services/cloudRasterLayer";
-
-import {
-  removePrecipitationRasterLayer,
-  updatePrecipitationRasterLayer,
-} from "../services/precipitationRasterLayer";
-
-import {
-  removeElevationRasterLayer,
-  updateElevationRasterLayer,
-} from "../services/elevationRasterLayer";
-
-import {
-  removeHillshadeRasterLayer,
-  updateHillshadeRasterLayer,
-} from "../services/hillshadeRasterLayer";
-
-import { getGridCoordinates } from "../services/gridCoordinates";
-import { interpolateGridValue } from "../services/interpolation";
-import { buildWeatherMatrix } from "../services/weatherMatrix";
-
-import { GRID_SIZE } from "../config/gridConfig";
-
+import type { PrimaryView, WeatherOverlayState } from "../types/layer";
 import type { SelectedLocation } from "../types/location";
-import type { WeatherLayer } from "../types/layer";
-import type { GridPoint } from "../types/gridPoint";
+import type {
+  WeatherGrid,
+  WeatherGridRequest,
+  WeatherGridStatus,
+} from "../types/weatherGrid";
 
 import "maplibre-gl/dist/maplibre-gl.css";
 
 interface MapViewProps {
   selectedLocation: SelectedLocation | null;
-  selectedLayer: WeatherLayer;
-  gridPoints: GridPoint[];
+  primaryView: PrimaryView;
+  weatherOverlays: WeatherOverlayState;
+  weatherGrid: WeatherGrid | null;
+  weatherGridStatus: WeatherGridStatus;
   forecastHour: number;
-  mapPitch: number;
-  overlayOpacity: number;
   onLocationSelect: (location: SelectedLocation) => void;
+  onWeatherGridRequest: (request: WeatherGridRequest) => void;
 }
 
-interface HoverInfo {
+interface InspectionPoint {
   x: number;
   y: number;
-  elevation: number;
-  temperature: number;
-  cloudCover: number;
-  precipitation: number;
-  pressure: number;
-  windSpeed: number;
+  containerWidth: number;
+  containerHeight: number;
+  latitude: number;
+  longitude: number;
+  elevation: number | null;
+  persistent: boolean;
 }
 
-function isInsideGridBounds(
-  latitude: number,
-  longitude: number,
-  gridPoints: GridPoint[]
-): boolean {
-  if (gridPoints.length === 0) return false;
+const PRIMARY_VIEW_NAMES: Record<PrimaryView, string> = {
+  terrain: "Terrain",
+  elevation: "Elevation relief",
+  precipitation: "Precipitation",
+  clouds: "Cloud cover",
+};
 
-  const longitudes = gridPoints.map((point) => point.longitude);
-  const latitudes = gridPoints.map((point) => point.latitude);
-
-  const west = Math.min(...longitudes);
-  const east = Math.max(...longitudes);
-  const south = Math.min(...latitudes);
-  const north = Math.max(...latitudes);
-
-  return (
-    latitude >= south &&
-    latitude <= north &&
-    longitude >= west &&
-    longitude <= east
-  );
+function removeForecastVisualizations(map: maplibregl.Map): void {
+  removeWeatherSurface(map);
+  removeTemperatureContourLayer(map);
+  removePressureLayer(map);
+  removeWindLayer(map);
+  removePrecipitationSymbols(map);
 }
 
-function getInterpolatedHoverValues(
-  latitude: number,
-  longitude: number,
-  gridPoints: GridPoint[],
+function renderVisualizations(
+  map: maplibregl.Map,
+  primaryView: PrimaryView,
+  overlays: WeatherOverlayState,
+  grid: WeatherGrid | null,
   forecastHour: number
-) {
-  const gridCoordinates = getGridCoordinates(
-    latitude,
-    longitude,
-    gridPoints
-  );
+): void {
+  applyTerrainLayerState(map, primaryView);
 
-  if (!gridCoordinates) return null;
+  if (!grid) {
+    removeForecastVisualizations(map);
+    return;
+  }
 
-  const gridX = gridCoordinates.x * (GRID_SIZE - 1);
-  const gridY = gridCoordinates.y * (GRID_SIZE - 1);
+  if (isWeatherSurfaceLayer(primaryView)) {
+    updateWeatherSurface(map, primaryView, grid, forecastHour);
+  } else {
+    removeWeatherSurface(map);
+  }
 
-  const elevationMatrix = buildWeatherMatrix(
-    gridPoints,
-    forecastHour,
-    (point) => point.elevation
-  );
+  if (overlays.temperatureContours) {
+    updateTemperatureContourLayer(map, grid, forecastHour);
+  } else {
+    removeTemperatureContourLayer(map);
+  }
 
-  const temperatureMatrix = buildWeatherMatrix(
-    gridPoints,
-    forecastHour,
-    (point, hour) => point.temperature[hour]
-  );
+  if (overlays.pressureIsobars) {
+    updatePressureLayer(map, grid, forecastHour);
+  } else {
+    removePressureLayer(map);
+  }
 
-  const cloudCoverMatrix = buildWeatherMatrix(
-    gridPoints,
-    forecastHour,
-    (point, hour) => point.cloudCover[hour]
-  );
+  if (overlays.windFlow) {
+    updateWindLayer(map, grid, forecastHour);
+  } else {
+    removeWindLayer(map);
+  }
 
-  const precipitationMatrix = buildWeatherMatrix(
-    gridPoints,
-    forecastHour,
-    (point, hour) => point.precipitation[hour]
-  );
+  if (primaryView === "precipitation") {
+    updatePrecipitationSymbols(map, grid, forecastHour);
+  } else {
+    removePrecipitationSymbols(map);
+  }
 
-  const pressureMatrix = buildWeatherMatrix(
-    gridPoints,
-    forecastHour,
-    (point, hour) => point.pressure[hour]
-  );
+  placeForecastOverlaysInOrder(map);
+}
 
-  const windSpeedMatrix = buildWeatherMatrix(
-    gridPoints,
-    forecastHour,
-    (point, hour) => point.windSpeed[hour]
-  );
+function setForecastCoverage(
+  map: maplibregl.Map,
+  grid: WeatherGrid | null
+): void {
+  const visible = grid !== null && weatherGridCoversViewport(map, grid);
+
+  setWeatherSurfaceCoverage(map, visible);
+  setTemperatureContourCoverage(map, visible);
+  setPressureLayerCoverage(map, visible);
+  setWindLayerCoverage(map, visible);
+  setPrecipitationSymbolCoverage(map, visible);
+}
+
+function createInspectionPoint(
+  map: maplibregl.Map,
+  location: maplibregl.LngLatLike,
+  x: number,
+  y: number,
+  persistent: boolean
+): InspectionPoint {
+  const lngLat = maplibregl.LngLat.convert(location);
+  const container = map.getContainer();
+  const renderedElevation = map.queryTerrainElevation(lngLat);
 
   return {
-    elevation: interpolateGridValue(elevationMatrix, gridX, gridY),
-    temperature: interpolateGridValue(temperatureMatrix, gridX, gridY),
-    cloudCover: interpolateGridValue(cloudCoverMatrix, gridX, gridY),
-    precipitation: interpolateGridValue(precipitationMatrix, gridX, gridY),
-    pressure: interpolateGridValue(pressureMatrix, gridX, gridY),
-    windSpeed: interpolateGridValue(windSpeedMatrix, gridX, gridY),
+    x,
+    y,
+    containerWidth: container.clientWidth,
+    containerHeight: container.clientHeight,
+    latitude: lngLat.lat,
+    longitude: lngLat.lng,
+    elevation:
+      renderedElevation === null
+        ? null
+        : renderedElevation / TERRAIN_EXAGGERATION,
+    persistent,
   };
 }
 
-function applyLayerOpacity(
-  map: maplibregl.Map,
-  selectedLayer: WeatherLayer,
-  opacity: number
-): void {
-  const clampedOpacity = Math.max(0, Math.min(1, opacity));
+function formatElevation(elevation: number | null): string {
+  return elevation === null ? "Unavailable" : `≈ ${Math.round(elevation / 10) * 10} m`;
+}
 
-  if (
-    selectedLayer === "temperature" &&
-    map.getLayer("temperature-raster-layer")
-  ) {
-    map.setPaintProperty(
-      "temperature-raster-layer",
-      "raster-opacity",
-      clampedOpacity
-    );
-  }
+function formatForecastTime(grid: WeatherGrid, forecastHour: number): string {
+  const time = grid.times[forecastHour];
 
-  if (
-    selectedLayer === "clouds" &&
-    map.getLayer("cloud-raster-layer")
-  ) {
-    map.setPaintProperty(
-      "cloud-raster-layer",
-      "raster-opacity",
-      clampedOpacity
-    );
-  }
-
-  if (
-    selectedLayer === "precipitation" &&
-    map.getLayer("precipitation-raster-layer")
-  ) {
-    map.setPaintProperty(
-      "precipitation-raster-layer",
-      "raster-opacity",
-      clampedOpacity
-    );
-  }
-
-  if (
-    selectedLayer === "elevation" &&
-    map.getLayer("elevation-raster-layer")
-  ) {
-    map.setPaintProperty(
-      "elevation-raster-layer",
-      "raster-opacity",
-      clampedOpacity
-    );
-  }
-
-  if (
-    selectedLayer === "hillshade" &&
-    map.getLayer("hillshade-raster-layer")
-  ) {
-    map.setPaintProperty(
-      "hillshade-raster-layer",
-      "raster-opacity",
-      clampedOpacity
-    );
-  }
-
-  if (
-    selectedLayer === "pressure" &&
-    map.getLayer("pressure-layer")
-  ) {
-    map.setPaintProperty(
-      "pressure-layer",
-      "circle-opacity",
-      clampedOpacity
-    );
-  }
-
-  if (
-    selectedLayer === "wind" &&
-    map.getLayer("wind-layer")
-  ) {
-    map.setPaintProperty(
-      "wind-layer",
-      "text-opacity",
-      clampedOpacity
-    );
-  }
+  return time ? `${time.replace("T", " ")} UTC` : `Forecast +${forecastHour} h`;
 }
 
 export default function MapView({
   selectedLocation,
-  selectedLayer,
-  gridPoints,
+  primaryView,
+  weatherOverlays,
+  weatherGrid,
+  weatherGridStatus,
   forecastHour,
-  mapPitch,
-  overlayOpacity,
   onLocationSelect,
+  onWeatherGridRequest,
 }: MapViewProps) {
-  const [hoverInfo, setHoverInfo] = useState<HoverInfo | null>(null);
+  const [hoverInspection, setHoverInspection] =
+    useState<InspectionPoint | null>(null);
+  const [selectedInspection, setSelectedInspection] =
+    useState<InspectionPoint | null>(null);
 
   const mapContainer = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<maplibregl.Map | null>(null);
   const markerRef = useRef<maplibregl.Marker | null>(null);
+  const requestTimeoutRef = useRef<number | null>(null);
+  const weatherRequestInFlightRef = useRef(false);
 
-  const gridPointsRef = useRef<GridPoint[]>([]);
-  const forecastHourRef = useRef(0);
+  const weatherGridRef = useRef<WeatherGrid | null>(weatherGrid);
+  const weatherGridStatusRef = useRef(weatherGridStatus);
+  const primaryViewRef = useRef(primaryView);
+  const weatherOverlaysRef = useRef(weatherOverlays);
+  const forecastHourRef = useRef(forecastHour);
+  const locationSelectRef = useRef(onLocationSelect);
+  const weatherGridRequestRef = useRef(onWeatherGridRequest);
 
   useEffect(() => {
-    gridPointsRef.current = gridPoints;
-  }, [gridPoints]);
+    weatherGridRef.current = weatherGrid;
+  }, [weatherGrid]);
+
+  useEffect(() => {
+    weatherGridStatusRef.current = weatherGridStatus;
+
+    if (weatherGridStatus !== "loading") {
+      weatherRequestInFlightRef.current = false;
+    }
+  }, [weatherGridStatus]);
+
+  useEffect(() => {
+    primaryViewRef.current = primaryView;
+  }, [primaryView]);
+
+  useEffect(() => {
+    weatherOverlaysRef.current = weatherOverlays;
+  }, [weatherOverlays]);
 
   useEffect(() => {
     forecastHourRef.current = forecastHour;
   }, [forecastHour]);
 
   useEffect(() => {
-    if (!mapRef.current) return;
-
-    mapRef.current.setPitch(mapPitch);
-  }, [mapPitch]);
+    locationSelectRef.current = onLocationSelect;
+  }, [onLocationSelect]);
 
   useEffect(() => {
-    if (!mapRef.current) return;
-
-    applyLayerOpacity(
-      mapRef.current,
-      selectedLayer,
-      overlayOpacity
-    );
-  }, [selectedLayer, overlayOpacity]);
+    weatherGridRequestRef.current = onWeatherGridRequest;
+  }, [onWeatherGridRequest]);
 
   useEffect(() => {
     if (!mapContainer.current || mapRef.current) return;
@@ -292,240 +258,330 @@ export default function MapView({
     const map = new maplibregl.Map({
       container: mapContainer.current,
       style: "https://tiles.openfreemap.org/styles/liberty",
-      center: [-0.1276, 51.5072],
-      zoom: 9,
+      center: [-4.0762, 53.0685],
+      zoom: 11.4,
+      minZoom: 1.4,
       pitch: 0,
       bearing: 0,
+      maxPitch: 72,
+      renderWorldCopies: false,
     });
+    let pendingPointerEvent: maplibregl.MapMouseEvent | null = null;
+    let pointerFrame: number | null = null;
 
-    map.addControl(new maplibregl.NavigationControl(), "top-right");
+    mapRef.current = map;
 
-    map.on("load", () => {
-      if (!map.getSource("terrain-dem")) {
-        map.addSource("terrain-dem", {
-          type: "raster-dem",
-          tiles: [
-            "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png",
-          ],
-          tileSize: 256,
-          encoding: "terrarium",
-          maxzoom: 14,
-        });
+    const requestWeatherForViewport = () => {
+      if (weatherGridStatusRef.current === "loading") return;
+      if (weatherRequestInFlightRef.current) return;
+
+      const currentGrid = weatherGridRef.current;
+
+      if (currentGrid && weatherGridContainsViewport(map, currentGrid)) return;
+
+      const request = createWeatherGridRequest(map);
+
+      if (request) {
+        weatherRequestInFlightRef.current = true;
+        weatherGridRequestRef.current(request);
       }
+    };
 
-      map.setTerrain({
-        source: "terrain-dem",
-        exaggeration: 1.5,
-      });
+    const queueWeatherRequest = () => {
+      const currentGrid = weatherGridRef.current;
+
+      if (currentGrid && weatherGridContainsViewport(map, currentGrid)) return;
+      if (requestTimeoutRef.current !== null) return;
+
+      requestTimeoutRef.current = window.setTimeout(() => {
+        requestTimeoutRef.current = null;
+        requestWeatherForViewport();
+      }, WEATHER_GRID_REQUEST_DELAY_MS);
+    };
+
+    const handleMapMovement = () => {
+      setForecastCoverage(map, weatherGridRef.current);
+      queueWeatherRequest();
+    };
+
+    const handleMapMoveEnd = () => {
+      renderVisualizations(
+        map,
+        primaryViewRef.current,
+        weatherOverlaysRef.current,
+        weatherGridRef.current,
+        forecastHourRef.current
+      );
+      setForecastCoverage(map, weatherGridRef.current);
+      queueWeatherRequest();
+    };
+
+    const handlePointerFrame = () => {
+      pointerFrame = null;
+      const event = pendingPointerEvent;
+
+      if (!event) return;
+
+      setHoverInspection(
+        createInspectionPoint(
+          map,
+          event.lngLat,
+          event.point.x,
+          event.point.y,
+          false
+        )
+      );
+    };
+
+    const refreshSelectedElevation = () => {
+      const markerLocation = markerRef.current?.getLngLat();
+
+      if (!markerLocation) return;
+
+      const renderedElevation = map.queryTerrainElevation(markerLocation);
+
+      if (renderedElevation === null) return;
+
+      setSelectedInspection((current) =>
+        current
+          ? {
+              ...current,
+              elevation: renderedElevation / TERRAIN_EXAGGERATION,
+            }
+          : current
+      );
+    };
+
+    const handleMouseMove = (event: maplibregl.MapMouseEvent) => {
+      pendingPointerEvent = event;
+
+      if (pointerFrame === null) {
+        pointerFrame = window.requestAnimationFrame(handlePointerFrame);
+      }
+    };
+
+    map.addControl(
+      new maplibregl.NavigationControl({ visualizePitch: true }),
+      "top-right"
+    );
+
+    map.on("style.load", () => {
+      configurePlanetAndTerrain(map);
+      renderVisualizations(
+        map,
+        primaryViewRef.current,
+        weatherOverlaysRef.current,
+        weatherGridRef.current,
+        forecastHourRef.current
+      );
+      setForecastCoverage(map, weatherGridRef.current);
+      queueWeatherRequest();
     });
+
+    map.on("move", handleMapMovement);
+    map.on("moveend", handleMapMoveEnd);
+    map.on("zoom", () => updateTerrainActivation(map));
+    map.on("mousemove", handleMouseMove);
+    map.on("mouseleave", () => setHoverInspection(null));
+    map.on("idle", refreshSelectedElevation);
 
     map.on("click", (event) => {
-      onLocationSelect({
+      const point = createInspectionPoint(
+        map,
+        event.lngLat,
+        event.point.x,
+        event.point.y,
+        true
+      );
+
+      setHoverInspection(null);
+      setSelectedInspection(point);
+      locationSelectRef.current({
         latitude: event.lngLat.lat,
         longitude: event.lngLat.lng,
       });
     });
 
-    map.on("mousemove", (event) => {
-      const currentGridPoints = gridPointsRef.current;
-
-      if (
-        !isInsideGridBounds(
-          event.lngLat.lat,
-          event.lngLat.lng,
-          currentGridPoints
-        )
-      ) {
-        setHoverInfo(null);
-        return;
-      }
-
-      const values = getInterpolatedHoverValues(
-        event.lngLat.lat,
-        event.lngLat.lng,
-        currentGridPoints,
-        forecastHourRef.current
-      );
-
-      if (!values) {
-        setHoverInfo(null);
-        return;
-      }
-
-      setHoverInfo({
-        x: event.point.x,
-        y: event.point.y,
-        ...values,
-      });
-    });
-
-    map.on("mouseleave", () => {
-      setHoverInfo(null);
-    });
-
-    mapRef.current = map;
-
     return () => {
-      removeTemperatureLayer(map);
-      removeRasterLayer(map);
-      removeCloudLayer(map);
-      removeCloudRasterLayer(map);
-      removePrecipitationLayer(map);
-      removePrecipitationRasterLayer(map);
-      removeElevationRasterLayer(map);
-      removeHillshadeRasterLayer(map);
-      removePressureLayer(map);
-      removeWindLayer(map);
+      if (requestTimeoutRef.current !== null) {
+        window.clearTimeout(requestTimeoutRef.current);
+      }
 
+      if (pointerFrame !== null) window.cancelAnimationFrame(pointerFrame);
+
+      markerRef.current?.remove();
+      markerRef.current = null;
+      removeForecastVisualizations(map);
       map.remove();
       mapRef.current = null;
     };
-  }, [onLocationSelect]);
+  }, []);
 
   useEffect(() => {
-    if (!selectedLocation || !mapRef.current) return;
+    const map = mapRef.current;
+
+    if (!map?.isStyleLoaded()) return;
+
+    renderVisualizations(
+      map,
+      primaryView,
+      weatherOverlays,
+      weatherGrid,
+      forecastHour
+    );
+    setForecastCoverage(map, weatherGrid);
+
+    if (!weatherGrid || !weatherGridContainsViewport(map, weatherGrid)) {
+      const request = createWeatherGridRequest(map);
+
+      if (request && !weatherRequestInFlightRef.current) {
+        weatherRequestInFlightRef.current = true;
+        weatherGridRequestRef.current(request);
+      }
+    }
+  }, [primaryView, weatherOverlays, weatherGrid, forecastHour]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+
+    if (!selectedLocation || !map) return;
 
     const lngLat: [number, number] = [
       selectedLocation.longitude,
       selectedLocation.latitude,
     ];
+    const currentCenter = map.getCenter();
+    const isLongDistanceMove =
+      Math.hypot(
+        currentCenter.lng - selectedLocation.longitude,
+        currentCenter.lat - selectedLocation.latitude
+      ) > 6;
+    const cameraOptions = {
+      center: lngLat,
+      zoom: Math.max(map.getZoom(), 10),
+    };
 
-    if (selectedLayer !== "none" && gridPoints.length > 0) {
-      const longitudes = gridPoints.map((point) => point.longitude);
-      const latitudes = gridPoints.map((point) => point.latitude);
-
-      const bounds = new maplibregl.LngLatBounds(
-        [Math.min(...longitudes), Math.min(...latitudes)],
-        [Math.max(...longitudes), Math.max(...latitudes)]
-      );
-
-      mapRef.current.fitBounds(bounds, {
-        padding: 100,
-        duration: 1000,
-      });
+    if (isLongDistanceMove || map.getZoom() < TERRAIN_MIN_ZOOM) {
+      map.jumpTo(cameraOptions);
     } else {
-      mapRef.current.flyTo({
-        center: lngLat,
-        zoom: 10,
-        essential: true,
-      });
+      map.easeTo({ ...cameraOptions, duration: 650, essential: true });
     }
 
     if (markerRef.current) {
       markerRef.current.setLngLat(lngLat);
     } else {
-      markerRef.current = new maplibregl.Marker()
+      markerRef.current = new maplibregl.Marker({ color: "#ff7048" })
         .setLngLat(lngLat)
-        .addTo(mapRef.current);
-    }
-  }, [selectedLocation, selectedLayer, gridPoints]);
-
-  useEffect(() => {
-    if (!mapRef.current) return;
-
-    removeTemperatureLayer(mapRef.current);
-    removeRasterLayer(mapRef.current);
-    removeCloudLayer(mapRef.current);
-    removeCloudRasterLayer(mapRef.current);
-    removePrecipitationLayer(mapRef.current);
-    removePrecipitationRasterLayer(mapRef.current);
-    removeElevationRasterLayer(mapRef.current);
-    removeHillshadeRasterLayer(mapRef.current);
-    removePressureLayer(mapRef.current);
-    removeWindLayer(mapRef.current);
-
-    if (gridPoints.length === 0) return;
-
-    if (selectedLayer === "temperature") {
-      updateRasterLayer(
-        mapRef.current,
-        gridPoints,
-        forecastHour,
-        overlayOpacity
-      );
+        .addTo(map);
     }
 
-    if (selectedLayer === "clouds") {
-      updateCloudRasterLayer(
-        mapRef.current,
-        gridPoints,
-        forecastHour,
-        overlayOpacity
-      );
-    }
+    const container = map.getContainer();
 
-    if (selectedLayer === "precipitation") {
-      updatePrecipitationRasterLayer(
-        mapRef.current,
-        gridPoints,
-        forecastHour,
-        overlayOpacity
-      );
-    }
-
-    if (selectedLayer === "elevation") {
-      updateElevationRasterLayer(
-        mapRef.current,
-        gridPoints,
-        overlayOpacity
-      );
-    }
-
-    if (selectedLayer === "hillshade") {
-      updateHillshadeRasterLayer(
-        mapRef.current,
-        gridPoints,
-        overlayOpacity
-      );
-    }
-
-    if (selectedLayer === "pressure") {
-      updatePressureLayer(
-        mapRef.current,
-        gridPoints,
-        forecastHour
-      );
-    }
-
-    if (selectedLayer === "wind") {
-      updateWindLayer(
-        mapRef.current,
-        gridPoints,
-        forecastHour
-      );
-    }
-
-    applyLayerOpacity(
-      mapRef.current,
-      selectedLayer,
-      overlayOpacity
+    setSelectedInspection(
+      createInspectionPoint(
+        map,
+        lngLat,
+        container.clientWidth / 2,
+        container.clientHeight / 2,
+        true
+      )
     );
-  }, [
-    gridPoints,
-    selectedLayer,
-    forecastHour,
-  ]);
+  }, [selectedLocation]);
+
+  const activeInspection = hoverInspection ?? selectedInspection;
+  const inspectedWeather =
+    activeInspection && weatherGrid
+      ? interpolateWeatherAtLocation(
+          weatherGrid,
+          forecastHour,
+          activeInspection.latitude,
+          activeInspection.longitude
+        )
+      : null;
+  const overlayCount = Object.values(weatherOverlays).filter(Boolean).length;
+  const forecastStatus = weatherGridStatus === "loading" ? " · sampling" : "";
+  const inspectorLeft = activeInspection
+    ? activeInspection.x > activeInspection.containerWidth - 258
+      ? Math.max(10, activeInspection.x - 244)
+      : activeInspection.x + 14
+    : 0;
+  const inspectorTop = activeInspection
+    ? activeInspection.y > activeInspection.containerHeight - 286
+      ? Math.max(10, activeInspection.y - 270)
+      : activeInspection.y + 14
+    : 0;
 
   return (
     <div className="map-container-wrapper">
       <div className="map-container" ref={mapContainer} />
 
-      <div className="layer-badge">Layer: {selectedLayer}</div>
+      <div className="layer-badge">
+        <span className="layer-status-dot" />
+        <span>
+          {PRIMARY_VIEW_NAMES[primaryView]}
+          {overlayCount > 0
+            ? ` + ${overlayCount} overlay${overlayCount === 1 ? "" : "s"}`
+            : ""}
+          {forecastStatus}
+        </span>
+      </div>
 
-      {hoverInfo && (
+      <div className="map-hint">
+        Drag to explore <span /> Hover or tap to inspect
+      </div>
+
+      {activeInspection && (
         <div
-          className="map-hover-card"
-          style={{
-            left: hoverInfo.x + 14,
-            top: hoverInfo.y + 14,
-          }}
+          className="map-hover-card map-inspector-card"
+          style={{ left: inspectorLeft, top: inspectorTop }}
         >
-          <p>Elevation: {Math.round(hoverInfo.elevation)} m</p>
-          <p>Temp: {hoverInfo.temperature.toFixed(1)} °C</p>
-          <p>Cloud: {Math.round(hoverInfo.cloudCover)} %</p>
-          <p>Rain: {hoverInfo.precipitation.toFixed(1)} mm</p>
-          <p>Pressure: {Math.round(hoverInfo.pressure)} hPa</p>
-          <p>Wind: {Math.round(hoverInfo.windSpeed)} km/h</p>
+          <div className="inspector-heading">
+            <p className="hover-title">
+              {activeInspection.persistent ? "Selected point" : "Point forecast"}
+            </p>
+            <span>
+              {activeInspection.latitude.toFixed(4)}, {activeInspection.longitude.toFixed(4)}
+            </span>
+          </div>
+
+          <div className="inspector-metrics">
+            <span>Elevation</span>
+            <strong>{formatElevation(activeInspection.elevation)}</strong>
+
+            {inspectedWeather ? (
+              <>
+                <span>Temperature</span>
+                <strong>{inspectedWeather.temperature.toFixed(1)} °C</strong>
+                <span>Precipitation</span>
+                <strong>
+                  {inspectedWeather.precipitation < 0.05
+                    ? "Dry"
+                    : `${inspectedWeather.precipitation.toFixed(1)} mm`}
+                </strong>
+                <span>Cloud cover</span>
+                <strong>≈ {Math.round(inspectedWeather.cloudCover / 5) * 5}%</strong>
+                <span>Pressure</span>
+                <strong>{Math.round(inspectedWeather.pressure)} hPa</strong>
+                <span>Wind</span>
+                <strong>{Math.round(inspectedWeather.windSpeed)} km/h</strong>
+                <span>Direction</span>
+                <strong>{formatWindDirection(inspectedWeather.windDirection)}</strong>
+              </>
+            ) : (
+              <span className="inspector-unavailable">
+                Forecast values are outside the current sampled field.
+              </span>
+            )}
+          </div>
+
+          <small>
+            {weatherGrid
+              ? formatForecastTime(weatherGrid, forecastHour)
+              : "Forecast field loading"}
+            {inspectedWeather
+              ? ` · interpolated from ${weatherGrid?.rows} × ${weatherGrid?.columns} samples`
+              : ""}
+          </small>
         </div>
       )}
     </div>

@@ -1,212 +1,235 @@
 import { useEffect, useState } from "react";
+import type { FormEvent } from "react";
 
 import ForecastPanel from "./ForecastPanel";
+import LayerLegend from "./LayerLegend";
 import LayerPanel from "./LayerPanel";
 import TimeSlider from "./TimeSlider";
-import TemperatureLegend from "./TemperatureLegend";
 
+import type { PrimaryView, WeatherOverlayState } from "../types/layer";
 import type { SelectedLocation } from "../types/location";
-import type { WeatherData } from "../types/weather";
 import type { Place } from "../types/place";
-import type { WeatherLayer } from "../types/layer";
+import type { WeatherData } from "../types/weather";
+import type { WeatherGrid, WeatherGridStatus } from "../types/weatherGrid";
 
 interface WeatherPanelProps {
   selectedLocation: SelectedLocation | null;
   weather: WeatherData | null;
   place: Place | null;
-  selectedLayer: WeatherLayer;
+  primaryView: PrimaryView;
+  weatherOverlays: WeatherOverlayState;
   forecastHour: number;
-  mapPitch: number;
-  overlayOpacity: number;
+  weatherGrid: WeatherGrid | null;
+  weatherGridStatus: WeatherGridStatus;
   onForecastHourChange: (hour: number) => void;
-  onPitchChange: (pitch: number) => void;
-  onOverlayOpacityChange: (opacity: number) => void;
-  onLayerChange: (layer: WeatherLayer) => void;
+  onPrimaryViewChange: (view: PrimaryView) => void;
+  onOverlayChange: (
+    overlay: keyof WeatherOverlayState,
+    enabled: boolean
+  ) => void;
   onSearch: (query: string) => void;
 }
-
-const TIME_DEPENDENT_LAYERS: WeatherLayer[] = [
-  "temperature",
-  "clouds",
-  "precipitation",
-  "wind",
-  "pressure",
-];
 
 export default function WeatherPanel({
   selectedLocation,
   weather,
   place,
-  selectedLayer,
+  primaryView,
+  weatherOverlays,
   forecastHour,
-  mapPitch,
-  overlayOpacity,
+  weatherGrid,
+  weatherGridStatus,
   onForecastHourChange,
-  onPitchChange,
-  onOverlayOpacityChange,
-  onLayerChange,
+  onPrimaryViewChange,
+  onOverlayChange,
   onSearch,
 }: WeatherPanelProps) {
   const [query, setQuery] = useState("");
   const [isPlaying, setIsPlaying] = useState(false);
 
-  const isTimeDependentLayer =
-    TIME_DEPENDENT_LAYERS.includes(selectedLayer);
+  const handleSearchSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
 
-  const hasActiveOverlay =
-    selectedLayer !== "none";
+    if (!query.trim()) return;
 
-  useEffect(() => {
-    if (!isTimeDependentLayer && isPlaying) {
-      setIsPlaying(false);
-    }
-  }, [isTimeDependentLayer, isPlaying]);
+    onSearch(query.trim());
+    setQuery("");
+  };
 
   useEffect(() => {
-    if (!isPlaying || !isTimeDependentLayer) return;
+    if (!isPlaying) return;
 
     const interval = setInterval(() => {
-      onForecastHourChange(
-        forecastHour >= 24 ? 0 : forecastHour + 1
-      );
+      onForecastHourChange(forecastHour >= 24 ? 0 : forecastHour + 1);
     }, 500);
 
     return () => clearInterval(interval);
-  }, [
-    isPlaying,
-    isTimeDependentLayer,
-    forecastHour,
-    onForecastHourChange,
-  ]);
+  }, [isPlaying, forecastHour, onForecastHourChange]);
 
   return (
-    <aside className="weather-panel">
-      <h1>Meridian</h1>
+    <aside className="weather-panel" aria-label="Weather explorer">
+      <header className="panel-header">
+        <div className="brand-mark" aria-hidden="true">
+          <span />
+          <span />
+        </div>
 
-      <input
-        className="search-input"
-        type="text"
-        placeholder="Search location..."
-        value={query}
-        onChange={(event) => setQuery(event.target.value)}
-        onKeyDown={(event) => {
-          if (event.key === "Enter" && query.trim()) {
-            onSearch(query);
-            setQuery("");
-          }
-        }}
-      />
+        <div>
+          <p className="panel-kicker">Terrain weather</p>
+          <h1>Meridian</h1>
+        </div>
+      </header>
+
+      <p className="panel-intro">Read the forecast in the landscape.</p>
+
+      <form className="search-field" onSubmit={handleSearchSubmit}>
+        <input
+          className="search-input"
+          type="search"
+          aria-label="Search location"
+          placeholder="Find a mountain or place"
+          value={query}
+          onChange={(event) => setQuery(event.target.value)}
+        />
+
+        <button type="submit" aria-label="Search">
+          Go
+        </button>
+      </form>
 
       <LayerPanel
-        selectedLayer={selectedLayer}
-        onLayerChange={onLayerChange}
+        primaryView={primaryView}
+        weatherOverlays={weatherOverlays}
+        onPrimaryViewChange={onPrimaryViewChange}
+        onOverlayChange={onOverlayChange}
       />
 
-      <div className="weather-card">
-        <h2>Camera Angle</h2>
+      <section className="weather-card data-resolution-card">
+        <div className="resolution-heading">
+          <span
+            className={`data-status data-status-${weatherGridStatus}`}
+            aria-hidden="true"
+          />
+          <strong>
+            {weatherGridStatus === "loading"
+              ? "Sampling visible area"
+              : weatherGridStatus === "error"
+                ? "Forecast field unavailable"
+                : weatherGrid
+                  ? `${weatherGrid.rows} × ${weatherGrid.columns} model samples`
+                  : "Viewport forecast field"}
+          </strong>
+        </div>
+        <p>
+          Views, contours and arrows interpolate the same coarse model field;
+          denser marks do not mean finer forecast resolution.
+        </p>
+      </section>
 
-        <input
-          className="time-slider"
-          type="range"
-          min="0"
-          max="60"
-          step="1"
-          value={mapPitch}
-          onChange={(event) =>
-            onPitchChange(Number(event.target.value))
-          }
-        />
+      <TimeSlider
+        forecastHour={forecastHour}
+        forecastTimes={weather?.forecastTimes ?? weatherGrid?.times}
+        onForecastHourChange={onForecastHourChange}
+      />
 
-        <p>{mapPitch}°</p>
+      <div className="animation-controls">
+        <button
+          className="play-button"
+          onClick={() => setIsPlaying(!isPlaying)}
+        >
+          <span aria-hidden="true">{isPlaying ? "II" : ">"}</span>
+          {isPlaying ? "Pause" : "Play forecast"}
+        </button>
       </div>
 
-      {hasActiveOverlay && (
-        <div className="weather-card">
-          <h2>Layer Opacity</h2>
+      <LayerLegend
+        primaryView={primaryView}
+        weatherOverlays={weatherOverlays}
+      />
 
-          <input
-            className="time-slider"
-            type="range"
-            min="0"
-            max="100"
-            step="1"
-            value={Math.round(overlayOpacity * 100)}
-            onChange={(event) =>
-              onOverlayOpacityChange(
-                Number(event.target.value) / 100
-              )
-            }
-          />
-
-          <p>{Math.round(overlayOpacity * 100)}%</p>
-        </div>
-      )}
-
-      {isTimeDependentLayer && (
-        <>
-          <TimeSlider
-            forecastHour={forecastHour}
-            forecastTimes={weather?.forecastTimes}
-            onForecastHourChange={onForecastHourChange}
-          />
-
-          <div className="animation-controls">
-            <button
-              className="play-button"
-              onClick={() => setIsPlaying(!isPlaying)}
-            >
-              {isPlaying ? "Pause" : "Play"}
-            </button>
-          </div>
-        </>
-      )}
-
-      {selectedLayer === "temperature" && (
-        <TemperatureLegend />
-      )}
-
-      <div className="weather-card">
-        <h2>Selected Location</h2>
+      <section className="weather-card location-card">
+        <p className="section-kicker">Selected location</p>
 
         {selectedLocation ? (
-          <>
-            <p>{place?.name ?? "Loading..."}</p>
-
-            <p>
-              {selectedLocation.latitude.toFixed(4)},{" "}
+          <div className="location-content">
+            <h2 title={place?.name}>{place?.name ?? "Finding place..."}</h2>
+            <p className="coordinates">
+              {selectedLocation.latitude.toFixed(4)}, {" "}
               {selectedLocation.longitude.toFixed(4)}
             </p>
-          </>
+          </div>
         ) : (
-          <p>Click anywhere on the map.</p>
+          <div className="empty-state">
+            <span className="empty-state-marker" aria-hidden="true" />
+            <p>Search or click the map to inspect conditions.</p>
+          </div>
         )}
-      </div>
+      </section>
 
-      <div className="weather-card">
-        <h2>Current Weather</h2>
+      <section className="weather-card current-weather-card">
+        <div className="card-heading">
+          <div>
+            <p className="section-kicker">At this location</p>
+            <h2>Current conditions</h2>
+          </div>
+
+          {weather && (
+            <span className="live-badge">
+              <span /> Live
+            </span>
+          )}
+        </div>
 
         {weather ? (
-          <>
-            <p>Temperature: {weather.temperature} °C</p>
-            <p>Humidity: {weather.humidity} %</p>
-            <p>Dew Point: {weather.dewPoint} °C</p>
-            <p>Pressure: {weather.pressure} hPa</p>
-            <p>Wind: {weather.windSpeed} km/h</p>
-            <p>Gusts: {weather.windGusts} km/h</p>
-            <p>Cloud Cover: {weather.cloudCover} %</p>
-            <p>Precipitation: {weather.precipitation} mm</p>
-            <p>Visibility: {weather.visibility.toFixed(1)} km</p>
-          </>
-        ) : (
-          <p>Select a location.</p>
-        )}
-      </div>
+          <div className="current-weather-content">
+            <div className="temperature-reading">
+              <strong>{Math.round(weather.temperature)}°</strong>
+              <span>Air temperature</span>
+            </div>
 
-      {weather && (
-        <ForecastPanel
-          forecast={weather.forecast}
-        />
-      )}
+            <div className="weather-metrics">
+              <div>
+                <span>Wind</span>
+                <strong>{weather.windSpeed} km/h</strong>
+              </div>
+              <div>
+                <span>Gusts</span>
+                <strong>{weather.windGusts} km/h</strong>
+              </div>
+              <div>
+                <span>Rain</span>
+                <strong>{weather.precipitation} mm</strong>
+              </div>
+              <div>
+                <span>Cloud</span>
+                <strong>{weather.cloudCover}%</strong>
+              </div>
+              <div>
+                <span>Visibility</span>
+                <strong>{weather.visibility.toFixed(1)} km</strong>
+              </div>
+              <div>
+                <span>Pressure</span>
+                <strong>{Math.round(weather.pressure)} hPa</strong>
+              </div>
+              <div>
+                <span>Humidity</span>
+                <strong>{weather.humidity}%</strong>
+              </div>
+              <div>
+                <span>Dew point</span>
+                <strong>{weather.dewPoint}°</strong>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <p className="muted-copy">
+            Select a location to load live weather and forecast data.
+          </p>
+        )}
+      </section>
+
+      {weather && <ForecastPanel forecast={weather.forecast} />}
     </aside>
   );
 }

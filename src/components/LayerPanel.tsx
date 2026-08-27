@@ -1,40 +1,84 @@
-import type { WeatherLayer } from "../types/layer";
+import type { PrimaryView, WeatherOverlayState } from "../types/layer";
 
 interface LayerPanelProps {
-  selectedLayer: WeatherLayer;
-  onLayerChange: (layer: WeatherLayer) => void;
+  primaryView: PrimaryView;
+  weatherOverlays: WeatherOverlayState;
+  onPrimaryViewChange: (view: PrimaryView) => void;
+  onOverlayChange: (
+    overlay: keyof WeatherOverlayState,
+    enabled: boolean
+  ) => void;
 }
 
+const PRIMARY_VIEW_LABELS: Record<PrimaryView, string> = {
+  terrain: "Terrain",
+  elevation: "Elevation",
+  precipitation: "Precipitation",
+  clouds: "Cloud cover",
+};
+
+const OVERLAY_OPTIONS: Array<{
+  key: keyof WeatherOverlayState;
+  label: string;
+}> = [
+  { key: "temperatureContours", label: "Temperature contours" },
+  { key: "pressureIsobars", label: "Pressure isobars" },
+  { key: "windFlow", label: "Wind flow" },
+];
+
 export default function LayerPanel({
-  selectedLayer,
-  onLayerChange,
+  primaryView,
+  weatherOverlays,
+  onPrimaryViewChange,
+  onOverlayChange,
 }: LayerPanelProps) {
-  const layers: WeatherLayer[] = [
-    "none",
-    "temperature",
-    "clouds",
-    "precipitation",
-    "elevation",
-    "hillshade",
-    "wind",
-    "pressure",
-  ];
+  const primaryViews = Object.keys(PRIMARY_VIEW_LABELS) as PrimaryView[];
 
   return (
-    <div className="weather-card">
-      <h2>Layers</h2>
+    <section className="weather-card layer-card">
+      <div className="card-heading">
+        <div>
+          <p className="section-kicker">Map display</p>
+          <h2>Weather view</h2>
+        </div>
 
-      {layers.map((layer) => (
-        <label key={layer} className="layer-option">
-          <input
-            type="radio"
-            checked={selectedLayer === layer}
-            onChange={() => onLayerChange(layer)}
-          />
+        <span className="card-meta">{PRIMARY_VIEW_LABELS[primaryView]}</span>
+      </div>
 
-          {layer}
-        </label>
-      ))}
-    </div>
+      <fieldset className="layer-control-group">
+        <legend>View</legend>
+        <div className="layer-grid layer-grid-primary">
+          {primaryViews.map((view) => (
+            <label key={view} className="layer-option">
+              <input
+                type="radio"
+                name="primary-map-view"
+                checked={primaryView === view}
+                onChange={() => onPrimaryViewChange(view)}
+              />
+              <span>{PRIMARY_VIEW_LABELS[view]}</span>
+            </label>
+          ))}
+        </div>
+      </fieldset>
+
+      <fieldset className="layer-control-group layer-overlay-group">
+        <legend>Overlays</legend>
+        <div className="layer-grid layer-grid-overlays">
+          {OVERLAY_OPTIONS.map((option) => (
+            <label key={option.key} className="layer-option layer-toggle-option">
+              <input
+                type="checkbox"
+                checked={weatherOverlays[option.key]}
+                onChange={(event) =>
+                  onOverlayChange(option.key, event.target.checked)
+                }
+              />
+              <span>{option.label}</span>
+            </label>
+          ))}
+        </div>
+      </fieldset>
+    </section>
   );
 }

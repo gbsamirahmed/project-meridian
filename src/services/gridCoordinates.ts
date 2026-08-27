@@ -1,38 +1,27 @@
-import type { GridPoint } from "../types/gridPoint";
+import type { WeatherGridBounds } from "../types/weatherGrid";
 
 export function getGridCoordinates(
   latitude: number,
   longitude: number,
-  gridPoints: GridPoint[]
+  bounds: WeatherGridBounds
 ): {
   x: number;
   y: number;
 } | null {
-  if (gridPoints.length === 0) {
+  if (
+    bounds.east === bounds.west ||
+    bounds.north === bounds.south
+  ) {
     return null;
   }
 
-  const longitudes = gridPoints.map(
-    (point) => point.longitude
-  );
-
-  const latitudes = gridPoints.map(
-    (point) => point.latitude
-  );
-
-  const west = Math.min(...longitudes);
-  const east = Math.max(...longitudes);
-
-  const south = Math.min(...latitudes);
-  const north = Math.max(...latitudes);
-
   const xRatio =
-    (longitude - west) /
-    (east - west);
+    (longitude - bounds.west) /
+    (bounds.east - bounds.west);
 
   const yRatio =
-    (north - latitude) /
-    (north - south);
+    (bounds.north - latitude) /
+    (bounds.north - bounds.south);
 
   return {
     x: xRatio,

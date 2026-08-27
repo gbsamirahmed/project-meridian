@@ -1,9 +1,9 @@
-import { GRID_SIZE } from "../config/gridConfig";
-
 import type { GridPoint } from "../types/gridPoint";
 
 export function buildWeatherMatrix(
   gridPoints: GridPoint[],
+  rows: number,
+  columns: number,
   forecastHour: number,
   selector: (
     point: GridPoint,
@@ -12,16 +12,16 @@ export function buildWeatherMatrix(
 ): number[][] {
   const matrix: number[][] = [];
 
-  for (let row = 0; row < GRID_SIZE; row++) {
+  for (let row = 0; row < rows; row++) {
     const rowValues: number[] = [];
 
     for (
       let column = 0;
-      column < GRID_SIZE;
+      column < columns;
       column++
     ) {
       const index =
-        row * GRID_SIZE + column;
+        row * columns + column;
 
       rowValues.push(
         selector(

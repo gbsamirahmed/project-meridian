@@ -1,9 +1,11 @@
-export type WeatherLayer =
-  | "none"
-  | "temperature"
-  | "clouds"
-  | "precipitation"
+export type PrimaryView =
+  | "terrain"
   | "elevation"
-  | "hillshade"
-  | "wind"
-  | "pressure";
+  | "precipitation"
+  | "clouds";
+
+export interface WeatherOverlayState {
+  temperatureContours: boolean;
+  pressureIsobars: boolean;
+  windFlow: boolean;
+}

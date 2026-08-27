@@ -7,12 +7,14 @@ interface TimeSliderProps {
 function formatForecastTime(time?: string): string {
   if (!time) return "Select a location";
 
-  const date = new Date(time);
+  const hasExplicitTimeZone = /(?:Z|[+-]\d{2}:?\d{2})$/.test(time);
+  const date = new Date(hasExplicitTimeZone ? time : `${time}Z`);
 
   return new Intl.DateTimeFormat("en-GB", {
     weekday: "short",
     hour: "2-digit",
     minute: "2-digit",
+    timeZoneName: "short",
   }).format(date);
 }
 
@@ -26,14 +28,20 @@ export default function TimeSlider({
   );
 
   return (
-    <div className="weather-card">
-      <h2>Forecast Time</h2>
+    <section className="weather-card timeline-card">
+      <div className="card-heading timeline-heading">
+        <div>
+          <p className="section-kicker">Forecast timeline</p>
+          <h2>{label}</h2>
+        </div>
 
-      <p>{label}</p>
+        <span className="card-meta">+{forecastHour}h</span>
+      </div>
 
       <input
         className="time-slider"
         type="range"
+        aria-label="Forecast hour"
         min="0"
         max="24"
         step="1"
@@ -42,6 +50,11 @@ export default function TimeSlider({
           onForecastHourChange(Number(event.target.value))
         }
       />
-    </div>
+
+      <div className="range-labels">
+        <span>Now</span>
+        <span>+24 hours</span>
+      </div>
+    </section>
   );
 }
