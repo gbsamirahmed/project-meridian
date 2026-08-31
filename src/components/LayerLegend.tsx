@@ -4,11 +4,12 @@ import {
 } from "../config/layerVisuals";
 
 import type { VisualColorStop } from "../config/layerVisuals";
-import type { PrimaryView, WeatherOverlayState } from "../types/layer";
+import type { MapOverlayState } from "../types/layer";
 
 interface LayerLegendProps {
-  primaryView: PrimaryView;
-  weatherOverlays: WeatherOverlayState;
+  mapOverlays: MapOverlayState;
+  globalPrecipitationActive: boolean;
+  precipitationAccumulationHours?: number;
 }
 
 function buildGradient(
@@ -50,11 +51,21 @@ function GradientKey({
   );
 }
 
-function PrecipitationKey() {
+function PrecipitationKey({
+  global,
+  accumulationHours,
+}: {
+  global: boolean;
+  accumulationHours?: number;
+}) {
   return (
     <div className="legend-section">
       <GradientKey
-        title="Precipitation in previous hour (mm)"
+        title={
+          global
+            ? `GFS precipitation · ${accumulationHours ?? 1} h total (mm)`
+            : "Precipitation in previous hour (mm)"
+        }
         gradient={buildGradient(
           PRECIPITATION_INTENSITY_LEVELS,
           0,
@@ -63,7 +74,7 @@ function PrecipitationKey() {
         )}
         labels={["Dry", "0.1", "1", "3", "8", "15+"]}
       />
-      <div className="precipitation-symbol-key" aria-label="Precipitation intensity symbols">
+      {!global && <div className="precipitation-symbol-key" aria-label="Precipitation intensity symbols">
         {[
           { count: 1, label: "Light" },
           { count: 2, label: "Moderate" },
@@ -79,20 +90,17 @@ function PrecipitationKey() {
             {item.label}
           </span>
         ))}
-      </div>
+      </div>}
     </div>
   );
 }
 
 export default function LayerLegend({
-  primaryView,
-  weatherOverlays,
+  mapOverlays,
+  globalPrecipitationActive,
+  precipitationAccumulationHours,
 }: LayerLegendProps) {
-  const hasLegend =
-    primaryView !== "terrain" ||
-    weatherOverlays.temperatureContours ||
-    weatherOverlays.pressureIsobars ||
-    weatherOverlays.windFlow;
+  const hasLegend = Object.values(mapOverlays).some(Boolean);
 
   if (!hasLegend) return null;
 
@@ -100,7 +108,7 @@ export default function LayerLegend({
     <section className="weather-card legend-card">
       <p className="section-kicker">Visible information</p>
 
-      {primaryView === "elevation" && (
+      {mapOverlays.elevation && (
         <GradientKey
           title="DEM elevation"
           gradient={buildGradient(ELEVATION_COLOR_STOPS, -500, 8000)}
@@ -108,9 +116,14 @@ export default function LayerLegend({
         />
       )}
 
-      {primaryView === "precipitation" && <PrecipitationKey />}
+      {mapOverlays.precipitation && (
+        <PrecipitationKey
+          global={globalPrecipitationActive}
+          accumulationHours={precipitationAccumulationHours}
+        />
+      )}
 
-      {primaryView === "clouds" && (
+      {mapOverlays.clouds && (
         <GradientKey
           title="Model cloud cover"
           gradient="linear-gradient(to right, rgba(226, 231, 236, 0.05), rgba(205, 213, 218, 0.35), rgba(184, 192, 197, 0.72))"
@@ -118,7 +131,7 @@ export default function LayerLegend({
         />
       )}
 
-      {weatherOverlays.temperatureContours && (
+      {mapOverlays.temperatureContours && (
         <div className="legend-inline-key">
           <span className="temperature-contour-key" aria-hidden="true" />
           <p>
@@ -127,17 +140,20 @@ export default function LayerLegend({
         </div>
       )}
 
-      {weatherOverlays.pressureIsobars && (
+      {mapOverlays.pressureIsobars && (
         <div className="legend-inline-key">
           <span className="pressure-contour-key" aria-hidden="true" />
           <p>Mean sea-level pressure isobars are labelled in hPa.</p>
         </div>
       )}
 
-      {weatherOverlays.windFlow && (
+      {mapOverlays.windFlow && (
         <div className="legend-inline-key">
-          <span className="wind-sample" aria-hidden="true">→</span>
-          <p>Arrows show flow direction; warmer colours indicate faster wind.</p>
+          <span className="wind-trail-sample" aria-hidden="true" />
+          <p>
+            Moving traces show interpolated flow; faster motion indicates
+            stronger wind.
+          </p>
         </div>
       )}
     </section>

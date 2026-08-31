@@ -1,15 +1,21 @@
 import type { SelectedLocation } from "../types/location";
+import { requestNominatimJson } from "./nominatimClient";
+
+interface NominatimSearchResult {
+  lat: string;
+  lon: string;
+}
 
 export async function searchLocation(
-  query: string
+  query: string,
+  signal?: AbortSignal
 ): Promise<SelectedLocation | null> {
-  const response = await fetch(
-    `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(
-      query
-    )}&format=jsonv2&limit=1`
+  const normalisedQuery = query.trim().toLocaleLowerCase();
+  const results = await requestNominatimJson<NominatimSearchResult[]>(
+    `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(query)}&format=jsonv2&limit=1`,
+    `search:${normalisedQuery}`,
+    signal
   );
-
-  const results = await response.json();
 
   if (!results.length) {
     return null;

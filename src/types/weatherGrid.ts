@@ -9,11 +9,15 @@ export interface WeatherGridBounds {
 
 export interface WeatherGridRequest {
   bounds: WeatherGridBounds;
+  viewportBounds: WeatherGridBounds;
   rows: number;
   columns: number;
 }
 
-export interface WeatherGrid extends WeatherGridRequest {
+export interface WeatherGrid {
+  bounds: WeatherGridBounds;
+  rows: number;
+  columns: number;
   points: GridPoint[];
   times: string[];
   fetchedAt: number;
@@ -22,5 +26,7 @@ export interface WeatherGrid extends WeatherGridRequest {
 export type WeatherGridStatus =
   | "idle"
   | "loading"
+  | "refreshing"
   | "ready"
+  | "rate-limited"
   | "error";

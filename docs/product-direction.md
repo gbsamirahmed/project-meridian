@@ -4,7 +4,6 @@
 
 This document explains what Meridian is trying to become and why. It is a living statement of product direction, not a feature roadmap or technical specification.
 
-- `AGENTS.md` governs how Codex works in this repository.
 - `README.md` describes the application as it currently exists and how to run it.
 - The source code is authoritative for implementation details.
 

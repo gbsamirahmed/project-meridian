@@ -1,6 +1,8 @@
 interface TimeSliderProps {
   forecastHour: number;
-  forecastTimes?: string[];
+  forecastTimes: string[];
+  forecastHours?: number[];
+  sourceLabel?: string;
   onForecastHourChange: (hour: number) => void;
 }
 
@@ -21,11 +23,13 @@ function formatForecastTime(time?: string): string {
 export default function TimeSlider({
   forecastHour,
   forecastTimes,
+  forecastHours,
+  sourceLabel,
   onForecastHourChange,
 }: TimeSliderProps) {
-  const label = formatForecastTime(
-    forecastTimes?.[forecastHour]
-  );
+  const label = formatForecastTime(forecastTimes[forecastHour]);
+  const maximumIndex = Math.max(0, forecastTimes.length - 1);
+  const displayedForecastHour = forecastHours?.[forecastHour] ?? forecastHour;
 
   return (
     <section className="weather-card timeline-card">
@@ -35,7 +39,7 @@ export default function TimeSlider({
           <h2>{label}</h2>
         </div>
 
-        <span className="card-meta">+{forecastHour}h</span>
+        <span className="card-meta">+{displayedForecastHour}h</span>
       </div>
 
       <input
@@ -43,7 +47,7 @@ export default function TimeSlider({
         type="range"
         aria-label="Forecast hour"
         min="0"
-        max="24"
+        max={maximumIndex}
         step="1"
         value={forecastHour}
         onChange={(event) =>
@@ -52,9 +56,14 @@ export default function TimeSlider({
       />
 
       <div className="range-labels">
-        <span>Now</span>
-        <span>+24 hours</span>
+        <span>{forecastHours ? `+${forecastHours[0]}h` : "Now"}</span>
+        <span>
+          {forecastHours
+            ? `+${forecastHours[forecastHours.length - 1]}h`
+            : `+${maximumIndex} hours`}
+        </span>
       </div>
+      {sourceLabel && <p className="timeline-source">{sourceLabel}</p>}
     </section>
   );
 }

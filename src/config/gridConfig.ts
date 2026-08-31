@@ -12,5 +12,6 @@ export const WEATHER_GRID_MIN_ZOOM = 4.75;
 // padded. The sample count remains 9 by 9, so broader views are deliberately
 // coarser rather than generating more requests or suggesting more detail.
 export const WEATHER_GRID_MAX_SPAN_DEGREES = 24;
-export const WEATHER_GRID_REQUEST_DELAY_MS = 300;
+export const WEATHER_GRID_REQUEST_DELAY_MS = 550;
 export const WEATHER_GRID_CACHE_SIZE = 12;
+export const WEATHER_GRID_CACHE_MAX_AGE_MS = 30 * 60 * 1000;

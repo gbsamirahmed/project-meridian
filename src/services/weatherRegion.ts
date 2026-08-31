@@ -134,9 +134,23 @@ export function createWeatherGridRequest(
 
   return {
     bounds: { west, south, east, north },
+    viewportBounds: visible,
     rows: WEATHER_GRID_ROWS,
     columns: WEATHER_GRID_COLUMNS,
   };
+}
+
+export function weatherGridContainsLocation(
+  grid: WeatherGrid,
+  latitude: number,
+  longitude: number
+): boolean {
+  return (
+    longitude >= grid.bounds.west &&
+    longitude <= grid.bounds.east &&
+    latitude >= grid.bounds.south &&
+    latitude <= grid.bounds.north
+  );
 }
 
 export function weatherGridContainsViewport(
@@ -153,16 +167,30 @@ export function weatherGridContainsViewport(
   );
 }
 
-export function weatherGridCoversViewport(
+export function weatherGridOverlapsViewport(
   map: maplibregl.Map,
   grid: WeatherGrid
 ): boolean {
+  if (map.getZoom() < WEATHER_GRID_MIN_ZOOM) return false;
+
   const visible = getVisibleBounds(map);
 
   if (!visible) return false;
 
-  return boundsContain(
-    insetBounds(grid.bounds, WEATHER_GRID_VISIBLE_INSET_RATIO),
-    visible
+  const renderableBounds = insetBounds(
+    grid.bounds,
+    WEATHER_GRID_VISIBLE_INSET_RATIO
+  );
+
+  // Visibility and refresh coverage are deliberately different concepts. The
+  // weather tiles are geographically clipped to the sampled field, so they can
+  // remain mounted while any useful part of that field intersects the camera.
+  // Requiring the whole viewport to fit here made zooming hide an otherwise
+  // valid surface before its background replacement was ready.
+  return (
+    visible.west <= renderableBounds.east &&
+    visible.east >= renderableBounds.west &&
+    visible.south <= renderableBounds.north &&
+    visible.north >= renderableBounds.south
   );
 }

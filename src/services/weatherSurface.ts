@@ -2,47 +2,85 @@ import maplibregl from "maplibre-gl";
 
 import {
   LAYER_VISUAL_STRENGTHS,
-  PRECIPITATION_DRY_THRESHOLD_MM,
-  PRECIPITATION_INTENSITY_LEVELS,
   WEATHER_SURFACE_COVERAGE_HIDE_MS,
   WEATHER_SURFACE_CROSSFADE_MS,
 } from "../config/layerVisuals";
 import { WEATHER_GRID_MIN_ZOOM } from "../config/gridConfig";
 import { interpolateGridValue } from "./interpolation";
 import { getWeatherInsertionLayerId } from "./mapLayerOrder";
+import { precipitationColor } from "./precipitationStyle";
 import { buildWeatherMatrix } from "./weatherMatrix";
 
-import type { PrimaryView } from "../types/layer";
 import type { WeatherGrid } from "../types/weatherGrid";
 
 export type WeatherSurfaceLayer = "clouds" | "precipitation";
 
-const CANVAS_SIZE = 384;
+const WEATHER_TILE_SIZE = 256;
+const WEATHER_TILE_MAX_ZOOM = 8;
+const WEATHER_TILE_PROTOCOL = "meridian-weather";
+const RETAINED_FIELD_VERSIONS = 12;
 const EDGE_FADE_WIDTH = 0.1;
-const SURFACE_SLOTS = [
-  {
-    sourceId: "weather-surface-source-a",
-    layerId: "weather-surface-layer-a",
-  },
-  {
-    sourceId: "weather-surface-source-b",
-    layerId: "weather-surface-layer-b",
-  },
-] as const;
+type SurfaceSlotIndex = 0 | 1;
 
-let activeSlotIndex: 0 | 1 | null = null;
-let activeSurfaceSignature: string | null = null;
-let activeSurfaceLayer: WeatherSurfaceLayer | null = null;
+interface SurfaceState {
+  activeSlotIndex: SurfaceSlotIndex | null;
+  activeSignature: string | null;
+  enabled: boolean;
+  pendingSlotIndex: SurfaceSlotIndex | null;
+  pendingSignature: string | null;
+  slotFieldVersions: [number | null, number | null];
+  slots: readonly [
+    { sourceId: string; layerId: string },
+    { sourceId: string; layerId: string },
+  ];
+  transitionGeneration: number;
+}
+
+function createSurfaceState(layer: WeatherSurfaceLayer): SurfaceState {
+  return {
+    activeSlotIndex: null,
+    activeSignature: null,
+    enabled: false,
+    pendingSlotIndex: null,
+    pendingSignature: null,
+    slotFieldVersions: [null, null],
+    slots: [
+      {
+        sourceId: `weather-${layer}-source-a`,
+        layerId: `weather-${layer}-layer-a`,
+      },
+      {
+        sourceId: `weather-${layer}-source-b`,
+        layerId: `weather-${layer}-layer-b`,
+      },
+    ],
+    transitionGeneration: 0,
+  };
+}
+
+const surfaceStates: Record<WeatherSurfaceLayer, SurfaceState> = {
+  clouds: createSurfaceState("clouds"),
+  precipitation: createSurfaceState("precipitation"),
+};
+
 let coverageIsVisible = true;
-let transitionGeneration = 0;
+let nextFieldVersion = 0;
+let weatherTileProtocolRegistered = false;
 
-interface Rgb {
+interface WeatherTileField {
+  bounds: WeatherGrid["bounds"];
+  columns: number;
+  layer: WeatherSurfaceLayer;
+  matrix: number[][];
+  rows: number;
+}
+
+const weatherTileFields = new Map<number, WeatherTileField>();
+
+interface Rgba {
   r: number;
   g: number;
   b: number;
-}
-
-interface Rgba extends Rgb {
   a: number;
 }
 
@@ -53,48 +91,6 @@ function clamp(value: number, minimum: number, maximum: number): number {
 function smoothstep(edge0: number, edge1: number, value: number): number {
   const ratio = clamp((value - edge0) / (edge1 - edge0), 0, 1);
   return ratio * ratio * (3 - 2 * ratio);
-}
-
-function parseHexColor(color: string): Rgb {
-  const value = color.replace("#", "");
-
-  return {
-    r: Number.parseInt(value.slice(0, 2), 16),
-    g: Number.parseInt(value.slice(2, 4), 16),
-    b: Number.parseInt(value.slice(4, 6), 16),
-  };
-}
-
-function interpolateColor(value: number): Rgb {
-  const stops = PRECIPITATION_INTENSITY_LEVELS;
-  if (value <= stops[0].value) {
-    return parseHexColor(stops[0].color);
-  }
-
-  const lastStop = stops[stops.length - 1];
-
-  if (value >= lastStop.value) {
-    return parseHexColor(lastStop.color);
-  }
-
-  for (let index = 0; index < stops.length - 1; index++) {
-    const start = stops[index];
-    const end = stops[index + 1];
-
-    if (value >= start.value && value <= end.value) {
-      const ratio = (value - start.value) / (end.value - start.value);
-      const startColor = parseHexColor(start.color);
-      const endColor = parseHexColor(end.color);
-
-      return {
-        r: Math.round(startColor.r + (endColor.r - startColor.r) * ratio),
-        g: Math.round(startColor.g + (endColor.g - startColor.g) * ratio),
-        b: Math.round(startColor.b + (endColor.b - startColor.b) * ratio),
-      };
-    }
-  }
-
-  return parseHexColor(stops[0].color);
 }
 
 function cloudColor(value: number): Rgba {
@@ -109,33 +105,6 @@ function cloudColor(value: number): Rgba {
     g: darkness,
     b: Math.min(255, darkness + 5),
     a: alpha,
-  };
-}
-
-function precipitationColor(value: number): Rgba {
-  if (value < PRECIPITATION_DRY_THRESHOLD_MM) {
-    return { r: 0, g: 0, b: 0, a: 0 };
-  }
-
-  const color = interpolateColor(value);
-  let opacity = PRECIPITATION_INTENSITY_LEVELS[0].opacity;
-
-  for (let index = 0; index < PRECIPITATION_INTENSITY_LEVELS.length - 1; index++) {
-    const start = PRECIPITATION_INTENSITY_LEVELS[index];
-    const end = PRECIPITATION_INTENSITY_LEVELS[index + 1];
-
-    if (value >= start.value && value <= end.value) {
-      const ratio = (value - start.value) / (end.value - start.value);
-      opacity = start.opacity + (end.opacity - start.opacity) * ratio;
-      break;
-    }
-
-    if (value >= end.value) opacity = end.opacity;
-  }
-
-  return {
-    ...color,
-    a: Math.round(255 * opacity),
   };
 }
 
@@ -160,35 +129,58 @@ function getSurfaceValue(
   );
 }
 
-function createWeatherSurfaceImage(
-  layer: WeatherSurfaceLayer,
-  grid: WeatherGrid,
-  forecastHour: number
+function tileYToLatitude(y: number): number {
+  return (
+    (Math.atan(Math.sinh(Math.PI * (1 - 2 * y))) * 180) /
+    Math.PI
+  );
+}
+
+function renderWeatherTile(
+  field: WeatherTileField,
+  zoom: number,
+  tileX: number,
+  tileY: number
 ): HTMLCanvasElement {
   const canvas = document.createElement("canvas");
-  canvas.width = CANVAS_SIZE;
-  canvas.height = CANVAS_SIZE;
-
+  canvas.width = WEATHER_TILE_SIZE;
+  canvas.height = WEATHER_TILE_SIZE;
   const context = canvas.getContext("2d");
 
   if (!context) {
-    throw new Error("Could not create weather surface canvas context");
+    throw new Error("Could not create weather tile canvas context");
   }
 
-  const matrix = getSurfaceValue(layer, grid, forecastHour);
-  const image = context.createImageData(CANVAS_SIZE, CANVAS_SIZE);
+  const image = context.createImageData(
+    WEATHER_TILE_SIZE,
+    WEATHER_TILE_SIZE
+  );
+  const tileCount = 2 ** zoom;
+  const longitudeSpan = field.bounds.east - field.bounds.west;
+  const latitudeSpan = field.bounds.north - field.bounds.south;
 
-  for (let y = 0; y < CANVAS_SIZE; y++) {
-    for (let x = 0; x < CANVAS_SIZE; x++) {
-      const xRatio = x / (CANVAS_SIZE - 1);
-      const yRatio = y / (CANVAS_SIZE - 1);
+  for (let y = 0; y < WEATHER_TILE_SIZE; y++) {
+    const worldY = (tileY + (y + 0.5) / WEATHER_TILE_SIZE) / tileCount;
+    const latitude = tileYToLatitude(worldY);
+    const yRatio = (field.bounds.north - latitude) / latitudeSpan;
+
+    for (let x = 0; x < WEATHER_TILE_SIZE; x++) {
+      const worldX = (tileX + (x + 0.5) / WEATHER_TILE_SIZE) / tileCount;
+      const longitude = worldX * 360 - 180;
+      const xRatio = (longitude - field.bounds.west) / longitudeSpan;
+      const pixelIndex = (y * WEATHER_TILE_SIZE + x) * 4;
+
+      if (xRatio < 0 || xRatio > 1 || yRatio < 0 || yRatio > 1) {
+        continue;
+      }
+
       const value = interpolateGridValue(
-        matrix,
-        xRatio * (grid.columns - 1),
-        yRatio * (grid.rows - 1)
+        field.matrix,
+        xRatio * (field.columns - 1),
+        yRatio * (field.rows - 1)
       );
       const color =
-        layer === "clouds"
+        field.layer === "clouds"
           ? cloudColor(value)
           : precipitationColor(value);
       const edgeDistance = Math.min(
@@ -202,7 +194,6 @@ function createWeatherSurfaceImage(
         EDGE_FADE_WIDTH,
         edgeDistance
       );
-      const pixelIndex = (y * CANVAS_SIZE + x) * 4;
 
       image.data[pixelIndex] = color.r;
       image.data[pixelIndex + 1] = color.g;
@@ -215,23 +206,85 @@ function createWeatherSurfaceImage(
   return canvas;
 }
 
-function getImageCoordinates(
-  grid: WeatherGrid
-): [[number, number], [number, number], [number, number], [number, number]] {
-  const { west, south, east, north } = grid.bounds;
-
-  return [
-    [west, north],
-    [east, north],
-    [east, south],
-    [west, south],
-  ];
+async function createTransparentWeatherTile(): Promise<ImageBitmap> {
+  const canvas = document.createElement("canvas");
+  canvas.width = 1;
+  canvas.height = 1;
+  return createImageBitmap(canvas);
 }
 
-export function isWeatherSurfaceLayer(
-  layer: PrimaryView
-): layer is WeatherSurfaceLayer {
-  return layer === "clouds" || layer === "precipitation";
+function ensureWeatherTileProtocol(): void {
+  if (weatherTileProtocolRegistered) return;
+
+  maplibregl.addProtocol(
+    WEATHER_TILE_PROTOCOL,
+    async (request, abortController) => {
+      const match = request.url.match(
+        /^meridian-weather:\/\/field\/(\d+)\/(\d+)\/(\d+)\/(\d+)$/
+      );
+
+      if (!match) throw new Error("Invalid Meridian weather tile URL");
+
+      const [, versionValue, zoomValue, xValue, yValue] = match;
+      const field = weatherTileFields.get(Number(versionValue));
+
+      if (!field || abortController.signal.aborted) {
+        return { data: await createTransparentWeatherTile() };
+      }
+
+      const canvas = renderWeatherTile(
+        field,
+        Number(zoomValue),
+        Number(xValue),
+        Number(yValue)
+      );
+      const bitmap = await createImageBitmap(canvas);
+
+      return { data: bitmap };
+    }
+  );
+  weatherTileProtocolRegistered = true;
+}
+
+function registerWeatherTileField(
+  state: SurfaceState,
+  slotIndex: SurfaceSlotIndex,
+  layer: WeatherSurfaceLayer,
+  grid: WeatherGrid,
+  forecastHour: number
+): number {
+  const version = ++nextFieldVersion;
+
+  weatherTileFields.set(version, {
+    bounds: grid.bounds,
+    columns: grid.columns,
+    layer,
+    matrix: getSurfaceValue(layer, grid, forecastHour),
+    rows: grid.rows,
+  });
+  state.slotFieldVersions[slotIndex] = version;
+
+  while (weatherTileFields.size > RETAINED_FIELD_VERSIONS) {
+    const oldestVersion = weatherTileFields.keys().next().value as
+      | number
+      | undefined;
+
+    if (oldestVersion === undefined) break;
+    const versionIsMounted = Object.values(surfaceStates).some((candidate) =>
+      candidate.slotFieldVersions.includes(oldestVersion)
+    );
+
+    if (versionIsMounted) {
+      const field = weatherTileFields.get(oldestVersion);
+      weatherTileFields.delete(oldestVersion);
+      weatherTileFields.set(oldestVersion, field!);
+      continue;
+    }
+
+    weatherTileFields.delete(oldestVersion);
+  }
+
+  return version;
 }
 
 export function updateWeatherSurface(
@@ -240,14 +293,28 @@ export function updateWeatherSurface(
   grid: WeatherGrid,
   forecastHour: number
 ): void {
+  const state = surfaceStates[layer];
+  state.enabled = true;
+
   if (
-    activeSlotIndex !== null &&
-    !map.getLayer(SURFACE_SLOTS[activeSlotIndex].layerId)
+    state.activeSlotIndex !== null &&
+    !map.getLayer(state.slots[state.activeSlotIndex].layerId)
   ) {
-    activeSlotIndex = null;
-    activeSurfaceSignature = null;
-    activeSurfaceLayer = null;
-    transitionGeneration += 1;
+    state.activeSlotIndex = null;
+    state.activeSignature = null;
+    state.pendingSlotIndex = null;
+    state.pendingSignature = null;
+    state.transitionGeneration += 1;
+  }
+
+  if (
+    state.pendingSlotIndex !== null &&
+    (!map.getLayer(state.slots[state.pendingSlotIndex].layerId) ||
+      !map.getSource(state.slots[state.pendingSlotIndex].sourceId))
+  ) {
+    state.pendingSlotIndex = null;
+    state.pendingSignature = null;
+    state.transitionGeneration += 1;
   }
 
   const signature = [
@@ -260,39 +327,38 @@ export function updateWeatherSurface(
     grid.bounds.north,
   ].join(":");
 
-  if (signature === activeSurfaceSignature) return;
+  if (signature === state.activeSignature) {
+    setWeatherSurfaceEnabled(map, layer, true);
+    return;
+  }
 
-  const surfaceCanvas = createWeatherSurfaceImage(
+  if (signature === state.pendingSignature) return;
+
+  ensureWeatherTileProtocol();
+  const previousSlotIndex = state.activeSlotIndex;
+  const nextSlotIndex: SurfaceSlotIndex =
+    state.activeSlotIndex === 0 ? 1 : 0;
+  const nextSlot = state.slots[nextSlotIndex];
+  const fieldVersion = registerWeatherTileField(
+    state,
+    nextSlotIndex,
     layer,
     grid,
     forecastHour
   );
-  const coordinates = getImageCoordinates(grid);
-  const previousSlotIndex = activeSlotIndex;
-  const nextSlotIndex: 0 | 1 = activeSlotIndex === 0 ? 1 : 0;
-  const nextSlot = SURFACE_SLOTS[nextSlotIndex];
+  const tileUrl = `${WEATHER_TILE_PROTOCOL}://field/${fieldVersion}/{z}/{x}/{y}`;
   const source = map.getSource(nextSlot.sourceId) as
-    | maplibregl.CanvasSource
+    | maplibregl.RasterTileSource
     | undefined;
 
   if (source) {
-    const targetCanvas = source.getCanvas();
-    const targetContext = targetCanvas.getContext("2d");
-
-    if (!targetContext) {
-      throw new Error("Could not update weather surface canvas context");
-    }
-
-    targetContext.clearRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
-    targetContext.drawImage(surfaceCanvas, 0, 0);
-    source.setCoordinates(coordinates);
-    source.play();
+    source.setTiles([tileUrl]);
   } else {
     map.addSource(nextSlot.sourceId, {
-      type: "canvas",
-      canvas: surfaceCanvas,
-      animate: false,
-      coordinates,
+      type: "raster",
+      tiles: [tileUrl],
+      tileSize: WEATHER_TILE_SIZE,
+      maxzoom: WEATHER_TILE_MAX_ZOOM,
     });
   }
 
@@ -306,10 +372,10 @@ export function updateWeatherSurface(
         paint: {
           "raster-opacity": 0,
           "raster-resampling": "linear",
-          // CanvasSource extends ImageSource, so MapLibre includes this raster
-          // layer in its terrain render-to-texture path and drapes the field
-          // over the DEM. The canvas stays static between forecast updates.
-          // Source fading is disabled; the two layers crossfade explicitly.
+          // Native raster tiles participate in MapLibre's terrain
+          // render-to-texture path, so the sampled field stays draped while
+          // parent and child tiles provide stable zoom fallbacks. Source fading
+          // is disabled because the two mounted layers crossfade explicitly.
           "raster-fade-duration": 0,
         },
       },
@@ -322,46 +388,56 @@ export function updateWeatherSurface(
     delay: 0,
   });
 
-  const generation = transitionGeneration + 1;
+  const generation = state.transitionGeneration + 1;
   const layerStrength = LAYER_VISUAL_STRENGTHS[layer];
 
-  transitionGeneration = generation;
-  activeSlotIndex = nextSlotIndex;
-  activeSurfaceSignature = signature;
-  activeSurfaceLayer = layer;
+  state.transitionGeneration = generation;
+  state.pendingSlotIndex = nextSlotIndex;
+  state.pendingSignature = signature;
 
-  // Two animation frames allow MapLibre to upload the incoming canvas while
-  // the previous terrain-draped surface stays visible underneath it.
-  window.requestAnimationFrame(() => {
-    window.requestAnimationFrame(() => {
-      if (
-        generation !== transitionGeneration ||
-        !map.getLayer(nextSlot.layerId)
-      ) {
-        return;
+  // A raster source reports loaded only after its current visible tiles are
+  // renderable. Keep the previous slot authoritative until then, so a forecast
+  // update or region refresh never exposes partially prepared tiles.
+  const revealIncomingSurface = () => {
+    if (
+      generation !== state.transitionGeneration ||
+      !map.getLayer(nextSlot.layerId)
+    ) {
+      map.off("sourcedata", handleIncomingSourceData);
+      return;
+    }
+
+    if (!map.isSourceLoaded(nextSlot.sourceId)) return;
+
+    map.off("sourcedata", handleIncomingSourceData);
+    state.activeSlotIndex = nextSlotIndex;
+    state.activeSignature = signature;
+    state.pendingSlotIndex = null;
+    state.pendingSignature = null;
+
+    map.setPaintProperty(
+      nextSlot.layerId,
+      "raster-opacity",
+      state.enabled && coverageIsVisible ? layerStrength : 0
+    );
+
+    if (previousSlotIndex !== null) {
+      const previousLayerId = state.slots[previousSlotIndex].layerId;
+
+      if (map.getLayer(previousLayerId)) {
+        map.setPaintProperty(previousLayerId, "raster-opacity", 0);
       }
+    }
+  };
+  const handleIncomingSourceData = (
+    event: maplibregl.MapSourceDataEvent
+  ) => {
+    if (event.sourceId === nextSlot.sourceId) revealIncomingSurface();
+  };
 
-      const nextSource = map.getSource(nextSlot.sourceId) as
-        | maplibregl.CanvasSource
-        | undefined;
-
-      nextSource?.pause();
-
-      map.setPaintProperty(
-        nextSlot.layerId,
-        "raster-opacity",
-        coverageIsVisible ? layerStrength : 0
-      );
-
-      if (previousSlotIndex !== null) {
-        const previousLayerId = SURFACE_SLOTS[previousSlotIndex].layerId;
-
-        if (map.getLayer(previousLayerId)) {
-          map.setPaintProperty(previousLayerId, "raster-opacity", 0);
-        }
-      }
-    });
-  });
+  map.on("sourcedata", handleIncomingSourceData);
+  window.requestAnimationFrame(revealIncomingSurface);
+  map.triggerRepaint();
 }
 
 export function setWeatherSurfaceCoverage(
@@ -372,38 +448,73 @@ export function setWeatherSurfaceCoverage(
 
   coverageIsVisible = isVisible;
 
-  for (let index = 0; index < SURFACE_SLOTS.length; index++) {
-    const slot = SURFACE_SLOTS[index];
+  for (const [layer, state] of Object.entries(surfaceStates) as Array<
+    [WeatherSurfaceLayer, SurfaceState]
+  >) {
+    for (let index = 0; index < state.slots.length; index++) {
+      const slot = state.slots[index];
 
+      if (!map.getLayer(slot.layerId)) continue;
+
+      const opacity =
+        state.enabled && isVisible && index === state.activeSlotIndex
+          ? LAYER_VISUAL_STRENGTHS[layer]
+          : 0;
+
+      map.setPaintProperty(slot.layerId, "raster-opacity-transition", {
+        duration: isVisible
+          ? WEATHER_SURFACE_CROSSFADE_MS
+          : WEATHER_SURFACE_COVERAGE_HIDE_MS,
+        delay: 0,
+      });
+      map.setPaintProperty(slot.layerId, "raster-opacity", opacity);
+    }
+  }
+}
+
+export function setWeatherSurfaceEnabled(
+  map: maplibregl.Map,
+  layer: WeatherSurfaceLayer,
+  enabled: boolean
+): void {
+  const state = surfaceStates[layer];
+  state.enabled = enabled;
+
+  for (let index = 0; index < state.slots.length; index++) {
+    const slot = state.slots[index];
     if (!map.getLayer(slot.layerId)) continue;
 
     const opacity =
-      isVisible && index === activeSlotIndex && activeSurfaceLayer
-        ? LAYER_VISUAL_STRENGTHS[activeSurfaceLayer]
+      enabled &&
+      coverageIsVisible &&
+      index === state.activeSlotIndex
+        ? LAYER_VISUAL_STRENGTHS[layer]
         : 0;
 
-    map.setPaintProperty(slot.layerId, "raster-opacity-transition", {
-      duration: isVisible
-        ? WEATHER_SURFACE_CROSSFADE_MS
-        : WEATHER_SURFACE_COVERAGE_HIDE_MS,
-      delay: 0,
-    });
     map.setPaintProperty(slot.layerId, "raster-opacity", opacity);
   }
 }
 
 export function removeWeatherSurface(map: maplibregl.Map): void {
-  transitionGeneration += 1;
-  activeSlotIndex = null;
-  activeSurfaceSignature = null;
-  activeSurfaceLayer = null;
+  weatherTileFields.clear();
   coverageIsVisible = true;
 
-  for (const slot of SURFACE_SLOTS) {
-    if (map.getLayer(slot.layerId)) map.removeLayer(slot.layerId);
-  }
+  for (const state of Object.values(surfaceStates)) {
+    state.transitionGeneration += 1;
+    state.activeSlotIndex = null;
+    state.activeSignature = null;
+    state.pendingSlotIndex = null;
+    state.pendingSignature = null;
+    state.slotFieldVersions[0] = null;
+    state.slotFieldVersions[1] = null;
+    state.enabled = false;
 
-  for (const slot of SURFACE_SLOTS) {
-    if (map.getSource(slot.sourceId)) map.removeSource(slot.sourceId);
+    for (const slot of state.slots) {
+      if (map.getLayer(slot.layerId)) map.removeLayer(slot.layerId);
+    }
+
+    for (const slot of state.slots) {
+      if (map.getSource(slot.sourceId)) map.removeSource(slot.sourceId);
+    }
   }
 }

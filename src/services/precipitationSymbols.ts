@@ -36,6 +36,7 @@ type PrecipitationSymbolCollection = GeoJSON.FeatureCollection<
 
 let activeSignature: string | null = null;
 let coverageVisible = true;
+let layerEnabled = true;
 
 function getIntensityLevel(value: number): PrecipitationIntensityLevel {
   let level = PRECIPITATION_INTENSITY_LEVELS[0];
@@ -338,8 +339,16 @@ function getViewSignature(map: maplibregl.Map): string {
 function setLayerOpacity(map: maplibregl.Map, visible: boolean): void {
   if (!map.getLayer(LAYER_ID)) return;
 
-  map.setPaintProperty(LAYER_ID, "icon-opacity", visible ? 0.96 : 0);
-  map.setPaintProperty(LAYER_ID, "text-opacity", visible ? 0.94 : 0);
+  map.setPaintProperty(
+    LAYER_ID,
+    "icon-opacity",
+    visible && layerEnabled ? 0.96 : 0
+  );
+  map.setPaintProperty(
+    LAYER_ID,
+    "text-opacity",
+    visible && layerEnabled ? 0.94 : 0
+  );
 }
 
 export function updatePrecipitationSymbols(
@@ -347,6 +356,7 @@ export function updatePrecipitationSymbols(
   grid: WeatherGrid,
   forecastHour: number
 ): void {
+  layerEnabled = true;
   ensureIcons(map);
 
   const signature = `${grid.fetchedAt}:${forecastHour}:${getViewSignature(map)}`;
@@ -402,9 +412,18 @@ export function setPrecipitationSymbolCoverage(
   setLayerOpacity(map, visible);
 }
 
+export function setPrecipitationSymbolEnabled(
+  map: maplibregl.Map,
+  enabled: boolean
+): void {
+  layerEnabled = enabled;
+  setLayerOpacity(map, coverageVisible);
+}
+
 export function removePrecipitationSymbols(map: maplibregl.Map): void {
   activeSignature = null;
   coverageVisible = true;
+  layerEnabled = true;
 
   if (map.getLayer(LAYER_ID)) map.removeLayer(LAYER_ID);
   if (map.getSource(SOURCE_ID)) map.removeSource(SOURCE_ID);

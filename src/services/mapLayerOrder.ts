@@ -5,12 +5,21 @@ export function getFirstSymbolLayerId(
 ): string | undefined {
   return map
     .getStyle()
-    .layers.find(
+    ?.layers?.find(
       (layer) =>
         layer.type === "symbol" &&
         layer.id !== "terrain-stack-boundary-layer"
     )?.id;
 }
+
+const FILLED_WEATHER_LAYER_ORDER = [
+  "weather-clouds-layer-a",
+  "weather-clouds-layer-b",
+  "global-precipitation-layer-a",
+  "global-precipitation-layer-b",
+  "weather-precipitation-layer-a",
+  "weather-precipitation-layer-b",
+] as const;
 
 const FORECAST_OVERLAY_LAYER_ORDER = [
   "temperature-contours-halo",
@@ -18,12 +27,18 @@ const FORECAST_OVERLAY_LAYER_ORDER = [
   "temperature-contour-labels",
   "pressure-contours-layer",
   "pressure-contour-labels",
-  "wind-field-halo",
-  "wind-field-layer",
+  "wind-particle-layer",
   "precipitation-symbols-layer",
 ] as const;
 
 export function placeForecastOverlaysInOrder(map: maplibregl.Map): void {
+  if (!map.getStyle()?.layers) return;
+  const weatherInsertionLayerId = getWeatherInsertionLayerId(map);
+
+  for (const layerId of FILLED_WEATHER_LAYER_ORDER) {
+    if (map.getLayer(layerId)) map.moveLayer(layerId, weatherInsertionLayerId);
+  }
+
   const firstLabelLayerId = getFirstSymbolLayerId(map);
 
   for (const layerId of FORECAST_OVERLAY_LAYER_ORDER) {
@@ -35,7 +50,7 @@ export function getWeatherInsertionLayerId(
   map: maplibregl.Map
 ): string | undefined {
   return (
-    map.getStyle().layers.find((layer) => {
+    map.getStyle()?.layers?.find((layer) => {
       if (!("source-layer" in layer)) return false;
 
       return (
@@ -50,15 +65,15 @@ export function placeGeographicContextAboveOverlays(
   map: maplibregl.Map,
   stackBoundaryLayerId?: string
 ): void {
+  const layers = map.getStyle()?.layers;
+  if (!layers) return;
   const contextSourceLayers = new Set([
     "water",
     "waterway",
     "transportation",
     "boundary",
   ]);
-  const contextLayerIds = map
-    .getStyle()
-    .layers.filter((layer) => {
+  const contextLayerIds = layers.filter((layer) => {
       if (layer.type === "symbol" || !("source-layer" in layer)) {
         return false;
       }
@@ -66,9 +81,7 @@ export function placeGeographicContextAboveOverlays(
       return contextSourceLayers.has(layer["source-layer"] ?? "");
     })
     .map((layer) => layer.id);
-  const symbolLayerIds = map
-    .getStyle()
-    .layers.filter(
+  const symbolLayerIds = layers.filter(
       (layer) =>
         layer.type === "symbol" && layer.id !== stackBoundaryLayerId
     )

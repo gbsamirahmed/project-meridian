@@ -9,7 +9,7 @@ export interface ContourProperties {
 }
 
 export type ContourFeatureCollection = GeoJSON.FeatureCollection<
-  GeoJSON.LineString | GeoJSON.Point,
+  GeoJSON.LineString,
   ContourProperties
 >;
 
@@ -238,21 +238,6 @@ export function buildContourGeoJson({
       });
     }
 
-    const labelLine = lines.reduce<[number, number][] | null>(
-      (longest, line) => (!longest || line.length > longest.length ? line : longest),
-      null
-    );
-
-    if (labelLine && labelLine.length >= 2) {
-      features.push({
-        type: "Feature",
-        geometry: {
-          type: "Point",
-          coordinates: labelLine[Math.floor(labelLine.length / 2)],
-        },
-        properties,
-      });
-    }
   }
 
   return { type: "FeatureCollection", features };

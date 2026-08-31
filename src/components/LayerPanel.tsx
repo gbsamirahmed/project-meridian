@@ -1,64 +1,83 @@
-import type { PrimaryView, WeatherOverlayState } from "../types/layer";
+import type { Basemap, MapOverlayState } from "../types/layer";
 
 interface LayerPanelProps {
-  primaryView: PrimaryView;
-  weatherOverlays: WeatherOverlayState;
-  onPrimaryViewChange: (view: PrimaryView) => void;
+  basemap: Basemap;
+  mapOverlays: MapOverlayState;
+  satelliteAvailable: boolean;
+  onBasemapChange: (basemap: Basemap) => void;
   onOverlayChange: (
-    overlay: keyof WeatherOverlayState,
+    overlay: keyof MapOverlayState,
     enabled: boolean
   ) => void;
 }
 
-const PRIMARY_VIEW_LABELS: Record<PrimaryView, string> = {
+const BASEMAP_LABELS: Record<Basemap, string> = {
   terrain: "Terrain",
-  elevation: "Elevation",
-  precipitation: "Precipitation",
-  clouds: "Cloud cover",
+  satellite: "Satellite",
 };
 
+const BASEMAPS: Basemap[] = ["terrain", "satellite"];
+
 const OVERLAY_OPTIONS: Array<{
-  key: keyof WeatherOverlayState;
+  key: keyof MapOverlayState;
   label: string;
 }> = [
+  { key: "elevation", label: "Elevation" },
+  { key: "precipitation", label: "Precipitation" },
+  { key: "clouds", label: "Cloud cover" },
   { key: "temperatureContours", label: "Temperature contours" },
   { key: "pressureIsobars", label: "Pressure isobars" },
   { key: "windFlow", label: "Wind flow" },
 ];
 
 export default function LayerPanel({
-  primaryView,
-  weatherOverlays,
-  onPrimaryViewChange,
+  basemap,
+  mapOverlays,
+  satelliteAvailable,
+  onBasemapChange,
   onOverlayChange,
 }: LayerPanelProps) {
-  const primaryViews = Object.keys(PRIMARY_VIEW_LABELS) as PrimaryView[];
-
   return (
     <section className="weather-card layer-card">
       <div className="card-heading">
         <div>
           <p className="section-kicker">Map display</p>
-          <h2>Weather view</h2>
+          <h2>Basemap & overlays</h2>
         </div>
 
-        <span className="card-meta">{PRIMARY_VIEW_LABELS[primaryView]}</span>
+        <span className="card-meta">{BASEMAP_LABELS[basemap]}</span>
       </div>
 
       <fieldset className="layer-control-group">
-        <legend>View</legend>
+        <legend>Basemap</legend>
         <div className="layer-grid layer-grid-primary">
-          {primaryViews.map((view) => (
-            <label key={view} className="layer-option">
+          {BASEMAPS.map((option) => {
+            const disabled = option === "satellite" && !satelliteAvailable;
+
+            return (
+            <label
+              key={option}
+              className={`layer-option${disabled ? " layer-option-disabled" : ""}`}
+              title={
+                disabled
+                  ? "Satellite is unavailable until a MapTiler key is configured."
+                  : undefined
+              }
+            >
               <input
                 type="radio"
-                name="primary-map-view"
-                checked={primaryView === view}
-                onChange={() => onPrimaryViewChange(view)}
+                name="map-basemap"
+                checked={basemap === option}
+                disabled={disabled}
+                onChange={() => onBasemapChange(option)}
               />
-              <span>{PRIMARY_VIEW_LABELS[view]}</span>
+              <span>
+                {BASEMAP_LABELS[option]}
+                {disabled && <small>Setup</small>}
+              </span>
             </label>
-          ))}
+            );
+          })}
         </div>
       </fieldset>
 
@@ -69,7 +88,7 @@ export default function LayerPanel({
             <label key={option.key} className="layer-option layer-toggle-option">
               <input
                 type="checkbox"
-                checked={weatherOverlays[option.key]}
+                checked={mapOverlays[option.key]}
                 onChange={(event) =>
                   onOverlayChange(option.key, event.target.checked)
                 }

@@ -6,12 +6,22 @@ import WeatherPanel from "./components/WeatherPanel";
 import { getWeather } from "./services/weatherService";
 import { getLocationName } from "./services/locationService";
 import { searchLocation } from "./services/searchService";
-import { getWeatherGrid } from "./services/gridWeatherService";
+import { loadGlobalPrecipitationSource } from "./services/globalWeatherService";
+import { IS_SATELLITE_CONFIGURED } from "./config/satelliteProvider";
+import {
+  getWeatherGrid,
+  getWeatherGridRequestKey,
+  WeatherGridHttpError,
+} from "./services/gridWeatherService";
 
 import type { SelectedLocation } from "./types/location";
 import type { WeatherData } from "./types/weather";
 import type { Place } from "./types/place";
-import type { PrimaryView, WeatherOverlayState } from "./types/layer";
+import type { Basemap, MapOverlayState } from "./types/layer";
+import type {
+  GlobalPrecipitationStatus,
+  ScalarWeatherFieldSource,
+} from "./types/globalWeather";
 import type {
   WeatherGrid,
   WeatherGridRequest,
@@ -20,6 +30,24 @@ import type {
 
 import "./App.css";
 
+function timestamp(time: string): number {
+  return Date.parse(/(?:Z|[+-]\d{2}:?\d{2})$/.test(time) ? time : `${time}Z`);
+}
+
+function closestForecastIndex(times: string[], targetTime: string): number {
+  const target = timestamp(targetTime);
+  let bestIndex = 0;
+  let bestDifference = Number.POSITIVE_INFINITY;
+  times.forEach((time, index) => {
+    const difference = Math.abs(timestamp(time) - target);
+    if (difference < bestDifference) {
+      bestDifference = difference;
+      bestIndex = index;
+    }
+  });
+  return bestIndex;
+}
+
 function App() {
   const [selectedLocation, setSelectedLocation] =
     useState<SelectedLocation | null>(null);
@@ -27,23 +55,85 @@ function App() {
     useState<SelectedLocation | null>(null);
   const [weather, setWeather] = useState<WeatherData | null>(null);
   const [place, setPlace] = useState<Place | null>(null);
-  const [primaryView, setPrimaryView] =
-    useState<PrimaryView>("terrain");
-  const [weatherOverlays, setWeatherOverlays] =
-    useState<WeatherOverlayState>({
+  const [basemap, setBasemap] = useState<Basemap>("terrain");
+  const [mapOverlays, setMapOverlays] = useState<MapOverlayState>({
+      elevation: false,
+      precipitation: false,
+      clouds: false,
       temperatureContours: false,
       pressureIsobars: false,
       windFlow: false,
     });
   const [weatherGrid, setWeatherGrid] =
     useState<WeatherGrid | null>(null);
+  const [weatherGridHistory, setWeatherGridHistory] = useState<
+    WeatherGrid[]
+  >([]);
   const [weatherGridStatus, setWeatherGridStatus] =
     useState<WeatherGridStatus>("idle");
   const [forecastHour, setForecastHour] = useState(0);
+  const [globalPrecipitationSource, setGlobalPrecipitationSource] =
+    useState<ScalarWeatherFieldSource | null>(null);
+  const [globalPrecipitationStatus, setGlobalPrecipitationStatus] =
+    useState<GlobalPrecipitationStatus>("loading");
+  const [isDesktopPanelCollapsed, setIsDesktopPanelCollapsed] =
+    useState(false);
 
   const weatherGridAbortRef = useRef<AbortController | null>(null);
+  const locationNameAbortRef = useRef<AbortController | null>(null);
+  const searchAbortRef = useRef<AbortController | null>(null);
   const weatherGridRequestIdRef = useRef(0);
   const activeWeatherRequestKeyRef = useRef<string | null>(null);
+  const latestWeatherRequestRef = useRef<WeatherGridRequest | null>(null);
+  const weatherGridRef = useRef<WeatherGrid | null>(null);
+  const weatherGridRetryTimerRef = useRef<number | null>(null);
+  const weatherGridRetryCountRef = useRef(0);
+  const weatherGridRetryKeyRef = useRef<string | null>(null);
+  const weatherGridCooldownUntilRef = useRef(0);
+  const hasInitialisedGfsTimelineRef = useRef(false);
+  const runWeatherGridRequestRef = useRef<
+    (request: WeatherGridRequest) => void
+  >(() => undefined);
+
+  useEffect(() => {
+    let isCurrent = true;
+    loadGlobalPrecipitationSource()
+      .then((source) => {
+        if (!isCurrent) return;
+        setGlobalPrecipitationSource(source);
+        setGlobalPrecipitationStatus("ready");
+      })
+      .catch((error: unknown) => {
+        if (!isCurrent) return;
+        void error;
+        setGlobalPrecipitationStatus("unavailable");
+      });
+
+    return () => {
+      isCurrent = false;
+    };
+  }, []);
+
+  const forecastTimes =
+    mapOverlays.precipitation && globalPrecipitationSource
+      ? globalPrecipitationSource.manifest.timesteps.map((step) => step.validTime)
+      : weather?.forecastTimes ?? weatherGrid?.times ?? [];
+  const forecastHours =
+    mapOverlays.precipitation && globalPrecipitationSource
+      ? globalPrecipitationSource.manifest.timesteps.map((step) => step.forecastHour)
+      : undefined;
+  const activeForecastHour = Math.min(
+    forecastHour,
+    Math.max(0, forecastTimes.length - 1)
+  );
+  const activeGlobalValidTime =
+    mapOverlays.precipitation && globalPrecipitationSource
+      ? globalPrecipitationSource.manifest.timesteps[activeForecastHour]?.validTime
+      : null;
+  const localForecastHour =
+    activeGlobalValidTime && weatherGrid?.times.length
+      ? closestForecastIndex(weatherGrid.times, activeGlobalValidTime)
+      : activeForecastHour;
 
   useEffect(() => {
     const timeoutId = window.setTimeout(() => {
@@ -57,6 +147,9 @@ function App() {
     if (!debouncedLocation) return;
 
     let isCurrent = true;
+    locationNameAbortRef.current?.abort();
+    const locationNameController = new AbortController();
+    locationNameAbortRef.current = locationNameController;
 
     getWeather(
       debouncedLocation.latitude,
@@ -71,29 +164,70 @@ function App() {
 
     getLocationName(
       debouncedLocation.latitude,
-      debouncedLocation.longitude
+      debouncedLocation.longitude,
+      locationNameController.signal
     )
       .then((name) => {
         if (isCurrent) setPlace({ name });
       })
       .catch((error: unknown) => {
-        if (isCurrent) console.error(error);
+        if (isCurrent && !locationNameController.signal.aborted) {
+          console.error(error);
+        }
       });
 
     return () => {
       isCurrent = false;
+      locationNameController.abort();
     };
   }, [debouncedLocation]);
 
   useEffect(() => {
-    return () => weatherGridAbortRef.current?.abort();
+    return () => {
+      weatherGridAbortRef.current?.abort();
+      locationNameAbortRef.current?.abort();
+      searchAbortRef.current?.abort();
+      if (weatherGridRetryTimerRef.current !== null) {
+        window.clearTimeout(weatherGridRetryTimerRef.current);
+      }
+    };
   }, []);
 
-  const handleWeatherGridRequest = useCallback(
+  const scheduleWeatherGridRetry = useCallback((delayMs: number) => {
+    if (weatherGridRetryTimerRef.current !== null) {
+      window.clearTimeout(weatherGridRetryTimerRef.current);
+    }
+
+    weatherGridCooldownUntilRef.current = Date.now() + delayMs;
+    weatherGridRetryTimerRef.current = window.setTimeout(() => {
+      weatherGridRetryTimerRef.current = null;
+      weatherGridCooldownUntilRef.current = 0;
+
+      const latestRequest = latestWeatherRequestRef.current;
+      if (latestRequest) runWeatherGridRequestRef.current(latestRequest);
+    }, delayMs);
+  }, []);
+
+  const runWeatherGridRequest = useCallback(
     (request: WeatherGridRequest) => {
-      const requestKey = JSON.stringify(request);
+      const requestKey = getWeatherGridRequestKey(request);
+      latestWeatherRequestRef.current = request;
 
       if (activeWeatherRequestKeyRef.current === requestKey) return;
+
+      if (weatherGridRetryKeyRef.current !== requestKey) {
+        weatherGridRetryKeyRef.current = requestKey;
+        weatherGridRetryCountRef.current = 0;
+      }
+
+      const cooldownRemaining =
+        weatherGridCooldownUntilRef.current - Date.now();
+
+      if (cooldownRemaining > 0) {
+        setWeatherGridStatus("rate-limited");
+        scheduleWeatherGridRetry(cooldownRemaining);
+        return;
+      }
 
       weatherGridAbortRef.current?.abort();
 
@@ -103,21 +237,54 @@ function App() {
       weatherGridAbortRef.current = controller;
       weatherGridRequestIdRef.current = requestId;
       activeWeatherRequestKeyRef.current = requestKey;
-      setWeatherGridStatus("loading");
+      setWeatherGridStatus(weatherGridRef.current ? "refreshing" : "loading");
 
       getWeatherGrid(request, controller.signal)
         .then((nextGrid) => {
           if (weatherGridRequestIdRef.current !== requestId) return;
 
+          weatherGridRef.current = nextGrid;
           setWeatherGrid(nextGrid);
+          setWeatherGridHistory((current) => [
+            nextGrid,
+            ...current.filter(
+              (grid) =>
+                grid.fetchedAt !== nextGrid.fetchedAt ||
+                grid.bounds.west !== nextGrid.bounds.west ||
+                grid.bounds.south !== nextGrid.bounds.south
+            ),
+          ].slice(0, 8));
           setWeatherGridStatus("ready");
+          weatherGridRetryCountRef.current = 0;
+          weatherGridCooldownUntilRef.current = 0;
         })
         .catch((error: unknown) => {
           if (controller.signal.aborted) return;
           if (weatherGridRequestIdRef.current !== requestId) return;
 
+          const retryCount = weatherGridRetryCountRef.current + 1;
+          weatherGridRetryCountRef.current = retryCount;
+
+          if (error instanceof WeatherGridHttpError && error.status === 429) {
+            setWeatherGridStatus("rate-limited");
+
+            const delayMs = Math.min(
+              60_000,
+              Math.max(error.retryAfterMs ?? 0, 8_000 * 2 ** (retryCount - 1))
+            );
+
+            if (retryCount <= 3) scheduleWeatherGridRetry(delayMs);
+            else weatherGridCooldownUntilRef.current = Date.now() + delayMs;
+            return;
+          }
+
           setWeatherGridStatus("error");
-          console.error(error);
+
+          if (retryCount <= 1) {
+            scheduleWeatherGridRetry(6_000);
+          } else {
+            weatherGridCooldownUntilRef.current = Date.now() + 10_000;
+          }
         })
         .finally(() => {
           if (weatherGridRequestIdRef.current === requestId) {
@@ -125,34 +292,69 @@ function App() {
           }
         });
     },
+    [scheduleWeatherGridRetry]
+  );
+
+  useEffect(() => {
+    runWeatherGridRequestRef.current = runWeatherGridRequest;
+  }, [runWeatherGridRequest]);
+
+  const handleWeatherGridRequest = useCallback(
+    (request: WeatherGridRequest) => {
+      runWeatherGridRequestRef.current(request);
+    },
     []
   );
 
-  const handleSearch = async (query: string) => {
-    const location = await searchLocation(query);
+  const handleSearch = useCallback(async (query: string) => {
+    searchAbortRef.current?.abort();
+    const controller = new AbortController();
+    searchAbortRef.current = controller;
 
-    if (location) setSelectedLocation(location);
-  };
+    try {
+      const location = await searchLocation(query, controller.signal);
+      if (!controller.signal.aborted && location) setSelectedLocation(location);
+    } catch (error: unknown) {
+      if (!controller.signal.aborted) console.error(error);
+    }
+  }, []);
 
   const handleOverlayChange = useCallback(
-    (overlay: keyof WeatherOverlayState, enabled: boolean) => {
-      setWeatherOverlays((current) => ({
+    (overlay: keyof MapOverlayState, enabled: boolean) => {
+      if (
+        overlay === "precipitation" &&
+        enabled &&
+        globalPrecipitationSource &&
+        !hasInitialisedGfsTimelineRef.current
+      ) {
+        const firstFutureIndex = globalPrecipitationSource.manifest.timesteps.findIndex(
+          (step) => new Date(step.validTime).getTime() >= Date.now()
+        );
+        setForecastHour(firstFutureIndex >= 0 ? firstFutureIndex : 0);
+        hasInitialisedGfsTimelineRef.current = true;
+      }
+      setMapOverlays((current) => ({
         ...current,
         [overlay]: enabled,
       }));
     },
-    []
+    [globalPrecipitationSource]
   );
 
   return (
     <main className="app-shell">
       <MapView
         selectedLocation={selectedLocation}
-        primaryView={primaryView}
-        weatherOverlays={weatherOverlays}
+        basemap={basemap}
+        mapOverlays={mapOverlays}
         weatherGrid={weatherGrid}
+        weatherGridHistory={weatherGridHistory}
         weatherGridStatus={weatherGridStatus}
-        forecastHour={forecastHour}
+        globalPrecipitationSource={globalPrecipitationSource}
+        globalPrecipitationStatus={globalPrecipitationStatus}
+        forecastHour={activeForecastHour}
+        localForecastHour={localForecastHour}
+        panelCollapsed={isDesktopPanelCollapsed}
         onLocationSelect={setSelectedLocation}
         onWeatherGridRequest={handleWeatherGridRequest}
       />
@@ -161,15 +363,22 @@ function App() {
         selectedLocation={selectedLocation}
         weather={weather}
         place={place}
-        primaryView={primaryView}
-        weatherOverlays={weatherOverlays}
-        forecastHour={forecastHour}
+        basemap={basemap}
+        mapOverlays={mapOverlays}
+        forecastHour={activeForecastHour}
         weatherGrid={weatherGrid}
         weatherGridStatus={weatherGridStatus}
+        globalPrecipitationSource={globalPrecipitationSource}
+        globalPrecipitationStatus={globalPrecipitationStatus}
+        forecastTimes={forecastTimes}
+        forecastHours={forecastHours}
+        isDesktopCollapsed={isDesktopPanelCollapsed}
+        satelliteAvailable={IS_SATELLITE_CONFIGURED}
         onForecastHourChange={setForecastHour}
-        onPrimaryViewChange={setPrimaryView}
+        onBasemapChange={setBasemap}
         onOverlayChange={handleOverlayChange}
         onSearch={handleSearch}
+        onDesktopCollapsedChange={setIsDesktopPanelCollapsed}
       />
     </main>
   );

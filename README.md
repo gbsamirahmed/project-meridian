@@ -1,89 +1,129 @@
 # Meridian
 
-Meridian is an exploratory, client-only weather map that aims to make conditions spatially understandable. It combines weather, geography, terrain, and forecast time in an interactive MapLibre view, with a particular interest in outdoor and mountain use.
+Meridian is an interactive 3D weather map for exploring forecast conditions across terrain, place, and time.
 
-The application is a working prototype rather than a safety system or finished product. [Product direction](docs/product-direction.md) records what Meridian is trying to learn and which decisions remain open. [Agent instructions](AGENTS.md) describe how Codex should work in this repository.
+![Meridian showing precipitation and animated wind over 3D terrain near Chamonix](docs/assets/meridian-terrain-hero.png)
 
-## Current features
+## Technical highlights
 
-- Interactive globe with atmospheric horizon, standard map gestures, and 3D terrain
-- Location selection by map click or place search
-- Current conditions and a seven-day temperature forecast
-- A 25-hour forecast slider with playback
-- DEM-native elevation colour relief and automatic, zoom-responsive hillshade
-- Distinct primary views for terrain, elevation, precipitation, and temporary two-dimensional cloud cover
-- Independently combinable temperature contours, pressure isobars, and adaptive wind-flow arrows
-- A universal hover/tap inspector for temperature, precipitation, cloud, pressure, wind, elevation, and forecast time
-- A nonlinear precipitation field with sparse intensity symbols; values are millimetres accumulated over the preceding hour
-- Deliberately tuned visual strength for each terrain and weather view
+- **Global numerical weather pipeline:** Python selects the latest usable complete NOAA GFS cycle, downloads indexed GRIB2 byte ranges, validates APCP accumulation intervals, and generates numeric Web Mercator weather tiles.
+- **Numeric weather data:** precipitation remains numerical in the browser instead of being baked into colour imagery, supporting client-side styling, point inspection, and forecast playback.
+- **Custom WebGL wind rendering:** a MapLibre particle layer uses geographic vector interpolation to show forecast wind direction and relative speed across the map.
+- **Resilient interactive data lifecycle:** cancellation, bounded caching, last-valid-field reuse, rate-limit backoff, and persistent renderers keep the map responsive while data and camera state change.
+
+## What it does
+
+- Terrain and optional Satellite basemaps with 3D relief and globe-scale navigation.
+- Global NOAA GFS precipitation with 24-hour playback.
+- Independently combinable elevation, cloud, temperature-contour, pressure-isobar, and animated wind overlays.
+- A point inspector for elevation and weather values at the selected forecast time.
+- Place search, map selection, current conditions, and responsive map-first controls.
 
 ## Architecture
 
-Meridian uses React, TypeScript, Vite, and MapLibre GL JS. It has no backend, database, authentication, or server-side processing.
+Meridian is a client-side React and MapLibre application. It requires no runtime application server, database, or authentication system.
 
-React owns application state and the control panel. `MapView` keeps MapLibre's imperative lifecycle separate, managing the globe, terrain, sources, layers, markers, and pointer events.
+Precipitation has migrated to a global, geographically fixed tiled field:
 
-Terrain geometry, elevation colour relief, and automatic hillshade are derived from the same Terrarium DEM tile dataset. MapLibre uses separate internal source instances for terrain and analysis, as recommended when a DEM has both roles. Forecast rendering is separate: the browser requests one 9 by 9 Open-Meteo sample grid around a generously padded camera footprint, caches recent regions, cancels stale requests, and crossfades replacement surfaces. Cloud and precipitation use the shared terrain-draped surface path. Temperature and pressure use shared contour geometry, while wind vectors are interpolated into an adaptive screen-spaced arrow field. The point inspector reads every forecast variable from that same sampled field regardless of the visible view or overlays. Roads, boundaries, water, and labels remain deliberately legible around these layers.
+```text
+NOAA GFS GRIB2
+  → Python preprocessing and validation
+  → numeric Web Mercator tiles
+  → immutable manifest and latest pointer
+  → MapLibre client rendering
+```
 
-The main code areas are:
+![Global NOAA GFS precipitation rendered as numeric forecast tiles over the Satellite globe](docs/assets/meridian-global-gfs.png)
 
-- `src/App.tsx`: shared state and data orchestration
-- `src/components/`: map and control-panel UI
-- `src/services/`: external data access, grid processing, interpolation, and layer rendering
-- `src/types/`: shared TypeScript types
-- `src/config/`: grid configuration
+*Global NOAA GFS precipitation rendered as numeric forecast tiles over the Satellite globe.*
 
-The source code remains authoritative for implementation details.
+Open-Meteo remains the transitional regional source for cloud, temperature, pressure, and wind. Those fields interpolate a cached 9 × 9 sample grid for presentation; interpolation does not create additional meteorological information. See [Global weather architecture](docs/global-weather-architecture.md) for the detailed data model and migration design.
 
-## External providers
+## Stack
 
-The browser currently connects directly to:
+- **Frontend:** React 19, TypeScript, Vite, MapLibre GL JS, WebGL
+- **Preprocessing:** Python, NumPy, Pillow, ecCodes
+- **Data and maps:** NOAA GFS, Open-Meteo, OpenFreeMap/OpenStreetMap, AWS Terrarium, MapTiler Satellite, Nominatim
 
-- [Open-Meteo](https://open-meteo.com/) for current weather, forecasts, and gridded forecast samples
-- [Nominatim / OpenStreetMap](https://nominatim.org/) for place search and reverse geocoding
-- [OpenFreeMap](https://openfreemap.org/) for the basemap style and tiles
-- [AWS Terrain Tiles](https://registry.opendata.aws/terrain-tiles/) for Terrarium elevation tiles used by 3D terrain
-
-No API keys or environment variables are required. Internet access is required, and each provider's availability, usage policy, and rate limits apply.
-
-## Local setup
+## Run locally
 
 Requirements:
 
 - Node.js `^20.19.0` or `>=22.12.0`
 - npm
-- A modern browser with WebGL support
-- Internet access for live data and map tiles
+- A modern WebGL-capable browser
+- Internet access for live weather, map tiles, terrain, and search
 
-From PowerShell in the repository root:
+```sh
+npm ci
+npm run dev
+```
+
+Open the URL printed by Vite, normally [http://localhost:5173](http://localhost:5173).
+
+On Windows PowerShell systems where the execution policy blocks npm's PowerShell shim, use:
 
 ```powershell
-npm.cmd install
+npm.cmd ci
 npm.cmd run dev
 ```
 
-Open the URL printed by Vite, normally [http://localhost:5173](http://localhost:5173). This project uses `npm.cmd` in PowerShell because the current execution policy blocks the `npm.ps1` shim.
+### Optional satellite imagery
 
-## Commands
+Satellite requires a client-visible MapTiler key. Create `.env.local` from `.env.example`, set `VITE_MAPTILER_KEY`, and restart the development server. Terrain and all non-satellite functionality work without it.
+
+Never commit `.env.local`. A public deployment should use a dedicated MapTiler key restricted to its allowed HTTP origins and an appropriate provider plan.
+
+### Generate current GFS precipitation
+
+Generated GFS runs and `public/weather/gfs/latest.json` are local and ignored by Git. A clean clone still starts normally, but precipitation is reported as unavailable until data are generated; Meridian does not silently substitute Open-Meteo precipitation.
+
+With Python 3.12 or newer:
+
+```sh
+python -m pip install -r scripts/weather/requirements.txt
+python scripts/weather/build_gfs_precipitation_poc.py
+python -m unittest discover -s scripts/weather -p "test_*.py"
+```
+
+The generator finds the latest complete GFS cycle, falls back when the newest run is incomplete, downloads only the required APCP ranges, validates one-hour accumulation semantics, and atomically publishes local numeric tiles plus `latest.json`. It requires no API key. On Windows, `py` may be used instead of `python`.
+
+## Commands and verification
 
 | Command | Purpose |
 | --- | --- |
-| `npm.cmd install` | Install locked dependencies |
-| `npm.cmd run dev` | Start the development server with hot reload |
-| `npm.cmd run lint` | Run ESLint |
-| `npm.cmd run build` | Type-check and create a production build in `dist/` |
-| `npm.cmd run preview` | Serve the production build locally |
+| `npm ci` | Reproduce dependencies from `package-lock.json` |
+| `npm run dev` | Start the development server |
+| `npm run lint` | Run ESLint |
+| `npm run build` | Type-check and build production assets |
+| `npm run preview` | Serve the production build locally |
+| `python -m unittest discover -s scripts/weather -p "test_*.py"` | Run preprocessing tests |
+
+## Data sources and attribution
+
+- [OpenFreeMap](https://openfreemap.org/) provides the vector basemap style and tiles; its source metadata supplies map attribution.
+- [OpenStreetMap contributors](https://www.openstreetmap.org/copyright) provide geographic and search data used through OpenFreeMap and [Nominatim](https://nominatim.org/).
+- [AWS Terrain Tiles](https://registry.opendata.aws/terrain-tiles/) provide the Terrarium DEM; Meridian links the [full terrain dataset credits](https://github.com/tilezen/joerd/blob/master/docs/attribution.md) at runtime.
+- [Open-Meteo](https://open-meteo.com/) provides live point forecasts and the transitional regional field under CC BY 4.0; runtime credit identifies Meridian's interpolated presentation.
+- [NOAA GFS](https://registry.opendata.aws/noaa-gfs-bdp-pds/) provides the source numerical forecast data. Generated precipitation tiles are derived products and retain linked provenance.
+- [MapTiler Satellite](https://www.maptiler.com/satellite/) is the optional imagery provider; provider-supplied attribution and branding are preserved.
+
+Provider availability, acceptable-use policies, rate limits, attribution requirements, and licensing remain applicable.
 
 ## Prototype limitations
 
-- Meridian must not be relied upon for safety-critical navigation or weather decisions.
-- Forecast surfaces, contours, wind arrows, and point values are visual approximations interpolated from 9 by 9 viewport samples, not full-resolution meteorological model layers.
-- The sampling extent changes with zoom but remains a regular latitude/longitude grid; it does not reproduce the source model's native grid or add detail to it.
-- Forecast surfaces are intentionally hidden at world scale, where a small browser-side sample cannot represent a global field honestly.
-- DEM colour relief and hillshade are more detailed than the forecast fields, but remain limited by the Terrarium tile resolution and MapLibre's browser rendering.
-- Forecast playback currently covers 25 hourly points.
-- Raster generation, contouring, symbol placement, and interpolation run on the browser's main thread.
-- Loading, retry, empty-state, and user-facing error handling are limited.
-- Search returns the first matching Nominatim result without disambiguation.
-- External availability, rate limits, network access, and browser cross-origin behaviour can affect the app.
-- Automated tests, accessibility review, and production operations are not yet established.
+- Meridian is an engineering prototype and should not be used for safety-critical navigation or forecasting decisions.
+- Open-Meteo cloud, temperature, pressure, and wind fields still interpolate a regional 9 × 9 sample grid.
+- GFS precipitation is a 0.25° model field; close zooms overzoom the same data rather than creating finer meteorological detail.
+- The generated GFS horizon is +24 hours and updates are manually invoked rather than scheduled or published as a production service.
+- Terrain and weather detail remain constrained by their source datasets.
+
+## Further reading
+
+- [Product direction](docs/product-direction.md) — the problem Meridian is exploring and the decisions still open.
+- [Global weather architecture](docs/global-weather-architecture.md) — the provider-neutral migration design and implemented global precipitation pipeline.
+- [Development log](docs/development-log.md) — concise engineering milestones and durable decisions.
+
+## Licence
+
+Source is available for portfolio review. No open-source licence is currently granted. Third-party software, services, and datasets retain their own licences and terms.

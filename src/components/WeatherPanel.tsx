@@ -6,46 +6,71 @@ import LayerLegend from "./LayerLegend";
 import LayerPanel from "./LayerPanel";
 import TimeSlider from "./TimeSlider";
 
-import type { PrimaryView, WeatherOverlayState } from "../types/layer";
+import type { Basemap, MapOverlayState } from "../types/layer";
 import type { SelectedLocation } from "../types/location";
 import type { Place } from "../types/place";
 import type { WeatherData } from "../types/weather";
 import type { WeatherGrid, WeatherGridStatus } from "../types/weatherGrid";
+import type {
+  GlobalPrecipitationStatus,
+  ScalarWeatherFieldSource,
+} from "../types/globalWeather";
 
 interface WeatherPanelProps {
   selectedLocation: SelectedLocation | null;
   weather: WeatherData | null;
   place: Place | null;
-  primaryView: PrimaryView;
-  weatherOverlays: WeatherOverlayState;
+  basemap: Basemap;
+  mapOverlays: MapOverlayState;
   forecastHour: number;
   weatherGrid: WeatherGrid | null;
   weatherGridStatus: WeatherGridStatus;
+  globalPrecipitationSource: ScalarWeatherFieldSource | null;
+  globalPrecipitationStatus: GlobalPrecipitationStatus;
+  forecastTimes: string[];
+  forecastHours?: number[];
+  isDesktopCollapsed: boolean;
+  satelliteAvailable: boolean;
   onForecastHourChange: (hour: number) => void;
-  onPrimaryViewChange: (view: PrimaryView) => void;
+  onBasemapChange: (basemap: Basemap) => void;
   onOverlayChange: (
-    overlay: keyof WeatherOverlayState,
+    overlay: keyof MapOverlayState,
     enabled: boolean
   ) => void;
   onSearch: (query: string) => void;
+  onDesktopCollapsedChange: (collapsed: boolean) => void;
 }
 
 export default function WeatherPanel({
   selectedLocation,
   weather,
   place,
-  primaryView,
-  weatherOverlays,
+  basemap,
+  mapOverlays,
   forecastHour,
   weatherGrid,
   weatherGridStatus,
+  globalPrecipitationSource,
+  globalPrecipitationStatus,
+  forecastTimes,
+  forecastHours,
+  isDesktopCollapsed,
+  satelliteAvailable,
   onForecastHourChange,
-  onPrimaryViewChange,
+  onBasemapChange,
   onOverlayChange,
   onSearch,
+  onDesktopCollapsedChange,
 }: WeatherPanelProps) {
   const [query, setQuery] = useState("");
   const [isPlaying, setIsPlaying] = useState(false);
+  const globalPrecipitationActive =
+    mapOverlays.precipitation && globalPrecipitationSource !== null;
+  const globalPrecipitationTimestep = globalPrecipitationSource
+    ? globalPrecipitationSource.manifest.timesteps[
+        Math.min(forecastHour, globalPrecipitationSource.manifest.timesteps.length - 1)
+      ]
+    : null;
 
   const handleSearchSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -60,14 +85,42 @@ export default function WeatherPanel({
     if (!isPlaying) return;
 
     const interval = setInterval(() => {
-      onForecastHourChange(forecastHour >= 24 ? 0 : forecastHour + 1);
+      const maximumIndex = Math.max(0, forecastTimes.length - 1);
+      onForecastHourChange(forecastHour >= maximumIndex ? 0 : forecastHour + 1);
     }, 500);
 
     return () => clearInterval(interval);
-  }, [isPlaying, forecastHour, onForecastHourChange]);
+  }, [isPlaying, forecastHour, forecastTimes.length, onForecastHourChange]);
+
+  useEffect(() => {
+    const mobileQuery = window.matchMedia("(max-width: 700px)");
+    const expandForMobile = (event: MediaQueryListEvent | MediaQueryList) => {
+      if (event.matches) onDesktopCollapsedChange(false);
+    };
+
+    expandForMobile(mobileQuery);
+    mobileQuery.addEventListener("change", expandForMobile);
+    return () => mobileQuery.removeEventListener("change", expandForMobile);
+  }, [onDesktopCollapsedChange]);
 
   return (
-    <aside className="weather-panel" aria-label="Weather explorer">
+    <aside
+      className={`weather-panel${isDesktopCollapsed ? " weather-panel-collapsed" : ""}`}
+      aria-label="Weather explorer"
+    >
+      <button
+        type="button"
+        className="panel-collapse-button"
+        aria-label={
+          isDesktopCollapsed ? "Expand weather panel" : "Collapse weather panel"
+        }
+        aria-expanded={!isDesktopCollapsed}
+        onClick={() => onDesktopCollapsedChange(!isDesktopCollapsed)}
+      >
+        <span aria-hidden="true">{isDesktopCollapsed ? ">" : "<"}</span>
+      </button>
+
+      <div className="panel-content" aria-hidden={isDesktopCollapsed}>
       <header className="panel-header">
         <div className="brand-mark" aria-hidden="true">
           <span />
@@ -98,9 +151,10 @@ export default function WeatherPanel({
       </form>
 
       <LayerPanel
-        primaryView={primaryView}
-        weatherOverlays={weatherOverlays}
-        onPrimaryViewChange={onPrimaryViewChange}
+        basemap={basemap}
+        mapOverlays={mapOverlays}
+        satelliteAvailable={satelliteAvailable}
+        onBasemapChange={onBasemapChange}
         onOverlayChange={onOverlayChange}
       />
 
@@ -111,24 +165,43 @@ export default function WeatherPanel({
             aria-hidden="true"
           />
           <strong>
-            {weatherGridStatus === "loading"
+            {globalPrecipitationActive
+              ? `GFS 0.25° global precipitation · +${globalPrecipitationTimestep?.forecastHour ?? 0}h`
+              : mapOverlays.precipitation && globalPrecipitationStatus === "loading"
+                ? "Loading global precipitation metadata"
+                : mapOverlays.precipitation && globalPrecipitationStatus !== "ready"
+                  ? "Global precipitation unavailable"
+                : weatherGridStatus === "loading"
               ? "Sampling visible area"
+              : weatherGridStatus === "refreshing"
+                ? "Refreshing forecast field"
+                : weatherGridStatus === "rate-limited"
+                  ? weatherGrid
+                    ? "Refresh delayed — prior field retained"
+                    : "Forecast service temporarily limited"
               : weatherGridStatus === "error"
-                ? "Forecast field unavailable"
+                ? weatherGrid
+                  ? "Refresh failed — prior field retained"
+                  : "Forecast field unavailable"
                 : weatherGrid
                   ? `${weatherGrid.rows} × ${weatherGrid.columns} model samples`
                   : "Viewport forecast field"}
           </strong>
         </div>
         <p>
-          Views, contours and arrows interpolate the same coarse model field;
-          denser marks do not mean finer forecast resolution.
+          {globalPrecipitationActive && globalPrecipitationTimestep
+            ? `NOAA GFS run ${globalPrecipitationSource.manifest.runTime.replace("T", " ").replace(":00:00Z", "Z")}. Precipitation is a ${globalPrecipitationTimestep.accumulationHours} h total; other weather values still use the local Open-Meteo prototype.`
+            : mapOverlays.precipitation && globalPrecipitationStatus !== "ready"
+              ? "Run the documented local GFS update to publish precipitation. Meridian does not silently substitute the local Open-Meteo rain field."
+            : "Cloud, contours and wind traces interpolate the same coarse local model field; denser marks do not mean finer forecast resolution."}
         </p>
       </section>
 
       <TimeSlider
         forecastHour={forecastHour}
-        forecastTimes={weather?.forecastTimes ?? weatherGrid?.times}
+        forecastTimes={forecastTimes}
+        forecastHours={forecastHours}
+        sourceLabel={globalPrecipitationActive ? "GFS precipitation steps" : undefined}
         onForecastHourChange={onForecastHourChange}
       />
 
@@ -143,8 +216,9 @@ export default function WeatherPanel({
       </div>
 
       <LayerLegend
-        primaryView={primaryView}
-        weatherOverlays={weatherOverlays}
+        mapOverlays={mapOverlays}
+        globalPrecipitationActive={mapOverlays.precipitation}
+        precipitationAccumulationHours={globalPrecipitationTimestep?.accumulationHours}
       />
 
       <section className="weather-card location-card">
@@ -230,6 +304,7 @@ export default function WeatherPanel({
       </section>
 
       {weather && <ForecastPanel forecast={weather.forecast} />}
+      </div>
     </aside>
   );
 }

@@ -1,10 +1,9 @@
-export type PrimaryView =
-  | "terrain"
-  | "elevation"
-  | "precipitation"
-  | "clouds";
+export type Basemap = "terrain" | "satellite";
 
-export interface WeatherOverlayState {
+export interface MapOverlayState {
+  elevation: boolean;
+  precipitation: boolean;
+  clouds: boolean;
   temperatureContours: boolean;
   pressureIsobars: boolean;
   windFlow: boolean;

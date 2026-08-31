@@ -15,6 +15,7 @@ const PRESSURE_MAX_ZOOM = 10.8;
 
 let activeSignature: string | null = null;
 let coverageVisible = true;
+let layerEnabled = true;
 
 function choosePressureInterval(range: number): number | null {
   if (range < 0.9) return null;
@@ -88,7 +89,7 @@ function setLayerOpacity(map: maplibregl.Map, visible: boolean): void {
     map.setPaintProperty(
       LINE_LAYER_ID,
       "line-opacity",
-      visible
+      visible && layerEnabled
         ? [
             "interpolate",
             ["linear"],
@@ -108,7 +109,7 @@ function setLayerOpacity(map: maplibregl.Map, visible: boolean): void {
     map.setPaintProperty(
       LABEL_LAYER_ID,
       "text-opacity",
-      visible
+      visible && layerEnabled
         ? [
             "interpolate",
             ["linear"],
@@ -130,6 +131,7 @@ export function updatePressureLayer(
   grid: WeatherGrid,
   forecastHour: number
 ): void {
+  layerEnabled = true;
   const zoomBucket = map.getZoom() > PRESSURE_MAX_ZOOM ? "hidden" : "regional";
   const signature = `${grid.fetchedAt}:${forecastHour}:${zoomBucket}`;
   const source = map.getSource(SOURCE_ID) as maplibregl.GeoJSONSource | undefined;
@@ -156,8 +158,8 @@ export function updatePressureLayer(
         filter: ["==", ["geometry-type"], "LineString"],
         layout: { "line-cap": "round", "line-join": "round" },
         paint: {
-          "line-color": "#b6ddd7",
-          "line-width": ["interpolate", ["linear"], ["zoom"], 5, 1, 10, 1.45],
+          "line-color": "#a8cbc5",
+          "line-width": ["interpolate", ["linear"], ["zoom"], 5, 0.9, 10, 1.25],
           "line-opacity": LAYER_VISUAL_STRENGTHS.pressureLine,
           "line-blur": 0.15,
         },
@@ -174,12 +176,19 @@ export function updatePressureLayer(
         source: SOURCE_ID,
         minzoom: WEATHER_GRID_MIN_ZOOM,
         maxzoom: PRESSURE_MAX_ZOOM + 0.2,
-        filter: ["==", ["geometry-type"], "Point"],
+        filter: ["==", ["geometry-type"], "LineString"],
         layout: {
           "text-field": ["get", "label"],
           "text-font": ["Noto Sans Regular"],
           "text-size": ["interpolate", ["linear"], ["zoom"], 5, 10, 10, 11.5],
+          "symbol-placement": "line",
+          "symbol-spacing": 230,
+          "text-rotation-alignment": "map",
+          "text-pitch-alignment": "viewport",
+          "text-keep-upright": true,
+          "text-max-angle": 35,
           "text-allow-overlap": false,
+          "text-padding": 10,
         },
         paint: {
           "text-color": "#d9f3ef",
@@ -203,9 +212,18 @@ export function setPressureLayerCoverage(
   setLayerOpacity(map, visible);
 }
 
+export function setPressureLayerEnabled(
+  map: maplibregl.Map,
+  enabled: boolean
+): void {
+  layerEnabled = enabled;
+  setLayerOpacity(map, coverageVisible);
+}
+
 export function removePressureLayer(map: maplibregl.Map): void {
   activeSignature = null;
   coverageVisible = true;
+  layerEnabled = true;
 
   if (map.getLayer(LABEL_LAYER_ID)) map.removeLayer(LABEL_LAYER_ID);
   if (map.getLayer(LINE_LAYER_ID)) map.removeLayer(LINE_LAYER_ID);

@@ -17,18 +17,21 @@ export const LAYER_VISUAL_STRENGTHS = {
   elevation: 0.7,
   temperatureContour: 0.86,
   temperatureHalo: 0.26,
-  pressureLine: 0.78,
-  pressureLabel: 0.9,
-  wind: 0.9,
-  windHalo: 0.48,
+  pressureLine: 0.58,
+  pressureLabel: 0.74,
+  windParticle: 0.94,
 } as const;
 
 export const HILLSHADE_ZOOM_STOPS = [
   { zoom: 5.5, strength: 0 },
   { zoom: 7, strength: 0.06 },
   { zoom: 9, strength: 0.2 },
-  { zoom: 11, strength: 0.42 },
-  { zoom: 13.5, strength: 0.62 },
+  { zoom: 11, strength: 0.36 },
+  { zoom: 12, strength: 0.3 },
+  { zoom: 13, strength: 0.24 },
+  { zoom: 14, strength: 0.22 },
+  { zoom: 15, strength: 0.2 },
+  { zoom: 16, strength: 0.2 },
 ] as const;
 
 export const WEATHER_SURFACE_CROSSFADE_MS = 260;

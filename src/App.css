@@ -65,6 +65,67 @@
   backdrop-filter: blur(24px) saturate(130%);
   scrollbar-color: rgba(255, 255, 255, 0.22) transparent;
   scrollbar-width: thin;
+  transition:
+    width 220ms ease,
+    height 220ms ease,
+    padding 220ms ease,
+    border-radius 220ms ease;
+}
+
+.panel-content {
+  min-width: 308px;
+  opacity: 1;
+  transition: opacity 120ms ease;
+}
+
+.panel-collapse-button {
+  position: absolute;
+  z-index: 2;
+  top: 18px;
+  right: 16px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1;
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  transition:
+    color 150ms ease,
+    background 150ms ease;
+}
+
+.panel-collapse-button:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.11);
+}
+
+@media (min-width: 701px) {
+  .weather-panel-collapsed {
+    right: auto;
+    bottom: auto;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 15px;
+  }
+
+  .weather-panel-collapsed .panel-collapse-button {
+    top: 9px;
+    right: 9px;
+  }
+
+  .weather-panel-collapsed .panel-content {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
 }
 
 .weather-panel::-webkit-scrollbar {
@@ -299,6 +360,26 @@
   background: rgba(255, 255, 255, 0.07);
 }
 
+.layer-option-disabled {
+  cursor: not-allowed;
+}
+
+.layer-option-disabled:hover span,
+.layer-option input:disabled + span {
+  color: var(--faint);
+  background: rgba(255, 255, 255, 0.022);
+  opacity: 0.62;
+}
+
+.layer-option span small {
+  margin-left: auto;
+  color: var(--faint);
+  font-size: 7px;
+  font-weight: 760;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .layer-option input:checked + span {
   color: #fff3ed;
   background: var(--accent-soft);
@@ -364,6 +445,13 @@
   font-weight: 650;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+}
+
+.timeline-source {
+  margin: 0.45rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
 }
 
 .timeline-heading h2 {
@@ -531,10 +619,16 @@
   box-shadow: 0 0 0 4px rgba(135, 213, 165, 0.09);
 }
 
-.data-status-loading {
+.data-status-loading,
+.data-status-refreshing {
   background: #e5bf72;
   box-shadow: 0 0 0 4px rgba(229, 191, 114, 0.1);
   animation: data-pulse 1.2s ease-in-out infinite;
+}
+
+.data-status-rate-limited {
+  background: #dba85d;
+  box-shadow: 0 0 0 4px rgba(219, 168, 93, 0.1);
 }
 
 .data-status-error {
@@ -553,13 +647,30 @@
   }
 }
 
-.wind-sample {
+.wind-trail-sample {
   flex: 0 0 auto;
-  color: #f0d07b;
-  font-size: 24px;
-  line-height: 1;
-  text-shadow: 0 1px 2px #15201f;
-  transform: rotate(20deg);
+  position: relative;
+  width: 38px;
+  height: 9px;
+  overflow: hidden;
+}
+
+.wind-trail-sample::before {
+  position: absolute;
+  top: 4px;
+  left: -24px;
+  width: 28px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #9edbd2 72%, #f1ba69);
+  box-shadow: 0 0 3px rgba(158, 219, 210, 0.36);
+  content: "";
+  animation: wind-trail-key 1.7s linear infinite;
+}
+
+@keyframes wind-trail-key {
+  to {
+    transform: translateX(66px);
+  }
 }
 
 .location-content h2 {
@@ -782,6 +893,32 @@
   border-radius: 50%;
 }
 
+.maptiler-logo {
+  position: absolute;
+  z-index: 7;
+  bottom: 12px;
+  left: 386px;
+  display: grid;
+  place-items: center;
+  width: 88px;
+  min-height: 25px;
+  padding: 4px 7px;
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 5px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
+  transition: left 220ms ease;
+}
+
+.maptiler-logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.maptiler-logo-panel-collapsed {
+  left: 78px;
+}
+
 .map-hover-card {
   position: absolute;
   z-index: 20;
@@ -914,6 +1051,14 @@
   .map-hint {
     display: none;
   }
+
+  .maptiler-logo {
+    left: 356px;
+  }
+
+  .maptiler-logo-panel-collapsed {
+    left: 78px;
+  }
 }
 
 @media (max-width: 700px) {
@@ -932,6 +1077,14 @@
     display: none;
   }
 
+  .panel-collapse-button {
+    display: none;
+  }
+
+  .panel-content {
+    min-width: 0;
+  }
+
   .search-field {
     margin-top: 14px;
   }
@@ -941,6 +1094,12 @@
     right: auto;
     bottom: auto;
     left: 16px;
+  }
+
+  .maptiler-logo,
+  .maptiler-logo-panel-collapsed {
+    bottom: calc(52vh + 18px);
+    left: 12px;
   }
 
   .layer-option span {
@@ -954,6 +1113,9 @@
 
   .map-inspector-card {
     width: min(222px, calc(100vw - 24px));
+    top: 76px !important;
+    right: auto;
+    left: 12px !important;
   }
 
   .maplibregl-ctrl-top-right {
@@ -968,5 +1130,10 @@
   *::after {
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .wind-trail-sample::before {
+    left: 5px;
+    animation: none;
   }
 }

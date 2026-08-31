@@ -15,6 +15,7 @@ const LABEL_LAYER_ID = "temperature-contour-labels";
 
 let activeSignature: string | null = null;
 let coverageVisible = true;
+let layerEnabled = true;
 
 function chooseInterval(range: number): number | null {
   if (range < 0.6) return null;
@@ -69,7 +70,7 @@ function buildTemperatureContours(
     matrix,
     bounds: grid.bounds,
     levels,
-    formatLabel: (level) => `${level}°`,
+    formatLabel: (level) => `${level}°C`,
     isEmphasized: (level) => level === 0,
   });
 }
@@ -79,7 +80,7 @@ function setLayerOpacity(map: maplibregl.Map, visible: boolean): void {
     map.setPaintProperty(
       HALO_LAYER_ID,
       "line-opacity",
-      visible ? LAYER_VISUAL_STRENGTHS.temperatureHalo : 0
+      visible && layerEnabled ? LAYER_VISUAL_STRENGTHS.temperatureHalo : 0
     );
   }
 
@@ -87,12 +88,16 @@ function setLayerOpacity(map: maplibregl.Map, visible: boolean): void {
     map.setPaintProperty(
       LINE_LAYER_ID,
       "line-opacity",
-      visible ? LAYER_VISUAL_STRENGTHS.temperatureContour : 0
+      visible && layerEnabled ? LAYER_VISUAL_STRENGTHS.temperatureContour : 0
     );
   }
 
   if (map.getLayer(LABEL_LAYER_ID)) {
-    map.setPaintProperty(LABEL_LAYER_ID, "text-opacity", visible ? 0.92 : 0);
+    map.setPaintProperty(
+      LABEL_LAYER_ID,
+      "text-opacity",
+      visible && layerEnabled ? 0.92 : 0
+    );
   }
 }
 
@@ -101,6 +106,7 @@ export function updateTemperatureContourLayer(
   grid: WeatherGrid,
   forecastHour: number
 ): void {
+  layerEnabled = true;
   const signature = `${grid.fetchedAt}:${forecastHour}`;
   const source = map.getSource(SOURCE_ID) as maplibregl.GeoJSONSource | undefined;
 
@@ -167,12 +173,19 @@ export function updateTemperatureContourLayer(
         type: "symbol",
         source: SOURCE_ID,
         minzoom: WEATHER_GRID_MIN_ZOOM,
-        filter: ["==", ["geometry-type"], "Point"],
+        filter: ["==", ["geometry-type"], "LineString"],
         layout: {
           "text-field": ["get", "label"],
           "text-font": ["Noto Sans Regular"],
           "text-size": 10.5,
+          "symbol-placement": "line",
+          "symbol-spacing": 180,
+          "text-rotation-alignment": "map",
+          "text-pitch-alignment": "viewport",
+          "text-keep-upright": true,
+          "text-max-angle": 35,
           "text-allow-overlap": false,
+          "text-padding": 8,
         },
         paint: {
           "text-color": "#fff3e4",
@@ -196,9 +209,18 @@ export function setTemperatureContourCoverage(
   setLayerOpacity(map, visible);
 }
 
+export function setTemperatureContourEnabled(
+  map: maplibregl.Map,
+  enabled: boolean
+): void {
+  layerEnabled = enabled;
+  setLayerOpacity(map, coverageVisible);
+}
+
 export function removeTemperatureContourLayer(map: maplibregl.Map): void {
   activeSignature = null;
   coverageVisible = true;
+  layerEnabled = true;
 
   if (map.getLayer(LABEL_LAYER_ID)) map.removeLayer(LABEL_LAYER_ID);
   if (map.getLayer(LINE_LAYER_ID)) map.removeLayer(LINE_LAYER_ID);

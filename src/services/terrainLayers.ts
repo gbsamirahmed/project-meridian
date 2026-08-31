@@ -5,11 +5,12 @@ import {
   HILLSHADE_ZOOM_STOPS,
   LAYER_VISUAL_STRENGTHS,
 } from "../config/layerVisuals";
+import { TERRAIN_ATTRIBUTION } from "../config/dataAttribution";
 import {
   placeGeographicContextAboveOverlays,
 } from "./mapLayerOrder";
 
-import type { PrimaryView } from "../types/layer";
+import type { Basemap } from "../types/layer";
 
 export const TERRAIN_SOURCE_ID = "terrain-dem";
 export const TERRAIN_ANALYSIS_SOURCE_ID = "terrain-analysis-dem";
@@ -17,9 +18,16 @@ export const ELEVATION_RELIEF_LAYER_ID = "terrain-elevation-relief";
 export const HILLSHADE_LAYER_ID = "terrain-hillshade";
 const TERRAIN_STACK_BOUNDARY_SOURCE_ID = "terrain-stack-boundary-source";
 const TERRAIN_STACK_BOUNDARY_LAYER_ID = "terrain-stack-boundary-layer";
+const terrainModeByMap = new WeakMap<maplibregl.Map, "globe" | "terrain">();
 
 const TERRARIUM_TILES =
   "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png";
+export const TERRAIN_DEM_NATIVE_MAX_ZOOM = 15;
+// OpenFreeMap's vector tiles top out at z14. Keeping the terrain mesh at the
+// same canonical ceiling avoids a MapLibre terrain fallback warning while the
+// separate analysis source can still use Terrarium's final native z15 tiles
+// for hillshade and color relief.
+const TERRAIN_GEOMETRY_MAX_ZOOM = 14;
 // MapLibre's detailed terrain renderer does not yet support every globe/fog
 // calculation. At this zoom the globe and Mercator projections are visually
 // close, so switch to Mercator before enabling terrain to avoid that unsupported
@@ -39,14 +47,16 @@ function buildElevationExpression(): maplibregl.ExpressionSpecification {
   ];
 }
 
-function buildHillshadeExpression(): maplibregl.ExpressionSpecification {
+function buildHillshadeExpression(
+  strengthScale = 1
+): maplibregl.ExpressionSpecification {
   return [
     "interpolate",
     ["linear"],
     ["zoom"],
     ...HILLSHADE_ZOOM_STOPS.flatMap((stop) => [
       stop.zoom,
-      stop.strength,
+      stop.strength * strengthScale,
     ]),
   ];
 }
@@ -54,6 +64,9 @@ function buildHillshadeExpression(): maplibregl.ExpressionSpecification {
 export function configurePlanetAndTerrain(
   map: maplibregl.Map
 ): void {
+  // A style reload invalidates MapLibre's terrain/projection resources, so the
+  // transition guard must allow one fresh activation for the rebuilt style.
+  terrainModeByMap.delete(map);
   map.getContainer().style.backgroundColor = "#03070d";
 
   map.setSky({
@@ -84,7 +97,8 @@ export function configurePlanetAndTerrain(
       tiles: [TERRARIUM_TILES],
       tileSize: 256,
       encoding: "terrarium",
-      maxzoom: 14,
+      maxzoom: TERRAIN_GEOMETRY_MAX_ZOOM,
+      attribution: TERRAIN_ATTRIBUTION,
     });
   }
 
@@ -97,7 +111,7 @@ export function configurePlanetAndTerrain(
       tiles: [TERRARIUM_TILES],
       tileSize: 256,
       encoding: "terrarium",
-      maxzoom: 14,
+      maxzoom: TERRAIN_DEM_NATIVE_MAX_ZOOM,
     });
   }
 
@@ -167,21 +181,38 @@ export function configurePlanetAndTerrain(
 
 export function applyTerrainLayerState(
   map: maplibregl.Map,
-  primaryView: PrimaryView
+  basemap: Basemap,
+  elevationEnabled: boolean
 ): void {
   if (map.getLayer(ELEVATION_RELIEF_LAYER_ID)) {
     map.setPaintProperty(
       ELEVATION_RELIEF_LAYER_ID,
       "color-relief-opacity",
-      primaryView === "elevation"
+      elevationEnabled
         ? LAYER_VISUAL_STRENGTHS.elevation
         : 0
+    );
+  }
+
+  if (map.getLayer(HILLSHADE_LAYER_ID)) {
+    map.setPaintProperty(
+      HILLSHADE_LAYER_ID,
+      "hillshade-exaggeration",
+      buildHillshadeExpression(basemap === "satellite" ? 0 : 1)
     );
   }
 }
 
 export function updateTerrainActivation(map: maplibregl.Map): void {
   const shouldUseTerrain = map.getZoom() >= TERRAIN_MIN_ZOOM;
+  const desiredMode = shouldUseTerrain ? "terrain" : "globe";
+
+  // Zoom emits many frames around the threshold. Repeating setProjection or
+  // setTerrain while MapLibre is still applying the same transition can race
+  // its tile requests, so apply each requested mode only once.
+  if (terrainModeByMap.get(map) === desiredMode) return;
+  terrainModeByMap.set(map, desiredMode);
+
   const hasTerrain = map.getTerrain() !== null;
   // Styles without an explicit projection report `undefined`, which is
   // MapLibre's default Mercator projection.

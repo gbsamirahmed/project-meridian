@@ -1,12 +1,21 @@
+import { requestNominatimJson } from "./nominatimClient";
+
+interface NominatimReverseResult {
+  display_name?: string;
+}
+
 export async function getLocationName(
   latitude: number,
-  longitude: number
+  longitude: number,
+  signal?: AbortSignal
 ): Promise<string> {
-  const response = await fetch(
-    `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=jsonv2`
+  const roundedLatitude = latitude.toFixed(5);
+  const roundedLongitude = longitude.toFixed(5);
+  const data = await requestNominatimJson<NominatimReverseResult>(
+    `https://nominatim.openstreetmap.org/reverse?lat=${roundedLatitude}&lon=${roundedLongitude}&format=jsonv2`,
+    `reverse:${roundedLatitude}:${roundedLongitude}`,
+    signal
   );
-
-  const data = await response.json();
 
   return data.display_name ?? "Unknown location";
 }
