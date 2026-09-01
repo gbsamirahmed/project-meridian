@@ -18,13 +18,21 @@ import {
   setGlobalPrecipitationEnabled,
   updateGlobalPrecipitationLayer,
 } from "../services/globalPrecipitationLayer";
-import { getScalarTimestep } from "../services/globalWeatherService";
-import { sampleScalarField } from "../services/numericTileCache";
 import {
-  removePrecipitationSymbols,
-  setPrecipitationSymbolEnabled,
-  setPrecipitationSymbolCoverage,
-} from "../services/precipitationSymbols";
+  removeGlobalCloudLayer,
+  setGlobalCloudEnabled,
+  updateGlobalCloudLayer,
+} from "../services/globalCloudLayer";
+import {
+  getClosestScalarTimestep,
+  getClosestVectorTimestep,
+  getScalarTimestepAtTime,
+  getVectorTimestepAtTime,
+} from "../services/globalWeatherService";
+import {
+  sampleScalarField,
+  sampleVectorField,
+} from "../services/numericTileCache";
 import {
   removePressureLayer,
   setPressureLayerEnabled,
@@ -61,22 +69,16 @@ import {
   interpolateWeatherAtLocation,
 } from "../services/weatherInterpolation";
 import {
-  removeWeatherSurface,
-  setWeatherSurfaceEnabled,
-  setWeatherSurfaceCoverage,
-  updateWeatherSurface,
-} from "../services/weatherSurface";
-import {
   removeWindLayer,
   setWindLayerEnabled,
-  setWindLayerCoverage,
-  updateWindLayer,
+  updateGlobalWindLayer,
 } from "../services/windLayer";
 
 import type { Basemap, MapOverlayState } from "../types/layer";
 import type {
-  GlobalPrecipitationStatus,
+  GlobalWeatherStatusRegistry,
   ScalarWeatherFieldSource,
+  VectorWeatherFieldSource,
 } from "../types/globalWeather";
 import type { SatelliteLayerStatus } from "../services/satelliteLayer";
 import type { SelectedLocation } from "../types/location";
@@ -96,8 +98,10 @@ interface MapViewProps {
   weatherGridHistory: WeatherGrid[];
   weatherGridStatus: WeatherGridStatus;
   globalPrecipitationSource: ScalarWeatherFieldSource | null;
-  globalPrecipitationStatus: GlobalPrecipitationStatus;
-  forecastHour: number;
+  globalCloudSource: ScalarWeatherFieldSource | null;
+  globalWindSource: VectorWeatherFieldSource | null;
+  globalWeatherStatuses: GlobalWeatherStatusRegistry;
+  activeGlobalValidTime: string | null;
   localForecastHour: number;
   panelCollapsed: boolean;
   onLocationSelect: (location: SelectedLocation) => void;
@@ -121,12 +125,11 @@ const BASEMAP_NAMES: Record<Basemap, string> = {
 };
 
 function removeForecastVisualizations(map: maplibregl.Map): void {
-  removeWeatherSurface(map);
+  removeGlobalCloudLayer(map);
   removeGlobalPrecipitationLayer(map);
   removeTemperatureContourLayer(map);
   removePressureLayer(map);
   removeWindLayer(map);
-  removePrecipitationSymbols(map);
 }
 
 function renderVisualizations(
@@ -135,7 +138,9 @@ function renderVisualizations(
   overlays: MapOverlayState,
   grid: WeatherGrid | null,
   globalPrecipitationSource: ScalarWeatherFieldSource | null,
-  forecastHour: number,
+  globalCloudSource: ScalarWeatherFieldSource | null,
+  globalWindSource: VectorWeatherFieldSource | null,
+  activeGlobalValidTime: string | null,
   localForecastHour: number
 ): void {
   if (!map.isStyleLoaded()) return;
@@ -143,24 +148,26 @@ function renderVisualizations(
   applySatelliteLayerState(map, basemap === "satellite");
   applyTerrainLayerState(map, basemap, overlays.elevation);
 
-  if (overlays.clouds && grid) {
-    updateWeatherSurface(map, "clouds", grid, localForecastHour);
+  const cloudTimestep = globalCloudSource
+    ? getScalarTimestepAtTime(globalCloudSource, activeGlobalValidTime)
+    : null;
+  if (overlays.clouds && globalCloudSource && cloudTimestep) {
+    updateGlobalCloudLayer(map, globalCloudSource, cloudTimestep);
   } else {
-    setWeatherSurfaceEnabled(map, "clouds", false);
+    setGlobalCloudEnabled(map, false);
   }
 
-  if (overlays.precipitation && globalPrecipitationSource) {
+  const precipitationTimestep = globalPrecipitationSource
+    ? getScalarTimestepAtTime(globalPrecipitationSource, activeGlobalValidTime)
+    : null;
+  if (overlays.precipitation && globalPrecipitationSource && precipitationTimestep) {
     updateGlobalPrecipitationLayer(
       map,
       globalPrecipitationSource,
-      getScalarTimestep(globalPrecipitationSource, forecastHour)
+      precipitationTimestep
     );
-    setWeatherSurfaceEnabled(map, "precipitation", false);
-    setPrecipitationSymbolEnabled(map, false);
   } else {
     setGlobalPrecipitationEnabled(map, false);
-    setWeatherSurfaceEnabled(map, "precipitation", false);
-    setPrecipitationSymbolEnabled(map, false);
   }
 
   if (overlays.temperatureContours && grid) {
@@ -175,8 +182,11 @@ function renderVisualizations(
     setPressureLayerEnabled(map, false);
   }
 
-  if (overlays.windFlow && grid) {
-    updateWindLayer(map, grid, localForecastHour, basemap);
+  const windTimestep = globalWindSource
+    ? getVectorTimestepAtTime(globalWindSource, activeGlobalValidTime)
+    : null;
+  if (overlays.windFlow && globalWindSource && windTimestep) {
+    updateGlobalWindLayer(map, globalWindSource, windTimestep, basemap);
   } else {
     setWindLayerEnabled(map, false);
   }
@@ -190,11 +200,8 @@ function setForecastCoverage(
 ): void {
   const visible = grid !== null && weatherGridOverlapsViewport(map, grid);
 
-  setWeatherSurfaceCoverage(map, visible);
   setTemperatureContourCoverage(map, visible);
   setPressureLayerCoverage(map, visible);
-  setWindLayerCoverage(map, visible);
-  setPrecipitationSymbolCoverage(map, visible);
 }
 
 function createInspectionPoint(
@@ -241,8 +248,10 @@ export default function MapView({
   weatherGridHistory,
   weatherGridStatus,
   globalPrecipitationSource,
-  globalPrecipitationStatus,
-  forecastHour,
+  globalCloudSource,
+  globalWindSource,
+  globalWeatherStatuses,
+  activeGlobalValidTime,
   localForecastHour,
   panelCollapsed,
   onLocationSelect,
@@ -259,6 +268,14 @@ export default function MapView({
     key: string;
     value: number | null;
   } | null>(null);
+  const [globalCloudSample, setGlobalCloudSample] = useState<{
+    key: string;
+    value: number | null;
+  } | null>(null);
+  const [globalWindSample, setGlobalWindSample] = useState<{
+    key: string;
+    value: { u: number; v: number } | null;
+  } | null>(null);
 
   const mapContainer = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<maplibregl.Map | null>(null);
@@ -269,15 +286,27 @@ export default function MapView({
 
   const weatherGridRef = useRef<WeatherGrid | null>(weatherGrid);
   const globalPrecipitationSourceRef = useRef(globalPrecipitationSource);
+  const globalCloudSourceRef = useRef(globalCloudSource);
+  const globalWindSourceRef = useRef(globalWindSource);
   const basemapRef = useRef(basemap);
   const mapOverlaysRef = useRef(mapOverlays);
-  const forecastHourRef = useRef(forecastHour);
+  const activeGlobalValidTimeRef = useRef(activeGlobalValidTime);
   const localForecastHourRef = useRef(localForecastHour);
   const locationSelectRef = useRef(onLocationSelect);
   const weatherGridRequestRef = useRef(onWeatherGridRequest);
   const activeInspection = hoverInspection ?? selectedInspection;
-  const activeGlobalTimestep = globalPrecipitationSource
-    ? getScalarTimestep(globalPrecipitationSource, forecastHour)
+  const localReferenceTime = weatherGrid?.times[localForecastHour] ?? null;
+  const activePrecipitationTimestep = globalPrecipitationSource
+    ? getScalarTimestepAtTime(globalPrecipitationSource, activeGlobalValidTime) ??
+      getClosestScalarTimestep(globalPrecipitationSource, localReferenceTime)
+    : null;
+  const activeCloudTimestep = globalCloudSource
+    ? getScalarTimestepAtTime(globalCloudSource, activeGlobalValidTime) ??
+      getClosestScalarTimestep(globalCloudSource, localReferenceTime)
+    : null;
+  const activeWindTimestep = globalWindSource
+    ? getVectorTimestepAtTime(globalWindSource, activeGlobalValidTime) ??
+      getClosestVectorTimestep(globalWindSource, localReferenceTime)
     : null;
 
   useEffect(() => {
@@ -289,6 +318,14 @@ export default function MapView({
   }, [globalPrecipitationSource]);
 
   useEffect(() => {
+    globalCloudSourceRef.current = globalCloudSource;
+  }, [globalCloudSource]);
+
+  useEffect(() => {
+    globalWindSourceRef.current = globalWindSource;
+  }, [globalWindSource]);
+
+  useEffect(() => {
     basemapRef.current = basemap;
   }, [basemap]);
 
@@ -297,8 +334,8 @@ export default function MapView({
   }, [mapOverlays]);
 
   useEffect(() => {
-    forecastHourRef.current = forecastHour;
-  }, [forecastHour]);
+    activeGlobalValidTimeRef.current = activeGlobalValidTime;
+  }, [activeGlobalValidTime]);
 
   useEffect(() => {
     localForecastHourRef.current = localForecastHour;
@@ -315,23 +352,22 @@ export default function MapView({
   useEffect(() => {
     if (
       !activeInspection ||
-      !mapOverlays.precipitation ||
       !globalPrecipitationSource ||
-      !activeGlobalTimestep
+      !activePrecipitationTimestep
     ) {
       return;
     }
 
     let isCurrent = true;
     const key = [
-      activeGlobalTimestep.id,
+      activePrecipitationTimestep.id,
       activeInspection.longitude.toFixed(5),
       activeInspection.latitude.toFixed(5),
     ].join(":");
     const timeout = window.setTimeout(() => {
       sampleScalarField(
         globalPrecipitationSource,
-        activeGlobalTimestep,
+        activePrecipitationTimestep,
         activeInspection.longitude,
         activeInspection.latitude
       )
@@ -352,10 +388,73 @@ export default function MapView({
     };
   }, [
     activeInspection,
-    activeGlobalTimestep,
+    activePrecipitationTimestep,
     globalPrecipitationSource,
-    mapOverlays.precipitation,
   ]);
+
+  useEffect(() => {
+    if (!activeInspection || !globalCloudSource || !activeCloudTimestep) return;
+
+    let isCurrent = true;
+    const key = [
+      activeCloudTimestep.id,
+      activeInspection.longitude.toFixed(5),
+      activeInspection.latitude.toFixed(5),
+    ].join(":");
+    const timeout = window.setTimeout(() => {
+      sampleScalarField(
+        globalCloudSource,
+        activeCloudTimestep,
+        activeInspection.longitude,
+        activeInspection.latitude
+      )
+        .then((value) => {
+          if (isCurrent) setGlobalCloudSample({ key, value });
+        })
+        .catch((error: unknown) => {
+          if (isCurrent) {
+            console.error("Global cloud inspection failed", error);
+            setGlobalCloudSample({ key, value: null });
+          }
+        });
+    }, 80);
+
+    return () => {
+      isCurrent = false;
+      window.clearTimeout(timeout);
+    };
+  }, [activeCloudTimestep, activeInspection, globalCloudSource]);
+
+  useEffect(() => {
+    if (!activeInspection || !globalWindSource || !activeWindTimestep) return;
+    let isCurrent = true;
+    const key = [
+      activeWindTimestep.id,
+      activeInspection.longitude.toFixed(5),
+      activeInspection.latitude.toFixed(5),
+    ].join(":");
+    const timeout = window.setTimeout(() => {
+      sampleVectorField(
+        globalWindSource,
+        activeWindTimestep,
+        activeInspection.longitude,
+        activeInspection.latitude
+      )
+        .then((value) => {
+          if (isCurrent) setGlobalWindSample({ key, value });
+        })
+        .catch((error: unknown) => {
+          if (isCurrent) {
+            console.error("Global wind inspection failed", error);
+            setGlobalWindSample({ key, value: null });
+          }
+        });
+    }, 80);
+    return () => {
+      isCurrent = false;
+      window.clearTimeout(timeout);
+    };
+  }, [activeInspection, activeWindTimestep, globalWindSource]);
 
   useEffect(() => {
     if (!mapContainer.current || mapRef.current) return;
@@ -410,7 +509,9 @@ export default function MapView({
             mapOverlaysRef.current,
             weatherGridRef.current,
             globalPrecipitationSourceRef.current,
-            forecastHourRef.current,
+            globalCloudSourceRef.current,
+            globalWindSourceRef.current,
+            activeGlobalValidTimeRef.current,
             localForecastHourRef.current
           );
 
@@ -463,7 +564,9 @@ export default function MapView({
         mapOverlaysRef.current,
         weatherGridRef.current,
         globalPrecipitationSourceRef.current,
-        forecastHourRef.current,
+        globalCloudSourceRef.current,
+        globalWindSourceRef.current,
+        activeGlobalValidTimeRef.current,
         localForecastHourRef.current
       );
       setForecastCoverage(map, weatherGridRef.current);
@@ -528,7 +631,9 @@ export default function MapView({
         mapOverlaysRef.current,
         weatherGridRef.current,
         globalPrecipitationSourceRef.current,
-        forecastHourRef.current,
+        globalCloudSourceRef.current,
+        globalWindSourceRef.current,
+        activeGlobalValidTimeRef.current,
         localForecastHourRef.current
       );
       setForecastCoverage(map, weatherGridRef.current);
@@ -612,7 +717,9 @@ export default function MapView({
       mapOverlays,
       weatherGrid,
       globalPrecipitationSource,
-      forecastHour,
+      globalCloudSource,
+      globalWindSource,
+      activeGlobalValidTime,
       localForecastHour
     );
     setForecastCoverage(map, weatherGrid);
@@ -621,7 +728,9 @@ export default function MapView({
     mapOverlays,
     weatherGrid,
     globalPrecipitationSource,
-    forecastHour,
+    globalCloudSource,
+    globalWindSource,
+    activeGlobalValidTime,
     localForecastHour,
   ]);
 
@@ -712,9 +821,9 @@ export default function MapView({
         )
       : null;
   const expectedGlobalSampleKey =
-    activeInspection && activeGlobalTimestep
+    activeInspection && activePrecipitationTimestep
       ? [
-          activeGlobalTimestep.id,
+          activePrecipitationTimestep.id,
           activeInspection.longitude.toFixed(5),
           activeInspection.latitude.toFixed(5),
         ].join(":")
@@ -723,6 +832,40 @@ export default function MapView({
     globalPrecipitationSample?.key === expectedGlobalSampleKey
       ? globalPrecipitationSample.value
       : undefined;
+  const expectedGlobalCloudSampleKey =
+    activeInspection && activeCloudTimestep
+      ? [
+          activeCloudTimestep.id,
+          activeInspection.longitude.toFixed(5),
+          activeInspection.latitude.toFixed(5),
+        ].join(":")
+      : null;
+  const globalCloudValue =
+    globalCloudSample?.key === expectedGlobalCloudSampleKey
+      ? globalCloudSample.value
+      : undefined;
+  const expectedGlobalWindSampleKey =
+    activeInspection && activeWindTimestep
+      ? [
+          activeWindTimestep.id,
+          activeInspection.longitude.toFixed(5),
+          activeInspection.latitude.toFixed(5),
+        ].join(":")
+      : null;
+  const globalWindValue =
+    globalWindSample?.key === expectedGlobalWindSampleKey
+      ? globalWindSample.value
+      : undefined;
+  const globalWindSpeed = globalWindValue
+    ? Math.hypot(globalWindValue.u, globalWindValue.v)
+    : null;
+  const globalWindDirection = globalWindValue
+    ? ((180 +
+        (Math.atan2(globalWindValue.u, globalWindValue.v) * 180) / Math.PI) %
+        360 +
+        360) %
+      360
+    : null;
   const overlayCount = Object.values(mapOverlays).filter(Boolean).length;
   const forecastStatus =
     weatherGridStatus === "loading"
@@ -744,14 +887,19 @@ export default function MapView({
         : satelliteStatus === "error"
           ? " · imagery unavailable"
           : "";
-  const globalPrecipitationStatusText =
-    !mapOverlays.precipitation
+  const activeGlobalStatuses = [
+    mapOverlays.precipitation ? globalWeatherStatuses.precipitation : null,
+    mapOverlays.clouds ? globalWeatherStatuses.cloud_cover : null,
+    mapOverlays.windFlow ? globalWeatherStatuses.wind_10m : null,
+  ].filter(Boolean);
+  const globalWeatherStatusText =
+    activeGlobalStatuses.length === 0
       ? ""
-      : globalPrecipitationStatus === "loading"
+      : activeGlobalStatuses.some((status) => status === "loading")
         ? " · GFS loading"
-        : globalPrecipitationStatus === "ready"
+        : activeGlobalStatuses.every((status) => status === "ready")
           ? " · GFS 0.25°"
-          : " · GFS unavailable";
+          : " · GFS field unavailable";
   const inspectorLeft = activeInspection
     ? activeInspection.x > activeInspection.containerWidth - 258
       ? Math.max(10, activeInspection.x - 244)
@@ -776,7 +924,7 @@ export default function MapView({
             : ""}
           {forecastStatus}
           {satelliteStatusText}
-          {globalPrecipitationStatusText}
+          {globalWeatherStatusText}
         </span>
       </div>
 
@@ -823,11 +971,10 @@ export default function MapView({
               </>
             )}
 
-            {(inspectedWeather || mapOverlays.precipitation) && (
+            {(globalPrecipitationSource || globalWeatherStatuses.precipitation !== "ready") && (
               <>
-                <span>Precipitation{mapOverlays.precipitation ? " (GFS)" : ""}</span>
-                <strong>{mapOverlays.precipitation
-                  ? !globalPrecipitationSource
+                <span>Precipitation (GFS)</span>
+                <strong>{!globalPrecipitationSource
                     ? "Unavailable"
                     : globalPrecipitationValue === undefined
                     ? "Loading…"
@@ -835,27 +982,48 @@ export default function MapView({
                       ? "Unavailable"
                       : globalPrecipitationValue < 0.05
                         ? "Dry"
-                        : `${globalPrecipitationValue.toFixed(2)} mm`
-                  : inspectedWeather!.precipitation < 0.05
-                    ? "Dry"
-                    : `${inspectedWeather!.precipitation.toFixed(1)} mm`}</strong>
+                        : `${globalPrecipitationValue.toFixed(2)} mm`}</strong>
               </>
             )}
+
+            <span>Cloud cover (GFS)</span>
+            <strong>
+              {!globalCloudSource
+                ? "Unavailable"
+                : globalCloudValue === undefined
+                  ? "Loading…"
+                  : globalCloudValue === null
+                    ? "Unavailable"
+                    : `${Math.round(globalCloudValue)}%`}
+            </strong>
 
             {inspectedWeather && (
               <>
-                <span>Cloud cover</span>
-                <strong>≈ {Math.round(inspectedWeather.cloudCover / 5) * 5}%</strong>
                 <span>Pressure</span>
                 <strong>{Math.round(inspectedWeather.pressure)} hPa</strong>
-                <span>Wind</span>
-                <strong>{Math.round(inspectedWeather.windSpeed)} km/h</strong>
-                <span>Direction</span>
-                <strong>{formatWindDirection(inspectedWeather.windDirection)}</strong>
               </>
             )}
 
-            {!inspectedWeather && !mapOverlays.precipitation && (
+            <span>Wind (GFS)</span>
+            <strong>
+              {!globalWindSource
+                ? "Unavailable"
+                : globalWindValue === undefined
+                  ? "Loading…"
+                  : globalWindValue === null || globalWindSpeed === null
+                    ? "Unavailable"
+                    : `${(globalWindSpeed * 3.6).toFixed(1)} km/h`}
+            </strong>
+            <span>Direction</span>
+            <strong>
+              {globalWindSpeed !== null && globalWindSpeed < 0.2
+                ? "Calm"
+                : globalWindDirection === null
+                  ? "Unavailable"
+                  : formatWindDirection(globalWindDirection)}
+            </strong>
+
+            {!inspectedWeather && !globalPrecipitationSource && !globalCloudSource && !globalWindSource && (
               <span className="inspector-unavailable">
                 Forecast values are outside the current sampled field.
               </span>
@@ -863,8 +1031,12 @@ export default function MapView({
           </div>
 
           <small>
-            {mapOverlays.precipitation && activeGlobalTimestep
-              ? `${activeGlobalTimestep.validTime.replace("T", " ").replace("Z", " UTC")} · GFS precipitation`
+            {activePrecipitationTimestep
+              ? `${activePrecipitationTimestep.validTime.replace("T", " ").replace("Z", " UTC")} · GFS precipitation`
+              : activeCloudTimestep
+                ? `${activeCloudTimestep.validTime.replace("T", " ").replace("Z", " UTC")} · GFS cloud cover`
+              : activeWindTimestep
+                ? `${activeWindTimestep.validTime.replace("T", " ").replace("Z", " UTC")} · GFS 10 m wind`
               : inspectionGrid
                 ? formatForecastTime(inspectionGrid, localForecastHour)
               : weatherGridStatus === "rate-limited"
@@ -873,13 +1045,17 @@ export default function MapView({
                   ? "Forecast unavailable at this point"
                   : "Forecast field loading"}
             {inspectedWeather
-              ? ` · Open-Meteo variables at ${formatForecastTime(inspectionGrid!, localForecastHour)} · interpolated from ${inspectionGrid?.rows} × ${inspectionGrid?.columns} samples${inspectionGrid !== weatherGrid ? " · cached region" : ""}`
+              ? ` · Open-Meteo temperature/pressure at ${formatForecastTime(inspectionGrid!, localForecastHour)} · interpolated from ${inspectionGrid?.rows} × ${inspectionGrid?.columns} samples${inspectionGrid !== weatherGrid ? " · cached region" : ""}`
               : ""}
-            {mapOverlays.precipitation && globalPrecipitationSource && activeGlobalTimestep
-              ? ` · GFS 0.25° ${activeGlobalTimestep.accumulationHours} h accumulation`
-              : mapOverlays.precipitation
-                ? " · GFS precipitation unavailable; no Open-Meteo fallback"
-              : ""}
+            {globalPrecipitationSource && activePrecipitationTimestep
+              ? ` · GFS 0.25° ${activePrecipitationTimestep.accumulationHours} h accumulation · run ${globalPrecipitationSource.manifest.runTime.replace("T", " ").replace(":00:00Z", "Z")}`
+              : " · GFS precipitation unavailable; no Open-Meteo fallback"}
+            {globalCloudSource && activeCloudTimestep
+              ? ` · GFS total cloud cover · run ${globalCloudSource.manifest.runTime.replace("T", " ").replace(":00:00Z", "Z")}`
+              : " · GFS cloud unavailable; no Open-Meteo fallback"}
+            {globalWindSource && activeWindTimestep
+              ? ` · GFS 0.25° 10 m wind · run ${globalWindSource.manifest.runTime.replace("T", " ").replace(":00:00Z", "Z")}`
+              : " · GFS wind unavailable; no Open-Meteo fallback"}
           </small>
         </div>
       )}

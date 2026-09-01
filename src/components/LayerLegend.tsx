@@ -125,7 +125,7 @@ export default function LayerLegend({
 
       {mapOverlays.clouds && (
         <GradientKey
-          title="Model cloud cover"
+          title="GFS total cloud cover"
           gradient="linear-gradient(to right, rgba(226, 231, 236, 0.05), rgba(205, 213, 218, 0.35), rgba(184, 192, 197, 0.72))"
           labels={["0%", "50%", "100%"]}
         />

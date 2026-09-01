@@ -35,7 +35,6 @@ export const HILLSHADE_ZOOM_STOPS = [
 ] as const;
 
 export const WEATHER_SURFACE_CROSSFADE_MS = 260;
-export const WEATHER_SURFACE_COVERAGE_HIDE_MS = 70;
 
 // Open-Meteo's hourly precipitation value is the total precipitation summed
 // over the preceding hour, in millimetres. Thresholds are intentionally

@@ -1,9 +1,11 @@
-"""Build Meridian's static global GFS precipitation proof-of-concept dataset.
+"""Build Meridian's static global GFS precipitation, cloud, and wind datasets.
 
-The script downloads only the APCP byte ranges listed in NOAA's public GFS
-inventory files. It decodes GRIB2 with ECMWF ecCodes, validates accumulation
-metadata, and writes lossless uint16 numeric PNG tiles plus a provider-neutral
-manifest. It deliberately does not colour the data; the browser owns styling.
+The script downloads only the APCP, instantaneous entire-atmosphere TCDC, and
+instantaneous 10 m UGRD/VGRD
+byte ranges listed in NOAA's public GFS inventory files. It decodes GRIB2 with
+ECMWF ecCodes, validates each field's distinct time semantics, and writes
+lossless numeric PNG tiles plus provider-neutral scalar/vector manifests. It
+deliberately does not colour the data; the browser owns styling.
 """
 
 from __future__ import annotations
@@ -38,6 +40,12 @@ MAX_ZOOM = 3
 VALUE_SCALE_MM = 0.01
 VALUE_OFFSET_MM = 0.0
 NO_DATA_VALUE = 65_535
+CLOUD_NO_DATA_VALUE = 255
+WIND_COMPONENT_SCALE_MPS = 0.2
+WIND_COMPONENT_BIAS = 512
+WIND_COMPONENT_BITS = 10
+WIND_NO_DATA_CODE = 0
+WIND_MAX_CODE = 2**WIND_COMPONENT_BITS - 1
 PACKING_NOISE_TOLERANCE_MM = 0.1
 EXPECTED_NI = 1_440
 EXPECTED_NJ = 721
@@ -56,11 +64,38 @@ class InventoryRecord:
     end_step: int
 
 
+@dataclass(frozen=True)
+class InventoryIndexRecord:
+    offset: int
+    end_offset: int
+    parameter: str
+    level: str
+    time_description: str
+    description: str
+
+
+@dataclass(frozen=True)
+class CloudInventoryRecord:
+    offset: int
+    end_offset: int
+    description: str
+    forecast_hour: int
+
+
+@dataclass(frozen=True)
+class WindInventoryRecord:
+    offset: int
+    end_offset: int
+    description: str
+    forecast_hour: int
+    component: str
+
+
 @dataclass
 class DecodedField:
     values: np.ndarray
     metadata: dict[str, Any]
-    source_record: InventoryRecord
+    source_record: InventoryRecord | CloudInventoryRecord | WindInventoryRecord
     duplicate_records: int
 
 
@@ -77,6 +112,8 @@ class RunResolution:
     cycle: str
     run_time: datetime
     plan: tuple[PlannedTimestep, ...]
+    cloud_records: tuple[CloudInventoryRecord, ...]
+    wind_records: tuple[tuple[WindInventoryRecord, WindInventoryRecord], ...]
     checked_candidates: tuple[dict[str, str], ...]
 
 
@@ -86,7 +123,7 @@ class SourceUnavailableError(RuntimeError):
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Generate static numeric precipitation tiles from one GFS run."
+        description="Generate static numeric precipitation, cloud, and wind tiles from one GFS run."
     )
     selection = parser.add_mutually_exclusive_group()
     selection.add_argument(
@@ -118,7 +155,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--keep-downloads",
         action="store_true",
-        help="Keep downloaded APCP GRIB messages inside the run directory.",
+        help="Keep downloaded APCP, TCDC, and UGRD/VGRD messages inside the run directory.",
     )
     return parser.parse_args()
 
@@ -181,32 +218,49 @@ def gfs_file_base(date_value: str, cycle: str, forecast_hour: int) -> str:
     )
 
 
-def parse_inventory(text: str) -> list[InventoryRecord]:
-    raw_records: list[tuple[int, str]] = []
+def parse_inventory_index(text: str) -> list[InventoryIndexRecord]:
+    raw_records: list[tuple[int, list[str], str]] = []
     for line in text.splitlines():
-        parts = line.split(":", 4)
-        if len(parts) < 5:
+        parts = line.split(":")
+        if len(parts) < 6:
             continue
-        raw_records.append((int(parts[1]), line))
+        raw_records.append((int(parts[1]), parts, line))
+
+    records: list[InventoryIndexRecord] = []
+    for index, (offset, parts, line) in enumerate(raw_records):
+        if index + 1 >= len(raw_records):
+            continue
+        records.append(
+            InventoryIndexRecord(
+                offset=offset,
+                end_offset=raw_records[index + 1][0] - 1,
+                parameter=parts[3],
+                level=parts[4],
+                time_description=parts[5],
+                description=line,
+            )
+        )
+    return records
+
+
+def parse_inventory(text: str) -> list[InventoryRecord]:
+    index_records = parse_inventory_index(text)
 
     matches: list[InventoryRecord] = []
-    for index, (offset, line) in enumerate(raw_records):
-        if ":APCP:surface:" not in line:
+    for record in index_records:
+        if record.parameter != "APCP" or record.level != "surface":
             continue
-        interval_match = INTERVAL_PATTERN.search(line)
+        interval_match = INTERVAL_PATTERN.search(record.time_description)
         if not interval_match:
             continue
 
         start_step = int(interval_match.group("start"))
         end_step = int(interval_match.group("end"))
-        if index + 1 >= len(raw_records):
-            raise ValueError("APCP record is the final inventory entry; byte range is unknown")
-
         matches.append(
             InventoryRecord(
-                offset=offset,
-                end_offset=raw_records[index + 1][0] - 1,
-                description=line,
+                offset=record.offset,
+                end_offset=record.end_offset,
+                description=record.description,
                 start_step=start_step,
                 end_step=end_step,
             )
@@ -216,6 +270,64 @@ def parse_inventory(text: str) -> list[InventoryRecord]:
         raise ValueError("No interval-based APCP surface records found")
 
     return matches
+
+
+def select_instantaneous_cloud_record(
+    text: str, forecast_hour: int
+) -> CloudInventoryRecord:
+    expected_time = f"{forecast_hour} hour fcst"
+    candidates = [
+        record
+        for record in parse_inventory_index(text)
+        if record.parameter == "TCDC"
+        and record.level == "entire atmosphere"
+        and record.time_description == expected_time
+    ]
+    if len(candidates) != 1:
+        descriptions = [record.description for record in candidates]
+        raise ValueError(
+            f"f{forecast_hour:03d} expected exactly one instantaneous "
+            f"TCDC entire-atmosphere record; found {len(candidates)}: {descriptions}"
+        )
+    record = candidates[0]
+    return CloudInventoryRecord(
+        offset=record.offset,
+        end_offset=record.end_offset,
+        description=record.description,
+        forecast_hour=forecast_hour,
+    )
+
+
+def select_instantaneous_wind_records(
+    text: str, forecast_hour: int
+) -> tuple[WindInventoryRecord, WindInventoryRecord]:
+    expected_time = f"{forecast_hour} hour fcst"
+    selected: list[WindInventoryRecord] = []
+    for component in ("UGRD", "VGRD"):
+        candidates = [
+            record
+            for record in parse_inventory_index(text)
+            if record.parameter == component
+            and record.level == "10 m above ground"
+            and record.time_description == expected_time
+        ]
+        if len(candidates) != 1:
+            descriptions = [record.description for record in candidates]
+            raise ValueError(
+                f"f{forecast_hour:03d} expected exactly one instantaneous "
+                f"{component} 10 m record; found {len(candidates)}: {descriptions}"
+            )
+        record = candidates[0]
+        selected.append(
+            WindInventoryRecord(
+                offset=record.offset,
+                end_offset=record.end_offset,
+                description=record.description,
+                forecast_hour=forecast_hour,
+                component=component,
+            )
+        )
+    return selected[0], selected[1]
 
 
 def plan_timesteps(
@@ -299,32 +411,56 @@ def candidate_run_times(latest_date: date, count: int) -> list[datetime]:
 
 def probe_run(
     run_time: datetime, forecast_hours: list[int]
-) -> tuple[PlannedTimestep, ...]:
+) -> tuple[
+    tuple[PlannedTimestep, ...],
+    tuple[CloudInventoryRecord, ...],
+    tuple[tuple[WindInventoryRecord, WindInventoryRecord], ...],
+]:
     date_value = run_time.strftime("%Y%m%d")
     cycle = run_time.strftime("%H")
     # The final required hour is a cheap completeness gate before requesting
     # every inventory for a cycle that NOAA may still be publishing.
     last_hour = forecast_hours[-1]
-    last_inventory = parse_inventory(fetch_text(f"{gfs_file_base(date_value, cycle, last_hour)}.idx"))
+    last_text = fetch_text(f"{gfs_file_base(date_value, cycle, last_hour)}.idx")
+    last_inventory = parse_inventory(last_text)
     inventories: dict[int, list[InventoryRecord]] = {last_hour: last_inventory}
+    cloud_records: dict[int, CloudInventoryRecord] = {
+        last_hour: select_instantaneous_cloud_record(last_text, last_hour)
+    }
+    wind_records: dict[int, tuple[WindInventoryRecord, WindInventoryRecord]] = {
+        last_hour: select_instantaneous_wind_records(last_text, last_hour)
+    }
     for forecast_hour in forecast_hours:
         if forecast_hour not in inventories:
-            inventories[forecast_hour] = parse_inventory(
-                fetch_text(f"{gfs_file_base(date_value, cycle, forecast_hour)}.idx")
+            inventory_text = fetch_text(
+                f"{gfs_file_base(date_value, cycle, forecast_hour)}.idx"
             )
-    return plan_timesteps(inventories, forecast_hours)
+            inventories[forecast_hour] = parse_inventory(inventory_text)
+            cloud_records[forecast_hour] = select_instantaneous_cloud_record(
+                inventory_text, forecast_hour
+            )
+            wind_records[forecast_hour] = select_instantaneous_wind_records(
+                inventory_text, forecast_hour
+            )
+    return (
+        plan_timesteps(inventories, forecast_hours),
+        tuple(cloud_records[hour] for hour in forecast_hours),
+        tuple(wind_records[hour] for hour in forecast_hours),
+    )
 
 
 def resolve_run(args: argparse.Namespace, forecast_hours: list[int]) -> RunResolution:
     if args.run:
         date_value, cycle, run_time = validate_run(args.run)
         print(f"Checking requested GFS {run_time:%Y-%m-%d %HZ}...")
-        plan = probe_run(run_time, forecast_hours)
+        plan, cloud_records, wind_records = probe_run(run_time, forecast_hours)
         return RunResolution(
             date=date_value,
             cycle=cycle,
             run_time=run_time,
             plan=plan,
+            cloud_records=cloud_records,
+            wind_records=wind_records,
             checked_candidates=(
                 {"runTime": run_time.isoformat().replace("+00:00", "Z"), "result": "usable"},
             ),
@@ -337,7 +473,7 @@ def resolve_run(args: argparse.Namespace, forecast_hours: list[int]) -> RunResol
         label = f"{run_time:%Y-%m-%d %HZ}"
         print(f"Checking GFS {label}...")
         try:
-            plan = probe_run(run_time, forecast_hours)
+            plan, cloud_records, wind_records = probe_run(run_time, forecast_hours)
         except (SourceUnavailableError, ValueError) as error:
             reason = str(error)
             print(f"  Run rejected: {reason}")
@@ -358,6 +494,8 @@ def resolve_run(args: argparse.Namespace, forecast_hours: list[int]) -> RunResol
             cycle=run_time.strftime("%H"),
             run_time=run_time,
             plan=plan,
+            cloud_records=cloud_records,
+            wind_records=wind_records,
             checked_candidates=tuple(checked),
         )
 
@@ -366,10 +504,13 @@ def resolve_run(args: argparse.Namespace, forecast_hours: list[int]) -> RunResol
     )
 
 
-def decode_grib(message_bytes: bytes, record: InventoryRecord) -> tuple[np.ndarray, dict[str, Any]]:
+def decode_grib(
+    message_bytes: bytes,
+    record: InventoryRecord | CloudInventoryRecord | WindInventoryRecord,
+) -> tuple[np.ndarray, dict[str, Any]]:
     message = eccodes.codes_new_from_message(message_bytes)
     if message is None:
-        raise ValueError("ecCodes could not decode the APCP message")
+        raise ValueError(f"ecCodes could not decode {record.description}")
 
     try:
         metadata_keys = [
@@ -392,6 +533,17 @@ def decode_grib(message_bytes: bytes, record: InventoryRecord) -> tuple[np.ndarr
             "jDirectionIncrementInDegrees",
             "jScansPositively",
             "iScansNegatively",
+            "typeOfLevel",
+            "level",
+            "gridType",
+            "uvRelativeToGrid",
+            "dataDate",
+            "dataTime",
+            "forecastTime",
+            "validityDate",
+            "validityTime",
+            "numberOfMissing",
+            "missingValue",
         ]
         metadata = {
             key: eccodes.codes_get(message, key)
@@ -407,6 +559,221 @@ def decode_grib(message_bytes: bytes, record: InventoryRecord) -> tuple[np.ndarr
         eccodes.codes_release(message)
 
     return values, metadata
+
+
+def validate_cloud_metadata(
+    metadata: dict[str, Any], run_time: datetime, forecast_hour: int
+) -> None:
+    expected = {
+        "shortName": "tcc",
+        "units": "%",
+        "stepType": "instant",
+        "endStep": forecast_hour,
+        "forecastTime": forecast_hour,
+        "Ni": EXPECTED_NI,
+        "Nj": EXPECTED_NJ,
+        "iDirectionIncrementInDegrees": 0.25,
+        "jDirectionIncrementInDegrees": 0.25,
+        "jScansPositively": 0,
+        "iScansNegatively": 0,
+    }
+    for key, value in expected.items():
+        if metadata.get(key) != value:
+            raise ValueError(
+                f"Unexpected TCDC metadata {key}={metadata.get(key)!r}; expected {value!r}"
+            )
+    if metadata.get("typeOfLevel") not in ("atmosphere", "entireAtmosphere"):
+        raise ValueError(
+            f"Unexpected TCDC level type: {metadata.get('typeOfLevel')!r}"
+        )
+    expected_valid = run_time + timedelta(hours=forecast_hour)
+    actual_date = int(metadata.get("validityDate", 0))
+    actual_time = int(metadata.get("validityTime", -1))
+    if actual_date != int(expected_valid.strftime("%Y%m%d")) or actual_time != int(
+        expected_valid.strftime("%H%M")
+    ):
+        raise ValueError(
+            f"Unexpected TCDC valid time {actual_date}/{actual_time:04d}; "
+            f"expected {expected_valid:%Y%m%d/%H%M}"
+        )
+
+
+def load_cloud_field(
+    date_value: str,
+    cycle: str,
+    run_time: datetime,
+    record: CloudInventoryRecord,
+    keep_directory: Path | None,
+) -> DecodedField:
+    forecast_hour = record.forecast_hour
+    forecast_token = f"f{forecast_hour:03d}"
+    message_bytes = fetch_bytes(
+        gfs_file_base(date_value, cycle, forecast_hour),
+        (record.offset, record.end_offset),
+    )
+    values, metadata = decode_grib(message_bytes, record)  # type: ignore[arg-type]
+    validate_cloud_metadata(metadata, run_time, forecast_hour)
+
+    missing_value = float(metadata.get("missingValue", 9_999.0))
+    number_of_missing = int(metadata.get("numberOfMissing", 0))
+    if number_of_missing:
+        values = values.copy()
+        values[np.isclose(values, missing_value)] = np.nan
+    finite = values[np.isfinite(values)]
+    if finite.size == 0:
+        raise ValueError(f"TCDC {forecast_token} contains no finite values")
+    minimum = float(np.min(finite))
+    maximum = float(np.max(finite))
+    if minimum < 0.0 or maximum > 100.0:
+        raise ValueError(
+            f"TCDC {forecast_token} values are outside 0..100%: {minimum}..{maximum}"
+        )
+    if number_of_missing != int(np.count_nonzero(~np.isfinite(values))):
+        raise ValueError(f"TCDC {forecast_token} missing-value metadata is inconsistent")
+
+    if keep_directory:
+        keep_directory.mkdir(parents=True, exist_ok=True)
+        (keep_directory / f"{forecast_token}.grib2").write_bytes(message_bytes)
+
+    return DecodedField(
+        values=values,
+        metadata=metadata,
+        source_record=record,  # type: ignore[arg-type]
+        duplicate_records=1,
+    )
+
+
+def validate_wind_metadata(
+    metadata: dict[str, Any],
+    run_time: datetime,
+    forecast_hour: int,
+    component: str,
+) -> None:
+    expected_short_name = "10u" if component == "UGRD" else "10v"
+    expected = {
+        "shortName": expected_short_name,
+        "units": "m s**-1",
+        "stepType": "instant",
+        "endStep": forecast_hour,
+        "forecastTime": forecast_hour,
+        "Ni": EXPECTED_NI,
+        "Nj": EXPECTED_NJ,
+        "iDirectionIncrementInDegrees": 0.25,
+        "jDirectionIncrementInDegrees": 0.25,
+        "jScansPositively": 0,
+        "iScansNegatively": 0,
+        "typeOfLevel": "heightAboveGround",
+        "level": 10,
+        "gridType": "regular_ll",
+        "uvRelativeToGrid": 0,
+        "latitudeOfFirstGridPointInDegrees": 90.0,
+        "longitudeOfFirstGridPointInDegrees": 0.0,
+        "latitudeOfLastGridPointInDegrees": -90.0,
+        "longitudeOfLastGridPointInDegrees": 359.75,
+    }
+    for key, value in expected.items():
+        if metadata.get(key) != value:
+            raise ValueError(
+                f"Unexpected {component} metadata {key}={metadata.get(key)!r}; "
+                f"expected {value!r}"
+            )
+    expected_valid = run_time + timedelta(hours=forecast_hour)
+    if int(metadata.get("dataDate", 0)) != int(run_time.strftime("%Y%m%d")) or int(
+        metadata.get("dataTime", -1)
+    ) != int(run_time.strftime("%H%M")):
+        raise ValueError(f"Unexpected {component} model run metadata")
+    if int(metadata.get("validityDate", 0)) != int(
+        expected_valid.strftime("%Y%m%d")
+    ) or int(metadata.get("validityTime", -1)) != int(
+        expected_valid.strftime("%H%M")
+    ):
+        raise ValueError(f"Unexpected {component} valid time")
+
+
+def _normalise_missing_values(
+    values: np.ndarray, metadata: dict[str, Any], label: str
+) -> tuple[np.ndarray, np.ndarray]:
+    number_of_missing = int(metadata.get("numberOfMissing", 0))
+    result = values
+    if number_of_missing:
+        missing_value = float(metadata.get("missingValue", 9_999.0))
+        result = values.copy()
+        result[np.isclose(result, missing_value)] = np.nan
+    missing_mask = ~np.isfinite(result)
+    if number_of_missing != int(np.count_nonzero(missing_mask)):
+        raise ValueError(f"{label} missing-value metadata is inconsistent")
+    if np.all(missing_mask):
+        raise ValueError(f"{label} contains no finite values")
+    return result, missing_mask
+
+
+def load_wind_field_pair(
+    date_value: str,
+    cycle: str,
+    run_time: datetime,
+    records: tuple[WindInventoryRecord, WindInventoryRecord],
+    keep_directory: Path | None,
+) -> tuple[DecodedField, DecodedField]:
+    u_record, v_record = records
+    if u_record.component != "UGRD" or v_record.component != "VGRD":
+        raise ValueError("Wind inventory pair is not ordered UGRD/VGRD")
+    if u_record.forecast_hour != v_record.forecast_hour:
+        raise ValueError("Wind inventory pair forecast hours do not match")
+    forecast_hour = u_record.forecast_hour
+    base = gfs_file_base(date_value, cycle, forecast_hour)
+    decoded: list[DecodedField] = []
+    masks: list[np.ndarray] = []
+    for record in records:
+        message_bytes = fetch_bytes(base, (record.offset, record.end_offset))
+        values, metadata = decode_grib(message_bytes, record)
+        validate_wind_metadata(metadata, run_time, forecast_hour, record.component)
+        values, missing_mask = _normalise_missing_values(
+            values, metadata, f"{record.component} f{forecast_hour:03d}"
+        )
+        decoded.append(
+            DecodedField(
+                values=values,
+                metadata=metadata,
+                source_record=record,
+                duplicate_records=1,
+            )
+        )
+        masks.append(missing_mask)
+        if keep_directory:
+            keep_directory.mkdir(parents=True, exist_ok=True)
+            (keep_directory / f"f{forecast_hour:03d}-{record.component.lower()}.grib2").write_bytes(
+                message_bytes
+            )
+    comparison_keys = (
+        "stepType",
+        "endStep",
+        "forecastTime",
+        "units",
+        "Ni",
+        "Nj",
+        "latitudeOfFirstGridPointInDegrees",
+        "longitudeOfFirstGridPointInDegrees",
+        "latitudeOfLastGridPointInDegrees",
+        "longitudeOfLastGridPointInDegrees",
+        "iDirectionIncrementInDegrees",
+        "jDirectionIncrementInDegrees",
+        "jScansPositively",
+        "iScansNegatively",
+        "typeOfLevel",
+        "level",
+        "gridType",
+        "uvRelativeToGrid",
+        "dataDate",
+        "dataTime",
+        "validityDate",
+        "validityTime",
+    )
+    for key in comparison_keys:
+        if decoded[0].metadata.get(key) != decoded[1].metadata.get(key):
+            raise ValueError(f"Wind U/V metadata mismatch for {key}")
+    if not np.array_equal(masks[0], masks[1]):
+        raise ValueError("Wind U/V missing-data masks do not match")
+    return decoded[0], decoded[1]
 
 
 def validate_metadata(metadata: dict[str, Any], start_step: int, end_step: int) -> None:
@@ -536,6 +903,80 @@ def encode_numeric_png(sampled_values: np.ndarray, output_path: Path) -> None:
     )
 
 
+def encode_cloud_png(sampled_values: np.ndarray, output_path: Path) -> None:
+    finite = np.isfinite(sampled_values)
+    if np.any(sampled_values[finite] < 0) or np.any(sampled_values[finite] > 100):
+        raise ValueError("Cloud cover exceeds the valid 0..100% range")
+    encoded = np.full(sampled_values.shape, CLOUD_NO_DATA_VALUE, dtype=np.uint8)
+    encoded[finite] = np.rint(sampled_values[finite]).astype(np.uint8)
+    rgba = np.empty((TILE_SIZE, TILE_SIZE, 4), dtype=np.uint8)
+    rgba[:, :, 0] = encoded
+    rgba[:, :, 1] = 0
+    rgba[:, :, 2] = 0
+    rgba[:, :, 3] = 255
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    Image.fromarray(rgba, mode="RGBA").save(
+        output_path, format="PNG", optimize=True, compress_level=9
+    )
+
+
+def decode_cloud_png(path: Path) -> np.ndarray:
+    return np.asarray(Image.open(path).convert("RGBA"), dtype=np.uint8)[:, :, 0]
+
+
+def encode_wind_png(
+    sampled_u: np.ndarray, sampled_v: np.ndarray, output_path: Path
+) -> None:
+    if sampled_u.shape != sampled_v.shape:
+        raise ValueError("Wind U/V tile shapes do not match")
+    finite_u = np.isfinite(sampled_u)
+    finite_v = np.isfinite(sampled_v)
+    if not np.array_equal(finite_u, finite_v):
+        raise ValueError("Wind U/V no-data masks do not match")
+    valid = finite_u & finite_v
+    u_codes = np.zeros(sampled_u.shape, dtype=np.uint16)
+    v_codes = np.zeros(sampled_v.shape, dtype=np.uint16)
+    u_quantized = (
+        np.rint(sampled_u[valid] / WIND_COMPONENT_SCALE_MPS).astype(np.int32)
+        + WIND_COMPONENT_BIAS
+    )
+    v_quantized = (
+        np.rint(sampled_v[valid] / WIND_COMPONENT_SCALE_MPS).astype(np.int32)
+        + WIND_COMPONENT_BIAS
+    )
+    if (
+        np.any(u_quantized <= WIND_NO_DATA_CODE)
+        or np.any(v_quantized <= WIND_NO_DATA_CODE)
+        or np.any(u_quantized > WIND_MAX_CODE)
+        or np.any(v_quantized > WIND_MAX_CODE)
+    ):
+        raise ValueError("Wind component exceeds packed 10-bit range")
+    u_codes[valid] = u_quantized.astype(np.uint16)
+    v_codes[valid] = v_quantized.astype(np.uint16)
+    rgba = np.empty((*sampled_u.shape, 4), dtype=np.uint8)
+    rgba[:, :, 0] = (u_codes >> 2).astype(np.uint8)
+    rgba[:, :, 1] = (
+        ((u_codes & 0x03) << 6) | ((v_codes >> 4) & 0x3F)
+    ).astype(np.uint8)
+    rgba[:, :, 2] = ((v_codes & 0x0F) << 4).astype(np.uint8)
+    rgba[:, :, 3] = 255
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    Image.fromarray(rgba, mode="RGBA").save(
+        output_path, format="PNG", optimize=True, compress_level=9
+    )
+
+
+def decode_wind_png(path: Path) -> tuple[np.ndarray, np.ndarray]:
+    rgba = np.asarray(Image.open(path).convert("RGBA"), dtype=np.uint8)
+    u_codes = (rgba[:, :, 0].astype(np.uint16) << 2) | (
+        rgba[:, :, 1].astype(np.uint16) >> 6
+    )
+    v_codes = ((rgba[:, :, 1].astype(np.uint16) & 0x3F) << 4) | (
+        rgba[:, :, 2].astype(np.uint16) >> 4
+    )
+    return u_codes, v_codes
+
+
 def write_tile_pyramid(values: np.ndarray, timestep_directory: Path) -> tuple[int, int]:
     file_count = 0
     byte_count = 0
@@ -549,6 +990,47 @@ def write_tile_pyramid(values: np.ndarray, timestep_directory: Path) -> tuple[in
                 sampled = sample_gfs_grid(values, longitudes, latitudes)
                 path = timestep_directory / str(zoom) / str(tile_x) / f"{tile_y}.png"
                 encode_numeric_png(sampled, path)
+                file_count += 1
+                byte_count += path.stat().st_size
+    return file_count, byte_count
+
+
+def write_cloud_tile_pyramid(
+    values: np.ndarray, timestep_directory: Path
+) -> tuple[int, int]:
+    file_count = 0
+    byte_count = 0
+    for zoom in range(MIN_ZOOM, MAX_ZOOM + 1):
+        tile_count = 2**zoom
+        for tile_y in range(tile_count):
+            for tile_x in range(tile_count):
+                longitudes, latitudes = mercator_pixel_coordinates(
+                    zoom, tile_x, tile_y
+                )
+                sampled = sample_gfs_grid(values, longitudes, latitudes)
+                path = timestep_directory / str(zoom) / str(tile_x) / f"{tile_y}.png"
+                encode_cloud_png(sampled, path)
+                file_count += 1
+                byte_count += path.stat().st_size
+    return file_count, byte_count
+
+
+def write_wind_tile_pyramid(
+    u_values: np.ndarray, v_values: np.ndarray, timestep_directory: Path
+) -> tuple[int, int]:
+    file_count = 0
+    byte_count = 0
+    for zoom in range(MIN_ZOOM, MAX_ZOOM + 1):
+        tile_count = 2**zoom
+        for tile_y in range(tile_count):
+            for tile_x in range(tile_count):
+                longitudes, latitudes = mercator_pixel_coordinates(
+                    zoom, tile_x, tile_y
+                )
+                sampled_u = sample_gfs_grid(u_values, longitudes, latitudes)
+                sampled_v = sample_gfs_grid(v_values, longitudes, latitudes)
+                path = timestep_directory / str(zoom) / str(tile_x) / f"{tile_y}.png"
+                encode_wind_png(sampled_u, sampled_v, path)
                 file_count += 1
                 byte_count += path.stat().st_size
     return file_count, byte_count
@@ -582,6 +1064,67 @@ def exported_value_at(run_directory: Path, step_id: str, longitude: float, latit
     return encoded * VALUE_SCALE_MM + VALUE_OFFSET_MM
 
 
+def exported_cloud_value_at(
+    cloud_directory: Path, step_id: str, longitude: float, latitude: float
+) -> tuple[float | None, float, float]:
+    world_size = TILE_SIZE * 2**MAX_ZOOM
+    wrapped_longitude = ((longitude + 180.0) % 360.0) - 180.0
+    x = ((wrapped_longitude + 180.0) / 360.0) * world_size
+    latitude = max(-WEB_MERCATOR_LIMIT, min(WEB_MERCATOR_LIMIT, latitude))
+    sine = math.sin(math.radians(latitude))
+    y = (0.5 - math.log((1 + sine) / (1 - sine)) / (4 * math.pi)) * world_size
+    pixel_x = min(world_size - 1, max(0, int(x)))
+    pixel_y = min(world_size - 1, max(0, int(y)))
+    tile_x, local_x = divmod(pixel_x, TILE_SIZE)
+    tile_y, local_y = divmod(pixel_y, TILE_SIZE)
+    path = cloud_directory / "tiles" / step_id / str(MAX_ZOOM) / str(tile_x) / f"{tile_y}.png"
+    encoded = int(decode_cloud_png(path)[local_y, local_x])
+    center_x = pixel_x + 0.5
+    center_y = pixel_y + 0.5
+    center_longitude = center_x / world_size * 360.0 - 180.0
+    mercator_y = 0.5 - center_y / world_size
+    center_latitude = math.degrees(
+        math.atan(math.sinh(mercator_y * 2.0 * math.pi))
+    )
+    return (
+        None if encoded == CLOUD_NO_DATA_VALUE else float(encoded),
+        center_longitude,
+        center_latitude,
+    )
+
+
+def exported_wind_value_at(
+    wind_directory: Path, step_id: str, longitude: float, latitude: float
+) -> tuple[tuple[float, float] | None, float, float]:
+    world_size = TILE_SIZE * 2**MAX_ZOOM
+    wrapped_longitude = ((longitude + 180.0) % 360.0) - 180.0
+    x = ((wrapped_longitude + 180.0) / 360.0) * world_size
+    latitude = max(-WEB_MERCATOR_LIMIT, min(WEB_MERCATOR_LIMIT, latitude))
+    sine = math.sin(math.radians(latitude))
+    y = (0.5 - math.log((1 + sine) / (1 - sine)) / (4 * math.pi)) * world_size
+    pixel_x = min(world_size - 1, max(0, int(x)))
+    pixel_y = min(world_size - 1, max(0, int(y)))
+    tile_x, local_x = divmod(pixel_x, TILE_SIZE)
+    tile_y, local_y = divmod(pixel_y, TILE_SIZE)
+    path = wind_directory / "tiles" / step_id / str(MAX_ZOOM) / str(tile_x) / f"{tile_y}.png"
+    u_codes, v_codes = decode_wind_png(path)
+    u_code = int(u_codes[local_y, local_x])
+    v_code = int(v_codes[local_y, local_x])
+    center_x = pixel_x + 0.5
+    center_y = pixel_y + 0.5
+    center_longitude = center_x / world_size * 360.0 - 180.0
+    mercator_y = 0.5 - center_y / world_size
+    center_latitude = math.degrees(math.atan(math.sinh(mercator_y * 2.0 * math.pi)))
+    if u_code == WIND_NO_DATA_CODE or v_code == WIND_NO_DATA_CODE:
+        value = None
+    else:
+        value = (
+            (u_code - WIND_COMPONENT_BIAS) * WIND_COMPONENT_SCALE_MPS,
+            (v_code - WIND_COMPONENT_BIAS) * WIND_COMPONENT_SCALE_MPS,
+        )
+    return value, center_longitude, center_latitude
+
+
 def write_json(path: Path, value: Any) -> None:
     path.write_text(json.dumps(value, indent=2) + "\n", encoding="utf-8")
 
@@ -610,6 +1153,63 @@ def latest_pointer_for_manifest(manifest: dict[str, Any], run_id: str) -> dict[s
         "timestepCount": len(timesteps),
         "manifest": f"{run_id}/manifest.json",
     }
+
+
+def field_catalog_entry(
+    manifest: dict[str, Any], manifest_path: str
+) -> dict[str, Any]:
+    timesteps = manifest["timesteps"]
+    return {
+        "runTime": manifest["runTime"],
+        "firstValidTime": timesteps[0]["validTime"],
+        "lastValidTime": timesteps[-1]["validTime"],
+        "timestepCount": len(timesteps),
+        "manifest": manifest_path,
+    }
+
+
+def read_catalog_fields(output_root: Path) -> dict[str, Any]:
+    latest_path = output_root / "latest.json"
+    if not latest_path.exists():
+        return {}
+    try:
+        latest = json.loads(latest_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {}
+    if latest.get("schemaVersion") == 2 and isinstance(latest.get("fields"), dict):
+        return dict(latest["fields"])
+    if latest.get("schemaVersion") == 1 and latest.get("variable") == "precipitation":
+        return {
+            "precipitation": {
+                key: latest[key]
+                for key in (
+                    "runTime",
+                    "firstValidTime",
+                    "lastValidTime",
+                    "timestepCount",
+                    "manifest",
+                )
+            }
+        }
+    return {}
+
+
+def publish_catalog_field(
+    output_root: Path,
+    field_id: str,
+    manifest: dict[str, Any],
+    manifest_path: str,
+) -> None:
+    fields = read_catalog_fields(output_root)
+    fields[field_id] = field_catalog_entry(manifest, manifest_path)
+    catalogue = {
+        "schemaVersion": 2,
+        "model": "NOAA GFS",
+        "product": "pgrb2.0p25",
+        "generatedAt": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+        "fields": fields,
+    }
+    write_json_atomically(output_root / "latest.json", catalogue)
 
 
 def publish_existing_run(
@@ -642,11 +1242,511 @@ def publish_existing_run(
             f"Run directory exists but is not a reusable validated dataset: {run_directory}"
         ) from error
 
-    write_json_atomically(
-        output_root / "latest.json", latest_pointer_for_manifest(manifest, run_id)
+    publish_catalog_field(
+        output_root,
+        "precipitation",
+        manifest,
+        f"{run_id}/manifest.json",
     )
-    print(f"Reused validated immutable run {run_id}; updated latest.json atomically.")
+    print(f"Reused validated precipitation run {run_id}; updated field catalogue.")
     return True
+
+
+def build_cloud_dataset(
+    args: argparse.Namespace,
+    resolution: RunResolution,
+    forecast_hours: list[int],
+    run_directory: Path,
+    run_id: str,
+) -> None:
+    cloud_directory = run_directory / "cloud-cover"
+    manifest_path = cloud_directory / "manifest.json"
+    expected_tiles = len(forecast_hours) * sum(
+        4**zoom for zoom in range(MIN_ZOOM, MAX_ZOOM + 1)
+    )
+    if cloud_directory.exists():
+        try:
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+            actual_hours = [step["forecastHour"] for step in manifest["timesteps"]]
+            actual_tiles = sum(1 for _ in (cloud_directory / "tiles").rglob("*.png"))
+            if (
+                manifest.get("schemaVersion") != 2
+                or manifest["field"]["id"] != "cloud_cover"
+                or actual_hours != forecast_hours
+                or actual_tiles != expected_tiles
+            ):
+                raise ValueError("cloud manifest or tiles do not match")
+        except (KeyError, OSError, ValueError, json.JSONDecodeError) as error:
+            raise FileExistsError(
+                f"Cloud directory exists but is not reusable: {cloud_directory}"
+            ) from error
+        publish_catalog_field(
+            args.output_root,
+            "cloud_cover",
+            manifest,
+            f"{run_id}/cloud-cover/manifest.json",
+        )
+        print(f"Reused validated cloud field {run_id}; updated field catalogue.")
+        return
+
+    staging = args.output_root / f".{run_id}-cloud-building"
+    if staging.exists():
+        shutil.rmtree(staging)
+    staging.mkdir(parents=True, exist_ok=True)
+    timesteps: list[dict[str, Any]] = []
+    validations: list[dict[str, Any]] = []
+    total_tile_files = 0
+    total_tile_bytes = 0
+    sample_locations = {
+        "Snowdonia": (-4.0762, 53.0685),
+        "central-US": (-97.0, 38.0),
+        "Japan": (139.7, 35.7),
+        "antimeridian-west": (-179.9, 0.0),
+        "antimeridian-east": (179.9, 0.0),
+    }
+
+    try:
+        print("Generating global instantaneous total cloud cover...")
+        for record in resolution.cloud_records:
+            forecast_hour = record.forecast_hour
+            step_id = f"f{forecast_hour:03d}"
+            keep_directory = staging / "source" if args.keep_downloads else None
+            field = load_cloud_field(
+                resolution.date,
+                resolution.cycle,
+                resolution.run_time,
+                record,
+                keep_directory,
+            )
+            finite = field.values[np.isfinite(field.values)]
+            minimum = float(np.min(finite))
+            maximum = float(np.max(finite))
+            tile_files, tile_bytes = write_cloud_tile_pyramid(
+                field.values, staging / "tiles" / step_id
+            )
+            total_tile_files += tile_files
+            total_tile_bytes += tile_bytes
+            samples = []
+            for name, (longitude, latitude) in sample_locations.items():
+                exported_value, sampled_longitude, sampled_latitude = exported_cloud_value_at(
+                    staging, step_id, longitude, latitude
+                )
+                source_value = source_value_at(
+                    field.values, sampled_longitude, sampled_latitude
+                )
+                samples.append(
+                    {
+                        "name": name,
+                        "longitude": longitude,
+                        "latitude": latitude,
+                        "sourcePercent": round(source_value, 4),
+                        "exportedPercent": exported_value,
+                        "absoluteDifferencePercent": None
+                        if exported_value is None
+                        else round(abs(source_value - exported_value), 4),
+                    }
+                )
+            valid_time = resolution.run_time + timedelta(hours=forecast_hour)
+            validations.append(
+                {
+                    "id": step_id,
+                    "inventory": record.description,
+                    "sourceParameter": "TCDC",
+                    "sourceLevel": "entire atmosphere",
+                    "sourceStepType": field.metadata["stepType"],
+                    "sourceStepRange": field.metadata["stepRange"],
+                    "sourceUnits": field.metadata["units"],
+                    "minimumPercent": minimum,
+                    "maximumPercent": maximum,
+                    "missingValueCount": int(np.count_nonzero(~np.isfinite(field.values))),
+                    "samples": samples,
+                    "tileFiles": tile_files,
+                    "tileBytes": tile_bytes,
+                }
+            )
+            timesteps.append(
+                {
+                    "id": step_id,
+                    "forecastHour": forecast_hour,
+                    "validTime": valid_time.isoformat().replace("+00:00", "Z"),
+                    "minimum": minimum,
+                    "maximum": maximum,
+                    "tileTemplate": f"tiles/{step_id}/{{z}}/{{x}}/{{y}}.png",
+                }
+            )
+            print(
+                f"  {step_id}: {minimum:.0f}..{maximum:.0f}%; "
+                f"{tile_files} tiles; {tile_bytes / 1024:.1f} KiB"
+            )
+
+        generated_at = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+        manifest = {
+            "schemaVersion": 2,
+            "id": f"gfs-0p25-tcdc-{run_id.lower()}",
+            "model": "NOAA GFS",
+            "product": "pgrb2.0p25",
+            "runTime": resolution.run_time.isoformat().replace("+00:00", "Z"),
+            "field": {
+                "id": "cloud_cover",
+                "kind": "scalar",
+                "sourceParameter": "TCDC",
+                "sourceLevel": "entire atmosphere",
+                "displayName": "Total cloud cover",
+                "units": "percent",
+                "validRange": [0, 100],
+                "timeSemantics": "instantaneous",
+                "nativeResolution": {
+                    "longitudeDegrees": 0.25,
+                    "latitudeDegrees": 0.25,
+                },
+            },
+            "coverage": {
+                "bounds": [-180.0, -WEB_MERCATOR_LIMIT, 180.0, WEB_MERCATOR_LIMIT],
+                "worldWrap": True,
+                "polarLimit": "Web Mercator clips beyond ±85.05112878° latitude.",
+            },
+            "tiles": {
+                "format": "png",
+                "encoding": "uint8-r",
+                "tileSize": TILE_SIZE,
+                "minZoom": MIN_ZOOM,
+                "maxZoom": MAX_ZOOM,
+                "scale": 1,
+                "offset": 0,
+                "noData": CLOUD_NO_DATA_VALUE,
+                "resampling": "bilinear-from-canonical-grid",
+                "overzoom": True,
+            },
+            "timesteps": timesteps,
+            "attribution": {
+                "label": "Derived from NOAA Global Forecast System (GFS)",
+                "url": "https://registry.opendata.aws/noaa-gfs-bdp-pds/",
+                "source": NOAA_BUCKET,
+            },
+            "generatedAt": generated_at,
+        }
+        validation = {
+            "run": run_id,
+            "field": "cloud_cover",
+            "sourceGrid": {
+                "columns": EXPECTED_NI,
+                "rows": EXPECTED_NJ,
+                "resolutionDegrees": 0.25,
+                "latitudeOrder": "90..-90 degrees north-to-south",
+            },
+            "encoding": {
+                "description": "uint8 cloud percentage in red; 255 means no-data",
+                "scale": 1,
+                "offset": 0,
+                "noData": CLOUD_NO_DATA_VALUE,
+            },
+            "timesteps": validations,
+            "summary": {
+                "timestepCount": len(timesteps),
+                "tileFileCount": total_tile_files,
+                "tileBytes": total_tile_bytes,
+                "minimumPercent": min(item["minimumPercent"] for item in validations),
+                "maximumPercent": max(item["maximumPercent"] for item in validations),
+            },
+        }
+        write_json(staging / "manifest.json", manifest)
+        write_json(staging / "validation.json", validation)
+        run_directory.mkdir(parents=True, exist_ok=True)
+        shutil.move(str(staging), str(cloud_directory))
+        publish_catalog_field(
+            args.output_root,
+            "cloud_cover",
+            manifest,
+            f"{run_id}/cloud-cover/manifest.json",
+        )
+        print(
+            f"Wrote {len(timesteps)} cloud timesteps and {total_tile_files} tiles "
+            f"({total_tile_bytes / 1024 / 1024:.2f} MiB)."
+        )
+    except Exception:
+        if staging.exists():
+            shutil.rmtree(staging)
+        raise
+
+
+def build_wind_dataset(
+    args: argparse.Namespace,
+    resolution: RunResolution,
+    forecast_hours: list[int],
+    run_directory: Path,
+    run_id: str,
+) -> None:
+    wind_directory = run_directory / "wind-10m"
+    manifest_path = wind_directory / "manifest.json"
+    expected_tiles = len(forecast_hours) * sum(
+        4**zoom for zoom in range(MIN_ZOOM, MAX_ZOOM + 1)
+    )
+    if wind_directory.exists():
+        try:
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+            actual_hours = [step["forecastHour"] for step in manifest["timesteps"]]
+            actual_tiles = sum(1 for _ in (wind_directory / "tiles").rglob("*.png"))
+            if (
+                manifest.get("schemaVersion") != 2
+                or manifest["field"]["id"] != "wind_10m"
+                or manifest["field"]["kind"] != "vector"
+                or actual_hours != forecast_hours
+                or actual_tiles != expected_tiles
+            ):
+                raise ValueError("wind manifest or tiles do not match")
+        except (KeyError, OSError, ValueError, json.JSONDecodeError) as error:
+            raise FileExistsError(
+                f"Wind directory exists but is not reusable: {wind_directory}"
+            ) from error
+        publish_catalog_field(
+            args.output_root,
+            "wind_10m",
+            manifest,
+            f"{run_id}/wind-10m/manifest.json",
+        )
+        print(f"Reused validated 10 m wind field {run_id}; updated field catalogue.")
+        return
+
+    staging = args.output_root / f".{run_id}-wind-building"
+    if staging.exists():
+        shutil.rmtree(staging)
+    staging.mkdir(parents=True, exist_ok=True)
+    timesteps: list[dict[str, Any]] = []
+    validations: list[dict[str, Any]] = []
+    total_tile_files = 0
+    total_tile_bytes = 0
+    sample_locations = {
+        "Snowdonia": (-4.0762, 53.0685),
+        "central-US": (-97.0, 38.0),
+        "Japan": (139.7, 35.7),
+        "antimeridian-west": (-179.9, 0.0),
+        "antimeridian-east": (179.9, 0.0),
+    }
+
+    try:
+        print("Generating global instantaneous 10 m wind vectors...")
+        for records in resolution.wind_records:
+            forecast_hour = records[0].forecast_hour
+            step_id = f"f{forecast_hour:03d}"
+            keep_directory = staging / "source" if args.keep_downloads else None
+            u_field, v_field = load_wind_field_pair(
+                resolution.date,
+                resolution.cycle,
+                resolution.run_time,
+                records,
+                keep_directory,
+            )
+            valid_mask = np.isfinite(u_field.values) & np.isfinite(v_field.values)
+            u_values = u_field.values[valid_mask]
+            v_values = v_field.values[valid_mask]
+            speeds = np.hypot(u_values, v_values)
+            minimum_u = float(np.min(u_values))
+            maximum_u = float(np.max(u_values))
+            minimum_v = float(np.min(v_values))
+            maximum_v = float(np.max(v_values))
+            minimum_speed = float(np.min(speeds))
+            maximum_speed = float(np.max(speeds))
+            tile_files, tile_bytes = write_wind_tile_pyramid(
+                u_field.values,
+                v_field.values,
+                staging / "tiles" / step_id,
+            )
+            total_tile_files += tile_files
+            total_tile_bytes += tile_bytes
+            samples = []
+            for name, (longitude, latitude) in sample_locations.items():
+                exported_value, sampled_longitude, sampled_latitude = exported_wind_value_at(
+                    staging, step_id, longitude, latitude
+                )
+                source_u = source_value_at(
+                    u_field.values, sampled_longitude, sampled_latitude
+                )
+                source_v = source_value_at(
+                    v_field.values, sampled_longitude, sampled_latitude
+                )
+                if exported_value is None:
+                    raise ValueError(
+                        f"Wind validation sample {name} unexpectedly hit no-data"
+                    )
+                if (
+                    abs(source_u - exported_value[0])
+                    > WIND_COMPONENT_SCALE_MPS / 2 + 1e-6
+                    or abs(source_v - exported_value[1])
+                    > WIND_COMPONENT_SCALE_MPS / 2 + 1e-6
+                ):
+                    raise ValueError(
+                        f"Wind validation sample {name} exceeded quantisation tolerance"
+                    )
+                samples.append(
+                    {
+                        "name": name,
+                        "longitude": longitude,
+                        "latitude": latitude,
+                        "sourceU": round(source_u, 4),
+                        "sourceV": round(source_v, 4),
+                        "exportedU": exported_value[0],
+                        "exportedV": exported_value[1],
+                        "absoluteDifferenceU": round(
+                            abs(source_u - exported_value[0]), 4
+                        ),
+                        "absoluteDifferenceV": round(
+                            abs(source_v - exported_value[1]), 4
+                        ),
+                    }
+                )
+            valid_time = resolution.run_time + timedelta(hours=forecast_hour)
+            validations.append(
+                {
+                    "id": step_id,
+                    "inventory": [records[0].description, records[1].description],
+                    "sourceParameters": ["UGRD", "VGRD"],
+                    "sourceLevel": "10 m above ground",
+                    "sourceStepType": u_field.metadata["stepType"],
+                    "sourceStepRange": u_field.metadata["stepRange"],
+                    "sourceUnits": u_field.metadata["units"],
+                    "uvRelativeToGrid": u_field.metadata["uvRelativeToGrid"],
+                    "minimumU": minimum_u,
+                    "maximumU": maximum_u,
+                    "minimumV": minimum_v,
+                    "maximumV": maximum_v,
+                    "minimumSpeed": minimum_speed,
+                    "maximumSpeed": maximum_speed,
+                    "missingValueCount": int(np.count_nonzero(~valid_mask)),
+                    "samples": samples,
+                    "tileFiles": tile_files,
+                    "tileBytes": tile_bytes,
+                }
+            )
+            timesteps.append(
+                {
+                    "id": step_id,
+                    "forecastHour": forecast_hour,
+                    "validTime": valid_time.isoformat().replace("+00:00", "Z"),
+                    "minimumU": minimum_u,
+                    "maximumU": maximum_u,
+                    "minimumV": minimum_v,
+                    "maximumV": maximum_v,
+                    "minimumSpeed": minimum_speed,
+                    "maximumSpeed": maximum_speed,
+                    "tileTemplate": f"tiles/{step_id}/{{z}}/{{x}}/{{y}}.png",
+                }
+            )
+            print(
+                f"  {step_id}: u {minimum_u:.1f}..{maximum_u:.1f} m/s; "
+                f"v {minimum_v:.1f}..{maximum_v:.1f} m/s; "
+                f"speed <= {maximum_speed:.1f} m/s; {tile_files} tiles; "
+                f"{tile_bytes / 1024:.1f} KiB"
+            )
+
+        generated_at = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+        manifest = {
+            "schemaVersion": 2,
+            "id": f"gfs-0p25-wind-10m-{run_id.lower()}",
+            "model": "NOAA GFS",
+            "product": "pgrb2.0p25",
+            "runTime": resolution.run_time.isoformat().replace("+00:00", "Z"),
+            "field": {
+                "id": "wind_10m",
+                "kind": "vector",
+                "sourceParameter": "UGRD/VGRD",
+                "sourceLevel": "10 m above ground",
+                "displayName": "10 m wind",
+                "units": "m/s",
+                "timeSemantics": "instantaneous",
+                "vectorConvention": "earth-relative-eastward-northward",
+                "components": [
+                    {
+                        "id": "u",
+                        "sourceParameter": "UGRD",
+                        "role": "eastward",
+                    },
+                    {
+                        "id": "v",
+                        "sourceParameter": "VGRD",
+                        "role": "northward",
+                    },
+                ],
+                "nativeResolution": {
+                    "longitudeDegrees": 0.25,
+                    "latitudeDegrees": 0.25,
+                },
+            },
+            "coverage": {
+                "bounds": [-180.0, -WEB_MERCATOR_LIMIT, 180.0, WEB_MERCATOR_LIMIT],
+                "worldWrap": True,
+                "polarLimit": "Web Mercator clips beyond ±85.05112878° latitude.",
+            },
+            "tiles": {
+                "format": "png",
+                "encoding": "packed-uv10-rgb",
+                "tileSize": TILE_SIZE,
+                "minZoom": MIN_ZOOM,
+                "maxZoom": MAX_ZOOM,
+                "componentScale": WIND_COMPONENT_SCALE_MPS,
+                "componentBias": WIND_COMPONENT_BIAS,
+                "componentBits": WIND_COMPONENT_BITS,
+                "noDataCode": WIND_NO_DATA_CODE,
+                "noDataRgb": [0, 0, 0],
+                "resampling": "bilinear-components-from-canonical-grid",
+                "overzoom": True,
+            },
+            "timesteps": timesteps,
+            "attribution": {
+                "label": "Derived from NOAA Global Forecast System (GFS)",
+                "url": "https://registry.opendata.aws/noaa-gfs-bdp-pds/",
+                "source": NOAA_BUCKET,
+            },
+            "generatedAt": generated_at,
+        }
+        validation = {
+            "run": run_id,
+            "field": "wind_10m",
+            "sourceGrid": {
+                "columns": EXPECTED_NI,
+                "rows": EXPECTED_NJ,
+                "resolutionDegrees": 0.25,
+                "latitudeOrder": "90..-90 degrees north-to-south",
+                "vectorConvention": "earth-relative eastward/northward",
+            },
+            "encoding": {
+                "description": "two signed wind components packed into RGB as biased 10-bit values",
+                "componentScale": WIND_COMPONENT_SCALE_MPS,
+                "componentBias": WIND_COMPONENT_BIAS,
+                "componentBits": WIND_COMPONENT_BITS,
+                "noDataCode": WIND_NO_DATA_CODE,
+                "noDataRgb": [0, 0, 0],
+            },
+            "timesteps": validations,
+            "summary": {
+                "timestepCount": len(timesteps),
+                "tileFileCount": total_tile_files,
+                "tileBytes": total_tile_bytes,
+                "minimumU": min(item["minimumU"] for item in validations),
+                "maximumU": max(item["maximumU"] for item in validations),
+                "minimumV": min(item["minimumV"] for item in validations),
+                "maximumV": max(item["maximumV"] for item in validations),
+                "minimumSpeed": min(item["minimumSpeed"] for item in validations),
+                "maximumSpeed": max(item["maximumSpeed"] for item in validations),
+            },
+        }
+        write_json(staging / "manifest.json", manifest)
+        write_json(staging / "validation.json", validation)
+        run_directory.mkdir(parents=True, exist_ok=True)
+        shutil.move(str(staging), str(wind_directory))
+        publish_catalog_field(
+            args.output_root,
+            "wind_10m",
+            manifest,
+            f"{run_id}/wind-10m/manifest.json",
+        )
+        print(
+            f"Wrote {len(timesteps)} wind timesteps and {total_tile_files} tiles "
+            f"({total_tile_bytes / 1024 / 1024:.2f} MiB)."
+        )
+    except Exception:
+        if staging.exists():
+            shutil.rmtree(staging)
+        raise
 
 
 def main() -> None:
@@ -663,6 +1763,12 @@ def main() -> None:
     if publish_existing_run(
         args.output_root, run_directory, run_id, run_time, forecast_hours
     ):
+        build_cloud_dataset(
+            args, resolution, forecast_hours, run_directory, run_id
+        )
+        build_wind_dataset(
+            args, resolution, forecast_hours, run_directory, run_id
+        )
         return
 
     if staging_directory.exists():
@@ -805,18 +1911,24 @@ def main() -> None:
 
         generated_at = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
         manifest = {
-            "schemaVersion": 1,
+            "schemaVersion": 2,
             "id": f"gfs-0p25-apcp-{run_id.lower()}",
             "model": "NOAA GFS",
             "product": "pgrb2.0p25",
             "runTime": run_time.isoformat().replace("+00:00", "Z"),
-            "variable": {
+            "field": {
                 "id": "precipitation",
+                "kind": "scalar",
                 "sourceParameter": "APCP",
+                "sourceLevel": "surface",
                 "displayName": "Total precipitation",
                 "units": "mm",
-                "nativeResolutionDegrees": 0.25,
-                "accumulationSemantics": "interval-total",
+                "validRange": [0, 655.34],
+                "timeSemantics": "interval-total",
+                "nativeResolution": {
+                    "longitudeDegrees": 0.25,
+                    "latitudeDegrees": 0.25,
+                },
             },
             "coverage": {
                 "bounds": [-180.0, -WEB_MERCATOR_LIMIT, 180.0, WEB_MERCATOR_LIMIT],
@@ -881,20 +1993,25 @@ def main() -> None:
         # Windows. shutil.move retains the staged-write behaviour and falls
         # back to a directory copy when an atomic rename is unavailable.
         shutil.move(str(staging_directory), str(run_directory))
-        latest_pointer = latest_pointer_for_manifest(manifest, run_id)
-        write_json_atomically(
-            args.output_root / "latest.json",
-            latest_pointer,
+        publish_catalog_field(
+            args.output_root,
+            "precipitation",
+            manifest,
+            f"{run_id}/manifest.json",
         )
         print(
             f"Wrote {len(timesteps)} timesteps and {total_tile_files} tiles "
             f"({total_tile_bytes / 1024 / 1024:.2f} MiB) to {run_directory}"
         )
-        print(f"Updated {args.output_root / 'latest.json'} atomically.")
+        print(f"Updated precipitation field catalogue atomically.")
     except Exception:
         if staging_directory.exists():
             shutil.rmtree(staging_directory)
         raise
+
+
+    build_cloud_dataset(args, resolution, forecast_hours, run_directory, run_id)
+    build_wind_dataset(args, resolution, forecast_hours, run_directory, run_id)
 
 
 if __name__ == "__main__":

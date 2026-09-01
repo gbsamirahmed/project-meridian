@@ -3,10 +3,5 @@ export interface GridPoint {
   longitude: number;
 
   temperature: number[];
-  cloudCover: number[];
-  precipitation: number[];
   pressure: number[];
-
-  windSpeed: number[];
-  windDirection: number[];
 }

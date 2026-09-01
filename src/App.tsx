@@ -6,7 +6,10 @@ import WeatherPanel from "./components/WeatherPanel";
 import { getWeather } from "./services/weatherService";
 import { getLocationName } from "./services/locationService";
 import { searchLocation } from "./services/searchService";
-import { loadGlobalPrecipitationSource } from "./services/globalWeatherService";
+import {
+  intersectScalarValidTimes,
+  loadGlobalWeatherSources,
+} from "./services/globalWeatherService";
 import { IS_SATELLITE_CONFIGURED } from "./config/satelliteProvider";
 import {
   getWeatherGrid,
@@ -19,8 +22,9 @@ import type { WeatherData } from "./types/weather";
 import type { Place } from "./types/place";
 import type { Basemap, MapOverlayState } from "./types/layer";
 import type {
-  GlobalPrecipitationStatus,
-  ScalarWeatherFieldSource,
+  GlobalWeatherSourceRegistry,
+  GlobalWeatherStatusRegistry,
+  GlobalWeatherFieldSource,
 } from "./types/globalWeather";
 import type {
   WeatherGrid,
@@ -72,10 +76,14 @@ function App() {
   const [weatherGridStatus, setWeatherGridStatus] =
     useState<WeatherGridStatus>("idle");
   const [forecastHour, setForecastHour] = useState(0);
-  const [globalPrecipitationSource, setGlobalPrecipitationSource] =
-    useState<ScalarWeatherFieldSource | null>(null);
-  const [globalPrecipitationStatus, setGlobalPrecipitationStatus] =
-    useState<GlobalPrecipitationStatus>("loading");
+  const [globalWeatherSources, setGlobalWeatherSources] =
+    useState<GlobalWeatherSourceRegistry>({});
+  const [globalWeatherStatuses, setGlobalWeatherStatuses] =
+    useState<GlobalWeatherStatusRegistry>({
+      precipitation: "loading",
+      cloud_cover: "loading",
+      wind_10m: "loading",
+    });
   const [isDesktopPanelCollapsed, setIsDesktopPanelCollapsed] =
     useState(false);
 
@@ -97,16 +105,20 @@ function App() {
 
   useEffect(() => {
     let isCurrent = true;
-    loadGlobalPrecipitationSource()
-      .then((source) => {
+    loadGlobalWeatherSources()
+      .then((result) => {
         if (!isCurrent) return;
-        setGlobalPrecipitationSource(source);
-        setGlobalPrecipitationStatus("ready");
+        setGlobalWeatherSources(result.sources);
+        setGlobalWeatherStatuses(result.statuses);
       })
       .catch((error: unknown) => {
         if (!isCurrent) return;
         void error;
-        setGlobalPrecipitationStatus("unavailable");
+        setGlobalWeatherStatuses({
+          precipitation: "unavailable",
+          cloud_cover: "unavailable",
+          wind_10m: "unavailable",
+        });
       });
 
     return () => {
@@ -114,22 +126,33 @@ function App() {
     };
   }, []);
 
-  const forecastTimes =
-    mapOverlays.precipitation && globalPrecipitationSource
-      ? globalPrecipitationSource.manifest.timesteps.map((step) => step.validTime)
-      : weather?.forecastTimes ?? weatherGrid?.times ?? [];
-  const forecastHours =
-    mapOverlays.precipitation && globalPrecipitationSource
-      ? globalPrecipitationSource.manifest.timesteps.map((step) => step.forecastHour)
-      : undefined;
+  const globalPrecipitationSource = globalWeatherSources.precipitation ?? null;
+  const globalCloudSource = globalWeatherSources.cloud_cover ?? null;
+  const globalWindSource = globalWeatherSources.wind_10m ?? null;
+  const activeGlobalSources = [
+    mapOverlays.precipitation ? globalPrecipitationSource : null,
+    mapOverlays.clouds ? globalCloudSource : null,
+    mapOverlays.windFlow ? globalWindSource : null,
+  ].filter((source): source is GlobalWeatherFieldSource => source !== null);
+  const globalForecastTimes = intersectScalarValidTimes(activeGlobalSources);
+  const forecastTimes = activeGlobalSources.length
+    ? globalForecastTimes
+    : weather?.forecastTimes ?? weatherGrid?.times ?? [];
+  const forecastHours = activeGlobalSources.length
+    ? forecastTimes.map(
+        (validTime) =>
+          activeGlobalSources[0].manifest.timesteps.find(
+            (step) => step.validTime === validTime
+          )?.forecastHour ?? 0
+      )
+    : undefined;
   const activeForecastHour = Math.min(
     forecastHour,
     Math.max(0, forecastTimes.length - 1)
   );
-  const activeGlobalValidTime =
-    mapOverlays.precipitation && globalPrecipitationSource
-      ? globalPrecipitationSource.manifest.timesteps[activeForecastHour]?.validTime
-      : null;
+  const activeGlobalValidTime = activeGlobalSources.length
+    ? forecastTimes[activeForecastHour] ?? null
+    : null;
   const localForecastHour =
     activeGlobalValidTime && weatherGrid?.times.length
       ? closestForecastIndex(weatherGrid.times, activeGlobalValidTime)
@@ -321,13 +344,16 @@ function App() {
 
   const handleOverlayChange = useCallback(
     (overlay: keyof MapOverlayState, enabled: boolean) => {
-      if (
-        overlay === "precipitation" &&
-        enabled &&
-        globalPrecipitationSource &&
-        !hasInitialisedGfsTimelineRef.current
-      ) {
-        const firstFutureIndex = globalPrecipitationSource.manifest.timesteps.findIndex(
+      const nextSource =
+        overlay === "precipitation"
+          ? globalPrecipitationSource
+          : overlay === "clouds"
+            ? globalCloudSource
+            : overlay === "windFlow"
+              ? globalWindSource
+            : null;
+      if (enabled && nextSource && !hasInitialisedGfsTimelineRef.current) {
+        const firstFutureIndex = nextSource.manifest.timesteps.findIndex(
           (step) => new Date(step.validTime).getTime() >= Date.now()
         );
         setForecastHour(firstFutureIndex >= 0 ? firstFutureIndex : 0);
@@ -338,7 +364,7 @@ function App() {
         [overlay]: enabled,
       }));
     },
-    [globalPrecipitationSource]
+    [globalCloudSource, globalPrecipitationSource, globalWindSource]
   );
 
   return (
@@ -351,8 +377,10 @@ function App() {
         weatherGridHistory={weatherGridHistory}
         weatherGridStatus={weatherGridStatus}
         globalPrecipitationSource={globalPrecipitationSource}
-        globalPrecipitationStatus={globalPrecipitationStatus}
-        forecastHour={activeForecastHour}
+        globalCloudSource={globalCloudSource}
+        globalWindSource={globalWindSource}
+        globalWeatherStatuses={globalWeatherStatuses}
+        activeGlobalValidTime={activeGlobalValidTime}
         localForecastHour={localForecastHour}
         panelCollapsed={isDesktopPanelCollapsed}
         onLocationSelect={setSelectedLocation}
@@ -369,7 +397,10 @@ function App() {
         weatherGrid={weatherGrid}
         weatherGridStatus={weatherGridStatus}
         globalPrecipitationSource={globalPrecipitationSource}
-        globalPrecipitationStatus={globalPrecipitationStatus}
+        globalCloudSource={globalCloudSource}
+        globalWindSource={globalWindSource}
+        globalWeatherStatuses={globalWeatherStatuses}
+        activeGlobalValidTime={activeGlobalValidTime}
         forecastTimes={forecastTimes}
         forecastHours={forecastHours}
         isDesktopCollapsed={isDesktopPanelCollapsed}

@@ -13,12 +13,10 @@ export function getFirstSymbolLayerId(
 }
 
 const FILLED_WEATHER_LAYER_ORDER = [
-  "weather-clouds-layer-a",
-  "weather-clouds-layer-b",
+  "global-cloud-cover-layer-a",
+  "global-cloud-cover-layer-b",
   "global-precipitation-layer-a",
   "global-precipitation-layer-b",
-  "weather-precipitation-layer-a",
-  "weather-precipitation-layer-b",
 ] as const;
 
 const FORECAST_OVERLAY_LAYER_ORDER = [
@@ -28,7 +26,6 @@ const FORECAST_OVERLAY_LAYER_ORDER = [
   "pressure-contours-layer",
   "pressure-contour-labels",
   "wind-particle-layer",
-  "precipitation-symbols-layer",
 ] as const;
 
 export function placeForecastOverlaysInOrder(map: maplibregl.Map): void {

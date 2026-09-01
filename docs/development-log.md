@@ -1,6 +1,6 @@
 # Meridian development log
 
-This is Meridian's concise chronological engineering history. Substantial tasks should append a dated entry; implementation details remain authoritative in source code, and exploratory ideas remain distinct from settled decisions.
+This is Meridian's concise chronological engineering history. Entries record substantial engineering milestones rather than individual commits or pushes, and dates normally indicate when a milestone was completed or recorded. The first prototype-foundations entry is a retrospective summary of earlier development: its date records when that summary was written, not Meridian's start date or the implementation date of every feature it lists. Implementation details remain authoritative in source code, and exploratory ideas remain distinct from settled decisions.
 
 ## 2026-08-30 — Prototype foundations and rendering milestones
 
@@ -124,3 +124,64 @@ The cleanup was checked with the Python preprocessing tests, ESLint, the product
 ### Next direction
 
 Keep normal feature development paused. The next portfolio steps are visual-asset capture, an optional static-deployment assessment, and a final Git/publication review.
+
+## 2026-08-31 — Global GFS total cloud cover
+
+### Goal
+
+Move the map-level Cloud cover overlay from the regional Open-Meteo sample field to the global provider-neutral NOAA GFS architecture without changing wind, temperature, pressure, or point-current-weather ownership.
+
+### Changes
+
+- Extended the local GFS builder to select exact instantaneous `TCDC:entire atmosphere` records for f001–f024 while reusing each forecast inventory already fetched for precipitation.
+- Added lossless uint8 cloud tiles (0–100 percentage points in red; 255 no-data), scalar manifest schema v2, and an atomic multi-field `latest.json` catalogue with independently publishable precipitation and cloud entries.
+- Generalised browser manifest loading, numeric decoding/sampling, and the double-buffered scalar surface lifecycle so cloud and precipitation render simultaneously with independent state and crossfades.
+- Removed cloud and precipitation from the regional map grid request and inspector ownership. Open-Meteo still supplies regional temperature, pressure, and wind plus selected-location current conditions.
+- Made the forecast timeline use one active global field's valid times or the exact intersection when precipitation and cloud are both enabled.
+
+### Architectural decisions
+
+Global map cloud means instantaneous GFS total cloud cover for the entire atmosphere. Averaged and layer-specific TCDC are rejected. Field catalogue entries publish independently and retain their real run metadata; no failed or absent GFS field silently falls back to the regional map grid. Rendering remains numeric and stylistically restrained, with no inferred altitude, procedural texture, or volumetric geometry.
+
+### Known limitations
+
+Cloud is a 0.25° total-column fraction, not a depiction of individual cloud bodies or vertical layers. The uint8 cloud field is larger than sparse precipitation under PNG compression. Generation is still a manually invoked local workflow, the horizon is +24 hours, and temperature/pressure/wind remain regional Open-Meteo fields.
+
+### Verification
+
+The live updater rejected incomplete GFS 2026-08-31 18Z and selected 12Z. It generated 24 cloud timesteps, 2,040 tiles, and 51.93 MiB of cloud tile payload with validated 0–100% values. Deterministic tests covered exact TCDC selection, averaged/wrong-layer rejection, no-data versus zero, byte-exact encoding, and independent catalogue updates. Browser checks covered Terrain, Satellite, globe and regional views, combined overlays, playback, inspector provenance, Fiji near the antimeridian, and a genuine 390×844 viewport. ESLint, production build, Python tests, and diff checks were run.
+
+### Next direction
+
+The shared scalar path makes global temperature/pressure technically straightforward, while the next highest-value architectural migration is global vector wind. Low/mid/high cloud should precede any procedural or volumetric-looking cloud work.
+
+## 2026-09-01 — Global GFS 10 m wind
+
+### Goal
+
+Move map-level wind and wind inspection from the regional Open-Meteo sample field to a global, provider-neutral NOAA GFS vector field while retaining Meridian's established particle presentation.
+
+### Changes
+
+- Extended the local GFS build to select paired instantaneous `UGRD`/`VGRD` records at 10 m for f001–f024, validate earth-relative vector metadata, and publish independently validated immutable wind assets.
+- Added a lossless RGB representation containing two biased 10-bit components at 0.2 m/s scale, with paired code zero reserved for no-data.
+- Added vector manifest/timestep contracts, field-catalogue discovery, exact packed-tile decoding, a shared byte-bounded scalar/vector tile cache, viewport/globe tile preparation, geographic vector sampling, and inspector values.
+- Made the WebGL wind layer projection-aware for both globe and Mercator and replaced forecast-vector interpolation with a visual crossfade between separate particle populations sampling exact timesteps.
+- Removed wind from the regional map-grid request and map inspector ownership. Open-Meteo remains responsible for selected-location current conditions plus regional temperature and pressure.
+- Added `scripts/weather/build_gfs_weather.py` as the canonical local multi-field generation command.
+
+### Architectural decisions
+
+GFS 10 m wind is stored as paired eastward/northward components, never speed/direction. U/V components are bilinearly interpolated spatially before speed and meteorological “from” direction are derived. Wind, cloud, and precipitation publish independently through one catalogue and use exact valid-time intersections when combined. A missing GFS wind field never silently falls back to regional map wind.
+
+### Known limitations
+
+Wind retains GFS 0.25° information resolution despite smooth interpolation and overzooming. Close-zoom particles remain smaller than desired; pitched terrain can make traces appear too close to or below the surface, and globe-scale distribution can concentrate near the visible limb before redistributing during rotation. Particle motion does not interact with terrain-scale topography and will need further visual refinement. Generated wind tiles are relatively large under PNG compression. The pipeline remains manually invoked, spans +24 hours, clips to Web Mercator latitude limits, and has no production host or scheduler.
+
+### Verification
+
+The live builder selected GFS 2026-08-31 18Z and generated 24 wind timesteps, 2,040 tiles, and 103.85 MiB of wind tile payload. Values covered U −42.98…41.39 m/s, V −40.37…42.11 m/s, and speeds up to 43.44 m/s. Deterministic tests cover exact inventory selection, paired metadata, earth-relative vectors, packed-code round trips, paired no-data, antimeridian continuity, and independent catalogue publication. ESLint, the production build, local HTTP asset checks, and diff validation were run.
+
+### Next direction
+
+The closest architectural follow-up is global temperature and pressure using the established numeric field catalogue and cache. Low/mid/high cloud layers should be considered before procedural cloud presentation; neither requires changing wind ownership.

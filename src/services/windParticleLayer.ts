@@ -5,7 +5,6 @@ import type {
 } from "maplibre-gl";
 
 import { LAYER_VISUAL_STRENGTHS } from "../config/layerVisuals";
-import { WEATHER_GRID_MIN_ZOOM } from "../config/gridConfig";
 
 import type { Basemap } from "../types/layer";
 import type { MutableWindVector } from "./weatherInterpolation";
@@ -19,9 +18,6 @@ const DESKTOP_MIN_PARTICLES = 80;
 const DESKTOP_MAX_PARTICLES = 230;
 const MOBILE_MIN_PARTICLES = 44;
 const MOBILE_MAX_PARTICLES = 96;
-const DESKTOP_TRAIL_POINTS = 20;
-const MOBILE_TRAIL_POINTS = 13;
-const REDUCED_MOTION_TRAIL_POINTS = 7;
 const DESKTOP_FRAME_INTERVAL_MS = 1000 / 30;
 const MOBILE_FRAME_INTERVAL_MS = 1000 / 24;
 const FIELD_TRANSITION_MS = 420;
@@ -29,9 +25,76 @@ const COVERAGE_FADE_MS = 180;
 const MAX_FRAME_SECONDS = 0.06;
 const PARTICLE_VIEWPORT_MARGIN = 90;
 
+const DENSITY_ZOOM_STOPS = [
+  [0, 0.82],
+  [4, 0.9],
+  [7, 1.02],
+  [10, 1.16],
+  [13, 1.28],
+  [16, 1.34],
+] as const;
+
+const DESKTOP_TRAIL_ZOOM_STOPS = [
+  [0, 16],
+  [4, 18],
+  [7, 22],
+  [10, 27],
+  [13, 31],
+  [16, 33],
+] as const;
+
+const MOBILE_TRAIL_ZOOM_STOPS = [
+  [0, 11],
+  [4, 12],
+  [7, 14],
+  [10, 17],
+  [13, 19],
+  [16, 20],
+] as const;
+
+const REDUCED_MOTION_TRAIL_ZOOM_STOPS = [
+  [0, 6],
+  [4, 7],
+  [7, 8],
+  [10, 10],
+  [13, 12],
+  [16, 13],
+] as const;
+
+const WIDTH_ZOOM_STOPS = [
+  [0, 0.82],
+  [4, 0.9],
+  [7, 1.05],
+  [10, 1.28],
+  [13, 1.5],
+  [16, 1.62],
+] as const;
+
+const OPACITY_ZOOM_STOPS = [
+  [0, 0.78],
+  [4, 0.86],
+  [7, 0.96],
+  [10, 1.05],
+  [13, 1.12],
+  [16, 1.16],
+] as const;
+
 interface MutableCoordinate {
   longitude: number;
   latitude: number;
+}
+
+interface WindParticlePopulation {
+  field: WindVectorField;
+  particleCount: number;
+  trailPointCount: number;
+  longitudes: Float64Array;
+  latitudes: Float64Array;
+  ages: Float32Array;
+  maximumAges: Float32Array;
+  particleSpeeds: Float32Array;
+  historyLongitudes: Float64Array;
+  historyLatitudes: Float64Array;
 }
 
 function clamp(value: number, minimum: number, maximum: number): number {
@@ -42,6 +105,24 @@ function smoothstep(edge0: number, edge1: number, value: number): number {
   const ratio = clamp((value - edge0) / (edge1 - edge0), 0, 1);
 
   return ratio * ratio * (3 - 2 * ratio);
+}
+
+function interpolateZoomStops(
+  zoom: number,
+  stops: ReadonlyArray<readonly [number, number]>
+): number {
+  if (zoom <= stops[0][0]) return stops[0][1];
+
+  for (let index = 1; index < stops.length; index++) {
+    const [nextZoom, nextValue] = stops[index];
+    const [previousZoom, previousValue] = stops[index - 1];
+    if (zoom <= nextZoom) {
+      const amount = (zoom - previousZoom) / (nextZoom - previousZoom);
+      return previousValue + (nextValue - previousValue) * amount;
+    }
+  }
+
+  return stops[stops.length - 1][1];
 }
 
 function hashString(value: string): number {
@@ -57,6 +138,10 @@ function hashString(value: string): number {
 
 function longitudeToMercatorX(longitude: number): number {
   return (longitude + 180) / 360;
+}
+
+function wrapLongitude(longitude: number): number {
+  return ((longitude + 180) % 360 + 360) % 360 - 180;
 }
 
 function latitudeToMercatorY(latitude: number): number {
@@ -91,92 +176,84 @@ function compileShader(
   return shader;
 }
 
+interface WindProgram {
+  program: WebGLProgram;
+  positionAttribute: number;
+  otherPositionAttribute: number;
+  alphaAttribute: number;
+  sideAttribute: number;
+  speedAttribute: number;
+  viewportUniform: WebGLUniformLocation | null;
+  opacityUniform: WebGLUniformLocation | null;
+  widthScaleUniform: WebGLUniformLocation | null;
+  terrainMixUniform: WebGLUniformLocation | null;
+  projectionMatrixUniform: WebGLUniformLocation | null;
+  projectionFallbackMatrixUniform: WebGLUniformLocation | null;
+  projectionTileMercatorUniform: WebGLUniformLocation | null;
+  projectionClippingPlaneUniform: WebGLUniformLocation | null;
+  projectionTransitionUniform: WebGLUniformLocation | null;
+}
+
 function createProgram(
-  gl: WebGLRenderingContext | WebGL2RenderingContext
-): WebGLProgram {
+  gl: WebGLRenderingContext | WebGL2RenderingContext,
+  shaderData: CustomRenderMethodInput["shaderData"]
+): WindProgram {
   const usesWebGl2 =
     typeof WebGL2RenderingContext !== "undefined" &&
     gl instanceof WebGL2RenderingContext;
-  const vertexSource = usesWebGl2
-    ? `#version 300 es
+  if (!usesWebGl2) {
+    throw new Error("Projection-aware wind particles require WebGL 2");
+  }
+  const vertexSource = `#version 300 es
+      ${shaderData.vertexShaderPrelude}
+      ${shaderData.define}
       in vec2 a_position;
       in vec2 a_other_position;
       in float a_alpha;
       in float a_side;
       in float a_speed;
-      uniform mat4 u_matrix;
       uniform vec2 u_viewport;
+      uniform float u_width_scale;
       out float v_alpha;
       out float v_speed;
 
       void main() {
-        vec4 projected = u_matrix * vec4(a_position, 0.0, 1.0);
-        vec4 otherProjected = u_matrix * vec4(a_other_position, 0.0, 1.0);
+        vec4 projected = projectTile(a_position);
+        vec4 otherProjected = projectTile(a_other_position);
         vec2 screenDirection =
           (projected.xy / projected.w - otherProjected.xy / otherProjected.w) *
           u_viewport * 0.5;
         vec2 normal = normalize(vec2(-screenDirection.y, screenDirection.x));
-        float halfWidth = mix(1.05, 1.5, clamp(a_speed / 55.0, 0.0, 1.0));
-        projected.xy += normal * (halfWidth * 2.0 / u_viewport) * a_side * projected.w;
-        gl_Position = projected;
-        v_alpha = a_alpha;
-        v_speed = a_speed;
-      }
-    `
-    : `
-      attribute vec2 a_position;
-      attribute vec2 a_other_position;
-      attribute float a_alpha;
-      attribute float a_side;
-      attribute float a_speed;
-      uniform mat4 u_matrix;
-      uniform vec2 u_viewport;
-      varying float v_alpha;
-      varying float v_speed;
-
-      void main() {
-        vec4 projected = u_matrix * vec4(a_position, 0.0, 1.0);
-        vec4 otherProjected = u_matrix * vec4(a_other_position, 0.0, 1.0);
-        vec2 screenDirection =
-          (projected.xy / projected.w - otherProjected.xy / otherProjected.w) *
-          u_viewport * 0.5;
-        vec2 normal = normalize(vec2(-screenDirection.y, screenDirection.x));
-        float halfWidth = mix(1.05, 1.5, clamp(a_speed / 55.0, 0.0, 1.0));
+        float halfWidth =
+          mix(1.05, 1.5, clamp(a_speed / 55.0, 0.0, 1.0)) *
+          u_width_scale;
         projected.xy += normal * (halfWidth * 2.0 / u_viewport) * a_side * projected.w;
         gl_Position = projected;
         v_alpha = a_alpha;
         v_speed = a_speed;
       }
     `;
-  const fragmentSource = usesWebGl2
-    ? `#version 300 es
+  const fragmentSource = `#version 300 es
       precision mediump float;
       in float v_alpha;
       in float v_speed;
       uniform float u_opacity;
+      uniform float u_terrain_mix;
       out vec4 fragmentColor;
 
       void main() {
         float speedMix = clamp(v_speed / 55.0, 0.0, 1.0);
-        vec3 slowColor = vec3(0.68, 0.92, 0.88);
-        vec3 fastColor = vec3(1.0, 0.68, 0.22);
-        fragmentColor = vec4(
-          mix(slowColor, fastColor, speedMix),
-          mix(0.3, 1.0, pow(v_alpha, 0.68)) * u_opacity
+        vec3 slowColor = mix(
+          vec3(0.68, 0.92, 0.88),
+          vec3(0.12, 0.48, 0.5),
+          u_terrain_mix
         );
-      }
-    `
-    : `
-      precision mediump float;
-      varying float v_alpha;
-      varying float v_speed;
-      uniform float u_opacity;
-
-      void main() {
-        float speedMix = clamp(v_speed / 55.0, 0.0, 1.0);
-        vec3 slowColor = vec3(0.68, 0.92, 0.88);
-        vec3 fastColor = vec3(1.0, 0.68, 0.22);
-        gl_FragColor = vec4(
+        vec3 fastColor = mix(
+          vec3(1.0, 0.68, 0.22),
+          vec3(0.9, 0.37, 0.12),
+          u_terrain_mix
+        );
+        fragmentColor = vec4(
           mix(slowColor, fastColor, speedMix),
           mix(0.3, 1.0, pow(v_alpha, 0.68)) * u_opacity
         );
@@ -205,7 +282,35 @@ function createProgram(
     throw new Error(`Wind particle program error: ${message}`);
   }
 
-  return program;
+  return {
+    program,
+    positionAttribute: gl.getAttribLocation(program, "a_position"),
+    otherPositionAttribute: gl.getAttribLocation(program, "a_other_position"),
+    alphaAttribute: gl.getAttribLocation(program, "a_alpha"),
+    sideAttribute: gl.getAttribLocation(program, "a_side"),
+    speedAttribute: gl.getAttribLocation(program, "a_speed"),
+    viewportUniform: gl.getUniformLocation(program, "u_viewport"),
+    opacityUniform: gl.getUniformLocation(program, "u_opacity"),
+    widthScaleUniform: gl.getUniformLocation(program, "u_width_scale"),
+    terrainMixUniform: gl.getUniformLocation(program, "u_terrain_mix"),
+    projectionMatrixUniform: gl.getUniformLocation(program, "u_projection_matrix"),
+    projectionFallbackMatrixUniform: gl.getUniformLocation(
+      program,
+      "u_projection_fallback_matrix"
+    ),
+    projectionTileMercatorUniform: gl.getUniformLocation(
+      program,
+      "u_projection_tile_mercator_coords"
+    ),
+    projectionClippingPlaneUniform: gl.getUniformLocation(
+      program,
+      "u_projection_clipping_plane"
+    ),
+    projectionTransitionUniform: gl.getUniformLocation(
+      program,
+      "u_projection_transition"
+    ),
+  };
 }
 
 export class WindParticleLayer implements CustomLayerInterface {
@@ -214,19 +319,11 @@ export class WindParticleLayer implements CustomLayerInterface {
   readonly renderingMode = "2d" as const;
 
   private map: maplibregl.Map | null = null;
-  private program: WebGLProgram | null = null;
+  private readonly programs = new Map<string, WindProgram>();
   private vertexBuffer: WebGLBuffer | null = null;
-  private positionAttribute = -1;
-  private otherPositionAttribute = -1;
-  private alphaAttribute = -1;
-  private sideAttribute = -1;
-  private speedAttribute = -1;
-  private matrixUniform: WebGLUniformLocation | null = null;
-  private viewportUniform: WebGLUniformLocation | null = null;
-  private opacityUniform: WebGLUniformLocation | null = null;
 
   private field: WindVectorField | null = null;
-  private previousField: WindVectorField | null = null;
+  private previousPopulation: WindParticlePopulation | null = null;
   private fieldTransitionStartedAt = 0;
   private basemap: Basemap = "terrain";
   private coverageTarget = 1;
@@ -282,6 +379,7 @@ export class WindParticleLayer implements CustomLayerInterface {
     this.viewportDirty = true;
     this.staticTrailsDirty = true;
     this.lastFrameAt = 0;
+    this.field?.scheduleCoverage?.(this.map!);
     this.requestRepaint(0);
   };
 
@@ -298,7 +396,10 @@ export class WindParticleLayer implements CustomLayerInterface {
 
   private readonly handleReducedMotionChange = (event: MediaQueryListEvent) => {
     this.reducedMotion = event.matches;
-    if (this.reducedMotion) this.previousField = null;
+    if (this.reducedMotion) {
+      this.previousPopulation?.field.dispose?.();
+      this.previousPopulation = null;
+    }
     this.viewportDirty = true;
     this.staticTrailsDirty = true;
     this.lastFrameAt = 0;
@@ -308,17 +409,49 @@ export class WindParticleLayer implements CustomLayerInterface {
   setField(field: WindVectorField): void {
     if (this.field?.signature === field.signature) return;
 
-    if (this.field && !this.reducedMotion) {
-      this.previousField = this.field;
+    if (this.field && !this.reducedMotion && this.particleCount > 0) {
+      this.previousPopulation?.field.dispose?.();
+      this.previousPopulation = {
+        field: this.field,
+        particleCount: this.particleCount,
+        trailPointCount: this.trailPointCount,
+        longitudes: this.longitudes,
+        latitudes: this.latitudes,
+        ages: this.ages,
+        maximumAges: this.maximumAges,
+        particleSpeeds: this.particleSpeeds,
+        historyLongitudes: this.historyLongitudes,
+        historyLatitudes: this.historyLatitudes,
+      };
       this.fieldTransitionStartedAt = performance.now();
+      this.particleCount = 0;
+      this.trailPointCount = 0;
+      this.longitudes = new Float64Array(0);
+      this.latitudes = new Float64Array(0);
+      this.ages = new Float32Array(0);
+      this.maximumAges = new Float32Array(0);
+      this.particleSpeeds = new Float32Array(0);
+      this.historyLongitudes = new Float64Array(0);
+      this.historyLatitudes = new Float64Array(0);
     } else {
-      this.randomState = hashString(field.signature) || 0x6d2b79f5;
+      this.field?.dispose?.();
+      this.previousPopulation?.field.dispose?.();
+      this.previousPopulation = null;
     }
 
     this.field = field;
+    this.randomState = hashString(field.signature) || 0x6d2b79f5;
     this.viewportDirty = true;
     this.staticTrailsDirty = true;
     this.requestRepaint(0);
+  }
+
+  getFieldSignature(): string | null {
+    return this.field?.signature ?? null;
+  }
+
+  scheduleCoverageRefresh(): void {
+    if (this.map) this.field?.scheduleCoverage?.(this.map);
   }
 
   setBasemap(basemap: Basemap): void {
@@ -356,24 +489,12 @@ export class WindParticleLayer implements CustomLayerInterface {
     gl: WebGLRenderingContext | WebGL2RenderingContext
   ): void {
     this.map = map;
-    this.program = createProgram(gl);
     this.vertexBuffer = gl.createBuffer();
 
     if (!this.vertexBuffer) {
       throw new Error("Could not create wind particle vertex buffer");
     }
 
-    this.positionAttribute = gl.getAttribLocation(this.program, "a_position");
-    this.otherPositionAttribute = gl.getAttribLocation(
-      this.program,
-      "a_other_position"
-    );
-    this.alphaAttribute = gl.getAttribLocation(this.program, "a_alpha");
-    this.sideAttribute = gl.getAttribLocation(this.program, "a_side");
-    this.speedAttribute = gl.getAttribLocation(this.program, "a_speed");
-    this.matrixUniform = gl.getUniformLocation(this.program, "u_matrix");
-    this.viewportUniform = gl.getUniformLocation(this.program, "u_viewport");
-    this.opacityUniform = gl.getUniformLocation(this.program, "u_opacity");
     this.isMoving = map.isMoving();
 
     this.reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -407,10 +528,14 @@ export class WindParticleLayer implements CustomLayerInterface {
     map.off("resize", this.handleMoveEnd);
 
     if (this.vertexBuffer) gl.deleteBuffer(this.vertexBuffer);
-    if (this.program) gl.deleteProgram(this.program);
+    for (const windProgram of this.programs.values()) {
+      gl.deleteProgram(windProgram.program);
+    }
+    this.programs.clear();
+    this.field?.dispose?.();
+    this.previousPopulation?.field.dispose?.();
 
     this.map = null;
-    this.program = null;
     this.vertexBuffer = null;
   }
 
@@ -423,15 +548,6 @@ export class WindParticleLayer implements CustomLayerInterface {
 
     if (!map || !field || !this.enabled || this.isDocumentHidden) return;
 
-    const projectionType = map.getProjection()?.type ?? "mercator";
-
-    if (
-      projectionType !== "mercator" ||
-      map.getZoom() < WEATHER_GRID_MIN_ZOOM
-    ) {
-      return;
-    }
-
     const now = performance.now();
     const elapsedMs = this.lastFrameAt
       ? Math.min(now - this.lastFrameAt, MAX_FRAME_SECONDS * 1000)
@@ -442,12 +558,13 @@ export class WindParticleLayer implements CustomLayerInterface {
     if (this.coverageAmount < 0.005 && this.coverageTarget === 0) return;
 
     if (!this.isMoving) {
-      this.ensureParticleLayout(now);
+      this.ensureParticleLayout();
 
       if (this.reducedMotion) {
-        if (this.staticTrailsDirty) this.seedAllParticles(now);
+        if (this.staticTrailsDirty) this.seedAllParticles();
       } else if (elapsedMs >= this.getFrameIntervalMs() * 0.85) {
-        this.simulate(elapsedMs / 1000, now);
+        this.simulate(elapsedMs / 1000);
+        this.simulatePreviousPopulation(elapsedMs / 1000);
         this.lastFrameAt = now;
       }
     }
@@ -484,29 +601,34 @@ export class WindParticleLayer implements CustomLayerInterface {
     const container = map.getContainer();
     const mobile = container.clientWidth <= 500;
     const area = container.clientWidth * container.clientHeight;
-    const zoomFactor = clamp(1.15 - (map.getZoom() - 6) * 0.035, 0.72, 1.15);
+    const zoom = map.getZoom();
+    const densityFactor = interpolateZoomStops(zoom, DENSITY_ZOOM_STOPS);
     const minimum = mobile ? MOBILE_MIN_PARTICLES : DESKTOP_MIN_PARTICLES;
-    const maximum = mobile ? MOBILE_MAX_PARTICLES : DESKTOP_MAX_PARTICLES;
+    const maximum = Math.round(
+      (mobile ? MOBILE_MAX_PARTICLES : DESKTOP_MAX_PARTICLES) * densityFactor
+    );
     const areaPerParticle = mobile
       ? MOBILE_AREA_PER_PARTICLE
       : DESKTOP_AREA_PER_PARTICLE;
     const reducedMotionFactor = this.reducedMotion ? 0.62 : 1;
     const baseParticleCount = clamp(
-      (area / areaPerParticle) * zoomFactor,
+      (area / areaPerParticle) * densityFactor,
       minimum,
       maximum
     );
     const particleCount = Math.round(baseParticleCount * reducedMotionFactor);
     const trailPointCount = this.reducedMotion
-      ? REDUCED_MOTION_TRAIL_POINTS
+      ? Math.round(
+          interpolateZoomStops(zoom, REDUCED_MOTION_TRAIL_ZOOM_STOPS)
+        )
       : mobile
-        ? MOBILE_TRAIL_POINTS
-        : DESKTOP_TRAIL_POINTS;
+        ? Math.round(interpolateZoomStops(zoom, MOBILE_TRAIL_ZOOM_STOPS))
+        : Math.round(interpolateZoomStops(zoom, DESKTOP_TRAIL_ZOOM_STOPS));
 
     return { particleCount, trailPointCount };
   }
 
-  private ensureParticleLayout(now: number): void {
+  private ensureParticleLayout(): void {
     if (!this.viewportDirty && this.particleCount > 0) return;
 
     const { particleCount, trailPointCount } = this.getParticleLayout();
@@ -528,26 +650,23 @@ export class WindParticleLayer implements CustomLayerInterface {
       this.historyLatitudes = new Float64Array(
         particleCount * trailPointCount
       );
-      this.vertices = new Float32Array(
-        particleCount * Math.max(0, trailPointCount - 1) * 6 * 7
-      );
-      this.seedAllParticles(now);
+      this.seedAllParticles();
     } else if (this.reducedMotion) {
-      this.seedAllParticles(now);
+      this.seedAllParticles();
     }
 
     this.viewportDirty = false;
   }
 
-  private seedAllParticles(now: number): void {
+  private seedAllParticles(): void {
     for (let index = 0; index < this.particleCount; index++) {
-      this.respawnParticle(index, now);
+      this.respawnParticle(index);
     }
 
     this.staticTrailsDirty = false;
   }
 
-  private respawnParticle(index: number, now: number): void {
+  private respawnParticle(index: number): void {
     const map = this.map;
     const field = this.field;
 
@@ -580,7 +699,7 @@ export class WindParticleLayer implements CustomLayerInterface {
       }
     }
 
-    if (!found) {
+    if (!found && !field.isGlobal) {
       const longitudeInset = (field.bounds.east - field.bounds.west) * 0.12;
       const latitudeInset = (field.bounds.north - field.bounds.south) * 0.12;
 
@@ -594,6 +713,14 @@ export class WindParticleLayer implements CustomLayerInterface {
         latitudeInset +
         this.random() *
           (field.bounds.north - field.bounds.south - latitudeInset * 2);
+    }
+
+    if (!found && field.isGlobal) {
+      this.longitudes[index] = Number.NaN;
+      this.latitudes[index] = Number.NaN;
+      this.ages[index] = 1;
+      this.maximumAges[index] = 0;
+      return;
     }
 
     this.longitudes[index] = longitude;
@@ -617,7 +744,6 @@ export class WindParticleLayer implements CustomLayerInterface {
           historyLongitude,
           historyLatitude,
           historyStep,
-          now,
           this.coordinateScratch
         )
       ) {
@@ -626,12 +752,12 @@ export class WindParticleLayer implements CustomLayerInterface {
       }
     }
 
-    if (this.sampleVector(latitude, longitude, now)) {
+    if (this.sampleVector(latitude, longitude)) {
       this.particleSpeeds[index] = this.currentVector.speed;
     }
   }
 
-  private simulate(elapsedSeconds: number, now: number): void {
+  private simulate(elapsedSeconds: number): void {
     const map = this.map;
     const field = this.field;
 
@@ -659,11 +785,10 @@ export class WindParticleLayer implements CustomLayerInterface {
           longitude,
           latitude,
           elapsedSeconds,
-          now,
           this.coordinateScratch
         )
       ) {
-        this.respawnParticle(index, now);
+        this.respawnParticle(index);
         continue;
       }
 
@@ -684,18 +809,93 @@ export class WindParticleLayer implements CustomLayerInterface {
     }
   }
 
+  private simulatePreviousPopulation(elapsedSeconds: number): void {
+    const map = this.map;
+    const population = this.previousPopulation;
+
+    if (!map || !population) return;
+
+    const container = map.getContainer();
+    for (let index = 0; index < population.particleCount; index++) {
+      const longitude = population.longitudes[index];
+      const latitude = population.latitudes[index];
+      if (!Number.isFinite(longitude) || !Number.isFinite(latitude)) continue;
+
+      const projected = map.project([longitude, latitude]);
+      const outsideViewport =
+        projected.x < -PARTICLE_VIEWPORT_MARGIN ||
+        projected.y < -PARTICLE_VIEWPORT_MARGIN ||
+        projected.x > container.clientWidth + PARTICLE_VIEWPORT_MARGIN ||
+        projected.y > container.clientHeight + PARTICLE_VIEWPORT_MARGIN;
+      population.ages[index] += elapsedSeconds;
+
+      if (
+        population.ages[index] >= population.maximumAges[index] ||
+        outsideViewport ||
+        this.getCoverageFade(longitude, latitude, population.field) <= 0 ||
+        !this.advectCoordinateWithField(
+          population.field,
+          longitude,
+          latitude,
+          elapsedSeconds,
+          this.coordinateScratch,
+          this.previousVector
+        )
+      ) {
+        population.longitudes[index] = Number.NaN;
+        population.latitudes[index] = Number.NaN;
+        continue;
+      }
+
+      const historyOffset = index * population.trailPointCount;
+      for (let point = population.trailPointCount - 1; point > 0; point--) {
+        population.historyLongitudes[historyOffset + point] =
+          population.historyLongitudes[historyOffset + point - 1];
+        population.historyLatitudes[historyOffset + point] =
+          population.historyLatitudes[historyOffset + point - 1];
+      }
+
+      population.longitudes[index] = this.coordinateScratch.longitude;
+      population.latitudes[index] = this.coordinateScratch.latitude;
+      population.historyLongitudes[historyOffset] =
+        this.coordinateScratch.longitude;
+      population.historyLatitudes[historyOffset] = this.coordinateScratch.latitude;
+      population.particleSpeeds[index] = this.previousVector.speed;
+    }
+  }
+
   private advectCoordinate(
     longitude: number,
     latitude: number,
     elapsedSeconds: number,
-    now: number,
     target: MutableCoordinate
+  ): boolean {
+    const field = this.field;
+
+    if (!field) return false;
+    return this.advectCoordinateWithField(
+      field,
+      longitude,
+      latitude,
+      elapsedSeconds,
+      target,
+      this.currentVector
+    );
+  }
+
+  private advectCoordinateWithField(
+    field: WindVectorField,
+    longitude: number,
+    latitude: number,
+    elapsedSeconds: number,
+    target: MutableCoordinate,
+    vector: MutableWindVector
   ): boolean {
     const map = this.map;
 
-    if (!map || !this.sampleVector(latitude, longitude, now)) return false;
+    if (!map || !field.sample(latitude, longitude, vector)) return false;
 
-    const speed = this.currentVector.speed;
+    const speed = vector.speed;
 
     if (speed < 0.05) {
       target.longitude = longitude;
@@ -703,67 +903,73 @@ export class WindParticleLayer implements CustomLayerInterface {
       return true;
     }
 
-    const eastwardUnit = this.currentVector.eastwardFlow / speed;
-    const northwardUnit = this.currentVector.northwardFlow / speed;
+    const eastwardUnit = vector.eastwardFlow / speed;
+    const northwardUnit = vector.northwardFlow / speed;
     const latitudeCosine = Math.max(
       0.12,
       Math.cos((latitude * Math.PI) / 180)
     );
-    const metersPerPixel =
-      (156543.03392 * latitudeCosine) / 2 ** map.getZoom();
     const pixelSpeed = clamp(speed * 1.02, 0.45, 44);
-    const travelKilometers =
-      (pixelSpeed * metersPerPixel * elapsedSeconds) / 1000;
+    if (map.getProjection()?.type === "globe") {
+      const trialKilometers = 8;
+      const center = map.getCenter();
+      const centerLatitudeCosine = Math.max(
+        0.12,
+        Math.cos((center.lat * Math.PI) / 180)
+      );
+      const trialLatitude = clamp(
+        center.lat + (northwardUnit * trialKilometers) / 111.32,
+        -85.05112878,
+        85.05112878
+      );
+      const trialLongitude =
+        center.lng +
+        (eastwardUnit * trialKilometers) /
+          (111.32 * centerLatitudeCosine);
+      const start = map.project(center);
+      const trial = map.project([trialLongitude, trialLatitude]);
+      const projectedDistance = Math.hypot(trial.x - start.x, trial.y - start.y);
+      if (!Number.isFinite(projectedDistance) || projectedDistance < 0.01) {
+        return false;
+      }
+      // A particle-local screen-distance denominator collapses through
+      // foreshortening at the globe limb and creates a very large geographic
+      // step. Calibrating at the visible globe centre keeps the stylistic
+      // screen speed well-conditioned while natural perspective is allowed to
+      // shorten trails toward the horizon.
+      const travelKilometers =
+        (pixelSpeed * elapsedSeconds * trialKilometers) / projectedDistance;
+      target.latitude =
+        latitude + (northwardUnit * travelKilometers) / 111.32;
+      target.longitude = wrapLongitude(
+        longitude +
+          (eastwardUnit * travelKilometers) / (111.32 * latitudeCosine)
+      );
+    } else {
+      const metersPerPixel =
+        (156543.03392 * latitudeCosine) / 2 ** map.getZoom();
+      const travelKilometers =
+        (pixelSpeed * metersPerPixel * elapsedSeconds) / 1000;
+      target.latitude =
+        latitude + (northwardUnit * travelKilometers) / 111.32;
+      target.longitude = wrapLongitude(
+        longitude +
+          (eastwardUnit * travelKilometers) / (111.32 * latitudeCosine)
+      );
+    }
 
-    target.latitude =
-      latitude + (northwardUnit * travelKilometers) / 111.32;
-    target.longitude =
-      longitude +
-      (eastwardUnit * travelKilometers) / (111.32 * latitudeCosine);
-
-    return Number.isFinite(target.latitude) && Number.isFinite(target.longitude);
+    return (
+      Number.isFinite(target.latitude) &&
+      Number.isFinite(target.longitude) &&
+      Math.abs(target.latitude) <= 85.05112878
+    );
   }
 
-  private sampleVector(
-    latitude: number,
-    longitude: number,
-    now: number
-  ): boolean {
+  private sampleVector(latitude: number, longitude: number): boolean {
     const field = this.field;
 
     if (!field || !field.sample(latitude, longitude, this.currentVector)) {
       return false;
-    }
-
-    const previousField = this.previousField;
-
-    if (!previousField) return true;
-
-    const transition = clamp(
-      (now - this.fieldTransitionStartedAt) / FIELD_TRANSITION_MS,
-      0,
-      1
-    );
-
-    if (transition >= 1) {
-      this.previousField = null;
-      return true;
-    }
-
-    if (previousField.sample(latitude, longitude, this.previousVector)) {
-      const currentWeight = smoothstep(0, 1, transition);
-      const previousWeight = 1 - currentWeight;
-
-      this.currentVector.eastwardFlow =
-        this.previousVector.eastwardFlow * previousWeight +
-        this.currentVector.eastwardFlow * currentWeight;
-      this.currentVector.northwardFlow =
-        this.previousVector.northwardFlow * previousWeight +
-        this.currentVector.northwardFlow * currentWeight;
-      this.currentVector.speed = Math.hypot(
-        this.currentVector.eastwardFlow,
-        this.currentVector.northwardFlow
-      );
     }
 
     return true;
@@ -774,6 +980,9 @@ export class WindParticleLayer implements CustomLayerInterface {
     latitude: number,
     field: WindVectorField
   ): number {
+    if (field.isGlobal) {
+      return Math.abs(latitude) <= 85.05112878 ? 1 : 0;
+    }
     const longitudeSpan = field.bounds.east - field.bounds.west;
     const latitudeSpan = field.bounds.north - field.bounds.south;
 
@@ -792,25 +1001,82 @@ export class WindParticleLayer implements CustomLayerInterface {
   private buildVertices(now: number): number {
     const field = this.field;
 
-    if (!field || this.vertices.length === 0) return 0;
+    if (!field) return 0;
 
-    let offset = 0;
+    const transition = this.previousPopulation
+      ? smoothstep(
+          0,
+          1,
+          (now - this.fieldTransitionStartedAt) / FIELD_TRANSITION_MS
+        )
+      : 1;
+    const previous = this.previousPopulation;
+    const currentCapacity =
+      this.particleCount * Math.max(0, this.trailPointCount - 1) * 6 * 7;
+    const previousCapacity = previous
+      ? previous.particleCount *
+        Math.max(0, previous.trailPointCount - 1) *
+        6 *
+        7
+      : 0;
+    const requiredCapacity = currentCapacity + previousCapacity;
+    if (this.vertices.length < requiredCapacity) {
+      this.vertices = new Float32Array(requiredCapacity);
+    }
 
-    for (let particle = 0; particle < this.particleCount; particle++) {
+    let offset = this.appendPopulationVertices(
+      {
+        field,
+        particleCount: this.particleCount,
+        trailPointCount: this.trailPointCount,
+        longitudes: this.longitudes,
+        latitudes: this.latitudes,
+        ages: this.ages,
+        maximumAges: this.maximumAges,
+        particleSpeeds: this.particleSpeeds,
+        historyLongitudes: this.historyLongitudes,
+        historyLatitudes: this.historyLatitudes,
+      },
+      transition,
+      0
+    );
+
+    if (previous && transition < 1) {
+      offset = this.appendPopulationVertices(previous, 1 - transition, offset);
+    } else if (previous) {
+      previous.field.dispose?.();
+      this.previousPopulation = null;
+    }
+
+    return offset / 7;
+  }
+
+  private appendPopulationVertices(
+    population: WindParticlePopulation,
+    populationAlpha: number,
+    initialOffset: number
+  ): number {
+    let offset = initialOffset;
+
+    for (let particle = 0; particle < population.particleCount; particle++) {
       const lifeFade = Math.min(
-        smoothstep(0, 0.4, this.ages[particle]),
-        smoothstep(0, 0.75, this.maximumAges[particle] - this.ages[particle])
+        smoothstep(0, 0.4, population.ages[particle]),
+        smoothstep(
+          0,
+          0.75,
+          population.maximumAges[particle] - population.ages[particle]
+        )
       );
-      const historyOffset = particle * this.trailPointCount;
-      const speed = this.particleSpeeds[particle];
+      const historyOffset = particle * population.trailPointCount;
+      const speed = population.particleSpeeds[particle];
 
-      for (let point = 0; point < this.trailPointCount - 1; point++) {
+      for (let point = 0; point < population.trailPointCount - 1; point++) {
         const startIndex = historyOffset + point;
         const endIndex = startIndex + 1;
-        const startLongitude = this.historyLongitudes[startIndex];
-        const startLatitude = this.historyLatitudes[startIndex];
-        const endLongitude = this.historyLongitudes[endIndex];
-        const endLatitude = this.historyLatitudes[endIndex];
+        const startLongitude = population.historyLongitudes[startIndex];
+        const startLatitude = population.historyLatitudes[startIndex];
+        const endLongitude = population.historyLongitudes[endIndex];
+        const endLatitude = population.historyLatitudes[endIndex];
 
         if (
           !Number.isFinite(startLongitude) ||
@@ -821,91 +1087,44 @@ export class WindParticleLayer implements CustomLayerInterface {
           continue;
         }
 
-        const startTrailFade = (1 - point / this.trailPointCount) ** 1.35;
+        let projectedEndLongitude = endLongitude;
+        const longitudeDelta = projectedEndLongitude - startLongitude;
+        if (longitudeDelta > 180) projectedEndLongitude -= 360;
+        else if (longitudeDelta < -180) projectedEndLongitude += 360;
+
+        const startTrailFade =
+          (1 - point / population.trailPointCount) ** 1.35;
         const endTrailFade =
-          (1 - (point + 1) / this.trailPointCount) ** 1.35;
+          (1 - (point + 1) / population.trailPointCount) ** 1.35;
         const startAlpha =
+          populationAlpha *
           lifeFade *
           startTrailFade *
-          this.getCoverageFade(startLongitude, startLatitude, field);
+          this.getCoverageFade(
+            startLongitude,
+            startLatitude,
+            population.field
+          );
         const endAlpha =
+          populationAlpha *
           lifeFade *
           endTrailFade *
-          this.getCoverageFade(endLongitude, endLatitude, field);
-
+          this.getCoverageFade(endLongitude, endLatitude, population.field);
         const startX = longitudeToMercatorX(startLongitude);
         const startY = latitudeToMercatorY(startLatitude);
-        const endX = longitudeToMercatorX(endLongitude);
+        const endX = longitudeToMercatorX(projectedEndLongitude);
         const endY = latitudeToMercatorY(endLatitude);
 
-        offset = this.writeTrailVertex(
-          offset,
-          startX,
-          startY,
-          endX,
-          endY,
-          startAlpha,
-          -1,
-          speed
-        );
-        offset = this.writeTrailVertex(
-          offset,
-          startX,
-          startY,
-          endX,
-          endY,
-          startAlpha,
-          1,
-          speed
-        );
-        offset = this.writeTrailVertex(
-          offset,
-          endX,
-          endY,
-          startX,
-          startY,
-          endAlpha,
-          -1,
-          speed
-        );
-        offset = this.writeTrailVertex(
-          offset,
-          endX,
-          endY,
-          startX,
-          startY,
-          endAlpha,
-          -1,
-          speed
-        );
-        offset = this.writeTrailVertex(
-          offset,
-          startX,
-          startY,
-          endX,
-          endY,
-          startAlpha,
-          1,
-          speed
-        );
-        offset = this.writeTrailVertex(
-          offset,
-          endX,
-          endY,
-          startX,
-          startY,
-          endAlpha,
-          1,
-          speed
-        );
+        offset = this.writeTrailVertex(offset, startX, startY, endX, endY, startAlpha, -1, speed);
+        offset = this.writeTrailVertex(offset, startX, startY, endX, endY, startAlpha, 1, speed);
+        offset = this.writeTrailVertex(offset, endX, endY, startX, startY, endAlpha, -1, speed);
+        offset = this.writeTrailVertex(offset, endX, endY, startX, startY, endAlpha, -1, speed);
+        offset = this.writeTrailVertex(offset, startX, startY, endX, endY, startAlpha, 1, speed);
+        offset = this.writeTrailVertex(offset, endX, endY, startX, startY, endAlpha, 1, speed);
       }
     }
 
-    if (this.previousField && now - this.fieldTransitionStartedAt > FIELD_TRANSITION_MS) {
-      this.previousField = null;
-    }
-
-    return offset / 7;
+    return offset;
   }
 
   private writeTrailVertex(
@@ -934,20 +1153,28 @@ export class WindParticleLayer implements CustomLayerInterface {
     options: CustomRenderMethodInput,
     vertexCount: number
   ): void {
-    if (!this.program || !this.vertexBuffer) return;
+    if (!this.vertexBuffer) return;
+
+    let windProgram = this.programs.get(options.shaderData.variantName);
+    if (!windProgram) {
+      windProgram = createProgram(gl, options.shaderData);
+      this.programs.set(options.shaderData.variantName, windProgram);
+    }
 
     const basemapOpacity: Record<Basemap, number> = {
-      terrain: 0.9,
-      satellite: 1,
+      terrain: 1.06,
+      satellite: 0.98,
     };
+    const zoom = this.map?.getZoom() ?? 0;
     const opacity =
       LAYER_VISUAL_STRENGTHS.windParticle *
       basemapOpacity[this.basemap] *
+      interpolateZoomStops(zoom, OPACITY_ZOOM_STOPS) *
       this.coverageAmount;
     const depthTestWasEnabled = gl.isEnabled(gl.DEPTH_TEST);
     const cullFaceWasEnabled = gl.isEnabled(gl.CULL_FACE);
 
-    gl.useProgram(this.program);
+    gl.useProgram(windProgram.program);
     gl.bindBuffer(gl.ARRAY_BUFFER, this.vertexBuffer);
     gl.bufferData(gl.ARRAY_BUFFER, this.vertices, gl.DYNAMIC_DRAW);
     gl.enable(gl.BLEND);
@@ -961,13 +1188,13 @@ export class WindParticleLayer implements CustomLayerInterface {
     // traces, but the previous GL state is restored for subsequent map layers.
     gl.disable(gl.DEPTH_TEST);
     gl.disable(gl.CULL_FACE);
-    gl.enableVertexAttribArray(this.positionAttribute);
-    gl.enableVertexAttribArray(this.otherPositionAttribute);
-    gl.enableVertexAttribArray(this.alphaAttribute);
-    gl.enableVertexAttribArray(this.sideAttribute);
-    gl.enableVertexAttribArray(this.speedAttribute);
+    gl.enableVertexAttribArray(windProgram.positionAttribute);
+    gl.enableVertexAttribArray(windProgram.otherPositionAttribute);
+    gl.enableVertexAttribArray(windProgram.alphaAttribute);
+    gl.enableVertexAttribArray(windProgram.sideAttribute);
+    gl.enableVertexAttribArray(windProgram.speedAttribute);
     gl.vertexAttribPointer(
-      this.positionAttribute,
+      windProgram.positionAttribute,
       2,
       gl.FLOAT,
       false,
@@ -975,35 +1202,58 @@ export class WindParticleLayer implements CustomLayerInterface {
       0
     );
     gl.vertexAttribPointer(
-      this.otherPositionAttribute,
+      windProgram.otherPositionAttribute,
       2,
       gl.FLOAT,
       false,
       28,
       8
     );
-    gl.vertexAttribPointer(this.alphaAttribute, 1, gl.FLOAT, false, 28, 16);
-    gl.vertexAttribPointer(this.sideAttribute, 1, gl.FLOAT, false, 28, 20);
-    gl.vertexAttribPointer(this.speedAttribute, 1, gl.FLOAT, false, 28, 24);
+    gl.vertexAttribPointer(windProgram.alphaAttribute, 1, gl.FLOAT, false, 28, 16);
+    gl.vertexAttribPointer(windProgram.sideAttribute, 1, gl.FLOAT, false, 28, 20);
+    gl.vertexAttribPointer(windProgram.speedAttribute, 1, gl.FLOAT, false, 28, 24);
     gl.uniformMatrix4fv(
-      this.matrixUniform,
+      windProgram.projectionMatrixUniform,
       false,
-      // MapLibre 5's custom-layer matrix accepts whole-world Mercator
-      // coordinates in the 0..1 range used by this particle buffer.
       options.defaultProjectionData.mainMatrix as Float32Array
     );
+    gl.uniformMatrix4fv(
+      windProgram.projectionFallbackMatrixUniform,
+      false,
+      options.defaultProjectionData.fallbackMatrix as Float32Array
+    );
+    gl.uniform4f(
+      windProgram.projectionTileMercatorUniform,
+      ...options.defaultProjectionData.tileMercatorCoords
+    );
+    gl.uniform4f(
+      windProgram.projectionClippingPlaneUniform,
+      ...options.defaultProjectionData.clippingPlane
+    );
+    gl.uniform1f(
+      windProgram.projectionTransitionUniform,
+      options.defaultProjectionData.projectionTransition
+    );
     gl.uniform2f(
-      this.viewportUniform,
+      windProgram.viewportUniform,
       gl.drawingBufferWidth,
       gl.drawingBufferHeight
     );
-    gl.uniform1f(this.opacityUniform, opacity);
+    gl.uniform1f(
+      windProgram.widthScaleUniform,
+      interpolateZoomStops(zoom, WIDTH_ZOOM_STOPS)
+    );
+    gl.uniform1f(
+      windProgram.terrainMixUniform,
+      this.basemap === "terrain" ? 1 : 0
+    );
+    gl.uniform1f(windProgram.opacityUniform, opacity);
     gl.drawArrays(gl.TRIANGLES, 0, vertexCount);
-    gl.disableVertexAttribArray(this.positionAttribute);
-    gl.disableVertexAttribArray(this.otherPositionAttribute);
-    gl.disableVertexAttribArray(this.alphaAttribute);
-    gl.disableVertexAttribArray(this.sideAttribute);
-    gl.disableVertexAttribArray(this.speedAttribute);
+    gl.disableVertexAttribArray(windProgram.positionAttribute);
+    gl.disableVertexAttribArray(windProgram.otherPositionAttribute);
+    gl.disableVertexAttribArray(windProgram.alphaAttribute);
+    gl.disableVertexAttribArray(windProgram.sideAttribute);
+    gl.disableVertexAttribArray(windProgram.speedAttribute);
     gl.bindBuffer(gl.ARRAY_BUFFER, null);
     gl.useProgram(null);
 

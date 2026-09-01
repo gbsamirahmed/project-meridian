@@ -12,9 +12,14 @@ import type { Place } from "../types/place";
 import type { WeatherData } from "../types/weather";
 import type { WeatherGrid, WeatherGridStatus } from "../types/weatherGrid";
 import type {
-  GlobalPrecipitationStatus,
+  GlobalWeatherStatusRegistry,
   ScalarWeatherFieldSource,
+  VectorWeatherFieldSource,
 } from "../types/globalWeather";
+import {
+  getScalarTimestepAtTime,
+  getVectorTimestepAtTime,
+} from "../services/globalWeatherService";
 
 interface WeatherPanelProps {
   selectedLocation: SelectedLocation | null;
@@ -26,7 +31,10 @@ interface WeatherPanelProps {
   weatherGrid: WeatherGrid | null;
   weatherGridStatus: WeatherGridStatus;
   globalPrecipitationSource: ScalarWeatherFieldSource | null;
-  globalPrecipitationStatus: GlobalPrecipitationStatus;
+  globalCloudSource: ScalarWeatherFieldSource | null;
+  globalWindSource: VectorWeatherFieldSource | null;
+  globalWeatherStatuses: GlobalWeatherStatusRegistry;
+  activeGlobalValidTime: string | null;
   forecastTimes: string[];
   forecastHours?: number[];
   isDesktopCollapsed: boolean;
@@ -51,7 +59,10 @@ export default function WeatherPanel({
   weatherGrid,
   weatherGridStatus,
   globalPrecipitationSource,
-  globalPrecipitationStatus,
+  globalCloudSource,
+  globalWindSource,
+  globalWeatherStatuses,
+  activeGlobalValidTime,
   forecastTimes,
   forecastHours,
   isDesktopCollapsed,
@@ -66,11 +77,48 @@ export default function WeatherPanel({
   const [isPlaying, setIsPlaying] = useState(false);
   const globalPrecipitationActive =
     mapOverlays.precipitation && globalPrecipitationSource !== null;
+  const globalCloudActive = mapOverlays.clouds && globalCloudSource !== null;
+  const globalWindActive = mapOverlays.windFlow && globalWindSource !== null;
   const globalPrecipitationTimestep = globalPrecipitationSource
-    ? globalPrecipitationSource.manifest.timesteps[
-        Math.min(forecastHour, globalPrecipitationSource.manifest.timesteps.length - 1)
-      ]
+    ? getScalarTimestepAtTime(globalPrecipitationSource, activeGlobalValidTime)
     : null;
+  const globalCloudTimestep = globalCloudSource
+    ? getScalarTimestepAtTime(globalCloudSource, activeGlobalValidTime)
+    : null;
+  const globalWindTimestep = globalWindSource
+    ? getVectorTimestepAtTime(globalWindSource, activeGlobalValidTime)
+    : null;
+  const globalFieldsActive =
+    globalPrecipitationActive || globalCloudActive || globalWindActive;
+  const globalFieldLabel = [
+    globalPrecipitationActive ? "precipitation" : null,
+    globalCloudActive ? "cloud" : null,
+    globalWindActive ? "wind" : null,
+  ]
+    .filter(Boolean)
+    .join(" + ");
+  const unavailableGlobalField =
+    mapOverlays.clouds && !globalCloudSource
+      ? "cloud cover"
+      : mapOverlays.precipitation && !globalPrecipitationSource
+        ? "precipitation"
+        : mapOverlays.windFlow && !globalWindSource
+          ? "wind"
+        : null;
+  const activeRunTimes = Array.from(
+    new Set(
+      [
+        globalPrecipitationActive
+          ? globalPrecipitationSource?.manifest.runTime
+          : null,
+        globalCloudActive ? globalCloudSource?.manifest.runTime : null,
+        globalWindActive ? globalWindSource?.manifest.runTime : null,
+      ].filter((runTime): runTime is string => Boolean(runTime))
+    )
+  );
+  const runLabel = activeRunTimes
+    .map((runTime) => runTime.replace("T", " ").replace(":00:00Z", "Z"))
+    .join(" / ");
 
   const handleSearchSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -165,12 +213,19 @@ export default function WeatherPanel({
             aria-hidden="true"
           />
           <strong>
-            {globalPrecipitationActive
-              ? `GFS 0.25° global precipitation · +${globalPrecipitationTimestep?.forecastHour ?? 0}h`
-              : mapOverlays.precipitation && globalPrecipitationStatus === "loading"
-                ? "Loading global precipitation metadata"
-                : mapOverlays.precipitation && globalPrecipitationStatus !== "ready"
+            {globalFieldsActive
+              ? `GFS 0.25° global ${globalFieldLabel} · +${globalPrecipitationTimestep?.forecastHour ?? globalCloudTimestep?.forecastHour ?? globalWindTimestep?.forecastHour ?? 0}h${unavailableGlobalField ? ` · ${unavailableGlobalField} unavailable` : ""}`
+              : (mapOverlays.precipitation || mapOverlays.clouds || mapOverlays.windFlow) &&
+                  (globalWeatherStatuses.precipitation === "loading" ||
+                    globalWeatherStatuses.cloud_cover === "loading" ||
+                    globalWeatherStatuses.wind_10m === "loading")
+                ? "Loading global weather metadata"
+                : mapOverlays.precipitation && globalWeatherStatuses.precipitation !== "ready"
                   ? "Global precipitation unavailable"
+                : mapOverlays.clouds && globalWeatherStatuses.cloud_cover !== "ready"
+                  ? "Global cloud cover unavailable"
+                : mapOverlays.windFlow && globalWeatherStatuses.wind_10m !== "ready"
+                  ? "Global wind unavailable"
                 : weatherGridStatus === "loading"
               ? "Sampling visible area"
               : weatherGridStatus === "refreshing"
@@ -189,11 +244,13 @@ export default function WeatherPanel({
           </strong>
         </div>
         <p>
-          {globalPrecipitationActive && globalPrecipitationTimestep
-            ? `NOAA GFS run ${globalPrecipitationSource.manifest.runTime.replace("T", " ").replace(":00:00Z", "Z")}. Precipitation is a ${globalPrecipitationTimestep.accumulationHours} h total; other weather values still use the local Open-Meteo prototype.`
-            : mapOverlays.precipitation && globalPrecipitationStatus !== "ready"
-              ? "Run the documented local GFS update to publish precipitation. Meridian does not silently substitute the local Open-Meteo rain field."
-            : "Cloud, contours and wind traces interpolate the same coarse local model field; denser marks do not mean finer forecast resolution."}
+          {globalFieldsActive
+            ? `NOAA GFS run ${runLabel}; valid ${activeGlobalValidTime?.replace("T", " ").replace("Z", " UTC")}. ${unavailableGlobalField ? `${unavailableGlobalField[0].toUpperCase()}${unavailableGlobalField.slice(1)} is unavailable with no regional map fallback. ` : "Cloud and 10 m wind are instantaneous; precipitation is an honest interval total. "}Temperature and pressure still use the regional Open-Meteo prototype.`
+            : (mapOverlays.precipitation && globalWeatherStatuses.precipitation !== "ready") ||
+                (mapOverlays.clouds && globalWeatherStatuses.cloud_cover !== "ready") ||
+                (mapOverlays.windFlow && globalWeatherStatuses.wind_10m !== "ready")
+              ? "Run the documented local GFS update to publish the unavailable field. Meridian does not silently substitute regional map data."
+              : "Temperature and pressure interpolate the coarse regional model field; denser marks do not mean finer forecast resolution."}
         </p>
       </section>
 
@@ -201,7 +258,7 @@ export default function WeatherPanel({
         forecastHour={forecastHour}
         forecastTimes={forecastTimes}
         forecastHours={forecastHours}
-        sourceLabel={globalPrecipitationActive ? "GFS precipitation steps" : undefined}
+        sourceLabel={globalFieldsActive ? "GFS valid-time steps" : undefined}
         onForecastHourChange={onForecastHourChange}
       />
 
@@ -217,7 +274,7 @@ export default function WeatherPanel({
 
       <LayerLegend
         mapOverlays={mapOverlays}
-        globalPrecipitationActive={mapOverlays.precipitation}
+        globalPrecipitationActive={globalPrecipitationActive}
         precipitationAccumulationHours={globalPrecipitationTimestep?.accumulationHours}
       />
 

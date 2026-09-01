@@ -14,11 +14,7 @@ interface OpenMeteoGridResponse {
   hourly?: {
     time?: string[];
     temperature_2m?: number[];
-    cloud_cover?: number[];
-    precipitation?: number[];
     pressure_msl?: number[];
-    wind_speed_10m?: number[];
-    wind_direction_10m?: number[];
   };
 }
 
@@ -149,11 +145,7 @@ function readHourlyValues(
   if (
     !hourly?.time ||
     !hourly.temperature_2m ||
-    !hourly.cloud_cover ||
-    !hourly.precipitation ||
-    !hourly.pressure_msl ||
-    !hourly.wind_speed_10m ||
-    !hourly.wind_direction_10m
+    !hourly.pressure_msl
   ) {
     throw new Error(
       `Weather grid response ${pointIndex + 1} is missing hourly data`
@@ -162,11 +154,7 @@ function readHourlyValues(
 
   return {
     temperature: hourly.temperature_2m,
-    cloudCover: hourly.cloud_cover,
-    precipitation: hourly.precipitation,
     pressure: hourly.pressure_msl,
-    windSpeed: hourly.wind_speed_10m,
-    windDirection: hourly.wind_direction_10m,
   };
 }
 
@@ -192,7 +180,7 @@ export async function getWeatherGrid(
     .join(",");
 
   const weatherResponse = await fetch(
-    `https://api.open-meteo.com/v1/forecast?latitude=${latitudes}&longitude=${longitudes}&hourly=temperature_2m,cloud_cover,precipitation,pressure_msl,wind_speed_10m,wind_direction_10m&forecast_hours=25`,
+    `https://api.open-meteo.com/v1/forecast?latitude=${latitudes}&longitude=${longitudes}&hourly=temperature_2m,pressure_msl&forecast_hours=25`,
     { signal }
   );
 

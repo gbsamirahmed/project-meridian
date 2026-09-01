@@ -1,46 +1,72 @@
 import type maplibregl from "maplibre-gl";
 
 import type { Basemap } from "../types/layer";
-import type { WeatherGrid } from "../types/weatherGrid";
+import type {
+  VectorWeatherFieldSource,
+  VectorWeatherTimestep,
+} from "../types/globalWeather";
+import { GlobalWindVectorField } from "./globalWindSource";
 import { getFirstSymbolLayerId } from "./mapLayerOrder";
-import { createForecastWindField } from "./windField";
 import {
   WIND_PARTICLE_LAYER_ID,
   WindParticleLayer,
 } from "./windParticleLayer";
 
 let activeLayer: WindParticleLayer | null = null;
-let coverageVisible = true;
+let updateGeneration = 0;
+let pendingField: GlobalWindVectorField | null = null;
 
-export function updateWindLayer(
-  map: maplibregl.Map,
-  grid: WeatherGrid,
-  forecastHour: number,
-  basemap: Basemap
-): void {
+function ensureLayer(map: maplibregl.Map): WindParticleLayer {
   if (!map.getLayer(WIND_PARTICLE_LAYER_ID)) {
     activeLayer = new WindParticleLayer();
     map.addLayer(activeLayer, getFirstSymbolLayerId(map));
   } else if (!activeLayer) {
-    // A development hot reload can leave a custom layer owned by the previous
-    // module instance. Replacing it keeps one renderer and one animation loop.
     map.removeLayer(WIND_PARTICLE_LAYER_ID);
     activeLayer = new WindParticleLayer();
     map.addLayer(activeLayer, getFirstSymbolLayerId(map));
   }
-
-  activeLayer.setField(createForecastWindField(grid, forecastHour));
-  activeLayer.setBasemap(basemap);
-  activeLayer.setEnabled(true);
-  activeLayer.setCoverageVisible(coverageVisible);
+  return activeLayer;
 }
 
-export function setWindLayerCoverage(
-  _map: maplibregl.Map,
-  visible: boolean
+export function updateGlobalWindLayer(
+  map: maplibregl.Map,
+  source: VectorWeatherFieldSource,
+  timestep: VectorWeatherTimestep,
+  basemap: Basemap
 ): void {
-  coverageVisible = visible;
-  activeLayer?.setCoverageVisible(visible);
+  const layer = ensureLayer(map);
+  layer.setBasemap(basemap);
+  layer.setEnabled(true);
+  const signature = `${source.manifest.id}:${timestep.id}`;
+  if (layer.getFieldSignature() === signature) {
+    layer.scheduleCoverageRefresh();
+    return;
+  }
+  if (pendingField?.signature === signature) return;
+  const generation = ++updateGeneration;
+  pendingField?.dispose();
+  const field = new GlobalWindVectorField(source, timestep);
+  pendingField = field;
+  void field
+    .prepareCoverage(map)
+    .then((ready) => {
+      if (generation !== updateGeneration || pendingField !== field) {
+        field.dispose();
+        return;
+      }
+      pendingField = null;
+      if (!ready) {
+        field.dispose();
+        return;
+      }
+      layer.setField(field);
+    })
+    .catch(() => {
+      if (generation === updateGeneration && pendingField === field) {
+        pendingField = null;
+      }
+      field.dispose();
+    });
 }
 
 export function setWindLayerEnabled(
@@ -51,7 +77,9 @@ export function setWindLayerEnabled(
 }
 
 export function removeWindLayer(map: maplibregl.Map): void {
-  coverageVisible = true;
+  updateGeneration++;
+  pendingField?.dispose();
+  pendingField = null;
 
   if (map.getLayer(WIND_PARTICLE_LAYER_ID)) {
     map.removeLayer(WIND_PARTICLE_LAYER_ID);
