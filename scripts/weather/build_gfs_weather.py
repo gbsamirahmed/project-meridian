@@ -1,6 +1,6 @@
 """Canonical command for Meridian's local multi-field GFS dataset builder."""
 
-from build_gfs_precipitation_poc import main
+from gfs_weather_builder import main
 
 
 if __name__ == "__main__":

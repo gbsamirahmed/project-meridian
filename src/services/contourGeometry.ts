@@ -24,6 +24,7 @@ interface BuildContourOptions {
   levels: number[];
   formatLabel: (level: number) => string;
   isEmphasized?: (level: number) => boolean;
+  upsampleFactor?: number;
 }
 
 function upsampleMatrix(matrix: number[][], factor: number): number[][] {
@@ -100,46 +101,50 @@ function getCasePairs(
 }
 
 function stitchSegments(segments: Segment[]): [number, number][][] {
-  const remaining = [...segments];
+  const endpoints = new Map<string, number[]>();
+  segments.forEach((segment, index) => {
+    for (const coordinate of [segment.start, segment.end]) {
+      const key = coordinateKey(coordinate);
+      const indexes = endpoints.get(key) ?? [];
+      indexes.push(index);
+      endpoints.set(key, indexes);
+    }
+  });
+  const used = new Uint8Array(segments.length);
   const lines: [number, number][][] = [];
 
-  while (remaining.length > 0) {
-    const segment = remaining.pop();
-
-    if (!segment) break;
-
-    const line: [number, number][] = [segment.start, segment.end];
-    let extended = true;
-
-    while (extended) {
-      extended = false;
-
-      for (let index = remaining.length - 1; index >= 0; index--) {
-        const candidate = remaining[index];
-        const startKey = coordinateKey(line[0]);
-        const endKey = coordinateKey(line[line.length - 1]);
-        const candidateStartKey = coordinateKey(candidate.start);
-        const candidateEndKey = coordinateKey(candidate.end);
-
-        if (candidateStartKey === endKey) {
-          line.push(candidate.end);
-        } else if (candidateEndKey === endKey) {
-          line.push(candidate.start);
-        } else if (candidateEndKey === startKey) {
-          line.unshift(candidate.start);
-        } else if (candidateStartKey === startKey) {
-          line.unshift(candidate.end);
-        } else {
-          continue;
-        }
-
-        remaining.splice(index, 1);
-        extended = true;
-        break;
-      }
+  const takeConnected = (
+    coordinate: [number, number]
+  ): [number, number] | null => {
+    const key = coordinateKey(coordinate);
+    for (const index of endpoints.get(key) ?? []) {
+      if (used[index]) continue;
+      used[index] = 1;
+      const candidate = segments[index];
+      return coordinateKey(candidate.start) === key
+        ? candidate.end
+        : candidate.start;
     }
+    return null;
+  };
 
-    lines.push(line);
+  for (let index = 0; index < segments.length; index++) {
+    if (used[index]) continue;
+    used[index] = 1;
+    const segment = segments[index];
+    const line: [number, number][] = [segment.start, segment.end];
+    for (;;) {
+      const next = takeConnected(line[line.length - 1]);
+      if (!next) break;
+      line.push(next);
+    }
+    const prefix: [number, number][] = [];
+    for (;;) {
+      const previous = takeConnected(prefix[prefix.length - 1] ?? line[0]);
+      if (!previous) break;
+      prefix.push(previous);
+    }
+    lines.push(prefix.reverse().concat(line));
   }
 
   return lines;
@@ -151,10 +156,11 @@ export function buildContourGeoJson({
   levels,
   formatLabel,
   isEmphasized = () => false,
+  upsampleFactor = 4,
 }: BuildContourOptions): ContourFeatureCollection {
   // March over a bilinearly upsampled version of the same coarse field. This
   // produces stable, smooth isolines without inventing new model samples.
-  const contourMatrix = upsampleMatrix(matrix, 4);
+  const contourMatrix = upsampleMatrix(matrix, upsampleFactor);
   const rows = contourMatrix.length;
   const columns = contourMatrix[0]?.length ?? 0;
   const features: ContourFeatureCollection["features"] = [];
@@ -183,6 +189,7 @@ export function buildContourGeoJson({
           contourMatrix[row + 1][column + 1],
           contourMatrix[row + 1][column],
         ];
+        if (!values.every(Number.isFinite)) continue;
         const caseIndex = values.reduce(
           (result, value, index) => result | (value >= level ? 1 << index : 0),
           0

@@ -8,7 +8,7 @@ from pathlib import Path
 
 import numpy as np
 
-import build_gfs_precipitation_poc as builder
+import gfs_weather_builder as builder
 
 
 def record(start: int, end: int, offset: int = 0) -> builder.InventoryRecord:
@@ -326,6 +326,144 @@ class WindEncodingTests(unittest.TestCase):
         )
 
 
+class TemperatureInventoryTests(unittest.TestCase):
+    def inventory(self, hour: int) -> str:
+        return "\n".join(
+            [
+                f"1:0:d=2026083012:TMP:surface:{hour} hour fcst:",
+                f"2:100:d=2026083012:TMAX:2 m above ground:{hour} hour fcst:",
+                f"3:200:d=2026083012:TMP:850 mb:{hour} hour fcst:",
+                f"4:300:d=2026083012:TMP:2 m above ground:{hour} hour fcst:",
+                f"5:400:d=2026083012:TMP:80 m above ground:{hour} hour fcst:",
+            ]
+        )
+
+    def test_selects_exact_instantaneous_2m_temperature(self) -> None:
+        for hour in (1, 6, 12, 24):
+            with self.subTest(hour=hour):
+                selected = builder.select_instantaneous_temperature_record(
+                    self.inventory(hour), hour
+                )
+                self.assertEqual(selected.offset, 300)
+                self.assertEqual(selected.end_offset, 399)
+                self.assertEqual(selected.forecast_hour, hour)
+
+    def test_rejects_wrong_height_and_pressure_level(self) -> None:
+        inventory = "\n".join(
+            [
+                "1:0:d=2026083012:TMP:surface:6 hour fcst:",
+                "2:100:d=2026083012:TMP:850 mb:6 hour fcst:",
+                "3:200:d=2026083012:TMP:80 m above ground:6 hour fcst:",
+            ]
+        )
+        with self.assertRaisesRegex(ValueError, "TMP 2 m"):
+            builder.select_instantaneous_temperature_record(inventory, 6)
+
+    def test_rejects_maximum_and_minimum_fields(self) -> None:
+        inventory = "\n".join(
+            [
+                "1:0:d=2026083012:TMAX:2 m above ground:12 hour fcst:",
+                "2:100:d=2026083012:TMIN:2 m above ground:12 hour fcst:",
+            ]
+        )
+        with self.assertRaisesRegex(ValueError, "TMP 2 m"):
+            builder.select_instantaneous_temperature_record(inventory, 12)
+
+    def test_rejects_ambiguous_duplicates(self) -> None:
+        inventory = "\n".join(
+            [
+                "1:0:d=2026083012:TMP:2 m above ground:24 hour fcst:",
+                "2:100:d=2026083012:TMP:2 m above ground:24 hour fcst:",
+                "3:200:d=2026083012:PRMSL:mean sea level:24 hour fcst:",
+            ]
+        )
+        with self.assertRaisesRegex(ValueError, "found 2"):
+            builder.select_instantaneous_temperature_record(inventory, 24)
+
+
+class TemperatureMetadataTests(unittest.TestCase):
+    def metadata(self) -> dict[str, object]:
+        return {
+            "shortName": "2t",
+            "units": "K",
+            "stepType": "instant",
+            "endStep": 6,
+            "forecastTime": 6,
+            "Ni": builder.EXPECTED_NI,
+            "Nj": builder.EXPECTED_NJ,
+            "iDirectionIncrementInDegrees": 0.25,
+            "jDirectionIncrementInDegrees": 0.25,
+            "jScansPositively": 0,
+            "iScansNegatively": 0,
+            "typeOfLevel": "heightAboveGround",
+            "level": 2,
+            "gridType": "regular_ll",
+            "latitudeOfFirstGridPointInDegrees": 90.0,
+            "longitudeOfFirstGridPointInDegrees": 0.0,
+            "latitudeOfLastGridPointInDegrees": -90.0,
+            "longitudeOfLastGridPointInDegrees": 359.75,
+            "dataDate": 20260831,
+            "dataTime": 1200,
+            "validityDate": 20260831,
+            "validityTime": 1800,
+        }
+
+    def test_validates_exact_2m_instantaneous_metadata(self) -> None:
+        builder.validate_temperature_metadata(
+            self.metadata(),
+            datetime(2026, 8, 31, 12, tzinfo=timezone.utc),
+            6,
+        )
+
+    def test_rejects_wrong_level(self) -> None:
+        metadata = self.metadata()
+        metadata["level"] = 80
+        with self.assertRaisesRegex(ValueError, "level"):
+            builder.validate_temperature_metadata(
+                metadata,
+                datetime(2026, 8, 31, 12, tzinfo=timezone.utc),
+                6,
+            )
+
+
+class TemperatureEncodingTests(unittest.TestCase):
+    def test_uint16_temperature_round_trip_handles_sign_and_no_data(self) -> None:
+        values = np.full((builder.TILE_SIZE, builder.TILE_SIZE), 0.0, dtype=np.float32)
+        values[0, 0] = np.nan
+        values[0, 1] = -87.6
+        values[0, 2] = 42.3
+        values[0, 3] = builder.TEMPERATURE_MIN_C
+        values[0, 4] = builder.TEMPERATURE_MAX_C
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "temperature.png"
+            builder.encode_temperature_png(values, path)
+            decoded = builder.decode_temperature_png(path)
+        self.assertTrue(np.isnan(decoded[0, 0]))
+        for column in range(1, 5):
+            self.assertAlmostEqual(
+                float(decoded[0, column]), float(values[0, column]), places=4
+            )
+
+    def test_quantisation_error_is_within_half_a_tenth_degree(self) -> None:
+        values = np.full((builder.TILE_SIZE, builder.TILE_SIZE), -12.34, dtype=np.float32)
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "temperature.png"
+            builder.encode_temperature_png(values, path)
+            decoded = builder.decode_temperature_png(path)
+        self.assertLessEqual(abs(float(decoded[5, 5]) + 12.34), 0.0501)
+
+    def test_sampling_is_periodic_across_antimeridian(self) -> None:
+        values = np.broadcast_to(
+            np.arange(builder.EXPECTED_NI, dtype=np.float32),
+            (builder.EXPECTED_NJ, builder.EXPECTED_NI),
+        )
+        self.assertAlmostEqual(
+            builder.source_value_at(values, -179.9, 10.0),
+            builder.source_value_at(values, 180.1, 10.0),
+            places=5,
+        )
+
+
 class CatalogueTests(unittest.TestCase):
     def manifest(self, field_id: str, run: str) -> dict[str, object]:
         return {
@@ -357,10 +495,16 @@ class CatalogueTests(unittest.TestCase):
                 self.manifest("wind_10m", "2026-08-30T12:00:00Z"),
                 "run-c/wind-10m/manifest.json",
             )
+            builder.publish_catalog_field(
+                root,
+                "temperature_2m",
+                self.manifest("temperature_2m", "2026-08-30T06:00:00Z"),
+                "run-d/temperature-2m/manifest.json",
+            )
             catalog = json.loads((root / "latest.json").read_text(encoding="utf-8"))
         self.assertEqual(
             set(catalog["fields"]),
-            {"precipitation", "cloud_cover", "wind_10m"},
+            {"precipitation", "cloud_cover", "wind_10m", "temperature_2m"},
         )
         self.assertEqual(
             catalog["fields"]["precipitation"]["runTime"],
@@ -373,6 +517,10 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(
             catalog["fields"]["wind_10m"]["runTime"],
             "2026-08-30T12:00:00Z",
+        )
+        self.assertEqual(
+            catalog["fields"]["temperature_2m"]["runTime"],
+            "2026-08-30T06:00:00Z",
         )
 
     def test_legacy_precipitation_pointer_is_preserved_when_cloud_publishes(self) -> None:

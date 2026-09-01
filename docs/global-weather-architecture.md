@@ -2,7 +2,7 @@
 
 ## Status
 
-The provider-neutral architecture now serves locally generated global precipitation, total cloud cover, and 10 m wind, not a production feed. Meridian resolves the latest verified usable NOAA GFS 0.25° run, generates 24 hourly steps, publishes independently validated immutable numeric scalar/vector fields behind an atomic `latest.json` catalogue, and loads them through manifest clients, a bounded shared tile cache, geographic samplers, and persistent MapLibre renderers. Open-Meteo remains the active source for point weather plus regional temperature and pressure. Scheduled ingestion, hosting, retention, monitoring, and model selection remain unimplemented and require product and cost decisions.
+The provider-neutral architecture now serves locally generated global precipitation, total cloud cover, 10 m wind, and 2 m temperature, not a production feed. Meridian resolves the latest verified usable NOAA GFS 0.25° run, generates 24 hourly steps, publishes independently validated immutable numeric scalar/vector fields behind an atomic `latest.json` catalogue, and loads them through manifest clients, a bounded shared tile cache, geographic samplers, and persistent MapLibre renderers. Open-Meteo remains the active source for point weather plus regional map pressure. Scheduled ingestion, hosting, retention, monitoring, and model selection remain unimplemented and require product and cost decisions.
 
 Generated timestamped run directories and `public/weather/gfs/latest.json` are local build products and are excluded from Git. A clean checkout remains runnable and reports missing GFS fields as unavailable until the documented generator publishes validated local datasets; it does not silently change field ownership.
 
@@ -50,6 +50,12 @@ The first vector migration uses the exact instantaneous GFS `UGRD` and `VGRD` re
 
 U is positive eastward and V is positive northward. Speed and meteorological “from” direction are derived in the browser from the interpolated components; speed or direction is never interpolated independently. Wind is instantaneous at each valid time and has no accumulation metadata.
 
+## Temperature semantics
+
+Global map temperature uses the exact instantaneous GFS `TMP` record at `2 m above ground` for each forecast valid time. Preprocessing rejects surface/skin, pressure-level, other-height, maximum/minimum, averaged, and ambiguous records. ecCodes supplies Kelvin values, which are converted once to Celsius without lapse-rate correction, terrain downscaling, or other local modelling.
+
+Temperature tiles use unsigned 16-bit red/green encoding at 0.1 °C precision with an offset of −150 °C and code 65535 reserved for no-data. The declared valid range is −150…100 °C. Isotherms are generated from a padded, logically continuous viewport sampling domain after all required numeric tiles are prepared, so storage tile boundaries do not become contour boundaries.
+
 ## Web tile representation
 
 The implemented proof uses versioned numeric tiles:
@@ -57,6 +63,7 @@ The implemented proof uses versioned numeric tiles:
 - Precipitation is quantised to unsigned 16-bit hundredths of a millimetre. Lossless PNG stores the high byte in red and low byte in green; scale, offset and the `65535` no-data code live in its manifest.
 - Cloud cover uses unsigned 8-bit percentage points in red, with 255 reserved for no-data.
 - Wind packs two biased 10-bit component codes into one RGB PNG: `U = (R << 2) | (G >> 6)` and `V = ((G & 63) << 4) | (B >> 4)`. Code zero is paired no-data; physical values are `(code - 512) × 0.2 m/s`.
+- Temperature uses unsigned 16-bit red/green codes with `value = code × 0.1 − 150 °C`; 65535 is no-data.
 - PNG compression, immutable run/time URLs and normal HTTP caching keep transfer costs bounded for the proof.
 - Each tile includes or inherits model, run, valid time, variable, units, bounds, native resolution and attribution.
 
@@ -107,7 +114,7 @@ interface GlobalWeatherFieldSource {
 A shared tile store should fetch, decode, cache and sample tiles. Scalar and vector field adapters should expose geographic sampling without knowing which model supplied the values.
 
 - Precipitation and cloud surfaces colour scalar tiles.
-- Temperature and pressure contours build geometry from a bounded mosaic of visible scalar tiles, including a one-cell neighbour margin.
+- Temperature contours build geometry from a padded continuous geographic sampling domain backed by prepared numeric tiles; pressure still uses the regional sampled field.
 - Wind particles sample U/V vector tiles.
 - The inspector samples the decoded tile covering the pointer and reports source, run and valid time.
 
@@ -115,11 +122,11 @@ Renderers should continue to own presentation only. Model download details, GRIB
 
 ## Transitional ownership
 
-Migration remains variable by variable. Precipitation, cloud, and 10 m wind are now global GFS owners; temperature and pressure remain regional Open-Meteo fields.
+Migration remains variable by variable. Precipitation, cloud, 10 m wind, and 2 m temperature are now global GFS owners; pressure remains a regional Open-Meteo map field.
 
-The browser loads a schema-v2 field catalogue whose precipitation, cloud, and wind entries are resolved and validated independently. One field may advance while another retains an older valid run with its real metadata. A failed field is unavailable (or retains its prior published entry); it never silently falls back to the regional map grid. The inspector composes GFS precipitation/cloud/wind with Open-Meteo temperature/pressure and reports concise provenance.
+The browser loads a schema-v2 field catalogue whose precipitation, cloud, wind, and temperature entries are resolved and validated independently. One field may advance while another retains an older valid run with its real metadata. A failed field is unavailable (or retains its prior published entry); it never silently falls back to the regional map grid. The inspector composes GFS precipitation/cloud/wind/temperature with Open-Meteo pressure and reports concise provenance.
 
-The timeline is manifest-driven. With one enabled global field it uses that field's valid times; with multiple global fields it uses their exact valid-time intersection. Regional Open-Meteo fields choose their nearest available hour. Cloud and wind are not temporally interpolated. During a wind timestep change, separate old and new particle populations sample their exact fields and crossfade visually; U/V values are not blended between forecast times.
+The timeline is manifest-driven. With one enabled global field it uses that field's valid times; with multiple global fields it uses their exact valid-time intersection. Regional Open-Meteo pressure chooses its nearest available hour. Cloud, wind, and temperature are not temporally interpolated. During a wind timestep change, separate old and new particle populations sample their exact fields and crossfade visually; U/V values are not blended between forecast times. Temperature retains the last complete contour geometry until padded coverage for the requested exact timestep is ready.
 
 ## Lightweight preprocessing and publishing
 
@@ -138,14 +145,14 @@ This can run as a scheduled container, CI job or cloud worker with enough memory
 
 ## Implemented local update proof
 
-The current workflow generates surface `APCP`, instantaneous entire-atmosphere `TCDC`, and instantaneous earth-relative 10 m `UGRD`/`VGRD` for forecast hours +1 through +24. The updater fetches each forecast inventory once, tests recent cycles newest-first, and accepts a candidate only if every required precipitation interval and exact cloud/vector record is usable. GRIB packing noise below 0.1 mm may be clamped only for precipitation after larger negative differences are rejected.
+The current workflow generates surface `APCP`, instantaneous entire-atmosphere `TCDC`, instantaneous earth-relative 10 m `UGRD`/`VGRD`, and instantaneous 2 m `TMP` for forecast hours +1 through +24. The updater fetches each forecast inventory once, tests recent cycles newest-first, and accepts a candidate only if every required precipitation interval and exact cloud/vector/temperature record is usable. GRIB packing noise below 0.1 mm may be clamped only for precipitation after larger negative differences are rejected.
 
 - `scripts/weather/build_gfs_weather.py` is the canonical local command; the shared builder resolves the latest usable run, reuses inventory probing, selects indexed byte ranges, validates variable-specific ecCodes metadata, creates z0–z3 tiles, writes validation statistics, and publishes field entries independently.
-- `public/weather/gfs/<run>/manifest.json` remains the precipitation manifest; `cloud-cover/manifest.json` and `wind-10m/manifest.json` describe the other immutable fields. Existing schema-v1 precipitation runs remain loadable.
+- `public/weather/gfs/<run>/manifest.json` remains the precipitation manifest; `cloud-cover/manifest.json`, `wind-10m/manifest.json`, and `temperature-2m/manifest.json` describe the other immutable fields. Existing schema-v1 precipitation runs remain loadable.
 - `latest.json` schema v2 is a mutable field catalogue. Updating one entry preserves the other entry and its actual run time.
 - `src/types/globalWeather.ts` contains provider-neutral run, scalar/vector timestep, encoding, and source contracts.
 - `src/services/globalWeatherService.ts` and `numericTileCache.ts` load metadata, bound decoded tile memory, and sample values geographically.
-- `src/services/globalScalarSurface.ts` owns the reusable instance-based double-buffer lifecycle; thin precipitation and cloud adapters own their palettes and opacity. Wind reuses the numeric cache through a global vector sampler and the existing custom WebGL particle layer.
+- `src/services/globalScalarSurface.ts` owns the reusable instance-based double-buffer lifecycle; thin precipitation and cloud adapters own their palettes and opacity. Wind reuses the numeric cache through a global vector sampler and the existing custom WebGL particle layer. Temperature prepares shared-cache scalar coverage asynchronously and atomically replaces viewport-aware GeoJSON isolines only after the continuous sampling domain is complete.
 
 The canonical 1440×721 GFS grid is resampled deterministically to Web Mercator z0–z3. z3 is the useful display ceiling; closer views overzoom it with linear interpolation. Longitude sampling is periodic across ±180°, and coverage is explicitly clipped to ±85.051°. A 24-step run contains 2,040 tiles per scalar field. Run paths remain immutable, while `latest.json` is the only mutable publication object. No production host is required.
 

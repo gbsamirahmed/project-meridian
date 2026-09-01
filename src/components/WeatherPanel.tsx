@@ -33,6 +33,7 @@ interface WeatherPanelProps {
   globalPrecipitationSource: ScalarWeatherFieldSource | null;
   globalCloudSource: ScalarWeatherFieldSource | null;
   globalWindSource: VectorWeatherFieldSource | null;
+  globalTemperatureSource: ScalarWeatherFieldSource | null;
   globalWeatherStatuses: GlobalWeatherStatusRegistry;
   activeGlobalValidTime: string | null;
   forecastTimes: string[];
@@ -61,6 +62,7 @@ export default function WeatherPanel({
   globalPrecipitationSource,
   globalCloudSource,
   globalWindSource,
+  globalTemperatureSource,
   globalWeatherStatuses,
   activeGlobalValidTime,
   forecastTimes,
@@ -79,6 +81,8 @@ export default function WeatherPanel({
     mapOverlays.precipitation && globalPrecipitationSource !== null;
   const globalCloudActive = mapOverlays.clouds && globalCloudSource !== null;
   const globalWindActive = mapOverlays.windFlow && globalWindSource !== null;
+  const globalTemperatureActive =
+    mapOverlays.temperatureContours && globalTemperatureSource !== null;
   const globalPrecipitationTimestep = globalPrecipitationSource
     ? getScalarTimestepAtTime(globalPrecipitationSource, activeGlobalValidTime)
     : null;
@@ -88,12 +92,19 @@ export default function WeatherPanel({
   const globalWindTimestep = globalWindSource
     ? getVectorTimestepAtTime(globalWindSource, activeGlobalValidTime)
     : null;
+  const globalTemperatureTimestep = globalTemperatureSource
+    ? getScalarTimestepAtTime(globalTemperatureSource, activeGlobalValidTime)
+    : null;
   const globalFieldsActive =
-    globalPrecipitationActive || globalCloudActive || globalWindActive;
+    globalPrecipitationActive ||
+    globalCloudActive ||
+    globalWindActive ||
+    globalTemperatureActive;
   const globalFieldLabel = [
     globalPrecipitationActive ? "precipitation" : null,
     globalCloudActive ? "cloud" : null,
     globalWindActive ? "wind" : null,
+    globalTemperatureActive ? "temperature" : null,
   ]
     .filter(Boolean)
     .join(" + ");
@@ -104,6 +115,8 @@ export default function WeatherPanel({
         ? "precipitation"
         : mapOverlays.windFlow && !globalWindSource
           ? "wind"
+        : mapOverlays.temperatureContours && !globalTemperatureSource
+          ? "temperature"
         : null;
   const activeRunTimes = Array.from(
     new Set(
@@ -113,6 +126,7 @@ export default function WeatherPanel({
           : null,
         globalCloudActive ? globalCloudSource?.manifest.runTime : null,
         globalWindActive ? globalWindSource?.manifest.runTime : null,
+        globalTemperatureActive ? globalTemperatureSource?.manifest.runTime : null,
       ].filter((runTime): runTime is string => Boolean(runTime))
     )
   );
@@ -214,11 +228,12 @@ export default function WeatherPanel({
           />
           <strong>
             {globalFieldsActive
-              ? `GFS 0.25° global ${globalFieldLabel} · +${globalPrecipitationTimestep?.forecastHour ?? globalCloudTimestep?.forecastHour ?? globalWindTimestep?.forecastHour ?? 0}h${unavailableGlobalField ? ` · ${unavailableGlobalField} unavailable` : ""}`
-              : (mapOverlays.precipitation || mapOverlays.clouds || mapOverlays.windFlow) &&
+              ? `GFS 0.25° global ${globalFieldLabel} · +${globalPrecipitationTimestep?.forecastHour ?? globalCloudTimestep?.forecastHour ?? globalWindTimestep?.forecastHour ?? globalTemperatureTimestep?.forecastHour ?? 0}h${unavailableGlobalField ? ` · ${unavailableGlobalField} unavailable` : ""}`
+              : (mapOverlays.precipitation || mapOverlays.clouds || mapOverlays.windFlow || mapOverlays.temperatureContours) &&
                   (globalWeatherStatuses.precipitation === "loading" ||
                     globalWeatherStatuses.cloud_cover === "loading" ||
-                    globalWeatherStatuses.wind_10m === "loading")
+                    globalWeatherStatuses.wind_10m === "loading" ||
+                    globalWeatherStatuses.temperature_2m === "loading")
                 ? "Loading global weather metadata"
                 : mapOverlays.precipitation && globalWeatherStatuses.precipitation !== "ready"
                   ? "Global precipitation unavailable"
@@ -226,6 +241,8 @@ export default function WeatherPanel({
                   ? "Global cloud cover unavailable"
                 : mapOverlays.windFlow && globalWeatherStatuses.wind_10m !== "ready"
                   ? "Global wind unavailable"
+                : mapOverlays.temperatureContours && globalWeatherStatuses.temperature_2m !== "ready"
+                  ? "Global temperature unavailable"
                 : weatherGridStatus === "loading"
               ? "Sampling visible area"
               : weatherGridStatus === "refreshing"
@@ -245,12 +262,13 @@ export default function WeatherPanel({
         </div>
         <p>
           {globalFieldsActive
-            ? `NOAA GFS run ${runLabel}; valid ${activeGlobalValidTime?.replace("T", " ").replace("Z", " UTC")}. ${unavailableGlobalField ? `${unavailableGlobalField[0].toUpperCase()}${unavailableGlobalField.slice(1)} is unavailable with no regional map fallback. ` : "Cloud and 10 m wind are instantaneous; precipitation is an honest interval total. "}Temperature and pressure still use the regional Open-Meteo prototype.`
+            ? `NOAA GFS run ${runLabel}; valid ${activeGlobalValidTime?.replace("T", " ").replace("Z", " UTC")}. ${unavailableGlobalField ? `${unavailableGlobalField[0].toUpperCase()}${unavailableGlobalField.slice(1)} is unavailable with no regional map fallback. ` : "Cloud, 10 m wind and 2 m temperature are instantaneous; precipitation is an honest interval total. "}Pressure still uses the regional Open-Meteo prototype.`
             : (mapOverlays.precipitation && globalWeatherStatuses.precipitation !== "ready") ||
                 (mapOverlays.clouds && globalWeatherStatuses.cloud_cover !== "ready") ||
-                (mapOverlays.windFlow && globalWeatherStatuses.wind_10m !== "ready")
+                (mapOverlays.windFlow && globalWeatherStatuses.wind_10m !== "ready") ||
+                (mapOverlays.temperatureContours && globalWeatherStatuses.temperature_2m !== "ready")
               ? "Run the documented local GFS update to publish the unavailable field. Meridian does not silently substitute regional map data."
-              : "Temperature and pressure interpolate the coarse regional model field; denser marks do not mean finer forecast resolution."}
+              : "Pressure interpolates the coarse regional model field; denser marks do not mean finer forecast resolution."}
         </p>
       </section>
 

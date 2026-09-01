@@ -13,7 +13,6 @@ import type {
 interface OpenMeteoGridResponse {
   hourly?: {
     time?: string[];
-    temperature_2m?: number[];
     pressure_msl?: number[];
   };
 }
@@ -144,7 +143,6 @@ function readHourlyValues(
 
   if (
     !hourly?.time ||
-    !hourly.temperature_2m ||
     !hourly.pressure_msl
   ) {
     throw new Error(
@@ -153,7 +151,6 @@ function readHourlyValues(
   }
 
   return {
-    temperature: hourly.temperature_2m,
     pressure: hourly.pressure_msl,
   };
 }
@@ -180,7 +177,7 @@ export async function getWeatherGrid(
     .join(",");
 
   const weatherResponse = await fetch(
-    `https://api.open-meteo.com/v1/forecast?latitude=${latitudes}&longitude=${longitudes}&hourly=temperature_2m,pressure_msl&forecast_hours=25`,
+    `https://api.open-meteo.com/v1/forecast?latitude=${latitudes}&longitude=${longitudes}&hourly=pressure_msl&forecast_hours=25`,
     { signal }
   );
 

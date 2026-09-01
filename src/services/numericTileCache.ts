@@ -215,6 +215,18 @@ export function getCachedVectorTile(
   return cached?.kind === "vector" ? touchTile(url, cached) : null;
 }
 
+export function getCachedScalarTile(
+  source: ScalarWeatherFieldSource,
+  timestep: ScalarWeatherTimestep,
+  zoom: number,
+  x: number,
+  y: number
+): ScalarNumericTile | null {
+  const url = resolveScalarTileUrl(source, timestep, zoom, x, y);
+  const cached = tileCache.get(url);
+  return cached?.kind === "scalar" ? touchTile(url, cached) : null;
+}
+
 async function readVectorWorldPixel(
   source: VectorWeatherFieldSource,
   timestep: VectorWeatherTimestep,
@@ -324,6 +336,62 @@ function latitudeToWorldY(latitude: number, worldSize: number): number {
   return (
     (0.5 - Math.log((1 + sine) / (1 - sine)) / (4 * Math.PI)) * worldSize - 0.5
   );
+}
+
+function readCachedScalarWorldPixel(
+  source: ScalarWeatherFieldSource,
+  timestep: ScalarWeatherTimestep,
+  zoom: number,
+  pixelX: number,
+  pixelY: number
+): number | null | undefined {
+  const { tileSize, noData, scale, offset } = source.manifest.tiles;
+  const tileCount = 2 ** zoom;
+  const worldSize = tileCount * tileSize;
+  const wrappedX = ((pixelX % worldSize) + worldSize) % worldSize;
+  const limitedY = Math.max(0, Math.min(worldSize - 1, pixelY));
+  const tileX = Math.floor(wrappedX / tileSize);
+  const tileY = Math.floor(limitedY / tileSize);
+  const localX = wrappedX % tileSize;
+  const localY = limitedY % tileSize;
+  const tile = getCachedScalarTile(source, timestep, zoom, tileX, tileY);
+  if (!tile) return undefined;
+  const encoded = tile.values[localY * tile.size + localX];
+  return encoded === noData ? null : encoded * scale + offset;
+}
+
+export function sampleCachedScalarField(
+  source: ScalarWeatherFieldSource,
+  timestep: ScalarWeatherTimestep,
+  zoom: number,
+  longitude: number,
+  latitude: number
+): number | null | undefined {
+  if (
+    latitude < source.manifest.coverage.bounds[1] ||
+    latitude > source.manifest.coverage.bounds[3]
+  ) {
+    return null;
+  }
+  const worldSize = 2 ** zoom * source.manifest.tiles.tileSize;
+  const worldX = longitudeToWorldX(longitude, worldSize);
+  const worldY = latitudeToWorldY(latitude, worldSize);
+  const x0 = Math.floor(worldX);
+  const y0 = Math.floor(worldY);
+  const xWeight = worldX - x0;
+  const yWeight = worldY - y0;
+  const samples = [
+    readCachedScalarWorldPixel(source, timestep, zoom, x0, y0),
+    readCachedScalarWorldPixel(source, timestep, zoom, x0 + 1, y0),
+    readCachedScalarWorldPixel(source, timestep, zoom, x0, y0 + 1),
+    readCachedScalarWorldPixel(source, timestep, zoom, x0 + 1, y0 + 1),
+  ];
+  if (samples.some((value) => value === undefined)) return undefined;
+  if (samples.some((value) => value === null)) return null;
+  const [topLeft, topRight, bottomLeft, bottomRight] = samples as number[];
+  const top = topLeft * (1 - xWeight) + topRight * xWeight;
+  const bottom = bottomLeft * (1 - xWeight) + bottomRight * xWeight;
+  return top * (1 - yWeight) + bottom * yWeight;
 }
 
 async function readWorldPixel(

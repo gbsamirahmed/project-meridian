@@ -185,3 +185,34 @@ The live builder selected GFS 2026-08-31 18Z and generated 24 wind timesteps, 2,
 ### Next direction
 
 The closest architectural follow-up is global temperature and pressure using the established numeric field catalogue and cache. Low/mid/high cloud layers should be considered before procedural cloud presentation; neither requires changing wind ownership.
+
+## 2026-09-01 — Global GFS 2 m temperature
+
+### Goal
+
+Move map-level temperature contours and inspection from the regional Open-Meteo sample field to an honest global NOAA GFS 2 m temperature field without adding a filled heatmap or terrain downscaling.
+
+### Changes
+
+- Extended the GFS builder to select exact instantaneous `TMP:2 m above ground` records for f001–f024, validate run/grid/time metadata, convert Kelvin to Celsius, and publish independently staged temperature assets.
+- Added 0.1 °C uint16 numeric tiles with a −150 °C offset and 65535 no-data code, plus strict scalar-manifest/catalogue loading and shared-cache sampling.
+- Replaced regional 9×9 temperature contours with atomically prepared, viewport-aware isolines generated over one continuous padded numeric sampling domain; globe mode prepares complete z2 coverage so rotation does not drive tile-boundary rebuilds.
+- Added stable zoom/range contour intervals, no-data-aware and linear-time contour assembly, global inspector provenance, and exact valid-time intersection with other enabled GFS fields.
+- Made the regional Open-Meteo map grid pressure-only. Point current conditions remain unchanged.
+- Renamed the implementation module to `gfs_weather_builder.py`; the canonical multi-field command and historical precipitation filename remain small entry-point wrappers.
+
+### Architectural decisions
+
+Map temperature means raw instantaneous GFS 2 m temperature at 0.25° resolution. No lapse-rate correction or terrain-scale modelling is applied. Storage tiles are loading units only: contours are generated from a logically continuous geographic scalar domain after every required tile is ready, and stale camera/timeline generations cannot replace the active geometry.
+
+### Known limitations
+
+The 0.25° model does not resolve terrain-scale temperature variation, and close zooms only interpolate/overzoom the same field. Globe contours intentionally use coarser prepared z2 delivery coverage and broad intervals. Contour generation remains on the main thread, the horizon is +24 hours, and generation/publication is still manually invoked.
+
+### Verification
+
+The live builder rejected unavailable 18Z and 12Z cycles and selected GFS 2026-09-01 06Z. It generated 24 temperature timesteps from 07:00 UTC on 1 September through 06:00 UTC on 2 September: 2,040 tiles, 54.24 MiB payload, and validated extrema of −70.16…48.25 °C (202.99…321.40 K). The combined four-field run is 246.45 MiB. Deterministic tests cover exact TMP selection, metadata, signed/no-data encoding, quantisation, antimeridian sampling, catalogue preservation, contour intervals, no-data holes, and a continuous synthetic isotherm across a tile boundary. Browser control was unavailable during this milestone, so no visual browser acceptance is claimed; automated lint/build and local asset checks provide the non-visual verification record.
+
+### Next direction
+
+Global mean-sea-level pressure is now the remaining regional map field and is the most direct next migration. Higher-value cloud-layer or wind visual work can proceed later without changing temperature ownership.

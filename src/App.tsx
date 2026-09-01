@@ -83,6 +83,7 @@ function App() {
       precipitation: "loading",
       cloud_cover: "loading",
       wind_10m: "loading",
+      temperature_2m: "loading",
     });
   const [isDesktopPanelCollapsed, setIsDesktopPanelCollapsed] =
     useState(false);
@@ -118,6 +119,7 @@ function App() {
           precipitation: "unavailable",
           cloud_cover: "unavailable",
           wind_10m: "unavailable",
+          temperature_2m: "unavailable",
         });
       });
 
@@ -129,10 +131,12 @@ function App() {
   const globalPrecipitationSource = globalWeatherSources.precipitation ?? null;
   const globalCloudSource = globalWeatherSources.cloud_cover ?? null;
   const globalWindSource = globalWeatherSources.wind_10m ?? null;
+  const globalTemperatureSource = globalWeatherSources.temperature_2m ?? null;
   const activeGlobalSources = [
     mapOverlays.precipitation ? globalPrecipitationSource : null,
     mapOverlays.clouds ? globalCloudSource : null,
     mapOverlays.windFlow ? globalWindSource : null,
+    mapOverlays.temperatureContours ? globalTemperatureSource : null,
   ].filter((source): source is GlobalWeatherFieldSource => source !== null);
   const globalForecastTimes = intersectScalarValidTimes(activeGlobalSources);
   const forecastTimes = activeGlobalSources.length
@@ -351,6 +355,8 @@ function App() {
             ? globalCloudSource
             : overlay === "windFlow"
               ? globalWindSource
+              : overlay === "temperatureContours"
+                ? globalTemperatureSource
             : null;
       if (enabled && nextSource && !hasInitialisedGfsTimelineRef.current) {
         const firstFutureIndex = nextSource.manifest.timesteps.findIndex(
@@ -364,7 +370,12 @@ function App() {
         [overlay]: enabled,
       }));
     },
-    [globalCloudSource, globalPrecipitationSource, globalWindSource]
+    [
+      globalCloudSource,
+      globalPrecipitationSource,
+      globalTemperatureSource,
+      globalWindSource,
+    ]
   );
 
   return (
@@ -379,6 +390,7 @@ function App() {
         globalPrecipitationSource={globalPrecipitationSource}
         globalCloudSource={globalCloudSource}
         globalWindSource={globalWindSource}
+        globalTemperatureSource={globalTemperatureSource}
         globalWeatherStatuses={globalWeatherStatuses}
         activeGlobalValidTime={activeGlobalValidTime}
         localForecastHour={localForecastHour}
@@ -399,6 +411,7 @@ function App() {
         globalPrecipitationSource={globalPrecipitationSource}
         globalCloudSource={globalCloudSource}
         globalWindSource={globalWindSource}
+        globalTemperatureSource={globalTemperatureSource}
         globalWeatherStatuses={globalWeatherStatuses}
         activeGlobalValidTime={activeGlobalValidTime}
         forecastTimes={forecastTimes}

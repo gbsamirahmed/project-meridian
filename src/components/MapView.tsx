@@ -55,7 +55,6 @@ import {
 import {
   removeTemperatureContourLayer,
   setTemperatureContourEnabled,
-  setTemperatureContourCoverage,
   updateTemperatureContourLayer,
 } from "../services/temperatureContourLayer";
 import {
@@ -100,6 +99,7 @@ interface MapViewProps {
   globalPrecipitationSource: ScalarWeatherFieldSource | null;
   globalCloudSource: ScalarWeatherFieldSource | null;
   globalWindSource: VectorWeatherFieldSource | null;
+  globalTemperatureSource: ScalarWeatherFieldSource | null;
   globalWeatherStatuses: GlobalWeatherStatusRegistry;
   activeGlobalValidTime: string | null;
   localForecastHour: number;
@@ -140,6 +140,7 @@ function renderVisualizations(
   globalPrecipitationSource: ScalarWeatherFieldSource | null,
   globalCloudSource: ScalarWeatherFieldSource | null,
   globalWindSource: VectorWeatherFieldSource | null,
+  globalTemperatureSource: ScalarWeatherFieldSource | null,
   activeGlobalValidTime: string | null,
   localForecastHour: number
 ): void {
@@ -170,8 +171,11 @@ function renderVisualizations(
     setGlobalPrecipitationEnabled(map, false);
   }
 
-  if (overlays.temperatureContours && grid) {
-    updateTemperatureContourLayer(map, grid, localForecastHour);
+  const temperatureTimestep = globalTemperatureSource
+    ? getScalarTimestepAtTime(globalTemperatureSource, activeGlobalValidTime)
+    : null;
+  if (overlays.temperatureContours && globalTemperatureSource && temperatureTimestep) {
+    updateTemperatureContourLayer(map, globalTemperatureSource, temperatureTimestep);
   } else {
     setTemperatureContourEnabled(map, false);
   }
@@ -200,7 +204,6 @@ function setForecastCoverage(
 ): void {
   const visible = grid !== null && weatherGridOverlapsViewport(map, grid);
 
-  setTemperatureContourCoverage(map, visible);
   setPressureLayerCoverage(map, visible);
 }
 
@@ -250,6 +253,7 @@ export default function MapView({
   globalPrecipitationSource,
   globalCloudSource,
   globalWindSource,
+  globalTemperatureSource,
   globalWeatherStatuses,
   activeGlobalValidTime,
   localForecastHour,
@@ -276,6 +280,10 @@ export default function MapView({
     key: string;
     value: { u: number; v: number } | null;
   } | null>(null);
+  const [globalTemperatureSample, setGlobalTemperatureSample] = useState<{
+    key: string;
+    value: number | null;
+  } | null>(null);
 
   const mapContainer = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<maplibregl.Map | null>(null);
@@ -288,6 +296,7 @@ export default function MapView({
   const globalPrecipitationSourceRef = useRef(globalPrecipitationSource);
   const globalCloudSourceRef = useRef(globalCloudSource);
   const globalWindSourceRef = useRef(globalWindSource);
+  const globalTemperatureSourceRef = useRef(globalTemperatureSource);
   const basemapRef = useRef(basemap);
   const mapOverlaysRef = useRef(mapOverlays);
   const activeGlobalValidTimeRef = useRef(activeGlobalValidTime);
@@ -308,6 +317,10 @@ export default function MapView({
     ? getVectorTimestepAtTime(globalWindSource, activeGlobalValidTime) ??
       getClosestVectorTimestep(globalWindSource, localReferenceTime)
     : null;
+  const activeTemperatureTimestep = globalTemperatureSource
+    ? getScalarTimestepAtTime(globalTemperatureSource, activeGlobalValidTime) ??
+      getClosestScalarTimestep(globalTemperatureSource, localReferenceTime)
+    : null;
 
   useEffect(() => {
     weatherGridRef.current = weatherGrid;
@@ -324,6 +337,10 @@ export default function MapView({
   useEffect(() => {
     globalWindSourceRef.current = globalWindSource;
   }, [globalWindSource]);
+
+  useEffect(() => {
+    globalTemperatureSourceRef.current = globalTemperatureSource;
+  }, [globalTemperatureSource]);
 
   useEffect(() => {
     basemapRef.current = basemap;
@@ -426,6 +443,43 @@ export default function MapView({
   }, [activeCloudTimestep, activeInspection, globalCloudSource]);
 
   useEffect(() => {
+    if (
+      !activeInspection ||
+      !globalTemperatureSource ||
+      !activeTemperatureTimestep
+    ) {
+      return;
+    }
+    let isCurrent = true;
+    const key = [
+      activeTemperatureTimestep.id,
+      activeInspection.longitude.toFixed(5),
+      activeInspection.latitude.toFixed(5),
+    ].join(":");
+    const timeout = window.setTimeout(() => {
+      sampleScalarField(
+        globalTemperatureSource,
+        activeTemperatureTimestep,
+        activeInspection.longitude,
+        activeInspection.latitude
+      )
+        .then((value) => {
+          if (isCurrent) setGlobalTemperatureSample({ key, value });
+        })
+        .catch((error: unknown) => {
+          if (isCurrent) {
+            console.error("Global temperature inspection failed", error);
+            setGlobalTemperatureSample({ key, value: null });
+          }
+        });
+    }, 80);
+    return () => {
+      isCurrent = false;
+      window.clearTimeout(timeout);
+    };
+  }, [activeInspection, activeTemperatureTimestep, globalTemperatureSource]);
+
+  useEffect(() => {
     if (!activeInspection || !globalWindSource || !activeWindTimestep) return;
     let isCurrent = true;
     const key = [
@@ -511,6 +565,7 @@ export default function MapView({
             globalPrecipitationSourceRef.current,
             globalCloudSourceRef.current,
             globalWindSourceRef.current,
+            globalTemperatureSourceRef.current,
             activeGlobalValidTimeRef.current,
             localForecastHourRef.current
           );
@@ -566,6 +621,7 @@ export default function MapView({
         globalPrecipitationSourceRef.current,
         globalCloudSourceRef.current,
         globalWindSourceRef.current,
+        globalTemperatureSourceRef.current,
         activeGlobalValidTimeRef.current,
         localForecastHourRef.current
       );
@@ -633,6 +689,7 @@ export default function MapView({
         globalPrecipitationSourceRef.current,
         globalCloudSourceRef.current,
         globalWindSourceRef.current,
+        globalTemperatureSourceRef.current,
         activeGlobalValidTimeRef.current,
         localForecastHourRef.current
       );
@@ -719,6 +776,7 @@ export default function MapView({
       globalPrecipitationSource,
       globalCloudSource,
       globalWindSource,
+      globalTemperatureSource,
       activeGlobalValidTime,
       localForecastHour
     );
@@ -730,6 +788,7 @@ export default function MapView({
     globalPrecipitationSource,
     globalCloudSource,
     globalWindSource,
+    globalTemperatureSource,
     activeGlobalValidTime,
     localForecastHour,
   ]);
@@ -844,6 +903,18 @@ export default function MapView({
     globalCloudSample?.key === expectedGlobalCloudSampleKey
       ? globalCloudSample.value
       : undefined;
+  const expectedGlobalTemperatureSampleKey =
+    activeInspection && activeTemperatureTimestep
+      ? [
+          activeTemperatureTimestep.id,
+          activeInspection.longitude.toFixed(5),
+          activeInspection.latitude.toFixed(5),
+        ].join(":")
+      : null;
+  const globalTemperatureValue =
+    globalTemperatureSample?.key === expectedGlobalTemperatureSampleKey
+      ? globalTemperatureSample.value
+      : undefined;
   const expectedGlobalWindSampleKey =
     activeInspection && activeWindTimestep
       ? [
@@ -891,6 +962,9 @@ export default function MapView({
     mapOverlays.precipitation ? globalWeatherStatuses.precipitation : null,
     mapOverlays.clouds ? globalWeatherStatuses.cloud_cover : null,
     mapOverlays.windFlow ? globalWeatherStatuses.wind_10m : null,
+    mapOverlays.temperatureContours
+      ? globalWeatherStatuses.temperature_2m
+      : null,
   ].filter(Boolean);
   const globalWeatherStatusText =
     activeGlobalStatuses.length === 0
@@ -964,12 +1038,16 @@ export default function MapView({
             <span>Elevation</span>
             <strong>{formatElevation(activeInspection.elevation)}</strong>
 
-            {inspectedWeather && (
-              <>
-                <span>Temperature</span>
-                <strong>{inspectedWeather.temperature.toFixed(1)} °C</strong>
-              </>
-            )}
+            <span>Temperature (GFS)</span>
+            <strong>
+              {!globalTemperatureSource
+                ? "Unavailable"
+                : globalTemperatureValue === undefined
+                  ? "Loading…"
+                  : globalTemperatureValue === null
+                    ? "Unavailable"
+                    : `${globalTemperatureValue.toFixed(1)} °C`}
+            </strong>
 
             {(globalPrecipitationSource || globalWeatherStatuses.precipitation !== "ready") && (
               <>
@@ -1023,7 +1101,7 @@ export default function MapView({
                   : formatWindDirection(globalWindDirection)}
             </strong>
 
-            {!inspectedWeather && !globalPrecipitationSource && !globalCloudSource && !globalWindSource && (
+            {!inspectedWeather && !globalPrecipitationSource && !globalCloudSource && !globalWindSource && !globalTemperatureSource && (
               <span className="inspector-unavailable">
                 Forecast values are outside the current sampled field.
               </span>
@@ -1037,6 +1115,8 @@ export default function MapView({
                 ? `${activeCloudTimestep.validTime.replace("T", " ").replace("Z", " UTC")} · GFS cloud cover`
               : activeWindTimestep
                 ? `${activeWindTimestep.validTime.replace("T", " ").replace("Z", " UTC")} · GFS 10 m wind`
+              : activeTemperatureTimestep
+                ? `${activeTemperatureTimestep.validTime.replace("T", " ").replace("Z", " UTC")} · GFS 2 m temperature`
               : inspectionGrid
                 ? formatForecastTime(inspectionGrid, localForecastHour)
               : weatherGridStatus === "rate-limited"
@@ -1045,7 +1125,7 @@ export default function MapView({
                   ? "Forecast unavailable at this point"
                   : "Forecast field loading"}
             {inspectedWeather
-              ? ` · Open-Meteo temperature/pressure at ${formatForecastTime(inspectionGrid!, localForecastHour)} · interpolated from ${inspectionGrid?.rows} × ${inspectionGrid?.columns} samples${inspectionGrid !== weatherGrid ? " · cached region" : ""}`
+              ? ` · Open-Meteo pressure at ${formatForecastTime(inspectionGrid!, localForecastHour)} · interpolated from ${inspectionGrid?.rows} × ${inspectionGrid?.columns} samples${inspectionGrid !== weatherGrid ? " · cached region" : ""}`
               : ""}
             {globalPrecipitationSource && activePrecipitationTimestep
               ? ` · GFS 0.25° ${activePrecipitationTimestep.accumulationHours} h accumulation · run ${globalPrecipitationSource.manifest.runTime.replace("T", " ").replace(":00:00Z", "Z")}`
@@ -1056,6 +1136,9 @@ export default function MapView({
             {globalWindSource && activeWindTimestep
               ? ` · GFS 0.25° 10 m wind · run ${globalWindSource.manifest.runTime.replace("T", " ").replace(":00:00Z", "Z")}`
               : " · GFS wind unavailable; no Open-Meteo fallback"}
+            {globalTemperatureSource && activeTemperatureTimestep
+              ? ` · GFS 0.25° 2 m temperature · run ${globalTemperatureSource.manifest.runTime.replace("T", " ").replace(":00:00Z", "Z")}`
+              : " · GFS temperature unavailable; no Open-Meteo fallback"}
           </small>
         </div>
       )}

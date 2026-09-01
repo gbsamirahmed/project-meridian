@@ -22,6 +22,7 @@ __pycache__/
 # Locally generated GFS run assets and mutable publication pointer
 /public/weather/gfs/[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]T[0-9][0-9]Z/
 /public/weather/gfs/.[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]T[0-9][0-9]Z-building/
+/public/weather/gfs/.[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]T[0-9][0-9]Z-*-building/
 /public/weather/gfs/latest.json
 
 # Editor directories and files

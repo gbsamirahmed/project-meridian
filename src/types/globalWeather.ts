@@ -1,7 +1,8 @@
 export type GlobalWeatherFieldId =
   | "precipitation"
   | "cloud_cover"
-  | "wind_10m";
+  | "wind_10m"
+  | "temperature_2m";
 export type GlobalWeatherFieldStatus =
   | "loading"
   | "ready"
@@ -54,12 +55,12 @@ export interface WeatherFieldManifestBase {
 
 export interface ScalarFieldManifest extends WeatherFieldManifestBase {
   field: {
-    id: "precipitation" | "cloud_cover";
+    id: "precipitation" | "cloud_cover" | "temperature_2m";
     kind: "scalar";
     sourceParameter: string;
     sourceLevel: string;
     displayName: string;
-    units: "mm" | "percent";
+    units: "mm" | "percent" | "celsius";
     validRange: [number, number];
     timeSemantics: "instantaneous" | "interval-total";
     nativeResolution: {
@@ -161,6 +162,7 @@ export interface GlobalWeatherSourceRegistry {
   precipitation?: ScalarWeatherFieldSource;
   cloud_cover?: ScalarWeatherFieldSource;
   wind_10m?: VectorWeatherFieldSource;
+  temperature_2m?: ScalarWeatherFieldSource;
 }
 
 export type GlobalWeatherStatusRegistry = Record<

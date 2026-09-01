@@ -4,7 +4,6 @@ import type { GridPoint } from "../types/gridPoint";
 import type { WeatherGrid } from "../types/weatherGrid";
 
 export interface InterpolatedWeather {
-  temperature: number;
   pressure: number;
 }
 
@@ -78,11 +77,6 @@ export function interpolateWeatherAtLocation(
   if (!samples) return null;
 
   const result: InterpolatedWeather = {
-    temperature: interpolateScalar(
-      samples,
-      forecastHour,
-      (point, hour) => point.temperature[hour]
-    ),
     pressure: interpolateScalar(
       samples,
       forecastHour,

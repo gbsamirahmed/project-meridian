@@ -18,6 +18,7 @@ const FIELD_IDS: GlobalWeatherFieldId[] = [
   "precipitation",
   "cloud_cover",
   "wind_10m",
+  "temperature_2m",
 ];
 
 interface LegacyPrecipitationManifest {
@@ -275,6 +276,21 @@ function normaliseManifest(
   ) {
     throw new Error("Global precipitation manifest semantics are invalid");
   }
+  if (
+    manifest.field.id === "temperature_2m" &&
+    (manifest.field.sourceParameter !== "TMP" ||
+      manifest.field.sourceLevel !== "2 m above ground" ||
+      manifest.field.units !== "celsius" ||
+      manifest.field.timeSemantics !== "instantaneous" ||
+      manifest.field.validRange[0] !== -150 ||
+      manifest.field.validRange[1] !== 100 ||
+      manifest.tiles.encoding !== "uint16-rg" ||
+      manifest.tiles.scale !== 0.1 ||
+      manifest.tiles.offset !== -150 ||
+      manifest.tiles.noData !== 65535)
+  ) {
+    throw new Error("Global temperature manifest semantics are invalid");
+  }
   return manifest;
 }
 
@@ -329,6 +345,7 @@ export async function loadGlobalWeatherSources(): Promise<GlobalWeatherLoadResul
     precipitation: "unavailable",
     cloud_cover: "unavailable",
     wind_10m: "unavailable",
+    temperature_2m: "unavailable",
   };
   let catalog: GlobalWeatherCatalog;
 
@@ -367,6 +384,12 @@ export async function loadGlobalWeatherSources(): Promise<GlobalWeatherLoadResul
           source.manifest.field.id === "cloud_cover"
         ) {
           sources.cloud_cover = source as ScalarWeatherFieldSource;
+        } else if (
+          fieldId === "temperature_2m" &&
+          source.manifest.field.kind === "scalar" &&
+          source.manifest.field.id === "temperature_2m"
+        ) {
+          sources.temperature_2m = source as ScalarWeatherFieldSource;
         } else {
           throw new Error(`Global weather ${fieldId} manifest kind is invalid`);
         }
