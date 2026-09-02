@@ -246,3 +246,31 @@ Deterministic route tests cover GPX parsing, resampling, antimeridian continuity
 ### Next direction
 
 After Route Foundation v1 is visually reviewed, Meridian can sample existing weather fields against the predicted location-and-time schedule as a separate route-weather milestone. Explicit stops, additional activity models, and personal calibration remain later work.
+
+## 2026-09-02 — Offline activity research foundation
+
+### Goal
+
+Establish a privacy-preserving evidence layer for investigating whether historical activity recordings can later calibrate Meridian's generic walking model, without changing production journey estimates.
+
+### Changes
+
+- Added offline FIT/FIT.GZ, GPX/GPX.GZ, and TCX/TCX.GZ ingestion with a common optional-field activity model, source provenance, catalogue/file inventory checks, and aggregate private reporting.
+- Added explicit evidence states for plausible movement, stationary recording, timer pauses, timestamp gaps, GPS anomalies, and uncertain data, plus deterministic synthetic tests.
+- Added a terrain-enrichment boundary for a later experiment using Meridian's existing DEM methodology; this milestone performs no bulk elevation download and stores no private activity data in the repository.
+
+### Architectural decisions
+
+Strava activity labels are catalogue context rather than movement truth. Recorded stops, explicit pauses, gaps, and movement remain separate evidence, and device elevation remains diagnostic rather than canonical terrain. Reusable code lives in Meridian, while source recordings and generated research outputs stay outside Git.
+
+### Known limitations
+
+The descriptive movement signatures are not calibrated profiles or model classes. Thresholds are intentionally conservative, FIT field conflicts remain visible as diagnostics, and terrain/gradient enrichment plus held-out journey validation are deferred.
+
+### Verification
+
+The importer was exercised against the private archive after a representative-sample pass. Synthetic tests cover formats, gzip input, missing fields, malformed XML, catalogue associations, timestamp ordering, pauses, stationary and slow movement, GPS anomalies, and complementary FIT records sharing timestamps. Existing production journey constants were not changed.
+
+### Next direction
+
+Enrich a bounded representative subset with the same Terrarium and terrain-metric conventions as planned routes, then compare a small interpretable personal gradient-to-speed relationship against Meridian's unchanged generic model on held-out complete activities.
