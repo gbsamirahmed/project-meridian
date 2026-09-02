@@ -216,3 +216,33 @@ The live builder rejected unavailable 18Z and 12Z cycles and selected GFS 2026-0
 ### Next direction
 
 Global mean-sea-level pressure is now the remaining regional map field and is the most direct next migration. Higher-value cloud-layer or wind visual work can proceed later without changing temperature ownership.
+
+## 2026-09-01 — Route Foundation v1
+
+### Goal
+
+Establish a provider-neutral route and journey model that answers where an imported hiking route goes and when a user is expected to reach each part, without coupling route analysis to weather providers.
+
+### Changes
+
+- Added client-side GPX track/route import, controlled 40 m geographic resampling with a 6,000-sample cap, antimeridian-safe geometry, and prominent persistent route rendering.
+- Added batched, cached Terrarium DEM sampling, elevation smoothing, cumulative distance/ascent/descent, and stable local gradients.
+- Added a segment-by-segment Tobler-shaped hiking model with explicit pace, party, load, moving-time, break-time, departure, target-duration, and target-finish assumptions.
+- Added expected arrivals and a deliberately approximate timing range throughout the route, plus a linked interactive elevation/time profile and concise route summary.
+- Added deterministic tests for GPX selection, geometry, terrain metrics, walking behaviour, target scaling, breaks, schedules, uncertainty, and degenerate routes.
+
+### Architectural decisions
+
+GPX is an input format rather than the route domain model. Terrain enrichment is prepared once and remains independent of journey timing; movement modelling remains independent of weather. Target durations scale terrain-aware segment times instead of replacing them with uniform speed. Generic break time is distributed through movement progress and remains separate from moving time. The resulting per-sample schedule is the future attachment point for location-by-time weather.
+
+### Known limitations
+
+The importer selects the longest usable continuous track/route candidate and does not manage multiple routes or explicit stops. Terrain elevation comes from the existing DEM and incomplete coverage withholds journey timing rather than substituting zero. The walking profile and uncertainty range are general planning assumptions, not personalised predictions; routes are not persisted, edited, generated, or weather-adjusted.
+
+### Verification
+
+Deterministic route tests cover GPX parsing, resampling, antimeridian continuity, terrain smoothing, ascent/descent, gradients, movement speeds, break separation, target constraints, schedules, and uncertainty. ESLint, production build, dependency audit, and diff checks were run. Browser control was unavailable in the test environment, so no automated visual or mobile acceptance is claimed.
+
+### Next direction
+
+After Route Foundation v1 is visually reviewed, Meridian can sample existing weather fields against the predicted location-and-time schedule as a separate route-weather milestone. Explicit stops, additional activity models, and personal calibration remain later work.

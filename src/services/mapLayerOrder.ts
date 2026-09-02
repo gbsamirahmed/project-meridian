@@ -28,6 +28,13 @@ const FORECAST_OVERLAY_LAYER_ORDER = [
   "wind-particle-layer",
 ] as const;
 
+const ROUTE_LAYER_ORDER = [
+  "planned-route-casing",
+  "planned-route-line",
+  "planned-route-endpoints",
+  "planned-route-focus",
+] as const;
+
 export function placeForecastOverlaysInOrder(map: maplibregl.Map): void {
   if (!map.getStyle()?.layers) return;
   const weatherInsertionLayerId = getWeatherInsertionLayerId(map);
@@ -39,6 +46,10 @@ export function placeForecastOverlaysInOrder(map: maplibregl.Map): void {
   const firstLabelLayerId = getFirstSymbolLayerId(map);
 
   for (const layerId of FORECAST_OVERLAY_LAYER_ORDER) {
+    if (map.getLayer(layerId)) map.moveLayer(layerId, firstLabelLayerId);
+  }
+
+  for (const layerId of ROUTE_LAYER_ORDER) {
     if (map.getLayer(layerId)) map.moveLayer(layerId, firstLabelLayerId);
   }
 }

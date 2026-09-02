@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { FormEvent } from "react";
+import type { FormEvent, ReactNode } from "react";
 
 import ForecastPanel from "./ForecastPanel";
 import LayerLegend from "./LayerLegend";
@@ -48,6 +48,7 @@ interface WeatherPanelProps {
   ) => void;
   onSearch: (query: string) => void;
   onDesktopCollapsedChange: (collapsed: boolean) => void;
+  routePanel: ReactNode;
 }
 
 export default function WeatherPanel({
@@ -74,6 +75,7 @@ export default function WeatherPanel({
   onOverlayChange,
   onSearch,
   onDesktopCollapsedChange,
+  routePanel,
 }: WeatherPanelProps) {
   const [query, setQuery] = useState("");
   const [isPlaying, setIsPlaying] = useState(false);
@@ -211,6 +213,8 @@ export default function WeatherPanel({
           Go
         </button>
       </form>
+
+      {routePanel}
 
       <LayerPanel
         basemap={basemap}

@@ -72,6 +72,11 @@ import {
   setWindLayerEnabled,
   updateGlobalWindLayer,
 } from "../services/windLayer";
+import {
+  removeRouteLayer,
+  updateRouteLayer,
+} from "../services/routeLayer";
+import { getRouteBounds } from "../services/routeGeometry";
 
 import type { Basemap, MapOverlayState } from "../types/layer";
 import type {
@@ -86,6 +91,11 @@ import type {
   WeatherGridRequest,
   WeatherGridStatus,
 } from "../types/weatherGrid";
+import type {
+  ResampledRouteGeometry,
+  RouteCoordinate,
+  TerrainRoute,
+} from "../types/route";
 
 import "maplibre-gl/dist/maplibre-gl.css";
 
@@ -103,8 +113,12 @@ interface MapViewProps {
   globalWeatherStatuses: GlobalWeatherStatusRegistry;
   activeGlobalValidTime: string | null;
   localForecastHour: number;
+  routeGeometry: ResampledRouteGeometry | null;
+  terrainRoute: TerrainRoute | null;
+  focusedRouteSampleIndex: number | null;
   panelCollapsed: boolean;
   onLocationSelect: (location: SelectedLocation) => void;
+  onRouteSampleFocus: (index: number | null) => void;
   onWeatherGridRequest: (request: WeatherGridRequest) => void;
 }
 
@@ -243,6 +257,26 @@ function formatForecastTime(grid: WeatherGrid, forecastHour: number): string {
   return time ? `${time.replace("T", " ")} UTC` : `Forecast +${forecastHour} h`;
 }
 
+function nearestRouteSampleIndex(
+  map: maplibregl.Map,
+  point: maplibregl.PointLike,
+  coordinates: RouteCoordinate[],
+  maximumPixels = 14
+): number | null {
+  const target = maplibregl.Point.convert(point);
+  let nearest: number | null = null;
+  let bestDistance = maximumPixels;
+  coordinates.forEach((coordinate, index) => {
+    const projected = map.project([coordinate.longitude, coordinate.latitude]);
+    const distance = Math.hypot(projected.x - target.x, projected.y - target.y);
+    if (distance <= bestDistance) {
+      bestDistance = distance;
+      nearest = index;
+    }
+  });
+  return nearest;
+}
+
 export default function MapView({
   selectedLocation,
   basemap,
@@ -257,8 +291,12 @@ export default function MapView({
   globalWeatherStatuses,
   activeGlobalValidTime,
   localForecastHour,
+  routeGeometry,
+  terrainRoute,
+  focusedRouteSampleIndex,
   panelCollapsed,
   onLocationSelect,
+  onRouteSampleFocus,
   onWeatherGridRequest,
 }: MapViewProps) {
   const [hoverInspection, setHoverInspection] =
@@ -303,6 +341,10 @@ export default function MapView({
   const localForecastHourRef = useRef(localForecastHour);
   const locationSelectRef = useRef(onLocationSelect);
   const weatherGridRequestRef = useRef(onWeatherGridRequest);
+  const routeCoordinatesRef = useRef<RouteCoordinate[]>([]);
+  const routeFocusRef = useRef(onRouteSampleFocus);
+  const focusedRouteSampleRef = useRef(focusedRouteSampleIndex);
+  const fittedRouteIdRef = useRef<string | null>(null);
   const activeInspection = hoverInspection ?? selectedInspection;
   const localReferenceTime = weatherGrid?.times[localForecastHour] ?? null;
   const activePrecipitationTimestep = globalPrecipitationSource
@@ -365,6 +407,14 @@ export default function MapView({
   useEffect(() => {
     weatherGridRequestRef.current = onWeatherGridRequest;
   }, [onWeatherGridRequest]);
+
+  useEffect(() => {
+    routeFocusRef.current = onRouteSampleFocus;
+  }, [onRouteSampleFocus]);
+
+  useEffect(() => {
+    focusedRouteSampleRef.current = focusedRouteSampleIndex;
+  }, [focusedRouteSampleIndex]);
 
   useEffect(() => {
     if (
@@ -695,6 +745,11 @@ export default function MapView({
       );
       setForecastCoverage(map, weatherGridRef.current);
       syncSatelliteView();
+      updateRouteLayer(
+        map,
+        routeCoordinatesRef.current,
+        focusedRouteSampleRef.current
+      );
       queueWeatherRequest();
     });
 
@@ -730,6 +785,15 @@ export default function MapView({
     map.on("idle", refreshSelectedElevation);
 
     map.on("click", (event) => {
+      const routeIndex = nearestRouteSampleIndex(
+        map,
+        event.point,
+        routeCoordinatesRef.current
+      );
+      if (routeIndex !== null) {
+        routeFocusRef.current(routeIndex);
+        return;
+      }
       const point = createInspectionPoint(
         map,
         event.lngLat,
@@ -756,12 +820,56 @@ export default function MapView({
       markerRef.current?.remove();
       markerRef.current = null;
       removeForecastVisualizations(map);
+      removeRouteLayer(map);
       map.remove();
       mapRef.current = null;
       queueWeatherRequestRef.current = () => undefined;
       syncSatelliteViewRef.current = () => undefined;
     };
   }, []);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    const coordinates =
+      terrainRoute && routeGeometry && terrainRoute.id === routeGeometry.id
+        ? terrainRoute.samples
+        : routeGeometry?.coordinates ?? [];
+    routeCoordinatesRef.current = coordinates;
+    if (!map?.isStyleLoaded()) return;
+    updateRouteLayer(map, coordinates, focusedRouteSampleIndex);
+    placeForecastOverlaysInOrder(map);
+    if (!routeGeometry) {
+      fittedRouteIdRef.current = null;
+      return;
+    }
+    if (fittedRouteIdRef.current === routeGeometry.id) return;
+    fittedRouteIdRef.current = routeGeometry.id;
+    const bounds = getRouteBounds(routeGeometry.coordinates);
+    const center = map.getCenter();
+    const routeCenter = (bounds.west + bounds.east) / 2;
+    const longitudeDelta = Math.abs(
+      ((routeCenter - center.lng + 540) % 360) - 180
+    );
+    map.fitBounds(
+      [
+        [bounds.west, bounds.south],
+        [bounds.east, bounds.north],
+      ],
+      {
+        padding: {
+          top: 70,
+          right: 70,
+          bottom: 70,
+          left: panelCollapsed ? 70 : 410,
+        },
+        maxZoom: 14,
+        bearing: map.getBearing(),
+        pitch: map.getPitch(),
+        duration: longitudeDelta > 70 ? 0 : 750,
+        essential: true,
+      }
+    );
+  }, [focusedRouteSampleIndex, panelCollapsed, routeGeometry, terrainRoute]);
 
   useEffect(() => {
     const map = mapRef.current;

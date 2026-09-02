@@ -20,7 +20,7 @@ const TERRAIN_STACK_BOUNDARY_SOURCE_ID = "terrain-stack-boundary-source";
 const TERRAIN_STACK_BOUNDARY_LAYER_ID = "terrain-stack-boundary-layer";
 const terrainModeByMap = new WeakMap<maplibregl.Map, "globe" | "terrain">();
 
-const TERRARIUM_TILES =
+export const TERRARIUM_TILE_TEMPLATE =
   "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png";
 export const TERRAIN_DEM_NATIVE_MAX_ZOOM = 15;
 // OpenFreeMap's vector tiles top out at z14. Keeping the terrain mesh at the
@@ -94,7 +94,7 @@ export function configurePlanetAndTerrain(
   if (!map.getSource(TERRAIN_SOURCE_ID)) {
     map.addSource(TERRAIN_SOURCE_ID, {
       type: "raster-dem",
-      tiles: [TERRARIUM_TILES],
+      tiles: [TERRARIUM_TILE_TEMPLATE],
       tileSize: 256,
       encoding: "terrarium",
       maxzoom: TERRAIN_GEOMETRY_MAX_ZOOM,
@@ -108,7 +108,7 @@ export function configurePlanetAndTerrain(
   if (!map.getSource(TERRAIN_ANALYSIS_SOURCE_ID)) {
     map.addSource(TERRAIN_ANALYSIS_SOURCE_ID, {
       type: "raster-dem",
-      tiles: [TERRARIUM_TILES],
+      tiles: [TERRARIUM_TILE_TEMPLATE],
       tileSize: 256,
       encoding: "terrarium",
       maxzoom: TERRAIN_DEM_NATIVE_MAX_ZOOM,

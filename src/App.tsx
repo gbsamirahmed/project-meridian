@@ -1,7 +1,8 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import MapView from "./components/MapView";
 import WeatherPanel from "./components/WeatherPanel";
+import RoutePlannerPanel from "./components/RoutePlannerPanel";
 
 import { getWeather } from "./services/weatherService";
 import { getLocationName } from "./services/locationService";
@@ -11,6 +12,17 @@ import {
   loadGlobalWeatherSources,
 } from "./services/globalWeatherService";
 import { IS_SATELLITE_CONFIGURED } from "./config/satelliteProvider";
+import {
+  MAX_GPX_FILE_BYTES,
+  parseGpxText,
+  resampleRouteGeometry,
+} from "./services/routeGeometry";
+import { sampleTerrainElevations } from "./services/terrainElevationSampler";
+import { buildTerrainRoute } from "./services/routeTerrain";
+import {
+  buildJourneySchedule,
+  DEFAULT_JOURNEY_PROFILE,
+} from "./services/journeyModel";
 import {
   getWeatherGrid,
   getWeatherGridRequestKey,
@@ -31,6 +43,14 @@ import type {
   WeatherGridRequest,
   WeatherGridStatus,
 } from "./types/weatherGrid";
+import type {
+  JourneyPlan,
+  JourneyProfile,
+  JourneySchedule,
+  ResampledRouteGeometry,
+  RoutePreparationStatus,
+  TerrainRoute,
+} from "./types/route";
 
 import "./App.css";
 
@@ -50,6 +70,12 @@ function closestForecastIndex(times: string[], targetTime: string): number {
     }
   });
   return bestIndex;
+}
+
+function futureIso(hours: number): string {
+  const date = new Date(Date.now() + hours * 3600000);
+  date.setMinutes(Math.ceil(date.getMinutes() / 15) * 15, 0, 0);
+  return date.toISOString();
 }
 
 function App() {
@@ -87,6 +113,24 @@ function App() {
     });
   const [isDesktopPanelCollapsed, setIsDesktopPanelCollapsed] =
     useState(false);
+  const [routeGeometry, setRouteGeometry] =
+    useState<ResampledRouteGeometry | null>(null);
+  const [terrainRoute, setTerrainRoute] = useState<TerrainRoute | null>(null);
+  const [routeStatus, setRouteStatus] =
+    useState<RoutePreparationStatus>("idle");
+  const [routeStatusMessage, setRouteStatusMessage] = useState<string | null>(null);
+  const [journeyProfile, setJourneyProfile] = useState<JourneyProfile>(
+    DEFAULT_JOURNEY_PROFILE
+  );
+  const [journeyPlan, setJourneyPlan] = useState<JourneyPlan>(() => ({
+    mode: "profile",
+    departureTime: futureIso(1),
+    targetDurationMinutes: 360,
+    targetFinishTime: futureIso(7),
+  }));
+  const [focusedRouteSampleIndex, setFocusedRouteSampleIndex] = useState<
+    number | null
+  >(null);
 
   const weatherGridAbortRef = useRef<AbortController | null>(null);
   const locationNameAbortRef = useRef<AbortController | null>(null);
@@ -100,6 +144,8 @@ function App() {
   const weatherGridRetryKeyRef = useRef<string | null>(null);
   const weatherGridCooldownUntilRef = useRef(0);
   const hasInitialisedGfsTimelineRef = useRef(false);
+  const routeAbortRef = useRef<AbortController | null>(null);
+  const routeGenerationRef = useRef(0);
   const runWeatherGridRequestRef = useRef<
     (request: WeatherGridRequest) => void
   >(() => undefined);
@@ -214,11 +260,30 @@ function App() {
       weatherGridAbortRef.current?.abort();
       locationNameAbortRef.current?.abort();
       searchAbortRef.current?.abort();
+      routeAbortRef.current?.abort();
       if (weatherGridRetryTimerRef.current !== null) {
         window.clearTimeout(weatherGridRetryTimerRef.current);
       }
     };
   }, []);
+
+  const journeyResult = useMemo<{
+    schedule: JourneySchedule | null;
+    error: string | null;
+  }>(() => {
+    if (!terrainRoute) return { schedule: null, error: null };
+    try {
+      return {
+        schedule: buildJourneySchedule(terrainRoute, journeyProfile, journeyPlan),
+        error: null,
+      };
+    } catch (error) {
+      return {
+        schedule: null,
+        error: error instanceof Error ? error.message : "Journey timing is unavailable.",
+      };
+    }
+  }, [journeyPlan, journeyProfile, terrainRoute]);
 
   const scheduleWeatherGridRetry = useCallback((delayMs: number) => {
     if (weatherGridRetryTimerRef.current !== null) {
@@ -346,6 +411,71 @@ function App() {
     }
   }, []);
 
+  const handleRouteImport = useCallback(async (file: File) => {
+    const generation = ++routeGenerationRef.current;
+    routeAbortRef.current?.abort();
+    if (!file.name.toLowerCase().endsWith(".gpx")) {
+      setRouteStatus("error");
+      setRouteStatusMessage("Choose a .gpx route file.");
+      return;
+    }
+    if (file.size > MAX_GPX_FILE_BYTES) {
+      setRouteStatus("error");
+      setRouteStatusMessage("The GPX file exceeds the 15 MiB local import limit.");
+      return;
+    }
+    setRouteStatus("parsing");
+    setRouteStatusMessage("Reading GPX route…");
+    try {
+      const fallbackName = file.name.replace(/\.gpx$/i, "") || "Imported route";
+      const imported = parseGpxText(await file.text(), fallbackName);
+      const resampled = resampleRouteGeometry(imported);
+      if (generation !== routeGenerationRef.current) return;
+      setRouteGeometry(resampled);
+      setTerrainRoute(null);
+      setFocusedRouteSampleIndex(null);
+      setRouteStatus("loading-elevation");
+      setRouteStatusMessage("Loading terrain elevation…");
+      const controller = new AbortController();
+      routeAbortRef.current = controller;
+      const elevations = await sampleTerrainElevations(
+        resampled.coordinates,
+        controller.signal,
+        (completed, total) => {
+          if (generation !== routeGenerationRef.current) return;
+          setRouteStatusMessage(`Loading terrain elevation · ${completed}/${total} tiles`);
+        }
+      );
+      if (generation !== routeGenerationRef.current || controller.signal.aborted) return;
+      const enriched = buildTerrainRoute(resampled, elevations);
+      setTerrainRoute(enriched);
+      setRouteStatus(
+        enriched.elevationCoverage === "complete" ? "ready" : "partial"
+      );
+      setRouteStatusMessage(
+        enriched.elevationCoverage === "complete"
+          ? "Terrain and timing ready"
+          : "Some terrain elevation is unavailable; timing is withheld."
+      );
+    } catch (error) {
+      if (generation !== routeGenerationRef.current) return;
+      setRouteStatus("error");
+      setRouteStatusMessage(
+        error instanceof Error ? error.message : "The route could not be prepared."
+      );
+    }
+  }, []);
+
+  const handleRouteClear = useCallback(() => {
+    routeGenerationRef.current += 1;
+    routeAbortRef.current?.abort();
+    setRouteGeometry(null);
+    setTerrainRoute(null);
+    setFocusedRouteSampleIndex(null);
+    setRouteStatus("idle");
+    setRouteStatusMessage(null);
+  }, []);
+
   const handleOverlayChange = useCallback(
     (overlay: keyof MapOverlayState, enabled: boolean) => {
       const nextSource =
@@ -394,8 +524,12 @@ function App() {
         globalWeatherStatuses={globalWeatherStatuses}
         activeGlobalValidTime={activeGlobalValidTime}
         localForecastHour={localForecastHour}
+        routeGeometry={routeGeometry}
+        terrainRoute={terrainRoute}
+        focusedRouteSampleIndex={focusedRouteSampleIndex}
         panelCollapsed={isDesktopPanelCollapsed}
         onLocationSelect={setSelectedLocation}
+        onRouteSampleFocus={setFocusedRouteSampleIndex}
         onWeatherGridRequest={handleWeatherGridRequest}
       />
 
@@ -423,6 +557,24 @@ function App() {
         onOverlayChange={handleOverlayChange}
         onSearch={handleSearch}
         onDesktopCollapsedChange={setIsDesktopPanelCollapsed}
+        routePanel={
+          <RoutePlannerPanel
+            routeGeometry={routeGeometry}
+            terrainRoute={terrainRoute}
+            schedule={journeyResult.schedule}
+            scheduleError={journeyResult.error}
+            status={routeStatus}
+            statusMessage={routeStatusMessage}
+            profile={journeyProfile}
+            plan={journeyPlan}
+            focusedIndex={focusedRouteSampleIndex}
+            onImport={handleRouteImport}
+            onClear={handleRouteClear}
+            onProfileChange={setJourneyProfile}
+            onPlanChange={setJourneyPlan}
+            onFocusChange={setFocusedRouteSampleIndex}
+          />
+        }
       />
     </main>
   );
