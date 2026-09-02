@@ -25,6 +25,12 @@ export interface VectorNumericTile {
   byteLength: number;
 }
 
+export interface PreparedNumericCoverage {
+  requestedTiles: number;
+  availableTiles: number;
+  failedTiles: number;
+}
+
 type WeatherNumericTile = ScalarNumericTile | VectorNumericTile;
 
 const MAX_CACHE_BYTES = 64 * 1024 * 1024;
@@ -392,6 +398,185 @@ export function sampleCachedScalarField(
   const top = topLeft * (1 - xWeight) + topRight * xWeight;
   const bottom = bottomLeft * (1 - xWeight) + bottomRight * xWeight;
   return top * (1 - yWeight) + bottom * yWeight;
+}
+
+function readCachedVectorWorldPixel(
+  source: VectorWeatherFieldSource,
+  timestep: VectorWeatherTimestep,
+  zoom: number,
+  pixelX: number,
+  pixelY: number
+): { u: number; v: number } | null | undefined {
+  const {
+    tileSize,
+    componentScale,
+    componentBias,
+    noDataCode,
+  } = source.manifest.tiles;
+  const tileCount = 2 ** zoom;
+  const worldSize = tileCount * tileSize;
+  const wrappedX = ((pixelX % worldSize) + worldSize) % worldSize;
+  const limitedY = Math.max(0, Math.min(worldSize - 1, pixelY));
+  const tileX = Math.floor(wrappedX / tileSize);
+  const tileY = Math.floor(limitedY / tileSize);
+  const localX = wrappedX % tileSize;
+  const localY = limitedY % tileSize;
+  const tile = getCachedVectorTile(source, timestep, zoom, tileX, tileY);
+  if (!tile) return undefined;
+  const index = localY * tile.size + localX;
+  const uCode = tile.uCodes[index];
+  const vCode = tile.vCodes[index];
+  if (uCode === noDataCode || vCode === noDataCode) return null;
+  return {
+    u: (uCode - componentBias) * componentScale,
+    v: (vCode - componentBias) * componentScale,
+  };
+}
+
+export function sampleCachedVectorField(
+  source: VectorWeatherFieldSource,
+  timestep: VectorWeatherTimestep,
+  zoom: number,
+  longitude: number,
+  latitude: number
+): { u: number; v: number } | null | undefined {
+  if (
+    latitude < source.manifest.coverage.bounds[1] ||
+    latitude > source.manifest.coverage.bounds[3]
+  ) {
+    return null;
+  }
+  const worldSize = 2 ** zoom * source.manifest.tiles.tileSize;
+  const worldX = longitudeToWorldX(longitude, worldSize);
+  const worldY = latitudeToWorldY(latitude, worldSize);
+  const x0 = Math.floor(worldX);
+  const y0 = Math.floor(worldY);
+  const xWeight = worldX - x0;
+  const yWeight = worldY - y0;
+  const samples = [
+    readCachedVectorWorldPixel(source, timestep, zoom, x0, y0),
+    readCachedVectorWorldPixel(source, timestep, zoom, x0 + 1, y0),
+    readCachedVectorWorldPixel(source, timestep, zoom, x0, y0 + 1),
+    readCachedVectorWorldPixel(source, timestep, zoom, x0 + 1, y0 + 1),
+  ];
+  if (samples.some((sample) => sample === undefined)) return undefined;
+  if (samples.some((sample) => sample === null)) return null;
+  const [topLeft, topRight, bottomLeft, bottomRight] = samples as Array<{
+    u: number;
+    v: number;
+  }>;
+  const interpolate = (key: "u" | "v") => {
+    const top = topLeft[key] * (1 - xWeight) + topRight[key] * xWeight;
+    const bottom =
+      bottomLeft[key] * (1 - xWeight) + bottomRight[key] * xWeight;
+    return top * (1 - yWeight) + bottom * yWeight;
+  };
+  return { u: interpolate("u"), v: interpolate("v") };
+}
+
+interface SamplingCoordinate {
+  longitude: number;
+  latitude: number;
+}
+
+function samplingTileAddresses(
+  coordinates: SamplingCoordinate[],
+  zoom: number,
+  tileSize: number
+): Array<{ x: number; y: number }> {
+  const tileCount = 2 ** zoom;
+  const worldSize = tileCount * tileSize;
+  const addresses = new Map<string, { x: number; y: number }>();
+  for (const coordinate of coordinates) {
+    if (coordinate.latitude < -85.05112878 || coordinate.latitude > 85.05112878) {
+      continue;
+    }
+    const worldX = longitudeToWorldX(coordinate.longitude, worldSize);
+    const worldY = latitudeToWorldY(coordinate.latitude, worldSize);
+    const x0 = Math.floor(worldX);
+    const y0 = Math.floor(worldY);
+    for (const [pixelX, pixelY] of [
+      [x0, y0],
+      [x0 + 1, y0],
+      [x0, y0 + 1],
+      [x0 + 1, y0 + 1],
+    ]) {
+      const x = Math.floor((((pixelX % worldSize) + worldSize) % worldSize) / tileSize);
+      const y = Math.floor(Math.max(0, Math.min(worldSize - 1, pixelY)) / tileSize);
+      addresses.set(`${x}/${y}`, { x, y });
+    }
+  }
+  return [...addresses.values()];
+}
+
+async function prepareTiles<T>(
+  addresses: Array<{ x: number; y: number }>,
+  loader: (x: number, y: number) => Promise<T>,
+  signal?: AbortSignal,
+  concurrency = 6
+): Promise<PreparedNumericCoverage> {
+  let cursor = 0;
+  let availableTiles = 0;
+  let failedTiles = 0;
+  const worker = async () => {
+    while (cursor < addresses.length) {
+      if (signal?.aborted) throw new DOMException("Aborted", "AbortError");
+      const address = addresses[cursor++];
+      try {
+        await loader(address.x, address.y);
+        availableTiles += 1;
+      } catch {
+        failedTiles += 1;
+      }
+    }
+  };
+  await Promise.all(
+    Array.from({ length: Math.min(concurrency, addresses.length) }, worker)
+  );
+  if (signal?.aborted) throw new DOMException("Aborted", "AbortError");
+  return {
+    requestedTiles: addresses.length,
+    availableTiles,
+    failedTiles,
+  };
+}
+
+export function prepareScalarFieldCoordinates(
+  source: ScalarWeatherFieldSource,
+  timestep: ScalarWeatherTimestep,
+  coordinates: SamplingCoordinate[],
+  signal?: AbortSignal
+): Promise<PreparedNumericCoverage> {
+  const zoom = source.manifest.tiles.maxZoom;
+  const addresses = samplingTileAddresses(
+    coordinates,
+    zoom,
+    source.manifest.tiles.tileSize
+  );
+  return prepareTiles(
+    addresses,
+    (x, y) => loadNumericTile(source, timestep, zoom, x, y),
+    signal
+  );
+}
+
+export function prepareVectorFieldCoordinates(
+  source: VectorWeatherFieldSource,
+  timestep: VectorWeatherTimestep,
+  coordinates: SamplingCoordinate[],
+  signal?: AbortSignal
+): Promise<PreparedNumericCoverage> {
+  const zoom = source.manifest.tiles.maxZoom;
+  const addresses = samplingTileAddresses(
+    coordinates,
+    zoom,
+    source.manifest.tiles.tileSize
+  );
+  return prepareTiles(
+    addresses,
+    (x, y) => loadVectorTile(source, timestep, zoom, x, y),
+    signal
+  );
 }
 
 async function readWorldPixel(

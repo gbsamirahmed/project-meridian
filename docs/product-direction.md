@@ -20,7 +20,7 @@ The central route-planning question is:
 
 A route supplies the spatial backbone. A journey model turns that geometry into scheduled positions. Terrain and environmental data then become useful in the context of where the traveller is expected to be at a particular time.
 
-Current implementation establishes only part of that direction: global weather exploration and Route Foundation v1 exist, but route weather, contextual terrain inference, personalised timing, stages, and conditions-adjusted travel remain future work.
+Current implementation establishes global weather exploration, Route Foundation v1, and a first raw route-condition layer. Contextual terrain interpretation, personalised timing, stages, and conditions-adjusted travel remain future work.
 
 ## Route-first workflow
 
@@ -190,6 +190,22 @@ Candidate factual or derived conditions include:
 - route-relative headwind, crosswind, and tailwind.
 
 Derived conditions should expose inputs, provenance, resolution, and uncertainty.
+
+Route Conditions Foundation v1 now distinguishes **conditions now**—the map
+weather field at one selected forecast time—from **journey conditions** sampled
+at each route position's expected arrival time. The route-condition domain keeps
+terrain, schedule, raw GFS values, route-relative wind, requested time, actual
+forecast valid time, and source provenance distinct. Expected-arrival conditions
+are displayed first; the existing earliest/latest arrival window is preserved
+for later timing-sensitivity analysis rather than collapsed into an arbitrary
+classification.
+
+Route geometry remains visually smooth at its display spacing, while weather
+values retain GFS 0.25° information resolution and discrete forecast times.
+Precipitation keeps its one-hour interval-total semantics and is not interpolated
+as an instantaneous value. Temperature, precipitation, wind, and gradient are
+separate route colour modes with physical-unit legends; Meridian does not combine
+them into an opaque condition or safety score.
 
 ### Snow, ice, avalanche, and cornices
 

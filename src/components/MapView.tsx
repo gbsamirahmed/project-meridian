@@ -73,6 +73,9 @@ import {
   updateGlobalWindLayer,
 } from "../services/windLayer";
 import {
+  ROUTE_CASING_LAYER_ID,
+  ROUTE_CONDITION_LAYER_ID,
+  ROUTE_LINE_LAYER_ID,
   removeRouteLayer,
   updateRouteLayer,
 } from "../services/routeLayer";
@@ -96,6 +99,10 @@ import type {
   RouteCoordinate,
   TerrainRoute,
 } from "../types/route";
+import type {
+  RouteConditionMode,
+  RouteConditions,
+} from "../types/routeConditions";
 
 import "maplibre-gl/dist/maplibre-gl.css";
 
@@ -116,6 +123,8 @@ interface MapViewProps {
   routeGeometry: ResampledRouteGeometry | null;
   terrainRoute: TerrainRoute | null;
   focusedRouteSampleIndex: number | null;
+  routeConditions: RouteConditions | null;
+  routeConditionMode: RouteConditionMode;
   panelCollapsed: boolean;
   onLocationSelect: (location: SelectedLocation) => void;
   onRouteSampleFocus: (index: number | null) => void;
@@ -294,6 +303,8 @@ export default function MapView({
   routeGeometry,
   terrainRoute,
   focusedRouteSampleIndex,
+  routeConditions,
+  routeConditionMode,
   panelCollapsed,
   onLocationSelect,
   onRouteSampleFocus,
@@ -344,6 +355,8 @@ export default function MapView({
   const routeCoordinatesRef = useRef<RouteCoordinate[]>([]);
   const routeFocusRef = useRef(onRouteSampleFocus);
   const focusedRouteSampleRef = useRef(focusedRouteSampleIndex);
+  const routeConditionsRef = useRef(routeConditions);
+  const routeConditionModeRef = useRef(routeConditionMode);
   const fittedRouteIdRef = useRef<string | null>(null);
   const activeInspection = hoverInspection ?? selectedInspection;
   const localReferenceTime = weatherGrid?.times[localForecastHour] ?? null;
@@ -415,6 +428,14 @@ export default function MapView({
   useEffect(() => {
     focusedRouteSampleRef.current = focusedRouteSampleIndex;
   }, [focusedRouteSampleIndex]);
+
+  useEffect(() => {
+    routeConditionsRef.current = routeConditions;
+  }, [routeConditions]);
+
+  useEffect(() => {
+    routeConditionModeRef.current = routeConditionMode;
+  }, [routeConditionMode]);
 
   useEffect(() => {
     if (
@@ -685,6 +706,27 @@ export default function MapView({
 
       if (!event) return;
 
+      const routeHitLayers = [
+        ROUTE_CASING_LAYER_ID,
+        ROUTE_LINE_LAYER_ID,
+        ROUTE_CONDITION_LAYER_ID,
+      ].filter((layerId) => map.getLayer(layerId));
+      const routeIndex =
+        routeHitLayers.length > 0 &&
+        map.queryRenderedFeatures(event.point, { layers: routeHitLayers }).length > 0
+          ? nearestRouteSampleIndex(
+              map,
+              event.point,
+              routeCoordinatesRef.current,
+              10
+            )
+          : null;
+      if (routeIndex !== null) {
+        routeFocusRef.current(routeIndex);
+        setHoverInspection(null);
+        return;
+      }
+
       setHoverInspection(
         createInspectionPoint(
           map,
@@ -748,7 +790,9 @@ export default function MapView({
       updateRouteLayer(
         map,
         routeCoordinatesRef.current,
-        focusedRouteSampleRef.current
+        focusedRouteSampleRef.current,
+        routeConditionsRef.current,
+        routeConditionModeRef.current
       );
       queueWeatherRequest();
     });
@@ -791,6 +835,8 @@ export default function MapView({
         routeCoordinatesRef.current
       );
       if (routeIndex !== null) {
+        setHoverInspection(null);
+        setSelectedInspection(null);
         routeFocusRef.current(routeIndex);
         return;
       }
@@ -836,7 +882,13 @@ export default function MapView({
         : routeGeometry?.coordinates ?? [];
     routeCoordinatesRef.current = coordinates;
     if (!map?.isStyleLoaded()) return;
-    updateRouteLayer(map, coordinates, focusedRouteSampleIndex);
+    updateRouteLayer(
+      map,
+      coordinates,
+      focusedRouteSampleIndex,
+      routeConditions,
+      routeConditionMode
+    );
     placeForecastOverlaysInOrder(map);
     if (!routeGeometry) {
       fittedRouteIdRef.current = null;
@@ -869,7 +921,14 @@ export default function MapView({
         essential: true,
       }
     );
-  }, [focusedRouteSampleIndex, panelCollapsed, routeGeometry, terrainRoute]);
+  }, [
+    focusedRouteSampleIndex,
+    panelCollapsed,
+    routeConditionMode,
+    routeConditions,
+    routeGeometry,
+    terrainRoute,
+  ]);
 
   useEffect(() => {
     const map = mapRef.current;

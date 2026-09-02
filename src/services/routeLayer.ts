@@ -1,22 +1,53 @@
 import maplibregl from "maplibre-gl";
 import { getFirstSymbolLayerId } from "./mapLayerOrder";
 import { unwrapRouteCoordinates } from "./routeGeometry";
+import { routeConditionColour } from "./routeConditionStyle";
 import type { RouteCoordinate } from "../types/route";
+import type {
+  RouteConditionMode,
+  RouteConditions,
+} from "../types/routeConditions";
 
 export const ROUTE_SOURCE_ID = "planned-route-source";
 export const ROUTE_FOCUS_SOURCE_ID = "planned-route-focus-source";
 export const ROUTE_CASING_LAYER_ID = "planned-route-casing";
 export const ROUTE_LINE_LAYER_ID = "planned-route-line";
+export const ROUTE_CONDITION_LAYER_ID = "planned-route-conditions";
 export const ROUTE_ENDPOINT_LAYER_ID = "planned-route-endpoints";
 export const ROUTE_FOCUS_LAYER_ID = "planned-route-focus";
 
-const routeCoordinatesByMap = new WeakMap<maplibregl.Map, RouteCoordinate[]>();
+const routeSignatureByMap = new WeakMap<maplibregl.Map, unknown[]>();
 
-function routeData(coordinates: RouteCoordinate[]): GeoJSON.FeatureCollection {
+function routeData(
+  coordinates: RouteCoordinate[],
+  conditions: RouteConditions | null,
+  mode: RouteConditionMode
+): GeoJSON.FeatureCollection {
   if (coordinates.length < 2) {
     return { type: "FeatureCollection", features: [] };
   }
   const displayCoordinates = unwrapRouteCoordinates(coordinates);
+  const conditionFeatures: GeoJSON.Feature[] =
+    mode !== "none" && conditions?.samples.length === coordinates.length
+      ? displayCoordinates.slice(0, -1).map((point, index) => ({
+          type: "Feature",
+          properties: {
+            kind: "condition-segment",
+            routeSampleIndex: index,
+            colour: routeConditionColour(conditions.samples[index], mode),
+          },
+          geometry: {
+            type: "LineString",
+            coordinates: [
+              [point.longitude, point.latitude],
+              [
+                displayCoordinates[index + 1].longitude,
+                displayCoordinates[index + 1].latitude,
+              ],
+            ],
+          },
+        }))
+      : [];
   return {
     type: "FeatureCollection",
     features: [
@@ -31,6 +62,7 @@ function routeData(coordinates: RouteCoordinate[]): GeoJSON.FeatureCollection {
           ]),
         },
       },
+      ...conditionFeatures,
       {
         type: "Feature",
         properties: { kind: "start" },
@@ -79,9 +111,9 @@ function ensureRouteLayers(map: maplibregl.Map): void {
   if (!map.getSource(ROUTE_SOURCE_ID)) {
     map.addSource(ROUTE_SOURCE_ID, {
       type: "geojson",
-      data: routeData([]),
+      data: routeData([], null, "none"),
     });
-    routeCoordinatesByMap.delete(map);
+    routeSignatureByMap.delete(map);
   }
   if (!map.getSource(ROUTE_FOCUS_SOURCE_ID)) {
     map.addSource(ROUTE_FOCUS_SOURCE_ID, {
@@ -119,6 +151,23 @@ function ensureRouteLayers(map: maplibregl.Map): void {
           "line-color": "#ff7652",
           "line-opacity": 0.96,
           "line-width": ["interpolate", ["linear"], ["zoom"], 3, 1.5, 10, 3.8],
+        },
+      },
+      beforeId
+    );
+  }
+  if (!map.getLayer(ROUTE_CONDITION_LAYER_ID)) {
+    map.addLayer(
+      {
+        id: ROUTE_CONDITION_LAYER_ID,
+        type: "line",
+        source: ROUTE_SOURCE_ID,
+        filter: ["==", ["get", "kind"], "condition-segment"],
+        layout: { "line-cap": "round", "line-join": "round" },
+        paint: {
+          "line-color": ["coalesce", ["get", "colour"], "#7b8581"],
+          "line-opacity": 0.98,
+          "line-width": ["interpolate", ["linear"], ["zoom"], 3, 2.2, 10, 4.5],
         },
       },
       beforeId
@@ -168,15 +217,34 @@ function ensureRouteLayers(map: maplibregl.Map): void {
 export function updateRouteLayer(
   map: maplibregl.Map,
   coordinates: RouteCoordinate[],
-  focusedIndex: number | null
+  focusedIndex: number | null,
+  conditions: RouteConditions | null = null,
+  mode: RouteConditionMode = "none"
 ): void {
   if (!map.isStyleLoaded()) return;
   ensureRouteLayers(map);
-  if (routeCoordinatesByMap.get(map) !== coordinates) {
+  const signature = [coordinates, conditions, mode];
+  const previousSignature = routeSignatureByMap.get(map);
+  if (
+    !previousSignature ||
+    previousSignature.some((value, index) => value !== signature[index])
+  ) {
     const source = map.getSource(ROUTE_SOURCE_ID) as maplibregl.GeoJSONSource;
-    source.setData(routeData(coordinates));
-    routeCoordinatesByMap.set(map, coordinates);
+    source.setData(routeData(coordinates, conditions, mode));
+    routeSignatureByMap.set(map, signature);
   }
+  const hasConditionSegments =
+    mode !== "none" && conditions?.samples.length === coordinates.length;
+  map.setLayoutProperty(
+    ROUTE_LINE_LAYER_ID,
+    "visibility",
+    hasConditionSegments ? "none" : "visible"
+  );
+  map.setLayoutProperty(
+    ROUTE_CONDITION_LAYER_ID,
+    "visibility",
+    hasConditionSegments ? "visible" : "none"
+  );
   const focus =
     focusedIndex === null
       ? null
@@ -187,6 +255,7 @@ export function updateRouteLayer(
   for (const layerId of [
     ROUTE_CASING_LAYER_ID,
     ROUTE_LINE_LAYER_ID,
+    ROUTE_CONDITION_LAYER_ID,
     ROUTE_ENDPOINT_LAYER_ID,
     ROUTE_FOCUS_LAYER_ID,
   ]) {
@@ -199,11 +268,12 @@ export function removeRouteLayer(map: maplibregl.Map): void {
     ROUTE_FOCUS_LAYER_ID,
     ROUTE_ENDPOINT_LAYER_ID,
     ROUTE_LINE_LAYER_ID,
+    ROUTE_CONDITION_LAYER_ID,
     ROUTE_CASING_LAYER_ID,
   ]) {
     if (map.getLayer(layerId)) map.removeLayer(layerId);
   }
   if (map.getSource(ROUTE_SOURCE_ID)) map.removeSource(ROUTE_SOURCE_ID);
   if (map.getSource(ROUTE_FOCUS_SOURCE_ID)) map.removeSource(ROUTE_FOCUS_SOURCE_ID);
-  routeCoordinatesByMap.delete(map);
+  routeSignatureByMap.delete(map);
 }

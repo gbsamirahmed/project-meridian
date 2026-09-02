@@ -1,9 +1,16 @@
 import type { PointerEvent } from "react";
 import type { JourneySchedule, TerrainRoute } from "../types/route";
+import { routeConditionColour } from "../services/routeConditionStyle";
+import type {
+  RouteConditionMode,
+  RouteConditions,
+} from "../types/routeConditions";
 
 interface RouteProfileProps {
   route: TerrainRoute;
   schedule: JourneySchedule | null;
+  conditions: RouteConditions | null;
+  conditionMode: RouteConditionMode;
   focusedIndex: number | null;
   onFocusChange: (index: number | null) => void;
 }
@@ -24,6 +31,8 @@ function minutesLabel(minutes: number): string {
 export default function RouteProfile({
   route,
   schedule,
+  conditions,
+  conditionMode,
   focusedIndex,
   onFocusChange,
 }: RouteProfileProps) {
@@ -56,6 +65,15 @@ export default function RouteProfile({
       : route.samples[Math.max(0, Math.min(route.samples.length - 1, focusedIndex))];
   const focusSchedule =
     focusSample && schedule ? schedule.samples[focusSample.index] : null;
+  const conditionStrip =
+    conditionMode !== "none" &&
+    conditions?.routeId === route.id &&
+    conditions.samples.length === route.samples.length
+      ? conditions.samples
+      : null;
+  const stripStep = conditionStrip
+    ? Math.max(1, Math.ceil((conditionStrip.length - 1) / 120))
+    : 1;
 
   const focusFromPointer = (event: PointerEvent<SVGSVGElement>) => {
     const bounds = event.currentTarget.getBoundingClientRect();
@@ -113,6 +131,31 @@ export default function RouteProfile({
       >
         <line x1={LEFT} y1={TOP + innerHeight} x2={WIDTH - RIGHT} y2={TOP + innerHeight} className="route-profile-axis" />
         <path d={path.trim()} className="route-profile-line" />
+        {conditionStrip &&
+          Array.from(
+            { length: Math.ceil((conditionStrip.length - 1) / stripStep) },
+            (_, segmentIndex) => {
+              const startIndex = segmentIndex * stripStep;
+              const endIndex = Math.min(
+                conditionStrip.length - 1,
+                startIndex + stripStep
+              );
+              return (
+                <line
+                  key={startIndex}
+                  x1={xFor(conditionStrip[startIndex].cumulativeDistanceM)}
+                  x2={xFor(conditionStrip[endIndex].cumulativeDistanceM)}
+                  y1={TOP + innerHeight + 5}
+                  y2={TOP + innerHeight + 5}
+                  stroke={routeConditionColour(
+                    conditionStrip[startIndex],
+                    conditionMode
+                  )}
+                  className="route-profile-condition-segment"
+                />
+              );
+            }
+          )}
         {focusSample && focusSample.smoothedElevationM !== null && (
           <>
             <line

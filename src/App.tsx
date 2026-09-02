@@ -23,6 +23,7 @@ import {
   buildJourneySchedule,
   DEFAULT_JOURNEY_PROFILE,
 } from "./services/journeyModel";
+import { buildRouteConditions } from "./services/routeConditions";
 import {
   getWeatherGrid,
   getWeatherGridRequestKey,
@@ -51,6 +52,11 @@ import type {
   RoutePreparationStatus,
   TerrainRoute,
 } from "./types/route";
+import type {
+  RouteConditionMode,
+  RouteConditions,
+  RouteConditionStatus,
+} from "./types/routeConditions";
 
 import "./App.css";
 
@@ -131,6 +137,12 @@ function App() {
   const [focusedRouteSampleIndex, setFocusedRouteSampleIndex] = useState<
     number | null
   >(null);
+  const [routeConditions, setRouteConditions] =
+    useState<RouteConditions | null>(null);
+  const [routeConditionStatus, setRouteConditionStatus] =
+    useState<RouteConditionStatus>("idle");
+  const [routeConditionMode, setRouteConditionMode] =
+    useState<RouteConditionMode>("none");
 
   const weatherGridAbortRef = useRef<AbortController | null>(null);
   const locationNameAbortRef = useRef<AbortController | null>(null);
@@ -146,6 +158,8 @@ function App() {
   const hasInitialisedGfsTimelineRef = useRef(false);
   const routeAbortRef = useRef<AbortController | null>(null);
   const routeGenerationRef = useRef(0);
+  const routeConditionAbortRef = useRef<AbortController | null>(null);
+  const routeConditionGenerationRef = useRef(0);
   const runWeatherGridRequestRef = useRef<
     (request: WeatherGridRequest) => void
   >(() => undefined);
@@ -261,6 +275,7 @@ function App() {
       locationNameAbortRef.current?.abort();
       searchAbortRef.current?.abort();
       routeAbortRef.current?.abort();
+      routeConditionAbortRef.current?.abort();
       if (weatherGridRetryTimerRef.current !== null) {
         window.clearTimeout(weatherGridRetryTimerRef.current);
       }
@@ -284,6 +299,79 @@ function App() {
       };
     }
   }, [journeyPlan, journeyProfile, terrainRoute]);
+
+  useEffect(() => {
+    const schedule = journeyResult.schedule;
+    const generation = ++routeConditionGenerationRef.current;
+    routeConditionAbortRef.current?.abort();
+    if (!terrainRoute || !schedule) {
+      return;
+    }
+    const controller = new AbortController();
+    routeConditionAbortRef.current = controller;
+    queueMicrotask(() => {
+      if (
+        !controller.signal.aborted &&
+        generation === routeConditionGenerationRef.current
+      ) {
+        setRouteConditionStatus("loading");
+      }
+    });
+    buildRouteConditions(
+      terrainRoute,
+      schedule,
+      {
+        temperature: globalTemperatureSource,
+        precipitation: globalPrecipitationSource,
+        cloud: globalCloudSource,
+        wind: globalWindSource,
+      },
+      controller.signal
+    )
+      .then((conditions) => {
+        if (
+          controller.signal.aborted ||
+          generation !== routeConditionGenerationRef.current
+        ) {
+          return;
+        }
+        setRouteConditions(conditions);
+        const coverages = Object.values(conditions.coverage);
+        const available = coverages.reduce(
+          (sum, coverage) => sum + coverage.availableSamples,
+          0
+        );
+        const expected = coverages.reduce(
+          (sum, coverage) => sum + coverage.totalSamples,
+          0
+        );
+        setRouteConditionStatus(
+          available === 0
+            ? "unavailable"
+            : available === expected
+              ? "ready"
+              : "partial"
+        );
+      })
+      .catch((error: unknown) => {
+        if (
+          controller.signal.aborted ||
+          generation !== routeConditionGenerationRef.current
+        ) {
+          return;
+        }
+        console.error("Route condition preparation failed", error);
+        setRouteConditionStatus("unavailable");
+      });
+    return () => controller.abort();
+  }, [
+    globalCloudSource,
+    globalPrecipitationSource,
+    globalTemperatureSource,
+    globalWindSource,
+    journeyResult.schedule,
+    terrainRoute,
+  ]);
 
   const scheduleWeatherGridRetry = useCallback((delayMs: number) => {
     if (weatherGridRetryTimerRef.current !== null) {
@@ -433,6 +521,8 @@ function App() {
       if (generation !== routeGenerationRef.current) return;
       setRouteGeometry(resampled);
       setTerrainRoute(null);
+      setRouteConditions(null);
+      setRouteConditionStatus("idle");
       setFocusedRouteSampleIndex(null);
       setRouteStatus("loading-elevation");
       setRouteStatusMessage("Loading terrain elevation…");
@@ -469,9 +559,14 @@ function App() {
   const handleRouteClear = useCallback(() => {
     routeGenerationRef.current += 1;
     routeAbortRef.current?.abort();
+    routeConditionGenerationRef.current += 1;
+    routeConditionAbortRef.current?.abort();
     setRouteGeometry(null);
     setTerrainRoute(null);
     setFocusedRouteSampleIndex(null);
+    setRouteConditions(null);
+    setRouteConditionStatus("idle");
+    setRouteConditionMode("none");
     setRouteStatus("idle");
     setRouteStatusMessage(null);
   }, []);
@@ -507,6 +602,10 @@ function App() {
       globalWindSource,
     ]
   );
+  const activeRouteConditions = journeyResult.schedule ? routeConditions : null;
+  const activeRouteConditionStatus = journeyResult.schedule
+    ? routeConditionStatus
+    : "idle";
 
   return (
     <main className="app-shell">
@@ -527,6 +626,8 @@ function App() {
         routeGeometry={routeGeometry}
         terrainRoute={terrainRoute}
         focusedRouteSampleIndex={focusedRouteSampleIndex}
+        routeConditions={activeRouteConditions}
+        routeConditionMode={routeConditionMode}
         panelCollapsed={isDesktopPanelCollapsed}
         onLocationSelect={setSelectedLocation}
         onRouteSampleFocus={setFocusedRouteSampleIndex}
@@ -568,11 +669,15 @@ function App() {
             profile={journeyProfile}
             plan={journeyPlan}
             focusedIndex={focusedRouteSampleIndex}
+            routeConditions={activeRouteConditions}
+            routeConditionStatus={activeRouteConditionStatus}
+            routeConditionMode={routeConditionMode}
             onImport={handleRouteImport}
             onClear={handleRouteClear}
             onProfileChange={setJourneyProfile}
             onPlanChange={setJourneyPlan}
             onFocusChange={setFocusedRouteSampleIndex}
+            onRouteConditionModeChange={setRouteConditionMode}
           />
         }
       />

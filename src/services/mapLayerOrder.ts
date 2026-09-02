@@ -31,6 +31,7 @@ const FORECAST_OVERLAY_LAYER_ORDER = [
 const ROUTE_LAYER_ORDER = [
   "planned-route-casing",
   "planned-route-line",
+  "planned-route-conditions",
   "planned-route-endpoints",
   "planned-route-focus",
 ] as const;

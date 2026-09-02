@@ -1,5 +1,6 @@
 import type { ChangeEvent } from "react";
 import RouteProfile from "./RouteProfile";
+import { ROUTE_CONDITION_LEGENDS } from "../services/routeConditionStyle";
 import type {
   JourneyPlan,
   JourneyProfile,
@@ -8,6 +9,12 @@ import type {
   RoutePreparationStatus,
   TerrainRoute,
 } from "../types/route";
+import type {
+  RouteConditionMode,
+  RouteConditions,
+  RouteConditionStatus,
+  ScalarRouteCondition,
+} from "../types/routeConditions";
 
 interface RoutePlannerPanelProps {
   routeGeometry: ResampledRouteGeometry | null;
@@ -19,11 +26,15 @@ interface RoutePlannerPanelProps {
   profile: JourneyProfile;
   plan: JourneyPlan;
   focusedIndex: number | null;
+  routeConditions: RouteConditions | null;
+  routeConditionStatus: RouteConditionStatus;
+  routeConditionMode: RouteConditionMode;
   onImport: (file: File) => void;
   onClear: () => void;
   onProfileChange: (profile: JourneyProfile) => void;
   onPlanChange: (plan: JourneyPlan) => void;
   onFocusChange: (index: number | null) => void;
+  onRouteConditionModeChange: (mode: RouteConditionMode) => void;
 }
 
 function durationLabel(minutes: number): string {
@@ -52,6 +63,25 @@ function isoFromLocal(value: string, fallback: string): string {
   return Number.isFinite(parsed.getTime()) ? parsed.toISOString() : fallback;
 }
 
+function scalarLabel(
+  condition: ScalarRouteCondition,
+  formatter: (value: number) => string
+): string {
+  return condition.state === "available" ? formatter(condition.value) : "Unavailable";
+}
+
+function windDirectionLabel(degrees: number | null): string {
+  if (degrees === null) return "Calm";
+  const directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
+  return `${directions[Math.round(degrees / 45) % directions.length]} (from)`;
+}
+
+function temporalOffsetLabel(offsetMinutes: number): string {
+  if (Math.abs(offsetMinutes) < 0.5) return "exact forecast time";
+  const direction = offsetMinutes > 0 ? "after" : "before";
+  return `${Math.round(Math.abs(offsetMinutes))} min ${direction} arrival`;
+}
+
 export default function RoutePlannerPanel({
   routeGeometry,
   terrainRoute,
@@ -62,11 +92,15 @@ export default function RoutePlannerPanel({
   profile,
   plan,
   focusedIndex,
+  routeConditions,
+  routeConditionStatus,
+  routeConditionMode,
   onImport,
   onClear,
   onProfileChange,
   onPlanChange,
   onFocusChange,
+  onRouteConditionModeChange,
 }: RoutePlannerPanelProps) {
   const handleFile = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -75,6 +109,31 @@ export default function RoutePlannerPanel({
     onImport(file);
   };
   const route = terrainRoute;
+  const focusedCondition =
+    focusedIndex === null
+      ? null
+      : routeConditions?.samples[
+          Math.max(0, Math.min(routeConditions.samples.length - 1, focusedIndex))
+        ] ?? null;
+  const legend =
+    routeConditionMode === "none"
+      ? null
+      : ROUTE_CONDITION_LEGENDS[routeConditionMode];
+  const focusedProvenance = focusedCondition
+    ? [
+        routeConditionMode === "temperature"
+          ? focusedCondition.weather.temperature
+          : routeConditionMode === "precipitation"
+            ? focusedCondition.weather.precipitation
+            : routeConditionMode === "wind"
+              ? focusedCondition.weather.wind
+              : null,
+        focusedCondition.weather.temperature,
+        focusedCondition.weather.precipitation,
+        focusedCondition.weather.wind,
+        focusedCondition.weather.cloud,
+      ].find((condition) => condition?.state === "available")?.provenance ?? null
+    : null;
   return (
     <section className="weather-card route-planner-card">
       <div className="card-heading">
@@ -111,6 +170,80 @@ export default function RoutePlannerPanel({
             <div><span>Moving</span><strong>{schedule ? durationLabel(schedule.movingMinutes) : "—"}</strong></div>
             <div><span>Breaks</span><strong>{durationLabel(profile.plannedBreakMinutes)}</strong></div>
           </div>
+          {schedule && (
+            <div className="route-condition-controls">
+              <label>
+                <span>Journey route colour</span>
+                <select
+                  value={routeConditionMode}
+                  onChange={(event) =>
+                    onRouteConditionModeChange(
+                      event.target.value as RouteConditionMode
+                    )
+                  }
+                >
+                  <option value="none">Normal route</option>
+                  <option value="temperature">Temperature</option>
+                  <option value="precipitation">Precipitation</option>
+                  <option value="wind">Wind</option>
+                  <option value="gradient">Gradient</option>
+                </select>
+              </label>
+              <small>
+                {routeConditionStatus === "loading"
+                  ? "Preparing journey conditions…"
+                  : routeConditionStatus === "ready"
+                    ? "Conditions use weather at each expected arrival time."
+                    : routeConditionStatus === "partial"
+                      ? "Some journey weather is outside the available forecast."
+                      : routeConditionStatus === "unavailable"
+                        ? "Journey weather is unavailable; terrain and timing remain usable."
+                        : "Journey conditions await a complete schedule."}
+              </small>
+              {legend && (
+                <div className="route-condition-legend">
+                  <span>{legend.label} · {legend.units}</span>
+                  <i style={{ background: legend.gradient }} />
+                  <div>
+                    {legend.values.map((value) => <em key={value}>{value}</em>)}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+          {routeConditions && (
+            <div className="route-condition-summary">
+              <div>
+                <span>Temperature</span>
+                <strong>
+                  {routeConditions.summary.temperatureRangeC
+                    ? `${routeConditions.summary.temperatureRangeC[0].toFixed(1)}–${routeConditions.summary.temperatureRangeC[1].toFixed(1)} °C`
+                    : "Unavailable"}
+                </strong>
+              </div>
+              <div>
+                <span>Peak wind</span>
+                <strong>
+                  {routeConditions.summary.windMaximumMs === null
+                    ? "Unavailable"
+                    : `${(routeConditions.summary.windMaximumMs * 3.6).toFixed(1)} km/h`}
+                </strong>
+              </div>
+              <div>
+                <span>Precipitation</span>
+                <strong>
+                  {routeConditions.summary.precipitationEncountered === null
+                    ? "Unavailable"
+                    : routeConditions.summary.precipitationEncountered
+                      ? `Up to ${routeConditions.summary.precipitationMaximumMm?.toFixed(2)} mm / 1 h`
+                      : routeConditions.coverage.precipitation.availableSamples ===
+                          routeConditions.coverage.precipitation.totalSamples
+                        ? "No interval rain"
+                        : "None in available samples"}
+                </strong>
+              </div>
+            </div>
+          )}
           {schedule && (
             <div className="route-estimate-copy">
               <strong>Finish {timeLabel(schedule.expectedFinishTime)}</strong>
@@ -195,7 +328,69 @@ export default function RoutePlannerPanel({
             </div>
           </details>
           {route && (
-            <RouteProfile route={route} schedule={schedule} focusedIndex={focusedIndex} onFocusChange={onFocusChange} />
+            <RouteProfile
+              route={route}
+              schedule={schedule}
+              conditions={routeConditions}
+              conditionMode={routeConditionMode}
+              focusedIndex={focusedIndex}
+              onFocusChange={onFocusChange}
+            />
+          )}
+          {focusedCondition && (
+            <div className="route-condition-inspector">
+              <div className="route-condition-inspector-heading">
+                <span>Journey conditions</span>
+                <strong>
+                  {(focusedCondition.cumulativeDistanceM / 1000).toFixed(1)} km · {timeLabel(focusedCondition.journey.expectedArrivalTime)}
+                </strong>
+              </div>
+              <div className="route-condition-inspector-grid">
+                <span>Arrival range</span>
+                <strong>
+                  {timeLabel(focusedCondition.journey.earliestArrivalTime)}–{timeLabel(focusedCondition.journey.latestArrivalTime)}
+                </strong>
+                <span>Elevation</span>
+                <strong>{focusedCondition.terrain.elevationM === null ? "Unavailable" : `${Math.round(focusedCondition.terrain.elevationM)} m`}</strong>
+                <span>Gradient</span>
+                <strong>{focusedCondition.terrain.gradient === null ? "Unavailable" : `${(focusedCondition.terrain.gradient * 100).toFixed(1)}%`}</strong>
+                <span>Temperature</span>
+                <strong>{scalarLabel(focusedCondition.weather.temperature, (value) => `${value.toFixed(1)} °C`)}</strong>
+                <span>Precipitation</span>
+                <strong>{scalarLabel(focusedCondition.weather.precipitation, (value) => value < 0.05 ? "Dry" : `${value.toFixed(2)} mm / 1 h`)}</strong>
+                <span>Cloud</span>
+                <strong>{scalarLabel(focusedCondition.weather.cloud, (value) => `${Math.round(value)}%`)}</strong>
+                <span>Wind</span>
+                <strong>
+                  {focusedCondition.weather.wind.state === "available"
+                    ? `${(focusedCondition.weather.wind.speedMs * 3.6).toFixed(1)} km/h · ${windDirectionLabel(focusedCondition.weather.wind.directionFromDegrees)}`
+                    : "Unavailable"}
+                </strong>
+                <span>Along route</span>
+                <strong>
+                  {focusedCondition.weather.wind.state === "available" &&
+                  focusedCondition.weather.wind.relative
+                    ? focusedCondition.weather.wind.relative.alongRouteMs >= 0
+                      ? `${(focusedCondition.weather.wind.relative.tailwindMs * 3.6).toFixed(1)} km/h tailwind`
+                      : `${(focusedCondition.weather.wind.relative.headwindMs * 3.6).toFixed(1)} km/h headwind`
+                    : "Unavailable"}
+                </strong>
+                <span>Crosswind</span>
+                <strong>
+                  {focusedCondition.weather.wind.state === "available" &&
+                  focusedCondition.weather.wind.relative
+                    ? focusedCondition.weather.wind.relative.crosswindFrom === "calm"
+                      ? "Calm"
+                      : `${(focusedCondition.weather.wind.relative.crosswindMs * 3.6).toFixed(1)} km/h from ${focusedCondition.weather.wind.relative.crosswindFrom}`
+                    : "Unavailable"}
+                </strong>
+              </div>
+              {focusedProvenance && (
+                <small>
+                  GFS 0.25° · run {new Date(focusedProvenance.runTime).getUTCHours().toString().padStart(2, "0")}Z · +{focusedProvenance.forecastHour} h · valid {timeLabel(focusedProvenance.validTime)} · {temporalOffsetLabel(focusedProvenance.temporalOffsetMinutes)}
+                </small>
+              )}
+            </div>
           )}
         </>
       )}

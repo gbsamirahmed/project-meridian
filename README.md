@@ -17,7 +17,7 @@ Meridian is an interactive 3D weather map for exploring forecast conditions acro
 - Global NOAA GFS precipitation, total cloud cover, 10 m wind and 2 m temperature with 24-hour playback.
 - Independently combinable elevation, precipitation, cloud, temperature-contour, pressure-isobar, and animated wind overlays.
 - A point inspector for elevation and weather values at the selected forecast time.
-- Local GPX import with DEM-derived elevation, terrain-aware hiking time estimates, and a linked route profile.
+- Local GPX import with DEM-derived elevation, terrain-aware hiking schedules, linked route/profile inspection, and GFS conditions sampled at expected arrival times.
 - Place search, map selection, current conditions, and responsive map-first controls.
 
 ## Architecture
@@ -40,7 +40,7 @@ NOAA GFS GRIB2
 
 Open-Meteo remains the transitional regional source for map-level pressure. It interpolates a cached 9 × 9 sample grid for presentation; interpolation does not create additional meteorological information. See [Global weather architecture](docs/global-weather-architecture.md) for the detailed data model and migration design.
 
-Route planning is a separate client-side pipeline: GPX geometry is resampled at controlled spacing, enriched from the Terrarium DEM, and passed to a terrain-aware walking model. Journey timing remains independent of weather so route forecasts can be attached later without changing the route domain model.
+Route planning is a separate client-side pipeline: GPX geometry is resampled at controlled spacing, enriched from the Terrarium DEM, and passed to a terrain-aware walking model. A route-condition layer then samples existing GFS fields at each expected arrival time while leaving journey timing independent of weather.
 
 ## Stack
 
@@ -103,6 +103,7 @@ The generator finds the latest usable complete GFS cycle, falls back when the ne
 | `python -m unittest discover -s scripts/weather -p "test_*.py"` | Run preprocessing tests |
 | `node --test scripts/weather/test_temperature_contours.mjs` | Run temperature contour continuity tests |
 | `node --test scripts/route/test_route_foundation.mjs` | Run route and journey-model tests |
+| `node --test scripts/route/test_route_conditions.mjs` | Run route-condition time, wind, and availability tests |
 
 ## Data sources and attribution
 
@@ -122,7 +123,7 @@ Provider availability, acceptable-use policies, rate limits, attribution require
 - GFS precipitation, total cloud cover, 10 m wind and 2 m temperature are 0.25° model fields; close zooms overzoom the same data rather than creating finer meteorological detail.
 - The generated GFS horizon is +24 hours and updates are manually invoked rather than scheduled or published as a production service.
 - Terrain and weather detail remain constrained by their source datasets.
-- Route timing is a general hiking estimate, not a personalised prediction or safety assessment; Route Foundation v1 does not yet sample weather along a journey.
+- Route timing is a general hiking estimate, not a personalised prediction or safety assessment. Journey conditions use discrete GFS fields within the generated +24 h horizon and do not adjust travel time.
 
 ## Further reading
 

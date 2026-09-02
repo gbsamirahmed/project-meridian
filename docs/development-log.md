@@ -385,3 +385,62 @@ Validate the proposed resolver requirements against a third delivery/source
 environment or surveyed repeated route sections, focusing on coverage
 resolution, cache lifecycle, provenance, and filter stability rather than
 matching third-party ascent totals.
+
+## 2026-09-02 — Route Conditions Foundation v1
+
+### Goal
+
+Attach existing environmental fields to the route journey schedule so Meridian
+can show what conditions are expected at each location when the traveller is
+likely to reach it, without changing the movement estimate.
+
+### Changes
+
+- Added a composed route-condition domain joining terrain samples and expected,
+  earliest, and latest arrivals to global GFS temperature, one-hour
+  precipitation, total cloud, and 10 m wind.
+- Added deterministic per-field forecast-time selection, actual-valid-time
+  provenance, batched numeric-tile preparation, synchronous cached sampling,
+  field-independent missing states, and stale-generation cancellation.
+- Added raw U/V preservation plus route-relative headwind, tailwind, and
+  crosswind components with explicit sign conventions.
+- Added normal, temperature, precipitation, wind-speed, and gradient route
+  modes through one data-driven MapLibre segment layer, plus physical-unit
+  legends, a linked profile strip, descriptive summary, and focused journey
+  condition inspector.
+
+### Architectural decisions
+
+Map forecast time and journey departure time are separate controls. Temperature,
+cloud, and wind select the nearest available instantaneous GFS step within
+coverage; ties choose the earlier step. Precipitation selects the actual
+one-hour accumulation interval containing the journey time and is never treated
+as an instantaneous interpolated field. Weather values do not affect route
+speed. Route display density does not imply meteorological resolution, and raw
+conditions remain separate from later interpretation.
+
+### Known limitations
+
+Expected-arrival conditions are the v1 display; earliest/latest timestamps are
+retained but their weather fields are not yet evaluated or classified.
+Conditions are limited to the existing GFS +24 h dataset and 0.25° resolution.
+The summary is descriptive, route colouring uses sampled segment values, and
+there is no gust, visibility, freezing-level, snow, ground-state, hazard, or
+weather-adjusted journey model.
+
+### Verification
+
+Deterministic tests cover temporal boundaries and gaps, precipitation interval
+semantics, cardinal and antimeridian bearings, head/tail/crosswind conventions,
+calm and zero values, missing/partial states, provenance, summaries, and
+gradient presentation without weather. Route/journey, weather preprocessing,
+temperature-contour, lint, build, dependency-audit, and diff checks were run.
+The in-app browser runtime was blocked by a Windows sandbox ACL failure, so no
+automated visual or mobile acceptance is claimed for this milestone.
+
+### Next direction
+
+Visually validate the route-condition interaction across realistic journey
+times, then evaluate which additional raw fields—such as gusts, cloud base,
+visibility, or freezing level—provide the greatest route-planning value before
+introducing any condition interpretation.
