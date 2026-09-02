@@ -111,6 +111,10 @@ The useful research question is therefore:
 
 It is not simply “How finely can the existing DEM be oversampled?” A future benchmark should compare selected profiles with higher-resolution authoritative terrain and external route evidence before changing production filtering.
 
+A later bounded comparison against the official Welsh Government 1 m bare-earth DTM found that source resolution can materially change a route profile, but the effect varies by route. With the same physically defined filter, cumulative ascent on two private Welsh benchmark geometries was already stable across 1–40 m sampling; one-metre route sampling mainly added diagnostic local variation rather than a better basic ascent total. High-resolution 2D terrain remained valuable for local slope, relief, convexity/concavity, and artefact investigation.
+
+The national Cloud Optimized GeoTIFF also supported efficient range/window reads: an offline route-corridor experiment needed only a small fraction of the national raster. This supports a future provider-neutral **analytical** terrain resolver that can select a suitable authoritative regional source while MapLibre's visual terrain continues to use a global fallback. It does not yet justify production integration, a universal filter change, or direct public-browser access to national rasters.
+
 ## Personal journey calibration
 
 With explicit consent, historical activity data could potentially calibrate flat speed, uphill/downhill response, steep-terrain slowdown, fatigue, stop tendencies, or multiple movement regimes.

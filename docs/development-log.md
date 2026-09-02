@@ -304,3 +304,31 @@ The source archive was checked for immutability before and after the run. Synthe
 ### Next direction
 
 Before any Calibration v2, compare frozen recording-derived context guesses with independent user annotations. Constrain later calibration to explicit movement contexts and independently validate any terrain-filter adjustment against authoritative route profiles before considering production changes.
+
+## 2026-09-02 — High-resolution Welsh terrain experiment v1
+
+### Goal
+
+Determine what authoritative one-metre terrain adds beyond Meridian's Terrarium baseline, where route sampling/filtering removes vertical signal, and whether bounded remote access is practical without changing production behaviour.
+
+### Changes
+
+- Added a generic offline terrain-research pipeline for GPX geometry, WGS84-to-national-grid transformation, bounded Cloud Optimized GeoTIFF block caching, Terrarium comparison, physically defined filtering, ascent/descent decomposition, multi-scale 2D terrain metrics, private reports, and plots.
+- Tested route sampling at 1–40 m against transparent median/hysteresis variants while keeping both DEM sources on the same geometry and processing semantics.
+- Added deterministic synthetic tests for CRS transformation, geodesic resampling, raster interpolation, nodata/partial coverage, physical-distance filtering, ascent semantics, planar slope, and neighbourhood terrain metrics.
+
+### Architectural decisions
+
+High-resolution analytical terrain is distinct from visual map terrain. Regional authoritative sources may eventually enrich route analysis behind a small provider boundary while the existing global DEM continues to serve MapLibre terrain. Sampling/filtering must be expressed in physical distance, source differences must remain separate from processing differences, and external route totals are diagnostic rather than optimisation targets.
+
+### Known limitations
+
+The private experiment used only two Welsh benchmark geometries and cannot establish a universal production filter. One-metre DTM detail may include path-alignment effects, bridge decks, inadequately filtered vegetation, or other artefacts. Local roughness and curvature are terrain signals, not evidence of technicality or difficulty.
+
+### Verification
+
+The official national DTM served bounded HTTP ranges and tiled Rasterio window reads; the complete national raster was never downloaded. Private GPXs, raster blocks, derived profiles, reports, and plots remained outside Git. Synthetic terrain tests and the full established repository verification suite passed, and no production terrain, route, movement, rendering, or weather code changed.
+
+### Next direction
+
+Validate a small set of physically defined filters against surveyed or otherwise high-confidence terrain sections and repeated route geometries across Wales plus a second authoritative regional DEM before considering an analytical terrain resolver or production constants.
