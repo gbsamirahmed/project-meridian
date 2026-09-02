@@ -9,13 +9,16 @@ const server = await createServer({
 });
 const conditions = await server.ssrLoadModule("/src/services/routeConditions.ts");
 const styles = await server.ssrLoadModule("/src/services/routeConditionStyle.ts");
+const numericTiles = await server.ssrLoadModule("/src/services/numericTileCache.ts");
 
 test.after(async () => server.close());
 
 function scalarSource(fieldId = "temperature_2m", timeSemantics = "instantaneous") {
+  const isTemperature = fieldId === "temperature_2m";
+  const isCloud = fieldId === "cloud_cover";
   return {
-    manifestUrl: "https://example.test/manifest.json",
-    baseUrl: "https://example.test/run/temperature/",
+    manifestUrl: `https://example.test/run/${fieldId}/manifest.json`,
+    baseUrl: `https://example.test/run/${fieldId}/`,
     manifest: {
       schemaVersion: 2,
       id: `gfs-${fieldId}`,
@@ -32,23 +35,27 @@ function scalarSource(fieldId = "temperature_2m", timeSemantics = "instantaneous
       field: {
         id: fieldId,
         kind: "scalar",
-        sourceParameter: fieldId === "temperature_2m" ? "TMP" : "APCP",
-        sourceLevel: fieldId === "temperature_2m" ? "2 m above ground" : "surface",
+        sourceParameter: isTemperature ? "TMP" : isCloud ? "TCDC" : "APCP",
+        sourceLevel: isTemperature
+          ? "2 m above ground"
+          : isCloud
+            ? "entire atmosphere"
+            : "surface",
         displayName: fieldId,
-        units: fieldId === "temperature_2m" ? "celsius" : "mm",
-        validRange: fieldId === "temperature_2m" ? [-150, 100] : [0, 655.34],
+        units: isTemperature ? "celsius" : isCloud ? "percent" : "mm",
+        validRange: isTemperature ? [-150, 100] : isCloud ? [0, 100] : [0, 655.34],
         timeSemantics,
         nativeResolution: { longitudeDegrees: 0.25, latitudeDegrees: 0.25 },
       },
       tiles: {
         format: "png",
-        encoding: "uint16-rg",
+        encoding: isCloud ? "uint8-r" : "uint16-rg",
         tileSize: 256,
         minZoom: 0,
         maxZoom: 3,
-        scale: 0.1,
-        offset: -150,
-        noData: 65535,
+        scale: isTemperature ? 0.1 : isCloud ? 1 : 0.01,
+        offset: isTemperature ? -150 : 0,
+        noData: isCloud ? 255 : 65535,
         resampling: "bilinear",
         overzoom: true,
       },
@@ -133,6 +140,157 @@ function vectorStep(hour) {
     maximumSpeed: 15,
     tileTemplate: `f${hour}/{z}/{x}/{y}.png`,
   };
+}
+
+function sourceSet(scope = "default") {
+  const temperature = scalarSource("temperature_2m", "instantaneous");
+  temperature.manifest.timesteps = [scalarStep(8), scalarStep(9)];
+  const precipitation = scalarSource("precipitation", "interval-total");
+  precipitation.manifest.timesteps = [
+    scalarStep(8, {
+      accumulationStart: "2026-09-02T07:00:00Z",
+      accumulationEnd: "2026-09-02T08:00:00Z",
+      accumulationHours: 1,
+    }),
+    scalarStep(9, {
+      accumulationStart: "2026-09-02T08:00:00Z",
+      accumulationEnd: "2026-09-02T09:00:00Z",
+      accumulationHours: 1,
+    }),
+  ];
+  const cloud = scalarSource("cloud_cover", "instantaneous");
+  cloud.manifest.timesteps = [scalarStep(8), scalarStep(9)];
+  const wind = vectorSource();
+  wind.manifest.timesteps = [vectorStep(8), vectorStep(9)];
+  const sources = { temperature, precipitation, cloud, wind };
+  for (const [field, source] of Object.entries(sources)) {
+    source.baseUrl = `https://example.test/${scope}/${field}/`;
+    source.manifestUrl = `${source.baseUrl}manifest.json`;
+  }
+  return sources;
+}
+
+function syntheticRoute(sampleCount) {
+  const samples = Array.from({ length: sampleCount }, (_, index) => ({
+    index,
+    longitude: -0.17 + index * 0.001,
+    latitude: 51.5075,
+    cumulativeDistanceM: index * 100,
+    elevationM: 25,
+    smoothedElevationM: 25,
+    gradient: index === 0 ? 0 : 0.01,
+    cumulativeAscentM: index,
+    cumulativeDescentM: 0,
+  }));
+  return {
+    id: "synthetic-route",
+    name: "Synthetic route",
+    samples,
+    totalDistanceM: Math.max(0, (sampleCount - 1) * 100),
+    totalAscentM: Math.max(0, sampleCount - 1),
+    totalDescentM: 0,
+    minimumElevationM: 25,
+    maximumElevationM: 25,
+    elevationCoverage: "complete",
+  };
+}
+
+function syntheticSchedule(times) {
+  const start = Date.parse(times[0]);
+  return {
+    routeId: "synthetic-route",
+    departureTime: times[0],
+    expectedFinishTime: times.at(-1),
+    movingMinutes: (Date.parse(times.at(-1)) - start) / 60000,
+    stoppedMinutes: 0,
+    totalMinutes: (Date.parse(times.at(-1)) - start) / 60000,
+    likelyMinimumMinutes: 0,
+    likelyMaximumMinutes: 0,
+    movementScale: 1,
+    targetComparison: "close-to-baseline",
+    samples: times.map((time, index) => ({
+      routeSampleIndex: index,
+      movingElapsedMinutes: (Date.parse(time) - start) / 60000,
+      stoppedElapsedMinutes: 0,
+      elapsedMinutes: (Date.parse(time) - start) / 60000,
+      arrivalTime: time,
+      earliestArrivalTime: time,
+      latestArrivalTime: time,
+    })),
+  };
+}
+
+function constantPixels(url) {
+  let red = 0;
+  let green = 0;
+  let blue = 0;
+  if (url.includes("/temperature/")) {
+    red = 5;
+    green = 220; // (0 °C - -150 °C) / 0.1 = 1500
+  } else if (url.includes("wind")) {
+    red = 127;
+    green = 223;
+    blue = 240; // U and V both encode the zero-wind bias code 511.
+  }
+  const pixels = new Uint8ClampedArray(256 * 256 * 4);
+  for (let offset = 0; offset < pixels.length; offset += 4) {
+    pixels[offset] = red;
+    pixels[offset + 1] = green;
+    pixels[offset + 2] = blue;
+    pixels[offset + 3] = 255;
+  }
+  return pixels;
+}
+
+async function withSyntheticNumericRuntime(run, options = {}) {
+  const previousFetch = globalThis.fetch;
+  const previousCreateImageBitmap = globalThis.createImageBitmap;
+  const previousDocument = globalThis.document;
+  const failingFragments = new Set(options.failingFragments ?? []);
+  globalThis.fetch = async (input) => {
+    const url = String(input);
+    if ([...failingFragments].some((fragment) => url.includes(fragment))) {
+      throw new Error("Synthetic tile failure");
+    }
+    if (options.delayMs) {
+      await new Promise((resolve) => setTimeout(resolve, options.delayMs));
+    }
+    return {
+      ok: true,
+      status: 200,
+      blob: async () => ({ url }),
+    };
+  };
+  globalThis.createImageBitmap = async (blob) => ({
+    url: blob.url,
+    close() {},
+  });
+  globalThis.document = {
+    createElement() {
+      let activeUrl = "";
+      return {
+        width: 0,
+        height: 0,
+        getContext() {
+          return {
+            drawImage(bitmap) {
+              activeUrl = bitmap.url;
+            },
+            getImageData() {
+              return { data: constantPixels(activeUrl) };
+            },
+          };
+        },
+      };
+    },
+  };
+  try {
+    return await run({ failingFragments });
+  } finally {
+    globalThis.fetch = previousFetch;
+    globalThis.createImageBitmap = previousCreateImageBitmap;
+    globalThis.document = previousDocument;
+  }
 }
 
 test("instantaneous selection is exact, nearest with earlier tie, and bounded", () => {
@@ -331,4 +489,247 @@ test("summary and presentation retain partial availability and gradient without 
   assert.equal(summary.windMaximumMs, null);
   assert.notEqual(styles.routeConditionColour(sample, "gradient"), "#7b8581");
   assert.equal(styles.routeConditionColour(sample, "wind"), "#7b8581");
+});
+
+test("direct global source preparation and sampling preserves valid zero values", async () => {
+  await withSyntheticNumericRuntime(async () => {
+    const sources = sourceSet("direct-source");
+    const coordinate = { longitude: -0.17, latitude: 51.5075 };
+    const temperatureStep = sources.temperature.manifest.timesteps[0];
+    const precipitationStep = sources.precipitation.manifest.timesteps[0];
+    const cloudStep = sources.cloud.manifest.timesteps[0];
+    const windStep = sources.wind.manifest.timesteps[0];
+
+    await numericTiles.prepareScalarFieldCoordinates(
+      sources.temperature,
+      temperatureStep,
+      [coordinate]
+    );
+    await numericTiles.prepareScalarFieldCoordinates(
+      sources.precipitation,
+      precipitationStep,
+      [coordinate]
+    );
+    await numericTiles.prepareScalarFieldCoordinates(
+      sources.cloud,
+      cloudStep,
+      [coordinate]
+    );
+    await numericTiles.prepareVectorFieldCoordinates(
+      sources.wind,
+      windStep,
+      [coordinate]
+    );
+
+    assert.equal(
+      numericTiles.sampleCachedScalarField(
+        sources.temperature,
+        temperatureStep,
+        3,
+        coordinate.longitude,
+        coordinate.latitude
+      ),
+      0
+    );
+    assert.equal(
+      numericTiles.sampleCachedScalarField(
+        sources.precipitation,
+        precipitationStep,
+        3,
+        coordinate.longitude,
+        coordinate.latitude
+      ),
+      0
+    );
+    assert.equal(
+      numericTiles.sampleCachedScalarField(
+        sources.cloud,
+        cloudStep,
+        3,
+        coordinate.longitude,
+        coordinate.latitude
+      ),
+      0
+    );
+    assert.deepEqual(
+      numericTiles.sampleCachedVectorField(
+        sources.wind,
+        windStep,
+        3,
+        coordinate.longitude,
+        coordinate.latitude
+      ),
+      { u: 0, v: 0 }
+    );
+  });
+});
+
+test("a short in-horizon route resolves every field and expected-arrival provenance", async () => {
+  await withSyntheticNumericRuntime(async () => {
+    const times = [
+      "2026-09-02T08:00:00Z",
+      "2026-09-02T08:30:00Z",
+      "2026-09-02T09:00:00Z",
+    ];
+    const result = await conditions.buildRouteConditions(
+      syntheticRoute(times.length),
+      syntheticSchedule(times),
+      sourceSet("short-route")
+    );
+    for (const sample of result.samples) {
+      assert.equal(sample.weather.temperature.state, "available");
+      assert.equal(sample.weather.precipitation.state, "available");
+      assert.equal(sample.weather.cloud.state, "available");
+      assert.equal(sample.weather.wind.state, "available");
+      assert.equal(sample.weather.temperature.value, 0);
+      assert.equal(sample.weather.precipitation.value, 0);
+      assert.equal(sample.weather.cloud.value, 0);
+      assert.equal(sample.weather.wind.speedMs, 0);
+      assert.equal(sample.weather.wind.relative.alongRouteMs, 0);
+      assert.equal(sample.weather.wind.relative.crossRouteMs, 0);
+      assert.equal(
+        sample.weather.temperature.provenance.requestedTime,
+        sample.journey.expectedArrivalTime
+      );
+    }
+    assert.equal(result.coverage.temperature.availableSamples, times.length);
+    assert.equal(result.coverage.precipitation.availableSamples, times.length);
+    assert.deepEqual(result.summary.temperatureRangeC, [0, 0]);
+    assert.equal(result.summary.precipitationEncountered, false);
+    assert.equal(result.summary.windMaximumMs, 0);
+  });
+});
+
+test("partial and entirely out-of-horizon routes retain sample-level availability", async () => {
+  await withSyntheticNumericRuntime(async () => {
+    const partialTimes = [
+      "2026-09-02T08:00:00Z",
+      "2026-09-02T08:30:00Z",
+      "2026-09-02T10:00:00Z",
+    ];
+    const partial = await conditions.buildRouteConditions(
+      syntheticRoute(partialTimes.length),
+      syntheticSchedule(partialTimes),
+      sourceSet("partial-route")
+    );
+    assert.equal(partial.samples[0].weather.temperature.state, "available");
+    assert.equal(partial.samples[1].weather.temperature.state, "available");
+    assert.equal(partial.samples[2].weather.temperature.state, "unavailable");
+    assert.equal(
+      partial.samples[2].weather.temperature.reason,
+      "outside-forecast"
+    );
+    assert.equal(partial.coverage.temperature.availableSamples, 2);
+    assert.notEqual(
+      styles.routeConditionColour(partial.samples[0], "temperature"),
+      "#7b8581"
+    );
+    assert.equal(
+      styles.routeConditionColour(partial.samples[2], "temperature"),
+      "#7b8581"
+    );
+
+    const outsideTimes = [
+      "2026-09-02T10:00:00Z",
+      "2026-09-02T11:00:00Z",
+    ];
+    const outside = await conditions.buildRouteConditions(
+      syntheticRoute(outsideTimes.length),
+      syntheticSchedule(outsideTimes),
+      sourceSet("outside-route")
+    );
+    assert.equal(outside.coverage.temperature.availableSamples, 0);
+    assert.equal(outside.coverage.precipitation.availableSamples, 0);
+    assert.equal(outside.coverage.cloud.availableSamples, 0);
+    assert.equal(outside.coverage.wind.availableSamples, 0);
+  });
+});
+
+test("a missing precipitation interval and one unavailable field do not invalidate neighbours", async () => {
+  await withSyntheticNumericRuntime(async () => {
+    const sources = sourceSet("missing-step");
+    sources.precipitation.manifest.timesteps = [
+      scalarStep(8, {
+        accumulationStart: "2026-09-02T07:00:00Z",
+        accumulationEnd: "2026-09-02T08:00:00Z",
+        accumulationHours: 1,
+      }),
+      scalarStep(10, {
+        accumulationStart: "2026-09-02T09:00:00Z",
+        accumulationEnd: "2026-09-02T10:00:00Z",
+        accumulationHours: 1,
+      }),
+    ];
+    const times = [
+      "2026-09-02T07:30:00Z",
+      "2026-09-02T08:30:00Z",
+      "2026-09-02T09:30:00Z",
+    ];
+    const result = await conditions.buildRouteConditions(
+      syntheticRoute(times.length),
+      syntheticSchedule(times),
+      { ...sources, cloud: null }
+    );
+    assert.equal(result.samples[0].weather.precipitation.state, "available");
+    assert.equal(result.samples[1].weather.precipitation.state, "unavailable");
+    assert.equal(result.samples[1].weather.precipitation.reason, "outside-forecast");
+    assert.equal(result.samples[2].weather.precipitation.state, "available");
+    assert.equal(result.coverage.precipitation.availableSamples, 2);
+    assert.equal(result.coverage.cloud.availableSamples, 0);
+  });
+});
+
+test("a failed field tile settles unavailable, preserves other fields, and can retry", async () => {
+  const sources = sourceSet("failed-field");
+  const route = syntheticRoute(1);
+  const schedule = syntheticSchedule(["2026-09-02T08:00:00Z"]);
+  await withSyntheticNumericRuntime(
+    async () => {
+      const failed = await conditions.buildRouteConditions(route, schedule, sources);
+      assert.equal(failed.samples[0].weather.cloud.state, "unavailable");
+      assert.equal(failed.samples[0].weather.cloud.reason, "tile-unavailable");
+      assert.equal(failed.samples[0].weather.temperature.state, "available");
+      assert.equal(failed.samples[0].weather.precipitation.state, "available");
+      assert.equal(failed.samples[0].weather.wind.state, "available");
+    },
+    { failingFragments: ["/cloud/"] }
+  );
+  await withSyntheticNumericRuntime(async () => {
+    const retried = await conditions.buildRouteConditions(route, schedule, sources);
+    assert.equal(retried.samples[0].weather.cloud.state, "available");
+    assert.equal(retried.samples[0].weather.cloud.value, 0);
+  });
+});
+
+test("an aborted obsolete build cannot complete after a newer departure", async () => {
+  const obsoleteSources = sourceSet("obsolete-build");
+  const currentSources = sourceSet("current-build");
+  const route = syntheticRoute(1);
+  const obsoleteSchedule = syntheticSchedule(["2026-09-02T08:00:00Z"]);
+  const currentSchedule = syntheticSchedule(["2026-09-02T09:00:00Z"]);
+  await withSyntheticNumericRuntime(
+    async () => {
+      const controller = new AbortController();
+      const obsolete = conditions.buildRouteConditions(
+        route,
+        obsoleteSchedule,
+        obsoleteSources,
+        controller.signal
+      );
+      controller.abort();
+      await assert.rejects(obsolete, { name: "AbortError" });
+    },
+    { delayMs: 5 }
+  );
+  await withSyntheticNumericRuntime(async () => {
+    const current = await conditions.buildRouteConditions(
+      route,
+      currentSchedule,
+      currentSources
+    );
+    assert.equal(
+      current.samples[0].weather.temperature.provenance.validTime,
+      "2026-09-02T09:00:00Z"
+    );
+  });
 });

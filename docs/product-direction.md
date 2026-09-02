@@ -207,6 +207,11 @@ as an instantaneous value. Temperature, precipitation, wind, and gradient are
 separate route colour modes with physical-unit legends; Meridian does not combine
 them into an opaque condition or safety score.
 
+Forecast availability is section-specific rather than all-or-nothing. A journey
+may therefore retain valid conditions on covered sections and explicit
+unavailability beyond the generated horizon; an expired catalogue must resolve
+to unavailable rather than remain in a loading state.
+
 ### Snow, ice, avalanche, and cornices
 
 Snow and ice interpretation may eventually combine snowfall, freezing level, snow depth/cover, temperature history, freeze/thaw, elevation, aspect, and wind redistribution.

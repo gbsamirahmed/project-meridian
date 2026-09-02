@@ -438,6 +438,21 @@ temperature-contour, lint, build, dependency-audit, and diff checks were run.
 The in-app browser runtime was blocked by a Windows sandbox ACL failure, so no
 automated visual or mobile acceptance is claimed for this milestone.
 
+### Post-acceptance correction — 2026-09-03
+
+Manual route testing initially found every GFS-backed journey condition
+unavailable. The retained local catalogue and all referenced tiles were complete,
+but its manually generated +24 h run had expired before the tested departures;
+the route-condition forecast bounds were therefore behaving honestly. A fresh
+equivalent run confirmed current short-route coverage and mixed coverage on a
+journey extending past the horizon. The ordinary point inspector also had an
+independent lifecycle issue: its delayed sample requests could be repeatedly
+cancelled as inspection state changed, leaving matching results unresolved in
+the UI. Point sampling now starts immediately while retaining URL deduplication,
+cache reuse, and stale-result suppression. Expanded deterministic tests cover
+direct scalar/vector sampling, complete and partial horizons, missing steps,
+field/tile isolation and retry, valid zeroes, and superseded builds.
+
 ### Next direction
 
 Visually validate the route-condition interaction across realistic journey

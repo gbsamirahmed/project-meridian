@@ -437,6 +437,9 @@ export default function MapView({
     routeConditionModeRef.current = routeConditionMode;
   }, [routeConditionMode]);
 
+  // Start point samples immediately. Inspection updates suppress stale results,
+  // while the shared tile cache deduplicates requests; delaying here can be
+  // perpetually reset by otherwise harmless inspection-state refreshes.
   useEffect(() => {
     if (
       !activeInspection ||
@@ -452,27 +455,24 @@ export default function MapView({
       activeInspection.longitude.toFixed(5),
       activeInspection.latitude.toFixed(5),
     ].join(":");
-    const timeout = window.setTimeout(() => {
-      sampleScalarField(
-        globalPrecipitationSource,
-        activePrecipitationTimestep,
-        activeInspection.longitude,
-        activeInspection.latitude
-      )
-        .then((value) => {
-          if (isCurrent) setGlobalPrecipitationSample({ key, value });
-        })
-        .catch((error: unknown) => {
-          if (isCurrent) {
-            console.error("Global precipitation inspection failed", error);
-            setGlobalPrecipitationSample({ key, value: null });
-          }
-        });
-    }, 80);
+    sampleScalarField(
+      globalPrecipitationSource,
+      activePrecipitationTimestep,
+      activeInspection.longitude,
+      activeInspection.latitude
+    )
+      .then((value) => {
+        if (isCurrent) setGlobalPrecipitationSample({ key, value });
+      })
+      .catch((error: unknown) => {
+        if (isCurrent) {
+          console.error("Global precipitation inspection failed", error);
+          setGlobalPrecipitationSample({ key, value: null });
+        }
+      });
 
     return () => {
       isCurrent = false;
-      window.clearTimeout(timeout);
     };
   }, [
     activeInspection,
@@ -489,27 +489,24 @@ export default function MapView({
       activeInspection.longitude.toFixed(5),
       activeInspection.latitude.toFixed(5),
     ].join(":");
-    const timeout = window.setTimeout(() => {
-      sampleScalarField(
-        globalCloudSource,
-        activeCloudTimestep,
-        activeInspection.longitude,
-        activeInspection.latitude
-      )
-        .then((value) => {
-          if (isCurrent) setGlobalCloudSample({ key, value });
-        })
-        .catch((error: unknown) => {
-          if (isCurrent) {
-            console.error("Global cloud inspection failed", error);
-            setGlobalCloudSample({ key, value: null });
-          }
-        });
-    }, 80);
+    sampleScalarField(
+      globalCloudSource,
+      activeCloudTimestep,
+      activeInspection.longitude,
+      activeInspection.latitude
+    )
+      .then((value) => {
+        if (isCurrent) setGlobalCloudSample({ key, value });
+      })
+      .catch((error: unknown) => {
+        if (isCurrent) {
+          console.error("Global cloud inspection failed", error);
+          setGlobalCloudSample({ key, value: null });
+        }
+      });
 
     return () => {
       isCurrent = false;
-      window.clearTimeout(timeout);
     };
   }, [activeCloudTimestep, activeInspection, globalCloudSource]);
 
@@ -527,26 +524,23 @@ export default function MapView({
       activeInspection.longitude.toFixed(5),
       activeInspection.latitude.toFixed(5),
     ].join(":");
-    const timeout = window.setTimeout(() => {
-      sampleScalarField(
-        globalTemperatureSource,
-        activeTemperatureTimestep,
-        activeInspection.longitude,
-        activeInspection.latitude
-      )
-        .then((value) => {
-          if (isCurrent) setGlobalTemperatureSample({ key, value });
-        })
-        .catch((error: unknown) => {
-          if (isCurrent) {
-            console.error("Global temperature inspection failed", error);
-            setGlobalTemperatureSample({ key, value: null });
-          }
-        });
-    }, 80);
+    sampleScalarField(
+      globalTemperatureSource,
+      activeTemperatureTimestep,
+      activeInspection.longitude,
+      activeInspection.latitude
+    )
+      .then((value) => {
+        if (isCurrent) setGlobalTemperatureSample({ key, value });
+      })
+      .catch((error: unknown) => {
+        if (isCurrent) {
+          console.error("Global temperature inspection failed", error);
+          setGlobalTemperatureSample({ key, value: null });
+        }
+      });
     return () => {
       isCurrent = false;
-      window.clearTimeout(timeout);
     };
   }, [activeInspection, activeTemperatureTimestep, globalTemperatureSource]);
 
@@ -558,26 +552,23 @@ export default function MapView({
       activeInspection.longitude.toFixed(5),
       activeInspection.latitude.toFixed(5),
     ].join(":");
-    const timeout = window.setTimeout(() => {
-      sampleVectorField(
-        globalWindSource,
-        activeWindTimestep,
-        activeInspection.longitude,
-        activeInspection.latitude
-      )
-        .then((value) => {
-          if (isCurrent) setGlobalWindSample({ key, value });
-        })
-        .catch((error: unknown) => {
-          if (isCurrent) {
-            console.error("Global wind inspection failed", error);
-            setGlobalWindSample({ key, value: null });
-          }
-        });
-    }, 80);
+    sampleVectorField(
+      globalWindSource,
+      activeWindTimestep,
+      activeInspection.longitude,
+      activeInspection.latitude
+    )
+      .then((value) => {
+        if (isCurrent) setGlobalWindSample({ key, value });
+      })
+      .catch((error: unknown) => {
+        if (isCurrent) {
+          console.error("Global wind inspection failed", error);
+          setGlobalWindSample({ key, value: null });
+        }
+      });
     return () => {
       isCurrent = false;
-      window.clearTimeout(timeout);
     };
   }, [activeInspection, activeWindTimestep, globalWindSource]);
 

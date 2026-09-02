@@ -1,4 +1,4 @@
-import type { ChangeEvent } from "react";
+import { useMemo, type ChangeEvent } from "react";
 import RouteProfile from "./RouteProfile";
 import { ROUTE_CONDITION_LEGENDS } from "../services/routeConditionStyle";
 import type {
@@ -134,6 +134,25 @@ export default function RoutePlannerPanel({
         focusedCondition.weather.cloud,
       ].find((condition) => condition?.state === "available")?.provenance ?? null
     : null;
+  const allWeatherOutsideForecast = useMemo(
+    () =>
+      Boolean(
+        routeConditions?.samples.length &&
+          routeConditions.samples.every((sample) =>
+            [
+              sample.weather.temperature,
+              sample.weather.precipitation,
+              sample.weather.cloud,
+              sample.weather.wind,
+            ].every(
+              (condition) =>
+                condition.state === "unavailable" &&
+                condition.reason === "outside-forecast"
+            )
+          )
+      ),
+    [routeConditions]
+  );
   return (
     <section className="weather-card route-planner-card">
       <div className="card-heading">
@@ -195,9 +214,11 @@ export default function RoutePlannerPanel({
                   : routeConditionStatus === "ready"
                     ? "Conditions use weather at each expected arrival time."
                     : routeConditionStatus === "partial"
-                      ? "Some journey weather is outside the available forecast."
+                      ? "Some journey weather is unavailable or outside the forecast horizon."
                       : routeConditionStatus === "unavailable"
-                        ? "Journey weather is unavailable; terrain and timing remain usable."
+                        ? allWeatherOutsideForecast
+                          ? "Journey times are outside the available GFS forecast horizon."
+                          : "Journey weather is unavailable; terrain and timing remain usable."
                         : "Journey conditions await a complete schedule."}
               </small>
               {legend && (
