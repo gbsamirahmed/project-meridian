@@ -258,10 +258,11 @@ Establish a privacy-preserving evidence layer for investigating whether historic
 - Added offline FIT/FIT.GZ, GPX/GPX.GZ, and TCX/TCX.GZ ingestion with a common optional-field activity model, source provenance, catalogue/file inventory checks, and aggregate private reporting.
 - Added explicit evidence states for plausible movement, stationary recording, timer pauses, timestamp gaps, GPS anomalies, and uncertain data, plus deterministic synthetic tests.
 - Added a terrain-enrichment boundary for a later experiment using Meridian's existing DEM methodology; this milestone performs no bulk elevation download and stores no private activity data in the repository.
+- Added deterministic blind context-inference tooling that preserves the source catalogue, keeps generated annotations private, never uses activity names/descriptions, and places blank human-review columns beside frozen recording-derived guesses.
 
 ### Architectural decisions
 
-Strava activity labels are catalogue context rather than movement truth. Recorded stops, explicit pauses, gaps, and movement remain separate evidence, and device elevation remains diagnostic rather than canonical terrain. Reusable code lives in Meridian, while source recordings and generated research outputs stay outside Git.
+Strava activity labels are catalogue context rather than movement truth. Recorded stops, explicit pauses, gaps, and movement remain separate evidence, and device elevation remains diagnostic rather than canonical terrain. Passively observable movement/terrain evidence remains distinct from user-provided context such as party, load, conditions, intent, or technicality. Reusable code lives in Meridian, while source recordings and generated research outputs stay outside Git.
 
 ### Known limitations
 
@@ -274,3 +275,32 @@ The importer was exercised against the private archive after a representative-sa
 ### Next direction
 
 Enrich a bounded representative subset with the same Terrarium and terrain-metric conventions as planned routes, then compare a small interpretable personal gradient-to-speed relationship against Meridian's unchanged generic model on held-out complete activities.
+
+## 2026-09-02 — Terrain resolution and personal calibration experiment v1
+
+### Goal
+
+Test, without changing production behaviour, whether denser sampling recovers meaningful terrain variation and whether an interpretable personal slope-response model improves whole-activity journey estimates.
+
+### Changes
+
+- Added reusable modules for bounded behaviour-based activity selection, timestamp-derived movement evidence, cached Terrarium enrichment, and structured comparisons of sample spacing, smoothing footprint, hysteresis, and gradient windows.
+- Added a robust binned slope-response model with shrinkage toward Meridian's unchanged generic curve, repeated whole-activity validation, progression checks, and private report/chart generation.
+- Added synthetic tests for coherent very-slow movement, GPS jitter, label-independent selection, Terrarium decoding, terrain-filter sensitivity, leakage-safe folds, and interpretable calibration behaviour.
+- Kept all archive-derived datasets, reports, charts, identifiers, and results outside the repository.
+
+### Architectural decisions
+
+Raw timestamped geographic progression is the primary timing evidence; provider summaries, activity labels, device speed, and recorded altitude are diagnostic only. Movement, stationary recording, timer pauses, gaps, anomalies, and uncertainty remain separate. Denser 10–20 m sampling of the same roughly 30 m DEM did not independently recover trustworthy relief; smoothing/filter choice, not nominal sample spacing alone, materially affects cumulative ascent. Model evaluation holds out complete activities and shrinks sparse slope evidence toward Meridian's unchanged generic curve.
+
+### Known limitations
+
+The bounded archive sample mixes movement contexts that cannot yet be identified reliably from recording data alone. Terrain-source resolution, technical ground, weather, party, load, intent, injury, and pause meaning remain confounders. A single personal curve improved some aggregate diagnostics but did not generalise across all contexts. The experiment therefore does not justify a universal personal profile, automatic behaviour classification, or production terrain/timing changes.
+
+### Verification
+
+The source archive was checked for immutability before and after the run. Synthetic research tests and the existing route, weather, contour, lint, build, dependency-audit, and diff checks were run. Private results remain outside Git and production route constants were unchanged.
+
+### Next direction
+
+Before any Calibration v2, compare frozen recording-derived context guesses with independent user annotations. Constrain later calibration to explicit movement contexts and independently validate any terrain-filter adjustment against authoritative route profiles before considering production changes.

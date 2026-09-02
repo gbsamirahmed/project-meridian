@@ -1,146 +1,298 @@
-# Meridian Product Direction
+# Meridian product and research direction
 
-## Purpose of this document
+## Purpose and status
 
-This document explains what Meridian is trying to become and why. It is a living statement of product direction, not a feature roadmap or technical specification.
+This document is Meridian's living design and research notebook. It records product direction, candidate capabilities, hypotheses, unresolved questions, and approaches that evidence has weakened or rejected. It is not a delivery roadmap or a promise that every idea will be implemented.
 
-- `README.md` describes the application as it currently exists and how to run it.
-- The source code is authoritative for implementation details.
+- `README.md` describes what currently works and how to run it.
+- `docs/development-log.md` records completed implementation and research milestones.
+- Source code remains authoritative for implementation details.
 
-This document separates established direction from hypotheses and open questions so that exploratory ideas do not silently become commitments.
+Terms such as **direction**, **candidate**, **potential**, **research question**, and **not yet implemented** are deliberate. When an experiment changes a decision, retain the hypothesis → experiment → finding → decision trail rather than rewriting history.
 
-## Current position
+## Product idea
 
-Meridian is currently a client-only weather-map prototype built with React and MapLibre. It demonstrates a navigable map with 3D terrain, location selection and search, gridded weather retrieval, spatial weather overlays, and forecast exploration across time.
+Meridian is moving toward a terrain-first outdoor journey intelligence system, while retaining the exploratory global weather map as a valuable way to understand the wider atmosphere.
 
-The prototype is a technical starting point, not a settled product design. Its current features and architecture should be preserved during ordinary work, but they should not automatically be treated as the ideal final form.
+The central route-planning question is:
 
-## Central idea
+> I already have a route. What should I expect along the way, and when?
 
-Meridian is intended to make weather conditions spatially understandable.
+A route supplies the spatial backbone. A journey model turns that geometry into scheduled positions. Terrain and environmental data then become useful in the context of where the traveller is expected to be at a particular time.
 
-Conventional weather products often separate a forecast from the landscape. Values, icons, charts, and broad weather maps can describe conditions, but they may not clearly show what those conditions mean for a particular area, route, ridge, valley, or period of time.
+Current implementation establishes only part of that direction: global weather exploration and Route Foundation v1 exist, but route weather, contextual terrain inference, personalised timing, stages, and conditions-adjusted travel remain future work.
 
-Meridian should explore weather as part of the geography itself. A user should be able to understand not only the forecast at one coordinate, but also how conditions vary across an area and develop over time.
+## Route-first workflow
 
-The central elements are:
+The preferred conceptual chain is:
 
-- Geographic context
-- Weather data
-- Terrain
-- Time
-- Clear visual communication
+```text
+route geometry
+  → terrain understanding
+  → movement and journey model
+  → scheduled position along the route
+  → environmental sampling
+  → route conditions
+  → potential conditions-adjusted journey model
+```
 
-The result should be useful and visually compelling. Visual quality is not merely decorative: it should make terrain and weather patterns easier to understand.
+The boundaries matter:
 
-## Outdoor relevance
+- GPX is an input format, not the route domain model.
+- Terrain enrichment should not depend on a weather provider.
+- Physical movement should remain separate from journey organisation and stops.
+- Weather should attach to scheduled route samples rather than remain an unrelated map overlay.
+- A later feedback step from conditions into travel time must be transparent and evidence-based, not an unexplained penalty.
 
-Outdoor use is an important source of product direction, particularly for activities where terrain and changing conditions matter. Potential use cases include:
+## Journey modelling
 
-- Understanding forecast conditions around mountains and exposed terrain
-- Comparing conditions across nearby places
-- Seeing how weather may vary along or around a proposed route
-- Exploring how conditions develop during the hours of an outdoor day
-- Identifying important changes in precipitation, cloud, visibility, wind, temperature, or other relevant variables
+The physical movement model describes travel over terrain. Journey organisation describes how that movement is arranged.
 
-These are directions, not a final prioritised feature list. Meridian is not currently a safety system, a professional forecasting tool, or a substitute for authoritative forecasts and personal judgement. It should not imply guarantees that its data cannot support.
+Potential movement or planning context includes:
 
-## Product principles
+- walking, hiking, running, or another explicit travel mode;
+- solo or group travel;
+- experience and personal calibration;
+- load;
+- breaks, planned stops, camps, and waypoints.
 
-1. **Spatial understanding comes first.** Weather should be connected to place and area, not reduced to a single forecast card.
-2. **Terrain should carry information.** 3D terrain and relief should help users interpret geography and conditions rather than serving only as decoration.
-3. **Time is a core dimension.** Users should be able to understand how conditions develop, not just view one static forecast state.
-4. **Clarity over data volume.** More layers and numbers do not automatically produce a better product. Each visualisation should answer an identifiable question.
-5. **Outdoor relevance without false authority.** Meridian can support outdoor planning, but it must not imply precision, certainty, or safety guarantees that its data cannot provide.
-6. **Honest representation.** Interpolation, forecast resolution, uncertainty, and other limitations should not be visually disguised as greater precision.
-7. **Exploration before premature infrastructure.** The current purpose is to discover the strongest product and visualisation ideas, not to add large systems merely to make the prototype appear production-ready.
-8. **Current implementation is not permanent product policy.** Preserve working behaviour during ordinary changes, while allowing later architectural reconsideration when a clear product need supports it.
+The model should support both planning directions:
 
-## Weather visualisation
+1. Given a route and travel profile, estimate duration and arrival windows.
+2. Given a desired duration or finish time, estimate the required pace while retaining terrain-aware relative timing.
 
-Meridian should move beyond treating weather as isolated values at a selected point. Important ideas to explore include:
+Movement time, short breaks, major planned stops, and overnight camps should remain distinct. Predictions should use useful arrival windows rather than imply false precision.
 
-- Continuous spatial layers rather than only point markers
-- Movement through forecast time
-- Multiple weather variables viewed in geographic context
-- Visualisations that remain understandable over complex terrain
-- Clear distinction between measured, modelled, interpolated, and derived information
-- Honest communication of uncertainty and limited data resolution when relevant
+### Stages, not automatic “days”
 
-The goal is not to place every available dataset on a map. A layer should help answer a meaningful user question and remain legible alongside the terrain and other interface elements.
+A long GPX does not imply a multi-day walk. The same geometry could represent an ultra, one long day, several stages, or a much longer itinerary. The internal abstraction should therefore be a **stage**, not an automatically inferred day.
 
-Realistic atmospheric presentation and analytical clarity may conflict. Meridian has not decided whether its weather rendering should be realistic, stylised, or a deliberate combination of both. That remains a design question to investigate rather than an established requirement.
+Potential stage controls include:
 
-## Terrain and FATMAP inspiration
+- number of stages;
+- target movement duration;
+- desired finish time;
+- a selected or dragged route position;
+- a named waypoint, camp, bothy, accommodation, or transport deadline.
 
-FATMAP is a reference for the quality and legibility of mountain terrain, not a specification to copy. The relevant ambition is a 3D landscape in which users can readily understand:
+Useful bidirectional questions include:
 
-- Mountain shape
-- Ridges and valleys
-- Slopes and aspects
-- Relative elevation
-- The relationship between terrain, routes, and environmental conditions
+- “If I move for eight hours, where might I reach?”
+- “If this is the stage endpoint, what arrival window and pace does it imply?”
 
-High-quality terrain should support comprehension rather than act as an impressive background. Reaching this level may eventually require better elevation data, terrain meshes, imagery, rendering, or preprocessing than the prototype currently uses. Those choices remain unresolved and should be investigated before becoming architectural commitments.
+Stage boundaries also change route × time weather exposure, so they should remain first-class planning decisions controlled by the user.
 
-## Relationship with Merlin Maps
+## Terrain intelligence
 
-Merlin Maps is a separate hiking-routing project owned by a friend. A useful conceptual distinction is:
+Terrain is more than elevation gain. Potential descriptors include gradient, aspect, sustained climbing and descending, rolling relief, ridge/valley form, exposure, local shape, cliffs, and—where suitable external evidence exists—surface or technical character.
 
-- Merlin Maps helps answer: "Where do I go?"
-- Meridian helps answer: "What are the conditions there?"
+An important distinction is now established:
 
-Routes could give Meridian a geographic structure through which to explain changing conditions, while Meridian could add environmental context to route planning. There may therefore be substantial value in combining routing, terrain, and weather intelligence.
+- **Terrain profile** can often be estimated reasonably from GPS geometry plus a DEM: broad relief, gradients, sustained climbs, and vertical range.
+- **Terrain surface or technicality** generally cannot be inferred from an approximately 30 m DEM alone.
 
-The relationship is not settled. Possibilities include keeping the projects separate while sharing ideas or data, Meridian providing weather and terrain capabilities within Merlin Maps, Merlin providing routing within Meridian, or a later combined product.
+Consequently:
 
-Do not assume integration, shared ownership, a shared codebase, or a particular technical architecture. Any integration requires an explicit future decision involving the owner of Merlin Maps.
+```text
+steep ≠ technical
+slow ≠ rough
+mountainous ≠ scrambling
+```
 
-## What is established
+Potential future surface evidence may include higher-resolution authoritative terrain, OpenStreetMap path/surface data, land cover, geology, mapped route information, or other appropriately licensed datasets. These are candidates, not current capabilities.
 
-- Meridian is centred on spatial weather understanding.
-- Weather, geography, terrain, and time are the project's central elements.
-- Outdoor and mountain use is an important source of use cases.
-- Visual quality should support comprehension.
-- The current prototype is exploratory rather than a finished product.
-- Merlin Maps is separate, and any integration remains undecided.
+### Terrain-resolution research finding
 
-## What remains open
+The completed privacy-preserving experiment found that the production-style terrain pipeline materially suppresses repeated small vertical variation. However, sampling the same roughly 30 m Terrarium source at 10–20 m spacing did not independently recover trustworthy extra relief. Denser sampling can merely interpolate the same information.
 
-The following are open questions, not requirements:
+The useful research question is therefore:
 
-- Who the first primary user should be
-- Whether the initial focus should be mountain users specifically or broader weather exploration
-- The first planning task Meridian should solve exceptionally well
-- Whether to prioritise desktop exploration, mobile outdoor use, or a staged progression between them
-- The balance between realistic atmospheric rendering and analytical legibility
-- Which weather variables deserve priority
-- How uncertainty and forecast resolution should be communicated
-- How far to pursue FATMAP-level terrain and what data and rendering pipeline that would require
-- Whether routing belongs within Meridian
-- Whether and how Meridian should integrate with Merlin Maps
-- Whether the long-term product remains client-only or eventually requires supporting infrastructure
+> What spatial filtering best separates genuine relief from DEM noise and interpolation?
 
-## Near-term purpose
+It is not simply “How finely can the existing DEM be oversampled?” A future benchmark should compare selected profiles with higher-resolution authoritative terrain and external route evidence before changing production filtering.
 
-For now, Meridian should be treated as a platform for evaluating weather-map interactions and visualisations. Near-term work should help answer:
+## Personal journey calibration
 
-- Which spatial weather layers are genuinely informative?
-- How should terrain and weather be composed visually?
-- How should a user move through forecast time?
-- What information is useful when examining an outdoor location or route?
-- Where does the current coarse weather grid create misleading or unattractive results?
-- Which improvements create meaningful understanding rather than visual novelty?
+With explicit consent, historical activity data could potentially calibrate flat speed, uphill/downhill response, steep-terrain slowdown, fatigue, stop tendencies, or multiple movement regimes.
 
-Do not infer a detailed feature roadmap from these questions. The next priorities should emerge from evaluating the prototype and choosing a clear initial user problem.
+The preferred approach is interpretable and testable:
 
-## Maintaining this document
+- reconstruct movement from timestamps and geographic progression;
+- keep movement, stationary recording, pauses, gaps, and anomalies distinct;
+- evaluate historical and planned routes against compatible terrain data;
+- hold out complete activities rather than splitting neighbouring segments across train/test;
+- shrink sparse evidence toward a generic model;
+- compare progression through a route as well as final duration.
 
-Update this document when product decisions are actually made. Preserve a clear distinction between:
+The first experiment weakened the idea of one universal personal speed curve. A single curve improved some aggregate diagnostics but did not generalise across all movement contexts. No production terrain or timing constant changed.
 
-- Established direction
-- Current hypotheses
-- Open questions
-- Rejected or superseded ideas
+Possible contextual regimes include walking, hiking, running, trail running, technical terrain, group travel, heavy load, recovery/injury, and difficult conditions. These labels must not be assumed to be passively inferable from activity tracks.
 
-Do not silently convert exploratory ideas into commitments. When a decision changes, record the change clearly enough that future work does not rely on outdated assumptions.
+### Activity-context inference finding
+
+The frozen context experiment separated passively observable evidence from context only the user or another source can provide.
+
+Recording plus DEM evidence can sometimes support:
+
+- broad movement behaviour;
+- sustained walking/running phases;
+- pauses, gaps, and recording-quality evidence;
+- large-scale terrain profile.
+
+It generally cannot defensibly establish:
+
+- terrain surface or technicality;
+- party composition;
+- pack/load;
+- environmental conditions;
+- injury or intent;
+- why a stop occurred.
+
+This suggests three distinct future input classes:
+
+1. **Passively observable data** from the recording and terrain.
+2. **User-provided context** such as load, party, intent, injury, or known technicality.
+3. **External environmental data** such as forecast weather, ground state, or authoritative hazards.
+
+Calibration v2 has not begun. Any future work should compare frozen recording-derived guesses with independent user annotations before selecting model contexts.
+
+## Privacy as a product principle
+
+Personal data use should be explicit, opt-in, purpose-specific, understandable, inspectable, and revocable where feasible. Possessing data for one feature does not imply permission to use it for another.
+
+For example:
+
+- “Use my activities to calibrate my own journey model” is distinct from
+- “Use my activities to improve general Meridian research or models.”
+
+Potential future privacy UX includes consent per purpose, a data-use dashboard, visibility into derived profiles, deletion/reset controls, and local/private processing where practical. These are directions, not claims about the current UI.
+
+## Route conditions
+
+Long-term route intelligence may combine weather, terrain, ground/surface, time, and exposure. It should avoid collapsing evidence into one unexplained risk score.
+
+Prefer answering:
+
+> What is happening, where, when, why, and what evidence supports it?
+
+Candidate factual or derived conditions include:
+
+- temperature, precipitation, wind and gusts;
+- cloud, visibility, and terrain-cloud intersection;
+- freezing level, snowfall, snow cover/depth, ice, and freeze/thaw;
+- recent rainfall, ground saturation, and water crossings;
+- slope, aspect, ridge exposure, and solar exposure;
+- thunder/lightning-related conditions;
+- route-relative headwind, crosswind, and tailwind.
+
+Derived conditions should expose inputs, provenance, resolution, and uncertainty.
+
+### Snow, ice, avalanche, and cornices
+
+Snow and ice interpretation may eventually combine snowfall, freezing level, snow depth/cover, temperature history, freeze/thaw, elevation, aspect, and wind redistribution.
+
+Avalanche risk should use authoritative forecasts wherever available. In Scotland, the Scottish Avalanche Information Service is a key example. Raw GFS fields plus slope are not a substitute for an authoritative avalanche forecast.
+
+Likewise, ridge + snow + wind may indicate potentially cornice-prone terrain, but Meridian should not claim exact cornice prediction without an appropriate model and data.
+
+### Cloud and visibility
+
+Total cloud cover is useful for broad visualisation. Route planning will benefit more directly from cloud base, visibility, precipitation, elevation, and their uncertainty. “Will this route position likely be inside cloud?” is more actionable than total cloud percentage alone.
+
+### Wind
+
+Current GFS wind is honest large-scale 10 m model wind. Visual improvements remain possible for particle sizing, globe distribution, terrain/depth interaction, and polish.
+
+GFS 0.25° does not resolve mountain-scale airflow around individual ridges and valleys. Any future terrain-aware wind must be labelled as a derived visualisation, downscaling method, or separate model—not silently presented as native GFS detail.
+
+## Global weather architecture and priorities
+
+Preserve the implemented provider-neutral path:
+
+```text
+numerical model
+  → preprocessing and validation
+  → provider-neutral global fields
+  → numeric web tiles
+  → renderers and inspectors
+```
+
+Weather belongs to Earth, not to a temporary viewport sampling rectangle. Overzooming must not imply new meteorological information, and sources must not be silently blended.
+
+Current global GFS fields are precipitation, total cloud cover, 10 m wind, and 2 m temperature. Pressure remains regional/legacy, but being the final unmigrated map variable does not automatically make it the highest-value next migration.
+
+Future priorities should follow route usefulness. Candidates include gusts, freezing level, snowfall, snow cover/depth, cloud base, visibility, antecedent precipitation, and convection/lightning-related fields. Availability, semantics, licensing, storage, and honest interpretation must be evaluated before selection.
+
+## Stage endpoints and live landscape information
+
+### Potential stage-end or camping terrain
+
+A future tool could identify terrain that appears **potentially suitable** for stopping or camping. It should never instruct “Camp here.”
+
+Candidate evidence includes local slope and contiguous flat area, elevation, exposure, forecast wind/weather, rainfall and wetness, streams/flood risk, land cover, cliffs, access restrictions, and distance/time along the route.
+
+Physical suitability must remain separate from legality, access, environmental appropriateness, and user judgement. Link to authoritative local guidance where possible.
+
+### Live landscape events
+
+Potential route intelligence includes wildfires, path closures, landslips, bridge failures, flooding, reopenings, access restrictions, and temporary hazards. Prefer authoritative sources and retain geometry, provenance, freshness, and confidence/status.
+
+If a route intersects an issue, do not silently reroute it. Explain the affected section, optionally present alternatives with distance/ascent/time/weather implications, and let the user decide.
+
+## Specialist services and ecosystem
+
+Meridian should not pretend to replace every specialist outdoor service. It can integrate or deep-link to authoritative and specialist sources while respecting licensing and terms.
+
+Examples include Met Office mountain forecasts, SAIS, Walkhighlands, and country-specific mapping services such as swisstopo. The principle is:
+
+> Here is Meridian's analysis, where it came from, and the relevant specialist evidence.
+
+Merlin Maps remains a separate hiking-routing project. A useful conceptual distinction is “Where do I go?” versus “What conditions will I encounter?” Possible integration remains undecided and requires an explicit decision with its owner; do not assume shared code, ownership, or product direction.
+
+## Visual and rendering direction
+
+Retain the FATMAP/mapped.earth-inspired ambition for legible terrain-first exploration without copying another product. MapLibre remains the geographic and navigation engine; custom renderers can progressively handle scalar, vector, terrain-derived, and atmospheric fields.
+
+Potential reusable concepts include `ScalarFieldRenderer`, `VectorFieldRenderer`, and `TerrainFieldRenderer`, introduced only when real implementation reuse justifies them.
+
+Visualisation can be expressive without falsifying data:
+
+> Never invent the underlying meteorology, but do not be afraid to invent the pixels used to communicate it.
+
+Wind particles are not literal tracked air parcels. Future procedural cloud detail could be visually generated while constrained by honest cloud amount, altitude, and motion. Data, interpolation, derivation, and stylisation must remain distinguishable.
+
+## Source, inference, and decision principles
+
+- Prefer authoritative data where available.
+- Make provenance visible and label derived inference as derived.
+- Communicate uncertainty explicitly.
+- Do not imply finer spatial or temporal resolution than the source provides.
+- Do not silently mix sources or fabricate intermediate forecast times.
+- Do not turn uncertainty into precise-looking scores.
+- Keep consequential route choices under user control.
+- Treat absence of evidence as unknown, not evidence of normality or safety.
+- Preserve specialist warnings rather than replacing them with a general model.
+
+## Open research questions
+
+- Which route × time conditions provide the greatest planning value?
+- What terrain filtering is defensible against authoritative high-resolution benchmarks?
+- Which movement contexts can be inferred, and which must be user-supplied?
+- Can contextual personal calibration improve held-out long and high-ascent journeys without hiding failure modes?
+- How should stages, explicit stops, and uncertainty interact?
+- Which weather fields justify the preprocessing/storage cost for route use?
+- How can route-condition explanations remain useful without becoming a false safety score?
+- Which specialist datasets permit integration or linking under their current terms?
+
+## Approaches currently rejected or weakened
+
+- Oversampling the current DEM as if it creates higher-resolution terrain truth.
+- Treating activity labels, provider moving time, or a universal minimum speed as calibration truth.
+- Inferring surface technicality, party, load, or conditions from slow/irregular movement alone.
+- Using one opaque personal model before interpretable contextual evidence is validated.
+- Automatically dividing long routes into “days.”
+- Presenting GFS wind as ridge-scale airflow.
+- Replacing authoritative avalanche or access information with generic inference.
+- Silently rerouting a user's plan around detected issues.
+
+These positions can change if future evidence justifies it. If they do, record the evidence and decision rather than removing the earlier reasoning.
