@@ -4,6 +4,10 @@ import hashlib
 import math
 import os
 import sys
+import time
+import urllib.error
+import urllib.parse
+import urllib.request
 from collections import OrderedDict
 from dataclasses import asdict, dataclass
 from pathlib import Path
@@ -12,6 +16,7 @@ from typing import Iterable, Sequence
 import numpy as np
 import rasterio
 from pyproj import Transformer
+from rasterio.io import MemoryFile
 from rasterio.windows import Window
 
 from route_geometry import RouteGeometry
@@ -23,6 +28,16 @@ WELSH_DTM_URL = (
 )
 WELSH_DTM_CRS = "EPSG:27700"
 WGS84_CRS = "EPSG:4326"
+EA_DTM_WCS_URL = (
+    "https://environment.data.gov.uk/spatialdata/"
+    "lidar-composite-digital-terrain-model-dtm-1m/wcs"
+)
+EA_DTM_COVERAGE_ID = (
+    "13787b9a-26a4-4775-8523-806d13af58fc__"
+    "Lidar_Composite_Elevation_DTM_1m"
+)
+EA_DTM_NODATA = -3.4028234663852886e38
+EA_DTM_BLOCK_SIZE = 1024
 
 
 @dataclass(slots=True, frozen=True)
@@ -296,6 +311,206 @@ class WelshCogBlockCache:
                     destination_col : destination_col + source_col_1 - source_col_0,
                 ] = values[source_row_0:source_row_1, source_col_0:source_col_1]
         return grid
+
+
+class EAWcsBlockCache(WelshCogBlockCache):
+    """Bounded route-local cache for the official EA 1 m DTM WCS."""
+
+    def __init__(
+        self,
+        cache_root: Path,
+        url: str = EA_DTM_WCS_URL,
+        coverage_id: str = EA_DTM_COVERAGE_ID,
+        max_cache_bytes: int = 750_000_000,
+        max_blocks: int = 320,
+        memory_blocks: int = 12,
+        minimum_request_interval_s: float = 0.4,
+    ) -> None:
+        self.url = url
+        self.coverage_id = coverage_id
+        self.metadata = RasterMetadata(
+            url=url,
+            driver="WCS 2.0.1 / GeoTIFF",
+            width=576_000,
+            height=661_000,
+            crs=WELSH_DTM_CRS,
+            transform=(1.0, 0.0, 80_000.0, 0.0, -1.0, 665_000.0, 0.0, 0.0, 1.0),
+            bounds=(80_000.0, 4_000.0, 656_000.0, 665_000.0),
+            pixel_size_m=1.0,
+            dtype="float32",
+            nodata=EA_DTM_NODATA,
+            block_shape=(EA_DTM_BLOCK_SIZE, EA_DTM_BLOCK_SIZE),
+            overviews=(),
+            compression="server GeoTIFF; private NPZ block cache",
+            layout="route-local WCS subsets",
+        )
+        identity = f"{url}|{coverage_id}|{EA_DTM_BLOCK_SIZE}"
+        self.cache_root = cache_root / hashlib.sha256(identity.encode("utf-8")).hexdigest()[:16]
+        self.max_cache_bytes = max_cache_bytes
+        self.max_blocks = max_blocks
+        self.memory_blocks = memory_blocks
+        self.memory = OrderedDict()
+        self.disk_cache_hits = 0
+        self.downloaded_blocks = 0
+        self.remote_uncompressed_bytes = 0
+        self.downloaded_bytes = 0
+        self.request_count = 0
+        self.failed_requests = 0
+        self.minimum_request_interval_s = minimum_request_interval_s
+        self._last_request_started = 0.0
+        self.transformer = Transformer.from_crs(
+            WGS84_CRS, WELSH_DTM_CRS, always_xy=True
+        )
+
+    def _coverage_url(
+        self, west: float, south: float, east: float, north: float
+    ) -> str:
+        parameters = [
+            ("service", "WCS"),
+            ("version", "2.0.1"),
+            ("request", "GetCoverage"),
+            ("coverageId", self.coverage_id),
+            ("format", "image/tiff"),
+            ("subset", f"E({west:.0f},{east:.0f})"),
+            ("subset", f"N({south:.0f},{north:.0f})"),
+        ]
+        return self.url + "?" + urllib.parse.urlencode(parameters)
+
+    def _request_geotiff(
+        self, west: float, south: float, east: float, north: float
+    ) -> bytes:
+        last_error: Exception | None = None
+        for attempt in range(3):
+            wait = self.minimum_request_interval_s - (
+                time.monotonic() - self._last_request_started
+            )
+            if wait > 0:
+                time.sleep(wait)
+            self._last_request_started = time.monotonic()
+            request = urllib.request.Request(
+                self._coverage_url(west, south, east, north),
+                headers={"User-Agent": "Meridian terrain research/2"},
+            )
+            try:
+                with urllib.request.urlopen(request, timeout=90) as response:
+                    payload = response.read(12 * 1024 * 1024)
+                    if response.read(1):
+                        raise RuntimeError("EA WCS response exceeded the 12 MiB block limit")
+                    if response.status != 200 or response.headers.get_content_type() != "image/tiff":
+                        raise RuntimeError(
+                            f"Unexpected EA WCS response: HTTP {response.status} "
+                            f"{response.headers.get_content_type()}"
+                        )
+                self.request_count += 1
+                self.downloaded_bytes += len(payload)
+                return payload
+            except (OSError, RuntimeError, urllib.error.URLError) as error:
+                last_error = error
+                self.failed_requests += 1
+                if attempt < 2:
+                    time.sleep(1.0 * (attempt + 1))
+        raise RuntimeError("EA WCS block request failed after bounded retries") from last_error
+
+    def _decode_subset(
+        self,
+        payload: bytes,
+        expected_transform: tuple[float, float, float, float, float, float],
+        expected_shape: tuple[int, int],
+    ) -> np.ndarray:
+        with MemoryFile(payload) as memory:
+            with memory.open() as source:
+                if str(source.crs) != WELSH_DTM_CRS or source.dtypes[0] != "float32":
+                    raise ValueError("Unexpected EA WCS raster CRS or data type")
+                if (source.height, source.width) != expected_shape:
+                    raise ValueError(
+                        f"Unexpected EA WCS raster shape {(source.height, source.width)}"
+                    )
+                actual = tuple(float(value) for value in source.transform)[:6]
+                if not np.allclose(actual, expected_transform, atol=1e-6):
+                    raise ValueError("EA WCS subset transform does not match its request")
+                values = source.read(1).astype(np.float32, copy=False)
+                nodata = source.nodata
+        invalid = ~np.isfinite(values)
+        if nodata is not None:
+            invalid |= np.isclose(values, float(nodata), rtol=0.0, atol=1e30)
+        values[invalid] = np.nan
+        return values
+
+    def probe_projected(self, x: float, y: float, size_m: int = 10) -> dict[str, object]:
+        half = size_m // 2
+        west = math.floor(x) - half
+        south = math.floor(y) - half
+        east = west + size_m
+        north = south + size_m
+        payload = self._request_geotiff(west, south, east, north)
+        values = self._decode_subset(
+            payload,
+            (1.0, 0.0, float(west), 0.0, -1.0, float(north)),
+            (size_m, size_m),
+        )
+        finite = values[np.isfinite(values)]
+        return {
+            "bytes": len(payload),
+            "valid_fraction": float(len(finite) / values.size),
+            "nonzero_fraction": float(np.count_nonzero(np.abs(finite) > 1e-6) / values.size),
+            "minimum_m": None if not len(finite) else float(np.min(finite)),
+            "maximum_m": None if not len(finite) else float(np.max(finite)),
+        }
+
+    def prepare_blocks(self, keys: Iterable[tuple[int, int]]) -> None:
+        ordered = sorted(set(keys))
+        if len(ordered) > self.max_blocks:
+            raise RuntimeError(
+                f"Terrain request needs {len(ordered)} EA blocks, above the "
+                f"{self.max_blocks}-block safety limit"
+            )
+        missing = [key for key in ordered if not self._block_path(key).is_file()]
+        self.disk_cache_hits += len(ordered) - len(missing)
+        projected_uncompressed = (
+            len(missing) * self.block_height * self.block_width * 4
+        )
+        if projected_uncompressed > self.max_cache_bytes:
+            raise RuntimeError("Bounded EA terrain request exceeds the byte safety limit")
+        for index, key in enumerate(missing, start=1):
+            row_offset = key[0] * self.block_height
+            col_offset = key[1] * self.block_width
+            height = min(self.block_height, self.metadata.height - row_offset)
+            width = min(self.block_width, self.metadata.width - col_offset)
+            west = self.metadata.transform[2] + col_offset
+            north = self.metadata.transform[5] - row_offset
+            east = west + width
+            south = north - height
+            payload = self._request_geotiff(west, south, east, north)
+            values = self._decode_subset(
+                payload,
+                (1.0, 0.0, float(west), 0.0, -1.0, float(north)),
+                (height, width),
+            )
+            path = self._block_path(key)
+            path.parent.mkdir(parents=True, exist_ok=True)
+            temporary = path.with_suffix(".npz.tmp")
+            with temporary.open("wb") as handle:
+                np.savez_compressed(handle, elevation=values)
+            if self.cache_size_bytes() + temporary.stat().st_size > self.max_cache_bytes:
+                temporary.unlink(missing_ok=True)
+                raise RuntimeError("Bounded EA terrain cache limit was reached")
+            temporary.replace(path)
+            self.downloaded_blocks += 1
+            self.remote_uncompressed_bytes += values.nbytes
+            if index % 10 == 0 or index == len(missing):
+                print(f"Cached EA DTM block {index}/{len(missing)}")
+
+    def stats(self) -> dict[str, int]:
+        return {
+            "required_limit": self.max_blocks,
+            "downloaded_blocks": self.downloaded_blocks,
+            "disk_cache_hits": self.disk_cache_hits,
+            "request_count": self.request_count,
+            "failed_requests": self.failed_requests,
+            "downloaded_bytes": self.downloaded_bytes,
+            "cache_bytes": self.cache_size_bytes(),
+            "uncompressed_block_bytes": self.remote_uncompressed_bytes,
+        }
 
 
 def _activity_research_imports() -> tuple[type, type]:

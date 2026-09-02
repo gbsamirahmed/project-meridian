@@ -332,3 +332,56 @@ The official national DTM served bounded HTTP ranges and tiled Rasterio window r
 ### Next direction
 
 Validate a small set of physically defined filters against surveyed or otherwise high-confidence terrain sections and repeated route geometries across Wales plus a second authoritative regional DEM before considering an analytical terrain resolver or production constants.
+
+## 2026-09-02 — High-resolution terrain generalisation experiment v2
+
+### Goal
+
+Test whether the Welsh analytical-terrain findings generalise to a second
+authoritative national one-metre DTM across flat, rolling, and mountainous
+private benchmark geometries, without changing production behaviour.
+
+### Changes
+
+- Added a bounded Environment Agency WCS research provider with current coverage
+  metadata validation, numerical GeoTIFF subset decoding, request pacing,
+  retries, hard route/aggregate limits, byte-accounted private caching, and
+  synthetic provider tests.
+- Reused the Welsh route geometry, Terrarium baseline, physical filtering,
+  ascent decomposition, two-dimensional metrics, plotting, and reporting
+  semantics for a private England experiment and cross-region comparison.
+- Recorded only durable, privacy-safe conclusions in public documentation;
+  benchmark GPXs, raster blocks, profiles, reports, and plots remain outside Git.
+
+### Architectural decisions
+
+The evidence now supports designing a provider-neutral analytical terrain
+resolver later, while keeping visual MapLibre terrain independent. COG range
+reads and WCS coverage subsets require different retrieval adapters but can
+share projected numerical sampling and derived terrain semantics. High
+resolution is not a universal ascent correction: source and processing effects
+remain separate, route-dependent evidence.
+
+### Known limitations
+
+The bounded route set does not establish universal production filters. The
+Environment Agency composite combines surveys from different dates and source
+resolutions, and numerical zero outside composite coverage needs explicit
+handling distinct from valid low elevation. Very small-scale roughness remains
+sensitive to alignment and raster artefacts, and long routes can exceed prudent
+route-local access limits.
+
+### Verification
+
+The official WCS advertised and returned bounded one-metre Float32 terrain
+coverages in British National Grid. Synthetic terrain/provider tests and the
+established route, activity, weather, contour, lint, build, audit, compilation,
+and diff checks were run. No production terrain, routing, movement, map, or
+weather behavior changed.
+
+### Next direction
+
+Validate the proposed resolver requirements against a third delivery/source
+environment or surveyed repeated route sections, focusing on coverage
+resolution, cache lifecycle, provenance, and filter stability rather than
+matching third-party ascent totals.

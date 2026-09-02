@@ -288,6 +288,31 @@ Wind particles are not literal tracked air parcels. Future procedural cloud deta
 - How can route-condition explanations remain useful without becoming a false safety score?
 - Which specialist datasets permit integration or linking under their current terms?
 
+## Analytical terrain research direction
+
+Controlled experiments with authoritative one-metre DTMs in Wales and England
+support a provider-neutral analytical terrain direction, separate from visual
+MapLibre terrain. Regional sources can be accessed as bounded route corridors
+through different delivery mechanisms—COG byte ranges or WCS coverage
+subsets—behind the same projected numeric sampling boundary, without mirroring
+national rasters.
+
+The cross-region evidence does not support a universal high-resolution ascent
+correction. Source effects are route-dependent, filtered ascent is generally
+stable across practical sampling intervals, and one-to-two-metre route sampling
+mostly adds raw variation rather than trustworthy basic ascent. Five-to-ten
+metres remains useful for research into local structure, while 10–20 m slope
+and 50–200 m relief/landscape-position measures are more interpretable than
+micro-roughness. Flat terrain requires special care because small absolute
+changes can appear large proportionally.
+
+A future analytical terrain resolver should therefore select an authoritative
+regional source when available, retain a global fallback, enforce provider
+rights and bounded access, distinguish coverage from numerical zero, express
+filters in physical distance, expose provenance, and permit raw raster blocks
+to be discarded after compact route features are derived. Production constants
+and integration remain undecided.
+
 ## Approaches currently rejected or weakened
 
 - Oversampling the current DEM as if it creates higher-resolution terrain truth.

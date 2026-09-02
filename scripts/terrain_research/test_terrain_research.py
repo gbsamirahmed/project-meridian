@@ -6,6 +6,8 @@ from pathlib import Path
 
 import numpy as np
 from pyproj import Transformer
+from rasterio.io import MemoryFile
+from rasterio.transform import from_origin
 
 from route_geometry import (
     RouteCoordinate,
@@ -19,7 +21,7 @@ from terrain_metrics import (
     median_smooth_physical,
     neighbourhood_metrics,
 )
-from terrain_sources import RasterMetadata, WelshCogBlockCache
+from terrain_sources import EAWcsBlockCache, RasterMetadata, WelshCogBlockCache
 
 
 def synthetic_route(length_m: float = 100.0) -> RouteGeometry:
@@ -110,6 +112,63 @@ class RasterTests(unittest.TestCase):
             values = cache.sample_projected([(-1.0, 4.0), (4.0, 4.0)])
             self.assertIsNone(values[0])
             self.assertIsNotNone(values[1])
+
+    def test_ea_wcs_request_is_bounded_and_numeric(self) -> None:
+        cache = EAWcsBlockCache.__new__(EAWcsBlockCache)
+        cache.url = "https://example.invalid/wcs"
+        cache.coverage_id = "synthetic-dtm"
+        url = cache._coverage_url(100.0, 200.0, 110.0, 210.0)
+        self.assertIn("request=GetCoverage", url)
+        self.assertIn("coverageId=synthetic-dtm", url)
+        self.assertIn("subset=E%28100%2C110%29", url)
+        self.assertIn("subset=N%28200%2C210%29", url)
+
+        values = np.arange(100, dtype=np.float32).reshape(10, 10)
+        with MemoryFile() as memory:
+            with memory.open(
+                driver="GTiff",
+                width=10,
+                height=10,
+                count=1,
+                dtype="float32",
+                crs="EPSG:27700",
+                transform=from_origin(100.0, 210.0, 1.0, 1.0),
+                nodata=-3.4028234663852886e38,
+            ) as destination:
+                destination.write(values, 1)
+            payload = memory.read()
+        decoded = cache._decode_subset(
+            payload,
+            (1.0, 0.0, 100.0, 0.0, -1.0, 210.0),
+            (10, 10),
+        )
+        np.testing.assert_array_equal(decoded, values)
+
+    def test_ea_wcs_block_limit_prevents_unbounded_access(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            cache = EAWcsBlockCache.__new__(EAWcsBlockCache)
+            cache.cache_root = Path(temporary)
+            cache.max_blocks = 1
+            cache.max_cache_bytes = 10_000_000
+            cache.metadata = RasterMetadata(
+                "https://example.invalid/wcs",
+                "WCS",
+                2048,
+                2048,
+                "EPSG:27700",
+                (1.0, 0.0, 0.0, 0.0, -1.0, 2048.0, 0.0, 0.0, 1.0),
+                (0.0, 0.0, 2048.0, 2048.0),
+                1.0,
+                "float32",
+                -3.4028234663852886e38,
+                (1024, 1024),
+                (),
+                None,
+                None,
+            )
+            cache.disk_cache_hits = 0
+            with self.assertRaisesRegex(RuntimeError, "safety limit"):
+                cache.prepare_blocks({(0, 0), (0, 1)})
 
 
 class TerrainMetricTests(unittest.TestCase):
