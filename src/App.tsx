@@ -125,6 +125,7 @@ function App() {
   const [weatherGridStatus, setWeatherGridStatus] =
     useState<WeatherGridStatus>("idle");
   const [forecastHour, setForecastHour] = useState(0);
+  const [isForecastPlaying, setIsForecastPlaying] = useState(false);
   const [globalWeatherCatalog, setGlobalWeatherCatalog] =
     useState<GlobalWeatherCatalog | null>(null);
   const [catalogueCheck, setCatalogueCheck] = useState<CatalogueCheckState>({
@@ -320,6 +321,14 @@ function App() {
     activeGlobalValidTime && weatherGrid?.times.length
       ? closestForecastIndex(weatherGrid.times, activeGlobalValidTime)
       : activeForecastHour;
+
+  useEffect(() => {
+    if (!desktopLayout || !isForecastPlaying || forecastTimes.length < 2) return;
+    const interval = window.setInterval(() => {
+      setForecastHour((current) => current >= forecastTimes.length - 1 ? 0 : current + 1);
+    }, 500);
+    return () => window.clearInterval(interval);
+  }, [desktopLayout, forecastTimes.length, isForecastPlaying]);
 
   useEffect(() => {
     activeGlobalValidTimeRef.current = activeGlobalValidTime;
@@ -827,6 +836,8 @@ function App() {
               onBasemapChange={setBasemap}
               onOverlayChange={handleOverlayChange}
               onForecastHourChange={setForecastHour}
+              isPlaying={isForecastPlaying}
+              onPlayingChange={setIsForecastPlaying}
               onClose={() => dispatchWorkspace({ type: "set-map-controls", open: false })}
             />
           )}

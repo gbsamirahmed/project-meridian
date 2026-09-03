@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import LayerLegend from "./LayerLegend";
 import LayerPanel from "./LayerPanel";
 import TimeSlider from "./TimeSlider";
@@ -31,16 +30,12 @@ interface MapControlsProps {
   onBasemapChange: (basemap: Basemap) => void;
   onOverlayChange: (overlay: keyof MapOverlayState, enabled: boolean) => void;
   onForecastHourChange: (hour: number) => void;
+  isPlaying: boolean;
+  onPlayingChange: (playing: boolean) => void;
   onClose: () => void;
 }
 
-export default function MapControls({ basemap, mapOverlays, satelliteAvailable, forecastHour, forecastTimes, forecastHours, activeGlobalValidTime, globalPrecipitationSource, globalCloudSource, globalWindSource, globalTemperatureSource, globalWeatherStatuses, globalWeatherCatalog, catalogueCheck, journeySchedule, weatherGridStatus, onBasemapChange, onOverlayChange, onForecastHourChange, onClose }: MapControlsProps) {
-  const [isPlaying, setIsPlaying] = useState(false);
-  useEffect(() => {
-    if (!isPlaying || forecastTimes.length < 2) return;
-    const interval = window.setInterval(() => onForecastHourChange(forecastHour >= forecastTimes.length - 1 ? 0 : forecastHour + 1), 500);
-    return () => window.clearInterval(interval);
-  }, [isPlaying, forecastHour, forecastTimes.length, onForecastHourChange]);
+export default function MapControls({ basemap, mapOverlays, satelliteAvailable, forecastHour, forecastTimes, forecastHours, activeGlobalValidTime, globalPrecipitationSource, globalCloudSource, globalWindSource, globalTemperatureSource, globalWeatherStatuses, globalWeatherCatalog, catalogueCheck, journeySchedule, weatherGridStatus, onBasemapChange, onOverlayChange, onForecastHourChange, isPlaying, onPlayingChange, onClose }: MapControlsProps) {
 
   const precipActive = mapOverlays.precipitation && globalPrecipitationSource !== null;
   const cloudActive = mapOverlays.clouds && globalCloudSource !== null;
@@ -59,7 +54,7 @@ export default function MapControls({ basemap, mapOverlays, satelliteAvailable, 
       <WeatherFreshness catalog={globalWeatherCatalog} check={catalogueCheck} journey={journeySchedule} />
       <LayerPanel basemap={basemap} mapOverlays={mapOverlays} satelliteAvailable={satelliteAvailable} onBasemapChange={onBasemapChange} onOverlayChange={onOverlayChange} />
       <TimeSlider forecastHour={forecastHour} forecastTimes={forecastTimes} forecastHours={forecastHours} sourceLabel={globalActive ? `GFS valid-time steps${precipActive && precipitationStep ? ` · Rain: ${accumulationIntervalLabel(precipitationStep)}` : ""}` : undefined} onForecastHourChange={onForecastHourChange} />
-      <div className="map-play-row"><button type="button" className="play-button" onClick={() => setIsPlaying((current) => !current)}><span aria-hidden="true">{isPlaying ? "Ⅱ" : "▶"}</span>{isPlaying ? "Pause" : "Play forecast"}</button><span>{globalActive ? `GFS +${precipitationStep?.forecastHour ?? cloudStep?.forecastHour ?? windStep?.forecastHour ?? temperatureStep?.forecastHour ?? 0}h` : globalLoading ? "Loading GFS metadata" : `Regional pressure · 9 × 9 samples${weatherGridStatus === "error" ? " · unavailable" : ""}`}</span></div>
+      <div className="map-play-row"><button type="button" className="play-button" aria-pressed={isPlaying} onClick={() => onPlayingChange(!isPlaying)}><span aria-hidden="true">{isPlaying ? "Ⅱ" : "▶"}</span>{isPlaying ? "Pause" : "Play forecast"}</button><span>{globalActive ? `GFS +${precipitationStep?.forecastHour ?? cloudStep?.forecastHour ?? windStep?.forecastHour ?? temperatureStep?.forecastHour ?? 0}h` : globalLoading ? "Loading GFS metadata" : `Regional pressure · 9 × 9 samples${weatherGridStatus === "error" ? " · unavailable" : ""}`}</span></div>
       <details className="map-legend-details"><summary>Layer legend</summary><LayerLegend mapOverlays={mapOverlays} globalPrecipitationActive={precipActive} precipitationAccumulationHours={precipitationStep?.accumulationHours} /></details>
       {mapOverlays.pressureIsobars && <p className="pressure-note">Pressure is the remaining regional Open-Meteo field. The 9 × 9 samples describe that pressure grid only.</p>}
     </aside>
