@@ -310,6 +310,23 @@ Wind particles are not literal tracked air parcels. Future procedural cloud deta
 - Treat absence of evidence as unknown, not evidence of normality or safety.
 - Preserve specialist warnings rather than replacing them with a general model.
 
+## Raw atmospheric context before interpretation
+
+Environmental Enrichment v1 keeps gust, model visibility, both freezing-level
+heights and experimental cloud ceiling as raw model fields attached to expected
+arrival times. No weather-adjusted timing or hazard inference follows from
+their presence. In particular, cloud ceiling is not cloud base; ceiling above
+the model surface cannot be compared directly with route elevation above sea
+level. A freezing level is not an ice detector. Multiple freezing crossings
+remain distinct rather than being silently collapsed.
+
+GFS 0.25° resolution must stay explicit: dense route sampling adds journey-time
+context, not local meteorological detail. Not every environmental quantity
+needs a map layer or route colour mode. Atmospheric heights may later be useful
+on the elevation/time profile once reference levels and missing/no-ceiling
+states can be presented clearly. Derived cloud intersection, icing or other
+conditions require a separate, transparent evidence-based design.
+
 ## Open research questions
 
 - Which route × time conditions provide the greatest planning value?

@@ -156,6 +156,61 @@ The current workflow generates surface `APCP`, instantaneous entire-atmosphere `
 
 The canonical 1440×721 GFS grid is resampled deterministically to Web Mercator z0–z3. z3 is the useful display ceiling; closer views overzoom it with linear interpolation. Longitude sampling is periodic across ±180°, and coverage is explicitly clipped to ±85.051°. A 24-step run contains 2,040 tiles per scalar field. Run paths remain immutable, while `latest.json` is the only mutable publication object. No production host is required.
 
+## Atmospheric route fields
+
+Environmental Enrichment v1 adds five independently published schema-v2 scalar
+entries without changing the existing scalar PNG decoder or map layers:
+
+| Field ID | Exact inventory record | Logical units | Scale / offset |
+| --- | --- | --- | --- |
+| `gust_surface` | `GUST:surface` | m/s | 0.1 / 0 |
+| `visibility_surface` | `VIS:surface` | m | 10 / 0 |
+| `freezing_level` | `HGT:0C isotherm` | gpm | 5 / −1000 |
+| `highest_freezing_level` | `HGT:highest tropospheric freezing level` | gpm | 5 / −1000 |
+| `cloud_ceiling` | `HGT:cloud ceiling` | gpm | 5 / −1000 |
+
+These are instantaneous PDT-0 records, not hourly maxima, averages or totals.
+Every hour is checked against exact parameter/level, units, run/valid time,
+1440×721 regular 0.25° grid, and scanning metadata. `gfs_atmospheric.py` supplies
+field contracts and a shared writer behind the canonical weather builder; it
+reuses inventory retrieval, byte ranges, decoding, grid sampling and catalogue
+publication. `python scripts/weather/gfs_atmospheric.py` provides a bounded,
+non-publishing distribution inspection; its disposable source cache is ignored.
+The five immutable directories use hyphenated field IDs under the selected run.
+An atmospheric-field failure retains that field's prior catalogue entry while
+the other fields continue independently. Existing schema-v1 precipitation and
+schema-v2 runs without these entries remain supported.
+
+All five use RG uint16 PNG, reserved no-data 65535, blue 0 and opaque alpha.
+Manifest `scale`, `offset`, physical `validRange`, `verticalReference`,
+`noDataMeaning` and `interpretation` describe the contract. Zero is valid.
+The validated source ranges are 0–200 m/s, 0–100000 m visibility, −1000–30000 gpm
+freezing heights, and −1000–20001 gpm ceiling before sentinel removal. These
+are generous validation bounds, not claims about expected weather. Visibility's
+observed ~24.1 km cap permits simple 10 m linear quantisation (at most 5 m storage
+error), avoiding a nonlinear decoder for no demonstrated practical benefit.
+
+[NOAA UPP's ceiling documentation](https://noaa-emc.github.io/UPP/upp_v11.0.0/AVIATION_8f.html)
+identifies a 20000 m no-ceiling sentinel and a surface-relative ceiling. Values
+within 1 gpm of that sentinel are mapped to no-data **before** spatial
+interpolation; the tolerance covers observed GRIB packing displacement. Bitmap
+missing counts and no-ceiling counts are retained separately in validation.
+Interpolation touching unavailable ceiling cells stays unavailable rather than
+mixing 20 km into a real ceiling. The freezing heights retain their sea-level
+reference and remain separate; a ceiling cannot simply be compared to DEM
+elevation as though both had the same datum.
+
+Route preparation now uses three scalar workers plus the existing vector path,
+with grouped per-timestep coordinates and immediate synchronous sampling from
+the shared 64 MiB cache. Each raw value retains field/units, model run, native
+resolution, requested arrival, selected valid time and offset. New fields use
+the existing bounded nearest-step/earlier-tie rule; precipitation retains its
+real accumulation intervals. Presentation-mode changes do not refetch weather.
+The inspector exposes raw atmospheric values and secondary provenance; peak
+gust/minimum visibility summaries state their scheduled-sample coverage.
+Height-versus-elevation profile drawing is deferred; aligned raw height samples
+and vertical references are available in `RouteConditions` for later evaluation.
+
 ## Cost and performance expectations
 
 A 0.25° global grid contains roughly 1.04 million source cells. One unsigned 16-bit scalar field is about 2 MiB per timestep before compression and tiling. A Web Mercator pyramid adds resampling and tile overhead, so actual storage must be benchmarked with real precipitation: sparse rain fields should compress well, but hundreds of timesteps and multiple retained runs still grow into hundreds of megabytes or more per variable.

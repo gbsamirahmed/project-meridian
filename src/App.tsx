@@ -116,6 +116,11 @@ function App() {
       cloud_cover: "loading",
       wind_10m: "loading",
       temperature_2m: "loading",
+      gust_surface: "loading",
+      visibility_surface: "loading",
+      freezing_level: "loading",
+      highest_freezing_level: "loading",
+      cloud_ceiling: "loading",
     });
   const [isDesktopPanelCollapsed, setIsDesktopPanelCollapsed] =
     useState(false);
@@ -180,6 +185,11 @@ function App() {
           cloud_cover: "unavailable",
           wind_10m: "unavailable",
           temperature_2m: "unavailable",
+          gust_surface: "unavailable",
+          visibility_surface: "unavailable",
+          freezing_level: "unavailable",
+          highest_freezing_level: "unavailable",
+          cloud_ceiling: "unavailable",
         });
       });
 
@@ -325,6 +335,11 @@ function App() {
         precipitation: globalPrecipitationSource,
         cloud: globalCloudSource,
         wind: globalWindSource,
+        gust: globalWeatherSources.gust_surface,
+        visibility: globalWeatherSources.visibility_surface,
+        freezingLevel: globalWeatherSources.freezing_level,
+        highestFreezingLevel: globalWeatherSources.highest_freezing_level,
+        cloudCeiling: globalWeatherSources.cloud_ceiling,
       },
       controller.signal
     )
@@ -366,6 +381,7 @@ function App() {
     return () => controller.abort();
   }, [
     globalCloudSource,
+    globalWeatherSources,
     globalPrecipitationSource,
     globalTemperatureSource,
     globalWindSource,

@@ -1,8 +1,8 @@
 """Build Meridian's static global GFS weather datasets.
 
-The script downloads only the APCP, instantaneous entire-atmosphere TCDC,
-instantaneous 10 m UGRD/VGRD, and instantaneous 2 m TMP
-byte ranges listed in NOAA's public GFS inventory files. It decodes GRIB2 with
+The script downloads only indexed byte ranges for APCP, instantaneous
+entire-atmosphere TCDC, 10 m UGRD/VGRD, 2 m TMP, and the atmospheric
+GUST/VIS/HGT diagnostics specified in gfs_atmospheric. It decodes GRIB2 with
 ECMWF ecCodes, validates each field's distinct time semantics, and writes
 lossless numeric PNG tiles plus provider-neutral scalar/vector manifests. It
 deliberately does not colour the data; the browser owns styling.
@@ -22,6 +22,7 @@ import urllib.parse
 import urllib.request
 import uuid
 import xml.etree.ElementTree as ET
+from functools import lru_cache
 from dataclasses import dataclass
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
@@ -141,7 +142,7 @@ class SourceUnavailableError(RuntimeError):
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Generate static numeric precipitation, cloud, wind, and temperature tiles from one GFS run."
+        description="Generate static numeric GFS map and atmospheric route fields from one run."
     )
     selection = parser.add_mutually_exclusive_group()
     selection.add_argument(
@@ -173,7 +174,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--keep-downloads",
         action="store_true",
-        help="Keep downloaded APCP, TCDC, UGRD/VGRD, and TMP messages inside the run directory.",
+        help="Keep map-field GRIB messages inside the run; atmospheric messages use a disposable ignored source cache.",
     )
     return parser.parse_args()
 
@@ -211,6 +212,15 @@ def fetch_bytes(
         request = urllib.request.Request(url, headers=headers)
         try:
             with urllib.request.urlopen(request, timeout=90) as response:
+                if byte_range:
+                    size = byte_range[1] - byte_range[0] + 1
+                    expected_prefix = f"bytes {byte_range[0]}-{byte_range[1]}/"
+                    if response.status != 206 or not response.headers.get("Content-Range", "").startswith(expected_prefix):
+                        raise ValueError("NOAA did not honour the bounded GRIB byte range")
+                    payload = response.read(size + 1)
+                    if len(payload) != size:
+                        raise ValueError("Truncated or oversized GRIB byte range")
+                    return payload
                 return response.read()
         except urllib.error.HTTPError as error:
             if error.code in (403, 404):
@@ -225,6 +235,7 @@ def fetch_bytes(
     raise RuntimeError("unreachable HTTP retry state")
 
 
+@lru_cache(maxsize=96)
 def fetch_text(url: str) -> str:
     return fetch_bytes(url).decode("utf-8")
 
@@ -607,6 +618,18 @@ def decode_grib(
             "validityTime",
             "numberOfMissing",
             "missingValue",
+            "discipline",
+            "parameterCategory",
+            "parameterNumber",
+            "productDefinitionTemplateNumber",
+            "typeOfStatisticalProcessing",
+            "scanningMode",
+            "jPointsAreConsecutive",
+            "alternativeRowScanning",
+            "bitmapPresent",
+            "packingError",
+            "typeOfFirstFixedSurface",
+            "typeOfSecondFixedSurface",
         ]
         metadata = {
             key: eccodes.codes_get(message, key)
@@ -2218,6 +2241,7 @@ def build_temperature_dataset(
 
 
 def main() -> None:
+    from gfs_atmospheric import build_atmospheric_datasets
     args = parse_args()
     forecast_hours = parse_hours(args.hours)
     resolution = resolve_run(args, forecast_hours)
@@ -2240,6 +2264,7 @@ def main() -> None:
         build_temperature_dataset(
             args, resolution, forecast_hours, run_directory, run_id
         )
+        build_atmospheric_datasets(args, resolution, forecast_hours, run_directory, run_id)
         return
 
     if staging_directory.exists():
@@ -2484,6 +2509,7 @@ def main() -> None:
     build_cloud_dataset(args, resolution, forecast_hours, run_directory, run_id)
     build_wind_dataset(args, resolution, forecast_hours, run_directory, run_id)
     build_temperature_dataset(args, resolution, forecast_hours, run_directory, run_id)
+    build_atmospheric_datasets(args, resolution, forecast_hours, run_directory, run_id)
 
 
 if __name__ == "__main__":

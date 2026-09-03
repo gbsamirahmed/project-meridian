@@ -1,4 +1,7 @@
+import type { AtmosphericFieldId } from "../services/atmosphericFields";
+
 export type GlobalWeatherFieldId =
+  | AtmosphericFieldId
   | "precipitation"
   | "cloud_cover"
   | "wind_10m"
@@ -55,12 +58,15 @@ export interface WeatherFieldManifestBase {
 
 export interface ScalarFieldManifest extends WeatherFieldManifestBase {
   field: {
-    id: "precipitation" | "cloud_cover" | "temperature_2m";
+    id: Exclude<GlobalWeatherFieldId, "wind_10m">;
     kind: "scalar";
     sourceParameter: string;
     sourceLevel: string;
     displayName: string;
-    units: "mm" | "percent" | "celsius";
+    units: "mm" | "percent" | "celsius" | "m/s" | "m" | "gpm";
+    verticalReference?: "surface" | "mean-sea-level" | "model-surface";
+    noDataMeaning?: string;
+    interpretation?: string;
     validRange: [number, number];
     timeSemantics: "instantaneous" | "interval-total";
     nativeResolution: {
@@ -158,7 +164,7 @@ export type GlobalWeatherFieldSource =
   | ScalarWeatherFieldSource
   | VectorWeatherFieldSource;
 
-export interface GlobalWeatherSourceRegistry {
+export interface GlobalWeatherSourceRegistry extends Partial<Record<AtmosphericFieldId, ScalarWeatherFieldSource>> {
   precipitation?: ScalarWeatherFieldSource;
   cloud_cover?: ScalarWeatherFieldSource;
   wind_10m?: VectorWeatherFieldSource;

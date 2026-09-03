@@ -494,3 +494,123 @@ Visually validate the route-condition interaction across realistic journey
 times, then evaluate which additional raw fields—such as gusts, cloud base,
 visibility, or freezing level—provide the greatest route-planning value before
 introducing any condition interpretation.
+
+## 2026-09-03 — Environmental Enrichment v1
+
+### Goal
+
+Add useful raw atmospheric context to the route × expected-arrival pipeline
+without changing journey timing, map layers, terrain or condition interpretation.
+
+### Changes
+
+- Added surface `GUST` and `VIS`, plus `HGT` at `0C isotherm`,
+  `highest tropospheric freezing level` and `cloud ceiling` through the canonical
+  GFS builder. The shared atmospheric writer reuses indexed acquisition, grid
+  sampling and independent atomic catalogue publication; inventories are cached
+  within an invocation and HTTP range responses are checked before reading.
+- Extended scalar contracts and grouped route sampling rather than creating five
+  sources or caches. Three scalar workers plus wind bound preparation concurrency;
+  each timestep is sampled synchronously after preparation. Invalid catalogue
+  entries no longer invalidate otherwise healthy fields.
+- Added approximate gust, model visibility, freezing-level and experimental
+  ceiling values to the journey inspector, with highest freezing level and
+  per-field provenance in details. Peak gust and minimum visibility summaries
+  state scheduled-sample coverage. Existing profile linking and colour modes
+  remain unchanged; aligned height samples prepare, but do not implement, future
+  atmospheric-height profile views.
+
+### Architectural decisions
+
+Live f001–f024 ecCodes inspection confirmed `gust` / wind speed (gust), `vis` /
+visibility, and `gh` / geopotential height. Surface units are `m s**-1` and `m`;
+height units are `gpm`. Level types are `surface`, `isothermZero`,
+`highestTroposphericFreezing` and `cloudCeiling`. All five use instantaneous
+PDT 0, start/end/forecast step equal to the requested hour, no statistical
+processing, and run + forecast-hour valid time. Every field used the validated
+1440×721, north-to-south 0.25° regular grid with scanning mode 0 and no bitmap
+missing cells. Gust is not described as a preceding-hour maximum.
+
+The bounded global inspection selected 2026-09-02 18Z after newer candidates'
+f024 inventories were unavailable. Each row below represents 24,917,760 source
+values over f001–f024; these are grid-point distributions, not area-weighted
+climate statistics. Percentiles are raw, including the ceiling sentinel.
+
+| Field | Minimum–maximum | P1 | P50 | P99 |
+| --- | --- | --- | --- | --- |
+| Gust, m/s | 0–57.017 | 0.702 | 7.204 | 23.817 |
+| Visibility, m | 18.048–24135.656 | 123.300 | 24134.971 | 24135.299 |
+| 0°C height, gpm | 0–7536.640 | 0 | 2858.720 | 5586.400 |
+| Highest freezing height, gpm | 0–7572.960 | 0 | 2890.720 | 5600 |
+| Ceiling, gpm | 8.315–20000.152 | 9.697 | 15424.109 | 20000.152 |
+
+Visibility's strong ~24.1 km saturation and the ceiling's ~20 km concentration
+required explicit interpretation. [NOAA UPP documentation](https://noaa-emc.github.io/UPP/upp_v11.0.0/AVIATION_8f.html)
+identifies 20000 as no ceiling, with ceiling measured above the model surface.
+The 11,680,874 near-sentinel cells (46.88%) are therefore unavailable before
+interpolation, not literal high clouds. A 1 gpm tolerance covers observed
+packing displacement; bitmap missing and no-ceiling counts remain separate in
+validation. Freezing heights retain sea-level reference and valid zeroes.
+
+All new tiles use lossless uint16 RG, no-data 65535, constant blue/alpha, and
+schema-v2 scale/offset metadata. Gust uses 0.1 m/s; visibility uses 10 m;
+heights use 5 gpm with −1000 offset. The measured visibility range does not
+justify a nonlinear contract: 10 m linear precision is compact and retains low
+visibility detail without another decoder. Client sampling continues to use
+manifest metadata. Physical references and missing-value meaning are explicit;
+cloud ceiling is neither cloud base nor a cloud-immersion test, and freezing
+height is not an ice detector.
+
+The current usable run was refreshed through the established command, reusing
+its four already-validated immutable fields and generating the five new fields
+for the same run. All nine cover valid times 2026-09-02 19Z through 2026-09-03 18Z;
+precipitation retains its real one-hour intervals. There are 2040 tiles per field:
+gust 64.15 MiB, visibility 75.64 MiB, freezing height 48.30 MiB, highest freezing
+height 48.92 MiB, and ceiling 76.81 MiB. New PNG payload is 313.82 MiB; all nine
+fields total 560.53 MiB of PNGs. Inspection took about 104 s and successful new
+field generation/validation about 557 s, excluding an initial Windows rename
+failure corrected by reusing the existing builder's move/copy fallback.
+Source messages remain in a disposable ignored cache (~105.41 MiB), separate
+from the published field contracts. No generated assets are tracked.
+
+### Known limitations
+
+The horizon remains f001–f024, updates are manual, and GFS 0.25° remains the
+meteorological resolution. Sampling expected arrivals does not evaluate the
+earliest/latest weather window. Ceiling edges touching no-data are conservatively
+unavailable, and no-ceiling versus bitmap missing is combined in the web no-data
+code, with the distinction retained in source validation. No ice, cloud
+immersion, ground state, hazard, wind amplification or weather-adjusted speed is
+inferred. Atmospheric-height profile drawing is deferred, especially because
+ceiling and route elevation have different vertical references.
+
+### Verification
+
+Synthetic tests cover all five exact selectors, metadata, ranges, zero/no-data,
+PNG byte/quantisation round trips, grid orientation, antimeridian, publication
+failure isolation, scalar sampling/interpolation, partial horizons, earlier ties,
+cache reuse/cancellation, malformed manifests, independent freezing fields, and
+inspector formatting. Existing route/journey/conditions, contour and scalar
+rendering tests remain passing. Every generated PNG was decoded and compared
+against its sampled source field within half a quantisation step.
+
+A real served-asset smoke test resolved all nine manifests and compared direct
+scalar sampling with Route Conditions at public coarse test coordinates,
+including antimeridian points and a 34-hour partial-horizon schedule. It used
+54 decoded tiles / 7.13 MiB of the unchanged 64 MiB cache, transferred 2.09 MiB
+of PNGs, ended with no pending requests, and made no new requests for a repeated
+route. Lint, production build, Python compilation, dependency audit and diff
+checks passed; existing Vite bundle-size/plugin-timing notices remain.
+
+The dev server started normally. Browser launch and a runtime-reset retry both
+failed before Meridian opened: `trusted Node process exited unexpectedly;
+kernel reset, rerun your request`. This is a browser tooling failure, not an
+observed application error. Actual visual/mobile acceptance and the earlier
+overview-route/precipitation-seam visual checks remain unverified; server-rendered
+inspector text and real data-path tests do not substitute for them.
+
+### Next direction
+
+Manually validate atmospheric values, provenance and partial coverage across
+short and long journeys before considering any separate derived-condition
+design. No further environmental milestone is implemented here.

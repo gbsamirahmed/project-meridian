@@ -24,9 +24,10 @@ import type {
   ScalarRouteCondition,
   UnavailableRouteCondition,
   WindRouteCondition,
+  RouteScalarKey,
 } from "../types/routeConditions";
 
-interface RouteConditionSources {
+interface RouteConditionSources extends Partial<Record<RouteScalarKey, ScalarWeatherFieldSource | null>> {
   temperature: ScalarWeatherFieldSource | null;
   precipitation: ScalarWeatherFieldSource | null;
   cloud: ScalarWeatherFieldSource | null;
@@ -39,11 +40,14 @@ interface ScheduledRoutePoint {
 }
 
 interface SelectedRoutePoint extends ScheduledRoutePoint {
-  temperatureTimestep: ScalarFieldTimestep | null;
-  precipitationTimestep: ScalarFieldTimestep | null;
-  cloudTimestep: ScalarFieldTimestep | null;
+  scalarTimesteps: Record<RouteScalarKey, ScalarFieldTimestep | null>;
   windTimestep: VectorFieldTimestep | null;
 }
+
+const SCALAR_KEYS: RouteScalarKey[] = [
+  "temperature", "precipitation", "cloud", "gust", "visibility",
+  "freezingLevel", "highestFreezingLevel", "cloudCeiling",
+];
 
 function milliseconds(value: string): number {
   return Date.parse(value);
@@ -183,6 +187,9 @@ function provenance(
     product: source.manifest.product,
     runTime: source.manifest.runTime,
     sourceLevel: source.manifest.field.sourceLevel,
+    units: source.manifest.field.units,
+    nativeResolutionDegrees: source.manifest.field.nativeResolution.longitudeDegrees,
+    verticalReference: source.manifest.field.kind === "scalar" ? source.manifest.field.verticalReference : undefined,
     requestedTime,
     validTime: timestep.validTime,
     forecastHour: timestep.forecastHour,
@@ -204,7 +211,7 @@ export function resolvedScalarCondition(
   if (value === undefined) {
     return unavailable(requestedTime, "tile-unavailable");
   }
-  if (value === null) return unavailable(requestedTime, "no-data");
+  if (value === null || !Number.isFinite(value)) return unavailable(requestedTime, "no-data");
   return {
     state: "available",
     value,
@@ -337,7 +344,13 @@ export function buildRouteConditionSummary(
   const winds: number[] = [];
   const headwinds: number[] = [];
   const crosswinds: number[] = [];
+  const gusts: number[] = [];
+  const visibility: number[] = [];
+  const freezing: number[] = [];
   for (const sample of samples) {
+    if (sample.weather.gust?.state === "available") gusts.push(sample.weather.gust.value);
+    if (sample.weather.visibility?.state === "available") visibility.push(sample.weather.visibility.value);
+    if (sample.weather.freezingLevel?.state === "available") freezing.push(sample.weather.freezingLevel.value);
     if (sample.weather.temperature.state === "available") {
       temperatures.push(sample.weather.temperature.value);
     }
@@ -367,6 +380,9 @@ export function buildRouteConditionSummary(
     windMaximumMs: winds.length ? Math.max(...winds) : null,
     headwindMaximumMs: headwinds.length ? Math.max(...headwinds) : null,
     crosswindMaximumMs: crosswinds.length ? Math.max(...crosswinds) : null,
+    gustMaximumMs: gusts.length ? Math.max(...gusts) : null,
+    visibilityMinimumM: visibility.length ? Math.min(...visibility) : null,
+    freezingLevelRangeGpm: numericRange(freezing),
   };
 }
 
@@ -402,24 +418,13 @@ export async function buildRouteConditions(
     return {
       coordinate: { longitude: sample.longitude, latitude: sample.latitude },
       expectedArrivalTime: journey.arrivalTime,
-      temperatureTimestep: sources.temperature
-        ? selectInstantaneousTimestep(
-            sources.temperature.manifest.timesteps,
-            journey.arrivalTime
-          )
-        : null,
-      precipitationTimestep: sources.precipitation
-        ? selectPrecipitationTimestep(
-            sources.precipitation.manifest.timesteps,
-            journey.arrivalTime
-          )
-        : null,
-      cloudTimestep: sources.cloud
-        ? selectInstantaneousTimestep(
-            sources.cloud.manifest.timesteps,
-            journey.arrivalTime
-          )
-        : null,
+      scalarTimesteps: Object.fromEntries(
+        SCALAR_KEYS.map((key) => [key,
+          (key === "precipitation" ? selectPrecipitationTimestep : selectInstantaneousTimestep)(
+            sources[key]?.manifest.timesteps ?? [], journey.arrivalTime
+          ),
+        ])
+      ) as SelectedRoutePoint["scalarTimesteps"],
       windTimestep: sources.wind
         ? selectInstantaneousTimestep(
             sources.wind.manifest.timesteps,
@@ -428,31 +433,23 @@ export async function buildRouteConditions(
         : null,
     };
   });
-  const [
-    temperatureValues,
-    precipitationValues,
-    cloudValues,
-    windValues,
-  ] = await Promise.all([
-    sampleScalarSelections(
-      sources.temperature,
-      points,
-      (point) => point.temperatureTimestep,
-      signal
-    ),
-    sampleScalarSelections(
-      sources.precipitation,
-      points,
-      (point) => point.precipitationTimestep,
-      signal
-    ),
-    sampleScalarSelections(
-      sources.cloud,
-      points,
-      (point) => point.cloudTimestep,
-      signal
-    ),
+  // Three scalar workers plus wind: bounded fan-out independent of field count.
+  // Each timestep is sampled immediately after preparation, before later groups
+  // can evict its tiles from the shared byte-accounted cache.
+  const scalarValues = {} as Record<RouteScalarKey, Array<number | null | undefined>>;
+  let nextField = 0;
+  const scalarWorker = async () => {
+    while (nextField < SCALAR_KEYS.length) {
+      if (signal?.aborted) throw new DOMException("Aborted", "AbortError");
+      const key = SCALAR_KEYS[nextField++];
+      scalarValues[key] = await sampleScalarSelections(
+        sources[key] ?? null, points, (point) => point.scalarTimesteps[key], signal
+      );
+    }
+  };
+  const [windValues] = await Promise.all([
     sampleWindSelections(sources.wind, points, signal),
+    ...Array.from({ length: 3 }, scalarWorker),
   ]);
   if (signal?.aborted) throw new DOMException("Aborted", "AbortError");
   const coordinates = points.map((point) => point.coordinate);
@@ -479,24 +476,12 @@ export async function buildRouteConditions(
         latestArrivalTime: journey.latestArrivalTime,
       },
       weather: {
-        temperature: resolvedScalarCondition(
-          sources.temperature,
-          point.temperatureTimestep,
-          point.expectedArrivalTime,
-          temperatureValues[index]
-        ),
-        precipitation: resolvedScalarCondition(
-          sources.precipitation,
-          point.precipitationTimestep,
-          point.expectedArrivalTime,
-          precipitationValues[index]
-        ),
-        cloud: resolvedScalarCondition(
-          sources.cloud,
-          point.cloudTimestep,
-          point.expectedArrivalTime,
-          cloudValues[index]
-        ),
+        ...Object.fromEntries(
+          SCALAR_KEYS.map((key) => [key, resolvedScalarCondition(
+            sources[key] ?? null, point.scalarTimesteps[key],
+            point.expectedArrivalTime, scalarValues[key][index]
+          )])
+        ) as Record<RouteScalarKey, ScalarRouteCondition>,
         wind: resolvedWindCondition(
           sources.wind,
           point.windTimestep,
@@ -512,9 +497,9 @@ export async function buildRouteConditions(
     generatedAt: new Date().toISOString(),
     samples,
     coverage: {
-      temperature: coverageFor(samples, (sample) => sample.weather.temperature),
-      precipitation: coverageFor(samples, (sample) => sample.weather.precipitation),
-      cloud: coverageFor(samples, (sample) => sample.weather.cloud),
+      ...Object.fromEntries(
+        SCALAR_KEYS.map((key) => [key, coverageFor(samples, (sample) => sample.weather[key])])
+      ) as Record<RouteScalarKey, RouteConditions["coverage"]["temperature"]>,
       wind: coverageFor(samples, (sample) => sample.weather.wind),
     },
     summary: buildRouteConditionSummary(samples),

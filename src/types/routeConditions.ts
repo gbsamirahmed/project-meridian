@@ -1,4 +1,4 @@
-import type { GlobalWeatherFieldId } from "./globalWeather";
+import type { GlobalWeatherFieldId, ScalarFieldManifest } from "./globalWeather";
 import type { RouteCoordinate } from "./route";
 
 export type RouteConditionMode =
@@ -20,6 +20,9 @@ export interface RouteConditionProvenance {
   product: string;
   runTime: string;
   sourceLevel: string;
+  units: string;
+  nativeResolutionDegrees: number;
+  verticalReference?: ScalarFieldManifest["field"]["verticalReference"];
   requestedTime: string;
   validTime: string;
   forecastHour: number;
@@ -32,7 +35,7 @@ export interface RouteConditionProvenance {
 export interface AvailableScalarRouteCondition {
   state: "available";
   value: number;
-  units: "celsius" | "mm" | "percent";
+  units: ScalarFieldManifest["field"]["units"];
   provenance: RouteConditionProvenance;
 }
 
@@ -71,6 +74,11 @@ export type WindRouteCondition =
   | AvailableWindRouteCondition
   | UnavailableRouteCondition;
 
+export type RouteScalarKey = "temperature" | "precipitation" | "cloud" |
+  "gust" | "visibility" | "freezingLevel" | "highestFreezingLevel" | "cloudCeiling";
+
+export type RouteWeather = Record<RouteScalarKey, ScalarRouteCondition> & { wind: WindRouteCondition };
+
 export interface RouteConditionSample {
   routeSampleIndex: number;
   coordinate: RouteCoordinate;
@@ -89,12 +97,8 @@ export interface RouteConditionSample {
     earliestArrivalTime: string;
     latestArrivalTime: string;
   };
-  weather: {
-    temperature: ScalarRouteCondition;
-    precipitation: ScalarRouteCondition;
-    cloud: ScalarRouteCondition;
-    wind: WindRouteCondition;
-  };
+  /** Raw model fields. Atmospheric heights do not imply ice or cloud immersion. */
+  weather: RouteWeather;
 }
 
 export interface RouteConditionFieldCoverage {
@@ -110,18 +114,16 @@ export interface RouteConditionSummary {
   windMaximumMs: number | null;
   headwindMaximumMs: number | null;
   crosswindMaximumMs: number | null;
+  gustMaximumMs: number | null;
+  visibilityMinimumM: number | null;
+  freezingLevelRangeGpm: [number, number] | null;
 }
 
 export interface RouteConditions {
   routeId: string;
   generatedAt: string;
   samples: RouteConditionSample[];
-  coverage: {
-    temperature: RouteConditionFieldCoverage;
-    precipitation: RouteConditionFieldCoverage;
-    cloud: RouteConditionFieldCoverage;
-    wind: RouteConditionFieldCoverage;
-  };
+  coverage: Record<keyof RouteWeather, RouteConditionFieldCoverage>;
   summary: RouteConditionSummary;
 }
 

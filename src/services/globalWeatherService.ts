@@ -13,12 +13,15 @@ import type {
   VectorWeatherFieldSource,
 } from "../types/globalWeather";
 
+import { ATMOSPHERIC_FIELDS, validateAtmosphericManifest } from "./atmosphericFields";
+
 const LATEST_DATASET_URL = "/weather/gfs/latest.json";
 const FIELD_IDS: GlobalWeatherFieldId[] = [
   "precipitation",
   "cloud_cover",
   "wind_10m",
   "temperature_2m",
+  ...Object.keys(ATMOSPHERIC_FIELDS) as Array<keyof typeof ATMOSPHERIC_FIELDS>,
 ];
 
 interface LegacyPrecipitationManifest {
@@ -109,7 +112,8 @@ function normaliseCatalog(value: unknown): GlobalWeatherCatalog {
     const entry = value.fields[fieldId];
     if (entry !== undefined) {
       if (!isCatalogEntry(entry)) {
-        throw new Error(`Global weather catalogue entry ${fieldId} is invalid`);
+        // An invalid independently published field must not hide healthy fields.
+        continue;
       }
       fields[fieldId] = entry;
     }
@@ -255,6 +259,7 @@ function normaliseManifest(
   }
 
   const manifest = value as unknown as ScalarFieldManifest;
+  validateAtmosphericManifest(manifest);
   if (
     manifest.field.id === "cloud_cover" &&
     (manifest.field.sourceParameter !== "TCDC" ||
@@ -346,6 +351,11 @@ export async function loadGlobalWeatherSources(): Promise<GlobalWeatherLoadResul
     cloud_cover: "unavailable",
     wind_10m: "unavailable",
     temperature_2m: "unavailable",
+    gust_surface: "unavailable",
+    visibility_surface: "unavailable",
+    freezing_level: "unavailable",
+    highest_freezing_level: "unavailable",
+    cloud_ceiling: "unavailable",
   };
   let catalog: GlobalWeatherCatalog;
 
@@ -390,6 +400,8 @@ export async function loadGlobalWeatherSources(): Promise<GlobalWeatherLoadResul
           source.manifest.field.id === "temperature_2m"
         ) {
           sources.temperature_2m = source as ScalarWeatherFieldSource;
+        } else if (fieldId !== "wind_10m" && fieldId in ATMOSPHERIC_FIELDS && source.manifest.field.kind === "scalar") {
+          sources[fieldId] = source as ScalarWeatherFieldSource;
         } else {
           throw new Error(`Global weather ${fieldId} manifest kind is invalid`);
         }

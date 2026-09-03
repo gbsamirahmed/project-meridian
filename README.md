@@ -17,7 +17,7 @@ Meridian is an interactive 3D weather map for exploring forecast conditions acro
 - Global NOAA GFS precipitation, total cloud cover, 10 m wind and 2 m temperature with 24-hour playback.
 - Independently combinable elevation, precipitation, cloud, temperature-contour, pressure-isobar, and animated wind overlays.
 - A point inspector for elevation and weather values at the selected forecast time.
-- Local GPX import with DEM-derived elevation, terrain-aware hiking schedules, linked route/profile inspection, and GFS conditions sampled at expected arrival times.
+- Local GPX import with DEM-derived elevation, terrain-aware hiking schedules, linked route/profile inspection, and arrival-time GFS conditions including gusts, model visibility, freezing levels and experimental cloud ceiling.
 - Place search, map selection, current conditions, and responsive map-first controls.
 
 ## Architecture
@@ -89,7 +89,7 @@ python scripts/weather/build_gfs_weather.py
 python -m unittest discover -s scripts/weather -p "test_*.py"
 ```
 
-The generator finds the latest usable complete GFS cycle, falls back when the newest run is incomplete, and downloads only indexed APCP, instantaneous entire-atmosphere TCDC, instantaneous earth-relative 10 m UGRD/VGRD, and instantaneous 2 m TMP ranges. It validates each field's semantics and publishes entries independently through an atomic `latest.json` catalogue. It requires no API key. On Windows, `py` may be used instead of `python`.
+The generator finds the latest usable complete GFS cycle, falls back when the newest run is incomplete, and downloads only indexed APCP, TCDC, 10 m UGRD/VGRD, 2 m TMP, surface GUST/VIS and three atmospheric HGT records. It validates each field's distinct semantics and publishes entries independently through an atomic `latest.json` catalogue. It requires no API key. On Windows, `py` may be used instead of `python`.
 
 ## Commands and verification
 
@@ -104,6 +104,7 @@ The generator finds the latest usable complete GFS cycle, falls back when the ne
 | `node --test scripts/weather/test_temperature_contours.mjs` | Run temperature contour continuity tests |
 | `node --test scripts/route/test_route_foundation.mjs` | Run route and journey-model tests |
 | `node --test scripts/route/test_route_conditions.mjs` | Run route-condition time, wind, and availability tests |
+| `node --test scripts/route/test_atmospheric_conditions.mjs` | Run atmospheric source, route, cache and formatting tests |
 
 ## Data sources and attribution
 
@@ -124,6 +125,7 @@ Provider availability, acceptable-use policies, rate limits, attribution require
 - The generated GFS horizon is +24 hours and updates are manually invoked rather than scheduled or published as a production service.
 - Terrain and weather detail remain constrained by their source datasets.
 - Route timing is a general hiking estimate, not a personalised prediction or safety assessment. Journey conditions use discrete GFS fields within the generated +24 h horizon and do not adjust travel time.
+- Atmospheric route fields remain raw GFS 0.25° diagnostics, not new map overlays. Ceiling is above the model surface, not cloud base; no-ceiling sentinels are unavailable. Freezing levels do not predict ice, and model visibility is not exact local sight distance.
 
 ## Further reading
 

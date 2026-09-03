@@ -3,6 +3,7 @@ import RouteProfile from "./RouteProfile";
 import { ROUTE_CONDITION_LEGENDS } from "../services/routeConditionStyle";
 import { accumulationIntervalLabel, routeConditionTimeLabel } from "../services/weatherTimeLabel";
 import { precipitationAmountLabel } from "../services/precipitationStyle";
+import { gustLabel, visibilityLabel, atmosphericHeightLabel, fieldCoverageLabel } from "../services/atmosphericFormatting";
 import type {
   JourneyPlan,
   JourneyProfile,
@@ -135,12 +136,7 @@ export default function RoutePlannerPanel({
       Boolean(
         routeConditions?.samples.length &&
           routeConditions.samples.every((sample) =>
-            [
-              sample.weather.temperature,
-              sample.weather.precipitation,
-              sample.weather.cloud,
-              sample.weather.wind,
-            ].every(
+            Object.values(sample.weather).every(
               (condition) =>
                 condition.state === "unavailable" &&
                 condition.reason === "outside-forecast"
@@ -258,6 +254,16 @@ export default function RoutePlannerPanel({
                         ? "No interval rain"
                         : "None in available samples"}
                 </strong>
+              </div>
+              <div>
+                <span>Peak gust · available samples</span>
+                <strong>{routeConditions.summary.gustMaximumMs === null ? "Unavailable" : gustLabel(routeConditions.summary.gustMaximumMs)}</strong>
+                <small>{fieldCoverageLabel(routeConditions.coverage.gust)}</small>
+              </div>
+              <div>
+                <span>Lowest model visibility</span>
+                <strong>{routeConditions.summary.visibilityMinimumM === null ? "Unavailable" : visibilityLabel(routeConditions.summary.visibilityMinimumM)}</strong>
+                <small>{fieldCoverageLabel(routeConditions.coverage.visibility)}</small>
               </div>
             </div>
           )}
@@ -407,6 +413,35 @@ export default function RoutePlannerPanel({
                     : "Unavailable"}
                 </strong>
               </div>
+              <div className="route-condition-inspector-grid">
+                <span>Gusts</span>
+                <strong>{scalarLabel(focusedCondition.weather.gust, gustLabel)}</strong>
+                <span>Model visibility</span>
+                <strong>{scalarLabel(focusedCondition.weather.visibility, visibilityLabel)}</strong>
+                <span>0°C level · sea level</span>
+                <strong>{scalarLabel(focusedCondition.weather.freezingLevel, atmosphericHeightLabel)}</strong>
+                <span>Cloud ceiling · experimental</span>
+                <strong>{scalarLabel(focusedCondition.weather.cloudCeiling, atmosphericHeightLabel)}</strong>
+              </div>
+              <small>Ceiling is above the model surface, not sea level. No ceiling value may mean no diagnosed ceiling or missing data. These heights do not indicate ice or cloud immersion.</small>
+              <details className="route-assumptions">
+                <summary>Atmospheric details & provenance</summary>
+                <p>Highest tropospheric freezing level: {scalarLabel(focusedCondition.weather.highestFreezingLevel, atmosphericHeightLabel)} · sea level</p>
+                {([
+                  ["Gust", focusedCondition.weather.gust],
+                  ["Model visibility", focusedCondition.weather.visibility],
+                  ["0°C level", focusedCondition.weather.freezingLevel],
+                  ["Highest freezing level", focusedCondition.weather.highestFreezingLevel],
+                  ["Cloud ceiling", focusedCondition.weather.cloudCeiling],
+                ] as const).map(([label, condition]) => (
+                  <p key={label}>
+                    <strong>{label}</strong>: {condition.state === "available"
+                      ? `GFS ${condition.provenance.nativeResolutionDegrees}° · ${condition.provenance.sourceLevel} · run ${new Date(condition.provenance.runTime).toISOString().slice(0, 13).replace("T", " ")}Z · +${condition.provenance.forecastHour} h · ${routeConditionTimeLabel(condition.provenance)} · ${condition.units}`
+                      : condition.reason === "outside-forecast" ? "Outside forecast horizon" : "Unavailable"}
+                  </p>
+                ))}
+                <small>Instantaneous model diagnostics, not hourly maxima. Dense route samples do not increase GFS 0.25° resolution. Visibility is modelled, not an exact local sight distance.</small>
+              </details>
               {focusedProvenance && (
                 <small>
                   GFS 0.25° · run {new Date(focusedProvenance.runTime).getUTCHours().toString().padStart(2, "0")}Z · +{focusedProvenance.forecastHour} h · {routeConditionTimeLabel(focusedProvenance)}
