@@ -698,9 +698,25 @@ benchmark build and made no network requests. The served smoke test retained
 54 tiles / 7.13 MiB in the unchanged 64 MiB cache, with zero pending requests and
 no repeated-route tile downloads.
 
-The long benchmark's full terrain replay was not completed: required uncached
-DEM requests were blocked by permission review because tile coordinates reveal
-route location to AWS; approval was requested and no download was performed.
+The bounded South Downs real-route replay subsequently completed with explicit
+approval: 161.95 km / 4,050 samples, using the unchanged terrain and journey
+pipeline and retained GFS run. For the tested 2026-09-03 03:00 BST departure,
+1,892 samples had weather/derived coverage through 75.64 km; the next sample at
+75.68 km fell beyond the 18:00 UTC forecast cutoff and remained unavailable.
+Departing at 05:00 BST moved the last covered point to 66.08 km (1,653 samples).
+Cloud ceiling was independently unavailable at 538 otherwise-covered samples
+in the first replay without disabling the other fields. Freezing-profile gaps
+remained honest beyond coverage, and no freezing crossings or multiple-level
+events were invented. The replay supports the existing milestone conclusions.
+
+Only the 249 required AWS Terrarium tiles were fetched, strictly in memory:
+17.65 MiB externally, or 23.50 MiB including local GFS response data, below the
+32 MiB cap. No additional external source was used and no fetched data was
+persisted. The source GPX SHA-256 remained unchanged. Terrain preparation took
+about 34 s, initial weather preparation 21 s, and derived computation averaged
+1.14 ms for the full route without additional requests. This completed the
+real partial-horizon replay; browser visual acceptance remains separate.
+
 Private recordings/GPXs, annotations and generated GFS assets were not modified
 or copied into tracked files. Lint, production build, dependency audit (zero
 production vulnerabilities) and diff checks pass; existing Vite large-bundle
