@@ -5,6 +5,7 @@ import ForecastPanel from "./ForecastPanel";
 import LayerLegend from "./LayerLegend";
 import LayerPanel from "./LayerPanel";
 import TimeSlider from "./TimeSlider";
+import WeatherFreshness from "./WeatherFreshness";
 import { accumulationIntervalLabel } from "../services/weatherTimeLabel";
 
 import type { Basemap, MapOverlayState } from "../types/layer";
@@ -12,7 +13,10 @@ import type { SelectedLocation } from "../types/location";
 import type { Place } from "../types/place";
 import type { WeatherData } from "../types/weather";
 import type { WeatherGrid, WeatherGridStatus } from "../types/weatherGrid";
+import type { JourneySchedule } from "../types/route";
+import type { CatalogueCheckState } from "../services/weatherCatalogueRefresh";
 import type {
+  GlobalWeatherCatalog,
   GlobalWeatherStatusRegistry,
   ScalarWeatherFieldSource,
   VectorWeatherFieldSource,
@@ -36,6 +40,9 @@ interface WeatherPanelProps {
   globalWindSource: VectorWeatherFieldSource | null;
   globalTemperatureSource: ScalarWeatherFieldSource | null;
   globalWeatherStatuses: GlobalWeatherStatusRegistry;
+  globalWeatherCatalog: GlobalWeatherCatalog | null;
+  catalogueCheck: CatalogueCheckState;
+  journeySchedule: JourneySchedule | null;
   activeGlobalValidTime: string | null;
   forecastTimes: string[];
   forecastHours?: number[];
@@ -66,6 +73,9 @@ export default function WeatherPanel({
   globalWindSource,
   globalTemperatureSource,
   globalWeatherStatuses,
+  globalWeatherCatalog,
+  catalogueCheck,
+  journeySchedule,
   activeGlobalValidTime,
   forecastTimes,
   forecastHours,
@@ -214,6 +224,12 @@ export default function WeatherPanel({
           Go
         </button>
       </form>
+
+      <WeatherFreshness
+        catalog={globalWeatherCatalog}
+        check={catalogueCheck}
+        journey={journeySchedule}
+      />
 
       {routePanel}
 

@@ -734,3 +734,132 @@ server-rendered markup and numeric tests are not visual acceptance.
 Manual acceptance of context, profile gaps and linked focus is required before
 further product changes. Arrival-window analysis and other derived families
 remain separate, unimplemented milestones.
+
+
+## 2026-09-03 — Automatic GFS Updates v1
+
+### Goal
+
+Remove the need to manually regenerate a stale local GFS run while preserving the
+client-only application, the nine established fields, the +24 h horizon and all
+existing route-condition semantics.
+
+### Changes
+
+- Extended the canonical Python builder with one-shot, inventory-only and
+  continuous watch orchestration. Watch mode checks hourly (with a guarded
+  minimum of 15 minutes), probes cycles newest-first and requires all nine
+  f001–f024 inventories before selecting a run.
+- Added a kernel-held cross-process lock, restartable marked transactions and a
+  single publication boundary. Field builders publish only to a private
+  catalogue; the public `latest.json` changes once, after the complete run and
+  every numeric PNG validate.
+- Immutable-run promotion first retries a same-volume directory rename. When a
+  Windows file watcher keeps the directory busy, it uses a marked, resumable
+  copy and validates the destination again. Neither path exposes the run through
+  `latest.json` until it is complete. Failed generation, validation, promotion
+  or cleanup leaves the prior catalogue live and is retried on a later check.
+- Retention runs after publication and keeps the current plus one previous
+  complete nine-field run. It removes only recognized generated tiles,
+  manifests and validation records from older run directories. Active builds,
+  source caches, links, unknown files and unrelated project data are excluded;
+  old marked generated transactions can be recovered or pruned safely.
+- Added `npm run weather:check`, `weather:update` and `weather:watch` through a
+  small cross-platform Python launcher. Normal `npm run dev` remains independent
+  of NOAA; local live development uses two terminals.
+- The browser now checks only cache-busted `latest.json` every five minutes and
+  whenever a hidden tab becomes visible, with a 20-second timeout and one
+  in-flight request maximum. Identical/older catalogues stop before manifest
+  requests. A newer catalogue must be one coherent nine-field +24 h run and all
+  immutable manifests must load before one state swap occurs.
+- Catalogue checks retain current renderer/source state. A swap preserves the
+  exact selected valid time when it overlaps, otherwise advances to the first
+  current time in the new horizon. Existing generation/abort guards rebuild
+  Route Conditions once for the new source set; terrain and DEM state are not
+  touched. Point-inspector result keys now include run identity.
+- Added a compact active-run/check-time indicator with coverage-based ending,
+  expired and journey-outside-horizon wording. The generic “model samples” copy
+  now says “Regional pressure · 9 × 9 samples” so it cannot be mistaken for the
+  global GFS fields.
+
+### Architectural decisions
+
+Weather generation is independent of frontend deployment. Run URLs stay
+immutable and `latest.json` is the only mutable browser discovery object.
+Stale-but-valid data remains preferable to a broken update. Automatic generation
+therefore combines complete-run publication with bounded retention rather than
+advancing fields independently.
+
+The hourly local cadence is conservative relative to six-hour GFS cycles and
+allows incomplete publication to settle without hammering NOAA/AWS. Browser
+checks are cheaper and use five minutes because they request one tiny local/CDN
+metadata object, never tiles. Immutable tile URLs keep the shared 64 MiB cache
+useful across checks and prevent freshness polling from causing tile or DEM
+requests.
+
+### Real local validation
+
+The live catalogue started at 2026-09-02 18Z. The updater rejected the theoretical
+2026-09-03 18Z candidate because f024 was not yet published, then selected the
+complete 2026-09-03 12Z run and generated all nine fields. With Vite deliberately
+left running, Windows denied the final directory rename after the first full
+validation. The public pointer correctly remained at 18Z. The marked transaction
+was resumed without rebuilding or redownloading fields; the copy fallback
+validated the destination again and atomically published 12Z. The successful
+resume took 332.92 seconds; the complete generation/recovery exercise ran about
+31 minutes. A subsequent inventory-only restart again rejected incomplete 18Z,
+reported no newer usable run and generated nothing. A bounded watch start also
+reported the same no-op result, retained both runs, entered its 15-minute test
+sleep and left no updater process after Ctrl+C.
+
+Retention kept `20260902T18Z` and `20260903T12Z`, and removed generated output for
+`20250829T00Z`, `20260830T12Z`, `20260831T12Z`, `20260831T18Z` and
+`20260901T06Z`. Retained timestamped run directories use 1,227.19 MiB
+(1.198 GiB), down from 1.219 GiB across six timestamped directories before the
+update. Total weather-root storage is 1,332.24 MiB (1.301 GiB), including the
+105.05 MiB atmospheric source cache that retention intentionally preserves.
+There are no update transaction directories or publication markers left.
+
+The real served-asset test loaded all nine 12Z manifests and sampled the normal
+Route Conditions path at public coarse coordinates, including partial-horizon
+coverage and antimeridian points. A repeated route added no requests; 50 decoded
+tiles occupied 6.88 MiB of the unchanged 64 MiB cache, 2.11 MiB of PNG data was
+transferred, and no requests remained pending.
+
+### Verification
+
+The final deterministic suites cover offline/incomplete discovery, no-op restart,
+failed generation/validation, atomic publication order, duplicate locking,
+Windows promotion fallback, interrupted-copy/staging recovery, retention safety,
+cleanup failure, cache-busted metadata requests, identical/older/newer catalogue
+handling, manifest failure, poll overlap, visibility resume, stale async results,
+timeline selection, retained visuals and freshness wording/presentation. The
+Python weather suite has 57 tests. The frontend weather/rendering/route/derived
+suites have 76 deterministic tests, plus the opt-in real served-asset test.
+
+ESLint, TypeScript, the production build, Python compilation, production
+dependency audit and Git whitespace checks pass. The audit reports zero production
+vulnerabilities. The existing large JavaScript chunk and `vite:prepare-out-dir`
+timing notices remain; the final build, including two local weather runs, took
+about 34 seconds.
+
+Vite started and served the new run. Browser automation and one reset retry both
+failed before Meridian opened with `node_repl kernel exited unexpectedly` and
+`windows sandbox failed: helper_unknown_error: apply deny-read ACLs`. No browser
+or security setting was weakened. Visual desktop/mobile acceptance, live
+no-reload adoption and Route Conditions interaction therefore remain unclaimed.
+
+Generated weather/source assets, `.env.local`, private GPXs/activities,
+credentials and personal paths remain untracked. The milestone changes no route
+timing, derived-condition meaning, pressure ownership, field set, forecast
+horizon, backend or production infrastructure.
+
+### Known limitations
+
+Watch mode is a foreground local process; production scheduling, object storage,
+CDN publication, monitoring and alerting remain deferred. The forecast remains
++24 h with discrete model steps and no run interpolation. Full nine-field output
+and validation are intentionally storage/CPU intensive. Source caches are outside
+the generated-run retention policy. On Windows, watcher contention may require
+the slower marked-copy promotion, but publication remains pointer-atomic and
+failure-safe.

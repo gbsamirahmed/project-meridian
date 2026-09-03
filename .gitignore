@@ -35,3 +35,6 @@ __pycache__/
 *.njsproj
 *.sln
 *.sw?
+
+# Local automatic weather updater lock
+/public/weather/gfs/.updater.lock

@@ -11,6 +11,11 @@ import {
   intersectScalarValidTimes,
   loadGlobalWeatherSources,
 } from "./services/globalWeatherService";
+import {
+  catalogueForecastIndex,
+  GlobalWeatherCatalogueWatcher,
+  type CatalogueCheckState,
+} from "./services/weatherCatalogueRefresh";
 import { IS_SATELLITE_CONFIGURED } from "./config/satelliteProvider";
 import {
   MAX_GPX_FILE_BYTES,
@@ -35,6 +40,7 @@ import type { WeatherData } from "./types/weather";
 import type { Place } from "./types/place";
 import type { Basemap, MapOverlayState } from "./types/layer";
 import type {
+  GlobalWeatherCatalog,
   GlobalWeatherSourceRegistry,
   GlobalWeatherStatusRegistry,
   GlobalWeatherFieldSource,
@@ -108,6 +114,12 @@ function App() {
   const [weatherGridStatus, setWeatherGridStatus] =
     useState<WeatherGridStatus>("idle");
   const [forecastHour, setForecastHour] = useState(0);
+  const [globalWeatherCatalog, setGlobalWeatherCatalog] =
+    useState<GlobalWeatherCatalog | null>(null);
+  const [catalogueCheck, setCatalogueCheck] = useState<CatalogueCheckState>({
+    lastSuccessfulCheck: null,
+    lastCheckFailed: false,
+  });
   const [globalWeatherSources, setGlobalWeatherSources] =
     useState<GlobalWeatherSourceRegistry>({});
   const [globalWeatherStatuses, setGlobalWeatherStatuses] =
@@ -161,6 +173,8 @@ function App() {
   const weatherGridRetryKeyRef = useRef<string | null>(null);
   const weatherGridCooldownUntilRef = useRef(0);
   const hasInitialisedGfsTimelineRef = useRef(false);
+  const activeGlobalValidTimeRef = useRef<string | null>(null);
+  const mapOverlaysRef = useRef(mapOverlays);
   const routeAbortRef = useRef<AbortController | null>(null);
   const routeGenerationRef = useRef(0);
   const routeConditionAbortRef = useRef<AbortController | null>(null);
@@ -171,30 +185,80 @@ function App() {
 
   useEffect(() => {
     let isCurrent = true;
+    let watcher: GlobalWeatherCatalogueWatcher | null = null;
+    const updateCheck = (next: CatalogueCheckState) => {
+      if (!isCurrent) return;
+      setCatalogueCheck((current) => ({
+        lastSuccessfulCheck:
+          next.lastSuccessfulCheck ?? current.lastSuccessfulCheck,
+        lastCheckFailed: next.lastCheckFailed,
+      }));
+    };
+    const adopt = (result: {
+      catalog: GlobalWeatherCatalog;
+      sources: GlobalWeatherSourceRegistry;
+      statuses: GlobalWeatherStatusRegistry;
+    }) => {
+      if (!isCurrent) return;
+      const globalOverlayActive =
+        mapOverlaysRef.current.precipitation ||
+        mapOverlaysRef.current.clouds ||
+        mapOverlaysRef.current.windFlow ||
+        mapOverlaysRef.current.temperatureContours;
+      if (globalOverlayActive && result.sources.precipitation) {
+        const times = result.sources.precipitation.manifest.timesteps.map(
+          (step) => step.validTime
+        );
+        setForecastHour(
+          catalogueForecastIndex(times, activeGlobalValidTimeRef.current)
+        );
+      }
+      setGlobalWeatherCatalog(result.catalog);
+      setGlobalWeatherSources(result.sources);
+      setGlobalWeatherStatuses(result.statuses);
+    };
+
     loadGlobalWeatherSources()
       .then((result) => {
         if (!isCurrent) return;
-        setGlobalWeatherSources(result.sources);
-        setGlobalWeatherStatuses(result.statuses);
-      })
-      .catch((error: unknown) => {
-        if (!isCurrent) return;
-        void error;
-        setGlobalWeatherStatuses({
-          precipitation: "unavailable",
-          cloud_cover: "unavailable",
-          wind_10m: "unavailable",
-          temperature_2m: "unavailable",
-          gust_surface: "unavailable",
-          visibility_surface: "unavailable",
-          freezing_level: "unavailable",
-          highest_freezing_level: "unavailable",
-          cloud_ceiling: "unavailable",
+        if (result.catalog) {
+          adopt({
+            catalog: result.catalog,
+            sources: result.sources,
+            statuses: result.statuses,
+          });
+        } else {
+          setGlobalWeatherSources(result.sources);
+          setGlobalWeatherStatuses(result.statuses);
+          setGlobalWeatherCatalog(null);
+        }
+        updateCheck({
+          lastSuccessfulCheck: result.catalog ? new Date().toISOString() : null,
+          lastCheckFailed: !result.catalog,
         });
+        const completeInitialRun =
+          result.catalog &&
+          Object.values(result.statuses).every((status) => status === "ready");
+        watcher = new GlobalWeatherCatalogueWatcher(
+          completeInitialRun ? result.catalog : null,
+          adopt,
+          updateCheck,
+          { visibility: document }
+        );
+        watcher.start();
+      })
+      .catch(() => {
+        if (!isCurrent) return;
+        updateCheck({ lastSuccessfulCheck: null, lastCheckFailed: true });
+        watcher = new GlobalWeatherCatalogueWatcher(null, adopt, updateCheck, {
+          visibility: document,
+        });
+        watcher.start();
       });
 
     return () => {
       isCurrent = false;
+      watcher?.stop();
     };
   }, []);
 
@@ -231,6 +295,11 @@ function App() {
     activeGlobalValidTime && weatherGrid?.times.length
       ? closestForecastIndex(weatherGrid.times, activeGlobalValidTime)
       : activeForecastHour;
+
+  useEffect(() => {
+    activeGlobalValidTimeRef.current = activeGlobalValidTime;
+    mapOverlaysRef.current = mapOverlays;
+  }, [activeGlobalValidTime, mapOverlays]);
 
   useEffect(() => {
     const timeoutId = window.setTimeout(() => {
@@ -664,6 +733,9 @@ function App() {
         globalWindSource={globalWindSource}
         globalTemperatureSource={globalTemperatureSource}
         globalWeatherStatuses={globalWeatherStatuses}
+        globalWeatherCatalog={globalWeatherCatalog}
+        catalogueCheck={catalogueCheck}
+        journeySchedule={journeyResult.schedule}
         activeGlobalValidTime={activeGlobalValidTime}
         forecastTimes={forecastTimes}
         forecastHours={forecastHours}

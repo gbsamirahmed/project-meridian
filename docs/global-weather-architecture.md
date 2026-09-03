@@ -2,7 +2,7 @@
 
 ## Status
 
-The provider-neutral architecture now serves locally generated global precipitation, total cloud cover, 10 m wind, and 2 m temperature, not a production feed. Meridian resolves the latest verified usable NOAA GFS 0.25° run, generates 24 hourly steps, publishes independently validated immutable numeric scalar/vector fields behind an atomic `latest.json` catalogue, and loads them through manifest clients, a bounded shared tile cache, geographic samplers, and persistent MapLibre renderers. Open-Meteo remains the active source for point weather plus regional map pressure. Scheduled ingestion, hosting, retention, monitoring, and model selection remain unimplemented and require product and cost decisions.
+The provider-neutral architecture serves locally generated global NOAA GFS fields, not a production feed. Meridian resolves the latest verified usable 0.25° run, generates 24 hourly steps for nine fields, validates one coherent immutable run, and atomically publishes it behind `latest.json`. The client loads these fields through manifest clients, a bounded shared tile cache, geographic samplers, and persistent MapLibre renderers. Open-Meteo remains the active source for point weather plus regional map pressure. Continuous local updating and bounded retention are implemented; production scheduling, hosting, monitoring, and long-term model selection remain deployment/product decisions.
 
 Generated timestamped run directories and `public/weather/gfs/latest.json` are local build products and are excluded from Git. A clean checkout remains runnable and reports missing GFS fields as unavailable until the documented generator publishes validated local datasets; it does not silently change field ownership.
 
@@ -124,7 +124,7 @@ Renderers should continue to own presentation only. Model download details, GRIB
 
 Migration remains variable by variable. Precipitation, cloud, 10 m wind, and 2 m temperature are now global GFS owners; pressure remains a regional Open-Meteo map field.
 
-The browser loads a schema-v2 field catalogue whose precipitation, cloud, wind, and temperature entries are resolved and validated independently. One field may advance while another retains an older valid run with its real metadata. A failed field is unavailable (or retains its prior published entry); it never silently falls back to the regional map grid. The inspector composes GFS precipitation/cloud/wind/temperature with Open-Meteo pressure and reports concise provenance.
+The browser still accepts older partial schema-v2 catalogues on initial load for compatibility. New automatic refreshes require a complete nine-field, single-run +24 h catalogue. It fetches only cache-busted `latest.json` every five minutes and when a hidden tab becomes visible; identical or older runs stop before manifest loading. A newer run is adopted only after every immutable manifest validates, while the existing sources and renderers remain active. A failed field never silently falls back to the regional map grid. The inspector composes GFS precipitation/cloud/wind/temperature with Open-Meteo pressure and reports concise provenance.
 
 The timeline is manifest-driven. With one enabled global field it uses that field's valid times; with multiple global fields it uses their exact valid-time intersection. Regional Open-Meteo pressure chooses its nearest available hour. Cloud, wind, and temperature are not temporally interpolated. During a wind timestep change, separate old and new particle populations sample their exact fields and crossfade visually; U/V values are not blended between forecast times. Temperature retains the last complete contour geometry until padded coverage for the requested exact timestep is ready.
 
@@ -147,9 +147,10 @@ This can run as a scheduled container, CI job or cloud worker with enough memory
 
 The current workflow generates surface `APCP`, instantaneous entire-atmosphere `TCDC`, instantaneous earth-relative 10 m `UGRD`/`VGRD`, and instantaneous 2 m `TMP` for forecast hours +1 through +24. The updater fetches each forecast inventory once, tests recent cycles newest-first, and accepts a candidate only if every required precipitation interval and exact cloud/vector/temperature record is usable. GRIB packing noise below 0.1 mm may be clamped only for precipitation after larger negative differences are rejected.
 
-- `scripts/weather/build_gfs_weather.py` is the canonical local command; the shared builder resolves the latest usable run, reuses inventory probing, selects indexed byte ranges, validates variable-specific ecCodes metadata, creates z0–z3 tiles, writes validation statistics, and publishes field entries independently.
-- `public/weather/gfs/<run>/manifest.json` remains the precipitation manifest; `cloud-cover/manifest.json`, `wind-10m/manifest.json`, and `temperature-2m/manifest.json` describe the other immutable fields. Existing schema-v1 precipitation runs remain loadable.
-- `latest.json` schema v2 is a mutable field catalogue. Updating one entry preserves the other entry and its actual run time.
+- `scripts/weather/build_gfs_weather.py` is the canonical local command behind `npm run weather:update` and `npm run weather:watch`; the shared builder resolves the latest usable run, reuses inventory probing, selects indexed byte ranges, validates variable-specific ecCodes metadata, and creates z0–z3 tiles.
+- `public/weather/gfs/<run>/manifest.json` remains the precipitation manifest; the eight field subdirectories contain the other immutable manifests. Existing schema-v1 precipitation and partial schema-v2 runs remain initially loadable.
+- The automatic updater publishes into a private transaction, validates all nine fields and 18,360 PNGs, moves the complete immutable run into place, and atomically replaces `latest.json` once. The public catalogue therefore never mixes runs during an automatic update. A process lock prevents duplicate builds; interrupted generated staging is validated and either reused or rebuilt on restart.
+- Retention runs only after publication. It keeps the current and one previous complete nine-field run, removes only recognized generated manifests/validation/tiles from older run directories, and preserves source caches and unknown files.
 - `src/types/globalWeather.ts` contains provider-neutral run, scalar/vector timestep, encoding, and source contracts.
 - `src/services/globalWeatherService.ts` and `numericTileCache.ts` load metadata, bound decoded tile memory, and sample values geographically.
 - `src/services/globalScalarSurface.ts` owns the reusable instance-based double-buffer lifecycle; thin precipitation and cloud adapters own their palettes and opacity. Wind reuses the numeric cache through a global vector sampler and the existing custom WebGL particle layer. Temperature prepares shared-cache scalar coverage asynchronously and atomically replaces viewport-aware GeoJSON isolines only after the continuous sampling domain is complete.
@@ -177,9 +178,10 @@ reuses inventory retrieval, byte ranges, decoding, grid sampling and catalogue
 publication. `python scripts/weather/gfs_atmospheric.py` provides a bounded,
 non-publishing distribution inspection; its disposable source cache is ignored.
 The five immutable directories use hyphenated field IDs under the selected run.
-An atmospheric-field failure retains that field's prior catalogue entry while
-the other fields continue independently. Existing schema-v1 precipitation and
-schema-v2 runs without these entries remain supported.
+An atmospheric-field failure may be collected while the remaining private fields
+finish, but automatic publication retains the entire prior public catalogue unless
+all nine fields validate. Existing schema-v1 precipitation and partial schema-v2
+runs remain supported for initial loading; they are never produced by the updater.
 
 All five use RG uint16 PNG, reserved no-data 65535, blue 0 and opaque alpha.
 Manifest `scale`, `offset`, physical `validRange`, `verticalReference`,

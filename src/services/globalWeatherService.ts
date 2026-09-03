@@ -15,14 +15,16 @@ import type {
 
 import { ATMOSPHERIC_FIELDS, validateAtmosphericManifest } from "./atmosphericFields";
 
-const LATEST_DATASET_URL = "/weather/gfs/latest.json";
-const FIELD_IDS: GlobalWeatherFieldId[] = [
+export const LATEST_DATASET_URL = "/weather/gfs/latest.json";
+export const GLOBAL_WEATHER_FIELD_IDS: GlobalWeatherFieldId[] = [
   "precipitation",
   "cloud_cover",
   "wind_10m",
   "temperature_2m",
   ...Object.keys(ATMOSPHERIC_FIELDS) as Array<keyof typeof ATMOSPHERIC_FIELDS>,
 ];
+
+const FIELD_IDS = GLOBAL_WEATHER_FIELD_IDS;
 
 interface LegacyPrecipitationManifest {
   schemaVersion: 1;
@@ -76,7 +78,7 @@ function isCatalogEntry(value: unknown): value is GlobalWeatherCatalogEntry {
   );
 }
 
-function normaliseCatalog(value: unknown): GlobalWeatherCatalog {
+export function normaliseGlobalWeatherCatalog(value: unknown): GlobalWeatherCatalog {
   if (!isRecord(value)) throw new Error("Global weather dataset pointer is invalid");
 
   if (
@@ -299,8 +301,12 @@ function normaliseManifest(
   return manifest;
 }
 
-async function fetchJson<T>(url: string, cache: RequestCache): Promise<T> {
-  const response = await fetch(url, { cache });
+async function fetchJson<T>(
+  url: string,
+  cache: RequestCache,
+  signal?: AbortSignal
+): Promise<T> {
+  const response = await fetch(url, { cache, signal });
   if (!response.ok) {
     throw new Error(`Global weather metadata returned HTTP ${response.status}`);
   }
@@ -311,16 +317,19 @@ async function loadField(
   latestUrl: URL,
   entry: GlobalWeatherCatalogEntry,
   expectedId: GlobalWeatherFieldId,
-  expectedProduct: string
+  expectedModel: string,
+  expectedProduct: string,
+  signal?: AbortSignal
 ): Promise<GlobalWeatherFieldSource> {
   const manifestUrl = new URL(entry.manifest, latestUrl).href;
   const manifest = normaliseManifest(
-    await fetchJson<unknown>(manifestUrl, "force-cache")
+    await fetchJson<unknown>(manifestUrl, "force-cache", signal)
   );
 
   if (
     manifest.field.id !== expectedId ||
     manifest.runTime !== entry.runTime ||
+    manifest.model !== expectedModel ||
     manifest.product !== expectedProduct ||
     manifest.timesteps.length !== entry.timestepCount ||
     manifest.timesteps[0]?.validTime !== entry.firstValidTime ||
@@ -344,8 +353,30 @@ async function loadField(
   };
 }
 
-export async function loadGlobalWeatherSources(): Promise<GlobalWeatherLoadResult> {
-  const latestUrl = new URL(LATEST_DATASET_URL, window.location.href);
+export interface GlobalWeatherLoadOptions {
+  catalog?: GlobalWeatherCatalog;
+  signal?: AbortSignal;
+}
+
+export function globalWeatherLatestUrl(cacheBust = false): URL {
+  const url = new URL(LATEST_DATASET_URL, window.location.href);
+  if (cacheBust) url.searchParams.set("checked", String(Date.now()));
+  return url;
+}
+
+export async function fetchGlobalWeatherCatalog(
+  signal?: AbortSignal
+): Promise<GlobalWeatherCatalog> {
+  const latestUrl = globalWeatherLatestUrl(true);
+  return normaliseGlobalWeatherCatalog(
+    await fetchJson<unknown>(latestUrl.href, "no-store", signal)
+  );
+}
+
+export async function loadGlobalWeatherSources(
+  options: GlobalWeatherLoadOptions = {}
+): Promise<GlobalWeatherLoadResult> {
+  const latestUrl = globalWeatherLatestUrl();
   const emptyStatuses: GlobalWeatherStatusRegistry = {
     precipitation: "unavailable",
     cloud_cover: "unavailable",
@@ -360,8 +391,8 @@ export async function loadGlobalWeatherSources(): Promise<GlobalWeatherLoadResul
   let catalog: GlobalWeatherCatalog;
 
   try {
-    catalog = normaliseCatalog(
-      await fetchJson<unknown>(latestUrl.href, "no-cache")
+    catalog = options.catalog ?? normaliseGlobalWeatherCatalog(
+      await fetchJson<unknown>(latestUrl.href, "no-cache", options.signal)
     );
   } catch {
     return { catalog: null, sources: {}, statuses: emptyStatuses };
@@ -378,7 +409,9 @@ export async function loadGlobalWeatherSources(): Promise<GlobalWeatherLoadResul
           latestUrl,
           entry,
           fieldId,
-          catalog.product
+          catalog.model,
+          catalog.product,
+          options.signal
         );
         if (fieldId === "wind_10m" && source.manifest.field.kind === "vector") {
           sources.wind_10m = source as VectorWeatherFieldSource;

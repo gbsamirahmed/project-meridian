@@ -260,6 +260,12 @@ Current global GFS fields are precipitation, total cloud cover, 10 m wind, and 2
 
 Future priorities should follow route usefulness. Candidates include gusts, freezing level, snowfall, snow cover/depth, cloud base, visibility, antecedent precipitation, and convection/lightning-related fields. Availability, semantics, licensing, storage, and honest interpretation must be evaluated before selection.
 
+### Weather publication lifecycle
+
+Weather data updates should remain independent of frontend deployment. Generated model runs use immutable paths, with one small mutable `latest.json` pointer switched only after a complete run validates. A stale but valid published run is preferable to replacing it with a partial or broken update.
+
+Automatic generation requires bounded retention. The local workflow keeps the active complete run and one previous complete run while preserving source caches. The browser watches only catalogue metadata, including when a hidden tab becomes visible, and loads immutable manifests only after a newer complete pointer appears. It must not poll weather tiles or clear working renderers merely to check freshness. Production scheduling, storage and monitoring remain separate deployment decisions.
+
 ## Stage endpoints and live landscape information
 
 ### Potential stage-end or camping terrain

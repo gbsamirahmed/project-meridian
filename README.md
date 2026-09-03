@@ -85,18 +85,30 @@ With Python 3.12 or newer:
 
 ```sh
 python -m pip install -r scripts/weather/requirements.txt
-python scripts/weather/build_gfs_weather.py
+npm run weather:update
 python -m unittest discover -s scripts/weather -p "test_*.py"
 ```
 
-The generator finds the latest usable complete GFS cycle, falls back when the newest run is incomplete, and downloads only indexed APCP, TCDC, 10 m UGRD/VGRD, 2 m TMP, surface GUST/VIS and three atmospheric HGT records. It validates each field's distinct semantics and publishes entries independently through an atomic `latest.json` catalogue. It requires no API key. On Windows, `py` may be used instead of `python`.
+The updater finds the latest usable complete GFS cycle, falls back when the newest run is incomplete, and downloads only indexed APCP, TCDC, 10 m UGRD/VGRD, 2 m TMP, surface GUST/VIS and three atmospheric HGT records. It builds and validates all nine +24 h fields in a private transaction, moves the complete run into its immutable path, and then atomically switches `latest.json`. A failed run leaves the previous catalogue live. It requires no API key.
+
+For continuous local updates, keep the frontend and updater in separate terminals:
+
+```sh
+npm run dev
+npm run weather:watch
+```
+
+Watch mode checks once an hour, never rebuilds the published run, and retains the current plus one previous complete run. `npm run weather:check` probes for a newer usable cycle without generating or pruning. Ordinary `npm run dev` never contacts NOAA on the updater's behalf. On Windows the npm launcher uses `py -3.12`; set `MERIDIAN_PYTHON` to another Python executable when needed.
 
 ## Commands and verification
 
 | Command | Purpose |
 | --- | --- |
 | `npm ci` | Reproduce dependencies from `package-lock.json` |
-| `npm run dev` | Start the development server |
+| `npm run dev` | Start the development server without running the NOAA updater |
+| `npm run weather:check` | Probe for a newer complete nine-field GFS run without generating or pruning |
+| `npm run weather:update` | Run one automatic GFS update and retention pass |
+| `npm run weather:watch` | Check hourly and update when a newer usable cycle appears |
 | `npm run lint` | Run ESLint |
 | `npm run build` | Type-check and build production assets |
 | `npm run preview` | Serve the production build locally |
@@ -122,7 +134,7 @@ Provider availability, acceptable-use policies, rate limits, attribution require
 - Meridian is an engineering prototype and should not be used for safety-critical navigation or forecasting decisions.
 - Open-Meteo pressure still interpolates a regional 9 × 9 sample grid.
 - GFS precipitation, total cloud cover, 10 m wind and 2 m temperature are 0.25° model fields; close zooms overzoom the same data rather than creating finer meteorological detail.
-- The generated GFS horizon is +24 hours and updates are manually invoked rather than scheduled or published as a production service.
+- The generated GFS horizon is +24 hours. Local updates can run continuously while a developer terminal remains open, but no production scheduler, hosting, monitoring, or alerting exists.
 - Terrain and weather detail remain constrained by their source datasets.
 - Route timing is a general hiking estimate, not a personalised prediction or safety assessment. Journey conditions use discrete GFS fields within the generated +24 h horizon and do not adjust travel time.
 - Atmospheric route fields remain raw GFS 0.25° diagnostics, not new map overlays. Ceiling is above the model surface, not cloud base; no-ceiling sentinels are unavailable. Freezing levels do not predict ice, and model visibility is not exact local sight distance.

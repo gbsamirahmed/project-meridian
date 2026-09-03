@@ -176,6 +176,10 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Keep map-field GRIB messages inside the run; atmospheric messages use a disposable ignored source cache.",
     )
+    parser.add_argument("--watch", action="store_true", help="Check hourly until stopped.")
+    parser.add_argument("--poll-minutes", type=float, default=60,
+                        help="Watch interval in minutes (minimum 15; default 60).")
+    parser.add_argument("--check-only", action="store_true", help="Probe inventories without generating or pruning.")
     return parser.parse_args()
 
 
@@ -465,7 +469,7 @@ def candidate_run_times(latest_date: date, count: int) -> list[datetime]:
 
 
 def probe_run(
-    run_time: datetime, forecast_hours: list[int]
+    run_time: datetime, forecast_hours: list[int], require_atmospheric: bool = False
 ) -> tuple[
     tuple[PlannedTimestep, ...],
     tuple[CloudInventoryRecord, ...],
@@ -504,6 +508,12 @@ def probe_run(
             temperature_records[forecast_hour] = select_instantaneous_temperature_record(
                 inventory_text, forecast_hour
             )
+    if require_atmospheric:
+        from gfs_atmospheric import FIELDS, select_record
+        for hour in forecast_hours:
+            inventory = fetch_text(f"{gfs_file_base(date_value, cycle, hour)}.idx")
+            for field in FIELDS:
+                select_record(inventory, hour, field)
     return (
         plan_timesteps(inventories, forecast_hours),
         tuple(cloud_records[hour] for hour in forecast_hours),
@@ -512,12 +522,14 @@ def probe_run(
     )
 
 
-def resolve_run(args: argparse.Namespace, forecast_hours: list[int]) -> RunResolution:
+def resolve_run(args: argparse.Namespace, forecast_hours: list[int], newer_than: datetime | None = None) -> RunResolution | None:
     if args.run:
         date_value, cycle, run_time = validate_run(args.run)
+        if newer_than is not None and run_time <= newer_than:
+            return None
         print(f"Checking requested GFS {run_time:%Y-%m-%d %HZ}...")
         plan, cloud_records, wind_records, temperature_records = probe_run(
-            run_time, forecast_hours
+            run_time, forecast_hours, getattr(args, "require_all_fields", False)
         )
         return RunResolution(
             date=date_value,
@@ -536,11 +548,13 @@ def resolve_run(args: argparse.Namespace, forecast_hours: list[int]) -> RunResol
     latest_date = discover_latest_archive_date(reference_time)
     checked: list[dict[str, str]] = []
     for run_time in candidate_run_times(latest_date, args.candidate_count):
+        if newer_than is not None and run_time <= newer_than:
+            return None
         label = f"{run_time:%Y-%m-%d %HZ}"
         print(f"Checking GFS {label}...")
         try:
             plan, cloud_records, wind_records, temperature_records = probe_run(
-                run_time, forecast_hours
+                run_time, forecast_hours, getattr(args, "require_all_fields", False)
             )
         except (SourceUnavailableError, ValueError) as error:
             reason = str(error)
@@ -2240,11 +2254,8 @@ def build_temperature_dataset(
         raise
 
 
-def main() -> None:
+def build_resolved_run(args: argparse.Namespace, resolution: RunResolution, forecast_hours: list[int]) -> None:
     from gfs_atmospheric import build_atmospheric_datasets
-    args = parse_args()
-    forecast_hours = parse_hours(args.hours)
-    resolution = resolve_run(args, forecast_hours)
     date_value = resolution.date
     cycle = resolution.cycle
     run_time = resolution.run_time
@@ -2510,6 +2521,11 @@ def main() -> None:
     build_wind_dataset(args, resolution, forecast_hours, run_directory, run_id)
     build_temperature_dataset(args, resolution, forecast_hours, run_directory, run_id)
     build_atmospheric_datasets(args, resolution, forecast_hours, run_directory, run_id)
+
+
+def main() -> None:
+    from gfs_updater import run_command
+    run_command(parse_args())
 
 
 if __name__ == "__main__":

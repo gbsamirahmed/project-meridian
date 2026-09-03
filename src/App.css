@@ -1007,6 +1007,61 @@
   border-top-style: solid;
 }
 
+.weather-freshness {
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+  margin: 0 0 10px;
+  padding: 9px 11px;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.weather-freshness > span {
+  flex: 0 0 auto;
+  width: 6px;
+  height: 6px;
+  margin-top: 4px;
+  background: var(--green);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(135, 213, 165, 0.09);
+}
+
+.weather-freshness > div {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.weather-freshness strong,
+.weather-freshness small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.weather-freshness strong {
+  color: var(--text);
+  font-size: 10px;
+}
+
+.weather-freshness small {
+  font-size: 8.5px;
+}
+
+.weather-freshness-ending > span {
+  background: #e5bf72;
+  box-shadow: 0 0 0 4px rgba(229, 191, 114, 0.1);
+}
+
+.weather-freshness-expired > span,
+.weather-freshness-unavailable > span {
+  background: #e47d68;
+  box-shadow: 0 0 0 4px rgba(228, 125, 104, 0.1);
+}
+
 .data-resolution-card {
   padding: 11px 13px;
 }

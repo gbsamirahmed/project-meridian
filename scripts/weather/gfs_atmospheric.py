@@ -156,8 +156,9 @@ def source_cache(args, resolution):
     # Inspection must not create an immutable run before precipitation can stage
     # it. Reuse the initial inspection cache if already present; otherwise keep
     # this disposable, bounded (five messages/hour) cache outside the run assets.
-    existing = args.output_root / run_id / "atmospheric-source"
-    return existing if existing.exists() else args.output_root / f".{run_id}-atmospheric-source-building"
+    cache_root = getattr(args, "source_cache_root", args.output_root)
+    existing = cache_root / run_id / "atmospheric-source"
+    return existing if existing.exists() else cache_root / f".{run_id}-atmospheric-source-building"
 
 
 def validated_values(values: np.ndarray, field: AtmosphericField) -> tuple[np.ndarray, int]:

@@ -453,6 +453,7 @@ export default function MapView({
 
     let isCurrent = true;
     const key = [
+      globalPrecipitationSource.manifest.id,
       activePrecipitationTimestep.id,
       activeInspection.longitude.toFixed(5),
       activeInspection.latitude.toFixed(5),
@@ -487,6 +488,7 @@ export default function MapView({
 
     let isCurrent = true;
     const key = [
+      globalCloudSource.manifest.id,
       activeCloudTimestep.id,
       activeInspection.longitude.toFixed(5),
       activeInspection.latitude.toFixed(5),
@@ -522,6 +524,7 @@ export default function MapView({
     }
     let isCurrent = true;
     const key = [
+      globalTemperatureSource.manifest.id,
       activeTemperatureTimestep.id,
       activeInspection.longitude.toFixed(5),
       activeInspection.latitude.toFixed(5),
@@ -550,6 +553,7 @@ export default function MapView({
     if (!activeInspection || !globalWindSource || !activeWindTimestep) return;
     let isCurrent = true;
     const key = [
+      globalWindSource.manifest.id,
       activeWindTimestep.id,
       activeInspection.longitude.toFixed(5),
       activeInspection.latitude.toFixed(5),
@@ -1040,8 +1044,9 @@ export default function MapView({
         )
       : null;
   const expectedGlobalSampleKey =
-    activeInspection && activePrecipitationTimestep
+    activeInspection && activePrecipitationTimestep && globalPrecipitationSource
       ? [
+          globalPrecipitationSource.manifest.id,
           activePrecipitationTimestep.id,
           activeInspection.longitude.toFixed(5),
           activeInspection.latitude.toFixed(5),
@@ -1052,8 +1057,9 @@ export default function MapView({
       ? globalPrecipitationSample.value
       : undefined;
   const expectedGlobalCloudSampleKey =
-    activeInspection && activeCloudTimestep
+    activeInspection && activeCloudTimestep && globalCloudSource
       ? [
+          globalCloudSource.manifest.id,
           activeCloudTimestep.id,
           activeInspection.longitude.toFixed(5),
           activeInspection.latitude.toFixed(5),
@@ -1064,8 +1070,9 @@ export default function MapView({
       ? globalCloudSample.value
       : undefined;
   const expectedGlobalTemperatureSampleKey =
-    activeInspection && activeTemperatureTimestep
+    activeInspection && activeTemperatureTimestep && globalTemperatureSource
       ? [
+          globalTemperatureSource.manifest.id,
           activeTemperatureTimestep.id,
           activeInspection.longitude.toFixed(5),
           activeInspection.latitude.toFixed(5),
@@ -1076,8 +1083,9 @@ export default function MapView({
       ? globalTemperatureSample.value
       : undefined;
   const expectedGlobalWindSampleKey =
-    activeInspection && activeWindTimestep
+    activeInspection && activeWindTimestep && globalWindSource
       ? [
+          globalWindSource.manifest.id,
           activeWindTimestep.id,
           activeInspection.longitude.toFixed(5),
           activeInspection.latitude.toFixed(5),
