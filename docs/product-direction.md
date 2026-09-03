@@ -327,6 +327,26 @@ on the elevation/time profile once reference levels and missing/no-ceiling
 states can be presented clearly. Derived cloud intersection, icing or other
 conditions require a separate, transparent evidence-based design.
 
+## Transparent derived route context
+
+Keep raw forecast, route context and interpretation separate. Derived context
+must resolve back to the original sample's terrain, expected arrival and field
+provenance, fail independently when inputs are unavailable, and never silently
+feed back into movement time. Expected-arrival context comes before any future
+arrival-window environmental analysis.
+
+Freezing-level separation is atmospheric context, not ice or snow prediction;
+multiple levels limit any simple boundary interpretation. Route-relative wind
+is coarse forecast airflow projected onto the direction of travel, not terrain
+downscaling. Gust magnitude does not supply a direction. Model visibility is
+not exact human sight distance, and cloud ceiling is not cloud base or proof of
+cloud immersion. Reference frames must be compatible before comparing heights.
+
+Use explainable evidence, approximate wording and honest coverage gaps rather
+than an opaque risk score. Atmospheric-height lines can help explain route
+progress without adding map layers, but must preserve GFS resolution, multiple
+level caveats, and the readability of the underlying elevation profile.
+
 ## Open research questions
 
 - Which route × time conditions provide the greatest planning value?

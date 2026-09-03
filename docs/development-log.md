@@ -614,3 +614,107 @@ inspector text and real data-path tests do not substitute for them.
 Manually validate atmospheric values, provenance and partial coverage across
 short and long journeys before considering any separate derived-condition
 design. No further environmental milestone is implemented here.
+
+## 2026-09-03 — Derived Environmental Conditions v1
+
+### Goal
+
+Turn already sampled expected-arrival atmospheric fields into explainable route
+context without changing terrain, movement, forecast products or arrival times.
+
+### Changes
+
+- Added a pure typed derived layer with independent freezing, sustained wind,
+  gust and visibility/ceiling availability. Aligned indexes and field keys link
+  interpretations to original raw values, terrain and forecast provenance.
+- Added approximate signed route/freezing separation, multiple-level caveats,
+  debounced crossing events, contiguous poor-visibility sections and one set of
+  wind/gust/visibility extrema. No severity or confidence score is introduced.
+- Inspector now leads with arrival/terrain and grouped context; raw values and
+  provenance remain expandable. Summary adds coverage-qualified freezing context,
+  selectable crossings and secondary sustained head/crosswind information.
+- Added a subtle gapped freezing-level profile line using the existing route
+  samples/focus interaction. It is clipped to the elevation scale with an
+  off-scale/range notice rather than compressing the terrain profile.
+
+### Architectural decisions
+
+Terrarium's documented sea-level elevations and GFS mean-sea-level geopotential
+heights support an approximate comparison, not a survey-datum claim. Explicit
+spherical conversion `R × H / (R − H)` changes the retained heights by less than
+10 m. Raw gpm values remain intact. A ±100 m near band is a display/debounce
+policy, not atmospheric error bounds or an ice forecast.
+
+Inspection of all 24 native retained grids found paired freezing differences
+of ≤1.12 gpm at P95, 1304.64 gpm at P99 and 3429.44 gpm maximum. A >100 m
+separation flags materially distinct diagnostics; absent or different-time/run
+highest-level evidence leaves structure unknown. Crossing continuity resets
+through unknown/multiple structures and unavailable samples. Locators use
+sample brackets, not interpolated forecast fields, with coarse UI rounding.
+
+Visibility vocabulary uses Met Office distance conventions (<1000 m, <2 nautical
+miles, <5 nautical miles, and greater visibility). The retained global values
+span these bands: 1,424,439 / 1,159,599 / 1,213,862 / 21,119,860 native samples.
+Calm/light wind uses one/three-knot display boundaries; a one-knot component
+dominance margin avoids emphasising tiny directional differences. Existing
+along/cross signs are unchanged. Gust remains directionless; signed excess is
+only calculated against a matching sustained forecast, without calm ratios.
+Sources, exact thresholds and caveats are in
+[derived route conditions](derived-route-conditions.md).
+
+Ceiling remains raw model-surface-relative context. No model orography is
+currently sampled, so no ceiling/route comparison or ceiling profile is made.
+No new GFS field, manifest, preprocessing, dependency or cache is required.
+The retained nine-field 2026-09-02 18Z f001–f024 run was not regenerated.
+
+### Known limitations
+
+GFS remains 0.25° and expected-arrival only. Approximate vertical comparison does
+not resolve every datum in the composite terrain source. Multiple freezing
+levels cannot describe a full temperature profile. No ice/snow, cloud immersion,
+wind amplification, risk score or weather-adjusted movement is inferred.
+Off-scale freezing heights are reported numerically; only the lower diagnostic
+is drawn. Event locations and sample-count coverage are not precise boundaries
+or percentages of elapsed journey time.
+
+### Verification
+
+Added 21 synthetic tests covering references/conversion, freezing bands and
+crossings, missing/zero values, independent families, wind conventions, gust
+separation, visibility boundaries, ceiling semantics, events, purity and gapped
+profile markup. All 65 relevant frontend tests pass, including the existing
+route/journey, weather-source, precipitation-rendering and temperature-contour
+suites and the extended real served-asset test. One initial concurrent run had
+a transient served-tile availability assertion failure; the isolated test and
+complete serial rerun passed. No application/cache workaround was added.
+
+Retained numeric assets were checked directly and through Route Conditions;
+34-hour synthetic schedules retain early coverage and unavailable later samples.
+Two privately held lowland/mountain benchmarks were checked in memory with cached
+Terrarium terrain and the unchanged production resampling/terrain/schedule logic.
+Their expected-arrival contexts were available and below the forecast freezing
+level; no crossing was invented. Derived computation averaged under 0.2 ms per
+benchmark build and made no network requests. The served smoke test retained
+54 tiles / 7.13 MiB in the unchanged 64 MiB cache, with zero pending requests and
+no repeated-route tile downloads.
+
+The long benchmark's full terrain replay was not completed: required uncached
+DEM requests were blocked by permission review because tile coordinates reveal
+route location to AWS; approval was requested and no download was performed.
+Private recordings/GPXs, annotations and generated GFS assets were not modified
+or copied into tracked files. Lint, production build, dependency audit (zero
+production vulnerabilities) and diff checks pass; existing Vite large-bundle
+and output-directory timing notices remain. No Python source changed, so Python
+and unrelated research suites were not rerun.
+
+Vite served the application and numeric assets. Browser launch and a reset retry
+both failed before opening Meridian: `windows sandbox failed:
+helper_unknown_error: apply deny-read ACLs`. Visual/mobile acceptance, including
+the earlier overview-colour and precipitation-seam checks, remains pending;
+server-rendered markup and numeric tests are not visual acceptance.
+
+### Next direction
+
+Manual acceptance of context, profile gaps and linked focus is required before
+further product changes. Arrival-window analysis and other derived families
+remain separate, unimplemented milestones.

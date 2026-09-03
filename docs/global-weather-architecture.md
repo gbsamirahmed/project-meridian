@@ -208,8 +208,12 @@ the existing bounded nearest-step/earlier-tie rule; precipitation retains its
 real accumulation intervals. Presentation-mode changes do not refetch weather.
 The inspector exposes raw atmospheric values and secondary provenance; peak
 gust/minimum visibility summaries state their scheduled-sample coverage.
-Height-versus-elevation profile drawing is deferred; aligned raw height samples
-and vertical references are available in `RouteConditions` for later evaluation.
+The separate pure `RouteConditions.derived` layer now compares approximately
+sea-level-referenced freezing height with route terrain, retains wind/gust and
+visibility context, and supplies a gapped freezing-height profile. Cloud-ceiling
+comparison remains deferred because it is above the model surface.
+See [derived route conditions](derived-route-conditions.md) for vertical-reference
+assumptions, thresholds, event debouncing and explicitly deferred interpretations.
 
 ## Cost and performance expectations
 

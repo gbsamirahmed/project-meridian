@@ -1,4 +1,5 @@
 import { geodesicDistanceM, shortestLongitudeDelta } from "./routeGeometry";
+import { buildDerivedRouteConditions } from "./derivedRouteConditions";
 import {
   prepareScalarFieldCoordinates,
   prepareVectorFieldCoordinates,
@@ -503,5 +504,6 @@ export async function buildRouteConditions(
       wind: coverageFor(samples, (sample) => sample.weather.wind),
     },
     summary: buildRouteConditionSummary(samples),
+    derived: buildDerivedRouteConditions(route.id, samples),
   };
 }

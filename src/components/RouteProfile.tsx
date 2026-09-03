@@ -1,4 +1,6 @@
-import type { PointerEvent } from "react";
+import { useId, useMemo, type PointerEvent } from "react";
+import { freezingProfileSeries } from "../services/derivedRouteConditions";
+import { atmosphericHeightLabel } from "../services/atmosphericFormatting";
 import type { JourneySchedule, TerrainRoute } from "../types/route";
 import { routeConditionColour } from "../services/routeConditionStyle";
 import type {
@@ -36,15 +38,32 @@ export default function RouteProfile({
   focusedIndex,
   onFocusChange,
 }: RouteProfileProps) {
+  const clipId = useId();
+  const freezingSeries = useMemo(() => conditions?.derived && conditions.routeId === route.id && conditions.samples.length === route.samples.length
+    ? freezingProfileSeries(conditions.samples, conditions.derived) : [], [conditions, route.id, route.samples.length]);
   const validElevations = route.samples
     .map((sample) => sample.smoothedElevationM)
     .filter((value): value is number => value !== null);
-  if (validElevations.length < 2) return null;
   const minimum = Math.floor(Math.min(...validElevations) / 50) * 50;
   const maximum = Math.ceil(Math.max(...validElevations) / 50) * 50;
   const range = Math.max(50, maximum - minimum);
   const innerWidth = WIDTH - LEFT - RIGHT;
   const innerHeight = HEIGHT - TOP - BOTTOM;
+  const atmosphere = useMemo(() => {
+    let path = "", open = false;
+    let low = Infinity, high = -Infinity, visible = false;
+    for (const point of freezingSeries) {
+      if (point.altitudeM === null) { open = false; continue; }
+      low = Math.min(low, point.altitudeM); high = Math.max(high, point.altitudeM);
+      if (point.altitudeM >= minimum && point.altitudeM <= minimum + range) visible = true;
+      const x = LEFT + point.distanceM / Math.max(1, route.totalDistanceM) * innerWidth;
+      const y = TOP + (1 - (point.altitudeM - minimum) / range) * innerHeight;
+      path += `${open ? "L" : "M"}${x.toFixed(2)},${y.toFixed(2)} `;
+      open = true;
+    }
+    return { path, low, high, visible };
+  }, [freezingSeries, minimum, range, route.totalDistanceM, innerWidth, innerHeight]);
+  if (validElevations.length < 2) return null;
   const xFor = (distance: number) =>
     LEFT + (distance / Math.max(1, route.totalDistanceM)) * innerWidth;
   const yFor = (elevation: number) =>
@@ -131,6 +150,8 @@ export default function RouteProfile({
       >
         <line x1={LEFT} y1={TOP + innerHeight} x2={WIDTH - RIGHT} y2={TOP + innerHeight} className="route-profile-axis" />
         <path d={path.trim()} className="route-profile-line" />
+        <defs><clipPath id={clipId}><rect x={LEFT} y={TOP} width={innerWidth} height={innerHeight} /></clipPath></defs>
+        <path d={atmosphere.path.trim()} className="route-profile-freezing-line" clipPath={`url(#${clipId})`} />
         {conditionStrip &&
           Array.from(
             { length: Math.ceil((conditionStrip.length - 1) / stripStep) },
@@ -182,6 +203,8 @@ export default function RouteProfile({
         </text>
         <text x={LEFT + 2} y={TOP + 9}>{maximum} m</text>
       </svg>
+      {Number.isFinite(atmosphere.low) && <p className="route-profile-freezing-key">Dashed: forecast 0°C level {atmosphericHeightLabel(atmosphere.low)}–{atmosphericHeightLabel(atmosphere.high)}
+        {!atmosphere.visible ? " (outside elevation scale)" : " (clipped to elevation scale)"}. Gaps mean unavailable; lower diagnostic only, multiple levels may exist. GFS 0.25° at expected arrival.</p>}
       <p>Move, tap, or use arrow keys to locate a point on the map.</p>
     </div>
   );

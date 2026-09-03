@@ -1,5 +1,6 @@
 import type { GlobalWeatherFieldId, ScalarFieldManifest } from "./globalWeather";
 import type { RouteCoordinate } from "./route";
+import type { DerivedRouteConditions } from "./derivedRouteConditions";
 
 export type RouteConditionMode =
   | "none"
@@ -120,6 +121,7 @@ export interface RouteConditionSummary {
 }
 
 export interface RouteConditions {
+  derived: DerivedRouteConditions;
   routeId: string;
   generatedAt: string;
   samples: RouteConditionSample[];

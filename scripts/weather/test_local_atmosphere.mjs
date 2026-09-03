@@ -44,11 +44,20 @@ test("served catalogue and PNGs sample through the real route/source/cache path"
     const terrain = { id: "smoke", totalDistanceM: 300, samples: places.map(([longitude, latitude], index) => ({ index, longitude, latitude, cumulativeDistanceM: index * 100, smoothedElevationM: 0, gradient: 0 })) };
     const schedule = times => ({ routeId: "smoke", samples: times.map((arrivalTime, index) => ({ routeSampleIndex: index, arrivalTime, earliestArrivalTime: arrivalTime, latestArrivalTime: arrivalTime, movingElapsedMinutes: 0, stoppedElapsedMinutes: 0, elapsedMinutes: 0 })) });
     const conditions = await route.buildRouteConditions(terrain, schedule([at(1), at(1), at(1), at(1)]), sources);
+    assert.equal(conditions.derived.coverage.freezing.availableSamples, 4);
+    assert.equal(conditions.derived.coverage.visibility.availableSamples, 4);
+    assert.equal(conditions.derived.coverage.gust.availableSamples, 4);
+    assert.equal(conditions.derived.samples[0].freezing.position, "below");
+    assert.equal(conditions.derived.samples[0].visibilityCloud.ceiling.reference, "model-surface");
+    assert.equal(conditions.derived.samples[0].freezing.highestAltitudeM !== null, true);
     for (const key of ["temperature", "precipitation", "cloud", "wind", "gust", "visibility", "freezingLevel", "highestFreezingLevel"]) assert.equal(conditions.coverage[key].availableSamples, 4, key);
     const count = requests;
     await route.buildRouteConditions(terrain, schedule([at(1), at(1), at(1), at(1)]), sources);
     assert.equal(requests, count, "repeat route should reuse shared cache");
     const partial = await route.buildRouteConditions(terrain, schedule([at(1), at(10), at(25), at(34)]), sources);
+    assert.equal(partial.derived.coverage.freezing.availableSamples, 2);
+    assert.equal(partial.derived.coverage.gust.availableSamples, 2);
+    assert.equal(partial.derived.samples[3].freezing.state, "unavailable");
     for (const key of ["gust", "visibility", "freezingLevel", "highestFreezingLevel"]) {
       assert.equal(partial.coverage[key].availableSamples, 2);
       assert.equal(partial.samples[3].weather[key].reason, "outside-forecast");

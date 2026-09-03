@@ -1,5 +1,7 @@
 import { useMemo, type ChangeEvent } from "react";
 import RouteProfile from "./RouteProfile";
+import DerivedConditionContext from "./DerivedConditionContext";
+import { crossingLabel, freezingSummaryLabel } from "../services/derivedConditionFormatting";
 import { ROUTE_CONDITION_LEGENDS } from "../services/routeConditionStyle";
 import { accumulationIntervalLabel, routeConditionTimeLabel } from "../services/weatherTimeLabel";
 import { precipitationAmountLabel } from "../services/precipitationStyle";
@@ -106,6 +108,7 @@ export default function RoutePlannerPanel({
     onImport(file);
   };
   const route = terrainRoute;
+  const derived = routeConditions?.derived;
   const focusedCondition =
     focusedIndex === null
       ? null
@@ -267,6 +270,22 @@ export default function RoutePlannerPanel({
               </div>
             </div>
           )}
+          {derived && (
+            <div className="route-derived-summary">
+              <p>{freezingSummaryLabel(derived)}</p>
+              {derived.summary.freezingCrossings > 0 && <details className="route-assumptions">
+                <summary>{derived.summary.freezingCrossings} forecast 0°C-level transition(s)</summary>
+                {derived.events.filter(event => event.kind === "freezing-crossing").map((event, index) => (
+                  <button type="button" className="route-event-button" key={index} onClick={() => onFocusChange(event.toSampleIndex)}>{crossingLabel(event)}</button>
+                ))}
+              </details>}
+              <details className="route-assumptions">
+                <summary>Wind context across available samples</summary>
+                <p>Strongest sustained crosswind {routeConditions!.summary.crosswindMaximumMs === null ? "unavailable" : gustLabel(routeConditions!.summary.crosswindMaximumMs)} · headwind {routeConditions!.summary.headwindMaximumMs === null ? "unavailable" : gustLabel(routeConditions!.summary.headwindMaximumMs)}.</p>
+                <small>{fieldCoverageLabel(derived.coverage.wind)} · regional wind, not terrain-downscaled airflow.</small>
+              </details>
+            </div>
+          )}
           {schedule && (
             <div className="route-estimate-copy">
               <strong>Finish {timeLabel(schedule.expectedFinishTime)}</strong>
@@ -377,6 +396,13 @@ export default function RoutePlannerPanel({
                 <strong>{focusedCondition.terrain.elevationM === null ? "Unavailable" : `${Math.round(focusedCondition.terrain.elevationM)} m`}</strong>
                 <span>Gradient</span>
                 <strong>{focusedCondition.terrain.gradient === null ? "Unavailable" : `${(focusedCondition.terrain.gradient * 100).toFixed(1)}%`}</strong>
+              </div>
+              {derived?.samples[focusedCondition.routeSampleIndex] && (
+                <DerivedConditionContext raw={focusedCondition} context={derived.samples[focusedCondition.routeSampleIndex]} />
+              )}
+              <details className="route-assumptions">
+                <summary>Raw model values & provenance</summary>
+              <div className="route-condition-inspector-grid">
                 <span>Temperature</span>
                 <strong>{scalarLabel(focusedCondition.weather.temperature, (value) => `${value.toFixed(1)} °C`)}</strong>
                 <span>Precipitation</span>
@@ -424,8 +450,7 @@ export default function RoutePlannerPanel({
                 <strong>{scalarLabel(focusedCondition.weather.cloudCeiling, atmosphericHeightLabel)}</strong>
               </div>
               <small>Ceiling is above the model surface, not sea level. No ceiling value may mean no diagnosed ceiling or missing data. These heights do not indicate ice or cloud immersion.</small>
-              <details className="route-assumptions">
-                <summary>Atmospheric details & provenance</summary>
+              <div>
                 <p>Highest tropospheric freezing level: {scalarLabel(focusedCondition.weather.highestFreezingLevel, atmosphericHeightLabel)} · sea level</p>
                 {([
                   ["Gust", focusedCondition.weather.gust],
@@ -440,7 +465,8 @@ export default function RoutePlannerPanel({
                       : condition.reason === "outside-forecast" ? "Outside forecast horizon" : "Unavailable"}
                   </p>
                 ))}
-                <small>Instantaneous model diagnostics, not hourly maxima. Dense route samples do not increase GFS 0.25° resolution. Visibility is modelled, not an exact local sight distance.</small>
+                <small>Context uses expected arrival only, not the full arrival range. Instantaneous model diagnostics, not hourly maxima. Dense route samples do not increase GFS 0.25° resolution. Visibility is modelled, not an exact local sight distance. Gust direction is unknown; directional context comes only from sustained wind.</small>
+              </div>
               </details>
               {focusedProvenance && (
                 <small>
