@@ -36,10 +36,9 @@ export const HILLSHADE_ZOOM_STOPS = [
 
 export const WEATHER_SURFACE_CROSSFADE_MS = 260;
 
-// Open-Meteo's hourly precipitation value is the total precipitation summed
-// over the preceding hour, in millimetres. Thresholds are intentionally
-// nonlinear so ordinary UK rain remains visible without saturating extremes.
-export const PRECIPITATION_DRY_THRESHOLD_MM = 0.1;
+// GFS precipitation is a one-hour interval total, in millimetres. These
+// nonlinear stops preserve ordinary rain without saturating extremes; positive
+// trace amounts below the first stop fade continuously from zero.
 export const PRECIPITATION_INTENSITY_LEVELS: PrecipitationIntensityLevel[] = [
   {
     value: 0.1,

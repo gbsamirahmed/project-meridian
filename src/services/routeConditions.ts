@@ -361,7 +361,7 @@ export function buildRouteConditionSummary(
       ? Math.max(...precipitation)
       : null,
     precipitationEncountered: precipitation.length
-      ? precipitation.some((value) => value >= 0.05)
+      ? precipitation.some((value) => value > 0)
       : null,
     cloudRangePercent: numericRange(clouds),
     windMaximumMs: winds.length ? Math.max(...winds) : null,

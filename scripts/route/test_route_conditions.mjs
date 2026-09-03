@@ -489,6 +489,8 @@ test("summary and presentation retain partial availability and gradient without 
   assert.equal(summary.windMaximumMs, null);
   assert.notEqual(styles.routeConditionColour(sample, "gradient"), "#7b8581");
   assert.equal(styles.routeConditionColour(sample, "wind"), "#7b8581");
+  sample.weather.precipitation = available(0.001, "mm");
+  assert.equal(conditions.buildRouteConditionSummary([sample]).precipitationEncountered, true);
 });
 
 test("direct global source preparation and sampling preserves valid zero values", async () => {

@@ -1,6 +1,8 @@
 import { useMemo, type ChangeEvent } from "react";
 import RouteProfile from "./RouteProfile";
 import { ROUTE_CONDITION_LEGENDS } from "../services/routeConditionStyle";
+import { accumulationIntervalLabel, routeConditionTimeLabel } from "../services/weatherTimeLabel";
+import { precipitationAmountLabel } from "../services/precipitationStyle";
 import type {
   JourneyPlan,
   JourneyProfile,
@@ -74,12 +76,6 @@ function windDirectionLabel(degrees: number | null): string {
   if (degrees === null) return "Calm";
   const directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
   return `${directions[Math.round(degrees / 45) % directions.length]} (from)`;
-}
-
-function temporalOffsetLabel(offsetMinutes: number): string {
-  if (Math.abs(offsetMinutes) < 0.5) return "exact forecast time";
-  const direction = offsetMinutes > 0 ? "after" : "before";
-  return `${Math.round(Math.abs(offsetMinutes))} min ${direction} arrival`;
 }
 
 export default function RoutePlannerPanel({
@@ -256,7 +252,7 @@ export default function RoutePlannerPanel({
                   {routeConditions.summary.precipitationEncountered === null
                     ? "Unavailable"
                     : routeConditions.summary.precipitationEncountered
-                      ? `Up to ${routeConditions.summary.precipitationMaximumMm?.toFixed(2)} mm / 1 h`
+                      ? `Up to ${precipitationAmountLabel(routeConditions.summary.precipitationMaximumMm!)}`
                       : routeConditions.coverage.precipitation.availableSamples ===
                           routeConditions.coverage.precipitation.totalSamples
                         ? "No interval rain"
@@ -378,7 +374,12 @@ export default function RoutePlannerPanel({
                 <span>Temperature</span>
                 <strong>{scalarLabel(focusedCondition.weather.temperature, (value) => `${value.toFixed(1)} °C`)}</strong>
                 <span>Precipitation</span>
-                <strong>{scalarLabel(focusedCondition.weather.precipitation, (value) => value < 0.05 ? "Dry" : `${value.toFixed(2)} mm / 1 h`)}</strong>
+                <strong>
+                  {scalarLabel(focusedCondition.weather.precipitation, precipitationAmountLabel)}
+                  {focusedCondition.weather.precipitation.state === "available" && (
+                    <><br /><small>{accumulationIntervalLabel(focusedCondition.weather.precipitation.provenance)}</small></>
+                  )}
+                </strong>
                 <span>Cloud</span>
                 <strong>{scalarLabel(focusedCondition.weather.cloud, (value) => `${Math.round(value)}%`)}</strong>
                 <span>Wind</span>
@@ -408,7 +409,7 @@ export default function RoutePlannerPanel({
               </div>
               {focusedProvenance && (
                 <small>
-                  GFS 0.25° · run {new Date(focusedProvenance.runTime).getUTCHours().toString().padStart(2, "0")}Z · +{focusedProvenance.forecastHour} h · valid {timeLabel(focusedProvenance.validTime)} · {temporalOffsetLabel(focusedProvenance.temporalOffsetMinutes)}
+                  GFS 0.25° · run {new Date(focusedProvenance.runTime).getUTCHours().toString().padStart(2, "0")}Z · +{focusedProvenance.forecastHour} h · {routeConditionTimeLabel(focusedProvenance)}
                 </small>
               )}
             </div>

@@ -5,6 +5,7 @@ import ForecastPanel from "./ForecastPanel";
 import LayerLegend from "./LayerLegend";
 import LayerPanel from "./LayerPanel";
 import TimeSlider from "./TimeSlider";
+import { accumulationIntervalLabel } from "../services/weatherTimeLabel";
 
 import type { Basemap, MapOverlayState } from "../types/layer";
 import type { SelectedLocation } from "../types/location";
@@ -280,7 +281,10 @@ export default function WeatherPanel({
         forecastHour={forecastHour}
         forecastTimes={forecastTimes}
         forecastHours={forecastHours}
-        sourceLabel={globalFieldsActive ? "GFS valid-time steps" : undefined}
+        sourceLabel={globalFieldsActive
+          ? `GFS valid-time steps${globalPrecipitationActive && globalPrecipitationTimestep
+            ? ` · Precipitation: ${accumulationIntervalLabel(globalPrecipitationTimestep)}` : ""}`
+          : undefined}
         onForecastHourChange={onForecastHourChange}
       />
 

@@ -2,7 +2,7 @@ import maplibregl from "maplibre-gl";
 
 import { WEATHER_SURFACE_CROSSFADE_MS } from "../config/layerVisuals";
 import { getWeatherInsertionLayerId } from "./mapLayerOrder";
-import { loadNumericTile } from "./numericTileCache";
+import { loadScalarRasterPixels } from "./scalarRaster";
 
 import type {
   ScalarFieldTimestep,
@@ -55,11 +55,10 @@ async function transparentTile(): Promise<ImageBitmap> {
 }
 
 function colourize(
-  values: Uint8Array | Uint16Array,
+  pixels: Uint8ClampedArray,
   field: RegisteredField
 ): HTMLCanvasElement {
   const size = field.source.manifest.tiles.tileSize;
-  const { noData, scale, offset } = field.source.manifest.tiles;
   const canvas = document.createElement("canvas");
   canvas.width = size;
   canvas.height = size;
@@ -67,16 +66,7 @@ function colourize(
   if (!context) throw new Error("Could not create global weather tile context");
   const image = context.createImageData(size, size);
 
-  for (let index = 0; index < values.length; index++) {
-    const encoded = values[index];
-    if (encoded === noData) continue;
-    const color = field.colour(encoded * scale + offset);
-    const pixel = index * 4;
-    image.data[pixel] = color.r;
-    image.data[pixel + 1] = color.g;
-    image.data[pixel + 2] = color.b;
-    image.data[pixel + 3] = color.a;
-  }
+  image.data.set(pixels);
   context.putImageData(image, 0, 0);
   return canvas;
 }
@@ -96,15 +86,16 @@ function ensureProtocol(): void {
     }
 
     try {
-      const tile = await loadNumericTile(
+      const pixels = await loadScalarRasterPixels(
         field.source,
         field.timestep,
         Number(zoomValue),
         Number(xValue),
-        Number(yValue)
+        Number(yValue),
+        field.colour
       );
       if (abortController.signal.aborted) return { data: await transparentTile() };
-      return { data: await createImageBitmap(colourize(tile.values, field)) };
+      return { data: await createImageBitmap(colourize(pixels, field)) };
     } catch (error) {
       field.failed = true;
       if (!reportedTileFailures.has(request.url)) {

@@ -112,6 +112,9 @@ function ensureRouteLayers(map: maplibregl.Map): void {
     map.addSource(ROUTE_SOURCE_ID, {
       type: "geojson",
       data: routeData([], null, "none"),
+      // Already-resampled short segments carry independent conditions. Default
+      // GeoJSON-VT tolerance discards whole segments at overview zooms.
+      tolerance: 0,
     });
     routeSignatureByMap.delete(map);
   }

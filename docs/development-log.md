@@ -453,6 +453,41 @@ cache reuse, and stale-result suppression. Expanded deterministic tests cover
 direct scalar/vector sampling, complete and partial horizons, missing steps,
 field/tile isolation and retry, valid zeroes, and superseded builds.
 
+### Visual/debug correction — 2026-09-03
+
+Condition-route darkening at overview zooms came from GeoJSON tile simplification,
+not line widths or weather availability: the default tolerance discarded short
+independently coloured segments while retaining the continuous dark casing.
+The already-resampled route source now disables that simplification; Normal
+paint, condition paint, layer order, and sample-level forecast coverage remain
+unchanged.
+
+The isolated precipitation discontinuity was a display-path issue. A hard
+0.1 mm colourisation cutoff made valid trace amounts transparent, and independently
+clamped raster edges amplified adjacent values into a geometric join. The shared
+scalar renderer now interpolates neighbouring numeric pixels before colourisation
+on an edge-inclusive visual grid. Bounded neighbour preparation reuses the
+existing numeric cache; immutable tiles, numeric inspector values, meteorological
+resolution, and forecast semantics are unchanged. Positive trace amounts fade
+continuously into the unchanged light-rain palette and are not labelled dry.
+
+Journey precipitation now shows its local accumulation interval instead of an
+instantaneous valid-time offset. The map inspector and forecast timeline also
+identify the interval. Instantaneous fields retain valid-time/arrival-offset
+wording. Overlapping route passes remain a known limitation: later-rendered
+traversals can dominate the same map geometry, including directional gradient
+and time-dependent conditions.
+
+Regression tests reproduce overview segment loss using the installed MapLibre
+tiler, then verify retained segments, unchanged Normal paint, partial coverage,
+numeric/no-data and cache semantics, matching raster boundaries, trace/zero
+amounts, and interval formatting. Retained precipitation assets at three adjacent
+forecast hours were served successfully and passed the real numeric-to-display
+edge comparison. Route/journey/condition, contour, weather preprocessing, lint,
+build, audit, and diff checks passed. Browser launch and a runtime-reset retry
+both failed before the application opened with a Windows sandbox ACL error;
+visual and mobile acceptance are not claimed.
+
 ### Next direction
 
 Visually validate the route-condition interaction across realistic journey

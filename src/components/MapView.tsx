@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import maplibregl from "maplibre-gl";
+import { accumulationIntervalLabel } from "../services/weatherTimeLabel";
+import { precipitationAmountLabel } from "../services/precipitationStyle";
 
 import { WEATHER_GRID_REQUEST_DELAY_MS } from "../config/gridConfig";
 import {
@@ -1216,9 +1218,7 @@ export default function MapView({
                     ? "Loading…"
                     : globalPrecipitationValue === null
                       ? "Unavailable"
-                      : globalPrecipitationValue < 0.05
-                        ? "Dry"
-                        : `${globalPrecipitationValue.toFixed(2)} mm`}</strong>
+                      : precipitationAmountLabel(globalPrecipitationValue)}</strong>
               </>
             )}
 
@@ -1268,7 +1268,7 @@ export default function MapView({
 
           <small>
             {activePrecipitationTimestep
-              ? `${activePrecipitationTimestep.validTime.replace("T", " ").replace("Z", " UTC")} · GFS precipitation`
+              ? `${accumulationIntervalLabel(activePrecipitationTimestep)} · GFS precipitation`
               : activeCloudTimestep
                 ? `${activeCloudTimestep.validTime.replace("T", " ").replace("Z", " UTC")} · GFS cloud cover`
               : activeWindTimestep

@@ -212,6 +212,18 @@ may therefore retain valid conditions on covered sections and explicit
 unavailability beyond the generated horizon; an expired catalogue must resolve
 to unavailable rather than remain in a loading state.
 
+Overlapping and out-and-back passes currently collapse onto the same map
+geometry, so later-rendered traversals can visually dominate earlier passes.
+This affects directional gradient and time-dependent journey conditions at the
+same place. An eventual general pass-aware treatment may use offsets, direction
+marks, or pass selection; no such design is settled or implemented.
+
+Early route-use feedback suggests precipitation and gradient may be especially
+well suited to continuous colouring. Temperature may ultimately be clearer as
+sparse numeric route/time or profile information, while wind may benefit from
+numeric values plus direction and route-relative context. These are future UX
+hypotheses, not replacements for the existing Temperature/Wind colour modes.
+
 ### Snow, ice, avalanche, and cornices
 
 Snow and ice interpretation may eventually combine snowfall, freezing level, snow depth/cover, temperature history, freeze/thaw, elevation, aspect, and wind redistribution.

@@ -1,13 +1,15 @@
-import {
-  PRECIPITATION_DRY_THRESHOLD_MM,
-  PRECIPITATION_INTENSITY_LEVELS,
-} from "../config/layerVisuals";
+import { PRECIPITATION_INTENSITY_LEVELS } from "../config/layerVisuals";
 
 export interface RgbaColor {
   r: number;
   g: number;
   b: number;
   a: number;
+}
+
+export function precipitationAmountLabel(value: number): string {
+  if (value === 0) return "Dry";
+  return `${value < 0.01 ? "<0.01" : value.toFixed(2)} mm / 1 h`;
 }
 
 function parseHexColor(color: string) {
@@ -20,9 +22,17 @@ function parseHexColor(color: string) {
 }
 
 export function precipitationColor(value: number): RgbaColor {
-  if (value < PRECIPITATION_DRY_THRESHOLD_MM) return { r: 0, g: 0, b: 0, a: 0 };
+  if (!Number.isFinite(value) || value <= 0) return { r: 0, g: 0, b: 0, a: 0 };
 
   const stops = PRECIPITATION_INTENSITY_LEVELS;
+  // Trace precipitation is valid data, not dry/no-data. Join continuously to
+  // the existing light-rain stop instead of jumping from transparent at 0.1 mm.
+  if (value < stops[0].value) {
+    return {
+      ...parseHexColor(stops[0].color),
+      a: Math.round(255 * stops[0].opacity * value / stops[0].value),
+    };
+  }
   let start = stops[0];
   let end = stops[stops.length - 1];
   for (let index = 0; index < stops.length - 1; index++) {
