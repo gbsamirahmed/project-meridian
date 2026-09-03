@@ -16,9 +16,9 @@ Meridian is an interactive 3D weather map for exploring forecast conditions acro
 - Terrain and optional Satellite basemaps with 3D relief and globe-scale navigation.
 - Global NOAA GFS precipitation, total cloud cover, 10 m wind and 2 m temperature with 24-hour playback.
 - Independently combinable elevation, precipitation, cloud, temperature-contour, pressure-isobar, and animated wind overlays.
-- A point inspector for elevation and weather values at the selected forecast time.
+- An optional Map Inspector for elevation and weather values at the selected forecast time; it is off by default and enabled in global settings.
 - Local GPX import with DEM-derived elevation, terrain-aware hiking schedules, linked route/profile inspection, and arrival-time GFS conditions including gusts, model visibility, freezing levels and experimental cloud ceiling.
-- Place search, map selection, current conditions, and responsive map-first controls.
+- A map-first desktop workspace with parallel Location and Journey contexts, compact map controls, and a horizontal route-analysis panel.
 
 ## Architecture
 
@@ -109,6 +109,7 @@ Watch mode checks once an hour, never rebuilds the published run, and retains th
 | `npm run weather:check` | Probe for a newer complete nine-field GFS run without generating or pruning |
 | `npm run weather:update` | Run one automatic GFS update and retention pass |
 | `npm run weather:watch` | Check hourly and update when a newer usable cycle appears |
+| `npm run test:ui` | Run focused desktop workspace and presentation tests |
 | `npm run lint` | Run ESLint |
 | `npm run build` | Type-check and build production assets |
 | `npm run preview` | Serve the production build locally |

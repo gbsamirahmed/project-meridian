@@ -1615,3 +1615,424 @@
     animation: none;
   }
 }
+
+/* Desktop workspace shell */
+.desktop-surface {
+  color: var(--text);
+  text-align: left;
+  background: rgba(13, 23, 21, 0.9);
+  border: 1px solid var(--line);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(22px) saturate(125%);
+}
+
+.desktop-workspace {
+  position: absolute;
+  z-index: 12;
+  top: 14px;
+  bottom: 14px;
+  left: 14px;
+  display: flex;
+  width: 370px;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.route-analysis-visible .desktop-workspace,
+.route-analysis-visible .map-controls {
+  bottom: 248px;
+}
+
+.desktop-workspace-header,
+.map-controls-heading,
+.dialog-heading,
+.route-analysis-toolbar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.desktop-workspace-header {
+  flex: 0 0 auto;
+  padding: 14px 14px 11px;
+  border-bottom: 1px solid var(--line);
+}
+
+.desktop-brand {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.desktop-brand p,
+.desktop-brand h1,
+.map-controls-heading p,
+.map-controls-heading h2,
+.dialog-heading p,
+.dialog-heading h2,
+.route-analysis-toolbar p,
+.route-analysis-toolbar h2 {
+  margin: 0;
+}
+
+.desktop-brand p {
+  color: var(--faint);
+  font-size: 8px;
+  font-weight: 750;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.desktop-brand h1 {
+  font-size: 18px;
+  line-height: 1.05;
+}
+
+.meridian-mark {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: linear-gradient(145deg, rgba(255, 131, 95, 0.22), rgba(135, 213, 165, 0.1));
+}
+
+.meridian-mark > span:first-child,
+.meridian-mark > span:last-child {
+  position: absolute;
+  left: 6px;
+  width: 22px;
+  height: 11px;
+  border: 2px solid #f4f1e8;
+  border-top: 0;
+  border-radius: 0 0 50% 50%;
+  content: "";
+}
+
+.meridian-mark > span:first-child { top: 6px; transform: rotate(180deg); }
+.meridian-mark > span:last-child { bottom: 6px; border-color: var(--accent); }
+
+.surface-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.surface-actions button,
+.map-controls-heading button,
+.dialog-heading button,
+.surface-close-button {
+  display: grid;
+  min-width: 28px;
+  height: 28px;
+  place-items: center;
+  padding: 0 7px;
+  color: var(--muted);
+  font: inherit;
+  font-size: 11px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.workspace-tabs {
+  display: grid;
+  flex: 0 0 auto;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  margin: 10px 14px 0;
+  padding: 3px;
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid var(--line);
+  border-radius: 11px;
+}
+
+.workspace-tabs button {
+  height: 32px;
+  color: var(--muted);
+  font: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  border-radius: 8px;
+}
+
+.workspace-tabs button[aria-selected="true"] {
+  color: var(--text);
+  background: var(--card-strong);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
+}
+
+.desktop-workspace-content {
+  min-height: 0;
+  flex: 1;
+  padding: 12px 14px 14px;
+  overflow-y: auto;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+  scrollbar-width: thin;
+}
+
+.location-workspace,
+.journey-overview {
+  display: grid;
+  gap: 10px;
+}
+
+.workspace-card,
+.journey-section {
+  padding: 12px;
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.075);
+  border-radius: 14px;
+}
+
+.workspace-card h2,
+.journey-title-row h2,
+.journey-section h3,
+.forecast-details h3,
+.route-point-empty h3 {
+  margin: 2px 0 0;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.location-workspace .search-field { margin: 0; }
+.location-workspace .forecast-panel { margin-bottom: 0; }
+.location-workspace .weather-card { margin-bottom: 0; }
+
+.journey-title-row,
+.journey-section-heading,
+.terrain-overview-row,
+.forecast-details-heading {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.journey-title-row h2 {
+  max-width: 230px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.route-facts-grid,
+.journey-weather-grid {
+  display: grid;
+  gap: 6px;
+}
+
+.route-facts-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 9px; }
+.route-facts-grid > div,
+.journey-weather-grid > div {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+  padding: 8px;
+  background: rgba(1, 8, 7, 0.25);
+  border-radius: 9px;
+}
+
+.route-facts-grid span,
+.journey-weather-grid span,
+.analysis-colour-control span {
+  color: var(--faint);
+  font-size: 8px;
+  font-weight: 750;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.route-facts-grid strong,
+.journey-weather-grid strong { font-size: 11px; }
+.journey-weather-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 9px; }
+.journey-weather-grid .weather-headline-primary { grid-column: 1 / -1; background: rgba(135, 213, 165, 0.08); }
+.journey-weather-grid .weather-headline-primary strong { font-size: 15px; }
+
+.journey-estimate-section { background: rgba(135, 213, 165, 0.065); border-color: rgba(135, 213, 165, 0.14); }
+.estimate-detail-row { display: flex; gap: 14px; margin-top: 7px; color: var(--muted); font-size: 10px; }
+.journey-time-range { margin: 8px 0 2px; font-size: 12px; }
+.arrival-range,
+.journey-section > small,
+.journey-estimate-section > small,
+.terrain-overview-row p,
+.coverage-messages p,
+.journey-empty p,
+.journey-empty small,
+.dialog-note,
+.route-point-empty p { margin: 3px 0 0; color: var(--muted); font-size: 9px; line-height: 1.45; }
+.tune-button,
+.text-button {
+  padding: 5px 8px;
+  color: var(--green);
+  font: inherit;
+  font-size: 9px;
+  font-weight: 700;
+  cursor: pointer;
+  background: rgba(135, 213, 165, 0.07);
+  border: 1px solid rgba(135, 213, 165, 0.16);
+  border-radius: 8px;
+}
+.coverage-messages { margin-top: 7px; padding: 6px 8px; background: rgba(229, 191, 114, 0.08); border-radius: 8px; }
+.compact-details { margin-top: 7px; border-top: 1px solid var(--line); }
+.compact-details summary { padding-top: 7px; color: var(--muted); font-size: 9px; cursor: pointer; }
+.compact-details p { margin: 5px 0; font-size: 9px; }
+
+.map-controls {
+  position: absolute;
+  z-index: 11;
+  top: 62px;
+  right: 14px;
+  bottom: 14px;
+  width: 286px;
+  padding: 12px;
+  overflow-y: auto;
+  border-radius: 18px;
+  scrollbar-width: thin;
+}
+
+.map-controls-heading { margin-bottom: 9px; }
+.map-controls-heading h2 { font-size: 14px; }
+.map-controls .weather-freshness { margin-bottom: 8px; }
+.map-controls .weather-card { margin-bottom: 7px; padding: 9px; border-radius: 12px; }
+.map-controls .layer-card .card-heading { display: none; }
+.map-controls .layer-control-group { margin-top: 0; }
+.map-controls .layer-control-group + .layer-control-group { margin-top: 7px; }
+.map-controls .layer-option span { min-height: 27px; padding: 5px 7px; font-size: 9px; }
+.map-controls .timeline-card h2 { font-size: 12px; }
+.map-controls .timeline-source { display: none; }
+.map-controls .range-labels { margin-top: 3px; }
+.map-controls .legend-card { margin-bottom: 0; }
+.map-play-row { display: flex; gap: 7px; align-items: center; margin-bottom: 7px; }
+.map-play-row .play-button { flex: 0 0 auto; margin: 0; }
+.map-play-row > span,
+.pressure-note { color: var(--muted); font-size: 8px; line-height: 1.35; }
+.pressure-note { margin: 6px 2px 0; }
+.desktop-shell-active .maplibregl-ctrl-top-right { top: 12px; right: 14px; }
+.desktop-shell-active .layer-badge { right: 14px; bottom: 14px; max-width: 280px; }
+.route-analysis-visible .layer-badge { bottom: 248px; }
+
+.route-analysis {
+  position: absolute;
+  z-index: 10;
+  right: 14px;
+  bottom: 14px;
+  left: 402px;
+  height: 216px;
+  overflow: hidden;
+  border-radius: 18px;
+}
+.desktop-shell-active:not(.desktop-left-visible) .route-analysis { left: 14px; }
+.route-analysis-toolbar { height: 43px; padding: 0 11px 0 14px; border-bottom: 1px solid var(--line); }
+.route-analysis-toolbar h2 { max-width: 220px; overflow: hidden; font-size: 12px; text-overflow: ellipsis; white-space: nowrap; }
+.analysis-colour-control { display: flex; gap: 7px; align-items: center; margin-left: auto; }
+.analysis-colour-control select { height: 27px; padding: 0 7px; color: var(--text); font: inherit; font-size: 9px; color-scheme: dark; background: rgba(1,8,7,.5); border: 1px solid var(--line); border-radius: 7px; }
+.analysis-status { color: var(--muted); font-size: 8px; }
+.route-analysis-content { display: grid; height: calc(100% - 44px); grid-template-columns: minmax(0, 1fr) 300px; }
+.route-profile-region { min-width: 0; padding: 8px 12px; overflow: hidden; }
+.route-analysis .route-profile { gap: 3px; }
+.route-analysis .route-profile svg { max-height: 118px; }
+.route-analysis .route-profile > p { display: none; }
+.analysis-legend { max-width: 420px; margin-top: 2px; }
+.route-point-region { min-width: 0; padding: 9px 11px; overflow-y: auto; background: rgba(0, 0, 0, 0.13); border-left: 1px solid var(--line); scrollbar-width: thin; }
+.route-point-empty { display: grid; height: 100%; place-content: center; text-align: center; }
+
+.forecast-details { display: grid; gap: 6px; }
+.forecast-details-heading h3 { font-size: 11px; }
+.forecast-details-heading > span { color: var(--muted); font-size: 9px; }
+.forecast-values-grid { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 3px 9px; }
+.forecast-values-grid > span { color: var(--muted); font-size: 8px; }
+.forecast-values-grid > strong { max-width: 175px; font-size: 8px; font-weight: 650; text-align: right; }
+.forecast-values-grid strong small { display: block; color: var(--faint); font-size: 7px; font-weight: 500; }
+.shared-source-block { display: grid; gap: 2px; padding: 6px 7px; background: rgba(135, 213, 165, 0.06); border-radius: 7px; }
+.shared-source-block strong { font-size: 8px; }
+.shared-source-block span { color: var(--muted); font-size: 7.5px; }
+.about-data-details summary { color: var(--muted); font-size: 8px; cursor: pointer; }
+.about-data-details p { color: var(--muted); font-size: 8px; line-height: 1.45; }
+.route-point-region .derived-condition-context { grid-template-columns: repeat(3, minmax(0,1fr)); gap: 5px; margin: 2px 0 5px; padding-bottom: 5px; }
+.route-point-region .derived-condition-context span,
+.route-point-region .derived-condition-context strong,
+.route-point-region .derived-condition-context small { font-size: 7px; }
+
+.workspace-dialog-backdrop {
+  position: absolute;
+  z-index: 50;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(1, 7, 6, 0.42);
+  backdrop-filter: blur(5px);
+}
+.workspace-dialog { width: min(420px, calc(100vw - 40px)); max-height: calc(100vh - 60px); padding: 18px; overflow-y: auto; color: var(--text); background: rgba(17, 28, 26, 0.97); border: 1px solid var(--line-strong); border-radius: 17px; box-shadow: 0 30px 90px rgba(0,0,0,.5); }
+.dialog-heading { margin-bottom: 14px; }
+.dialog-heading h2 { font-size: 17px; }
+.settings-toggle { display: flex; gap: 20px; align-items: center; justify-content: space-between; padding: 12px; background: var(--card); border-radius: 11px; }
+.settings-toggle > span { display: grid; gap: 3px; }
+.settings-toggle strong { font-size: 12px; }
+.settings-toggle small { color: var(--muted); font-size: 9px; line-height: 1.4; }
+.settings-toggle input { width: 18px; height: 18px; accent-color: var(--accent); }
+.dialog-note { margin-top: 12px; }
+
+.surface-restore,
+.clear-map-restore {
+  position: absolute;
+  z-index: 14;
+  color: var(--text);
+  font: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  background: rgba(13, 23, 21, 0.88);
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 35px rgba(0,0,0,.3);
+  backdrop-filter: blur(16px);
+}
+.workspace-restore { top: 14px; left: 14px; display: grid; width: 44px; height: 44px; place-items: center; padding: 4px; border-radius: 13px; }
+.workspace-restore .meridian-mark { width: 32px; height: 32px; }
+.map-controls-restore { top: 62px; right: 14px; padding: 9px 11px; border-radius: 10px; }
+.route-analysis-restore { bottom: 14px; left: 50%; padding: 9px 12px; border-radius: 10px; transform: translateX(-50%); }
+.clear-map-restore { top: 14px; left: 14px; display: flex; gap: 8px; align-items: center; padding: 5px 10px 5px 5px; border-radius: 13px; }
+.clear-map-restore .meridian-mark { width: 30px; height: 30px; }
+.clear-map-active .layer-badge { bottom: 14px; }
+
+@media (max-width: 1440px) and (min-width: 701px) {
+  .desktop-workspace { width: 348px; }
+  .route-analysis { left: 376px; }
+  .map-controls { width: 272px; }
+  .route-analysis-content { grid-template-columns: minmax(0, 1fr) 280px; }
+  .route-analysis-toolbar h2 { max-width: 160px; }
+}
+
+@media (max-height: 820px) and (min-width: 701px) {
+  .route-analysis { height: 196px; }
+  .route-analysis-visible .desktop-workspace,
+  .route-analysis-visible .map-controls { bottom: 228px; }
+  .route-analysis-visible .layer-badge { bottom: 228px; }
+  .desktop-workspace-content { padding-top: 9px; }
+  .location-workspace,
+  .journey-overview { gap: 7px; }
+  .workspace-card,
+  .journey-section { padding: 9px; }
+  .route-analysis-content { grid-template-columns: minmax(0, 1fr) 270px; }
+  .route-analysis .route-profile svg { max-height: 98px; }
+  .map-controls { top: 54px; }
+  .map-controls .weather-card { padding: 7px; }
+}
+.map-legend-details { margin-top: 4px; border-top: 1px solid var(--line); }
+.map-legend-details summary { padding: 7px 2px 3px; color: var(--muted); font-size: 9px; font-weight: 700; cursor: pointer; }
+.map-legend-details .weather-card { margin-top: 4px; }
+.desktop-shell-active .layer-badge { display: none; }
+.clear-map-active .layer-badge { display: flex; }
+.route-analysis-visible .maptiler-logo { bottom: 248px; }
+.route-analysis-visible .maplibregl-ctrl-bottom-right { bottom: 234px; }
+@media (max-height: 820px) and (min-width: 701px) {
+  .route-analysis-visible .maptiler-logo { bottom: 228px; }
+  .route-analysis-visible .maplibregl-ctrl-bottom-right { bottom: 214px; }
+}

@@ -128,6 +128,8 @@ interface MapViewProps {
   routeConditions: RouteConditions | null;
   routeConditionMode: RouteConditionMode;
   panelCollapsed: boolean;
+  mapInspectorEnabled: boolean;
+  mapInspectorSession: number;
   onLocationSelect: (location: SelectedLocation) => void;
   onRouteSampleFocus: (index: number | null) => void;
   onWeatherGridRequest: (request: WeatherGridRequest) => void;
@@ -142,6 +144,7 @@ interface InspectionPoint {
   longitude: number;
   elevation: number | null;
   persistent: boolean;
+  inspectorSession: number;
 }
 
 const BASEMAP_NAMES: Record<Basemap, string> = {
@@ -237,7 +240,8 @@ function createInspectionPoint(
   location: maplibregl.LngLatLike,
   x: number,
   y: number,
-  persistent: boolean
+  persistent: boolean,
+  inspectorSession: number
 ): InspectionPoint {
   const lngLat = maplibregl.LngLat.convert(location);
   const container = map.getContainer();
@@ -255,6 +259,7 @@ function createInspectionPoint(
         ? null
         : renderedElevation / TERRAIN_EXAGGERATION,
     persistent,
+    inspectorSession,
   };
 }
 
@@ -308,6 +313,8 @@ export default function MapView({
   routeConditions,
   routeConditionMode,
   panelCollapsed,
+  mapInspectorEnabled,
+  mapInspectorSession,
   onLocationSelect,
   onRouteSampleFocus,
   onWeatherGridRequest,
@@ -359,8 +366,14 @@ export default function MapView({
   const focusedRouteSampleRef = useRef(focusedRouteSampleIndex);
   const routeConditionsRef = useRef(routeConditions);
   const routeConditionModeRef = useRef(routeConditionMode);
+  const mapInspectorEnabledRef = useRef(mapInspectorEnabled);
+  const mapInspectorSessionRef = useRef(mapInspectorSession);
   const fittedRouteIdRef = useRef<string | null>(null);
-  const activeInspection = hoverInspection ?? selectedInspection;
+  const candidateInspection = hoverInspection ?? selectedInspection;
+  const activeInspection = mapInspectorEnabled &&
+    candidateInspection?.inspectorSession === mapInspectorSession
+      ? candidateInspection
+      : null;
   const localReferenceTime = weatherGrid?.times[localForecastHour] ?? null;
   const activePrecipitationTimestep = globalPrecipitationSource
     ? getScalarTimestepAtTime(globalPrecipitationSource, activeGlobalValidTime) ??
@@ -724,13 +737,19 @@ export default function MapView({
         return;
       }
 
+      if (!mapInspectorEnabledRef.current) {
+        setHoverInspection(null);
+        return;
+      }
+
       setHoverInspection(
         createInspectionPoint(
           map,
           event.lngLat,
           event.point.x,
           event.point.y,
-          false
+          false,
+          mapInspectorSessionRef.current
         )
       );
     };
@@ -837,16 +856,19 @@ export default function MapView({
         routeFocusRef.current(routeIndex);
         return;
       }
-      const point = createInspectionPoint(
-        map,
-        event.lngLat,
-        event.point.x,
-        event.point.y,
-        true
-      );
-
       setHoverInspection(null);
-      setSelectedInspection(point);
+      setSelectedInspection(
+        mapInspectorEnabledRef.current
+          ? createInspectionPoint(
+              map,
+              event.lngLat,
+              event.point.x,
+              event.point.y,
+              true,
+              mapInspectorSessionRef.current
+            )
+          : null
+      );
       locationSelectRef.current({
         latitude: event.lngLat.lat,
         longitude: event.lngLat.lng,
@@ -870,6 +892,11 @@ export default function MapView({
       syncSatelliteViewRef.current = () => undefined;
     };
   }, []);
+
+  useEffect(() => {
+    mapInspectorEnabledRef.current = mapInspectorEnabled;
+    mapInspectorSessionRef.current = mapInspectorSession;
+  }, [mapInspectorEnabled, mapInspectorSession]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -1013,13 +1040,16 @@ export default function MapView({
     const container = map.getContainer();
 
     setSelectedInspection(
-      createInspectionPoint(
-        map,
-        lngLat,
-        container.clientWidth / 2,
-        container.clientHeight / 2,
-        true
-      )
+      mapInspectorEnabledRef.current
+        ? createInspectionPoint(
+            map,
+            lngLat,
+            container.clientWidth / 2,
+            container.clientHeight / 2,
+            true,
+            mapInspectorSessionRef.current
+          )
+        : null
     );
   }, [selectedLocation]);
 
@@ -1183,10 +1213,6 @@ export default function MapView({
           <img src={SATELLITE_PROVIDER.logoUrl} alt="MapTiler" />
         </a>
       )}
-
-      <div className="map-hint">
-        Drag to explore <span /> Hover or tap to inspect
-      </div>
 
       {activeInspection && (
         <div

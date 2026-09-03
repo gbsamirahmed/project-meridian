@@ -863,3 +863,38 @@ and validation are intentionally storage/CPU intensive. Source caches are outsid
 the generated-run retention policy. On Windows, watcher contention may require
 the slower marked-copy promotion, but publication remains pointer-atomic and
 failure-safe.
+
+
+## 2026-09-03 — Desktop Workspace Redesign v1
+
+### Goal
+
+Replace the desktop's long, scroll-led sidebar with a map-first workspace that gives Location, Journey, map display and route analysis distinct homes while preserving all existing route, weather and map state.
+
+### Changes
+
+- Added an explicit UI-only desktop state model for Location/Journey context, left workspace, right map controls, bottom route analysis, global settings, journey settings, clear-map mode and Map Inspector state. Domain data remains owned by `App`; presentation actions are absent from route, terrain, catalogue and weather-loading effect dependencies.
+- Kept the existing mobile panel below 701 px and composed a desktop shell above that breakpoint. The left workspace now switches between a focused location workflow and a compact journey overview without unmounting or clearing domain state.
+- Separated route facts (distance, ascent and descent) from the derived journey estimate (duration, moving time, breaks, departure/finish and likely range). Existing activity, pace, party, load, break and planning controls moved into a contained journey-settings dialog.
+- Added a restrained journey-weather summary led by temperature range, rain when encountered, peak gust and minimum visibility. Complete coverage is silent; partial coverage is described using the last continuously covered route distance when available. Terrain reporting remains limited to DEM coverage, ascent/descent and sampled gradient; no surface or technicality classes were invented.
+- Moved the linked elevation/journey profile, freezing-level line and condition strip into a collapsible horizontal route-analysis surface. Route colour modes remain available there. Selecting the map route or profile continues to use the same focused sample index.
+- Moved Terrain/Satellite, all existing overlays, forecast timeline and playback into a compact right map-control surface. The legacy 9 × 9 label is now explicitly subordinate to regional Open-Meteo pressure, and the legend is disclosed on demand.
+- Added a compact global-settings dialog with Map Inspector as the only setting. The inspector is off by default; map clicks still select a location, route hover/click still links focus, and ordinary MapLibre navigation remains untouched. An inspector-session token prevents a popup created before disabling the tool from reappearing later.
+- Removed the map instruction pill. Independent restore controls keep each surface accessible; clear-map mode exposes a persistent Meridian-mark restore control and preserves camera, basemap, overlays, route, analysis focus, location, journey assumptions and forecast state.
+- Regrouped selected-route-point data into concise model values, one shared GFS run/time source block and an `About this data` disclosure for resolution, visibility, ceiling, gust-direction, expected-arrival and freezing caveats.
+
+### Architectural decisions
+
+Desktop panel state is presentation state. It may change visibility and composition, but must not trigger DEM/weather refetches or reset analytical state. Location and Journey remain parallel contexts over the same map. MapLibre's imperative lifecycle remains inside `MapView`; the shell passes only stable data and callbacks.
+
+The primary desktop overview uses progressive disclosure. Route facts are measurements, journey duration is an estimate, weather values are raw model evidence, derived context remains traceable to that evidence, and caveats sit below the decision-oriented overview. Mobile keeps the established layout until a dedicated mobile design milestone.
+
+### Verification
+
+Nine focused UI tests cover context/panel state, clear-map preservation, Map Inspector default and session behavior, journey-settings schedule effects, route-fact versus estimate presentation, silent complete coverage, spatial partial coverage, grouped provenance, map-control ownership, route-profile focus/condition strips and absence of network work from presentation actions. The full deterministic frontend run covered 86 tests: 85 passed and one opt-in served-data smoke test was skipped. The atmospheric suite initially hit Vite's 60-second local module-transport timeout; parallel module setup removed that harness bottleneck and all nine atmospheric assertions passed.
+
+ESLint and the production build pass. The cached offline production dependency audit reports zero vulnerabilities; the registry-backed audit endpoint timed out. The build retains the existing large-chunk warning and spent two minutes primarily copying ignored local weather output. Browser automation failed before opening Meridian on the initial attempt with `trusted Node process exited unexpectedly; kernel reset, rerun your request`. After one reset, it failed with `node_repl kernel exited unexpectedly` and `windows sandbox failed: helper_unknown_error: apply deny-read ACLs`. No browser or security setting was changed. Visual acceptance at 1920×1080, 1440×900 and 1366×768 therefore remains manual and unclaimed.
+
+### Known limitations
+
+The desktop visual treatment is a first implementation and still needs manual inspection at the target viewports, with and without a route. The left workspace permits contained scrolling for a long location forecast or deep details; core journey navigation no longer depends on scrolling between unrelated controls. Mobile intentionally retains the previous panel and needs its own future redesign. Full weather-condition analysis tabs, condition-click map actions, route-colour automation, viewsheds, inferred terrain-surface classes, arrival-window analysis and weather-adjusted timing remain deferred.

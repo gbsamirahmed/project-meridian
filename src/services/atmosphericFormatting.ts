@@ -16,6 +16,6 @@ export function atmosphericHeightLabel(geopotentialMetres: number): string {
 
 export function fieldCoverageLabel(coverage: RouteConditionFieldCoverage): string {
   return coverage.availableSamples === coverage.totalSamples
-    ? "All scheduled samples"
-    : `${coverage.availableSamples}/${coverage.totalSamples} scheduled samples`;
+    ? ""
+    : "Partial forecast coverage";
 }

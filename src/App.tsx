@@ -1,8 +1,15 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useReducer, useRef, useState } from "react";
 
 import MapView from "./components/MapView";
 import WeatherPanel from "./components/WeatherPanel";
 import RoutePlannerPanel from "./components/RoutePlannerPanel";
+import DesktopWorkspace, { MeridianMark } from "./components/DesktopWorkspace";
+import LocationWorkspace from "./components/LocationWorkspace";
+import JourneyOverview from "./components/JourneyOverview";
+import MapControls from "./components/MapControls";
+import RouteAnalysis from "./components/RouteAnalysis";
+import GlobalSettings from "./components/GlobalSettings";
+import JourneySettings from "./components/JourneySettings";
 
 import { getWeather } from "./services/weatherService";
 import { getLocationName } from "./services/locationService";
@@ -29,6 +36,10 @@ import {
   DEFAULT_JOURNEY_PROFILE,
 } from "./services/journeyModel";
 import { buildRouteConditions } from "./services/routeConditions";
+import {
+  desktopWorkspaceReducer,
+  INITIAL_DESKTOP_WORKSPACE_STATE,
+} from "./services/desktopWorkspaceState";
 import {
   getWeatherGrid,
   getWeatherGridRequestKey,
@@ -134,8 +145,14 @@ function App() {
       highest_freezing_level: "loading",
       cloud_ceiling: "loading",
     });
-  const [isDesktopPanelCollapsed, setIsDesktopPanelCollapsed] =
-    useState(false);
+  const [isDesktopPanelCollapsed, setIsDesktopPanelCollapsed] = useState(false);
+  const [desktopLayout, setDesktopLayout] = useState(
+    () => typeof window !== "undefined" && window.matchMedia("(min-width: 701px)").matches
+  );
+  const [workspace, dispatchWorkspace] = useReducer(
+    desktopWorkspaceReducer,
+    INITIAL_DESKTOP_WORKSPACE_STATE
+  );
   const [routeGeometry, setRouteGeometry] =
     useState<ResampledRouteGeometry | null>(null);
   const [terrainRoute, setTerrainRoute] = useState<TerrainRoute | null>(null);
@@ -182,6 +199,14 @@ function App() {
   const runWeatherGridRequestRef = useRef<
     (request: WeatherGridRequest) => void
   >(() => undefined);
+
+  useEffect(() => {
+    const media = window.matchMedia("(min-width: 701px)");
+    const syncLayout = () => setDesktopLayout(media.matches);
+    syncLayout();
+    media.addEventListener("change", syncLayout);
+    return () => media.removeEventListener("change", syncLayout);
+  }, []);
 
   useEffect(() => {
     let isCurrent = true;
@@ -692,8 +717,35 @@ function App() {
     ? routeConditionStatus
     : "idle";
 
+  const routePanel = (
+    <RoutePlannerPanel
+      routeGeometry={routeGeometry}
+      terrainRoute={terrainRoute}
+      schedule={journeyResult.schedule}
+      scheduleError={journeyResult.error}
+      status={routeStatus}
+      statusMessage={routeStatusMessage}
+      profile={journeyProfile}
+      plan={journeyPlan}
+      focusedIndex={focusedRouteSampleIndex}
+      routeConditions={activeRouteConditions}
+      routeConditionStatus={activeRouteConditionStatus}
+      routeConditionMode={routeConditionMode}
+      onImport={handleRouteImport}
+      onClear={handleRouteClear}
+      onProfileChange={setJourneyProfile}
+      onPlanChange={setJourneyPlan}
+      onFocusChange={setFocusedRouteSampleIndex}
+      onRouteConditionModeChange={setRouteConditionMode}
+    />
+  );
+
+  const presentationCollapsed = desktopLayout
+    ? workspace.clearMap || !workspace.leftOpen
+    : isDesktopPanelCollapsed;
+
   return (
-    <main className="app-shell">
+    <main className={`app-shell${desktopLayout ? " desktop-shell-active" : ""}${desktopLayout && workspace.leftOpen && !workspace.clearMap ? " desktop-left-visible" : ""}${desktopLayout && terrainRoute && workspace.routeAnalysisOpen && !workspace.clearMap ? " route-analysis-visible" : ""}${workspace.clearMap ? " clear-map-active" : ""}`}>
       <MapView
         selectedLocation={selectedLocation}
         basemap={basemap}
@@ -713,62 +765,125 @@ function App() {
         focusedRouteSampleIndex={focusedRouteSampleIndex}
         routeConditions={activeRouteConditions}
         routeConditionMode={routeConditionMode}
-        panelCollapsed={isDesktopPanelCollapsed}
+        panelCollapsed={presentationCollapsed}
+        mapInspectorEnabled={workspace.mapInspectorEnabled}
+        mapInspectorSession={workspace.mapInspectorSession}
         onLocationSelect={setSelectedLocation}
         onRouteSampleFocus={setFocusedRouteSampleIndex}
         onWeatherGridRequest={handleWeatherGridRequest}
       />
 
-      <WeatherPanel
-        selectedLocation={selectedLocation}
-        weather={weather}
-        place={place}
-        basemap={basemap}
-        mapOverlays={mapOverlays}
-        forecastHour={activeForecastHour}
-        weatherGrid={weatherGrid}
-        weatherGridStatus={weatherGridStatus}
-        globalPrecipitationSource={globalPrecipitationSource}
-        globalCloudSource={globalCloudSource}
-        globalWindSource={globalWindSource}
-        globalTemperatureSource={globalTemperatureSource}
-        globalWeatherStatuses={globalWeatherStatuses}
-        globalWeatherCatalog={globalWeatherCatalog}
-        catalogueCheck={catalogueCheck}
-        journeySchedule={journeyResult.schedule}
-        activeGlobalValidTime={activeGlobalValidTime}
-        forecastTimes={forecastTimes}
-        forecastHours={forecastHours}
-        isDesktopCollapsed={isDesktopPanelCollapsed}
-        satelliteAvailable={IS_SATELLITE_CONFIGURED}
-        onForecastHourChange={setForecastHour}
-        onBasemapChange={setBasemap}
-        onOverlayChange={handleOverlayChange}
-        onSearch={handleSearch}
-        onDesktopCollapsedChange={setIsDesktopPanelCollapsed}
-        routePanel={
-          <RoutePlannerPanel
-            routeGeometry={routeGeometry}
-            terrainRoute={terrainRoute}
-            schedule={journeyResult.schedule}
-            scheduleError={journeyResult.error}
-            status={routeStatus}
-            statusMessage={routeStatusMessage}
-            profile={journeyProfile}
-            plan={journeyPlan}
-            focusedIndex={focusedRouteSampleIndex}
-            routeConditions={activeRouteConditions}
-            routeConditionStatus={activeRouteConditionStatus}
-            routeConditionMode={routeConditionMode}
-            onImport={handleRouteImport}
-            onClear={handleRouteClear}
-            onProfileChange={setJourneyProfile}
-            onPlanChange={setJourneyPlan}
-            onFocusChange={setFocusedRouteSampleIndex}
-            onRouteConditionModeChange={setRouteConditionMode}
-          />
-        }
-      />
+      {desktopLayout ? (
+        <>
+          {!workspace.clearMap && workspace.leftOpen && (
+            <DesktopWorkspace
+              mode={workspace.workspaceMode}
+              onModeChange={(mode) => dispatchWorkspace({ type: "set-workspace", mode })}
+              onClose={() => dispatchWorkspace({ type: "set-left", open: false })}
+              onSettings={() => dispatchWorkspace({ type: "set-settings", open: true })}
+              onClearMap={() => dispatchWorkspace({ type: "set-clear-map", active: true })}
+            >
+              {workspace.workspaceMode === "location" ? (
+                <LocationWorkspace selectedLocation={selectedLocation} weather={weather} place={place} onSearch={handleSearch} />
+              ) : (
+                <JourneyOverview
+                  routeGeometry={routeGeometry}
+                  terrainRoute={terrainRoute}
+                  schedule={journeyResult.schedule}
+                  scheduleError={journeyResult.error}
+                  status={routeStatus}
+                  statusMessage={routeStatusMessage}
+                  profile={journeyProfile}
+                  plan={journeyPlan}
+                  routeConditions={activeRouteConditions}
+                  routeConditionStatus={activeRouteConditionStatus}
+                  onImport={handleRouteImport}
+                  onClear={handleRouteClear}
+                  onOpenSettings={() => dispatchWorkspace({ type: "set-journey-settings", open: true })}
+                  onOpenAnalysis={() => dispatchWorkspace({ type: "set-route-analysis", open: true })}
+                />
+              )}
+            </DesktopWorkspace>
+          )}
+
+          {!workspace.clearMap && workspace.mapControlsOpen && (
+            <MapControls
+              basemap={basemap}
+              mapOverlays={mapOverlays}
+              satelliteAvailable={IS_SATELLITE_CONFIGURED}
+              forecastHour={activeForecastHour}
+              forecastTimes={forecastTimes}
+              forecastHours={forecastHours}
+              activeGlobalValidTime={activeGlobalValidTime}
+              globalPrecipitationSource={globalPrecipitationSource}
+              globalCloudSource={globalCloudSource}
+              globalWindSource={globalWindSource}
+              globalTemperatureSource={globalTemperatureSource}
+              globalWeatherStatuses={globalWeatherStatuses}
+              globalWeatherCatalog={globalWeatherCatalog}
+              catalogueCheck={catalogueCheck}
+              journeySchedule={journeyResult.schedule}
+              weatherGridStatus={weatherGridStatus}
+              onBasemapChange={setBasemap}
+              onOverlayChange={handleOverlayChange}
+              onForecastHourChange={setForecastHour}
+              onClose={() => dispatchWorkspace({ type: "set-map-controls", open: false })}
+            />
+          )}
+
+          {!workspace.clearMap && terrainRoute && workspace.routeAnalysisOpen && (
+            <RouteAnalysis
+              route={terrainRoute}
+              schedule={journeyResult.schedule}
+              conditions={activeRouteConditions}
+              conditionStatus={activeRouteConditionStatus}
+              conditionMode={routeConditionMode}
+              focusedIndex={focusedRouteSampleIndex}
+              onFocusChange={setFocusedRouteSampleIndex}
+              onConditionModeChange={setRouteConditionMode}
+              onClose={() => dispatchWorkspace({ type: "set-route-analysis", open: false })}
+            />
+          )}
+
+          {!workspace.clearMap && !workspace.leftOpen && <button type="button" className="surface-restore workspace-restore" aria-label="Show Meridian workspace" onClick={() => dispatchWorkspace({ type: "set-left", open: true })}><MeridianMark label="Show Meridian workspace" /></button>}
+          {!workspace.clearMap && !workspace.mapControlsOpen && <button type="button" className="surface-restore map-controls-restore" onClick={() => dispatchWorkspace({ type: "set-map-controls", open: true })}>Map controls</button>}
+          {!workspace.clearMap && terrainRoute && !workspace.routeAnalysisOpen && <button type="button" className="surface-restore route-analysis-restore" onClick={() => dispatchWorkspace({ type: "set-route-analysis", open: true })}>Route analysis</button>}
+          {workspace.clearMap && <button type="button" className="clear-map-restore" aria-label="Restore Meridian interface" onClick={() => dispatchWorkspace({ type: "set-clear-map", active: false })}><MeridianMark /><span>Meridian</span></button>}
+
+          <GlobalSettings open={workspace.settingsOpen && !workspace.clearMap} mapInspectorEnabled={workspace.mapInspectorEnabled} onMapInspectorChange={(enabled) => dispatchWorkspace({ type: "set-map-inspector", enabled })} onClose={() => dispatchWorkspace({ type: "set-settings", open: false })} />
+          <JourneySettings open={workspace.journeySettingsOpen && !workspace.clearMap} profile={journeyProfile} plan={journeyPlan} onProfileChange={setJourneyProfile} onPlanChange={setJourneyPlan} onClose={() => dispatchWorkspace({ type: "set-journey-settings", open: false })} />
+        </>
+      ) : (
+        <WeatherPanel
+          selectedLocation={selectedLocation}
+          weather={weather}
+          place={place}
+          basemap={basemap}
+          mapOverlays={mapOverlays}
+          forecastHour={activeForecastHour}
+          weatherGrid={weatherGrid}
+          weatherGridStatus={weatherGridStatus}
+          globalPrecipitationSource={globalPrecipitationSource}
+          globalCloudSource={globalCloudSource}
+          globalWindSource={globalWindSource}
+          globalTemperatureSource={globalTemperatureSource}
+          globalWeatherStatuses={globalWeatherStatuses}
+          globalWeatherCatalog={globalWeatherCatalog}
+          catalogueCheck={catalogueCheck}
+          journeySchedule={journeyResult.schedule}
+          activeGlobalValidTime={activeGlobalValidTime}
+          forecastTimes={forecastTimes}
+          forecastHours={forecastHours}
+          isDesktopCollapsed={isDesktopPanelCollapsed}
+          satelliteAvailable={IS_SATELLITE_CONFIGURED}
+          onForecastHourChange={setForecastHour}
+          onBasemapChange={setBasemap}
+          onOverlayChange={handleOverlayChange}
+          onSearch={handleSearch}
+          onDesktopCollapsedChange={setIsDesktopPanelCollapsed}
+          routePanel={routePanel}
+        />
+      )}
     </main>
   );
 }

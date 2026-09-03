@@ -153,7 +153,7 @@ export default function RoutePlannerPanel({
       <div className="card-heading">
         <div>
           <p className="section-kicker">Journey planning</p>
-          <h2>{routeGeometry?.name ?? "Route foundation"}</h2>
+          <h2>{routeGeometry?.name ?? "Plan a journey"}</h2>
         </div>
         {routeGeometry && (
           <button type="button" className="route-clear-button" onClick={onClear}>

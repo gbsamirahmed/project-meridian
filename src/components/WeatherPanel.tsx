@@ -192,7 +192,7 @@ export default function WeatherPanel({
         aria-expanded={!isDesktopCollapsed}
         onClick={() => onDesktopCollapsedChange(!isDesktopCollapsed)}
       >
-        <span aria-hidden="true">{isDesktopCollapsed ? ">" : "<"}</span>
+        <span className={isDesktopCollapsed ? "collapsed-brand-mark" : undefined} aria-hidden="true">{isDesktopCollapsed ? "M" : "×"}</span>
       </button>
 
       <div className="panel-content" aria-hidden={isDesktopCollapsed}>

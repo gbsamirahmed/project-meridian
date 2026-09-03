@@ -304,6 +304,16 @@ Visualisation can be expressive without falsifying data:
 
 Wind particles are not literal tracked air parcels. Future procedural cloud detail could be visually generated while constrained by honest cloud amount, altitude, and motion. Data, interpolation, derivation, and stylisation must remain distinguishable.
 
+## Desktop information architecture
+
+Meridian remains map-first: desktop navigation should preserve the map as the dominant surface and avoid using a long page-level sidebar as the route between core workflows. Location exploration and Journey planning are parallel workspace contexts. Switching context changes presentation only; it must not discard a route, selected location, journey assumptions, forecast state, overlays, or camera state.
+
+Map-display controls belong with the map, while route elevation and arrival-time analysis belong in a horizontal analysis surface that can use the route's full width. Each major surface should be independently hideable, and clear-map mode should remove substantial interface chrome without changing analytical or map state. The Meridian mark is the persistent way back from a map-focused state.
+
+Global preferences and journey assumptions are different scopes. Global settings cover application behavior such as the optional Map Inspector; journey settings change the schedule and expected-arrival context for one route. Both use progressive disclosure rather than permanent dashboard space.
+
+Journey summaries should lead with relevant conditions and honest extremes, then reveal exhaustive raw values and technical caveats on demand. Route measurements, derived journey estimates, raw forecast values, route-relative context, derived interpretation, and visual presentation remain distinct. Complete coverage needs no engineering label; incomplete coverage should be expressed in human spatial or temporal terms where the evidence permits.
+
 ## Source, inference, and decision principles
 
 - Prefer authoritative data where available.

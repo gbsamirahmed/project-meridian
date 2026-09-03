@@ -5,12 +5,16 @@ import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 
 const server = await createServer({ appType: "custom", logLevel: "silent", server: { middlewareMode: true } });
-const numeric = await server.ssrLoadModule("/src/services/numericTileCache.ts");
-const route = await server.ssrLoadModule("/src/services/routeConditions.ts");
-const globalWeather = await server.ssrLoadModule("/src/services/globalWeatherService.ts");
-const { ATMOSPHERIC_FIELDS, validateAtmosphericManifest } = await server.ssrLoadModule("/src/services/atmosphericFields.ts");
-const format = await server.ssrLoadModule("/src/services/atmosphericFormatting.ts");
-const { default: RoutePlannerPanel } = await server.ssrLoadModule("/src/components/RoutePlannerPanel.tsx");
+const [numeric, route, globalWeather, atmospheric, format, routePanelModule] = await Promise.all([
+  server.ssrLoadModule("/src/services/numericTileCache.ts"),
+  server.ssrLoadModule("/src/services/routeConditions.ts"),
+  server.ssrLoadModule("/src/services/globalWeatherService.ts"),
+  server.ssrLoadModule("/src/services/atmosphericFields.ts"),
+  server.ssrLoadModule("/src/services/atmosphericFormatting.ts"),
+  server.ssrLoadModule("/src/components/RoutePlannerPanel.tsx"),
+]);
+const { ATMOSPHERIC_FIELDS, validateAtmosphericManifest } = atmospheric;
+const RoutePlannerPanel = routePanelModule.default;
 test.after(() => server.close());
 
 const keys = { gust: "gust_surface", visibility: "visibility_surface", freezingLevel: "freezing_level", highestFreezingLevel: "highest_freezing_level", cloudCeiling: "cloud_ceiling" };
@@ -188,7 +192,8 @@ test("restrained formatting preserves zero, units and incomplete sample coverage
   assert.equal(format.atmosphericHeightLabel(1047), "~1050 m");
   assert.equal(format.atmosphericHeightLabel(713), "~700 m");
   assert.equal(format.atmosphericHeightLabel(0), "~0 m");
-  assert.equal(format.fieldCoverageLabel({ availableSamples: 3, totalSamples: 5 }), "3/5 scheduled samples");
+  assert.equal(format.fieldCoverageLabel({ availableSamples: 5, totalSamples: 5 }), "");
+  assert.equal(format.fieldCoverageLabel({ availableSamples: 3, totalSamples: 5 }), "Partial forecast coverage");
 });
 
 test("atmospheric manifests reject fabricated times and incompatible encodings", () => {

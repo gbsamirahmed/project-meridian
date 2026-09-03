@@ -15,9 +15,9 @@ interface RouteProfileProps {
   conditionMode: RouteConditionMode;
   focusedIndex: number | null;
   onFocusChange: (index: number | null) => void;
+  wide?: boolean;
 }
 
-const WIDTH = 300;
 const HEIGHT = 126;
 const LEFT = 12;
 const RIGHT = 8;
@@ -37,7 +37,9 @@ export default function RouteProfile({
   conditionMode,
   focusedIndex,
   onFocusChange,
+  wide = false,
 }: RouteProfileProps) {
+  const WIDTH = wide ? 760 : 300;
   const clipId = useId();
   const freezingSeries = useMemo(() => conditions?.derived && conditions.routeId === route.id && conditions.samples.length === route.samples.length
     ? freezingProfileSeries(conditions.samples, conditions.derived) : [], [conditions, route.id, route.samples.length]);
