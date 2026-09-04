@@ -197,8 +197,8 @@ export class GlobalWeatherCatalogueWatcher {
       visibility: options.visibility,
       dependencies: options.dependencies,
       now: options.now ?? Date.now,
-      setTimer: options.setTimer ?? setTimeout,
-      clearTimer: options.clearTimer ?? clearTimeout,
+      setTimer: options.setTimer ?? ((callback, delay) => globalThis.setTimeout(callback, delay)),
+      clearTimer: options.clearTimer ?? ((timer) => globalThis.clearTimeout(timer)),
     };
   }
 

@@ -71,6 +71,28 @@ npm.cmd ci
 npm.cmd run dev
 ```
 
+### Visual browser validation
+
+Install Playwright's pinned Chromium once after `npm ci`:
+
+```sh
+npm run visual:install
+```
+
+Run the supported visual smoke workflow with:
+
+```sh
+npm run visual:test
+```
+
+Playwright starts the normal Vite development server on loopback-only `http://localhost:4173`, launches headless Chromium, exercises the desktop shell and key controls, loads the non-private Snowdonia route fixture, writes diagnostics and screenshots, then closes the browser and server. The configured desktop sizes are 1920×1080, 1440×900, and 1366×768. Run one size with, for example, `npm run visual:test -- --project desktop-1440x900`.
+
+Generated PNGs and JSON diagnostics are written to `test-results/visual/`; traces from failures are written under `test-results/playwright/`. Both paths are ignored by Git. Page exceptions fail the suite, while console messages, failed requests, and HTTP error responses are retained in the diagnostics so external provider failures remain visible.
+
+The shell checks do not contact NOAA or run the weather updater. Normal map, weather, and search requests follow the application's real network paths and can fail independently. The route smoke test intercepts only AWS Terrarium PNG requests with a checked-in, neutral test DEM tile so route/profile interaction does not depend on terrain-network availability.
+
+For UI work, use the loop: implement, run `npm run visual:test`, inspect the PNGs in `test-results/visual/`, adjust, and rerun. The paths are deterministic so Codex can load the screenshots directly. On this Windows Codex host, headed Chromium process creation is blocked with `spawn UNKNOWN`; the supported headless workflow still renders, interacts, and captures inspectable output.
+
 ### Optional satellite imagery
 
 Satellite requires a client-visible MapTiler key. Create `.env.local` from `.env.example`, set `VITE_MAPTILER_KEY`, and restart the development server. Terrain and all non-satellite functionality work without it.
@@ -110,6 +132,8 @@ Watch mode checks once an hour, never rebuilds the published run, and retains th
 | `npm run weather:update` | Run one automatic GFS update and retention pass |
 | `npm run weather:watch` | Check hourly and update when a newer usable cycle appears |
 | `npm run test:ui` | Run focused desktop workspace and presentation tests |
+| `npm run visual:install` | Install Playwright's pinned Chromium in the user-local cache |
+| `npm run visual:test` | Start Vite, run the desktop browser smoke, and capture screenshots/diagnostics |
 | `npm run lint` | Run ESLint |
 | `npm run build` | Type-check and build production assets |
 | `npm run preview` | Serve the production build locally |

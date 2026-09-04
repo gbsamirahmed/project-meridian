@@ -933,3 +933,36 @@ Vite started at http://127.0.0.1:5173/. Browser automation failed before opening
 ### Known limitations
 
 Mobile retains the existing layout. The current analysis modes remain limited to elevation/normal, temperature, precipitation, wind and gradient; visibility analysis, viewsheds, new terrain inference, arrival-window weather and weather-adjusted timing remain deferred. Exact desktop density and dimensions should be adjusted only after the pending manual browser pass.
+
+## 2026-09-04 — Visual browser validation tooling
+
+### Goal
+
+Establish a repeatable repository-local way for Codex to render, interact with, screenshot, and inspect Meridian after the built-in browser runtime repeatedly failed across UI milestones.
+
+### Diagnosis
+
+A controlled reproduction started Meridian with the unchanged `npm run dev` workflow. Vite bound only to localhost, returned HTTP 200 with the Meridian document title, served application assets, and logged no application error. Calling the built-in in-app browser against that live page failed before a tab was returned or navigation began with `trusted Node process exited unexpectedly; kernel reset, rerun your request`. Earlier recorded variants include `node_repl kernel exited unexpectedly` and the Windows sandbox `apply deny-read ACLs` failure. The failing layer is the Codex trusted-Node/browser/sandbox runtime, not Vite or Meridian, and no safe repository change can repair it.
+
+### Tooling
+
+- Added the single repo-local `@playwright/test` development dependency and Playwright's pinned Chromium. Browser binaries live in Playwright's standard user cache, outside the repository.
+- Added a focused Playwright configuration with three desktop projects, one worker, deterministic locale/timezone, retained failure traces, and a built-in Vite web server on strict loopback port 4173. The server uses the normal `dev` script without `--host` and is stopped automatically.
+- Added one desktop shell smoke flow for workspace switching, Settings, an overlay toggle, forecast playback, map-control hide/restore, screenshots, and DOM/map-canvas readiness. It captures console messages, page exceptions, failed requests, and HTTP error responses to JSON; unhandled page errors fail the test.
+- Reused the public `snowdonia-smoke.gpx` fixture for one representative route test. Only Terrarium tile requests are fulfilled from a neutral checked-in 256 px test tile; route parsing, terrain decoding, journey construction, route analysis, profile hover, pin movement, and unpin behavior use the real application paths.
+- Added `visual:install` and the single default `visual:test` command. Screenshots and diagnostics use deterministic paths under `test-results/visual`; Playwright traces use `test-results/playwright`. Both are ignored.
+- The first real Chromium run captured screenshots and diagnostics and exposed an unbound browser `setTimeout` in the catalogue watcher. Wrapping the default timer calls through `globalThis` fixed the genuine `Illegal invocation` page exception while preserving injected deterministic timers in existing tests.
+
+### Validation
+
+The complete headless workflow passed twice without changes: four tests passed and two intentionally non-representative route-project cases were skipped on each run. It rendered 1920×1080, 1440×900, and 1366×768; captured initial and post-interaction screenshots at each size; loaded the Snowdonia route at 1440×900; exercised profile preview/pin/unpin; and left port 4173 closed. The second-run diagnostics contain zero page errors, failed requests, or HTTP error responses.
+
+The complete deterministic frontend, weather, route, and UI suite passes 91 tests with one opt-in served-data smoke test skipped. The focused desktop suite, ESLint, TypeScript, production build, and cached offline production and full dependency audits also pass; both audits report zero vulnerabilities. The production build retains the existing large JavaScript chunk and output-directory timing notices.
+
+Codex read and visually inspected generated screenshots, including the 1440×900 loaded-route analysis and 1366×768 post-interaction state. Direct image-tool access still encounters the same Windows ACL helper failure, but the files are readable through the repository shell and were inspected through an ignored thumbnail/base64 bridge. The deterministic artifact path makes that fallback repeatable.
+
+A bounded headed-Chromium check reached Playwright but Windows rejected browser process creation with `browserType.launch: spawn UNKNOWN`. Headed launch is therefore not part of the supported Codex-host workflow. Headless Chromium is fully functional and is the verified visual-validation path.
+
+### Limitations
+
+The shell/layout proof does not require NOAA or a live terrain provider. Real basemap, weather, and search rendering still reflect external provider availability, and their failures are reported separately in diagnostics. The neutral DEM fixture proves route UI plumbing rather than real elevation values. This remains a lightweight smoke and screenshot workflow, not a pixel-baseline suite or a replacement for existing deterministic domain tests.

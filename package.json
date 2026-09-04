@@ -14,7 +14,9 @@
     "weather:check": "node scripts/weather/run_weather.mjs --check-only",
     "weather:update": "node scripts/weather/run_weather.mjs",
     "weather:watch": "node scripts/weather/run_weather.mjs --watch",
-    "test:ui": "node --test scripts/ui/test_desktop_workspace.mjs"
+    "test:ui": "node --test scripts/ui/test_desktop_workspace.mjs",
+    "visual:install": "playwright install chromium",
+    "visual:test": "playwright test --config playwright.visual.config.mjs"
   },
   "dependencies": {
     "maplibre-gl": "^5.24.0",
@@ -23,6 +25,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.62.1",
     "@types/node": "^24.12.3",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
