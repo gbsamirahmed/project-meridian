@@ -1772,6 +1772,7 @@
   min-height: 0;
   flex: 1;
   padding: 12px 14px 14px;
+  overflow-x: hidden;
   overflow-y: auto;
   scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
   scrollbar-width: thin;
@@ -1915,7 +1916,6 @@
 .map-play-row > span,
 .pressure-note { color: var(--muted); font-size: 8px; line-height: 1.35; }
 .pressure-note { margin: 6px 2px 0; }
-.desktop-shell-active .maplibregl-ctrl-top-right { top: 12px; right: 14px; }
 .desktop-shell-active .layer-badge { right: 14px; bottom: 14px; max-width: 280px; }
 .route-analysis-visible .layer-badge { bottom: 248px; }
 
@@ -2042,9 +2042,13 @@
 @media (min-width: 701px) {
   .desktop-shell-active {
     --desktop-edge: 12px;
-    --desktop-workspace-width: 326px;
+    --desktop-workspace-width: 296px;
     --route-dock-height: 194px;
     --surface-radius: 16px;
+    --map-control-inset: 12px;
+    --map-control-rail-width: 36px;
+    --map-control-group-gap: 10px;
+    --map-navigation-height: 104px;
   }
 
   .desktop-shell-active .desktop-workspace {
@@ -2104,6 +2108,48 @@
 
   .desktop-shell-active .desktop-workspace-content {
     padding: 8px 10px 10px;
+    overflow-x: hidden;
+  }
+
+  .desktop-shell-active .journey-overview,
+  .desktop-shell-active .journey-title-row {
+    min-width: 0;
+  }
+
+  .desktop-shell-active .journey-title-row {
+    overflow: hidden;
+  }
+
+  .desktop-shell-active .journey-empty {
+    display: grid;
+    gap: 12px;
+    align-content: start;
+    padding: 14px;
+  }
+
+  .desktop-shell-active .journey-empty-heading,
+  .desktop-shell-active .journey-empty-description,
+  .desktop-shell-active .journey-empty-privacy {
+    min-width: 0;
+    margin: 0;
+  }
+
+  .desktop-shell-active .journey-empty-description {
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.5;
+  }
+
+  .desktop-shell-active .journey-empty .route-import-button {
+    justify-self: start;
+    min-width: 112px;
+    margin: 1px 0 0;
+  }
+
+  .desktop-shell-active .journey-empty-privacy {
+    color: var(--faint);
+    font-size: 8px;
+    line-height: 1.4;
   }
 
   .desktop-shell-active .location-workspace,
@@ -2223,9 +2269,12 @@
 
   .desktop-shell-active .journey-route-title {
     min-width: 0;
+    flex: 1 1 auto;
+    overflow: hidden;
   }
 
   .desktop-shell-active .journey-title-row h2 {
+    width: 100%;
     max-width: none;
   }
 
@@ -2365,24 +2414,34 @@
     position: static;
   }
 
+  .desktop-shell-active .maplibregl-ctrl-top-right {
+    top: var(--map-control-inset);
+    right: var(--map-control-inset);
+  }
+
+  .desktop-shell-active .maplibregl-ctrl-top-right .maplibregl-ctrl {
+    width: var(--map-control-rail-width);
+    margin: 0;
+  }
+
   .map-tool-strip {
     position: absolute;
     z-index: 12;
-    top: 126px;
-    right: var(--desktop-edge);
+    top: calc(var(--map-control-inset) + var(--map-navigation-height) + var(--map-control-group-gap));
+    right: var(--map-control-inset);
     display: grid;
-    width: 56px;
-    padding: 5px;
-    border-radius: 14px;
+    width: var(--map-control-rail-width);
+    padding: 3px;
+    border-radius: 13px;
   }
 
   .map-tool-button,
   .map-tool-close {
     display: grid;
-    width: 44px;
+    width: calc(var(--map-control-rail-width) - 8px);
     min-height: 36px;
     place-items: center;
-    padding: 3px 1px;
+    padding: 3px 0;
     color: var(--muted);
     font: inherit;
     cursor: pointer;
@@ -2397,7 +2456,7 @@
   }
 
   .map-tool-button small {
-    max-width: 42px;
+    max-width: calc(var(--map-control-rail-width) - 10px);
     overflow: hidden;
     font-size: 7px;
     line-height: 1.1;
@@ -2804,9 +2863,6 @@
     min-height: 72px;
   }
 
-  .desktop-shell-active .map-tool-strip {
-    top: 116px;
-  }
 
   .desktop-shell-active .map-tool-button {
     min-height: 34px;

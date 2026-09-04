@@ -1,5 +1,5 @@
 import { expect, test } from "@playwright/test";
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -94,10 +94,28 @@ test("desktop shell renders, interacts, and captures screenshots", async ({ page
     await openMeridian(page);
     await capture(page, `initial-${size}`);
 
+    const navigationGroup = page.locator(".maplibregl-ctrl-top-right .maplibregl-ctrl-group").first();
+    const layerRail = page.locator(".map-tool-strip");
+    const navigationBounds = await navigationGroup.boundingBox();
+    const layerBounds = await layerRail.boundingBox();
+    expect(navigationBounds).not.toBeNull();
+    expect(layerBounds).not.toBeNull();
+    if (!navigationBounds || !layerBounds) throw new Error("Map control rail did not render");
+    const viewport = page.viewportSize();
+    if (!viewport) throw new Error("Desktop project has no viewport");
+    expect(Math.abs(navigationBounds.width - layerBounds.width)).toBeLessThanOrEqual(1);
+    expect(Math.abs(navigationBounds.x + navigationBounds.width / 2 - layerBounds.x - layerBounds.width / 2)).toBeLessThanOrEqual(1);
+    expect(Math.abs(viewport.width - navigationBounds.x - navigationBounds.width - 12)).toBeLessThanOrEqual(1);
+    expect(Math.abs(viewport.width - layerBounds.x - layerBounds.width - 12)).toBeLessThanOrEqual(1);
+    expect(Math.abs(navigationBounds.y - 12)).toBeLessThanOrEqual(1);
+    expect(Math.abs(layerBounds.y - navigationBounds.y - navigationBounds.height - 10)).toBeLessThanOrEqual(1);
+
     const journeyTab = page.getByRole("tab", { name: "Journey" });
     await journeyTab.click();
     await expect(journeyTab).toHaveAttribute("aria-selected", "true");
     await expect(page.getByRole("heading", { name: "Plan with a route" })).toBeVisible();
+    await expect(page.getByText("Processed locally in your browser.")).toBeVisible();
+    await capture(page, `journey-empty-${size}`);
 
     const locationTab = page.getByRole("tab", { name: "Location" });
     await locationTab.click();
@@ -148,9 +166,30 @@ test("safe GPX route loads and profile preview/pin remains interactive", async (
   try {
     await openMeridian(page);
     await page.getByRole("tab", { name: "Journey" }).click();
-    await page.locator('input[type="file"]').setInputFiles(gpxFixture);
+    const longRouteName = "Snowdonia ridge traverse with an intentionally long route name for workspace overflow validation";
+    const fixtureXml = (await readFile(gpxFixture, "utf8")).replaceAll("Snowdonia smoke route", longRouteName);
+    await page.locator('input[type="file"]').setInputFiles({
+      name: "meridian-public-long-name-smoke.gpx",
+      mimeType: "application/gpx+xml",
+      buffer: Buffer.from(fixtureXml),
+    });
 
-    await expect(page.getByText("Snowdonia smoke route", { exact: true }).first()).toBeVisible();
+    const routeTitle = page.locator(".journey-route-title h2");
+    await expect(routeTitle).toHaveText(longRouteName);
+    const titleLayout = await routeTitle.evaluate((element) => {
+      const style = getComputedStyle(element);
+      return { clientWidth: element.clientWidth, scrollWidth: element.scrollWidth, overflow: style.overflow, textOverflow: style.textOverflow, whiteSpace: style.whiteSpace };
+    });
+    expect(titleLayout.scrollWidth).toBeGreaterThan(titleLayout.clientWidth);
+    expect(titleLayout.overflow).toBe("hidden");
+    expect(titleLayout.textOverflow).toBe("ellipsis");
+    expect(titleLayout.whiteSpace).toBe("nowrap");
+    const workspaceLayout = await page.locator(".desktop-workspace-content").evaluate((element) => ({ clientWidth: element.clientWidth, scrollWidth: element.scrollWidth, overflowX: getComputedStyle(element).overflowX }));
+    expect(workspaceLayout.scrollWidth).toBeLessThanOrEqual(workspaceLayout.clientWidth);
+    expect(workspaceLayout.overflowX).toBe("hidden");
+    const clearRouteLayout = await page.getByRole("button", { name: "Clear route" }).evaluate((element) => ({ flexShrink: getComputedStyle(element).flexShrink, whiteSpace: getComputedStyle(element).whiteSpace }));
+    expect(clearRouteLayout.flexShrink).toBe("0");
+    expect(clearRouteLayout.whiteSpace).toBe("nowrap");
     const analysis = page.getByRole("region", { name: "Route analysis" });
     await expect(analysis).toBeVisible({ timeout: 30_000 });
 

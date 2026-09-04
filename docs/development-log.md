@@ -966,3 +966,28 @@ A bounded headed-Chromium check reached Playwright but Windows rejected browser 
 ### Limitations
 
 The shell/layout proof does not require NOAA or a live terrain provider. Real basemap, weather, and search rendering still reflect external provider availability, and their failures are reported separately in diagnostics. The neutral DEM fixture proves route UI plumbing rather than real elevation values. This remains a lightweight smoke and screenshot workflow, not a pixel-baseline suite or a replacement for existing deterministic domain tests.
+
+## 2026-09-04 — Map-control rail and empty Journey refinement
+
+### Goal
+
+Refine the desktop right-hand map controls into one deliberate rail, improve the route-free Journey hierarchy, and reclaim modest map width without starting the deferred Route Analysis or workspace architecture redesign.
+
+### Changes
+
+- Unified MapLibre navigation and Meridian layer controls around shared desktop tokens: a 12 px top/right inset, 36 px outer rail width, 10 px inter-group gap, and the measured 104 px navigation-group height. Removed MapLibre's independent control margin so both groups share one centreline and viewport inset.
+- Shortened visible rail labels to Ter, Sat, Elev, Rain, Cloud, Temp, Pres, and Wind while retaining full accessible names and tooltips. Pressure now uses Pres rather than Press.
+- Rebuilt the route-free Journey card as a vertical heading, benefit-led description, Import GPX action, and secondary “Processed locally in your browser.” privacy note. Import remains entirely local and unchanged.
+- Reduced the desktop workspace from 326 px to 296 px after comparing rendered 300 px and 296 px passes. The final width keeps the header, Location content, empty Journey state, loaded route facts, forecast rows, and actions comfortable while giving more map area.
+- Hardened the loaded-route title flex chain with `min-width: 0`, contained overflow, a fixed-width Clear route action, and single-line ellipsis. The workspace content now explicitly hides horizontal overflow.
+- Extended the lightweight Playwright workflow to screenshot the empty Journey state at every target size, assert measured rail geometry, and load the public Snowdonia fixture with an intentionally long in-memory route name. The browser assertion confirms the title truncates, Clear route does not shrink, and workspace content does not overflow horizontally.
+
+### Validation
+
+The required Playwright workflow rendered and was visually inspected at 1920×1080, 1440×900, and 1366×768. The first 300 px pass confirmed the rail and hierarchy; a second 296 px refinement pass completed with four tests passed and two intentionally skipped duplicate route cases. Final screenshots show equal rail widths/insets, centred icons and labels, clean active states, no wrapping or clipping, a balanced empty Journey card, and a stable loaded Journey layout with the long title ellipsized. The visual timeout was raised from 45 to 90 seconds after the first 1920 px capture exceeded the old ceiling despite zero page or network errors; no waits or application readiness checks were weakened.
+
+The focused desktop suite passes 15 tests. The complete deterministic frontend, weather, route, and UI suite passes 91 tests with one opt-in served-data smoke test skipped. ESLint, TypeScript, and the production build pass; the build retains the existing large JavaScript chunk and output-directory timing notices.
+
+### Limitations
+
+Map and weather imagery still reflect external provider availability, so an occasional screenshot may show the fully rendered shell before external tiles arrive. The bottom Route Analysis dock, forecast timeline placement, broader workspace modes, panel-aware camera padding, environmental details, and mobile layout remain intentionally deferred.

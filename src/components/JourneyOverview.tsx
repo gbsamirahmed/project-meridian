@@ -37,10 +37,10 @@ export default function JourneyOverview({ routeGeometry, terrainRoute, schedule,
 
   if (!routeGeometry) {
     return <section className="workspace-card journey-empty">
-      <p className="section-kicker">Journey</p><h2>Plan with a route</h2>
-      <p>Import a GPX to connect terrain, a walking schedule, and weather at expected arrival times.</p>
+      <div className="journey-empty-heading"><p className="section-kicker">Journey</p><h2>Plan with a route</h2></div>
+      <p className="journey-empty-description">Import a GPX to analyse terrain, timing and weather along your journey.</p>
       <label className="route-import-button"><input type="file" accept=".gpx,application/gpx+xml" onChange={handleFile} />Import GPX</label>
-      <small>Processed in this browser; the file is not uploaded.</small>
+      <small className="journey-empty-privacy">Processed locally in your browser.</small>
     </section>;
   }
 

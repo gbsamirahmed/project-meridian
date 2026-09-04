@@ -62,11 +62,11 @@ export default function MapControls({ basemap, mapOverlays, satelliteAvailable, 
     <div className="map-controls-native" aria-label="Map controls">
       <aside className="map-tool-strip desktop-surface">
         <button type="button" className="map-tool-close" aria-label="Hide map controls" onClick={onClose}>×</button>
-        <button type="button" className={`map-tool-button${basemap === "terrain" ? " active" : ""}`} aria-pressed={basemap === "terrain"} title="Terrain basemap" onClick={() => onBasemapChange("terrain")}><span aria-hidden="true">◒</span><small>Terrain</small></button>
-        <button type="button" className={`map-tool-button${basemap === "satellite" ? " active" : ""}`} aria-pressed={basemap === "satellite"} disabled={!satelliteAvailable} title={satelliteAvailable ? "Satellite basemap" : "Satellite requires a configured MapTiler key"} onClick={() => onBasemapChange("satellite")}><span aria-hidden="true">◉</span><small>Satellite</small></button>
+        <button type="button" className={`map-tool-button${basemap === "terrain" ? " active" : ""}`} aria-pressed={basemap === "terrain"} aria-label="Terrain basemap" title="Terrain basemap" onClick={() => onBasemapChange("terrain")}><span aria-hidden="true">◒</span><small>Ter</small></button>
+        <button type="button" className={`map-tool-button${basemap === "satellite" ? " active" : ""}`} aria-pressed={basemap === "satellite"} aria-label="Satellite basemap" disabled={!satelliteAvailable} title={satelliteAvailable ? "Satellite basemap" : "Satellite requires a configured MapTiler key"} onClick={() => onBasemapChange("satellite")}><span aria-hidden="true">◉</span><small>Sat</small></button>
         <div className="map-tool-divider" />
         {MAP_OVERLAY_TOOLS.map((tool) => (
-          <button key={tool.key} type="button" className={`map-tool-button${mapOverlays[tool.key] ? " active" : ""}`} aria-pressed={mapOverlays[tool.key]} title={tool.label} onClick={() => onOverlayChange(tool.key, !mapOverlays[tool.key])}>
+          <button key={tool.key} type="button" className={`map-tool-button${mapOverlays[tool.key] ? " active" : ""}`} aria-pressed={mapOverlays[tool.key]} aria-label={tool.label} title={tool.label} onClick={() => onOverlayChange(tool.key, !mapOverlays[tool.key])}>
             <span aria-hidden="true">{tool.key === "precipitation" ? "≋" : tool.key === "windFlow" ? "↝" : tool.key === "clouds" ? "☁" : tool.key === "temperatureContours" ? "°" : tool.key === "pressureIsobars" ? "P" : "△"}</span>
             <small>{tool.shortLabel}</small>
           </button>

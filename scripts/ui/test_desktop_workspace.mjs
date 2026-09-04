@@ -99,7 +99,7 @@ test("complete coverage is silent and an empty journey offers a clear import act
   const complete = structuredClone(conditions); complete.coverage.visibility.availableSamples = 3; complete.samples[2].weather.visibility = scalar(9000, "visibility_surface");
   assert.ok(!overview({ routeConditions: complete, routeConditionStatus: "ready" }).includes("coverage-messages"));
   const html = renderToStaticMarkup(createElement(JourneyOverview, { routeGeometry: null, terrainRoute: null, schedule: null, scheduleError: null, status: "idle", statusMessage: null, profile, plan, routeConditions: null, routeConditionStatus: "idle", onImport: noop, onClear: noop, onOpenSettings: noop, onOpenAnalysis: noop }));
-  assert.match(html, /Import GPX/); assert.ok(!html.includes("Route foundation"));
+  for (const text of ["Plan with a route", "Import a GPX to analyse terrain, timing and weather along your journey.", "Import GPX", "Processed locally in your browser."]) assert.ok(html.includes(text), text); assert.match(html, /class="workspace-card journey-empty"/); assert.ok(!html.includes("Route foundation"));
 });
 
 test("journey settings retain every existing schedule input and schedule changes with breaks", () => {
@@ -120,7 +120,7 @@ test("selected point groups model values beneath one shared source block", () =>
 test("map controls retain all layers, timeline, play, and pressure-specific sampling label", () => {
   const statuses = Object.fromEntries(["precipitation","cloud_cover","wind_10m","temperature_2m","gust_surface","visibility_surface","freezing_level","highest_freezing_level","cloud_ceiling"].map(key => [key,"ready"]));
   const html = renderToStaticMarkup(createElement(MapControls, { basemap: "terrain", mapOverlays: { elevation: true, precipitation: false, clouds: false, temperatureContours: false, pressureIsobars: true, windFlow: false }, satelliteAvailable: true, forecastHour: 0, forecastTimes: [instant(0), instant(1)], forecastHours: [0,1], activeGlobalValidTime: instant(0), globalPrecipitationSource: null, globalCloudSource: null, globalWindSource: null, globalTemperatureSource: null, globalWeatherStatuses: statuses, globalWeatherCatalog: null, catalogueCheck: { lastSuccessfulCheck: null, lastCheckFailed: false }, journeySchedule: schedule, weatherGridStatus: "ready", onBasemapChange: noop, onOverlayChange: noop, onForecastHourChange: noop, isPlaying: true, onPlayingChange: noop, onClose: noop }));
-  for (const text of ["Terrain", "Satellite", "Elevation", "Precipitation", "Cloud cover", "Temperature contours", "Pressure isobars", "Wind flow", "Forecast timeline", "Pause forecast", "9 × 9 Open-Meteo sample grid"]) assert.ok(html.includes(text), text);
+  for (const text of ["Terrain basemap", "Satellite basemap", "Elevation", "Precipitation", "Cloud cover", "Temperature contours", "Pressure isobars", "Wind flow", "Forecast timeline", "Pause forecast", "9 × 9 Open-Meteo sample grid", ">Ter<", ">Sat<", ">Elev<", ">Rain<", ">Cloud<", ">Temp<", ">Pres<", ">Wind<"]) assert.ok(html.includes(text), text);
 });
 
 test("bottom route analysis preserves profile focus and condition strip access", () => {
