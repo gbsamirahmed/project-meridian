@@ -5,9 +5,11 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { createServer } from "vite";
 
 const server = await createServer({ appType: "custom", logLevel: "silent", server: { middlewareMode: true } });
-const [state, journeyModel, desktopModule, overviewModule, settingsModule, detailsModule, controlsModule, analysisModule] = await Promise.all([
+const [state, journeyModel, profileInteraction, controlOptions, desktopModule, overviewModule, settingsModule, detailsModule, controlsModule, analysisModule] = await Promise.all([
   server.ssrLoadModule("/src/services/desktopWorkspaceState.ts"),
   server.ssrLoadModule("/src/services/journeyModel.ts"),
+  server.ssrLoadModule("/src/services/routeProfileInteraction.ts"),
+  server.ssrLoadModule("/src/services/desktopControlOptions.ts"),
   server.ssrLoadModule("/src/components/DesktopWorkspace.tsx"),
   server.ssrLoadModule("/src/components/JourneyOverview.tsx"),
   server.ssrLoadModule("/src/components/JourneySettings.tsx"),
@@ -85,7 +87,9 @@ test("Location and Journey are parallel workspace tabs", () => {
 
 test("journey overview separates route facts from derived estimate and uses human coverage wording", () => {
   const html = overview();
-  for (const text of ["Route facts", "Measured from route &amp; terrain", "Journey estimate", "Moving", "Breaks", "Weather overview", "Terrain overview"]) assert.ok(html.includes(text), text);
+  for (const text of ["Route facts", "Journey estimate", "Moving", "Breaks", "Weather overview", "Elevation profile", "Gradient"]) assert.ok(html.includes(text), text);
+  for (const removed of ["Measured from route &amp; terrain", "Terrain overview", "Terrain and timing ready", "Open analysis", "View profile"]) assert.ok(!html.includes(removed), removed);
+  for (const mode of ["none", "gradient", "temperature", "precipitation", "wind"]) assert.ok(html.includes("data-analysis-mode=\"" + mode + "\""), mode);
   assert.match(html, /Visibility is unavailable after approximately 0.5 km/);
   assert.ok(!html.includes("All scheduled samples"));
   assert.ok(!html.includes("Route foundation"));
@@ -99,7 +103,7 @@ test("complete coverage is silent and an empty journey offers a clear import act
 });
 
 test("journey settings retain every existing schedule input and schedule changes with breaks", () => {
-  const html = renderToStaticMarkup(createElement(JourneySettings, { open: true, profile, plan, onProfileChange: noop, onPlanChange: noop, onClose: noop }));
+  const html = renderToStaticMarkup(createElement(JourneySettings, { open: true, anchor: { top: 180, right: 320 }, profile, plan, onProfileChange: noop, onPlanChange: noop, onClose: noop }));
   for (const text of ["Activity", "Pace", "Party", "Load", "Planned breaks", "Plan from", "Departure"]) assert.ok(html.includes(text), text);
   const withoutBreaks = journeyModel.buildJourneySchedule(terrain, { ...profile, plannedBreakMinutes: 0 }, plan);
   const withBreaks = journeyModel.buildJourneySchedule(terrain, { ...profile, plannedBreakMinutes: 60 }, plan);
@@ -116,11 +120,11 @@ test("selected point groups model values beneath one shared source block", () =>
 test("map controls retain all layers, timeline, play, and pressure-specific sampling label", () => {
   const statuses = Object.fromEntries(["precipitation","cloud_cover","wind_10m","temperature_2m","gust_surface","visibility_surface","freezing_level","highest_freezing_level","cloud_ceiling"].map(key => [key,"ready"]));
   const html = renderToStaticMarkup(createElement(MapControls, { basemap: "terrain", mapOverlays: { elevation: true, precipitation: false, clouds: false, temperatureContours: false, pressureIsobars: true, windFlow: false }, satelliteAvailable: true, forecastHour: 0, forecastTimes: [instant(0), instant(1)], forecastHours: [0,1], activeGlobalValidTime: instant(0), globalPrecipitationSource: null, globalCloudSource: null, globalWindSource: null, globalTemperatureSource: null, globalWeatherStatuses: statuses, globalWeatherCatalog: null, catalogueCheck: { lastSuccessfulCheck: null, lastCheckFailed: false }, journeySchedule: schedule, weatherGridStatus: "ready", onBasemapChange: noop, onOverlayChange: noop, onForecastHourChange: noop, isPlaying: true, onPlayingChange: noop, onClose: noop }));
-  for (const text of ["Terrain", "Satellite", "Elevation", "Precipitation", "Cloud cover", "Temperature contours", "Pressure isobars", "Wind flow", "Forecast timeline", "Pause", "Regional pressure · 9 × 9 samples"]) assert.ok(html.includes(text), text);
+  for (const text of ["Terrain", "Satellite", "Elevation", "Precipitation", "Cloud cover", "Temperature contours", "Pressure isobars", "Wind flow", "Forecast timeline", "Pause forecast", "9 × 9 Open-Meteo sample grid"]) assert.ok(html.includes(text), text);
 });
 
 test("bottom route analysis preserves profile focus and condition strip access", () => {
-  const html = renderToStaticMarkup(createElement(RouteAnalysis, { route: terrain, schedule, conditions, conditionStatus: "partial", conditionMode: "temperature", focusedIndex: 1, onFocusChange: noop, onConditionModeChange: noop, onClose: noop }));
+  const html = renderToStaticMarkup(createElement(RouteAnalysis, { route: terrain, schedule, conditions, conditionStatus: "partial", conditionMode: "temperature", focusedIndex: 1, pinnedIndex: 1, onPreviewChange: noop, onPinnedChange: noop, onConditionModeChange: noop, onClose: noop }));
   assert.match(html, /role="slider"/); assert.match(html, /aria-valuenow="500"/); assert.match(html, /route-profile-focus-point/); assert.match(html, /route-profile-condition-segment/); assert.match(html, /Selected journey point/);
 });
 
@@ -131,4 +135,57 @@ test("presentation actions perform no network work", () => {
     for (const action of [{ type: "set-workspace", mode: "journey" }, { type: "set-left", open: false }, { type: "set-map-controls", open: false }, { type: "set-clear-map", active: true }]) current = state.desktopWorkspaceReducer(current, action);
     assert.equal(current.clearMap, true); assert.equal(calls, 0);
   } finally { globalThis.fetch = originalFetch; }
+});
+test("profile coordinates cover the true drawable width at several container sizes", () => {
+  for (const geometry of [
+    { boundsLeft: 100, boundsWidth: 1000, viewBoxWidth: 1000, plotLeft: 12, plotRight: 8 },
+    { boundsLeft: 20, boundsWidth: 620, viewBoxWidth: 620, plotLeft: 12, plotRight: 8 },
+  ]) {
+    const drawableStart = geometry.boundsLeft + geometry.boundsWidth * geometry.plotLeft / geometry.viewBoxWidth;
+    const drawableWidth = geometry.boundsWidth * (geometry.viewBoxWidth - geometry.plotLeft - geometry.plotRight) / geometry.viewBoxWidth;
+    for (const fraction of [0, 0.25, 0.5, 0.75, 1]) {
+      const clientX = drawableStart + drawableWidth * fraction;
+      assert.ok(Math.abs(profileInteraction.profilePointerFraction(clientX, geometry) - fraction) < 1e-10);
+    }
+  }
+  assert.equal(profileInteraction.nearestRouteSampleForFraction(terrain.samples, terrain.totalDistanceM, 0.5), 1);
+});
+
+test("profile pin state moves and toggles off without changing route data", () => {
+  assert.equal(profileInteraction.nextPinnedRouteSample(null, 1), 1);
+  assert.equal(profileInteraction.nextPinnedRouteSample(1, 2), 2);
+  assert.equal(profileInteraction.nextPinnedRouteSample(2, 2), null);
+  assert.equal(profileInteraction.activeRouteSampleIndex(1, null), 1);
+  assert.equal(profileInteraction.activeRouteSampleIndex(1, 2), 2);
+  assert.equal(terrain.id, "route");
+});
+
+test("analysis dock uses compact mode controls and hides successful status noise", () => {
+  const html = renderToStaticMarkup(createElement(RouteAnalysis, { route: { ...terrain, name: "A deliberately very long imported route name that must not displace controls" }, schedule, conditions, conditionStatus: "ready", conditionMode: "none", focusedIndex: null, pinnedIndex: null, onPreviewChange: noop, onPinnedChange: noop, onConditionModeChange: noop, onClose: noop }));
+  for (const label of ["Elevation analysis", "Temperature analysis", "Rain analysis", "Wind analysis", "Gradient analysis"]) assert.ok(html.includes(label), label);
+  assert.ok(!html.includes("Route colour"));
+  assert.ok(!html.includes("Conditions ready"));
+  assert.match(html, /title="A deliberately very long imported route name/);
+});
+
+test("all fields outside the forecast horizon collapse to one clear message", () => {
+  const outside = structuredClone(samples[0]);
+  outside.weather = Object.fromEntries(Object.keys(outside.weather).map(key => [key, missing()]));
+  const html = renderToStaticMarkup(createElement(ForecastDetails, { sample: outside, derived: null }));
+  assert.match(html, /outside the available forecast horizon/);
+  assert.equal((html.match(/Outside forecast/g) ?? []).length, 0);
+});
+
+test("map tool metadata maps every compact control to the existing layer key", () => {
+  assert.deepEqual(controlOptions.MAP_OVERLAY_TOOLS.map(tool => tool.key), [
+    "elevation", "precipitation", "clouds", "temperatureContours", "pressureIsobars", "windFlow",
+  ]);
+  assert.deepEqual(controlOptions.ANALYSIS_MODES.map(item => item.mode), [
+    "none", "temperature", "precipitation", "wind", "gradient",
+  ]);
+});
+
+test("loading and degraded route states remain visible", () => {
+  assert.match(overview({ status: "loading-elevation", statusMessage: "Loading terrain elevation · 2/4 tiles" }), /Loading terrain elevation · 2\/4 tiles/);
+  assert.match(overview({ status: "partial", statusMessage: "Some terrain elevation is unavailable" }), /Some terrain elevation is unavailable/);
 });

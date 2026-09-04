@@ -312,6 +312,10 @@ Map-display controls belong with the map, while route elevation and arrival-time
 
 Global preferences and journey assumptions are different scopes. Global settings cover application behavior such as the optional Map Inspector; journey settings change the schedule and expected-arrival context for one route. Both use progressive disclosure rather than permanent dashboard space.
 
+On desktop, the left workspace should keep a stable, full-height geometry across Location and Journey. Meridian should first reduce padding, use available horizontal space and make successful states terse before hiding related information behind extra views; clicks have a cost, and desktop navigation should not depend on scrolling. Secondary controls should expand contextually from the action that opened them where practical.
+
+Route analysis remains a shared horizontal distance/time surface. Its modes express the user's question—elevation, temperature, rain, wind or gradient—rather than a GIS-style “route colour” property. Hover previews a journey position and click pins it for comparison with the map and detailed evidence. Map layers belong in lightweight map-native controls rather than a second sidebar.
+
 Journey summaries should lead with relevant conditions and honest extremes, then reveal exhaustive raw values and technical caveats on demand. Route measurements, derived journey estimates, raw forecast values, route-relative context, derived interpretation, and visual presentation remain distinct. Complete coverage needs no engineering label; incomplete coverage should be expressed in human spatial or temporal terms where the evidence permits.
 
 ## Source, inference, and decision principles

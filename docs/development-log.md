@@ -898,3 +898,38 @@ ESLint and the production build pass. The cached offline production dependency a
 ### Known limitations
 
 The desktop visual treatment is a first implementation and still needs manual inspection at the target viewports, with and without a route. The left workspace permits contained scrolling for a long location forecast or deep details; core journey navigation no longer depends on scrolling between unrelated controls. Mobile intentionally retains the previous panel and needs its own future redesign. Full weather-condition analysis tabs, condition-click map actions, route-colour automation, viewsheds, inferred terrain-surface classes, arrival-window analysis and weather-adjusted timing remain deferred.
+
+## 2026-09-04 — Desktop UI Refinement v2
+
+### Goal
+
+Refine the successful desktop workspace structure after manual v1 inspection showed excessive card padding, a map-obscuring right panel and bottom dock, cramped point details, duplicate analysis entry points, and an elevation-profile pointer that aligned only near the centre.
+
+### Changes
+
+- Kept a stable full-height Location/Journey workspace and reduced its desktop width, header, segmented control, gaps, card padding, search row, current-condition metrics, forecast rows, route facts, estimate and weather summaries. Successful terrain/timing status is now silent; loading, partial and error states remain visible. Long route names truncate independently of the fixed Clear route action.
+- Replaced the centred journey-settings treatment with a viewport-contained popover anchored beside Tune. It retains activity, pace, party, load, breaks, planning mode, departure, target-duration and target-finish inputs.
+- Made Journey Overview content lead into analysis. Elevation and Gradient affordances open their modes; Temperature, Rain and Wind/Gust summaries open the corresponding existing route-colour and condition analysis. The duplicate Open analysis/View profile actions, large miscellaneous Terrain Overview and permanent “profile ready” messaging were removed.
+- Replaced the Route Colour select with labelled Elevation, Temperature, Rain, Wind and Gradient mode buttons. They still drive the single established route-condition mode passed to both MapView and the analysis strip, preserving map colouring, legends and field gaps.
+- Shortened the route-analysis dock and rebalanced it into a responsive plot area and a wider point-detail region. Point fields use concise tiles and one shared GFS run/time block; environmental context and caveats remain available through disclosures. When every field is outside the horizon, one grouped message replaces nine repetitions, while mixed availability remains field-specific.
+- Corrected profile pointer mapping by transforming the rendered pointer coordinate into the responsive SVG view box and then normalising it against the actual drawable rectangle, including its left and right plot margins. ResizeObserver keeps the view box matched to the rendered plot. Hover previews; click pins; another click moves the pin; clicking the same sample toggles it off; a small Unpin action clears it. A pinned sample takes precedence over map/profile preview without changing route data.
+- Replaced the large right Display & Forecast panel with a one-column map tool strip and an independent compact forecast time/slider/play control. Active states and accessible labels cover both basemaps and all existing overlays. GFS run/check/coverage, useful active-layer legends and the pressure-only 9 × 9 explanation now live in a Data disclosure; no empty legend control is shown.
+- Shell dimensions and dock height use desktop CSS custom properties, with a shorter laptop-height fallback. Map attribution/logo offsets follow the dock, map tools avoid the MapLibre navigation stack, and all new desktop rules remain above the existing 701 px mobile boundary. Clear-map mode continues to hide shell controls without resetting application state.
+
+### Architectural decisions
+
+Preview and pinned selection are distinct presentation state. The active journey point is the pin when one exists and otherwise the transient preview, so UI movement cannot dislodge a deliberate selection. Neither state participates in route, terrain or weather loading dependencies.
+
+Density is preferred before adding tabs or scroll-led navigation. The stable left workspace keeps related current and outlook information together, contextual actions open beside their source, the horizontal dock remains the shared route-distance/time analysis surface, and map-layer controls remain lightweight map chrome. Raw forecast evidence, derived context, missing-data semantics and shared provenance remain unchanged.
+
+### Verification
+
+Fifteen focused desktop tests cover presentation-only state, Map Inspector default-off, compact successful/degraded status, long names, content-led mode mappings, labelled analysis controls, schedule settings, grouped provenance, outside-horizon treatment, map-tool ownership, profile focus and condition strips, five-position pointer geometry at two sizes, pin precedence/move/toggle behavior, and absence of presentation-triggered network work. The full deterministic frontend/weather/rendering/route suite passes 91 tests with one opt-in served-data test skipped.
+
+ESLint, TypeScript and the production build pass. The build retains the existing large JavaScript chunk and output-directory timing notices. The production dependency audit reports zero vulnerabilities from the cached offline advisory data, and Git whitespace checks pass.
+
+Vite started at http://127.0.0.1:5173/. Browser automation failed before opening the page with trusted Node process exited unexpectedly; kernel reset, rerun your request. After one CUA reset, the retry returned the same error. No browser or security setting was changed. Visual acceptance at 1920×1080, 1440×900 and 1366×768 therefore remains manual and unclaimed, including final no-scroll, collision, hover alignment and popover-fit checks.
+
+### Known limitations
+
+Mobile retains the existing layout. The current analysis modes remain limited to elevation/normal, temperature, precipitation, wind and gradient; visibility analysis, viewsheds, new terrain inference, arrival-window weather and weather-adjusted timing remain deferred. Exact desktop density and dimensions should be adjusted only after the pending manual browser pass.

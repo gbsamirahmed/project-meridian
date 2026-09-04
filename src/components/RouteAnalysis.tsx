@@ -1,6 +1,7 @@
 import ForecastDetails from "./ForecastDetails";
 import RouteProfile from "./RouteProfile";
 import { ROUTE_CONDITION_LEGENDS } from "../services/routeConditionStyle";
+import { ANALYSIS_MODES } from "../services/desktopControlOptions";
 import type { JourneySchedule, TerrainRoute } from "../types/route";
 import type { RouteConditionMode, RouteConditions, RouteConditionStatus } from "../types/routeConditions";
 
@@ -11,31 +12,35 @@ interface RouteAnalysisProps {
   conditionStatus: RouteConditionStatus;
   conditionMode: RouteConditionMode;
   focusedIndex: number | null;
-  onFocusChange: (index: number | null) => void;
+  pinnedIndex: number | null;
+  onPreviewChange: (index: number | null) => void;
+  onPinnedChange: (index: number | null) => void;
   onConditionModeChange: (mode: RouteConditionMode) => void;
   onClose: () => void;
 }
 
-export default function RouteAnalysis({ route, schedule, conditions, conditionStatus, conditionMode, focusedIndex, onFocusChange, onConditionModeChange, onClose }: RouteAnalysisProps) {
+export default function RouteAnalysis({ route, schedule, conditions, conditionStatus, conditionMode, focusedIndex, pinnedIndex, onPreviewChange, onPinnedChange, onConditionModeChange, onClose }: RouteAnalysisProps) {
   const legend = conditionMode === "none" ? null : ROUTE_CONDITION_LEGENDS[conditionMode];
   const focusedSample = focusedIndex === null ? null : conditions?.samples[Math.max(0, Math.min(conditions.samples.length - 1, focusedIndex))] ?? null;
-  return (
-    <section className="route-analysis desktop-surface" aria-label="Route analysis">
-      <div className="route-analysis-toolbar">
-        <div><p className="section-kicker">Route analysis</p><h2>{route.name}</h2></div>
-        <label className="analysis-colour-control"><span>Route colour</span><select value={conditionMode} onChange={(event) => onConditionModeChange(event.target.value as RouteConditionMode)}><option value="none">Normal</option><option value="temperature">Temperature</option><option value="precipitation">Precipitation</option><option value="wind">Wind</option><option value="gradient">Gradient</option></select></label>
-        <span className={`analysis-status analysis-status-${conditionStatus}`}>{conditionStatus === "loading" ? "Loading conditions" : conditionStatus === "partial" ? "Partial forecast coverage" : conditionStatus === "unavailable" ? "Weather unavailable" : conditionStatus === "ready" ? "Arrival weather ready" : "Terrain ready"}</span>
-        <button type="button" className="surface-close-button" aria-label="Hide route analysis" onClick={onClose}>×</button>
+  const noteworthyStatus = conditionStatus === "loading" ? "Loading conditions" : conditionStatus === "partial" ? "Partial forecast" : conditionStatus === "unavailable" ? "Weather unavailable" : null;
+
+  return <section className="route-analysis desktop-surface" aria-label="Route analysis">
+    <div className="route-analysis-toolbar">
+      <div className="analysis-title"><p className="section-kicker">Route analysis</p><h2 title={route.name}>{route.name}</h2></div>
+      <div className="analysis-mode-controls" role="group" aria-label="Analysis mode">
+        {ANALYSIS_MODES.map(({ mode, label }) => <button key={mode} type="button" title={`${label} analysis`} aria-label={`${label} analysis`} aria-pressed={conditionMode === mode} onClick={() => onConditionModeChange(mode)}>{label}</button>)}
       </div>
-      <div className="route-analysis-content">
-        <div className="route-profile-region">
-          <RouteProfile route={route} schedule={schedule} conditions={conditions} conditionMode={conditionMode} focusedIndex={focusedIndex} onFocusChange={onFocusChange} wide />
-          {legend && <div className="route-condition-legend analysis-legend"><span>{legend.label} · {legend.units}</span><i style={{ background: legend.gradient }} /><div>{legend.values.map((value) => <em key={value}>{value}</em>)}</div></div>}
-        </div>
-        <aside className="route-point-region">
-          {focusedSample ? <ForecastDetails sample={focusedSample} derived={conditions?.derived ?? null} /> : <div className="route-point-empty"><p className="section-kicker">Journey point details</p><h3>Select the profile or route</h3><p>Move across the profile or choose a point on the map to inspect terrain and expected-arrival conditions.</p></div>}
-        </aside>
+      {noteworthyStatus && <span className={`analysis-status analysis-status-${conditionStatus}`}>{noteworthyStatus}</span>}
+      <button type="button" className="surface-close-button" aria-label="Hide route analysis" onClick={onClose}>×</button>
+    </div>
+    <div className="route-analysis-content">
+      <div className="route-profile-region">
+        <RouteProfile route={route} schedule={schedule} conditions={conditions} conditionMode={conditionMode} focusedIndex={focusedIndex} pinnedIndex={pinnedIndex} onFocusChange={onPreviewChange} onPreviewChange={onPreviewChange} onPinnedChange={onPinnedChange} wide />
+        {legend && <div className="route-condition-legend analysis-legend"><span>{legend.label} · {legend.units}</span><i style={{ background: legend.gradient }} /><div>{legend.values.map((value) => <em key={value}>{value}</em>)}</div></div>}
       </div>
-    </section>
-  );
+      <aside className="route-point-region">
+        {focusedSample ? <ForecastDetails sample={focusedSample} derived={conditions?.derived ?? null} /> : <div className="route-point-empty"><p className="section-kicker">Journey point details</p><h3>Preview or pin a point</h3><p>Move across the profile to preview. Click to keep a point selected.</p></div>}
+      </aside>
+    </div>
+  </section>;
 }

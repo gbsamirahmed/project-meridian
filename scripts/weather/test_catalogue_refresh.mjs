@@ -119,7 +119,7 @@ await test("freshness is based on usable coverage and journey horizon", () => {
 });
 
 await test("compact freshness UI exposes the active run and coverage state", () => {
-  const run = new Date(); run.setUTCMinutes(0, 0, 0); run.setUTCHours(Math.floor(run.getUTCHours() / 6) * 6);
+  const run = new Date(Date.now() - 6 * 60 * 60 * 1000); run.setUTCMinutes(0, 0, 0); run.setUTCHours(Math.floor(run.getUTCHours() / 6) * 6);
   const html = renderToStaticMarkup(React.createElement(FreshnessComponent, { catalog: catalog(run.toISOString().replace(".000Z", "Z")), check: { lastSuccessfulCheck: new Date().toISOString(), lastCheckFailed: false }, journey: null }));
   assert.match(html, /weather-freshness-current/); assert.match(html, /GFS .*Z .* checked/); assert.match(html, /Forecast coverage/);
 });

@@ -36,6 +36,7 @@ import {
   DEFAULT_JOURNEY_PROFILE,
 } from "./services/journeyModel";
 import { buildRouteConditions } from "./services/routeConditions";
+import { activeRouteSampleIndex } from "./services/routeProfileInteraction";
 import {
   desktopWorkspaceReducer,
   INITIAL_DESKTOP_WORKSPACE_STATE,
@@ -169,9 +170,20 @@ function App() {
     targetDurationMinutes: 360,
     targetFinishTime: futureIso(7),
   }));
-  const [focusedRouteSampleIndex, setFocusedRouteSampleIndex] = useState<
+  const [previewRouteSampleIndex, setPreviewRouteSampleIndex] = useState<
     number | null
   >(null);
+  const [pinnedRouteSampleIndex, setPinnedRouteSampleIndex] = useState<
+    number | null
+  >(null);
+  const [journeySettingsAnchor, setJourneySettingsAnchor] = useState<{
+    top: number;
+    right: number;
+  } | null>(null);
+  const focusedRouteSampleIndex = activeRouteSampleIndex(
+    previewRouteSampleIndex,
+    pinnedRouteSampleIndex
+  );
   const [routeConditions, setRouteConditions] =
     useState<RouteConditions | null>(null);
   const [routeConditionStatus, setRouteConditionStatus] =
@@ -642,7 +654,8 @@ function App() {
       setTerrainRoute(null);
       setRouteConditions(null);
       setRouteConditionStatus("idle");
-      setFocusedRouteSampleIndex(null);
+      setPreviewRouteSampleIndex(null);
+      setPinnedRouteSampleIndex(null);
       setRouteStatus("loading-elevation");
       setRouteStatusMessage("Loading terrain elevation…");
       const controller = new AbortController();
@@ -682,7 +695,8 @@ function App() {
     routeConditionAbortRef.current?.abort();
     setRouteGeometry(null);
     setTerrainRoute(null);
-    setFocusedRouteSampleIndex(null);
+    setPreviewRouteSampleIndex(null);
+    setPinnedRouteSampleIndex(null);
     setRouteConditions(null);
     setRouteConditionStatus("idle");
     setRouteConditionMode("none");
@@ -744,7 +758,7 @@ function App() {
       onClear={handleRouteClear}
       onProfileChange={setJourneyProfile}
       onPlanChange={setJourneyPlan}
-      onFocusChange={setFocusedRouteSampleIndex}
+      onFocusChange={setPreviewRouteSampleIndex}
       onRouteConditionModeChange={setRouteConditionMode}
     />
   );
@@ -778,7 +792,7 @@ function App() {
         mapInspectorEnabled={workspace.mapInspectorEnabled}
         mapInspectorSession={workspace.mapInspectorSession}
         onLocationSelect={setSelectedLocation}
-        onRouteSampleFocus={setFocusedRouteSampleIndex}
+        onRouteSampleFocus={setPreviewRouteSampleIndex}
         onWeatherGridRequest={handleWeatherGridRequest}
       />
 
@@ -808,8 +822,14 @@ function App() {
                   routeConditionStatus={activeRouteConditionStatus}
                   onImport={handleRouteImport}
                   onClear={handleRouteClear}
-                  onOpenSettings={() => dispatchWorkspace({ type: "set-journey-settings", open: true })}
-                  onOpenAnalysis={() => dispatchWorkspace({ type: "set-route-analysis", open: true })}
+                  onOpenSettings={(anchor) => {
+                    setJourneySettingsAnchor(anchor);
+                    dispatchWorkspace({ type: "set-journey-settings", open: true });
+                  }}
+                  onOpenAnalysis={(mode) => {
+                    setRouteConditionMode(mode);
+                    dispatchWorkspace({ type: "set-route-analysis", open: true });
+                  }}
                 />
               )}
             </DesktopWorkspace>
@@ -850,7 +870,9 @@ function App() {
               conditionStatus={activeRouteConditionStatus}
               conditionMode={routeConditionMode}
               focusedIndex={focusedRouteSampleIndex}
-              onFocusChange={setFocusedRouteSampleIndex}
+              pinnedIndex={pinnedRouteSampleIndex}
+              onPreviewChange={setPreviewRouteSampleIndex}
+              onPinnedChange={setPinnedRouteSampleIndex}
               onConditionModeChange={setRouteConditionMode}
               onClose={() => dispatchWorkspace({ type: "set-route-analysis", open: false })}
             />
@@ -862,7 +884,18 @@ function App() {
           {workspace.clearMap && <button type="button" className="clear-map-restore" aria-label="Restore Meridian interface" onClick={() => dispatchWorkspace({ type: "set-clear-map", active: false })}><MeridianMark /><span>Meridian</span></button>}
 
           <GlobalSettings open={workspace.settingsOpen && !workspace.clearMap} mapInspectorEnabled={workspace.mapInspectorEnabled} onMapInspectorChange={(enabled) => dispatchWorkspace({ type: "set-map-inspector", enabled })} onClose={() => dispatchWorkspace({ type: "set-settings", open: false })} />
-          <JourneySettings open={workspace.journeySettingsOpen && !workspace.clearMap} profile={journeyProfile} plan={journeyPlan} onProfileChange={setJourneyProfile} onPlanChange={setJourneyPlan} onClose={() => dispatchWorkspace({ type: "set-journey-settings", open: false })} />
+          <JourneySettings
+            open={workspace.journeySettingsOpen && !workspace.clearMap}
+            anchor={journeySettingsAnchor}
+            profile={journeyProfile}
+            plan={journeyPlan}
+            onProfileChange={setJourneyProfile}
+            onPlanChange={setJourneyPlan}
+            onClose={() => {
+              dispatchWorkspace({ type: "set-journey-settings", open: false });
+              setJourneySettingsAnchor(null);
+            }}
+          />
         </>
       ) : (
         <WeatherPanel
