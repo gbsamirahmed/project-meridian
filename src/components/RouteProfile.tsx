@@ -18,6 +18,7 @@ interface RouteProfileProps {
   focusedIndex: number | null;
   onFocusChange: (index: number | null) => void;
   wide?: boolean;
+  summary?: boolean;
   pinnedIndex?: number | null;
   onPreviewChange?: (index: number | null) => void;
   onPinnedChange?: (index: number | null) => void;
@@ -25,6 +26,7 @@ interface RouteProfileProps {
 
 const COMPACT_WIDTH = 300;
 const COMPACT_HEIGHT = 126;
+const SUMMARY_HEIGHT = 82;
 const WIDE_WIDTH = 760;
 const WIDE_HEIGHT = 104;
 const LEFT = 12;
@@ -46,6 +48,7 @@ export default function RouteProfile({
   focusedIndex,
   onFocusChange,
   wide = false,
+  summary = false,
   pinnedIndex = null,
   onPreviewChange,
   onPinnedChange,
@@ -54,7 +57,7 @@ export default function RouteProfile({
   const svgRef = useRef<SVGSVGElement | null>(null);
   const [wideSize, setWideSize] = useState({ width: WIDE_WIDTH, height: WIDE_HEIGHT });
   const WIDTH = wide ? wideSize.width : COMPACT_WIDTH;
-  const HEIGHT = wide ? wideSize.height : COMPACT_HEIGHT;
+  const HEIGHT = wide ? wideSize.height : summary ? SUMMARY_HEIGHT : COMPACT_HEIGHT;
 
   useEffect(() => {
     if (!wide || !svgRef.current || typeof ResizeObserver === "undefined") return;
@@ -136,7 +139,7 @@ export default function RouteProfile({
   };
 
   return (
-    <div className={`route-profile${pinnedIndex !== null ? " route-profile-pinned" : ""}`}>
+    <div className={`route-profile${summary ? " route-profile-summary" : ""}${pinnedIndex !== null ? " route-profile-pinned" : ""}`}>
       <div className="route-profile-heading">
         <span>{pinnedIndex === null ? "Hover to preview · click to pin" : "Pinned journey point"}</span>
         {focusSample && <strong>{(focusSample.cumulativeDistanceM / 1000).toFixed(1)} km · {Math.round(focusSample.smoothedElevationM ?? 0)} m{focusSchedule ? ` · ${minutesLabel(focusSchedule.elapsedMinutes)}` : ""}</strong>}

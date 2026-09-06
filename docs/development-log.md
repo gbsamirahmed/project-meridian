@@ -991,3 +991,38 @@ The focused desktop suite passes 15 tests. The complete deterministic frontend, 
 ### Limitations
 
 Map and weather imagery still reflect external provider availability, so an occasional screenshot may show the fully rendered shell before external tiles arrive. The bottom Route Analysis dock, forecast timeline placement, broader workspace modes, panel-aware camera padding, environmental details, and mobile layout remain intentionally deferred.
+
+
+## 2026-09-06 — Route analysis moves into the desktop workspace
+
+### Goal
+
+Consolidate route planning and detailed route analysis into the existing map-first desktop workspace, remove the oversized bottom dock, and preserve route, schedule, forecast, camera and selection state across presentation changes.
+
+### Changes
+
+- Expanded the fixed 296 px desktop workspace from Location/Journey to Location/Journey/Analysis. Analysis appears only after terrain preparation produces a route, and switching modes changes presentation state without reloading route, DEM or weather data.
+- Moved forecast time, playback and the compact Data/freshness disclosure to the bottom of Location. The floating map timeline was removed; the existing forecast hour and playback state remain owned by App and continue while another mode is visible.
+- Added a compact elevation profile near the top of Journey. Its Analyse action and the existing Elevation, Gradient, Temperature, Rain and Wind entry points open the route-gated Analysis mode through the established shared route-condition mode.
+- Replaced the bottom Route Analysis dock with a vertical Analysis workspace. It retains responsive profile preview, click-to-pin, click-again-to-unpin, pin movement, map-linked focus, missing profile gaps, arrival timing, condition strips, legends and all five established modes.
+- Reordered point evidence for the vertical space: selected measurements lead, derived condition context follows directly, one shared GFS source/time block is used where available, and a single About this data disclosure holds deeper caveats. Outside-horizon and field-specific missing states remain explicit.
+- Replaced the anchored Tune popover with an in-panel Journey Settings subview and Back action. Activity, pace, party, load, breaks, planning mode, departure, target-duration and target-finish controls retain their existing model behavior. The permanent explanatory disclaimer was removed.
+- Removed the Journey Environmental details disclosure because freezing, cloud, visibility and related diagnostics now have a direct home in Analysis.
+- Made the 36 px right map-layer rail persistent in ordinary desktop use, removed its close control, and shortened its buttons to 30 px while preserving 12 px top/right alignment, the 10 px navigation gap, compact labels and full accessible names. Clear-map mode still hides the whole interface intentionally.
+- Removed route-analysis-dependent map furniture offsets. Attribution, MapTiler branding and map information controls remain at stable map-edge positions when the workspace mode changes.
+
+### Visual findings and refinement
+
+The repository Playwright workflow rendered Location and empty Journey at 1920×1080, 1440×900 and 1366×768, plus loaded Journey, in-panel Tune and pinned Analysis at 1440×900. The first complete route screenshots showed that the degraded-weather status competed with a long truncated Analysis title. A deliberate refinement moved that subordinate status beneath the title, giving the route name the full row. The rerender confirmed a readable vertical evidence hierarchy, no horizontal overflow, stable map furniture, compact rail alignment and substantially more vertical map space than the removed dock.
+
+Location and Journey fit without normal vertical scrolling at all target sizes in the tested states. The representative Analysis state fits at 1440×900; deeper available scientific content may use the workspace's single vertical scroll. No nested analysis scroll region remains.
+
+### Verification
+
+The final visual workflow passed four representative tests with two intentional duplicate route-project skips. It exercised forecast playback across Location/Journey switching, route import using the public fixture, long-name truncation, Tune/Back, every analysis mode, profile preview/pin/move/unpin, persistent layer controls and stable attribution geometry. Final browser diagnostics contain no unhandled page errors.
+
+Sixteen focused desktop tests pass. The full deterministic frontend, weather, route, rendering and UI suite ran 93 tests: 92 passed and one opt-in served-data test was skipped. ESLint and the TypeScript/production build pass. The build retains the existing large JavaScript chunk and output-directory timing notices; Git whitespace checks pass.
+
+### Limitations
+
+The compact checked-in DEM fixture validates interaction and layout rather than real terrain variation. External basemap and weather availability can change screenshot imagery; failures remain separated in browser diagnostics. Mobile layout, panel-aware camera padding, new analysis modes, arrival-window analysis and richer terrain/weather interpretation remain deferred.

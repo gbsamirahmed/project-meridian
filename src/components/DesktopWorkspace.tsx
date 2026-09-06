@@ -3,6 +3,7 @@ import type { WorkspaceMode } from "../services/desktopWorkspaceState";
 
 interface DesktopWorkspaceProps {
   mode: WorkspaceMode;
+  analysisAvailable: boolean;
   onModeChange: (mode: WorkspaceMode) => void;
   onClose: () => void;
   onSettings: () => void;
@@ -20,6 +21,7 @@ export function MeridianMark({ label }: { label?: string }) {
 
 export default function DesktopWorkspace({
   mode,
+  analysisAvailable,
   onModeChange,
   onClose,
   onSettings,
@@ -36,9 +38,10 @@ export default function DesktopWorkspace({
           <button type="button" aria-label="Hide workspace" title="Hide workspace" onClick={onClose}>×</button>
         </div>
       </header>
-      <div className="workspace-tabs" role="tablist" aria-label="Workspace context">
+      <div className={`workspace-tabs${analysisAvailable ? " workspace-tabs-three" : ""}`} role="tablist" aria-label="Workspace context">
         <button type="button" role="tab" aria-selected={mode === "location"} onClick={() => onModeChange("location")}>Location</button>
         <button type="button" role="tab" aria-selected={mode === "journey"} onClick={() => onModeChange("journey")}>Journey</button>
+        {analysisAvailable && <button type="button" role="tab" aria-selected={mode === "analysis"} onClick={() => onModeChange("analysis")}>Analysis</button>}
       </div>
       <div className="desktop-workspace-content">{children}</div>
     </aside>

@@ -54,9 +54,12 @@ export default function ForecastDetails({ sample, derived }: { sample: RouteCond
           {values.map(([label, value]) => <div className="forecast-value" key={label}><span>{label}</span><strong>{value}</strong></div>)}
         </div>
       )}
-      <div className="forecast-detail-foot">
+      {context && <section className="condition-context-section">
+        <p className="section-kicker">Condition context</p>
+        <DerivedConditionContext raw={sample} context={context} />
+      </section>}
+      <div className="forecast-detail-foot analysis-provenance">
         {sharedProvenance && <div className="shared-source-block"><strong>GFS · {sharedProvenance.nativeResolutionDegrees}° · run {new Date(sharedProvenance.runTime).toLocaleDateString("en-GB", { day: "2-digit", month: "short", timeZone: "UTC" })} {new Date(sharedProvenance.runTime).getUTCHours().toString().padStart(2, "0")}Z</strong><span>{routeConditionTimeLabel(sharedProvenance)}</span></div>}
-        {context && <details className="derived-context-details"><summary>Condition context</summary><DerivedConditionContext raw={sample} context={context} /></details>}
         <details className="about-data-details"><summary>About this data</summary><p>Expected-arrival model context only. Dense route sampling does not increase GFS 0.25° resolution. Visibility is not exact local sight distance. Ceiling is above the model surface. Gust direction is unavailable. Freezing levels do not predict ice.</p></details>
       </div>
     </div>

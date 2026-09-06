@@ -1,4 +1,5 @@
-import { type ChangeEvent, useMemo, type MouseEvent } from "react";
+import { type ChangeEvent, useMemo } from "react";
+import RouteProfile from "./RouteProfile";
 import { gustLabel, visibilityLabel } from "../services/atmosphericFormatting";
 import { combinedCoverageMessages, durationLabel, timeLabel } from "../services/journeyPresentation";
 import { precipitationAmountLabel } from "../services/precipitationStyle";
@@ -18,19 +19,17 @@ interface JourneyOverviewProps {
   routeConditionStatus: RouteConditionStatus;
   onImport: (file: File) => void;
   onClear: () => void;
-  onOpenSettings: (anchor: { top: number; right: number }) => void;
+  focusedIndex: number | null;
+  onFocusChange: (index: number | null) => void;
+  onOpenSettings: () => void;
   onOpenAnalysis: (mode: RouteConditionMode) => void;
 }
 
-export default function JourneyOverview({ routeGeometry, terrainRoute, schedule, scheduleError, status, statusMessage, profile, plan, routeConditions, routeConditionStatus, onImport, onClear, onOpenSettings, onOpenAnalysis }: JourneyOverviewProps) {
+export default function JourneyOverview({ routeGeometry, terrainRoute, schedule, scheduleError, status, statusMessage, profile, plan, routeConditions, routeConditionStatus, focusedIndex, onImport, onClear, onFocusChange, onOpenSettings, onOpenAnalysis }: JourneyOverviewProps) {
   const handleFile = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     event.target.value = "";
     if (file) onImport(file);
-  };
-  const openSettings = (event: MouseEvent<HTMLButtonElement>) => {
-    const bounds = event.currentTarget.getBoundingClientRect();
-    onOpenSettings({ top: bounds.top, right: bounds.right });
   };
   const coverageMessages = useMemo(() => routeConditions ? combinedCoverageMessages(routeConditions) : [], [routeConditions]);
   const showRouteStatus = status !== "ready" && status !== "idle";
@@ -51,6 +50,11 @@ export default function JourneyOverview({ routeGeometry, terrainRoute, schedule,
     </div>
     {showRouteStatus && <div className={`route-status route-status-${status}`}><span aria-hidden="true" />{statusMessage ?? "Preparing route"}</div>}
 
+    {terrainRoute && <section className="journey-profile-card">
+      <div className="journey-profile-card-heading"><div><p className="section-kicker">Elevation profile</p><h3>Route shape</h3></div><button type="button" onClick={() => onOpenAnalysis("none")}>Analyse</button></div>
+      <RouteProfile route={terrainRoute} schedule={schedule} conditions={routeConditions} conditionMode="none" focusedIndex={focusedIndex} onFocusChange={onFocusChange} summary />
+    </section>}
+
     <section className="journey-section route-facts-section">
       <p className="section-kicker">Route facts</p>
       <div className="route-facts-grid">
@@ -62,7 +66,7 @@ export default function JourneyOverview({ routeGeometry, terrainRoute, schedule,
     </section>
 
     <section className="journey-section journey-estimate-section">
-      <div className="journey-section-heading"><div><p className="section-kicker">Journey estimate</p><h3>{schedule ? `About ${durationLabel(schedule.totalMinutes)}` : "Awaiting complete terrain"}</h3></div><button type="button" className="tune-button" onClick={openSettings}>Tune</button></div>
+      <div className="journey-section-heading"><div><p className="section-kicker">Journey estimate</p><h3>{schedule ? `About ${durationLabel(schedule.totalMinutes)}` : "Awaiting complete terrain"}</h3></div><button type="button" className="tune-button" onClick={onOpenSettings}>Tune</button></div>
       {schedule && <><div className="estimate-detail-row"><span>Moving {durationLabel(schedule.movingMinutes)}</span><span>Breaks {durationLabel(schedule.stoppedMinutes)}</span></div><p className="journey-time-range">{timeLabel(schedule.departureTime)} → <strong>{timeLabel(schedule.expectedFinishTime)}</strong></p><p className="arrival-range">Likely total {durationLabel(schedule.likelyMinimumMinutes)}–{durationLabel(schedule.likelyMaximumMinutes)}</p>{plan.mode !== "profile" && <p className={`route-pace-comparison route-pace-${schedule.targetComparison}`}>{schedule.targetComparison === "close-to-baseline" ? "Close to selected baseline" : schedule.targetComparison === "faster-than-baseline" ? "Faster than selected baseline" : "Slower than selected baseline"}</p>}</>}
       <small>{profile.pace} pace · {profile.party} · {profile.load === "light" ? "day pack" : "overnight load"}</small>
     </section>
@@ -81,7 +85,6 @@ export default function JourneyOverview({ routeGeometry, terrainRoute, schedule,
           {routeConditions.summary.gustMaximumMs === null && routeConditions.summary.windMaximumMs !== null && <button type="button" data-analysis-mode="wind" onClick={() => onOpenAnalysis("wind")}><span>Peak sustained wind</span><strong>{gustLabel(routeConditions.summary.windMaximumMs)}</strong><small>Analyse</small></button>}
         </div>
         {coverageMessages.length > 0 && <div className="coverage-messages">{coverageMessages.map((message) => <p key={message}>{message}</p>)}</div>}
-        <details className="compact-details"><summary>Environmental details</summary><p>Freezing levels and other model diagnostics remain available at selected journey points in route analysis.</p></details>
       </> : routeConditionStatus !== "loading" ? <p className="muted-copy">Weather will appear when a complete schedule is available.</p> : null}
     </section>
   </div>;

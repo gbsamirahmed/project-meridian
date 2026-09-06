@@ -15,27 +15,13 @@ function viewportName(testInfo) {
 }
 
 function observeBrowser(page) {
-  const diagnostics = {
-    console: [],
-    pageErrors: [],
-    failedRequests: [],
-    errorResponses: [],
-  };
-
+  const diagnostics = { console: [], pageErrors: [], failedRequests: [], errorResponses: [] };
   page.on("console", (message) => {
     if (diagnostics.console.length >= 300) return;
-    diagnostics.console.push({
-      type: message.type(),
-      text: message.text(),
-      location: message.location(),
-    });
+    diagnostics.console.push({ type: message.type(), text: message.text(), location: message.location() });
   });
   page.on("pageerror", (error) => {
-    diagnostics.pageErrors.push({
-      name: error.name,
-      message: error.message,
-      stack: error.stack ?? null,
-    });
+    diagnostics.pageErrors.push({ name: error.name, message: error.message, stack: error.stack ?? null });
   });
   page.on("requestfailed", (request) => {
     if (diagnostics.failedRequests.length >= 300) return;
@@ -48,12 +34,8 @@ function observeBrowser(page) {
   });
   page.on("response", (response) => {
     if (response.status() < 400 || diagnostics.errorResponses.length >= 300) return;
-    diagnostics.errorResponses.push({
-      status: response.status(),
-      url: response.url(),
-    });
+    diagnostics.errorResponses.push({ status: response.status(), url: response.url() });
   });
-
   return diagnostics;
 }
 
@@ -61,10 +43,7 @@ async function saveDiagnostics(name, diagnostics, testInfo) {
   await mkdir(generatedVisualDirectory, { recursive: true });
   const outputPath = path.join(generatedVisualDirectory, `diagnostics-${name}.json`);
   await writeFile(outputPath, JSON.stringify(diagnostics, null, 2) + "\n", "utf8");
-  await testInfo.attach("browser diagnostics", {
-    path: outputPath,
-    contentType: "application/json",
-  });
+  await testInfo.attach("browser diagnostics", { path: outputPath, contentType: "application/json" });
 }
 
 async function openMeridian(page) {
@@ -86,13 +65,15 @@ async function capture(page, name) {
 
 test.describe.configure({ mode: "serial" });
 
-test("desktop shell renders, interacts, and captures screenshots", async ({ page }, testInfo) => {
+test("desktop shell keeps the timeline in Location and the layer rail persistent", async ({ page }, testInfo) => {
   const size = viewportName(testInfo);
   const diagnostics = observeBrowser(page);
 
   try {
     await openMeridian(page);
-    await capture(page, `initial-${size}`);
+    await expect(page.getByRole("region", { name: "Forecast timeline" })).toBeVisible();
+    await expect(page.getByRole("tab", { name: "Analysis" })).toHaveCount(0);
+    await capture(page, `location-${size}`);
 
     const navigationGroup = page.locator(".maplibregl-ctrl-top-right .maplibregl-ctrl-group").first();
     const layerRail = page.locator(".map-tool-strip");
@@ -109,17 +90,25 @@ test("desktop shell renders, interacts, and captures screenshots", async ({ page
     expect(Math.abs(viewport.width - layerBounds.x - layerBounds.width - 12)).toBeLessThanOrEqual(1);
     expect(Math.abs(navigationBounds.y - 12)).toBeLessThanOrEqual(1);
     expect(Math.abs(layerBounds.y - navigationBounds.y - navigationBounds.height - 10)).toBeLessThanOrEqual(1);
+    await expect(page.getByRole("button", { name: "Hide map controls" })).toHaveCount(0);
+
+    const forecastRange = page.getByRole("slider", { name: "Forecast hour" });
+    await expect(forecastRange).toBeVisible();
+    await page.getByRole("button", { name: "Play forecast" }).click();
+    await expect(page.getByRole("button", { name: "Pause forecast" })).toBeVisible();
 
     const journeyTab = page.getByRole("tab", { name: "Journey" });
     await journeyTab.click();
     await expect(journeyTab).toHaveAttribute("aria-selected", "true");
+    await expect(page.getByRole("region", { name: "Forecast timeline" })).toHaveCount(0);
     await expect(page.getByRole("heading", { name: "Plan with a route" })).toBeVisible();
     await expect(page.getByText("Processed locally in your browser.")).toBeVisible();
     await capture(page, `journey-empty-${size}`);
 
     const locationTab = page.getByRole("tab", { name: "Location" });
     await locationTab.click();
-    await expect(locationTab).toHaveAttribute("aria-selected", "true");
+    await expect(page.getByRole("button", { name: "Pause forecast" })).toBeVisible();
+    await page.getByRole("button", { name: "Pause forecast" }).click();
 
     await page.getByRole("button", { name: "Global settings" }).click();
     await expect(page.getByRole("dialog", { name: "Settings" })).toBeVisible();
@@ -132,16 +121,7 @@ test("desktop shell renders, interacts, and captures screenshots", async ({ page
     await expect(elevation).toHaveAttribute("aria-pressed", "true");
     await elevation.click();
     await expect(elevation).toHaveAttribute("aria-pressed", "false");
-
-    const play = page.getByRole("button", { name: "Play forecast" });
-    await play.click();
-    await expect(page.getByRole("button", { name: "Pause forecast" })).toBeVisible();
-    await page.getByRole("button", { name: "Pause forecast" }).click();
-
-    await page.getByRole("button", { name: "Hide map controls" }).click();
-    await expect(page.getByRole("button", { name: "Map controls" })).toBeVisible();
-    await page.getByRole("button", { name: "Map controls" }).click();
-    await expect(page.locator(".map-tool-strip")).toBeVisible();
+    await expect(layerRail).toBeVisible();
 
     await capture(page, `post-interaction-${size}`);
   } finally {
@@ -151,7 +131,7 @@ test("desktop shell renders, interacts, and captures screenshots", async ({ page
   expect(diagnostics.pageErrors, "Unhandled browser page errors; see generated diagnostics").toEqual([]);
 });
 
-test("safe GPX route loads and profile preview/pin remains interactive", async ({ page }, testInfo) => {
+test("safe GPX route exposes Journey, in-panel Tune, and interactive Analysis", async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== "desktop-1440x900", "Route proof runs once at the representative desktop viewport.");
   const diagnostics = observeBrowser(page);
 
@@ -176,43 +156,82 @@ test("safe GPX route loads and profile preview/pin remains interactive", async (
 
     const routeTitle = page.locator(".journey-route-title h2");
     await expect(routeTitle).toHaveText(longRouteName);
+    await expect(page.getByRole("tab", { name: "Analysis" })).toBeVisible({ timeout: 30_000 });
+    await expect(page.locator(".journey-profile-card .route-profile-summary")).toBeVisible();
+
     const titleLayout = await routeTitle.evaluate((element) => {
       const style = getComputedStyle(element);
-      return { clientWidth: element.clientWidth, scrollWidth: element.scrollWidth, overflow: style.overflow, textOverflow: style.textOverflow, whiteSpace: style.whiteSpace };
+      return {
+        clientWidth: element.clientWidth,
+        scrollWidth: element.scrollWidth,
+        overflow: style.overflow,
+        textOverflow: style.textOverflow,
+        whiteSpace: style.whiteSpace,
+      };
     });
     expect(titleLayout.scrollWidth).toBeGreaterThan(titleLayout.clientWidth);
     expect(titleLayout.overflow).toBe("hidden");
     expect(titleLayout.textOverflow).toBe("ellipsis");
     expect(titleLayout.whiteSpace).toBe("nowrap");
-    const workspaceLayout = await page.locator(".desktop-workspace-content").evaluate((element) => ({ clientWidth: element.clientWidth, scrollWidth: element.scrollWidth, overflowX: getComputedStyle(element).overflowX }));
+    const workspaceLayout = await page.locator(".desktop-workspace-content").evaluate((element) => ({
+      clientWidth: element.clientWidth,
+      scrollWidth: element.scrollWidth,
+      overflowX: getComputedStyle(element).overflowX,
+    }));
     expect(workspaceLayout.scrollWidth).toBeLessThanOrEqual(workspaceLayout.clientWidth);
     expect(workspaceLayout.overflowX).toBe("hidden");
-    const clearRouteLayout = await page.getByRole("button", { name: "Clear route" }).evaluate((element) => ({ flexShrink: getComputedStyle(element).flexShrink, whiteSpace: getComputedStyle(element).whiteSpace }));
+    const clearRouteLayout = await page.getByRole("button", { name: "Clear route" }).evaluate((element) => ({
+      flexShrink: getComputedStyle(element).flexShrink,
+      whiteSpace: getComputedStyle(element).whiteSpace,
+    }));
     expect(clearRouteLayout.flexShrink).toBe("0");
     expect(clearRouteLayout.whiteSpace).toBe("nowrap");
-    const analysis = page.getByRole("region", { name: "Route analysis" });
-    await expect(analysis).toBeVisible({ timeout: 30_000 });
+    await expect(page.getByText("Environmental details")).toHaveCount(0);
+    await capture(page, "journey-loaded-1440x900");
 
-    const profile = page.getByRole("slider", {
-      name: "Route elevation and expected journey profile",
-    });
+    await page.getByRole("button", { name: "Tune" }).click();
+    await expect(page.getByRole("heading", { name: "Journey settings" })).toBeVisible();
+    await expect(page.locator(".journey-settings-view")).toBeVisible();
+    await expect(page.locator(".workspace-popover")).toHaveCount(0);
+    await capture(page, "journey-settings-1440x900");
+    await page.locator(".journey-back-button").click();
+    await expect(page.getByRole("heading", { name: "Journey settings" })).toHaveCount(0);
+
+    const mapFurniture = page.locator(".maplibregl-ctrl-bottom-right");
+    const beforeAnalysis = await mapFurniture.boundingBox();
+    await page.getByRole("button", { name: "Analyse", exact: true }).click();
+    const analysis = page.getByRole("region", { name: "Route analysis" });
+    await expect(analysis).toBeVisible();
+    await expect(page.getByRole("tab", { name: "Analysis" })).toHaveAttribute("aria-selected", "true");
+    await expect(page.locator(".route-analysis.desktop-surface")).toHaveCount(0);
+    await expect(page.getByRole("region", { name: "Forecast timeline" })).toHaveCount(0);
+    const afterAnalysis = await mapFurniture.boundingBox();
+    expect(beforeAnalysis).not.toBeNull();
+    expect(afterAnalysis).not.toBeNull();
+    if (beforeAnalysis && afterAnalysis) {
+      expect(Math.abs(beforeAnalysis.x - afterAnalysis.x)).toBeLessThanOrEqual(1);
+      expect(Math.abs(beforeAnalysis.y - afterAnalysis.y)).toBeLessThanOrEqual(1);
+    }
+
+    for (const name of ["Temperature analysis", "Rain analysis", "Wind analysis", "Gradient analysis", "Elevation analysis"]) {
+      const button = analysis.getByRole("button", { name });
+      await button.click();
+      await expect(button).toHaveAttribute("aria-pressed", "true");
+    }
+
+    const profile = analysis.getByRole("slider", { name: "Route elevation and expected journey profile" });
     const bounds = await profile.boundingBox();
     expect(bounds).not.toBeNull();
     if (!bounds) throw new Error("Route profile has no rendered bounds");
-
     await page.mouse.move(bounds.x + bounds.width * 0.25, bounds.y + bounds.height * 0.5);
     await expect(analysis.getByText(/km ·/).first()).toBeVisible();
-
     await page.mouse.click(bounds.x + bounds.width * 0.5, bounds.y + bounds.height * 0.5);
     await expect(analysis.getByText("Pinned journey point")).toBeVisible();
-
     await page.mouse.click(bounds.x + bounds.width * 0.75, bounds.y + bounds.height * 0.5);
     await expect(analysis.getByText("Pinned journey point")).toBeVisible();
-
+    await capture(page, "analysis-pinned-1440x900");
     await analysis.getByRole("button", { name: "Unpin" }).click();
     await expect(analysis.getByText(/Hover to preview/)).toBeVisible();
-
-    await capture(page, "route-analysis-1440x900");
   } finally {
     await saveDiagnostics("route-1440x900", diagnostics, testInfo);
   }

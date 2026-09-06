@@ -5,7 +5,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { createServer } from "vite";
 
 const server = await createServer({ appType: "custom", logLevel: "silent", server: { middlewareMode: true } });
-const [state, journeyModel, profileInteraction, controlOptions, desktopModule, overviewModule, settingsModule, detailsModule, controlsModule, analysisModule] = await Promise.all([
+const [state, journeyModel, profileInteraction, controlOptions, desktopModule, overviewModule, settingsModule, detailsModule, controlsModule, timelineModule, analysisModule] = await Promise.all([
   server.ssrLoadModule("/src/services/desktopWorkspaceState.ts"),
   server.ssrLoadModule("/src/services/journeyModel.ts"),
   server.ssrLoadModule("/src/services/routeProfileInteraction.ts"),
@@ -15,6 +15,7 @@ const [state, journeyModel, profileInteraction, controlOptions, desktopModule, o
   server.ssrLoadModule("/src/components/JourneySettings.tsx"),
   server.ssrLoadModule("/src/components/ForecastDetails.tsx"),
   server.ssrLoadModule("/src/components/MapControls.tsx"),
+  server.ssrLoadModule("/src/components/ForecastTimeline.tsx"),
   server.ssrLoadModule("/src/components/RouteAnalysis.tsx"),
 ]);
 const DesktopWorkspace = desktopModule.default;
@@ -22,6 +23,7 @@ const JourneyOverview = overviewModule.default;
 const JourneySettings = settingsModule.default;
 const ForecastDetails = detailsModule.default;
 const MapControls = controlsModule.default;
+const ForecastTimeline = timelineModule.default;
 const RouteAnalysis = analysisModule.default;
 test.after(() => server.close());
 
@@ -60,35 +62,43 @@ const plan = { mode: "profile", departureTime: instant(1), targetDurationMinutes
 const schedule = { routeId: "route", departureTime: instant(1), expectedFinishTime: instant(4), movingMinutes: 150, stoppedMinutes: 30, totalMinutes: 180, likelyMinimumMinutes: 160, likelyMaximumMinutes: 210, movementScale: 1, targetComparison: "close-to-baseline", samples: samples.map((sample, index) => ({ routeSampleIndex: index, cumulativeDistanceM: sample.cumulativeDistanceM, movingElapsedMinutes: index * 75, stoppedElapsedMinutes: index ? 15 : 0, elapsedMinutes: index * 90, arrivalTime: instant(1 + index), earliestArrivalTime: instant(1 + index), latestArrivalTime: instant(2 + index) })) };
 
 function overview(extra={}) {
-  return renderToStaticMarkup(createElement(JourneyOverview, { routeGeometry: geometry, terrainRoute: terrain, schedule, scheduleError: null, status: "ready", statusMessage: null, profile, plan, routeConditions: conditions, routeConditionStatus: "partial", onImport: noop, onClear: noop, onOpenSettings: noop, onOpenAnalysis: noop, ...extra }));
+  return renderToStaticMarkup(createElement(JourneyOverview, { routeGeometry: geometry, terrainRoute: terrain, schedule, scheduleError: null, status: "ready", statusMessage: null, profile, plan, routeConditions: conditions, routeConditionStatus: "partial", onImport: noop, onClear: noop, focusedIndex: null, onFocusChange: noop, onOpenSettings: noop, onOpenAnalysis: noop, ...extra }));
 }
 
 test("workspace state is presentation-only, explicit, and Map Inspector starts off", () => {
   const routeSentinel = { id: "retained-route" };
+  const playbackSentinel = { playing: true, hour: 4 };
   let current = state.INITIAL_DESKTOP_WORKSPACE_STATE;
   assert.equal(current.mapInspectorEnabled, false);
-  current = state.desktopWorkspaceReducer(current, { type: "set-workspace", mode: "journey" });
+  current = state.desktopWorkspaceReducer(current, { type: "set-workspace", mode: "analysis" });
   current = state.desktopWorkspaceReducer(current, { type: "set-left", open: false });
-  current = state.desktopWorkspaceReducer(current, { type: "set-map-controls", open: false });
-  current = state.desktopWorkspaceReducer(current, { type: "set-route-analysis", open: false });
-  assert.equal(current.workspaceMode, "journey"); assert.equal(current.leftOpen, false); assert.equal(current.mapControlsOpen, false); assert.equal(current.routeAnalysisOpen, false);
+  current = state.desktopWorkspaceReducer(current, { type: "set-journey-settings", open: true });
+  assert.equal(current.workspaceMode, "analysis");
+  assert.equal(current.leftOpen, false);
+  assert.equal(current.journeySettingsOpen, true);
   assert.deepEqual(routeSentinel, { id: "retained-route" });
+  assert.deepEqual(playbackSentinel, { playing: true, hour: 4 });
   current = state.desktopWorkspaceReducer(current, { type: "set-clear-map", active: true });
-  assert.equal(current.clearMap, true); assert.equal(current.leftOpen, false); assert.equal(current.workspaceMode, "journey");
+  assert.equal(current.clearMap, true);
+  assert.equal(current.workspaceMode, "analysis");
   current = state.desktopWorkspaceReducer(current, { type: "set-map-inspector", enabled: true });
   assert.equal(current.mapInspectorEnabled, true);
 });
 
-test("Location and Journey are parallel workspace tabs", () => {
-  const location = renderToStaticMarkup(createElement(DesktopWorkspace, { mode: "location", onModeChange: noop, onClose: noop, onSettings: noop, onClearMap: noop }, createElement("p", null, "location-state")));
-  const journey = renderToStaticMarkup(createElement(DesktopWorkspace, { mode: "journey", onModeChange: noop, onClose: noop, onSettings: noop, onClearMap: noop }, createElement("p", null, "same-route-state")));
-  assert.match(location, /aria-selected="true">Location/); assert.match(journey, /aria-selected="true">Journey/); assert.match(journey, /same-route-state/);
+test("Analysis is absent without a route and available as the third workspace tab with one", () => {
+  const common = { onModeChange: noop, onClose: noop, onSettings: noop, onClearMap: noop };
+  const noRoute = renderToStaticMarkup(createElement(DesktopWorkspace, { ...common, mode: "journey", analysisAvailable: false }, createElement("p", null, "journey-state")));
+  const analysis = renderToStaticMarkup(createElement(DesktopWorkspace, { ...common, mode: "analysis", analysisAvailable: true }, createElement("p", null, "same-route-state")));
+  assert.match(noRoute, /aria-selected="true">Journey/);
+  assert.ok(!noRoute.includes(">Analysis<"));
+  assert.match(analysis, /aria-selected="true">Analysis/);
+  assert.match(analysis, /workspace-tabs-three/);
+  assert.match(analysis, /same-route-state/);
 });
-
 test("journey overview separates route facts from derived estimate and uses human coverage wording", () => {
   const html = overview();
-  for (const text of ["Route facts", "Journey estimate", "Moving", "Breaks", "Weather overview", "Elevation profile", "Gradient"]) assert.ok(html.includes(text), text);
-  for (const removed of ["Measured from route &amp; terrain", "Terrain overview", "Terrain and timing ready", "Open analysis", "View profile"]) assert.ok(!html.includes(removed), removed);
+  for (const text of ["Route facts", "Journey estimate", "Moving", "Breaks", "Weather overview", "Elevation profile", "Route shape", "Analyse", "Gradient"]) assert.ok(html.includes(text), text);
+  for (const removed of ["Measured from route &amp; terrain", "Terrain overview", "Terrain and timing ready", "Open analysis", "View profile", "Environmental details"]) assert.ok(!html.includes(removed), removed);
   for (const mode of ["none", "gradient", "temperature", "precipitation", "wind"]) assert.ok(html.includes("data-analysis-mode=\"" + mode + "\""), mode);
   assert.match(html, /Visibility is unavailable after approximately 0.5 km/);
   assert.ok(!html.includes("All scheduled samples"));
@@ -98,13 +108,15 @@ test("journey overview separates route facts from derived estimate and uses huma
 test("complete coverage is silent and an empty journey offers a clear import action", () => {
   const complete = structuredClone(conditions); complete.coverage.visibility.availableSamples = 3; complete.samples[2].weather.visibility = scalar(9000, "visibility_surface");
   assert.ok(!overview({ routeConditions: complete, routeConditionStatus: "ready" }).includes("coverage-messages"));
-  const html = renderToStaticMarkup(createElement(JourneyOverview, { routeGeometry: null, terrainRoute: null, schedule: null, scheduleError: null, status: "idle", statusMessage: null, profile, plan, routeConditions: null, routeConditionStatus: "idle", onImport: noop, onClear: noop, onOpenSettings: noop, onOpenAnalysis: noop }));
+  const html = renderToStaticMarkup(createElement(JourneyOverview, { routeGeometry: null, terrainRoute: null, schedule: null, scheduleError: null, status: "idle", statusMessage: null, profile, plan, routeConditions: null, routeConditionStatus: "idle", onImport: noop, onClear: noop, focusedIndex: null, onFocusChange: noop, onOpenSettings: noop, onOpenAnalysis: noop }));
   for (const text of ["Plan with a route", "Import a GPX to analyse terrain, timing and weather along your journey.", "Import GPX", "Processed locally in your browser."]) assert.ok(html.includes(text), text); assert.match(html, /class="workspace-card journey-empty"/); assert.ok(!html.includes("Route foundation"));
 });
 
-test("journey settings retain every existing schedule input and schedule changes with breaks", () => {
-  const html = renderToStaticMarkup(createElement(JourneySettings, { open: true, anchor: { top: 180, right: 320 }, profile, plan, onProfileChange: noop, onPlanChange: noop, onClose: noop }));
-  for (const text of ["Activity", "Pace", "Party", "Load", "Planned breaks", "Plan from", "Departure"]) assert.ok(html.includes(text), text);
+test("Journey Tune is an in-panel subview and retains every schedule input", () => {
+  const html = renderToStaticMarkup(createElement(JourneySettings, { profile, plan, onProfileChange: noop, onPlanChange: noop, onBack: noop }));
+  for (const text of ["Journey settings", "← Journey", "Activity", "Pace", "Party", "Load", "Planned breaks", "Plan from", "Departure"]) assert.ok(html.includes(text), text);
+  assert.ok(!html.includes("workspace-popover"));
+  assert.ok(!html.includes("These assumptions change"));
   const withoutBreaks = journeyModel.buildJourneySchedule(terrain, { ...profile, plannedBreakMinutes: 0 }, plan);
   const withBreaks = journeyModel.buildJourneySchedule(terrain, { ...profile, plannedBreakMinutes: 60 }, plan);
   assert.equal(withBreaks.stoppedMinutes - withoutBreaks.stoppedMinutes, 60);
@@ -117,14 +129,21 @@ test("selected point groups model values beneath one shared source block", () =>
   assert.equal((html.match(/GFS · 0.25° · run/g) ?? []).length, 1);
 });
 
-test("map controls retain all layers, timeline, play, and pressure-specific sampling label", () => {
-  const statuses = Object.fromEntries(["precipitation","cloud_cover","wind_10m","temperature_2m","gust_surface","visibility_surface","freezing_level","highest_freezing_level","cloud_ceiling"].map(key => [key,"ready"]));
-  const html = renderToStaticMarkup(createElement(MapControls, { basemap: "terrain", mapOverlays: { elevation: true, precipitation: false, clouds: false, temperatureContours: false, pressureIsobars: true, windFlow: false }, satelliteAvailable: true, forecastHour: 0, forecastTimes: [instant(0), instant(1)], forecastHours: [0,1], activeGlobalValidTime: instant(0), globalPrecipitationSource: null, globalCloudSource: null, globalWindSource: null, globalTemperatureSource: null, globalWeatherStatuses: statuses, globalWeatherCatalog: null, catalogueCheck: { lastSuccessfulCheck: null, lastCheckFailed: false }, journeySchedule: schedule, weatherGridStatus: "ready", onBasemapChange: noop, onOverlayChange: noop, onForecastHourChange: noop, isPlaying: true, onPlayingChange: noop, onClose: noop }));
-  for (const text of ["Terrain basemap", "Satellite basemap", "Elevation", "Precipitation", "Cloud cover", "Temperature contours", "Pressure isobars", "Wind flow", "Forecast timeline", "Pause forecast", "9 × 9 Open-Meteo sample grid", ">Ter<", ">Sat<", ">Elev<", ">Rain<", ">Cloud<", ">Temp<", ">Pres<", ">Wind<"]) assert.ok(html.includes(text), text);
+test("persistent map rail retains every compact layer and has no close or timeline control", () => {
+  const html = renderToStaticMarkup(createElement(MapControls, { basemap: "terrain", mapOverlays: { elevation: true, precipitation: false, clouds: false, temperatureContours: false, pressureIsobars: true, windFlow: false }, satelliteAvailable: true, onBasemapChange: noop, onOverlayChange: noop }));
+  for (const text of ["Terrain basemap", "Satellite basemap", "Elevation", "Precipitation", "Cloud cover", "Temperature contours", "Pressure isobars", "Wind flow", ">Ter<", ">Sat<", ">Elev<", ">Rain<", ">Cloud<", ">Temp<", ">Pres<", ">Wind<"]) assert.ok(html.includes(text), text);
+  assert.ok(!html.includes("Hide map controls"));
+  assert.ok(!html.includes("Forecast timeline"));
 });
 
-test("bottom route analysis preserves profile focus and condition strip access", () => {
-  const html = renderToStaticMarkup(createElement(RouteAnalysis, { route: terrain, schedule, conditions, conditionStatus: "partial", conditionMode: "temperature", focusedIndex: 1, pinnedIndex: 1, onPreviewChange: noop, onPinnedChange: noop, onConditionModeChange: noop, onClose: noop }));
+test("forecast timeline remains a compact Location control with playback and data access", () => {
+  const statuses = Object.fromEntries(["precipitation","cloud_cover","wind_10m","temperature_2m","gust_surface","visibility_surface","freezing_level","highest_freezing_level","cloud_ceiling"].map(key => [key,"ready"]));
+  const html = renderToStaticMarkup(createElement(ForecastTimeline, { mapOverlays: { elevation: false, precipitation: false, clouds: false, temperatureContours: false, pressureIsobars: true, windFlow: false }, forecastHour: 0, forecastTimes: [instant(0), instant(1)], forecastHours: [0,1], activeGlobalValidTime: instant(0), globalPrecipitationSource: null, globalCloudSource: null, globalWindSource: null, globalTemperatureSource: null, globalWeatherStatuses: statuses, globalWeatherCatalog: null, catalogueCheck: { lastSuccessfulCheck: null, lastCheckFailed: false }, journeySchedule: schedule, weatherGridStatus: "ready", onForecastHourChange: noop, isPlaying: true, onPlayingChange: noop }));
+  for (const text of ["Forecast timeline", "Pause forecast", "Data", "9 × 9 Open-Meteo sample grid"]) assert.ok(html.includes(text), text);
+});
+
+test("Analysis workspace preserves profile focus and condition strip access", () => {
+  const html = renderToStaticMarkup(createElement(RouteAnalysis, { route: terrain, schedule, conditions, conditionStatus: "partial", conditionMode: "temperature", focusedIndex: 1, pinnedIndex: 1, onPreviewChange: noop, onPinnedChange: noop, onConditionModeChange: noop }));
   assert.match(html, /role="slider"/); assert.match(html, /aria-valuenow="500"/); assert.match(html, /route-profile-focus-point/); assert.match(html, /route-profile-condition-segment/); assert.match(html, /Selected journey point/);
 });
 
@@ -132,7 +151,7 @@ test("presentation actions perform no network work", () => {
   const originalFetch = globalThis.fetch; let calls = 0; globalThis.fetch = () => { calls += 1; throw new Error("unexpected"); };
   try {
     let current = state.INITIAL_DESKTOP_WORKSPACE_STATE;
-    for (const action of [{ type: "set-workspace", mode: "journey" }, { type: "set-left", open: false }, { type: "set-map-controls", open: false }, { type: "set-clear-map", active: true }]) current = state.desktopWorkspaceReducer(current, action);
+    for (const action of [{ type: "set-workspace", mode: "analysis" }, { type: "set-left", open: false }, { type: "set-clear-map", active: true }]) current = state.desktopWorkspaceReducer(current, action);
     assert.equal(current.clearMap, true); assert.equal(calls, 0);
   } finally { globalThis.fetch = originalFetch; }
 });
@@ -160,8 +179,8 @@ test("profile pin state moves and toggles off without changing route data", () =
   assert.equal(terrain.id, "route");
 });
 
-test("analysis dock uses compact mode controls and hides successful status noise", () => {
-  const html = renderToStaticMarkup(createElement(RouteAnalysis, { route: { ...terrain, name: "A deliberately very long imported route name that must not displace controls" }, schedule, conditions, conditionStatus: "ready", conditionMode: "none", focusedIndex: null, pinnedIndex: null, onPreviewChange: noop, onPinnedChange: noop, onConditionModeChange: noop, onClose: noop }));
+test("Analysis workspace uses compact mode controls and hides successful status noise", () => {
+  const html = renderToStaticMarkup(createElement(RouteAnalysis, { route: { ...terrain, name: "A deliberately very long imported route name that must not displace controls" }, schedule, conditions, conditionStatus: "ready", conditionMode: "none", focusedIndex: null, pinnedIndex: null, onPreviewChange: noop, onPinnedChange: noop, onConditionModeChange: noop }));
   for (const label of ["Elevation analysis", "Temperature analysis", "Rain analysis", "Wind analysis", "Gradient analysis"]) assert.ok(html.includes(label), label);
   assert.ok(!html.includes("Route colour"));
   assert.ok(!html.includes("Conditions ready"));

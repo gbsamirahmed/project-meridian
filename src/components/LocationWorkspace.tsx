@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from "react";
+import { useState, type FormEvent, type ReactNode } from "react";
 import ForecastPanel from "./ForecastPanel";
 import type { SelectedLocation } from "../types/location";
 import type { Place } from "../types/place";
@@ -9,6 +9,7 @@ interface LocationWorkspaceProps {
   weather: WeatherData | null;
   place: Place | null;
   onSearch: (query: string) => void;
+  timeline: ReactNode;
 }
 
 export default function LocationWorkspace({
@@ -16,6 +17,7 @@ export default function LocationWorkspace({
   weather,
   place,
   onSearch,
+  timeline,
 }: LocationWorkspaceProps) {
   const [query, setQuery] = useState("");
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -87,6 +89,7 @@ export default function LocationWorkspace({
       </section>
 
       {weather && <ForecastPanel forecast={weather.forecast} />}
+      <div className="location-workspace-timeline">{timeline}</div>
     </div>
   );
 }
