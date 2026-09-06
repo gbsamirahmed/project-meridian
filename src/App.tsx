@@ -12,6 +12,7 @@ import RouteAnalysis from "./components/RouteAnalysis";
 import GlobalSettings from "./components/GlobalSettings";
 import JourneySettings from "./components/JourneySettings";
 import ForecastWorkspace from "./components/ForecastWorkspace";
+import DetailWorkspace from "./components/DetailWorkspace";
 
 import { getWeather } from "./services/weatherService";
 import { getLocationName } from "./services/locationService";
@@ -701,6 +702,7 @@ function App() {
     setRouteStatus("idle");
     setRouteStatusMessage(null);
     dispatchWorkspace({ type: "set-journey-settings", open: false });
+    dispatchWorkspace({ type: "set-detail-workspace", workspace: null });
     dispatchWorkspace({ type: "set-workspace", mode: "journey" });
   }, []);
 
@@ -801,7 +803,6 @@ function App() {
           {!workspace.clearMap && (
             <DesktopWorkspace
               mode={workspace.workspaceMode}
-              analysisAvailable={terrainRoute !== null}
               onModeChange={(mode) => dispatchWorkspace({ type: "set-workspace", mode })}
               onSettings={() => dispatchWorkspace({ type: "set-settings", open: true })}
               onFocusMode={() => dispatchWorkspace({ type: "set-clear-map", active: true })}
@@ -837,7 +838,7 @@ function App() {
                     onPlayingChange={setIsForecastPlaying}
                   />}
                 />
-              ) : workspace.workspaceMode === "journey" ? (
+              ) : (
                 workspace.journeySettingsOpen ? (
                   <JourneySettings
                     profile={journeyProfile}
@@ -865,24 +866,11 @@ function App() {
                     onOpenSettings={() => dispatchWorkspace({ type: "set-journey-settings", open: true })}
                     onOpenAnalysis={(mode) => {
                       setRouteConditionMode(mode);
-                      dispatchWorkspace({ type: "set-workspace", mode: "analysis" });
+                      dispatchWorkspace({ type: "set-detail-workspace", workspace: "route-analysis" });
                     }}
                   />
                 )
-              ) : terrainRoute ? (
-                <RouteAnalysis
-                  route={terrainRoute}
-                  schedule={journeyResult.schedule}
-                  conditions={activeRouteConditions}
-                  conditionStatus={activeRouteConditionStatus}
-                  conditionMode={routeConditionMode}
-                  focusedIndex={focusedRouteSampleIndex}
-                  pinnedIndex={pinnedRouteSampleIndex}
-                  onPreviewChange={setPreviewRouteSampleIndex}
-                  onPinnedChange={setPinnedRouteSampleIndex}
-                  onConditionModeChange={setRouteConditionMode}
-                />
-              ) : null}
+              )}
             </DesktopWorkspace>
           )}
 
@@ -901,8 +889,25 @@ function App() {
               weather={weather}
               activeTime={forecastTimes[activeForecastHour] ?? null}
               onForecastTimeChange={(time) => setForecastHour(closestForecastIndex(forecastTimes, time))}
+              onMapLayerChange={handleOverlayChange}
               onClose={() => dispatchWorkspace({ type: "set-detail-workspace", workspace: null })}
             />
+          )}
+          {!workspace.clearMap && workspace.detailWorkspace === "route-analysis" && terrainRoute && (
+            <DetailWorkspace label="Route analysis workspace" onClose={() => dispatchWorkspace({ type: "set-detail-workspace", workspace: null })}>
+              <RouteAnalysis
+                route={terrainRoute}
+                schedule={journeyResult.schedule}
+                conditions={activeRouteConditions}
+                conditionStatus={activeRouteConditionStatus}
+                conditionMode={routeConditionMode}
+                focusedIndex={focusedRouteSampleIndex}
+                pinnedIndex={pinnedRouteSampleIndex}
+                onPreviewChange={setPreviewRouteSampleIndex}
+                onPinnedChange={setPinnedRouteSampleIndex}
+                onConditionModeChange={setRouteConditionMode}
+              />
+            </DetailWorkspace>
           )}
           {workspace.clearMap && <button type="button" className="clear-map-restore" aria-label="Restore Meridian interface" onClick={() => dispatchWorkspace({ type: "set-clear-map", active: false })}><MeridianMark /><span>Meridian</span></button>}
 

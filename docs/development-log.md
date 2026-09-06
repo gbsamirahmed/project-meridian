@@ -1083,3 +1083,33 @@ Twenty-one focused desktop tests pass. ESLint, TypeScript and the production bui
 ### Limitations
 
 Forecast Workspace v1 has no variable picker, astronomy/daylight bands, cloud-ceiling or highest-freezing-level location series, mobile treatment, or Journey/Analysis content. It does not interpolate forecast times or add meteorological fields beyond those already available from the location provider. Route fitting is still import-only rather than a continuous camera-padding system.
+
+## 2026-09-06 — Forecast Workspace v2 and Route Analysis Workspace v1
+
+### Goal
+
+Refine Forecast into a compact rolling 24-hour instrument, reuse the large secondary Workspace for route analysis, improve imported-route breathing room, and make Windows GFS pointer publication resilient to transient Vite/file-watcher contention.
+
+### Changes
+
+- Replaced fixed-offset local forecast strings with UTC instants plus the provider's IANA timezone. Forecast windows start at the current local hour and end at the same wall-clock hour on the following calendar day: normally 25 endpoints, with 24 or 26 across daylight-saving transitions. Three-hour markers, row values, cursor and charts share the same endpoint-aligned x-domain.
+- Tightened the Forecast header and added a deterministic daily overview for conditions, temperature range, peak hourly rain, and peak wind/gust. Temperature, precipitation, cloud and wind form the always-visible core. Gust, visibility and freezing level are available through one compact expansion control; unsupported highest-freezing and cloud-ceiling series are explained once rather than rendered as empty charts.
+- Replaced the previous green chart treatment with orange scalar profiles, blue precipitation bars and neutral grey cloud bars. Zero precipitation renders no bar, missing values remain gaps, and quantitative marker values appear at the shared three-hour positions.
+- Added meteorological wind vectors at shared markers. Source direction remains the reported “from” bearing; the displayed arrow is rotated 180 degrees to show travel direction, with the source bearing retained in the tooltip and selected readout.
+- Core forecast rows expose a small Map action that enables the established matching overlay and closes the secondary Workspace. Pointer preview remains local and request-free; committed times update the existing application forecast index.
+- Reduced the primary desktop modes to Location and Journey. Route Analysis now opens beside Journey in the reusable secondary Workspace, using a wide linked profile, the existing five route-condition modes, map-linked preview/pin state, selected-point timing, derived context and shared provenance. Signed gradient presentation now states ascent, descent or level and uses a neutral zero between cool descent and warm ascent colours.
+- Increased the general route geometry margin from 48 to 72 px while retaining measured primary-workspace and right-furniture obstruction padding. If an app-driven fit occurs while a secondary Workspace is present, its rendered edge is also treated as an obstruction; route ids are still fitted only once.
+- Classified unavailable GFS candidate objects as “Run not yet complete” rather than rejected. Atomic JSON publication now retries transient Windows sharing violations against the closed temporary file with bounded backoff. The prior pointer remains live throughout and permanent failure removes the temporary file without exposing partial JSON.
+- Exposed MapLibre's actual style-ready state to the repository visual workflow, removing the flaky arbitrary wait before deterministic satellite checks.
+
+### Visual findings and refinement
+
+The first browser render revealed that a legacy generic forecast-row rule was overriding the new temporal grid and compressing charts into the far-right edge. It also exposed a same-time unpin edge case when an evening commit changed the calendar anchor. The refinement restored the full plot width and kept the selected rolling-day window stable while pinned.
+
+The second complete Playwright run passed 10 scenarios with two representative-viewport skips. Screenshots were inspected at 1920×1080, 1440×900 and 1366×768 for closed/open Forecast, hover, pin, optional rows, route analysis and Ben Nevis framing; West Highland Way and Box Hill were also inspected at 1440×900. The result keeps the primary workspace and right rail usable, leaves visible map context, has no horizontal overflow, and gives all three route fixtures comfortable effective-viewport margins.
+
+### Verification and limitations
+
+The focused desktop suite passes 23 tests, including normal and DST-transition rolling windows, exact endpoint markers, zero-versus-missing rain and wind-vector direction. The complete 59-test Python weather suite passes using the configured Python 3.12/ecCodes runtime, including transient and permanent atomic-replace cases. The real existing-run publication attempt while Vite was active was rejected by automatic command approval because it could rewrite the ignored catalogue and prune immutable generated runs, so the local weather dataset was left unchanged.
+
+Forecast remains based on existing Open-Meteo location fields and has no astronomy bands, variable picker, extra GFS fields or mobile Workspace. Route analysis retains existing expected-arrival semantics and scientific disclosures. Camera padding remains an app-driven import fit rather than continuous camera management.

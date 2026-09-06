@@ -790,6 +790,7 @@ export default function MapView({
 
     map.on("style.load", () => {
       styleReadyRef.current = true;
+      mapContainer.current?.setAttribute("data-map-style-ready", "true");
       captureSatelliteBasemapLayers(map);
       updateRouteLayer(
         map,
@@ -925,16 +926,20 @@ export default function MapView({
       );
       const mapBounds = mapContainer.current?.getBoundingClientRect();
       const shell = mapContainer.current?.closest<HTMLElement>(".desktop-shell-active");
-      const workspace = panelCollapsed
-        ? null
-        : shell?.querySelector<HTMLElement>(".desktop-workspace") ?? null;
+      const workspaces = panelCollapsed
+        ? []
+        : [...(shell?.querySelectorAll<HTMLElement>(".desktop-workspace, .detail-workspace") ?? [])];
+      const workspaceRight = workspaces.reduce<number | null>(
+        (right, workspace) => Math.max(right ?? Number.NEGATIVE_INFINITY, workspace.getBoundingClientRect().right),
+        null,
+      );
       const configuredGutter = shell
         ? Number.parseFloat(getComputedStyle(shell).getPropertyValue("--workspace-gutter"))
         : Number.NaN;
       const padding = shell
         ? calculateRouteFitPadding({
             mapLeftPx: mapBounds?.left ?? 0,
-            workspaceRightPx: workspace?.getBoundingClientRect().right ?? null,
+            workspaceRightPx: workspaceRight,
             workspaceGutterPx: Number.isFinite(configuredGutter)
               ? configuredGutter
               : DEFAULT_WORKSPACE_GUTTER_PX,

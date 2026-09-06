@@ -14,6 +14,7 @@ import argparse
 import io
 import json
 import math
+import os
 import re
 import shutil
 import time
@@ -58,6 +59,8 @@ INTERVAL_PATTERN = re.compile(r"(?P<start>\d+)-(?P<end>\d+) hour acc fcst")
 GFS_CYCLES = (18, 12, 6, 0)
 DEFAULT_CANDIDATE_COUNT = 12
 HTTP_RETRY_ATTEMPTS = 3
+WINDOWS_ATOMIC_REPLACE_ATTEMPTS = 12
+IS_WINDOWS = os.name == "nt"
 
 
 @dataclass(frozen=True)
@@ -556,7 +559,14 @@ def resolve_run(args: argparse.Namespace, forecast_hours: list[int], newer_than:
             plan, cloud_records, wind_records, temperature_records = probe_run(
                 run_time, forecast_hours, getattr(args, "require_all_fields", False)
             )
-        except (SourceUnavailableError, ValueError) as error:
+        except SourceUnavailableError as error:
+            reason = str(error)
+            print(f"  Run not yet complete: {reason}")
+            checked.append(
+                {"runTime": run_time.isoformat().replace("+00:00", "Z"), "result": reason}
+            )
+            continue
+        except ValueError as error:
             reason = str(error)
             print(f"  Run rejected: {reason}")
             checked.append(
@@ -1406,7 +1416,16 @@ def write_json_atomically(path: Path, value: Any) -> None:
     temporary_path = path.with_name(f".{path.name}.{uuid.uuid4().hex}.tmp")
     try:
         write_json(temporary_path, value)
-        temporary_path.replace(path)
+        for attempt in range(WINDOWS_ATOMIC_REPLACE_ATTEMPTS):
+            try:
+                os.replace(temporary_path, path)
+                break
+            except PermissionError:
+                if not IS_WINDOWS or attempt == WINDOWS_ATOMIC_REPLACE_ATTEMPTS - 1:
+                    raise
+                # Vite/antivirus can briefly retain a read handle on Windows.
+                # The old pointer remains intact while the closed temporary file waits.
+                time.sleep(min(0.05 * 2**attempt, 0.5))
     finally:
         temporary_path.unlink(missing_ok=True)
 

@@ -5,12 +5,13 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { createServer } from "vite";
 
 const server = await createServer({ appType: "custom", logLevel: "silent", server: { middlewareMode: true } });
-const [state, journeyModel, profileInteraction, controlOptions, routeCamera, desktopModule, overviewModule, settingsModule, detailsModule, controlsModule, timelineModule, analysisModule, forecastWorkspaceModule, locationWorkspaceModule] = await Promise.all([
+const [state, journeyModel, profileInteraction, controlOptions, routeCamera, forecastModel, desktopModule, overviewModule, settingsModule, detailsModule, controlsModule, timelineModule, analysisModule, forecastWorkspaceModule, locationWorkspaceModule] = await Promise.all([
   server.ssrLoadModule("/src/services/desktopWorkspaceState.ts"),
   server.ssrLoadModule("/src/services/journeyModel.ts"),
   server.ssrLoadModule("/src/services/routeProfileInteraction.ts"),
   server.ssrLoadModule("/src/services/desktopControlOptions.ts"),
   server.ssrLoadModule("/src/services/routeCamera.ts"),
+  server.ssrLoadModule("/src/services/forecastWorkspaceModel.ts"),
   server.ssrLoadModule("/src/components/DesktopWorkspace.tsx"),
   server.ssrLoadModule("/src/components/JourneyOverview.tsx"),
   server.ssrLoadModule("/src/components/JourneySettings.tsx"),
@@ -66,11 +67,12 @@ const profile = { activity: "hiking", pace: "normal", party: "solo", load: "ligh
 const plan = { mode: "profile", departureTime: instant(1), targetDurationMinutes: 180, targetFinishTime: instant(5) };
 const schedule = { routeId: "route", departureTime: instant(1), expectedFinishTime: instant(4), movingMinutes: 150, stoppedMinutes: 30, totalMinutes: 180, likelyMinimumMinutes: 160, likelyMaximumMinutes: 210, movementScale: 1, targetComparison: "close-to-baseline", samples: samples.map((sample, index) => ({ routeSampleIndex: index, cumulativeDistanceM: sample.cumulativeDistanceM, movingElapsedMinutes: index * 75, stoppedElapsedMinutes: index ? 15 : 0, elapsedMinutes: index * 90, arrivalTime: instant(1 + index), earliestArrivalTime: instant(1 + index), latestArrivalTime: instant(2 + index) })) };
 const locationWeather = {
+  timezone: "Europe/London",
   utcOffsetSeconds: 3600,
   temperature: 11, humidity: 80, pressure: 1008, windSpeed: 20, windGusts: 35,
   cloudCover: 70, precipitation: 0.4, visibility: 8, dewPoint: 7,
   hourly: Array.from({ length: 48 }, (_, index) => ({
-    time: `2026-09-${String(6 + Math.floor(index / 24)).padStart(2, "0")}T${String(index % 24).padStart(2, "0")}:00`,
+    time: new Date(Date.UTC(2026, 8, 5, 23 + index)).toISOString(),
     temperature: 6 + index / 8,
     precipitation: index === 2 ? null : index % 5 / 10,
     cloudCover: 40 + index % 50,
@@ -96,23 +98,23 @@ test("workspace state is presentation-only, explicit, and Map Inspector starts o
   const playbackSentinel = { playing: true, hour: 4 };
   let current = state.INITIAL_DESKTOP_WORKSPACE_STATE;
   assert.equal(current.mapInspectorEnabled, false);
-  current = state.desktopWorkspaceReducer(current, { type: "set-workspace", mode: "analysis" });
+  current = state.desktopWorkspaceReducer(current, { type: "set-workspace", mode: "journey" });
   current = state.desktopWorkspaceReducer(current, { type: "set-journey-settings", open: true });
-  assert.equal(current.workspaceMode, "analysis");
+  assert.equal(current.workspaceMode, "journey");
   assert.equal(current.journeySettingsOpen, true);
   assert.deepEqual(routeSentinel, { id: "retained-route" });
   assert.deepEqual(playbackSentinel, { playing: true, hour: 4 });
   current = state.desktopWorkspaceReducer(current, { type: "set-clear-map", active: true });
   assert.equal(current.clearMap, true);
-  assert.equal(current.workspaceMode, "analysis");
+  assert.equal(current.workspaceMode, "journey");
   current = state.desktopWorkspaceReducer(current, { type: "set-clear-map", active: false });
   assert.equal(current.clearMap, false);
-  assert.equal(current.workspaceMode, "analysis");
+  assert.equal(current.workspaceMode, "journey");
   current = state.desktopWorkspaceReducer(current, { type: "set-map-inspector", enabled: true });
   assert.equal(current.mapInspectorEnabled, true);
 });
 
-test("detail Workspace state opens in Location and closes on primary-mode changes", () => {
+test("detail Workspaces follow their owning primary mode", () => {
   let current = state.desktopWorkspaceReducer(state.INITIAL_DESKTOP_WORKSPACE_STATE, { type: "set-detail-workspace", workspace: "forecast" });
   assert.equal(current.detailWorkspace, "forecast");
   current = state.desktopWorkspaceReducer(current, { type: "set-workspace", mode: "journey" });
@@ -120,6 +122,9 @@ test("detail Workspace state opens in Location and closes on primary-mode change
   current = state.desktopWorkspaceReducer(current, { type: "set-workspace", mode: "location" });
   assert.equal(current.workspaceMode, "location");
   assert.equal(current.detailWorkspace, null);
+  current = state.desktopWorkspaceReducer(current, { type: "set-detail-workspace", workspace: "route-analysis" });
+  current = state.desktopWorkspaceReducer(current, { type: "set-workspace", mode: "journey" });
+  assert.equal(current.detailWorkspace, "route-analysis");
 });
 
 test("Location exposes one compact Forecast Workspace action without duplicating detail", () => {
@@ -144,27 +149,52 @@ test("Forecast Workspace groups every available field around one shared time sli
     weather: locationWeather,
     activeTime: "2026-09-06T01:00:00.000Z",
     onForecastTimeChange: noop,
+    onMapLayerChange: noop,
     onClose: noop,
   }));
-  for (const text of ["Forecast", "Temperature", "Precipitation", "Cloud", "Wind", "Gust", "Visibility", "Freezing level", "Highest freezing level", "Cloud ceiling", "No hourly location series"]) assert.ok(html.includes(text), text);
+  for (const text of ["Forecast", "Outlook", "Temperature", "Precipitation", "Cloud", "Wind", "More variables", "Highest freezing level", "cloud ceiling"]) assert.ok(html.includes(text), text);
+  for (const optional of ["Gust</strong>", "Visibility</strong>", "Freezing level</strong>"]) assert.ok(!html.includes(optional), optional);
   assert.equal((html.match(/role="slider"/g) ?? []).length, 1);
   assert.match(html, /aria-label="Forecast day"/);
-  assert.match(html, /forecast-time-cursor/);
+  assert.match(html, /mm \/ h/);
 });
 
-test("Analysis is absent without a route and available as the third workspace tab with one", () => {
+test("rolling forecast windows preserve local wall-clock endpoints across DST", () => {
+  const makeHours = (start, count) => Array.from({ length: count }, (_, index) => ({
+    ...locationWeather.hourly[0],
+    time: new Date(Date.parse(start) + index * 3_600_000).toISOString(),
+  }));
+  const ordinary = forecastModel.rollingForecastWindow(makeHours("2026-09-06T08:00:00Z", 50), "Europe/London", "2026-09-06", 9);
+  const autumn = forecastModel.rollingForecastWindow(makeHours("2026-10-24T08:00:00Z", 52), "Europe/London", "2026-10-24", 9);
+  const spring = forecastModel.rollingForecastWindow(makeHours("2026-03-28T09:00:00Z", 50), "Europe/London", "2026-03-28", 9);
+  assert.equal(ordinary.length, 25);
+  assert.equal(autumn.length, 26);
+  assert.equal(spring.length, 24);
+  for (const window of [ordinary, autumn, spring]) {
+    assert.equal(forecastModel.localTimeParts(window[0].item.time, "Europe/London").hour, 9);
+    assert.equal(forecastModel.localTimeParts(window.at(-1).item.time, "Europe/London").hour, 9);
+    const markers = forecastModel.forecastMarkerIndexes(window.length);
+    assert.equal(markers[0], 0);
+    assert.equal(markers.at(-1), window.length - 1);
+  }
+});
+
+test("forecast visual semantics distinguish zero rain and convert wind-from to travel direction", () => {
+  assert.equal(forecastModel.precipitationBarHeight(null, 3), null);
+  assert.equal(forecastModel.precipitationBarHeight(0, 3), 0);
+  assert.ok(forecastModel.precipitationBarHeight(1, 3) > 0);
+  assert.equal(forecastModel.windTravelToDegrees(270), 90);
+});
+
+test("primary workspace remains Location and Journey only", () => {
   const common = { onModeChange: noop, onSettings: noop, onFocusMode: noop };
-  const noRoute = renderToStaticMarkup(createElement(DesktopWorkspace, { ...common, mode: "journey", analysisAvailable: false }, createElement("p", null, "journey-state")));
-  const analysis = renderToStaticMarkup(createElement(DesktopWorkspace, { ...common, mode: "analysis", analysisAvailable: true }, createElement("p", null, "same-route-state")));
+  const noRoute = renderToStaticMarkup(createElement(DesktopWorkspace, { ...common, mode: "journey" }, createElement("p", null, "journey-state")));
   assert.match(noRoute, /aria-selected="true">Journey/);
   assert.ok(!noRoute.includes(">Analysis<"));
-  assert.match(analysis, /aria-selected="true">Analysis/);
-  assert.match(analysis, /workspace-tabs-three/);
-  assert.match(analysis, /same-route-state/);
 });
 test("canonical Meridian brand is the sole normal-workspace focus control", () => {
   const html = renderToStaticMarkup(createElement(DesktopWorkspace, {
-    mode: "location", analysisAvailable: false, onModeChange: noop, onSettings: noop, onFocusMode: noop,
+    mode: "location", onModeChange: noop, onSettings: noop, onFocusMode: noop,
   }, createElement("p", null, "location-state")));
   assert.match(html, /src="\/favicon\.svg"/);
   assert.match(html, /aria-label="Enter focus mode"/);
@@ -175,10 +205,10 @@ test("canonical Meridian brand is the sole normal-workspace focus control", () =
 test("route-fit padding reserves the rendered primary workspace and gutter", () => {
   assert.deepEqual(routeCamera.calculateRouteFitPadding({
     mapLeftPx: 0, workspaceRightPx: 308, workspaceGutterPx: 12,
-  }), { top: 48, right: 96, bottom: 48, left: 368 });
+  }), { top: 72, right: 120, bottom: 72, left: 392 });
   assert.deepEqual(routeCamera.calculateRouteFitPadding({
     mapLeftPx: 0, workspaceRightPx: null, workspaceGutterPx: 12,
-  }), { top: 48, right: 96, bottom: 48, left: 48 });
+  }), { top: 72, right: 120, bottom: 72, left: 72 });
 });
 test("journey overview separates route facts from derived estimate and uses human coverage wording", () => {
   const html = overview();

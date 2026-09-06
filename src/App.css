@@ -13,6 +13,186 @@
   --green: #87d5a5;
 }
 
+/* Forecast Workspace v2 and secondary Route Analysis Workspace */
+@media (min-width: 701px) {
+  .forecast-workspace-header {
+    min-height: 54px;
+    align-items: center;
+    padding: 0 48px 8px 2px;
+  }
+  .forecast-workspace-header > div {
+    grid-template-columns: auto 1fr;
+    gap: 1px 10px;
+  }
+  .forecast-workspace-header p {
+    color: var(--text);
+    font-size: 12px;
+    font-weight: 650;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  .forecast-workspace-header h2 { font-size: 21px; }
+  .forecast-days {
+    margin: 9px 0 7px 126px;
+  }
+  .forecast-days button { min-height: 39px; }
+  .forecast-daily-summary {
+    display: grid;
+    grid-template-columns: 1.45fr repeat(3, 1fr);
+    gap: 1px;
+    margin: 0 0 8px 126px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.065);
+    border-radius: 8px;
+  }
+  .forecast-daily-summary > div {
+    display: grid;
+    gap: 2px;
+    min-width: 0;
+    padding: 6px 8px;
+    background: rgba(255,255,255,.025);
+  }
+  .forecast-daily-summary span { color: var(--faint); font-size: 8px; }
+  .forecast-daily-summary strong {
+    overflow: hidden;
+    font-size: 9px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .forecast-axis {
+    position: relative;
+    height: 17px;
+    margin-left: 126px;
+    padding: 0;
+  }
+  .forecast-axis span,
+  .forecast-sparse-values span {
+    position: absolute;
+    left: calc(var(--marker-position) * 100%);
+    transform: translateX(-50%);
+  }
+  .forecast-axis span:first-child,
+  .forecast-sparse-values span:first-child { transform: none; }
+  .forecast-axis span:last-child,
+  .forecast-sparse-values span:last-child { transform: translateX(-100%); }
+  .forecast-plot {
+    --forecast-label-width: 126px;
+    display: block;
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: none;
+  }
+  .forecast-plot::-webkit-scrollbar { display: none; }
+  .forecast-row { min-height: 86px; }
+  .forecast-row > div:first-child {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 3px 5px;
+    padding-right: 12px;
+  }
+  .forecast-row > div:first-child strong { grid-column: 1 / -1; }
+  .forecast-row > div:first-child button {
+    align-self: center;
+    padding: 2px 5px;
+    color: var(--faint);
+    font: inherit;
+    font-size: 8px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 5px;
+  }
+  .forecast-row-visual {
+    position: relative;
+    height: 68px;
+  }
+  .forecast-row svg { height: 48px; }
+  .forecast-orange polyline { stroke: var(--accent); }
+  .forecast-blue.bar rect { fill: rgba(64, 154, 211, .72); }
+  .forecast-grey.bar rect { fill: rgba(190, 198, 196, .34); }
+  .forecast-sparse-values {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 14px;
+    color: var(--faint);
+    font-size: 7px;
+  }
+  .forecast-wind-vectors {
+    position: absolute;
+    inset: 6px 0 20px;
+  }
+  .forecast-wind-vectors span {
+    position: absolute;
+    left: calc(var(--wind-position) * 100%);
+    color: var(--accent);
+    font-size: 17px;
+    line-height: 1;
+    transform: translateX(-50%) rotate(var(--wind-rotation));
+    transform-origin: center;
+  }
+  .forecast-time-cursor {
+    bottom: 0;
+    left: calc(var(--forecast-label-width) + (100% - var(--forecast-label-width)) * var(--forecast-position));
+  }
+  .forecast-workspace-options {
+    display: flex;
+    min-height: 27px;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 0 0 126px;
+    border-top: 1px solid var(--line);
+  }
+  .forecast-workspace-options button {
+    padding: 3px 7px;
+    color: var(--muted);
+    font: inherit;
+    font-size: 9px;
+    cursor: pointer;
+    background: rgba(255,255,255,.04);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+  }
+  .forecast-workspace-options span { color: var(--faint); font-size: 8px; }
+
+  .detail-workspace > .analysis-workspace {
+    display: grid;
+    flex: 1;
+    grid-template-columns: minmax(360px, 1.25fr) minmax(310px, .75fr);
+    grid-template-rows: auto minmax(230px, .7fr) auto minmax(0, 1fr);
+    gap: 10px 16px;
+    min-height: 0;
+    padding: 0;
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
+  .detail-workspace .analysis-workspace-heading { grid-column: 1 / -1; }
+  .detail-workspace .analysis-profile-card {
+    grid-column: 1;
+    grid-row: 2;
+    min-height: 230px;
+  }
+  .detail-workspace .analysis-workspace-modes,
+  .detail-workspace .analysis-workspace-legend { grid-column: 1; }
+  .detail-workspace .analysis-detail-card {
+    grid-column: 2;
+    grid-row: 2 / 5;
+    min-height: 0;
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
+  .detail-workspace .route-profile { height: 100%; min-height: 220px; }
+}
+
+@media (min-width: 701px) and (max-height: 820px) {
+  .forecast-row { min-height: 72px; }
+  .forecast-row-visual { height: 56px; }
+  .forecast-row svg { height: 39px; }
+  .forecast-daily-summary > div { padding: 4px 6px; }
+}
+
 /* Reusable secondary Workspace and Forecast Workspace v1 */
 @media (min-width: 701px) {
   .desktop-shell-active .detail-workspace {
@@ -3613,4 +3793,31 @@
   .desktop-shell-active .maptiler-logo-panel-collapsed {
     left: var(--workspace-gutter);
   }
+}
+
+/* Final cascade for Forecast Workspace v2; retained here beside later desktop rules. */
+@media (min-width: 701px) {
+  .desktop-shell-active .forecast-workspace-header { min-height: 54px; align-items: center; padding: 0 48px 8px 2px; }
+  .desktop-shell-active .forecast-workspace-header > div { grid-template-columns: auto 1fr; gap: 1px 10px; }
+  .desktop-shell-active .forecast-workspace-header p { color: var(--text); font-size: 12px; font-weight: 650; letter-spacing: 0; text-transform: none; }
+  .desktop-shell-active .forecast-workspace-header h2 { font-size: 21px; }
+  .desktop-shell-active .forecast-days { margin: 9px 0 7px 126px; }
+  .desktop-shell-active .forecast-days button { min-height: 39px; }
+  .desktop-shell-active .forecast-axis { position: relative; display: block; height: 17px; margin-left: 126px; padding: 0; }
+  .desktop-shell-active .forecast-plot { --forecast-label-width: 126px; display: block; flex: 1 1 auto; min-height: 0; overflow-x: hidden; overflow-y: auto; scrollbar-width: none; }
+  .desktop-shell-active .forecast-row {
+    display: grid;
+    grid-template-columns: var(--forecast-label-width) minmax(0, 1fr);
+    min-height: 86px;
+    padding: 0;
+  }
+  .desktop-shell-active .forecast-row svg { height: 48px; }
+  .desktop-shell-active .forecast-orange polyline { stroke: var(--accent); }
+  .desktop-shell-active .forecast-blue.bar rect { fill: rgba(64, 154, 211, .72); }
+  .desktop-shell-active .forecast-grey.bar rect { fill: rgba(190, 198, 196, .34); }
+}
+@media (min-width: 701px) and (max-height: 820px) {
+  .desktop-shell-active .forecast-row { min-height: 72px; }
+  .desktop-shell-active .forecast-row-visual { height: 56px; }
+  .desktop-shell-active .forecast-row svg { height: 39px; }
 }

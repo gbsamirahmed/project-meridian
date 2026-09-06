@@ -5,7 +5,7 @@ export async function getWeather(
   longitude: number
 ): Promise<WeatherData> {
   const response = await fetch(
-    `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,precipitation,cloud_cover,pressure_msl,wind_speed_10m,wind_gusts_10m,visibility,dew_point_2m&hourly=temperature_2m,precipitation,cloud_cover,wind_speed_10m,wind_direction_10m,wind_gusts_10m,visibility,freezing_level_height&daily=temperature_2m_max,temperature_2m_min&forecast_days=7&timezone=auto`
+    `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,precipitation,cloud_cover,pressure_msl,wind_speed_10m,wind_gusts_10m,visibility,dew_point_2m&hourly=temperature_2m,precipitation,cloud_cover,wind_speed_10m,wind_direction_10m,wind_gusts_10m,visibility,freezing_level_height&daily=temperature_2m_max,temperature_2m_min&forecast_days=7&timeformat=unixtime&timezone=auto`
   );
 
   if (!response.ok) {
@@ -21,8 +21,13 @@ export async function getWeather(
   }
 
   const forecast: ForecastDay[] = data.daily.time.map(
-    (date: string, index: number) => ({
-      date,
+    (time: number, index: number) => ({
+      date: new Intl.DateTimeFormat("en-CA", {
+        timeZone: data.timezone,
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+      }).format(new Date(time * 1000)),
       maxTemperature: data.daily.temperature_2m_max[index],
       minTemperature: data.daily.temperature_2m_min[index],
     })
@@ -30,6 +35,7 @@ export async function getWeather(
   const utcOffsetSeconds = data.utc_offset_seconds ?? 0;
 
   return {
+    timezone: data.timezone ?? "UTC",
     utcOffsetSeconds,
     temperature: data.current.temperature_2m,
     humidity: data.current.relative_humidity_2m,
@@ -40,8 +46,8 @@ export async function getWeather(
     precipitation: data.current.precipitation,
     visibility: data.current.visibility / 1000,
     dewPoint: data.current.dew_point_2m,
-    hourly: data.hourly.time.map((time: string, index: number) => ({
-      time,
+    hourly: data.hourly.time.map((time: number, index: number) => ({
+      time: new Date(time * 1000).toISOString(),
       temperature: data.hourly.temperature_2m?.[index] ?? null,
       precipitation: data.hourly.precipitation?.[index] ?? null,
       cloudCover: data.hourly.cloud_cover?.[index] ?? null,
@@ -51,9 +57,7 @@ export async function getWeather(
       visibility: data.hourly.visibility?.[index] == null ? null : data.hourly.visibility[index] / 1000,
       freezingLevel: data.hourly.freezing_level_height?.[index] ?? null,
     })),
-    forecastTimes: data.hourly.time.map((time: string) =>
-      new Date(Date.parse(`${time}Z`) - utcOffsetSeconds * 1000).toISOString()
-    ),
+    forecastTimes: data.hourly.time.map((time: number) => new Date(time * 1000).toISOString()),
     forecast,
   };
 }

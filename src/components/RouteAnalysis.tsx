@@ -30,7 +30,7 @@ export default function RouteAnalysis({ route, schedule, conditions, conditionSt
     </header>
 
     <section className="analysis-profile-card">
-      <RouteProfile route={route} schedule={schedule} conditions={conditions} conditionMode={conditionMode} focusedIndex={focusedIndex} pinnedIndex={pinnedIndex} onFocusChange={onPreviewChange} onPreviewChange={onPreviewChange} onPinnedChange={onPinnedChange} />
+      <RouteProfile wide route={route} schedule={schedule} conditions={conditions} conditionMode={conditionMode} focusedIndex={focusedIndex} pinnedIndex={pinnedIndex} onFocusChange={onPreviewChange} onPreviewChange={onPreviewChange} onPinnedChange={onPinnedChange} />
     </section>
 
     <div className="analysis-mode-controls analysis-workspace-modes" role="group" aria-label="Analysis mode">

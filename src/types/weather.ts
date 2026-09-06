@@ -17,6 +17,7 @@ export interface HourlyForecast {
 }
 
 export interface WeatherData {
+  timezone: string;
   utcOffsetSeconds: number;
   temperature: number;
   humidity: number;

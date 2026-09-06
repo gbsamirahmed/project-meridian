@@ -81,10 +81,11 @@ async function mockMapNetwork(page) {
 
 function locationForecastFixture() {
   const start = new Date("2026-09-06T00:00:00Z");
-  const time = Array.from({ length: 168 }, (_, index) => new Date(start.getTime() + index * 3_600_000).toISOString().slice(0, 16));
+  const time = Array.from({ length: 168 }, (_, index) => Math.floor((start.getTime() + index * 3_600_000) / 1000));
   const wave = (index, period, low, high) => low + (Math.sin(index / period * Math.PI * 2) + 1) / 2 * (high - low);
-  const dailyTime = Array.from({ length: 7 }, (_, index) => new Date(start.getTime() + index * 86_400_000).toISOString().slice(0, 10));
+  const dailyTime = Array.from({ length: 7 }, (_, index) => Math.floor((start.getTime() + index * 86_400_000) / 1000));
   return {
+    timezone: "Europe/London",
     utc_offset_seconds: 3600,
     current: {
       temperature_2m: 11.8, relative_humidity_2m: 84, precipitation: 0.3,
@@ -144,7 +145,7 @@ async function importRoute(page, name, coordinates) {
     buffer: Buffer.from(makeGpx(name, coordinates)),
   });
   await expect(page.locator(".journey-route-title h2")).toHaveText(name, { timeout: 30_000 });
-  await expect(page.getByRole("tab", { name: "Analysis" })).toBeVisible({ timeout: 30_000 });
+  await expect(page.getByRole("button", { name: "Analyse", exact: true })).toBeVisible({ timeout: 30_000 });
   // MapView uses a 750 ms app-driven fit transition; inspect only the settled camera.
   await page.waitForTimeout(800);
 }
@@ -153,6 +154,7 @@ async function openMeridian(page) {
   await expect(page.locator("main.app-shell.desktop-shell-active")).toBeVisible();
   await expect(page.getByRole("complementary", { name: "Meridian workspace" })).toBeVisible();
   await expect(page.locator(".maplibregl-canvas")).toBeVisible();
+  await expect(page.locator('.map-container[data-map-style-ready="true"]')).toBeVisible({ timeout: 20_000 });
   await page.evaluate(() => document.fonts.ready);
 }
 
@@ -193,9 +195,6 @@ test("desktop shell keeps the timeline in Location and the layer rail persistent
     expect(Math.abs(viewport.height - infoBounds.y - infoBounds.height - 12)).toBeLessThanOrEqual(1);
     await expect(page.locator(".maptiler-logo")).toHaveCount(0);
 
-    // MapLibre does not expose style readiness in the DOM; let its initial load
-    // callback settle before requesting an optional basemap source.
-    await page.waitForTimeout(1_000);
     await page.getByRole("button", { name: "Satellite basemap" }).click();
     const mapTilerLogo = page.locator(".maptiler-logo");
     const mapTilerImage = mapTilerLogo.locator("img");
@@ -309,6 +308,8 @@ test("Forecast Workspace is a shared temporal instrument beside Location", async
       expect(railBounds.x - workspaceBounds.x - workspaceBounds.width).toBeGreaterThanOrEqual(11);
     }
     await capture(page, `forecast-open-${size}`);
+    await expect(workspace.getByText("Highest freezing level")).toBeVisible();
+    await expect(workspace.getByRole("button", { name: "More variables" })).toBeVisible();
 
     const timeline = page.getByRole("slider", { name: "Forecast hour" });
     const originalTimelineValue = await timeline.inputValue();
@@ -330,6 +331,9 @@ test("Forecast Workspace is a shared temporal instrument beside Location", async
     await plot.press("Enter");
     await expect(workspace.getByRole("button", { name: "Unpin" })).toBeVisible();
     await workspace.getByRole("button", { name: "Unpin" }).click();
+    await workspace.getByRole("button", { name: "More variables" }).click();
+    await expect(workspace.getByText("Visibility", { exact: true })).toBeVisible();
+    if (testInfo.project.name === "desktop-1440x900") await capture(page, "forecast-expanded-1440x900");
 
     const dayButtons = workspace.getByRole("button").filter({ has: page.locator("small") });
     await dayButtons.nth(2).click();
@@ -429,7 +433,7 @@ test("safe GPX route exposes Journey, in-panel Tune, and interactive Analysis", 
 
     const routeTitle = page.locator(".journey-route-title h2");
     await expect(routeTitle).toHaveText(longRouteName);
-    await expect(page.getByRole("tab", { name: "Analysis" })).toBeVisible({ timeout: 30_000 });
+    await expect(page.getByRole("button", { name: "Analyse", exact: true })).toBeVisible({ timeout: 30_000 });
     // MapView uses a 750 ms app-driven fit transition; inspect only the settled camera.
     await page.waitForTimeout(800);
     await expect(page.locator(".journey-profile-card .route-profile-summary")).toBeVisible();
@@ -475,9 +479,12 @@ test("safe GPX route exposes Journey, in-panel Tune, and interactive Analysis", 
     const mapFurniture = page.locator(".maplibregl-ctrl-bottom-right");
     const beforeAnalysis = await mapFurniture.boundingBox();
     await page.getByRole("button", { name: "Analyse", exact: true }).click();
+    const analysisWorkspace = page.getByRole("complementary", { name: "Route analysis workspace" });
+    await expect(analysisWorkspace).toBeVisible();
     const analysis = page.getByRole("region", { name: "Route analysis" });
     await expect(analysis).toBeVisible();
-    await expect(page.getByRole("tab", { name: "Analysis" })).toHaveAttribute("aria-selected", "true");
+    await expect(page.getByRole("tab", { name: "Journey" })).toHaveAttribute("aria-selected", "true");
+    await expect(page.getByRole("tab", { name: "Analysis" })).toHaveCount(0);
     await expect(page.locator(".route-analysis.desktop-surface")).toHaveCount(0);
     await expect(page.getByRole("region", { name: "Forecast timeline" })).toHaveCount(0);
     const afterAnalysis = await mapFurniture.boundingBox();

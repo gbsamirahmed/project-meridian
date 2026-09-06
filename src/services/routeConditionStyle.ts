@@ -34,7 +34,7 @@ const COLOUR_STOPS: Record<Exclude<RouteConditionMode, "none">, ColourStop[]> = 
   gradient: [
     { value: -0.3, colour: "#7185d8" },
     { value: -0.1, colour: "#6ab7c4" },
-    { value: 0, colour: "#9bcf9d" },
+    { value: 0, colour: "#c7c8be" },
     { value: 0.1, colour: "#e4b85f" },
     { value: 0.3, colour: "#e26952" },
   ],
@@ -66,9 +66,15 @@ export const ROUTE_CONDITION_LEGENDS: Record<
     label: "Route gradient",
     units: "%",
     values: ["−30", "−10", "0", "10", "30+"],
-    gradient: "linear-gradient(90deg, #7185d8, #6ab7c4, #9bcf9d, #e4b85f, #e26952)",
+    gradient: "linear-gradient(90deg, #7185d8, #6ab7c4, #c7c8be, #e4b85f, #e26952)",
   },
 };
+
+export function gradientDirectionLabel(gradient: number): string {
+  const percent = Math.round(gradient * 100);
+  if (Math.abs(percent) < 1) return "0% level";
+  return `${percent > 0 ? "+" : "−"}${Math.abs(percent)}% ${percent > 0 ? "ascent" : "descent"}`;
+}
 
 function parseHex(colour: string): [number, number, number] {
   return [

@@ -3,7 +3,6 @@ import type { WorkspaceMode } from "../services/desktopWorkspaceState";
 
 interface DesktopWorkspaceProps {
   mode: WorkspaceMode;
-  analysisAvailable: boolean;
   onModeChange: (mode: WorkspaceMode) => void;
   onSettings: () => void;
   onFocusMode: () => void;
@@ -16,7 +15,6 @@ export function MeridianMark({ label }: { label?: string }) {
 
 export default function DesktopWorkspace({
   mode,
-  analysisAvailable,
   onModeChange,
   onSettings,
   onFocusMode,
@@ -33,10 +31,9 @@ export default function DesktopWorkspace({
           <button type="button" aria-label="Global settings" title="Settings" onClick={onSettings}>⚙</button>
         </div>
       </header>
-      <div className={`workspace-tabs${analysisAvailable ? " workspace-tabs-three" : ""}`} role="tablist" aria-label="Workspace context">
+      <div className="workspace-tabs" role="tablist" aria-label="Workspace context">
         <button type="button" role="tab" aria-selected={mode === "location"} onClick={() => onModeChange("location")}>Location</button>
         <button type="button" role="tab" aria-selected={mode === "journey"} onClick={() => onModeChange("journey")}>Journey</button>
-        {analysisAvailable && <button type="button" role="tab" aria-selected={mode === "analysis"} onClick={() => onModeChange("analysis")}>Analysis</button>}
       </div>
       <div className="desktop-workspace-content">{children}</div>
     </aside>

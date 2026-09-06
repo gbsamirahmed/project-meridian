@@ -1,5 +1,5 @@
 export const DEFAULT_WORKSPACE_GUTTER_PX = 12;
-export const ROUTE_FIT_EDGE_PADDING_PX = 48;
+export const ROUTE_FIT_EDGE_PADDING_PX = 72;
 export const ROUTE_FIT_RIGHT_FURNITURE_PX = 48;
 
 interface RouteFitLayout {

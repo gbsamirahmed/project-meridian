@@ -3,6 +3,7 @@ from __future__ import annotations
 import unittest
 import json
 import tempfile
+from unittest.mock import patch
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -58,6 +59,38 @@ class InventoryPlanningTests(unittest.TestCase):
 
         with self.assertRaisesRegex(ValueError, "honest one-hour interval"):
             builder.plan_timesteps(inventories, [1, 2])
+
+
+class AtomicPublicationTests(unittest.TestCase):
+    def test_windows_pointer_replace_retries_without_exposing_partial_json(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            path = Path(temporary) / "latest.json"
+            path.write_text('{"run":"old"}\n', encoding="utf-8")
+            real_replace = builder.os.replace
+            attempts = 0
+
+            def replace(source, destination):
+                nonlocal attempts
+                attempts += 1
+                if attempts < 3:
+                    self.assertEqual(path.read_text(encoding="utf-8"), '{"run":"old"}\n')
+                    raise PermissionError("sharing violation")
+                real_replace(source, destination)
+
+            with patch.object(builder, "IS_WINDOWS", True), patch.object(builder.os, "replace", side_effect=replace), patch.object(builder.time, "sleep"):
+                builder.write_json_atomically(path, {"run": "new"})
+            self.assertEqual(attempts, 3)
+            self.assertEqual(json.loads(path.read_text(encoding="utf-8")), {"run": "new"})
+
+    def test_permanent_replace_failure_preserves_previous_pointer(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            path = Path(temporary) / "latest.json"
+            path.write_text('{"run":"old"}\n', encoding="utf-8")
+            with patch.object(builder, "IS_WINDOWS", True), patch.object(builder.os, "replace", side_effect=PermissionError("sharing violation")), patch.object(builder.time, "sleep"):
+                with self.assertRaises(PermissionError):
+                    builder.write_json_atomically(path, {"run": "partial"})
+            self.assertEqual(path.read_text(encoding="utf-8"), '{"run":"old"}\n')
+            self.assertEqual(list(Path(temporary).glob(".latest.json.*.tmp")), [])
 
 
 class CloudInventoryTests(unittest.TestCase):

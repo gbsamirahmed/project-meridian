@@ -3,6 +3,7 @@ import { atmosphericHeightLabel, gustLabel, visibilityLabel } from "../services/
 import { precipitationAmountLabel } from "../services/precipitationStyle";
 import { accumulationIntervalLabel, routeConditionTimeLabel } from "../services/weatherTimeLabel";
 import { timeLabel } from "../services/journeyPresentation";
+import { gradientDirectionLabel } from "../services/routeConditionStyle";
 import type { DerivedRouteConditions } from "../types/derivedRouteConditions";
 import type { RouteConditionSample, ScalarRouteCondition, WindRouteCondition } from "../types/routeConditions";
 
@@ -39,7 +40,7 @@ export default function ForecastDetails({ sample, derived }: { sample: RouteCond
     <div className="forecast-details">
       <div className="forecast-details-heading">
         <div><p className="section-kicker">Selected journey point</p><h3>{(sample.cumulativeDistanceM / 1000).toFixed(1)} km · {timeLabel(sample.journey.expectedArrivalTime)}</h3></div>
-        <span>{sample.terrain.elevationM === null ? "Elevation unavailable" : `${Math.round(sample.terrain.elevationM)} m`}</span>
+        <span>{sample.terrain.elevationM === null ? "Elevation unavailable" : `${Math.round(sample.terrain.elevationM)} m · ${sample.terrain.gradient === null ? "Gradient unavailable" : gradientDirectionLabel(sample.terrain.gradient)}`}</span>
       </div>
       <p className="arrival-range">Arrival {timeLabel(sample.journey.earliestArrivalTime)}–{timeLabel(sample.journey.latestArrivalTime)}</p>
       {allOutsideForecast ? (
