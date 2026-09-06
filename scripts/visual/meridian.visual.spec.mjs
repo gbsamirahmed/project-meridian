@@ -79,6 +79,63 @@ async function mockMapNetwork(page) {
   });
 }
 
+function locationForecastFixture() {
+  const start = new Date("2026-09-06T00:00:00Z");
+  const time = Array.from({ length: 168 }, (_, index) => new Date(start.getTime() + index * 3_600_000).toISOString().slice(0, 16));
+  const wave = (index, period, low, high) => low + (Math.sin(index / period * Math.PI * 2) + 1) / 2 * (high - low);
+  const dailyTime = Array.from({ length: 7 }, (_, index) => new Date(start.getTime() + index * 86_400_000).toISOString().slice(0, 10));
+  return {
+    utc_offset_seconds: 3600,
+    current: {
+      temperature_2m: 11.8, relative_humidity_2m: 84, precipitation: 0.3,
+      cloud_cover: 72, pressure_msl: 1008, wind_speed_10m: 21,
+      wind_gusts_10m: 36, visibility: 6800, dew_point_2m: 8.7,
+    },
+    hourly: {
+      time,
+      temperature_2m: time.map((_, index) => Number(wave(index - 7, 24, 5, 16).toFixed(1))),
+      precipitation: time.map((_, index) => index % 29 > 23 ? null : Number(Math.max(0, wave(index, 15, -0.8, 2.4)).toFixed(1))),
+      cloud_cover: time.map((_, index) => Math.round(wave(index, 19, 18, 98))),
+      wind_speed_10m: time.map((_, index) => Math.round(wave(index, 28, 8, 34))),
+      wind_direction_10m: time.map((_, index) => (205 + index * 7) % 360),
+      wind_gusts_10m: time.map((_, index) => Math.round(wave(index, 23, 18, 52))),
+      visibility: time.map((_, index) => index % 41 === 18 ? null : Math.round(wave(index, 31, 2500, 18000))),
+      freezing_level_height: time.map((_, index) => Math.round(wave(index, 35, 1250, 2700))),
+    },
+    daily: {
+      time: dailyTime,
+      temperature_2m_max: dailyTime.map((_, index) => 16 - index * 0.4),
+      temperature_2m_min: dailyTime.map((_, index) => 5 + index * 0.2),
+    },
+  };
+}
+
+async function mockLocationForecast(page) {
+  await page.route("https://nominatim.openstreetmap.org/search?**", route => route.fulfill({
+    contentType: "application/json",
+    body: JSON.stringify([{ lat: "56.7969", lon: "-5.0036" }]),
+  }));
+  await page.route("https://nominatim.openstreetmap.org/reverse?**", route => route.fulfill({
+    contentType: "application/json",
+    body: JSON.stringify({ display_name: "Ben Nevis, Highland" }),
+  }));
+  await page.route("https://api.open-meteo.com/v1/forecast?**", route => {
+    if (route.request().url().includes("hourly=pressure_msl")) {
+      const time = Array.from({ length: 25 }, (_, index) => new Date(Date.UTC(2026, 8, 6, index)).toISOString().slice(0, 16));
+      return route.fulfill({
+        contentType: "application/json",
+        body: JSON.stringify(Array.from({ length: 81 }, (_, point) => ({
+          hourly: { time, pressure_msl: time.map((_, hour) => 1004 + point * 0.08 + hour * 0.12) },
+        }))),
+      });
+    }
+    return route.fulfill({
+      contentType: "application/json",
+      body: JSON.stringify(locationForecastFixture()),
+    });
+  });
+}
+
 async function importRoute(page, name, coordinates) {
   await page.getByRole("tab", { name: "Journey" }).click();
   await page.locator('input[type="file"]').setInputFiles({
@@ -136,10 +193,14 @@ test("desktop shell keeps the timeline in Location and the layer rail persistent
     expect(Math.abs(viewport.height - infoBounds.y - infoBounds.height - 12)).toBeLessThanOrEqual(1);
     await expect(page.locator(".maptiler-logo")).toHaveCount(0);
 
+    // MapLibre does not expose style readiness in the DOM; let its initial load
+    // callback settle before requesting an optional basemap source.
+    await page.waitForTimeout(1_000);
     await page.getByRole("button", { name: "Satellite basemap" }).click();
     const mapTilerLogo = page.locator(".maptiler-logo");
-    await expect(mapTilerLogo).toBeVisible();
-    await expect(mapTilerLogo.locator("img")).toHaveAttribute("src", "https://api.maptiler.com/resources/logo.svg");
+    const mapTilerImage = mapTilerLogo.locator("img");
+    await expect(mapTilerImage).toBeVisible({ timeout: 20_000 });
+    expect(await mapTilerImage.getAttribute("src")).toBe("https://api.maptiler.com/resources/logo.svg");
     const mapTilerBounds = await mapTilerLogo.boundingBox();
     expect(mapTilerBounds).not.toBeNull();
     if (mapTilerBounds) {
@@ -216,6 +277,73 @@ test("desktop shell keeps the timeline in Location and the layer rail persistent
     await saveDiagnostics(`shell-${size}`, diagnostics, testInfo);
   }
 
+  expect(diagnostics.pageErrors, "Unhandled browser page errors; see generated diagnostics").toEqual([]);
+});
+
+test("Forecast Workspace is a shared temporal instrument beside Location", async ({ page }, testInfo) => {
+  const size = viewportName(testInfo);
+  const diagnostics = observeBrowser(page);
+  try {
+    await mockMapNetwork(page);
+    await mockLocationForecast(page);
+    await openMeridian(page);
+    await page.getByRole("searchbox", { name: "Search location" }).fill("Ben Nevis");
+    await page.getByRole("button", { name: "Search" }).click();
+    await expect(page.getByRole("heading", { name: "Ben Nevis, Highland" })).toBeVisible({ timeout: 15_000 });
+    const openButton = page.getByRole("button", { name: "Detailed forecast" });
+    await expect(openButton).toBeVisible();
+    await capture(page, `forecast-location-closed-${size}`);
+    await openButton.click();
+
+    const workspace = page.getByRole("complementary", { name: "Forecast workspace" });
+    await expect(workspace).toBeVisible();
+    const primaryBounds = await page.getByRole("complementary", { name: "Meridian workspace" }).boundingBox();
+    const workspaceBounds = await workspace.boundingBox();
+    const railBounds = await page.locator(".map-tool-strip").boundingBox();
+    const viewport = page.viewportSize();
+    expect(primaryBounds && workspaceBounds && railBounds && viewport).toBeTruthy();
+    if (primaryBounds && workspaceBounds && railBounds && viewport) {
+      expect(Math.abs(workspaceBounds.x - primaryBounds.x - primaryBounds.width - 12)).toBeLessThanOrEqual(1);
+      expect(Math.abs(workspaceBounds.y - 12)).toBeLessThanOrEqual(1);
+      expect(Math.abs(viewport.height - workspaceBounds.y - workspaceBounds.height - 12)).toBeLessThanOrEqual(1);
+      expect(railBounds.x - workspaceBounds.x - workspaceBounds.width).toBeGreaterThanOrEqual(11);
+    }
+    await capture(page, `forecast-open-${size}`);
+
+    const timeline = page.getByRole("slider", { name: "Forecast hour" });
+    const originalTimelineValue = await timeline.inputValue();
+    const plot = page.getByRole("slider", { name: "Forecast time" });
+    const plotBounds = await plot.boundingBox();
+    if (!plotBounds) throw new Error("Forecast plot has no bounds");
+    await page.mouse.move(plotBounds.x + plotBounds.width * 0.62, plotBounds.y + plotBounds.height * 0.35);
+    expect(await timeline.inputValue()).toBe(originalTimelineValue);
+    if (testInfo.project.name === "desktop-1440x900") await capture(page, "forecast-hover-1440x900");
+
+    await page.mouse.click(plotBounds.x + plotBounds.width * 0.62, plotBounds.y + plotBounds.height * 0.35);
+    await expect(workspace.getByRole("button", { name: "Unpin" })).toBeVisible();
+    expect(await timeline.inputValue()).not.toBe(originalTimelineValue);
+    if (testInfo.project.name === "desktop-1440x900") await capture(page, "forecast-pinned-1440x900");
+    await page.mouse.click(plotBounds.x + plotBounds.width * 0.62, plotBounds.y + plotBounds.height * 0.35);
+    await expect(workspace.getByRole("button", { name: "Unpin" })).toHaveCount(0);
+    await plot.focus();
+    await plot.press("ArrowRight");
+    await plot.press("Enter");
+    await expect(workspace.getByRole("button", { name: "Unpin" })).toBeVisible();
+    await workspace.getByRole("button", { name: "Unpin" }).click();
+
+    const dayButtons = workspace.getByRole("button").filter({ has: page.locator("small") });
+    await dayButtons.nth(2).click();
+    await expect(dayButtons.nth(2)).toHaveAttribute("aria-pressed", "true");
+    if (testInfo.project.name === "desktop-1440x900") await capture(page, "forecast-another-day-1440x900");
+
+    await page.getByRole("tab", { name: "Journey" }).click();
+    await expect(workspace).toHaveCount(0);
+    await page.getByRole("tab", { name: "Location" }).click();
+    await expect(page.getByRole("heading", { name: "Ben Nevis, Highland" })).toBeVisible();
+    await expect(page.getByRole("button", { name: "Detailed forecast" })).toBeVisible();
+  } finally {
+    await saveDiagnostics(`forecast-${size}`, diagnostics, testInfo);
+  }
   expect(diagnostics.pageErrors, "Unhandled browser page errors; see generated diagnostics").toEqual([]);
 });
 

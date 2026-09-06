@@ -5,6 +5,7 @@ export interface DesktopWorkspaceState {
   settingsOpen: boolean;
   journeySettingsOpen: boolean;
   clearMap: boolean;
+  detailWorkspace: "forecast" | null;
   mapInspectorEnabled: boolean;
   mapInspectorSession: number;
 }
@@ -14,6 +15,7 @@ export type DesktopWorkspaceAction =
   | { type: "set-settings"; open: boolean }
   | { type: "set-journey-settings"; open: boolean }
   | { type: "set-clear-map"; active: boolean }
+  | { type: "set-detail-workspace"; workspace: "forecast" | null }
   | { type: "set-map-inspector"; enabled: boolean };
 
 export const INITIAL_DESKTOP_WORKSPACE_STATE: DesktopWorkspaceState = {
@@ -21,6 +23,7 @@ export const INITIAL_DESKTOP_WORKSPACE_STATE: DesktopWorkspaceState = {
   settingsOpen: false,
   journeySettingsOpen: false,
   clearMap: false,
+  detailWorkspace: null,
   mapInspectorEnabled: false,
   mapInspectorSession: 0,
 };
@@ -31,7 +34,9 @@ export function desktopWorkspaceReducer(
 ): DesktopWorkspaceState {
   switch (action.type) {
     case "set-workspace":
-      return { ...state, workspaceMode: action.mode };
+      return { ...state, workspaceMode: action.mode, detailWorkspace: action.mode === "location" ? state.detailWorkspace : null };
+    case "set-detail-workspace":
+      return { ...state, detailWorkspace: action.workspace };
     case "set-settings":
       return { ...state, settingsOpen: action.open };
     case "set-journey-settings":

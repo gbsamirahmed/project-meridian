@@ -1,11 +1,13 @@
 export const DEFAULT_WORKSPACE_GUTTER_PX = 12;
 export const ROUTE_FIT_EDGE_PADDING_PX = 48;
+export const ROUTE_FIT_RIGHT_FURNITURE_PX = 48;
 
 interface RouteFitLayout {
   mapLeftPx: number;
   workspaceRightPx: number | null;
   workspaceGutterPx?: number;
   edgePaddingPx?: number;
+  rightFurniturePx?: number;
 }
 
 export interface RouteFitPadding {
@@ -20,6 +22,7 @@ export function calculateRouteFitPadding({
   workspaceRightPx,
   workspaceGutterPx = DEFAULT_WORKSPACE_GUTTER_PX,
   edgePaddingPx = ROUTE_FIT_EDGE_PADDING_PX,
+  rightFurniturePx = ROUTE_FIT_RIGHT_FURNITURE_PX,
 }: RouteFitLayout): RouteFitPadding {
   const obstructionRight = workspaceRightPx === null
     ? mapLeftPx
@@ -27,7 +30,7 @@ export function calculateRouteFitPadding({
 
   return {
     top: edgePaddingPx,
-    right: edgePaddingPx,
+    right: rightFurniturePx + edgePaddingPx,
     bottom: edgePaddingPx,
     left: obstructionRight - mapLeftPx + edgePaddingPx,
   };

@@ -316,6 +316,10 @@ On desktop, the left workspace keeps a stable, full-height geometry across Locat
 
 Route analysis uses the same left workspace shell as Location and Journey. Its modes express the user's question—elevation, temperature, rain, wind or gradient—rather than a GIS-style “route colour” property. Hover previews a journey position and click pins it for comparison with the map and detailed evidence. Map layers belong in persistent lightweight map-native controls rather than a second sidebar.
 
+The primary workspace should remain a compact overview and control surface. Deeper tasks belong in one reusable secondary **Workspace** beside it: a large map-aware instrument surface rather than a modal, page or second permanent sidebar. Location Forecast is the first use. Journey and Analysis may later reuse the shell for linked 2D route, 3D terrain and elevation exploration without creating simultaneous competing workspaces.
+
+Forecast detail should be organised by time. One horizontal daily domain and one shared preview/pin selection apply across all variables; a committed time synchronises with the map forecast, while hover remains a local preview. Future sunlight bands can enrich that axis when reliable astronomy data exists. Future map capabilities such as contours, zoom-responsive grids and a scale indicator remain separate deferred work.
+
 Journey summaries should lead with relevant conditions and honest extremes, then reveal exhaustive raw values and technical caveats on demand. Route measurements, derived journey estimates, raw forecast values, route-relative context, derived interpretation, and visual presentation remain distinct. Complete coverage needs no engineering label; incomplete coverage should be expressed in human spatial or temporal terms where the evidence permits.
 
 ## Source, inference, and decision principles

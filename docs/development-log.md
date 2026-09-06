@@ -1052,3 +1052,34 @@ Screenshots were rendered and inspected at 1920×1080, 1440×900 and 1366×768 f
 ### Limitations
 
 This is an initial/imported-route fit, not continuous panel-aware camera management. Manual pan, zoom, pitch and bearing remain authoritative after fitting. The official MapTiler logo remains horizontal until provider guidance supports another treatment. Profile sizing, Analysis scrolling, mobile layout and the future detail workspace remain unchanged and deferred.
+
+## 2026-09-06 — Forecast Workspace v1
+
+### Goal
+
+Introduce a reusable large secondary Workspace beside the primary Location/Journey/Analysis panel, use it for a time-first location forecast, and finish the imported-route fit against the complete effective desktop map rectangle.
+
+### Changes
+
+- Added a generic secondary Workspace shell with a 12 px gutter from the primary workspace, viewport top and bottom, and the persistent right map-furniture rail. It is presentation state rather than data state: Location opens or closes the first Forecast content, while switching to Journey or Analysis closes that content without clearing location, map, route, playback or forecast-time state.
+- Expanded the existing Open-Meteo location request to seven local-calendar forecast days using the same provider. Hourly temperature, precipitation, cloud, 10 m wind speed/direction, gust, visibility and freezing-level height are retained as nullable time series. Provider local times retain the returned UTC offset for display and are converted to UTC instants before synchronising with map weather. Highest freezing level and cloud ceiling remain explicitly unavailable because the current location feed has no equivalent hourly series.
+- Built Forecast as one temporal instrument: day choices select a 24-hour local domain, restrained three-hour labels sit over aligned variable rows, and one vertical cursor previews every field. Temperature, wind, gust, visibility and freezing level use gap-preserving profiles; precipitation and cloud use bars. Missing values remain gaps rather than zero.
+- Reused Meridian's established hover/pin grammar. Hover is local and makes no request or map-time change; click commits the nearest hour, clicking the same committed hour unpins, another click moves it, an explicit Unpin is available, and arrow plus Enter/Space keyboard interaction is supported. A committed location hour is converted to an instant and mapped to the nearest existing global forecast time, so the Location timeline and active map overlays share the same state.
+- Corrected imported-route padding to reserve the persistent 36 px right-side map furniture plus its gutter and the existing route margin, in addition to the measured primary-workspace obstruction on the left. The MapLibre fit remains a one-time app-driven import action and never follows manual camera movement or workspace switching.
+- Added deterministic browser fixtures for seven days of varied forecast data, including deliberate precipitation and visibility gaps, alongside a matching regional pressure fixture. No visual proof depends on live NOAA, Open-Meteo or private location data.
+
+### Visual findings and refinement
+
+The first render at 1440×900 and 1366×768 confirmed the Workspace gutters, shared cursor, day density, right-rail clearance and readable values, but left the forecast rows clustered in the upper half of the large surface. A deliberate refinement made the plot consume the available height with viewport-aware row and profile sizing. The rerender at 1920×1080, 1440×900 and 1366×768 shows a calm full-height instrument, clear missing-data rows, no horizontal overflow, and map context visible around the Workspace.
+
+The route-fit screenshots show Ben Nevis fully framed inside the usable map region at every target size. West Highland Way and Box Hill remain sensibly framed at 1440×900. The right rail, information control and horizontal MapTiler branding remain accessible and unobstructed. A MapLibre initial-style race in the existing satellite visual scenario was stabilised by waiting for its load callback before asking for the optional source.
+
+### Verification
+
+The final Playwright workflow passed 10 tests with two intentional representative-viewport skips. It covers closed/open Forecast Workspace at all desktop sizes, geometry, hover without global mutation, click-to-pin global synchronisation, same-time unpin, explicit unpin, keyboard pinning, day navigation, close-on-primary-mode-switch, satellite and Terrain contexts, focus mode, and all three route-fit fixtures. Browser diagnostics report no unhandled page exceptions; expected headless WebGL performance notices and aborted superseded tile requests remain observable in the generated diagnostics.
+
+Twenty-one focused desktop tests pass. ESLint, TypeScript and the production build pass. The production build retains the existing large JavaScript chunk and output-directory timing notices.
+
+### Limitations
+
+Forecast Workspace v1 has no variable picker, astronomy/daylight bands, cloud-ceiling or highest-freezing-level location series, mobile treatment, or Journey/Analysis content. It does not interpolate forecast times or add meteorological fields beyond those already available from the location provider. Route fitting is still import-only rather than a continuous camera-padding system.

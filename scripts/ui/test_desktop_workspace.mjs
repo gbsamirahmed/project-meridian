@@ -5,7 +5,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { createServer } from "vite";
 
 const server = await createServer({ appType: "custom", logLevel: "silent", server: { middlewareMode: true } });
-const [state, journeyModel, profileInteraction, controlOptions, routeCamera, desktopModule, overviewModule, settingsModule, detailsModule, controlsModule, timelineModule, analysisModule] = await Promise.all([
+const [state, journeyModel, profileInteraction, controlOptions, routeCamera, desktopModule, overviewModule, settingsModule, detailsModule, controlsModule, timelineModule, analysisModule, forecastWorkspaceModule, locationWorkspaceModule] = await Promise.all([
   server.ssrLoadModule("/src/services/desktopWorkspaceState.ts"),
   server.ssrLoadModule("/src/services/journeyModel.ts"),
   server.ssrLoadModule("/src/services/routeProfileInteraction.ts"),
@@ -18,6 +18,8 @@ const [state, journeyModel, profileInteraction, controlOptions, routeCamera, des
   server.ssrLoadModule("/src/components/MapControls.tsx"),
   server.ssrLoadModule("/src/components/ForecastTimeline.tsx"),
   server.ssrLoadModule("/src/components/RouteAnalysis.tsx"),
+  server.ssrLoadModule("/src/components/ForecastWorkspace.tsx"),
+  server.ssrLoadModule("/src/components/LocationWorkspace.tsx"),
 ]);
 const DesktopWorkspace = desktopModule.default;
 const JourneyOverview = overviewModule.default;
@@ -26,6 +28,8 @@ const ForecastDetails = detailsModule.default;
 const MapControls = controlsModule.default;
 const ForecastTimeline = timelineModule.default;
 const RouteAnalysis = analysisModule.default;
+const ForecastWorkspace = forecastWorkspaceModule.default;
+const LocationWorkspace = locationWorkspaceModule.default;
 test.after(() => server.close());
 
 const noop = () => {};
@@ -61,6 +65,27 @@ const geometry = { id: "route", name: "South Downs", totalDistanceM: 1000, coord
 const profile = { activity: "hiking", pace: "normal", party: "solo", load: "light", plannedBreakMinutes: 30 };
 const plan = { mode: "profile", departureTime: instant(1), targetDurationMinutes: 180, targetFinishTime: instant(5) };
 const schedule = { routeId: "route", departureTime: instant(1), expectedFinishTime: instant(4), movingMinutes: 150, stoppedMinutes: 30, totalMinutes: 180, likelyMinimumMinutes: 160, likelyMaximumMinutes: 210, movementScale: 1, targetComparison: "close-to-baseline", samples: samples.map((sample, index) => ({ routeSampleIndex: index, cumulativeDistanceM: sample.cumulativeDistanceM, movingElapsedMinutes: index * 75, stoppedElapsedMinutes: index ? 15 : 0, elapsedMinutes: index * 90, arrivalTime: instant(1 + index), earliestArrivalTime: instant(1 + index), latestArrivalTime: instant(2 + index) })) };
+const locationWeather = {
+  utcOffsetSeconds: 3600,
+  temperature: 11, humidity: 80, pressure: 1008, windSpeed: 20, windGusts: 35,
+  cloudCover: 70, precipitation: 0.4, visibility: 8, dewPoint: 7,
+  hourly: Array.from({ length: 48 }, (_, index) => ({
+    time: `2026-09-${String(6 + Math.floor(index / 24)).padStart(2, "0")}T${String(index % 24).padStart(2, "0")}:00`,
+    temperature: 6 + index / 8,
+    precipitation: index === 2 ? null : index % 5 / 10,
+    cloudCover: 40 + index % 50,
+    windSpeed: 12 + index % 12,
+    windDirection: 220,
+    windGusts: 22 + index % 15,
+    visibility: index === 7 ? null : 7 + index % 6,
+    freezingLevel: 1600 + index * 20,
+  })),
+  forecastTimes: Array.from({ length: 48 }, (_, index) => new Date(Date.UTC(2026, 8, 5, 23 + index)).toISOString()),
+  forecast: [
+    { date: "2026-09-06", maxTemperature: 15, minTemperature: 6 },
+    { date: "2026-09-07", maxTemperature: 16, minTemperature: 7 },
+  ],
+};
 
 function overview(extra={}) {
   return renderToStaticMarkup(createElement(JourneyOverview, { routeGeometry: geometry, terrainRoute: terrain, schedule, scheduleError: null, status: "ready", statusMessage: null, profile, plan, routeConditions: conditions, routeConditionStatus: "partial", onImport: noop, onClear: noop, focusedIndex: null, onFocusChange: noop, onOpenSettings: noop, onOpenAnalysis: noop, ...extra }));
@@ -87,6 +112,46 @@ test("workspace state is presentation-only, explicit, and Map Inspector starts o
   assert.equal(current.mapInspectorEnabled, true);
 });
 
+test("detail Workspace state opens in Location and closes on primary-mode changes", () => {
+  let current = state.desktopWorkspaceReducer(state.INITIAL_DESKTOP_WORKSPACE_STATE, { type: "set-detail-workspace", workspace: "forecast" });
+  assert.equal(current.detailWorkspace, "forecast");
+  current = state.desktopWorkspaceReducer(current, { type: "set-workspace", mode: "journey" });
+  assert.equal(current.detailWorkspace, null);
+  current = state.desktopWorkspaceReducer(current, { type: "set-workspace", mode: "location" });
+  assert.equal(current.workspaceMode, "location");
+  assert.equal(current.detailWorkspace, null);
+});
+
+test("Location exposes one compact Forecast Workspace action without duplicating detail", () => {
+  const html = renderToStaticMarkup(createElement(LocationWorkspace, {
+    selectedLocation: { latitude: 56.7969, longitude: -5.0036 },
+    place: { name: "Ben Nevis" },
+    weather: locationWeather,
+    onSearch: noop,
+    timeline: createElement("div", null, "timeline-sentinel"),
+    forecastWorkspaceOpen: false,
+    onForecastWorkspaceToggle: noop,
+  }));
+  assert.match(html, /Detailed forecast/);
+  assert.match(html, /aria-expanded="false"/);
+  assert.match(html, /timeline-sentinel/);
+  assert.ok(!html.includes("Highest freezing level"));
+});
+
+test("Forecast Workspace groups every available field around one shared time slider", () => {
+  const html = renderToStaticMarkup(createElement(ForecastWorkspace, {
+    place: { name: "Ben Nevis" },
+    weather: locationWeather,
+    activeTime: "2026-09-06T01:00:00.000Z",
+    onForecastTimeChange: noop,
+    onClose: noop,
+  }));
+  for (const text of ["Forecast", "Temperature", "Precipitation", "Cloud", "Wind", "Gust", "Visibility", "Freezing level", "Highest freezing level", "Cloud ceiling", "No hourly location series"]) assert.ok(html.includes(text), text);
+  assert.equal((html.match(/role="slider"/g) ?? []).length, 1);
+  assert.match(html, /aria-label="Forecast day"/);
+  assert.match(html, /forecast-time-cursor/);
+});
+
 test("Analysis is absent without a route and available as the third workspace tab with one", () => {
   const common = { onModeChange: noop, onSettings: noop, onFocusMode: noop };
   const noRoute = renderToStaticMarkup(createElement(DesktopWorkspace, { ...common, mode: "journey", analysisAvailable: false }, createElement("p", null, "journey-state")));
@@ -110,10 +175,10 @@ test("canonical Meridian brand is the sole normal-workspace focus control", () =
 test("route-fit padding reserves the rendered primary workspace and gutter", () => {
   assert.deepEqual(routeCamera.calculateRouteFitPadding({
     mapLeftPx: 0, workspaceRightPx: 308, workspaceGutterPx: 12,
-  }), { top: 48, right: 48, bottom: 48, left: 368 });
+  }), { top: 48, right: 96, bottom: 48, left: 368 });
   assert.deepEqual(routeCamera.calculateRouteFitPadding({
     mapLeftPx: 0, workspaceRightPx: null, workspaceGutterPx: 12,
-  }), { top: 48, right: 48, bottom: 48, left: 48 });
+  }), { top: 48, right: 96, bottom: 48, left: 48 });
 });
 test("journey overview separates route facts from derived estimate and uses human coverage wording", () => {
   const html = overview();

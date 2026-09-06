@@ -10,6 +10,8 @@ interface LocationWorkspaceProps {
   place: Place | null;
   onSearch: (query: string) => void;
   timeline: ReactNode;
+  forecastWorkspaceOpen: boolean;
+  onForecastWorkspaceToggle: () => void;
 }
 
 export default function LocationWorkspace({
@@ -18,6 +20,8 @@ export default function LocationWorkspace({
   place,
   onSearch,
   timeline,
+  forecastWorkspaceOpen,
+  onForecastWorkspaceToggle,
 }: LocationWorkspaceProps) {
   const [query, setQuery] = useState("");
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -89,6 +93,16 @@ export default function LocationWorkspace({
       </section>
 
       {weather && <ForecastPanel forecast={weather.forecast} />}
+      {weather && (
+        <button
+          type="button"
+          className="detailed-forecast-action"
+          aria-expanded={forecastWorkspaceOpen}
+          onClick={onForecastWorkspaceToggle}
+        >
+          {forecastWorkspaceOpen ? "Close detailed forecast" : "Detailed forecast"}
+        </button>
+      )}
       <div className="location-workspace-timeline">{timeline}</div>
     </div>
   );

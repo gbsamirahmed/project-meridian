@@ -11,6 +11,7 @@ import ForecastTimeline from "./components/ForecastTimeline";
 import RouteAnalysis from "./components/RouteAnalysis";
 import GlobalSettings from "./components/GlobalSettings";
 import JourneySettings from "./components/JourneySettings";
+import ForecastWorkspace from "./components/ForecastWorkspace";
 
 import { getWeather } from "./services/weatherService";
 import { getLocationName } from "./services/locationService";
@@ -811,6 +812,11 @@ function App() {
                   weather={weather}
                   place={place}
                   onSearch={handleSearch}
+                  forecastWorkspaceOpen={workspace.detailWorkspace === "forecast"}
+                  onForecastWorkspaceToggle={() => dispatchWorkspace({
+                    type: "set-detail-workspace",
+                    workspace: workspace.detailWorkspace === "forecast" ? null : "forecast",
+                  })}
                   timeline={<ForecastTimeline
                     mapOverlays={mapOverlays}
                     forecastHour={activeForecastHour}
@@ -887,6 +893,15 @@ function App() {
               satelliteAvailable={IS_SATELLITE_CONFIGURED}
               onBasemapChange={setBasemap}
               onOverlayChange={handleOverlayChange}
+            />
+          )}
+          {!workspace.clearMap && workspace.detailWorkspace === "forecast" && weather && (
+            <ForecastWorkspace
+              place={place}
+              weather={weather}
+              activeTime={forecastTimes[activeForecastHour] ?? null}
+              onForecastTimeChange={(time) => setForecastHour(closestForecastIndex(forecastTimes, time))}
+              onClose={() => dispatchWorkspace({ type: "set-detail-workspace", workspace: null })}
             />
           )}
           {workspace.clearMap && <button type="button" className="clear-map-restore" aria-label="Restore Meridian interface" onClick={() => dispatchWorkspace({ type: "set-clear-map", active: false })}><MeridianMark /><span>Meridian</span></button>}
