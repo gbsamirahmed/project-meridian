@@ -7,6 +7,7 @@ import type { WeatherData } from "../types/weather";
 interface LocationWorkspaceProps {
   selectedLocation: SelectedLocation | null;
   weather: WeatherData | null;
+  weatherStatus: "idle" | "loading" | "ready" | "error";
   place: Place | null;
   onSearch: (query: string) => void;
   timeline: ReactNode;
@@ -17,6 +18,7 @@ interface LocationWorkspaceProps {
 export default function LocationWorkspace({
   selectedLocation,
   weather,
+  weatherStatus,
   place,
   onSearch,
   timeline,
@@ -88,7 +90,13 @@ export default function LocationWorkspace({
             </div>
           </div>
         ) : (
-          <p className="muted-copy">Select a location to load live weather and forecast data.</p>
+          <p className="muted-copy">
+            {weatherStatus === "loading"
+              ? "Loading live weather and forecast…"
+              : weatherStatus === "error"
+                ? "Live weather is temporarily unavailable. Select this location again to retry."
+                : "Select a location to load live weather and forecast data."}
+          </p>
         )}
       </section>
 

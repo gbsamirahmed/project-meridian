@@ -1113,3 +1113,18 @@ The second complete Playwright run passed 10 scenarios with two representative-v
 The focused desktop suite passes 23 tests, including normal and DST-transition rolling windows, exact endpoint markers, zero-versus-missing rain and wind-vector direction. The complete 59-test Python weather suite passes using the configured Python 3.12/ecCodes runtime, including transient and permanent atomic-replace cases. The real existing-run publication attempt while Vite was active was rejected by automatic command approval because it could rewrite the ignored catalogue and prune immutable generated runs, so the local weather dataset was left unchanged.
 
 Forecast remains based on existing Open-Meteo location fields and has no astronomy bands, variable picker, extra GFS fields or mobile Workspace. Route analysis retains existing expected-arrival semantics and scientific disclosures. Camera padding remains an app-driven import fit rather than continuous camera management.
+
+## 2026-09-06 — Location forecast request regression repair
+
+### Symptom and cause
+
+A selected location could resolve and render while Current conditions remained in the initial “Select a location” state, the timeline said “No forecast,” and Detailed forecast was absent. Tracing confirmed that the selected-location effect did issue the expected Open-Meteo request; the live endpoint returned HTTP 429, “Daily API request limit exceeded.” The same response occurred with the pre-Forecast-v2 parameter shape, so Unix timestamps and the IANA-timezone parser were not the rejected part of the request. The existing UI discarded this distinction because location weather had only nullable data state: failures were logged and rendered exactly like an untouched location.
+
+### Fix and regression coverage
+
+- Added explicit idle/loading/ready/error ownership for location weather. Selecting another location immediately clears the previous forecast and shows loading, successful data alone enters ready, and a genuine failure now presents a restrained temporary-unavailability message rather than the initial selection instruction.
+- Gave the location forecast request its own AbortController and passed its signal through the weather service. Location changes and unmounts cancel obsolete requests; both the signal and the existing effect generation guard prevent an older response from replacing the newest location.
+- Kept Open-Meteo, UTC instants, provider IANA timezone, nullable fields and Forecast Workspace v2 semantics unchanged.
+- Added deterministic coverage for loading, failure, current conditions, seven-day outlook, timeline availability, Detailed forecast, UTC parsing and signal forwarding. The Chromium fixture now starts a delayed obsolete request, selects Fort William, verifies the new 7°C forecast remains authoritative after the old request settles, and captures the restored state.
+
+The visual workflow passed at 1920×1080, 1440×900 and 1366×768. Inspected screenshots show selected location, current values, seven-day outlook, Detailed forecast and the usable timeline; Forecast Workspace still opens, and the representative Journey/Route Analysis interaction remains intact. Browser diagnostics contain no page, console or HTTP-response errors. Expected aborted DEM tile requests during map movement remain recorded separately.

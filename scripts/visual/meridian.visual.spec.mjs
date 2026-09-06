@@ -112,16 +112,23 @@ function locationForecastFixture() {
 }
 
 async function mockLocationForecast(page) {
-  await page.route("https://nominatim.openstreetmap.org/search?**", route => route.fulfill({
-    contentType: "application/json",
-    body: JSON.stringify([{ lat: "56.7969", lon: "-5.0036" }]),
-  }));
-  await page.route("https://nominatim.openstreetmap.org/reverse?**", route => route.fulfill({
-    contentType: "application/json",
-    body: JSON.stringify({ display_name: "Ben Nevis, Highland" }),
-  }));
-  await page.route("https://api.open-meteo.com/v1/forecast?**", route => {
-    if (route.request().url().includes("hourly=pressure_msl")) {
+  await page.route("https://nominatim.openstreetmap.org/search?**", route => {
+    const query = new URL(route.request().url()).searchParams.get("q") ?? "";
+    const result = query.includes("Fort William")
+      ? { lat: "56.8198", lon: "-5.1052" }
+      : query.includes("Slow summit")
+        ? { lat: "57.0000", lon: "-5.0000" }
+        : { lat: "56.7969", lon: "-5.0036" };
+    return route.fulfill({ contentType: "application/json", body: JSON.stringify([result]) });
+  });
+  await page.route("https://nominatim.openstreetmap.org/reverse?**", route => {
+    const latitude = new URL(route.request().url()).searchParams.get("lat") ?? "";
+    const name = latitude.startsWith("56.8198") ? "Fort William, Highland" : latitude.startsWith("57") ? "Slow summit, Highland" : "Ben Nevis, Highland";
+    return route.fulfill({ contentType: "application/json", body: JSON.stringify({ display_name: name }) });
+  });
+  await page.route("https://api.open-meteo.com/v1/forecast?**", async route => {
+    const requestUrl = route.request().url();
+    if (requestUrl.includes("hourly=pressure_msl")) {
       const time = Array.from({ length: 25 }, (_, index) => new Date(Date.UTC(2026, 8, 6, index)).toISOString().slice(0, 16));
       return route.fulfill({
         contentType: "application/json",
@@ -130,9 +137,17 @@ async function mockLocationForecast(page) {
         }))),
       });
     }
+    const latitude = new URL(requestUrl).searchParams.get("latitude") ?? "";
+    const fixture = locationForecastFixture();
+    if (latitude.startsWith("57")) {
+      await new Promise(resolve => setTimeout(resolve, 1_500));
+      fixture.current.temperature_2m = 25;
+    } else if (latitude.startsWith("56.8198")) {
+      fixture.current.temperature_2m = 7.2;
+    }
     return route.fulfill({
       contentType: "application/json",
-      body: JSON.stringify(locationForecastFixture()),
+      body: JSON.stringify(fixture),
     });
   });
 }
@@ -345,6 +360,17 @@ test("Forecast Workspace is a shared temporal instrument beside Location", async
     await page.getByRole("tab", { name: "Location" }).click();
     await expect(page.getByRole("heading", { name: "Ben Nevis, Highland" })).toBeVisible();
     await expect(page.getByRole("button", { name: "Detailed forecast" })).toBeVisible();
+    await page.getByRole("searchbox", { name: "Search location" }).fill("Slow summit");
+    await page.getByRole("button", { name: "Search" }).click();
+    await page.waitForTimeout(650);
+    await page.getByRole("searchbox", { name: "Search location" }).fill("Fort William");
+    await page.getByRole("button", { name: "Search" }).click();
+    await expect(page.getByRole("heading", { name: "Fort William, Highland" })).toBeVisible();
+    await expect(page.locator(".temperature-reading strong")).toHaveText("7°");
+    await page.waitForTimeout(1_500);
+    await expect(page.locator(".temperature-reading strong")).toHaveText("7°");
+    await expect(page.getByRole("button", { name: "Detailed forecast" })).toBeVisible();
+    if (testInfo.project.name === "desktop-1440x900") await capture(page, "location-weather-replaced-1440x900");
   } finally {
     await saveDiagnostics(`forecast-${size}`, diagnostics, testInfo);
   }

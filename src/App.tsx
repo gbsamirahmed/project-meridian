@@ -111,6 +111,7 @@ function App() {
   const [debouncedLocation, setDebouncedLocation] =
     useState<SelectedLocation | null>(null);
   const [weather, setWeather] = useState<WeatherData | null>(null);
+  const [weatherStatus, setWeatherStatus] = useState<"idle" | "loading" | "ready" | "error">("idle");
   const [place, setPlace] = useState<Place | null>(null);
   const [basemap, setBasemap] = useState<Basemap>("terrain");
   const [mapOverlays, setMapOverlays] = useState<MapOverlayState>({
@@ -192,6 +193,7 @@ function App() {
 
   const weatherGridAbortRef = useRef<AbortController | null>(null);
   const locationNameAbortRef = useRef<AbortController | null>(null);
+  const locationWeatherAbortRef = useRef<AbortController | null>(null);
   const searchAbortRef = useRef<AbortController | null>(null);
   const weatherGridRequestIdRef = useRef(0);
   const activeWeatherRequestKeyRef = useRef<string | null>(null);
@@ -359,18 +361,29 @@ function App() {
 
     let isCurrent = true;
     locationNameAbortRef.current?.abort();
+    locationWeatherAbortRef.current?.abort();
     const locationNameController = new AbortController();
+    const weatherController = new AbortController();
     locationNameAbortRef.current = locationNameController;
+    locationWeatherAbortRef.current = weatherController;
 
     getWeather(
       debouncedLocation.latitude,
-      debouncedLocation.longitude
+      debouncedLocation.longitude,
+      weatherController.signal
     )
       .then((nextWeather) => {
-        if (isCurrent) setWeather(nextWeather);
+        if (isCurrent && !weatherController.signal.aborted) {
+          setWeather(nextWeather);
+          setWeatherStatus("ready");
+        }
       })
       .catch((error: unknown) => {
-        if (isCurrent) console.error(error);
+        if (isCurrent && !weatherController.signal.aborted) {
+          setWeather(null);
+          setWeatherStatus("error");
+          console.error(error);
+        }
       });
 
     getLocationName(
@@ -389,6 +402,7 @@ function App() {
 
     return () => {
       isCurrent = false;
+      weatherController.abort();
       locationNameController.abort();
     };
   }, [debouncedLocation]);
@@ -397,6 +411,7 @@ function App() {
     return () => {
       weatherGridAbortRef.current?.abort();
       locationNameAbortRef.current?.abort();
+      locationWeatherAbortRef.current?.abort();
       searchAbortRef.current?.abort();
       routeAbortRef.current?.abort();
       routeConditionAbortRef.current?.abort();
@@ -616,6 +631,13 @@ function App() {
     []
   );
 
+  const handleLocationSelect = useCallback((location: SelectedLocation) => {
+    locationWeatherAbortRef.current?.abort();
+    setWeather(null);
+    setWeatherStatus("loading");
+    setSelectedLocation(location);
+  }, []);
+
   const handleSearch = useCallback(async (query: string) => {
     searchAbortRef.current?.abort();
     const controller = new AbortController();
@@ -623,11 +645,11 @@ function App() {
 
     try {
       const location = await searchLocation(query, controller.signal);
-      if (!controller.signal.aborted && location) setSelectedLocation(location);
+      if (!controller.signal.aborted && location) handleLocationSelect(location);
     } catch (error: unknown) {
       if (!controller.signal.aborted) console.error(error);
     }
-  }, []);
+  }, [handleLocationSelect]);
 
   const handleRouteImport = useCallback(async (file: File) => {
     const generation = ++routeGenerationRef.current;
@@ -793,7 +815,7 @@ function App() {
         panelCollapsed={presentationCollapsed}
         mapInspectorEnabled={workspace.mapInspectorEnabled}
         mapInspectorSession={workspace.mapInspectorSession}
-        onLocationSelect={setSelectedLocation}
+        onLocationSelect={handleLocationSelect}
         onRouteSampleFocus={setPreviewRouteSampleIndex}
         onWeatherGridRequest={handleWeatherGridRequest}
       />
@@ -811,6 +833,7 @@ function App() {
                 <LocationWorkspace
                   selectedLocation={selectedLocation}
                   weather={weather}
+                  weatherStatus={weatherStatus}
                   place={place}
                   onSearch={handleSearch}
                   forecastWorkspaceOpen={workspace.detailWorkspace === "forecast"}

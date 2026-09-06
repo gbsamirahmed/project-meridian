@@ -2,10 +2,12 @@ import type { WeatherData, ForecastDay } from "../types/weather";
 
 export async function getWeather(
   latitude: number,
-  longitude: number
+  longitude: number,
+  signal?: AbortSignal
 ): Promise<WeatherData> {
   const response = await fetch(
-    `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,precipitation,cloud_cover,pressure_msl,wind_speed_10m,wind_gusts_10m,visibility,dew_point_2m&hourly=temperature_2m,precipitation,cloud_cover,wind_speed_10m,wind_direction_10m,wind_gusts_10m,visibility,freezing_level_height&daily=temperature_2m_max,temperature_2m_min&forecast_days=7&timeformat=unixtime&timezone=auto`
+    `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,precipitation,cloud_cover,pressure_msl,wind_speed_10m,wind_gusts_10m,visibility,dew_point_2m&hourly=temperature_2m,precipitation,cloud_cover,wind_speed_10m,wind_direction_10m,wind_gusts_10m,visibility,freezing_level_height&daily=temperature_2m_max,temperature_2m_min&forecast_days=7&timeformat=unixtime&timezone=auto`,
+    { signal }
   );
 
   if (!response.ok) {

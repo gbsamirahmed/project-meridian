@@ -5,13 +5,14 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { createServer } from "vite";
 
 const server = await createServer({ appType: "custom", logLevel: "silent", server: { middlewareMode: true } });
-const [state, journeyModel, profileInteraction, controlOptions, routeCamera, forecastModel, desktopModule, overviewModule, settingsModule, detailsModule, controlsModule, timelineModule, analysisModule, forecastWorkspaceModule, locationWorkspaceModule] = await Promise.all([
+const [state, journeyModel, profileInteraction, controlOptions, routeCamera, forecastModel, weatherService, desktopModule, overviewModule, settingsModule, detailsModule, controlsModule, timelineModule, analysisModule, forecastWorkspaceModule, locationWorkspaceModule] = await Promise.all([
   server.ssrLoadModule("/src/services/desktopWorkspaceState.ts"),
   server.ssrLoadModule("/src/services/journeyModel.ts"),
   server.ssrLoadModule("/src/services/routeProfileInteraction.ts"),
   server.ssrLoadModule("/src/services/desktopControlOptions.ts"),
   server.ssrLoadModule("/src/services/routeCamera.ts"),
   server.ssrLoadModule("/src/services/forecastWorkspaceModel.ts"),
+  server.ssrLoadModule("/src/services/weatherService.ts"),
   server.ssrLoadModule("/src/components/DesktopWorkspace.tsx"),
   server.ssrLoadModule("/src/components/JourneyOverview.tsx"),
   server.ssrLoadModule("/src/components/JourneySettings.tsx"),
@@ -132,6 +133,7 @@ test("Location exposes one compact Forecast Workspace action without duplicating
     selectedLocation: { latitude: 56.7969, longitude: -5.0036 },
     place: { name: "Ben Nevis" },
     weather: locationWeather,
+    weatherStatus: "ready",
     onSearch: noop,
     timeline: createElement("div", null, "timeline-sentinel"),
     forecastWorkspaceOpen: false,
@@ -141,6 +143,47 @@ test("Location exposes one compact Forecast Workspace action without duplicating
   assert.match(html, /aria-expanded="false"/);
   assert.match(html, /timeline-sentinel/);
   assert.ok(!html.includes("Highest freezing level"));
+});
+
+test("Location renders loading, successful forecast controls, and honest failure states", () => {
+  const render = (weatherValue, weatherStatus) => renderToStaticMarkup(createElement(LocationWorkspace, {
+    selectedLocation: { latitude: 56.7969, longitude: -5.0036 },
+    place: { name: "Ben Nevis" },
+    weather: weatherValue,
+    weatherStatus,
+    onSearch: noop,
+    timeline: createElement("div", null, weatherValue ? "timeline-ready" : "No forecast"),
+    forecastWorkspaceOpen: false,
+    onForecastWorkspaceToggle: noop,
+  }));
+  assert.match(render(null, "loading"), /Loading live weather and forecast/);
+  const success = render(locationWeather, "ready");
+  for (const text of ["Current conditions", "Air temperature", "7 day forecast", "Detailed forecast", "timeline-ready"]) assert.ok(success.includes(text), text);
+  assert.match(render(null, "error"), /Live weather is temporarily unavailable/);
+});
+
+test("location weather parser returns UTC instants and forwards cancellation", async () => {
+  const previousFetch = globalThis.fetch;
+  const controller = new AbortController();
+  let receivedSignal;
+  globalThis.fetch = async (_url, init) => {
+    receivedSignal = init.signal;
+    return { ok: true, json: async () => ({
+      timezone: "Europe/London", utc_offset_seconds: 3600,
+      current: { temperature_2m: 11, relative_humidity_2m: 80, precipitation: 0.2, cloud_cover: 70, pressure_msl: 1008, wind_speed_10m: 20, wind_gusts_10m: 35, visibility: 8000, dew_point_2m: 7 },
+      hourly: { time: [1788649200], temperature_2m: [11], precipitation: [0.2], cloud_cover: [70], wind_speed_10m: [20], wind_direction_10m: [220], wind_gusts_10m: [35], visibility: [8000], freezing_level_height: [1900] },
+      daily: { time: [1788649200], temperature_2m_max: [15], temperature_2m_min: [6] },
+    }) };
+  };
+  try {
+    const result = await weatherService.getWeather(56.7969, -5.0036, controller.signal);
+    assert.equal(receivedSignal, controller.signal);
+    assert.equal(result.timezone, "Europe/London");
+    assert.match(result.hourly[0].time, /Z$/);
+    assert.equal(result.forecast.length, 1);
+  } finally {
+    globalThis.fetch = previousFetch;
+  }
 });
 
 test("Forecast Workspace groups every available field around one shared time slider", () => {
