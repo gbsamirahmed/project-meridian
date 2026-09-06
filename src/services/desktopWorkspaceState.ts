@@ -2,7 +2,6 @@ export type WorkspaceMode = "location" | "journey" | "analysis";
 
 export interface DesktopWorkspaceState {
   workspaceMode: WorkspaceMode;
-  leftOpen: boolean;
   settingsOpen: boolean;
   journeySettingsOpen: boolean;
   clearMap: boolean;
@@ -12,7 +11,6 @@ export interface DesktopWorkspaceState {
 
 export type DesktopWorkspaceAction =
   | { type: "set-workspace"; mode: WorkspaceMode }
-  | { type: "set-left"; open: boolean }
   | { type: "set-settings"; open: boolean }
   | { type: "set-journey-settings"; open: boolean }
   | { type: "set-clear-map"; active: boolean }
@@ -20,7 +18,6 @@ export type DesktopWorkspaceAction =
 
 export const INITIAL_DESKTOP_WORKSPACE_STATE: DesktopWorkspaceState = {
   workspaceMode: "location",
-  leftOpen: true,
   settingsOpen: false,
   journeySettingsOpen: false,
   clearMap: false,
@@ -35,8 +32,6 @@ export function desktopWorkspaceReducer(
   switch (action.type) {
     case "set-workspace":
       return { ...state, workspaceMode: action.mode };
-    case "set-left":
-      return { ...state, leftOpen: action.open };
     case "set-settings":
       return { ...state, settingsOpen: action.open };
     case "set-journey-settings":

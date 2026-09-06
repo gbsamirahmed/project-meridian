@@ -46,6 +46,51 @@ async function saveDiagnostics(name, diagnostics, testInfo) {
   await testInfo.attach("browser diagnostics", { path: outputPath, contentType: "application/json" });
 }
 
+function makeGpx(name, coordinates) {
+  const points = coordinates.map(([longitude, latitude]) =>
+    `<trkpt lat="${latitude}" lon="${longitude}"><ele>100</ele></trkpt>`
+  ).join("");
+  return `<?xml version="1.0" encoding="UTF-8"?><gpx version="1.1" creator="Meridian visual test"><trk><name>${name}</name><trkseg>${points}</trkseg></trk></gpx>`;
+}
+
+async function mockMapNetwork(page) {
+  await page.route("https://s3.amazonaws.com/elevation-tiles-prod/terrarium/**", async (route) => {
+    await route.fulfill({ path: terrainFixture, contentType: "image/png" });
+  });
+  await page.route("https://api.maptiler.com/resources/logo.svg", async (route) => {
+    await route.fulfill({
+      contentType: "image/svg+xml",
+      body: '<svg xmlns="http://www.w3.org/2000/svg" width="120" height="28" viewBox="0 0 120 28"><rect width="120" height="28" fill="white"/><text x="60" y="19" text-anchor="middle" font-family="Arial" font-size="16" fill="#111">MapTiler</text></svg>',
+    });
+  });
+  await page.route("https://api.maptiler.com/tiles/satellite-v2/tiles.json?**", async (route) => {
+    await route.fulfill({
+      contentType: "application/json",
+      body: JSON.stringify({
+        tiles: ["https://visual.meridian.test/satellite/{z}/{x}/{y}.png"],
+        attribution: "© MapTiler",
+        minzoom: 0,
+        maxzoom: 20,
+      }),
+    });
+  });
+  await page.route("https://visual.meridian.test/satellite/**", async (route) => {
+    await route.fulfill({ path: terrainFixture, contentType: "image/png" });
+  });
+}
+
+async function importRoute(page, name, coordinates) {
+  await page.getByRole("tab", { name: "Journey" }).click();
+  await page.locator('input[type="file"]').setInputFiles({
+    name: `${name.toLowerCase().replaceAll(/[^a-z0-9]+/g, "-")}.gpx`,
+    mimeType: "application/gpx+xml",
+    buffer: Buffer.from(makeGpx(name, coordinates)),
+  });
+  await expect(page.locator(".journey-route-title h2")).toHaveText(name, { timeout: 30_000 });
+  await expect(page.getByRole("tab", { name: "Analysis" })).toBeVisible({ timeout: 30_000 });
+  // MapView uses a 750 ms app-driven fit transition; inspect only the settled camera.
+  await page.waitForTimeout(800);
+}
 async function openMeridian(page) {
   await page.goto("/", { waitUntil: "domcontentloaded" });
   await expect(page.locator("main.app-shell.desktop-shell-active")).toBeVisible();
@@ -70,10 +115,45 @@ test("desktop shell keeps the timeline in Location and the layer rail persistent
   const diagnostics = observeBrowser(page);
 
   try {
+    await mockMapNetwork(page);
     await openMeridian(page);
     await expect(page.getByRole("region", { name: "Forecast timeline" })).toBeVisible();
     await expect(page.getByRole("tab", { name: "Analysis" })).toHaveCount(0);
     await capture(page, `location-${size}`);
+
+    await expect(page.getByRole("button", { name: "Enter focus mode" })).toBeVisible();
+    await expect(page.getByRole("button", { name: "Focus map" })).toHaveCount(0);
+    await expect(page.getByRole("button", { name: "Hide workspace" })).toHaveCount(0);
+    await expect(page.locator('.desktop-brand img[src="/favicon.svg"]')).toBeVisible();
+
+    const viewport = page.viewportSize();
+    if (!viewport) throw new Error("Desktop project has no viewport");
+    const infoButton = page.locator(".maplibregl-ctrl-attrib-button");
+    const infoBounds = await infoButton.boundingBox();
+    expect(infoBounds).not.toBeNull();
+    if (!infoBounds) throw new Error("Map information control did not render");
+    expect(Math.abs(viewport.width - infoBounds.x - infoBounds.width - 12)).toBeLessThanOrEqual(1);
+    expect(Math.abs(viewport.height - infoBounds.y - infoBounds.height - 12)).toBeLessThanOrEqual(1);
+    await expect(page.locator(".maptiler-logo")).toHaveCount(0);
+
+    await page.getByRole("button", { name: "Satellite basemap" }).click();
+    const mapTilerLogo = page.locator(".maptiler-logo");
+    await expect(mapTilerLogo).toBeVisible();
+    await expect(mapTilerLogo.locator("img")).toHaveAttribute("src", "https://api.maptiler.com/resources/logo.svg");
+    const mapTilerBounds = await mapTilerLogo.boundingBox();
+    expect(mapTilerBounds).not.toBeNull();
+    if (mapTilerBounds) {
+      const overlapsInfo = !(
+        mapTilerBounds.x + mapTilerBounds.width <= infoBounds.x ||
+        infoBounds.x + infoBounds.width <= mapTilerBounds.x ||
+        mapTilerBounds.y + mapTilerBounds.height <= infoBounds.y ||
+        infoBounds.y + infoBounds.height <= mapTilerBounds.y
+      );
+      expect(overlapsInfo).toBe(false);
+    }
+    await capture(page, `satellite-location-${size}`);
+    await page.getByRole("button", { name: "Terrain basemap" }).click();
+    await expect(page.locator(".maptiler-logo")).toHaveCount(0);
 
     const navigationGroup = page.locator(".maplibregl-ctrl-top-right .maplibregl-ctrl-group").first();
     const layerRail = page.locator(".map-tool-strip");
@@ -82,8 +162,6 @@ test("desktop shell keeps the timeline in Location and the layer rail persistent
     expect(navigationBounds).not.toBeNull();
     expect(layerBounds).not.toBeNull();
     if (!navigationBounds || !layerBounds) throw new Error("Map control rail did not render");
-    const viewport = page.viewportSize();
-    if (!viewport) throw new Error("Desktop project has no viewport");
     expect(Math.abs(navigationBounds.width - layerBounds.width)).toBeLessThanOrEqual(1);
     expect(Math.abs(navigationBounds.x + navigationBounds.width / 2 - layerBounds.x - layerBounds.width / 2)).toBeLessThanOrEqual(1);
     expect(Math.abs(viewport.width - navigationBounds.x - navigationBounds.width - 12)).toBeLessThanOrEqual(1);
@@ -124,8 +202,74 @@ test("desktop shell keeps the timeline in Location and the layer rail persistent
     await expect(layerRail).toBeVisible();
 
     await capture(page, `post-interaction-${size}`);
+
+    await page.getByRole("button", { name: "Enter focus mode" }).click();
+    await expect(page.getByRole("complementary", { name: "Meridian workspace" })).toHaveCount(0);
+    await expect(page.locator(".map-tool-strip")).toHaveCount(0);
+    await expect(page.getByRole("button", { name: "Restore Meridian interface" })).toBeVisible();
+    await capture(page, `focus-${size}`);
+    await page.getByRole("button", { name: "Restore Meridian interface" }).click();
+    await expect(page.getByRole("complementary", { name: "Meridian workspace" })).toBeVisible();
+    await expect(page.locator(".map-tool-strip")).toBeVisible();
+    await capture(page, `restored-${size}`);
   } finally {
     await saveDiagnostics(`shell-${size}`, diagnostics, testInfo);
+  }
+
+  expect(diagnostics.pageErrors, "Unhandled browser page errors; see generated diagnostics").toEqual([]);
+});
+
+test("imported route fitting respects the visible map beside the primary workspace", async ({ page }, testInfo) => {
+  const size = viewportName(testInfo);
+  const diagnostics = observeBrowser(page);
+
+  await page.route("https://s3.amazonaws.com/elevation-tiles-prod/terrarium/**", async (route) => {
+    await route.fulfill({
+      path: terrainFixture,
+      contentType: "image/png",
+      headers: { "Cache-Control": "public, max-age=3600" },
+    });
+  });
+
+  try {
+    await mockMapNetwork(page);
+    await openMeridian(page);
+    await importRoute(page, "Ben Nevis Mountain Track", [
+      [-5.0776, 56.8107], [-5.066, 56.807], [-5.058, 56.802],
+      [-5.049, 56.797], [-5.039, 56.795], [-5.027, 56.798],
+      [-5.015, 56.799], [-5.0036, 56.7969],
+    ]);
+    await capture(page, `route-fit-ben-nevis-${size}`);
+
+    const workspaceLayout = await page.locator(".desktop-workspace-content").evaluate((element) => ({
+      clientWidth: element.clientWidth,
+      scrollWidth: element.scrollWidth,
+    }));
+    expect(workspaceLayout.scrollWidth).toBeLessThanOrEqual(workspaceLayout.clientWidth);
+
+    await page.getByRole("button", { name: "Enter focus mode" }).click();
+    await expect(page.getByRole("button", { name: "Restore Meridian interface" })).toBeVisible();
+    await page.getByRole("button", { name: "Restore Meridian interface" }).click();
+    await expect(page.locator(".journey-route-title h2")).toHaveText("Ben Nevis Mountain Track");
+
+    if (testInfo.project.name === "desktop-1440x900") {
+      await page.getByRole("button", { name: "Clear route" }).click();
+      await importRoute(page, "West Highland Way", [
+        [-4.316, 55.942], [-4.452, 56.064], [-4.586, 56.252],
+        [-4.67, 56.471], [-4.706, 56.645], [-4.837, 56.78],
+        [-5.105, 56.819],
+      ]);
+      await capture(page, "route-fit-west-highland-way-1440x900");
+
+      await page.getByRole("button", { name: "Clear route" }).click();
+      await importRoute(page, "Box Hill short route", [
+        [-0.313, 51.25], [-0.306, 51.254], [-0.298, 51.251],
+        [-0.305, 51.247], [-0.313, 51.25],
+      ]);
+      await capture(page, "route-fit-box-hill-1440x900");
+    }
+  } finally {
+    await saveDiagnostics(`route-fit-${size}`, diagnostics, testInfo);
   }
 
   expect(diagnostics.pageErrors, "Unhandled browser page errors; see generated diagnostics").toEqual([]);
@@ -144,6 +288,7 @@ test("safe GPX route exposes Journey, in-panel Tune, and interactive Analysis", 
   });
 
   try {
+    await mockMapNetwork(page);
     await openMeridian(page);
     await page.getByRole("tab", { name: "Journey" }).click();
     const longRouteName = "Snowdonia ridge traverse with an intentionally long route name for workspace overflow validation";
@@ -157,6 +302,8 @@ test("safe GPX route exposes Journey, in-panel Tune, and interactive Analysis", 
     const routeTitle = page.locator(".journey-route-title h2");
     await expect(routeTitle).toHaveText(longRouteName);
     await expect(page.getByRole("tab", { name: "Analysis" })).toBeVisible({ timeout: 30_000 });
+    // MapView uses a 750 ms app-driven fit transition; inspect only the settled camera.
+    await page.waitForTimeout(800);
     await expect(page.locator(".journey-profile-card .route-profile-summary")).toBeVisible();
 
     const titleLayout = await routeTitle.evaluate((element) => {

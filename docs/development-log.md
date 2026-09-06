@@ -1026,3 +1026,29 @@ Sixteen focused desktop tests pass. The full deterministic frontend, weather, ro
 ### Limitations
 
 The compact checked-in DEM fixture validates interaction and layout rather than real terrain variation. External basemap and weather availability can change screenshot imagery; failures remain separated in browser diagnostics. Mobile layout, panel-aware camera padding, new analysis modes, arrival-window analysis and richer terrain/weather interpretation remain deferred.
+
+## 2026-09-06 — Desktop map furniture and route-fit cleanup
+
+### Goal
+
+Clean up desktop map furniture and focus-mode entry without changing the established Location/Journey/Analysis information architecture, then make imported-route framing respect the map area that remains visible beside the primary workspace.
+
+### Changes
+
+- Formalised the existing 12 px desktop edge spacing as the **workspace gutter**. The primary workspace, top-right navigation/layer rail, focus restore control, bottom-right map information control, and provider-branding placement now derive their relevant edge positions from `--workspace-gutter`.
+- Simplified the primary-workspace header to the Meridian brand and global Settings. Removed the separate Focus and close actions and the retired left-open state. Clicking the brand enters focus mode; the compact Meridian restore control exits it. This remains presentation-only state and preserves route, location, forecast, analysis and camera state.
+- Replaced the old CSS-drawn orange/white mark with the canonical `/favicon.svg` asset in both normal and restore controls, so the browser tab and in-app identity use the same mark.
+- Kept the 36 px right-hand rail persistent in normal Location, Journey and Analysis modes, with its existing 12 px top/right inset, 10 px navigation gap and compact layer buttons.
+- Positioned MapLibre's compact information button exactly one workspace gutter from the bottom-right corner by removing its nested default margin. Satellite-only MapTiler branding uses the provider's existing official horizontal logo URL at the bottom-left of the usable map, one gutter beyond the primary workspace; focus mode returns it to the viewport gutter. The logo was not rotated because the repository contains no provider guidance confirming that rotation is permitted. Required textual attribution remains MapLibre-managed.
+- Replaced fixed route-fit padding with measured effective-viewport padding. App-driven import fitting reads the rendered primary-workspace edge and workspace gutter, then supplies MapLibre with asymmetric padding plus a 48 px geometry margin. Focus mode uses symmetric margins. The existing route-id guard still fits each imported route once, so workspace switching, focus restore and manual camera work do not trigger refits.
+- Fixed an initial-load race exposed by the Ben Nevis visual fixture. Camera fitting no longer waits for all style sources, and route layers are initialised at MapLibre's `style.load` boundary before terrain source loading makes `isStyleLoaded()` temporarily false.
+
+### Visual validation
+
+The Playwright workflow now uses deterministic test-only satellite metadata, raster imagery and provider-logo dimensions while production continues to reference MapTiler's official endpoints. It asserts the 12 px information-control corner offset, provider/info non-overlap, Terrain-only logo absence, canonical Meridian asset, removed header actions, brand focus/restore, persistent rail geometry and horizontal-overflow containment.
+
+Screenshots were rendered and inspected at 1920×1080, 1440×900 and 1366×768 for Terrain Location, Satellite Location, focus and restore, plus Ben Nevis route framing at every size. At 1440×900, additional public-coordinate fixtures cover West Highland Way, Box Hill, loaded Journey and pinned Analysis. The first settled route pass exposed the initial style/source readiness race; after the lifecycle refinement and rerender, Ben Nevis, West Highland Way and Box Hill all remain fully visible in the effective map area. Map furniture remains stable across workspace modes, Terrain/Satellite and focus restoration.
+
+### Limitations
+
+This is an initial/imported-route fit, not continuous panel-aware camera management. Manual pan, zoom, pitch and bearing remain authoritative after fitting. The official MapTiler logo remains horizontal until provider guidance supports another treatment. Profile sizing, Analysis scrolling, mobile layout and the future detail workspace remain unchanged and deferred.

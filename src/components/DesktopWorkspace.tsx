@@ -5,37 +5,32 @@ interface DesktopWorkspaceProps {
   mode: WorkspaceMode;
   analysisAvailable: boolean;
   onModeChange: (mode: WorkspaceMode) => void;
-  onClose: () => void;
   onSettings: () => void;
-  onClearMap: () => void;
+  onFocusMode: () => void;
   children: ReactNode;
 }
 
 export function MeridianMark({ label }: { label?: string }) {
-  return (
-    <span className="meridian-mark" aria-label={label} role={label ? "img" : undefined}>
-      <span /><span />
-    </span>
-  );
+  return <img className="meridian-mark" src="/favicon.svg" alt={label ?? ""} />;
 }
 
 export default function DesktopWorkspace({
   mode,
   analysisAvailable,
   onModeChange,
-  onClose,
   onSettings,
-  onClearMap,
+  onFocusMode,
   children,
 }: DesktopWorkspaceProps) {
   return (
     <aside className="desktop-workspace desktop-surface" aria-label="Meridian workspace">
       <header className="desktop-workspace-header">
-        <div className="desktop-brand"><MeridianMark /><div><p>Terrain weather</p><h1>Meridian</h1></div></div>
+        <button type="button" className="desktop-brand" aria-label="Enter focus mode" title="Enter focus mode" onClick={onFocusMode}>
+          <MeridianMark />
+          <div><p>Terrain weather</p><h1>Meridian</h1></div>
+        </button>
         <div className="surface-actions">
           <button type="button" aria-label="Global settings" title="Settings" onClick={onSettings}>⚙</button>
-          <button type="button" aria-label="Focus map" title="Focus map" onClick={onClearMap}>Focus</button>
-          <button type="button" aria-label="Hide workspace" title="Hide workspace" onClick={onClose}>×</button>
         </div>
       </header>
       <div className={`workspace-tabs${analysisAvailable ? " workspace-tabs-three" : ""}`} role="tablist" aria-label="Workspace context">

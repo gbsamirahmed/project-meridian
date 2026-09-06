@@ -1691,29 +1691,12 @@
 }
 
 .meridian-mark {
-  position: relative;
-  display: inline-block;
+  display: block;
   width: 34px;
   height: 34px;
-  overflow: hidden;
+  flex: 0 0 auto;
   border-radius: 10px;
-  background: linear-gradient(145deg, rgba(255, 131, 95, 0.22), rgba(135, 213, 165, 0.1));
 }
-
-.meridian-mark > span:first-child,
-.meridian-mark > span:last-child {
-  position: absolute;
-  left: 6px;
-  width: 22px;
-  height: 11px;
-  border: 2px solid #f4f1e8;
-  border-top: 0;
-  border-radius: 0 0 50% 50%;
-  content: "";
-}
-
-.meridian-mark > span:first-child { top: 6px; transform: rotate(180deg); }
-.meridian-mark > span:last-child { bottom: 6px; border-color: var(--accent); }
 
 .surface-actions {
   display: flex;
@@ -3309,5 +3292,61 @@
   .desktop-shell-active .analysis-workspace-heading .analysis-status {
     align-self: flex-start;
     line-height: 1.25;
+  }
+}
+
+/* Desktop map-furniture cleanup */
+@media (min-width: 701px) {
+  .desktop-shell-active {
+    --workspace-gutter: 12px;
+    --desktop-edge: var(--workspace-gutter);
+    --map-control-inset: var(--workspace-gutter);
+  }
+
+  .desktop-shell-active .desktop-brand {
+    min-width: 0;
+    padding: 0;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+  }
+
+  .desktop-shell-active .desktop-brand:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 9px;
+  }
+
+  .desktop-shell-active .meridian-mark {
+    display: block;
+    object-fit: contain;
+    background: transparent;
+  }
+
+  .desktop-shell-active .clear-map-restore {
+    top: var(--workspace-gutter);
+    left: var(--workspace-gutter);
+  }
+
+  .desktop-shell-active .maplibregl-ctrl-bottom-right {
+    right: var(--workspace-gutter);
+    bottom: var(--workspace-gutter);
+  }
+
+  .desktop-shell-active .maplibregl-ctrl-bottom-right .maplibregl-ctrl {
+    margin: 0;
+  }
+
+  .desktop-shell-active .maptiler-logo {
+    bottom: var(--workspace-gutter);
+    left: calc(var(--workspace-gutter) + var(--desktop-workspace-width) + var(--workspace-gutter));
+  }
+
+  .desktop-shell-active.clear-map-active .maptiler-logo,
+  .desktop-shell-active .maptiler-logo-panel-collapsed {
+    left: var(--workspace-gutter);
   }
 }

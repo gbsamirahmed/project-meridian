@@ -763,11 +763,11 @@ function App() {
   );
 
   const presentationCollapsed = desktopLayout
-    ? workspace.clearMap || !workspace.leftOpen
+    ? workspace.clearMap
     : isDesktopPanelCollapsed;
 
   return (
-    <main className={`app-shell${desktopLayout ? " desktop-shell-active" : ""}${desktopLayout && workspace.leftOpen && !workspace.clearMap ? " desktop-left-visible" : ""}${workspace.clearMap ? " clear-map-active" : ""}`}>
+    <main className={`app-shell${desktopLayout ? " desktop-shell-active" : ""}${desktopLayout && !workspace.clearMap ? " desktop-left-visible" : ""}${workspace.clearMap ? " clear-map-active" : ""}`}>
       <MapView
         selectedLocation={selectedLocation}
         basemap={basemap}
@@ -797,14 +797,13 @@ function App() {
 
       {desktopLayout ? (
         <>
-          {!workspace.clearMap && workspace.leftOpen && (
+          {!workspace.clearMap && (
             <DesktopWorkspace
               mode={workspace.workspaceMode}
               analysisAvailable={terrainRoute !== null}
               onModeChange={(mode) => dispatchWorkspace({ type: "set-workspace", mode })}
-              onClose={() => dispatchWorkspace({ type: "set-left", open: false })}
               onSettings={() => dispatchWorkspace({ type: "set-settings", open: true })}
-              onClearMap={() => dispatchWorkspace({ type: "set-clear-map", active: true })}
+              onFocusMode={() => dispatchWorkspace({ type: "set-clear-map", active: true })}
             >
               {workspace.workspaceMode === "location" ? (
                 <LocationWorkspace
@@ -890,8 +889,6 @@ function App() {
               onOverlayChange={handleOverlayChange}
             />
           )}
-
-          {!workspace.clearMap && !workspace.leftOpen && <button type="button" className="surface-restore workspace-restore" aria-label="Show Meridian workspace" onClick={() => dispatchWorkspace({ type: "set-left", open: true })}><MeridianMark label="Show Meridian workspace" /></button>}
           {workspace.clearMap && <button type="button" className="clear-map-restore" aria-label="Restore Meridian interface" onClick={() => dispatchWorkspace({ type: "set-clear-map", active: false })}><MeridianMark /><span>Meridian</span></button>}
 
           <GlobalSettings open={workspace.settingsOpen && !workspace.clearMap} mapInspectorEnabled={workspace.mapInspectorEnabled} onMapInspectorChange={(enabled) => dispatchWorkspace({ type: "set-map-inspector", enabled })} onClose={() => dispatchWorkspace({ type: "set-settings", open: false })} />

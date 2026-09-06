@@ -5,11 +5,12 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { createServer } from "vite";
 
 const server = await createServer({ appType: "custom", logLevel: "silent", server: { middlewareMode: true } });
-const [state, journeyModel, profileInteraction, controlOptions, desktopModule, overviewModule, settingsModule, detailsModule, controlsModule, timelineModule, analysisModule] = await Promise.all([
+const [state, journeyModel, profileInteraction, controlOptions, routeCamera, desktopModule, overviewModule, settingsModule, detailsModule, controlsModule, timelineModule, analysisModule] = await Promise.all([
   server.ssrLoadModule("/src/services/desktopWorkspaceState.ts"),
   server.ssrLoadModule("/src/services/journeyModel.ts"),
   server.ssrLoadModule("/src/services/routeProfileInteraction.ts"),
   server.ssrLoadModule("/src/services/desktopControlOptions.ts"),
+  server.ssrLoadModule("/src/services/routeCamera.ts"),
   server.ssrLoadModule("/src/components/DesktopWorkspace.tsx"),
   server.ssrLoadModule("/src/components/JourneyOverview.tsx"),
   server.ssrLoadModule("/src/components/JourneySettings.tsx"),
@@ -71,22 +72,23 @@ test("workspace state is presentation-only, explicit, and Map Inspector starts o
   let current = state.INITIAL_DESKTOP_WORKSPACE_STATE;
   assert.equal(current.mapInspectorEnabled, false);
   current = state.desktopWorkspaceReducer(current, { type: "set-workspace", mode: "analysis" });
-  current = state.desktopWorkspaceReducer(current, { type: "set-left", open: false });
   current = state.desktopWorkspaceReducer(current, { type: "set-journey-settings", open: true });
   assert.equal(current.workspaceMode, "analysis");
-  assert.equal(current.leftOpen, false);
   assert.equal(current.journeySettingsOpen, true);
   assert.deepEqual(routeSentinel, { id: "retained-route" });
   assert.deepEqual(playbackSentinel, { playing: true, hour: 4 });
   current = state.desktopWorkspaceReducer(current, { type: "set-clear-map", active: true });
   assert.equal(current.clearMap, true);
   assert.equal(current.workspaceMode, "analysis");
+  current = state.desktopWorkspaceReducer(current, { type: "set-clear-map", active: false });
+  assert.equal(current.clearMap, false);
+  assert.equal(current.workspaceMode, "analysis");
   current = state.desktopWorkspaceReducer(current, { type: "set-map-inspector", enabled: true });
   assert.equal(current.mapInspectorEnabled, true);
 });
 
 test("Analysis is absent without a route and available as the third workspace tab with one", () => {
-  const common = { onModeChange: noop, onClose: noop, onSettings: noop, onClearMap: noop };
+  const common = { onModeChange: noop, onSettings: noop, onFocusMode: noop };
   const noRoute = renderToStaticMarkup(createElement(DesktopWorkspace, { ...common, mode: "journey", analysisAvailable: false }, createElement("p", null, "journey-state")));
   const analysis = renderToStaticMarkup(createElement(DesktopWorkspace, { ...common, mode: "analysis", analysisAvailable: true }, createElement("p", null, "same-route-state")));
   assert.match(noRoute, /aria-selected="true">Journey/);
@@ -94,6 +96,24 @@ test("Analysis is absent without a route and available as the third workspace ta
   assert.match(analysis, /aria-selected="true">Analysis/);
   assert.match(analysis, /workspace-tabs-three/);
   assert.match(analysis, /same-route-state/);
+});
+test("canonical Meridian brand is the sole normal-workspace focus control", () => {
+  const html = renderToStaticMarkup(createElement(DesktopWorkspace, {
+    mode: "location", analysisAvailable: false, onModeChange: noop, onSettings: noop, onFocusMode: noop,
+  }, createElement("p", null, "location-state")));
+  assert.match(html, /src="\/favicon\.svg"/);
+  assert.match(html, /aria-label="Enter focus mode"/);
+  assert.ok(!html.includes("Focus map"));
+  assert.ok(!html.includes("Hide workspace"));
+});
+
+test("route-fit padding reserves the rendered primary workspace and gutter", () => {
+  assert.deepEqual(routeCamera.calculateRouteFitPadding({
+    mapLeftPx: 0, workspaceRightPx: 308, workspaceGutterPx: 12,
+  }), { top: 48, right: 48, bottom: 48, left: 368 });
+  assert.deepEqual(routeCamera.calculateRouteFitPadding({
+    mapLeftPx: 0, workspaceRightPx: null, workspaceGutterPx: 12,
+  }), { top: 48, right: 48, bottom: 48, left: 48 });
 });
 test("journey overview separates route facts from derived estimate and uses human coverage wording", () => {
   const html = overview();
@@ -151,8 +171,8 @@ test("presentation actions perform no network work", () => {
   const originalFetch = globalThis.fetch; let calls = 0; globalThis.fetch = () => { calls += 1; throw new Error("unexpected"); };
   try {
     let current = state.INITIAL_DESKTOP_WORKSPACE_STATE;
-    for (const action of [{ type: "set-workspace", mode: "analysis" }, { type: "set-left", open: false }, { type: "set-clear-map", active: true }]) current = state.desktopWorkspaceReducer(current, action);
-    assert.equal(current.clearMap, true); assert.equal(calls, 0);
+    for (const action of [{ type: "set-workspace", mode: "analysis" }, { type: "set-clear-map", active: true }, { type: "set-clear-map", active: false }]) current = state.desktopWorkspaceReducer(current, action);
+    assert.equal(current.clearMap, false); assert.equal(calls, 0);
   } finally { globalThis.fetch = originalFetch; }
 });
 test("profile coordinates cover the true drawable width at several container sizes", () => {

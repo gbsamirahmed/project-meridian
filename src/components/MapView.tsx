@@ -82,6 +82,7 @@ import {
   updateRouteLayer,
 } from "../services/routeLayer";
 import { getRouteBounds } from "../services/routeGeometry";
+import { calculateRouteFitPadding, DEFAULT_WORKSPACE_GUTTER_PX } from "../services/routeCamera";
 
 import type { Basemap, MapOverlayState } from "../types/layer";
 import type {
@@ -345,6 +346,7 @@ export default function MapView({
 
   const mapContainer = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<maplibregl.Map | null>(null);
+  const styleReadyRef = useRef(false);
   const markerRef = useRef<maplibregl.Marker | null>(null);
   const requestTimeoutRef = useRef<number | null>(null);
   const queueWeatherRequestRef = useRef<() => void>(() => undefined);
@@ -787,7 +789,15 @@ export default function MapView({
     );
 
     map.on("style.load", () => {
+      styleReadyRef.current = true;
       captureSatelliteBasemapLayers(map);
+      updateRouteLayer(
+        map,
+        routeCoordinatesRef.current,
+        focusedRouteSampleRef.current,
+        routeConditionsRef.current,
+        routeConditionModeRef.current
+      );
       configurePlanetAndTerrain(map);
       renderVisualizations(
         map,
@@ -803,13 +813,6 @@ export default function MapView({
       );
       setForecastCoverage(map, weatherGridRef.current);
       syncSatelliteView();
-      updateRouteLayer(
-        map,
-        routeCoordinatesRef.current,
-        focusedRouteSampleRef.current,
-        routeConditionsRef.current,
-        routeConditionModeRef.current
-      );
       queueWeatherRequest();
     });
 
@@ -888,6 +891,7 @@ export default function MapView({
       removeRouteLayer(map);
       map.remove();
       mapRef.current = null;
+      styleReadyRef.current = false;
       queueWeatherRequestRef.current = () => undefined;
       syncSatelliteViewRef.current = () => undefined;
     };
@@ -905,7 +909,59 @@ export default function MapView({
         ? terrainRoute.samples
         : routeGeometry?.coordinates ?? [];
     routeCoordinatesRef.current = coordinates;
-    if (!map?.isStyleLoaded()) return;
+
+    // Camera fitting does not depend on style readiness. Keeping it outside the
+    // route-layer guard ensures a route imported during initial style loading is
+    // still fitted exactly once.
+    if (!routeGeometry) {
+      fittedRouteIdRef.current = null;
+    } else if (map && fittedRouteIdRef.current !== routeGeometry.id) {
+      fittedRouteIdRef.current = routeGeometry.id;
+      const bounds = getRouteBounds(routeGeometry.coordinates);
+      const center = map.getCenter();
+      const routeCenter = (bounds.west + bounds.east) / 2;
+      const longitudeDelta = Math.abs(
+        ((routeCenter - center.lng + 540) % 360) - 180
+      );
+      const mapBounds = mapContainer.current?.getBoundingClientRect();
+      const shell = mapContainer.current?.closest<HTMLElement>(".desktop-shell-active");
+      const workspace = panelCollapsed
+        ? null
+        : shell?.querySelector<HTMLElement>(".desktop-workspace") ?? null;
+      const configuredGutter = shell
+        ? Number.parseFloat(getComputedStyle(shell).getPropertyValue("--workspace-gutter"))
+        : Number.NaN;
+      const padding = shell
+        ? calculateRouteFitPadding({
+            mapLeftPx: mapBounds?.left ?? 0,
+            workspaceRightPx: workspace?.getBoundingClientRect().right ?? null,
+            workspaceGutterPx: Number.isFinite(configuredGutter)
+              ? configuredGutter
+              : DEFAULT_WORKSPACE_GUTTER_PX,
+          })
+        : {
+            top: 70,
+            right: 70,
+            bottom: 70,
+            left: panelCollapsed ? 70 : 410,
+          };
+      map.fitBounds(
+        [
+          [bounds.west, bounds.south],
+          [bounds.east, bounds.north],
+        ],
+        {
+          padding,
+          maxZoom: 14,
+          bearing: map.getBearing(),
+          pitch: map.getPitch(),
+          duration: longitudeDelta > 70 ? 0 : 750,
+          essential: true,
+        }
+      );
+    }
+
+    if (!map || !styleReadyRef.current) return;
     updateRouteLayer(
       map,
       coordinates,
@@ -914,37 +970,6 @@ export default function MapView({
       routeConditionMode
     );
     placeForecastOverlaysInOrder(map);
-    if (!routeGeometry) {
-      fittedRouteIdRef.current = null;
-      return;
-    }
-    if (fittedRouteIdRef.current === routeGeometry.id) return;
-    fittedRouteIdRef.current = routeGeometry.id;
-    const bounds = getRouteBounds(routeGeometry.coordinates);
-    const center = map.getCenter();
-    const routeCenter = (bounds.west + bounds.east) / 2;
-    const longitudeDelta = Math.abs(
-      ((routeCenter - center.lng + 540) % 360) - 180
-    );
-    map.fitBounds(
-      [
-        [bounds.west, bounds.south],
-        [bounds.east, bounds.north],
-      ],
-      {
-        padding: {
-          top: 70,
-          right: 70,
-          bottom: 70,
-          left: panelCollapsed ? 70 : 410,
-        },
-        maxZoom: 14,
-        bearing: map.getBearing(),
-        pitch: map.getPitch(),
-        duration: longitudeDelta > 70 ? 0 : 750,
-        essential: true,
-      }
-    );
   }, [
     focusedRouteSampleIndex,
     panelCollapsed,

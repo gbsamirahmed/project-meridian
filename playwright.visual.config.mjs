@@ -32,6 +32,7 @@ export default defineConfig({
     timeout: 120_000,
     stdout: "pipe",
     stderr: "pipe",
+    env: { ...process.env, VITE_MAPTILER_KEY: "visual-test-key" },
   },
   projects: [
     { name: "desktop-1920x1080", use: { viewport: { width: 1920, height: 1080 } } },

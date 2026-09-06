@@ -217,6 +217,7 @@ function ensureRouteLayers(map: maplibregl.Map): void {
   }
 }
 
+// Call only after MapLibre has emitted style.load; source loading may still continue.
 export function updateRouteLayer(
   map: maplibregl.Map,
   coordinates: RouteCoordinate[],
@@ -224,7 +225,6 @@ export function updateRouteLayer(
   conditions: RouteConditions | null = null,
   mode: RouteConditionMode = "none"
 ): void {
-  if (!map.isStyleLoaded()) return;
   ensureRouteLayers(map);
   const signature = [coordinates, conditions, mode];
   const previousSignature = routeSignatureByMap.get(map);
