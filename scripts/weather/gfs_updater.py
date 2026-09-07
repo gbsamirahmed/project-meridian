@@ -71,13 +71,16 @@ def iso(value: datetime) -> str:
     return value.isoformat().replace("+00:00", "Z")
 
 
-def read_catalogue(root: Path) -> dict | None:
+def read_catalogue(root: Path, require_complete: bool = True) -> dict | None:
     try:
         value = json.loads((root / "latest.json").read_text(encoding="utf-8"))
+        field_ids = set(value["fields"])
         if (value["schemaVersion"] != 2 or value["model"] != "NOAA GFS" or
                 value["product"] != "pgrb2.0p25" or not isinstance(value["generatedAt"], str) or
-                set(value["fields"]) != set(FIELD_PATHS)):
-            raise ValueError("Expected all ten fields")
+                not field_ids or not field_ids.issubset(FIELD_PATHS)):
+            raise ValueError("Invalid catalogue identity or fields")
+        if require_complete and field_ids != set(FIELD_PATHS):
+            raise ValueError("Expected all required fields")
         times = {entry["runTime"] for entry in value["fields"].values()}
         if len(times) != 1:
             raise ValueError("Catalogue mixes runs")
@@ -85,7 +88,8 @@ def read_catalogue(root: Path) -> dict | None:
         name = date.strftime("%Y%m%dT%HZ")
         if date.tzinfo is None or date.utcoffset() != timedelta(0) or run_time(name) != date:
             raise ValueError("Invalid GFS run time")
-        for key, subdir in FIELD_PATHS.items():
+        for key in field_ids:
+            subdir = FIELD_PATHS[key]
             entry = value["fields"][key]
             expected_path = "/".join(part for part in (name, subdir, "manifest.json") if part)
             if (entry["manifest"] != expected_path or entry["timestepCount"] != 24 or
@@ -190,6 +194,8 @@ def validate_run(directory: Path, verify_png: bool = True) -> dict:
     fields = {}
     for field_id, subdir in FIELD_PATHS.items():
         field_directory = directory / subdir
+        if not field_directory.is_dir():
+            raise ValueError(f"Immutable run is missing required {field_id} data")
         if subdir and any(entry.name not in {"tiles", "manifest.json", "validation.json", "source"}
                           for entry in field_directory.iterdir()):
             raise ValueError(f"Immutable {field_id} contains unrecognised content")
@@ -198,6 +204,39 @@ def validate_run(directory: Path, verify_png: bool = True) -> dict:
         fields[field_id] = core.field_catalog_entry(manifest, relative)
     return {"schemaVersion": 2, "model": "NOAA GFS", "product": "pgrb2.0p25",
             "generatedAt": iso(datetime.now(timezone.utc)), "fields": fields}
+
+
+def incompatible_immutable_floor(root: Path) -> datetime | None:
+    """Newest occupied immutable run that cannot contain the required field schema."""
+    result = None
+    result_missing = []
+    occupied_count = 0
+    for directory in root.iterdir():
+        if (not directory.is_dir() or not RUN_NAME.fullmatch(directory.name) or
+                (directory / ".meridian-publishing").exists() or not any(directory.iterdir())):
+            continue
+        missing = []
+        present = 0
+        for field_id, subdir in FIELD_PATHS.items():
+            field_directory = directory / subdir
+            has_layout = (field_directory.is_dir() and
+                          (field_directory / "manifest.json").is_file() and
+                          (field_directory / "validation.json").is_file() and
+                          (field_directory / "tiles").is_dir())
+            if has_layout:
+                present += 1
+            else:
+                missing.append(field_id)
+        if present and missing:
+            occupied_count += 1
+            date = run_time(directory.name)
+            if result is None or date > result:
+                result = date
+                result_missing = missing
+    if result is not None:
+        log(f"Preserving {occupied_count} occupied previous-schema run(s); discovery advances beyond "
+            f"{result:%Y%m%dT%HZ}, which is missing: {', '.join(result_missing)}")
+    return result
 
 
 def remove_generated(path: Path, root: Path) -> None:
@@ -366,14 +405,19 @@ def update_once(args: argparse.Namespace) -> dict:
     root = args.output_root.resolve()
     started = time.monotonic()
     with update_lock(root):
-        current = read_catalogue(root)
+        current = read_catalogue(root, require_complete=False)
+        current_is_complete = bool(current and set(current["fields"]) == set(FIELD_PATHS))
+        if current and not current_is_complete:
+            log(f"Published catalogue has {len(current['fields'])} of {len(FIELD_PATHS)} required fields; retaining it until a newer complete run is ready")
         current_time = datetime.fromisoformat(next(iter(current["fields"].values()))["runTime"].replace("Z", "+00:00")) if current else None
+        occupied_floor = incompatible_immutable_floor(root)
+        discovery_floor = max(value for value in (current_time, occupied_floor) if value is not None) if (current_time or occupied_floor) else None
         core.fetch_text.cache_clear()  # Incomplete inventories must be re-probed next hour.
         options = argparse.Namespace(**{**vars(args), "require_all_fields": True})
-        resolution = core.resolve_run(options, HOURS, newer_than=current_time)
+        resolution = core.resolve_run(options, HOURS, newer_than=discovery_floor)
         if resolution is None:
             log(f"No newer usable run; retaining {iso(current_time) if current_time else 'existing data'}")
-            if not args.check_only:
+            if not args.check_only and current_is_complete:
                 try:
                     current_id = current_time.strftime("%Y%m%dT%HZ") if current_time else ""
                     if current_id:
@@ -383,7 +427,7 @@ def update_once(args: argparse.Namespace) -> dict:
                     log(f"Cleanup deferred; live forecast remains valid: {error}")
             return {"generated": False, "run": iso(current_time) if current_time else None}
         name = resolution.run_time.strftime("%Y%m%dT%HZ")
-        log(f"Newest usable ten-field candidate: {name}")
+        log(f"Newest usable {len(FIELD_PATHS)}-field candidate: {name}")
         if args.check_only:
             return {"generated": False, "candidate": name}
         destination = checked_path(root / name, root)

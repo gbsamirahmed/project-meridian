@@ -13,6 +13,7 @@ import gfs_weather_builder as core
 
 OLD = datetime(2026, 1, 1, tzinfo=timezone.utc)
 NEW = datetime(2026, 1, 1, 6, tzinfo=timezone.utc)
+LATER = datetime(2026, 1, 1, 12, tzinfo=timezone.utc)
 
 
 def iso(value):
@@ -37,6 +38,12 @@ def write_catalogue(root, value):
     (root / "latest.json").write_text(json.dumps(catalogue(value)), encoding="utf-8")
 
 
+def write_legacy_catalogue(root, value):
+    result = catalogue(value)
+    result["fields"].pop("pressure_msl")
+    (root / "latest.json").write_text(json.dumps(result), encoding="utf-8")
+
+
 def arguments(root):
     return argparse.Namespace(output_root=root, hours="1-24", run=None, candidate_count=12,
         reference_time=None, keep_downloads=False, watch=False, poll_minutes=60,
@@ -50,9 +57,12 @@ def resolution(value):
                            checked_candidates=())
 
 
-def create_recognised_run(root, value):
+def create_recognised_run(root, value, field_ids=None):
     directory = root / value.strftime("%Y%m%dT%HZ")
+    selected = set(field_ids or updater.FIELD_PATHS)
     for field_id, subdir in updater.FIELD_PATHS.items():
+        if field_id not in selected:
+            continue
         field_dir = directory / subdir
         field_dir.mkdir(parents=True, exist_ok=True)
         manifest = {"model": "NOAA GFS", "product": "pgrb2.0p25", "runTime": iso(value),
@@ -76,6 +86,71 @@ class DiscoveryTests(unittest.TestCase):
 
 
 class UpdateTests(unittest.TestCase):
+    def test_source_cache_only_directory_does_not_advance_schema_floor(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            source_only = root / NEW.strftime("%Y%m%dT%HZ") / "source"
+            source_only.mkdir(parents=True); (source_only / "cached.grib2").write_bytes(b"cache")
+            self.assertIsNone(updater.incompatible_immutable_floor(root))
+
+    def test_previous_schema_catalogue_skips_its_occupied_immutable_run(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            legacy_fields = set(updater.FIELD_PATHS) - {"pressure_msl"}
+            old_run = create_recognised_run(root, NEW, legacy_fields)
+            write_legacy_catalogue(root, OLD)
+            before = (root / "latest.json").read_bytes()
+            with patch.object(core, "resolve_run", return_value=None) as discover, \
+                 patch.object(core, "build_resolved_run") as build, \
+                 patch.object(updater, "prune_runs") as prune:
+                result = updater.update_once(arguments(root))
+            self.assertEqual(discover.call_args.kwargs["newer_than"], NEW)
+            self.assertFalse(result["generated"]); build.assert_not_called(); prune.assert_not_called()
+            self.assertEqual((root / "latest.json").read_bytes(), before)
+            self.assertFalse((old_run / "pressure-msl").exists())
+
+    def test_complete_existing_ten_field_candidate_is_reused(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary); write_legacy_catalogue(root, OLD)
+            candidate = create_recognised_run(root, NEW)
+            with patch.object(core, "resolve_run", return_value=resolution(NEW)), \
+                 patch.object(core, "build_resolved_run") as build, \
+                 patch.object(updater, "validate_run", return_value=catalogue(NEW)), \
+                 patch.object(updater, "prune_runs", return_value=[]):
+                result = updater.update_once(arguments(root))
+            build.assert_not_called(); self.assertFalse(result["generated"])
+            self.assertTrue((candidate / "pressure-msl").is_dir())
+            self.assertEqual(set(updater.read_catalogue(root)["fields"]), set(updater.FIELD_PATHS))
+
+    def test_failed_new_run_build_preserves_previous_schema_catalogue(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            create_recognised_run(root, NEW, set(updater.FIELD_PATHS) - {"pressure_msl"})
+            write_legacy_catalogue(root, OLD); before = (root / "latest.json").read_bytes()
+            with patch.object(core, "resolve_run", return_value=resolution(LATER)) as discover, \
+                 patch.object(core, "build_resolved_run", side_effect=RuntimeError("pressure failed")):
+                with self.assertRaisesRegex(RuntimeError, "pressure failed"):
+                    updater.update_once(arguments(root))
+            self.assertEqual(discover.call_args.kwargs["newer_than"], NEW)
+            self.assertEqual((root / "latest.json").read_bytes(), before)
+
+    def test_subsequent_new_run_can_publish_complete_required_schema(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            old_run = create_recognised_run(root, NEW, set(updater.FIELD_PATHS) - {"pressure_msl"})
+            write_legacy_catalogue(root, OLD); before = (root / "latest.json").read_bytes()
+            def build(args, _resolution, _hours):
+                create_recognised_run(args.output_root, LATER)
+            with patch.object(core, "resolve_run", return_value=resolution(LATER)) as discover, \
+                 patch.object(core, "build_resolved_run", side_effect=build), \
+                 patch.object(updater, "validate_run", return_value=catalogue(LATER)), \
+                 patch.object(updater, "prune_runs", return_value=[]):
+                result = updater.update_once(arguments(root))
+            self.assertEqual(discover.call_args.kwargs["newer_than"], NEW)
+            self.assertTrue(result["generated"]); self.assertNotEqual((root / "latest.json").read_bytes(), before)
+            self.assertEqual(set(updater.read_catalogue(root)["fields"]), set(updater.FIELD_PATHS))
+            self.assertTrue(old_run.exists())
+
     def test_no_rebuild_when_catalogue_is_current(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary); write_catalogue(root, OLD)
@@ -171,7 +246,17 @@ class RunValidationTests(unittest.TestCase):
             (root / "latest.json").write_text(json.dumps(value), encoding="utf-8")
             with patch.object(updater, "log") as log:
                 self.assertIsNone(updater.read_catalogue(root))
-            self.assertIn("Expected all ten fields", log.call_args.args[0])
+            self.assertIn("Expected all required fields", log.call_args.args[0])
+
+    def test_missing_required_field_directory_is_an_explicit_schema_error(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            directory = create_recognised_run(
+                Path(temporary), OLD, set(updater.FIELD_PATHS) - {"pressure_msl"}
+            )
+            with patch.object(updater, "validate_field", return_value={}), \
+                 patch.object(core, "field_catalog_entry", return_value={}):
+                with self.assertRaisesRegex(ValueError, "missing required pressure_msl"):
+                    updater.validate_run(directory, verify_png=False)
 
     def test_unrecognised_content_cannot_be_published(self):
         with tempfile.TemporaryDirectory() as temporary:
@@ -209,6 +294,22 @@ class PromotionTests(unittest.TestCase):
 
 
 class RecoveryAndRetentionTests(unittest.TestCase):
+    def test_interrupted_staging_discards_partial_pressure_only(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            work = Path(temporary) / ".20260101T06Z-update-building"; work.mkdir()
+            (work / ".meridian-update").write_text("20260101T06Z")
+            run = work / "20260101T06Z"
+            pressure = run / "pressure-msl"; (pressure / "tiles").mkdir(parents=True)
+            (pressure / "manifest.json").write_text("{}")
+            def validate(_directory, field_id, _date, verify_png=True):
+                if field_id == "pressure_msl":
+                    raise ValueError("partial pressure")
+                return {}
+            with patch.object(updater, "validate_field", side_effect=validate):
+                updater.repair_staging(work, "20260101T06Z")
+            self.assertFalse(pressure.exists())
+            self.assertTrue((work / ".meridian-update").exists())
+
     def test_interrupted_staging_discards_only_incomplete_generated_field(self):
         with tempfile.TemporaryDirectory() as temporary:
             work = Path(temporary) / ".20260101T06Z-update-building"; work.mkdir()
