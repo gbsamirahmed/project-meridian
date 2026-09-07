@@ -17,6 +17,7 @@ const FIELD_PATHS: Record<string, string> = {
   cloud_cover: "cloud-cover",
   wind_10m: "wind-10m",
   temperature_2m: "temperature-2m",
+  pressure_msl: "pressure-msl",
   gust_surface: "gust-surface",
   visibility_surface: "visibility-surface",
   freezing_level: "freezing-level",
@@ -54,7 +55,7 @@ export function completeCatalogueRunTime(catalog: GlobalWeatherCatalog): number 
     fields.length !== GLOBAL_WEATHER_FIELD_IDS.length ||
     !GLOBAL_WEATHER_FIELD_IDS.every((fieldId) => catalog.fields[fieldId])
   ) {
-    throw new Error("Weather catalogue does not contain all nine fields");
+    throw new Error("Weather catalogue does not contain all ten fields");
   }
   let runTime: number | null = null;
   for (const fieldId of GLOBAL_WEATHER_FIELD_IDS) {
@@ -106,7 +107,7 @@ const defaultDependencies: CatalogueRefreshDependencies = {
         (fieldId) => loaded.statuses[fieldId] === "ready" && loaded.sources[fieldId]
       )
     ) {
-      throw new Error("New weather run did not load all nine validated manifests");
+      throw new Error("New weather run did not load all ten validated manifests");
     }
     return { catalog: loaded.catalog, sources: loaded.sources, statuses: loaded.statuses };
   },

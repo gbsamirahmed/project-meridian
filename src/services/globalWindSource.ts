@@ -12,7 +12,7 @@ import type {
   VectorWeatherFieldSource,
   VectorWeatherTimestep,
 } from "../types/globalWeather";
-import type { MutableWindVector } from "./weatherInterpolation";
+import type { MutableWindVector } from "./windVector";
 import type { WindVectorField } from "./windField";
 
 const MERCATOR_LATITUDE_LIMIT = 85.05112878;

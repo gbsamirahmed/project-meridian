@@ -35,8 +35,8 @@ Cloud ceiling is different: the retained GFS diagnostic is **above the model
 surface**, with the ~20,000 no-ceiling sentinel already removed before numeric
 interpolation. [NOAA UPP ceiling documentation](https://noaa-emc.github.io/UPP/upp_v11.0.0/AVIATION_8f.html)
 explains that reference and sentinel. No model-surface/orography field is in the
-current nine-field catalogue. The [official GFS inventory](https://www.nco.ncep.noaa.gov/pmb/products/gfs/gfs.t00z.pgrb2.0p25.f003.shtml)
-offers surface height, but a tenth
+current ten-field catalogue. The [official GFS inventory](https://www.nco.ncep.noaa.gov/pmb/products/gfs/gfs.t00z.pgrb2.0p25.f003.shtml)
+offers surface height, but an eleventh
 field is unnecessary for this milestone: there is no trustworthy absolute
 ceiling altitude in the current sampled contract. Ceiling stays raw, explicitly
 surface-relative, and is not plotted against terrain. No cloud intersection or

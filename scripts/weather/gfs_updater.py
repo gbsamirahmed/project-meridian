@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 from contextlib import contextmanager
 from datetime import datetime, timedelta, timezone
+import hashlib
 import json
 import math
 import os
@@ -11,6 +12,7 @@ from pathlib import Path
 import re
 import shutil
 import signal
+import tempfile
 import time
 
 from PIL import Image
@@ -19,7 +21,8 @@ from gfs_atmospheric import FIELDS, encoding
 
 HOURS = list(range(1, 25))
 FIELD_PATHS = {"precipitation": "", "cloud_cover": "cloud-cover", "wind_10m": "wind-10m",
-               "temperature_2m": "temperature-2m", **{f.id: f.id.replace("_", "-") for f in FIELDS}}
+               "temperature_2m": "temperature-2m", "pressure_msl": "pressure-msl",
+               **{f.id: f.id.replace("_", "-") for f in FIELDS}}
 RUN_NAME = re.compile(r"[0-9]{8}T(?:00|06|12|18)Z")
 EXPECTED_TILES = 24 * sum(4**z for z in range(4))
 
@@ -30,9 +33,11 @@ def log(message: str) -> None:
 
 @contextmanager
 def update_lock(root: Path):
-    """Kernel-held lock: process exit releases it, even after a forced termination."""
+    """Kernel-held lock outside public assets; process exit always releases it."""
     root.mkdir(parents=True, exist_ok=True)
-    with (root / ".updater.lock").open("a+b") as handle:
+    identity = hashlib.sha256(str(root.resolve()).casefold().encode("utf-8")).hexdigest()[:16]
+    lock_path = Path(tempfile.gettempdir()) / f"meridian-gfs-updater-{identity}.lock"
+    with lock_path.open("a+b") as handle:
         if handle.tell() == 0:
             handle.write(b"0")
             handle.flush()
@@ -72,7 +77,7 @@ def read_catalogue(root: Path) -> dict | None:
         if (value["schemaVersion"] != 2 or value["model"] != "NOAA GFS" or
                 value["product"] != "pgrb2.0p25" or not isinstance(value["generatedAt"], str) or
                 set(value["fields"]) != set(FIELD_PATHS)):
-            raise ValueError("Expected all nine fields")
+            raise ValueError("Expected all ten fields")
         times = {entry["runTime"] for entry in value["fields"].values()}
         if len(times) != 1:
             raise ValueError("Catalogue mixes runs")
@@ -124,6 +129,7 @@ def validate_field(directory: Path, field_id: str, date: datetime, verify_png: b
         "precipitation": ("APCP", "surface", "mm", "interval-total", "uint16-rg", 0.01, 0),
         "cloud_cover": ("TCDC", "entire atmosphere", "percent", "instantaneous", "uint8-r", 1, 0),
         "temperature_2m": ("TMP", "2 m above ground", "celsius", "instantaneous", "uint16-rg", 0.1, -150),
+        "pressure_msl": ("PRMSL", "mean sea level", "hPa", "instantaneous", "uint16-rg", 0.1, 800),
     }
     for atmospheric in FIELDS:
         scale, offset, _ = encoding(atmospheric)
@@ -145,6 +151,8 @@ def validate_field(directory: Path, field_id: str, date: datetime, verify_png: b
         for atmospheric in FIELDS:
             if field_id == atmospheric.id and field["verticalReference"] != atmospheric.vertical_reference:
                 raise ValueError("Invalid vertical reference")
+        if field_id == "pressure_msl" and field.get("verticalReference") != "mean-sea-level":
+            raise ValueError("Invalid pressure vertical reference")
     summary = validation["summary"]
     if summary.get("tileFileCount", summary.get("tileCount")) != EXPECTED_TILES:
         raise ValueError(f"{field_id} has no complete validation record")
@@ -375,7 +383,7 @@ def update_once(args: argparse.Namespace) -> dict:
                     log(f"Cleanup deferred; live forecast remains valid: {error}")
             return {"generated": False, "run": iso(current_time) if current_time else None}
         name = resolution.run_time.strftime("%Y%m%dT%HZ")
-        log(f"Newest usable nine-field candidate: {name}")
+        log(f"Newest usable ten-field candidate: {name}")
         if args.check_only:
             return {"generated": False, "candidate": name}
         destination = checked_path(root / name, root)

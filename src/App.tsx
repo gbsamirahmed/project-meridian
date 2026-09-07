@@ -44,12 +44,6 @@ import {
   desktopWorkspaceReducer,
   INITIAL_DESKTOP_WORKSPACE_STATE,
 } from "./services/desktopWorkspaceState";
-import {
-  getWeatherGrid,
-  getWeatherGridRequestKey,
-  WeatherGridHttpError,
-} from "./services/gridWeatherService";
-
 import type { SelectedLocation } from "./types/location";
 import type { WeatherData } from "./types/weather";
 import type { Place } from "./types/place";
@@ -60,11 +54,6 @@ import type {
   GlobalWeatherStatusRegistry,
   GlobalWeatherFieldSource,
 } from "./types/globalWeather";
-import type {
-  WeatherGrid,
-  WeatherGridRequest,
-  WeatherGridStatus,
-} from "./types/weatherGrid";
 import type {
   JourneyPlan,
   JourneyProfile,
@@ -122,13 +111,6 @@ function App() {
       pressureIsobars: false,
       windFlow: false,
     });
-  const [weatherGrid, setWeatherGrid] =
-    useState<WeatherGrid | null>(null);
-  const [weatherGridHistory, setWeatherGridHistory] = useState<
-    WeatherGrid[]
-  >([]);
-  const [weatherGridStatus, setWeatherGridStatus] =
-    useState<WeatherGridStatus>("idle");
   const [forecastHour, setForecastHour] = useState(0);
   const [isForecastPlaying, setIsForecastPlaying] = useState(false);
   const [globalWeatherCatalog, setGlobalWeatherCatalog] =
@@ -145,6 +127,7 @@ function App() {
       cloud_cover: "loading",
       wind_10m: "loading",
       temperature_2m: "loading",
+      pressure_msl: "loading",
       gust_surface: "loading",
       visibility_surface: "loading",
       freezing_level: "loading",
@@ -191,18 +174,9 @@ function App() {
   const [routeConditionMode, setRouteConditionMode] =
     useState<RouteConditionMode>("none");
 
-  const weatherGridAbortRef = useRef<AbortController | null>(null);
   const locationNameAbortRef = useRef<AbortController | null>(null);
   const locationWeatherAbortRef = useRef<AbortController | null>(null);
   const searchAbortRef = useRef<AbortController | null>(null);
-  const weatherGridRequestIdRef = useRef(0);
-  const activeWeatherRequestKeyRef = useRef<string | null>(null);
-  const latestWeatherRequestRef = useRef<WeatherGridRequest | null>(null);
-  const weatherGridRef = useRef<WeatherGrid | null>(null);
-  const weatherGridRetryTimerRef = useRef<number | null>(null);
-  const weatherGridRetryCountRef = useRef(0);
-  const weatherGridRetryKeyRef = useRef<string | null>(null);
-  const weatherGridCooldownUntilRef = useRef(0);
   const hasInitialisedGfsTimelineRef = useRef(false);
   const activeGlobalValidTimeRef = useRef<string | null>(null);
   const mapOverlaysRef = useRef(mapOverlays);
@@ -210,9 +184,6 @@ function App() {
   const routeGenerationRef = useRef(0);
   const routeConditionAbortRef = useRef<AbortController | null>(null);
   const routeConditionGenerationRef = useRef(0);
-  const runWeatherGridRequestRef = useRef<
-    (request: WeatherGridRequest) => void
-  >(() => undefined);
 
   useEffect(() => {
     const media = window.matchMedia("(min-width: 701px)");
@@ -243,7 +214,8 @@ function App() {
         mapOverlaysRef.current.precipitation ||
         mapOverlaysRef.current.clouds ||
         mapOverlaysRef.current.windFlow ||
-        mapOverlaysRef.current.temperatureContours;
+        mapOverlaysRef.current.temperatureContours ||
+        mapOverlaysRef.current.pressureIsobars;
       if (globalOverlayActive && result.sources.precipitation) {
         const times = result.sources.precipitation.manifest.timesteps.map(
           (step) => step.validTime
@@ -305,16 +277,18 @@ function App() {
   const globalCloudSource = globalWeatherSources.cloud_cover ?? null;
   const globalWindSource = globalWeatherSources.wind_10m ?? null;
   const globalTemperatureSource = globalWeatherSources.temperature_2m ?? null;
+  const globalPressureSource = globalWeatherSources.pressure_msl ?? null;
   const activeGlobalSources = [
     mapOverlays.precipitation ? globalPrecipitationSource : null,
     mapOverlays.clouds ? globalCloudSource : null,
     mapOverlays.windFlow ? globalWindSource : null,
     mapOverlays.temperatureContours ? globalTemperatureSource : null,
+    mapOverlays.pressureIsobars ? globalPressureSource : null,
   ].filter((source): source is GlobalWeatherFieldSource => source !== null);
   const globalForecastTimes = intersectScalarValidTimes(activeGlobalSources);
   const forecastTimes = activeGlobalSources.length
     ? globalForecastTimes
-    : weather?.forecastTimes ?? weatherGrid?.times ?? [];
+    : weather?.forecastTimes ?? [];
   const forecastHours = activeGlobalSources.length
     ? forecastTimes.map(
         (validTime) =>
@@ -330,11 +304,6 @@ function App() {
   const activeGlobalValidTime = activeGlobalSources.length
     ? forecastTimes[activeForecastHour] ?? null
     : null;
-  const localForecastHour =
-    activeGlobalValidTime && weatherGrid?.times.length
-      ? closestForecastIndex(weatherGrid.times, activeGlobalValidTime)
-      : activeForecastHour;
-
   useEffect(() => {
     if (!desktopLayout || !isForecastPlaying || forecastTimes.length < 2) return;
     const interval = window.setInterval(() => {
@@ -409,15 +378,11 @@ function App() {
 
   useEffect(() => {
     return () => {
-      weatherGridAbortRef.current?.abort();
       locationNameAbortRef.current?.abort();
       locationWeatherAbortRef.current?.abort();
       searchAbortRef.current?.abort();
       routeAbortRef.current?.abort();
       routeConditionAbortRef.current?.abort();
-      if (weatherGridRetryTimerRef.current !== null) {
-        window.clearTimeout(weatherGridRetryTimerRef.current);
-      }
     };
   }, []);
 
@@ -517,119 +482,6 @@ function App() {
     journeyResult.schedule,
     terrainRoute,
   ]);
-
-  const scheduleWeatherGridRetry = useCallback((delayMs: number) => {
-    if (weatherGridRetryTimerRef.current !== null) {
-      window.clearTimeout(weatherGridRetryTimerRef.current);
-    }
-
-    weatherGridCooldownUntilRef.current = Date.now() + delayMs;
-    weatherGridRetryTimerRef.current = window.setTimeout(() => {
-      weatherGridRetryTimerRef.current = null;
-      weatherGridCooldownUntilRef.current = 0;
-
-      const latestRequest = latestWeatherRequestRef.current;
-      if (latestRequest) runWeatherGridRequestRef.current(latestRequest);
-    }, delayMs);
-  }, []);
-
-  const runWeatherGridRequest = useCallback(
-    (request: WeatherGridRequest) => {
-      const requestKey = getWeatherGridRequestKey(request);
-      latestWeatherRequestRef.current = request;
-
-      if (activeWeatherRequestKeyRef.current === requestKey) return;
-
-      if (weatherGridRetryKeyRef.current !== requestKey) {
-        weatherGridRetryKeyRef.current = requestKey;
-        weatherGridRetryCountRef.current = 0;
-      }
-
-      const cooldownRemaining =
-        weatherGridCooldownUntilRef.current - Date.now();
-
-      if (cooldownRemaining > 0) {
-        setWeatherGridStatus("rate-limited");
-        scheduleWeatherGridRetry(cooldownRemaining);
-        return;
-      }
-
-      weatherGridAbortRef.current?.abort();
-
-      const controller = new AbortController();
-      const requestId = weatherGridRequestIdRef.current + 1;
-
-      weatherGridAbortRef.current = controller;
-      weatherGridRequestIdRef.current = requestId;
-      activeWeatherRequestKeyRef.current = requestKey;
-      setWeatherGridStatus(weatherGridRef.current ? "refreshing" : "loading");
-
-      getWeatherGrid(request, controller.signal)
-        .then((nextGrid) => {
-          if (weatherGridRequestIdRef.current !== requestId) return;
-
-          weatherGridRef.current = nextGrid;
-          setWeatherGrid(nextGrid);
-          setWeatherGridHistory((current) => [
-            nextGrid,
-            ...current.filter(
-              (grid) =>
-                grid.fetchedAt !== nextGrid.fetchedAt ||
-                grid.bounds.west !== nextGrid.bounds.west ||
-                grid.bounds.south !== nextGrid.bounds.south
-            ),
-          ].slice(0, 8));
-          setWeatherGridStatus("ready");
-          weatherGridRetryCountRef.current = 0;
-          weatherGridCooldownUntilRef.current = 0;
-        })
-        .catch((error: unknown) => {
-          if (controller.signal.aborted) return;
-          if (weatherGridRequestIdRef.current !== requestId) return;
-
-          const retryCount = weatherGridRetryCountRef.current + 1;
-          weatherGridRetryCountRef.current = retryCount;
-
-          if (error instanceof WeatherGridHttpError && error.status === 429) {
-            setWeatherGridStatus("rate-limited");
-
-            const delayMs = Math.min(
-              60_000,
-              Math.max(error.retryAfterMs ?? 0, 8_000 * 2 ** (retryCount - 1))
-            );
-
-            if (retryCount <= 3) scheduleWeatherGridRetry(delayMs);
-            else weatherGridCooldownUntilRef.current = Date.now() + delayMs;
-            return;
-          }
-
-          setWeatherGridStatus("error");
-
-          if (retryCount <= 1) {
-            scheduleWeatherGridRetry(6_000);
-          } else {
-            weatherGridCooldownUntilRef.current = Date.now() + 10_000;
-          }
-        })
-        .finally(() => {
-          if (weatherGridRequestIdRef.current === requestId) {
-            activeWeatherRequestKeyRef.current = null;
-          }
-        });
-    },
-    [scheduleWeatherGridRetry]
-  );
-
-  useEffect(() => {
-    runWeatherGridRequestRef.current = runWeatherGridRequest;
-  }, [runWeatherGridRequest]);
-
-  const handleWeatherGridRequest = useCallback(
-    (request: WeatherGridRequest) => {
-      runWeatherGridRequestRef.current(request);
-    },
-    []
-  );
 
   const handleLocationSelect = useCallback((location: SelectedLocation) => {
     locationWeatherAbortRef.current?.abort();
@@ -738,7 +590,9 @@ function App() {
             : overlay === "windFlow"
               ? globalWindSource
               : overlay === "temperatureContours"
-                ? globalTemperatureSource
+              ? globalTemperatureSource
+              : overlay === "pressureIsobars"
+                ? globalPressureSource
             : null;
       if (enabled && nextSource && !hasInitialisedGfsTimelineRef.current) {
         const firstFutureIndex = nextSource.manifest.timesteps.findIndex(
@@ -757,6 +611,7 @@ function App() {
       globalPrecipitationSource,
       globalTemperatureSource,
       globalWindSource,
+      globalPressureSource,
     ]
   );
   const activeRouteConditions = journeyResult.schedule ? routeConditions : null;
@@ -797,16 +652,13 @@ function App() {
         selectedLocation={selectedLocation}
         basemap={basemap}
         mapOverlays={mapOverlays}
-        weatherGrid={weatherGrid}
-        weatherGridHistory={weatherGridHistory}
-        weatherGridStatus={weatherGridStatus}
         globalPrecipitationSource={globalPrecipitationSource}
         globalCloudSource={globalCloudSource}
         globalWindSource={globalWindSource}
         globalTemperatureSource={globalTemperatureSource}
+        globalPressureSource={globalPressureSource}
         globalWeatherStatuses={globalWeatherStatuses}
         activeGlobalValidTime={activeGlobalValidTime}
-        localForecastHour={localForecastHour}
         routeGeometry={routeGeometry}
         terrainRoute={terrainRoute}
         focusedRouteSampleIndex={focusedRouteSampleIndex}
@@ -817,7 +669,6 @@ function App() {
         mapInspectorSession={workspace.mapInspectorSession}
         onLocationSelect={handleLocationSelect}
         onRouteSampleFocus={setPreviewRouteSampleIndex}
-        onWeatherGridRequest={handleWeatherGridRequest}
       />
 
       {desktopLayout ? (
@@ -851,11 +702,11 @@ function App() {
                     globalCloudSource={globalCloudSource}
                     globalWindSource={globalWindSource}
                     globalTemperatureSource={globalTemperatureSource}
+                    globalPressureSource={globalPressureSource}
                     globalWeatherStatuses={globalWeatherStatuses}
                     globalWeatherCatalog={globalWeatherCatalog}
                     catalogueCheck={catalogueCheck}
                     journeySchedule={journeyResult.schedule}
-                    weatherGridStatus={weatherGridStatus}
                     onForecastHourChange={setForecastHour}
                     isPlaying={isForecastPlaying}
                     onPlayingChange={setIsForecastPlaying}
@@ -944,12 +795,11 @@ function App() {
           basemap={basemap}
           mapOverlays={mapOverlays}
           forecastHour={activeForecastHour}
-          weatherGrid={weatherGrid}
-          weatherGridStatus={weatherGridStatus}
           globalPrecipitationSource={globalPrecipitationSource}
           globalCloudSource={globalCloudSource}
           globalWindSource={globalWindSource}
           globalTemperatureSource={globalTemperatureSource}
+          globalPressureSource={globalPressureSource}
           globalWeatherStatuses={globalWeatherStatuses}
           globalWeatherCatalog={globalWeatherCatalog}
           catalogueCheck={catalogueCheck}

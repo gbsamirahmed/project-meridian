@@ -2,13 +2,13 @@
 
 ## Status
 
-The provider-neutral architecture serves locally generated global NOAA GFS fields, not a production feed. Meridian resolves the latest verified usable 0.25° run, generates 24 hourly steps for nine fields, validates one coherent immutable run, and atomically publishes it behind `latest.json`. The client loads these fields through manifest clients, a bounded shared tile cache, geographic samplers, and persistent MapLibre renderers. Open-Meteo remains the active source for point weather plus regional map pressure. Continuous local updating and bounded retention are implemented; production scheduling, hosting, monitoring, and long-term model selection remain deployment/product decisions.
+The provider-neutral architecture serves locally generated global NOAA GFS fields, not a production feed. Meridian resolves the latest verified usable 0.25° run, generates 24 hourly steps for ten fields, validates one coherent immutable run, and atomically publishes it behind `latest.json`. The client loads these fields through manifest clients, a bounded shared tile cache, geographic samplers, and persistent MapLibre renderers. Open-Meteo remains the active source only for selected-location current conditions and point forecasts. Continuous local updating and bounded retention are implemented; production scheduling, hosting, monitoring, and long-term model selection remain deployment/product decisions.
 
 Generated timestamped run directories and `public/weather/gfs/latest.json` are local build products and are excluded from Git. A clean checkout remains runnable and reports missing GFS fields as unavailable until the documented generator publishes validated local datasets; it does not silently change field ownership.
 
-## Why the current field should be replaced
+## Why regional map fields were replaced
 
-The local Open-Meteo field was useful for proving terrain-draped weather surfaces, contours, wind animation, caching, and inspection. It is not an Earth-wide weather source. It samples a moving rectangle, interpolates only 81 points, and must be refreshed as the camera leaves that rectangle. Enlarging it would increase request cost without fixing geographic continuity, native model resolution, or stable zoom behaviour.
+The former Open-Meteo pressure field was useful for proving contours, caching, and inspection. It was not an Earth-wide map source: it sampled a moving rectangle, interpolated only 81 points, and refreshed as the camera left that rectangle. The completed migration anchors pressure to the same immutable global model grid and valid times as Meridian's other map fields.
 
 The next architecture should treat every weather variable as a time-indexed field anchored to a model grid. The browser should request only the tiles visible for a chosen model run and valid time.
 
@@ -55,6 +55,12 @@ U is positive eastward and V is positive northward. Speed and meteorological “
 Global map temperature uses the exact instantaneous GFS `TMP` record at `2 m above ground` for each forecast valid time. Preprocessing rejects surface/skin, pressure-level, other-height, maximum/minimum, averaged, and ambiguous records. ecCodes supplies Kelvin values, which are converted once to Celsius without lapse-rate correction, terrain downscaling, or other local modelling.
 
 Temperature tiles use unsigned 16-bit red/green encoding at 0.1 °C precision with an offset of −150 °C and code 65535 reserved for no-data. The declared valid range is −150…100 °C. Isotherms are generated from a padded, logically continuous viewport sampling domain after all required numeric tiles are prepared, so storage tile boundaries do not become contour boundaries.
+
+## Pressure semantics
+
+Global map pressure uses the exact instantaneous GFS `PRMSL` record at `mean sea level` for each +1…+24 forecast hour. ecCodes identifies the field as `prmsl`, `Pressure reduced to MSL`, in pascals on the regular 0.25° grid; preprocessing rejects surface pressure, pressure-level records, averages and mismatched run or valid times. Values are converted once to hectopascals for publication.
+
+Pressure tiles use unsigned 16-bit red/green encoding at 0.1 hPa precision, an 800 hPa offset, and code 65535 for no-data. The supported range is 800…1200 hPa. A bounded real f001 check on 2026-09-06 found 926.53…1070.02 hPa, safely inside that contract. Isobars are generated from one padded geographic matrix backed by shared immutable numeric tiles, use conventional hPa labels, preserve missing cells as gaps, and retain the prior complete geometry until replacement coverage is ready.
 
 ## Web tile representation
 
@@ -114,7 +120,7 @@ interface GlobalWeatherFieldSource {
 A shared tile store should fetch, decode, cache and sample tiles. Scalar and vector field adapters should expose geographic sampling without knowing which model supplied the values.
 
 - Precipitation and cloud surfaces colour scalar tiles.
-- Temperature contours build geometry from a padded continuous geographic sampling domain backed by prepared numeric tiles; pressure still uses the regional sampled field.
+- Temperature and pressure contours build geometry from padded continuous geographic sampling domains backed by prepared numeric tiles.
 - Wind particles sample U/V vector tiles.
 - The inspector samples the decoded tile covering the pointer and reports source, run and valid time.
 
@@ -122,11 +128,11 @@ Renderers should continue to own presentation only. Model download details, GRIB
 
 ## Transitional ownership
 
-Migration remains variable by variable. Precipitation, cloud, 10 m wind, and 2 m temperature are now global GFS owners; pressure remains a regional Open-Meteo map field.
+All current map-weather fields are now owned by the global GFS catalogue. Open-Meteo is reserved for the genuinely point-specific selected-location product.
 
-The browser still accepts older partial schema-v2 catalogues on initial load for compatibility. New automatic refreshes require a complete nine-field, single-run +24 h catalogue. It fetches only cache-busted `latest.json` every five minutes and when a hidden tab becomes visible; identical or older runs stop before manifest loading. A newer run is adopted only after every immutable manifest validates, while the existing sources and renderers remain active. A failed field never silently falls back to the regional map grid. The inspector composes GFS precipitation/cloud/wind/temperature with Open-Meteo pressure and reports concise provenance.
+The browser still accepts older partial schema-v2 catalogues on initial load for compatibility. New automatic refreshes require a complete ten-field, single-run +24 h catalogue. It fetches only cache-busted `latest.json` every five minutes and when a hidden tab becomes visible; identical or older runs stop before manifest loading. A newer run is adopted only after every immutable manifest validates, while the existing sources and renderers remain active. A failed pressure field is reported unavailable and never falls back to Open-Meteo. The inspector composes GFS precipitation/cloud/wind/temperature/pressure and reports shared run provenance.
 
-The timeline is manifest-driven. With one enabled global field it uses that field's valid times; with multiple global fields it uses their exact valid-time intersection. Regional Open-Meteo pressure chooses its nearest available hour. Cloud, wind, and temperature are not temporally interpolated. During a wind timestep change, separate old and new particle populations sample their exact fields and crossfade visually; U/V values are not blended between forecast times. Temperature retains the last complete contour geometry until padded coverage for the requested exact timestep is ready.
+The timeline is manifest-driven. With one enabled global field it uses that field's valid times; with multiple global fields it uses their exact valid-time intersection. Pressure, cloud, wind, and temperature are not temporally interpolated. During a wind timestep change, separate old and new particle populations sample their exact fields and crossfade visually; U/V values are not blended between forecast times. Temperature and pressure retain their last complete contour geometry until padded coverage for the requested exact timestep is ready.
 
 ## Lightweight preprocessing and publishing
 
@@ -149,8 +155,8 @@ The current workflow generates surface `APCP`, instantaneous entire-atmosphere `
 
 - `scripts/weather/build_gfs_weather.py` is the canonical local command behind `npm run weather:update` and `npm run weather:watch`; the shared builder resolves the latest usable run, reuses inventory probing, selects indexed byte ranges, validates variable-specific ecCodes metadata, and creates z0–z3 tiles.
 - `public/weather/gfs/<run>/manifest.json` remains the precipitation manifest; the eight field subdirectories contain the other immutable manifests. Existing schema-v1 precipitation and partial schema-v2 runs remain initially loadable.
-- The automatic updater publishes into a private transaction, validates all nine fields and 18,360 PNGs, moves the complete immutable run into place, and atomically replaces `latest.json` once. The public catalogue therefore never mixes runs during an automatic update. A process lock prevents duplicate builds; interrupted generated staging is validated and either reused or rebuilt on restart.
-- Retention runs only after publication. It keeps the current and one previous complete nine-field run, removes only recognized generated manifests/validation/tiles from older run directories, and preserves source caches and unknown files.
+- The automatic updater publishes into a private transaction, validates all ten fields and 20,400 PNGs, moves the complete immutable run into place, and atomically replaces `latest.json` once. The public catalogue therefore never mixes runs during an automatic update. A process lock prevents duplicate builds; interrupted generated staging is validated and either reused or rebuilt on restart.
+- Retention runs only after publication. It keeps the current and one previous complete ten-field run, removes only recognized generated manifests/validation/tiles from older run directories, and preserves source caches and unknown files.
 - `src/types/globalWeather.ts` contains provider-neutral run, scalar/vector timestep, encoding, and source contracts.
 - `src/services/globalWeatherService.ts` and `numericTileCache.ts` load metadata, bound decoded tile memory, and sample values geographically.
 - `src/services/globalScalarSurface.ts` owns the reusable instance-based double-buffer lifecycle; thin precipitation and cloud adapters own their palettes and opacity. Wind reuses the numeric cache through a global vector sampler and the existing custom WebGL particle layer. Temperature prepares shared-cache scalar coverage asynchronously and atomically replaces viewport-aware GeoJSON isolines only after the continuous sampling domain is complete.
@@ -180,7 +186,7 @@ non-publishing distribution inspection; its disposable source cache is ignored.
 The five immutable directories use hyphenated field IDs under the selected run.
 An atmospheric-field failure may be collected while the remaining private fields
 finish, but automatic publication retains the entire prior public catalogue unless
-all nine fields validate. Existing schema-v1 precipitation and partial schema-v2
+all ten fields validate. Existing schema-v1 precipitation and partial schema-v2
 runs remain supported for initial loading; they are never produced by the updater.
 
 All five use RG uint16 PNG, reserved no-data 65535, blue 0 and opaque alpha.
@@ -221,7 +227,7 @@ assumptions, thresholds, event debouncing and explicitly deferred interpretation
 
 A 0.25° global grid contains roughly 1.04 million source cells. One unsigned 16-bit scalar field is about 2 MiB per timestep before compression and tiling. A Web Mercator pyramid adds resampling and tile overhead, so actual storage must be benchmarked with real precipitation: sparse rain fields should compress well, but hundreds of timesteps and multiple retained runs still grow into hundreds of megabytes or more per variable.
 
-The browser should normally fetch only a handful of visible tiles for one valid time. Globe view may require more low-level parent tiles; regional and local views should reuse or overzoom a small number of native-level tiles. Immutable caching makes repeated locations and forecast playback practical. Adding further fields such as pressure multiplies storage, processing and bandwidth, so retention, timestep horizon and ensemble support are product and cost decisions, not implementation defaults.
+The browser should normally fetch only a handful of visible tiles for one valid time. Globe view may require more low-level parent tiles; regional and local views should reuse or overzoom a small number of native-level tiles. Immutable caching makes repeated locations and forecast playback practical. Adding further fields multiplies storage, processing and bandwidth, so retention, timestep horizon and ensemble support are product and cost decisions, not implementation defaults.
 
 ## Decisions required before production implementation
 

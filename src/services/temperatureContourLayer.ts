@@ -13,10 +13,10 @@ import {
 import { buildTemperatureContourData } from "./temperatureContourModel";
 
 import type {
+  GeographicBounds,
   ScalarWeatherFieldSource,
   ScalarWeatherTimestep,
 } from "../types/globalWeather";
-import type { WeatherGridBounds } from "../types/weatherGrid";
 
 const SOURCE_ID = "temperature-contours-source";
 const HALO_LAYER_ID = "temperature-contours-halo";
@@ -33,7 +33,7 @@ interface TileAddress {
 
 interface CoveragePlan {
   zoom: number;
-  bounds: WeatherGridBounds;
+  bounds: GeographicBounds;
   tiles: TileAddress[];
   signature: string;
   columns: number;
@@ -72,7 +72,7 @@ function rounded(value: number, increment: number): number {
   return Math.round(value / increment) * increment;
 }
 
-function regionalBounds(map: maplibregl.Map): WeatherGridBounds {
+function regionalBounds(map: maplibregl.Map): GeographicBounds {
   const visible = map.getBounds();
   let west = visible.getWest();
   let east = visible.getEast();

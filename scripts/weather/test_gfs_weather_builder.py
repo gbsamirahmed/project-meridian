@@ -497,6 +497,101 @@ class TemperatureEncodingTests(unittest.TestCase):
         )
 
 
+class PressureInventoryTests(unittest.TestCase):
+    def test_selects_exact_instantaneous_mean_sea_level_pressure(self) -> None:
+        inventory = "\n".join(
+            [
+                "1:0:d=2026090612:PRES:surface:6 hour fcst:",
+                "2:100:d=2026090612:PRMSL:mean sea level:6 hour fcst:",
+                "3:200:d=2026090612:PRMSL:mean sea level:0-6 hour ave fcst:",
+                "4:300:d=2026090612:TMP:2 m above ground:6 hour fcst:",
+            ]
+        )
+        record = builder.select_instantaneous_pressure_record(inventory, 6)
+        self.assertEqual(record.offset, 100)
+        self.assertEqual(record.end_offset, 199)
+        self.assertEqual(record.forecast_hour, 6)
+
+    def test_rejects_surface_or_averaged_pressure(self) -> None:
+        inventory = "\n".join(
+            [
+                "1:0:d=2026090612:PRES:surface:6 hour fcst:",
+                "2:100:d=2026090612:PRMSL:mean sea level:0-6 hour ave fcst:",
+                "3:200:d=2026090612:TMP:2 m above ground:6 hour fcst:",
+            ]
+        )
+        with self.assertRaisesRegex(ValueError, "PRMSL mean-sea-level"):
+            builder.select_instantaneous_pressure_record(inventory, 6)
+
+
+class PressureMetadataTests(unittest.TestCase):
+    def metadata(self) -> dict[str, object]:
+        return {
+            "shortName": "prmsl",
+            "name": "Pressure reduced to MSL",
+            "units": "Pa",
+            "stepType": "instant",
+            "endStep": 6,
+            "forecastTime": 6,
+            "Ni": builder.EXPECTED_NI,
+            "Nj": builder.EXPECTED_NJ,
+            "iDirectionIncrementInDegrees": 0.25,
+            "jDirectionIncrementInDegrees": 0.25,
+            "jScansPositively": 0,
+            "iScansNegatively": 0,
+            "typeOfLevel": "meanSea",
+            "level": 0,
+            "gridType": "regular_ll",
+            "latitudeOfFirstGridPointInDegrees": 90.0,
+            "longitudeOfFirstGridPointInDegrees": 0.0,
+            "latitudeOfLastGridPointInDegrees": -90.0,
+            "longitudeOfLastGridPointInDegrees": 359.75,
+            "dataDate": 20260906,
+            "dataTime": 1200,
+            "validityDate": 20260906,
+            "validityTime": 1800,
+        }
+
+    def test_validates_real_prmsl_contract(self) -> None:
+        builder.validate_pressure_metadata(
+            self.metadata(),
+            datetime(2026, 9, 6, 12, tzinfo=timezone.utc),
+            6,
+        )
+
+    def test_rejects_surface_pressure(self) -> None:
+        metadata = self.metadata()
+        metadata["typeOfLevel"] = "surface"
+        with self.assertRaisesRegex(ValueError, "typeOfLevel"):
+            builder.validate_pressure_metadata(
+                metadata,
+                datetime(2026, 9, 6, 12, tzinfo=timezone.utc),
+                6,
+            )
+
+
+class PressureEncodingTests(unittest.TestCase):
+    def test_uint16_pressure_round_trip_preserves_missing_and_tenth_hpa(self) -> None:
+        values = np.full((builder.TILE_SIZE, builder.TILE_SIZE), 1008.34, dtype=np.float32)
+        values[0, 0] = np.nan
+        values[0, 1] = builder.PRESSURE_MIN_HPA
+        values[0, 2] = builder.PRESSURE_MAX_HPA
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "pressure.png"
+            builder.encode_pressure_png(values, path)
+            decoded = builder.decode_pressure_png(path)
+        self.assertTrue(np.isnan(decoded[0, 0]))
+        self.assertEqual(float(decoded[0, 1]), builder.PRESSURE_MIN_HPA)
+        self.assertEqual(float(decoded[0, 2]), builder.PRESSURE_MAX_HPA)
+        self.assertLessEqual(abs(float(decoded[2, 2]) - 1008.34), 0.0501)
+
+    def test_out_of_supported_pressure_range_is_rejected(self) -> None:
+        values = np.full((builder.TILE_SIZE, builder.TILE_SIZE), 799.9, dtype=np.float32)
+        with tempfile.TemporaryDirectory() as directory:
+            with self.assertRaisesRegex(ValueError, "valid 800.0..1200.0"):
+                builder.encode_pressure_png(values, Path(directory) / "bad.png")
+
+
 class CatalogueTests(unittest.TestCase):
     def manifest(self, field_id: str, run: str) -> dict[str, object]:
         return {
@@ -534,10 +629,16 @@ class CatalogueTests(unittest.TestCase):
                 self.manifest("temperature_2m", "2026-08-30T06:00:00Z"),
                 "run-d/temperature-2m/manifest.json",
             )
+            builder.publish_catalog_field(
+                root,
+                "pressure_msl",
+                self.manifest("pressure_msl", "2026-08-30T00:00:00Z"),
+                "run-e/pressure-msl/manifest.json",
+            )
             catalog = json.loads((root / "latest.json").read_text(encoding="utf-8"))
         self.assertEqual(
             set(catalog["fields"]),
-            {"precipitation", "cloud_cover", "wind_10m", "temperature_2m"},
+            {"precipitation", "cloud_cover", "wind_10m", "temperature_2m", "pressure_msl"},
         )
         self.assertEqual(
             catalog["fields"]["precipitation"]["runTime"],
@@ -554,6 +655,10 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(
             catalog["fields"]["temperature_2m"]["runTime"],
             "2026-08-30T06:00:00Z",
+        )
+        self.assertEqual(
+            catalog["fields"]["pressure_msl"]["runTime"],
+            "2026-08-30T00:00:00Z",
         )
 
     def test_legacy_precipitation_pointer_is_preserved_when_cloud_publishes(self) -> None:

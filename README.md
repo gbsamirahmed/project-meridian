@@ -6,15 +6,15 @@ Meridian is an interactive 3D weather map for exploring forecast conditions acro
 
 ## Technical highlights
 
-- **Global numerical weather pipeline:** Python selects the latest usable complete NOAA GFS cycle, downloads indexed GRIB2 byte ranges, validates precipitation, cloud, wind and temperature semantics, and generates numeric Web Mercator weather tiles.
-- **Numeric weather data:** precipitation, total cloud cover, 10 m wind vectors and 2 m temperature remain numerical in the browser instead of being baked into imagery, supporting client-side styling, point inspection, contours, and forecast playback.
+- **Global numerical weather pipeline:** Python selects the latest usable complete NOAA GFS cycle, downloads indexed GRIB2 byte ranges, validates ten weather fields including mean sea-level pressure, and generates numeric Web Mercator weather tiles.
+- **Numeric weather data:** precipitation, total cloud cover, 10 m wind vectors, 2 m temperature and mean sea-level pressure remain numerical in the browser instead of being baked into imagery, supporting client-side styling, point inspection, contours, and forecast playback.
 - **Custom WebGL wind rendering:** a projection-aware MapLibre particle layer samples geographic GFS U/V vectors to show forecast wind direction and relative speed across the globe.
 - **Resilient interactive data lifecycle:** cancellation, bounded caching, last-valid-field reuse, rate-limit backoff, and persistent renderers keep the map responsive while data and camera state change.
 
 ## What it does
 
 - Terrain and optional Satellite basemaps with 3D relief and globe-scale navigation.
-- Global NOAA GFS precipitation, total cloud cover, 10 m wind and 2 m temperature with 24-hour playback.
+- Global NOAA GFS precipitation, total cloud cover, 10 m wind, 2 m temperature and mean sea-level pressure with 24-hour playback.
 - Independently combinable elevation, precipitation, cloud, temperature-contour, pressure-isobar, and animated wind overlays.
 - An optional Map Inspector for elevation and weather values at the selected forecast time; it is off by default and enabled in global settings.
 - Local GPX import with DEM-derived elevation, terrain-aware hiking schedules, linked route/profile inspection, and arrival-time GFS conditions including gusts, model visibility, freezing levels and experimental cloud ceiling.
@@ -24,7 +24,7 @@ Meridian is an interactive 3D weather map for exploring forecast conditions acro
 
 Meridian is a client-side React and MapLibre application. It requires no runtime application server, database, or authentication system.
 
-Precipitation, total cloud cover, 10 m wind and 2 m temperature have migrated to global, geographically fixed numeric tiled fields:
+Map weather, including precipitation, total cloud cover, 10 m wind, 2 m temperature and mean sea-level pressure, uses global, geographically fixed numeric tiled fields:
 
 ```text
 NOAA GFS GRIB2
@@ -38,7 +38,7 @@ NOAA GFS GRIB2
 
 *Global NOAA GFS precipitation rendered as numeric forecast tiles over the Satellite globe.*
 
-Open-Meteo remains the transitional regional source for map-level pressure. It interpolates a cached 9 × 9 sample grid for presentation; interpolation does not create additional meteorological information. See [Global weather architecture](docs/global-weather-architecture.md) for the detailed data model and migration design.
+Open-Meteo remains the selected-location source for current conditions and the seven-day point forecast. It is no longer used to construct map fields. See [Global weather architecture](docs/global-weather-architecture.md) for the detailed data model and source boundaries.
 
 Route planning is a separate client-side pipeline: GPX geometry is resampled at controlled spacing, enriched from the Terrarium DEM, and passed to a terrain-aware walking model. A route-condition layer then samples existing GFS fields at each expected arrival time while leaving journey timing independent of weather.
 
@@ -101,7 +101,7 @@ Never commit `.env.local`. A public deployment should use a dedicated MapTiler k
 
 ### Generate current GFS weather fields
 
-Generated GFS runs and `public/weather/gfs/latest.json` are local and ignored by Git. A clean clone still starts normally, but precipitation, cloud cover, wind and temperature are reported as unavailable until data are generated; Meridian does not silently substitute regional map fields.
+Generated GFS runs and `public/weather/gfs/latest.json` are local and ignored by Git. A clean clone still starts normally, but global map weather is reported as unavailable until data are generated; Meridian does not silently substitute point-API fields.
 
 With Python 3.12 or newer:
 
@@ -111,7 +111,7 @@ npm run weather:update
 python -m unittest discover -s scripts/weather -p "test_*.py"
 ```
 
-The updater finds the latest usable complete GFS cycle, falls back when the newest run is incomplete, and downloads only indexed APCP, TCDC, 10 m UGRD/VGRD, 2 m TMP, surface GUST/VIS and three atmospheric HGT records. It builds and validates all nine +24 h fields in a private transaction, moves the complete run into its immutable path, and then atomically switches `latest.json`. A failed run leaves the previous catalogue live. It requires no API key.
+The updater finds the latest usable complete GFS cycle, falls back when the newest run is incomplete, and downloads only indexed APCP, TCDC, 10 m UGRD/VGRD, 2 m TMP, mean-sea-level PRMSL, surface GUST/VIS and three atmospheric HGT records. It builds and validates all ten +24 h fields in a private transaction, moves the complete run into its immutable path, and then atomically switches `latest.json`. A failed run leaves the previous catalogue live. It requires no API key.
 
 For continuous local updates, keep the frontend and updater in separate terminals:
 
@@ -128,7 +128,7 @@ Watch mode checks once an hour, never rebuilds the published run, and retains th
 | --- | --- |
 | `npm ci` | Reproduce dependencies from `package-lock.json` |
 | `npm run dev` | Start the development server without running the NOAA updater |
-| `npm run weather:check` | Probe for a newer complete nine-field GFS run without generating or pruning |
+| `npm run weather:check` | Probe for a newer complete ten-field GFS run without generating or pruning |
 | `npm run weather:update` | Run one automatic GFS update and retention pass |
 | `npm run weather:watch` | Check hourly and update when a newer usable cycle appears |
 | `npm run test:ui` | Run focused desktop workspace and presentation tests |
@@ -148,8 +148,8 @@ Watch mode checks once an hour, never rebuilds the published run, and retains th
 - [OpenFreeMap](https://openfreemap.org/) provides the vector basemap style and tiles; its source metadata supplies map attribution.
 - [OpenStreetMap contributors](https://www.openstreetmap.org/copyright) provide geographic and search data used through OpenFreeMap and [Nominatim](https://nominatim.org/).
 - [AWS Terrain Tiles](https://registry.opendata.aws/terrain-tiles/) provide the Terrarium DEM; Meridian links the [full terrain dataset credits](https://github.com/tilezen/joerd/blob/master/docs/attribution.md) at runtime.
-- [Open-Meteo](https://open-meteo.com/) provides live point forecasts and the transitional regional pressure field under CC BY 4.0; runtime credit identifies Meridian's interpolated presentation.
-- [NOAA GFS](https://registry.opendata.aws/noaa-gfs-bdp-pds/) provides the source numerical forecast data. Generated precipitation, cloud, wind and temperature tiles are derived products and retain linked provenance.
+- [Open-Meteo](https://open-meteo.com/) provides live selected-location current conditions and point forecasts under CC BY 4.0.
+- [NOAA GFS](https://registry.opendata.aws/noaa-gfs-bdp-pds/) provides the source numerical forecast data. Generated map-weather and route-condition tiles are derived products and retain linked provenance.
 - [MapTiler Satellite](https://www.maptiler.com/satellite/) is the optional imagery provider; provider-supplied attribution and branding are preserved.
 
 Provider availability, acceptable-use policies, rate limits, attribution requirements, and licensing remain applicable.
@@ -157,8 +157,7 @@ Provider availability, acceptable-use policies, rate limits, attribution require
 ## Prototype limitations
 
 - Meridian is an engineering prototype and should not be used for safety-critical navigation or forecasting decisions.
-- Open-Meteo pressure still interpolates a regional 9 × 9 sample grid.
-- GFS precipitation, total cloud cover, 10 m wind and 2 m temperature are 0.25° model fields; close zooms overzoom the same data rather than creating finer meteorological detail.
+- GFS map weather is based on 0.25° model fields; close zooms overzoom the same data rather than creating finer meteorological detail.
 - The generated GFS horizon is +24 hours. Local updates can run continuously while a developer terminal remains open, but no production scheduler, hosting, monitoring, or alerting exists.
 - Terrain and weather detail remain constrained by their source datasets.
 - Route timing is a general hiking estimate, not a personalised prediction or safety assessment. Journey conditions use discrete GFS fields within the generated +24 h horizon and do not adjust travel time.

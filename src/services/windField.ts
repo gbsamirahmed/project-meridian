@@ -1,9 +1,9 @@
-import type { MutableWindVector } from "./weatherInterpolation";
-import type { WeatherGridBounds } from "../types/weatherGrid";
+import type { MutableWindVector } from "./windVector";
+import type { GeographicBounds } from "../types/globalWeather";
 import type maplibregl from "maplibre-gl";
 
 export interface WindVectorField {
-  bounds: WeatherGridBounds;
+  bounds: GeographicBounds;
   signature: string;
   isGlobal?: boolean;
   sample(

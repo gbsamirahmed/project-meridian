@@ -1,6 +1,6 @@
 import { interpolateGridValue } from "./interpolation";
 
-import type { WeatherGridBounds } from "../types/weatherGrid";
+import type { GeographicBounds } from "../types/globalWeather";
 
 export interface ContourProperties {
   level: number;
@@ -20,7 +20,7 @@ interface Segment {
 
 interface BuildContourOptions {
   matrix: number[][];
-  bounds: WeatherGridBounds;
+  bounds: GeographicBounds;
   levels: number[];
   formatLabel: (level: number) => string;
   isEmphasized?: (level: number) => boolean;

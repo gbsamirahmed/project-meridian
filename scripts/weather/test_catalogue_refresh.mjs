@@ -11,7 +11,7 @@ const freshness = await server.ssrLoadModule("/src/services/weatherFreshness.ts"
 const FreshnessComponent = (await server.ssrLoadModule("/src/components/WeatherFreshness.tsx")).default;
 
 const ids = weather.GLOBAL_WEATHER_FIELD_IDS;
-const paths = { precipitation: "", cloud_cover: "cloud-cover", wind_10m: "wind-10m", temperature_2m: "temperature-2m", gust_surface: "gust-surface", visibility_surface: "visibility-surface", freezing_level: "freezing-level", highest_freezing_level: "highest-freezing-level", cloud_ceiling: "cloud-ceiling" };
+const paths = { precipitation: "", cloud_cover: "cloud-cover", wind_10m: "wind-10m", temperature_2m: "temperature-2m", pressure_msl: "pressure-msl", gust_surface: "gust-surface", visibility_surface: "visibility-surface", freezing_level: "freezing-level", highest_freezing_level: "highest-freezing-level", cloud_ceiling: "cloud-ceiling" };
 function catalog(run = "2026-01-01T00:00:00Z") {
   const start = Date.parse(run); const runId = run.replaceAll("-", "").slice(0, 11) + "Z";
   return { schemaVersion: 2, model: "NOAA GFS", product: "pgrb2.0p25", generatedAt: new Date(start + 1000).toISOString(), fields: Object.fromEntries(ids.map(id => [id, { runTime: run, firstValidTime: new Date(start + 3600000).toISOString(), lastValidTime: new Date(start + 86400000).toISOString(), timestepCount: 24, manifest: [runId, paths[id], "manifest.json"].filter(Boolean).join("/") }])) };
@@ -30,7 +30,7 @@ class Visibility {
 await test("initial catalogue parsing remains backward-compatible while refresh requires completeness", () => {
   const partial = weather.normaliseGlobalWeatherCatalog({ ...catalog(), fields: { precipitation: catalog().fields.precipitation } });
   assert.deepEqual(Object.keys(partial.fields), ["precipitation"]);
-  assert.throws(() => refresh.completeCatalogueRunTime(partial), /all nine fields/);
+  assert.throws(() => refresh.completeCatalogueRunTime(partial), /all ten fields/);
   assert.equal(refresh.completeCatalogueRunTime(catalog()), Date.parse("2026-01-01T00:00:00Z"));
 });
 
@@ -62,7 +62,7 @@ await test("newer complete catalogue is adopted only after all manifests load", 
 
 await test("malformed or failed refresh retains the current value", async () => {
   const current = catalog(); const malformed = { ...catalog("2026-01-01T06:00:00Z"), fields: {} };
-  await assert.rejects(refresh.refreshGlobalWeatherCatalogue(current, new AbortController().signal, { fetchCatalog: async () => malformed, loadSources: async () => complete(malformed) }), /all nine/);
+  await assert.rejects(refresh.refreshGlobalWeatherCatalogue(current, new AbortController().signal, { fetchCatalog: async () => malformed, loadSources: async () => complete(malformed) }), /all ten/);
   await assert.rejects(refresh.refreshGlobalWeatherCatalogue(current, new AbortController().signal, { fetchCatalog: async () => { throw new Error("offline"); }, loadSources: async value => complete(value) }), /offline/);
   await assert.rejects(refresh.refreshGlobalWeatherCatalogue(current, new AbortController().signal, { fetchCatalog: async () => catalog("2026-01-01T06:00:00Z"), loadSources: async () => { throw new Error("manifest unavailable"); } }), /manifest unavailable/);
   assert.equal(current.fields.precipitation.runTime, "2026-01-01T00:00:00Z");

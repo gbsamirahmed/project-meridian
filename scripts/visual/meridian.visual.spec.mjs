@@ -7,6 +7,7 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const repositoryRoot = path.resolve(here, "..", "..");
 const generatedVisualDirectory = path.join(repositoryRoot, "test-results", "visual");
 const terrainFixture = path.join(here, "fixtures", "terrain-256.png");
+const pressureFixture = path.join(here, "fixtures", "pressure-256.png");
 const gpxFixture = path.join(repositoryRoot, "scripts", "route", "fixtures", "snowdonia-smoke.gpx");
 
 function viewportName(testInfo) {
@@ -111,7 +112,44 @@ function locationForecastFixture() {
   };
 }
 
-async function mockLocationForecast(page) {
+async function mockGlobalPressure(page) {
+  const current = JSON.parse(await readFile(path.join(repositoryRoot, "public", "weather", "gfs", "latest.json"), "utf8"));
+  const reference = current.fields.temperature_2m;
+  current.fields.pressure_msl = {
+    ...reference,
+    manifest: `${reference.runTime.replaceAll(/[-:]/g, "").replace(".000Z", "Z").slice(0, 11)}Z/pressure-msl/manifest.json`,
+  };
+  const runId = reference.manifest.split("/")[0];
+  current.fields.pressure_msl.manifest = `${runId}/pressure-msl/manifest.json`;
+  const start = Date.parse(reference.runTime);
+  const timesteps = Array.from({ length: 24 }, (_, index) => ({
+    id: `f${String(index + 1).padStart(3, "0")}`,
+    forecastHour: index + 1,
+    validTime: new Date(start + (index + 1) * 3_600_000).toISOString().replace(".000Z", "Z"),
+    minimum: 980,
+    maximum: 1032,
+    tileTemplate: `f${String(index + 1).padStart(3, "0")}/{z}/{x}/{y}.png`,
+  }));
+  const manifest = {
+    schemaVersion: 2, id: `${runId}-pressure-msl`, model: current.model, product: current.product,
+    runTime: reference.runTime,
+    field: { id: "pressure_msl", kind: "scalar", sourceParameter: "PRMSL", sourceLevel: "mean sea level",
+      displayName: "Mean sea-level pressure", units: "hPa", verticalReference: "mean-sea-level",
+      validRange: [800, 1200], timeSemantics: "instantaneous",
+      nativeResolution: { longitudeDegrees: 0.25, latitudeDegrees: 0.25 } },
+    coverage: { bounds: [-180, -85.05112878, 180, 85.05112878], worldWrap: true, polarLimit: "Web Mercator" },
+    tiles: { format: "png", encoding: "uint16-rg", tileSize: 256, minZoom: 0, maxZoom: 3,
+      scale: 0.1, offset: 800, noData: 65535, resampling: "bilinear", overzoom: true },
+    timesteps,
+    attribution: { label: "NOAA GFS", url: "https://www.noaa.gov/", source: "NOAA/NCEP GFS" },
+    generatedAt: current.generatedAt,
+  };
+  await page.route("**/weather/gfs/latest.json*", route => route.fulfill({ contentType: "application/json", body: JSON.stringify(current) }));
+  await page.route(`**/weather/gfs/${runId}/pressure-msl/manifest.json`, route => route.fulfill({ contentType: "application/json", body: JSON.stringify(manifest) }));
+  await page.route(`**/weather/gfs/${runId}/pressure-msl/f*/**/*.png`, route => route.fulfill({ path: pressureFixture, contentType: "image/png" }));
+}
+
+async function mockLocationForecast(page, audit = null) {
   await page.route("https://nominatim.openstreetmap.org/search?**", route => {
     const query = new URL(route.request().url()).searchParams.get("q") ?? "";
     const result = query.includes("Fort William")
@@ -128,15 +166,7 @@ async function mockLocationForecast(page) {
   });
   await page.route("https://api.open-meteo.com/v1/forecast?**", async route => {
     const requestUrl = route.request().url();
-    if (requestUrl.includes("hourly=pressure_msl")) {
-      const time = Array.from({ length: 25 }, (_, index) => new Date(Date.UTC(2026, 8, 6, index)).toISOString().slice(0, 16));
-      return route.fulfill({
-        contentType: "application/json",
-        body: JSON.stringify(Array.from({ length: 81 }, (_, point) => ({
-          hourly: { time, pressure_msl: time.map((_, hour) => 1004 + point * 0.08 + hour * 0.12) },
-        }))),
-      });
-    }
+    audit?.push(requestUrl);
     const latitude = new URL(requestUrl).searchParams.get("latitude") ?? "";
     const fixture = locationForecastFixture();
     if (latitude.startsWith("57")) {
@@ -294,18 +324,72 @@ test("desktop shell keeps the timeline in Location and the layer rail persistent
   expect(diagnostics.pageErrors, "Unhandled browser page errors; see generated diagnostics").toEqual([]);
 });
 
+test("global GFS pressure isobars use immutable tiles without Open-Meteo traffic", async ({ page }, testInfo) => {
+  test.setTimeout(300_000);
+  const size = viewportName(testInfo);
+  const diagnostics = observeBrowser(page);
+  const openMeteoRequests = [];
+  const pressureRequests = [];
+  page.on("request", request => {
+    if (request.url().startsWith("https://api.open-meteo.com/")) openMeteoRequests.push(request.url());
+    if (request.url().includes("/pressure-msl/")) pressureRequests.push(request.url());
+  });
+  try {
+    await mockMapNetwork(page);
+    await mockGlobalPressure(page);
+    await openMeridian(page);
+    const pressure = page.locator('button[title="Pressure isobars"]');
+    await pressure.click();
+    await expect(pressure).toHaveAttribute("aria-pressed", "true");
+    // A camera event deterministically schedules the viewport-derived contour build
+    // after MapLibre's style and controls have settled at every test viewport.
+    await page.getByRole("button", { name: "Zoom out" }).click();
+    await page.getByText("Data", { exact: true }).click();
+    await expect(page.getByText("GFS 0.25° global mean sea-level pressure · instantaneous field.")).toBeVisible({ timeout: 60_000 });
+    await expect(page.getByText("No forecast", { exact: true })).toHaveCount(0);
+    await expect(page.locator('.map-container[data-pressure-contours-ready]')).toBeVisible({ timeout: 120_000 });
+    await capture(page, `pressure-uk-${size}`);
+    const canvas = page.locator(".maplibregl-canvas");
+    const bounds = await canvas.boundingBox();
+    if (bounds) {
+      await page.mouse.move(bounds.x + bounds.width * 0.72, bounds.y + bounds.height * 0.5);
+      await page.mouse.down();
+      await page.mouse.move(bounds.x + bounds.width * 0.62, bounds.y + bounds.height * 0.5);
+      await page.mouse.up();
+      await page.getByRole("button", { name: "Zoom out" }).click();
+      await page.getByRole("button", { name: "Zoom out" }).click();
+      await page.getByRole("button", { name: "Zoom out" }).click();
+    }
+    if (testInfo.project.name === "desktop-1440x900") await capture(page, "pressure-wide-1440x900");
+    await pressure.click();
+    await pressure.click();
+    await page.getByRole("button", { name: "Play forecast" }).click();
+    await page.waitForTimeout(600);
+    await page.getByRole("button", { name: "Pause forecast" }).click();
+    expect(openMeteoRequests).toEqual([]);
+    expect(pressureRequests.some(url => url.endsWith("/manifest.json"))).toBe(true);
+    expect(pressureRequests.some(url => url.endsWith(".png"))).toBe(true);
+  } finally {
+    await saveDiagnostics(`pressure-${size}`, diagnostics, testInfo);
+  }
+  expect(diagnostics.pageErrors, "Unhandled browser page errors; see generated diagnostics").toEqual([]);
+  expect(diagnostics.errorResponses.filter(item => item.url.includes("pressure-msl")), "Failed pressure requests").toEqual([]);
+});
+
 test("Forecast Workspace is a shared temporal instrument beside Location", async ({ page }, testInfo) => {
   const size = viewportName(testInfo);
   const diagnostics = observeBrowser(page);
+  const openMeteoRequests = [];
   try {
     await mockMapNetwork(page);
-    await mockLocationForecast(page);
+    await mockLocationForecast(page, openMeteoRequests);
     await openMeridian(page);
     await page.getByRole("searchbox", { name: "Search location" }).fill("Ben Nevis");
     await page.getByRole("button", { name: "Search" }).click();
     await expect(page.getByRole("heading", { name: "Ben Nevis, Highland" })).toBeVisible({ timeout: 15_000 });
     const openButton = page.getByRole("button", { name: "Detailed forecast" });
     await expect(openButton).toBeVisible();
+    expect(openMeteoRequests).toHaveLength(1);
     await capture(page, `forecast-location-closed-${size}`);
     await openButton.click();
 
@@ -360,6 +444,7 @@ test("Forecast Workspace is a shared temporal instrument beside Location", async
     await page.getByRole("tab", { name: "Location" }).click();
     await expect(page.getByRole("heading", { name: "Ben Nevis, Highland" })).toBeVisible();
     await expect(page.getByRole("button", { name: "Detailed forecast" })).toBeVisible();
+    expect(openMeteoRequests).toHaveLength(1);
     await page.getByRole("searchbox", { name: "Search location" }).fill("Slow summit");
     await page.getByRole("button", { name: "Search" }).click();
     await page.waitForTimeout(650);
@@ -370,6 +455,28 @@ test("Forecast Workspace is a shared temporal instrument beside Location", async
     await page.waitForTimeout(1_500);
     await expect(page.locator(".temperature-reading strong")).toHaveText("7°");
     await expect(page.getByRole("button", { name: "Detailed forecast" })).toBeVisible();
+    expect(openMeteoRequests).toHaveLength(3);
+    const pressure = page.locator('button[title="Pressure isobars"]');
+    await pressure.click();
+    const beforeMapInteraction = openMeteoRequests.length;
+    const canvas = page.locator(".maplibregl-canvas");
+    const canvasBounds = await canvas.boundingBox();
+    if (canvasBounds) {
+      await page.mouse.move(canvasBounds.x + canvasBounds.width * 0.75, canvasBounds.y + canvasBounds.height * 0.5);
+      await page.mouse.down();
+      await page.mouse.move(canvasBounds.x + canvasBounds.width * 0.65, canvasBounds.y + canvasBounds.height * 0.5);
+      await page.mouse.up();
+      await page.mouse.wheel(0, -300);
+    }
+    await pressure.click();
+    await pressure.click();
+    const rain = page.locator('button[title="Precipitation"]');
+    await rain.click();
+    await page.getByRole("button", { name: "Play forecast" }).click();
+    await page.waitForTimeout(600);
+    await page.getByRole("button", { name: "Pause forecast" }).click();
+    expect(openMeteoRequests).toHaveLength(beforeMapInteraction);
+    expect(openMeteoRequests.every(url => !new URL(url).searchParams.get("latitude")?.includes(","))).toBe(true);
     if (testInfo.project.name === "desktop-1440x900") await capture(page, "location-weather-replaced-1440x900");
   } finally {
     await saveDiagnostics(`forecast-${size}`, diagnostics, testInfo);

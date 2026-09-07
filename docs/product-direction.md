@@ -14,6 +14,8 @@ Terms such as **direction**, **candidate**, **potential**, **research question**
 
 Meridian is moving toward a terrain-first outdoor journey intelligence system, while retaining the exploratory global weather map as a valuable way to understand the wider atmosphere.
 
+Map weather fields should come from Meridian's immutable global model-field architecture. Point APIs should be reserved for products genuinely tied to one selected location, rather than sampled repeatedly to construct a regional map field.
+
 The central route-planning question is:
 
 > I already have a route. What should I expect along the way, and when?

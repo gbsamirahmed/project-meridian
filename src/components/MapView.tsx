@@ -3,7 +3,6 @@ import maplibregl from "maplibre-gl";
 import { accumulationIntervalLabel } from "../services/weatherTimeLabel";
 import { precipitationAmountLabel } from "../services/precipitationStyle";
 
-import { WEATHER_GRID_REQUEST_DELAY_MS } from "../config/gridConfig";
 import {
   NOMINATIM_ATTRIBUTION,
   OPEN_METEO_ATTRIBUTION,
@@ -26,8 +25,6 @@ import {
   updateGlobalCloudLayer,
 } from "../services/globalCloudLayer";
 import {
-  getClosestScalarTimestep,
-  getClosestVectorTimestep,
   getScalarTimestepAtTime,
   getVectorTimestepAtTime,
 } from "../services/globalWeatherService";
@@ -38,7 +35,6 @@ import {
 import {
   removePressureLayer,
   setPressureLayerEnabled,
-  setPressureLayerCoverage,
   updatePressureLayer,
 } from "../services/pressureLayer";
 import {
@@ -59,16 +55,7 @@ import {
   setTemperatureContourEnabled,
   updateTemperatureContourLayer,
 } from "../services/temperatureContourLayer";
-import {
-  createWeatherGridRequest,
-  weatherGridContainsLocation,
-  weatherGridContainsViewport,
-  weatherGridOverlapsViewport,
-} from "../services/weatherRegion";
-import {
-  formatWindDirection,
-  interpolateWeatherAtLocation,
-} from "../services/weatherInterpolation";
+import { formatWindDirection } from "../services/windVector";
 import {
   removeWindLayer,
   setWindLayerEnabled,
@@ -93,11 +80,6 @@ import type {
 import type { SatelliteLayerStatus } from "../services/satelliteLayer";
 import type { SelectedLocation } from "../types/location";
 import type {
-  WeatherGrid,
-  WeatherGridRequest,
-  WeatherGridStatus,
-} from "../types/weatherGrid";
-import type {
   ResampledRouteGeometry,
   RouteCoordinate,
   TerrainRoute,
@@ -113,16 +95,13 @@ interface MapViewProps {
   selectedLocation: SelectedLocation | null;
   basemap: Basemap;
   mapOverlays: MapOverlayState;
-  weatherGrid: WeatherGrid | null;
-  weatherGridHistory: WeatherGrid[];
-  weatherGridStatus: WeatherGridStatus;
   globalPrecipitationSource: ScalarWeatherFieldSource | null;
   globalCloudSource: ScalarWeatherFieldSource | null;
   globalWindSource: VectorWeatherFieldSource | null;
   globalTemperatureSource: ScalarWeatherFieldSource | null;
+  globalPressureSource: ScalarWeatherFieldSource | null;
   globalWeatherStatuses: GlobalWeatherStatusRegistry;
   activeGlobalValidTime: string | null;
-  localForecastHour: number;
   routeGeometry: ResampledRouteGeometry | null;
   terrainRoute: TerrainRoute | null;
   focusedRouteSampleIndex: number | null;
@@ -133,7 +112,6 @@ interface MapViewProps {
   mapInspectorSession: number;
   onLocationSelect: (location: SelectedLocation) => void;
   onRouteSampleFocus: (index: number | null) => void;
-  onWeatherGridRequest: (request: WeatherGridRequest) => void;
 }
 
 interface InspectionPoint {
@@ -165,13 +143,12 @@ function renderVisualizations(
   map: maplibregl.Map,
   basemap: Basemap,
   overlays: MapOverlayState,
-  grid: WeatherGrid | null,
   globalPrecipitationSource: ScalarWeatherFieldSource | null,
   globalCloudSource: ScalarWeatherFieldSource | null,
   globalWindSource: VectorWeatherFieldSource | null,
   globalTemperatureSource: ScalarWeatherFieldSource | null,
-  activeGlobalValidTime: string | null,
-  localForecastHour: number
+  globalPressureSource: ScalarWeatherFieldSource | null,
+  activeGlobalValidTime: string | null
 ): void {
   if (!map.isStyleLoaded()) return;
 
@@ -209,8 +186,11 @@ function renderVisualizations(
     setTemperatureContourEnabled(map, false);
   }
 
-  if (overlays.pressureIsobars && grid) {
-    updatePressureLayer(map, grid, localForecastHour);
+  const pressureTimestep = globalPressureSource
+    ? getScalarTimestepAtTime(globalPressureSource, activeGlobalValidTime)
+    : null;
+  if (overlays.pressureIsobars && globalPressureSource && pressureTimestep) {
+    updatePressureLayer(map, globalPressureSource, pressureTimestep);
   } else {
     setPressureLayerEnabled(map, false);
   }
@@ -225,15 +205,6 @@ function renderVisualizations(
   }
 
   placeForecastOverlaysInOrder(map);
-}
-
-function setForecastCoverage(
-  map: maplibregl.Map,
-  grid: WeatherGrid | null
-): void {
-  const visible = grid !== null && weatherGridOverlapsViewport(map, grid);
-
-  setPressureLayerCoverage(map, visible);
 }
 
 function createInspectionPoint(
@@ -268,12 +239,6 @@ function formatElevation(elevation: number | null): string {
   return elevation === null ? "Unavailable" : `≈ ${Math.round(elevation / 10) * 10} m`;
 }
 
-function formatForecastTime(grid: WeatherGrid, forecastHour: number): string {
-  const time = grid.times[forecastHour];
-
-  return time ? `${time.replace("T", " ")} UTC` : `Forecast +${forecastHour} h`;
-}
-
 function nearestRouteSampleIndex(
   map: maplibregl.Map,
   point: maplibregl.PointLike,
@@ -298,16 +263,13 @@ export default function MapView({
   selectedLocation,
   basemap,
   mapOverlays,
-  weatherGrid,
-  weatherGridHistory,
-  weatherGridStatus,
   globalPrecipitationSource,
   globalCloudSource,
   globalWindSource,
   globalTemperatureSource,
+  globalPressureSource,
   globalWeatherStatuses,
   activeGlobalValidTime,
-  localForecastHour,
   routeGeometry,
   terrainRoute,
   focusedRouteSampleIndex,
@@ -318,7 +280,6 @@ export default function MapView({
   mapInspectorSession,
   onLocationSelect,
   onRouteSampleFocus,
-  onWeatherGridRequest,
 }: MapViewProps) {
   const [hoverInspection, setHoverInspection] =
     useState<InspectionPoint | null>(null);
@@ -343,26 +304,26 @@ export default function MapView({
     key: string;
     value: number | null;
   } | null>(null);
+  const [globalPressureSample, setGlobalPressureSample] = useState<{
+    key: string;
+    value: number | null;
+  } | null>(null);
 
   const mapContainer = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<maplibregl.Map | null>(null);
   const styleReadyRef = useRef(false);
   const markerRef = useRef<maplibregl.Marker | null>(null);
-  const requestTimeoutRef = useRef<number | null>(null);
-  const queueWeatherRequestRef = useRef<() => void>(() => undefined);
   const syncSatelliteViewRef = useRef<() => void>(() => undefined);
 
-  const weatherGridRef = useRef<WeatherGrid | null>(weatherGrid);
   const globalPrecipitationSourceRef = useRef(globalPrecipitationSource);
   const globalCloudSourceRef = useRef(globalCloudSource);
   const globalWindSourceRef = useRef(globalWindSource);
   const globalTemperatureSourceRef = useRef(globalTemperatureSource);
+  const globalPressureSourceRef = useRef(globalPressureSource);
   const basemapRef = useRef(basemap);
   const mapOverlaysRef = useRef(mapOverlays);
   const activeGlobalValidTimeRef = useRef(activeGlobalValidTime);
-  const localForecastHourRef = useRef(localForecastHour);
   const locationSelectRef = useRef(onLocationSelect);
-  const weatherGridRequestRef = useRef(onWeatherGridRequest);
   const routeCoordinatesRef = useRef<RouteCoordinate[]>([]);
   const routeFocusRef = useRef(onRouteSampleFocus);
   const focusedRouteSampleRef = useRef(focusedRouteSampleIndex);
@@ -376,27 +337,21 @@ export default function MapView({
     candidateInspection?.inspectorSession === mapInspectorSession
       ? candidateInspection
       : null;
-  const localReferenceTime = weatherGrid?.times[localForecastHour] ?? null;
   const activePrecipitationTimestep = globalPrecipitationSource
-    ? getScalarTimestepAtTime(globalPrecipitationSource, activeGlobalValidTime) ??
-      getClosestScalarTimestep(globalPrecipitationSource, localReferenceTime)
+    ? getScalarTimestepAtTime(globalPrecipitationSource, activeGlobalValidTime)
     : null;
   const activeCloudTimestep = globalCloudSource
-    ? getScalarTimestepAtTime(globalCloudSource, activeGlobalValidTime) ??
-      getClosestScalarTimestep(globalCloudSource, localReferenceTime)
+    ? getScalarTimestepAtTime(globalCloudSource, activeGlobalValidTime)
     : null;
   const activeWindTimestep = globalWindSource
-    ? getVectorTimestepAtTime(globalWindSource, activeGlobalValidTime) ??
-      getClosestVectorTimestep(globalWindSource, localReferenceTime)
+    ? getVectorTimestepAtTime(globalWindSource, activeGlobalValidTime)
     : null;
   const activeTemperatureTimestep = globalTemperatureSource
-    ? getScalarTimestepAtTime(globalTemperatureSource, activeGlobalValidTime) ??
-      getClosestScalarTimestep(globalTemperatureSource, localReferenceTime)
+    ? getScalarTimestepAtTime(globalTemperatureSource, activeGlobalValidTime)
     : null;
-
-  useEffect(() => {
-    weatherGridRef.current = weatherGrid;
-  }, [weatherGrid]);
+  const activePressureTimestep = globalPressureSource
+    ? getScalarTimestepAtTime(globalPressureSource, activeGlobalValidTime)
+    : null;
 
   useEffect(() => {
     globalPrecipitationSourceRef.current = globalPrecipitationSource;
@@ -415,6 +370,10 @@ export default function MapView({
   }, [globalTemperatureSource]);
 
   useEffect(() => {
+    globalPressureSourceRef.current = globalPressureSource;
+  }, [globalPressureSource]);
+
+  useEffect(() => {
     basemapRef.current = basemap;
   }, [basemap]);
 
@@ -427,16 +386,8 @@ export default function MapView({
   }, [activeGlobalValidTime]);
 
   useEffect(() => {
-    localForecastHourRef.current = localForecastHour;
-  }, [localForecastHour]);
-
-  useEffect(() => {
     locationSelectRef.current = onLocationSelect;
   }, [onLocationSelect]);
-
-  useEffect(() => {
-    weatherGridRequestRef.current = onWeatherGridRequest;
-  }, [onWeatherGridRequest]);
 
   useEffect(() => {
     routeFocusRef.current = onRouteSampleFocus;
@@ -565,6 +516,37 @@ export default function MapView({
   }, [activeInspection, activeTemperatureTimestep, globalTemperatureSource]);
 
   useEffect(() => {
+    if (!activeInspection || !globalPressureSource || !activePressureTimestep) {
+      return;
+    }
+    let isCurrent = true;
+    const key = [
+      globalPressureSource.manifest.id,
+      activePressureTimestep.id,
+      activeInspection.longitude.toFixed(5),
+      activeInspection.latitude.toFixed(5),
+    ].join(":");
+    sampleScalarField(
+      globalPressureSource,
+      activePressureTimestep,
+      activeInspection.longitude,
+      activeInspection.latitude
+    )
+      .then((value) => {
+        if (isCurrent) setGlobalPressureSample({ key, value });
+      })
+      .catch((error: unknown) => {
+        if (isCurrent) {
+          console.error("Global pressure inspection failed", error);
+          setGlobalPressureSample({ key, value: null });
+        }
+      });
+    return () => {
+      isCurrent = false;
+    };
+  }, [activeInspection, activePressureTimestep, globalPressureSource]);
+
+  useEffect(() => {
     if (!activeInspection || !globalWindSource || !activeWindTimestep) return;
     let isCurrent = true;
     const key = [
@@ -644,13 +626,12 @@ export default function MapView({
             map,
             basemapRef.current,
             mapOverlaysRef.current,
-            weatherGridRef.current,
             globalPrecipitationSourceRef.current,
             globalCloudSourceRef.current,
             globalWindSourceRef.current,
             globalTemperatureSourceRef.current,
-            activeGlobalValidTimeRef.current,
-            localForecastHourRef.current
+            globalPressureSourceRef.current,
+            activeGlobalValidTimeRef.current
           );
 
           if (map.getSource(SATELLITE_SOURCE_ID) && map.isSourceLoaded(SATELLITE_SOURCE_ID)) {
@@ -662,54 +643,18 @@ export default function MapView({
 
     syncSatelliteViewRef.current = syncSatelliteView;
 
-    const requestWeatherForViewport = () => {
-      const currentGrid = weatherGridRef.current;
-
-      if (currentGrid && weatherGridContainsViewport(map, currentGrid)) return;
-
-      const request = createWeatherGridRequest(map);
-
-      if (request) weatherGridRequestRef.current(request);
-    };
-
-    const queueWeatherRequest = () => {
-      const currentGrid = weatherGridRef.current;
-
-      if (requestTimeoutRef.current !== null) {
-        window.clearTimeout(requestTimeoutRef.current);
-        requestTimeoutRef.current = null;
-      }
-
-      if (currentGrid && weatherGridContainsViewport(map, currentGrid)) return;
-
-      requestTimeoutRef.current = window.setTimeout(() => {
-        requestTimeoutRef.current = null;
-        requestWeatherForViewport();
-      }, WEATHER_GRID_REQUEST_DELAY_MS);
-    };
-
-    queueWeatherRequestRef.current = queueWeatherRequest;
-
-    const handleMapMovement = () => {
-      setForecastCoverage(map, weatherGridRef.current);
-      queueWeatherRequest();
-    };
-
     const handleMapMoveEnd = () => {
       renderVisualizations(
         map,
         basemapRef.current,
         mapOverlaysRef.current,
-        weatherGridRef.current,
         globalPrecipitationSourceRef.current,
         globalCloudSourceRef.current,
         globalWindSourceRef.current,
         globalTemperatureSourceRef.current,
-        activeGlobalValidTimeRef.current,
-        localForecastHourRef.current
+        globalPressureSourceRef.current,
+        activeGlobalValidTimeRef.current
       );
-      setForecastCoverage(map, weatherGridRef.current);
-      queueWeatherRequest();
     };
 
     const handlePointerFrame = () => {
@@ -804,17 +749,14 @@ export default function MapView({
         map,
         basemapRef.current,
         mapOverlaysRef.current,
-        weatherGridRef.current,
         globalPrecipitationSourceRef.current,
         globalCloudSourceRef.current,
         globalWindSourceRef.current,
         globalTemperatureSourceRef.current,
-        activeGlobalValidTimeRef.current,
-        localForecastHourRef.current
+        globalPressureSourceRef.current,
+        activeGlobalValidTimeRef.current
       );
-      setForecastCoverage(map, weatherGridRef.current);
       syncSatelliteView();
-      queueWeatherRequest();
     });
 
     map.on("sourcedata", (event) => {
@@ -838,7 +780,6 @@ export default function MapView({
       console.error(event.error);
     });
 
-    map.on("move", handleMapMovement);
     map.on("moveend", handleMapMoveEnd);
     map.on("movestart", () => setHoverInspection(null));
     // Projection and terrain mutate MapLibre's tile pipeline. Apply that mode
@@ -880,10 +821,6 @@ export default function MapView({
     });
 
     return () => {
-      if (requestTimeoutRef.current !== null) {
-        window.clearTimeout(requestTimeoutRef.current);
-      }
-
       if (pointerFrame !== null) window.cancelAnimationFrame(pointerFrame);
 
       markerRef.current?.remove();
@@ -893,7 +830,6 @@ export default function MapView({
       map.remove();
       mapRef.current = null;
       styleReadyRef.current = false;
-      queueWeatherRequestRef.current = () => undefined;
       syncSatelliteViewRef.current = () => undefined;
     };
   }, []);
@@ -993,34 +929,27 @@ export default function MapView({
       map,
       basemap,
       mapOverlays,
-      weatherGrid,
       globalPrecipitationSource,
       globalCloudSource,
       globalWindSource,
       globalTemperatureSource,
-      activeGlobalValidTime,
-      localForecastHour
+      globalPressureSource,
+      activeGlobalValidTime
     );
-    setForecastCoverage(map, weatherGrid);
   }, [
     basemap,
     mapOverlays,
-    weatherGrid,
     globalPrecipitationSource,
     globalCloudSource,
     globalWindSource,
     globalTemperatureSource,
+    globalPressureSource,
     activeGlobalValidTime,
-    localForecastHour,
   ]);
 
   useEffect(() => {
     syncSatelliteViewRef.current();
   }, [basemap]);
-
-  useEffect(() => {
-    queueWeatherRequestRef.current();
-  }, [weatherGrid]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -1083,26 +1012,6 @@ export default function MapView({
     );
   }, [selectedLocation]);
 
-  const inspectionGrid = activeInspection
-    ? [weatherGrid, ...weatherGridHistory].find(
-        (grid): grid is WeatherGrid =>
-          grid !== null &&
-          weatherGridContainsLocation(
-            grid,
-            activeInspection.latitude,
-            activeInspection.longitude
-          )
-      ) ?? null
-    : null;
-  const inspectedWeather =
-    activeInspection && inspectionGrid
-      ? interpolateWeatherAtLocation(
-          inspectionGrid,
-          localForecastHour,
-          activeInspection.latitude,
-          activeInspection.longitude
-        )
-      : null;
   const expectedGlobalSampleKey =
     activeInspection && activePrecipitationTimestep && globalPrecipitationSource
       ? [
@@ -1142,6 +1051,19 @@ export default function MapView({
     globalTemperatureSample?.key === expectedGlobalTemperatureSampleKey
       ? globalTemperatureSample.value
       : undefined;
+  const expectedGlobalPressureSampleKey =
+    activeInspection && activePressureTimestep && globalPressureSource
+      ? [
+          globalPressureSource.manifest.id,
+          activePressureTimestep.id,
+          activeInspection.longitude.toFixed(5),
+          activeInspection.latitude.toFixed(5),
+        ].join(":")
+      : null;
+  const globalPressureValue =
+    globalPressureSample?.key === expectedGlobalPressureSampleKey
+      ? globalPressureSample.value
+      : undefined;
   const expectedGlobalWindSampleKey =
     activeInspection && activeWindTimestep && globalWindSource
       ? [
@@ -1166,16 +1088,6 @@ export default function MapView({
       360
     : null;
   const overlayCount = Object.values(mapOverlays).filter(Boolean).length;
-  const forecastStatus =
-    weatherGridStatus === "loading"
-      ? " · sampling"
-      : weatherGridStatus === "refreshing"
-        ? " · refreshing"
-        : weatherGridStatus === "rate-limited"
-          ? " · refresh delayed"
-          : weatherGridStatus === "error"
-            ? " · forecast issue"
-          : "";
   const satelliteStatusText =
     basemap !== "satellite"
       ? ""
@@ -1193,6 +1105,7 @@ export default function MapView({
     mapOverlays.temperatureContours
       ? globalWeatherStatuses.temperature_2m
       : null,
+    mapOverlays.pressureIsobars ? globalWeatherStatuses.pressure_msl : null,
   ].filter(Boolean);
   const globalWeatherStatusText =
     activeGlobalStatuses.length === 0
@@ -1224,7 +1137,6 @@ export default function MapView({
           {overlayCount > 0
             ? ` + ${overlayCount} overlay${overlayCount === 1 ? "" : "s"}`
             : ""}
-          {forecastStatus}
           {satelliteStatusText}
           {globalWeatherStatusText}
         </span>
@@ -1297,12 +1209,16 @@ export default function MapView({
                     : `${Math.round(globalCloudValue)}%`}
             </strong>
 
-            {inspectedWeather && (
-              <>
-                <span>Pressure</span>
-                <strong>{Math.round(inspectedWeather.pressure)} hPa</strong>
-              </>
-            )}
+            <span>Pressure (GFS)</span>
+            <strong>
+              {!globalPressureSource
+                ? "Unavailable"
+                : globalPressureValue === undefined
+                  ? "Loading…"
+                  : globalPressureValue === null
+                    ? "Unavailable"
+                    : `${globalPressureValue.toFixed(1)} hPa`}
+            </strong>
 
             <span>Wind (GFS)</span>
             <strong>
@@ -1323,7 +1239,7 @@ export default function MapView({
                   : formatWindDirection(globalWindDirection)}
             </strong>
 
-            {!inspectedWeather && !globalPrecipitationSource && !globalCloudSource && !globalWindSource && !globalTemperatureSource && (
+            {!globalPrecipitationSource && !globalCloudSource && !globalWindSource && !globalTemperatureSource && !globalPressureSource && (
               <span className="inspector-unavailable">
                 Forecast values are outside the current sampled field.
               </span>
@@ -1339,16 +1255,9 @@ export default function MapView({
                 ? `${activeWindTimestep.validTime.replace("T", " ").replace("Z", " UTC")} · GFS 10 m wind`
               : activeTemperatureTimestep
                 ? `${activeTemperatureTimestep.validTime.replace("T", " ").replace("Z", " UTC")} · GFS 2 m temperature`
-              : inspectionGrid
-                ? formatForecastTime(inspectionGrid, localForecastHour)
-              : weatherGridStatus === "rate-limited"
-                ? "Forecast refresh delayed"
-                : weatherGridStatus === "error"
-                  ? "Forecast unavailable at this point"
-                  : "Forecast field loading"}
-            {inspectedWeather
-              ? ` · Open-Meteo pressure at ${formatForecastTime(inspectionGrid!, localForecastHour)} · interpolated from ${inspectionGrid?.rows} × ${inspectionGrid?.columns} samples${inspectionGrid !== weatherGrid ? " · cached region" : ""}`
-              : ""}
+              : activePressureTimestep
+                ? `${activePressureTimestep.validTime.replace("T", " ").replace("Z", " UTC")} · GFS mean sea-level pressure`
+                : "Forecast field loading"}
             {globalPrecipitationSource && activePrecipitationTimestep
               ? ` · GFS 0.25° ${activePrecipitationTimestep.accumulationHours} h accumulation · run ${globalPrecipitationSource.manifest.runTime.replace("T", " ").replace(":00:00Z", "Z")}`
               : " · GFS precipitation unavailable; no Open-Meteo fallback"}
@@ -1361,6 +1270,9 @@ export default function MapView({
             {globalTemperatureSource && activeTemperatureTimestep
               ? ` · GFS 0.25° 2 m temperature · run ${globalTemperatureSource.manifest.runTime.replace("T", " ").replace(":00:00Z", "Z")}`
               : " · GFS temperature unavailable; no Open-Meteo fallback"}
+            {globalPressureSource && activePressureTimestep
+              ? ` · GFS 0.25° mean sea-level pressure · run ${globalPressureSource.manifest.runTime.replace("T", " ").replace(":00:00Z", "Z")}`
+              : " · GFS pressure unavailable; no Open-Meteo fallback"}
           </small>
         </div>
       )}

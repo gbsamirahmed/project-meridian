@@ -47,6 +47,10 @@ TEMPERATURE_SCALE_C = 0.1
 TEMPERATURE_OFFSET_C = -150.0
 TEMPERATURE_MIN_C = -150.0
 TEMPERATURE_MAX_C = 100.0
+PRESSURE_SCALE_HPA = 0.1
+PRESSURE_OFFSET_HPA = 800.0
+PRESSURE_MIN_HPA = 800.0
+PRESSURE_MAX_HPA = 1200.0
 WIND_COMPONENT_SCALE_MPS = 0.2
 WIND_COMPONENT_BIAS = 512
 WIND_COMPONENT_BITS = 10
@@ -107,6 +111,14 @@ class TemperatureInventoryRecord:
     forecast_hour: int
 
 
+@dataclass(frozen=True)
+class PressureInventoryRecord:
+    offset: int
+    end_offset: int
+    description: str
+    forecast_hour: int
+
+
 @dataclass
 class DecodedField:
     values: np.ndarray
@@ -116,6 +128,7 @@ class DecodedField:
         | CloudInventoryRecord
         | WindInventoryRecord
         | TemperatureInventoryRecord
+        | PressureInventoryRecord
     )
     duplicate_records: int
 
@@ -136,6 +149,7 @@ class RunResolution:
     cloud_records: tuple[CloudInventoryRecord, ...]
     wind_records: tuple[tuple[WindInventoryRecord, WindInventoryRecord], ...]
     temperature_records: tuple[TemperatureInventoryRecord, ...]
+    pressure_records: tuple[PressureInventoryRecord, ...]
     checked_candidates: tuple[dict[str, str], ...]
 
 
@@ -392,6 +406,32 @@ def select_instantaneous_temperature_record(
     )
 
 
+def select_instantaneous_pressure_record(
+    text: str, forecast_hour: int
+) -> PressureInventoryRecord:
+    expected_time = f"{forecast_hour} hour fcst"
+    candidates = [
+        record
+        for record in parse_inventory_index(text)
+        if record.parameter == "PRMSL"
+        and record.level == "mean sea level"
+        and record.time_description == expected_time
+    ]
+    if len(candidates) != 1:
+        descriptions = [record.description for record in candidates]
+        raise ValueError(
+            f"f{forecast_hour:03d} expected exactly one instantaneous "
+            f"PRMSL mean-sea-level record; found {len(candidates)}: {descriptions}"
+        )
+    record = candidates[0]
+    return PressureInventoryRecord(
+        offset=record.offset,
+        end_offset=record.end_offset,
+        description=record.description,
+        forecast_hour=forecast_hour,
+    )
+
+
 def plan_timesteps(
     inventories: dict[int, list[InventoryRecord]], forecast_hours: list[int]
 ) -> tuple[PlannedTimestep, ...]:
@@ -478,6 +518,7 @@ def probe_run(
     tuple[CloudInventoryRecord, ...],
     tuple[tuple[WindInventoryRecord, WindInventoryRecord], ...],
     tuple[TemperatureInventoryRecord, ...],
+    tuple[PressureInventoryRecord, ...],
 ]:
     date_value = run_time.strftime("%Y%m%d")
     cycle = run_time.strftime("%H")
@@ -496,6 +537,9 @@ def probe_run(
     temperature_records: dict[int, TemperatureInventoryRecord] = {
         last_hour: select_instantaneous_temperature_record(last_text, last_hour)
     }
+    pressure_records: dict[int, PressureInventoryRecord] = {
+        last_hour: select_instantaneous_pressure_record(last_text, last_hour)
+    }
     for forecast_hour in forecast_hours:
         if forecast_hour not in inventories:
             inventory_text = fetch_text(
@@ -511,6 +555,9 @@ def probe_run(
             temperature_records[forecast_hour] = select_instantaneous_temperature_record(
                 inventory_text, forecast_hour
             )
+            pressure_records[forecast_hour] = select_instantaneous_pressure_record(
+                inventory_text, forecast_hour
+            )
     if require_atmospheric:
         from gfs_atmospheric import FIELDS, select_record
         for hour in forecast_hours:
@@ -522,6 +569,7 @@ def probe_run(
         tuple(cloud_records[hour] for hour in forecast_hours),
         tuple(wind_records[hour] for hour in forecast_hours),
         tuple(temperature_records[hour] for hour in forecast_hours),
+        tuple(pressure_records[hour] for hour in forecast_hours),
     )
 
 
@@ -531,7 +579,7 @@ def resolve_run(args: argparse.Namespace, forecast_hours: list[int], newer_than:
         if newer_than is not None and run_time <= newer_than:
             return None
         print(f"Checking requested GFS {run_time:%Y-%m-%d %HZ}...")
-        plan, cloud_records, wind_records, temperature_records = probe_run(
+        plan, cloud_records, wind_records, temperature_records, pressure_records = probe_run(
             run_time, forecast_hours, getattr(args, "require_all_fields", False)
         )
         return RunResolution(
@@ -542,6 +590,7 @@ def resolve_run(args: argparse.Namespace, forecast_hours: list[int], newer_than:
             cloud_records=cloud_records,
             wind_records=wind_records,
             temperature_records=temperature_records,
+            pressure_records=pressure_records,
             checked_candidates=(
                 {"runTime": run_time.isoformat().replace("+00:00", "Z"), "result": "usable"},
             ),
@@ -556,7 +605,7 @@ def resolve_run(args: argparse.Namespace, forecast_hours: list[int], newer_than:
         label = f"{run_time:%Y-%m-%d %HZ}"
         print(f"Checking GFS {label}...")
         try:
-            plan, cloud_records, wind_records, temperature_records = probe_run(
+            plan, cloud_records, wind_records, temperature_records, pressure_records = probe_run(
                 run_time, forecast_hours, getattr(args, "require_all_fields", False)
             )
         except SourceUnavailableError as error:
@@ -589,6 +638,7 @@ def resolve_run(args: argparse.Namespace, forecast_hours: list[int], newer_than:
             cloud_records=cloud_records,
             wind_records=wind_records,
             temperature_records=temperature_records,
+            pressure_records=pressure_records,
             checked_candidates=tuple(checked),
         )
 
@@ -604,6 +654,7 @@ def decode_grib(
         | CloudInventoryRecord
         | WindInventoryRecord
         | TemperatureInventoryRecord
+        | PressureInventoryRecord
     ),
 ) -> tuple[np.ndarray, dict[str, Any]]:
     message = eccodes.codes_new_from_message(message_bytes)
@@ -748,6 +799,86 @@ def load_temperature_field(
         (keep_directory / f"{forecast_token}.grib2").write_bytes(message_bytes)
     return DecodedField(
         values=values_celsius,
+        metadata=metadata,
+        source_record=record,
+        duplicate_records=1,
+    )
+
+
+def validate_pressure_metadata(
+    metadata: dict[str, Any], run_time: datetime, forecast_hour: int
+) -> None:
+    expected = {
+        "shortName": "prmsl",
+        "name": "Pressure reduced to MSL",
+        "units": "Pa",
+        "stepType": "instant",
+        "endStep": forecast_hour,
+        "forecastTime": forecast_hour,
+        "Ni": EXPECTED_NI,
+        "Nj": EXPECTED_NJ,
+        "iDirectionIncrementInDegrees": 0.25,
+        "jDirectionIncrementInDegrees": 0.25,
+        "jScansPositively": 0,
+        "iScansNegatively": 0,
+        "typeOfLevel": "meanSea",
+        "level": 0,
+        "gridType": "regular_ll",
+        "latitudeOfFirstGridPointInDegrees": 90.0,
+        "longitudeOfFirstGridPointInDegrees": 0.0,
+        "latitudeOfLastGridPointInDegrees": -90.0,
+        "longitudeOfLastGridPointInDegrees": 359.75,
+        "dataDate": int(run_time.strftime("%Y%m%d")),
+        "dataTime": int(run_time.strftime("%H%M")),
+    }
+    for key, value in expected.items():
+        if metadata.get(key) != value:
+            raise ValueError(
+                f"Unexpected PRMSL metadata {key}={metadata.get(key)!r}; "
+                f"expected {value!r}"
+            )
+    expected_valid = run_time + timedelta(hours=forecast_hour)
+    if int(metadata.get("validityDate", 0)) != int(
+        expected_valid.strftime("%Y%m%d")
+    ) or int(metadata.get("validityTime", -1)) != int(
+        expected_valid.strftime("%H%M")
+    ):
+        raise ValueError("Unexpected PRMSL valid time")
+
+
+def load_pressure_field(
+    date_value: str,
+    cycle: str,
+    run_time: datetime,
+    record: PressureInventoryRecord,
+    keep_directory: Path | None,
+) -> DecodedField:
+    forecast_hour = record.forecast_hour
+    forecast_token = f"f{forecast_hour:03d}"
+    message_bytes = fetch_bytes(
+        gfs_file_base(date_value, cycle, forecast_hour),
+        (record.offset, record.end_offset),
+    )
+    values_pascal, metadata = decode_grib(message_bytes, record)
+    validate_pressure_metadata(metadata, run_time, forecast_hour)
+    values_pascal, _missing_mask = _normalise_missing_values(
+        values_pascal, metadata, f"PRMSL {forecast_token}"
+    )
+    values_hpa = values_pascal / np.float32(100.0)
+    finite = values_hpa[np.isfinite(values_hpa)]
+    minimum = float(np.min(finite))
+    maximum = float(np.max(finite))
+    if minimum < PRESSURE_MIN_HPA or maximum > PRESSURE_MAX_HPA:
+        raise ValueError(
+            f"PRMSL {forecast_token} is outside the supported "
+            f"{PRESSURE_MIN_HPA}..{PRESSURE_MAX_HPA} hPa range: "
+            f"{minimum}..{maximum}"
+        )
+    if keep_directory:
+        keep_directory.mkdir(parents=True, exist_ok=True)
+        (keep_directory / f"{forecast_token}.grib2").write_bytes(message_bytes)
+    return DecodedField(
+        values=values_hpa,
         metadata=metadata,
         source_record=record,
         duplicate_records=1,
@@ -1130,6 +1261,40 @@ def decode_temperature_png(path: Path) -> np.ndarray:
     return values
 
 
+def encode_pressure_png(sampled_values: np.ndarray, output_path: Path) -> None:
+    finite = np.isfinite(sampled_values)
+    if np.any(sampled_values[finite] < PRESSURE_MIN_HPA) or np.any(
+        sampled_values[finite] > PRESSURE_MAX_HPA
+    ):
+        raise ValueError(
+            f"Pressure exceeds the valid {PRESSURE_MIN_HPA}..{PRESSURE_MAX_HPA} hPa range"
+        )
+    encoded = np.full(sampled_values.shape, NO_DATA_VALUE, dtype=np.uint16)
+    quantized = np.rint(
+        (sampled_values[finite] - PRESSURE_OFFSET_HPA) / PRESSURE_SCALE_HPA
+    ).astype(np.int64)
+    if np.any(quantized < 0) or np.any(quantized >= NO_DATA_VALUE):
+        raise ValueError("Quantized pressure exceeds uint16 numeric tile range")
+    encoded[finite] = quantized.astype(np.uint16)
+    rgba = np.empty((*sampled_values.shape, 4), dtype=np.uint8)
+    rgba[:, :, 0] = (encoded >> 8).astype(np.uint8)
+    rgba[:, :, 1] = (encoded & 255).astype(np.uint8)
+    rgba[:, :, 2] = 0
+    rgba[:, :, 3] = 255
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    Image.fromarray(rgba, mode="RGBA").save(
+        output_path, format="PNG", optimize=True, compress_level=9
+    )
+
+
+def decode_pressure_png(path: Path) -> np.ndarray:
+    rgba = np.asarray(Image.open(path).convert("RGBA"), dtype=np.uint8)
+    codes = rgba[:, :, 0].astype(np.uint16) * 256 + rgba[:, :, 1].astype(np.uint16)
+    values = codes.astype(np.float32) * PRESSURE_SCALE_HPA + PRESSURE_OFFSET_HPA
+    values[codes == NO_DATA_VALUE] = np.nan
+    return values
+
+
 def encode_cloud_png(sampled_values: np.ndarray, output_path: Path) -> None:
     finite = np.isfinite(sampled_values)
     if np.any(sampled_values[finite] < 0) or np.any(sampled_values[finite] > 100):
@@ -1262,6 +1427,26 @@ def write_temperature_tile_pyramid(
     return file_count, byte_count
 
 
+def write_pressure_tile_pyramid(
+    values: np.ndarray, timestep_directory: Path
+) -> tuple[int, int]:
+    file_count = 0
+    byte_count = 0
+    for zoom in range(MIN_ZOOM, MAX_ZOOM + 1):
+        tile_count = 2**zoom
+        for tile_y in range(tile_count):
+            for tile_x in range(tile_count):
+                longitudes, latitudes = mercator_pixel_coordinates(
+                    zoom, tile_x, tile_y
+                )
+                sampled = sample_gfs_grid(values, longitudes, latitudes)
+                path = timestep_directory / str(zoom) / str(tile_x) / f"{tile_y}.png"
+                encode_pressure_png(sampled, path)
+                file_count += 1
+                byte_count += path.stat().st_size
+    return file_count, byte_count
+
+
 def write_wind_tile_pyramid(
     u_values: np.ndarray, v_values: np.ndarray, timestep_directory: Path
 ) -> tuple[int, int]:
@@ -1335,6 +1520,37 @@ def exported_temperature_value_at(
         / f"{tile_y}.png"
     )
     values = decode_temperature_png(path)
+    value = float(values[local_y, local_x])
+    sampled_longitudes, sampled_latitudes = mercator_pixel_coordinates(
+        MAX_ZOOM, tile_x, tile_y
+    )
+    return (
+        None if not math.isfinite(value) else value,
+        float(sampled_longitudes[local_x]),
+        float(sampled_latitudes[local_y]),
+    )
+
+
+def exported_pressure_value_at(
+    field_directory: Path, step_id: str, longitude: float, latitude: float
+) -> tuple[float | None, float, float]:
+    world_size = TILE_SIZE * 2**MAX_ZOOM
+    wrapped_longitude = ((longitude + 180.0) % 360.0) - 180.0
+    x = ((wrapped_longitude + 180.0) / 360.0) * world_size
+    limited_latitude = max(
+        -WEB_MERCATOR_LIMIT, min(WEB_MERCATOR_LIMIT, latitude)
+    )
+    sine = math.sin(math.radians(limited_latitude))
+    y = (0.5 - math.log((1 + sine) / (1 - sine)) / (4 * math.pi)) * world_size
+    pixel_x = min(world_size - 1, max(0, int(x)))
+    pixel_y = min(world_size - 1, max(0, int(y)))
+    tile_x, local_x = divmod(pixel_x, TILE_SIZE)
+    tile_y, local_y = divmod(pixel_y, TILE_SIZE)
+    path = (
+        field_directory / "tiles" / step_id / str(MAX_ZOOM)
+        / str(tile_x) / f"{tile_y}.png"
+    )
+    values = decode_pressure_png(path)
     value = float(values[local_y, local_x])
     sampled_longitudes, sampled_latitudes = mercator_pixel_coordinates(
         MAX_ZOOM, tile_x, tile_y
@@ -2273,6 +2489,238 @@ def build_temperature_dataset(
         raise
 
 
+def build_pressure_dataset(
+    args: argparse.Namespace,
+    resolution: RunResolution,
+    forecast_hours: list[int],
+    run_directory: Path,
+    run_id: str,
+) -> None:
+    pressure_directory = run_directory / "pressure-msl"
+    manifest_path = pressure_directory / "manifest.json"
+    expected_tiles = len(forecast_hours) * sum(
+        4**zoom for zoom in range(MIN_ZOOM, MAX_ZOOM + 1)
+    )
+    if pressure_directory.exists():
+        try:
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+            actual_hours = [step["forecastHour"] for step in manifest["timesteps"]]
+            actual_tiles = sum(
+                1 for _ in (pressure_directory / "tiles").rglob("*.png")
+            )
+            if (
+                manifest.get("schemaVersion") != 2
+                or manifest["field"]["id"] != "pressure_msl"
+                or actual_hours != forecast_hours
+                or actual_tiles != expected_tiles
+            ):
+                raise ValueError("pressure manifest or tiles do not match")
+        except (KeyError, OSError, ValueError, json.JSONDecodeError) as error:
+            raise FileExistsError(
+                f"Pressure directory exists but is not reusable: {pressure_directory}"
+            ) from error
+        publish_catalog_field(
+            args.output_root,
+            "pressure_msl",
+            manifest,
+            f"{run_id}/pressure-msl/manifest.json",
+        )
+        print(f"Reused validated mean-sea-level pressure field {run_id}; updated field catalogue.")
+        return
+
+    staging = args.output_root / f".{run_id}-pressure-building"
+    if staging.exists():
+        shutil.rmtree(staging)
+    staging.mkdir(parents=True, exist_ok=True)
+    timesteps: list[dict[str, Any]] = []
+    validations: list[dict[str, Any]] = []
+    total_tile_files = 0
+    total_tile_bytes = 0
+    sample_locations = {
+        "Snowdonia": (-4.0762, 53.0685),
+        "central-US": (-97.0, 38.0),
+        "Japan": (139.7, 35.7),
+        "antimeridian-west": (-179.9, 0.0),
+        "antimeridian-east": (179.9, 0.0),
+    }
+
+    try:
+        print("Generating global instantaneous mean-sea-level pressure...")
+        for record in resolution.pressure_records:
+            forecast_hour = record.forecast_hour
+            step_id = f"f{forecast_hour:03d}"
+            keep_directory = staging / "source" if args.keep_downloads else None
+            field = load_pressure_field(
+                resolution.date,
+                resolution.cycle,
+                resolution.run_time,
+                record,
+                keep_directory,
+            )
+            finite = field.values[np.isfinite(field.values)]
+            minimum = float(np.min(finite))
+            maximum = float(np.max(finite))
+            tile_files, tile_bytes = write_pressure_tile_pyramid(
+                field.values, staging / "tiles" / step_id
+            )
+            total_tile_files += tile_files
+            total_tile_bytes += tile_bytes
+            samples = []
+            for name, (longitude, latitude) in sample_locations.items():
+                exported_value, sampled_longitude, sampled_latitude = (
+                    exported_pressure_value_at(
+                        staging, step_id, longitude, latitude
+                    )
+                )
+                source_value = source_value_at(
+                    field.values, sampled_longitude, sampled_latitude
+                )
+                samples.append(
+                    {
+                        "name": name,
+                        "longitude": longitude,
+                        "latitude": latitude,
+                        "sourceHectopascals": round(source_value, 4),
+                        "exportedHectopascals": None
+                        if exported_value is None
+                        else round(exported_value, 4),
+                        "absoluteDifferenceHectopascals": None
+                        if exported_value is None
+                        else round(abs(source_value - exported_value), 4),
+                    }
+                )
+            valid_time = resolution.run_time + timedelta(hours=forecast_hour)
+            validations.append(
+                {
+                    "id": step_id,
+                    "inventory": record.description,
+                    "sourceParameter": "PRMSL",
+                    "sourceLevel": "mean sea level",
+                    "sourceStepType": field.metadata["stepType"],
+                    "sourceStepRange": field.metadata["stepRange"],
+                    "sourceUnits": field.metadata["units"],
+                    "minimumPascals": minimum * 100.0,
+                    "maximumPascals": maximum * 100.0,
+                    "minimumHectopascals": minimum,
+                    "maximumHectopascals": maximum,
+                    "missingValueCount": int(
+                        np.count_nonzero(~np.isfinite(field.values))
+                    ),
+                    "samples": samples,
+                    "tileFiles": tile_files,
+                    "tileBytes": tile_bytes,
+                }
+            )
+            timesteps.append(
+                {
+                    "id": step_id,
+                    "forecastHour": forecast_hour,
+                    "validTime": valid_time.isoformat().replace("+00:00", "Z"),
+                    "minimum": minimum,
+                    "maximum": maximum,
+                    "tileTemplate": f"tiles/{step_id}/{{z}}/{{x}}/{{y}}.png",
+                }
+            )
+            print(
+                f"  {step_id}: {minimum:.1f}..{maximum:.1f} hPa; "
+                f"{tile_files} tiles; {tile_bytes / 1024:.1f} KiB"
+            )
+
+        generated_at = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+        manifest = {
+            "schemaVersion": 2,
+            "id": f"gfs-0p25-prmsl-{run_id.lower()}",
+            "model": "NOAA GFS",
+            "product": "pgrb2.0p25",
+            "runTime": resolution.run_time.isoformat().replace("+00:00", "Z"),
+            "field": {
+                "id": "pressure_msl",
+                "kind": "scalar",
+                "sourceParameter": "PRMSL",
+                "sourceLevel": "mean sea level",
+                "displayName": "Mean sea-level pressure",
+                "units": "hPa",
+                "verticalReference": "mean-sea-level",
+                "validRange": [PRESSURE_MIN_HPA, PRESSURE_MAX_HPA],
+                "timeSemantics": "instantaneous",
+                "nativeResolution": {
+                    "longitudeDegrees": 0.25,
+                    "latitudeDegrees": 0.25,
+                },
+            },
+            "coverage": {
+                "bounds": [-180.0, -WEB_MERCATOR_LIMIT, 180.0, WEB_MERCATOR_LIMIT],
+                "worldWrap": True,
+                "polarLimit": "Web Mercator clips beyond ±85.05112878° latitude.",
+            },
+            "tiles": {
+                "format": "png",
+                "encoding": "uint16-rg",
+                "tileSize": TILE_SIZE,
+                "minZoom": MIN_ZOOM,
+                "maxZoom": MAX_ZOOM,
+                "scale": PRESSURE_SCALE_HPA,
+                "offset": PRESSURE_OFFSET_HPA,
+                "noData": NO_DATA_VALUE,
+                "resampling": "bilinear-from-canonical-grid",
+                "overzoom": True,
+            },
+            "timesteps": timesteps,
+            "attribution": {
+                "label": "Derived from NOAA Global Forecast System (GFS)",
+                "url": "https://registry.opendata.aws/noaa-gfs-bdp-pds/",
+                "source": NOAA_BUCKET,
+            },
+            "generatedAt": generated_at,
+        }
+        validation = {
+            "run": run_id,
+            "field": "pressure_msl",
+            "sourceGrid": {
+                "columns": EXPECTED_NI,
+                "rows": EXPECTED_NJ,
+                "resolutionDegrees": 0.25,
+                "latitudeOrder": "90..-90 degrees north-to-south",
+            },
+            "encoding": {
+                "description": "uint16 mean-sea-level pressure in 0.1 hPa steps; 65535 means no-data",
+                "scale": PRESSURE_SCALE_HPA,
+                "offset": PRESSURE_OFFSET_HPA,
+                "noData": NO_DATA_VALUE,
+            },
+            "timesteps": validations,
+            "summary": {
+                "timestepCount": len(timesteps),
+                "tileFileCount": total_tile_files,
+                "tileBytes": total_tile_bytes,
+                "minimumHectopascals": min(
+                    item["minimumHectopascals"] for item in validations
+                ),
+                "maximumHectopascals": max(
+                    item["maximumHectopascals"] for item in validations
+                ),
+            },
+        }
+        write_json(staging / "manifest.json", manifest)
+        write_json(staging / "validation.json", validation)
+        run_directory.mkdir(parents=True, exist_ok=True)
+        shutil.move(str(staging), str(pressure_directory))
+        publish_catalog_field(
+            args.output_root,
+            "pressure_msl",
+            manifest,
+            f"{run_id}/pressure-msl/manifest.json",
+        )
+        print(
+            f"Wrote {len(timesteps)} pressure timesteps and {total_tile_files} tiles "
+            f"({total_tile_bytes / 1024 / 1024:.2f} MiB)."
+        )
+    except Exception:
+        if staging.exists():
+            shutil.rmtree(staging)
+        raise
+
+
 def build_resolved_run(args: argparse.Namespace, resolution: RunResolution, forecast_hours: list[int]) -> None:
     from gfs_atmospheric import build_atmospheric_datasets
     date_value = resolution.date
@@ -2292,6 +2740,9 @@ def build_resolved_run(args: argparse.Namespace, resolution: RunResolution, fore
             args, resolution, forecast_hours, run_directory, run_id
         )
         build_temperature_dataset(
+            args, resolution, forecast_hours, run_directory, run_id
+        )
+        build_pressure_dataset(
             args, resolution, forecast_hours, run_directory, run_id
         )
         build_atmospheric_datasets(args, resolution, forecast_hours, run_directory, run_id)
@@ -2539,6 +2990,7 @@ def build_resolved_run(args: argparse.Namespace, resolution: RunResolution, fore
     build_cloud_dataset(args, resolution, forecast_hours, run_directory, run_id)
     build_wind_dataset(args, resolution, forecast_hours, run_directory, run_id)
     build_temperature_dataset(args, resolution, forecast_hours, run_directory, run_id)
+    build_pressure_dataset(args, resolution, forecast_hours, run_directory, run_id)
     build_atmospheric_datasets(args, resolution, forecast_hours, run_directory, run_id)
 
 

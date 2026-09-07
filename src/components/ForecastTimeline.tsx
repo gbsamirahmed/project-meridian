@@ -6,7 +6,6 @@ import type { CatalogueCheckState } from "../services/weatherCatalogueRefresh";
 import type { GlobalWeatherCatalog, GlobalWeatherStatusRegistry, ScalarWeatherFieldSource, VectorWeatherFieldSource } from "../types/globalWeather";
 import type { MapOverlayState } from "../types/layer";
 import type { JourneySchedule } from "../types/route";
-import type { WeatherGridStatus } from "../types/weatherGrid";
 
 interface ForecastTimelineProps {
   mapOverlays: MapOverlayState;
@@ -18,11 +17,11 @@ interface ForecastTimelineProps {
   globalCloudSource: ScalarWeatherFieldSource | null;
   globalWindSource: VectorWeatherFieldSource | null;
   globalTemperatureSource: ScalarWeatherFieldSource | null;
+  globalPressureSource: ScalarWeatherFieldSource | null;
   globalWeatherStatuses: GlobalWeatherStatusRegistry;
   globalWeatherCatalog: GlobalWeatherCatalog | null;
   catalogueCheck: CatalogueCheckState;
   journeySchedule: JourneySchedule | null;
-  weatherGridStatus: WeatherGridStatus;
   onForecastHourChange: (hour: number) => void;
   isPlaying: boolean;
   onPlayingChange: (playing: boolean) => void;
@@ -39,13 +38,14 @@ function formatForecastTime(time?: string): string {
   }).format(new Date(normalized));
 }
 
-export default function ForecastTimeline({ mapOverlays, forecastHour, forecastTimes, forecastHours, activeGlobalValidTime, globalPrecipitationSource, globalCloudSource, globalWindSource, globalTemperatureSource, globalWeatherStatuses, globalWeatherCatalog, catalogueCheck, journeySchedule, weatherGridStatus, onForecastHourChange, isPlaying, onPlayingChange }: ForecastTimelineProps) {
+export default function ForecastTimeline({ mapOverlays, forecastHour, forecastTimes, forecastHours, activeGlobalValidTime, globalPrecipitationSource, globalCloudSource, globalWindSource, globalTemperatureSource, globalPressureSource, globalWeatherStatuses, globalWeatherCatalog, catalogueCheck, journeySchedule, onForecastHourChange, isPlaying, onPlayingChange }: ForecastTimelineProps) {
   const precipActive = mapOverlays.precipitation && globalPrecipitationSource !== null;
   const cloudActive = mapOverlays.clouds && globalCloudSource !== null;
   const windActive = mapOverlays.windFlow && globalWindSource !== null;
   const temperatureActive = mapOverlays.temperatureContours && globalTemperatureSource !== null;
+  const pressureActive = mapOverlays.pressureIsobars && globalPressureSource !== null;
   const hasOverlay = Object.values(mapOverlays).some(Boolean);
-  const globalActive = precipActive || cloudActive || windActive || temperatureActive;
+  const globalActive = precipActive || cloudActive || windActive || temperatureActive || pressureActive;
   const precipitationStep = globalPrecipitationSource ? getScalarTimestepAtTime(globalPrecipitationSource, activeGlobalValidTime) : null;
   const globalLoading = Object.values(globalWeatherStatuses).some((status) => status === "loading");
   const maximumIndex = Math.max(0, forecastTimes.length - 1);
@@ -66,8 +66,12 @@ export default function ForecastTimeline({ mapOverlays, forecastHour, forecastTi
           <WeatherFreshness catalog={globalWeatherCatalog} check={catalogueCheck} journey={journeySchedule} />
           <p className="map-data-status">{globalActive ? `GFS +${displayedForecastHour}h${precipActive && precipitationStep ? ` · Rain ${accumulationIntervalLabel(precipitationStep)}` : ""}` : globalLoading ? "Loading GFS metadata" : "No global weather overlay selected"}</p>
           {hasOverlay && <LayerLegend mapOverlays={mapOverlays} globalPrecipitationActive={precipActive} precipitationAccumulationHours={precipitationStep?.accumulationHours} />}
-          {mapOverlays.pressureIsobars && <p className="pressure-note">Regional pressure uses a 9 × 9 Open-Meteo sample grid. This label applies only to pressure.</p>}
-          {mapOverlays.pressureIsobars && weatherGridStatus === "error" && <p className="status-message error">Regional pressure is unavailable.</p>}
+          {mapOverlays.pressureIsobars && globalPressureSource && (
+            <p className="pressure-note">GFS 0.25° global mean sea-level pressure · instantaneous field.</p>
+          )}
+          {mapOverlays.pressureIsobars && !globalPressureSource && (
+            <p className="status-message error">GFS pressure is unavailable.</p>
+          )}
         </div>
       </details>
     </div>

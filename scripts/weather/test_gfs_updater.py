@@ -46,7 +46,8 @@ def arguments(root):
 def resolution(value):
     return SimpleNamespace(run_time=value, date=value.date(), cycle=value.hour,
                            timesteps=(), cloud_records=(), wind_records=(),
-                           temperature_records=(), checked_candidates=())
+                           temperature_records=(), pressure_records=(),
+                           checked_candidates=())
 
 
 def create_recognised_run(root, value):
@@ -162,6 +163,16 @@ class WatchTests(unittest.TestCase):
 
 
 class RunValidationTests(unittest.TestCase):
+    def test_catalogue_requires_pressure_as_the_tenth_field(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            value = catalogue(OLD)
+            value["fields"].pop("pressure_msl")
+            (root / "latest.json").write_text(json.dumps(value), encoding="utf-8")
+            with patch.object(updater, "log") as log:
+                self.assertIsNone(updater.read_catalogue(root))
+            self.assertIn("Expected all ten fields", log.call_args.args[0])
+
     def test_unrecognised_content_cannot_be_published(self):
         with tempfile.TemporaryDirectory() as temporary:
             directory = Path(temporary) / "20260101T06Z"; directory.mkdir()

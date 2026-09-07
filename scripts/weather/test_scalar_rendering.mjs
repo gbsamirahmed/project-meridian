@@ -84,6 +84,23 @@ test("renderer and point sampler share decoded values/no-data, cache and wrapped
   }
 });
 
+test("pressure sampling decodes 0.1 hPa fixed-point values and preserves no-data", async () => {
+  for (const [code, expected] of [[2083, 1008.3], [65535, null]]) {
+    const source = {
+      baseUrl: `https://example.test/pressure-${code}/`,
+      manifest: { coverage: { bounds: [-180, -85, 180, 85] }, tiles: {
+        tileSize: 4, minZoom: 0, maxZoom: 0, encoding: "uint16-rg",
+        noData: 65535, scale: 0.1, offset: 800,
+      } },
+    };
+    await numericRuntime(code, async requests => {
+      const sample = await numeric.sampleScalarField(source, { tileTemplate: "f001/{z}/{x}/{y}.png" }, 52, -2);
+      assert.equal(requests.length, 1);
+      assert.equal(sample, expected);
+    });
+  }
+});
+
 test("interval labels use local accumulation bounds, never a future-valid-time offset", () => {
   const provenance = {
     timeSemantics: "interval-total", validTime: "2026-09-03T05:00:00Z",

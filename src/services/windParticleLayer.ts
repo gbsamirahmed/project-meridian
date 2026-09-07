@@ -7,7 +7,7 @@ import type {
 import { LAYER_VISUAL_STRENGTHS } from "../config/layerVisuals";
 
 import type { Basemap } from "../types/layer";
-import type { MutableWindVector } from "./weatherInterpolation";
+import type { MutableWindVector } from "./windVector";
 import type { WindVectorField } from "./windField";
 
 export const WIND_PARTICLE_LAYER_ID = "wind-particle-layer";

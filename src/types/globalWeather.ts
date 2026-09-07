@@ -5,12 +5,20 @@ export type GlobalWeatherFieldId =
   | "precipitation"
   | "cloud_cover"
   | "wind_10m"
-  | "temperature_2m";
+  | "temperature_2m"
+  | "pressure_msl";
 export type GlobalWeatherFieldStatus =
   | "loading"
   | "ready"
   | "unavailable"
   | "error";
+
+export interface GeographicBounds {
+  west: number;
+  south: number;
+  east: number;
+  north: number;
+}
 
 export interface ScalarFieldTimestep {
   id: string;
@@ -63,7 +71,7 @@ export interface ScalarFieldManifest extends WeatherFieldManifestBase {
     sourceParameter: string;
     sourceLevel: string;
     displayName: string;
-    units: "mm" | "percent" | "celsius" | "m/s" | "m" | "gpm";
+    units: "mm" | "percent" | "celsius" | "hPa" | "m/s" | "m" | "gpm";
     verticalReference?: "surface" | "mean-sea-level" | "model-surface";
     noDataMeaning?: string;
     interpretation?: string;
@@ -169,6 +177,7 @@ export interface GlobalWeatherSourceRegistry extends Partial<Record<AtmosphericF
   cloud_cover?: ScalarWeatherFieldSource;
   wind_10m?: VectorWeatherFieldSource;
   temperature_2m?: ScalarWeatherFieldSource;
+  pressure_msl?: ScalarWeatherFieldSource;
 }
 
 export type GlobalWeatherStatusRegistry = Record<

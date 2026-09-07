@@ -1128,3 +1128,38 @@ A selected location could resolve and render while Current conditions remained i
 - Added deterministic coverage for loading, failure, current conditions, seven-day outlook, timeline availability, Detailed forecast, UTC parsing and signal forwarding. The Chromium fixture now starts a delayed obsolete request, selects Fort William, verifies the new 7°C forecast remains authoritative after the old request settles, and captures the restored state.
 
 The visual workflow passed at 1920×1080, 1440×900 and 1366×768. Inspected screenshots show selected location, current values, seven-day outlook, Detailed forecast and the usable timeline; Forecast Workspace still opens, and the representative Journey/Route Analysis interaction remains intact. Browser diagnostics contain no page, console or HTTP-response errors. Expected aborted DEM tile requests during map movement remain recorded separately.
+
+## 2026-09-07 — Global GFS pressure and Open-Meteo usage audit
+
+### Hypothesis and baseline experiment
+
+The daily Open-Meteo limit might have been amplified by the legacy regional pressure grid, but the 429 response alone did not identify which caller consumed the quota. A source audit and deterministic request interception separated both `/v1/forecast` families before migration:
+
+| Request family | Trigger and shape | Reuse/cancellation | Representative HTTP requests |
+| --- | --- | --- | --- |
+| Selected-location forecast | One selected map/search location; 9 current, 8 hourly and 2 daily variables; 7 days; `timezone=auto` and Unix instants | 500 ms selection debounce, AbortController and generation guard; presentation state does not refetch | Initial load 0; first location 1; second location 1; Detailed Forecast, hover, pin, playback, workspace switching, GFS overlays and Route Analysis 0 |
+| Legacy regional pressure | Automatic style/load and map-move requests, whether or not pressure was visible; one batched request containing 81 coordinates, `hourly=pressure_msl`, 25 hours | 550 ms map debounce; 12-entry/30-minute extent cache; AbortController plus retry/backoff | Initial map 1; each deliberate pan/zoom outside reusable coverage 1; pressure toggle itself 0 |
+
+For the requested representative sequence, with four deliberate map extent changes outside reusable coverage, the old control flow produced five regional-pressure HTTP requests plus two point-forecast requests: seven HTTP requests carrying 405 pressure-grid coordinate locations and two point locations. Small movements inside the cached safe extent could reduce that count.
+
+Open-Meteo documents that `/v1/forecast` accepts comma-separated multiple coordinates and defaults to seven days. Its pricing page says a call is typically one HTTP request, but uses fractional/multiple accounting above ten variables or two weeks and exposes both variables and locations in its calculator. Meridian's point request asks for 19 values across current/hourly/daily groups, while each legacy pressure request carried 81 locations. The public response did not provide quota headers that reconstruct the charge. The audit therefore proves accidental map-driven request amplification, but cannot prove that it alone caused the earlier 10,000-call daily exhaustion or assign exact billable units to either shape.
+
+### GFS pressure migration
+
+- Added exact newest-run inventory probing for instantaneous `PRMSL:mean sea level` at f001–f024. ecCodes must report `prmsl`, `Pressure reduced to MSL`, Pa, `instant`, `meanSea`, the regular 1440×721 0.25° grid, and the requested run/valid time. Pressure participates in the same run discovery, staging, validation, immutable promotion, atomic `latest.json` gate, restart recovery and current-plus-previous retention as the other nine fields.
+- Convert Pa to hPa once and publish `pressure_msl` as uint16 red/green PNGs at 0.1 hPa precision, offset 800 hPa, no-data 65535, and a declared 800…1200 hPa range. A bounded real NOAA f001 byte-range check measured 926.53…1070.02 hPa and an 875,451-byte GRIB message.
+- Replaced the regional grid with the shared numeric-tile cache and exact manifest timestep selection. The isobar renderer prepares a padded geographic matrix, preserves last-good geometry during replacements, keeps missing cells as gaps, handles world wrap/globe coverage, and derives conventional labelled hPa contours from numeric GFS pressure. The inspector and Data view now report one GFS run/valid time and mean-sea-level provenance.
+- Removed the 9 × 9 generator, extent/cache/retry state, interpolation matrix, regional types, Open-Meteo pressure request and every regional-pressure UI label. There is no point-API fallback when the pressure manifest is absent or invalid.
+- Moved the updater's kernel-held duplicate-process lock to the operating-system temporary directory, keyed by the resolved output root. Vite's build copy also excludes the legacy operational lock file, so both already-running and restarted watchers cannot make a production build copy locked state into `dist`; concurrency and process-exit release semantics are unchanged.
+
+### Post-migration audit and cost
+
+The same deterministic browser interactions produce zero Open-Meteo traffic for pressure enable/disable, pan, zoom, forecast-time movement and playback. Opening/closing Detailed Forecast, hover, pin/unpin, playback, Location/Journey switching, other GFS overlays and Route Analysis also add zero selected-location requests. One new selected location still produces exactly one Open-Meteo HTTP request; selecting a second produces one replacement request, with obsolete responses prevented from taking ownership.
+
+One real f001 pressure tile pyramid contained 85 PNGs and occupied 1,826,869 bytes. Extrapolated across 24 steps, pressure adds about 43,844,856 bytes (41.8 MiB), taking a representative existing 559 MiB nine-field run to roughly 601 MiB. It adds 2,040 immutable PNGs per run and uses the unchanged shared 64 MiB browser cache. The measured one-step download/decode/tile pass took 5.65 seconds; a full pressure field remains sequential with the correctness-first builder, so build time grows accordingly.
+
+### Validation and limitations
+
+Focused tests cover exact inventory selection, GRIB metadata, quantisation/no-data round trips, manifest rejection, updater completeness, scalar sampling, contour levels/gaps and catalogue refresh completeness. The deterministic Chromium pressure fixture follows the real manifest, tile decode, cache and isobar path without contacting NOAA. Screenshots at the three desktop sizes show labelled continuous isobars at UK and wider scales without a regional boundary or visible tile seam. Browser interception proves pressure produces no Open-Meteo requests; the location fixture proves presentation interactions do not refetch.
+
+No generated live run was published: the ignored `latest.json`, immutable runs, source caches and retention state were deliberately left untouched. Production scheduling/hosting, longer horizons, temporal interpolation, migrating the selected-location product, and exact provider-side quota accounting remain deferred.

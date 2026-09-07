@@ -295,9 +295,11 @@ test("persistent map rail retains every compact layer and has no close or timeli
 });
 
 test("forecast timeline remains a compact Location control with playback and data access", () => {
-  const statuses = Object.fromEntries(["precipitation","cloud_cover","wind_10m","temperature_2m","gust_surface","visibility_surface","freezing_level","highest_freezing_level","cloud_ceiling"].map(key => [key,"ready"]));
-  const html = renderToStaticMarkup(createElement(ForecastTimeline, { mapOverlays: { elevation: false, precipitation: false, clouds: false, temperatureContours: false, pressureIsobars: true, windFlow: false }, forecastHour: 0, forecastTimes: [instant(0), instant(1)], forecastHours: [0,1], activeGlobalValidTime: instant(0), globalPrecipitationSource: null, globalCloudSource: null, globalWindSource: null, globalTemperatureSource: null, globalWeatherStatuses: statuses, globalWeatherCatalog: null, catalogueCheck: { lastSuccessfulCheck: null, lastCheckFailed: false }, journeySchedule: schedule, weatherGridStatus: "ready", onForecastHourChange: noop, isPlaying: true, onPlayingChange: noop }));
-  for (const text of ["Forecast timeline", "Pause forecast", "Data", "9 × 9 Open-Meteo sample grid"]) assert.ok(html.includes(text), text);
+  const statuses = Object.fromEntries(["precipitation","cloud_cover","wind_10m","temperature_2m","pressure_msl","gust_surface","visibility_surface","freezing_level","highest_freezing_level","cloud_ceiling"].map(key => [key,"ready"]));
+  const pressureSource = { manifest: { timesteps: [{ id: "f001", forecastHour: 1, validTime: instant(0) }] } };
+  const html = renderToStaticMarkup(createElement(ForecastTimeline, { mapOverlays: { elevation: false, precipitation: false, clouds: false, temperatureContours: false, pressureIsobars: true, windFlow: false }, forecastHour: 0, forecastTimes: [instant(0), instant(1)], forecastHours: [1,2], activeGlobalValidTime: instant(0), globalPrecipitationSource: null, globalCloudSource: null, globalWindSource: null, globalTemperatureSource: null, globalPressureSource: pressureSource, globalWeatherStatuses: statuses, globalWeatherCatalog: null, catalogueCheck: { lastSuccessfulCheck: null, lastCheckFailed: false }, journeySchedule: schedule, onForecastHourChange: noop, isPlaying: true, onPlayingChange: noop }));
+  for (const text of ["Forecast timeline", "Pause forecast", "Data", "GFS 0.25° global mean sea-level pressure"]) assert.ok(html.includes(text), text);
+  assert.ok(!html.includes("Open-Meteo sample grid"));
 });
 
 test("Analysis workspace preserves profile focus and condition strip access", () => {

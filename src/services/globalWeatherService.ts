@@ -21,6 +21,7 @@ export const GLOBAL_WEATHER_FIELD_IDS: GlobalWeatherFieldId[] = [
   "cloud_cover",
   "wind_10m",
   "temperature_2m",
+  "pressure_msl",
   ...Object.keys(ATMOSPHERIC_FIELDS) as Array<keyof typeof ATMOSPHERIC_FIELDS>,
 ];
 
@@ -158,7 +159,7 @@ function isVectorTimestep(value: unknown): value is VectorFieldTimestep {
   );
 }
 
-function normaliseManifest(
+export function normaliseGlobalWeatherManifest(
   value: unknown
 ): ScalarFieldManifest | VectorFieldManifest {
   if (!isRecord(value)) throw new Error("Global weather manifest is invalid");
@@ -298,6 +299,22 @@ function normaliseManifest(
   ) {
     throw new Error("Global temperature manifest semantics are invalid");
   }
+  if (
+    manifest.field.id === "pressure_msl" &&
+    (manifest.field.sourceParameter !== "PRMSL" ||
+      manifest.field.sourceLevel !== "mean sea level" ||
+      manifest.field.units !== "hPa" ||
+      manifest.field.verticalReference !== "mean-sea-level" ||
+      manifest.field.timeSemantics !== "instantaneous" ||
+      manifest.field.validRange[0] !== 800 ||
+      manifest.field.validRange[1] !== 1200 ||
+      manifest.tiles.encoding !== "uint16-rg" ||
+      manifest.tiles.scale !== 0.1 ||
+      manifest.tiles.offset !== 800 ||
+      manifest.tiles.noData !== 65535)
+  ) {
+    throw new Error("Global pressure manifest semantics are invalid");
+  }
   return manifest;
 }
 
@@ -322,7 +339,7 @@ async function loadField(
   signal?: AbortSignal
 ): Promise<GlobalWeatherFieldSource> {
   const manifestUrl = new URL(entry.manifest, latestUrl).href;
-  const manifest = normaliseManifest(
+  const manifest = normaliseGlobalWeatherManifest(
     await fetchJson<unknown>(manifestUrl, "force-cache", signal)
   );
 
@@ -382,6 +399,7 @@ export async function loadGlobalWeatherSources(
     cloud_cover: "unavailable",
     wind_10m: "unavailable",
     temperature_2m: "unavailable",
+    pressure_msl: "unavailable",
     gust_surface: "unavailable",
     visibility_surface: "unavailable",
     freezing_level: "unavailable",
@@ -433,6 +451,12 @@ export async function loadGlobalWeatherSources(
           source.manifest.field.id === "temperature_2m"
         ) {
           sources.temperature_2m = source as ScalarWeatherFieldSource;
+        } else if (
+          fieldId === "pressure_msl" &&
+          source.manifest.field.kind === "scalar" &&
+          source.manifest.field.id === "pressure_msl"
+        ) {
+          sources.pressure_msl = source as ScalarWeatherFieldSource;
         } else if (fieldId !== "wind_10m" && fieldId in ATMOSPHERIC_FIELDS && source.manifest.field.kind === "scalar") {
           sources[fieldId] = source as ScalarWeatherFieldSource;
         } else {

@@ -3,19 +3,17 @@ import { buildContourGeoJson } from "./contourGeometry";
 import type { ContourFeatureCollection } from "./contourGeometry";
 import type { GeographicBounds } from "../types/globalWeather";
 
-export function chooseTemperatureContourInterval(
+export function choosePressureContourInterval(
   zoom: number,
   range: number
 ): number | null {
-  if (!Number.isFinite(range) || range < 0.8) return null;
-  if (zoom < 3) return range > 110 ? 20 : 10;
-  if (zoom < 6) return range > 70 ? 10 : 5;
-  if (zoom < 9) return range > 35 ? 5 : 2.5;
-  if (zoom < 12) return range > 18 ? 5 : 2;
-  return range > 12 ? 5 : 2.5;
+  if (!Number.isFinite(range) || range < 0.9) return null;
+  if (zoom < 3) return 8;
+  if (zoom < 8) return 4;
+  return range < 8 ? 2 : 4;
 }
 
-export function buildTemperatureContourData(
+export function buildPressureContourData(
   matrix: number[][],
   bounds: GeographicBounds,
   zoom: number
@@ -32,12 +30,12 @@ export function buildTemperatureContourData(
   }
   const minimum = Math.min(...values);
   const maximum = Math.max(...values);
-  const interval = chooseTemperatureContourInterval(zoom, maximum - minimum);
+  const interval = choosePressureContourInterval(zoom, maximum - minimum);
   const levels: number[] = [];
   if (interval !== null) {
     const first = Math.ceil(minimum / interval) * interval;
     for (let level = first; level <= maximum; level += interval) {
-      const normalized = Number(level.toFixed(5));
+      const normalized = Number(level.toFixed(1));
       if (normalized > minimum && normalized < maximum) levels.push(normalized);
     }
   }
@@ -45,9 +43,8 @@ export function buildTemperatureContourData(
     matrix,
     bounds,
     levels,
-    formatLabel: (level) =>
-      `${Number.isInteger(level) ? level.toFixed(0) : level.toFixed(1)}°C`,
-    isEmphasized: (level) => level === 0 || level % 10 === 0,
+    formatLabel: (level) => `${Number.isInteger(level) ? level.toFixed(0) : level.toFixed(1)} hPa`,
+    isEmphasized: (level) => level % 8 === 0,
     upsampleFactor: 1,
   });
 }
