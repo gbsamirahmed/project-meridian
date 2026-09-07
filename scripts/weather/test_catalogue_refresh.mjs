@@ -34,6 +34,28 @@ await test("initial catalogue parsing remains backward-compatible while refresh 
   assert.equal(refresh.completeCatalogueRunTime(catalog()), Date.parse("2026-01-01T00:00:00Z"));
 });
 
+await test("schema-qualified same-cycle catalogue paths are accepted without mixing artifacts", () => {
+  const qualified = catalog();
+  for (const entry of Object.values(qualified.fields)) {
+    entry.manifest = entry.manifest.replace(
+      "20260101T00Z/",
+      "20260101T00Z-fields-96290f086b65/",
+    );
+  }
+  assert.equal(
+    refresh.completeCatalogueRunTime(qualified),
+    Date.parse("2026-01-01T00:00:00Z"),
+  );
+  qualified.fields.cloud_cover.manifest = qualified.fields.cloud_cover.manifest.replace(
+    "96290f086b65",
+    "aaaaaaaaaaaa",
+  );
+  assert.throws(
+    () => refresh.completeCatalogueRunTime(qualified),
+    /mixes immutable artifacts/,
+  );
+});
+
 await test("catalogue polling is one cache-busted no-store metadata request", async () => {
   const priorWindow = globalThis.window; const priorFetch = globalThis.fetch; const calls = [];
   globalThis.window = { location: { href: "http://meridian.test/" } };

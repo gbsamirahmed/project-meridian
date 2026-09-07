@@ -23,7 +23,8 @@ HOURS = list(range(1, 25))
 FIELD_PATHS = {"precipitation": "", "cloud_cover": "cloud-cover", "wind_10m": "wind-10m",
                "temperature_2m": "temperature-2m", "pressure_msl": "pressure-msl",
                **{f.id: f.id.replace("_", "-") for f in FIELDS}}
-RUN_NAME = re.compile(r"[0-9]{8}T(?:00|06|12|18)Z")
+BASE_RUN_PATTERN = r"[0-9]{8}T(?:00|06|12|18)Z"
+RUN_NAME = re.compile(rf"(?P<cycle>{BASE_RUN_PATTERN})(?:-fields-(?P<schema>[0-9a-f]{{12}}))?")
 EXPECTED_TILES = 24 * sum(4**z for z in range(4))
 
 
@@ -62,9 +63,23 @@ def update_lock(root: Path):
 
 
 def run_time(run_id: str) -> datetime:
-    if not RUN_NAME.fullmatch(run_id):
+    match = RUN_NAME.fullmatch(run_id)
+    if not match:
         raise ValueError("Not a generated GFS cycle directory")
-    return datetime.strptime(run_id, "%Y%m%dT%HZ").replace(tzinfo=timezone.utc)
+    return datetime.strptime(match.group("cycle"), "%Y%m%dT%HZ").replace(tzinfo=timezone.utc)
+
+
+def field_schema_id(field_ids=None) -> str:
+    selected = set(FIELD_PATHS if field_ids is None else field_ids)
+    identity = "\n".join(
+        f"{field_id}:{FIELD_PATHS[field_id]}" for field_id in sorted(selected)
+    )
+    return hashlib.sha256(identity.encode("utf-8")).hexdigest()[:12]
+
+
+def schema_artifact_name(run_id: str) -> str:
+    cycle = run_time(run_id).strftime("%Y%m%dT%HZ")
+    return f"{cycle}-fields-{field_schema_id()}"
 
 
 def iso(value: datetime) -> str:
@@ -85,13 +100,20 @@ def read_catalogue(root: Path, require_complete: bool = True) -> dict | None:
         if len(times) != 1:
             raise ValueError("Catalogue mixes runs")
         date = datetime.fromisoformat(times.pop().replace("Z", "+00:00"))
-        name = date.strftime("%Y%m%dT%HZ")
-        if date.tzinfo is None or date.utcoffset() != timedelta(0) or run_time(name) != date:
-            raise ValueError("Invalid GFS run time")
+        artifacts = {entry["manifest"].split("/")[0] for entry in value["fields"].values()}
+        if len(artifacts) != 1:
+            raise ValueError("Catalogue mixes immutable artifacts")
+        artifact = artifacts.pop()
+        match = RUN_NAME.fullmatch(artifact)
+        if (date.tzinfo is None or date.utcoffset() != timedelta(0) or
+                run_time(artifact) != date or
+                (match.group("schema") is not None and
+                 match.group("schema") != field_schema_id(field_ids))):
+            raise ValueError("Invalid GFS run time or field schema")
         for key in field_ids:
             subdir = FIELD_PATHS[key]
             entry = value["fields"][key]
-            expected_path = "/".join(part for part in (name, subdir, "manifest.json") if part)
+            expected_path = "/".join(part for part in (artifact, subdir, "manifest.json") if part)
             if (entry["manifest"] != expected_path or entry["timestepCount"] != 24 or
                     entry["firstValidTime"] != iso(date + timedelta(hours=1)) or
                     entry["lastValidTime"] != iso(date + timedelta(hours=24))):
@@ -206,37 +228,101 @@ def validate_run(directory: Path, verify_png: bool = True) -> dict:
             "generatedAt": iso(datetime.now(timezone.utc)), "fields": fields}
 
 
-def incompatible_immutable_floor(root: Path) -> datetime | None:
-    """Newest occupied immutable run that cannot contain the required field schema."""
-    result = None
-    result_missing = []
-    occupied_count = 0
-    for directory in root.iterdir():
-        if (not directory.is_dir() or not RUN_NAME.fullmatch(directory.name) or
-                (directory / ".meridian-publishing").exists() or not any(directory.iterdir())):
+def clone_file(source: Path, destination: Path) -> dict:
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    size = source.stat().st_size
+    try:
+        os.link(source, destination)
+        return {"linked": 1, "copied": 0, "logicalBytes": size}
+    except OSError:
+        shutil.copy2(source, destination)
+        return {"linked": 0, "copied": 1, "logicalBytes": size}
+
+
+def clone_tree(source: Path, destination: Path) -> dict:
+    """Clone immutable files with hard links where possible, copying only as fallback."""
+    result = {"linked": 0, "copied": 0, "logicalBytes": 0}
+    for path in [source, *source.rglob("*")]:
+        if path.is_symlink() or (hasattr(path, "is_junction") and path.is_junction()):
+            raise ValueError("Reusable generated field contains a link")
+        relative = path.relative_to(source)
+        target = destination / relative
+        if path.is_dir():
+            target.mkdir(parents=True, exist_ok=True)
             continue
-        missing = []
-        present = 0
-        for field_id, subdir in FIELD_PATHS.items():
-            field_directory = directory / subdir
-            has_layout = (field_directory.is_dir() and
-                          (field_directory / "manifest.json").is_file() and
-                          (field_directory / "validation.json").is_file() and
-                          (field_directory / "tiles").is_dir())
-            if has_layout:
-                present += 1
-            else:
-                missing.append(field_id)
-        if present and missing:
-            occupied_count += 1
-            date = run_time(directory.name)
-            if result is None or date > result:
-                result = date
-                result_missing = missing
-    if result is not None:
-        log(f"Preserving {occupied_count} occupied previous-schema run(s); discovery advances beyond "
-            f"{result:%Y%m%dT%HZ}, which is missing: {', '.join(result_missing)}")
+        if not path.is_file():
+            raise ValueError("Reusable generated field contains an unsupported entry")
+        target.parent.mkdir(parents=True, exist_ok=True)
+        merge_clone_counts(result, clone_file(path, target))
     return result
+
+
+def merge_clone_counts(total: dict, added: dict) -> None:
+    for key in ("linked", "copied", "logicalBytes"):
+        total[key] += added[key]
+
+
+def stage_reusable_fields(source_run: Path, staged_run: Path, run_id: str) -> dict:
+    """Validate and clone reusable fields from exactly one matching GFS initialization."""
+    if run_time(source_run.name) != run_time(run_id):
+        raise ValueError("GFS artifacts may only be reused within the exact same model cycle")
+    date = run_time(run_id)
+    result = {"fields": [], "linked": 0, "copied": 0, "logicalBytes": 0}
+    staged_run.mkdir(parents=True, exist_ok=True)
+    for field_id, subdir in FIELD_PATHS.items():
+        source = source_run / subdir
+        target = staged_run / subdir
+        try:
+            validate_field(source, field_id, date)
+        except (OSError, ValueError, KeyError, TypeError, json.JSONDecodeError) as error:
+            log(f"Same-cycle {field_id} is not reusable and will be generated: {error}")
+            continue
+        if (target / "manifest.json").is_file():
+            validate_field(target, field_id, date)
+            result["fields"].append(field_id)
+            continue
+        target.mkdir(parents=True, exist_ok=True)
+        merge_clone_counts(result, clone_tree(source / "tiles", target / "tiles"))
+        for name in ("manifest.json", "validation.json"):
+            merge_clone_counts(result, clone_file(source / name, target / name))
+        validate_field(target, field_id, date)
+        result["fields"].append(field_id)
+    return result
+
+
+def stage_source_caches(source_run: Path, staged_run: Path) -> dict:
+    """Preserve known source caches while publishing a same-cycle schema artifact."""
+    result = {"linked": 0, "copied": 0, "logicalBytes": 0}
+    candidates = [(source_run / name, staged_run / name) for name in ("source", "atmospheric-source")]
+    candidates.extend((source_run / subdir / "source", staged_run / subdir / "source")
+                      for subdir in FIELD_PATHS.values() if subdir)
+    for source, target in candidates:
+        if source.is_dir() and not target.exists():
+            merge_clone_counts(result, clone_tree(source, target))
+    return result
+
+
+def cleanup_completed_transaction(root: Path, run_id: str) -> None:
+    """Remove completed transaction metadata only after latest names the valid artifact."""
+    work = root / f".{run_id}-update-building"
+    if not work.is_dir() or not (work / ".meridian-update").is_file():
+        return
+    if (work / ".meridian-update").read_text() != run_id:
+        return
+    catalogue = read_catalogue(root)
+    artifacts = ({entry["manifest"].split("/")[0] for entry in catalogue["fields"].values()}
+                 if catalogue is not None else set())
+    if len(artifacts) != 1 or run_time(next(iter(artifacts))) != run_time(run_id):
+        return
+    artifact = next(iter(artifacts))
+    validate_run(root / artifact, verify_png=False)
+    remove_generated(work / "latest.json", root)
+    remaining = [item for item in work.iterdir() if item.name != ".meridian-update"]
+    if not remaining:
+        remove_generated(work / ".meridian-update", root)
+        work.rmdir()
+    else:
+        log("Transaction contains preserved non-generated files; marker retained")
 
 
 def remove_generated(path: Path, root: Path) -> None:
@@ -247,6 +333,32 @@ def remove_generated(path: Path, root: Path) -> None:
         shutil.rmtree(target)
     elif target.exists():
         target.unlink()
+
+
+def publication_copy(source: str, destination: str) -> str:
+    """Hard-link immutable publication files, copying only across filesystems."""
+    target = Path(destination)
+    if target.exists():
+        target.unlink()
+    try:
+        os.link(source, destination)
+    except OSError:
+        shutil.copy2(source, destination)
+    return destination
+
+
+def publish_catalogue(root: Path, catalogue: dict) -> None:
+    """Retry the atomic pointer swap when Windows briefly retains latest.json."""
+    for attempt in range(8):
+        try:
+            core.write_json_atomically(root / "latest.json", catalogue)
+            return
+        except PermissionError:
+            if os.name != "nt" or attempt == 7:
+                raise
+            if attempt == 0:
+                log("latest.json is temporarily busy; retrying atomic publication")
+            time.sleep(1)
 
 
 def promote_run(source: Path, destination: Path, root: Path, run_id: str) -> None:
@@ -271,7 +383,9 @@ def promote_run(source: Path, destination: Path, root: Path, run_id: str) -> Non
         marker.write_text(run_id)
         log(f"Directory rename remained busy; copying {run_id} before a second full validation")
     try:
-        shutil.copytree(source, destination, dirs_exist_ok=True)
+        shutil.copytree(
+            source, destination, dirs_exist_ok=True, copy_function=publication_copy
+        )
         validate_run(destination)
         marker.unlink()
         remove_generated(source, root)
@@ -354,8 +468,14 @@ def prune_runs(root: Path) -> list[str]:
     if catalogue is None:
         return []
     current = next(iter(catalogue["fields"].values()))["manifest"].split("/")[0]
-    candidates = sorted((p for p in root.iterdir() if p.is_dir() and RUN_NAME.fullmatch(p.name) and p.name < current),
-                        key=lambda p: p.name, reverse=True)
+    current_time = run_time(current)
+    candidates = sorted(
+        (path for path in root.iterdir()
+         if path.is_dir() and RUN_NAME.fullmatch(path.name) and path.name != current
+         and run_time(path.name) <= current_time),
+        key=lambda path: (run_time(path.name), path.name),
+        reverse=True,
+    )
     previous = None
     for candidate in candidates:
         try:
@@ -408,10 +528,11 @@ def update_once(args: argparse.Namespace) -> dict:
         current = read_catalogue(root, require_complete=False)
         current_is_complete = bool(current and set(current["fields"]) == set(FIELD_PATHS))
         if current and not current_is_complete:
-            log(f"Published catalogue has {len(current['fields'])} of {len(FIELD_PATHS)} required fields; retaining it until a newer complete run is ready")
+            log(f"Published catalogue has {len(current['fields'])} of {len(FIELD_PATHS)} required fields; retaining it until a same-cycle completion or newer run is ready")
         current_time = datetime.fromisoformat(next(iter(current["fields"].values()))["runTime"].replace("Z", "+00:00")) if current else None
-        occupied_floor = incompatible_immutable_floor(root)
-        discovery_floor = max(value for value in (current_time, occupied_floor) if value is not None) if (current_time or occupied_floor) else None
+        current_id = current_time.strftime("%Y%m%dT%HZ") if current_time else None
+        discovery_floor = (current_time if current_is_complete or current_time is None
+                           else current_time - timedelta(seconds=1))
         core.fetch_text.cache_clear()  # Incomplete inventories must be re-probed next hour.
         options = argparse.Namespace(**{**vars(args), "require_all_fields": True})
         resolution = core.resolve_run(options, HOURS, newer_than=discovery_floor)
@@ -419,29 +540,62 @@ def update_once(args: argparse.Namespace) -> dict:
             log(f"No newer usable run; retaining {iso(current_time) if current_time else 'existing data'}")
             if not args.check_only and current_is_complete:
                 try:
-                    current_id = current_time.strftime("%Y%m%dT%HZ") if current_time else ""
                     if current_id:
+                        cleanup_completed_transaction(root, current_id)
                         prune_stale_transactions(root, current_id)
                     prune_runs(root)
                 except (OSError, ValueError) as error:
                     log(f"Cleanup deferred; live forecast remains valid: {error}")
             return {"generated": False, "run": iso(current_time) if current_time else None}
+
         name = resolution.run_time.strftime("%Y%m%dT%HZ")
         log(f"Newest usable {len(FIELD_PATHS)}-field candidate: {name}")
         if args.check_only:
             return {"generated": False, "candidate": name}
-        destination = checked_path(root / name, root)
+
+        base_destination = checked_path(root / name, root)
+        schema_destination = checked_path(root / schema_artifact_name(name), root)
         work = checked_path(root / f".{name}-update-building", root)
         generated = False
+        reuse = {"fields": [], "linked": 0, "copied": 0, "logicalBytes": 0}
+        migration_source = None
+        destination = base_destination
+        catalogue = None
+        complete_existing = False
+
+        # A schema-qualified artifact may be the completed result of a prior
+        # transaction whose atomic latest.json publication was interrupted.
+        for candidate in (schema_destination, base_destination):
+            marker = candidate / ".meridian-publishing"
+            if not candidate.exists() or marker.exists():
+                continue
+            try:
+                catalogue = validate_run(candidate)
+                destination = candidate
+                complete_existing = True
+                log(f"Reusing complete immutable artifact {candidate.name}")
+                break
+            except (OSError, ValueError, KeyError, TypeError):
+                pass
+
+        if not complete_existing and base_destination.exists():
+            try:
+                validate_run(base_destination)
+            except (OSError, ValueError, KeyError, TypeError) as error:
+                migration_source = base_destination
+                destination = schema_destination
+                log(f"Completing occupied same-cycle {name} as {destination.name} "
+                    f"in a private transaction: {error}")
+
         publishing_marker = destination / ".meridian-publishing"
-        if (destination.exists() and not publishing_marker.exists() and not any(destination.iterdir()) and
-                (work / ".meridian-update").is_file() and (work / ".meridian-update").read_text() == name):
+        if (destination.exists() and not publishing_marker.exists() and
+                not any(destination.iterdir()) and
+                (work / ".meridian-update").is_file() and
+                (work / ".meridian-update").read_text() == name):
             destination.rmdir()
-            log(f"Recovered empty interrupted immutable destination {name}")
-        if destination.exists() and not publishing_marker.exists():
-            catalogue = validate_run(destination)
-            log(f"Reusing complete immutable run {name}")
-        else:
+            log(f"Recovered empty interrupted immutable destination {destination.name}")
+
+        if not complete_existing:
             if not work.exists():
                 work.mkdir()
                 (work / ".meridian-update").write_text(name)
@@ -450,26 +604,24 @@ def update_once(args: argparse.Namespace) -> dict:
                     raise ValueError("Unrecognised non-empty transaction directory; leaving it untouched")
                 (work / ".meridian-update").write_text(name)
             repair_staging(work, name)
+            if migration_source is not None:
+                reuse = stage_reusable_fields(migration_source, work / name, name)
+                log(f"Staged {len(reuse['fields'])} validated same-cycle field(s): "
+                    f"{reuse['linked']} hard-linked files, {reuse['copied']} copied files")
             build_options = argparse.Namespace(**{**vars(args), "output_root": work, "source_cache_root": root})
             core.build_resolved_run(build_options, resolution, HOURS)
-            catalogue = validate_run(work / name)
-            promote_run(work / name, destination, root, name)
-            # The final tree is validated again by copy fallback and remains immutable.
+            if migration_source is not None:
+                cache_reuse = stage_source_caches(migration_source, work / name)
+                merge_clone_counts(reuse, cache_reuse)
+            validate_run(work / name)
+            promote_run(work / name, destination, root, destination.name)
             catalogue = validate_run(destination, verify_png=False)
             generated = True
-        core.write_json_atomically(root / "latest.json", catalogue)
-        log(f"Published complete {name} atomically in {time.monotonic() - started:.1f}s")
-        # Only transaction metadata is removed; source caches are never cleaned here.
-        work = root / f".{name}-update-building"
+
+        publish_catalogue(root, catalogue)
+        log(f"Published complete {destination.name} atomically in {time.monotonic() - started:.1f}s")
         try:
-            if work.exists():
-                remove_generated(work / "latest.json", root)
-                remaining = [item for item in work.iterdir() if item.name != ".meridian-update"]
-                if not remaining:
-                    remove_generated(work / ".meridian-update", root)
-                    work.rmdir()
-                else:
-                    log("Transaction contains preserved non-generated files; marker retained")
+            cleanup_completed_transaction(root, name)
         except (OSError, ValueError) as error:
             log(f"Transaction metadata cleanup deferred: {error}")
         try:
@@ -478,7 +630,10 @@ def update_once(args: argparse.Namespace) -> dict:
         except (OSError, ValueError) as error:
             log(f"Cleanup deferred; published forecast remains valid: {error}")
             removed = []
-        return {"generated": generated, "run": iso(resolution.run_time), "removed": removed,
+        return {"generated": generated, "run": iso(resolution.run_time),
+                "artifact": destination.name, "removed": removed,
+                "reusedFields": reuse["fields"], "hardLinkedFiles": reuse["linked"],
+                "copiedFiles": reuse["copied"], "reusedLogicalBytes": reuse["logicalBytes"],
                 "seconds": round(time.monotonic() - started, 2)}
 
 

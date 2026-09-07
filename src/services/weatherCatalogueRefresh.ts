@@ -58,6 +58,7 @@ export function completeCatalogueRunTime(catalog: GlobalWeatherCatalog): number 
     throw new Error("Weather catalogue does not contain all ten fields");
   }
   let runTime: number | null = null;
+  let artifactName: string | null = null;
   for (const fieldId of GLOBAL_WEATHER_FIELD_IDS) {
     const entry = catalog.fields[fieldId]!;
     const fieldRun = exactIsoTime(entry.runTime);
@@ -80,9 +81,19 @@ export function completeCatalogueRunTime(catalog: GlobalWeatherCatalog): number 
     }
     const name = `${run.getUTCFullYear()}${String(run.getUTCMonth() + 1).padStart(2, "0")}${String(run.getUTCDate()).padStart(2, "0")}T${String(run.getUTCHours()).padStart(2, "0")}Z`;
     const subdir = FIELD_PATHS[fieldId];
-    const expected = [name, subdir, "manifest.json"].filter(Boolean).join("/");
-    if (entry.manifest !== expected) {
+    const parts = entry.manifest.split("/");
+    const candidateArtifact = parts[0] ?? "";
+    const expectedTail = [subdir, "manifest.json"].filter(Boolean);
+    if (
+      !new RegExp(`^${name}(?:-fields-[0-9a-f]{12})?$`).test(candidateArtifact) ||
+      parts.length !== expectedTail.length + 1 ||
+      !expectedTail.every((part, index) => parts[index + 1] === part)
+    ) {
       throw new Error("Weather catalogue manifest is not in its immutable run");
+    }
+    if (artifactName === null) artifactName = candidateArtifact;
+    if (candidateArtifact !== artifactName) {
+      throw new Error("Weather catalogue mixes immutable artifacts");
     }
   }
   if (runTime === null) throw new Error("Weather catalogue is empty");
