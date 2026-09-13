@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "experiment": "Meridian Earth Laboratory 001: Tryfan",
+  "aoi": {
+    "crs": "EPSG:27700",
+    "center_easting": 266400,
+    "center_northing": 359300,
+    "bounds": [
+      265400,
+      358300,
+      267400,
+      360300
+    ],
+    "width_m": 2000,
+    "height_m": 2000
+  },
+  "selected_source": {
+    "name": "Welsh Government LiDAR 2020-2023 national DTM and DSM",
+    "survey_date": "2021-03-02",
+    "native_resolution_m": 1,
+    "crs": "EPSG:27700",
+    "dtm_url": "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dtm_32bit_cog.tif",
+    "dsm_url": "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif",
+    "catalogue_url": "https://datamap.gov.wales/layers/geonode:welsh_government_lidar_tile_catalogue_2020_2023/metadata_detail"
+  },
+  "historic_comparison": {
+    "covers_tryfan_point": true,
+    "survey_date": "February-April 2007",
+    "native_resolution_m": 1,
+    "dtm_available": true,
+    "dsm_available": true,
+    "dtm_url": "https://lle.blob.core.windows.net/lidar/1m_res_SH65_2007_dtm.zip",
+    "dsm_url": "https://lle.blob.core.windows.net/lidar/1m_res_SH65_2007_dsm.zip",
+    "catalogue_url": "https://datamap.gov.wales/layers/geonode:nrw_lidar_tile_catalogue_archive/metadata_detail",
+    "selection_note": "No 0.25 m or 0.5 m historic coverage intersects Tryfan. The 1 m national survey is newer at the same resolution and covers the complete AOI consistently."
+  },
+  "licence": {
+    "name": "Open Government Licence for Public Sector Information, version 3.0",
+    "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+    "attribution": "Contains Welsh Government information licensed under the Open Government Licence v3.0."
+  },
+  "retrieval": {
+    "method": "bounded HTTP range reads from the national Cloud Optimized GeoTIFFs",
+    "whole_national_files_downloaded": false,
+    "local_data_root_convention": "../meridian-data/earth-lab/<aoi-id>/",
+    "generated_paths": {
+      "rasters": "rasters/<aoi-id>-{dtm,dsm}-1m.tif",
+      "catalogue_and_manifest": "metadata/",
+      "inspection_previews": "previews/"
+    }
+  },
+  "inspection_2026_09_13": {
+    "raster_dimensions": [
+      2000,
+      2000
+    ],
+    "pixel_size_m": 1,
+    "dtype": "float32",
+    "nodata_value": -9999,
+    "dtm": {
+      "valid_cells": 4000000,
+      "nodata_cells": 0,
+      "minimum_m": 300.4599914550781,
+      "maximum_m": 987.8900146484375,
+      "file_bytes": 7393742
+    },
+    "dsm": {
+      "valid_cells": 4000000,
+      "nodata_cells": 0,
+      "minimum_m": 300.44000244140625,
+      "maximum_m": 989.1300048828125,
+      "file_bytes": 7539460
+    },
+    "dsm_minus_dtm": {
+      "mean_m": 0.36044254899024963,
+      "median_m": 0.19000244140625,
+      "minimum_m": -9.489990234375,
+      "maximum_m": 21.990020751953125,
+      "cells_over_2m_percent": 2.356725
+    },
+    "quality_notes": [
+      "No nodata gaps occur within the AOI.",
+      "Mean elevation steps at internal 1 km source-tile boundaries are comparable to the full-raster adjacent-cell means; no quantitative seam discontinuity is evident.",
+      "Large local adjacent-cell changes remain plausible in Tryfan terrain and require later spatial and visual review before mesh processing.",
+      "Generated PNG inspection was blocked by the Codex Windows ACL and trusted-Node browser failures; no visual acceptance is claimed."
+    ]
+  }
+}

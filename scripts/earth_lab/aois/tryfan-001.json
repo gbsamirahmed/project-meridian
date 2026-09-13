@@ -1,0 +1,21 @@
+{
+  "id": "tryfan-001",
+  "name": "Tryfan",
+  "center": {
+    "crs": "EPSG:27700",
+    "easting": 266400,
+    "northing": 359300,
+    "context_wgs84": {
+      "latitude": 53.115,
+      "longitude": -3.998
+    }
+  },
+  "width_m": 2000,
+  "height_m": 2000,
+  "selection_policy": {
+    "prefer_finest_resolution": true,
+    "prefer_newest_when_resolution_ties": true,
+    "require_dtm": true,
+    "include_dsm": true
+  }
+}
