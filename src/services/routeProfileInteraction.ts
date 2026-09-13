@@ -53,5 +53,5 @@ export function activeRouteSampleIndex(
   previewIndex: number | null,
   pinnedIndex: number | null
 ): number | null {
-  return pinnedIndex ?? previewIndex;
+  return previewIndex ?? pinnedIndex;
 }

@@ -23,6 +23,7 @@ interface ForecastTimelineProps {
   catalogueCheck: CatalogueCheckState;
   journeySchedule: JourneySchedule | null;
   onForecastHourChange: (hour: number) => void;
+  onResetToCurrentTime: () => void;
   isPlaying: boolean;
   onPlayingChange: (playing: boolean) => void;
 }
@@ -38,7 +39,7 @@ function formatForecastTime(time?: string): string {
   }).format(new Date(normalized));
 }
 
-export default function ForecastTimeline({ mapOverlays, forecastHour, forecastTimes, forecastHours, activeGlobalValidTime, globalPrecipitationSource, globalCloudSource, globalWindSource, globalTemperatureSource, globalPressureSource, globalWeatherStatuses, globalWeatherCatalog, catalogueCheck, journeySchedule, onForecastHourChange, isPlaying, onPlayingChange }: ForecastTimelineProps) {
+export default function ForecastTimeline({ mapOverlays, forecastHour, forecastTimes, forecastHours, activeGlobalValidTime, globalPrecipitationSource, globalCloudSource, globalWindSource, globalTemperatureSource, globalPressureSource, globalWeatherStatuses, globalWeatherCatalog, catalogueCheck, journeySchedule, onForecastHourChange, onResetToCurrentTime, isPlaying, onPlayingChange }: ForecastTimelineProps) {
   const precipActive = mapOverlays.precipitation && globalPrecipitationSource !== null;
   const cloudActive = mapOverlays.clouds && globalCloudSource !== null;
   const windActive = mapOverlays.windFlow && globalWindSource !== null;
@@ -51,19 +52,16 @@ export default function ForecastTimeline({ mapOverlays, forecastHour, forecastTi
   const maximumIndex = Math.max(0, forecastTimes.length - 1);
   const displayedForecastHour = forecastHours?.[forecastHour] ?? forecastHour;
   const forecastLabel = formatForecastTime(forecastTimes[forecastHour]);
+  const referenceSource = globalPrecipitationSource ?? globalCloudSource ?? globalWindSource ?? globalTemperatureSource ?? globalPressureSource;
+  const resolutionDegrees = referenceSource?.manifest.field?.nativeResolution?.longitudeDegrees ??
+    (globalWeatherCatalog?.product.includes("0p25") ? 0.25 : null);
 
   return <section className="location-timeline workspace-card" aria-label="Forecast timeline">
-    <div className="location-timeline-heading">
-      <div><p className="section-kicker">Forecast time</p><strong>{forecastLabel}</strong></div>
-      <span>+{displayedForecastHour}h</span>
-    </div>
-    <div className="location-timeline-controls">
-      <button type="button" className="forecast-play-button" aria-label={isPlaying ? "Pause forecast" : "Play forecast"} aria-pressed={isPlaying} onClick={() => onPlayingChange(!isPlaying)}>{isPlaying ? "Ⅱ" : "▶"}</button>
-      <input className="time-slider" type="range" aria-label="Forecast hour" min="0" max={maximumIndex} step="1" value={forecastHour} onChange={(event) => onForecastHourChange(Number(event.target.value))} />
-      <details className="map-data-details">
-        <summary>Data</summary>
+    <div className="forecast-data-row">
+      <WeatherFreshness catalog={globalWeatherCatalog} check={catalogueCheck} journey={journeySchedule} compact resolutionDegrees={resolutionDegrees} />
+      <details className="map-data-details forecast-data-details">
+        <summary aria-label="More forecast data information" title="More forecast data information">i</summary>
         <div className="map-data-popover desktop-surface">
-          <WeatherFreshness catalog={globalWeatherCatalog} check={catalogueCheck} journey={journeySchedule} />
           <p className="map-data-status">{globalActive ? `GFS +${displayedForecastHour}h${precipActive && precipitationStep ? ` · Rain ${accumulationIntervalLabel(precipitationStep)}` : ""}` : globalLoading ? "Loading GFS metadata" : "No global weather overlay selected"}</p>
           {hasOverlay && <LayerLegend mapOverlays={mapOverlays} globalPrecipitationActive={precipActive} precipitationAccumulationHours={precipitationStep?.accumulationHours} />}
           {mapOverlays.pressureIsobars && globalPressureSource && (
@@ -74,6 +72,15 @@ export default function ForecastTimeline({ mapOverlays, forecastHour, forecastTi
           )}
         </div>
       </details>
+    </div>
+    <div className="location-timeline-heading">
+      <div><p className="section-kicker">Forecast time</p><strong>{forecastLabel}</strong></div>
+      <span>+{displayedForecastHour}h</span>
+    </div>
+    <div className="location-timeline-controls">
+      <button type="button" className="forecast-play-button" aria-label={isPlaying ? "Pause forecast" : "Play forecast"} aria-pressed={isPlaying} onClick={() => onPlayingChange(!isPlaying)}>{isPlaying ? "Ⅱ" : "▶"}</button>
+      <input className="time-slider" type="range" aria-label="Forecast hour" min="0" max={maximumIndex} step="1" value={forecastHour} onChange={(event) => onForecastHourChange(Number(event.target.value))} />
+      <button type="button" className="forecast-reset-button" aria-label="Reset to current time" title="Reset to current time" onClick={onResetToCurrentTime}>↻</button>
     </div>
   </section>;
 }

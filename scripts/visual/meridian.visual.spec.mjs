@@ -344,7 +344,7 @@ test("global GFS pressure isobars use immutable tiles without Open-Meteo traffic
     // A camera event deterministically schedules the viewport-derived contour build
     // after MapLibre's style and controls have settled at every test viewport.
     await page.getByRole("button", { name: "Zoom out" }).click();
-    await page.getByText("Data", { exact: true }).click();
+    await page.locator('summary[aria-label="More forecast data information"]').click();
     await expect(page.getByText("GFS 0.25° global mean sea-level pressure · instantaneous field.")).toBeVisible({ timeout: 60_000 });
     await expect(page.getByText("No forecast", { exact: true })).toHaveCount(0);
     await expect(page.locator('.map-container[data-pressure-contours-ready]')).toBeVisible({ timeout: 120_000 });
@@ -377,6 +377,7 @@ test("global GFS pressure isobars use immutable tiles without Open-Meteo traffic
 });
 
 test("Forecast Workspace is a shared temporal instrument beside Location", async ({ page }, testInfo) => {
+  test.setTimeout(120_000);
   const size = viewportName(testInfo);
   const diagnostics = observeBrowser(page);
   const openMeteoRequests = [];
@@ -389,6 +390,19 @@ test("Forecast Workspace is a shared temporal instrument beside Location", async
     await expect(page.getByRole("heading", { name: "Ben Nevis, Highland" })).toBeVisible({ timeout: 15_000 });
     const openButton = page.getByRole("button", { name: "Detailed forecast" });
     await expect(openButton).toBeVisible();
+    expect(openMeteoRequests).toHaveLength(1);
+    await expect(page.getByRole("button", { name: "Reset to current time" })).toBeVisible();
+    await expect(page.locator(".forecast-data-summary")).toContainText("GFS");
+    const locationLayout = await page.locator(".desktop-workspace-content").evaluate(element => ({
+      clientHeight: element.clientHeight,
+      scrollHeight: element.scrollHeight,
+      clientWidth: element.clientWidth,
+      scrollWidth: element.scrollWidth,
+    }));
+    diagnostics.locationLayout = locationLayout;
+    expect(locationLayout.scrollWidth).toBeLessThanOrEqual(locationLayout.clientWidth);
+    expect(locationLayout.scrollHeight).toBeLessThanOrEqual(locationLayout.clientHeight);
+    await page.getByRole("button", { name: "Reset to current time" }).click();
     expect(openMeteoRequests).toHaveLength(1);
     await capture(page, `forecast-location-closed-${size}`);
     await openButton.click();
@@ -415,16 +429,36 @@ test("Forecast Workspace is a shared temporal instrument beside Location", async
     const plot = page.getByRole("slider", { name: "Forecast time" });
     const plotBounds = await plot.boundingBox();
     if (!plotBounds) throw new Error("Forecast plot has no bounds");
-    await page.mouse.move(plotBounds.x + plotBounds.width * 0.62, plotBounds.y + plotBounds.height * 0.35);
+    const plotGeometry = await plot.evaluate(element => {
+      const style = getComputedStyle(element);
+      return {
+        labelWidth: Number.parseFloat(style.getPropertyValue("--forecast-label-width")),
+        plotInset: Number.parseFloat(style.getPropertyValue("--forecast-plot-inset")),
+      };
+    });
+    const drawableWidth = plotBounds.width - plotGeometry.labelWidth - plotGeometry.plotInset * 2;
+    const targetX = plotBounds.x + plotGeometry.labelWidth + plotGeometry.plotInset + drawableWidth * 0.62;
+    await page.mouse.move(targetX, plotBounds.y + plotBounds.height * 0.35);
+    const hoveredTime = await plot.getAttribute("aria-valuetext");
     expect(await timeline.inputValue()).toBe(originalTimelineValue);
     if (testInfo.project.name === "desktop-1440x900") await capture(page, "forecast-hover-1440x900");
 
-    await page.mouse.click(plotBounds.x + plotBounds.width * 0.62, plotBounds.y + plotBounds.height * 0.35);
+    await page.mouse.click(targetX, plotBounds.y + plotBounds.height * 0.35);
     await expect(workspace.getByRole("button", { name: "Unpin" })).toBeVisible();
+    expect(await plot.getAttribute("aria-valuetext")).toBe(hoveredTime);
     expect(await timeline.inputValue()).not.toBe(originalTimelineValue);
     if (testInfo.project.name === "desktop-1440x900") await capture(page, "forecast-pinned-1440x900");
-    await page.mouse.click(plotBounds.x + plotBounds.width * 0.62, plotBounds.y + plotBounds.height * 0.35);
+    await workspace.getByRole("button", { name: "Unpin" }).click();
     await expect(workspace.getByRole("button", { name: "Unpin" })).toHaveCount(0);
+    const maximumPosition = await plot.getAttribute("aria-valuemax");
+    await page.mouse.move(plotBounds.x + plotBounds.width - plotGeometry.plotInset, plotBounds.y + plotBounds.height * 0.35);
+    await expect(plot).toHaveAttribute("aria-valuenow", maximumPosition ?? "0");
+    const finalAxis = workspace.locator(".forecast-axis span").last();
+    const finalAxisBounds = await finalAxis.boundingBox();
+    if (workspaceBounds && finalAxisBounds) expect(finalAxisBounds.x + finalAxisBounds.width).toBeLessThanOrEqual(workspaceBounds.x + workspaceBounds.width - 8);
+    const windArrowStyle = await workspace.locator(".forecast-wind-vectors span").first().evaluate(element => ({ fontSize: Number.parseFloat(getComputedStyle(element).fontSize), stroke: getComputedStyle(element).webkitTextStrokeWidth }));
+    expect(windArrowStyle.fontSize).toBeGreaterThanOrEqual(20);
+    if (testInfo.project.name === "desktop-1440x900") await capture(page, "forecast-right-endpoint-1440x900");
     await plot.focus();
     await plot.press("ArrowRight");
     await plot.press("Enter");
@@ -541,7 +575,7 @@ test("imported route fitting respects the visible map beside the primary workspa
 });
 
 test("safe GPX route exposes Journey, in-panel Tune, and interactive Analysis", async ({ page }, testInfo) => {
-  test.skip(testInfo.project.name !== "desktop-1440x900", "Route proof runs once at the representative desktop viewport.");
+  const size = viewportName(testInfo);
   const diagnostics = observeBrowser(page);
 
   await page.route("https://s3.amazonaws.com/elevation-tiles-prod/terrarium/**", async (route) => {
@@ -599,13 +633,13 @@ test("safe GPX route exposes Journey, in-panel Tune, and interactive Analysis", 
     expect(clearRouteLayout.flexShrink).toBe("0");
     expect(clearRouteLayout.whiteSpace).toBe("nowrap");
     await expect(page.getByText("Environmental details")).toHaveCount(0);
-    await capture(page, "journey-loaded-1440x900");
+    if (testInfo.project.name === "desktop-1440x900") await capture(page, "journey-loaded-1440x900");
 
     await page.getByRole("button", { name: "Tune" }).click();
     await expect(page.getByRole("heading", { name: "Journey settings" })).toBeVisible();
     await expect(page.locator(".journey-settings-view")).toBeVisible();
     await expect(page.locator(".workspace-popover")).toHaveCount(0);
-    await capture(page, "journey-settings-1440x900");
+    if (testInfo.project.name === "desktop-1440x900") await capture(page, "journey-settings-1440x900");
     await page.locator(".journey-back-button").click();
     await expect(page.getByRole("heading", { name: "Journey settings" })).toHaveCount(0);
 
@@ -620,6 +654,32 @@ test("safe GPX route exposes Journey, in-panel Tune, and interactive Analysis", 
     await expect(page.getByRole("tab", { name: "Analysis" })).toHaveCount(0);
     await expect(page.locator(".route-analysis.desktop-surface")).toHaveCount(0);
     await expect(page.getByRole("region", { name: "Forecast timeline" })).toHaveCount(0);
+    const startProfile = analysis.getByRole("slider", { name: "Route elevation and expected journey profile" });
+    await expect(startProfile).toHaveAttribute("aria-valuenow", "0");
+    await expect(analysis.getByText("Preview or pin a point")).toHaveCount(0);
+    await expect(analysis.getByText(/0\.0 km/).first()).toBeVisible();
+    const spatialViewport = analysis.locator(".analysis-spatial-viewport");
+    const detailPanel = analysis.locator(".analysis-detail-card");
+    const spatialBounds = await spatialViewport.boundingBox();
+    const detailBounds = await detailPanel.boundingBox();
+    expect(spatialBounds && detailBounds).toBeTruthy();
+    if (spatialBounds && detailBounds) expect(detailBounds.x).toBeGreaterThan(spatialBounds.x + spatialBounds.width);
+    await capture(page, `analysis-route-start-${size}`);
+
+    await page.getByRole("button", { name: "Close Route analysis workspace" }).click();
+    const miniProfile = page.locator(".journey-profile-card").getByRole("slider", { name: "Route elevation and expected journey profile" });
+    const miniBounds = await miniProfile.boundingBox();
+    if (!miniBounds) throw new Error("Journey mini profile has no rendered bounds");
+    await page.mouse.move(miniBounds.x + miniBounds.width * 0.32, miniBounds.y + miniBounds.height * 0.5);
+    expect(Number(await miniProfile.getAttribute("aria-valuenow"))).toBeGreaterThan(0);
+    await page.mouse.click(miniBounds.x + miniBounds.width * 0.58, miniBounds.y + miniBounds.height * 0.5);
+    await page.mouse.move(miniBounds.x + miniBounds.width + 16, miniBounds.y);
+    const selectedDistance = await miniProfile.getAttribute("aria-valuenow");
+    expect(Number(selectedDistance)).toBeGreaterThan(0);
+    await page.getByRole("button", { name: "Analyse", exact: true }).click();
+    await expect(analysis).toBeVisible();
+    await expect(analysis.getByRole("slider", { name: "Route elevation and expected journey profile" })).toHaveAttribute("aria-valuenow", selectedDistance ?? "0");
+    if (testInfo.project.name === "desktop-1440x900") await capture(page, "analysis-mini-profile-selection-1440x900");
     const afterAnalysis = await mapFurniture.boundingBox();
     expect(beforeAnalysis).not.toBeNull();
     expect(afterAnalysis).not.toBeNull();
@@ -641,14 +701,14 @@ test("safe GPX route exposes Journey, in-panel Tune, and interactive Analysis", 
     await page.mouse.move(bounds.x + bounds.width * 0.25, bounds.y + bounds.height * 0.5);
     await expect(analysis.getByText(/km ·/).first()).toBeVisible();
     await page.mouse.click(bounds.x + bounds.width * 0.5, bounds.y + bounds.height * 0.5);
-    await expect(analysis.getByText("Pinned journey point")).toBeVisible();
+    await expect(analysis.locator(".analysis-detail-card").getByText("Selected journey point")).toBeVisible();
     await page.mouse.click(bounds.x + bounds.width * 0.75, bounds.y + bounds.height * 0.5);
-    await expect(analysis.getByText("Pinned journey point")).toBeVisible();
-    await capture(page, "analysis-pinned-1440x900");
-    await analysis.getByRole("button", { name: "Unpin" }).click();
-    await expect(analysis.getByText(/Hover to preview/)).toBeVisible();
+    await expect(analysis.locator(".analysis-detail-card").getByText("Selected journey point")).toBeVisible();
+    await capture(page, `analysis-pinned-${size}`);
+    await analysis.getByRole("button", { name: "Reset to start" }).click();
+    await expect(analysis.getByText("Route start selected")).toBeVisible();
   } finally {
-    await saveDiagnostics("route-1440x900", diagnostics, testInfo);
+    await saveDiagnostics(`route-${size}`, diagnostics, testInfo);
   }
 
   expect(diagnostics.pageErrors, "Unhandled browser page errors; see generated diagnostics").toEqual([]);

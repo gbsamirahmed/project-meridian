@@ -20,12 +20,14 @@ interface JourneyOverviewProps {
   onImport: (file: File) => void;
   onClear: () => void;
   focusedIndex: number | null;
-  onFocusChange: (index: number | null) => void;
+  selectedIndex: number | null;
+  onPreviewChange: (index: number | null) => void;
+  onSelectedChange: (index: number | null) => void;
   onOpenSettings: () => void;
   onOpenAnalysis: (mode: RouteConditionMode) => void;
 }
 
-export default function JourneyOverview({ routeGeometry, terrainRoute, schedule, scheduleError, status, statusMessage, profile, plan, routeConditions, routeConditionStatus, focusedIndex, onImport, onClear, onFocusChange, onOpenSettings, onOpenAnalysis }: JourneyOverviewProps) {
+export default function JourneyOverview({ routeGeometry, terrainRoute, schedule, scheduleError, status, statusMessage, profile, plan, routeConditions, routeConditionStatus, focusedIndex, selectedIndex, onImport, onClear, onPreviewChange, onSelectedChange, onOpenSettings, onOpenAnalysis }: JourneyOverviewProps) {
   const handleFile = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     event.target.value = "";
@@ -52,7 +54,7 @@ export default function JourneyOverview({ routeGeometry, terrainRoute, schedule,
 
     {terrainRoute && <section className="journey-profile-card">
       <div className="journey-profile-card-heading"><div><p className="section-kicker">Elevation profile</p><h3>Route shape</h3></div><button type="button" onClick={() => onOpenAnalysis("none")}>Analyse</button></div>
-      <RouteProfile route={terrainRoute} schedule={schedule} conditions={routeConditions} conditionMode="none" focusedIndex={focusedIndex} onFocusChange={onFocusChange} summary />
+      <RouteProfile route={terrainRoute} schedule={schedule} conditions={routeConditions} conditionMode="none" focusedIndex={focusedIndex} pinnedIndex={selectedIndex} onFocusChange={onPreviewChange} onPreviewChange={onPreviewChange} onPinnedChange={onSelectedChange} summary />
     </section>}
 
     <section className="journey-section route-facts-section">

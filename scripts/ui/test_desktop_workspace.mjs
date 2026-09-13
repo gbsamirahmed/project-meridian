@@ -91,7 +91,7 @@ const locationWeather = {
 };
 
 function overview(extra={}) {
-  return renderToStaticMarkup(createElement(JourneyOverview, { routeGeometry: geometry, terrainRoute: terrain, schedule, scheduleError: null, status: "ready", statusMessage: null, profile, plan, routeConditions: conditions, routeConditionStatus: "partial", onImport: noop, onClear: noop, focusedIndex: null, onFocusChange: noop, onOpenSettings: noop, onOpenAnalysis: noop, ...extra }));
+  return renderToStaticMarkup(createElement(JourneyOverview, { routeGeometry: geometry, terrainRoute: terrain, schedule, scheduleError: null, status: "ready", statusMessage: null, profile, plan, routeConditions: conditions, routeConditionStatus: "partial", onImport: noop, onClear: noop, focusedIndex: 0, selectedIndex: 0, onPreviewChange: noop, onSelectedChange: noop, onOpenSettings: noop, onOpenAnalysis: noop, ...extra }));
 }
 
 test("workspace state is presentation-only, explicit, and Map Inspector starts off", () => {
@@ -229,6 +229,41 @@ test("forecast visual semantics distinguish zero rain and convert wind-from to t
   assert.equal(forecastModel.windTravelToDegrees(270), 90);
 });
 
+test("forecast pointer mapping shares one inset-aware coordinate system", () => {
+  for (const boundsWidth of [720, 900, 1200]) {
+    const geometry = { boundsLeft: 37, boundsWidth, labelWidth: 126, plotInset: 12 };
+    const plotLeft = geometry.boundsLeft + geometry.labelWidth + geometry.plotInset;
+    const plotWidth = geometry.boundsWidth - geometry.labelWidth - geometry.plotInset * 2;
+    for (const sampleCount of [24, 25, 26]) {
+      for (const position of [0, Math.floor((sampleCount - 1) / 2), sampleCount - 1]) {
+        const clientX = plotLeft + plotWidth * position / (sampleCount - 1);
+        assert.equal(forecastModel.forecastPointerIndex(clientX, geometry, sampleCount), position);
+      }
+      assert.equal(forecastModel.forecastPointerIndex(plotLeft - 100, geometry, sampleCount), 0);
+      assert.equal(forecastModel.forecastPointerIndex(plotLeft + plotWidth + 100, geometry, sampleCount), sampleCount - 1);
+    }
+  }
+});
+
+test("Location seven-day forecast uses one compact row per day", () => {
+  const sevenDays = Array.from({ length: 7 }, (_, index) => ({
+    date: `2026-09-${String(6 + index).padStart(2, "0")}`,
+    maxTemperature: 18 - index,
+    minTemperature: 10 - index,
+  }));
+  const html = renderToStaticMarkup(createElement(LocationWorkspace, {
+    selectedLocation: { latitude: 56.7969, longitude: -5.0036 },
+    place: { name: "Ben Nevis" },
+    weather: { ...locationWeather, forecast: sevenDays },
+    weatherStatus: "ready",
+    onSearch: noop,
+    timeline: createElement("div", null, "timeline"),
+    forecastWorkspaceOpen: false,
+    onForecastWorkspaceToggle: noop,
+  }));
+  assert.equal((html.match(/location-forecast-row/g) ?? []).length, 7);
+  assert.ok(!html.includes('class="forecast-row"'));
+});
 test("primary workspace remains Location and Journey only", () => {
   const common = { onModeChange: noop, onSettings: noop, onFocusMode: noop };
   const noRoute = renderToStaticMarkup(createElement(DesktopWorkspace, { ...common, mode: "journey" }, createElement("p", null, "journey-state")));
@@ -266,7 +301,7 @@ test("journey overview separates route facts from derived estimate and uses huma
 test("complete coverage is silent and an empty journey offers a clear import action", () => {
   const complete = structuredClone(conditions); complete.coverage.visibility.availableSamples = 3; complete.samples[2].weather.visibility = scalar(9000, "visibility_surface");
   assert.ok(!overview({ routeConditions: complete, routeConditionStatus: "ready" }).includes("coverage-messages"));
-  const html = renderToStaticMarkup(createElement(JourneyOverview, { routeGeometry: null, terrainRoute: null, schedule: null, scheduleError: null, status: "idle", statusMessage: null, profile, plan, routeConditions: null, routeConditionStatus: "idle", onImport: noop, onClear: noop, focusedIndex: null, onFocusChange: noop, onOpenSettings: noop, onOpenAnalysis: noop }));
+  const html = renderToStaticMarkup(createElement(JourneyOverview, { routeGeometry: null, terrainRoute: null, schedule: null, scheduleError: null, status: "idle", statusMessage: null, profile, plan, routeConditions: null, routeConditionStatus: "idle", onImport: noop, onClear: noop, focusedIndex: 0, selectedIndex: 0, onPreviewChange: noop, onSelectedChange: noop, onOpenSettings: noop, onOpenAnalysis: noop }));
   for (const text of ["Plan with a route", "Import a GPX to analyse terrain, timing and weather along your journey.", "Import GPX", "Processed locally in your browser."]) assert.ok(html.includes(text), text); assert.match(html, /class="workspace-card journey-empty"/); assert.ok(!html.includes("Route foundation"));
 });
 
@@ -294,19 +329,56 @@ test("persistent map rail retains every compact layer and has no close or timeli
   assert.ok(!html.includes("Forecast timeline"));
 });
 
-test("forecast timeline remains a compact Location control with playback and data access", () => {
+test("forecast timeline exposes persistent data and reset-to-current-time", () => {
   const statuses = Object.fromEntries(["precipitation","cloud_cover","wind_10m","temperature_2m","pressure_msl","gust_surface","visibility_surface","freezing_level","highest_freezing_level","cloud_ceiling"].map(key => [key,"ready"]));
-  const pressureSource = { manifest: { timesteps: [{ id: "f001", forecastHour: 1, validTime: instant(0) }] } };
-  const html = renderToStaticMarkup(createElement(ForecastTimeline, { mapOverlays: { elevation: false, precipitation: false, clouds: false, temperatureContours: false, pressureIsobars: true, windFlow: false }, forecastHour: 0, forecastTimes: [instant(0), instant(1)], forecastHours: [1,2], activeGlobalValidTime: instant(0), globalPrecipitationSource: null, globalCloudSource: null, globalWindSource: null, globalTemperatureSource: null, globalPressureSource: pressureSource, globalWeatherStatuses: statuses, globalWeatherCatalog: null, catalogueCheck: { lastSuccessfulCheck: null, lastCheckFailed: false }, journeySchedule: schedule, onForecastHourChange: noop, isPlaying: true, onPlayingChange: noop }));
-  for (const text of ["Forecast timeline", "Pause forecast", "Data", "GFS 0.25° global mean sea-level pressure"]) assert.ok(html.includes(text), text);
+  const pressureSource = { manifest: { field: { nativeResolution: { longitudeDegrees: 0.25 } }, timesteps: [{ id: "f001", forecastHour: 1, validTime: instant(0) }] } };
+  const catalog = { schemaVersion: 2, model: "NOAA GFS", product: "pgrb2.0p25", generatedAt: instant(0), fields: { pressure_msl: { runTime: instant(0), firstValidTime: instant(1), lastValidTime: instant(5), timestepCount: 24, manifest: "run/pressure-msl/manifest.json" } } };
+  const html = renderToStaticMarkup(createElement(ForecastTimeline, { mapOverlays: { elevation: false, precipitation: false, clouds: false, temperatureContours: false, pressureIsobars: true, windFlow: false }, forecastHour: 0, forecastTimes: [instant(0), instant(1)], forecastHours: [1,2], activeGlobalValidTime: instant(0), globalPrecipitationSource: null, globalCloudSource: null, globalWindSource: null, globalTemperatureSource: null, globalPressureSource: pressureSource, globalWeatherStatuses: statuses, globalWeatherCatalog: catalog, catalogueCheck: { lastSuccessfulCheck: instant(2), lastCheckFailed: false }, journeySchedule: schedule, onForecastHourChange: noop, onResetToCurrentTime: noop, isPlaying: true, onPlayingChange: noop }));
+  for (const text of ["Forecast timeline", "Pause forecast", "Reset to current time", "GFS 03 Sept 00Z", "0.25°", "Valid through", "GFS 0.25° global mean sea-level pressure"]) assert.ok(html.includes(text), text);
+  assert.ok(!html.includes(">Data<"));
   assert.ok(!html.includes("Open-Meteo sample grid"));
 });
 
 test("Analysis workspace preserves profile focus and condition strip access", () => {
   const html = renderToStaticMarkup(createElement(RouteAnalysis, { route: terrain, schedule, conditions, conditionStatus: "partial", conditionMode: "temperature", focusedIndex: 1, pinnedIndex: 1, onPreviewChange: noop, onPinnedChange: noop, onConditionModeChange: noop }));
   assert.match(html, /role="slider"/); assert.match(html, /aria-valuenow="500"/); assert.match(html, /route-profile-focus-point/); assert.match(html, /route-profile-condition-segment/); assert.match(html, /Selected journey point/);
+  assert.match(html, /analysis-spatial-viewport/); assert.match(html, /analysis-chart-stack/);
 });
 
+test("Route Analysis starts at route start and never presents an empty point panel", () => {
+  const ready = renderToStaticMarkup(createElement(RouteAnalysis, {
+    route: terrain, schedule, conditions, conditionStatus: "ready", conditionMode: "none",
+    focusedIndex: 0, pinnedIndex: 0, onPreviewChange: noop, onPinnedChange: noop, onConditionModeChange: noop,
+  }));
+  assert.match(ready, /Route start selected/);
+  assert.match(ready, /Selected journey point/);
+  assert.match(ready, /0\.0 km/);
+  assert.ok(!ready.includes("Preview or pin a point"));
+
+  const loading = renderToStaticMarkup(createElement(RouteAnalysis, {
+    route: terrain, schedule, conditions: null, conditionStatus: "loading", conditionMode: "none",
+    focusedIndex: 0, pinnedIndex: 0, onPreviewChange: noop, onPinnedChange: noop, onConditionModeChange: noop,
+  }));
+  assert.match(loading, /Route start · 0\.0 km/);
+  assert.match(loading, /Preparing route-start conditions/);
+  assert.ok(!loading.includes("Preview or pin a point"));
+});
+
+test("Journey and Analysis profiles expose the same selected route point", () => {
+  const journey = overview({ focusedIndex: 2, selectedIndex: 1 });
+  const analysis = renderToStaticMarkup(createElement(RouteAnalysis, {
+    route: terrain, schedule, conditions, conditionStatus: "ready", conditionMode: "none",
+    focusedIndex: 2, pinnedIndex: 1, onPreviewChange: noop, onPinnedChange: noop, onConditionModeChange: noop,
+  }));
+  for (const html of [journey, analysis]) {
+    assert.match(html, /aria-valuenow="1000"/);
+    assert.match(html, /route-profile-focus-point/);
+    assert.match(html, /Selected journey point/);
+  }
+  assert.equal(profileInteraction.activeRouteSampleIndex(null, 1), 1);
+  assert.equal(profileInteraction.activeRouteSampleIndex(2, 1), 2);
+  assert.equal(profileInteraction.activeRouteSampleIndex(null, 0), 0);
+});
 test("presentation actions perform no network work", () => {
   const originalFetch = globalThis.fetch; let calls = 0; globalThis.fetch = () => { calls += 1; throw new Error("unexpected"); };
   try {
@@ -335,7 +407,7 @@ test("profile pin state moves and toggles off without changing route data", () =
   assert.equal(profileInteraction.nextPinnedRouteSample(1, 2), 2);
   assert.equal(profileInteraction.nextPinnedRouteSample(2, 2), null);
   assert.equal(profileInteraction.activeRouteSampleIndex(1, null), 1);
-  assert.equal(profileInteraction.activeRouteSampleIndex(1, 2), 2);
+  assert.equal(profileInteraction.activeRouteSampleIndex(1, 2), 1);
   assert.equal(terrain.id, "route");
 });
 

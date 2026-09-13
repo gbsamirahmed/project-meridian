@@ -141,9 +141,9 @@ export default function RouteProfile({
   return (
     <div className={`route-profile${summary ? " route-profile-summary" : ""}${pinnedIndex !== null ? " route-profile-pinned" : ""}`}>
       <div className="route-profile-heading">
-        <span>{pinnedIndex === null ? "Hover to preview · click to pin" : "Pinned journey point"}</span>
+        <span>{pinnedIndex === null ? "Hover to preview · click to select" : pinnedIndex === 0 ? "Route start selected" : "Selected journey point"}</span>
         {focusSample && <strong>{(focusSample.cumulativeDistanceM / 1000).toFixed(1)} km · {Math.round(focusSample.smoothedElevationM ?? 0)} m{focusSchedule ? ` · ${minutesLabel(focusSchedule.elapsedMinutes)}` : ""}</strong>}
-        {pinnedIndex !== null && onPinnedChange && <button type="button" className="route-profile-pin-button" onClick={() => { onPinnedChange(null); preview(null); }}>Unpin</button>}
+        {pinnedIndex !== null && pinnedIndex !== 0 && onPinnedChange && <button type="button" className="route-profile-pin-button" onClick={() => { onPinnedChange(null); preview(null); }}>Reset to start</button>}
       </div>
       <svg
         ref={svgRef}
@@ -151,23 +151,23 @@ export default function RouteProfile({
         preserveAspectRatio="none"
         role="slider"
         aria-label="Route elevation and expected journey profile"
-        aria-description={pinnedIndex === null ? "Move to preview a point and click to pin it." : "The selected journey point is pinned."}
+        aria-description={pinnedIndex === null ? "Move to preview a point and click to select it." : "Move to preview another point; click to change the selection."}
         aria-valuemin={0}
         aria-valuemax={Math.round(route.totalDistanceM)}
         aria-valuenow={Math.round(focusSample?.cumulativeDistanceM ?? 0)}
         tabIndex={0}
         onPointerMove={(event) => {
-          if (pinnedIndex === null) preview(indexFromPointer(event));
+          preview(indexFromPointer(event));
         }}
         onPointerLeave={() => {
-          if (pinnedIndex === null) preview(null);
+          preview(null);
         }}
         onClick={(event) => {
           const index = indexFromPointer(event);
           if (onPinnedChange) {
             const next = nextPinnedRouteSample(pinnedIndex, index);
             onPinnedChange(next);
-            if (next === null) preview(index);
+            if (next === null) preview(null);
           } else {
             onFocusChange(index);
           }

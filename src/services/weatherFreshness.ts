@@ -10,6 +10,13 @@ export interface WeatherFreshnessPresentation {
   tone: WeatherFreshnessTone;
 }
 
+export interface WeatherDataSummaryPresentation {
+  primary: string;
+  secondary: string;
+  detail: string;
+  tone: WeatherFreshnessTone;
+}
+
 function compactDuration(milliseconds: number): string {
   const hours = Math.max(0, milliseconds / 3_600_000);
   if (hours < 1) return `${Math.max(1, Math.ceil(hours * 60))} min`;
@@ -22,6 +29,16 @@ function checkedLabel(value: string | null): string | null {
     hour: "2-digit",
     minute: "2-digit",
   }).format(new Date(value));
+}
+
+function runIdentity(entry: { runTime: string }): string {
+  const run = new Date(entry.runTime);
+  const runDate = new Intl.DateTimeFormat(undefined, {
+    day: "2-digit",
+    month: "short",
+    timeZone: "UTC",
+  }).format(run);
+  return `GFS ${runDate} ${String(run.getUTCHours()).padStart(2, "0")}Z`;
 }
 
 export function weatherFreshnessPresentation(
@@ -40,14 +57,8 @@ export function weatherFreshnessPresentation(
       tone: "unavailable",
     };
   }
-  const run = new Date(entry.runTime);
-  const runDate = new Intl.DateTimeFormat(undefined, {
-    day: "2-digit",
-    month: "short",
-    timeZone: "UTC",
-  }).format(run);
   const checked = checkedLabel(check.lastSuccessfulCheck);
-  const label = `GFS ${runDate} ${String(run.getUTCHours()).padStart(2, "0")}Z${checked ? ` · checked ${checked}` : ""}`;
+  const label = `${runIdentity(entry)}${checked ? ` · checked ${checked}` : ""}`;
   const first = Date.parse(entry.firstValidTime);
   const last = Date.parse(entry.lastValidTime);
   const journeyStart = journey ? Date.parse(journey.departureTime) : null;
@@ -91,5 +102,38 @@ export function weatherFreshnessPresentation(
     label,
     detail: `Forecast coverage is valid through ${new Date(last).toLocaleString()}.${failure}`,
     tone: "current",
+  };
+}
+
+export function weatherDataSummaryPresentation(
+  catalog: GlobalWeatherCatalog | null,
+  check: CatalogueCheckState,
+  journey: JourneySchedule | null,
+  resolutionDegrees: number | null,
+  now = Date.now(),
+): WeatherDataSummaryPresentation {
+  const freshness = weatherFreshnessPresentation(catalog, check, journey, now);
+  const entry = catalog?.fields.precipitation ?? Object.values(catalog?.fields ?? {})[0];
+  if (!entry) {
+    return {
+      primary: freshness.label,
+      secondary: freshness.detail,
+      detail: freshness.detail,
+      tone: freshness.tone,
+    };
+  }
+  const resolution = resolutionDegrees === null ? "" : ` · ${resolutionDegrees}°`;
+  const last = Date.parse(entry.lastValidTime);
+  const checked = checkedLabel(check.lastSuccessfulCheck);
+  const validity = Number.isFinite(last)
+    ? now > last
+      ? `Coverage ended ${new Intl.DateTimeFormat(undefined, { day: "2-digit", month: "short", hour: "2-digit", minute: "2-digit" }).format(new Date(last))}`
+      : `Valid through ${new Intl.DateTimeFormat(undefined, { day: "2-digit", month: "short", hour: "2-digit", minute: "2-digit" }).format(new Date(last))}`
+    : "Coverage time unavailable";
+  return {
+    primary: `${runIdentity(entry)}${resolution}`,
+    secondary: `${validity}${checked ? ` · checked ${checked}` : ""}${check.lastCheckFailed ? " · latest check failed" : ""}`,
+    detail: freshness.detail,
+    tone: freshness.tone,
   };
 }

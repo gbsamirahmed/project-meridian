@@ -27,7 +27,7 @@ export default function ForecastPanel({
       </div>
 
       {forecast.map((day) => (
-        <div key={day.date} className="forecast-row">
+        <div key={day.date} className="location-forecast-row">
           <span>{formatDate(day.date)}</span>
 
           <span className="forecast-temperature">

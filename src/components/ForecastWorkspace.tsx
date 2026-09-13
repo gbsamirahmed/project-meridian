@@ -4,6 +4,7 @@ import {
   availableLocalDays,
   forecastDescription,
   forecastMarkerIndexes,
+  forecastPointerIndex,
   localTimeParts,
   precipitationBarHeight,
   rollingForecastWindow,
@@ -52,14 +53,14 @@ export default function ForecastWorkspace({ place, weather, activeTime, onForeca
   const globalIndex = closestIndex(weather.hourly, activeTime);
   const activeDate = localTimeParts(weather.hourly[globalIndex]?.time ?? openedAt, timezone).date;
   const [day, setDay] = useState(days.includes(now.date) ? now.date : days.includes(activeDate) ? activeDate : days[0]);
-  const [hovered, setHovered] = useState<number | null>(null);
-  const [pinnedIndex, setPinnedIndex] = useState<number | null>(null);
+  const [hoveredPosition, setHoveredPosition] = useState<number | null>(null);
+  const [pinned, setPinned] = useState(false);
   const [expanded, setExpanded] = useState(false);
-  const pinned = pinnedIndex !== null;
-  const selectedDay = day;
+  const selectedDay = pinned && days.includes(activeDate) ? activeDate : day;
   const samples = rollingForecastWindow(weather.hourly, timezone, selectedDay, now.hour);
-  const localActivePosition = samples.findIndex(sample => sample.index === (pinned ? pinnedIndex : hovered));
-  const position = localActivePosition >= 0 ? localActivePosition : 0;
+  const pinnedIndex = pinned ? globalIndex : null;
+  const pinnedPosition = samples.findIndex(sample => sample.index === pinnedIndex);
+  const position = hoveredPosition ?? (pinnedPosition >= 0 ? pinnedPosition : 0);
   const active = samples[position]?.item;
   const markers = forecastMarkerIndexes(samples.length);
   const daySamples = weather.hourly.filter(item => localTimeParts(item.time, timezone).date === selectedDay);
@@ -68,40 +69,52 @@ export default function ForecastWorkspace({ place, weather, activeTime, onForeca
     const values = daySamples.map(item => item[key]).filter((value): value is number => value !== null);
     return values.length ? Math.max(...values) : null;
   };
+
+
+  const unpin = () => {
+    setDay(selectedDay);
+    setPinned(false);
+  };
   const selectFromPointer = (event: { currentTarget: HTMLDivElement; clientX: number }) => {
     const bounds = event.currentTarget.getBoundingClientRect();
-    const labelWidth = Number.parseFloat(getComputedStyle(event.currentTarget).getPropertyValue("--forecast-label-width")) || 0;
-    const ratio = Math.max(0, Math.min(1, (event.clientX - bounds.left - labelWidth) / Math.max(1, bounds.width - labelWidth)));
-    return Math.round(ratio * Math.max(0, samples.length - 1));
+    const style = getComputedStyle(event.currentTarget);
+    const labelWidth = Number.parseFloat(style.getPropertyValue("--forecast-label-width")) || 0;
+    const plotInset = Number.parseFloat(style.getPropertyValue("--forecast-plot-inset")) || 0;
+    return forecastPointerIndex(event.clientX, {
+      boundsLeft: bounds.left,
+      boundsWidth: bounds.width,
+      labelWidth,
+      plotInset,
+    }, samples.length);
   };
   const commit = (samplePosition: number) => {
     const chosen = samples[samplePosition];
     if (!chosen) return;
-    if (pinnedIndex === chosen.index) { setPinnedIndex(null); return; }
-    setPinnedIndex(chosen.index);
+    if (pinnedIndex === chosen.index) { unpin(); return; }
+    setPinned(true);
     onForecastTimeChange(chosen.item.time);
   };
   const keyboard = (event: KeyboardEvent<HTMLDivElement>) => {
     if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
       event.preventDefault();
-      setHovered(Math.max(0, Math.min(samples.length - 1, position + (event.key === "ArrowRight" ? 1 : -1))));
+      setHoveredPosition(Math.max(0, Math.min(samples.length - 1, position + (event.key === "ArrowRight" ? 1 : -1))));
     }
     if (event.key === "Enter" || event.key === " ") { event.preventDefault(); commit(position); }
   };
   const rows = expanded ? [...coreRows, ...optionalRows] : coreRows;
   return <DetailWorkspace label="Forecast workspace" onClose={onClose}>
-    <header className="forecast-workspace-header"><div><p>{place?.name ?? "Selected location"}</p><h2>Forecast</h2><span>{fmtDate(selectedDay)} · {localLabel(samples[0]?.item.time ?? "", timezone)}–{localLabel(samples.at(-1)?.item.time ?? "", timezone)}</span></div>{pinned && <button type="button" onClick={() => setPinnedIndex(null)}>Unpin</button>}</header>
+    <header className="forecast-workspace-header"><div><p>{place?.name ?? "Selected location"}</p><h2>Forecast</h2><span>{fmtDate(selectedDay)} · {localLabel(samples[0]?.item.time ?? "", timezone)}–{localLabel(samples.at(-1)?.item.time ?? "", timezone)}</span></div>{pinned && <button type="button" onClick={unpin}>Unpin</button>}</header>
     <nav className="forecast-days" aria-label="Forecast day">{days.map(value => {
       const localSamples = weather.hourly.filter(item => localTimeParts(item.time, timezone).date === value);
       const temps = localSamples.map(item => item.temperature).filter((entry): entry is number => entry !== null);
-      return <button key={value} type="button" aria-pressed={selectedDay === value} onClick={() => { setDay(value); setHovered(null); setPinnedIndex(null); }}>
+      return <button key={value} type="button" aria-pressed={selectedDay === value} onClick={() => { setDay(value); setHoveredPosition(null); setPinned(false); }}>
         <strong>{fmtDay(value)}</strong><small>{temps.length ? `${Math.round(Math.max(...temps))}° / ${Math.round(Math.min(...temps))}°` : "Unavailable"}</small>
       </button>;
     })}</nav>
     <section className="forecast-daily-summary"><div><span>Outlook</span><strong>{forecastDescription(daySamples)}</strong></div><div><span>Temperature</span><strong>{temperatures.length ? `${Math.round(Math.min(...temperatures))}–${Math.round(Math.max(...temperatures))} °C` : "Unavailable"}</strong></div><div><span>Peak rain</span><strong>{peak("precipitation") == null ? "Unavailable" : `${peak("precipitation")!.toFixed(1)} mm/h`}</strong></div><div><span>Wind / gust</span><strong>{peak("windSpeed") == null ? "Unavailable" : `${Math.round(peak("windSpeed")!)} / ${Math.round(peak("windGusts") ?? peak("windSpeed")!)} km/h`}</strong></div></section>
     <div className="forecast-axis" aria-hidden="true">{markers.map(index => <span key={index} style={{ "--marker-position": index / Math.max(1, samples.length - 1) } as CSSProperties}>{localLabel(samples[index].item.time, timezone)}</span>)}</div>
-    <div className="forecast-plot" role="slider" tabIndex={0} aria-label="Forecast time" aria-valuemin={0} aria-valuemax={Math.max(0, samples.length - 1)} aria-valuenow={position} aria-valuetext={active ? localLabel(active.time, timezone) : "Unavailable"} onKeyDown={keyboard} onPointerMove={event => setHovered(selectFromPointer(event))} onPointerLeave={() => !pinned && setHovered(null)} onClick={event => commit(selectFromPointer(event))}>
-      {(hovered !== null || pinned) && <div className={`forecast-time-cursor${pinned ? " pinned" : ""}`} style={{ "--forecast-position": position / Math.max(1, samples.length - 1) } as CSSProperties}><span>{active ? localLabel(active.time, timezone) : ""}</span></div>}
+    <div className="forecast-plot" role="slider" tabIndex={0} aria-label="Forecast time" aria-valuemin={0} aria-valuemax={Math.max(0, samples.length - 1)} aria-valuenow={position} aria-valuetext={active ? localLabel(active.time, timezone) : "Unavailable"} onKeyDown={keyboard} onPointerMove={event => setHoveredPosition(selectFromPointer(event))} onPointerLeave={() => setHoveredPosition(null)} onClick={event => commit(selectFromPointer(event))}>
+      {(hoveredPosition !== null || pinned) && <div className={`forecast-time-cursor${pinned ? " pinned" : ""}`} style={{ "--forecast-position": position / Math.max(1, samples.length - 1) } as CSSProperties}><span>{active ? localLabel(active.time, timezone) : ""}</span></div>}
       {rows.map(row => <ForecastRow key={row.key} row={row} samples={samples.map(sample => sample.item)} active={active} markers={markers} onMap={() => { if (row.layer) { onMapLayerChange(row.layer, true); onClose(); } }} />)}
     </div>
     <footer className="forecast-workspace-options"><button type="button" aria-expanded={expanded} onClick={() => setExpanded(value => !value)}>{expanded ? "Fewer variables" : "More variables"}</button><span>Highest freezing level and cloud ceiling are not available as location time series.</span></footer>
@@ -122,13 +135,13 @@ function ForecastRow({ row, samples, active, markers, onMap }: { row: Row; sampl
   });
   if (points.length) segments.push(points.join(" "));
   const value = active?.[row.key];
-  return <section className={`forecast-row ${row.kind} forecast-${row.colour}`}>
+  return <section className={`forecast-workspace-row ${row.kind} forecast-${row.colour}`}>
     <div><strong>{row.label}</strong><span>{value == null ? "Unavailable" : `${row.key === "windSpeed" ? `${direction(active?.windDirection ?? null)} ` : ""}${value.toFixed(value < 10 ? 1 : 0)} ${row.unit}`}</span>{row.layer && <button type="button" onClick={event => { event.stopPropagation(); onMap(); }}>Map</button>}</div>
     {values.length ? <div className="forecast-row-visual">
       <svg viewBox="0 0 100 34" preserveAspectRatio="none" aria-hidden="true">
         {row.kind === "bar" ? samples.map((item, index) => {
           const height = row.key === "precipitation" ? precipitationBarHeight(item[row.key], max) : item[row.key] == null ? null : Math.max(1, item[row.key]! / Math.max(max, 1) * 26);
-          return height == null ? null : <rect key={index} x={index / Math.max(1, samples.length - 1) * 100 - .8} y={30 - height} width="1.6" height={height} />;
+          return height == null ? null : <rect key={index} x={Math.max(0, Math.min(98.4, index / Math.max(1, samples.length - 1) * 100 - .8))} y={30 - height} width="1.6" height={height} />;
         }) : row.kind === "line" ? segments.map((segment, index) => <polyline key={index} points={segment} />) : null}
       </svg>
       {row.kind === "wind" && <div className="forecast-wind-vectors">{markers.map(index => {

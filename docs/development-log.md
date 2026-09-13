@@ -1181,3 +1181,28 @@ A current-schema completion is validated privately before publication. When an o
 The real 20260907T06Z migration confirmed nine valid fields with 24 timesteps and 2,040 tiles each; pressure_msl alone was missing. NOAA still exposed all 24 required pressure inventories. The first transaction hard-linked 18,378 existing files with zero copies, then generated 24 pressure timesteps and 2,040 tiles (44,019,398 bytes including manifests, about 42.0 MiB). Its initial in-place directory-swap strategy failed safely because a long-running Windows Vite process held the old directory open. A schema-qualified retry completed the artifact; a second safe failure left the pointer unchanged while the same stale Vite process held latest.json. After stopping that stale dev server, the normal updater atomically advanced the catalogue from 20260905T18Z to 20260907T06Z-fields-96290f086b65 and completed retention. The live ten-field artifact is 635,345,083 bytes (about 606 MiB). Real Ben Nevis pressure samples decode to 1007.3 hPa at f001, 1003.1 hPa at f012 and 997.1 hPa at f024.
 
 Deterministic coverage includes nine-field reuse with pressure-only generation, invalid and partial-field regeneration, live previous-schema migration, byte-identical pointer preservation on failure, strict cross-cycle refusal, future required-field fingerprints, completed-artifact/pointer restart recovery, hard-link publication fallback, Windows pointer retry, and frontend rejection of mixed immutable artifacts. The full validation also checks that ordinary schema-complete cycles remain no-op candidates rather than hourly rebuilds.
+
+## 2026-09-13 — Forecast and route-analysis interaction refinement
+
+### Goal
+
+Correct the desktop placement and shared interaction of compact Location forecasts, forecast-time controls, Forecast Workspace charts, and route-position analysis without starting the broader Journey/Analysis visual redesign.
+
+### Changes
+
+- Restored one-line Location daily rows by separating their class from Forecast Workspace chart rows. The seven dates now keep day/date on the left and high/low on the right, allowing selected location, current conditions, the complete outlook, Detailed forecast, catalogue summary and forecast-time controls to fit coherently at the supported desktop heights.
+- Gave the Forecast chart one inset-aware horizontal domain shared by pointer mapping, the time axis, row visuals and vertical cursor. Hover and click now resolve the same local sample position, including the first and last endpoints and 24/25/26-point daylight-saving windows. Endpoint bars remain wholly inside that domain, and wind travel-direction glyphs are larger and heavier while retaining meteorological source direction in their tooltips/readouts.
+- Replaced the timeline's Data action with an accessible reset-to-current-time control that selects the nearest already-loaded global forecast instant. It performs no location-weather request. Essential GFS run, native resolution, coverage limit and last catalogue check are now always visible beside the timeline; the compact information disclosure retains layer-specific detail.
+- Kept one committed forecast-time source: Forecast Workspace stores only whether the global instant is pinned, derives the selected point/day from that instant, and uses local state only for request-free hover preview. This keeps external timeline/reset changes synchronized without a derived-state effect or unpin race.
+- Made a valid terrain route imply a selected route-start sample until the user selects another point. Temporary hover takes precedence over that selection and clears back to it. Journey's mini profile and Route Analysis's main profile now receive the same preview and selected indexes and update the same application state, so both profiles, the map marker and Journey Point Details remain synchronized.
+- Moved the existing analysis controls/profile into a lower-left stack while preserving Journey Point Details in the right column. The freed upper-left region is a restrained structural slot for a later real 2D/3D route view; it makes no map copy, terrain request or claim of current functionality.
+
+### Visual findings and refinement
+
+Playwright screenshots were rendered and inspected at 1920×1080, 1440×900 and 1366×768 for selected Location, closed/open Forecast, early/middle/right-edge hover, pinned time, expanded variables, initial route-start analysis, mini-profile selection and main-profile pinning. The first pass exposed partially external endpoint bars and an overly faint future-view slot. The refinement clamped bar geometry inside the common plot domain and increased only the placeholder text contrast/size. Final renders keep the rightmost time, bars and cursor clear; compact Location content fits without horizontal overflow; wind arrows are legible; route-start detail is populated immediately; and the future viewport/profile/right-detail allocation remains stable at each target size.
+
+### Verification and limitations
+
+The 29-test deterministic desktop suite, ESLint, TypeScript and the production build pass. The affected Forecast and Journey/Route Analysis Playwright scenarios pass at all three desktop sizes with no page exceptions. The pressure visual fixture was updated to use the new information-control label; it passes at 1440×900 and 1366×768, while its existing 1920×1080 catalogue/source readiness race can still leave GFS metadata unavailable despite no failed requests or page exception. No pressure implementation was changed for this UI milestone.
+
+The future route-view slot remains intentionally non-functional. Journey/Route Analysis aesthetic simplification, mobile work, and a real 2D/3D route renderer remain deferred.

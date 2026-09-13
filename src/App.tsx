@@ -163,9 +163,12 @@ function App() {
   const [pinnedRouteSampleIndex, setPinnedRouteSampleIndex] = useState<
     number | null
   >(null);
+  const selectedRouteSampleIndex = terrainRoute
+    ? pinnedRouteSampleIndex ?? 0
+    : null;
   const focusedRouteSampleIndex = activeRouteSampleIndex(
     previewRouteSampleIndex,
-    pinnedRouteSampleIndex
+    selectedRouteSampleIndex
   );
   const [routeConditions, setRouteConditions] =
     useState<RouteConditions | null>(null);
@@ -708,6 +711,11 @@ function App() {
                     catalogueCheck={catalogueCheck}
                     journeySchedule={journeyResult.schedule}
                     onForecastHourChange={setForecastHour}
+                    onResetToCurrentTime={() => {
+                      if (forecastTimes.length) {
+                        setForecastHour(closestForecastIndex(forecastTimes, new Date().toISOString()));
+                      }
+                    }}
                     isPlaying={isForecastPlaying}
                     onPlayingChange={setIsForecastPlaying}
                   />}
@@ -734,9 +742,11 @@ function App() {
                     routeConditions={activeRouteConditions}
                     routeConditionStatus={activeRouteConditionStatus}
                     focusedIndex={focusedRouteSampleIndex}
+                    selectedIndex={selectedRouteSampleIndex}
                     onImport={handleRouteImport}
                     onClear={handleRouteClear}
-                    onFocusChange={setPreviewRouteSampleIndex}
+                    onPreviewChange={setPreviewRouteSampleIndex}
+                    onSelectedChange={setPinnedRouteSampleIndex}
                     onOpenSettings={() => dispatchWorkspace({ type: "set-journey-settings", open: true })}
                     onOpenAnalysis={(mode) => {
                       setRouteConditionMode(mode);
@@ -776,7 +786,7 @@ function App() {
                 conditionStatus={activeRouteConditionStatus}
                 conditionMode={routeConditionMode}
                 focusedIndex={focusedRouteSampleIndex}
-                pinnedIndex={pinnedRouteSampleIndex}
+                pinnedIndex={selectedRouteSampleIndex}
                 onPreviewChange={setPreviewRouteSampleIndex}
                 onPinnedChange={setPinnedRouteSampleIndex}
                 onConditionModeChange={setRouteConditionMode}

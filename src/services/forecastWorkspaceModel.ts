@@ -63,6 +63,28 @@ export function forecastMarkerIndexes(sampleCount: number): number[] {
   return [...markers].sort((a, b) => a - b);
 }
 
+export interface ForecastPlotGeometry {
+  boundsLeft: number;
+  boundsWidth: number;
+  labelWidth: number;
+  plotInset: number;
+}
+
+export function forecastPointerIndex(
+  clientX: number,
+  geometry: ForecastPlotGeometry,
+  sampleCount: number,
+): number {
+  if (sampleCount <= 1) return 0;
+  const plotLeft = geometry.boundsLeft + geometry.labelWidth + geometry.plotInset;
+  const plotWidth = Math.max(
+    1,
+    geometry.boundsWidth - geometry.labelWidth - geometry.plotInset * 2,
+  );
+  const fraction = Math.max(0, Math.min(1, (clientX - plotLeft) / plotWidth));
+  return Math.round(fraction * (sampleCount - 1));
+}
+
 export function windTravelToDegrees(fromDegrees: number): number {
   return (fromDegrees + 180) % 360;
 }
