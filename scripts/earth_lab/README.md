@@ -24,3 +24,30 @@ Run the synthetic, network-free tests:
 ```powershell
 ..\meridian-data\earth-lab\.venv\Scripts\python.exe -m unittest discover -s scripts\earth_lab -p "test_*.py"
 ```
+
+
+## Lab 002: Unreal Landscape preparation
+
+Convert an extracted AOI to Unreal-ready DTM and DSM heightmaps:
+
+```powershell
+..\meridian-data\earth-lab\.venv\Scripts\python.exe scripts\earth_lab\run_unreal_landscape.py --terrain-root ..\meridian-data\earth-lab\tryfan-001 --output-root ..\meridian-data\earth-lab\tryfan-001\unreal-landscape-v1
+```
+
+The converter refuses missing cells and repository-local output. It bilinearly resamples
+the full 2000 x 2000 m AOI from 2000 x 2000 source cells to Unreal's recommended
+2017 x 2017 Landscape layout. It emits verified 16-bit PNG and little-endian R16 files
+plus a runtime manifest with source bounds, coordinate reconstruction, dimensions,
+scales, hashes, elevation ranges, and round-trip error. DTM is the default; DSM is
+retained as an alternative measured surface.
+
+Prepare a minimal external Unreal project and an exact import guide:
+
+```powershell
+..\meridian-data\earth-lab\.venv\Scripts\python.exe scripts\earth_lab\prepare_unreal_project.py --manifest ..\meridian-data\earth-lab\tryfan-001\unreal-landscape-v1\unreal-landscape-manifest.json --project-root ..\meridian-data\earth-lab\tryfan-001\unreal-project\TryfanLab002
+```
+
+Open the generated `TryfanLab002.uproject` and follow its `IMPORT.md`. The generated
+project includes an in-editor validator at `Content/Python/validate_landscape.py`.
+Generated heightmaps, projects, editor caches, reports, and screenshots stay under
+`meridian-data` and are not committed.

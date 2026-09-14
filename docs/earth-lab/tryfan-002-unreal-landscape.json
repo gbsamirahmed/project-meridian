@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "experiment": "Meridian Earth Laboratory 002: Tryfan Unreal Landscape",
+  "source": {
+    "lab_001_manifest": "tryfan-001-terrain.json",
+    "surface_default": "dtm",
+    "additional_surface": "dsm",
+    "crs": "EPSG:27700",
+    "aoi_bounds": [265400, 358300, 267400, 360300],
+    "source_dimensions": [2000, 2000],
+    "native_resolution_m": 1,
+    "survey_date": "2021-03-02"
+  },
+  "representation": {
+    "type": "Unreal Landscape",
+    "selection_reason": "Landscape preserves the dense measured height field while providing Unreal terrain LOD and a path to larger partitioned areas.",
+    "unreal_version_tested": "5.8.2",
+    "official_dimension_reference": "https://dev.epicgames.com/documentation/unreal-engine/landscape-technical-guide-in-unreal-engine",
+    "official_import_reference": "https://dev.epicgames.com/documentation/unreal-engine/importing-and-exporting-landscape-heightmaps-in-unreal-engine"
+  },
+  "dimension_conversion": {
+    "output_vertices": [2017, 2017],
+    "quads_per_section": 63,
+    "sections_per_component": 4,
+    "components": [16, 16],
+    "method": "bilinear resampling over the unchanged full AOI bounds",
+    "samples_added_per_axis": 17,
+    "sample_count_change_percent": 0.85,
+    "cropped": false,
+    "padded": false,
+    "smoothing_erosion_or_noise": false,
+    "registration_note": "Source pixel cells cover the full 2000 m AOI; the 2017 Landscape vertices are assigned across the same 2000 m footprint."
+  },
+  "scale": {
+    "xy_scale_cm": 99.20634920634922,
+    "z_scale": 150,
+    "vertical_exaggeration": 1,
+    "world_dimensions_m": [2000, 2000],
+    "vertical_origin_m_odn": 650,
+    "quantization_step_m": 0.01171875,
+    "maximum_encoding_error_m": 0.005859375
+  },
+  "coordinate_frame": {
+    "local_origin_bng": [266400, 359300, 650],
+    "axis_mapping": {
+      "+X": "east",
+      "+Y": "south",
+      "+Z": "up"
+    },
+    "reconstruction": {
+      "easting": "266400 + X_cm / 100",
+      "northing": "359300 - Y_cm / 100",
+      "elevation_m_odn": "650 + Z_cm / 100"
+    }
+  },
+  "encoding": {
+    "format": ["16-bit grayscale PNG", "little-endian R16"],
+    "formula": "uint16 = round((elevation_m_ODN - 650) * 100 * 128 / 150 + 32768)",
+    "dtm_encoded_range": [2941, 61600],
+    "dsm_encoded_range": [2941, 61698]
+  },
+  "validation": {
+    "dtm_source_elevation_m": [300.4599914550781, 987.8900146484375],
+    "dtm_decoded_elevation_m": [300.46484375, 987.875],
+    "dtm_spatial_round_trip": {
+      "maximum_absolute_m": 3.87347412109375,
+      "mean_absolute_m": 0.05188164933776856,
+      "rmse_m": 0.10464285030847485
+    },
+    "dsm_source_elevation_m": [300.44000244140625, 989.1300048828125],
+    "dsm_decoded_elevation_m": [300.46484375, 989.0234375],
+    "dsm_spatial_round_trip": {
+      "maximum_absolute_m": 8.259033203125,
+      "mean_absolute_m": 0.08971436484527588,
+      "rmse_m": 0.18246065435777986
+    },
+    "png_and_r16_integer_round_trip": "exact",
+    "orientation_corners_recorded_in_runtime_manifest": true,
+    "missing_data_policy": "conversion refuses any nodata or non-finite cell"
+  },
+  "local_output_conventions": {
+    "heightmaps_and_runtime_manifest": "../meridian-data/earth-lab/<aoi-id>/unreal-landscape-v1/",
+    "unreal_project": "../meridian-data/earth-lab/<aoi-id>/unreal-project/<project-name>/",
+    "committed_generated_assets": false
+  },
+  "unreal_status": {
+    "installed": true,
+    "engine": "Unreal Engine 5.8.2",
+    "project_starts_headlessly": true,
+    "file_import_automation_available_in_public_python_api": false,
+    "landscape_imported": false,
+    "visual_acceptance": false,
+    "blocker": "The Unreal import is an editor UI operation; Windows computer-use initialization failed twice with apply deny-read ACLs / trusted Node process exited unexpectedly."
+  }
+}
