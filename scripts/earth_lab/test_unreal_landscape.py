@@ -94,7 +94,13 @@ class UnrealLandscapeTests(unittest.TestCase):
             "surfaces": {
                 "dtm": {
                     "output": {
-                        "files": {"png": {"path": "terrain-dtm.png"}}
+                        "files": {
+                            "png": {"path": "terrain-dtm.png"},
+                            "r16": {
+                                "path": "terrain-dtm.r16",
+                                "sha256": "fixture-r16-sha256",
+                            },
+                        }
                     }
                 }
             },
@@ -110,6 +116,10 @@ class UnrealLandscapeTests(unittest.TestCase):
             self.assertIn("2017 x 2017", guide)
             self.assertIn("99.206349206", guide)
             self.assertIn("Flip Y Axis", guide)
+            self.assertIn("terrain-dtm.r16", guide)
+            self.assertIn("fixture-r16-sha256", guide)
+            self.assertIn("X=-100000.000000, Y=-100000.000000, Z=0", guide)
+            self.assertIn("Enable Edit Layers", guide)
             validator_path = (
                 root
                 / "project"

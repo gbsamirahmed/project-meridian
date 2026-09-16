@@ -20,6 +20,11 @@ Z_SCALE_TOLERANCE = 0.001
 DIMENSION_TOLERANCE_M = 0.02
 LOCATION_TOLERANCE_CM = 0.1
 HEIGHT_TOLERANCE_CM = 5.0
+REFERENCE_LOCATIONS_BNG = [
+    {"name": "aoi_centre", "easting": 266400.0, "northing": 359300.0, "source_context_m_odn": 877.73},
+    {"name": "tryfan_summit_reference", "easting": 266405.0, "northing": 359387.0, "source_context_m_odn": 913.66},
+    {"name": "nearby_tryfan_dtm_peak", "easting": 266401.5, "northing": 359386.5, "source_context_m_odn": 915.44},
+]
 
 
 def _vector(value: unreal.Vector) -> list[float]:
@@ -161,6 +166,82 @@ def _height_samples(
                     }
                 )
             samples.append(record)
+    return samples
+
+
+def _reference_height_samples(
+    world: unreal.World,
+    manifest_path: Path,
+    manifest: dict[str, Any],
+) -> list[dict[str, Any]]:
+    path = _heightmap_path(manifest_path, manifest)
+    width, height = [int(value) for value in manifest["dimension_conversion"]["output_vertices"]]
+    data = path.read_bytes()
+    if len(data) != width * height * 2:
+        raise ValueError(f"R16 has {len(data)} bytes; expected {width * height * 2}")
+    west, south, east, north = [float(value) for value in manifest["source_aoi_bounds"]]
+    origin = manifest["coordinate_frame"]["local_origin_bng"]
+    origin_easting = float(origin["easting"])
+    origin_northing = float(origin["northing"])
+    origin_elevation = float(origin["elevation_m_odn"])
+    z_scale = float(manifest["height_encoding"]["z_scale"])
+
+    def decoded(row: int, column: int) -> float:
+        encoded = struct.unpack_from("<H", data, 2 * (row * width + column))[0]
+        return origin_elevation + (encoded - 32768) / 128.0 * z_scale / 100.0
+
+    samples: list[dict[str, Any]] = []
+    for reference in REFERENCE_LOCATIONS_BNG:
+        pixel_x = (reference["easting"] - west) / (east - west) * (width - 1)
+        pixel_y = (north - reference["northing"]) / (north - south) * (height - 1)
+        x0 = max(0, min(width - 1, int(math.floor(pixel_x))))
+        y0 = max(0, min(height - 1, int(math.floor(pixel_y))))
+        x1 = min(width - 1, x0 + 1)
+        y1 = min(height - 1, y0 + 1)
+        fraction_x = pixel_x - x0
+        fraction_y = pixel_y - y0
+        expected_odn = (
+            decoded(y0, x0) * (1.0 - fraction_x) * (1.0 - fraction_y)
+            + decoded(y0, x1) * fraction_x * (1.0 - fraction_y)
+            + decoded(y1, x0) * (1.0 - fraction_x) * fraction_y
+            + decoded(y1, x1) * fraction_x * fraction_y
+        )
+        world_x = (reference["easting"] - origin_easting) * 100.0
+        world_y = (origin_northing - reference["northing"]) * 100.0
+        expected_world_z = (expected_odn - origin_elevation) * 100.0
+        hit = unreal.SystemLibrary.line_trace_single(
+            world,
+            unreal.Vector(world_x, world_y, 100000.0),
+            unreal.Vector(world_x, world_y, -100000.0),
+            unreal.TraceTypeQuery.TRACE_TYPE_QUERY1,
+            True,
+            [],
+            unreal.DrawDebugTrace.NONE,
+            True,
+        )
+        record: dict[str, Any] = {
+            **reference,
+            "r16_pixel": [pixel_x, pixel_y],
+            "world_xy_cm": [world_x, world_y],
+            "expected_r16_elevation_m_odn": expected_odn,
+            "expected_world_z_cm": expected_world_z,
+            "hit": False,
+        }
+        if hit:
+            values = hit.to_dict()
+            impact = values["impact_point"]
+            hit_actor = values.get("hit_actor")
+            observed_world_z = float(impact.z)
+            record.update(
+                {
+                    "hit": bool(values.get("blocking_hit")),
+                    "hit_actor": hit_actor.get_path_name() if hit_actor else None,
+                    "observed_world_z_cm": observed_world_z,
+                    "observed_elevation_m_odn": origin_elevation + observed_world_z / 100.0,
+                    "error_cm": observed_world_z - expected_world_z,
+                }
+            )
+        samples.append(record)
     return samples
 
 
@@ -439,6 +520,37 @@ def main() -> dict[str, Any]:
             f"Could not compare Landscape collision heights with the generated R16: {error}",
         )
 
+    reference_samples: list[dict[str, Any]] = []
+    try:
+        reference_samples = _reference_height_samples(world, manifest_path, manifest)
+        missed_references = [sample for sample in reference_samples if not sample["hit"]]
+        reference_errors = [
+            abs(float(sample["error_cm"]))
+            for sample in reference_samples
+            if sample.get("error_cm") is not None
+        ]
+        maximum_reference_error = max(reference_errors) if reference_errors else math.inf
+        if not missed_references and maximum_reference_error <= HEIGHT_TOLERANCE_CM:
+            validation.add(
+                "PASS", "geospatial_reference_heights",
+                "AOI centre and Tryfan reference heights agree with the canonical R16 at their intended BNG-derived world coordinates.",
+                f"maximum absolute error <= {HEIGHT_TOLERANCE_CM} cm",
+                {"maximum_absolute_error_cm": maximum_reference_error, "samples": reference_samples},
+            )
+        else:
+            validation.add(
+                "FAIL", "geospatial_reference_heights",
+                "AOI centre or Tryfan reference heights do not reproduce the canonical R16 at the intended registration.",
+                f"maximum absolute error <= {HEIGHT_TOLERANCE_CM} cm and no missed traces",
+                {"maximum_absolute_error_cm": maximum_reference_error, "missed_samples": len(missed_references), "samples": reference_samples},
+                maximum_reference_error - HEIGHT_TOLERANCE_CM if math.isfinite(maximum_reference_error) else None,
+            )
+    except Exception as error:
+        validation.add(
+            "WARNING", "geospatial_reference_heights",
+            f"Could not validate named BNG reference heights: {error}",
+        )
+
     validation.add(
         "INFO", "absolute_odn_verification",
         "Unreal stores relative heights. Absolute ODN requires the encoding manifest, local-zero convention and actor transform; Unreal state alone cannot prove 650 m ODN.",
@@ -475,6 +587,7 @@ def main() -> dict[str, Any]:
             "world_bounds": bounds,
         },
         "height_samples": height_samples,
+        "reference_height_samples": reference_samples,
         "checks": validation.checks,
         "overall": validation.overall,
     }

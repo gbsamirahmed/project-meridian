@@ -133,7 +133,7 @@
     "inspection_level": "/Game/Tryfan_Lab002.Tryfan_Lab002",
     "validator_api": "UnrealEditorSubsystem.get_editor_world plus EditorActorSubsystem.get_all_level_actors",
     "validation_date": "2026-09-16",
-    "validation_overall": "FAIL",
+    "validation_overall": "FAIL; acceptance pending manual recreation",
     "observed_landscape": {
       "logical_landscapes": 1,
       "streaming_proxies": 64,
@@ -196,6 +196,59 @@
     },
     "human_eye_camera_created": false,
     "camera_reason": "Not created because the imported heightfield failed source-height validation; a camera placed on it would not be a measured Tryfan inspection start.",
-    "visual_acceptance": false
+    "visual_acceptance": false,
+    "canonical_import": {
+      "surface": "dtm",
+      "format": "little-endian uint16 R16",
+      "relative_data_path": "../meridian-data/earth-lab/tryfan-001/unreal-landscape-v1/heightmaps/tryfan-001-dtm-1m-landscape-2017.r16",
+      "sha256": "b1e161d3ed6e4f02919ae64b5a350618fdfe3cce1ad8b68817e6871211028f50",
+      "actor_location_cm": [
+        -100000.0,
+        -100000.0,
+        0.0
+      ],
+      "actor_location_derivation": "2016 quads * (200000 cm / 2016 quads) = 200000 cm; northwest vertex at -100000,-100000 places AOI centre at 0,0.",
+      "scale": [
+        99.20634920634922,
+        99.20634920634922,
+        150.0
+      ],
+      "flip_y_axis": false,
+      "enable_edit_layers": false,
+      "import_as_new_landscape": true
+    },
+    "creation_api_finding": "Installed UE 5.8.2 Python exposes Landscape update/export through render targets, but no supported file-to-new-Landscape creation/reimport API; Epic documents editor Landscape import from .r16.",
+    "current_level_edit_layers": 2,
+    "reimport_status": "NOT PERFORMED; editor Landscape import required",
+    "canonical_reference_checkpoints": [
+      {
+        "name": "aoi_centre",
+        "bng": [
+          266400.0,
+          359300.0
+        ],
+        "expected_r16_m_odn": 878.5625,
+        "observed_unreal_m_odn": 649.5
+      },
+      {
+        "name": "tryfan_summit_reference",
+        "bng": [
+          266405.0,
+          359387.0
+        ],
+        "expected_r16_m_odn": 913.84864625,
+        "observed_unreal_m_odn": 649.5
+      },
+      {
+        "name": "nearby_tryfan_dtm_peak",
+        "bng": [
+          266401.5,
+          359386.5
+        ],
+        "expected_r16_m_odn": 915.16878125,
+        "observed_unreal_m_odn": 649.5
+      }
+    ],
+    "acceptance_gate": "Do not declare Lab 002 geometry complete until UE validator overall PASS after canonical DTM R16 import."
   }
 }
