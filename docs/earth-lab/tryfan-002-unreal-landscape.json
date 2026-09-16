@@ -6,8 +6,16 @@
     "surface_default": "dtm",
     "additional_surface": "dsm",
     "crs": "EPSG:27700",
-    "aoi_bounds": [265400, 358300, 267400, 360300],
-    "source_dimensions": [2000, 2000],
+    "aoi_bounds": [
+      265400,
+      358300,
+      267400,
+      360300
+    ],
+    "source_dimensions": [
+      2000,
+      2000
+    ],
     "native_resolution_m": 1,
     "survey_date": "2021-03-02"
   },
@@ -19,10 +27,16 @@
     "official_import_reference": "https://dev.epicgames.com/documentation/unreal-engine/importing-and-exporting-landscape-heightmaps-in-unreal-engine"
   },
   "dimension_conversion": {
-    "output_vertices": [2017, 2017],
+    "output_vertices": [
+      2017,
+      2017
+    ],
     "quads_per_section": 63,
     "sections_per_component": 4,
-    "components": [16, 16],
+    "components": [
+      16,
+      16
+    ],
     "method": "bilinear resampling over the unchanged full AOI bounds",
     "samples_added_per_axis": 17,
     "sample_count_change_percent": 0.85,
@@ -35,13 +49,20 @@
     "xy_scale_cm": 99.20634920634922,
     "z_scale": 150,
     "vertical_exaggeration": 1,
-    "world_dimensions_m": [2000, 2000],
+    "world_dimensions_m": [
+      2000,
+      2000
+    ],
     "vertical_origin_m_odn": 650,
     "quantization_step_m": 0.01171875,
     "maximum_encoding_error_m": 0.005859375
   },
   "coordinate_frame": {
-    "local_origin_bng": [266400, 359300, 650],
+    "local_origin_bng": [
+      266400,
+      359300,
+      650
+    ],
     "axis_mapping": {
       "+X": "east",
       "+Y": "south",
@@ -54,21 +75,42 @@
     }
   },
   "encoding": {
-    "format": ["16-bit grayscale PNG", "little-endian R16"],
+    "format": [
+      "16-bit grayscale PNG",
+      "little-endian R16"
+    ],
     "formula": "uint16 = round((elevation_m_ODN - 650) * 100 * 128 / 150 + 32768)",
-    "dtm_encoded_range": [2941, 61600],
-    "dsm_encoded_range": [2941, 61698]
+    "dtm_encoded_range": [
+      2941,
+      61600
+    ],
+    "dsm_encoded_range": [
+      2941,
+      61698
+    ]
   },
   "validation": {
-    "dtm_source_elevation_m": [300.4599914550781, 987.8900146484375],
-    "dtm_decoded_elevation_m": [300.46484375, 987.875],
+    "dtm_source_elevation_m": [
+      300.4599914550781,
+      987.8900146484375
+    ],
+    "dtm_decoded_elevation_m": [
+      300.46484375,
+      987.875
+    ],
     "dtm_spatial_round_trip": {
       "maximum_absolute_m": 3.87347412109375,
       "mean_absolute_m": 0.05188164933776856,
       "rmse_m": 0.10464285030847485
     },
-    "dsm_source_elevation_m": [300.44000244140625, 989.1300048828125],
-    "dsm_decoded_elevation_m": [300.46484375, 989.0234375],
+    "dsm_source_elevation_m": [
+      300.44000244140625,
+      989.1300048828125
+    ],
+    "dsm_decoded_elevation_m": [
+      300.46484375,
+      989.0234375
+    ],
     "dsm_spatial_round_trip": {
       "maximum_absolute_m": 8.259033203125,
       "mean_absolute_m": 0.08971436484527588,
@@ -85,11 +127,75 @@
   },
   "unreal_status": {
     "installed": true,
-    "engine": "Unreal Engine 5.8.2",
+    "engine": "Unreal Engine 5.8.2 (build 56702186)",
     "project_starts_headlessly": true,
-    "file_import_automation_available_in_public_python_api": false,
-    "landscape_imported": false,
-    "visual_acceptance": false,
-    "blocker": "The Unreal import is an editor UI operation; Windows computer-use initialization failed twice with apply deny-read ACLs / trusted Node process exited unexpectedly."
+    "landscape_imported": true,
+    "inspection_level": "/Game/Tryfan_Lab002.Tryfan_Lab002",
+    "validator_api": "UnrealEditorSubsystem.get_editor_world plus EditorActorSubsystem.get_all_level_actors",
+    "validation_date": "2026-09-16",
+    "validation_overall": "FAIL",
+    "observed_landscape": {
+      "logical_landscapes": 1,
+      "streaming_proxies": 64,
+      "components": [
+        16,
+        16
+      ],
+      "component_count": 256,
+      "quads_per_component": 126,
+      "subsections_per_component": [
+        2,
+        2
+      ],
+      "quads_per_subsection": 63,
+      "overall_quads": [
+        2016,
+        2016
+      ],
+      "vertices": [
+        2017,
+        2017
+      ],
+      "logical_actor_translation_cm": [
+        -100800.0,
+        -100800.0,
+        100.0
+      ],
+      "scale": [
+        99.206349,
+        99.206349,
+        150.0
+      ],
+      "physical_extent_m": [
+        1999.99999584,
+        1999.99999584
+      ],
+      "world_bounds_m": {
+        "minimum": [
+          -1008.0,
+          -1008.0,
+          -2.0
+        ],
+        "maximum": [
+          991.99999584,
+          991.99999584,
+          224.34765625
+        ]
+      }
+    },
+    "validation_findings": {
+      "measured_source_data": "The committed Lab 001/Lab 002 manifests and generated R16 remain the source record; this validation did not alter them.",
+      "derived_topology": "PASS: proxy components derive the intended 2017 x 2017 Landscape and 2000 x 2000 m XY extent.",
+      "rendering_presentation": "Not assessed; NullRHI command-line validation used collision geometry rather than visual appearance.",
+      "unverified_assumptions": "+X=east and +Y=south remain external georeferencing conventions; Unreal state alone cannot name world axes geographically.",
+      "failures": [
+        "The world bounds are displaced 8 m west and 8 m north of the declared local origin.",
+        "The Landscape Z translation is +1 m, so encoded midpoint 32768 does not map to Unreal Z=0.",
+        "Nine interior collision traces do not reproduce the generated R16; maximum absolute discrepancy is 459.92578125 m."
+      ]
+    },
+    "human_eye_camera_created": false,
+    "camera_reason": "Not created because the imported heightfield failed source-height validation; a camera placed on it would not be a measured Tryfan inspection start.",
+    "visual_acceptance": false
   }
 }

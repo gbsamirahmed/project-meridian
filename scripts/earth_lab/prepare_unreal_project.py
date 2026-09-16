@@ -49,10 +49,11 @@ BNG E `{origin["easting"]}`, N `{origin["northing"]}`, elevation
 
 After import, run `Content/Python/validate_landscape.py` from Unreal's **Execute
 Python Script** command. The project records the generated manifest path in its local
-source configuration. The script checks
-that exactly one Landscape exists, its actor scale matches the manifest, and its
-world bounds are approximately 2 km square. It writes
-`Saved/meridian-landscape-validation.json`.
+source configuration. The script uses UE 5.8's `EditorActorSubsystem`, treats the
+logical Landscape and its World Partition streaming proxies as one terrain, derives
+component topology and physical bounds, and compares interior collision heights with
+the generated R16. It writes a PASS/FAIL/INFO report to
+`Saved/meridian-landscape-validation.json` without modifying the Landscape.
 """
 
 

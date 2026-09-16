@@ -1225,3 +1225,29 @@ The height encoding uses a 650 m ODN local vertical origin and Unreal Z scale 15
 The runtime manifest preserves EPSG:27700 bounds and defines local Unreal origin (0,0,0) as BNG E266400, N359300, 650 m ODN, with +X east, +Y south and +Z up. A generic project helper writes a minimal external UE 5.8 project, settings-driven import instructions, and a post-import Python validator. Generated PNG/R16 files total 25,042,628 bytes plus the manifest; none are tracked.
 
 Unreal Engine 5.8.2 is installed and the generated project starts successfully through `UnrealEditor-Cmd`. API inspection confirmed that the public Python surface can update or export an existing Landscape via render targets but does not create a new Landscape from a heightmap, so the initial file import remains an editor operation. The supported Windows computer-use helper failed on both permitted initialization attempts (`windows sandbox failed: helper_unknown_error: apply deny-read ACLs`, then `trusted Node process exited unexpectedly`). The terrain was therefore not imported in-editor and no screenshots or visual acceptance are claimed. The exact import settings and validator are ready for the next manual editor step.
+
+
+## 2026-09-16 — Lab 002 Unreal Landscape validation
+
+### Goal and validation method
+
+Repaired the Lab 002 in-editor validator for Unreal Engine 5.8.2 and used it to inspect the existing `/Game/Tryfan_Lab002.Tryfan_Lab002` World Partition level without changing the Landscape. UE 5.8 no longer exposes the previous `EditorLevelLibrary.get_all_level_actors_of_class` call. The validator now uses `UnrealEditorSubsystem.get_editor_world()` and `EditorActorSubsystem.get_all_level_actors()`, identifies the one logical `Landscape`, associates each `LandscapeStreamingProxy` through `get_landscape_actor()`, and obtains proxy components with `get_components_by_class(LandscapeComponent)`.
+
+The logical actor has no direct geometry bounds in this World Partition representation. The validator therefore derives topology from component section bases, unions proxy bounds, and performs nine vertical collision traces at interior R16 sample coordinates. It emits explicit PASS, FAIL, WARNING and INFO entries plus a JSON report under the external Unreal project's `Saved` directory. It does not mutate the Landscape.
+
+### Measured and derived findings
+
+- **MEASURED / SOURCE DATA:** The Lab 001 DTM and generated Lab 002 R16 remain unchanged. Their manifest specifies EPSG:27700, 2017 × 2017 encoded vertices, 650 m ODN local zero, and 99.206349206 cm / 99.206349206 cm / 150 Landscape scale.
+- **DERIVED FROM UNREAL STATE:** UE 5.8.2 exposes one logical Landscape, 64 streaming proxies and 256 Landscape components. Component section bases form a regular 16 × 16 grid at 126-quad spacing, which is compatible with 2 × 2 subsections of 63 quads. The resulting 2016 × 2016 quads and observed 99.206349 / 99.206349 / 150 scale derive a 1999.999996 × 1999.999996 m physical extent. The logical actor and every proxy agree on scale, resolving the earlier 100/100/100 UI observation as stale, pre-correction or a different editor selection rather than the current authoritative transform.
+- **RENDERING / PRESENTATION:** Not assessed. Validation ran headlessly with NullRHI and used Landscape collision geometry; existing DX12 Slate corruption and D3D11 device-hung behavior remain unrelated system/engine issues.
+- **UNVERIFIED ASSUMPTIONS:** Unreal confirms positive axes and identity rotation. The labels +X=east and +Y=south, and the absolute 650 m ODN datum, remain geospatial conventions supplied by the manifest rather than facts Unreal can identify independently.
+
+### Validation result
+
+Overall validation is **FAIL**. Topology, component configuration, scale, XY extent, proxy ownership and actor-axis orientation pass. Three import-state discrepancies remain:
+
+1. Proxy bounds are X/Y `-1008.0…991.999996 m`, placing the 2 km terrain 8 m west and north of the declared local origin.
+2. The logical Landscape translation is Z `+100 cm`, shifting encoded midpoint 32768 one metre above Unreal Z=0 instead of preserving the declared 650 m ODN zero.
+3. Nine interior collision traces do not match the generated R16. The centre sample expects world Z `229.5625 m` from encoded value 52272 but observes `-0.5 m`; the maximum sampled discrepancy is `459.92578125 m`. World Z bounds are only `-2.0…224.347656 m`, which is incompatible with the encoded DTM range and confirms the apparent crater/plateau is present in the imported Landscape rather than caused only by the camera.
+
+The persistent inspection level already has the requested name. No duplicate level was created. A human-eye camera was deliberately not added: positioning it 1.7 m above this failed surface would not establish a valid measured-Tryfan inspection point. Corrective reimport and subsequent rerun of the same validator are required before human-scale visual inspection; no terrain, heightmap, map actor or rendering setting was changed during this milestone.

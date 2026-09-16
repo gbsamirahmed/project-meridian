@@ -49,5 +49,11 @@ Prepare a minimal external Unreal project and an exact import guide:
 
 Open the generated `TryfanLab002.uproject` and follow its `IMPORT.md`. The generated
 project includes an in-editor validator at `Content/Python/validate_landscape.py`.
+Open `/Game/Tryfan_Lab002`, then use **Execute Python Script** on that file. Under UE
+5.8 it enumerates actors through `EditorActorSubsystem`, groups World Partition
+`LandscapeStreamingProxy` actors under their logical `Landscape`, derives the
+component grid and bounds, and traces nine interior collision heights against the
+local generated R16. The readable and machine-readable result is written to
+`Saved/meridian-landscape-validation.json`; a FAIL never mutates the Landscape.
 Generated heightmaps, projects, editor caches, reports, and screenshots stay under
 `meridian-data` and are not committed.

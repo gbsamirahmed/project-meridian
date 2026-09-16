@@ -110,15 +110,18 @@ class UnrealLandscapeTests(unittest.TestCase):
             self.assertIn("2017 x 2017", guide)
             self.assertIn("99.206349206", guide)
             self.assertIn("Flip Y Axis", guide)
-            self.assertTrue(
-                (
-                    root
-                    / "project"
-                    / "Content"
-                    / "Python"
-                    / "validate_landscape.py"
-                ).exists()
+            validator_path = (
+                root
+                / "project"
+                / "Content"
+                / "Python"
+                / "validate_landscape.py"
             )
+            self.assertTrue(validator_path.exists())
+            validator = validator_path.read_text(encoding="utf-8")
+            self.assertIn("EditorActorSubsystem", validator)
+            self.assertIn("LandscapeStreamingProxy", validator)
+            self.assertNotIn("EditorLevelLibrary", validator)
             source = json.loads(
                 (root / "project" / "meridian-landscape-source.json").read_text(
                     encoding="utf-8"
