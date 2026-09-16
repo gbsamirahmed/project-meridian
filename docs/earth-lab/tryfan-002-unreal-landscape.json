@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "experiment": "Meridian Earth Laboratory 002: Tryfan Unreal Landscape",
   "source": {
     "lab_001_manifest": "tryfan-001-terrain.json",
@@ -130,13 +130,14 @@
     "engine": "Unreal Engine 5.8.2 (build 56702186)",
     "project_starts_headlessly": true,
     "landscape_imported": true,
-    "inspection_level": "/Game/Tryfan_Lab002.Tryfan_Lab002",
-    "validator_api": "UnrealEditorSubsystem.get_editor_world plus EditorActorSubsystem.get_all_level_actors",
+    "inspection_level": "/Game/Tryfan_Lab002_Corrected.Tryfan_Lab002_Corrected",
+    "validator_api": "UnrealEditorSubsystem.get_editor_world plus EditorActorSubsystem.get_all_level_actors; direct root Landscape components for a normal level, linked LandscapeStreamingProxy components for World Partition",
     "validation_date": "2026-09-16",
-    "validation_overall": "FAIL; acceptance pending manual recreation",
+    "validation_overall": "PASS",
     "observed_landscape": {
+      "representation": "single_landscape",
       "logical_landscapes": 1,
-      "streaming_proxies": 64,
+      "streaming_proxies": 0,
       "components": [
         16,
         16
@@ -157,9 +158,14 @@
         2017
       ],
       "logical_actor_translation_cm": [
-        -100800.0,
-        -100800.0,
-        100.0
+        -100000.0,
+        -100000.0,
+        0.0
+      ],
+      "rotation_degrees": [
+        0.0,
+        0.0,
+        0.0
       ],
       "scale": [
         99.206349,
@@ -172,30 +178,28 @@
       ],
       "world_bounds_m": {
         "minimum": [
-          -1008.0,
-          -1008.0,
-          -2.0
+          -1000.0,
+          -1000.0,
+          -349.53515625
         ],
         "maximum": [
-          991.99999584,
-          991.99999584,
-          224.34765625
+          999.99999584,
+          999.99999584,
+          337.875
         ]
       }
     },
     "validation_findings": {
-      "measured_source_data": "The committed Lab 001/Lab 002 manifests and generated R16 remain the source record; this validation did not alter them.",
-      "derived_topology": "PASS: proxy components derive the intended 2017 x 2017 Landscape and 2000 x 2000 m XY extent.",
-      "rendering_presentation": "Not assessed; NullRHI command-line validation used collision geometry rather than visual appearance.",
-      "unverified_assumptions": "+X=east and +Y=south remain external georeferencing conventions; Unreal state alone cannot name world axes geographically.",
-      "failures": [
-        "The world bounds are displaced 8 m west and 8 m north of the declared local origin.",
-        "The Landscape Z translation is +1 m, so encoded midpoint 32768 does not map to Unreal Z=0.",
-        "Nine interior collision traces do not reproduce the generated R16; maximum absolute discrepancy is 459.92578125 m."
-      ]
+      "measured_source_data": "The Lab 001 DTM and canonical Lab 002 R16 are unchanged; the validator compares imported Landscape collision heights against that R16.",
+      "derived_topology": "PASS: root Landscape components derive the intended 2017 x 2017 vertices, 16 x 16 components and 2000 x 2000 m XY extent.",
+      "imported_heightfield": "PASS: nine interior collision traces hit the imported Landscape and reproduce the canonical R16 with 0.0238720245 cm maximum absolute error.",
+      "registration": "PASS: actor translation (-100000,-100000,0) cm centres the 2 km AOI at Unreal local zero and preserves the 650 m ODN encoding datum.",
+      "rendering_presentation": "Not assessed; geometry acceptance uses Landscape state and collision heights rather than visual appearance.",
+      "unverified_assumptions": "+X=east and +Y=south remain geospatial conventions supplied by the manifest; Unreal independently verifies positive unrotated axes but cannot name them geographically.",
+      "failures": []
     },
     "human_eye_camera_created": false,
-    "camera_reason": "Not created because the imported heightfield failed source-height validation; a camera placed on it would not be a measured Tryfan inspection start.",
+    "camera_reason": "Not part of geometry acceptance; human-scale visual inspection remains a later task after the now-passing bare-terrain gate.",
     "visual_acceptance": false,
     "canonical_import": {
       "surface": "dtm",
@@ -218,8 +222,7 @@
       "import_as_new_landscape": true
     },
     "creation_api_finding": "Installed UE 5.8.2 Python exposes Landscape update/export through render targets, but no supported file-to-new-Landscape creation/reimport API; Epic documents editor Landscape import from .r16.",
-    "current_level_edit_layers": 2,
-    "reimport_status": "NOT PERFORMED; editor Landscape import required",
+    "reimport_status": "COMPLETED MANUALLY: corrected normal single Landscape imported from the canonical DTM R16 and accepted by validator schema 3.",
     "canonical_reference_checkpoints": [
       {
         "name": "aoi_centre",
@@ -228,7 +231,8 @@
           359300.0
         ],
         "expected_r16_m_odn": 878.5625,
-        "observed_unreal_m_odn": 649.5
+        "observed_unreal_m_odn": 878.5624937572012,
+        "error_cm": -0.0006242798845050856
       },
       {
         "name": "tryfan_summit_reference",
@@ -236,8 +240,9 @@
           266405.0,
           359387.0
         ],
-        "expected_r16_m_odn": 913.84864625,
-        "observed_unreal_m_odn": 649.5
+        "expected_r16_m_odn": 913.8486462500002,
+        "observed_unreal_m_odn": 913.8407738160525,
+        "error_cm": -0.7872433947704849
       },
       {
         "name": "nearby_tryfan_dtm_peak",
@@ -246,9 +251,21 @@
           359386.5
         ],
         "expected_r16_m_odn": 915.16878125,
-        "observed_unreal_m_odn": 649.5
+        "observed_unreal_m_odn": 915.1681045998794,
+        "error_cm": -0.0676650120622071
+      },
+      {
+        "name": "aoi_high_point",
+        "bng": [
+          265652.5,
+          358300.5
+        ],
+        "expected_r16_m_odn": 987.78503375,
+        "observed_unreal_m_odn": 987.8235926361997,
+        "error_cm": 3.8558886199607514
       }
     ],
-    "acceptance_gate": "Do not declare Lab 002 geometry complete until UE validator overall PASS after canonical DTM R16 import."
+    "acceptance_gate": "SATISFIED: UE 5.8.2 validator OVERALL PASS for topology, transform, registration, extent and imported collision heights.",
+    "superseded_import": "The earlier /Game/Tryfan_Lab002 World Partition Landscape failed heightfield and registration validation and is not the accepted Lab 002 terrain."
   }
 }

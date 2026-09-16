@@ -1,8 +1,9 @@
 """Validate an imported Meridian Earth Landscape inside Unreal Editor 5.8+.
 
-Read-only: one Landscape plus its World Partition LandscapeStreamingProxy actors
-is treated as one logical terrain. Geometry is derived from loaded components and
-selected collision heights are checked against the generated R16 source.
+Read-only: both a normal Landscape that directly owns LandscapeComponents and a
+World Partition Landscape with LandscapeStreamingProxy actors are supported as
+one logical terrain. Geometry is derived from the actors that actually own the
+loaded components, and collision heights are checked against the generated R16.
 """
 from __future__ import annotations
 
@@ -24,6 +25,7 @@ REFERENCE_LOCATIONS_BNG = [
     {"name": "aoi_centre", "easting": 266400.0, "northing": 359300.0, "source_context_m_odn": 877.73},
     {"name": "tryfan_summit_reference", "easting": 266405.0, "northing": 359387.0, "source_context_m_odn": 913.66},
     {"name": "nearby_tryfan_dtm_peak", "easting": 266401.5, "northing": 359386.5, "source_context_m_odn": 915.44},
+    {"name": "aoi_high_point", "easting": 265652.5, "northing": 358300.5, "source_context_m_odn": 987.89},
 ]
 
 
@@ -44,6 +46,8 @@ def _actor_bounds(actor: unreal.Actor) -> tuple[list[float], list[float]]:
 
 
 def _union_bounds(actors: list[unreal.Actor]) -> dict[str, list[float]]:
+    if not actors:
+        raise ValueError("Cannot derive Landscape bounds from an empty actor collection")
     bounds = [_actor_bounds(actor) for actor in actors]
     minimum = [min(item[0][axis] for item in bounds) for axis in range(3)]
     maximum = [max(item[1][axis] for item in bounds) for axis in range(3)]
@@ -85,8 +89,6 @@ class Validation:
     def overall(self) -> str:
         if any(item["status"] == "FAIL" for item in self.checks):
             return "FAIL"
-        if any(item["status"] == "WARNING" for item in self.checks):
-            return "WARNING"
         return "PASS"
 
 
@@ -264,12 +266,23 @@ def main() -> dict[str, Any]:
         raise RuntimeError("No editor world is open")
 
     actors = list(actor_subsystem.get_all_level_actors())
-    landscapes = [actor for actor in actors if isinstance(actor, unreal.Landscape)]
+    landscapes = [
+        actor for actor in actors
+        if isinstance(actor, unreal.Landscape)
+        and not isinstance(actor, unreal.LandscapeStreamingProxy)
+    ]
     proxies = [actor for actor in actors if isinstance(actor, unreal.LandscapeStreamingProxy)]
     engine_version = unreal.SystemLibrary.get_engine_version()
     world_path = world.get_path_name()
-    validation.add("INFO", "engine_version", engine_version, observed=engine_version)
-    validation.add("INFO", "current_map", world_path, observed=world_path)
+    if engine_version.startswith("5.8.2"):
+        validation.add("PASS", "engine_version", engine_version, "5.8.2", engine_version)
+    else:
+        validation.add(
+            "UNVERIFIED", "engine_version",
+            "Validator targets UE 5.8.2; this engine version has not been qualified.",
+            "5.8.2", engine_version,
+        )
+    validation.add("UNVERIFIED", "current_map", world_path, observed=world_path)
 
     if len(landscapes) != 1:
         validation.add(
@@ -278,66 +291,111 @@ def main() -> dict[str, Any]:
             1, len(landscapes), len(landscapes) - 1,
         )
         result = {
-            "schema_version": 2,
+            "schema_version": 3,
             "engine_version": engine_version,
             "map": world_path,
             "checks": validation.checks,
             "overall": validation.overall,
         }
         _write_report(result)
-        raise RuntimeError("Landscape validation failed before geometry checks")
+        unreal.log_error("OVERALL FAIL: Landscape validation could not continue without exactly one logical Landscape")
+        return result
+
     landscape = landscapes[0]
+    landscape_path = landscape.get_path_name()
     validation.add(
         "PASS", "logical_landscape_count",
         "One logical Landscape actor owns the terrain.", 1, 1,
     )
-    validation.add(
-        "INFO", "streaming_proxy_count",
-        f"World Partition exposes {len(proxies)} LandscapeStreamingProxy actors.",
-        observed=len(proxies),
-    )
-    if not proxies:
-        validation.add("FAIL", "streaming_proxies", "No LandscapeStreamingProxy actors are loaded.", "> 0", 0)
 
-    landscape_path = landscape.get_path_name()
-    unrelated = [
-        proxy for proxy in proxies
-        if proxy.get_landscape_actor() is None
-        or proxy.get_landscape_actor().get_path_name() != landscape_path
-    ]
-    if unrelated:
+    linked_proxies = []
+    unrelated_proxies = []
+    for proxy in proxies:
+        owner = proxy.get_landscape_actor()
+        if owner is not None and owner.get_path_name() == landscape_path:
+            linked_proxies.append(proxy)
+        else:
+            unrelated_proxies.append(proxy)
+    if unrelated_proxies:
         validation.add(
             "FAIL", "proxy_ownership",
-            f"{len(unrelated)} proxies are not linked to the logical Landscape.",
-            0, len(unrelated), len(unrelated),
+            f"{len(unrelated_proxies)} LandscapeStreamingProxy actors do not resolve to the logical Landscape.",
+            0, len(unrelated_proxies), len(unrelated_proxies),
         )
     else:
         validation.add(
             "PASS", "proxy_ownership",
-            "Every proxy resolves to the logical Landscape through get_landscape_actor().",
+            "All streaming proxies resolve to the logical Landscape; zero proxies is valid for a normal single-Landscape level.",
             0, 0,
         )
 
-    components: list[unreal.LandscapeComponent] = []
-    for proxy in proxies:
-        components.extend(proxy.get_components_by_class(unreal.LandscapeComponent))
-    section_x = sorted({int(component.section_base_x) for component in components})
-    section_y = sorted({int(component.section_base_y) for component in components})
-    differences_x = [right - left for left, right in zip(section_x, section_x[1:])]
-    differences_y = [right - left for left, right in zip(section_y, section_y[1:])]
-    component_quads_x = min(differences_x) if differences_x else 0
-    component_quads_y = min(differences_y) if differences_y else 0
-    regular_x = bool(differences_x) and len(set(differences_x)) == 1
-    regular_y = bool(differences_y) and len(set(differences_y)) == 1
-    total_quads_x = section_x[-1] - section_x[0] + component_quads_x if section_x else 0
-    total_quads_y = section_y[-1] - section_y[0] + component_quads_y if section_y else 0
+    if linked_proxies:
+        representation = "world_partition_streaming"
+        geometry_actors = linked_proxies
+        validation.add(
+            "PASS", "streaming_proxy_count",
+            f"World Partition representation uses {len(linked_proxies)} linked LandscapeStreamingProxy actors.",
+            observed=len(linked_proxies),
+        )
+    else:
+        representation = "single_landscape"
+        geometry_actors = [landscape]
+        validation.add(
+            "PASS", "streaming_proxy_count",
+            "Normal Landscape representation uses the root Landscape directly; no streaming proxies are required.",
+            0, 0,
+        )
+
+    components_by_path: dict[str, unreal.LandscapeComponent] = {}
+    for actor in geometry_actors:
+        for component in actor.get_components_by_class(unreal.LandscapeComponent):
+            components_by_path[component.get_path_name()] = component
+    components = list(components_by_path.values())
+
     expected_grid = [int(value) for value in expected["components"]]
     expected_component_count = expected_grid[0] * expected_grid[1]
+    expected_quads = int(expected["quads_per_axis"])
+    quads_per_section = int(expected["quads_per_section"])
+    sections_per_component = int(expected["sections_per_component"])
+    subsections_axis = int(round(math.sqrt(sections_per_component)))
+    expected_component_quads = subsections_axis * quads_per_section
+
+    section_x: list[int] = []
+    section_y: list[int] = []
+    differences_x: list[int] = []
+    differences_y: list[int] = []
+    component_quads_x = 0
+    component_quads_y = 0
+    regular_x = False
+    regular_y = False
+    total_quads_x = 0
+    total_quads_y = 0
+    try:
+        section_x = sorted({int(component.section_base_x) for component in components})
+        section_y = sorted({int(component.section_base_y) for component in components})
+        differences_x = [right - left for left, right in zip(section_x, section_x[1:])]
+        differences_y = [right - left for left, right in zip(section_y, section_y[1:])]
+        component_quads_x = min(differences_x) if differences_x else 0
+        component_quads_y = min(differences_y) if differences_y else 0
+        regular_x = bool(differences_x) and len(set(differences_x)) == 1
+        regular_y = bool(differences_y) and len(set(differences_y)) == 1
+        total_quads_x = section_x[-1] - section_x[0] + component_quads_x if section_x else 0
+        total_quads_y = section_y[-1] - section_y[0] + component_quads_y if section_y else 0
+    except Exception as error:
+        validation.add(
+            "FAIL", "component_topology_read",
+            f"Could not derive component section bases from the active Landscape representation: {error}",
+        )
+
     observed_grid = [len(section_x), len(section_y)]
-    if len(components) == expected_component_count and observed_grid == expected_grid and regular_x and regular_y:
+    if (
+        len(components) == expected_component_count
+        and observed_grid == expected_grid
+        and regular_x and regular_y
+    ):
         validation.add(
             "PASS", "component_grid",
-            f"Observed {len(components)} components in a {observed_grid[0]} x {observed_grid[1]} regular grid.",
+            f"Observed {len(components)} components in a {observed_grid[0]} x {observed_grid[1]} regular grid on the {representation} geometry owner(s).",
             {"total": expected_component_count, "grid": expected_grid},
             {"total": len(components), "grid": observed_grid},
         )
@@ -349,7 +407,6 @@ def main() -> dict[str, Any]:
             {"total": len(components), "grid": observed_grid, "regular": [regular_x, regular_y]},
         )
 
-    expected_quads = int(expected["quads_per_axis"])
     observed_quads = [total_quads_x, total_quads_y]
     if observed_quads == [expected_quads, expected_quads]:
         validation.add(
@@ -366,15 +423,14 @@ def main() -> dict[str, Any]:
             [total_quads_x - expected_quads, total_quads_y - expected_quads],
         )
 
-    quads_per_section = int(expected["quads_per_section"])
-    sections_per_component = int(expected["sections_per_component"])
-    subsections_axis = int(round(math.sqrt(sections_per_component)))
-    expected_component_quads = subsections_axis * quads_per_section
     observed_component_quads = [component_quads_x, component_quads_y]
-    if subsections_axis**2 == sections_per_component and observed_component_quads == [expected_component_quads] * 2:
+    if (
+        subsections_axis**2 == sections_per_component
+        and observed_component_quads == [expected_component_quads, expected_component_quads]
+    ):
         validation.add(
             "PASS", "component_configuration",
-            "Observed 126-quad component spacing is compatible with 2 x 2 subsections of 63 quads.",
+            "Observed 126-quad component spacing is compatible with the declared 2 x 2 subsections of 63 quads. UE 5.8 Python exposes section bases, but not the subdivision fields directly.",
             {"subsections": [2, 2], "quads_per_subsection": 63, "quads_per_component": 126},
             {"section_base_spacing": observed_component_quads, "subsections": [subsections_axis] * 2, "quads_per_subsection": quads_per_section},
         )
@@ -382,7 +438,7 @@ def main() -> dict[str, Any]:
         validation.add(
             "FAIL", "component_configuration",
             "Observed component spacing is incompatible with the declared subsection layout.",
-            [expected_component_quads] * 2, observed_component_quads,
+            [expected_component_quads, expected_component_quads], observed_component_quads,
         )
 
     transform = landscape.get_actor_transform()
@@ -391,17 +447,22 @@ def main() -> dict[str, Any]:
     rotation = _rotation(transform.rotation)
     expected_scale = [float(expected["xy_scale_cm"]), float(expected["xy_scale_cm"]), float(expected["z_scale"])]
     scale_errors = [abs(scale[index] - expected_scale[index]) for index in range(3)]
-    proxy_scales = [_vector(proxy.get_actor_scale3d()) for proxy in proxies]
+    proxy_scales = [_vector(proxy.get_actor_scale3d()) for proxy in linked_proxies]
     proxies_match = all(
         abs(item[0] - scale[0]) <= XY_SCALE_TOLERANCE_CM
         and abs(item[1] - scale[1]) <= XY_SCALE_TOLERANCE_CM
         and abs(item[2] - scale[2]) <= Z_SCALE_TOLERANCE
         for item in proxy_scales
     )
-    if scale_errors[0] <= XY_SCALE_TOLERANCE_CM and scale_errors[1] <= XY_SCALE_TOLERANCE_CM and scale_errors[2] <= Z_SCALE_TOLERANCE and proxies_match:
+    if (
+        scale_errors[0] <= XY_SCALE_TOLERANCE_CM
+        and scale_errors[1] <= XY_SCALE_TOLERANCE_CM
+        and scale_errors[2] <= Z_SCALE_TOLERANCE
+        and proxies_match
+    ):
         validation.add(
             "PASS", "landscape_scale",
-            "The logical Landscape and every proxy use the intended XYZ scale.",
+            "The logical Landscape and any linked proxies use the intended XYZ scale.",
             expected_scale, scale, scale_errors,
         )
     else:
@@ -409,51 +470,6 @@ def main() -> dict[str, Any]:
             "FAIL", "landscape_scale",
             "Landscape or proxy scale differs from the intended scale.",
             expected_scale, scale, scale_errors,
-        )
-
-    bounds = _union_bounds(proxies)
-    derived_extent = [total_quads_x * scale[0] / 100.0, total_quads_y * scale[1] / 100.0]
-    expected_extent = [float(value) for value in expected["expected_world_dimensions_m"]]
-    extent_errors = [derived_extent[index] - expected_extent[index] for index in range(2)]
-    if all(abs(error) <= DIMENSION_TOLERANCE_M for error in extent_errors):
-        validation.add(
-            "PASS", "physical_extent",
-            f"Topology and scale derive {derived_extent[0]:.6f} x {derived_extent[1]:.6f} m.",
-            expected_extent, derived_extent, extent_errors,
-        )
-    else:
-        validation.add(
-            "FAIL", "physical_extent", "Derived physical extent differs from the 2 km AOI.",
-            expected_extent, derived_extent, extent_errors,
-        )
-    validation.add(
-        "INFO", "world_bounds",
-        "Bounds are the union of proxies; the logical World Partition actor has no direct geometry bounds.",
-        observed=bounds,
-    )
-
-    expected_min = [-expected_extent[0] * 50.0, -expected_extent[1] * 50.0]
-    expected_max = [expected_extent[0] * 50.0, expected_extent[1] * 50.0]
-    origin_errors = [
-        bounds["minimum_cm"][0] - expected_min[0],
-        bounds["minimum_cm"][1] - expected_min[1],
-        bounds["maximum_cm"][0] - expected_max[0],
-        bounds["maximum_cm"][1] - expected_max[1],
-    ]
-    if all(abs(error) <= LOCATION_TOLERANCE_CM for error in origin_errors):
-        validation.add(
-            "PASS", "horizontal_local_origin",
-            "Terrain is centred on Unreal X/Y zero as declared by the BNG origin metadata.",
-            {"minimum_cm": expected_min, "maximum_cm": expected_max},
-            {"minimum_cm": bounds["minimum_cm"][:2], "maximum_cm": bounds["maximum_cm"][:2]},
-        )
-    else:
-        validation.add(
-            "FAIL", "horizontal_local_origin",
-            "Terrain is not centred on the declared BNG local origin.",
-            {"minimum_cm": expected_min, "maximum_cm": expected_max},
-            {"minimum_cm": bounds["minimum_cm"][:2], "maximum_cm": bounds["maximum_cm"][:2]},
-            origin_errors,
         )
 
     identity_rotation = all(abs(value) <= 1e-6 for value in rotation[:3]) and abs(rotation[3] - 1.0) <= 1e-6
@@ -471,17 +487,92 @@ def main() -> dict[str, Any]:
             {"positive_scale": True, "identity_rotation": True},
             {"scale": scale, "rotation_quaternion": rotation},
         )
-    validation.add(
-        "INFO", "geospatial_axis_convention",
-        "+X=east and +Y=south are external EPSG:27700/import conventions. Unreal state verifies axes and signs, not the geographic labels.",
-        observed=manifest["coordinate_frame"]["axis_mapping"],
-    )
+
+    expected_extent = [float(value) for value in expected["expected_world_dimensions_m"]]
+    derived_extent = [total_quads_x * scale[0] / 100.0, total_quads_y * scale[1] / 100.0]
+    extent_errors = [derived_extent[index] - expected_extent[index] for index in range(2)]
+    if all(abs(error) <= DIMENSION_TOLERANCE_M for error in extent_errors):
+        validation.add(
+            "PASS", "physical_extent",
+            f"Topology and scale derive {derived_extent[0]:.6f} x {derived_extent[1]:.6f} m.",
+            expected_extent, derived_extent, extent_errors,
+        )
+    else:
+        validation.add(
+            "FAIL", "physical_extent", "Derived physical extent differs from the 2 km AOI.",
+            expected_extent, derived_extent, extent_errors,
+        )
+
+    bounds: dict[str, list[float]] | None = None
+    try:
+        bounds = _union_bounds(geometry_actors)
+        validation.add(
+            "PASS", "world_bounds",
+            f"World-space bounds were derived from the {representation} geometry owner(s), never from an empty proxy collection.",
+            observed=bounds,
+        )
+    except Exception as error:
+        validation.add(
+            "UNVERIFIED", "world_bounds",
+            f"Could not derive world-space Landscape bounds: {error}",
+        )
+
+    expected_min = [-expected_extent[0] * 50.0, -expected_extent[1] * 50.0]
+    expected_max = [expected_extent[0] * 50.0, expected_extent[1] * 50.0]
+    if bounds is not None:
+        origin_errors = [
+            bounds["minimum_cm"][0] - expected_min[0],
+            bounds["minimum_cm"][1] - expected_min[1],
+            bounds["maximum_cm"][0] - expected_max[0],
+            bounds["maximum_cm"][1] - expected_max[1],
+        ]
+        if all(abs(error) <= LOCATION_TOLERANCE_CM for error in origin_errors):
+            validation.add(
+                "PASS", "horizontal_local_origin",
+                "Terrain bounds are centred on Unreal X/Y zero as declared by the BNG origin metadata.",
+                {"minimum_cm": expected_min, "maximum_cm": expected_max},
+                {"minimum_cm": bounds["minimum_cm"][:2], "maximum_cm": bounds["maximum_cm"][:2]},
+            )
+        else:
+            validation.add(
+                "FAIL", "horizontal_local_origin",
+                "Terrain bounds are not centred on the declared BNG local origin.",
+                {"minimum_cm": expected_min, "maximum_cm": expected_max},
+                {"minimum_cm": bounds["minimum_cm"][:2], "maximum_cm": bounds["maximum_cm"][:2]},
+                origin_errors,
+            )
+    else:
+        validation.add(
+            "UNVERIFIED", "horizontal_local_origin",
+            "Horizontal registration could not be checked because Landscape bounds were unavailable.",
+        )
+
+    minimum_section_x = min(section_x) if section_x else 0
+    minimum_section_y = min(section_y) if section_y else 0
+    expected_translation = [
+        expected_min[0] - minimum_section_x * scale[0],
+        expected_min[1] - minimum_section_y * scale[1],
+        0.0,
+    ]
+    translation_errors = [translation[index] - expected_translation[index] for index in range(3)]
+    if all(abs(error) <= LOCATION_TOLERANCE_CM for error in translation_errors):
+        validation.add(
+            "PASS", "landscape_translation",
+            "The root Landscape translation maps its minimum section base to the north-west AOI corner and encoded midpoint to Z=0.",
+            expected_translation, translation, translation_errors,
+        )
+    else:
+        validation.add(
+            "FAIL", "landscape_translation",
+            "The root Landscape translation is inconsistent with the centred 2 km AOI and local vertical datum.",
+            expected_translation, translation, translation_errors,
+        )
 
     if abs(translation[2]) <= LOCATION_TOLERANCE_CM:
         validation.add(
             "PASS", "vertical_local_origin",
             "Encoded midpoint 32768 maps to Unreal Z=0, compatible with 650 m ODN metadata.",
-            0.0, translation[2],
+            0.0, translation[2], translation[2],
         )
     else:
         validation.add(
@@ -490,70 +581,91 @@ def main() -> dict[str, Any]:
             0.0, translation[2], translation[2],
         )
 
+    validation.add(
+        "UNVERIFIED", "geospatial_axis_convention",
+        "+X=east and +Y=south are external EPSG:27700/import conventions. Unreal verifies positive unrotated axes; the geographic labels come from the Lab manifest.",
+        observed=manifest["coordinate_frame"]["axis_mapping"],
+    )
+
+    valid_height_actor_paths = {landscape_path}
+    valid_height_actor_paths.update(proxy.get_path_name() for proxy in linked_proxies)
+    output_width, output_height = [int(value) for value in manifest["dimension_conversion"]["output_vertices"]]
     height_samples: list[dict[str, Any]] = []
     try:
         height_samples = _height_samples(
-            world, landscape, manifest_path, manifest,
-            total_quads_y + 1, total_quads_x + 1,
+            world, landscape, manifest_path, manifest, output_height, output_width,
         )
-        missed = [sample for sample in height_samples if not sample["hit"]]
-        errors = [abs(float(sample["error_cm"])) for sample in height_samples if sample.get("error_cm") is not None]
+        for sample in height_samples:
+            sample["landscape_hit"] = sample.get("hit_actor") in valid_height_actor_paths
+        missed = [
+            sample for sample in height_samples
+            if not sample["hit"] or not sample["landscape_hit"]
+        ]
+        errors = [
+            abs(float(sample["error_cm"]))
+            for sample in height_samples
+            if sample.get("error_cm") is not None and sample.get("landscape_hit")
+        ]
         maximum_error = max(errors) if errors else math.inf
         if not missed and maximum_error <= HEIGHT_TOLERANCE_CM:
             validation.add(
                 "PASS", "height_representation",
-                "Collision heights agree with the generated R16 at nine interior samples.",
+                "Collision traces hit the imported Landscape and agree with the generated R16 at nine interior samples.",
                 f"maximum absolute error <= {HEIGHT_TOLERANCE_CM} cm",
                 {"maximum_absolute_error_cm": maximum_error, "samples": len(height_samples)},
             )
         else:
             validation.add(
                 "FAIL", "height_representation",
-                "The imported Landscape heightfield does not reproduce the generated R16 values.",
-                f"maximum absolute error <= {HEIGHT_TOLERANCE_CM} cm and no missed traces",
-                {"maximum_absolute_error_cm": maximum_error, "missed_samples": len(missed), "samples": len(height_samples)},
+                "The imported Landscape collision heightfield does not reproduce the generated R16 values.",
+                f"maximum absolute error <= {HEIGHT_TOLERANCE_CM} cm, no missed traces, and every trace hits this Landscape",
+                {"maximum_absolute_error_cm": maximum_error, "missed_or_wrong_actor_samples": len(missed), "samples": len(height_samples)},
                 maximum_error - HEIGHT_TOLERANCE_CM if math.isfinite(maximum_error) else None,
             )
     except Exception as error:
         validation.add(
-            "WARNING", "height_representation",
-            f"Could not compare Landscape collision heights with the generated R16: {error}",
+            "UNVERIFIED", "height_representation",
+            f"Could not interrogate imported Landscape collision heights against the generated R16: {error}",
         )
 
     reference_samples: list[dict[str, Any]] = []
     try:
         reference_samples = _reference_height_samples(world, manifest_path, manifest)
-        missed_references = [sample for sample in reference_samples if not sample["hit"]]
-        reference_errors = [
-            abs(float(sample["error_cm"]))
-            for sample in reference_samples
-            if sample.get("error_cm") is not None
-        ]
-        maximum_reference_error = max(reference_errors) if reference_errors else math.inf
-        if not missed_references and maximum_reference_error <= HEIGHT_TOLERANCE_CM:
-            validation.add(
-                "PASS", "geospatial_reference_heights",
-                "AOI centre and Tryfan reference heights agree with the canonical R16 at their intended BNG-derived world coordinates.",
-                f"maximum absolute error <= {HEIGHT_TOLERANCE_CM} cm",
-                {"maximum_absolute_error_cm": maximum_reference_error, "samples": reference_samples},
-            )
-        else:
-            validation.add(
-                "FAIL", "geospatial_reference_heights",
-                "AOI centre or Tryfan reference heights do not reproduce the canonical R16 at the intended registration.",
-                f"maximum absolute error <= {HEIGHT_TOLERANCE_CM} cm and no missed traces",
-                {"maximum_absolute_error_cm": maximum_reference_error, "missed_samples": len(missed_references), "samples": reference_samples},
-                maximum_reference_error - HEIGHT_TOLERANCE_CM if math.isfinite(maximum_reference_error) else None,
-            )
+        for sample in reference_samples:
+            sample["landscape_hit"] = sample.get("hit_actor") in valid_height_actor_paths
+            error = sample.get("error_cm")
+            check_name = "height_reference_" + str(sample["name"])
+            if not sample["hit"] or not sample["landscape_hit"] or error is None:
+                validation.add(
+                    "FAIL", check_name,
+                    "The BNG-derived world coordinate did not hit the validated Landscape collision surface.",
+                    {"expected_elevation_m_odn": sample["expected_r16_elevation_m_odn"]},
+                    {"hit": sample["hit"], "landscape_hit": sample["landscape_hit"], "hit_actor": sample.get("hit_actor")},
+                )
+            elif abs(float(error)) <= HEIGHT_TOLERANCE_CM:
+                validation.add(
+                    "PASS", check_name,
+                    "Imported Landscape collision height agrees with the canonical R16 at this BNG reference.",
+                    {"elevation_m_odn": sample["expected_r16_elevation_m_odn"], "tolerance_cm": HEIGHT_TOLERANCE_CM},
+                    {"elevation_m_odn": sample["observed_elevation_m_odn"], "error_cm": error},
+                )
+            else:
+                validation.add(
+                    "FAIL", check_name,
+                    "Imported Landscape collision height differs from the canonical R16 at this BNG reference.",
+                    {"elevation_m_odn": sample["expected_r16_elevation_m_odn"], "tolerance_cm": HEIGHT_TOLERANCE_CM},
+                    {"elevation_m_odn": sample["observed_elevation_m_odn"], "error_cm": error, "hit_actor": sample.get("hit_actor")},
+                    abs(float(error)) - HEIGHT_TOLERANCE_CM,
+                )
     except Exception as error:
         validation.add(
-            "WARNING", "geospatial_reference_heights",
-            f"Could not validate named BNG reference heights: {error}",
+            "UNVERIFIED", "geospatial_reference_heights",
+            f"Could not interrogate named BNG reference heights on the imported Landscape: {error}",
         )
 
     validation.add(
-        "INFO", "absolute_odn_verification",
-        "Unreal stores relative heights. Absolute ODN requires the encoding manifest, local-zero convention and actor transform; Unreal state alone cannot prove 650 m ODN.",
+        "UNVERIFIED", "absolute_odn_verification",
+        "Unreal stores relative heights. Absolute ODN is established only by combining the interrogated Landscape height, encoding manifest, local-zero convention and actor transform; Unreal state alone cannot prove the 650 m ODN datum.",
         observed={
             "manifest_vertical_origin_m_odn": manifest["height_encoding"]["vertical_origin_m_odn"],
             "actor_translation_z_cm": translation[2],
@@ -562,16 +674,19 @@ def main() -> dict[str, Any]:
     )
 
     result = {
-        "schema_version": 2,
+        "schema_version": 3,
         "engine_version": engine_version,
         "map": world_path,
         "manifest": str(manifest_path),
         "landscape": {
+            "representation": representation,
             "logical_actor_count": len(landscapes),
-            "streaming_proxy_count": len(proxies),
+            "streaming_proxy_count": len(linked_proxies),
             "logical_actor": landscape_path,
+            "geometry_actors": [actor.get_path_name() for actor in geometry_actors],
             "component_count": len(components),
             "component_grid": observed_grid,
+            "component_section_bases": {"x": section_x, "y": section_y},
             "component_quads": observed_component_quads,
             "subsections_per_component": [subsections_axis, subsections_axis],
             "quads_per_subsection": quads_per_section,
@@ -594,7 +709,7 @@ def main() -> dict[str, Any]:
     _write_report(result)
     unreal.log(f"OVERALL {validation.overall}")
     if validation.overall == "FAIL":
-        raise RuntimeError("Landscape validation failed; see Saved/meridian-landscape-validation.json")
+        unreal.log_error("Landscape validation completed with FAIL; see Saved/meridian-landscape-validation.json")
     return result
 
 

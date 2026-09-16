@@ -131,6 +131,10 @@ class UnrealLandscapeTests(unittest.TestCase):
             validator = validator_path.read_text(encoding="utf-8")
             self.assertIn("EditorActorSubsystem", validator)
             self.assertIn("LandscapeStreamingProxy", validator)
+            self.assertIn("geometry_actors = [landscape]", validator)
+            self.assertIn("component.section_base_x", validator)
+            self.assertIn("Cannot derive Landscape bounds from an empty actor collection", validator)
+            self.assertNotIn("No LandscapeStreamingProxy actors are loaded", validator)
             self.assertNotIn("EditorLevelLibrary", validator)
             source = json.loads(
                 (root / "project" / "meridian-landscape-source.json").read_text(

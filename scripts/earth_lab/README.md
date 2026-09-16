@@ -49,13 +49,19 @@ Prepare a minimal external Unreal project and an exact import guide:
 
 Open the generated `TryfanLab002.uproject` and follow its `IMPORT.md`. The generated
 project includes an in-editor validator at `Content/Python/validate_landscape.py`.
-Open `/Game/Tryfan_Lab002`, then use **Execute Python Script** on that file. Under UE
-5.8 it enumerates actors through `EditorActorSubsystem`, groups World Partition
-`LandscapeStreamingProxy` actors under their logical `Landscape`, derives the
-component grid and bounds, traces nine interior collision heights against the
-local generated R16, and checks the AOI centre and Tryfan BNG references. The
-project's generated `IMPORT.md` gives the exact canonical R16 hash and new-Landscape
-recreation settings. The readable and machine-readable result is written to
-`Saved/meridian-landscape-validation.json`; a FAIL never mutates the Landscape.
-Generated heightmaps, projects, editor caches, reports, and screenshots stay under
+Open `/Game/Tryfan_Lab002_Corrected`, then use **Execute Python Script** on that file.
+Under UE 5.8 it enumerates actors through `EditorActorSubsystem`. A normal level is
+validated from the components and bounds owned directly by its root `Landscape`;
+a World Partition level remains supported through linked `LandscapeStreamingProxy`
+actors. The validator traces nine interior collision heights against the canonical
+R16 and checks the AOI centre, Tryfan summit reference, nearby DTM peak and AOI high
+point at their BNG-derived world positions. Results use PASS, FAIL and UNVERIFIED
+and are written to `Saved/meridian-landscape-validation.json`; a failure never
+mutates the Landscape.
+
+The accepted Lab 002 level is `/Game/Tryfan_Lab002_Corrected`: one normal Landscape,
+no streaming proxies, location `(-100000,-100000,0)` cm, zero rotation and scale
+`(99.206349206,99.206349206,150)`. Its UE 5.8.2 report is OVERALL PASS for topology,
+2 km extent, registration and imported collision-height agreement. Generated
+heightmaps, projects, editor caches, reports and screenshots stay under
 `meridian-data` and are not committed.
