@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "experiment": "Meridian Earth Laboratory 009",
+  "title": "Evidence-constrained surface reconstruction v0.1",
+  "algorithm_version": "lab009-coherent-mixture-v1",
+  "aoi": {
+    "crs": "EPSG:27700",
+    "bounds": [264900.0, 357800.0, 267900.0, 360800.0],
+    "output_vertices": [3025, 3025],
+    "vertex_spacing_m": 0.9920634920634921
+  },
+  "frozen_inputs": {
+    "lab007_root": "../meridian-data/earth-lab/tryfan-007/uncertain-underlying-surface",
+    "lab007_report_sha256": "833e4634bc89bdfb48375bbdc95b2052d5479c1f40e350d9bafea499d0e1b4b5",
+    "lab007_package_sha256": "bbf6ba7fa39cc519d91e94d1acffd399f4fcabbdffd7931c7cddf17fbe2423f4",
+    "lab007_result_sha256": "574ce8e07fb8752e90b149ef9c5638adcd1d5845818df608b94a65a5c75ccbc8",
+    "lab008_root": "../meridian-data/earth-lab/tryfan-008/surface-uncertainty-audit",
+    "lab008_report_sha256": "caf4b160704721373e712d0adedd2b14cab4cc5c8806a2ceff147967ed13cf02",
+    "lab008_result_sha256": "3996360c3ea9b379362704b22c5e06e8ecaf16870e14118ff8eabb1bcd02fac7",
+    "canonical_r16": {
+      "path": "../meridian-data/earth-lab/tryfan-004/unreal-landscape-v1/heightmaps/tryfan-004-dtm-1m-landscape-3025.r16",
+      "sha256": "31cbe763dac4072772ac9bcb4a3217b78eba0c10265e576ede708154288f6bf6"
+    },
+    "terrain_metrics": {
+      "slope": {
+        "path": "../meridian-data/earth-lab/tryfan-004/diagnostics/lab005a-surface/rasters/slope_degrees.tif",
+        "sha256": "04bd3132c44e5d369e3e58ff8690e44e815facc17acf90c4699fde18f7c01f34"
+      },
+      "roughness_15m": {
+        "path": "../meridian-data/earth-lab/tryfan-004/diagnostics/lab005a-surface/rasters/roughness_detrended_rms_15samples_m.tif",
+        "sha256": "ac4c2d2c970bb16ed0ea5aa342b333aa7e987608e7b4fa36d1c7618643dbfd49"
+      },
+      "laplacian_curvature": {
+        "path": "../meridian-data/earth-lab/tryfan-004/diagnostics/lab005a-surface/rasters/curvature_laplacian_per_m.tif",
+        "sha256": "aadc140e20883cd7c483a50c232106faa3729ea411c20f55521ac242da75d182"
+      }
+    },
+    "readiness_raster_sha256": "b3a701f44f0ac3c995b158454304a46a5cc98969ee0ab2abf124709f0a61038b"
+  },
+  "reconstruction": {
+    "seed": 904007,
+    "procedural_scales_m": [8.0, 29.0, 97.0],
+    "procedural_scale_weights": [0.45, 0.35, 0.20],
+    "regime_logit_amplitudes": {
+      "1": 0.06,
+      "2": 0.15,
+      "3": 0.25
+    },
+    "terrain_conditioning": {
+      "slope_ramp_degrees": [18.0, 50.0],
+      "gentle_ramp_degrees": [5.0, 24.0],
+      "roughness_ramp_m_rms": [0.15, 1.20],
+      "curvature_scale_per_m": 0.18,
+      "maximum_logit_adjustment": 0.45
+    },
+    "visual_families": ["rock", "scree_talus", "heath", "grass", "wet_ground"],
+    "unknown_treatment": "other_unknown is retained as reconstruction freedom and is never assigned to a material family",
+    "packed_textures": {
+      "surface_rgba": ["rock", "scree_talus", "heath", "grass"],
+      "context_rgba": ["wet_ground", "reconstruction_freedom", "lab007_uncertainty", "validity"]
+    }
+  },
+  "unreal": {
+    "project": "../meridian-data/earth-lab/tryfan-004/unreal-project/TryfanLab004/TryfanLab004.uproject",
+    "map": "/Game/Tryfan_Lab004.Tryfan_Lab004",
+    "landscape_location_cm": [-150000.0, -150000.0, 0.0],
+    "camera_config": "docs/earth-lab/tryfan-004-photo-overlay.json",
+    "material_asset": "/Game/MeridianLab009/M_Lab009_Surface",
+    "surface_texture_asset": "/Game/MeridianLab009/T_Lab009_SurfaceControls",
+    "context_texture_asset": "/Game/MeridianLab009/T_Lab009_ContextControls"
+  },
+  "output_root": "../meridian-data/earth-lab/tryfan-009/surface-reconstruction-v0.1",
+  "provenance_categories": {
+    "measured": "Welsh Government LiDAR terrain geometry",
+    "observed": "dated Sentinel evidence retained through frozen Lab 007",
+    "historical_contextual": "NRW habitat and BGS geology retained through frozen Lab 007",
+    "inferred": "frozen Lab 007 surface probabilities",
+    "audited": "frozen Lab 008 reconstruction readiness",
+    "reconstructed": "Lab 009 continuous visual placement and mixtures"
+  }
+}
