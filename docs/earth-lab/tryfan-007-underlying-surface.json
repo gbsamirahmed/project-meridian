@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "experiment": "Meridian Earth Laboratory 007",
+  "title": "Uncertain underlying surface model",
+  "model_version": "lab007-explicit-evidence-v1",
+  "aoi": {"crs": "EPSG:27700", "bounds": [264900, 357800, 267900, 360800], "resolution_m": 10, "width": 300, "height": 300},
+  "canonical_point": {"name": "Tryfan summit reference", "easting": 266405, "northing": 359387},
+  "classes": ["rock", "scree_talus", "heath", "grass", "wet_ground", "other_unknown"],
+  "frozen_inputs": {
+    "lab005a_report": {"path": "../meridian-data/earth-lab/tryfan-004/diagnostics/lab005a-surface/lab005a-surface-analysis.json", "sha256": "70f91171b4c27a6e1b81dd2cc6033ba26e8a7f585cc9e1ad3338394faf64b187"},
+    "lab005c_report": {"path": "../meridian-data/earth-lab/tryfan-005c/sentinel2-temporal-evidence/lab005c-report.json", "sha256": "06fe074eb64ad1fa675467a572c506e50d040429214a7d3acee8258c955d3fa8"},
+    "lab006_report": {"path": "../meridian-data/earth-lab/tryfan-006/surface-context-evidence/lab006-report.json", "sha256": "ccccb1418892394cd5cef37a2ebe2ae803eef10e03b9fe09df478b39e9595d6e", "deterministic_result_sha256": "f0b85ebfa28ecf9bad63c7db9a515b15b442fd2cdf5a3c51c71cc0989df51280"},
+    "lab006_package": {"path": "../meridian-data/earth-lab/tryfan-006/surface-context-evidence/lab006-evidence-package.json", "sha256": "28e5457d786536ff149d585a5079426b4d72d151d56c817ed3efc1c754c26ae8"},
+    "habitat_lookup": {"path": "../meridian-data/earth-lab/tryfan-006/surface-context-evidence/aligned/habitat-category-lookup.json", "sha256": "cc9ccfd7f90f50410db5fb78589d02210e66497020b2e17a3b30ecdfabded952"},
+    "geology_lookup": {"path": "../meridian-data/earth-lab/tryfan-006/surface-context-evidence/aligned/geology-category-lookup.json", "sha256": "4e797554e09447e0f644f645f5eab779aec61a2a2e2b519cd656458490491121"}
+  },
+  "source_budgets": {"terrain": 1.5, "sentinel": 1.2, "habitat": 2.0, "geology": 1.4},
+  "baseline_support": {"rock": 0.55, "scree_talus": 0.55, "heath": 0.65, "grass": 0.65, "wet_ground": 0.55, "other_unknown": 1.1},
+  "missing_source_unknown_support": 0.3,
+  "conflict_unknown_support": 1.2,
+  "continuous_rules": {
+    "terrain": {"steep_ramp_degrees": [20, 50], "gentle_ramp_degrees": [5, 25], "rough_ramp_m_rms": [0.2, 0.9], "smooth_ramp_m_rms": [0.1, 0.5]},
+    "sentinel": {"vegetation_ndvi_ramp": [0.25, 0.65], "stable_ndvi_stddev_ramp": [0.1, 0.3], "moisture_ndmi_ramp": [0.05, 0.3], "persistent_low_ndvi_maximum_rock_increment": 0.03}
+  },
+  "habitat_preferences": {
+    "natural_rock": [0.65, 0.12, 0.03, 0.02, 0.01, 0.17], "scree": [0.12, 0.68, 0.03, 0.02, 0.01, 0.14],
+    "dry_heath": [0.03, 0.03, 0.68, 0.08, 0.03, 0.15], "lichen_bryophyte_heath": [0.04, 0.03, 0.64, 0.05, 0.07, 0.17], "wet_heath": [0.02, 0.02, 0.52, 0.06, 0.23, 0.15],
+    "acid_grassland": [0.02, 0.02, 0.12, 0.67, 0.05, 0.12], "other_grassland": [0.01, 0.01, 0.07, 0.72, 0.06, 0.13], "wet_grassland": [0.01, 0.01, 0.06, 0.35, 0.42, 0.15],
+    "bog": [0.01, 0.01, 0.08, 0.05, 0.7, 0.15], "flush_or_spring": [0.01, 0.01, 0.06, 0.08, 0.68, 0.16],
+    "heath_grass_mosaic": [0.03, 0.03, 0.37, 0.37, 0.05, 0.15], "mixed_mosaic": [0.04, 0.04, 0.28, 0.28, 0.12, 0.24],
+    "water": [0.0, 0.0, 0.0, 0.0, 0.18, 0.82], "woodland_or_scrub": [0.01, 0.01, 0.08, 0.17, 0.05, 0.68], "bracken": [0.01, 0.01, 0.18, 0.25, 0.05, 0.5],
+    "upland_ledge_vegetation": [0.18, 0.08, 0.3, 0.08, 0.03, 0.33], "built": [0.0, 0.0, 0.0, 0.0, 0.0, 1.0], "other_or_unknown": [0.02, 0.02, 0.08, 0.08, 0.08, 0.72]
+  },
+  "geology_superficial_preferences": {
+    "none_mapped": [0.04, 0.04, 0.06, 0.06, 0.04, 0.76], "talus_angular_rock_fragments": [0.1, 0.65, 0.03, 0.03, 0.01, 0.18],
+    "peat": [0.01, 0.01, 0.08, 0.08, 0.66, 0.16], "glacial_till": [0.02, 0.03, 0.1, 0.27, 0.18, 0.4],
+    "hummocky_glacial_deposit": [0.03, 0.08, 0.1, 0.2, 0.17, 0.42], "slope_deposit_head": [0.05, 0.23, 0.07, 0.17, 0.08, 0.4],
+    "alluvial_sediment": [0.01, 0.01, 0.04, 0.2, 0.4, 0.34], "other_superficial_deposit": [0.02, 0.05, 0.08, 0.15, 0.15, 0.55]
+  },
+  "output_root": "../meridian-data/earth-lab/tryfan-007/uncertain-underlying-surface",
+  "semantic_invariants": [
+    "Mapped bedrock does not imply exposed rock.", "No mapped superficial deposit does not prove bare bedrock.", "Low NDVI, steep terrain, or rough terrain alone do not imply rock.",
+    "Historical habitat does not imply unchanged current habitat.", "Dated Sentinel state does not become timeless surface identity.", "Alignment grid spacing is not source information resolution.",
+    "Probabilities do not identify rocks, fractures, vegetation objects, textures, or square-metre material truth.", "Source disagreement remains evidence rather than being treated as source error."
+  ]
+}
