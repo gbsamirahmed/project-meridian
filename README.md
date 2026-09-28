@@ -24,6 +24,8 @@ Meridian is an interactive 3D weather map for exploring forecast conditions acro
 
 Meridian is a client-side React and MapLibre application. It requires no runtime application server, database, or authentication system.
 
+The current application remains one composed experience while its responsibilities are clarified as **Atlas** (world/terrain), **Weather** (atmosphere), and provisional **Traverse** (routes, journeys and movement). The canonical boundaries, dependency direction, external-storage contract and Tryfan reference-renderer plan are recorded in [Meridian architecture contract](docs/architecture.md). No separate deployable applications are implied by these names yet.
+
 Map weather, including precipitation, total cloud cover, 10 m wind, 2 m temperature and mean sea-level pressure, uses global, geographically fixed numeric tiled fields:
 
 ```text

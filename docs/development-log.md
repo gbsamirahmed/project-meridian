@@ -1774,3 +1774,28 @@ The reversible Unreal setup imports two non-sRGB mask textures and builds `/Game
 Automated benchmark capture remains unsuitable. UE 5.8's camera-bound ImagePlate proxy obstructs transient SceneCapture frames despite component/actor hiding and unsaved-world removal. This is a capture-path limitation rather than a terrain/material failure; generated frames are marked invalid. Further capture engineering was deliberately stopped. Exact minimal steps now use the real piloted Lab 004A CameraActor to capture baseline, Lab 009 and 50% reference-overlay frames at 1280 x 960.
 
 All six offline diagnostics were inspected. Controls and the restrained material preview are coherent, terrain-linked and free of obvious checkerboard, salt-and-pepper or 10 m grid artefacts. Lab 008 readiness remains visibly coarse but is not rendered directly. The fixed-camera judgement of whether v0.1 is visibly better than baseline remains pending the manual frames; no claim of photographic improvement or Lab 009 visual completion is made before those images are inspected. The current limiting vocabulary is broad colour plus uniform roughness, without measured albedo, detailed normals, vegetation geometry or individual rocks.
+
+## 2026-09-28 — Meridian architecture and storage foundations
+
+Recorded a concise architecture contract before any filesystem migration. Meridian
+is the ecosystem; Atlas owns world representation, Weather owns atmospheric data,
+and provisional Traverse owns route/journey/movement planning while retaining
+normal technical route vocabulary. The current web application remains one
+client-side deployment. Dependency direction, renderer independence, experiment
+provenance and the observed/derived/inferred/reconstructed/rendered hierarchy are
+now explicit.
+
+Added a small Python-only storage-root resolver for `MERIDIAN_DATA_ROOT` and
+`MERIDIAN_PRIVATE_ROOT`. Defaults preserve the existing sibling-directory layout;
+overrides must be absolute and outside Git, missing required roots fail clearly,
+and historical `../meridian-data/...` conventions can map to a configured root
+without editing frozen configs. No private data was moved and no path is exposed to
+the browser bundle.
+
+Audited the external UE 5.8 Tryfan project without modifying it. The canonical
+72,016,185-byte map is the unique calibrated scene package; the photo-overlay and
+Lab 009 assets are reproducible imports, and `Content/Python` is deployment output.
+The recommended later preservation step is narrowly scoped Git LFS in the existing
+repository, after explicit approval and removal/review of machine-generated config
+such as the Android file-server token. No LFS configuration, Unreal copy, rename or
+bulk data migration was performed in this phase.
