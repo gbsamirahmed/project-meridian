@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "experiment": "Meridian Earth Laboratory 008",
+  "title": "Surface information-gap and uncertainty audit",
+  "frozen_lab007": {
+    "root": "../meridian-data/earth-lab/tryfan-007/uncertain-underlying-surface",
+    "report_sha256": "833e4634bc89bdfb48375bbdc95b2052d5479c1f40e350d9bafea499d0e1b4b5",
+    "package_sha256": "bbf6ba7fa39cc519d91e94d1acffd399f4fcabbdffd7931c7cddf17fbe2423f4",
+    "trace_sha256": "ba57d9139a3e1755c6421e5d4eabed752078a828533ad154c3ccfd23fa4714a0",
+    "deterministic_result_sha256": "574ce8e07fb8752e90b149ef9c5638adcd1d5845818df608b94a65a5c75ccbc8"
+  },
+  "model_config": "docs/earth-lab/tryfan-007-underlying-surface.json",
+  "temporal_variability_raster": "../meridian-data/earth-lab/tryfan-005c/sentinel2-temporal-evidence/temporal/ndvi_surface_standard_deviation_10m.tif",
+  "output_root": "../meridian-data/earth-lab/tryfan-008/surface-uncertainty-audit",
+  "thresholds": {
+    "meaningful_margin_weak": 0.05,
+    "meaningful_margin_strong": 0.10,
+    "meaningful_top_minimum": 0.18,
+    "unknown_high": 0.38,
+    "source_conflict_percentile": 75,
+    "temporal_variability_percentile": 75,
+    "ablation_material_tvd": 0.05
+  },
+  "overlapping_pairs": [
+    ["rock", "scree_talus"],
+    ["heath", "grass"],
+    ["heath", "wet_ground"],
+    ["grass", "wet_ground"]
+  ],
+  "information_gap_flags": {
+    "source_conflict": 1,
+    "weak_discrimination": 2,
+    "coarse_evidence": 4,
+    "temporal_ambiguity": 8,
+    "ontology_ambiguity": 16,
+    "missing_evidence": 32,
+    "mixed_unresolved": 64
+  },
+  "readiness_classes": {
+    "1": "broad_tendency_constrained",
+    "2": "guided_mixture_reconstruction",
+    "3": "high_reconstruction_freedom"
+  },
+  "decision_rule": "Recommend one acquisition only if a specific spatially important ambiguity is not explained by conservative construction, ontology overlap, temporal context, or source scale, and a verified accessible source can directly discriminate it."
+}
