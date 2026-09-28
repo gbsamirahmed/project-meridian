@@ -1,0 +1,24 @@
+{
+  "FileVersion": 3,
+  "EngineAssociation": "5.8",
+  "Category": "Meridian Earth Laboratory",
+  "Description": "Unreal Landscape import validation",
+  "Plugins": [
+    {
+      "Name": "PythonScriptPlugin",
+      "Enabled": true
+    },
+    {
+      "Name": "EditorScriptingUtilities",
+      "Enabled": true
+    },
+    {
+      "Name": "ImagePlate",
+      "Enabled": true
+    },
+    {
+      "Name": "AndroidFileServer",
+      "Enabled": false
+    }
+  ]
+}

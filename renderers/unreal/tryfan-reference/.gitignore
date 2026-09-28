@@ -1,0 +1,19 @@
+# Unreal build and editor state
+/Binaries/
+/DerivedDataCache/
+/Intermediate/
+/Saved/
+/.vs/
+*.sln
+
+# Repository-owned Python is deployed here by bootstrap_renderer.py.
+/Content/Python/
+/meridian-*-source.json
+
+# Reproducible imported/generated packages. Their source products and rebuild
+# procedures are recorded in renderer-manifest.json.
+/Content/MeridianLab004/
+/Content/MeridianLab009/
+
+# UE may regenerate this default-only editor input file on first open.
+/Config/DefaultInput.ini

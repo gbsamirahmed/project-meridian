@@ -1799,3 +1799,32 @@ The recommended later preservation step is narrowly scoped Git LFS in the existi
 repository, after explicit approval and removal/review of machine-generated config
 such as the Android file-server token. No LFS configuration, Unreal copy, rename or
 bulk data migration was performed in this phase.
+
+## 2026-09-28 — Preserve Tryfan Reference Renderer
+
+Preserved the unique calibrated Unreal scene as durable Meridian source under
+`renderers/unreal/tryfan-reference` without renaming its historical project, map or
+actors. Normal Git contains the UE 5.8 project descriptor, a curated secret-free
+`DefaultEngine.ini`, renderer manifest, recovery documentation and bootstrap logic.
+Only `Content/Tryfan_Lab004.umap` uses a path-specific Git LFS rule. The copied
+72,016,185-byte map matches the external canonical SHA-256
+`85ef8f1cc9a9fda9b6f2ab3b911bd57831fe75c4009e5ad168ea4956165a260d`.
+
+The generated Android file-server section was omitted rather than retaining its
+credential or a placeholder. An initial smoke launch showed UE would regenerate the
+section; disabling the unused Android File Server plugin prevented regeneration on a
+second launch while leaving renderer validation unchanged. `DefaultInput.ini` was
+not retained because it consists
+of generated engine input defaults; the calibrated camera's HFOV and constrained
+aspect are established by repository configuration and validators. Imported Tony
+Edwards assets, Lab 009 textures/material, deployed Python, source-pointer files and
+Unreal build/cache/Saved state remain ignored and reproducible.
+
+A storage-root-aware bootstrap verifies the canonical R16, terrain manifest,
+photograph, Lab 009 report/package and packed controls before deploying Python and
+local pointers. A clean repository copy was opened headlessly in UE
+5.8.2-56702186. The map initially reported the expected missing generated material
+packages; the smoke validator recreated them without saving the map. Landscape,
+fixed Lab 004A camera and Lab 009 material validation all passed. The map hash was
+identical before and after. Lab 009 fixed-camera visual acceptance remains pending;
+this preservation work does not make a new visual-quality claim.

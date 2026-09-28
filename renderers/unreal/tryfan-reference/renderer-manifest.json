@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "renderer": {
+    "id": "tryfan-reference-renderer",
+    "conceptual_name": "Tryfan Reference Renderer",
+    "role": "High-fidelity Atlas consumer and validation environment",
+    "status": "preserved_with_historical_unreal_names",
+    "historical_provenance": "Originated in Meridian Earth Laboratory 004 and subsequently incorporated validated work through Lab 009. Historical Lab identifiers remain provenance, not the renderer architecture."
+  },
+  "unreal": {
+    "engine_association": "5.8",
+    "validated_engine_version": "5.8.2-56702186+++UE5+Release-5.8",
+    "project_file": "TryfanLab004.uproject",
+    "map_file": "Content/Tryfan_Lab004.umap",
+    "map_package": "/Game/Tryfan_Lab004.Tryfan_Lab004",
+    "map_bytes": 72016185,
+    "map_sha256": "85ef8f1cc9a9fda9b6f2ab3b911bd57831fe75c4009e5ad168ea4956165a260d",
+    "required_plugins": [
+      "PythonScriptPlugin",
+      "EditorScriptingUtilities",
+      "ImagePlate"
+    ],
+    "world_partition": false,
+    "external_actor_packages": false,
+    "disabled_plugins": [
+      "AndroidFileServer"
+    ]
+  },
+  "terrain": {
+    "representation": "Unreal Landscape",
+    "source_manifest": "${MERIDIAN_DATA_ROOT}/earth-lab/tryfan-004/unreal-landscape-v1/unreal-landscape-manifest.json",
+    "canonical_r16": "${MERIDIAN_DATA_ROOT}/earth-lab/tryfan-004/unreal-landscape-v1/heightmaps/tryfan-004-dtm-1m-landscape-3025.r16",
+    "canonical_r16_sha256": "31cbe763dac4072772ac9bcb4a3217b78eba0c10265e576ede708154288f6bf6",
+    "resolution_vertices": [
+      3025,
+      3025
+    ],
+    "component_grid": [
+      24,
+      24
+    ],
+    "location_cm": [
+      -150000.0,
+      -150000.0,
+      0.0
+    ],
+    "rotation_degrees": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale": [
+      99.206349206,
+      99.206349206,
+      150.0
+    ],
+    "physical_extent_m": [
+      3000.0,
+      3000.0
+    ]
+  },
+  "camera": {
+    "actor_label": "Meridian_Lab004_Geometric_Camera",
+    "location_cm": [
+      52549.121742951684,
+      -29494.947166356724,
+      -16443.74237411574
+    ],
+    "rotation_degrees": {
+      "pitch": 30.3418,
+      "yaw": 165.1419994775921,
+      "roll": 0.0
+    },
+    "horizontal_fov_degrees": 35.2,
+    "aspect_ratio": 1.3333333333333333,
+    "constrain_aspect_ratio": true,
+    "validation_config": "docs/earth-lab/tryfan-004-photo-overlay.json"
+  },
+  "reconstruction": {
+    "lab009_result_sha256": "14f90941468166dc3937879e022e8fedff2d9d212eed5cfb1c5deb0407c6a859",
+    "package": "${MERIDIAN_DATA_ROOT}/earth-lab/tryfan-009/surface-reconstruction-v0.1/lab009-reconstruction-package.json",
+    "generated_assets": [
+      "/Game/MeridianLab009/M_Lab009_Surface",
+      "/Game/MeridianLab009/T_Lab009_SurfaceControls",
+      "/Game/MeridianLab009/T_Lab009_ContextControls"
+    ],
+    "fixed_camera_visual_acceptance": "pending_manual_fixed_camera_comparison"
+  },
+  "photographic_validation": {
+    "source_image": "${MERIDIAN_DATA_ROOT}/earth-lab/tryfan-004/reference/tryfan-tony-edwards-2009.jpg",
+    "source_image_sha256": "09ccb9ade2bdae3818bfc8e8444bd93f8865d4a55fa9290332b5a78f89afd3cb",
+    "generated_assets": [
+      "/Game/MeridianLab004/Reference/T_TonyEdwards_2009",
+      "/Game/MeridianLab004/Reference/M_TonyEdwards_Overlay"
+    ],
+    "role": "Validation evidence only; not canonical reconstruction input"
+  },
+  "generated_dependencies": {
+    "policy": "Not version-controlled; recreated from repository source plus MERIDIAN_DATA_ROOT",
+    "bootstrap": "python renderers/unreal/tryfan-reference/bootstrap_renderer.py",
+    "unreal_smoke_validation": "Content/Python/validate_reference_renderer.py",
+    "deployed_python": "Content/Python",
+    "machine_local_source_pointers": "meridian-*-source.json"
+  },
+  "provenance_chain": {
+    "measured": "Welsh Government LiDAR terrain geometry",
+    "observed": "Dated Sentinel evidence retained through frozen Lab 007",
+    "historical_contextual": "NRW habitat and BGS geology retained through frozen Lab 007",
+    "inferred": "Frozen Lab 007 probabilities, result 574ce8e07fb8752e90b149ef9c5638adcd1d5845818df608b94a65a5c75ccbc8",
+    "audited": "Frozen Lab 008 reconstruction readiness, result 3996360c3ea9b379362704b22c5e06e8ecaf16870e14118ff8eabb1bcd02fac7",
+    "reconstructed": "Lab 009 continuous visual mixtures",
+    "rendered": "This Unreal reference environment"
+  }
+}

@@ -4,3 +4,7 @@
 *.jpg binary
 *.jpeg binary
 *.webp binary
+
+# The calibrated Tryfan scene is unique binary source. Keep LFS scope explicit;
+# generated Unreal packages remain ignored by the renderer-local policy.
+renderers/unreal/tryfan-reference/Content/Tryfan_Lab004.umap filter=lfs diff=lfs merge=lfs -text
