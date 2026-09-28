@@ -258,7 +258,7 @@ numerical model
 
 Weather belongs to Earth, not to a temporary viewport sampling rectangle. Overzooming must not imply new meteorological information, and sources must not be silently blended.
 
-Current global GFS fields are precipitation, total cloud cover, 10 m wind, and 2 m temperature. Pressure remains regional/legacy, but being the final unmigrated map variable does not automatically make it the highest-value next migration.
+Current global GFS fields are precipitation, total cloud cover, 10 m wind, 2 m temperature, mean sea-level pressure, surface gust and visibility, 0°C freezing level, highest tropospheric freezing level, and cloud ceiling. Open-Meteo remains reserved for selected-location point forecasts rather than map-field construction.
 
 Future priorities should follow route usefulness. Candidates include gusts, freezing level, snowfall, snow cover/depth, cloud base, visibility, antecedent precipitation, and convection/lightning-related fields. Availability, semantics, licensing, storage, and honest interpretation must be evaluated before selection.
 
@@ -421,3 +421,20 @@ and integration remain undecided.
 - Silently rerouting a user's plan around detected issues.
 
 These positions can change if future evidence justifies it. If they do, record the evidence and decision rather than removing the earlier reasoning.
+
+## Free-first world evidence hierarchy
+
+Meridian Earth should establish a reproducible free global baseline before treating
+commercial or specialist data as an enhancement. Global observations such as
+Sentinel-2 supply scalable, time-stamped spectral evidence at their honest native
+resolution. Regional public sources such as Welsh Government one-metre LiDAR can
+then improve measured geometry where available. Commercial imagery or specialist
+surveys may later improve particular places, but must remain optional evidence
+providers rather than hidden requirements for the baseline world model.
+
+The catalogue must preserve whether a quantity was measured, derived from measured
+geometry, observed at 10 or 20 metres, interpolated for display, or procedurally
+reconstructed. A higher-resolution display grid never upgrades the resolution of its
+source evidence. Terrain and spectral observations are complementary inputs; neither
+should be silently promoted into a surface-material classification without supporting
+evidence and explicit uncertainty.

@@ -1271,3 +1271,506 @@ The manually recreated `/Game/Tryfan_Lab002_Corrected.Tryfan_Lab002_Corrected` l
 The in-editor report is **OVERALL PASS**. Nine interior collision traces interrogated the imported Unreal Landscape rather than substituting source-file values and reproduced the canonical DTM R16 with 0.0239 cm maximum absolute error. The AOI centre observed 878.562494 m ODN against 878.562500 m; the Tryfan summit reference observed 913.840774 m against 913.848646 m; the nearby DTM peak observed 915.168105 m against 915.168781 m; and the AOI high point observed 987.823593 m against 987.785034 m. All are inside the validator's 5 cm collision-sampling tolerance.
 
 This acceptance is geometric and provenance validation only. The Welsh Government source terrain and generated R16 were not modified, no Unreal terrain or rendering assets are committed, and no materials, lighting, camera or visual-fidelity acceptance is implied. +X=east and +Y=south remain recorded geospatial conventions; Unreal independently confirms positive unrotated axes but cannot assign geographic names to them.
+
+## 2026-09-24 — Meridian Earth Laboratory 003: geospatial observer utility
+
+Added a reusable Unreal Editor utility that converts British National Grid coordinates into the accepted Lab 002 local frame, traces the actual imported Landscape collision surface, and creates or repositions a labelled `CameraActor` 1.70 m above that surface. Coordinate and orientation maths live in an Unreal-independent module. X is `(easting - 266400) × 100` cm and Y is `(359300 - northing) × 100` cm; the frame values are read from the runtime manifest so another registered Earth Lab AOI can reuse the utility.
+
+Target mode accepts a second BNG coordinate, traces the Landscape independently at both points before changing actors, and derives geographic bearing plus Unreal yaw and pitch from the complete 3D observer-to-target vector. Non-Landscape actors are ignored by these traces, so editor markers or scene meshes cannot substitute for measured terrain height. Heading-only mode remains available with its established `yaw = heading - 90°` conversion and zero pitch. Roll remains zero in both modes. A labelled, non-colliding 20 cm Engine sphere marks the observer ground point; existing observer actors are reused and the level is never saved automatically.
+
+The camera uses Unreal's horizontal `CameraComponent.field_of_view` convention: 60° horizontal at a constrained 16:9 aspect implies 35.983° vertical. A headless UE 5.8.2 run against `/Game/Tryfan_Lab002_Corrected` traced the E266100/N360200 observer at 312.4975 m ODN and the E266405/N359387 summit reference at 913.8408 m ODN. From the optical point 1.70 m above observer terrain, the summit is 868.328 m away horizontally and 1055.256 m in 3D. The calculated bearing is 159.436°, UE yaw 69.436° and UE pitch +34.628°. Unreal's resulting camera forward vector agrees with the normalized target vector within `2.87 × 10^-8`. The headless actors were not saved, and no Landscape, heightmap, material or rendering asset changed.
+
+## 2026-09-24 — Meridian Earth Laboratory 004 preparation
+
+Prepared a separate 3 x 3 km Tryfan geometry benchmark without changing the accepted
+2 x 2 km Lab 002 dataset. The new EPSG:27700 bounds are E264900-267900 and
+N357800-360800, centred on the same E266400/N359300 registration. The existing WFS
+source-selection and bounded national-COG reader selected the Welsh Government 1 m
+DTM/DSM captured 2 March 2021. Both 3000 x 3000 Float32 windows contain nine million
+valid cells and no nodata. The DTM is 15,639,072 bytes with elevations 286.49-992.47
+m ODN; the DSM is 16,003,194 bytes with elevations 288.84-994.42 m. No national
+raster was downloaded.
+
+The photographic benchmark is Robert J. Heath's 28 August 2021 image “Tryfan, North
+Wales” (CC BY 2.0). Wikimedia/Flickr metadata gives a precise published viewpoint at
+53.105341,-4.004945, transformed to BNG E265876.053/N358339.763, and EXIF records a
+Panasonic DMC-FZ1000 at 84.07 mm / 230 mm 35 mm equivalent. The exact heading and aim
+point are absent. Meridian therefore marks summit targeting as inferred and treats
+the 8.949793 degree horizontal FOV derived from the 35 mm equivalent as an explicit
+initial calibration parameter. The licensed 28,667,564-byte original is stored only
+under the external Lab 004 data root.
+
+The full AOI is bilinearly resampled from 3000 cells to a valid 3025-vertex Landscape
+layout: 24 x 24 components, 2 x 2 subsections of 63 quads, 3024 quads per axis and
+99.206349206 cm XY scale for exactly 3 km. This adds 25 samples (0.833%) per axis;
+there is no crop, pad, smoothing, erosion, noise or nodata fill. The 650 m ODN local
+zero, Z scale 150 and 0.01171875 m quantisation remain unchanged. The DTM encoding
+error is at most 0.005859375 m; source-grid round-trip mean absolute error is 0.0397 m
+and RMSE 0.0851 m, with a 4.1605 m local maximum on steep terrain. DTM is the default;
+DSM is retained for measured surface comparison.
+
+Project preparation is now manifest-driven for AOI dimensions, level name, BNG
+formulae, validation references and optional benchmark metadata. The observer utility
+can load a benchmark pointer and preserves the engine-verified CameraComponent
+look-at check. The generated external project and exact import guide are ready, but
+no Lab 004 Landscape has been imported and no visual comparison is claimed. Manual
+import, in-editor height validation, benchmark placement and photographic framing
+calibration remain the next gates.
+
+
+## 2026-09-24   Lab 004A geometric benchmark revision
+
+Replaced the primary geometric-registration reference with Tony Edwards' 21 February
+2009 Geograph photograph of Tryfan (CC BY-SA 2.0). Wikimedia/Geograph structured
+metadata publishes a WGS84 camera position at 53.116880/-3.989800, an object position
+at 53.115280/-3.999300 and a heading of 247 degrees. PROJ transforms these to BNG
+E266925.491/N359594.949 and E266284.785/N359434.695; both lie inside the existing
+3 x 3 km Lab 004 AOI. The WGS84 coordinate-derived geodesic bearing is 254.365
+degrees, 7.365 degrees clockwise from the published heading. The discrepancy remains
+explicit. Target-mode placement uses the published coordinate pair and imported
+Landscape traces, not a corrected heading.
+
+Canonical Lab 004 DTM R16 interpolation predicts 483.856 m ODN at the observer and
+813.353 m ODN at the depicted-place coordinate. From the explicit 1.70 m optical
+height assumption, the BNG-grid horizontal distance is 660.444 m, the 3D distance is
+737.318 m, local grid bearing is 255.957 degrees, Unreal yaw is 165.957 degrees and
+pitch is +26.397 degrees. These remain derived expectations until the in-editor
+terrain traces run. The source provides no usable lens or FOV metadata. FOV is marked
+unknown/calibration-required; 60 degrees is retained only as an explicit initial
+placement parameter.
+
+The observer utility now uses Lab 004 actor labels, reuses those actors on repeated
+execution, accepts an explicit FOV override, and continues to reject placement unless
+both Landscape traces and the rendered CameraComponent forward-vector check succeed.
+The previous Robert J. Heath reference is preserved as historical visual-benchmark
+provenance. Lab 004B visual-quality reference selection remains deferred. No terrain,
+Landscape transform, generated heightmap or import pipeline was changed.
+
+
+## 2026-09-24 — Lab 004A geographic diagnosis
+
+Added a read-only source-DTM diagnostic before any further camera or rendering work.
+The north-up plan and profiles show that the published 247 degree heading crosses the
+canonical Tryfan summit almost exactly: the camera-to-summit WGS84 bearing is 246.630
+degrees at 560.579 m. By contrast, the published depicted-place coordinate bears
+254.365 degrees at 660.544 m and lies beyond Tryfan's nearer high flank. The straight
+eye-to-depicted-place line is obstructed by up to 146.8 m around BNG
+E266474/N359482, where the terrain reaches about 863.4 m ODN. The current exact-target
+camera therefore looks into/through the mountain shoulder rather than at a visible
+subject point.
+
+The 247 degree profile reaches its maximum terrain angle at about 559 m, BNG
+E266405/N359391 and 913.6 m ODN, immediately beside the canonical summit reference.
+This supports the geographic plausibility of the published camera plus heading while
+showing that Geograph's depicted-place point must not be treated as an exact optical
+target. Geograph documents subject location as an approximate primary-subject point
+and view direction as an independently stored optional heading; camera positions may
+also be best-effort map placements when GPS is unavailable. The Tony Edwards record
+remains useful diagnostically, but its current camera-to-depicted-place target model
+is not a defensible exact geometric calibration. No terrain, Landscape, camera,
+benchmark metadata, FOV, lighting, or generated heightmap was modified.
+## 2026-09-24 — Lab 004A photographic orientation correction
+
+Applied the completed geographic diagnosis to observer placement without changing the
+validated Landscape or terrain products. The primary camera now uses Tony Edwards'
+published 247 degree geographic heading for its horizontal direction. Because Unreal
+operates in the local BNG-aligned frame, PROJ converts that true heading at the camera
+position to grid bearing 248.591999 degrees, which maps to Unreal yaw 158.591999
+degrees. The script independently traces the actual imported Landscape at the camera
+and canonical Tryfan summit, then uses their vertical separation to derive pitch; the
+canonical R16 predicts +37.384679 degrees from the 1.70 m eye point. Roll remains zero.
+
+The published depicted-place coordinate is preserved as diagnostic provenance and is
+written into the placement report, but no longer controls the camera. This reflects
+the DTM finding that the approximate subject marker lies behind Tryfan's nearer
+shoulder. With no published lens metadata, 40 degrees is recorded as an explicit
+horizontal-FOV calibration override rather than a measured value. Runtime placement
+continues to reuse the Lab 004 camera and marker and verifies the resulting Unreal
+CameraComponent and rendered camera-view forward vectors. No Landscape, AOI,
+heightmap, lighting, atmosphere, or source-data asset changed.
+
+## 2026-09-24 — Lab 004A controlled photographic calibration
+
+Separated photographic calibration from the geometric summit reference. Camera BNG
+position, imported-Landscape terrain trace, 1.70 m eye height, published 247 degree
+true heading, projection-aware Unreal yaw 158.591999 degrees, and zero roll remain
+fixed. `MERIDIAN_CAMERA_PITCH_DEGREES` now supplies the unknown photographic pitch,
+while `MERIDIAN_HORIZONTAL_FOV_DEGREES` supplies the unknown horizontal field of
+view. The Lab 004A benchmark requires an explicit pitch rather than silently aiming
+at the summit.
+
+The canonical summit is still traced from the actual Landscape and its approximately
++37.384679 degree elevation angle is reported as geometric diagnostic provenance.
+The approximate depicted-place coordinate and its earlier line-of-sight calculations
+also remain intact. Placement JSON and editor output identify pitch and HFOV as
+calibrated parameters rather than measured image metadata, and repeated trials reuse
+the same Lab 004 camera and marker. No terrain, Landscape, heightmap, AOI, lighting,
+atmosphere, or source data changed.
+
+## 2026-09-24 — Lab 004A source-DTM skyline calibration
+
+Added a read-only skyline calibration against the original Lab 004 1 m DTM. The
+640×480 Tony Edwards photograph has a strong sky/terrain edge over most of its width;
+the cloud-affected normalized interval x=0.275–0.475 is retained in diagnostics at
+20% weight and is also excluded entirely in a sensitivity run. Terrain horizons use
+1 m distance sampling and 0.025 degree bearing steps. Each heading/HFOV candidate
+solves pitch analytically, then scores angular shape and slope so vertical translation
+alone cannot create a false fit.
+
+The best fixed-camera result is centre true heading 253.55 degrees, HFOV 35.20 degrees
+and pitch +30.341841 degrees. Weighted angular RMSE is 0.547919 degrees, weighted MAE
+0.468376 degrees, and shape correlation 0.962091. Removing every cloud-affected
+column returns the same heading and HFOV. The published 247 degree heading is a poor
+photographic centre: its best solution has 2.058258 degrees RMSE and a 2.636-times
+worse objective. The recovered view projects the canonical summit to image x≈197,
+left of centre inside the clouded region, while measured northern shoulder terrain
+at bearings 253.6–271.1 degrees continues across the right side.
+
+Conclusion A is supported: Tony Edwards remains a defensible Lab 004A benchmark using
+the recovered photographic calibration. The published heading is approximately 6.55
+degrees different from the recovered centre and should be treated as approximate.
+Cloud prevents direct summit-silhouette validation; the bare-earth DTM also omits
+rocks, vegetation and sub-metre crag form. Because the fixed published camera gives a
+stable clear-skyline fit, no camera-position perturbation search was run. Unreal,
+Landscape, terrain, benchmark metadata, camera actors, lighting and heightmaps were
+not modified.
+
+## 2026-09-24 — Lab 004A recovered-heading calibration override
+
+Added `MERIDIAN_CAMERA_HEADING_DEGREES` alongside the existing pitch and horizontal
+FOV calibration globals. The published 247 degree true heading remains immutable
+source metadata; an override is recorded separately as an explicit recovered
+photographic calibration. The utility applies the same locally derived BNG
+grid-convergence correction used by the published-heading path, so the skyline-fit
+heading 253.55 degrees maps to BNG grid bearing 255.141999 degrees and Unreal yaw
+165.141999 degrees.
+
+The override affects orientation only. Camera BNG/Unreal XY, runtime Landscape trace,
+1.70 m eye height, roll, AOI, terrain, Landscape and source data remain unchanged.
+Placement JSON and editor output report both the published heading and the applied
+heading with its provenance.
+
+## 2026-09-24 — Lab 004A photographic reference overlay
+
+Added a minimal Unreal photographic validation overlay using Epic's built-in Image
+Plate plugin. The external 640×480 Tony Edwards photograph is imported only into the
+external Lab 004 project. A translucent unlit plate fills the calibrated camera's
+constrained 4:3 frame at 50% default opacity, with rerunnable enabled/disabled and
+opacity globals.
+
+The setup script validates the named camera's world location, pitch 30.3418 degrees,
+yaw 165.141999 degrees, zero roll, 35.20 degree horizontal FOV, and constrained 4:3
+aspect before attaching anything. It does not set camera or terrain properties. A
+disposable UE 5.8 project-copy smoke test verified texture import, material creation,
+Image Plate attachment, 640×480 dimensions, default opacity, and fixed-camera
+validation without changing the real level. Generated Unreal assets and reports
+remain outside Git.
+
+## 2026-09-24 — Lab 004A persisted-camera repair
+
+The first overlay run after restarting Unreal correctly rejected the saved camera:
+the `.umap` still contained the earlier summit-derived 37.383705 degree pitch,
+158.591995 degree yaw and 40 degree HFOV. The calibrated 30.3418 / 165.141999 /
+35.20 degree state had existed only in the earlier editor session and placement
+report because observer placement deliberately did not save levels automatically.
+
+Added a narrow canonical restore-and-save utility and a separate read-only saved-map
+validator. Restoration reads the existing photo-overlay configuration, snapshots all
+Landscape transforms, changes only the named CameraActor and CameraComponent, checks
+the strict calibration, confirms the Landscape snapshot is unchanged, marks camera
+objects modified, and saves `/Game/Tryfan_Lab004` through UE 5.8's explicit
+`save_map` API. The validator can load the `.umap` in a fresh editor process and
+applies the same strict comparison used by the overlay.
+
+A three-process disposable-project test reproduced the stale map, restored and saved
+it, reopened it in a fresh UE 5.8 process, passed position/rotation/HFOV/aspect
+validation, and then attached the 50% Image Plate while reporting the camera
+unchanged. The real project remains awaiting execution of the deployed restore script
+inside its currently open editor because remote Python and Windows UI automation were
+unavailable; no second process was allowed to overwrite a map held open by Unreal.
+
+## 2026-09-24 — Meridian Earth Laboratory 004B quantitative alignment
+
+Added a bounded, reproducible photographic-alignment analysis without changing Lab
+004A, Unreal actors, Landscape, R16, lighting or overlay behavior. The fitter verifies
+the final 3025-vertex DTM R16 by SHA-256, decodes the exact Unreal height encoding,
+and measures the Tony Edwards photographic skyline against that surface. It uses the
+existing deterministic cloud-aware skyline extraction and reports angular, pixel and
+skyline-slope residuals. Roll, 4:3 aspect, terrain transform and 1.70 m eye height are
+fixed. A tracked configuration declares all uncertainty bounds before fitting and
+contains an exact immutable snapshot of the canonical 004A camera.
+
+004A already measures 0.547642 degrees weighted angular RMSE, 9.78517 pixels weighted
+RMSE, and 0.962054 shape correlation against the final R16. With camera position fixed,
+the best sensitivity solution changes true heading +0.05 degrees, pitch -0.0178
+degrees and HFOV +0.025 degrees; its improvement is negligible. Allowing a ±20 m
+Geograph-marker envelope finds a mathematical minimum 20 m east and 16 m north,
+plus -1.0 degree heading, -0.3264 degree pitch and -1.625 degree HFOV. Angular RMSE
+falls to 0.523267 degrees and the combined objective improves 4.42%, but pixel RMSE
+slightly worsens to 9.81365 pixels and the easting bound is reached.
+
+The diagnostic classification is therefore boundary-limited, not a justified fitted
+camera. No `Meridian_Lab004B_PhotoFitted_Camera` is created or deployed. The evidence
+shows that the imported R16 preserves the same broad skyline agreement as the source
+DTM, while the residual is too small and too confounded by cloud, automatic edge
+extraction, unknown camera metadata, bare-earth representation and missing sub-metre
+crags to attribute to a terrain/georeferencing defect. Generated overlays, residual
+plots and the machine-readable report remain external under the Lab 004 diagnostics
+folder.
+
+## 2026-09-24 — Meridian Earth Laboratory 005A terrain-derived surface analysis
+
+Derived surface evidence from the exact final Tryfan DTM R16 without changing Lab
+004, Unreal, terrain, camera, overlay or rendering. The analysis verifies the R16
+SHA-256 before and after execution and records measured geometry separately from all
+derived products. Horn's 3 x 3 gradient produces slope and downhill grid-north aspect;
+a small binomial prefilter supports physically defined Laplacian, profile and plan
+curvature; plane-detrended RMS residual supplies roughness at approximately 5, 15 and
+51 m windows. Missing neighbourhoods and flat aspects remain undefined.
+
+Across the 3 km AOI, median slope is 18.52 degrees and p95 is 50.05 degrees. Median
+roughness rises from 0.069 m at 5 m to 0.266 m at 15 m and 1.082 m at 51 m. Within
+600 m of the canonical Tryfan summit the corresponding medians are 0.125, 0.455 and
+1.645 m, showing stronger irregularity at every scale. The 51 m maximum of 11.70 m
+lies near E266422.8/N359346.6 on the Tryfan high mass; fine-scale and 15 m maxima
+occur on steep western crags elsewhere in the AOI. Curvature maps expose alternating
+convex ridge and concave gully lineaments that slope alone does not distinguish.
+
+A deliberately relative relationship diagnostic combines fixed gentle/steep slope
+thresholds with roughness and absolute-curvature quartiles. It identifies substantial
+steep+rough and gentle+smooth regions, but is explicitly not a material or land-cover
+map. The analysis cannot identify rock, grass, scree, paths, vegetation, wetness or
+sub-metre blocks. Ten north-up diagnostic maps, nine derived/elevation GeoTIFFs and a
+machine-readable report are generated outside Git. Two complete runs produced
+byte-identical hashes for all 20 outputs; the canonical input hash remained unchanged.
+
+## 2026-09-24 — Meridian Earth Laboratory 005B scalable surface evidence
+
+Added the first independently observed surface layer to the frozen Tryfan geometry.
+The official CDSE catalogue supplied product selection and provenance; anonymous
+range reads use the matching Earth Search Collection-1 COG because official CDSE
+asset access requires credentials. Candidate quality was measured over the actual
+3 km Tryfan AOI rather than inferred from tile-wide cloud percentage. The selected
+12 July 2026 Sentinel-2A L2A product has 100% usable AOI SCL cells and no classified
+cloud, cloud shadow, snow/ice or nodata. A 500 m retrieval margin keeps the retained
+native windows to 4 x 4 km.
+
+The first processing pass caught an important access-mirror issue: the legacy Earth
+Search collection advertised a -0.1 offset while serving pixels that were already
+offset-adjusted, which produced physically impossible normalized-index tails. The
+pipeline now uses the Collection-1 COG for the same ESA product; raw values retain
+the processing-baseline offset and the published 0.0001 scale/-0.1 offset produces
+plausible BOA reflectance. Low-signal or negative-band normalized differences remain
+missing rather than being forced into an index.
+
+B02/B03/B04/B08 remain 10 m evidence. Red-edge, narrow-NIR, B11/B12 and SCL remain
+20 m evidence. Native EPSG:32630 windows are preserved separately, while analysis
+uses exact 10 m and 20 m EPSG:27700 grids. Terrain is aggregated upward from frozen
+005A fields using area-weighted mean/maximum and circular aspect handling; Sentinel
+is never upsampled to the ~1 m terrain grid. Generated data, GeoTIFFs, PNGs and the
+machine-readable report remain external.
+
+The AOI median NDVI is 0.725, median NDMI 0.201 and median NDRE 0.501. NDMI decreases
+moderately with elevation (r=-0.437); B11/B12 contrast also decreases with elevation
+(r=-0.398) and with 5 m roughness (r=-0.315). These are associations, not material
+labels. Cells with similarly gentle/smooth geometry span a large NDVI range, while
+cells with NDVI 0.4-0.5 span roughly 42 degrees between their slope p10 and p90. The
+experiment therefore shows complementary information: Sentinel distinguishes broad
+vegetation, water/brightness and moisture-related behaviour that geometry cannot,
+while the DTM supplies slope, landform, roughness and sub-10 m structure absent from
+Sentinel. Ten-to-twenty-metre observation is useful as a regional constraint for
+human-scale reconstruction, but cannot identify individual rocks, paths, vegetation
+structure or surface material; those require stronger observations and/or explicitly
+procedural sub-resolution reconstruction.
+
+## 2026-09-25 — Meridian Earth Laboratory 005C temporal surface evidence
+
+Completed the final planned Sentinel-focused evidence experiment without changing
+Lab 004, Unreal, the canonical R16, or the frozen 005A/005B outputs. Three bounded
+Collection-1 COG observations were added around the frozen 12 July 2026 summer
+reference: 17 January 2024 (winter), 30 April 2026 (spring), and 27 November 2024
+(autumn). Actual Tryfan AOI cloud/cirrus-free fractions are 98.67%, 99.67%, 100% and
+98.47%. Winter deliberately retains a real 25.28% snow/ice state. Winter and late
+autumn also contain about 59.20% and 62.35% SCL class-2 topographic/cast shadow under
+roughly 15.7-degree sun elevation, compared with 6.00% in spring and 1.84% in summer.
+
+The processing reuses the corrected 005B reflectance scale/offset path and exact
+10 m/20 m BNG grids. Snow is retained in environmental summaries and excluded from
+persistent-surface summaries; cloud, cloud shadow, cirrus, invalid and nodata remain
+masked. A terrain-derived cosine-incidence field records changing illumination from
+the aggregated 005A slope/aspect, but no aggressive topographic correction is
+applied. The large low-sun shadow fractions make winter and autumn raw brightness and
+some normalized indices illumination-sensitive; they are evidence of observation
+state, not direct proof of surface-material change.
+
+Snow-excluded median AOI NDVI changes from 0.015 in winter to 0.488 in spring, 0.725
+in summer and 0.510 in autumn. Median per-cell NDVI range is 0.534 (p95 0.927);
+median brightness range is 0.124; and median NDMI range is 0.700. Winter NDMI is
+especially confounded by low illumination and snow-adjacent/low-signal behaviour and
+must not be read as a literal AOI-wide moisture measurement. The simple incidence
+model explains only modest whole-AOI brightness association (r=0.343 winter,
+0.197 autumn, -0.128 spring, -0.264 summer), confirming that atmosphere, BRDF,
+phenology, snow and surface differences remain mixed with illumination.
+
+Temporal NDVI variability relates most strongly to northness (r about 0.475), while
+NDMI range relates moderately to slope (r=0.357) and weakly to roughness at all three
+005A scales (r about 0.224-0.228). Curvature relationships are small. About 17.0% of
+10 m cells meet the relative low-NDVI/low-brightness-variability diagnostic, and 5.5%
+meet the stricter persistent-low-NDVI diagnostic; these remain evidence masks, not
+rock or substrate labels. Four dates materially improve separation of persistent
+spectral behaviour from phenology, snow and illumination compared with one excellent
+summer scene, but do not add human-scale material or structure resolution beyond the
+10-20 m sensor limit.
+
+The external result contains 171 files and occupies 28,865,253 bytes (27.53 MiB):
+11.10 MiB aligned rasters, 6.76 MiB temporal fields, 5.36 MiB diagnostics and
+4.14 MiB observation metadata/products. Two complete cached runs produced result
+SHA-256 553de696cf8f6880624397f09a7604ad25f88f9eee79caf3e13d312938ce3289
+and identical output hash lists. The next experiment should use independent free
+Welsh habitat/land-cover and geological evidence before any classification or
+procedural surface reconstruction.
+
+
+## 2026-09-25 — Meridian Earth Laboratory 006 contextual evidence
+
+Completed the final planned evidence-gathering experiment before Lab 007 without
+changing Lab 004, Unreal, the canonical R16, or frozen 005A/005B/005C outputs. The
+pipeline SHA-verifies the 005A and 005C reports, then retrieves only a 3 x 3 km
+Tryfan subset from NRW's official Phase 1 habitat WFS and bounded BGS Geology 50K
+bedrock/superficial WMS evidence. Original NRW vector attributes and rendered BGS
+source products are retained externally. All categorical alignment uses rasterize,
+nearest category or categorical mode; identifiers are never interpolated.
+
+The NRW survey adds independently field-mapped habitat names but is legacy evidence:
+field recording began in 1979 and Wales coverage was completed during 1979-1997.
+Dry heath and acid grassland account for about 33.8% and 29.3% of the AOI; scree
+4.2%, flush/spring 4.1%, bog 2.5%, and mapped natural-rock exposure only 0.2%.
+Mapped rock/scree is generally steep, mapped bog gentle and smooth, and the broad
+terrain relationships are physically plausible. Only 2.4% of mapped rock/scree
+cells meet 005C's deliberately strict persistent-low-NDVI diagnostic. That weak
+overlap is retained as evidence of different semantics, dates and scales, rather
+than “corrected” into agreement.
+
+BGS 1:50,000 evidence identifies sandstone and siltstone units, Ordovician
+rhyolite/microgranite intrusions, felsic tuffs and volcaniclastic units across the
+AOI. Superficial contexts include till (11.6%), talus (8.6%), peat (8.3%), hummocky
+glacial deposits (4.5%) and head (3.9%); roughly 60% has no mapped superficial
+deposit in the rendered layer. The canonical Tryfan point lies in mapped acid dry
+dwarf-shrub heath, on Capel Curig Volcanic Formation felsic tuff, with no mapped
+superficial deposit. This constrains broad surface interpretation but cannot specify
+exposure, fracture geometry, visual texture or boulders.
+
+A first diagnostic pass revealed that WMS boundary strokes and labels created an
+artificial 14.3% “unknown bedrock” fraction. The derived categorical grid now fills
+only opaque cartographic artifacts from the nearest recovered unit while preserving
+transparent superficial absence; the source PNG remains unchanged. Six diagnostics
+were inspected for north-up alignment, category continuity, map/terrain
+relationships and 005C comparison. The output is 14,261,964 bytes (13.60 MiB).
+Two cached reruns produced the same deterministic result SHA-256
+f0b85ebfa28ecf9bad63c7db9a515b15b442fd2cdf5a3c51c71cc0989df51280.
+
+The experiment supplies a machine-readable evidence package with independent
+terrain, Sentinel, habitat and geology channels and explicit source-scale metadata.
+It is sufficient to constrain Lab 007's first uncertain surface interpretation.
+Lab 007 must not infer square-metre material truth, individual rocks, present-day
+habitat unchanged since the survey, or visual texture directly from these sources.
+
+
+## 2026-09-25 — Meridian Earth Laboratory 007 uncertain underlying surface
+
+Implemented the first deterministic inference stage without changing Labs 003-006,
+Unreal, terrain or rendering. The model keeps source fact, derived evidence, model
+inference, temporal state and unsupported detail separate. It combines capped
+preferences from structural terrain morphology, dated four-season Sentinel
+summaries, historical 1979-1997 NRW Phase 1 habitat context and broad BGS geological
+context. No machine learning or new dataset is introduced. Missing families and
+specificity-weighted disagreement raise explicit other/unknown support; normalized
+Shannon entropy records uncertainty. Bedrock, no mapped superficial deposit, steep
+or rough terrain and low NDVI are each prevented from independently proving rock.
+
+The 10 m grid is alignment geometry. All 90,000 valid terrain cells have normalized
+six-class vectors, but this is complete computation rather than complete knowledge.
+Terrain, Sentinel and BGS cover 100%; NRW habitat covers 99.48%. BGS distinguishes
+35,982 cells with mapped superficial deposits from 54,018 valid cells with none
+mapped. Mean uncertainty is 0.929 and mean other/unknown probability 0.303;
+other/unknown is dominant in 79.14% of cells. The model therefore reports the AOI as
+substantially underconstrained despite broad source coverage.
+
+Relationships are physically plausible but remain weak probabilities: mean rock
+rises from 0.078 on slopes below 10 degrees to 0.139 above 60 degrees, while wet
+ground falls from 0.181 to 0.086. Mapped scree averages 0.247 scree/talus; mapped
+bog 0.301 wet ground; BGS talus 0.185 scree/talus; and BGS peat 0.237 wet ground.
+High-conflict cells carry more other/unknown support than the low-conflict quartile.
+At the canonical Tryfan point, acid dry dwarf-shrub heath, felsic-tuff bedrock, no
+mapped superficial deposit, steep/rough terrain and dated Sentinel observations
+produce rock 0.134, scree/talus 0.111, heath 0.240, grass 0.119, wet ground 0.080,
+other/unknown 0.317 and uncertainty 0.934.
+
+Twelve diagnostics were visually inspected. They show coherent terrain-linked
+rock/scree tendencies, habitat-shaped heath/grass/wet regions, mapped talus bands,
+near-complete evidence-family coverage and widespread high uncertainty. No source
+disagreement was hidden. The report's 48-file hashed payload occupies 11,240,488 bytes; including the report, 49 files occupy 11,287,793 bytes (10.76 MiB). Two cached
+runs produced identical deterministic SHA-256
+574ce8e07fb8752e90b149ef9c5638adcd1d5845818df608b94a65a5c75ccbc8 and
+verified that every consumed frozen source product remained unchanged. The evidence
+is sufficient for a later explicitly uncertainty-aware experiment, but not for
+confident material truth or high-frequency procedural reconstruction.
+
+
+## 2026-09-25 — Meridian Earth Laboratory 008 uncertainty audit
+
+Audited frozen Lab 007 rather than tuning it. The workflow verifies deterministic
+identity 574ce8e07fb8752e90b149ef9c5638adcd1d5845818df608b94a65a5c75ccbc8,
+all listed outputs and the stored source contributions before running analytical
+counterfactuals in a separate output tree. Other/unknown dominance is separated from
+known-class mass, meaningful-class margin, conditional entropy, source conflict,
+coverage and plausible class mixture.
+
+The high mean entropy is not mainly a coverage problem. Lab 007's deliberately
+diffuse baseline has entropy 0.979 before evidence; evidence lowers it to 0.929.
+Unknown-dominant cells still retain 0.683 mean known-class mass, and 85.75% have a
+meaningful leading class of at least 0.20. Conditional meaningful entropy remains
+0.943. Heath/grass and grass/wet-ground are the top pair in 58.89% and 20.37% of
+cells, showing that mutually exclusive broad classes and plausible sub-grid mixture
+are central limitations.
+
+Overlapping diagnostic flags identify 45.13% ontology ambiguity, 25.00% high source
+conflict, 22.68% weak discrimination, 22.38% dependence on coarse/contextual
+evidence, 3.32% temporal ambiguity and 0.52% missing habitat. Conflict correlates
+with other/unknown (r=0.422) but not entropy (r=-0.045). Removing conflict support
+reduces other/unknown by 0.020 while increasing entropy by 0.007; disagreement changes
+the representation of uncertainty rather than explaining all broad overlap.
+
+NRW habitat provides the strongest unique categorical discrimination: removal changes
+the meaningful leader in 50.72% of cells. Terrain uniquely constrains morphology;
+removal changes it in 6.34%. BGS changes probabilities widely but meaningful leaders
+only 3.84%, confirming broad talus/peat/substrate and uncertainty context rather than
+direct cover classification. Sentinel has small global ablation influence (0.46%
+leader changes) but remains the only recent dated spectral channel. No source is
+shown to be misleading within its declared scale and temporal role.
+
+Six diagnostics were inspected. They show coherent heath/grass and grass/wet
+ambiguity, ridge-linked conflict, broad mixed-cause regions, negligible spatial
+impact from missing habitat and clear zones of reconstruction freedom. Readiness is
+46.21% broad-tendency constrained, 37.10% guided mixture and 16.70% high freedom.
+
+Outcome B: no additional evidence acquisition clears the information-value bar.
+No single scalable public source is demonstrated to resolve the combined class
+overlap, coarse scale, temporal ambiguity and sub-grid mixture at human scale.
+Evidence gathering should freeze and Lab 009 should use probabilities plus readiness
+as constraints while keeping reconstructed detail explicitly separate from measured
+and observed evidence. Thirteen generated files occupy 4,319,474 bytes (4.12 MiB).
+Two cached runs produced deterministic SHA-256
+3996360c3ea9b379362704b22c5e06e8ecaf16870e14118ff8eabb1bcd02fac7.
+
+## 2026-09-28 — Meridian Earth Laboratory 009 reconstruction v0.1
+
+Implemented the first renderer-facing reconstruction without changing frozen Labs 007/008, the canonical R16, Landscape geometry or Lab 004A camera. Frozen hashes and all consumed terrain products are checked before processing and after output. Lab 007 probabilities remain scientific inference. Lab 008 readiness controls bounded procedural amplitude. Other/unknown remains reconstruction freedom rather than a material class.
+
+The renderer grid matches all 3025 x 3025 Landscape vertices. Five normalized continuous controls combine registered Lab 007 tendencies, bounded measured-terrain conditioning and deterministic correlated variation at approximately 8, 29 and 97 m. The cell-centre/AOI-edge mismatch was corrected by extending only the outermost evidence cell to the boundary. Complete coverage was achieved without inventing a new evidence cell. Two reruns produced identical result SHA-256 `14f90941468166dc3937879e022e8fedff2d9d212eed5cfb1c5deb0407c6a859` and identical file inventories. Probability sums are within 2.39e-7, neighbour correlations are 0.993-0.997, and aggregate known-class drift is at most 0.0077.
+
+The reversible Unreal setup imports two non-sRGB mask textures and builds `/Game/MeridianLab009/M_Lab009_Surface`. A real editor run exposed and corrected a sampler mismatch: texture nodes now use `SAMPLERTYPE_MASKS`, and setup replaces only its generated material asset so no orphaned expression remains. Saving baseline and Lab 009 states in both directions confirmed reversibility. Final read-only validation passes for the 3025 x 3025 textures, clean material graph, Landscape material, recorded baseline, unchanged Landscape transform and immutable Lab 004A camera. The existing Landscape and camera validators also pass.
+
+Automated benchmark capture remains unsuitable. UE 5.8's camera-bound ImagePlate proxy obstructs transient SceneCapture frames despite component/actor hiding and unsaved-world removal. This is a capture-path limitation rather than a terrain/material failure; generated frames are marked invalid. Further capture engineering was deliberately stopped. Exact minimal steps now use the real piloted Lab 004A CameraActor to capture baseline, Lab 009 and 50% reference-overlay frames at 1280 x 960.
+
+All six offline diagnostics were inspected. Controls and the restrained material preview are coherent, terrain-linked and free of obvious checkerboard, salt-and-pepper or 10 m grid artefacts. Lab 008 readiness remains visibly coarse but is not rendered directly. The fixed-camera judgement of whether v0.1 is visibly better than baseline remains pending the manual frames; no claim of photographic improvement or Lab 009 visual completion is made before those images are inspected. The current limiting vocabulary is broad colour plus uniform roughness, without measured albedo, detailed normals, vegetation geometry or individual rocks.
