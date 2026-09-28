@@ -215,4 +215,3 @@ def assert_grid(grid: AnalysisGrid) -> None:
         grid.height * grid.resolution_m, grid.north - grid.south, abs_tol=1e-6
     ):
         raise ValueError("Bounds must be exactly divisible by the analysis resolution")
-

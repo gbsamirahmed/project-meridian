@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "experiment": "Meridian Earth Laboratory 006",
+  "title": "Independent habitat and geological evidence for Tryfan",
+  "retrieval_date": "2026-09-25",
+  "aoi": {
+    "crs": "EPSG:27700",
+    "bounds": [264900, 357800, 267900, 360800],
+    "grids": [
+      {"resolution_m": 10, "width": 300, "height": 300},
+      {"resolution_m": 20, "width": 150, "height": 150}
+    ]
+  },
+  "frozen_inputs": {
+    "lab005a_report": {
+      "path": "../meridian-data/earth-lab/tryfan-004/diagnostics/lab005a-surface/lab005a-surface-analysis.json",
+      "sha256": "70f91171b4c27a6e1b81dd2cc6033ba26e8a7f585cc9e1ad3338394faf64b187"
+    },
+    "lab005c_report": {
+      "path": "../meridian-data/earth-lab/tryfan-005c/sentinel2-temporal-evidence/lab005c-report.json",
+      "sha256": "06fe074eb64ad1fa675467a572c506e50d040429214a7d3acee8258c955d3fa8"
+    },
+    "canonical_r16_sha256": "31cbe763dac4072772ac9bcb4a3217b78eba0c10265e576ede708154288f6bf6"
+  },
+  "habitat": {
+    "provider": "Natural Resources Wales",
+    "product": "Terrestrial Phase 1 Habitat Survey",
+    "layer": "geonode:nrw_phase1_vegetation_voronoi",
+    "metadata_url": "https://datamap.gov.wales/layergroups/geonode:nrw_terrestrial_phase_1_habitat_survey/metadata_detail",
+    "service_url": "https://datamap.gov.wales/geoserver/wfs",
+    "capabilities_url": "https://datamap.gov.wales/capabilities/layergroup/3597/?ows_service=wfs",
+    "publication_date": "2023-08-16",
+    "survey_period": "Field recording began in 1979; national lowland and upland coverage was completed during 1979-1997.",
+    "crs": "EPSG:27700",
+    "coverage": "Wales",
+    "licence": "Open Government Licence 3.0",
+    "attribution": "Natural Resources Wales information © Natural Resources Wales and Database Right. Contains Ordnance Survey Data. Ordnance Survey Licence number AC0000849444. Crown Copyright and Database Right.",
+    "classification_reference": "JNCC Handbook for Phase 1 Habitat Survey (2016)",
+    "effective_scale": "Not stated as a numeric positional accuracy in the service metadata. Boundaries are legacy rapid field-survey interpretation and must not be treated as metre-scale truth.",
+    "code_names": {
+      "A.1.1.2": "broad-leaved plantation woodland", "A.1.2.2": "coniferous plantation woodland", "A.2.1": "dense/continuous scrub",
+      "B.1.1": "unimproved acid grassland", "B.1.2": "semi-improved acid grassland", "B.3.1": "unimproved calcareous grassland", "B.4": "improved grassland", "B.5": "marsh/marshy grassland", "B.5.2": "marsh/marshy grassland subdivision",
+      "C.1.1": "continuous bracken", "C.2": "upland species-rich ledges",
+      "D.1.1": "acid dry dwarf shrub heath", "D.2": "wet dwarf shrub heath", "D.3": "lichen/bryophyte heath", "D.5": "dry heath/acid grassland mosaic",
+      "E.1.6.1": "blanket bog", "E.1.7": "wet modified bog", "E.1.8": "dry modified bog", "E.2.1": "acid/neutral flush", "E.2.3": "bryophyte-dominated spring",
+      "G.1": "standing water", "G.2": "running water", "I.1": "natural rock exposure", "I.1.2": "scree", "I.1.2.1": "acid/neutral scree", "J.3.6": "building", "NA": "unmapped/unknown"
+    },
+    "simplified_groups": {
+      "A.1.1.2": "woodland_or_scrub", "A.1.2.2": "woodland_or_scrub", "A.2.1": "woodland_or_scrub",
+      "B.1.1": "acid_grassland", "B.1.2": "acid_grassland", "B.3.1": "other_grassland", "B.4": "other_grassland", "B.5": "wet_grassland", "B.5.2": "wet_grassland",
+      "C.1.1": "bracken", "C.2": "upland_ledge_vegetation",
+      "D.1.1": "dry_heath", "D.2": "wet_heath", "D.3": "lichen_bryophyte_heath", "D.5": "heath_grass_mosaic",
+      "E.1.6.1": "bog", "E.1.7": "bog", "E.1.8": "bog", "E.2.1": "flush_or_spring", "E.2.3": "flush_or_spring",
+      "G.1": "water", "G.2": "water", "I.1": "natural_rock", "I.1.2": "scree", "I.1.2.1": "scree", "J.3.6": "built", "NA": "other_or_unknown"
+    }
+  },
+  "geology": {
+    "provider": "British Geological Survey",
+    "product": "BGS Geology 50K",
+    "service_url": "https://map.bgs.ac.uk/arcgis/services/BGS_Detailed_Geology/MapServer/WMSServer",
+    "product_url": "https://www.bgs.ac.uk/datasets/bgs-geology-50k/",
+    "terms_url": "https://www.bgs.ac.uk/technologies/web-map-services-wms/",
+    "layers": {"bedrock": "BGS.50k.Bedrock", "superficial": "BGS.50k.Superficial.deposits"},
+    "nominal_scale": "1:50,000",
+    "service_data_release": "2025-03-31 (observed in bounded feature metadata; nominal mapping year varies by unit and is preserved as NOM_BGS_YR)",
+    "coverage": "Most of Great Britain",
+    "licence": "Open Government Licence 3.0 for BGS web-map-service material",
+    "attribution": "Contains British Geological Survey materials © UKRI 2026",
+    "access_constraint": "The open WMS is used as rendered categorical evidence with bounded feature-information queries. It is not represented as the separately licensed detailed vector product.",
+    "palette_tolerance_rgb": 28.0,
+    "palette_minimum_pixels": 40
+  },
+  "output_root": "../meridian-data/earth-lab/tryfan-006/surface-context-evidence"
+}
