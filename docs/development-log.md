@@ -1828,3 +1828,36 @@ packages; the smoke validator recreated them without saving the map. Landscape,
 fixed Lab 004A camera and Lab 009 material validation all passed. The map hash was
 identical before and after. Lab 009 fixed-camera visual acceptance remains pending;
 this preservation work does not make a new visual-quality claim.
+
+## 2026-09-29 — Meridian Phase 3 architecture and path rules
+
+Hardened the shared Python storage contract without moving any data. `MERIDIAN_DATA_ROOT`
+and `MERIDIAN_PRIVATE_ROOT` remain explicit absolute roots outside Git with documented
+sibling defaults; they must now be non-overlapping, repository-relative paths cannot
+escape the worktree accidentally, and both historical data/private prefixes have
+focused coverage. Frozen Lab entry points and configs retain their original
+`../meridian-data/earth-lab/...` conventions until the controlled Phase 4 migration.
+Ignored Unreal source-pointer JSON remains machine-local runtime state, not committed
+configuration.
+
+Updated the architecture contract to the post-preservation state. Meridian/Atlas/
+Weather/provisional Traverse ownership, modularity, dependency direction, the
+renderer-neutral representation pipeline, provenance classes, external/private
+storage meanings, and the current Git LFS-backed Tryfan Reference Renderer boundary
+are explicit. The web application remains one composed client application; no product
+split or shared-package hierarchy was introduced.
+
+Added a non-destructive Phase 4 inventory covering frozen Tryfan experiments, terrain
+research, generated GFS publication, private activity/Strava data, ambiguous route
+benchmarks and renderer dependencies. The required migration order is copy, update
+references, validate, compare hashes, and only then consider removing an old copy.
+No files were copied or moved.
+
+Validation passed: 13 storage-root tests, 134/134 full Earth Lab tests, five focused
+renderer tests, syntax parsing for 90 tracked Python files, strict parsing for 17
+experiment/config JSON files, seven renderer external-input hashes, frozen Lab
+007-009 identities, canonical map SHA-256, all 27 backup-critical current/backup hash
+pairs, `git diff --check`, and the tracked privacy/credential scan. Unreal was not
+launched because calibrated renderer state and configuration were unchanged. The next
+step is human review of Phase 3, followed by a separately authorised Phase 4 copy-first
+migration; route-benchmark GPX provenance/privacy must be decided before placement.

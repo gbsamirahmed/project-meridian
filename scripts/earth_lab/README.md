@@ -2,7 +2,19 @@
 
 This directory contains offline, config-driven tooling for bounded terrain-source discovery and extraction. It does not change the Journey/Forecast application or prepare Unreal assets.
 
-Large inputs and outputs belong in the sibling `meridian-data` workspace. Create an isolated environment there and install the pinned requirements:
+Large inputs and outputs belong outside Git under `MERIDIAN_DATA_ROOT`. The default
+remains the historical sibling `meridian-data` workspace, so the commands below
+continue to reproduce the frozen Labs without rewriting their configs or provenance.
+Set an absolute `MERIDIAN_DATA_ROOT` for root-aware tooling such as the Tryfan
+Reference Renderer bootstrap. Historical Lab entry points that still accept explicit
+paths retain the documented sibling paths until the controlled Phase 4 migration;
+the environment variable does not silently rewrite an entry point that does not use
+the shared resolver.
+
+Private activities, personal routes and exports belong under the separate
+`MERIDIAN_PRIVATE_ROOT`. No historical Earth Lab requires that root.
+
+Create an isolated environment in the current data workspace and install the pinned requirements:
 
 ```powershell
 py -m venv ..\meridian-data\earth-lab\.venv

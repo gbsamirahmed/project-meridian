@@ -1,149 +1,244 @@
 # Meridian architecture contract
 
-This document records Meridian's current architectural direction. It defines boundaries for future change; it does not claim that the existing repository has already been reorganised to match them.
+This document records Meridian's current architectural direction. It defines the
+rules for later migration and implementation; it does not claim that the repository
+or external data have already been reorganised to match them.
 
 ## Product vocabulary
 
-- **Meridian** is the overall project and ecosystem.
-- **Atlas** represents and explores the physical world: terrain, elevation, surface evidence, imagery and spatial reference locations.
-- **Weather** represents atmospheric observations, forecasts and weather visualisation.
-- **Traverse** is the provisional product name for route, journey and movement planning. Technical code should continue to use precise terms such as route, path, waypoint, segment and journey.
-- **Tryfan** is Atlas's first reference location. It is data and a validation target, not an architectural layer.
-- A **Reference Renderer** is a high-fidelity environment used to inspect and validate Atlas representations. It consumes Meridian representations; it does not define them.
-- **Lab NNN** and **Experiment** identify bounded historical investigations. Existing Earth Lab names remain part of their provenance.
+- **Meridian** is the overall ecosystem and platform.
+- **Meridian Core** means only stable infrastructure or concepts with multiple real
+  consumers. It is a boundary, not a miscellaneous package or a directory that must
+  exist today.
+- **Atlas** represents and explores the physical world: terrain, elevation, surface
+  evidence, imagery and spatial reference locations.
+- **Weather** represents atmospheric observations, forecasts and visualisation.
+- **Traverse** is the provisional product name for route, journey and movement
+  planning. Technical code should continue to use precise terms such as route, path,
+  waypoint, segment and journey.
+- **Tryfan** is Atlas's first reference location. It is data and a validation target,
+  not an architectural layer.
+- A **Reference Renderer** is an environment used to inspect and validate Atlas
+  representations. It consumes Meridian representations; it does not define them.
+- **Lab NNN** and **Experiment** identify bounded historical investigations. Existing
+  Earth Lab names remain part of their provenance.
 
-Traverse may be renamed without renaming generic route concepts. Likewise, historical Lab identifiers remain stable even when useful implementation is later promoted into shared Atlas or renderer infrastructure.
+Product names define ownership boundaries, not every implementation term. Traverse
+may be renamed without renaming generic route concepts. Historical Lab identifiers
+remain stable even when useful implementation is later promoted into shared Atlas or
+renderer infrastructure.
 
 ## Modularity without fragmentation
 
-The design test is: a change inside one domain should have the smallest reasonable blast radius outside that domain. Prefer cohesive modules with explicit responsibilities and small stable contracts. Do not introduce packages, interfaces, services or dependency-injection machinery without a real replacement or ownership boundary.
+The design test is: **a change inside one domain should have the smallest reasonable
+blast radius outside that domain**. Prefer cohesive modules with explicit
+responsibilities and small stable contracts. Introduce a package or interface only
+when a real ownership, consumer or replacement boundary exists.
 
-The current React application remains one deployable, client-side application. Atlas, Weather and Traverse are conceptual boundaries inside it; separate apps or a speculative package hierarchy are not justified yet.
+The current React application remains one deployable client-side application. Atlas,
+Weather and Traverse are conceptual boundaries inside it. Separate deployable apps,
+microservices and a speculative package hierarchy are not justified yet.
 
-The intended dependency direction is:
+The conceptual relationship is:
 
 ```text
-small, genuinely shared primitives
-             |
-           Atlas
-          /     \
-     Weather   Traverse
-                  ^
-                  |
-       narrow Weather sampling contract
+                         MERIDIAN
+                             |
+                     MERIDIAN CORE
+              shared infrastructure/concepts
+                             |
+                   +---------+---------+
+                   |                   |
+                 ATLAS          other future domains
+            physical world
+                   |
+             +-----+-----+
+             |           |
+          WEATHER     TRAVERSE
 ```
 
-- Atlas must not depend on Weather or Traverse.
-- Weather may consume Atlas world/rendering contracts.
-- Traverse may consume Atlas terrain/world contracts.
-- Traverse may consume a narrow Weather sampling contract for conditions along a journey through space and time.
-- Weather must not depend on Traverse scheduling or UI models merely for convenience.
-- Shared/Core code is appropriate only for stable concepts with multiple real consumers. It is not a home for miscellaneous utilities.
-- Provider acquisition, canonical data, inference and rendering should remain separable where the implementation presents a real replacement boundary.
+The dependency rules are more important than the diagram:
 
-## Source-of-truth hierarchy
+- Atlas must not depend on Weather or Traverse.
+- Weather may consume narrow Atlas world, coordinate and rendering contracts.
+- Traverse may consume Atlas terrain/world contracts.
+- Traverse may query Weather through a narrow position-and-time sampling contract.
+- Traverse must not know GFS-specific acquisition or tile details.
+- Weather must not depend on Traverse scheduling or UI models merely for convenience.
+- UI components should not become the canonical domain or data model.
+- Provider acquisition, canonical representation, analysis and rendering should stay
+  separable where the implementation presents a real replacement boundary.
+- Shared/Core code is appropriate only for stable concepts with multiple real
+  consumers. Keeping a small duplication temporarily is preferable to a false
+  abstraction.
+
+## Representation and source-of-truth pipeline
+
+Meridian's conceptual pipeline is:
 
 ```text
 source observation
-  -> canonical Meridian representation
-  -> inference / reconstruction
-  -> renderer-specific asset
+  -> normalized / canonical data
+  -> inference / analysis
+  -> reconstruction
+  -> renderer-neutral Meridian representation
+  -> renderer
   -> pixels / user experience
 ```
 
-Each product and report must retain its role:
+A canonical representation is a stable, documented Meridian interpretation of source
+information. It is not defined by an Unreal package, a browser texture, or another
+renderer-specific asset. Renderers may change without changing scientific identity.
+
+Every product and report must retain its role:
 
 - **Observed**: values supplied by an identified source observation.
-- **Derived**: deterministic quantities calculated from observations or canonical data.
+- **Derived**: deterministic quantities calculated from observations or canonical
+  data.
 - **Inferred**: uncertain interpretation supported by evidence.
-- **Reconstructed**: plausible spatial or visual detail generated below the information resolution of the evidence.
+- **Reconstructed**: plausible spatial or visual detail generated below the
+  information resolution of the evidence.
 - **Rendered**: platform-specific assets and pixels.
 
-Missing is not zero. Inferred or reconstructed values must not be relabelled as measurement. A renderer may be replaced without changing the canonical world representation or its provenance.
+Missing data is not zero. Inferred or reconstructed values must not be relabelled as
+measurement. Reconstruction may add plausible sub-resolution detail, but provenance
+must say that it was reconstructed.
 
-## Experiments and promoted infrastructure
+Tryfan demonstrates the full chain: LiDAR, Sentinel, habitat and geology are source
+evidence; Labs 005-008 derive and audit interpretation; Lab 009 reconstructs
+continuous renderer controls; renderer-neutral rasters and packages feed Unreal. The
+preserved Unreal project is the **Tryfan Reference Renderer**, not Atlas's canonical
+world model. Future web, mobile or other renderers should consume equivalent
+renderer-neutral representations.
 
-Experiments retain their original names, configs, hashes and output identities. Code becomes shared infrastructure only after it has a continuing role beyond the experiment that created it. Promotion should give that code a role-based name and an explicit interface; it must not rewrite the historical experiment record.
+## Repository and external-storage contract
 
-The current `scripts/earth_lab` and `meridian-data/earth-lab` paths remain in place until a later migration. "Earth Lab" is historical terminology, not the intended permanent name for shared Atlas infrastructure.
+`project-meridian` contains version-controlled implementation, lightweight
+configuration, manifests, tests, documentation and carefully justified durable
+assets. Large observations, derived products, experiment outputs and caches do not
+enter Git merely because code consumes them.
 
-## Repository and storage boundaries
+Python tooling resolves two external roots through
+`scripts/meridian_paths.py`:
 
-`project-meridian` contains implementation, lightweight configuration, tests and documentation required to build Meridian. Large downloaded observations, deterministic products, experiment outputs and caches remain outside Git.
+- `MERIDIAN_DATA_ROOT`: non-private Meridian source, derived, experiment, cache and
+  scratch data.
+- `MERIDIAN_PRIVATE_ROOT`: personal or user-specific data such as private
+  activities, routes and exports.
 
-Python tooling resolves two external roots through `scripts/meridian_paths.py`:
+Environment overrides must be absolute, outside the Git repository and mutually
+non-overlapping. A required missing root fails clearly. The explicit local
+development defaults are sibling directories named `meridian-data` and
+`meridian-private`; tools report whether a root came from the environment or that
+documented default. The private root may be absent until a tool requires it.
 
-- `MERIDIAN_DATA_ROOT`: non-private source, derived and generated world data.
-- `MERIDIAN_PRIVATE_ROOT`: personal/user research such as private activities, GPX files and exports.
-
-The development defaults remain sibling directories named `meridian-data` and `meridian-private`. Environment overrides must be absolute and outside the Git repository. The private directory is optional until a tool explicitly requires it. These variables are Python/tooling configuration; they are not `VITE_` variables and must not be exposed to the browser bundle.
-
-Historical configs using `../meridian-data/...` remain valid. The shared resolver can map that legacy prefix onto a configured data root without editing the frozen config. Existing historical entry points retain their current behaviour until they are deliberately adopted by a later migration.
-
-Inspect or validate the resolved roots without touching data:
+These are local Python/tooling variables. They are not `VITE_` variables and must
+not be exposed in the browser bundle or committed with personal values.
 
 ```powershell
 $env:MERIDIAN_DATA_ROOT = 'D:\Meridian\data'
 $env:MERIDIAN_PRIVATE_ROOT = 'D:\Meridian\private'
 py scripts\meridian_paths.py --require-data
 ```
-### Future data classification
 
-- **SOURCE**: an externally acquired observation retained with licence, acquisition and native-resolution provenance.
-- **CANONICAL**: Meridian's stable, documented representation of relevant source information. Canonical products are derived but have stronger identity and compatibility guarantees than ordinary intermediates.
-- **DERIVED**: reproducible products calculated from source or canonical data.
-- **EXPERIMENT**: outputs tied to a bounded historical investigation, including its report and deterministic identity.
-- **CACHE**: reacquirable or recomputable performance state.
-- **SCRATCH**: disposable temporary work with no recovery promise.
-- **PRIVATE**: personal or user data that must not enter public/world-data stores or Git.
-- **REFERENCE RENDERER SOURCE**: lightweight configuration plus unique authored or calibrated state required to recover a renderer.
-- **REFERENCE RENDERER GENERATED STATE**: imported assets, deployed scripts, caches and build products reproducible from repository code and external data.
+Historical configs using `../meridian-data/...` or
+`../meridian-private/...` are supported by the resolver as compatibility syntax.
+Frozen entry points that still accept explicit paths retain their documented
+behaviour until Phase 4 deliberately updates their references. Setting an environment
+variable does not secretly alter a script that does not call the resolver.
 
-The later data migration should classify first and move second. Directory names such as `sources`, `derived`, `experiments`, `cache` and `scratch` are candidates, not a requirement to erase useful history.
+## Target external data layout
 
-## Tryfan Unreal reference renderer
-
-The current project remains externally located at `meridian-data/earth-lab/tryfan-004/unreal-project/TryfanLab004`. It began in Lab 004 but now serves later experiments and is conceptually the **Tryfan Reference Renderer**.
-
-### Current file classification
-
-**Lightweight source/configuration**
-
-- `TryfanLab004.uproject`: UE 5.8 association and required editor plugins.
-- `Config/DefaultEngine.ini`: project settings, but its Android file-server token must be removed or regenerated before public versioning.
-- `Config/DefaultInput.ini`: mostly engine-generated input defaults; retain only after confirming that its non-default FOV/input settings are intentional.
-- Repository-owned Unreal Python under `scripts/earth_lab`: canonical source. `Content/Python` is a deployed copy.
-
-**Unique calibrated binary state**
-
-- `Content/Tryfan_Lab004.umap` (72,016,185 bytes): the canonical saved scene, including the validated Landscape, fixed camera, actor/component state and material bindings. No external-actor/World Partition packages are present.
-- The newer autosave remains recovery evidence, not canonical source.
-
-**Reproducible imported/generated assets**
-
-- `MeridianLab004/Reference/T_TonyEdwards_2009.uasset` and `M_TonyEdwards_Overlay.uasset` are recreated by the photo-overlay script from the separately preserved reference image and configuration.
-- `MeridianLab009` material and two control textures are recreated by the Lab 009 reconstruction and Unreal setup scripts.
-- `Content/Python` files are byte-verifiable deployments of repository source.
-
-**Transient state**
-
-- `Intermediate`, `DerivedDataCache`, Python `__pycache__`, logs, crashes, shader debug output and routine `Saved` state.
-
-### Recommended durable versioning
-
-Use the existing `project-meridian` repository with narrowly scoped Git LFS, rather than creating a separate repository. The renderer is coupled to Meridian's Atlas contracts and presently has only one irreplaceable large asset, so a second repository would add coordination without a real ownership boundary.
-
-The later, explicitly approved migration should place a source-controlled renderer under a role-based path such as:
+Phase 4 may migrate toward this contract by copy, reference update, validation and
+hash comparison before any old copy is removed:
 
 ```text
-renderers/unreal/tryfan-reference/
-  TryfanReferenceRenderer.uproject
-  Config/
-  Content/Tryfan_Reference.umap       # Git LFS
-  renderer-manifest.json
-  README.md
+Projects/
+  project-meridian/
+  meridian-data/
+    sources/
+    derived/
+    experiments/
+    cache/
+    scratch/
+  meridian-private/
+    traverse/
 ```
 
-The manifest should pin the engine version, plugins, canonical map hash, expected external data identities, fixed camera validation and regeneration commands. Generated textures/materials and deployed Python should remain reproducible rather than being committed by default.
+The meanings are:
 
-Git LFS 3.2.0 is installed locally but this repository has no LFS attributes yet. Adding LFS changes clone/push requirements and consumes remote LFS storage. The `.umap`, project/config copy and Unreal-aware rename therefore require an explicit decision before execution. Project, map, actor and asset renames must be performed through Unreal where necessary to preserve package references; historical Lab 004 names remain in experiment provenance.
+- **sources**: retained external observations in native or faithfully extracted form,
+  with provider, licence, acquisition and native-resolution provenance.
+- **derived**: reproducible Meridian products created from source or canonical data
+  and worth retaining beyond a temporary run.
+- **experiments**: outputs and reports tied to bounded historical investigations,
+  including frozen identities.
+- **cache**: reacquirable or recomputable performance state.
+- **scratch**: disposable temporary work with no durability guarantee.
+- **private**: personal/user data kept outside both Git and the general world-data
+  estate.
+
+**Canonical** is a semantic status, not necessarily another top-level directory. A
+canonical product may live under `derived` when its manifest, hash, provenance and
+compatibility guarantees identify it clearly.
+
+Classification precedes movement. A mixed historical directory may be preserved
+under `experiments` rather than split if splitting would damage provenance or create
+fragile references.
+
+## Experiments and compatibility
+
+Historical experiments retain their original names, configs, hashes and output
+identities. Code becomes shared infrastructure only after it has a continuing role
+beyond the experiment that created it. Promotion gives code a role-based name and an
+explicit contract; it does not rewrite the experiment record.
+
+The current `scripts/earth_lab`, `docs/earth-lab` and
+`meridian-data/earth-lab` paths remain in place during Phase 3. Their legacy
+sibling-relative paths are deliberate compatibility exceptions. They are catalogued
+for controlled migration rather than edited across frozen Labs.
+
+“Earth Lab” is historical terminology, not the permanent name for shared Atlas
+infrastructure.
+
+## Tryfan Reference Renderer
+
+The durable renderer source now lives at
+`renderers/unreal/tryfan-reference`. The project and map retain the historical
+`TryfanLab004.uproject` and `Tryfan_Lab004.umap` names so preservation was not
+combined with an Unreal package rename.
+
+Normal Git stores the project descriptor, curated secret-free configuration,
+manifest, bootstrap and documentation. A path-specific Git LFS rule stores the unique
+calibrated map. Generated photo-overlay packages, Lab 009 material/textures, deployed
+Python, source-pointer JSON and Unreal build/cache/Saved state remain ignored and are
+recreated by the documented bootstrap and validation process.
+
+The bootstrap consumes verified dependencies through `MERIDIAN_DATA_ROOT`. Its
+ignored `meridian-*-source.json` files contain machine-local absolute pointers
+because Unreal Python needs concrete filesystem paths at runtime; they are generated
+local state and must never be committed. Historical absolute import metadata embedded
+inside the binary map records how the original asset was imported and is not an
+active storage contract.
+
+The renderer may eventually receive role-based Unreal project/package names through
+an Unreal-aware migration. Historical Lab 004 documentation and provenance will not
+be renamed.
+
+## Reproducibility and privacy rules
+
+- Record source identity, licence, acquisition, CRS/resolution where relevant, hashes
+  and deterministic parameters.
+- Fail on an unexpected frozen identity rather than silently regenerating it.
+- Keep secrets, private GPX/activity data, exports and machine-local source pointers
+  outside Git and `MERIDIAN_DATA_ROOT`.
+- Generated data belongs outside Git unless a reviewed durable asset has a specific
+  versioning policy, such as the canonical LFS-tracked map.
+- Data providers should be replaceable without rewriting consumers of canonical
+  representations.
+- Platform-specific implementations belong behind the narrowest useful boundary.
+- Do not invent a global ontology or a generic provider framework before multiple
+  real use cases justify it.
+
+The concrete, non-destructive Phase 4 inventory is recorded in
+[Phase 4 data migration inventory](phase-4-migration-inventory.md).

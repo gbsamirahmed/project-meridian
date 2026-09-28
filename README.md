@@ -26,6 +26,8 @@ Meridian is a client-side React and MapLibre application. It requires no runtime
 
 The current application remains one composed experience while its responsibilities are clarified as **Atlas** (world/terrain), **Weather** (atmosphere), and provisional **Traverse** (routes, journeys and movement). The canonical boundaries, dependency direction, external-storage contract and Tryfan reference-renderer plan are recorded in [Meridian architecture contract](docs/architecture.md). No separate deployable applications are implied by these names yet.
 
+Large research and generated data stay outside Git. Python tooling resolves the documented sibling `meridian-data` default or an absolute `MERIDIAN_DATA_ROOT`; private activities and user routes use the separate `MERIDIAN_PRIVATE_ROOT`. See the architecture contract and [Phase 4 migration inventory](docs/phase-4-migration-inventory.md). Historical Earth Lab commands retain their existing paths until the controlled data migration.
+
 Map weather, including precipitation, total cloud cover, 10 m wind, 2 m temperature and mean sea-level pressure, uses global, geographically fixed numeric tiled fields:
 
 ```text

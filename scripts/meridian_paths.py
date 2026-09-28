@@ -126,8 +126,10 @@ def resolve_storage_roots(
             raise ValueError(
                 f"Meridian {label} root must be outside the Git repository: {path}"
             )
-    if data == private:
-        raise ValueError("Meridian data and private roots must be different directories")
+    if data == private or _is_within(data, private) or _is_within(private, data):
+        raise ValueError(
+            "Meridian data and private roots must be separate, non-overlapping directories"
+        )
     if require_data:
         _require(data, label="data", variable=DATA_ROOT_ENV)
     if require_private:
@@ -161,6 +163,12 @@ def resolve_project_path(
             result = resolved_roots.private_path(*parts[2:])
         else:
             result = (resolved_roots.repository / path).resolve()
+            if not _is_within(result, resolved_roots.repository):
+                raise ValueError(
+                    "Repository-relative Meridian path escapes the Git repository; "
+                    "use MERIDIAN_DATA_ROOT, MERIDIAN_PRIVATE_ROOT, or an explicit "
+                    f"absolute path: {result}"
+                )
     if must_exist and not result.exists():
         raise FileNotFoundError(f"Required Meridian path does not exist: {result}")
     return result

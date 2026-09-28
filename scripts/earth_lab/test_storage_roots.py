@@ -67,6 +67,18 @@ class StorageRootTests(unittest.TestCase):
                 environ={"MERIDIAN_DATA_ROOT": str(self.repository / "generated")},
             )
 
+    def test_data_and_private_roots_must_not_overlap(self) -> None:
+        data = self.parent / "world-data"
+        private = data / "private"
+        with self.assertRaisesRegex(ValueError, "separate, non-overlapping"):
+            resolve_storage_roots(
+                repository_root=self.repository,
+                environ={
+                    "MERIDIAN_DATA_ROOT": str(data),
+                    "MERIDIAN_PRIVATE_ROOT": str(private),
+                },
+            )
+
     def test_required_missing_root_fails_clearly(self) -> None:
         with self.assertRaisesRegex(FileNotFoundError, "MERIDIAN_PRIVATE_ROOT"):
             resolve_storage_roots(
@@ -88,6 +100,19 @@ class StorageRootTests(unittest.TestCase):
         )
         self.assertEqual(result, data / "earth-lab" / "tryfan-009")
 
+    def test_legacy_private_convention_maps_to_configured_root(self) -> None:
+        private = self.parent / "relocated-private"
+        private.mkdir()
+        roots = resolve_storage_roots(
+            repository_root=self.repository,
+            environ={"MERIDIAN_PRIVATE_ROOT": str(private)},
+        )
+        result = resolve_project_path(
+            "../meridian-private/traverse/private-route.gpx",
+            roots=roots,
+        )
+        self.assertEqual(result, private / "traverse" / "private-route.gpx")
+
     def test_ordinary_repository_relative_and_absolute_paths_are_preserved(self) -> None:
         roots = resolve_storage_roots(repository_root=self.repository, environ={})
         self.assertEqual(
@@ -101,6 +126,25 @@ class StorageRootTests(unittest.TestCase):
         roots = resolve_storage_roots(repository_root=self.repository, environ={})
         with self.assertRaisesRegex(ValueError, "escapes its configured root"):
             roots.data_path("..", "outside")
+
+    def test_repository_relative_paths_cannot_escape_repository(self) -> None:
+        roots = resolve_storage_roots(repository_root=self.repository, environ={})
+        with self.assertRaisesRegex(ValueError, "escapes the Git repository"):
+            resolve_project_path("../unclassified-data", roots=roots)
+
+    def test_must_exist_checks_resolved_storage_path(self) -> None:
+        data = self.parent / "world-data"
+        data.mkdir()
+        roots = resolve_storage_roots(
+            repository_root=self.repository,
+            environ={"MERIDIAN_DATA_ROOT": str(data)},
+        )
+        with self.assertRaisesRegex(FileNotFoundError, "Required Meridian path"):
+            resolve_project_path(
+                "../meridian-data/missing-product.json",
+                roots=roots,
+                must_exist=True,
+            )
 
     def test_resolver_does_not_mutate_process_environment(self) -> None:
         before = dict(os.environ)
