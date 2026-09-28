@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "experiment": "Meridian Earth Laboratory 005A: terrain-derived surface analysis",
+  "purpose": "DETERMINISTIC_GEOMETRY_DERIVATIVES_ONLY",
+  "input": {
+    "landscape_manifest_path_convention": "../meridian-data/earth-lab/tryfan-004/unreal-landscape-v1/unreal-landscape-manifest.json",
+    "surface": "dtm",
+    "expected_r16_sha256": "31cbe763dac4072772ac9bcb4a3217b78eba0c10265e576ede708154288f6bf6",
+    "authority": "Exact final R16 underlying the validated Tryfan Unreal Landscape"
+  },
+  "derivatives": {
+    "slope": {
+      "algorithm": "Horn 3x3 weighted central gradient",
+      "units": "degrees",
+      "valid_range": [
+        0.0,
+        90.0
+      ]
+    },
+    "aspect": {
+      "algorithm": "Downhill azimuth from Horn gradient",
+      "units": "degrees clockwise from grid north",
+      "convention": {
+        "north": 0.0,
+        "east": 90.0,
+        "south": 180.0,
+        "west": 270.0
+      },
+      "flat_slope_threshold_degrees": 0.5,
+      "flat_value": "NODATA"
+    },
+    "curvature": {
+      "pre_smoothing": "separable 5-sample binomial kernel [1,4,6,4,1]/16",
+      "profile": "normal curvature in the downslope gradient direction; positive concave-up, negative convex-up",
+      "plan": "horizontal contour curvature; positive concave/hollow, negative convex/ridge",
+      "laplacian": "d2z/dx2 + d2z/dy2; positive hollow/concave, negative ridge/convex",
+      "units": "1/metre",
+      "minimum_slope_for_profile_plan_degrees": 1.0
+    },
+    "roughness": {
+      "algorithm": "RMS vertical residual after least-squares local plane removal in a centred square window",
+      "units": "metres",
+      "window_sizes_samples": [
+        5,
+        15,
+        51
+      ],
+      "edge_and_nodata_policy": "NODATA unless the full window contains valid samples"
+    }
+  },
+  "relationships": {
+    "steep_threshold_degrees": 35.0,
+    "gentle_threshold_degrees": 10.0,
+    "rough_and_smooth_quantiles": [
+      0.25,
+      0.75
+    ],
+    "curvature_quantile_of_absolute_laplacian": 0.75,
+    "interpretation": "Relative, potentially overlapping geometry combinations only; never land-cover or material labels. The diagnostic map uses display precedence where combinations overlap."
+  },
+  "output": {
+    "path_convention": "../meridian-data/earth-lab/tryfan-004/diagnostics/lab005a-surface",
+    "raster_format": "GeoTIFF Float32, EPSG:27700, sample centres at Landscape vertices",
+    "generated_outputs_git_policy": "EXTERNAL_ONLY_DO_NOT_COMMIT"
+  },
+  "invariants": [
+    "Lab 004 camera, overlay, Landscape, transform and R16 remain unchanged.",
+    "Missing data remains missing.",
+    "Derived geometry is evidence, not rock, grass, scree, path or vegetation classification.",
+    "No external surface observation is introduced in Lab 005A."
+  ]
+}

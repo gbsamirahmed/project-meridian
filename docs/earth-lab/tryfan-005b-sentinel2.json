@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "experiment": "Meridian Earth Laboratory 005B: scalable surface evidence",
+  "purpose": "FREE_SENTINEL2_OBSERVATION_AND_MULTIMODAL_ANALYSIS",
+  "aoi": {
+    "crs": "EPSG:27700",
+    "bounds": [264900.0, 357800.0, 267900.0, 360800.0],
+    "retrieval_margin_m": 500.0,
+    "analysis_grids_m": [10.0, 20.0]
+  },
+  "observation": {
+    "authority": "Copernicus Data Space Ecosystem Sentinel-2 L2A STAC",
+    "official_product_id": "S2A_MSIL2A_20260712T113331_N0512_R080_T30UVD_20260712T174812",
+    "official_item_url": "https://stac.dataspace.copernicus.eu/v1/collections/sentinel-2-l2a/items/S2A_MSIL2A_20260712T113331_N0512_R080_T30UVD_20260712T174812",
+    "mission": "Sentinel-2",
+    "platform": "Sentinel-2A",
+    "instrument": "MSI",
+    "processing_level": "Level-2A bottom-of-atmosphere surface reflectance",
+    "processing_baseline": "05.12",
+    "tile_id": "30UVD",
+    "acquisition_time_utc": "2026-07-12T11:33:31.024Z",
+    "source_crs": "EPSG:32630",
+    "scene_cloud_percent_official": 0.0,
+    "sun_elevation_degrees": 58.062309162853,
+    "sun_azimuth_degrees": 160.700929790374,
+    "cog_access": {
+      "provider": "Element 84 Earth Search Sentinel-2 Collection-1 / AWS open-data COG mirror",
+      "item_id": "S2A_T30UVD_20260712T113332_L2A",
+      "item_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-c1-l2a/items/S2A_T30UVD_20260712T113332_L2A",
+      "reason": "Anonymous HTTP range-readable COG access to the same ESA product identity; CDSE official asset access requires credentials."
+    },
+    "candidate_aoi_scl": [
+      {"product": "S2A_MSIL2A_20260712T113331_N0512_R080_T30UVD_20260712T174812", "aoi_usable_fraction": 1.0, "aoi_cloud_fraction": 0.0, "sun_elevation_degrees": 58.062309162853},
+      {"product": "S2B_MSIL2A_20260712T112109_N0512_R037_T30UVD_20260712T133747", "aoi_usable_fraction": 1.0, "aoi_cloud_fraction": 0.0, "sun_elevation_degrees": 57.4961605703682},
+      {"product": "S2B_MSIL2A_20260715T113319_N0512_R080_T30UVD_20260715T141254", "aoi_usable_fraction": 1.0, "aoi_cloud_fraction": 0.0, "sun_elevation_degrees": 57.5913521670397}
+    ]
+  },
+  "bands": {
+    "blue": {"code": "B02", "native_resolution_m": 10, "url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2026/7/S2A_T30UVD_20260712T113332_L2A/B02.tif", "scale": 0.0001, "offset": -0.1, "nodata": 0},
+    "green": {"code": "B03", "native_resolution_m": 10, "url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2026/7/S2A_T30UVD_20260712T113332_L2A/B03.tif", "scale": 0.0001, "offset": -0.1, "nodata": 0},
+    "red": {"code": "B04", "native_resolution_m": 10, "url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2026/7/S2A_T30UVD_20260712T113332_L2A/B04.tif", "scale": 0.0001, "offset": -0.1, "nodata": 0},
+    "nir": {"code": "B08", "native_resolution_m": 10, "url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2026/7/S2A_T30UVD_20260712T113332_L2A/B08.tif", "scale": 0.0001, "offset": -0.1, "nodata": 0},
+    "rededge1": {"code": "B05", "native_resolution_m": 20, "url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2026/7/S2A_T30UVD_20260712T113332_L2A/B05.tif", "scale": 0.0001, "offset": -0.1, "nodata": 0},
+    "rededge2": {"code": "B06", "native_resolution_m": 20, "url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2026/7/S2A_T30UVD_20260712T113332_L2A/B06.tif", "scale": 0.0001, "offset": -0.1, "nodata": 0},
+    "rededge3": {"code": "B07", "native_resolution_m": 20, "url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2026/7/S2A_T30UVD_20260712T113332_L2A/B07.tif", "scale": 0.0001, "offset": -0.1, "nodata": 0},
+    "nir_narrow": {"code": "B8A", "native_resolution_m": 20, "url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2026/7/S2A_T30UVD_20260712T113332_L2A/B8A.tif", "scale": 0.0001, "offset": -0.1, "nodata": 0},
+    "swir16": {"code": "B11", "native_resolution_m": 20, "url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2026/7/S2A_T30UVD_20260712T113332_L2A/B11.tif", "scale": 0.0001, "offset": -0.1, "nodata": 0},
+    "swir22": {"code": "B12", "native_resolution_m": 20, "url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2026/7/S2A_T30UVD_20260712T113332_L2A/B12.tif", "scale": 0.0001, "offset": -0.1, "nodata": 0},
+    "scl": {"code": "SCL", "native_resolution_m": 20, "url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2026/7/S2A_T30UVD_20260712T113332_L2A/SCL.tif", "categorical": true, "nodata": 0}
+  },
+  "terrain": {
+    "lab005a_root_convention": "../meridian-data/earth-lab/tryfan-004/diagnostics/lab005a-surface",
+    "canonical_r16_convention": "../meridian-data/earth-lab/tryfan-004/unreal-landscape-v1/heightmaps/tryfan-004-dtm-1m-landscape-3025.r16",
+    "canonical_r16_sha256": "31cbe763dac4072772ac9bcb4a3217b78eba0c10265e576ede708154288f6bf6",
+    "native_vertex_spacing_m": 0.9920634920634921
+  },
+  "output": {
+    "root_convention": "../meridian-data/earth-lab/tryfan-005b/sentinel2-surface-evidence",
+    "git_policy": "EXTERNAL_ONLY_DO_NOT_COMMIT"
+  },
+  "licence": {
+    "data_terms": "Copernicus Sentinel Data Legal Notice / free, full and open access",
+    "terms_url": "https://dataspace.copernicus.eu/terms-and-conditions",
+    "sentinel_legal_notice": "https://sentinels.copernicus.eu/documents/247904/690755/Sentinel_Data_Legal_Notice"
+  }
+}

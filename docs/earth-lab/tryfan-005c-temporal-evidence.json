@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "experiment": "Meridian Earth Laboratory 005C: temporal surface evidence",
+  "purpose": "FOUR_SEASON_SENTINEL2_EVIDENCE_WITH_ILLUMINATION_DIAGNOSTICS",
+  "aoi": {
+    "crs": "EPSG:27700",
+    "bounds": [264900.0, 357800.0, 267900.0, 360800.0],
+    "retrieval_margin_m": 500.0,
+    "analysis_grids_m": [10.0, 20.0],
+    "source_crs": "EPSG:32630",
+    "tile_id": "30UVD"
+  },
+  "seasons": {
+    "definition": "Northern Hemisphere meteorological seasons",
+    "winter": "December-February",
+    "spring": "March-May",
+    "summer": "June-August",
+    "autumn": "September-November"
+  },
+  "observations": [
+    {
+      "season": "winter",
+      "official_product_id": "S2B_MSIL2A_20240117T113329_N0510_R080_T30UVD_20240117T130100",
+      "official_acquisition_time_utc": "2024-01-17T11:33:29.025Z",
+      "platform": "sentinel-2b",
+      "processing_baseline": "05.10",
+      "cog_item_id": "S2B_T30UVD_20240117T113323_L2A",
+      "cog_granule_time_utc": "2024-01-17T11:36:34.744Z",
+      "cog_year": 2024,
+      "cog_month": 1,
+      "sun_elevation_degrees": 15.720385686493103,
+      "sun_azimuth_degrees": 168.355994216401,
+      "scene_cloud_percent": 16.85,
+      "aoi_scl": {"cloud_fraction": 0.013333333333333334, "cloud_shadow_fraction": 0.0, "snow_or_ice_fraction": 0.2528444444444444, "topographic_shadow_fraction": 0.5919555555555556, "nodata_fraction": 0.0},
+      "selection_rationale": "Actual AOI is 98.67% cloud/cirrus-free and contains a meaningful 25.28% snow/ice state; selected over nominally lower-snow winter scenes to preserve genuine winter environmental evidence."
+    },
+    {
+      "season": "spring",
+      "official_product_id": "S2A_MSIL2A_20260430T112131_N0512_R037_T30UVD_20260430T201210",
+      "official_acquisition_time_utc": "2026-04-30T11:21:31.024Z",
+      "platform": "sentinel-2a",
+      "processing_baseline": "05.12",
+      "cog_item_id": "S2A_T30UVD_20260430T112403_L2A",
+      "cog_granule_time_utc": "2026-04-30T11:26:54.104Z",
+      "cog_year": 2026,
+      "cog_month": 4,
+      "sun_elevation_degrees": 51.0675377161143,
+      "sun_azimuth_degrees": 162.551148555922,
+      "scene_cloud_percent": 3.08,
+      "aoi_scl": {"cloud_fraction": 0.003288888888888889, "cloud_shadow_fraction": 0.0, "snow_or_ice_fraction": 0.0, "topographic_shadow_fraction": 0.059955555555555556, "nodata_fraction": 0.0},
+      "selection_rationale": "Late-spring phenology with 99.67% cloud/cirrus-free AOI coverage and substantially higher sun than March candidates."
+    },
+    {
+      "season": "summer",
+      "official_product_id": "S2A_MSIL2A_20260712T113331_N0512_R080_T30UVD_20260712T174812",
+      "official_acquisition_time_utc": "2026-07-12T11:33:31.024Z",
+      "platform": "sentinel-2a",
+      "processing_baseline": "05.12",
+      "cog_item_id": "S2A_T30UVD_20260712T113332_L2A",
+      "cog_granule_time_utc": "2026-07-12T11:36:51.535Z",
+      "cog_year": 2026,
+      "cog_month": 7,
+      "sun_elevation_degrees": 58.062309162853,
+      "sun_azimuth_degrees": 160.700929790374,
+      "scene_cloud_percent": 0.0,
+      "aoi_scl": {"cloud_fraction": 0.0, "cloud_shadow_fraction": 0.0, "snow_or_ice_fraction": 0.0, "topographic_shadow_fraction": 0.018444444444444444, "nodata_fraction": 0.0},
+      "reuse_lab005b_native": true,
+      "selection_rationale": "Frozen Lab 005B reference: 100% usable AOI, zero cloud/shadow/snow/nodata and highest summer illumination."
+    },
+    {
+      "season": "autumn",
+      "official_product_id": "S2A_MSIL2A_20241127T113421_N0511_R080_T30UVD_20241127T153950",
+      "official_acquisition_time_utc": "2024-11-27T11:34:21.025Z",
+      "platform": "sentinel-2a",
+      "processing_baseline": "05.11",
+      "cog_item_id": "S2A_T30UVD_20241127T113445_L2A",
+      "cog_granule_time_utc": "2024-11-27T11:36:33.362Z",
+      "cog_year": 2024,
+      "cog_month": 11,
+      "sun_elevation_degrees": 15.771598845677005,
+      "sun_azimuth_degrees": 173.746711013091,
+      "scene_cloud_percent": 5.75,
+      "aoi_scl": {"cloud_fraction": 0.015333333333333332, "cloud_shadow_fraction": 0.0, "snow_or_ice_fraction": 0.005733333333333333, "topographic_shadow_fraction": 0.6235111111111111, "nodata_fraction": 0.0},
+      "selection_rationale": "Late-autumn phenology with 98.47% cloud/cirrus-free AOI coverage; low sun and extensive topographic shadow are retained and modelled as observation conditions."
+    }
+  ],
+  "bands": {
+    "blue": {"code": "B02", "native_resolution_m": 10, "scale": 0.0001, "offset": -0.1, "nodata": 0},
+    "green": {"code": "B03", "native_resolution_m": 10, "scale": 0.0001, "offset": -0.1, "nodata": 0},
+    "red": {"code": "B04", "native_resolution_m": 10, "scale": 0.0001, "offset": -0.1, "nodata": 0},
+    "nir": {"code": "B08", "native_resolution_m": 10, "scale": 0.0001, "offset": -0.1, "nodata": 0},
+    "rededge1": {"code": "B05", "native_resolution_m": 20, "scale": 0.0001, "offset": -0.1, "nodata": 0},
+    "rededge2": {"code": "B06", "native_resolution_m": 20, "scale": 0.0001, "offset": -0.1, "nodata": 0},
+    "rededge3": {"code": "B07", "native_resolution_m": 20, "scale": 0.0001, "offset": -0.1, "nodata": 0},
+    "nir_narrow": {"code": "B8A", "native_resolution_m": 20, "scale": 0.0001, "offset": -0.1, "nodata": 0},
+    "swir16": {"code": "B11", "native_resolution_m": 20, "scale": 0.0001, "offset": -0.1, "nodata": 0},
+    "swir22": {"code": "B12", "native_resolution_m": 20, "scale": 0.0001, "offset": -0.1, "nodata": 0},
+    "scl": {"code": "SCL", "native_resolution_m": 20, "categorical": true, "nodata": 0}
+  },
+  "processing": {
+    "access_collection": "sentinel-2-c1-l2a",
+    "cog_base_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD",
+    "continuous_reprojection": "bilinear",
+    "categorical_reprojection": "nearest",
+    "normalized_difference_minimum_sum": 0.02,
+    "normalized_difference_requires_nonnegative_bands": true,
+    "common_rgb_display": {"minimum_reflectance": 0.02, "maximum_reflectance": 0.30, "gamma": 1.0},
+    "cloud_invalid_scl_classes": [0, 1, 3, 8, 9, 10],
+    "snow_scl_class": 11,
+    "surface_persistence_policy": "cloud-clear, snow-excluded",
+    "environmental_state_policy": "cloud-clear with snow retained and flagged"
+  },
+  "frozen_inputs": {
+    "lab005a_root_convention": "../meridian-data/earth-lab/tryfan-004/diagnostics/lab005a-surface",
+    "lab005b_config_convention": "docs/earth-lab/tryfan-005b-sentinel2.json",
+    "lab005b_report_convention": "../meridian-data/earth-lab/tryfan-005b/sentinel2-surface-evidence/lab005b-report.json",
+    "lab005b_expected_deterministic_result_sha256": "53d1dcf31d559f6f7ab6dcfe4ebf902b822e4ee7ebdaf2ae593b092c6344f0ab",
+    "lab005b_native_root_convention": "../meridian-data/earth-lab/tryfan-005b/sentinel2-surface-evidence/source-native",
+    "canonical_r16_convention": "../meridian-data/earth-lab/tryfan-004/unreal-landscape-v1/heightmaps/tryfan-004-dtm-1m-landscape-3025.r16",
+    "canonical_r16_sha256": "31cbe763dac4072772ac9bcb4a3217b78eba0c10265e576ede708154288f6bf6"
+  },
+  "output": {
+    "root_convention": "../meridian-data/earth-lab/tryfan-005c/sentinel2-temporal-evidence",
+    "git_policy": "EXTERNAL_ONLY_DO_NOT_COMMIT"
+  },
+  "licence": {
+    "data_terms": "Copernicus Sentinel Data Legal Notice / free, full and open access",
+    "terms_url": "https://dataspace.copernicus.eu/terms-and-conditions",
+    "sentinel_legal_notice": "https://sentinels.copernicus.eu/documents/247904/690755/Sentinel_Data_Legal_Notice"
+  }
+}
