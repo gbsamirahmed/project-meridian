@@ -1,0 +1,39 @@
+{
+  "id": "tryfan-004",
+  "name": "Tryfan expanded photographic benchmark",
+  "center": {
+    "crs": "EPSG:27700",
+    "easting": 266400,
+    "northing": 359300,
+    "context_wgs84": {
+      "latitude": 53.115,
+      "longitude": -3.998
+    }
+  },
+  "width_m": 3000,
+  "height_m": 3000,
+  "reference_locations": [
+    {
+      "name": "aoi_centre",
+      "easting": 266400.0,
+      "northing": 359300.0
+    },
+    {
+      "name": "tryfan_summit_reference",
+      "easting": 266405.0,
+      "northing": 359387.0
+    },
+    {
+      "name": "robert_heath_photo_observer",
+      "easting": 265876.05347833806,
+      "northing": 358339.7631202109
+    }
+  ],
+  "selection_policy": {
+    "prefer_finest_resolution": true,
+    "prefer_newest_when_resolution_ties": true,
+    "require_dtm": true,
+    "include_dsm": true
+  },
+  "unreal_level_name": "Tryfan_Lab004"
+}

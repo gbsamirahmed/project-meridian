@@ -223,7 +223,8 @@ def convert_surface(
     )
     encoding_error = decoded - resampled.astype(np.float64)
     files = _write_heightmaps(
-        encoded, destination_root / f"{source_path.stem}-landscape-2017"
+        encoded,
+        destination_root / f"{source_path.stem}-landscape-{settings.output_vertices}",
     )
     return {
         "surface": surface,
@@ -293,8 +294,10 @@ def build_landscape_import(
         )
 
     result = {
-        "schema_version": 1,
+        "schema_version": 2,
         "created_at": datetime.now(timezone.utc).isoformat(),
+        "aoi_identifier": str(aoi["identifier"]),
+        "suggested_level_name": aoi.get("unreal_level_name"),
         "representation": {
             "type": "Unreal Landscape",
             "default_surface": "dtm",
@@ -350,23 +353,29 @@ def build_landscape_import(
                 "+Z": "up",
             },
             "bng_from_unreal": {
-                "easting": "266400 + X_cm / 100",
-                "northing": "359300 - Y_cm / 100",
-                "elevation_m_odn": "650 + Z_cm / 100",
+                "easting": f"{(bounds[0] + bounds[2]) / 2.0:g} + X_cm / 100",
+                "northing": f"{(bounds[1] + bounds[3]) / 2.0:g} - Y_cm / 100",
+                "elevation_m_odn": f"{settings.vertical_origin_m_odn:g} + Z_cm / 100",
             },
         },
         "height_encoding": {
             "formula_encode": (
-                "uint16 = round((elevation_m_ODN - 650) * 100 * 128 / 150 + 32768)"
+                "uint16 = round((elevation_m_ODN - "
+                f"{settings.vertical_origin_m_odn:g}) * 100 * 128 / "
+                f"{settings.unreal_z_scale:g} + 32768)"
             ),
             "formula_decode": (
-                "elevation_m_ODN = 650 + (uint16 - 32768) / 128 * 150 / 100"
+                f"elevation_m_ODN = {settings.vertical_origin_m_odn:g} + "
+                f"(uint16 - 32768) / 128 * {settings.unreal_z_scale:g} / 100"
             ),
             "unreal_mid_value": LANDSCAPE_MID_VALUE,
             "vertical_origin_m_odn": settings.vertical_origin_m_odn,
             "z_scale": settings.unreal_z_scale,
             "quantization_step_m": settings.unreal_z_scale / 128.0 / 100.0,
             "vertical_exaggeration": 1.0,
+        },
+        "validation": {
+            "reference_locations_bng": list(aoi.get("reference_locations", [])),
         },
         "surfaces": surfaces,
     }

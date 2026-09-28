@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "experiment": "Meridian Earth Laboratory 004: expanded Tryfan photographic benchmark",
+  "benchmark_id": "tryfan-robert-heath-2021",
+  "photograph": {
+    "title": "Tryfan, North Wales",
+    "author": "Robert J Heath",
+    "captured_at": "2021-08-28T12:41:00",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:Tryfan,_North_Wales_(52429334479).jpg",
+    "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Tryfan%2C_North_Wales_%2852429334479%29.jpg",
+    "flickr_source_url": "https://www.flickr.com/photos/67769979@N06/52429334479/",
+    "licence": {
+      "name": "Creative Commons Attribution 2.0 Generic",
+      "url": "https://creativecommons.org/licenses/by/2.0/",
+      "attribution": "Tryfan, North Wales \u00e2\u20ac\u201d Robert J Heath \u00e2\u20ac\u201d CC BY 2.0"
+    },
+    "image_dimensions_px": [
+      5472,
+      3648
+    ],
+    "metadata_provenance": "Wikimedia Commons file page and structured data, sourced from the Flickr original",
+    "camera": {
+      "manufacturer": "Panasonic",
+      "model": "DMC-FZ1000",
+      "focal_length_mm": 84.07,
+      "focal_length_35mm_equivalent_mm": 230.0,
+      "exposure_seconds": 0.005,
+      "f_number": 5.0,
+      "iso": 125,
+      "metadata_status": "MEASURED_EXIF"
+    },
+    "local_external_copy": {
+      "path_convention": "../meridian-data/earth-lab/tryfan-004/reference/tryfan-robert-heath-2021.jpg",
+      "bytes": 28667564,
+      "sha256": "3999ea25ca07c38ad20b5362e097bada0375c23dffea7a707763d1abec741e"
+    },
+    "local_copy_verification": {
+      "dimensions_px": [
+        5472,
+        3648
+      ],
+      "mode": "RGB",
+      "embedded_make": "Panasonic",
+      "embedded_model": "DMC-FZ1000",
+      "embedded_datetime_original": "2021-08-28T12:41:12",
+      "embedded_focal_length_mm": 84.07,
+      "embedded_focal_length_35mm_equivalent_mm": 230,
+      "embedded_gps": "ABSENT_FROM_DOWNLOADED_JPEG; coordinate provenance remains the published Wikimedia structured camera location"
+    }
+  },
+  "terrain": {
+    "aoi_id": "tryfan-004",
+    "crs": "EPSG:27700",
+    "bounds": [
+      264900.0,
+      357800.0,
+      267900.0,
+      360800.0
+    ],
+    "source": "Welsh Government national LiDAR 2020-2023",
+    "survey_date": "2021-03-02",
+    "native_resolution_m": 1.0,
+    "surfaces": [
+      "dtm",
+      "dsm"
+    ],
+    "default_surface": "dtm"
+  },
+  "observer": {
+    "wgs84": {
+      "latitude": 53.105341,
+      "longitude": -4.004945
+    },
+    "bng": {
+      "easting": 265876.05347833806,
+      "northing": 358339.7631202109
+    },
+    "coordinate_provenance": "Published camera location with six-decimal WGS84 coordinates on the Wikimedia Commons record; transformed to EPSG:27700 with PROJ/pyproj, not independently surveyed",
+    "coordinate_status": "PUBLISHED_PRECISE_NOT_INDEPENDENTLY_VERIFIED",
+    "eye_height_m": 1.7,
+    "eye_height_provenance": "CALIBRATION_ASSUMPTION"
+  },
+  "view": {
+    "mode": "terrain_target",
+    "target": {
+      "name": "Tryfan summit reference",
+      "bng": {
+        "easting": 266405.0,
+        "northing": 359387.0
+      },
+      "provenance": "Canonical Meridian Tryfan summit reference; photograph title/subject supports this target, but the exact optical aim point is INFERRED"
+    },
+    "derived_geographic_bearing_degrees": 26.797781648379132,
+    "horizontal_ground_distance_m": 1173.2388951823364,
+    "direction_status": "INFERRED_FROM_OBSERVER_TO_SUMMIT"
+  },
+  "camera_calibration": {
+    "horizontal_fov_degrees": 8.949793012492195,
+    "vertical_fov_degrees_at_3_2": 5.973273980950333,
+    "aspect_ratio": 1.5,
+    "derivation": "Full-frame-equivalent rectilinear FOV: 2*atan(36 mm/(2*230 mm)); vertical uses 24 mm. The image is 3:2.",
+    "provenance": "DERIVED_FROM_EXIF_35MM_EQUIVALENT",
+    "calibration_status": "INITIAL_EXPLICIT_PARAMETER",
+    "uncertainty": "Editing/cropping and lens distortion are not independently known. Treat 8.9498 degrees as the documented initial calibration, not a surveyed FOV."
+  },
+  "uncertainties": [
+    "The published camera coordinate is precise but has not been independently ground-surveyed.",
+    "The exact optical aim point and camera roll are not present in EXIF; summit targeting is inferred from the photograph subject.",
+    "FOV is derived from the EXIF 230 mm 35 mm equivalent and assumes the published 3:2 image retains the full captured frame.",
+    "DTM is the geometry benchmark surface; DSM is retained to quantify vegetation/structure differences but is not the default Unreal Landscape."
+  ],
+  "derived_terrain_expectations": {
+    "surface": "DTM R16, bilinear at BNG coordinate",
+    "observer_elevation_m_odn": 961.6782701124874,
+    "target_elevation_m_odn": 913.8486462499999,
+    "observer_r16_pixel": [
+      983.8619061647616,
+      2479.9187748274085
+    ],
+    "target_r16_pixel": [
+      1517.0400000000002,
+      1424.3039999999999
+    ],
+    "horizontal_distance_m": 1173.2388951823364,
+    "distance_3d_from_1_7m_eye_m": 1174.283904687716,
+    "geographic_bearing_degrees": 26.797781648379132,
+    "unreal_yaw_degrees": -63.20221835162087,
+    "unreal_pitch_degrees": -2.417371562004972,
+    "status": "DERIVED_EXPECTATION_PENDING_IMPORTED_LANDSCAPE_TRACE"
+  },
+  "benchmark_role": "HISTORICAL_VISUAL_QUALITY_CANDIDATE",
+  "superseded_as_primary_by": "tryfan-tony-edwards-2009",
+  "preservation_note": "Preserved from the original Lab 004 preparation. Its precise viewpoint and lens metadata remain useful provenance, but its inferred optical target made it unsuitable as the primary geometric-registration benchmark."
+}

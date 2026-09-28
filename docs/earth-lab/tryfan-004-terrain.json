@@ -1,0 +1,250 @@
+{
+  "schema_version": 1,
+  "experiment": "Meridian Earth Laboratory 004: expanded Tryfan geometry and photographic benchmarks",
+  "aoi": {
+    "id": "tryfan-004",
+    "crs": "EPSG:27700",
+    "bounds": [
+      264900.0,
+      357800.0,
+      267900.0,
+      360800.0
+    ],
+    "center_bng": [
+      266400.0,
+      359300.0
+    ],
+    "dimensions_m": [
+      3000.0,
+      3000.0
+    ],
+    "wgs84_bounds": {
+      "west": -4.01928781695917,
+      "south": 53.10024567071114,
+      "east": -3.975745365785618,
+      "north": 53.127948148904174
+    }
+  },
+  "source": {
+    "name": "Welsh Government national LiDAR 2020-2023",
+    "survey_date": "2021-03-02",
+    "native_resolution_m": 1.0,
+    "crs": "EPSG:27700",
+    "dtm_url": "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dtm_32bit_cog.tif",
+    "dsm_url": "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif",
+    "retrieval_method": "bounded HTTP range reads from national Cloud Optimized GeoTIFFs",
+    "whole_national_files_downloaded": false,
+    "licence": {
+      "name": "Open Government Licence for Public Sector Information, version 3.0",
+      "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "attribution": "Contains Welsh Government information licensed under the Open Government Licence v3.0."
+    }
+  },
+  "surfaces": {
+    "dtm": {
+      "path": "tryfan-004-dtm-1m.tif",
+      "bytes": 15639072,
+      "driver": "GTiff",
+      "width": 3000,
+      "height": 3000,
+      "crs": "EPSG:27700",
+      "pixel_size_m": [
+        1.0,
+        1.0
+      ],
+      "dtype": "float32",
+      "nodata": -9999.0,
+      "valid_cells": 9000000,
+      "nodata_cells": 0,
+      "minimum_m": 286.489990234375,
+      "maximum_m": 992.469970703125,
+      "mean_m": 567.3524780273438
+    },
+    "dsm": {
+      "path": "tryfan-004-dsm-1m.tif",
+      "bytes": 16003194,
+      "driver": "GTiff",
+      "width": 3000,
+      "height": 3000,
+      "crs": "EPSG:27700",
+      "pixel_size_m": [
+        1.0,
+        1.0
+      ],
+      "dtype": "float32",
+      "nodata": -9999.0,
+      "valid_cells": 9000000,
+      "nodata_cells": 0,
+      "minimum_m": 288.8399963378906,
+      "maximum_m": 994.4199829101562,
+      "mean_m": 567.6539916992188
+    },
+    "dsm_minus_dtm": {
+      "comparable_cells": 9000000,
+      "minimum_m": -11.569976806640625,
+      "maximum_m": 24.480010986328125,
+      "mean_m": 0.3014867305755615,
+      "median_m": 0.1400146484375,
+      "cells_dsm_over_dtm_2m_percent": 1.8835555555555556,
+      "cells_dsm_below_dtm_0_25m_percent": 0.030677777777777776
+    }
+  },
+  "unreal": {
+    "representation": "Landscape",
+    "default_surface": "dtm",
+    "source_cells": [
+      3000,
+      3000
+    ],
+    "output_vertices": [
+      3025,
+      3025
+    ],
+    "components": [
+      24,
+      24
+    ],
+    "quads_per_section": 63,
+    "sections_per_component": 4,
+    "quads_per_axis": 3024,
+    "xy_scale_cm": 99.20634920634922,
+    "z_scale": 150.0,
+    "world_dimensions_m": [
+      3000.0,
+      3000.0
+    ],
+    "local_origin_bng": {
+      "easting": 266400.0,
+      "northing": 359300.0,
+      "elevation_m_odn": 650.0
+    },
+    "dimension_conversion": {
+      "source_cells": [
+        3000,
+        3000
+      ],
+      "output_vertices": [
+        3025,
+        3025
+      ],
+      "method": "bilinear resampling over the unchanged full AOI bounds",
+      "samples_added_per_axis": 25,
+      "sample_count_change_percent": 0.8333333333333304,
+      "cropped": false,
+      "padded": false,
+      "smoothed_or_eroded": false
+    },
+    "height_encoding": {
+      "formula_encode": "uint16 = round((elevation_m_ODN - 650) * 100 * 128 / 150 + 32768)",
+      "formula_decode": "elevation_m_ODN = 650 + (uint16 - 32768) / 128 * 150 / 100",
+      "unreal_mid_value": 32768,
+      "vertical_origin_m_odn": 650.0,
+      "z_scale": 150.0,
+      "quantization_step_m": 0.01171875,
+      "vertical_exaggeration": 1.0
+    },
+    "dtm_output": {
+      "width": 3025,
+      "height": 3025,
+      "encoded_minimum": 1761,
+      "encoded_maximum": 61981,
+      "decoded_minimum_m": 286.63671875,
+      "decoded_maximum_m": 992.33984375,
+      "files": {
+        "png": {
+          "path": "tryfan-004-dtm-1m-landscape-3025.png",
+          "bytes": 8756315,
+          "sha256": "1b4ae10b0f6b806faa68b32e1479ccdfb62e861349813e3f8b744741b33a9464"
+        },
+        "r16": {
+          "path": "tryfan-004-dtm-1m-landscape-3025.r16",
+          "bytes": 18301250,
+          "sha256": "31cbe763dac4072772ac9bcb4a3217b78eba0c10265e576ede708154288f6bf6",
+          "byte_order": "little-endian"
+        }
+      }
+    },
+    "dtm_validation": {
+      "encoding_maximum_absolute_error_m": 0.005859375,
+      "encoding_mean_absolute_error_m": 0.0029279893711367053,
+      "spatial_resample_round_trip": {
+        "maximum_absolute_m": 4.1605224609375,
+        "mean_absolute_m": 0.039746516065809465,
+        "rmse_m": 0.08506425418423019
+      },
+      "northwest_encoded": 7140,
+      "northeast_encoded": 5525,
+      "southwest_encoded": 48616,
+      "southeast_encoded": 34275
+    },
+    "dsm_output": {
+      "width": 3025,
+      "height": 3025,
+      "encoded_minimum": 2034,
+      "encoded_maximum": 62155,
+      "decoded_minimum_m": 289.8359375,
+      "decoded_maximum_m": 994.37890625,
+      "files": {
+        "png": {
+          "path": "tryfan-004-dsm-1m-landscape-3025.png",
+          "bytes": 9224470,
+          "sha256": "09949bc2c219b1c2d912d7bd8ede32f8f0285bca62391bfc2cca04a54a5b622a"
+        },
+        "r16": {
+          "path": "tryfan-004-dsm-1m-landscape-3025.r16",
+          "bytes": 18301250,
+          "sha256": "7c48a6b0975746377e329b0934e26b6528355ebc8b7e9bfe0eee023006ad87e2",
+          "byte_order": "little-endian"
+        }
+      }
+    },
+    "dsm_validation": {
+      "encoding_maximum_absolute_error_m": 0.005859375,
+      "encoding_mean_absolute_error_m": 0.0029253109345384965,
+      "spatial_resample_round_trip": {
+        "maximum_absolute_m": 8.6444091796875,
+        "mean_absolute_m": 0.07062206074693468,
+        "rmse_m": 0.15826282008491116
+      },
+      "northwest_encoded": 7183,
+      "northeast_encoded": 5530,
+      "southwest_encoded": 48652,
+      "southeast_encoded": 34333
+    },
+    "manual_import_required": true,
+    "suggested_level_name": "Tryfan_Lab004"
+  },
+  "photographic_benchmark": {
+    "lab_004a_geometric_registration": {
+      "metadata": "tryfan-004-benchmark.json",
+      "benchmark_id": "tryfan-tony-edwards-2009",
+      "external_original_path_convention": "../meridian-data/earth-lab/tryfan-004/reference/tryfan-tony-edwards-2009.jpg",
+      "original_bytes": 100140,
+      "fov_status": "EXPLICIT_CALIBRATION_OVERRIDE_40_DEGREES_REQUIRES_VISUAL_VALIDATION",
+      "orientation": "Published 247 degree heading for fixed yaw; explicit calibrated pitch; canonical summit Landscape trace retained as geometric pitch reference; depicted-place coordinate diagnostic only",
+      "pitch_status": "UNKNOWN_REQUIRES_EXPLICIT_CALIBRATION",
+      "heading_status": "PUBLISHED_247_DEGREES_PRESERVED; RECOVERED_253_55_DEGREES_OPTIONAL_CALIBRATION"
+    },
+    "lab_004b_visual_quality": {
+      "status": "NOT_YET_SELECTED"
+    },
+    "historical": [
+      {
+        "metadata": "tryfan-004-benchmark-robert-heath.json",
+        "benchmark_id": "tryfan-robert-heath-2021",
+        "reason_not_primary_geometric_benchmark": "Exact optical target was inferred rather than published."
+      }
+    ]
+  },
+  "local_output_conventions": {
+    "terrain_root": "../meridian-data/earth-lab/tryfan-004/",
+    "unreal_project": "../meridian-data/earth-lab/tryfan-004/unreal-project/TryfanLab004/",
+    "committed_generated_assets": false
+  },
+  "status": {
+    "source_and_conversion_validation": "PASS",
+    "unreal_import": "PASS_MANUAL_IMPORT",
+    "imported_landscape_validation": "PASS_REPORTED_BY_LAB004_VALIDATOR",
+    "photographic_visual_comparison": "PENDING_FOV_CALIBRATION"
+  }
+}

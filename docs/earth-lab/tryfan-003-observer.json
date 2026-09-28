@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "experiment": "Meridian Earth Laboratory 003: geospatial observer placement",
+  "depends_on": {
+    "lab": "Meridian Earth Laboratory 002",
+    "accepted_level": "/Game/Tryfan_Lab002_Corrected.Tryfan_Lab002_Corrected",
+    "terrain_provenance": "tryfan-002-unreal-landscape.json"
+  },
+  "coordinate_frame": {
+    "source": "Lab 002 runtime manifest",
+    "crs": "EPSG:27700",
+    "origin_bng": {
+      "easting": 266400.0,
+      "northing": 359300.0,
+      "elevation_m_odn": 650.0
+    },
+    "axis_mapping": {
+      "+X": "east",
+      "+Y": "south",
+      "+Z": "up"
+    },
+    "unreal_units": "centimetres",
+    "conversion": {
+      "x_cm": "(easting - origin_easting) * 100",
+      "y_cm": "(origin_northing - northing) * 100",
+      "yaw_degrees": "normalize_signed(geographic_heading_degrees - 90)"
+    }
+  },
+  "benchmark": {
+    "bng": {
+      "easting": 266100.0,
+      "northing": 360200.0
+    },
+    "eye_height_m": 1.7,
+    "derived_unreal_xy_cm": [
+      -30000.0,
+      -90000.0
+    ],
+    "target_bng": {
+      "easting": 266405.0,
+      "northing": 359387.0
+    },
+    "orientation_mode": "target_bng",
+    "calculated_geographic_bearing_degrees": 159.43623193647989,
+    "calculated_unreal_yaw_degrees": 69.43623193647989,
+    "calculated_unreal_pitch_degrees": 34.62787528196104
+  },
+  "camera": {
+    "actor_label": "Meridian_Lab003_Observer_Camera",
+    "type": "CameraActor",
+    "horizontal_fov_degrees": 60.0,
+    "aspect_ratio": 1.7777777777777777,
+    "constrain_aspect_ratio": true,
+    "implied_vertical_fov_degrees": 35.98339777135764,
+    "fov_note": "Unreal CameraComponent.field_of_view is the horizontal perspective FOV. At the constrained 16:9 aspect ratio, a 60 degree horizontal FOV implies approximately 35.983 degrees vertically.",
+    "pitch_degrees": "calculated from traced target elevation in target mode; zero in heading-only mode",
+    "roll_degrees": 0.0
+  },
+  "ground_marker": {
+    "actor_label": "Meridian_Lab003_Observer_Ground_Marker",
+    "type": "StaticMeshActor",
+    "mesh": "/Engine/BasicShapes/Sphere.Sphere",
+    "radius_cm": 10.0,
+    "collision_enabled": false,
+    "placement": "Sphere centre is 10 cm above the traced point, leaving its base at terrain height."
+  },
+  "terrain_interrogation": {
+    "method": "UE visibility-channel vertical collision traces that ignore non-Landscape actors and accept only Landscape or linked LandscapeStreamingProxy hits",
+    "trace_half_height_cm": 1000000.0,
+    "failure_policy": "Trace both observer and target before actor changes; abort clearly if either coordinate has no Landscape hit.",
+    "landscape_mutation": false
+  },
+  "headless_validation": {
+    "date": "2026-09-24",
+    "engine": "Unreal Engine 5.8.2",
+    "map": "/Game/Tryfan_Lab002_Corrected.Tryfan_Lab002_Corrected",
+    "observer_terrain_world_location_cm": [
+      -30000.0,
+      -90000.0,
+      -33750.24921499367
+    ],
+    "observer_terrain_elevation_m_odn": 312.49750785006324,
+    "camera_optical_location_cm": [
+      -30000.0,
+      -90000.0,
+      -33580.24921499367
+    ],
+    "target_terrain_world_location_cm": [
+      500.0,
+      -8700.0,
+      26384.0773816054
+    ],
+    "target_terrain_elevation_m_odn": 913.840773816054,
+    "horizontal_distance_m": 868.3282789360254,
+    "distance_3d_m": 1055.2563889493206,
+    "geographic_bearing_degrees": 159.43623193647989,
+    "unreal_yaw_degrees": 69.43623193647989,
+    "unreal_pitch_degrees": 34.62787528196104,
+    "unreal_roll_degrees": 0.0,
+    "camera_forward_vector": [
+      0.28902926060632395,
+      0.7704288807433313,
+      0.5682441607530515
+    ],
+    "forward_alignment_error": 2.8670679960747477e-08,
+    "observer_and_target_hit_same_landscape": true,
+    "saved_to_level": false,
+    "result": "PASS"
+  },
+  "implementation": {
+    "pure_geometry": "scripts/earth_lab/observer_geometry.py",
+    "unreal_utility": "scripts/earth_lab/unreal_place_observer.py",
+    "external_project_names": [
+      "Content/Python/observer_geometry.py",
+      "Content/Python/place_observer.py"
+    ],
+    "generated_report": "Saved/meridian-observer-placement.json"
+  },
+  "limitations": [
+    "Heading-only mode remains available and uses zero pitch; target mode derives both yaw and pitch.",
+    "The Landscape must block UE visibility collision at both requested coordinates.",
+    "Non-Landscape actors are ignored so editor markers or meshes cannot substitute for terrain height.",
+    "The script does not save the level automatically.",
+    "The sphere is an editor/world marker using an Engine basic mesh, not a surveyed object or final presentation asset.",
+    "Absolute ODN values combine traced Unreal Z with the Lab 002 manifest's 650 m local datum."
+  ]
+}

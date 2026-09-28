@@ -1,0 +1,193 @@
+{
+  "schema_version": 4,
+  "experiment": "Meridian Earth Laboratory 004A: geometric registration",
+  "benchmark_role": "PRIMARY_GEOMETRIC_REGISTRATION",
+  "benchmark_id": "tryfan-tony-edwards-2009",
+  "photograph": {
+    "title": "Tryfan",
+    "description": "Tryfan. A very popular mountain with climbers.",
+    "author": "Tony Edwards",
+    "captured_at": "2009-02-21",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:Tryfan_-_geograph.org.uk_-_1308873.jpg",
+    "geograph_source_url": "https://www.geograph.org.uk/photo/1308873",
+    "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Tryfan_-_geograph.org.uk_-_1308873.jpg",
+    "licence": {
+      "name": "Creative Commons Attribution-ShareAlike 2.0 Generic",
+      "url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "attribution": "Tony Edwards / Tryfan / CC BY-SA 2.0"
+    },
+    "image_dimensions_px": [
+      640,
+      480
+    ],
+    "published_bytes": 100140,
+    "wikimedia_sha1": "8a5ce5c341f25c7280ed09e13bb9e0fee0376b08",
+    "metadata_provenance": "Wikimedia Commons file page and structured data sourced from Geograph image 1308873. Camera/object coordinates and 247 degree heading are published metadata; no independent survey is claimed.",
+    "camera": {
+      "manufacturer": null,
+      "model": null,
+      "focal_length_mm": null,
+      "focal_length_35mm_equivalent_mm": null,
+      "metadata_status": "NOT_PUBLISHED"
+    },
+    "local_external_copy": {
+      "path_convention": "../meridian-data/earth-lab/tryfan-004/reference/tryfan-tony-edwards-2009.jpg",
+      "bytes": 100140,
+      "sha256": "09ccb9ade2bdae3818bfc8e8444bd93f8865d4a55fa9290332b5a78f89afd3cb"
+    }
+  },
+  "terrain": {
+    "aoi_id": "tryfan-004",
+    "crs": "EPSG:27700",
+    "bounds": [
+      264900.0,
+      357800.0,
+      267900.0,
+      360800.0
+    ],
+    "source": "Welsh Government national LiDAR 2020-2023",
+    "survey_date": "2021-03-02",
+    "native_resolution_m": 1.0,
+    "surfaces": [
+      "dtm",
+      "dsm"
+    ],
+    "default_surface": "dtm"
+  },
+  "observer": {
+    "wgs84": {
+      "latitude": 53.11688,
+      "longitude": -3.9898
+    },
+    "bng": {
+      "easting": 266925.4912174295,
+      "northing": 359594.94947166357
+    },
+    "coordinate_provenance": "Published Wikimedia/Geograph camera coordinate in WGS84, transformed to EPSG:27700 with PROJ/pyproj; not independently surveyed.",
+    "coordinate_status": "PUBLISHED_NOT_INDEPENDENTLY_SURVEYED",
+    "eye_height_m": 1.7,
+    "eye_height_provenance": "CALIBRATION_ASSUMPTION; photographer tripod/optical height is not published"
+  },
+  "view": {
+    "mode": "published_heading_calibrated_pitch",
+    "target": {
+      "name": "Published depicted-place coordinate",
+      "wgs84": {
+        "latitude": 53.11528,
+        "longitude": -3.9993
+      },
+      "bng": {
+        "easting": 266284.78470035235,
+        "northing": 359434.69524531404
+      },
+      "provenance": "Published Wikimedia/Geograph object location, transformed to EPSG:27700 with PROJ/pyproj; not inferred from terrain appearance.",
+      "coordinate_status": "PUBLISHED_NOT_INDEPENDENTLY_SURVEYED",
+      "orientation_role": "DIAGNOSTIC_ONLY_NOT_USED_FOR_CAMERA_ORIENTATION"
+    },
+    "published_heading_degrees": 247.0,
+    "published_heading_provenance": "Wikimedia Commons/Geograph structured metadata",
+    "coordinate_derived_wgs84_geodesic_bearing_degrees": 254.3652412901705,
+    "coordinate_derived_bng_grid_bearing_degrees": 255.9572257144704,
+    "published_minus_geodesic_bearing_degrees": -7.365241290170502,
+    "published_minus_bng_grid_bearing_degrees": -8.957225714470407,
+    "bearing_comparison_status": "DIAGNOSTIC_ONLY; depicted-place coordinate is approximate and is not used for primary orientation",
+    "geodesic_horizontal_distance_m": 660.5441664654414,
+    "bng_grid_horizontal_distance_m": 660.4439855794284,
+    "published_heading_bng_grid_bearing_degrees": 248.59199947759208,
+    "published_heading_unreal_yaw_degrees": 158.59199947759208,
+    "pitch_reference": {
+      "name": "Canonical Tryfan summit reference",
+      "wgs84": {
+        "latitude": 53.11488166980999,
+        "longitude": -3.997485171682515
+      },
+      "bng": {
+        "easting": 266405.0,
+        "northing": 359387.0
+      },
+      "provenance": "Canonical Meridian Tryfan summit/reference coordinate; confirmed by the Lab 004A source-DTM geographic diagnostic to lie 0.370 degrees from the published heading.",
+      "orientation_role": "GEOMETRIC_DIAGNOSTIC_REFERENCE_ONLY; never an automatic photographic pitch target in calibration mode",
+      "height_source": "Actual imported Landscape vertical trace at runtime"
+    },
+    "primary_orientation": {
+      "horizontal": "Published WGS84 geographic heading 247 degrees remains source metadata. MERIDIAN_CAMERA_HEADING_DEGREES may supply a recovered photographic centre heading; it is converted with the established local BNG convergence before mapping to Unreal yaw.",
+      "vertical": "Explicit MERIDIAN_CAMERA_PITCH_DEGREES photographic calibration; the runtime Landscape trace to the canonical summit is retained only as a geometric reference",
+      "roll_degrees": 0.0
+    }
+  },
+  "camera_calibration": {
+    "horizontal_fov_degrees": null,
+    "vertical_fov_degrees": null,
+    "initial_calibration_horizontal_fov_degrees": 40.0,
+    "aspect_ratio": 1.3333333333333333,
+    "provenance": "UNKNOWN; no usable focal-length or sensor/FOV metadata is published",
+    "calibration_status": "EXPLICIT_CALIBRATION_OVERRIDE_REQUIRES_VISUAL_VALIDATION",
+    "uncertainty": "40 degrees is an explicit user-selected starting calibration override. It is not measured or derived from lens metadata.",
+    "calibrated_horizontal_fov_degrees": 40.0,
+    "pitch_degrees": null,
+    "pitch_provenance": "UNKNOWN; photograph provides no camera pitch metadata",
+    "pitch_calibration_status": "REQUIRED_EXPLICIT_RUNTIME_CALIBRATION",
+    "runtime_globals": {
+      "pitch": "MERIDIAN_CAMERA_PITCH_DEGREES",
+      "horizontal_fov": "MERIDIAN_HORIZONTAL_FOV_DEGREES",
+      "heading": "MERIDIAN_CAMERA_HEADING_DEGREES"
+    },
+    "heading_provenance": "Published 247 degree heading is source metadata; any runtime override is a recovered photographic calibration, not measured camera metadata",
+    "heading_calibration_status": "OPTIONAL_EXPLICIT_RUNTIME_CALIBRATION",
+    "recovered_skyline_heading_degrees": 253.55,
+    "recovered_skyline_heading_source": "../meridian-data/earth-lab/tryfan-004/diagnostics/lab004a-skyline/lab004a-skyline-calibration.json"
+  },
+  "uncertainties": [
+    "Camera and object coordinates are published metadata, not independently surveyed positions.",
+    "The published 247 degree heading differs from the WGS84 coordinate-derived geodesic bearing by 7.365 degrees.",
+    "The photographer optical height is unknown; 1.70 m is an explicit calibration assumption.",
+    "Focal length, sensor geometry, crop and FOV are not published; FOV requires visual calibration.",
+    "DTM represents bare earth and cannot reproduce transient people, vegetation or structures in the photograph.",
+    "The published depicted-place coordinate is retained only as approximate-subject diagnostic provenance and is not used to orient the primary camera.",
+    "Horizontal yaw uses the published true heading converted to local BNG grid direction; summit tracing controls pitch only.",
+    "Photographic pitch is not published and must be supplied explicitly as MERIDIAN_CAMERA_PITCH_DEGREES; the summit-derived pitch is diagnostic only.",
+    "The recovered 253.55 degree centre heading is a source-DTM skyline calibration; published heading 247 degrees remains the original metadata."
+  ],
+  "derived_terrain_expectations": {
+    "surface": "Canonical Lab 004 DTM R16, bilinear at transformed BNG coordinate",
+    "observer_elevation_m_odn": 483.8556785103776,
+    "summit_elevation_m_odn": 913.8486462499998,
+    "summit_bng_grid_horizontal_distance_m": 560.4945050456938,
+    "summit_target_minus_camera_eye_m": 428.2929677396222,
+    "published_heading_degrees": 247.0,
+    "published_heading_bng_grid_bearing_degrees": 248.59199947759208,
+    "unreal_yaw_degrees": 158.59199947759208,
+    "unreal_pitch_degrees": 37.38467900309677,
+    "horizontal_fov_degrees": 40.0,
+    "status": "SUMMIT PITCH IS A DERIVED GEOMETRIC REFERENCE; PHOTOGRAPHIC PITCH AND HFOV ARE EXPLICIT CALIBRATION PARAMETERS; CAMERA AND SUMMIT HEIGHTS ARE RETRACED FROM THE IMPORTED LANDSCAPE AT RUNTIME",
+    "depicted_place_diagnostic": {
+      "observer_elevation_m_odn": 483.8556785103776,
+      "depicted_place_elevation_m_odn": 813.3527098662978,
+      "observer_r16_pixel": [
+        1214.6909325631243,
+        2041.695147168953
+      ],
+      "depicted_place_r16_pixel": [
+        1376.2271927234474,
+        1395.862977955168
+      ],
+      "bng_grid_horizontal_distance_m": 660.4439855794284,
+      "distance_3d_from_1_7m_eye_m": 737.3175380077395,
+      "coordinate_derived_wgs84_geodesic_bearing_degrees": 254.3652412901705,
+      "coordinate_derived_bng_grid_bearing_degrees": 255.9572257144704,
+      "status": "DIAGNOSTIC_PROVENANCE_ONLY_NOT_USED_FOR_PRIMARY_ORIENTATION"
+    },
+    "summit_derived_reference_pitch_degrees": 37.38467900309677,
+    "unreal_pitch_degrees_role": "GEOMETRIC_DIAGNOSTIC_REFERENCE_ONLY_NOT_APPLIED_IN_CALIBRATION_MODE",
+    "calibrated_pitch_degrees": null,
+    "recovered_skyline_true_heading_degrees": 253.55,
+    "recovered_skyline_bng_grid_bearing_degrees": 255.1419994775921,
+    "recovered_skyline_unreal_yaw_degrees": 165.1419994775921,
+    "recovered_heading_role": "PHOTOGRAPHIC_CALIBRATION_NOT_MEASURED_SOURCE_METADATA"
+  },
+  "benchmark_series": {
+    "lab_004a": "Tony Edwards geometric-registration benchmark (this file)",
+    "lab_004b": "Visual-quality benchmark not yet selected",
+    "historical": "tryfan-004-benchmark-robert-heath.json"
+  }
+}

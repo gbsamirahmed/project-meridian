@@ -26,6 +26,12 @@ class UnrealLandscapeTests(unittest.TestCase):
         settings.validate()
         self.assertEqual(settings.quads_per_axis, 2016)
 
+    def test_lab004_layout_is_3025_vertices_and_three_kilometres(self) -> None:
+        settings = LandscapeSettings(output_vertices=3025, components_per_axis=24)
+        settings.validate()
+        self.assertEqual(settings.quads_per_axis, 3024)
+        self.assertAlmostEqual(3000.0 / settings.quads_per_axis, 0.9920634920634921)
+
     def test_encoding_round_trip_is_within_half_a_quantization_step(self) -> None:
         settings = LandscapeSettings()
         values = np.linspace(300.46, 989.13, 10000, dtype=np.float64).reshape(100, 100)
@@ -110,7 +116,20 @@ class UnrealLandscapeTests(unittest.TestCase):
             manifest_path = root / "output" / "manifest.json"
             manifest_path.parent.mkdir()
             manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
-            project_file = prepare_project(manifest_path, root / "project")
+            benchmark_path = root / "benchmark.json"
+            benchmark_path.write_text(
+                json.dumps({"benchmark_id": "fixture"}), encoding="utf-8"
+            )
+            overlay_path = root / "photo-overlay.json"
+            overlay_path.write_text(
+                json.dumps({"overlay_id": "fixture"}), encoding="utf-8"
+            )
+            project_file = prepare_project(
+                manifest_path,
+                root / "project",
+                benchmark_path=benchmark_path,
+                photo_overlay_path=overlay_path,
+            )
             self.assertTrue(project_file.exists())
             guide = (root / "project" / "IMPORT.md").read_text(encoding="utf-8")
             self.assertIn("2017 x 2017", guide)
@@ -136,12 +155,68 @@ class UnrealLandscapeTests(unittest.TestCase):
             self.assertIn("Cannot derive Landscape bounds from an empty actor collection", validator)
             self.assertNotIn("No LandscapeStreamingProxy actors are loaded", validator)
             self.assertNotIn("EditorLevelLibrary", validator)
+            observer_path = (
+                root / "project" / "Content" / "Python" / "place_observer.py"
+            )
+            geometry_path = (
+                root / "project" / "Content" / "Python" / "observer_geometry.py"
+            )
+            overlay_script_path = (
+                root / "project" / "Content" / "Python" / "setup_photo_overlay.py"
+            )
+            overlay_helper_path = (
+                root / "project" / "Content" / "Python" / "photo_overlay.py"
+            )
+            restore_camera_path = (
+                root
+                / "project"
+                / "Content"
+                / "Python"
+                / "restore_lab004a_camera.py"
+            )
+            validate_camera_path = (
+                root
+                / "project"
+                / "Content"
+                / "Python"
+                / "validate_lab004a_camera.py"
+            )
+            self.assertTrue(observer_path.exists())
+            self.assertTrue(geometry_path.exists())
+            self.assertTrue(overlay_script_path.exists())
+            self.assertTrue(overlay_helper_path.exists())
+            self.assertTrue(restore_camera_path.exists())
+            self.assertTrue(validate_camera_path.exists())
+            observer = observer_path.read_text(encoding="utf-8")
+            self.assertIn("line_trace_multi", observer)
+            self.assertIn("target_easting", observer)
+            self.assertIn("look_at_orientation", observer)
+            self.assertIn("Meridian_Lab004_Geometric_Camera", observer)
+            self.assertIn("def place_benchmark(", observer)
+            self.assertIn("meridian-benchmark-source.json", observer)
             source = json.loads(
                 (root / "project" / "meridian-landscape-source.json").read_text(
                     encoding="utf-8"
                 )
             )
             self.assertEqual(source["manifest"], str(manifest_path.resolve()))
+            benchmark_pointer = json.loads(
+                (root / "project" / "meridian-benchmark-source.json").read_text(
+                    encoding="utf-8"
+                )
+            )
+            self.assertEqual(benchmark_pointer["benchmark"], str(benchmark_path.resolve()))
+            overlay_pointer = json.loads(
+                (root / "project" / "meridian-photo-overlay-source.json").read_text(
+                    encoding="utf-8"
+                )
+            )
+            self.assertEqual(overlay_pointer["config"], str(overlay_path.resolve()))
+            descriptor = json.loads(project_file.read_text(encoding="utf-8"))
+            self.assertIn(
+                {"Name": "ImagePlate", "Enabled": True},
+                descriptor["Plugins"],
+            )
 
 
 if __name__ == "__main__":

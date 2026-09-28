@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "experiment": "Meridian Earth Laboratory 004B: quantitative photographic alignment",
+  "purpose": "PHOTO_FITTED_DIAGNOSTIC_DOES_NOT_REPLACE_LAB004A",
+  "lab004a": {
+    "configuration": "tryfan-004-photo-overlay.json",
+    "camera_actor_label": "Meridian_Lab004_Geometric_Camera",
+    "immutable_snapshot": {
+      "actor_label": "Meridian_Lab004_Geometric_Camera",
+      "bng": {
+        "easting": 266925.4912174295,
+        "northing": 359594.94947166357
+      },
+      "eye_height_m": 1.7,
+      "location_cm": {
+        "x": 52549.121742951684,
+        "y": -29494.947166356724,
+        "z": -16443.74237411574
+      },
+      "rotation_degrees": {
+        "pitch": 30.3418,
+        "yaw": 165.1419994775921,
+        "roll": 0.0
+      },
+      "applied_true_heading_degrees": 253.55,
+      "horizontal_fov_degrees": 35.2,
+      "aspect_ratio": 1.3333333333333333,
+      "constrain_aspect_ratio": true,
+      "immutable_for_overlay": true
+    }
+  },
+  "inputs": {
+    "reference_image_path_convention": "../meridian-data/earth-lab/tryfan-004/reference/tryfan-tony-edwards-2009.jpg",
+    "landscape_manifest_path_convention": "../meridian-data/earth-lab/tryfan-004/unreal-landscape-v1/unreal-landscape-manifest.json",
+    "surface": "dtm",
+    "expected_r16_sha256": "31cbe763dac4072772ac9bcb4a3217b78eba0c10265e576ede708154288f6bf6"
+  },
+  "fit": {
+    "variables": [
+      "camera_bng_easting",
+      "camera_bng_northing",
+      "centre_true_heading_degrees",
+      "pitch_degrees",
+      "horizontal_fov_degrees"
+    ],
+    "fixed": {
+      "eye_height_m": 1.7,
+      "roll_degrees": 0.0,
+      "aspect_ratio": 1.3333333333333333,
+      "constrain_aspect_ratio": true,
+      "terrain_scale_and_transform": "IMMUTABLE"
+    },
+    "bounds_relative_to_lab004a": {
+      "easting_m": [
+        -20.0,
+        20.0
+      ],
+      "northing_m": [
+        -20.0,
+        20.0
+      ],
+      "heading_degrees": [
+        -2.0,
+        2.0
+      ],
+      "pitch_degrees": [
+        -3.0,
+        3.0
+      ],
+      "horizontal_fov_degrees": [
+        -5.0,
+        5.0
+      ]
+    },
+    "bounds_rationale": {
+      "horizontal_position": "Conservative allowance for a manually supplied Geograph camera marker with no published GPS/EXIF accuracy; the coordinate is not survey-grade.",
+      "heading_pitch_fov": "Small residual-calibration bounds around the independently recovered Lab 004A skyline solution. They prevent a second fit from replacing the photograph with a geographically unrelated view.",
+      "vertical_position": "Not independently fitted because unknown eye height and pitch are strongly confounded for this distant skyline. Eye height remains the explicit Lab 004A 1.70 m assumption and camera Z follows the fitted XY terrain trace.",
+      "roll": "Fixed at zero; the photograph provides no strong evidence of roll and introducing it would absorb skyline errors without geographic meaning."
+    },
+    "coarse_position_step_m": 10.0,
+    "refined_position_step_m": 2.0,
+    "coarse_heading_step_degrees": 0.2,
+    "refined_heading_step_degrees": 0.02,
+    "coarse_fov_step_degrees": 0.4,
+    "refined_fov_step_degrees": 0.05,
+    "horizon_angular_step_degrees": 0.025,
+    "horizon_distance_step_m": 1.0,
+    "cloud_affected_normalized_x": [
+      0.275,
+      0.475
+    ],
+    "cloud_weight_multiplier": 0.2,
+    "objective": "weighted angular RMSE + 10 * weighted skyline-slope RMSE",
+    "classification_thresholds": {
+      "A_tiny_position_delta_m": 5.0,
+      "A_tiny_heading_delta_degrees": 0.5,
+      "A_tiny_pitch_delta_degrees": 0.5,
+      "A_tiny_hfov_delta_degrees": 1.0,
+      "B_plausible_position_delta_m": 20.0
+    }
+  },
+  "output": {
+    "camera_actor_label": "Meridian_Lab004B_PhotoFitted_Camera",
+    "report_path_convention": "../meridian-data/earth-lab/tryfan-004/diagnostics/lab004b-photo-fit/lab004b-photo-fit.json",
+    "generated_outputs_git_policy": "EXTERNAL_ONLY_DO_NOT_COMMIT"
+  },
+  "invariants": [
+    "Lab 004A configuration and camera remain unchanged.",
+    "Landscape geometry, transform, R16, lighting and atmosphere remain unchanged.",
+    "Lab 004B is a diagnostic photo fit and never replaces the geospatial Lab 004A reference.",
+    "No fitted parameter may exceed its configured bound."
+  ]
+}

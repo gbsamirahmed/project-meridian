@@ -43,6 +43,8 @@ class Aoi:
     center_northing: float
     width_m: float
     height_m: float
+    reference_locations: tuple[dict[str, Any], ...] = ()
+    unreal_level_name: str | None = None
 
     @property
     def bounds(self) -> tuple[float, float, float, float]:
@@ -68,9 +70,31 @@ def load_aoi(path: Path) -> Aoi:
         center_northing=float(center["northing"]),
         width_m=float(payload["width_m"]),
         height_m=float(payload["height_m"]),
+        reference_locations=tuple(
+            {
+                "name": str(item["name"]),
+                "easting": float(item["easting"]),
+                "northing": float(item["northing"]),
+            }
+            for item in payload.get("reference_locations", [])
+        ),
+        unreal_level_name=(
+            str(payload["unreal_level_name"])
+            if payload.get("unreal_level_name")
+            else None
+        ),
     )
     if aoi.width_m <= 0 or aoi.height_m <= 0:
         raise ValueError("AOI dimensions must be positive")
+    west, south, east, north = aoi.bounds
+    for reference in aoi.reference_locations:
+        if not (
+            west <= reference["easting"] <= east
+            and south <= reference["northing"] <= north
+        ):
+            raise ValueError(
+                f"Reference location {reference['name']!r} lies outside the AOI"
+            )
     return aoi
 
 

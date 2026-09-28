@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "overlay_id": "tryfan-tony-edwards-2009-photographic-reference",
+  "purpose": "VISUAL_VALIDATION_ONLY",
+  "reference_image": {
+    "path_convention": "../meridian-data/earth-lab/tryfan-004/reference/tryfan-tony-edwards-2009.jpg",
+    "native_width": 640,
+    "native_height": 480,
+    "aspect_ratio": 1.3333333333333333,
+    "source_benchmark": "tryfan-tony-edwards-2009"
+  },
+  "camera": {
+    "actor_label": "Meridian_Lab004_Geometric_Camera",
+    "bng": {
+      "easting": 266925.4912174295,
+      "northing": 359594.94947166357
+    },
+    "eye_height_m": 1.7,
+    "location_cm": {
+      "x": 52549.121742951684,
+      "y": -29494.947166356724,
+      "z": -16443.74237411574
+    },
+    "rotation_degrees": {
+      "pitch": 30.3418,
+      "yaw": 165.1419994775921,
+      "roll": 0
+    },
+    "applied_true_heading_degrees": 253.55,
+    "horizontal_fov_degrees": 35.2,
+    "aspect_ratio": 1.3333333333333333,
+    "constrain_aspect_ratio": true,
+    "immutable_for_overlay": true
+  },
+  "overlay": {
+    "implementation": "Epic ImagePlate attached to the validated CameraComponent",
+    "default_enabled": true,
+    "default_opacity": 0.5,
+    "actor_label": "Meridian_Lab004_Photographic_Reference",
+    "generated_assets_git_policy": "EXTERNAL_UNREAL_PROJECT_ONLY_DO_NOT_COMMIT"
+  },
+  "invariants": [
+    "The overlay must not change camera position, rotation, FOV, aspect ratio or eye height.",
+    "The overlay must not change terrain, Landscape, AOI, lighting, atmosphere or source data.",
+    "The native 640x480 photograph and constrained 4:3 camera frame must agree."
+  ]
+}

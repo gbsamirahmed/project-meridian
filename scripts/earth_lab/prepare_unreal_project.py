@@ -13,6 +13,7 @@ PROJECT_DESCRIPTOR = {
     "Plugins": [
         {"Name": "PythonScriptPlugin", "Enabled": True},
         {"Name": "EditorScriptingUtilities", "Enabled": True},
+        {"Name": "ImagePlate", "Enabled": True},
     ],
 }
 
@@ -20,6 +21,10 @@ PROJECT_DESCRIPTOR = {
 def _import_guide(manifest: dict, manifest_path: Path) -> str:
     landscape = manifest["unreal_landscape"]
     origin = manifest["coordinate_frame"]["local_origin_bng"]
+    level_name = str(
+        manifest.get("suggested_level_name")
+        or manifest.get("aoi_identifier", "Meridian_Earth_Landscape")
+    ).replace("-", "_")
     r16 = manifest["surfaces"]["dtm"]["output"]["files"]["r16"]
     r16_path = (manifest_path.parent / "heightmaps" / r16["path"]).resolve()
     half_width_cm = landscape["expected_world_dimensions_m"][0] * 50.0
@@ -38,10 +43,9 @@ erosion, noise, vertical exaggeration, missing-data fill, or an existing edit la
 
 ## Safest corrective import
 
-1. Open the intended World Partition level. If it contains an invalid Landscape,
-   duplicate/save a backup of the level first, then delete the single logical
-   `Landscape` actor and confirm its streaming proxies are removed. Do not import the
-   DTM into either edit layer of the template Landscape.
+1. Create a clean **Empty Level** for this AOI. If reusing a level, first confirm it
+   contains no Landscape. This procedure creates a new normal Landscape and does not
+   require World Partition.
 2. Enter **Landscape** mode, choose creation/import for a **new Landscape**, and
    select **Import from File**.
 3. Select the canonical R16 above. If Unreal does not detect
@@ -55,14 +59,15 @@ erosion, noise, vertical exaggeration, missing-data fill, or an existing edit la
 6. Set location to `X=-{half_width_cm:.6f}, Y=-{half_height_cm:.6f}, Z=0` cm,
    rotation to `0, 0, 0`, and scale to
    `X={landscape["xy_scale_cm"]:.9f}, Y={landscape["xy_scale_cm"]:.9f}, Z={landscape["z_scale"]:.6f}`.
-7. Import once, save the level as `Tryfan_Lab002`, and do not rescale after import.
+7. Import once, save the level as `{level_name}`, and do not rescale after import.
 
-The location is derived rather than corrected from an observed offset: 2016 quads at
-{landscape["xy_scale_cm"]:.9f} cm span exactly 200000 cm. Placing the first northwest
-vertex at (-100000, -100000) makes the last southeast vertex (+100000, +100000), so
-Unreal (0,0) is BNG E {origin["easting"]}, N {origin["northing"]}. +X is east, +Y is
-south, and encoded midpoint 32768 at actor Z=0 represents {origin["elevation_m_odn"]}
-m ODN.
+The location is derived from the manifest: {landscape["quads_per_axis"]} quads at
+{landscape["xy_scale_cm"]:.9f} cm span exactly
+{landscape["expected_world_dimensions_m"][0] * 100:.6f} cm. Placing the first northwest
+vertex at (-{half_width_cm:.6f}, -{half_height_cm:.6f}) makes the opposite vertex
+(+{half_width_cm:.6f}, +{half_height_cm:.6f}), so Unreal (0,0) is BNG E
+{origin["easting"]}, N {origin["northing"]}. +X is east, +Y is south, and encoded
+midpoint 32768 at actor Z=0 represents {origin["elevation_m_odn"]} m ODN.
 
 ## Acceptance
 
@@ -75,7 +80,12 @@ without modifying the Landscape. Continue only when the overall result is PASS.
 """
 
 
-def prepare_project(manifest_path: Path, project_root: Path) -> Path:
+def prepare_project(
+    manifest_path: Path,
+    project_root: Path,
+    benchmark_path: Path | None = None,
+    photo_overlay_path: Path | None = None,
+) -> Path:
     manifest_path = manifest_path.resolve()
     project_root = project_root.resolve()
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
@@ -95,15 +105,42 @@ def prepare_project(manifest_path: Path, project_root: Path) -> Path:
         json.dumps({"manifest": str(manifest_path)}, indent=2) + "\n",
         encoding="utf-8",
     )
+    if benchmark_path is not None:
+        benchmark_path = benchmark_path.resolve()
+        json.loads(benchmark_path.read_text(encoding="utf-8"))
+        (project_root / "meridian-benchmark-source.json").write_text(
+            json.dumps({"benchmark": str(benchmark_path)}, indent=2) + "\n",
+            encoding="utf-8",
+        )
+    if photo_overlay_path is not None:
+        photo_overlay_path = photo_overlay_path.resolve()
+        json.loads(photo_overlay_path.read_text(encoding="utf-8"))
+        (project_root / "meridian-photo-overlay-source.json").write_text(
+            json.dumps({"config": str(photo_overlay_path)}, indent=2) + "\n",
+            encoding="utf-8",
+        )
     (project_root / "Config" / "DefaultEngine.ini").write_text(
         "[/Script/EngineSettings.GeneralProjectSettings]\n"
         "ProjectName=Meridian Earth Laboratory\n",
         encoding="utf-8",
     )
-    validator_source = Path(__file__).with_name("unreal_validate_landscape.py")
-    (python_root / "validate_landscape.py").write_text(
-        validator_source.read_text(encoding="utf-8"), encoding="utf-8"
-    )
+    python_sources = {
+        "validate_landscape.py": Path(__file__).with_name("unreal_validate_landscape.py"),
+        "place_observer.py": Path(__file__).with_name("unreal_place_observer.py"),
+        "observer_geometry.py": Path(__file__).with_name("observer_geometry.py"),
+        "photo_overlay.py": Path(__file__).with_name("photo_overlay.py"),
+        "setup_photo_overlay.py": Path(__file__).with_name("unreal_photo_overlay.py"),
+        "restore_lab004a_camera.py": Path(__file__).with_name(
+            "unreal_restore_camera.py"
+        ),
+        "validate_lab004a_camera.py": Path(__file__).with_name(
+            "unreal_validate_camera.py"
+        ),
+    }
+    for target_name, source_path in python_sources.items():
+        (python_root / target_name).write_text(
+            source_path.read_text(encoding="utf-8"), encoding="utf-8"
+        )
     (project_root / "IMPORT.md").write_text(
         _import_guide(manifest, manifest_path), encoding="utf-8"
     )
@@ -116,8 +153,17 @@ def main() -> None:
     )
     parser.add_argument("--manifest", type=Path, required=True)
     parser.add_argument("--project-root", type=Path, required=True)
+    parser.add_argument("--benchmark", type=Path)
+    parser.add_argument("--photo-overlay", type=Path)
     arguments = parser.parse_args()
-    print(prepare_project(arguments.manifest, arguments.project_root))
+    print(
+        prepare_project(
+            arguments.manifest,
+            arguments.project_root,
+            benchmark_path=arguments.benchmark,
+            photo_overlay_path=arguments.photo_overlay,
+        )
+    )
 
 
 if __name__ == "__main__":

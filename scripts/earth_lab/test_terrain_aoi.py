@@ -26,6 +26,17 @@ class TerrainAoiTests(unittest.TestCase):
         self.assertEqual(profile["transform"].a, 1.0)
         self.assertEqual(profile["transform"].e, -1.0)
 
+    def test_lab004_aoi_bounds_and_reference_locations(self) -> None:
+        from terrain_aoi import load_aoi
+
+        config = Path(__file__).with_name("aois") / "tryfan-004.json"
+        aoi = load_aoi(config)
+        self.assertEqual(aoi.bounds, (264900.0, 357800.0, 267900.0, 360800.0))
+        self.assertEqual((aoi.width_m, aoi.height_m), (3000.0, 3000.0))
+        self.assertEqual(len(aoi.reference_locations), 3)
+        profile = output_profile(aoi)
+        self.assertEqual((profile["width"], profile["height"]), (3000, 3000))
+
     def test_source_selection_prefers_resolution_then_newer_date(self) -> None:
         historic = [
             {

@@ -21,12 +21,28 @@ Z_SCALE_TOLERANCE = 0.001
 DIMENSION_TOLERANCE_M = 0.02
 LOCATION_TOLERANCE_CM = 0.1
 HEIGHT_TOLERANCE_CM = 5.0
-REFERENCE_LOCATIONS_BNG = [
+LAB002_REFERENCE_LOCATIONS_BNG = [
     {"name": "aoi_centre", "easting": 266400.0, "northing": 359300.0, "source_context_m_odn": 877.73},
     {"name": "tryfan_summit_reference", "easting": 266405.0, "northing": 359387.0, "source_context_m_odn": 913.66},
     {"name": "nearby_tryfan_dtm_peak", "easting": 266401.5, "northing": 359386.5, "source_context_m_odn": 915.44},
     {"name": "aoi_high_point", "easting": 265652.5, "northing": 358300.5, "source_context_m_odn": 987.89},
 ]
+
+
+def _reference_locations(manifest: dict[str, Any]) -> list[dict[str, Any]]:
+    configured = manifest.get("validation", {}).get("reference_locations_bng")
+    if configured:
+        return [dict(item) for item in configured]
+    if [float(value) for value in manifest["source_aoi_bounds"]] == [
+        265400.0, 358300.0, 267400.0, 360300.0
+    ]:
+        return [dict(item) for item in LAB002_REFERENCE_LOCATIONS_BNG]
+    origin = manifest["coordinate_frame"]["local_origin_bng"]
+    return [{
+        "name": "aoi_centre",
+        "easting": float(origin["easting"]),
+        "northing": float(origin["northing"]),
+    }]
 
 
 def _vector(value: unreal.Vector) -> list[float]:
@@ -193,7 +209,7 @@ def _reference_height_samples(
         return origin_elevation + (encoded - 32768) / 128.0 * z_scale / 100.0
 
     samples: list[dict[str, Any]] = []
-    for reference in REFERENCE_LOCATIONS_BNG:
+    for reference in _reference_locations(manifest):
         pixel_x = (reference["easting"] - west) / (east - west) * (width - 1)
         pixel_y = (north - reference["northing"]) / (north - south) * (height - 1)
         x0 = max(0, min(width - 1, int(math.floor(pixel_x))))
@@ -571,7 +587,7 @@ def main() -> dict[str, Any]:
     if abs(translation[2]) <= LOCATION_TOLERANCE_CM:
         validation.add(
             "PASS", "vertical_local_origin",
-            "Encoded midpoint 32768 maps to Unreal Z=0, compatible with 650 m ODN metadata.",
+            "Encoded midpoint 32768 maps to Unreal Z=0, compatible with the manifest ODN datum.",
             0.0, translation[2], translation[2],
         )
     else:
@@ -665,7 +681,7 @@ def main() -> dict[str, Any]:
 
     validation.add(
         "UNVERIFIED", "absolute_odn_verification",
-        "Unreal stores relative heights. Absolute ODN is established only by combining the interrogated Landscape height, encoding manifest, local-zero convention and actor transform; Unreal state alone cannot prove the 650 m ODN datum.",
+        "Unreal stores relative heights. Absolute ODN is established only by combining the interrogated Landscape height, encoding manifest, local-zero convention and actor transform; Unreal state alone cannot prove the manifest ODN datum.",
         observed={
             "manifest_vertical_origin_m_odn": manifest["height_encoding"]["vertical_origin_m_odn"],
             "actor_translation_z_cm": translation[2],
