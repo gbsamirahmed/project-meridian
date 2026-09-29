@@ -2006,3 +2006,19 @@ removed concrete locations. The external authoritative publication remained 40,8
 now contains only the complete `20260907T12Z` and `20260907T18Z` runs plus `latest.json`,
 with the same aggregate count and size. These complete copies remain deliberately as
 rollback state until Phase 4G; Phase 4G has not begun.
+
+
+## 2026-09-29 — Meridian Phase 4G legacy GFS retirement
+
+Independently revalidated external authoritative GFS storage before retiring the final
+in-repository rollback copy. Both complete external runs passed the full ten-field,
+24-timestep semantic and PNG validator. External and legacy relative path/size inventories
+matched exactly; `latest.json` and all twenty run manifests matched by SHA-256. Vite
+development served the external catalogue, manifest and representative tile byte-for-byte,
+and the established generation and production paths resolved external storage.
+
+After confirming non-overlapping roots, explicit containment, exact inventory and absence
+of reparse points, removed `20260907T12Z`, `20260907T18Z`, `latest.json` and then the
+empty `public/weather/gfs` directory: 40,841 files / 1,268,050,554 bytes. The
+`public/weather` parent remains. The external authoritative estate was not modified.
+No other migrated old-copy category was removed, and no later phase has begun.

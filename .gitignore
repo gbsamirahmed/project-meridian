@@ -19,13 +19,6 @@ dist-ssr
 __pycache__/
 *.py[cod]
 
-# Locally generated GFS run assets and mutable publication pointer
-/public/weather/gfs/[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]T[0-9][0-9]Z/
-/public/weather/gfs/[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]T[0-9][0-9]Z-fields-*/
-/public/weather/gfs/.[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]T[0-9][0-9]Z-building/
-/public/weather/gfs/.[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]T[0-9][0-9]Z-*-building/
-/public/weather/gfs/latest.json
-
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -36,9 +29,6 @@ __pycache__/
 *.njsproj
 *.sln
 *.sw?
-
-# Local automatic weather updater lock
-/public/weather/gfs/.updater.lock
 
 # Generated visual-browser artifacts
 /test-results/

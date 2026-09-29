@@ -517,6 +517,8 @@ inventory. Those complete rollback copies remain subject to the Phase 4G gate.
 
 ### Phase 4G — final validation and removal of superseded copies
 
+**Status: GFS rollback category independently validated and retired; no other category removed.**
+
 **Reasoning:** maximum.
 
 **Scope**
@@ -539,6 +541,16 @@ old physical copies one bounded category at a time.
 The old external TryfanLab004 project and credential-bearing legacy config require an
 explicit final decision. The pre-restructure backup remains untouched even after
 active-copy cleanup.
+
+**Implemented GFS retirement**
+
+The external current and previous runs passed the full ten-field, 24-timestep PNG validator.
+Their exact relative path/size inventory matched the legacy rollback copy; `latest.json`
+and all twenty run manifests matched by SHA-256. Development HTTP serving, direct
+publication validation and a production build consumed external storage. After explicit
+root-separation, containment and reparse-point checks, Phase 4G removed the three named
+legacy payload entries and then the empty `public/weather/gfs` root: 40,841 files /
+1,268,050,554 bytes. `public/weather` remains. No other old-copy category was removed.
 
 ## Comparison standards
 
@@ -564,10 +576,8 @@ data.
 - **Resolved in Phase 4C:** the Lab 009 packer remains integrated with the historical
   implementation. Packed PNGs are renderer-specific and were not promoted; the renderer
   continues using frozen hash-verified inputs until a separate integration phase.
-- Choose the local GFS publication-adapter implementation after a temporary proof:
-  junction/symlink with strict target checks is preferred over duplicating 1.2 GiB,
-  but build/deployment behaviour must be verified on Windows.
-- Set retention durations for optional historical GFS benchmark runs. Default remains
-  rolling current plus previous.
-- Phase 4D is complete and remains uncommitted for review. Do not begin Phase 4E
-  until the private-data checkpoint is approved.
+- **Resolved in Phases 4E-4G:** guarded Vite middleware serves external authoritative
+  GFS data in development, production builds materialize only the selected run, and the
+  superseded in-repository rollback copy has been retired.
+- Retention remains rolling current plus previous unless a later operational Weather
+  policy explicitly changes it.

@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "phase": "4G",
+  "title": "Final retirement of legacy in-repository GFS rollback storage",
+  "scope": "Remove only the validated legacy rollback copy at [REPO]/public/weather/gfs after independently proving the external authoritative publication and all active consumers.",
+  "legacy_root": "[REPO]/public/weather/gfs",
+  "authoritative_root": "[DATA]/derived/weather/gfs",
+  "pre_deletion_inventory": {
+    "files": 40841,
+    "bytes": 1268050554,
+    "top_level_entries": [
+      "20260907T12Z",
+      "20260907T18Z",
+      "latest.json"
+    ]
+  },
+  "authoritative_evidence": {
+    "files": 40841,
+    "bytes": 1268050554,
+    "current_run": "20260907T18Z",
+    "fields": 10,
+    "timesteps": 24,
+    "latest_sha256": "84878adcacf13463e9c2a5ffd76b6f1a934b3da654ad7f6421fb70ec3b8d0b92",
+    "phase_4e_validation_report_sha256": "b0e50edbff5dd2fadd914ca34b5564b20c7b8ce7387be7627a610e005c81eade",
+    "exact_relative_path_and_size_inventory_matches_legacy": true,
+    "current_and_previous_manifest_sha256_matches": "20/20",
+    "semantic_full_run_validation": "2/2 runs; ten fields; 24 timesteps; complete PNG verification"
+  },
+  "active_dependency_evidence": {
+    "generation": "The Python builder resolves MERIDIAN_DATA_ROOT/derived/weather/gfs.",
+    "development": "The guarded Vite middleware served external latest.json, the current manifest and a representative numeric tile byte-for-byte.",
+    "production": "The Vite build excludes public/weather/gfs and materializes the catalogue-selected external run into dist.",
+    "validation": "The direct publication check and full semantic run validator use external authoritative storage.",
+    "remaining_tracked_legacy_path_references": "Historical/current documentation only; obsolete legacy ignore rules were removed and no active consumer requires the physical path."
+  },
+  "recovery_evidence": {
+    "external_authoritative_store": "Validated current and previous complete runs plus latest.json remain available.",
+    "deterministic_rebuild": "Repository generation tooling and NOAA source identity remain documented.",
+    "phase_4e_validation_inventory": "External file-level validation inventory remains outside Git with its tracked SHA-256.",
+    "same_device_duplicate_limitation": "The legacy copy is not independent device-loss protection.",
+    "phase_1_backup_critical_pairs": "27/27 matched",
+    "frozen_lab_identities": "6/6 matched across original and historical roots",
+    "renderer_external_inputs": "7/7 matched",
+    "canonical_map_sha256": "85ef8f1cc9a9fda9b6f2ab3b911bd57831fe75c4009e5ad168ea4956165a260d"
+  },
+  "removal_paths": [
+    {
+      "path": "20260907T12Z",
+      "classification": "superseded_legacy_rollback_copy",
+      "files": 20420,
+      "bytes": 634268902
+    },
+    {
+      "path": "20260907T18Z",
+      "classification": "superseded_legacy_rollback_copy",
+      "files": 20420,
+      "bytes": 633778893
+    },
+    {
+      "path": "latest.json",
+      "classification": "superseded_legacy_publication_pointer",
+      "files": 1,
+      "bytes": 2759
+    },
+    {
+      "path": ".",
+      "classification": "empty_legacy_publication_root_after_child_removal",
+      "files": 0,
+      "bytes": 0
+    }
+  ],
+  "removal_total": {
+    "payload_paths": 3,
+    "files": 40841,
+    "bytes": 1268050554
+  },
+  "deletion_safety": {
+    "explicit_child_paths_only": true,
+    "wildcards_used_for_deletion": false,
+    "resolved_path_containment_required": true,
+    "reparse_points_allowed": false,
+    "legacy_and_authoritative_roots_must_not_overlap": true,
+    "authoritative_external_data_modified": false,
+    "repository_public_weather_parent_removed": false
+  },
+  "expected_post_deletion_state": {
+    "legacy_root_exists": false,
+    "legacy_files": 0,
+    "legacy_bytes": 0,
+    "authoritative_files": 40841,
+    "authoritative_bytes": 1268050554
+  },
+  "human_approval": "The Phase 4G request explicitly names public/weather/gfs as the legacy estate to retire after validation.",
+  "status": "COMPLETED",
+  "observed_post_deletion_state": {
+    "legacy_root_exists": false,
+    "legacy_files": 0,
+    "legacy_bytes": 0,
+    "public_weather_parent_exists": true,
+    "authoritative_files": 40841,
+    "authoritative_bytes": 1268050554,
+    "authoritative_latest_sha256": "84878adcacf13463e9c2a5ffd76b6f1a934b3da654ad7f6421fb70ec3b8d0b92"
+  },
+  "completed_at_utc": "2026-09-29T21:24:23.6107668Z",
+  "post_deletion_validation": {
+    "legacy_root_absent": true,
+    "public_weather_parent_present": true,
+    "authoritative_inventory": "40841 files / 1268050554 bytes",
+    "authoritative_latest_sha256": "84878adcacf13463e9c2a5ffd76b6f1a934b3da654ad7f6421fb70ec3b8d0b92",
+    "direct_publication": "10 fields / 24 timesteps / current run 20260907T18Z",
+    "publication_adapter_tests": "5/5 passed",
+    "storage_root_tests": "15/15 passed",
+    "typescript": "passed",
+    "eslint": "passed",
+    "vite_build": "passed",
+    "development_http_smoke": "3/3 byte-identical responses",
+    "production_publication": "20421 files / 633781652 bytes; current run only",
+    "production_hash_checks": "latest.json, 10/10 manifests and representative numeric tile matched external storage"
+  }
+}

@@ -4,7 +4,7 @@
 
 The provider-neutral architecture serves locally generated global NOAA GFS fields, not a production feed. Meridian resolves the latest verified usable 0.25° run, generates 24 hourly steps for ten fields, validates one coherent immutable run, and atomically publishes it behind `latest.json`. The client loads these fields through manifest clients, a bounded shared tile cache, geographic samplers, and persistent MapLibre renderers. Open-Meteo remains the active source only for selected-location current conditions and point forecasts. Continuous local updating and bounded retention are implemented; production scheduling, hosting, monitoring, and long-term model selection remain deployment/product decisions.
 
-Authoritative generated runs now live outside Git at `MERIDIAN_DATA_ROOT/derived/weather/gfs`. Vite's guarded publication adapter exposes only `latest.json` and its catalogue-selected immutable run at `/weather/gfs`; a production build materializes the same bounded view into `dist`. Phase 4F removed stale source-building caches, an incomplete inspection cache and the obsolete lock from the ignored legacy tree. Its two complete runs and `latest.json` remain as rollback state until the Phase 4G deletion gate. A clean checkout remains runnable and reports missing GFS fields as unavailable; it does not silently change field ownership.
+Authoritative generated runs now live outside Git at `MERIDIAN_DATA_ROOT/derived/weather/gfs`. Vite's guarded publication adapter exposes only `latest.json` and its catalogue-selected immutable run at `/weather/gfs`; a production build materializes the same bounded view into `dist`. Phase 4G retired the validated in-repository rollback copy, so `public/weather/gfs` no longer exists or owns Weather state. A clean checkout remains runnable and reports missing GFS fields as unavailable; it does not silently change field ownership.
 
 ## Why regional map fields were replaced
 
@@ -156,9 +156,9 @@ storage-root contract. `npm run weather:publication:check` validates the externa
 catalogue. During development, Vite intercepts only `/weather/gfs/...` and serves
 `latest.json` plus the single immutable run it names; attempts to escape that bounded
 subtree fail. Production builds copy that same bounded publication into `dist` while
-leaving the authoritative root and previous retained run external. The ignored legacy
-`public/weather/gfs` directory now contains only the two complete validated runs and
-`latest.json`; it is rollback state and is not read by active tooling.
+leaving the authoritative root and previous retained run external. Phase 4G removed the
+superseded `public/weather/gfs` rollback directory after independent development, build,
+semantic and recovery validation.
 
 The current workflow generates surface `APCP`, instantaneous entire-atmosphere `TCDC`, instantaneous earth-relative 10 m `UGRD`/`VGRD`, and instantaneous 2 m `TMP` for forecast hours +1 through +24. The updater fetches each forecast inventory once, tests recent cycles newest-first, and accepts a candidate only if every required precipitation interval and exact cloud/vector/temperature record is usable. GRIB packing noise below 0.1 mm may be clamped only for precipitation after larger negative differences are rejected.
 
