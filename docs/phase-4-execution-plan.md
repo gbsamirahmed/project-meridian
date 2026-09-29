@@ -469,6 +469,8 @@ None.
 
 ### Phase 4F — cache, scratch and generated-state disposition
 
+**Status: GFS generated/cache subset disposed; complete publication rollback retained for Phase 4G.**
+
 **Reasoning:** medium, with high caution for path verification.
 
 **Scope**
@@ -501,6 +503,17 @@ location.
 **Expected Git changes**
 
 Ignore rules and documentation only where gaps exist.
+
+**Implemented GFS disposition**
+
+After verifying the external authoritative publication and proving no active consumer used
+the legacy candidates, Phase 4F removed eleven stale atmospheric source-building caches,
+the incomplete `20260902T18Z` atmospheric inspection cache and the obsolete legacy updater
+lock. The operation named and containment-checked all thirteen paths individually; it did
+not use wildcard deletion or follow reparse points. The removed set was 1,442 files /
+1,323,070,868 bytes. The legacy tree now contains only the two complete validated runs and
+`latest.json` (40,841 files / 1,268,050,554 bytes), matching the external aggregate by
+inventory. Those complete rollback copies remain subject to the Phase 4G gate.
 
 ### Phase 4G — final validation and removal of superseded copies
 

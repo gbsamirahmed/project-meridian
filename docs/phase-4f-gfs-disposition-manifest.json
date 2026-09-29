@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "phase": "4F",
+  "title": "Legacy GFS cache and generated-state disposition",
+  "scope": "Remove only positively identified stale/reacquirable cache, incomplete generated state and a transient lock from the legacy ignored publication tree.",
+  "source_root": "[REPO]/public/weather/gfs",
+  "authoritative_root": "[DATA]/derived/weather/gfs",
+  "governing_boundary": "The two complete legacy runs and latest.json remain as rollback copies until the Phase 4G removal gate.",
+  "pre_deletion_inventory": {
+    "files": 42283,
+    "bytes": 2591121422
+  },
+  "authoritative_evidence": {
+    "files": 40841,
+    "bytes": 1268050554,
+    "latest_sha256": "84878adcacf13463e9c2a5ffd76b6f1a934b3da654ad7f6421fb70ec3b8d0b92",
+    "phase_4e_validation_report_sha256": "b0e50edbff5dd2fadd914ca34b5564b20c7b8ce7387be7627a610e005c81eade",
+    "publication_check": {
+      "run": "20260907T18Z",
+      "fields": 10,
+      "timesteps": 24
+    }
+  },
+  "dependency_evidence": {
+    "active_legacy_publication_dependency": false,
+    "builder_authoritative_root": "[DATA]/derived/weather/gfs",
+    "development_publication": "Guarded Vite middleware reads the authoritative external catalogue-selected run.",
+    "production_publication": "Vite materializes the authoritative catalogue-selected run into ignored dist output.",
+    "concrete_candidate_references": "No active runtime, build, development, validation, publication or recovery reference requires the listed legacy paths. Generic cache-building code may recreate equivalent caches under the configured external output root."
+  },
+  "removal_candidates": [
+    {
+      "path": ".20260903T12Z-atmospheric-source-building",
+      "classification": "stale_reacquirable_source_cache",
+      "files": 120,
+      "bytes": 110149236
+    },
+    {
+      "path": ".20260904T12Z-atmospheric-source-building",
+      "classification": "stale_reacquirable_source_cache",
+      "files": 120,
+      "bytes": 110192735
+    },
+    {
+      "path": ".20260905T18Z-atmospheric-source-building",
+      "classification": "stale_reacquirable_source_cache",
+      "files": 120,
+      "bytes": 109676833
+    },
+    {
+      "path": ".20260906T00Z-atmospheric-source-building",
+      "classification": "stale_reacquirable_source_cache",
+      "files": 120,
+      "bytes": 109587205
+    },
+    {
+      "path": ".20260906T06Z-atmospheric-source-building",
+      "classification": "stale_reacquirable_source_cache",
+      "files": 120,
+      "bytes": 109805323
+    },
+    {
+      "path": ".20260906T12Z-atmospheric-source-building",
+      "classification": "stale_reacquirable_source_cache",
+      "files": 120,
+      "bytes": 109859347
+    },
+    {
+      "path": ".20260906T18Z-atmospheric-source-building",
+      "classification": "stale_reacquirable_source_cache",
+      "files": 120,
+      "bytes": 110278256
+    },
+    {
+      "path": ".20260907T00Z-atmospheric-source-building",
+      "classification": "stale_reacquirable_source_cache",
+      "files": 120,
+      "bytes": 110605059
+    },
+    {
+      "path": ".20260907T06Z-atmospheric-source-building",
+      "classification": "stale_reacquirable_source_cache",
+      "files": 120,
+      "bytes": 110675360
+    },
+    {
+      "path": ".20260907T12Z-atmospheric-source-building",
+      "classification": "stale_reacquirable_source_cache",
+      "files": 120,
+      "bytes": 110748888
+    },
+    {
+      "path": ".20260907T18Z-atmospheric-source-building",
+      "classification": "stale_reacquirable_source_cache",
+      "files": 120,
+      "bytes": 110960177
+    },
+    {
+      "path": "20260902T18Z",
+      "classification": "incomplete_reacquirable_atmospheric_inspection_cache",
+      "files": 121,
+      "bytes": 110532448,
+      "contents": "120 indexed GRIB2 source slices and one inspection.json; no complete publication manifests or numeric tile hierarchy."
+    },
+    {
+      "path": ".updater.lock",
+      "classification": "transient_legacy_runtime_lock",
+      "files": 1,
+      "bytes": 1
+    }
+  ],
+  "removal_total": {
+    "paths": 13,
+    "files": 1442,
+    "bytes": 1323070868
+  },
+  "retained_legacy_rollback": [
+    {
+      "path": "20260907T12Z",
+      "files": 20420,
+      "bytes": 634268902,
+      "reason": "Previous complete validated run; migrated rollback copy remains until Phase 4G."
+    },
+    {
+      "path": "20260907T18Z",
+      "files": 20420,
+      "bytes": 633778893,
+      "reason": "Current complete validated run; migrated rollback copy remains until Phase 4G."
+    },
+    {
+      "path": "latest.json",
+      "files": 1,
+      "bytes": 2759,
+      "reason": "Legacy publication pointer retained with the complete rollback runs until Phase 4G."
+    }
+  ],
+  "expected_post_deletion_inventory": {
+    "files": 40841,
+    "bytes": 1268050554
+  },
+  "deletion_safety": {
+    "explicit_paths_only": true,
+    "wildcards_used_for_deletion": false,
+    "resolved_path_containment_required": true,
+    "reparse_points_allowed": false,
+    "authoritative_external_data_modified": false,
+    "phase_4g_rollback_copy_removed": false
+  },
+  "status": "COMPLETED",
+  "observed_post_deletion_inventory": {
+    "files": 40841,
+    "bytes": 1268050554,
+    "top_level_entries": [
+      "20260907T12Z",
+      "20260907T18Z",
+      "latest.json"
+    ]
+  },
+  "completed_at_utc": "2026-09-29T21:03:09.8066236Z"
+}

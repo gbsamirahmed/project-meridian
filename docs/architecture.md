@@ -156,7 +156,9 @@ and `derived/atlas`. Phase 4D has created the separate private root and copied p
 Traverse source, benchmark, experiment and cache data into it. Phase 4E has copied the
 current and previous complete GFS runs into `derived/weather/gfs`; generation now targets
 that authoritative external root while Vite retains the `/weather/gfs` browser contract.
-The original trees remain until the Phase 4G deletion gate:
+Phase 4F has removed only stale/reacquirable GFS source caches, one incomplete inspection
+cache and the obsolete legacy updater lock. The complete legacy publication rollback copy
+and the other migrated original trees remain until the Phase 4G deletion gate:
 
 ```text
 Projects/

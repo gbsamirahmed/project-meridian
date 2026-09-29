@@ -1991,3 +1991,18 @@ but not promoted or deleted. The original 42,283-file / 2,591,121,422-byte
 `public/weather/gfs` estate remains unchanged as rollback state until Phase 4G. Private
 Traverse, Atlas, historical experiments, the reference renderer and the Phase 1 backup
 were not part of this migration. Phase 4F has not begun.
+
+## 2026-09-29 — Meridian Phase 4F legacy GFS cache disposition
+
+Disposed only the legacy GFS material classified as generated, incomplete or reacquirable.
+The explicit removal set comprised eleven stale atmospheric source-building directories,
+the incomplete `20260902T18Z` atmospheric inspection cache and the obsolete one-byte legacy
+updater lock: 1,442 files / 1,323,070,868 bytes in total. Every path was inventoried,
+resolved beneath `public/weather/gfs`, checked for reparse points and removed individually.
+
+No active runtime, development, build, test, publication or recovery path referenced the
+removed concrete locations. The external authoritative publication remained 40,841 files /
+1,268,050,554 bytes with the validated catalogue selecting `20260907T18Z`. The legacy tree
+now contains only the complete `20260907T12Z` and `20260907T18Z` runs plus `latest.json`,
+with the same aggregate count and size. These complete copies remain deliberately as
+rollback state until Phase 4G; Phase 4G has not begun.
