@@ -1,6 +1,6 @@
 # Phase 4 filesystem migration execution plan
 
-**Status: PHASE 4C COPIED AND VALIDATED — all old data retained; Phase 4D has not begun.**
+**Status: PHASE 4D COPIED AND VALIDATED — all old data retained; Phase 4E has not begun.**
 
 This plan refines the [Phase 4 migration inventory](phase-4-migration-inventory.md)
 using read-only inspection performed in Phase 4A. A later task must execute only one
@@ -352,6 +352,14 @@ bootstrap, renderer package, LFS map, frozen config or scientific implementation
 
 ### Phase 4D — private Traverse data
 
+**Status: COPIED AND VALIDATED; REVIEW PENDING. No old copy has been removed.**
+
+The privacy-safe aggregate selection and validation result are recorded in
+[`phase-4d-private-migration-manifest.json`](phase-4d-private-migration-manifest.json).
+The private copy contains 3,005 payload files / 360,462,077 bytes. A detailed private
+inventory remains outside Git under `[PRIVATE]/traverse` and has SHA-256
+`ec92b799b1e59da7ab955e5805983ec652c57f6b0581f88a3d658bc7885b66cc`.
+
 **Reasoning:** high because data is private and partly irreplaceable.
 
 **Scope**
@@ -368,8 +376,9 @@ PRIV-STRAVA, PRIV-ROUTES, PRIV-ACTIVITY, PRIV-TERRAIN and private caches.
 
 **References**
 
-Update private run instructions and callers to use explicit `[PRIVATE]` paths or the
-root resolver. No browser/environment bundle exposure.
+The activity and terrain runners already accept explicit roots, so no implementation
+change was required. Future invocations use `[PRIVATE]` paths or the root resolver. No
+browser/environment bundle exposure was introduced.
 
 **Validation**
 
@@ -379,7 +388,8 @@ activity and terrain synthetic tests and read-only report checks.
 
 **Rollback**
 
-Remove only the incomplete new private destination. Never modify source exports.
+Before checkpointing, remove only an incomplete new private destination after review.
+After validation, retain both copies until Phase 4G. Never modify source exports.
 
 **Deletion gate**
 
@@ -388,7 +398,8 @@ private paths/data entered Git or `[DATA]`, and backup remains available.
 
 **Expected Git changes**
 
-Root-aware command examples/tests only. No private manifest or payload in Git.
+Privacy-safe aggregate manifest and current architecture/migration documentation only.
+No detailed private inventory or payload in Git.
 
 **Unreal**
 
@@ -534,5 +545,5 @@ data.
   but build/deployment behaviour must be verified on Windows.
 - Set retention durations for optional historical GFS benchmark runs. Default remains
   rolling current plus previous.
-- Phase 4C is complete and remains uncommitted for review. Do not begin Phase 4D
-  until the promoted source/derived checkpoint is approved.
+- Phase 4D is complete and remains uncommitted for review. Do not begin Phase 4E
+  until the private-data checkpoint is approved.

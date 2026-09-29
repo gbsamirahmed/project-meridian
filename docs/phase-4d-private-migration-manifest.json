@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "phase": "4D",
+  "status": "COPIED_VALIDATED_REVIEW_PENDING",
+  "governing_rule": "COPY -> UPDATE ACTIVE REFERENCES -> VALIDATE -> COMPARE -> REVIEW -> REMOVE OLD COPIES ONLY IN PHASE 4G",
+  "privacy": {
+    "classification": "private Traverse data",
+    "payload_or_file_names_allowed_in_git": false,
+    "private_coordinates_allowed_in_git": false,
+    "account_identifiers_allowed_in_git": false,
+    "detailed_inventory_location": "${MERIDIAN_PRIVATE_ROOT}/traverse/phase-4d-validation-private.json"
+  },
+  "roots": {
+    "source": "${MERIDIAN_DATA_ROOT}",
+    "destination": "${MERIDIAN_PRIVATE_ROOT}/traverse",
+    "requirements": [
+      "The data and private roots are absolute, non-overlapping and outside the Git repository.",
+      "The private destination must not exist before the authorised Phase 4D copy.",
+      "All source estates remain unchanged as rollback copies until Phase 4G."
+    ]
+  },
+  "datasets": [
+    {
+      "id": "PRIV-STRAVA",
+      "classification": "private source export",
+      "source": "${MERIDIAN_DATA_ROOT}/strava-export",
+      "destination": "${MERIDIAN_PRIVATE_ROOT}/traverse/sources/strava-export",
+      "source_files": 341,
+      "source_bytes": 34779474,
+      "copy_files": 341,
+      "copy_bytes": 34779474,
+      "validation": "Complete relative inventory, byte count and SHA-256 comparison",
+      "status": "COPIED_VALIDATED"
+    },
+    {
+      "id": "PRIV-ROUTES",
+      "classification": "private route benchmark sources",
+      "source": "${MERIDIAN_DATA_ROOT}/route-benchmarks/gpx",
+      "destination": "${MERIDIAN_PRIVATE_ROOT}/traverse/benchmarks/routes",
+      "source_files": 11,
+      "source_bytes": 2212283,
+      "copy_files": 11,
+      "copy_bytes": 2212283,
+      "validation": "Complete relative inventory, byte count and SHA-256 comparison",
+      "status": "COPIED_VALIDATED"
+    },
+    {
+      "id": "PRIV-ACTIVITY",
+      "classification": "private research experiment outputs",
+      "source": "${MERIDIAN_DATA_ROOT}/activity-research excluding separable dem-cache directories",
+      "destination": "${MERIDIAN_PRIVATE_ROOT}/traverse/experiments/activity-research",
+      "source_files": 18,
+      "source_bytes": 1754452,
+      "copy_files": 18,
+      "copy_bytes": 1754452,
+      "validation": "Complete relative inventory, byte count and SHA-256 comparison",
+      "status": "COPIED_VALIDATED"
+    },
+    {
+      "id": "PRIV-ACTIVITY-CACHE",
+      "classification": "private reacquirable DEM cache",
+      "source": "${MERIDIAN_DATA_ROOT}/activity-research dem-cache directories",
+      "destination": "${MERIDIAN_PRIVATE_ROOT}/traverse/cache/activity-research preserving source-relative cache paths",
+      "source_files": 2250,
+      "source_bytes": 155548278,
+      "copy_files": 2250,
+      "copy_bytes": 155548278,
+      "validation": "Complete relative inventory, byte count and SHA-256 comparison",
+      "status": "COPIED_VALIDATED"
+    },
+    {
+      "id": "PRIV-TERRAIN",
+      "classification": "private route-conditioned research experiment outputs",
+      "source": "${MERIDIAN_DATA_ROOT}/terrain-research excluding separable cache directories",
+      "destination": "${MERIDIAN_PRIVATE_ROOT}/traverse/experiments/terrain-research",
+      "source_files": 24,
+      "source_bytes": 4361914,
+      "copy_files": 24,
+      "copy_bytes": 4361914,
+      "validation": "Complete relative inventory, byte count and SHA-256 comparison",
+      "status": "COPIED_VALIDATED"
+    },
+    {
+      "id": "PRIV-TERRAIN-CACHE",
+      "classification": "private route-conditioned reacquirable terrain cache",
+      "source": "${MERIDIAN_DATA_ROOT}/terrain-research cache directories",
+      "destination": "${MERIDIAN_PRIVATE_ROOT}/traverse/cache/terrain-research preserving source-relative cache paths",
+      "source_files": 361,
+      "source_bytes": 161805676,
+      "copy_files": 361,
+      "copy_bytes": 161805676,
+      "validation": "Complete relative inventory, byte count and SHA-256 comparison",
+      "status": "COPIED_VALIDATED"
+    }
+  ],
+  "expected_copy": {
+    "datasets": 6,
+    "files": 3005,
+    "bytes": 360462077,
+    "excluded_files": 0,
+    "excluded_bytes": 0
+  },
+  "exclusions": {
+    "files": 0,
+    "bytes": 0,
+    "reason": "No virtual environment, bytecode or temporary directory was found. Reacquirable private caches are copied into the private cache hierarchy and remain classified as cache."
+  },
+  "active_references": {
+    "repository_code_change_required": false,
+    "reason": "Activity and terrain research tools already accept explicit roots; no active hard-coded source location was found.",
+    "historical_references": "Preserve historical documentation and generated reports as provenance."
+  },
+  "validation": {
+    "private_inventory_sha256": "ec92b799b1e59da7ab955e5805983ec652c57f6b0581f88a3d658bc7885b66cc",
+    "all_source_destination_hashes_match": true,
+    "source_estates_unchanged": true,
+    "private_payload_in_git": false,
+    "private_payload_promoted_to_general_data": false,
+    "detailed_inventory_files": 3005,
+    "detailed_inventory_bytes": 1173185,
+    "destination_files_including_private_inventory": 3006
+  },
+  "rollback": "Leave all four original estates unchanged. Before Phase 4G, an incomplete private destination may be removed only after review; the originals remain the rollback source.",
+  "completed_at_utc": "2026-09-29T12:07:33.1310432+00:00",
+  "transitional_legacy_exception": "The four original private estates remain beneath MERIDIAN_DATA_ROOT solely as Phase 4 rollback copies until the Phase 4G deletion gate; no private payload was copied into Atlas, Weather, public assets or Git."
+}

@@ -152,7 +152,9 @@ variable does not secretly alter a script that does not call the resolver.
 Phase 4 uses this contract through copy, validation and hash comparison before any old
 copy is removed. Phase 4B has preserved historical Earth experiments under `experiments`,
 and Phase 4C has created validated Tryfan source and derived products under `sources/atlas`
-and `derived/atlas`. The original trees remain until the Phase 4G deletion gate:
+and `derived/atlas`. Phase 4D has created the separate private root and copied private
+Traverse source, benchmark, experiment and cache data into it. The original trees remain
+until the Phase 4G deletion gate:
 
 ```text
 Projects/
@@ -183,6 +185,14 @@ The meanings are:
 **Canonical** is a semantic status, not necessarily another top-level directory. A
 canonical product may live under `derived` when its manifest, hash, provenance and
 compatibility guarantees identify it clearly.
+
+The current private Traverse hierarchy is `sources/strava-export`,
+`benchmarks/routes`, `experiments/{activity-research,terrain-research}` and matching
+private caches under `cache`. Detailed private filenames and hashes live only in the
+private validation inventory. Git records aggregate migration evidence and its inventory
+hash, never route geometry or activity contents. The four old data-root estates remain
+temporary rollback copies until Phase 4G; their presence is not permission for new
+private data to enter the general data root.
 
 Classification precedes movement. A mixed historical directory may be preserved
 under `experiments` rather than split if splitting would damage provenance or create

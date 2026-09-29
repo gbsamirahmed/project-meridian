@@ -1943,3 +1943,27 @@ intact. Focused checks passed: 14 storage-root tests, five renderer-source tests
 seven renderer input hashes, the canonical map hash, frozen Lab 007–009 identities and
 all 27 backup-critical comparisons. Phase 4D has not begun; the next action is human
 review of this uncommitted promotion checkpoint.
+
+## 2026-09-29 — Meridian Phase 4D private Traverse data migration
+
+Created the sibling `MERIDIAN_PRIVATE_ROOT` and copied the existing private movement and
+route research into a purpose-specific Traverse hierarchy. Private source exports now
+live under `sources`, eleven conservatively private benchmark files under `benchmarks`,
+activity and route-conditioned terrain results under `experiments`, and their separable
+reacquirable terrain caches under `cache`. No private source was parsed, transformed or
+published during migration.
+
+The copy contains 3,005 payload files / 360,462,077 bytes. Every source and destination
+SHA-256 matched. The detailed filename/hash inventory remains private; the tracked
+aggregate manifest records only its SHA-256,
+`ec92b799b1e59da7ab955e5805983ec652c57f6b0581f88a3d658bc7885b66cc`. The four original
+data-root estates retain their exact Phase 4A counts and sizes as rollback copies until
+Phase 4G. This is a deliberate transitional exception, not a continuing general-data
+location for private material.
+
+No active code path was changed: activity and terrain tooling already accepts explicit
+roots, and the storage resolver recognizes the new sibling private root. Fourteen root
+tests, 28 activity-research tests and ten terrain-research tests passed. Historical Earth
+trees, promoted Atlas data, GFS, frozen Lab identities, seven renderer inputs, the
+canonical map and all 27 backup-critical pairs remained unchanged. Phase 4E has not
+begun; the next action is human review of this uncommitted private-data checkpoint.
