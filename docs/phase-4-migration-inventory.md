@@ -3,6 +3,9 @@
 This is the non-destructive input to Phase 4. It records the current estate and
 proposed classifications; it does not authorise copying, moving or deleting anything.
 
+The evidence-based, subphase-by-subphase execution plan is maintained in
+[Phase 4 filesystem migration execution plan](phase-4-execution-plan.md).
+
 The migration sequence for every category is:
 
 ```text

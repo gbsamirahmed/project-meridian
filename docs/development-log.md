@@ -1861,3 +1861,28 @@ pairs, `git diff --check`, and the tracked privacy/credential scan. Unreal was n
 launched because calibrated renderer state and configuration were unchanged. The next
 step is human review of Phase 3, followed by a separately authorised Phase 4 copy-first
 migration; route-benchmark GPX provenance/privacy must be decided before placement.
+
+## 2026-09-29 — Meridian Phase 4A migration planning
+
+Converted the Phase 3 migration inventory into an evidence-based execution plan without
+copying, moving, renaming or deleting data. The plan records the measured external
+estate, distinguishes active path dependencies from historical provenance and generated
+pointers, classifies each migration target, and defines bounded Phase 4B–4G scopes with
+copy, validation, rollback and deletion gates.
+
+The main decisions are to keep frozen Earth Lab outputs under historical experiments;
+promote only explicitly reusable Tryfan terrain, surface-inference, reconstruction-
+readiness and renderer-neutral reconstruction products; move all activity, Strava,
+route-benchmark and route-conditioned terrain research into private Traverse storage;
+and separate authoritative external GFS storage from its browser publication path.
+Exact Sentinel subsets and source/context acquisition evidence remain retained sources,
+while virtual environments, stale weather source caches and Unreal build state remain
+regenerable candidates rather than durable products.
+
+Read-only validation passed: the external directory file/byte inventories were unchanged,
+`MERIDIAN_PRIVATE_ROOT` had not been created, frozen Lab 007–009 deterministic identities
+were unchanged, the repository and external canonical Unreal maps still matched SHA-256
+`85ef8f1cc9a9fda9b6f2ab3b911bd57831fe75c4009e5ad168ea4956165a260d`, and all 27
+backup-critical current/backup hash pairs matched. Only planning documentation changed;
+no Unreal launch or broad test suite was necessary. Phase 4B remains separately
+authorised future work.
