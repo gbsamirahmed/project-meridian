@@ -2022,3 +2022,23 @@ of reparse points, removed `20260907T12Z`, `20260907T18Z`, `latest.json` and the
 empty `public/weather/gfs` directory: 40,841 files / 1,268,050,554 bytes. The
 `public/weather` parent remains. The external authoritative estate was not modified.
 No other migrated old-copy category was removed, and no later phase has begun.
+
+
+## 2026-09-29 — Meridian Phase 5A active-code architecture audit
+
+Audited all 81 active TypeScript/TSX files, their relative imports, source ownership,
+runtime side effects and Vite-loaded UI, route, Weather and visual test seams. The
+generic `components/services/types/config` layout hides clear domain groupings. `App`
+is the correct composition root but also owns complete Weather and Traverse workflows;
+`MapView` combines the Atlas map lifecycle with Weather rendering/sampling and Traverse
+route interaction, so it is currently an app-level integration component rather than an
+Atlas component.
+
+The frozen Phase 5 plan contains only 5B structural moves, 5C resolution of the
+`App`/map, Weather/journey and Traverse/GFS seams, and 5D transitional cleanup plus
+full validation. Weather will receive only a generic journey coverage window, Traverse
+will consume normalized Weather samples rather than GFS manifests/tile caches, and an
+Atlas map host will be composed with Weather and Traverse map controllers by app. No
+implementation file was moved or changed in 5A, no feature work was added, and optional
+architecture improvements were placed in a post-cleanup backlog rather than extending
+Phase 5.

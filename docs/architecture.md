@@ -39,6 +39,13 @@ The current React application remains one deployable client-side application. At
 Weather and Traverse are conceptual boundaries inside it. Separate deployable apps,
 microservices and a speculative package hierarchy are not justified yet.
 
+The active TypeScript code still uses the older generic `components`, `services`,
+`types` and `config` folders. Phase 5 will establish ownership under `src/app`,
+`src/atlas`, `src/weather` and `src/traverse` without splitting the deployable
+application. Its audited, bounded 5B-5D migration is frozen in the
+[Phase 5 architecture plan](phase-5-architecture-plan.md). Historical experiments
+and renderer source are outside that refactor.
+
 The conceptual relationship is:
 
 ```text
