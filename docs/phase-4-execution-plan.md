@@ -407,6 +407,8 @@ None.
 
 ### Phase 4E — Weather/GFS external storage and publication
 
+**Status: copied and validated; legacy publication retained pending Phase 4G.**
+
 **Reasoning:** high for publication safety; medium for file copying.
 
 **Scope**
@@ -443,9 +445,18 @@ isolated. Never alter the browser to consume a local absolute path.
 
 **Deletion gate**
 
-Updater successfully publishes a newer run externally, retention preserves current
-plus previous, local dev/preview/build work through the adapter, and no process writes
-through an unsafe link target.
+The copied current and previous runs, guarded dev adapter and bounded production build
+have validated. Removal remains blocked until an updater successfully publishes a newer
+run externally, retention preserves current plus previous, and Phase 4G explicitly
+reviews the unchanged legacy publication and stale/partial material.
+
+**Implemented validation**
+
+The two retained runs contribute 40,841 payload files / 1,268,050,554 bytes. Every
+source/destination SHA-256 matched; both runs passed the existing ten-field, 24-timestep
+PNG validator. Development HTTP requests, a production build and representative
+catalogue/manifest/tile hashes validated the stable browser contract. The detailed
+external inventory is recorded by the tracked Phase 4E manifest.
 
 **Expected Git changes**
 

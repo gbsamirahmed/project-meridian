@@ -14,6 +14,7 @@
     "weather:check": "node scripts/weather/run_weather.mjs --check-only",
     "weather:update": "node scripts/weather/run_weather.mjs",
     "weather:watch": "node scripts/weather/run_weather.mjs --watch",
+    "weather:publication:check": "node scripts/weather/gfs_publication.mjs --check",
     "test:ui": "node --test scripts/ui/test_desktop_workspace.mjs",
     "visual:install": "playwright install chromium",
     "visual:test": "playwright test --config playwright.visual.config.mjs"

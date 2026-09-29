@@ -113,6 +113,17 @@ class StorageRootTests(unittest.TestCase):
         )
         self.assertEqual(result, data / "sources" / "atlas" / "tryfan")
 
+    def test_weather_gfs_path_is_beneath_derived_weather_storage(self) -> None:
+        data = self.parent / "relocated-data"
+        data.mkdir()
+        roots = resolve_storage_roots(
+            repository_root=self.repository,
+            environ={"MERIDIAN_DATA_ROOT": str(data)},
+        )
+        self.assertEqual(roots.weather_gfs_path(), data / "derived" / "weather" / "gfs")
+        with self.assertRaisesRegex(FileNotFoundError, "Required Meridian data path"):
+            roots.weather_gfs_path(must_exist=True)
+
     def test_legacy_private_convention_maps_to_configured_root(self) -> None:
         private = self.parent / "relocated-private"
         private.mkdir()

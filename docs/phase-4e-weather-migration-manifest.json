@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "phase": "4E",
+  "title": "Externalize Weather GFS storage and separate publication",
+  "source_root": "[REPO]/public/weather/gfs",
+  "destination_root": "[DATA]/derived/weather/gfs",
+  "browser_contract": "/weather/gfs",
+  "governing_rule": "COPY -> UPDATE ACTIVE REFERENCES -> VALIDATE -> COMPARE -> REVIEW -> REMOVE LATER",
+  "authoritative_storage": "destination",
+  "legacy_publication_removal_phase": "4G",
+  "retention_policy": {
+    "complete_runs": 2,
+    "description": "Retain the current complete validated run and one previous complete validated run as authoritative generated Weather data."
+  },
+  "items": [
+    {
+      "id": "gfs-current-complete-run",
+      "source": "[REPO]/public/weather/gfs/20260907T18Z",
+      "destination": "[DATA]/derived/weather/gfs/20260907T18Z",
+      "classification": "derived_weather_authoritative",
+      "retention_class": "keep_current_complete",
+      "file_count": 20420,
+      "byte_count": 633778893,
+      "reproducible": true,
+      "include": true,
+      "status": "COPIED AND VALIDATED",
+      "validation": "Exact relative inventory, byte counts and SHA-256 comparison; existing complete-run validator with PNG verification; all ten fields and 24 timesteps."
+    },
+    {
+      "id": "gfs-previous-complete-run",
+      "source": "[REPO]/public/weather/gfs/20260907T12Z",
+      "destination": "[DATA]/derived/weather/gfs/20260907T12Z",
+      "classification": "derived_weather_authoritative",
+      "retention_class": "keep_previous_complete",
+      "file_count": 20420,
+      "byte_count": 634268902,
+      "reproducible": true,
+      "include": true,
+      "status": "COPIED AND VALIDATED",
+      "validation": "Exact relative inventory, byte counts and SHA-256 comparison; existing complete-run validator with PNG verification; all ten fields and 24 timesteps."
+    },
+    {
+      "id": "gfs-current-catalogue",
+      "source": "[REPO]/public/weather/gfs/latest.json",
+      "destination": "[DATA]/derived/weather/gfs/latest.json",
+      "classification": "derived_weather_publication_index",
+      "retention_class": "keep_current",
+      "file_count": 1,
+      "byte_count": 2759,
+      "sha256": "84878adcacf13463e9c2a5ffd76b6f1a934b3da654ad7f6421fb70ec3b8d0b92",
+      "reproducible": true,
+      "include": true,
+      "status": "COPIED AND VALIDATED",
+      "validation": "Byte-identical SHA-256 comparison, JSON parsing and complete catalogue validation."
+    },
+    {
+      "id": "gfs-stale-source-building-trees",
+      "source": "[REPO]/public/weather/gfs/.*-atmospheric-source-building",
+      "destination": null,
+      "classification": "cache_reacquirable_source_build_state",
+      "retention_class": "review_phase_4f_4g",
+      "directory_count": 11,
+      "file_count": 1320,
+      "byte_count": 1212538419,
+      "reproducible": true,
+      "include": false,
+      "status": "DO NOT MOVE",
+      "reason": "Interrupted or stale source-building cache is not an authoritative publication payload; retain unchanged in the old estate until the later cleanup gate."
+    },
+    {
+      "id": "gfs-older-partial-run",
+      "source": "[REPO]/public/weather/gfs/20260902T18Z",
+      "destination": null,
+      "classification": "partial_generated_run",
+      "retention_class": "review_phase_4f_4g",
+      "file_count": 121,
+      "byte_count": 110532448,
+      "reproducible": true,
+      "include": false,
+      "status": "DO NOT MOVE",
+      "reason": "The run is not a complete ten-field publication and is not part of the two-run retention set."
+    },
+    {
+      "id": "gfs-runtime-lock",
+      "source": "[REPO]/public/weather/gfs/.updater.lock",
+      "destination": null,
+      "classification": "runtime_lock",
+      "retention_class": "transient",
+      "file_count": 1,
+      "byte_count": 1,
+      "reproducible": true,
+      "include": false,
+      "status": "DO NOT MOVE",
+      "reason": "Runtime coordination state is neither authoritative data nor a publication payload."
+    }
+  ],
+  "selected_payload": {
+    "file_count": 40841,
+    "byte_count": 1268050554,
+    "complete_run_count": 2
+  },
+  "source_baseline": {
+    "file_count": 42283,
+    "byte_count": 2591121422
+  },
+  "validation_inventory": {
+    "location": "[DATA]/derived/weather/gfs/phase-4e-validation.json",
+    "tracked": false,
+    "sha256": "b0e50edbff5dd2fadd914ca34b5564b20c7b8ce7387be7627a610e005c81eade",
+    "privacy": "general Weather data; detailed tile hashes remain outside Git to avoid a large tracked inventory",
+    "byte_count": 7641556
+  },
+  "rollback": {
+    "source_remains": "[REPO]/public/weather/gfs",
+    "removal_allowed": false,
+    "cutover_status": "PENDING PHASE 4G"
+  },
+  "validation_result": {
+    "payload_hash_matches": "40841/40841",
+    "payload_bytes": 1268050554,
+    "complete_run_validations": "2/2 with all ten fields, 24 timesteps and PNG verification",
+    "source_unchanged": true
+  }
+}

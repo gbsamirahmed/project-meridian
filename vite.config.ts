@@ -3,26 +3,41 @@ import { relative, resolve } from 'node:path'
 import { defineConfig } from 'vite'
 import type { Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
+import {
+  createGfsPublicationMiddleware,
+  materializeGfsPublication,
+  resolveGfsPublicationRoot,
+} from './scripts/weather/gfs_publication.mjs'
 
-function copyPublicAssetsWithoutRuntimeLocks(): Plugin {
+function publishExternalWeather(): Plugin {
   let publicDir = ''
   let outDir = ''
+  const publicationRoot = resolveGfsPublicationRoot({ requireExists: false })
   return {
-    name: 'meridian-public-assets',
-    apply: 'build',
+    name: 'meridian-external-weather-publication',
     config: () => ({ build: { copyPublicDir: false } }),
     configResolved: (config) => {
       publicDir = config.publicDir
       outDir = resolve(config.root, config.build.outDir)
     },
-    closeBundle: () => cpSync(publicDir, outDir, {
-      recursive: true,
-      filter: (source) => relative(publicDir, source).replaceAll('\\', '/') !== 'weather/gfs/.updater.lock',
-    }),
+    configureServer: (server) => {
+      server.middlewares.use(createGfsPublicationMiddleware({ publicationRoot }))
+    },
+
+    closeBundle: () => {
+      cpSync(publicDir, outDir, {
+        recursive: true,
+        filter: (source) => {
+          const name = relative(publicDir, source).replaceAll('\\', '/')
+          return name !== 'weather/gfs' && !name.startsWith('weather/gfs/')
+        },
+      })
+      materializeGfsPublication(resolve(outDir, 'weather/gfs'), { publicationRoot })
+    },
   }
 }
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), copyPublicAssetsWithoutRuntimeLocks()],
+  plugins: [react(), publishExternalWeather()],
 })

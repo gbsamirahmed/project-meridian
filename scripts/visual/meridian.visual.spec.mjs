@@ -2,6 +2,7 @@ import { expect, test } from "@playwright/test";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { resolveGfsPublicationRoot } from "../weather/gfs_publication.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const repositoryRoot = path.resolve(here, "..", "..");
@@ -113,7 +114,8 @@ function locationForecastFixture() {
 }
 
 async function mockGlobalPressure(page) {
-  const current = JSON.parse(await readFile(path.join(repositoryRoot, "public", "weather", "gfs", "latest.json"), "utf8"));
+  const publicationRoot = resolveGfsPublicationRoot({ repositoryRoot });
+  const current = JSON.parse(await readFile(path.join(publicationRoot, "latest.json"), "utf8"));
   const reference = current.fields.temperature_2m;
   current.fields.pressure_msl = {
     ...reference,

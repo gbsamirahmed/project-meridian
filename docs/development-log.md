@@ -1967,3 +1967,27 @@ tests, 28 activity-research tests and ten terrain-research tests passed. Histori
 trees, promoted Atlas data, GFS, frozen Lab identities, seven renderer inputs, the
 canonical map and all 27 backup-critical pairs remained unchanged. Phase 4E has not
 begun; the next action is human review of this uncommitted private-data checkpoint.
+
+## 2026-09-29 — Meridian Phase 4E external Weather/GFS storage
+
+Separated authoritative generated GFS storage from browser publication without changing
+weather fields, tile encoding or the `/weather/gfs` client contract. The current and
+previous complete ten-field runs plus `latest.json` were copied to
+`[DATA]/derived/weather/gfs`; 40,841 payload files / 1,268,050,554 bytes match the old
+publication SHA-256-for-SHA-256. Both destination runs passed the existing complete-run
+validator across all ten fields, 24 timesteps and 20,400 PNGs per run. The detailed
+external inventory is `phase-4e-validation.json` with SHA-256
+`b0e50edbff5dd2fadd914ca34b5564b20c7b8ce7387be7627a610e005c81eade`.
+
+Generation now defaults through `MERIDIAN_DATA_ROOT` to the external authoritative root.
+A small guarded Vite adapter serves only `latest.json` and its selected immutable run in
+development; production builds materialize that same bounded view into `dist`. Local HTTP
+checks returned the external catalogue, manifest and representative numeric tile
+byte-identically, and the production publication contained 20,421 files / 633,781,652
+bytes with neither the previous run nor the external validation report.
+
+The eleven stale source-building trees, older partial run and runtime lock were classified
+but not promoted or deleted. The original 42,283-file / 2,591,121,422-byte
+`public/weather/gfs` estate remains unchanged as rollback state until Phase 4G. Private
+Traverse, Atlas, historical experiments, the reference renderer and the Phase 1 backup
+were not part of this migration. Phase 4F has not begun.

@@ -4,7 +4,7 @@
 
 The provider-neutral architecture serves locally generated global NOAA GFS fields, not a production feed. Meridian resolves the latest verified usable 0.25° run, generates 24 hourly steps for ten fields, validates one coherent immutable run, and atomically publishes it behind `latest.json`. The client loads these fields through manifest clients, a bounded shared tile cache, geographic samplers, and persistent MapLibre renderers. Open-Meteo remains the active source only for selected-location current conditions and point forecasts. Continuous local updating and bounded retention are implemented; production scheduling, hosting, monitoring, and long-term model selection remain deployment/product decisions.
 
-Generated timestamped run directories and `public/weather/gfs/latest.json` are local build products and are excluded from Git. A clean checkout remains runnable and reports missing GFS fields as unavailable until the documented generator publishes validated local datasets; it does not silently change field ownership.
+Authoritative generated runs now live outside Git at `MERIDIAN_DATA_ROOT/derived/weather/gfs`. Vite's guarded publication adapter exposes only `latest.json` and its catalogue-selected immutable run at `/weather/gfs`; a production build materializes the same bounded view into `dist`. The legacy ignored `public/weather/gfs` estate remains unchanged as Phase 4 rollback state until the later deletion gate. A clean checkout remains runnable and reports missing GFS fields as unavailable; it does not silently change field ownership.
 
 ## Why regional map fields were replaced
 
@@ -151,11 +151,19 @@ This can run as a scheduled container, CI job or cloud worker with enough memory
 
 ## Implemented local update proof
 
+The updater resolves `MERIDIAN_DATA_ROOT/derived/weather/gfs` through the shared
+storage-root contract. `npm run weather:publication:check` validates the external
+catalogue. During development, Vite intercepts only `/weather/gfs/...` and serves
+`latest.json` plus the single immutable run it names; attempts to escape that bounded
+subtree fail. Production builds copy that same bounded publication into `dist` while
+leaving the authoritative root and previous retained run external. The ignored legacy
+`public/weather/gfs` directory is rollback state and is not read by active tooling.
+
 The current workflow generates surface `APCP`, instantaneous entire-atmosphere `TCDC`, instantaneous earth-relative 10 m `UGRD`/`VGRD`, and instantaneous 2 m `TMP` for forecast hours +1 through +24. The updater fetches each forecast inventory once, tests recent cycles newest-first, and accepts a candidate only if every required precipitation interval and exact cloud/vector/temperature record is usable. GRIB packing noise below 0.1 mm may be clamped only for precipitation after larger negative differences are rejected.
 
 - `scripts/weather/build_gfs_weather.py` is the canonical local command behind `npm run weather:update` and `npm run weather:watch`; the shared builder resolves the latest usable run, reuses inventory probing, selects indexed byte ranges, validates variable-specific ecCodes metadata, and creates z0–z3 tiles.
-- `public/weather/gfs/<run>/manifest.json` remains the precipitation manifest; the eight field subdirectories contain the other immutable manifests. Existing schema-v1 precipitation and partial schema-v2 runs remain initially loadable.
-- The automatic updater publishes into a private transaction, validates all ten fields and 20,400 PNGs, moves the complete immutable run into place, and atomically replaces `latest.json` once. The public catalogue therefore never mixes runs during an automatic update. A process lock prevents duplicate builds; interrupted generated staging is validated and either reused or rebuilt on restart.
+- `[DATA]/derived/weather/gfs/<run>/manifest.json` is the authoritative precipitation manifest; the nine field subdirectories contain the other immutable manifests. The browser continues to use `/weather/gfs/...` and never receives a local filesystem path. Existing schema-v1 precipitation and partial schema-v2 runs remain initially loadable.
+- The automatic updater publishes beneath the external authoritative root into a private transaction, validates all ten fields and 20,400 PNGs, moves the complete immutable run into place, and atomically replaces `latest.json` once. The catalogue therefore never mixes runs during an automatic update. A process lock prevents duplicate builds; interrupted generated staging is validated and either reused or rebuilt on restart.
 - Retention runs only after publication. It keeps the current and one previous complete ten-field run, removes only recognized generated manifests/validation/tiles from older run directories, and preserves source caches and unknown files.
 - `src/types/globalWeather.ts` contains provider-neutral run, scalar/vector timestep, encoding, and source contracts.
 - `src/services/globalWeatherService.ts` and `numericTileCache.ts` load metadata, bound decoded tile memory, and sample values geographically.

@@ -17,6 +17,7 @@ import math
 import os
 import re
 import shutil
+import sys
 import time
 import urllib.error
 import urllib.parse
@@ -32,6 +33,13 @@ from typing import Any
 import eccodes
 import numpy as np
 from PIL import Image
+
+
+SCRIPTS_ROOT = Path(__file__).resolve().parents[1]
+if str(SCRIPTS_ROOT) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS_ROOT))
+
+from meridian_paths import resolve_storage_roots  # noqa: E402
 
 
 NOAA_BUCKET = "https://noaa-gfs-bdp-pds.s3.amazonaws.com"
@@ -185,8 +193,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--output-root",
         type=Path,
-        default=Path("public/weather/gfs"),
-        help="Dataset root written beneath the Vite public directory.",
+        default=resolve_storage_roots(require_data=True).weather_gfs_path(),
+        help=(
+            "Authoritative generated dataset root (default: "
+            "MERIDIAN_DATA_ROOT/derived/weather/gfs)."
+        ),
     )
     parser.add_argument(
         "--keep-downloads",

@@ -17,6 +17,7 @@ from typing import Mapping
 DATA_ROOT_ENV = "MERIDIAN_DATA_ROOT"
 PRIVATE_ROOT_ENV = "MERIDIAN_PRIVATE_ROOT"
 HISTORICAL_EARTH_LAB_PARTS = ("experiments", "earth-lab")
+WEATHER_GFS_PARTS = ("derived", "weather", "gfs")
 
 
 def default_repository_root() -> Path:
@@ -104,6 +105,10 @@ class StorageRoots:
                 f"Required historical Earth Lab path does not exist: {path}"
             )
         return path
+
+    def weather_gfs_path(self, *, must_exist: bool = False) -> Path:
+        """Return the authoritative generated GFS dataset root."""
+        return self.data_path(*WEATHER_GFS_PARTS, must_exist=must_exist)
 
     def as_dict(self) -> dict[str, str]:
         return {

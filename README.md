@@ -105,7 +105,7 @@ Never commit `.env.local`. A public deployment should use a dedicated MapTiler k
 
 ### Generate current GFS weather fields
 
-Generated GFS runs and `public/weather/gfs/latest.json` are local and ignored by Git. A clean clone still starts normally, but global map weather is reported as unavailable until data are generated; Meridian does not silently substitute point-API fields.
+Generated GFS runs live under `MERIDIAN_DATA_ROOT/derived/weather/gfs` and remain outside Git. Vite exposes the validated catalogue-selected run at the stable `/weather/gfs` browser URL through a guarded local adapter; production builds materialize that bounded view into `dist`. A clean clone still starts normally, but global map weather is reported as unavailable until the external dataset exists. Meridian does not silently substitute point-API fields.
 
 With Python 3.12 or newer:
 
@@ -114,6 +114,13 @@ python -m pip install -r scripts/weather/requirements.txt
 npm run weather:update
 python -m unittest discover -s scripts/weather -p "test_*.py"
 ```
+
+The default data root is the sibling `meridian-data` directory. Set an absolute
+`MERIDIAN_DATA_ROOT` before running the updater when data live elsewhere. Use
+`npm run weather:publication:check` to verify the external catalogue before starting
+local development or building. Generation and browser publication are separate: the
+updater owns external authoritative data, while Vite serves only the catalogue-selected
+run at `/weather/gfs`.
 
 The updater finds the latest usable complete GFS cycle, falls back when the newest run is incomplete, and downloads only indexed APCP, TCDC, 10 m UGRD/VGRD, 2 m TMP, mean-sea-level PRMSL, surface GUST/VIS and three atmospheric HGT records. It builds and validates all ten +24 h fields in a private transaction, moves the complete run into its immutable path, and then atomically switches `latest.json`. A failed run leaves the previous catalogue live. It requires no API key.
 

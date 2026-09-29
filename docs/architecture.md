@@ -118,8 +118,8 @@ configuration, manifests, tests, documentation and carefully justified durable
 assets. Large observations, derived products, experiment outputs and caches do not
 enter Git merely because code consumes them.
 
-Python tooling resolves two external roots through
-`scripts/meridian_paths.py`:
+Repository tooling resolves external roots through `scripts/meridian_paths.py` and
+its small Node counterpart `scripts/meridian_paths.mjs`:
 
 - `MERIDIAN_DATA_ROOT`: non-private Meridian source, derived, experiment, cache and
   scratch data.
@@ -153,8 +153,10 @@ Phase 4 uses this contract through copy, validation and hash comparison before a
 copy is removed. Phase 4B has preserved historical Earth experiments under `experiments`,
 and Phase 4C has created validated Tryfan source and derived products under `sources/atlas`
 and `derived/atlas`. Phase 4D has created the separate private root and copied private
-Traverse source, benchmark, experiment and cache data into it. The original trees remain
-until the Phase 4G deletion gate:
+Traverse source, benchmark, experiment and cache data into it. Phase 4E has copied the
+current and previous complete GFS runs into `derived/weather/gfs`; generation now targets
+that authoritative external root while Vite retains the `/weather/gfs` browser contract.
+The original trees remain until the Phase 4G deletion gate:
 
 ```text
 Projects/
