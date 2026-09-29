@@ -1913,3 +1913,33 @@ map SHA-256; and all 27 backup-critical source/backup comparisons. Private activ
 Strava, route-benchmark and terrain-research inventories were unchanged. Unreal was not
 launched because no calibrated renderer package was changed. Phase 4C has not begun;
 the next action is human review of this uncommitted copy and active-reference checkpoint.
+
+## 2026-09-29 — Meridian Phase 4C Atlas source and Tryfan product promotion
+
+Promoted a deliberately narrow, renderer-neutral Tryfan data estate without running new
+research or altering frozen experiment products. Four retained-source products now hold
+the bounded Welsh LiDAR DTM/DSM and catalogues, two licensed reference photographs, four
+exact Sentinel-2 Level-2A AOI observation sets, and the retrieved/clipped NRW/BGS/JNCC
+context evidence. Five derived products now hold the canonical DTM R16, nine terrain
+morphology fields, the selected Lab 007 probabilistic inference controls, the single
+Lab 008 reconstruction-readiness control, and the Lab 009 package plus eight GeoTIFF
+reconstruction controls.
+
+The neutral catalogue preserves observed, derived, inferred, audited-control and
+reconstructed semantics, source licences, effective resolution, CRS/registration,
+limitations and historical Lab lineage. The 93 promoted payload files total 522,051,687
+bytes. Every destination file matches its historical source SHA-256. Seventy-three
+rasters opened with matching metadata; JSON/XML and photograph checks passed; Lab 007
+probabilities and Lab 009 mixtures remain normalized; readiness codes remain 1–3. The
+external validation inventory is `[DATA]/derived/atlas/tryfan/phase-4c-validation.json`
+(SHA-256 `37faf10aab6dc62895a19fcafbe58098741ef2776ea347772e203d02cb58e788`).
+
+Packed Lab 009 RGBA PNGs remain renderer-specific historical transport artefacts, and
+the integrated packer was not extracted. The Tryfan Reference Renderer remains on its
+seven hash-verified historical inputs; Unreal was not launched and the canonical map was
+not changed. No route-conditioned terrain, activity, Strava, route-benchmark, GFS or
+private data was copied. Both historical Earth Lab trees and the Phase 1 backup remain
+intact. Focused checks passed: 14 storage-root tests, five renderer-source tests, all
+seven renderer input hashes, the canonical map hash, frozen Lab 007–009 identities and
+all 27 backup-critical comparisons. Phase 4D has not begun; the next action is human
+review of this uncommitted promotion checkpoint.

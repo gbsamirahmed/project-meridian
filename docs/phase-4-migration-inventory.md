@@ -9,8 +9,13 @@ The evidence-based, subphase-by-subphase execution plan is maintained in
 **Phase 4B status:** the curated historical payload has been copied to
 `[DATA]/experiments/earth-lab` and validated against the explicit
 [`phase-4b-migration-manifest.json`](phase-4b-migration-manifest.json). The old
-`[DATA]/earth-lab` tree remains intact as the transition rollback source. No reusable
-Atlas product promotion, private-data migration, GFS migration or deletion has begun.
+`[DATA]/earth-lab` tree remains intact as the transition rollback source.
+
+**Phase 4C status:** nine reusable Tryfan source/derived products have been copied to
+`[DATA]/{sources,derived}/atlas/tryfan` and validated against
+[`phase-4c-promotion-manifest.json`](phase-4c-promotion-manifest.json). The neutral
+consumer contract is [`atlas/tryfan-data-catalog.json`](atlas/tryfan-data-catalog.json).
+Historical copies remain; no private-data migration, GFS migration or deletion has begun.
 
 The migration sequence for every category is:
 

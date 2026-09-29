@@ -149,8 +149,10 @@ variable does not secretly alter a script that does not call the resolver.
 
 ## Target external data layout
 
-Phase 4 may migrate toward this contract by copy, reference update, validation and
-hash comparison before any old copy is removed:
+Phase 4 uses this contract through copy, validation and hash comparison before any old
+copy is removed. Phase 4B has preserved historical Earth experiments under `experiments`,
+and Phase 4C has created validated Tryfan source and derived products under `sources/atlas`
+and `derived/atlas`. The original trees remain until the Phase 4G deletion gate:
 
 ```text
 Projects/

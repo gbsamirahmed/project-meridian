@@ -1,6 +1,6 @@
 # Phase 4 filesystem migration execution plan
 
-**Status: PHASE 4B COPIED AND VALIDATED — old data retained; Phase 4C has not begun.**
+**Status: PHASE 4C COPIED AND VALIDATED — all old data retained; Phase 4D has not begun.**
 
 This plan refines the [Phase 4 migration inventory](phase-4-migration-inventory.md)
 using read-only inspection performed in Phase 4A. A later task must execute only one
@@ -293,6 +293,16 @@ than a binary archive.
 
 ### Phase 4C — Atlas sources and reusable Tryfan products
 
+**Status: COPIED AND VALIDATED; REVIEW PENDING. No old copy has been removed.**
+
+The explicit 9-product, 93-file selection is recorded in
+[`phase-4c-promotion-manifest.json`](phase-4c-promotion-manifest.json); the neutral
+consumer catalogue is [`atlas/tryfan-data-catalog.json`](atlas/tryfan-data-catalog.json).
+The payload is 522,051,687 bytes: 62 retained-source files (76,593,256 bytes) and 31
+derived payload files (445,458,431 bytes). Full validation is recorded at
+`[DATA]/derived/atlas/tryfan/phase-4c-validation.json` with SHA-256
+`37faf10aab6dc62895a19fcafbe58098741ef2776ea347772e203d02cb58e788`.
+
 **Reasoning:** high.
 
 **Scope**
@@ -308,11 +318,12 @@ paths before copying.
 
 **References**
 
-- Update renderer bootstrap/manifest to DER-TERRAIN, SRC-PHOTO and the promoted
-  reconstruction products.
-- Keep temporary packed-control dependency explicit until the deterministic packer is
-  extracted.
-- New Atlas consumers use neutral manifests, never Lab directories.
+- **Phase 4C decision:** do not repoint the Tryfan Reference Renderer in this phase. It
+  continues to consume the hash-verified historical experiment inputs.
+- Packed RGBA textures remain renderer-specific transport artefacts. The integrated
+  historical packer remains in place; extraction is not required to use the promoted
+  eight renderer-neutral GeoTIFF controls.
+- New Atlas consumers use the neutral catalogue, never Lab directory knowledge.
 - Historical Lab references remain unchanged.
 
 **Copy/compare**
@@ -324,20 +335,20 @@ dtype/nodata, probability sums and reconstruction hashes.
 
 **Renderer validation**
 
-Run the repository bootstrap against the new root, verify all dependency hashes,
-regenerate ignored pointers/assets, run focused renderer tests and the headless smoke
-validator. Do not save the map. Recheck map SHA-256 before and after.
+Because renderer dependencies were deliberately unchanged, verify the existing seven
+external-input hashes and canonical map hash without launching or saving Unreal. A future
+renderer integration phase may deliberately switch to promoted products.
 
 **Rollback/deletion gate**
 
-Revert active manifest/bootstrap references and remove only the new promoted
-destination. Experiment copies remain. No original source/derived file is removed in
-4C.
+No active renderer or frozen-Lab reference changed. Rollback consists only of removing
+the new promoted destination and reverting the new catalogue/manifest before checkpointing.
+Experiment and original copies remain. No original source/derived file is removed in 4C.
 
 **Expected Git changes**
 
-Neutral product manifests/catalogue, bootstrap path updates, tests and documentation.
-No LFS map change.
+Neutral promotion manifest/catalogue and current architecture documentation. No
+bootstrap, renderer package, LFS map, frozen config or scientific implementation change.
 
 ### Phase 4D — private Traverse data
 
@@ -515,12 +526,13 @@ data.
   complete package Content except bytecode, historical import note and input settings;
   cache/build/Saved state, the generated pointer and secret-bearing configuration
   section are excluded. The authoritative map and external-actor packages are retained.
-- Decide whether the Lab 009 Unreal transport packer is extracted during 4C or whether
-  the renderer temporarily consumes packed controls from the frozen experiment copy.
+- **Resolved in Phase 4C:** the Lab 009 packer remains integrated with the historical
+  implementation. Packed PNGs are renderer-specific and were not promoted; the renderer
+  continues using frozen hash-verified inputs until a separate integration phase.
 - Choose the local GFS publication-adapter implementation after a temporary proof:
   junction/symlink with strict target checks is preferred over duplicating 1.2 GiB,
   but build/deployment behaviour must be verified on Windows.
 - Set retention durations for optional historical GFS benchmark runs. Default remains
   rolling current plus previous.
-- Phase 4B is complete and remains uncommitted for review. Do not begin Phase 4C
-  until this copy and active-reference checkpoint is approved.
+- Phase 4C is complete and remains uncommitted for review. Do not begin Phase 4D
+  until the promoted source/derived checkpoint is approved.

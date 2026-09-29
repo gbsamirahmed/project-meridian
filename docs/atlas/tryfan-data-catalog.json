@@ -1,0 +1,3705 @@
+{
+  "catalog_id": "atlas.tryfan.promoted-data-v1",
+  "domain": "Atlas",
+  "geographic_area": {
+    "crs": "EPSG:27700",
+    "extent_bng": [
+      264900,
+      357800,
+      267900,
+      360800
+    ],
+    "name": "Tryfan"
+  },
+  "invariants": [
+    "Observed, derived, inferred and reconstructed products retain distinct semantics.",
+    "Missing data is not zero.",
+    "Reconstructed fields are not measured observation.",
+    "Historical experiment lineage remains explicit.",
+    "Unreal transport PNGs and packages are not canonical Atlas data.",
+    "Private Traverse data is excluded."
+  ],
+  "products": [
+    {
+      "classification": "source_observation_subset",
+      "decision": "PROMOTE",
+      "destination_root": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/welsh-lidar-1m",
+      "domain": "Atlas",
+      "evidence_status": "observed",
+      "files": [
+        {
+          "bytes": 9221,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/welsh-lidar-1m/metadata/historic-catalogue.json",
+          "sha256": "985478b12522f13afc1135f2bee959b2d42e3a76c08d619cafafa2a9e8e4f9e2"
+        },
+        {
+          "bytes": 14361,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/welsh-lidar-1m/metadata/manifest.json",
+          "sha256": "e1a49022a9ddf29f29eba8b6ef8f4c030e46f80f9b5a1bb529925e8b7248f64a"
+        },
+        {
+          "bytes": 19281,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/welsh-lidar-1m/metadata/national-catalogue.json",
+          "sha256": "408d7acb44588c322f8cc2df2dbc4eee4644737f5341cdd8b98bf561b158d0f9"
+        },
+        {
+          "bytes": 16003194,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/welsh-lidar-1m/rasters/tryfan-004-dsm-1m.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              264900.0,
+              357800.0,
+              267900.0,
+              360800.0
+            ],
+            "crs": "EPSG:27700",
+            "dtypes": [
+              "float32"
+            ],
+            "height": 3000,
+            "nodata": [
+              -9999.0
+            ],
+            "pixel_size": [
+              1.0,
+              1.0
+            ],
+            "transform": [
+              1.0,
+              0.0,
+              264900.0,
+              0.0,
+              -1.0,
+              360800.0
+            ],
+            "width": 3000
+          },
+          "sha256": "d54b4810c17968f434ebe538d92595b8d33a2d68528709c7f31c7f2c1f5dd25d"
+        },
+        {
+          "bytes": 15639072,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/welsh-lidar-1m/rasters/tryfan-004-dtm-1m.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              264900.0,
+              357800.0,
+              267900.0,
+              360800.0
+            ],
+            "crs": "EPSG:27700",
+            "dtypes": [
+              "float32"
+            ],
+            "height": 3000,
+            "nodata": [
+              -9999.0
+            ],
+            "pixel_size": [
+              1.0,
+              1.0
+            ],
+            "transform": [
+              1.0,
+              0.0,
+              264900.0,
+              0.0,
+              -1.0,
+              360800.0
+            ],
+            "width": 3000
+          },
+          "sha256": "49c131d7de62e0df35f8e02c2f8db3161bfd37f24fea56060fcbb9e6d109b326"
+        }
+      ],
+      "geographic_area": "Tryfan",
+      "historical_lineage": [
+        "Earth Lab 004",
+        "SRC-LIDAR"
+      ],
+      "licence_and_provenance": {
+        "attribution": "Contains Welsh Government information licensed under the Open Government Licence v3.0.",
+        "name": "Open Government Licence for Public Sector Information, version 3.0",
+        "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      },
+      "limitations": [
+        "Provider source values are retained as bounded AOI rasters.",
+        "Historical acquisition manifests contain original run paths; those are provenance, not active storage contracts."
+      ],
+      "metadata": {
+        "crs": "EPSG:27700",
+        "extent_bng": [
+          264900.0,
+          357800.0,
+          267900.0,
+          360800.0
+        ],
+        "native_resolution_m": 1.0,
+        "provider": "Welsh Government national LiDAR 2020-2023",
+        "retrieval_method": "bounded HTTP range reads from national Cloud Optimized GeoTIFFs",
+        "source_urls": {
+          "dsm": "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif",
+          "dtm": "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dtm_32bit_cog.tif"
+        },
+        "subset_status": "bounded AOI extraction; not the complete provider dataset",
+        "surfaces": [
+          "DTM",
+          "DSM"
+        ],
+        "survey_date": "2021-03-02"
+      },
+      "payload_bytes": 31685129,
+      "payload_files": 5,
+      "product_id": "atlas.tryfan.source.welsh-lidar-1m",
+      "title": "Tryfan bounded Welsh Government LiDAR source subset"
+    },
+    {
+      "classification": "source_observation",
+      "decision": "PROMOTE",
+      "destination_root": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/reference-photography",
+      "domain": "Atlas",
+      "evidence_status": "observed",
+      "files": [
+        {
+          "bytes": 100140,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/reference-photography/tryfan-tony-edwards-2009.jpg",
+          "sha256": "09ccb9ade2bdae3818bfc8e8444bd93f8865d4a55fa9290332b5a78f89afd3cb"
+        },
+        {
+          "bytes": 28667564,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/reference-photography/tryfan-robert-heath-2021.jpg",
+          "sha256": "3999ea25ca07c38ad20b5362e097bada0375c23dffeafa7a707763d1abec741e"
+        }
+      ],
+      "geographic_area": "Tryfan",
+      "historical_lineage": [
+        "Earth Lab 004/004A",
+        "SRC-PHOTO"
+      ],
+      "licence_and_provenance": {
+        "per_image": [
+          {
+            "attribution": "Tony Edwards / Tryfan / CC BY-SA 2.0",
+            "name": "Creative Commons Attribution-ShareAlike 2.0 Generic",
+            "url": "https://creativecommons.org/licenses/by-sa/2.0/"
+          },
+          {
+            "attribution": "Tryfan, North Wales \u00e2\u20ac\u201d Robert J Heath \u00e2\u20ac\u201d CC BY 2.0",
+            "name": "Creative Commons Attribution 2.0 Generic",
+            "url": "https://creativecommons.org/licenses/by/2.0/"
+          }
+        ]
+      },
+      "limitations": [
+        "Photography is independent visual validation evidence, not canonical surface reconstruction input.",
+        "Published camera metadata is not survey-grade."
+      ],
+      "metadata": {
+        "images": [
+          {
+            "author": "Tony Edwards",
+            "captured_at": "2009-02-21",
+            "dimensions_px": [
+              640,
+              480
+            ],
+            "filename": "tryfan-tony-edwards-2009.jpg",
+            "licence": {
+              "attribution": "Tony Edwards / Tryfan / CC BY-SA 2.0",
+              "name": "Creative Commons Attribution-ShareAlike 2.0 Generic",
+              "url": "https://creativecommons.org/licenses/by-sa/2.0/"
+            },
+            "metadata_provenance": "Wikimedia Commons file page and structured data sourced from Geograph image 1308873. Camera/object coordinates and 247 degree heading are published metadata; no independent survey is claimed.",
+            "source_page_url": "https://commons.wikimedia.org/wiki/File:Tryfan_-_geograph.org.uk_-_1308873.jpg",
+            "title": "Tryfan"
+          },
+          {
+            "author": "Robert J Heath",
+            "captured_at": "2021-08-28T12:41:00",
+            "dimensions_px": [
+              5472,
+              3648
+            ],
+            "filename": "tryfan-robert-heath-2021.jpg",
+            "licence": {
+              "attribution": "Tryfan, North Wales \u00e2\u20ac\u201d Robert J Heath \u00e2\u20ac\u201d CC BY 2.0",
+              "name": "Creative Commons Attribution 2.0 Generic",
+              "url": "https://creativecommons.org/licenses/by/2.0/"
+            },
+            "metadata_provenance": "Wikimedia Commons file page and structured data, sourced from the Flickr original",
+            "source_page_url": "https://commons.wikimedia.org/wiki/File:Tryfan,_North_Wales_(52429334479).jpg",
+            "title": "Tryfan, North Wales"
+          }
+        ],
+        "repository_provenance": [
+          "docs/earth-lab/tryfan-004-benchmark.json",
+          "docs/earth-lab/tryfan-004-benchmark-robert-heath.json"
+        ]
+      },
+      "payload_bytes": 28767704,
+      "payload_files": 2,
+      "product_id": "atlas.tryfan.source.reference-photography",
+      "title": "Tryfan reference photography"
+    },
+    {
+      "classification": "source_observation_subset",
+      "decision": "PROMOTE",
+      "destination_root": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a",
+      "domain": "Atlas",
+      "evidence_status": "observed_dated_dynamic",
+      "files": [
+        {
+          "bytes": 260474,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2B_MSIL2A_20240117T113329_N0510_R080_T30UVD_20240117T130100/B02_10m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883410.0,
+              435250.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 405,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              10.0,
+              10.0
+            ],
+            "transform": [
+              10.0,
+              0.0,
+              431200.0,
+              0.0,
+              -10.0,
+              5887460.0
+            ],
+            "width": 405
+          },
+          "sha256": "e832df93bc2b100a4529af5dc969d9afb5d59e7527d9d654d16f83b242f782ae"
+        },
+        {
+          "bytes": 260672,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2B_MSIL2A_20240117T113329_N0510_R080_T30UVD_20240117T130100/B03_10m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883410.0,
+              435250.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 405,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              10.0,
+              10.0
+            ],
+            "transform": [
+              10.0,
+              0.0,
+              431200.0,
+              0.0,
+              -10.0,
+              5887460.0
+            ],
+            "width": 405
+          },
+          "sha256": "ca84641e470960d482429291604757f5521ddbf3ee0bde33e760ef55ee809403"
+        },
+        {
+          "bytes": 261794,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2B_MSIL2A_20240117T113329_N0510_R080_T30UVD_20240117T130100/B04_10m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883410.0,
+              435250.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 405,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              10.0,
+              10.0
+            ],
+            "transform": [
+              10.0,
+              0.0,
+              431200.0,
+              0.0,
+              -10.0,
+              5887460.0
+            ],
+            "width": 405
+          },
+          "sha256": "cf97405237a9e4279f12fca97bb968513fd4b581277c33b8d695d5f2ee46556d"
+        },
+        {
+          "bytes": 73976,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2B_MSIL2A_20240117T113329_N0510_R080_T30UVD_20240117T130100/B05_20m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883400.0,
+              435260.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 203,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              20.0,
+              20.0
+            ],
+            "transform": [
+              20.0,
+              0.0,
+              431200.0,
+              0.0,
+              -20.0,
+              5887460.0
+            ],
+            "width": 203
+          },
+          "sha256": "f220fedd1d9e62f7f63bbe9b8af2313ba454efb322dd8fdfb9e6526bb1810f20"
+        },
+        {
+          "bytes": 74116,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2B_MSIL2A_20240117T113329_N0510_R080_T30UVD_20240117T130100/B06_20m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883400.0,
+              435260.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 203,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              20.0,
+              20.0
+            ],
+            "transform": [
+              20.0,
+              0.0,
+              431200.0,
+              0.0,
+              -20.0,
+              5887460.0
+            ],
+            "width": 203
+          },
+          "sha256": "fc3657baa45a2e66b07cca681ef18769e9c36bcaba996f68f1dd20715e1eaec4"
+        },
+        {
+          "bytes": 73950,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2B_MSIL2A_20240117T113329_N0510_R080_T30UVD_20240117T130100/B07_20m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883400.0,
+              435260.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 203,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              20.0,
+              20.0
+            ],
+            "transform": [
+              20.0,
+              0.0,
+              431200.0,
+              0.0,
+              -20.0,
+              5887460.0
+            ],
+            "width": 203
+          },
+          "sha256": "cfc9ea5dc541c1eed26698d1c4b2865b31337a5546ef9299dc0a9add491702ef"
+        },
+        {
+          "bytes": 281312,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2B_MSIL2A_20240117T113329_N0510_R080_T30UVD_20240117T130100/B08_10m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883410.0,
+              435250.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 405,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              10.0,
+              10.0
+            ],
+            "transform": [
+              10.0,
+              0.0,
+              431200.0,
+              0.0,
+              -10.0,
+              5887460.0
+            ],
+            "width": 405
+          },
+          "sha256": "eb3c305f33dd0abeea58da23e6cf17368dd78f16736cb2b7faff104c73d2d0e9"
+        },
+        {
+          "bytes": 62448,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2B_MSIL2A_20240117T113329_N0510_R080_T30UVD_20240117T130100/B11_20m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883400.0,
+              435260.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 203,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              20.0,
+              20.0
+            ],
+            "transform": [
+              20.0,
+              0.0,
+              431200.0,
+              0.0,
+              -20.0,
+              5887460.0
+            ],
+            "width": 203
+          },
+          "sha256": "36e535c85e0d57a25045a57f0fda630d90bf5c5ca0ae54a2bdab1fae3c943668"
+        },
+        {
+          "bytes": 61446,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2B_MSIL2A_20240117T113329_N0510_R080_T30UVD_20240117T130100/B12_20m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883400.0,
+              435260.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 203,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              20.0,
+              20.0
+            ],
+            "transform": [
+              20.0,
+              0.0,
+              431200.0,
+              0.0,
+              -20.0,
+              5887460.0
+            ],
+            "width": 203
+          },
+          "sha256": "c8462a88f0b305de872bc1b532a3b9fc34e879dcf91d55e4de2e61752c367902"
+        },
+        {
+          "bytes": 73854,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2B_MSIL2A_20240117T113329_N0510_R080_T30UVD_20240117T130100/B8A_20m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883400.0,
+              435260.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 203,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              20.0,
+              20.0
+            ],
+            "transform": [
+              20.0,
+              0.0,
+              431200.0,
+              0.0,
+              -20.0,
+              5887460.0
+            ],
+            "width": 203
+          },
+          "sha256": "d5bd36b4dd2780d22ae1e066e6ddf1fcd8d19d8f431f02913a62fd2630357914"
+        },
+        {
+          "bytes": 3670,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2B_MSIL2A_20240117T113329_N0510_R080_T30UVD_20240117T130100/SCL_20m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883400.0,
+              435260.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint8"
+            ],
+            "height": 203,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              20.0,
+              20.0
+            ],
+            "transform": [
+              20.0,
+              0.0,
+              431200.0,
+              0.0,
+              -20.0,
+              5887460.0
+            ],
+            "width": 203
+          },
+          "sha256": "a116db2e5a3e83431c1ea10e100edddd5d5d653ddb1c15de75956a51ca70f1f9"
+        },
+        {
+          "bytes": 242492,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2A_MSIL2A_20260430T112131_N0512_R037_T30UVD_20260430T201210/B02_10m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883410.0,
+              435250.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 405,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              10.0,
+              10.0
+            ],
+            "transform": [
+              10.0,
+              0.0,
+              431200.0,
+              0.0,
+              -10.0,
+              5887460.0
+            ],
+            "width": 405
+          },
+          "sha256": "19d59e03356c5b9e2134354f3cf14fdd17cb06d320508746922daae13bcfc7fe"
+        },
+        {
+          "bytes": 246290,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2A_MSIL2A_20260430T112131_N0512_R037_T30UVD_20260430T201210/B03_10m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883410.0,
+              435250.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 405,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              10.0,
+              10.0
+            ],
+            "transform": [
+              10.0,
+              0.0,
+              431200.0,
+              0.0,
+              -10.0,
+              5887460.0
+            ],
+            "width": 405
+          },
+          "sha256": "df8a58050c207ba3ea29e6d1db7929fde22d950c2ef7e4f22f6c7f42aef18b94"
+        },
+        {
+          "bytes": 251704,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2A_MSIL2A_20260430T112131_N0512_R037_T30UVD_20260430T201210/B04_10m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883410.0,
+              435250.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 405,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              10.0,
+              10.0
+            ],
+            "transform": [
+              10.0,
+              0.0,
+              431200.0,
+              0.0,
+              -10.0,
+              5887460.0
+            ],
+            "width": 405
+          },
+          "sha256": "c19078e26d696e876c3ac4d61e6b6409dda4aa1fa53da599dd495a4f2253df83"
+        },
+        {
+          "bytes": 66414,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2A_MSIL2A_20260430T112131_N0512_R037_T30UVD_20260430T201210/B05_20m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883400.0,
+              435260.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 203,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              20.0,
+              20.0
+            ],
+            "transform": [
+              20.0,
+              0.0,
+              431200.0,
+              0.0,
+              -20.0,
+              5887460.0
+            ],
+            "width": 203
+          },
+          "sha256": "15d0502cd46fa2a8bcd133157ddaf1ec9727b36da282c0f89efae6a95df38d95"
+        },
+        {
+          "bytes": 68730,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2A_MSIL2A_20260430T112131_N0512_R037_T30UVD_20260430T201210/B06_20m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883400.0,
+              435260.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 203,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              20.0,
+              20.0
+            ],
+            "transform": [
+              20.0,
+              0.0,
+              431200.0,
+              0.0,
+              -20.0,
+              5887460.0
+            ],
+            "width": 203
+          },
+          "sha256": "f02c5419d0b1763a5e470a172f5f5ef52d8a59296d49ee419487fd1b4ffa8ac5"
+        },
+        {
+          "bytes": 69638,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2A_MSIL2A_20260430T112131_N0512_R037_T30UVD_20260430T201210/B07_20m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883400.0,
+              435260.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 203,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              20.0,
+              20.0
+            ],
+            "transform": [
+              20.0,
+              0.0,
+              431200.0,
+              0.0,
+              -20.0,
+              5887460.0
+            ],
+            "width": 203
+          },
+          "sha256": "4676063a16d230cf2098506c883a6a88db7c121add0357d47df874d96d9aecfd"
+        },
+        {
+          "bytes": 271054,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2A_MSIL2A_20260430T112131_N0512_R037_T30UVD_20260430T201210/B08_10m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883410.0,
+              435250.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 405,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              10.0,
+              10.0
+            ],
+            "transform": [
+              10.0,
+              0.0,
+              431200.0,
+              0.0,
+              -10.0,
+              5887460.0
+            ],
+            "width": 405
+          },
+          "sha256": "c672d0ba5a67be3d535c49fb9aaadca188aa9c234030438f55a4e676ab8f8274"
+        },
+        {
+          "bytes": 68300,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2A_MSIL2A_20260430T112131_N0512_R037_T30UVD_20260430T201210/B11_20m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883400.0,
+              435260.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 203,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              20.0,
+              20.0
+            ],
+            "transform": [
+              20.0,
+              0.0,
+              431200.0,
+              0.0,
+              -20.0,
+              5887460.0
+            ],
+            "width": 203
+          },
+          "sha256": "5a6ec2ba55c9b52254ff2a7b39e5499f93027d470bdf76488b53cd83cf428f8b"
+        },
+        {
+          "bytes": 67198,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2A_MSIL2A_20260430T112131_N0512_R037_T30UVD_20260430T201210/B12_20m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883400.0,
+              435260.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 203,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              20.0,
+              20.0
+            ],
+            "transform": [
+              20.0,
+              0.0,
+              431200.0,
+              0.0,
+              -20.0,
+              5887460.0
+            ],
+            "width": 203
+          },
+          "sha256": "c6309cdd861d39f006b8d20e7d2d2af091ff61bdb2c7439e5954bc4f162645e4"
+        },
+        {
+          "bytes": 70274,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2A_MSIL2A_20260430T112131_N0512_R037_T30UVD_20260430T201210/B8A_20m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883400.0,
+              435260.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 203,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              20.0,
+              20.0
+            ],
+            "transform": [
+              20.0,
+              0.0,
+              431200.0,
+              0.0,
+              -20.0,
+              5887460.0
+            ],
+            "width": 203
+          },
+          "sha256": "3af62dc111ffce4a577c2f25ee050fe85d36fd85667438788439a5bbb9923553"
+        },
+        {
+          "bytes": 5960,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2A_MSIL2A_20260430T112131_N0512_R037_T30UVD_20260430T201210/SCL_20m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883400.0,
+              435260.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint8"
+            ],
+            "height": 203,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              20.0,
+              20.0
+            ],
+            "transform": [
+              20.0,
+              0.0,
+              431200.0,
+              0.0,
+              -20.0,
+              5887460.0
+            ],
+            "width": 203
+          },
+          "sha256": "5326274ff6549a807886c4d9d36ee11a86198a4b3b4f1138d5ced0d3ca7bd250"
+        },
+        {
+          "bytes": 233812,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2A_MSIL2A_20260712T113331_N0512_R080_T30UVD_20260712T174812/B02_10m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883410.0,
+              435250.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 405,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              10.0,
+              10.0
+            ],
+            "transform": [
+              10.0,
+              0.0,
+              431200.0,
+              0.0,
+              -10.0,
+              5887460.0
+            ],
+            "width": 405
+          },
+          "sha256": "dba087002d85ee85c1772f570acefd60d2eaabe33fd8dba63e17d38505a34ee9"
+        },
+        {
+          "bytes": 237936,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2A_MSIL2A_20260712T113331_N0512_R080_T30UVD_20260712T174812/B03_10m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883410.0,
+              435250.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 405,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              10.0,
+              10.0
+            ],
+            "transform": [
+              10.0,
+              0.0,
+              431200.0,
+              0.0,
+              -10.0,
+              5887460.0
+            ],
+            "width": 405
+          },
+          "sha256": "79684a3055429b256d351ee22563b3770709063b71cb2cadf1bc874c0898bb79"
+        },
+        {
+          "bytes": 239636,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2A_MSIL2A_20260712T113331_N0512_R080_T30UVD_20260712T174812/B04_10m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883410.0,
+              435250.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 405,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              10.0,
+              10.0
+            ],
+            "transform": [
+              10.0,
+              0.0,
+              431200.0,
+              0.0,
+              -10.0,
+              5887460.0
+            ],
+            "width": 405
+          },
+          "sha256": "8fbfa498771db35f60698b7dcfc2e0c89b3d0fd75d55a41332051ce72b596f86"
+        },
+        {
+          "bytes": 63318,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2A_MSIL2A_20260712T113331_N0512_R080_T30UVD_20260712T174812/B05_20m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883400.0,
+              435260.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 203,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              20.0,
+              20.0
+            ],
+            "transform": [
+              20.0,
+              0.0,
+              431200.0,
+              0.0,
+              -20.0,
+              5887460.0
+            ],
+            "width": 203
+          },
+          "sha256": "05c5be7ecbfb60fe87435ae7c50fe8b1ac0d1dd4f5991fe2c093dd320a9d0dca"
+        },
+        {
+          "bytes": 69348,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2A_MSIL2A_20260712T113331_N0512_R080_T30UVD_20260712T174812/B06_20m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883400.0,
+              435260.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 203,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              20.0,
+              20.0
+            ],
+            "transform": [
+              20.0,
+              0.0,
+              431200.0,
+              0.0,
+              -20.0,
+              5887460.0
+            ],
+            "width": 203
+          },
+          "sha256": "87bd51cce200d592b0b746d2b33d15505186401f89b0a8ffb3e9e41559910ee9"
+        },
+        {
+          "bytes": 70712,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2A_MSIL2A_20260712T113331_N0512_R080_T30UVD_20260712T174812/B07_20m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883400.0,
+              435260.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 203,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              20.0,
+              20.0
+            ],
+            "transform": [
+              20.0,
+              0.0,
+              431200.0,
+              0.0,
+              -20.0,
+              5887460.0
+            ],
+            "width": 203
+          },
+          "sha256": "c6193952cc51e214c78c002c24e87f8e4d042ab184f9662984deb2883cdf9e30"
+        },
+        {
+          "bytes": 273188,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2A_MSIL2A_20260712T113331_N0512_R080_T30UVD_20260712T174812/B08_10m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883410.0,
+              435250.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 405,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              10.0,
+              10.0
+            ],
+            "transform": [
+              10.0,
+              0.0,
+              431200.0,
+              0.0,
+              -10.0,
+              5887460.0
+            ],
+            "width": 405
+          },
+          "sha256": "f36f1976fbe6765ec383bb0b7849c96c3b2c6bae985cb5e8e484a096534605e0"
+        },
+        {
+          "bytes": 66426,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2A_MSIL2A_20260712T113331_N0512_R080_T30UVD_20260712T174812/B11_20m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883400.0,
+              435260.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 203,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              20.0,
+              20.0
+            ],
+            "transform": [
+              20.0,
+              0.0,
+              431200.0,
+              0.0,
+              -20.0,
+              5887460.0
+            ],
+            "width": 203
+          },
+          "sha256": "dea7590b0d200f63baed675f22a9eb5a67e21449f64cb959beb4f6776a5cc201"
+        },
+        {
+          "bytes": 65700,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2A_MSIL2A_20260712T113331_N0512_R080_T30UVD_20260712T174812/B12_20m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883400.0,
+              435260.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 203,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              20.0,
+              20.0
+            ],
+            "transform": [
+              20.0,
+              0.0,
+              431200.0,
+              0.0,
+              -20.0,
+              5887460.0
+            ],
+            "width": 203
+          },
+          "sha256": "2a82dd3e5d62357012a401f466ccd577fb93b5ee97653631abc133379d53ad8c"
+        },
+        {
+          "bytes": 71126,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2A_MSIL2A_20260712T113331_N0512_R080_T30UVD_20260712T174812/B8A_20m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883400.0,
+              435260.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 203,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              20.0,
+              20.0
+            ],
+            "transform": [
+              20.0,
+              0.0,
+              431200.0,
+              0.0,
+              -20.0,
+              5887460.0
+            ],
+            "width": 203
+          },
+          "sha256": "7dd321bac8d43f11794fd90fd4e23bca5d58142cd45d8a4de3d3f4c0927ece5c"
+        },
+        {
+          "bytes": 3160,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2A_MSIL2A_20260712T113331_N0512_R080_T30UVD_20260712T174812/SCL_20m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883400.0,
+              435260.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint8"
+            ],
+            "height": 203,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              20.0,
+              20.0
+            ],
+            "transform": [
+              20.0,
+              0.0,
+              431200.0,
+              0.0,
+              -20.0,
+              5887460.0
+            ],
+            "width": 203
+          },
+          "sha256": "050f4f3a9671d134e3a8e613ae93f252018ba963114172a4acec9d8280d9ad9f"
+        },
+        {
+          "bytes": 243105,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2A_MSIL2A_20241127T113421_N0511_R080_T30UVD_20241127T153950/B02_10m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883410.0,
+              435250.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 405,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              10.0,
+              10.0
+            ],
+            "transform": [
+              10.0,
+              0.0,
+              431200.0,
+              0.0,
+              -10.0,
+              5887460.0
+            ],
+            "width": 405
+          },
+          "sha256": "e208c045b1f6627acbf31db6b60021e8f64301cedf8ae6134b888391329ab012"
+        },
+        {
+          "bytes": 244713,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2A_MSIL2A_20241127T113421_N0511_R080_T30UVD_20241127T153950/B03_10m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883410.0,
+              435250.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 405,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              10.0,
+              10.0
+            ],
+            "transform": [
+              10.0,
+              0.0,
+              431200.0,
+              0.0,
+              -10.0,
+              5887460.0
+            ],
+            "width": 405
+          },
+          "sha256": "c6011efaf4e0b0aa327948e3b3c33b21d91701d00f82fc29525884571d0e5fa0"
+        },
+        {
+          "bytes": 245615,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2A_MSIL2A_20241127T113421_N0511_R080_T30UVD_20241127T153950/B04_10m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883410.0,
+              435250.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 405,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              10.0,
+              10.0
+            ],
+            "transform": [
+              10.0,
+              0.0,
+              431200.0,
+              0.0,
+              -10.0,
+              5887460.0
+            ],
+            "width": 405
+          },
+          "sha256": "021b20a934da237fc44f6ce980451aa04526d785ff23fa08e4f0a3518e0f6531"
+        },
+        {
+          "bytes": 66973,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2A_MSIL2A_20241127T113421_N0511_R080_T30UVD_20241127T153950/B05_20m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883400.0,
+              435260.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 203,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              20.0,
+              20.0
+            ],
+            "transform": [
+              20.0,
+              0.0,
+              431200.0,
+              0.0,
+              -20.0,
+              5887460.0
+            ],
+            "width": 203
+          },
+          "sha256": "d3885b4bfa91b37e0bb964bf60fe564e4ae90659ae525ffb9760c340645499d8"
+        },
+        {
+          "bytes": 69737,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2A_MSIL2A_20241127T113421_N0511_R080_T30UVD_20241127T153950/B06_20m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883400.0,
+              435260.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 203,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              20.0,
+              20.0
+            ],
+            "transform": [
+              20.0,
+              0.0,
+              431200.0,
+              0.0,
+              -20.0,
+              5887460.0
+            ],
+            "width": 203
+          },
+          "sha256": "f48c77b53d30b80e13d041c314abf28c8abe9853c25321c3aa32704220c27dd4"
+        },
+        {
+          "bytes": 70367,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2A_MSIL2A_20241127T113421_N0511_R080_T30UVD_20241127T153950/B07_20m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883400.0,
+              435260.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 203,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              20.0,
+              20.0
+            ],
+            "transform": [
+              20.0,
+              0.0,
+              431200.0,
+              0.0,
+              -20.0,
+              5887460.0
+            ],
+            "width": 203
+          },
+          "sha256": "82b3acbf9b8ed48c82b7be112f683fc1543b08697a638878d92d3540061fc016"
+        },
+        {
+          "bytes": 269797,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2A_MSIL2A_20241127T113421_N0511_R080_T30UVD_20241127T153950/B08_10m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883410.0,
+              435250.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 405,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              10.0,
+              10.0
+            ],
+            "transform": [
+              10.0,
+              0.0,
+              431200.0,
+              0.0,
+              -10.0,
+              5887460.0
+            ],
+            "width": 405
+          },
+          "sha256": "6403b8f71ad351fc9befdea7245ac1c35a981192fc7e1d2e9082f53a5a28485c"
+        },
+        {
+          "bytes": 68041,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2A_MSIL2A_20241127T113421_N0511_R080_T30UVD_20241127T153950/B11_20m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883400.0,
+              435260.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 203,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              20.0,
+              20.0
+            ],
+            "transform": [
+              20.0,
+              0.0,
+              431200.0,
+              0.0,
+              -20.0,
+              5887460.0
+            ],
+            "width": 203
+          },
+          "sha256": "43998309920578f74ea96577292a2f201e0a3e6a3c791a626a087f04330a7d6f"
+        },
+        {
+          "bytes": 65953,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2A_MSIL2A_20241127T113421_N0511_R080_T30UVD_20241127T153950/B12_20m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883400.0,
+              435260.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 203,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              20.0,
+              20.0
+            ],
+            "transform": [
+              20.0,
+              0.0,
+              431200.0,
+              0.0,
+              -20.0,
+              5887460.0
+            ],
+            "width": 203
+          },
+          "sha256": "3b06d046e725d543792df384a2f8b6f9e1ee60953407dfbad46e6fa4fb1a0a80"
+        },
+        {
+          "bytes": 71149,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2A_MSIL2A_20241127T113421_N0511_R080_T30UVD_20241127T153950/B8A_20m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883400.0,
+              435260.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint16"
+            ],
+            "height": 203,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              20.0,
+              20.0
+            ],
+            "transform": [
+              20.0,
+              0.0,
+              431200.0,
+              0.0,
+              -20.0,
+              5887460.0
+            ],
+            "width": 203
+          },
+          "sha256": "d8109f2f0dd35a4f2d1b764327a557ffcbaa6e67278b00d7ecb3d4cbac8ced15"
+        },
+        {
+          "bytes": 5081,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/sentinel-2-l2a/S2A_MSIL2A_20241127T113421_N0511_R080_T30UVD_20241127T153950/SCL_20m-native-window.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              431200.0,
+              5883400.0,
+              435260.0,
+              5887460.0
+            ],
+            "crs": "EPSG:32630",
+            "dtypes": [
+              "uint8"
+            ],
+            "height": 203,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              20.0,
+              20.0
+            ],
+            "transform": [
+              20.0,
+              0.0,
+              431200.0,
+              0.0,
+              -20.0,
+              5887460.0
+            ],
+            "width": 203
+          },
+          "sha256": "0ba453b5c4e6eb32c95a933137401c0140f9f11c3e6d8e057623f9404b178f87"
+        }
+      ],
+      "geographic_area": "Tryfan",
+      "historical_lineage": [
+        "Earth Lab 005B",
+        "Earth Lab 005C",
+        "SRC-S2"
+      ],
+      "licence_and_provenance": {
+        "data_terms": "Copernicus Sentinel Data Legal Notice / free, full and open access",
+        "sentinel_legal_notice": "https://sentinels.copernicus.eu/documents/247904/690755/Sentinel_Data_Legal_Notice",
+        "terms_url": "https://dataspace.copernicus.eu/terms-and-conditions"
+      },
+      "limitations": [
+        "10 m and 20 m observations do not resolve human-scale surface objects.",
+        "Seasonal spectral state is dated evidence and not permanent surface identity."
+      ],
+      "metadata": {
+        "historical_reports": [
+          "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005b/sentinel2-surface-evidence/lab005b-report.json",
+          "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005c/sentinel2-temporal-evidence/lab005c-report.json"
+        ],
+        "mission": "Sentinel-2 MSI",
+        "native_resolutions_m": {
+          "B02": 10,
+          "B03": 10,
+          "B04": 10,
+          "B05": 20,
+          "B06": 20,
+          "B07": 20,
+          "B08": 10,
+          "B11": 20,
+          "B12": 20,
+          "B8A": 20,
+          "SCL": 20
+        },
+        "observations": [
+          {
+            "aoi_cloud_fraction": 0.013333333333333334,
+            "aoi_scl": {
+              "cloud_fraction": 0.013333333333333334,
+              "cloud_shadow_fraction": 0.0,
+              "nodata_fraction": 0.0,
+              "snow_or_ice_fraction": 0.2528444444444444,
+              "topographic_shadow_fraction": 0.5919555555555556
+            },
+            "aoi_snow_or_ice_fraction": 0.2528444444444444,
+            "cog_granule_time_utc": "2024-01-17T11:36:34.744Z",
+            "cog_item_id": "S2B_T30UVD_20240117T113323_L2A",
+            "cog_month": 1,
+            "cog_year": 2024,
+            "native_windows": [
+              "B02_10m-native-window.tif",
+              "B03_10m-native-window.tif",
+              "B04_10m-native-window.tif",
+              "B05_20m-native-window.tif",
+              "B06_20m-native-window.tif",
+              "B07_20m-native-window.tif",
+              "B08_10m-native-window.tif",
+              "B11_20m-native-window.tif",
+              "B12_20m-native-window.tif",
+              "B8A_20m-native-window.tif",
+              "SCL_20m-native-window.tif"
+            ],
+            "official_acquisition_time_utc": "2024-01-17T11:33:29.025Z",
+            "official_product_id": "S2B_MSIL2A_20240117T113329_N0510_R080_T30UVD_20240117T130100",
+            "payload_files": 11,
+            "platform": "sentinel-2b",
+            "processing_baseline": "05.10",
+            "scene_cloud_percent": 16.85,
+            "season": "winter",
+            "selection_rationale": "Actual AOI is 98.67% cloud/cirrus-free and contains a meaningful 25.28% snow/ice state; selected over nominally lower-snow winter scenes to preserve genuine winter environmental evidence.",
+            "source_crs": "EPSG:32630",
+            "sun_azimuth_degrees": 168.355994216401,
+            "sun_elevation_degrees": 15.720385686493103,
+            "tile_id": "30UVD"
+          },
+          {
+            "aoi_cloud_fraction": 0.003288888888888889,
+            "aoi_scl": {
+              "cloud_fraction": 0.003288888888888889,
+              "cloud_shadow_fraction": 0.0,
+              "nodata_fraction": 0.0,
+              "snow_or_ice_fraction": 0.0,
+              "topographic_shadow_fraction": 0.059955555555555554
+            },
+            "aoi_snow_or_ice_fraction": 0.0,
+            "cog_granule_time_utc": "2026-04-30T11:26:54.104Z",
+            "cog_item_id": "S2A_T30UVD_20260430T112403_L2A",
+            "cog_month": 4,
+            "cog_year": 2026,
+            "native_windows": [
+              "B02_10m-native-window.tif",
+              "B03_10m-native-window.tif",
+              "B04_10m-native-window.tif",
+              "B05_20m-native-window.tif",
+              "B06_20m-native-window.tif",
+              "B07_20m-native-window.tif",
+              "B08_10m-native-window.tif",
+              "B11_20m-native-window.tif",
+              "B12_20m-native-window.tif",
+              "B8A_20m-native-window.tif",
+              "SCL_20m-native-window.tif"
+            ],
+            "official_acquisition_time_utc": "2026-04-30T11:21:31.024Z",
+            "official_product_id": "S2A_MSIL2A_20260430T112131_N0512_R037_T30UVD_20260430T201210",
+            "payload_files": 11,
+            "platform": "sentinel-2a",
+            "processing_baseline": "05.12",
+            "scene_cloud_percent": 3.08,
+            "season": "spring",
+            "selection_rationale": "Late-spring phenology with 99.67% cloud/cirrus-free AOI coverage and substantially higher sun than March candidates.",
+            "source_crs": "EPSG:32630",
+            "sun_azimuth_degrees": 162.551148555922,
+            "sun_elevation_degrees": 51.0675377161143,
+            "tile_id": "30UVD"
+          },
+          {
+            "aoi_cloud_fraction": 0.0,
+            "aoi_snow_or_ice_fraction": 0.0,
+            "native_windows": [
+              "B02_10m-native-window.tif",
+              "B03_10m-native-window.tif",
+              "B04_10m-native-window.tif",
+              "B05_20m-native-window.tif",
+              "B06_20m-native-window.tif",
+              "B07_20m-native-window.tif",
+              "B08_10m-native-window.tif",
+              "B11_20m-native-window.tif",
+              "B12_20m-native-window.tif",
+              "B8A_20m-native-window.tif",
+              "SCL_20m-native-window.tif"
+            ],
+            "official_acquisition_time_utc": "2026-07-12T11:33:31.024Z",
+            "official_product_id": "S2A_MSIL2A_20260712T113331_N0512_R080_T30UVD_20260712T174812",
+            "payload_files": 11,
+            "platform": "sentinel-2a",
+            "processing_baseline": "05.12",
+            "scene_cloud_percent": 0.0,
+            "season": "summer",
+            "selection_rationale": "Frozen Lab 005B reference: 100% usable AOI, zero cloud/shadow/snow/nodata and high summer illumination.",
+            "source_crs": "EPSG:32630",
+            "sun_azimuth_degrees": 160.700929790374,
+            "sun_elevation_degrees": 58.062309162853,
+            "tile_id": "30UVD"
+          },
+          {
+            "aoi_cloud_fraction": 0.015333333333333332,
+            "aoi_scl": {
+              "cloud_fraction": 0.015333333333333332,
+              "cloud_shadow_fraction": 0.0,
+              "nodata_fraction": 0.0,
+              "snow_or_ice_fraction": 0.005733333333333333,
+              "topographic_shadow_fraction": 0.6235111111111111
+            },
+            "aoi_snow_or_ice_fraction": 0.005733333333333333,
+            "cog_granule_time_utc": "2024-11-27T11:36:33.362Z",
+            "cog_item_id": "S2A_T30UVD_20241127T113445_L2A",
+            "cog_month": 11,
+            "cog_year": 2024,
+            "native_windows": [
+              "B02_10m-native-window.tif",
+              "B03_10m-native-window.tif",
+              "B04_10m-native-window.tif",
+              "B05_20m-native-window.tif",
+              "B06_20m-native-window.tif",
+              "B07_20m-native-window.tif",
+              "B08_10m-native-window.tif",
+              "B11_20m-native-window.tif",
+              "B12_20m-native-window.tif",
+              "B8A_20m-native-window.tif",
+              "SCL_20m-native-window.tif"
+            ],
+            "official_acquisition_time_utc": "2024-11-27T11:34:21.025Z",
+            "official_product_id": "S2A_MSIL2A_20241127T113421_N0511_R080_T30UVD_20241127T153950",
+            "payload_files": 11,
+            "platform": "sentinel-2a",
+            "processing_baseline": "05.11",
+            "scene_cloud_percent": 5.75,
+            "season": "autumn",
+            "selection_rationale": "Late-autumn phenology with 98.47% cloud/cirrus-free AOI coverage; low sun and extensive topographic shadow are retained and modelled as observation conditions.",
+            "source_crs": "EPSG:32630",
+            "sun_azimuth_degrees": 173.746711013091,
+            "sun_elevation_degrees": 15.771598845677005,
+            "tile_id": "30UVD"
+          }
+        ],
+        "processing_level": "Level-2A surface reflectance",
+        "subset_status": "native-grid AOI windows; not full Sentinel tiles"
+      },
+      "payload_bytes": 5730659,
+      "payload_files": 44,
+      "product_id": "atlas.tryfan.source.sentinel-2-l2a-multiseason",
+      "title": "Tryfan Sentinel-2 Level-2A native-resolution AOI windows"
+    },
+    {
+      "classification": "source_context_subset",
+      "decision": "PROMOTE",
+      "destination_root": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/context",
+      "domain": "Atlas",
+      "evidence_status": "observed_historical_contextual",
+      "files": [
+        {
+          "bytes": 43795,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/context/bgs/bedrock-aoi-10m.png",
+          "sha256": "eb8d82137d91da9b82ccb740430083537d6bff3ffb166bfec2d698b7b17c572d"
+        },
+        {
+          "bytes": 12369,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/context/bgs/bedrock-units.json",
+          "sha256": "fa0a39f4a3995837d02dcaf631dc497f962c88e55f821908d0f423e21b2300ba"
+        },
+        {
+          "bytes": 34574,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/context/bgs/superficial-aoi-10m.png",
+          "sha256": "d017c98bfcf0b64a6290ab9804f8a99c28cd6681a1830f576184bf314635bd0b"
+        },
+        {
+          "bytes": 6681,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/context/bgs/superficial-units.json",
+          "sha256": "52287f026140af7127b1c6b43fad71be03f5d9022bc6df49ef39bc8da5bb1bde"
+        },
+        {
+          "bytes": 22878,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/context/bgs/wms-capabilities.xml",
+          "sha256": "62782e7437aef77a6c6986f0be9ae58032dd15af814cd55c445de9fe708b51ae"
+        },
+        {
+          "bytes": 8142007,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/context/jncc/handbook-phase-1-habitat-survey-revised-2016.pdf",
+          "sha256": "0bcf3f56d4fceb90bbc28fb70a12176186c61e83d9ad671122a2bb07b627cae3"
+        },
+        {
+          "bytes": 280411,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/context/jncc/handbook-phase-1-habitat-survey-revised-2016.txt",
+          "sha256": "16e27d14550baa74478c049fbcaaee87bfdec5a262ffb8baa034913389280289"
+        },
+        {
+          "bytes": 101376,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/context/jncc/phase-1-habitat-dominant-species-codes-2008.xls",
+          "sha256": "f6a22507bd8800d37053651b2dc134f7340781657bc1cb1e4a09248e257ddb2c"
+        },
+        {
+          "bytes": 1042442,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/context/nrw/nrw-phase1-aoi-clipped.geojson",
+          "sha256": "c56f5936c37c53aa8d52b61701d02b8e54fac8116d14045cb5b7d1e50218fdec"
+        },
+        {
+          "bytes": 558917,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/context/nrw/nrw-phase1-aoi.geojson",
+          "sha256": "23de91c511c4a3070857bcaad41bf7f408b8320436a5fde2fb9137414a4cc797"
+        },
+        {
+          "bytes": 164314,
+          "destination": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/context/nrw/wfs-capabilities.xml",
+          "sha256": "d4b6bfdc538ef4376376c8cb3fbdeee7dcf0757f52995ec868ab3f891bf18b12"
+        }
+      ],
+      "geographic_area": "Tryfan",
+      "historical_lineage": [
+        "Earth Lab 006",
+        "SRC-CONTEXT"
+      ],
+      "licence_and_provenance": {
+        "geology": "Open Government Licence 3.0 for BGS web-map-service material",
+        "habitat": "Open Government Licence 3.0"
+      },
+      "limitations": [
+        "NRW habitat is historical contextual mapping, not current metre-scale truth.",
+        "BGS 1:50,000 mapping is broad substrate context and does not imply exposed bedrock.",
+        "Rendered WMS evidence is not the separately licensed detailed BGS vector product."
+      ],
+      "metadata": {
+        "aoi": {
+          "bounds": [
+            264900,
+            357800,
+            267900,
+            360800
+          ],
+          "crs": "EPSG:27700",
+          "grids": [
+            {
+              "height": 300,
+              "resolution_m": 10,
+              "width": 300
+            },
+            {
+              "height": 150,
+              "resolution_m": 20,
+              "width": 150
+            }
+          ]
+        },
+        "geology": {
+          "access_constraint": "The open WMS is used as rendered categorical evidence with bounded feature-information queries. It is not represented as the separately licensed detailed vector product.",
+          "attribution": "Contains British Geological Survey materials \u00a9 UKRI 2026",
+          "coverage": "Most of Great Britain",
+          "layers": {
+            "bedrock": "BGS.50k.Bedrock",
+            "superficial": "BGS.50k.Superficial.deposits"
+          },
+          "licence": "Open Government Licence 3.0 for BGS web-map-service material",
+          "nominal_scale": "1:50,000",
+          "palette_minimum_pixels": 40,
+          "palette_tolerance_rgb": 28.0,
+          "product": "BGS Geology 50K",
+          "product_url": "https://www.bgs.ac.uk/datasets/bgs-geology-50k/",
+          "provider": "British Geological Survey",
+          "service_data_release": "2025-03-31 (observed in bounded feature metadata; nominal mapping year varies by unit and is preserved as NOM_BGS_YR)",
+          "service_url": "https://map.bgs.ac.uk/arcgis/services/BGS_Detailed_Geology/MapServer/WMSServer",
+          "terms_url": "https://www.bgs.ac.uk/technologies/web-map-services-wms/"
+        },
+        "habitat": {
+          "attribution": "Natural Resources Wales information \u00a9 Natural Resources Wales and Database Right. Contains Ordnance Survey Data. Ordnance Survey Licence number AC0000849444. Crown Copyright and Database Right.",
+          "capabilities_url": "https://datamap.gov.wales/capabilities/layergroup/3597/?ows_service=wfs",
+          "classification_reference": "JNCC Handbook for Phase 1 Habitat Survey (2016)",
+          "code_names": {
+            "A.1.1.2": "broad-leaved plantation woodland",
+            "A.1.2.2": "coniferous plantation woodland",
+            "A.2.1": "dense/continuous scrub",
+            "B.1.1": "unimproved acid grassland",
+            "B.1.2": "semi-improved acid grassland",
+            "B.3.1": "unimproved calcareous grassland",
+            "B.4": "improved grassland",
+            "B.5": "marsh/marshy grassland",
+            "B.5.2": "marsh/marshy grassland subdivision",
+            "C.1.1": "continuous bracken",
+            "C.2": "upland species-rich ledges",
+            "D.1.1": "acid dry dwarf shrub heath",
+            "D.2": "wet dwarf shrub heath",
+            "D.3": "lichen/bryophyte heath",
+            "D.5": "dry heath/acid grassland mosaic",
+            "E.1.6.1": "blanket bog",
+            "E.1.7": "wet modified bog",
+            "E.1.8": "dry modified bog",
+            "E.2.1": "acid/neutral flush",
+            "E.2.3": "bryophyte-dominated spring",
+            "G.1": "standing water",
+            "G.2": "running water",
+            "I.1": "natural rock exposure",
+            "I.1.2": "scree",
+            "I.1.2.1": "acid/neutral scree",
+            "J.3.6": "building",
+            "NA": "unmapped/unknown"
+          },
+          "coverage": "Wales",
+          "crs": "EPSG:27700",
+          "effective_scale": "Not stated as a numeric positional accuracy in the service metadata. Boundaries are legacy rapid field-survey interpretation and must not be treated as metre-scale truth.",
+          "layer": "geonode:nrw_phase1_vegetation_voronoi",
+          "licence": "Open Government Licence 3.0",
+          "metadata_url": "https://datamap.gov.wales/layergroups/geonode:nrw_terrestrial_phase_1_habitat_survey/metadata_detail",
+          "product": "Terrestrial Phase 1 Habitat Survey",
+          "provider": "Natural Resources Wales",
+          "publication_date": "2023-08-16",
+          "service_url": "https://datamap.gov.wales/geoserver/wfs",
+          "simplified_groups": {
+            "A.1.1.2": "woodland_or_scrub",
+            "A.1.2.2": "woodland_or_scrub",
+            "A.2.1": "woodland_or_scrub",
+            "B.1.1": "acid_grassland",
+            "B.1.2": "acid_grassland",
+            "B.3.1": "other_grassland",
+            "B.4": "other_grassland",
+            "B.5": "wet_grassland",
+            "B.5.2": "wet_grassland",
+            "C.1.1": "bracken",
+            "C.2": "upland_ledge_vegetation",
+            "D.1.1": "dry_heath",
+            "D.2": "wet_heath",
+            "D.3": "lichen_bryophyte_heath",
+            "D.5": "heath_grass_mosaic",
+            "E.1.6.1": "bog",
+            "E.1.7": "bog",
+            "E.1.8": "bog",
+            "E.2.1": "flush_or_spring",
+            "E.2.3": "flush_or_spring",
+            "G.1": "water",
+            "G.2": "water",
+            "I.1": "natural_rock",
+            "I.1.2": "scree",
+            "I.1.2.1": "scree",
+            "J.3.6": "built",
+            "NA": "other_or_unknown"
+          },
+          "survey_period": "Field recording began in 1979; national lowland and upland coverage was completed during 1979-1997."
+        },
+        "subset_status": "retrieved/clipped AOI evidence plus capabilities and classification references"
+      },
+      "payload_bytes": 10409764,
+      "payload_files": 11,
+      "product_id": "atlas.tryfan.source.context-habitat-geology",
+      "title": "Tryfan NRW habitat and BGS geological source context"
+    },
+    {
+      "classification": "derived_canonical_terrain",
+      "decision": "PROMOTE",
+      "destination_root": "${MERIDIAN_DATA_ROOT}/derived/atlas/tryfan/terrain/unreal-landscape-v1",
+      "domain": "Atlas",
+      "evidence_status": "derived",
+      "files": [
+        {
+          "bytes": 6164,
+          "destination": "${MERIDIAN_DATA_ROOT}/derived/atlas/tryfan/terrain/unreal-landscape-v1/unreal-landscape-manifest.json",
+          "sha256": "59d72fa28e67f59002acf7c947b9571708682459c07972f091069d3c3b51f34c"
+        },
+        {
+          "bytes": 18301250,
+          "destination": "${MERIDIAN_DATA_ROOT}/derived/atlas/tryfan/terrain/unreal-landscape-v1/heightmaps/tryfan-004-dtm-1m-landscape-3025.r16",
+          "sha256": "31cbe763dac4072772ac9bcb4a3217b78eba0c10265e576ede708154288f6bf6"
+        }
+      ],
+      "geographic_area": "Tryfan",
+      "historical_lineage": [
+        "Earth Lab 004",
+        "DER-TERRAIN"
+      ],
+      "licence_and_provenance": {
+        "attribution": "Contains Welsh Government information licensed under the Open Government Licence v3.0.",
+        "name": "Open Government Licence for Public Sector Information, version 3.0",
+        "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      },
+      "limitations": [
+        "R16 is a quantized renderer-ready terrain representation, not the original provider raster.",
+        "Canonical status is declared by metadata and validation, not by directory name."
+      ],
+      "metadata": {
+        "crs": "EPSG:27700",
+        "encoding": "Unreal Landscape R16",
+        "extent_bng": [
+          264900,
+          357800,
+          267900,
+          360800
+        ],
+        "historical_manifest": {
+          "aoi_identifier": "tryfan-004",
+          "coordinate_frame": {
+            "axis_mapping": {
+              "+X": "British National Grid east",
+              "+Y": "British National Grid south (PNG rows run north to south)",
+              "+Z": "up"
+            },
+            "bng_from_unreal": {
+              "easting": "266400 + X_cm / 100",
+              "elevation_m_odn": "650 + Z_cm / 100",
+              "northing": "359300 - Y_cm / 100"
+            },
+            "local_origin_bng": {
+              "easting": 266400.0,
+              "elevation_m_odn": 650.0,
+              "northing": 359300.0
+            },
+            "unreal_origin_cm": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "created_at": "2026-09-24T11:02:56.430093+00:00",
+          "dimension_conversion": {
+            "cropped": false,
+            "method": "bilinear resampling over the unchanged full AOI bounds",
+            "output_vertices": [
+              3025,
+              3025
+            ],
+            "padded": false,
+            "sample_count_change_percent": 0.8333333333333304,
+            "samples_added_per_axis": 25,
+            "smoothed_or_eroded": false,
+            "source_cells": [
+              3000,
+              3000
+            ]
+          },
+          "height_encoding": {
+            "formula_decode": "elevation_m_ODN = 650 + (uint16 - 32768) / 128 * 150 / 100",
+            "formula_encode": "uint16 = round((elevation_m_ODN - 650) * 100 * 128 / 150 + 32768)",
+            "quantization_step_m": 0.01171875,
+            "unreal_mid_value": 32768,
+            "vertical_exaggeration": 1.0,
+            "vertical_origin_m_odn": 650.0,
+            "z_scale": 150.0
+          },
+          "representation": {
+            "default_surface": "dtm",
+            "reason": "Landscape retains a dense measured height field while providing built-in terrain LOD and a route toward larger partitioned areas.",
+            "type": "Unreal Landscape"
+          },
+          "schema_version": 2,
+          "source_aoi_bounds": [
+            264900.0,
+            357800.0,
+            267900.0,
+            360800.0
+          ],
+          "source_crs": "EPSG:27700",
+          "source_manifest": "metadata\\manifest.json",
+          "suggested_level_name": "Tryfan_Lab004",
+          "surfaces": {
+            "dsm": {
+              "output": {
+                "decoded_maximum_m": 994.37890625,
+                "decoded_minimum_m": 289.8359375,
+                "encoded_maximum": 62155,
+                "encoded_minimum": 2034,
+                "files": {
+                  "png": {
+                    "bytes": 9224470,
+                    "path": "tryfan-004-dsm-1m-landscape-3025.png",
+                    "sha256": "09949bc2c219b1c2d912d7bd8ede32f8f0285bca62391bfc2cca04a54a5b622a"
+                  },
+                  "r16": {
+                    "byte_order": "little-endian",
+                    "bytes": 18301250,
+                    "path": "tryfan-004-dsm-1m-landscape-3025.r16",
+                    "sha256": "7c48a6b0975746377e329b0934e26b6528355ebc8b7e9bfe0eee023006ad87e2"
+                  }
+                },
+                "height": 3025,
+                "width": 3025
+              },
+              "source": {
+                "bounds": [
+                  264900.0,
+                  357800.0,
+                  267900.0,
+                  360800.0
+                ],
+                "crs": "EPSG:27700",
+                "height": 3000,
+                "maximum_m": 994.4199829101562,
+                "minimum_m": 288.8399963378906,
+                "nodata": -9999.0,
+                "path": "tryfan-004-dsm-1m.tif",
+                "pixel_size_m": [
+                  1.0,
+                  1.0
+                ],
+                "width": 3000
+              },
+              "surface": "dsm",
+              "validation": {
+                "encoding_maximum_absolute_error_m": 0.005859375,
+                "encoding_mean_absolute_error_m": 0.0029253109345384965,
+                "northeast_encoded": 5530,
+                "northwest_encoded": 7183,
+                "southeast_encoded": 34333,
+                "southwest_encoded": 48652,
+                "spatial_resample_round_trip": {
+                  "maximum_absolute_m": 8.6444091796875,
+                  "mean_absolute_m": 0.07062206074693468,
+                  "rmse_m": 0.15826282008491116
+                }
+              }
+            },
+            "dtm": {
+              "output": {
+                "decoded_maximum_m": 992.33984375,
+                "decoded_minimum_m": 286.63671875,
+                "encoded_maximum": 61981,
+                "encoded_minimum": 1761,
+                "files": {
+                  "png": {
+                    "bytes": 8756315,
+                    "path": "tryfan-004-dtm-1m-landscape-3025.png",
+                    "sha256": "1b4ae10b0f6b806faa68b32e1479ccdfb62e861349813e3f8b744741b33a9464"
+                  },
+                  "r16": {
+                    "byte_order": "little-endian",
+                    "bytes": 18301250,
+                    "path": "tryfan-004-dtm-1m-landscape-3025.r16",
+                    "sha256": "31cbe763dac4072772ac9bcb4a3217b78eba0c10265e576ede708154288f6bf6"
+                  }
+                },
+                "height": 3025,
+                "width": 3025
+              },
+              "source": {
+                "bounds": [
+                  264900.0,
+                  357800.0,
+                  267900.0,
+                  360800.0
+                ],
+                "crs": "EPSG:27700",
+                "height": 3000,
+                "maximum_m": 992.469970703125,
+                "minimum_m": 286.489990234375,
+                "nodata": -9999.0,
+                "path": "tryfan-004-dtm-1m.tif",
+                "pixel_size_m": [
+                  1.0,
+                  1.0
+                ],
+                "width": 3000
+              },
+              "surface": "dtm",
+              "validation": {
+                "encoding_maximum_absolute_error_m": 0.005859375,
+                "encoding_mean_absolute_error_m": 0.0029279893711367053,
+                "northeast_encoded": 5525,
+                "northwest_encoded": 7140,
+                "southeast_encoded": 34275,
+                "southwest_encoded": 48616,
+                "spatial_resample_round_trip": {
+                  "maximum_absolute_m": 4.1605224609375,
+                  "mean_absolute_m": 0.039746516065809465,
+                  "rmse_m": 0.08506425418423019
+                }
+              }
+            }
+          },
+          "unreal_landscape": {
+            "components": [
+              24,
+              24
+            ],
+            "expected_world_dimensions_m": [
+              3000.0,
+              3000.0
+            ],
+            "flip_y_axis_on_import": false,
+            "quads_per_axis": 3024,
+            "quads_per_section": 63,
+            "sections_per_component": 4,
+            "xy_scale_cm": 99.20634920634922,
+            "z_scale": 150.0
+          },
+          "validation": {
+            "reference_locations_bng": [
+              {
+                "easting": 266400.0,
+                "name": "aoi_centre",
+                "northing": 359300.0
+              },
+              {
+                "easting": 266405.0,
+                "name": "tryfan_summit_reference",
+                "northing": 359387.0
+              },
+              {
+                "easting": 265876.05347833806,
+                "name": "robert_heath_photo_observer",
+                "northing": 358339.7631202109
+              }
+            ]
+          }
+        },
+        "shape_vertices": [
+          3025,
+          3025
+        ],
+        "surface": "DTM",
+        "vertex_spacing_m": 0.9920634920634921
+      },
+      "payload_bytes": 18307414,
+      "payload_files": 2,
+      "product_id": "atlas.tryfan.terrain.unreal-landscape-v1",
+      "title": "Tryfan canonical validated DTM R16 representation"
+    },
+    {
+      "classification": "derived_terrain_metrics",
+      "decision": "PROMOTE",
+      "destination_root": "${MERIDIAN_DATA_ROOT}/derived/atlas/tryfan/terrain/surface-metrics-v1",
+      "domain": "Atlas",
+      "evidence_status": "derived",
+      "files": [
+        {
+          "bytes": 11346976,
+          "destination": "${MERIDIAN_DATA_ROOT}/derived/atlas/tryfan/terrain/surface-metrics-v1/elevation_m_odn.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              264899.50396825396,
+              357799.50396825396,
+              267900.49603174604,
+              360800.49603174604
+            ],
+            "crs": "EPSG:27700",
+            "dtypes": [
+              "float32"
+            ],
+            "height": 3025,
+            "nodata": [
+              -9999.0
+            ],
+            "pixel_size": [
+              0.9920634920634921,
+              0.9920634920634921
+            ],
+            "transform": [
+              0.9920634920634921,
+              0.0,
+              264899.50396825396,
+              0.0,
+              -0.9920634920634921,
+              360800.49603174604
+            ],
+            "width": 3025
+          },
+          "sha256": "db371fdb30ea7b02446ee48bce3674a5e7128a65b52e666c1eded6f0fb3037d9"
+        },
+        {
+          "bytes": 27880570,
+          "destination": "${MERIDIAN_DATA_ROOT}/derived/atlas/tryfan/terrain/surface-metrics-v1/slope_degrees.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              264899.50396825396,
+              357799.50396825396,
+              267900.49603174604,
+              360800.49603174604
+            ],
+            "crs": "EPSG:27700",
+            "dtypes": [
+              "float32"
+            ],
+            "height": 3025,
+            "nodata": [
+              -9999.0
+            ],
+            "pixel_size": [
+              0.9920634920634921,
+              0.9920634920634921
+            ],
+            "transform": [
+              0.9920634920634921,
+              0.0,
+              264899.50396825396,
+              0.0,
+              -0.9920634920634921,
+              360800.49603174604
+            ],
+            "width": 3025
+          },
+          "sha256": "04bd3132c44e5d369e3e58ff8690e44e815facc17acf90c4699fde18f7c01f34"
+        },
+        {
+          "bytes": 27292372,
+          "destination": "${MERIDIAN_DATA_ROOT}/derived/atlas/tryfan/terrain/surface-metrics-v1/aspect_degrees.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              264899.50396825396,
+              357799.50396825396,
+              267900.49603174604,
+              360800.49603174604
+            ],
+            "crs": "EPSG:27700",
+            "dtypes": [
+              "float32"
+            ],
+            "height": 3025,
+            "nodata": [
+              -9999.0
+            ],
+            "pixel_size": [
+              0.9920634920634921,
+              0.9920634920634921
+            ],
+            "transform": [
+              0.9920634920634921,
+              0.0,
+              264899.50396825396,
+              0.0,
+              -0.9920634920634921,
+              360800.49603174604
+            ],
+            "width": 3025
+          },
+          "sha256": "2f664e0334cdd685f60a98f21f7cea99a59b7e4a046ea48ed60442fae7140ae6"
+        },
+        {
+          "bytes": 31224101,
+          "destination": "${MERIDIAN_DATA_ROOT}/derived/atlas/tryfan/terrain/surface-metrics-v1/curvature_laplacian_per_m.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              264899.50396825396,
+              357799.50396825396,
+              267900.49603174604,
+              360800.49603174604
+            ],
+            "crs": "EPSG:27700",
+            "dtypes": [
+              "float32"
+            ],
+            "height": 3025,
+            "nodata": [
+              -9999.0
+            ],
+            "pixel_size": [
+              0.9920634920634921,
+              0.9920634920634921
+            ],
+            "transform": [
+              0.9920634920634921,
+              0.0,
+              264899.50396825396,
+              0.0,
+              -0.9920634920634921,
+              360800.49603174604
+            ],
+            "width": 3025
+          },
+          "sha256": "aadc140e20883cd7c483a50c232106faa3729ea411c20f55521ac242da75d182"
+        },
+        {
+          "bytes": 30539042,
+          "destination": "${MERIDIAN_DATA_ROOT}/derived/atlas/tryfan/terrain/surface-metrics-v1/curvature_plan_per_m.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              264899.50396825396,
+              357799.50396825396,
+              267900.49603174604,
+              360800.49603174604
+            ],
+            "crs": "EPSG:27700",
+            "dtypes": [
+              "float32"
+            ],
+            "height": 3025,
+            "nodata": [
+              -9999.0
+            ],
+            "pixel_size": [
+              0.9920634920634921,
+              0.9920634920634921
+            ],
+            "transform": [
+              0.9920634920634921,
+              0.0,
+              264899.50396825396,
+              0.0,
+              -0.9920634920634921,
+              360800.49603174604
+            ],
+            "width": 3025
+          },
+          "sha256": "1f2dc7e17dfc7173b237a7c28d3dbf80d7d0c4fb77421869157ba09e3770ae57"
+        },
+        {
+          "bytes": 30406032,
+          "destination": "${MERIDIAN_DATA_ROOT}/derived/atlas/tryfan/terrain/surface-metrics-v1/curvature_profile_per_m.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              264899.50396825396,
+              357799.50396825396,
+              267900.49603174604,
+              360800.49603174604
+            ],
+            "crs": "EPSG:27700",
+            "dtypes": [
+              "float32"
+            ],
+            "height": 3025,
+            "nodata": [
+              -9999.0
+            ],
+            "pixel_size": [
+              0.9920634920634921,
+              0.9920634920634921
+            ],
+            "transform": [
+              0.9920634920634921,
+              0.0,
+              264899.50396825396,
+              0.0,
+              -0.9920634920634921,
+              360800.49603174604
+            ],
+            "width": 3025
+          },
+          "sha256": "81c0bcb59bff006ec6bbad011be8cff12c7ccfd8954d425293defc2dff541bb2"
+        },
+        {
+          "bytes": 28917504,
+          "destination": "${MERIDIAN_DATA_ROOT}/derived/atlas/tryfan/terrain/surface-metrics-v1/roughness_detrended_rms_5samples_m.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              264899.50396825396,
+              357799.50396825396,
+              267900.49603174604,
+              360800.49603174604
+            ],
+            "crs": "EPSG:27700",
+            "dtypes": [
+              "float32"
+            ],
+            "height": 3025,
+            "nodata": [
+              -9999.0
+            ],
+            "pixel_size": [
+              0.9920634920634921,
+              0.9920634920634921
+            ],
+            "transform": [
+              0.9920634920634921,
+              0.0,
+              264899.50396825396,
+              0.0,
+              -0.9920634920634921,
+              360800.49603174604
+            ],
+            "width": 3025
+          },
+          "sha256": "f6de6643e906f66162e7d02dee5a0671b2fd49b4f4ee5beedf3352e681c5996e"
+        },
+        {
+          "bytes": 27120169,
+          "destination": "${MERIDIAN_DATA_ROOT}/derived/atlas/tryfan/terrain/surface-metrics-v1/roughness_detrended_rms_15samples_m.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              264899.50396825396,
+              357799.50396825396,
+              267900.49603174604,
+              360800.49603174604
+            ],
+            "crs": "EPSG:27700",
+            "dtypes": [
+              "float32"
+            ],
+            "height": 3025,
+            "nodata": [
+              -9999.0
+            ],
+            "pixel_size": [
+              0.9920634920634921,
+              0.9920634920634921
+            ],
+            "transform": [
+              0.9920634920634921,
+              0.0,
+              264899.50396825396,
+              0.0,
+              -0.9920634920634921,
+              360800.49603174604
+            ],
+            "width": 3025
+          },
+          "sha256": "ac4c2d2c970bb16ed0ea5aa342b333aa7e987608e7b4fa36d1c7618643dbfd49"
+        },
+        {
+          "bytes": 22532236,
+          "destination": "${MERIDIAN_DATA_ROOT}/derived/atlas/tryfan/terrain/surface-metrics-v1/roughness_detrended_rms_51samples_m.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              264899.50396825396,
+              357799.50396825396,
+              267900.49603174604,
+              360800.49603174604
+            ],
+            "crs": "EPSG:27700",
+            "dtypes": [
+              "float32"
+            ],
+            "height": 3025,
+            "nodata": [
+              -9999.0
+            ],
+            "pixel_size": [
+              0.9920634920634921,
+              0.9920634920634921
+            ],
+            "transform": [
+              0.9920634920634921,
+              0.0,
+              264899.50396825396,
+              0.0,
+              -0.9920634920634921,
+              360800.49603174604
+            ],
+            "width": 3025
+          },
+          "sha256": "edd64ded5c10c4d43ccb0911a0fccb02c179b2b79ca1bd4322a98eceaec23f3a"
+        }
+      ],
+      "geographic_area": "Tryfan",
+      "historical_lineage": [
+        "Earth Lab 005A",
+        "DER-MORPH"
+      ],
+      "licence_and_provenance": {
+        "attribution": "Contains Welsh Government information licensed under the Open Government Licence v3.0.",
+        "name": "Open Government Licence for Public Sector Information, version 3.0",
+        "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      },
+      "limitations": [
+        "The 0.992 m vertex grid cannot resolve sub-metre blocks, cracks or texture.",
+        "Slope and especially curvature amplify height quantisation, interpolation and classification noise.",
+        "DTM is bare-earth geometry and does not identify rock, grass, scree, paths, vegetation or wetness.",
+        "Roughness is scale-dependent geometric evidence, not a material classification.",
+        "Square-window roughness is undefined near edges by half the window width."
+      ],
+      "metadata": {
+        "algorithms": {
+          "aspect": {
+            "algorithm": "Downhill azimuth from Horn gradient",
+            "convention": {
+              "east": 90.0,
+              "north": 0.0,
+              "south": 180.0,
+              "west": 270.0
+            },
+            "flat_slope_threshold_degrees": 0.5,
+            "flat_value": "NODATA",
+            "units": "degrees clockwise from grid north"
+          },
+          "curvature": {
+            "laplacian": "d2z/dx2 + d2z/dy2; positive hollow/concave, negative ridge/convex",
+            "minimum_slope_for_profile_plan_degrees": 1.0,
+            "plan": "horizontal contour curvature; positive concave/hollow, negative convex/ridge",
+            "pre_smoothing": "separable 5-sample binomial kernel [1,4,6,4,1]/16",
+            "profile": "normal curvature in the downslope gradient direction; positive concave-up, negative convex-up",
+            "units": "1/metre"
+          },
+          "roughness": {
+            "algorithm": "RMS vertical residual after least-squares local plane removal in a centred square window",
+            "edge_and_nodata_policy": "NODATA unless the full window contains valid samples",
+            "units": "metres",
+            "window_sizes_samples": [
+              5,
+              15,
+              51
+            ]
+          },
+          "slope": {
+            "algorithm": "Horn 3x3 weighted central gradient",
+            "units": "degrees",
+            "valid_range": [
+              0.0,
+              90.0
+            ]
+          }
+        },
+        "crs": "EPSG:27700",
+        "historical_report_sha256": "70f91171b4c27a6e1b81dd2cc6033ba26e8a7f585cc9e1ad3338394faf64b187",
+        "shape": [
+          3025,
+          3025
+        ],
+        "source_r16_sha256": "31cbe763dac4072772ac9bcb4a3217b78eba0c10265e576ede708154288f6bf6",
+        "vertex_spacing_m": 0.9920634920634921
+      },
+      "payload_bytes": 237259002,
+      "payload_files": 9,
+      "product_id": "atlas.tryfan.terrain.surface-metrics-v1",
+      "title": "Tryfan deterministic terrain morphology fields"
+    },
+    {
+      "classification": "derived_surface_inference",
+      "decision": "PROMOTE",
+      "destination_root": "${MERIDIAN_DATA_ROOT}/derived/atlas/tryfan/surface/inference-v1",
+      "domain": "Atlas",
+      "evidence_status": "inferred",
+      "files": [
+        {
+          "bytes": 6215,
+          "destination": "${MERIDIAN_DATA_ROOT}/derived/atlas/tryfan/surface/inference-v1/lab007-surface-model-package.json",
+          "sha256": "bbf6ba7fa39cc519d91e94d1acffd399f4fcabbdffd7931c7cddf17fbe2423f4"
+        },
+        {
+          "bytes": 270837,
+          "destination": "${MERIDIAN_DATA_ROOT}/derived/atlas/tryfan/surface/inference-v1/rasters/probability-rock-10m.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              264900.0,
+              357800.0,
+              267900.0,
+              360800.0
+            ],
+            "crs": "EPSG:27700",
+            "dtypes": [
+              "float32"
+            ],
+            "height": 300,
+            "nodata": [
+              -9999.0
+            ],
+            "pixel_size": [
+              10.0,
+              10.0
+            ],
+            "transform": [
+              10.0,
+              0.0,
+              264900.0,
+              0.0,
+              -10.0,
+              360800.0
+            ],
+            "width": 300
+          },
+          "sha256": "6b43a24b731e5b88eb0d1c95881aca8fc56c54c00944520aa4c838a8135b09d6"
+        },
+        {
+          "bytes": 266683,
+          "destination": "${MERIDIAN_DATA_ROOT}/derived/atlas/tryfan/surface/inference-v1/rasters/probability-scree_talus-10m.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              264900.0,
+              357800.0,
+              267900.0,
+              360800.0
+            ],
+            "crs": "EPSG:27700",
+            "dtypes": [
+              "float32"
+            ],
+            "height": 300,
+            "nodata": [
+              -9999.0
+            ],
+            "pixel_size": [
+              10.0,
+              10.0
+            ],
+            "transform": [
+              10.0,
+              0.0,
+              264900.0,
+              0.0,
+              -10.0,
+              360800.0
+            ],
+            "width": 300
+          },
+          "sha256": "44a15d8dc401d915ae60c928802a8099951181f03199ec4ad101d04bc51ad9ec"
+        },
+        {
+          "bytes": 266841,
+          "destination": "${MERIDIAN_DATA_ROOT}/derived/atlas/tryfan/surface/inference-v1/rasters/probability-heath-10m.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              264900.0,
+              357800.0,
+              267900.0,
+              360800.0
+            ],
+            "crs": "EPSG:27700",
+            "dtypes": [
+              "float32"
+            ],
+            "height": 300,
+            "nodata": [
+              -9999.0
+            ],
+            "pixel_size": [
+              10.0,
+              10.0
+            ],
+            "transform": [
+              10.0,
+              0.0,
+              264900.0,
+              0.0,
+              -10.0,
+              360800.0
+            ],
+            "width": 300
+          },
+          "sha256": "8a95b0a65365e501abe2b1e2b8d8921c3792f0acf5d4f9acd2755821fd9fd364"
+        },
+        {
+          "bytes": 267485,
+          "destination": "${MERIDIAN_DATA_ROOT}/derived/atlas/tryfan/surface/inference-v1/rasters/probability-grass-10m.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              264900.0,
+              357800.0,
+              267900.0,
+              360800.0
+            ],
+            "crs": "EPSG:27700",
+            "dtypes": [
+              "float32"
+            ],
+            "height": 300,
+            "nodata": [
+              -9999.0
+            ],
+            "pixel_size": [
+              10.0,
+              10.0
+            ],
+            "transform": [
+              10.0,
+              0.0,
+              264900.0,
+              0.0,
+              -10.0,
+              360800.0
+            ],
+            "width": 300
+          },
+          "sha256": "6accdf8f7fb6c7a6957a79145c57cf71e006345899c967e5170841545f602d5a"
+        },
+        {
+          "bytes": 268995,
+          "destination": "${MERIDIAN_DATA_ROOT}/derived/atlas/tryfan/surface/inference-v1/rasters/probability-wet_ground-10m.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              264900.0,
+              357800.0,
+              267900.0,
+              360800.0
+            ],
+            "crs": "EPSG:27700",
+            "dtypes": [
+              "float32"
+            ],
+            "height": 300,
+            "nodata": [
+              -9999.0
+            ],
+            "pixel_size": [
+              10.0,
+              10.0
+            ],
+            "transform": [
+              10.0,
+              0.0,
+              264900.0,
+              0.0,
+              -10.0,
+              360800.0
+            ],
+            "width": 300
+          },
+          "sha256": "6a10a99bd5149bb5c73bc23243c4d768e413f7c4610d827dec41ead6c96868e9"
+        },
+        {
+          "bytes": 248274,
+          "destination": "${MERIDIAN_DATA_ROOT}/derived/atlas/tryfan/surface/inference-v1/rasters/probability-other_unknown-10m.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              264900.0,
+              357800.0,
+              267900.0,
+              360800.0
+            ],
+            "crs": "EPSG:27700",
+            "dtypes": [
+              "float32"
+            ],
+            "height": 300,
+            "nodata": [
+              -9999.0
+            ],
+            "pixel_size": [
+              10.0,
+              10.0
+            ],
+            "transform": [
+              10.0,
+              0.0,
+              264900.0,
+              0.0,
+              -10.0,
+              360800.0
+            ],
+            "width": 300
+          },
+          "sha256": "8d48b91860b1e3db32a0be667c30a8541f5d22986b09061d2f0f4ec2d536ad90"
+        },
+        {
+          "bytes": 235960,
+          "destination": "${MERIDIAN_DATA_ROOT}/derived/atlas/tryfan/surface/inference-v1/rasters/uncertainty-normalized-entropy-10m.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              264900.0,
+              357800.0,
+              267900.0,
+              360800.0
+            ],
+            "crs": "EPSG:27700",
+            "dtypes": [
+              "float32"
+            ],
+            "height": 300,
+            "nodata": [
+              -9999.0
+            ],
+            "pixel_size": [
+              10.0,
+              10.0
+            ],
+            "transform": [
+              10.0,
+              0.0,
+              264900.0,
+              0.0,
+              -10.0,
+              360800.0
+            ],
+            "width": 300
+          },
+          "sha256": "053d7e5a307743735c8ba08de6cf073a4044c9387af8fd6f09611f1d559feda8"
+        },
+        {
+          "bytes": 269166,
+          "destination": "${MERIDIAN_DATA_ROOT}/derived/atlas/tryfan/surface/inference-v1/rasters/source-conflict-js-10m.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              264900.0,
+              357800.0,
+              267900.0,
+              360800.0
+            ],
+            "crs": "EPSG:27700",
+            "dtypes": [
+              "float32"
+            ],
+            "height": 300,
+            "nodata": [
+              -9999.0
+            ],
+            "pixel_size": [
+              10.0,
+              10.0
+            ],
+            "transform": [
+              10.0,
+              0.0,
+              264900.0,
+              0.0,
+              -10.0,
+              360800.0
+            ],
+            "width": 300
+          },
+          "sha256": "fd2690fa3ec879e388fb7ccc1963195070cfd0d0f2fd27962e867e861cfb12ae"
+        },
+        {
+          "bytes": 1121,
+          "destination": "${MERIDIAN_DATA_ROOT}/derived/atlas/tryfan/surface/inference-v1/rasters/evidence-family-count-10m.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              264900.0,
+              357800.0,
+              267900.0,
+              360800.0
+            ],
+            "crs": "EPSG:27700",
+            "dtypes": [
+              "uint8"
+            ],
+            "height": 300,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              10.0,
+              10.0
+            ],
+            "transform": [
+              10.0,
+              0.0,
+              264900.0,
+              0.0,
+              -10.0,
+              360800.0
+            ],
+            "width": 300
+          },
+          "sha256": "e6a780290abcee44ce67cc99fe16569ae5204577b91cfacd2209884504db6964"
+        }
+      ],
+      "geographic_area": "Tryfan",
+      "historical_lineage": [
+        "Earth Lab 007",
+        "DER-007"
+      ],
+      "licence_and_provenance": null,
+      "limitations": [
+        "Probabilities describe broad Tryfan surface plausibility, not square-metre material truth.",
+        "Classes are Tryfan research ontology, not a permanent global Atlas ontology.",
+        "Dated and historical evidence retain their temporal limitations."
+      ],
+      "metadata": {
+        "deterministic_result_sha256": "574ce8e07fb8752e90b149ef9c5638adcd1d5845818df608b94a65a5c75ccbc8",
+        "grid": {
+          "bounds": [
+            264900,
+            357800,
+            267900,
+            360800
+          ],
+          "crs": "EPSG:27700",
+          "height": 300,
+          "resolution_m": 10,
+          "width": 300
+        },
+        "model_version": "lab007-explicit-evidence-v1",
+        "ontology": {
+          "classes": [
+            "rock",
+            "scree_talus",
+            "heath",
+            "grass",
+            "wet_ground",
+            "other_unknown"
+          ],
+          "scope": "Tryfan broad underlying surface character; not a global ontology or temporal surface state"
+        },
+        "semantic_invariants": [
+          "Mapped bedrock does not imply exposed rock.",
+          "No mapped superficial deposit does not prove bare bedrock.",
+          "Low NDVI, steep terrain, or rough terrain alone do not imply rock.",
+          "Historical habitat does not imply unchanged current habitat.",
+          "Dated Sentinel state does not become timeless surface identity.",
+          "Alignment grid spacing is not source information resolution.",
+          "Probabilities do not identify rocks, fractures, vegetation objects, textures, or square-metre material truth.",
+          "Source disagreement remains evidence rather than being treated as source error."
+        ]
+      },
+      "payload_bytes": 2101577,
+      "payload_files": 10,
+      "product_id": "atlas.tryfan.surface.inference-v1",
+      "title": "Tryfan uncertain underlying-surface inference"
+    },
+    {
+      "classification": "derived_reconstruction_control",
+      "decision": "PROMOTE",
+      "destination_root": "${MERIDIAN_DATA_ROOT}/derived/atlas/tryfan/surface/reconstruction-readiness-v1",
+      "domain": "Atlas",
+      "evidence_status": "audited_inferred_control",
+      "files": [
+        {
+          "bytes": 13858,
+          "destination": "${MERIDIAN_DATA_ROOT}/derived/atlas/tryfan/surface/reconstruction-readiness-v1/reconstruction-readiness-10m.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              264900.0,
+              357800.0,
+              267900.0,
+              360800.0
+            ],
+            "crs": "EPSG:27700",
+            "dtypes": [
+              "uint8"
+            ],
+            "height": 300,
+            "nodata": [
+              0.0
+            ],
+            "pixel_size": [
+              10.0,
+              10.0
+            ],
+            "transform": [
+              10.0,
+              0.0,
+              264900.0,
+              0.0,
+              -10.0,
+              360800.0
+            ],
+            "width": 300
+          },
+          "sha256": "b3a701f44f0ac3c995b158454304a46a5cc98969ee0ab2abf124709f0a61038b"
+        }
+      ],
+      "geographic_area": "Tryfan",
+      "historical_lineage": [
+        "Earth Lab 008",
+        "DER-008"
+      ],
+      "licence_and_provenance": null,
+      "limitations": [
+        "This is an audit-derived rendering/reconstruction control, not an observed surface property.",
+        "It expresses permitted reconstruction freedom, not physical material identity."
+      ],
+      "metadata": {
+        "category_codes": {
+          "1": "broad_tendency_constrained",
+          "2": "guided_mixture_reconstruction",
+          "3": "high_reconstruction_freedom"
+        },
+        "crs": "EPSG:27700",
+        "deterministic_result_sha256": "3996360c3ea9b379362704b22c5e06e8ecaf16870e14118ff8eabb1bcd02fac7",
+        "distribution": {
+          "1": {
+            "cells": 41585,
+            "fraction": 0.46205555555555555,
+            "name": "broad_tendency_constrained"
+          },
+          "2": {
+            "cells": 33388,
+            "fraction": 0.3709777777777778,
+            "name": "guided_mixture_reconstruction"
+          },
+          "3": {
+            "cells": 15027,
+            "fraction": 0.16696666666666668,
+            "name": "high_reconstruction_freedom"
+          }
+        },
+        "resolution_m": 10,
+        "shape": [
+          300,
+          300
+        ]
+      },
+      "payload_bytes": 13858,
+      "payload_files": 1,
+      "product_id": "atlas.tryfan.surface.reconstruction-readiness-v1",
+      "title": "Tryfan reconstruction-readiness control"
+    },
+    {
+      "classification": "derived_surface_reconstruction",
+      "decision": "PROMOTE",
+      "destination_root": "${MERIDIAN_DATA_ROOT}/derived/atlas/tryfan/surface/reconstruction-v0.1",
+      "domain": "Atlas",
+      "evidence_status": "reconstructed",
+      "files": [
+        {
+          "bytes": 3713,
+          "destination": "${MERIDIAN_DATA_ROOT}/derived/atlas/tryfan/surface/reconstruction-v0.1/lab009-reconstruction-package.json",
+          "sha256": "7111d1857374eef76e5ac26ef3a719be09b9f6a55cb570c0aa74e42b634facd8"
+        },
+        {
+          "bytes": 15756892,
+          "destination": "${MERIDIAN_DATA_ROOT}/derived/atlas/tryfan/surface/reconstruction-v0.1/rasters/reconstruction-freedom-1m.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              264899.50396825396,
+              357799.50396825396,
+              267900.49603174604,
+              360800.49603174604
+            ],
+            "crs": "EPSG:27700",
+            "dtypes": [
+              "float32"
+            ],
+            "height": 3025,
+            "nodata": [
+              -9999.0
+            ],
+            "pixel_size": [
+              0.9920634920634921,
+              0.9920634920634921
+            ],
+            "transform": [
+              0.9920634920634921,
+              0.0,
+              264899.50396825396,
+              0.0,
+              -0.9920634920634921,
+              360800.49603174604
+            ],
+            "width": 3025
+          },
+          "sha256": "22b67007a87bdc05976373825f93e693e4f56d1996934f39907b36e6cc817cef"
+        },
+        {
+          "bytes": 24983466,
+          "destination": "${MERIDIAN_DATA_ROOT}/derived/atlas/tryfan/surface/reconstruction-v0.1/rasters/reconstruction-grass-1m.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              264899.50396825396,
+              357799.50396825396,
+              267900.49603174604,
+              360800.49603174604
+            ],
+            "crs": "EPSG:27700",
+            "dtypes": [
+              "float32"
+            ],
+            "height": 3025,
+            "nodata": [
+              -9999.0
+            ],
+            "pixel_size": [
+              0.9920634920634921,
+              0.9920634920634921
+            ],
+            "transform": [
+              0.9920634920634921,
+              0.0,
+              264899.50396825396,
+              0.0,
+              -0.9920634920634921,
+              360800.49603174604
+            ],
+            "width": 3025
+          },
+          "sha256": "5aa217dbcfcf533fc4511073d13cabe7699fe70e1f1e109c0a558c3fc7610c41"
+        },
+        {
+          "bytes": 25690459,
+          "destination": "${MERIDIAN_DATA_ROOT}/derived/atlas/tryfan/surface/reconstruction-v0.1/rasters/reconstruction-heath-1m.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              264899.50396825396,
+              357799.50396825396,
+              267900.49603174604,
+              360800.49603174604
+            ],
+            "crs": "EPSG:27700",
+            "dtypes": [
+              "float32"
+            ],
+            "height": 3025,
+            "nodata": [
+              -9999.0
+            ],
+            "pixel_size": [
+              0.9920634920634921,
+              0.9920634920634921
+            ],
+            "transform": [
+              0.9920634920634921,
+              0.0,
+              264899.50396825396,
+              0.0,
+              -0.9920634920634921,
+              360800.49603174604
+            ],
+            "width": 3025
+          },
+          "sha256": "85ed7cf550dca1899296c2147503d7c6285a9a65d6b4fb5e49ac600aec0075c2"
+        },
+        {
+          "bytes": 16297484,
+          "destination": "${MERIDIAN_DATA_ROOT}/derived/atlas/tryfan/surface/reconstruction-v0.1/rasters/reconstruction-lab007-uncertainty-1m.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              264899.50396825396,
+              357799.50396825396,
+              267900.49603174604,
+              360800.49603174604
+            ],
+            "crs": "EPSG:27700",
+            "dtypes": [
+              "float32"
+            ],
+            "height": 3025,
+            "nodata": [
+              -9999.0
+            ],
+            "pixel_size": [
+              0.9920634920634921,
+              0.9920634920634921
+            ],
+            "transform": [
+              0.9920634920634921,
+              0.0,
+              264899.50396825396,
+              0.0,
+              -0.9920634920634921,
+              360800.49603174604
+            ],
+            "width": 3025
+          },
+          "sha256": "37044dfcb6fe6fdf74a54882d21d7a5b6c9c26a7c215baaf02fe24e94736f4d5"
+        },
+        {
+          "bytes": 26117486,
+          "destination": "${MERIDIAN_DATA_ROOT}/derived/atlas/tryfan/surface/reconstruction-v0.1/rasters/reconstruction-rock-1m.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              264899.50396825396,
+              357799.50396825396,
+              267900.49603174604,
+              360800.49603174604
+            ],
+            "crs": "EPSG:27700",
+            "dtypes": [
+              "float32"
+            ],
+            "height": 3025,
+            "nodata": [
+              -9999.0
+            ],
+            "pixel_size": [
+              0.9920634920634921,
+              0.9920634920634921
+            ],
+            "transform": [
+              0.9920634920634921,
+              0.0,
+              264899.50396825396,
+              0.0,
+              -0.9920634920634921,
+              360800.49603174604
+            ],
+            "width": 3025
+          },
+          "sha256": "bc5d48fb9b13f21aba64003a85ec1805fb203acb7d89642d9226cb6b1cb877d3"
+        },
+        {
+          "bytes": 25979147,
+          "destination": "${MERIDIAN_DATA_ROOT}/derived/atlas/tryfan/surface/reconstruction-v0.1/rasters/reconstruction-scree_talus-1m.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              264899.50396825396,
+              357799.50396825396,
+              267900.49603174604,
+              360800.49603174604
+            ],
+            "crs": "EPSG:27700",
+            "dtypes": [
+              "float32"
+            ],
+            "height": 3025,
+            "nodata": [
+              -9999.0
+            ],
+            "pixel_size": [
+              0.9920634920634921,
+              0.9920634920634921
+            ],
+            "transform": [
+              0.9920634920634921,
+              0.0,
+              264899.50396825396,
+              0.0,
+              -0.9920634920634921,
+              360800.49603174604
+            ],
+            "width": 3025
+          },
+          "sha256": "46f187e1336fde2feabdda38f72b4e14fcda1cc2186f829fe6867ba19679c880"
+        },
+        {
+          "bytes": 26632501,
+          "destination": "${MERIDIAN_DATA_ROOT}/derived/atlas/tryfan/surface/reconstruction-v0.1/rasters/reconstruction-terrain-influence-1m.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              264899.50396825396,
+              357799.50396825396,
+              267900.49603174604,
+              360800.49603174604
+            ],
+            "crs": "EPSG:27700",
+            "dtypes": [
+              "float32"
+            ],
+            "height": 3025,
+            "nodata": [
+              -9999.0
+            ],
+            "pixel_size": [
+              0.9920634920634921,
+              0.9920634920634921
+            ],
+            "transform": [
+              0.9920634920634921,
+              0.0,
+              264899.50396825396,
+              0.0,
+              -0.9920634920634921,
+              360800.49603174604
+            ],
+            "width": 3025
+          },
+          "sha256": "621febc14158d2f22ba6fd847912f436751938bb9d808805db2b6881bd7e0f93"
+        },
+        {
+          "bytes": 26315432,
+          "destination": "${MERIDIAN_DATA_ROOT}/derived/atlas/tryfan/surface/reconstruction-v0.1/rasters/reconstruction-wet_ground-1m.tif",
+          "raster": {
+            "bands": 1,
+            "bounds": [
+              264899.50396825396,
+              357799.50396825396,
+              267900.49603174604,
+              360800.49603174604
+            ],
+            "crs": "EPSG:27700",
+            "dtypes": [
+              "float32"
+            ],
+            "height": 3025,
+            "nodata": [
+              -9999.0
+            ],
+            "pixel_size": [
+              0.9920634920634921,
+              0.9920634920634921
+            ],
+            "transform": [
+              0.9920634920634921,
+              0.0,
+              264899.50396825396,
+              0.0,
+              -0.9920634920634921,
+              360800.49603174604
+            ],
+            "width": 3025
+          },
+          "sha256": "733cc2cccc2c3ddbdf0a8fc728fc3ffa7d4084f85d85608ebe6dee6ce060bdd4"
+        }
+      ],
+      "geographic_area": "Tryfan",
+      "historical_lineage": [
+        "Earth Lab 009",
+        "DER-009"
+      ],
+      "licence_and_provenance": null,
+      "limitations": [
+        "The 3025x3025 grid is a renderer-aligned reconstructed field, not 1 m observation.",
+        "Procedural placement is deterministic but not measured detail.",
+        "other_unknown controls freedom and is not a material."
+      ],
+      "metadata": {
+        "algorithm_version": "lab009-coherent-mixture-v1",
+        "channels": {
+          "audited_freedom": {
+            "classes": {
+              "1": "broad_tendency_constrained",
+              "2": "guided_mixture_reconstruction",
+              "3": "high_reconstruction_freedom"
+            },
+            "native_alignment_m": 10,
+            "source": "frozen Lab 008"
+          },
+          "other_unknown": {
+            "material_assignment": false,
+            "use": "reconstruction freedom only"
+          },
+          "reconstructed_visual_controls": {
+            "classes": [
+              "rock",
+              "scree_talus",
+              "heath",
+              "grass",
+              "wet_ground"
+            ],
+            "information_resolution_warning": "3025x3025 renderer grid does not make categorical evidence metre-scale observation",
+            "sum_to_one": true
+          },
+          "scientific_inference": {
+            "classes": [
+              "rock",
+              "scree_talus",
+              "heath",
+              "grass",
+              "wet_ground",
+              "other_unknown"
+            ],
+            "native_alignment_m": 10,
+            "source": "frozen Lab 007"
+          }
+        },
+        "deterministic_result_sha256": "14f90941468166dc3937879e022e8fedff2d9d212eed5cfb1c5deb0407c6a859",
+        "grid": {
+          "crs": "EPSG:27700",
+          "shape": [
+            3025,
+            3025
+          ],
+          "transform": [
+            0.9920634920634921,
+            0.0,
+            264899.50396825396,
+            0.0,
+            -0.9920634920634921,
+            360800.49603174604
+          ],
+          "vertex_spacing_m": 0.9920634920634921
+        },
+        "renderer_transport": "Excluded: packed RGBA PNGs are Unreal transport artefacts and remain historical/cache inputs."
+      },
+      "payload_bytes": 187776580,
+      "payload_files": 9,
+      "product_id": "atlas.tryfan.surface.reconstruction-v0.1",
+      "title": "Tryfan renderer-neutral reconstructed surface controls v0.1"
+    }
+  ],
+  "representation_chain": [
+    "source_observation",
+    "derived",
+    "inferred",
+    "reconstructed",
+    "renderer"
+  ],
+  "schema_version": 1,
+  "status": "AVAILABLE_VALIDATED_REVIEW_PENDING",
+  "validation": {
+    "all_payload_sha256_match": true,
+    "historical_copies_retained": true,
+    "payload_bytes": 522051687,
+    "payload_files": 93,
+    "rasters_opened": 73,
+    "report": "${MERIDIAN_DATA_ROOT}/derived/atlas/tryfan/phase-4c-validation.json",
+    "report_sha256": "37faf10aab6dc62895a19fcafbe58098741ef2776ea347772e203d02cb58e788"
+  }
+}
