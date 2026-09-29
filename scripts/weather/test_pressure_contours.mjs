@@ -8,10 +8,10 @@ const server = await createServer({
   logLevel: "silent",
   server: { middlewareMode: true },
 });
-const model = await server.ssrLoadModule("/src/services/pressureContourModel.ts");
-const weather = await server.ssrLoadModule("/src/services/globalWeatherService.ts");
+const model = await server.ssrLoadModule("/src/weather/map/pressureContourModel.ts");
+const weather = await server.ssrLoadModule("/src/weather/data/globalWeatherService.ts");
 const pressureLayerSource = readFileSync(
-  new URL("../../src/services/pressureLayer.ts", import.meta.url),
+  new URL("../../src/weather/map/pressureLayer.ts", import.meta.url),
   "utf8"
 );
 

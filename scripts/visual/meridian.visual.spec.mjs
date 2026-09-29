@@ -193,7 +193,7 @@ async function importRoute(page, name, coordinates) {
   });
   await expect(page.locator(".journey-route-title h2")).toHaveText(name, { timeout: 30_000 });
   await expect(page.getByRole("button", { name: "Analyse", exact: true })).toBeVisible({ timeout: 30_000 });
-  // MapView uses a 750 ms app-driven fit transition; inspect only the settled camera.
+  // MeridianMap uses a 750 ms app-driven fit transition; inspect only the settled camera.
   await page.waitForTimeout(800);
 }
 async function openMeridian(page) {
@@ -603,7 +603,7 @@ test("safe GPX route exposes Journey, in-panel Tune, and interactive Analysis", 
     const routeTitle = page.locator(".journey-route-title h2");
     await expect(routeTitle).toHaveText(longRouteName);
     await expect(page.getByRole("button", { name: "Analyse", exact: true })).toBeVisible({ timeout: 30_000 });
-    // MapView uses a 750 ms app-driven fit transition; inspect only the settled camera.
+    // MeridianMap uses a 750 ms app-driven fit transition; inspect only the settled camera.
     await page.waitForTimeout(800);
     await expect(page.locator(".journey-profile-card .route-profile-summary")).toBeVisible();
 

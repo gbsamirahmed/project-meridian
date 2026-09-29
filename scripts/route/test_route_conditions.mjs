@@ -7,9 +7,9 @@ const server = await createServer({
   logLevel: "silent",
   server: { middlewareMode: true },
 });
-const conditions = await server.ssrLoadModule("/src/services/routeConditions.ts");
-const styles = await server.ssrLoadModule("/src/services/routeConditionStyle.ts");
-const numericTiles = await server.ssrLoadModule("/src/services/numericTileCache.ts");
+const conditions = await server.ssrLoadModule("/src/traverse/model/routeConditions.ts");
+const styles = await server.ssrLoadModule("/src/traverse/model/routeConditionStyle.ts");
+const numericTiles = await server.ssrLoadModule("/src/weather/data/numericTileCache.ts");
 
 test.after(async () => server.close());
 

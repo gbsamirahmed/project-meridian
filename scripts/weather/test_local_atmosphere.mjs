@@ -11,9 +11,9 @@ test("served catalogue and PNGs sample through the real route/source/cache path"
   skip: !process.env.MERIDIAN_WEATHER_URL || !process.env.MERIDIAN_TEST_PYTHON,
 }, async () => {
   const server = await createServer({ appType: "custom", logLevel: "silent", server: { middlewareMode: true } });
-  const weather = await server.ssrLoadModule("/src/services/globalWeatherService.ts");
-  const route = await server.ssrLoadModule("/src/services/routeConditions.ts");
-  const cache = await server.ssrLoadModule("/src/services/numericTileCache.ts");
+  const weather = await server.ssrLoadModule("/src/weather/data/globalWeatherService.ts");
+  const route = await server.ssrLoadModule("/src/traverse/model/routeConditions.ts");
+  const cache = await server.ssrLoadModule("/src/weather/data/numericTileCache.ts");
   const originals = { window: globalThis.window, document: globalThis.document, createImageBitmap: globalThis.createImageBitmap, fetch: globalThis.fetch };
   const urls = new Set(); let requests = 0, bytes = 0;
   globalThis.window = { location: { href: process.env.MERIDIAN_WEATHER_URL } };

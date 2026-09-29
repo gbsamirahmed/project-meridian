@@ -5,10 +5,10 @@ import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 
 const server = await createServer({ appType: "custom", logLevel: "silent", server: { middlewareMode: true } });
-const refresh = await server.ssrLoadModule("/src/services/weatherCatalogueRefresh.ts");
-const weather = await server.ssrLoadModule("/src/services/globalWeatherService.ts");
-const freshness = await server.ssrLoadModule("/src/services/weatherFreshness.ts");
-const FreshnessComponent = (await server.ssrLoadModule("/src/components/WeatherFreshness.tsx")).default;
+const refresh = await server.ssrLoadModule("/src/weather/data/weatherCatalogueRefresh.ts");
+const weather = await server.ssrLoadModule("/src/weather/data/globalWeatherService.ts");
+const freshness = await server.ssrLoadModule("/src/weather/presentation/weatherFreshness.ts");
+const FreshnessComponent = (await server.ssrLoadModule("/src/weather/components/WeatherFreshness.tsx")).default;
 
 const ids = weather.GLOBAL_WEATHER_FIELD_IDS;
 const paths = { precipitation: "", cloud_cover: "cloud-cover", wind_10m: "wind-10m", temperature_2m: "temperature-2m", pressure_msl: "pressure-msl", gust_surface: "gust-surface", visibility_surface: "visibility-surface", freezing_level: "freezing-level", highest_freezing_level: "highest-freezing-level", cloud_ceiling: "cloud-ceiling" };

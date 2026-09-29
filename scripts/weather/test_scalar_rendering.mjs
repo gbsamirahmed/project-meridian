@@ -3,10 +3,10 @@ import test from "node:test";
 import { createServer } from "vite";
 
 const server = await createServer({ appType: "custom", logLevel: "silent", server: { middlewareMode: true } });
-const raster = await server.ssrLoadModule("/src/services/scalarRaster.ts");
-const style = await server.ssrLoadModule("/src/services/precipitationStyle.ts");
-const labels = await server.ssrLoadModule("/src/services/weatherTimeLabel.ts");
-const numeric = await server.ssrLoadModule("/src/services/numericTileCache.ts");
+const raster = await server.ssrLoadModule("/src/weather/map/scalarRaster.ts");
+const style = await server.ssrLoadModule("/src/weather/presentation/precipitationStyle.ts");
+const labels = await server.ssrLoadModule("/src/weather/presentation/weatherTimeLabel.ts");
+const numeric = await server.ssrLoadModule("/src/weather/data/numericTileCache.ts");
 test.after(() => server.close());
 
 test("trace precipitation stays visible and joins the unchanged 0.1 mm palette continuously", () => {

@@ -1,6 +1,7 @@
 # Phase 5 active-code architecture audit and frozen refactor plan
 
-**Status:** Phase 5A complete; implementation has not begun.
+**Status:** Phase 5B structural implementation complete and awaiting review;
+Phase 5C has not begun.
 
 **Boundary:** Phase 5 consists only of 5A (this audit), 5B (structural
 reorganisation), 5C (the three defined coupling fixes) and 5D (transitional
@@ -417,6 +418,41 @@ create a state library or introduce product behaviour.
 - representative Playwright smoke for location Weather, global overlay, route
   import, journey schedule, route analysis and map interaction;
 - `git diff --check`, privacy and credential scans.
+
+### Phase 5B implementation record
+
+Phase 5B applied the frozen structural plan without changing state ownership,
+sampling, rendering or product behaviour:
+
+- 80 tracked source/style files moved with Git-aware operations; `main.tsx`,
+  `index.css` and the deliberately transitional empty `components/SearchBar.tsx`
+  remained at their approved paths;
+- `MapView` became app-owned `MeridianMap`, `WeatherPanel` became app-owned
+  `MobileWorkspace`, and `ForecastDetails` became Traverse-owned
+  `RoutePointDetails`;
+- mixed timeline, forecast workspace, layer state, visuals, attribution and layer
+  ordering remain app-owned compatibility code for the 5C split;
+- Weather and Traverse types remain separate files inside domain `types`
+  directories so the known cycles can be resolved without a behavioural merge in
+  5C/5D;
+- `shared` was not created, and no public barrel or generalized interface was
+  introduced;
+- test module-loader paths moved with their owning files. TypeScript, ESLint, the
+  production build, 29 UI tests, 56 route tests, 32 Weather tests and the external
+  publication check passed.
+
+Browser validation passed all five scenarios at 1920x1080 and 1440x900, plus
+shell/map, forecast workspace, route fitting and journey/analysis scenarios at
+1366x768. The 1366x768 pressure-isobar readiness marker timed out twice despite no
+page errors, failed requests or error responses. Focused diagnosis subsequently
+reproduced the scheduling failure at 1440x900 and at the isolated Phase 5A baseline:
+after `style.load`, terrain configuration can leave `map.isStyleLoaded()` false when
+both the overlay effect and camera `moveend` try to render pressure. The guarded
+update is skipped and, without a later trigger, `data-pressure-contours-ready` is
+never set. Phase 5B changed only pressure import paths, so this is a pre-existing map
+lifecycle/render-retry issue rather than a structural regression. It belongs within
+the already-frozen 5C Atlas-map/Weather-controller work; the 5D browser gate must
+verify the resolved lifecycle without weakening the test.
 
 ## Frozen Phase 5C plan — defined coupling fixes
 

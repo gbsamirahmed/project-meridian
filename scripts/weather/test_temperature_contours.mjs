@@ -8,7 +8,7 @@ const server = await createServer({
   server: { middlewareMode: true },
 });
 const model = await server.ssrLoadModule(
-  "/src/services/temperatureContourModel.ts"
+  "/src/weather/map/temperatureContourModel.ts"
 );
 
 test.after(async () => {

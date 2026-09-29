@@ -39,12 +39,21 @@ The current React application remains one deployable client-side application. At
 Weather and Traverse are conceptual boundaries inside it. Separate deployable apps,
 microservices and a speculative package hierarchy are not justified yet.
 
-The active TypeScript code still uses the older generic `components`, `services`,
-`types` and `config` folders. Phase 5 will establish ownership under `src/app`,
-`src/atlas`, `src/weather` and `src/traverse` without splitting the deployable
-application. Its audited, bounded 5B-5D migration is frozen in the
+Phase 5B organised the active TypeScript code under `src/app`, `src/atlas`,
+`src/weather` and `src/traverse` without splitting the deployable application or
+changing runtime ownership. Mixed map, timeline, workspace, layer and attribution
+code remains temporarily app-owned until the specific 5C boundaries are introduced.
+`src/shared` remains absent because no current file has a justified domain-neutral
+owner. The empty legacy `src/components/SearchBar.tsx` is deliberately retained for
+5D cleanup. The audited, bounded 5B-5D migration remains frozen in the
 [Phase 5 architecture plan](phase-5-architecture-plan.md). Historical experiments
 and renderer source are outside that refactor.
+
+Phase 5B also confirmed a pre-existing map lifecycle race: terrain configuration can
+temporarily make `map.isStyleLoaded()` false after `style.load`, allowing a pressure
+update and its camera retry to be skipped without a later readiness trigger. The
+already-planned 5C Atlas-map/Weather-controller boundary owns that lifecycle repair;
+5D retains the final browser-validation gate.
 
 The conceptual relationship is:
 

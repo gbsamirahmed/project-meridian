@@ -1,0 +1,834 @@
+import { useCallback, useEffect, useMemo, useReducer, useRef, useState } from "react";
+
+import MeridianMap from "./map/MeridianMap";
+import MobileWorkspace from "./components/MobileWorkspace";
+import RoutePlannerPanel from "../traverse/components/RoutePlannerPanel";
+import DesktopWorkspace, { MeridianMark } from "./components/DesktopWorkspace";
+import LocationWorkspace from "../weather/components/LocationWorkspace";
+import JourneyOverview from "../traverse/components/JourneyOverview";
+import MapControls from "./components/MapControls";
+import ForecastTimeline from "./components/ForecastTimeline";
+import RouteAnalysis from "../traverse/components/RouteAnalysis";
+import GlobalSettings from "./components/GlobalSettings";
+import JourneySettings from "../traverse/components/JourneySettings";
+import ForecastWorkspace from "./components/ForecastWorkspace";
+import DetailWorkspace from "./components/DetailWorkspace";
+
+import { getWeather } from "../weather/data/weatherService";
+import { getLocationName } from "../atlas/location/locationService";
+import { searchLocation } from "../atlas/location/searchService";
+import {
+  intersectScalarValidTimes,
+  loadGlobalWeatherSources,
+} from "../weather/data/globalWeatherService";
+import {
+  catalogueForecastIndex,
+  GlobalWeatherCatalogueWatcher,
+  type CatalogueCheckState,
+} from "../weather/data/weatherCatalogueRefresh";
+import { IS_SATELLITE_CONFIGURED } from "../atlas/map/satelliteProvider";
+import {
+  MAX_GPX_FILE_BYTES,
+  parseGpxText,
+  resampleRouteGeometry,
+} from "../traverse/model/routeGeometry";
+import { sampleTerrainElevations } from "../atlas/terrain/terrainElevationSampler";
+import { buildTerrainRoute } from "../traverse/model/routeTerrain";
+import {
+  buildJourneySchedule,
+  DEFAULT_JOURNEY_PROFILE,
+} from "../traverse/model/journeyModel";
+import { buildRouteConditions } from "../traverse/model/routeConditions";
+import { activeRouteSampleIndex } from "../traverse/model/routeProfileInteraction";
+import {
+  desktopWorkspaceReducer,
+  INITIAL_DESKTOP_WORKSPACE_STATE,
+} from "./state/desktopWorkspaceState";
+import type { SelectedLocation } from "../atlas/location/location";
+import type { WeatherData } from "../weather/types/weather";
+import type { Place } from "../atlas/location/place";
+import type { Basemap, MapOverlayState } from "./types/layer";
+import type {
+  GlobalWeatherCatalog,
+  GlobalWeatherSourceRegistry,
+  GlobalWeatherStatusRegistry,
+  GlobalWeatherFieldSource,
+} from "../weather/types/globalWeather";
+import type {
+  JourneyPlan,
+  JourneyProfile,
+  JourneySchedule,
+  ResampledRouteGeometry,
+  RoutePreparationStatus,
+  TerrainRoute,
+} from "../traverse/types/route";
+import type {
+  RouteConditionMode,
+  RouteConditions,
+  RouteConditionStatus,
+} from "../traverse/types/routeConditions";
+
+import "./App.css";
+
+function timestamp(time: string): number {
+  return Date.parse(/(?:Z|[+-]\d{2}:?\d{2})$/.test(time) ? time : `${time}Z`);
+}
+
+function closestForecastIndex(times: string[], targetTime: string): number {
+  const target = timestamp(targetTime);
+  let bestIndex = 0;
+  let bestDifference = Number.POSITIVE_INFINITY;
+  times.forEach((time, index) => {
+    const difference = Math.abs(timestamp(time) - target);
+    if (difference < bestDifference) {
+      bestDifference = difference;
+      bestIndex = index;
+    }
+  });
+  return bestIndex;
+}
+
+function futureIso(hours: number): string {
+  const date = new Date(Date.now() + hours * 3600000);
+  date.setMinutes(Math.ceil(date.getMinutes() / 15) * 15, 0, 0);
+  return date.toISOString();
+}
+
+function App() {
+  const [selectedLocation, setSelectedLocation] =
+    useState<SelectedLocation | null>(null);
+  const [debouncedLocation, setDebouncedLocation] =
+    useState<SelectedLocation | null>(null);
+  const [weather, setWeather] = useState<WeatherData | null>(null);
+  const [weatherStatus, setWeatherStatus] = useState<"idle" | "loading" | "ready" | "error">("idle");
+  const [place, setPlace] = useState<Place | null>(null);
+  const [basemap, setBasemap] = useState<Basemap>("terrain");
+  const [mapOverlays, setMapOverlays] = useState<MapOverlayState>({
+      elevation: false,
+      precipitation: false,
+      clouds: false,
+      temperatureContours: false,
+      pressureIsobars: false,
+      windFlow: false,
+    });
+  const [forecastHour, setForecastHour] = useState(0);
+  const [isForecastPlaying, setIsForecastPlaying] = useState(false);
+  const [globalWeatherCatalog, setGlobalWeatherCatalog] =
+    useState<GlobalWeatherCatalog | null>(null);
+  const [catalogueCheck, setCatalogueCheck] = useState<CatalogueCheckState>({
+    lastSuccessfulCheck: null,
+    lastCheckFailed: false,
+  });
+  const [globalWeatherSources, setGlobalWeatherSources] =
+    useState<GlobalWeatherSourceRegistry>({});
+  const [globalWeatherStatuses, setGlobalWeatherStatuses] =
+    useState<GlobalWeatherStatusRegistry>({
+      precipitation: "loading",
+      cloud_cover: "loading",
+      wind_10m: "loading",
+      temperature_2m: "loading",
+      pressure_msl: "loading",
+      gust_surface: "loading",
+      visibility_surface: "loading",
+      freezing_level: "loading",
+      highest_freezing_level: "loading",
+      cloud_ceiling: "loading",
+    });
+  const [isDesktopPanelCollapsed, setIsDesktopPanelCollapsed] = useState(false);
+  const [desktopLayout, setDesktopLayout] = useState(
+    () => typeof window !== "undefined" && window.matchMedia("(min-width: 701px)").matches
+  );
+  const [workspace, dispatchWorkspace] = useReducer(
+    desktopWorkspaceReducer,
+    INITIAL_DESKTOP_WORKSPACE_STATE
+  );
+  const [routeGeometry, setRouteGeometry] =
+    useState<ResampledRouteGeometry | null>(null);
+  const [terrainRoute, setTerrainRoute] = useState<TerrainRoute | null>(null);
+  const [routeStatus, setRouteStatus] =
+    useState<RoutePreparationStatus>("idle");
+  const [routeStatusMessage, setRouteStatusMessage] = useState<string | null>(null);
+  const [journeyProfile, setJourneyProfile] = useState<JourneyProfile>(
+    DEFAULT_JOURNEY_PROFILE
+  );
+  const [journeyPlan, setJourneyPlan] = useState<JourneyPlan>(() => ({
+    mode: "profile",
+    departureTime: futureIso(1),
+    targetDurationMinutes: 360,
+    targetFinishTime: futureIso(7),
+  }));
+  const [previewRouteSampleIndex, setPreviewRouteSampleIndex] = useState<
+    number | null
+  >(null);
+  const [pinnedRouteSampleIndex, setPinnedRouteSampleIndex] = useState<
+    number | null
+  >(null);
+  const selectedRouteSampleIndex = terrainRoute
+    ? pinnedRouteSampleIndex ?? 0
+    : null;
+  const focusedRouteSampleIndex = activeRouteSampleIndex(
+    previewRouteSampleIndex,
+    selectedRouteSampleIndex
+  );
+  const [routeConditions, setRouteConditions] =
+    useState<RouteConditions | null>(null);
+  const [routeConditionStatus, setRouteConditionStatus] =
+    useState<RouteConditionStatus>("idle");
+  const [routeConditionMode, setRouteConditionMode] =
+    useState<RouteConditionMode>("none");
+
+  const locationNameAbortRef = useRef<AbortController | null>(null);
+  const locationWeatherAbortRef = useRef<AbortController | null>(null);
+  const searchAbortRef = useRef<AbortController | null>(null);
+  const hasInitialisedGfsTimelineRef = useRef(false);
+  const activeGlobalValidTimeRef = useRef<string | null>(null);
+  const mapOverlaysRef = useRef(mapOverlays);
+  const routeAbortRef = useRef<AbortController | null>(null);
+  const routeGenerationRef = useRef(0);
+  const routeConditionAbortRef = useRef<AbortController | null>(null);
+  const routeConditionGenerationRef = useRef(0);
+
+  useEffect(() => {
+    const media = window.matchMedia("(min-width: 701px)");
+    const syncLayout = () => setDesktopLayout(media.matches);
+    syncLayout();
+    media.addEventListener("change", syncLayout);
+    return () => media.removeEventListener("change", syncLayout);
+  }, []);
+
+  useEffect(() => {
+    let isCurrent = true;
+    let watcher: GlobalWeatherCatalogueWatcher | null = null;
+    const updateCheck = (next: CatalogueCheckState) => {
+      if (!isCurrent) return;
+      setCatalogueCheck((current) => ({
+        lastSuccessfulCheck:
+          next.lastSuccessfulCheck ?? current.lastSuccessfulCheck,
+        lastCheckFailed: next.lastCheckFailed,
+      }));
+    };
+    const adopt = (result: {
+      catalog: GlobalWeatherCatalog;
+      sources: GlobalWeatherSourceRegistry;
+      statuses: GlobalWeatherStatusRegistry;
+    }) => {
+      if (!isCurrent) return;
+      const globalOverlayActive =
+        mapOverlaysRef.current.precipitation ||
+        mapOverlaysRef.current.clouds ||
+        mapOverlaysRef.current.windFlow ||
+        mapOverlaysRef.current.temperatureContours ||
+        mapOverlaysRef.current.pressureIsobars;
+      if (globalOverlayActive && result.sources.precipitation) {
+        const times = result.sources.precipitation.manifest.timesteps.map(
+          (step) => step.validTime
+        );
+        setForecastHour(
+          catalogueForecastIndex(times, activeGlobalValidTimeRef.current)
+        );
+      }
+      setGlobalWeatherCatalog(result.catalog);
+      setGlobalWeatherSources(result.sources);
+      setGlobalWeatherStatuses(result.statuses);
+    };
+
+    loadGlobalWeatherSources()
+      .then((result) => {
+        if (!isCurrent) return;
+        if (result.catalog) {
+          adopt({
+            catalog: result.catalog,
+            sources: result.sources,
+            statuses: result.statuses,
+          });
+        } else {
+          setGlobalWeatherSources(result.sources);
+          setGlobalWeatherStatuses(result.statuses);
+          setGlobalWeatherCatalog(null);
+        }
+        updateCheck({
+          lastSuccessfulCheck: result.catalog ? new Date().toISOString() : null,
+          lastCheckFailed: !result.catalog,
+        });
+        const completeInitialRun =
+          result.catalog &&
+          Object.values(result.statuses).every((status) => status === "ready");
+        watcher = new GlobalWeatherCatalogueWatcher(
+          completeInitialRun ? result.catalog : null,
+          adopt,
+          updateCheck,
+          { visibility: document }
+        );
+        watcher.start();
+      })
+      .catch(() => {
+        if (!isCurrent) return;
+        updateCheck({ lastSuccessfulCheck: null, lastCheckFailed: true });
+        watcher = new GlobalWeatherCatalogueWatcher(null, adopt, updateCheck, {
+          visibility: document,
+        });
+        watcher.start();
+      });
+
+    return () => {
+      isCurrent = false;
+      watcher?.stop();
+    };
+  }, []);
+
+  const globalPrecipitationSource = globalWeatherSources.precipitation ?? null;
+  const globalCloudSource = globalWeatherSources.cloud_cover ?? null;
+  const globalWindSource = globalWeatherSources.wind_10m ?? null;
+  const globalTemperatureSource = globalWeatherSources.temperature_2m ?? null;
+  const globalPressureSource = globalWeatherSources.pressure_msl ?? null;
+  const activeGlobalSources = [
+    mapOverlays.precipitation ? globalPrecipitationSource : null,
+    mapOverlays.clouds ? globalCloudSource : null,
+    mapOverlays.windFlow ? globalWindSource : null,
+    mapOverlays.temperatureContours ? globalTemperatureSource : null,
+    mapOverlays.pressureIsobars ? globalPressureSource : null,
+  ].filter((source): source is GlobalWeatherFieldSource => source !== null);
+  const globalForecastTimes = intersectScalarValidTimes(activeGlobalSources);
+  const forecastTimes = activeGlobalSources.length
+    ? globalForecastTimes
+    : weather?.forecastTimes ?? [];
+  const forecastHours = activeGlobalSources.length
+    ? forecastTimes.map(
+        (validTime) =>
+          activeGlobalSources[0].manifest.timesteps.find(
+            (step) => step.validTime === validTime
+          )?.forecastHour ?? 0
+      )
+    : undefined;
+  const activeForecastHour = Math.min(
+    forecastHour,
+    Math.max(0, forecastTimes.length - 1)
+  );
+  const activeGlobalValidTime = activeGlobalSources.length
+    ? forecastTimes[activeForecastHour] ?? null
+    : null;
+  useEffect(() => {
+    if (!desktopLayout || !isForecastPlaying || forecastTimes.length < 2) return;
+    const interval = window.setInterval(() => {
+      setForecastHour((current) => current >= forecastTimes.length - 1 ? 0 : current + 1);
+    }, 500);
+    return () => window.clearInterval(interval);
+  }, [desktopLayout, forecastTimes.length, isForecastPlaying]);
+
+  useEffect(() => {
+    activeGlobalValidTimeRef.current = activeGlobalValidTime;
+    mapOverlaysRef.current = mapOverlays;
+  }, [activeGlobalValidTime, mapOverlays]);
+
+  useEffect(() => {
+    const timeoutId = window.setTimeout(() => {
+      setDebouncedLocation(selectedLocation);
+    }, 500);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [selectedLocation]);
+
+  useEffect(() => {
+    if (!debouncedLocation) return;
+
+    let isCurrent = true;
+    locationNameAbortRef.current?.abort();
+    locationWeatherAbortRef.current?.abort();
+    const locationNameController = new AbortController();
+    const weatherController = new AbortController();
+    locationNameAbortRef.current = locationNameController;
+    locationWeatherAbortRef.current = weatherController;
+
+    getWeather(
+      debouncedLocation.latitude,
+      debouncedLocation.longitude,
+      weatherController.signal
+    )
+      .then((nextWeather) => {
+        if (isCurrent && !weatherController.signal.aborted) {
+          setWeather(nextWeather);
+          setWeatherStatus("ready");
+        }
+      })
+      .catch((error: unknown) => {
+        if (isCurrent && !weatherController.signal.aborted) {
+          setWeather(null);
+          setWeatherStatus("error");
+          console.error(error);
+        }
+      });
+
+    getLocationName(
+      debouncedLocation.latitude,
+      debouncedLocation.longitude,
+      locationNameController.signal
+    )
+      .then((name) => {
+        if (isCurrent) setPlace({ name });
+      })
+      .catch((error: unknown) => {
+        if (isCurrent && !locationNameController.signal.aborted) {
+          console.error(error);
+        }
+      });
+
+    return () => {
+      isCurrent = false;
+      weatherController.abort();
+      locationNameController.abort();
+    };
+  }, [debouncedLocation]);
+
+  useEffect(() => {
+    return () => {
+      locationNameAbortRef.current?.abort();
+      locationWeatherAbortRef.current?.abort();
+      searchAbortRef.current?.abort();
+      routeAbortRef.current?.abort();
+      routeConditionAbortRef.current?.abort();
+    };
+  }, []);
+
+  const journeyResult = useMemo<{
+    schedule: JourneySchedule | null;
+    error: string | null;
+  }>(() => {
+    if (!terrainRoute) return { schedule: null, error: null };
+    try {
+      return {
+        schedule: buildJourneySchedule(terrainRoute, journeyProfile, journeyPlan),
+        error: null,
+      };
+    } catch (error) {
+      return {
+        schedule: null,
+        error: error instanceof Error ? error.message : "Journey timing is unavailable.",
+      };
+    }
+  }, [journeyPlan, journeyProfile, terrainRoute]);
+
+  useEffect(() => {
+    const schedule = journeyResult.schedule;
+    const generation = ++routeConditionGenerationRef.current;
+    routeConditionAbortRef.current?.abort();
+    if (!terrainRoute || !schedule) {
+      return;
+    }
+    const controller = new AbortController();
+    routeConditionAbortRef.current = controller;
+    queueMicrotask(() => {
+      if (
+        !controller.signal.aborted &&
+        generation === routeConditionGenerationRef.current
+      ) {
+        setRouteConditionStatus("loading");
+      }
+    });
+    buildRouteConditions(
+      terrainRoute,
+      schedule,
+      {
+        temperature: globalTemperatureSource,
+        precipitation: globalPrecipitationSource,
+        cloud: globalCloudSource,
+        wind: globalWindSource,
+        gust: globalWeatherSources.gust_surface,
+        visibility: globalWeatherSources.visibility_surface,
+        freezingLevel: globalWeatherSources.freezing_level,
+        highestFreezingLevel: globalWeatherSources.highest_freezing_level,
+        cloudCeiling: globalWeatherSources.cloud_ceiling,
+      },
+      controller.signal
+    )
+      .then((conditions) => {
+        if (
+          controller.signal.aborted ||
+          generation !== routeConditionGenerationRef.current
+        ) {
+          return;
+        }
+        setRouteConditions(conditions);
+        const coverages = Object.values(conditions.coverage);
+        const available = coverages.reduce(
+          (sum, coverage) => sum + coverage.availableSamples,
+          0
+        );
+        const expected = coverages.reduce(
+          (sum, coverage) => sum + coverage.totalSamples,
+          0
+        );
+        setRouteConditionStatus(
+          available === 0
+            ? "unavailable"
+            : available === expected
+              ? "ready"
+              : "partial"
+        );
+      })
+      .catch((error: unknown) => {
+        if (
+          controller.signal.aborted ||
+          generation !== routeConditionGenerationRef.current
+        ) {
+          return;
+        }
+        console.error("Route condition preparation failed", error);
+        setRouteConditionStatus("unavailable");
+      });
+    return () => controller.abort();
+  }, [
+    globalCloudSource,
+    globalWeatherSources,
+    globalPrecipitationSource,
+    globalTemperatureSource,
+    globalWindSource,
+    journeyResult.schedule,
+    terrainRoute,
+  ]);
+
+  const handleLocationSelect = useCallback((location: SelectedLocation) => {
+    locationWeatherAbortRef.current?.abort();
+    setWeather(null);
+    setWeatherStatus("loading");
+    setSelectedLocation(location);
+  }, []);
+
+  const handleSearch = useCallback(async (query: string) => {
+    searchAbortRef.current?.abort();
+    const controller = new AbortController();
+    searchAbortRef.current = controller;
+
+    try {
+      const location = await searchLocation(query, controller.signal);
+      if (!controller.signal.aborted && location) handleLocationSelect(location);
+    } catch (error: unknown) {
+      if (!controller.signal.aborted) console.error(error);
+    }
+  }, [handleLocationSelect]);
+
+  const handleRouteImport = useCallback(async (file: File) => {
+    const generation = ++routeGenerationRef.current;
+    routeAbortRef.current?.abort();
+    if (!file.name.toLowerCase().endsWith(".gpx")) {
+      setRouteStatus("error");
+      setRouteStatusMessage("Choose a .gpx route file.");
+      return;
+    }
+    if (file.size > MAX_GPX_FILE_BYTES) {
+      setRouteStatus("error");
+      setRouteStatusMessage("The GPX file exceeds the 15 MiB local import limit.");
+      return;
+    }
+    setRouteStatus("parsing");
+    setRouteStatusMessage("Reading GPX route…");
+    try {
+      const fallbackName = file.name.replace(/\.gpx$/i, "") || "Imported route";
+      const imported = parseGpxText(await file.text(), fallbackName);
+      const resampled = resampleRouteGeometry(imported);
+      if (generation !== routeGenerationRef.current) return;
+      setRouteGeometry(resampled);
+      setTerrainRoute(null);
+      setRouteConditions(null);
+      setRouteConditionStatus("idle");
+      setPreviewRouteSampleIndex(null);
+      setPinnedRouteSampleIndex(null);
+      setRouteStatus("loading-elevation");
+      setRouteStatusMessage("Loading terrain elevation…");
+      const controller = new AbortController();
+      routeAbortRef.current = controller;
+      const elevations = await sampleTerrainElevations(
+        resampled.coordinates,
+        controller.signal,
+        (completed, total) => {
+          if (generation !== routeGenerationRef.current) return;
+          setRouteStatusMessage(`Loading terrain elevation · ${completed}/${total} tiles`);
+        }
+      );
+      if (generation !== routeGenerationRef.current || controller.signal.aborted) return;
+      const enriched = buildTerrainRoute(resampled, elevations);
+      setTerrainRoute(enriched);
+      setRouteStatus(
+        enriched.elevationCoverage === "complete" ? "ready" : "partial"
+      );
+      setRouteStatusMessage(
+        enriched.elevationCoverage === "complete"
+          ? "Terrain and timing ready"
+          : "Some terrain elevation is unavailable; timing is withheld."
+      );
+    } catch (error) {
+      if (generation !== routeGenerationRef.current) return;
+      setRouteStatus("error");
+      setRouteStatusMessage(
+        error instanceof Error ? error.message : "The route could not be prepared."
+      );
+    }
+  }, []);
+
+  const handleRouteClear = useCallback(() => {
+    routeGenerationRef.current += 1;
+    routeAbortRef.current?.abort();
+    routeConditionGenerationRef.current += 1;
+    routeConditionAbortRef.current?.abort();
+    setRouteGeometry(null);
+    setTerrainRoute(null);
+    setPreviewRouteSampleIndex(null);
+    setPinnedRouteSampleIndex(null);
+    setRouteConditions(null);
+    setRouteConditionStatus("idle");
+    setRouteConditionMode("none");
+    setRouteStatus("idle");
+    setRouteStatusMessage(null);
+    dispatchWorkspace({ type: "set-journey-settings", open: false });
+    dispatchWorkspace({ type: "set-detail-workspace", workspace: null });
+    dispatchWorkspace({ type: "set-workspace", mode: "journey" });
+  }, []);
+
+  const handleOverlayChange = useCallback(
+    (overlay: keyof MapOverlayState, enabled: boolean) => {
+      const nextSource =
+        overlay === "precipitation"
+          ? globalPrecipitationSource
+          : overlay === "clouds"
+            ? globalCloudSource
+            : overlay === "windFlow"
+              ? globalWindSource
+              : overlay === "temperatureContours"
+              ? globalTemperatureSource
+              : overlay === "pressureIsobars"
+                ? globalPressureSource
+            : null;
+      if (enabled && nextSource && !hasInitialisedGfsTimelineRef.current) {
+        const firstFutureIndex = nextSource.manifest.timesteps.findIndex(
+          (step) => new Date(step.validTime).getTime() >= Date.now()
+        );
+        setForecastHour(firstFutureIndex >= 0 ? firstFutureIndex : 0);
+        hasInitialisedGfsTimelineRef.current = true;
+      }
+      setMapOverlays((current) => ({
+        ...current,
+        [overlay]: enabled,
+      }));
+    },
+    [
+      globalCloudSource,
+      globalPrecipitationSource,
+      globalTemperatureSource,
+      globalWindSource,
+      globalPressureSource,
+    ]
+  );
+  const activeRouteConditions = journeyResult.schedule ? routeConditions : null;
+  const activeRouteConditionStatus = journeyResult.schedule
+    ? routeConditionStatus
+    : "idle";
+
+  const routePanel = (
+    <RoutePlannerPanel
+      routeGeometry={routeGeometry}
+      terrainRoute={terrainRoute}
+      schedule={journeyResult.schedule}
+      scheduleError={journeyResult.error}
+      status={routeStatus}
+      statusMessage={routeStatusMessage}
+      profile={journeyProfile}
+      plan={journeyPlan}
+      focusedIndex={focusedRouteSampleIndex}
+      routeConditions={activeRouteConditions}
+      routeConditionStatus={activeRouteConditionStatus}
+      routeConditionMode={routeConditionMode}
+      onImport={handleRouteImport}
+      onClear={handleRouteClear}
+      onProfileChange={setJourneyProfile}
+      onPlanChange={setJourneyPlan}
+      onFocusChange={setPreviewRouteSampleIndex}
+      onRouteConditionModeChange={setRouteConditionMode}
+    />
+  );
+
+  const presentationCollapsed = desktopLayout
+    ? workspace.clearMap
+    : isDesktopPanelCollapsed;
+
+  return (
+    <main className={`app-shell${desktopLayout ? " desktop-shell-active" : ""}${desktopLayout && !workspace.clearMap ? " desktop-left-visible" : ""}${workspace.clearMap ? " clear-map-active" : ""}`}>
+      <MeridianMap
+        selectedLocation={selectedLocation}
+        basemap={basemap}
+        mapOverlays={mapOverlays}
+        globalPrecipitationSource={globalPrecipitationSource}
+        globalCloudSource={globalCloudSource}
+        globalWindSource={globalWindSource}
+        globalTemperatureSource={globalTemperatureSource}
+        globalPressureSource={globalPressureSource}
+        globalWeatherStatuses={globalWeatherStatuses}
+        activeGlobalValidTime={activeGlobalValidTime}
+        routeGeometry={routeGeometry}
+        terrainRoute={terrainRoute}
+        focusedRouteSampleIndex={focusedRouteSampleIndex}
+        routeConditions={activeRouteConditions}
+        routeConditionMode={routeConditionMode}
+        panelCollapsed={presentationCollapsed}
+        mapInspectorEnabled={workspace.mapInspectorEnabled}
+        mapInspectorSession={workspace.mapInspectorSession}
+        onLocationSelect={handleLocationSelect}
+        onRouteSampleFocus={setPreviewRouteSampleIndex}
+      />
+
+      {desktopLayout ? (
+        <>
+          {!workspace.clearMap && (
+            <DesktopWorkspace
+              mode={workspace.workspaceMode}
+              onModeChange={(mode) => dispatchWorkspace({ type: "set-workspace", mode })}
+              onSettings={() => dispatchWorkspace({ type: "set-settings", open: true })}
+              onFocusMode={() => dispatchWorkspace({ type: "set-clear-map", active: true })}
+            >
+              {workspace.workspaceMode === "location" ? (
+                <LocationWorkspace
+                  selectedLocation={selectedLocation}
+                  weather={weather}
+                  weatherStatus={weatherStatus}
+                  place={place}
+                  onSearch={handleSearch}
+                  forecastWorkspaceOpen={workspace.detailWorkspace === "forecast"}
+                  onForecastWorkspaceToggle={() => dispatchWorkspace({
+                    type: "set-detail-workspace",
+                    workspace: workspace.detailWorkspace === "forecast" ? null : "forecast",
+                  })}
+                  timeline={<ForecastTimeline
+                    mapOverlays={mapOverlays}
+                    forecastHour={activeForecastHour}
+                    forecastTimes={forecastTimes}
+                    forecastHours={forecastHours}
+                    activeGlobalValidTime={activeGlobalValidTime}
+                    globalPrecipitationSource={globalPrecipitationSource}
+                    globalCloudSource={globalCloudSource}
+                    globalWindSource={globalWindSource}
+                    globalTemperatureSource={globalTemperatureSource}
+                    globalPressureSource={globalPressureSource}
+                    globalWeatherStatuses={globalWeatherStatuses}
+                    globalWeatherCatalog={globalWeatherCatalog}
+                    catalogueCheck={catalogueCheck}
+                    journeySchedule={journeyResult.schedule}
+                    onForecastHourChange={setForecastHour}
+                    onResetToCurrentTime={() => {
+                      if (forecastTimes.length) {
+                        setForecastHour(closestForecastIndex(forecastTimes, new Date().toISOString()));
+                      }
+                    }}
+                    isPlaying={isForecastPlaying}
+                    onPlayingChange={setIsForecastPlaying}
+                  />}
+                />
+              ) : (
+                workspace.journeySettingsOpen ? (
+                  <JourneySettings
+                    profile={journeyProfile}
+                    plan={journeyPlan}
+                    onProfileChange={setJourneyProfile}
+                    onPlanChange={setJourneyPlan}
+                    onBack={() => dispatchWorkspace({ type: "set-journey-settings", open: false })}
+                  />
+                ) : (
+                  <JourneyOverview
+                    routeGeometry={routeGeometry}
+                    terrainRoute={terrainRoute}
+                    schedule={journeyResult.schedule}
+                    scheduleError={journeyResult.error}
+                    status={routeStatus}
+                    statusMessage={routeStatusMessage}
+                    profile={journeyProfile}
+                    plan={journeyPlan}
+                    routeConditions={activeRouteConditions}
+                    routeConditionStatus={activeRouteConditionStatus}
+                    focusedIndex={focusedRouteSampleIndex}
+                    selectedIndex={selectedRouteSampleIndex}
+                    onImport={handleRouteImport}
+                    onClear={handleRouteClear}
+                    onPreviewChange={setPreviewRouteSampleIndex}
+                    onSelectedChange={setPinnedRouteSampleIndex}
+                    onOpenSettings={() => dispatchWorkspace({ type: "set-journey-settings", open: true })}
+                    onOpenAnalysis={(mode) => {
+                      setRouteConditionMode(mode);
+                      dispatchWorkspace({ type: "set-detail-workspace", workspace: "route-analysis" });
+                    }}
+                  />
+                )
+              )}
+            </DesktopWorkspace>
+          )}
+
+          {!workspace.clearMap && (
+            <MapControls
+              basemap={basemap}
+              mapOverlays={mapOverlays}
+              satelliteAvailable={IS_SATELLITE_CONFIGURED}
+              onBasemapChange={setBasemap}
+              onOverlayChange={handleOverlayChange}
+            />
+          )}
+          {!workspace.clearMap && workspace.detailWorkspace === "forecast" && weather && (
+            <ForecastWorkspace
+              place={place}
+              weather={weather}
+              activeTime={forecastTimes[activeForecastHour] ?? null}
+              onForecastTimeChange={(time) => setForecastHour(closestForecastIndex(forecastTimes, time))}
+              onMapLayerChange={handleOverlayChange}
+              onClose={() => dispatchWorkspace({ type: "set-detail-workspace", workspace: null })}
+            />
+          )}
+          {!workspace.clearMap && workspace.detailWorkspace === "route-analysis" && terrainRoute && (
+            <DetailWorkspace label="Route analysis workspace" onClose={() => dispatchWorkspace({ type: "set-detail-workspace", workspace: null })}>
+              <RouteAnalysis
+                route={terrainRoute}
+                schedule={journeyResult.schedule}
+                conditions={activeRouteConditions}
+                conditionStatus={activeRouteConditionStatus}
+                conditionMode={routeConditionMode}
+                focusedIndex={focusedRouteSampleIndex}
+                pinnedIndex={selectedRouteSampleIndex}
+                onPreviewChange={setPreviewRouteSampleIndex}
+                onPinnedChange={setPinnedRouteSampleIndex}
+                onConditionModeChange={setRouteConditionMode}
+              />
+            </DetailWorkspace>
+          )}
+          {workspace.clearMap && <button type="button" className="clear-map-restore" aria-label="Restore Meridian interface" onClick={() => dispatchWorkspace({ type: "set-clear-map", active: false })}><MeridianMark /><span>Meridian</span></button>}
+
+          <GlobalSettings open={workspace.settingsOpen && !workspace.clearMap} mapInspectorEnabled={workspace.mapInspectorEnabled} onMapInspectorChange={(enabled) => dispatchWorkspace({ type: "set-map-inspector", enabled })} onClose={() => dispatchWorkspace({ type: "set-settings", open: false })} />
+        </>
+      ) : (
+        <MobileWorkspace
+          selectedLocation={selectedLocation}
+          weather={weather}
+          place={place}
+          basemap={basemap}
+          mapOverlays={mapOverlays}
+          forecastHour={activeForecastHour}
+          globalPrecipitationSource={globalPrecipitationSource}
+          globalCloudSource={globalCloudSource}
+          globalWindSource={globalWindSource}
+          globalTemperatureSource={globalTemperatureSource}
+          globalPressureSource={globalPressureSource}
+          globalWeatherStatuses={globalWeatherStatuses}
+          globalWeatherCatalog={globalWeatherCatalog}
+          catalogueCheck={catalogueCheck}
+          journeySchedule={journeyResult.schedule}
+          activeGlobalValidTime={activeGlobalValidTime}
+          forecastTimes={forecastTimes}
+          forecastHours={forecastHours}
+          isDesktopCollapsed={isDesktopPanelCollapsed}
+          satelliteAvailable={IS_SATELLITE_CONFIGURED}
+          onForecastHourChange={setForecastHour}
+          onBasemapChange={setBasemap}
+          onOverlayChange={handleOverlayChange}
+          onSearch={handleSearch}
+          onDesktopCollapsedChange={setIsDesktopPanelCollapsed}
+          routePanel={routePanel}
+        />
+      )}
+    </main>
+  );
+}
+
+export default App;

@@ -6,27 +6,27 @@ import { createServer } from "vite";
 
 const server = await createServer({ appType: "custom", logLevel: "silent", server: { middlewareMode: true } });
 const [state, journeyModel, profileInteraction, controlOptions, routeCamera, forecastModel, weatherService, desktopModule, overviewModule, settingsModule, detailsModule, controlsModule, timelineModule, analysisModule, forecastWorkspaceModule, locationWorkspaceModule] = await Promise.all([
-  server.ssrLoadModule("/src/services/desktopWorkspaceState.ts"),
-  server.ssrLoadModule("/src/services/journeyModel.ts"),
-  server.ssrLoadModule("/src/services/routeProfileInteraction.ts"),
-  server.ssrLoadModule("/src/services/desktopControlOptions.ts"),
-  server.ssrLoadModule("/src/services/routeCamera.ts"),
-  server.ssrLoadModule("/src/services/forecastWorkspaceModel.ts"),
-  server.ssrLoadModule("/src/services/weatherService.ts"),
-  server.ssrLoadModule("/src/components/DesktopWorkspace.tsx"),
-  server.ssrLoadModule("/src/components/JourneyOverview.tsx"),
-  server.ssrLoadModule("/src/components/JourneySettings.tsx"),
-  server.ssrLoadModule("/src/components/ForecastDetails.tsx"),
-  server.ssrLoadModule("/src/components/MapControls.tsx"),
-  server.ssrLoadModule("/src/components/ForecastTimeline.tsx"),
-  server.ssrLoadModule("/src/components/RouteAnalysis.tsx"),
-  server.ssrLoadModule("/src/components/ForecastWorkspace.tsx"),
-  server.ssrLoadModule("/src/components/LocationWorkspace.tsx"),
+  server.ssrLoadModule("/src/app/state/desktopWorkspaceState.ts"),
+  server.ssrLoadModule("/src/traverse/model/journeyModel.ts"),
+  server.ssrLoadModule("/src/traverse/model/routeProfileInteraction.ts"),
+  server.ssrLoadModule("/src/app/state/desktopControlOptions.ts"),
+  server.ssrLoadModule("/src/traverse/map/routeCamera.ts"),
+  server.ssrLoadModule("/src/weather/presentation/forecastWorkspaceModel.ts"),
+  server.ssrLoadModule("/src/weather/data/weatherService.ts"),
+  server.ssrLoadModule("/src/app/components/DesktopWorkspace.tsx"),
+  server.ssrLoadModule("/src/traverse/components/JourneyOverview.tsx"),
+  server.ssrLoadModule("/src/traverse/components/JourneySettings.tsx"),
+  server.ssrLoadModule("/src/traverse/components/RoutePointDetails.tsx"),
+  server.ssrLoadModule("/src/app/components/MapControls.tsx"),
+  server.ssrLoadModule("/src/app/components/ForecastTimeline.tsx"),
+  server.ssrLoadModule("/src/traverse/components/RouteAnalysis.tsx"),
+  server.ssrLoadModule("/src/app/components/ForecastWorkspace.tsx"),
+  server.ssrLoadModule("/src/weather/components/LocationWorkspace.tsx"),
 ]);
 const DesktopWorkspace = desktopModule.default;
 const JourneyOverview = overviewModule.default;
 const JourneySettings = settingsModule.default;
-const ForecastDetails = detailsModule.default;
+const RoutePointDetails = detailsModule.default;
 const MapControls = controlsModule.default;
 const ForecastTimeline = timelineModule.default;
 const RouteAnalysis = analysisModule.default;
@@ -316,7 +316,7 @@ test("Journey Tune is an in-panel subview and retains every schedule input", () 
 });
 
 test("selected point groups model values beneath one shared source block", () => {
-  const html = renderToStaticMarkup(createElement(ForecastDetails, { sample: samples[0], derived: null }));
+  const html = renderToStaticMarkup(createElement(RoutePointDetails, { sample: samples[0], derived: null }));
   for (const text of ["Temperature", "Precipitation", "Cloud", "Wind", "Gusts", "Visibility", "Freezing level", "Highest freezing level", "Cloud ceiling", "About this data"]) assert.ok(html.includes(text), text);
   assert.equal((html.match(/shared-source-block/g) ?? []).length, 1);
   assert.equal((html.match(/GFS · 0.25° · run/g) ?? []).length, 1);
@@ -422,7 +422,7 @@ test("Analysis workspace uses compact mode controls and hides successful status 
 test("all fields outside the forecast horizon collapse to one clear message", () => {
   const outside = structuredClone(samples[0]);
   outside.weather = Object.fromEntries(Object.keys(outside.weather).map(key => [key, missing()]));
-  const html = renderToStaticMarkup(createElement(ForecastDetails, { sample: outside, derived: null }));
+  const html = renderToStaticMarkup(createElement(RoutePointDetails, { sample: outside, derived: null }));
   assert.match(html, /outside the available forecast horizon/);
   assert.equal((html.match(/Outside forecast/g) ?? []).length, 0);
 });

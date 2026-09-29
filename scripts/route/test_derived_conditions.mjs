@@ -5,11 +5,11 @@ import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 
 const server = await createServer({ appType: "custom", logLevel: "silent", server: { middlewareMode: true } });
-const d = await server.ssrLoadModule("/src/services/derivedRouteConditions.ts");
-const f = await server.ssrLoadModule("/src/services/derivedConditionFormatting.ts");
-const route = await server.ssrLoadModule("/src/services/routeConditions.ts");
-const Profile = (await server.ssrLoadModule("/src/components/RouteProfile.tsx")).default;
-const Context = (await server.ssrLoadModule("/src/components/DerivedConditionContext.tsx")).default;
+const d = await server.ssrLoadModule("/src/traverse/model/derivedRouteConditions.ts");
+const f = await server.ssrLoadModule("/src/traverse/model/derivedConditionFormatting.ts");
+const route = await server.ssrLoadModule("/src/traverse/model/routeConditions.ts");
+const Profile = (await server.ssrLoadModule("/src/traverse/components/RouteProfile.tsx")).default;
+const Context = (await server.ssrLoadModule("/src/traverse/components/DerivedConditionContext.tsx")).default;
 test.after(() => server.close());
 const time = "2026-01-01T01:00:00Z";
 const missing = () => ({ state: "unavailable", reason: "outside-forecast", requestedTime: time });

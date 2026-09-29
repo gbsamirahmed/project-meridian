@@ -7,9 +7,9 @@ const server = await createServer({
   logLevel: "silent",
   server: { middlewareMode: true },
 });
-const geometry = await server.ssrLoadModule("/src/services/routeGeometry.ts");
-const terrain = await server.ssrLoadModule("/src/services/routeTerrain.ts");
-const journey = await server.ssrLoadModule("/src/services/journeyModel.ts");
+const geometry = await server.ssrLoadModule("/src/traverse/model/routeGeometry.ts");
+const terrain = await server.ssrLoadModule("/src/traverse/model/routeTerrain.ts");
+const journey = await server.ssrLoadModule("/src/traverse/model/journeyModel.ts");
 
 test.after(async () => server.close());
 

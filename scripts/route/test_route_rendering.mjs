@@ -4,7 +4,7 @@ import { GeoJSONVT } from "@maplibre/geojson-vt";
 import { createServer } from "vite";
 
 const server = await createServer({ appType: "custom", logLevel: "silent", server: { middlewareMode: true } });
-const layer = await server.ssrLoadModule("/src/services/routeLayer.ts");
+const layer = await server.ssrLoadModule("/src/traverse/map/routeLayer.ts");
 test.after(() => server.close());
 
 function mockMap() {

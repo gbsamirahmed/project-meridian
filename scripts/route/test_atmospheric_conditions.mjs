@@ -6,12 +6,12 @@ import { renderToStaticMarkup } from "react-dom/server";
 
 const server = await createServer({ appType: "custom", logLevel: "silent", server: { middlewareMode: true } });
 const [numeric, route, globalWeather, atmospheric, format, routePanelModule] = await Promise.all([
-  server.ssrLoadModule("/src/services/numericTileCache.ts"),
-  server.ssrLoadModule("/src/services/routeConditions.ts"),
-  server.ssrLoadModule("/src/services/globalWeatherService.ts"),
-  server.ssrLoadModule("/src/services/atmosphericFields.ts"),
-  server.ssrLoadModule("/src/services/atmosphericFormatting.ts"),
-  server.ssrLoadModule("/src/components/RoutePlannerPanel.tsx"),
+  server.ssrLoadModule("/src/weather/data/numericTileCache.ts"),
+  server.ssrLoadModule("/src/traverse/model/routeConditions.ts"),
+  server.ssrLoadModule("/src/weather/data/globalWeatherService.ts"),
+  server.ssrLoadModule("/src/weather/data/atmosphericFields.ts"),
+  server.ssrLoadModule("/src/traverse/model/atmosphericFormatting.ts"),
+  server.ssrLoadModule("/src/traverse/components/RoutePlannerPanel.tsx"),
 ]);
 const { ATMOSPHERIC_FIELDS, validateAtmosphericManifest } = atmospheric;
 const RoutePlannerPanel = routePanelModule.default;

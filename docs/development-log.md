@@ -2042,3 +2042,28 @@ Atlas map host will be composed with Weather and Traverse map controllers by app
 implementation file was moved or changed in 5A, no feature work was added, and optional
 architecture improvements were placed in a post-cleanup backlog rather than extending
 Phase 5.
+
+## 2026-09-29 — Meridian Phase 5B structural reorganisation
+
+Moved 80 active source/style files into the frozen app, Atlas, Weather and Traverse
+ownership structure and repaired imports plus Vite test-loader paths. `App` remains
+the composition root. The mixed `MapView` moved intact to app-owned `MeridianMap`;
+`WeatherPanel` became `MobileWorkspace`, and `ForecastDetails` became
+`RoutePointDetails`. Mixed timeline, workspace, layer state/visuals/attribution and
+ordering remain app compatibility code. The empty `SearchBar` remains for 5D and no
+`shared` abstraction was introduced.
+
+This phase deliberately retained the Weather-to-journey and Traverse-to-GFS
+dependencies, the mixed map responsibilities and both audited type cycles for the
+bounded 5C/5D work. TypeScript, ESLint, production build, external GFS publication,
+29 UI tests, 56 route tests and 32 Weather tests passed. Browser validation passed
+all scenarios at 1920x1080 and 1440x900 and four of five scenarios at 1366x768. The
+1366 pressure readiness marker timed out twice with no page/network errors. Focused
+diagnosis reproduced the same scheduling failure at 1440x900 and at the isolated
+Phase 5A baseline. Terrain configuration can leave `map.isStyleLoaded()` false after
+`style.load`; if the pressure effect and camera `moveend` both occur during that
+window, the guarded update is skipped and no later trigger sets the readiness marker.
+Phase 5B changed no executable pressure lifecycle code, so this is a pre-existing
+map lifecycle/render-retry issue assigned to the already-frozen 5C map/controller
+work. The 5D browser gate must verify its resolution without weakening the test.
+Phase 5C has not begun.
