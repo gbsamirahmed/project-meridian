@@ -28,8 +28,8 @@
   },
   "terrain": {
     "representation": "Unreal Landscape",
-    "source_manifest": "${MERIDIAN_DATA_ROOT}/earth-lab/tryfan-004/unreal-landscape-v1/unreal-landscape-manifest.json",
-    "canonical_r16": "${MERIDIAN_DATA_ROOT}/earth-lab/tryfan-004/unreal-landscape-v1/heightmaps/tryfan-004-dtm-1m-landscape-3025.r16",
+    "source_manifest": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-004/unreal-landscape-v1/unreal-landscape-manifest.json",
+    "canonical_r16": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-004/unreal-landscape-v1/heightmaps/tryfan-004-dtm-1m-landscape-3025.r16",
     "canonical_r16_sha256": "31cbe763dac4072772ac9bcb4a3217b78eba0c10265e576ede708154288f6bf6",
     "resolution_vertices": [
       3025,
@@ -78,7 +78,7 @@
   },
   "reconstruction": {
     "lab009_result_sha256": "14f90941468166dc3937879e022e8fedff2d9d212eed5cfb1c5deb0407c6a859",
-    "package": "${MERIDIAN_DATA_ROOT}/earth-lab/tryfan-009/surface-reconstruction-v0.1/lab009-reconstruction-package.json",
+    "package": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-009/surface-reconstruction-v0.1/lab009-reconstruction-package.json",
     "generated_assets": [
       "/Game/MeridianLab009/M_Lab009_Surface",
       "/Game/MeridianLab009/T_Lab009_SurfaceControls",
@@ -87,7 +87,7 @@
     "fixed_camera_visual_acceptance": "pending_manual_fixed_camera_comparison"
   },
   "photographic_validation": {
-    "source_image": "${MERIDIAN_DATA_ROOT}/earth-lab/tryfan-004/reference/tryfan-tony-edwards-2009.jpg",
+    "source_image": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-004/reference/tryfan-tony-edwards-2009.jpg",
     "source_image_sha256": "09ccb9ade2bdae3818bfc8e8444bd93f8865d4a55fa9290332b5a78f89afd3cb",
     "generated_assets": [
       "/Game/MeridianLab004/Reference/T_TonyEdwards_2009",

@@ -14,6 +14,7 @@ import numpy as np
 import rasterio
 from matplotlib.colors import BoundaryNorm, ListedColormap
 
+from experiment_paths import resolve_config_value
 from photo_fit import decode_landscape_r16, sha256_file
 from terrain_metrics import (
     aspect_summary,
@@ -27,10 +28,7 @@ NODATA = -9999.0
 
 
 def _resolve_repo_path(config_path: Path, convention: str) -> Path:
-    path = Path(convention)
-    if path.is_absolute():
-        return path.resolve()
-    return (config_path.resolve().parents[2] / path).resolve()
+    return resolve_config_value(config_path, convention)
 
 
 def _write_raster(path: Path, values: np.ndarray, transform: Any) -> None:

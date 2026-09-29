@@ -26,6 +26,7 @@ from observer_geometry import (
     bng_to_unreal_xy_cm,
     geographic_heading_to_unreal_yaw_degrees,
 )
+from experiment_paths import resolve_config_value
 from photo_fit import (
     bound_reached,
     decode_landscape_r16,
@@ -38,10 +39,7 @@ from photo_fit import (
 
 
 def _resolve_repo_path(config_path: Path, convention: str) -> Path:
-    path = Path(convention)
-    if path.is_absolute():
-        return path.resolve()
-    return (config_path.resolve().parents[2] / path).resolve()
+    return resolve_config_value(config_path, convention)
 
 
 def _absolute_bounds(initial: float, relative: list[float]) -> tuple[float, float]:

@@ -25,31 +25,31 @@ from meridian_paths import resolve_storage_roots  # noqa: E402
 
 EXPECTED_FILES = {
     "landscape_manifest": (
-        Path("earth-lab/tryfan-004/unreal-landscape-v1/unreal-landscape-manifest.json"),
+        Path("experiments/earth-lab/tryfan-004/unreal-landscape-v1/unreal-landscape-manifest.json"),
         "59d72fa28e67f59002acf7c947b9571708682459c07972f091069d3c3b51f34c",
     ),
     "canonical_r16": (
-        Path("earth-lab/tryfan-004/unreal-landscape-v1/heightmaps/tryfan-004-dtm-1m-landscape-3025.r16"),
+        Path("experiments/earth-lab/tryfan-004/unreal-landscape-v1/heightmaps/tryfan-004-dtm-1m-landscape-3025.r16"),
         "31cbe763dac4072772ac9bcb4a3217b78eba0c10265e576ede708154288f6bf6",
     ),
     "reference_photo": (
-        Path("earth-lab/tryfan-004/reference/tryfan-tony-edwards-2009.jpg"),
+        Path("experiments/earth-lab/tryfan-004/reference/tryfan-tony-edwards-2009.jpg"),
         "09ccb9ade2bdae3818bfc8e8444bd93f8865d4a55fa9290332b5a78f89afd3cb",
     ),
     "lab009_report": (
-        Path("earth-lab/tryfan-009/surface-reconstruction-v0.1/lab009-report.json"),
+        Path("experiments/earth-lab/tryfan-009/surface-reconstruction-v0.1/lab009-report.json"),
         "9822577d3d34b7844e2371e219213dfda73830e2121b6aa02c28d484fb95d8b2",
     ),
     "lab009_package": (
-        Path("earth-lab/tryfan-009/surface-reconstruction-v0.1/lab009-reconstruction-package.json"),
+        Path("experiments/earth-lab/tryfan-009/surface-reconstruction-v0.1/lab009-reconstruction-package.json"),
         "7111d1857374eef76e5ac26ef3a719be09b9f6a55cb570c0aa74e42b634facd8",
     ),
     "lab009_surface_controls": (
-        Path("earth-lab/tryfan-009/surface-reconstruction-v0.1/unreal/lab009-surface-controls-rgba.png"),
+        Path("experiments/earth-lab/tryfan-009/surface-reconstruction-v0.1/unreal/lab009-surface-controls-rgba.png"),
         "becd36431182b1d368bc2e6bd9c09e3f0719d1f6d9e1ec320a8b2b02f6d386be",
     ),
     "lab009_context_controls": (
-        Path("earth-lab/tryfan-009/surface-reconstruction-v0.1/unreal/lab009-context-controls-rgba.png"),
+        Path("experiments/earth-lab/tryfan-009/surface-reconstruction-v0.1/unreal/lab009-context-controls-rgba.png"),
         "4934799aab82cea4d694ee9edd51680d59ebae9c2001bdfd77cb5703f71a0b90",
     ),
 }
@@ -123,7 +123,7 @@ def bootstrap(data_root: Path, renderer_root: Path = RENDERER_ROOT) -> dict[str,
         deployed.append(target.relative_to(renderer_root).as_posix())
 
     landscape_manifest = data_root / EXPECTED_FILES["landscape_manifest"][0]
-    lab009_root = data_root / "earth-lab/tryfan-009/surface-reconstruction-v0.1"
+    lab009_root = data_root / "experiments/earth-lab/tryfan-009/surface-reconstruction-v0.1"
     pointers = {
         "meridian-landscape-source.json": {"manifest": str(landscape_manifest)},
         "meridian-benchmark-source.json": {

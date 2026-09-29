@@ -6,6 +6,7 @@ import unittest
 
 import numpy as np
 
+from experiment_paths import resolve_repository_value
 from surface_reconstruction import (
     VISUAL_CLASSES,
     coherent_field,
@@ -136,7 +137,7 @@ class SurfaceReconstructionTests(unittest.TestCase):
 
     def test_deployed_unreal_sources_match_repository_when_available(self):
         config = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
-        project = (ROOT / config["unreal"]["project"]).resolve().parent
+        project = ROOT / "renderers" / "unreal" / "tryfan-reference"
         mappings = {
             ROOT / "scripts" / "earth_lab" / "unreal_surface_reconstruction.py": project / "Content" / "Python" / "setup_lab009_surface.py",
             ROOT / "scripts" / "earth_lab" / "unreal_capture_surface_reconstruction.py": project / "Content" / "Python" / "capture_lab009_surface.py",
@@ -150,9 +151,9 @@ class SurfaceReconstructionTests(unittest.TestCase):
         config = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
         frozen = config["frozen_inputs"]
         paths = {
-            ROOT / frozen["lab007_root"] / "lab007-report.json": frozen["lab007_report_sha256"],
-            ROOT / frozen["lab008_root"] / "lab008-report.json": frozen["lab008_report_sha256"],
-            ROOT / frozen["canonical_r16"]["path"]: frozen["canonical_r16"]["sha256"],
+            resolve_repository_value(ROOT, frozen["lab007_root"]) / "lab007-report.json": frozen["lab007_report_sha256"],
+            resolve_repository_value(ROOT, frozen["lab008_root"]) / "lab008-report.json": frozen["lab008_report_sha256"],
+            resolve_repository_value(ROOT, frozen["canonical_r16"]["path"]): frozen["canonical_r16"]["sha256"],
         }
         for path, expected in paths.items():
             if path.is_file():

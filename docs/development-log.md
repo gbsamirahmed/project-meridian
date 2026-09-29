@@ -1886,3 +1886,30 @@ were unchanged, the repository and external canonical Unreal maps still matched 
 backup-critical current/backup hash pairs matched. Only planning documentation changed;
 no Unreal launch or broad test suite was necessary. Phase 4B remains separately
 authorised future work.
+
+## 2026-09-29 — Meridian Phase 4B historical experiment preservation
+
+Copied the curated historical Earth Lab payload to
+`MERIDIAN_DATA_ROOT/experiments/earth-lab` without moving, renaming or deleting the
+original tree. The repository manifest records every included and excluded source area.
+The destination contains 712 files and 814,688,394 bytes: 711 copied files match their
+source SHA-256 exactly, and one 88-byte Lab 001/002 `DefaultEngine.ini` preserves the
+non-secret project setting while omitting the generated credential-bearing section.
+The historical Unreal project, maps and external-actor packages were retained; virtual
+environments, engine caches/build state, routine Saved data, bytecode, a generated
+pointer and the later external Lab 004 renderer workspace were deliberately excluded.
+
+Active config-driven Lab 004B and Lab 005A–009 tooling now resolves the frozen sibling
+path convention through the shared Meridian path layer to the new experiment location.
+The repository Tryfan Reference Renderer bootstrap and manifest use the new external
+location. Frozen experiment configs, reports and historical documentation remain
+unchanged, and the original data tree remains the rollback source until Phase 4G.
+
+Validation passed: the full selected relative-path/SHA-256 comparison; exact source and
+destination file/byte inventories; 294 raster opens; 27 destination JSON parses; 14
+storage-root tests; 11 focused Lab 009 tests; 135 full Earth Lab tests; renderer
+external-input verification; frozen Lab 007–009 identities at both locations; canonical
+map SHA-256; and all 27 backup-critical source/backup comparisons. Private activity,
+Strava, route-benchmark and terrain-research inventories were unchanged. Unreal was not
+launched because no calibrated renderer package was changed. Phase 4C has not begun;
+the next action is human review of this uncommitted copy and active-reference checkpoint.

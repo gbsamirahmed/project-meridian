@@ -1,6 +1,6 @@
 # Phase 4 filesystem migration execution plan
 
-**Status: PLANNED — no migration has begun.**
+**Status: PHASE 4B COPIED AND VALIDATED — old data retained; Phase 4C has not begun.**
 
 This plan refines the [Phase 4 migration inventory](phase-4-migration-inventory.md)
 using read-only inspection performed in Phase 4A. A later task must execute only one
@@ -219,6 +219,18 @@ store/CDN base URL without changing GFS model semantics.
 ## Execution order
 
 ### Phase 4B — historical Earth experiments
+
+**Status: COPIED AND VALIDATED; REVIEW PENDING. No old copy has been removed.**
+
+The explicit selection is recorded in
+[`phase-4b-migration-manifest.json`](phase-4b-migration-manifest.json). The generated
+full comparison inventory is stored at
+`[DATA]/experiments/phase-4b-earth-lab-validation.json` with SHA-256
+`c8c33c5c32624794dc3ff7fcc097a18d7d60a0bd735b8197d690373fa0a6278b`.
+The payload contains 712 files and 814,688,394 bytes: 711 source files match their
+destination SHA-256 exactly, and one 88-byte `DefaultEngine.ini` is the approved
+secret-free projection of the Lab 001/002 project settings. The source tree remains
+5,796 files and 1,845,508,901 bytes. Phase 4C promotion has not begun.
 
 **Reasoning:** high.
 
@@ -499,8 +511,10 @@ data.
 
 ## Remaining blockers/decisions
 
-- Approve the exact curated preservation set for the Lab 001/002 Unreal project; its
-  current config contains a generated credential and cannot be copied wholesale.
+- **Resolved in Phase 4B:** the Lab 001/002 historical Unreal set preserves the project,
+  complete package Content except bytecode, historical import note and input settings;
+  cache/build/Saved state, the generated pointer and secret-bearing configuration
+  section are excluded. The authoritative map and external-actor packages are retained.
 - Decide whether the Lab 009 Unreal transport packer is extracted during 4C or whether
   the renderer temporarily consumes packed controls from the frozen experiment copy.
 - Choose the local GFS publication-adapter implementation after a temporary proof:
@@ -508,5 +522,5 @@ data.
   but build/deployment behaviour must be verified on Windows.
 - Set retention durations for optional historical GFS benchmark runs. Default remains
   rolling current plus previous.
-- No blocker prevents beginning copy-only Phase 4B once its include/exclude manifest
-  is reviewed.
+- Phase 4B is complete and remains uncommitted for review. Do not begin Phase 4C
+  until this copy and active-reference checkpoint is approved.

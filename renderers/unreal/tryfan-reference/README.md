@@ -38,7 +38,7 @@ The following are deliberately excluded from version control:
 
 The generated packages are referenced by the saved map, but are reproducible at the
 same Unreal asset paths. Their source image, packed controls, hashes and provenance
-remain below `MERIDIAN_DATA_ROOT`. The historical absolute R16 import filename
+remain below `MERIDIAN_DATA_ROOT/experiments/earth-lab`. The historical absolute R16 import filename
 embedded in the map is import metadata, not the runtime data-location contract.
 
 ## Bootstrap

@@ -23,6 +23,7 @@ if str(Path(__file__).resolve().parent) not in sys.path:
     sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from analyze_surface_evidence import _terrain_aggregates
+from experiment_paths import resolve_repository_value
 from contextual_evidence import (
     binary_overlap,
     categorical_summary,
@@ -36,8 +37,7 @@ from surface_evidence import AnalysisGrid, sha256_file, stable_json_sha256
 
 
 def _path(value: str) -> Path:
-    path = Path(value)
-    return path if path.is_absolute() else (ROOT / path).resolve()
+    return resolve_repository_value(ROOT, value)
 
 
 def _get(url: str, parameters: dict[str, Any] | None = None) -> bytes:

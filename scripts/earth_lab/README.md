@@ -11,6 +11,13 @@ paths retain the documented sibling paths until the controlled Phase 4 migration
 the environment variable does not silently rewrite an entry point that does not use
 the shared resolver.
 
+Phase 4B copied the preserved experiment payload to
+`MERIDIAN_DATA_ROOT/experiments/earth-lab`. Config-driven Lab 004B and Lab 005A–009
+entry points map the frozen `../meridian-data/earth-lab/...` convention to that new
+location through the shared resolver without editing frozen configs. The original tree,
+its historical command examples and its `.venv` remain transitional rollback context
+until the separately reviewed removal phase.
+
 Private activities, personal routes and exports belong under the separate
 `MERIDIAN_PRIVATE_ROOT`. No historical Earth Lab requires that root.
 

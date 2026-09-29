@@ -13,6 +13,7 @@ import numpy as np
 import rasterio
 from rasterio.warp import Resampling
 
+from experiment_paths import resolve_config_value
 from sentinel2_evidence import extract_native_window
 from surface_evidence import (
     AnalysisGrid,
@@ -36,8 +37,7 @@ def _tile_size(length: int) -> int:
 
 
 def _resolve(config_path: Path, convention: str) -> Path:
-    path = Path(convention)
-    return path.resolve() if path.is_absolute() else (config_path.parents[2] / path).resolve()
+    return resolve_config_value(config_path, convention)
 
 
 def _write_float(path: Path, values: np.ndarray, grid: AnalysisGrid) -> None:

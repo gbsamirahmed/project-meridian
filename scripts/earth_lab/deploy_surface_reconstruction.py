@@ -6,12 +6,14 @@ import json
 import shutil
 from pathlib import Path
 
+from experiment_paths import resolve_config_value
+
 
 def deploy(config_path: Path) -> dict[str, str]:
     config_path = config_path.resolve()
     config = json.loads(config_path.read_text(encoding="utf-8"))
     repo = config_path.parents[2]
-    project_file = (repo / config["unreal"]["project"]).resolve()
+    project_file = repo / "renderers" / "unreal" / "tryfan-reference" / "TryfanLab004.uproject"
     project_root = project_file.parent
     python_root = project_root / "Content" / "Python"
     python_root.mkdir(parents=True, exist_ok=True)
@@ -24,7 +26,7 @@ def deploy(config_path: Path) -> dict[str, str]:
         shutil.copy2(source, target)
         if source.read_bytes() != target.read_bytes():
             raise RuntimeError(f"Deployed copy differs: {target}")
-    output_root = (repo / config["output_root"]).resolve()
+    output_root = resolve_config_value(config_path, config["output_root"])
     pointer = {"schema_version": 1, "config": str(config_path), "output_root": str(output_root)}
     pointer_path = project_root / "meridian-lab009-source.json"
     pointer_path.write_text(json.dumps(pointer, indent=2) + "\n", encoding="utf-8")

@@ -15,6 +15,7 @@ import rasterio
 from rasterio.transform import Affine
 from rasterio.warp import Resampling, reproject
 
+from experiment_paths import resolve_repository_value
 from surface_reconstruction import (
     LAB007_CLASSES,
     READINESS_NAMES,
@@ -45,7 +46,7 @@ def _repo_root(config_path: Path) -> Path:
 
 
 def _resolve(root: Path, value: str) -> Path:
-    return (root / value).resolve()
+    return resolve_repository_value(root, value)
 
 
 def _read_json(path: Path) -> dict[str, Any]:

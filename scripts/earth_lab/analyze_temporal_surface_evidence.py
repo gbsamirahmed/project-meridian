@@ -19,6 +19,7 @@ from analyze_surface_evidence import (
     _write_byte,
     _write_float,
 )
+from experiment_paths import resolve_config_value
 from sentinel2_evidence import extract_native_window
 from surface_evidence import (
     AnalysisGrid,
@@ -45,8 +46,7 @@ TWENTY_METRE_BANDS = ("rededge1", "rededge2", "rededge3", "nir_narrow", "swir16"
 
 
 def _resolve(config_path: Path, convention: str) -> Path:
-    path = Path(convention)
-    return path.resolve() if path.is_absolute() else (config_path.parents[2] / path).resolve()
+    return resolve_config_value(config_path, convention)
 
 
 def _asset_url(config: dict[str, Any], observation: dict[str, Any], band: dict[str, Any]) -> str:

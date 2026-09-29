@@ -17,6 +17,7 @@ MODULE_ROOT = Path(__file__).resolve().parent
 if str(MODULE_ROOT) not in sys.path:
     sys.path.insert(0, str(MODULE_ROOT))
 
+from experiment_paths import resolve_repository_value
 from surface_evidence import AnalysisGrid, numeric_summary, sha256_file, stable_json_sha256
 from surface_uncertainty_audit import (
     MEANINGFUL_CLASSES, ablation_metrics, conditional_meaningful_entropy,
@@ -27,8 +28,7 @@ from underlying_surface_model import CLASSES, fuse_sources, jensen_shannon, norm
 
 
 def _path(value: str) -> Path:
-    path = Path(value)
-    return path if path.is_absolute() else (ROOT / path).resolve()
+    return resolve_repository_value(ROOT, value)
 
 
 def _read(path: Path, categorical: bool = False) -> tuple[np.ndarray, dict[str, Any]]:

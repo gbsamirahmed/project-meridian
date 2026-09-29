@@ -98,7 +98,20 @@ class StorageRootTests(unittest.TestCase):
             "../meridian-data/earth-lab/tryfan-009",
             roots=roots,
         )
-        self.assertEqual(result, data / "earth-lab" / "tryfan-009")
+        self.assertEqual(result, data / "experiments" / "earth-lab" / "tryfan-009")
+
+    def test_other_legacy_data_paths_still_map_directly_below_data_root(self) -> None:
+        data = self.parent / "relocated-data"
+        data.mkdir()
+        roots = resolve_storage_roots(
+            repository_root=self.repository,
+            environ={"MERIDIAN_DATA_ROOT": str(data)},
+        )
+        result = resolve_project_path(
+            "../meridian-data/sources/atlas/tryfan",
+            roots=roots,
+        )
+        self.assertEqual(result, data / "sources" / "atlas" / "tryfan")
 
     def test_legacy_private_convention_maps_to_configured_root(self) -> None:
         private = self.parent / "relocated-private"

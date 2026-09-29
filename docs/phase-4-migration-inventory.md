@@ -6,6 +6,12 @@ proposed classifications; it does not authorise copying, moving or deleting anyt
 The evidence-based, subphase-by-subphase execution plan is maintained in
 [Phase 4 filesystem migration execution plan](phase-4-execution-plan.md).
 
+**Phase 4B status:** the curated historical payload has been copied to
+`[DATA]/experiments/earth-lab` and validated against the explicit
+[`phase-4b-migration-manifest.json`](phase-4b-migration-manifest.json). The old
+`[DATA]/earth-lab` tree remains intact as the transition rollback source. No reusable
+Atlas product promotion, private-data migration, GFS migration or deletion has begun.
+
 The migration sequence for every category is:
 
 ```text

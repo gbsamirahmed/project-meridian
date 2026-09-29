@@ -16,6 +16,7 @@ from typing import Mapping
 
 DATA_ROOT_ENV = "MERIDIAN_DATA_ROOT"
 PRIVATE_ROOT_ENV = "MERIDIAN_PRIVATE_ROOT"
+HISTORICAL_EARTH_LAB_PARTS = ("experiments", "earth-lab")
 
 
 def default_repository_root() -> Path:
@@ -91,6 +92,19 @@ class StorageRoots:
             raise FileNotFoundError(f"Required Meridian private path does not exist: {path}")
         return path
 
+    def historical_earth_lab_path(
+        self,
+        *parts: str | os.PathLike[str],
+        must_exist: bool = False,
+    ) -> Path:
+        """Return the preserved historical Earth Lab experiment location."""
+        path = self.data_path(*HISTORICAL_EARTH_LAB_PARTS, *parts)
+        if must_exist and not path.exists():
+            raise FileNotFoundError(
+                f"Required historical Earth Lab path does not exist: {path}"
+            )
+        return path
+
     def as_dict(self) -> dict[str, str]:
         return {
             "repository_root": str(self.repository),
@@ -147,8 +161,9 @@ def resolve_project_path(
     """Resolve a repository path, including historical sibling-root conventions.
 
     Existing configs such as ``../meridian-data/earth-lab/...`` retain their
-    current meaning.  When MERIDIAN_DATA_ROOT is configured, that legacy prefix
-    maps to the configured root without changing the historical config file.
+    historical text.  The legacy Earth Lab prefix maps to the preserved
+    ``experiments/earth-lab`` hierarchy without rewriting frozen configs.
+    Other legacy ``../meridian-data/...`` paths map directly below the data root.
     Ordinary relative paths continue to resolve from the repository root.
     """
     resolved_roots = roots or resolve_storage_roots(repository_root=repository_root)
@@ -157,7 +172,14 @@ def resolve_project_path(
         result = path.resolve()
     else:
         parts = path.parts
-        if len(parts) >= 2 and parts[0] == ".." and parts[1].casefold() == "meridian-data":
+        if (
+            len(parts) >= 3
+            and parts[0] == ".."
+            and parts[1].casefold() == "meridian-data"
+            and parts[2].casefold() == "earth-lab"
+        ):
+            result = resolved_roots.historical_earth_lab_path(*parts[3:])
+        elif len(parts) >= 2 and parts[0] == ".." and parts[1].casefold() == "meridian-data":
             result = resolved_roots.data_path(*parts[2:])
         elif len(parts) >= 2 and parts[0] == ".." and parts[1].casefold() == "meridian-private":
             result = resolved_roots.private_path(*parts[2:])

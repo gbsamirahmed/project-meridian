@@ -1,0 +1,259 @@
+{
+  "schema_version": 1,
+  "phase": "4B",
+  "status": "COPIED_VALIDATED_ACTIVE_REFERENCES_UPDATED",
+  "generated_at": "2026-09-29T01:18:28.1793544+01:00",
+  "repository_head": "912f01154b248e39f1d4db6bc30c989fec91f315",
+  "source_root": "${MERIDIAN_DATA_ROOT}/earth-lab",
+  "destination_root": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab",
+  "governing_rule": "COPY -> UPDATE ACTIVE REFERENCES -> VALIDATE -> COMPARE -> REVIEW -> REMOVE LATER",
+  "source_tree_before": {
+    "files": 5796,
+    "bytes": 1845508901
+  },
+  "expected_destination": {
+    "files": 712,
+    "bytes": 814688394,
+    "note": "711 byte-identical source files plus one curated secret-free DefaultEngine.ini"
+  },
+  "copy_sets": [
+    {
+      "id": "EXP-001",
+      "source": "earth-lab/tryfan-001",
+      "destination": "experiments/earth-lab/tryfan-001",
+      "classification": "historical_experiment",
+      "status": "INCLUDE",
+      "source_files": 14,
+      "source_bytes": 42578467,
+      "rule": "Copy all files outside unreal-project byte-for-byte",
+      "preservation": "complete SHA-256 manifest"
+    },
+    {
+      "id": "EXP-002-U",
+      "source": "earth-lab/tryfan-001/unreal-project/TryfanLab002",
+      "destination": "experiments/earth-lab/tryfan-001/unreal-project/TryfanLab002",
+      "classification": "historical_unreal_state",
+      "status": "CURATED_INCLUDE",
+      "source_files": 297,
+      "source_bytes": 99856765,
+      "generated_files": 1,
+      "generated_bytes": 88,
+      "rules": [
+        "Include TryfanLab002.uproject and IMPORT.md",
+        "Include complete Content except __pycache__ and *.pyc",
+        "Include DefaultInput.ini",
+        "Generate DefaultEngine.ini from the GeneralProjectSettings section only"
+      ],
+      "preservation": "complete SHA-256 manifest plus corrected-map critical hash"
+    },
+    {
+      "id": "EXP-004",
+      "source": "earth-lab/tryfan-004",
+      "destination": "experiments/earth-lab/tryfan-004",
+      "classification": "historical_experiment",
+      "status": "INCLUDE_WITH_EXCLUSION",
+      "source_files": 45,
+      "source_bytes": 382942880,
+      "rule": "Copy everything except unreal-project",
+      "preservation": "complete SHA-256 manifest"
+    },
+    {
+      "id": "EXP-005B",
+      "source": "earth-lab/tryfan-005b",
+      "destination": "experiments/earth-lab/tryfan-005b",
+      "classification": "historical_experiment",
+      "status": "INCLUDE",
+      "source_files": 64,
+      "source_bytes": 11205616,
+      "rule": "Copy complete tree byte-for-byte",
+      "preservation": "complete SHA-256 manifest"
+    },
+    {
+      "id": "EXP-005C",
+      "source": "earth-lab/tryfan-005c",
+      "destination": "experiments/earth-lab/tryfan-005c",
+      "classification": "historical_experiment",
+      "status": "INCLUDE",
+      "source_files": 171,
+      "source_bytes": 28865253,
+      "rule": "Copy complete tree byte-for-byte",
+      "preservation": "complete SHA-256 manifest"
+    },
+    {
+      "id": "EXP-006",
+      "source": "earth-lab/tryfan-006",
+      "destination": "experiments/earth-lab/tryfan-006",
+      "classification": "historical_experiment",
+      "status": "INCLUDE",
+      "source_files": 33,
+      "source_bytes": 14357751,
+      "rule": "Copy complete tree byte-for-byte",
+      "preservation": "complete SHA-256 manifest"
+    },
+    {
+      "id": "EXP-007",
+      "source": "earth-lab/tryfan-007",
+      "destination": "experiments/earth-lab/tryfan-007",
+      "classification": "historical_experiment",
+      "status": "INCLUDE",
+      "source_files": 49,
+      "source_bytes": 11287793,
+      "rule": "Copy complete tree byte-for-byte",
+      "preservation": "complete SHA-256 manifest and frozen result identity"
+    },
+    {
+      "id": "EXP-008",
+      "source": "earth-lab/tryfan-008",
+      "destination": "experiments/earth-lab/tryfan-008",
+      "classification": "historical_experiment",
+      "status": "INCLUDE",
+      "source_files": 13,
+      "source_bytes": 4319474,
+      "rule": "Copy complete tree byte-for-byte",
+      "preservation": "complete SHA-256 manifest and frozen result identity"
+    },
+    {
+      "id": "EXP-009",
+      "source": "earth-lab/tryfan-009",
+      "destination": "experiments/earth-lab/tryfan-009",
+      "classification": "historical_experiment",
+      "status": "INCLUDE",
+      "source_files": 25,
+      "source_bytes": 219274307,
+      "rule": "Copy complete tree byte-for-byte",
+      "preservation": "complete SHA-256 manifest and frozen result identity"
+    }
+  ],
+  "exclusions": [
+    {
+      "path": "earth-lab/.venv",
+      "files": 4878,
+      "bytes": 230777822,
+      "reason": "machine-specific regenerable Python environment"
+    },
+    {
+      "path": "earth-lab/tryfan-004/unreal-project",
+      "files": 126,
+      "bytes": 629811606,
+      "reason": "old recovery workspace; repository reference renderer and backup are authoritative; retain source in place"
+    },
+    {
+      "path": "earth-lab/tryfan-001/unreal-project/TryfanLab002/DerivedDataCache",
+      "files": 6,
+      "bytes": 1886808,
+      "reason": "Unreal cache"
+    },
+    {
+      "path": "earth-lab/tryfan-001/unreal-project/TryfanLab002/Intermediate",
+      "files": 11,
+      "bytes": 124990875,
+      "reason": "Unreal generated build state"
+    },
+    {
+      "path": "earth-lab/tryfan-001/unreal-project/TryfanLab002/Saved",
+      "files": 59,
+      "bytes": 43322449,
+      "reason": "routine logs, crashes, settings and superseded autosave; backup retains recovery evidence"
+    },
+    {
+      "path": "earth-lab/tryfan-001/unreal-project/TryfanLab002/Content/Python/__pycache__",
+      "files": 3,
+      "bytes": 30407,
+      "reason": "Python bytecode"
+    },
+    {
+      "path": "earth-lab/tryfan-001/unreal-project/TryfanLab002/Config/DefaultEngine.ini",
+      "files": 1,
+      "bytes": 476,
+      "reason": "contains generated secret-bearing Android file-server section; replace with curated non-secret project section"
+    },
+    {
+      "path": "earth-lab/tryfan-001/unreal-project/TryfanLab002/meridian-landscape-source.json",
+      "files": 1,
+      "bytes": 152,
+      "reason": "machine-local generated pointer"
+    }
+  ],
+  "curated_files": [
+    {
+      "path": "experiments/earth-lab/tryfan-001/unreal-project/TryfanLab002/Config/DefaultEngine.ini",
+      "bytes": 88,
+      "sha256": "49aaf55a36f766d0e33592cb5e308356dc5d018228e3bb875b4dbde1446d25c1",
+      "source_semantics": "GeneralProjectSettings section only; no placeholder secret"
+    }
+  ],
+  "validation": {
+    "strategy": "complete relative-path, byte-count and SHA-256 inventory for every intended destination file",
+    "critical": [
+      "tryfan-001/unreal-project/TryfanLab002/Content/Tryfan_Lab002_Corrected.umap",
+      "tryfan-004/unreal-landscape-v1/heightmaps/tryfan-004-dtm-1m-landscape-3025.r16",
+      "tryfan-007/uncertain-underlying-surface/lab007-report.json",
+      "tryfan-008/surface-uncertainty-audit/lab008-report.json",
+      "tryfan-009/surface-reconstruction-v0.1/lab009-report.json"
+    ],
+    "source_retention": "Reinventory original earth-lab tree and recheck all 27 backup-critical hashes after copy"
+  },
+  "privacy": {
+    "private_traverse_in_scope": false,
+    "secret_values_recorded": false,
+    "route_activity_strava_touched": false
+  },
+  "completed_at": "2026-09-29T01:29:19.7330863+01:00",
+  "validation_manifest": {
+    "path": "${MERIDIAN_DATA_ROOT}/experiments/phase-4b-earth-lab-validation.json",
+    "sha256": "c8c33c5c32624794dc3ff7fcc097a18d7d60a0bd735b8197d690373fa0a6278b",
+    "direct_files_compared": 711,
+    "curated_files": 1,
+    "all_hashes_match": true,
+    "relative_paths_match": true
+  },
+  "curated_unreal_decision": {
+    "preserved": [
+      "TryfanLab002.uproject",
+      "IMPORT.md",
+      "complete Content except Python bytecode",
+      "DefaultInput.ini",
+      "curated DefaultEngine.ini GeneralProjectSettings"
+    ],
+    "excluded": [
+      "DerivedDataCache",
+      "Intermediate",
+      "Saved",
+      "Python bytecode",
+      "machine-local landscape pointer",
+      "secret-bearing Android file-server section"
+    ],
+    "autosave": "Excluded because it predates the authoritative corrected map; recovery copy remains in the untouched backup"
+  },
+  "active_references": {
+    "resolver": "Legacy ../meridian-data/earth-lab configuration text maps to ${MERIDIAN_DATA_ROOT}/experiments/earth-lab",
+    "entrypoints": "Config-driven Lab 004B and 005A-009 analysis entrypoints use the shared resolver",
+    "renderer": "Bootstrap and manifest consume experiments/earth-lab inputs; canonical map unchanged",
+    "historical_configs_rewritten": false
+  },
+  "verification": {
+    "destination_files": 712,
+    "destination_bytes": 814688394,
+    "json_files_parsed": 27,
+    "rasters_opened": 294,
+    "full_earth_lab_tests": "135 passed",
+    "storage_root_tests": "14 passed",
+    "renderer_inputs": "7 hashes passed",
+    "frozen_lab_identities": "007, 008 and 009 match under old and new roots",
+    "canonical_map_sha256": "85ef8f1cc9a9fda9b6f2ab3b911bd57831fe75c4009e5ad168ea4956165a260d",
+    "backup_critical": "27/27",
+    "source_after": {
+      "files": 5796,
+      "bytes": 1845508901,
+      "unchanged": true
+    },
+    "private_estate_unchanged": true,
+    "deletions": 0
+  },
+  "rollback": {
+    "old_source_retained": true,
+    "backup_untouched": true,
+    "removal_allowed_in_phase": "4G only after separate review",
+    "phase_4c_started": false
+  }
+}

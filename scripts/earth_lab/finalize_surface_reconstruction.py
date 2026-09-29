@@ -12,6 +12,8 @@ import json
 from pathlib import Path
 from typing import Any
 
+from experiment_paths import resolve_config_value
+
 
 def sha256_file(path: Path) -> str:
     digest = hashlib.sha256()
@@ -25,11 +27,11 @@ def finalize(config_path: Path) -> dict[str, Any]:
     config_path = config_path.resolve()
     config = json.loads(config_path.read_text(encoding="utf-8"))
     repo = config_path.parents[2]
-    output_root = (repo / config["output_root"]).resolve()
+    output_root = resolve_config_value(config_path, config["output_root"])
     report_path = output_root / "lab009-report.json"
     report = json.loads(report_path.read_text(encoding="utf-8"))
 
-    project_root = (repo / config["unreal"]["project"]).resolve().parent
+    project_root = repo / "renderers" / "unreal" / "tryfan-reference"
     saved = project_root / "Saved"
     setup_path = saved / "meridian-lab009-setup.json"
     validation_path = saved / "meridian-lab009-validation.json"
