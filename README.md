@@ -24,9 +24,9 @@ Meridian is an interactive 3D weather map for exploring forecast conditions acro
 
 Meridian is a client-side React and MapLibre application. It requires no runtime application server, database, or authentication system.
 
-The current application remains one composed experience while its responsibilities are clarified as **Atlas** (world/terrain), **Weather** (atmosphere), and provisional **Traverse** (routes, journeys and movement). The canonical boundaries, dependency direction, external-storage contract and Tryfan reference-renderer plan are recorded in [Meridian architecture contract](docs/architecture.md). No separate deployable applications are implied by these names yet.
+The current application is one composed experience with established ownership under **App** (composition), **Atlas** (world/terrain), **Weather** (atmosphere), and provisional **Traverse** (routes, journeys and movement). The canonical boundaries, dependency direction, external-storage contract and Tryfan reference-renderer plan are recorded in [Meridian architecture contract](docs/architecture.md). No separate deployable applications are implied by these names yet.
 
-Large research and generated data stay outside Git. Python tooling resolves the documented sibling `meridian-data` default or an absolute `MERIDIAN_DATA_ROOT`; private activities and user routes use the separate `MERIDIAN_PRIVATE_ROOT`. See the architecture contract and [Phase 4 migration inventory](docs/phase-4-migration-inventory.md). Historical Earth Lab commands retain their existing paths until the controlled data migration.
+Large research and generated data stay outside Git. Python tooling resolves the documented sibling `meridian-data` default or an absolute `MERIDIAN_DATA_ROOT`; private activities and user routes use the separate `MERIDIAN_PRIVATE_ROOT`. See the architecture contract and [Phase 4 migration inventory](docs/phase-4-migration-inventory.md). Historical Earth Lab identities and configs remain intact; root-aware tooling resolves their migrated experiment data under `MERIDIAN_DATA_ROOT/experiments/earth-lab`. The Tryfan Unreal project remains a reference renderer, with recovery instructions in its [README](renderers/unreal/tryfan-reference/README.md).
 
 Map weather, including precipitation, total cloud cover, 10 m wind, 2 m temperature and mean sea-level pressure, uses global, geographically fixed numeric tiled fields:
 
@@ -68,6 +68,11 @@ layout, intentional seams and validation gates.
 - **Data and maps:** NOAA GFS, Open-Meteo, OpenFreeMap/OpenStreetMap, AWS Terrarium, MapTiler Satellite, Nominatim
 
 ## Run locally
+
+Use `main` for active Meridian development. The Phase 5 architecture cleanup is
+complete; `earth-lab` and `legacy/journey-weather` are retained historical branches,
+not prerequisites for working on the application. Phase 6 remote publication remains
+pending its final validation; see the [repository status](docs/architecture.md#repository-status-and-historical-markers).
 
 Requirements:
 

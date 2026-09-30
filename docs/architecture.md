@@ -4,6 +4,38 @@ This document records Meridian's current architectural direction. It defines the
 rules for implementation and records the completed storage migration and current
 active application ownership. Historical experiments retain their original identities.
 
+## Repository status and historical markers
+
+`main` is the canonical active Meridian development line. Phase 5 is complete at
+`6f6491c6cb72b203e71693318a719b227bf2c662`, marked by the annotated
+`phase-5-complete` tag. The App / Atlas / Weather / Traverse ownership below is the
+current implementation, not a proposed next refactor.
+
+Phase 6B fast-forwarded local main to that exact checkpoint without a merge commit,
+content reconciliation or history rewriting. During Phase 6C, `origin/main` remains
+at `6383ed2d729efb8a61fd6d03c0cdedb751d26007`; the local documentation commit and
+new tag are not published. Final validation and publication belong to Phase 6D.
+Phase 6 is not complete yet and consists only of 6A audit, 6B fast-forward,
+6C repository semantics/markers and 6D validation/checkpoint. There is no Phase 6E.
+
+The retained historical refs have these meanings:
+
+| Ref | Meaning |
+| --- | --- |
+| `earth-lab` | Frozen historical development line through Tryfan/Earth Lab and the architecture/storage cleanup, at the Phase 5 checkpoint. Not required for ongoing development. |
+| `legacy/journey-weather` | Historical pre-world-pivot lineage, at `6383ed2`. |
+| `pre-world-pivot` | Final Journey/Forecast state before the Earth-world pivot. |
+| `pre-atlas-restructure` | Protected Earth Lab checkpoint before the architecture/storage restructuring. |
+| `phase-5-complete` | Completed architecture cleanup before Phase 6 repository-semantic changes; points to the Phase 5 commit, not the later documentation commit. |
+| `v0.4-terrain` | Earlier terrain milestone, retained unchanged. |
+
+No historical branch or existing tag is renamed, moved or deleted. Branch deletion
+is a separate optional decision after Phase 6, not a reunification requirement.
+Historical experiment names, frozen identities and the renderer bootstrap remain
+traceable from main. The [development log](development-log.md) records the audit and
+fast-forward; the historical Phase 4/5 plans and dated entries retain their original
+planning and review context.
+
 ## Product vocabulary
 
 - **Meridian** is the overall ecosystem and platform.
@@ -54,7 +86,7 @@ boundaries without splitting the deployable application:
   coverage window, and orchestrates route Weather sampling without exposing GFS or
   numeric-tile implementation to Traverse.
 
-Phase 5D removes the obsolete mixed configuration, ordering and type compatibility
+Phase 5D removed the obsolete mixed configuration, ordering and type compatibility
 files plus the empty SearchBar. Mixed overlay selection now lives explicitly in
 `app/state/mapOverlayState`; basemap types remain Atlas-owned. Traverse owns its
 analysis-mode choices and no longer imports app control metadata. Combined
@@ -181,14 +213,15 @@ py scripts\meridian_paths.py --require-data
 
 Historical configs using `../meridian-data/...` or
 `../meridian-private/...` are supported by the resolver as compatibility syntax.
-Frozen entry points that still accept explicit paths retain their documented
-behaviour until Phase 4 deliberately updates their references. Setting an environment
-variable does not secretly alter a script that does not call the resolver.
+Root-aware historical experiment tooling resolves the legacy Earth Lab prefix to
+`MERIDIAN_DATA_ROOT/experiments/earth-lab`. Entry points that accept explicit paths
+retain that documented behaviour. Setting an environment variable does not secretly
+alter a script that does not call the resolver.
 
-## Target external data layout
+## Current external data layout
 
-Phase 4 uses this contract through copy, validation and hash comparison before any old
-copy is removed. Phase 4B has preserved historical Earth experiments under `experiments`,
+Phase 4 established this contract through copy, validation and hash comparison before
+any approved old-copy removal. Phase 4B has preserved historical Earth experiments under `experiments`,
 and Phase 4C has created validated Tryfan source and derived products under `sources/atlas`
 and `derived/atlas`. Phase 4D has created the separate private root and copied private
 Traverse source, benchmark, experiment and cache data into it. Phase 4E has copied the
@@ -234,8 +267,9 @@ The current private Traverse hierarchy is `sources/strava-export`,
 private caches under `cache`. Detailed private filenames and hashes live only in the
 private validation inventory. Git records aggregate migration evidence and its inventory
 hash, never route geometry or activity contents. The four old data-root estates remain
-temporary rollback copies until Phase 4G; their presence is not permission for new
-private data to enter the general data root.
+temporary rollback copies pending separately approved removal. Phase 4G retired only
+the legacy GFS publication; it did not remove these private estates. Their presence
+is not permission for new private data to enter the general data root.
 
 Classification precedes movement. A mixed historical directory may be preserved
 under `experiments` rather than split if splitting would damage provenance or create
@@ -248,10 +282,12 @@ identities. Code becomes shared infrastructure only after it has a continuing ro
 beyond the experiment that created it. Promotion gives code a role-based name and an
 explicit contract; it does not rewrite the experiment record.
 
-The current `scripts/earth_lab`, `docs/earth-lab` and
-`meridian-data/earth-lab` paths remain in place during Phase 3. Their legacy
-sibling-relative paths are deliberate compatibility exceptions. They are catalogued
-for controlled migration rather than edited across frozen Labs.
+`scripts/earth_lab` and `docs/earth-lab` remain historical repository source and
+configuration. Phase 4B preserved experiment data under
+`MERIDIAN_DATA_ROOT/experiments/earth-lab`; the original external `earth-lab` tree
+remains a recovery copy. Legacy sibling-relative config paths are deliberate
+compatibility syntax resolved by active tooling, not permission to rewrite frozen
+Lab provenance or to use the historical branch for ongoing development.
 
 “Earth Lab” is historical terminology, not the permanent name for shared Atlas
 infrastructure.

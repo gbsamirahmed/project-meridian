@@ -1,7 +1,14 @@
 # Phase 5 active-code architecture audit and frozen refactor plan
 
-**Status:** Phases 5A-5C are checkpointed. Phase 5D final cleanup and validation
-are complete and awaiting review; no final Phase 5 commit has been created.
+**Status:** Phases 5A-5D are complete and checkpointed at
+`6f6491c6cb72b203e71693318a719b227bf2c662` (`Complete Phase 5 architecture cleanup`),
+marked by `phase-5-complete`. Local main now contains this approved implementation;
+Phase 6 repository reunification remains pending final validation/publication in 6D.
+See [current repository status](architecture.md#repository-status-and-historical-markers).
+
+The audit, frozen plans and implementation records below retain their historical
+context. References to pending review or uncommitted changes describe the state when
+those records were written; the final checkpoint above supersedes those status notes.
 
 **Boundary:** Phase 5 consists only of 5A (this audit), 5B (structural
 reorganisation), 5C (the three defined coupling fixes) and 5D (transitional

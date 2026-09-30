@@ -2126,3 +2126,40 @@ modified; there was no Unreal launch or bulk estate hashing.
 Phase 5D is ready for review and the explicitly authorised final Phase 5 checkpoint.
 No commit or push has been made. Phase 5 ends with 5D; there is no Phase 5E and no
 new backlog scope has been implemented.
+
+
+## 2026-09-30 — Phase 5 checkpoint and Phase 6A–6C repository reunification
+
+Phase 5 was reviewed, approved and checkpointed as
+`6f6491c6cb72b203e71693318a719b227bf2c662` (`Complete Phase 5 architecture cleanup`).
+The preceding 5D entry records its pre-checkpoint review state. No further Phase 5
+implementation or later architecture subphase was added.
+
+Phase 6A audited local and live remote history without modifying the repository.
+Main at `6383ed2d729efb8a61fd6d03c0cdedb751d26007` was the strict ancestor and merge
+base of earth-lab at the Phase 5 checkpoint: zero main-only commits and 28 ordinary
+single-parent descendants. The legacy Journey/Weather branch had no unique work.
+Fast-forward was selected; no history rewriting or content reconciliation was needed.
+Existing restore tags and Git-recorded Lab/renderer provenance remained reachable.
+
+Phase 6B switched normally to main and fast-forwarded it only to the Phase 5 commit.
+No merge commit or new commit was created; the resulting tree was exactly
+`d849c29bff0feb06c6e0b472c87168313236efaf`. Earth-lab, legacy branches, remote refs
+and existing tags were unchanged. The canonical LFS map remained locally available.
+
+Phase 6C created the local annotated `phase-5-complete` marker at that Phase 5 commit,
+with the annotation describing completion of architecture cleanup before canonical-main
+reunification. Main is the active development line; earth-lab remains frozen historical
+research/cleanup history, and legacy/journey-weather retains the pre-world-pivot lineage.
+The existing milestone tags remain unchanged. No branch deletion is required.
+
+README and current architecture/status documentation now describe completed Phase 5,
+main-based development, migrated storage and historical branch roles. Earlier dated
+records, frozen plans, experiment identities and research/renderer implementation were
+preserved. No application, external/private data or Unreal state was changed.
+
+Phase 6C validation passed: documentation links, whitespace, the complete documentation-
+only diff, privacy/credential scans and unchanged implementation content against Phase 5.
+Origin/main remains at `6383ed2`; the Phase 6C documentation commit and new tag stay
+local pending the Phase 6D validation/publication gate. Phase 6D has not begun.
+Phase 6 is not complete: it ends with 6D, and no Phase 6E is proposed.
