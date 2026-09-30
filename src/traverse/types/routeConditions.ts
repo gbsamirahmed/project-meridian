@@ -1,5 +1,6 @@
 import type { RouteWeatherScalarKey, WeatherSampleProvenance } from "../../weather/types/routeWeather";
 import type { RouteCoordinate } from "./route";
+import type { RouteConditionFieldCoverage, RouteConditionFieldKey } from "./routeConditionBase";
 import type { DerivedRouteConditions } from "./derivedRouteConditions";
 
 export type RouteConditionMode =
@@ -85,11 +86,6 @@ export interface RouteConditionSample {
   weather: RouteWeather;
 }
 
-export interface RouteConditionFieldCoverage {
-  availableSamples: number;
-  totalSamples: number;
-}
-
 export interface RouteConditionSummary {
   temperatureRangeC: [number, number] | null;
   precipitationMaximumMm: number | null;
@@ -108,7 +104,7 @@ export interface RouteConditions {
   routeId: string;
   generatedAt: string;
   samples: RouteConditionSample[];
-  coverage: Record<keyof RouteWeather, RouteConditionFieldCoverage>;
+  coverage: Record<RouteConditionFieldKey, RouteConditionFieldCoverage>;
   summary: RouteConditionSummary;
 }
 

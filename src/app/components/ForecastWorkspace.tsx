@@ -10,7 +10,7 @@ import {
   rollingForecastWindow,
   windTravelToDegrees,
 } from "../../weather/presentation/forecastWorkspaceModel";
-import type { MapOverlayState } from "../types/layer";
+import type { MapOverlayState } from "../state/mapOverlayState";
 import type { Place } from "../../atlas/location/place";
 import type { WeatherData, HourlyForecast } from "../../weather/types/weather";
 

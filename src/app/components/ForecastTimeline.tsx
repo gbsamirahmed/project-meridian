@@ -4,7 +4,7 @@ import { accumulationIntervalLabel } from "../../weather/presentation/weatherTim
 import { getScalarTimestepAtTime } from "../../weather/data/globalWeatherService";
 import type { CatalogueCheckState } from "../../weather/data/weatherCatalogueRefresh";
 import type { GlobalWeatherCatalog, GlobalWeatherStatusRegistry, ScalarWeatherFieldSource, VectorWeatherFieldSource } from "../../weather/types/globalWeather";
-import type { MapOverlayState } from "../types/layer";
+import type { MapOverlayState } from "../state/mapOverlayState";
 import type { ForecastCoverageWindow } from "../../weather/types/forecastCoverage";
 
 interface ForecastTimelineProps {

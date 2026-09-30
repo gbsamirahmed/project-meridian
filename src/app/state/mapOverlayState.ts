@@ -1,5 +1,3 @@
-export type { Basemap } from "../../atlas/map/mapTypes";
-
 export interface MapOverlayState {
   elevation: boolean;
   precipitation: boolean;

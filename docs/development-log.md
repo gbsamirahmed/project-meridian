@@ -2092,3 +2092,37 @@ live-publication integration case, TypeScript/Vite build, ESLint and the externa
 publication check. All 15 established Playwright scenarios passed across 1920x1080,
 1440x900 and 1366x768, including the formerly failing 1366 pressure scenario under its
 unchanged timeout. Phase 5D remains the final Phase 5 task and has not begun.
+
+## 2026-09-30 - Meridian Phase 5D final cleanup and validation
+
+Completed only the frozen final cleanup. Weather's physical atmospheric catalogue
+and field IDs now live independently of validation; Traverse's base coverage/key
+types no longer depend on aggregate derived results. Both audited cycles are gone.
+Removed the empty SearchBar and four obsolete app compatibility files, retained
+mixed overlay selection as app state, and placed analysis choices in Traverse.
+No shared package, new framework or product behaviour was introduced.
+
+The import audit includes type-only edges: zero cycles, zero unresolved imports,
+no domain-to-app imports, zero Weather JourneySchedule references and zero Traverse
+Weather-data/map implementation imports. The three Phase 5C seams, provider-neutral
+provenance and pressure lifecycle correction remain intact. Architecture, frozen
+plan, README and current Weather path references now reflect the actual layout.
+The opt-in real-asset test now uses the approved sampling seam and an asynchronous
+PNG test decoder; its prior blocking shim could starve local HTTP requests.
+
+Validation passed 125/125 active Node tests with live-publication integration
+enabled, 82 Weather Python tests, 15 storage-root tests, TypeScript, ESLint, Vite
+build and bounded GFS publication (20260907T18Z, ten fields, 24 timesteps).
+The complete Playwright matrix passed 15/15, five at each established viewport;
+1366x768 pressure passed in 24.8 seconds without increasing its timeout. The normal
+Node run's one opt-in skip was also exercised separately and in the full suite.
+Browser diagnostics contain zero page exceptions/HTTP errors and no failed GFS
+requests; 74 external-provider request cancellations are `net::ERR_ABORTED`.
+Documentation links/whitespace, diff and privacy checks passed. The existing bundle
+size warning remains backlog. No visual baseline or browser assertion was changed.
+Historical experiments, renderer/Unreal, private data and external estates were not
+modified; there was no Unreal launch or bulk estate hashing.
+
+Phase 5D is ready for review and the explicitly authorised final Phase 5 checkpoint.
+No commit or push has been made. Phase 5 ends with 5D; there is no Phase 5E and no
+new backlog scope has been implemented.

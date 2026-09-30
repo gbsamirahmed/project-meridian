@@ -1,4 +1,4 @@
-import type { RouteConditionFieldCoverage, RouteWeather } from "./routeConditions";
+import type { RouteConditionFieldCoverage, RouteConditionFieldKey } from "./routeConditionBase";
 
 export type DerivedUnavailable = { state: "unavailable"; reason: "missing-input" | "incompatible-reference" | "different-forecast" };
 export type FreezingStructure = "no-separated-levels-indicated" | "multiple-levels-indicated" | "inconsistent-levels" | "unknown";
@@ -28,7 +28,7 @@ export type VisibilityContext = DerivedUnavailable | {
 export interface DerivedConditionSample {
   /** Resolves original terrain, requested arrival and per-field provenance without copying them. */
   routeSampleIndex: number;
-  evidenceFields: ReadonlyArray<keyof RouteWeather>;
+  evidenceFields: ReadonlyArray<RouteConditionFieldKey>;
   freezing: FreezingContext;
   wind: WindContext;
   gust: GustContext;

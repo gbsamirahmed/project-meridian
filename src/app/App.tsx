@@ -48,7 +48,8 @@ import {
 import type { SelectedLocation } from "../atlas/location/location";
 import type { WeatherData } from "../weather/types/weather";
 import type { Place } from "../atlas/location/place";
-import type { Basemap, MapOverlayState } from "./types/layer";
+import type { Basemap } from "../atlas/map/mapTypes";
+import type { MapOverlayState } from "./state/mapOverlayState";
 import type {
   GlobalWeatherCatalog,
   GlobalWeatherSourceRegistry,

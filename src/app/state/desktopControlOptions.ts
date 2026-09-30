@@ -1,5 +1,4 @@
-import type { MapOverlayState } from "../types/layer";
-import type { RouteConditionMode } from "../../traverse/types/routeConditions";
+import type { MapOverlayState } from "./mapOverlayState";
 
 export const MAP_OVERLAY_TOOLS: ReadonlyArray<{
   key: keyof MapOverlayState;
@@ -12,15 +11,4 @@ export const MAP_OVERLAY_TOOLS: ReadonlyArray<{
   { key: "temperatureContours", label: "Temperature contours", shortLabel: "Temp" },
   { key: "pressureIsobars", label: "Pressure isobars", shortLabel: "Pres" },
   { key: "windFlow", label: "Wind flow", shortLabel: "Wind" },
-];
-
-export const ANALYSIS_MODES: ReadonlyArray<{
-  mode: RouteConditionMode;
-  label: string;
-}> = [
-  { mode: "none", label: "Elevation" },
-  { mode: "temperature", label: "Temperature" },
-  { mode: "precipitation", label: "Rain" },
-  { mode: "wind", label: "Wind" },
-  { mode: "gradient", label: "Gradient" },
 ];

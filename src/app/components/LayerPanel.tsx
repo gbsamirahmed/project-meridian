@@ -1,4 +1,5 @@
-import type { Basemap, MapOverlayState } from "../types/layer";
+import type { Basemap } from "../../atlas/map/mapTypes";
+import type { MapOverlayState } from "../state/mapOverlayState";
 
 interface LayerPanelProps {
   basemap: Basemap;

@@ -1,8 +1,8 @@
 # Meridian architecture contract
 
 This document records Meridian's current architectural direction. It defines the
-rules for later migration and implementation; it does not claim that the repository
-or external data have already been reorganised to match them.
+rules for implementation and records the completed storage migration and current
+active application ownership. Historical experiments retain their original identities.
 
 ## Product vocabulary
 
@@ -54,12 +54,28 @@ boundaries without splitting the deployable application:
   coverage window, and orchestrates route Weather sampling without exposing GFS or
   numeric-tile implementation to Traverse.
 
-Combined status/inspection presentation remains app-owned. Transitional compatibility
-files, the empty `src/components/SearchBar.tsx` and the two audited type cycles remain
-for the bounded 5D cleanup. `src/shared` remains absent because no current
-responsibility has a justified domain-neutral owner. The audited Phase 5 scope remains
-frozen in the [Phase 5 architecture plan](phase-5-architecture-plan.md); Phase 5 ends
-with 5D. Historical experiments and renderer source are outside this refactor.
+Phase 5D removes the obsolete mixed configuration, ordering and type compatibility
+files plus the empty SearchBar. Mixed overlay selection now lives explicitly in
+`app/state/mapOverlayState`; basemap types remain Atlas-owned. Traverse owns its
+analysis-mode choices and no longer imports app control metadata. Combined
+status/inspection, ForecastTimeline and ForecastWorkspace remain app composition;
+Weather owns their forecast/coverage models and Atlas owns location identity.
+
+Weather's physical atmospheric catalogue and field IDs live in
+`weather/types/atmosphericFields`, independent of manifest validation. Traverse's
+base coverage and field-key types live in `traverse/types/routeConditionBase`;
+aggregate conditions depend on derived results, which depend on those base types.
+Both audited type cycles are resolved without duplicating types or weakening them.
+
+The final active roots are `app`, `atlas`, `weather`, `traverse`, `main.tsx` and
+`index.css`. App may compose all domains; domains do not import app. Atlas imports
+neither Weather nor Traverse, Weather imports neither Traverse nor JourneySchedule,
+and Traverse uses Weather's provider-neutral sample types, never its data/map
+implementation. Atlas map anchors/types are intentionally reusable by domain map
+controllers. `src/shared` remains absent because no current responsibility has a
+justified domain-neutral owner. The [Phase 5 architecture plan](phase-5-architecture-plan.md)
+records the final validation and bounded completion criteria. Phase 5 ends with 5D;
+historical experiments and renderer source are outside this refactor.
 
 The conceptual relationship is:
 

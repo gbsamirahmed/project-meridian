@@ -13,7 +13,8 @@ const [numeric, route, globalWeather, atmospheric, format, routePanelModule] = a
   server.ssrLoadModule("/src/traverse/model/atmosphericFormatting.ts"),
   server.ssrLoadModule("/src/traverse/components/RoutePlannerPanel.tsx"),
 ]);
-const { ATMOSPHERIC_FIELDS, validateAtmosphericManifest } = atmospheric;
+const { validateAtmosphericManifest } = atmospheric;
+const { ATMOSPHERIC_FIELDS } = await server.ssrLoadModule("/src/weather/types/atmosphericFields.ts");
 const RoutePlannerPanel = routePanelModule.default;
 const weatherSampler = await server.ssrLoadModule("/src/weather/data/routeWeatherSampler.ts");
 test.after(() => server.close());

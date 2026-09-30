@@ -44,7 +44,22 @@ NOAA GFS GRIB2
 
 Open-Meteo remains the selected-location source for current conditions and the seven-day point forecast. It is no longer used to construct map fields. See [Global weather architecture](docs/global-weather-architecture.md) for the detailed data model and source boundaries.
 
-Route planning is a separate client-side pipeline: GPX geometry is resampled at controlled spacing, enriched from the Terrarium DEM, and passed to a terrain-aware walking model. A route-condition layer then samples existing GFS fields at each expected arrival time while leaving journey timing independent of weather.
+Route planning is a separate client-side pipeline: GPX geometry is resampled at controlled spacing, enriched from the Terrarium DEM, and passed to a terrain-aware walking model. App asks Weather to sample the existing fields at each expected arrival time, then passes provider-neutral samples to Traverse for route-relative interpretation. Journey timing remains independent of weather.
+
+## Active source ownership
+
+One client-side application is composed under `src/app`. `src/atlas` owns the map
+lifecycle, location, terrain and satellite infrastructure; `src/weather` owns Weather
+models, data access, rendering and sampling; `src/traverse` owns routes, journeys and
+route-condition interpretation. `src/main.tsx` and `src/index.css` remain entry/style
+files. There is no `shared` package without a concrete neutral responsibility.
+
+App's MeridianMap composes AtlasMap, WeatherMapController and TraverseMapController.
+Weather receives a narrow coverage interval rather than a journey model. Traverse
+consumes neutral Weather samples rather than GFS manifests or tile internals.
+Historical Earth Lab and Tryfan/Unreal identities remain separate and unchanged.
+See the [Phase 5 architecture plan](docs/phase-5-architecture-plan.md) for the final
+layout, intentional seams and validation gates.
 
 ## Stack
 

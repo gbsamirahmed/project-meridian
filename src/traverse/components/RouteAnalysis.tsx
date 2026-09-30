@@ -1,7 +1,7 @@
 import RoutePointDetails from "./RoutePointDetails";
 import RouteProfile from "./RouteProfile";
 import { ROUTE_CONDITION_LEGENDS } from "../model/routeConditionStyle";
-import { ANALYSIS_MODES } from "../../app/state/desktopControlOptions";
+import { ANALYSIS_MODES } from "../model/routeAnalysisModes";
 import type { JourneySchedule, TerrainRoute } from "../types/route";
 import type { RouteConditionMode, RouteConditions, RouteConditionStatus } from "../types/routeConditions";
 

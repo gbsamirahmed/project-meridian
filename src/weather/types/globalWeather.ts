@@ -1,4 +1,4 @@
-import type { AtmosphericFieldId } from "../data/atmosphericFields";
+import type { AtmosphericFieldId } from "./atmosphericFields";
 
 export type GlobalWeatherFieldId =
   | AtmosphericFieldId

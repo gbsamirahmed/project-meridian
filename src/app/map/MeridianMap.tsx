@@ -23,7 +23,8 @@ import {
   DEFAULT_WORKSPACE_GUTTER_PX,
 } from "../../traverse/map/routeCamera";
 
-import type { Basemap, MapOverlayState } from "../types/layer";
+import type { Basemap } from "../../atlas/map/mapTypes";
+import type { MapOverlayState } from "../state/mapOverlayState";
 import type {
   GlobalWeatherStatusRegistry,
   ScalarWeatherFieldSource,

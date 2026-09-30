@@ -8,7 +8,8 @@ import TimeSlider from "../../weather/components/TimeSlider";
 import WeatherFreshness from "../../weather/components/WeatherFreshness";
 import { accumulationIntervalLabel } from "../../weather/presentation/weatherTimeLabel";
 
-import type { Basemap, MapOverlayState } from "../types/layer";
+import type { Basemap } from "../../atlas/map/mapTypes";
+import type { MapOverlayState } from "../state/mapOverlayState";
 import type { SelectedLocation } from "../../atlas/location/location";
 import type { Place } from "../../atlas/location/place";
 import type { WeatherData } from "../../weather/types/weather";

@@ -23,6 +23,7 @@ const [state, journeyModel, profileInteraction, controlOptions, routeCamera, for
   server.ssrLoadModule("/src/app/components/ForecastWorkspace.tsx"),
   server.ssrLoadModule("/src/weather/components/LocationWorkspace.tsx"),
 ]);
+const analysisModes = await server.ssrLoadModule("/src/traverse/model/routeAnalysisModes.ts");
 const DesktopWorkspace = desktopModule.default;
 const JourneyOverview = overviewModule.default;
 const JourneySettings = settingsModule.default;
@@ -431,7 +432,7 @@ test("map tool metadata maps every compact control to the existing layer key", (
   assert.deepEqual(controlOptions.MAP_OVERLAY_TOOLS.map(tool => tool.key), [
     "elevation", "precipitation", "clouds", "temperatureContours", "pressureIsobars", "windFlow",
   ]);
-  assert.deepEqual(controlOptions.ANALYSIS_MODES.map(item => item.mode), [
+  assert.deepEqual(analysisModes.ANALYSIS_MODES.map(item => item.mode), [
     "none", "temperature", "precipitation", "wind", "gradient",
   ]);
 });

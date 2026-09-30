@@ -1,4 +1,4 @@
-import type { RouteConditionFieldCoverage } from "../types/routeConditions";
+import type { RouteConditionFieldCoverage } from "../types/routeConditionBase";
 
 export function gustLabel(metresPerSecond: number): string {
   return `~${Math.round(metresPerSecond * 3.6)} km/h`;

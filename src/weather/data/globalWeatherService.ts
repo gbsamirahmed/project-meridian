@@ -13,7 +13,8 @@ import type {
   VectorWeatherFieldSource,
 } from "../types/globalWeather";
 
-import { ATMOSPHERIC_FIELDS, validateAtmosphericManifest } from "./atmosphericFields";
+import { ATMOSPHERIC_FIELDS } from "../types/atmosphericFields";
+import { validateAtmosphericManifest } from "./atmosphericFields";
 
 export const LATEST_DATASET_URL = "/weather/gfs/latest.json";
 export const GLOBAL_WEATHER_FIELD_IDS: GlobalWeatherFieldId[] = [

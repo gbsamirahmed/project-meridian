@@ -1,4 +1,5 @@
-import type { RouteConditionFieldCoverage, RouteConditions, RouteScalarKey } from "../types/routeConditions";
+import type { RouteConditionFieldCoverage } from "../types/routeConditionBase";
+import type { RouteConditions, RouteScalarKey } from "../types/routeConditions";
 
 export function durationLabel(minutes: number): string {
   const rounded = Math.max(0, Math.round(minutes / 5) * 5);

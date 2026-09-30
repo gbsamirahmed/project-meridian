@@ -1,7 +1,7 @@
 import { ELEVATION_COLOR_STOPS } from "../../atlas/map/atlasVisuals";
 import type { VisualColorStop } from "../../atlas/map/atlasVisuals";
 import { PRECIPITATION_INTENSITY_LEVELS } from "../../weather/map/weatherVisuals";
-import type { MapOverlayState } from "../types/layer";
+import type { MapOverlayState } from "../state/mapOverlayState";
 
 interface LayerLegendProps {
   mapOverlays: MapOverlayState;

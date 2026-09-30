@@ -1,14 +1,14 @@
 # Phase 5 active-code architecture audit and frozen refactor plan
 
-**Status:** Phase 5B structural implementation complete and awaiting review;
-Phase 5C has not begun.
+**Status:** Phases 5A-5C are checkpointed. Phase 5D final cleanup and validation
+are complete and awaiting review; no final Phase 5 commit has been created.
 
 **Boundary:** Phase 5 consists only of 5A (this audit), 5B (structural
 reorganisation), 5C (the three defined coupling fixes) and 5D (transitional
 cleanup, documentation and final validation). There is no Phase 5E. Useful work
 outside those outcomes is backlog, not permission to extend Phase 5.
 
-## Audit basis
+## Audit basis - Phase 5A snapshot
 
 The audit traced all 81 active TypeScript/TSX files under `src`, their relative
 imports, the `App` and `MapView` state/effect flows, the route and weather
@@ -16,7 +16,8 @@ pipelines, and the Vite-loaded tests under `scripts/ui`, `scripts/route`,
 `scripts/weather` and `scripts/visual`. The dependency rules in
 [`architecture.md`](architecture.md) remain authoritative.
 
-The current tree is organised by technical kind rather than ownership:
+At the Phase 5A checkpoint the tree was organised by technical kind rather than
+ownership. This historical snapshot is not the final source layout:
 
 ```text
 src/
@@ -549,6 +550,130 @@ and validation passes.
 - import-boundary test and obsolete-path/name search;
 - `git diff --check`, config parsing, privacy/credential scan and Git review;
 - historical Labs, renderer source, external data and private data unchanged.
+
+### Phase 5D implementation and final validation record
+
+Phase 5D implements only the frozen cleanup and final gate. It introduces no new
+architecture, product feature, provider, shared package or later Phase 5 subphase.
+
+The final active layout is:
+
+```text
+src/
+  app/
+    App.tsx / App.css
+    components/           mixed workspaces, controls and presentation
+    map/MeridianMap.tsx   composition of the three concrete map owners
+    state/                workspace, map controls and mixed overlay selection
+  atlas/
+    location/             search, place identity and location data access
+    map/                  AtlasMap, terrain, satellite, anchors and basemap types
+    terrain/              elevation sampling
+  weather/
+    components/           Weather-specific UI
+    data/                 manifests, tile cache, catalogue and route sampler
+    map/                  WeatherMapController and Weather rendering
+    presentation/         forecast, freshness and time models
+    types/                field catalogue, manifests, coverage and neutral samples
+  traverse/
+    components/           route/journey UI
+    map/                  TraverseMapController, route layers and camera
+    model/                journey, route interpretation and analysis modes
+    types/                route inputs, base coverage, derived and aggregate results
+  main.tsx
+  index.css
+```
+
+`shared` and obsolete top-level `components`, `services`, `types` and `config`
+are absent. ForecastTimeline/ForecastWorkspace remain the app composition wrappers
+established by the reviewed 5C implementation: they combine mixed overlay/legend
+selection and location presentation with Weather models. They are not Weather
+compatibility forwarding files. The earlier proposed disposition is reconciled to
+that actual ownership; no additional component split is necessary for the three
+frozen seams.
+
+Cleanup and cycle evidence:
+
+- Removed the empty, unreferenced `components/SearchBar.tsx`; Atlas search remains.
+- Removed unreferenced app `config/dataAttribution`, `config/layerVisuals` and
+  `map/mapLayerOrder`; their live domain replacements were established in 5C.
+- Removed app `types/layer`: Basemap consumers use Atlas's established type;
+  the unchanged mixed selection model is explicitly app state.
+- Relocated unchanged analysis-mode metadata into Traverse, removing the last
+  domain-to-app import without changing choices, labels or UI behaviour.
+- Weather catalogue/IDs belong to `types/atmosphericFields`. Both manifest types
+  and validator depend on them, never on each other. Physical values are unchanged.
+- Traverse aggregate results depend on derived results, both using
+  `types/routeConditionBase`. Derived types no longer import the aggregate model;
+  base keys remain the provider-neutral Weather scalar keys plus wind.
+- The production import graph, including type-only edges, has zero cycles and zero
+  unresolved relative imports. Tests guard reverse app imports, prohibited provider
+  dependencies, the retired cycles and obsolete compatibility paths.
+- The opt-in real-publication integration test invokes Weather sampling before
+  Traverse interpretation, expects all ten fields and decodes PNGs asynchronously.
+  The old synchronous Python shim could starve concurrent Node HTTP requests.
+  Semantic/value/cache/partial-coverage assertions remain intact.
+
+The Phase 5C map/controller, coverage and sampling boundaries are preserved:
+Atlas supplies renderable lifecycle state, Weather retains and applies pending
+requests, Traverse handles route behaviour, and app composes them. Provider
+provenance remains available without URLs, manifests or cache internals crossing
+into Traverse. Weather has zero JourneySchedule references and Traverse has zero
+Weather data/map implementation imports. Intentional domain seams are neutral
+Weather sample types, Weather precipitation/time presentation helpers, Atlas
+location/place types and Atlas map types/anchors. These are explicit domain seams;
+there are no domain-to-app imports.
+
+Final validation: 125 active Node tests passed with the opt-in real-publication case
+enabled (the default run passed 124 with that one environment-dependent skip).
+All 82 Weather Python tests and 15 storage-root tests passed. TypeScript, ESLint,
+Vite build, direct GFS publication, documentation links/whitespace, privacy scans
+and diff checks passed. Publication is `20260907T18Z`, ten fields and 24 steps.
+The complete browser matrix passed 15/15: 5/5 at each of 1920x1080, 1440x900 and
+1366x768. Pressure at 1366x768 completed in 24.8 seconds under the unchanged timeout.
+All browser diagnostics report zero page exceptions and zero HTTP error responses.
+The 74 failed-request entries are external-provider `net::ERR_ABORTED` cancellations
+from superseded work; there are no failed GFS publication requests.
+No browser assertion, timeout or visual baseline changed. The build retains its
+existing large-chunk warning; performance decomposition remains backlog.
+
+All frozen completion criteria are satisfied for review: domain structure and
+required seams are established, both cycles and prescribed transitional residue
+are gone, no intentional 5D product behaviour changed, all gates pass, documentation
+matches actual ownership, and the uncommitted diff is coherent. Historical research,
+renderer/Unreal and private/external estates were not modified. No bulk estate
+rehashing or Unreal launch was needed. The only Phase 5 behaviour correction
+remains the pre-existing pressure race fixed in 5C.
+
+Final repository inventory (35 paths; all uncommitted):
+
+- New: `src/app/state/mapOverlayState.ts`,
+  `src/traverse/model/routeAnalysisModes.ts`,
+  `src/traverse/types/routeConditionBase.ts`,
+  `src/weather/types/atmosphericFields.ts`.
+- Deleted: `src/components/SearchBar.tsx`, `src/app/types/layer.ts`,
+  `src/app/config/dataAttribution.ts`, `src/app/config/layerVisuals.ts`,
+  `src/app/map/mapLayerOrder.ts`.
+- Modified app: `src/app/App.tsx`, `src/app/map/MeridianMap.tsx`,
+  `src/app/state/desktopControlOptions.ts`, plus components `ForecastTimeline.tsx`,
+  `ForecastWorkspace.tsx`, `LayerLegend.tsx`, `LayerPanel.tsx`, `MapControls.tsx`
+  and `MobileWorkspace.tsx` under `src/app/components`.
+- Modified Traverse: `src/traverse/components/RouteAnalysis.tsx`, models
+  `atmosphericFormatting.ts` and `journeyPresentation.ts`, types
+  `derivedRouteConditions.ts` and `routeConditions.ts` in their respective
+  `src/traverse/model` and `src/traverse/types` directories.
+- Modified Weather: `src/weather/data/atmosphericFields.ts`,
+  `src/weather/data/globalWeatherService.ts`, `src/weather/types/globalWeather.ts`.
+- Modified tests: `scripts/route/test_atmospheric_conditions.mjs`,
+  `scripts/ui/test_desktop_workspace.mjs`, `scripts/ui/test_domain_boundaries.mjs`,
+  `scripts/weather/test_local_atmosphere.mjs`.
+- Modified documentation: `README.md`, `docs/architecture.md`,
+  `docs/development-log.md`, `docs/global-weather-architecture.md`,
+  `docs/phase-5-architecture-plan.md`.
+
+The remaining action is review followed by an explicitly authorised final Phase 5
+checkpoint. No commit/push has occurred during 5D. Phase 5 ends here; the existing
+post-cleanup backlog does not extend it, and there is no Phase 5E.
 
 ## Frozen Phase 5 completion criteria
 
