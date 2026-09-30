@@ -1,7 +1,8 @@
 import DerivedConditionContext from "./DerivedConditionContext";
 import { atmosphericHeightLabel, gustLabel, visibilityLabel } from "../model/atmosphericFormatting";
 import { precipitationAmountLabel } from "../../weather/presentation/precipitationStyle";
-import { accumulationIntervalLabel, routeConditionTimeLabel } from "../../weather/presentation/weatherTimeLabel";
+import { accumulationIntervalLabel } from "../../weather/presentation/weatherTimeLabel";
+import { routeConditionTimeLabel } from "../model/routeConditionTimeLabel";
 import { timeLabel } from "../model/journeyPresentation";
 import { gradientDirectionLabel } from "../model/routeConditionStyle";
 import type { DerivedRouteConditions } from "../types/derivedRouteConditions";

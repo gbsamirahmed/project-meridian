@@ -1,4 +1,4 @@
-import { PRECIPITATION_INTENSITY_LEVELS } from "../../app/config/layerVisuals";
+import { PRECIPITATION_INTENSITY_LEVELS } from "../map/weatherVisuals";
 
 export interface RgbaColor {
   r: number;

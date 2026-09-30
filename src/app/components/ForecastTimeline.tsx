@@ -5,7 +5,7 @@ import { getScalarTimestepAtTime } from "../../weather/data/globalWeatherService
 import type { CatalogueCheckState } from "../../weather/data/weatherCatalogueRefresh";
 import type { GlobalWeatherCatalog, GlobalWeatherStatusRegistry, ScalarWeatherFieldSource, VectorWeatherFieldSource } from "../../weather/types/globalWeather";
 import type { MapOverlayState } from "../types/layer";
-import type { JourneySchedule } from "../../traverse/types/route";
+import type { ForecastCoverageWindow } from "../../weather/types/forecastCoverage";
 
 interface ForecastTimelineProps {
   mapOverlays: MapOverlayState;
@@ -21,7 +21,7 @@ interface ForecastTimelineProps {
   globalWeatherStatuses: GlobalWeatherStatusRegistry;
   globalWeatherCatalog: GlobalWeatherCatalog | null;
   catalogueCheck: CatalogueCheckState;
-  journeySchedule: JourneySchedule | null;
+  weatherCoverage: ForecastCoverageWindow | null;
   onForecastHourChange: (hour: number) => void;
   onResetToCurrentTime: () => void;
   isPlaying: boolean;
@@ -39,7 +39,7 @@ function formatForecastTime(time?: string): string {
   }).format(new Date(normalized));
 }
 
-export default function ForecastTimeline({ mapOverlays, forecastHour, forecastTimes, forecastHours, activeGlobalValidTime, globalPrecipitationSource, globalCloudSource, globalWindSource, globalTemperatureSource, globalPressureSource, globalWeatherStatuses, globalWeatherCatalog, catalogueCheck, journeySchedule, onForecastHourChange, onResetToCurrentTime, isPlaying, onPlayingChange }: ForecastTimelineProps) {
+export default function ForecastTimeline({ mapOverlays, forecastHour, forecastTimes, forecastHours, activeGlobalValidTime, globalPrecipitationSource, globalCloudSource, globalWindSource, globalTemperatureSource, globalPressureSource, globalWeatherStatuses, globalWeatherCatalog, catalogueCheck, weatherCoverage, onForecastHourChange, onResetToCurrentTime, isPlaying, onPlayingChange }: ForecastTimelineProps) {
   const precipActive = mapOverlays.precipitation && globalPrecipitationSource !== null;
   const cloudActive = mapOverlays.clouds && globalCloudSource !== null;
   const windActive = mapOverlays.windFlow && globalWindSource !== null;
@@ -58,7 +58,7 @@ export default function ForecastTimeline({ mapOverlays, forecastHour, forecastTi
 
   return <section className="location-timeline workspace-card" aria-label="Forecast timeline">
     <div className="forecast-data-row">
-      <WeatherFreshness catalog={globalWeatherCatalog} check={catalogueCheck} journey={journeySchedule} compact resolutionDegrees={resolutionDegrees} />
+      <WeatherFreshness catalog={globalWeatherCatalog} check={catalogueCheck} coverage={weatherCoverage} compact resolutionDegrees={resolutionDegrees} />
       <details className="map-data-details forecast-data-details">
         <summary aria-label="More forecast data information" title="More forecast data information">i</summary>
         <div className="map-data-popover desktop-surface">

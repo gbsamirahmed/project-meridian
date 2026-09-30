@@ -15,7 +15,21 @@ const [numeric, route, globalWeather, atmospheric, format, routePanelModule] = a
 ]);
 const { ATMOSPHERIC_FIELDS, validateAtmosphericManifest } = atmospheric;
 const RoutePlannerPanel = routePanelModule.default;
+const weatherSampler = await server.ssrLoadModule("/src/weather/data/routeWeatherSampler.ts");
 test.after(() => server.close());
+
+async function buildConditions(terrain, schedule, sources, signal) {
+  const requests = terrain.samples.map((sample, index) => ({
+    coordinate: { longitude: sample.longitude, latitude: sample.latitude },
+    requestedTime: schedule.samples[index].arrivalTime,
+  }));
+  const samples = await weatherSampler.sampleRouteWeather(
+    requests,
+    sources,
+    signal
+  );
+  return route.buildRouteConditions(terrain, schedule, samples);
+}
 
 const keys = { gust: "gust_surface", visibility: "visibility_surface", freezingLevel: "freezing_level", highestFreezingLevel: "highest_freezing_level", cloudCeiling: "cloud_ceiling" };
 const encodings = { gust_surface: [0.1, 0, 200], visibility_surface: [10, 0, 100000], freezing_level: [5, -1000, 30000], highest_freezing_level: [5, -1000, 30000], cloud_ceiling: [5, -1000, 20001] };
@@ -97,7 +111,7 @@ test("all five fields decode, bilinearly sample, wrap and retain zero independen
 
 test("raw no-data does not become a value or invalidate other fields", async () => {
   await runtime(async () => {
-    const conditions = await route.buildRouteConditions(...journey([instant(1), instant(2)]), routeSources());
+    const conditions = await buildConditions(...journey([instant(1), instant(2)]), routeSources());
     for (const sample of conditions.samples) {
       assert.equal(sample.weather.cloudCeiling.reason, "no-data");
       assert.equal(sample.weather.gust.value, 0);
@@ -114,7 +128,7 @@ test("raw no-data does not become a value or invalidate other fields", async () 
 test("short in-horizon route, earlier ties, distinct freezing levels and grouped cache reuse", async () => {
   await runtime(async requests => {
     const args = journey([instant(1), "2026-01-01T01:30:00Z", instant(2)]);
-    const result = await route.buildRouteConditions(...args, routeSources());
+    const result = await buildConditions(...args, routeSources());
     for (const key of Object.keys(keys)) assert.equal(result.coverage[key].availableSamples, 3);
     assert.equal(result.samples[1].weather.gust.provenance.validTime, instant(1));
     assert.equal(result.samples[0].weather.freezingLevel.value, 1000);
@@ -122,7 +136,7 @@ test("short in-horizon route, earlier ties, distinct freezing levels and grouped
     assert.equal(result.samples[0].weather.cloudCeiling.provenance.sourceLevel, "cloud ceiling");
     assert.equal(result.samples[0].weather.cloudCeiling.provenance.verticalReference, "model-surface");
     const count = requests.length;
-    await route.buildRouteConditions(...args, routeSources());
+    await buildConditions(...args, routeSources());
     assert.equal(requests.length, count);
     assert.equal(count, 10); // five fields x two steps, not five x route points
   }, id => id === "freezing_level" ? 1000 : id === "highest_freezing_level" ? 2000 : 0);
@@ -130,7 +144,7 @@ test("short in-horizon route, earlier ties, distinct freezing levels and grouped
 
 test("partial horizon, missing timestep tile, departure changes and all-outside route", async () => {
   await runtime(async () => {
-    const result = await route.buildRouteConditions(...journey([instant(1), instant(2), instant(3), instant(4)]), routeSources());
+    const result = await buildConditions(...journey([instant(1), instant(2), instant(3), instant(4)]), routeSources());
     assert.equal(result.samples[0].weather.visibility.state, "available");
     assert.equal(result.samples[1].weather.visibility.reason, "tile-unavailable");
     assert.equal(result.samples[2].weather.visibility.state, "available");
@@ -138,9 +152,9 @@ test("partial horizon, missing timestep tile, departure changes and all-outside 
     assert.equal(result.coverage.visibility.availableSamples, 2);
     assert.equal(result.coverage.gust.availableSamples, 3);
     assert.equal(result.summary.visibilityMinimumM, 0);
-    const outside = await route.buildRouteConditions(...journey([instant(0), instant(4)]), routeSources());
+    const outside = await buildConditions(...journey([instant(0), instant(4)]), routeSources());
     for (const key of Object.keys(keys)) assert.equal(outside.coverage[key].availableSamples, 0);
-    const later = await route.buildRouteConditions(...journey([instant(3)]), routeSources());
+    const later = await buildConditions(...journey([instant(3)]), routeSources());
     assert.equal(later.samples[0].weather.gust.provenance.validTime, instant(3));
     assert.equal(numeric.getNumericTileCacheStats().pendingCount, 0);
   }, () => 0, url => url.includes("visibility_surface/f002"));
@@ -149,10 +163,10 @@ test("partial horizon, missing timestep tile, departure changes and all-outside 
 test("aborting an old route leaves shared fetches available to the new route", async () => {
   await runtime(async () => {
     const controller = new AbortController();
-    const old = route.buildRouteConditions(...journey([instant(1)]), routeSources(), controller.signal);
+    const old = buildConditions(...journey([instant(1)]), routeSources(), controller.signal);
     const rejected = assert.rejects(old, { name: "AbortError" });
     controller.abort();
-    const current = await route.buildRouteConditions(...journey([instant(2)]), routeSources());
+    const current = await buildConditions(...journey([instant(2)]), routeSources());
     await rejected;
     assert.equal(current.samples[0].weather.gust.provenance.validTime, instant(2));
     assert.equal(current.samples[0].weather.gust.state, "available");
@@ -212,7 +226,7 @@ test("atmospheric manifests reject fabricated times and incompatible encodings",
 
 test("inspector renders approximate raw atmospheric values without cloud-base or hazard claims", async () => {
   await runtime(async () => {
-    const conditions = await route.buildRouteConditions(...journey([instant(1)]), routeSources());
+    const conditions = await buildConditions(...journey([instant(1)]), routeSources());
     const noop = () => {};
     const html = renderToStaticMarkup(createElement(RoutePlannerPanel, {
       routeGeometry: { id: "synthetic", name: "Synthetic route", totalDistanceM: 1000 }, terrainRoute: null,

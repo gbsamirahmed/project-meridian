@@ -134,15 +134,15 @@ await test("freshness is based on usable coverage and journey horizon", () => {
   assert.equal(ending.tone, "ending"); assert.match(ending.detail, /coverage ends in/i);
   const expired = freshness.weatherFreshnessPresentation(value, checked, null, Date.parse("2026-01-02T02:00:00Z"));
   assert.equal(expired.tone, "expired"); assert.match(expired.detail, /coverage ended/i);
-  const journey = { departureTime: "2026-01-01T12:00:00Z", expectedFinishTime: "2026-01-02T03:00:00Z" };
-  assert.match(freshness.weatherFreshnessPresentation(value, checked, journey, Date.parse("2026-01-01T12:00:00Z")).detail, /Journey extends/);
+  const coverage = { startTime: "2026-01-01T12:00:00Z", endTime: "2026-01-02T03:00:00Z" };
+  assert.match(freshness.weatherFreshnessPresentation(value, checked, coverage, Date.parse("2026-01-01T12:00:00Z")).detail, /Journey extends/);
   const failed = freshness.weatherFreshnessPresentation(value, { ...checked, lastCheckFailed: true }, null, Date.parse("2026-01-01T12:00:00Z"));
   assert.match(failed.detail, /active run was retained/); assert.match(failed.label, /GFS .* 00Z · checked/);
 });
 
 await test("compact freshness UI exposes the active run and coverage state", () => {
   const run = new Date(Date.now() - 6 * 60 * 60 * 1000); run.setUTCMinutes(0, 0, 0); run.setUTCHours(Math.floor(run.getUTCHours() / 6) * 6);
-  const html = renderToStaticMarkup(React.createElement(FreshnessComponent, { catalog: catalog(run.toISOString().replace(".000Z", "Z")), check: { lastSuccessfulCheck: new Date().toISOString(), lastCheckFailed: false }, journey: null }));
+  const html = renderToStaticMarkup(React.createElement(FreshnessComponent, { catalog: catalog(run.toISOString().replace(".000Z", "Z")), check: { lastSuccessfulCheck: new Date().toISOString(), lastCheckFailed: false }, coverage: null }));
   assert.match(html, /weather-freshness-current/); assert.match(html, /GFS .*Z .* checked/); assert.match(html, /Forecast coverage/);
 });
 

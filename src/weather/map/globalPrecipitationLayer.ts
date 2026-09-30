@@ -1,10 +1,10 @@
-import { LAYER_VISUAL_STRENGTHS } from "../../app/config/layerVisuals";
+import { WEATHER_LAYER_VISUAL_STRENGTHS } from "./weatherVisuals";
 import { createGlobalScalarSurface } from "./globalScalarSurface";
 import { precipitationColor } from "../presentation/precipitationStyle";
 
 const precipitationSurface = createGlobalScalarSurface({
   id: "precipitation",
-  opacity: LAYER_VISUAL_STRENGTHS.precipitation,
+  opacity: WEATHER_LAYER_VISUAL_STRENGTHS.precipitation,
   colour: precipitationColor,
 });
 

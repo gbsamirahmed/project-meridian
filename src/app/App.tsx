@@ -39,6 +39,7 @@ import {
   DEFAULT_JOURNEY_PROFILE,
 } from "../traverse/model/journeyModel";
 import { buildRouteConditions } from "../traverse/model/routeConditions";
+import { sampleRouteWeather } from "../weather/data/routeWeatherSampler";
 import { activeRouteSampleIndex } from "../traverse/model/routeProfileInteraction";
 import {
   desktopWorkspaceReducer,
@@ -407,6 +408,13 @@ function App() {
     }
   }, [journeyPlan, journeyProfile, terrainRoute]);
 
+  const weatherCoverage = journeyResult.schedule
+    ? {
+        startTime: journeyResult.schedule.departureTime,
+        endTime: journeyResult.schedule.expectedFinishTime,
+      }
+    : null;
+
   useEffect(() => {
     const schedule = journeyResult.schedule;
     const generation = ++routeConditionGenerationRef.current;
@@ -424,9 +432,15 @@ function App() {
         setRouteConditionStatus("loading");
       }
     });
-    buildRouteConditions(
-      terrainRoute,
-      schedule,
+    const weatherRequests = terrainRoute.samples.map((sample, index) => ({
+      coordinate: {
+        longitude: sample.longitude,
+        latitude: sample.latitude,
+      },
+      requestedTime: schedule.samples[index].arrivalTime,
+    }));
+    sampleRouteWeather(
+      weatherRequests,
       {
         temperature: globalTemperatureSource,
         precipitation: globalPrecipitationSource,
@@ -440,6 +454,7 @@ function App() {
       },
       controller.signal
     )
+      .then((samples) => buildRouteConditions(terrainRoute, schedule, samples))
       .then((conditions) => {
         if (
           controller.signal.aborted ||
@@ -709,7 +724,7 @@ function App() {
                     globalWeatherStatuses={globalWeatherStatuses}
                     globalWeatherCatalog={globalWeatherCatalog}
                     catalogueCheck={catalogueCheck}
-                    journeySchedule={journeyResult.schedule}
+                    weatherCoverage={weatherCoverage}
                     onForecastHourChange={setForecastHour}
                     onResetToCurrentTime={() => {
                       if (forecastTimes.length) {
@@ -813,7 +828,7 @@ function App() {
           globalWeatherStatuses={globalWeatherStatuses}
           globalWeatherCatalog={globalWeatherCatalog}
           catalogueCheck={catalogueCheck}
-          journeySchedule={journeyResult.schedule}
+          weatherCoverage={weatherCoverage}
           activeGlobalValidTime={activeGlobalValidTime}
           forecastTimes={forecastTimes}
           forecastHours={forecastHours}

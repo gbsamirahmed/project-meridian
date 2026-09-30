@@ -12,7 +12,7 @@ import type { Basemap, MapOverlayState } from "../types/layer";
 import type { SelectedLocation } from "../../atlas/location/location";
 import type { Place } from "../../atlas/location/place";
 import type { WeatherData } from "../../weather/types/weather";
-import type { JourneySchedule } from "../../traverse/types/route";
+import type { ForecastCoverageWindow } from "../../weather/types/forecastCoverage";
 import type { CatalogueCheckState } from "../../weather/data/weatherCatalogueRefresh";
 import type {
   GlobalWeatherCatalog,
@@ -40,7 +40,7 @@ interface MobileWorkspaceProps {
   globalWeatherStatuses: GlobalWeatherStatusRegistry;
   globalWeatherCatalog: GlobalWeatherCatalog | null;
   catalogueCheck: CatalogueCheckState;
-  journeySchedule: JourneySchedule | null;
+  weatherCoverage: ForecastCoverageWindow | null;
   activeGlobalValidTime: string | null;
   forecastTimes: string[];
   forecastHours?: number[];
@@ -72,7 +72,7 @@ export default function MobileWorkspace({
   globalWeatherStatuses,
   globalWeatherCatalog,
   catalogueCheck,
-  journeySchedule,
+  weatherCoverage,
   activeGlobalValidTime,
   forecastTimes,
   forecastHours,
@@ -235,7 +235,7 @@ export default function MobileWorkspace({
       <WeatherFreshness
         catalog={globalWeatherCatalog}
         check={catalogueCheck}
-        journey={journeySchedule}
+        coverage={weatherCoverage}
       />
 
       {routePanel}

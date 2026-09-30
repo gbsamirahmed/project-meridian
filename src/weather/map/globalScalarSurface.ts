@@ -1,7 +1,7 @@
 import maplibregl from "maplibre-gl";
 
-import { WEATHER_SURFACE_CROSSFADE_MS } from "../../app/config/layerVisuals";
-import { getWeatherInsertionLayerId } from "../../app/map/mapLayerOrder";
+import { WEATHER_SURFACE_CROSSFADE_MS } from "./weatherVisuals";
+import { getWeatherInsertionLayerId } from "./weatherLayerOrder";
 import { loadScalarRasterPixels } from "./scalarRaster";
 
 import type {

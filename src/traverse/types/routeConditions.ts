@@ -1,4 +1,4 @@
-import type { GlobalWeatherFieldId, ScalarFieldManifest } from "../../weather/types/globalWeather";
+import type { RouteWeatherScalarKey, WeatherSampleProvenance } from "../../weather/types/routeWeather";
 import type { RouteCoordinate } from "./route";
 import type { DerivedRouteConditions } from "./derivedRouteConditions";
 
@@ -15,28 +15,12 @@ export type RouteConditionUnavailableReason =
   | "tile-unavailable"
   | "no-data";
 
-export interface RouteConditionProvenance {
-  fieldId: GlobalWeatherFieldId;
-  model: string;
-  product: string;
-  runTime: string;
-  sourceLevel: string;
-  units: string;
-  nativeResolutionDegrees: number;
-  verticalReference?: ScalarFieldManifest["field"]["verticalReference"];
-  requestedTime: string;
-  validTime: string;
-  forecastHour: number;
-  temporalOffsetMinutes: number;
-  timeSemantics: "instantaneous" | "interval-total";
-  accumulationStart?: string;
-  accumulationEnd?: string;
-}
+export type RouteConditionProvenance = WeatherSampleProvenance;
 
 export interface AvailableScalarRouteCondition {
   state: "available";
   value: number;
-  units: ScalarFieldManifest["field"]["units"];
+  units: string;
   provenance: RouteConditionProvenance;
 }
 
@@ -75,8 +59,7 @@ export type WindRouteCondition =
   | AvailableWindRouteCondition
   | UnavailableRouteCondition;
 
-export type RouteScalarKey = "temperature" | "precipitation" | "cloud" |
-  "gust" | "visibility" | "freezingLevel" | "highestFreezingLevel" | "cloudCeiling";
+export type RouteScalarKey = RouteWeatherScalarKey;
 
 export type RouteWeather = Record<RouteScalarKey, ScalarRouteCondition> & { wind: WindRouteCondition };
 

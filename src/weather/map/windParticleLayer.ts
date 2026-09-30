@@ -4,9 +4,9 @@ import type {
   CustomRenderMethodInput,
 } from "maplibre-gl";
 
-import { LAYER_VISUAL_STRENGTHS } from "../../app/config/layerVisuals";
+import { WEATHER_LAYER_VISUAL_STRENGTHS } from "./weatherVisuals";
 
-import type { Basemap } from "../../app/types/layer";
+import type { Basemap } from "../../atlas/map/mapTypes";
 import type { MutableWindVector } from "./windVector";
 import type { WindVectorField } from "./windField";
 
@@ -1167,7 +1167,7 @@ export class WindParticleLayer implements CustomLayerInterface {
     };
     const zoom = this.map?.getZoom() ?? 0;
     const opacity =
-      LAYER_VISUAL_STRENGTHS.windParticle *
+      WEATHER_LAYER_VISUAL_STRENGTHS.windParticle *
       basemapOpacity[this.basemap] *
       interpolateZoomStops(zoom, OPACITY_ZOOM_STOPS) *
       this.coverageAmount;

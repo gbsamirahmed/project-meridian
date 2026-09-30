@@ -2,7 +2,7 @@ import {
   TERRARIUM_TILE_TEMPLATE,
   TERRAIN_DEM_NATIVE_MAX_ZOOM,
 } from "../map/terrainLayers";
-import type { RouteCoordinate } from "../../traverse/types/route";
+import type { GeographicCoordinate } from "../location/location";
 
 const TILE_SIZE = 256;
 const MAX_DECODED_TILES = 96;
@@ -75,7 +75,7 @@ async function decodeTile(url: string, signal: AbortSignal): Promise<TilePixels>
   }
 }
 
-function worldPixel(coordinate: RouteCoordinate, zoom: number): { x: number; y: number } {
+function worldPixel(coordinate: GeographicCoordinate, zoom: number): { x: number; y: number } {
   const worldSize = TILE_SIZE * 2 ** zoom;
   const x = ((coordinate.longitude + 180) / 360) * worldSize;
   const sine = Math.sin((coordinate.latitude * Math.PI) / 180);
@@ -125,7 +125,7 @@ async function runWithConcurrency(
 }
 
 export async function sampleTerrainElevations(
-  coordinates: RouteCoordinate[],
+  coordinates: GeographicCoordinate[],
   signal: AbortSignal,
   onProgress?: (completedTiles: number, totalTiles: number) => void
 ): Promise<Array<number | null>> {

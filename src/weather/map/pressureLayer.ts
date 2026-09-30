@@ -1,9 +1,9 @@
 import maplibregl from "maplibre-gl";
 
-import { LAYER_VISUAL_STRENGTHS } from "../../app/config/layerVisuals";
+import { WEATHER_LAYER_VISUAL_STRENGTHS } from "./weatherVisuals";
 import { buildContourGeoJson } from "./contourGeometry";
 import { resolveScalarTileUrl } from "../data/globalWeatherService";
-import { getFirstSymbolLayerId } from "../../app/map/mapLayerOrder";
+import { getFirstSymbolLayerId } from "../../atlas/map/mapLayerAnchors";
 import {
   clearNumericTilePins,
   loadNumericTile,
@@ -160,21 +160,21 @@ function setLayerOpacity(map: maplibregl.Map): void {
     map.setPaintProperty(
       HALO_LAYER_ID,
       "line-opacity",
-      layerEnabled ? Math.min(0.75, LAYER_VISUAL_STRENGTHS.pressureLine) : 0
+      layerEnabled ? Math.min(0.75, WEATHER_LAYER_VISUAL_STRENGTHS.pressureLine) : 0
     );
   }
   if (map.getLayer(LINE_LAYER_ID)) {
     map.setPaintProperty(
       LINE_LAYER_ID,
       "line-opacity",
-      layerEnabled ? LAYER_VISUAL_STRENGTHS.pressureLine : 0
+      layerEnabled ? WEATHER_LAYER_VISUAL_STRENGTHS.pressureLine : 0
     );
   }
   if (map.getLayer(LABEL_LAYER_ID)) {
     map.setPaintProperty(
       LABEL_LAYER_ID,
       "text-opacity",
-      layerEnabled ? LAYER_VISUAL_STRENGTHS.pressureLabel : 0
+      layerEnabled ? WEATHER_LAYER_VISUAL_STRENGTHS.pressureLabel : 0
     );
   }
 }
@@ -195,7 +195,7 @@ function ensureLayers(map: maplibregl.Map): void {
         paint: {
           "line-color": "#17211f",
           "line-width": ["case", ["get", "emphasized"], 2.8, 2.2],
-          "line-opacity": Math.min(0.75, LAYER_VISUAL_STRENGTHS.pressureLine),
+          "line-opacity": Math.min(0.75, WEATHER_LAYER_VISUAL_STRENGTHS.pressureLine),
           "line-blur": 0.25,
         },
       },
@@ -213,7 +213,7 @@ function ensureLayers(map: maplibregl.Map): void {
         paint: {
           "line-color": "#a8cbc5",
           "line-width": ["case", ["get", "emphasized"], 1.4, 1],
-          "line-opacity": LAYER_VISUAL_STRENGTHS.pressureLine,
+          "line-opacity": WEATHER_LAYER_VISUAL_STRENGTHS.pressureLine,
         },
       },
       beforeId

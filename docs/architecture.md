@@ -40,20 +40,26 @@ Weather and Traverse are conceptual boundaries inside it. Separate deployable ap
 microservices and a speculative package hierarchy are not justified yet.
 
 Phase 5B organised the active TypeScript code under `src/app`, `src/atlas`,
-`src/weather` and `src/traverse` without splitting the deployable application or
-changing runtime ownership. Mixed map, timeline, workspace, layer and attribution
-code remains temporarily app-owned until the specific 5C boundaries are introduced.
-`src/shared` remains absent because no current file has a justified domain-neutral
-owner. The empty legacy `src/components/SearchBar.tsx` is deliberately retained for
-5D cleanup. The audited, bounded 5B-5D migration remains frozen in the
-[Phase 5 architecture plan](phase-5-architecture-plan.md). Historical experiments
-and renderer source are outside that refactor.
+`src/weather` and `src/traverse`. Phase 5C then established the three frozen domain
+boundaries without splitting the deployable application:
 
-Phase 5B also confirmed a pre-existing map lifecycle race: terrain configuration can
-temporarily make `map.isStyleLoaded()` false after `style.load`, allowing a pressure
-update and its camera retry to be skipped without a later readiness trigger. The
-already-planned 5C Atlas-map/Weather-controller boundary owns that lifecycle repair;
-5D retains the final browser-validation gate.
+- Atlas owns the concrete MapLibre lifecycle and reports style-ready and renderable
+  lifecycle states to app composition.
+- Weather owns a concrete map controller, Weather layers and provider-specific route
+  sampling. A pending Weather update is retained until Atlas reports a renderable map,
+  so terrain/style transitions cannot permanently lose a requested render.
+- Traverse owns a concrete route-map controller and route-relative interpretation of
+  provider-neutral Weather samples.
+- App composes those modules, adapts a Traverse schedule to Weather's narrow forecast
+  coverage window, and orchestrates route Weather sampling without exposing GFS or
+  numeric-tile implementation to Traverse.
+
+Combined status/inspection presentation remains app-owned. Transitional compatibility
+files, the empty `src/components/SearchBar.tsx` and the two audited type cycles remain
+for the bounded 5D cleanup. `src/shared` remains absent because no current
+responsibility has a justified domain-neutral owner. The audited Phase 5 scope remains
+frozen in the [Phase 5 architecture plan](phase-5-architecture-plan.md); Phase 5 ends
+with 5D. Historical experiments and renderer source are outside this refactor.
 
 The conceptual relationship is:
 

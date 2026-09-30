@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import type { GlobalWeatherCatalog } from "../types/globalWeather";
-import type { JourneySchedule } from "../../traverse/types/route";
+import type { ForecastCoverageWindow } from "../types/forecastCoverage";
 import type { CatalogueCheckState } from "../data/weatherCatalogueRefresh";
 import {
   weatherDataSummaryPresentation,
@@ -10,12 +10,12 @@ import {
 interface WeatherFreshnessProps {
   catalog: GlobalWeatherCatalog | null;
   check: CatalogueCheckState;
-  journey: JourneySchedule | null;
+  coverage: ForecastCoverageWindow | null;
   compact?: boolean;
   resolutionDegrees?: number | null;
 }
 
-export default function WeatherFreshness({ catalog, check, journey, compact = false, resolutionDegrees = null }: WeatherFreshnessProps) {
+export default function WeatherFreshness({ catalog, check, coverage, compact = false, resolutionDegrees = null }: WeatherFreshnessProps) {
   const [clockTime, setClockTime] = useState<number | null>(null);
   useEffect(() => {
     const timer = window.setInterval(() => setClockTime(Date.now()), 60_000);
@@ -31,7 +31,7 @@ export default function WeatherFreshness({ catalog, check, journey, compact = fa
     const summary = weatherDataSummaryPresentation(
       catalog,
       check,
-      journey,
+      coverage,
       resolutionDegrees,
       now,
     );
@@ -45,7 +45,7 @@ export default function WeatherFreshness({ catalog, check, journey, compact = fa
       </section>
     );
   }
-  const presentation = weatherFreshnessPresentation(catalog, check, journey, now);
+  const presentation = weatherFreshnessPresentation(catalog, check, coverage, now);
   return (
     <section className={`weather-freshness weather-freshness-${presentation.tone}`} title={presentation.detail}>
       <span aria-hidden="true" />

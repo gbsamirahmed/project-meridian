@@ -1,9 +1,9 @@
 import maplibregl from "maplibre-gl";
 
-import { LAYER_VISUAL_STRENGTHS } from "../../app/config/layerVisuals";
+import { WEATHER_LAYER_VISUAL_STRENGTHS } from "./weatherVisuals";
 import { buildContourGeoJson } from "./contourGeometry";
 import { resolveScalarTileUrl } from "../data/globalWeatherService";
-import { getFirstSymbolLayerId } from "../../app/map/mapLayerOrder";
+import { getFirstSymbolLayerId } from "../../atlas/map/mapLayerAnchors";
 import {
   clearNumericTilePins,
   loadNumericTile,
@@ -160,14 +160,14 @@ function setLayerOpacity(map: maplibregl.Map): void {
     map.setPaintProperty(
       HALO_LAYER_ID,
       "line-opacity",
-      layerEnabled ? LAYER_VISUAL_STRENGTHS.temperatureHalo : 0
+      layerEnabled ? WEATHER_LAYER_VISUAL_STRENGTHS.temperatureHalo : 0
     );
   }
   if (map.getLayer(LINE_LAYER_ID)) {
     map.setPaintProperty(
       LINE_LAYER_ID,
       "line-opacity",
-      layerEnabled ? LAYER_VISUAL_STRENGTHS.temperatureContour : 0
+      layerEnabled ? WEATHER_LAYER_VISUAL_STRENGTHS.temperatureContour : 0
     );
   }
   if (map.getLayer(LABEL_LAYER_ID)) {
@@ -195,7 +195,7 @@ function ensureLayers(map: maplibregl.Map): void {
         paint: {
           "line-color": "#17211f",
           "line-width": ["case", ["get", "emphasized"], 2.7, 1.75],
-          "line-opacity": LAYER_VISUAL_STRENGTHS.temperatureHalo,
+          "line-opacity": WEATHER_LAYER_VISUAL_STRENGTHS.temperatureHalo,
           "line-blur": 0.35,
         },
       },
@@ -218,7 +218,7 @@ function ensureLayers(map: maplibregl.Map): void {
             "#ffb36b",
           ],
           "line-width": ["case", ["get", "emphasized"], 1.85, 1.1],
-          "line-opacity": LAYER_VISUAL_STRENGTHS.temperatureContour,
+          "line-opacity": WEATHER_LAYER_VISUAL_STRENGTHS.temperatureContour,
           "line-dasharray": [3, 2],
         },
       },

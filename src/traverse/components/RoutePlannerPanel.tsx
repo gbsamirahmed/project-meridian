@@ -3,7 +3,8 @@ import RouteProfile from "./RouteProfile";
 import DerivedConditionContext from "./DerivedConditionContext";
 import { crossingLabel, freezingSummaryLabel } from "../model/derivedConditionFormatting";
 import { ROUTE_CONDITION_LEGENDS } from "../model/routeConditionStyle";
-import { accumulationIntervalLabel, routeConditionTimeLabel } from "../../weather/presentation/weatherTimeLabel";
+import { accumulationIntervalLabel } from "../../weather/presentation/weatherTimeLabel";
+import { routeConditionTimeLabel } from "../model/routeConditionTimeLabel";
 import { precipitationAmountLabel } from "../../weather/presentation/precipitationStyle";
 import { gustLabel, visibilityLabel, atmosphericHeightLabel, fieldCoverageLabel } from "../model/atmosphericFormatting";
 import type {

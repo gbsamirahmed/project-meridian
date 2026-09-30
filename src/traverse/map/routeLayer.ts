@@ -1,5 +1,5 @@
 import maplibregl from "maplibre-gl";
-import { getFirstSymbolLayerId } from "../../app/map/mapLayerOrder";
+import { getFirstSymbolLayerId } from "../../atlas/map/mapLayerAnchors";
 import { unwrapRouteCoordinates } from "../model/routeGeometry";
 import { routeConditionColour } from "../model/routeConditionStyle";
 import type { RouteCoordinate } from "../types/route";

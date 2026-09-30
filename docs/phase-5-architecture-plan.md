@@ -485,6 +485,45 @@ alter map styling or generalize beyond the concrete browser/GFS implementation.
   listeners;
 - UI, route, Weather, TypeScript, ESLint, build and representative Playwright.
 
+### Phase 5C implementation record
+
+Phase 5C implemented the frozen seams with concrete domain modules rather than a
+generic controller or plugin framework:
+
+- `atlas/map/AtlasMap` owns MapLibre creation, destruction, base geographic setup,
+  terrain/satellite presentation and the style-ready/renderable lifecycle exposed to
+  app composition;
+- `weather/map/WeatherMapController` owns Weather map updates and retains a pending
+  request while the map style is temporarily unavailable. Atlas's renderable signal
+  flushes that request exactly once, resolving the pre-existing pressure-readiness
+  race without sleeps, longer test timeouts or uncontrolled retries;
+- `traverse/map/TraverseMapController` owns route sources/layers, hit testing, fitting
+  and route-above-Weather ordering;
+- `app/map/MeridianMap` composes those concrete controllers and retains combined
+  inspector/status presentation;
+- Weather's `ForecastCoverageWindow` contains only the start and end times required
+  for catalogue coverage. App adapts `JourneySchedule`; Weather imports no Traverse
+  scheduling model;
+- Weather's route sampler owns GFS timestep choice, precipitation intervals, numeric
+  tile access and provider provenance. App supplies position/time requests and passes
+  normalized Weather samples to Traverse, which owns route-relative wind and route
+  condition interpretation;
+- provider provenance remains available in provider-neutral result metadata without
+  exposing GFS URLs, manifests, tile coordinates or caches to Traverse.
+
+Focused import-boundary tests prove Atlas imports neither Weather nor Traverse,
+Weather imports neither app nor Traverse, and Traverse imports no GFS, numeric-tile,
+Weather-map or Weather-data implementation. `src/shared` remains absent. The audited
+`globalWeather`/`atmosphericFields` and
+`routeConditions`/`derivedRouteConditions` type cycles, transitional compatibility
+files and empty SearchBar remain deliberately assigned to 5D.
+
+Final 5C validation passed 117 focused deterministic tests with one intentionally
+skipped live-publication integration case, TypeScript/Vite build, ESLint, the external
+GFS publication check and all 15 established Playwright scenarios across 1920x1080,
+1440x900 and 1366x768. The formerly failing 1366x768 pressure scenario passed under
+its unchanged timeout. Phase 5D has not begun.
+
 ## Frozen Phase 5D plan — cleanup, validation and end
 
 1. Remove the empty `SearchBar` and compatibility forwarding files,

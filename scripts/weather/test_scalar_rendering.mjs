@@ -6,6 +6,7 @@ const server = await createServer({ appType: "custom", logLevel: "silent", serve
 const raster = await server.ssrLoadModule("/src/weather/map/scalarRaster.ts");
 const style = await server.ssrLoadModule("/src/weather/presentation/precipitationStyle.ts");
 const labels = await server.ssrLoadModule("/src/weather/presentation/weatherTimeLabel.ts");
+const routeLabels = await server.ssrLoadModule("/src/traverse/model/routeConditionTimeLabel.ts");
 const numeric = await server.ssrLoadModule("/src/weather/data/numericTileCache.ts");
 test.after(() => server.close());
 
@@ -107,10 +108,10 @@ test("interval labels use local accumulation bounds, never a future-valid-time o
     accumulationStart: "2026-09-03T04:00:00Z", accumulationEnd: "2026-09-03T05:00:00Z",
     temporalOffsetMinutes: 55,
   };
-  const label = labels.routeConditionTimeLabel(provenance, "Europe/London");
+  const label = routeLabels.routeConditionTimeLabel(provenance, "Europe/London");
   assert.match(label, /Interval.*05:00.*06:00.*BST/);
   assert.doesNotMatch(label, /after|before|Valid/);
-  const instant = labels.routeConditionTimeLabel({ ...provenance, timeSemantics: "instantaneous", validTime: "2026-09-03T04:00:00Z", temporalOffsetMinutes: -5 }, "Europe/London");
+  const instant = routeLabels.routeConditionTimeLabel({ ...provenance, timeSemantics: "instantaneous", validTime: "2026-09-03T04:00:00Z", temporalOffsetMinutes: -5 }, "Europe/London");
   assert.match(instant, /Valid.*05:00.*BST.*5 min before arrival/);
   const midnight = labels.accumulationIntervalLabel({ accumulationStart: "2026-09-02T22:30:00Z", accumulationEnd: "2026-09-02T23:30:00Z" }, "Europe/London");
   assert.match(midnight, /Wed.*23:30.*Thu.*00:30/);

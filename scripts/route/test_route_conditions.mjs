@@ -11,7 +11,21 @@ const conditions = await server.ssrLoadModule("/src/traverse/model/routeConditio
 const styles = await server.ssrLoadModule("/src/traverse/model/routeConditionStyle.ts");
 const numericTiles = await server.ssrLoadModule("/src/weather/data/numericTileCache.ts");
 
+const weatherSampler = await server.ssrLoadModule("/src/weather/data/routeWeatherSampler.ts");
 test.after(async () => server.close());
+
+async function buildConditions(terrain, schedule, sources, signal) {
+  const requests = terrain.samples.map((sample, index) => ({
+    coordinate: { longitude: sample.longitude, latitude: sample.latitude },
+    requestedTime: schedule.samples[index].arrivalTime,
+  }));
+  const samples = await weatherSampler.sampleRouteWeather(
+    requests,
+    sources,
+    signal
+  );
+  return conditions.buildRouteConditions(terrain, schedule, samples);
+}
 
 function scalarSource(fieldId = "temperature_2m", timeSemantics = "instantaneous") {
   const isTemperature = fieldId === "temperature_2m";
@@ -296,23 +310,23 @@ async function withSyntheticNumericRuntime(run, options = {}) {
 test("instantaneous selection is exact, nearest with earlier tie, and bounded", () => {
   const steps = [scalarStep(1), scalarStep(3), scalarStep(4)];
   assert.equal(
-    conditions.selectInstantaneousTimestep(steps, "2026-09-02T03:00:00Z").id,
+    weatherSampler.selectInstantaneousTimestep(steps, "2026-09-02T03:00:00Z").id,
     "f003"
   );
   assert.equal(
-    conditions.selectInstantaneousTimestep(steps, "2026-09-02T02:00:00Z").id,
+    weatherSampler.selectInstantaneousTimestep(steps, "2026-09-02T02:00:00Z").id,
     "f001"
   );
   assert.equal(
-    conditions.selectInstantaneousTimestep(steps, "2026-09-02T03:40:00Z").id,
+    weatherSampler.selectInstantaneousTimestep(steps, "2026-09-02T03:40:00Z").id,
     "f004"
   );
   assert.equal(
-    conditions.selectInstantaneousTimestep(steps, "2026-09-01T23:00:00Z"),
+    weatherSampler.selectInstantaneousTimestep(steps, "2026-09-01T23:00:00Z"),
     null
   );
   assert.equal(
-    conditions.selectInstantaneousTimestep(steps, "2026-09-02T05:00:00Z"),
+    weatherSampler.selectInstantaneousTimestep(steps, "2026-09-02T05:00:00Z"),
     null
   );
 });
@@ -336,19 +350,19 @@ test("precipitation selects the containing accumulation interval without interpo
     }),
   ];
   assert.equal(
-    conditions.selectPrecipitationTimestep(steps, "2026-09-02T01:00:00Z").id,
+    weatherSampler.selectPrecipitationTimestep(steps, "2026-09-02T01:00:00Z").id,
     "f001"
   );
   assert.equal(
-    conditions.selectPrecipitationTimestep(steps, "2026-09-02T01:30:00Z").id,
+    weatherSampler.selectPrecipitationTimestep(steps, "2026-09-02T01:30:00Z").id,
     "f002"
   );
   assert.equal(
-    conditions.selectPrecipitationTimestep(steps, "2026-09-02T02:30:00Z"),
+    weatherSampler.selectPrecipitationTimestep(steps, "2026-09-02T02:30:00Z"),
     null
   );
   assert.equal(
-    conditions.selectPrecipitationTimestep(steps, "2026-09-02T00:00:00Z"),
+    weatherSampler.selectPrecipitationTimestep(steps, "2026-09-02T00:00:00Z"),
     null
   );
 });
@@ -396,26 +410,26 @@ test("condition resolution preserves valid zero, missing states and actual valid
   const source = scalarSource();
   const step = scalarStep(2);
   const requested = "2026-09-02T01:40:00Z";
-  const zero = conditions.resolvedScalarCondition(source, step, requested, 0);
+  const zero = weatherSampler.resolveWeatherScalarSample(source, step, requested, 0);
   assert.equal(zero.state, "available");
   assert.equal(zero.value, 0);
   assert.equal(zero.provenance.validTime, step.validTime);
   assert.equal(zero.provenance.requestedTime, requested);
   assert.equal(zero.provenance.temporalOffsetMinutes, 20);
   assert.equal(
-    conditions.resolvedScalarCondition(source, step, requested, null).reason,
+    weatherSampler.resolveWeatherScalarSample(source, step, requested, null).reason,
     "no-data"
   );
   assert.equal(
-    conditions.resolvedScalarCondition(source, step, requested, undefined).reason,
+    weatherSampler.resolveWeatherScalarSample(source, step, requested, undefined).reason,
     "tile-unavailable"
   );
   assert.equal(
-    conditions.resolvedScalarCondition(null, null, requested, undefined).reason,
+    weatherSampler.resolveWeatherScalarSample(null, null, requested, undefined).reason,
     "source-unavailable"
   );
   assert.equal(
-    conditions.resolvedScalarCondition(source, null, requested, undefined).reason,
+    weatherSampler.resolveWeatherScalarSample(source, null, requested, undefined).reason,
     "outside-forecast"
   );
 });
@@ -423,13 +437,12 @@ test("condition resolution preserves valid zero, missing states and actual valid
 test("wind resolution preserves calm zero vector and provenance", () => {
   const source = vectorSource();
   const step = vectorStep(3);
-  const result = conditions.resolvedWindCondition(
+  const result = conditions.interpretWindWeatherSample(weatherSampler.resolveWeatherWindSample(
     source,
     step,
     "2026-09-02T02:45:00Z",
-    { u: 0, v: 0 },
-    90
-  );
+    { u: 0, v: 0 }
+  ), 90);
   assert.equal(result.state, "available");
   assert.equal(result.speedMs, 0);
   assert.equal(result.directionFromDegrees, null);
@@ -573,7 +586,7 @@ test("a short in-horizon route resolves every field and expected-arrival provena
       "2026-09-02T08:30:00Z",
       "2026-09-02T09:00:00Z",
     ];
-    const result = await conditions.buildRouteConditions(
+    const result = await buildConditions(
       syntheticRoute(times.length),
       syntheticSchedule(times),
       sourceSet("short-route")
@@ -609,7 +622,7 @@ test("partial and entirely out-of-horizon routes retain sample-level availabilit
       "2026-09-02T08:30:00Z",
       "2026-09-02T10:00:00Z",
     ];
-    const partial = await conditions.buildRouteConditions(
+    const partial = await buildConditions(
       syntheticRoute(partialTimes.length),
       syntheticSchedule(partialTimes),
       sourceSet("partial-route")
@@ -635,7 +648,7 @@ test("partial and entirely out-of-horizon routes retain sample-level availabilit
       "2026-09-02T10:00:00Z",
       "2026-09-02T11:00:00Z",
     ];
-    const outside = await conditions.buildRouteConditions(
+    const outside = await buildConditions(
       syntheticRoute(outsideTimes.length),
       syntheticSchedule(outsideTimes),
       sourceSet("outside-route")
@@ -667,7 +680,7 @@ test("a missing precipitation interval and one unavailable field do not invalida
       "2026-09-02T08:30:00Z",
       "2026-09-02T09:30:00Z",
     ];
-    const result = await conditions.buildRouteConditions(
+    const result = await buildConditions(
       syntheticRoute(times.length),
       syntheticSchedule(times),
       { ...sources, cloud: null }
@@ -687,7 +700,7 @@ test("a failed field tile settles unavailable, preserves other fields, and can r
   const schedule = syntheticSchedule(["2026-09-02T08:00:00Z"]);
   await withSyntheticNumericRuntime(
     async () => {
-      const failed = await conditions.buildRouteConditions(route, schedule, sources);
+      const failed = await buildConditions(route, schedule, sources);
       assert.equal(failed.samples[0].weather.cloud.state, "unavailable");
       assert.equal(failed.samples[0].weather.cloud.reason, "tile-unavailable");
       assert.equal(failed.samples[0].weather.temperature.state, "available");
@@ -697,7 +710,7 @@ test("a failed field tile settles unavailable, preserves other fields, and can r
     { failingFragments: ["/cloud/"] }
   );
   await withSyntheticNumericRuntime(async () => {
-    const retried = await conditions.buildRouteConditions(route, schedule, sources);
+    const retried = await buildConditions(route, schedule, sources);
     assert.equal(retried.samples[0].weather.cloud.state, "available");
     assert.equal(retried.samples[0].weather.cloud.value, 0);
   });
@@ -712,7 +725,7 @@ test("an aborted obsolete build cannot complete after a newer departure", async 
   await withSyntheticNumericRuntime(
     async () => {
       const controller = new AbortController();
-      const obsolete = conditions.buildRouteConditions(
+      const obsolete = buildConditions(
         route,
         obsoleteSchedule,
         obsoleteSources,
@@ -724,7 +737,7 @@ test("an aborted obsolete build cannot complete after a newer departure", async 
     { delayMs: 5 }
   );
   await withSyntheticNumericRuntime(async () => {
-    const current = await conditions.buildRouteConditions(
+    const current = await buildConditions(
       route,
       currentSchedule,
       currentSources

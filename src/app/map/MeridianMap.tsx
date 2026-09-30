@@ -3,73 +3,25 @@ import maplibregl from "maplibre-gl";
 import { accumulationIntervalLabel } from "../../weather/presentation/weatherTimeLabel";
 import { precipitationAmountLabel } from "../../weather/presentation/precipitationStyle";
 
-import {
-  NOMINATIM_ATTRIBUTION,
-  OPEN_METEO_ATTRIBUTION,
-} from "../config/dataAttribution";
+import { NOMINATIM_ATTRIBUTION } from "../../atlas/map/atlasAttribution";
+import { OPEN_METEO_ATTRIBUTION } from "../../weather/map/weatherAttribution";
 import {
   IS_SATELLITE_CONFIGURED,
   SATELLITE_PROVIDER,
 } from "../../atlas/map/satelliteProvider";
+import { AtlasMap } from "../../atlas/map/AtlasMap";
 import {
-  placeForecastOverlaysInOrder,
-} from "./mapLayerOrder";
-import {
-  removeGlobalPrecipitationLayer,
-  setGlobalPrecipitationEnabled,
-  updateGlobalPrecipitationLayer,
-} from "../../weather/map/globalPrecipitationLayer";
-import {
-  removeGlobalCloudLayer,
-  setGlobalCloudEnabled,
-  updateGlobalCloudLayer,
-} from "../../weather/map/globalCloudLayer";
-import {
-  getScalarTimestepAtTime,
-  getVectorTimestepAtTime,
-} from "../../weather/data/globalWeatherService";
-import {
-  sampleScalarField,
-  sampleVectorField,
-} from "../../weather/data/numericTileCache";
-import {
-  removePressureLayer,
-  setPressureLayerEnabled,
-  updatePressureLayer,
-} from "../../weather/map/pressureLayer";
-import {
-  applySatelliteLayerState,
-  captureSatelliteBasemapLayers,
-  ensureSatelliteLayer,
-  SATELLITE_SOURCE_ID,
-} from "../../atlas/map/satelliteLayer";
-import {
-  applyTerrainLayerState,
-  configurePlanetAndTerrain,
   TERRAIN_EXAGGERATION,
   TERRAIN_MIN_ZOOM,
-  updateTerrainActivation,
 } from "../../atlas/map/terrainLayers";
-import {
-  removeTemperatureContourLayer,
-  setTemperatureContourEnabled,
-  updateTemperatureContourLayer,
-} from "../../weather/map/temperatureContourLayer";
+import { WeatherMapController } from "../../weather/map/WeatherMapController";
+import { useWeatherMapInspection } from "../../weather/map/useWeatherMapInspection";
 import { formatWindDirection } from "../../weather/map/windVector";
+import { TraverseMapController } from "../../traverse/map/TraverseMapController";
 import {
-  removeWindLayer,
-  setWindLayerEnabled,
-  updateGlobalWindLayer,
-} from "../../weather/map/windLayer";
-import {
-  ROUTE_CASING_LAYER_ID,
-  ROUTE_CONDITION_LAYER_ID,
-  ROUTE_LINE_LAYER_ID,
-  removeRouteLayer,
-  updateRouteLayer,
-} from "../../traverse/map/routeLayer";
-import { getRouteBounds } from "../../traverse/model/routeGeometry";
-import { calculateRouteFitPadding, DEFAULT_WORKSPACE_GUTTER_PX } from "../../traverse/map/routeCamera";
+  calculateRouteFitPadding,
+  DEFAULT_WORKSPACE_GUTTER_PX,
+} from "../../traverse/map/routeCamera";
 
 import type { Basemap, MapOverlayState } from "../types/layer";
 import type {
@@ -90,7 +42,6 @@ import type {
 } from "../../traverse/types/routeConditions";
 
 import "maplibre-gl/dist/maplibre-gl.css";
-
 interface MeridianMapProps {
   selectedLocation: SelectedLocation | null;
   basemap: Basemap;
@@ -131,82 +82,6 @@ const BASEMAP_NAMES: Record<Basemap, string> = {
   satellite: "Satellite",
 };
 
-function removeForecastVisualizations(map: maplibregl.Map): void {
-  removeGlobalCloudLayer(map);
-  removeGlobalPrecipitationLayer(map);
-  removeTemperatureContourLayer(map);
-  removePressureLayer(map);
-  removeWindLayer(map);
-}
-
-function renderVisualizations(
-  map: maplibregl.Map,
-  basemap: Basemap,
-  overlays: MapOverlayState,
-  globalPrecipitationSource: ScalarWeatherFieldSource | null,
-  globalCloudSource: ScalarWeatherFieldSource | null,
-  globalWindSource: VectorWeatherFieldSource | null,
-  globalTemperatureSource: ScalarWeatherFieldSource | null,
-  globalPressureSource: ScalarWeatherFieldSource | null,
-  activeGlobalValidTime: string | null
-): void {
-  if (!map.isStyleLoaded()) return;
-
-  applySatelliteLayerState(map, basemap === "satellite");
-  applyTerrainLayerState(map, basemap, overlays.elevation);
-
-  const cloudTimestep = globalCloudSource
-    ? getScalarTimestepAtTime(globalCloudSource, activeGlobalValidTime)
-    : null;
-  if (overlays.clouds && globalCloudSource && cloudTimestep) {
-    updateGlobalCloudLayer(map, globalCloudSource, cloudTimestep);
-  } else {
-    setGlobalCloudEnabled(map, false);
-  }
-
-  const precipitationTimestep = globalPrecipitationSource
-    ? getScalarTimestepAtTime(globalPrecipitationSource, activeGlobalValidTime)
-    : null;
-  if (overlays.precipitation && globalPrecipitationSource && precipitationTimestep) {
-    updateGlobalPrecipitationLayer(
-      map,
-      globalPrecipitationSource,
-      precipitationTimestep
-    );
-  } else {
-    setGlobalPrecipitationEnabled(map, false);
-  }
-
-  const temperatureTimestep = globalTemperatureSource
-    ? getScalarTimestepAtTime(globalTemperatureSource, activeGlobalValidTime)
-    : null;
-  if (overlays.temperatureContours && globalTemperatureSource && temperatureTimestep) {
-    updateTemperatureContourLayer(map, globalTemperatureSource, temperatureTimestep);
-  } else {
-    setTemperatureContourEnabled(map, false);
-  }
-
-  const pressureTimestep = globalPressureSource
-    ? getScalarTimestepAtTime(globalPressureSource, activeGlobalValidTime)
-    : null;
-  if (overlays.pressureIsobars && globalPressureSource && pressureTimestep) {
-    updatePressureLayer(map, globalPressureSource, pressureTimestep);
-  } else {
-    setPressureLayerEnabled(map, false);
-  }
-
-  const windTimestep = globalWindSource
-    ? getVectorTimestepAtTime(globalWindSource, activeGlobalValidTime)
-    : null;
-  if (overlays.windFlow && globalWindSource && windTimestep) {
-    updateGlobalWindLayer(map, globalWindSource, windTimestep, basemap);
-  } else {
-    setWindLayerEnabled(map, false);
-  }
-
-  placeForecastOverlaysInOrder(map);
-}
-
 function createInspectionPoint(
   map: maplibregl.Map,
   location: maplibregl.LngLatLike,
@@ -239,26 +114,6 @@ function formatElevation(elevation: number | null): string {
   return elevation === null ? "Unavailable" : `≈ ${Math.round(elevation / 10) * 10} m`;
 }
 
-function nearestRouteSampleIndex(
-  map: maplibregl.Map,
-  point: maplibregl.PointLike,
-  coordinates: RouteCoordinate[],
-  maximumPixels = 14
-): number | null {
-  const target = maplibregl.Point.convert(point);
-  let nearest: number | null = null;
-  let bestDistance = maximumPixels;
-  coordinates.forEach((coordinate, index) => {
-    const projected = map.project([coordinate.longitude, coordinate.latitude]);
-    const distance = Math.hypot(projected.x - target.x, projected.y - target.y);
-    if (distance <= bestDistance) {
-      bestDistance = distance;
-      nearest = index;
-    }
-  });
-  return nearest;
-}
-
 export default function MeridianMap({
   selectedLocation,
   basemap,
@@ -288,32 +143,14 @@ export default function MeridianMap({
   const [satelliteStatus, setSatelliteStatus] = useState<SatelliteLayerStatus>(
     IS_SATELLITE_CONFIGURED ? "idle" : "unavailable"
   );
-  const [globalPrecipitationSample, setGlobalPrecipitationSample] = useState<{
-    key: string;
-    value: number | null;
-  } | null>(null);
-  const [globalCloudSample, setGlobalCloudSample] = useState<{
-    key: string;
-    value: number | null;
-  } | null>(null);
-  const [globalWindSample, setGlobalWindSample] = useState<{
-    key: string;
-    value: { u: number; v: number } | null;
-  } | null>(null);
-  const [globalTemperatureSample, setGlobalTemperatureSample] = useState<{
-    key: string;
-    value: number | null;
-  } | null>(null);
-  const [globalPressureSample, setGlobalPressureSample] = useState<{
-    key: string;
-    value: number | null;
-  } | null>(null);
 
   const mapContainer = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<maplibregl.Map | null>(null);
   const styleReadyRef = useRef(false);
   const markerRef = useRef<maplibregl.Marker | null>(null);
-  const syncSatelliteViewRef = useRef<() => void>(() => undefined);
+  const atlasMapRef = useRef<AtlasMap | null>(null);
+  const weatherMapControllerRef = useRef<WeatherMapController | null>(null);
+  const traverseMapControllerRef = useRef<TraverseMapController | null>(null);
 
   const globalPrecipitationSourceRef = useRef(globalPrecipitationSource);
   const globalCloudSourceRef = useRef(globalCloudSource);
@@ -337,22 +174,26 @@ export default function MeridianMap({
     candidateInspection?.inspectorSession === mapInspectorSession
       ? candidateInspection
       : null;
-  const activePrecipitationTimestep = globalPrecipitationSource
-    ? getScalarTimestepAtTime(globalPrecipitationSource, activeGlobalValidTime)
-    : null;
-  const activeCloudTimestep = globalCloudSource
-    ? getScalarTimestepAtTime(globalCloudSource, activeGlobalValidTime)
-    : null;
-  const activeWindTimestep = globalWindSource
-    ? getVectorTimestepAtTime(globalWindSource, activeGlobalValidTime)
-    : null;
-  const activeTemperatureTimestep = globalTemperatureSource
-    ? getScalarTimestepAtTime(globalTemperatureSource, activeGlobalValidTime)
-    : null;
-  const activePressureTimestep = globalPressureSource
-    ? getScalarTimestepAtTime(globalPressureSource, activeGlobalValidTime)
-    : null;
-
+  const {
+    precipitationTimestep: activePrecipitationTimestep,
+    cloudTimestep: activeCloudTimestep,
+    windTimestep: activeWindTimestep,
+    temperatureTimestep: activeTemperatureTimestep,
+    pressureTimestep: activePressureTimestep,
+    precipitationValue: globalPrecipitationValue,
+    cloudValue: globalCloudValue,
+    windValue: globalWindValue,
+    temperatureValue: globalTemperatureValue,
+    pressureValue: globalPressureValue,
+  } = useWeatherMapInspection({
+    point: activeInspection,
+    validTime: activeGlobalValidTime,
+    precipitation: globalPrecipitationSource,
+    clouds: globalCloudSource,
+    wind: globalWindSource,
+    temperature: globalTemperatureSource,
+    pressure: globalPressureSource,
+  });
   useEffect(() => {
     globalPrecipitationSourceRef.current = globalPrecipitationSource;
   }, [globalPrecipitationSource]);
@@ -405,290 +246,73 @@ export default function MeridianMap({
     routeConditionModeRef.current = routeConditionMode;
   }, [routeConditionMode]);
 
-  // Start point samples immediately. Inspection updates suppress stale results,
-  // while the shared tile cache deduplicates requests; delaying here can be
-  // perpetually reset by otherwise harmless inspection-state refreshes.
-  useEffect(() => {
-    if (
-      !activeInspection ||
-      !globalPrecipitationSource ||
-      !activePrecipitationTimestep
-    ) {
-      return;
-    }
-
-    let isCurrent = true;
-    const key = [
-      globalPrecipitationSource.manifest.id,
-      activePrecipitationTimestep.id,
-      activeInspection.longitude.toFixed(5),
-      activeInspection.latitude.toFixed(5),
-    ].join(":");
-    sampleScalarField(
-      globalPrecipitationSource,
-      activePrecipitationTimestep,
-      activeInspection.longitude,
-      activeInspection.latitude
-    )
-      .then((value) => {
-        if (isCurrent) setGlobalPrecipitationSample({ key, value });
-      })
-      .catch((error: unknown) => {
-        if (isCurrent) {
-          console.error("Global precipitation inspection failed", error);
-          setGlobalPrecipitationSample({ key, value: null });
-        }
-      });
-
-    return () => {
-      isCurrent = false;
-    };
-  }, [
-    activeInspection,
-    activePrecipitationTimestep,
-    globalPrecipitationSource,
-  ]);
-
-  useEffect(() => {
-    if (!activeInspection || !globalCloudSource || !activeCloudTimestep) return;
-
-    let isCurrent = true;
-    const key = [
-      globalCloudSource.manifest.id,
-      activeCloudTimestep.id,
-      activeInspection.longitude.toFixed(5),
-      activeInspection.latitude.toFixed(5),
-    ].join(":");
-    sampleScalarField(
-      globalCloudSource,
-      activeCloudTimestep,
-      activeInspection.longitude,
-      activeInspection.latitude
-    )
-      .then((value) => {
-        if (isCurrent) setGlobalCloudSample({ key, value });
-      })
-      .catch((error: unknown) => {
-        if (isCurrent) {
-          console.error("Global cloud inspection failed", error);
-          setGlobalCloudSample({ key, value: null });
-        }
-      });
-
-    return () => {
-      isCurrent = false;
-    };
-  }, [activeCloudTimestep, activeInspection, globalCloudSource]);
-
-  useEffect(() => {
-    if (
-      !activeInspection ||
-      !globalTemperatureSource ||
-      !activeTemperatureTimestep
-    ) {
-      return;
-    }
-    let isCurrent = true;
-    const key = [
-      globalTemperatureSource.manifest.id,
-      activeTemperatureTimestep.id,
-      activeInspection.longitude.toFixed(5),
-      activeInspection.latitude.toFixed(5),
-    ].join(":");
-    sampleScalarField(
-      globalTemperatureSource,
-      activeTemperatureTimestep,
-      activeInspection.longitude,
-      activeInspection.latitude
-    )
-      .then((value) => {
-        if (isCurrent) setGlobalTemperatureSample({ key, value });
-      })
-      .catch((error: unknown) => {
-        if (isCurrent) {
-          console.error("Global temperature inspection failed", error);
-          setGlobalTemperatureSample({ key, value: null });
-        }
-      });
-    return () => {
-      isCurrent = false;
-    };
-  }, [activeInspection, activeTemperatureTimestep, globalTemperatureSource]);
-
-  useEffect(() => {
-    if (!activeInspection || !globalPressureSource || !activePressureTimestep) {
-      return;
-    }
-    let isCurrent = true;
-    const key = [
-      globalPressureSource.manifest.id,
-      activePressureTimestep.id,
-      activeInspection.longitude.toFixed(5),
-      activeInspection.latitude.toFixed(5),
-    ].join(":");
-    sampleScalarField(
-      globalPressureSource,
-      activePressureTimestep,
-      activeInspection.longitude,
-      activeInspection.latitude
-    )
-      .then((value) => {
-        if (isCurrent) setGlobalPressureSample({ key, value });
-      })
-      .catch((error: unknown) => {
-        if (isCurrent) {
-          console.error("Global pressure inspection failed", error);
-          setGlobalPressureSample({ key, value: null });
-        }
-      });
-    return () => {
-      isCurrent = false;
-    };
-  }, [activeInspection, activePressureTimestep, globalPressureSource]);
-
-  useEffect(() => {
-    if (!activeInspection || !globalWindSource || !activeWindTimestep) return;
-    let isCurrent = true;
-    const key = [
-      globalWindSource.manifest.id,
-      activeWindTimestep.id,
-      activeInspection.longitude.toFixed(5),
-      activeInspection.latitude.toFixed(5),
-    ].join(":");
-    sampleVectorField(
-      globalWindSource,
-      activeWindTimestep,
-      activeInspection.longitude,
-      activeInspection.latitude
-    )
-      .then((value) => {
-        if (isCurrent) setGlobalWindSample({ key, value });
-      })
-      .catch((error: unknown) => {
-        if (isCurrent) {
-          console.error("Global wind inspection failed", error);
-          setGlobalWindSample({ key, value: null });
-        }
-      });
-    return () => {
-      isCurrent = false;
-    };
-  }, [activeInspection, activeWindTimestep, globalWindSource]);
-
   useEffect(() => {
     if (!mapContainer.current || mapRef.current) return;
 
-    const map = new maplibregl.Map({
-      container: mapContainer.current,
-      style: "https://tiles.openfreemap.org/styles/liberty",
-      center: [-4.0762, 53.0685],
-      zoom: 11.4,
-      minZoom: 1.4,
-      pitch: 0,
-      bearing: 0,
-      maxPitch: 72,
-      renderWorldCopies: false,
-      // Keep already-requested parent tiles available while higher-resolution
-      // children arrive. MapLibre then renders progressive DEM fallbacks during
-      // zooming instead of cancelling the lower-detail work mid-transition.
-      cancelPendingTileRequestsWhileZooming: false,
-      attributionControl: {
-        compact: true,
-        customAttribution: [OPEN_METEO_ATTRIBUTION, NOMINATIM_ATTRIBUTION],
+    let weatherController: WeatherMapController | null = null;
+    let traverseController: TraverseMapController | null = null;
+    let refreshSelectedElevation = () => undefined;
+    const atlasMap = new AtlasMap(mapContainer.current, {
+      attributions: [OPEN_METEO_ATTRIBUTION, NOMINATIM_ATTRIBUTION],
+      onStyleReady: () => {
+        styleReadyRef.current = true;
+        mapContainer.current?.setAttribute("data-map-style-ready", "true");
+        traverseController?.styleChanged();
+        weatherController?.styleChanged();
       },
+      onRenderable: () => {
+        weatherController?.mapBecameRenderable();
+        refreshSelectedElevation();
+      },
+      onSatelliteStatus: setSatelliteStatus,
     });
+    const map = atlasMap.map;
+    atlasMapRef.current = atlasMap;
+    mapRef.current = map;
+    weatherController = new WeatherMapController(map, () => {
+      traverseController?.placeAboveWeather();
+    });
+    traverseController = new TraverseMapController(map);
+    weatherMapControllerRef.current = weatherController;
+    traverseMapControllerRef.current = traverseController;
+    atlasMap.setPresentation(basemapRef.current, mapOverlaysRef.current.elevation);
+    weatherController.update({
+      basemap: basemapRef.current,
+      overlays: mapOverlaysRef.current,
+      precipitation: globalPrecipitationSourceRef.current,
+      clouds: globalCloudSourceRef.current,
+      wind: globalWindSourceRef.current,
+      temperature: globalTemperatureSourceRef.current,
+      pressure: globalPressureSourceRef.current,
+      validTime: activeGlobalValidTimeRef.current,
+    });
+    traverseController.update({
+      coordinates: routeCoordinatesRef.current,
+      focusedSampleIndex: focusedRouteSampleRef.current,
+      conditions: routeConditionsRef.current,
+      conditionMode: routeConditionModeRef.current,
+    });
+
     let pendingPointerEvent: maplibregl.MapMouseEvent | null = null;
     let pointerFrame: number | null = null;
-
-    mapRef.current = map;
-
-    const syncSatelliteView = () => {
-      const shouldShowSatellite = basemapRef.current === "satellite";
-
-      applySatelliteLayerState(map, shouldShowSatellite);
-      if (!shouldShowSatellite) return;
-
-      if (!IS_SATELLITE_CONFIGURED) {
-        setSatelliteStatus("unavailable");
-        return;
-      }
-
-      setSatelliteStatus("loading");
-      void ensureSatelliteLayer(map).then((status) => {
-        if (mapRef.current !== map) return;
-
-        const isStillSelected = basemapRef.current === "satellite";
-        applySatelliteLayerState(map, isStillSelected && status === "ready");
-        setSatelliteStatus(status === "ready" ? "loading" : status);
-
-        if (status === "ready") {
-          renderVisualizations(
-            map,
-            basemapRef.current,
-            mapOverlaysRef.current,
-            globalPrecipitationSourceRef.current,
-            globalCloudSourceRef.current,
-            globalWindSourceRef.current,
-            globalTemperatureSourceRef.current,
-            globalPressureSourceRef.current,
-            activeGlobalValidTimeRef.current
-          );
-
-          if (map.getSource(SATELLITE_SOURCE_ID) && map.isSourceLoaded(SATELLITE_SOURCE_ID)) {
-            setSatelliteStatus("ready");
-          }
-        }
-      });
-    };
-
-    syncSatelliteViewRef.current = syncSatelliteView;
-
-    const handleMapMoveEnd = () => {
-      renderVisualizations(
-        map,
-        basemapRef.current,
-        mapOverlaysRef.current,
-        globalPrecipitationSourceRef.current,
-        globalCloudSourceRef.current,
-        globalWindSourceRef.current,
-        globalTemperatureSourceRef.current,
-        globalPressureSourceRef.current,
-        activeGlobalValidTimeRef.current
-      );
-    };
 
     const handlePointerFrame = () => {
       pointerFrame = null;
       const event = pendingPointerEvent;
-
       if (!event) return;
-
-      const routeHitLayers = [
-        ROUTE_CASING_LAYER_ID,
-        ROUTE_LINE_LAYER_ID,
-        ROUTE_CONDITION_LAYER_ID,
-      ].filter((layerId) => map.getLayer(layerId));
       const routeIndex =
-        routeHitLayers.length > 0 &&
-        map.queryRenderedFeatures(event.point, { layers: routeHitLayers }).length > 0
-          ? nearestRouteSampleIndex(
-              map,
-              event.point,
-              routeCoordinatesRef.current,
-              10
-            )
+        traverseController?.isRouteHit(event.point)
+          ? traverseController.nearestSample(event.point, 10)
           : null;
-      if (routeIndex !== null) {
+      if (routeIndex !== null && routeIndex !== undefined) {
         routeFocusRef.current(routeIndex);
         setHoverInspection(null);
         return;
       }
-
       if (!mapInspectorEnabledRef.current) {
         setHoverInspection(null);
         return;
       }
-
       setHoverInspection(
         createInspectionPoint(
           map,
@@ -701,100 +325,31 @@ export default function MeridianMap({
       );
     };
 
-    const refreshSelectedElevation = () => {
+    refreshSelectedElevation = () => {
       const markerLocation = markerRef.current?.getLngLat();
-
       if (!markerLocation) return;
-
       const renderedElevation = map.queryTerrainElevation(markerLocation);
-
       if (renderedElevation === null) return;
-
       setSelectedInspection((current) =>
         current
-          ? {
-              ...current,
-              elevation: renderedElevation / TERRAIN_EXAGGERATION,
-            }
+          ? { ...current, elevation: renderedElevation / TERRAIN_EXAGGERATION }
           : current
       );
     };
 
     const handleMouseMove = (event: maplibregl.MapMouseEvent) => {
       pendingPointerEvent = event;
-
       if (pointerFrame === null) {
         pointerFrame = window.requestAnimationFrame(handlePointerFrame);
       }
     };
 
-    map.addControl(
-      new maplibregl.NavigationControl({ visualizePitch: true }),
-      "top-right"
-    );
-
-    map.on("style.load", () => {
-      styleReadyRef.current = true;
-      mapContainer.current?.setAttribute("data-map-style-ready", "true");
-      captureSatelliteBasemapLayers(map);
-      updateRouteLayer(
-        map,
-        routeCoordinatesRef.current,
-        focusedRouteSampleRef.current,
-        routeConditionsRef.current,
-        routeConditionModeRef.current
-      );
-      configurePlanetAndTerrain(map);
-      renderVisualizations(
-        map,
-        basemapRef.current,
-        mapOverlaysRef.current,
-        globalPrecipitationSourceRef.current,
-        globalCloudSourceRef.current,
-        globalWindSourceRef.current,
-        globalTemperatureSourceRef.current,
-        globalPressureSourceRef.current,
-        activeGlobalValidTimeRef.current
-      );
-      syncSatelliteView();
-    });
-
-    map.on("sourcedata", (event) => {
-      if (
-        event.sourceId === SATELLITE_SOURCE_ID &&
-        map.getSource(SATELLITE_SOURCE_ID) &&
-        map.isSourceLoaded(SATELLITE_SOURCE_ID)
-      ) {
-        setSatelliteStatus("ready");
-      }
-    });
-
-    map.on("error", (event) => {
-      const sourceId = (event as typeof event & { sourceId?: string }).sourceId;
-
-      if (sourceId === SATELLITE_SOURCE_ID) {
-        setSatelliteStatus("degraded");
-        return;
-      }
-
-      console.error(event.error);
-    });
-
-    map.on("moveend", handleMapMoveEnd);
+    map.on("moveend", () => weatherController?.viewportChanged());
     map.on("movestart", () => setHoverInspection(null));
-    // Projection and terrain mutate MapLibre's tile pipeline. Apply that mode
-    // change after zooming settles rather than racing it on every zoom frame.
-    map.on("zoomend", () => updateTerrainActivation(map));
     map.on("mousemove", handleMouseMove);
     map.on("mouseleave", () => setHoverInspection(null));
-    map.on("idle", refreshSelectedElevation);
-
     map.on("click", (event) => {
-      const routeIndex = nearestRouteSampleIndex(
-        map,
-        event.point,
-        routeCoordinatesRef.current
-      );
+      const routeIndex = traverseController?.nearestSample(event.point) ?? null;
       if (routeIndex !== null) {
         setHoverInspection(null);
         setSelectedInspection(null);
@@ -822,15 +377,16 @@ export default function MeridianMap({
 
     return () => {
       if (pointerFrame !== null) window.cancelAnimationFrame(pointerFrame);
-
       markerRef.current?.remove();
       markerRef.current = null;
-      removeForecastVisualizations(map);
-      removeRouteLayer(map);
-      map.remove();
+      weatherController?.destroy();
+      traverseController?.destroy();
+      atlasMap.destroy();
+      atlasMapRef.current = null;
+      weatherMapControllerRef.current = null;
+      traverseMapControllerRef.current = null;
       mapRef.current = null;
       styleReadyRef.current = false;
-      syncSatelliteViewRef.current = () => undefined;
     };
   }, []);
 
@@ -841,36 +397,34 @@ export default function MeridianMap({
 
   useEffect(() => {
     const map = mapRef.current;
+    const controller = traverseMapControllerRef.current;
     const coordinates =
       terrainRoute && routeGeometry && terrainRoute.id === routeGeometry.id
         ? terrainRoute.samples
         : routeGeometry?.coordinates ?? [];
     routeCoordinatesRef.current = coordinates;
 
-    // Camera fitting does not depend on style readiness. Keeping it outside the
-    // route-layer guard ensures a route imported during initial style loading is
-    // still fitted exactly once.
     if (!routeGeometry) {
       fittedRouteIdRef.current = null;
-    } else if (map && fittedRouteIdRef.current !== routeGeometry.id) {
+    } else if (map && controller && fittedRouteIdRef.current !== routeGeometry.id) {
       fittedRouteIdRef.current = routeGeometry.id;
-      const bounds = getRouteBounds(routeGeometry.coordinates);
-      const center = map.getCenter();
-      const routeCenter = (bounds.west + bounds.east) / 2;
-      const longitudeDelta = Math.abs(
-        ((routeCenter - center.lng + 540) % 360) - 180
-      );
       const mapBounds = mapContainer.current?.getBoundingClientRect();
       const shell = mapContainer.current?.closest<HTMLElement>(".desktop-shell-active");
       const workspaces = panelCollapsed
         ? []
         : [...(shell?.querySelectorAll<HTMLElement>(".desktop-workspace, .detail-workspace") ?? [])];
       const workspaceRight = workspaces.reduce<number | null>(
-        (right, workspace) => Math.max(right ?? Number.NEGATIVE_INFINITY, workspace.getBoundingClientRect().right),
-        null,
+        (right, workspace) =>
+          Math.max(
+            right ?? Number.NEGATIVE_INFINITY,
+            workspace.getBoundingClientRect().right
+          ),
+        null
       );
       const configuredGutter = shell
-        ? Number.parseFloat(getComputedStyle(shell).getPropertyValue("--workspace-gutter"))
+        ? Number.parseFloat(
+            getComputedStyle(shell).getPropertyValue("--workspace-gutter")
+          )
         : Number.NaN;
       const padding = shell
         ? calculateRouteFitPadding({
@@ -886,31 +440,15 @@ export default function MeridianMap({
             bottom: 70,
             left: panelCollapsed ? 70 : 410,
           };
-      map.fitBounds(
-        [
-          [bounds.west, bounds.south],
-          [bounds.east, bounds.north],
-        ],
-        {
-          padding,
-          maxZoom: 14,
-          bearing: map.getBearing(),
-          pitch: map.getPitch(),
-          duration: longitudeDelta > 70 ? 0 : 750,
-          essential: true,
-        }
-      );
+      controller.fitRoute(routeGeometry.coordinates, padding);
     }
 
-    if (!map || !styleReadyRef.current) return;
-    updateRouteLayer(
-      map,
+    controller?.update({
       coordinates,
-      focusedRouteSampleIndex,
-      routeConditions,
-      routeConditionMode
-    );
-    placeForecastOverlaysInOrder(map);
+      focusedSampleIndex: focusedRouteSampleIndex,
+      conditions: routeConditions,
+      conditionMode: routeConditionMode,
+    });
   }, [
     focusedRouteSampleIndex,
     panelCollapsed,
@@ -919,23 +457,18 @@ export default function MeridianMap({
     routeGeometry,
     terrainRoute,
   ]);
-
   useEffect(() => {
-    const map = mapRef.current;
-
-    if (!map?.isStyleLoaded()) return;
-
-    renderVisualizations(
-      map,
+    atlasMapRef.current?.setPresentation(basemap, mapOverlays.elevation);
+    weatherMapControllerRef.current?.update({
       basemap,
-      mapOverlays,
-      globalPrecipitationSource,
-      globalCloudSource,
-      globalWindSource,
-      globalTemperatureSource,
-      globalPressureSource,
-      activeGlobalValidTime
-    );
+      overlays: mapOverlays,
+      precipitation: globalPrecipitationSource,
+      clouds: globalCloudSource,
+      wind: globalWindSource,
+      temperature: globalTemperatureSource,
+      pressure: globalPressureSource,
+      validTime: activeGlobalValidTime,
+    });
   }, [
     basemap,
     mapOverlays,
@@ -946,17 +479,12 @@ export default function MeridianMap({
     globalPressureSource,
     activeGlobalValidTime,
   ]);
-
-  useEffect(() => {
-    syncSatelliteViewRef.current();
-  }, [basemap]);
-
   useEffect(() => {
     const map = mapRef.current;
     if (!map) return;
 
-    map.resize();
-    const resizeTimer = window.setTimeout(() => map.resize(), 240);
+    atlasMapRef.current?.resize();
+    const resizeTimer = window.setTimeout(() => atlasMapRef.current?.resize(), 240);
     return () => window.clearTimeout(resizeTimer);
   }, [panelCollapsed]);
 
@@ -1012,71 +540,6 @@ export default function MeridianMap({
     );
   }, [selectedLocation]);
 
-  const expectedGlobalSampleKey =
-    activeInspection && activePrecipitationTimestep && globalPrecipitationSource
-      ? [
-          globalPrecipitationSource.manifest.id,
-          activePrecipitationTimestep.id,
-          activeInspection.longitude.toFixed(5),
-          activeInspection.latitude.toFixed(5),
-        ].join(":")
-      : null;
-  const globalPrecipitationValue =
-    globalPrecipitationSample?.key === expectedGlobalSampleKey
-      ? globalPrecipitationSample.value
-      : undefined;
-  const expectedGlobalCloudSampleKey =
-    activeInspection && activeCloudTimestep && globalCloudSource
-      ? [
-          globalCloudSource.manifest.id,
-          activeCloudTimestep.id,
-          activeInspection.longitude.toFixed(5),
-          activeInspection.latitude.toFixed(5),
-        ].join(":")
-      : null;
-  const globalCloudValue =
-    globalCloudSample?.key === expectedGlobalCloudSampleKey
-      ? globalCloudSample.value
-      : undefined;
-  const expectedGlobalTemperatureSampleKey =
-    activeInspection && activeTemperatureTimestep && globalTemperatureSource
-      ? [
-          globalTemperatureSource.manifest.id,
-          activeTemperatureTimestep.id,
-          activeInspection.longitude.toFixed(5),
-          activeInspection.latitude.toFixed(5),
-        ].join(":")
-      : null;
-  const globalTemperatureValue =
-    globalTemperatureSample?.key === expectedGlobalTemperatureSampleKey
-      ? globalTemperatureSample.value
-      : undefined;
-  const expectedGlobalPressureSampleKey =
-    activeInspection && activePressureTimestep && globalPressureSource
-      ? [
-          globalPressureSource.manifest.id,
-          activePressureTimestep.id,
-          activeInspection.longitude.toFixed(5),
-          activeInspection.latitude.toFixed(5),
-        ].join(":")
-      : null;
-  const globalPressureValue =
-    globalPressureSample?.key === expectedGlobalPressureSampleKey
-      ? globalPressureSample.value
-      : undefined;
-  const expectedGlobalWindSampleKey =
-    activeInspection && activeWindTimestep && globalWindSource
-      ? [
-          globalWindSource.manifest.id,
-          activeWindTimestep.id,
-          activeInspection.longitude.toFixed(5),
-          activeInspection.latitude.toFixed(5),
-        ].join(":")
-      : null;
-  const globalWindValue =
-    globalWindSample?.key === expectedGlobalWindSampleKey
-      ? globalWindSample.value
-      : undefined;
   const globalWindSpeed = globalWindValue
     ? Math.hypot(globalWindValue.u, globalWindValue.v)
     : null;

@@ -3,14 +3,14 @@ import maplibregl from "maplibre-gl";
 import {
   ELEVATION_COLOR_STOPS,
   HILLSHADE_ZOOM_STOPS,
-  LAYER_VISUAL_STRENGTHS,
-} from "../../app/config/layerVisuals";
-import { TERRAIN_ATTRIBUTION } from "../../app/config/dataAttribution";
+  ELEVATION_LAYER_STRENGTH,
+} from "./atlasVisuals";
+import { TERRAIN_ATTRIBUTION } from "./atlasAttribution";
 import {
   placeGeographicContextAboveOverlays,
-} from "../../app/map/mapLayerOrder";
+} from "./mapLayerAnchors";
 
-import type { Basemap } from "../../app/types/layer";
+import type { Basemap } from "./mapTypes";
 
 export const TERRAIN_SOURCE_ID = "terrain-dem";
 export const TERRAIN_ANALYSIS_SOURCE_ID = "terrain-analysis-dem";
@@ -189,7 +189,7 @@ export function applyTerrainLayerState(
       ELEVATION_RELIEF_LAYER_ID,
       "color-relief-opacity",
       elevationEnabled
-        ? LAYER_VISUAL_STRENGTHS.elevation
+        ? ELEVATION_LAYER_STRENGTH
         : 0
     );
   }

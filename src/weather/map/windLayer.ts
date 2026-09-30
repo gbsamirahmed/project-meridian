@@ -1,12 +1,12 @@
 import type maplibregl from "maplibre-gl";
 
-import type { Basemap } from "../../app/types/layer";
+import type { Basemap } from "../../atlas/map/mapTypes";
 import type {
   VectorWeatherFieldSource,
   VectorWeatherTimestep,
 } from "../types/globalWeather";
 import { GlobalWindVectorField } from "./globalWindSource";
-import { getFirstSymbolLayerId } from "../../app/map/mapLayerOrder";
+import { getFirstSymbolLayerId } from "../../atlas/map/mapLayerAnchors";
 import {
   WIND_PARTICLE_LAYER_ID,
   WindParticleLayer,

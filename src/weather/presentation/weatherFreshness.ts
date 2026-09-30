@@ -1,5 +1,5 @@
 import type { GlobalWeatherCatalog } from "../types/globalWeather";
-import type { JourneySchedule } from "../../traverse/types/route";
+import type { ForecastCoverageWindow } from "../types/forecastCoverage";
 import type { CatalogueCheckState } from "../data/weatherCatalogueRefresh";
 
 export type WeatherFreshnessTone = "current" | "ending" | "expired" | "unavailable";
@@ -44,7 +44,7 @@ function runIdentity(entry: { runTime: string }): string {
 export function weatherFreshnessPresentation(
   catalog: GlobalWeatherCatalog | null,
   check: CatalogueCheckState,
-  journey: JourneySchedule | null,
+  coverage: ForecastCoverageWindow | null,
   now = Date.now()
 ): WeatherFreshnessPresentation {
   const entry = catalog?.fields.precipitation ?? Object.values(catalog?.fields ?? {})[0];
@@ -61,8 +61,8 @@ export function weatherFreshnessPresentation(
   const label = `${runIdentity(entry)}${checked ? ` · checked ${checked}` : ""}`;
   const first = Date.parse(entry.firstValidTime);
   const last = Date.parse(entry.lastValidTime);
-  const journeyStart = journey ? Date.parse(journey.departureTime) : null;
-  const journeyFinish = journey ? Date.parse(journey.expectedFinishTime) : null;
+  const journeyStart = coverage ? Date.parse(coverage.startTime) : null;
+  const journeyFinish = coverage ? Date.parse(coverage.endTime) : null;
   const failure = check.lastCheckFailed ? " Latest update check failed; the active run was retained." : "";
   if (!Number.isFinite(first) || !Number.isFinite(last)) {
     return { label, detail: `Forecast coverage metadata is unavailable.${failure}`, tone: "unavailable" };
@@ -108,11 +108,11 @@ export function weatherFreshnessPresentation(
 export function weatherDataSummaryPresentation(
   catalog: GlobalWeatherCatalog | null,
   check: CatalogueCheckState,
-  journey: JourneySchedule | null,
+  coverage: ForecastCoverageWindow | null,
   resolutionDegrees: number | null,
   now = Date.now(),
 ): WeatherDataSummaryPresentation {
-  const freshness = weatherFreshnessPresentation(catalog, check, journey, now);
+  const freshness = weatherFreshnessPresentation(catalog, check, coverage, now);
   const entry = catalog?.fields.precipitation ?? Object.values(catalog?.fields ?? {})[0];
   if (!entry) {
     return {

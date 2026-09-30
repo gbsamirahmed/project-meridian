@@ -2067,3 +2067,28 @@ Phase 5B changed no executable pressure lifecycle code, so this is a pre-existin
 map lifecycle/render-retry issue assigned to the already-frozen 5C map/controller
 work. The 5D browser gate must verify its resolution without weakening the test.
 Phase 5C has not begun.
+## 2026-09-30 — Meridian Phase 5C domain boundaries
+
+Implemented the three frozen coupling fixes without adding a framework or changing
+product semantics. Atlas now owns the concrete MapLibre lifecycle, Weather owns its
+map controller and provider-specific route sampler, Traverse owns its route-map
+controller and route-relative interpretation, and app composes the domains. Combined
+inspection/status presentation remains app-owned.
+
+The Weather map controller retains requested work while terrain or style changes make
+the map temporarily unrenderable, then applies it once when Atlas reports the map idle
+and renderable. This replaces the timing assumption that caused pressure updates to be
+lost after `style.load`; the formerly failing 1366x768 pressure scenario and its
+1440x900 control both pass without a longer timeout. Weather now receives only a
+two-time forecast coverage window adapted by app, so it imports no `JourneySchedule`.
+Weather also owns GFS timestep selection and numeric tile sampling; app passes its
+provider-neutral samples to Traverse, which no longer imports GFS or numeric-tile
+implementation and retains route-relative plus provider provenance.
+
+No `shared` directory was introduced. The two audited type cycles, transitional
+compatibility files and empty SearchBar remain for the already-frozen 5D cleanup.
+The final gate passed 117 focused deterministic tests with one intentionally skipped
+live-publication integration case, TypeScript/Vite build, ESLint and the external GFS
+publication check. All 15 established Playwright scenarios passed across 1920x1080,
+1440x900 and 1366x768, including the formerly failing 1366 pressure scenario under its
+unchanged timeout. Phase 5D remains the final Phase 5 task and has not begun.
