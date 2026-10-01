@@ -2326,3 +2326,36 @@ historical ref or phase marker changed. Generated diagnostics remain ignored.
 
 This is post-foundation security maintenance, not a new numbered cleanup phase.
 Atlas/world-model development and the next development programme have not begun.
+
+### Tryfan historic open-data reconnaissance
+
+Inventoried the live NRW historic LiDAR tile catalogue over the canonical Tryfan
+EPSG:27700 reference bounds `[264900, 357800, 267900, 360800]`, a 3 km × 3 km AOI.
+The current and original official WFS layers each return all eight matching
+records, independently corroborated by the NRW-linked ArcGIS catalogue and WFS
+hit counts. There are no intersecting 0.25 m, 0.5 m or 2 m records; all eight are
+1 m with DTM and DSM links. Ten distinct archive URLs respond HTTP 200 to HEAD.
+No ZIP or raster payload was downloaded.
+
+Original survey identifiers and acquisition intervals distinguish P_5024
+(2007-02-07–2007-04-02), P_6405 (2009-03-18) and P_9378 (2014-03-10). Their
+catalogue tile unions intersect 93.33%, 16.89% and 23.56% of the AOI respectively.
+These are tile-envelope percentages, not actual valid-data coverage: original
+`PERCENT_CO` metadata reports partial coverage within those tiles. Exact historic
+swath/valid-cell overlap remains unknown and is explicitly null in the inventory.
+No historic group is described as a full-AOI replacement.
+
+The current national 1 m DTM/DSM, acquired 2021-03-02, remains the best verified
+open raster source among those examined. Its retained canonical manifest records
+9,000,000 valid cells and zero nodata cells for both products; the live national
+catalogue confirms 16 delivery-11 tiles covering the reference extent. Lab 009's
+3025-vertex reconstruction is resampling, not a finer LiDAR acquisition.
+
+See the [report](atlas/tryfan-lidar-reconnaissance.md) and
+[metadata inventory](atlas/tryfan-lidar-reconnaissance.json) for every record,
+footprint, URL, query/evidence hash, CRS handling and uncertainty. JSON and coverage
+consistency, documentation links, whitespace and bounded diff/privacy checks were
+validated. This metadata-only task changes no application, renderer, historical
+Lab identity or canonical terrain. Retain the current source; any future historic
+comparison must first establish valid-data masks. No new numbered phase, Lab or
+Atlas/world-model implementation is introduced.

@@ -1,0 +1,1386 @@
+{
+  "schema_version": 1,
+  "reconnaissance_date": "2026-10-01",
+  "repository_base_commit": "009b5d6c7d8e69483ab112bf961e72a96d5e7325",
+  "scope": "All spatially intersecting records in the published NRW historic tile catalogue, corroborated against its original WFS layer and NRW-linked ArcGIS catalogue; comparison with canonical national 1 m data. Not a claim about unpublished surveys or a raster-validity inventory.",
+  "status": "complete_catalogue_inventory_with_explicit_valid_data_limits",
+  "canonical_aoi": {
+    "catalogue": "docs/atlas/tryfan-data-catalog.json",
+    "catalogue_id": "atlas.tryfan.promoted-data-v1",
+    "catalogue_sha256": "c7e949116631f7e17fc46037bb1011be120fc3352af15ad9fab613cab390b1a1",
+    "source_manifest": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/welsh-lidar-1m/metadata/manifest.json",
+    "crs": "EPSG:27700",
+    "axis_order": "easting,northing",
+    "bounds_bng": [
+      264900,
+      357800,
+      267900,
+      360800
+    ],
+    "width_m": 3000,
+    "height_m": 3000,
+    "area_m2": 9000000,
+    "os_grid_corners": {
+      "south_west": "SH6490057800",
+      "north_east": "SH6790060800"
+    },
+    "os_10km_squares": [
+      "SH65",
+      "SH66"
+    ],
+    "source_raster_dimensions": [
+      3000,
+      3000
+    ],
+    "source_native_resolution_m": 1,
+    "reconstruction": {
+      "lab_009_identity": "14f90941468166dc3937879e022e8fedff2d9d212eed5cfb1c5deb0407c6a859",
+      "vertex_dimensions": [
+        3025,
+        3025
+      ],
+      "vertex_spacing_m": 0.9920634920634921,
+      "vertex_domain_bounds_bng": [
+        264900,
+        357800,
+        267900,
+        360800
+      ],
+      "raster_half_cell_padded_bounds_bng": [
+        264899.50396825396,
+        357799.50396825396,
+        267900.49603174604,
+        360800.49603174604
+      ],
+      "note": "Reconstruction spacing is resampling, not a finer LiDAR acquisition. Padded-extent WFS hits also returned the same count of eight; primary coverage uses the canonical vertex/reference domain."
+    }
+  },
+  "authority": {
+    "endpoint": "https://datamap.gov.wales/geoserver/ows",
+    "historic_type_name": "geonode:nrw_lidar_tile_catalogue_archive",
+    "original_historic_type_name": "inspire-nrw:NRW_LIDAR_ARCHIVE_TILE_CATALOGUE",
+    "metadata_urls": [
+      "https://datamap.gov.wales/layers/geonode:nrw_lidar_tile_catalogue_archive/metadata_detail",
+      "https://datamap.gov.wales/layers/inspire-nrw:NRW_LIDAR_ARCHIVE_TILE_CATALOGUE/metadata_detail"
+    ],
+    "capabilities_url": "https://datamap.gov.wales/capabilities/layer/6988/?ows_service=wfs",
+    "arcgis_application_url": "https://nrw.maps.arcgis.com/apps/webappviewer/index.html?id=3f8007ca0b8847948ca47de0a27319e2",
+    "arcgis_service_url": "https://services.arcgis.com/hQoYDJEEJMaPw8Sy/arcgis/rest/services/NRW_Historic_LiDAR_Tile_Catalogue/FeatureServer/0",
+    "arcgis_request_parameters": {
+      "geometry": "264900,357800,267900,360800",
+      "geometryType": "esriGeometryEnvelope",
+      "inSR": 27700,
+      "outSR": 27700,
+      "spatialRel": "esriSpatialRelIntersects",
+      "outFields": "*",
+      "returnGeometry": true,
+      "resultRecordCount": 100,
+      "f": "json",
+      "where": "1=1"
+    },
+    "arcgis_result_count": 8,
+    "arcgis_native_crs": "EPSG:3857",
+    "arcgis_query_crs": "EPSG:27700",
+    "crs_handling": "Primary WFS geometries and canonical AOI are both EPSG:27700; no coordinate transformation is required. ArcGIS corroboration explicitly declares inSR/outSR 27700 and the server returns wkid 27700; its native 3857 geometry is not used for coverage calculations.",
+    "licence": {
+      "name": "Open Government Licence for Public Sector Information",
+      "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "attribution": "Contains Natural Resources Wales information © Natural Resources Wales and Database Right. All rights Reserved."
+    },
+    "resolution_units_evidence": "NRW-linked ArcGIS popup labels RESOLUTION as Resolution (m); historic metadata describes DTM/DSM raster resolutions. All eight returned values are 1. No sub-metre candidate requires raster-header verification."
+  },
+  "queries": [
+    {
+      "name": "historic",
+      "url": "https://datamap.gov.wales/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=geonode%3Anrw_lidar_tile_catalogue_archive&outputFormat=application%2Fjson&srsName=EPSG%3A27700&bbox=264900%2C357800%2C267900%2C360800%2CEPSG%3A27700&maxFeatures=100",
+      "status": 200,
+      "sha256": "ec3cf4b01d83faef34007ab896292778875a8aba600a3f522d38539d4848aa3b",
+      "bytes": 4921
+    },
+    {
+      "name": "hits",
+      "url": "https://datamap.gov.wales/geoserver/ows?service=WFS&version=2.0.0&request=GetFeature&typeNames=geonode%3Anrw_lidar_tile_catalogue_archive&resultType=hits&srsName=EPSG%3A27700&bbox=264900%2C357800%2C267900%2C360800%2CEPSG%3A27700",
+      "status": 200,
+      "sha256": "4d890ce5b4b276a3146fd711c269c19fe6cd32c9f85077f7df105e197757fff9",
+      "bytes": 824
+    },
+    {
+      "name": "describe",
+      "url": "https://datamap.gov.wales/geoserver/ows?service=WFS&version=2.0.0&request=DescribeFeatureType&typeNames=geonode%3Anrw_lidar_tile_catalogue_archive",
+      "status": 200,
+      "sha256": "45a6867605b8f23511f0d7ae1bc505eb21c0f51f7b1e2b17e0425428036e6d31",
+      "bytes": 1879
+    },
+    {
+      "name": "national",
+      "url": "https://datamap.gov.wales/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=geonode%3Awelsh_government_lidar_tile_catalogue_2020_2023&outputFormat=application%2Fjson&srsName=EPSG%3A27700&bbox=264900%2C357800%2C267900%2C360800%2CEPSG%3A27700&maxFeatures=100",
+      "status": 200,
+      "bytes": 10933,
+      "sha256": "ac5389574295f32993ee73a518f8a5f3dbf7fad5d07869aaa09074d54e3e236e"
+    },
+    {
+      "name": "fine-hits",
+      "url": "https://datamap.gov.wales/geoserver/ows?service=WFS&version=2.0.0&request=GetFeature&typeNames=geonode%3Anrw_lidar_tile_catalogue_archive&resultType=hits&srsName=EPSG%3A27700&cql_filter=BBOX%28geom%2C264900%2C357800%2C267900%2C360800%2C%27EPSG%3A27700%27%29+AND+resolution+%3C+1",
+      "bytes": 882,
+      "sha256": "7ff98261f54d73476bd779ebfa41e025a09a03cd60bbd61dcbfc6e12c200b77b"
+    },
+    {
+      "name": "original-historic",
+      "url": "https://datamap.gov.wales/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=inspire-nrw%3ANRW_LIDAR_ARCHIVE_TILE_CATALOGUE&outputFormat=application%2Fjson&srsName=EPSG%3A27700&bbox=264900%2C357800%2C267900%2C360800%2CEPSG%3A27700&maxFeatures=100",
+      "bytes": 6131,
+      "sha256": "701ecab530c2425013dcafab8b8f5e548f970c6a5924f03437a76294b8a1776b",
+      "number_matched": 8,
+      "number_returned": 8
+    }
+  ],
+  "response_timestamp_utc": "2026-10-01T15:24:59.246Z",
+  "counts": {
+    "current_wfs_matched": 8,
+    "current_wfs_returned": 8,
+    "original_wfs_matched": 8,
+    "original_wfs_returned": 8,
+    "independent_wfs_hits": 8,
+    "submetre_spatial_filter_hits": 0
+  },
+  "coverage_method": {
+    "type": "union_of_catalogue_tile_rectangles_clipped_to_canonical_aoi",
+    "normalisation_tolerance_m": 0.001,
+    "normalisation": "Each raw polygon must be a single closed four-corner rectangle within 1 mm of its nominal integer-metre OS bounds. Raw coordinates are retained. Maximum observed deviation is below 0.00014 m. A scanline rectangle union prevents double counting.",
+    "grouping": "Original POLYGON_ID plus acquisition interval and resolution identify survey groups; LIDAR_NAME identifies individual tile records. All records within each returned POLYGON_ID share dates/resolution.",
+    "coverage_warning": "Tile footprints locate archive entries, not the spatial arrangement of measured/valid cells. PERCENT_CO is labelled Percent Coverage in the NRW web map and is retained as a whole-tile percentage; it must not be applied directly to the AOI intersection. No historical raster mask or actual swath polygon was retrieved.",
+    "conditional_upper_bound_assumption": "If PERCENT_CO measures valid coverage of the nominal 4,000,000 m² tile, each tile can contribute at most min(AOI intersection area, tile area × PERCENT_CO/100). Sum these maxima for each survey; these are bounds, not measured AOI percentages. Rounded source percentages limit precision."
+  },
+  "intersecting_historic_records": [
+    {
+      "record_id": "nrw_lidar_tile_catalogue_archive.6967",
+      "lidar_name": "D0074612",
+      "survey_polygon_id": "P_5024",
+      "tile_identifier": "SH6458",
+      "archive_10km_group": "SH65",
+      "acquisition_label": "Feb - April 2007",
+      "acquisition_start": "2007-02-07",
+      "acquisition_end": "2007-04-02",
+      "resolution_m": 1,
+      "dtm_available_in_catalogue": true,
+      "dsm_available_in_catalogue": true,
+      "dtm_url": "https://lle.blob.core.windows.net/lidar/1m_res_SH65_2007_dtm.zip",
+      "dsm_url": "https://lle.blob.core.windows.net/lidar/1m_res_SH65_2007_dsm.zip",
+      "source_crs": "EPSG:27700",
+      "catalogue_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              263999.99999987,
+              357999.99999951
+            ],
+            [
+              263999.99999987,
+              359999.99999951
+            ],
+            [
+              265999.99999988,
+              359999.99999953
+            ],
+            [
+              265999.99999988,
+              357999.99999953
+            ],
+            [
+              263999.99999987,
+              357999.99999951
+            ]
+          ]
+        ]
+      },
+      "nominal_tile_bounds_bng": [
+        264000,
+        358000,
+        266000,
+        360000
+      ],
+      "maximum_coordinate_normalisation_m": 4.899920895695686e-07,
+      "aoi_intersection_bounds_bng": [
+        264900,
+        358000,
+        266000,
+        360000
+      ],
+      "catalogue_intersection_area_m2": 2200000,
+      "catalogue_aoi_coverage_percent": 24.444444,
+      "actual_valid_data_aoi_coverage_percent": null,
+      "reported_whole_tile_coverage_percent": 40.6,
+      "current_catalogue_properties": {
+        "lidar_name": "D0074612    ",
+        "gb_ng": "SH6458  ",
+        "date_flown": "Feb---April-2007",
+        "resolution": 1,
+        "dsm_url": "lle.blob.core.windows.net/lidar/1m_res_SH65_2007_dsm.zip",
+        "dtm_url": "lle.blob.core.windows.net/lidar/1m_res_SH65_2007_dtm.zip",
+        "_10k": "SH65 ",
+        "year": "2007",
+        "id": 6967
+      },
+      "original_catalogue_properties": {
+        "LIDAR_NAME": "D0074612    ",
+        "TILENAME": "SH6458  ",
+        "DATE_FLOWN": "Feb - April 2007",
+        "PERCENT_CO": 40.6,
+        "RESOLUTION": 1,
+        "POLYGON_ID": "P_5024                        ",
+        "SDFLOWN": "20070207",
+        "EDFLOWN": "20070402",
+        "DSM_URL": "https://lle.blob.core.windows.net/lidar/1m_res_SH65_2007_dsm.zip",
+        "DTM_URL": "https://lle.blob.core.windows.net/lidar/1m_res_SH65_2007_dtm.zip",
+        "_YEAR": 2007,
+        "_10K": "SH65 "
+      }
+    },
+    {
+      "record_id": "nrw_lidar_tile_catalogue_archive.6973",
+      "lidar_name": "D0074618",
+      "survey_polygon_id": "P_5024",
+      "tile_identifier": "SH6460",
+      "archive_10km_group": "SH66",
+      "acquisition_label": "Feb - April 2007",
+      "acquisition_start": "2007-02-07",
+      "acquisition_end": "2007-04-02",
+      "resolution_m": 1,
+      "dtm_available_in_catalogue": true,
+      "dsm_available_in_catalogue": true,
+      "dtm_url": "https://lle.blob.core.windows.net/lidar/1m_res_SH66_2007_dtm.zip",
+      "dsm_url": "https://lle.blob.core.windows.net/lidar/1m_res_SH66_2007_dsm.zip",
+      "source_crs": "EPSG:27700",
+      "catalogue_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              263999.99999987,
+              359999.99999951
+            ],
+            [
+              263999.99999987,
+              361999.99999951
+            ],
+            [
+              265999.99999988,
+              361999.99999953
+            ],
+            [
+              265999.99999988,
+              359999.99999953
+            ],
+            [
+              263999.99999987,
+              359999.99999951
+            ]
+          ]
+        ]
+      },
+      "nominal_tile_bounds_bng": [
+        264000,
+        360000,
+        266000,
+        362000
+      ],
+      "maximum_coordinate_normalisation_m": 4.899920895695686e-07,
+      "aoi_intersection_bounds_bng": [
+        264900,
+        360000,
+        266000,
+        360800
+      ],
+      "catalogue_intersection_area_m2": 880000,
+      "catalogue_aoi_coverage_percent": 9.777778,
+      "actual_valid_data_aoi_coverage_percent": null,
+      "reported_whole_tile_coverage_percent": 80.05,
+      "current_catalogue_properties": {
+        "lidar_name": "D0074618    ",
+        "gb_ng": "SH6460  ",
+        "date_flown": "Feb---April-2007",
+        "resolution": 1,
+        "dsm_url": "lle.blob.core.windows.net/lidar/1m_res_SH66_2007_dsm.zip",
+        "dtm_url": "lle.blob.core.windows.net/lidar/1m_res_SH66_2007_dtm.zip",
+        "_10k": "SH66 ",
+        "year": "2007",
+        "id": 6973
+      },
+      "original_catalogue_properties": {
+        "LIDAR_NAME": "D0074618    ",
+        "TILENAME": "SH6460  ",
+        "DATE_FLOWN": "Feb - April 2007",
+        "PERCENT_CO": 80.05,
+        "RESOLUTION": 1,
+        "POLYGON_ID": "P_5024                        ",
+        "SDFLOWN": "20070207",
+        "EDFLOWN": "20070402",
+        "DSM_URL": "https://lle.blob.core.windows.net/lidar/1m_res_SH66_2007_dsm.zip",
+        "DTM_URL": "https://lle.blob.core.windows.net/lidar/1m_res_SH66_2007_dtm.zip",
+        "_YEAR": 2007,
+        "_10K": "SH66 "
+      }
+    },
+    {
+      "record_id": "nrw_lidar_tile_catalogue_archive.6968",
+      "lidar_name": "D0074613",
+      "survey_polygon_id": "P_5024",
+      "tile_identifier": "SH6658",
+      "archive_10km_group": "SH65",
+      "acquisition_label": "Feb - April 2007",
+      "acquisition_start": "2007-02-07",
+      "acquisition_end": "2007-04-02",
+      "resolution_m": 1,
+      "dtm_available_in_catalogue": true,
+      "dsm_available_in_catalogue": true,
+      "dtm_url": "https://lle.blob.core.windows.net/lidar/1m_res_SH65_2007_dtm.zip",
+      "dsm_url": "https://lle.blob.core.windows.net/lidar/1m_res_SH65_2007_dsm.zip",
+      "source_crs": "EPSG:27700",
+      "catalogue_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              265999.99999988,
+              357999.99999953
+            ],
+            [
+              265999.99999988,
+              359999.99999953
+            ],
+            [
+              267999.99999989,
+              359999.99999956
+            ],
+            [
+              267999.99999989,
+              357999.99999956
+            ],
+            [
+              265999.99999988,
+              357999.99999953
+            ]
+          ]
+        ]
+      },
+      "nominal_tile_bounds_bng": [
+        266000,
+        358000,
+        268000,
+        360000
+      ],
+      "maximum_coordinate_normalisation_m": 4.700268618762493e-07,
+      "aoi_intersection_bounds_bng": [
+        266000,
+        358000,
+        267900,
+        360000
+      ],
+      "catalogue_intersection_area_m2": 3800000,
+      "catalogue_aoi_coverage_percent": 42.222222,
+      "actual_valid_data_aoi_coverage_percent": null,
+      "reported_whole_tile_coverage_percent": 30.7,
+      "current_catalogue_properties": {
+        "lidar_name": "D0074613    ",
+        "gb_ng": "SH6658  ",
+        "date_flown": "Feb---April-2007",
+        "resolution": 1,
+        "dsm_url": "lle.blob.core.windows.net/lidar/1m_res_SH65_2007_dsm.zip",
+        "dtm_url": "lle.blob.core.windows.net/lidar/1m_res_SH65_2007_dtm.zip",
+        "_10k": "SH65 ",
+        "year": "2007",
+        "id": 6968
+      },
+      "original_catalogue_properties": {
+        "LIDAR_NAME": "D0074613    ",
+        "TILENAME": "SH6658  ",
+        "DATE_FLOWN": "Feb - April 2007",
+        "PERCENT_CO": 30.7,
+        "RESOLUTION": 1,
+        "POLYGON_ID": "P_5024                        ",
+        "SDFLOWN": "20070207",
+        "EDFLOWN": "20070402",
+        "DSM_URL": "https://lle.blob.core.windows.net/lidar/1m_res_SH65_2007_dsm.zip",
+        "DTM_URL": "https://lle.blob.core.windows.net/lidar/1m_res_SH65_2007_dtm.zip",
+        "_YEAR": 2007,
+        "_10K": "SH65 "
+      }
+    },
+    {
+      "record_id": "nrw_lidar_tile_catalogue_archive.6974",
+      "lidar_name": "D0074619",
+      "survey_polygon_id": "P_5024",
+      "tile_identifier": "SH6660",
+      "archive_10km_group": "SH66",
+      "acquisition_label": "Feb - April 2007",
+      "acquisition_start": "2007-02-07",
+      "acquisition_end": "2007-04-02",
+      "resolution_m": 1,
+      "dtm_available_in_catalogue": true,
+      "dsm_available_in_catalogue": true,
+      "dtm_url": "https://lle.blob.core.windows.net/lidar/1m_res_SH66_2007_dtm.zip",
+      "dsm_url": "https://lle.blob.core.windows.net/lidar/1m_res_SH66_2007_dsm.zip",
+      "source_crs": "EPSG:27700",
+      "catalogue_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              265999.99999988,
+              359999.99999953
+            ],
+            [
+              265999.99999988,
+              361999.99999953
+            ],
+            [
+              267999.99999989,
+              361999.99999956
+            ],
+            [
+              267999.99999989,
+              359999.99999956
+            ],
+            [
+              265999.99999988,
+              359999.99999953
+            ]
+          ]
+        ]
+      },
+      "nominal_tile_bounds_bng": [
+        266000,
+        360000,
+        268000,
+        362000
+      ],
+      "maximum_coordinate_normalisation_m": 4.700268618762493e-07,
+      "aoi_intersection_bounds_bng": [
+        266000,
+        360000,
+        267900,
+        360800
+      ],
+      "catalogue_intersection_area_m2": 1520000,
+      "catalogue_aoi_coverage_percent": 16.888889,
+      "actual_valid_data_aoi_coverage_percent": null,
+      "reported_whole_tile_coverage_percent": 51.975,
+      "current_catalogue_properties": {
+        "lidar_name": "D0074619    ",
+        "gb_ng": "SH6660  ",
+        "date_flown": "Feb---April-2007",
+        "resolution": 1,
+        "dsm_url": "lle.blob.core.windows.net/lidar/1m_res_SH66_2007_dsm.zip",
+        "dtm_url": "lle.blob.core.windows.net/lidar/1m_res_SH66_2007_dtm.zip",
+        "_10k": "SH66 ",
+        "year": "2007",
+        "id": 6974
+      },
+      "original_catalogue_properties": {
+        "LIDAR_NAME": "D0074619    ",
+        "TILENAME": "SH6660  ",
+        "DATE_FLOWN": "Feb - April 2007",
+        "PERCENT_CO": 51.975,
+        "RESOLUTION": 1,
+        "POLYGON_ID": "P_5024                        ",
+        "SDFLOWN": "20070207",
+        "EDFLOWN": "20070402",
+        "DSM_URL": "https://lle.blob.core.windows.net/lidar/1m_res_SH66_2007_dsm.zip",
+        "DTM_URL": "https://lle.blob.core.windows.net/lidar/1m_res_SH66_2007_dtm.zip",
+        "_YEAR": 2007,
+        "_10K": "SH66 "
+      }
+    },
+    {
+      "record_id": "nrw_lidar_tile_catalogue_archive.9191",
+      "lidar_name": "D0115900",
+      "survey_polygon_id": "P_6405",
+      "tile_identifier": "SH6660",
+      "archive_10km_group": "SH66",
+      "acquisition_label": "18 Mar 2009",
+      "acquisition_start": "2009-03-18",
+      "acquisition_end": "2009-03-18",
+      "resolution_m": 1,
+      "dtm_available_in_catalogue": true,
+      "dsm_available_in_catalogue": true,
+      "dtm_url": "https://lle.blob.core.windows.net/lidar/1m_res_SH66_2009_dtm.zip",
+      "dsm_url": "https://lle.blob.core.windows.net/lidar/1m_res_SH66_2009_dsm.zip",
+      "source_crs": "EPSG:27700",
+      "catalogue_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              266000.00004019,
+              359999.99986123
+            ],
+            [
+              266000.00004019,
+              361999.99986063
+            ],
+            [
+              268000.00003959,
+              361999.99986065
+            ],
+            [
+              268000.00003959,
+              359999.99986125
+            ],
+            [
+              266000.00004019,
+              359999.99986123
+            ]
+          ]
+        ]
+      },
+      "nominal_tile_bounds_bng": [
+        266000,
+        360000,
+        268000,
+        362000
+      ],
+      "maximum_coordinate_normalisation_m": 0.000139369978569448,
+      "aoi_intersection_bounds_bng": [
+        266000,
+        360000,
+        267900,
+        360800
+      ],
+      "catalogue_intersection_area_m2": 1520000,
+      "catalogue_aoi_coverage_percent": 16.888889,
+      "actual_valid_data_aoi_coverage_percent": null,
+      "reported_whole_tile_coverage_percent": 3.56,
+      "current_catalogue_properties": {
+        "lidar_name": "D0115900    ",
+        "gb_ng": "SH6660  ",
+        "date_flown": "18-Mar-2009",
+        "resolution": 1,
+        "dsm_url": "lle.blob.core.windows.net/lidar/1m_res_SH66_2009_dsm.zip",
+        "dtm_url": "lle.blob.core.windows.net/lidar/1m_res_SH66_2009_dtm.zip",
+        "_10k": "SH66 ",
+        "year": "2009",
+        "id": 9191
+      },
+      "original_catalogue_properties": {
+        "LIDAR_NAME": "D0115900    ",
+        "TILENAME": "SH6660  ",
+        "DATE_FLOWN": "18 Mar 2009     ",
+        "PERCENT_CO": 3.56,
+        "RESOLUTION": 1,
+        "POLYGON_ID": "P_6405                        ",
+        "SDFLOWN": "20090318",
+        "EDFLOWN": "20090318",
+        "DSM_URL": "https://lle.blob.core.windows.net/lidar/1m_res_SH66_2009_dsm.zip",
+        "DTM_URL": "https://lle.blob.core.windows.net/lidar/1m_res_SH66_2009_dtm.zip",
+        "_YEAR": 2009,
+        "_10K": "SH66 "
+      }
+    },
+    {
+      "record_id": "nrw_lidar_tile_catalogue_archive.14111",
+      "lidar_name": "D0170995",
+      "survey_polygon_id": "P_9378",
+      "tile_identifier": "SH6456",
+      "archive_10km_group": "SH65",
+      "acquisition_label": "10 Mar 2014",
+      "acquisition_start": "2014-03-10",
+      "acquisition_end": "2014-03-10",
+      "resolution_m": 1,
+      "dtm_available_in_catalogue": true,
+      "dsm_available_in_catalogue": true,
+      "dtm_url": "https://lle.blob.core.windows.net/lidar/1m_res_SH65_2014_dtm.zip",
+      "dsm_url": "https://lle.blob.core.windows.net/lidar/1m_res_SH65_2014_dsm.zip",
+      "source_crs": "EPSG:27700",
+      "catalogue_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              263999.99999987,
+              355999.9999995
+            ],
+            [
+              263999.99999987,
+              357999.99999951
+            ],
+            [
+              265999.99999988,
+              357999.99999953
+            ],
+            [
+              265999.99999988,
+              355999.99999953
+            ],
+            [
+              263999.99999987,
+              355999.9999995
+            ]
+          ]
+        ]
+      },
+      "nominal_tile_bounds_bng": [
+        264000,
+        356000,
+        266000,
+        358000
+      ],
+      "maximum_coordinate_normalisation_m": 5.00003807246685e-07,
+      "aoi_intersection_bounds_bng": [
+        264900,
+        357800,
+        266000,
+        358000
+      ],
+      "catalogue_intersection_area_m2": 220000,
+      "catalogue_aoi_coverage_percent": 2.444444,
+      "actual_valid_data_aoi_coverage_percent": null,
+      "reported_whole_tile_coverage_percent": 41.77,
+      "current_catalogue_properties": {
+        "lidar_name": "D0170995    ",
+        "gb_ng": "SH6456  ",
+        "date_flown": "10-Mar-2014",
+        "resolution": 1,
+        "dsm_url": "lle.blob.core.windows.net/lidar/1m_res_SH65_2014_dsm.zip",
+        "dtm_url": "lle.blob.core.windows.net/lidar/1m_res_SH65_2014_dtm.zip",
+        "_10k": "SH65 ",
+        "year": "2014",
+        "id": 14111
+      },
+      "original_catalogue_properties": {
+        "LIDAR_NAME": "D0170995    ",
+        "TILENAME": "SH6456  ",
+        "DATE_FLOWN": "10 Mar 2014     ",
+        "PERCENT_CO": 41.77,
+        "RESOLUTION": 1,
+        "POLYGON_ID": "P_9378                        ",
+        "SDFLOWN": "20140310",
+        "EDFLOWN": "20140310",
+        "DSM_URL": "https://lle.blob.core.windows.net/lidar/1m_res_SH65_2014_dsm.zip",
+        "DTM_URL": "https://lle.blob.core.windows.net/lidar/1m_res_SH65_2014_dtm.zip",
+        "_YEAR": 2014,
+        "_10K": "SH65 "
+      }
+    },
+    {
+      "record_id": "nrw_lidar_tile_catalogue_archive.14113",
+      "lidar_name": "D0170997",
+      "survey_polygon_id": "P_9378",
+      "tile_identifier": "SH6656",
+      "archive_10km_group": "SH65",
+      "acquisition_label": "10 Mar 2014",
+      "acquisition_start": "2014-03-10",
+      "acquisition_end": "2014-03-10",
+      "resolution_m": 1,
+      "dtm_available_in_catalogue": true,
+      "dsm_available_in_catalogue": true,
+      "dtm_url": "https://lle.blob.core.windows.net/lidar/1m_res_SH65_2014_dtm.zip",
+      "dsm_url": "https://lle.blob.core.windows.net/lidar/1m_res_SH65_2014_dsm.zip",
+      "source_crs": "EPSG:27700",
+      "catalogue_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              265999.99999988,
+              355999.99999953
+            ],
+            [
+              265999.99999988,
+              357999.99999953
+            ],
+            [
+              267999.99999989,
+              357999.99999956
+            ],
+            [
+              267999.99999989,
+              355999.99999956
+            ],
+            [
+              265999.99999988,
+              355999.99999953
+            ]
+          ]
+        ]
+      },
+      "nominal_tile_bounds_bng": [
+        266000,
+        356000,
+        268000,
+        358000
+      ],
+      "maximum_coordinate_normalisation_m": 4.700268618762493e-07,
+      "aoi_intersection_bounds_bng": [
+        266000,
+        357800,
+        267900,
+        358000
+      ],
+      "catalogue_intersection_area_m2": 380000,
+      "catalogue_aoi_coverage_percent": 4.222222,
+      "actual_valid_data_aoi_coverage_percent": null,
+      "reported_whole_tile_coverage_percent": 65.61,
+      "current_catalogue_properties": {
+        "lidar_name": "D0170997    ",
+        "gb_ng": "SH6656  ",
+        "date_flown": "10-Mar-2014",
+        "resolution": 1,
+        "dsm_url": "lle.blob.core.windows.net/lidar/1m_res_SH65_2014_dsm.zip",
+        "dtm_url": "lle.blob.core.windows.net/lidar/1m_res_SH65_2014_dtm.zip",
+        "_10k": "SH65 ",
+        "year": "2014",
+        "id": 14113
+      },
+      "original_catalogue_properties": {
+        "LIDAR_NAME": "D0170997    ",
+        "TILENAME": "SH6656  ",
+        "DATE_FLOWN": "10 Mar 2014     ",
+        "PERCENT_CO": 65.61,
+        "RESOLUTION": 1,
+        "POLYGON_ID": "P_9378                        ",
+        "SDFLOWN": "20140310",
+        "EDFLOWN": "20140310",
+        "DSM_URL": "https://lle.blob.core.windows.net/lidar/1m_res_SH65_2014_dsm.zip",
+        "DTM_URL": "https://lle.blob.core.windows.net/lidar/1m_res_SH65_2014_dtm.zip",
+        "_YEAR": 2014,
+        "_10K": "SH65 "
+      }
+    },
+    {
+      "record_id": "nrw_lidar_tile_catalogue_archive.14114",
+      "lidar_name": "D0170998",
+      "survey_polygon_id": "P_9378",
+      "tile_identifier": "SH6660",
+      "archive_10km_group": "SH66",
+      "acquisition_label": "10 Mar 2014",
+      "acquisition_start": "2014-03-10",
+      "acquisition_end": "2014-03-10",
+      "resolution_m": 1,
+      "dtm_available_in_catalogue": true,
+      "dsm_available_in_catalogue": true,
+      "dtm_url": "https://lle.blob.core.windows.net/lidar/1m_res_SH66_2014_dtm.zip",
+      "dsm_url": "https://lle.blob.core.windows.net/lidar/1m_res_SH66_2014_dsm.zip",
+      "source_crs": "EPSG:27700",
+      "catalogue_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              265999.99999988,
+              359999.99999953
+            ],
+            [
+              265999.99999988,
+              361999.99999953
+            ],
+            [
+              267999.99999989,
+              361999.99999956
+            ],
+            [
+              267999.99999989,
+              359999.99999956
+            ],
+            [
+              265999.99999988,
+              359999.99999953
+            ]
+          ]
+        ]
+      },
+      "nominal_tile_bounds_bng": [
+        266000,
+        360000,
+        268000,
+        362000
+      ],
+      "maximum_coordinate_normalisation_m": 4.700268618762493e-07,
+      "aoi_intersection_bounds_bng": [
+        266000,
+        360000,
+        267900,
+        360800
+      ],
+      "catalogue_intersection_area_m2": 1520000,
+      "catalogue_aoi_coverage_percent": 16.888889,
+      "actual_valid_data_aoi_coverage_percent": null,
+      "reported_whole_tile_coverage_percent": 6.1,
+      "current_catalogue_properties": {
+        "lidar_name": "D0170998    ",
+        "gb_ng": "SH6660  ",
+        "date_flown": "10-Mar-2014",
+        "resolution": 1,
+        "dsm_url": "lle.blob.core.windows.net/lidar/1m_res_SH66_2014_dsm.zip",
+        "dtm_url": "lle.blob.core.windows.net/lidar/1m_res_SH66_2014_dtm.zip",
+        "_10k": "SH66 ",
+        "year": "2014",
+        "id": 14114
+      },
+      "original_catalogue_properties": {
+        "LIDAR_NAME": "D0170998    ",
+        "TILENAME": "SH6660  ",
+        "DATE_FLOWN": "10 Mar 2014     ",
+        "PERCENT_CO": 6.1,
+        "RESOLUTION": 1,
+        "POLYGON_ID": "P_9378                        ",
+        "SDFLOWN": "20140310",
+        "EDFLOWN": "20140310",
+        "DSM_URL": "https://lle.blob.core.windows.net/lidar/1m_res_SH66_2014_dsm.zip",
+        "DTM_URL": "https://lle.blob.core.windows.net/lidar/1m_res_SH66_2014_dtm.zip",
+        "_YEAR": 2014,
+        "_10K": "SH66 "
+      }
+    }
+  ],
+  "grouped_survey_coverage": [
+    {
+      "survey_polygon_id": "P_5024",
+      "acquisition_start": "2007-02-07",
+      "acquisition_end": "2007-04-02",
+      "acquisition_label": "Feb - April 2007",
+      "resolution_m": 1,
+      "record_ids": [
+        "nrw_lidar_tile_catalogue_archive.6967",
+        "nrw_lidar_tile_catalogue_archive.6973",
+        "nrw_lidar_tile_catalogue_archive.6968",
+        "nrw_lidar_tile_catalogue_archive.6974"
+      ],
+      "tile_identifiers": [
+        "SH6458",
+        "SH6460",
+        "SH6658",
+        "SH6660"
+      ],
+      "dtm_urls": [
+        "https://lle.blob.core.windows.net/lidar/1m_res_SH65_2007_dtm.zip",
+        "https://lle.blob.core.windows.net/lidar/1m_res_SH66_2007_dtm.zip"
+      ],
+      "dsm_urls": [
+        "https://lle.blob.core.windows.net/lidar/1m_res_SH65_2007_dsm.zip",
+        "https://lle.blob.core.windows.net/lidar/1m_res_SH66_2007_dsm.zip"
+      ],
+      "catalogue_intersection_area_m2": 8400000,
+      "catalogue_aoi_coverage_percent": 93.333333,
+      "catalogue_extent_status": "partial",
+      "actual_valid_data_aoi_coverage_percent": null,
+      "conditional_actual_coverage_upper_bound_percent": 58.355556
+    },
+    {
+      "survey_polygon_id": "P_6405",
+      "acquisition_start": "2009-03-18",
+      "acquisition_end": "2009-03-18",
+      "acquisition_label": "18 Mar 2009",
+      "resolution_m": 1,
+      "record_ids": [
+        "nrw_lidar_tile_catalogue_archive.9191"
+      ],
+      "tile_identifiers": [
+        "SH6660"
+      ],
+      "dtm_urls": [
+        "https://lle.blob.core.windows.net/lidar/1m_res_SH66_2009_dtm.zip"
+      ],
+      "dsm_urls": [
+        "https://lle.blob.core.windows.net/lidar/1m_res_SH66_2009_dsm.zip"
+      ],
+      "catalogue_intersection_area_m2": 1520000,
+      "catalogue_aoi_coverage_percent": 16.888889,
+      "catalogue_extent_status": "partial",
+      "actual_valid_data_aoi_coverage_percent": null,
+      "conditional_actual_coverage_upper_bound_percent": 1.582222
+    },
+    {
+      "survey_polygon_id": "P_9378",
+      "acquisition_start": "2014-03-10",
+      "acquisition_end": "2014-03-10",
+      "acquisition_label": "10 Mar 2014",
+      "resolution_m": 1,
+      "record_ids": [
+        "nrw_lidar_tile_catalogue_archive.14111",
+        "nrw_lidar_tile_catalogue_archive.14113",
+        "nrw_lidar_tile_catalogue_archive.14114"
+      ],
+      "tile_identifiers": [
+        "SH6456",
+        "SH6656",
+        "SH6660"
+      ],
+      "dtm_urls": [
+        "https://lle.blob.core.windows.net/lidar/1m_res_SH65_2014_dtm.zip",
+        "https://lle.blob.core.windows.net/lidar/1m_res_SH66_2014_dtm.zip"
+      ],
+      "dsm_urls": [
+        "https://lle.blob.core.windows.net/lidar/1m_res_SH65_2014_dsm.zip",
+        "https://lle.blob.core.windows.net/lidar/1m_res_SH66_2014_dsm.zip"
+      ],
+      "catalogue_intersection_area_m2": 2120000,
+      "catalogue_aoi_coverage_percent": 23.555556,
+      "catalogue_extent_status": "partial",
+      "actual_valid_data_aoi_coverage_percent": null,
+      "conditional_actual_coverage_upper_bound_percent": 9.377778
+    }
+  ],
+  "combined_historic_tile_union": {
+    "area_m2": 9000000,
+    "percent": 100,
+    "actual_valid_data_coverage_percent": null,
+    "warning": "100% is the union of tile rectangles across different surveys, not proof of continuous LiDAR coverage."
+  },
+  "resolution_findings": {
+    "0.25": {
+      "units": "m",
+      "record_count": 0,
+      "catalogued_overlap": false,
+      "finer_full_or_partial_coverage": "none catalogued"
+    },
+    "0.5": {
+      "units": "m",
+      "record_count": 0,
+      "catalogued_overlap": false,
+      "finer_full_or_partial_coverage": "none catalogued"
+    },
+    "1": {
+      "units": "m",
+      "record_count": 8,
+      "catalogued_overlap": true,
+      "finer_full_or_partial_coverage": null
+    },
+    "2": {
+      "units": "m",
+      "record_count": 0,
+      "catalogued_overlap": false,
+      "finer_full_or_partial_coverage": null
+    }
+  },
+  "download_verification": {
+    "checked_at_utc": "2026-10-01T15:34:56.058995+00:00",
+    "method": "HEAD only; no ZIP or raster payload downloaded",
+    "historic_distinct_archives": 10,
+    "all_historic_archive_headers_http_200": true,
+    "url_checks": [
+      {
+        "url": "https://lle.blob.core.windows.net/lidar/1m_res_SH65_2007_dsm.zip",
+        "method": "HEAD",
+        "status": 200,
+        "final_url": "https://lle.blob.core.windows.net/lidar/1m_res_SH65_2007_dsm.zip",
+        "content_length": "28183585",
+        "content_type": "application/zip",
+        "last_modified": "Mon, 23 May 2016 16:02:21 GMT",
+        "etag": "0x8D383239FB06709"
+      },
+      {
+        "url": "https://lle.blob.core.windows.net/lidar/1m_res_SH65_2007_dtm.zip",
+        "method": "HEAD",
+        "status": 200,
+        "final_url": "https://lle.blob.core.windows.net/lidar/1m_res_SH65_2007_dtm.zip",
+        "content_length": "32994247",
+        "content_type": "application/zip",
+        "last_modified": "Mon, 23 May 2016 16:02:26 GMT",
+        "etag": "0x8D38323A27C9589"
+      },
+      {
+        "url": "https://lle.blob.core.windows.net/lidar/1m_res_SH65_2014_dsm.zip",
+        "method": "HEAD",
+        "status": 200,
+        "final_url": "https://lle.blob.core.windows.net/lidar/1m_res_SH65_2014_dsm.zip",
+        "content_length": "113162134",
+        "content_type": "application/zip",
+        "last_modified": "Mon, 23 May 2016 16:02:39 GMT",
+        "etag": "0x8D38323AA49704A"
+      },
+      {
+        "url": "https://lle.blob.core.windows.net/lidar/1m_res_SH65_2014_dtm.zip",
+        "method": "HEAD",
+        "status": 200,
+        "final_url": "https://lle.blob.core.windows.net/lidar/1m_res_SH65_2014_dtm.zip",
+        "content_length": "114436212",
+        "content_type": "application/zip",
+        "last_modified": "Mon, 23 May 2016 16:02:54 GMT",
+        "etag": "0x8D38323B31F85ED"
+      },
+      {
+        "url": "https://lle.blob.core.windows.net/lidar/1m_res_SH66_2007_dsm.zip",
+        "method": "HEAD",
+        "status": 200,
+        "final_url": "https://lle.blob.core.windows.net/lidar/1m_res_SH66_2007_dsm.zip",
+        "content_length": "82285257",
+        "content_type": "application/zip",
+        "last_modified": "Mon, 23 May 2016 16:03:03 GMT",
+        "etag": "0x8D38323B8EB77C7"
+      },
+      {
+        "url": "https://lle.blob.core.windows.net/lidar/1m_res_SH66_2007_dtm.zip",
+        "method": "HEAD",
+        "status": 200,
+        "final_url": "https://lle.blob.core.windows.net/lidar/1m_res_SH66_2007_dtm.zip",
+        "content_length": "81654383",
+        "content_type": "application/zip",
+        "last_modified": "Mon, 23 May 2016 16:03:14 GMT",
+        "etag": "0x8D38323BF7FEFEC"
+      },
+      {
+        "url": "https://lle.blob.core.windows.net/lidar/1m_res_SH66_2009_dsm.zip",
+        "method": "HEAD",
+        "status": 200,
+        "final_url": "https://lle.blob.core.windows.net/lidar/1m_res_SH66_2009_dsm.zip",
+        "content_length": "16698988",
+        "content_type": "application/zip",
+        "last_modified": "Mon, 23 May 2016 16:03:15 GMT",
+        "etag": "0x8D38323C005027B"
+      },
+      {
+        "url": "https://lle.blob.core.windows.net/lidar/1m_res_SH66_2009_dtm.zip",
+        "method": "HEAD",
+        "status": 200,
+        "final_url": "https://lle.blob.core.windows.net/lidar/1m_res_SH66_2009_dtm.zip",
+        "content_length": "17127073",
+        "content_type": "application/zip",
+        "last_modified": "Mon, 23 May 2016 16:03:18 GMT",
+        "etag": "0x8D38323C1616900"
+      },
+      {
+        "url": "https://lle.blob.core.windows.net/lidar/1m_res_SH66_2014_dsm.zip",
+        "method": "HEAD",
+        "status": 200,
+        "final_url": "https://lle.blob.core.windows.net/lidar/1m_res_SH66_2014_dsm.zip",
+        "content_length": "4390362",
+        "content_type": "application/zip",
+        "last_modified": "Mon, 23 May 2016 16:03:26 GMT",
+        "etag": "0x8D38323C6503A6A"
+      },
+      {
+        "url": "https://lle.blob.core.windows.net/lidar/1m_res_SH66_2014_dtm.zip",
+        "method": "HEAD",
+        "status": 200,
+        "final_url": "https://lle.blob.core.windows.net/lidar/1m_res_SH66_2014_dtm.zip",
+        "content_length": "4423283",
+        "content_type": "application/zip",
+        "last_modified": "Mon, 23 May 2016 16:03:27 GMT",
+        "etag": "0x8D38323C6D54D14"
+      },
+      {
+        "url": "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dtm_32bit_cog.tif",
+        "method": "HEAD",
+        "status": 200,
+        "final_url": "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dtm_32bit_cog.tif",
+        "content_length": "48611310928",
+        "content_type": "image/tiff",
+        "last_modified": "Fri, 04 Oct 2024 15:24:32 GMT",
+        "etag": "0x8DCE488A5BF1B2C"
+      },
+      {
+        "url": "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif",
+        "method": "HEAD",
+        "status": 200,
+        "final_url": "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif",
+        "content_length": "52096926263",
+        "content_type": "image/tiff",
+        "last_modified": "Fri, 04 Oct 2024 15:13:46 GMT",
+        "etag": "0x8DCE487247CC208"
+      }
+    ]
+  },
+  "current_canonical_source": {
+    "dataset": "Welsh Government national LiDAR 2020–2023; delivery 11",
+    "acquisition_date": "2021-03-02",
+    "native_resolution_m": 1,
+    "aoi_coverage_percent": 100,
+    "coverage_evidence": "Canonical retained raster manifest: 9,000,000 valid cells and zero nodata cells for each 3000×3000 DTM/DSM; live national catalogue agrees on date and full tile union. Raster payloads were not re-read.",
+    "dtm_url": "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dtm_32bit_cog.tif",
+    "dsm_url": "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif",
+    "manifest": "${MERIDIAN_DATA_ROOT}/sources/atlas/tryfan/welsh-lidar-1m/metadata/manifest.json",
+    "manifest_sha256": "e1a49022a9ddf29f29eba8b6ef8f4c030e46f80f9b5a1bb529925e8b7248f64a",
+    "raster_metadata": {
+      "dtm": {
+        "path": "tryfan-004-dtm-1m.tif",
+        "bytes": 15639072,
+        "driver": "GTiff",
+        "width": 3000,
+        "height": 3000,
+        "crs": "EPSG:27700",
+        "pixel_size_m": [
+          1.0,
+          1.0
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "valid_cells": 9000000,
+        "nodata_cells": 0,
+        "minimum_m": 286.489990234375,
+        "maximum_m": 992.469970703125,
+        "mean_m": 567.3524780273438
+      },
+      "dsm": {
+        "path": "tryfan-004-dsm-1m.tif",
+        "bytes": 16003194,
+        "driver": "GTiff",
+        "width": 3000,
+        "height": 3000,
+        "crs": "EPSG:27700",
+        "pixel_size_m": [
+          1.0,
+          1.0
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "valid_cells": 9000000,
+        "nodata_cells": 0,
+        "minimum_m": 288.8399963378906,
+        "maximum_m": 994.4199829101562,
+        "mean_m": 567.6539916992188
+      }
+    },
+    "live_national_catalogue_tiles": [
+      {
+        "tile_identifier": "SH6457",
+        "acquisition_date": "2021-03-02",
+        "delivery": "11",
+        "bounds_bng": [
+          264000,
+          357000,
+          265000,
+          358000
+        ],
+        "dtm_url": "https://dmwproductionblob.blob.core.windows.net/lidar-zips/2020-22/dtm/wg_del_11_264357_20210302dtm.tif",
+        "dsm_url": "https://dmwproductionblob.blob.core.windows.net/lidar-zips/2020-22/dsm/wg_del_11_264357_20210302dsm.tif"
+      },
+      {
+        "tile_identifier": "SH6458",
+        "acquisition_date": "2021-03-02",
+        "delivery": "11",
+        "bounds_bng": [
+          264000,
+          358000,
+          265000,
+          359000
+        ],
+        "dtm_url": "https://dmwproductionblob.blob.core.windows.net/lidar-zips/2020-22/dtm/wg_del_11_264358_20210302dtm.tif",
+        "dsm_url": "https://dmwproductionblob.blob.core.windows.net/lidar-zips/2020-22/dsm/wg_del_11_264358_20210302dsm.tif"
+      },
+      {
+        "tile_identifier": "SH6459",
+        "acquisition_date": "2021-03-02",
+        "delivery": "11",
+        "bounds_bng": [
+          264000,
+          359000,
+          265000,
+          360000
+        ],
+        "dtm_url": "https://dmwproductionblob.blob.core.windows.net/lidar-zips/2020-22/dtm/wg_del_11_264359_20210302dtm.tif",
+        "dsm_url": "https://dmwproductionblob.blob.core.windows.net/lidar-zips/2020-22/dsm/wg_del_11_264359_20210302dsm.tif"
+      },
+      {
+        "tile_identifier": "SH6460",
+        "acquisition_date": "2021-03-02",
+        "delivery": "11",
+        "bounds_bng": [
+          264000,
+          360000,
+          265000,
+          361000
+        ],
+        "dtm_url": "https://dmwproductionblob.blob.core.windows.net/lidar-zips/2020-22/dtm/wg_del_11_264360_20210302dtm.tif",
+        "dsm_url": "https://dmwproductionblob.blob.core.windows.net/lidar-zips/2020-22/dsm/wg_del_11_264360_20210302dsm.tif"
+      },
+      {
+        "tile_identifier": "SH6557",
+        "acquisition_date": "2021-03-02",
+        "delivery": "11",
+        "bounds_bng": [
+          265000,
+          357000,
+          266000,
+          358000
+        ],
+        "dtm_url": "https://dmwproductionblob.blob.core.windows.net/lidar-zips/2020-22/dtm/wg_del_11_265357_20210302dtm.tif",
+        "dsm_url": "https://dmwproductionblob.blob.core.windows.net/lidar-zips/2020-22/dsm/wg_del_11_265357_20210302dsm.tif"
+      },
+      {
+        "tile_identifier": "SH6558",
+        "acquisition_date": "2021-03-02",
+        "delivery": "11",
+        "bounds_bng": [
+          265000,
+          358000,
+          266000,
+          359000
+        ],
+        "dtm_url": "https://dmwproductionblob.blob.core.windows.net/lidar-zips/2020-22/dtm/wg_del_11_265358_20210302dtm.tif",
+        "dsm_url": "https://dmwproductionblob.blob.core.windows.net/lidar-zips/2020-22/dsm/wg_del_11_265358_20210302dsm.tif"
+      },
+      {
+        "tile_identifier": "SH6559",
+        "acquisition_date": "2021-03-02",
+        "delivery": "11",
+        "bounds_bng": [
+          265000,
+          359000,
+          266000,
+          360000
+        ],
+        "dtm_url": "https://dmwproductionblob.blob.core.windows.net/lidar-zips/2020-22/dtm/wg_del_11_265359_20210302dtm.tif",
+        "dsm_url": "https://dmwproductionblob.blob.core.windows.net/lidar-zips/2020-22/dsm/wg_del_11_265359_20210302dsm.tif"
+      },
+      {
+        "tile_identifier": "SH6560",
+        "acquisition_date": "2021-03-02",
+        "delivery": "11",
+        "bounds_bng": [
+          265000,
+          360000,
+          266000,
+          361000
+        ],
+        "dtm_url": "https://dmwproductionblob.blob.core.windows.net/lidar-zips/2020-22/dtm/wg_del_11_265360_20210302dtm.tif",
+        "dsm_url": "https://dmwproductionblob.blob.core.windows.net/lidar-zips/2020-22/dsm/wg_del_11_265360_20210302dsm.tif"
+      },
+      {
+        "tile_identifier": "SH6657",
+        "acquisition_date": "2021-03-02",
+        "delivery": "11",
+        "bounds_bng": [
+          266000,
+          357000,
+          267000,
+          358000
+        ],
+        "dtm_url": "https://dmwproductionblob.blob.core.windows.net/lidar-zips/2020-22/dtm/wg_del_11_266357_20210302dtm.tif",
+        "dsm_url": "https://dmwproductionblob.blob.core.windows.net/lidar-zips/2020-22/dsm/wg_del_11_266357_20210302dsm.tif"
+      },
+      {
+        "tile_identifier": "SH6658",
+        "acquisition_date": "2021-03-02",
+        "delivery": "11",
+        "bounds_bng": [
+          266000,
+          358000,
+          267000,
+          359000
+        ],
+        "dtm_url": "https://dmwproductionblob.blob.core.windows.net/lidar-zips/2020-22/dtm/wg_del_11_266358_20210302dtm.tif",
+        "dsm_url": "https://dmwproductionblob.blob.core.windows.net/lidar-zips/2020-22/dsm/wg_del_11_266358_20210302dsm.tif"
+      },
+      {
+        "tile_identifier": "SH6659",
+        "acquisition_date": "2021-03-02",
+        "delivery": "11",
+        "bounds_bng": [
+          266000,
+          359000,
+          267000,
+          360000
+        ],
+        "dtm_url": "https://dmwproductionblob.blob.core.windows.net/lidar-zips/2020-22/dtm/wg_del_11_266359_20210302dtm.tif",
+        "dsm_url": "https://dmwproductionblob.blob.core.windows.net/lidar-zips/2020-22/dsm/wg_del_11_266359_20210302dsm.tif"
+      },
+      {
+        "tile_identifier": "SH6660",
+        "acquisition_date": "2021-03-02",
+        "delivery": "11",
+        "bounds_bng": [
+          266000,
+          360000,
+          267000,
+          361000
+        ],
+        "dtm_url": "https://dmwproductionblob.blob.core.windows.net/lidar-zips/2020-22/dtm/wg_del_11_266360_20210302dtm.tif",
+        "dsm_url": "https://dmwproductionblob.blob.core.windows.net/lidar-zips/2020-22/dsm/wg_del_11_266360_20210302dsm.tif"
+      },
+      {
+        "tile_identifier": "SH6757",
+        "acquisition_date": "2021-03-02",
+        "delivery": "11",
+        "bounds_bng": [
+          267000,
+          357000,
+          268000,
+          358000
+        ],
+        "dtm_url": "https://dmwproductionblob.blob.core.windows.net/lidar-zips/2020-22/dtm/wg_del_11_267357_20210302dtm.tif",
+        "dsm_url": "https://dmwproductionblob.blob.core.windows.net/lidar-zips/2020-22/dsm/wg_del_11_267357_20210302dsm.tif"
+      },
+      {
+        "tile_identifier": "SH6758",
+        "acquisition_date": "2021-03-02",
+        "delivery": "11",
+        "bounds_bng": [
+          267000,
+          358000,
+          268000,
+          359000
+        ],
+        "dtm_url": "https://dmwproductionblob.blob.core.windows.net/lidar-zips/2020-22/dtm/wg_del_11_267358_20210302dtm.tif",
+        "dsm_url": "https://dmwproductionblob.blob.core.windows.net/lidar-zips/2020-22/dsm/wg_del_11_267358_20210302dsm.tif"
+      },
+      {
+        "tile_identifier": "SH6759",
+        "acquisition_date": "2021-03-02",
+        "delivery": "11",
+        "bounds_bng": [
+          267000,
+          359000,
+          268000,
+          360000
+        ],
+        "dtm_url": "https://dmwproductionblob.blob.core.windows.net/lidar-zips/2020-22/dtm/wg_del_11_267359_20210302dtm.tif",
+        "dsm_url": "https://dmwproductionblob.blob.core.windows.net/lidar-zips/2020-22/dsm/wg_del_11_267359_20210302dsm.tif"
+      },
+      {
+        "tile_identifier": "SH6760",
+        "acquisition_date": "2021-03-02",
+        "delivery": "11",
+        "bounds_bng": [
+          267000,
+          360000,
+          268000,
+          361000
+        ],
+        "dtm_url": "https://dmwproductionblob.blob.core.windows.net/lidar-zips/2020-22/dtm/wg_del_11_267360_20210302dtm.tif",
+        "dsm_url": "https://dmwproductionblob.blob.core.windows.net/lidar-zips/2020-22/dsm/wg_del_11_267360_20210302dsm.tif"
+      }
+    ]
+  },
+  "best_available_dtm": {
+    "selection": "current_canonical_source",
+    "resolution_m": 1,
+    "acquisition_date": "2021-03-02",
+    "coverage_percent": 100,
+    "coverage_basis": "retained canonical valid-cell metadata; live tile catalogue corroboration",
+    "url": "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dtm_32bit_cog.tif"
+  },
+  "best_available_dsm": {
+    "selection": "current_canonical_source",
+    "resolution_m": 1,
+    "acquisition_date": "2021-03-02",
+    "coverage_percent": 100,
+    "coverage_basis": "retained canonical valid-cell metadata; live tile catalogue corroboration",
+    "url": "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+  },
+  "recommendation": {
+    "current_1m_source_superseded": false,
+    "next_data_action": "Retain the existing 2021 1 m DTM/DSM. No finer historic acquisition is identified for this AOI, so do not download or migrate historic rasters for a resolution improvement. If acquisition-to-acquisition comparison is later needed, first establish the historic valid-data masks."
+  },
+  "uncertainties": [
+    "The published tile index cannot establish the exact historical valid-cell/swath intersection inside each tile; historical actual AOI coverage remains null rather than guessed.",
+    "PERCENT_CO is present only in the original catalogue/NRW web map. Its whole-tile value cannot tell where covered cells lie within the AOI.",
+    "Catalogue absence does not prove absence of unpublished or unindexed data. Conclusions are scoped to the queried official published archive.",
+    "The 2007 dates are the recorded survey interval 2007-02-07 to 2007-04-02, not an exact per-tile flight day.",
+    "HEAD 200 establishes reachable objects, not ZIP/raster integrity or actual nodata masks. No source rasters were downloaded."
+  ],
+  "errors_and_recovery": [
+    {
+      "operation": "service-wide WFS GetCapabilities",
+      "error": "read timeout after 35 seconds",
+      "recovery": "Official layer-specific capabilities returned HTTP 200; DescribeFeatureType and bounded GetFeature/hits succeeded."
+    },
+    {
+      "operation": "KVP bbox combined with cql_filter",
+      "error": "HTTP 500",
+      "recovery": "One CQL expression combining BBOX(geom,...) AND resolution < 1 succeeded with numberMatched 0."
+    }
+  ],
+  "external_metadata_evidence_cache": "${MERIDIAN_DATA_ROOT}/cache/reconnaissance/tryfan-nrw-lidar/2026-10-01",
+  "canonical_payloads_modified": false,
+  "raster_payloads_downloaded": false
+}
