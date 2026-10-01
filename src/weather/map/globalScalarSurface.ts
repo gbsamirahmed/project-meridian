@@ -1,4 +1,4 @@
-import maplibregl from "maplibre-gl";
+import * as maplibregl from "maplibre-gl";
 
 import { WEATHER_SURFACE_CROSSFADE_MS } from "./weatherVisuals";
 import { getWeatherInsertionLayerId } from "./weatherLayerOrder";

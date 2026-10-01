@@ -1,4 +1,4 @@
-import maplibregl from "maplibre-gl";
+import * as maplibregl from "maplibre-gl";
 import { getFirstSymbolLayerId } from "../../atlas/map/mapLayerAnchors";
 import { getRouteBounds } from "../model/routeGeometry";
 import {

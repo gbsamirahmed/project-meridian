@@ -1,4 +1,4 @@
-import type maplibregl from "maplibre-gl";
+import type * as maplibregl from "maplibre-gl";
 
 import type { Basemap } from "../../atlas/map/mapTypes";
 import { getScalarTimestepAtTime, getVectorTimestepAtTime } from "../data/globalWeatherService";

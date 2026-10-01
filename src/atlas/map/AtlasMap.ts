@@ -1,4 +1,8 @@
-import maplibregl from "maplibre-gl";
+import * as maplibregl from "maplibre-gl";
+import maplibreWorkerUrl from "maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url";
+
+// Vite must bundle the v6 worker together with its shared ESM dependencies.
+maplibregl.setWorkerUrl(maplibreWorkerUrl);
 
 import {
   applySatelliteLayerState,
@@ -43,6 +47,8 @@ export class AtlasMap {
       bearing: 0,
       maxPitch: 72,
       renderWorldCopies: false,
+      // Keep v5 vector-tile overscaling and feature-query behaviour.
+      zoomLevelsToOverscale: undefined,
       cancelPendingTileRequestsWhileZooming: false,
       attributionControl: { compact: true, customAttribution: options.attributions },
     });

@@ -2256,3 +2256,73 @@ clean-start acceptance gate pass, followed by normal publication. The final comm
 and validation report establish that outcome; no completion is claimed here in
 advance. Phase 7 contains only 7A and 7B. No Phase 7C, architecture work or next
 development programme is introduced.
+
+## 2026-10-01 — Post-foundation maintenance
+
+### MapLibre security maintenance
+
+Migrated the direct MapLibre dependency from 5.24.0 to exact 6.11.2 to resolve
+[GHSA-jrc7-96c5-q579 / CVE-2026-85061](https://github.com/advisories/GHSA-jrc7-96c5-q579).
+The attribution sanitizer bypass affects versions through 6.4.0; 6.4.1 is the
+minimum patched release. Meridian accepts third-party attribution, so the advisory
+applies. The earlier Phase 7 entry records the then-unresolved state accurately.
+
+Compared 6.4.1 with the current stable 6.11.2 before editing. Chose 6.11.2 for
+subsequent attribution hardening, custom-layer fixes and terrain/camera fixes within
+the same v6 migration surface. See the [v6 changelog](https://github.com/maplibre/maplibre-gl-js/blob/v6.11.2/CHANGELOG.md)
+and [migration guide](https://github.com/maplibre/maplibre-gl-js/blob/v6.11.2/docs/guides/v5-to-v6-migration-guide.md).
+Only MapLibre and its required transitive dependency graph changed; no unrelated
+dependency upgrade, override or advisory suppression was introduced.
+
+The compatibility changes are bounded: namespace imports replace removed default
+exports; route/contour modules explicitly import their existing GeoJSON types;
+the global mouse-exit listener uses the supported `mouseout` event. Atlas explicitly
+retains v5 vector-tile overscaling with `zoomLevelsToOverscale: undefined`.
+An initial production build emitted no worker, and its fallback worker URL returned
+HTML. Atlas now configures the [upstream Vite worker setup](https://github.com/maplibre/maplibre-gl-js/blob/v6.11.2/docs/index.md#installation)
+using `?worker&url`, bundling the worker and shared ESM dependencies into one emitted
+asset. Development and production browser checks confirm it loads normally.
+
+MapLibre v6 requires WebGL2; the custom wind renderer already uses WebGL2/GLSL ES 3
+and needs no rendering rewrite. Its lifecycle, shader projection inputs, repaint,
+cleanup and layer ordering remain unchanged. The required style-spec dependency
+now brings a Node-22-only JSON parser, so package engines and current setup docs
+require Node >=22.12.0. No App/Atlas/Weather/Traverse ownership boundary changed.
+
+Before migration, TypeScript, ESLint and all 127 active Node tests passed, with one
+critical npm advisory. After migration: TypeScript and ESLint pass; all 128 active
+Node tests pass without skips, including real-publication sampling and a new
+installed/locked-version regression assertion; 82 Weather Python and 15 storage-root
+tests pass. The 95-file active import audit reports zero cycles/unresolved relative
+imports. Documentation links, whitespace, diff and bounded privacy checks pass.
+The production build emits the self-contained worker and retains the existing
+large-bundle warning. npm audit reports zero advisories, including zero instances
+of the attribution vulnerability.
+
+The unchanged browser matrix passes 15/15: five per 1920x1080, 1440x900 and 1366x768.
+Pressure takes 24.7, 22.1 and 22.3 seconds respectively, under unchanged timeouts.
+Diagnostics show zero page exceptions, HTTP errors and GFS failures; 51 external
+request cancellations are `ERR_ABORTED` (50 Terrarium, one Open-Meteo). Third-party
+basemap shield-filter warnings remain descriptive warnings, not worker/module/GL
+failures. No browser assertion, scenario, timeout or visual baseline was changed.
+
+Inspected initial-map comparisons and rendered terrain, hillshade, elevation,
+satellite fixtures, weather overlays, pressure and route screenshots. The separate
+production smoke uses real Terrarium/GFS data, verifies 55-degree pitch and bearing,
+terrain/globe transitions, two wind shader variants and visible route features.
+Early tile-loading edges disappear in fully loaded captures. One supplementary
+all-remote-tiles-settled wait timed out; the identical wait passed on rerun without
+changing its condition or timeout. No visible migration regression was found.
+Satellite imagery uses the existing neutral browser fixture, not a live account test.
+
+Phase 7 publication lifecycle regressions and real sampling remain green. Dev/test
+shutdown does not materialize production GFS; standalone builds still publish only
+latest.json and 20260907T18Z: 20,421 files / 633,781,652 bytes, ten fields / 24 timesteps.
+External latest.json remains SHA-256
+`84878adcacf13463e9c2a5ffd76b6f1a934b3da654ad7f6421fb70ec3b8d0b92`.
+Legacy public/weather/gfs remains absent; storage-root names are absent from browser
+assets. No authoritative/private data, historical experiment, renderer/Unreal file,
+historical ref or phase marker changed. Generated diagnostics remain ignored.
+
+This is post-foundation security maintenance, not a new numbered cleanup phase.
+Atlas/world-model development and the next development programme have not begun.

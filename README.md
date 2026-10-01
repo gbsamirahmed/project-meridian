@@ -63,7 +63,7 @@ layout, intentional seams and validation gates.
 
 ## Stack
 
-- **Frontend:** React 19, TypeScript, Vite, MapLibre GL JS, WebGL
+- **Frontend:** React 19, TypeScript, Vite, MapLibre GL JS 6.11.2, WebGL2
 - **Preprocessing:** Python, NumPy, Pillow, ecCodes
 - **Data and maps:** NOAA GFS, Open-Meteo, OpenFreeMap/OpenStreetMap, AWS Terrarium, MapTiler Satellite, Nominatim
 
@@ -78,9 +78,9 @@ clean-start reproduction and the final foundation checkpoint; see the
 
 Requirements:
 
-- Node.js `^20.19.0` or `>=22.12.0`
+- Node.js `>=22.12.0` (the MapLibre v6 dependency tree requires Node 22)
 - npm
-- A modern WebGL-capable browser
+- A modern WebGL2-capable browser
 - Internet access for live weather, map tiles, terrain, and search
 
 ```sh
@@ -89,6 +89,12 @@ npm run dev
 ```
 
 Open the URL printed by Vite, normally [http://localhost:5173](http://localhost:5173).
+
+MapLibre is pinned to patched v6.11.2. Atlas configures its self-contained worker
+through Vite's `?worker&url` pipeline for both development and production; no
+manual worker copy or CDN configuration is required. See the
+[security maintenance record](docs/development-log.md#maplibre-security-maintenance)
+for the attribution advisory resolution and compatibility checks.
 
 On Windows PowerShell systems where the execution policy blocks npm's PowerShell shim, use:
 
@@ -195,7 +201,6 @@ Provider availability, acceptable-use policies, rate limits, attribution require
 
 ## Prototype limitations
 
-- MapLibre 5.24.0 has an unresolved critical attribution-HTML sanitizer advisory. Its fixed release requires a major-version migration, recorded as immediate maintenance before public deployment in the [dependency advisory disposition](docs/development-log.md#phase-7b-dependency-advisory-disposition).
 - Meridian is an engineering prototype and should not be used for safety-critical navigation or forecasting decisions.
 - GFS map weather is based on 0.25° model fields; close zooms overzoom the same data rather than creating finer meteorological detail.
 - The generated GFS horizon is +24 hours. Local updates can run continuously while a developer terminal remains open, but no production scheduler, hosting, monitoring, or alerting exists.

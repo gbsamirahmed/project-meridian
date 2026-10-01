@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import maplibregl from "maplibre-gl";
+import * as maplibregl from "maplibre-gl";
 import { accumulationIntervalLabel } from "../../weather/presentation/weatherTimeLabel";
 import { precipitationAmountLabel } from "../../weather/presentation/precipitationStyle";
 
@@ -348,7 +348,7 @@ export default function MeridianMap({
     map.on("moveend", () => weatherController?.viewportChanged());
     map.on("movestart", () => setHoverInspection(null));
     map.on("mousemove", handleMouseMove);
-    map.on("mouseleave", () => setHoverInspection(null));
+    map.on("mouseout", () => setHoverInspection(null));
     map.on("click", (event) => {
       const routeIndex = traverseController?.nearestSample(event.point) ?? null;
       if (routeIndex !== null) {

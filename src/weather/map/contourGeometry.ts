@@ -1,4 +1,5 @@
 import { interpolateGridValue } from "./interpolation";
+import type * as GeoJSON from "geojson";
 
 import type { GeographicBounds } from "../types/globalWeather";
 

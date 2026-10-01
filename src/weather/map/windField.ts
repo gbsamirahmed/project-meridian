@@ -1,6 +1,6 @@
 import type { MutableWindVector } from "./windVector";
 import type { GeographicBounds } from "../types/globalWeather";
-import type maplibregl from "maplibre-gl";
+import type * as maplibregl from "maplibre-gl";
 
 export interface WindVectorField {
   bounds: GeographicBounds;

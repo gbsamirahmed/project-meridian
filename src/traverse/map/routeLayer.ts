@@ -1,4 +1,5 @@
-import maplibregl from "maplibre-gl";
+import * as maplibregl from "maplibre-gl";
+import type * as GeoJSON from "geojson";
 import { getFirstSymbolLayerId } from "../../atlas/map/mapLayerAnchors";
 import { unwrapRouteCoordinates } from "../model/routeGeometry";
 import { routeConditionColour } from "../model/routeConditionStyle";
