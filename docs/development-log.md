@@ -2359,3 +2359,42 @@ validated. This metadata-only task changes no application, renderer, historical
 Lab identity or canonical terrain. Retain the current source; any future historic
 comparison must first establish valid-data masks. No new numbered phase, Lab or
 Atlas/world-model implementation is introduced.
+
+### Lab 010 — observed natural-colour surface
+
+Created the next Tryfan visual experiment after Lab 009: unchanged measured terrain
+plus one actual Sentinel-2 natural-colour observation. Audited all four retained
+Lab 005C seasonal observations and verified all 44 retained band files against
+their recorded hashes. Selected the summer 2026-07-12 Level-2A product for zero AOI
+cloud/cloud-shadow/snow/nodata and higher sun; retained its 1.84% SCL topographic
+shadow rather than correcting it. Summer reuses existing Lab 005B native RGB; no
+source observation was downloaded, copied or rewritten.
+
+B04/B03/B02 retain 10 m native measurements. DN scale/offset is 0.0001/-0.1;
+bilinear EPSG:32630 → EPSG:27700 reprojection produces exact 300 × 300 products
+over `[264900, 357800, 267900, 360800]`. Float reflectance remains separate from
+the fixed Lab 005C 0.02–0.30, gamma-1 display transform. No sharpening, composite,
+classification colour, procedural material, shadow correction or inferred detail
+is introduced. Canonical products and PNG remain external, beneath the new
+`experiments/earth-lab/tryfan-010/observed-natural-colour-v1` estate.
+
+The optional Unreal adapter connects the same 300 × 300 sRGB texture to Base Color,
+with bilinear/clamped sampling, fixed roughness 0.88 and specular zero. Existing
+world-space UVs preserve +X east/+Y south registration. Baseline, Lab 009, Lab 010
+and Lab 010 plus the existing 50% photographic overlay were exercised without
+saving the map. Null-RHI and normal D3D12 validation pass, including measured
+Landscape geometry/collision, fixed camera and Lab 009 validators. Map SHA-256
+remains `85ef8f1cc9a9fda9b6f2ab3b911bd57831fe75c4009e5ad168ea4956165a260d`;
+canonical R16 and Lab 009 identity are unchanged. Four Lab-specific tests and five
+existing reference-renderer tests pass. Repeat outputs/manifests are byte-identical,
+and independent inverse-coordinate RGB checks detect flips/rotation/band swaps.
+
+See [the Lab procedure](earth-lab/tryfan-010-observed-natural-colour.md),
+[provenance manifest](earth-lab/tryfan-010-observed-natural-colour.json) and
+[validation evidence](earth-lab/tryfan-010-validation.json). The overhead RGB preview
+shows actual spatial colour variation; fixed-camera improvement remains pending
+manual A–D inspection. No unreliable SceneCapture frames are accepted. Sentinel
+shadows and existing Unreal lighting can compound, and 2026 imagery differs in date
+from the 2021 terrain and 2009 photograph. Ten-metre observations cannot resolve
+individual rocks, vegetation geometry or material microstructure. This is a visual
+research Lab, not a new numbered cleanup phase or Atlas runtime programme.

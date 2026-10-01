@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "experiment": "Lab 010 observed natural-colour surface",
+  "lab_tests": {
+    "passed": 4,
+    "failed": 0,
+    "skipped": 0
+  },
+  "deterministic_repeat_processing": true,
+  "independent_inverse_pixel_sampling": "PASS; RGB corners and centre agree with independently sampled native reflectance within 0.003",
+  "native_source_files_verified": 44,
+  "unreal_version": "5.8.2-56702186+++UE5+Release-5.8",
+  "unreal_backends_validated": [
+    "NullRHI (initial adapter)",
+    "D3D12 (final uncompressed adapter)"
+  ],
+  "unreal_validation": {
+    "result": "PASS",
+    "states": [
+      {
+        "state": "baseline",
+        "overlay_enabled": false,
+        "material": null,
+        "camera_unchanged": true,
+        "landscape_transform_unchanged": true,
+        "map_saved": false,
+        "camera": {
+          "location_cm": {
+            "x": 52549.121742951684,
+            "y": -29494.947166356724,
+            "z": -16443.74237411574
+          },
+          "rotation_degrees": {
+            "pitch": 30.34180068969728,
+            "yaw": 165.14199829101562,
+            "roll": -0.0
+          },
+          "horizontal_fov_degrees": 35.20000076293945,
+          "aspect_ratio": 1.3333333730697632,
+          "constrain_aspect_ratio": true
+        },
+        "landscape_transform": {
+          "location_cm": [
+            -150000.0,
+            -150000.0,
+            0.0
+          ],
+          "rotation_degrees": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            99.206349,
+            99.206349,
+            150.0
+          ]
+        }
+      },
+      {
+        "state": "lab009",
+        "overlay_enabled": false,
+        "material": "/Game/MeridianLab009/M_Lab009_Surface.M_Lab009_Surface",
+        "camera_unchanged": true,
+        "landscape_transform_unchanged": true,
+        "map_saved": false,
+        "camera": {
+          "location_cm": {
+            "x": 52549.121742951684,
+            "y": -29494.947166356724,
+            "z": -16443.74237411574
+          },
+          "rotation_degrees": {
+            "pitch": 30.34180068969728,
+            "yaw": 165.14199829101562,
+            "roll": -0.0
+          },
+          "horizontal_fov_degrees": 35.20000076293945,
+          "aspect_ratio": 1.3333333730697632,
+          "constrain_aspect_ratio": true
+        },
+        "landscape_transform": {
+          "location_cm": [
+            -150000.0,
+            -150000.0,
+            0.0
+          ],
+          "rotation_degrees": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            99.206349,
+            99.206349,
+            150.0
+          ]
+        }
+      },
+      {
+        "state": "lab010",
+        "overlay_enabled": false,
+        "material": "/Game/MeridianLab010/M_Lab010_ObservedNaturalColour.M_Lab010_ObservedNaturalColour",
+        "camera_unchanged": true,
+        "landscape_transform_unchanged": true,
+        "map_saved": false,
+        "camera": {
+          "location_cm": {
+            "x": 52549.121742951684,
+            "y": -29494.947166356724,
+            "z": -16443.74237411574
+          },
+          "rotation_degrees": {
+            "pitch": 30.34180068969728,
+            "yaw": 165.14199829101562,
+            "roll": -0.0
+          },
+          "horizontal_fov_degrees": 35.20000076293945,
+          "aspect_ratio": 1.3333333730697632,
+          "constrain_aspect_ratio": true
+        },
+        "landscape_transform": {
+          "location_cm": [
+            -150000.0,
+            -150000.0,
+            0.0
+          ],
+          "rotation_degrees": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            99.206349,
+            99.206349,
+            150.0
+          ]
+        }
+      },
+      {
+        "state": "lab010",
+        "overlay_enabled": true,
+        "material": "/Game/MeridianLab010/M_Lab010_ObservedNaturalColour.M_Lab010_ObservedNaturalColour",
+        "camera_unchanged": true,
+        "landscape_transform_unchanged": true,
+        "map_saved": false,
+        "camera": {
+          "location_cm": {
+            "x": 52549.121742951684,
+            "y": -29494.947166356724,
+            "z": -16443.74237411574
+          },
+          "rotation_degrees": {
+            "pitch": 30.34180068969728,
+            "yaw": 165.14199829101562,
+            "roll": -0.0
+          },
+          "horizontal_fov_degrees": 35.20000076293945,
+          "aspect_ratio": 1.3333333730697632,
+          "constrain_aspect_ratio": true
+        },
+        "landscape_transform": {
+          "location_cm": [
+            -150000.0,
+            -150000.0,
+            0.0
+          ],
+          "rotation_degrees": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            99.206349,
+            99.206349,
+            150.0
+          ]
+        }
+      }
+    ],
+    "texture_checks": {
+      "native_width": true,
+      "native_height": true,
+      "srgb": true,
+      "uncompressed": true,
+      "bilinear": true,
+      "clamp_x": true,
+      "clamp_y": true
+    },
+    "geometry_validator": "PASS",
+    "camera_validator": "PASS",
+    "lab009_validator": "PASS",
+    "map_saved": false,
+    "visual_acceptance": "pending_manual_fixed_camera_comparison"
+  },
+  "preserved_map_sha256": "85ef8f1cc9a9fda9b6f2ab3b911bd57831fe75c4009e5ad168ea4956165a260d",
+  "preserved_r16_sha256": "31cbe763dac4072772ac9bcb4a3217b78eba0c10265e576ede708154288f6bf6",
+  "preserved_lab009_identity": "14f90941468166dc3937879e022e8fedff2d9d212eed5cfb1c5deb0407c6a859",
+  "lab005_reports_unchanged": true,
+  "canonical_aoi": [
+    264900,
+    357800,
+    267900,
+    360800
+  ],
+  "canonical_rgb_dimensions": [
+    300,
+    300
+  ],
+  "canonical_rgb_pixel_size_m": 10,
+  "canonical_product_identity": "95da30643ea0d7b25408182cbea11adc2dd842ae1557b545d1de8e77c39c3dce",
+  "manual_fixed_camera_visual_acceptance": "pending; exact A\u2013D states prepared; no SceneCapture acceptance claimed",
+  "warnings": [
+    "Existing rasterio/NumPy deprecation warnings; no numerical failures.",
+    "No automated fixed-camera perspective screenshots were accepted."
+  ],
+  "renderer_bootstrap_tests": {
+    "passed": 5,
+    "failed": 0,
+    "skipped": 0
+  },
+  "terrain_source_metadata_sha256": "e1a49022a9ddf29f29eba8b6ef8f4c030e46f80f9b5a1bb529925e8b7248f64a"
+}

@@ -33,6 +33,7 @@ The following are deliberately excluded from version control:
 - `Content/Python`: deployed copies of `scripts/earth_lab` implementation;
 - `Content/MeridianLab004`: imported validation photograph and overlay material;
 - `Content/MeridianLab009`: imported control textures and generated material;
+- `Content/MeridianLab010`: observed Sentinel natural-colour texture/material;
 - `Saved`, `Intermediate`, `DerivedDataCache`, `Binaries`, logs and autosaves;
 - machine-local `meridian-*-source.json` pointers.
 
@@ -93,6 +94,13 @@ visual acceptance remains pending the documented manual baseline/reconstruction
 comparison.
 
 ## Version-control rules
+
+Lab 010 is an optional observed-colour comparison on this same preserved map.
+See [the Lab 010 procedure](../../../docs/earth-lab/tryfan-010-observed-natural-colour.md)
+for building/deploying retained Sentinel RGB and switching baseline, Lab 009,
+Lab 010 and Lab 010 with 50% photographic overlay without saving the map.
+Its 300 × 300 texture retains 10 m observed resolution. Default bootstrap and
+Lab 009 validation remain unchanged; Lab 010 has a separate optional deployment.
 
 Never commit credentials, personal absolute paths, source-pointer JSON, downloaded
 source data, generated control rasters, imported/generated `.uasset` packages,

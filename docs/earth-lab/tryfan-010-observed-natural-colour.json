@@ -1,0 +1,1422 @@
+{
+  "schema_version": 1,
+  "experiment": "LAB 010 — OBSERVED NATURAL-COLOUR SURFACE",
+  "research_question": "What does measured Tryfan terrain look like surfaced with observed Sentinel natural colour?",
+  "warning": "Sentinel-2 natural colour has 10 m native spatial resolution. Any finer raster representation used by the renderer is interpolation and does not constitute additional observed spatial detail.",
+  "season_audit": [
+    {
+      "season": "winter",
+      "official_product_id": "S2B_MSIL2A_20240117T113329_N0510_R080_T30UVD_20240117T130100",
+      "official_acquisition_time_utc": "2024-01-17T11:33:29.025Z",
+      "platform": "sentinel-2b",
+      "processing_baseline": "05.10",
+      "cog_item_id": "S2B_T30UVD_20240117T113323_L2A",
+      "cog_granule_time_utc": "2024-01-17T11:36:34.744Z",
+      "cog_year": 2024,
+      "cog_month": 1,
+      "sun_elevation_degrees": 15.720385686493103,
+      "sun_azimuth_degrees": 168.355994216401,
+      "scene_cloud_percent": 16.85,
+      "aoi_scl": {
+        "cloud_fraction": 0.013333333333333334,
+        "cloud_shadow_fraction": 0.0,
+        "snow_or_ice_fraction": 0.2528444444444444,
+        "topographic_shadow_fraction": 0.5919555555555556,
+        "nodata_fraction": 0.0
+      },
+      "selection_rationale": "Actual AOI is 98.67% cloud/cirrus-free and contains a meaningful 25.28% snow/ice state; selected over nominally lower-snow winter scenes to preserve genuine winter environmental evidence.",
+      "processing_level": "Level-2A bottom-of-atmosphere surface reflectance",
+      "source_crs": "EPSG:32630",
+      "actual_aoi_scl": {
+        "class_counts": {
+          "10": 299,
+          "11": 5689,
+          "2": 13319,
+          "4": 59,
+          "5": 2634,
+          "6": 499,
+          "8": 1
+        },
+        "cloud_clear_cells_including_snow": 22200,
+        "cloud_clear_fraction_including_snow": 0.9866666666666667,
+        "cloud_fraction": 0.013333333333333334,
+        "cloud_shadow_fraction": 0.0,
+        "nodata_fraction": 0.0,
+        "snow_or_ice_fraction": 0.2528444444444444,
+        "surface_clear_cells_excluding_snow": 16511,
+        "surface_clear_fraction_excluding_snow": 0.7338222222222223,
+        "topographic_shadow_fraction": 0.5919555555555556,
+        "total_cells": 22500
+      },
+      "retained_files": [
+        {
+          "band": "B02",
+          "native_resolution_m": 10,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005c/sentinel2-temporal-evidence/observations/winter/source-native/B02_10m-native-window.tif",
+          "sha256": "e832df93bc2b100a4529af5dc969d9afb5d59e7527d9d654d16f83b242f782ae",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2024/1/S2B_T30UVD_20240117T113323_L2A/B02.tif",
+          "dimensions": [
+            405,
+            405
+          ],
+          "bounds": [
+            431200.0,
+            5883410.0,
+            435250.0,
+            5887460.0
+          ],
+          "transform": [
+            10.0,
+            0.0,
+            431200.0,
+            0.0,
+            -10.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "B03",
+          "native_resolution_m": 10,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005c/sentinel2-temporal-evidence/observations/winter/source-native/B03_10m-native-window.tif",
+          "sha256": "ca84641e470960d482429291604757f5521ddbf3ee0bde33e760ef55ee809403",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2024/1/S2B_T30UVD_20240117T113323_L2A/B03.tif",
+          "dimensions": [
+            405,
+            405
+          ],
+          "bounds": [
+            431200.0,
+            5883410.0,
+            435250.0,
+            5887460.0
+          ],
+          "transform": [
+            10.0,
+            0.0,
+            431200.0,
+            0.0,
+            -10.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "B04",
+          "native_resolution_m": 10,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005c/sentinel2-temporal-evidence/observations/winter/source-native/B04_10m-native-window.tif",
+          "sha256": "cf97405237a9e4279f12fca97bb968513fd4b581277c33b8d695d5f2ee46556d",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2024/1/S2B_T30UVD_20240117T113323_L2A/B04.tif",
+          "dimensions": [
+            405,
+            405
+          ],
+          "bounds": [
+            431200.0,
+            5883410.0,
+            435250.0,
+            5887460.0
+          ],
+          "transform": [
+            10.0,
+            0.0,
+            431200.0,
+            0.0,
+            -10.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "B08",
+          "native_resolution_m": 10,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005c/sentinel2-temporal-evidence/observations/winter/source-native/B08_10m-native-window.tif",
+          "sha256": "eb3c305f33dd0abeea58da23e6cf17368dd78f16736cb2b7faff104c73d2d0e9",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2024/1/S2B_T30UVD_20240117T113323_L2A/B08.tif",
+          "dimensions": [
+            405,
+            405
+          ],
+          "bounds": [
+            431200.0,
+            5883410.0,
+            435250.0,
+            5887460.0
+          ],
+          "transform": [
+            10.0,
+            0.0,
+            431200.0,
+            0.0,
+            -10.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "B05",
+          "native_resolution_m": 20,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005c/sentinel2-temporal-evidence/observations/winter/source-native/B05_20m-native-window.tif",
+          "sha256": "f220fedd1d9e62f7f63bbe9b8af2313ba454efb322dd8fdfb9e6526bb1810f20",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2024/1/S2B_T30UVD_20240117T113323_L2A/B05.tif",
+          "dimensions": [
+            203,
+            203
+          ],
+          "bounds": [
+            431200.0,
+            5883400.0,
+            435260.0,
+            5887460.0
+          ],
+          "transform": [
+            20.0,
+            0.0,
+            431200.0,
+            0.0,
+            -20.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "B06",
+          "native_resolution_m": 20,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005c/sentinel2-temporal-evidence/observations/winter/source-native/B06_20m-native-window.tif",
+          "sha256": "fc3657baa45a2e66b07cca681ef18769e9c36bcaba996f68f1dd20715e1eaec4",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2024/1/S2B_T30UVD_20240117T113323_L2A/B06.tif",
+          "dimensions": [
+            203,
+            203
+          ],
+          "bounds": [
+            431200.0,
+            5883400.0,
+            435260.0,
+            5887460.0
+          ],
+          "transform": [
+            20.0,
+            0.0,
+            431200.0,
+            0.0,
+            -20.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "B07",
+          "native_resolution_m": 20,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005c/sentinel2-temporal-evidence/observations/winter/source-native/B07_20m-native-window.tif",
+          "sha256": "cfc9ea5dc541c1eed26698d1c4b2865b31337a5546ef9299dc0a9add491702ef",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2024/1/S2B_T30UVD_20240117T113323_L2A/B07.tif",
+          "dimensions": [
+            203,
+            203
+          ],
+          "bounds": [
+            431200.0,
+            5883400.0,
+            435260.0,
+            5887460.0
+          ],
+          "transform": [
+            20.0,
+            0.0,
+            431200.0,
+            0.0,
+            -20.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "B8A",
+          "native_resolution_m": 20,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005c/sentinel2-temporal-evidence/observations/winter/source-native/B8A_20m-native-window.tif",
+          "sha256": "d5bd36b4dd2780d22ae1e066e6ddf1fcd8d19d8f431f02913a62fd2630357914",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2024/1/S2B_T30UVD_20240117T113323_L2A/B8A.tif",
+          "dimensions": [
+            203,
+            203
+          ],
+          "bounds": [
+            431200.0,
+            5883400.0,
+            435260.0,
+            5887460.0
+          ],
+          "transform": [
+            20.0,
+            0.0,
+            431200.0,
+            0.0,
+            -20.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "B11",
+          "native_resolution_m": 20,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005c/sentinel2-temporal-evidence/observations/winter/source-native/B11_20m-native-window.tif",
+          "sha256": "36e535c85e0d57a25045a57f0fda630d90bf5c5ca0ae54a2bdab1fae3c943668",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2024/1/S2B_T30UVD_20240117T113323_L2A/B11.tif",
+          "dimensions": [
+            203,
+            203
+          ],
+          "bounds": [
+            431200.0,
+            5883400.0,
+            435260.0,
+            5887460.0
+          ],
+          "transform": [
+            20.0,
+            0.0,
+            431200.0,
+            0.0,
+            -20.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "B12",
+          "native_resolution_m": 20,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005c/sentinel2-temporal-evidence/observations/winter/source-native/B12_20m-native-window.tif",
+          "sha256": "c8462a88f0b305de872bc1b532a3b9fc34e879dcf91d55e4de2e61752c367902",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2024/1/S2B_T30UVD_20240117T113323_L2A/B12.tif",
+          "dimensions": [
+            203,
+            203
+          ],
+          "bounds": [
+            431200.0,
+            5883400.0,
+            435260.0,
+            5887460.0
+          ],
+          "transform": [
+            20.0,
+            0.0,
+            431200.0,
+            0.0,
+            -20.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "SCL",
+          "native_resolution_m": 20,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005c/sentinel2-temporal-evidence/observations/winter/source-native/SCL_20m-native-window.tif",
+          "sha256": "a116db2e5a3e83431c1ea10e100edddd5d5d653ddb1c15de75956a51ca70f1f9",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2024/1/S2B_T30UVD_20240117T113323_L2A/SCL.tif",
+          "dimensions": [
+            203,
+            203
+          ],
+          "bounds": [
+            431200.0,
+            5883400.0,
+            435260.0,
+            5887460.0
+          ],
+          "transform": [
+            20.0,
+            0.0,
+            431200.0,
+            0.0,
+            -20.0,
+            5887460.0
+          ]
+        }
+      ]
+    },
+    {
+      "season": "spring",
+      "official_product_id": "S2A_MSIL2A_20260430T112131_N0512_R037_T30UVD_20260430T201210",
+      "official_acquisition_time_utc": "2026-04-30T11:21:31.024Z",
+      "platform": "sentinel-2a",
+      "processing_baseline": "05.12",
+      "cog_item_id": "S2A_T30UVD_20260430T112403_L2A",
+      "cog_granule_time_utc": "2026-04-30T11:26:54.104Z",
+      "cog_year": 2026,
+      "cog_month": 4,
+      "sun_elevation_degrees": 51.0675377161143,
+      "sun_azimuth_degrees": 162.551148555922,
+      "scene_cloud_percent": 3.08,
+      "aoi_scl": {
+        "cloud_fraction": 0.003288888888888889,
+        "cloud_shadow_fraction": 0.0,
+        "snow_or_ice_fraction": 0.0,
+        "topographic_shadow_fraction": 0.059955555555555554,
+        "nodata_fraction": 0.0
+      },
+      "selection_rationale": "Late-spring phenology with 99.67% cloud/cirrus-free AOI coverage and substantially higher sun than March candidates.",
+      "processing_level": "Level-2A bottom-of-atmosphere surface reflectance",
+      "source_crs": "EPSG:32630",
+      "actual_aoi_scl": {
+        "class_counts": {
+          "10": 74,
+          "2": 1349,
+          "4": 14360,
+          "5": 5836,
+          "6": 809,
+          "7": 72
+        },
+        "cloud_clear_cells_including_snow": 22426,
+        "cloud_clear_fraction_including_snow": 0.9967111111111111,
+        "cloud_fraction": 0.003288888888888889,
+        "cloud_shadow_fraction": 0.0,
+        "nodata_fraction": 0.0,
+        "snow_or_ice_fraction": 0.0,
+        "surface_clear_cells_excluding_snow": 22426,
+        "surface_clear_fraction_excluding_snow": 0.9967111111111111,
+        "topographic_shadow_fraction": 0.059955555555555554,
+        "total_cells": 22500
+      },
+      "retained_files": [
+        {
+          "band": "B02",
+          "native_resolution_m": 10,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005c/sentinel2-temporal-evidence/observations/spring/source-native/B02_10m-native-window.tif",
+          "sha256": "19d59e03356c5b9e2134354f3cf14fdd17cb06d320508746922daae13bcfc7fe",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2026/4/S2A_T30UVD_20260430T112403_L2A/B02.tif",
+          "dimensions": [
+            405,
+            405
+          ],
+          "bounds": [
+            431200.0,
+            5883410.0,
+            435250.0,
+            5887460.0
+          ],
+          "transform": [
+            10.0,
+            0.0,
+            431200.0,
+            0.0,
+            -10.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "B03",
+          "native_resolution_m": 10,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005c/sentinel2-temporal-evidence/observations/spring/source-native/B03_10m-native-window.tif",
+          "sha256": "df8a58050c207ba3ea29e6d1db7929fde22d950c2ef7e4f22f6c7f42aef18b94",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2026/4/S2A_T30UVD_20260430T112403_L2A/B03.tif",
+          "dimensions": [
+            405,
+            405
+          ],
+          "bounds": [
+            431200.0,
+            5883410.0,
+            435250.0,
+            5887460.0
+          ],
+          "transform": [
+            10.0,
+            0.0,
+            431200.0,
+            0.0,
+            -10.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "B04",
+          "native_resolution_m": 10,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005c/sentinel2-temporal-evidence/observations/spring/source-native/B04_10m-native-window.tif",
+          "sha256": "c19078e26d696e876c3ac4d61e6b6409dda4aa1fa53da599dd495a4f2253df83",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2026/4/S2A_T30UVD_20260430T112403_L2A/B04.tif",
+          "dimensions": [
+            405,
+            405
+          ],
+          "bounds": [
+            431200.0,
+            5883410.0,
+            435250.0,
+            5887460.0
+          ],
+          "transform": [
+            10.0,
+            0.0,
+            431200.0,
+            0.0,
+            -10.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "B08",
+          "native_resolution_m": 10,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005c/sentinel2-temporal-evidence/observations/spring/source-native/B08_10m-native-window.tif",
+          "sha256": "c672d0ba5a67be3d535c49fb9aaadca188aa9c234030438f55a4e676ab8f8274",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2026/4/S2A_T30UVD_20260430T112403_L2A/B08.tif",
+          "dimensions": [
+            405,
+            405
+          ],
+          "bounds": [
+            431200.0,
+            5883410.0,
+            435250.0,
+            5887460.0
+          ],
+          "transform": [
+            10.0,
+            0.0,
+            431200.0,
+            0.0,
+            -10.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "B05",
+          "native_resolution_m": 20,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005c/sentinel2-temporal-evidence/observations/spring/source-native/B05_20m-native-window.tif",
+          "sha256": "15d0502cd46fa2a8bcd133157ddaf1ec9727b36da282c0f89efae6a95df38d95",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2026/4/S2A_T30UVD_20260430T112403_L2A/B05.tif",
+          "dimensions": [
+            203,
+            203
+          ],
+          "bounds": [
+            431200.0,
+            5883400.0,
+            435260.0,
+            5887460.0
+          ],
+          "transform": [
+            20.0,
+            0.0,
+            431200.0,
+            0.0,
+            -20.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "B06",
+          "native_resolution_m": 20,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005c/sentinel2-temporal-evidence/observations/spring/source-native/B06_20m-native-window.tif",
+          "sha256": "f02c5419d0b1763a5e470a172f5f5ef52d8a59296d49ee419487fd1b4ffa8ac5",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2026/4/S2A_T30UVD_20260430T112403_L2A/B06.tif",
+          "dimensions": [
+            203,
+            203
+          ],
+          "bounds": [
+            431200.0,
+            5883400.0,
+            435260.0,
+            5887460.0
+          ],
+          "transform": [
+            20.0,
+            0.0,
+            431200.0,
+            0.0,
+            -20.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "B07",
+          "native_resolution_m": 20,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005c/sentinel2-temporal-evidence/observations/spring/source-native/B07_20m-native-window.tif",
+          "sha256": "4676063a16d230cf2098506c883a6a88db7c121add0357d47df874d96d9aecfd",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2026/4/S2A_T30UVD_20260430T112403_L2A/B07.tif",
+          "dimensions": [
+            203,
+            203
+          ],
+          "bounds": [
+            431200.0,
+            5883400.0,
+            435260.0,
+            5887460.0
+          ],
+          "transform": [
+            20.0,
+            0.0,
+            431200.0,
+            0.0,
+            -20.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "B8A",
+          "native_resolution_m": 20,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005c/sentinel2-temporal-evidence/observations/spring/source-native/B8A_20m-native-window.tif",
+          "sha256": "3af62dc111ffce4a577c2f25ee050fe85d36fd85667438788439a5bbb9923553",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2026/4/S2A_T30UVD_20260430T112403_L2A/B8A.tif",
+          "dimensions": [
+            203,
+            203
+          ],
+          "bounds": [
+            431200.0,
+            5883400.0,
+            435260.0,
+            5887460.0
+          ],
+          "transform": [
+            20.0,
+            0.0,
+            431200.0,
+            0.0,
+            -20.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "B11",
+          "native_resolution_m": 20,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005c/sentinel2-temporal-evidence/observations/spring/source-native/B11_20m-native-window.tif",
+          "sha256": "5a6ec2ba55c9b52254ff2a7b39e5499f93027d470bdf76488b53cd83cf428f8b",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2026/4/S2A_T30UVD_20260430T112403_L2A/B11.tif",
+          "dimensions": [
+            203,
+            203
+          ],
+          "bounds": [
+            431200.0,
+            5883400.0,
+            435260.0,
+            5887460.0
+          ],
+          "transform": [
+            20.0,
+            0.0,
+            431200.0,
+            0.0,
+            -20.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "B12",
+          "native_resolution_m": 20,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005c/sentinel2-temporal-evidence/observations/spring/source-native/B12_20m-native-window.tif",
+          "sha256": "c6309cdd861d39f006b8d20e7d2d2af091ff61bdb2c7439e5954bc4f162645e4",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2026/4/S2A_T30UVD_20260430T112403_L2A/B12.tif",
+          "dimensions": [
+            203,
+            203
+          ],
+          "bounds": [
+            431200.0,
+            5883400.0,
+            435260.0,
+            5887460.0
+          ],
+          "transform": [
+            20.0,
+            0.0,
+            431200.0,
+            0.0,
+            -20.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "SCL",
+          "native_resolution_m": 20,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005c/sentinel2-temporal-evidence/observations/spring/source-native/SCL_20m-native-window.tif",
+          "sha256": "5326274ff6549a807886c4d9d36ee11a86198a4b3b4f1138d5ced0d3ca7bd250",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2026/4/S2A_T30UVD_20260430T112403_L2A/SCL.tif",
+          "dimensions": [
+            203,
+            203
+          ],
+          "bounds": [
+            431200.0,
+            5883400.0,
+            435260.0,
+            5887460.0
+          ],
+          "transform": [
+            20.0,
+            0.0,
+            431200.0,
+            0.0,
+            -20.0,
+            5887460.0
+          ]
+        }
+      ]
+    },
+    {
+      "season": "summer",
+      "official_product_id": "S2A_MSIL2A_20260712T113331_N0512_R080_T30UVD_20260712T174812",
+      "official_acquisition_time_utc": "2026-07-12T11:33:31.024Z",
+      "platform": "sentinel-2a",
+      "processing_baseline": "05.12",
+      "cog_item_id": "S2A_T30UVD_20260712T113332_L2A",
+      "cog_granule_time_utc": "2026-07-12T11:36:51.535Z",
+      "cog_year": 2026,
+      "cog_month": 7,
+      "sun_elevation_degrees": 58.062309162853,
+      "sun_azimuth_degrees": 160.700929790374,
+      "scene_cloud_percent": 0.0,
+      "aoi_scl": {
+        "cloud_fraction": 0.0,
+        "cloud_shadow_fraction": 0.0,
+        "snow_or_ice_fraction": 0.0,
+        "topographic_shadow_fraction": 0.018444444444444444,
+        "nodata_fraction": 0.0
+      },
+      "reuse_lab005b_native": true,
+      "selection_rationale": "Frozen Lab 005B reference: 100% usable AOI, zero cloud/shadow/snow/nodata and highest summer illumination.",
+      "processing_level": "Level-2A bottom-of-atmosphere surface reflectance",
+      "source_crs": "EPSG:32630",
+      "actual_aoi_scl": {
+        "class_counts": {
+          "2": 415,
+          "4": 19929,
+          "5": 1194,
+          "6": 600,
+          "7": 362
+        },
+        "cloud_clear_cells_including_snow": 22500,
+        "cloud_clear_fraction_including_snow": 1.0,
+        "cloud_fraction": 0.0,
+        "cloud_shadow_fraction": 0.0,
+        "nodata_fraction": 0.0,
+        "snow_or_ice_fraction": 0.0,
+        "surface_clear_cells_excluding_snow": 22500,
+        "surface_clear_fraction_excluding_snow": 1.0,
+        "topographic_shadow_fraction": 0.018444444444444444,
+        "total_cells": 22500
+      },
+      "retained_files": [
+        {
+          "band": "B02",
+          "native_resolution_m": 10,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005b/sentinel2-surface-evidence/source-native/B02_10m-native-window.tif",
+          "sha256": "dba087002d85ee85c1772f570acefd60d2eaabe33fd8dba63e17d38505a34ee9",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2026/7/S2A_T30UVD_20260712T113332_L2A/B02.tif",
+          "dimensions": [
+            405,
+            405
+          ],
+          "bounds": [
+            431200.0,
+            5883410.0,
+            435250.0,
+            5887460.0
+          ],
+          "transform": [
+            10.0,
+            0.0,
+            431200.0,
+            0.0,
+            -10.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "B03",
+          "native_resolution_m": 10,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005b/sentinel2-surface-evidence/source-native/B03_10m-native-window.tif",
+          "sha256": "79684a3055429b256d351ee22563b3770709063b71cb2cadf1bc874c0898bb79",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2026/7/S2A_T30UVD_20260712T113332_L2A/B03.tif",
+          "dimensions": [
+            405,
+            405
+          ],
+          "bounds": [
+            431200.0,
+            5883410.0,
+            435250.0,
+            5887460.0
+          ],
+          "transform": [
+            10.0,
+            0.0,
+            431200.0,
+            0.0,
+            -10.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "B04",
+          "native_resolution_m": 10,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005b/sentinel2-surface-evidence/source-native/B04_10m-native-window.tif",
+          "sha256": "8fbfa498771db35f60698b7dcfc2e0c89b3d0fd75d55a41332051ce72b596f86",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2026/7/S2A_T30UVD_20260712T113332_L2A/B04.tif",
+          "dimensions": [
+            405,
+            405
+          ],
+          "bounds": [
+            431200.0,
+            5883410.0,
+            435250.0,
+            5887460.0
+          ],
+          "transform": [
+            10.0,
+            0.0,
+            431200.0,
+            0.0,
+            -10.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "B08",
+          "native_resolution_m": 10,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005b/sentinel2-surface-evidence/source-native/B08_10m-native-window.tif",
+          "sha256": "f36f1976fbe6765ec383bb0b7849c96c3b2c6bae985cb5e8e484a096534605e0",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2026/7/S2A_T30UVD_20260712T113332_L2A/B08.tif",
+          "dimensions": [
+            405,
+            405
+          ],
+          "bounds": [
+            431200.0,
+            5883410.0,
+            435250.0,
+            5887460.0
+          ],
+          "transform": [
+            10.0,
+            0.0,
+            431200.0,
+            0.0,
+            -10.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "B05",
+          "native_resolution_m": 20,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005b/sentinel2-surface-evidence/source-native/B05_20m-native-window.tif",
+          "sha256": "05c5be7ecbfb60fe87435ae7c50fe8b1ac0d1dd4f5991fe2c093dd320a9d0dca",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2026/7/S2A_T30UVD_20260712T113332_L2A/B05.tif",
+          "dimensions": [
+            203,
+            203
+          ],
+          "bounds": [
+            431200.0,
+            5883400.0,
+            435260.0,
+            5887460.0
+          ],
+          "transform": [
+            20.0,
+            0.0,
+            431200.0,
+            0.0,
+            -20.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "B06",
+          "native_resolution_m": 20,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005b/sentinel2-surface-evidence/source-native/B06_20m-native-window.tif",
+          "sha256": "87bd51cce200d592b0b746d2b33d15505186401f89b0a8ffb3e9e41559910ee9",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2026/7/S2A_T30UVD_20260712T113332_L2A/B06.tif",
+          "dimensions": [
+            203,
+            203
+          ],
+          "bounds": [
+            431200.0,
+            5883400.0,
+            435260.0,
+            5887460.0
+          ],
+          "transform": [
+            20.0,
+            0.0,
+            431200.0,
+            0.0,
+            -20.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "B07",
+          "native_resolution_m": 20,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005b/sentinel2-surface-evidence/source-native/B07_20m-native-window.tif",
+          "sha256": "c6193952cc51e214c78c002c24e87f8e4d042ab184f9662984deb2883cdf9e30",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2026/7/S2A_T30UVD_20260712T113332_L2A/B07.tif",
+          "dimensions": [
+            203,
+            203
+          ],
+          "bounds": [
+            431200.0,
+            5883400.0,
+            435260.0,
+            5887460.0
+          ],
+          "transform": [
+            20.0,
+            0.0,
+            431200.0,
+            0.0,
+            -20.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "B8A",
+          "native_resolution_m": 20,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005b/sentinel2-surface-evidence/source-native/B8A_20m-native-window.tif",
+          "sha256": "7dd321bac8d43f11794fd90fd4e23bca5d58142cd45d8a4de3d3f4c0927ece5c",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2026/7/S2A_T30UVD_20260712T113332_L2A/B8A.tif",
+          "dimensions": [
+            203,
+            203
+          ],
+          "bounds": [
+            431200.0,
+            5883400.0,
+            435260.0,
+            5887460.0
+          ],
+          "transform": [
+            20.0,
+            0.0,
+            431200.0,
+            0.0,
+            -20.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "B11",
+          "native_resolution_m": 20,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005b/sentinel2-surface-evidence/source-native/B11_20m-native-window.tif",
+          "sha256": "dea7590b0d200f63baed675f22a9eb5a67e21449f64cb959beb4f6776a5cc201",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2026/7/S2A_T30UVD_20260712T113332_L2A/B11.tif",
+          "dimensions": [
+            203,
+            203
+          ],
+          "bounds": [
+            431200.0,
+            5883400.0,
+            435260.0,
+            5887460.0
+          ],
+          "transform": [
+            20.0,
+            0.0,
+            431200.0,
+            0.0,
+            -20.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "B12",
+          "native_resolution_m": 20,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005b/sentinel2-surface-evidence/source-native/B12_20m-native-window.tif",
+          "sha256": "2a82dd3e5d62357012a401f466ccd577fb93b5ee97653631abc133379d53ad8c",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2026/7/S2A_T30UVD_20260712T113332_L2A/B12.tif",
+          "dimensions": [
+            203,
+            203
+          ],
+          "bounds": [
+            431200.0,
+            5883400.0,
+            435260.0,
+            5887460.0
+          ],
+          "transform": [
+            20.0,
+            0.0,
+            431200.0,
+            0.0,
+            -20.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "SCL",
+          "native_resolution_m": 20,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005b/sentinel2-surface-evidence/source-native/SCL_20m-native-window.tif",
+          "sha256": "050f4f3a9671d134e3a8e613ae93f252018ba963114172a4acec9d8280d9ad9f",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2026/7/S2A_T30UVD_20260712T113332_L2A/SCL.tif",
+          "dimensions": [
+            203,
+            203
+          ],
+          "bounds": [
+            431200.0,
+            5883400.0,
+            435260.0,
+            5887460.0
+          ],
+          "transform": [
+            20.0,
+            0.0,
+            431200.0,
+            0.0,
+            -20.0,
+            5887460.0
+          ]
+        }
+      ]
+    },
+    {
+      "season": "autumn",
+      "official_product_id": "S2A_MSIL2A_20241127T113421_N0511_R080_T30UVD_20241127T153950",
+      "official_acquisition_time_utc": "2024-11-27T11:34:21.025Z",
+      "platform": "sentinel-2a",
+      "processing_baseline": "05.11",
+      "cog_item_id": "S2A_T30UVD_20241127T113445_L2A",
+      "cog_granule_time_utc": "2024-11-27T11:36:33.362Z",
+      "cog_year": 2024,
+      "cog_month": 11,
+      "sun_elevation_degrees": 15.771598845677005,
+      "sun_azimuth_degrees": 173.746711013091,
+      "scene_cloud_percent": 5.75,
+      "aoi_scl": {
+        "cloud_fraction": 0.015333333333333332,
+        "cloud_shadow_fraction": 0.0,
+        "snow_or_ice_fraction": 0.005733333333333333,
+        "topographic_shadow_fraction": 0.6235111111111111,
+        "nodata_fraction": 0.0
+      },
+      "selection_rationale": "Late-autumn phenology with 98.47% cloud/cirrus-free AOI coverage; low sun and extensive topographic shadow are retained and modelled as observation conditions.",
+      "processing_level": "Level-2A bottom-of-atmosphere surface reflectance",
+      "source_crs": "EPSG:32630",
+      "actual_aoi_scl": {
+        "class_counts": {
+          "10": 38,
+          "11": 129,
+          "2": 14029,
+          "4": 3396,
+          "5": 3924,
+          "6": 490,
+          "7": 187,
+          "8": 273,
+          "9": 34
+        },
+        "cloud_clear_cells_including_snow": 22155,
+        "cloud_clear_fraction_including_snow": 0.9846666666666667,
+        "cloud_fraction": 0.015333333333333332,
+        "cloud_shadow_fraction": 0.0,
+        "nodata_fraction": 0.0,
+        "snow_or_ice_fraction": 0.005733333333333333,
+        "surface_clear_cells_excluding_snow": 22026,
+        "surface_clear_fraction_excluding_snow": 0.9789333333333333,
+        "topographic_shadow_fraction": 0.6235111111111111,
+        "total_cells": 22500
+      },
+      "retained_files": [
+        {
+          "band": "B02",
+          "native_resolution_m": 10,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005c/sentinel2-temporal-evidence/observations/autumn/source-native/B02_10m-native-window.tif",
+          "sha256": "e208c045b1f6627acbf31db6b60021e8f64301cedf8ae6134b888391329ab012",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2024/11/S2A_T30UVD_20241127T113445_L2A/B02.tif",
+          "dimensions": [
+            405,
+            405
+          ],
+          "bounds": [
+            431200.0,
+            5883410.0,
+            435250.0,
+            5887460.0
+          ],
+          "transform": [
+            10.0,
+            0.0,
+            431200.0,
+            0.0,
+            -10.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "B03",
+          "native_resolution_m": 10,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005c/sentinel2-temporal-evidence/observations/autumn/source-native/B03_10m-native-window.tif",
+          "sha256": "c6011efaf4e0b0aa327948e3b3c33b21d91701d00f82fc29525884571d0e5fa0",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2024/11/S2A_T30UVD_20241127T113445_L2A/B03.tif",
+          "dimensions": [
+            405,
+            405
+          ],
+          "bounds": [
+            431200.0,
+            5883410.0,
+            435250.0,
+            5887460.0
+          ],
+          "transform": [
+            10.0,
+            0.0,
+            431200.0,
+            0.0,
+            -10.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "B04",
+          "native_resolution_m": 10,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005c/sentinel2-temporal-evidence/observations/autumn/source-native/B04_10m-native-window.tif",
+          "sha256": "021b20a934da237fc44f6ce980451aa04526d785ff23fa08e4f0a3518e0f6531",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2024/11/S2A_T30UVD_20241127T113445_L2A/B04.tif",
+          "dimensions": [
+            405,
+            405
+          ],
+          "bounds": [
+            431200.0,
+            5883410.0,
+            435250.0,
+            5887460.0
+          ],
+          "transform": [
+            10.0,
+            0.0,
+            431200.0,
+            0.0,
+            -10.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "B08",
+          "native_resolution_m": 10,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005c/sentinel2-temporal-evidence/observations/autumn/source-native/B08_10m-native-window.tif",
+          "sha256": "6403b8f71ad351fc9befdea7245ac1c35a981192fc7e1d2e9082f53a5a28485c",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2024/11/S2A_T30UVD_20241127T113445_L2A/B08.tif",
+          "dimensions": [
+            405,
+            405
+          ],
+          "bounds": [
+            431200.0,
+            5883410.0,
+            435250.0,
+            5887460.0
+          ],
+          "transform": [
+            10.0,
+            0.0,
+            431200.0,
+            0.0,
+            -10.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "B05",
+          "native_resolution_m": 20,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005c/sentinel2-temporal-evidence/observations/autumn/source-native/B05_20m-native-window.tif",
+          "sha256": "d3885b4bfa91b37e0bb964bf60fe564e4ae90659ae525ffb9760c340645499d8",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2024/11/S2A_T30UVD_20241127T113445_L2A/B05.tif",
+          "dimensions": [
+            203,
+            203
+          ],
+          "bounds": [
+            431200.0,
+            5883400.0,
+            435260.0,
+            5887460.0
+          ],
+          "transform": [
+            20.0,
+            0.0,
+            431200.0,
+            0.0,
+            -20.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "B06",
+          "native_resolution_m": 20,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005c/sentinel2-temporal-evidence/observations/autumn/source-native/B06_20m-native-window.tif",
+          "sha256": "f48c77b53d30b80e13d041c314abf28c8abe9853c25321c3aa32704220c27dd4",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2024/11/S2A_T30UVD_20241127T113445_L2A/B06.tif",
+          "dimensions": [
+            203,
+            203
+          ],
+          "bounds": [
+            431200.0,
+            5883400.0,
+            435260.0,
+            5887460.0
+          ],
+          "transform": [
+            20.0,
+            0.0,
+            431200.0,
+            0.0,
+            -20.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "B07",
+          "native_resolution_m": 20,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005c/sentinel2-temporal-evidence/observations/autumn/source-native/B07_20m-native-window.tif",
+          "sha256": "82b3acbf9b8ed48c82b7be112f683fc1543b08697a638878d92d3540061fc016",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2024/11/S2A_T30UVD_20241127T113445_L2A/B07.tif",
+          "dimensions": [
+            203,
+            203
+          ],
+          "bounds": [
+            431200.0,
+            5883400.0,
+            435260.0,
+            5887460.0
+          ],
+          "transform": [
+            20.0,
+            0.0,
+            431200.0,
+            0.0,
+            -20.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "B8A",
+          "native_resolution_m": 20,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005c/sentinel2-temporal-evidence/observations/autumn/source-native/B8A_20m-native-window.tif",
+          "sha256": "d8109f2f0dd35a4f2d1b764327a557ffcbaa6e67278b00d7ecb3d4cbac8ced15",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2024/11/S2A_T30UVD_20241127T113445_L2A/B8A.tif",
+          "dimensions": [
+            203,
+            203
+          ],
+          "bounds": [
+            431200.0,
+            5883400.0,
+            435260.0,
+            5887460.0
+          ],
+          "transform": [
+            20.0,
+            0.0,
+            431200.0,
+            0.0,
+            -20.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "B11",
+          "native_resolution_m": 20,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005c/sentinel2-temporal-evidence/observations/autumn/source-native/B11_20m-native-window.tif",
+          "sha256": "43998309920578f74ea96577292a2f201e0a3e6a3c791a626a087f04330a7d6f",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2024/11/S2A_T30UVD_20241127T113445_L2A/B11.tif",
+          "dimensions": [
+            203,
+            203
+          ],
+          "bounds": [
+            431200.0,
+            5883400.0,
+            435260.0,
+            5887460.0
+          ],
+          "transform": [
+            20.0,
+            0.0,
+            431200.0,
+            0.0,
+            -20.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "B12",
+          "native_resolution_m": 20,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005c/sentinel2-temporal-evidence/observations/autumn/source-native/B12_20m-native-window.tif",
+          "sha256": "3b06d046e725d543792df384a2f8b6f9e1ee60953407dfbad46e6fa4fb1a0a80",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2024/11/S2A_T30UVD_20241127T113445_L2A/B12.tif",
+          "dimensions": [
+            203,
+            203
+          ],
+          "bounds": [
+            431200.0,
+            5883400.0,
+            435260.0,
+            5887460.0
+          ],
+          "transform": [
+            20.0,
+            0.0,
+            431200.0,
+            0.0,
+            -20.0,
+            5887460.0
+          ]
+        },
+        {
+          "band": "SCL",
+          "native_resolution_m": 20,
+          "path": "${MERIDIAN_DATA_ROOT}/experiments/earth-lab/tryfan-005c/sentinel2-temporal-evidence/observations/autumn/source-native/SCL_20m-native-window.tif",
+          "sha256": "0ba453b5c4e6eb32c95a933137401c0140f9f11c3e6d8e057623f9404b178f87",
+          "source_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/30/U/VD/2024/11/S2A_T30UVD_20241127T113445_L2A/SCL.tif",
+          "dimensions": [
+            203,
+            203
+          ],
+          "bounds": [
+            431200.0,
+            5883400.0,
+            435260.0,
+            5887460.0
+          ],
+          "transform": [
+            20.0,
+            0.0,
+            431200.0,
+            0.0,
+            -20.0,
+            5887460.0
+          ]
+        }
+      ]
+    }
+  ],
+  "selected_season": "summer",
+  "selected_observation": {
+    "acquisition_time_utc": "2026-07-12T11:33:31.024Z",
+    "authority": "Copernicus Data Space Ecosystem Sentinel-2 L2A STAC",
+    "candidate_aoi_scl": [
+      {
+        "aoi_cloud_fraction": 0.0,
+        "aoi_usable_fraction": 1.0,
+        "product": "S2A_MSIL2A_20260712T113331_N0512_R080_T30UVD_20260712T174812",
+        "sun_elevation_degrees": 58.062309162853
+      },
+      {
+        "aoi_cloud_fraction": 0.0,
+        "aoi_usable_fraction": 1.0,
+        "product": "S2B_MSIL2A_20260712T112109_N0512_R037_T30UVD_20260712T133747",
+        "sun_elevation_degrees": 57.4961605703682
+      },
+      {
+        "aoi_cloud_fraction": 0.0,
+        "aoi_usable_fraction": 1.0,
+        "product": "S2B_MSIL2A_20260715T113319_N0512_R080_T30UVD_20260715T141254",
+        "sun_elevation_degrees": 57.5913521670397
+      }
+    ],
+    "cog_access": {
+      "item_id": "S2A_T30UVD_20260712T113332_L2A",
+      "item_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-c1-l2a/items/S2A_T30UVD_20260712T113332_L2A",
+      "provider": "Element 84 Earth Search Sentinel-2 Collection-1 / AWS open-data COG mirror",
+      "reason": "Anonymous HTTP range-readable COG access to the same ESA product identity; CDSE official asset access requires credentials."
+    },
+    "instrument": "MSI",
+    "mission": "Sentinel-2",
+    "official_item_url": "https://stac.dataspace.copernicus.eu/v1/collections/sentinel-2-l2a/items/S2A_MSIL2A_20260712T113331_N0512_R080_T30UVD_20260712T174812",
+    "official_product_id": "S2A_MSIL2A_20260712T113331_N0512_R080_T30UVD_20260712T174812",
+    "platform": "Sentinel-2A",
+    "processing_baseline": "05.12",
+    "processing_level": "Level-2A bottom-of-atmosphere surface reflectance",
+    "scene_cloud_percent_official": 0.0,
+    "source_crs": "EPSG:32630",
+    "sun_azimuth_degrees": 160.700929790374,
+    "sun_elevation_degrees": 58.062309162853,
+    "tile_id": "30UVD"
+  },
+  "selection_rationale": "Summer has zero AOI cloud/cloud-shadow/snow/nodata and 58.06-degree sun; spring has 0.33% cloud and 6% topographic shadow, winter 25.28% snow/59.20% shadow, autumn 1.53% cloud/62.35% shadow. Summer still has 1.84% SCL topographic shadow, which is retained, not corrected. No seasonal composite.",
+  "licence": {
+    "data_terms": "Copernicus Sentinel Data Legal Notice / free, full and open access",
+    "terms_url": "https://dataspace.copernicus.eu/terms-and-conditions",
+    "sentinel_legal_notice": "https://sentinels.copernicus.eu/documents/247904/690755/Sentinel_Data_Legal_Notice",
+    "attribution": "Contains modified Copernicus Sentinel data 2026."
+  },
+  "source_report_hashes": {
+    "lab005b": "effb083164f4e7bc93a97bcd43bc3072c195625b0b9eee64b9c26a2d1b863913",
+    "lab005c": "06fe074eb64ad1fa675467a572c506e50d040429214a7d3acee8258c955d3fa8"
+  },
+  "aoi": {
+    "crs": "EPSG:27700",
+    "bounds": [
+      264900,
+      357800,
+      267900,
+      360800
+    ],
+    "dimensions": [
+      300,
+      300
+    ],
+    "pixel_size_m": [
+      10,
+      10
+    ],
+    "transform": [
+      10.0,
+      0.0,
+      264900.0,
+      0.0,
+      -10.0,
+      360800.0
+    ],
+    "row_zero": "north",
+    "column_zero": "west"
+  },
+  "processing": {
+    "bands_in_rgb_order": [
+      "B04",
+      "B03",
+      "B02"
+    ],
+    "source_crs": "EPSG:32630",
+    "runtime": {
+      "python": "3.12.6",
+      "numpy": "2.5.2",
+      "rasterio": "1.4.3",
+      "gdal": "3.9.3"
+    },
+    "source_native_pixel_size_m": 10,
+    "destination_pixel_size_m": 10,
+    "reflectance": "DN * 0.0001 - 0.1; source DN 0 is nodata; negative valid reflectance retained",
+    "resampling": "bilinear, one GDAL thread, no sharpening or local enhancement",
+    "display": "uint8 round(255 * clip((reflectance - 0.02) / 0.28, 0, 1)); gamma 1; fixed Lab 005C common RGB stretch",
+    "nodata_cells": 0,
+    "renderer_adapter": "same 300×300 PNG, no finer resampling; sRGB display bytes, bilinear texture filtering"
+  },
+  "products": [
+    {
+      "path": "lab010-rgb-reflectance-10m.tif",
+      "sha256": "89304e0045bc72b49c360c20bb62acd977673897c170ed5ee73b5920e1fb70b2",
+      "bytes": 948848
+    },
+    {
+      "path": "lab010-natural-colour-10m.tif",
+      "sha256": "f682f4a52af3f5d5f1c635f0d3800ba6bfefad186157c4795ff530adf4d4bd75",
+      "bytes": 207657
+    },
+    {
+      "path": "lab010-natural-colour-10m.png",
+      "sha256": "4d618ab2f0c8ab5dfc6ae0c7f5e99d27f2fa91d0d5f9cba0b1776327094add52",
+      "bytes": 148616
+    }
+  ],
+  "deterministic_product_identity": "95da30643ea0d7b25408182cbea11adc2dd842ae1557b545d1de8e77c39c3dce",
+  "semantics": {
+    "observed": "Native Sentinel reflectance and unchanged measured terrain",
+    "derived": "Crop, reprojection, fixed display transformation",
+    "rendered": "Unreal base colour, fixed roughness/specular; no reconstructed detail"
+  },
+  "visual_acceptance": "pending_manual_fixed_camera_comparison"
+}
