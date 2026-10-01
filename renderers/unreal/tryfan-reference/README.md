@@ -102,6 +102,12 @@ Lab 010 and Lab 010 with 50% photographic overlay without saving the map.
 Its 300 × 300 texture retains 10 m observed resolution. Default bootstrap and
 Lab 009 validation remain unchanged; Lab 010 has a separate optional deployment.
 
+Lab 011 adds an optional continuous DSM−DTM diagnostic on the same unchanged
+Landscape. See [the Lab 011 procedure](../../../docs/earth-lab/tryfan-011-observed-surface-height.md)
+for its scientific limitations, deployment, legend and reversible Lab 010/residual/
+photographic-overlay comparison. Residuals are provider-product differences, not
+semantic object heights. The diagnostic does not add geometry or rebuild lighting.
+
 Never commit credentials, personal absolute paths, source-pointer JSON, downloaded
 source data, generated control rasters, imported/generated `.uasset` packages,
 Unreal caches, logs, autosaves or routine `Saved` state. Changes to the LFS-tracked

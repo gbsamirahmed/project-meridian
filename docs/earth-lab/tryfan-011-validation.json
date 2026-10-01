@@ -1,0 +1,240 @@
+{
+  "result": "PASS",
+  "states": [
+    {
+      "state": "baseline",
+      "overlay_enabled": false,
+      "material": null,
+      "camera_unchanged": true,
+      "landscape_transform_unchanged": true,
+      "map_saved": false,
+      "camera": {
+        "location_cm": {
+          "x": 52549.121742951684,
+          "y": -29494.947166356724,
+          "z": -16443.74237411574
+        },
+        "rotation_degrees": {
+          "pitch": 30.34180068969728,
+          "yaw": 165.14199829101562,
+          "roll": -0.0
+        },
+        "horizontal_fov_degrees": 35.20000076293945,
+        "aspect_ratio": 1.3333333730697632,
+        "constrain_aspect_ratio": true
+      },
+      "landscape_transform": {
+        "location_cm": [
+          -150000.0,
+          -150000.0,
+          0.0
+        ],
+        "rotation_degrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          99.206349,
+          99.206349,
+          150.0
+        ]
+      }
+    },
+    {
+      "state": "lab009",
+      "overlay_enabled": false,
+      "material": "/Game/MeridianLab009/M_Lab009_Surface.M_Lab009_Surface",
+      "camera_unchanged": true,
+      "landscape_transform_unchanged": true,
+      "map_saved": false,
+      "camera": {
+        "location_cm": {
+          "x": 52549.121742951684,
+          "y": -29494.947166356724,
+          "z": -16443.74237411574
+        },
+        "rotation_degrees": {
+          "pitch": 30.34180068969728,
+          "yaw": 165.14199829101562,
+          "roll": -0.0
+        },
+        "horizontal_fov_degrees": 35.20000076293945,
+        "aspect_ratio": 1.3333333730697632,
+        "constrain_aspect_ratio": true
+      },
+      "landscape_transform": {
+        "location_cm": [
+          -150000.0,
+          -150000.0,
+          0.0
+        ],
+        "rotation_degrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          99.206349,
+          99.206349,
+          150.0
+        ]
+      }
+    },
+    {
+      "state": "lab010",
+      "overlay_enabled": false,
+      "material": "/Game/MeridianLab010/M_Lab010_ObservedNaturalColour.M_Lab010_ObservedNaturalColour",
+      "camera_unchanged": true,
+      "landscape_transform_unchanged": true,
+      "map_saved": false,
+      "camera": {
+        "location_cm": {
+          "x": 52549.121742951684,
+          "y": -29494.947166356724,
+          "z": -16443.74237411574
+        },
+        "rotation_degrees": {
+          "pitch": 30.34180068969728,
+          "yaw": 165.14199829101562,
+          "roll": -0.0
+        },
+        "horizontal_fov_degrees": 35.20000076293945,
+        "aspect_ratio": 1.3333333730697632,
+        "constrain_aspect_ratio": true
+      },
+      "landscape_transform": {
+        "location_cm": [
+          -150000.0,
+          -150000.0,
+          0.0
+        ],
+        "rotation_degrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          99.206349,
+          99.206349,
+          150.0
+        ]
+      }
+    },
+    {
+      "state": "lab011",
+      "overlay_enabled": false,
+      "camera_unchanged": true,
+      "landscape_transform_unchanged": true,
+      "camera": {
+        "location_cm": {
+          "x": 52549.121742951684,
+          "y": -29494.947166356724,
+          "z": -16443.74237411574
+        },
+        "rotation_degrees": {
+          "pitch": 30.34180068969728,
+          "yaw": 165.14199829101562,
+          "roll": -0.0
+        },
+        "horizontal_fov_degrees": 35.20000076293945,
+        "aspect_ratio": 1.3333333730697632,
+        "constrain_aspect_ratio": true
+      },
+      "landscape_transform": {
+        "location_cm": [
+          -150000.0,
+          -150000.0,
+          0.0
+        ],
+        "rotation_degrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          99.206349,
+          99.206349,
+          150.0
+        ]
+      },
+      "map_saved": false,
+      "material": "/Game/MeridianLab011/M_Lab011_Residual.M_Lab011_Residual"
+    },
+    {
+      "state": "lab011",
+      "overlay_enabled": true,
+      "camera_unchanged": true,
+      "landscape_transform_unchanged": true,
+      "camera": {
+        "location_cm": {
+          "x": 52549.121742951684,
+          "y": -29494.947166356724,
+          "z": -16443.74237411574
+        },
+        "rotation_degrees": {
+          "pitch": 30.34180068969728,
+          "yaw": 165.14199829101562,
+          "roll": -0.0
+        },
+        "horizontal_fov_degrees": 35.20000076293945,
+        "aspect_ratio": 1.3333333730697632,
+        "constrain_aspect_ratio": true
+      },
+      "landscape_transform": {
+        "location_cm": [
+          -150000.0,
+          -150000.0,
+          0.0
+        ],
+        "rotation_degrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          99.206349,
+          99.206349,
+          150.0
+        ]
+      },
+      "map_saved": false,
+      "material": "/Game/MeridianLab011/M_Lab011_Residual.M_Lab011_Residual"
+    }
+  ],
+  "lab010_validation": "PASS",
+  "landscape_validator": "PASS",
+  "camera_validator": "PASS",
+  "lab009_restoration": "PASS",
+  "texture_dimensions": [
+    3000,
+    3000
+  ],
+  "map_saved": false,
+  "manual_visual_acceptance": "pending",
+  "lighting": "No lighting build or atmospheric calibration; existing unbuilt-lighting warning remains a known limitation",
+  "engine_version": "5.8.2-56702186+++UE5+Release-5.8",
+  "lab_tests": {
+    "passed": 6,
+    "failed": 0,
+    "skipped": 0
+  },
+  "reference_renderer_tests": {
+    "passed": 5,
+    "failed": 0,
+    "skipped": 0
+  },
+  "deterministic_repeat_processing": true,
+  "lab011_identity": "5d157f6f5a0819d732e5b87f07d299144eeac6c4e6b4c29823bf8eebb00ee04c",
+  "preserved_map_sha256": "85ef8f1cc9a9fda9b6f2ab3b911bd57831fe75c4009e5ad168ea4956165a260d",
+  "preserved_r16_sha256": "31cbe763dac4072772ac9bcb4a3217b78eba0c10265e576ede708154288f6bf6",
+  "preserved_lab009_identity": "14f90941468166dc3937879e022e8fedff2d9d212eed5cfb1c5deb0407c6a859",
+  "preserved_lab010_identity": "95da30643ea0d7b25408182cbea11adc2dd842ae1557b545d1de8e77c39c3dce",
+  "lab010_manual_inspection": "Reported complete by product owner; identity and outputs unchanged",
+  "warnings": [
+    "Rasterio/NumPy 2.5 array-shape deprecation warning; no numerical failure",
+    "Previously reported 578 unbuilt lighting objects not corrected; no lighting build",
+    "Absolute vertical datum is not explicitly encoded in retained source TIFFs",
+    "No manual fixed-camera Lab 011 visual conclusions claimed"
+  ]
+}

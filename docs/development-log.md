@@ -2398,3 +2398,42 @@ shadows and existing Unreal lighting can compound, and 2026 imagery differs in d
 from the 2021 terrain and 2009 photograph. Ten-metre observations cannot resolve
 individual rocks, vegetation geometry or material microstructure. This is a visual
 research Lab, not a new numbered cleanup phase or Atlas runtime programme.
+
+### 2026-10-01 — Lab 011: observed surface-height structure
+
+The product owner reports that Lab 010's fixed-camera A–D inspection is complete:
+the measured terrain captures broad form, observed colour adds real spatial
+variation, but 10 m imagery cannot supply the missing fine structure. This is a
+subsequent status record; Lab 010's frozen identity and outputs remain unchanged.
+
+Lab 011 measures the signed difference between the retained Welsh Government
+2021-03-02 delivery-11 DSM and DTM. Source hashes, identical EPSG:27700 3000×3000
+1 m grids and complete valid-cell coverage were verified before subtraction.
+No source acquisition, resampling, smoothing, semantic classes or reconstructed
+geometry was introduced. Metre/ODN provenance is distinguished from the absence
+of an explicitly encoded vertical CRS in the retained TIFFs. Exact rocky-ground
+classification rules remain unknown; the difference is not object height.
+
+The median difference is 0.140 m, mean 0.301 m and standard deviation 0.663 m;
+70.767% has magnitude ≤0.25 m. Above 1 m, 67.78% of thresholded area lies in
+four-connected regions ≥9 m², while 8.88% is isolated cells. Signed negatives and
+extrema remain intact. Residual and measured-DTM diagnostics across 1–20 m show
+coherent additional information and substantial form already represented by terrain.
+Strong steep-slope dependence cautions against treating residuals as added objects.
+Weak 10 m colour correlations do not establish semantic classes.
+
+Large diagnostic products remain external in the new tryfan-011 experiment directory;
+Git holds code, metadata and documentation only. Two full runs produced identical
+outputs/manifests. Six Lab-specific tests and five preserved-renderer tests pass.
+UE 5.8.2 commandlet validation exercised baseline, Lab 009, Lab 010 and the new
+unlit quantitative residual/50%-photo states; camera, Landscape geometry/collision
+and Lab 009 restoration passed, and the canonical map was not saved. Source,
+canonical R16 and Labs 009/010 hashes remain unchanged. No lighting build was run;
+the previously reported 578 unbuilt objects remain a known fixture limitation.
+
+See [the Lab 011 procedure](earth-lab/tryfan-011-observed-surface-height.md),
+[measurement manifest](earth-lab/tryfan-011-observed-surface-height.json) and
+[validation evidence](earth-lab/tryfan-011-validation.json). Lab 011 manual
+fixed-camera interpretation remains pending; no perspective visual acceptance is
+claimed. The DSM contains spatially supported information worth retaining for
+later independent evidence fusion, not a semantic inventory of rocks or vegetation.
