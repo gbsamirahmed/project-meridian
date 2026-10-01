@@ -2,8 +2,9 @@
 
 **Status:** Phases 5A-5D are complete and checkpointed at
 `6f6491c6cb72b203e71693318a719b227bf2c662` (`Complete Phase 5 architecture cleanup`),
-marked by `phase-5-complete`. Local main now contains this approved implementation;
-Phase 6 repository reunification remains pending final validation/publication in 6D.
+marked by the published `phase-5-complete` tag. Canonical main and origin/main contain
+this approved implementation after the completed Phase 6 reunification. Phase 7 is
+the bounded clean-start reproduction and final foundation validation stage.
 See [current repository status](architecture.md#repository-status-and-historical-markers).
 
 The audit, frozen plans and implementation records below retain their historical

@@ -2163,3 +2163,96 @@ only diff, privacy/credential scans and unchanged implementation content against
 Origin/main remains at `6383ed2`; the Phase 6C documentation commit and new tag stay
 local pending the Phase 6D validation/publication gate. Phase 6D has not begun.
 Phase 6 is not complete: it ends with 6D, and no Phase 6E is proposed.
+
+## 2026-10-01 — Phase 6 completion and Phase 7 clean-start corrections
+
+Phase 6D completed the validation/publication gate. Canonical main and origin/main
+were published normally at `8a9bdee956d9e881639ce20a99ccd337a0cf3fc4`, and the
+annotated `phase-5-complete` marker was published at the unchanged Phase 5 checkpoint.
+Only the four approved repository-facing documents differed from Phase 5; history
+was preserved without rewriting. Earth-lab and legacy/journey-weather remain frozen
+historical branches. The earlier Phase 6C entry records the then-pending state.
+Phase 6 is complete and ends at 6D.
+
+Phase 7A reproduced canonical main in an independent clone with normal Git LFS
+recovery, lockfile installation and a fresh Python environment. Documented external
+data configuration worked without private activities or original-checkout artifacts.
+It exposed an environment-dependent publication fixture, production materialization
+on Vite server shutdown, resource-sensitive browser timeouts, stale current status
+text and six npm advisory-bearing packages. No accidental original-checkout hidden
+state was found. This was an observation-only experiment, not a repair phase.
+
+Phase 7B corrects the sibling-default test by explicitly supplying an empty
+environment. Production root resolution is unchanged. Two regression tests exercise
+actual middleware and listening Vite servers in isolated child-process environments.
+Vite's publication plugin now gates its existing closeBundle work on the resolved
+`build` command: development/test shutdown serves no production materialization,
+while standalone builds still publish only latest.json and its selected immutable
+run. No application/domain architecture, browser URL or Weather format changed.
+
+The unchanged shell tests initially timed out in all three sizes even when run alone,
+with about 1.3 GB of free RAM. After the developer freed memory, all three isolated
+checks and the complete 15-scenario matrix passed unchanged; 1366x768 pressure took
+31.3 seconds in that matrix. The evidence supports environmental resource timing,
+not a browser assertion or application defect. No timeout, test assertion, visual
+baseline or application rendering change was made. Browser validation is documented
+as a quiet run without competing builds/tests. Current status text now records the
+completed Phase 6 publication rather than rewriting earlier historical entries.
+
+### Phase 7B dependency advisory disposition
+
+The audit initially reported one moderate, four high and one critical package.
+Only compatible transitive lockfile updates were applied; package.json, direct
+dependency versions and application code remain unchanged. Companion Browserslist
+data packages were updated as required by its existing dependency constraints.
+No automatic audit fix, suppression or override was used.
+
+| Package / dependency path | Original severity / version | Advisory and affected range | First fixed version / disposition |
+| --- | --- | --- | --- |
+| baseline-browser-mapping via React Hooks ESLint plugin → Babel → Browserslist | Moderate / 2.10.33 | GHSA-w5vr-8v7q-w6rv; >=2.0.0 <2.11.0 | 2.11.0; locked 2.11.26 |
+| brace-expansion via ESLint → minimatch | High / 5.0.6 | GHSA-3jxr-9vmj-r5cp (<5.0.7), GHSA-mh99-v99m-4gvg (<5.0.8), GHSA-rgw5-rvv9-x895 (<5.0.9), GHSA-6j4f-fj2g-mc7p (<5.0.10), GHSA-qhr7-859c-m2p7 (<5.0.11), GHSA-q2hr-2g5m-vwhr (<5.0.12), for the affected 5.x line | 5.0.12; locked 5.0.12 |
+| browserslist via React Hooks ESLint plugin → Babel | High / 4.28.2 | GHSA-c83g-rgw3-j3cx and GHSA-73wf-gq98-2v4g; <=4.28.6 | 4.28.7; locked 4.29.3 |
+| nanoid via Vite → PostCSS | High / 3.3.12 | GHSA-28wg-ghj8-5hjv (<3.3.16) and GHSA-2v37-7h3g-55p8 (<3.3.18), for the affected 3.x line | 3.3.18; locked 3.3.19 |
+| postcss via Vite | High / 8.5.15 | GHSA-r28c-9q8g-f849 (<=8.5.17) and GHSA-fxqj-rqcc-2cmp (<=8.5.22) | 8.5.23 for both; locked 8.5.28 |
+| maplibre-gl, direct browser dependency | Critical / 5.24.0 | [GHSA-jrc7-96c5-q579](https://github.com/advisories/GHSA-jrc7-96c5-q579); <=6.4.0 | 6.4.1; major-version migration deferred to immediate post-Phase-7 maintenance |
+
+The five transitive packages process build/lint inputs rather than user route or
+Weather data. Their advisories concern invalid input, glob expansion, Browserslist
+cache/custom statistics, Nano ID argument handling, and untrusted CSS source-map
+paths. Meridian normally supplies repository-controlled configuration/CSS; PostCSS
+calls its non-secure ID generator with a fixed positive size of six. Compatible
+updates remove these advisories without declaring their risk nonexistent.
+
+The remaining MapLibre advisory materially applies: Meridian uses MapLibre's
+attribution control and accepts third-party style/source attribution, including
+MapTiler metadata validated only as a string. The sanitizer bypass can therefore
+affect externally supplied attribution HTML. It is not dismissed as a tooling-only
+issue. The [MapLibre 6 release](https://github.com/maplibre/maplibre-gl-js/releases/tag/v6.0.0)
+changes default-import/ESM APIs, event types, workers and WebGL requirements; Meridian
+has multiple default imports and custom Weather renderers requiring application
+migration and validation. That work exceeds this bounded foundation correction.
+Immediate maintenance should migrate to a supported fixed release (at least 6.4.1),
+validate attribution handling and all map/custom-renderer/browser paths before public
+deployment. npm audit remains unsuppressed with one critical advisory; this checkpoint
+does not claim a vulnerability-free application.
+
+Canonical candidate validation passed TypeScript, ESLint, all 127 active Node tests
+(125 established tests plus two lifecycle regressions, with real-publication sampling
+enabled), 82 Weather Python tests and 15 storage-root tests. The 95-file import audit
+has zero cycles/unresolved imports; documentation links/whitespace and bounded privacy
+checks pass. Standalone production publication is 20,421 files / 633,781,652 bytes,
+with the unchanged 20260907T18Z catalogue, ten fields and 24 timesteps. Legacy
+public/weather/gfs remains absent and storage-root names are absent from browser
+assets. The existing bundle-size warning remains outside this task.
+
+The corrected canonical browser matrix passed 15/15, five per established viewport;
+1366x768 pressure took 38.3 seconds under the unchanged timeout. Diagnostics report
+zero page exceptions, HTTP errors and GFS request failures; the 105 recorded failed
+requests are Terrarium URL cancellations with net::ERR_ABORTED. No historical,
+renderer/Unreal, private or authoritative external data was changed.
+
+Phase 7B remains a candidate until canonical validation and a second independent
+clean-start acceptance gate pass, followed by normal publication. The final commit
+and validation report establish that outcome; no completion is claimed here in
+advance. Phase 7 contains only 7A and 7B. No Phase 7C, architecture work or next
+development programme is introduced.

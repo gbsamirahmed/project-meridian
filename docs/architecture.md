@@ -11,12 +11,16 @@ active application ownership. Historical experiments retain their original ident
 `phase-5-complete` tag. The App / Atlas / Weather / Traverse ownership below is the
 current implementation, not a proposed next refactor.
 
-Phase 6B fast-forwarded local main to that exact checkpoint without a merge commit,
-content reconciliation or history rewriting. During Phase 6C, `origin/main` remains
-at `6383ed2d729efb8a61fd6d03c0cdedb751d26007`; the local documentation commit and
-new tag are not published. Final validation and publication belong to Phase 6D.
-Phase 6 is not complete yet and consists only of 6A audit, 6B fast-forward,
-6C repository semantics/markers and 6D validation/checkpoint. There is no Phase 6E.
+Phase 6 is complete. Phase 6B fast-forwarded local main without a merge commit,
+content reconciliation or history rewriting. Phase 6D validated and normally
+published `8a9bdee956d9e881639ce20a99ccd337a0cf3fc4` to `origin/main`, together
+with the annotated `phase-5-complete` tag. Both local and remote main are canonical;
+historical branches remain frozen. Phase 6 ended with 6D; there is no Phase 6E.
+
+Phase 7 consists only of 7A clean-start reproduction and 7B foundation corrections,
+validation and checkpoint. Phase 7A is complete as an experiment. Phase 7B remains
+subject to the final independent clean-start acceptance gate before publication;
+there is no Phase 7C and no new application architecture work in this stage.
 
 The retained historical refs have these meanings:
 

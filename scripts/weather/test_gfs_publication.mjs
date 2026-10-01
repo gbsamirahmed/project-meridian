@@ -1,8 +1,10 @@
 import assert from "node:assert/strict";
+import { spawnSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import test from "node:test";
+import { fileURLToPath } from "node:url";
 import {
   createGfsPublicationMiddleware,
   materializeGfsPublication,
@@ -48,7 +50,10 @@ function fixture() {
 test("resolves the external authoritative publication with sibling and environment roots", (context) => {
   const item = fixture();
   context.after(() => rmSync(item.parent, { recursive: true, force: true }));
-  assert.equal(resolveGfsPublicationRoot({ repositoryRoot: item.repositoryRoot }), item.root);
+  assert.equal(resolveGfsPublicationRoot({
+    repositoryRoot: item.repositoryRoot,
+    environment: {},
+  }), item.root);
   assert.equal(resolveGfsPublicationRoot({
     repositoryRoot: item.repositoryRoot,
     environment: { MERIDIAN_DATA_ROOT: item.dataRoot },
@@ -102,6 +107,42 @@ test("materialization excludes previous runs and external validation state", (co
     /Refusing to overwrite/,
   );
 });
+
+for (const middlewareMode of [true, false]) {
+  test(`${middlewareMode ? "middleware test" : "listening browser"} server shutdown does not materialize production Weather`, (context) => {
+    const item = fixture();
+    context.after(() => rmSync(item.parent, { recursive: true, force: true }));
+    const output = path.join(item.parent, "dist");
+    // Keep the fixture's root override inside a child process, isolated from other tests.
+    const result = spawnSync(process.execPath, ["--input-type=module", "--eval", `
+      import assert from "node:assert/strict";
+      import { createServer } from "vite";
+      const middlewareMode = process.argv[2] === "true";
+      const server = await createServer({
+        logLevel: "silent",
+        server: { middlewareMode, host: "127.0.0.1", port: 0 },
+        build: { outDir: process.argv[1] },
+      });
+      try {
+        if (!middlewareMode) {
+          await server.listen();
+          const address = server.httpServer.address();
+          const response = await fetch("http://127.0.0.1:" + address.port + "/weather/gfs/latest.json");
+          assert.equal(response.status, 200);
+          assert.equal(Object.keys((await response.json()).fields).length, 10);
+        }
+      } finally { await server.close(); }
+    `, output, String(middlewareMode)], {
+      cwd: fileURLToPath(new URL("../../", import.meta.url)),
+      env: { ...process.env, MERIDIAN_DATA_ROOT: item.dataRoot },
+      encoding: "utf8",
+      windowsHide: true,
+      timeout: 30_000,
+    });
+    assert.equal(result.status, 0, result.error?.message ?? result.stderr);
+    assert.equal(existsSync(output), false, "Server shutdown must not produce build output");
+  });
+}
 
 test("missing authoritative data fails the Weather request clearly without blocking other paths", (context) => {
   const item = fixture();

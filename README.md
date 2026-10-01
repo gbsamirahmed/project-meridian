@@ -71,8 +71,10 @@ layout, intentional seams and validation gates.
 
 Use `main` for active Meridian development. The Phase 5 architecture cleanup is
 complete; `earth-lab` and `legacy/journey-weather` are retained historical branches,
-not prerequisites for working on the application. Phase 6 remote publication remains
-pending its final validation; see the [repository status](docs/architecture.md#repository-status-and-historical-markers).
+not prerequisites for working on the application. Phase 6 is complete: `main` is
+published and canonical, and `phase-5-complete` is published. Phase 7 verifies
+clean-start reproduction and the final foundation checkpoint; see the
+[repository status](docs/architecture.md#repository-status-and-historical-markers).
 
 Requirements:
 
@@ -109,6 +111,9 @@ Run the supported visual smoke workflow with:
 npm run visual:test
 ```
 
+Run this browser workflow on its own, without a concurrent production build or
+Node/Python test run, and with enough free memory for Chromium and the 3D map.
+
 Playwright starts the normal Vite development server on loopback-only `http://localhost:4173`, launches headless Chromium, exercises the desktop shell and key controls, loads the non-private Snowdonia route fixture, writes diagnostics and screenshots, then closes the browser and server. The configured desktop sizes are 1920×1080, 1440×900, and 1366×768. Run one size with, for example, `npm run visual:test -- --project desktop-1440x900`.
 
 Generated PNGs and JSON diagnostics are written to `test-results/visual/`; traces from failures are written under `test-results/playwright/`. Both paths are ignored by Git. Page exceptions fail the suite, while console messages, failed requests, and HTTP error responses are retained in the diagnostics so external provider failures remain visible.
@@ -126,6 +131,9 @@ Never commit `.env.local`. A public deployment should use a dedicated MapTiler k
 ### Generate current GFS weather fields
 
 Generated GFS runs live under `MERIDIAN_DATA_ROOT/derived/weather/gfs` and remain outside Git. Vite exposes the validated catalogue-selected run at the stable `/weather/gfs` browser URL through a guarded local adapter; production builds materialize that bounded view into `dist`. A clean clone still starts normally, but global map weather is reported as unavailable until the external dataset exists. Meridian does not silently substitute point-API fields.
+
+Stopping development or test servers does not create a production publication.
+Only `npm run build` materializes the catalogue-selected run into `dist/weather/gfs`.
 
 With Python 3.12 or newer:
 
@@ -187,6 +195,7 @@ Provider availability, acceptable-use policies, rate limits, attribution require
 
 ## Prototype limitations
 
+- MapLibre 5.24.0 has an unresolved critical attribution-HTML sanitizer advisory. Its fixed release requires a major-version migration, recorded as immediate maintenance before public deployment in the [dependency advisory disposition](docs/development-log.md#phase-7b-dependency-advisory-disposition).
 - Meridian is an engineering prototype and should not be used for safety-critical navigation or forecasting decisions.
 - GFS map weather is based on 0.25° model fields; close zooms overzoom the same data rather than creating finer meteorological detail.
 - The generated GFS horizon is +24 hours. Local updates can run continuously while a developer terminal remains open, but no production scheduler, hosting, monitoring, or alerting exists.

@@ -12,11 +12,13 @@ import {
 function publishExternalWeather(): Plugin {
   let publicDir = ''
   let outDir = ''
+  let isProductionBuild = false
   const publicationRoot = resolveGfsPublicationRoot({ requireExists: false })
   return {
     name: 'meridian-external-weather-publication',
     config: () => ({ build: { copyPublicDir: false } }),
     configResolved: (config) => {
+      isProductionBuild = config.command === 'build'
       publicDir = config.publicDir
       outDir = resolve(config.root, config.build.outDir)
     },
@@ -25,6 +27,7 @@ function publishExternalWeather(): Plugin {
     },
 
     closeBundle: () => {
+      if (!isProductionBuild) return
       cpSync(publicDir, outDir, {
         recursive: true,
         filter: (source) => {
