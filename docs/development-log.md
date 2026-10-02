@@ -2756,3 +2756,38 @@ See [Lab 012F result and exact viewing/reproduction commands](earth-lab/riffelho
 [identity](earth-lab/riffelhorn-012f-metadata.json),
 [measurements](earth-lab/riffelhorn-012f-measurements.json) and
 [validation](earth-lab/riffelhorn-012f-validation.json).
+
+
+## 2026-10-03 — Lab 012G: orthophoto projection and baked illumination
+
+Continued from 45d101351d9dbcab29845f73b2364e0be7b3e319. Reused the unchanged
+012B surface, source RGB, four benchmark cameras and compiled 012F L1 northeast
+lighting. Added one bounded global low-frequency RGB gain, a separate continuous
+surface-texel-density diagnostic, source-window tracing and a pre-display scalar
+audit. All raw/corrected textures, diagnostic arrays, projects and captures stay
+under external `experiments/earth-lab/riffelhorn-012g/projection-illumination-v1/`.
+
+Outcome F: source-causal ranking inconclusive, with projection loss independently
+established. The exact dark-face window remains 84.00% near-black originally and
+83.41% after correction. Its sampled source is only 2.92% near-black; shader probes
+confirm real positive variation reaches the renderer and is suppressed by final
+display conversion. Do not mistake black output for empty source data. Steep
+facets spread nominal 25 cm information over metres; brightening cannot repair
+that mapping. Paths/boundaries survive; dark grain is amplified without improving
+measurement confidence. The gain is not an accepted cliff-appearance replacement.
+
+CONDITIONAL NORMAL EXPERIMENT JUSTIFIED: NO. No specific ordinary-terrain normal
+representation discrepancy meets the finite programme's gate. The programme ends
+after 012G for synthesis; geometry reconstruction remains closed. No third Lab,
+new data, production architecture, Tryfan change or previous Lab implementation
+change. The report separates observations, ideal projection accounting and source/
+display uncertainty, rather than forcing a source-empty or resolution-only verdict.
+
+Verification: 16 frames repeat byte-identically; full processing repeats 113
+canonical hashes (91 regenerated source/texture diagnostics), plus a separately
+hashed byte-identical HDR scalar audit. All 635 prior canonical products, 20 Swiss
+source files and historical captures/packages remain unchanged. 192 Earth Lab and
+16 terrain-research tests, ESLint, TypeScript/Vite build, JSON/link/privacy/whitespace
+and scoped Git checks pass. Existing deprecation/build warnings remain. Detailed
+measurements, provenance, commands and limitations are in
+[Lab 012G](earth-lab/riffelhorn-012g-projection-and-illumination.md).

@@ -1,0 +1,2528 @@
+{
+  "render_windows": {
+    "overview-original_unlit": {
+      "overview-mountain_relief": {
+        "pixels": 140000,
+        "linear_mean": 0.3049152144484098,
+        "linear_p05_p50_p95": [
+          0.1133668327129251,
+          0.30657381791846605,
+          0.4915407586964987
+        ],
+        "linear_p95_minus_p05": 0.37817392598357363,
+        "mean_absolute_horizontal_gradient": 0.0322614090474984,
+        "mean_absolute_vertical_gradient": 0.028618769326711965,
+        "display_luma_at_most_5_fraction": 0.014392857142857143,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "overview-alpine_channels": {
+        "pixels": 96000,
+        "linear_mean": 0.5147642928654594,
+        "linear_p05_p50_p95": [
+          0.2936915851203264,
+          0.5319711857556821,
+          0.6649184481926012
+        ],
+        "linear_p95_minus_p05": 0.37122686307227476,
+        "mean_absolute_horizontal_gradient": 0.023898976176977053,
+        "mean_absolute_vertical_gradient": 0.02098972960217946,
+        "display_luma_at_most_5_fraction": 2.0833333333333333e-05,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "riffelhorn_oblique-original_unlit": {
+      "riffelhorn_oblique-ridge_face": {
+        "pixels": 104500,
+        "linear_mean": 0.18776052641735244,
+        "linear_p05_p50_p95": [
+          0.009482684340884612,
+          0.18632627947042738,
+          0.365661908858427
+        ],
+        "linear_p95_minus_p05": 0.35617922451754236,
+        "mean_absolute_horizontal_gradient": 0.05879648109764756,
+        "mean_absolute_vertical_gradient": 0.05503301564817809,
+        "display_luma_at_most_5_fraction": 0.02292822966507177,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "riffelhorn_oblique-foreground_shoulder": {
+        "pixels": 67200,
+        "linear_mean": 0.061423033797997274,
+        "linear_p05_p50_p95": [
+          0.0,
+          0.00121410793419535,
+          0.33308755296560527
+        ],
+        "linear_p95_minus_p05": 0.33308755296560527,
+        "mean_absolute_horizontal_gradient": 0.02331123158638048,
+        "mean_absolute_vertical_gradient": 0.02551171776893584,
+        "display_luma_at_most_5_fraction": 0.545,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "riffelhorn_oblique-photographed_dark_face": {
+        "pixels": 77000,
+        "linear_mean": 0.000626175019243994,
+        "linear_p05_p50_p95": [
+          0.0,
+          0.0,
+          0.0024282158683907
+        ],
+        "linear_p95_minus_p05": 0.0024282158683907,
+        "mean_absolute_horizontal_gradient": 0.0008660276368788871,
+        "mean_absolute_vertical_gradient": 0.0008689670331679658,
+        "display_luma_at_most_5_fraction": 0.840025974025974,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "alpine_path-original_unlit": {
+      "alpine_path-ground_undulation": {
+        "pixels": 192000,
+        "linear_mean": 0.27478989887955496,
+        "linear_p05_p50_p95": [
+          0.1490598850705722,
+          0.24547767175151583,
+          0.48196241545861873
+        ],
+        "linear_p95_minus_p05": 0.3329025303880465,
+        "mean_absolute_horizontal_gradient": 0.01567668635870883,
+        "mean_absolute_vertical_gradient": 0.026701109347175907,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "alpine_path-convex_protrusion": {
+        "pixels": 83200,
+        "linear_mean": 0.31041223303650745,
+        "linear_p05_p50_p95": [
+          0.16565285588543263,
+          0.3163654540711002,
+          0.43240982939838973
+        ],
+        "linear_p95_minus_p05": 0.26675697351295713,
+        "mean_absolute_horizontal_gradient": 0.01262020674737572,
+        "mean_absolute_vertical_gradient": 0.015137289945388653,
+        "display_luma_at_most_5_fraction": 0.0004927884615384615,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "riffelhorn_structure-original_unlit": {
+      "riffelhorn_structure-steep_projection_control": {
+        "pixels": 617500,
+        "linear_mean": 0.006108448329186089,
+        "linear_p05_p50_p95": [
+          0.0,
+          0.0,
+          0.003035269835488375
+        ],
+        "linear_p95_minus_p05": 0.003035269835488375,
+        "mean_absolute_horizontal_gradient": 0.001713856300905644,
+        "mean_absolute_vertical_gradient": 0.0019425204302936365,
+        "display_luma_at_most_5_fraction": 0.8090251012145749,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "overview-original_lit": {
+      "overview-mountain_relief": {
+        "pixels": 140000,
+        "linear_mean": 0.21133457683407728,
+        "linear_p05_p50_p95": [
+          0.05945851262069469,
+          0.1998740925824074,
+          0.390276658931733
+        ],
+        "linear_p95_minus_p05": 0.33081814631103834,
+        "mean_absolute_horizontal_gradient": 0.039632278213655024,
+        "mean_absolute_vertical_gradient": 0.03711129152497682,
+        "display_luma_at_most_5_fraction": 0.014992857142857143,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "overview-alpine_channels": {
+        "pixels": 96000,
+        "linear_mean": 0.42256941767321177,
+        "linear_p05_p50_p95": [
+          0.1933403959621874,
+          0.40726669089437956,
+          0.6235090815988014
+        ],
+        "linear_p95_minus_p05": 0.4301686856366139,
+        "mean_absolute_horizontal_gradient": 0.045423220850039095,
+        "mean_absolute_vertical_gradient": 0.04566265969996059,
+        "display_luma_at_most_5_fraction": 7.291666666666667e-05,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "riffelhorn_oblique-original_lit": {
+      "riffelhorn_oblique-ridge_face": {
+        "pixels": 104500,
+        "linear_mean": 0.16996757570311188,
+        "linear_p05_p50_p95": [
+          0.004742166311612582,
+          0.1673396701918681,
+          0.3496184865709384
+        ],
+        "linear_p95_minus_p05": 0.34487632025932585,
+        "mean_absolute_horizontal_gradient": 0.05807121784619679,
+        "mean_absolute_vertical_gradient": 0.05187780733486655,
+        "display_luma_at_most_5_fraction": 0.029157894736842105,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "riffelhorn_oblique-foreground_shoulder": {
+        "pixels": 67200,
+        "linear_mean": 0.053274408150840696,
+        "linear_p05_p50_p95": [
+          0.0,
+          0.00121410793419535,
+          0.30091437777702984
+        ],
+        "linear_p95_minus_p05": 0.30091437777702984,
+        "mean_absolute_horizontal_gradient": 0.02066037423648411,
+        "mean_absolute_vertical_gradient": 0.022833656993813678,
+        "display_luma_at_most_5_fraction": 0.5546577380952381,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "riffelhorn_oblique-photographed_dark_face": {
+        "pixels": 77000,
+        "linear_mean": 0.0006261735998546904,
+        "linear_p05_p50_p95": [
+          0.0,
+          0.0,
+          0.0024282158683907
+        ],
+        "linear_p95_minus_p05": 0.0024282158683907,
+        "mean_absolute_horizontal_gradient": 0.0008660270660362662,
+        "mean_absolute_vertical_gradient": 0.000868966468670026,
+        "display_luma_at_most_5_fraction": 0.840025974025974,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "alpine_path-original_lit": {
+      "alpine_path-ground_undulation": {
+        "pixels": 192000,
+        "linear_mean": 0.19249368949962012,
+        "linear_p05_p50_p95": [
+          0.08631260612412424,
+          0.16820968229902306,
+          0.3819209388351095
+        ],
+        "linear_p95_minus_p05": 0.2956083327109853,
+        "mean_absolute_horizontal_gradient": 0.013750524547026726,
+        "mean_absolute_vertical_gradient": 0.023217198183037215,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "alpine_path-convex_protrusion": {
+        "pixels": 83200,
+        "linear_mean": 0.1770135258623114,
+        "linear_p05_p50_p95": [
+          0.05400898815837055,
+          0.17923151497732287,
+          0.2902350539805601
+        ],
+        "linear_p95_minus_p05": 0.23622606582218955,
+        "mean_absolute_horizontal_gradient": 0.009390429720479647,
+        "mean_absolute_vertical_gradient": 0.011593991978366368,
+        "display_luma_at_most_5_fraction": 0.0025600961538461537,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "riffelhorn_structure-original_lit": {
+      "riffelhorn_structure-steep_projection_control": {
+        "pixels": 617500,
+        "linear_mean": 0.0051014222526427925,
+        "linear_p05_p50_p95": [
+          0.0,
+          0.0,
+          0.003035269835488375
+        ],
+        "linear_p95_minus_p05": 0.003035269835488375,
+        "mean_absolute_horizontal_gradient": 0.0015832296236084637,
+        "mean_absolute_vertical_gradient": 0.001773215335813659,
+        "display_luma_at_most_5_fraction": 0.8102995951417004,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "overview-normalised_lit": {
+      "overview-mountain_relief": {
+        "pixels": 140000,
+        "linear_mean": 0.2149245290489806,
+        "linear_p05_p50_p95": [
+          0.07105516644783155,
+          0.20617555936235674,
+          0.37814322150630403
+        ],
+        "linear_p95_minus_p05": 0.3070880550584725,
+        "mean_absolute_horizontal_gradient": 0.04041620298366367,
+        "mean_absolute_vertical_gradient": 0.037589561573766285,
+        "display_luma_at_most_5_fraction": 0.014128571428571428,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "overview-alpine_channels": {
+        "pixels": 96000,
+        "linear_mean": 0.32343371688753664,
+        "linear_p05_p50_p95": [
+          0.14766647710512198,
+          0.31727813045636244,
+          0.48016497123996077
+        ],
+        "linear_p95_minus_p05": 0.3324984941348388,
+        "mean_absolute_horizontal_gradient": 0.04387969860919807,
+        "mean_absolute_vertical_gradient": 0.04393153134708423,
+        "display_luma_at_most_5_fraction": 9.375e-05,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "riffelhorn_oblique-normalised_lit": {
+      "riffelhorn_oblique-ridge_face": {
+        "pixels": 104500,
+        "linear_mean": 0.21372186651671013,
+        "linear_p05_p50_p95": [
+          0.010729652887395427,
+          0.21637938543837898,
+          0.3974025914282559
+        ],
+        "linear_p95_minus_p05": 0.3866729385408605,
+        "mean_absolute_horizontal_gradient": 0.06774049673580096,
+        "mean_absolute_vertical_gradient": 0.06094353345077113,
+        "display_luma_at_most_5_fraction": 0.022832535885167465,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "riffelhorn_oblique-foreground_shoulder": {
+        "pixels": 67200,
+        "linear_mean": 0.08330445088931719,
+        "linear_p05_p50_p95": [
+          0.0,
+          0.00121410793419535,
+          0.4358959452154087
+        ],
+        "linear_p95_minus_p05": 0.4358959452154087,
+        "mean_absolute_horizontal_gradient": 0.028969394040415326,
+        "mean_absolute_vertical_gradient": 0.03162078339697442,
+        "display_luma_at_most_5_fraction": 0.5323660714285714,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "riffelhorn_oblique-photographed_dark_face": {
+        "pixels": 77000,
+        "linear_mean": 0.000641782795286301,
+        "linear_p05_p50_p95": [
+          0.0,
+          0.0,
+          0.0024282158683907
+        ],
+        "linear_p95_minus_p05": 0.0024282158683907,
+        "mean_absolute_horizontal_gradient": 0.0008781898294787324,
+        "mean_absolute_vertical_gradient": 0.0008800044786983181,
+        "display_luma_at_most_5_fraction": 0.8341168831168831,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "alpine_path-normalised_lit": {
+      "alpine_path-ground_undulation": {
+        "pixels": 192000,
+        "linear_mean": 0.19898939368985666,
+        "linear_p05_p50_p95": [
+          0.09359404690578657,
+          0.17406576793446255,
+          0.38473218491287414
+        ],
+        "linear_p95_minus_p05": 0.29113813800708754,
+        "mean_absolute_horizontal_gradient": 0.01408050562498633,
+        "mean_absolute_vertical_gradient": 0.02374345210889616,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "alpine_path-convex_protrusion": {
+        "pixels": 83200,
+        "linear_mean": 0.17591095183136904,
+        "linear_p05_p50_p95": [
+          0.05600790824805695,
+          0.17813003817938267,
+          0.28522334652801745
+        ],
+        "linear_p95_minus_p05": 0.2292154382799605,
+        "mean_absolute_horizontal_gradient": 0.009465221515592509,
+        "mean_absolute_vertical_gradient": 0.011651661119215825,
+        "display_luma_at_most_5_fraction": 0.0022716346153846155,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "riffelhorn_structure-normalised_lit": {
+      "riffelhorn_structure-steep_projection_control": {
+        "pixels": 617500,
+        "linear_mean": 0.009554108955279248,
+        "linear_p05_p50_p95": [
+          0.0,
+          0.00028282644327080674,
+          0.003081567182162339
+        ],
+        "linear_p95_minus_p05": 0.003081567182162339,
+        "mean_absolute_horizontal_gradient": 0.0021287726906197785,
+        "mean_absolute_vertical_gradient": 0.002425636766364817,
+        "display_luma_at_most_5_fraction": 0.7970493927125506,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "overview-density": {
+      "overview-mountain_relief": {
+        "pixels": 140000,
+        "linear_mean": 0.5586711160825187,
+        "linear_p05_p50_p95": [
+          0.4985782298019461,
+          0.568483958163397,
+          0.5789941290570292
+        ],
+        "linear_p95_minus_p05": 0.08041589925508308,
+        "mean_absolute_horizontal_gradient": 0.018258354564851254,
+        "mean_absolute_vertical_gradient": 0.016265037314830647,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "overview-alpine_channels": {
+        "pixels": 96000,
+        "linear_mean": 0.5545354335366947,
+        "linear_p05_p50_p95": [
+          0.5154353132233314,
+          0.5609193761297301,
+          0.5751211525536192
+        ],
+        "linear_p95_minus_p05": 0.059685839330287815,
+        "mean_absolute_horizontal_gradient": 0.014862441646339103,
+        "mean_absolute_vertical_gradient": 0.014353561943525673,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "riffelhorn_oblique-density": {
+      "riffelhorn_oblique-ridge_face": {
+        "pixels": 104500,
+        "linear_mean": 0.5495454701957397,
+        "linear_p05_p50_p95": [
+          0.48809465169209243,
+          0.5596497250667903,
+          0.5780200141274988
+        ],
+        "linear_p95_minus_p05": 0.08992536243540639,
+        "mean_absolute_horizontal_gradient": 0.016014842190554487,
+        "mean_absolute_vertical_gradient": 0.016289860212424446,
+        "display_luma_at_most_5_fraction": 0.0022679425837320573,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "riffelhorn_oblique-foreground_shoulder": {
+        "pixels": 67200,
+        "linear_mean": 0.4576431834295938,
+        "linear_p05_p50_p95": [
+          0.20943901126755143,
+          0.500929097471663,
+          0.5765629140114195
+        ],
+        "linear_p95_minus_p05": 0.367123902743868,
+        "mean_absolute_horizontal_gradient": 0.02493425804616635,
+        "mean_absolute_vertical_gradient": 0.01584638929614856,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "riffelhorn_oblique-photographed_dark_face": {
+        "pixels": 77000,
+        "linear_mean": 0.3909830187771105,
+        "linear_p05_p50_p95": [
+          0.1824987846457966,
+          0.42834827175213386,
+          0.5368465377941813
+        ],
+        "linear_p95_minus_p05": 0.35434775314838474,
+        "mean_absolute_horizontal_gradient": 0.02858417154060652,
+        "mean_absolute_vertical_gradient": 0.01767544117578133,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "alpine_path-density": {
+      "alpine_path-ground_undulation": {
+        "pixels": 192000,
+        "linear_mean": 0.561635699417885,
+        "linear_p05_p50_p95": [
+          0.5347148509326637,
+          0.5673432802580488,
+          0.580001697806566
+        ],
+        "linear_p95_minus_p05": 0.045286846873902276,
+        "mean_absolute_horizontal_gradient": 0.0025018924055725082,
+        "mean_absolute_vertical_gradient": 0.002872165865650092,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "alpine_path-convex_protrusion": {
+        "pixels": 83200,
+        "linear_mean": 0.5203938645049994,
+        "linear_p05_p50_p95": [
+          0.3782696614416728,
+          0.5348517040727924,
+          0.5591444088458511
+        ],
+        "linear_p95_minus_p05": 0.18087474740417836,
+        "mean_absolute_horizontal_gradient": 0.004319573274749318,
+        "mean_absolute_vertical_gradient": 0.00430022703217611,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "riffelhorn_structure-density": {
+      "riffelhorn_structure-steep_projection_control": {
+        "pixels": 617500,
+        "linear_mean": 0.4817934612002576,
+        "linear_p05_p50_p95": [
+          0.23202152325772585,
+          0.530985207444067,
+          0.5705195251665452
+        ],
+        "linear_p95_minus_p05": 0.3384980019088194,
+        "mean_absolute_horizontal_gradient": 0.006932983673573208,
+        "mean_absolute_vertical_gradient": 0.005356103074297858,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    }
+  },
+  "source_traces": {
+    "regions": {
+      "overview-mountain_relief": {
+        "box": [
+          650,
+          230,
+          1000,
+          630
+        ],
+        "hit_queries": 2200,
+        "sky_or_outside_queries": 0,
+        "lv95_bounds": [
+          2624817.1002970356,
+          1091922.5971917156,
+          2625682.925727104,
+          1092650.5338837833
+        ],
+        "slope_degrees": {
+          "min": 0.0,
+          "p05_p50_p95": [
+            5.828562838548038,
+            26.856372758841676,
+            59.92445822790058
+          ],
+          "max": 85.82252368337207
+        },
+        "native_information_elements_per_surface_m2": {
+          "min": 1.1655381561053906,
+          "p05_p50_p95": [
+            8.018261424704455,
+            14.274268359648108,
+            15.917283313117888
+          ],
+          "max": 16.0
+        },
+        "distributed_samples_per_surface_m2": {
+          "min": 7.284613475658691,
+          "p05_p50_p95": [
+            50.11413390440285,
+            89.21417724780068,
+            99.4830207069868
+          ],
+          "max": 100.0
+        },
+        "native_steepest_tangent_footprint_m": {
+          "min": 0.25,
+          "p05_p50_p95": [
+            0.2512991646447284,
+            0.2802245200396813,
+            0.4988614961197776
+          ],
+          "max": 3.431891078852258
+        },
+        "native_information_elements_per_output_pixel": {
+          "min": 42.773808518113434,
+          "p05_p50_p95": [
+            64.08934565745766,
+            70.20550421725179,
+            78.75900190804634
+          ],
+          "max": 210.74816163827052
+        },
+        "stretch_over_2_fraction": 0.05,
+        "stretch_over_5_fraction": 0.006363636363636364,
+        "source_sample_luminance": {
+          "min": 0.0013854186142794787,
+          "p05_p50_p95": [
+            0.12598302620738744,
+            0.2724554728284478,
+            0.5150815758055444
+          ],
+          "max": 0.6811718674778938
+        },
+        "source_encoded_luma_at_most_5_fraction": 0.00045454545454545455,
+        "source_exact_black_fraction": 0.0,
+        "requested_gain": {
+          "min": 0.7608383969991547,
+          "p05_p50_p95": [
+            0.8760871119607165,
+            1.0141350055453666,
+            1.2492448649478252
+          ],
+          "max": 2.3067811348300964
+        },
+        "actual_channel_ceiling_limited_gain": {
+          "min": 0.7608383969991547,
+          "p05_p50_p95": [
+            0.8760871119607165,
+            1.0141350055453666,
+            1.2492448649478252
+          ],
+          "max": 2.3067811348300964
+        },
+        "corrected_source_sample_luminance": {
+          "min": 0.0025369393550790844,
+          "p05_p50_p95": [
+            0.13683016517108307,
+            0.27726357286721465,
+            0.4896538172531124
+          ],
+          "max": 0.8118350791573524
+        },
+        "corrected_source_encoded_luma_at_most_5_fraction": 0.0,
+        "012f_opposed_light_output": {
+          "northeast_linear_luminance": {
+            "min": 0.0,
+            "p05_p50_p95": [
+              0.06362997873427347,
+              0.19823051216602322,
+              0.38416116242617343
+            ],
+            "max": 0.5197879261612892
+          },
+          "southwest_linear_luminance": {
+            "min": 0.0,
+            "p05_p50_p95": [
+              0.07742577673519496,
+              0.2629045028358698,
+              0.4529704170915483
+            ],
+            "max": 0.5721009533882142
+          },
+          "luminance_correlation": 0.7694821564923473
+        },
+        "source_to_unlit_output_luminance_correlation": 0.798952437090029,
+        "unlit_output_at_source_query_pixels": {
+          "min": 0.0,
+          "p05_p50_p95": [
+            0.11538753597225994,
+            0.3005772290319204,
+            0.4912316463840007
+          ],
+          "max": 0.5916137169837952
+        }
+      },
+      "overview-alpine_channels": {
+        "box": [
+          1000,
+          150,
+          1300,
+          470
+        ],
+        "hit_queries": 1520,
+        "sky_or_outside_queries": 0,
+        "lv95_bounds": [
+          2625173.787692037,
+          1091220.0117477158,
+          2625896.0715202866,
+          1091910.7645931428
+        ],
+        "slope_degrees": {
+          "min": 0.0,
+          "p05_p50_p95": [
+            5.716132975965622,
+            26.574679313883934,
+            54.132845654301704
+          ],
+          "max": 89.14694144548297
+        },
+        "native_information_elements_per_surface_m2": {
+          "min": 0.2382100868073165,
+          "p05_p50_p95": [
+            9.374517596840642,
+            14.309632272169033,
+            15.920441035221998
+          ],
+          "max": 16.0
+        },
+        "distributed_samples_per_surface_m2": {
+          "min": 1.4888130425457282,
+          "p05_p50_p95": [
+            58.590734980254005,
+            89.43520170105646,
+            99.50275647013748
+          ],
+          "max": 100.0
+        },
+        "native_steepest_tangent_footprint_m": {
+          "min": 0.25,
+          "p05_p50_p95": [
+            0.2512493209924585,
+            0.2795319926582459,
+            0.4266901553832725
+          ],
+          "max": 16.79190018194117
+        },
+        "native_information_elements_per_output_pixel": {
+          "min": 10.3491353041038,
+          "p05_p50_p95": [
+            74.34580638773245,
+            84.07484925198078,
+            93.22554392157068
+          ],
+          "max": 176.82250380046017
+        },
+        "stretch_over_2_fraction": 0.029605263157894735,
+        "stretch_over_5_fraction": 0.003947368421052632,
+        "source_sample_luminance": {
+          "min": 0.015866460393741726,
+          "p05_p50_p95": [
+            0.22834131621077655,
+            0.5555127338469028,
+            0.8927435344457627
+          ],
+          "max": 0.9981083316802979
+        },
+        "source_encoded_luma_at_most_5_fraction": 0.0,
+        "source_exact_black_fraction": 0.0,
+        "requested_gain": {
+          "min": 0.6109757042843391,
+          "p05_p50_p95": [
+            0.6310250330831126,
+            0.764489116644796,
+            0.933206604451445
+          ],
+          "max": 1.0057640708781042
+        },
+        "actual_channel_ceiling_limited_gain": {
+          "min": 0.6109757042843391,
+          "p05_p50_p95": [
+            0.6310250330831126,
+            0.764489116644796,
+            0.933206604451445
+          ],
+          "max": 1.0057640708781042
+        },
+        "corrected_source_sample_luminance": {
+          "min": 0.0142508857967332,
+          "p05_p50_p95": [
+            0.19569998875558375,
+            0.42251068942546843,
+            0.5836662274122237
+          ],
+          "max": 0.7638086099386215
+        },
+        "corrected_source_encoded_luma_at_most_5_fraction": 0.0,
+        "012f_opposed_light_output": {
+          "northeast_linear_luminance": {
+            "min": 0.024920116573944686,
+            "p05_p50_p95": [
+              0.1965994799776375,
+              0.40631378032565113,
+              0.6235091344475746
+            ],
+            "max": 0.6800582589864731
+          },
+          "southwest_linear_luminance": {
+            "min": 0.028882217144221064,
+            "p05_p50_p95": [
+              0.2421137112402916,
+              0.4887458464860916,
+              0.6504364100575447
+            ],
+            "max": 0.7000900749325751
+          },
+          "luminance_correlation": 0.7857988234353706
+        },
+        "source_to_unlit_output_luminance_correlation": 0.8473311823742502,
+        "unlit_output_at_source_query_pixels": {
+          "min": 0.03838144598528743,
+          "p05_p50_p95": [
+            0.29208239523410795,
+            0.5319992994487286,
+            0.6658967668771744
+          ],
+          "max": 0.7146694118261337
+        }
+      },
+      "riffelhorn_oblique-ridge_face": {
+        "box": [
+          450,
+          340,
+          1000,
+          530
+        ],
+        "hit_queries": 1648,
+        "sky_or_outside_queries": 8,
+        "lv95_bounds": [
+          2624078.2525489684,
+          1091001.4941258433,
+          2624617.81035806,
+          1091326.6365879683
+        ],
+        "slope_degrees": {
+          "min": 4.691694250301897,
+          "p05_p50_p95": [
+            16.495768871667227,
+            34.25522115264209,
+            59.880411414554324
+          ],
+          "max": 82.12202963911501
+        },
+        "native_information_elements_per_surface_m2": {
+          "min": 2.1930191226486677,
+          "p05_p50_p95": [
+            8.028902175252856,
+            13.224615286365061,
+            15.341447674176292
+          ],
+          "max": 15.946388069951485
+        },
+        "distributed_samples_per_surface_m2": {
+          "min": 13.706369516554172,
+          "p05_p50_p95": [
+            50.18063859533035,
+            82.65384553978163,
+            95.88404796360183
+          ],
+          "max": 99.66492543719679
+        },
+        "native_steepest_tangent_footprint_m": {
+          "min": 0.2508405027178151,
+          "p05_p50_p95": [
+            0.26073159787946637,
+            0.3024662669710476,
+            0.49820073215343935
+          ],
+          "max": 1.8239695033616081
+        },
+        "native_information_elements_per_output_pixel": {
+          "min": 2.1970045520839223,
+          "p05_p50_p95": [
+            7.111153657802427,
+            12.226987325182701,
+            22.728875652554223
+          ],
+          "max": 183.59745820112315
+        },
+        "stretch_over_2_fraction": 0.0491504854368932,
+        "stretch_over_5_fraction": 0.003033980582524272,
+        "source_sample_luminance": {
+          "min": 0.0006063255173154176,
+          "p05_p50_p95": [
+            0.019227203711885958,
+            0.20084402962923048,
+            0.4266278972411154
+          ],
+          "max": 0.7819520053863525
+        },
+        "source_encoded_luma_at_most_5_fraction": 0.0006067961165048543,
+        "source_exact_black_fraction": 0.0,
+        "requested_gain": {
+          "min": 1.0575453024695611,
+          "p05_p50_p95": [
+            1.0888279729178254,
+            1.1779500455957685,
+            1.3728805005686213
+          ],
+          "max": 1.410046207213588
+        },
+        "actual_channel_ceiling_limited_gain": {
+          "min": 1.0575453024695611,
+          "p05_p50_p95": [
+            1.0888279729178254,
+            1.1779500455957685,
+            1.3728805005686213
+          ],
+          "max": 1.410046207213588
+        },
+        "corrected_source_sample_luminance": {
+          "min": 0.0007171526432037354,
+          "p05_p50_p95": [
+            0.023231538893040273,
+            0.2383131892174482,
+            0.4989338026121258
+          ],
+          "max": 0.9255869807720184
+        },
+        "corrected_source_encoded_luma_at_most_5_fraction": 0.0006067961165048543,
+        "012f_opposed_light_output": {
+          "northeast_linear_luminance": {
+            "min": 0.0,
+            "p05_p50_p95": [
+              0.005033958081831225,
+              0.16653192231059072,
+              0.34514846248030645
+            ],
+            "max": 0.6086415363073349
+          },
+          "southwest_linear_luminance": {
+            "min": 0.0,
+            "p05_p50_p95": [
+              0.002355341591731412,
+              0.09749392018169165,
+              0.25835335106670854
+            ],
+            "max": 0.5711689143657684
+          },
+          "luminance_correlation": 0.889700887504127
+        },
+        "source_to_unlit_output_luminance_correlation": 0.6808525742117566,
+        "unlit_output_at_source_query_pixels": {
+          "min": 0.0,
+          "p05_p50_p95": [
+            0.00942017129095737,
+            0.1843384447008371,
+            0.3680573661801218
+          ],
+          "max": 0.6371398236274719
+        }
+      },
+      "riffelhorn_oblique-foreground_shoulder": {
+        "box": [
+          930,
+          550,
+          1250,
+          760
+        ],
+        "hit_queries": 1080,
+        "sky_or_outside_queries": 0,
+        "lv95_bounds": [
+          2624740.3929764354,
+          1092250.0166220374,
+          2624831.5169844744,
+          1092305.9087759473
+        ],
+        "slope_degrees": {
+          "min": 1.146881448487629,
+          "p05_p50_p95": [
+            17.543420165482836,
+            59.98989594685173,
+            86.32463090395963
+          ],
+          "max": 88.42590230572405
+        },
+        "native_information_elements_per_surface_m2": {
+          "min": 0.43951570602154555,
+          "p05_p50_p95": [
+            1.025652886931516,
+            8.002442045904136,
+            15.25582071219378
+          ],
+          "max": 15.996794710381971
+        },
+        "distributed_samples_per_surface_m2": {
+          "min": 2.7469731626346596,
+          "p05_p50_p95": [
+            6.410330543321976,
+            50.01526278690085,
+            95.34887945121112
+          ],
+          "max": 99.97996693988732
+        },
+        "native_steepest_tangent_footprint_m": {
+          "min": 0.2500500926853795,
+          "p05_p50_p95": [
+            0.26219500579623867,
+            0.49984794035566643,
+            3.9000320780732185
+          ],
+          "max": 9.100926190346234
+        },
+        "native_information_elements_per_output_pixel": {
+          "min": 0.038519315407406586,
+          "p05_p50_p95": [
+            0.09336468045620969,
+            0.5465957567680491,
+            1.3750744307234277
+          ],
+          "max": 2.9190989141296897
+        },
+        "stretch_over_2_fraction": 0.5,
+        "stretch_over_5_fraction": 0.17685185185185184,
+        "source_sample_luminance": {
+          "min": 0.000652622829657048,
+          "p05_p50_p95": [
+            0.0026405081762908957,
+            0.008693664057832211,
+            0.33657420608222477
+          ],
+          "max": 0.5407245183348656
+        },
+        "source_encoded_luma_at_most_5_fraction": 0.004629629629629629,
+        "source_exact_black_fraction": 0.0,
+        "requested_gain": {
+          "min": 1.1267427554740441,
+          "p05_p50_p95": [
+            1.2125033210227092,
+            1.537872505806495,
+            2.0972242591347263
+          ],
+          "max": 2.369244810268749
+        },
+        "actual_channel_ceiling_limited_gain": {
+          "min": 1.1267427554740441,
+          "p05_p50_p95": [
+            1.2125033210227092,
+            1.537872505806495,
+            2.0972242591347263
+          ],
+          "max": 2.369244810268749
+        },
+        "corrected_source_sample_luminance": {
+          "min": 0.0007687709595542401,
+          "p05_p50_p95": [
+            0.004498978345800424,
+            0.013887701220065354,
+            0.4742076031443476
+          ],
+          "max": 0.8177885461091994
+        },
+        "corrected_source_encoded_luma_at_most_5_fraction": 0.000925925925925926,
+        "012f_opposed_light_output": {
+          "northeast_linear_luminance": {
+            "min": 0.0,
+            "p05_p50_p95": [
+              0.0,
+              0.0012141079641878605,
+              0.3106928687539696
+            ],
+            "max": 0.480016039443016
+          },
+          "southwest_linear_luminance": {
+            "min": 0.0,
+            "p05_p50_p95": [
+              0.0,
+              0.0009105809731408954,
+              0.23673639037519684
+            ],
+            "max": 0.4418843689143657
+          },
+          "luminance_correlation": 0.9232913519522347
+        },
+        "source_to_unlit_output_luminance_correlation": 0.9777997507172025,
+        "unlit_output_at_source_query_pixels": {
+          "min": 0.0,
+          "p05_p50_p95": [
+            0.0,
+            0.0012141079641878605,
+            0.335584070457518
+          ],
+          "max": 0.49415464025139805
+        }
+      },
+      "riffelhorn_oblique-photographed_dark_face": {
+        "box": [
+          1150,
+          800,
+          1500,
+          1020
+        ],
+        "hit_queries": 1232,
+        "sky_or_outside_queries": 0,
+        "lv95_bounds": [
+          2624670.4615998585,
+          1092296.8524013145,
+          2624801.3619454233,
+          1092340.636238715
+        ],
+        "slope_degrees": {
+          "min": 7.216086567568852,
+          "p05_p50_p95": [
+            29.81817977672749,
+            63.51399575726941,
+            88.92962051873698
+          ],
+          "max": 89.24316669447401
+        },
+        "native_information_elements_per_surface_m2": {
+          "min": 0.21134158304934814,
+          "p05_p50_p95": [
+            0.2988889526657669,
+            7.135666504399143,
+            13.881659780312742
+          ],
+          "max": 15.8732715712899
+        },
+        "distributed_samples_per_surface_m2": {
+          "min": 1.320884894058426,
+          "p05_p50_p95": [
+            1.8680559541610433,
+            44.59791565249465,
+            86.76037362695463
+          ],
+          "max": 99.20794732056187
+        },
+        "native_steepest_tangent_footprint_m": {
+          "min": 0.2519959405995944,
+          "p05_p50_p95": [
+            0.28815084903129984,
+            0.5605646769043124,
+            13.382937576150008
+          ],
+          "max": 18.926705962385086
+        },
+        "native_information_elements_per_output_pixel": {
+          "min": 0.01978705117154955,
+          "p05_p50_p95": [
+            0.02914076291874359,
+            0.612466490909694,
+            1.3460598311754235
+          ],
+          "max": 6.437319846796043
+        },
+        "stretch_over_2_fraction": 0.5551948051948052,
+        "stretch_over_5_fraction": 0.25,
+        "source_sample_luminance": {
+          "min": 0.0009779032597551122,
+          "p05_p50_p95": [
+            0.001691738037299365,
+            0.004164004599303007,
+            0.00976405526305549
+          ],
+          "max": 0.015784749329462645
+        },
+        "source_encoded_luma_at_most_5_fraction": 0.02922077922077922,
+        "source_exact_black_fraction": 0.0,
+        "requested_gain": {
+          "min": 2.232364380036913,
+          "p05_p50_p95": [
+            2.459920995594772,
+            3.061458746638886,
+            4.0
+          ],
+          "max": 4.0
+        },
+        "actual_channel_ceiling_limited_gain": {
+          "min": 2.232364380036913,
+          "p05_p50_p95": [
+            2.459920995594772,
+            3.061458746638886,
+            4.0
+          ],
+          "max": 4.0
+        },
+        "corrected_source_sample_luminance": {
+          "min": 0.002544930566381663,
+          "p05_p50_p95": [
+            0.004931720199584961,
+            0.013015469838771969,
+            0.03224863604521379
+          ],
+          "max": 0.06357325690090655
+        },
+        "corrected_source_encoded_luma_at_most_5_fraction": 0.0,
+        "012f_opposed_light_output": {
+          "northeast_linear_luminance": {
+            "min": 0.0,
+            "p05_p50_p95": [
+              0.0,
+              0.0,
+              0.002428215928375721
+            ],
+            "max": 0.0033465356100350614
+          },
+          "southwest_linear_luminance": {
+            "min": 0.0,
+            "p05_p50_p95": [
+              0.0,
+              0.0,
+              0.002428215928375721
+            ],
+            "max": 0.0033465356100350614
+          },
+          "luminance_correlation": 1.0
+        },
+        "source_to_unlit_output_luminance_correlation": 0.0215258246442252,
+        "unlit_output_at_source_query_pixels": {
+          "min": 0.0,
+          "p05_p50_p95": [
+            0.0,
+            0.0,
+            0.002428215928375721
+          ],
+          "max": 0.0036765069235116243
+        }
+      },
+      "alpine_path-ground_undulation": {
+        "box": [
+          400,
+          350,
+          1000,
+          670
+        ],
+        "hit_queries": 3000,
+        "sky_or_outside_queries": 0,
+        "lv95_bounds": [
+          2625152.4324486866,
+          1092512.0018611248,
+          2625251.6307170237,
+          1092565.0993348765
+        ],
+        "slope_degrees": {
+          "min": 2.2649123604475023,
+          "p05_p50_p95": [
+            8.214632131572106,
+            21.499127554150153,
+            36.66279722303009
+          ],
+          "max": 73.93585873432258
+        },
+        "native_information_elements_per_surface_m2": {
+          "min": 4.427412680550054,
+          "p05_p50_p95": [
+            12.834612350562828,
+            14.886770377722017,
+            15.835836387457782
+          ],
+          "max": 15.98750054804486
+        },
+        "distributed_samples_per_surface_m2": {
+          "min": 27.671329253437836,
+          "p05_p50_p95": [
+            80.21632719101767,
+            93.04231486076262,
+            98.97397742161114
+          ],
+          "max": 99.92187842528037
+        },
+        "native_steepest_tangent_footprint_m": {
+          "min": 0.2501954566305968,
+          "p05_p50_p95": [
+            0.25259164733275846,
+            0.26869494850179065,
+            0.31165735829950203
+          ],
+          "max": 0.9034621998469424
+        },
+        "native_information_elements_per_output_pixel": {
+          "min": 0.025955046809450967,
+          "p05_p50_p95": [
+            0.11794884807167155,
+            0.21683700076314633,
+            0.46210570260322875
+          ],
+          "max": 3.0259854006165807
+        },
+        "stretch_over_2_fraction": 0.008,
+        "stretch_over_5_fraction": 0.0,
+        "source_sample_luminance": {
+          "min": 0.0941938289642334,
+          "p05_p50_p95": [
+            0.1722508577592671,
+            0.2438693573921919,
+            0.4892601765662431
+          ],
+          "max": 0.6925382947683334
+        },
+        "source_encoded_luma_at_most_5_fraction": 0.0,
+        "source_exact_black_fraction": 0.0,
+        "requested_gain": {
+          "min": 0.9517886322763454,
+          "p05_p50_p95": [
+            0.9598214849466903,
+            1.0275232737363589,
+            1.097595707070381
+          ],
+          "max": 1.1134600338283847
+        },
+        "actual_channel_ceiling_limited_gain": {
+          "min": 0.9517886322763454,
+          "p05_p50_p95": [
+            0.9598214849466903,
+            1.0275232737363589,
+            1.097595707070381
+          ],
+          "max": 1.1134600338283847
+        },
+        "corrected_source_sample_luminance": {
+          "min": 0.0964465550199151,
+          "p05_p50_p95": [
+            0.17721495280101895,
+            0.25137808177918197,
+            0.4920907415267818
+          ],
+          "max": 0.7435136287808417
+        },
+        "corrected_source_encoded_luma_at_most_5_fraction": 0.0,
+        "012f_opposed_light_output": {
+          "northeast_linear_luminance": {
+            "min": 0.014876234225928783,
+            "p05_p50_p95": [
+              0.08604404202961362,
+              0.16801155924871564,
+              0.3852675087296959
+            ],
+            "max": 0.5799657430052756
+          },
+          "southwest_linear_luminance": {
+            "min": 0.04650535574352834,
+            "p05_p50_p95": [
+              0.13781268478706477,
+              0.2336736955270171,
+              0.46947812068432565
+            ],
+            "max": 0.5879614166259766
+          },
+          "luminance_correlation": 0.9425676882689124
+        },
+        "source_to_unlit_output_luminance_correlation": 0.9737138597415071,
+        "unlit_output_at_source_query_pixels": {
+          "min": 0.06644558970993385,
+          "p05_p50_p95": [
+            0.1455687773196399,
+            0.24437180107310413,
+            0.48239941209226833
+          ],
+          "max": 0.6019609222173691
+        }
+      },
+      "alpine_path-convex_protrusion": {
+        "box": [
+          1250,
+          220,
+          1570,
+          480
+        ],
+        "hit_queries": 1320,
+        "sky_or_outside_queries": 0,
+        "lv95_bounds": [
+          2625241.4174938896,
+          1092534.506482554,
+          2625278.79726193,
+          1092571.952341442
+        ],
+        "slope_degrees": {
+          "min": 14.563656705402165,
+          "p05_p50_p95": [
+            23.939077071383895,
+            33.02316753586375,
+            70.18696176217634
+          ],
+          "max": 85.38219205784266
+        },
+        "native_information_elements_per_surface_m2": {
+          "min": 1.2881396244163814,
+          "p05_p50_p95": [
+            5.4231888062173015,
+            13.41520250044183,
+            14.623638392536918
+          ],
+          "max": 15.48590185512878
+        },
+        "distributed_samples_per_surface_m2": {
+          "min": 8.050872652602385,
+          "p05_p50_p95": [
+            33.894930038858135,
+            83.84501562776143,
+            91.39773995335572
+          ],
+          "max": 96.78688659455487
+        },
+        "native_steepest_tangent_footprint_m": {
+          "min": 0.2582994543953692,
+          "p05_p50_p95": [
+            0.2735297426702275,
+            0.29816922087452535,
+            0.737671091735236
+          ],
+          "max": 3.105253440062667
+        },
+        "native_information_elements_per_output_pixel": {
+          "min": 0.007520600897741938,
+          "p05_p50_p95": [
+            0.029475520645243454,
+            0.08219267750119408,
+            0.1618445313313715
+          ],
+          "max": 0.7792603649230645
+        },
+        "stretch_over_2_fraction": 0.09090909090909091,
+        "stretch_over_5_fraction": 0.011363636363636364,
+        "source_sample_luminance": {
+          "min": 0.06281993461996316,
+          "p05_p50_p95": [
+            0.1950981841352582,
+            0.328290968811512,
+            0.4529581330126523
+          ],
+          "max": 0.6225354076862335
+        },
+        "source_encoded_luma_at_most_5_fraction": 0.0,
+        "source_exact_black_fraction": 0.0,
+        "requested_gain": {
+          "min": 0.9764053791941871,
+          "p05_p50_p95": [
+            0.9788147879216034,
+            0.9933897356172954,
+            1.037694191718966
+          ],
+          "max": 1.095159053866129
+        },
+        "actual_channel_ceiling_limited_gain": {
+          "min": 0.9764053791941871,
+          "p05_p50_p95": [
+            0.9788147879216034,
+            0.9933897356172954,
+            1.037694191718966
+          ],
+          "max": 1.095159053866129
+        },
+        "corrected_source_sample_luminance": {
+          "min": 0.06632722950726748,
+          "p05_p50_p95": [
+            0.1975108373194933,
+            0.32705855862796307,
+            0.45362203701347104
+          ],
+          "max": 0.6294355175256728
+        },
+        "corrected_source_encoded_luma_at_most_5_fraction": 0.0,
+        "012f_opposed_light_output": {
+          "northeast_linear_luminance": {
+            "min": 0.0,
+            "p05_p50_p95": [
+              0.05264114571147598,
+              0.1802370771959424,
+              0.2843726428224146
+            ],
+            "max": 0.36879394411444666
+          },
+          "southwest_linear_luminance": {
+            "min": 0.0032521492480067533,
+            "p05_p50_p95": [
+              0.1557583773107454,
+              0.2955773119524121,
+              0.3985095950424671
+            ],
+            "max": 0.48562835770249363
+          },
+          "luminance_correlation": 0.8322027081285652
+        },
+        "source_to_unlit_output_luminance_correlation": 0.9742363120397806,
+        "unlit_output_at_source_query_pixels": {
+          "min": 0.007075222019758075,
+          "p05_p50_p95": [
+            0.16485398232407866,
+            0.3171800148755312,
+            0.43087753235578535
+          ],
+          "max": 0.5479967257976532
+        }
+      },
+      "riffelhorn_structure-steep_projection_control": {
+        "box": [
+          500,
+          350,
+          1450,
+          1000
+        ],
+        "hit_queries": 9758,
+        "sky_or_outside_queries": 0,
+        "lv95_bounds": [
+          2624764.450168215,
+          1092313.1223736762,
+          2624847.8138122885,
+          1092363.154045252
+        ],
+        "slope_degrees": {
+          "min": 1.621718745547403,
+          "p05_p50_p95": [
+            20.58918652596174,
+            46.64240371685363,
+            84.46576554272671
+          ],
+          "max": 87.6460208089801
+        },
+        "native_information_elements_per_surface_m2": {
+          "min": 0.6571700835511409,
+          "p05_p50_p95": [
+            1.5430477694360252,
+            10.984793536843016,
+            14.978014726660598
+          ],
+          "max": 15.993591346345239
+        },
+        "distributed_samples_per_surface_m2": {
+          "min": 4.107313022194631,
+          "p05_p50_p95": [
+            9.644048558975157,
+            68.65495960526886,
+            93.61259204162874
+          ],
+          "max": 99.95994591465774
+        },
+        "native_steepest_tangent_footprint_m": {
+          "min": 0.25010017533767087,
+          "p05_p50_p95": [
+            0.2670580898327044,
+            0.364139752520973,
+            2.592289563495665
+          ],
+          "max": 6.086704340503839
+        },
+        "native_information_elements_per_output_pixel": {
+          "min": 0.00447217702305282,
+          "p05_p50_p95": [
+            0.011720349150306569,
+            0.06537408396444731,
+            0.1126289876990689
+          ],
+          "max": 0.4909217126261721
+        },
+        "stretch_over_2_fraction": 0.31789301086288174,
+        "stretch_over_5_fraction": 0.12748514039762246,
+        "source_sample_luminance": {
+          "min": 0.0005421599114080891,
+          "p05_p50_p95": [
+            0.002019647667184472,
+            0.005180094402097165,
+            0.015953944600326918
+          ],
+          "max": 0.601826642549038
+        },
+        "source_encoded_luma_at_most_5_fraction": 0.014757122361139578,
+        "source_exact_black_fraction": 0.0,
+        "requested_gain": {
+          "min": 1.5316075228805055,
+          "p05_p50_p95": [
+            1.6965282815360845,
+            2.4565909957693224,
+            3.627517864935062
+          ],
+          "max": 3.994538325678453
+        },
+        "actual_channel_ceiling_limited_gain": {
+          "min": 1.5316075228805055,
+          "p05_p50_p95": [
+            1.6958153392487496,
+            2.4565909957693224,
+            3.627517864935062
+          ],
+          "max": 3.994538325678453
+        },
+        "corrected_source_sample_luminance": {
+          "min": 0.0009864116786979138,
+          "p05_p50_p95": [
+            0.005299603537914808,
+            0.01268739280477166,
+            0.04240490526089443
+          ],
+          "max": 0.9350928936004638
+        },
+        "corrected_source_encoded_luma_at_most_5_fraction": 0.00010248001639680262,
+        "source_to_unlit_output_luminance_correlation": 0.9751381223342708,
+        "unlit_output_at_source_query_pixels": {
+          "min": 0.0,
+          "p05_p50_p95": [
+            0.0,
+            0.0,
+            0.003035269910469651
+          ],
+          "max": 0.5499937668383121
+        }
+      }
+    },
+    "camera_visible_sampling": {
+      "overview-whole_view": {
+        "box": [
+          0,
+          0,
+          1920,
+          1080
+        ],
+        "hit_queries": 3208,
+        "sky_or_outside_queries": 4952,
+        "lv95_bounds": [
+          2624001.2359677474,
+          1091000.9253676413,
+          2625999.4704079293,
+          1092999.672813268
+        ],
+        "slope_degrees": {
+          "min": 0.0,
+          "p05_p50_p95": [
+            5.716132975965622,
+            25.40341289980248,
+            57.50156317587603
+          ],
+          "max": 89.38047345245357
+        },
+        "native_information_elements_per_surface_m2": {
+          "min": 0.17300107778130716,
+          "p05_p50_p95": [
+            8.596424931498621,
+            14.45295538381731,
+            15.920441035221998
+          ],
+          "max": 16.0
+        },
+        "distributed_samples_per_surface_m2": {
+          "min": 1.0812567361331697,
+          "p05_p50_p95": [
+            53.72765582186638,
+            90.3309711488582,
+            99.50275647013748
+          ],
+          "max": 100.0
+        },
+        "native_steepest_tangent_footprint_m": {
+          "min": 0.25,
+          "p05_p50_p95": [
+            0.2512493209924585,
+            0.27676000880456925,
+            0.4653098817528696
+          ],
+          "max": 23.121243239053403
+        },
+        "native_information_elements_per_output_pixel": {
+          "min": 10.731108289958854,
+          "p05_p50_p95": [
+            63.198862222089375,
+            77.04603887550573,
+            94.54502780627341
+          ],
+          "max": 154.71179879396252
+        },
+        "stretch_over_2_fraction": 0.0408354114713217,
+        "stretch_over_5_fraction": 0.0059226932668329174,
+        "source_sample_luminance": {
+          "min": 0.0008846277204109356,
+          "p05_p50_p95": [
+            0.09368247767783702,
+            0.2941961703136563,
+            0.716283018231392
+          ],
+          "max": 0.98986277821064
+        },
+        "source_encoded_luma_at_most_5_fraction": 0.0003117206982543641,
+        "source_exact_black_fraction": 0.0
+      },
+      "riffelhorn_oblique-whole_view": {
+        "box": [
+          0,
+          0,
+          1920,
+          1080
+        ],
+        "hit_queries": 4803,
+        "sky_or_outside_queries": 3357,
+        "lv95_bounds": [
+          2624000.589631842,
+          1091000.6960463398,
+          2625050.001769153,
+          1092388.3802631502
+        ],
+        "slope_degrees": {
+          "min": 0.0,
+          "p05_p50_p95": [
+            10.69512719374908,
+            42.13364437887023,
+            83.22677686676818
+          ],
+          "max": 89.23693178455925
+        },
+        "native_information_elements_per_surface_m2": {
+          "min": 0.21308254520379885,
+          "p05_p50_p95": [
+            1.8870383744084336,
+            11.865312561446245,
+            15.722057332611524
+          ],
+          "max": 16.0
+        },
+        "distributed_samples_per_surface_m2": {
+          "min": 1.331765907523743,
+          "p05_p50_p95": [
+            11.79398984005271,
+            74.15820350903903,
+            98.26285832882202
+          ],
+          "max": 100.0
+        },
+        "native_steepest_tangent_footprint_m": {
+          "min": 0.25,
+          "p05_p50_p95": [
+            0.2544196294019987,
+            0.3371171201167621,
+            2.1197238077822775
+          ],
+          "max": 18.77206786775648
+        },
+        "native_information_elements_per_output_pixel": {
+          "min": 0.020573355506278534,
+          "p05_p50_p95": [
+            0.16147810922145575,
+            1.3350152688929307,
+            18.263310939897067
+          ],
+          "max": 154.80159295330358
+        },
+        "stretch_over_2_fraction": 0.2891942535915053,
+        "stretch_over_5_fraction": 0.09494066208619613,
+        "source_sample_luminance": {
+          "min": 0.0007576640666462481,
+          "p05_p50_p95": [
+            0.0024720452258829026,
+            0.07621669505387545,
+            0.6659455520141124
+          ],
+          "max": 0.9754605662465096
+        },
+        "source_encoded_luma_at_most_5_fraction": 0.006037892983551947,
+        "source_exact_black_fraction": 0.0
+      },
+      "alpine_path-whole_view": {
+        "box": [
+          0,
+          0,
+          1920,
+          1080
+        ],
+        "hit_queries": 7693,
+        "sky_or_outside_queries": 467,
+        "lv95_bounds": [
+          2624938.2161937878,
+          1092466.3436964848,
+          2625305.4271393092,
+          1092999.3161439067
+        ],
+        "slope_degrees": {
+          "min": 0.0,
+          "p05_p50_p95": [
+            4.854803945577388,
+            18.406450890623855,
+            38.791429379143196
+          ],
+          "max": 85.98317843041647
+        },
+        "native_information_elements_per_surface_m2": {
+          "min": 1.1207895573332451,
+          "p05_p50_p95": [
+            12.470906992133285,
+            15.181447470916643,
+            15.942597836420623
+          ],
+          "max": 16.0
+        },
+        "distributed_samples_per_surface_m2": {
+          "min": 7.0049347333327825,
+          "p05_p50_p95": [
+            77.94316870083303,
+            94.88404669322902,
+            99.6412364776289
+          ],
+          "max": 100.0
+        },
+        "native_steepest_tangent_footprint_m": {
+          "min": 0.25,
+          "p05_p50_p95": [
+            0.25090013817334467,
+            0.26347948755629974,
+            0.32074651852199754
+          ],
+          "max": 3.5689126239875173
+        },
+        "native_information_elements_per_output_pixel": {
+          "min": 0.008246631456701585,
+          "p05_p50_p95": [
+            0.03806403369028436,
+            0.10993806191547632,
+            1.4235194600129333
+          ],
+          "max": 19.26447693144653
+        },
+        "stretch_over_2_fraction": 0.013258806707396334,
+        "stretch_over_5_fraction": 0.002859742623163915,
+        "source_sample_luminance": {
+          "min": 0.007012988290935755,
+          "p05_p50_p95": [
+            0.17417458041131495,
+            0.2932973561406136,
+            0.5375423168361186
+          ],
+          "max": 0.8790692171692847
+        },
+        "source_encoded_luma_at_most_5_fraction": 0.0,
+        "source_exact_black_fraction": 0.0
+      },
+      "riffelhorn_structure-whole_view": {
+        "box": [
+          0,
+          0,
+          1920,
+          1080
+        ],
+        "hit_queries": 8160,
+        "sky_or_outside_queries": 0,
+        "lv95_bounds": [
+          2624703.1020601965,
+          1092292.1539478612,
+          2624875.324772425,
+          1092379.0780293343
+        ],
+        "slope_degrees": {
+          "min": 1.621718745547403,
+          "p05_p50_p95": [
+            17.348946127877653,
+            51.2270998293929,
+            86.42068049399265
+          ],
+          "max": 89.24165449947608
+        },
+        "native_information_elements_per_surface_m2": {
+          "min": 0.2117638306416498,
+          "p05_p50_p95": [
+            0.9988845582703326,
+            10.019762064711994,
+            15.272102598310232
+          ],
+          "max": 15.993591346345239
+        },
+        "distributed_samples_per_surface_m2": {
+          "min": 1.3235239415103113,
+          "p05_p50_p95": [
+            6.243028489189579,
+            62.62351290444996,
+            95.45064123943895
+          ],
+          "max": 99.95994591465774
+        },
+        "native_steepest_tangent_footprint_m": {
+          "min": 0.25010017533767087,
+          "p05_p50_p95": [
+            0.26191547458845493,
+            0.3992110764872714,
+            4.004469448578856
+          ],
+          "max": 18.888966958521188
+        },
+        "native_information_elements_per_output_pixel": {
+          "min": 0.0011325045524886645,
+          "p05_p50_p95": [
+            0.00615127017497952,
+            0.06053404873144921,
+            0.13060073780244297
+          ],
+          "max": 1.5508946990352535
+        },
+        "stretch_over_2_fraction": 0.3922794117647059,
+        "stretch_over_5_fraction": 0.16397058823529412,
+        "source_sample_luminance": {
+          "min": 0.00041964424583129585,
+          "p05_p50_p95": [
+            0.0020712659835349766,
+            0.005180094402097165,
+            0.22260326067417846
+          ],
+          "max": 0.628685905623436
+        },
+        "source_encoded_luma_at_most_5_fraction": 0.013112745098039216,
+        "source_exact_black_fraction": 0.0
+      }
+    },
+    "trace_stride_pixels": 8,
+    "density_model": "horizontal area / triangle surface area; not sensor visibility or optical resolution"
+  },
+  "physical_source_controls": {
+    "steep_face": {
+      "centre_lv95": [
+        2624805,
+        1092330
+      ],
+      "side_m": 60,
+      "original": {
+        "pixels": 360000,
+        "linear_mean": 0.009503360157526198,
+        "linear_p05_p50_p95": [
+          0.001800461361014994,
+          0.004567011124275361,
+          0.011298778426033471
+        ],
+        "linear_p95_minus_p05": 0.009498317065018478,
+        "mean_absolute_horizontal_gradient": 0.0017033430242454526,
+        "mean_absolute_vertical_gradient": 0.0020978486978512055,
+        "display_luma_at_most_5_fraction": 0.02178333333333333,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "normalised": {
+        "pixels": 360000,
+        "linear_mean": 0.021124784465706422,
+        "linear_p05_p50_p95": [
+          0.004435488035144975,
+          0.011108863322579973,
+          0.02913034194784502
+        ],
+        "linear_p95_minus_p05": 0.024694853912700043,
+        "mean_absolute_horizontal_gradient": 0.0036712255475548823,
+        "mean_absolute_vertical_gradient": 0.004517670586924625,
+        "display_luma_at_most_5_fraction": 0.00013333333333333334,
+        "any_channel_at_least_250_fraction": 0.0010166666666666666
+      },
+      "linear_gradient_correlation": 0.9531719581353231,
+      "gradient_sign_agreement": 0.9850932109070674,
+      "half_metre_highpass_correlation": 0.9717369212712242
+    },
+    "alpine_path": {
+      "centre_lv95": [
+        2625240,
+        1092530
+      ],
+      "side_m": 60,
+      "original": {
+        "pixels": 360000,
+        "linear_mean": 0.29635613561975205,
+        "linear_p05_p50_p95": [
+          0.1637172411664095,
+          0.26972669423584333,
+          0.4989523436754034
+        ],
+        "linear_p95_minus_p05": 0.3352351025089939,
+        "mean_absolute_horizontal_gradient": 0.01591269708529801,
+        "mean_absolute_vertical_gradient": 0.01817566591826411,
+        "display_luma_at_most_5_fraction": 1.6666666666666667e-05,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "normalised": {
+        "pixels": 360000,
+        "linear_mean": 0.29291336597157297,
+        "linear_p05_p50_p95": [
+          0.16893759969534858,
+          0.2678911846944526,
+          0.48435780458654176
+        ],
+        "linear_p95_minus_p05": 0.31542020489119316,
+        "mean_absolute_horizontal_gradient": 0.01578482243480656,
+        "mean_absolute_vertical_gradient": 0.018051553723282748,
+        "display_luma_at_most_5_fraction": 1.388888888888889e-05,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "linear_gradient_correlation": 0.9985096736879204,
+      "gradient_sign_agreement": 0.9982707289927657,
+      "half_metre_highpass_correlation": 0.9988607384264035
+    },
+    "summit_context": {
+      "centre_lv95": [
+        2624810,
+        1092252
+      ],
+      "side_m": 150,
+      "original": {
+        "pixels": 2250000,
+        "linear_mean": 0.2233801114118813,
+        "linear_p05_p50_p95": [
+          0.002432586656953803,
+          0.26928010464025964,
+          0.48304691377735154
+        ],
+        "linear_p95_minus_p05": 0.48061432712039776,
+        "mean_absolute_horizontal_gradient": 0.01307673135681015,
+        "mean_absolute_vertical_gradient": 0.01911967401954302,
+        "display_luma_at_most_5_fraction": 0.008088888888888889,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "normalised": {
+        "pixels": 2250000,
+        "linear_mean": 0.2291229722766656,
+        "linear_p05_p50_p95": [
+          0.005076564535960396,
+          0.2840686643865888,
+          0.48398247081257867
+        ],
+        "linear_p95_minus_p05": 0.4789059062766183,
+        "mean_absolute_horizontal_gradient": 0.014600162566276529,
+        "mean_absolute_vertical_gradient": 0.021483267632612175,
+        "display_luma_at_most_5_fraction": 0.00022755555555555555,
+        "any_channel_at_least_250_fraction": 0.00022844444444444445
+      },
+      "linear_gradient_correlation": 0.9762748128308343,
+      "gradient_sign_agreement": 0.9926484322881921,
+      "half_metre_highpass_correlation": 0.9763257010311032
+    },
+    "dark_face_context": {
+      "centre_lv95": [
+        2624740,
+        1092318
+      ],
+      "side_m": 150,
+      "original": {
+        "pixels": 2250000,
+        "linear_mean": 0.06291608421217003,
+        "linear_p05_p50_p95": [
+          0.0021246888848418626,
+          0.005783121433440274,
+          0.3671041380104353
+        ],
+        "linear_p95_minus_p05": 0.36497944912559344,
+        "mean_absolute_horizontal_gradient": 0.006666487667718043,
+        "mean_absolute_vertical_gradient": 0.010133077018065833,
+        "display_luma_at_most_5_fraction": 0.013000444444444445,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "normalised": {
+        "pixels": 2250000,
+        "linear_mean": 0.0863639366226359,
+        "linear_p05_p50_p95": [
+          0.005109614277891163,
+          0.016307889728774113,
+          0.44954787006601216
+        ],
+        "linear_p95_minus_p05": 0.444438255788121,
+        "mean_absolute_horizontal_gradient": 0.00998460725767842,
+        "mean_absolute_vertical_gradient": 0.014680919247402056,
+        "display_luma_at_most_5_fraction": 0.00030844444444444447,
+        "any_channel_at_least_250_fraction": 0.0006084444444444444
+      },
+      "linear_gradient_correlation": 0.9830024421566623,
+      "gradient_sign_agreement": 0.9881601067378252,
+      "half_metre_highpass_correlation": 0.9844481139942042
+    }
+  },
+  "pre_display_scalar_audit": {
+    "records": [
+      {
+        "view": "riffelhorn_oblique",
+        "state": "original_unlit",
+        "pixels": [
+          [
+            1182,
+            816
+          ],
+          [
+            1254,
+            816
+          ],
+          [
+            1342,
+            816
+          ],
+          [
+            1454,
+            816
+          ],
+          [
+            1182,
+            920
+          ],
+          [
+            1254,
+            920
+          ],
+          [
+            1342,
+            920
+          ],
+          [
+            1454,
+            920
+          ],
+          [
+            1182,
+            1008
+          ],
+          [
+            1254,
+            1008
+          ],
+          [
+            1342,
+            1008
+          ],
+          [
+            1454,
+            1008
+          ]
+        ],
+        "hdr_rgb": [
+          [
+            0.0083770751953125,
+            0.00788116455078125,
+            0.00980377197265625
+          ],
+          [
+            0.0033359527587890625,
+            0.00379180908203125,
+            0.004947662353515625
+          ],
+          [
+            0.007053375244140625,
+            0.00389862060546875,
+            0.0097808837890625
+          ],
+          [
+            0.00661468505859375,
+            0.0084381103515625,
+            0.01015472412109375
+          ],
+          [
+            0.0035915374755859375,
+            0.0043487548828125,
+            0.00418853759765625
+          ],
+          [
+            0.00783538818359375,
+            0.00885009765625,
+            0.01003265380859375
+          ],
+          [
+            0.0035457611083984375,
+            0.004810333251953125,
+            0.00759124755859375
+          ],
+          [
+            0.0087127685546875,
+            0.006572723388671875,
+            0.00830841064453125
+          ],
+          [
+            0.00603485107421875,
+            0.00893402099609375,
+            0.005550384521484375
+          ],
+          [
+            0.005741119384765625,
+            0.007320404052734375,
+            0.00812530517578125
+          ],
+          [
+            0.003833770751953125,
+            0.003116607666015625,
+            0.005031585693359375
+          ],
+          [
+            0.002742767333984375,
+            0.002956390380859375,
+            0.00628662109375
+          ]
+        ],
+        "pose": [
+          103000.0,
+          39800.0,
+          69028.0029296875,
+          -32.167019345859174,
+          122.15229514128235,
+          5.037659816016864e-07,
+          50.0
+        ]
+      },
+      {
+        "view": "alpine_path",
+        "state": "original_unlit",
+        "pixels": [
+          [
+            520,
+            400
+          ],
+          [
+            600,
+            504
+          ],
+          [
+            800,
+            552
+          ],
+          [
+            960,
+            600
+          ]
+        ],
+        "hdr_rgb": [
+          [
+            0.266845703125,
+            0.235595703125,
+            0.1361083984375
+          ],
+          [
+            0.1746826171875,
+            0.188232421875,
+            0.0782470703125
+          ],
+          [
+            0.259521484375,
+            0.2685546875,
+            0.16650390625
+          ],
+          [
+            0.283935546875,
+            0.2763671875,
+            0.1900634765625
+          ]
+        ],
+        "pose": [
+          131000.0,
+          58000.0,
+          34628.2470703125,
+          -22.8715125793114,
+          -122.47119229084846,
+          -3.6872995751778197e-07,
+          50.0
+        ]
+      },
+      {
+        "view": "riffelhorn_oblique",
+        "state": "original_lit",
+        "pixels": [
+          [
+            1182,
+            816
+          ],
+          [
+            1254,
+            816
+          ],
+          [
+            1342,
+            816
+          ],
+          [
+            1454,
+            816
+          ],
+          [
+            1182,
+            920
+          ],
+          [
+            1254,
+            920
+          ],
+          [
+            1342,
+            920
+          ],
+          [
+            1454,
+            920
+          ],
+          [
+            1182,
+            1008
+          ],
+          [
+            1254,
+            1008
+          ],
+          [
+            1342,
+            1008
+          ],
+          [
+            1454,
+            1008
+          ]
+        ],
+        "hdr_rgb": [
+          [
+            0.00588226318359375,
+            0.00553131103515625,
+            0.0068817138671875
+          ],
+          [
+            0.0023345947265625,
+            0.0026531219482421875,
+            0.0034618377685546875
+          ],
+          [
+            0.005611419677734375,
+            0.003101348876953125,
+            0.007781982421875
+          ],
+          [
+            0.004337310791015625,
+            0.005535125732421875,
+            0.00666046142578125
+          ],
+          [
+            0.00243377685546875,
+            0.0029468536376953125,
+            0.002838134765625
+          ],
+          [
+            0.0049896240234375,
+            0.00563812255859375,
+            0.006389617919921875
+          ],
+          [
+            0.003009796142578125,
+            0.00408172607421875,
+            0.006443023681640625
+          ],
+          [
+            0.00630950927734375,
+            0.0047607421875,
+            0.006015777587890625
+          ],
+          [
+            0.0038814544677734375,
+            0.00574493408203125,
+            0.0035686492919921875
+          ],
+          [
+            0.00463104248046875,
+            0.005908966064453125,
+            0.006557464599609375
+          ],
+          [
+            0.0030117034912109375,
+            0.00244903564453125,
+            0.0039520263671875
+          ],
+          [
+            0.002410888671875,
+            0.0025997161865234375,
+            0.005527496337890625
+          ]
+        ],
+        "pose": [
+          103000.0,
+          39800.0,
+          69028.0029296875,
+          -32.167019345859174,
+          122.15229514128235,
+          5.037659816016864e-07,
+          50.0
+        ]
+      },
+      {
+        "view": "alpine_path",
+        "state": "original_lit",
+        "pixels": [
+          [
+            520,
+            400
+          ],
+          [
+            600,
+            504
+          ],
+          [
+            800,
+            552
+          ],
+          [
+            960,
+            600
+          ]
+        ],
+        "hdr_rgb": [
+          [
+            0.1949462890625,
+            0.172119140625,
+            0.09942626953125
+          ],
+          [
+            0.1412353515625,
+            0.152099609375,
+            0.063232421875
+          ],
+          [
+            0.22705078125,
+            0.2349853515625,
+            0.1456298828125
+          ],
+          [
+            0.243408203125,
+            0.2369384765625,
+            0.1629638671875
+          ]
+        ],
+        "pose": [
+          131000.0,
+          58000.0,
+          34628.2470703125,
+          -22.8715125793114,
+          -122.47119229084846,
+          -3.6872995751778197e-07,
+          50.0
+        ]
+      },
+      {
+        "view": "riffelhorn_oblique",
+        "state": "normalised_lit",
+        "pixels": [
+          [
+            1182,
+            816
+          ],
+          [
+            1254,
+            816
+          ],
+          [
+            1342,
+            816
+          ],
+          [
+            1454,
+            816
+          ],
+          [
+            1182,
+            920
+          ],
+          [
+            1254,
+            920
+          ],
+          [
+            1342,
+            920
+          ],
+          [
+            1454,
+            920
+          ],
+          [
+            1182,
+            1008
+          ],
+          [
+            1254,
+            1008
+          ],
+          [
+            1342,
+            1008
+          ],
+          [
+            1454,
+            1008
+          ]
+        ],
+        "hdr_rgb": [
+          [
+            0.01422882080078125,
+            0.01342010498046875,
+            0.0169525146484375
+          ],
+          [
+            0.00627899169921875,
+            0.007411956787109375,
+            0.009521484375
+          ],
+          [
+            0.01387786865234375,
+            0.007595062255859375,
+            0.0190887451171875
+          ],
+          [
+            0.01267242431640625,
+            0.0163726806640625,
+            0.0193023681640625
+          ],
+          [
+            0.006717681884765625,
+            0.008331298828125,
+            0.0079498291015625
+          ],
+          [
+            0.0149993896484375,
+            0.016754150390625,
+            0.0189971923828125
+          ],
+          [
+            0.01013946533203125,
+            0.0137176513671875,
+            0.0218505859375
+          ],
+          [
+            0.0250701904296875,
+            0.0191497802734375,
+            0.024017333984375
+          ],
+          [
+            0.01160430908203125,
+            0.0172576904296875,
+            0.01070404052734375
+          ],
+          [
+            0.01593017578125,
+            0.0199432373046875,
+            0.0229034423828125
+          ],
+          [
+            0.011993408203125,
+            0.0095367431640625,
+            0.01568603515625
+          ],
+          [
+            0.0096435546875,
+            0.0103912353515625,
+            0.021881103515625
+          ]
+        ],
+        "pose": [
+          103000.0,
+          39800.0,
+          69028.0029296875,
+          -32.167019345859174,
+          122.15229514128235,
+          5.037659816016864e-07,
+          50.0
+        ]
+      },
+      {
+        "view": "alpine_path",
+        "state": "normalised_lit",
+        "pixels": [
+          [
+            520,
+            400
+          ],
+          [
+            600,
+            504
+          ],
+          [
+            800,
+            552
+          ],
+          [
+            960,
+            600
+          ]
+        ],
+        "hdr_rgb": [
+          [
+            0.2110595703125,
+            0.1864013671875,
+            0.10791015625
+          ],
+          [
+            0.146484375,
+            0.15771484375,
+            0.06512451171875
+          ],
+          [
+            0.22705078125,
+            0.2349853515625,
+            0.1456298828125
+          ],
+          [
+            0.236083984375,
+            0.2298583984375,
+            0.1571044921875
+          ]
+        ],
+        "pose": [
+          131000.0,
+          58000.0,
+          34628.2470703125,
+          -22.8715125793114,
+          -122.47119229084846,
+          -3.6872995751778197e-07,
+          50.0
+        ]
+      }
+    ],
+    "geometry_unchanged": true,
+    "input_identity": "805fe10cb18127acc33dd7dda858dc6ab05b0422ff659776baf43f0ae907e7e8",
+    "interpretation": "scene colour before final LDR display conversion; common exposure/pre-exposure remains fixed",
+    "script_sha256": "daefa885460bb3760762aa02dc5dcdd367f1cada9687820411326bd8336e3068",
+    "attribution": "\u00a9 swisstopo"
+  }
+}
