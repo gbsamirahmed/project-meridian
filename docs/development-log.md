@@ -2637,3 +2637,53 @@ See [Lab 012D methods, outcome and viewing commands](earth-lab/riffelhorn-012d-a
 [measurements](earth-lab/riffelhorn-012d-measurements.json) and
 [validation](earth-lab/riffelhorn-012d-validation.json).
 No subsequent Lab, true-3D reconstruction or production Atlas change is begun.
+
+## 2026-10-02 — Lab 012E: robust cliff heightfield estimation
+
+Completed the final planned Riffelhorn heightfield experiment on the exact 60 m
+summit patch and frozen 012D construction/held-out/guard split. One construction-only
+robust local-plane estimator uses the already studied 1/2 m physical contexts,
+repeatability/planarity screens, robust scalar-height prediction, explicit XY/XYZ
+support and orientation-consistent edge rejection. The unchanged 0.125 m working
+grid is interpolation, not new measured resolution. Historical provider, regular
+and adaptive baselines are read directly; no prior Lab implementation is changed.
+
+Outcome **F — inconclusive**, and the reconstruction branch is **closed for now**.
+The 9,652 held-out returns have robust median/p95/p99 0.521/3.555/8.057 m, versus
+provider 0.056/0.842/2.832 m. Emitted surface covers 47.16% of the native-centre
+footprint and only 21.20% of held-out XY. Two historical candidate positions
+improve substantially, including an independent held-out lower-face anchor,
+but seventeen remain unresolved. Fifteen positions have reliable construction
+planes at 2 m context, showing that estimator refusal is not simply missing local
+evidence. All nine ambiguous multiple-height groups remain ambiguous; no defensible
+non-heightfield topology is demonstrated.
+
+The new observability diagnostic separates fit conflict, bracketing, nearest
+physical support and nominal steep-surface conditioning. An independent post-fit
+full-survey audit finds substantial gaps between lower/upper bands, not just
+hold-out gaps. Those gaps do not identify a unique intervening face, while strict
+local prediction also rejects some measured structure. The experiment does not
+cleanly separate all estimator restrictions from survey support limits. It provides
+no evidence-backed reason for an automatic further interpolation Lab.
+
+Exact sections and native 60/180/600 m frames were inspected: long unsupported
+bridges are reduced by refusal, leaving fragmented panels/holes rather than a
+recovered stable cliff. No completed-surface visual improvement is accepted.
+The result remains a local difficult-cliff issue, not a reason to rebuild ordinary
+Atlas slopes or add blanket detail normals. Tryfan needs its own source/support
+analysis; no Swiss numerical thresholds transfer automatically.
+
+Two complete final runs reproduce one identity and all 30 external product hashes.
+Source hashes and 209/46/51 frozen B/C/D products pass, together with all 45,056
+split memberships, construction-only fitting, repeated diagnostics/distances,
+brute-force checks, six sections, three cameras and nine byte-identical historical
+frames. All 182 Earth Lab tests (eight new), 16 terrain-research tests, ESLint,
+TypeScript/Vite production build and JSON/link/privacy checks pass. Existing
+deprecation and build-size/plugin-timing warnings remain. Products/captures stay
+external; production, Tryfan, prior Labs and historical refs remain unchanged.
+
+See [Lab 012E outcome, methods and inspection commands](earth-lab/riffelhorn-012e-robust-cliff-heightfield.md),
+[identity](earth-lab/riffelhorn-012e-metadata.json),
+[measurements](earth-lab/riffelhorn-012e-measurements.json) and
+[validation](earth-lab/riffelhorn-012e-validation.json).
+No new Lab, true-3D reconstruction or production integration is begun.

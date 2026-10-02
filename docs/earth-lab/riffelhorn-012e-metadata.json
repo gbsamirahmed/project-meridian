@@ -1,0 +1,261 @@
+{
+  "experiment": "Lab 012E robust cliff heightfield estimation",
+  "parents": {
+    "012b": {
+      "identity": "10b3641e25f6283bf0d4c311f813baefbb7703ca7fbd421e1fd6ca4155edcb3a",
+      "unchanged_products": 209
+    },
+    "012c": {
+      "identity": "545cf4ab0f07101db951470aed9498d059eedc846bef8bbecc7e75a2d1b4ce88",
+      "unchanged_products": 46
+    },
+    "012d": {
+      "identity": "dafa2697c7cf807f10208168bd2f39d636ef832ec7734c7dc022b62047bd1239",
+      "unchanged_products": 51
+    }
+  },
+  "processing_script_sha256": "acd6912a58e2ef884103286f60212fd8f1ed39db1710939b3218db30388b8f9b",
+  "parameters": {
+    "output_spacing_m": 0.125,
+    "normal_radii_m": [
+      1.0,
+      2.0
+    ],
+    "minimum_points": 10,
+    "minimum_planarity": 0.3,
+    "maximum_rms_m": [
+      0.1,
+      0.15
+    ],
+    "maximum_split_angle_deg": 10.0,
+    "trim_iterations": 2,
+    "trim_floor_m": 0.15,
+    "trim_mad_multiplier": 3.0,
+    "plane_anchor_voxel_m": 0.5,
+    "minimum_abs_normal_z": 0.1,
+    "plane_prediction_extension_m": 0.2,
+    "minimum_plane_anchors": 3,
+    "minimum_consensus_weight_fraction": 0.8,
+    "maximum_normal_angle_deg": 20.0,
+    "consensus_perpendicular_tolerance_m": 0.3,
+    "huber_delta_perpendicular_m": 0.1,
+    "minimum_consistent_returns": 10,
+    "support_radius_m": 2.0,
+    "strong_nearest_return_m": 0.5,
+    "strong_xy_hull_margin_m": 0.2,
+    "maximum_edge_plane_departure_m": 0.3,
+    "nominal_source_sigma_xy_m": 0.2,
+    "nominal_source_sigma_z_m": 0.1,
+    "source_gap_xy_radius_m": 1.0,
+    "source_gap_minimum_z_gap_m": 2.0,
+    "attribution": "\u00a9 swisstopo"
+  },
+  "diagnostic_columns": [
+    "support_code",
+    "reason_code",
+    "nearby_reliable_planes",
+    "consensus_planes",
+    "consistent_construction_returns",
+    "nearest_construction_xyz_m",
+    "xy_hull_margin_m",
+    "consensus_weight_fraction",
+    "plane_prediction_rms_perpendicular_m",
+    "normal_inclination_deg",
+    "height_sigma_nominal_propagation_m",
+    "flight_count",
+    "proposed_height_ln02_m",
+    "consensus_normal_e",
+    "consensus_normal_n",
+    "consensus_normal_up"
+  ],
+  "plane_anchor_columns": [
+    "centroid_e",
+    "centroid_n",
+    "centroid_z",
+    "normal_e",
+    "normal_n",
+    "normal_z",
+    "rms_m",
+    "planarity",
+    "count",
+    "split_angle_deg",
+    "radius_m",
+    "flights",
+    "012c_source_index",
+    "anchor_e",
+    "anchor_n",
+    "anchor_z"
+  ],
+  "crs": "EPSG:2056 LV95; LN02 metres; unchanged scale/orientation",
+  "frozen_inputs": {
+    "split.npy": "63612291f4ed1d19a1084ca458c81b0ee4473384608c1abce627aad6b8bc3172",
+    "evaluation-indices.npy": "bff542cd4aecacaeb40604b613675034ba81f24ff82f8e9e6ffba42abd986873",
+    "construction-audit-indices.npy": "af63a5c8413044e278a88db718c682e2487c9e4513c7acd08fbaa5bb6d2d0e06",
+    "provider-vertices.npy": "8e42e506671b409b782d5d7609e4b3101b43ca8a362dd3d04143b0dd6596af0d",
+    "provider-faces.npy": "28bac9b45b0c2df29063d4ec0bf906713aa55756bca5757dbd50cd99f7b7314d",
+    "regular_0.125-vertices.npy": "cabc37fa4ef3eefc422650ba40828f5157a49d12d1d07c44b8d8fb81c562aa4a",
+    "regular_0.125-faces.npy": "848c9efc65fb901c613a5e9c2de32dd15c16add8cb5656316af877656638533d",
+    "adaptive-vertices.npy": "cb65003681d1af7d140ed3762910251e17594b54a27dc47474291d5496421eef",
+    "adaptive-faces.npy": "6acd2f7da1d20eed28531bb1e7d3d9b3c1838613b208ba4def1e25d66905cbe6"
+  },
+  "toolchain": {
+    "python": "3.12.6",
+    "numpy": "2.5.3",
+    "rasterio": "1.4.3",
+    "matplotlib": "3.10.6",
+    "Pillow": "12.3.0"
+  },
+  "products": [
+    {
+      "path": "cliff-180m-012d_adaptive.png",
+      "bytes": 104785,
+      "sha256": "db1bbd2314b7ed54995cadb496a5c266f02a815ec21e7b9a28d97d7d30522adb"
+    },
+    {
+      "path": "cliff-180m-012d_regular.png",
+      "bytes": 144058,
+      "sha256": "5695510e24d1612ecd7a649f01d9aab2d696b5fa41ec0b45a942a213b9528aa3"
+    },
+    {
+      "path": "cliff-180m-comparison.png",
+      "bytes": 418020,
+      "sha256": "aaabca60803d6614edac7e39a82113b84153a6a882f57527cfecfb50ba1065d0"
+    },
+    {
+      "path": "cliff-180m-provider.png",
+      "bytes": 64104,
+      "sha256": "574eaa6bbe29e99cd9500d5abd7598d943d72f4fe03f8f3546a16d3f49b99efc"
+    },
+    {
+      "path": "cliff-180m-robust.png",
+      "bytes": 92171,
+      "sha256": "46168470e473c6ed79a07c5d024c199ec4527234daec304e3dfaa1d9df9b1c47"
+    },
+    {
+      "path": "cliff-600m-012d_adaptive.png",
+      "bytes": 31410,
+      "sha256": "e351267fdf90d21affbf007ba6dbee7bc2382ef1b35e9edc6176fb94859b0b55"
+    },
+    {
+      "path": "cliff-600m-012d_regular.png",
+      "bytes": 35351,
+      "sha256": "3a52c6ced8d94df2b3b038768d1ab7c546f10174f2f2f9adb8d2228b917280d5"
+    },
+    {
+      "path": "cliff-600m-comparison.png",
+      "bytes": 126393,
+      "sha256": "c2f5c14bcb36d6a3d6de7e34d58e9934c1394aad1a2efb389b36ac7ab156fbfc"
+    },
+    {
+      "path": "cliff-600m-provider.png",
+      "bytes": 23302,
+      "sha256": "847e3767a245aa0f01c3368d78dcea43732a63c7fd39cdda007c0d21e818db31"
+    },
+    {
+      "path": "cliff-600m-robust.png",
+      "bytes": 24716,
+      "sha256": "8445d25b7fa3f5e7d405a84076164ae1c6c68aa2dbd95d72245734d406e6157f"
+    },
+    {
+      "path": "cliff-60m-012d_adaptive.png",
+      "bytes": 104727,
+      "sha256": "8594a2b9a799aec0417da29db8f0bd1e7eb7e022bbf42c8f999f34def1ba8e9d"
+    },
+    {
+      "path": "cliff-60m-012d_regular.png",
+      "bytes": 171140,
+      "sha256": "aff04f353186a999e6401caf109686ee4db7c8fcab39d57fb7ea620e5e147b53"
+    },
+    {
+      "path": "cliff-60m-comparison.png",
+      "bytes": 428580,
+      "sha256": "d164080b3cdff6b25fefc3d55b3ee6b9ac54a8f5925216f1b66b1f8cd56e5203"
+    },
+    {
+      "path": "cliff-60m-provider.png",
+      "bytes": 35246,
+      "sha256": "14d1ec1c7ec8aa5b8442a7989772d79ca489c213ad6fe3371d7821a88aa0195d"
+    },
+    {
+      "path": "cliff-60m-robust.png",
+      "bytes": 104481,
+      "sha256": "cb15b8916a26153aa00e5cd75a8153ba9e3eb2e68f7f25031d0a6939ef5ac083"
+    },
+    {
+      "path": "construction-local-planes.npy",
+      "bytes": 4022480,
+      "sha256": "f1d06bfea8ed64c7c99d307a64058aed3ce9496b4dd5959d66f5bc8e522751bb"
+    },
+    {
+      "path": "construction-source-indices.npy",
+      "bytes": 223592,
+      "sha256": "51384e1e64df3d43468ffd661ddbaf28919e1fbb49964ccbd4110f498c0b2342"
+    },
+    {
+      "path": "held-out-maps.png",
+      "bytes": 734858,
+      "sha256": "1ccb45beb7ed9923239576b095b6653d6b172e40e47c44a94c6a822c5bbdaf99"
+    },
+    {
+      "path": "held-out-observability.npy",
+      "bytes": 1235584,
+      "sha256": "92db08fee9b5353b322bbb9d2b7470b83f89dbb89dda67d339eeb251149bcaa2"
+    },
+    {
+      "path": "measurements.json",
+      "bytes": 100296,
+      "sha256": "c3272265b0c67ea32c5c4ac55978008b960eff908c0306642809df1e64064323"
+    },
+    {
+      "path": "observability.npy",
+      "bytes": 29123840,
+      "sha256": "ca543dac5be67a3efb3f48847e3a3b6e8e5167b1441338a36a715d3cfda8b013"
+    },
+    {
+      "path": "observability.png",
+      "bytes": 2033264,
+      "sha256": "0ffea7a476434c0c80a24bfc6b8458bd9d99ee8a1e2bd29b26dfcaa402069ca9"
+    },
+    {
+      "path": "plane-anchors.npy",
+      "bytes": 1285760,
+      "sha256": "f1d7ad28695e62db58ce312fd23b5c42aa2abbb8f76c64a675230a1ea9705603"
+    },
+    {
+      "path": "robust-construction.npy",
+      "bytes": 131200,
+      "sha256": "9f15fe46ea77115212277c13c6cdd8847f7b0293b25670abe9168da078b5451a"
+    },
+    {
+      "path": "robust-faces.npy",
+      "bytes": 5129576,
+      "sha256": "82fca78a409450eed2ed49a9974a41d333deb89b2ed99ffa0ca8adeafd6d15a4"
+    },
+    {
+      "path": "robust-held-out.npy",
+      "bytes": 617856,
+      "sha256": "83a87794feb9365b69d15c0bc9a883d08c53a575b187733e7c9da0e519cd6eb5"
+    },
+    {
+      "path": "robust-vertices.npy",
+      "bytes": 5460824,
+      "sha256": "32f22cdc2d221e10f24367af434f360314a0320f03cd075257300571b76b6eda"
+    },
+    {
+      "path": "section-full-survey-support.npy",
+      "bytes": 69768,
+      "sha256": "5fdd00721adc06c1532224ed9bce7a64e00678b16b12d705e192f89409c75a4d"
+    },
+    {
+      "path": "sections.png",
+      "bytes": 261604,
+      "sha256": "0b4c43a967057f6848d03bcaaed82835250bc11b1863fcfa8004bad8be6e98c3"
+    },
+    {
+      "path": "survey-continuation-support.png",
+      "bytes": 142761,
+      "sha256": "78861ba090d6f7e3e7a6a05ff2e96c7f3737da9263c4f428ce791800da27230d"
+    }
+  ],
+  "identity": "1e2ceedb56b935cc6666423efccb380d87835bdbb4247ef026375fe6341715de"
+}

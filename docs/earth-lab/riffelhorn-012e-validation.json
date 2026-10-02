@@ -1,0 +1,59 @@
+{
+  "result": "PASS",
+  "identity": "1e2ceedb56b935cc6666423efccb380d87835bdbb4247ef026375fe6341715de",
+  "originals": 16,
+  "source_las": 4,
+  "frozen_products": {
+    "012b": 209,
+    "012c": 46,
+    "012d": 51
+  },
+  "products": 30,
+  "split_points": 45056,
+  "repeated_observability_nodes": 20,
+  "repeated_distance_queries": 16,
+  "global_bruteforce_queries": 2,
+  "unchanged_cameras": 3,
+  "unchanged_sections": 6,
+  "frames": 12,
+  "byte_identical_historical_frames": 9,
+  "deterministic_rerun": {
+    "complete_final_runs": 2,
+    "matching_identity": "1e2ceedb56b935cc6666423efccb380d87835bdbb4247ef026375fe6341715de",
+    "matching_product_hashes": 30
+  },
+  "reconstruction_acceptance": {
+    "outcome": "F - INCONCLUSIVE",
+    "accepted_surfaces": 0,
+    "branch_closed": true,
+    "note": "Mixed estimator restrictions and observational continuation gaps; no defensible non-heightfield evidence and no automatic next estimator experiment."
+  },
+  "coordinate_checks": {
+    "source_crs": "EPSG:2056",
+    "height_reference": "LN02 metres",
+    "bounds_centres": [
+      2624780.25,
+      1092222.25,
+      2624839.75,
+      1092281.75
+    ],
+    "spacing_m": 0.125,
+    "height_range_ln02_m": [
+      2827.4407154512332,
+      2930.4821602413167
+    ],
+    "scale": "metres unchanged",
+    "single_valued_unique_xy": true,
+    "positive_nonoverlapping_regular_xy_faces": true
+  },
+  "repository_validation": {
+    "earth_lab_tests": 182,
+    "new_focused_tests": 8,
+    "terrain_research_tests": 16,
+    "eslint": "PASS",
+    "typescript": "PASS",
+    "production_build": "PASS",
+    "json_links_privacy": "PASS",
+    "warnings": "Existing NumPy/rasterio deprecations; Vite plugin-timing and bundle-size warnings."
+  }
+}
