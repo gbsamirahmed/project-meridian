@@ -2719,3 +2719,40 @@ change is made; previous Labs and historical refs remain unchanged. The next
 recommended action is the bounded lighting experiment, not implemented here.
 
 See [Riffelhorn synthesis and finite visual programme](earth-lab/riffelhorn-visual-synthesis-and-experiment-design.md).
+
+## 2026-10-02 — Lab 012F: terrain lighting and readability
+
+Implemented only the first finite-programme experiment on a physical copy of the
+unchanged 012B surface scene. Reused overview, Riffelhorn-oblique and alpine-path
+cameras at 1920×1080 / 50° HFOV. Compared the original 0.65/0.35 normal response
+with fixed 0.35/0.65 directional illumination, then the same illumination with
+terrain depth visibility. Opposing NE/SW azimuths at 60° elevation provide a small
+direction-sensitivity control; neutral/RGB pairs isolate source appearance.
+Thirty native frames and six contacts remain external. No vertex, normal, UV,
+source image, exposure or atmosphere changes; no reconstruction branch reopened.
+
+Outcome B: illumination communicates existing ridge/channel separation and ledges
+more clearly, especially in neutral geometry. RGB gains are smaller; the large
+photographically dark face remains about 84.2% near-black in its fixed window.
+Opposing light produces apparent competing illumination, while close cast shadows
+show mottled sampling artefacts. Cast visibility is not accepted as a blanket
+enhancement. Steep-face colour stretching and local raster curtains persist.
+These are evidence for the already-planned projection/baked-illumination experiment,
+which is not begun. No new normal/detail experiment is automatically justified.
+
+Two independent final captures reproduce all 30 RGB arrays and canonical PNG
+hashes exactly. Unused UE export alpha is omitted; attribution remains in PNG
+metadata/contacts. Historical baseline materials/inputs/poses are unchanged, but
+display dither differs from old PNGs: signed mean differences below 0.0011 encoded
+levels and 8×8 block mean differences below 0.326, documented without filtering
+published frames. All 596 previous canonical products, 28 raw frames, Swiss sources
+and historical/copy assets pass hash checks. All 187 Earth Lab tests (five focused
+new tests), 16 terrain-research tests, ESLint, TypeScript/production build and
+JSON/link/privacy/diff checks pass; existing dependency deprecation and build
+size/timing warnings remain. Production Meridian, Tryfan and previous Labs are
+unchanged. No second experiment, new source acquisition or architecture change.
+
+See [Lab 012F result and exact viewing/reproduction commands](earth-lab/riffelhorn-012f-terrain-lighting.md),
+[identity](earth-lab/riffelhorn-012f-metadata.json),
+[measurements](earth-lab/riffelhorn-012f-measurements.json) and
+[validation](earth-lab/riffelhorn-012f-validation.json).

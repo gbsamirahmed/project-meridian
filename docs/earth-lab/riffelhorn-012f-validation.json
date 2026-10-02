@@ -1,0 +1,160 @@
+{
+  "result": "PASS",
+  "identity": "2e657e938d306f29fb2f768172a6b7db3c11e36c3449af6b6b597cde6cc77912",
+  "frozen_products": {
+    "012b": {
+      "identity": "10b3641e25f6283bf0d4c311f813baefbb7703ca7fbd421e1fd6ca4155edcb3a",
+      "unchanged_products": 209
+    },
+    "012c": {
+      "identity": "545cf4ab0f07101db951470aed9498d059eedc846bef8bbecc7e75a2d1b4ce88",
+      "unchanged_products": 46
+    },
+    "012d": {
+      "identity": "dafa2697c7cf807f10208168bd2f39d636ef832ec7734c7dc022b62047bd1239",
+      "unchanged_products": 51
+    },
+    "riffelhorn-012e": {
+      "identity": "1e2ceedb56b935cc6666423efccb380d87835bdbb4247ef026375fe6341715de",
+      "unchanged_products": 30
+    },
+    "bluesky-012a": {
+      "identity": "30b8a6200cf1a50aeec4f9cf471e96598955dbbf2704d793e2eb54d4f2acb198",
+      "unchanged_products": 260
+    },
+    "historical_raw_frames": 28,
+    "historical_unreal_assets": 322
+  },
+  "copied_assets_unchanged": 257,
+  "canonical_frames": 30,
+  "independent_final_capture_runs": 2,
+  "matching_rgb_pixel_arrays": 30,
+  "matching_canonical_png_hashes": 30,
+  "canonical_products": 39,
+  "historical_baseline_equivalence": [
+    {
+      "name": "overview-neutral-baseline",
+      "pixel_identical": false,
+      "maximum_encoded_difference": 12.0,
+      "signed_encoded_mean_difference": 0.00020367155349794238,
+      "block8_mean_absolute_difference": 0.2748259066358025,
+      "block8_maximum_absolute_difference": 2.125
+    },
+    {
+      "name": "riffelhorn_oblique-neutral-baseline",
+      "pixel_identical": false,
+      "maximum_encoded_difference": 12.0,
+      "signed_encoded_mean_difference": -0.0008016653806584362,
+      "block8_mean_absolute_difference": 0.20457192001028807,
+      "block8_maximum_absolute_difference": 2.125
+    },
+    {
+      "name": "alpine_path-neutral-baseline",
+      "pixel_identical": false,
+      "maximum_encoded_difference": 12.0,
+      "signed_encoded_mean_difference": -0.0008862204218106996,
+      "block8_mean_absolute_difference": 0.07756767618312757,
+      "block8_maximum_absolute_difference": 1.78125
+    },
+    {
+      "name": "overview-rgb-baseline",
+      "pixel_identical": false,
+      "maximum_encoded_difference": 19.0,
+      "signed_encoded_mean_difference": -0.00022633744855967078,
+      "block8_mean_absolute_difference": 0.2898787937242798,
+      "block8_maximum_absolute_difference": 2.125
+    },
+    {
+      "name": "riffelhorn_oblique-rgb-baseline",
+      "pixel_identical": false,
+      "maximum_encoded_difference": 21.0,
+      "signed_encoded_mean_difference": -0.0010857124485596707,
+      "block8_mean_absolute_difference": 0.3255443029835391,
+      "block8_maximum_absolute_difference": 2.125
+    },
+    {
+      "name": "alpine_path-rgb-baseline",
+      "pixel_identical": false,
+      "maximum_encoded_difference": 20.0,
+      "signed_encoded_mean_difference": -0.000674511316872428,
+      "block8_mean_absolute_difference": 0.11375643004115227,
+      "block8_maximum_absolute_difference": 1.96875
+    }
+  ],
+  "historical_baseline_note": "Unchanged packages/equation/geometry/poses; pixel-level display dither differs. No output filtering.",
+  "geometry_camera_invariance_hash": "946d4a5c77e59330f776127c409dbe72b9f8a9091996772326da89445f5a1190",
+  "unchanged_camera_count": 3,
+  "geometry_and_texture_asset_hashes_unchanged": true,
+  "lighting_does_not_move_vertices": true,
+  "foreground_coverage_unchanged": true,
+  "shadow_never_increases_directional_brightness": true,
+  "shadow_views": {
+    "northeast": {
+      "position_cm": [
+        300000.0,
+        -50000.0,
+        441367.2043945312
+      ],
+      "width_cm": 283850.98998728744,
+      "pixels": 4096,
+      "texel_m": 0.692995581023651,
+      "basis": {
+        "Right": [
+          -0.59999998838932,
+          -0.800000008708009,
+          -8.379286320359114e-09
+        ],
+        "Up": [
+          -0.6928203323258066,
+          0.5196152282961393,
+          0.5000000016387096
+        ],
+        "Forward": [
+          -0.400000001310967,
+          0.30000000098322555,
+          -0.866025402838329
+        ]
+      }
+    },
+    "southwest": {
+      "position_cm": [
+        -100000.0,
+        250000.0,
+        441367.2043945312
+      ],
+      "width_cm": 283850.99083009805,
+      "pixels": 4096,
+      "texel_m": 0.692995583081294,
+      "basis": {
+        "Right": [
+          0.6000000029908776,
+          0.7999999977568417,
+          2.1584797837981284e-09
+        ],
+        "Up": [
+          0.6928203196804873,
+          -0.5196152451565654,
+          0.5000000016387096
+        ],
+        "Forward": [
+          0.40000000131096747,
+          -0.3000000009832259,
+          -0.8660254028383291
+        ]
+      }
+    }
+  },
+  "canonical_export": "exact decoded RGB; unused nondeterministic alpha omitted",
+  "repository_checks": {
+    "earth_lab_tests": 187,
+    "new_focused_tests": 5,
+    "terrain_research_tests": 16,
+    "eslint": "PASS",
+    "typescript_and_production_build": "PASS",
+    "json_links_privacy": "PASS",
+    "diff_check": "PASS",
+    "production_and_tryfan": "unchanged",
+    "previous_labs": "unchanged"
+  },
+  "scope": "illumination only; no Experiment 2"
+}

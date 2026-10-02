@@ -1,0 +1,362 @@
+{
+  "experiment": "Lab 012F - terrain lighting and readability",
+  "date": "2026-10-02",
+  "starting_head": "00395605ed046ff2f16f427b4d10ed6be2d55ee4",
+  "identity": "2e657e938d306f29fb2f768172a6b7db3c11e36c3449af6b6b597cde6cc77912",
+  "input_identity": "659a4913b8b4739d26ff38c9c95e4544e402b3491014302b83cb4e33b83c9c3e",
+  "external_root_relative": "experiments/earth-lab/riffelhorn-012f/terrain-lighting-v1",
+  "geometry_parent_identity": "10b3641e25f6283bf0d4c311f813baefbb7703ca7fbd421e1fd6ca4155edcb3a",
+  "geometry": {
+    "unique_vertices": 16000000,
+    "triangles": 31984002,
+    "submitted_vertices": 16056049,
+    "spacing_m": 0.5,
+    "simplification": "none",
+    "lods": 1,
+    "bounds_lv95": [
+      2624000.25,
+      1091000.25,
+      2625999.75,
+      1092999.75
+    ]
+  },
+  "coordinate_frame": {
+    "source": "EPSG:2056 horizontal / LN02 heights (EPSG:5728 provenance)",
+    "origin_lv95_northwest": [
+      2624000,
+      1093000
+    ],
+    "vertical_origin_ln02_m": 2500,
+    "gltf": "X east, Y up, Z south; metres",
+    "unreal": "X east, Y south, Z up; centimetres, unit scale 100, no exaggeration"
+  },
+  "views": {
+    "overview": {
+      "position_m": [
+        1000,
+        1000,
+        4600
+      ],
+      "target_m": [
+        1000,
+        1000,
+        0
+      ],
+      "distance_to_target_m": 4600.0,
+      "approx_perpendicular_screen_pixel_m": 2.2343908619927015,
+      "horizontal_fov_degrees": 50,
+      "near_clip_m": 0.1,
+      "far_clip": "Unreal perspective default, no explicit finite far plane"
+    },
+    "riffelhorn_oblique": {
+      "position_m": [
+        1030.0,
+        398.0,
+        690.280029296875
+      ],
+      "target_m": [
+        810.0,
+        748.0,
+        430.280029296875
+      ],
+      "distance_to_target_m": 488.3646178829912,
+      "approx_perpendicular_screen_pixel_m": 0.23721683467789412,
+      "horizontal_fov_degrees": 50,
+      "near_clip_m": 0.1,
+      "far_clip": "Unreal perspective default, no explicit finite far plane"
+    },
+    "alpine_path": {
+      "position_m": [
+        1310.0,
+        580.0,
+        346.282470703125
+      ],
+      "target_m": [
+        1240.0,
+        470.0,
+        291.282470703125
+      ],
+      "distance_to_target_m": 141.50971698084905,
+      "approx_perpendicular_screen_pixel_m": 0.06873652576199621,
+      "horizontal_fov_degrees": 50,
+      "near_clip_m": 0.1,
+      "far_clip": "Unreal perspective default, no explicit finite far plane"
+    }
+  },
+  "render_settings": {
+    "width": 1920,
+    "height": 1080,
+    "fov": 50,
+    "exposure": "adaptation off, common tone treatment",
+    "rhi": "D3D11",
+    "geometry": "All native cell centres, same triangle diagonal, no Nanite/LOD/collision/smoothing; pixel-centre outer half-cell border not extrapolated"
+  },
+  "lighting": {
+    "baseline": {
+      "ambient": 0.65,
+      "directional": 0.35
+    },
+    "directional": {
+      "ambient": 0.35,
+      "directional": 0.65
+    },
+    "shadow": {
+      "ambient": 0.35,
+      "directional": 0.65,
+      "depth_pixels": 4096,
+      "pcf": "3x3 uniform",
+      "bias_cm": "15 + 0.5*shadow_texel_cm*(1-max(n\u00b7l,0))"
+    }
+  },
+  "directions_unreal_east_south_up": {
+    "northeast": [
+      0.4,
+      -0.3,
+      0.8660254
+    ],
+    "southwest": [
+      -0.4,
+      0.3,
+      0.8660254
+    ]
+  },
+  "conditions": [
+    "baseline",
+    "directional_northeast",
+    "shadow_northeast",
+    "directional_southwest",
+    "shadow_southwest"
+  ],
+  "processing_sha256": "85852740e8faa1c50df8dba8fa69b6d74f25e18da61d61eb28aa6aa0563af974",
+  "adapter_sha256": "dba0781a76df6f1fffcf3f067380d06ba6ece6a63acf0d09a09f0cd09bde7db6",
+  "canonical_export": "exact RGB pixels; alpha omitted; PNG attribution added",
+  "toolchain": {
+    "python": "3.12.6",
+    "unreal": "5.8.2 D3D11",
+    "numpy": "2.5.3",
+    "rasterio": "1.4.3",
+    "Pillow": "12.3.0"
+  },
+  "performance": {
+    "capture_seconds": {
+      "first": 17.514999999897555,
+      "repeat": 17.0
+    },
+    "copied_packages": 257,
+    "copied_package_bytes": 1097816955,
+    "texture_gpu_bytes": 2150048512,
+    "depth_target_nominal_bytes": 134217728,
+    "canonical_product_bytes": 70668918,
+    "first_commandlet_peak_reported_mb": {
+      "physical": 7061,
+      "virtual": 14100
+    },
+    "repeat_commandlet_peak_reported_mb": {
+      "physical": 7303,
+      "virtual": 14102
+    }
+  },
+  "products": [
+    {
+      "path": "captures/first/overview-neutral-baseline.png",
+      "bytes": 1694517,
+      "sha256": "a6abb84f8d54ace1c0587d9feead244aacf993f23972cfaa81fa3eb697b24243"
+    },
+    {
+      "path": "captures/first/riffelhorn_oblique-neutral-baseline.png",
+      "bytes": 1467392,
+      "sha256": "2fd1d7a3043c939d7fd0089409b22e0eaf274a2d2ffb576cedd25b9252f52707"
+    },
+    {
+      "path": "captures/first/alpine_path-neutral-baseline.png",
+      "bytes": 1207896,
+      "sha256": "46941d123cc5443a9522cc86d080924c0620a84e97128850971dbb1a3c44ad69"
+    },
+    {
+      "path": "captures/first/overview-rgb-baseline.png",
+      "bytes": 2587092,
+      "sha256": "c17c2f57b0d8ca1fa9f198ded41e6ea38bc57b835b66b96829c33ef4a0cd798f"
+    },
+    {
+      "path": "captures/first/riffelhorn_oblique-rgb-baseline.png",
+      "bytes": 2574674,
+      "sha256": "843436fdb079393ea6bb0fcdff776018d0cae89d8ce003454b0d11aaee036da7"
+    },
+    {
+      "path": "captures/first/alpine_path-rgb-baseline.png",
+      "bytes": 3174884,
+      "sha256": "163f12504cfde9f68f579eb626a52910a98e15f6aa43ae47316c954fc753bf6a"
+    },
+    {
+      "path": "captures/first/overview-neutral-directional_northeast.png",
+      "bytes": 2020930,
+      "sha256": "1cc3f08535eaf663248406d0c9d1a01dea4ef54d97644e0f6b9fc3dbec5585fe"
+    },
+    {
+      "path": "captures/first/riffelhorn_oblique-neutral-directional_northeast.png",
+      "bytes": 1716160,
+      "sha256": "907b8a447646b3d4a5594ea3ec10876ad1c2be9c2b501e6335832826920ff397"
+    },
+    {
+      "path": "captures/first/alpine_path-neutral-directional_northeast.png",
+      "bytes": 1387399,
+      "sha256": "63882c412202bbe1502996c6ed950d56031908303e90922ec571e43488e632b0"
+    },
+    {
+      "path": "captures/first/overview-rgb-directional_northeast.png",
+      "bytes": 2728677,
+      "sha256": "4d50e982b568fae89ac0fa9b5808bbf3bbc38182b75ccabd9892f6c646a6fe09"
+    },
+    {
+      "path": "captures/first/riffelhorn_oblique-rgb-directional_northeast.png",
+      "bytes": 2587654,
+      "sha256": "b2a3cf6a8096a6b8f1d36d8eb22ff64542cb942c218d1988960cd3e8fd1d8feb"
+    },
+    {
+      "path": "captures/first/alpine_path-rgb-directional_northeast.png",
+      "bytes": 3210928,
+      "sha256": "3ffdfb13f15cb62ed3ca409f243618be097171602444219c2a5f86e7c106cc69"
+    },
+    {
+      "path": "captures/first/overview-neutral-shadow_northeast.png",
+      "bytes": 2090676,
+      "sha256": "6c6d5cf93859492fd148b57a89ef10c9d2fcd3a8abc04ec7234a8997cfcf4ea0"
+    },
+    {
+      "path": "captures/first/riffelhorn_oblique-neutral-shadow_northeast.png",
+      "bytes": 2025162,
+      "sha256": "33e9d7017f301db1a9d0d26c0e13294c12820f8bf62eea7c01fc12767e3afa12"
+    },
+    {
+      "path": "captures/first/alpine_path-neutral-shadow_northeast.png",
+      "bytes": 1488142,
+      "sha256": "d1d2a7fc008054b8487201360448bb3337f7b9817ddc9f122209827e425b54a4"
+    },
+    {
+      "path": "captures/first/overview-rgb-shadow_northeast.png",
+      "bytes": 2730822,
+      "sha256": "8ff82a7f55de2dec8d9209f56bab8690936d3ecac3b582c5648c38665a924b1a"
+    },
+    {
+      "path": "captures/first/riffelhorn_oblique-rgb-shadow_northeast.png",
+      "bytes": 2603664,
+      "sha256": "12f03c338d5d08416eba173f2b0f8102535561b4022f2ddb3061afd9ca592786"
+    },
+    {
+      "path": "captures/first/alpine_path-rgb-shadow_northeast.png",
+      "bytes": 3280695,
+      "sha256": "25b4381cf0f13eae2be0b415e37668f41444e7f69713b342fcf81806cd59cff0"
+    },
+    {
+      "path": "captures/first/overview-neutral-directional_southwest.png",
+      "bytes": 1896441,
+      "sha256": "48ca9345b5631b985eb37eb6b962085a5a79e5ae6e24528a7ae9d4053e19b297"
+    },
+    {
+      "path": "captures/first/riffelhorn_oblique-neutral-directional_southwest.png",
+      "bytes": 1946899,
+      "sha256": "3c83361e4732d1e8be8542fe7bf60f85450a2aa4a1fc480bfee401dd4c5e8957"
+    },
+    {
+      "path": "captures/first/alpine_path-neutral-directional_southwest.png",
+      "bytes": 1201332,
+      "sha256": "638f59206552080eae8a1d3701d3ffd5d99a339ca2b843d2d6c9a27e9108623c"
+    },
+    {
+      "path": "captures/first/overview-rgb-directional_southwest.png",
+      "bytes": 2667209,
+      "sha256": "996c335037be68ac9388ad589b4318a14aa014ccf4fecc33444a1510feda19bd"
+    },
+    {
+      "path": "captures/first/riffelhorn_oblique-rgb-directional_southwest.png",
+      "bytes": 2528048,
+      "sha256": "738a25dca426d113a586809dac00c3ffd03456505dc5591177941da70d7a29dd"
+    },
+    {
+      "path": "captures/first/alpine_path-rgb-directional_southwest.png",
+      "bytes": 3155562,
+      "sha256": "9c4ba77ffa38565b300a35fb513f9f82af0b38b5c5b52b803e9ac1aab7dca5f2"
+    },
+    {
+      "path": "captures/first/overview-neutral-shadow_southwest.png",
+      "bytes": 2109812,
+      "sha256": "721670d61ae61922584e6a04bbf5aedc92e79b1de45ac355cfae6409e57510c9"
+    },
+    {
+      "path": "captures/first/riffelhorn_oblique-neutral-shadow_southwest.png",
+      "bytes": 1925850,
+      "sha256": "0012a5c0019a7899123d7299f7480670d5e87d8fb27cbe7b4becfd998f386ada"
+    },
+    {
+      "path": "captures/first/alpine_path-neutral-shadow_southwest.png",
+      "bytes": 1378807,
+      "sha256": "d7b829d649970d6e3fbfa2b1fac38f09343c89994507cc6548c87686c015552c"
+    },
+    {
+      "path": "captures/first/overview-rgb-shadow_southwest.png",
+      "bytes": 2763920,
+      "sha256": "674cf6483c4678e0f73803f0167b8af12817275d94c0111b7b99f0197d9dd410"
+    },
+    {
+      "path": "captures/first/riffelhorn_oblique-rgb-shadow_southwest.png",
+      "bytes": 2507936,
+      "sha256": "18fb065263b9d34c8d969159f78c1ca49305b4ee04ab1cf35660883b21c6d106"
+    },
+    {
+      "path": "captures/first/alpine_path-rgb-shadow_southwest.png",
+      "bytes": 3289361,
+      "sha256": "09b3656a31da44541ae5b2819431f5b0abf36713558e5348c9c1ce4c9a0ef0cd"
+    },
+    {
+      "path": "comparisons/overview-neutral.png",
+      "bytes": 260394,
+      "sha256": "f57e4120d5faf820536d1a4063bd0f107e2377b34731b058a2c03fd3f8d5e8b3"
+    },
+    {
+      "path": "comparisons/overview-rgb.png",
+      "bytes": 409691,
+      "sha256": "b1976bb26514d54ce690ffff092f3fda75850e24ff06634addf95972605f3488"
+    },
+    {
+      "path": "comparisons/riffelhorn_oblique-neutral.png",
+      "bytes": 359412,
+      "sha256": "804bc0ccefae12aa8cda3a89604d8e4caec3c6b603149eb3bc84c533e37da6a1"
+    },
+    {
+      "path": "comparisons/riffelhorn_oblique-rgb.png",
+      "bytes": 425546,
+      "sha256": "645fa19655e2d3ebd13a7f542e20a3b0d6bf0d767f1167637c3ece16bc66a313"
+    },
+    {
+      "path": "comparisons/alpine_path-neutral.png",
+      "bytes": 352941,
+      "sha256": "d9ae5588de52182b735de66e55e0b2d6ebf31223a2abe06ed87aab0916a7c074"
+    },
+    {
+      "path": "comparisons/alpine_path-rgb.png",
+      "bytes": 829017,
+      "sha256": "e6d4958f4c119a2a30a19fe96814504a858b570c33ccf2d38c49ce2fc2f1d023"
+    },
+    {
+      "path": "measurements.json",
+      "bytes": 37311,
+      "sha256": "36725fe0feac67bddd3fc26851c11b8d4a6bfebb735646763fb76bfc9a324c1e"
+    },
+    {
+      "path": "validation.json",
+      "bytes": 27722,
+      "sha256": "cb0d98bf0a24eb61517ed0dbdf4de038d3960c0e9a7da72d5a806454b2abd14a"
+    },
+    {
+      "path": "geometric-form-controls.json",
+      "bytes": 18343,
+      "sha256": "41686bb55832147f11b00bf25ea48264ab69e367cfa68a349b0880be115c7e38"
+    }
+  ],
+  "outcome": "B - LIGHTING HELPS BUT SOURCE IMAGERY LIMITS IT",
+  "geometry_branch_closed": true,
+  "experiment_2_implemented": false,
+  "attribution": "\u00a9 swisstopo",
+  "licence_evidence": "docs/atlas/riffelhorn-data-discovery.md",
+  "historical_baseline_lighting": "Unlit colour \u00d7 fixed analytic normal factor (0.65 + 0.35*max(dot(normal,(0.4,-0.3,0.8660254)),0)); no atmospheric or cast-shadow additions"
+}

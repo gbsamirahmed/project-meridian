@@ -1,0 +1,1142 @@
+{
+  "image_space_windows": {
+    "overview": {
+      "mountain_relief": [
+        650,
+        230,
+        1000,
+        630
+      ],
+      "alpine_channels": [
+        1000,
+        150,
+        1300,
+        470
+      ]
+    },
+    "riffelhorn_oblique": {
+      "ridge_face": [
+        450,
+        340,
+        1000,
+        530
+      ],
+      "foreground_shoulder": [
+        930,
+        550,
+        1250,
+        760
+      ],
+      "photographed_dark_face": [
+        1150,
+        800,
+        1500,
+        1020
+      ]
+    },
+    "alpine_path": {
+      "ground_undulation": [
+        400,
+        350,
+        1000,
+        670
+      ],
+      "convex_protrusion": [
+        1250,
+        220,
+        1570,
+        480
+      ]
+    }
+  },
+  "image_space": {
+    "overview-neutral-baseline": {
+      "mountain_relief": {
+        "pixels": 140000,
+        "linear_mean": 0.4618654751488495,
+        "linear_p05_p50_p95": [
+          0.4019777798321958,
+          0.4677837961121589,
+          0.5028864580325686
+        ],
+        "linear_p95_minus_p05": 0.1009086782003728,
+        "mean_absolute_horizontal_gradient": 0.01489187970992966,
+        "mean_absolute_vertical_gradient": 0.013475122977701669,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "alpine_channels": {
+        "pixels": 96000,
+        "linear_mean": 0.45688493303957906,
+        "linear_p05_p50_p95": [
+          0.4019777798321958,
+          0.4620769996544071,
+          0.4969329950608704
+        ],
+        "linear_p95_minus_p05": 0.09495521522867462,
+        "mean_absolute_horizontal_gradient": 0.01683388081506021,
+        "mean_absolute_vertical_gradient": 0.01775108618812823,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "riffelhorn_oblique-neutral-baseline": {
+      "ridge_face": {
+        "pixels": 104500,
+        "linear_mean": 0.4885831606816936,
+        "linear_p05_p50_p95": [
+          0.45119192519092893,
+          0.49144770673221677,
+          0.5149176653765214
+        ],
+        "linear_p95_minus_p05": 0.06372574018559246,
+        "mean_absolute_horizontal_gradient": 0.009786752627566847,
+        "mean_absolute_vertical_gradient": 0.007637170856208748,
+        "display_luma_at_most_5_fraction": 0.0022392344497607656,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "foreground_shoulder": {
+        "pixels": 67200,
+        "linear_mean": 0.481873018681125,
+        "linear_p05_p50_p95": [
+          0.4452011945162278,
+          0.4851499400560704,
+          0.5106004717746819
+        ],
+        "linear_p95_minus_p05": 0.06539927725845412,
+        "mean_absolute_horizontal_gradient": 0.00572989312029262,
+        "mean_absolute_vertical_gradient": 0.0033834240952170845,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "photographed_dark_face": {
+        "pixels": 77000,
+        "linear_mean": 0.4186971252443811,
+        "linear_p05_p50_p95": [
+          0.3701778514296583,
+          0.4178850708481375,
+          0.4620769996544071
+        ],
+        "linear_p95_minus_p05": 0.09189914822474876,
+        "mean_absolute_horizontal_gradient": 0.008411767296039803,
+        "mean_absolute_vertical_gradient": 0.0038562087803957726,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "alpine_path-neutral-baseline": {
+      "ground_undulation": {
+        "pixels": 192000,
+        "linear_mean": 0.45449116205957846,
+        "linear_p05_p50_p95": [
+          0.41254261348390375,
+          0.45641102318040466,
+          0.4910208498478356
+        ],
+        "linear_p95_minus_p05": 0.07847823636393186,
+        "mean_absolute_horizontal_gradient": 0.002442835700684071,
+        "mean_absolute_vertical_gradient": 0.002786700145732094,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "convex_protrusion": {
+        "pixels": 83200,
+        "linear_mean": 0.40018690127198625,
+        "linear_p05_p50_p95": [
+          0.33245153634617935,
+          0.40724021190173665,
+          0.4302463987608345
+        ],
+        "linear_p95_minus_p05": 0.09779486241465513,
+        "mean_absolute_horizontal_gradient": 0.0026556639244550103,
+        "mean_absolute_vertical_gradient": 0.002630628965843512,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "overview-rgb-baseline": {
+      "mountain_relief": {
+        "pixels": 140000,
+        "linear_mean": 0.2571755007725834,
+        "linear_p05_p50_p95": [
+          0.09407959491818718,
+          0.2547472938747069,
+          0.4358959452154087
+        ],
+        "linear_p95_minus_p05": 0.3418163502972215,
+        "mean_absolute_horizontal_gradient": 0.033117280612244844,
+        "mean_absolute_vertical_gradient": 0.03083621726298171,
+        "display_luma_at_most_5_fraction": 0.01477142857142857,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "alpine_channels": {
+        "pixels": 96000,
+        "linear_mean": 0.46995914086680063,
+        "linear_p05_p50_p95": [
+          0.25434099025927254,
+          0.4669750150117972,
+          0.643516450978203
+        ],
+        "linear_p95_minus_p05": 0.38917546071893044,
+        "mean_absolute_horizontal_gradient": 0.030815050654210547,
+        "mean_absolute_vertical_gradient": 0.029332920213609753,
+        "display_luma_at_most_5_fraction": 3.125e-05,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "riffelhorn_oblique-rgb-baseline": {
+      "ridge_face": {
+        "pixels": 104500,
+        "linear_mean": 0.17811596827309975,
+        "linear_p05_p50_p95": [
+          0.006508632632469408,
+          0.17613827494383932,
+          0.3558891660585973
+        ],
+        "linear_p95_minus_p05": 0.34938053342612785,
+        "mean_absolute_horizontal_gradient": 0.058137300109744786,
+        "mean_absolute_vertical_gradient": 0.05314784217844793,
+        "display_luma_at_most_5_fraction": 0.025942583732057416,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "foreground_shoulder": {
+        "pixels": 67200,
+        "linear_mean": 0.057023412709205655,
+        "linear_p05_p50_p95": [
+          0.0,
+          0.00121410793419535,
+          0.3150783284505059
+        ],
+        "linear_p95_minus_p05": 0.3150783284505059,
+        "mean_absolute_horizontal_gradient": 0.021861351362684973,
+        "mean_absolute_vertical_gradient": 0.02406549379011776,
+        "display_luma_at_most_5_fraction": 0.5515029761904762,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "photographed_dark_face": {
+        "pixels": 77000,
+        "linear_mean": 0.0006273761139715308,
+        "linear_p05_p50_p95": [
+          0.0,
+          0.0,
+          0.0024282158683907
+        ],
+        "linear_p95_minus_p05": 0.0024282158683907,
+        "mean_absolute_horizontal_gradient": 0.000853963913308315,
+        "mean_absolute_vertical_gradient": 0.000876369025633291,
+        "display_luma_at_most_5_fraction": 0.8415454545454546,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "alpine_path-rgb-baseline": {
+      "ground_undulation": {
+        "pixels": 192000,
+        "linear_mean": 0.2317006273053607,
+        "linear_p05_p50_p95": [
+          0.1150655194288545,
+          0.20240811060271002,
+          0.4308885449536676
+        ],
+        "linear_p95_minus_p05": 0.31582302552481306,
+        "mean_absolute_horizontal_gradient": 0.014759905269822769,
+        "mean_absolute_vertical_gradient": 0.025057956550900373,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "convex_protrusion": {
+        "pixels": 83200,
+        "linear_mean": 0.24150217293125295,
+        "linear_p05_p50_p95": [
+          0.10799334374130945,
+          0.24903729986944836,
+          0.35357098984983476
+        ],
+        "linear_p95_minus_p05": 0.2455776461085253,
+        "mean_absolute_horizontal_gradient": 0.011197512664262626,
+        "mean_absolute_vertical_gradient": 0.013545587235683124,
+        "display_luma_at_most_5_fraction": 0.0009375,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "overview-neutral-directional_northeast": {
+      "mountain_relief": {
+        "pixels": 140000,
+        "linear_mean": 0.40631518195773125,
+        "linear_p05_p50_p95": [
+          0.2573259136451983,
+          0.4232676699860717,
+          0.49567607298857924
+        ],
+        "linear_p95_minus_p05": 0.23835015934338094,
+        "mean_absolute_horizontal_gradient": 0.033391662937228395,
+        "mean_absolute_vertical_gradient": 0.030106165717758985,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "alpine_channels": {
+        "pixels": 96000,
+        "linear_mean": 0.4067764183356167,
+        "linear_p05_p50_p95": [
+          0.27378874588572466,
+          0.4232676699860717,
+          0.4897726944261063
+        ],
+        "linear_p95_minus_p05": 0.21598394854038167,
+        "mean_absolute_horizontal_gradient": 0.0368782219264288,
+        "mean_absolute_vertical_gradient": 0.03895810504468646,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "riffelhorn_oblique-neutral-directional_northeast": {
+      "ridge_face": {
+        "pixels": 104500,
+        "linear_mean": 0.47343790306828704,
+        "linear_p05_p50_p95": [
+          0.41254261348390375,
+          0.4839105337273856,
+          0.5088813208549338
+        ],
+        "linear_p95_minus_p05": 0.09633870737103001,
+        "mean_absolute_horizontal_gradient": 0.01922245195055699,
+        "mean_absolute_vertical_gradient": 0.014719670828714443,
+        "display_luma_at_most_5_fraction": 0.0022392344497607656,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "foreground_shoulder": {
+        "pixels": 67200,
+        "linear_mean": 0.44856612833196563,
+        "linear_p05_p50_p95": [
+          0.371600445223859,
+          0.45641102318040466,
+          0.5033192871283434
+        ],
+        "linear_p95_minus_p05": 0.1317188419044844,
+        "mean_absolute_horizontal_gradient": 0.01146764881180506,
+        "mean_absolute_vertical_gradient": 0.005895857677356316,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "photographed_dark_face": {
+        "pixels": 77000,
+        "linear_mean": 0.3632733260671266,
+        "linear_p05_p50_p95": [
+          0.25415209433082675,
+          0.3712376804741491,
+          0.4452011945162278
+        ],
+        "linear_p95_minus_p05": 0.19104910018540106,
+        "mean_absolute_horizontal_gradient": 0.017700662453512917,
+        "mean_absolute_vertical_gradient": 0.007103072989963826,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "alpine_path-neutral-directional_northeast": {
+      "ground_undulation": {
+        "pixels": 192000,
+        "linear_mean": 0.4043353707181888,
+        "linear_p05_p50_p95": [
+          0.33616182711625303,
+          0.40724021190173665,
+          0.46248903035865674
+        ],
+        "linear_p95_minus_p05": 0.1263272032424037,
+        "mean_absolute_horizontal_gradient": 0.0038028305410694263,
+        "mean_absolute_vertical_gradient": 0.004734357336465271,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "convex_protrusion": {
+        "pixels": 83200,
+        "linear_mean": 0.31608321370349557,
+        "linear_p05_p50_p95": [
+          0.162029375639111,
+          0.33245153634617935,
+          0.3712376804741491
+        ],
+        "linear_p95_minus_p05": 0.20920830483503813,
+        "mean_absolute_horizontal_gradient": 0.004171202315389024,
+        "mean_absolute_vertical_gradient": 0.004244232206799728,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "overview-rgb-directional_northeast": {
+      "mountain_relief": {
+        "pixels": 140000,
+        "linear_mean": 0.21131600025729327,
+        "linear_p05_p50_p95": [
+          0.05939884375046019,
+          0.1997223814433711,
+          0.39020990472945594
+        ],
+        "linear_p95_minus_p05": 0.33081106097899576,
+        "mean_absolute_horizontal_gradient": 0.039626929632932115,
+        "mean_absolute_vertical_gradient": 0.03711479489684248,
+        "display_luma_at_most_5_fraction": 0.0151,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "alpine_channels": {
+        "pixels": 96000,
+        "linear_mean": 0.42256358632767765,
+        "linear_p05_p50_p95": [
+          0.19329942256820898,
+          0.40726669089437956,
+          0.6235090815988014
+        ],
+        "linear_p95_minus_p05": 0.4302096590305924,
+        "mean_absolute_horizontal_gradient": 0.04541968143930398,
+        "mean_absolute_vertical_gradient": 0.04567230797175209,
+        "display_luma_at_most_5_fraction": 6.25e-05,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "riffelhorn_oblique-rgb-directional_northeast": {
+      "ridge_face": {
+        "pixels": 104500,
+        "linear_mean": 0.16996459818187026,
+        "linear_p05_p50_p95": [
+          0.004775800425887263,
+          0.1673396701918681,
+          0.3493757975505516
+        ],
+        "linear_p95_minus_p05": 0.3445999971246643,
+        "mean_absolute_horizontal_gradient": 0.058073897380793,
+        "mean_absolute_vertical_gradient": 0.051898218845977485,
+        "display_luma_at_most_5_fraction": 0.028985645933014354,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "foreground_shoulder": {
+        "pixels": 67200,
+        "linear_mean": 0.05327649077901585,
+        "linear_p05_p50_p95": [
+          0.0,
+          0.00121410793419535,
+          0.30112848249808244
+        ],
+        "linear_p95_minus_p05": 0.30112848249808244,
+        "mean_absolute_horizontal_gradient": 0.02066104672645479,
+        "mean_absolute_vertical_gradient": 0.022833094737157642,
+        "display_luma_at_most_5_fraction": 0.5566666666666666,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "photographed_dark_face": {
+        "pixels": 77000,
+        "linear_mean": 0.0006273750525704636,
+        "linear_p05_p50_p95": [
+          0.0,
+          0.0,
+          0.0024282158683907
+        ],
+        "linear_p95_minus_p05": 0.0024282158683907,
+        "mean_absolute_horizontal_gradient": 0.0008539633424656944,
+        "mean_absolute_vertical_gradient": 0.0008763700145070221,
+        "display_luma_at_most_5_fraction": 0.8415454545454546,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "alpine_path-rgb-directional_northeast": {
+      "ground_undulation": {
+        "pixels": 192000,
+        "linear_mean": 0.19248963215732964,
+        "linear_p05_p50_p95": [
+          0.08618591327375302,
+          0.16823364550847572,
+          0.3816429521281515
+        ],
+        "linear_p95_minus_p05": 0.2954570388543985,
+        "mean_absolute_horizontal_gradient": 0.013737080371661924,
+        "mean_absolute_vertical_gradient": 0.02321899783991547,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "convex_protrusion": {
+        "pixels": 83200,
+        "linear_mean": 0.17701214061968099,
+        "linear_p05_p50_p95": [
+          0.05378381518588122,
+          0.1792266704660929,
+          0.2902025628094456
+        ],
+        "linear_p95_minus_p05": 0.2364187476235644,
+        "mean_absolute_horizontal_gradient": 0.00938840242182717,
+        "mean_absolute_vertical_gradient": 0.011593406251627289,
+        "display_luma_at_most_5_fraction": 0.002331730769230769,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "overview-neutral-shadow_northeast": {
+      "mountain_relief": {
+        "pixels": 140000,
+        "linear_mean": 0.32982464999177497,
+        "linear_p05_p50_p95": [
+          0.20155625379439707,
+          0.33716361504833037,
+          0.4232676699860717
+        ],
+        "linear_p95_minus_p05": 0.22171141619167462,
+        "mean_absolute_horizontal_gradient": 0.0315806394568036,
+        "mean_absolute_vertical_gradient": 0.028826562937512526,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "alpine_channels": {
+        "pixels": 96000,
+        "linear_mean": 0.33060736232677934,
+        "linear_p05_p50_p95": [
+          0.21586050011389923,
+          0.33616182711625303,
+          0.43415363617474895
+        ],
+        "linear_p95_minus_p05": 0.2182931360608497,
+        "mean_absolute_horizontal_gradient": 0.0385065864981551,
+        "mean_absolute_vertical_gradient": 0.0395334683209368,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "riffelhorn_oblique-neutral-shadow_northeast": {
+      "ridge_face": {
+        "pixels": 104500,
+        "linear_mean": 0.41244778007684907,
+        "linear_p05_p50_p95": [
+          0.31854677812509186,
+          0.41254261348390375,
+          0.5028864580325686
+        ],
+        "linear_p95_minus_p05": 0.18433967990747674,
+        "mean_absolute_horizontal_gradient": 0.0417697855332123,
+        "mean_absolute_vertical_gradient": 0.03502430770794572,
+        "display_luma_at_most_5_fraction": 0.0022392344497607656,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "foreground_shoulder": {
+        "pixels": 67200,
+        "linear_mean": 0.37239693788656625,
+        "linear_p05_p50_p95": [
+          0.2874408377269175,
+          0.3701778514296583,
+          0.47932018310082675
+        ],
+        "linear_p95_minus_p05": 0.19187934537390927,
+        "mean_absolute_horizontal_gradient": 0.019723625447066323,
+        "mean_absolute_vertical_gradient": 0.013473783337394574,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "photographed_dark_face": {
+        "pixels": 77000,
+        "linear_mean": 0.2869166641193229,
+        "linear_p05_p50_p95": [
+          0.1946178304415758,
+          0.2874408377269175,
+          0.38132601143253014
+        ],
+        "linear_p95_minus_p05": 0.18670818099095435,
+        "mean_absolute_horizontal_gradient": 0.01809630249869529,
+        "mean_absolute_vertical_gradient": 0.009986453502399639,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "alpine_path-neutral-shadow_northeast": {
+      "ground_undulation": {
+        "pixels": 192000,
+        "linear_mean": 0.32626797660965856,
+        "linear_p05_p50_p95": [
+          0.2654828930125873,
+          0.3277780980565421,
+          0.38132601143253014
+        ],
+        "linear_p95_minus_p05": 0.11584311841994283,
+        "mean_absolute_horizontal_gradient": 0.0036824186531331784,
+        "mean_absolute_vertical_gradient": 0.004822141498519649,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "convex_protrusion": {
+        "pixels": 83200,
+        "linear_mean": 0.2441814800045002,
+        "linear_p05_p50_p95": [
+          0.13783669956124928,
+          0.2573259136451983,
+          0.2917706498175358
+        ],
+        "linear_p95_minus_p05": 0.15393395025628653,
+        "mean_absolute_horizontal_gradient": 0.003480317945297454,
+        "mean_absolute_vertical_gradient": 0.003936389928263485,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "overview-rgb-shadow_northeast": {
+      "mountain_relief": {
+        "pixels": 140000,
+        "linear_mean": 0.15562137843695048,
+        "linear_p05_p50_p95": [
+          0.03704829207418163,
+          0.1436925944988805,
+          0.31091981790981443
+        ],
+        "linear_p95_minus_p05": 0.2738715258356328,
+        "mean_absolute_horizontal_gradient": 0.03228444308492498,
+        "mean_absolute_vertical_gradient": 0.030781873688597357,
+        "display_luma_at_most_5_fraction": 0.015957142857142857,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "alpine_channels": {
+        "pixels": 96000,
+        "linear_mean": 0.3521478227953922,
+        "linear_p05_p50_p95": [
+          0.14304365496124288,
+          0.3254937025284986,
+          0.5633570064283066
+        ],
+        "linear_p95_minus_p05": 0.42031335146706367,
+        "mean_absolute_horizontal_gradient": 0.044738526497134466,
+        "mean_absolute_vertical_gradient": 0.04436427986872135,
+        "display_luma_at_most_5_fraction": 9.375e-05,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "riffelhorn_oblique-rgb-shadow_northeast": {
+      "ridge_face": {
+        "pixels": 104500,
+        "linear_mean": 0.13521842024887387,
+        "linear_p05_p50_p95": [
+          0.0026891276634492807,
+          0.12113903813181677,
+          0.31226551751376336
+        ],
+        "linear_p95_minus_p05": 0.3095763898503141,
+        "mean_absolute_horizontal_gradient": 0.053723901390216995,
+        "mean_absolute_vertical_gradient": 0.047938006536959635,
+        "display_luma_at_most_5_fraction": 0.037588516746411484,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "foreground_shoulder": {
+        "pixels": 67200,
+        "linear_mean": 0.04152073464314495,
+        "linear_p05_p50_p95": [
+          0.0,
+          0.0010191221999635769,
+          0.24704574250258593
+        ],
+        "linear_p95_minus_p05": 0.24704574250258593,
+        "mean_absolute_horizontal_gradient": 0.01742805952439069,
+        "mean_absolute_vertical_gradient": 0.019160816986975183,
+        "display_luma_at_most_5_fraction": 0.5693601190476191,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "photographed_dark_face": {
+        "pixels": 77000,
+        "linear_mean": 0.0006273683233595088,
+        "linear_p05_p50_p95": [
+          0.0,
+          0.0,
+          0.0024282158683907
+        ],
+        "linear_p95_minus_p05": 0.0024282158683907,
+        "mean_absolute_horizontal_gradient": 0.0008539610590952111,
+        "mean_absolute_vertical_gradient": 0.0008763789598966587,
+        "display_luma_at_most_5_fraction": 0.8415584415584415,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "alpine_path-rgb-shadow_northeast": {
+      "ground_undulation": {
+        "pixels": 192000,
+        "linear_mean": 0.13914896857870193,
+        "linear_p05_p50_p95": [
+          0.05268116399122458,
+          0.11394504150204282,
+          0.30466102941669476
+        ],
+        "linear_p95_minus_p05": 0.2519798654254702,
+        "mean_absolute_horizontal_gradient": 0.011665949847988162,
+        "mean_absolute_vertical_gradient": 0.019701331190360532,
+        "display_luma_at_most_5_fraction": 5.208333333333333e-06,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "convex_protrusion": {
+        "pixels": 83200,
+        "linear_mean": 0.12426880036927825,
+        "linear_p05_p50_p95": [
+          0.03327413540351456,
+          0.12434937852530775,
+          0.20787612689378987
+        ],
+        "linear_p95_minus_p05": 0.1746019914902753,
+        "mean_absolute_horizontal_gradient": 0.007854781332204346,
+        "mean_absolute_vertical_gradient": 0.009663418886057628,
+        "display_luma_at_most_5_fraction": 0.002716346153846154,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "overview-neutral-directional_southwest": {
+      "mountain_relief": {
+        "pixels": 140000,
+        "linear_mean": 0.467772571745214,
+        "linear_p05_p50_p95": [
+          0.36520111515650033,
+          0.4851499400560704,
+          0.5088813208549338
+        ],
+        "linear_p95_minus_p05": 0.14368020569843343,
+        "mean_absolute_horizontal_gradient": 0.02314223448983356,
+        "mean_absolute_vertical_gradient": 0.02340631233970263,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "alpine_channels": {
+        "pixels": 96000,
+        "linear_mean": 0.45914791815815464,
+        "linear_p05_p50_p95": [
+          0.3662525955988395,
+          0.47353149614800955,
+          0.5033192871283434
+        ],
+        "linear_p95_minus_p05": 0.1370666915295039,
+        "mean_absolute_horizontal_gradient": 0.026256942268825502,
+        "mean_absolute_vertical_gradient": 0.02695659608864463,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "riffelhorn_oblique-neutral-directional_southwest": {
+      "ridge_face": {
+        "pixels": 104500,
+        "linear_mean": 0.36826324380264963,
+        "linear_p05_p50_p95": [
+          0.2573259136451983,
+          0.3712376804741491,
+          0.4677837961121589
+        ],
+        "linear_p95_minus_p05": 0.21045788246696062,
+        "mean_absolute_horizontal_gradient": 0.030669800948621033,
+        "mean_absolute_vertical_gradient": 0.03930184666726942,
+        "display_luma_at_most_5_fraction": 0.0022392344497607656,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "foreground_shoulder": {
+        "pixels": 67200,
+        "linear_mean": 0.2608378700226746,
+        "linear_p05_p50_p95": [
+          0.14933633535426188,
+          0.23757970338721188,
+          0.4495984993609672
+        ],
+        "linear_p95_minus_p05": 0.3002621640067053,
+        "mean_absolute_horizontal_gradient": 0.01633390984104363,
+        "mean_absolute_vertical_gradient": 0.016704390286956843,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "photographed_dark_face": {
+        "pixels": 77000,
+        "linear_mean": 0.20893174111373103,
+        "linear_p05_p50_p95": [
+          0.11443537382697373,
+          0.18782077230067787,
+          0.3662525955988395
+        ],
+        "linear_p95_minus_p05": 0.2518172217718658,
+        "mean_absolute_horizontal_gradient": 0.016174938104920687,
+        "mean_absolute_vertical_gradient": 0.014147969981847986,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "alpine_path-neutral-directional_southwest": {
+      "ground_undulation": {
+        "pixels": 192000,
+        "linear_mean": 0.4925677003760317,
+        "linear_p05_p50_p95": [
+          0.4552150970836569,
+          0.4969329950608704,
+          0.5166486535258882
+        ],
+        "linear_p95_minus_p05": 0.06143355644223125,
+        "mean_absolute_horizontal_gradient": 0.0021013689337578112,
+        "mean_absolute_vertical_gradient": 0.0024012105349559974,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "convex_protrusion": {
+        "pixels": 83200,
+        "linear_mean": 0.45469728432580697,
+        "linear_p05_p50_p95": [
+          0.4019777798321958,
+          0.45682010668182765,
+          0.4969329950608704
+        ],
+        "linear_p95_minus_p05": 0.09495521522867462,
+        "mean_absolute_horizontal_gradient": 0.0025838932579467667,
+        "mean_absolute_vertical_gradient": 0.0024417075767371767,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "overview-rgb-directional_southwest": {
+      "mountain_relief": {
+        "pixels": 140000,
+        "linear_mean": 0.268185706265478,
+        "linear_p05_p50_p95": [
+          0.06785347963516569,
+          0.26743778256324335,
+          0.4542640851396357
+        ],
+        "linear_p95_minus_p05": 0.38641060550447,
+        "mean_absolute_horizontal_gradient": 0.03832900146249359,
+        "mean_absolute_vertical_gradient": 0.03564193233644864,
+        "display_luma_at_most_5_fraction": 0.016707142857142858,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "alpine_channels": {
+        "pixels": 96000,
+        "linear_mean": 0.4728595100153657,
+        "linear_p05_p50_p95": [
+          0.2401742223694061,
+          0.4893728000820328,
+          0.6499331792913153
+        ],
+        "linear_p95_minus_p05": 0.4097589569219092,
+        "mean_absolute_horizontal_gradient": 0.037316500449473156,
+        "mean_absolute_vertical_gradient": 0.035136789808879076,
+        "display_luma_at_most_5_fraction": 5.208333333333334e-05,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "riffelhorn_oblique-rgb-directional_southwest": {
+      "ridge_face": {
+        "pixels": 104500,
+        "linear_mean": 0.1081379206930699,
+        "linear_p05_p50_p95": [
+          0.0021246888848418626,
+          0.09734155455033365,
+          0.2560207302460333
+        ],
+        "linear_p95_minus_p05": 0.2538960413611914,
+        "mean_absolute_horizontal_gradient": 0.04273263978866697,
+        "mean_absolute_vertical_gradient": 0.046830753693329334,
+        "display_luma_at_most_5_fraction": 0.04329186602870813,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "foreground_shoulder": {
+        "pixels": 67200,
+        "linear_mean": 0.03422105935627712,
+        "linear_p05_p50_p95": [
+          0.0,
+          0.0009105809506465124,
+          0.229875303704867
+        ],
+        "linear_p95_minus_p05": 0.229875303704867,
+        "mean_absolute_horizontal_gradient": 0.012651023384134468,
+        "mean_absolute_vertical_gradient": 0.01735833748357375,
+        "display_luma_at_most_5_fraction": 0.5926636904761905,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "photographed_dark_face": {
+        "pixels": 77000,
+        "linear_mean": 0.0006273694617827926,
+        "linear_p05_p50_p95": [
+          0.0,
+          0.0,
+          0.0024282158683907
+        ],
+        "linear_p95_minus_p05": 0.0024282158683907,
+        "mean_absolute_horizontal_gradient": 0.000853961629937832,
+        "mean_absolute_vertical_gradient": 0.0008763778162750951,
+        "display_luma_at_most_5_fraction": 0.8415454545454546,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "alpine_path-rgb-directional_southwest": {
+      "ground_undulation": {
+        "pixels": 192000,
+        "linear_mean": 0.2647603834822169,
+        "linear_p05_p50_p95": [
+          0.14188660789458107,
+          0.2350748539363269,
+          0.47158602643317965
+        ],
+        "linear_p95_minus_p05": 0.3296994185385986,
+        "mean_absolute_horizontal_gradient": 0.015449079831002875,
+        "mean_absolute_vertical_gradient": 0.026338575941333653,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "convex_protrusion": {
+        "pixels": 83200,
+        "linear_mean": 0.2890792027541651,
+        "linear_p05_p50_p95": [
+          0.1564519903364269,
+          0.29625528375379634,
+          0.3986478693953383
+        ],
+        "linear_p95_minus_p05": 0.2421958790589114,
+        "mean_absolute_horizontal_gradient": 0.012278011618448225,
+        "mean_absolute_vertical_gradient": 0.014872617072253593,
+        "display_luma_at_most_5_fraction": 0.0006850961538461539,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "overview-neutral-shadow_southwest": {
+      "mountain_relief": {
+        "pixels": 140000,
+        "linear_mean": 0.3969473282516712,
+        "linear_p05_p50_p95": [
+          0.27889426347681034,
+          0.4019777798321958,
+          0.4969329950608704
+        ],
+        "linear_p95_minus_p05": 0.21803873158406006,
+        "mean_absolute_horizontal_gradient": 0.034890891244366284,
+        "mean_absolute_vertical_gradient": 0.0347070277492113,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "alpine_channels": {
+        "pixels": 96000,
+        "linear_mean": 0.38752225847587746,
+        "linear_p05_p50_p95": [
+          0.27889426347681034,
+          0.39157247774972326,
+          0.4897726944261063
+        ],
+        "linear_p95_minus_p05": 0.21087843094929598,
+        "mean_absolute_horizontal_gradient": 0.04364299828331862,
+        "mean_absolute_vertical_gradient": 0.04514688668345438,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "riffelhorn_oblique-neutral-shadow_southwest": {
+      "ridge_face": {
+        "pixels": 104500,
+        "linear_mean": 0.2945786220679839,
+        "linear_p05_p50_p95": [
+          0.20863687014525573,
+          0.2917706498175358,
+          0.38642943378704897
+        ],
+        "linear_p95_minus_p05": 0.17779256364179324,
+        "mean_absolute_horizontal_gradient": 0.0269473058713894,
+        "mean_absolute_vertical_gradient": 0.03294455196736885,
+        "display_luma_at_most_5_fraction": 0.0022392344497607656,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "foreground_shoulder": {
+        "pixels": 67200,
+        "linear_mean": 0.21798809590173548,
+        "linear_p05_p50_p95": [
+          0.14933633535426188,
+          0.18710945994034753,
+          0.3616638676853763
+        ],
+        "linear_p95_minus_p05": 0.2123275323311144,
+        "mean_absolute_horizontal_gradient": 0.010807746271385673,
+        "mean_absolute_vertical_gradient": 0.011652159814532803,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "photographed_dark_face": {
+        "pixels": 77000,
+        "linear_mean": 0.16812401727464635,
+        "linear_p05_p50_p95": [
+          0.1119324278369056,
+          0.14351933365005645,
+          0.2831487404299921
+        ],
+        "linear_p95_minus_p05": 0.1712163125930865,
+        "mean_absolute_horizontal_gradient": 0.010300753233208022,
+        "mean_absolute_vertical_gradient": 0.009204808295989542,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "alpine_path-neutral-shadow_southwest": {
+      "ground_undulation": {
+        "pixels": 192000,
+        "linear_mean": 0.44859848999105284,
+        "linear_p05_p50_p95": [
+          0.38132601143253014,
+          0.45078578283822346,
+          0.5149176653765214
+        ],
+        "linear_p95_minus_p05": 0.13359165394399125,
+        "mean_absolute_horizontal_gradient": 0.005563698824397662,
+        "mean_absolute_vertical_gradient": 0.008213150874996644,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "convex_protrusion": {
+        "pixels": 83200,
+        "linear_mean": 0.4004023098926437,
+        "linear_p05_p50_p95": [
+          0.31398871337571754,
+          0.39157247774972326,
+          0.4969329950608704
+        ],
+        "linear_p95_minus_p05": 0.18294428168515287,
+        "mean_absolute_horizontal_gradient": 0.005069245907723111,
+        "mean_absolute_vertical_gradient": 0.0057520086756971105,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "overview-rgb-shadow_southwest": {
+      "mountain_relief": {
+        "pixels": 140000,
+        "linear_mean": 0.21109984457703806,
+        "linear_p05_p50_p95": [
+          0.03805958394147682,
+          0.20318944275905612,
+          0.38948797510424943
+        ],
+        "linear_p95_minus_p05": 0.3514283911627726,
+        "mean_absolute_horizontal_gradient": 0.03995060244619695,
+        "mean_absolute_vertical_gradient": 0.037692288429014016,
+        "display_luma_at_most_5_fraction": 0.01782857142857143,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "alpine_channels": {
+        "pixels": 96000,
+        "linear_mean": 0.40635229145121243,
+        "linear_p05_p50_p95": [
+          0.17292610995292157,
+          0.4171771275306479,
+          0.6029001931678015
+        ],
+        "linear_p95_minus_p05": 0.42997408321487995,
+        "mean_absolute_horizontal_gradient": 0.0495725086931202,
+        "mean_absolute_vertical_gradient": 0.04857360645366829,
+        "display_luma_at_most_5_fraction": 0.00010416666666666667,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "riffelhorn_oblique-rgb-shadow_southwest": {
+      "ridge_face": {
+        "pixels": 104500,
+        "linear_mean": 0.07262295642848314,
+        "linear_p05_p50_p95": [
+          0.0012169003824439991,
+          0.058534568111754025,
+          0.18762837643195907
+        ],
+        "linear_p95_minus_p05": 0.18641147604951508,
+        "mean_absolute_horizontal_gradient": 0.031883031641876024,
+        "mean_absolute_vertical_gradient": 0.03452350991183512,
+        "display_luma_at_most_5_fraction": 0.05462200956937799,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "foreground_shoulder": {
+        "pixels": 67200,
+        "linear_mean": 0.02410876495147424,
+        "linear_p05_p50_p95": [
+          0.0,
+          0.0009105809506465124,
+          0.16399991696407387
+        ],
+        "linear_p95_minus_p05": 0.16399991696407387,
+        "mean_absolute_horizontal_gradient": 0.009776214919149269,
+        "mean_absolute_vertical_gradient": 0.013086517210624019,
+        "display_luma_at_most_5_fraction": 0.6031547619047619,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "photographed_dark_face": {
+        "pixels": 77000,
+        "linear_mean": 0.0006273674695420461,
+        "linear_p05_p50_p95": [
+          0.0,
+          0.0,
+          0.0024282158683907
+        ],
+        "linear_p95_minus_p05": 0.0024282158683907,
+        "mean_absolute_horizontal_gradient": 0.0008539610590952111,
+        "mean_absolute_vertical_gradient": 0.000876380675329004,
+        "display_luma_at_most_5_fraction": 0.8415584415584415,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    },
+    "alpine_path-rgb-shadow_southwest": {
+      "ground_undulation": {
+        "pixels": 192000,
+        "linear_mean": 0.22867814250698876,
+        "linear_p05_p50_p95": [
+          0.10307307192525154,
+          0.19699495287500057,
+          0.44256000064017176
+        ],
+        "linear_p95_minus_p05": 0.3394869287149202,
+        "mean_absolute_horizontal_gradient": 0.015993272529916676,
+        "mean_absolute_vertical_gradient": 0.026434764497055674,
+        "display_luma_at_most_5_fraction": 0.0,
+        "any_channel_at_least_250_fraction": 0.0
+      },
+      "convex_protrusion": {
+        "pixels": 83200,
+        "linear_mean": 0.2409464583991176,
+        "linear_p05_p50_p95": [
+          0.1222378024114925,
+          0.24615945153869268,
+          0.3455286739548605
+        ],
+        "linear_p95_minus_p05": 0.22329087154336796,
+        "mean_absolute_horizontal_gradient": 0.012598485801460675,
+        "mean_absolute_vertical_gradient": 0.015521832754204512,
+        "display_luma_at_most_5_fraction": 0.0009014423076923077,
+        "any_channel_at_least_250_fraction": 0.0
+      }
+    }
+  },
+  "geometric_form_controls": {
+    "crs": "EPSG:2056",
+    "vertical_reference": "LN02 metres",
+    "sampling_m": 0.5,
+    "source": "unchanged 012B swissSURFACE3D grid"
+  },
+  "form_profiles": {
+    "summit_ridge_breaks": {
+      "start_xy": [
+        2624780.25,
+        1092252.25
+      ],
+      "end_xy": [
+        2624839.75,
+        1092252.25
+      ],
+      "samples": 120,
+      "range_m": 60.820068359375,
+      "maximum_adjacent_height_change_m": 33.059814453125
+    },
+    "alpine_ground_and_shoulder": {
+      "start_xy": [
+        2625210.25,
+        1092530.25
+      ],
+      "end_xy": [
+        2625269.75,
+        1092530.25
+      ],
+      "samples": 120,
+      "range_m": 11.239990234375,
+      "maximum_adjacent_height_change_m": 0.239990234375
+    },
+    "northern_channel_context": {
+      "start_xy": [
+        2625100.25,
+        1092600.25
+      ],
+      "end_xy": [
+        2625100.25,
+        1092799.75
+      ],
+      "samples": 400,
+      "range_m": 11.900146484375,
+      "maximum_adjacent_height_change_m": 1.409912109375
+    }
+  },
+  "interpretation": "Supporting diagnostics, not a universal readability score; no source colour or geometry change."
+}
