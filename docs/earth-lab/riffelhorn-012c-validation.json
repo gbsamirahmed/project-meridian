@@ -1,0 +1,25 @@
+{
+  "result": "PASS",
+  "originals": 16,
+  "source_las": 4,
+  "product_hashes": 46,
+  "original_record_coordinate_samples": 45,
+  "nearest_surface_rerun_queries": 24,
+  "fixed_camera_views": 3,
+  "diagnostic_frames": 9,
+  "identity": "545cf4ab0f07101db951470aed9498d059eedc846bef8bbecc7e75a2d1b4ce88",
+  "deterministic_rerun": {
+    "complete_runs": 2,
+    "matching_identity": "545cf4ab0f07101db951470aed9498d059eedc846bef8bbecc7e75a2d1b4ce88",
+    "matching_canonical_product_hashes": 46
+  },
+  "repository_validation": {
+    "earth_lab_tests": 165,
+    "new_synthetic_tests": 8,
+    "terrain_research_tests": 16,
+    "eslint": "PASS",
+    "typescript": "PASS",
+    "production_build": "PASS",
+    "warnings": "Existing NumPy/rasterio deprecations and Vite plugin timing / bundle-size warnings."
+  }
+}

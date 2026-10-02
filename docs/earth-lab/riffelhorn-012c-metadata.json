@@ -1,0 +1,312 @@
+{
+  "experiment": "Lab 012C raw LiDAR information retention",
+  "parent_012b_identity": "10b3641e25f6283bf0d4c311f813baefbb7703ca7fbd421e1fd6ca4155edcb3a",
+  "processing_script_sha256": "a56791e2a91d58afa03e9ebd374ddde5f882dad24362ff199d8e757432710fac",
+  "sources": [
+    {
+      "path": "extracted/swisssurface3d_2021_2624-1092_2056_5728.las/2624_1092.las",
+      "sha256": "39d4def2a9154a664799297429e24da133e07bf0a859d768cede32452203e423",
+      "scale": [
+        0.01,
+        0.01,
+        0.01
+      ],
+      "offset": [
+        2624000.0,
+        1092000.0,
+        0.0
+      ],
+      "points": 13198914
+    },
+    {
+      "path": "extracted/swisssurface3d_2021_2625-1092_2056_5728.las/2625_1092.las",
+      "sha256": "9dfd16e5648d8f801397347a62e59eecf0c1889a1e72bdebe6f8ca83421a24f3",
+      "scale": [
+        0.01,
+        0.01,
+        0.01
+      ],
+      "offset": [
+        2625000.0,
+        1092000.0,
+        0.0
+      ],
+      "points": 12868428
+    }
+  ],
+  "crs": "EPSG:2056 / LV95; vertical LN02 metres, provenance EPSG:5728; no conversion",
+  "patches": {
+    "summit_cliff": [
+      2624780,
+      1092222,
+      2624840,
+      1092282
+    ],
+    "sloping_control": [
+      2625210,
+      1092500,
+      2625240,
+      1092530
+    ],
+    "rough_ground": [
+      2625240,
+      1092530,
+      2625270,
+      1092560
+    ]
+  },
+  "parameters": {
+    "normal_radii_m": [
+      0.5,
+      1.0,
+      2.0
+    ],
+    "queries": 1024,
+    "signed_distance": "dot(point-closest,upward closest facet normal); not globally oriented closed-surface inside/outside",
+    "topology": "012B native cell centres, diagonal (NW,SW,NE)/(NE,SW,SE); exact adaptive nearest triangle search until distance < excluded XY bound",
+    "normals": "3D spherical PCA, unsigned orientation comparisons; deterministic interleaved split repeatability",
+    "render": "native triangles, flat analytic shade; raw unconnected one-screen-pixel blue points, z-buffer; no surfels, completion or inferred topology",
+    "radiometry": "no new RGB processing; source context retained from 012B",
+    "attribution": "\u00a9swisstopo"
+  },
+  "toolchain": {
+    "python": "3.12.6",
+    "numpy": "2.5.3",
+    "rasterio": "1.4.3",
+    "Pillow": "12.3.0",
+    "matplotlib": "3.10.6"
+  },
+  "products": [
+    {
+      "path": "cliff-180m-comparison.png",
+      "bytes": 229087,
+      "sha256": "c755fff5f533e6630be41d81aca27bb028f83ad7b29a716cc29b19e45ba8cb9a"
+    },
+    {
+      "path": "cliff-180m-mesh.png",
+      "bytes": 64104,
+      "sha256": "574eaa6bbe29e99cd9500d5abd7598d943d72f4fe03f8f3546a16d3f49b99efc"
+    },
+    {
+      "path": "cliff-180m-overlay.png",
+      "bytes": 102253,
+      "sha256": "c2ea06dc52b3726b092daf384643ec0858d1b5d99e5deb7ebbc24332ffdf736f"
+    },
+    {
+      "path": "cliff-180m-raw.png",
+      "bytes": 50980,
+      "sha256": "302032398bbd67631d378082d9fb686e79008c0a09b387decb2d95a19043390d"
+    },
+    {
+      "path": "cliff-600m-comparison.png",
+      "bytes": 83577,
+      "sha256": "f12d323b1dedcb6b64409f76d47941764ce95d1bc2f6e88ec059c5e9fc25240a"
+    },
+    {
+      "path": "cliff-600m-mesh.png",
+      "bytes": 23302,
+      "sha256": "847e3767a245aa0f01c3368d78dcea43732a63c7fd39cdda007c0d21e818db31"
+    },
+    {
+      "path": "cliff-600m-overlay.png",
+      "bytes": 34396,
+      "sha256": "9c7c86177832b6dc55565f3fcf4c51a4123d98c3eba7856bc33e65dfbf2fbf67"
+    },
+    {
+      "path": "cliff-600m-raw.png",
+      "bytes": 14341,
+      "sha256": "8c359fb40ed664a294c3ce1ab1909b5ed63834365b11164923beb11001663ab1"
+    },
+    {
+      "path": "cliff-60m-comparison.png",
+      "bytes": 131076,
+      "sha256": "27f87b3723c4457344eb9da07d35f77033c36bda38091eeeabeb3d61f4dfb825"
+    },
+    {
+      "path": "cliff-60m-mesh.png",
+      "bytes": 35246,
+      "sha256": "14d1ec1c7ec8aa5b8442a7989772d79ca489c213ad6fe3371d7821a88aa0195d"
+    },
+    {
+      "path": "cliff-60m-overlay.png",
+      "bytes": 41611,
+      "sha256": "0a71c245a1d5e4dd50b04b189a9629076c30b81e313ca99d8672ca8427749c00"
+    },
+    {
+      "path": "cliff-60m-raw.png",
+      "bytes": 42344,
+      "sha256": "de33a31e9cbdeeb550a351aa7d36b9a495cfc0df4b969c8f9872c28b5e6907a3"
+    },
+    {
+      "path": "measurements.json",
+      "bytes": 104318,
+      "sha256": "c5de10bb921b7a829d5c9fed9cf9622b1264900f4e2635d890d0c40f382ba702"
+    },
+    {
+      "path": "rough_ground-closest.npy",
+      "bytes": 65664,
+      "sha256": "e00d17b4259eed48f0857b911e5e84844ec4b55ac696cb1d384400f17686a24e"
+    },
+    {
+      "path": "rough_ground-maps.png",
+      "bytes": 452754,
+      "sha256": "6cd69203cdfd39c063275ccdfbb4d38d568248eecc67b02cb091518408cdf17d"
+    },
+    {
+      "path": "rough_ground-normals-0.5.npy",
+      "bytes": 57472,
+      "sha256": "307db1f095a0ff643ead29829f5cc90bfad46aa0062fa4e79146ae1e23857429"
+    },
+    {
+      "path": "rough_ground-normals-1.npy",
+      "bytes": 57472,
+      "sha256": "1462b7390ce1ce3f93e8e808fb96a28a59052a7f09791795501dcca0af662a5a"
+    },
+    {
+      "path": "rough_ground-normals-2.npy",
+      "bytes": 57472,
+      "sha256": "1607a2fad6cabf5100b066ac51032a2bc5cdd116f26767d1736f8f0de07f47e3"
+    },
+    {
+      "path": "rough_ground-overlap-candidates.npy",
+      "bytes": 128,
+      "sha256": "e734dac55ea9fbbe782af2d8c02c3c5992131906228afb2aaaf137d6f3ed74db"
+    },
+    {
+      "path": "rough_ground-queries.npy",
+      "bytes": 8320,
+      "sha256": "d819de3760efeefda57198ac030b64de2f392c7459a50ecfd2f0e5d0a6aac1f5"
+    },
+    {
+      "path": "rough_ground-records.npy",
+      "bytes": 331616,
+      "sha256": "d1125c4f2f55b83c3ee45864ad2c26aaad6d04ac2b7e2f4caed567bf60b2227a"
+    },
+    {
+      "path": "rough_ground-sections.png",
+      "bytes": 180010,
+      "sha256": "b5a5a6e4c8d40598c6ddf42d12e285dbc67208cff02245fffad24ceb49bb4be1"
+    },
+    {
+      "path": "rough_ground-source-indices.json",
+      "bytes": 189957,
+      "sha256": "fd65a49291f09fe911c5494fd69106f8e356e82712e2a05b63b31444bae716d0"
+    },
+    {
+      "path": "rough_ground-xyz.npy",
+      "bytes": 284096,
+      "sha256": "4005611c5377d09e90840af122156f62a3efc871d9ef17702ee0ba1ea6f270fc"
+    },
+    {
+      "path": "sloping_control-closest.npy",
+      "bytes": 65664,
+      "sha256": "a0492c3d8e83abaf0bca6ddd4a88541f5bdd300d7799089a4fb051a6f03146ca"
+    },
+    {
+      "path": "sloping_control-maps.png",
+      "bytes": 462044,
+      "sha256": "7e3dd482464be19512ac0040d15ff19d63e8ad7375a7ba95f86ac367a9d2037d"
+    },
+    {
+      "path": "sloping_control-normals-0.5.npy",
+      "bytes": 57472,
+      "sha256": "00e2ed93cb00f16e5252311f0feed6d67b18f5becf03eb489ffe4abad61641f5"
+    },
+    {
+      "path": "sloping_control-normals-1.npy",
+      "bytes": 57472,
+      "sha256": "9868690b9c25ce9f55e74c5632237a40bd35ab6a53ecc9bd376712d352c2fcfc"
+    },
+    {
+      "path": "sloping_control-normals-2.npy",
+      "bytes": 57472,
+      "sha256": "390e39f5c7e365c30fd96724347d435d006e482f6e10ebf0940dd8ad41f762e8"
+    },
+    {
+      "path": "sloping_control-overlap-candidates.npy",
+      "bytes": 128,
+      "sha256": "e734dac55ea9fbbe782af2d8c02c3c5992131906228afb2aaaf137d6f3ed74db"
+    },
+    {
+      "path": "sloping_control-queries.npy",
+      "bytes": 8320,
+      "sha256": "68ac13ac2c194ea4acbaa54ac8e69d3e69658e62c96a2cab8ef18c9b6bb4dfc0"
+    },
+    {
+      "path": "sloping_control-records.npy",
+      "bytes": 321872,
+      "sha256": "0da25a322d6b09b11b6ae34c2661d26ed662a8e482e2d6cc8388c4ffc680315f"
+    },
+    {
+      "path": "sloping_control-sections.png",
+      "bytes": 136392,
+      "sha256": "0cac466f51a5a62da65282fed2234bd823c18834abbfba11ad9ac0f1ceb80a2f"
+    },
+    {
+      "path": "sloping_control-source-indices.json",
+      "bytes": 184389,
+      "sha256": "823cc8f39abed763703e8f4243b1d440f5cb7826fa435d5eb5f1df61c0a7a7a2"
+    },
+    {
+      "path": "sloping_control-xyz.npy",
+      "bytes": 275744,
+      "sha256": "5b3feb15cfc7ef496e36475f8fd427e2363dd93b782fd78290740fbf31e2bddd"
+    },
+    {
+      "path": "summit_cliff-closest.npy",
+      "bytes": 65664,
+      "sha256": "0f6f6fdbc9ad45ccee3ece7f4852a9c2760cd94e3fa577cd4063f73e3a43804a"
+    },
+    {
+      "path": "summit_cliff-maps.png",
+      "bytes": 375288,
+      "sha256": "aff18c6bf3a5efb309fbfced7552a32ccc1dd55ca9aaa63f668fc580f5940036"
+    },
+    {
+      "path": "summit_cliff-normals-0.5.npy",
+      "bytes": 57472,
+      "sha256": "8d2a4d775fd012098f4cf65df3c51c1a47f305944e55a79466e555dfdbe42966"
+    },
+    {
+      "path": "summit_cliff-normals-1.npy",
+      "bytes": 57472,
+      "sha256": "036b1dfa71b384fd2bfe75201e4e91aa2fc6f3439bffb9076aa9cbf5d2c6afbb"
+    },
+    {
+      "path": "summit_cliff-normals-2.npy",
+      "bytes": 57472,
+      "sha256": "21eb23c04cb494d4142b9a341cdb763ee1f4df7bfac1cfa3484cfdf18d22d267"
+    },
+    {
+      "path": "summit_cliff-overlap-candidates.npy",
+      "bytes": 416,
+      "sha256": "aaa3ff8b926d3aa22df046b80fbc2b47bd90b6cc65557d5e5c35d6e518d538d9"
+    },
+    {
+      "path": "summit_cliff-queries.npy",
+      "bytes": 8320,
+      "sha256": "eb22dbf3531e81ed714f7daba93fcddc56f38bac4bc8c48eb789a6042629a2cf"
+    },
+    {
+      "path": "summit_cliff-records.npy",
+      "bytes": 1261888,
+      "sha256": "98c65118984f644c79046115b31db5c77131c7af0e90760608cb91783f52c70a"
+    },
+    {
+      "path": "summit_cliff-sections.png",
+      "bytes": 224700,
+      "sha256": "71a7efa5f4526ace005ec6c8bb65f577429af913ca6523b06b42c5292f684e9f"
+    },
+    {
+      "path": "summit_cliff-source-indices.json",
+      "bytes": 746945,
+      "sha256": "478e792f4c8538eb1c010731b99083ad3047aa2e6068d4ab6ad60bc162228549"
+    },
+    {
+      "path": "summit_cliff-xyz.npy",
+      "bytes": 1081472,
+      "sha256": "011f2ff8694059b82933ca33de9c6a4bd5a6e25c86fb3bb6ee34156ffcfc1a85"
+    }
+  ],
+  "identity": "545cf4ab0f07101db951470aed9498d059eedc846bef8bbecc7e75a2d1b4ce88"
+}

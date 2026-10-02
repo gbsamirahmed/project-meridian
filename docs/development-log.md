@@ -2551,3 +2551,43 @@ See [Lab 012B findings and viewing procedure](earth-lab/riffelhorn-012b-mountain
 A small stable steep-rock observation-versus-heightfield comparison is the next
 research question, requiring separate authorization. No subsequent Lab or Atlas
 world-model development is begun.
+
+## 2026-10-02 — Lab 012C: raw LiDAR information retention
+
+Examined three bounded Riffelhorn patches from Lab 012B: the 60 m summit cliff,
+a 30 m sloping-ground control and a distinct 30 m rough-ground subpatch. Preserved
+68,372 original LAS records/XYZ values and native LV95/LN02 coordinates outside
+Git. Compared deterministic queries to the exact unchanged native DSM triangles
+with an adaptive globally-exact nearest search, multi-scale spherical PCA,
+quality/split-repeatability screens, thin equal-scale cross sections and fixed
+60/180/600 m direct-point/mesh/overlay views. No reconstructed point topology,
+surface completion, synthetic normals or production representation was introduced.
+
+The cliff's exact distance median/p95 is 0.060/1.109 m, versus 0.017/0.053 m and
+0.025/0.116 m for the controls. Coherent several-metre lower-face structure is
+bridged by the current raster; 19 reliable sampled geometry candidates have
+neighbouring support at 2 m PCA radius. Most ordinary ground orientation is
+already retained by the actual interpolated render normals. Reliable sub-metre
+support is sparse, and a blanket new detail-normal layer is not justified.
+Nine finite-XY multiple-height candidates do not pass the conservative coherent
+two-sheet test: overhangs/non-heightfield topology remain ambiguous. Large residual
+and steep slope alone do not prove true-3D geometry is necessary.
+
+Inspected diagnostics show localized shape loss at close/intermediate distances;
+most query displacement falls below a pixel at 600 m. Point-only holes, patch
+edges and flat-facet diagnostic shading are explicitly not a completed surface,
+production shading benchmark or perceptual user study. A localized adaptive/finer
+heightfield test with held-out returns is the single recommended next experiment,
+not implemented. Normals cannot repair displaced faces or silhouette.
+
+Two complete final serialized preparations reproduce one identity and all 46
+product hashes. Sixteen original/four extracted source hashes, 64 existing DSM
+mesh hashes, 45 independent original record/coordinate samples, 24 exact-distance
+checks and nine fixed-camera frames pass. All 165 Earth Lab tests (eight new),
+16 terrain-research tests, ESLint and TypeScript/Vite build pass; existing
+deprecation and bundle-size warnings remain. Sources, arrays and captures stay
+external. Production, Tryfan, Labs 011/012A/012B and historical refs are unchanged.
+See [Lab 012C methods and findings](earth-lab/riffelhorn-012c-raw-lidar-retention.md),
+[provenance](earth-lab/riffelhorn-012c-metadata.json),
+[measurements](earth-lab/riffelhorn-012c-measurements.json) and
+[validation](earth-lab/riffelhorn-012c-validation.json).
