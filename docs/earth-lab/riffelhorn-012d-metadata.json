@@ -1,0 +1,322 @@
+{
+  "experiment": "Lab 012D adaptive cliff heightfield",
+  "parents": {
+    "012b": {
+      "identity": "10b3641e25f6283bf0d4c311f813baefbb7703ca7fbd421e1fd6ca4155edcb3a",
+      "unchanged_products": 209
+    },
+    "012c": {
+      "identity": "545cf4ab0f07101db951470aed9498d059eedc846bef8bbecc7e75a2d1b4ce88",
+      "unchanged_products": 46
+    }
+  },
+  "processing_script_sha256": "a871ef3a6146331348eff5b3941cfd41455562df3b5c53a4be58b0a262e1cd59",
+  "parameters": {
+    "split_block_m": 2.0,
+    "split_modulus": 4,
+    "guard_m": 0.2,
+    "construction_class": 2,
+    "support_radius_3d_m": 1.0,
+    "minimum_neighbours": 6,
+    "minimum_planarity": 0.05,
+    "maximum_plane_rms_m": 0.25,
+    "maximum_point_plane_offset_m": 0.3,
+    "duplicate_xy_maximum_z_span_m": 0.2,
+    "maximum_interpolation_xy_span_m": 4.0,
+    "long_interpolation_3d_span_m": 4.0,
+    "long_span_normal_radius_m": 2.0,
+    "long_span_minimum_neighbours": 10,
+    "long_span_maximum_plane_rms_m": 0.2,
+    "long_span_minimum_planarity": 0.1,
+    "long_span_maximum_normal_angle_degrees": 20.0,
+    "regular_spacings_m": [
+      0.5,
+      0.25,
+      0.125
+    ],
+    "refinement_construction_distance_m": 0.5,
+    "refinement_bin_m": 1.0,
+    "refinement_minimum_returns": 3,
+    "refinement_minimum_subcells": 2,
+    "refinement_subcell_m": 0.25,
+    "refinement_buffer_m": 1.0,
+    "evaluation_edge_margin_m": 2.0,
+    "attribution": "\u00a9 swisstopo"
+  },
+  "bounds_lv95": [
+    2624780.0,
+    1092222.0,
+    2624840.0,
+    1092282.0
+  ],
+  "crs": "EPSG:2056 LV95, LN02 metres; no transformation, no exaggeration",
+  "sources": {
+    "012c_xyz_sha256": "011f2ff8694059b82933ca33de9c6a4bd5a6e25c86fb3bb6ee34156ffcfc1a85",
+    "012c_records_sha256": "98c65118984f644c79046115b31db5c77131c7af0e90760608cb91783f52c70a"
+  },
+  "toolchain": {
+    "python": "3.12.6",
+    "numpy": "2.5.3",
+    "rasterio": "1.4.3",
+    "matplotlib": "3.10.6",
+    "Pillow": "12.3.0"
+  },
+  "products": [
+    {
+      "path": "adaptive-construction-audit.npy",
+      "bytes": 131200,
+      "sha256": "9855d5b83b3fa5557eb82e2ac1d652a229e1ed1dc694896d1e87e3c269734651"
+    },
+    {
+      "path": "adaptive-faces.npy",
+      "bytes": 358760,
+      "sha256": "6acd2f7da1d20eed28531bb1e7d3d9b3c1838613b208ba4def1e25d66905cbe6"
+    },
+    {
+      "path": "adaptive-held-out.npy",
+      "bytes": 617856,
+      "sha256": "45c2cfbb8b9427a46eaffcf3c0dd341b516290f003104e37cab5d218ccd4ff08"
+    },
+    {
+      "path": "adaptive-support.npy",
+      "bytes": 362048,
+      "sha256": "344fb48d0568aa599b7cd56a2664e498e72e7636c5708805d13566119bcfacfb"
+    },
+    {
+      "path": "adaptive-vertices.npy",
+      "bytes": 543008,
+      "sha256": "cb65003681d1af7d140ed3762910251e17594b54a27dc47474291d5496421eef"
+    },
+    {
+      "path": "cliff-180m-adaptive.png",
+      "bytes": 104785,
+      "sha256": "db1bbd2314b7ed54995cadb496a5c266f02a815ec21e7b9a28d97d7d30522adb"
+    },
+    {
+      "path": "cliff-180m-comparison.png",
+      "bytes": 449456,
+      "sha256": "19d120215d7e7f7a934c874f5723ff58342887aeee3250e5982010f2f1889caa"
+    },
+    {
+      "path": "cliff-180m-provider.png",
+      "bytes": 64104,
+      "sha256": "574eaa6bbe29e99cd9500d5abd7598d943d72f4fe03f8f3546a16d3f49b99efc"
+    },
+    {
+      "path": "cliff-180m-regular_0.125.png",
+      "bytes": 144058,
+      "sha256": "5695510e24d1612ecd7a649f01d9aab2d696b5fa41ec0b45a942a213b9528aa3"
+    },
+    {
+      "path": "cliff-180m-regular_0.25.png",
+      "bytes": 123631,
+      "sha256": "a80745829c1c40f65b90bba68d19b727dff7f2ba6e3450a541a9b9c149f63058"
+    },
+    {
+      "path": "cliff-600m-adaptive.png",
+      "bytes": 31410,
+      "sha256": "e351267fdf90d21affbf007ba6dbee7bc2382ef1b35e9edc6176fb94859b0b55"
+    },
+    {
+      "path": "cliff-600m-comparison.png",
+      "bytes": 135663,
+      "sha256": "75bbcdb0bc690394f5d6be18c6d43c38533f2ac05816f77c16847140d44d03cc"
+    },
+    {
+      "path": "cliff-600m-provider.png",
+      "bytes": 23302,
+      "sha256": "847e3767a245aa0f01c3368d78dcea43732a63c7fd39cdda007c0d21e818db31"
+    },
+    {
+      "path": "cliff-600m-regular_0.125.png",
+      "bytes": 35351,
+      "sha256": "3a52c6ced8d94df2b3b038768d1ab7c546f10174f2f2f9adb8d2228b917280d5"
+    },
+    {
+      "path": "cliff-600m-regular_0.25.png",
+      "bytes": 33072,
+      "sha256": "152a6efe2f45e0fc294ad610c96dfc35e9f005392ce558014e9231c75d8d4e5d"
+    },
+    {
+      "path": "cliff-60m-adaptive.png",
+      "bytes": 104727,
+      "sha256": "8594a2b9a799aec0417da29db8f0bd1e7eb7e022bbf42c8f999f34def1ba8e9d"
+    },
+    {
+      "path": "cliff-60m-comparison.png",
+      "bytes": 453453,
+      "sha256": "7adc4249516152be336dd6823c0e2922199d200ac9ba06b011a0b3939c4f033a"
+    },
+    {
+      "path": "cliff-60m-provider.png",
+      "bytes": 35246,
+      "sha256": "14d1ec1c7ec8aa5b8442a7989772d79ca489c213ad6fe3371d7821a88aa0195d"
+    },
+    {
+      "path": "cliff-60m-regular_0.125.png",
+      "bytes": 171140,
+      "sha256": "aff04f353186a999e6401caf109686ee4db7c8fcab39d57fb7ea620e5e147b53"
+    },
+    {
+      "path": "cliff-60m-regular_0.25.png",
+      "bytes": 128485,
+      "sha256": "7b457709e7732c7dde8d4f3f18f932935f88cccf432489446068c85867942d2f"
+    },
+    {
+      "path": "construction-audit-indices.npy",
+      "bytes": 16512,
+      "sha256": "af63a5c8413044e278a88db718c682e2487c9e4513c7acd08fbaa5bb6d2d0e06"
+    },
+    {
+      "path": "construction-support.npy",
+      "bytes": 893984,
+      "sha256": "05bee4ccb5f099a8cec3522d996cf3e8666f49a5d50d06a477d9d1c6cd655bac"
+    },
+    {
+      "path": "construction-used-indices.npy",
+      "bytes": 204928,
+      "sha256": "e2905555072d1551a9b3f5c259148189f1482d3ec705711b0b320965a847a059"
+    },
+    {
+      "path": "evaluation-indices.npy",
+      "bytes": 77344,
+      "sha256": "bff542cd4aecacaeb40604b613675034ba81f24ff82f8e9e6ffba42abd986873"
+    },
+    {
+      "path": "held-out-maps.png",
+      "bytes": 1157786,
+      "sha256": "75b901c5be4f235a1aa4fcb40191143003b3654d04a8e8c4c39cacaf511291f3"
+    },
+    {
+      "path": "interpolation-points.npy",
+      "bytes": 614192,
+      "sha256": "881831b48df6732b5f95292e2f5459da83d3f4d56deeda5580d4780283977469"
+    },
+    {
+      "path": "interpolation-support-normals.npy",
+      "bytes": 614192,
+      "sha256": "43dcae9933f54f628720512effb91a1c7e409b62efb575f75be2d80201892432"
+    },
+    {
+      "path": "measurements.json",
+      "bytes": 90816,
+      "sha256": "002e10061fa0448643dd09c8ceee7e934d39ec1309db404775267fbd4954c1a9"
+    },
+    {
+      "path": "provider-construction-audit.npy",
+      "bytes": 131200,
+      "sha256": "cdb73be5acc635997af494169db78633aac148fc82a0c43d90f3eb9a910d38d5"
+    },
+    {
+      "path": "provider-faces.npy",
+      "bytes": 679856,
+      "sha256": "28bac9b45b0c2df29063d4ec0bf906713aa55756bca5757dbd50cd99f7b7314d"
+    },
+    {
+      "path": "provider-held-out.npy",
+      "bytes": 617856,
+      "sha256": "aebe034d71681d673363b03ce1b385648db8774a0a377d0298bc69a63de42373"
+    },
+    {
+      "path": "provider-vertices.npy",
+      "bytes": 345728,
+      "sha256": "8e42e506671b409b782d5d7609e4b3101b43ca8a362dd3d04143b0dd6596af0d"
+    },
+    {
+      "path": "refinement-cells.json",
+      "bytes": 31189,
+      "sha256": "6e17ef466023dfbd7489217dfca66eb742840da865099f87e63c2e8e161ec874"
+    },
+    {
+      "path": "regular_0.125-construction-audit.npy",
+      "bytes": 131200,
+      "sha256": "02cb0b51797ff90459c5cbecbe3f4a0dec90a0efa1c891d1ac2fcb026aa8dde5"
+    },
+    {
+      "path": "regular_0.125-faces.npy",
+      "bytes": 9025088,
+      "sha256": "848c9efc65fb901c613a5e9c2de32dd15c16add8cb5656316af877656638533d"
+    },
+    {
+      "path": "regular_0.125-held-out.npy",
+      "bytes": 617856,
+      "sha256": "e6ed4339849ffab53bbd8a2c11c831ba073ac434b585bb95dad79f18c34b610f"
+    },
+    {
+      "path": "regular_0.125-support.npy",
+      "bytes": 3640592,
+      "sha256": "0a08173771caef2f7ad5ef3eba86e2e515b6db37e15cb44b7b810e1c28b793cb"
+    },
+    {
+      "path": "regular_0.125-vertices.npy",
+      "bytes": 5460824,
+      "sha256": "cabc37fa4ef3eefc422650ba40828f5157a49d12d1d07c44b8d8fb81c562aa4a"
+    },
+    {
+      "path": "regular_0.25-construction-audit.npy",
+      "bytes": 131200,
+      "sha256": "86e24be1a46f16eff950df2b5f3b3373f39fc691263578e22640ab04e7debfa6"
+    },
+    {
+      "path": "regular_0.25-faces.npy",
+      "bytes": 2187200,
+      "sha256": "d637ce811f35ef312136da95d7eb84e5527efa476eb938f4103416ab78de75f6"
+    },
+    {
+      "path": "regular_0.25-held-out.npy",
+      "bytes": 617856,
+      "sha256": "84dc08677d6121b76df598c9029fa8d6bd85566879eb594486fcd068c24aff39"
+    },
+    {
+      "path": "regular_0.25-support.npy",
+      "bytes": 914064,
+      "sha256": "ba3991efb8006b26a64132a3c6a9b5c32d0eaa76b3f099923d526b6de0370c26"
+    },
+    {
+      "path": "regular_0.25-vertices.npy",
+      "bytes": 1371032,
+      "sha256": "cd57f3d689540433111cb439e5f0f247a8d6169cd55d4abd7d7ba61dc9d77253"
+    },
+    {
+      "path": "regular_0.5-construction-audit.npy",
+      "bytes": 131200,
+      "sha256": "797f3e0e4913c7b88fd672073f99d475353ce8584ea8bddcb6cd0051e276255a"
+    },
+    {
+      "path": "regular_0.5-faces.npy",
+      "bytes": 518672,
+      "sha256": "1ca8a441dbc31590fc2aaf67c4f69de6aeb0ef241bc716ff977b7ce3659464ab"
+    },
+    {
+      "path": "regular_0.5-held-out.npy",
+      "bytes": 617856,
+      "sha256": "336c1dddbf45279773849937fa7fd2819fe916cf0cf8f96d7b46e836f1a73449"
+    },
+    {
+      "path": "regular_0.5-support.npy",
+      "bytes": 230528,
+      "sha256": "6fd12388076031a1d0f37e24682e0c39b3c76fef1a456f58af7a9003a0f9e3ff"
+    },
+    {
+      "path": "regular_0.5-vertices.npy",
+      "bytes": 345728,
+      "sha256": "2d90f9d20301cffa4134af219aa194710446186ca852dfc53be13f3a9587afc2"
+    },
+    {
+      "path": "sections.png",
+      "bytes": 266794,
+      "sha256": "e9d227f1ba3a70c6a2840e64ac847f0a5f71a09186909ee647b9e316b9c0ac12"
+    },
+    {
+      "path": "split.npy",
+      "bytes": 45184,
+      "sha256": "63612291f4ed1d19a1084ca458c81b0ee4473384608c1abce627aad6b8bc3172"
+    },
+    {
+      "path": "split.png",
+      "bytes": 418572,
+      "sha256": "3fd3a5c81139b4a974066fd164ce42d4111e78fb71782cb1ab17b5eee0588ec9"
+    }
+  ],
+  "identity": "dafa2697c7cf807f10208168bd2f39d636ef832ec7734c7dc022b62047bd1239"
+}

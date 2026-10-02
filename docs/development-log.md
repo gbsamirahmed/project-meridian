@@ -2591,3 +2591,49 @@ See [Lab 012C methods and findings](earth-lab/riffelhorn-012c-raw-lidar-retentio
 [provenance](earth-lab/riffelhorn-012c-metadata.json),
 [measurements](earth-lab/riffelhorn-012c-measurements.json) and
 [validation](earth-lab/riffelhorn-012c-validation.json).
+
+## 2026-10-02 — Lab 012D: adaptive cliff heightfield
+
+Reused only the 60 m summit-cliff patch, with a frozen interleaved 2 m spatial
+hold-out across all overlapping flights and a 0.2 m exclusion buffer. Construction,
+validation and buffer contain 28,866 / 11,179 / 5,011 returns. Built an explainable
+construction-only XY interpolant with explicit support, conflicting-height rejection
+and no extrapolation/completion. Tested raw-derived 0.5 / 0.25 / 0.125 m output
+grids and one 0.5→0.25 m locally refined heightfield against the exact native provider
+triangles. All candidates remain single-valued; finer samples are interpolation,
+not new independent measurements. The adaptive mask uses construction evidence only.
+
+Outcome **E — inconclusive**, with no candidate accepted as a recovered surface.
+Across 9,652 held-out interior returns, provider median/p95 is 0.056/0.842 m;
+finest regular is 0.210/1.448 m. Its extreme p99 improves 2.832→2.253 m, but only
+66.15% of query XY has represented support and numerical fit worsens even on common
+represented cohorts. Construction fit improves far more than held-out fit. Three
+training anchors among the 19 supported 012C candidates improve substantially;
+only one held-out anchor has represented XY and improves partially. Nine ambiguous
+multiple-height groups remain ambiguous; no non-heightfield topology is proved.
+
+Inspected identical 012C sections and completed-triangle diagnostic frames at
+60/180/600 m show partly retained lower bands but holes, narrow bridges and fragile
+near-vertical strips. The finest output costs 227,529 allocated samples / 376,040
+emitted triangles without a trustworthy shape improvement. Refinement covers
+19.22% of area and uses 22,620 samples / 29,886 triangles, versus uniform 0.25 m's
+57,121 / 91,128; it reduces cost but does not establish a representation win.
+Neither a saturation resolution, adaptive architecture nor true-3D requirement
+follows. A robust plane-constrained estimator on the same frozen split is the
+single next experimental question, not implemented; Tryfan needs independent evidence.
+
+Two complete final runs reproduce one identity and all 51 external product hashes.
+All original source hashes, 209 frozen 012B products, 46 frozen 012C products,
+45,056 split memberships/buffer, exact baseline, 80 repeated distances, eight full
+brute-force candidate checks and fixed camera/section identities pass. All 174
+Earth Lab tests (nine new), 16 terrain-research tests, ESLint and TypeScript/Vite
+production build pass. Existing NumPy/rasterio deprecation and Vite bundle/plugin
+warnings remain. Validation of the experiment is separate from its unsuccessful
+surface acceptance. Arrays, meshes, support fields and captures remain external;
+production, Tryfan, previous Labs and historical refs are unchanged.
+
+See [Lab 012D methods, outcome and viewing commands](earth-lab/riffelhorn-012d-adaptive-cliff-heightfield.md),
+[identity](earth-lab/riffelhorn-012d-metadata.json),
+[measurements](earth-lab/riffelhorn-012d-measurements.json) and
+[validation](earth-lab/riffelhorn-012d-validation.json).
+No subsequent Lab, true-3D reconstruction or production Atlas change is begun.

@@ -1,0 +1,37 @@
+{
+  "result": "PASS",
+  "identity": "dafa2697c7cf807f10208168bd2f39d636ef832ec7734c7dc022b62047bd1239",
+  "source_originals": 16,
+  "source_las": 4,
+  "frozen_012b_products": 209,
+  "frozen_012c_products": 46,
+  "products": 51,
+  "repeated_split_points": 45056,
+  "repeated_distance_queries": 80,
+  "global_bruteforce_candidate_queries": 8,
+  "guard_m": 0.2,
+  "exact_baseline_triangles": 28322,
+  "diagnostic_frames": 12,
+  "unchanged_cameras": 3,
+  "unchanged_sections": 6,
+  "deterministic_rerun": {
+    "complete_final_runs": 2,
+    "matching_identity": "dafa2697c7cf807f10208168bd2f39d636ef832ec7734c7dc022b62047bd1239",
+    "matching_product_hashes": 51
+  },
+  "reconstruction_acceptance": {
+    "outcome": "E — INCONCLUSIVE",
+    "accepted_candidates": 0,
+    "note": "Reproducible experiment; no stable held-out/visual cliff recovery demonstrated. Not a proof of a fundamental heightfield limitation."
+  },
+  "repository_validation": {
+    "earth_lab_tests": 174,
+    "new_synthetic_tests": 9,
+    "terrain_research_tests": 16,
+    "eslint": "PASS",
+    "typescript": "PASS",
+    "production_build": "PASS",
+    "json_links_privacy": "PASS",
+    "warnings": "Existing NumPy/rasterio deprecations and Vite plugin-timing / bundle-size warnings."
+  }
+}
