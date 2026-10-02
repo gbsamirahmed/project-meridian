@@ -2437,3 +2437,46 @@ See [the Lab 011 procedure](earth-lab/tryfan-011-observed-surface-height.md),
 fixed-camera interpretation remains pending; no perspective visual acceptance is
 claimed. The DSM contains spatially supported information worth retaining for
 later independent evidence fusion, not a semantic inventory of rocks or vegetation.
+
+### 2026-10-02 — Lab 012A: Bluesky high-resolution aerial reconstruction
+
+This isolated evaluation compares a fixed native 25 cm photogrammetric DSM with
+neutral, 25 cm, 12.5 cm and 5 cm imagery over SK5639. All four immutable sample
+archives have matching British National Grid edge bounds
+`[456000, 339000, 457000, 340000]`. Pixel-centre registration, the 25 cm TAB
+filename inconsistency and half-pixel TAB/world-file differences are recorded.
+The DSM's vertical units/datum are not supplied; metres are an explicit evaluation
+assumption. Only the 5 cm imagery supplies a flight date (2018-09-01). Different
+vehicles/shadows and unspecified other dates prevent a resolution-only causal claim.
+
+External products preserve all 16 million DSM samples in 64 meshes, with 31,984,002
+triangles and no smoothing, simplification or vertical exaggeration. Native RGB
+tiles retain 502, 1004 and 2510 pixel dimensions including aprons; the 20k image is
+not reduced to fit a GPU texture. Identical analytic shading, geometry, cameras,
+exposure and sampling policy control four views across four states. Full GPU mip
+byte counts establish native resource residency, rather than trusting dimensions
+alone. Source data, generated meshes/textures, Unreal assets and captures remain
+outside Git. The samples contain copyright but no supplied redistribution licence;
+neither vendor imagery nor rendered images are published by this checkpoint.
+
+An initial D3D12 preparation lost the GPU device under severe memory pressure.
+Partial captures were rejected and one incomplete texture reimported from its
+verified PNG. Final acceptance used sequential D3D11 processes with zero commandlet
+errors. Sixteen 1920×1080 captures retain identical numeric camera and mesh/actor
+transforms between states. All 192 native texture resources have complete mip
+chains. Four archive hashes, 260 product hashes, 27 independent RGB samples and
+three DSM/mesh samples pass; native products reproduce byte-for-byte across three
+processing runs. The 152 Earth Lab tests, ESLint and TypeScript/Vite production
+build pass. Existing build chunk-size warnings remain unrelated to this Lab.
+
+Inspected views show a modest 25→12.5 cm improvement in these supplied products and
+clearer 5 cm roof/marking/crown colour detail at closer distances. Fine texture
+does not repair heightfield facades, tree curtains or missing overhangs. Overview
+detail is limited by output pixels/mips; acquisition and illumination differences
+remain confounds. Urban evidence does not establish Tryfan surface observability.
+See [the Lab procedure](earth-lab/bluesky-012a-aerial-reconstruction.md),
+[metadata](earth-lab/bluesky-012a-metadata.json) and
+[validation measurements](earth-lab/bluesky-012a-validation.json).
+The next recommendation is a same-observation controlled comparison, then a
+separately approved/licensed small Tryfan pilot if justified. No purchase, Tryfan
+integration, production Atlas change, new architecture phase or Lab 012B is begun.

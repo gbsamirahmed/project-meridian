@@ -1,0 +1,3023 @@
+{
+  "experiment": "Lab 012A \u2014 Bluesky high-resolution aerial reconstruction",
+  "sources": {
+    "rgb25": {
+      "archive": "${MERIDIAN_DATA_ROOT}/bluesky/25-RGB.zip",
+      "archive_sha256": "8328076bece5daf3e302d27f906c5d100fd983c8b6437549f328d362b96f7ac3",
+      "contained_files": [
+        {
+          "name": "SK5639.jgw",
+          "bytes": 150,
+          "sha256": "4897dd2ba67a46996d8081ae7d9d8e070219b9799e57a31d3be19bb6afef5767"
+        },
+        {
+          "name": "SK5639.jpg",
+          "bytes": 10990135,
+          "sha256": "bd47bbd09f2acce0b9a7e882fadc2ce20d99ba56ba9d373ccbb4483271e47a8b"
+        },
+        {
+          "name": "SK5639.prj",
+          "bytes": 426,
+          "sha256": "91cd1701a0065bdb6a00bdcb7f8757ab9d45f9004ad324b9abe5b66604af041c"
+        },
+        {
+          "name": "SK5639.tab",
+          "bytes": 419,
+          "sha256": "0ad9c3a44d5fff662122f5d78b0651327eac1d901aede320c0f1ab2657d0ce03"
+        }
+      ],
+      "dimensions": [
+        4000,
+        4000
+      ],
+      "bands": 3,
+      "dtype": "uint8",
+      "format": "JPEG; lossy vendor compression; renderer tiles are lossless decoded pixels",
+      "pixel_size_m": 0.25,
+      "bounds": [
+        456000.0,
+        339000.0,
+        457000.0,
+        340000.0
+      ],
+      "world_file_pixel_centre": [
+        456000.125,
+        339999.875
+      ],
+      "crs": "OSGB36 British National Grid; EPSG:27700 convention",
+      "crs_evidence": "vendor PRJ/TAB",
+      "vendor_wkt": "PROJCS[\"Transverse_Mercator\",GEOGCS[\"GCS_Geographic Coordinate System\",DATUM[\"D_OSGB_1936\",SPHEROID[\"Airy\",6377563.396,299.3249753150316]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.017453292519943295]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"scale_factor\",0.9996012717],PARAMETER[\"central_meridian\",-2],PARAMETER[\"latitude_of_origin\",49],PARAMETER[\"false_easting\",400000],PARAMETER[\"false_northing\",-100000],UNIT[\"Meter\",1]]\n",
+      "nodata": "No nodata mask/value supplied; black pixels remain data",
+      "orientation": "north at row 0; east at increasing column",
+      "acquisition_metadata": {},
+      "date": "not supplied",
+      "embedded_metadata": {},
+      "image_structure": {
+        "SOURCE_COLOR_SPACE": "YCbCr",
+        "INTERLEAVE": "PIXEL",
+        "COMPRESSION": "JPEG",
+        "JPEG_QUALITY": "100"
+      },
+      "inconsistencies": [
+        "TAB references SK5609.jpg; actual file, world file and TAB BNG coordinates identify SK5639",
+        "TAB control points differ from world-file pixel centres by (-resolution/2,+resolution/2); world-file centre convention is used"
+      ],
+      "pixels_per_m2": 16.0,
+      "pixels_per_dsm_cell": 1.0,
+      "uncompressed_rgb_bytes": 48000000
+    },
+    "rgb125": {
+      "archive": "${MERIDIAN_DATA_ROOT}/bluesky/12.5-RGB.zip",
+      "archive_sha256": "b0dd96d611732a22eddda8722958523b72b009e64a58b8e7065338d77c17a1bb",
+      "contained_files": [
+        {
+          "name": "SK5639.jgw",
+          "bytes": 150,
+          "sha256": "7a8f0217208d64a0656c2e49173893a65dff2fc09ce3769d9c12229960731624"
+        },
+        {
+          "name": "SK5639.jpg",
+          "bytes": 32750915,
+          "sha256": "6c6ddc423b2f49e50216097172e8a454108a022590311a3d2d5fce2bb2c75d98"
+        },
+        {
+          "name": "SK5639.prj",
+          "bytes": 426,
+          "sha256": "91cd1701a0065bdb6a00bdcb7f8757ab9d45f9004ad324b9abe5b66604af041c"
+        },
+        {
+          "name": "SK5639.tab",
+          "bytes": 419,
+          "sha256": "b6ed0d38fbf33e00af8a38486774ed8a83bd0d79f35356dcd968d728b1ea5959"
+        }
+      ],
+      "dimensions": [
+        8000,
+        8000
+      ],
+      "bands": 3,
+      "dtype": "uint8",
+      "format": "JPEG; lossy vendor compression; renderer tiles are lossless decoded pixels",
+      "pixel_size_m": 0.125,
+      "bounds": [
+        456000.0,
+        339000.0,
+        457000.0,
+        340000.0
+      ],
+      "world_file_pixel_centre": [
+        456000.0625,
+        339999.9375
+      ],
+      "crs": "OSGB36 British National Grid; EPSG:27700 convention",
+      "crs_evidence": "vendor PRJ/TAB",
+      "vendor_wkt": "PROJCS[\"Transverse_Mercator\",GEOGCS[\"GCS_Geographic Coordinate System\",DATUM[\"D_OSGB_1936\",SPHEROID[\"Airy\",6377563.396,299.3249753150316]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.017453292519943295]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"scale_factor\",0.9996012717],PARAMETER[\"central_meridian\",-2],PARAMETER[\"latitude_of_origin\",49],PARAMETER[\"false_easting\",400000],PARAMETER[\"false_northing\",-100000],UNIT[\"Meter\",1]]\n",
+      "nodata": "No nodata mask/value supplied; black pixels remain data",
+      "orientation": "north at row 0; east at increasing column",
+      "acquisition_metadata": {},
+      "date": "not supplied",
+      "embedded_metadata": {},
+      "image_structure": {
+        "SOURCE_COLOR_SPACE": "YCbCr",
+        "INTERLEAVE": "PIXEL",
+        "COMPRESSION": "JPEG",
+        "JPEG_QUALITY": "100"
+      },
+      "inconsistencies": [
+        "TAB control points differ from world-file pixel centres by (-resolution/2,+resolution/2); world-file centre convention is used"
+      ],
+      "pixels_per_m2": 64.0,
+      "pixels_per_dsm_cell": 4.0,
+      "uncompressed_rgb_bytes": 192000000
+    },
+    "rgb5": {
+      "archive": "${MERIDIAN_DATA_ROOT}/bluesky/5cm-RGB.zip",
+      "archive_sha256": "10b5beb3af47928a9a4be3f033515420f16f12fe941386f29750f435cbbcd43b",
+      "contained_files": [
+        {
+          "name": "SK5639.jgw",
+          "bytes": 89,
+          "sha256": "9a3a7ee58b6eb237003006c5f7c37b2e038f40fd879d56984f0df685a0610aab"
+        },
+        {
+          "name": "SK5639.jpg",
+          "bytes": 105062283,
+          "sha256": "7f8bbc080a6041eebcad5591c346d124388183d8e177e5e8fa47d40276b8053a"
+        },
+        {
+          "name": "SK5639.xml",
+          "bytes": 1498,
+          "sha256": "6226744f9015003a87f6e89ba26719ddd33edb40e4312205ecba8dea36444bb3"
+        }
+      ],
+      "dimensions": [
+        20000,
+        20000
+      ],
+      "bands": 3,
+      "dtype": "uint8",
+      "format": "JPEG; lossy vendor compression; renderer tiles are lossless decoded pixels",
+      "pixel_size_m": 0.05,
+      "bounds": [
+        456000.0,
+        339000.0,
+        457000.0,
+        340000.0
+      ],
+      "world_file_pixel_centre": [
+        456000.025,
+        339999.975
+      ],
+      "crs": "OSGB36 British National Grid; EPSG:27700 convention",
+      "crs_evidence": "vendor XML osgb:BNG and kmRectangle",
+      "vendor_wkt": null,
+      "nodata": "No nodata mask/value supplied; black pixels remain data",
+      "orientation": "north at row 0; east at increasing column",
+      "acquisition_metadata": {
+        "copyright": "(c) Bluesky International Ltd. 2018",
+        "kmReference": "SK5639",
+        "dateFlown": "2018-09-01",
+        "coordinates": "456000,339000 457000,340000",
+        "lensFocalLength": "100.50",
+        "cameraType": "Leica City Mapper",
+        "resolution": "0.05",
+        "nominalFlyingHeight": "2888",
+        "fileSize": "1172.445",
+        "control": "GPS and OSTN02",
+        "accuracy": "1.000",
+        "createdBy": "Bluesky International Limited",
+        "correctionType": "Orthorectified",
+        "dateOfCompletion": "2019-06-26"
+      },
+      "date": "2018-09-01",
+      "embedded_metadata": {
+        "EXIF_BitsPerSample": "8 8 8",
+        "EXIF_ColorSpace": "65535",
+        "EXIF_Compression": "1",
+        "EXIF_DateTime": "2020:04:23 22:39:00",
+        "EXIF_Orientation": "1",
+        "EXIF_PhotometricInterpretation": "2",
+        "EXIF_PixelXDimension": "20000",
+        "EXIF_PixelYDimension": "20000",
+        "EXIF_PlanarConfiguration": "1",
+        "EXIF_ResolutionUnit": "2",
+        "EXIF_SamplesPerPixel": "3",
+        "EXIF_Software": "Adobe Photoshop CS2 Windows",
+        "EXIF_XResolution": "(72)",
+        "EXIF_YResolution": "(72)"
+      },
+      "image_structure": {
+        "SOURCE_COLOR_SPACE": "YCbCr",
+        "INTERLEAVE": "PIXEL",
+        "COMPRESSION": "JPEG"
+      },
+      "inconsistencies": [],
+      "pixels_per_m2": 399.99999999999994,
+      "pixels_per_dsm_cell": 25.0,
+      "uncompressed_rgb_bytes": 1200000000
+    },
+    "dsm": {
+      "archive": "${MERIDIAN_DATA_ROOT}/bluesky/25cm-DSM-sample.zip",
+      "archive_sha256": "4dc0f6d6a0470d15a83569bea3cc8c4ebf0fdccac1e4d4e8ddb6831384fc4b52",
+      "contained_files": [
+        {
+          "name": "SK5639_25cm_DSM.asc",
+          "bytes": 110139833,
+          "sha256": "72efe74fbefd892441301024c0a888048f4876c38670459a31908a99c191152e"
+        }
+      ],
+      "dimensions": [
+        4000,
+        4000
+      ],
+      "bands": 1,
+      "dtype": "float32",
+      "format": "ESRI ASCII grid, decimal heights",
+      "pixel_size_m": 0.25,
+      "bounds": [
+        456000.0,
+        339000.0,
+        457000.0,
+        340000.0
+      ],
+      "transform": [
+        0.25,
+        0.0,
+        456000.0,
+        0.0,
+        -0.25,
+        340000.0
+      ],
+      "nodata_value": -9999.0,
+      "nodata_cells": 0,
+      "crs": "No DSM PRJ supplied; BNG interpretation supported by exact SK5639 grid bounds and paired sample packaging",
+      "vertical_units": "Not encoded by ASCII header; metres used as an explicit sample-evaluation assumption; absolute vertical datum unspecified",
+      "acquisition_date": "not supplied; co-acquisition with RGB not established",
+      "minimum": 23.299999237060547,
+      "maximum": 103.41500091552734
+    }
+  },
+  "registration": {
+    "all_pixel_edge_bounds_equal": true,
+    "dsm_first_centre_bng": [
+      456000.125,
+      339999.875
+    ],
+    "rgb_centres_in_first_dsm_cell": {
+      "rgb25": [
+        456000.125,
+        339999.875
+      ],
+      "rgb125": [
+        456000.0625,
+        339999.9375
+      ],
+      "rgb5": [
+        456000.025,
+        339999.975
+      ]
+    },
+    "ratios_per_axis": {
+      "rgb25": 1,
+      "rgb125": 2,
+      "rgb5": 5
+    },
+    "explanation": "DSM and 25cm RGB centres coincide. 12.5cm has four centres \u00b10.0625m about each DSM centre. 5cm has 25 centres at offsets -0.10,-0.05,0,+0.05,+0.10m on each axis. Edge footprints agree; this is numerical registration, not independent orthorectification-accuracy validation."
+  },
+  "toolchain": {
+    "numpy": "2.5.3",
+    "rasterio": "1.4.3",
+    "Pillow": "12.3.0",
+    "matplotlib": "3.10.6"
+  },
+  "rights": "Local research/evaluation only. Archives contain copyright but no redistribution licence. No vendor imagery or renders are published by this Lab.",
+  "confounds": "25cm/12.5cm imagery and DSM acquisition dates are unspecified; same-date/same-sensor derivation from 5cm is not established. Resolution/source comparisons are not a clean causal optical-resolution experiment.",
+  "coordinate_frame": {
+    "origin_bng": [
+      456000,
+      340000
+    ],
+    "vertical_origin_assumed_m": 70,
+    "unreal": "X east, Y south, Z up; centimetres; no vertical exaggeration",
+    "gltf": "X east, Y up, Z south; metres; installed Unreal GLTF ConvertVec3 swaps Y/Z"
+  },
+  "geometry": {
+    "unique_measured_vertices": 16000000,
+    "triangles": 31984002,
+    "patches": [
+      {
+        "name": "tile_0_0",
+        "row": 0,
+        "column": 0,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            0.125,
+            -0.45999908447265625,
+            0.125
+          ],
+          [
+            125.125,
+            22.972000122070312,
+            125.125
+          ]
+        ],
+        "sha256": "b1a5165b72bd484b210d93368ff19229eead1e7dc322ec2044cc5d8222215b94"
+      },
+      {
+        "name": "tile_0_1",
+        "row": 0,
+        "column": 1,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            125.125,
+            -16.340999603271484,
+            0.125
+          ],
+          [
+            250.125,
+            21.54900360107422,
+            125.125
+          ]
+        ],
+        "sha256": "7c16a8424d4285147167a27ac89ffac35a10501f63309e4d66f8df6363e526b2"
+      },
+      {
+        "name": "tile_0_2",
+        "row": 0,
+        "column": 2,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            250.125,
+            -28.80099868774414,
+            0.125
+          ],
+          [
+            375.125,
+            5.691001892089844,
+            125.125
+          ]
+        ],
+        "sha256": "379f3e581467b38e2cf0604e50cf66e3d9761289ce3a6d6ea929ac95b23ba097"
+      },
+      {
+        "name": "tile_0_3",
+        "row": 0,
+        "column": 3,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            375.125,
+            -29.7239990234375,
+            0.125
+          ],
+          [
+            500.125,
+            8.929000854492188,
+            125.125
+          ]
+        ],
+        "sha256": "458524483152b833a510e4da184ce8a01a089aca3d7a2f2bbf1a998bb854f5d3"
+      },
+      {
+        "name": "tile_0_4",
+        "row": 0,
+        "column": 4,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            500.125,
+            -21.051998138427734,
+            0.125
+          ],
+          [
+            625.125,
+            15.241996765136719,
+            125.125
+          ]
+        ],
+        "sha256": "59b29937af7dfa5a498de6bcb82307b7f71fa55fd66768312855bb033be8b3f3"
+      },
+      {
+        "name": "tile_0_5",
+        "row": 0,
+        "column": 5,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            625.125,
+            -16.951000213623047,
+            0.125
+          ],
+          [
+            750.125,
+            15.097000122070312,
+            125.125
+          ]
+        ],
+        "sha256": "00b0e7532ee2ce8a2dc9822b1d47012b500354a96c8c6442d3cad4da3d7ac4a9"
+      },
+      {
+        "name": "tile_0_6",
+        "row": 0,
+        "column": 6,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            750.125,
+            -22.89099884033203,
+            0.125
+          ],
+          [
+            875.125,
+            17.962997436523438,
+            125.125
+          ]
+        ],
+        "sha256": "4716626684800021e50486780e6b6b8d5bbc77ba596511e0cab4b5fe0f64bd6e"
+      },
+      {
+        "name": "tile_0_7",
+        "row": 0,
+        "column": 7,
+        "vertices": 250500,
+        "triangles": 499000,
+        "bounds_local_m": [
+          [
+            875.125,
+            -27.080001831054688,
+            0.125
+          ],
+          [
+            999.875,
+            18.55699920654297,
+            125.125
+          ]
+        ],
+        "sha256": "f31aa15d3875cfb268272f38ebf481b3d5e0eb508e44d3ed46d2d6ec29d9ab29"
+      },
+      {
+        "name": "tile_1_0",
+        "row": 1,
+        "column": 0,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            0.125,
+            -1.6500015258789062,
+            125.125
+          ],
+          [
+            125.125,
+            22.888999938964844,
+            250.125
+          ]
+        ],
+        "sha256": "81c959878c04f4b5226ef61fa3fff613a70c15a3aead4ded4474dc228e4f66f0"
+      },
+      {
+        "name": "tile_1_1",
+        "row": 1,
+        "column": 1,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            125.125,
+            -10.47800064086914,
+            125.125
+          ],
+          [
+            250.125,
+            16.496002197265625,
+            250.125
+          ]
+        ],
+        "sha256": "3e255c9bdf054871e1ac474f5ee22933d3c53bd5d43a076b622233b213879662"
+      },
+      {
+        "name": "tile_1_2",
+        "row": 1,
+        "column": 2,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            250.125,
+            -28.644001007080078,
+            125.125
+          ],
+          [
+            375.125,
+            8.448997497558594,
+            250.125
+          ]
+        ],
+        "sha256": "58835c99da131ecb92932f30a521a70f011f0ed7aef31b7a8cd1d9ae52997906"
+      },
+      {
+        "name": "tile_1_3",
+        "row": 1,
+        "column": 3,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            375.125,
+            -34.50899887084961,
+            125.125
+          ],
+          [
+            500.125,
+            -1.6299972534179688,
+            250.125
+          ]
+        ],
+        "sha256": "67856485e34aad8687c4a47001356bd0d35c3d4bc324a53e982e851b263f402e"
+      },
+      {
+        "name": "tile_1_4",
+        "row": 1,
+        "column": 4,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            500.125,
+            -35.28200149536133,
+            125.125
+          ],
+          [
+            625.125,
+            16.480003356933594,
+            250.125
+          ]
+        ],
+        "sha256": "2de8560b23d4bafa4585e852d6b0e5c2b157da14f59c30c010e7297d587bf914"
+      },
+      {
+        "name": "tile_1_5",
+        "row": 1,
+        "column": 5,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            625.125,
+            -16.33100128173828,
+            125.125
+          ],
+          [
+            750.125,
+            10.888999938964844,
+            250.125
+          ]
+        ],
+        "sha256": "326442aeffd6137c70517c66382cf1c8ac51e078205179600509e450d5b5be3f"
+      },
+      {
+        "name": "tile_1_6",
+        "row": 1,
+        "column": 6,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            750.125,
+            -21.821998596191406,
+            125.125
+          ],
+          [
+            875.125,
+            13.767997741699219,
+            250.125
+          ]
+        ],
+        "sha256": "f9d993512146ea2328e474ad143932ff0566ed2749698948f74d8ebee7b47738"
+      },
+      {
+        "name": "tile_1_7",
+        "row": 1,
+        "column": 7,
+        "vertices": 250500,
+        "triangles": 499000,
+        "bounds_local_m": [
+          [
+            875.125,
+            -29.006999969482422,
+            125.125
+          ],
+          [
+            999.875,
+            33.415000915527344,
+            250.125
+          ]
+        ],
+        "sha256": "b74966d596cfe10cdd160c90b6db3216f04fca6627943bdc9ef2723ef79907b8"
+      },
+      {
+        "name": "tile_2_0",
+        "row": 2,
+        "column": 0,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            0.125,
+            -9.358001708984375,
+            250.125
+          ],
+          [
+            125.125,
+            19.893997192382812,
+            375.125
+          ]
+        ],
+        "sha256": "c36cdfd41c075e75abae8bf72f4122ed62e06051750b724bf6fe83eef98e62e0"
+      },
+      {
+        "name": "tile_2_1",
+        "row": 2,
+        "column": 1,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            125.125,
+            -10.658000946044922,
+            250.125
+          ],
+          [
+            250.125,
+            15.463996887207031,
+            375.125
+          ]
+        ],
+        "sha256": "4bf4cbb2e25043f839acdaea62c49f5582340bb1bb3fb7dfd6b3ed91ed1d5a03"
+      },
+      {
+        "name": "tile_2_2",
+        "row": 2,
+        "column": 2,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            250.125,
+            -24.08700180053711,
+            250.125
+          ],
+          [
+            375.125,
+            7.404998779296875,
+            375.125
+          ]
+        ],
+        "sha256": "6c2d1673a2738bf38e4b752ea9945a511011c9ab5ca200b1e5a3b2e7e064266a"
+      },
+      {
+        "name": "tile_2_3",
+        "row": 2,
+        "column": 3,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            375.125,
+            -35.520999908447266,
+            250.125
+          ],
+          [
+            500.125,
+            -0.1569976806640625,
+            375.125
+          ]
+        ],
+        "sha256": "42d8a2df7e276bd0f38a42653b74a0be13fccdc3e0b5bd2abbe090da2f8a64b4"
+      },
+      {
+        "name": "tile_2_4",
+        "row": 2,
+        "column": 4,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            500.125,
+            -39.736000061035156,
+            250.125
+          ],
+          [
+            625.125,
+            4.7129974365234375,
+            375.125
+          ]
+        ],
+        "sha256": "a001dc52e7a6dbed3d3de9cf971c91d137e0cc6f2352c6d0735b0c8ce076bea2"
+      },
+      {
+        "name": "tile_2_5",
+        "row": 2,
+        "column": 5,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            625.125,
+            -39.086997985839844,
+            250.125
+          ],
+          [
+            750.125,
+            10.985000610351562,
+            375.125
+          ]
+        ],
+        "sha256": "016c313f45d29b92985045a50bf28cb91171fcfbf9a85fa66c80d3c81a668436"
+      },
+      {
+        "name": "tile_2_6",
+        "row": 2,
+        "column": 6,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            750.125,
+            -23.766998291015625,
+            250.125
+          ],
+          [
+            875.125,
+            18.250999450683594,
+            375.125
+          ]
+        ],
+        "sha256": "90d69269bd9c5399f4d3e377b57bc4b21a2a70fd6424113bb07ba713c5329299"
+      },
+      {
+        "name": "tile_2_7",
+        "row": 2,
+        "column": 7,
+        "vertices": 250500,
+        "triangles": 499000,
+        "bounds_local_m": [
+          [
+            875.125,
+            -29.202999114990234,
+            250.125
+          ],
+          [
+            999.875,
+            21.71900177001953,
+            375.125
+          ]
+        ],
+        "sha256": "00f7e41073ad574dbd10dee1b1e86db223da1ffe605539fdb38079ad4bd8c7d0"
+      },
+      {
+        "name": "tile_3_0",
+        "row": 3,
+        "column": 0,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            0.125,
+            -19.227001190185547,
+            375.125
+          ],
+          [
+            125.125,
+            11.774002075195312,
+            500.125
+          ]
+        ],
+        "sha256": "0ff5fea80db475df761a2ae28e0ca3dcebeab5ba706cc6d2ffce4ade40e7c84b"
+      },
+      {
+        "name": "tile_3_1",
+        "row": 3,
+        "column": 1,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            125.125,
+            -16.1510009765625,
+            375.125
+          ],
+          [
+            250.125,
+            12.994003295898438,
+            500.125
+          ]
+        ],
+        "sha256": "ba7d579e1f3da8a508a0947dff62b5c4840fe7a5633e59d03738c4b0d536c7cd"
+      },
+      {
+        "name": "tile_3_2",
+        "row": 3,
+        "column": 2,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            250.125,
+            -21.632999420166016,
+            375.125
+          ],
+          [
+            375.125,
+            6.818000793457031,
+            500.125
+          ]
+        ],
+        "sha256": "04ba4bf9f6459a2f0130d570cd578e32522e2a0394d4d1bc5cf0f9d4de814b82"
+      },
+      {
+        "name": "tile_3_3",
+        "row": 3,
+        "column": 3,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            375.125,
+            -33.25899887084961,
+            375.125
+          ],
+          [
+            500.125,
+            -0.322998046875,
+            500.125
+          ]
+        ],
+        "sha256": "dc05acbd84b78c7f422c2779578c40425bab85f9dc0bdade99b8b356b62aef1b"
+      },
+      {
+        "name": "tile_3_4",
+        "row": 3,
+        "column": 4,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            500.125,
+            -39.5629997253418,
+            375.125
+          ],
+          [
+            625.125,
+            -9.762001037597656,
+            500.125
+          ]
+        ],
+        "sha256": "806cc0bc84f9070dfda0ed379b326cf8be7cecc77bec2f5c1b44b49f42bf9a2d"
+      },
+      {
+        "name": "tile_3_5",
+        "row": 3,
+        "column": 5,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            625.125,
+            -41.24700164794922,
+            375.125
+          ],
+          [
+            750.125,
+            -6.643001556396484,
+            500.125
+          ]
+        ],
+        "sha256": "2a29266bc85cfb00b3445b0ef2a552a5f008ad1e5211161baabe94605c55ab43"
+      },
+      {
+        "name": "tile_3_6",
+        "row": 3,
+        "column": 6,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            750.125,
+            -31.84600067138672,
+            375.125
+          ],
+          [
+            875.125,
+            6.2559967041015625,
+            500.125
+          ]
+        ],
+        "sha256": "ed92e446f316f08d321e828ce61371b0d5c7cfe740ba46a5789fdc2659a98145"
+      },
+      {
+        "name": "tile_3_7",
+        "row": 3,
+        "column": 7,
+        "vertices": 250500,
+        "triangles": 499000,
+        "bounds_local_m": [
+          [
+            875.125,
+            -31.833999633789062,
+            375.125
+          ],
+          [
+            999.875,
+            4.5189971923828125,
+            500.125
+          ]
+        ],
+        "sha256": "3f312c7638dd0b1de2ae2928331f295b13fdfbabbce693e3b9157427c2c75cb0"
+      },
+      {
+        "name": "tile_4_0",
+        "row": 4,
+        "column": 0,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            0.125,
+            -27.716999053955078,
+            500.125
+          ],
+          [
+            125.125,
+            2.4680023193359375,
+            625.125
+          ]
+        ],
+        "sha256": "6e838efb77169b9ecb809019191f3bc4bbed51ab906e468fc1adade2df3c419c"
+      },
+      {
+        "name": "tile_4_1",
+        "row": 4,
+        "column": 1,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            125.125,
+            -29.615001678466797,
+            500.125
+          ],
+          [
+            250.125,
+            2.6890029907226562,
+            625.125
+          ]
+        ],
+        "sha256": "c5665e984ffb9734c4af3dcd1335fd6131be88b60e5884b754205d2f20de1085"
+      },
+      {
+        "name": "tile_4_2",
+        "row": 4,
+        "column": 2,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            250.125,
+            -27.04199981689453,
+            500.125
+          ],
+          [
+            375.125,
+            0.177001953125,
+            625.125
+          ]
+        ],
+        "sha256": "91a32cbcd629ec0f163fab0dc522de0eb6c0aa63281252049b1e5a2926cad4d4"
+      },
+      {
+        "name": "tile_4_3",
+        "row": 4,
+        "column": 3,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            375.125,
+            -33.71200180053711,
+            500.125
+          ],
+          [
+            500.125,
+            -0.8270034790039062,
+            625.125
+          ]
+        ],
+        "sha256": "a09be0aeb33b5d1fe764d1de83c24e24d87985fbbda1802eed6a371ead18cfb1"
+      },
+      {
+        "name": "tile_4_4",
+        "row": 4,
+        "column": 4,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            500.125,
+            -37.816001892089844,
+            500.125
+          ],
+          [
+            625.125,
+            -9.306999206542969,
+            625.125
+          ]
+        ],
+        "sha256": "04b9e4e8f1368ea6d3e3172abe05e36c91d662ce163a6f85de03e920ae87f646"
+      },
+      {
+        "name": "tile_4_5",
+        "row": 4,
+        "column": 5,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            625.125,
+            -45.415000915527344,
+            500.125
+          ],
+          [
+            750.125,
+            -8.071998596191406,
+            625.125
+          ]
+        ],
+        "sha256": "66615ef12b0971ab5f0d8300073edaa4ee7d691a0dcfd2e2747f6c3e6c3d1bab"
+      },
+      {
+        "name": "tile_4_6",
+        "row": 4,
+        "column": 6,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            750.125,
+            -44.67499923706055,
+            500.125
+          ],
+          [
+            875.125,
+            0.7979965209960938,
+            625.125
+          ]
+        ],
+        "sha256": "fe03ca25a38d1b43ae65ea2d57a2f0fbdf68dcf1f36bceca089cd23c096a1a67"
+      },
+      {
+        "name": "tile_4_7",
+        "row": 4,
+        "column": 7,
+        "vertices": 250500,
+        "triangles": 499000,
+        "bounds_local_m": [
+          [
+            875.125,
+            -44.297000885009766,
+            500.125
+          ],
+          [
+            999.875,
+            11.781997680664062,
+            625.125
+          ]
+        ],
+        "sha256": "4b9f0dcb3f95918763c5bb5461315d13b1b96386ffd9b0d7c5b6c4e10d8184b9"
+      },
+      {
+        "name": "tile_5_0",
+        "row": 5,
+        "column": 0,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            0.125,
+            -31.96900177001953,
+            625.125
+          ],
+          [
+            125.125,
+            -5.924003601074219,
+            750.125
+          ]
+        ],
+        "sha256": "460f2c92989aee5776f107766101b4ef6cdb46cf5fd0351ee3452f6fbbd06522"
+      },
+      {
+        "name": "tile_5_1",
+        "row": 5,
+        "column": 1,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            125.125,
+            -39.63199996948242,
+            625.125
+          ],
+          [
+            250.125,
+            -12.183998107910156,
+            750.125
+          ]
+        ],
+        "sha256": "420eeb03d69a6097e74dfdfbd0657149973c6f269ec47da4b92e7e7cde9af47c"
+      },
+      {
+        "name": "tile_5_2",
+        "row": 5,
+        "column": 2,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            250.125,
+            -41.249000549316406,
+            625.125
+          ],
+          [
+            375.125,
+            -7.3600006103515625,
+            750.125
+          ]
+        ],
+        "sha256": "63b4cf784fe4d7197146814a53219349500364f41a7f48b911babc8308e42859"
+      },
+      {
+        "name": "tile_5_3",
+        "row": 5,
+        "column": 3,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            375.125,
+            -44.22200012207031,
+            625.125
+          ],
+          [
+            500.125,
+            -10.096000671386719,
+            750.125
+          ]
+        ],
+        "sha256": "43a066a39567030d6875006a9a6225335c7f1390dfe5509981f71df36df3b10d"
+      },
+      {
+        "name": "tile_5_4",
+        "row": 5,
+        "column": 4,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            500.125,
+            -45.667999267578125,
+            625.125
+          ],
+          [
+            625.125,
+            -10.201000213623047,
+            750.125
+          ]
+        ],
+        "sha256": "5a10c0390567bf0cab93c767fceee929b3003c2cc22f7320f2ac26a66a59fd9a"
+      },
+      {
+        "name": "tile_5_5",
+        "row": 5,
+        "column": 5,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            625.125,
+            -45.64699935913086,
+            625.125
+          ],
+          [
+            750.125,
+            -23.743000030517578,
+            750.125
+          ]
+        ],
+        "sha256": "1ac1d18958c01e6d110bc53bd0233eaa24d9af64cb804aba2a691793ab81ee26"
+      },
+      {
+        "name": "tile_5_6",
+        "row": 5,
+        "column": 6,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            750.125,
+            -45.577999114990234,
+            625.125
+          ],
+          [
+            875.125,
+            -19.756999969482422,
+            750.125
+          ]
+        ],
+        "sha256": "efd886cb4d76955f153706070f818dd6537ad4e5f9fdf929709fa0bf5c456c91"
+      },
+      {
+        "name": "tile_5_7",
+        "row": 5,
+        "column": 7,
+        "vertices": 250500,
+        "triangles": 499000,
+        "bounds_local_m": [
+          [
+            875.125,
+            -46.09300231933594,
+            625.125
+          ],
+          [
+            999.875,
+            -18.46900177001953,
+            750.125
+          ]
+        ],
+        "sha256": "0853c4535d961740a69ec954c4e5486c76c2a0c7f153a8cab55df22b665a9351"
+      },
+      {
+        "name": "tile_6_0",
+        "row": 6,
+        "column": 0,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            0.125,
+            -45.858001708984375,
+            750.125
+          ],
+          [
+            125.125,
+            -15.812000274658203,
+            875.125
+          ]
+        ],
+        "sha256": "a894ccd8043961858b9adb7b9cc0bea499a07fca9bf663f14faff1fa74381ccc"
+      },
+      {
+        "name": "tile_6_1",
+        "row": 6,
+        "column": 1,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            125.125,
+            -45.92499923706055,
+            750.125
+          ],
+          [
+            250.125,
+            -13.884998321533203,
+            875.125
+          ]
+        ],
+        "sha256": "e481f204346bf132511e46fd8909bc60ba533047ff6bb0366d3f9a48c49bcb7e"
+      },
+      {
+        "name": "tile_6_2",
+        "row": 6,
+        "column": 2,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            250.125,
+            -46.70000076293945,
+            750.125
+          ],
+          [
+            375.125,
+            -21.05099868774414,
+            875.125
+          ]
+        ],
+        "sha256": "30ac24b6ea2f4c406d872c064f6c56bb3780425618ec89d0ca752afa8fadb622"
+      },
+      {
+        "name": "tile_6_3",
+        "row": 6,
+        "column": 3,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            375.125,
+            -46.547000885009766,
+            750.125
+          ],
+          [
+            500.125,
+            -23.154998779296875,
+            875.125
+          ]
+        ],
+        "sha256": "8bc99927e1cea12697a76c97f06883a69051c1053dc2c97de8071018b28e23c4"
+      },
+      {
+        "name": "tile_6_4",
+        "row": 6,
+        "column": 4,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            500.125,
+            -46.402000427246094,
+            750.125
+          ],
+          [
+            625.125,
+            -22.230998992919922,
+            875.125
+          ]
+        ],
+        "sha256": "e1633cab258ea50e38e592a69dc69396fb109d2e273a6cea663cb77c6e8d8500"
+      },
+      {
+        "name": "tile_6_5",
+        "row": 6,
+        "column": 5,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            625.125,
+            -46.27400207519531,
+            750.125
+          ],
+          [
+            750.125,
+            -25.884998321533203,
+            875.125
+          ]
+        ],
+        "sha256": "406190fd7398426875e5d1ca5f5301a14d54046cbc45013b8333531e488688cc"
+      },
+      {
+        "name": "tile_6_6",
+        "row": 6,
+        "column": 6,
+        "vertices": 251001,
+        "triangles": 500000,
+        "bounds_local_m": [
+          [
+            750.125,
+            -46.17300033569336,
+            750.125
+          ],
+          [
+            875.125,
+            -27.770999908447266,
+            875.125
+          ]
+        ],
+        "sha256": "aa7a2f1900f4eae4b2eec8b3112bbb1b2a33d6642d07765f963a3221b70da10e"
+      },
+      {
+        "name": "tile_6_7",
+        "row": 6,
+        "column": 7,
+        "vertices": 250500,
+        "triangles": 499000,
+        "bounds_local_m": [
+          [
+            875.125,
+            -46.13100051879883,
+            750.125
+          ],
+          [
+            999.875,
+            -4.400001525878906,
+            875.125
+          ]
+        ],
+        "sha256": "5cd3901e56cbd4dec91a234922b75f2064b25cc9b8275122ddc385d0da7da23d"
+      },
+      {
+        "name": "tile_7_0",
+        "row": 7,
+        "column": 0,
+        "vertices": 250500,
+        "triangles": 499000,
+        "bounds_local_m": [
+          [
+            0.125,
+            -46.09400177001953,
+            875.125
+          ],
+          [
+            125.125,
+            -24.005001068115234,
+            999.875
+          ]
+        ],
+        "sha256": "85a582b11bcac26356ca6fb7fcd7bba813132269b5cc488d53bde403056a2131"
+      },
+      {
+        "name": "tile_7_1",
+        "row": 7,
+        "column": 1,
+        "vertices": 250500,
+        "triangles": 499000,
+        "bounds_local_m": [
+          [
+            125.125,
+            -46.17399978637695,
+            875.125
+          ],
+          [
+            250.125,
+            -27.032001495361328,
+            999.875
+          ]
+        ],
+        "sha256": "346a93573ad6878081912b1fe7fedceccbc77ae8ccd417dd09325a44c5a5e12c"
+      },
+      {
+        "name": "tile_7_2",
+        "row": 7,
+        "column": 2,
+        "vertices": 250500,
+        "triangles": 499000,
+        "bounds_local_m": [
+          [
+            250.125,
+            -45.92900085449219,
+            875.125
+          ],
+          [
+            375.125,
+            -29.898998260498047,
+            999.875
+          ]
+        ],
+        "sha256": "8de527b715ec2b07462280761c37e99cfd412cf64fd61a52d5159f8799c164d9"
+      },
+      {
+        "name": "tile_7_3",
+        "row": 7,
+        "column": 3,
+        "vertices": 250500,
+        "triangles": 499000,
+        "bounds_local_m": [
+          [
+            375.125,
+            -45.60499954223633,
+            875.125
+          ],
+          [
+            500.125,
+            -30.376998901367188,
+            999.875
+          ]
+        ],
+        "sha256": "8a473b8fe67cb62429e86cd30f82d98afdc5a1a6bceb9c972778780d5eea1189"
+      },
+      {
+        "name": "tile_7_4",
+        "row": 7,
+        "column": 4,
+        "vertices": 250500,
+        "triangles": 499000,
+        "bounds_local_m": [
+          [
+            500.125,
+            -46.21699905395508,
+            875.125
+          ],
+          [
+            625.125,
+            -32.97200012207031,
+            999.875
+          ]
+        ],
+        "sha256": "54024c035774f167d6d69b02a84276a9ca9e68e52cf4717cafa0e55612883933"
+      },
+      {
+        "name": "tile_7_5",
+        "row": 7,
+        "column": 5,
+        "vertices": 250500,
+        "triangles": 499000,
+        "bounds_local_m": [
+          [
+            625.125,
+            -45.917999267578125,
+            875.125
+          ],
+          [
+            750.125,
+            -33.43299865722656,
+            999.875
+          ]
+        ],
+        "sha256": "a250ad8a50d5a41c115cc09dab9691b48a0f923db858ff2377e58e007b551fed"
+      },
+      {
+        "name": "tile_7_6",
+        "row": 7,
+        "column": 6,
+        "vertices": 250500,
+        "triangles": 499000,
+        "bounds_local_m": [
+          [
+            750.125,
+            -45.90599822998047,
+            875.125
+          ],
+          [
+            875.125,
+            -28.40999984741211,
+            999.875
+          ]
+        ],
+        "sha256": "abd23fe06dde62eb4d1c0c828fe22671e26c56448c8d1762b2db67bd8ea17207"
+      },
+      {
+        "name": "tile_7_7",
+        "row": 7,
+        "column": 7,
+        "vertices": 250000,
+        "triangles": 498002,
+        "bounds_local_m": [
+          [
+            875.125,
+            -45.926002502441406,
+            875.125
+          ],
+          [
+            999.875,
+            -28.463001251220703,
+            999.875
+          ]
+        ],
+        "sha256": "c2f58dee62f01e143ff8a7abda558c2f2e57873f40e8bacd20b06f8591178893"
+      }
+    ],
+    "submitted_vertices_including_shared_seams": 16056049,
+    "spacing_m": 0.25,
+    "smoothing": "none",
+    "simplification": "none; one triangulated common DSM across variants; imported LOD0 only",
+    "surface_bounds_bng": [
+      456000.125,
+      339000.125,
+      456999.875,
+      339999.875
+    ],
+    "edge_limitation": "DSM samples are cell centres. Mesh spans 999.75m; outer 0.125m half-cell borders are not invented/extrapolated."
+  },
+  "textures": {
+    "tiles_per_variant": 64,
+    "tile_footprint_m": 125,
+    "apron_m": 0.25,
+    "dimensions_with_apron": {
+      "rgb25": [
+        502,
+        502
+      ],
+      "rgb125": [
+        1004,
+        1004
+      ],
+      "rgb5": [
+        2510,
+        2510
+      ]
+    },
+    "policy": "Lossless PNG from full-size JPEG decode windows; no sharpening/downsampling. Out-of-AOI apron replicates edge texels only. Unreal sRGB, uncompressed, simple-average mipmaps, trilinear, clamped; natural mip selection may reduce effective detail at distance.",
+    "mip_base_bgra_bytes_per_variant": {
+      "rgb25": 64513024,
+      "rgb125": 258052096,
+      "rgb5": 1612825600
+    }
+  },
+  "views": {
+    "overview": {
+      "position_m": [
+        500,
+        520,
+        1250
+      ],
+      "target_m": [
+        500,
+        500,
+        0
+      ],
+      "distance_to_target_m": 1250.1599897613105,
+      "approx_perpendicular_screen_pixel_m": 0.6072491428590351,
+      "source_texels_per_screen_pixel": {
+        "rgb25": 2.4289965714361403,
+        "rgb125": 4.857993142872281,
+        "rgb5": 12.1449828571807
+      }
+    },
+    "moderate": {
+      "position_m": [
+        430,
+        680,
+        230
+      ],
+      "target_m": [
+        430,
+        500,
+        15
+      ],
+      "distance_to_target_m": 280.40149785619906,
+      "approx_perpendicular_screen_pixel_m": 0.13620142271716462,
+      "source_texels_per_screen_pixel": {
+        "rgb25": 0.5448056908686585,
+        "rgb125": 1.089611381737317,
+        "rgb5": 2.7240284543432924
+      }
+    },
+    "low": {
+      "position_m": [
+        430,
+        610,
+        65
+      ],
+      "target_m": [
+        430,
+        500,
+        15
+      ],
+      "distance_to_target_m": 120.83045973594572,
+      "approx_perpendicular_screen_pixel_m": 0.05869184240964656,
+      "source_texels_per_screen_pixel": {
+        "rgb25": 0.23476736963858624,
+        "rgb125": 0.4695347392771725,
+        "rgb5": 1.173836848192931
+      }
+    },
+    "close": {
+      "position_m": [
+        402,
+        543,
+        36
+      ],
+      "target_m": [
+        425,
+        520,
+        12
+      ],
+      "distance_to_target_m": 40.422765862815474,
+      "approx_perpendicular_screen_pixel_m": 0.019634838839205526,
+      "source_texels_per_screen_pixel": {
+        "rgb25": 0.0785393553568221,
+        "rgb125": 0.1570787107136442,
+        "rgb5": 0.3926967767841105
+      }
+    }
+  },
+  "render_settings": {
+    "width": 1920,
+    "height": 1080,
+    "horizontal_fov_degrees": 50,
+    "materials": "All variants unlit with identical analytic normal shading: colour*(0.65+0.35*max(dot(normal,(0.4,-0.3,0.8660254)),0)); neutral linear colour 0.5",
+    "rhi": "Direct3D11 / SM5; separate variant processes for bounded memory",
+    "atmosphere": "none",
+    "exposure": "fixed; adaptation disabled; identical engine tone treatment",
+    "geometry": "fixed LOD0; no Nanite/adaptive geometry"
+  },
+  "limitations": [
+    "Photogrammetric DSM is a heightfield: no vertical facades/overhangs, cannot create omitted subcell geometry",
+    "Orthophoto shadows are baked; extra analytic shading is identical across variants",
+    "EPSG convention/footprint verified, not independent survey-accuracy or absolute vertical-datum validation",
+    "Urban/suburban sample does not establish mountain surface observability"
+  ],
+  "products": [
+    {
+      "path": "textures/rgb125/tile_0_0.png",
+      "bytes": 1367764,
+      "sha256": "8f2d096c7af8ef653e5ec14144177b04c6cdc6358a76389b9998e22c8e4ce33a"
+    },
+    {
+      "path": "textures/rgb125/tile_0_1.png",
+      "bytes": 1382329,
+      "sha256": "3199cffde213b9f7fdb97c22f93c7d6bde295f60a19c58a1e2e589d90feaefdd"
+    },
+    {
+      "path": "textures/rgb125/tile_0_2.png",
+      "bytes": 1322589,
+      "sha256": "b109c2429d4ee2478eaff8fa31ad9b726444cf119f5f79d577040debec84a17b"
+    },
+    {
+      "path": "textures/rgb125/tile_0_3.png",
+      "bytes": 1317460,
+      "sha256": "3806369f42bbfc942c36f35d9aaa27fbd572b371353736d4c7475b5d6d982e3e"
+    },
+    {
+      "path": "textures/rgb125/tile_0_4.png",
+      "bytes": 1359345,
+      "sha256": "7a6a26fe5c1b7533c4cf92d3e7e4731da9cafca53cc4b16b4c531ed0b50591a4"
+    },
+    {
+      "path": "textures/rgb125/tile_0_5.png",
+      "bytes": 1360726,
+      "sha256": "e1e8474168d75c6b0ae35fdf0d148d1479e8b6c0143be16415ef9606468858a6"
+    },
+    {
+      "path": "textures/rgb125/tile_0_6.png",
+      "bytes": 1304892,
+      "sha256": "755b7bef4b6c29ed3170481ac0b6a20cd86b497dd612d4bbcf7d8b386f6448a9"
+    },
+    {
+      "path": "textures/rgb125/tile_0_7.png",
+      "bytes": 1299292,
+      "sha256": "622dd0bcbafc223a0796c55d010b112629d089447b1d223a74322b3cb0b5eb64"
+    },
+    {
+      "path": "textures/rgb125/tile_1_0.png",
+      "bytes": 1405147,
+      "sha256": "69f6f73d7d3566ed96fe7bca4f9739335e86effb1f7f7e49a3c17025e80dd151"
+    },
+    {
+      "path": "textures/rgb125/tile_1_1.png",
+      "bytes": 1350510,
+      "sha256": "a617375a00a3d72cf5495bd16574c3886052a89c084f0e190e7c2485597d5f75"
+    },
+    {
+      "path": "textures/rgb125/tile_1_2.png",
+      "bytes": 1377469,
+      "sha256": "56a6dd6d5a831b30d352a2e4794667ebaa957f56ee905a4b485098566ced6c8b"
+    },
+    {
+      "path": "textures/rgb125/tile_1_3.png",
+      "bytes": 1308761,
+      "sha256": "88e85dc4896e3bfccad03a161751343c7042c049625bc47566cd1fe641afb39d"
+    },
+    {
+      "path": "textures/rgb125/tile_1_4.png",
+      "bytes": 1413834,
+      "sha256": "f813c5048f8e53abc2ecffbb71e3f92ede0cf3f8a51022c257959b51e3e1e1b1"
+    },
+    {
+      "path": "textures/rgb125/tile_1_5.png",
+      "bytes": 1393862,
+      "sha256": "87a1a0a21efc78759404ae674b7d17e8a80ccb52b35bcd743689b52cba6605d9"
+    },
+    {
+      "path": "textures/rgb125/tile_1_6.png",
+      "bytes": 1293947,
+      "sha256": "868eb67107d05e1a940916213b7bbcf5978f28b3c26b1d9d5fda1dcb27a2e0c0"
+    },
+    {
+      "path": "textures/rgb125/tile_1_7.png",
+      "bytes": 1333766,
+      "sha256": "02be33ce7cdcb72691ac71feb6f9db7195109ced6fd066a068047f2ebfdfd954"
+    },
+    {
+      "path": "textures/rgb125/tile_2_0.png",
+      "bytes": 1336887,
+      "sha256": "e3e96a9efd987293f4ed2fe69689e7b42d26cfe466b32c98b643d254b75fbeaf"
+    },
+    {
+      "path": "textures/rgb125/tile_2_1.png",
+      "bytes": 1345059,
+      "sha256": "8f68f7d5a0ccbd346b0ea394b526b36cdc3abf600916cf181a515c9ff4d9893c"
+    },
+    {
+      "path": "textures/rgb125/tile_2_2.png",
+      "bytes": 1365651,
+      "sha256": "f8e5eeeb4b14a1cc8358951de279341ee48da9d956954a10a0aa59a03c2daae2"
+    },
+    {
+      "path": "textures/rgb125/tile_2_3.png",
+      "bytes": 1330134,
+      "sha256": "80e613fddb918ad4e87aaf3579ee0e4766cd44cad8d55d438b76fefd2c37c2c4"
+    },
+    {
+      "path": "textures/rgb125/tile_2_4.png",
+      "bytes": 1367316,
+      "sha256": "2ef57a32bc000fc5ea9061af37a777a07e3fe25c04039870e2c9b011b666f1c9"
+    },
+    {
+      "path": "textures/rgb125/tile_2_5.png",
+      "bytes": 1479010,
+      "sha256": "754ec9b00c297b783509c02096aaaec8154f8c00b5dfc4a43c2c30f60bb4501f"
+    },
+    {
+      "path": "textures/rgb125/tile_2_6.png",
+      "bytes": 1363804,
+      "sha256": "50fa0e7c7359977ddd7fc074120ef29efc59ee2dc1a0c246e214a7538c2e78e2"
+    },
+    {
+      "path": "textures/rgb125/tile_2_7.png",
+      "bytes": 1375342,
+      "sha256": "01ca0e62cd98a160ae30c3170d5ee216aebf789f91269023b428a1adef89bb53"
+    },
+    {
+      "path": "textures/rgb125/tile_3_0.png",
+      "bytes": 1363365,
+      "sha256": "a0d512672b92fc5d7fce5275e50c5205b70a7da769e5c00da5ca96a06b66d35a"
+    },
+    {
+      "path": "textures/rgb125/tile_3_1.png",
+      "bytes": 1380684,
+      "sha256": "8aac46e11abe3259eb1c01148ef4845fffcd25af61f850fb56d39de5420de7a1"
+    },
+    {
+      "path": "textures/rgb125/tile_3_2.png",
+      "bytes": 1391442,
+      "sha256": "5db7d91a5410d55c2451d5fb07c6653da1f3d188f4202f5f498ccbb987a7a886"
+    },
+    {
+      "path": "textures/rgb125/tile_3_3.png",
+      "bytes": 1290104,
+      "sha256": "79052a4dc4a4576ff642963b692f2148824d80d279d20a2d9d9ada5186378ba0"
+    },
+    {
+      "path": "textures/rgb125/tile_3_4.png",
+      "bytes": 1404452,
+      "sha256": "f2c08ae0c5a9b69d4e7e5124ff32b166acaccf4b9f2bd588f9e2d22069f833b3"
+    },
+    {
+      "path": "textures/rgb125/tile_3_5.png",
+      "bytes": 1427475,
+      "sha256": "ea5f9593b4a30c3ee5fc0bbb552d9e21934f1981b45316c014d3538d472893a3"
+    },
+    {
+      "path": "textures/rgb125/tile_3_6.png",
+      "bytes": 1413203,
+      "sha256": "366bfc599b47e02e85f5f7e579eca102b3e29ce7682131cf65b1b13cdd26c5e0"
+    },
+    {
+      "path": "textures/rgb125/tile_3_7.png",
+      "bytes": 1296085,
+      "sha256": "c8b1e9fc2595f95bf127b6b8e3814b1743781b678863148ba9298f153ac97235"
+    },
+    {
+      "path": "textures/rgb125/tile_4_0.png",
+      "bytes": 1372971,
+      "sha256": "3c21b52196f07f69806fa39c8395f1f8ee8f2b6a870fcb27ef070e090a8b295d"
+    },
+    {
+      "path": "textures/rgb125/tile_4_1.png",
+      "bytes": 1346112,
+      "sha256": "3b8aeddfd1be9505cad1b769ee384bfdd5e005f22ca56be2889e97abdd29b9ef"
+    },
+    {
+      "path": "textures/rgb125/tile_4_2.png",
+      "bytes": 1355698,
+      "sha256": "9963aabb44f0e87225f7022d89a10c26df98094502d0f0f065d5e870668c2114"
+    },
+    {
+      "path": "textures/rgb125/tile_4_3.png",
+      "bytes": 1353223,
+      "sha256": "ffb17a86cbabaed6486f7e6e81fe4dce767b322fe4d44994ebf0eb52c401d0cc"
+    },
+    {
+      "path": "textures/rgb125/tile_4_4.png",
+      "bytes": 1373565,
+      "sha256": "42544204600a08683da59c132110ae19ec9b8a67d2fa7e6b1073a233a1a7d0dc"
+    },
+    {
+      "path": "textures/rgb125/tile_4_5.png",
+      "bytes": 1408743,
+      "sha256": "f9d651ba2c8c6cc526c465d367c38fce2fb6a8640f9df2ca90aa5b6c32411dea"
+    },
+    {
+      "path": "textures/rgb125/tile_4_6.png",
+      "bytes": 1435836,
+      "sha256": "8f6481114296aeb44e09b91c5792d1f24f7ec213fc3c9a6ee236a5e583660af1"
+    },
+    {
+      "path": "textures/rgb125/tile_4_7.png",
+      "bytes": 1383431,
+      "sha256": "f35bb3ad750b4497eb096252b6cdbb341927f5cadc836d59ea063b6e590fe7d1"
+    },
+    {
+      "path": "textures/rgb125/tile_5_0.png",
+      "bytes": 1390124,
+      "sha256": "87852e2e04db35a3b5ba2cc95f5a71557ae95b48baafd6caf99fcf93d1e983db"
+    },
+    {
+      "path": "textures/rgb125/tile_5_1.png",
+      "bytes": 1324678,
+      "sha256": "8b44dbb0ad764089c9dcee07c891308f01bc5d9d1fc94ea5aa48d82796256b7d"
+    },
+    {
+      "path": "textures/rgb125/tile_5_2.png",
+      "bytes": 1312392,
+      "sha256": "8bc4531a48e867ccb8f9e2e3f719ee532c90b07255b713102f670840600319ae"
+    },
+    {
+      "path": "textures/rgb125/tile_5_3.png",
+      "bytes": 1323509,
+      "sha256": "ddbf4c4fcead95e011e7ae2c24bfa9c29dd0ebdc6064ab6baf7e87bf10f020c5"
+    },
+    {
+      "path": "textures/rgb125/tile_5_4.png",
+      "bytes": 1306587,
+      "sha256": "f43f6bc1944238ce957109f388d570a703dc3c28a825e0692626ce65f0fd2f68"
+    },
+    {
+      "path": "textures/rgb125/tile_5_5.png",
+      "bytes": 1356649,
+      "sha256": "216f4fde5b69a6add23c150f380c809b7037180f88115d2e0f1f9828cf4061f5"
+    },
+    {
+      "path": "textures/rgb125/tile_5_6.png",
+      "bytes": 1387868,
+      "sha256": "154fb69d73e204683a04fb7eb9abe333a820421f0094d2be9a965512157f2975"
+    },
+    {
+      "path": "textures/rgb125/tile_5_7.png",
+      "bytes": 1242592,
+      "sha256": "4aedb686f8c5230009916d380993b1d560939042c86c21b741549b4664a5ea8f"
+    },
+    {
+      "path": "textures/rgb125/tile_6_0.png",
+      "bytes": 1261235,
+      "sha256": "9d91f40675ba115a090435478f8a16ee61a58b6fbe012370068e0d87e8899431"
+    },
+    {
+      "path": "textures/rgb125/tile_6_1.png",
+      "bytes": 1265259,
+      "sha256": "f5a9974849cb20ae0870db62ce3673c09b838d697696e11b30fb08551f38bc8f"
+    },
+    {
+      "path": "textures/rgb125/tile_6_2.png",
+      "bytes": 1209364,
+      "sha256": "b7d7595c4c778e7edc3126f72f190c41e6083d9288c277cd8906f90dc12d0f71"
+    },
+    {
+      "path": "textures/rgb125/tile_6_3.png",
+      "bytes": 1188461,
+      "sha256": "68ddcf995e7613f308e015b0c822c0b835a2f9c6dee25295bf2297e20e09421c"
+    },
+    {
+      "path": "textures/rgb125/tile_6_4.png",
+      "bytes": 1165958,
+      "sha256": "d1b21fb661681b0a7cd18c4d681a29dc013d52b4ccdb943e6ec385bdc9dac3bd"
+    },
+    {
+      "path": "textures/rgb125/tile_6_5.png",
+      "bytes": 1127927,
+      "sha256": "caaeeab4a5329c304633f5947e8dfb0fa17db2b8b5a40d848170ed691e3497d5"
+    },
+    {
+      "path": "textures/rgb125/tile_6_6.png",
+      "bytes": 1166036,
+      "sha256": "225bee78fa2f3c84e1ea0bf9a96a33c478887782e6e5d34506c3f55f02a8b2ad"
+    },
+    {
+      "path": "textures/rgb125/tile_6_7.png",
+      "bytes": 1105083,
+      "sha256": "4f61de02c3a5c3ae37a8303bc52c2d173fd0d1b34151323efd72a48ce9697b9f"
+    },
+    {
+      "path": "textures/rgb125/tile_7_0.png",
+      "bytes": 1274575,
+      "sha256": "5a2b3c4c2cd9475971c950b2a83d4810d5e96d500eecd14d227ad1e7ac3c40ca"
+    },
+    {
+      "path": "textures/rgb125/tile_7_1.png",
+      "bytes": 1267416,
+      "sha256": "0bf648fdf38ce42ff3512d1da3764eef028f724707d90ca5d1d829d0a13d1710"
+    },
+    {
+      "path": "textures/rgb125/tile_7_2.png",
+      "bytes": 1403180,
+      "sha256": "191faf036611c53ca37ca550b8d59269a3a8446818742b544de82b7e34c0c429"
+    },
+    {
+      "path": "textures/rgb125/tile_7_3.png",
+      "bytes": 1172802,
+      "sha256": "d1115817bd8a4f061f42f919109a5efa6f38f8fadc071a64d1f5599336bd1a90"
+    },
+    {
+      "path": "textures/rgb125/tile_7_4.png",
+      "bytes": 1168941,
+      "sha256": "2b1f7396f55f95fba841f46ea57082eb7f02ed37f7a635b27fb28c6063afc32c"
+    },
+    {
+      "path": "textures/rgb125/tile_7_5.png",
+      "bytes": 995652,
+      "sha256": "d4e977ccb822eeec684da538f7414120e33c99e0d9c75940202a1eea56154321"
+    },
+    {
+      "path": "textures/rgb125/tile_7_6.png",
+      "bytes": 1250892,
+      "sha256": "3502f4e1544709019f4d4bebe5c5881e78fb347981b59f5790342797616086df"
+    },
+    {
+      "path": "textures/rgb125/tile_7_7.png",
+      "bytes": 1208331,
+      "sha256": "6e735981b6642229d44ccd981c2b629bb5f22a0f5a508f1c545b0530995a0a4b"
+    },
+    {
+      "path": "textures/rgb25/tile_0_0.png",
+      "bytes": 435303,
+      "sha256": "93363a0d9fd8635176c3e54b32d9261f883f670648708fea3c4d3e1700d9e3c5"
+    },
+    {
+      "path": "textures/rgb25/tile_0_1.png",
+      "bytes": 436058,
+      "sha256": "71f58a4a27ef4e74099b85fa2d166f7ddb16d1de20ad5c206d2b008a7bde2162"
+    },
+    {
+      "path": "textures/rgb25/tile_0_2.png",
+      "bytes": 413364,
+      "sha256": "b585f0af3921c3f82d7ab745ab4833d7e28afe48d3ce25570a6387548bd61a3e"
+    },
+    {
+      "path": "textures/rgb25/tile_0_3.png",
+      "bytes": 415413,
+      "sha256": "ae74cd182a0815fee395626ac77e79394fcd5ad8e8fe9385982e5cc08432fdd8"
+    },
+    {
+      "path": "textures/rgb25/tile_0_4.png",
+      "bytes": 433739,
+      "sha256": "60d0be9484251ec71d0a139b891f639f3ec532d905831cb9618a13d85f4c305a"
+    },
+    {
+      "path": "textures/rgb25/tile_0_5.png",
+      "bytes": 432060,
+      "sha256": "f1e3b1148d4aace9ad5fd858a08767e599b518d640d00764a2d193c9a81d9bd1"
+    },
+    {
+      "path": "textures/rgb25/tile_0_6.png",
+      "bytes": 416092,
+      "sha256": "8a17553749c298a01cf2421c83e280e35be81e6b9687c0d54d1eab462b3f0847"
+    },
+    {
+      "path": "textures/rgb25/tile_0_7.png",
+      "bytes": 414188,
+      "sha256": "f52f88378e1c371d673981b2242ea5de2357611c2cfba19fdb81b937b86c9b17"
+    },
+    {
+      "path": "textures/rgb25/tile_1_0.png",
+      "bytes": 442816,
+      "sha256": "593ff9aa2ee07788b6ebada01f6e6983552dcbcd50eefcc56a77a29050f7db7d"
+    },
+    {
+      "path": "textures/rgb25/tile_1_1.png",
+      "bytes": 423242,
+      "sha256": "a8290dd9149ae1b62a2cc1c2953ea789c3461af38303b9822f81181480c2ad42"
+    },
+    {
+      "path": "textures/rgb25/tile_1_2.png",
+      "bytes": 439178,
+      "sha256": "020c7724ac59f4b8a1c09eab0bcb1b6f47d300ce69bc2a714ccf49e6b767522f"
+    },
+    {
+      "path": "textures/rgb25/tile_1_3.png",
+      "bytes": 415801,
+      "sha256": "ba747544a3b93ef343f358d59d4d051ebb67f4c4fc8c9fdef16e145679d9c64f"
+    },
+    {
+      "path": "textures/rgb25/tile_1_4.png",
+      "bytes": 445264,
+      "sha256": "576d4c42c988c97a1c3f71b94bab58c39745a6c6abccd5d2d3a26cfcbcddac6e"
+    },
+    {
+      "path": "textures/rgb25/tile_1_5.png",
+      "bytes": 447163,
+      "sha256": "1c03178afd46e68cad38a7816ee540d2fda9be88fda1a125ea0348054000d28d"
+    },
+    {
+      "path": "textures/rgb25/tile_1_6.png",
+      "bytes": 413751,
+      "sha256": "7f2bd7c90bb7f2a41424ac55a315b878103d4ab9d1297b29e4764dd4b46049d4"
+    },
+    {
+      "path": "textures/rgb25/tile_1_7.png",
+      "bytes": 425032,
+      "sha256": "1a09e14dabed41db8ced5a6ef70184fb80b7fd05f9e54e757b0625ae9f8eb372"
+    },
+    {
+      "path": "textures/rgb25/tile_2_0.png",
+      "bytes": 419787,
+      "sha256": "e9fb9fe178e5937d5256b1373ad3a4fd695408093f368d86b9838e506eae7671"
+    },
+    {
+      "path": "textures/rgb25/tile_2_1.png",
+      "bytes": 416881,
+      "sha256": "d8afb5c9ee8b3343fe677b104b2dcb36b8d131dab7cca57d5ebf151c0348bc24"
+    },
+    {
+      "path": "textures/rgb25/tile_2_2.png",
+      "bytes": 430174,
+      "sha256": "2017073e2c8e07e47c5267bf388059f9d3c0b121da86bd3303b9abb8aa57cee6"
+    },
+    {
+      "path": "textures/rgb25/tile_2_3.png",
+      "bytes": 421897,
+      "sha256": "c5e094a017cdc467665420da37ac3f03de2a864d5d83712962c8274e5c380433"
+    },
+    {
+      "path": "textures/rgb25/tile_2_4.png",
+      "bytes": 430753,
+      "sha256": "dbad7f50cb6de7c7af402558692119a83f88520438019278922dc8baa5e26194"
+    },
+    {
+      "path": "textures/rgb25/tile_2_5.png",
+      "bytes": 465973,
+      "sha256": "7b0d63c432ceafa609dd41b9c22bda090eb1bb631f11e162df33e9f5bc9229ec"
+    },
+    {
+      "path": "textures/rgb25/tile_2_6.png",
+      "bytes": 435625,
+      "sha256": "a5d90ab7e61093d0ad2407f59e190bee21c7f75c26e24a7a91bdf48b3aba8c94"
+    },
+    {
+      "path": "textures/rgb25/tile_2_7.png",
+      "bytes": 441072,
+      "sha256": "4f380fb2446cbfca93f9d15c346b773bc103c4fca1da58759ee7764dd8b5078a"
+    },
+    {
+      "path": "textures/rgb25/tile_3_0.png",
+      "bytes": 428913,
+      "sha256": "84d7a99c9326009a3c3e6a93a833eb7b0ba6fffeacc60ef5105e4123292395b6"
+    },
+    {
+      "path": "textures/rgb25/tile_3_1.png",
+      "bytes": 430832,
+      "sha256": "ab6354121d41d01bfa540184c415f9f1e18627d26bcbd1d345e9ec2b972263aa"
+    },
+    {
+      "path": "textures/rgb25/tile_3_2.png",
+      "bytes": 433951,
+      "sha256": "f973e60138aacdf397544f0ddda020a466c4e61eb0013d2ae7b18426f353799f"
+    },
+    {
+      "path": "textures/rgb25/tile_3_3.png",
+      "bytes": 407278,
+      "sha256": "6b1c5ed383ec5f237371bc369824f2eb1c6aee7c5fb6c496a17ef838111697af"
+    },
+    {
+      "path": "textures/rgb25/tile_3_4.png",
+      "bytes": 441679,
+      "sha256": "cabaca6c9e5b5c7182465dcc05fe90dad1220ab7ff3aa0b09b824cfad6083139"
+    },
+    {
+      "path": "textures/rgb25/tile_3_5.png",
+      "bytes": 449394,
+      "sha256": "727dcc1824f1f3512a637c0876812c8404d6794b443df29f45286329e8ff416a"
+    },
+    {
+      "path": "textures/rgb25/tile_3_6.png",
+      "bytes": 441153,
+      "sha256": "952310819a4ab50cafe5e50ea5c15badd3b0b24d01939999419d74e323abc1c6"
+    },
+    {
+      "path": "textures/rgb25/tile_3_7.png",
+      "bytes": 408557,
+      "sha256": "07ff8b33f979f230f626b974955c1ab40ce668781a601c23d4fc081a7dc32ed0"
+    },
+    {
+      "path": "textures/rgb25/tile_4_0.png",
+      "bytes": 431880,
+      "sha256": "968d1f9e0139098804189457026980c68dfd2862b6ba234e2ea7c6a61f9e96e2"
+    },
+    {
+      "path": "textures/rgb25/tile_4_1.png",
+      "bytes": 421257,
+      "sha256": "985e293d08e61816f73418c39298c7ee959b0077e0084aea507801e67551b333"
+    },
+    {
+      "path": "textures/rgb25/tile_4_2.png",
+      "bytes": 424663,
+      "sha256": "baed00446538991ffcb6727f61ff346fb3ded4074d37fc965a144cbfc2c6c611"
+    },
+    {
+      "path": "textures/rgb25/tile_4_3.png",
+      "bytes": 427219,
+      "sha256": "e8efcfd97b48ea7240812a1ed0e5739aeea6dc30079cd3c858c9ec1cbb2641b6"
+    },
+    {
+      "path": "textures/rgb25/tile_4_4.png",
+      "bytes": 431629,
+      "sha256": "75e48fe12def3fd70bdfea9293ed83df08f59bba967067c3e3910f2d61a346a9"
+    },
+    {
+      "path": "textures/rgb25/tile_4_5.png",
+      "bytes": 442054,
+      "sha256": "ccf582174c7f6eb948fa75533205bed91234952c1177bab61639f17d5e93d4cc"
+    },
+    {
+      "path": "textures/rgb25/tile_4_6.png",
+      "bytes": 447849,
+      "sha256": "62cd2c65d7803c6ba07e35b6b8d22951062562446df7b9cde3948e92213acd8f"
+    },
+    {
+      "path": "textures/rgb25/tile_4_7.png",
+      "bytes": 429615,
+      "sha256": "38cf86ce69cd827fa2754b182b3877d39e2a6bc1ba2a495880fd32c2b0a1629b"
+    },
+    {
+      "path": "textures/rgb25/tile_5_0.png",
+      "bytes": 440537,
+      "sha256": "2f11ad418e27468af2ba50a0e236fc4e0cdb9bb3fa9db190aa3e6405fb37ae43"
+    },
+    {
+      "path": "textures/rgb25/tile_5_1.png",
+      "bytes": 414760,
+      "sha256": "524bcf01cf7c876d8b893cd72e087f0dafa33f7dd831762e1249de8d2a4399b6"
+    },
+    {
+      "path": "textures/rgb25/tile_5_2.png",
+      "bytes": 414130,
+      "sha256": "0c6cae3ceb9931f6466ea86c6c29a107095844a1e6461b14c0950d4d0e1da4f4"
+    },
+    {
+      "path": "textures/rgb25/tile_5_3.png",
+      "bytes": 418750,
+      "sha256": "5bcbadfbd27a325220ec57769db1147cc6e91c2d1d376671bdf799449f310ddb"
+    },
+    {
+      "path": "textures/rgb25/tile_5_4.png",
+      "bytes": 413255,
+      "sha256": "b2539e29062804e427f5c5f5c2dd9ac5fa8ceec5560eb15949be13a3bf921ea1"
+    },
+    {
+      "path": "textures/rgb25/tile_5_5.png",
+      "bytes": 428823,
+      "sha256": "953e9dbe091808491340a32f4c78909233d3d1d0e629f5d30cc99553c72e8728"
+    },
+    {
+      "path": "textures/rgb25/tile_5_6.png",
+      "bytes": 438189,
+      "sha256": "6d7c8cc2490955e57e0a5b4c266ffee853e40fc741f39d66fca87af6282bc983"
+    },
+    {
+      "path": "textures/rgb25/tile_5_7.png",
+      "bytes": 387048,
+      "sha256": "670318c79876a569b2cbe26c7b7ad014adbd166f8a2ffe2fe7622afb36e1871e"
+    },
+    {
+      "path": "textures/rgb25/tile_6_0.png",
+      "bytes": 396096,
+      "sha256": "28eaae95ef257e06250fe3fa34096218087ca3a6508d2667049aa58af3ddc9d4"
+    },
+    {
+      "path": "textures/rgb25/tile_6_1.png",
+      "bytes": 393444,
+      "sha256": "500f1b73b9de57fe6712d36a458a26d5e307cbb010bd1787975ca4828338d179"
+    },
+    {
+      "path": "textures/rgb25/tile_6_2.png",
+      "bytes": 375491,
+      "sha256": "8dc3dfbdc6d4efe98a19757ad3619c142a3b12575c0213a517858b5b6c8c6a7f"
+    },
+    {
+      "path": "textures/rgb25/tile_6_3.png",
+      "bytes": 377012,
+      "sha256": "ad71ec24c12d09b986ae5f237f2da69ec70e980bbdd5d79f86f47bd37d191bf2"
+    },
+    {
+      "path": "textures/rgb25/tile_6_4.png",
+      "bytes": 371988,
+      "sha256": "7e531dffa9bf8c1fd865a900be1ed4ba247ab0658195a0df6748bd3104c0e00c"
+    },
+    {
+      "path": "textures/rgb25/tile_6_5.png",
+      "bytes": 360066,
+      "sha256": "215ab71bda7c0a1f3391b34355cb4cd3c6d7ad172e05628cb66ca662504a1c08"
+    },
+    {
+      "path": "textures/rgb25/tile_6_6.png",
+      "bytes": 362808,
+      "sha256": "2e88f5337f75ca5ebedea33b74bf6083fbd337f88005e1c21cd53b83cba44406"
+    },
+    {
+      "path": "textures/rgb25/tile_6_7.png",
+      "bytes": 352127,
+      "sha256": "108d3904bc8e4481c110575450d39b7d63f4e6f19b21c0b61298ef74f3846da9"
+    },
+    {
+      "path": "textures/rgb25/tile_7_0.png",
+      "bytes": 396673,
+      "sha256": "15b886ed2a5d13d1a1a37ea73ed41cf73cba68de7113965a8d2a797975cd19b1"
+    },
+    {
+      "path": "textures/rgb25/tile_7_1.png",
+      "bytes": 403356,
+      "sha256": "b27e2b16a21931f66e7f044b240c59fbf80aff2bab96fe5bfd3e99003439b721"
+    },
+    {
+      "path": "textures/rgb25/tile_7_2.png",
+      "bytes": 447647,
+      "sha256": "1e07ea7795d55565a8f11e747a37eac47b692535829a10a56ef6bd9c29987d0d"
+    },
+    {
+      "path": "textures/rgb25/tile_7_3.png",
+      "bytes": 387266,
+      "sha256": "df372a8ed5894c2b49557d00279637b65f9191637b206b3fa386efc046e37a59"
+    },
+    {
+      "path": "textures/rgb25/tile_7_4.png",
+      "bytes": 395843,
+      "sha256": "fd8f58c73dfe962f94d37ad08d1bc1602268091aa78f890d536a0e45755e6448"
+    },
+    {
+      "path": "textures/rgb25/tile_7_5.png",
+      "bytes": 335333,
+      "sha256": "c23b6e91a8dc3974b93d88b361a83301861302ecf680e5c594a442b1523dd811"
+    },
+    {
+      "path": "textures/rgb25/tile_7_6.png",
+      "bytes": 405137,
+      "sha256": "3491ebbd789f639a93d601f99fe2377f10af1b199ebc613b6187efe4331cfe0f"
+    },
+    {
+      "path": "textures/rgb25/tile_7_7.png",
+      "bytes": 381744,
+      "sha256": "a95f5ad5f0fae33443f5c76dffdf4374ff166a70129cac7c941474759d76aade"
+    },
+    {
+      "path": "textures/rgb5/tile_0_0.png",
+      "bytes": 8395624,
+      "sha256": "47c208fe4f396c37b4a5127573df67fb96bdf5d3664005354b7dab8f9676fd50"
+    },
+    {
+      "path": "textures/rgb5/tile_0_1.png",
+      "bytes": 8144403,
+      "sha256": "3defe42d28ee1bb0a94d3c5573a0d14446f0ced3b9fcbf07867bdf82f63f67a7"
+    },
+    {
+      "path": "textures/rgb5/tile_0_2.png",
+      "bytes": 7962991,
+      "sha256": "abfeecc425126c932a8549b60876b9e95b0e667d7751052fe7c36fb712904c6d"
+    },
+    {
+      "path": "textures/rgb5/tile_0_3.png",
+      "bytes": 8470940,
+      "sha256": "b8a3e5869276a1b4e833a1a6ff5223ea1e6cc18a39cc4cc8e16ffc27919532be"
+    },
+    {
+      "path": "textures/rgb5/tile_0_4.png",
+      "bytes": 8062122,
+      "sha256": "699a6731756240774f9ba2880c53ccc98f855fda8b77f7095a8c04be19697115"
+    },
+    {
+      "path": "textures/rgb5/tile_0_5.png",
+      "bytes": 7718216,
+      "sha256": "fed94b066e41c1e82a6223a26f9d9d2f27de1a8e223e85caa7b4ae220cde9589"
+    },
+    {
+      "path": "textures/rgb5/tile_0_6.png",
+      "bytes": 7728021,
+      "sha256": "a89c6f9a9b33db48c1d5416d85153ddbbb7fd5322143047adb7ad11958f999be"
+    },
+    {
+      "path": "textures/rgb5/tile_0_7.png",
+      "bytes": 7014074,
+      "sha256": "8ac1b19ae810bc4a7c89680f31b921baa6b67bc540759660921d8b1a661c77ce"
+    },
+    {
+      "path": "textures/rgb5/tile_1_0.png",
+      "bytes": 9037493,
+      "sha256": "3223fa45bed364125ea8d143f6a9e047c37bccf3a22edf7b0b01ac1827b691ac"
+    },
+    {
+      "path": "textures/rgb5/tile_1_1.png",
+      "bytes": 9133136,
+      "sha256": "1559e9d9759e356f835610bfcbf7ff8ba7fa3573ed6033aedeef8e25873ed3f2"
+    },
+    {
+      "path": "textures/rgb5/tile_1_2.png",
+      "bytes": 8481249,
+      "sha256": "f481f40f69825976ad9ead2bf6f5d62882b75a78cb68bdb374c939416e9b9815"
+    },
+    {
+      "path": "textures/rgb5/tile_1_3.png",
+      "bytes": 8245979,
+      "sha256": "8f56f375373b56cae03dc7e06b695f2632d90a9806de28a202c949efcf3ebad8"
+    },
+    {
+      "path": "textures/rgb5/tile_1_4.png",
+      "bytes": 8941043,
+      "sha256": "e628a4727517c417f32b8ef6a1ef9e1c6edd7d80837011645d1527d21b7a9312"
+    },
+    {
+      "path": "textures/rgb5/tile_1_5.png",
+      "bytes": 7813729,
+      "sha256": "5e91309dcf12bbb24fc7630b64af0fa1029f7a6b66a0336fe42980e7c076f6be"
+    },
+    {
+      "path": "textures/rgb5/tile_1_6.png",
+      "bytes": 7314917,
+      "sha256": "482b7bf9c336512b41e25be6539741dd61af29516748b5a054650b793b949cdf"
+    },
+    {
+      "path": "textures/rgb5/tile_1_7.png",
+      "bytes": 7370596,
+      "sha256": "3345a0bb3251ae43b4bc5e817eb4b0a5a570af7cece986eb89e0cb1004306695"
+    },
+    {
+      "path": "textures/rgb5/tile_2_0.png",
+      "bytes": 8439486,
+      "sha256": "83dcccf0374988a35d63685feb58eb371ec73cf83398679fc0f0dfc0d6eafafa"
+    },
+    {
+      "path": "textures/rgb5/tile_2_1.png",
+      "bytes": 8459060,
+      "sha256": "6d6710e6b03bceef908a2841004cf67107422f17e685485c1e3b59193ad420f2"
+    },
+    {
+      "path": "textures/rgb5/tile_2_2.png",
+      "bytes": 8288776,
+      "sha256": "fabde9e17161727023b2049f1c3518fdde7b1deece3553a2c8ff1fd182b70798"
+    },
+    {
+      "path": "textures/rgb5/tile_2_3.png",
+      "bytes": 8134190,
+      "sha256": "563e2c1a554a15db88cb8c23c7d863a0e5396dc052ecbda19d099ba909ae0fdb"
+    },
+    {
+      "path": "textures/rgb5/tile_2_4.png",
+      "bytes": 7968504,
+      "sha256": "955a6b9501b0cd40f2daaa00911373141a2d77eedeb1d36d6f5ab0eac490634c"
+    },
+    {
+      "path": "textures/rgb5/tile_2_5.png",
+      "bytes": 8515974,
+      "sha256": "41a468bcc25b579371e166e7f99e10f40a93468c11631343a79758ee3641a7e7"
+    },
+    {
+      "path": "textures/rgb5/tile_2_6.png",
+      "bytes": 7820973,
+      "sha256": "b2c8f7450c69cc50429297d2b084cc35084b13aaaa659a4298db2643be406322"
+    },
+    {
+      "path": "textures/rgb5/tile_2_7.png",
+      "bytes": 7507272,
+      "sha256": "b4cb314444fdf392df83a2c016a0850b5e7ad4361a7223c6899679c18cef8cf0"
+    },
+    {
+      "path": "textures/rgb5/tile_3_0.png",
+      "bytes": 8423406,
+      "sha256": "89c65096b62be7e69db2ed8a110846a7ee088a28bbe4ffad4ab8c97c05337e9e"
+    },
+    {
+      "path": "textures/rgb5/tile_3_1.png",
+      "bytes": 8488668,
+      "sha256": "a20dd939afecefa9ba2b861fd4b197211dab0f9934fa8cd5f4e512c58e46d550"
+    },
+    {
+      "path": "textures/rgb5/tile_3_2.png",
+      "bytes": 8407886,
+      "sha256": "2d0e35b6993f37b6b57dbe7136afacd210bb7978a1865525938e11c42ee86507"
+    },
+    {
+      "path": "textures/rgb5/tile_3_3.png",
+      "bytes": 7987956,
+      "sha256": "c497df33644981bb3fbf7c511743249e0536b13d2dba293d62dc8b0dc52ce721"
+    },
+    {
+      "path": "textures/rgb5/tile_3_4.png",
+      "bytes": 8625180,
+      "sha256": "c724d2ac140c105cefb1711a60baf03462fa44f4be96b7531968d7aec2b5ee60"
+    },
+    {
+      "path": "textures/rgb5/tile_3_5.png",
+      "bytes": 8413670,
+      "sha256": "3ea41621287943002c73976aa12d7b5671f87ca79e5d99fb30f9d23cfe6d5504"
+    },
+    {
+      "path": "textures/rgb5/tile_3_6.png",
+      "bytes": 8544212,
+      "sha256": "e1b550c120298c0787b1089d398e0ff2e2ab0269d6b3f6f6f062eca551dff48e"
+    },
+    {
+      "path": "textures/rgb5/tile_3_7.png",
+      "bytes": 8205088,
+      "sha256": "7f0077fb83eb8b92b98aebbc57c56bef449c1ad82303bb23a65af10afa8d86d3"
+    },
+    {
+      "path": "textures/rgb5/tile_4_0.png",
+      "bytes": 8614018,
+      "sha256": "835451a2d1c7b34b13e487f8827e35b87fa14cc73ccf0de14189151759e11f7f"
+    },
+    {
+      "path": "textures/rgb5/tile_4_1.png",
+      "bytes": 8629003,
+      "sha256": "0887e9e000712cead94a92a9ae369d9751f70524331b4c437591bd5cb118e48c"
+    },
+    {
+      "path": "textures/rgb5/tile_4_2.png",
+      "bytes": 8506250,
+      "sha256": "4be55d49195dcaa2ec2c85f1036bf69d48adae11edde7f740dfbf2682d23fdcf"
+    },
+    {
+      "path": "textures/rgb5/tile_4_3.png",
+      "bytes": 8157022,
+      "sha256": "922bbb7182d2571b58961dc7d2f92e2081ee32c56b77ca376859190b403c5626"
+    },
+    {
+      "path": "textures/rgb5/tile_4_4.png",
+      "bytes": 8578327,
+      "sha256": "e1388e7c59ae6fb278022ea913f4e6212c41c029f9dc2126d20090d69d0b2784"
+    },
+    {
+      "path": "textures/rgb5/tile_4_5.png",
+      "bytes": 8409966,
+      "sha256": "5d8ffe6d786901be8abfc667b3c357fa8e8fd842684f14aa00c00fc7842c1742"
+    },
+    {
+      "path": "textures/rgb5/tile_4_6.png",
+      "bytes": 9174948,
+      "sha256": "cf96b553063d9a45bdda63cb55df4bd84125f3f9d0ca76032a33808ee42a7eac"
+    },
+    {
+      "path": "textures/rgb5/tile_4_7.png",
+      "bytes": 8892145,
+      "sha256": "323376f8205b7972e6b1c1f02498ccd839ce75244001e2b2e1677671a4db1c6f"
+    },
+    {
+      "path": "textures/rgb5/tile_5_0.png",
+      "bytes": 8241818,
+      "sha256": "74fb1aa9a054096923f4d555a231a30a7990b397179a85ee75ea7586bece5705"
+    },
+    {
+      "path": "textures/rgb5/tile_5_1.png",
+      "bytes": 8350009,
+      "sha256": "9f167264fc40f7d7d47b5cfa5012d4fd07f46c0f35583cd87bb2ea3961985483"
+    },
+    {
+      "path": "textures/rgb5/tile_5_2.png",
+      "bytes": 8145031,
+      "sha256": "988c80968aa4d9ae99996bc03923c8e87216a8dee36b524d542ef295fbebaf86"
+    },
+    {
+      "path": "textures/rgb5/tile_5_3.png",
+      "bytes": 8272613,
+      "sha256": "dcb595538cb257b6cc4a2d7d26ff3d3f14e2021a5498edac7c3df15316c36484"
+    },
+    {
+      "path": "textures/rgb5/tile_5_4.png",
+      "bytes": 8077956,
+      "sha256": "6026e7a351949e241fc3e83d2e9402effaac963eaad8a1792c1840b3b25024a2"
+    },
+    {
+      "path": "textures/rgb5/tile_5_5.png",
+      "bytes": 7887657,
+      "sha256": "ea646f357473d1ce3bab972c90d6076f50d2a285917538c6c31e6ef060e2dc29"
+    },
+    {
+      "path": "textures/rgb5/tile_5_6.png",
+      "bytes": 8140744,
+      "sha256": "9e9fdfd5ebcc3602ca45cc55decf48326f194b2dffc2ce9a666f5ee9e93cceb8"
+    },
+    {
+      "path": "textures/rgb5/tile_5_7.png",
+      "bytes": 7710374,
+      "sha256": "e254aeea20f4a262d21bcafb5ced75558315d820180a30f9b68c310570b5abe6"
+    },
+    {
+      "path": "textures/rgb5/tile_6_0.png",
+      "bytes": 7956455,
+      "sha256": "cd6db6383fee31d0c85f4748592fe6fd5371f9471cc1cd5c53bc56ea796c23ea"
+    },
+    {
+      "path": "textures/rgb5/tile_6_1.png",
+      "bytes": 8249829,
+      "sha256": "fb93c970ddb03d0243d94f847e9f9ffe6efd2d4003e3a29bfdcb47a3c87bdc3e"
+    },
+    {
+      "path": "textures/rgb5/tile_6_2.png",
+      "bytes": 8055619,
+      "sha256": "29fdba670cbe74c9bb3950d5f32d8894c0d588d21f55ee18f2e86324a298e962"
+    },
+    {
+      "path": "textures/rgb5/tile_6_3.png",
+      "bytes": 7942232,
+      "sha256": "fea72ef1da6ee062e13374e87468c3d956962cae9e28d3e39ce68429a84251e6"
+    },
+    {
+      "path": "textures/rgb5/tile_6_4.png",
+      "bytes": 8133124,
+      "sha256": "66ff6e21cf8c51728e177f7c816ea4abcc151f37fd9f50709743045b9d784248"
+    },
+    {
+      "path": "textures/rgb5/tile_6_5.png",
+      "bytes": 7872113,
+      "sha256": "d8ee2d8f0fd1b77d665269fda4c33f7ba94af25a8981e5ca3eebc6d12fdb0df0"
+    },
+    {
+      "path": "textures/rgb5/tile_6_6.png",
+      "bytes": 7549694,
+      "sha256": "bcae11fa42a59fb6b7a0c7ba5ba77d11d56d8edc7d635c972639139fad042993"
+    },
+    {
+      "path": "textures/rgb5/tile_6_7.png",
+      "bytes": 7454315,
+      "sha256": "4210e2a86031557d0e41310a67e0585f76af746b9014544fe3e4f24f7e884d18"
+    },
+    {
+      "path": "textures/rgb5/tile_7_0.png",
+      "bytes": 7638754,
+      "sha256": "8e9469f3c71542b6fc0f8bc6f8b63463cdb0027e69884c862ff7f292cf626c41"
+    },
+    {
+      "path": "textures/rgb5/tile_7_1.png",
+      "bytes": 7440982,
+      "sha256": "8ab51f81c7544271b18d7a49d90ddea7c317198b04091dc70ccf3075830c0e27"
+    },
+    {
+      "path": "textures/rgb5/tile_7_2.png",
+      "bytes": 8200269,
+      "sha256": "686d5a49d39e76a26701a0eb65ec15e6527a908d11d91112b5f0fed13858b624"
+    },
+    {
+      "path": "textures/rgb5/tile_7_3.png",
+      "bytes": 8160155,
+      "sha256": "a12057facbc692f01bca50d8b9e9837bae8e5776763b5103af11600625145df8"
+    },
+    {
+      "path": "textures/rgb5/tile_7_4.png",
+      "bytes": 7855897,
+      "sha256": "8c696704e0e11d7ecc976bf64680b7379bf613631ffd8fbbb29950e7893ae073"
+    },
+    {
+      "path": "textures/rgb5/tile_7_5.png",
+      "bytes": 7494639,
+      "sha256": "886483d3484925986ce52c1fbb81938097f8e40e83f6385e53b02c512201e562"
+    },
+    {
+      "path": "textures/rgb5/tile_7_6.png",
+      "bytes": 8824891,
+      "sha256": "a6fe6908b12d957bac811a8b7a90181ce9e45ff61dee2cabe3a94587b9913b71"
+    },
+    {
+      "path": "textures/rgb5/tile_7_7.png",
+      "bytes": 7914383,
+      "sha256": "fbd7c6a8cb2bb2ba3d30c17a4724d36b96f969bbb9b8d9a9b013330bb59b485d"
+    },
+    {
+      "path": "rgb25-inspection-overview.png",
+      "bytes": 2149407,
+      "sha256": "1ff43aa06d9c04d6d18b8aca38c4eee5d37fc27959fc4eebf41d87eb58b160e2"
+    },
+    {
+      "path": "rgb125-inspection-overview.png",
+      "bytes": 2129380,
+      "sha256": "b428dfd89eb73f03e53dd5f47abf1fa3f6ec7c0c07b70341ab24cf303b6d8015"
+    },
+    {
+      "path": "rgb5-inspection-overview.png",
+      "bytes": 2276539,
+      "sha256": "ef5511457336d1f5271d5966addc95fc29df4a33e94fd2cae9f7c5e57d2fa57f"
+    },
+    {
+      "path": "source-patch-comparison.png",
+      "bytes": 1123110,
+      "sha256": "1f8bfb8b735ba915ccf410aa38fe360331fa94ae60abcaae246b22436243d63b"
+    },
+    {
+      "path": "meshes/tile_0_0.glb",
+      "sha256": "b1a5165b72bd484b210d93368ff19229eead1e7dc322ec2044cc5d8222215b94",
+      "bytes": 14032996
+    },
+    {
+      "path": "meshes/tile_0_1.glb",
+      "sha256": "7c16a8424d4285147167a27ac89ffac35a10501f63309e4d66f8df6363e526b2",
+      "bytes": 14032996
+    },
+    {
+      "path": "meshes/tile_0_2.glb",
+      "sha256": "379f3e581467b38e2cf0604e50cf66e3d9761289ce3a6d6ea929ac95b23ba097",
+      "bytes": 14032996
+    },
+    {
+      "path": "meshes/tile_0_3.glb",
+      "sha256": "458524483152b833a510e4da184ce8a01a089aca3d7a2f2bbf1a998bb854f5d3",
+      "bytes": 14032996
+    },
+    {
+      "path": "meshes/tile_0_4.glb",
+      "sha256": "59b29937af7dfa5a498de6bcb82307b7f71fa55fd66768312855bb033be8b3f3",
+      "bytes": 14032996
+    },
+    {
+      "path": "meshes/tile_0_5.glb",
+      "sha256": "00b0e7532ee2ce8a2dc9822b1d47012b500354a96c8c6442d3cad4da3d7ac4a9",
+      "bytes": 14032996
+    },
+    {
+      "path": "meshes/tile_0_6.glb",
+      "sha256": "4716626684800021e50486780e6b6b8d5bbc77ba596511e0cab4b5fe0f64bd6e",
+      "bytes": 14032996
+    },
+    {
+      "path": "meshes/tile_0_7.glb",
+      "sha256": "f31aa15d3875cfb268272f38ebf481b3d5e0eb508e44d3ed46d2d6ec29d9ab29",
+      "bytes": 14004964
+    },
+    {
+      "path": "meshes/tile_1_0.glb",
+      "sha256": "81c959878c04f4b5226ef61fa3fff613a70c15a3aead4ded4474dc228e4f66f0",
+      "bytes": 14032996
+    },
+    {
+      "path": "meshes/tile_1_1.glb",
+      "sha256": "3e255c9bdf054871e1ac474f5ee22933d3c53bd5d43a076b622233b213879662",
+      "bytes": 14033000
+    },
+    {
+      "path": "meshes/tile_1_2.glb",
+      "sha256": "58835c99da131ecb92932f30a521a70f011f0ed7aef31b7a8cd1d9ae52997906",
+      "bytes": 14033000
+    },
+    {
+      "path": "meshes/tile_1_3.glb",
+      "sha256": "67856485e34aad8687c4a47001356bd0d35c3d4bc324a53e982e851b263f402e",
+      "bytes": 14033000
+    },
+    {
+      "path": "meshes/tile_1_4.glb",
+      "sha256": "2de8560b23d4bafa4585e852d6b0e5c2b157da14f59c30c010e7297d587bf914",
+      "bytes": 14033000
+    },
+    {
+      "path": "meshes/tile_1_5.glb",
+      "sha256": "326442aeffd6137c70517c66382cf1c8ac51e078205179600509e450d5b5be3f",
+      "bytes": 14033000
+    },
+    {
+      "path": "meshes/tile_1_6.glb",
+      "sha256": "f9d993512146ea2328e474ad143932ff0566ed2749698948f74d8ebee7b47738",
+      "bytes": 14033000
+    },
+    {
+      "path": "meshes/tile_1_7.glb",
+      "sha256": "b74966d596cfe10cdd160c90b6db3216f04fca6627943bdc9ef2723ef79907b8",
+      "bytes": 14004968
+    },
+    {
+      "path": "meshes/tile_2_0.glb",
+      "sha256": "c36cdfd41c075e75abae8bf72f4122ed62e06051750b724bf6fe83eef98e62e0",
+      "bytes": 14032996
+    },
+    {
+      "path": "meshes/tile_2_1.glb",
+      "sha256": "4bf4cbb2e25043f839acdaea62c49f5582340bb1bb3fb7dfd6b3ed91ed1d5a03",
+      "bytes": 14033000
+    },
+    {
+      "path": "meshes/tile_2_2.glb",
+      "sha256": "6c2d1673a2738bf38e4b752ea9945a511011c9ab5ca200b1e5a3b2e7e064266a",
+      "bytes": 14032996
+    },
+    {
+      "path": "meshes/tile_2_3.glb",
+      "sha256": "42d8a2df7e276bd0f38a42653b74a0be13fccdc3e0b5bd2abbe090da2f8a64b4",
+      "bytes": 14033000
+    },
+    {
+      "path": "meshes/tile_2_4.glb",
+      "sha256": "a001dc52e7a6dbed3d3de9cf971c91d137e0cc6f2352c6d0735b0c8ce076bea2",
+      "bytes": 14033000
+    },
+    {
+      "path": "meshes/tile_2_5.glb",
+      "sha256": "016c313f45d29b92985045a50bf28cb91171fcfbf9a85fa66c80d3c81a668436",
+      "bytes": 14033000
+    },
+    {
+      "path": "meshes/tile_2_6.glb",
+      "sha256": "90d69269bd9c5399f4d3e377b57bc4b21a2a70fd6424113bb07ba713c5329299",
+      "bytes": 14033000
+    },
+    {
+      "path": "meshes/tile_2_7.glb",
+      "sha256": "00f7e41073ad574dbd10dee1b1e86db223da1ffe605539fdb38079ad4bd8c7d0",
+      "bytes": 14004968
+    },
+    {
+      "path": "meshes/tile_3_0.glb",
+      "sha256": "0ff5fea80db475df761a2ae28e0ca3dcebeab5ba706cc6d2ffce4ade40e7c84b",
+      "bytes": 14032996
+    },
+    {
+      "path": "meshes/tile_3_1.glb",
+      "sha256": "ba7d579e1f3da8a508a0947dff62b5c4840fe7a5633e59d03738c4b0d536c7cd",
+      "bytes": 14032996
+    },
+    {
+      "path": "meshes/tile_3_2.glb",
+      "sha256": "04ba4bf9f6459a2f0130d570cd578e32522e2a0394d4d1bc5cf0f9d4de814b82",
+      "bytes": 14033000
+    },
+    {
+      "path": "meshes/tile_3_3.glb",
+      "sha256": "dc05acbd84b78c7f422c2779578c40425bab85f9dc0bdade99b8b356b62aef1b",
+      "bytes": 14032996
+    },
+    {
+      "path": "meshes/tile_3_4.glb",
+      "sha256": "806cc0bc84f9070dfda0ed379b326cf8be7cecc77bec2f5c1b44b49f42bf9a2d",
+      "bytes": 14032996
+    },
+    {
+      "path": "meshes/tile_3_5.glb",
+      "sha256": "2a29266bc85cfb00b3445b0ef2a552a5f008ad1e5211161baabe94605c55ab43",
+      "bytes": 14033000
+    },
+    {
+      "path": "meshes/tile_3_6.glb",
+      "sha256": "ed92e446f316f08d321e828ce61371b0d5c7cfe740ba46a5789fdc2659a98145",
+      "bytes": 14033000
+    },
+    {
+      "path": "meshes/tile_3_7.glb",
+      "sha256": "3f312c7638dd0b1de2ae2928331f295b13fdfbabbce693e3b9157427c2c75cb0",
+      "bytes": 14004968
+    },
+    {
+      "path": "meshes/tile_4_0.glb",
+      "sha256": "6e838efb77169b9ecb809019191f3bc4bbed51ab906e468fc1adade2df3c419c",
+      "bytes": 14032996
+    },
+    {
+      "path": "meshes/tile_4_1.glb",
+      "sha256": "c5665e984ffb9734c4af3dcd1335fd6131be88b60e5884b754205d2f20de1085",
+      "bytes": 14033000
+    },
+    {
+      "path": "meshes/tile_4_2.glb",
+      "sha256": "91a32cbcd629ec0f163fab0dc522de0eb6c0aa63281252049b1e5a2926cad4d4",
+      "bytes": 14032996
+    },
+    {
+      "path": "meshes/tile_4_3.glb",
+      "sha256": "a09be0aeb33b5d1fe764d1de83c24e24d87985fbbda1802eed6a371ead18cfb1",
+      "bytes": 14033000
+    },
+    {
+      "path": "meshes/tile_4_4.glb",
+      "sha256": "04b9e4e8f1368ea6d3e3172abe05e36c91d662ce163a6f85de03e920ae87f646",
+      "bytes": 14033000
+    },
+    {
+      "path": "meshes/tile_4_5.glb",
+      "sha256": "66615ef12b0971ab5f0d8300073edaa4ee7d691a0dcfd2e2747f6c3e6c3d1bab",
+      "bytes": 14033000
+    },
+    {
+      "path": "meshes/tile_4_6.glb",
+      "sha256": "fe03ca25a38d1b43ae65ea2d57a2f0fbdf68dcf1f36bceca089cd23c096a1a67",
+      "bytes": 14033000
+    },
+    {
+      "path": "meshes/tile_4_7.glb",
+      "sha256": "4b9f0dcb3f95918763c5bb5461315d13b1b96386ffd9b0d7c5b6c4e10d8184b9",
+      "bytes": 14004968
+    },
+    {
+      "path": "meshes/tile_5_0.glb",
+      "sha256": "460f2c92989aee5776f107766101b4ef6cdb46cf5fd0351ee3452f6fbbd06522",
+      "bytes": 14032996
+    },
+    {
+      "path": "meshes/tile_5_1.glb",
+      "sha256": "420eeb03d69a6097e74dfdfbd0657149973c6f269ec47da4b92e7e7cde9af47c",
+      "bytes": 14033000
+    },
+    {
+      "path": "meshes/tile_5_2.glb",
+      "sha256": "63b4cf784fe4d7197146814a53219349500364f41a7f48b911babc8308e42859",
+      "bytes": 14033000
+    },
+    {
+      "path": "meshes/tile_5_3.glb",
+      "sha256": "43a066a39567030d6875006a9a6225335c7f1390dfe5509981f71df36df3b10d",
+      "bytes": 14033000
+    },
+    {
+      "path": "meshes/tile_5_4.glb",
+      "sha256": "5a10c0390567bf0cab93c767fceee929b3003c2cc22f7320f2ac26a66a59fd9a",
+      "bytes": 14033000
+    },
+    {
+      "path": "meshes/tile_5_5.glb",
+      "sha256": "1ac1d18958c01e6d110bc53bd0233eaa24d9af64cb804aba2a691793ab81ee26",
+      "bytes": 14033000
+    },
+    {
+      "path": "meshes/tile_5_6.glb",
+      "sha256": "efd886cb4d76955f153706070f818dd6537ad4e5f9fdf929709fa0bf5c456c91",
+      "bytes": 14033000
+    },
+    {
+      "path": "meshes/tile_5_7.glb",
+      "sha256": "0853c4535d961740a69ec954c4e5486c76c2a0c7f153a8cab55df22b665a9351",
+      "bytes": 14004968
+    },
+    {
+      "path": "meshes/tile_6_0.glb",
+      "sha256": "a894ccd8043961858b9adb7b9cc0bea499a07fca9bf663f14faff1fa74381ccc",
+      "bytes": 14033000
+    },
+    {
+      "path": "meshes/tile_6_1.glb",
+      "sha256": "e481f204346bf132511e46fd8909bc60ba533047ff6bb0366d3f9a48c49bcb7e",
+      "bytes": 14033000
+    },
+    {
+      "path": "meshes/tile_6_2.glb",
+      "sha256": "30ac24b6ea2f4c406d872c064f6c56bb3780425618ec89d0ca752afa8fadb622",
+      "bytes": 14033000
+    },
+    {
+      "path": "meshes/tile_6_3.glb",
+      "sha256": "8bc99927e1cea12697a76c97f06883a69051c1053dc2c97de8071018b28e23c4",
+      "bytes": 14033000
+    },
+    {
+      "path": "meshes/tile_6_4.glb",
+      "sha256": "e1633cab258ea50e38e592a69dc69396fb109d2e273a6cea663cb77c6e8d8500",
+      "bytes": 14033000
+    },
+    {
+      "path": "meshes/tile_6_5.glb",
+      "sha256": "406190fd7398426875e5d1ca5f5301a14d54046cbc45013b8333531e488688cc",
+      "bytes": 14033000
+    },
+    {
+      "path": "meshes/tile_6_6.glb",
+      "sha256": "aa7a2f1900f4eae4b2eec8b3112bbb1b2a33d6642d07765f963a3221b70da10e",
+      "bytes": 14033000
+    },
+    {
+      "path": "meshes/tile_6_7.glb",
+      "sha256": "5cd3901e56cbd4dec91a234922b75f2064b25cc9b8275122ddc385d0da7da23d",
+      "bytes": 14004968
+    },
+    {
+      "path": "meshes/tile_7_0.glb",
+      "sha256": "85a582b11bcac26356ca6fb7fcd7bba813132269b5cc488d53bde403056a2131",
+      "bytes": 14004964
+    },
+    {
+      "path": "meshes/tile_7_1.glb",
+      "sha256": "346a93573ad6878081912b1fe7fedceccbc77ae8ccd417dd09325a44c5a5e12c",
+      "bytes": 14004968
+    },
+    {
+      "path": "meshes/tile_7_2.glb",
+      "sha256": "8de527b715ec2b07462280761c37e99cfd412cf64fd61a52d5159f8799c164d9",
+      "bytes": 14004968
+    },
+    {
+      "path": "meshes/tile_7_3.glb",
+      "sha256": "8a473b8fe67cb62429e86cd30f82d98afdc5a1a6bceb9c972778780d5eea1189",
+      "bytes": 14004968
+    },
+    {
+      "path": "meshes/tile_7_4.glb",
+      "sha256": "54024c035774f167d6d69b02a84276a9ca9e68e52cf4717cafa0e55612883933",
+      "bytes": 14004968
+    },
+    {
+      "path": "meshes/tile_7_5.glb",
+      "sha256": "a250ad8a50d5a41c115cc09dab9691b48a0f923db858ff2377e58e007b551fed",
+      "bytes": 14004968
+    },
+    {
+      "path": "meshes/tile_7_6.glb",
+      "sha256": "abd23fe06dde62eb4d1c0c828fe22671e26c56448c8d1762b2db67bd8ea17207",
+      "bytes": 14004968
+    },
+    {
+      "path": "meshes/tile_7_7.glb",
+      "sha256": "c2f58dee62f01e143ff8a7abda558c2f2e57873f40e8bacd20b06f8591178893",
+      "bytes": 13976992
+    }
+  ],
+  "identity": "30b8a6200cf1a50aeec4f9cf471e96598955dbbf2704d793e2eb54d4f2acb198"
+}

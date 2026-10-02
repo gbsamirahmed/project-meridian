@@ -1,0 +1,362 @@
+{
+  "date": "2026-10-02",
+  "result": "PASS",
+  "canonical_product_identity": "30b8a6200cf1a50aeec4f9cf471e96598955dbbf2704d793e2eb54d4f2acb198",
+  "native_products": {
+    "result": "PASS",
+    "archive_hashes": 4,
+    "product_hashes": 260,
+    "native_rgb_pixel_checks": 27,
+    "independent_dsm_mesh_samples": 3
+  },
+  "deterministic_reprocessing": {
+    "identical_native_products": 260,
+    "processing_runs": 3
+  },
+  "renderer": {
+    "engine": "UE 5.8.2",
+    "rhi": "Direct3D11 / SM5",
+    "runs": "one variant per process, sequential",
+    "geometry_patch_count": 64,
+    "triangles": 31984002,
+    "camera_pose_identical_across_variants": true,
+    "mesh_assets_transforms_identical_across_variants": true,
+    "textures": {
+      "rgb25": {
+        "tiles": 64,
+        "built_dimensions": [
+          [
+            502,
+            502
+          ]
+        ],
+        "gpu_bytes_per_tile": [
+          1342876
+        ],
+        "total_gpu_bytes": 85944064
+      },
+      "rgb125": {
+        "tiles": 64,
+        "built_dimensions": [
+          [
+            1004,
+            1004
+          ]
+        ],
+        "gpu_bytes_per_tile": [
+          5374940
+        ],
+        "total_gpu_bytes": 343996160
+      },
+      "rgb5": {
+        "tiles": 64,
+        "built_dimensions": [
+          [
+            2510,
+            2510
+          ]
+        ],
+        "gpu_bytes_per_tile": [
+          33594508
+        ],
+        "total_gpu_bytes": 2150048512
+      }
+    },
+    "captures": [
+      {
+        "view": "overview",
+        "variant": "neutral",
+        "output": "overview-neutral.png",
+        "camera_pose_cm_degrees": [
+          50000.0,
+          52000.0,
+          125000.0,
+          -89.08334574361514,
+          -90.00000000000159,
+          -6.970823234148367e-07,
+          1.0,
+          1.0,
+          1.0,
+          50.0
+        ],
+        "sha256": "28b824ddb13be43876c53391e69a0fdaf8aafa37fcf779755130d87d9fd9d1c0"
+      },
+      {
+        "view": "moderate",
+        "variant": "neutral",
+        "output": "moderate-neutral.png",
+        "camera_pose_cm_degrees": [
+          43000.0,
+          68000.0,
+          23000.0,
+          -50.0636168530301,
+          -89.99999999999999,
+          -5.345627327968848e-07,
+          1.0,
+          1.0,
+          1.0,
+          50.0
+        ],
+        "sha256": "07b6f3ebd0982c1e92be3f01815c050f1c954cbef02778ac5047481de2c7847a"
+      },
+      {
+        "view": "low",
+        "variant": "neutral",
+        "output": "low-neutral.png",
+        "camera_pose_cm_degrees": [
+          43000.0,
+          61000.0,
+          6500.0,
+          -24.443954780416576,
+          -90.00000000000001,
+          -2.8849223216266533e-07,
+          1.0,
+          1.0,
+          1.0,
+          50.0
+        ],
+        "sha256": "9d31ce2547270f4e69a510526fbb4f625784ef2a781fe26afba352c358086f37"
+      },
+      {
+        "view": "close",
+        "variant": "neutral",
+        "output": "close-neutral.png",
+        "camera_pose_cm_degrees": [
+          40200.0,
+          54300.0,
+          3600.0,
+          -36.42178178092257,
+          -45.000000000000014,
+          -2.069644420104801e-07,
+          1.0,
+          1.0,
+          1.0,
+          50.0
+        ],
+        "sha256": "d6a95d7496ae2adfa2fafbc23442d3daf6ad8e2a5fedc5c5f4d7dfbb423bb5c1"
+      },
+      {
+        "view": "overview",
+        "variant": "rgb25",
+        "output": "overview-rgb25.png",
+        "camera_pose_cm_degrees": [
+          50000.0,
+          52000.0,
+          125000.0,
+          -89.08334574361514,
+          -90.00000000000159,
+          -6.970823234148367e-07,
+          1.0,
+          1.0,
+          1.0,
+          50.0
+        ],
+        "sha256": "8a0e9175ca32a82cfd14d30916bf172b161423b67e20202a068f0f80c6012a7d"
+      },
+      {
+        "view": "moderate",
+        "variant": "rgb25",
+        "output": "moderate-rgb25.png",
+        "camera_pose_cm_degrees": [
+          43000.0,
+          68000.0,
+          23000.0,
+          -50.0636168530301,
+          -89.99999999999999,
+          -5.345627327968848e-07,
+          1.0,
+          1.0,
+          1.0,
+          50.0
+        ],
+        "sha256": "505c5d68978e04b23e591b50da16852a16de8ca32e1ca71eabb932b40b94d498"
+      },
+      {
+        "view": "low",
+        "variant": "rgb25",
+        "output": "low-rgb25.png",
+        "camera_pose_cm_degrees": [
+          43000.0,
+          61000.0,
+          6500.0,
+          -24.443954780416576,
+          -90.00000000000001,
+          -2.8849223216266533e-07,
+          1.0,
+          1.0,
+          1.0,
+          50.0
+        ],
+        "sha256": "616389797b7b43325b24af74b5ca12d93efb56ce5432a409a1aaf245faf6bacb"
+      },
+      {
+        "view": "close",
+        "variant": "rgb25",
+        "output": "close-rgb25.png",
+        "camera_pose_cm_degrees": [
+          40200.0,
+          54300.0,
+          3600.0,
+          -36.42178178092257,
+          -45.000000000000014,
+          -2.069644420104801e-07,
+          1.0,
+          1.0,
+          1.0,
+          50.0
+        ],
+        "sha256": "78f6761dcb96a342ada33285b3009bade853326ec44aaf97a8667d756bafc5b8"
+      },
+      {
+        "view": "overview",
+        "variant": "rgb125",
+        "output": "overview-rgb125.png",
+        "camera_pose_cm_degrees": [
+          50000.0,
+          52000.0,
+          125000.0,
+          -89.08334574361514,
+          -90.00000000000159,
+          -6.970823234148367e-07,
+          1.0,
+          1.0,
+          1.0,
+          50.0
+        ],
+        "sha256": "7b95968015bd208ee180ba994bebb1dce4b82ead53bddd6469969f7a07b892da"
+      },
+      {
+        "view": "moderate",
+        "variant": "rgb125",
+        "output": "moderate-rgb125.png",
+        "camera_pose_cm_degrees": [
+          43000.0,
+          68000.0,
+          23000.0,
+          -50.0636168530301,
+          -89.99999999999999,
+          -5.345627327968848e-07,
+          1.0,
+          1.0,
+          1.0,
+          50.0
+        ],
+        "sha256": "e3e44494afbbdd0c413c0339330ceaa73e672e5d000f113748f6c4bab515ae4c"
+      },
+      {
+        "view": "low",
+        "variant": "rgb125",
+        "output": "low-rgb125.png",
+        "camera_pose_cm_degrees": [
+          43000.0,
+          61000.0,
+          6500.0,
+          -24.443954780416576,
+          -90.00000000000001,
+          -2.8849223216266533e-07,
+          1.0,
+          1.0,
+          1.0,
+          50.0
+        ],
+        "sha256": "cb567f05b01c2c2354b4fa30e0ce822edc0d49f421cf25f5b5892ebbe7c526b5"
+      },
+      {
+        "view": "close",
+        "variant": "rgb125",
+        "output": "close-rgb125.png",
+        "camera_pose_cm_degrees": [
+          40200.0,
+          54300.0,
+          3600.0,
+          -36.42178178092257,
+          -45.000000000000014,
+          -2.069644420104801e-07,
+          1.0,
+          1.0,
+          1.0,
+          50.0
+        ],
+        "sha256": "3a79c9884ca2ba9406962904c67ea843ffcd462b4004aa28c1c84cb45ccf268f"
+      },
+      {
+        "view": "overview",
+        "variant": "rgb5",
+        "output": "overview-rgb5.png",
+        "camera_pose_cm_degrees": [
+          50000.0,
+          52000.0,
+          125000.0,
+          -89.08334574361514,
+          -90.00000000000159,
+          -6.970823234148367e-07,
+          1.0,
+          1.0,
+          1.0,
+          50.0
+        ],
+        "sha256": "230c7013556fc54e3bfe213797778900b5a54f7cac728a5b7ea9dab021328d7c"
+      },
+      {
+        "view": "moderate",
+        "variant": "rgb5",
+        "output": "moderate-rgb5.png",
+        "camera_pose_cm_degrees": [
+          43000.0,
+          68000.0,
+          23000.0,
+          -50.0636168530301,
+          -89.99999999999999,
+          -5.345627327968848e-07,
+          1.0,
+          1.0,
+          1.0,
+          50.0
+        ],
+        "sha256": "5eff2af5db80cfec9a3e46a9dcd31f7872c47b98099cc179239adf219f3e2b84"
+      },
+      {
+        "view": "low",
+        "variant": "rgb5",
+        "output": "low-rgb5.png",
+        "camera_pose_cm_degrees": [
+          43000.0,
+          61000.0,
+          6500.0,
+          -24.443954780416576,
+          -90.00000000000001,
+          -2.8849223216266533e-07,
+          1.0,
+          1.0,
+          1.0,
+          50.0
+        ],
+        "sha256": "4e1355d9f98fa717ae0d618fef95746c3eb28ae9a2b28ab3388821ea4ab63050"
+      },
+      {
+        "view": "close",
+        "variant": "rgb5",
+        "output": "close-rgb5.png",
+        "camera_pose_cm_degrees": [
+          40200.0,
+          54300.0,
+          3600.0,
+          -36.42178178092257,
+          -45.000000000000014,
+          -2.069644420104801e-07,
+          1.0,
+          1.0,
+          1.0,
+          50.0
+        ],
+        "sha256": "e18e9b1611f2bb5d86108d42dd05145a0b12292500d21dc61d6f9fc9d2b5ba6a"
+      }
+    ]
+  },
+  "limitations": [
+    "Initial D3D12 all-variant preparation lost the device with severe memory pressure; its partial captures were discarded. Final results use D3D11 consistently.",
+    "One interrupted texture was restored from verified native PNG. Complete built dimensions and full BGRA mip-chain bytes are required for every texture.",
+    "Missing acquisition/vertical metadata and urban heightfield limitations remain; no independent survey-accuracy claim."
+  ],
+  "production_atlas_or_tryfan_modified": false
+}
