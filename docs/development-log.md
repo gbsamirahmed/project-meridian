@@ -2514,3 +2514,40 @@ external. Production Atlas, Tryfan/reference renderer and Lab 012A are unchanged
 No renderer, common terrain grid, Lab 012B, classification or new architecture
 phase was created. A separately authorised mountain representation experiment is
 the recommended next action; no purchasing decision was made.
+
+## 2026-10-02 - Lab 012B: observed Riffelhorn mountain representations
+
+Compared complete 2 x 2 km swissALTI3D and swissSURFACE3D raster surfaces in an
+isolated external UE 5.8 project, retaining every 0.5 m cell-centre sample:
+16 million unique vertices and 31,984,002 triangles per representation. Tiled
+SWISSIMAGE retains the official 10 cm distributed grid while explicitly remaining
+25 cm native image information. Seven deterministic cameras produce 28 neutral/RGB
+comparisons with unchanged transforms and complete native texture mip resources.
+
+Scanned all 50,546,426 retained classified LiDAR returns and examined seven small
+contrasting patches with sampled exact neighbour spacing, slope/scale diagnostics,
+raw profiles and native triangle distances. Major rock/ledge/protrusion geometry
+is often already retained by the DTM. Local DSM deposit roughness survives better
+at short scales; steep cliffs still show heightfield curtains and texture stretch.
+Some raw observations around discontinuities do not survive that representation,
+although most queried ground returns fit the DSM within centimetres. Large ice/debris
+product differences remain confounded by earlier observations versus later updates;
+shadowed orthophotos do not supply missing cliff appearance. No semantic classes,
+inferred geometry, procedural detail or production architecture requirement follows.
+
+Two complete native preparations reproduce the same identity and all 209 product
+hashes; 16 original and four extracted source hashes remain unchanged. All 28
+captures, imported topology/bounds, camera poses and native texture resources pass.
+All 157 Earth Lab tests, 16 terrain-research tests, ESLint and TypeScript/Vite build
+pass, with documented existing build/deprecation and non-blocking UE import warnings.
+Sequential D3D11 captures use paging; native geometry and textures were inspected.
+Sources, products, compiled UE assets and captures remain external. Production,
+Tryfan, Lab 011 and Lab 012A are untouched.
+
+See [Lab 012B findings and viewing procedure](earth-lab/riffelhorn-012b-mountain-reconstruction.md),
+[identity/provenance](earth-lab/riffelhorn-012b-metadata.json),
+[measurements](earth-lab/riffelhorn-012b-measurements.json) and
+[validation](earth-lab/riffelhorn-012b-validation.json).
+A small stable steep-rock observation-versus-heightfield comparison is the next
+research question, requiring separate authorization. No subsequent Lab or Atlas
+world-model development is begun.

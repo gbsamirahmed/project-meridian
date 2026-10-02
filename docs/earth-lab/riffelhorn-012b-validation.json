@@ -1,0 +1,314 @@
+{
+  "result": "PASS",
+  "rendered_frames": 28,
+  "camera_checks": [
+    {
+      "view": "overview",
+      "identical_pose": [
+        100000.0,
+        100000.0,
+        460000.0,
+        -90.0,
+        0.0,
+        0.0,
+        50.0
+      ]
+    },
+    {
+      "view": "riffelhorn_oblique",
+      "identical_pose": [
+        103000.0,
+        39800.0,
+        69028.0029296875,
+        -32.167019345859174,
+        122.15229514128235,
+        5.037659816016864e-07,
+        50.0
+      ]
+    },
+    {
+      "view": "riffelhorn_structure",
+      "identical_pose": [
+        86500.0,
+        55000.0,
+        37634.503173828125,
+        -30.806981117105174,
+        116.56505117707799,
+        4.624464935445949e-07,
+        50.0
+      ]
+    },
+    {
+      "view": "loose_deposits",
+      "identical_pose": [
+        117000.0,
+        136000.0,
+        -5967.7490234375,
+        -28.661376440299648,
+        -128.6598082540901,
+        -4.780234209677934e-07,
+        50.0
+      ]
+    },
+    {
+      "view": "alpine_path",
+      "identical_pose": [
+        131000.0,
+        58000.0,
+        34628.2470703125,
+        -22.8715125793114,
+        -122.47119229084846,
+        -3.6872995751778197e-07,
+        50.0
+      ]
+    },
+    {
+      "view": "water_edge",
+      "identical_pose": [
+        111000.0,
+        68000.0,
+        33673.9990234375,
+        -30.462837747973587,
+        -107.10272896905242,
+        -4.206190154576095e-07,
+        50.0
+      ]
+    },
+    {
+      "view": "glacial_transition",
+      "identical_pose": [
+        104000.0,
+        158000.0,
+        -7501.0009765625,
+        -29.44179588290768,
+        -131.18592516570965,
+        -4.995090996690058e-07,
+        50.0
+      ]
+    }
+  ],
+  "capture_hashes": [
+    {
+      "path": "captures/raw/overview-dtm-neutral.png",
+      "sha256": "cac9e4c711fb4061ed24012832f9887dc46ed0b02d2180a8e228a127c62e6b22",
+      "bytes": 2244875
+    },
+    {
+      "path": "captures/raw/overview-dtm-rgb.png",
+      "sha256": "23c798441c21cdce43fa7514b87dfc7a5d32a0ed6875391dc313595bc82f3a56",
+      "bytes": 3090912
+    },
+    {
+      "path": "captures/raw/overview-dsm-neutral.png",
+      "sha256": "124635952c3fd3892173391542cc32eb7520852ee0a805e7e66bf7181f7f54bd",
+      "bytes": 2244875
+    },
+    {
+      "path": "captures/raw/overview-dsm-rgb.png",
+      "sha256": "ed5ba730b602b9f291533e847ae7fdb593d6dbbcb1ae8504419630b49f25ac01",
+      "bytes": 3090912
+    },
+    {
+      "path": "captures/raw/riffelhorn_oblique-dtm-neutral.png",
+      "sha256": "c6f10fd0fb577e1e55927a653ccbe9d0c69ba643f1fc26f3e66df7ec1e618a6d",
+      "bytes": 2244875
+    },
+    {
+      "path": "captures/raw/riffelhorn_oblique-dtm-rgb.png",
+      "sha256": "8057016680df3219c24354df5bf2ac6118fdcf6774353b647939c9f467750c4d",
+      "bytes": 3090912
+    },
+    {
+      "path": "captures/raw/riffelhorn_oblique-dsm-neutral.png",
+      "sha256": "a5f8de0d241d4bc58adb7092e3015246be91678876a183438f2de051dadb9a90",
+      "bytes": 2244875
+    },
+    {
+      "path": "captures/raw/riffelhorn_oblique-dsm-rgb.png",
+      "sha256": "27b6b7826655b839a8d2ae5cf4634551308ab94e7b5ec6acdf1143f599572376",
+      "bytes": 3090912
+    },
+    {
+      "path": "captures/raw/riffelhorn_structure-dtm-neutral.png",
+      "sha256": "b6954da6afd128599a623a95eafd930285018ed33003f29136a910937ad43819",
+      "bytes": 1624447
+    },
+    {
+      "path": "captures/raw/riffelhorn_structure-dtm-rgb.png",
+      "sha256": "5ca26991a387a26b02c7a344da5ceda951665d5306c34e61c5827e1f50fa6b5d",
+      "bytes": 2244875
+    },
+    {
+      "path": "captures/raw/riffelhorn_structure-dsm-neutral.png",
+      "sha256": "a61303112a1d4c034595f7b3da9c964eb5c916fc82b3485a6282f0f211d3bce1",
+      "bytes": 1624447
+    },
+    {
+      "path": "captures/raw/riffelhorn_structure-dsm-rgb.png",
+      "sha256": "cb16d92d8e74dc2a8f42d90c1988ad95787e821287432bfa1b0598cafacdb71a",
+      "bytes": 2244875
+    },
+    {
+      "path": "captures/raw/loose_deposits-dtm-neutral.png",
+      "sha256": "8640564527607e416bddb5f162a1596d2ad51daf6e4cab7c85b585d4d191c5b3",
+      "bytes": 1624447
+    },
+    {
+      "path": "captures/raw/loose_deposits-dtm-rgb.png",
+      "sha256": "8867f307480d1081a6b2a7367cd7172bbb83908d86990dfe349f8f160e4d0bb8",
+      "bytes": 4252804
+    },
+    {
+      "path": "captures/raw/loose_deposits-dsm-neutral.png",
+      "sha256": "0989576c00328769128ff5287f890496b9dd59acc03e6b7614f335f48c7c846e",
+      "bytes": 2244875
+    },
+    {
+      "path": "captures/raw/loose_deposits-dsm-rgb.png",
+      "sha256": "0b5cccfe09400e3bda8339cad511ea86fbba0c9879ae73995038609c7de0b2ce",
+      "bytes": 4252804
+    },
+    {
+      "path": "captures/raw/alpine_path-dtm-neutral.png",
+      "sha256": "6b2ccb1738f0dc85a2a44ce94968a23205206cd209572779e99ce6eecff7faaf",
+      "bytes": 2244875
+    },
+    {
+      "path": "captures/raw/alpine_path-dtm-rgb.png",
+      "sha256": "6bc59635bfc2ab1b63a66ad199d18c65fed245c6ba5164c83d8befbdce1fb495",
+      "bytes": 4252804
+    },
+    {
+      "path": "captures/raw/alpine_path-dsm-neutral.png",
+      "sha256": "ae6e2a7f27f82291d4cff353cf0f5630a92330963cce8e4249da939e21766c33",
+      "bytes": 2244875
+    },
+    {
+      "path": "captures/raw/alpine_path-dsm-rgb.png",
+      "sha256": "0e1fcfb651d271d07f2776f23e9ed13118716748af092676df772553c9d1f02c",
+      "bytes": 4252804
+    },
+    {
+      "path": "captures/raw/water_edge-dtm-neutral.png",
+      "sha256": "1ed406ef64b312e2bd7454698afd96f8a109d32115371209338b5753551eb0fe",
+      "bytes": 2233742
+    },
+    {
+      "path": "captures/raw/water_edge-dtm-rgb.png",
+      "sha256": "12bc2ef244564a76661c4156b4ba0a77f259e0beee07e174da11ba0b96503bfa",
+      "bytes": 4252804
+    },
+    {
+      "path": "captures/raw/water_edge-dsm-neutral.png",
+      "sha256": "37bc3999eab53cf77af09efb6ee9d46301a88b8d94518119eb9405a16b08de07",
+      "bytes": 2244875
+    },
+    {
+      "path": "captures/raw/water_edge-dsm-rgb.png",
+      "sha256": "4542767f7d2e8d3959468d328d0a359a0c0ebdcec922d70c778fae96a20f4ef0",
+      "bytes": 4252804
+    },
+    {
+      "path": "captures/raw/glacial_transition-dtm-neutral.png",
+      "sha256": "4719f3855e7cb3bf7597d3b5ee1c449b202e48fbe422b6bd423f9bca21b47131",
+      "bytes": 2244875
+    },
+    {
+      "path": "captures/raw/glacial_transition-dtm-rgb.png",
+      "sha256": "468139c699f690405e8c72de2fa113eb781a7c2c0a7412a2b31f643161021de9",
+      "bytes": 4252804
+    },
+    {
+      "path": "captures/raw/glacial_transition-dsm-neutral.png",
+      "sha256": "646cd71bd6ae1b9934692fa075a073e0a13d7ac84ca18cff44bb25bdd1f76efc",
+      "bytes": 2244875
+    },
+    {
+      "path": "captures/raw/glacial_transition-dsm-rgb.png",
+      "sha256": "8fcbe78adcea355df09dfc01f5de7a7f2105fbd4a92eacd48c247bde5fc4dbb4",
+      "bytes": 4252804
+    }
+  ],
+  "texture_gpu_bytes_per_rgb_pass": 2150048512,
+  "unreal_vertices_per_surface": 16056049,
+  "note": "Attribution derivatives add a 32-pixel footer without modifying the original frame; contact sheets are reduced inspection previews, not native-resolution outputs.",
+  "unreal_assets": {
+    "files": 322,
+    "bytes": 1525209712,
+    "inventory_sha256": "15ad858be786c306d32a6d397e8bfb54341a111a4a5ff5fc0d447b58707d8dda",
+    "note": "Compiled adapter assets are platform/editor products; byte-identical canonical rerun is claimed for the 209 offline products, not regenerated Unreal packages."
+  },
+  "canonical_products": {
+    "result": "PASS",
+    "source_originals": 16,
+    "source_las": 4,
+    "product_hashes": 209,
+    "independent_mesh_texture_samples": 15
+  },
+  "deterministic_identity": "10b3641e25f6283bf0d4c311f813baefbb7703ca7fbd421e1fd6ca4155edcb3a",
+  "deterministic_runs": 2,
+  "tests": {
+    "earth_lab": 157,
+    "terrain_research": 16,
+    "eslint": "PASS",
+    "typescript": "PASS (tsc -b in build)",
+    "production_build": "PASS"
+  },
+  "source_class_counts": {
+    "1": 4487455,
+    "2": 46053413,
+    "3": 214,
+    "6": 5203,
+    "9": 141
+  },
+  "renderer_runs": {
+    "setup-dtm": {
+      "errors": 0,
+      "warnings": 65,
+      "commandlet_seconds": 292.64,
+      "peak_resident_mb": 2713,
+      "peak_private_virtual_mb": 15389
+    },
+    "setup-dsm": {
+      "errors": 0,
+      "warnings": 65,
+      "commandlet_seconds": 276.45,
+      "peak_resident_mb": 6331,
+      "peak_private_virtual_mb": 16368
+    },
+    "capture-dtm-neutral": {
+      "errors": 0,
+      "warnings": 0,
+      "commandlet_seconds": 364.16,
+      "peak_resident_mb": 3419,
+      "peak_private_virtual_mb": 9823
+    },
+    "capture-dtm-rgb": {
+      "errors": 0,
+      "warnings": 1,
+      "commandlet_seconds": 55.59,
+      "peak_resident_mb": 7274,
+      "peak_private_virtual_mb": 13294
+    },
+    "capture-dsm-neutral": {
+      "errors": 0,
+      "warnings": 0,
+      "commandlet_seconds": 4.28,
+      "peak_resident_mb": 7075,
+      "peak_private_virtual_mb": 8965
+    },
+    "capture-dsm-rgb": {
+      "errors": 0,
+      "warnings": 0,
+      "commandlet_seconds": 11.64,
+      "peak_resident_mb": 7426,
+      "peak_private_virtual_mb": 12927
+    }
+  },
+  "diagnostic_warnings": [
+    "GLB imports intentionally have no material until the fixed Lab material is assigned.",
+    "Interchange path-length limit warning; all intended native assets imported and validated.",
+    "Initial unused engine-debug Niagara shaders logged FXC diagnostics; Lab materials/captures passed.",
+    "No D3D12 acceptance claimed."
+  ]
+}
