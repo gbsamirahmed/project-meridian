@@ -2687,3 +2687,35 @@ See [Lab 012E outcome, methods and inspection commands](earth-lab/riffelhorn-012
 [measurements](earth-lab/riffelhorn-012e-measurements.json) and
 [validation](earth-lab/riffelhorn-012e-validation.json).
 No new Lab, true-3D reconstruction or production integration is begun.
+
+## 2026-10-02 — Riffelhorn visual synthesis and finite experiment design
+
+Synthesised Labs 011 and 012A–012E after the closed heightfield-reconstruction
+branch. Inspected native 1920×1080 whole-AOI, mountain-face, alpine-ground and
+steep-face captures, complementary contacts, the downloaded orthophoto crop and
+the existing cliff diagnostics. Relief is present but faintly shaded; RGB adds
+useful boundaries while dark faces and stretched steep-face colour remain.
+The actual 012B material is unlit RGB/neutral colour multiplied by a fixed
+0.65–1 normal factor, with no cast-shadow or atmospheric additions. Its output
+does not establish whether controlled terrain lighting can communicate the
+already-strong measured geometry adequately.
+
+Documented two core experiments: fixed-geometry lighting/readability, then
+orthophoto projection and photographed illumination. A third same-terrain normal
+representation test is conditional on a specific remaining shader/input
+discrepancy; it must not become invented sub-metre detail or another LiDAR
+reconstruction branch. Three existing core cameras plus one projection control,
+bounded comparison sets, explicit acceptance/termination rules and a final
+scale-dependent synthesis prevent an open-ended sequence. A limited historical
+first-person FATMAP account supports investigating exaggerated normal lighting
+and its conflict with photographed shadows, without establishing proprietary
+algorithms, normal sources or true-3D cliff topology.
+
+Read-only checks preserve Swiss originals/extracted LAS, all 260/209/46/51/30
+canonical 012A/B/C/D/E products and 28 recorded 012B raw frames. Documentation
+links, referenced paths, JSON, privacy and diff/scope checks pass. No experiment,
+new product, renderer change, source acquisition, production change or Tryfan
+change is made; previous Labs and historical refs remain unchanged. The next
+recommended action is the bounded lighting experiment, not implemented here.
+
+See [Riffelhorn synthesis and finite visual programme](earth-lab/riffelhorn-visual-synthesis-and-experiment-design.md).
