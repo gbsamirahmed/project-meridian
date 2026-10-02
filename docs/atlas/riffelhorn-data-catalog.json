@@ -1,0 +1,2557 @@
+{
+  "schema_version": 1,
+  "title": "Riffelhorn/Riffelsee bounded official Swiss geodata acquisition",
+  "reconnaissance_date": "2026-10-02",
+  "repository_baseline": "3412738dae5974ce495c5de90e3bc98eed68483f",
+  "scope": "Discovery, immutable source acquisition, metadata validation and 2-D inspection only; no rendering, terrain reconstruction or Lab 012B",
+  "external_root_relative": "sources/atlas/riffelhorn/swisstopo-2021-2024",
+  "aoi": {
+    "crs": "EPSG:2056",
+    "bounds": [
+      2624000,
+      1091000,
+      2626000,
+      1093000
+    ],
+    "width_m": 2000,
+    "height_m": 2000,
+    "wgs84_bounds": [
+      7.748260056402138,
+      45.970074962275305,
+      7.77417077736836,
+      45.988139457488266
+    ],
+    "centre_wgs84": [
+      7.761213293330552,
+      45.97910793931709
+    ],
+    "centre_projected": [
+      2625000,
+      1092000
+    ],
+    "area_m2": 4000000,
+    "tiles": [
+      "2624-1091",
+      "2624-1092",
+      "2625-1091",
+      "2625-1092"
+    ],
+    "rationale": "Compact exact four-tile square retaining Riffelhorn faces, Riffelsee, alpine ground cover, loose rock, paths and southern glacier/moraine transitions. No Matterhorn expansion.",
+    "dtm_elevation_range_ln02_m": [
+      2189.575927734375,
+      2977.789794921875
+    ]
+  },
+  "publisher": "Federal Office of Topography swisstopo",
+  "endpoints": {
+    "stac": "https://data.geo.admin.ch/api/stac/v0.9",
+    "map_api": "https://api3.geo.admin.ch/rest/services/api",
+    "gazetteer": {
+      "Riffelhorn": "https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=Riffelhorn&type=locations&origins=gazetteer&sr=2056",
+      "Riffelsee": "https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=Riffelsee&type=locations&origins=gazetteer&sr=2056"
+    },
+    "bounded_map_queries": {
+      "images-swissimage-dop10.metadata": "https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometry=2624000%2C1091000%2C2626000%2C1093000&geometryType=esriGeometryEnvelope&sr=2056&layers=all%3Ach.swisstopo.images-swissimage-dop10.metadata&tolerance=0&mapExtent=2624000%2C1091000%2C2626000%2C1093000&imageDisplay=1000%2C1000%2C96&returnGeometry=true&lang=en&limit=100",
+      "swisssurface3d.metadata": "https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometry=2624000%2C1091000%2C2626000%2C1093000&geometryType=esriGeometryEnvelope&sr=2056&layers=all%3Ach.swisstopo.swisssurface3d.metadata&tolerance=0&mapExtent=2624000%2C1091000%2C2626000%2C1093000&imageDisplay=1000%2C1000%2C96&returnGeometry=true&lang=en&limit=100",
+      "swisssurface3d-raster.metadata": "https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometry=2624000%2C1091000%2C2626000%2C1093000&geometryType=esriGeometryEnvelope&sr=2056&layers=all%3Ach.swisstopo.swisssurface3d-raster.metadata&tolerance=0&mapExtent=2624000%2C1091000%2C2626000%2C1093000&imageDisplay=1000%2C1000%2C96&returnGeometry=true&lang=en&limit=100",
+      "lubis-bildstreifen": "https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometry=2624000%2C1091000%2C2626000%2C1093000&geometryType=esriGeometryEnvelope&sr=2056&layers=all%3Ach.swisstopo.lubis-bildstreifen&tolerance=0&mapExtent=2624000%2C1091000%2C2626000%2C1093000&imageDisplay=1000%2C1000%2C96&returnGeometry=true&lang=en&limit=100"
+    }
+  },
+  "licence": {
+    "name": "Custom swisstopo Open Government Data terms",
+    "version": "1.3.2021",
+    "url": "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-and-geoservices",
+    "attribution": "Federal Office of Topography swisstopo or ©swisstopo",
+    "access": "Free official standard-product downloads without authentication",
+    "reuse": "Permitted, including commercial use",
+    "modification_and_derivatives": "Permitted",
+    "redistribution": "Permitted with source acknowledgement",
+    "public_display_and_rendered_screenshots": "Permitted with source acknowledgement",
+    "infrastructure_conditions": "Federal Spatial Data Infrastructure operating conditions and excessive-use restrictions apply",
+    "stac_collection_license_label": "proprietary",
+    "label_interpretation": "Preserved official catalogue label. Product reuse is governed by the linked custom OGD terms, not inferred from an SPDX/Creative Commons label. These are full product tiles, not test-only sample downloads.",
+    "products": [
+      "SWISSIMAGE",
+      "swissSURFACE3D",
+      "swissSURFACE3D Raster",
+      "swissALTI3D"
+    ],
+    "legal_uncertainty": "No identified unresolved reuse/derivation/display restriction for these four standard products; retain attribution and applicable infrastructure conditions."
+  },
+  "product_interpretation": {
+    "swissimage": {
+      "native_gsd_m": 0.25,
+      "distributed_pixel_m": 0.1,
+      "bands": "RGB, 3 × uint8",
+      "generation": "2023, conventional DTM-orthorectified mosaic; not the true RGBN orthophoto generation beginning 2026",
+      "sensor": "ADS100, per generation specification; exact tile-specific serial/instrument metadata not supplied",
+      "source_processing": "Provider mosaic/radiometric processing and 25 cm to 10 cm resampling; JPEG is lossy. Not raw reflectance. No additional enhancement performed here.",
+      "why_distributed_10cm": "Only 0.1 m and 2 m assets exposed for selected items; finest official download retained unchanged. Native 25 cm file not exposed by this STAC item.",
+      "accuracy": "SWISSIMAGE Level 3 specification: nominal ±0.25 m horizontal, 1 sigma, for native 25 cm with swissALTI3D. Not independently assessed; steep faces can contain stretched pixels and shadows.",
+      "exact_acquisition": "2023 map tile year for all four tiles; ≥70% year convention. 2023-09-07 SWISSIMAGE flight strip at 25 cm intersects AOI but pixel-to-strip assignment is unprovided. Other intersecting 2023 strips are cryosphere monitoring and not assumed mosaic sources.",
+      "black_rgb_cells": 267,
+      "black_rgb_note": "267 all-zero distributed RGB pixels (2.67 m², 0.00006675% of AOI); vendor specification uses black for missing imagery but TIFF declares no NoData/mask hole. Dark imagery versus unflagged missing pixels unresolved; do not claim every pixel is observed."
+    },
+    "swisssurface3d": {
+      "collection_year": "2021",
+      "acquisition_dates_gps": [
+        "2021-08-24",
+        "2021-08-26",
+        "2022-08-23"
+      ],
+      "point_count": 50546426,
+      "all_return_density_per_m2": 12.6366065,
+      "first_return_density_per_m2": 12.47721375,
+      "sensor": "Airborne LiDAR; exact instrument/serial/flight contractor not provided for these tiles",
+      "accuracy": "Product claim ±0.20 m horizontal / ±0.10 m vertical, 1 sigma; not independently verified here",
+      "classification": "Actual classes 1 unclassified, 2 ground, 3 vegetation, 6 buildings and 9 water. No class 17 in these four files. Provider ground includes boulders; classifications are not independent semantic truth.",
+      "precision": "LAS coordinate quantization 0.01 m is not observation accuracy",
+      "crs_encoding": "Actual LAS has no VLRs. Horizontal/vertical references derive from official product metadata and validated coordinate bounds.",
+      "coverage": "No empty 100 m plan-area bins; not proof of gap-free fine sampling or complete cliff-face observations."
+    },
+    "swisssurface3d_raster": {
+      "grid_spacing_m": 0.5,
+      "derivation": "Spike-free TIN of selected classified LiDAR plus synthetic water geometry from swissTLM3D. Interpolated DSM, not a raw-return height observation at each pixel.",
+      "date": "Three tiles 2021; northeast tile 2021/2022, confirmed map metadata",
+      "accuracy": "Product nominal ±0.20 m horizontal / ±0.10 m vertical, 1 sigma; interpolation, water handling, steep faces and classification are additional limitations."
+    },
+    "swissalti3d": {
+      "release": "2024, tile publication December 2024, consistent with official release 2024/2 Valais update",
+      "grid_spacing_m": 0.5,
+      "observation_spacing_m": null,
+      "source": "Valais release note: replacement with 2021/2022 LiDAR, including above 2000 m, and photogrammetric change updates from 2023 aerial imagery",
+      "interpolation": "Linear interpolation of DTM-TLM/TIN; 0.5 m is distributed grid spacing, not independent measured density",
+      "accuracy": "2024/2 release claim for new LiDAR-based terrain ±0.3 m, 1 sigma, in three dimensions; not independently verified and not interchangeable with surface-product accuracy",
+      "unresolved": "Cell-level provenance identifying which pixels were changed with 2023 imagery is not supplied."
+    }
+  },
+  "flight_strip_evidence_2023": [
+    {
+      "feature_id": "20230907_1035_12504",
+      "attributes": {
+        "source_georef": "1 Ïƒ <= 1 Pixel",
+        "flugdatum": "2023-09-07",
+        "firma": "swisstopo",
+        "filmart": "farbe und infrarot",
+        "bgdi_flugjahr": 2023,
+        "resolution": "0.25",
+        "objectid": 8025,
+        "area": 322852637.5,
+        "gsd": 0.25,
+        "toposhop_length": 87.04,
+        "toposhop_start_x": 2644769,
+        "toposhop_start_y": 1091779,
+        "toposhop_end_x": null,
+        "toposhop_end_y": null,
+        "toposhop_date": "07.09.2023",
+        "goal": "SWISSIMAGE",
+        "label": "2023-09-07"
+      },
+      "role": "Intersecting flight-strip evidence, not a confirmed source seamline in the delivered mosaic"
+    },
+    {
+      "feature_id": "20230823_0952_12501",
+      "attributes": {
+        "source_georef": "1 Ïƒ <= 1 Pixel",
+        "flugdatum": "2023-08-23",
+        "firma": "swisstopo",
+        "filmart": "farbe und infrarot",
+        "bgdi_flugjahr": 2023,
+        "resolution": "0.125",
+        "objectid": 8029,
+        "area": 83231450.0,
+        "gsd": 0.125,
+        "toposhop_length": 29.94,
+        "toposhop_start_x": 2627054,
+        "toposhop_start_y": 1122773,
+        "toposhop_end_x": null,
+        "toposhop_end_y": null,
+        "toposhop_date": "23.08.2023",
+        "goal": "CRYOSPHERE MONITORING",
+        "label": "2023-08-23"
+      },
+      "role": "Intersecting flight-strip evidence, not a confirmed source seamline in the delivered mosaic"
+    },
+    {
+      "feature_id": "20230821_0913_12501",
+      "attributes": {
+        "source_georef": "1 Ïƒ <= 1 Pixel",
+        "flugdatum": "2023-08-21",
+        "firma": "swisstopo",
+        "filmart": "farbe und infrarot",
+        "bgdi_flugjahr": 2023,
+        "resolution": "0.1",
+        "objectid": 8006,
+        "area": 18573087.5,
+        "gsd": 0.1,
+        "toposhop_length": 9.37,
+        "toposhop_start_x": 2621908,
+        "toposhop_start_y": 1091100,
+        "toposhop_end_x": null,
+        "toposhop_end_y": null,
+        "toposhop_date": "21.08.2023",
+        "goal": "CRYOSPHERE MONITORING",
+        "label": "2023-08-21"
+      },
+      "role": "Intersecting flight-strip evidence, not a confirmed source seamline in the delivered mosaic"
+    },
+    {
+      "feature_id": "20230821_0907_12501",
+      "attributes": {
+        "source_georef": "1 Ïƒ <= 1 Pixel",
+        "flugdatum": "2023-08-21",
+        "firma": "swisstopo",
+        "filmart": "farbe und infrarot",
+        "bgdi_flugjahr": 2023,
+        "resolution": "0.1",
+        "objectid": 8005,
+        "area": 16848600.0,
+        "gsd": 0.1,
+        "toposhop_length": 9.37,
+        "toposhop_start_x": 2631570,
+        "toposhop_start_y": 1091562,
+        "toposhop_end_x": null,
+        "toposhop_end_y": null,
+        "toposhop_date": "21.08.2023",
+        "goal": "CRYOSPHERE MONITORING",
+        "label": "2023-08-21"
+      },
+      "role": "Intersecting flight-strip evidence, not a confirmed source seamline in the delivered mosaic"
+    }
+  ],
+  "official_documents": [
+    {
+      "path": "metadata/official-documents/swissimage-specification.pdf",
+      "url": "https://www.swisstopo.admin.ch/dam/de/sd-web/WchyQCcLkyd9/Produktinfo_SWISSIMAGE10cm_DE.pdf",
+      "sha256": "3cfce137b3cfc54ae29eba54c8f9b6fd053cfc7915f11dc090c169d31f53b435",
+      "bytes": 2527961,
+      "retained_utc": "2026-10-02T14:54:33.7588437Z"
+    },
+    {
+      "path": "metadata/official-documents/swisssurface3d-specification.pdf",
+      "url": "https://www.swisstopo.admin.ch/dam/de/sd-web/uIK9XXLTAGiI/swissSURFACE3D-ProdInfo-DE.pdf",
+      "sha256": "fcb9409cb6e80e4457ea7f5fa9854437e5c5a0db14bcd0d209ebfb82b7d13de2",
+      "bytes": 1252478,
+      "retained_utc": "2026-10-02T14:54:34.3976660Z"
+    },
+    {
+      "path": "metadata/official-documents/swisssurface3d-raster-specification.pdf",
+      "url": "https://www.swisstopo.admin.ch/dam/de/sd-web/MyQQvIyq6L6H/SS3DR-ProdInfo-DE.pdf",
+      "sha256": "2e99683c331d8427866f8d0e9d313208570c45bb2da4e811169bb9bdfcce90b5",
+      "bytes": 2991569,
+      "retained_utc": "2026-10-02T14:54:35.3528576Z"
+    },
+    {
+      "path": "metadata/official-documents/swissalti3d-release-2024-2.pdf",
+      "url": "https://www.swisstopo.admin.ch/dam/de/sd-web/Zca1yaqlIgTp/swissALTI3D-release-2024_2_de_bf.pdf",
+      "sha256": "cec9d46967be920d467fd22aafe042ca2846809a63cd175b2ae7a099a5cc1167",
+      "bytes": 1152934,
+      "retained_utc": "2026-10-02T14:54:35.9298108Z"
+    },
+    {
+      "path": "metadata/official-documents/terms.html",
+      "url": "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-and-geoservices",
+      "sha256": "2a41d53d5b4271e5f7eee17d761a669444d35fe1a73146b43b7c63823c56d786",
+      "bytes": 258599,
+      "retained_utc": "2026-10-02T14:54:36.3751734Z"
+    },
+    {
+      "path": "metadata/official-documents/faq.html",
+      "url": "https://www.swisstopo.admin.ch/en/faq-free-geodata",
+      "sha256": "d90304164ba79a05fd604a63685fc58d13ab0b7d46b4f94bfc6589bbbc1412a1",
+      "bytes": 311438,
+      "retained_utc": "2026-10-02T14:54:36.9029628Z"
+    },
+    {
+      "path": "metadata/official-documents/sensor-transition.html",
+      "url": "https://www.swisstopo.admin.ch/en/new-aerial-imaging-sensor",
+      "sha256": "4e28bcfbaa553169322531ae9189a7fc97e66b8dbfcd93d23a0fa266a8bc1f37",
+      "bytes": 283177,
+      "retained_utc": "2026-10-02T14:54:37.4467234Z"
+    }
+  ],
+  "additional_official_references": [
+    "https://www.swisstopo.admin.ch/en/orthoimage-swissimage-10",
+    "https://www.swisstopo.admin.ch/en/height-model-swisssurface3d",
+    "https://www.swisstopo.admin.ch/en/height-model-swisssurface3d-raster",
+    "https://www.swisstopo.admin.ch/en/height-model-swissalti3d",
+    "https://www.swisstopo.admin.ch/en/digital-image-strips",
+    "https://www.swisstopo.admin.ch/en/height-model-swisssurface3d-update-20230627",
+    "https://asprslas.org/stable/02.00_definition.html"
+  ],
+  "assets": [
+    {
+      "product": "swissimage-dop10",
+      "tile": "2624-1091",
+      "item_id": "swissimage-dop10_2023_2624-1091",
+      "item_url": "https://data.geo.admin.ch/api/stac/v0.9/collections/ch.swisstopo.swissimage-dop10/items/swissimage-dop10_2023_2624-1091",
+      "item_properties": {
+        "datetime": "2023-01-01T00:00:00Z",
+        "created": "2024-05-26T20:22:59.826268Z",
+        "updated": "2025-01-27T17:51:15.489653Z"
+      },
+      "path": "originals/swissimage-dop10/swissimage-dop10_2023_2624-1091_0.1_2056.tif",
+      "bytes": 50530470,
+      "sha256": "eb81b3df75538dc0da5cd6ce898976dd74f22dcb3b2586760f0a7df159de8c41",
+      "receipt": {
+        "download_utc": "2026-10-02T14:43:14.124109+00:00",
+        "url": "https://data.geo.admin.ch/ch.swisstopo.swissimage-dop10/swissimage-dop10_2023_2624-1091/swissimage-dop10_2023_2624-1091_0.1_2056.tif",
+        "bytes": 50530470,
+        "sha256": "eb81b3df75538dc0da5cd6ce898976dd74f22dcb3b2586760f0a7df159de8c41"
+      },
+      "actual_file": {
+        "dimensions": [
+          10000,
+          10000
+        ],
+        "bands": 3,
+        "dtype": [
+          "uint8",
+          "uint8",
+          "uint8"
+        ],
+        "epsg": 2056,
+        "bounds": [
+          2624000.0,
+          1091000.0,
+          2625000.0,
+          1092000.0
+        ],
+        "transform": [
+          0.1,
+          0.0,
+          2624000.0,
+          0.0,
+          -0.1,
+          1092000.0
+        ],
+        "pixel_size_m": [
+          0.1,
+          0.1
+        ],
+        "nodata": null,
+        "missing_cells_band1": 0,
+        "all_zero_rgb_cells": 0,
+        "compression": "YCbCr JPEG",
+        "is_tiled": true,
+        "block_shapes": [
+          [
+            256,
+            256
+          ],
+          [
+            256,
+            256
+          ],
+          [
+            256,
+            256
+          ]
+        ],
+        "overviews": [
+          2,
+          4,
+          8,
+          16,
+          32
+        ],
+        "image_structure": {
+          "LAYOUT": "COG",
+          "SOURCE_COLOR_SPACE": "YCbCr",
+          "COMPRESSION": "YCbCr JPEG",
+          "INTERLEAVE": "PIXEL",
+          "JPEG_QUALITY": "95",
+          "JPEGTABLESMODE": "1"
+        },
+        "tags": {
+          "TIFFTAG_XRESOLUTION": "0",
+          "TIFFTAG_YRESOLUTION": "0",
+          "TIFFTAG_RESOLUTIONUNIT": "2 (pixels/inch)",
+          "AREA_OR_POINT": "Area"
+        },
+        "units": [
+          null,
+          null,
+          null
+        ],
+        "colour_interpretation": [
+          "3",
+          "4",
+          "5"
+        ],
+        "elevation_range_m": null
+      },
+      "asset": {
+        "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+        "href": "https://data.geo.admin.ch/ch.swisstopo.swissimage-dop10/swissimage-dop10_2023_2624-1091/swissimage-dop10_2023_2624-1091_0.1_2056.tif",
+        "created": "2024-05-26T20:23:04.173147Z",
+        "updated": "2025-01-27T17:47:13.614424Z",
+        "proj:epsg": 2056,
+        "checksum:multihash": "1220EB81B3DF75538DC0DA5CD6CE898976DD74F22DCB3B2586760F0A7DF159DE8C41",
+        "eo:gsd": 0.1
+      },
+      "authoritative_sha256_matches": true,
+      "licence": "swisstopo OGD terms, version 1.3.2021; mandatory attribution",
+      "horizontal_reference": "CH1903+/LV95 (EPSG:2056), metres",
+      "vertical_reference": null,
+      "native_observation_resolution_m": 0.25,
+      "source_method": "Aerial orthophoto mosaic",
+      "official_map_tile_metadata": [
+        {
+          "layer": "ch.swisstopo.images-swissimage-dop10.metadata",
+          "attributes": {
+            "datenstand": "2023",
+            "resolution": "25 cm",
+            "label": "2624_1091"
+          }
+        },
+        {
+          "layer": "ch.swisstopo.swisssurface3d.metadata",
+          "attributes": {
+            "gpstime_min": 2021,
+            "gpstime_max": 2021,
+            "label": "2624_1091"
+          }
+        },
+        {
+          "layer": "ch.swisstopo.swisssurface3d-raster.metadata",
+          "attributes": {
+            "fly_y_min": 2021,
+            "fly_y_max": 2021,
+            "label": "2624_1091"
+          }
+        }
+      ],
+      "date_interpretation": "2023 mosaic year; exact source-pixel day not identified"
+    },
+    {
+      "product": "swissimage-dop10",
+      "tile": "2624-1092",
+      "item_id": "swissimage-dop10_2023_2624-1092",
+      "item_url": "https://data.geo.admin.ch/api/stac/v0.9/collections/ch.swisstopo.swissimage-dop10/items/swissimage-dop10_2023_2624-1092",
+      "item_properties": {
+        "datetime": "2023-01-01T00:00:00Z",
+        "created": "2024-05-26T20:24:01.704769Z",
+        "updated": "2025-01-27T17:51:15.623366Z"
+      },
+      "path": "originals/swissimage-dop10/swissimage-dop10_2023_2624-1092_0.1_2056.tif",
+      "bytes": 45485267,
+      "sha256": "8cd275f75f653d192d9d7619771746ff93fbdd8646e2d1d06214af832c49f62e",
+      "receipt": {
+        "download_utc": "2026-10-02T14:43:16.559759+00:00",
+        "url": "https://data.geo.admin.ch/ch.swisstopo.swissimage-dop10/swissimage-dop10_2023_2624-1092/swissimage-dop10_2023_2624-1092_0.1_2056.tif",
+        "bytes": 45485267,
+        "sha256": "8cd275f75f653d192d9d7619771746ff93fbdd8646e2d1d06214af832c49f62e"
+      },
+      "actual_file": {
+        "dimensions": [
+          10000,
+          10000
+        ],
+        "bands": 3,
+        "dtype": [
+          "uint8",
+          "uint8",
+          "uint8"
+        ],
+        "epsg": 2056,
+        "bounds": [
+          2624000.0,
+          1092000.0,
+          2625000.0,
+          1093000.0
+        ],
+        "transform": [
+          0.1,
+          0.0,
+          2624000.0,
+          0.0,
+          -0.1,
+          1093000.0
+        ],
+        "pixel_size_m": [
+          0.1,
+          0.1
+        ],
+        "nodata": null,
+        "missing_cells_band1": 0,
+        "all_zero_rgb_cells": 46,
+        "compression": "YCbCr JPEG",
+        "is_tiled": true,
+        "block_shapes": [
+          [
+            256,
+            256
+          ],
+          [
+            256,
+            256
+          ],
+          [
+            256,
+            256
+          ]
+        ],
+        "overviews": [
+          2,
+          4,
+          8,
+          16,
+          32
+        ],
+        "image_structure": {
+          "LAYOUT": "COG",
+          "SOURCE_COLOR_SPACE": "YCbCr",
+          "COMPRESSION": "YCbCr JPEG",
+          "INTERLEAVE": "PIXEL",
+          "JPEG_QUALITY": "95",
+          "JPEGTABLESMODE": "1"
+        },
+        "tags": {
+          "TIFFTAG_XRESOLUTION": "0",
+          "TIFFTAG_YRESOLUTION": "0",
+          "TIFFTAG_RESOLUTIONUNIT": "2 (pixels/inch)",
+          "AREA_OR_POINT": "Area"
+        },
+        "units": [
+          null,
+          null,
+          null
+        ],
+        "colour_interpretation": [
+          "3",
+          "4",
+          "5"
+        ],
+        "elevation_range_m": null
+      },
+      "asset": {
+        "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+        "href": "https://data.geo.admin.ch/ch.swisstopo.swissimage-dop10/swissimage-dop10_2023_2624-1092/swissimage-dop10_2023_2624-1092_0.1_2056.tif",
+        "created": "2024-05-26T20:24:07.408793Z",
+        "updated": "2025-01-27T17:47:16.887929Z",
+        "proj:epsg": 2056,
+        "checksum:multihash": "12208CD275F75F653D192D9D7619771746FF93FBDD8646E2D1D06214AF832C49F62E",
+        "eo:gsd": 0.1
+      },
+      "authoritative_sha256_matches": true,
+      "licence": "swisstopo OGD terms, version 1.3.2021; mandatory attribution",
+      "horizontal_reference": "CH1903+/LV95 (EPSG:2056), metres",
+      "vertical_reference": null,
+      "native_observation_resolution_m": 0.25,
+      "source_method": "Aerial orthophoto mosaic",
+      "official_map_tile_metadata": [
+        {
+          "layer": "ch.swisstopo.images-swissimage-dop10.metadata",
+          "attributes": {
+            "datenstand": "2023",
+            "resolution": "25 cm",
+            "label": "2624_1092"
+          }
+        },
+        {
+          "layer": "ch.swisstopo.swisssurface3d.metadata",
+          "attributes": {
+            "gpstime_min": 2021,
+            "gpstime_max": 2021,
+            "label": "2624_1092"
+          }
+        },
+        {
+          "layer": "ch.swisstopo.swisssurface3d-raster.metadata",
+          "attributes": {
+            "fly_y_min": 2021,
+            "fly_y_max": 2021,
+            "label": "2624_1092"
+          }
+        }
+      ],
+      "date_interpretation": "2023 mosaic year; exact source-pixel day not identified"
+    },
+    {
+      "product": "swissimage-dop10",
+      "tile": "2625-1091",
+      "item_id": "swissimage-dop10_2023_2625-1091",
+      "item_url": "https://data.geo.admin.ch/api/stac/v0.9/collections/ch.swisstopo.swissimage-dop10/items/swissimage-dop10_2023_2625-1091",
+      "item_properties": {
+        "datetime": "2023-01-01T00:00:00Z",
+        "created": "2024-05-26T20:23:39.537430Z",
+        "updated": "2025-01-27T17:51:18.391667Z"
+      },
+      "path": "originals/swissimage-dop10/swissimage-dop10_2023_2625-1091_0.1_2056.tif",
+      "bytes": 43921676,
+      "sha256": "66ff157b2eb008e8c2e2ae41ee427c2b483ae69faf352b6d4c12c7713285d2bc",
+      "receipt": {
+        "download_utc": "2026-10-02T14:43:18.919491+00:00",
+        "url": "https://data.geo.admin.ch/ch.swisstopo.swissimage-dop10/swissimage-dop10_2023_2625-1091/swissimage-dop10_2023_2625-1091_0.1_2056.tif",
+        "bytes": 43921676,
+        "sha256": "66ff157b2eb008e8c2e2ae41ee427c2b483ae69faf352b6d4c12c7713285d2bc"
+      },
+      "actual_file": {
+        "dimensions": [
+          10000,
+          10000
+        ],
+        "bands": 3,
+        "dtype": [
+          "uint8",
+          "uint8",
+          "uint8"
+        ],
+        "epsg": 2056,
+        "bounds": [
+          2625000.0,
+          1091000.0,
+          2626000.0,
+          1092000.0
+        ],
+        "transform": [
+          0.1,
+          0.0,
+          2625000.0,
+          0.0,
+          -0.1,
+          1092000.0
+        ],
+        "pixel_size_m": [
+          0.1,
+          0.1
+        ],
+        "nodata": null,
+        "missing_cells_band1": 0,
+        "all_zero_rgb_cells": 0,
+        "compression": "YCbCr JPEG",
+        "is_tiled": true,
+        "block_shapes": [
+          [
+            256,
+            256
+          ],
+          [
+            256,
+            256
+          ],
+          [
+            256,
+            256
+          ]
+        ],
+        "overviews": [
+          2,
+          4,
+          8,
+          16,
+          32
+        ],
+        "image_structure": {
+          "LAYOUT": "COG",
+          "SOURCE_COLOR_SPACE": "YCbCr",
+          "COMPRESSION": "YCbCr JPEG",
+          "INTERLEAVE": "PIXEL",
+          "JPEG_QUALITY": "95",
+          "JPEGTABLESMODE": "1"
+        },
+        "tags": {
+          "TIFFTAG_XRESOLUTION": "0",
+          "TIFFTAG_YRESOLUTION": "0",
+          "TIFFTAG_RESOLUTIONUNIT": "2 (pixels/inch)",
+          "AREA_OR_POINT": "Area"
+        },
+        "units": [
+          null,
+          null,
+          null
+        ],
+        "colour_interpretation": [
+          "3",
+          "4",
+          "5"
+        ],
+        "elevation_range_m": null
+      },
+      "asset": {
+        "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+        "href": "https://data.geo.admin.ch/ch.swisstopo.swissimage-dop10/swissimage-dop10_2023_2625-1091/swissimage-dop10_2023_2625-1091_0.1_2056.tif",
+        "created": "2024-05-26T20:23:44.852045Z",
+        "updated": "2025-01-27T17:47:15.571750Z",
+        "proj:epsg": 2056,
+        "checksum:multihash": "122066FF157B2EB008E8C2E2AE41EE427C2B483AE69FAF352B6D4C12C7713285D2BC",
+        "eo:gsd": 0.1
+      },
+      "authoritative_sha256_matches": true,
+      "licence": "swisstopo OGD terms, version 1.3.2021; mandatory attribution",
+      "horizontal_reference": "CH1903+/LV95 (EPSG:2056), metres",
+      "vertical_reference": null,
+      "native_observation_resolution_m": 0.25,
+      "source_method": "Aerial orthophoto mosaic",
+      "official_map_tile_metadata": [
+        {
+          "layer": "ch.swisstopo.images-swissimage-dop10.metadata",
+          "attributes": {
+            "datenstand": "2023",
+            "resolution": "25 cm",
+            "label": "2625_1091"
+          }
+        },
+        {
+          "layer": "ch.swisstopo.swisssurface3d.metadata",
+          "attributes": {
+            "gpstime_min": 2021,
+            "gpstime_max": 2021,
+            "label": "2625_1091"
+          }
+        },
+        {
+          "layer": "ch.swisstopo.swisssurface3d-raster.metadata",
+          "attributes": {
+            "fly_y_min": 2021,
+            "fly_y_max": 2021,
+            "label": "2625_1091"
+          }
+        }
+      ],
+      "date_interpretation": "2023 mosaic year; exact source-pixel day not identified"
+    },
+    {
+      "product": "swissimage-dop10",
+      "tile": "2625-1092",
+      "item_id": "swissimage-dop10_2023_2625-1092",
+      "item_url": "https://data.geo.admin.ch/api/stac/v0.9/collections/ch.swisstopo.swissimage-dop10/items/swissimage-dop10_2023_2625-1092",
+      "item_properties": {
+        "datetime": "2023-01-01T00:00:00Z",
+        "created": "2024-05-26T20:23:46.024541Z",
+        "updated": "2025-01-27T17:51:18.792296Z"
+      },
+      "path": "originals/swissimage-dop10/swissimage-dop10_2023_2625-1092_0.1_2056.tif",
+      "bytes": 46321615,
+      "sha256": "31c4219580f87fd54268c04f2773f30a715392bde47581cf1245207b7c7ff90f",
+      "receipt": {
+        "download_utc": "2026-10-02T14:43:21.413286+00:00",
+        "url": "https://data.geo.admin.ch/ch.swisstopo.swissimage-dop10/swissimage-dop10_2023_2625-1092/swissimage-dop10_2023_2625-1092_0.1_2056.tif",
+        "bytes": 46321615,
+        "sha256": "31c4219580f87fd54268c04f2773f30a715392bde47581cf1245207b7c7ff90f"
+      },
+      "actual_file": {
+        "dimensions": [
+          10000,
+          10000
+        ],
+        "bands": 3,
+        "dtype": [
+          "uint8",
+          "uint8",
+          "uint8"
+        ],
+        "epsg": 2056,
+        "bounds": [
+          2625000.0,
+          1092000.0,
+          2626000.0,
+          1093000.0
+        ],
+        "transform": [
+          0.1,
+          0.0,
+          2625000.0,
+          0.0,
+          -0.1,
+          1093000.0
+        ],
+        "pixel_size_m": [
+          0.1,
+          0.1
+        ],
+        "nodata": null,
+        "missing_cells_band1": 0,
+        "all_zero_rgb_cells": 221,
+        "compression": "YCbCr JPEG",
+        "is_tiled": true,
+        "block_shapes": [
+          [
+            256,
+            256
+          ],
+          [
+            256,
+            256
+          ],
+          [
+            256,
+            256
+          ]
+        ],
+        "overviews": [
+          2,
+          4,
+          8,
+          16,
+          32
+        ],
+        "image_structure": {
+          "LAYOUT": "COG",
+          "SOURCE_COLOR_SPACE": "YCbCr",
+          "COMPRESSION": "YCbCr JPEG",
+          "INTERLEAVE": "PIXEL",
+          "JPEG_QUALITY": "95",
+          "JPEGTABLESMODE": "1"
+        },
+        "tags": {
+          "TIFFTAG_XRESOLUTION": "0",
+          "TIFFTAG_YRESOLUTION": "0",
+          "TIFFTAG_RESOLUTIONUNIT": "2 (pixels/inch)",
+          "AREA_OR_POINT": "Area"
+        },
+        "units": [
+          null,
+          null,
+          null
+        ],
+        "colour_interpretation": [
+          "3",
+          "4",
+          "5"
+        ],
+        "elevation_range_m": null
+      },
+      "asset": {
+        "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+        "href": "https://data.geo.admin.ch/ch.swisstopo.swissimage-dop10/swissimage-dop10_2023_2625-1092/swissimage-dop10_2023_2625-1092_0.1_2056.tif",
+        "created": "2024-05-26T20:23:51.681203Z",
+        "updated": "2025-01-27T17:47:15.823089Z",
+        "proj:epsg": 2056,
+        "checksum:multihash": "122031C4219580F87FD54268C04F2773F30A715392BDE47581CF1245207B7C7FF90F",
+        "eo:gsd": 0.1
+      },
+      "authoritative_sha256_matches": true,
+      "licence": "swisstopo OGD terms, version 1.3.2021; mandatory attribution",
+      "horizontal_reference": "CH1903+/LV95 (EPSG:2056), metres",
+      "vertical_reference": null,
+      "native_observation_resolution_m": 0.25,
+      "source_method": "Aerial orthophoto mosaic",
+      "official_map_tile_metadata": [
+        {
+          "layer": "ch.swisstopo.images-swissimage-dop10.metadata",
+          "attributes": {
+            "datenstand": "2023",
+            "resolution": "25 cm",
+            "label": "2625_1092"
+          }
+        },
+        {
+          "layer": "ch.swisstopo.swisssurface3d.metadata",
+          "attributes": {
+            "gpstime_min": 2021,
+            "gpstime_max": 2022,
+            "label": "2625_1092"
+          }
+        },
+        {
+          "layer": "ch.swisstopo.swisssurface3d-raster.metadata",
+          "attributes": {
+            "fly_y_min": 2021,
+            "fly_y_max": 2022,
+            "label": "2625_1092"
+          }
+        }
+      ],
+      "date_interpretation": "2023 mosaic year; exact source-pixel day not identified"
+    },
+    {
+      "product": "swisssurface3d-raster",
+      "tile": "2624-1091",
+      "item_id": "swisssurface3d-raster_2021_2624-1091",
+      "item_url": "https://data.geo.admin.ch/api/stac/v0.9/collections/ch.swisstopo.swisssurface3d-raster/items/swisssurface3d-raster_2021_2624-1091",
+      "item_properties": {
+        "datetime": "2021-01-01T00:00:00Z",
+        "created": "2023-08-02T14:40:15.832325Z",
+        "updated": "2025-01-19T04:11:08.263439Z"
+      },
+      "path": "originals/swisssurface3d-raster/swisssurface3d-raster_2021_2624-1091_0.5_2056_5728.tif",
+      "bytes": 14676329,
+      "sha256": "706f3e63e553b3cef6e3ef314a15f32756fa21c79f382541658d876246df340d",
+      "receipt": {
+        "download_utc": "2026-10-02T14:43:22.318087+00:00",
+        "url": "https://data.geo.admin.ch/ch.swisstopo.swisssurface3d-raster/swisssurface3d-raster_2021_2624-1091/swisssurface3d-raster_2021_2624-1091_0.5_2056_5728.tif",
+        "bytes": 14676329,
+        "sha256": "706f3e63e553b3cef6e3ef314a15f32756fa21c79f382541658d876246df340d"
+      },
+      "actual_file": {
+        "dimensions": [
+          2000,
+          2000
+        ],
+        "bands": 1,
+        "dtype": [
+          "float32"
+        ],
+        "epsg": 2056,
+        "bounds": [
+          2624000.0,
+          1091000.0,
+          2625000.0,
+          1092000.0
+        ],
+        "transform": [
+          0.5,
+          0.0,
+          2624000.0,
+          0.0,
+          -0.5,
+          1092000.0
+        ],
+        "pixel_size_m": [
+          0.5,
+          0.5
+        ],
+        "nodata": -9999.0,
+        "missing_cells_band1": 0,
+        "all_zero_rgb_cells": null,
+        "compression": "Compression.lzw",
+        "is_tiled": true,
+        "block_shapes": [
+          [
+            512,
+            512
+          ]
+        ],
+        "overviews": [
+          2,
+          4
+        ],
+        "image_structure": {
+          "LAYOUT": "COG",
+          "COMPRESSION": "LZW",
+          "INTERLEAVE": "BAND"
+        },
+        "tags": {
+          "TIFFTAG_SOFTWARE": "''",
+          "TIFFTAG_ARTIST": "''",
+          "AREA_OR_POINT": "Area"
+        },
+        "units": [
+          null
+        ],
+        "colour_interpretation": [
+          "1"
+        ],
+        "elevation_range_m": [
+          2189.300048828125,
+          2615.68994140625
+        ]
+      },
+      "asset": {
+        "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+        "href": "https://data.geo.admin.ch/ch.swisstopo.swisssurface3d-raster/swisssurface3d-raster_2021_2624-1091/swisssurface3d-raster_2021_2624-1091_0.5_2056_5728.tif",
+        "created": "2023-08-02T14:40:18.856213Z",
+        "updated": "2025-01-19T03:04:17.480567Z",
+        "proj:epsg": 2056,
+        "checksum:multihash": "1220706F3E63E553B3CEF6E3EF314A15F32756FA21C79F382541658D876246DF340D",
+        "eo:gsd": 0.5
+      },
+      "authoritative_sha256_matches": true,
+      "licence": "swisstopo OGD terms, version 1.3.2021; mandatory attribution",
+      "horizontal_reference": "CH1903+/LV95 (EPSG:2056), metres",
+      "vertical_reference": "LN02 (EPSG:5728), metres; official product provenance, not a vertical CRS encoded in the actual file",
+      "native_observation_resolution_m": null,
+      "source_method": "Spike-free TIN interpolation of classified LiDAR and synthetic water inputs",
+      "official_map_tile_metadata": [
+        {
+          "layer": "ch.swisstopo.images-swissimage-dop10.metadata",
+          "attributes": {
+            "datenstand": "2023",
+            "resolution": "25 cm",
+            "label": "2624_1091"
+          }
+        },
+        {
+          "layer": "ch.swisstopo.swisssurface3d.metadata",
+          "attributes": {
+            "gpstime_min": 2021,
+            "gpstime_max": 2021,
+            "label": "2624_1091"
+          }
+        },
+        {
+          "layer": "ch.swisstopo.swisssurface3d-raster.metadata",
+          "attributes": {
+            "fly_y_min": 2021,
+            "fly_y_max": 2021,
+            "label": "2624_1091"
+          }
+        }
+      ],
+      "date_interpretation": "2021/2022 LiDAR per tile metadata"
+    },
+    {
+      "product": "swisssurface3d-raster",
+      "tile": "2624-1092",
+      "item_id": "swisssurface3d-raster_2021_2624-1092",
+      "item_url": "https://data.geo.admin.ch/api/stac/v0.9/collections/ch.swisstopo.swisssurface3d-raster/items/swisssurface3d-raster_2021_2624-1092",
+      "item_properties": {
+        "datetime": "2021-01-01T00:00:00Z",
+        "created": "2023-08-02T14:40:29.324082Z",
+        "updated": "2025-01-19T04:11:09.938613Z"
+      },
+      "path": "originals/swisssurface3d-raster/swisssurface3d-raster_2021_2624-1092_0.5_2056_5728.tif",
+      "bytes": 15242665,
+      "sha256": "ddb1037a2e4efe85423ce59fe57d22a8e4e655d68192e4abcf08b7c49e9d5450",
+      "receipt": {
+        "download_utc": "2026-10-02T14:43:23.232897+00:00",
+        "url": "https://data.geo.admin.ch/ch.swisstopo.swisssurface3d-raster/swisssurface3d-raster_2021_2624-1092/swisssurface3d-raster_2021_2624-1092_0.5_2056_5728.tif",
+        "bytes": 15242665,
+        "sha256": "ddb1037a2e4efe85423ce59fe57d22a8e4e655d68192e4abcf08b7c49e9d5450"
+      },
+      "actual_file": {
+        "dimensions": [
+          2000,
+          2000
+        ],
+        "bands": 1,
+        "dtype": [
+          "float32"
+        ],
+        "epsg": 2056,
+        "bounds": [
+          2624000.0,
+          1092000.0,
+          2625000.0,
+          1093000.0
+        ],
+        "transform": [
+          0.5,
+          0.0,
+          2624000.0,
+          0.0,
+          -0.5,
+          1093000.0
+        ],
+        "pixel_size_m": [
+          0.5,
+          0.5
+        ],
+        "nodata": -9999.0,
+        "missing_cells_band1": 0,
+        "all_zero_rgb_cells": null,
+        "compression": "Compression.lzw",
+        "is_tiled": true,
+        "block_shapes": [
+          [
+            512,
+            512
+          ]
+        ],
+        "overviews": [
+          2,
+          4
+        ],
+        "image_structure": {
+          "LAYOUT": "COG",
+          "COMPRESSION": "LZW",
+          "INTERLEAVE": "BAND"
+        },
+        "tags": {
+          "TIFFTAG_SOFTWARE": "''",
+          "TIFFTAG_ARTIST": "''",
+          "AREA_OR_POINT": "Area"
+        },
+        "units": [
+          null
+        ],
+        "colour_interpretation": [
+          "1"
+        ],
+        "elevation_range_m": [
+          2225.31005859375,
+          2930.3701171875
+        ]
+      },
+      "asset": {
+        "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+        "href": "https://data.geo.admin.ch/ch.swisstopo.swisssurface3d-raster/swisssurface3d-raster_2021_2624-1092/swisssurface3d-raster_2021_2624-1092_0.5_2056_5728.tif",
+        "created": "2023-08-02T14:40:32.425864Z",
+        "updated": "2025-01-19T03:04:18.951414Z",
+        "proj:epsg": 2056,
+        "checksum:multihash": "1220DDB1037A2E4EFE85423CE59FE57D22A8E4E655D68192E4ABCF08B7C49E9D5450",
+        "eo:gsd": 0.5
+      },
+      "authoritative_sha256_matches": true,
+      "licence": "swisstopo OGD terms, version 1.3.2021; mandatory attribution",
+      "horizontal_reference": "CH1903+/LV95 (EPSG:2056), metres",
+      "vertical_reference": "LN02 (EPSG:5728), metres; official product provenance, not a vertical CRS encoded in the actual file",
+      "native_observation_resolution_m": null,
+      "source_method": "Spike-free TIN interpolation of classified LiDAR and synthetic water inputs",
+      "official_map_tile_metadata": [
+        {
+          "layer": "ch.swisstopo.images-swissimage-dop10.metadata",
+          "attributes": {
+            "datenstand": "2023",
+            "resolution": "25 cm",
+            "label": "2624_1092"
+          }
+        },
+        {
+          "layer": "ch.swisstopo.swisssurface3d.metadata",
+          "attributes": {
+            "gpstime_min": 2021,
+            "gpstime_max": 2021,
+            "label": "2624_1092"
+          }
+        },
+        {
+          "layer": "ch.swisstopo.swisssurface3d-raster.metadata",
+          "attributes": {
+            "fly_y_min": 2021,
+            "fly_y_max": 2021,
+            "label": "2624_1092"
+          }
+        }
+      ],
+      "date_interpretation": "2021/2022 LiDAR per tile metadata"
+    },
+    {
+      "product": "swisssurface3d-raster",
+      "tile": "2625-1091",
+      "item_id": "swisssurface3d-raster_2021_2625-1091",
+      "item_url": "https://data.geo.admin.ch/api/stac/v0.9/collections/ch.swisstopo.swisssurface3d-raster/items/swisssurface3d-raster_2021_2625-1091",
+      "item_properties": {
+        "datetime": "2021-01-01T00:00:00Z",
+        "created": "2023-08-02T13:18:44.752174Z",
+        "updated": "2025-01-19T03:15:18.080937Z"
+      },
+      "path": "originals/swisssurface3d-raster/swisssurface3d-raster_2021_2625-1091_0.5_2056_5728.tif",
+      "bytes": 13911871,
+      "sha256": "8fc16223478d375cbaba8ebf42609fd3cfcf4b59cca76dd8931ce2dd1ec9a186",
+      "receipt": {
+        "download_utc": "2026-10-02T14:43:24.109012+00:00",
+        "url": "https://data.geo.admin.ch/ch.swisstopo.swisssurface3d-raster/swisssurface3d-raster_2021_2625-1091/swisssurface3d-raster_2021_2625-1091_0.5_2056_5728.tif",
+        "bytes": 13911871,
+        "sha256": "8fc16223478d375cbaba8ebf42609fd3cfcf4b59cca76dd8931ce2dd1ec9a186"
+      },
+      "actual_file": {
+        "dimensions": [
+          2000,
+          2000
+        ],
+        "bands": 1,
+        "dtype": [
+          "float32"
+        ],
+        "epsg": 2056,
+        "bounds": [
+          2625000.0,
+          1091000.0,
+          2626000.0,
+          1092000.0
+        ],
+        "transform": [
+          0.5,
+          0.0,
+          2625000.0,
+          0.0,
+          -0.5,
+          1092000.0
+        ],
+        "pixel_size_m": [
+          0.5,
+          0.5
+        ],
+        "nodata": -9999.0,
+        "missing_cells_band1": 0,
+        "all_zero_rgb_cells": null,
+        "compression": "Compression.lzw",
+        "is_tiled": true,
+        "block_shapes": [
+          [
+            512,
+            512
+          ]
+        ],
+        "overviews": [
+          2,
+          4
+        ],
+        "image_structure": {
+          "LAYOUT": "COG",
+          "COMPRESSION": "LZW",
+          "INTERLEAVE": "BAND"
+        },
+        "tags": {
+          "TIFFTAG_SOFTWARE": "''",
+          "TIFFTAG_ARTIST": "''",
+          "AREA_OR_POINT": "Area"
+        },
+        "units": [
+          null
+        ],
+        "colour_interpretation": [
+          "1"
+        ],
+        "elevation_range_m": [
+          2301.419921875,
+          2645.7900390625
+        ]
+      },
+      "asset": {
+        "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+        "href": "https://data.geo.admin.ch/ch.swisstopo.swisssurface3d-raster/swisssurface3d-raster_2021_2625-1091/swisssurface3d-raster_2021_2625-1091_0.5_2056_5728.tif",
+        "created": "2023-08-02T13:18:45.896083Z",
+        "updated": "2025-01-19T02:14:17.377572Z",
+        "proj:epsg": 2056,
+        "checksum:multihash": "12208FC16223478D375CBABA8EBF42609FD3CFCF4B59CCA76DD8931CE2DD1EC9A186",
+        "eo:gsd": 0.5
+      },
+      "authoritative_sha256_matches": true,
+      "licence": "swisstopo OGD terms, version 1.3.2021; mandatory attribution",
+      "horizontal_reference": "CH1903+/LV95 (EPSG:2056), metres",
+      "vertical_reference": "LN02 (EPSG:5728), metres; official product provenance, not a vertical CRS encoded in the actual file",
+      "native_observation_resolution_m": null,
+      "source_method": "Spike-free TIN interpolation of classified LiDAR and synthetic water inputs",
+      "official_map_tile_metadata": [
+        {
+          "layer": "ch.swisstopo.images-swissimage-dop10.metadata",
+          "attributes": {
+            "datenstand": "2023",
+            "resolution": "25 cm",
+            "label": "2625_1091"
+          }
+        },
+        {
+          "layer": "ch.swisstopo.swisssurface3d.metadata",
+          "attributes": {
+            "gpstime_min": 2021,
+            "gpstime_max": 2021,
+            "label": "2625_1091"
+          }
+        },
+        {
+          "layer": "ch.swisstopo.swisssurface3d-raster.metadata",
+          "attributes": {
+            "fly_y_min": 2021,
+            "fly_y_max": 2021,
+            "label": "2625_1091"
+          }
+        }
+      ],
+      "date_interpretation": "2021/2022 LiDAR per tile metadata"
+    },
+    {
+      "product": "swisssurface3d-raster",
+      "tile": "2625-1092",
+      "item_id": "swisssurface3d-raster_2021_2625-1092",
+      "item_url": "https://data.geo.admin.ch/api/stac/v0.9/collections/ch.swisstopo.swisssurface3d-raster/items/swisssurface3d-raster_2021_2625-1092",
+      "item_properties": {
+        "datetime": "2021-01-01T00:00:00Z",
+        "created": "2023-08-02T13:19:05.040800Z",
+        "updated": "2025-01-19T03:16:14.805154Z"
+      },
+      "path": "originals/swisssurface3d-raster/swisssurface3d-raster_2021_2625-1092_0.5_2056_5728.tif",
+      "bytes": 14653356,
+      "sha256": "728d9aa878809a6bf6cffe7f4cb7413ac70eed70d946e3afebba7b941839ec92",
+      "receipt": {
+        "download_utc": "2026-10-02T14:43:25.052917+00:00",
+        "url": "https://data.geo.admin.ch/ch.swisstopo.swisssurface3d-raster/swisssurface3d-raster_2021_2625-1092/swisssurface3d-raster_2021_2625-1092_0.5_2056_5728.tif",
+        "bytes": 14653356,
+        "sha256": "728d9aa878809a6bf6cffe7f4cb7413ac70eed70d946e3afebba7b941839ec92"
+      },
+      "actual_file": {
+        "dimensions": [
+          2000,
+          2000
+        ],
+        "bands": 1,
+        "dtype": [
+          "float32"
+        ],
+        "epsg": 2056,
+        "bounds": [
+          2625000.0,
+          1092000.0,
+          2626000.0,
+          1093000.0
+        ],
+        "transform": [
+          0.5,
+          0.0,
+          2625000.0,
+          0.0,
+          -0.5,
+          1093000.0
+        ],
+        "pixel_size_m": [
+          0.5,
+          0.5
+        ],
+        "nodata": -9999.0,
+        "missing_cells_band1": 0,
+        "all_zero_rgb_cells": null,
+        "compression": "Compression.lzw",
+        "is_tiled": true,
+        "block_shapes": [
+          [
+            512,
+            512
+          ]
+        ],
+        "overviews": [
+          2,
+          4
+        ],
+        "image_structure": {
+          "LAYOUT": "COG",
+          "COMPRESSION": "LZW",
+          "INTERLEAVE": "BAND"
+        },
+        "tags": {
+          "TIFFTAG_SOFTWARE": "''",
+          "TIFFTAG_ARTIST": "''",
+          "AREA_OR_POINT": "Area"
+        },
+        "units": [
+          null
+        ],
+        "colour_interpretation": [
+          "1"
+        ],
+        "elevation_range_m": [
+          2565.590087890625,
+          2977.7900390625
+        ]
+      },
+      "asset": {
+        "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+        "href": "https://data.geo.admin.ch/ch.swisstopo.swisssurface3d-raster/swisssurface3d-raster_2021_2625-1092/swisssurface3d-raster_2021_2625-1092_0.5_2056_5728.tif",
+        "created": "2023-08-02T13:19:08.188070Z",
+        "updated": "2025-01-19T02:15:08.622149Z",
+        "proj:epsg": 2056,
+        "checksum:multihash": "1220728D9AA878809A6BF6CFFE7F4CB7413AC70EED70D946E3AFEBBA7B941839EC92",
+        "eo:gsd": 0.5
+      },
+      "authoritative_sha256_matches": true,
+      "licence": "swisstopo OGD terms, version 1.3.2021; mandatory attribution",
+      "horizontal_reference": "CH1903+/LV95 (EPSG:2056), metres",
+      "vertical_reference": "LN02 (EPSG:5728), metres; official product provenance, not a vertical CRS encoded in the actual file",
+      "native_observation_resolution_m": null,
+      "source_method": "Spike-free TIN interpolation of classified LiDAR and synthetic water inputs",
+      "official_map_tile_metadata": [
+        {
+          "layer": "ch.swisstopo.images-swissimage-dop10.metadata",
+          "attributes": {
+            "datenstand": "2023",
+            "resolution": "25 cm",
+            "label": "2625_1092"
+          }
+        },
+        {
+          "layer": "ch.swisstopo.swisssurface3d.metadata",
+          "attributes": {
+            "gpstime_min": 2021,
+            "gpstime_max": 2022,
+            "label": "2625_1092"
+          }
+        },
+        {
+          "layer": "ch.swisstopo.swisssurface3d-raster.metadata",
+          "attributes": {
+            "fly_y_min": 2021,
+            "fly_y_max": 2022,
+            "label": "2625_1092"
+          }
+        }
+      ],
+      "date_interpretation": "2021/2022 LiDAR per tile metadata"
+    },
+    {
+      "product": "swissalti3d",
+      "tile": "2624-1091",
+      "item_id": "swissalti3d_2024_2624-1091",
+      "item_url": "https://data.geo.admin.ch/api/stac/v0.9/collections/ch.swisstopo.swissalti3d/items/swissalti3d_2024_2624-1091",
+      "item_properties": {
+        "datetime": "2024-01-01T00:00:00Z",
+        "created": "2024-12-19T06:29:18.392792Z",
+        "updated": "2024-12-19T10:37:49.146955Z"
+      },
+      "path": "originals/swissalti3d/swissalti3d_2024_2624-1091_0.5_2056_5728.tif",
+      "bytes": 16490312,
+      "sha256": "c68c305e4a142da416b46b555a80916ecc52f8fa50bf1efd5cd2c3f24f9cd4bc",
+      "receipt": {
+        "download_utc": "2026-10-02T14:43:26.032302+00:00",
+        "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2624-1091/swissalti3d_2024_2624-1091_0.5_2056_5728.tif",
+        "bytes": 16490312,
+        "sha256": "c68c305e4a142da416b46b555a80916ecc52f8fa50bf1efd5cd2c3f24f9cd4bc"
+      },
+      "actual_file": {
+        "dimensions": [
+          2000,
+          2000
+        ],
+        "bands": 1,
+        "dtype": [
+          "float32"
+        ],
+        "epsg": 2056,
+        "bounds": [
+          2624000.0,
+          1091000.0,
+          2625000.0,
+          1092000.0
+        ],
+        "transform": [
+          0.5,
+          0.0,
+          2624000.0,
+          0.0,
+          -0.5,
+          1092000.0
+        ],
+        "pixel_size_m": [
+          0.5,
+          0.5
+        ],
+        "nodata": -9999.0,
+        "missing_cells_band1": 0,
+        "all_zero_rgb_cells": null,
+        "compression": "Compression.lzw",
+        "is_tiled": true,
+        "block_shapes": [
+          [
+            128,
+            128
+          ]
+        ],
+        "overviews": [
+          2,
+          4,
+          8
+        ],
+        "image_structure": {
+          "LAYOUT": "COG",
+          "COMPRESSION": "LZW",
+          "INTERLEAVE": "BAND"
+        },
+        "tags": {
+          "AREA_OR_POINT": "Area"
+        },
+        "units": [
+          "metre"
+        ],
+        "colour_interpretation": [
+          "1"
+        ],
+        "elevation_range_m": [
+          2189.575927734375,
+          2615.685791015625
+        ]
+      },
+      "asset": {
+        "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+        "href": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2624-1091/swissalti3d_2024_2624-1091_0.5_2056_5728.tif",
+        "created": "2024-12-19T06:29:18.523330Z",
+        "updated": "2024-12-19T06:29:19.637022Z",
+        "proj:epsg": 2056,
+        "checksum:multihash": "1220C68C305E4A142DA416B46B555A80916ECC52F8FA50BF1EFD5CD2C3F24F9CD4BC",
+        "eo:gsd": 0.5
+      },
+      "authoritative_sha256_matches": true,
+      "licence": "swisstopo OGD terms, version 1.3.2021; mandatory attribution",
+      "horizontal_reference": "CH1903+/LV95 (EPSG:2056), metres",
+      "vertical_reference": "LN02 (EPSG:5728), metres; official product provenance, not a vertical CRS encoded in the actual file",
+      "native_observation_resolution_m": null,
+      "source_method": "DTM-TLM/TIN linear interpolation; Valais 2021/2022 LiDAR base with 2023 photogrammetric change updates",
+      "official_map_tile_metadata": [
+        {
+          "layer": "ch.swisstopo.images-swissimage-dop10.metadata",
+          "attributes": {
+            "datenstand": "2023",
+            "resolution": "25 cm",
+            "label": "2624_1091"
+          }
+        },
+        {
+          "layer": "ch.swisstopo.swisssurface3d.metadata",
+          "attributes": {
+            "gpstime_min": 2021,
+            "gpstime_max": 2021,
+            "label": "2624_1091"
+          }
+        },
+        {
+          "layer": "ch.swisstopo.swisssurface3d-raster.metadata",
+          "attributes": {
+            "fly_y_min": 2021,
+            "fly_y_max": 2021,
+            "label": "2624_1091"
+          }
+        }
+      ],
+      "date_interpretation": "2024 release, not a 2024 survey; 2021/2022 LiDAR and 2023 imagery updates per Valais release note"
+    },
+    {
+      "product": "swissalti3d",
+      "tile": "2624-1092",
+      "item_id": "swissalti3d_2024_2624-1092",
+      "item_url": "https://data.geo.admin.ch/api/stac/v0.9/collections/ch.swisstopo.swissalti3d/items/swissalti3d_2024_2624-1092",
+      "item_properties": {
+        "datetime": "2024-01-01T00:00:00Z",
+        "created": "2024-12-19T06:29:18.580437Z",
+        "updated": "2024-12-19T10:37:49.322944Z"
+      },
+      "path": "originals/swissalti3d/swissalti3d_2024_2624-1092_0.5_2056_5728.tif",
+      "bytes": 16862345,
+      "sha256": "9fa4a4391e2e1bfd650f2f31c7d38ed9a5a94494a967011468e6c44559bbcb2c",
+      "receipt": {
+        "download_utc": "2026-10-02T14:43:27.070671+00:00",
+        "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2624-1092/swissalti3d_2024_2624-1092_0.5_2056_5728.tif",
+        "bytes": 16862345,
+        "sha256": "9fa4a4391e2e1bfd650f2f31c7d38ed9a5a94494a967011468e6c44559bbcb2c"
+      },
+      "actual_file": {
+        "dimensions": [
+          2000,
+          2000
+        ],
+        "bands": 1,
+        "dtype": [
+          "float32"
+        ],
+        "epsg": 2056,
+        "bounds": [
+          2624000.0,
+          1092000.0,
+          2625000.0,
+          1093000.0
+        ],
+        "transform": [
+          0.5,
+          0.0,
+          2624000.0,
+          0.0,
+          -0.5,
+          1093000.0
+        ],
+        "pixel_size_m": [
+          0.5,
+          0.5
+        ],
+        "nodata": -9999.0,
+        "missing_cells_band1": 0,
+        "all_zero_rgb_cells": null,
+        "compression": "Compression.lzw",
+        "is_tiled": true,
+        "block_shapes": [
+          [
+            128,
+            128
+          ]
+        ],
+        "overviews": [
+          2,
+          4,
+          8
+        ],
+        "image_structure": {
+          "LAYOUT": "COG",
+          "COMPRESSION": "LZW",
+          "INTERLEAVE": "BAND"
+        },
+        "tags": {
+          "AREA_OR_POINT": "Area"
+        },
+        "units": [
+          "metre"
+        ],
+        "colour_interpretation": [
+          "1"
+        ],
+        "elevation_range_m": [
+          2223.424560546875,
+          2930.372314453125
+        ]
+      },
+      "asset": {
+        "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+        "href": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2624-1092/swissalti3d_2024_2624-1092_0.5_2056_5728.tif",
+        "created": "2024-12-19T06:29:18.734080Z",
+        "updated": "2024-12-19T06:29:19.581284Z",
+        "proj:epsg": 2056,
+        "checksum:multihash": "12209FA4A4391E2E1BFD650F2F31C7D38ED9A5A94494A967011468E6C44559BBCB2C",
+        "eo:gsd": 0.5
+      },
+      "authoritative_sha256_matches": true,
+      "licence": "swisstopo OGD terms, version 1.3.2021; mandatory attribution",
+      "horizontal_reference": "CH1903+/LV95 (EPSG:2056), metres",
+      "vertical_reference": "LN02 (EPSG:5728), metres; official product provenance, not a vertical CRS encoded in the actual file",
+      "native_observation_resolution_m": null,
+      "source_method": "DTM-TLM/TIN linear interpolation; Valais 2021/2022 LiDAR base with 2023 photogrammetric change updates",
+      "official_map_tile_metadata": [
+        {
+          "layer": "ch.swisstopo.images-swissimage-dop10.metadata",
+          "attributes": {
+            "datenstand": "2023",
+            "resolution": "25 cm",
+            "label": "2624_1092"
+          }
+        },
+        {
+          "layer": "ch.swisstopo.swisssurface3d.metadata",
+          "attributes": {
+            "gpstime_min": 2021,
+            "gpstime_max": 2021,
+            "label": "2624_1092"
+          }
+        },
+        {
+          "layer": "ch.swisstopo.swisssurface3d-raster.metadata",
+          "attributes": {
+            "fly_y_min": 2021,
+            "fly_y_max": 2021,
+            "label": "2624_1092"
+          }
+        }
+      ],
+      "date_interpretation": "2024 release, not a 2024 survey; 2021/2022 LiDAR and 2023 imagery updates per Valais release note"
+    },
+    {
+      "product": "swissalti3d",
+      "tile": "2625-1091",
+      "item_id": "swissalti3d_2024_2625-1091",
+      "item_url": "https://data.geo.admin.ch/api/stac/v0.9/collections/ch.swisstopo.swissalti3d/items/swissalti3d_2024_2625-1091",
+      "item_properties": {
+        "datetime": "2024-01-01T00:00:00Z",
+        "created": "2024-12-19T06:29:37.677084Z",
+        "updated": "2024-12-19T10:38:00.116595Z"
+      },
+      "path": "originals/swissalti3d/swissalti3d_2024_2625-1091_0.5_2056_5728.tif",
+      "bytes": 15925644,
+      "sha256": "0d2ebc6d0b4fd06ab2191cbf2a2f5ab77728249fa8c835075040bce4dc4899de",
+      "receipt": {
+        "download_utc": "2026-10-02T14:43:28.005936+00:00",
+        "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2625-1091/swissalti3d_2024_2625-1091_0.5_2056_5728.tif",
+        "bytes": 15925644,
+        "sha256": "0d2ebc6d0b4fd06ab2191cbf2a2f5ab77728249fa8c835075040bce4dc4899de"
+      },
+      "actual_file": {
+        "dimensions": [
+          2000,
+          2000
+        ],
+        "bands": 1,
+        "dtype": [
+          "float32"
+        ],
+        "epsg": 2056,
+        "bounds": [
+          2625000.0,
+          1091000.0,
+          2626000.0,
+          1092000.0
+        ],
+        "transform": [
+          0.5,
+          0.0,
+          2625000.0,
+          0.0,
+          -0.5,
+          1092000.0
+        ],
+        "pixel_size_m": [
+          0.5,
+          0.5
+        ],
+        "nodata": -9999.0,
+        "missing_cells_band1": 0,
+        "all_zero_rgb_cells": null,
+        "compression": "Compression.lzw",
+        "is_tiled": true,
+        "block_shapes": [
+          [
+            128,
+            128
+          ]
+        ],
+        "overviews": [
+          2,
+          4,
+          8
+        ],
+        "image_structure": {
+          "LAYOUT": "COG",
+          "COMPRESSION": "LZW",
+          "INTERLEAVE": "BAND"
+        },
+        "tags": {
+          "AREA_OR_POINT": "Area"
+        },
+        "units": [
+          "metre"
+        ],
+        "colour_interpretation": [
+          "1"
+        ],
+        "elevation_range_m": [
+          2286.75341796875,
+          2645.7919921875
+        ]
+      },
+      "asset": {
+        "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+        "href": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2625-1091/swissalti3d_2024_2625-1091_0.5_2056_5728.tif",
+        "created": "2024-12-19T06:29:37.802472Z",
+        "updated": "2024-12-19T06:29:39.367485Z",
+        "proj:epsg": 2056,
+        "checksum:multihash": "12200D2EBC6D0B4FD06AB2191CBF2A2F5AB77728249FA8C835075040BCE4DC4899DE",
+        "eo:gsd": 0.5
+      },
+      "authoritative_sha256_matches": true,
+      "licence": "swisstopo OGD terms, version 1.3.2021; mandatory attribution",
+      "horizontal_reference": "CH1903+/LV95 (EPSG:2056), metres",
+      "vertical_reference": "LN02 (EPSG:5728), metres; official product provenance, not a vertical CRS encoded in the actual file",
+      "native_observation_resolution_m": null,
+      "source_method": "DTM-TLM/TIN linear interpolation; Valais 2021/2022 LiDAR base with 2023 photogrammetric change updates",
+      "official_map_tile_metadata": [
+        {
+          "layer": "ch.swisstopo.images-swissimage-dop10.metadata",
+          "attributes": {
+            "datenstand": "2023",
+            "resolution": "25 cm",
+            "label": "2625_1091"
+          }
+        },
+        {
+          "layer": "ch.swisstopo.swisssurface3d.metadata",
+          "attributes": {
+            "gpstime_min": 2021,
+            "gpstime_max": 2021,
+            "label": "2625_1091"
+          }
+        },
+        {
+          "layer": "ch.swisstopo.swisssurface3d-raster.metadata",
+          "attributes": {
+            "fly_y_min": 2021,
+            "fly_y_max": 2021,
+            "label": "2625_1091"
+          }
+        }
+      ],
+      "date_interpretation": "2024 release, not a 2024 survey; 2021/2022 LiDAR and 2023 imagery updates per Valais release note"
+    },
+    {
+      "product": "swissalti3d",
+      "tile": "2625-1092",
+      "item_id": "swissalti3d_2024_2625-1092",
+      "item_url": "https://data.geo.admin.ch/api/stac/v0.9/collections/ch.swisstopo.swissalti3d/items/swissalti3d_2024_2625-1092",
+      "item_properties": {
+        "datetime": "2024-01-01T00:00:00Z",
+        "created": "2024-12-19T06:29:37.778992Z",
+        "updated": "2024-12-19T10:38:00.177268Z"
+      },
+      "path": "originals/swissalti3d/swissalti3d_2024_2625-1092_0.5_2056_5728.tif",
+      "bytes": 16329103,
+      "sha256": "4dffaad9efb82d3bf327a86b4f82d55762165ea5f825c386c23380a9320ff875",
+      "receipt": {
+        "download_utc": "2026-10-02T14:43:29.021960+00:00",
+        "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2625-1092/swissalti3d_2024_2625-1092_0.5_2056_5728.tif",
+        "bytes": 16329103,
+        "sha256": "4dffaad9efb82d3bf327a86b4f82d55762165ea5f825c386c23380a9320ff875"
+      },
+      "actual_file": {
+        "dimensions": [
+          2000,
+          2000
+        ],
+        "bands": 1,
+        "dtype": [
+          "float32"
+        ],
+        "epsg": 2056,
+        "bounds": [
+          2625000.0,
+          1092000.0,
+          2626000.0,
+          1093000.0
+        ],
+        "transform": [
+          0.5,
+          0.0,
+          2625000.0,
+          0.0,
+          -0.5,
+          1093000.0
+        ],
+        "pixel_size_m": [
+          0.5,
+          0.5
+        ],
+        "nodata": -9999.0,
+        "missing_cells_band1": 0,
+        "all_zero_rgb_cells": null,
+        "compression": "Compression.lzw",
+        "is_tiled": true,
+        "block_shapes": [
+          [
+            128,
+            128
+          ]
+        ],
+        "overviews": [
+          2,
+          4,
+          8
+        ],
+        "image_structure": {
+          "LAYOUT": "COG",
+          "COMPRESSION": "LZW",
+          "INTERLEAVE": "BAND"
+        },
+        "tags": {
+          "AREA_OR_POINT": "Area"
+        },
+        "units": [
+          "metre"
+        ],
+        "colour_interpretation": [
+          "1"
+        ],
+        "elevation_range_m": [
+          2565.587890625,
+          2977.789794921875
+        ]
+      },
+      "asset": {
+        "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+        "href": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2625-1092/swissalti3d_2024_2625-1092_0.5_2056_5728.tif",
+        "created": "2024-12-19T06:29:37.902692Z",
+        "updated": "2024-12-19T06:29:39.370184Z",
+        "proj:epsg": 2056,
+        "checksum:multihash": "12204DFFAAD9EFB82D3BF327A86B4F82D55762165EA5F825C386C23380A9320FF875",
+        "eo:gsd": 0.5
+      },
+      "authoritative_sha256_matches": true,
+      "licence": "swisstopo OGD terms, version 1.3.2021; mandatory attribution",
+      "horizontal_reference": "CH1903+/LV95 (EPSG:2056), metres",
+      "vertical_reference": "LN02 (EPSG:5728), metres; official product provenance, not a vertical CRS encoded in the actual file",
+      "native_observation_resolution_m": null,
+      "source_method": "DTM-TLM/TIN linear interpolation; Valais 2021/2022 LiDAR base with 2023 photogrammetric change updates",
+      "official_map_tile_metadata": [
+        {
+          "layer": "ch.swisstopo.images-swissimage-dop10.metadata",
+          "attributes": {
+            "datenstand": "2023",
+            "resolution": "25 cm",
+            "label": "2625_1092"
+          }
+        },
+        {
+          "layer": "ch.swisstopo.swisssurface3d.metadata",
+          "attributes": {
+            "gpstime_min": 2021,
+            "gpstime_max": 2022,
+            "label": "2625_1092"
+          }
+        },
+        {
+          "layer": "ch.swisstopo.swisssurface3d-raster.metadata",
+          "attributes": {
+            "fly_y_min": 2021,
+            "fly_y_max": 2022,
+            "label": "2625_1092"
+          }
+        }
+      ],
+      "date_interpretation": "2024 release, not a 2024 survey; 2021/2022 LiDAR and 2023 imagery updates per Valais release note"
+    },
+    {
+      "product": "swisssurface3d",
+      "tile": "2624-1091",
+      "item_id": "swisssurface3d_2021_2624-1091",
+      "item_url": "https://data.geo.admin.ch/api/stac/v0.9/collections/ch.swisstopo.swisssurface3d/items/swisssurface3d_2021_2624-1091",
+      "item_properties": {
+        "datetime": "2021-01-01T00:00:00Z",
+        "created": "2023-04-14T08:28:48.366483Z",
+        "updated": "2025-01-18T22:55:16.972339Z"
+      },
+      "path": "originals/swisssurface3d/swisssurface3d_2021_2624-1091_2056_5728.las.zip",
+      "bytes": 138581042,
+      "sha256": "cfdd16247ea8c4dc30119601315f8eed3925e582739ac3a3cb095e8e363bcad9",
+      "receipt": {
+        "download_utc": "2026-10-02T14:43:36.282302+00:00",
+        "url": "https://data.geo.admin.ch/ch.swisstopo.swisssurface3d/swisssurface3d_2021_2624-1091/swisssurface3d_2021_2624-1091_2056_5728.las.zip",
+        "bytes": 138581042,
+        "sha256": "cfdd16247ea8c4dc30119601315f8eed3925e582739ac3a3cb095e8e363bcad9"
+      },
+      "extracted_members": [
+        {
+          "path": "extracted/swisssurface3d_2021_2624-1091_2056_5728.las/2624_1091.las",
+          "bytes": 333858535,
+          "sha256": "7932cfe589497bfb7306dd62614e90d3a86ef2888efbe8bab5539c399a919642"
+        }
+      ],
+      "actual_file": {
+        "version": "1.2",
+        "point_format": 1,
+        "point_record_bytes": 28,
+        "point_count": 11923511,
+        "xyz_min": [
+          2624000.0,
+          1091000.0,
+          2189.26
+        ],
+        "xyz_max": [
+          2624999.99,
+          1091999.99,
+          2617.68
+        ],
+        "scales": [
+          0.01,
+          0.01,
+          0.01
+        ],
+        "offsets": [
+          2624000.0,
+          1091000.0,
+          0.0
+        ],
+        "vlrs": [],
+        "global_encoding": 1,
+        "system_identifier": "LAStools (c) by rapidlasso GmbH",
+        "generating_software": "las2las (version 220107)",
+        "creation_day_year": [
+          269,
+          2022
+        ],
+        "classification_counts": {
+          "1": 1144652,
+          "2": 10778850,
+          "3": 9
+        },
+        "return_number_counts": {
+          "1": 11750666,
+          "2": 169695,
+          "3": 3078,
+          "4": 71,
+          "5": 1
+        },
+        "number_of_returns_counts": {
+          "1": 11571894,
+          "2": 341514,
+          "3": 9793,
+          "4": 305,
+          "5": 5
+        },
+        "gps_time_range_raw": [
+          313821569.992984,
+          314003121.5215026
+        ],
+        "acquisition_gps_date_counts": {
+          "2021-08-24": 16139,
+          "2021-08-26": 11907372
+        },
+        "gps_date_note": "Adjusted standard GPS time + 1e9 seconds since 1980-01-06. GPS timescale, not UTC; no leap-second conversion. Creation year/day is file generation, not acquisition.",
+        "all_return_density_per_m2": 11.923511,
+        "first_return_density_per_m2": 11.750666,
+        "density_note": "Plan-area counts; repeated returns/flight overlaps do not equal independent surface samples. Row 0 south, column 0 west. No terrain raster is generated.",
+        "density_100m_cells_all_returns_summary": {
+          "minimum": 8.3234,
+          "maximum": 17.2138,
+          "mean": 11.923511000000001,
+          "empty_cells": 0,
+          "cell_area_m2": 10000,
+          "cell_count": 100
+        },
+        "density_100m_cells_first_returns_summary": {
+          "minimum": 8.2798,
+          "maximum": 16.8048,
+          "mean": 11.750666,
+          "empty_cells": 0,
+          "cell_area_m2": 10000,
+          "cell_count": 100
+        }
+      },
+      "asset": {
+        "type": "application/vnd.laszip",
+        "href": "https://data.geo.admin.ch/ch.swisstopo.swisssurface3d/swisssurface3d_2021_2624-1091/swisssurface3d_2021_2624-1091_2056_5728.las.zip",
+        "created": "2023-04-14T08:28:48.620211Z",
+        "updated": "2025-01-18T22:55:16.972339Z",
+        "proj:epsg": 2056,
+        "checksum:multihash": "1220CFDD16247EA8C4DC30119601315F8EED3925E582739AC3A3CB095E8E363BCAD9"
+      },
+      "authoritative_sha256_matches": true,
+      "licence": "swisstopo OGD terms, version 1.3.2021; mandatory attribution",
+      "horizontal_reference": "CH1903+/LV95 (EPSG:2056), metres",
+      "vertical_reference": "LN02 (EPSG:5728), metres; official product provenance, not a vertical CRS encoded in the actual file",
+      "native_observation_resolution_m": null,
+      "source_method": "Airborne classified LiDAR",
+      "official_map_tile_metadata": [
+        {
+          "layer": "ch.swisstopo.images-swissimage-dop10.metadata",
+          "attributes": {
+            "datenstand": "2023",
+            "resolution": "25 cm",
+            "label": "2624_1091"
+          }
+        },
+        {
+          "layer": "ch.swisstopo.swisssurface3d.metadata",
+          "attributes": {
+            "gpstime_min": 2021,
+            "gpstime_max": 2021,
+            "label": "2624_1091"
+          }
+        },
+        {
+          "layer": "ch.swisstopo.swisssurface3d-raster.metadata",
+          "attributes": {
+            "fly_y_min": 2021,
+            "fly_y_max": 2021,
+            "label": "2624_1091"
+          }
+        }
+      ],
+      "date_interpretation": "LAS point GPS dates in actual_file"
+    },
+    {
+      "product": "swisssurface3d",
+      "tile": "2624-1092",
+      "item_id": "swisssurface3d_2021_2624-1092",
+      "item_url": "https://data.geo.admin.ch/api/stac/v0.9/collections/ch.swisstopo.swisssurface3d/items/swisssurface3d_2021_2624-1092",
+      "item_properties": {
+        "datetime": "2021-01-01T00:00:00Z",
+        "created": "2023-04-14T08:31:16.597687Z",
+        "updated": "2025-01-18T22:56:10.695423Z"
+      },
+      "path": "originals/swisssurface3d/swisssurface3d_2021_2624-1092_2056_5728.las.zip",
+      "bytes": 154182049,
+      "sha256": "8e73c72fff64adea00eb5449dece3d3918d2d04b91c067d7ff1cd5ec417b187c",
+      "receipt": {
+        "download_utc": "2026-10-02T14:43:44.501917+00:00",
+        "url": "https://data.geo.admin.ch/ch.swisstopo.swisssurface3d/swisssurface3d_2021_2624-1092/swisssurface3d_2021_2624-1092_2056_5728.las.zip",
+        "bytes": 154182049,
+        "sha256": "8e73c72fff64adea00eb5449dece3d3918d2d04b91c067d7ff1cd5ec417b187c"
+      },
+      "extracted_members": [
+        {
+          "path": "extracted/swisssurface3d_2021_2624-1092_2056_5728.las/2624_1092.las",
+          "bytes": 369569819,
+          "sha256": "39d4def2a9154a664799297429e24da133e07bf0a859d768cede32452203e423"
+        }
+      ],
+      "actual_file": {
+        "version": "1.2",
+        "point_format": 1,
+        "point_record_bytes": 28,
+        "point_count": 13198914,
+        "xyz_min": [
+          2624000.0,
+          1092000.0,
+          2225.23
+        ],
+        "xyz_max": [
+          2624999.99,
+          1092999.99,
+          2930.4500000000003
+        ],
+        "scales": [
+          0.01,
+          0.01,
+          0.01
+        ],
+        "offsets": [
+          2624000.0,
+          1092000.0,
+          0.0
+        ],
+        "vlrs": [],
+        "global_encoding": 1,
+        "system_identifier": "LAStools (c) by rapidlasso GmbH",
+        "generating_software": "las2las (version 220107)",
+        "creation_day_year": [
+          269,
+          2022
+        ],
+        "classification_counts": {
+          "1": 1709414,
+          "2": 11488852,
+          "3": 2,
+          "6": 578,
+          "9": 68
+        },
+        "return_number_counts": {
+          "1": 12958959,
+          "2": 227073,
+          "3": 12220,
+          "4": 632,
+          "5": 28,
+          "6": 2
+        },
+        "number_of_returns_counts": {
+          "1": 12724346,
+          "2": 435703,
+          "3": 36149,
+          "4": 2569,
+          "5": 135,
+          "6": 12
+        },
+        "gps_time_range_raw": [
+          313821124.8451976,
+          314002451.9078323
+        ],
+        "acquisition_gps_date_counts": {
+          "2021-08-24": 6614900,
+          "2021-08-26": 6584014
+        },
+        "gps_date_note": "Adjusted standard GPS time + 1e9 seconds since 1980-01-06. GPS timescale, not UTC; no leap-second conversion. Creation year/day is file generation, not acquisition.",
+        "all_return_density_per_m2": 13.198914,
+        "first_return_density_per_m2": 12.958959,
+        "density_note": "Plan-area counts; repeated returns/flight overlaps do not equal independent surface samples. Row 0 south, column 0 west. No terrain raster is generated.",
+        "density_100m_cells_all_returns_summary": {
+          "minimum": 8.1498,
+          "maximum": 17.7645,
+          "mean": 13.198914000000004,
+          "empty_cells": 0,
+          "cell_area_m2": 10000,
+          "cell_count": 100
+        },
+        "density_100m_cells_first_returns_summary": {
+          "minimum": 8.0472,
+          "maximum": 16.9688,
+          "mean": 12.958959,
+          "empty_cells": 0,
+          "cell_area_m2": 10000,
+          "cell_count": 100
+        }
+      },
+      "asset": {
+        "type": "application/vnd.laszip",
+        "href": "https://data.geo.admin.ch/ch.swisstopo.swisssurface3d/swisssurface3d_2021_2624-1092/swisssurface3d_2021_2624-1092_2056_5728.las.zip",
+        "created": "2023-04-14T08:31:16.818730Z",
+        "updated": "2025-01-18T22:56:10.695423Z",
+        "proj:epsg": 2056,
+        "checksum:multihash": "12208E73C72FFF64ADEA00EB5449DECE3D3918D2D04B91C067D7FF1CD5EC417B187C"
+      },
+      "authoritative_sha256_matches": true,
+      "licence": "swisstopo OGD terms, version 1.3.2021; mandatory attribution",
+      "horizontal_reference": "CH1903+/LV95 (EPSG:2056), metres",
+      "vertical_reference": "LN02 (EPSG:5728), metres; official product provenance, not a vertical CRS encoded in the actual file",
+      "native_observation_resolution_m": null,
+      "source_method": "Airborne classified LiDAR",
+      "official_map_tile_metadata": [
+        {
+          "layer": "ch.swisstopo.images-swissimage-dop10.metadata",
+          "attributes": {
+            "datenstand": "2023",
+            "resolution": "25 cm",
+            "label": "2624_1092"
+          }
+        },
+        {
+          "layer": "ch.swisstopo.swisssurface3d.metadata",
+          "attributes": {
+            "gpstime_min": 2021,
+            "gpstime_max": 2021,
+            "label": "2624_1092"
+          }
+        },
+        {
+          "layer": "ch.swisstopo.swisssurface3d-raster.metadata",
+          "attributes": {
+            "fly_y_min": 2021,
+            "fly_y_max": 2021,
+            "label": "2624_1092"
+          }
+        }
+      ],
+      "date_interpretation": "LAS point GPS dates in actual_file"
+    },
+    {
+      "product": "swisssurface3d",
+      "tile": "2625-1091",
+      "item_id": "swisssurface3d_2021_2625-1091",
+      "item_url": "https://data.geo.admin.ch/api/stac/v0.9/collections/ch.swisstopo.swisssurface3d/items/swisssurface3d_2021_2625-1091",
+      "item_properties": {
+        "datetime": "2021-01-01T00:00:00Z",
+        "created": "2023-04-14T08:58:19.060237Z",
+        "updated": "2025-01-18T23:00:09.456551Z"
+      },
+      "path": "originals/swisssurface3d/swisssurface3d_2021_2625-1091_2056_5728.las.zip",
+      "bytes": 144504352,
+      "sha256": "0727486c18a3bfb0f8dce51f3d17f969a2258f21961abf65214a1a436b02763b",
+      "receipt": {
+        "download_utc": "2026-10-02T14:43:52.003473+00:00",
+        "url": "https://data.geo.admin.ch/ch.swisstopo.swisssurface3d/swisssurface3d_2021_2625-1091/swisssurface3d_2021_2625-1091_2056_5728.las.zip",
+        "bytes": 144504352,
+        "sha256": "0727486c18a3bfb0f8dce51f3d17f969a2258f21961abf65214a1a436b02763b"
+      },
+      "extracted_members": [
+        {
+          "path": "extracted/swisssurface3d_2021_2625-1091_2056_5728.las/2625_1091.las",
+          "bytes": 351556271,
+          "sha256": "887efa8e3f4c031e13c7b6864338d3d19ad6db535bc65966f7bc48750e74c64e"
+        }
+      ],
+      "actual_file": {
+        "version": "1.2",
+        "point_format": 1,
+        "point_record_bytes": 28,
+        "point_count": 12555573,
+        "xyz_min": [
+          2625000.0,
+          1091000.0,
+          2301.36
+        ],
+        "xyz_max": [
+          2625999.99,
+          1091999.99,
+          2645.9
+        ],
+        "scales": [
+          0.01,
+          0.01,
+          0.01
+        ],
+        "offsets": [
+          2625000.0,
+          1091000.0,
+          0.0
+        ],
+        "vlrs": [],
+        "global_encoding": 1,
+        "system_identifier": "LAStools (c) by rapidlasso GmbH",
+        "generating_software": "las2las (version 220107)",
+        "creation_day_year": [
+          269,
+          2022
+        ],
+        "classification_counts": {
+          "1": 1131138,
+          "2": 11424434,
+          "3": 1
+        },
+        "return_number_counts": {
+          "1": 12417676,
+          "2": 135041,
+          "3": 2751,
+          "4": 102,
+          "5": 3
+        },
+        "number_of_returns_counts": {
+          "1": 12277739,
+          "2": 268994,
+          "3": 8389,
+          "4": 436,
+          "5": 10,
+          "6": 5
+        },
+        "gps_time_range_raw": [
+          314000353.6847139,
+          314003088.5091672
+        ],
+        "acquisition_gps_date_counts": {
+          "2021-08-26": 12555573
+        },
+        "gps_date_note": "Adjusted standard GPS time + 1e9 seconds since 1980-01-06. GPS timescale, not UTC; no leap-second conversion. Creation year/day is file generation, not acquisition.",
+        "all_return_density_per_m2": 12.555573,
+        "first_return_density_per_m2": 12.417676,
+        "density_note": "Plan-area counts; repeated returns/flight overlaps do not equal independent surface samples. Row 0 south, column 0 west. No terrain raster is generated.",
+        "density_100m_cells_all_returns_summary": {
+          "minimum": 7.4901,
+          "maximum": 20.6331,
+          "mean": 12.555572999999999,
+          "empty_cells": 0,
+          "cell_area_m2": 10000,
+          "cell_count": 100
+        },
+        "density_100m_cells_first_returns_summary": {
+          "minimum": 7.2345,
+          "maximum": 20.0675,
+          "mean": 12.417676000000002,
+          "empty_cells": 0,
+          "cell_area_m2": 10000,
+          "cell_count": 100
+        }
+      },
+      "asset": {
+        "type": "application/vnd.laszip",
+        "href": "https://data.geo.admin.ch/ch.swisstopo.swisssurface3d/swisssurface3d_2021_2625-1091/swisssurface3d_2021_2625-1091_2056_5728.las.zip",
+        "created": "2023-04-14T08:58:19.729859Z",
+        "updated": "2025-01-18T23:00:09.456551Z",
+        "proj:epsg": 2056,
+        "checksum:multihash": "12200727486C18A3BFB0F8DCE51F3D17F969A2258F21961ABF65214A1A436B02763B"
+      },
+      "authoritative_sha256_matches": true,
+      "licence": "swisstopo OGD terms, version 1.3.2021; mandatory attribution",
+      "horizontal_reference": "CH1903+/LV95 (EPSG:2056), metres",
+      "vertical_reference": "LN02 (EPSG:5728), metres; official product provenance, not a vertical CRS encoded in the actual file",
+      "native_observation_resolution_m": null,
+      "source_method": "Airborne classified LiDAR",
+      "official_map_tile_metadata": [
+        {
+          "layer": "ch.swisstopo.images-swissimage-dop10.metadata",
+          "attributes": {
+            "datenstand": "2023",
+            "resolution": "25 cm",
+            "label": "2625_1091"
+          }
+        },
+        {
+          "layer": "ch.swisstopo.swisssurface3d.metadata",
+          "attributes": {
+            "gpstime_min": 2021,
+            "gpstime_max": 2021,
+            "label": "2625_1091"
+          }
+        },
+        {
+          "layer": "ch.swisstopo.swisssurface3d-raster.metadata",
+          "attributes": {
+            "fly_y_min": 2021,
+            "fly_y_max": 2021,
+            "label": "2625_1091"
+          }
+        }
+      ],
+      "date_interpretation": "LAS point GPS dates in actual_file"
+    },
+    {
+      "product": "swisssurface3d",
+      "tile": "2625-1092",
+      "item_id": "swisssurface3d_2021_2625-1092",
+      "item_url": "https://data.geo.admin.ch/api/stac/v0.9/collections/ch.swisstopo.swisssurface3d/items/swisssurface3d_2021_2625-1092",
+      "item_properties": {
+        "datetime": "2021-01-01T00:00:00Z",
+        "created": "2023-04-14T09:03:14.356311Z",
+        "updated": "2025-01-18T23:00:18.826545Z"
+      },
+      "path": "originals/swisssurface3d/swisssurface3d_2021_2625-1092_2056_5728.las.zip",
+      "bytes": 148742674,
+      "sha256": "46c4ad60dd467818105fabbd368b4d345feaabc181fb0b4961aac6453c16ee7a",
+      "receipt": {
+        "download_utc": "2026-10-02T14:43:59.574689+00:00",
+        "url": "https://data.geo.admin.ch/ch.swisstopo.swisssurface3d/swisssurface3d_2021_2625-1092/swisssurface3d_2021_2625-1092_2056_5728.las.zip",
+        "bytes": 148742674,
+        "sha256": "46c4ad60dd467818105fabbd368b4d345feaabc181fb0b4961aac6453c16ee7a"
+      },
+      "extracted_members": [
+        {
+          "path": "extracted/swisssurface3d_2021_2625-1092_2056_5728.las/2625_1092.las",
+          "bytes": 360316211,
+          "sha256": "9dfd16e5648d8f801397347a62e59eecf0c1889a1e72bdebe6f8ca83421a24f3"
+        }
+      ],
+      "actual_file": {
+        "version": "1.2",
+        "point_format": 1,
+        "point_record_bytes": 28,
+        "point_count": 12868428,
+        "xyz_min": [
+          2625000.0,
+          1092000.0,
+          2565.42
+        ],
+        "xyz_max": [
+          2625999.99,
+          1092999.99,
+          2977.85
+        ],
+        "scales": [
+          0.01,
+          0.01,
+          0.01
+        ],
+        "offsets": [
+          2625000.0,
+          1092000.0,
+          0.0
+        ],
+        "vlrs": [],
+        "global_encoding": 1,
+        "system_identifier": "LAStools (c) by rapidlasso GmbH",
+        "generating_software": "las2las (version 220107)",
+        "creation_day_year": [
+          45,
+          2023
+        ],
+        "classification_counts": {
+          "1": 502251,
+          "2": 12361277,
+          "3": 202,
+          "6": 4625,
+          "9": 73
+        },
+        "return_number_counts": {
+          "1": 12781554,
+          "2": 83591,
+          "3": 3147,
+          "4": 131,
+          "5": 5
+        },
+        "number_of_returns_counts": {
+          "1": 12696133,
+          "2": 162422,
+          "3": 9334,
+          "4": 514,
+          "5": 25
+        },
+        "gps_time_range_raw": [
+          313821150.6589889,
+          345287981.9713475
+        ],
+        "acquisition_gps_date_counts": {
+          "2021-08-24": 1830348,
+          "2021-08-26": 3072950,
+          "2022-08-23": 7965130
+        },
+        "gps_date_note": "Adjusted standard GPS time + 1e9 seconds since 1980-01-06. GPS timescale, not UTC; no leap-second conversion. Creation year/day is file generation, not acquisition.",
+        "all_return_density_per_m2": 12.868428,
+        "first_return_density_per_m2": 12.781554,
+        "density_note": "Plan-area counts; repeated returns/flight overlaps do not equal independent surface samples. Row 0 south, column 0 west. No terrain raster is generated.",
+        "density_100m_cells_all_returns_summary": {
+          "minimum": 7.5273,
+          "maximum": 16.6809,
+          "mean": 12.868428000000003,
+          "empty_cells": 0,
+          "cell_area_m2": 10000,
+          "cell_count": 100
+        },
+        "density_100m_cells_first_returns_summary": {
+          "minimum": 7.5217,
+          "maximum": 16.6601,
+          "mean": 12.781554000000002,
+          "empty_cells": 0,
+          "cell_area_m2": 10000,
+          "cell_count": 100
+        }
+      },
+      "asset": {
+        "type": "application/vnd.laszip",
+        "href": "https://data.geo.admin.ch/ch.swisstopo.swisssurface3d/swisssurface3d_2021_2625-1092/swisssurface3d_2021_2625-1092_2056_5728.las.zip",
+        "created": "2023-04-14T09:03:14.751537Z",
+        "updated": "2025-01-18T23:00:18.826545Z",
+        "proj:epsg": 2056,
+        "checksum:multihash": "122046C4AD60DD467818105FABBD368B4D345FEAABC181FB0B4961AAC6453C16EE7A"
+      },
+      "authoritative_sha256_matches": true,
+      "licence": "swisstopo OGD terms, version 1.3.2021; mandatory attribution",
+      "horizontal_reference": "CH1903+/LV95 (EPSG:2056), metres",
+      "vertical_reference": "LN02 (EPSG:5728), metres; official product provenance, not a vertical CRS encoded in the actual file",
+      "native_observation_resolution_m": null,
+      "source_method": "Airborne classified LiDAR",
+      "official_map_tile_metadata": [
+        {
+          "layer": "ch.swisstopo.images-swissimage-dop10.metadata",
+          "attributes": {
+            "datenstand": "2023",
+            "resolution": "25 cm",
+            "label": "2625_1092"
+          }
+        },
+        {
+          "layer": "ch.swisstopo.swisssurface3d.metadata",
+          "attributes": {
+            "gpstime_min": 2021,
+            "gpstime_max": 2022,
+            "label": "2625_1092"
+          }
+        },
+        {
+          "layer": "ch.swisstopo.swisssurface3d-raster.metadata",
+          "attributes": {
+            "fly_y_min": 2021,
+            "fly_y_max": 2022,
+            "label": "2625_1092"
+          }
+        }
+      ],
+      "date_interpretation": "LAS point GPS dates in actual_file"
+    }
+  ],
+  "spatial_validation": {
+    "raster_coverage_percent": 100,
+    "bounds": [
+      2624000,
+      1091000,
+      2626000,
+      1093000
+    ],
+    "height_grids_identical": true,
+    "horizontal_reprojection_required": false,
+    "north_up": true,
+    "rotation_or_mirroring": false,
+    "imagery_to_height_cell_ratio_per_axis": 5,
+    "pixel_centres_note": "Grids share edges; imagery centres are 0.05 m from tile edge, height centres 0.25 m. Not identical centres.",
+    "point_cloud_note": "Four complete tile footprints; populated 100 m bins do not establish gap-free 1 m sampling.",
+    "vertical_note": "LN02 (EPSG:5728), metres, established by official product metadata; not encoded in these TIFF horizontal CRS tags or LAS VLRs."
+  },
+  "storage": {
+    "original_download_bytes": 896360770,
+    "extracted_las_bytes": 1415300836,
+    "source_count": 16,
+    "policy": "Originals/extractions/evidence/previews remain external. Git contains small provenance and offline tooling only."
+  },
+  "temporal_compatibility": {
+    "classification": "Different-year imagery and LiDAR; mixed-acquisition northeast tile; composite terrain update product",
+    "not_cotemporal": true,
+    "implications": [
+      "Snow/ice and moraines may have moved between 2021/2022 and 2023.",
+      "Water level, ground cover, infrastructure and paths can differ.",
+      "DSM−DTM may include update/classification/interpolation effects; not object-height truth.",
+      "Texture versus geometry discrepancies cannot be attributed solely to resolution."
+    ],
+    "per_pixel_mosaic_dates_available": false
+  },
+  "terrain_inspection": {
+    "method": "North-up 1 m nearest-neighbour overview and three 150 m crops of original distributed imagery; elevation metadata extrema. No mesh, semantic classifier or new terrain grid.",
+    "preview_paths": [
+      "diagnostics/aoi-orthophoto-overview.png",
+      "diagnostics/riffelhorn-distributed-10cm-crop.png",
+      "diagnostics/riffelsee-distributed-10cm-crop.png",
+      "diagnostics/southern-landforms-distributed-10cm-crop.png"
+    ],
+    "confirmed_qualitatively": [
+      "Exposed fractured bedrock and steep faces",
+      "Loose rock/scree-like deposits and large visible blocks",
+      "Alpine green/brown ground cover",
+      "Paths, northern railway and limited infrastructure",
+      "Riffelsee and smaller water boundaries",
+      "Gullies/drainage traces",
+      "Southern ice/snow and debris/morainic landforms"
+    ],
+    "limitations": "Visual observations, not semantic labels or surveyed inventories. Deep shadows, orthophoto relief distortions and bright ice obscure some details."
+  },
+  "toolchain": {
+    "python": "3.12.6",
+    "numpy": "2.5.3",
+    "rasterio": "1.4.3",
+    "gdal": "3.9.3",
+    "pyproj": "3.7.2",
+    "pillow": "12.3.0",
+    "las_inspection": "Narrowly gated LAS 1.2 formats 0–3 binary parser, chunked; no new dependency installed"
+  },
+  "suitability": "Suitable with documented limitations",
+  "next_experiment": "Separately authorize one bounded mountain representation comparison using these sources, preserving native evidence and isolating temporally variable ice/water/shadows. No experiment implemented here.",
+  "uncertainties": [
+    "Exact mosaic pixel acquisition days/seamlines",
+    "Exact LiDAR instrument and flight contractor",
+    "Per-cell swissALTI3D update lineage",
+    "Fine-scale point gaps/steep-face occlusions and independent registration accuracy",
+    "267 unflagged black imagery pixels",
+    "Temporal change on ice, water, paths and alpine ground cover"
+  ],
+  "validation": {
+    "originals_matching_official_sha256": 16,
+    "extracted_las_matching_retained_sha256": 4,
+    "terrain_research_tests": {
+      "passed": 16,
+      "failed": 0,
+      "skipped": 0,
+      "new_synthetic_acquisition_tests": 6
+    },
+    "json_links_whitespace_privacy_scope_checks": "passed",
+    "eslint": "passed",
+    "typescript_vite_production_build": "passed",
+    "known_warnings": [
+      "Existing bundle chunk-size and plugin timing warnings",
+      "Existing rasterio/NumPy deprecation warnings"
+    ],
+    "production_and_protected_implementations_changed": false
+  }
+}

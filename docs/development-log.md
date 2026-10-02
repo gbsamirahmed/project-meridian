@@ -2480,3 +2480,37 @@ See [the Lab procedure](earth-lab/bluesky-012a-aerial-reconstruction.md),
 The next recommendation is a same-observation controlled comparison, then a
 separately approved/licensed small Tryfan pilot if justified. No purchase, Tryfan
 integration, production Atlas change, new architecture phase or Lab 012B is begun.
+
+## 2026-10-02 — Riffelhorn / Riffelsee official Swiss source acquisition
+
+Selected a compact 2 × 2 km LV95 rectangle around Riffelhorn/Riffelsee for a bounded
+mountain-data suitability investigation. Four official kilometre tiles in each of
+SWISSIMAGE, swissSURFACE3D point cloud, swissSURFACE3D Raster and swissALTI3D were
+downloaded into the external Atlas source estate. Sixteen originals total
+896,360,770 bytes and match the federal STAC SHA-256 values; four extracted LAS
+files retain 50,546,426 measured points. All original/extracted hashes, exact native
+raster grids and synthetic acquisition tests pass.
+
+Actual tile metadata distinguishes native 25 cm 2023 RGB from its distributed
+10 cm grid. LiDAR timestamps establish August 2021 measurements and substantial
+August 2022 coverage in the northeast tile despite its collection-2021 name.
+The 2024 Valais DTM release uses 2021/2022 LiDAR and 2023 photogrammetric updates;
+0.5 m output spacing is not an independent measurement-resolution claim.
+Exact image mosaic seamlines, LiDAR instrument details and per-cell DTM update
+lineage remain unavailable. Official product terms permit reuse, derivatives,
+redistribution and public display with swisstopo attribution.
+
+Offline imagery inspection confirms fractured rock, steep faces, loose deposits,
+alpine ground cover, paths, lakes and southern ice/moraine transitions. Deep
+shadows, possible tiny unflagged black-image holes, changing ice/water and different
+acquisition dates remain explicit limitations. The conclusion is **suitable with
+documented limitations**, not co-temporal or a semantic surface inventory.
+See [the acquisition report](atlas/riffelhorn-data-discovery.md) and
+[asset provenance](atlas/riffelhorn-data-catalog.json).
+
+Only metadata, offline acquisition/inspection code and synthetic tests enter Git.
+Sources, extracted LAS, official evidence and attributed 2-D previews remain
+external. Production Atlas, Tryfan/reference renderer and Lab 012A are unchanged.
+No renderer, common terrain grid, Lab 012B, classification or new architecture
+phase was created. A separately authorised mountain representation experiment is
+the recommended next action; no purchasing decision was made.
