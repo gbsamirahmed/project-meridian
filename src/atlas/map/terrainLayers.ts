@@ -130,6 +130,8 @@ export function configurePlanetAndTerrain(
         "hillshade-exaggeration": buildHillshadeExpression(),
         "hillshade-shadow-color": "#17211f",
         "hillshade-highlight-color": "#f4efe0",
+        // IGOR ignores accent and illumination altitude in MapLibre 6.11.2.
+        // Retain the historical values; strength is the active relief control.
         "hillshade-accent-color": "#586b66",
         "hillshade-illumination-anchor": "map",
         "hillshade-illumination-direction": 315,

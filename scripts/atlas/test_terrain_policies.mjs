@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
+import { expression } from "@maplibre/maplibre-gl-style-spec";
 import { createServer } from "vite";
 
 const AWS_TERRARIUM = "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png";
@@ -123,7 +124,7 @@ test("visual policy retains both DEM sources, credits and rendering settings", a
   assert.deepEqual(map.getTerrain(), { source: "terrain-dem", exaggeration: 1.45 });
   assert.equal(map.layers.get("terrain-hillshade").paint["hillshade-method"], "igor");
   assert.deepEqual(map.layers.get("terrain-hillshade").paint["hillshade-exaggeration"],
-    ["interpolate", ["linear"], ["zoom"], 5.5, 0, 7, 0.06, 9, 0.2, 11, 0.36, 12, 0.3, 13, 0.24, 14, 0.22, 15, 0.2, 16, 0.2]);
+    ["interpolate", ["linear"], ["zoom"], 5.5, 0, 7, 0.09, 9, 0.3, 11, 0.54, 12, 0.45, 13, 0.36, 14, 0.33, 15, 0.3, 16, 0.3]);
   layers.applyTerrainLayerState(map, "terrain", true);
   assert.equal(map.layers.get("terrain-elevation-relief").paint["color-relief-opacity"], 0.7);
   layers.applyTerrainLayerState(map, "satellite", false);
@@ -220,4 +221,35 @@ test("route preparation continues to request numeric elevation through the analy
   const app = readFileSync(new URL("../../src/app/App.tsx", import.meta.url), "utf8");
   assert.match(app, /import \{ sampleTerrainElevations \} from "\.\.\/atlas\/terrain\/terrainElevationSampler"/);
   assert.match(app, /await sampleTerrainElevations\(\s*resampled\.coordinates,\s*controller\.signal/);
+});
+
+test("IGOR relief evaluates continuously, restores after satellite and survives reconfiguration", async (context) => {
+  const { layers } = await modules(context);
+  const map = mapHarness();
+  layers.configurePlanetAndTerrain(map);
+  const baseline = structuredClone(map.layers.get("terrain-hillshade").paint);
+  assert.equal(baseline["hillshade-illumination-anchor"], "map");
+  assert.equal(baseline["hillshade-illumination-direction"], 315);
+  assert.equal(baseline["hillshade-shadow-color"], "#17211f");
+  assert.equal(baseline["hillshade-highlight-color"], "#f4efe0");
+  const parsed = expression.createExpression(baseline["hillshade-exaggeration"],
+    "layers[0].paint.hillshade-exaggeration");
+  assert.equal(parsed.result, "success");
+  for (const [zoom, expected] of [[2, 0], [5.5, 0], [9.4, 0.348], [11.4, 0.504],
+    [13.2, 0.354], [17, 0.3]]) {
+    assertNear(parsed.value.evaluate({ zoom }), expected);
+  }
+  const sources = structuredClone([...map.sources]);
+  layers.applyTerrainLayerState(map, "satellite", true);
+  const off = expression.createExpression(
+    map.layers.get("terrain-hillshade").paint["hillshade-exaggeration"],
+    "layers[0].paint.hillshade-exaggeration");
+  assert.equal(off.result, "success");
+  for (const zoom of [2, 5.5, 9.4, 11.4, 13.2, 17]) assert.equal(off.value.evaluate({ zoom }), 0);
+  layers.applyTerrainLayerState(map, "terrain", false);
+  assert.deepEqual(map.layers.get("terrain-hillshade").paint, baseline);
+  layers.configurePlanetAndTerrain(map);
+  assert.deepEqual(map.layers.get("terrain-hillshade").paint, baseline);
+  assert.deepEqual([...map.sources], sources);
+  assert.deepEqual(map.getTerrain(), { source: "terrain-dem", exaggeration: 1.45 });
 });

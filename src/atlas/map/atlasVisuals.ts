@@ -6,16 +6,19 @@ export interface VisualColorStop {
 
 export const ELEVATION_LAYER_STRENGTH = 0.7;
 
+// Native IGOR cartographic relief: 1.5 times the pre-evaluation strength curve.
+// Keep the continuous planning-scale peak and close-view taper; this is not
+// geometry exaggeration. Satellite suppression is applied in terrainLayers.
 export const HILLSHADE_ZOOM_STOPS = [
   { zoom: 5.5, strength: 0 },
-  { zoom: 7, strength: 0.06 },
-  { zoom: 9, strength: 0.2 },
-  { zoom: 11, strength: 0.36 },
-  { zoom: 12, strength: 0.3 },
-  { zoom: 13, strength: 0.24 },
-  { zoom: 14, strength: 0.22 },
-  { zoom: 15, strength: 0.2 },
-  { zoom: 16, strength: 0.2 },
+  { zoom: 7, strength: 0.09 },
+  { zoom: 9, strength: 0.3 },
+  { zoom: 11, strength: 0.54 },
+  { zoom: 12, strength: 0.45 },
+  { zoom: 13, strength: 0.36 },
+  { zoom: 14, strength: 0.33 },
+  { zoom: 15, strength: 0.3 },
+  { zoom: 16, strength: 0.3 },
 ] as const;
 
 export const ELEVATION_COLOR_STOPS: VisualColorStop[] = [

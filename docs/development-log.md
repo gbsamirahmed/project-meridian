@@ -2857,3 +2857,57 @@ fixture issue is recorded, not fixed. Tests used an empty data-root stand-in and
 synthetic publication fixtures, never the real data estate. Architecture documentation
 records the independent policies. No provider migration, new Lab or subsequent
 visual-improvement work is included.
+
+## 2026-10-03 — Bounded production Atlas native relief evaluation
+
+Started from clean canonical main at `669fbd0`, equal to locally recorded
+origin/main. Held AWS Terrarium, both independent source policies, z14/z15 visual
+ceilings, analytical z15 sampling, geometry exaggeration 1.45, camera/projection,
+imagery and domain behavior constant. Inspected MapLibre 6.11.2's actual shaders,
+illumination uniforms, derivative preparation and terrain texture caching. IGOR's
+configured altitude/accent are inactive, so were not counted as baseline controls.
+
+Compared the frozen IGOR baseline with IGOR strength ×1.5, restrained native
+four-direction cosine relief and a limited single-direction basic control.
+Fixed Tryfan landscape/planning/close cameras, South Downs and Cambridge controls,
+90°/180° rotation, optional elevation colors, normal GPX import, substantial
+synthetic numeric precipitation through production Weather, and real configured
+satellite imagery. No mocked terrain/imagery or external data/private inspection.
+
+Accepted the modest IGOR strength increase: clearer ridges, valley walls and
+connected slopes, strongest at planning scale, with smaller gains in landscape
+and close views. Controls and route/label/rain legibility remain usable. Retained
+the continuous zoom taper, map anchor/direction, colors and satellite suppression.
+Multidirectional relief exposes some boundaries but is more banded and models
+broad slopes less continuously in the restrained configuration; it is not a clear
+overall replacement. Weak satellite relief changes tone without a convincing
+comprehension gain. These are bounded qualitative observations, not a blinded
+user study or universal rejection of multidirectional relief.
+
+Added a bounded Playwright reproducer, with capture-only Vite map access and
+ignored PNG/style/camera/network/hash manifests; no production experiment controls.
+38 comparison captures and three fresh-production captures record the result.
+Some in-place scalar paint updates retained stale terrain RTT textures; captures
+refresh layer visibility with zero-duration strength transitions and wait for
+rendering to settle. Fresh default captures independently verify the choice.
+No runtime caching/lifecycle workaround is shipped. High-pitch fog, other overlay
+combinations, live paint caching, source quality and physical appearance remain
+separate questions; closed Riffelhorn branches are unchanged.
+
+Verification: seven focused terrain-policy tests pass, including actual native
+expression evaluation, satellite suppression/restoration, reconfiguration and the
+existing analytical independence/decoding/addressing tests. The active Node suite
+reports 134 passes, zero failures and one live-publication test skipped, using an
+empty data-root stand-in and synthetic fixtures. The previously clock-sensitive
+Forecast Workspace test passes unchanged in this run. ESLint and TypeScript/Vite
+application build pass; the existing large-chunk warning remains. Build used the
+ignored application-only Vite config to omit external GFS publication and public
+copying; full Weather publication and unrelated Python research suites were not run.
+Browser captures have no page exceptions or HTTP errors. Diagnostics retain
+`ERR_ABORTED` tile cancellations during view/visibility/projection changes; loaded
+captures retain valid terrain. OpenFreeMap shield-filter warnings remain. Repeated globe/terrain transitions pass.
+
+The [evaluation record](atlas/native-relief-evaluation.md) freezes baseline,
+methods, exact cameras, evidence limits and reproduction commands. Architecture
+records the selected presentation policy. No new Lab, provider migration, physical
+lighting, custom terrain renderer, analytical/Weather/Traverse change or next phase.

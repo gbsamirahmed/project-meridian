@@ -123,6 +123,14 @@ explicit assessment of route profiles, gradients, timing, arrival-time Weather
 sampling and derived route conditions. App still orchestrates sampling; Traverse
 continues to receive provider-neutral numeric terrain profiles.
 
+Atlas visual presentation retains native MapLibre IGOR relief, map-anchored at
+315°, with a continuous zoom-strength curve peaking at 0.54 at z11 and tapering
+to 0.30 from z15. Satellite continues to suppress hillshade. Geometry exaggeration
+remains 1.45; no physical surface lighting or custom terrain material is implied.
+The bounded [native relief evaluation](atlas/native-relief-evaluation.md) records
+the frozen baseline, alternatives, cameras, evidence and limitations. This policy
+changes presentation only, independently of both terrain source policies.
+
 The conceptual relationship is:
 
 ```text
