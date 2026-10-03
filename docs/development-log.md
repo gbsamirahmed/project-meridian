@@ -2791,3 +2791,27 @@ source files and historical captures/packages remain unchanged. 192 Earth Lab an
 and scoped Git checks pass. Existing deprecation/build warnings remain. Detailed
 measurements, provenance, commands and limitations are in
 [Lab 012G](earth-lab/riffelhorn-012g-projection-and-illumination.md).
+
+## 2026-10-03 — Close Atlas terrain research epoch
+
+Closed the 012A–012G epoch at the 012G evidence checkpoint. Created the
+[final terrain synthesis](earth-lab/atlas-terrain-representation-synthesis.md),
+[research map/fresh-session handoff](research/atlas-research-map.md) and
+[sourced literature record](research/literature/terrain-representation.md).
+Historical Labs remain faithful to their original results. Riffelhorn heightfield
+reconstruction and the finite visual programme remain closed; no conditional normal
+experiment or automatic continuation is authorized.
+
+The handoff separates Meridian measurements, external methods and untested directions.
+It records negative results, source/display/projection uncertainty, physically informed
+appearance recovery as untested, future Swiss acquisition caveats, external-product
+locations and research-contribution discipline. Future Atlas work should characterize
+the problem and review established scientific/engineering methods before proposing
+a bounded experiment. Return to deliberate design/planning, not another Lab by default.
+
+Documentation/link/anchor, referenced-JSON, citation-URL syntax, privacy, whitespace
+and scoped Git checks pass. Read-only verification confirms all 748 canonical A–G
+products, historical captures/packages, Swiss sources, Bluesky originals and supplementary
+HDR probes unchanged. No production/architecture, Tryfan, implementation, source-data
+or generated-product changes; no new acquisition or experiment. Unrelated builds and
+rendering suites were not rerun for this documentation-only checkpoint.
