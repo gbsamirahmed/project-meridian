@@ -275,7 +275,9 @@ test("actual evaluation policies preserve presentation and analytical route samp
   const baseline = await modules(context);
   const reference = mapHarness();
   baseline.layers.configurePlanetAndTerrain(reference);
-  for (const policy of [MAPTERHORN_EVALUATION, {...MAPTERHORN_EVALUATION, geometryMaxZoom:17, reliefMaxZoom:17}, RIFFELHORN_VISUAL]) {
+  for (const policy of [MAPTERHORN_EVALUATION, {...MAPTERHORN_EVALUATION, geometryMaxZoom:17, reliefMaxZoom:17}, RIFFELHORN_VISUAL,
+    ...["hard", "linear250", "adaptive3deg"].map(method => ({...RIFFELHORN_VISUAL,
+      tileTemplate:`http://127.0.0.1:4180/tiles/${method}/{z}/{x}/{y}.png`}))]) {
     const { layers, sampler, analytical } = await modules(context, policy);
     const map = mapHarness();layers.configurePlanetAndTerrain(map);
     assert.equal(map.sources.get("terrain-dem").tileSize,policy.tileSize);

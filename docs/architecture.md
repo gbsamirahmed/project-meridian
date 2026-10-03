@@ -147,6 +147,14 @@ false walls and unacceptable discontinuities. This establishes neither a product
 Swiss source nor a general resolver architecture. Normal visual and analytical AWS
 policies, rendering and client-only application behavior remain unchanged.
 
+The bounded [Riffelhorn reconciliation investigation](atlas/riffelhorn-terrain-reconciliation.md)
+finds broad and fine-scale product disagreement, not a justified constant datum
+shift. Tested overlap controls improve continuity while distorting the collar or
+regional interior; no reconciled product is accepted. A protected regional interior,
+adequate source support/overlap, height-reference accounting and contributor/processing
+metadata are prerequisites for a later composition decision. The 2 km research
+crop is not an accepted production source boundary. Production remains unchanged.
+
 The conceptual relationship is:
 
 ```text

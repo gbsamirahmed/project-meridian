@@ -1,0 +1,2238 @@
+{
+  "captures": {
+    "adaptive3deg": {
+      "browser": "151.0.7922.34",
+      "demErrors": [],
+      "pageErrors": [],
+      "productionHashes": {
+        "src/atlas/map/AtlasMap.ts": "cb45f5963716d636e903ed515008b66dab2fca0ab6d2aa28214a8c6303ef4b05",
+        "src/atlas/map/atlasVisuals.ts": "48426ab2132d5192069254ec9fe3fb7d9d433c2c9059f6f2223166c34c22dcfc",
+        "src/atlas/map/terrainLayers.ts": "c71099083d3184d5c70c148ea2c3f0574b0b170fb0737b9c041df579ed4e5497",
+        "src/atlas/map/visualTerrainConfig.ts": "2fc10a5bb50501a82186b4e6a1d2c176ac87d7431dbfdc702b3da69660e6b0ee",
+        "src/atlas/terrain/analyticalElevationConfig.ts": "6fd90c2fb39dc925c8de90cf6b7cf3a907696d71cc116e42563255addb41a9bb",
+        "src/atlas/terrain/terrainElevationSampler.ts": "d941ad5474ff7370da4e67c135018a777ed440d84bf00cff0f536600270f1b7b"
+      },
+      "reportSha256": "e6bb2b8c1e1fe14a42a57958c51ef1063f3e6c5ea7b6cb86601485db7aeb2282",
+      "responseBodyBytes": 17400327,
+      "responseCount": 507,
+      "sceneRecords": [
+        {
+          "camera": {
+            "bearing": 0,
+            "center": [
+              7.76121329,
+              45.97910794
+            ],
+            "pitch": 45,
+            "zoom": 9.4
+          },
+          "file": "landscape--adaptive3deg.png",
+          "scene": "landscape",
+          "sha256": "f1b07c728aca4101719e00b198c9959262fa2d384f6f293f31a375c9301405f0"
+        },
+        {
+          "camera": {
+            "bearing": 0,
+            "center": [
+              7.76121329,
+              45.97910794
+            ],
+            "pitch": 45,
+            "zoom": 11.4
+          },
+          "file": "planning--adaptive3deg.png",
+          "scene": "planning",
+          "sha256": "58b9d919a69f3d4f1c78c77ca4cf50ec21e1890537ec6ed5f50411756fdd624c"
+        },
+        {
+          "camera": {
+            "bearing": 0,
+            "center": [
+              7.76121329,
+              45.97910794
+            ],
+            "pitch": 55.00000000000001,
+            "zoom": 13.2
+          },
+          "file": "close--adaptive3deg.png",
+          "scene": "close",
+          "sha256": "0f425fe0fcb929a019c85f6c2750d3f2ee4bafcfb9f61641e989a9a6e27ea650"
+        },
+        {
+          "camera": {
+            "bearing": 0,
+            "center": [
+              7.76121329,
+              45.97910794
+            ],
+            "pitch": 55.00000000000001,
+            "zoom": 16.2
+          },
+          "file": "detail--adaptive3deg.png",
+          "scene": "detail",
+          "sha256": "47f79c1a84baae55240f2807c60d1a4929691f96eac61fdc38d419e3def7bbe2"
+        },
+        {
+          "camera": {
+            "bearing": 0,
+            "center": [
+              7.7483108641829705,
+              45.979144107621735
+            ],
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          "file": "boundary-west--adaptive3deg.png",
+          "scene": "boundary-west",
+          "sha256": "a8642736ce7787f9723f2d5dd2c4fa41c22cc8df1ed585afc83c4750875df4fe"
+        },
+        {
+          "camera": {
+            "bearing": 0,
+            "center": [
+              7.761160362336753,
+              45.97011260499015
+            ],
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          "file": "boundary-south--adaptive3deg.png",
+          "scene": "boundary-south",
+          "sha256": "414f4b533ccdb97db71e223e7aa048cca72913d7c939ac90453b2f9e4c650e13"
+        },
+        {
+          "camera": {
+            "bearing": 45,
+            "center": [
+              7.748361688532342,
+              45.988139457488266
+            ],
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          "file": "boundary-corner--adaptive3deg.png",
+          "scene": "boundary-corner",
+          "sha256": "fb93981a5c8a7f1a55947d719e1f11cff6b21fd298b80974b3e95195239fbbee"
+        },
+        {
+          "camera": {
+            "bearing": 180,
+            "center": [
+              7.7483108641829705,
+              45.979144107621735
+            ],
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          "file": "west-rotated--adaptive3deg.png",
+          "scene": "west-rotated",
+          "sha256": "b2984eff3bd300b47df71886919052754f223c531501a022e0bbe28d15232243"
+        }
+      ],
+      "viewport": {
+        "height": 900,
+        "width": 1440
+      }
+    },
+    "hard": {
+      "browser": "151.0.7922.34",
+      "demErrors": [],
+      "pageErrors": [],
+      "productionHashes": {
+        "src/atlas/map/AtlasMap.ts": "cb45f5963716d636e903ed515008b66dab2fca0ab6d2aa28214a8c6303ef4b05",
+        "src/atlas/map/atlasVisuals.ts": "48426ab2132d5192069254ec9fe3fb7d9d433c2c9059f6f2223166c34c22dcfc",
+        "src/atlas/map/terrainLayers.ts": "c71099083d3184d5c70c148ea2c3f0574b0b170fb0737b9c041df579ed4e5497",
+        "src/atlas/map/visualTerrainConfig.ts": "2fc10a5bb50501a82186b4e6a1d2c176ac87d7431dbfdc702b3da69660e6b0ee",
+        "src/atlas/terrain/analyticalElevationConfig.ts": "6fd90c2fb39dc925c8de90cf6b7cf3a907696d71cc116e42563255addb41a9bb",
+        "src/atlas/terrain/terrainElevationSampler.ts": "d941ad5474ff7370da4e67c135018a777ed440d84bf00cff0f536600270f1b7b"
+      },
+      "reportSha256": "270cddd3a459a1179b725c05bf80fe58364bd0ef701d18365589a9c84e42bcee",
+      "responseBodyBytes": 18579755,
+      "responseCount": 507,
+      "sceneRecords": [
+        {
+          "camera": {
+            "bearing": 0,
+            "center": [
+              7.76121329,
+              45.97910794
+            ],
+            "pitch": 45,
+            "zoom": 9.4
+          },
+          "file": "landscape--hard.png",
+          "scene": "landscape",
+          "sha256": "4bf6877b16a2779357b43e8c86b4e69b02f65295853fb4e8b32fdfa5688330fc"
+        },
+        {
+          "camera": {
+            "bearing": 0,
+            "center": [
+              7.76121329,
+              45.97910794
+            ],
+            "pitch": 45,
+            "zoom": 11.4
+          },
+          "file": "planning--hard.png",
+          "scene": "planning",
+          "sha256": "ace3edbbe17a4ce0cc472a909c27d712045515d45af09c022bbd7a7768093122"
+        },
+        {
+          "camera": {
+            "bearing": 0,
+            "center": [
+              7.76121329,
+              45.97910794
+            ],
+            "pitch": 55.00000000000001,
+            "zoom": 13.2
+          },
+          "file": "close--hard.png",
+          "scene": "close",
+          "sha256": "620103a530c5eccd4e7be704e9e5874af7d5a226d1bb0f1e933eb91b7d290a69"
+        },
+        {
+          "camera": {
+            "bearing": 0,
+            "center": [
+              7.76121329,
+              45.97910794
+            ],
+            "pitch": 55.00000000000001,
+            "zoom": 16.2
+          },
+          "file": "detail--hard.png",
+          "scene": "detail",
+          "sha256": "5c1e968ef5037e42e498250426f986a24e8fefd6e8df59f298b6c90afc92b485"
+        },
+        {
+          "camera": {
+            "bearing": 0,
+            "center": [
+              7.7483108641829705,
+              45.979144107621735
+            ],
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          "file": "boundary-west--hard.png",
+          "scene": "boundary-west",
+          "sha256": "af527cfe21138674066212a0f06a7ddf9fb2a2c08ea5681bf258a53b8b151d8a"
+        },
+        {
+          "camera": {
+            "bearing": 0,
+            "center": [
+              7.761160362336753,
+              45.97011260499015
+            ],
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          "file": "boundary-south--hard.png",
+          "scene": "boundary-south",
+          "sha256": "2f01e9572e81ccc1953494ee756b2782a150579ea31d6055122b9e2d017086df"
+        },
+        {
+          "camera": {
+            "bearing": 45,
+            "center": [
+              7.748361688532342,
+              45.988139457488266
+            ],
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          "file": "boundary-corner--hard.png",
+          "scene": "boundary-corner",
+          "sha256": "4b0b46a601fb75a62a7cf6b612ca103c865638c4c5378882b470848f148a7fca"
+        },
+        {
+          "camera": {
+            "bearing": 180,
+            "center": [
+              7.7483108641829705,
+              45.979144107621735
+            ],
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          "file": "west-rotated--hard.png",
+          "scene": "west-rotated",
+          "sha256": "8a4e2d965fb8c2d173dd12065bd721d236c2c749ecfd622507b9de2f176a7cbb"
+        }
+      ],
+      "viewport": {
+        "height": 900,
+        "width": 1440
+      }
+    },
+    "linear250": {
+      "browser": "151.0.7922.34",
+      "demErrors": [],
+      "pageErrors": [],
+      "productionHashes": {
+        "src/atlas/map/AtlasMap.ts": "cb45f5963716d636e903ed515008b66dab2fca0ab6d2aa28214a8c6303ef4b05",
+        "src/atlas/map/atlasVisuals.ts": "48426ab2132d5192069254ec9fe3fb7d9d433c2c9059f6f2223166c34c22dcfc",
+        "src/atlas/map/terrainLayers.ts": "c71099083d3184d5c70c148ea2c3f0574b0b170fb0737b9c041df579ed4e5497",
+        "src/atlas/map/visualTerrainConfig.ts": "2fc10a5bb50501a82186b4e6a1d2c176ac87d7431dbfdc702b3da69660e6b0ee",
+        "src/atlas/terrain/analyticalElevationConfig.ts": "6fd90c2fb39dc925c8de90cf6b7cf3a907696d71cc116e42563255addb41a9bb",
+        "src/atlas/terrain/terrainElevationSampler.ts": "d941ad5474ff7370da4e67c135018a777ed440d84bf00cff0f536600270f1b7b"
+      },
+      "reportSha256": "3288d2fefe00dd2c473a4d77b8e21e27b40623fb9c9b9f6f00840e0324a8ec0d",
+      "responseBodyBytes": 18273173,
+      "responseCount": 507,
+      "sceneRecords": [
+        {
+          "camera": {
+            "bearing": 0,
+            "center": [
+              7.76121329,
+              45.97910794
+            ],
+            "pitch": 45,
+            "zoom": 9.4
+          },
+          "file": "landscape--linear250.png",
+          "scene": "landscape",
+          "sha256": "504b00289481651a3e34c2ee3f74afacc6c52b976c705395cc51586ee8a18d26"
+        },
+        {
+          "camera": {
+            "bearing": 0,
+            "center": [
+              7.76121329,
+              45.97910794
+            ],
+            "pitch": 45,
+            "zoom": 11.4
+          },
+          "file": "planning--linear250.png",
+          "scene": "planning",
+          "sha256": "cb8aa0056fb823a88b4e1d353a181316b58094f7e3f0bef80d24b8cb9866d824"
+        },
+        {
+          "camera": {
+            "bearing": 0,
+            "center": [
+              7.76121329,
+              45.97910794
+            ],
+            "pitch": 55.00000000000001,
+            "zoom": 13.2
+          },
+          "file": "close--linear250.png",
+          "scene": "close",
+          "sha256": "8c9136fa2bccc2104c272cdd6dab5232ccce95570210c41e246657a56f030b69"
+        },
+        {
+          "camera": {
+            "bearing": 0,
+            "center": [
+              7.76121329,
+              45.97910794
+            ],
+            "pitch": 55.00000000000001,
+            "zoom": 16.2
+          },
+          "file": "detail--linear250.png",
+          "scene": "detail",
+          "sha256": "5c1e968ef5037e42e498250426f986a24e8fefd6e8df59f298b6c90afc92b485"
+        },
+        {
+          "camera": {
+            "bearing": 0,
+            "center": [
+              7.7483108641829705,
+              45.979144107621735
+            ],
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          "file": "boundary-west--linear250.png",
+          "scene": "boundary-west",
+          "sha256": "c796c262f820959f39234ae4c02e682782ec147837ecb424d0126de401e182b6"
+        },
+        {
+          "camera": {
+            "bearing": 0,
+            "center": [
+              7.761160362336753,
+              45.97011260499015
+            ],
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          "file": "boundary-south--linear250.png",
+          "scene": "boundary-south",
+          "sha256": "a24f1b03986aad94ae4cf476dea556681c4e84c0fc29b371940f70cf8da54639"
+        },
+        {
+          "camera": {
+            "bearing": 45,
+            "center": [
+              7.748361688532342,
+              45.988139457488266
+            ],
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          "file": "boundary-corner--linear250.png",
+          "scene": "boundary-corner",
+          "sha256": "63da2f11a16e77526072fff0e0d4bd3e6249df4959fb0d420f1cb204d797e1c4"
+        },
+        {
+          "camera": {
+            "bearing": 180,
+            "center": [
+              7.7483108641829705,
+              45.979144107621735
+            ],
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          "file": "west-rotated--linear250.png",
+          "scene": "west-rotated",
+          "sha256": "778f1d1b92b44b988b106916d12d77ba2345bbc94e5ed49cc66e34da448c6424"
+        }
+      ],
+      "viewport": {
+        "height": 900,
+        "width": 1440
+      }
+    }
+  },
+  "evidence": "MERIDIAN EVIDENCE; diagnostic controls, not accepted terrain products",
+  "manifest": {
+    "awsInputs": {
+      "15/17089/11659": {
+        "cachePath": "15/17089/11659.png",
+        "headers": {
+          "Accept-Ranges": "bytes",
+          "Connection": "close",
+          "Content-Length": "97745",
+          "Content-Type": "image/png",
+          "Date": "Sat, 03 Oct 2026 11:39:13 GMT",
+          "ETag": "\"d0df9b266def475b8f869488b1f643f5\"",
+          "Last-Modified": "Wed, 15 Nov 2017 21:13:10 GMT",
+          "Server": "AmazonS3",
+          "x-amz-id-2": "6DXKifR/+udL+K0kPuw6U3X6We7j9P5O9l+K0vNU0T6s/LtLKAtpByMyMEs3TGGurevU/uSaF1E=",
+          "x-amz-meta-x-imagery-sources": "eudem/eudem_dem_5deg_n45e005.tif",
+          "x-amz-request-id": "3XAH6ECF381EEHPX",
+          "x-amz-version-id": "sBtIbntsdh9OzPhT4Zmim58Pifot7qCp"
+        },
+        "sha256": "3574bd42b34ba0c89ba822cb86445fd9b11cc8500a44d0fd911d51a15122ccab",
+        "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/15/17089/11659.png"
+      },
+      "15/17089/11660": {
+        "cachePath": "15/17089/11660.png",
+        "headers": {
+          "Accept-Ranges": "bytes",
+          "Connection": "close",
+          "Content-Length": "94783",
+          "Content-Type": "image/png",
+          "Date": "Sat, 03 Oct 2026 11:39:14 GMT",
+          "ETag": "\"fc5abcff6cf4e9e649fe562295079900\"",
+          "Last-Modified": "Wed, 15 Nov 2017 21:13:11 GMT",
+          "Server": "AmazonS3",
+          "x-amz-id-2": "ZHMEtQfsoJQAeERb3jhPulEcqL28ZunkLiRnMaLLTEaa27xNSGr3axA6t63jZgxAeoKFfs07PrY=",
+          "x-amz-meta-x-imagery-sources": "eudem/eudem_dem_5deg_n45e005.tif",
+          "x-amz-request-id": "A38Y793P1GM82EJ1",
+          "x-amz-version-id": "I1VhavSr5OCAdvYzp7NjBHhYpSd6rBCC"
+        },
+        "sha256": "4611aff0bbbe284fb15bf5b3e6eda486f77acbe2ab516eb7735ec04eacddd2e7",
+        "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/15/17089/11660.png"
+      },
+      "15/17089/11661": {
+        "cachePath": "15/17089/11661.png",
+        "headers": {
+          "Accept-Ranges": "bytes",
+          "Connection": "close",
+          "Content-Length": "91069",
+          "Content-Type": "image/png",
+          "Date": "Sat, 03 Oct 2026 11:39:16 GMT",
+          "ETag": "\"545d9789d190303cfe9dc251c3241f8a\"",
+          "Last-Modified": "Wed, 15 Nov 2017 21:13:11 GMT",
+          "Server": "AmazonS3",
+          "x-amz-id-2": "saypYI7VsR+C3UgV/UY3l6QqfFSVeeB2hMDMAKHBaoRZUhhNlUhbzQvEGMRZ1ny+cnQgC+SLQgk=",
+          "x-amz-meta-x-imagery-sources": "eudem/eudem_dem_5deg_n45e005.tif",
+          "x-amz-request-id": "2NXCQM1RH30DYTT0",
+          "x-amz-version-id": "OVUBd.4i19tUrI6mPFAe2qymX7gZeDf0"
+        },
+        "sha256": "1f38dbbacf557642520ec91fbb0deaff08b61dd67221b9b8124b73f649a4ec57",
+        "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/15/17089/11661.png"
+      },
+      "15/17090/11659": {
+        "cachePath": "15/17090/11659.png",
+        "headers": {
+          "Accept-Ranges": "bytes",
+          "Connection": "close",
+          "Content-Length": "90564",
+          "Content-Type": "image/png",
+          "Date": "Sat, 03 Oct 2026 11:39:13 GMT",
+          "ETag": "\"0d86b121b1307000c9966efca8e5cd44\"",
+          "Last-Modified": "Wed, 15 Nov 2017 21:13:10 GMT",
+          "Server": "AmazonS3",
+          "x-amz-id-2": "/ToW+ROMATkWf50/v9dGajKUP522llGePdCqlS5bVk/+qerJcMD2VIXpXwbYAV3jvaiUi4nLxWE=",
+          "x-amz-meta-x-imagery-sources": "eudem/eudem_dem_5deg_n45e005.tif",
+          "x-amz-request-id": "3XAH0FPFKRGZCS3Z",
+          "x-amz-version-id": "04.vgMPMwBBVHPLhkIrEcTAAPaZr6qV_"
+        },
+        "sha256": "fe1ec9a70eaab5817e003a4a5f4e406517e1c99357ed99a611aed64347fa584a",
+        "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/15/17090/11659.png"
+      },
+      "15/17090/11660": {
+        "cachePath": "15/17090/11660.png",
+        "headers": {
+          "Accept-Ranges": "bytes",
+          "Connection": "close",
+          "Content-Length": "86295",
+          "Content-Type": "image/png",
+          "Date": "Sat, 03 Oct 2026 11:39:15 GMT",
+          "ETag": "\"b62ee2336a9f030658415f5436c3627a\"",
+          "Last-Modified": "Wed, 15 Nov 2017 21:13:11 GMT",
+          "Server": "AmazonS3",
+          "x-amz-id-2": "yKwYRPAq1nA5+EuhBHDLEs/tZNbz1n7LQlKVrhavggnSlX4J2q20klBcm0E3Ivv35vaojo3Iae4=",
+          "x-amz-meta-x-imagery-sources": "eudem/eudem_dem_5deg_n45e005.tif",
+          "x-amz-request-id": "1EG6P22JYX4AVAAN",
+          "x-amz-version-id": "FODqxX9RdUr6RuVXuky08SAWoKH3DsFG"
+        },
+        "sha256": "5db9a43c81f71e86d94a82b961b9dc6ff2726e36c42e92e8aeef20e1511ca31f",
+        "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/15/17090/11660.png"
+      },
+      "15/17090/11661": {
+        "cachePath": "15/17090/11661.png",
+        "headers": {
+          "Accept-Ranges": "bytes",
+          "Connection": "close",
+          "Content-Length": "72382",
+          "Content-Type": "image/png",
+          "Date": "Sat, 03 Oct 2026 11:39:17 GMT",
+          "ETag": "\"dcef217394e55c04d9cb704e8be07d60\"",
+          "Last-Modified": "Wed, 15 Nov 2017 21:13:11 GMT",
+          "Server": "AmazonS3",
+          "x-amz-id-2": "onqQKRqGqb3I4v+ib4X+3FKF+kH3lWn/qNo05uHw5W95/wQVMWj4HlHBq/Q/2bQ4ZlA3pZ16hwsMul3LLH663ZJr766/Th++",
+          "x-amz-meta-x-imagery-sources": "eudem/eudem_dem_5deg_n45e005.tif",
+          "x-amz-request-id": "96JXZS93X1TTZF1C",
+          "x-amz-version-id": "ied.bqy9vJxW9h5N0PhIlvESuQiWeDBl"
+        },
+        "sha256": "612b5497748b73ad74fee78e9aaa99591c1d12c552b05502789bc4d1d8d656be",
+        "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/15/17090/11661.png"
+      },
+      "15/17091/11659": {
+        "cachePath": "15/17091/11659.png",
+        "headers": {
+          "Accept-Ranges": "bytes",
+          "Connection": "close",
+          "Content-Length": "91968",
+          "Content-Type": "image/png",
+          "Date": "Sat, 03 Oct 2026 11:39:14 GMT",
+          "ETag": "\"4110489cb97ab503f58f0dbaaf40b19f\"",
+          "Last-Modified": "Wed, 15 Nov 2017 21:13:10 GMT",
+          "Server": "AmazonS3",
+          "x-amz-id-2": "jvH2AE3a729BZOmoTPkaxajB1rCw6WWDCzhE4FXCYGALV4YKTd3byb2XrWtIveuHO54yoHssFm8=",
+          "x-amz-meta-x-imagery-sources": "eudem/eudem_dem_5deg_n45e005.tif",
+          "x-amz-request-id": "A38Q5MJXJ0FBXNH4",
+          "x-amz-version-id": "5z3eKMieIsQ8aDIb4vF0Egqeysg3meVY"
+        },
+        "sha256": "813814abdbe55c5f0b4645a154b9094883629921c704923774de48f076323dbb",
+        "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/15/17091/11659.png"
+      },
+      "15/17091/11660": {
+        "cachePath": "15/17091/11660.png",
+        "headers": {
+          "Accept-Ranges": "bytes",
+          "Connection": "close",
+          "Content-Length": "82854",
+          "Content-Type": "image/png",
+          "Date": "Sat, 03 Oct 2026 11:39:15 GMT",
+          "ETag": "\"e24c7b8e00ae70ab7b661bcd78119ca1\"",
+          "Last-Modified": "Wed, 15 Nov 2017 21:13:11 GMT",
+          "Server": "AmazonS3",
+          "x-amz-id-2": "T6NRSKK64dcZJ7VbjlDejEOxOUE7AI2WNxhmTUp9/l6VGg8MbZr/ZQ6xj+6yV5VPlmdLIreCwGU=",
+          "x-amz-meta-x-imagery-sources": "eudem/eudem_dem_5deg_n45e005.tif",
+          "x-amz-request-id": "1EG5Q4R0KYMRH0EM",
+          "x-amz-version-id": "Nnr9p4A_zWP6_nq39bPCAunpgxuMhW.b"
+        },
+        "sha256": "45b76ddaa6ec2f90af7e9d2da92a73614bdffa574519063a68aa5559a2b11048",
+        "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/15/17091/11660.png"
+      },
+      "15/17091/11661": {
+        "cachePath": "15/17091/11661.png",
+        "headers": {
+          "Accept-Ranges": "bytes",
+          "Connection": "close",
+          "Content-Length": "59523",
+          "Content-Type": "image/png",
+          "Date": "Sat, 03 Oct 2026 11:39:17 GMT",
+          "ETag": "\"19d68bed2256f3d0fdf95263434cdeed\"",
+          "Last-Modified": "Wed, 15 Nov 2017 21:13:11 GMT",
+          "Server": "AmazonS3",
+          "x-amz-id-2": "cFmBSkrfa7rQDULNf3YWkR+q1jtFvO7t+QGGEPK/EBw/cJTCFbTc2MSUaOh/h0DF1+oIF6rZrRpfRXRzw4M5ucdkoCjbv0uY",
+          "x-amz-meta-x-imagery-sources": "eudem/eudem_dem_5deg_n45e005.tif",
+          "x-amz-request-id": "96JN8N4K6MFR4GPY",
+          "x-amz-version-id": "rzjgw8iiArrobLmaCffL3Ba9RxQFJ7WP"
+        },
+        "sha256": "ef5134542d0cb6b86791fca95bde8372915908d15835a7a5028a9dbc231d5a1e",
+        "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/15/17091/11661.png"
+      }
+    },
+    "identity": "90a630f1c1d98cd2ceee0e95401fb15c6c9595f8488b2e91fee2e1c594b9c3ce",
+    "methods": {
+      "adaptive3deg": "G + min(distance/width,1)*(S-G); width=sigma30m smooth(abs(nearest edge difference)/tan(3deg)), minimum 2m",
+      "linear250": "G + min(distance/250,1)*(S-G)"
+    },
+    "outputs": {
+      "analysis.json": {
+        "bytes": 4582040,
+        "sha256": "c91360d7b4357d3cc194f3d94c87b40a17e7faa3e50f1007842a7782d1fbb769"
+      },
+      "difference-and-controls.png": {
+        "bytes": 1007443,
+        "sha256": "c35164b9ab047af98ac65a6c117f0ad569ed39a842902d31124d12f1e657720a"
+      },
+      "fields.npz": {
+        "bytes": 56001792,
+        "sha256": "12298ec62017c6ec942605b10c94e7b4d413d33404296c0d4d1ca7848d438ed9"
+      },
+      "profiles.png": {
+        "bytes": 238051,
+        "sha256": "33f54874a7fd17db7f21702fdaa293fc9317748eb494e6f5c389bee3bd642a13"
+      }
+    },
+    "parentManifestSha256": "778745c36f2208e72a28a99923d00d81fcd0bd7f90e8759ba3f03362ccfc4627",
+    "parentProductIdentity": "4fc837f299271c7238591865a393f98facc6fa7b93d9cc75305160df900b1fe5",
+    "provenance": "All candidate weights retained; no physical vertical correction; diagnostic blends have no established common height datum",
+    "runtime": {
+      "matplotlib": "3.10.6",
+      "numpy": "2.5.3"
+    },
+    "scriptSha256CanonicalLf": "7ae92ee1f7884db17b48d86b9ce35f2dc36955f39f488c734fffe3ea2a4473c6",
+    "sourceCatalogSha256CanonicalLf": "190c97f745c2c605321552814c1368490a3d18297ed563fe85ce84bb240e5c78",
+    "sourceInputs": [
+      {
+        "bounds": [
+          2624000.0,
+          1091000.0,
+          2625000.0,
+          1092000.0
+        ],
+        "bytes": 16490312,
+        "crs": "EPSG:2056",
+        "dtype": "float32",
+        "gridSpacingMetres": 0.5,
+        "nodata": -9999.0,
+        "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2624-1091_0.5_2056_5728.tif",
+        "receiptSha256": "d2a4922b48c141fa5331cdfe2055c2e3a69e8bb3900503477345d492719b0d1b",
+        "sha256": "c68c305e4a142da416b46b555a80916ecc52f8fa50bf1efd5cd2c3f24f9cd4bc",
+        "shape": [
+          2000,
+          2000
+        ],
+        "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2624-1091/swissalti3d_2024_2624-1091_0.5_2056_5728.tif",
+        "verticalReference": "LN02 (EPSG:5728), metres; official product provenance, not a vertical CRS encoded in the actual file"
+      },
+      {
+        "bounds": [
+          2624000.0,
+          1092000.0,
+          2625000.0,
+          1093000.0
+        ],
+        "bytes": 16862345,
+        "crs": "EPSG:2056",
+        "dtype": "float32",
+        "gridSpacingMetres": 0.5,
+        "nodata": -9999.0,
+        "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2624-1092_0.5_2056_5728.tif",
+        "receiptSha256": "754088c056162e253799f7449a77b4904a2db92c42452b419fc69599a90c3247",
+        "sha256": "9fa4a4391e2e1bfd650f2f31c7d38ed9a5a94494a967011468e6c44559bbcb2c",
+        "shape": [
+          2000,
+          2000
+        ],
+        "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2624-1092/swissalti3d_2024_2624-1092_0.5_2056_5728.tif",
+        "verticalReference": "LN02 (EPSG:5728), metres; official product provenance, not a vertical CRS encoded in the actual file"
+      },
+      {
+        "bounds": [
+          2625000.0,
+          1091000.0,
+          2626000.0,
+          1092000.0
+        ],
+        "bytes": 15925644,
+        "crs": "EPSG:2056",
+        "dtype": "float32",
+        "gridSpacingMetres": 0.5,
+        "nodata": -9999.0,
+        "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2625-1091_0.5_2056_5728.tif",
+        "receiptSha256": "1ef45744efe4cd9623cf09ebd7022aa5fbefa263013f1da20f8d98e6682e3530",
+        "sha256": "0d2ebc6d0b4fd06ab2191cbf2a2f5ab77728249fa8c835075040bce4dc4899de",
+        "shape": [
+          2000,
+          2000
+        ],
+        "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2625-1091/swissalti3d_2024_2625-1091_0.5_2056_5728.tif",
+        "verticalReference": "LN02 (EPSG:5728), metres; official product provenance, not a vertical CRS encoded in the actual file"
+      },
+      {
+        "bounds": [
+          2625000.0,
+          1092000.0,
+          2626000.0,
+          1093000.0
+        ],
+        "bytes": 16329103,
+        "crs": "EPSG:2056",
+        "dtype": "float32",
+        "gridSpacingMetres": 0.5,
+        "nodata": -9999.0,
+        "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2625-1092_0.5_2056_5728.tif",
+        "receiptSha256": "a221333666e5347c68c5a98875fbbe8abfe0eaa00df91ccbc521ae36f3f2a0c7",
+        "sha256": "4dffaad9efb82d3bf327a86b4f82d55762165ea5f825c386c23380a9320ff875",
+        "shape": [
+          2000,
+          2000
+        ],
+        "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2625-1092/swissalti3d_2024_2625-1092_0.5_2056_5728.tif",
+        "verticalReference": "LN02 (EPSG:5728), metres; official product provenance, not a vertical CRS encoded in the actual file"
+      }
+    ],
+    "support": "Original 2 x 2 km rectangle only; no new acquisitions or downloads",
+    "version": "riffelhorn-reconciliation-v1"
+  },
+  "manifestSha256": "a66fe4693f189a7a6590b02f75bbd23e78129b7159e7e4c72c021d194b55b985",
+  "profileSummary": [
+    {
+      "fraction": 0.1,
+      "metrics": {
+        "adaptive3deg": {
+          "maxAdjacentSampleBoundaryWindow": 0.39786874456740406,
+          "maxAdjacentSampleWhole": 2.1680657504462033,
+          "outsideChangeMax": 0.0
+        },
+        "hard": {
+          "maxAdjacentSampleBoundaryWindow": 46.01335324212778,
+          "maxAdjacentSampleWhole": 46.01335324212778,
+          "outsideChangeMax": 0.0
+        },
+        "linear250": {
+          "maxAdjacentSampleBoundaryWindow": 1.2114667639534673,
+          "maxAdjacentSampleWhole": 2.042029748778532,
+          "outsideChangeMax": 0.0
+        }
+      },
+      "offsetMeaning": "inward distance",
+      "sampleSpacingMetres": 1.0,
+      "side": "west"
+    },
+    {
+      "fraction": 0.25,
+      "metrics": {
+        "adaptive3deg": {
+          "maxAdjacentSampleBoundaryWindow": 0.14569894107080472,
+          "maxAdjacentSampleWhole": 1.609826392571449,
+          "outsideChangeMax": 0.0
+        },
+        "hard": {
+          "maxAdjacentSampleBoundaryWindow": 111.51607359560967,
+          "maxAdjacentSampleWhole": 111.51607359560967,
+          "outsideChangeMax": 0.0
+        },
+        "linear250": {
+          "maxAdjacentSampleBoundaryWindow": 0.6049597607243413,
+          "maxAdjacentSampleWhole": 3.47833251953125,
+          "outsideChangeMax": 0.0
+        }
+      },
+      "offsetMeaning": "inward distance",
+      "sampleSpacingMetres": 1.0,
+      "side": "west"
+    },
+    {
+      "fraction": 0.5,
+      "metrics": {
+        "adaptive3deg": {
+          "maxAdjacentSampleBoundaryWindow": 0.45627707596258915,
+          "maxAdjacentSampleWhole": 16.033336738189973,
+          "outsideChangeMax": 0.0
+        },
+        "hard": {
+          "maxAdjacentSampleBoundaryWindow": 45.5015083044359,
+          "maxAdjacentSampleWhole": 45.5015083044359,
+          "outsideChangeMax": 0.0
+        },
+        "linear250": {
+          "maxAdjacentSampleBoundaryWindow": 0.49774232249774286,
+          "maxAdjacentSampleWhole": 25.31231689453125,
+          "outsideChangeMax": 0.0
+        }
+      },
+      "offsetMeaning": "inward distance",
+      "sampleSpacingMetres": 1.0,
+      "side": "west"
+    },
+    {
+      "fraction": 0.75,
+      "metrics": {
+        "adaptive3deg": {
+          "maxAdjacentSampleBoundaryWindow": 0.8962940051487749,
+          "maxAdjacentSampleWhole": 0.8962940051487749,
+          "outsideChangeMax": 0.0
+        },
+        "hard": {
+          "maxAdjacentSampleBoundaryWindow": 51.53340936105269,
+          "maxAdjacentSampleWhole": 51.53340936105269,
+          "outsideChangeMax": 0.0
+        },
+        "linear250": {
+          "maxAdjacentSampleBoundaryWindow": 1.3201502017705025,
+          "maxAdjacentSampleWhole": 1.639491401907435,
+          "outsideChangeMax": 0.0
+        }
+      },
+      "offsetMeaning": "inward distance",
+      "sampleSpacingMetres": 1.0,
+      "side": "west"
+    },
+    {
+      "fraction": 0.9,
+      "metrics": {
+        "adaptive3deg": {
+          "maxAdjacentSampleBoundaryWindow": 0.32992282369514214,
+          "maxAdjacentSampleWhole": 1.711669921875,
+          "outsideChangeMax": 0.0
+        },
+        "hard": {
+          "maxAdjacentSampleBoundaryWindow": 14.465709559138759,
+          "maxAdjacentSampleWhole": 14.465709559138759,
+          "outsideChangeMax": 0.0
+        },
+        "linear250": {
+          "maxAdjacentSampleBoundaryWindow": 0.32992282369514214,
+          "maxAdjacentSampleWhole": 1.3661880437171021,
+          "outsideChangeMax": 0.0
+        }
+      },
+      "offsetMeaning": "inward distance",
+      "sampleSpacingMetres": 1.0,
+      "side": "west"
+    },
+    {
+      "fraction": 0.1,
+      "metrics": {
+        "adaptive3deg": {
+          "maxAdjacentSampleBoundaryWindow": 0.13615840584225225,
+          "maxAdjacentSampleWhole": 0.18649958013975265,
+          "outsideChangeMax": 0.0
+        },
+        "hard": {
+          "maxAdjacentSampleBoundaryWindow": 96.58255446001567,
+          "maxAdjacentSampleWhole": 96.58255446001567,
+          "outsideChangeMax": 0.0
+        },
+        "linear250": {
+          "maxAdjacentSampleBoundaryWindow": 0.6500266119501248,
+          "maxAdjacentSampleWhole": 1.188478324713742,
+          "outsideChangeMax": 0.0
+        }
+      },
+      "offsetMeaning": "inward distance",
+      "sampleSpacingMetres": 1.0,
+      "side": "east"
+    },
+    {
+      "fraction": 0.25,
+      "metrics": {
+        "adaptive3deg": {
+          "maxAdjacentSampleBoundaryWindow": 0.1429912732592129,
+          "maxAdjacentSampleWhole": 0.34370895892925546,
+          "outsideChangeMax": 0.0
+        },
+        "hard": {
+          "maxAdjacentSampleBoundaryWindow": 104.10648776169546,
+          "maxAdjacentSampleWhole": 104.10648776169546,
+          "outsideChangeMax": 0.0
+        },
+        "linear250": {
+          "maxAdjacentSampleBoundaryWindow": 0.5533877512257277,
+          "maxAdjacentSampleWhole": 1.4671630859375,
+          "outsideChangeMax": 0.0
+        }
+      },
+      "offsetMeaning": "inward distance",
+      "sampleSpacingMetres": 1.0,
+      "side": "east"
+    },
+    {
+      "fraction": 0.5,
+      "metrics": {
+        "adaptive3deg": {
+          "maxAdjacentSampleBoundaryWindow": 1.2383480772891744,
+          "maxAdjacentSampleWhole": 3.202392578125,
+          "outsideChangeMax": 0.0
+        },
+        "hard": {
+          "maxAdjacentSampleBoundaryWindow": 8.07477175708027,
+          "maxAdjacentSampleWhole": 8.07477175708027,
+          "outsideChangeMax": 0.0
+        },
+        "linear250": {
+          "maxAdjacentSampleBoundaryWindow": 0.9299508803710523,
+          "maxAdjacentSampleWhole": 3.202392578125,
+          "outsideChangeMax": 0.0
+        }
+      },
+      "offsetMeaning": "inward distance",
+      "sampleSpacingMetres": 1.0,
+      "side": "east"
+    },
+    {
+      "fraction": 0.75,
+      "metrics": {
+        "adaptive3deg": {
+          "maxAdjacentSampleBoundaryWindow": 0.8077372677639687,
+          "maxAdjacentSampleWhole": 4.174560546875,
+          "outsideChangeMax": 0.0
+        },
+        "hard": {
+          "maxAdjacentSampleBoundaryWindow": 7.39803532566475,
+          "maxAdjacentSampleWhole": 7.39803532566475,
+          "outsideChangeMax": 0.0
+        },
+        "linear250": {
+          "maxAdjacentSampleBoundaryWindow": 0.750282027711819,
+          "maxAdjacentSampleWhole": 4.174560546875,
+          "outsideChangeMax": 0.0
+        }
+      },
+      "offsetMeaning": "inward distance",
+      "sampleSpacingMetres": 1.0,
+      "side": "east"
+    },
+    {
+      "fraction": 0.9,
+      "metrics": {
+        "adaptive3deg": {
+          "maxAdjacentSampleBoundaryWindow": 1.15338134765625,
+          "maxAdjacentSampleWhole": 1.3790283203125,
+          "outsideChangeMax": 0.0
+        },
+        "hard": {
+          "maxAdjacentSampleBoundaryWindow": 1.40386962890625,
+          "maxAdjacentSampleWhole": 1.40386962890625,
+          "outsideChangeMax": 0.0
+        },
+        "linear250": {
+          "maxAdjacentSampleBoundaryWindow": 0.3168046118357779,
+          "maxAdjacentSampleWhole": 1.1367337721626427,
+          "outsideChangeMax": 0.0
+        }
+      },
+      "offsetMeaning": "inward distance",
+      "sampleSpacingMetres": 1.0,
+      "side": "east"
+    },
+    {
+      "fraction": 0.1,
+      "metrics": {
+        "adaptive3deg": {
+          "maxAdjacentSampleBoundaryWindow": 1.1560743188338165,
+          "maxAdjacentSampleWhole": 1.1560743188338165,
+          "outsideChangeMax": 0.0
+        },
+        "hard": {
+          "maxAdjacentSampleBoundaryWindow": 1.5830078125,
+          "maxAdjacentSampleWhole": 4.5738525390625,
+          "outsideChangeMax": 0.0
+        },
+        "linear250": {
+          "maxAdjacentSampleBoundaryWindow": 0.5650520004105601,
+          "maxAdjacentSampleWhole": 3.6888519786079996,
+          "outsideChangeMax": 0.0
+        }
+      },
+      "offsetMeaning": "inward distance",
+      "sampleSpacingMetres": 1.0,
+      "side": "south"
+    },
+    {
+      "fraction": 0.25,
+      "metrics": {
+        "adaptive3deg": {
+          "maxAdjacentSampleBoundaryWindow": 0.6545389168895781,
+          "maxAdjacentSampleWhole": 26.96382480392549,
+          "outsideChangeMax": 0.0
+        },
+        "hard": {
+          "maxAdjacentSampleBoundaryWindow": 19.737111148476288,
+          "maxAdjacentSampleWhole": 63.19818115234375,
+          "outsideChangeMax": 0.0
+        },
+        "linear250": {
+          "maxAdjacentSampleBoundaryWindow": 0.6545389168895781,
+          "maxAdjacentSampleWhole": 63.19818115234375,
+          "outsideChangeMax": 0.0
+        }
+      },
+      "offsetMeaning": "inward distance",
+      "sampleSpacingMetres": 1.0,
+      "side": "south"
+    },
+    {
+      "fraction": 0.5,
+      "metrics": {
+        "adaptive3deg": {
+          "maxAdjacentSampleBoundaryWindow": 0.17900435792671487,
+          "maxAdjacentSampleWhole": 3.436496704974161,
+          "outsideChangeMax": 0.0
+        },
+        "hard": {
+          "maxAdjacentSampleBoundaryWindow": 110.45992681543657,
+          "maxAdjacentSampleWhole": 110.45992681543657,
+          "outsideChangeMax": 0.0
+        },
+        "linear250": {
+          "maxAdjacentSampleBoundaryWindow": 0.7739222013701692,
+          "maxAdjacentSampleWhole": 8.3023681640625,
+          "outsideChangeMax": 0.0
+        }
+      },
+      "offsetMeaning": "inward distance",
+      "sampleSpacingMetres": 1.0,
+      "side": "south"
+    },
+    {
+      "fraction": 0.75,
+      "metrics": {
+        "adaptive3deg": {
+          "maxAdjacentSampleBoundaryWindow": 0.14341772095804117,
+          "maxAdjacentSampleWhole": 2.28387451171875,
+          "outsideChangeMax": 0.0
+        },
+        "hard": {
+          "maxAdjacentSampleBoundaryWindow": 102.98563077787776,
+          "maxAdjacentSampleWhole": 102.98563077787776,
+          "outsideChangeMax": 0.0
+        },
+        "linear250": {
+          "maxAdjacentSampleBoundaryWindow": 0.632879862032496,
+          "maxAdjacentSampleWhole": 2.58319091796875,
+          "outsideChangeMax": 0.0
+        }
+      },
+      "offsetMeaning": "inward distance",
+      "sampleSpacingMetres": 1.0,
+      "side": "south"
+    },
+    {
+      "fraction": 0.9,
+      "metrics": {
+        "adaptive3deg": {
+          "maxAdjacentSampleBoundaryWindow": 0.14575335238623666,
+          "maxAdjacentSampleWhole": 5.63824462890625,
+          "outsideChangeMax": 0.0
+        },
+        "hard": {
+          "maxAdjacentSampleBoundaryWindow": 107.66474127157608,
+          "maxAdjacentSampleWhole": 107.66474127157608,
+          "outsideChangeMax": 0.0
+        },
+        "linear250": {
+          "maxAdjacentSampleBoundaryWindow": 0.5532837874361576,
+          "maxAdjacentSampleWhole": 4.688744791654699,
+          "outsideChangeMax": 0.0
+        }
+      },
+      "offsetMeaning": "inward distance",
+      "sampleSpacingMetres": 1.0,
+      "side": "south"
+    },
+    {
+      "fraction": 0.1,
+      "metrics": {
+        "adaptive3deg": {
+          "maxAdjacentSampleBoundaryWindow": 0.9798583984375,
+          "maxAdjacentSampleWhole": 6.6997757725685005,
+          "outsideChangeMax": 0.0
+        },
+        "hard": {
+          "maxAdjacentSampleBoundaryWindow": 2.6048899018169323,
+          "maxAdjacentSampleWhole": 17.09466552734375,
+          "outsideChangeMax": 0.0
+        },
+        "linear250": {
+          "maxAdjacentSampleBoundaryWindow": 0.5004791809537892,
+          "maxAdjacentSampleWhole": 13.53989043360798,
+          "outsideChangeMax": 0.0
+        }
+      },
+      "offsetMeaning": "inward distance",
+      "sampleSpacingMetres": 1.0,
+      "side": "north"
+    },
+    {
+      "fraction": 0.25,
+      "metrics": {
+        "adaptive3deg": {
+          "maxAdjacentSampleBoundaryWindow": 0.3583890067457105,
+          "maxAdjacentSampleWhole": 11.063316521903289,
+          "outsideChangeMax": 0.0
+        },
+        "hard": {
+          "maxAdjacentSampleBoundaryWindow": 9.884138483989773,
+          "maxAdjacentSampleWhole": 11.74932861328125,
+          "outsideChangeMax": 0.0
+        },
+        "linear250": {
+          "maxAdjacentSampleBoundaryWindow": 0.2890043720176436,
+          "maxAdjacentSampleWhole": 11.74932861328125,
+          "outsideChangeMax": 0.0
+        }
+      },
+      "offsetMeaning": "inward distance",
+      "sampleSpacingMetres": 1.0,
+      "side": "north"
+    },
+    {
+      "fraction": 0.5,
+      "metrics": {
+        "adaptive3deg": {
+          "maxAdjacentSampleBoundaryWindow": 0.655727513232705,
+          "maxAdjacentSampleWhole": 5.3582763671875,
+          "outsideChangeMax": 0.0
+        },
+        "hard": {
+          "maxAdjacentSampleBoundaryWindow": 2.916505433014663,
+          "maxAdjacentSampleWhole": 5.3582763671875,
+          "outsideChangeMax": 0.0
+        },
+        "linear250": {
+          "maxAdjacentSampleBoundaryWindow": 0.40716971739038854,
+          "maxAdjacentSampleWhole": 5.3582763671875,
+          "outsideChangeMax": 0.0
+        }
+      },
+      "offsetMeaning": "inward distance",
+      "sampleSpacingMetres": 1.0,
+      "side": "north"
+    },
+    {
+      "fraction": 0.75,
+      "metrics": {
+        "adaptive3deg": {
+          "maxAdjacentSampleBoundaryWindow": 0.7366905130165833,
+          "maxAdjacentSampleWhole": 32.937255859375,
+          "outsideChangeMax": 0.0
+        },
+        "hard": {
+          "maxAdjacentSampleBoundaryWindow": 2.0438986393874075,
+          "maxAdjacentSampleWhole": 32.937255859375,
+          "outsideChangeMax": 0.0
+        },
+        "linear250": {
+          "maxAdjacentSampleBoundaryWindow": 0.3142223437125722,
+          "maxAdjacentSampleWhole": 32.937255859375,
+          "outsideChangeMax": 0.0
+        }
+      },
+      "offsetMeaning": "inward distance",
+      "sampleSpacingMetres": 1.0,
+      "side": "north"
+    },
+    {
+      "fraction": 0.9,
+      "metrics": {
+        "adaptive3deg": {
+          "maxAdjacentSampleBoundaryWindow": 0.28829997332150015,
+          "maxAdjacentSampleWhole": 2.2298192627567914,
+          "outsideChangeMax": 0.0
+        },
+        "hard": {
+          "maxAdjacentSampleBoundaryWindow": 13.12323279291968,
+          "maxAdjacentSampleWhole": 13.12323279291968,
+          "outsideChangeMax": 0.0
+        },
+        "linear250": {
+          "maxAdjacentSampleBoundaryWindow": 0.28341206488175885,
+          "maxAdjacentSampleWhole": 2.126192008178805,
+          "outsideChangeMax": 0.0
+        }
+      },
+      "offsetMeaning": "inward distance",
+      "sampleSpacingMetres": 1.0,
+      "side": "north"
+    },
+    {
+      "fraction": null,
+      "metrics": {
+        "adaptive3deg": {
+          "maxAdjacentSampleBoundaryWindow": 1.3559361290185734,
+          "maxAdjacentSampleWhole": 2.8201923123938286,
+          "outsideChangeMax": 0.0
+        },
+        "hard": {
+          "maxAdjacentSampleBoundaryWindow": 2.76593017578125,
+          "maxAdjacentSampleWhole": 4.3428955078125,
+          "outsideChangeMax": 0.0
+        },
+        "linear250": {
+          "maxAdjacentSampleBoundaryWindow": 1.3388218229165432,
+          "maxAdjacentSampleWhole": 4.3428955078125,
+          "outsideChangeMax": 0.0
+        }
+      },
+      "offsetMeaning": "equal inward coordinate displacement on each axis; arclength = sqrt(2) * offset",
+      "sampleSpacingMetres": 1.4142135623730951,
+      "side": "SW"
+    },
+    {
+      "fraction": null,
+      "metrics": {
+        "adaptive3deg": {
+          "maxAdjacentSampleBoundaryWindow": 0.7445565226694271,
+          "maxAdjacentSampleWhole": 21.9068603515625,
+          "outsideChangeMax": 0.0
+        },
+        "hard": {
+          "maxAdjacentSampleBoundaryWindow": 8.844153813922276,
+          "maxAdjacentSampleWhole": 21.9068603515625,
+          "outsideChangeMax": 0.0
+        },
+        "linear250": {
+          "maxAdjacentSampleBoundaryWindow": 0.45667249808775523,
+          "maxAdjacentSampleWhole": 21.9068603515625,
+          "outsideChangeMax": 0.0
+        }
+      },
+      "offsetMeaning": "equal inward coordinate displacement on each axis; arclength = sqrt(2) * offset",
+      "sampleSpacingMetres": 1.4142135623730951,
+      "side": "NW"
+    },
+    {
+      "fraction": null,
+      "metrics": {
+        "adaptive3deg": {
+          "maxAdjacentSampleBoundaryWindow": 0.15421034286828217,
+          "maxAdjacentSampleWhole": 5.331418399814538,
+          "outsideChangeMax": 0.0
+        },
+        "hard": {
+          "maxAdjacentSampleBoundaryWindow": 100.60046683581095,
+          "maxAdjacentSampleWhole": 100.60046683581095,
+          "outsideChangeMax": 0.0
+        },
+        "linear250": {
+          "maxAdjacentSampleBoundaryWindow": 0.8129871855644524,
+          "maxAdjacentSampleWhole": 7.4869384765625,
+          "outsideChangeMax": 0.0
+        }
+      },
+      "offsetMeaning": "equal inward coordinate displacement on each axis; arclength = sqrt(2) * offset",
+      "sampleSpacingMetres": 1.4142135623730951,
+      "side": "SE"
+    },
+    {
+      "fraction": null,
+      "metrics": {
+        "adaptive3deg": {
+          "maxAdjacentSampleBoundaryWindow": 0.5374892292743425,
+          "maxAdjacentSampleWhole": 2.65106201171875,
+          "outsideChangeMax": 0.0
+        },
+        "hard": {
+          "maxAdjacentSampleBoundaryWindow": 8.831244493359463,
+          "maxAdjacentSampleWhole": 8.831244493359463,
+          "outsideChangeMax": 0.0
+        },
+        "linear250": {
+          "maxAdjacentSampleBoundaryWindow": 0.460416318269381,
+          "maxAdjacentSampleWhole": 2.65106201171875,
+          "outsideChangeMax": 0.0
+        }
+      },
+      "offsetMeaning": "equal inward coordinate displacement on each axis; arclength = sqrt(2) * offset",
+      "sampleSpacingMetres": 1.4142135623730951,
+      "side": "NE"
+    }
+  ],
+  "summary": {
+    "adaptiveWidthMetres": {
+      "count": 1000000,
+      "mean": 883.695586520358,
+      "median": 539.235855159648,
+      "nmad": 653.9245956079985,
+      "percentiles": {
+        "max": 2412.5810135898337,
+        "min": 27.08103455981842,
+        "p01": 34.18305228696576,
+        "p05": 60.632653967924256,
+        "p25": 160.10201544624692,
+        "p50": 539.235855159648,
+        "p75": 1749.9176066108625,
+        "p95": 2237.3985510141383,
+        "p99": 2409.528899943177
+      },
+      "rms": 1200.8670155233046,
+      "std": 813.1197324725854
+    },
+    "analysisGrid": {
+      "awsSampling": "cached z15 cross-tile pixel-centre bilinear",
+      "crs": "EPSG:2056",
+      "regionalSampling": "4x4 source area average; sub-2 m detail not evaluated",
+      "shape": [
+        1000,
+        1000
+      ],
+      "spacingMetres": 2.0
+    },
+    "difference": {
+      "count": 1000000,
+      "mean": -35.54653595388841,
+      "median": -8.30927681933008,
+      "nmad": 38.41527289347695,
+      "percentiles": {
+        "max": 184.07905636508622,
+        "min": -153.58754222969583,
+        "p01": -137.19797170706275,
+        "p05": -124.03112094184534,
+        "p25": -101.87602646906453,
+        "p50": -8.30927681933008,
+        "p75": 7.833964869783813,
+        "p95": 35.644700093582685,
+        "p99": 95.41498501384491
+      },
+      "rms": 68.84025787672465,
+      "std": 58.9527343404262
+    },
+    "edgeWidthRequirementsMetres": {
+      "1": {
+        "count": 4000,
+        "mean": 2483.9427541311825,
+        "median": 1112.585892202764,
+        "nmad": 1424.9863313891185,
+        "percentiles": {
+          "max": 7514.353732083655,
+          "min": 1.7198012267922709,
+          "p01": 27.05931358470653,
+          "p05": 100.3349545143239,
+          "p25": 404.3229537856287,
+          "p50": 1112.585892202764,
+          "p75": 5319.6813173142655,
+          "p95": 6646.7191368488575,
+          "p99": 7226.832823707621
+        },
+        "rms": 3497.981600326331,
+        "std": 2462.9055342056367
+      },
+      "3": {
+        "count": 4000,
+        "mean": 827.3081333435844,
+        "median": 370.5606162347428,
+        "nmad": 474.6094811971636,
+        "percentiles": {
+          "max": 2502.7492880156806,
+          "min": 0.5728012613387219,
+          "p01": 9.012442083896746,
+          "p05": 33.417808760006125,
+          "p25": 134.66480562324875,
+          "p50": 370.5606162347428,
+          "p75": 1771.786251229193,
+          "p95": 2213.772758176496,
+          "p99": 2406.986861280919
+        },
+        "rms": 1165.0464260592,
+        "std": 820.3014247073264
+      },
+      "5": {
+        "count": 4000,
+        "mean": 495.57714455756945,
+        "median": 221.9745759502163,
+        "nmad": 284.30230767954737,
+        "percentiles": {
+          "max": 1499.2060342566429,
+          "min": 0.34312150703264843,
+          "p01": 5.398666027103015,
+          "p05": 20.018058055011135,
+          "p25": 80.6674045055637,
+          "p50": 221.9745759502163,
+          "p75": 1061.3418818957307,
+          "p95": 1326.1022561962588,
+          "p99": 1441.8420750685286
+        },
+        "rms": 697.8903722002159,
+        "std": 491.37996031779903
+      }
+    },
+    "frequencyDiagnostics": {
+      "10": {
+        "edgeRule": "reflection; not observations outside AOI; 3 sigma interior also reported",
+        "high": {
+          "count": 1000000,
+          "mean": 0.00030399794302459214,
+          "median": -0.006290657294647062,
+          "nmad": 0.9732802399535563,
+          "percentiles": {
+            "max": 46.44640209669442,
+            "min": -49.73933582379183,
+            "p01": -6.14009258327354,
+            "p05": -2.399936008255955,
+            "p25": -0.659715625998246,
+            "p50": -0.006290657294647062,
+            "p75": 0.653477870445949,
+            "p95": 2.4448210699472415,
+            "p99": 5.949166432603272
+          },
+          "rms": 2.093671252506948,
+          "std": 2.093671230436924
+        },
+        "interiorHigh": {
+          "count": 940900,
+          "mean": -0.0021371159738687107,
+          "median": -0.008899404566745373,
+          "nmad": 0.9800794787096505,
+          "percentiles": {
+            "max": 46.44640209669442,
+            "min": -49.73933582379183,
+            "p01": -6.311937945974944,
+            "p05": -2.4489684030005874,
+            "p25": -0.6664282596255489,
+            "p50": -0.008899404566745373,
+            "p75": 0.6558170274316848,
+            "p95": 2.4875755369424435,
+            "p99": 6.133433761455295
+          },
+          "rms": 2.1361139747911944,
+          "std": 2.136112905731705
+        },
+        "low": {
+          "count": 1000000,
+          "mean": -35.54683995183143,
+          "median": -8.05618102937845,
+          "nmad": 37.79204337649732,
+          "percentiles": {
+            "max": 174.52229991897468,
+            "min": -147.67479535319742,
+            "p01": -136.62640476096982,
+            "p05": -123.62248538382592,
+            "p25": -102.1639688035048,
+            "p50": -8.05618102937845,
+            "p75": 7.783467702053816,
+            "p95": 35.662948426831,
+            "p99": 93.97272684665961
+          },
+          "rms": 68.64526134337329,
+          "std": 58.724731368810026
+        },
+        "lowStdRatio": 0.9961324445054651,
+        "sigmaMetres": 10
+      },
+      "100": {
+        "edgeRule": "reflection; not observations outside AOI; 3 sigma interior also reported",
+        "high": {
+          "count": 1000000,
+          "mean": 0.004293356494755833,
+          "median": -0.47580056699614603,
+          "nmad": 9.117919688564752,
+          "percentiles": {
+            "max": 129.74269493914997,
+            "min": -90.76337000640085,
+            "p01": -43.47439595485557,
+            "p05": -18.868863286101508,
+            "p25": -6.967762943152344,
+            "p50": -0.47580056699614603,
+            "p75": 5.338461492905747,
+            "p95": 23.347300737062675,
+            "p99": 50.48434439693798
+          },
+          "rms": 15.167583447295074,
+          "std": 15.16758283965344
+        },
+        "interiorHigh": {
+          "count": 490000,
+          "mean": 0.043921936308361866,
+          "median": -1.0904564335273057,
+          "nmad": 11.354562879336367,
+          "percentiles": {
+            "max": 122.00637520238026,
+            "min": -90.76337000640085,
+            "p01": -54.070036154646246,
+            "p05": -23.518806029303725,
+            "p25": -8.754712726190142,
+            "p50": -1.0904564335273057,
+            "p75": 6.561510279932259,
+            "p95": 32.42106187092947,
+            "p99": 64.29259209779285
+          },
+          "rms": 18.59027205968482,
+          "std": 18.59022017396806
+        },
+        "low": {
+          "count": 1000000,
+          "mean": -35.55082931038317,
+          "median": -8.2875043075086,
+          "nmad": 33.694301779263725,
+          "percentiles": {
+            "max": 64.25775691680316,
+            "min": -126.23554999196979,
+            "p01": -124.12614328446344,
+            "p05": -116.3215463853834,
+            "p25": -100.39626430664234,
+            "p50": -8.2875043075086,
+            "p75": 7.920882952710922,
+            "p95": 27.382438540292732,
+            "p99": 52.0579836921787
+          },
+          "rms": 64.19265630980615,
+          "std": 53.449374733975105
+        },
+        "lowStdRatio": 0.9066479329920202,
+        "sigmaMetres": 100
+      },
+      "250": {
+        "edgeRule": "reflection; not observations outside AOI; 3 sigma interior also reported",
+        "high": {
+          "count": 1000000,
+          "mean": 0.00839373186605284,
+          "median": -1.4900449426698525,
+          "nmad": 15.510119761668484,
+          "percentiles": {
+            "max": 188.0041112153201,
+            "min": -91.56786922335593,
+            "p01": -59.23434548689037,
+            "p05": -36.761361175852414,
+            "p25": -13.034485967952923,
+            "p50": -1.4900449426698525,
+            "p75": 7.893036321504079,
+            "p95": 46.930146158787274,
+            "p99": 95.38092235909697
+          },
+          "rms": 26.769535440051964,
+          "std": 26.769534124102037
+        },
+        "interiorHigh": {
+          "count": 62500,
+          "mean": 16.770858452352723,
+          "median": 10.933543641346029,
+          "nmad": 15.521354741809848,
+          "percentiles": {
+            "max": 167.67711462690718,
+            "min": -25.270432597652594,
+            "p01": -14.390038716869293,
+            "p05": -9.227139879447366,
+            "p25": 2.6166797759411176,
+            "p50": 10.933543641346029,
+            "p75": 24.65674476536887,
+            "p95": 64.29566121037809,
+            "p99": 115.72299682432232
+          },
+          "rms": 29.6426765969998,
+          "std": 24.442311318806755
+        },
+        "low": {
+          "count": 1000000,
+          "mean": -35.55492968575446,
+          "median": -17.718739560835616,
+          "nmad": 42.563484830701505,
+          "percentiles": {
+            "max": 20.52527242554661,
+            "min": -109.83340994158212,
+            "p01": -109.26564062371254,
+            "p05": -106.17284191362852,
+            "p25": -84.40618011675136,
+            "p50": -17.718739560835616,
+            "p75": 7.107684572233065,
+            "p95": 13.904273957068508,
+            "p99": 18.928827175011286
+          },
+          "rms": 57.892323182637966,
+          "std": 45.68772328015544
+        },
+        "lowStdRatio": 0.7749890448902482,
+        "sigmaMetres": 250
+      },
+      "30": {
+        "edgeRule": "reflection; not observations outside AOI; 3 sigma interior also reported",
+        "high": {
+          "count": 1000000,
+          "mean": 0.0008346094554779192,
+          "median": -0.0333323689187468,
+          "nmad": 3.216068915062796,
+          "percentiles": {
+            "max": 60.656479977516796,
+            "min": -62.486889553479614,
+            "p01": -16.289790332245893,
+            "p05": -6.984981568928248,
+            "p25": -2.242709386304177,
+            "p50": -0.0333323689187468,
+            "p75": 2.0983363099202283,
+            "p95": 6.973076253432166,
+            "p99": 17.94006732714892
+          },
+          "rms": 5.457424264841328,
+          "std": 5.457424201022491
+        },
+        "interiorHigh": {
+          "count": 828100,
+          "mean": -0.04302060786325572,
+          "median": -0.09417727257964081,
+          "nmad": 3.384837459980887,
+          "percentiles": {
+            "max": 60.656479977516796,
+            "min": -62.486889553479614,
+            "p01": -17.551479580018114,
+            "p05": -7.5327550227809805,
+            "p25": -2.422236799786279,
+            "p50": -0.09417727257964081,
+            "p75": 2.144905160406477,
+            "p95": 7.4563994263705595,
+            "p99": 19.94368936827509
+          },
+          "rms": 5.832741804699171,
+          "std": 5.832583148793031
+        },
+        "low": {
+          "count": 1000000,
+          "mean": -35.54737056334389,
+          "median": -7.4616638254403576,
+          "nmad": 35.91528227144821,
+          "percentiles": {
+            "max": 143.41298462126116,
+            "min": -143.06932513810932,
+            "p01": -133.80464329739266,
+            "p05": -122.38534058040219,
+            "p25": -102.722743109021,
+            "p50": -7.4616638254403576,
+            "p75": 7.527491279409045,
+            "p95": 34.98340130987846,
+            "p99": 87.54101398380108
+          },
+          "rms": 67.82339295471792,
+          "std": 57.761553631480446
+        },
+        "lowStdRatio": 0.9797943094196919,
+        "sigmaMetres": 30
+      }
+    },
+    "methods": {
+      "adaptive3deg": {
+        "detail10mInteriorCorrelation": 0.9341715882332492,
+        "detail10mInteriorRmsRatio": 0.7935200433493517,
+        "interior500mChange": {
+          "count": 250000,
+          "mean": 20.14013174780934,
+          "median": 0.0,
+          "nmad": 0.0,
+          "percentiles": {
+            "max": 101.10966634210399,
+            "min": -33.13504200771649,
+            "p01": -23.484157757223425,
+            "p05": -3.952232613044839,
+            "p25": 0.0,
+            "p50": 0.0,
+            "p75": 42.586002543200834,
+            "p95": 86.62902485179919,
+            "p99": 95.57205960339401
+          },
+          "rms": 37.95269619721732,
+          "std": 32.16803136374927
+        },
+        "modifiedRegional": {
+          "count": 1000000,
+          "mean": 30.115571525182087,
+          "median": 0.0,
+          "nmad": 13.13747619494599,
+          "percentiles": {
+            "max": 132.48596233645685,
+            "min": -119.67860305565273,
+            "p01": -41.16526421101899,
+            "p05": -13.04108123428407,
+            "p25": 0.0,
+            "p50": 0.0,
+            "p75": 77.68722753201257,
+            "p95": 104.61920218411095,
+            "p99": 121.93058271046542
+          },
+          "rms": 53.49767644297177,
+          "std": 44.21598960227554
+        },
+        "pureRegionalFraction": 0.332796,
+        "regionalGridMaximum": {
+          "candidateAtSamePoint": 2952.2965310325762,
+          "candidateMaximum": 2952.839970071939,
+          "change": -24.791252780900322,
+          "coordinate": [
+            2625999.0,
+            1092565.0
+          ],
+          "regional": 2977.0877838134766
+        },
+        "slopeGradient": {
+          "count": 1000000,
+          "mean": 0.4639141091772886,
+          "median": 0.31419620714938845,
+          "nmad": 0.28629979776983544,
+          "percentiles": {
+            "max": 17.961485132111992,
+            "min": 0.0,
+            "p01": 0.031537462797530585,
+            "p05": 0.06762699913647709,
+            "p25": 0.14681887444483233,
+            "p50": 0.31419620714938845,
+            "p75": 0.6141488199610778,
+            "p95": 1.3103550981563648,
+            "p99": 2.250037427528662
+          },
+          "rms": 0.6974887766627789,
+          "std": 0.5208399877858674
+        },
+        "steepDecileChange": {
+          "count": 100000,
+          "mean": 1.955692342153794,
+          "median": 0.0,
+          "nmad": 17.836331879942183,
+          "percentiles": {
+            "max": 87.32747119831856,
+            "min": -119.67860305565273,
+            "p01": -83.0789801656284,
+            "p05": -44.1167042444202,
+            "p25": -9.116967520445883,
+            "p50": 0.0,
+            "p75": 14.142518782013667,
+            "p95": 56.09677048627314,
+            "p99": 77.6271699176392
+          },
+          "rms": 28.54586608733213,
+          "std": 28.478794534508292
+        },
+        "weight": {
+          "count": 1000000,
+          "mean": 0.5408268277177649,
+          "median": 0.46623706152804684,
+          "nmad": 0.5645178355216982,
+          "percentiles": {
+            "max": 1.0,
+            "min": 0.0004144938530010382,
+            "p01": 0.006132628361853955,
+            "p05": 0.030757218502842326,
+            "p25": 0.16706446959739626,
+            "p50": 0.46623706152804684,
+            "p75": 1.0,
+            "p95": 1.0,
+            "p99": 1.0
+          },
+          "rms": 0.6640485409225441,
+          "std": 0.3853139072523839
+        },
+        "weightGradientDisagreementTerm": {
+          "count": 1000000,
+          "mean": 0.07025874643795696,
+          "median": 0.046360239775152176,
+          "nmad": 0.06873369149064061,
+          "percentiles": {
+            "max": 4.040737318123123,
+            "min": 0.0,
+            "p01": 0.0,
+            "p05": 0.0,
+            "p25": 0.0,
+            "p50": 0.046360239775152176,
+            "p75": 0.06587166066892837,
+            "p95": 0.2495233864726327,
+            "p99": 0.7167234621477602
+          },
+          "rms": 0.17072108937373323,
+          "std": 0.15559369815619487
+        }
+      },
+      "hard": {
+        "detail10mInteriorCorrelation": 1.0,
+        "detail10mInteriorRmsRatio": 1.0,
+        "interior500mChange": {
+          "count": 250000,
+          "mean": 0.0,
+          "median": 0.0,
+          "nmad": 0.0,
+          "percentiles": {
+            "max": 0.0,
+            "min": 0.0,
+            "p01": 0.0,
+            "p05": 0.0,
+            "p25": 0.0,
+            "p50": 0.0,
+            "p75": 0.0,
+            "p95": 0.0,
+            "p99": 0.0
+          },
+          "rms": 0.0,
+          "std": 0.0
+        },
+        "modifiedRegional": {
+          "count": 1000000,
+          "mean": 0.0,
+          "median": 0.0,
+          "nmad": 0.0,
+          "percentiles": {
+            "max": 0.0,
+            "min": 0.0,
+            "p01": 0.0,
+            "p05": 0.0,
+            "p25": 0.0,
+            "p50": 0.0,
+            "p75": 0.0,
+            "p95": 0.0,
+            "p99": 0.0
+          },
+          "rms": 0.0,
+          "std": 0.0
+        },
+        "pureRegionalFraction": 1.0,
+        "regionalGridMaximum": {
+          "candidateAtSamePoint": 2977.0877838134766,
+          "candidateMaximum": 2977.0877838134766,
+          "change": 0.0,
+          "coordinate": [
+            2625999.0,
+            1092565.0
+          ],
+          "regional": 2977.0877838134766
+        },
+        "slopeGradient": {
+          "count": 1000000,
+          "mean": 0.5830750501798169,
+          "median": 0.4354730495989828,
+          "nmad": 0.3247037864290955,
+          "percentiles": {
+            "max": 30.793546358705395,
+            "min": 0.0,
+            "p01": 0.03318025432415341,
+            "p05": 0.08969156791080943,
+            "p25": 0.24450540738544113,
+            "p50": 0.4354730495989828,
+            "p75": 0.7056510045962833,
+            "p95": 1.515734341150998,
+            "p99": 2.997830440542734
+          },
+          "rms": 0.900675143380828,
+          "std": 0.6864686444127504
+        },
+        "steepDecileChange": {
+          "count": 100000,
+          "mean": 0.0,
+          "median": 0.0,
+          "nmad": 0.0,
+          "percentiles": {
+            "max": 0.0,
+            "min": 0.0,
+            "p01": 0.0,
+            "p05": 0.0,
+            "p25": 0.0,
+            "p50": 0.0,
+            "p75": 0.0,
+            "p95": 0.0,
+            "p99": 0.0
+          },
+          "rms": 0.0,
+          "std": 0.0
+        },
+        "weight": {
+          "count": 1000000,
+          "mean": 1.0,
+          "median": 1.0,
+          "nmad": 0.0,
+          "percentiles": {
+            "max": 1.0,
+            "min": 1.0,
+            "p01": 1.0,
+            "p05": 1.0,
+            "p25": 1.0,
+            "p50": 1.0,
+            "p75": 1.0,
+            "p95": 1.0,
+            "p99": 1.0
+          },
+          "rms": 1.0,
+          "std": 0.0
+        },
+        "weightGradientDisagreementTerm": {
+          "count": 1000000,
+          "mean": 0.0,
+          "median": 0.0,
+          "nmad": 0.0,
+          "percentiles": {
+            "max": 0.0,
+            "min": 0.0,
+            "p01": 0.0,
+            "p05": 0.0,
+            "p25": 0.0,
+            "p50": 0.0,
+            "p75": 0.0,
+            "p95": 0.0,
+            "p99": 0.0
+          },
+          "rms": 0.0,
+          "std": 0.0
+        }
+      },
+      "linear250": {
+        "detail10mInteriorCorrelation": 1.0,
+        "detail10mInteriorRmsRatio": 0.9999999999999994,
+        "interior500mChange": {
+          "count": 250000,
+          "mean": 0.0,
+          "median": 0.0,
+          "nmad": 0.0,
+          "percentiles": {
+            "max": 0.0,
+            "min": 0.0,
+            "p01": 0.0,
+            "p05": 0.0,
+            "p25": 0.0,
+            "p50": 0.0,
+            "p75": 0.0,
+            "p95": 0.0,
+            "p99": 0.0
+          },
+          "rms": 0.0,
+          "std": 0.0
+        },
+        "modifiedRegional": {
+          "count": 1000000,
+          "mean": 8.426205515364167,
+          "median": 0.0,
+          "nmad": 0.0,
+          "percentiles": {
+            "max": 130.6388781579658,
+            "min": -59.12098513608089,
+            "p01": -14.043115437777983,
+            "p05": -6.035230785240605,
+            "p25": 0.0,
+            "p50": 0.0,
+            "p75": 0.13127439063600832,
+            "p95": 68.93845385109434,
+            "p99": 99.84671001570969
+          },
+          "rms": 24.76140106241502,
+          "std": 23.283600305507182
+        },
+        "pureRegionalFraction": 0.5625,
+        "regionalGridMaximum": {
+          "candidateAtSamePoint": 2952.333364623396,
+          "candidateMaximum": 2952.86453274958,
+          "change": -24.754419190080625,
+          "coordinate": [
+            2625999.0,
+            1092565.0
+          ],
+          "regional": 2977.0877838134766
+        },
+        "slopeGradient": {
+          "count": 1000000,
+          "mean": 0.5843793774209509,
+          "median": 0.44696533106215514,
+          "nmad": 0.27847487800115167,
+          "percentiles": {
+            "max": 30.793546358705395,
+            "min": 0.0,
+            "p01": 0.04490057754246486,
+            "p05": 0.11702588989994357,
+            "p25": 0.27926292983088985,
+            "p50": 0.44696533106215514,
+            "p75": 0.6752311395014794,
+            "p95": 1.486356601249441,
+            "p99": 2.8817730806802344
+          },
+          "rms": 0.8848716136114287,
+          "std": 0.6644535467738851
+        },
+        "steepDecileChange": {
+          "count": 100000,
+          "mean": -0.494845341231864,
+          "median": 0.0,
+          "nmad": 0.0,
+          "percentiles": {
+            "max": 25.676403961382675,
+            "min": -57.59213485875398,
+            "p01": -35.25439239359473,
+            "p05": -4.505461347799883,
+            "p25": 0.0,
+            "p50": 0.0,
+            "p75": 0.0,
+            "p95": 5.645616183671442,
+            "p99": 13.76519438540751
+          },
+          "rms": 6.411341089587539,
+          "std": 6.392215786039663
+        },
+        "weight": {
+          "count": 1000000,
+          "mean": 0.770834,
+          "median": 1.0,
+          "nmad": 0.0,
+          "percentiles": {
+            "max": 1.0,
+            "min": 0.004,
+            "p01": 0.02,
+            "p05": 0.1,
+            "p25": 0.532,
+            "p50": 1.0,
+            "p75": 1.0,
+            "p95": 1.0,
+            "p99": 1.0
+          },
+          "rms": 0.8354130714802109,
+          "std": 0.32207133440279967
+        },
+        "weightGradientDisagreementTerm": {
+          "count": 1000000,
+          "mean": 0.08162333768652337,
+          "median": 0.0,
+          "nmad": 0.0,
+          "percentiles": {
+            "max": 0.5831458480312581,
+            "min": 0.0,
+            "p01": 0.0,
+            "p05": 0.0,
+            "p25": 0.0,
+            "p50": 0.0,
+            "p75": 0.05743865241286544,
+            "p95": 0.4420992542000143,
+            "p99": 0.5058762314380173
+          },
+          "rms": 0.1724021554306853,
+          "std": 0.15185563520020567
+        }
+      }
+    },
+    "spatialDependence": {
+      "eastWest": [
+        {
+          "correlation": 0.999834241264939,
+          "lagMetres": 2.0,
+          "semivarianceMetresSquared": 0.5762753343461877
+        },
+        {
+          "correlation": 0.9994739240687252,
+          "lagMetres": 4.0,
+          "semivarianceMetresSquared": 1.8295047438026673
+        },
+        {
+          "correlation": 0.998463759722816,
+          "lagMetres": 8.0,
+          "semivarianceMetresSquared": 5.34568659592648
+        },
+        {
+          "correlation": 0.9956522263468074,
+          "lagMetres": 16.0,
+          "semivarianceMetresSquared": 15.146472191060088
+        },
+        {
+          "correlation": 0.9879946358157271,
+          "lagMetres": 32.0,
+          "semivarianceMetresSquared": 41.91723656407984
+        },
+        {
+          "correlation": 0.9678739515583499,
+          "lagMetres": 64.0,
+          "semivarianceMetresSquared": 112.68008922074861
+        },
+        {
+          "correlation": 0.9176885783014584,
+          "lagMetres": 128.0,
+          "semivarianceMetresSquared": 291.476769331195
+        },
+        {
+          "correlation": 0.8192555548710628,
+          "lagMetres": 256.0,
+          "semivarianceMetresSquared": 650.6833090935246
+        },
+        {
+          "correlation": 0.7959784470131683,
+          "lagMetres": 512.0,
+          "semivarianceMetresSquared": 736.968749698057
+        }
+      ],
+      "northSouth": [
+        {
+          "correlation": 0.9997690381607879,
+          "lagMetres": 2.0,
+          "semivarianceMetresSquared": 0.805988850761147
+        },
+        {
+          "correlation": 0.9992330685317343,
+          "lagMetres": 4.0,
+          "semivarianceMetresSquared": 2.6790939309008155
+        },
+        {
+          "correlation": 0.9975895604450123,
+          "lagMetres": 8.0,
+          "semivarianceMetresSquared": 8.434932931994933
+        },
+        {
+          "correlation": 0.9924912370904757,
+          "lagMetres": 16.0,
+          "semivarianceMetresSquared": 26.344866127324877
+        },
+        {
+          "correlation": 0.9767499632812295,
+          "lagMetres": 32.0,
+          "semivarianceMetresSquared": 81.9174918802108
+        },
+        {
+          "correlation": 0.9321366835733913,
+          "lagMetres": 64.0,
+          "semivarianceMetresSquared": 241.05672487043736
+        },
+        {
+          "correlation": 0.8285338183798945,
+          "lagMetres": 128.0,
+          "semivarianceMetresSquared": 620.5947024136368
+        },
+        {
+          "correlation": 0.6179420824458638,
+          "lagMetres": 256.0,
+          "semivarianceMetresSquared": 1436.9404017650234
+        },
+        {
+          "correlation": 0.2701868886715886,
+          "lagMetres": 512.0,
+          "semivarianceMetresSquared": 2975.4207997885546
+        }
+      ]
+    },
+    "translationDiagnostics": {
+      "NE": {
+        "eastNorthVerticalCoefficientsMetres": [
+          4.256112466706118,
+          -8.743405294642269,
+          5.682317347889349
+        ],
+        "residual": {
+          "count": 625,
+          "mean": 0.15478789857629308,
+          "median": 0.6741588179121809,
+          "nmad": 7.571038236193096,
+          "percentiles": {
+            "max": 49.82434073575089,
+            "min": -38.48342387804819,
+            "p01": -18.765665776829955,
+            "p05": -12.113191169601045,
+            "p25": -5.453390884446231,
+            "p50": 0.6741588179121809,
+            "p75": 4.803296890971485,
+            "p95": 13.622172209763887,
+            "p99": 23.003961246964696
+          },
+          "rms": 8.525422197810379,
+          "std": 8.52401691442317
+        }
+      },
+      "NW": {
+        "eastNorthVerticalCoefficientsMetres": [
+          -4.992528590722847,
+          -0.6540862761422339,
+          11.622145031983607
+        ],
+        "residual": {
+          "count": 625,
+          "mean": 5.485966662171266,
+          "median": -1.0860336615369235,
+          "nmad": 12.578198606785072,
+          "percentiles": {
+            "max": 158.6761197306002,
+            "min": -71.93182685826137,
+            "p01": -56.350260800494425,
+            "p05": -37.04509027829386,
+            "p25": -8.608106061655642,
+            "p50": -1.0860336615369235,
+            "p75": 9.774622576896213,
+            "p95": 71.51856463828798,
+            "p99": 118.55889944041664
+          },
+          "rms": 32.569810528296486,
+          "std": 32.104465851820024
+        }
+      },
+      "SE": {
+        "eastNorthVerticalCoefficientsMetres": [
+          15.488149514462343,
+          98.52130312608327,
+          -109.34921771203375
+        ],
+        "residual": {
+          "count": 625,
+          "mean": 0.8829501473594473,
+          "median": -1.0247791280379772,
+          "nmad": 18.130906659838082,
+          "percentiles": {
+            "max": 68.9109120783993,
+            "min": -45.47540260503354,
+            "p01": -35.94980629311328,
+            "p05": -28.81718355515775,
+            "p25": -11.994145616710341,
+            "p50": -1.0247791280379772,
+            "p75": 13.002002141021094,
+            "p95": 35.433085349085054,
+            "p99": 57.445398759941575
+          },
+          "rms": 19.425032481092746,
+          "std": 19.404955190074162
+        }
+      },
+      "SW": {
+        "eastNorthVerticalCoefficientsMetres": [
+          21.636686998979744,
+          28.398824238386545,
+          -93.2579923761759
+        ],
+        "residual": {
+          "count": 625,
+          "mean": 6.804652818115375,
+          "median": -11.150966939861007,
+          "nmad": 38.29737155566794,
+          "percentiles": {
+            "max": 215.88823207886833,
+            "min": -74.2149732808443,
+            "p01": -61.5192646443861,
+            "p05": -50.10765757043097,
+            "p25": -28.94848590874878,
+            "p50": -11.150966939861007,
+            "p75": 40.23362102637954,
+            "p95": 100.70967954183709,
+            "p99": 142.0233939342007
+          },
+          "rms": 49.67374518882635,
+          "std": 49.20546373228651
+        }
+      },
+      "caution": "No stable-terrain/epoch mask or control points; coefficients are diagnostic, not physical shifts to apply",
+      "whole": {
+        "eastNorthVerticalCoefficientsMetres": [
+          42.73008579851061,
+          17.953270955750597,
+          -45.17148045745047
+        ],
+        "residual": {
+          "count": 2500,
+          "mean": 0.010887429385446012,
+          "median": 21.17402699226745,
+          "nmad": 53.9127319099935,
+          "percentiles": {
+            "max": 225.72467884046333,
+            "min": -117.6883354078812,
+            "p01": -100.90903479645462,
+            "p05": -84.44043976202771,
+            "p25": -60.402311357400016,
+            "p50": 21.17402699226745,
+            "p75": 45.549746667896855,
+            "p95": 70.50359271715949,
+            "p99": 122.41413959583133
+          },
+          "rms": 57.24753865155778,
+          "std": 57.24753761626331
+        }
+      }
+    }
+  }
+}

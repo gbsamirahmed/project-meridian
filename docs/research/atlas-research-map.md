@@ -47,6 +47,13 @@ DEM endpoint is feasible; seamless substitution and vertical reconciliation are
 not established. AWS remains the production default. This is bounded integration
 evidence, not a reopened Lab, universal resolver or imagery programme.
 
+The [bounded reconciliation investigation](../atlas/riffelhorn-terrain-reconciliation.md)
+characterizes the mixed-scale Swiss/AWS disagreement and reviews established DEM
+fusion practice. Numerical and frozen-renderer controls remove the edge step but
+reshape terrain or consume interior information. No method is adopted; source
+support, stable-terrain evidence, height semantics and contributor masks constrain
+the next decision. AWS and the closed terrain-research branches remain unchanged.
+
 ## Evidence classes
 
 - **MERIDIAN EVIDENCE (M):** measurements, inspected outputs and negative results

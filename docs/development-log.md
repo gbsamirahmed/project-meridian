@@ -3035,3 +3035,45 @@ Architecture/navigation record only the established composition constraint and
 failed hard join. Next decision concerns source support, defensible boundary behavior
 and vertical accounting before any general resolver. No adoption, Swiss imagery,
 analytical migration or subsequent Atlas phase was begun.
+
+
+## 2026-10-03 — Bounded Riffelhorn terrain reconciliation investigation
+
+Started from clean canonical main at fe8addc, equal to locally recorded origin/main.
+Verified four official Swiss inputs, the prepared product and cached AWS contributors.
+Nine z15 headers identify EU-DEM; upstream DSM/reference semantics do not establish
+the hosted derivative's exact height datum. Public joerd source lacks the relevant
+EU-DEM ingestion module. Swiss LN02/LHN95 differences are sub-metre, far smaller
+than the measured field, but do not justify an invented LN02-to-AWS operation.
+
+Reviewed primary stable-terrain co-registration, source-priority mosaics, vertical
+operations, fixed/adaptive overlap methods, production edge/provenance requirements
+and conditional frequency fusion before experiments. The 2 m diagnostic field has
+mean −35.55 m, median −8.31 m and RMS 68.84 m, with broad southern negative disagreement
+and positive ridge lobes. Mixed scales and unstable quadrant translation fits do
+not isolate measurement, misregistration, datum or possible glacier change causes.
+
+Only two blending controls were tested: a 250 m feather and an uncapped adaptive 3°
+overlap diagnostic, with contribution masks. Twenty edge/four corner profiles remove
+the ideal edge step and leave outside AWS unchanged. Fixed overlap retains 56.25%
+pure Swiss cells but reshapes the collar. Adaptive retains 33.28%, changes ≥500 m
+interior by 37.95 m RMS, and retains 0.794 of its sigma10 m detail RMS. Nearest-edge
+width handling also adds lateral artifacts; this does not indict all GRASS methods.
+24 paired application captures preserve renderer/exaggeration and show altered
+transition terrain, including an adaptive depression. Neither method is accepted.
+
+A protected interior, adequate external source support/overlap, height/epoch/error
+accounting and contributor/product identities constrain the next decision. The 2 km
+research crop is not an accepted production seamline. No larger acquisition,
+resolver, imagery, new provider, datum correction or reopened Lab followed. Every
+src file and visual/analytical AWS, Weather/Traverse, rendering and lifecycle remain
+unchanged. Generated grids/profiles/figures (~61.83 MB) stay in external experiments;
+no new tile pyramid or source duplication. The [record](atlas/riffelhorn-terrain-reconciliation.md)
+links exact identities, compact results/capture hashes and reproduction commands.
+
+Independent rebuild reproduces complete identity/output hashes. Thirteen synthetic
+Python tests and ten expanded policy tests pass. Active Node suite 137 passes, one
+live-publication skip, zero failures; Forecast Workspace passes unchanged. Lint,
+TypeScript/application-only build, syntax, provenance and diff checks pass; existing
+chunk warning remains. Capture-only cancellation handling and basemap sprite warnings are documented. No new Weather/satellite/globe claim, other-browser/load
+test or full external GFS publication validation. Local evaluation services stopped.
