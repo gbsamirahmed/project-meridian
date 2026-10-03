@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import test from "node:test";
 import { expression } from "@maplibre/maplibre-gl-style-spec";
 import { createServer } from "vite";
+import { MAPTERHORN_EVALUATION, visualEvaluationPlugin } from "./terrain_foundation_evaluation.mjs";
 
 const AWS_TERRARIUM = "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png";
 const CREDITS = '<a href="https://github.com/tilezen/joerd/blob/master/docs/attribution.md" target="_blank" rel="noopener">Terrain data credits</a>';
@@ -252,4 +253,43 @@ test("IGOR relief evaluates continuously, restores after satellite and survives 
   assert.deepEqual(map.layers.get("terrain-hillshade").paint, baseline);
   assert.deepEqual([...map.sources], sources);
   assert.deepEqual(map.getTerrain(), { source: "terrain-dem", exaggeration: 1.45 });
+});
+
+
+test("evaluation loader changes only the visual module, never production or analytical defaults", () => {
+  const visualId = "C:/repo/src/atlas/map/visualTerrainConfig.ts";
+  const analyticalId = "C:/repo/src/atlas/terrain/analyticalElevationConfig.ts";
+  assert.equal(visualEvaluationPlugin("aws").load(visualId), undefined);
+  assert.equal(visualEvaluationPlugin("mapterhorn").load(analyticalId), undefined);
+  assert.throws(() => visualEvaluationPlugin("unknown"), /Unknown evaluation source/);
+  assert.match(visualEvaluationPlugin("mapterhorn").load(visualId), /tiles\.mapterhorn\.com/);
+  assert.equal(MAPTERHORN_EVALUATION.encoding, "terrarium");
+  assert.equal(MAPTERHORN_EVALUATION.tileSize, 512);
+  assert.equal(MAPTERHORN_EVALUATION.geometryMaxZoom, 14);
+  assert.equal(MAPTERHORN_EVALUATION.reliefMaxZoom, 15);
+  assert.match(visualEvaluationPlugin("mapterhorn-extended").load(visualId), /"geometryMaxZoom":17,"reliefMaxZoom":17/);
+});
+
+test("actual evaluation policies preserve presentation and analytical route sampling", async context => {
+  const baseline = await modules(context);
+  const reference = mapHarness();
+  baseline.layers.configurePlanetAndTerrain(reference);
+  for (const policy of [MAPTERHORN_EVALUATION, {...MAPTERHORN_EVALUATION, geometryMaxZoom:17, reliefMaxZoom:17}]) {
+    const { layers, sampler, analytical } = await modules(context, policy);
+    const map = mapHarness();layers.configurePlanetAndTerrain(map);
+    assert.equal(map.sources.get("terrain-dem").tileSize,512);
+    assert.equal(map.sources.get("terrain-dem").maxzoom,policy.geometryMaxZoom);
+    assert.equal(map.sources.get("terrain-analysis-dem").maxzoom,policy.reliefMaxZoom);
+    assert.deepEqual(map.getTerrain(),reference.getTerrain());
+    assert.deepEqual(map.sky,reference.sky);
+    assert.deepEqual([...map.layers.values()],[...reference.layers.values()]);
+    layers.applyTerrainLayerState(map,"satellite",false);
+    baseline.layers.applyTerrainLayerState(reference,"satellite",false);
+    assert.deepEqual(map.layers.get("terrain-hillshade"),reference.layers.get("terrain-hillshade"));
+    baseline.layers.applyTerrainLayerState(reference,"terrain",false);
+    assert.deepEqual(analytical.ANALYTICAL_ELEVATION,{tileTemplate:AWS_TERRARIUM,tileSize:256,samplingZoom:15});
+    const tiles = mockTiles(context, () => 123.25);
+    assert.deepEqual(await sampler.sampleTerrainElevations([{latitude:0,longitude:0}],new AbortController().signal),[123.25]);
+    assert.deepEqual(tiles.requests.map(r=>r.url),["https://s3.amazonaws.com/elevation-tiles-prod/terrarium/15/16384/16384.png"]);
+  }
 });

@@ -131,6 +131,13 @@ The bounded [native relief evaluation](atlas/native-relief-evaluation.md) record
 the frozen baseline, alternatives, cameras, evidence and limitations. This policy
 changes presentation only, independently of both terrain source policies.
 
+The bounded [global terrain foundation evaluation](atlas/global-terrain-foundation-evaluation.md)
+verified Mapterhorn and found useful regional visual-source gains, while retaining
+the AWS production default. Its source substitution exists only in evaluation
+tooling; no runtime provider selector or source resolver is implied. Sparse delivery,
+vertical/water semantics, attribution and point-provenance limits remain explicit
+inputs to a later adoption decision. Analytical elevation stays independently AWS.
+
 The conceptual relationship is:
 
 ```text

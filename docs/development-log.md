@@ -2911,3 +2911,58 @@ The [evaluation record](atlas/native-relief-evaluation.md) freezes baseline,
 methods, exact cameras, evidence limits and reproduction commands. Architecture
 records the selected presentation policy. No new Lab, provider migration, physical
 lighting, custom terrain renderer, analytical/Weather/Traverse change or next phase.
+
+
+## 2026-10-03 — Bounded Atlas global terrain foundation evaluation
+
+Started from clean canonical main at `d05f054`, equal to locally recorded
+origin/main. Externally verified Mapterhorn before browser integration, against
+current official documentation, live TileJSON/catalogues, upstream source records
+and repository `077e6530`. The service passed a bounded experimental gate:
+512-pixel lossless WebP Terrarium, XYZ/Web Mercator, direct browser/CORS access,
+global Copernicus DSM fallback and finer regional terrain. This is not blanket
+production rights clearance or an operational service guarantee.
+
+Held strengthened IGOR, colors/direction/anchor, exaggeration 1.45, atmosphere,
+projection, imagery, route styling and analytical AWS policy constant. A private
+Vite loader substitutes only visual configuration; default AWS and every production
+source file remain unchanged. No user-facing provider selector, dependency, source
+resolver or provenance implementation. Added a bounded capture reproducer, live
+numeric probe and two deterministic policy tests; generated products remain ignored.
+No meridian-data or meridian-private access, new Lab or provider archive acquisition.
+
+42 controlled captures cover Tryfan/Riffelhorn landscape, planning, close and
+limited extended delivery; rolling/flat controls; rotation; optional elevation
+colors; real GPX route/analytical sampling with synthetic rain; satellite;
+coast/open water; Nepal global fallback; one public Swiss source-coverage edge.
+Regional mountain definition improves substantially at planning/close scales.
+English sampled tiles are nearly unchanged because AWS already uses UK LiDAR.
+Higher local tiles contain additional information, with modest incremental display
+gains. Steep-face striping remains unresolved. No appearance-based accuracy claim.
+
+512 pixels changes native tile selection and mesh LOD; MapLibre's unchanged
+hillshade shader also applies tile-zoom-dependent amplification. That confound is
+recorded separately from matched-grid decoded elevation differences. Three short
+transects show no isolated height step at the inspected coverage edge, not global
+seam validation. Sparse children produce 58 actual 404 responses; native parent
+fallback retains terrain in inspected views. Zero page exceptions; diagnostics
+retain ordinary ERR_ABORTED cancellations. Globe/terrain transitions pass.
+
+Production remains AWS. Common vertical datum, zero/nodata/water semantics,
+source-specific global attribution, sparse-delivery expectations, service/versioning
+commitments and exact clicked-point provenance need an explicit adoption decision.
+Coverage metadata identifies candidate sources, not a per-pixel winner or confidence.
+The [evaluation record](atlas/global-terrain-foundation-evaluation.md) preserves
+primary references, date, contract, dataset/resolution distinctions, cameras,
+quantitative/visual findings, limitations and reproduction commands, labelled M/E/H.
+Closed Riffelhorn branches and analytical/Weather/Traverse behavior remain unchanged.
+
+Validation: nine focused policy tests pass; active Node suite 136 passes, zero
+failures, one live-publication skip (137 tests), using an empty data-root stand-in
+and synthetic fixtures. The clock-sensitive Forecast Workspace test passes unchanged.
+ESLint, TypeScript/application Vite build, new JS syntax checks, Python compilation,
+diff checks and unchanged production-source checks pass. Build uses the existing
+ignored application-only config to avoid external GFS publication/public copying;
+existing large-chunk warning remains. Full publication, unrelated research suites,
+other browser families and performance load tests were not run. No migration or
+subsequent Atlas programme was begun.

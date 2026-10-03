@@ -30,6 +30,15 @@ next architecture or experiment. The pre-012F
 [finite programme](../earth-lab/riffelhorn-visual-synthesis-and-experiment-design.md)
 is historical; its two core slots were used and its conditional third was refused.
 
+## Bounded post-epoch production evaluations
+
+The closed terrain epoch is followed by deliberate product evaluations, not new
+Labs: [native relief](../atlas/native-relief-evaluation.md) retained IGOR with a
+modest strength increase; [global terrain foundation](../atlas/global-terrain-foundation-evaluation.md)
+verified Mapterhorn and compared visual sources under that frozen treatment. The
+latter found regional gains but retained AWS as the production default. Independent
+analytical AWS elevation and the closed research branches remain unchanged.
+
 ## Evidence classes
 
 - **MERIDIAN EVIDENCE (M):** measurements, inspected outputs and negative results
