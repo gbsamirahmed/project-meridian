@@ -1,0 +1,1050 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "id": "swissalti3d-riffelhorn-support-selection",
+    "name": "swissALTI3D 2024 Riffelhorn 10 km support selection",
+    "authority": {
+      "status": "known",
+      "value": "Swiss Federal Office of Topography (swisstopo)"
+    },
+    "dataset": "swissALTI3D",
+    "release": {
+      "status": "known",
+      "value": "2024 / 2024-2 Valais"
+    },
+    "revision": {
+      "status": "known",
+      "value": "b24a4fdc7b378ba79d442d0ce216a031dfb95a6bc6eed5ad9c33be61175651f4"
+    },
+    "surface": {
+      "kind": "dtm",
+      "description": "Official terrain without vegetation/buildings; explicitly scoped selection."
+    },
+    "horizontalReference": {
+      "status": "known",
+      "value": {
+        "name": "CH1903+ / LV95",
+        "identifier": "EPSG:2056"
+      }
+    },
+    "verticalReference": {
+      "status": "known",
+      "value": {
+        "name": "LN02 height",
+        "identifier": "EPSG:5728"
+      }
+    },
+    "elevationUnit": {
+      "status": "known",
+      "value": "metre"
+    },
+    "resolution": {
+      "gridSpacing": {
+        "x": 0.5,
+        "y": 0.5,
+        "unit": "metre",
+        "crs": {
+          "name": "CH1903+ / LV95",
+          "identifier": "EPSG:2056"
+        }
+      },
+      "nominalResolution": {
+        "status": "known",
+        "value": "0.5 m distributed LV95 grid"
+      },
+      "measurementResolution": {
+        "status": "unknown",
+        "reason": "Variable LiDAR/photogrammetric support; grid spacing is not independent measurement resolution."
+      },
+      "limitations": "No cell-level accuracy/epoch mask acquired."
+    },
+    "acquisition": {
+      "status": "known",
+      "value": {
+        "description": "2021/2022 LiDAR, 2023 photogrammetric updates; per-cell lineage unknown"
+      }
+    },
+    "coverage": {
+      "scope": "retained-input-selection",
+      "area": {
+        "status": "known",
+        "value": {
+          "kind": "native-rectangle",
+          "crs": {
+            "name": "CH1903+ / LV95",
+            "identifier": "EPSG:2056"
+          },
+          "axisOrder": "xy",
+          "bounds": [
+            2620000,
+            1087000,
+            2630000,
+            1097000
+          ]
+        }
+      }
+    },
+    "nodata": {
+      "status": "known",
+      "value": "Declared -9999; 0 measured nodata cells in selected inputs."
+    },
+    "quality": {
+      "status": "unknown",
+      "reason": "Release-wide accuracy classes are not per-cell validation or a stable-terrain mask."
+    },
+    "rights": {
+      "licence": {
+        "status": "known",
+        "value": "swisstopo custom OGD terms, version 1.3.2021"
+      },
+      "references": [
+        "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-and-geoservices"
+      ],
+      "attribution": [
+        "©swisstopo"
+      ]
+    },
+    "documentation": [
+      "docs/atlas/riffelhorn-support-acquisition.json",
+      "docs/atlas/riffelhorn-support-official-verification.json",
+      "docs/atlas/riffelhorn-swiss-support-product.md"
+    ],
+    "assets": [
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1087_0.5_2056_5728.tif",
+        "sha256": "b10d5b3e3275d9c651b508f58492222ee98016abd086e4954ccc519d12074ed2"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1088_0.5_2056_5728.tif",
+        "sha256": "587630e5935c4b8037909abd76cbd729676a3c180b6d123ea6f343fb3934bb5f"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1089_0.5_2056_5728.tif",
+        "sha256": "4c0236e6b289010cc2523729759c52387bf9996fd313d33d31499aba7a12e4cc"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1090_0.5_2056_5728.tif",
+        "sha256": "11d214ef1a4f45cee9cc0a54a94245ed01b7db129b98973be2c21eb76d6d5ea3"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1091_0.5_2056_5728.tif",
+        "sha256": "3f48474933d8ef527f3d8230a7fcaf5c189c34a1df8d08947668d92d50a81ce4"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1092_0.5_2056_5728.tif",
+        "sha256": "145e6a56cce12e5a1c6e27eae9f989793b2f7f4d1bfdc56088aa725fc9d5202c"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1093_0.5_2056_5728.tif",
+        "sha256": "caf5bd8f68bdb213d7e295d05fa9b2e99fdbc1a3c59a17a268817662bc6f9627"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1094_0.5_2056_5728.tif",
+        "sha256": "995d22067407347dfa631ee019cf8a265a4bfee4e0b5d3d0bad3ec7eca4c103f"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1095_0.5_2056_5728.tif",
+        "sha256": "8edf7167f60946fc23c284f369f4fecfadaa62680b03005f7de5b62b62d1e1b5"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1096_0.5_2056_5728.tif",
+        "sha256": "229bd00fc2d9f293f5272745eb82359ed55fd8ab2fb0be513575f9eeecc0a342"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1087_0.5_2056_5728.tif",
+        "sha256": "b66ad46a08ac53df0c3394d3709bd9f0466fcc1375c6c62ad805f82d511145eb"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1088_0.5_2056_5728.tif",
+        "sha256": "f13e4d9359805e61fc32ebb8276bc54b853ec0869e73b186c31c537aabd96c39"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1089_0.5_2056_5728.tif",
+        "sha256": "ee2729eba5a82ee16d10dda08d2468a056a1e1d3e0bd7d26eaa2044442722442"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1090_0.5_2056_5728.tif",
+        "sha256": "76422e5d2089ea7b8d0a625c085e58264410a2adc52106611096300abcceae2f"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1091_0.5_2056_5728.tif",
+        "sha256": "6ec921b4bb6a5c537c2be19a11fdf3253fad233b0c808af53f591c14320c1684"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1092_0.5_2056_5728.tif",
+        "sha256": "9e666305d72e452400fff3bad770a7ef461b7c4c7d0d5b456d7973751abe324a"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1093_0.5_2056_5728.tif",
+        "sha256": "441997950f43e8bcbb2a7c26bf0e57f36da743665902712116312bb2291cf91e"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1094_0.5_2056_5728.tif",
+        "sha256": "cc3e92a4d77af3159dd339de6b50115354ef51143b201604498c1c759442a83b"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1095_0.5_2056_5728.tif",
+        "sha256": "7c97faf4fa013e31a2a3e3a0c8e3cdc584d35712b5ce61df217c420f658e3002"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1096_0.5_2056_5728.tif",
+        "sha256": "bffda95d135e3fb74f6459cf6ebbf9bb0f14eeff19ca9eca8041dbf82ce60429"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1087_0.5_2056_5728.tif",
+        "sha256": "18c4d3511c1a3a1bb8d3b35efc625df5f88bc79cd10000b51849fdb79798dbb8"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1088_0.5_2056_5728.tif",
+        "sha256": "f1fa1c8317bd8f6042f2d8d804a7a4daecac4c6d6bdd9d721588ac6a9a48480d"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1089_0.5_2056_5728.tif",
+        "sha256": "7977b8282cb05038368d26ae1b508172a6c2afdb68e9d78311ef610d76034bb5"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1090_0.5_2056_5728.tif",
+        "sha256": "ca3dfe0d1e2a322f71e3a53bc26ba94e17f3beb6a74a5d7fd9af1528f540c1a7"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1091_0.5_2056_5728.tif",
+        "sha256": "014d778f4b3cd0dadb17c1ac0b19df0f6e4ada7c212bdc82ab825207fc6cb92d"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1092_0.5_2056_5728.tif",
+        "sha256": "53b85a4bf30b01637b68601a61004298a13cf40364616d8a3521512a76b45f26"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1093_0.5_2056_5728.tif",
+        "sha256": "1bb728d6191a526c5a527cce37c1a93d935d54a04cb12040a01265e1dba8dce8"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1094_0.5_2056_5728.tif",
+        "sha256": "2c8f0c6a9d9b1613eaeb53dfe7216a054f970e101078ae6bc1cd80bc881e2d7f"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1095_0.5_2056_5728.tif",
+        "sha256": "a103daec543361d7d786d7d0e3b066d9bd2ec3cd5a69f1e4d4a7620849cf1041"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1096_0.5_2056_5728.tif",
+        "sha256": "d779af7c6698f43bcf4b230507aaee9802f64625cb8a38f37d59ebacfcc09286"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1087_0.5_2056_5728.tif",
+        "sha256": "99a9fdcb1d904f6c518f364ae0d248b1eea3dafcf8b3138cfe5f31efa2c946d4"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1088_0.5_2056_5728.tif",
+        "sha256": "375147312cda5fe811adf38aa8e4f16be64cf8919f3912bf7c0971c42c8926d9"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1089_0.5_2056_5728.tif",
+        "sha256": "c669f4a1f3589fd604bac3a9da5654f0e61f101c8e9a2a411b4c7b9232a7d64b"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1090_0.5_2056_5728.tif",
+        "sha256": "9ad35be9ccd26ca728f62495a6f3d74262e8d1449b43f8a124887e34debdf8d9"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1091_0.5_2056_5728.tif",
+        "sha256": "56378b8b0cd1138de5f10098fa6838bc229cf34c918fd2847540b9fd89c83771"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1092_0.5_2056_5728.tif",
+        "sha256": "f24239d38c80537328b141bed50b63831df9645a9a94a813c98a35b70f3b3fda"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1093_0.5_2056_5728.tif",
+        "sha256": "604fcd83c4cc7868745fb843f23fef4daf5b1c3e9cbbcd28e1dc9e161b6a7f1a"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1094_0.5_2056_5728.tif",
+        "sha256": "0f4a8153fb08a59974985619915265a4a8352cf727338de0275f9caacb06af6e"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1095_0.5_2056_5728.tif",
+        "sha256": "a6ea488ecbb54b97100f22d867c38b8cd1efc37b68d61f175c98e53fb2c810ca"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1096_0.5_2056_5728.tif",
+        "sha256": "0e251928c93b53107618d576cf11a52299352d08532f50e3f764c635e72cc581"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2624-1087_0.5_2056_5728.tif",
+        "sha256": "72b64738927ab260b47a9979b248bb6235e72ca65a34a6816c2733e51fdaa0e1"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2624-1088_0.5_2056_5728.tif",
+        "sha256": "e15a31af5ddab240672322a51780ed755436c2e3813ff37a286a6cec0b20b60d"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2624-1089_0.5_2056_5728.tif",
+        "sha256": "d2e79d7de72df078b8defcfe853f2c579a9137e7a89397b5b52f94042894a7f8"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2624-1090_0.5_2056_5728.tif",
+        "sha256": "54e86e526618b067f773a96da881c33e71ea545125da39c0fe902058d9990677"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2624-1091_0.5_2056_5728.tif",
+        "sha256": "c68c305e4a142da416b46b555a80916ecc52f8fa50bf1efd5cd2c3f24f9cd4bc"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2624-1092_0.5_2056_5728.tif",
+        "sha256": "9fa4a4391e2e1bfd650f2f31c7d38ed9a5a94494a967011468e6c44559bbcb2c"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2624-1093_0.5_2056_5728.tif",
+        "sha256": "a17f61660e8bc295173f90922578d583798384b997ecbe36641552f592cc033b"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2624-1094_0.5_2056_5728.tif",
+        "sha256": "8b50585c677dacb5e15ca75de174b7628a04e3cc0be8a84a20e4e248a339777a"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2624-1095_0.5_2056_5728.tif",
+        "sha256": "57f12bcf71d823f32a3186667f8d7dbbfac80e2335454fd4d505dd17ce6e08aa"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2624-1096_0.5_2056_5728.tif",
+        "sha256": "cdc98b65fccf96f1eeb2ba65009bf12cd41716d8bd2ba18260f4a072a8921f59"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2625-1087_0.5_2056_5728.tif",
+        "sha256": "d8b715383ac23f76634b743aad585661df386d85c8dc68ff924aa71a7a7ce645"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2625-1088_0.5_2056_5728.tif",
+        "sha256": "7b9df08e8cc9b9c8bea55b2d8641618d78e3bce1dbf32b0d0be6476f2586fafb"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2625-1089_0.5_2056_5728.tif",
+        "sha256": "6917ceb87a5a58a8f5787c7222286902dca1f0ceee973b80dcfdeebb19acb9da"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2625-1090_0.5_2056_5728.tif",
+        "sha256": "4d918d88b47a6bdb2faa959ced434d37fbb677671ec168fb54e32380148c5a0b"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2625-1091_0.5_2056_5728.tif",
+        "sha256": "0d2ebc6d0b4fd06ab2191cbf2a2f5ab77728249fa8c835075040bce4dc4899de"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2625-1092_0.5_2056_5728.tif",
+        "sha256": "4dffaad9efb82d3bf327a86b4f82d55762165ea5f825c386c23380a9320ff875"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2625-1093_0.5_2056_5728.tif",
+        "sha256": "f302035dfae29b9d07a0f6c22918080871954cd1b06b6523a51acf647840f790"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2625-1094_0.5_2056_5728.tif",
+        "sha256": "a40fbf29d431c827faac57fd5b06819593de3f14f94fa0767fdef4ea7a67fa48"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2625-1095_0.5_2056_5728.tif",
+        "sha256": "f353e9d2572ae28a663eba1892ccbbb9c9d690cc150697477af60270e9244c13"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2625-1096_0.5_2056_5728.tif",
+        "sha256": "fa2c43d94f33508eaf75f53c428554dec436c42a21932d18ef2e5fd5c0f677f9"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1087_0.5_2056_5728.tif",
+        "sha256": "cac2b6a412264b7221fb09cfb9ea4dda4e23b66cbc8fb516395e3cb220ebba54"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1088_0.5_2056_5728.tif",
+        "sha256": "2fbe87ca858b305295a0c796babbc80f057f7c277a1dba268f6f0c95fe51467e"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1089_0.5_2056_5728.tif",
+        "sha256": "be976949f9efc30cf4b8d413425a1cd4409b7b8e58397b80d6773cb3d191d7cc"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1090_0.5_2056_5728.tif",
+        "sha256": "b1e94efebda0182f5a81c6bc79da06c4331b1351dfb284ea506ed2eb1fe551ef"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1091_0.5_2056_5728.tif",
+        "sha256": "cd371e983e6f525c1653f3f9a98209a5533b6f5f18423f4be65a444c016b9f8e"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1092_0.5_2056_5728.tif",
+        "sha256": "3ed05cb8ac3fcf4363def4332c0ddc452eafeb55ef86802bcc5e30d4e6893dd1"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1093_0.5_2056_5728.tif",
+        "sha256": "5acc79cbb13a7a13c9ef0b182e78a84733edc32fb7b44a6f8ec2d0c11f3d5f87"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1094_0.5_2056_5728.tif",
+        "sha256": "64fbf6607dc068b01665c55d5cf2dbe4ea2465a6811df14fdaa0cc0ed83ea42f"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1095_0.5_2056_5728.tif",
+        "sha256": "d16098b7e40e07942b48df4387dfe33c67bb29cb8f86e518c0a9110a7f41c941"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1096_0.5_2056_5728.tif",
+        "sha256": "dd41533b3a1e93354f3ce6981b656d5be135e4311ac0e6050e7d5c2fd9b9d090"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1087_0.5_2056_5728.tif",
+        "sha256": "a1ee161970e0d31e267f412542386096c0ed7a0427eb8591924ad91d2d0f661c"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1088_0.5_2056_5728.tif",
+        "sha256": "5d6995ceefa75feb42537b35bd4ca129d691ed5138da9b9e58803ed465c4d8dd"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1089_0.5_2056_5728.tif",
+        "sha256": "335eb30fd08e2ed53455cf4086fac9dcca6f481402e3cce163f38bde7a71938a"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1090_0.5_2056_5728.tif",
+        "sha256": "9b63b175e61f510026b689cf91c983eed91ba5def220412f064266f08b18d28e"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1091_0.5_2056_5728.tif",
+        "sha256": "10e84994bf3012e8a06460725a2c131a1372554ab600502fb59506182d729f04"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1092_0.5_2056_5728.tif",
+        "sha256": "f826c927d7bd1f2e27325a63eca76194e419bd68e42fcd430345383482b0acae"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1093_0.5_2056_5728.tif",
+        "sha256": "2a0cd8f674c444c255100822509c37999d10450fca131ab244f527429470a3ff"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1094_0.5_2056_5728.tif",
+        "sha256": "d7be5da78f5842fdcc83a9536cd53eca6dbe86b67ab2e7e3dba4180b599d9af9"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1095_0.5_2056_5728.tif",
+        "sha256": "cba28399a5a6e5bca5320456ce26bbe6eaacf44ec284f098146166767309edc6"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1096_0.5_2056_5728.tif",
+        "sha256": "910ca9cf743cc0272d57ba3c088b64887963d23037d9497f0c89b29142098d44"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1087_0.5_2056_5728.tif",
+        "sha256": "bb37d77bf8c367f9c5cd43f56fd3c3c1c9f9fa13e3d78c102585fe2c4464a7f4"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1088_0.5_2056_5728.tif",
+        "sha256": "4a7af161792cc6ed54377f605ce570268bfeb059fcf1e5fb1c20dea2e4d0ad64"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1089_0.5_2056_5728.tif",
+        "sha256": "099a9160abaac1beddc5704b4f8326a06df87b9d9a68ecd240f8e71332009281"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1090_0.5_2056_5728.tif",
+        "sha256": "52d3c8ae560f4a564ead56a7e6ca309a1b4ed09da8a2b1e655dea7305768a891"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1091_0.5_2056_5728.tif",
+        "sha256": "9afccaf8aa5dcb7af657d414261e56cebee9af5353e8a2a4adc69a8c7cf8330d"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1092_0.5_2056_5728.tif",
+        "sha256": "e05807372eaa2ade01dd30cd1b4e50f3dba5a6e2faea2ec2528442a64a79c36e"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1093_0.5_2056_5728.tif",
+        "sha256": "d63946296ab16a4f7e199eea570e375a6bb26324855b03b67d3628559e314204"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1094_0.5_2056_5728.tif",
+        "sha256": "fa46a45f7092725a7a9bff86a53ea606996f466f61e478b2aa7b6ae35eb42d9a"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1095_0.5_2056_5728.tif",
+        "sha256": "94a128ca09790c345bb58efe24ff3ab54fd17597aa80fdb7e47ffa93ce02c385"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1096_0.5_2056_5728.tif",
+        "sha256": "076ba72f90cf1752ddddc10ea215bbdee745476c302f97984ce7c55cd311a7ba"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1087_0.5_2056_5728.tif",
+        "sha256": "08ad1eb9e46c2e1a9efed25a414561b2aee1d035223987f00c874f8872043750"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1088_0.5_2056_5728.tif",
+        "sha256": "02f79a090e0c7f3d9b3b69f18387fd363ec7a7396f9ff1f77bdc95a4f62b5664"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1089_0.5_2056_5728.tif",
+        "sha256": "19e94991fcbd6ae6629c1e2540d063370821c6c529d9086b68242c71be48bb29"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1090_0.5_2056_5728.tif",
+        "sha256": "bbbba6acf6734468d214978cae058fbb3a3c700281386560b8af33cf7efb48d3"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1091_0.5_2056_5728.tif",
+        "sha256": "bdefae29ec27ee1e9aa554d43049938bcbffd098e5a6019a49403d38a7327456"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1092_0.5_2056_5728.tif",
+        "sha256": "e3ace395664bf31f0662b98f820f506f7f2aecf9981052dc9adff8618ee3985f"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1093_0.5_2056_5728.tif",
+        "sha256": "0aaf036112bf954f1e852bf266e7ba692ebec4b290383ac1c8e0556bb9ed190e"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1094_0.5_2056_5728.tif",
+        "sha256": "2956c294d23827c1e0dae9f21ba666aec8a780ede57aca401ed87b38e25b3fe7"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1095_0.5_2056_5728.tif",
+        "sha256": "7390addf349c79f1c4fea9dd748af565156fc09b158f435a2aab03fc107d998c"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1096_0.5_2056_5728.tif",
+        "sha256": "4b2cbfa7f1167abb091354b3b92603aba39721b9ee3370e59f36b66a26bfb894"
+      }
+    ]
+  },
+  "product": {
+    "id": "riffelhorn-swiss-support",
+    "name": "Pure swissALTI3D Riffelhorn support terrain v1",
+    "version": {
+      "status": "known",
+      "value": "riffelhorn-swiss-support-v1"
+    },
+    "revision": {
+      "status": "known",
+      "value": "1a44a0644de1bde73a3ba84d1b761dc0aa17d48cc971e5f6b5d2c14fb329d7ea"
+    },
+    "producer": {
+      "status": "known",
+      "value": "Meridian"
+    },
+    "surface": {
+      "kind": "dtm",
+      "description": "Swiss source-derived terrain only, no AWS pixels or reconciliation."
+    },
+    "vertical": {
+      "kind": "preserved",
+      "from": {
+        "kind": "source",
+        "id": "swissalti3d-riffelhorn-support-selection",
+        "revision": {
+          "status": "known",
+          "value": "b24a4fdc7b378ba79d442d0ce216a031dfb95a6bc6eed5ad9c33be61175651f4"
+        }
+      },
+      "reference": {
+        "status": "known",
+        "value": {
+          "name": "LN02 height",
+          "identifier": "EPSG:5728"
+        }
+      }
+    },
+    "elevationUnit": {
+      "status": "known",
+      "value": "metre"
+    },
+    "lineage": {
+      "contributors": [
+        {
+          "kind": "source",
+          "id": "swissalti3d-riffelhorn-support-selection",
+          "revision": {
+            "status": "known",
+            "value": "b24a4fdc7b378ba79d442d0ce216a031dfb95a6bc6eed5ad9c33be61175651f4"
+          }
+        }
+      ],
+      "contributorList": "complete",
+      "spatialMapping": "uniform",
+      "processing": [
+        {
+          "method": "VRT mosaic of unmodified official tiles; two-dimensional LV95 to Web Mercator warp.",
+          "software": {
+            "GDAL": "3.9.3",
+            "rasterio": "1.4.3",
+            "pyproj": "3.7.2"
+          },
+          "parameters": {
+            "verticalTransform": "none",
+            "threads": 1,
+            "warpTolerancePixels": 1e-9
+          },
+          "record": {
+            "href": "${MERIDIAN_DATA_ROOT}/derived/atlas/riffelhorn/riffelhorn-swiss-support-v1/manifest.json",
+            "selector": "processing.horizontalOperation"
+          }
+        },
+        {
+          "method": "GDAL average z12-17, bilinear z18",
+          "parameters": {
+            "gridSpacingMetres": 0.5
+          }
+        },
+        {
+          "method": "Terrarium encode, omit partial/nodata tiles without AWS/zero/alpha fill.",
+          "parameters": {
+            "quantizationIncrementMetres": 0.00390625,
+            "maxEncodingErrorMetres": 0.001953125
+          }
+        }
+      ],
+      "limitations": "Uniform immediate dataset contribution does not establish uniform measurement technology, epoch or confidence."
+    },
+    "delivery": {
+      "kind": "raster-tiles",
+      "horizontalReference": {
+        "status": "known",
+        "value": {
+          "name": "WGS 84 / Pseudo-Mercator",
+          "identifier": "EPSG:3857"
+        }
+      },
+      "scheme": "xyz",
+      "tileSize": [
+        256,
+        256
+      ],
+      "encoding": {
+        "name": "terrarium",
+        "description": "R*256+G+B/256-32768 metres",
+        "quantizationIncrement": {
+          "value": 0.00390625,
+          "unit": "metre"
+        }
+      },
+      "format": "lossless RGB PNG",
+      "tileTemplate": "${MERIDIAN_DATA_ROOT}/derived/atlas/riffelhorn/riffelhorn-swiss-support-v1/tiles/{z}/{x}/{y}.png",
+      "zoom": {
+        "min": 12,
+        "max": {
+          "status": "known",
+          "value": 18
+        }
+      },
+      "availability": "Fully supported tile inventory only; omitted edge/parent tiles return 404. No regional/global fallback. Native source mosaic retained for full support analysis.",
+      "resampling": {
+        "status": "known",
+        "value": "GDAL average z12-17, bilinear z18"
+      }
+    },
+    "sourceInformation": {
+      "description": "0.5 m distributed Swiss grid; approximate local ground pixel spacing 26.6 m at z12 to 0.415 m at z18. Final delivery level slightly oversamples the grid; no new observations.",
+      "informationCeiling": {
+        "status": "unknown",
+        "reason": "Source/mesh/view dependent; z18 is not 0.415 m measurement resolution."
+      }
+    },
+    "spatial": {
+      "coverage": {
+        "status": "known",
+        "value": {
+          "kind": "asset",
+          "asset": {
+            "href": "${MERIDIAN_DATA_ROOT}/derived/atlas/riffelhorn/riffelhorn-swiss-support-v1/manifest.json",
+            "sha256": "30413b6698c1e75e27fd169f61925d8d60044fa14f444fb072b652c54816e106",
+            "selector": "files: supported tile inventory by zoom"
+          },
+          "crs": {
+            "status": "known",
+            "value": {
+              "name": "WGS 84 / Pseudo-Mercator",
+              "identifier": "EPSG:3857"
+            }
+          },
+          "interpretation": "Fully Swiss-supported tiles only; footprint varies by level. Full native source support is distinct."
+        }
+      },
+      "validSupport": {
+        "status": "known",
+        "value": {
+          "area": {
+            "kind": "asset",
+            "asset": {
+              "href": "${MERIDIAN_DATA_ROOT}/derived/atlas/riffelhorn/riffelhorn-swiss-support-v1/manifest.json",
+              "sha256": "30413b6698c1e75e27fd169f61925d8d60044fa14f444fb072b652c54816e106",
+              "selector": "files: supported tile inventory by zoom"
+            },
+            "crs": {
+              "status": "known",
+              "value": {
+                "name": "WGS 84 / Pseudo-Mercator",
+                "identifier": "EPSG:3857"
+              }
+            },
+            "interpretation": "Fully Swiss-supported tiles only; footprint varies by level. Full native source support is distinct."
+          },
+          "purpose": "Height-preserving regional visual delivery in existing fully supported pixels",
+          "basis": "All source/encoding/fidelity checks; does not establish absolute accuracy, production integration or a stable-terrain fit region."
+        }
+      },
+      "protectedInterior": {
+        "status": "known",
+        "value": {
+          "area": {
+            "kind": "geojson",
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    7.780566904469132,
+                    45.97905091086851
+                  ],
+                  [
+                    7.78048196139084,
+                    45.98037373834171
+                  ],
+                  [
+                    7.780211437660678,
+                    45.981684391226075
+                  ],
+                  [
+                    7.7797579256280835,
+                    45.982970245882086
+                  ],
+                  [
+                    7.779125780909685,
+                    45.98421891663044
+                  ],
+                  [
+                    7.7783210809018835,
+                    45.98541837511734
+                  ],
+                  [
+                    7.777351566656226,
+                    45.98655706626847
+                  ],
+                  [
+                    7.7762265686615795,
+                    45.98762401970994
+                  ],
+                  [
+                    7.774956917235283,
+                    45.98860895557883
+                  ],
+                  [
+                    7.773554838376432,
+                    45.9895023836977
+                  ],
+                  [
+                    7.772033836078446,
+                    45.990295695150735
+                  ],
+                  [
+                    7.770408562232079,
+                    45.99098124537405
+                  ],
+                  [
+                    7.768694675373551,
+                    45.99155242795111
+                  ],
+                  [
+                    7.766908689643697,
+                    45.9920037383976
+                  ],
+                  [
+                    7.76506781542206,
+                    45.99233082731426
+                  ],
+                  [
+                    7.763189793183134,
+                    45.9925305423906
+                  ],
+                  [
+                    7.761292722190268,
+                    45.99260095885025
+                  ],
+                  [
+                    7.759394885694377,
+                    45.99254139804225
+                  ],
+                  [
+                    7.757514574340125,
+                    45.99235243399583
+                  ],
+                  [
+                    7.755669909500037,
+                    45.99203588787609
+                  ],
+                  [
+                    7.753878668257878,
+                    45.99159481039325
+                  ],
+                  [
+                    7.752158111745946,
+                    45.991033452338705
+                  ],
+                  [
+                    7.75052481850724,
+                    45.990357223532826
+                  ],
+                  [
+                    7.748994524502718,
+                    45.989572640585855
+                  ],
+                  [
+                    7.747581971317416,
+                    45.98868726397941
+                  ],
+                  [
+                    7.746300764036657,
+                    45.98770962508124
+                  ],
+                  [
+                    7.745163240167091,
+                    45.986649143802666
+                  ],
+                  [
+                    7.744180350866988,
+                    45.9855160376982
+                  ],
+                  [
+                    7.743361555627701,
+                    45.98432122339065
+                  ],
+                  [
+                    7.742714731414984,
+                    45.983076211276874
+                  ],
+                  [
+                    7.742246097135784,
+                    45.98179299453489
+                  ],
+                  [
+                    7.7419601541454,
+                    45.98048393350668
+                  ],
+                  [
+                    7.741859643352613,
+                    45.979161636574354
+                  ],
+                  [
+                    7.741945519318327,
+                    45.977838838680256
+                  ],
+                  [
+                    7.742216941578152,
+                    45.97652827866389
+                  ],
+                  [
+                    7.742671283252661,
+                    45.975242576595875
+                  ],
+                  [
+                    7.743304156842558,
+                    45.973994112291535
+                  ],
+                  [
+                    7.7441094569413185,
+                    45.97279490617116
+                  ],
+                  [
+                    7.745079419436235,
+                    45.971656503610845
+                  ],
+                  [
+                    7.746204696612474,
+                    45.97058986389404
+                  ],
+                  [
+                    7.747474447423891,
+                    45.969605254827414
+                  ],
+                  [
+                    7.748876442052077,
+                    45.968712154029596
+                  ],
+                  [
+                    7.750397179740537,
+                    45.96791915783757
+                  ],
+                  [
+                    7.752022018767305,
+                    45.96723389870006
+                  ],
+                  [
+                    7.753735317306036,
+                    45.96666297184719
+                  ],
+                  [
+                    7.755520583824689,
+                    45.96621187193598
+                  ],
+                  [
+                    7.7573606355826055,
+                    45.96588494027497
+                  ],
+                  [
+                    7.7592377637121155,
+                    45.96568532313139
+                  ],
+                  [
+                    7.761133903310004,
+                    45.965614941518055
+                  ],
+                  [
+                    7.763030806918344,
+                    45.965674472746876
+                  ],
+                  [
+                    7.764910219742829,
+                    45.96586334392525
+                  ],
+                  [
+                    7.766754054940928,
+                    45.96617973745711
+                  ],
+                  [
+                    7.768544567311564,
+                    45.96662060849591
+                  ],
+                  [
+                    7.770264523732558,
+                    45.967181714183845
+                  ],
+                  [
+                    7.771897368722074,
+                    45.96785765439891
+                  ],
+                  [
+                    7.77342738354511,
+                    45.96864192362118
+                  ],
+                  [
+                    7.774839837345413,
+                    45.969526973425374
+                  ],
+                  [
+                    7.776121128856967,
+                    45.970504285002455
+                  ],
+                  [
+                    7.777258917336169,
+                    45.97156445102001
+                  ],
+                  [
+                    7.778242241455939,
+                    45.97269726603873
+                  ],
+                  [
+                    7.779061625015056,
+                    45.97389182462213
+                  ],
+                  [
+                    7.779709168438949,
+                    45.97513662620066
+                  ],
+                  [
+                    7.7801786251818,
+                    45.976419685687006
+                  ],
+                  [
+                    7.780465462281492,
+                    45.97772864878242
+                  ],
+                  [
+                    7.780566904469132,
+                    45.97905091086851
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            }
+          },
+          "purpose": "Preserve Riffelhorn/Riffelsee benchmark and nearby landforms in future integration experiments",
+          "basis": "1.5 km radius around established LV95 benchmark; encloses original 2 km crop and local camera targets. Selection intent, not global validation."
+        }
+      },
+      "transitionSupport": {
+        "status": "unknown",
+        "reason": "3.5 km minimum native collar acquired for analysis; no transition region, seam, blend or reference fit accepted."
+      }
+    },
+    "nodata": {
+      "status": "known",
+      "value": "omit any partial/nodata tile; no alpha/zero/AWS fill"
+    },
+    "rights": {
+      "licence": {
+        "status": "known",
+        "value": "swisstopo custom OGD terms, version 1.3.2021"
+      },
+      "references": [
+        "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-and-geoservices"
+      ],
+      "attribution": [
+        "©swisstopo"
+      ]
+    },
+    "generation": {
+      "timestamp": {
+        "status": "known",
+        "value": "2026-10-03T23:19:00.840434+00:00"
+      },
+      "buildRecord": {
+        "href": "${MERIDIAN_DATA_ROOT}/derived/atlas/riffelhorn/riffelhorn-swiss-support-v1/manifest.json",
+        "sha256": "30413b6698c1e75e27fd169f61925d8d60044fa14f444fb072b652c54816e106"
+      }
+    },
+    "documentation": [
+      "docs/atlas/riffelhorn-swiss-support-product.md",
+      "docs/atlas/riffelhorn-support-acquisition.json",
+      "docs/atlas/riffelhorn-support-measurements.json"
+    ]
+  },
+  "preparationSummary": {
+    "tileCounts": [
+      {
+        "omittedPartialOrNodataTiles": 8,
+        "tiles": 1,
+        "zoom": 12
+      },
+      {
+        "omittedPartialOrNodataTiles": 12,
+        "tiles": 4,
+        "zoom": 13
+      },
+      {
+        "omittedPartialOrNodataTiles": 24,
+        "tiles": 25,
+        "zoom": 14
+      },
+      {
+        "omittedPartialOrNodataTiles": 48,
+        "tiles": 121,
+        "zoom": 15
+      },
+      {
+        "omittedPartialOrNodataTiles": 94,
+        "tiles": 506,
+        "zoom": 16
+      },
+      {
+        "omittedPartialOrNodataTiles": 234,
+        "tiles": 2118,
+        "zoom": 17
+      },
+      {
+        "omittedPartialOrNodataTiles": 466,
+        "tiles": 8654,
+        "zoom": 18
+      }
+    ],
+    "tiles": 11429,
+    "storageBytes": 930914852,
+    "generationSeconds": 770.1632222000044,
+    "sourceBytes": 1667166026,
+    "nodataCells": 0,
+    "sourceMosaic": "${MERIDIAN_DATA_ROOT}/derived/atlas/riffelhorn/riffelhorn-swiss-support-v1/source-mosaic.vrt",
+    "sourceMosaicSha256": "8b097d62be84e110cdf8efd695f63d685a9069fcad98aae91660b7fb42e17998"
+  }
+}

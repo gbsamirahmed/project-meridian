@@ -142,3 +142,21 @@ test('evidence snapshots retain resolvable repository documentation references',
   assert.ok(regional.generation.buildRecord.href === 'docs/atlas/riffelhorn-regional-product.json');
   assert.equal(regional.generation.buildRecord.selector.includes('source.inputs'), true);
 });
+
+test('new Swiss support product actively uses source/product/support semantics', () => {
+  const record=JSON.parse(readFileSync('docs/atlas/riffelhorn-support-product.json','utf8'));
+  assert.deepEqual(validateTerrainSource(record.source),[]);
+  assert.deepEqual(validateTerrainProduct(record.product),[]);
+  assert.equal(record.source.assets.length,100);
+  assert.equal(record.product.lineage.spatialMapping,'uniform');
+  assert.equal(record.product.lineage.contributors.length,1);
+  assert.equal(record.product.vertical.kind,'preserved');
+  assert.equal(record.product.vertical.reference.value.identifier,'EPSG:5728');
+  assert.equal(record.product.fallback,undefined);
+  assert.equal(record.product.spatial.protectedInterior.value.area.kind,'geojson');
+  assert.equal(record.source.coverage.area.value.kind,'native-rectangle');
+  assert.equal(record.product.spatial.transitionSupport.status,'unknown');
+  assert.equal(record.preparationSummary.nodataCells,0);
+  const invalid=structuredClone(record.product);invalid.lineage.contributors.push(regional.lineage.contributors[1]);
+  assert.match(validateTerrainProduct(invalid).join('\n'),/uniform contribution requires/);
+});

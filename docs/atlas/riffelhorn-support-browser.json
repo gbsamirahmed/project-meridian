@@ -1,0 +1,393 @@
+{
+  "baseline": "12945b9751ca30df2863bdef096e16781251d7eb",
+  "productIdentity": "1a44a0644de1bde73a3ba84d1b761dc0aa17d48cc971e5f6b5d2c14fb329d7ea",
+  "archive": "${MERIDIAN_DATA_ROOT}/experiments/atlas/riffelhorn-swiss-support-v1/captures",
+  "captures": {
+    "support": {
+      "reportSha256": "ef9183e9d6641a228628eff6fe3ed2ea70e7aaefb520edaf01530cb7892f65fa",
+      "browserVersion": "151.0.7922.34",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "productionHashes": {
+        "src/atlas/map/visualTerrainConfig.ts": "2fc10a5bb50501a82186b4e6a1d2c176ac87d7431dbfdc702b3da69660e6b0ee",
+        "src/atlas/terrain/analyticalElevationConfig.ts": "6fd90c2fb39dc925c8de90cf6b7cf3a907696d71cc116e42563255addb41a9bb",
+        "src/atlas/map/terrainLayers.ts": "c71099083d3184d5c70c148ea2c3f0574b0b170fb0737b9c041df579ed4e5497",
+        "src/atlas/map/atlasVisuals.ts": "48426ab2132d5192069254ec9fe3fb7d9d433c2c9059f6f2223166c34c22dcfc",
+        "src/atlas/map/AtlasMap.ts": "cb45f5963716d636e903ed515008b66dab2fca0ab6d2aa28214a8c6303ef4b05",
+        "src/atlas/terrain/terrainElevationSampler.ts": "d941ad5474ff7370da4e67c135018a777ed440d84bf00cff0f536600270f1b7b"
+      },
+      "scenes": [
+        {
+          "id": "landscape",
+          "camera": {
+            "center": [
+              7.76121329,
+              45.97910794
+            ],
+            "zoom": 9.4,
+            "pitch": 45,
+            "bearing": 0
+          },
+          "filename": "landscape--support.png",
+          "sha256": "d914c5b761ab1edd2ff0d191594bee015552daec0fb136ae29cc4abcbfbda1b1",
+          "settleMs": 3211.1697,
+          "renderedCenterElevation": 0,
+          "projection": "mercator",
+          "meshSize": 128
+        },
+        {
+          "id": "planning",
+          "camera": {
+            "center": [
+              7.76121329,
+              45.97910794
+            ],
+            "zoom": 11.4,
+            "pitch": 45,
+            "bearing": 0
+          },
+          "filename": "planning--support.png",
+          "sha256": "728586438572119d45a6f2ce7313bd698fcaa29ad0e306f1f954d9801f0ae913",
+          "settleMs": 3294.4349,
+          "renderedCenterElevation": 0,
+          "projection": "mercator",
+          "meshSize": 128
+        },
+        {
+          "id": "close",
+          "camera": {
+            "center": [
+              7.76121329,
+              45.97910794
+            ],
+            "zoom": 13.2,
+            "pitch": 55.00000000000001,
+            "bearing": 0
+          },
+          "filename": "close--support.png",
+          "sha256": "599b609aa2be9954e5f1dbf2261d0eab994a1998f2a01fe7289f3914ae3dd228",
+          "settleMs": 7677.1258,
+          "renderedCenterElevation": 3757.685090976927,
+          "projection": "mercator",
+          "meshSize": 128
+        },
+        {
+          "id": "detail",
+          "camera": {
+            "center": [
+              7.76121329,
+              45.97910794
+            ],
+            "zoom": 16.2,
+            "pitch": 55.00000000000001,
+            "bearing": 0
+          },
+          "filename": "detail--support.png",
+          "sha256": "e2ab8745421ba328b9529d4866116c73fce4b99ce2a1a844864c13bd6ef1afd2",
+          "settleMs": 24587.745000000003,
+          "renderedCenterElevation": 3752.321485969016,
+          "projection": "mercator",
+          "meshSize": 128
+        },
+        {
+          "id": "rotated",
+          "camera": {
+            "center": [
+              7.76121329,
+              45.97910794
+            ],
+            "zoom": 15.2,
+            "pitch": 55.00000000000001,
+            "bearing": 180
+          },
+          "filename": "rotated--support.png",
+          "sha256": "21880507d8c8e692dd2f38f1c8ff0e7cc51a17c3f4a5b5892c9bf07f96014d5b",
+          "settleMs": 17162.0565,
+          "renderedCenterElevation": 3752.5982518256033,
+          "projection": "mercator",
+          "meshSize": 128
+        },
+        {
+          "id": "north-support",
+          "camera": {
+            "center": [
+              7.76136159197739,
+              46.00429492611648
+            ],
+            "zoom": 14.2,
+            "pitch": 55.00000000000001,
+            "bearing": 0
+          },
+          "filename": "north-support--support.png",
+          "sha256": "6d585b2b3f92ea4f90f475a2c1d33cf0b5aee539060b257b6bf8f4e5c6eae0c5",
+          "settleMs": 10603.847600000001,
+          "renderedCenterElevation": 3295.8680813912683,
+          "projection": "mercator",
+          "meshSize": 128
+        },
+        {
+          "id": "south-support",
+          "camera": {
+            "center": [
+              7.761065130016671,
+              45.95392102824902
+            ],
+            "zoom": 14.2,
+            "pitch": 55.00000000000001,
+            "bearing": 0
+          },
+          "filename": "south-support--support.png",
+          "sha256": "b6cddcbac113a7a463b6f9dc4228279918230cbe25420b90834ced400e20baef",
+          "settleMs": 12186.263599999991,
+          "renderedCenterElevation": 4264.74434441535,
+          "projection": "mercator",
+          "meshSize": 128
+        },
+        {
+          "id": "west-support",
+          "camera": {
+            "center": [
+              7.725086450430299,
+              45.97920547962389
+            ],
+            "zoom": 14.2,
+            "pitch": 55.00000000000001,
+            "bearing": 0
+          },
+          "filename": "west-support--support.png",
+          "sha256": "cd0bf0aae26e1bbaf90c66afec0a0a341b9413b8434a493e07a1844c31a65b2d",
+          "settleMs": 9162.054499999998,
+          "renderedCenterElevation": 0,
+          "projection": "mercator",
+          "meshSize": 128
+        },
+        {
+          "id": "east-support",
+          "camera": {
+            "center": [
+              7.797340000897246,
+              45.97899879165961
+            ],
+            "zoom": 14.2,
+            "pitch": 55.00000000000001,
+            "bearing": 0
+          },
+          "filename": "east-support--support.png",
+          "sha256": "5ff98427df370215be3ef2531d3fb687d532e279f006095a84cc9dfc04098a9c",
+          "settleMs": 12425.727700000003,
+          "renderedCenterElevation": 3928.502798513759,
+          "projection": "mercator",
+          "meshSize": 128
+        }
+      ],
+      "requestSummary": {
+        "recordedLocalResponses": 423,
+        "statusCounts": {
+          "200": 299,
+          "404": 124
+        },
+        "bodyBytes": 30806512,
+        "failedRequests": 5,
+        "consoleErrors": 126,
+        "pageExceptions": 0
+      }
+    },
+    "aws": {
+      "reportSha256": "7786af3c174d43c07b416887e7e551c185996e9ca2c4160e37cbf5e25686b742",
+      "browserVersion": "151.0.7922.34",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "productionHashes": {
+        "src/atlas/map/visualTerrainConfig.ts": "2fc10a5bb50501a82186b4e6a1d2c176ac87d7431dbfdc702b3da69660e6b0ee",
+        "src/atlas/terrain/analyticalElevationConfig.ts": "6fd90c2fb39dc925c8de90cf6b7cf3a907696d71cc116e42563255addb41a9bb",
+        "src/atlas/map/terrainLayers.ts": "c71099083d3184d5c70c148ea2c3f0574b0b170fb0737b9c041df579ed4e5497",
+        "src/atlas/map/atlasVisuals.ts": "48426ab2132d5192069254ec9fe3fb7d9d433c2c9059f6f2223166c34c22dcfc",
+        "src/atlas/map/AtlasMap.ts": "cb45f5963716d636e903ed515008b66dab2fca0ab6d2aa28214a8c6303ef4b05",
+        "src/atlas/terrain/terrainElevationSampler.ts": "d941ad5474ff7370da4e67c135018a777ed440d84bf00cff0f536600270f1b7b"
+      },
+      "scenes": [
+        {
+          "id": "landscape",
+          "camera": {
+            "center": [
+              7.76121329,
+              45.97910794
+            ],
+            "zoom": 9.4,
+            "pitch": 45,
+            "bearing": 0
+          },
+          "filename": "landscape--aws.png",
+          "sha256": "4fd723061748c76bc3d03eac76a996c3409e332268d0527731f978e53e1abc00",
+          "settleMs": 6111.999,
+          "renderedCenterElevation": 3777.9415302102616,
+          "projection": "mercator",
+          "meshSize": 128
+        },
+        {
+          "id": "planning",
+          "camera": {
+            "center": [
+              7.76121329,
+              45.97910794
+            ],
+            "zoom": 11.4,
+            "pitch": 45,
+            "bearing": 0
+          },
+          "filename": "planning--aws.png",
+          "sha256": "cc29c7e3f7f06834386232c9c26484b5b7fa9bbf6a2a36ff2eb7eea3ac9f9f23",
+          "settleMs": 8550.9522,
+          "renderedCenterElevation": 3775.5918694630714,
+          "projection": "mercator",
+          "meshSize": 128
+        },
+        {
+          "id": "close",
+          "camera": {
+            "center": [
+              7.76121329,
+              45.97910794
+            ],
+            "zoom": 13.2,
+            "pitch": 55.00000000000001,
+            "bearing": 0
+          },
+          "filename": "close--aws.png",
+          "sha256": "8596dadcef1e0ac1eb8f8903bd8970a62f7c9aa69647a6e62bd8f2e0c1a6ad2b",
+          "settleMs": 14747.672299999998,
+          "renderedCenterElevation": 3771.929485477295,
+          "projection": "mercator",
+          "meshSize": 128
+        },
+        {
+          "id": "detail",
+          "camera": {
+            "center": [
+              7.76121329,
+              45.97910794
+            ],
+            "zoom": 16.2,
+            "pitch": 55.00000000000001,
+            "bearing": 0
+          },
+          "filename": "detail--aws.png",
+          "sha256": "e9ddebd448ebf7eff6655420fabef969ddb026c19a427d8d99b6757fe97a03e3",
+          "settleMs": 16986.430799999995,
+          "renderedCenterElevation": 3770.582067162269,
+          "projection": "mercator",
+          "meshSize": 128
+        },
+        {
+          "id": "rotated",
+          "camera": {
+            "center": [
+              7.76121329,
+              45.97910794
+            ],
+            "zoom": 15.2,
+            "pitch": 55.00000000000001,
+            "bearing": 180
+          },
+          "filename": "rotated--aws.png",
+          "sha256": "87df52055bd19f6b7f29b5e9fd6f168e40b39ad81ab5337531517cfd83a2c2a4",
+          "settleMs": 13181.149000000005,
+          "renderedCenterElevation": 3770.582067162269,
+          "projection": "mercator",
+          "meshSize": 128
+        },
+        {
+          "id": "north-support",
+          "camera": {
+            "center": [
+              7.76136159197739,
+              46.00429492611648
+            ],
+            "zoom": 14.2,
+            "pitch": 55.00000000000001,
+            "bearing": 0
+          },
+          "filename": "north-support--aws.png",
+          "sha256": "48502687fc25b4bd0960d13a0db710e9c9fcc12ff860f3a5d57e1878f7a813fe",
+          "settleMs": 11298.527300000002,
+          "renderedCenterElevation": 3290.9756278990753,
+          "projection": "mercator",
+          "meshSize": 128
+        },
+        {
+          "id": "south-support",
+          "camera": {
+            "center": [
+              7.761065130016671,
+              45.95392102824902
+            ],
+            "zoom": 14.2,
+            "pitch": 55.00000000000001,
+            "bearing": 0
+          },
+          "filename": "south-support--aws.png",
+          "sha256": "6ccd20506ecab991f4711026d4ba991af5c226a07708679d7ebf163ab05311aa",
+          "settleMs": 10123.042099999991,
+          "renderedCenterElevation": 4264.171029783798,
+          "projection": "mercator",
+          "meshSize": 128
+        },
+        {
+          "id": "west-support",
+          "camera": {
+            "center": [
+              7.725086450430299,
+              45.97920547962389
+            ],
+            "zoom": 14.2,
+            "pitch": 55.00000000000001,
+            "bearing": 0
+          },
+          "filename": "west-support--aws.png",
+          "sha256": "3ec0ce1813fc293f4fdc4456f923d1bdc5d43683f5e1e5bf53160268f08d7c34",
+          "settleMs": 12242.426200000002,
+          "renderedCenterElevation": 3819.177191345867,
+          "projection": "mercator",
+          "meshSize": 128
+        },
+        {
+          "id": "east-support",
+          "camera": {
+            "center": [
+              7.797340000897246,
+              45.97899879165961
+            ],
+            "zoom": 14.2,
+            "pitch": 55.00000000000001,
+            "bearing": 0
+          },
+          "filename": "east-support--aws.png",
+          "sha256": "2e02e84cee9f77cce7811387eb9d4a3e82377822484e793aea604e84f1702764",
+          "settleMs": 10748.7117,
+          "renderedCenterElevation": 3946.006673055007,
+          "projection": "mercator",
+          "meshSize": 128
+        }
+      ],
+      "requestSummary": {
+        "recordedLocalResponses": 0,
+        "statusCounts": {},
+        "bodyBytes": 0,
+        "failedRequests": 0,
+        "consoleErrors": 0,
+        "pageExceptions": 0
+      }
+    }
+  },
+  "interpretation": "Sequential camera inspection, not latency benchmark. Renderer queries include exaggeration1.45; missing support is not zero source elevation.",
+  "tileSizeBytes": {
+    "min": 761.0,
+    "p50": 82079.0,
+    "p95": 100601.2,
+    "max": 133755.0
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "allTileHashesMatch": true,
+  "generation": {
+    "bytes": 930914852,
+    "generatedAt": "2026-10-03T23:19:00.840434+00:00",
+    "productIdentity": "1a44a0644de1bde73a3ba84d1b761dc0aa17d48cc971e5f6b5d2c14fb329d7ea",
+    "seconds": 770.1632222000044,
+    "tiles": 11429
+  },
+  "independentCompleteRebuild": true,
+  "manifestSha256": "30413b6698c1e75e27fd169f61925d8d60044fa14f444fb072b652c54816e106",
+  "productIdentity": "1a44a0644de1bde73a3ba84d1b761dc0aa17d48cc971e5f6b5d2c14fb329d7ea",
+  "rebuild": {
+    "bytes": 930914852,
+    "generatedAt": "2026-10-03T23:34:03.077472+00:00",
+    "productIdentity": "1a44a0644de1bde73a3ba84d1b761dc0aa17d48cc971e5f6b5d2c14fb329d7ea",
+    "seconds": 819.7388818999752,
+    "tiles": 11429
+  },
+  "sourceMosaicSha256": "8b097d62be84e110cdf8efd695f63d685a9069fcad98aae91660b7fb42e17998",
+  "tileCount": 11429
+}

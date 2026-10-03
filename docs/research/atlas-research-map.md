@@ -1,6 +1,6 @@
 # Atlas research map and fresh-session handoff
 
-Updated 2026-10-03. The 012A–012G terrain-research epoch is **closed** at the
+Updated 2026-10-04. The 012A–012G terrain-research epoch is **closed** at the
 Lab 012G evidence checkpoint `abf95bcfb50c681244a146626565a471ba791418`.
 This index records knowledge and research status, not a roadmap, new Lab or
 production architecture. It is the starting point for humans and fresh tooling.
@@ -59,8 +59,15 @@ derives a minimal Atlas metadata foundation from those evaluations. It distingui
 datasets, delivery products, representations, support roles, resolution, vertical
 semantics and incomplete provenance. Four typed cases describe current AWS, retained
 swissALTI3D, the Swiss/AWS Riffelhorn product and Mapterhorn without adopting them
-as a resolver. The proposed next bounded support-selection/product task is deferred;
-no larger acquisition or reconciliation is performed. Production stays AWS.
+as a resolver. At that checkpoint the support-selection task was deferred; production stayed AWS.
+
+The [larger Swiss support product](../atlas/riffelhorn-swiss-support-product.md)
+now retains a 1.5 km protected interior within 100 km² of official 2024 terrain,
+with a minimum 3.5 km source collar. It exercises the metadata model and improves
+disagreement characterization without reconciling or accepting a seamline. Pure
+regional web delivery has coarse-level/perimeter gaps; native support and delivery
+coverage remain separate. The next reference/stable-terrain assessment is deferred.
+Production remains independently AWS and the closed research epoch stays closed.
 
 ## Evidence classes
 

@@ -124,7 +124,8 @@ export interface ContributionMask {
 export interface TerrainLineage {
   contributors: readonly EntityReference[];
   contributorList: 'complete' | 'partial' | 'unknown';
-  spatialMapping: 'mask' | 'catalogue-only' | 'unavailable';
+  /** Uniform means one known immediate contributor throughout valid product pixels. */
+  spatialMapping: 'uniform' | 'mask' | 'catalogue-only' | 'unavailable';
   contributionMask?: ContributionMask;
   processing: readonly ProcessingStep[];
   limitations: string;

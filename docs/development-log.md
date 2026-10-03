@@ -3123,3 +3123,51 @@ and unreconciled product using this model, after defining protected purpose/area
 and support/epoch/quality requirements. Unknown AWS height semantics still block
 claiming physical harmonization; additional support alone does not accept blending.
 That next task was not performed.
+
+## 2026-10-04 — Larger authoritative Riffelhorn support product
+
+### Goal
+
+Replace the research crop as an analysis asset with one justified, unreconciled
+Swiss support selection, preserving production and the protected benchmark.
+
+### Result
+
+Defined a 1.5 km protected circle and acquired whole kilometre tiles covering a
+10×10 km LV95 selection, giving at least 3.5 km source collar. Reused four files,
+downloaded 96 official 2024 swissALTI3D assets, and verified all 100 against official
+SHA-256 hashes. Source storage is 1.67 GB, with zero nodata cells. LN02 and 0.5 m
+distributed-grid semantics remain explicit; measurement resolution/epoch per cell
+are not invented.
+
+Generated a pure Swiss z12–18 Terrarium product: 11,429 tiles / 931 MB in 12.8 minutes.
+An independent complete rebuild matches all tile, VRT and manifest hashes. Sampled
+z18 transfer/join discrepancies are at millimetre scale. Atlas metadata actively
+describes the source, lineage, coverage and protected interior; a minimal uniform
+immediate-contribution case avoids an unnecessary constant mask. Transition support
+remains unknown. No AWS fill, datum correction, reconciliation or fallback occurs.
+
+Expanded 10 m diagnostics show a continuing broad southern/eastern negative corridor
+and finer sign-changing differences: full range −163.64…+195.12 m, RMS 30.23 m.
+Northern quadrants are closer on average, but neither a stable mask nor physical
+reference equivalence is established. The larger asset materially improves support
+analysis without accepting its rectangle as a seamline.
+
+Real-app captures retain benchmark detail with unchanged IGOR/exaggeration. The
+pure hierarchy also fails to supply coarse landscape/planning terrain and has
+perimeter/parent gaps, including walls/black voids. Those negative delivery findings
+are preserved. Production remains AWS; analytical AWS z15, Weather and Traverse
+are unchanged. Normal startup has no external terrain dependency.
+
+### Verification and next boundary
+
+151 active Node tests passed, 1 optional skip; 17 synthetic terrain tests passed;
+lint, TypeScript/application bundle, metadata/hash/reference checks passed. The
+application-only build omits external GFS publication/public copying and retains
+the existing large-bundle warning. Eighteen controlled captures are external.
+The [support-product report](atlas/riffelhorn-swiss-support-product.md) contains
+contracts, numerical/visual findings, limitations and reproduction commands.
+
+The next bounded decision is physical global-reference/overlap assessment with
+defensible stable-terrain evidence, using this asset. No subsequent reference
+evaluation, reconciliation, acquisition, resolver or imagery work is performed.

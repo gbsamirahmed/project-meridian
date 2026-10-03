@@ -265,3 +265,13 @@ Reassess overlap and physical height semantics before a reconciliation decision.
 That prerequisite is explicit: unknown AWS semantics remain a barrier to claiming
 a physically harmonized product, even if a future visual continuity treatment is
 evaluated. No acquisition, larger preparation or experiment occurs here.
+
+## Subsequent real-asset use
+
+The [larger Swiss support product](riffelhorn-swiss-support-product.md) exercises
+these types without adopting them in production. A `uniform` spatial mapping now
+expresses one complete immediate contributor throughout valid product pixels; it
+does not assert uniform observation technology, epoch or quality. This avoids an
+all-one mask for a pure source product. Product coverage still references its
+per-level tile inventory, independently of native source coverage and protected
+interior. Transition support remains unknown.

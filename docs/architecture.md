@@ -165,6 +165,15 @@ contributor completeness does not imply complete measurement lineage. No product
 module adopts this metadata yet. It establishes no resolver, accepted seamline,
 reconciled terrain, new provider or acquisition requirement on normal startup.
 
+The bounded [larger Swiss support product](atlas/riffelhorn-swiss-support-product.md)
+actively uses the metadata foundation for 100 official 2024 swissALTI3D tiles,
+a protected benchmark interior and an unreconciled regional surface. Full native
+source coverage and per-zoom delivery support differ; transition support remains
+unknown. One uniform immediate contributor does not imply uniform measurement
+technology or epoch. Evaluation-only delivery omits unsupported tiles instead of
+inventing terrain; coarse/edge gaps remain a later composition requirement. This
+is a data asset, not production regional integration or an accepted AWS reference.
+
 The conceptual relationship is:
 
 ```text

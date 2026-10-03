@@ -72,6 +72,7 @@ export function validateTerrainProduct(product: TerrainProduct): string[] {
   }
   const lineage = product.lineage;
   if (lineage.contributorList === 'complete' && !lineage.contributors.length) errors.push('complete lineage requires contributors');
+  if (lineage.spatialMapping === 'uniform' && (lineage.contributorList !== 'complete' || lineage.contributors.length !== 1)) errors.push('uniform contribution requires one complete immediate contributor');
   if (lineage.spatialMapping === 'mask' && !lineage.contributionMask) errors.push('mask mapping requires a mask reference');
   if (lineage.spatialMapping !== 'mask' && lineage.contributionMask) errors.push('mask reference requires mask mapping');
   if (lineage.contributionMask) {

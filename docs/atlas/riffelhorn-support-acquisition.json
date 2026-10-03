@@ -1,0 +1,2032 @@
+{
+  "assets": [
+    {
+      "bounds": [
+        2620000,
+        1087000,
+        2621000,
+        1088000
+      ],
+      "bytes": 17401386,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2620-1087",
+      "officialProperties": {
+        "created": "2024-12-19T06:26:35.226048Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:35:31.183828Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1087_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "b10d5b3e3275d9c651b508f58492222ee98016abd086e4954ccc519d12074ed2",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2620-1087/swissalti3d_2024_2620-1087_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2620000,
+        1088000,
+        2621000,
+        1089000
+      ],
+      "bytes": 16953881,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2620-1088",
+      "officialProperties": {
+        "created": "2024-12-19T06:26:35.223756Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:35:31.293581Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1088_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "587630e5935c4b8037909abd76cbd729676a3c180b6d123ea6f343fb3934bb5f",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2620-1088/swissalti3d_2024_2620-1088_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2620000,
+        1089000,
+        2621000,
+        1090000
+      ],
+      "bytes": 16403722,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2620-1089",
+      "officialProperties": {
+        "created": "2024-12-19T06:26:35.261188Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:35:31.496158Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1089_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "4c0236e6b289010cc2523729759c52387bf9996fd313d33d31499aba7a12e4cc",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2620-1089/swissalti3d_2024_2620-1089_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2620000,
+        1090000,
+        2621000,
+        1091000
+      ],
+      "bytes": 15320244,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2620-1090",
+      "officialProperties": {
+        "created": "2024-12-19T06:26:35.542231Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:35:31.468381Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1090_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "11d214ef1a4f45cee9cc0a54a94245ed01b7db129b98973be2c21eb76d6d5ea3",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2620-1090/swissalti3d_2024_2620-1090_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2620000,
+        1091000,
+        2621000,
+        1092000
+      ],
+      "bytes": 14874442,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2620-1091",
+      "officialProperties": {
+        "created": "2024-12-19T06:26:35.550575Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:35:31.522222Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1091_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "3f48474933d8ef527f3d8230a7fcaf5c189c34a1df8d08947668d92d50a81ce4",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2620-1091/swissalti3d_2024_2620-1091_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2620000,
+        1092000,
+        2621000,
+        1093000
+      ],
+      "bytes": 16584867,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2620-1092",
+      "officialProperties": {
+        "created": "2024-12-19T06:26:35.699098Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:35:31.737623Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1092_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "145e6a56cce12e5a1c6e27eae9f989793b2f7f4d1bfdc56088aa725fc9d5202c",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2620-1092/swissalti3d_2024_2620-1092_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2620000,
+        1093000,
+        2621000,
+        1094000
+      ],
+      "bytes": 16394245,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2620-1093",
+      "officialProperties": {
+        "created": "2024-12-19T06:26:35.863691Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:35:32.428808Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1093_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "caf5bd8f68bdb213d7e295d05fa9b2e99fdbc1a3c59a17a268817662bc6f9627",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2620-1093/swissalti3d_2024_2620-1093_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2620000,
+        1094000,
+        2621000,
+        1095000
+      ],
+      "bytes": 16098701,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2620-1094",
+      "officialProperties": {
+        "created": "2024-12-19T06:26:35.929027Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:35:32.432654Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1094_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "995d22067407347dfa631ee019cf8a265a4bfee4e0b5d3d0bad3ec7eca4c103f",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2620-1094/swissalti3d_2024_2620-1094_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2620000,
+        1095000,
+        2621000,
+        1096000
+      ],
+      "bytes": 16582300,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2620-1095",
+      "officialProperties": {
+        "created": "2024-12-19T06:26:36.259615Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:35:32.485331Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1095_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "8edf7167f60946fc23c284f369f4fecfadaa62680b03005f7de5b62b62d1e1b5",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2620-1095/swissalti3d_2024_2620-1095_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2620000,
+        1096000,
+        2621000,
+        1097000
+      ],
+      "bytes": 16848901,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2620-1096",
+      "officialProperties": {
+        "created": "2024-12-19T06:26:36.278209Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:35:32.782213Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1096_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "229bd00fc2d9f293f5272745eb82359ed55fd8ab2fb0be513575f9eeecc0a342",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2620-1096/swissalti3d_2024_2620-1096_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2621000,
+        1087000,
+        2622000,
+        1088000
+      ],
+      "bytes": 15954427,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2621-1087",
+      "officialProperties": {
+        "created": "2024-12-19T06:26:50.247303Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:35:40.181430Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1087_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "b66ad46a08ac53df0c3394d3709bd9f0466fcc1375c6c62ad805f82d511145eb",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2621-1087/swissalti3d_2024_2621-1087_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2621000,
+        1088000,
+        2622000,
+        1089000
+      ],
+      "bytes": 15922567,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2621-1088",
+      "officialProperties": {
+        "created": "2024-12-19T06:26:50.311782Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:35:40.306239Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1088_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "f13e4d9359805e61fc32ebb8276bc54b853ec0869e73b186c31c537aabd96c39",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2621-1088/swissalti3d_2024_2621-1088_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2621000,
+        1089000,
+        2622000,
+        1090000
+      ],
+      "bytes": 16111025,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2621-1089",
+      "officialProperties": {
+        "created": "2024-12-19T06:26:50.620054Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:35:40.435968Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1089_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "ee2729eba5a82ee16d10dda08d2468a056a1e1d3e0bd7d26eaa2044442722442",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2621-1089/swissalti3d_2024_2621-1089_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2621000,
+        1090000,
+        2622000,
+        1091000
+      ],
+      "bytes": 15742045,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2621-1090",
+      "officialProperties": {
+        "created": "2024-12-19T06:26:51.006598Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:35:40.390882Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1090_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "76422e5d2089ea7b8d0a625c085e58264410a2adc52106611096300abcceae2f",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2621-1090/swissalti3d_2024_2621-1090_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2621000,
+        1091000,
+        2622000,
+        1092000
+      ],
+      "bytes": 14739777,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2621-1091",
+      "officialProperties": {
+        "created": "2024-12-19T06:26:51.395094Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:35:40.381627Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1091_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "6ec921b4bb6a5c537c2be19a11fdf3253fad233b0c808af53f591c14320c1684",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2621-1091/swissalti3d_2024_2621-1091_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2621000,
+        1092000,
+        2622000,
+        1093000
+      ],
+      "bytes": 16001761,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2621-1092",
+      "officialProperties": {
+        "created": "2024-12-19T06:26:51.498584Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:35:40.847766Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1092_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "9e666305d72e452400fff3bad770a7ef461b7c4c7d0d5b456d7973751abe324a",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2621-1092/swissalti3d_2024_2621-1092_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2621000,
+        1093000,
+        2622000,
+        1094000
+      ],
+      "bytes": 16959765,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2621-1093",
+      "officialProperties": {
+        "created": "2024-12-19T06:26:51.554097Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:35:40.763319Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1093_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "441997950f43e8bcbb2a7c26bf0e57f36da743665902712116312bb2291cf91e",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2621-1093/swissalti3d_2024_2621-1093_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2621000,
+        1094000,
+        2622000,
+        1095000
+      ],
+      "bytes": 17214339,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2621-1094",
+      "officialProperties": {
+        "created": "2024-12-19T06:26:51.681597Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:35:41.096835Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1094_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "cc3e92a4d77af3159dd339de6b50115354ef51143b201604498c1c759442a83b",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2621-1094/swissalti3d_2024_2621-1094_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2621000,
+        1095000,
+        2622000,
+        1096000
+      ],
+      "bytes": 16931627,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2621-1095",
+      "officialProperties": {
+        "created": "2024-12-19T06:26:51.679285Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:35:41.267760Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1095_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "7c97faf4fa013e31a2a3e3a0c8e3cdc584d35712b5ce61df217c420f658e3002",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2621-1095/swissalti3d_2024_2621-1095_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2621000,
+        1096000,
+        2622000,
+        1097000
+      ],
+      "bytes": 16648827,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2621-1096",
+      "officialProperties": {
+        "created": "2024-12-19T06:26:51.739723Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:35:41.287985Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1096_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "bffda95d135e3fb74f6459cf6ebbf9bb0f14eeff19ca9eca8041dbf82ce60429",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2621-1096/swissalti3d_2024_2621-1096_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2622000,
+        1087000,
+        2623000,
+        1088000
+      ],
+      "bytes": 17656200,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2622-1087",
+      "officialProperties": {
+        "created": "2024-12-19T06:28:44.786831Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:35:49.012673Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1087_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "18c4d3511c1a3a1bb8d3b35efc625df5f88bc79cd10000b51849fdb79798dbb8",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2622-1087/swissalti3d_2024_2622-1087_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2622000,
+        1088000,
+        2623000,
+        1089000
+      ],
+      "bytes": 16758827,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2622-1088",
+      "officialProperties": {
+        "created": "2024-12-19T06:28:44.912512Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:35:49.144720Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1088_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "f1fa1c8317bd8f6042f2d8d804a7a4daecac4c6d6bdd9d721588ac6a9a48480d",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2622-1088/swissalti3d_2024_2622-1088_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2622000,
+        1089000,
+        2623000,
+        1090000
+      ],
+      "bytes": 15870919,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2622-1089",
+      "officialProperties": {
+        "created": "2024-12-19T06:28:45.371588Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:35:49.435782Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1089_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "7977b8282cb05038368d26ae1b508172a6c2afdb68e9d78311ef610d76034bb5",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2622-1089/swissalti3d_2024_2622-1089_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2622000,
+        1090000,
+        2623000,
+        1091000
+      ],
+      "bytes": 16807812,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2622-1090",
+      "officialProperties": {
+        "created": "2024-12-19T06:28:45.288646Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:35:49.521779Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1090_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "ca3dfe0d1e2a322f71e3a53bc26ba94e17f3beb6a74a5d7fd9af1528f540c1a7",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2622-1090/swissalti3d_2024_2622-1090_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2622000,
+        1091000,
+        2623000,
+        1092000
+      ],
+      "bytes": 16274480,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2622-1091",
+      "officialProperties": {
+        "created": "2024-12-19T06:28:45.777685Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:35:49.636936Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1091_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "014d778f4b3cd0dadb17c1ac0b19df0f6e4ada7c212bdc82ab825207fc6cb92d",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2622-1091/swissalti3d_2024_2622-1091_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2622000,
+        1092000,
+        2623000,
+        1093000
+      ],
+      "bytes": 17227718,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2622-1092",
+      "officialProperties": {
+        "created": "2024-12-19T06:28:46.049689Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:35:50.318537Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1092_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "53b85a4bf30b01637b68601a61004298a13cf40364616d8a3521512a76b45f26",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2622-1092/swissalti3d_2024_2622-1092_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2622000,
+        1093000,
+        2623000,
+        1094000
+      ],
+      "bytes": 17752404,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2622-1093",
+      "officialProperties": {
+        "created": "2024-12-19T06:28:46.319360Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:35:49.979276Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1093_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "1bb728d6191a526c5a527cce37c1a93d935d54a04cb12040a01265e1dba8dce8",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2622-1093/swissalti3d_2024_2622-1093_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2622000,
+        1094000,
+        2623000,
+        1095000
+      ],
+      "bytes": 17733493,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2622-1094",
+      "officialProperties": {
+        "created": "2024-12-19T06:28:46.319956Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:35:49.835960Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1094_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "2c8f0c6a9d9b1613eaeb53dfe7216a054f970e101078ae6bc1cd80bc881e2d7f",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2622-1094/swissalti3d_2024_2622-1094_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2622000,
+        1095000,
+        2623000,
+        1096000
+      ],
+      "bytes": 18379595,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2622-1095",
+      "officialProperties": {
+        "created": "2024-12-19T06:28:46.592016Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:35:50.074319Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1095_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "a103daec543361d7d786d7d0e3b066d9bd2ec3cd5a69f1e4d4a7620849cf1041",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2622-1095/swissalti3d_2024_2622-1095_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2622000,
+        1096000,
+        2623000,
+        1097000
+      ],
+      "bytes": 18040620,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2622-1096",
+      "officialProperties": {
+        "created": "2024-12-19T06:28:46.663455Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:35:50.173864Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1096_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "d779af7c6698f43bcf4b230507aaee9802f64625cb8a38f37d59ebacfcc09286",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2622-1096/swissalti3d_2024_2622-1096_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2623000,
+        1087000,
+        2624000,
+        1088000
+      ],
+      "bytes": 17065620,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2623-1087",
+      "officialProperties": {
+        "created": "2024-12-19T06:28:59.812463Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:37:36.837775Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1087_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "99a9fdcb1d904f6c518f364ae0d248b1eea3dafcf8b3138cfe5f31efa2c946d4",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2623-1087/swissalti3d_2024_2623-1087_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2623000,
+        1088000,
+        2624000,
+        1089000
+      ],
+      "bytes": 17182870,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2623-1088",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:00.371046Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:37:37.071885Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1088_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "375147312cda5fe811adf38aa8e4f16be64cf8919f3912bf7c0971c42c8926d9",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2623-1088/swissalti3d_2024_2623-1088_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2623000,
+        1089000,
+        2624000,
+        1090000
+      ],
+      "bytes": 16823122,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2623-1089",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:00.365208Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:37:37.338065Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1089_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "c669f4a1f3589fd604bac3a9da5654f0e61f101c8e9a2a411b4c7b9232a7d64b",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2623-1089/swissalti3d_2024_2623-1089_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2623000,
+        1090000,
+        2624000,
+        1091000
+      ],
+      "bytes": 16759414,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2623-1090",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:00.439073Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:37:37.921351Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1090_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "9ad35be9ccd26ca728f62495a6f3d74262e8d1449b43f8a124887e34debdf8d9",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2623-1090/swissalti3d_2024_2623-1090_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2623000,
+        1091000,
+        2624000,
+        1092000
+      ],
+      "bytes": 17480806,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2623-1091",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:01.350018Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:37:37.658759Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1091_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "56378b8b0cd1138de5f10098fa6838bc229cf34c918fd2847540b9fd89c83771",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2623-1091/swissalti3d_2024_2623-1091_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2623000,
+        1092000,
+        2624000,
+        1093000
+      ],
+      "bytes": 17498230,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2623-1092",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:01.343463Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:37:38.064424Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1092_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "f24239d38c80537328b141bed50b63831df9645a9a94a813c98a35b70f3b3fda",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2623-1092/swissalti3d_2024_2623-1092_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2623000,
+        1093000,
+        2624000,
+        1094000
+      ],
+      "bytes": 17399178,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2623-1093",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:01.451609Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:37:37.853636Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1093_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "604fcd83c4cc7868745fb843f23fef4daf5b1c3e9cbbcd28e1dc9e161b6a7f1a",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2623-1093/swissalti3d_2024_2623-1093_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2623000,
+        1094000,
+        2624000,
+        1095000
+      ],
+      "bytes": 17951264,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2623-1094",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:01.440947Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:37:38.001940Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1094_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "0f4a8153fb08a59974985619915265a4a8352cf727338de0275f9caacb06af6e",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2623-1094/swissalti3d_2024_2623-1094_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2623000,
+        1095000,
+        2624000,
+        1096000
+      ],
+      "bytes": 17418044,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2623-1095",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:01.618608Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:37:38.221359Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1095_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "a6ea488ecbb54b97100f22d867c38b8cd1efc37b68d61f175c98e53fb2c810ca",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2623-1095/swissalti3d_2024_2623-1095_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2623000,
+        1096000,
+        2624000,
+        1097000
+      ],
+      "bytes": 18073992,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2623-1096",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:01.787276Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:37:38.512726Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1096_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "0e251928c93b53107618d576cf11a52299352d08532f50e3f764c635e72cc581",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2623-1096/swissalti3d_2024_2623-1096_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2624000,
+        1087000,
+        2625000,
+        1088000
+      ],
+      "bytes": 17085638,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2624-1087",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:17.305611Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:37:48.617052Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2624-1087_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "72b64738927ab260b47a9979b248bb6235e72ca65a34a6816c2733e51fdaa0e1",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2624-1087/swissalti3d_2024_2624-1087_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2624000,
+        1088000,
+        2625000,
+        1089000
+      ],
+      "bytes": 17261890,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2624-1088",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:17.745068Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:37:48.811306Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2624-1088_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "e15a31af5ddab240672322a51780ed755436c2e3813ff37a286a6cec0b20b60d",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2624-1088/swissalti3d_2024_2624-1088_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2624000,
+        1089000,
+        2625000,
+        1090000
+      ],
+      "bytes": 17015934,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2624-1089",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:17.682697Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:37:48.916640Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2624-1089_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "d2e79d7de72df078b8defcfe853f2c579a9137e7a89397b5b52f94042894a7f8",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2624-1089/swissalti3d_2024_2624-1089_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2624000,
+        1090000,
+        2625000,
+        1091000
+      ],
+      "bytes": 17059381,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2624-1090",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:18.353565Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:37:49.146277Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2624-1090_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "54e86e526618b067f773a96da881c33e71ea545125da39c0fe902058d9990677",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2624-1090/swissalti3d_2024_2624-1090_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2624000,
+        1091000,
+        2625000,
+        1092000
+      ],
+      "bytes": 16490312,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2624-1091",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:18.392792Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:37:49.146955Z"
+      },
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2624-1091_0.5_2056_5728.tif",
+      "reused": true,
+      "sha256": "c68c305e4a142da416b46b555a80916ecc52f8fa50bf1efd5cd2c3f24f9cd4bc",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2624-1091/swissalti3d_2024_2624-1091_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2624000,
+        1092000,
+        2625000,
+        1093000
+      ],
+      "bytes": 16862345,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2624-1092",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:18.580437Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:37:49.322944Z"
+      },
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2624-1092_0.5_2056_5728.tif",
+      "reused": true,
+      "sha256": "9fa4a4391e2e1bfd650f2f31c7d38ed9a5a94494a967011468e6c44559bbcb2c",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2624-1092/swissalti3d_2024_2624-1092_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2624000,
+        1093000,
+        2625000,
+        1094000
+      ],
+      "bytes": 16342473,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2624-1093",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:18.765567Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:37:49.415785Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2624-1093_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "a17f61660e8bc295173f90922578d583798384b997ecbe36641552f592cc033b",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2624-1093/swissalti3d_2024_2624-1093_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2624000,
+        1094000,
+        2625000,
+        1095000
+      ],
+      "bytes": 16722258,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2624-1094",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:19.463267Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:37:49.604208Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2624-1094_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "8b50585c677dacb5e15ca75de174b7628a04e3cc0be8a84a20e4e248a339777a",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2624-1094/swissalti3d_2024_2624-1094_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2624000,
+        1095000,
+        2625000,
+        1096000
+      ],
+      "bytes": 18007501,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2624-1095",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:19.587332Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:37:49.952184Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2624-1095_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "57f12bcf71d823f32a3186667f8d7dbbfac80e2335454fd4d505dd17ce6e08aa",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2624-1095/swissalti3d_2024_2624-1095_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2624000,
+        1096000,
+        2625000,
+        1097000
+      ],
+      "bytes": 18145643,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2624-1096",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:19.749795Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:37:50.088087Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2624-1096_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "cdc98b65fccf96f1eeb2ba65009bf12cd41716d8bd2ba18260f4a072a8921f59",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2624-1096/swissalti3d_2024_2624-1096_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2625000,
+        1087000,
+        2626000,
+        1088000
+      ],
+      "bytes": 17664082,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2625-1087",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:36.397500Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:37:59.574971Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2625-1087_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "d8b715383ac23f76634b743aad585661df386d85c8dc68ff924aa71a7a7ce645",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2625-1087/swissalti3d_2024_2625-1087_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2625000,
+        1088000,
+        2626000,
+        1089000
+      ],
+      "bytes": 16640746,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2625-1088",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:37.265698Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:37:59.925479Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2625-1088_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "7b9df08e8cc9b9c8bea55b2d8641618d78e3bce1dbf32b0d0be6476f2586fafb",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2625-1088/swissalti3d_2024_2625-1088_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2625000,
+        1089000,
+        2626000,
+        1090000
+      ],
+      "bytes": 16581503,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2625-1089",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:37.357932Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:37:59.930919Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2625-1089_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "6917ceb87a5a58a8f5787c7222286902dca1f0ceee973b80dcfdeebb19acb9da",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2625-1089/swissalti3d_2024_2625-1089_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2625000,
+        1090000,
+        2626000,
+        1091000
+      ],
+      "bytes": 16253102,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2625-1090",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:37.374930Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:00.482906Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2625-1090_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "4d918d88b47a6bdb2faa959ced434d37fbb677671ec168fb54e32380148c5a0b",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2625-1090/swissalti3d_2024_2625-1090_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2625000,
+        1091000,
+        2626000,
+        1092000
+      ],
+      "bytes": 15925644,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2625-1091",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:37.677084Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:00.116595Z"
+      },
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2625-1091_0.5_2056_5728.tif",
+      "reused": true,
+      "sha256": "0d2ebc6d0b4fd06ab2191cbf2a2f5ab77728249fa8c835075040bce4dc4899de",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2625-1091/swissalti3d_2024_2625-1091_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2625000,
+        1092000,
+        2626000,
+        1093000
+      ],
+      "bytes": 16329103,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2625-1092",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:37.778992Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:00.177268Z"
+      },
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2625-1092_0.5_2056_5728.tif",
+      "reused": true,
+      "sha256": "4dffaad9efb82d3bf327a86b4f82d55762165ea5f825c386c23380a9320ff875",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2625-1092/swissalti3d_2024_2625-1092_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2625000,
+        1093000,
+        2626000,
+        1094000
+      ],
+      "bytes": 16183047,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2625-1093",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:38.040839Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:00.362675Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2625-1093_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "f302035dfae29b9d07a0f6c22918080871954cd1b06b6523a51acf647840f790",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2625-1093/swissalti3d_2024_2625-1093_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2625000,
+        1094000,
+        2626000,
+        1095000
+      ],
+      "bytes": 16897280,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2625-1094",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:38.149226Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:00.515119Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2625-1094_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "a40fbf29d431c827faac57fd5b06819593de3f14f94fa0767fdef4ea7a67fa48",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2625-1094/swissalti3d_2024_2625-1094_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2625000,
+        1095000,
+        2626000,
+        1096000
+      ],
+      "bytes": 16335764,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2625-1095",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:38.555872Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:00.535083Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2625-1095_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "f353e9d2572ae28a663eba1892ccbbb9c9d690cc150697477af60270e9244c13",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2625-1095/swissalti3d_2024_2625-1095_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2625000,
+        1096000,
+        2626000,
+        1097000
+      ],
+      "bytes": 17111800,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2625-1096",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:38.938211Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:00.758869Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2625-1096_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "fa2c43d94f33508eaf75f53c428554dec436c42a21932d18ef2e5fd5c0f677f9",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2625-1096/swissalti3d_2024_2625-1096_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2626000,
+        1087000,
+        2627000,
+        1088000
+      ],
+      "bytes": 16462798,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2626-1087",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:56.499147Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:09.265610Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1087_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "cac2b6a412264b7221fb09cfb9ea4dda4e23b66cbc8fb516395e3cb220ebba54",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2626-1087/swissalti3d_2024_2626-1087_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2626000,
+        1088000,
+        2627000,
+        1089000
+      ],
+      "bytes": 16495321,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2626-1088",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:56.684637Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:09.054985Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1088_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "2fbe87ca858b305295a0c796babbc80f057f7c277a1dba268f6f0c95fe51467e",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2626-1088/swissalti3d_2024_2626-1088_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2626000,
+        1089000,
+        2627000,
+        1090000
+      ],
+      "bytes": 16790384,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2626-1089",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:57.201106Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:09.018395Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1089_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "be976949f9efc30cf4b8d413425a1cd4409b7b8e58397b80d6773cb3d191d7cc",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2626-1089/swissalti3d_2024_2626-1089_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2626000,
+        1090000,
+        2627000,
+        1091000
+      ],
+      "bytes": 15906078,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2626-1090",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:57.364749Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:09.015076Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1090_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "b1e94efebda0182f5a81c6bc79da06c4331b1351dfb284ea506ed2eb1fe551ef",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2626-1090/swissalti3d_2024_2626-1090_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2626000,
+        1091000,
+        2627000,
+        1092000
+      ],
+      "bytes": 15906230,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2626-1091",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:57.876188Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:09.567932Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1091_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "cd371e983e6f525c1653f3f9a98209a5533b6f5f18423f4be65a444c016b9f8e",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2626-1091/swissalti3d_2024_2626-1091_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2626000,
+        1092000,
+        2627000,
+        1093000
+      ],
+      "bytes": 16192272,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2626-1092",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:58.509214Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:09.467273Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1092_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "3ed05cb8ac3fcf4363def4332c0ddc452eafeb55ef86802bcc5e30d4e6893dd1",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2626-1092/swissalti3d_2024_2626-1092_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2626000,
+        1093000,
+        2627000,
+        1094000
+      ],
+      "bytes": 16602919,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2626-1093",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:58.528773Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:09.574585Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1093_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "5acc79cbb13a7a13c9ef0b182e78a84733edc32fb7b44a6f8ec2d0c11f3d5f87",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2626-1093/swissalti3d_2024_2626-1093_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2626000,
+        1094000,
+        2627000,
+        1095000
+      ],
+      "bytes": 16281214,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2626-1094",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:58.635326Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:09.994177Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1094_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "64fbf6607dc068b01665c55d5cf2dbe4ea2465a6811df14fdaa0cc0ed83ea42f",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2626-1094/swissalti3d_2024_2626-1094_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2626000,
+        1095000,
+        2627000,
+        1096000
+      ],
+      "bytes": 16376502,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2626-1095",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:59.169543Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:10.143499Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1095_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "d16098b7e40e07942b48df4387dfe33c67bb29cb8f86e518c0a9110a7f41c941",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2626-1095/swissalti3d_2024_2626-1095_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2626000,
+        1096000,
+        2627000,
+        1097000
+      ],
+      "bytes": 17053629,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2626-1096",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:59.249015Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:10.261121Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1096_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "dd41533b3a1e93354f3ce6981b656d5be135e4311ac0e6050e7d5c2fd9b9d090",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2626-1096/swissalti3d_2024_2626-1096_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2627000,
+        1087000,
+        2628000,
+        1088000
+      ],
+      "bytes": 16942448,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2627-1087",
+      "officialProperties": {
+        "created": "2024-12-19T06:30:17.467032Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:17.969656Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1087_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "a1ee161970e0d31e267f412542386096c0ed7a0427eb8591924ad91d2d0f661c",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2627-1087/swissalti3d_2024_2627-1087_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2627000,
+        1088000,
+        2628000,
+        1089000
+      ],
+      "bytes": 16920001,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2627-1088",
+      "officialProperties": {
+        "created": "2024-12-19T06:30:17.612109Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:18.304120Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1088_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "5d6995ceefa75feb42537b35bd4ca129d691ed5138da9b9e58803ed465c4d8dd",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2627-1088/swissalti3d_2024_2627-1088_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2627000,
+        1089000,
+        2628000,
+        1090000
+      ],
+      "bytes": 16797814,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2627-1089",
+      "officialProperties": {
+        "created": "2024-12-19T06:30:17.656656Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:18.340583Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1089_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "335eb30fd08e2ed53455cf4086fac9dcca6f481402e3cce163f38bde7a71938a",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2627-1089/swissalti3d_2024_2627-1089_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2627000,
+        1090000,
+        2628000,
+        1091000
+      ],
+      "bytes": 15549836,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2627-1090",
+      "officialProperties": {
+        "created": "2024-12-19T06:30:18.359001Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:18.365590Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1090_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "9b63b175e61f510026b689cf91c983eed91ba5def220412f064266f08b18d28e",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2627-1090/swissalti3d_2024_2627-1090_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2627000,
+        1091000,
+        2628000,
+        1092000
+      ],
+      "bytes": 15761686,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2627-1091",
+      "officialProperties": {
+        "created": "2024-12-19T06:30:18.613680Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:18.538403Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1091_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "10e84994bf3012e8a06460725a2c131a1372554ab600502fb59506182d729f04",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2627-1091/swissalti3d_2024_2627-1091_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2627000,
+        1092000,
+        2628000,
+        1093000
+      ],
+      "bytes": 16604376,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2627-1092",
+      "officialProperties": {
+        "created": "2024-12-19T06:30:19.015770Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:18.610349Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1092_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "f826c927d7bd1f2e27325a63eca76194e419bd68e42fcd430345383482b0acae",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2627-1092/swissalti3d_2024_2627-1092_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2627000,
+        1093000,
+        2628000,
+        1094000
+      ],
+      "bytes": 17040570,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2627-1093",
+      "officialProperties": {
+        "created": "2024-12-19T06:30:19.146089Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:18.799676Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1093_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "2a0cd8f674c444c255100822509c37999d10450fca131ab244f527429470a3ff",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2627-1093/swissalti3d_2024_2627-1093_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2627000,
+        1094000,
+        2628000,
+        1095000
+      ],
+      "bytes": 16221733,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2627-1094",
+      "officialProperties": {
+        "created": "2024-12-19T06:30:19.305170Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:18.932777Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1094_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "d7be5da78f5842fdcc83a9536cd53eca6dbe86b67ab2e7e3dba4180b599d9af9",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2627-1094/swissalti3d_2024_2627-1094_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2627000,
+        1095000,
+        2628000,
+        1096000
+      ],
+      "bytes": 15996146,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2627-1095",
+      "officialProperties": {
+        "created": "2024-12-19T06:30:19.510373Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:19.083049Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1095_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "cba28399a5a6e5bca5320456ce26bbe6eaacf44ec284f098146166767309edc6",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2627-1095/swissalti3d_2024_2627-1095_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2627000,
+        1096000,
+        2628000,
+        1097000
+      ],
+      "bytes": 17231136,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2627-1096",
+      "officialProperties": {
+        "created": "2024-12-19T06:30:19.890681Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:19.168174Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1096_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "910ca9cf743cc0272d57ba3c088b64887963d23037d9497f0c89b29142098d44",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2627-1096/swissalti3d_2024_2627-1096_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2628000,
+        1087000,
+        2629000,
+        1088000
+      ],
+      "bytes": 16459404,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2628-1087",
+      "officialProperties": {
+        "created": "2024-12-19T06:30:36.395484Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:26.553004Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1087_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "bb37d77bf8c367f9c5cd43f56fd3c3c1c9f9fa13e3d78c102585fe2c4464a7f4",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2628-1087/swissalti3d_2024_2628-1087_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2628000,
+        1088000,
+        2629000,
+        1089000
+      ],
+      "bytes": 16351190,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2628-1088",
+      "officialProperties": {
+        "created": "2024-12-19T06:30:36.877727Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:26.662897Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1088_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "4a7af161792cc6ed54377f605ce570268bfeb059fcf1e5fb1c20dea2e4d0ad64",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2628-1088/swissalti3d_2024_2628-1088_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2628000,
+        1089000,
+        2629000,
+        1090000
+      ],
+      "bytes": 16600853,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2628-1089",
+      "officialProperties": {
+        "created": "2024-12-19T06:30:37.113706Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:26.771494Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1089_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "099a9160abaac1beddc5704b4f8326a06df87b9d9a68ecd240f8e71332009281",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2628-1089/swissalti3d_2024_2628-1089_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2628000,
+        1090000,
+        2629000,
+        1091000
+      ],
+      "bytes": 16590964,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2628-1090",
+      "officialProperties": {
+        "created": "2024-12-19T06:30:37.419307Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:26.915732Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1090_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "52d3c8ae560f4a564ead56a7e6ca309a1b4ed09da8a2b1e655dea7305768a891",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2628-1090/swissalti3d_2024_2628-1090_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2628000,
+        1091000,
+        2629000,
+        1092000
+      ],
+      "bytes": 16642485,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2628-1091",
+      "officialProperties": {
+        "created": "2024-12-19T06:30:37.541216Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:27.210502Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1091_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "9afccaf8aa5dcb7af657d414261e56cebee9af5353e8a2a4adc69a8c7cf8330d",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2628-1091/swissalti3d_2024_2628-1091_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2628000,
+        1092000,
+        2629000,
+        1093000
+      ],
+      "bytes": 16870394,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2628-1092",
+      "officialProperties": {
+        "created": "2024-12-19T06:30:37.755643Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:27.190903Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1092_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "e05807372eaa2ade01dd30cd1b4e50f3dba5a6e2faea2ec2528442a64a79c36e",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2628-1092/swissalti3d_2024_2628-1092_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2628000,
+        1093000,
+        2629000,
+        1094000
+      ],
+      "bytes": 16544107,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2628-1093",
+      "officialProperties": {
+        "created": "2024-12-19T06:30:38.272223Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:27.234047Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1093_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "d63946296ab16a4f7e199eea570e375a6bb26324855b03b67d3628559e314204",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2628-1093/swissalti3d_2024_2628-1093_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2628000,
+        1094000,
+        2629000,
+        1095000
+      ],
+      "bytes": 16074001,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2628-1094",
+      "officialProperties": {
+        "created": "2024-12-19T06:30:38.246985Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:27.594337Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1094_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "fa46a45f7092725a7a9bff86a53ea606996f466f61e478b2aa7b6ae35eb42d9a",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2628-1094/swissalti3d_2024_2628-1094_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2628000,
+        1095000,
+        2629000,
+        1096000
+      ],
+      "bytes": 15996376,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2628-1095",
+      "officialProperties": {
+        "created": "2024-12-19T06:30:38.534642Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:27.679054Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1095_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "94a128ca09790c345bb58efe24ff3ab54fd17597aa80fdb7e47ffa93ce02c385",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2628-1095/swissalti3d_2024_2628-1095_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2628000,
+        1096000,
+        2629000,
+        1097000
+      ],
+      "bytes": 16646500,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2628-1096",
+      "officialProperties": {
+        "created": "2024-12-19T06:30:38.649818Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:27.732227Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1096_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "076ba72f90cf1752ddddc10ea215bbdee745476c302f97984ce7c55cd311a7ba",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2628-1096/swissalti3d_2024_2628-1096_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2629000,
+        1087000,
+        2630000,
+        1088000
+      ],
+      "bytes": 16520631,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2629-1087",
+      "officialProperties": {
+        "created": "2024-12-19T06:30:57.256743Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:35.233915Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1087_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "08ad1eb9e46c2e1a9efed25a414561b2aee1d035223987f00c874f8872043750",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2629-1087/swissalti3d_2024_2629-1087_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2629000,
+        1088000,
+        2630000,
+        1089000
+      ],
+      "bytes": 16408067,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2629-1088",
+      "officialProperties": {
+        "created": "2024-12-19T06:30:57.427020Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:35.618753Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1088_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "02f79a090e0c7f3d9b3b69f18387fd363ec7a7396f9ff1f77bdc95a4f62b5664",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2629-1088/swissalti3d_2024_2629-1088_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2629000,
+        1089000,
+        2630000,
+        1090000
+      ],
+      "bytes": 16878766,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2629-1089",
+      "officialProperties": {
+        "created": "2024-12-19T06:30:57.592650Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:35.662462Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1089_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "19e94991fcbd6ae6629c1e2540d063370821c6c529d9086b68242c71be48bb29",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2629-1089/swissalti3d_2024_2629-1089_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2629000,
+        1090000,
+        2630000,
+        1091000
+      ],
+      "bytes": 16645302,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2629-1090",
+      "officialProperties": {
+        "created": "2024-12-19T06:30:58.054261Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:35.803371Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1090_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "bbbba6acf6734468d214978cae058fbb3a3c700281386560b8af33cf7efb48d3",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2629-1090/swissalti3d_2024_2629-1090_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2629000,
+        1091000,
+        2630000,
+        1092000
+      ],
+      "bytes": 16396342,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2629-1091",
+      "officialProperties": {
+        "created": "2024-12-19T06:30:58.157948Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:35.841195Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1091_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "bdefae29ec27ee1e9aa554d43049938bcbffd098e5a6019a49403d38a7327456",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2629-1091/swissalti3d_2024_2629-1091_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2629000,
+        1092000,
+        2630000,
+        1093000
+      ],
+      "bytes": 16925910,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2629-1092",
+      "officialProperties": {
+        "created": "2024-12-19T06:30:58.446287Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:36.111460Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1092_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "e3ace395664bf31f0662b98f820f506f7f2aecf9981052dc9adff8618ee3985f",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2629-1092/swissalti3d_2024_2629-1092_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2629000,
+        1093000,
+        2630000,
+        1094000
+      ],
+      "bytes": 16069973,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2629-1093",
+      "officialProperties": {
+        "created": "2024-12-19T06:30:58.609391Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:36.161022Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1093_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "0aaf036112bf954f1e852bf266e7ba692ebec4b290383ac1c8e0556bb9ed190e",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2629-1093/swissalti3d_2024_2629-1093_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2629000,
+        1094000,
+        2630000,
+        1095000
+      ],
+      "bytes": 16206866,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2629-1094",
+      "officialProperties": {
+        "created": "2024-12-19T06:30:59.104392Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:36.318393Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1094_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "2956c294d23827c1e0dae9f21ba666aec8a780ede57aca401ed87b38e25b3fe7",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2629-1094/swissalti3d_2024_2629-1094_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2629000,
+        1095000,
+        2630000,
+        1096000
+      ],
+      "bytes": 15932460,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2629-1095",
+      "officialProperties": {
+        "created": "2024-12-19T06:30:59.327698Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:36.353300Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1095_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "7390addf349c79f1c4fea9dd748af565156fc09b158f435a2aab03fc107d998c",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2629-1095/swissalti3d_2024_2629-1095_0.5_2056_5728.tif"
+    },
+    {
+      "bounds": [
+        2629000,
+        1096000,
+        2630000,
+        1097000
+      ],
+      "bytes": 16513439,
+      "nodataCells": 0,
+      "officialItem": "swissalti3d_2024_2629-1096",
+      "officialProperties": {
+        "created": "2024-12-19T06:30:59.465407Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:36.400940Z"
+      },
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1096_0.5_2056_5728.tif",
+      "reused": false,
+      "sha256": "4b2cbfa7f1167abb091354b3b92603aba39721b9ee3370e59f36b66a26bfb894",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2629-1096/swissalti3d_2024_2629-1096_0.5_2056_5728.tif"
+    }
+  ],
+  "basis": "2021/2022 LiDAR, 2023 photogrammetric updates; per-cell lineage unknown",
+  "bounds": [
+    2620000,
+    1087000,
+    2630000,
+    1097000
+  ],
+  "geographicEnvelope": [
+    7.696489552439658,
+    45.933928484248874,
+    7.826043211954982,
+    46.024250922603905
+  ],
+  "gridSpacingMetres": 0.5,
+  "horizontalCRS": "EPSG:2056",
+  "identity": "b24a4fdc7b378ba79d442d0ce216a031dfb95a6bc6eed5ad9c33be61175651f4",
+  "minimumSourceSupportMetres": 3500,
+  "nodata": -9999,
+  "officialMetadataAccessDate": "2026-10-03",
+  "priorMaximumDiagnosticWidthMetres": 2500,
+  "protectedCentre": [
+    2625000,
+    1092000
+  ],
+  "protectedRadiusMetres": 1500,
+  "release": "2024 / 2024-2 Valais",
+  "version": "riffelhorn-swiss-support-v1",
+  "verticalReference": "LN02 / EPSG:5728"
+}

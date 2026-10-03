@@ -5,6 +5,7 @@ import { expression } from "@maplibre/maplibre-gl-style-spec";
 import { createServer } from "vite";
 import { MAPTERHORN_EVALUATION, visualEvaluationPlugin } from "./terrain_foundation_evaluation.mjs";
 import { RIFFELHORN_VISUAL, riffelhornEvaluationPlugin } from "./riffelhorn_evaluation.mjs";
+import { SUPPORT_VISUAL, supportEvaluationPlugin } from "./riffelhorn_support_evaluation.mjs";
 
 const AWS_TERRARIUM = "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png";
 const CREDITS = '<a href="https://github.com/tilezen/joerd/blob/master/docs/attribution.md" target="_blank" rel="noopener">Terrain data credits</a>';
@@ -275,7 +276,7 @@ test("actual evaluation policies preserve presentation and analytical route samp
   const baseline = await modules(context);
   const reference = mapHarness();
   baseline.layers.configurePlanetAndTerrain(reference);
-  for (const policy of [MAPTERHORN_EVALUATION, {...MAPTERHORN_EVALUATION, geometryMaxZoom:17, reliefMaxZoom:17}, RIFFELHORN_VISUAL,
+  for (const policy of [MAPTERHORN_EVALUATION, {...MAPTERHORN_EVALUATION, geometryMaxZoom:17, reliefMaxZoom:17}, RIFFELHORN_VISUAL, SUPPORT_VISUAL,
     ...["hard", "linear250", "adaptive3deg"].map(method => ({...RIFFELHORN_VISUAL,
       tileTemplate:`http://127.0.0.1:4180/tiles/${method}/{z}/{x}/{y}.png`}))]) {
     const { layers, sampler, analytical } = await modules(context, policy);
@@ -310,4 +311,23 @@ test("Riffelhorn prototype has no normal startup or analytical configuration hoo
   assert.equal(RIFFELHORN_VISUAL.geometryMaxZoom, 18);
   assert.equal(RIFFELHORN_VISUAL.reliefMaxZoom, 18);
   assert.doesNotMatch(readFileSync(new URL("../../vite.config.ts", import.meta.url), "utf8"), /riffelhorn/);
+});
+
+test('support evaluation changes only delivery; no fallback or production/analytical hook', () => {
+  const visual='C:/repo/src/atlas/map/visualTerrainConfig.ts';
+  const analytical='C:/repo/src/atlas/terrain/analyticalElevationConfig.ts';
+  const layers='C:/repo/src/atlas/map/terrainLayers.ts';
+  const plugin=supportEvaluationPlugin('support');
+  assert.equal(plugin.load(analytical),undefined);
+  assert.equal(supportEvaluationPlugin('aws').load(visual),undefined);
+  assert.match(plugin.load(visual),/127[.]0[.]0[.]1:4181/);
+  const original=readFileSync(new URL('../../src/atlas/map/terrainLayers.ts',import.meta.url),'utf8');
+  const transformed=plugin.transform(original,layers);
+  assert.equal(transformed.match(/minzoom: 12/g).length,2);
+  assert.equal(plugin.transform(original,analytical),undefined);
+  assert.equal(supportEvaluationPlugin('aws').transform(original,layers),undefined);
+  assert.throws(()=>supportEvaluationPlugin('unknown'),/Unknown support/);
+  assert.doesNotMatch(readFileSync(new URL('../../vite.config.ts',import.meta.url),'utf8'),/supportEvaluation|riffelhorn_support/);
+  const producer=readFileSync(new URL('./riffelhorn_support.py',import.meta.url),'utf8');
+  assert.doesNotMatch(producer,/AwsCache|aws[.]at_tile|adaptive_width|weights[(]/);
 });
