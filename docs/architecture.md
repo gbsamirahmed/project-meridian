@@ -138,6 +138,15 @@ tooling; no runtime provider selector or source resolver is implied. Sparse deli
 vertical/water semantics, attribution and point-provenance limits remain explicit
 inputs to a later adoption decision. Analytical elevation stays independently AWS.
 
+The bounded [Riffelhorn regional prototype](atlas/riffelhorn-regional-terrain-prototype.md)
+prepares four retained official swissALTI3D TIFFs into an attributed, versioned
+Terrarium product outside Git. Evaluation-only tooling supplies one composed DEM
+endpoint because MapLibre does not automatically combine regional/global terrain
+sources. Interior detail improves, but the unadjusted LN02/AWS crop boundary creates
+false walls and unacceptable discontinuities. This establishes neither a production
+Swiss source nor a general resolver architecture. Normal visual and analytical AWS
+policies, rendering and client-only application behavior remain unchanged.
+
 The conceptual relationship is:
 
 ```text

@@ -1,0 +1,238 @@
+{
+  "attribution": "\u00a9swisstopo; AWS terrain sources: https://github.com/tilezen/joerd/blob/master/docs/attribution.md",
+  "delivery": {
+    "boundary": "hard centre-in-AOI substitution, no datum shift or seam blend",
+    "crs": "EPSG:3857",
+    "encoding": "terrarium",
+    "fallback": "AWS original tiles through z15, cross-tile bilinear z15 overzoom above; no new information",
+    "format": "lossless RGB PNG",
+    "maxEncodingErrorMetres": 0.001953125,
+    "maxzoom": 18,
+    "mercatorBounds": [
+      862532.3640125472,
+      5775555.008118985,
+      865416.7322765936,
+      5778448.763675644
+    ],
+    "minzoom": 5,
+    "nodata": "AWS fill; never encode Swiss -9999 or transparent DEM",
+    "pixelRegistration": "area cells, sample at pixel centres",
+    "quantizationIncrementMetres": 0.00390625,
+    "resampling": "average z5-17; bilinear z18",
+    "scheme": "xyz",
+    "tileSize": 256,
+    "verticalReference": "LN02 for Swiss mask=255; AWS reference not independently established for mask=0"
+  },
+  "frozenAwsInputCount": 37,
+  "generatedFileListSha256": "04f197f16e33bb6328f6cb9ee6569a765eb47e5cd7c8240d89e82be0be440d89",
+  "identity": "4fc837f299271c7238591865a393f98facc6fa7b93d9cc75305160df900b1fe5",
+  "manifestSha256": "778745c36f2208e72a28a99923d00d81fcd0bd7f90e8759ba3f03362ccfc4627",
+  "paths": {
+    "awsCache": "${MERIDIAN_DATA_ROOT}/cache/atlas/riffelhorn/riffelhorn-regional-terrain-v1/aws",
+    "evaluation": "${MERIDIAN_DATA_ROOT}/experiments/atlas/riffelhorn-regional-terrain-v1",
+    "finalRegenerationCheck": "${MERIDIAN_DATA_ROOT}/scratch/atlas/riffelhorn-canonical-text-regeneration-v1",
+    "product": "${MERIDIAN_DATA_ROOT}/derived/atlas/riffelhorn/riffelhorn-regional-terrain-v1",
+    "regenerationCheck": "${MERIDIAN_DATA_ROOT}/scratch/atlas/riffelhorn-regeneration-v1"
+  },
+  "processing": {
+    "gdal": "3.9.3",
+    "horizontalOperation": "proj=pipeline step inv proj=somerc lat_0=46.9524055555556 lon_0=7.43958333333333 k_0=1 x_0=2600000 y_0=1200000 ellps=bessel step proj=push v_3 step proj=cart ellps=bessel step proj=helmert x=674.374 y=15.056 z=405.346 step inv proj=cart ellps=WGS84 step proj=pop v_3 step proj=webmerc lat_0=0 lon_0=0 x_0=0 y_0=0 ellps=WGS84",
+    "numpy": "2.5.3",
+    "operationStatedAccuracyMetres": 1.0,
+    "pillow": "12.3.0",
+    "pyproj": "3.7.2",
+    "python": "3.12.6",
+    "rasterio": "1.4.3",
+    "scriptHashContract": "UTF-8, canonical LF line endings",
+    "scriptSha256": "5a4178f92b809aae2b988c7f998a2e30e73efb69700d911b404d21641ead6432",
+    "verticalTransform": "none; only two-dimensional horizontal coordinates transformed"
+  },
+  "productVersion": "riffelhorn-regional-terrain-v1",
+  "rights": "swisstopo custom OGD terms, https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-and-geoservices",
+  "schemaVersion": 1,
+  "source": {
+    "authority": "swisstopo",
+    "basis": "2021/2022 LiDAR with 2023 photogrammetric updates; per-cell update lineage unavailable",
+    "catalogHashContract": "UTF-8, canonical LF line endings",
+    "catalogSha256": "190c97f745c2c605321552814c1368490a3d18297ed563fe85ce84bb240e5c78",
+    "dataset": "swissALTI3D",
+    "gridSpacingMetres": 0.5,
+    "horizontalCRS": "EPSG:2056",
+    "inputs": [
+      {
+        "bounds": [
+          2624000.0,
+          1091000.0,
+          2625000.0,
+          1092000.0
+        ],
+        "bytes": 16490312,
+        "crs": "EPSG:2056",
+        "dtype": "float32",
+        "gridSpacingMetres": 0.5,
+        "nodata": -9999.0,
+        "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2624-1091_0.5_2056_5728.tif",
+        "receiptSha256": "d2a4922b48c141fa5331cdfe2055c2e3a69e8bb3900503477345d492719b0d1b",
+        "sha256": "c68c305e4a142da416b46b555a80916ecc52f8fa50bf1efd5cd2c3f24f9cd4bc",
+        "shape": [
+          2000,
+          2000
+        ],
+        "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2624-1091/swissalti3d_2024_2624-1091_0.5_2056_5728.tif",
+        "verticalReference": "LN02 (EPSG:5728), metres; official product provenance, not a vertical CRS encoded in the actual file"
+      },
+      {
+        "bounds": [
+          2624000.0,
+          1092000.0,
+          2625000.0,
+          1093000.0
+        ],
+        "bytes": 16862345,
+        "crs": "EPSG:2056",
+        "dtype": "float32",
+        "gridSpacingMetres": 0.5,
+        "nodata": -9999.0,
+        "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2624-1092_0.5_2056_5728.tif",
+        "receiptSha256": "754088c056162e253799f7449a77b4904a2db92c42452b419fc69599a90c3247",
+        "sha256": "9fa4a4391e2e1bfd650f2f31c7d38ed9a5a94494a967011468e6c44559bbcb2c",
+        "shape": [
+          2000,
+          2000
+        ],
+        "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2624-1092/swissalti3d_2024_2624-1092_0.5_2056_5728.tif",
+        "verticalReference": "LN02 (EPSG:5728), metres; official product provenance, not a vertical CRS encoded in the actual file"
+      },
+      {
+        "bounds": [
+          2625000.0,
+          1091000.0,
+          2626000.0,
+          1092000.0
+        ],
+        "bytes": 15925644,
+        "crs": "EPSG:2056",
+        "dtype": "float32",
+        "gridSpacingMetres": 0.5,
+        "nodata": -9999.0,
+        "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2625-1091_0.5_2056_5728.tif",
+        "receiptSha256": "1ef45744efe4cd9623cf09ebd7022aa5fbefa263013f1da20f8d98e6682e3530",
+        "sha256": "0d2ebc6d0b4fd06ab2191cbf2a2f5ab77728249fa8c835075040bce4dc4899de",
+        "shape": [
+          2000,
+          2000
+        ],
+        "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2625-1091/swissalti3d_2024_2625-1091_0.5_2056_5728.tif",
+        "verticalReference": "LN02 (EPSG:5728), metres; official product provenance, not a vertical CRS encoded in the actual file"
+      },
+      {
+        "bounds": [
+          2625000.0,
+          1092000.0,
+          2626000.0,
+          1093000.0
+        ],
+        "bytes": 16329103,
+        "crs": "EPSG:2056",
+        "dtype": "float32",
+        "gridSpacingMetres": 0.5,
+        "nodata": -9999.0,
+        "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2625-1092_0.5_2056_5728.tif",
+        "receiptSha256": "a221333666e5347c68c5a98875fbbe8abfe0eaa00df91ccbc521ae36f3f2a0c7",
+        "sha256": "4dffaad9efb82d3bf327a86b4f82d55762165ea5f825c386c23380a9320ff875",
+        "shape": [
+          2000,
+          2000
+        ],
+        "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2625-1092/swissalti3d_2024_2625-1092_0.5_2056_5728.tif",
+        "verticalReference": "LN02 (EPSG:5728), metres; official product provenance, not a vertical CRS encoded in the actual file"
+      }
+    ],
+    "measurementResolutionMetres": null,
+    "nativeBounds": [
+      2624000,
+      1091000,
+      2626000,
+      1093000
+    ],
+    "release": "2024 / 2024-2 Valais",
+    "units": "metres",
+    "verticalReference": "LN02 / EPSG:5728"
+  },
+  "sourceMasks": 547,
+  "status": "experimental visual terrain only",
+  "storageBytes": 42094770,
+  "terrainTiles": 547,
+  "zooms": [
+    {
+      "swissPixels": 0,
+      "tiles": 0,
+      "zoom": 5
+    },
+    {
+      "swissPixels": 0,
+      "tiles": 0,
+      "zoom": 6
+    },
+    {
+      "swissPixels": 1,
+      "tiles": 1,
+      "zoom": 7
+    },
+    {
+      "swissPixels": 16,
+      "tiles": 1,
+      "zoom": 8
+    },
+    {
+      "swissPixels": 81,
+      "tiles": 1,
+      "zoom": 9
+    },
+    {
+      "swissPixels": 361,
+      "tiles": 1,
+      "zoom": 10
+    },
+    {
+      "swissPixels": 1408,
+      "tiles": 1,
+      "zoom": 11
+    },
+    {
+      "swissPixels": 5688,
+      "tiles": 1,
+      "zoom": 12
+    },
+    {
+      "swissPixels": 22705,
+      "tiles": 2,
+      "zoom": 13
+    },
+    {
+      "swissPixels": 90636,
+      "tiles": 4,
+      "zoom": 14
+    },
+    {
+      "swissPixels": 362711,
+      "tiles": 9,
+      "zoom": 15
+    },
+    {
+      "swissPixels": 1450980,
+      "tiles": 36,
+      "zoom": 16
+    },
+    {
+      "swissPixels": 5803843,
+      "tiles": 110,
+      "zoom": 17
+    },
+    {
+      "swissPixels": 23215341,
+      "tiles": 380,
+      "zoom": 18
+    }
+  ]
+}

@@ -4,6 +4,7 @@ import test from "node:test";
 import { expression } from "@maplibre/maplibre-gl-style-spec";
 import { createServer } from "vite";
 import { MAPTERHORN_EVALUATION, visualEvaluationPlugin } from "./terrain_foundation_evaluation.mjs";
+import { RIFFELHORN_VISUAL, riffelhornEvaluationPlugin } from "./riffelhorn_evaluation.mjs";
 
 const AWS_TERRARIUM = "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png";
 const CREDITS = '<a href="https://github.com/tilezen/joerd/blob/master/docs/attribution.md" target="_blank" rel="noopener">Terrain data credits</a>';
@@ -274,10 +275,10 @@ test("actual evaluation policies preserve presentation and analytical route samp
   const baseline = await modules(context);
   const reference = mapHarness();
   baseline.layers.configurePlanetAndTerrain(reference);
-  for (const policy of [MAPTERHORN_EVALUATION, {...MAPTERHORN_EVALUATION, geometryMaxZoom:17, reliefMaxZoom:17}]) {
+  for (const policy of [MAPTERHORN_EVALUATION, {...MAPTERHORN_EVALUATION, geometryMaxZoom:17, reliefMaxZoom:17}, RIFFELHORN_VISUAL]) {
     const { layers, sampler, analytical } = await modules(context, policy);
     const map = mapHarness();layers.configurePlanetAndTerrain(map);
-    assert.equal(map.sources.get("terrain-dem").tileSize,512);
+    assert.equal(map.sources.get("terrain-dem").tileSize,policy.tileSize);
     assert.equal(map.sources.get("terrain-dem").maxzoom,policy.geometryMaxZoom);
     assert.equal(map.sources.get("terrain-analysis-dem").maxzoom,policy.reliefMaxZoom);
     assert.deepEqual(map.getTerrain(),reference.getTerrain());
@@ -292,4 +293,19 @@ test("actual evaluation policies preserve presentation and analytical route samp
     assert.deepEqual(await sampler.sampleTerrainElevations([{latitude:0,longitude:0}],new AbortController().signal),[123.25]);
     assert.deepEqual(tiles.requests.map(r=>r.url),["https://s3.amazonaws.com/elevation-tiles-prod/terrarium/15/16384/16384.png"]);
   }
+});
+
+
+test("Riffelhorn prototype has no normal startup or analytical configuration hook", () => {
+  const visual = "C:/repo/src/atlas/map/visualTerrainConfig.ts";
+  const analytical = "C:/repo/src/atlas/terrain/analyticalElevationConfig.ts";
+  assert.equal(riffelhornEvaluationPlugin("aws").load(visual), undefined);
+  assert.equal(riffelhornEvaluationPlugin("riffelhorn").load(analytical), undefined);
+  assert.match(riffelhornEvaluationPlugin("riffelhorn").load(visual), /127\.0\.0\.1:4180/);
+  assert.throws(() => riffelhornEvaluationPlugin("unknown"), /Unknown regional/);
+  assert.equal(RIFFELHORN_VISUAL.tileSize, 256);
+  assert.equal(RIFFELHORN_VISUAL.encoding, "terrarium");
+  assert.equal(RIFFELHORN_VISUAL.geometryMaxZoom, 18);
+  assert.equal(RIFFELHORN_VISUAL.reliefMaxZoom, 18);
+  assert.doesNotMatch(readFileSync(new URL("../../vite.config.ts", import.meta.url), "utf8"), /riffelhorn/);
 });

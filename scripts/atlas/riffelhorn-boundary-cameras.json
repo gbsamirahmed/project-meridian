@@ -1,0 +1,52 @@
+[
+  {
+    "id": "boundary-west",
+    "center": [
+      7.7483108641829705,
+      45.979144107621735
+    ],
+    "zoom": 15.2,
+    "pitch": 55,
+    "bearing": 0
+  },
+  {
+    "id": "boundary-east",
+    "center": [
+      7.774115705216194,
+      45.97907029048292
+    ],
+    "zoom": 15.2,
+    "pitch": 55,
+    "bearing": 0
+  },
+  {
+    "id": "boundary-south",
+    "center": [
+      7.761160362336753,
+      45.97011260499015
+    ],
+    "zoom": 15.2,
+    "pitch": 55,
+    "bearing": 0
+  },
+  {
+    "id": "boundary-north",
+    "center": [
+      7.761266241586202,
+      45.98810328330366
+    ],
+    "zoom": 15.2,
+    "pitch": 55,
+    "bearing": 0
+  },
+  {
+    "id": "boundary-corner",
+    "center": [
+      7.748361688532342,
+      45.988139457488266
+    ],
+    "zoom": 15.2,
+    "pitch": 55,
+    "bearing": 45
+  }
+]

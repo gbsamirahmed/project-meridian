@@ -39,6 +39,14 @@ verified Mapterhorn and compared visual sources under that frozen treatment. The
 latter found regional gains but retained AWS as the production default. Independent
 analytical AWS elevation and the closed research branches remain unchanged.
 
+The [direct Riffelhorn regional prototype](../atlas/riffelhorn-regional-terrain-prototype.md)
+then prepared retained official swissALTI3D for the real web renderer. It reproduced
+interior detail gains with explicit source/product identities, while hard regional
+joins exposed large spatially varying height discontinuities. A single composed
+DEM endpoint is feasible; seamless substitution and vertical reconciliation are
+not established. AWS remains the production default. This is bounded integration
+evidence, not a reopened Lab, universal resolver or imagery programme.
+
 ## Evidence classes
 
 - **MERIDIAN EVIDENCE (M):** measurements, inspected outputs and negative results

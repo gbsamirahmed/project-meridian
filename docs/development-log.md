@@ -2966,3 +2966,72 @@ ignored application-only config to avoid external GFS publication/public copying
 existing large-chunk warning remains. Full publication, unrelated research suites,
 other browser families and performance load tests were not run. No migration or
 subsequent Atlas programme was begun.
+
+## 2026-10-03 — Direct Riffelhorn regional visual-terrain prototype
+
+Started from clean canonical main at `340bf521`, equal to locally recorded
+origin/main. Verified only the four retained official 2024 swissALTI3D 0.5 m
+float32 LV95 TIFFs, receipts/item provenance and relevant release records. No new
+Swiss acquisition, private estate, imagery, swissSURFACE3D or historical cliff
+preprocessing. The distributed grid is not independent 0.5 m measurement resolution.
+
+Added isolated deterministic preparation, verification, loopback delivery and
+private-Vite visual override/capture tooling. Direct TIFF mosaic→horizontal Web
+Mercator reprojection→256-pixel XYZ Terrarium PNG, average through z17/bilinear z18,
+547 terrain tiles plus 547 contributor masks, 42.095 MB plus manifest. Swiss LN02
+heights remain unchanged; outside cells use frozen AWS input heights and explicit
+cross-parent z15 overzoom at higher delivery levels. Every production source file,
+AWS default/analytical policy, IGOR curve, exaggeration 1.45, imagery, domain
+contracts and lifecycle behavior remain unchanged. No normal experimental UI/startup
+hook or generic resolver was added.
+
+MapLibre has one active terrain source and no automatic regional/global DEM
+composition; the bounded prototype supplies a composed endpoint to its two existing
+visual DEM caches. Clearer interior ledges, channels and moraine reproduce earlier
+Mapterhorn gains: a retained matching-grid tile differs by about 0.063 m RMS, not
+independent accuracy evidence. Finer delivery converges toward source-grid samples;
+native heightfield LOD/steep-face limitations remain. Actual z16.2 geometry reaches
+z16 and relief z18, rather than every finest sample becoming a vertex.
+
+The hard 2×2 km AOI join fails acceptance. Twelve transects expose spatially varying
+Swiss-minus-AWS differences roughly −112 to +51 m at the boundary and up to 70.17 m
+adjacent 1 m composed-sample changes. Multiple boundary cameras/rotations show false
+walls and abrupt shading. Source/measurement/datum differences are not separable
+from these overlaps; no constant correction or invented vertical transformation
+was applied. Available horizontal operation reports 1 m accuracy, independently
+of encoding precision. Codec error is ≤0.001953125 m, while an independent z18
+source-grid transfer check gives 0.047 m RMS and 0.654 m maximum: total preparation
+is not claimed to have 2 mm fidelity. Production remains AWS.
+
+28 accepted captures cover landscape/planning/close/detail, five boundaries,
+rotation, outside control, normal synthetic GPX import and real satellite. Route
+distance/ascent/descent/moving/break estimates agree; absolute departure follows
+wall clock. Weather is honestly unavailable through explicit 503 fixtures, not
+changed or newly evaluated. Initial missing redirect CORS and pre-imagery-idle
+captures were retained as negative diagnostics and corrected in tooling only.
+No accepted DEM HTTP errors/page exceptions; ordinary cancelled requests remain.
+Repeated globe/Mercator transitions pass. The compact product is practical locally,
+but redirects and globally available overzoom increase request/delivery burden;
+bounded response-body counts are not a wire-transfer/FPS/CDN benchmark.
+
+Verified all 1,094 generated file hashes identical across independent rebuilds.
+The final manifest records source authority/release, CRS/LN02/grid spacing, exact
+inputs/receipts, frozen AWS hashes, processing/toolchain, contributor masks and
+output identity; the verifier rejects catalogue/source provenance drift and uses
+canonical LF hashes for repository text across clean Git checkouts. Canonical
+sources and large products remain outside Git. Six synthetic Python tests and ten
+focused policy tests pass. Active Node suite: 137 passes, zero failures, one live
+publication skip (138 tests); an initial unexplained temperature-contour test-process
+failure passes isolated/full rerun without edits. Clock-sensitive Forecast Workspace
+passes unchanged. Lint, TypeScript/application-only build, syntax/compilation,
+product/manifest verification, source-equivalence and diff checks pass; existing
+large-chunk warning remains. Full external Weather publication, unrelated research
+suites, cross-browser testing and load benchmarks were not run.
+
+The [evaluation record](atlas/riffelhorn-regional-terrain-prototype.md) and
+[lightweight product identity](atlas/riffelhorn-regional-product.json) preserve
+contracts, exact inputs/cameras, M/E/H findings, regeneration and limitations.
+Architecture/navigation record only the established composition constraint and
+failed hard join. Next decision concerns source support, defensible boundary behavior
+and vertical accounting before any general resolver. No adoption, Swiss imagery,
+analytical migration or subsequent Atlas phase was begun.
