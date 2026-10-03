@@ -3077,3 +3077,49 @@ live-publication skip, zero failures; Forecast Workspace passes unchanged. Lint,
 TypeScript/application-only build, syntax, provenance and diff checks pass; existing
 chunk warning remains. Capture-only cancellation handling and basemap sprite warnings are documented. No new Weather/satellite/globe claim, other-browser/load
 test or full external GFS publication validation. Local evaluation services stopped.
+
+## 2026-10-03 — Atlas terrain source/product metadata foundation
+
+Starting clean main at `6d36b46`, derived source/product requirements from the
+global foundation, direct Riffelhorn and rejected reconciliation reports. Reviewed
+primary STAC Item/Projection/Raster/Processing, RFC 7946 and W3C PROV concepts;
+the [decision](atlas/terrain-source-product-architecture.md) records sources,
+evidence table, terminology, model, examples, limitations and next-step rationale.
+No standards-compliance claim or new dependency.
+
+Added owned types, focused validation and typed evidence snapshots under
+`src/atlas/terrain/metadata/`. Source identity, release, acquisition, grid,
+height/surface semantics and rights are separate from derived delivery, contributors,
+processes and revisions. Coverage, assessed support, protected interior and
+transition support are independent spatial roles; footprints may be geographic,
+explicit native-CRS rectangles or referenced inventories/masks. Unknowns remain
+explicit. Products need not be tiled or Terrarium; no renderer configuration is
+required. Riffelhorn v1 correctly retains heterogeneous Swiss LN02/AWS-unknown
+heights and immediate input masks. Mapterhorn retains partial catalogue lineage
+and sparse fine coverage; it is not a production dependency.
+
+Twelve semantic tests cross-check all four official input hashes and prepared
+identity/manifest/encoding against the original record, plus unknown height/CRS,
+resolution/delivery separation, independent support, fallback, contributor masks,
+non-tiled output and recorded transformation semantics. Existing ten terrain-policy
+tests pass. Existing active application suite separately: 138 tests, 137 pass,
+one live-publication skip, zero failures; Forecast Workspace passes unchanged.
+New model tests: 12 pass. Combined focused model/policy invocation: 22 pass.
+Two combined full-suite invocations completed all 149 assertions but the unchanged
+route-foundation test process then exited with Windows code 3221225477, adding one
+file-level failure (151 total including that failure and the skip). Its ten tests
+pass isolated, and the existing suite passes without the new test process. Cause
+unresolved; do not label the combined invocation clean or silently modify route
+tests. Lint, TypeScript and application-only build pass (external GFS/public
+materialization omitted with the existing ignored validation config; existing
+chunk-size warning). Focused documentation/reference and diff checks pass.
+
+All prior production runtime files, visual AWS policy, independent analytical
+AWS z15/256, IGOR, 1.45 exaggeration, camera/lifecycle, Weather and Traverse are
+unchanged. No metadata imports from production and no external data access,
+generation, acquisition, resolver or provenance UI. The smallest recommended next
+implementation is a deliberately supported larger Riffelhorn source selection
+and unreconciled product using this model, after defining protected purpose/area
+and support/epoch/quality requirements. Unknown AWS height semantics still block
+claiming physical harmonization; additional support alone does not accept blending.
+That next task was not performed.

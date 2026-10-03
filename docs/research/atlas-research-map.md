@@ -54,6 +54,14 @@ reshape terrain or consume interior information. No method is adopted; source
 support, stable-terrain evidence, height semantics and contributor masks constrain
 the next decision. AWS and the closed terrain-research branches remain unchanged.
 
+The [terrain source/product architecture decision](../atlas/terrain-source-product-architecture.md)
+derives a minimal Atlas metadata foundation from those evaluations. It distinguishes
+datasets, delivery products, representations, support roles, resolution, vertical
+semantics and incomplete provenance. Four typed cases describe current AWS, retained
+swissALTI3D, the Swiss/AWS Riffelhorn product and Mapterhorn without adopting them
+as a resolver. The proposed next bounded support-selection/product task is deferred;
+no larger acquisition or reconciliation is performed. Production stays AWS.
+
 ## Evidence classes
 
 - **MERIDIAN EVIDENCE (M):** measurements, inspected outputs and negative results

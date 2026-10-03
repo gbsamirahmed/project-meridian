@@ -155,6 +155,16 @@ adequate source support/overlap, height-reference accounting and contributor/pro
 metadata are prerequisites for a later composition decision. The 2 km research
 crop is not an accepted production source boundary. Production remains unchanged.
 
+Atlas's [terrain source/product architecture](atlas/terrain-source-product-architecture.md)
+now records upstream datasets separately from derived delivery products. Owned types,
+validation and four evidence examples live in `src/atlas/terrain/metadata/`, beside
+production configuration. Source/product identity, height/surface semantics, scoped
+coverage/support, resolution, lineage, revisions and rights remain independent of
+MapLibre visual style and the analytical sampler. Unknowns are explicit; immediate
+contributor completeness does not imply complete measurement lineage. No production
+module adopts this metadata yet. It establishes no resolver, accepted seamline,
+reconciled terrain, new provider or acquisition requirement on normal startup.
+
 The conceptual relationship is:
 
 ```text
