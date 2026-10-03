@@ -2815,3 +2815,45 @@ products, historical captures/packages, Swiss sources, Bluesky originals and sup
 HDR probes unchanged. No production/architecture, Tryfan, implementation, source-data
 or generated-product changes; no new acquisition or experiment. Unrelated builds and
 rendering suites were not rerun for this documentation-only checkpoint.
+
+## 2026-10-03 — Separate visual terrain and analytical elevation policies
+
+Confirmed clean canonical main at `4c15639`. The numeric elevation sampler imported
+its AWS tile URL and z15 ceiling from the visual MapLibre layer module, so a visual
+provider change could unintentionally alter route analysis. Added independent Atlas
+policies in `map/visualTerrainConfig.ts` and `terrain/analyticalElevationConfig.ts`.
+Both intentionally retain the same AWS Terrarium dataset. Visual credits now live
+with the visual DEM policy; geometry/relief delivery ceilings remain z14/z15 and
+are no longer described as native scientific resolution. The analytical policy
+states the fixed Terrarium RGB / XYZ Web Mercator / 256-pixel / z15 contract.
+
+No App, Traverse or Weather code changed. Exaggeration, relief, projection/lifecycle,
+pixel registration, image decoding, bilinear/cross-tile sampling, wrapping, latitude
+handling, six-worker concurrency, 96-tile cache and cancellation/failure behavior
+are preserved. The historical `terrain-analysis-dem` source ID remains; its comment
+clarifies that it belongs to visual relief, not analytical route sampling. Existing
+MapLibre/sampler differences and ineffective IGOR altitude/accent settings remain
+outside this change. Future analytical source changes require explicit assessment
+of profiles, gradients, timing, arrival-time Weather sampling and derived conditions.
+
+Six new deterministic Node/Vite tests in
+`scripts/atlas/test_terrain_policies.mjs` pass, including substitution of different
+visual settings while analytical AWS requests/values remain unchanged. Additional
+repository-only comparison against checkpoint source confirms exact equality of
+31 captured visual configuration/lifecycle operations and ten analytical fixtures,
+including repeat/cache values, requests and progress. ESLint, TypeScript and Vite
+application bundling pass; existing large-chunk and plugin-timing warnings remain.
+The normal build command used an ignored temporary Vite config retaining React and
+omitting external GFS materialization/public copying. Production data publication
+and live browser/provider validation were not run; actual meridian-data/private
+were not inspected.
+
+The active Node suite reports 132 passes, one failure and one live-publication test
+skipped. The unchanged Forecast Workspace test at
+`scripts/ui/test_desktop_workspace.mjs:190` depends on the current wall-clock hour:
+at 02:00 its selected fixture precipitation is unavailable, so the expected
+`mm / h` unit is absent. An isolated controlled-clock run passes. This unrelated
+fixture issue is recorded, not fixed. Tests used an empty data-root stand-in and
+synthetic publication fixtures, never the real data estate. Architecture documentation
+records the independent policies. No provider migration, new Lab or subsequent
+visual-improvement work is included.

@@ -1,10 +1,7 @@
-import {
-  TERRARIUM_TILE_TEMPLATE,
-  TERRAIN_DEM_NATIVE_MAX_ZOOM,
-} from "../map/terrainLayers";
+import { ANALYTICAL_ELEVATION } from "./analyticalElevationConfig";
 import type { GeographicCoordinate } from "../location/location";
 
-const TILE_SIZE = 256;
+const TILE_SIZE = ANALYTICAL_ELEVATION.tileSize;
 const MAX_DECODED_TILES = 96;
 const FETCH_CONCURRENCY = 6;
 const WEB_MERCATOR_LIMIT = 85.05112878;
@@ -29,7 +26,7 @@ function wrap(value: number, count: number): number {
 }
 
 function tileUrl(zoom: number, x: number, y: number): string {
-  return TERRARIUM_TILE_TEMPLATE.replace("{z}", String(zoom))
+  return ANALYTICAL_ELEVATION.tileTemplate.replace("{z}", String(zoom))
     .replace("{x}", String(x))
     .replace("{y}", String(y));
 }
@@ -129,7 +126,7 @@ export async function sampleTerrainElevations(
   signal: AbortSignal,
   onProgress?: (completedTiles: number, totalTiles: number) => void
 ): Promise<Array<number | null>> {
-  const zoom = TERRAIN_DEM_NATIVE_MAX_ZOOM;
+  const zoom = ANALYTICAL_ELEVATION.samplingZoom;
   const tileDemands = new Map<string, PixelDemand[]>();
   const corners = coordinates.map(() => new Array<number | null>(4).fill(null));
   const weights = coordinates.map((coordinate, sampleIndex) => {

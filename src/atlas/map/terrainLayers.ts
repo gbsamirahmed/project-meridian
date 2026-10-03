@@ -5,7 +5,7 @@ import {
   HILLSHADE_ZOOM_STOPS,
   ELEVATION_LAYER_STRENGTH,
 } from "./atlasVisuals";
-import { TERRAIN_ATTRIBUTION } from "./atlasAttribution";
+import { VISUAL_TERRAIN_DEM } from "./visualTerrainConfig";
 import {
   placeGeographicContextAboveOverlays,
 } from "./mapLayerAnchors";
@@ -20,14 +20,6 @@ const TERRAIN_STACK_BOUNDARY_SOURCE_ID = "terrain-stack-boundary-source";
 const TERRAIN_STACK_BOUNDARY_LAYER_ID = "terrain-stack-boundary-layer";
 const terrainModeByMap = new WeakMap<maplibregl.Map, "globe" | "terrain">();
 
-export const TERRARIUM_TILE_TEMPLATE =
-  "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png";
-export const TERRAIN_DEM_NATIVE_MAX_ZOOM = 15;
-// OpenFreeMap's vector tiles top out at z14. Keeping the terrain mesh at the
-// same canonical ceiling avoids a MapLibre terrain fallback warning while the
-// separate analysis source can still use Terrarium's final native z15 tiles
-// for hillshade and color relief.
-const TERRAIN_GEOMETRY_MAX_ZOOM = 14;
 // MapLibre's detailed terrain renderer does not yet support every globe/fog
 // calculation. At this zoom the globe and Mercator projections are visually
 // close, so switch to Mercator before enabling terrain to avoid that unsupported
@@ -94,24 +86,24 @@ export function configurePlanetAndTerrain(
   if (!map.getSource(TERRAIN_SOURCE_ID)) {
     map.addSource(TERRAIN_SOURCE_ID, {
       type: "raster-dem",
-      tiles: [TERRARIUM_TILE_TEMPLATE],
-      tileSize: 256,
-      encoding: "terrarium",
-      maxzoom: TERRAIN_GEOMETRY_MAX_ZOOM,
-      attribution: TERRAIN_ATTRIBUTION,
+      tiles: [VISUAL_TERRAIN_DEM.tileTemplate],
+      tileSize: VISUAL_TERRAIN_DEM.tileSize,
+      encoding: VISUAL_TERRAIN_DEM.encoding,
+      maxzoom: VISUAL_TERRAIN_DEM.geometryMaxZoom,
+      attribution: VISUAL_TERRAIN_DEM.attribution,
     });
   }
 
   // MapLibre recommends separate internal sources when one DEM is used both
-  // for 3D terrain and for analysis layers. Both sources reference the same
-  // Terrarium tiles, so this does not add another dataset or provider.
+  // for 3D terrain and for visual relief layers. Both use the visual DEM policy;
+  // this source is unrelated to the analytical route-elevation sampler.
   if (!map.getSource(TERRAIN_ANALYSIS_SOURCE_ID)) {
     map.addSource(TERRAIN_ANALYSIS_SOURCE_ID, {
       type: "raster-dem",
-      tiles: [TERRARIUM_TILE_TEMPLATE],
-      tileSize: 256,
-      encoding: "terrarium",
-      maxzoom: TERRAIN_DEM_NATIVE_MAX_ZOOM,
+      tiles: [VISUAL_TERRAIN_DEM.tileTemplate],
+      tileSize: VISUAL_TERRAIN_DEM.tileSize,
+      encoding: VISUAL_TERRAIN_DEM.encoding,
+      maxzoom: VISUAL_TERRAIN_DEM.reliefMaxZoom,
     });
   }
 

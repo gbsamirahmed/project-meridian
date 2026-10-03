@@ -113,6 +113,16 @@ justified domain-neutral owner. The [Phase 5 architecture plan](phase-5-architec
 records the final validation and bounded completion criteria. Phase 5 ends with 5D;
 historical experiments and renderer source are outside this refactor.
 
+Atlas configures visual terrain and analytical elevation independently:
+`src/atlas/map/visualTerrainConfig.ts` owns MapLibre DEM delivery and credits;
+`src/atlas/terrain/analyticalElevationConfig.ts` owns the numeric sampler's fixed
+Terrarium/XYZ/Web Mercator, 256-pixel, z15 contract. Both currently select the same
+AWS Terrarium dataset by policy, not architectural necessity. Visual source changes
+must not silently change analytical elevation. Analytical source changes require
+explicit assessment of route profiles, gradients, timing, arrival-time Weather
+sampling and derived route conditions. App still orchestrates sampling; Traverse
+continues to receive provider-neutral numeric terrain profiles.
+
 The conceptual relationship is:
 
 ```text
