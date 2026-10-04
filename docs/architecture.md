@@ -174,6 +174,17 @@ technology or epoch. Evaluation-only delivery omits unsupported tiles instead of
 inventing terrain; coarse/edge gaps remain a later composition requirement. This
 is a data asset, not production regional integration or an accepted AWS reference.
 
+The bounded [global-reference/stable-overlap assessment](atlas/global-reference-assessment.md)
+recommends published Copernicus GLO-30 as a candidate accountable common/coarse
+reference, distinct from best available visual terrain and analytical policy.
+The tested public COG selection is explicitly the older 2021 distribution;
+its known EGM2008 semantics do not resolve AWS's unknown hosted height lineage.
+Independent stable-terrain candidates support a tighter local relationship,
+with uneven support and important coarse-ridge/ice residuals. No registration
+correction, accepted transition, terrain hierarchy or production source change
+follows from this assessment. Existing Atlas metadata describes the retained
+source, COG derivative and separate height diagnostic without a model extension.
+
 The conceptual relationship is:
 
 ```text

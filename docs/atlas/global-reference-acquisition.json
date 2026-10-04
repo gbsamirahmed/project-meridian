@@ -1,0 +1,476 @@
+{
+  "assets": {
+    "cop-handbook": {
+      "acquiredAt": "2026-10-04T15:51:27.354342+00:00",
+      "bytes": 3541026,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "max-age=31536000",
+        "Connection": "close",
+        "Content-Length": "3541026",
+        "Content-Type": "application/pdf",
+        "Date": "Sun, 04 Oct 2026 15:51:26 GMT",
+        "ETag": "\"360822-61ac28c958217\"",
+        "Expires": "Mon, 04 Oct 2027 15:51:26 GMT",
+        "Last-Modified": "Thu, 13 Jun 2024 09:59:04 GMT",
+        "Set-Cookie": "BIGipServerportal-prod-amsterdam.dataspace.copernicus.eu=1131371018.47138.0000; path=/; Httponly; Secure",
+        "X-Content-Type-Options": "nosniff"
+      },
+      "path": "sources/atlas/riffelhorn/global-reference-assessment-v1/cop-handbook/geo1988-copernicusdem-spe-002_producthandbook_i5.0.pdf",
+      "sha256": "b5a0b027bddef7122e39de368dba9cf10adce8631a2e3026d246b4be98c3f0c4",
+      "url": "https://dataspace.copernicus.eu/sites/default/files/media/files/2024-06/geo1988-copernicusdem-spe-002_producthandbook_i5.0.pdf"
+    },
+    "cop-licence": {
+      "acquiredAt": "2026-10-04T15:51:27.743626+00:00",
+      "bytes": 532208,
+      "headers": {
+        "accept-ranges": "bytes",
+        "connection": "close",
+        "content-length": "532208",
+        "content-type": "application/pdf",
+        "date": "Sun, 04 Oct 2026 15:51:27 GMT",
+        "etag": "244d0cbb1070d9ab0feaa1606eddd45f",
+        "last-modified": "Thu, 25 Jul 2024 06:25:59 GMT",
+        "server": "nginx/1.27.2",
+        "x-object-meta-orig-filename": "CSCDA_ESA_Mission-specific_Annex_31_Oct_22_latest.pdf",
+        "x-openstack-request-id": "tx00000e680f6411f4e305c-006ac275ff-47927d561-default",
+        "x-timestamp": "1721888759.47998",
+        "x-trans-id": "tx00000e680f6411f4e305c-006ac275ff-47927d561-default"
+      },
+      "path": "sources/atlas/riffelhorn/global-reference-assessment-v1/cop-licence/CSCDA_ESA_Mission-specific_Annex_31_Oct_22_latest.pdf",
+      "sha256": "d8284dfa026f192c1d4f212b2846168720363dbe0ee112bfbceeb66d870a77b7",
+      "url": "https://s3.waw3-1.cloudferro.com/swift/v1/portal_uploads_prod/CSCDA_ESA_Mission-specific_Annex_31_Oct_22_latest.pdf"
+    },
+    "cop-readme": {
+      "acquiredAt": "2026-10-04T15:51:25.950171+00:00",
+      "bytes": 8536,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Connection": "close",
+        "Content-Length": "8536",
+        "Content-Type": "text/html",
+        "Date": "Sun, 04 Oct 2026 15:51:26 GMT",
+        "ETag": "\"022cee281269bfa9eafa36401ef3e104\"",
+        "Last-Modified": "Wed, 22 Nov 2023 10:39:04 GMT",
+        "Server": "AmazonS3",
+        "x-amz-id-2": "/dKfWCgfIE4lnuNhlDe1mfZae32SfJc9aA94TIYz4wncECU2yZYLWCzFJXW38ZStX/TaCOe3frI=",
+        "x-amz-request-id": "WT8FQDZA0826PH4B",
+        "x-amz-server-side-encryption": "AES256",
+        "x-amz-version-id": "SU9qbl.Xkmjg07K5gjdZy37kas6_.h97"
+      },
+      "path": "sources/atlas/riffelhorn/global-reference-assessment-v1/cop-readme/readme.html",
+      "sha256": "922461d55070e3c7e0cf2903ec54190d69e3773da2dc9e776a3f03566cfd56d2",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/readme.html"
+    },
+    "cop-registry": {
+      "acquiredAt": "2026-10-04T15:54:13.240770+00:00",
+      "bytes": 9202,
+      "headers": {
+        "Connection": "close",
+        "Content-Length": "9202",
+        "Content-Security-Policy": "default-src 'self' studiolab.sagemaker.aws assets.opendata.aws a0.awsstatic.com; object-src 'none'",
+        "Content-Type": "text/html",
+        "Date": "Sun, 04 Oct 2026 15:54:14 GMT",
+        "ETag": "\"950039a9bdefbaacb0fa555a4ce2292f\"",
+        "Last-Modified": "Thu, 01 Oct 2026 22:01:14 GMT",
+        "Referrer-Policy": "same-origin",
+        "Server": "AmazonS3",
+        "Strict-Transport-Security": "max-age= 63072000; includeSubdomains; preload",
+        "Vary": "Accept-Encoding",
+        "Via": "1.1 c58391b07051938ceda6615614fbabb0.cloudfront.net (CloudFront)",
+        "X-Amz-Cf-Id": "8zkZeVFpOM9sPwBMPkfrmbRtv7PKeopNEs9o9NCUdQIx09n2-GHGYQ==",
+        "X-Amz-Cf-Pop": "LHR50-P1",
+        "X-Cache": "RefreshHit from cloudfront",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "X-XSS-Protection": "1; mode=block",
+        "x-amz-version-id": "ncYIj5KQmYiKCdwEF5Ik9h_hYWjRUCDQ"
+      },
+      "path": "sources/atlas/riffelhorn/global-reference-assessment-v1/cop-registry/index.html",
+      "sha256": "c9215f2e18745ffcb33a2ed16c3f2ef5fab4dce70babace9132afe402c149320",
+      "url": "https://registry.opendata.aws/copernicus-dem/"
+    },
+    "cop-tile-list": {
+      "acquiredAt": "2026-10-04T15:51:29.550997+00:00",
+      "bytes": 1110900,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Connection": "close",
+        "Content-Length": "1110900",
+        "Content-Type": "text/plain",
+        "Date": "Sun, 04 Oct 2026 15:51:30 GMT",
+        "ETag": "\"637fe75ddf7615ba853dd83caf05cd82\"",
+        "Last-Modified": "Mon, 09 May 2022 18:23:01 GMT",
+        "Server": "AmazonS3",
+        "x-amz-id-2": "ShJmwfhjDcJxVyhi7KX4iscyJX7dRbIGsz16JJ9IItx71JaKqwYuegWn6XiJK04CD5WFipiz8Xq9dzLh0QiuT1w0HaBqBuFJ",
+        "x-amz-request-id": "MWTTH4YCBR9YX5AP",
+        "x-amz-version-id": "null"
+      },
+      "path": "sources/atlas/riffelhorn/global-reference-assessment-v1/cop-tile-list/tileList.txt",
+      "sha256": "10604e3052c98a09e9216f1a8f0a555a04148419757575f783d4937fd44316dc",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/tileList.txt"
+    },
+    "cop45": {
+      "acquiredAt": "2026-10-04T15:51:22.654094+00:00",
+      "bytes": 42594792,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Connection": "close",
+        "Content-Length": "42594792",
+        "Content-Type": "image/tiff",
+        "Date": "Sun, 04 Oct 2026 15:51:19 GMT",
+        "ETag": "\"9419a0784d0c7b90c48754dc8901bf49\"",
+        "Last-Modified": "Mon, 09 May 2022 14:24:54 GMT",
+        "Server": "AmazonS3",
+        "x-amz-id-2": "z4lVGFyVR8ie3EoliYqeCk+gXra2QyFmw4SQrS7xkOd7ao/QN5QTRbrowQx+GXnKU85IJqBLIxU=",
+        "x-amz-request-id": "231N9BPPX54872SZ",
+        "x-amz-version-id": "null"
+      },
+      "path": "sources/atlas/riffelhorn/global-reference-assessment-v1/cop45/Copernicus_DSM_COG_10_N45_00_E007_00_DEM.tif",
+      "raster": {
+        "crs": "EPSG:4326",
+        "nodata": null,
+        "overviews": [
+          2,
+          4,
+          8
+        ],
+        "shape": [
+          3600,
+          3600
+        ],
+        "tags": {
+          "AREA_OR_POINT": "Point"
+        },
+        "transform": [
+          0.0002777777777777778,
+          0.0,
+          6.9998611111111115,
+          0.0,
+          -0.0002777777777777778,
+          46.00013888888889
+        ]
+      },
+      "sha256": "638c155dd9a5f0b7ee818146def740093da33cee4606071b2bbf7ce3fa00ab95",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N45_00_E007_00_DEM/Copernicus_DSM_COG_10_N45_00_E007_00_DEM.tif"
+    },
+    "cop46": {
+      "acquiredAt": "2026-10-04T15:51:22.415167+00:00",
+      "bytes": 41776750,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Connection": "close",
+        "Content-Length": "41776750",
+        "Content-Type": "image/tiff",
+        "Date": "Sun, 04 Oct 2026 15:51:19 GMT",
+        "ETag": "\"d75ca33280e101b7e83b2fbef81e853b\"",
+        "Last-Modified": "Mon, 09 May 2022 14:25:45 GMT",
+        "Server": "AmazonS3",
+        "x-amz-id-2": "XlpRjT31MrP5FQ58rgT+yCy3bFMX8xdXAOW//JKrMpOm/9gk9MSBXLBD+96FfPOJmF3PxuW3ZuU=",
+        "x-amz-request-id": "231SV1XBWQ0R01WT",
+        "x-amz-version-id": "null"
+      },
+      "path": "sources/atlas/riffelhorn/global-reference-assessment-v1/cop46/Copernicus_DSM_COG_10_N46_00_E007_00_DEM.tif",
+      "raster": {
+        "crs": "EPSG:4326",
+        "nodata": null,
+        "overviews": [
+          2,
+          4,
+          8
+        ],
+        "shape": [
+          3600,
+          3600
+        ],
+        "tags": {
+          "AREA_OR_POINT": "Point"
+        },
+        "transform": [
+          0.0002777777777777778,
+          0.0,
+          6.9998611111111115,
+          0.0,
+          -0.0002777777777777778,
+          47.00013888888889
+        ]
+      },
+      "sha256": "426e3d1492d94e4f23d444843f852ff5be675da5c4c14e661b5642006864047d",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N46_00_E007_00_DEM/Copernicus_DSM_COG_10_N46_00_E007_00_DEM.tif"
+    },
+    "egm2008-grid": {
+      "acquiredAt": "2026-10-04T15:51:29.484842+00:00",
+      "bytes": 80585622,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Age": "247",
+        "Connection": "close",
+        "Content-Length": "80585622",
+        "Content-Type": "image/tiff",
+        "Date": "Sun, 04 Oct 2026 15:47:17 GMT",
+        "ETag": "\"c873f04972c6df1749dc7295028a0882-10\"",
+        "Last-Modified": "Tue, 28 Jan 2020 14:45:44 GMT",
+        "Server": "AmazonS3",
+        "Via": "1.1 e2e26d22a6c8982cff1db30f5e2d428e.cloudfront.net (CloudFront)",
+        "X-Amz-Cf-Id": "B_ZRqzu5ogsT9JpH63x_zrZ3elPqbn7r0_lru_5PC4c4TXG4sg0I8w==",
+        "X-Amz-Cf-Pop": "LHR50-P5",
+        "X-Cache": "Hit from cloudfront",
+        "x-amz-version-id": "D2_sgZCZ992Oj.5YeII.tn_2upgrKPQS"
+      },
+      "path": "sources/atlas/riffelhorn/global-reference-assessment-v1/egm2008-grid/us_nga_egm08_25.tif",
+      "sha256": "4191d471eefebf24091b56dbc604353cb3b8cf8cc70e448bb9ae56a272bef17a",
+      "url": "https://cdn.proj.org/us_nga_egm08_25.tif"
+    },
+    "joerd-attribution": {
+      "acquiredAt": "2026-10-04T15:51:29.344369+00:00",
+      "bytes": 12300,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Origin": "*",
+        "Cache-Control": "max-age=300",
+        "Connection": "close",
+        "Content-Length": "12300",
+        "Content-Security-Policy": "default-src 'none'; style-src 'unsafe-inline'; sandbox",
+        "Content-Type": "text/plain; charset=utf-8",
+        "Cross-Origin-Resource-Policy": "cross-origin",
+        "Date": "Sun, 04 Oct 2026 15:51:29 GMT",
+        "ETag": "\"5549308f305acddd8a57d6f8f6495f2cb75f1a2a6311b78847edd8172e948108\"",
+        "Expires": "Sun, 04 Oct 2026 15:56:29 GMT",
+        "Source-Age": "0",
+        "Strict-Transport-Security": "max-age=31536000",
+        "Vary": "Authorization,Accept-Encoding",
+        "Via": "1.1 varnish",
+        "X-Cache": "MISS",
+        "X-Cache-Hits": "0",
+        "X-Content-Type-Options": "nosniff",
+        "X-Fastly-Request-ID": "8442ff21517618c972dcd0cdfcde61e26cefa4f8",
+        "X-Frame-Options": "deny",
+        "X-GitHub-Request-Id": "EBBE:35B22D:1A95D7:33AE3C:6AC27601",
+        "X-Served-By": "cache-lhr-egwu1540066-LHR",
+        "X-Timer": "S1791129089.175495,VS0,VE150",
+        "X-XSS-Protection": "1; mode=block",
+        "x-github-edge-region": "uksouth"
+      },
+      "path": "sources/atlas/riffelhorn/global-reference-assessment-v1/joerd-attribution/attribution.md",
+      "sha256": "2ce4d3414b4592d17ad56a5af57feb480686ddcfb0a3e4ea0b566d28cde13567",
+      "url": "https://raw.githubusercontent.com/tilezen/joerd/master/docs/attribution.md"
+    },
+    "joerd-formats": {
+      "acquiredAt": "2026-10-04T15:51:29.122979+00:00",
+      "bytes": 5392,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Origin": "*",
+        "Cache-Control": "max-age=300",
+        "Connection": "close",
+        "Content-Length": "5392",
+        "Content-Security-Policy": "default-src 'none'; style-src 'unsafe-inline'; sandbox",
+        "Content-Type": "text/plain; charset=utf-8",
+        "Cross-Origin-Resource-Policy": "cross-origin",
+        "Date": "Sun, 04 Oct 2026 15:51:29 GMT",
+        "ETag": "\"bdef4154f46152033f7ecab8030e104bbf3a69108736aa7da56121d3a3ebaff6\"",
+        "Expires": "Sun, 04 Oct 2026 15:56:29 GMT",
+        "Source-Age": "0",
+        "Strict-Transport-Security": "max-age=31536000",
+        "Vary": "Authorization,Accept-Encoding",
+        "Via": "1.1 varnish",
+        "X-Cache": "MISS",
+        "X-Cache-Hits": "0",
+        "X-Content-Type-Options": "nosniff",
+        "X-Fastly-Request-ID": "0f106c8836241991fcde575561742472a4ba31c0",
+        "X-Frame-Options": "deny",
+        "X-GitHub-Request-Id": "38FA:808C7:1ACDE9:33E590:6AC27600",
+        "X-Served-By": "cache-lhr-egwu1540027-LHR",
+        "X-Timer": "S1791129089.942516,VS0,VE153",
+        "X-XSS-Protection": "1; mode=block",
+        "x-github-edge-region": "uksouth"
+      },
+      "path": "sources/atlas/riffelhorn/global-reference-assessment-v1/joerd-formats/formats.md",
+      "sha256": "f37b923b033ddb90ed454902c20a248b0f75985df1129dc2899c8ddf14459c8c",
+      "url": "https://raw.githubusercontent.com/tilezen/joerd/master/docs/formats.md"
+    },
+    "joerd-sources": {
+      "acquiredAt": "2026-10-04T15:51:28.886541+00:00",
+      "bytes": 12162,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Origin": "*",
+        "Cache-Control": "max-age=300",
+        "Connection": "close",
+        "Content-Length": "12162",
+        "Content-Security-Policy": "default-src 'none'; style-src 'unsafe-inline'; sandbox",
+        "Content-Type": "text/plain; charset=utf-8",
+        "Cross-Origin-Resource-Policy": "cross-origin",
+        "Date": "Sun, 04 Oct 2026 15:51:28 GMT",
+        "ETag": "\"62b0560a71d890a23dbed4dbf160c7185ac47ed95a725279d88d391621eade07\"",
+        "Expires": "Sun, 04 Oct 2026 15:56:28 GMT",
+        "Source-Age": "0",
+        "Strict-Transport-Security": "max-age=31536000",
+        "Vary": "Authorization,Accept-Encoding",
+        "Via": "1.1 varnish",
+        "X-Cache": "MISS",
+        "X-Cache-Hits": "0",
+        "X-Content-Type-Options": "nosniff",
+        "X-Fastly-Request-ID": "a3b7065875fa12a2f8254dca32500a39cc999252",
+        "X-Frame-Options": "deny",
+        "X-GitHub-Request-Id": "D866:3FFB53:1AA393:33BB3D:6AC27600",
+        "X-Served-By": "cache-lhr-egwu1540072-LHR",
+        "X-Timer": "S1791129089.735545,VS0,VE138",
+        "X-XSS-Protection": "1; mode=block",
+        "x-github-edge-region": "uksouth"
+      },
+      "path": "sources/atlas/riffelhorn/global-reference-assessment-v1/joerd-sources/data-sources.md",
+      "sha256": "dcf07b156bc25930dfe3e1a55d8efd4a2e3b5376393d23bf24d1fc1dd02c5948",
+      "url": "https://raw.githubusercontent.com/tilezen/joerd/master/docs/data-sources.md"
+    },
+    "ln02-grid": {
+      "acquiredAt": "2026-10-04T15:51:23.548981+00:00",
+      "bytes": 295192,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Age": "247",
+        "Connection": "close",
+        "Content-Length": "295192",
+        "Content-Type": "image/tiff",
+        "Date": "Sun, 04 Oct 2026 15:47:17 GMT",
+        "ETag": "\"e26beda60ec63f0f48ea1997409ec237\"",
+        "Last-Modified": "Thu, 25 Mar 2021 13:46:10 GMT",
+        "Server": "AmazonS3",
+        "Via": "1.1 78e6b1fae5a212c4c9a5380a85716d3a.cloudfront.net (CloudFront)",
+        "X-Amz-Cf-Id": "9S2AAb2Kr8zp0QUKZ5CTyVAgVVpzlDnpU9iL3gxtczwN_OzQecA6cw==",
+        "X-Amz-Cf-Pop": "LHR50-P5",
+        "X-Cache": "Hit from cloudfront",
+        "x-amz-version-id": "w7TOwvniR0.b5AZCrukcFfErTvLzq.gh"
+      },
+      "path": "sources/atlas/riffelhorn/global-reference-assessment-v1/ln02-grid/ch_swisstopo_chgeo2004_ETRS89_LN02.tif",
+      "sha256": "ec9638c152f4519278b3e7a781d1a7c2769bd54de39accec099bd5036f4fd214",
+      "url": "https://cdn.proj.org/ch_swisstopo_chgeo2004_ETRS89_LN02.tif"
+    },
+    "nga-grid-readme": {
+      "acquiredAt": "2026-10-04T15:51:28.682221+00:00",
+      "bytes": 1090,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Connection": "close",
+        "Content-Length": "1090",
+        "Content-Type": "text/plain",
+        "Date": "Sun, 04 Oct 2026 15:51:29 GMT",
+        "ETag": "\"1812c4f0838bd8aac109ce46f4499eb3\"",
+        "Last-Modified": "Tue, 28 Jan 2020 14:45:43 GMT",
+        "Server": "AmazonS3",
+        "Via": "1.1 c0c9e4c8829632f96f7d87dcb86a7c0e.cloudfront.net (CloudFront)",
+        "X-Amz-Cf-Id": "JwaxpfEb87N1MFGjZLko9zll2RPsntV7IYu6QxXo1Ld2kUStZ48dNQ==",
+        "X-Amz-Cf-Pop": "LHR50-P5",
+        "X-Cache": "RefreshHit from cloudfront",
+        "x-amz-version-id": "dZaNH7nF8HiGY4P1pEo8hdFP8ErdorYB"
+      },
+      "path": "sources/atlas/riffelhorn/global-reference-assessment-v1/nga-grid-readme/us_nga_README.txt",
+      "sha256": "73bf524a13a3b38b27ab3f1748128445aed1d247ab87e4312b84fa58a085ac12",
+      "url": "https://cdn.proj.org/us_nga_README.txt"
+    },
+    "sgi1973": {
+      "acquiredAt": "2026-10-04T15:51:22.953914+00:00",
+      "bytes": 4188138,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Connection": "close",
+        "Content-Length": "4188138",
+        "Content-Type": "application/zip",
+        "Date": "Sun, 04 Oct 2026 15:51:22 GMT",
+        "ETag": "\"3fe7ea-5d76f4f84d3c0\"",
+        "Last-Modified": "Mon, 07 Feb 2022 15:32:39 GMT",
+        "Server": "Apache/2.4.59 (Debian)"
+      },
+      "path": "sources/atlas/riffelhorn/global-reference-assessment-v1/sgi1973/inventory_sgi1973_r1976.zip",
+      "sha256": "69a13fde7b142dd29b2f07a6bf5a4923750b502661995ca518e992a591e86145",
+      "url": "https://doi.glamos.ch/data/inventory/inventory_sgi1973_r1976.zip"
+    },
+    "sgi2016": {
+      "acquiredAt": "2026-10-04T15:51:23.486587+00:00",
+      "bytes": 9787779,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Connection": "close",
+        "Content-Length": "9787779",
+        "Content-Type": "application/zip",
+        "Date": "Sun, 04 Oct 2026 15:51:22 GMT",
+        "ETag": "\"955983-5bc8abc775840\"",
+        "Last-Modified": "Tue, 02 Mar 2021 09:55:37 GMT",
+        "Server": "Apache/2.4.59 (Debian)"
+      },
+      "path": "sources/atlas/riffelhorn/global-reference-assessment-v1/sgi2016/inventory_sgi2016_r2020.zip",
+      "sha256": "36ff3252f24f76f0a93eafaa29086ba63725cc2cc99593deca34c15699e933a7",
+      "url": "https://doi.glamos.ch/data/inventory/inventory_sgi2016_r2020.zip"
+    },
+    "sgi2023": {
+      "acquiredAt": "2026-10-04T15:51:25.824683+00:00",
+      "bytes": 31269880,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Connection": "close",
+        "Content-Length": "31269880",
+        "Content-Type": "application/zip",
+        "Date": "Sun, 04 Oct 2026 15:51:23 GMT",
+        "ETag": "\"1dd23f8-65a07615cb340\"",
+        "Last-Modified": "Thu, 27 Aug 2026 13:33:25 GMT",
+        "Server": "Apache/2.4.59 (Debian)"
+      },
+      "path": "sources/atlas/riffelhorn/global-reference-assessment-v1/sgi2023/inventory_sgi2023_r2026.zip",
+      "sha256": "ecef353d4b70f760eda83c6131e5345a2fd999527ea560b0bda4b7c27823f9fb",
+      "url": "https://doi.glamos.ch/data/inventory/inventory_sgi2023_r2026.zip"
+    },
+    "swiss-grid-readme": {
+      "acquiredAt": "2026-10-04T15:51:28.216747+00:00",
+      "bytes": 2197,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Connection": "close",
+        "Content-Length": "2197",
+        "Content-Type": "text/plain",
+        "Date": "Sun, 04 Oct 2026 15:51:29 GMT",
+        "ETag": "\"97c9357b000f33853fa681480ca8176d\"",
+        "Last-Modified": "Thu, 25 Mar 2021 13:46:11 GMT",
+        "Server": "AmazonS3",
+        "Via": "1.1 df7b13362a8ac70c19bf591aee90d86e.cloudfront.net (CloudFront)",
+        "X-Amz-Cf-Id": "2Gz-XBZBjyTzX_2DUZlJKb1GL2wOl8euqEQn3HWD5T74yUDBuQ4XZg==",
+        "X-Amz-Cf-Pop": "LHR50-P5",
+        "X-Cache": "RefreshHit from cloudfront",
+        "x-amz-version-id": "029t9RRmKTys6CdC3hEE36sRosUMk1gh"
+      },
+      "path": "sources/atlas/riffelhorn/global-reference-assessment-v1/swiss-grid-readme/ch_swisstopo_README.txt",
+      "sha256": "e42b7857149120a37ea25cc5ec96996d68d1bc0af027cb1dad639c138ce99498",
+      "url": "https://cdn.proj.org/ch_swisstopo_README.txt"
+    },
+    "worldcover": {
+      "acquiredAt": "2026-10-04T15:54:13.887899+00:00",
+      "bytes": 104975,
+      "format": "Source categorical pixels copied without class resampling",
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Connection": "close",
+        "Content-Length": "106497465",
+        "Content-Type": "binary/octet-stream",
+        "Date": "Sun, 04 Oct 2026 15:54:14 GMT",
+        "ETag": "\"53f02eadc5f9d57125bdde707c9d744f-13\"",
+        "Last-Modified": "Wed, 26 Oct 2022 12:53:27 GMT",
+        "Server": "AmazonS3",
+        "x-amz-id-2": "TbrQ8NV5tiCNmxK8Z546DF7TFW6AtdqhHcMascNO7/ipxUxs51TJI7Qvq3YzzGiYJB79LjUPIRlf9l0HQeN+s5cM0ctfj0Cz",
+        "x-amz-request-id": "WJC7DB8JWW2PYC43",
+        "x-amz-server-side-encryption": "AES256"
+      },
+      "path": "sources/atlas/riffelhorn/global-reference-assessment-v1/worldcover/riffelhorn-window.tif",
+      "sha256": "cf22149f0cbeff2119ddb2ff1d1c9ed1f10579d1e564fd9e65d73b48a29bd241",
+      "upstreamFullAssetSha256": "unknown: bounded HTTP range selection; retained ETag identifies remote object",
+      "url": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N45E006_Map.tif",
+      "window": [
+        20352,
+        23703,
+        1566,
+        1095
+      ]
+    }
+  },
+  "identity": "7548fd4dcdb1dde8de320aef26d5aa2de2c2c1653273b7a97c8ea49e0611bd18",
+  "protocolSha256": "2f57113ae4d358ea8796b98fe2b425b29f4f241a662de90097fa753947803114",
+  "version": "global-reference-assessment-v1"
+}

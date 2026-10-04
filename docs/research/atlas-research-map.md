@@ -66,8 +66,19 @@ now retains a 1.5 km protected interior within 100 km² of official 2024 terrain
 with a minimum 3.5 km source collar. It exercises the metadata model and improves
 disagreement characterization without reconciling or accepting a seamline. Pure
 regional web delivery has coarse-level/perimeter gaps; native support and delivery
-coverage remain separate. The next reference/stable-terrain assessment is deferred.
+coverage remain separate. At that checkpoint the reference/stable-terrain assessment was deferred.
 Production remains independently AWS and the closed research epoch stays closed.
+
+The [global-reference/stable-overlap assessment](../atlas/global-reference-assessment.md)
+then reviewed AWS and one alternative, Copernicus GLO-30, using independently
+screened glacier/land-cover/slope support. It recommends an accountable
+Copernicus common/coarse reference role while preserving separate visual and
+analytical policies. The local relationship is tighter, but narrow-ridge
+outliers, unequal stable support and registration/height limitations remain.
+The 2021 public COG distribution is not called the latest release. No correction,
+reconciliation, hierarchy or production migration was performed. The smallest
+next step is a separate local common/coarse product with explicit support and
+revision policy, not an accepted Swiss seam or general resolver.
 
 ## Evidence classes
 

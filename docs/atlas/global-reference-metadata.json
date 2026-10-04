@@ -1,0 +1,461 @@
+{
+  "heightDiagnostic": {
+    "delivery": {
+      "assets": [
+        {
+          "href": "${MERIDIAN_DATA_ROOT}/experiments/atlas/global-reference-assessment-v1/fields-and-mask.npz",
+          "selector": "swissEgm2008Diagnostic",
+          "sha256": "56dc810cc68763704b7a30daed4f3446bf698b9d6f332088afaf90dc3417ffc8"
+        }
+      ],
+      "description": "NPZ array swissEgm2008Diagnostic, EPSG:2056 grid; not Atlas terrain delivery",
+      "kind": "other"
+    },
+    "documentation": [
+      "docs/atlas/global-reference-assessment.md",
+      "docs/atlas/global-reference-acquisition.json",
+      "docs/atlas/global-reference-measurements.json"
+    ],
+    "elevationUnit": {
+      "status": "known",
+      "value": "metre"
+    },
+    "generation": {
+      "buildRecord": {
+        "href": "docs/atlas/global-reference-measurements.json"
+      },
+      "timestamp": {
+        "reason": "Scientific identity frozen by inputs, tool, arrays and operation; wall-clock timestamp not used as revision.",
+        "status": "unknown"
+      }
+    },
+    "id": "riffelhorn-swiss-egm2008-diagnostic",
+    "lineage": {
+      "contributorList": "complete",
+      "contributors": [
+        {
+          "id": "riffelhorn-swiss-support",
+          "kind": "product",
+          "revision": {
+            "status": "known",
+            "value": "1a44a0644de1bde73a3ba84d1b761dc0aa17d48cc971e5f6b5d2c14fb329d7ea"
+          }
+        }
+      ],
+      "limitations": "Diagnostic only. Original Swiss source and visual product continue to preserve LN02. NPZ also holds other separately identified comparison arrays.",
+      "processing": [
+        {
+          "method": "Area-average official LV95 source grid to 25 m diagnostic support; retained product source-mosaic.vrt used, no terrain tile resampling."
+        },
+        {
+          "method": "Defined local-grid height diagnostic, never applied to Swiss source/delivery or AWS.",
+          "record": {
+            "href": "docs/atlas/global-reference-measurements.json",
+            "selector": "heightDiagnostic"
+          },
+          "verticalTransformation": {
+            "accuracy": {
+              "reason": "PROJ combined accuracy -1; roundtrip closure is not geodetic accuracy.",
+              "status": "unknown"
+            },
+            "from": {
+              "identifier": "EPSG:5728",
+              "name": "LN02 height"
+            },
+            "limitations": "PROJ reports combined accuracy unknown (-1); no centimetre claim. Frame/epoch and 2.5 arcminute geoid interpolation limitations remain. Diagnostic only; AWS height reference unknown.",
+            "method": "proj=pipeline step inv proj=somerc lat_0=46.9524055555556 lon_0=7.43958333333333 k_0=1 x_0=2600000 y_0=1200000 ellps=bessel step proj=unitconvert xy_in=rad xy_out=deg step proj=axisswap order=2,1 step proj=push v_1 v_2 step proj=axisswap order=2,1 step proj=unitconvert xy_in=deg xy_out=rad step proj=push v_3 step proj=cart ellps=bessel step proj=helmert x=674.374 y=15.056 z=405.346 step inv proj=cart ellps=GRS80 step proj=pop v_3 step proj=vgridshift grids=ch_swisstopo_chgeo2004_ETRS89_LN02.tif multiplier=1 step proj=cart ellps=GRS80 step proj=helmert x=-674.374 y=-15.056 z=-405.346 step inv proj=cart ellps=bessel step proj=unitconvert xy_in=rad xy_out=deg step proj=axisswap order=2,1 step proj=pop v_1 v_2 step proj=axisswap order=2,1 step proj=unitconvert xy_in=deg z_in=m xy_out=rad z_out=m step proj=cart ellps=bessel step proj=helmert x=674.374 y=15.056 z=405.346 step inv proj=cart ellps=WGS84 step inv proj=vgridshift grids=us_nga_egm08_25.tif multiplier=1 step proj=unitconvert xy_in=rad xy_out=deg",
+            "to": {
+              "identifier": "EPSG:3855",
+              "name": "EGM2008 height"
+            }
+          }
+        }
+      ],
+      "spatialMapping": "uniform"
+    },
+    "name": "Swiss common-grid height diagnostic, not a deliverable DEM",
+    "nodata": {
+      "status": "known",
+      "value": "Source full-grid finite; support selection stored as a separate boolean mask, not hidden as missing elevations."
+    },
+    "producer": {
+      "status": "known",
+      "value": "Meridian offline evaluation"
+    },
+    "revision": {
+      "status": "known",
+      "value": "6be6712a8b099ca06127be1fa953402dfd1b9183db11609810aba832d16dc045"
+    },
+    "rights": {
+      "attribution": [
+        "\u00a9swisstopo"
+      ],
+      "licence": {
+        "status": "known",
+        "value": "swisstopo custom OGD terms, version 1.3.2021"
+      },
+      "references": [
+        "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-and-geoservices"
+      ]
+    },
+    "sourceInformation": {
+      "description": "25 m area averaging for comparison, not the distributed Swiss grid or native resolution.",
+      "informationCeiling": {
+        "status": "known",
+        "value": "Coarse diagnostic support; regional 0.5 m source information not represented by this averaged array."
+      }
+    },
+    "spatial": {
+      "coverage": {
+        "status": "known",
+        "value": {
+          "axisOrder": "xy",
+          "bounds": [
+            2620000,
+            1087000,
+            2630000,
+            1097000
+          ],
+          "crs": {
+            "identifier": "EPSG:2056",
+            "name": "CH1903+ / LV95"
+          },
+          "kind": "native-rectangle"
+        }
+      },
+      "transitionSupport": {
+        "reason": "Comparison support does not establish integration support.",
+        "status": "unknown"
+      },
+      "validSupport": {
+        "status": "known",
+        "value": {
+          "area": {
+            "asset": {
+              "href": "${MERIDIAN_DATA_ROOT}/experiments/atlas/global-reference-assessment-v1/fields-and-mask.npz",
+              "selector": "primaryMask",
+              "sha256": "56dc810cc68763704b7a30daed4f3446bf698b9d6f332088afaf90dc3417ffc8"
+            },
+            "crs": {
+              "status": "known",
+              "value": {
+                "identifier": "EPSG:2056",
+                "name": "CH1903+ / LV95"
+              }
+            },
+            "interpretation": "Independent diagnostic stable-terrain candidates, not proven invariant ground or production support.",
+            "kind": "asset"
+          },
+          "basis": "WorldCover v200, GLAMOS glacier inventory union, source-edge/slope screening; protocol and sensitivity results retained.",
+          "purpose": "Global-reference comparison"
+        }
+      }
+    },
+    "surface": {
+      "description": "Official terrain without vegetation/buildings; explicitly scoped selection.",
+      "kind": "dtm"
+    },
+    "version": {
+      "status": "known",
+      "value": "global-reference-assessment-v1"
+    },
+    "vertical": {
+      "kind": "transformed",
+      "transformation": {
+        "accuracy": {
+          "reason": "PROJ combined accuracy -1; roundtrip closure is not geodetic accuracy.",
+          "status": "unknown"
+        },
+        "from": {
+          "identifier": "EPSG:5728",
+          "name": "LN02 height"
+        },
+        "limitations": "PROJ reports combined accuracy unknown (-1); no centimetre claim. Frame/epoch and 2.5 arcminute geoid interpolation limitations remain. Diagnostic only; AWS height reference unknown.",
+        "method": "proj=pipeline step inv proj=somerc lat_0=46.9524055555556 lon_0=7.43958333333333 k_0=1 x_0=2600000 y_0=1200000 ellps=bessel step proj=unitconvert xy_in=rad xy_out=deg step proj=axisswap order=2,1 step proj=push v_1 v_2 step proj=axisswap order=2,1 step proj=unitconvert xy_in=deg xy_out=rad step proj=push v_3 step proj=cart ellps=bessel step proj=helmert x=674.374 y=15.056 z=405.346 step inv proj=cart ellps=GRS80 step proj=pop v_3 step proj=vgridshift grids=ch_swisstopo_chgeo2004_ETRS89_LN02.tif multiplier=1 step proj=cart ellps=GRS80 step proj=helmert x=-674.374 y=-15.056 z=-405.346 step inv proj=cart ellps=bessel step proj=unitconvert xy_in=rad xy_out=deg step proj=axisswap order=2,1 step proj=pop v_1 v_2 step proj=axisswap order=2,1 step proj=unitconvert xy_in=deg z_in=m xy_out=rad z_out=m step proj=cart ellps=bessel step proj=helmert x=674.374 y=15.056 z=405.346 step inv proj=cart ellps=WGS84 step inv proj=vgridshift grids=us_nga_egm08_25.tif multiplier=1 step proj=unitconvert xy_in=rad xy_out=deg",
+        "to": {
+          "identifier": "EPSG:3855",
+          "name": "EGM2008 height"
+        }
+      }
+    }
+  },
+  "product": {
+    "delivery": {
+      "assets": [
+        {
+          "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/global-reference-assessment-v1/cop45/Copernicus_DSM_COG_10_N45_00_E007_00_DEM.tif",
+          "sha256": "638c155dd9a5f0b7ee818146def740093da33cee4606071b2bbf7ce3fa00ab95"
+        },
+        {
+          "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/global-reference-assessment-v1/cop46/Copernicus_DSM_COG_10_N46_00_E007_00_DEM.tif",
+          "sha256": "426e3d1492d94e4f23d444843f852ff5be675da5c4c14e661b5642006864047d"
+        }
+      ],
+      "format": "Float32 Cloud Optimized GeoTIFF; PixelIsPoint, 3600x3600 retained files",
+      "horizontalReference": {
+        "status": "known",
+        "value": {
+          "identifier": "EPSG:4326",
+          "name": "WGS 84; documentation states G1150, TIFF identifies generic EPSG:4326"
+        }
+      },
+      "kind": "raster-file"
+    },
+    "documentation": [
+      "docs/atlas/global-reference-assessment.md",
+      "docs/atlas/global-reference-acquisition.json",
+      "docs/atlas/global-reference-measurements.json"
+    ],
+    "elevationUnit": {
+      "status": "known",
+      "value": "metre"
+    },
+    "generation": {
+      "buildRecord": {
+        "href": "docs/atlas/global-reference-acquisition.json"
+      },
+      "timestamp": {
+        "reason": "Upstream generation timestamp not established; asset Last-Modified and acquisition separately retained.",
+        "status": "unknown"
+      }
+    },
+    "id": "copernicus-glo30-public-cog-riffelhorn-selection",
+    "lineage": {
+      "contributorList": "complete",
+      "contributors": [
+        {
+          "id": "copernicus-glo30-riffelhorn-2021-input-selection",
+          "kind": "source",
+          "revision": {
+            "status": "known",
+            "value": "10dde531ab44cdb598264aaa7d8e3150728b996dcd6e34e74245ef16f6106b0e"
+          }
+        }
+      ],
+      "limitations": "Complete immediate published-product contributor, not complete upstream observation/infill provenance. No EDM/FLM/HEM/WBM retained. Public mirror older/restricted compared with latest CDSE release.",
+      "processing": [
+        {
+          "method": "Remove duplicated east column/south row; lossless float32 COG compression; average overviews. Base elevation posts not resampled by the documented distribution conversion.",
+          "record": {
+            "href": "https://copernicus-dem-30m.s3.amazonaws.com/readme.html"
+          }
+        }
+      ],
+      "spatialMapping": "uniform"
+    },
+    "name": "Retained Sinergise public COG delivery selection",
+    "nodata": {
+      "status": "known",
+      "value": "Retained float32 COGs declare no nodata; 10 km comparison fully finite. Public missing tiles can indicate ocean or absent/restricted land, not automatically zero land."
+    },
+    "producer": {
+      "status": "known",
+      "value": "Sinergise public Copernicus COG distribution"
+    },
+    "revision": {
+      "status": "known",
+      "value": "10dde531ab44cdb598264aaa7d8e3150728b996dcd6e34e74245ef16f6106b0e"
+    },
+    "rights": {
+      "attribution": [
+        "Use the applicable full unmodified/modified notice and Article 6 obligations in the licence; this summary is not the legal delivery notice."
+      ],
+      "licence": {
+        "status": "known",
+        "value": "Copernicus DEM GLO-30 F free/open licence, Annex pp.20-22"
+      },
+      "limitations": "Derivative hosting permitted subject to attribution, liability, non-endorsement and downstream obligations. Do not substitute restricted GLO-30 R terms or the mirror software licence.",
+      "references": [
+        "https://s3.waw3-1.cloudferro.com/swift/v1/portal_uploads_prod/CSCDA_ESA_Mission-specific_Annex_31_Oct_22_latest.pdf"
+      ]
+    },
+    "sourceInformation": {
+      "description": "Approximately 21.5 m east-west and 30.9 m north-south here; no metre-scale detail. Exact per-post acquisition and contributing infill are not supplied by the two retained COGs.",
+      "informationCeiling": {
+        "reason": "No delivery zoom applies to this file product; global information support varies.",
+        "status": "unknown"
+      }
+    },
+    "spatial": {
+      "coverage": {
+        "status": "known",
+        "value": {
+          "axisOrder": "xy",
+          "bounds": [
+            6.9998611111111115,
+            45.00013888888889,
+            7.9998611111111115,
+            47.00013888888889
+          ],
+          "crs": {
+            "identifier": "EPSG:4326",
+            "name": "WGS 84; documentation states G1150, TIFF identifies generic EPSG:4326"
+          },
+          "kind": "native-rectangle"
+        }
+      },
+      "transitionSupport": {
+        "reason": "No reconciliation performed or transition accepted.",
+        "status": "unknown"
+      },
+      "validSupport": {
+        "reason": "Initial stable-overlap evidence is local; no accepted global Atlas support footprint.",
+        "status": "unknown"
+      }
+    },
+    "surface": {
+      "description": "Edited surface model including vegetation/buildings; water/hydrological editing and heterogeneous void filling. Not a bare-earth DTM.",
+      "kind": "dsm"
+    },
+    "version": {
+      "status": "known",
+      "value": "Public mirror documents 2021 release; exact 2021 sub-release not established"
+    },
+    "vertical": {
+      "from": {
+        "id": "copernicus-glo30-riffelhorn-2021-input-selection",
+        "kind": "source",
+        "revision": {
+          "status": "known",
+          "value": "10dde531ab44cdb598264aaa7d8e3150728b996dcd6e34e74245ef16f6106b0e"
+        }
+      },
+      "kind": "preserved",
+      "reference": {
+        "status": "known",
+        "value": {
+          "identifier": "EPSG:3855",
+          "name": "EGM2008 height"
+        }
+      }
+    }
+  },
+  "productionAwsRecord": "src/atlas/terrain/metadata/terrainMetadataExamples.ts#AWS_VISUAL_PRODUCT",
+  "roleDecision": "Copernicus GLO-30 recommended as candidate common/coarse reference; production visual and analytical policies unchanged. Reference role distinct from best available visual representation.",
+  "schemaVersion": 1,
+  "source": {
+    "acquisition": {
+      "status": "known",
+      "value": {
+        "description": "Principal TanDEM-X observations December 2010\u2013January 2015; fill data may have other epochs, no per-post epoch retained.",
+        "end": "2015-01",
+        "start": "2010-12"
+      }
+    },
+    "assets": [
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/global-reference-assessment-v1/cop45/Copernicus_DSM_COG_10_N45_00_E007_00_DEM.tif",
+        "sha256": "638c155dd9a5f0b7ee818146def740093da33cee4606071b2bbf7ce3fa00ab95"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/global-reference-assessment-v1/cop46/Copernicus_DSM_COG_10_N46_00_E007_00_DEM.tif",
+        "sha256": "426e3d1492d94e4f23d444843f852ff5be675da5c4c14e661b5642006864047d"
+      }
+    ],
+    "authority": {
+      "status": "known",
+      "value": "European Union Copernicus / ESA; WorldDEM basis produced by Airbus with DLR TanDEM-X observations"
+    },
+    "coverage": {
+      "area": {
+        "status": "known",
+        "value": {
+          "axisOrder": "xy",
+          "bounds": [
+            6.9998611111111115,
+            45.00013888888889,
+            7.9998611111111115,
+            47.00013888888889
+          ],
+          "crs": {
+            "identifier": "EPSG:4326",
+            "name": "WGS 84; documentation states G1150, TIFF identifies generic EPSG:4326"
+          },
+          "kind": "native-rectangle"
+        }
+      },
+      "scope": "retained-input-selection"
+    },
+    "dataset": "Copernicus DEM GLO-30",
+    "documentation": [
+      "docs/atlas/global-reference-assessment.md",
+      "docs/atlas/global-reference-acquisition.json",
+      "docs/atlas/global-reference-measurements.json",
+      "https://registry.opendata.aws/copernicus-dem/",
+      "https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM"
+    ],
+    "elevationUnit": {
+      "status": "known",
+      "value": "metre"
+    },
+    "horizontalReference": {
+      "status": "known",
+      "value": {
+        "identifier": "EPSG:4326",
+        "name": "WGS 84; documentation states G1150, TIFF identifies generic EPSG:4326"
+      }
+    },
+    "id": "copernicus-glo30-riffelhorn-2021-input-selection",
+    "name": "Copernicus GLO-30: retained Riffelhorn inputs from public 2021 COG distribution",
+    "nodata": {
+      "status": "known",
+      "value": "Retained float32 COGs declare no nodata; 10 km comparison fully finite. Public missing tiles can indicate ocean or absent/restricted land, not automatically zero land."
+    },
+    "quality": {
+      "status": "known",
+      "value": "Published global specifications: absolute vertical <4 m LE90, horizontal <6 m CE90; terrain/ice limitations and local residuals matter. Not a local accuracy certificate."
+    },
+    "release": {
+      "status": "known",
+      "value": "Public mirror documents 2021 release; exact 2021 sub-release not established"
+    },
+    "resolution": {
+      "gridSpacing": {
+        "crs": {
+          "identifier": "EPSG:4326",
+          "name": "WGS 84; documentation states G1150, TIFF identifies generic EPSG:4326"
+        },
+        "unit": "arcsecond",
+        "x": 1,
+        "y": 1
+      },
+      "limitations": "Approximately 21.5 m east-west and 30.9 m north-south here; no metre-scale detail. Exact per-post acquisition and contributing infill are not supplied by the two retained COGs.",
+      "measurementResolution": {
+        "reason": "Delivery posting is not independent measurement resolution; radar support, editing and filling vary.",
+        "status": "unknown"
+      },
+      "nominalResolution": {
+        "status": "known",
+        "value": "Retained latitude-band posting is one arcsecond; longitude posting varies with latitude globally."
+      }
+    },
+    "revision": {
+      "status": "known",
+      "value": "10dde531ab44cdb598264aaa7d8e3150728b996dcd6e34e74245ef16f6106b0e"
+    },
+    "rights": {
+      "attribution": [
+        "Use the applicable full unmodified/modified notice and Article 6 obligations in the licence; this summary is not the legal delivery notice."
+      ],
+      "licence": {
+        "status": "known",
+        "value": "Copernicus DEM GLO-30 F free/open licence, Annex pp.20-22"
+      },
+      "limitations": "Derivative hosting permitted subject to attribution, liability, non-endorsement and downstream obligations. Do not substitute restricted GLO-30 R terms or the mirror software licence.",
+      "references": [
+        "https://s3.waw3-1.cloudferro.com/swift/v1/portal_uploads_prod/CSCDA_ESA_Mission-specific_Annex_31_Oct_22_latest.pdf"
+      ]
+    },
+    "surface": {
+      "description": "Edited surface model including vegetation/buildings; water/hydrological editing and heterogeneous void filling. Not a bare-earth DTM.",
+      "kind": "dsm"
+    },
+    "verticalReference": {
+      "status": "known",
+      "value": {
+        "identifier": "EPSG:3855",
+        "name": "EGM2008 height"
+      }
+    }
+  }
+}

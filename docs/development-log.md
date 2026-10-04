@@ -3171,3 +3171,52 @@ contracts, numerical/visual findings, limitations and reproduction commands.
 The next bounded decision is physical global-reference/overlap assessment with
 defensible stable-terrain evidence, using this asset. No subsequent reference
 evaluation, reconciliation, acquisition, resolver or imagery work is performed.
+
+
+## 2026-10-04 — Global terrain reference and stable-overlap assessment
+
+Started clean main at `68fccda`, local origin/main 0/0. Verified all retained
+Swiss source/tile hashes and production invariants. Defined reference role,
+decision criteria and independent mask protocol before numerical comparison.
+Reviewed authoritative AWS/Joerd, Copernicus, Nuth & Kääb/later co-registration,
+GLAMOS/WorldCover and Swiss/NGA vertical-grid evidence. One alternative only:
+Copernicus GLO-30; no general provider survey or Mapterhorn rerun.
+
+Retained two official-distribution public COGs (84.37 MB), explicit older 2021
+mirror identity, three glacier inventories, a bounded WorldCover window and
+defined local geoid grids. Total frozen acquisition is 215.84 MB; all source
+hashes/URLs and limitations are in the acquisition record. Offline diagnostic
+arrays/masks/maps remain external (about 10.8 MB), not terrain pyramids in Git.
+
+On 7.003 km² of conservative independently selected candidate stable terrain,
+Swiss-minus-AWS median/NMAD/RMS is +7.85/9.46/14.88 m. Copernicus common-height
+diagnostic gives -0.22/1.79/5.93 m; raw LN02 comparison is also retained.
+The defined LN02-to-EGM2008 diagnostic changes heights by +0.17...+0.75 m,
+not enough to explain large terrain disagreement; combined geodetic accuracy
+remains unknown. No source/product height correction was applied.
+
+Sensitivity supports the comparison, but only 299 cells qualify in the southeast.
+Large ridge outliers remain (Copernicus +116.78 m; AWS +173.16 m); ice/temporal
+and DSM/DTM differences are not assigned invented causes. Translation signatures
+are smaller for Copernicus but vary by sector: no shift is accepted or applied.
+Average COG parents agree with direct means within float32 rounding. Global
+support/missing-land/ocean and revision decisions remain explicit prerequisites.
+
+The [assessment](atlas/global-reference-assessment.md) recommends Copernicus as
+the candidate accountable common/coarse reference, distinct from best available
+visual terrain. Existing Atlas types describe the retained published source,
+COG derivative and transformed diagnostic; no production metadata adoption or
+new resolver abstraction. Production AWS, independent analytical z15, IGOR,
+exaggeration 1.45, satellite, camera/lifecycle, Weather and Traverse have no diff.
+
+Verification: repeat matched all 18 array hashes and build identity; 23 synthetic
+Atlas Python tests and 156 active Node tests passed, 1 existing optional skip.
+Lint, TypeScript and application-only production build passed, retaining the
+large-chunk warning; external GFS publication/public copying omitted. Metadata,
+source/hash and document references checked. One invalid test-root invocation
+was corrected to an empty external root; no unrelated tests changed.
+
+Next bounded step: prepare a separate local Copernicus common/coarse delivery
+product with frozen release, explicit height, missing-support and parent policy;
+repeat overlap evidence before substituting a newer CDSE release. No blended
+hierarchy, reconciliation, imagery or subsequent implementation performed here.

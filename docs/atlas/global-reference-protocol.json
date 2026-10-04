@@ -1,0 +1,28 @@
+{
+  "version": "riffelhorn-global-reference-assessment-v1",
+  "baseline": "68fccda1516515bf08ad63867ace8696362ad796",
+  "role": "Accountable common/coarse elevation foundation beneath independently justified regional visual information; neither analytical policy nor universally best-detail surface.",
+  "candidates": ["current AWS Terrarium hosted derivative", "Copernicus DEM GLO-30, using explicitly identified public 2021 COG distribution for this bounded test"],
+  "selectionRationale": "One alternative with broad land coverage, identified radar/editing/filling lineage, declared EGM2008 heights, open derivative rights and reproducible access. No extra candidate added solely to enlarge the survey.",
+  "decisionCriteriaBeforeNumericalResults": [
+    "Documented terrain and vertical semantics; unknown height lineage prevents physical reference claims.",
+    "Identifiable release, frozen asset hashes, accessible source inputs and reproducible processing.",
+    "Global/near-global land support, explicit missing/ocean/polar limitations; a hosting service is not a dataset.",
+    "Rights permitting derivative delivery with explicit obligations.",
+    "Stable-overlap relationship: spatial residuals and registration consistency, not only lowest RMS.",
+    "Coarse-parent generation feasibility and coherent large-scale source support.",
+    "Operational source volume and revision burden feasible to plan, without requiring full mirroring now."
+  ],
+  "comparison": {
+    "boundsLV95": [2620000,1087000,2630000,1097000],
+    "gridMetres":25,
+    "swiss": "Area-average official LV95 DTM onto 400x400 diagnostic grid.",
+    "global": "Bilinear source sampling/reprojection onto same horizontal grid; shared sampling does not establish identical measurement footprints.",
+    "height": "Raw LN02 versus declared EGM2008 first. A separately recorded Swiss-to-EGM2008 diagnostic only if authoritative grids/defined operation are available. AWS never receives an invented height transformation.",
+    "mask": "Independent land-cover, glacier inventories and source-support evidence, then slope screening; never use elevation differences to decide primary mask.",
+    "primary": {"landCover":"bare/sparse vegetation only; conservative cell exclusion for other classes", "sourceEdgeMetres":200, "glacierBufferMetres":250, "slopeDegrees":[5,40]},
+    "sensitivity": {"glacierBuffersMetres":[100,500],"slopeRangesDegrees":[[3,45],[10,35]]},
+    "registration": "Nuth-Kaab translation signature expressed as robust difference ~ east/north gradient + vertical intercept; slope/aspect bins, independent quadrants and held-out spatial blocks. Diagnostic coefficients only; no product corrected. Fit clipping retained separately from the independent mask."
+  },
+  "exclusions": "No reconciliation, feathering, source selection, terrain hierarchy, production migration, analytical migration or imagery processing."
+}

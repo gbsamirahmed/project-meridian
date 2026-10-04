@@ -1,0 +1,7 @@
+# Isolated offline assessment tools, not production or normal CI dependencies.
+# Reuses the existing Earth Lab scientific environment. No xdem/SciPy required.
+numpy==2.5.3
+rasterio==1.4.3
+pyproj==3.7.2
+matplotlib==3.10.6
+pyshp==2.3.1
