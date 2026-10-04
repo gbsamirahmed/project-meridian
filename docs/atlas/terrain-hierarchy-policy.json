@@ -1,0 +1,17 @@
+{
+  "status": "bounded experimental policy, not accepted production hierarchy",
+  "baseline": "74ea75b1577fbdd7a85af3a1989ac8aee42c54f0",
+  "heightPolicy": "Preserve Copernicus EGM2008 and Swiss LN02. No vertical or horizontal correction. The composite is explicitly heterogeneous.",
+  "candidateStrategies": {
+    "common": "Common-only control; original tiles through z13, explicitly resampled common signal above z13.",
+    "H0": "Use exact Swiss delivery tile where present at that requested DEM level; common otherwise.",
+    "H1": "Use common below requested DEM z14; exact supported Swiss tiles at z14-18; common otherwise."
+  },
+  "regionalTileGate": 14,
+  "gateBasis": "Fixed discovery cameras: little change at landscape/planning; obvious additional channels/ledges at camera 13.2 and increasingly close views. Gate is conservative for the bounded test, not an optimum or universal camera threshold. Geometry and relief request different DEM levels; actual requests are recorded.",
+  "supportPolicy": "Whole supported Swiss delivery tiles at each level; no rectangle-centre decision, no invented partial coverage. Explicit Copernicus fallback within its finite two-root context.",
+  "protectedInterior": "When Swiss tiles are selected, retain exact original PNG heights. Coarse common representation is not claimed to preserve Swiss point heights.",
+  "composition": "Pure tile labels only: 0 Copernicus EGM2008, 1 swissALTI3D LN02. No mixed-weight cells, no confidence interpretation.",
+  "deferred": "No feather, fitted offset, transformed Swiss, derived collar, seamline or generic resolver. Spatial transition support remains unresolved.",
+  "productSuffix": "-discovery"
+}

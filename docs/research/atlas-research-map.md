@@ -90,6 +90,15 @@ or production migration occurred. The asset supports a later bounded hierarchy
 experiment with explicit height, contributor and support policy; it does not establish
 that experiment's result or authorize a generic resolver.
 
+The [bounded Copernicus/Swiss hierarchy](../atlas/terrain-hierarchy-prototype.md)
+then tested hard per-level substitution and scale-gated regional children. Fine
+Swiss terrain remains exact and coarse common context loads, but moving support
+frontiers, spatial bands/walls and large common-to-Swiss LOD changes remain.
+This negative result distinguishes scale selection from spatial continuity and
+height semantics. No transformation, smoothing collar, general resolver or
+production adoption was accepted; the suggested regional-parent diagnostic is
+a future direction, not an automatically started phase.
+
 ## Evidence classes
 
 - **MERIDIAN EVIDENCE (M):** measurements, inspected outputs and negative results

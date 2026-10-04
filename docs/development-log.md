@@ -3259,3 +3259,36 @@ remain external and normal CI/startup requires none of them.
 Next bounded step: test this coarse product with the identified Swiss regional
 asset under explicit scale, contributor, height-reference and finite-support
 rules. No hierarchy, reconciliation, resolver, imagery or next phase started here.
+
+## 2026-10-05 — Bounded Copernicus/Swiss terrain hierarchy
+
+Tested the [first controlled hierarchy](atlas/terrain-hierarchy-prototype.md)
+from frozen common/coarse and authoritative regional products. An isolated
+loopback tile service selects exact source tiles by per-level support and an
+explicit z14 requested-DEM gate; common above13 is labelled delivery overzoom.
+Native EGM2008/LN02 semantics are retained and every evaluated tile/cell has a
+contributor label, source identities and deterministic hashes. No runtime module,
+analytical elevation, Weather, Traverse, IGOR or exaggeration changed.
+
+The result is negative for adoption: coarse context works and Swiss close/detail
+structure remains useful and unchanged, but hard substitution and scale gating
+retain spatial walls/bands and substantial parent/child discontinuity. Protected
+interior sampled differences from selected Swiss are zero. Common13→Swiss14
+differences reach about103 m; later Swiss refinements are much smaller. Twelve
+fixed boundary strips at each tested level expose jumps up to167 m at14 and
+about45 m at16/18. Rotation and lateral navigation do not remove the join.
+No broad smoothing, datum correction, third fusion method or general resolver
+was added. The existing metadata model represents the experiment without extension.
+
+Validation:33 Python tests and164 active Node tests passed,1 existing optional
+skip; lint, TypeScript and application-only build passed. All evaluated tiles/masks
+match the independent rebuild; source identities, metadata and links verified.
+Exact identities, numerical strata and controlled static/moving records are
+linked from the report. Large products and
+captures remain external; normal startup/CI requires none of them. Existing
+application-only build warnings remain; unrelated publication ingestion omitted.
+
+Next suggested bounded investigation: a regional-preserving parent diagnostic on
+one protected-interior tile and neighboring support, keeping common reference
+and best available representation distinct. Spatial seam/transition support and
+global coverage remain separate unresolved decisions. No next phase started.

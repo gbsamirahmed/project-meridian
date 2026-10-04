@@ -1,0 +1,676 @@
+{
+  "checks": {
+    "areaInterpretation": "Projected Mercator area of full original Swiss per-level delivery support; not physical land area, sampled inventory area, confidence, or validated transition support.",
+    "baseline": "74ea75b1577fbdd7a85af3a1989ac8aee42c54f0",
+    "configuration": {
+      "delivery": "XYZ Mercator 256px Terrarium z8-18; common above13 explicitly bilinear overzoom",
+      "gate": 14,
+      "height": "native heterogeneous LN02 / EGM2008, no correction or blending",
+      "identity": "f9a0c0e64fd3f2f30cd5c2a7890dfc38c0feea4e3ee34b6bd0cf3e5ffedb43ae",
+      "parents": {
+        "common": "8f002dcbdeceb6aa37cc9eeef9f2d2060193b1eff7922ddb1d0535a6b8030da2",
+        "swiss": "1a44a0644de1bde73a3ba84d1b761dc0aa17d48cc971e5f6b5d2c14fb329d7ea"
+      },
+      "support": "Swiss complete per-level delivery inventory; no coverage implied by fallback",
+      "toolSha256": "1072eb9fd62ce7503cd275e550a63ecd3bb083a595f9fa58aac3378ae097fc8d",
+      "version": "riffelhorn-terrain-hierarchy-v1"
+    },
+    "counts": {
+      "H0/z10/label0": 18,
+      "H0/z11/label0": 37,
+      "H0/z12/label0": 36,
+      "H0/z12/label1": 1,
+      "H0/z13/label0": 52,
+      "H0/z13/label1": 4,
+      "H0/z14/label0": 73,
+      "H0/z14/label1": 25,
+      "H0/z15/label0": 82,
+      "H0/z15/label1": 100,
+      "H0/z16/label0": 141,
+      "H0/z16/label1": 117,
+      "H0/z17/label0": 86,
+      "H0/z17/label1": 103,
+      "H0/z18/label1": 632,
+      "H0/z8/label0": 2,
+      "H0/z9/label0": 8,
+      "H1/z10/label0": 18,
+      "H1/z11/label0": 42,
+      "H1/z12/label0": 35,
+      "H1/z13/label0": 55,
+      "H1/z14/label0": 66,
+      "H1/z14/label1": 25,
+      "H1/z15/label0": 82,
+      "H1/z15/label1": 94,
+      "H1/z16/label0": 145,
+      "H1/z16/label1": 110,
+      "H1/z17/label0": 86,
+      "H1/z17/label1": 225,
+      "H1/z18/label0": 12,
+      "H1/z18/label1": 641,
+      "H1/z8/label0": 2,
+      "H1/z9/label0": 8,
+      "common/z10/label0": 14,
+      "common/z11/label0": 32,
+      "common/z12/label0": 37,
+      "common/z13/label0": 49,
+      "common/z14/label0": 60,
+      "common/z15/label0": 74,
+      "common/z16/label0": 82,
+      "common/z17/label0": 34,
+      "common/z18/label0": 653,
+      "common/z8/label0": 2,
+      "common/z9/label0": 6
+    },
+    "eligibleRegionalByLevel": {
+      "12": {
+        "H0RegionalTiles": 1,
+        "H1RegionalTiles": 0,
+        "areaMercatorM2": 95725474.49763979,
+        "completeTiles": 1,
+        "mixedProductCells": 0
+      },
+      "13": {
+        "H0RegionalTiles": 4,
+        "H1RegionalTiles": 0,
+        "areaMercatorM2": 95725474.49763979,
+        "completeTiles": 4,
+        "mixedProductCells": 0
+      },
+      "14": {
+        "H0RegionalTiles": 25,
+        "H1RegionalTiles": 25,
+        "areaMercatorM2": 149571053.90256217,
+        "completeTiles": 25,
+        "mixedProductCells": 0
+      },
+      "15": {
+        "H0RegionalTiles": 121,
+        "H1RegionalTiles": 121,
+        "areaMercatorM2": 180980975.22210023,
+        "completeTiles": 121,
+        "mixedProductCells": 0
+      },
+      "16": {
+        "H0RegionalTiles": 506,
+        "H1RegionalTiles": 506,
+        "areaMercatorM2": 189207383.18674114,
+        "completeTiles": 506,
+        "mixedProductCells": 0
+      },
+      "17": {
+        "H0RegionalTiles": 2118,
+        "H1RegionalTiles": 2118,
+        "areaMercatorM2": 197994682.60351667,
+        "completeTiles": 2118,
+        "mixedProductCells": 0
+      },
+      "18": {
+        "H0RegionalTiles": 8654,
+        "H1RegionalTiles": 8654,
+        "areaMercatorM2": 202248109.44887078,
+        "completeTiles": 8654,
+        "mixedProductCells": 0
+      }
+    },
+    "exactCommonThroughZ13": true,
+    "exactSwissBytes": true,
+    "identity": "1455456e250d5ae4333e3642028b63f0d4d820adab0a07a471efc2f59262d068",
+    "manifestSha256": "b574d1864e361d52f24762bcd721df2cf29718fe0271e223b165e00e5b6538ea",
+    "maskBytes": 1268175,
+    "overzoomQuantizationMaxM": 0.001953125,
+    "rebuild": {
+      "identity": "1455456e250d5ae4333e3642028b63f0d4d820adab0a07a471efc2f59262d068",
+      "initialRunRecord": {
+        "href": "${MERIDIAN_DATA_ROOT}/experiments/atlas/riffelhorn-terrain-hierarchy-v1/initial-independent-rebuild.txt",
+        "sha256": "9079bb11640b3ebb6c83044446ca76f9c2406657b0ca66ae4dd14c10e239a270"
+      },
+      "lastVerificationSeconds": 4.911276099970564,
+      "seconds": 103.5263376000803,
+      "tilesAndMasksMatched": 4206
+    },
+    "scope": "Sparse numeric/capture/requested inventory, not full delivered area or global generation",
+    "software": {
+      "numpy": "2.5.3",
+      "pillow": "12.3.0",
+      "python": "3.12.6"
+    },
+    "terrainBytes": 333209261,
+    "tiles": 4206
+  },
+  "product": {
+    "delivery": {
+      "availability": "Only evaluated sparse tile inventory; generator serves finite common two-root descendants z8-18. Swiss available complete original delivery tiles only, subject to strategy gate. No z0-7 or outer fallback.",
+      "encoding": {
+        "description": "R*256+G+B/256-32768 metres; nearest quantization; EGM2008 unchanged",
+        "name": "terrarium",
+        "quantizationIncrement": {
+          "unit": "metre",
+          "value": 0.00390625
+        }
+      },
+      "format": "lossless RGB PNG",
+      "horizontalReference": {
+        "status": "known",
+        "value": {
+          "identifier": "EPSG:3857",
+          "name": "WGS 84 / Pseudo-Mercator"
+        }
+      },
+      "kind": "raster-tiles",
+      "resampling": {
+        "status": "known",
+        "value": "Exact input PNG bytes through original levels; common above13 explicitly bilinear overzoom. No new observations."
+      },
+      "scheme": "xyz",
+      "tileSize": [
+        256,
+        256
+      ],
+      "tileTemplate": "${MERIDIAN_DATA_ROOT}/derived/atlas/riffelhorn/riffelhorn-terrain-hierarchy-v1-discovery/tiles/{strategy}/{z}/{x}/{y}.png",
+      "zoom": {
+        "max": {
+          "status": "known",
+          "value": 18
+        },
+        "min": 8
+      }
+    },
+    "documentation": [
+      "docs/atlas/terrain-hierarchy-prototype.md",
+      "docs/atlas/terrain-hierarchy-policy.json"
+    ],
+    "elevationUnit": {
+      "status": "known",
+      "value": "metre"
+    },
+    "fallback": {
+      "behavior": "Pure native-height common tile or explicitly overzoomed common signal; not extension of Swiss coverage.",
+      "product": {
+        "id": "riffelhorn-copernicus-common-v1",
+        "kind": "product",
+        "revision": {
+          "status": "known",
+          "value": "8f002dcbdeceb6aa37cc9eeef9f2d2060193b1eff7922ddb1d0535a6b8030da2"
+        }
+      },
+      "when": "Regional tile unavailable or excluded by requested-level gate, within finite common context"
+    },
+    "generation": {
+      "buildRecord": {
+        "href": "${MERIDIAN_DATA_ROOT}/derived/atlas/riffelhorn/riffelhorn-terrain-hierarchy-v1-discovery/manifest.json",
+        "sha256": "b574d1864e361d52f24762bcd721df2cf29718fe0271e223b165e00e5b6538ea"
+      },
+      "timestamp": {
+        "reason": "Deterministic lazy evaluated inventory; timestamps intentionally excluded from immutable identity.",
+        "status": "unknown"
+      }
+    },
+    "id": "riffelhorn-terrain-hierarchy-v1-discovery",
+    "lineage": {
+      "contributionMask": {
+        "asset": {
+          "href": "${MERIDIAN_DATA_ROOT}/derived/atlas/riffelhorn/riffelhorn-terrain-hierarchy-v1-discovery/manifest.json",
+          "sha256": "b574d1864e361d52f24762bcd721df2cf29718fe0271e223b165e00e5b6538ea"
+        },
+        "contributors": [
+          {
+            "id": "riffelhorn-copernicus-common-v1",
+            "kind": "product",
+            "revision": {
+              "status": "known",
+              "value": "8f002dcbdeceb6aa37cc9eeef9f2d2060193b1eff7922ddb1d0535a6b8030da2"
+            }
+          },
+          {
+            "id": "riffelhorn-swiss-support",
+            "kind": "product",
+            "revision": {
+              "status": "known",
+              "value": "1a44a0644de1bde73a3ba84d1b761dc0aa17d48cc971e5f6b5d2c14fb329d7ea"
+            }
+          }
+        ],
+        "interpretation": "files[].maskPath is a lossless constant uint8 label per tile/cell: 0 common EGM2008, 1 Swiss LN02. Strategy and zoom are required to interpret spatial contribution; labels are not confidence. No blended cells."
+      },
+      "contributorList": "complete",
+      "contributors": [
+        {
+          "id": "riffelhorn-copernicus-common-v1",
+          "kind": "product",
+          "revision": {
+            "status": "known",
+            "value": "8f002dcbdeceb6aa37cc9eeef9f2d2060193b1eff7922ddb1d0535a6b8030da2"
+          }
+        },
+        {
+          "id": "riffelhorn-swiss-support",
+          "kind": "product",
+          "revision": {
+            "status": "known",
+            "value": "1a44a0644de1bde73a3ba84d1b761dc0aa17d48cc971e5f6b5d2c14fb329d7ea"
+          }
+        }
+      ],
+      "limitations": "Complete immediate product contributors; upstream epoch/measurement limitations inherited. Sparse tested tiles only. Masks identify contributors but do not establish scientific comparability.",
+      "processing": [
+        {
+          "method": "Fixed evaluation tile selection by actual per-level Swiss delivery support and H0 / H1 requested DEM level policy",
+          "parameters": {
+            "blending": false,
+            "heightCorrection": false,
+            "regionalTileGate": 14
+          },
+          "record": {
+            "href": "docs/atlas/terrain-hierarchy-policy.json"
+          },
+          "software": {
+            "numpy": "2.5.3",
+            "pillow": "12.3.0",
+            "python": "3.12.6"
+          }
+        },
+        {
+          "method": "Common-only delivery above z13: neighbor-backfilled cell-centred bilinear resampling of encoded z13; independent nearest Terrarium re-encoding",
+          "parameters": {
+            "maximumDeliveryZoom": 18,
+            "quantizationIncrementM": 0.00390625
+          },
+          "software": {
+            "numpy": "2.5.3",
+            "pillow": "12.3.0",
+            "python": "3.12.6"
+          }
+        }
+      ],
+      "spatialMapping": "mask"
+    },
+    "name": "Bounded native-height Copernicus / Swiss hierarchy evaluation",
+    "nodata": {
+      "status": "known",
+      "value": "strict support propagation, omit any incomplete tile; no zero/alpha/AWS padding"
+    },
+    "producer": {
+      "status": "known",
+      "value": "Meridian"
+    },
+    "revision": {
+      "status": "known",
+      "value": "1455456e250d5ae4333e3642028b63f0d4d820adab0a07a471efc2f59262d068"
+    },
+    "rights": {
+      "attribution": [
+        "Use the applicable full unmodified/modified notice and Article 6 obligations in the licence; this summary is not the legal delivery notice.",
+        "\u00c2\u00a9swisstopo"
+      ],
+      "licence": {
+        "status": "known",
+        "value": "Contributor-specific Copernicus DEM GLO-30 F terms and swisstopo reuse terms; no unified software licence substitutes for these data rights."
+      },
+      "limitations": "Derivative hosting permitted subject to attribution, liability, non-endorsement and downstream obligations. Do not substitute restricted GLO-30 R terms or the mirror software licence.",
+      "references": [
+        "https://s3.waw3-1.cloudferro.com/swift/v1/portal_uploads_prod/CSCDA_ESA_Mission-specific_Annex_31_Oct_22_latest.pdf",
+        "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-and-geoservices"
+      ]
+    },
+    "sourceInformation": {
+      "description": "Common source is one-arcsecond GLO-30; Swiss distributed grid is 0.5 m. Neither delivery zoom nor contributor label implies independent measurement resolution.",
+      "informationCeiling": {
+        "status": "known",
+        "value": "Common z13 signal is resampled at z14-18. Swiss z14-18 retains its previously prepared signal; meaningful visible gain in evaluated close/detail views. No universal perceptual threshold."
+      }
+    },
+    "spatial": {
+      "coverage": {
+        "status": "known",
+        "value": {
+          "asset": {
+            "href": "${MERIDIAN_DATA_ROOT}/derived/atlas/riffelhorn/riffelhorn-terrain-hierarchy-v1-discovery/manifest.json",
+            "sha256": "b574d1864e361d52f24762bcd721df2cf29718fe0271e223b165e00e5b6538ea"
+          },
+          "crs": {
+            "status": "known",
+            "value": {
+              "identifier": "EPSG:3857",
+              "name": "WGS 84 / Pseudo-Mercator"
+            }
+          },
+          "interpretation": "files[].strategy/z/x/y defines per-policy sparse XYZ tile coverage, not complete source coverage.",
+          "kind": "asset"
+        }
+      },
+      "protectedInterior": {
+        "status": "known",
+        "value": {
+          "area": {
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    7.780566904469132,
+                    45.97905091086851
+                  ],
+                  [
+                    7.78048196139084,
+                    45.98037373834171
+                  ],
+                  [
+                    7.780211437660678,
+                    45.981684391226075
+                  ],
+                  [
+                    7.7797579256280835,
+                    45.982970245882086
+                  ],
+                  [
+                    7.779125780909685,
+                    45.98421891663044
+                  ],
+                  [
+                    7.7783210809018835,
+                    45.98541837511734
+                  ],
+                  [
+                    7.777351566656226,
+                    45.98655706626847
+                  ],
+                  [
+                    7.7762265686615795,
+                    45.98762401970994
+                  ],
+                  [
+                    7.774956917235283,
+                    45.98860895557883
+                  ],
+                  [
+                    7.773554838376432,
+                    45.9895023836977
+                  ],
+                  [
+                    7.772033836078446,
+                    45.990295695150735
+                  ],
+                  [
+                    7.770408562232079,
+                    45.99098124537405
+                  ],
+                  [
+                    7.768694675373551,
+                    45.99155242795111
+                  ],
+                  [
+                    7.766908689643697,
+                    45.9920037383976
+                  ],
+                  [
+                    7.76506781542206,
+                    45.99233082731426
+                  ],
+                  [
+                    7.763189793183134,
+                    45.9925305423906
+                  ],
+                  [
+                    7.761292722190268,
+                    45.99260095885025
+                  ],
+                  [
+                    7.759394885694377,
+                    45.99254139804225
+                  ],
+                  [
+                    7.757514574340125,
+                    45.99235243399583
+                  ],
+                  [
+                    7.755669909500037,
+                    45.99203588787609
+                  ],
+                  [
+                    7.753878668257878,
+                    45.99159481039325
+                  ],
+                  [
+                    7.752158111745946,
+                    45.991033452338705
+                  ],
+                  [
+                    7.75052481850724,
+                    45.990357223532826
+                  ],
+                  [
+                    7.748994524502718,
+                    45.989572640585855
+                  ],
+                  [
+                    7.747581971317416,
+                    45.98868726397941
+                  ],
+                  [
+                    7.746300764036657,
+                    45.98770962508124
+                  ],
+                  [
+                    7.745163240167091,
+                    45.986649143802666
+                  ],
+                  [
+                    7.744180350866988,
+                    45.9855160376982
+                  ],
+                  [
+                    7.743361555627701,
+                    45.98432122339065
+                  ],
+                  [
+                    7.742714731414984,
+                    45.983076211276874
+                  ],
+                  [
+                    7.742246097135784,
+                    45.98179299453489
+                  ],
+                  [
+                    7.7419601541454,
+                    45.98048393350668
+                  ],
+                  [
+                    7.741859643352613,
+                    45.979161636574354
+                  ],
+                  [
+                    7.741945519318327,
+                    45.977838838680256
+                  ],
+                  [
+                    7.742216941578152,
+                    45.97652827866389
+                  ],
+                  [
+                    7.742671283252661,
+                    45.975242576595875
+                  ],
+                  [
+                    7.743304156842558,
+                    45.973994112291535
+                  ],
+                  [
+                    7.7441094569413185,
+                    45.97279490617116
+                  ],
+                  [
+                    7.745079419436235,
+                    45.971656503610845
+                  ],
+                  [
+                    7.746204696612474,
+                    45.97058986389404
+                  ],
+                  [
+                    7.747474447423891,
+                    45.969605254827414
+                  ],
+                  [
+                    7.748876442052077,
+                    45.968712154029596
+                  ],
+                  [
+                    7.750397179740537,
+                    45.96791915783757
+                  ],
+                  [
+                    7.752022018767305,
+                    45.96723389870006
+                  ],
+                  [
+                    7.753735317306036,
+                    45.96666297184719
+                  ],
+                  [
+                    7.755520583824689,
+                    45.96621187193598
+                  ],
+                  [
+                    7.7573606355826055,
+                    45.96588494027497
+                  ],
+                  [
+                    7.7592377637121155,
+                    45.96568532313139
+                  ],
+                  [
+                    7.761133903310004,
+                    45.965614941518055
+                  ],
+                  [
+                    7.763030806918344,
+                    45.965674472746876
+                  ],
+                  [
+                    7.764910219742829,
+                    45.96586334392525
+                  ],
+                  [
+                    7.766754054940928,
+                    45.96617973745711
+                  ],
+                  [
+                    7.768544567311564,
+                    45.96662060849591
+                  ],
+                  [
+                    7.770264523732558,
+                    45.967181714183845
+                  ],
+                  [
+                    7.771897368722074,
+                    45.96785765439891
+                  ],
+                  [
+                    7.77342738354511,
+                    45.96864192362118
+                  ],
+                  [
+                    7.774839837345413,
+                    45.969526973425374
+                  ],
+                  [
+                    7.776121128856967,
+                    45.970504285002455
+                  ],
+                  [
+                    7.777258917336169,
+                    45.97156445102001
+                  ],
+                  [
+                    7.778242241455939,
+                    45.97269726603873
+                  ],
+                  [
+                    7.779061625015056,
+                    45.97389182462213
+                  ],
+                  [
+                    7.779709168438949,
+                    45.97513662620066
+                  ],
+                  [
+                    7.7801786251818,
+                    45.976419685687006
+                  ],
+                  [
+                    7.780465462281492,
+                    45.97772864878242
+                  ],
+                  [
+                    7.780566904469132,
+                    45.97905091086851
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "kind": "geojson"
+          },
+          "basis": "1.5 km radius around established LV95 benchmark; encloses original 2 km crop and local camera targets. Selection intent, not global validation.",
+          "purpose": "Preserve Riffelhorn/Riffelsee benchmark and nearby landforms in future integration experiments"
+        }
+      },
+      "transitionSupport": {
+        "reason": "Additional support is not a validated seam. H0/H1 retain a hard join; no transition representation accepted.",
+        "status": "unknown"
+      },
+      "validSupport": {
+        "reason": "Experiment shows hard spatial/LOD discontinuities; not accepted as navigation-ready hierarchy.",
+        "status": "unknown"
+      }
+    },
+    "surface": {
+      "description": "Selected Copernicus edited DSM and Swiss DTM. No scientific harmonization or mixed-cell fusion.",
+      "kind": "heterogeneous"
+    },
+    "version": {
+      "status": "known",
+      "value": "v1"
+    },
+    "vertical": {
+      "description": "Pure tiles retain native heights; globally no single vertical reference. No accepted vertical transformation.",
+      "kind": "heterogeneous",
+      "parts": [
+        {
+          "contributor": {
+            "id": "riffelhorn-copernicus-common-v1",
+            "kind": "product",
+            "revision": {
+              "status": "known",
+              "value": "8f002dcbdeceb6aa37cc9eeef9f2d2060193b1eff7922ddb1d0535a6b8030da2"
+            }
+          },
+          "reference": {
+            "status": "known",
+            "value": {
+              "identifier": "EPSG:3855",
+              "name": "EGM2008 height"
+            }
+          }
+        },
+        {
+          "contributor": {
+            "id": "riffelhorn-swiss-support",
+            "kind": "product",
+            "revision": {
+              "status": "known",
+              "value": "1a44a0644de1bde73a3ba84d1b761dc0aa17d48cc971e5f6b5d2c14fb329d7ea"
+            }
+          },
+          "reference": {
+            "status": "known",
+            "value": {
+              "identifier": "EPSG:5728",
+              "name": "LN02 height"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

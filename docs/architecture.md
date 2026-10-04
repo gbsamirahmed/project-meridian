@@ -195,6 +195,16 @@ finite perimeter gaps and absent z0–7/global water support remain explicit.
 This is the coarse-side asset for a later bounded hierarchy evaluation, not a
 Swiss join, general resolver, complete global hierarchy or production migration.
 
+The subsequent [bounded Copernicus/Swiss hierarchy](atlas/terrain-hierarchy-prototype.md)
+retained native EGM2008/LN02 heights and exact selected Swiss tiles, using actual
+per-level delivery support and a separate regional-detail gate. It demonstrated
+usable coarse context and useful close detail, but neither hard substitution nor
+scale gating established safe spatial or parent/child continuity. Metadata can
+represent its contributors and heterogeneous heights without a new model extension.
+Per-level support, actual geometry/relief loading scales and parent compatibility
+are now empirical requirements; no general hierarchy algorithm or production
+resolver is accepted. Production and independent analytical AWS remain unchanged.
+
 The conceptual relationship is:
 
 ```text
