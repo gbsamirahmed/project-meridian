@@ -1,0 +1,475 @@
+{
+  "independentRebuild": {
+    "allTileHashesMatch": true,
+    "identity": "8f002dcbdeceb6aa37cc9eeef9f2d2060193b1eff7922ddb1d0535a6b8030da2",
+    "workingRasterHashesMatch": true
+  },
+  "parentRule": [
+    {
+      "allPixelAggregationMaxDifferenceMetres": 0.0,
+      "encodingMaxDifferenceMetres": 0.001953125,
+      "zoom": 8
+    },
+    {
+      "allPixelAggregationMaxDifferenceMetres": 0.0,
+      "encodingMaxDifferenceMetres": 0.001953125,
+      "zoom": 9
+    },
+    {
+      "allPixelAggregationMaxDifferenceMetres": 0.0,
+      "encodingMaxDifferenceMetres": 0.001953125,
+      "zoom": 10
+    },
+    {
+      "allPixelAggregationMaxDifferenceMetres": 0.0,
+      "encodingMaxDifferenceMetres": 0.001953125,
+      "zoom": 11
+    },
+    {
+      "allPixelAggregationMaxDifferenceMetres": 0.0,
+      "encodingMaxDifferenceMetres": 0.001953125,
+      "zoom": 12
+    }
+  ],
+  "patches": [
+    {
+      "levels": [
+        {
+          "directFinestBlockMeanMaxDifference": 0.0001270771026611328,
+          "height": {
+            "count": 1,
+            "max": 2661.281494140625,
+            "mean": 2661.281494140625,
+            "min": 2661.281494140625,
+            "p50": 2661.281494140625,
+            "p95Absolute": 2661.281494140625,
+            "rms": 2661.281494140625
+          },
+          "zoom": 8
+        },
+        {
+          "directFinestBlockMeanMaxDifference": 0.0001239776611328125,
+          "height": {
+            "count": 4,
+            "max": 2770.78955078125,
+            "mean": 2661.2814331054688,
+            "min": 2539.31982421875,
+            "p50": 2667.5081787109375,
+            "p95Absolute": 2768.8708984375,
+            "rms": 2663.315446984622
+          },
+          "zoom": 9
+        },
+        {
+          "directFinestBlockMeanMaxDifference": 0.000171661376953125,
+          "height": {
+            "count": 16,
+            "max": 2829.271484375,
+            "mean": 2661.2813720703125,
+            "min": 2442.34912109375,
+            "p50": 2670.20654296875,
+            "p95Absolute": 2815.3582153320312,
+            "rms": 2663.8278597393437
+          },
+          "zoom": 10
+        },
+        {
+          "directFinestBlockMeanMaxDifference": 0.0001678466796875,
+          "height": {
+            "count": 64,
+            "max": 2842.893310546875,
+            "mean": 2661.2813720703125,
+            "min": 2399.20361328125,
+            "p50": 2666.373046875,
+            "p95Absolute": 2824.9853515625,
+            "rms": 2663.954986128895
+          },
+          "zoom": 11
+        },
+        {
+          "directFinestBlockMeanMaxDifference": 0.0001220703125,
+          "height": {
+            "count": 256,
+            "max": 2849.8857421875,
+            "mean": 2661.2813682556152,
+            "min": 2384.3681640625,
+            "p50": 2669.0177001953125,
+            "p95Absolute": 2829.5604858398438,
+            "rms": 2663.988139913353
+          },
+          "zoom": 12
+        },
+        {
+          "directFinestBlockMeanMaxDifference": 0.0,
+          "height": {
+            "count": 1024,
+            "max": 2851.5458984375,
+            "mean": 2661.2813670635223,
+            "min": 2380.121337890625,
+            "p50": 2672.37158203125,
+            "p95Absolute": 2829.181188964844,
+            "rms": 2663.996610894611
+          },
+          "zoom": 13
+        }
+      ],
+      "location": [
+        7.76121329,
+        45.97910794
+      ],
+      "name": "riffelhorn-ridge"
+    },
+    {
+      "levels": [
+        {
+          "directFinestBlockMeanMaxDifference": 1.3113021850585938e-05,
+          "height": {
+            "count": 1,
+            "max": 3262.951416015625,
+            "mean": 3262.951416015625,
+            "min": 3262.951416015625,
+            "p50": 3262.951416015625,
+            "p95Absolute": 3262.951416015625,
+            "rms": 3262.951416015625
+          },
+          "zoom": 8
+        },
+        {
+          "directFinestBlockMeanMaxDifference": 0.00010013580322265625,
+          "height": {
+            "count": 4,
+            "max": 3436.52587890625,
+            "mean": 3262.951416015625,
+            "min": 3124.436279296875,
+            "p50": 3245.4217529296875,
+            "p95Absolute": 3414.4124877929685,
+            "rms": 3265.0096875309487
+          },
+          "zoom": 9
+        },
+        {
+          "directFinestBlockMeanMaxDifference": 0.0001373291015625,
+          "height": {
+            "count": 16,
+            "max": 3519.529296875,
+            "mean": 3262.951431274414,
+            "min": 3065.383544921875,
+            "p50": 3256.296142578125,
+            "p95Absolute": 3477.8817749023438,
+            "rms": 3265.494425871771
+          },
+          "zoom": 10
+        },
+        {
+          "directFinestBlockMeanMaxDifference": 0.0001983642578125,
+          "height": {
+            "count": 64,
+            "max": 3560.1396484375,
+            "mean": 3262.951431274414,
+            "min": 3028.13671875,
+            "p50": 3243.35009765625,
+            "p95Absolute": 3495.9097534179687,
+            "rms": 3265.627752869922
+          },
+          "zoom": 11
+        },
+        {
+          "directFinestBlockMeanMaxDifference": 0.0001220703125,
+          "height": {
+            "count": 256,
+            "max": 3577.47314453125,
+            "mean": 3262.9514207839966,
+            "min": 3010.51708984375,
+            "p50": 3248.86181640625,
+            "p95Absolute": 3496.6241455078125,
+            "rms": 3265.66300867025
+          },
+          "zoom": 12
+        },
+        {
+          "directFinestBlockMeanMaxDifference": 0.0,
+          "height": {
+            "count": 1024,
+            "max": 3585.1474609375,
+            "mean": 3262.951429128647,
+            "min": 3004.594482421875,
+            "p50": 3249.5556640625,
+            "p95Absolute": 3498.9187744140627,
+            "rms": 3265.672224019774
+          },
+          "zoom": 13
+        }
+      ],
+      "location": [
+        7.75,
+        46.12
+      ],
+      "name": "alpine-valley"
+    },
+    {
+      "levels": [
+        {
+          "directFinestBlockMeanMaxDifference": 4.9173831939697266e-05,
+          "height": {
+            "count": 1,
+            "max": 531.94970703125,
+            "mean": 531.94970703125,
+            "min": 531.94970703125,
+            "p50": 531.94970703125,
+            "p95Absolute": 531.94970703125,
+            "rms": 531.94970703125
+          },
+          "zoom": 8
+        },
+        {
+          "directFinestBlockMeanMaxDifference": 4.410743713378906e-05,
+          "height": {
+            "count": 4,
+            "max": 533.07861328125,
+            "mean": 531.9496765136719,
+            "min": 530.7180786132812,
+            "p50": 532.0010070800781,
+            "p95Absolute": 532.9996124267578,
+            "rms": 531.9504763202716
+          },
+          "zoom": 9
+        },
+        {
+          "directFinestBlockMeanMaxDifference": 5.626678466796875e-05,
+          "height": {
+            "count": 16,
+            "max": 535.86328125,
+            "mean": 531.9496726989746,
+            "min": 529.2760620117188,
+            "p50": 531.6936950683594,
+            "p95Absolute": 534.0720520019531,
+            "rms": 531.9519329605461
+          },
+          "zoom": 10
+        },
+        {
+          "directFinestBlockMeanMaxDifference": 5.340576171875e-05,
+          "height": {
+            "count": 64,
+            "max": 539.1436157226562,
+            "mean": 531.9496631622314,
+            "min": 528.3458251953125,
+            "p50": 532.0986633300781,
+            "p95Absolute": 535.4673675537109,
+            "rms": 531.954355883906
+          },
+          "zoom": 11
+        },
+        {
+          "directFinestBlockMeanMaxDifference": 3.0517578125e-05,
+          "height": {
+            "count": 256,
+            "max": 540.6605224609375,
+            "mean": 531.9496593475342,
+            "min": 527.5,
+            "p50": 531.9020080566406,
+            "p95Absolute": 535.6293182373047,
+            "rms": 531.955432212942
+          },
+          "zoom": 12
+        },
+        {
+          "directFinestBlockMeanMaxDifference": 0.0,
+          "height": {
+            "count": 1024,
+            "max": 541.1315307617188,
+            "mean": 531.9496578574181,
+            "min": 526.9715576171875,
+            "p50": 532.0853576660156,
+            "p95Absolute": 535.7461242675781,
+            "rms": 531.9558255809332
+          },
+          "zoom": 13
+        }
+      ],
+      "location": [
+        7.4,
+        45.74
+      ],
+      "name": "aosta-valley"
+    },
+    {
+      "levels": [
+        {
+          "directFinestBlockMeanMaxDifference": 9.775161743164062e-06,
+          "height": {
+            "count": 1,
+            "max": 659.2328491210938,
+            "mean": 659.2328491210938,
+            "min": 659.2328491210938,
+            "p50": 659.2328491210938,
+            "p95Absolute": 659.2328491210938,
+            "rms": 659.2328491210938
+          },
+          "zoom": 8
+        },
+        {
+          "directFinestBlockMeanMaxDifference": 3.218650817871094e-05,
+          "height": {
+            "count": 4,
+            "max": 661.3488159179688,
+            "mean": 659.2328338623047,
+            "min": 655.4502563476562,
+            "p50": 660.0661315917969,
+            "p95Absolute": 661.2517242431641,
+            "rms": 659.2368122484992
+          },
+          "zoom": 9
+        },
+        {
+          "directFinestBlockMeanMaxDifference": 4.76837158203125e-05,
+          "height": {
+            "count": 16,
+            "max": 669.0182495117188,
+            "mean": 659.232837677002,
+            "min": 646.6279296875,
+            "p50": 659.2796630859375,
+            "p95Absolute": 668.1282196044922,
+            "rms": 659.2705907667381
+          },
+          "zoom": 10
+        },
+        {
+          "directFinestBlockMeanMaxDifference": 4.1961669921875e-05,
+          "height": {
+            "count": 64,
+            "max": 672.7269897460938,
+            "mean": 659.2328357696533,
+            "min": 638.9874877929688,
+            "p50": 659.8384094238281,
+            "p95Absolute": 671.6327667236328,
+            "rms": 659.2840559525645
+          },
+          "zoom": 11
+        },
+        {
+          "directFinestBlockMeanMaxDifference": 3.0517578125e-05,
+          "height": {
+            "count": 256,
+            "max": 675.541015625,
+            "mean": 659.2328386306763,
+            "min": 633.2117309570312,
+            "p50": 659.6234436035156,
+            "p95Absolute": 672.1728515625,
+            "rms": 659.289196204604
+          },
+          "zoom": 12
+        },
+        {
+          "directFinestBlockMeanMaxDifference": 0.0,
+          "height": {
+            "count": 1024,
+            "max": 676.61669921875,
+            "mean": 659.232839345932,
+            "min": 628.415771484375,
+            "p50": 659.5788879394531,
+            "p95Absolute": 672.5864013671875,
+            "rms": 659.2909225308335
+          },
+          "zoom": 13
+        }
+      ],
+      "location": [
+        7.35,
+        46.92
+      ],
+      "name": "gentler-bern"
+    }
+  ],
+  "preparationAccuracyOnly": true,
+  "productIdentity": "8f002dcbdeceb6aa37cc9eeef9f2d2060193b1eff7922ddb1d0535a6b8030da2",
+  "sourceTransfer": {
+    "count": 2048,
+    "max": 0.00012195957515359623,
+    "mean": -1.1469945176284524e-06,
+    "min": -0.00012134202142988215,
+    "p50": -1.1720284192051622e-06,
+    "p95Absolute": 9.933991384514224e-05,
+    "rms": 4.3775532335090275e-05
+  },
+  "tileBoundaries": [
+    {
+      "allTileWindowMaxEncodingDifference": 0.001953125,
+      "fullRaster": {
+        "count": 131072,
+        "max": 4440.44873046875,
+        "mean": 1450.5120660431567,
+        "min": 107.3099365234375,
+        "zeroCells": 0
+      },
+      "interpretation": "Adjacent pixel centres need not have equal heights; same global raster used on both sides.",
+      "naturalAdjacentSampleChangeAtTileJoinsMax": 431.3001708984375,
+      "zoom": 8
+    },
+    {
+      "allTileWindowMaxEncodingDifference": 0.001953125,
+      "fullRaster": {
+        "count": 524288,
+        "max": 4490.6162109375,
+        "mean": 1450.512065843839,
+        "min": 104.23574829101562,
+        "zeroCells": 0
+      },
+      "interpretation": "Adjacent pixel centres need not have equal heights; same global raster used on both sides.",
+      "naturalAdjacentSampleChangeAtTileJoinsMax": 328.626708984375,
+      "zoom": 9
+    },
+    {
+      "allTileWindowMaxEncodingDifference": 0.001953125,
+      "fullRaster": {
+        "count": 2097152,
+        "max": 4520.666015625,
+        "mean": 1450.51206579278,
+        "min": 103.06483459472656,
+        "zeroCells": 0
+      },
+      "interpretation": "Adjacent pixel centres need not have equal heights; same global raster used on both sides.",
+      "naturalAdjacentSampleChangeAtTileJoinsMax": 250.166015625,
+      "zoom": 10
+    },
+    {
+      "allTileWindowMaxEncodingDifference": 0.001953125,
+      "fullRaster": {
+        "count": 8388608,
+        "max": 4534.9267578125,
+        "mean": 1450.5120657881635,
+        "min": 103.0,
+        "zeroCells": 0
+      },
+      "interpretation": "Adjacent pixel centres need not have equal heights; same global raster used on both sides.",
+      "naturalAdjacentSampleChangeAtTileJoinsMax": 187.2574462890625,
+      "zoom": 11
+    },
+    {
+      "allTileWindowMaxEncodingDifference": 0.001953125,
+      "fullRaster": {
+        "count": 33554432,
+        "max": 4540.42578125,
+        "mean": 1450.5120658184564,
+        "min": 103.0,
+        "zeroCells": 0
+      },
+      "interpretation": "Adjacent pixel centres need not have equal heights; same global raster used on both sides.",
+      "naturalAdjacentSampleChangeAtTileJoinsMax": 107.3531494140625,
+      "zoom": 12
+    },
+    {
+      "allTileWindowMaxEncodingDifference": 0.001953125,
+      "fullRaster": {
+        "count": 134217728,
+        "max": 4541.962890625,
+        "mean": 1450.5120658174735,
+        "min": 103.0,
+        "zeroCells": 0
+      },
+      "interpretation": "Adjacent pixel centres need not have equal heights; same global raster used on both sides.",
+      "naturalAdjacentSampleChangeAtTileJoinsMax": 59.57275390625,
+      "zoom": 13
+    }
+  ]
+}

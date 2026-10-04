@@ -1,0 +1,846 @@
+{
+  "awsControls": [
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "pitch": 45,
+        "zoom": 9.4
+      },
+      "capture": {
+        "href": "${MERIDIAN_DATA_ROOT}/experiments/atlas/riffelhorn-copernicus-common-v1/captures/landscape--aws.png",
+        "sha256": "20bcc28b8c7724b57c0acfbdb9ac990d6f3140f0d06681f6546ef1aed1d02832"
+      },
+      "centerVisualElevationExaggerated": 3777.9415302102616,
+      "scene": "landscape"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "pitch": 45,
+        "zoom": 11.4
+      },
+      "capture": {
+        "href": "${MERIDIAN_DATA_ROOT}/experiments/atlas/riffelhorn-copernicus-common-v1/captures/planning--aws.png",
+        "sha256": "cc29c7e3f7f06834386232c9c26484b5b7fa9bbf6a2a36ff2eb7eea3ac9f9f23"
+      },
+      "centerVisualElevationExaggerated": 3775.5918694630714,
+      "scene": "planning"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "pitch": 55.00000000000001,
+        "zoom": 13.2
+      },
+      "capture": {
+        "href": "${MERIDIAN_DATA_ROOT}/experiments/atlas/riffelhorn-copernicus-common-v1/captures/close--aws.png",
+        "sha256": "8596dadcef1e0ac1eb8f8903bd8970a62f7c9aa69647a6e62bd8f2e0c1a6ad2b"
+      },
+      "centerVisualElevationExaggerated": 3771.929485477295,
+      "scene": "close"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "pitch": 55.00000000000001,
+        "zoom": 16.2
+      },
+      "capture": {
+        "href": "${MERIDIAN_DATA_ROOT}/experiments/atlas/riffelhorn-copernicus-common-v1/captures/overzoom--aws.png",
+        "sha256": "e9ddebd448ebf7eff6655420fabef969ddb026c19a427d8d99b6757fe97a03e3"
+      },
+      "centerVisualElevationExaggerated": 3770.582067162269,
+      "scene": "overzoom"
+    }
+  ],
+  "baseline": "9f45d3ae7611f5b4710436d6de5318b0aa31ab29",
+  "browser": "151.0.7922.34",
+  "bytesByZoom": {
+    "10": 4700323,
+    "11": 17722600,
+    "12": 65674961,
+    "13": 237989861,
+    "8": 318338,
+    "9": 1230915
+  },
+  "date": "2026-10-04T17:17:45.983Z",
+  "http": {
+    "bodyInterpretation": "Not network wire volume; browser-cache responses can expose status 200/body again.",
+    "cachePolicy": [
+      "public,max-age=3600"
+    ],
+    "consoleErrors": [
+      "Failed to load resource: the server responded with a status of 503 (Service Unavailable)",
+      "Failed to load resource: the server responded with a status of 503 (Service Unavailable)"
+    ],
+    "cors": [
+      "*"
+    ],
+    "localFailedRequests": {
+      "net::ERR_ABORTED": 25
+    },
+    "otherFailedRequests": {
+      "net::ERR_ABORTED": 21
+    },
+    "pageErrors": [],
+    "responseBodyBytesIncludingCacheRepeats": 43343466,
+    "responses": 344,
+    "separateProbes": {
+      "conditionalEtag": 304,
+      "interpretation": "Manual loopback HTTP probes, outside browser capture counts; no AWS fallback or zero terrain.",
+      "missingBelowMinimumZoom": 404
+    },
+    "statusCounts": {
+      "200": 344
+    },
+    "uniqueTileUrls": 204
+  },
+  "limitations": "Local Chromium/software environment with explicit unavailable Weather fixture; not universal browser/CDN benchmark. Globe guard checked but local source has no world terrain or z0-7 parents; perimeter falls to flat map. Close faceting also exists in AWS control; no renderer diagnosis or fix.",
+  "productIdentity": "8f002dcbdeceb6aa37cc9eeef9f2d2060193b1eff7922ddb1d0535a6b8030da2",
+  "productionFileHashes": {
+    "src/atlas/map/AtlasMap.ts": "cb45f5963716d636e903ed515008b66dab2fca0ab6d2aa28214a8c6303ef4b05",
+    "src/atlas/map/atlasVisuals.ts": "48426ab2132d5192069254ec9fe3fb7d9d433c2c9059f6f2223166c34c22dcfc",
+    "src/atlas/map/terrainLayers.ts": "c71099083d3184d5c70c148ea2c3f0574b0b170fb0737b9c041df579ed4e5497",
+    "src/atlas/map/visualTerrainConfig.ts": "2fc10a5bb50501a82186b4e6a1d2c176ac87d7431dbfdc702b3da69660e6b0ee",
+    "src/atlas/terrain/analyticalElevationConfig.ts": "6fd90c2fb39dc925c8de90cf6b7cf3a907696d71cc116e42563255addb41a9bb",
+    "src/atlas/terrain/terrainElevationSampler.ts": "d941ad5474ff7370da4e67c135018a777ed440d84bf00cff0f536600270f1b7b"
+  },
+  "rendering": {
+    "commonAwsPresentationMatches": true,
+    "elevation": {
+      "id": "terrain-elevation-relief",
+      "paint": {
+        "color-relief-color": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "elevation"
+          ],
+          -11000,
+          "#355f53",
+          -500,
+          "#3f725d",
+          0,
+          "#4c8267",
+          20,
+          "#568d6d",
+          100,
+          "#6f9a6e",
+          300,
+          "#a6a35c",
+          600,
+          "#bd854c",
+          900,
+          "#a45e49",
+          1500,
+          "#75615c",
+          3000,
+          "#b7afa5",
+          5000,
+          "#e4e1da",
+          8000,
+          "#fffdf8"
+        ],
+        "color-relief-opacity": 0,
+        "resampling": "linear"
+      },
+      "source": "terrain-analysis-dem",
+      "type": "color-relief"
+    },
+    "exaggeration": 1.45,
+    "hillshade": {
+      "id": "terrain-hillshade",
+      "paint": {
+        "hillshade-accent-color": "#586b66",
+        "hillshade-exaggeration": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          5.5,
+          0,
+          7,
+          0.09,
+          9,
+          0.3,
+          11,
+          0.54,
+          12,
+          0.45,
+          13,
+          0.36,
+          14,
+          0.33,
+          15,
+          0.3,
+          16,
+          0.3
+        ],
+        "hillshade-highlight-color": "#f4efe0",
+        "hillshade-illumination-altitude": 42,
+        "hillshade-illumination-anchor": "map",
+        "hillshade-illumination-direction": 315,
+        "hillshade-method": "igor",
+        "hillshade-shadow-color": "#17211f",
+        "resampling": "linear"
+      },
+      "source": "terrain-analysis-dem",
+      "type": "hillshade"
+    },
+    "meshSize": 128,
+    "sky": {
+      "atmosphere-blend": [
+        "interpolate",
+        [
+          "linear"
+        ],
+        [
+          "zoom"
+        ],
+        0,
+        1,
+        4,
+        0.9,
+        7,
+        0.25,
+        9,
+        0
+      ],
+      "fog-color": "#bdc9c6",
+      "fog-ground-blend": 0.42,
+      "horizon-color": "#9eb4ba",
+      "horizon-fog-blend": 0.72,
+      "sky-color": "#07111e",
+      "sky-horizon-blend": 0.82
+    }
+  },
+  "scenes": [
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "pitch": 45,
+        "zoom": 9.4
+      },
+      "capture": {
+        "href": "${MERIDIAN_DATA_ROOT}/experiments/atlas/riffelhorn-copernicus-common-v1/captures/landscape--common.png",
+        "sha256": "f6c27c5883f9ab331cb11f3ae40166183737b541f7234d0e749b099011d8d10c"
+      },
+      "centerVisualElevationExaggerated": 3776.0900240605165,
+      "newTileResponses": 38,
+      "projection": "mercator",
+      "scene": "landscape",
+      "settleMs": 4479.0749000000005,
+      "terrain": {
+        "exaggeration": 1.45,
+        "source": "terrain-dem"
+      },
+      "visibleSources": {
+        "terrain-analysis-dem": {
+          "canonicalZooms": [
+            9,
+            10,
+            11
+          ],
+          "demDimensions": [
+            256
+          ],
+          "states": {
+            "loaded": 30
+          }
+        },
+        "terrain-dem": {
+          "canonicalZooms": [
+            8,
+            9
+          ],
+          "demDimensions": [
+            256
+          ],
+          "states": {
+            "loaded": 8
+          }
+        }
+      }
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "pitch": 45,
+        "zoom": 11.4
+      },
+      "capture": {
+        "href": "${MERIDIAN_DATA_ROOT}/experiments/atlas/riffelhorn-copernicus-common-v1/captures/planning--common.png",
+        "sha256": "7a45e37504fdb3390f11c9864d7d4f77f36acdfbba99d0b1eee74ad4a156255b"
+      },
+      "centerVisualElevationExaggerated": 3762.584417752497,
+      "newTileResponses": 68,
+      "projection": "mercator",
+      "scene": "planning",
+      "settleMs": 6610.3281,
+      "terrain": {
+        "exaggeration": 1.45,
+        "source": "terrain-dem"
+      },
+      "visibleSources": {
+        "terrain-analysis-dem": {
+          "canonicalZooms": [
+            11,
+            12,
+            13
+          ],
+          "demDimensions": [
+            256
+          ],
+          "states": {
+            "loaded": 56
+          }
+        },
+        "terrain-dem": {
+          "canonicalZooms": [
+            8,
+            9,
+            10,
+            11
+          ],
+          "demDimensions": [
+            256
+          ],
+          "states": {
+            "loaded": 16
+          }
+        }
+      }
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "pitch": 55.00000000000001,
+        "zoom": 13.2
+      },
+      "capture": {
+        "href": "${MERIDIAN_DATA_ROOT}/experiments/atlas/riffelhorn-copernicus-common-v1/captures/close--common.png",
+        "sha256": "ed1f003dffc7e7daed9e64d18eefa7ff6a8e8417b57a87adbe7208b89753e82a"
+      },
+      "centerVisualElevationExaggerated": 3758.927108881669,
+      "newTileResponses": 45,
+      "projection": "mercator",
+      "scene": "close",
+      "settleMs": 12234.733499999998,
+      "terrain": {
+        "exaggeration": 1.45,
+        "source": "terrain-dem"
+      },
+      "visibleSources": {
+        "terrain-analysis-dem": {
+          "canonicalZooms": [
+            12,
+            13
+          ],
+          "demDimensions": [
+            256
+          ],
+          "states": {
+            "loaded": 28
+          }
+        },
+        "terrain-dem": {
+          "canonicalZooms": [
+            8,
+            10,
+            11,
+            12,
+            13
+          ],
+          "demDimensions": [
+            256
+          ],
+          "states": {
+            "loaded": 29
+          }
+        }
+      }
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "pitch": 55.00000000000001,
+        "zoom": 16.2
+      },
+      "capture": {
+        "href": "${MERIDIAN_DATA_ROOT}/experiments/atlas/riffelhorn-copernicus-common-v1/captures/overzoom--common.png",
+        "sha256": "75f4ce163b7efb33d429178f575239f4f9575e4b1563e093860fbf563320de57"
+      },
+      "centerVisualElevationExaggerated": 3757.472644657663,
+      "newTileResponses": 0,
+      "projection": "mercator",
+      "scene": "overzoom",
+      "settleMs": 11108.6564,
+      "terrain": {
+        "exaggeration": 1.45,
+        "source": "terrain-dem"
+      },
+      "visibleSources": {
+        "terrain-analysis-dem": {
+          "canonicalZooms": [
+            13
+          ],
+          "demDimensions": [
+            256
+          ],
+          "states": {
+            "loaded": 7
+          }
+        },
+        "terrain-dem": {
+          "canonicalZooms": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "demDimensions": [
+            256
+          ],
+          "states": {
+            "loaded": 17
+          }
+        }
+      }
+    },
+    {
+      "camera": {
+        "bearing": 180,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "pitch": 55.00000000000001,
+        "zoom": 13.2
+      },
+      "capture": {
+        "href": "${MERIDIAN_DATA_ROOT}/experiments/atlas/riffelhorn-copernicus-common-v1/captures/rotation--common.png",
+        "sha256": "45d1cd20802d3fa423bd65c1fec6d1863f6956dbd9ad71c53d55463fb86da42b"
+      },
+      "centerVisualElevationExaggerated": 3758.927108881669,
+      "newTileResponses": 18,
+      "projection": "mercator",
+      "scene": "rotation",
+      "settleMs": 9318.0939,
+      "terrain": {
+        "exaggeration": 1.45,
+        "source": "terrain-dem"
+      },
+      "visibleSources": {
+        "terrain-analysis-dem": {
+          "canonicalZooms": [
+            11,
+            12,
+            13
+          ],
+          "demDimensions": [
+            256
+          ],
+          "states": {
+            "loaded": 31
+          }
+        },
+        "terrain-dem": {
+          "canonicalZooms": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "demDimensions": [
+            256
+          ],
+          "states": {
+            "loaded": 33
+          }
+        }
+      }
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          7.35,
+          46.92
+        ],
+        "pitch": 45,
+        "zoom": 11.4
+      },
+      "capture": {
+        "href": "${MERIDIAN_DATA_ROOT}/experiments/atlas/riffelhorn-copernicus-common-v1/captures/gentler-control--common.png",
+        "sha256": "4069e7c62bb282acba8208536fac40900818654475a7425e34ccb3c252a9c35c"
+      },
+      "centerVisualElevationExaggerated": 954.8795884045278,
+      "newTileResponses": 44,
+      "projection": "mercator",
+      "scene": "gentler-control",
+      "settleMs": 10242.3733,
+      "terrain": {
+        "exaggeration": 1.45,
+        "source": "terrain-dem"
+      },
+      "visibleSources": {
+        "terrain-analysis-dem": {
+          "canonicalZooms": [
+            12,
+            13
+          ],
+          "demDimensions": [
+            256
+          ],
+          "states": {
+            "loaded": 35
+          }
+        },
+        "terrain-dem": {
+          "canonicalZooms": [
+            8,
+            10,
+            11
+          ],
+          "demDimensions": [
+            256
+          ],
+          "states": {
+            "loaded": 10
+          }
+        }
+      }
+    },
+    {
+      "camera": {
+        "bearing": 90,
+        "center": [
+          7.76,
+          46.07323062540835
+        ],
+        "pitch": 55.00000000000001,
+        "zoom": 10.4
+      },
+      "capture": {
+        "href": "${MERIDIAN_DATA_ROOT}/experiments/atlas/riffelhorn-copernicus-common-v1/captures/parent-join--common.png",
+        "sha256": "36dc43bd587930b3c0d720d5fdd51c08f6141a1f90855d5ed16a1acdd1a5fbc9"
+      },
+      "centerVisualElevationExaggerated": 3288.203344444496,
+      "newTileResponses": 36,
+      "projection": "mercator",
+      "scene": "parent-join",
+      "settleMs": 11985.05829999999,
+      "terrain": {
+        "exaggeration": 1.45,
+        "source": "terrain-dem"
+      },
+      "visibleSources": {
+        "terrain-analysis-dem": {
+          "canonicalZooms": [
+            10,
+            11,
+            12
+          ],
+          "demDimensions": [
+            256
+          ],
+          "states": {
+            "loaded": 48
+          }
+        },
+        "terrain-dem": {
+          "canonicalZooms": [
+            8,
+            9,
+            10,
+            11
+          ],
+          "demDimensions": [
+            256
+          ],
+          "states": {
+            "loaded": 26
+          }
+        }
+      }
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "pitch": 45,
+        "zoom": 11.95
+      },
+      "capture": {
+        "href": "${MERIDIAN_DATA_ROOT}/experiments/atlas/riffelhorn-copernicus-common-v1/captures/below-level-transition--common.png",
+        "sha256": "3a3fc6e9bc3cefd305cd700a5c7b4f12c89314a963b9ed768b8e86b9293b0b03"
+      },
+      "centerVisualElevationExaggerated": 3759.888110993602,
+      "newTileResponses": 6,
+      "projection": "mercator",
+      "scene": "below-level-transition",
+      "settleMs": 10793.573999999993,
+      "terrain": {
+        "exaggeration": 1.45,
+        "source": "terrain-dem"
+      },
+      "visibleSources": {
+        "terrain-analysis-dem": {
+          "canonicalZooms": [
+            12,
+            13
+          ],
+          "demDimensions": [
+            256
+          ],
+          "states": {
+            "loaded": 41
+          }
+        },
+        "terrain-dem": {
+          "canonicalZooms": [
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "demDimensions": [
+            256
+          ],
+          "states": {
+            "loaded": 24
+          }
+        }
+      }
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "pitch": 45,
+        "zoom": 12.05
+      },
+      "capture": {
+        "href": "${MERIDIAN_DATA_ROOT}/experiments/atlas/riffelhorn-copernicus-common-v1/captures/above-level-transition--common.png",
+        "sha256": "27577483543582b9a67de4fa280a99f5d55095a787a2e0a5ba2847fe3a349c0c"
+      },
+      "centerVisualElevationExaggerated": 3759.888110993602,
+      "newTileResponses": 0,
+      "projection": "mercator",
+      "scene": "above-level-transition",
+      "settleMs": 8803.491899999994,
+      "terrain": {
+        "exaggeration": 1.45,
+        "source": "terrain-dem"
+      },
+      "visibleSources": {
+        "terrain-analysis-dem": {
+          "canonicalZooms": [
+            12,
+            13
+          ],
+          "demDimensions": [
+            256
+          ],
+          "states": {
+            "loaded": 44
+          }
+        },
+        "terrain-dem": {
+          "canonicalZooms": [
+            8,
+            10,
+            11,
+            12
+          ],
+          "demDimensions": [
+            256
+          ],
+          "states": {
+            "loaded": 26
+          }
+        }
+      }
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "pitch": 45,
+        "zoom": 11.4
+      },
+      "capture": {
+        "href": "${MERIDIAN_DATA_ROOT}/experiments/atlas/riffelhorn-copernicus-common-v1/captures/return-planning--common.png",
+        "sha256": "7fa250e492575389cd2c34be5d7c0c003b3f7adea09001c89363d8670eadf168"
+      },
+      "centerVisualElevationExaggerated": 3762.584417752497,
+      "newTileResponses": 0,
+      "projection": "mercator",
+      "scene": "return-planning",
+      "settleMs": 8850.451000000001,
+      "terrain": {
+        "exaggeration": 1.45,
+        "source": "terrain-dem"
+      },
+      "visibleSources": {
+        "terrain-analysis-dem": {
+          "canonicalZooms": [
+            11,
+            12,
+            13
+          ],
+          "demDimensions": [
+            256
+          ],
+          "states": {
+            "loaded": 56
+          }
+        },
+        "terrain-dem": {
+          "canonicalZooms": [
+            8,
+            9,
+            10,
+            11
+          ],
+          "demDimensions": [
+            256
+          ],
+          "states": {
+            "loaded": 16
+          }
+        }
+      }
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "pitch": 0,
+        "zoom": 4.8
+      },
+      "capture": {
+        "href": "${MERIDIAN_DATA_ROOT}/experiments/atlas/riffelhorn-copernicus-common-v1/captures/globe-guard--common.png",
+        "sha256": "7274be033b43eb7cab6bd5fb2b97f87a77f8d983ddbb80f97ce9813969fbb34e"
+      },
+      "centerVisualElevationExaggerated": null,
+      "newTileResponses": 16,
+      "projection": "globe",
+      "scene": "globe-guard",
+      "settleMs": 6208.859299999996,
+      "terrain": null,
+      "visibleSources": {
+        "terrain-analysis-dem": {
+          "canonicalZooms": [],
+          "demDimensions": [],
+          "states": {}
+        },
+        "terrain-dem": {
+          "canonicalZooms": [],
+          "demDimensions": [],
+          "states": {}
+        }
+      }
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          7.761213290000001,
+          45.97910794
+        ],
+        "pitch": 0,
+        "zoom": 5.8
+      },
+      "capture": {
+        "href": "${MERIDIAN_DATA_ROOT}/experiments/atlas/riffelhorn-copernicus-common-v1/captures/mercator-guard--common.png",
+        "sha256": "407c9a9fd5688c3200b31e2fa486069d9438b26daabf5cd82d195040e2f5cca6"
+      },
+      "centerVisualElevationExaggerated": 0,
+      "newTileResponses": 0,
+      "projection": "mercator",
+      "scene": "mercator-guard",
+      "settleMs": 3856.3852000000043,
+      "terrain": {
+        "exaggeration": 1.45,
+        "source": "terrain-dem"
+      },
+      "visibleSources": {
+        "terrain-analysis-dem": {
+          "canonicalZooms": [],
+          "demDimensions": [],
+          "states": {}
+        },
+        "terrain-dem": {
+          "canonicalZooms": [],
+          "demDimensions": [],
+          "states": {}
+        }
+      }
+    }
+  ],
+  "tileSizesBytes": {
+    "max": 161226.0,
+    "median": 122200.0,
+    "min": 11890.0,
+    "p95": 138315.9
+  },
+  "viewport": {
+    "height": 900,
+    "width": 1440
+  }
+}

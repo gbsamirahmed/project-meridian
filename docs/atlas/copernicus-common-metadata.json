@@ -1,0 +1,354 @@
+{
+  "product": {
+    "delivery": {
+      "availability": "All 2730 descendants of z8/133/90 and z8/133/91. No tiles outside, below z8 or above z13; not a global product.",
+      "encoding": {
+        "description": "R*256+G+B/256-32768 metres; nearest quantization; EGM2008 unchanged",
+        "name": "terrarium",
+        "quantizationIncrement": {
+          "unit": "metre",
+          "value": 0.00390625
+        }
+      },
+      "format": "lossless RGB PNG",
+      "horizontalReference": {
+        "status": "known",
+        "value": {
+          "identifier": "EPSG:3857",
+          "name": "WGS 84 / Pseudo-Mercator"
+        }
+      },
+      "kind": "raster-tiles",
+      "resampling": {
+        "status": "known",
+        "value": "Finest bilinear source sampling; recursive box-mean parents; renderer overzoom above z13 only."
+      },
+      "scheme": "xyz",
+      "tileSize": [
+        256,
+        256
+      ],
+      "tileTemplate": "${MERIDIAN_DATA_ROOT}/derived/atlas/riffelhorn/riffelhorn-copernicus-common-v1/tiles/{z}/{x}/{y}.png",
+      "zoom": {
+        "max": {
+          "status": "known",
+          "value": 13
+        },
+        "min": 8
+      }
+    },
+    "documentation": [
+      "docs/atlas/copernicus-common-product.md",
+      "docs/atlas/copernicus-common-product-plan.json",
+      "docs/atlas/copernicus-common-checks.json"
+    ],
+    "elevationUnit": {
+      "status": "known",
+      "value": "metre"
+    },
+    "generation": {
+      "buildRecord": {
+        "href": "${MERIDIAN_DATA_ROOT}/derived/atlas/riffelhorn/riffelhorn-copernicus-common-v1/manifest.json",
+        "sha256": "9393fbadf807592ed67e94408d82bc0f508d4a29d7aa90cf78e605b2053bb177"
+      },
+      "timestamp": {
+        "status": "known",
+        "value": "2026-10-04T17:09:51.350092+00:00"
+      }
+    },
+    "id": "riffelhorn-copernicus-common-v1",
+    "lineage": {
+      "contributorList": "complete",
+      "contributors": [
+        {
+          "id": "copernicus-glo30-common-2021-local-selection",
+          "kind": "source",
+          "revision": {
+            "status": "known",
+            "value": "74c55b0cbad123778294647fa9770b1d673735401ae5d5b1854c4b32e57e0a85"
+          }
+        }
+      ],
+      "limitations": "Complete immediate published dataset contributor; per-post upstream infill/epoch remains unavailable. Coarse averaging suppresses extrema; no structural generalisation.",
+      "processing": [
+        {
+          "method": "Mosaic six whole 2021 COGs preserving source Point registration; horizontal EPSG:4326 to EPSG:3857 bilinear warp to aligned z13 float32 heights. No height or registration adjustment.",
+          "record": {
+            "href": "docs/atlas/copernicus-common-generation.json"
+          },
+          "software": {
+            "gdal": "3.9.3",
+            "numpy": "2.5.3",
+            "pillow": "12.3.0",
+            "proj": "9.5.1",
+            "pyproj": "3.7.2",
+            "python": "3.12.6",
+            "rasterio": "1.4.3"
+          }
+        },
+        {
+          "method": "Recursive 2x2 arithmetic means of unencoded heights; float64 accumulation and float32 storage. Uniform Mercator pixel area, not ground-area weighting.",
+          "parameters": {
+            "maximumZoom": 13,
+            "minimumZoom": 8,
+            "threads": 1
+          }
+        },
+        {
+          "method": "Encode each level independently as lossless RGB PNG Terrarium; no encoded-RGB averaging.",
+          "parameters": {
+            "quantizationMetres": 0.00390625
+          }
+        }
+      ],
+      "spatialMapping": "uniform"
+    },
+    "name": "Meridian bounded Copernicus common/coarse terrain product",
+    "nodata": {
+      "status": "known",
+      "value": "strict support propagation, omit any incomplete tile; no zero/alpha/AWS padding"
+    },
+    "producer": {
+      "status": "known",
+      "value": "Meridian"
+    },
+    "revision": {
+      "status": "known",
+      "value": "8f002dcbdeceb6aa37cc9eeef9f2d2060193b1eff7922ddb1d0535a6b8030da2"
+    },
+    "rights": {
+      "attribution": [
+        "Use the applicable full unmodified/modified notice and Article 6 obligations in the licence; this summary is not the legal delivery notice."
+      ],
+      "licence": {
+        "status": "known",
+        "value": "Copernicus DEM GLO-30 F free/open licence, Annex pp.20-22"
+      },
+      "limitations": "Derivative hosting permitted subject to attribution, liability, non-endorsement and downstream obligations. Do not substitute restricted GLO-30 R terms or the mirror software licence.",
+      "references": [
+        "https://s3.waw3-1.cloudferro.com/swift/v1/portal_uploads_prod/CSCDA_ESA_Mission-specific_Annex_31_Oct_22_latest.pdf"
+      ]
+    },
+    "sourceInformation": {
+      "description": "One-arcsecond source posts (~21.5 m east/west and 30.9 m north/south near Riffelhorn); measurement resolution unknown. Delivery z13 (~13.28 m there) oversamples these posts.",
+      "informationCeiling": {
+        "status": "known",
+        "value": "Source posts bound available information. z12 already undersamples the east/west postings locally; z13 avoids that but adds no observations. No sharp isotropic information zoom is claimed; all higher renderer zoom is overzoom."
+      }
+    },
+    "spatial": {
+      "coverage": {
+        "status": "known",
+        "value": {
+          "axisOrder": "xy",
+          "bounds": [
+            7.03125,
+            45.089035564831015,
+            8.4375,
+            47.040182144806664
+          ],
+          "crs": {
+            "identifier": "OGC:CRS84",
+            "name": "WGS 84 longitude/latitude"
+          },
+          "kind": "native-rectangle"
+        }
+      },
+      "transitionSupport": {
+        "reason": "No Swiss composition, transition or global ocean/polar policy established.",
+        "status": "unknown"
+      },
+      "validSupport": {
+        "status": "known",
+        "value": {
+          "area": {
+            "axisOrder": "xy",
+            "bounds": [
+              7.03125,
+              45.089035564831015,
+              8.4375,
+              47.040182144806664
+            ],
+            "crs": {
+              "identifier": "OGC:CRS84",
+              "name": "WGS 84 longitude/latitude"
+            },
+            "kind": "native-rectangle"
+          },
+          "basis": "All source-to-product checks and complete finite root coverage; docs/atlas/copernicus-common-checks.json",
+          "purpose": "Bounded land-context delivery and preparation evaluation, not scientific ground truth or a validated regional seam"
+        }
+      }
+    },
+    "surface": {
+      "description": "Edited surface model including vegetation/buildings; water/hydrological editing and heterogeneous void filling. Not a bare-earth DTM.",
+      "kind": "dsm"
+    },
+    "version": {
+      "status": "known",
+      "value": "v1"
+    },
+    "vertical": {
+      "from": {
+        "id": "copernicus-glo30-common-2021-local-selection",
+        "kind": "source",
+        "revision": {
+          "status": "known",
+          "value": "74c55b0cbad123778294647fa9770b1d673735401ae5d5b1854c4b32e57e0a85"
+        }
+      },
+      "kind": "preserved",
+      "reference": {
+        "status": "known",
+        "value": {
+          "identifier": "EPSG:3855",
+          "name": "EGM2008 height"
+        }
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "source": {
+    "acquisition": {
+      "status": "known",
+      "value": {
+        "description": "Principal TanDEM-X observations December 2010\u2013January 2015; fill data may have other epochs, no per-post epoch retained.",
+        "end": "2015-01",
+        "start": "2010-12"
+      }
+    },
+    "assets": [
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/global-reference-assessment-v1/cop45/Copernicus_DSM_COG_10_N45_00_E007_00_DEM.tif",
+        "sha256": "638c155dd9a5f0b7ee818146def740093da33cee4606071b2bbf7ce3fa00ab95"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/copernicus-common-2021-v1/originals/Copernicus_DSM_COG_10_N45_00_E008_00_DEM.tif",
+        "sha256": "02fac5d646f443f4f288a3d59b4cb995300e1c4fcbe4b5c1c6078a165a3d9ad4"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/global-reference-assessment-v1/cop46/Copernicus_DSM_COG_10_N46_00_E007_00_DEM.tif",
+        "sha256": "426e3d1492d94e4f23d444843f852ff5be675da5c4c14e661b5642006864047d"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/copernicus-common-2021-v1/originals/Copernicus_DSM_COG_10_N46_00_E008_00_DEM.tif",
+        "sha256": "47769664394ee1ff3b51f5c1b43a3441d7f7bce8d086d0ed2f3a892b895fae3e"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/copernicus-common-2021-v1/originals/Copernicus_DSM_COG_10_N47_00_E007_00_DEM.tif",
+        "sha256": "5012dc32581b4aebbe71dec6f22507a2944b5e6b7f8fa301b0876f947976298b"
+      },
+      {
+        "href": "${MERIDIAN_DATA_ROOT}/sources/atlas/riffelhorn/copernicus-common-2021-v1/originals/Copernicus_DSM_COG_10_N47_00_E008_00_DEM.tif",
+        "sha256": "4e2917429d65e049a4f1ddee2093f7fc50f11d22d0fd7cee85f5c8334186d7fe"
+      }
+    ],
+    "authority": {
+      "status": "known",
+      "value": "European Union Copernicus / ESA; WorldDEM basis produced by Airbus with DLR TanDEM-X observations"
+    },
+    "coverage": {
+      "area": {
+        "status": "known",
+        "value": {
+          "axisOrder": "xy",
+          "bounds": [
+            6.9998611111111115,
+            45.00013888888889,
+            8.99986111111111,
+            48.00013888888889
+          ],
+          "crs": {
+            "identifier": "EPSG:4326",
+            "name": "WGS 84; documentation states G1150, TIFF identifies generic EPSG:4326"
+          },
+          "kind": "native-rectangle"
+        }
+      },
+      "scope": "retained-input-selection"
+    },
+    "dataset": "Copernicus DEM GLO-30",
+    "documentation": [
+      "docs/atlas/global-reference-assessment.md",
+      "docs/atlas/global-reference-acquisition.json",
+      "docs/atlas/global-reference-measurements.json",
+      "https://registry.opendata.aws/copernicus-dem/",
+      "https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM",
+      "docs/atlas/copernicus-common-product.md",
+      "docs/atlas/copernicus-common-acquisition.json"
+    ],
+    "elevationUnit": {
+      "status": "known",
+      "value": "metre"
+    },
+    "horizontalReference": {
+      "status": "known",
+      "value": {
+        "identifier": "EPSG:4326",
+        "name": "WGS 84; documentation states G1150, TIFF identifies generic EPSG:4326"
+      }
+    },
+    "id": "copernicus-glo30-common-2021-local-selection",
+    "name": "Copernicus GLO-30 2021 public COG selection for two z8 common-terrain roots",
+    "nodata": {
+      "status": "known",
+      "value": "Six retained float32 COGs declare no nodata; selected two-root preparation fully finite. Missing upstream land/ocean tiles are not inferred zero."
+    },
+    "quality": {
+      "status": "known",
+      "value": "Published global specifications: absolute vertical <4 m LE90, horizontal <6 m CE90; terrain/ice limitations and local residuals matter. Not a local accuracy certificate."
+    },
+    "release": {
+      "status": "known",
+      "value": "Public mirror documents 2021 release; exact 2021 sub-release not established"
+    },
+    "resolution": {
+      "gridSpacing": {
+        "crs": {
+          "identifier": "EPSG:4326",
+          "name": "WGS 84; documentation states G1150, TIFF identifies generic EPSG:4326"
+        },
+        "unit": "arcsecond",
+        "x": 1,
+        "y": 1
+      },
+      "limitations": "Approximately 21.5 m east-west and 30.9 m north-south here; no metre-scale detail. Exact per-post acquisition and contributing infill are not supplied by the six retained COGs.",
+      "measurementResolution": {
+        "reason": "Delivery posting is not independent measurement resolution; radar support, editing and filling vary.",
+        "status": "unknown"
+      },
+      "nominalResolution": {
+        "status": "known",
+        "value": "Retained latitude-band posting is one arcsecond; longitude posting varies with latitude globally."
+      }
+    },
+    "revision": {
+      "status": "known",
+      "value": "74c55b0cbad123778294647fa9770b1d673735401ae5d5b1854c4b32e57e0a85"
+    },
+    "rights": {
+      "attribution": [
+        "Use the applicable full unmodified/modified notice and Article 6 obligations in the licence; this summary is not the legal delivery notice."
+      ],
+      "licence": {
+        "status": "known",
+        "value": "Copernicus DEM GLO-30 F free/open licence, Annex pp.20-22"
+      },
+      "limitations": "Derivative hosting permitted subject to attribution, liability, non-endorsement and downstream obligations. Do not substitute restricted GLO-30 R terms or the mirror software licence.",
+      "references": [
+        "https://s3.waw3-1.cloudferro.com/swift/v1/portal_uploads_prod/CSCDA_ESA_Mission-specific_Annex_31_Oct_22_latest.pdf"
+      ]
+    },
+    "surface": {
+      "description": "Edited surface model including vegetation/buildings; water/hydrological editing and heterogeneous void filling. Not a bare-earth DTM.",
+      "kind": "dsm"
+    },
+    "verticalReference": {
+      "status": "known",
+      "value": {
+        "identifier": "EPSG:3855",
+        "name": "EGM2008 height"
+      }
+    }
+  }
+}

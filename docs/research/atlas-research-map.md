@@ -80,6 +80,16 @@ reconciliation, hierarchy or production migration was performed. The smallest
 next step is a separate local common/coarse product with explicit support and
 revision policy, not an accepted Swiss seam or general resolver.
 
+The [bounded Copernicus common/coarse product](../atlas/copernicus-common-product.md)
+then froze six 2021 COG inputs and prepared complete z8–13 local terrain delivery.
+Independent rebuilds and numerical checks establish preparation and parent fidelity;
+real-app views retain broad terrain structure under the unchanged renderer. Delivery
+z13 oversamples source postings, with higher map zoom only overzoom. The external
+perimeter and missing lower/global support are negative findings. No Swiss composition
+or production migration occurred. The asset supports a later bounded hierarchy
+experiment with explicit height, contributor and support policy; it does not establish
+that experiment's result or authorize a generic resolver.
+
 ## Evidence classes
 
 - **MERIDIAN EVIDENCE (M):** measurements, inspected outputs and negative results

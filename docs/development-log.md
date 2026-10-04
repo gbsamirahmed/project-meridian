@@ -3220,3 +3220,42 @@ Next bounded step: prepare a separate local Copernicus common/coarse delivery
 product with frozen release, explicit height, missing-support and parent policy;
 repeat overlap evidence before substituting a newer CDSE release. No blended
 hierarchy, reconciliation, imagery or subsequent implementation performed here.
+
+## 2026-10-04 — Copernicus common/coarse terrain product
+
+Prepared the [bounded common/coarse product](atlas/copernicus-common-product.md)
+from the frozen public 2021 GLO-30 distribution. Reused the two hash-verified
+assessment inputs; four additional whole COGs supply two complete z8 parents
+and northern context. Six sources total 254.11 MB; no Swiss data was composed.
+Horizontal-only bilinear transfer preserves EGM2008 heights, followed by recursive
+2×2 means of unencoded elevations and separate Terrarium encoding at z8–13.
+The 2,730 PNG tiles total 327.64 MB; no higher delivery level adds invented detail.
+
+Every tile and working-raster hash matched an independent rebuild. Seeded source
+sampling differs by at most 0.000122 m; encoding by 0.001953 m. All parent pixels
+match the declared rule; direct patch means agree within 0.000199 m, with expected
+extrema smoothing and no systematic mean drift. An initial GDAL axis-override
+failure was rejected, corrected and covered synthetically, not published as terrain.
+
+Evaluation-only Atlas delivery preserves production presentation. Landscape/planning,
+rotation, an internal parent join and zoom controls show usable broad terrain.
+Close overzoom stays coarse; similar faceting exists in the AWS control. Outer
+perimeter falls to flat terrain and z0–7 are absent: this is no complete global
+product. All 344 completed local responses succeeded; 25 navigation cancellations
+were retained. Normal Weather/Traverse and independent analytical AWS remain untouched.
+No production source, relief, exaggeration, satellite or lifecycle file changed.
+
+Existing Atlas metadata describes source selection, derived identity, preserved
+heights, information/delivery scale, scoped coverage and rights. No protected
+interior, fallback or transition is invented. Public modified-product legal notices
+and global missing-land/ocean/polar coverage remain prerequisites for broader use.
+
+Verification: 29 synthetic Atlas Python tests and 160 active Node tests passed,
+1 existing optional skip. Lint, TypeScript and application-only build passed;
+existing chunk warning retained, external GFS publication/copying omitted.
+Checksums, owned metadata and documentation references verified; products/captures
+remain external and normal CI/startup requires none of them.
+
+Next bounded step: test this coarse product with the identified Swiss regional
+asset under explicit scale, contributor, height-reference and finite-support
+rules. No hierarchy, reconciliation, resolver, imagery or next phase started here.

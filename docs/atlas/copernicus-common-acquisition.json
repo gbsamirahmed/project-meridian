@@ -1,0 +1,263 @@
+{
+  "assets": [
+    {
+      "acquiredAt": "2026-10-04T15:51:22.654094+00:00",
+      "bytes": 42594792,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Connection": "close",
+        "Content-Length": "42594792",
+        "Content-Type": "image/tiff",
+        "Date": "Sun, 04 Oct 2026 15:51:19 GMT",
+        "ETag": "\"9419a0784d0c7b90c48754dc8901bf49\"",
+        "Last-Modified": "Mon, 09 May 2022 14:24:54 GMT",
+        "Server": "AmazonS3",
+        "x-amz-id-2": "z4lVGFyVR8ie3EoliYqeCk+gXra2QyFmw4SQrS7xkOd7ao/QN5QTRbrowQx+GXnKU85IJqBLIxU=",
+        "x-amz-request-id": "231N9BPPX54872SZ",
+        "x-amz-version-id": "null"
+      },
+      "latitude": 45,
+      "longitude": 7,
+      "path": "sources/atlas/riffelhorn/global-reference-assessment-v1/cop45/Copernicus_DSM_COG_10_N45_00_E007_00_DEM.tif",
+      "raster": {
+        "crs": "EPSG:4326",
+        "nodata": null,
+        "shape": [
+          3600,
+          3600
+        ],
+        "tags": {
+          "AREA_OR_POINT": "Point"
+        },
+        "transform": [
+          0.0002777777777777778,
+          0.0,
+          6.9998611111111115,
+          0.0,
+          -0.0002777777777777778,
+          46.00013888888889
+        ]
+      },
+      "reused": true,
+      "sha256": "638c155dd9a5f0b7ee818146def740093da33cee4606071b2bbf7ce3fa00ab95",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N45_00_E007_00_DEM/Copernicus_DSM_COG_10_N45_00_E007_00_DEM.tif"
+    },
+    {
+      "acquiredAt": "2026-10-04T17:02:33.217980+00:00",
+      "bytes": 43016696,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Connection": "close",
+        "Content-Length": "43016696",
+        "Content-Type": "image/tiff",
+        "Date": "Sun, 04 Oct 2026 17:02:31 GMT",
+        "ETag": "\"d2b0f9583fc4222fbff560edf7463fa6\"",
+        "Last-Modified": "Mon, 09 May 2022 14:24:55 GMT",
+        "Server": "AmazonS3",
+        "x-amz-id-2": "rxb+PdOb4Ozu7CIT4TLq22UM+yLfRaHa4hBT94LXFc4gZmkMNSsOxLm3furlt2L7ZBpAsGuXZlEIQJKeL/yl+TbUXOru+Eeo",
+        "x-amz-request-id": "GYHFD5ASQD5HR4G8",
+        "x-amz-version-id": "null"
+      },
+      "latitude": 45,
+      "longitude": 8,
+      "path": "sources/atlas/riffelhorn/copernicus-common-2021-v1/originals/Copernicus_DSM_COG_10_N45_00_E008_00_DEM.tif",
+      "raster": {
+        "crs": "EPSG:4326",
+        "nodata": null,
+        "shape": [
+          3600,
+          3600
+        ],
+        "tags": {
+          "AREA_OR_POINT": "Point"
+        },
+        "transform": [
+          0.0002777777777777778,
+          0.0,
+          7.9998611111111115,
+          0.0,
+          -0.0002777777777777778,
+          46.00013888888889
+        ]
+      },
+      "reused": false,
+      "sha256": "02fac5d646f443f4f288a3d59b4cb995300e1c4fcbe4b5c1c6078a165a3d9ad4",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N45_00_E008_00_DEM/Copernicus_DSM_COG_10_N45_00_E008_00_DEM.tif"
+    },
+    {
+      "acquiredAt": "2026-10-04T15:51:22.415167+00:00",
+      "bytes": 41776750,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Connection": "close",
+        "Content-Length": "41776750",
+        "Content-Type": "image/tiff",
+        "Date": "Sun, 04 Oct 2026 15:51:19 GMT",
+        "ETag": "\"d75ca33280e101b7e83b2fbef81e853b\"",
+        "Last-Modified": "Mon, 09 May 2022 14:25:45 GMT",
+        "Server": "AmazonS3",
+        "x-amz-id-2": "XlpRjT31MrP5FQ58rgT+yCy3bFMX8xdXAOW//JKrMpOm/9gk9MSBXLBD+96FfPOJmF3PxuW3ZuU=",
+        "x-amz-request-id": "231SV1XBWQ0R01WT",
+        "x-amz-version-id": "null"
+      },
+      "latitude": 46,
+      "longitude": 7,
+      "path": "sources/atlas/riffelhorn/global-reference-assessment-v1/cop46/Copernicus_DSM_COG_10_N46_00_E007_00_DEM.tif",
+      "raster": {
+        "crs": "EPSG:4326",
+        "nodata": null,
+        "shape": [
+          3600,
+          3600
+        ],
+        "tags": {
+          "AREA_OR_POINT": "Point"
+        },
+        "transform": [
+          0.0002777777777777778,
+          0.0,
+          6.9998611111111115,
+          0.0,
+          -0.0002777777777777778,
+          47.00013888888889
+        ]
+      },
+      "reused": true,
+      "sha256": "426e3d1492d94e4f23d444843f852ff5be675da5c4c14e661b5642006864047d",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N46_00_E007_00_DEM/Copernicus_DSM_COG_10_N46_00_E007_00_DEM.tif"
+    },
+    {
+      "acquiredAt": "2026-10-04T17:02:36.847854+00:00",
+      "bytes": 42038015,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Connection": "close",
+        "Content-Length": "42038015",
+        "Content-Type": "image/tiff",
+        "Date": "Sun, 04 Oct 2026 17:02:31 GMT",
+        "ETag": "\"0e7068e0cc74d941c7af5cda6a640a7b\"",
+        "Last-Modified": "Mon, 09 May 2022 14:25:46 GMT",
+        "Server": "AmazonS3",
+        "x-amz-id-2": "veikLukF7EdSJcvM7wuPwoZtstmCmuuybqUR1AXjHN/Z16fdmXzL0Gv2SnOOym9B3rSaXUyWa533DNZ5ikkGjRDXQzFXA1Rl",
+        "x-amz-request-id": "GYHBZSG86MC8NRMY",
+        "x-amz-version-id": "null"
+      },
+      "latitude": 46,
+      "longitude": 8,
+      "path": "sources/atlas/riffelhorn/copernicus-common-2021-v1/originals/Copernicus_DSM_COG_10_N46_00_E008_00_DEM.tif",
+      "raster": {
+        "crs": "EPSG:4326",
+        "nodata": null,
+        "shape": [
+          3600,
+          3600
+        ],
+        "tags": {
+          "AREA_OR_POINT": "Point"
+        },
+        "transform": [
+          0.0002777777777777778,
+          0.0,
+          7.9998611111111115,
+          0.0,
+          -0.0002777777777777778,
+          47.00013888888889
+        ]
+      },
+      "reused": false,
+      "sha256": "47769664394ee1ff3b51f5c1b43a3441d7f7bce8d086d0ed2f3a892b895fae3e",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N46_00_E008_00_DEM/Copernicus_DSM_COG_10_N46_00_E008_00_DEM.tif"
+    },
+    {
+      "acquiredAt": "2026-10-04T17:02:36.558906+00:00",
+      "bytes": 42939950,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Connection": "close",
+        "Content-Length": "42939950",
+        "Content-Type": "image/tiff",
+        "Date": "Sun, 04 Oct 2026 17:02:34 GMT",
+        "ETag": "\"5bc8fb3cdba608f056e8927737b79699\"",
+        "Last-Modified": "Mon, 09 May 2022 14:26:37 GMT",
+        "Server": "AmazonS3",
+        "x-amz-id-2": "jP4hARr0PnBEWbbB2zvHuut3cictfne2N3rBH+LXYxYCvhSNUcmLaejelGuuolqTpNY6WPOA2UeiXRnZdlthZ76GaHkQoM9z",
+        "x-amz-request-id": "EMK7HHENEXKHFT4C",
+        "x-amz-version-id": "null"
+      },
+      "latitude": 47,
+      "longitude": 7,
+      "path": "sources/atlas/riffelhorn/copernicus-common-2021-v1/originals/Copernicus_DSM_COG_10_N47_00_E007_00_DEM.tif",
+      "raster": {
+        "crs": "EPSG:4326",
+        "nodata": null,
+        "shape": [
+          3600,
+          3600
+        ],
+        "tags": {
+          "AREA_OR_POINT": "Point"
+        },
+        "transform": [
+          0.0002777777777777778,
+          0.0,
+          6.9998611111111115,
+          0.0,
+          -0.0002777777777777778,
+          48.00013888888889
+        ]
+      },
+      "reused": false,
+      "sha256": "5012dc32581b4aebbe71dec6f22507a2944b5e6b7f8fa301b0876f947976298b",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N47_00_E007_00_DEM/Copernicus_DSM_COG_10_N47_00_E007_00_DEM.tif"
+    },
+    {
+      "acquiredAt": "2026-10-04T17:02:38.887653+00:00",
+      "bytes": 41746914,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Connection": "close",
+        "Content-Length": "41746914",
+        "Content-Type": "image/tiff",
+        "Date": "Sun, 04 Oct 2026 17:02:37 GMT",
+        "ETag": "\"8df4ea1da1b7d4378882c12610ba3dbc\"",
+        "Last-Modified": "Mon, 09 May 2022 14:26:37 GMT",
+        "Server": "AmazonS3",
+        "x-amz-id-2": "COcRDN9c0kV/8rBo+kPBHzWGeYGT/rY/qbyzR/N+fr4qBDqs7w+4iEwov3MnwxK7rd8dUuPdxOTGjToazd/PQp5/AVJpHh9A",
+        "x-amz-request-id": "490EVHK32TP8SVCB",
+        "x-amz-version-id": "null"
+      },
+      "latitude": 47,
+      "longitude": 8,
+      "path": "sources/atlas/riffelhorn/copernicus-common-2021-v1/originals/Copernicus_DSM_COG_10_N47_00_E008_00_DEM.tif",
+      "raster": {
+        "crs": "EPSG:4326",
+        "nodata": null,
+        "shape": [
+          3600,
+          3600
+        ],
+        "tags": {
+          "AREA_OR_POINT": "Point"
+        },
+        "transform": [
+          0.0002777777777777778,
+          0.0,
+          7.9998611111111115,
+          0.0,
+          -0.0002777777777777778,
+          48.00013888888889
+        ]
+      },
+      "reused": false,
+      "sha256": "4e2917429d65e049a4f1ddee2093f7fc50f11d22d0fd7cee85f5c8334186d7fe",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N47_00_E008_00_DEM/Copernicus_DSM_COG_10_N47_00_E008_00_DEM.tif"
+    }
+  ],
+  "height": "EGM2008 metres, unchanged",
+  "identity": "74c55b0cbad123778294647fa9770b1d673735401ae5d5b1854c4b32e57e0a85",
+  "planSha256": "1211160abfa8a9bab077bd459513a9085dcbafd71fb0923ccf70edddf55528f9",
+  "previousAssessmentInputIdentity": "7548fd4dcdb1dde8de320aef26d5aa2de2c2c1653273b7a97c8ea49e0611bd18",
+  "release": "Public COG distribution documenting 2021 release; exact sub-release unknown",
+  "totalSourceBytes": 254113117,
+  "version": "riffelhorn-copernicus-common-v1"
+}

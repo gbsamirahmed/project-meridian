@@ -1,0 +1,18 @@
+{
+  "version": "riffelhorn-copernicus-common-v1",
+  "baseline": "9f45d3ae7611f5b4710436d6de5318b0aa31ab29",
+  "role": "Bounded common/coarse reference delivery, independently evaluated; not production terrain, analytical elevation or Swiss composition.",
+  "source": "Copernicus GLO-30 public COG distribution documenting 2021 release; exact sub-release unknown. Reuse verified N45E007/N46E007; add N45E008/N46E008/N47E007/N47E008 only.",
+  "rootsXYZ": [[8,133,90],[8,133,91]],
+  "contextRationale": "Full z8 parents around the Swiss support extent and northern landscape views; root 8/133/91 alone ends at 46.07323N near the benchmark. Two north/south parents need six whole official-distribution COGs, retaining natural input units. No larger mirror.",
+  "sourceCoordinates": {"longitude": [7,8], "latitude": [45,46,47]},
+  "delivery": {"crs":"EPSG:3857","scheme":"xyz","tileSize":256,"encoding":"terrarium","format":"lossless RGB PNG","minzoom":8,"maxzoom":13},
+  "height": "EGM2008 metres preserved; horizontal reprojection only, no registration/vertical corrections.",
+  "information": "One arcsecond geographic posts, approximately 21.5m east/west and 30.9m north/south near Riffelhorn. z12 spacing approximately 26.56m, z13 approximately 13.28m at this latitude. z13 oversamples the source signal; it does not add observations. No z14+ tiles, renderer overzoom only.",
+  "finest": "Deterministic bilinear reprojection of source posts to aligned z13 Web Mercator grid, float32 working raster. No source overview substitution at this oversampling level.",
+  "parents": "Recursive 2x2 arithmetic mean on unencoded floating elevations in uniform Web Mercator pixel area; float64 accumulation, float32 storage. Encode each level independently. Not ground-area weighting, extrema preservation or structural generalisation.",
+  "coverage": "Only full supported descendants of the two z8 roots. No partial edge tiles, extrapolation, AWS fill or Swiss heights.",
+  "nodata": "Nonfinite/nodata propagates through aggregation; omit a terrain tile if any pixel lacks support. Valid zero elevations remain valid. Missing land/ocean/polar policy is unresolved globally; no inferred zero outside this local product.",
+  "checks": "Independent finest post sampling, encoding error, joined tile strips, decoded parents versus defined aggregation/direct block means, patch extrema/means, complete independent rebuild, renderer scales/rotation/zoom/overzoom and limited globe transition.",
+  "exclusions": "No Swiss join, blending, resolver, analytical migration, production change, structural generalisation or additional DEM candidate."
+}

@@ -185,6 +185,16 @@ correction, accepted transition, terrain hierarchy or production source change
 follows from this assessment. Existing Atlas metadata describes the retained
 source, COG derivative and separate height diagnostic without a model extension.
 
+The bounded [Copernicus common/coarse product](atlas/copernicus-common-product.md)
+now prepares six frozen 2021 COG inputs into two complete z8 roots and their
+z9–13 descendants. EGM2008 heights are preserved; unencoded mean aggregation
+produces deterministic parents, and finer renderer zoom adds no observations.
+Owned source/product metadata describes scoped support and immutable lineage
+without production adoption. Local terrain is coherent inside coverage, but
+finite perimeter gaps and absent z0–7/global water support remain explicit.
+This is the coarse-side asset for a later bounded hierarchy evaluation, not a
+Swiss join, general resolver, complete global hierarchy or production migration.
+
 The conceptual relationship is:
 
 ```text

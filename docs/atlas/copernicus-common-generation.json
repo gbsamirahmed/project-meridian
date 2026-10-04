@@ -1,0 +1,97 @@
+{
+  "coverageGeographic": [
+    7.03125,
+    45.089035564831015,
+    8.4375,
+    47.040182144806664
+  ],
+  "coverageMercator": [
+    782715.1696402058,
+    5635549.221409475,
+    939258.2035682462,
+    5948635.289265556
+  ],
+  "delivery": {
+    "crs": "EPSG:3857",
+    "encoding": "terrarium",
+    "finest": "bilinear source-post reprojection",
+    "format": "RGB PNG",
+    "height": "EGM2008 preserved",
+    "maxEncodingErrorMetres": 0.001953125,
+    "maxzoom": 13,
+    "minzoom": 8,
+    "nodata": "strict support propagation, omit any incomplete tile; no zero/alpha/AWS padding",
+    "overzoom": "renderer above z13; no new source information",
+    "parents": "2x2 mean unencoded float32 heights; float64 accumulation; uniform Web Mercator pixel area",
+    "quantizationIncrementMetres": 0.00390625,
+    "scheme": "xyz",
+    "tileSize": 256
+  },
+  "generatedAt": "2026-10-04T17:09:51.350092+00:00",
+  "generationSeconds": 103.60355890006758,
+  "identity": "8f002dcbdeceb6aa37cc9eeef9f2d2060193b1eff7922ddb1d0535a6b8030da2",
+  "levels": [
+    {
+      "omittedUnsupported": 0,
+      "tiles": 2,
+      "zoom": 8
+    },
+    {
+      "omittedUnsupported": 0,
+      "tiles": 8,
+      "zoom": 9
+    },
+    {
+      "omittedUnsupported": 0,
+      "tiles": 32,
+      "zoom": 10
+    },
+    {
+      "omittedUnsupported": 0,
+      "tiles": 128,
+      "zoom": 11
+    },
+    {
+      "omittedUnsupported": 0,
+      "tiles": 512,
+      "zoom": 12
+    },
+    {
+      "omittedUnsupported": 0,
+      "tiles": 2048,
+      "zoom": 13
+    }
+  ],
+  "manifestSha256": "9393fbadf807592ed67e94408d82bc0f508d4a29d7aa90cf78e605b2053bb177",
+  "processing": {
+    "gdal": "3.9.3",
+    "helperSha256": "5a4178f92b809aae2b988c7f998a2e30e73efb69700d911b404d21641ead6432",
+    "horizontalOperation": "proj=pipeline step proj=unitconvert xy_in=deg xy_out=rad step proj=webmerc lat_0=0 lon_0=0 x_0=0 y_0=0 ellps=WGS84",
+    "numpy": "2.5.3",
+    "pillow": "12.3.0",
+    "proj": "9.5.1",
+    "pyproj": "3.7.2",
+    "python": "3.12.6",
+    "rasterio": "1.4.3",
+    "scriptSha256": "9d24e6dc56b216846bea447bf1398026f722480e8176c672e821ed41b250e6fc",
+    "threads": 1,
+    "verticalTransformation": "none",
+    "warpErrorThreshold": 0
+  },
+  "rightsReference": "https://s3.waw3-1.cloudferro.com/swift/v1/portal_uploads_prod/CSCDA_ESA_Mission-specific_Annex_31_Oct_22_latest.pdf",
+  "sourceBytes": 254113117,
+  "sourceIdentity": "74c55b0cbad123778294647fa9770b1d673735401ae5d5b1854c4b32e57e0a85",
+  "sourceVrtSha256": "1fec9653a88d8416ff110ab54819c5e5830e40f92aa496752ad019f59df9e903",
+  "tileCount": 2730,
+  "tileStorageBytes": 327636998,
+  "version": "riffelhorn-copernicus-common-v1",
+  "workingHashes": {
+    "z10.tif": "e443e6c4699b73278df8682a999373bcdb65b8da8a229f63ef58e5fb7846e802",
+    "z11.tif": "d5976be61b9b1c5e11cc3c07537e0396ca66c893f3d21db90e3d350300f7baa5",
+    "z12.tif": "12930eb73b7d50ba2789aae62a00182d1a408c2bbef4336807955970d4075a56",
+    "z13.tif": "df933a1fe127a5c15e1e72ba69f13bafaeb63dc30246dbac6e596bcbdf1b3acd",
+    "z8.tif": "4d76e1ad8c0d0c127ae9af341f2cf65f24bea140b3dce270ab4d1155fcdbf966",
+    "z9.tif": "fa6a446f2518ad1cf6f4b9974d5a06bb95baed40262526729b73d3637a283ad4"
+  },
+  "workingRasterBytes": 416136764
+}
