@@ -1,0 +1,51 @@
+{
+  "boundarySha256": "aab96a561f23186b09df0fbd7b39f8d383739f67e33f0ec6e8492eaad3f6d4d8",
+  "catalogueMetadataHashes": {
+    "swissalti3d_2024_2625-1087": "abb921197cf9227ebeda6b71b8b1e37abdfb2a89930fcb611388c9d62ed9d9e5",
+    "swissalti3d_2024_2627-1085": "5d3616250bd4f23d019b1b4a19446060f3de271799acf0541e3f720aeb9827c2"
+  },
+  "files": [
+    {
+      "bytes": 143316,
+      "path": "grid-25m.npz",
+      "sha256": "6796f542a017934dd871c6a9bebec0e6e87a4830cc96f7c89591c2cda5ffca3e"
+    },
+    {
+      "bytes": 67662,
+      "path": "grid-50m.npz",
+      "sha256": "263ca7c393bbc66cc77589d7cd982dd3be485cb4a8b1d8b4706f2eedcbf55dc8"
+    },
+    {
+      "bytes": 415576,
+      "path": "measurements.json",
+      "sha256": "fe060404d30dfccd68cdeef806ecc5cefc0fbf77c80b41291918d18c2f23ca03"
+    },
+    {
+      "bytes": 412879,
+      "path": "support-extent-map.png",
+      "sha256": "4d28033be766ad36e112c584857ee6c558a7538e796c399420fc03a7c3247ec4"
+    }
+  ],
+  "helperHashes": {
+    "assess_global_reference.py": "cc126014654f0161821a634f3900313b6e31b234cbb42a971ab720ac8dd7fa7f",
+    "seam_corridor.py": "0687e323c37b4cdcb5321b4db642ba430169275574a4b3a59c28761c73933a98"
+  },
+  "identity": "c129226900840224b273142aebb7c04b27aad439f3288582703fff4676b6f9f5",
+  "inputs": {
+    "sgi1973": "69a13fde7b142dd29b2f07a6bf5a4923750b502661995ca518e992a591e86145",
+    "sgi2016": "36ff3252f24f76f0a93eafaa29086ba63725cc2cc99593deca34c15699e933a7",
+    "sgi2023": "ecef353d4b70f760eda83c6131e5345a2fd999527ea560b0bda4b7c27823f9fb"
+  },
+  "noAcquisitionRecommendationAccepted": true,
+  "noElevationAccess": true,
+  "planSha256": "62eb001ff49d9b19b7fbd85ed7b5aad6ef92401c9841cac88c0ea3b9220b0476",
+  "software": {
+    "gdal": "3.9.3",
+    "numpy": "2.5.3",
+    "pyproj": "3.7.2",
+    "python": "3.12.6",
+    "rasterio": "1.4.3"
+  },
+  "toolSha256": "66b775fbf6c61e048d31940fc79cde77301a02fea9a0b55e0359c1406ef0a9a2",
+  "version": "riffelhorn-support-extent-v1"
+}

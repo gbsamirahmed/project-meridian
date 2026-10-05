@@ -129,6 +129,14 @@ accepted corridors. The next prerequisite is glacier-aware support-extent planni
 using retained inventories, before further acquisition or any transition. No
 heights, products, references, rendering or production policy changed.
 
+The [glacier-aware support-extent assessment](../atlas/support-extent-assessment.md)
+then inspected retained whole inventories beyond the crop. The exclusion network
+is censored west/east/north even in a 26×18 km inventory window and reaches the
+national boundary south, including recent-only unbuffered ice. National territory
+is not exact elevation support. No minimum/robust acquisition extent is established;
+no new terrain is acquired. A bounded transboundary change/valid-support audit is
+the next prerequisite, not another larger square or a transition algorithm.
+
 ## Evidence classes
 
 - **MERIDIAN EVIDENCE (M):** measurements, inspected outputs and negative results

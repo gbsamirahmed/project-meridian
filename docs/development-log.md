@@ -3381,3 +3381,27 @@ also inadvertently run and copied existing Weather publication into ignored dist
 no forecast calculation/update occurred. Application-only build was then verified
 separately. Production AWS, analytical AWS z15, IGOR, exaggeration, Weather,
 Traverse, satellite and lifecycle remain unchanged.
+
+## 2026-10-05 — Glacier-aware Riffelhorn support-extent assessment
+
+The [inventory/support diagnostic](atlas/support-extent-assessment.md) from
+`28f677c` reused verified official SGI1973/2016/2023 and acquired only a lightweight
+official country polygon and two 2024 STAC metadata responses. No DEM downloaded
+or read, no terrain/pyramid/height/reference operation and no production change.
+
+The Gorner-connected exclusion network reaches beyond a 26×18 km observed window
+west/east/north and reaches national inventory coverage south. Recent-only,
+unbuffered SGI2023 also connects to the border. 25/50 m grids, 100/250/500 m glacier
+buffers and 100/200/500 m edge guards retain failed enclosure. Territory is not
+exact DEM support: a listed border tile demonstrates why inventory coverage and
+source-cell validity must remain separate. Minimum/robust extents are deliberately
+null; censored rectangle storage estimates are not acquisition recommendations.
+
+Outcome: no additional elevation acquisition justified. Single next prerequisite:
+a bounded transboundary glacier/change and valid-source-support audit at the
+southern passage, before selecting any expanded terrain estate. No follow-on work.
+
+Offline tooling/tests/plan/results/hash records retained; compressed fields/map
+external. Four outputs reproduce exactly. 54 Python and 40 focused Node tests,
+references/metadata/diff checks pass; Windows text hashing corrected to UTF-8.
+No runtime/dependency/UI change; no broader app build needed for isolated research.

@@ -1,0 +1,21 @@
+{
+  "version": "riffelhorn-support-extent-v1",
+  "baseline": "28f677ce29e2e2945d6898036d9b20c0411b5c45",
+  "question": "What tile-aligned, reasonably robust larger Swiss support could admit an enclosing non-change corridor? No DEM acquisition, heights or seam costs.",
+  "protectedCentreLV95": [2625000, 1092000],
+  "protectedRadiusMetres": 1500,
+  "currentBoundsLV95": [2620000, 1087000, 2630000, 1097000],
+  "studyBoundsLV95": [2614000, 1082000, 2640000, 1100000],
+  "studyRationale": "Existing full inventory feature bounds identify Gorner reaching north1085051/east2634378, western Theodul/Furgg east2617800 and Findel east2636407. This window contains those systems with several kilometres of geographic context; not an elevation acquisition extent.",
+  "stepsMetres": [25, 50],
+  "glacierBuffersMetres": [100, 250, 500],
+  "edgeGuardsMetres": [100, 200, 500],
+  "topology": "Four-neighbour admissible-node cycles enclosing guarded whole protected circle, reuse frozen dual escape test. National territory is a conservative known Swiss-inventory support proxy, NOT exact swissALTI3D valid-data footprint. Outside it is unknown, never automatically ice-free.",
+  "masks": "Retained official SGI1973/2016/2023 whole national archives, all-touched polygon union and existing Euclidean raster buffer. Swiss national polygon additionally rasterized and conservatively eroded one cell; include countries as a separate support gate, not glacier terrain. Analyse epochs independently and historical union.",
+  "candidateRule": "Flood connected glacier/protected exclusion in unconstrained plane, derive its tile-aligned bounding extent plus specified support margin while retaining existing100 tiles. Then test closed topology rather than assuming bbox success. At most primary-minimum and robust500m candidates; show original control. If known-support country constraint prevents enclosure, reject both and recommend no acquisition.",
+  "otherClasses": "Existing water/snow mask coverage checked and reused locally. Unknown classification outside retained crop must remain explicit. A positive inventory-only result is an optimistic opportunity, never a certified all-class corridor; a negative known-support result needs no new landcover to rescue it.",
+  "minimumScope": "Minimum tile-aligned rectangle containing existing crop and connected protected glacier component under the stated raster/margin model; not minimum among arbitrary shapes or a scientific seam width.",
+  "storage": "Use actual retained Swiss source/product bytes per100km2 and tiles per100km2 as rough area scaling only; preserve separate source and delivery estimates and ±geometry/compression uncertainty.",
+  "stopping": "One inventory topology diagnostic. No terrain acquisition or elevation array access, no automatic expansion or relaxed-exclusion success. A border/inventory-support obstruction is a valid negative outcome.",
+  "observedSupportAddendum": "First pass shows the connected exclusion exits west/east/north of the bounded study window and crosses the Swiss national support proxy south. Do not derive a minimum from a censored component or label an extent extending beyond analysed data feasible. Retain null minimum/robust extents, observed-window control and strictly labelled censored-rectangle area estimates. Test recent-only/unbuffered border connectivity to separate actual inventory geography from historical/buffer conservatism. Metadata-only official catalogue checks for two border tiles demonstrate that territory is not exact DEM support: cross-border change and actual data-support information remain prerequisites. No new height or seam-cost analysis."
+}
