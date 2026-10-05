@@ -3552,3 +3552,32 @@ failures; isolated reruns and the full four-process suite passed. Cause not
 established; no assertion or application defect was reproduced. Existing
 large-chunk warning remains. Normal CI/startup requires no
 experimental terrain or local evaluation service.
+## 2026-10-05 — Wales/Tryfan second-region terrain proof
+
+Completed the [bounded second-region proof](atlas/tryfan-second-region-proof.md):
+SUCCESS. Reused the hash-verified 9km² Welsh Government 2021 DTM subset under
+its official OGL download terms; no regional elevation acquisition. Prepared295
+complete z14–17 Terrarium tiles (23.89MB) with strict support propagation and
+Welsh-derived parents. Independent rebuild matches every tile/support/working
+hash. Unknown native vertical datum is explicit, not inferred from BNG or local
+ODN labels; no datum/registration correction, reconciliation or blending.
+
+The real family uses the frozen metadata, registry, selector and MapLibre
+adapter unchanged. Normalized exact support polygons allow full-tile eligibility;
+a preparation-only fragmentation defect was corrected in immutable v2 without
+changing any height tile bytes. Fine/interior/parent/missing-child/common-fallback
+and handoff decisions are recorded. Nine matched cameras and seven continuous
+sequences per provider confirm regional detail/refinement; straight support-edge
+relief and coarse handoff remain unreconciled. All474 hierarchy and221 control
+endpoint requests completed200; four browser navigation cancellations in the
+hierarchy run. No contract contradiction or Swiss-specific selection branch.
+
+Seven new semantic tests, four synthetic preparation tests, independent transfer/
+parent checks, metadata/source/support hashes, deterministic rebuild and renderer
+capture passed. Full application suite219 passed, one existing optional-data skip;
+lint, TypeScript, application-only bundle and reference/diff checks pass. Production
+AWS geometry14/relief15, independent analytical AWSz15, IGOR, exaggeration1.45,
+Weather/Traverse/satellite/projection/lifecycle remain unchanged. No normal CI or
+startup dependency on external assets or the evaluation gateway. Regional elevation
+foundation established; no additional elevation benchmark recommended. Next
+programme boundary is imagery/appearance, not started here.

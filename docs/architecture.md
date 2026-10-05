@@ -244,7 +244,7 @@ limitation remain explicit. Source products stay immutable; rendering owns portr
 Analytical elevation, Weather/Traverse and production AWS remain independent and unchanged.
 
 The contract contains bounded first-implementation and Wales/Tryfan proof plans.
-The runtime slice is implemented; the bounded Wales/Tryfan proof remains next.
+The runtime slice and [bounded Wales/Tryfan second-region proof](atlas/tryfan-second-region-proof.md) are complete. The real Welsh pyramid uses the unchanged registry/selector/adapter with normalized assessed support, explicit parent/fallback and unknown native vertical semantics. Regional elevation portability is established; reconciliation remains unresolved. No further elevation benchmark is recommended. The next programme boundary is imagery/appearance under a separate task. Production and analytical AWS remain unchanged.
 Earlier investigation summaries above retain
 their historical decisions; no further Riffelhorn elevation-method experiment follows.
 

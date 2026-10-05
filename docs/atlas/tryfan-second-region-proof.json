@@ -1,0 +1,1104 @@
+{
+  "baseline": "ba24e54",
+  "classification": "SUCCESS",
+  "generationDate": "2026-10-05",
+  "productIdentity": "db8e4d87b5fa609d455d1e0f8ec3fdebc834579a7e102f69f4d0b0283efa690c",
+  "tileCount": 295,
+  "tileBytes": 23889573,
+  "workingBytes": 46691533,
+  "source": {
+    "acquisition": "2021-03-02 delivery 11 catalogue; per-cell epoch not independently mapped",
+    "bounds": [
+      264900,
+      357800,
+      267900,
+      360800
+    ],
+    "bytes": 15639072,
+    "crs": "EPSG:27700",
+    "path": "sources/atlas/tryfan/welsh-lidar-1m/rasters/tryfan-004-dtm-1m.tif",
+    "sha256": "49c131d7de62e0df35f8e02c2f8db3161bfd37f24fea56060fcbb9e6d109b326",
+    "vertical": "Native values preserved; vertical datum not established by checked primary metadata"
+  },
+  "sourceAccess": {
+    "url": "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dtm_32bit_cog.tif",
+    "checked": "2026-10-05",
+    "status": 200,
+    "headers": {
+      "Content-Length": "48611310928",
+      "Content-Type": "image/tiff",
+      "Content-MD5": "u+Bq/NW2Vr3GSlymL0JNVA==",
+      "Last-Modified": "Fri, 04 Oct 2024 15:24:32 GMT",
+      "ETag": "0x8DCE488A5BF1B2C",
+      "Vary": "Origin",
+      "Server": "Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0",
+      "x-ms-request-id": "3bb26a57-e01e-001d-130b-555a4f000000",
+      "x-ms-version": "2009-09-19",
+      "x-ms-lease-status": "unlocked",
+      "x-ms-blob-type": "BlockBlob",
+      "Date": "Mon, 05 Oct 2026 20:56:01 GMT",
+      "Connection": "close"
+    },
+    "downloadPageSha256": "8746730a5481145dbaa978b4a9b5e396857fd32d5cdb2d212c7eade2ceafe9a9",
+    "licenceEvidence": "Official data-download page, OGL v3 linked specifically alongside this DTM; catalogue licence Not Specified is retained as a discrepancy."
+  },
+  "deterministicRebuild": "All manifest, tile, working and support hashes identical",
+  "numerical": {
+    "encoding": {
+      "maxAbs": 0.001953125,
+      "p95Abs": 0.001861572265625,
+      "rms": 0.0011267261203518168,
+      "samples": 59392
+    },
+    "independentParentRule": [
+      {
+        "maxFloat32Rounding": 0.000030517578125,
+        "parent": 14
+      },
+      {
+        "maxFloat32Rounding": 0.000030517578125,
+        "parent": 15
+      },
+      {
+        "maxFloat32Rounding": 0.000030517578125,
+        "parent": 16
+      }
+    ],
+    "manifestSha256": "b254a21b1ec346cc07b43d269d937b059851e95ac168565359a81d3872c69e54",
+    "sourceHashAfter": "49c131d7de62e0df35f8e02c2f8db3161bfd37f24fea56060fcbb9e6d109b326",
+    "sourceToFinestUnencoded": {
+      "maxAbs": 0.42062127038491326,
+      "p95Abs": 0.03776615937868537,
+      "rms": 0.019888442263526224,
+      "samples": 59392
+    }
+  },
+  "decisions": {
+    "fine": {
+      "request": {
+        "location": {
+          "coordinates": [
+            -3.999,
+            53.115
+          ],
+          "crs": "OGC:CRS84"
+        },
+        "scale": {
+          "scheme": "XYZ Web Mercator zoom (delivery)",
+          "requestedLevel": "z17"
+        },
+        "provenanceRequirement": "product-lineage"
+      },
+      "selected": {
+        "status": "selected",
+        "hierarchy": {
+          "id": "tryfan-second-region-proof",
+          "revision": "1"
+        },
+        "family": "welsh-regional",
+        "sourceFamily": "welsh-2021-regional",
+        "role": "regional",
+        "product": {
+          "kind": "product",
+          "id": "tryfan-welsh-regional-v2",
+          "revision": {
+            "status": "known",
+            "value": "db8e4d87b5fa609d455d1e0f8ec3fdebc834579a7e102f69f4d0b0283efa690c"
+          }
+        },
+        "representation": {
+          "family": "welsh-regional",
+          "level": "z17",
+          "kind": "raster-dem-heightfield"
+        },
+        "level": "z17",
+        "requestedLevel": "z17",
+        "derivation": "resampled",
+        "informationCeiling": {
+          "status": "known",
+          "value": "1m distributed source grid. z17 samples approximately 0.72m near Tryfan and is resampled; no level asserts new independent measurements."
+        },
+        "sampleSpacing": {
+          "status": "known",
+          "value": "0.717m near latitude 53.115°; delivery sampling, not measurement resolution"
+        },
+        "overzoom": false,
+        "support": "complete",
+        "reason": "direct",
+        "refinement": "direct",
+        "handoffState": "unresolved",
+        "trace": [
+          {
+            "family": "welsh-regional",
+            "level": "z17",
+            "outcome": "eligible-complete-support"
+          }
+        ]
+      },
+      "delivery": {
+        "type": "raster-dem",
+        "tiles": [
+          "http://127.0.0.1:4186/regional/{z}/{x}/{y}.png"
+        ],
+        "tileSize": 256,
+        "encoding": "terrarium",
+        "maxzoom": 17,
+        "minzoom": 14
+      }
+    },
+    "parent": {
+      "request": {
+        "location": {
+          "coordinates": [
+            -3.999,
+            53.115
+          ],
+          "crs": "OGC:CRS84"
+        },
+        "scale": {
+          "scheme": "XYZ Web Mercator zoom (delivery)",
+          "requestedLevel": "z14"
+        },
+        "provenanceRequirement": "product-lineage",
+        "previous": {
+          "family": "welsh-regional",
+          "level": "z17"
+        }
+      },
+      "selected": {
+        "status": "selected",
+        "hierarchy": {
+          "id": "tryfan-second-region-proof",
+          "revision": "1"
+        },
+        "family": "welsh-regional",
+        "sourceFamily": "welsh-2021-regional",
+        "role": "regional",
+        "product": {
+          "kind": "product",
+          "id": "tryfan-welsh-regional-v2",
+          "revision": {
+            "status": "known",
+            "value": "db8e4d87b5fa609d455d1e0f8ec3fdebc834579a7e102f69f4d0b0283efa690c"
+          }
+        },
+        "representation": {
+          "family": "welsh-regional",
+          "level": "z14",
+          "kind": "raster-dem-heightfield"
+        },
+        "level": "z14",
+        "requestedLevel": "z14",
+        "derivation": "regional-derived-parent",
+        "informationCeiling": {
+          "status": "known",
+          "value": "1m distributed source grid. z17 samples approximately 0.72m near Tryfan and is resampled; no level asserts new independent measurements."
+        },
+        "sampleSpacing": {
+          "status": "known",
+          "value": "5.735m near latitude 53.115°; delivery sampling, not measurement resolution"
+        },
+        "overzoom": false,
+        "support": "complete",
+        "reason": "direct",
+        "refinement": "within-family-lod",
+        "handoffState": "unresolved",
+        "trace": [
+          {
+            "family": "welsh-regional",
+            "level": "z14",
+            "outcome": "eligible-complete-support"
+          }
+        ]
+      },
+      "delivery": {
+        "type": "raster-dem",
+        "tiles": [
+          "http://127.0.0.1:4186/regional/{z}/{x}/{y}.png"
+        ],
+        "tileSize": 256,
+        "encoding": "terrarium",
+        "maxzoom": 14,
+        "minzoom": 14
+      }
+    },
+    "outside": {
+      "request": {
+        "location": {
+          "coordinates": [
+            -4.023,
+            53.115
+          ],
+          "crs": "OGC:CRS84"
+        },
+        "scale": {
+          "scheme": "XYZ Web Mercator zoom (delivery)",
+          "requestedLevel": "z17"
+        },
+        "provenanceRequirement": "product-lineage",
+        "previous": {
+          "family": "welsh-regional",
+          "level": "z17"
+        }
+      },
+      "selected": {
+        "status": "selected",
+        "hierarchy": {
+          "id": "tryfan-second-region-proof",
+          "revision": "1"
+        },
+        "family": "production-common",
+        "sourceFamily": "legacy-hosted-terrain",
+        "role": "common",
+        "product": {
+          "kind": "product",
+          "id": "aws-terrarium",
+          "revision": {
+            "status": "unknown",
+            "reason": "Mutable public hosted tiles; no complete immutable product revision established."
+          }
+        },
+        "representation": {
+          "family": "production-common",
+          "level": "z15",
+          "kind": "raster-dem-heightfield"
+        },
+        "level": "z15",
+        "requestedLevel": "z17",
+        "derivation": "resampled",
+        "informationCeiling": {
+          "status": "unknown",
+          "reason": "Neither Atlas geometry z14 nor relief z15 ceilings prove measurement resolution."
+        },
+        "sampleSpacing": {
+          "status": "unknown",
+          "reason": "Consumer level does not establish independent information."
+        },
+        "overzoom": true,
+        "support": "legacy-unassessed",
+        "reason": "common-fallback",
+        "refinement": "source-family-handoff",
+        "handoffState": "unresolved",
+        "trace": [
+          {
+            "family": "welsh-regional",
+            "level": "z17",
+            "outcome": "outside-valid-support"
+          },
+          {
+            "family": "welsh-regional",
+            "level": "z16",
+            "outcome": "outside-valid-support"
+          },
+          {
+            "family": "welsh-regional",
+            "level": "z15",
+            "outcome": "outside-valid-support"
+          },
+          {
+            "family": "welsh-regional",
+            "level": "z14",
+            "outcome": "outside-valid-support"
+          },
+          {
+            "family": "production-common",
+            "level": "z15",
+            "outcome": "legacy-external-common-policy; valid-support-remains-unknown"
+          }
+        ]
+      },
+      "delivery": {
+        "type": "raster-dem",
+        "tiles": [
+          "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png"
+        ],
+        "tileSize": 256,
+        "encoding": "terrarium",
+        "maxzoom": 15
+      }
+    },
+    "coarse": {
+      "request": {
+        "location": {
+          "coordinates": [
+            -3.999,
+            53.115
+          ],
+          "crs": "OGC:CRS84"
+        },
+        "scale": {
+          "scheme": "XYZ Web Mercator zoom (delivery)",
+          "requestedLevel": "z13"
+        },
+        "provenanceRequirement": "product-lineage"
+      },
+      "selected": {
+        "status": "selected",
+        "hierarchy": {
+          "id": "tryfan-second-region-proof",
+          "revision": "1"
+        },
+        "family": "production-common",
+        "sourceFamily": "legacy-hosted-terrain",
+        "role": "common",
+        "product": {
+          "kind": "product",
+          "id": "aws-terrarium",
+          "revision": {
+            "status": "unknown",
+            "reason": "Mutable public hosted tiles; no complete immutable product revision established."
+          }
+        },
+        "representation": {
+          "family": "production-common",
+          "level": "z13",
+          "kind": "raster-dem-heightfield"
+        },
+        "level": "z13",
+        "requestedLevel": "z13",
+        "derivation": "resampled",
+        "informationCeiling": {
+          "status": "unknown",
+          "reason": "Neither Atlas geometry z14 nor relief z15 ceilings prove measurement resolution."
+        },
+        "sampleSpacing": {
+          "status": "unknown",
+          "reason": "Consumer level does not establish independent information."
+        },
+        "overzoom": false,
+        "support": "legacy-unassessed",
+        "reason": "common-fallback",
+        "refinement": "source-family-handoff",
+        "handoffState": "unresolved",
+        "trace": [
+          {
+            "family": "welsh-regional",
+            "outcome": "requested-level-unavailable"
+          },
+          {
+            "family": "production-common",
+            "level": "z13",
+            "outcome": "legacy-external-common-policy; valid-support-remains-unknown"
+          }
+        ]
+      },
+      "delivery": {
+        "type": "raster-dem",
+        "tiles": [
+          "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png"
+        ],
+        "tileSize": 256,
+        "encoding": "terrarium",
+        "maxzoom": 13
+      }
+    },
+    "commonOnly": {
+      "request": {
+        "location": {
+          "coordinates": [
+            -3.999,
+            53.115
+          ],
+          "crs": "OGC:CRS84"
+        },
+        "scale": {
+          "scheme": "XYZ Web Mercator zoom (delivery)",
+          "requestedLevel": "z15"
+        },
+        "provenanceRequirement": "product-lineage",
+        "family": "production-common"
+      },
+      "selected": {
+        "status": "selected",
+        "hierarchy": {
+          "id": "tryfan-second-region-proof",
+          "revision": "1"
+        },
+        "family": "production-common",
+        "sourceFamily": "legacy-hosted-terrain",
+        "role": "common",
+        "product": {
+          "kind": "product",
+          "id": "aws-terrarium",
+          "revision": {
+            "status": "unknown",
+            "reason": "Mutable public hosted tiles; no complete immutable product revision established."
+          }
+        },
+        "representation": {
+          "family": "production-common",
+          "level": "z15",
+          "kind": "raster-dem-heightfield"
+        },
+        "level": "z15",
+        "requestedLevel": "z15",
+        "derivation": "resampled",
+        "informationCeiling": {
+          "status": "unknown",
+          "reason": "Neither Atlas geometry z14 nor relief z15 ceilings prove measurement resolution."
+        },
+        "sampleSpacing": {
+          "status": "unknown",
+          "reason": "Consumer level does not establish independent information."
+        },
+        "overzoom": false,
+        "support": "legacy-unassessed",
+        "reason": "direct",
+        "refinement": "direct",
+        "handoffState": "unresolved",
+        "trace": [
+          {
+            "family": "production-common",
+            "level": "z15",
+            "outcome": "legacy-external-common-policy; valid-support-remains-unknown"
+          }
+        ]
+      },
+      "delivery": {
+        "type": "raster-dem",
+        "tiles": [
+          "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png"
+        ],
+        "tileSize": 256,
+        "encoding": "terrarium",
+        "maxzoom": 15
+      }
+    },
+    "overzoom": {
+      "request": {
+        "location": {
+          "coordinates": [
+            -3.999,
+            53.115
+          ],
+          "crs": "OGC:CRS84"
+        },
+        "scale": {
+          "scheme": "XYZ Web Mercator zoom (delivery)",
+          "requestedLevel": "z18"
+        },
+        "provenanceRequirement": "product-lineage"
+      },
+      "selected": {
+        "status": "selected",
+        "hierarchy": {
+          "id": "tryfan-second-region-proof",
+          "revision": "1"
+        },
+        "family": "welsh-regional",
+        "sourceFamily": "welsh-2021-regional",
+        "role": "regional",
+        "product": {
+          "kind": "product",
+          "id": "tryfan-welsh-regional-v2",
+          "revision": {
+            "status": "known",
+            "value": "db8e4d87b5fa609d455d1e0f8ec3fdebc834579a7e102f69f4d0b0283efa690c"
+          }
+        },
+        "representation": {
+          "family": "welsh-regional",
+          "level": "z17",
+          "kind": "raster-dem-heightfield"
+        },
+        "level": "z17",
+        "requestedLevel": "z18",
+        "derivation": "resampled",
+        "informationCeiling": {
+          "status": "known",
+          "value": "1m distributed source grid. z17 samples approximately 0.72m near Tryfan and is resampled; no level asserts new independent measurements."
+        },
+        "sampleSpacing": {
+          "status": "known",
+          "value": "0.717m near latitude 53.115°; delivery sampling, not measurement resolution"
+        },
+        "overzoom": true,
+        "support": "complete",
+        "reason": "overzoom",
+        "refinement": "direct",
+        "handoffState": "unresolved",
+        "trace": [
+          {
+            "family": "welsh-regional",
+            "level": "z17",
+            "outcome": "eligible-complete-support"
+          }
+        ]
+      },
+      "delivery": {
+        "type": "raster-dem",
+        "tiles": [
+          "http://127.0.0.1:4186/regional/{z}/{x}/{y}.png"
+        ],
+        "tileSize": 256,
+        "encoding": "terrarium",
+        "maxzoom": 17,
+        "minzoom": 14
+      }
+    },
+    "missingFine": {
+      "request": {
+        "location": {
+          "coordinates": [
+            -3.999,
+            53.115
+          ],
+          "crs": "OGC:CRS84"
+        },
+        "scale": {
+          "scheme": "XYZ Web Mercator zoom (delivery)",
+          "requestedLevel": "z17"
+        },
+        "provenanceRequirement": "product-lineage"
+      },
+      "selected": {
+        "status": "selected",
+        "hierarchy": {
+          "id": "tryfan-second-region-proof",
+          "revision": "1"
+        },
+        "family": "welsh-regional",
+        "sourceFamily": "welsh-2021-regional",
+        "role": "regional",
+        "product": {
+          "kind": "product",
+          "id": "tryfan-welsh-regional-v2",
+          "revision": {
+            "status": "known",
+            "value": "db8e4d87b5fa609d455d1e0f8ec3fdebc834579a7e102f69f4d0b0283efa690c"
+          }
+        },
+        "representation": {
+          "family": "welsh-regional",
+          "level": "z16",
+          "kind": "raster-dem-heightfield"
+        },
+        "level": "z16",
+        "requestedLevel": "z17",
+        "derivation": "regional-derived-parent",
+        "informationCeiling": {
+          "status": "known",
+          "value": "1m distributed source grid. z17 samples approximately 0.72m near Tryfan and is resampled; no level asserts new independent measurements."
+        },
+        "sampleSpacing": {
+          "status": "known",
+          "value": "1.434m near latitude 53.115°; delivery sampling, not measurement resolution"
+        },
+        "overzoom": false,
+        "support": "complete",
+        "reason": "regional-parent",
+        "refinement": "within-family-lod",
+        "handoffState": "unresolved",
+        "trace": [
+          {
+            "family": "welsh-regional",
+            "level": "z17",
+            "outcome": "absent-support"
+          },
+          {
+            "family": "welsh-regional",
+            "level": "z16",
+            "outcome": "eligible-complete-support"
+          }
+        ]
+      },
+      "delivery": {
+        "type": "raster-dem",
+        "tiles": [
+          "http://127.0.0.1:4186/regional/{z}/{x}/{y}.png"
+        ],
+        "tileSize": 256,
+        "encoding": "terrarium",
+        "maxzoom": 16,
+        "minzoom": 14
+      }
+    }
+  },
+  "captures": {
+    "hierarchy": {
+      "requests": 474,
+      "responses": 472,
+      "requestCounts": {
+        "production-common/9": 6,
+        "production-common/8": 4,
+        "production-common/5": 1,
+        "production-common/7": 1,
+        "production-common/10": 27,
+        "production-common/11": 37,
+        "production-common/12": 42,
+        "production-common/13": 72,
+        "production-common/14": 41,
+        "welsh-regional/14": 2,
+        "production-common/15": 31,
+        "welsh-regional/15": 10,
+        "welsh-regional/16": 67,
+        "production-common/16": 27,
+        "welsh-regional/17": 79,
+        "production-common/17": 27
+      },
+      "failures": [
+        {
+          "url": "http://127.0.0.1:4186/terrain/16/32036/21317.png",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:4186/terrain/16/32036/21316.png",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:4186/terrain/17/64067/42629.png",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:4186/terrain/16/32033/21315.png",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "productionHashes": {
+        "src/atlas/map/visualTerrainConfig.ts": "583da7dc4ac885bf1a9a4b440c45d71d24c0ddfc9212b58772914ab9ccce0920",
+        "src/atlas/terrain/analyticalElevationConfig.ts": "6fd90c2fb39dc925c8de90cf6b7cf3a907696d71cc116e42563255addb41a9bb",
+        "src/atlas/map/terrainLayers.ts": "c71099083d3184d5c70c148ea2c3f0574b0b170fb0737b9c041df579ed4e5497",
+        "src/atlas/map/AtlasMap.ts": "cb45f5963716d636e903ed515008b66dab2fca0ab6d2aa28214a8c6303ef4b05",
+        "src/atlas/map/atlasVisuals.ts": "48426ab2132d5192069254ec9fe3fb7d9d433c2c9059f6f2223166c34c22dcfc",
+        "src/atlas/terrain/terrainElevationSampler.ts": "d941ad5474ff7370da4e67c135018a777ed440d84bf00cff0f536600270f1b7b"
+      },
+      "scenes": [
+        {
+          "camera": {
+            "id": "landscape",
+            "center": [
+              -3.999,
+              53.115
+            ],
+            "zoom": 9.4,
+            "pitch": 45,
+            "bearing": 0
+          },
+          "filename": "landscape--hierarchy.png",
+          "sha256": "113348882351c1a01b1d92c1fef146a23a498177c3310d94fd35d7a9d252cdcd",
+          "elevationIncludesExaggeration": 1038.5480768847829,
+          "actualDEMLevels": [
+            7,
+            8
+          ]
+        },
+        {
+          "camera": {
+            "id": "planning",
+            "center": [
+              -3.999,
+              53.115
+            ],
+            "zoom": 11.4,
+            "pitch": 45,
+            "bearing": 0
+          },
+          "filename": "planning--hierarchy.png",
+          "sha256": "0e6085bd89c09f47d2e08ac29e2b31daaa5872c1876d3312b00a264ae46ee6e3",
+          "elevationIncludesExaggeration": 1128.3429713963037,
+          "actualDEMLevels": [
+            9,
+            10
+          ]
+        },
+        {
+          "camera": {
+            "id": "benchmark-close",
+            "center": [
+              -3.999,
+              53.115
+            ],
+            "zoom": 13.2,
+            "pitch": 55,
+            "bearing": 0
+          },
+          "filename": "benchmark-close--hierarchy.png",
+          "sha256": "5714e43e53ff2cb0790f3a607171445088a26af95854f40311bcb56e6be0f561",
+          "elevationIncludesExaggeration": 1187.0604591780193,
+          "actualDEMLevels": [
+            10,
+            11,
+            12,
+            13
+          ]
+        },
+        {
+          "camera": {
+            "id": "regional-parent",
+            "center": [
+              -3.999,
+              53.115
+            ],
+            "zoom": 15.2,
+            "pitch": 0,
+            "bearing": 0
+          },
+          "filename": "regional-parent--hierarchy.png",
+          "sha256": "6e96a75b7f0af9ba52b6b95ea0ffe5a72910f3edc8bc0791965c9aad629913a1",
+          "elevationIncludesExaggeration": 1213.375471634817,
+          "actualDEMLevels": [
+            14
+          ]
+        },
+        {
+          "camera": {
+            "id": "regional-child",
+            "center": [
+              -3.999,
+              53.115
+            ],
+            "zoom": 16.2,
+            "pitch": 35,
+            "bearing": 0
+          },
+          "filename": "regional-child--hierarchy.png",
+          "sha256": "d357c1305c93319e611aaa4efb8f5dcbbf6c7e198391c6091993c6509951b218",
+          "elevationIncludesExaggeration": 1220.533805777022,
+          "actualDEMLevels": [
+            13,
+            14,
+            15
+          ]
+        },
+        {
+          "camera": {
+            "id": "regional-detail",
+            "center": [
+              -3.999,
+              53.115
+            ],
+            "zoom": 17.2,
+            "pitch": 45,
+            "bearing": 0
+          },
+          "filename": "regional-detail--hierarchy.png",
+          "sha256": "a096bd4f28b31ca84455bbb90619263555f05ceaea6184480b3a187cefdb53fd",
+          "elevationIncludesExaggeration": 1220.7334676070361,
+          "actualDEMLevels": [
+            13,
+            14,
+            15,
+            16
+          ]
+        },
+        {
+          "camera": {
+            "id": "regional-rotation",
+            "center": [
+              -3.999,
+              53.115
+            ],
+            "zoom": 16.2,
+            "pitch": 35,
+            "bearing": 180
+          },
+          "filename": "regional-rotation--hierarchy.png",
+          "sha256": "876f34f0238a61224f77d76e0c977b1953412e1516f6dc11642f300f4bdf7c9d",
+          "elevationIncludesExaggeration": 1220.533805777022,
+          "actualDEMLevels": [
+            13,
+            14,
+            15
+          ]
+        },
+        {
+          "camera": {
+            "id": "support-edge",
+            "center": [
+              -4.018,
+              53.115
+            ],
+            "zoom": 16.2,
+            "pitch": 35,
+            "bearing": 0
+          },
+          "filename": "support-edge--hierarchy.png",
+          "sha256": "4484ba1a9f831110c9a302591b33f9a9f49101d5277cdf535d7e5f61f0e2439a",
+          "elevationIncludesExaggeration": 788.0788307679226,
+          "actualDEMLevels": [
+            14,
+            15
+          ]
+        },
+        {
+          "camera": {
+            "id": "outside",
+            "center": [
+              -4.023,
+              53.115
+            ],
+            "zoom": 16.2,
+            "pitch": 35,
+            "bearing": 180
+          },
+          "filename": "outside--hierarchy.png",
+          "sha256": "2192bccb5348582492c0738f99414ac133d66d2d739d83472b0963e763b86900",
+          "elevationIncludesExaggeration": 587.4495729071436,
+          "actualDEMLevels": [
+            14,
+            15
+          ]
+        }
+      ],
+      "navigationSequences": 7,
+      "movingCaptures": [
+        {
+          "path": "moving-0--hierarchy.png",
+          "sha256": "53f7934124573793030b93c07e82b7601136b2a7326db6b231d4988db49889e3"
+        },
+        {
+          "path": "moving-1--hierarchy.png",
+          "sha256": "9303b42f1f19886e81a738644f506e58185b263d9f00397ebf400effbeeb443d"
+        },
+        {
+          "path": "moving-2--hierarchy.png",
+          "sha256": "ac43ffd017f658962bb0dbccef0ea1c2573b112c335f43028ffd754e9515b895"
+        },
+        {
+          "path": "moving-3--hierarchy.png",
+          "sha256": "3cf46828ddf6ff81bff7864f6cdeae647eb5862d5040e9d80b838a314b06ad9a"
+        },
+        {
+          "path": "moving-4--hierarchy.png",
+          "sha256": "b255440041731c5344d9cfe099801992d70a6677f6af72ba80d9801c71aed460"
+        },
+        {
+          "path": "moving-5--hierarchy.png",
+          "sha256": "0554b2f6797ce082e31b9a16ccf933603fca0da2cf3a5b393a3c55e974f40d90"
+        },
+        {
+          "path": "moving-6--hierarchy.png",
+          "sha256": "3d549bdf55cca2dba55bf6fcdc705cd18c4c76a22b9e87c3084954fc8ac1b2d1"
+        }
+      ]
+    },
+    "aws": {
+      "requests": 221,
+      "responses": 221,
+      "requestCounts": {
+        "production-common/9": 6,
+        "production-common/8": 4,
+        "production-common/5": 1,
+        "production-common/7": 1,
+        "production-common/10": 27,
+        "production-common/11": 33,
+        "production-common/12": 26,
+        "production-common/13": 45,
+        "production-common/14": 41,
+        "production-common/15": 37
+      },
+      "failures": [],
+      "productionHashes": {
+        "src/atlas/map/visualTerrainConfig.ts": "583da7dc4ac885bf1a9a4b440c45d71d24c0ddfc9212b58772914ab9ccce0920",
+        "src/atlas/terrain/analyticalElevationConfig.ts": "6fd90c2fb39dc925c8de90cf6b7cf3a907696d71cc116e42563255addb41a9bb",
+        "src/atlas/map/terrainLayers.ts": "c71099083d3184d5c70c148ea2c3f0574b0b170fb0737b9c041df579ed4e5497",
+        "src/atlas/map/AtlasMap.ts": "cb45f5963716d636e903ed515008b66dab2fca0ab6d2aa28214a8c6303ef4b05",
+        "src/atlas/map/atlasVisuals.ts": "48426ab2132d5192069254ec9fe3fb7d9d433c2c9059f6f2223166c34c22dcfc",
+        "src/atlas/terrain/terrainElevationSampler.ts": "d941ad5474ff7370da4e67c135018a777ed440d84bf00cff0f536600270f1b7b"
+      },
+      "scenes": [
+        {
+          "camera": {
+            "id": "landscape",
+            "center": [
+              -3.999,
+              53.115
+            ],
+            "zoom": 9.4,
+            "pitch": 45,
+            "bearing": 0
+          },
+          "filename": "landscape--aws.png",
+          "sha256": "4b370c798c434c5cb825743247819819927afb0d89e09b7d4d06a87117185bd2",
+          "elevationIncludesExaggeration": 1038.5480768847829,
+          "actualDEMLevels": [
+            7,
+            8
+          ]
+        },
+        {
+          "camera": {
+            "id": "planning",
+            "center": [
+              -3.999,
+              53.115
+            ],
+            "zoom": 11.4,
+            "pitch": 45,
+            "bearing": 0
+          },
+          "filename": "planning--aws.png",
+          "sha256": "ef3629075e6c1b7bbe72c54524bf15e074db6fedf3272d5bd623454031a29cbd",
+          "elevationIncludesExaggeration": 1128.3429713963037,
+          "actualDEMLevels": [
+            9,
+            10
+          ]
+        },
+        {
+          "camera": {
+            "id": "benchmark-close",
+            "center": [
+              -3.999,
+              53.115
+            ],
+            "zoom": 13.2,
+            "pitch": 55,
+            "bearing": 0
+          },
+          "filename": "benchmark-close--aws.png",
+          "sha256": "fb259f16457ad985ecf7bf4d05c448aecea99b69387d4803b5fbcda0fd43dc52",
+          "elevationIncludesExaggeration": 1187.0604591780193,
+          "actualDEMLevels": [
+            10,
+            11,
+            12,
+            13
+          ]
+        },
+        {
+          "camera": {
+            "id": "regional-parent",
+            "center": [
+              -3.999,
+              53.115
+            ],
+            "zoom": 15.2,
+            "pitch": 0,
+            "bearing": 0
+          },
+          "filename": "regional-parent--aws.png",
+          "sha256": "fe252a3386800675a8d19a712b0b5de143cca938d157fa26c305ac96bafa0fba",
+          "elevationIncludesExaggeration": 1190.284251964174,
+          "actualDEMLevels": [
+            14
+          ]
+        },
+        {
+          "camera": {
+            "id": "regional-child",
+            "center": [
+              -3.999,
+              53.115
+            ],
+            "zoom": 16.2,
+            "pitch": 35,
+            "bearing": 0
+          },
+          "filename": "regional-child--aws.png",
+          "sha256": "48c0fd9069ca49aebf328acfb651e5fcbf8cc43802dc662cf877fe823c3f0a57",
+          "elevationIncludesExaggeration": 1190.284251964174,
+          "actualDEMLevels": [
+            13,
+            14
+          ]
+        },
+        {
+          "camera": {
+            "id": "regional-detail",
+            "center": [
+              -3.999,
+              53.115
+            ],
+            "zoom": 17.2,
+            "pitch": 45,
+            "bearing": 0
+          },
+          "filename": "regional-detail--aws.png",
+          "sha256": "bf95d2111ca0b00139e8775b08fec800247f8253590e007048b6590db43fc872",
+          "elevationIncludesExaggeration": 1190.284251964174,
+          "actualDEMLevels": [
+            13,
+            14
+          ]
+        },
+        {
+          "camera": {
+            "id": "regional-rotation",
+            "center": [
+              -3.999,
+              53.115
+            ],
+            "zoom": 16.2,
+            "pitch": 35,
+            "bearing": 180
+          },
+          "filename": "regional-rotation--aws.png",
+          "sha256": "a06f1032da7452bf565d85240e9dfa6b0bb5833f6320b067ed46574caf8e27d7",
+          "elevationIncludesExaggeration": 1190.284251964174,
+          "actualDEMLevels": [
+            13,
+            14
+          ]
+        },
+        {
+          "camera": {
+            "id": "support-edge",
+            "center": [
+              -4.018,
+              53.115
+            ],
+            "zoom": 16.2,
+            "pitch": 35,
+            "bearing": 0
+          },
+          "filename": "support-edge--aws.png",
+          "sha256": "56bc7d28852228e80b47da21f11dd76e6eb2f65163e6bed0e56712cb0ebf969a",
+          "elevationIncludesExaggeration": 788.4466995859416,
+          "actualDEMLevels": [
+            14
+          ]
+        },
+        {
+          "camera": {
+            "id": "outside",
+            "center": [
+              -4.023,
+              53.115
+            ],
+            "zoom": 16.2,
+            "pitch": 35,
+            "bearing": 180
+          },
+          "filename": "outside--aws.png",
+          "sha256": "3b811157b1f9bf07ee9d5f45293e09b5e3284ce0d4c3182b3470f639d9dc07b3",
+          "elevationIncludesExaggeration": 587.5722627674493,
+          "actualDEMLevels": [
+            14
+          ]
+        }
+      ],
+      "navigationSequences": 7,
+      "movingCaptures": [
+        {
+          "path": "moving-0--aws.png",
+          "sha256": "84cfb71c29ba1d53131c1489eb4d45a24d6777ba5677d15a2b3c3a39b7fc14fe"
+        },
+        {
+          "path": "moving-1--aws.png",
+          "sha256": "12640725a878b32514384a3a62c4cacd6fea7996d7e38ce801780eaf62663d03"
+        },
+        {
+          "path": "moving-2--aws.png",
+          "sha256": "15cdbbcfa4797a20cc7a0e5516fbe351aaf6b3e3886ef75cf313d5ab784fe109"
+        },
+        {
+          "path": "moving-3--aws.png",
+          "sha256": "a06f1032da7452bf565d85240e9dfa6b0bb5833f6320b067ed46574caf8e27d7"
+        },
+        {
+          "path": "moving-4--aws.png",
+          "sha256": "2123bfc45cd92f8bccad3adbf30c8a313fde6821e704ac3ff1edb0f17e3db6cb"
+        },
+        {
+          "path": "moving-5--aws.png",
+          "sha256": "7f5afd5a294b549ae50129e807f3a4b38983b261137c0b2ea0444d02a30ba1eb"
+        },
+        {
+          "path": "moving-6--aws.png",
+          "sha256": "7e3bdd8e20a7a4ab73536a40c8a7f9620a3c816a215fd47d23e607e9928d7440"
+        }
+      ]
+    }
+  }
+}

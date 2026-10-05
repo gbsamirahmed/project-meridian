@@ -90,3 +90,14 @@ node --input-type=module -e "import {build} from 'vite'; import react from '@vit
 Application-only bundling excludes external Weather publication and experimental terrain. Tests include exact legacy/generic source configuration and matched lifecycle-call/snapshot comparison through globe/Mercator zooms, satellite toggling and style restoration. This is deterministic lifecycle verification, not a new terrain-rendering experiment or live source-availability claim. Final application validation:212 passed, one existing optional external-data skip. One concurrent build/test run had two file-startup failures; isolated reruns and the full four-process suite passed. The cause of those transient runner failures is not established.
 
 For a manual compatibility check: `npm.cmd run dev`; open the local URL, start in terrain mode, zoom outward through5.5 and back in, toggle satellite/elevation, and return to terrain. Expect existing appearance and activation order. No local terrain server or `meridian-data` is required.
+
+## Second-region implementation proof completed
+
+The [Wales/Tryfan proof](tryfan-second-region-proof.md) now validates a real Welsh
+DTM pyramid through this unchanged runtime. It reuses retained official source,
+normalizes complete-tile support during preparation, records unknown native
+vertical reference honestly, and exercises parents/common fallback/handoff via
+matched real renderer captures. No partial-mask decoder, selector special case,
+contract change or reconciliation was required. Normal AWS and analytical policy
+remain unchanged. Regional elevation foundation is established; no further
+elevation benchmark is recommended. Imagery/appearance is the next separate task.

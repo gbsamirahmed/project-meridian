@@ -172,7 +172,7 @@ them. Scoped validation preserves morphology failure independently of continuity
 native height/change provenance, immutable content identity and visual/analytical
 separation remain explicit. Five real/synthetic cases exercise the model without
 external assets. No production source, resolver or reconciliation method is adopted.
-The bounded implementation slice and Wales/Tryfan proof are future separate tasks;
+The [runtime slice](../atlas/terrain-runtime-selection.md) and [real Wales/Tryfan proof](../atlas/tryfan-second-region-proof.md) are complete. The provider-neutral regional elevation foundation is established, with unresolved spatial/coarse handoff and native height semantics retained. No further elevation benchmark is recommended; imagery/appearance is the next separate programme boundary;
 Riffelhorn elevation-method experimentation remains closed.
 
 ## Evidence classes

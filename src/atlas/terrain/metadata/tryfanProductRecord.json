@@ -1,0 +1,279 @@
+{
+  "delivery": {
+    "encoding": "Terrarium",
+    "encodingMaxError": 0.001953125,
+    "maxzoom": 17,
+    "minzoom": 14,
+    "parents": "2x2 unencoded float64 mean stored float32; equal Mercator pixel-area weighting; strict missing support",
+    "sourceInformation": "1m distributed grid; z17 approximately 0.72m resampling, no new observations",
+    "tileSize": 256
+  },
+  "identity": "db8e4d87b5fa609d455d1e0f8ec3fdebc834579a7e102f69f4d0b0283efa690c",
+  "levels": [
+    {
+      "absentTiles": 0,
+      "completeTiles": 0,
+      "groundSampleMetresAtBenchmark": 11.469583387554675,
+      "partialTileCount": 4,
+      "validSupport": null,
+      "zoom": 13
+    },
+    {
+      "absentTiles": 7,
+      "completeTiles": 1,
+      "groundSampleMetresAtBenchmark": 5.734791693777337,
+      "partialTileCount": 8,
+      "validSupport": {
+        "geometry": {
+          "coordinates": [
+            [
+              [
+                [
+                  -3.9990234375,
+                  53.120405283106564
+                ],
+                [
+                  -3.9990234375,
+                  53.10721669189339
+                ],
+                [
+                  -3.97705078125,
+                  53.10721669189339
+                ],
+                [
+                  -3.97705078125,
+                  53.120405283106564
+                ],
+                [
+                  -3.9990234375,
+                  53.120405283106564
+                ]
+              ]
+            ]
+          ],
+          "type": "MultiPolygon"
+        },
+        "kind": "geojson"
+      },
+      "zoom": 14
+    },
+    {
+      "absentTiles": 37,
+      "completeTiles": 10,
+      "groundSampleMetresAtBenchmark": 2.8673958468886687,
+      "partialTileCount": 17,
+      "validSupport": {
+        "geometry": {
+          "coordinates": [
+            [
+              [
+                [
+                  -4.010009765625,
+                  53.12699806177615
+                ],
+                [
+                  -4.010009765625,
+                  53.1006208792143
+                ],
+                [
+                  -3.9990234375,
+                  53.1006208792143
+                ],
+                [
+                  -3.9990234375,
+                  53.10721669189339
+                ],
+                [
+                  -3.97705078125,
+                  53.10721669189339
+                ],
+                [
+                  -3.97705078125,
+                  53.12699806177615
+                ],
+                [
+                  -4.010009765625,
+                  53.12699806177615
+                ]
+              ]
+            ]
+          ],
+          "type": "MultiPolygon"
+        },
+        "kind": "geojson"
+      },
+      "zoom": 15
+    },
+    {
+      "absentTiles": 170,
+      "completeTiles": 52,
+      "groundSampleMetresAtBenchmark": 1.4336979234443343,
+      "partialTileCount": 34,
+      "validSupport": {
+        "geometry": {
+          "coordinates": [
+            [
+              [
+                [
+                  -4.0155029296875,
+                  53.12699806177615
+                ],
+                [
+                  -4.0155029296875,
+                  53.1006208792143
+                ],
+                [
+                  -3.9990234375,
+                  53.1006208792143
+                ],
+                [
+                  -3.9990234375,
+                  53.103918911983605
+                ],
+                [
+                  -3.97705078125,
+                  53.103918911983605
+                ],
+                [
+                  -3.97705078125,
+                  53.12699806177615
+                ],
+                [
+                  -4.0155029296875,
+                  53.12699806177615
+                ]
+              ]
+            ]
+          ],
+          "type": "MultiPolygon"
+        },
+        "kind": "geojson"
+      },
+      "zoom": 16
+    },
+    {
+      "absentTiles": 726,
+      "completeTiles": 232,
+      "groundSampleMetresAtBenchmark": 0.7168489617221672,
+      "partialTileCount": 66,
+      "validSupport": {
+        "geometry": {
+          "coordinates": [
+            [
+              [
+                [
+                  -4.01824951171875,
+                  53.12699806177615
+                ],
+                [
+                  -4.01824951171875,
+                  53.1006208792143
+                ],
+                [
+                  -3.9990234375,
+                  53.1006208792143
+                ],
+                [
+                  -3.9990234375,
+                  53.102269927206926
+                ],
+                [
+                  -3.97705078125,
+                  53.102269927206926
+                ],
+                [
+                  -3.97705078125,
+                  53.12699806177615
+                ],
+                [
+                  -4.01824951171875,
+                  53.12699806177615
+                ]
+              ]
+            ]
+          ],
+          "type": "MultiPolygon"
+        },
+        "kind": "geojson"
+      },
+      "zoom": 17
+    }
+  ],
+  "lod": [
+    {
+      "cells": 270352,
+      "child": 14,
+      "max": 15.63739013671875,
+      "parent": 13,
+      "rms": 1.5809891916693335,
+      "sampleAbsP95": 3.0789947509765625
+    },
+    {
+      "cells": 1085660,
+      "child": 15,
+      "max": 12.727264404296875,
+      "parent": 14,
+      "rms": 0.8343877489801033,
+      "sampleAbsP95": 1.4953734874725342
+    },
+    {
+      "cells": 4351256,
+      "child": 16,
+      "max": 9.781219482421875,
+      "parent": 15,
+      "rms": 0.4414347470286995,
+      "sampleAbsP95": 0.80340576171875
+    },
+    {
+      "cells": 17422208,
+      "child": 17,
+      "max": 7.36712646484375,
+      "parent": 16,
+      "rms": 0.2308541658687886,
+      "sampleAbsP95": 0.432455450296402
+    }
+  ],
+  "manifestSha256": "b254a21b1ec346cc07b43d269d937b059851e95ac168565359a81d3872c69e54",
+  "processing": {
+    "encoderSha256": "5a4178f92b809aae2b988c7f998a2e30e73efb69700d911b404d21641ead6432",
+    "gdal": "3.9.3",
+    "horizontalAccuracy": 2.0,
+    "horizontalOperation": "proj=pipeline step inv proj=tmerc lat_0=49 lon_0=-2 k=0.9996012717 x_0=400000 y_0=-100000 ellps=airy step proj=push v_3 step proj=cart ellps=airy step proj=helmert x=446.448 y=-125.157 z=542.06 rx=0.15 ry=0.247 rz=0.842 s=-20.489 convention=position_vector step inv proj=cart ellps=WGS84 step proj=pop v_3 step proj=webmerc lat_0=0 lon_0=0 x_0=0 y_0=0 ellps=WGS84",
+    "numpy": "2.5.3",
+    "parentHelperSha256": "9d24e6dc56b216846bea447bf1398026f722480e8176c672e821ed41b250e6fc",
+    "pillow": "12.3.0",
+    "proj": "9.5.1",
+    "pyproj": "3.7.2",
+    "python": "3.12.6",
+    "rasterio": "1.4.3",
+    "scriptSha256": "dbb362b9f7cc563788e19f55f71a7585ff22cc938514cef61e5f64e36a0b9007",
+    "sourceFootprintGuardMetres": 2,
+    "verticalOperation": "none; 2D horizontal warp",
+    "warp": "bilinear, ERROR_THRESHOLD=0, one thread"
+  },
+  "source": {
+    "acquisition": "2021-03-02 delivery 11 catalogue; per-cell epoch not independently mapped",
+    "bounds": [
+      264900,
+      357800,
+      267900,
+      360800
+    ],
+    "bytes": 15639072,
+    "crs": "EPSG:27700",
+    "path": "sources/atlas/tryfan/welsh-lidar-1m/rasters/tryfan-004-dtm-1m.tif",
+    "sha256": "49c131d7de62e0df35f8e02c2f8db3161bfd37f24fea56060fcbb9e6d109b326",
+    "vertical": "Native values preserved; vertical datum not established by checked primary metadata"
+  },
+  "tileBytes": 23889573,
+  "tileCount": 295,
+  "version": "tryfan-welsh-regional-v2",
+  "workingBytes": 46691533,
+  "workingHashes": {
+    "z13.tif": "6d9746ba8e228813583654f6636ee7a41497b400459bd54100033c5820445754",
+    "z14.tif": "a4aaa174b9e9f0db94a4e7be1b5359c7a6aa87ac38a7df30469fdf0349128c10",
+    "z15.tif": "78ec15ab95fe7dd268d7ca9ba2a4d88439089d9b899955b104d4b29dbfda23a8",
+    "z16.tif": "6e909da2d62d918498d522a781e86586b904d8b89a1302431d57ce23c04d4063",
+    "z17.tif": "fbc3f633946b19b231470790ce12dad3531b22e8539a8718e6c0059c0e4d7d5a"
+  }
+}
