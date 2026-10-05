@@ -148,12 +148,17 @@ persistent broad offsets. This is band decomposition, not accuracy/error attribu
 A closed stable ring is now a preferred comparison opportunity, not a universal
 integration requirement. Stable fitting support, temporal masks and source priority
 remain necessary evidence where relevant. No ring hunting or new acquisition follows.
-One [terminal two-band representation experiment](../atlas/riffelhorn-final-reconciliation-experiment.json)
-is specified, unimplemented: preserved regional interior, explicit synthetic broad
-accommodation and separate detail taper within existing support, native references
-honestly heterogeneous, independently assessed numerical/visual continuity. Regardless
-of success/fundamental failure, record limitations and proceed to the Terrain Hierarchy
-Contract in a separate task. No final contract or generic resolver is defined here.
+The [terminal two-band experiment](../atlas/protected-priority-two-band-transition.md)
+has now implemented the unchanged frozen1500/3000/4000m rule. Outcome: **partial /
+architecturally useful**, not adoption. Protected fine Swiss and pure common endpoints
+remain exact; broad accommodation and separate residual withdrawal remove the numerical
+endpoint step and retain regional13→14 RMS0.71m. Small synthetic closed depressions,
+large collar deformation, common9→derived10 RMS41.84m and shared close-camera clipping
+prevent full success. Input/operator/support/change provenance and heterogeneous native
+heights remain explicit; all terrain/masks and21diagnostic outputs reproduce exactly.
+This closes substantive Riffelhorn elevation-method work. The next separate task is
+Terrain Hierarchy Contract with limits preserved; no further method variant/acquisition,
+final contract, generic resolver or production adoption is authorized by this record.
 
 ## Evidence classes
 

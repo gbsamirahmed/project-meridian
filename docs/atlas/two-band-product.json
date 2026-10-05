@@ -1,0 +1,626 @@
+{
+  "build": {
+    "height": "heterogeneous native LN02 / EGM2008; synthetic visual representation",
+    "identity": "d4324edea4678aa62ae3ab29ff9968fa97c86fd09dcd99a88749a1e4be0c75a2",
+    "implementationInterpretation": "z12 controls use global pixel-centre interpolation; unencoded z12 T aggregated to11/10. Exact common below10. Cached output is sparse evaluated inventory. Change masks use retained 25m historical250m-buffer proxy; no new fit.",
+    "labels": {
+      "0": "source-derived common",
+      "1": "source-derived regional",
+      "2": "derived broad transition, regional detail retained",
+      "3": "derived broad plus detail taper",
+      "4": "derived parent"
+    },
+    "operator": "Cb+b(Sb-Cb)+d(S-Sb)+(1-d)(C-Cb); b/d not confidence or convex source weights",
+    "products": {
+      "common": "8f002dcbdeceb6aa37cc9eeef9f2d2060193b1eff7922ddb1d0535a6b8030da2",
+      "regionalParents": "b92c9a3dfa05a87e4fcce4a6e6638efd2d9ab8e86537f52833ff1ed6def78672",
+      "swiss": "1a44a0644de1bde73a3ba84d1b761dc0aa17d48cc971e5f6b5d2c14fb329d7ea"
+    },
+    "software": {
+      "numpy": "2.5.3",
+      "pillow": "12.3.0",
+      "pyproj": "3.7.2"
+    },
+    "specSha256": "d1e9a0e664381cf879b6c56bb609b9177d8b9038ad42cfb6348b69b151d7b008",
+    "toolSha256": "9f4ca483440d6d885ee927449c82820f65f5a72d1d7fcf409ce73e43573a5dbf",
+    "version": "riffelhorn-two-band-transition-v1"
+  },
+  "frozenSpecificationSha256": "d1e9a0e664381cf879b6c56bb609b9177d8b9038ad42cfb6348b69b151d7b008",
+  "product": {
+    "delivery": {
+      "availability": "Sparse deterministic evaluated inventory; finite common context. Common at8/9, derived parents10/11, frozen transition12-18. Not a national/global asset.",
+      "encoding": {
+        "description": "R*256+G+B/256-32768; quantisation preserves declared native or heterogeneous semantics",
+        "name": "terrarium",
+        "quantizationIncrement": {
+          "unit": "metre",
+          "value": 0.00390625
+        }
+      },
+      "format": "lossless RGB PNG",
+      "horizontalReference": {
+        "status": "known",
+        "value": {
+          "identifier": "EPSG:3857",
+          "name": "WGS 84 / Pseudo-Mercator"
+        }
+      },
+      "kind": "raster-tiles",
+      "resampling": {
+        "status": "known",
+        "value": "Existing native delivery signal, z12 broad restriction/prolongation, explicit common z13 bilinear overzoom, unencoded transition parents. No new observations."
+      },
+      "scheme": "xyz",
+      "tileSize": [
+        256,
+        256
+      ],
+      "tileTemplate": "${MERIDIAN_DATA_ROOT}/derived/atlas/riffelhorn/riffelhorn-two-band-transition-v1/tiles/transition/{z}/{x}/{y}.png",
+      "zoom": {
+        "max": {
+          "status": "known",
+          "value": 18
+        },
+        "min": 8
+      }
+    },
+    "documentation": [
+      "docs/atlas/protected-priority-two-band-transition.md",
+      "docs/atlas/riffelhorn-final-reconciliation-experiment.json"
+    ],
+    "elevationUnit": {
+      "status": "known",
+      "value": "metre"
+    },
+    "generation": {
+      "buildRecord": {
+        "href": "${MERIDIAN_DATA_ROOT}/derived/atlas/riffelhorn/riffelhorn-two-band-transition-v1/manifest.json"
+      },
+      "timestamp": {
+        "reason": "Sparse evaluated inventory generated over bounded sessions; immutable recipe and final inventory hashes identify it.",
+        "status": "unknown"
+      }
+    },
+    "id": "riffelhorn-two-band-transition-v1",
+    "lineage": {
+      "contributionMask": {
+        "asset": {
+          "href": "${MERIDIAN_DATA_ROOT}/derived/atlas/riffelhorn/riffelhorn-two-band-transition-v1/contributions/{strategy}/{z}/{x}/{y}.npz"
+        },
+        "contributors": [
+          {
+            "id": "riffelhorn-swiss-support",
+            "kind": "product",
+            "revision": {
+              "status": "known",
+              "value": "1a44a0644de1bde73a3ba84d1b761dc0aa17d48cc971e5f6b5d2c14fb329d7ea"
+            }
+          },
+          {
+            "id": "riffelhorn-swiss-regional-parents-diagnostic",
+            "kind": "product",
+            "revision": {
+              "status": "known",
+              "value": "b92c9a3dfa05a87e4fcce4a6e6638efd2d9ab8e86537f52833ff1ed6def78672"
+            }
+          },
+          {
+            "id": "riffelhorn-copernicus-common-v1",
+            "kind": "product",
+            "revision": {
+              "status": "known",
+              "value": "8f002dcbdeceb6aa37cc9eeef9f2d2060193b1eff7922ddb1d0535a6b8030da2"
+            }
+          }
+        ],
+        "interpretation": "broadWeight=b, detailWeight=d, categorical labels, changeProxy, changeClassificationKnown. b/d are geometric controls, not confidence/convex source percentages. Reconstruct with signed full operator and immutable broad/fine inputs. z10/11 mean influences require recursive parent operator."
+      },
+      "contributorList": "complete",
+      "contributors": [
+        {
+          "id": "riffelhorn-swiss-support",
+          "kind": "product",
+          "revision": {
+            "status": "known",
+            "value": "1a44a0644de1bde73a3ba84d1b761dc0aa17d48cc971e5f6b5d2c14fb329d7ea"
+          }
+        },
+        {
+          "id": "riffelhorn-swiss-regional-parents-diagnostic",
+          "kind": "product",
+          "revision": {
+            "status": "known",
+            "value": "b92c9a3dfa05a87e4fcce4a6e6638efd2d9ab8e86537f52833ff1ed6def78672"
+          }
+        },
+        {
+          "id": "riffelhorn-copernicus-common-v1",
+          "kind": "product",
+          "revision": {
+            "status": "known",
+            "value": "8f002dcbdeceb6aa37cc9eeef9f2d2060193b1eff7922ddb1d0535a6b8030da2"
+          }
+        }
+      ],
+      "limitations": "Upstream per-cell epoch unknown. SGI historical union 250m is a retained change proxy, not an observed dated change. Pure products remain immutable; mixed outputs not observations.",
+      "processing": [
+        {
+          "method": "Frozen z12 broad controls, same recursive 2x2 uniform Mercator pixel-area means, strict complete cells, bilinear centre prolongation.",
+          "record": {
+            "href": "docs/atlas/riffelhorn-final-reconciliation-experiment.json",
+            "sha256": "d1e9a0e664381cf879b6c56bb609b9177d8b9038ad42cfb6348b69b151d7b008"
+          },
+          "software": {
+            "numpy": "2.5.3",
+            "pillow": "12.3.0",
+            "pyproj": "3.7.2"
+          }
+        },
+        {
+          "method": "For each z>=12, T_z = Cb_z + b*(Sb_z-Cb_z) + d*(S_z-Sb_z) + (1-d)*(C_z-Cb_z). Endpoint branches copy pure S_z when r<=1500 and pure C_z when r>=4000, avoiding cancellation/encoding drift. Sb/Cb are prolonged z12 broad controls. No correction fit, smoothing of source products or per-sector weight tuning.",
+          "parameters": {
+            "broadControlZoom": 12,
+            "broadEndpointM": 4000,
+            "detailTaperStartM": 3000,
+            "protectedRadiusM": 1500
+          }
+        },
+        {
+          "method": "Create only diagnostic z11 and z10 of the resulting z12 field using sum/count area means on the unchanged common context with regional-derived influence recorded. Do not directly swap to common below z12. Any remaining handoff below z10 is retained and reported, not solved by generating to z0. Coarse aggregation is not modification of underlying fine protected heights.",
+          "parameters": {
+            "lowestDerivedZoom": 10
+          }
+        },
+        {
+          "method": "Encode each level independently to nearest Terrarium step; no encoded RGB averaging or source modification."
+        }
+      ],
+      "spatialMapping": "mask"
+    },
+    "name": "Riffelhorn protected-priority two-band synthetic visual transition",
+    "nodata": {
+      "status": "known",
+      "value": "Incomplete Swiss or broad interpolation support is a failure; source-edge extrapolation/AWS padding forbidden. Outside4km exact common at12-18. Below10 handoff and finite perimeter remain explicit limitations."
+    },
+    "producer": {
+      "status": "known",
+      "value": "Meridian"
+    },
+    "revision": {
+      "status": "known",
+      "value": "d4324edea4678aa62ae3ab29ff9968fa97c86fd09dcd99a88749a1e4be0c75a2"
+    },
+    "rights": {
+      "attribution": [
+        "\u00c2\u00a9swisstopo",
+        "Use the applicable full unmodified/modified notice and Article 6 obligations in the licence; this summary is not the legal delivery notice."
+      ],
+      "licence": {
+        "status": "known",
+        "value": "Combined underlying swisstopo open geodata terms and applicable Copernicus GLO-30 F modified-product licence obligations"
+      },
+      "limitations": "Synthetic multi-source local evaluation. Retain all applicable full modified-product notices before any distribution/adoption. No production adoption.",
+      "references": [
+        "https://s3.waw3-1.cloudferro.com/swift/v1/portal_uploads_prod/CSCDA_ESA_Mission-specific_Annex_31_Oct_22_latest.pdf",
+        "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-and-geoservices"
+      ]
+    },
+    "sourceInformation": {
+      "description": "Swiss distributed0.5m grid is not independent measurement resolution. Copernicus one-arcsecond posts; z13delivery is interpolated signal. Broad z12~26.56m nearRiffelhorn is diagnostic representation scale.",
+      "informationCeiling": {
+        "status": "known",
+        "value": "Pure source ceilings inherited; signed composition adds synthetic representation, not measured information. Common above13 is overzoom; no universal source-information zoom."
+      }
+    },
+    "spatial": {
+      "coverage": {
+        "status": "known",
+        "value": {
+          "asset": {
+            "href": "${MERIDIAN_DATA_ROOT}/derived/atlas/riffelhorn/riffelhorn-two-band-transition-v1/manifest.json"
+          },
+          "crs": {
+            "status": "known",
+            "value": {
+              "identifier": "EPSG:3857",
+              "name": "WGS 84 / Pseudo-Mercator"
+            }
+          },
+          "interpretation": "Inventory tile footprints only; within these, classification/support and frozen radius determine source identity.",
+          "kind": "asset"
+        }
+      },
+      "protectedInterior": {
+        "status": "known",
+        "value": {
+          "area": {
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    7.780566904469132,
+                    45.97905091086851
+                  ],
+                  [
+                    7.78048196139084,
+                    45.98037373834171
+                  ],
+                  [
+                    7.780211437660678,
+                    45.981684391226075
+                  ],
+                  [
+                    7.7797579256280835,
+                    45.982970245882086
+                  ],
+                  [
+                    7.779125780909685,
+                    45.98421891663044
+                  ],
+                  [
+                    7.7783210809018835,
+                    45.98541837511734
+                  ],
+                  [
+                    7.777351566656226,
+                    45.98655706626847
+                  ],
+                  [
+                    7.7762265686615795,
+                    45.98762401970994
+                  ],
+                  [
+                    7.774956917235283,
+                    45.98860895557883
+                  ],
+                  [
+                    7.773554838376432,
+                    45.9895023836977
+                  ],
+                  [
+                    7.772033836078446,
+                    45.990295695150735
+                  ],
+                  [
+                    7.770408562232079,
+                    45.99098124537405
+                  ],
+                  [
+                    7.768694675373551,
+                    45.99155242795111
+                  ],
+                  [
+                    7.766908689643697,
+                    45.9920037383976
+                  ],
+                  [
+                    7.76506781542206,
+                    45.99233082731426
+                  ],
+                  [
+                    7.763189793183134,
+                    45.9925305423906
+                  ],
+                  [
+                    7.761292722190268,
+                    45.99260095885025
+                  ],
+                  [
+                    7.759394885694377,
+                    45.99254139804225
+                  ],
+                  [
+                    7.757514574340125,
+                    45.99235243399583
+                  ],
+                  [
+                    7.755669909500037,
+                    45.99203588787609
+                  ],
+                  [
+                    7.753878668257878,
+                    45.99159481039325
+                  ],
+                  [
+                    7.752158111745946,
+                    45.991033452338705
+                  ],
+                  [
+                    7.75052481850724,
+                    45.990357223532826
+                  ],
+                  [
+                    7.748994524502718,
+                    45.989572640585855
+                  ],
+                  [
+                    7.747581971317416,
+                    45.98868726397941
+                  ],
+                  [
+                    7.746300764036657,
+                    45.98770962508124
+                  ],
+                  [
+                    7.745163240167091,
+                    45.986649143802666
+                  ],
+                  [
+                    7.744180350866988,
+                    45.9855160376982
+                  ],
+                  [
+                    7.743361555627701,
+                    45.98432122339065
+                  ],
+                  [
+                    7.742714731414984,
+                    45.983076211276874
+                  ],
+                  [
+                    7.742246097135784,
+                    45.98179299453489
+                  ],
+                  [
+                    7.7419601541454,
+                    45.98048393350668
+                  ],
+                  [
+                    7.741859643352613,
+                    45.979161636574354
+                  ],
+                  [
+                    7.741945519318327,
+                    45.977838838680256
+                  ],
+                  [
+                    7.742216941578152,
+                    45.97652827866389
+                  ],
+                  [
+                    7.742671283252661,
+                    45.975242576595875
+                  ],
+                  [
+                    7.743304156842558,
+                    45.973994112291535
+                  ],
+                  [
+                    7.7441094569413185,
+                    45.97279490617116
+                  ],
+                  [
+                    7.745079419436235,
+                    45.971656503610845
+                  ],
+                  [
+                    7.746204696612474,
+                    45.97058986389404
+                  ],
+                  [
+                    7.747474447423891,
+                    45.969605254827414
+                  ],
+                  [
+                    7.748876442052077,
+                    45.968712154029596
+                  ],
+                  [
+                    7.750397179740537,
+                    45.96791915783757
+                  ],
+                  [
+                    7.752022018767305,
+                    45.96723389870006
+                  ],
+                  [
+                    7.753735317306036,
+                    45.96666297184719
+                  ],
+                  [
+                    7.755520583824689,
+                    45.96621187193598
+                  ],
+                  [
+                    7.7573606355826055,
+                    45.96588494027497
+                  ],
+                  [
+                    7.7592377637121155,
+                    45.96568532313139
+                  ],
+                  [
+                    7.761133903310004,
+                    45.965614941518055
+                  ],
+                  [
+                    7.763030806918344,
+                    45.965674472746876
+                  ],
+                  [
+                    7.764910219742829,
+                    45.96586334392525
+                  ],
+                  [
+                    7.766754054940928,
+                    45.96617973745711
+                  ],
+                  [
+                    7.768544567311564,
+                    45.96662060849591
+                  ],
+                  [
+                    7.770264523732558,
+                    45.967181714183845
+                  ],
+                  [
+                    7.771897368722074,
+                    45.96785765439891
+                  ],
+                  [
+                    7.77342738354511,
+                    45.96864192362118
+                  ],
+                  [
+                    7.774839837345413,
+                    45.969526973425374
+                  ],
+                  [
+                    7.776121128856967,
+                    45.970504285002455
+                  ],
+                  [
+                    7.777258917336169,
+                    45.97156445102001
+                  ],
+                  [
+                    7.778242241455939,
+                    45.97269726603873
+                  ],
+                  [
+                    7.779061625015056,
+                    45.97389182462213
+                  ],
+                  [
+                    7.779709168438949,
+                    45.97513662620066
+                  ],
+                  [
+                    7.7801786251818,
+                    45.976419685687006
+                  ],
+                  [
+                    7.780465462281492,
+                    45.97772864878242
+                  ],
+                  [
+                    7.780566904469132,
+                    45.97905091086851
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "kind": "geojson"
+          },
+          "basis": "1.5 km radius around established LV95 benchmark; encloses original 2 km crop and local camera targets. Selection intent, not global validation.",
+          "purpose": "Preserve Riffelhorn/Riffelsee benchmark and nearby landforms in future integration experiments"
+        }
+      },
+      "transitionSupport": {
+        "status": "known",
+        "value": {
+          "area": {
+            "asset": {
+              "href": "docs/atlas/riffelhorn-final-reconciliation-experiment.json"
+            },
+            "crs": {
+              "status": "known",
+              "value": {
+                "identifier": "EPSG:2056",
+                "name": "CH1903+ / LV95"
+              }
+            },
+            "interpretation": "Exact analytic radius, centre and support selection in frozen specification; not a rectangle expanded into valid source coverage.",
+            "kind": "asset"
+          },
+          "basis": "Engineering test support only. Does not establish physical seamline, stable corridor, accuracy or acceptable production transition.",
+          "purpose": "Synthetic broad accommodation1500-4000m, independent regional residual taper3000-4000m"
+        }
+      },
+      "validSupport": {
+        "status": "known",
+        "value": {
+          "area": {
+            "asset": {
+              "href": "docs/atlas/riffelhorn-final-reconciliation-experiment.json"
+            },
+            "crs": {
+              "status": "known",
+              "value": {
+                "identifier": "EPSG:2056",
+                "name": "CH1903+ / LV95"
+              }
+            },
+            "interpretation": "Exact analytic radius, centre and support selection in frozen specification; not a rectangle expanded into valid source coverage.",
+            "kind": "asset"
+          },
+          "basis": "Complete full annulus/interpolation preflight at12-18; retained manifest support, no missing Swiss fill.",
+          "purpose": "Frozen diagnostic within radius4km plus finite common context"
+        }
+      }
+    },
+    "surface": {
+      "description": "DTM-derived Swiss family, edited-DSM-derived common family, and explicitly synthetic signed two-band transition/parents.",
+      "kind": "heterogeneous"
+    },
+    "version": {
+      "status": "known",
+      "value": "v1-frozen-1500-3000-4000"
+    },
+    "vertical": {
+      "description": "No height transformation or registration/bias correction. Mixed scalar has no common physical vertical CRS; synthetic visual representation only, never analytical elevation.",
+      "kind": "heterogeneous",
+      "parts": [
+        {
+          "contributor": {
+            "id": "riffelhorn-swiss-support",
+            "kind": "product",
+            "revision": {
+              "status": "known",
+              "value": "1a44a0644de1bde73a3ba84d1b761dc0aa17d48cc971e5f6b5d2c14fb329d7ea"
+            }
+          },
+          "reference": {
+            "status": "known",
+            "value": {
+              "identifier": "EPSG:5728",
+              "name": "LN02 height"
+            }
+          }
+        },
+        {
+          "contributor": {
+            "id": "riffelhorn-swiss-regional-parents-diagnostic",
+            "kind": "product",
+            "revision": {
+              "status": "known",
+              "value": "b92c9a3dfa05a87e4fcce4a6e6638efd2d9ab8e86537f52833ff1ed6def78672"
+            }
+          },
+          "reference": {
+            "status": "known",
+            "value": {
+              "identifier": "EPSG:5728",
+              "name": "LN02 height"
+            }
+          }
+        },
+        {
+          "contributor": {
+            "id": "riffelhorn-copernicus-common-v1",
+            "kind": "product",
+            "revision": {
+              "status": "known",
+              "value": "8f002dcbdeceb6aa37cc9eeef9f2d2060193b1eff7922ddb1d0535a6b8030da2"
+            }
+          },
+          "reference": {
+            "status": "known",
+            "value": {
+              "identifier": "EPSG:3855",
+              "name": "EGM2008 height"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "schemaVersion": 1,
+  "sourceProductIdentities": {
+    "common": "8f002dcbdeceb6aa37cc9eeef9f2d2060193b1eff7922ddb1d0535a6b8030da2",
+    "regionalParents": "b92c9a3dfa05a87e4fcce4a6e6638efd2d9ab8e86537f52833ff1ed6def78672",
+    "swiss": "1a44a0644de1bde73a3ba84d1b761dc0aa17d48cc971e5f6b5d2c14fb329d7ea"
+  },
+  "terminalRule": "Proceed next to Terrain Hierarchy Contract with result/limitations explicit; no further Riffelhorn method experiment."
+}

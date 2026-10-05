@@ -3436,3 +3436,36 @@ and diff checks complete before commit. No broad app/build/lint/TypeScript rerun
 because no runtime, build, package or TypeScript changes. Production AWS visual and
 independent analytical z15, strengthened IGOR, exaggeration1.45, Weather, Traverse,
 satellite/projection/lifecycle remain unchanged.
+
+
+## 2026-10-05 — Terminal protected-priority Riffelhorn transition
+
+Implemented [one frozen two-band representation](atlas/protected-priority-two-band-transition.md)
+from `53b9efb`: protected1500m, broad accommodation1500–4000m, independent detail
+withdrawal3000–4000m, z12 broad controls, quintic weights and signed full operator.
+No tuning, new acquisition, source mutation, correction or height transformation.
+Swiss remainsLN02, commonEGM2008, mixed terrain explicitly synthetic/heterogeneous.
+Runtime AWS/analyticalz15, IGOR/exaggeration1.45, Weather, Traverse and lifecycle
+are unchanged. Prepared outputs/service/captures remain opt-in and external.
+
+Outcome **PARTIAL / ARCHITECTURALLY USEFUL**. Fine protected terrain is exact;
+endpoint introduced intercept≤1.62e−8m; induced-gradep950.02332 passes frozen guards.
+Regional13→14 remains0.71m RMS. Collar changes exceed100m; independent checks find
+new3.19m/1.35m local synthetic closed pits. Common9→derived10 remains41.84m RMS.
+128boundary views/four bearings,40navigation segments and three satellite checks
+complete. Severe southern foreground clipping is also reproduced by the matched
+pure-common navigation control; it prevents all-view success and is not explained
+as a source seam. Large local source accommodation does not imply accuracy.
+
+4251terrain tiles/masks reproduce exactly (2297transition,1954controls);21numerical
+outputs rebuild identically. All evaluated protected/outer endpoint cells and weights,
+source/product hashes and support are verified. 7476local responses are200; sixbody
+cancellations,221terrain request cancellations, no terrain HTTP/page exception.
+Weather503console messages are explicit fixture isolation. 68Python tests and
+180Node tests pass (one existing optional skip), lint/TypeScript/app-only build,
+metadata/reference and diff checks pass. No normal CI external-data dependency.
+
+The experiment is closed. Next task: **Atlas Terrain Hierarchy Contract**, retaining
+synthetic morphology, low-scale handoff, height/support and renderer limitations.
+No further Riffelhorn elevation-method experiment is recommended; no contract or
+generic resolver implemented here. Historical Lab/design records remain unchanged.

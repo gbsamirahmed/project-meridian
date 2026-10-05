@@ -1,0 +1,2220 @@
+{
+  "baseline": "53b9efbc9e1e2d9393291a1b3fe90abcfcf3f7d0",
+  "build": {
+    "height": "heterogeneous native LN02 / EGM2008; synthetic visual representation",
+    "identity": "d4324edea4678aa62ae3ab29ff9968fa97c86fd09dcd99a88749a1e4be0c75a2",
+    "implementationInterpretation": "z12 controls use global pixel-centre interpolation; unencoded z12 T aggregated to11/10. Exact common below10. Cached output is sparse evaluated inventory. Change masks use retained 25m historical250m-buffer proxy; no new fit.",
+    "labels": {
+      "0": "source-derived common",
+      "1": "source-derived regional",
+      "2": "derived broad transition, regional detail retained",
+      "3": "derived broad plus detail taper",
+      "4": "derived parent"
+    },
+    "operator": "Cb+b(Sb-Cb)+d(S-Sb)+(1-d)(C-Cb); b/d not confidence or convex source weights",
+    "products": {
+      "common": "8f002dcbdeceb6aa37cc9eeef9f2d2060193b1eff7922ddb1d0535a6b8030da2",
+      "regionalParents": "b92c9a3dfa05a87e4fcce4a6e6638efd2d9ab8e86537f52833ff1ed6def78672",
+      "swiss": "1a44a0644de1bde73a3ba84d1b761dc0aa17d48cc971e5f6b5d2c14fb329d7ea"
+    },
+    "software": {
+      "numpy": "2.5.3",
+      "pillow": "12.3.0",
+      "pyproj": "3.7.2"
+    },
+    "specSha256": "d1e9a0e664381cf879b6c56bb609b9177d8b9038ad42cfb6348b69b151d7b008",
+    "toolSha256": "9f4ca483440d6d885ee927449c82820f65f5a72d1d7fcf409ce73e43573a5dbf",
+    "version": "riffelhorn-two-band-transition-v1"
+  },
+  "captureTotals": {
+    "allCancelledRequests": 225,
+    "bodyUnavailable": 6,
+    "cancelledTerrainRequests": 221,
+    "completedBodies": 7470,
+    "consoleErrors": 41,
+    "navigationSegments": 52,
+    "records": 217,
+    "terrainResponses": 7476
+  },
+  "captures": [
+    {
+      "allCancelledRequests": 28,
+      "bodyUnavailable": 0,
+      "browserVersion": "151.0.7922.34",
+      "cancelledTerrainRequests": 28,
+      "completedBodies": 511,
+      "consoleErrors": 3,
+      "file": "captures/common-controls.json",
+      "navigationSegments": 0,
+      "records": 18,
+      "sha256": "c65f70a0d49eaedb497b6c962e23956de02ae930bc46f914f392199991febc62",
+      "terrainResponses": 511
+    },
+    {
+      "allCancelledRequests": 33,
+      "bodyUnavailable": 0,
+      "browserVersion": "151.0.7922.34",
+      "cancelledTerrainRequests": 33,
+      "completedBodies": 511,
+      "consoleErrors": 3,
+      "file": "captures/hard-controls.json",
+      "navigationSegments": 0,
+      "records": 18,
+      "sha256": "18f6252ff1055644a470060e45561769ce28851a0e28d8af8ee1ff4a482a025c",
+      "terrainResponses": 511
+    },
+    {
+      "allCancelledRequests": 16,
+      "bodyUnavailable": 2,
+      "browserVersion": "151.0.7922.34",
+      "cancelledTerrainRequests": 16,
+      "completedBodies": 726,
+      "consoleErrors": 3,
+      "file": "captures/transition-central.json",
+      "navigationSegments": 0,
+      "records": 24,
+      "sha256": "db25df3c94eacc15b0b51efec92184a3f75981389777537a1799bf481e4b1966",
+      "terrainResponses": 728
+    },
+    {
+      "allCancelledRequests": 26,
+      "bodyUnavailable": 0,
+      "browserVersion": "151.0.7922.34",
+      "cancelledTerrainRequests": 25,
+      "completedBodies": 511,
+      "consoleErrors": 3,
+      "file": "captures/transition-controls.json",
+      "navigationSegments": 0,
+      "records": 18,
+      "sha256": "dd1cb1e4b3f6e056b9aabcea102b05b000b79b487428a5ccffffe1deb97c01de",
+      "terrainResponses": 511
+    },
+    {
+      "allCancelledRequests": 79,
+      "bodyUnavailable": 2,
+      "browserVersion": "151.0.7922.34",
+      "cancelledTerrainRequests": 79,
+      "completedBodies": 1923,
+      "consoleErrors": 11,
+      "file": "captures/transition-edges.json",
+      "navigationSegments": 0,
+      "records": 128,
+      "sha256": "3926166140fc89a166a3a9bad9d9ecea463d864fa1e339e1c7a59f007135ebc0",
+      "terrainResponses": 1925
+    },
+    {
+      "allCancelledRequests": 30,
+      "bodyUnavailable": 2,
+      "browserVersion": "151.0.7922.34",
+      "cancelledTerrainRequests": 29,
+      "completedBodies": 2307,
+      "consoleErrors": 11,
+      "file": "captures/transition-navigation.json",
+      "navigationSegments": 40,
+      "records": 6,
+      "sha256": "4f03398c6cc8e9a7fc66f9c8a6db3222d1560b4203d271eda125802f4223ce8c",
+      "terrainResponses": 2309
+    },
+    {
+      "allCancelledRequests": 9,
+      "bodyUnavailable": 0,
+      "browserVersion": "151.0.7922.34",
+      "cancelledTerrainRequests": 7,
+      "completedBodies": 318,
+      "consoleErrors": 2,
+      "file": "captures/transition-satellite.json",
+      "navigationSegments": 0,
+      "records": 3,
+      "sha256": "3a03d90d7b176fceaaf665ace491e43e10ffd15d25e9b8160e546724d171f60e",
+      "terrainResponses": 318
+    },
+    {
+      "allCancelledRequests": 4,
+      "bodyUnavailable": 0,
+      "browserVersion": "151.0.7922.34",
+      "cancelledTerrainRequests": 4,
+      "completedBodies": 663,
+      "consoleErrors": 5,
+      "file": "common-navigation-control/common-navigation.json",
+      "navigationSegments": 12,
+      "records": 2,
+      "sha256": "2bffdd7f75a6d38b14246477d1d0c07ed15376030bbcbb9a0199b3c47540e227",
+      "terrainResponses": 663
+    }
+  ],
+  "classification": "PARTIAL-ARCHITECTURALLY-USEFUL",
+  "coarseHandoff": {
+    "common9ToDerived10": {
+      "count": 705,
+      "max": 93.98499490277436,
+      "mean": -20.144134562015463,
+      "median": -5.409171650119788,
+      "min": -98.91313824532472,
+      "nmad": 24.058657049476743,
+      "p05": -79.38344987665532,
+      "p50": -5.409171650119788,
+      "p95": 27.84393618956842,
+      "p99": 66.70344550909797,
+      "rms": 41.8360397083344
+    },
+    "interpretation": "Unresolved common to derived low-level handoff; not an accuracy measurement"
+  },
+  "collarLod": {
+    "12-to14": {
+      "0-1500": {
+        "count": 160255,
+        "max": 35.831599027172615,
+        "mean": -0.014916545549218074,
+        "median": -0.04851741875108928,
+        "min": -39.769476635810406,
+        "nmad": 1.2298974790069457,
+        "p05": -2.82811981641189,
+        "p50": -0.04851741875108928,
+        "p95": 2.9205339240573265,
+        "p99": 6.695243016931524,
+        "rms": 2.279216992267342
+      },
+      "1500-3000": {
+        "count": 480768,
+        "max": 49.35357196226187,
+        "mean": 0.003318852191377245,
+        "median": -0.04033938285692784,
+        "min": -63.09634913420496,
+        "nmad": 1.250013670832183,
+        "p05": -2.876957136487931,
+        "p50": -0.04033938285692784,
+        "p95": 3.0874372694719794,
+        "p99": 6.834481937795758,
+        "rms": 2.260727419053816
+      },
+      "3000-4000": {
+        "count": 498567,
+        "max": 48.74082963793808,
+        "mean": -0.01288644774321901,
+        "median": -0.015827949667709618,
+        "min": -51.89141491972123,
+        "nmad": 0.6790275588159477,
+        "p05": -1.860534572175129,
+        "p50": -0.015827949667709618,
+        "p95": 1.898471163902921,
+        "p99": 4.550740187573183,
+        "rms": 1.6245734550359945
+      },
+      "4000-4500": {
+        "count": 302713,
+        "max": 18.657383612442572,
+        "mean": 0.0007178454515761288,
+        "median": -0.013720744094825932,
+        "min": -21.238279348508513,
+        "nmad": 0.43268134796236224,
+        "p05": -1.0735975866821719,
+        "p50": -0.013720744094825932,
+        "p95": 1.1690485215965953,
+        "p99": 2.39360266622136,
+        "rms": 0.8623590979403183
+      }
+    },
+    "13-to14": {
+      "0-1500": {
+        "count": 160255,
+        "max": 31.14176291626427,
+        "mean": -0.0038629071215595064,
+        "median": -0.016276664880933822,
+        "min": -24.41784261797602,
+        "nmad": 0.5329002994867805,
+        "p05": -1.2719817261383013,
+        "p50": -0.016276664880933822,
+        "p95": 1.3347430891329601,
+        "p99": 3.185663057205232,
+        "rms": 1.12377535356848
+      },
+      "1500-3000": {
+        "count": 480768,
+        "max": 36.10330751045558,
+        "mean": 0.0007875212520296012,
+        "median": -0.012820702384374272,
+        "min": -38.785916196279686,
+        "nmad": 0.5260789901626461,
+        "p05": -1.2661375873923133,
+        "p50": -0.012820702384374272,
+        "p95": 1.3428541195562498,
+        "p99": 3.0843117795001413,
+        "rms": 1.082463022096746
+      },
+      "3000-4000": {
+        "count": 498567,
+        "max": 25.414665912167948,
+        "mean": -0.0007607887047379785,
+        "median": 5.462500757857924e-05,
+        "min": -24.362188722145675,
+        "nmad": 0.1333236794938238,
+        "p05": -0.679579405030654,
+        "p50": 5.462500757857924e-05,
+        "p95": 0.6877310625928656,
+        "p99": 1.8902696808821564,
+        "rms": 0.6710858856488149
+      },
+      "4000-4500": {
+        "count": 302713,
+        "max": 0.006200107478434802,
+        "mean": 0.0001944582891452763,
+        "median": 0.00017057871059478202,
+        "min": -0.002037646188000508,
+        "nmad": 0.00042086992565796205,
+        "p05": -0.0007982334688222181,
+        "p50": 0.00017057871059478202,
+        "p95": 0.0012271942517145357,
+        "p99": 0.002029213437981526,
+        "rms": 0.0006304496004564375
+      }
+    }
+  },
+  "diagnosticRebuild": {
+    "count": 21,
+    "files": {
+      "b.npy": "9d8b98ac1e70d11e451ef83558a40f6d58eefff241c68a949892c25eb4d7c6d0",
+      "coarse-handoff.json": "736833d28f4abb06f62173053c1d209e7c9d96302c9ca414bf851f5b10c41e14",
+      "collar-lod.json": "b7e1637e165140daac6008a10f6ae5de72181e18ae3922744215a9af6ad0309f",
+      "common.npy": "01d3a813dfe8ea0048948a2861d44fab4887cf70e4cdca1136bf9e0ae7c359a3",
+      "commonBroad.npy": "ca2b969475b2e86a85eb9dcaacfd74297279a0f1a97a4b7011bd57a54c358014",
+      "d.npy": "c9feaf91a1d456ff3ec2785250c4768dede66243287d44d3fbb0deb4e28faa2e",
+      "east.npy": "c77c65b2c2218293300f3f6e9e907e14099b83135abb4241001cbed9c544a432",
+      "extrema-patch-profiles.png": "778687bd11be136973f3395212ec7d162d28039128c3f0423e102da667ffb354",
+      "ice.npy": "8be8470d2d11b91c12768992988302ee0a38367d5033e45fa6782c9f71b6842b",
+      "independent-checks.json": "4a90c2c60c1499fd4e4aca0a21a0ecb7f282bcffbb76187f625b487869a14570",
+      "induced.npy": "5aedfbba3feb8364eed4a681bd8f7495878e16ccf4a37686bdb4a363b7d90598",
+      "measurements.json": "05ad22ebea58d3b6f8e7dbae446401f10eb0920fd167004a1d8f903e86bce2e4",
+      "north.npy": "e017eefba43ce21ea85b285b76a22127725c5fd19435ed64c193c3a453b5acb3",
+      "numerical-fields.png": "4bfd8137ccd8adaa44e12e5306d61e1acefee285a1852ebe02553e694035b366",
+      "radial-profiles.png": "cd6b782c3699adf18006070280cfd8b8c1aa73a3b42db7d4471f3219e984c971",
+      "radius.npy": "6d5554c721d2d8e5ae1611905c88058bedeb68d54deb84276a505164c6cbeb5a",
+      "stable.npy": "7865f9a41b75aae49db651a90d9885a4d812609ac22d9de81bf0679183347a71",
+      "swiss.npy": "0eee2a9be0fd81685b69e4a68ff780aed24cfbd85477499ddc1ea0ae876650cc",
+      "swissBroad.npy": "c49cd277009e2d1219f4d1fd28226ce88b44b2e0bd6b9ca1c4969320f456b45e",
+      "terrain.npy": "25cc24695c94460e5803c6e8114c6ec56b23d2c537d5a81aa59261cbb8a98e8c",
+      "valid.npy": "c078f3bfa98caffaf3970a49af3d90d533f59b4f293b6e18246ef23d3f44cb33"
+    },
+    "identical": true
+  },
+  "externalRecords": {
+    "coarse-handoff.json": "736833d28f4abb06f62173053c1d209e7c9d96302c9ca414bf851f5b10c41e14",
+    "collar-lod.json": "b7e1637e165140daac6008a10f6ae5de72181e18ae3922744215a9af6ad0309f",
+    "independent-checks.json": "4a90c2c60c1499fd4e4aca0a21a0ecb7f282bcffbb76187f625b487869a14570",
+    "measurements.json": "05ad22ebea58d3b6f8e7dbae446401f10eb0920fd167004a1d8f903e86bce2e4",
+    "output-verification.json": "cfadec255c6dc72daecabdcda3a75f08116d34a70f29dc0310d849fdaa95f589"
+  },
+  "finalSourceVerification": {
+    "glacierAssets": {
+      "sgi1973": {
+        "path": "sources/atlas/riffelhorn/global-reference-assessment-v1/sgi1973/inventory_sgi1973_r1976.zip",
+        "sha256": "69a13fde7b142dd29b2f07a6bf5a4923750b502661995ca518e992a591e86145"
+      },
+      "sgi2016": {
+        "path": "sources/atlas/riffelhorn/global-reference-assessment-v1/sgi2016/inventory_sgi2016_r2020.zip",
+        "sha256": "36ff3252f24f76f0a93eafaa29086ba63725cc2cc99593deca34c15699e933a7"
+      },
+      "sgi2023": {
+        "path": "sources/atlas/riffelhorn/global-reference-assessment-v1/sgi2023/inventory_sgi2023_r2026.zip",
+        "sha256": "ecef353d4b70f760eda83c6131e5345a2fd999527ea560b0bda4b7c27823f9fb"
+      }
+    },
+    "overlapArrayHashes": {
+      "aws": "d7012f20ebf7e4e632769b5c095f7b12b0408d720390d9e252dfd40e243bbbbc",
+      "awsRaw": "8eed03ff7513618d4fb67f75927c831e578186d91e11bc80a9c5c8357d58a534",
+      "bareMask": "828c9e75aa9d2608c3fc49a0e4c2850a73fcb4b8c633ff503405e1ba1ec20dea",
+      "copernicus": "88914a34b20fdec0d517257123c8029d3e3d5a5ba840e4499ac280ace95d2b78",
+      "copernicusCommonHeight": "c969d633f71c91277dbc1c8b38c0906a9ae5ebc99c550abeaa10c021a63e8fe3",
+      "copernicusRaw": "d8f08f297c2aa7077cc7c8e9fdd65f420b57d03db747f3d107452c025553dc07",
+      "coverNearest": "275dfc480152ac6953bbc8cc3c4f446c5d477764da0f98c950ccadc665bb635d",
+      "edgeMask": "e29b251c13b94e75b0e31278f240274f7d9ad603149616154d15d097ea732a97",
+      "glacier250Mask": "9b96796bbfa4c48b920d4a2efa98a1b2c8b805cf2b9db5eeb432bf1574be7903",
+      "iceBuffer100": "9a990d248895c0c593826d8044a8b351ab4361045aabb4d868e9975ed746113a",
+      "iceBuffer500": "eee5150c2f0c7e3de4925839639374912497ff2a269115e8e79ef8922073ae94",
+      "primary": "ea7c4f39a698cce938e00f43e8773532d66756e17c96892317e9eff4316c10b2",
+      "primaryMask": "ea7c4f39a698cce938e00f43e8773532d66756e17c96892317e9eff4316c10b2",
+      "slope": "0a6726a1d79f69a6e00fbb3252a6a2fcb8e661e0b9c2d5bd1f64f1f794283715",
+      "slope10to35": "812c7ce61e665e8afb0780a7eefa5ef4065fd33fb8c6e5e2a91103af02868fa3",
+      "slope3to45": "d0f10b6b55bcffa3f5a8f35ad62f33c4689ec7612b268ca71fa9517a1f9d1f61",
+      "swissEgm2008Diagnostic": "cfa0a0c984210e783481a32f9284811a08cb7048776ddc7ee6501780a15f1763",
+      "swissLn02": "88b5f35e387b716b839536fab974d53ff684783f5b0b9394ea33ff540764b7b1"
+    },
+    "overlapFileSha256": "56dc810cc68763704b7a30daed4f3446bf698b9d6f332088afaf90dc3417ffc8",
+    "products": {
+      "common": "8f002dcbdeceb6aa37cc9eeef9f2d2060193b1eff7922ddb1d0535a6b8030da2",
+      "regionalParents": "b92c9a3dfa05a87e4fcce4a6e6638efd2d9ab8e86537f52833ff1ed6def78672",
+      "swiss": "1a44a0644de1bde73a3ba84d1b761dc0aa17d48cc971e5f6b5d2c14fb329d7ea"
+    },
+    "regionalFilesVerified": 35,
+    "sourceAssetsVerified": {
+      "common": 6,
+      "swiss": 100
+    },
+    "sources": {
+      "common": "74c55b0cbad123778294647fa9770b1d673735401ae5d5b1854c4b32e57e0a85",
+      "swiss": "b24a4fdc7b378ba79d442d0ce216a031dfb95a6bc6eed5ad9c33be61175651f4"
+    }
+  },
+  "implementationFiles": {
+    "analyze_two_band.py": "9b7c0c5655c1963f784276aedde3c80072ea160649fccba9b745d84eb72350d5",
+    "capture_two_band.mjs": "8fa6f3efc321c3570db3e15084ff298a753ab63fbc026f7d29eb4a3447e42b77",
+    "finish_two_band.py": "4df9a98c782ae6429ae613725b96760480b017ff593fe1579b41c1e8cfdd161b",
+    "rebuild_two_band_diagnostics.py": "d7ea8184fd6c300cbd7e2ae9bad719f5975ed1ab2d2eea97fd1fe64f6ea8c2a1",
+    "record_two_band_completion.py": "c00520b60efda14431223996c5276c1849b7e7431c948428d6ebb946f944908e",
+    "record_two_band_metadata.py": "72e9f55d911d2d775acd2540a5cec10de039b6162333fda0518869079771b910",
+    "test_two_band.mjs": "aa11929254b01e60186f9a46dc1f0106ccf5bf25cc913d5249fde10d9798fbfd",
+    "test_two_band_transition.py": "c4364e1448aaa1819b9de85873a1f0a6ca7c1228c61237036120e1b7c85912ce",
+    "two_band_evaluation.mjs": "28b065a546afce5192e20b9d76a8a1add63a5b4097ab72a62ca337304560f236",
+    "two_band_transition.py": "9f4ca483440d6d885ee927449c82820f65f5a72d1d7fcf409ce73e43573a5dbf",
+    "verify_two_band_outputs.py": "07cacba49e82638daa7adfc0cf8181b4ab74dc3161b0d4df2ba6524cc1bbcc37"
+  },
+  "independentChecks": {
+    "curvatureChangeAgainstSwissInverseMetres": {
+      "count": 979335,
+      "max": 2.585035643551821,
+      "mean": -1.4866886113837335e-05,
+      "median": 9.908475440134623e-07,
+      "min": -2.098610195660185,
+      "nmad": 0.003871245210173268,
+      "p05": -0.033189142405053475,
+      "p50": 9.908475440134623e-07,
+      "p95": 0.03315534318744463,
+      "p99": 0.10087115288048211,
+      "rms": 0.03906114411820144
+    },
+    "drainageDirectionChangeDegreesAgainstSwiss": {
+      "count": 974678,
+      "max": 180.0,
+      "mean": 10.92430012783709,
+      "median": 0.0,
+      "min": 0.0,
+      "nmad": 0.0,
+      "p05": 0.0,
+      "p50": 0.0,
+      "p95": 45.0,
+      "p99": 135.0,
+      "rms": 28.669380388173327
+    },
+    "flaggedMinimumPatches": [
+      {
+        "east": 2622483.534228449,
+        "fixedOutletSpillDepthAtFlagM": {
+          "C": 0.0,
+          "S": 0.0,
+          "T": 5.088932903996692
+        },
+        "iceChangeProxy": false,
+        "maximumSpillDepthWithin53MOfFlag": {
+          "C": 0.0,
+          "S": 10.564453125,
+          "T": 9.930740214322896
+        },
+        "north": 1093978.2759832852,
+        "oneRingProminence": 4.616082125172625,
+        "patchSizeMApprox": 432,
+        "radiusM": 3200.9648303955973
+      },
+      {
+        "east": 2625624.4378373935,
+        "fixedOutletSpillDepthAtFlagM": {
+          "C": 0.0,
+          "S": 0.0,
+          "T": 3.1862098362107645
+        },
+        "iceChangeProxy": true,
+        "maximumSpillDepthWithin53MOfFlag": {
+          "C": 0.0,
+          "S": 0.0,
+          "T": 3.1862098362107645
+        },
+        "north": 1088745.2378295697,
+        "oneRingProminence": 3.0081712627102206,
+        "patchSizeMApprox": 432,
+        "radiusM": 3314.121210642821
+      },
+      {
+        "east": 2624685.5745315873,
+        "fixedOutletSpillDepthAtFlagM": {
+          "C": 0.0,
+          "S": 4.138916015625,
+          "T": 3.0501882103317257
+        },
+        "iceChangeProxy": true,
+        "maximumSpillDepthWithin53MOfFlag": {
+          "C": 0.0,
+          "S": 5.266357421875,
+          "T": 5.866976151809467
+        },
+        "north": 1088840.8765361488,
+        "oneRingProminence": 1.8485064607511958,
+        "patchSizeMApprox": 432,
+        "radiusM": 3174.7321831993227
+      },
+      {
+        "east": 2625591.43762541,
+        "fixedOutletSpillDepthAtFlagM": {
+          "C": 0.0,
+          "S": 0.0,
+          "T": 1.9002805442646604
+        },
+        "iceChangeProxy": true,
+        "maximumSpillDepthWithin53MOfFlag": {
+          "C": 0.0,
+          "S": 1.769287109375,
+          "T": 1.9002805442646604
+        },
+        "north": 1088678.756358288,
+        "oneRingProminence": 1.699091629285249,
+        "patchSizeMApprox": 432,
+        "radiusM": 3373.4934107484305
+      },
+      {
+        "east": 2625637.2470953707,
+        "fixedOutletSpillDepthAtFlagM": {
+          "C": 0.0,
+          "S": 0.0,
+          "T": 1.6631924730299943
+        },
+        "iceChangeProxy": true,
+        "maximumSpillDepthWithin53MOfFlag": {
+          "C": 0.0,
+          "S": 0.81640625,
+          "T": 1.6631924730299943
+        },
+        "north": 1088864.7069909754,
+        "oneRingProminence": 1.6631924730299943,
+        "patchSizeMApprox": 432,
+        "radiusM": 3199.3977734874966
+      },
+      {
+        "east": 2622410.5790919745,
+        "fixedOutletSpillDepthAtFlagM": {
+          "C": 0.0,
+          "S": 0.0,
+          "T": 2.432206676800888
+        },
+        "iceChangeProxy": false,
+        "maximumSpillDepthWithin53MOfFlag": {
+          "C": 2.975341796875,
+          "S": 18.4443359375,
+          "T": 18.36155082799428
+        },
+        "north": 1093924.978607841,
+        "oneRingProminence": 1.5020923003523876,
+        "patchSizeMApprox": 432,
+        "radiusM": 3226.5528477874286
+      },
+      {
+        "east": 2622463.608618937,
+        "fixedOutletSpillDepthAtFlagM": {
+          "C": 0.0,
+          "S": 0.0,
+          "T": 1.3738344490304826
+        },
+        "iceChangeProxy": false,
+        "maximumSpillDepthWithin53MOfFlag": {
+          "C": 0.0,
+          "S": 8.9825439453125,
+          "T": 7.396603951898442
+        },
+        "north": 1093971.5739385504,
+        "oneRingProminence": 1.3738344490304826,
+        "patchSizeMApprox": 432,
+        "radiusM": 3212.535608067572
+      },
+      {
+        "east": 2623086.2607360636,
+        "fixedOutletSpillDepthAtFlagM": {
+          "C": 0.0,
+          "S": 0.0,
+          "T": 1.350135426082943
+        },
+        "iceChangeProxy": true,
+        "maximumSpillDepthWithin53MOfFlag": {
+          "C": 0.0,
+          "S": 0.0,
+          "T": 1.350135426082943
+        },
+        "north": 1089352.051100868,
+        "oneRingProminence": 1.350135426082943,
+        "patchSizeMApprox": 432,
+        "radiusM": 3267.1136103212075
+      }
+    ],
+    "inducedDerivativeIndependentMaxDifference": 6.505143819446335e-11,
+    "interpretation": "D8 and five-point curvature are representation diagnostics, not hydrological correctness; elevations remain untouched.",
+    "nonDescendingTWhereBothSourcesHaveDescendingNeighbour": 686,
+    "operatorClosureIndependentMaxM": 1.3642420526593924e-12
+  },
+  "independentFullInventoryRebuildIdentical": true,
+  "interpretation": "All accepted terrain response bodies verified against final output hashes. Request failures are navigation cancellations. Screenshot bytes/animation timing are not deterministic terrain claims. Shared pure-common control reproduces southern close-camera clipping; exact rendering cause is unestablished. Synthetic local pits and lower source-family handoff prevent full success.",
+  "inventory": {
+    "common": {
+      "byZoom": {
+        "10": 6,
+        "11": 14,
+        "12": 29,
+        "13": 57,
+        "14": 93,
+        "15": 148,
+        "16": 213,
+        "17": 90,
+        "8": 2,
+        "9": 4
+      },
+      "maskBytes": 1596905,
+      "pngBytes": 57793566,
+      "representativePngBytes": {
+        "maximum": 161226,
+        "median": 88977,
+        "minimum": 29280
+      },
+      "tileCount": 656
+    },
+    "hard": {
+      "byZoom": {
+        "10": 2,
+        "11": 6,
+        "12": 13,
+        "13": 37,
+        "14": 81,
+        "15": 144,
+        "16": 205,
+        "17": 174,
+        "18": 632,
+        "8": 2,
+        "9": 2
+      },
+      "maskBytes": 3694818,
+      "pngBytes": 114592551,
+      "representativePngBytes": {
+        "maximum": 161226,
+        "median": 87821,
+        "minimum": 43929
+      },
+      "tileCount": 1298
+    },
+    "transition": {
+      "byZoom": {
+        "10": 28,
+        "11": 56,
+        "12": 50,
+        "13": 82,
+        "14": 110,
+        "15": 223,
+        "16": 733,
+        "17": 373,
+        "18": 632,
+        "8": 2,
+        "9": 8
+      },
+      "maskBytes": 325694093,
+      "pngBytes": 200365775,
+      "representativePngBytes": {
+        "maximum": 161226,
+        "median": 84832,
+        "minimum": 29678
+      },
+      "tileCount": 2297
+    }
+  },
+  "inventoryIdentity": "cb50566a80e27a9ed015c6fa35c176cb111de6fa568da85a5c41dc4dfb7037f2",
+  "nextTask": "Atlas Terrain Hierarchy Contract; no further Riffelhorn elevation-method experiment",
+  "numerical": {
+    "boundaries": {
+      "1500": {
+        "actualOneMetreHeightChangeIncludingTerrainSlope": {
+          "count": 72,
+          "max": 3.425197815233787,
+          "mean": 0.19681411211277894,
+          "median": 0.06735662874348236,
+          "min": -0.4907407305177003,
+          "nmad": 0.29648952899130276,
+          "p05": -0.3635313130075474,
+          "p50": 0.06735662874348236,
+          "p95": 0.9974921107755791,
+          "p99": 2.6931790315024746,
+          "rms": 0.6207586664169247
+        },
+        "introducedInterceptProxyHalfMetreSides": {
+          "count": 72,
+          "max": 8.884853741619736e-09,
+          "mean": 1.0958463766049438e-09,
+          "median": 2.6830093702301383e-11,
+          "min": -1.9376784621272236e-09,
+          "nmad": 1.71248939295765e-10,
+          "p05": -4.722323865280486e-10,
+          "p50": 2.6830093702301383e-11,
+          "p95": 5.415290615928825e-09,
+          "p99": 8.134502422763041e-09,
+          "rms": 2.5491738265806865e-09
+        }
+      },
+      "3000": {
+        "actualOneMetreHeightChangeIncludingTerrainSlope": {
+          "count": 72,
+          "max": 1.5745721229682204,
+          "mean": 0.021495996065706575,
+          "median": 0.03413772367457568,
+          "min": -1.6760151532366763,
+          "nmad": 0.470300132964428,
+          "p05": -0.6058453496949369,
+          "p50": 0.03413772367457568,
+          "p95": 0.6837346869487877,
+          "p99": 1.1548831662953982,
+          "rms": 0.465947152621547
+        },
+        "introducedInterceptProxyHalfMetreSides": {
+          "count": 72,
+          "max": 7.3628143582027406e-09,
+          "mean": 1.911833654351843e-10,
+          "median": 2.637534635141492e-11,
+          "min": -6.930349627509713e-09,
+          "nmad": 1.4640435892943059e-09,
+          "p05": -3.2244315661955622e-09,
+          "p50": 2.637534635141492e-11,
+          "p95": 3.884861143887977e-09,
+          "p99": 7.052212822600271e-09,
+          "rms": 2.3481573615470735e-09
+        }
+      },
+      "4000": {
+        "actualOneMetreHeightChangeIncludingTerrainSlope": {
+          "count": 72,
+          "max": 1.3501012928600176,
+          "mean": 0.16051246231005065,
+          "median": 0.12015065700461491,
+          "min": -0.5481572698085984,
+          "nmad": 0.32489475917485167,
+          "p05": -0.40023348940736697,
+          "p50": 0.12015065700461491,
+          "p95": 0.9431161419149704,
+          "p99": 1.2596558115153456,
+          "rms": 0.41177387734886167
+        },
+        "introducedInterceptProxyHalfMetreSides": {
+          "count": 72,
+          "max": 1.6119656720547937e-08,
+          "mean": 5.575170942190906e-10,
+          "median": 3.597051545511931e-10,
+          "min": -7.983544492162764e-09,
+          "nmad": 1.1721113423845962e-09,
+          "p05": -3.921059033018537e-09,
+          "p50": 3.597051545511931e-10,
+          "p95": 3.4337745091761474e-09,
+          "p99": 1.1855665889015691e-08,
+          "rms": 3.2463082922045606e-09
+        }
+      }
+    },
+    "fineDetailEquations": {
+      "dEqualsOneThrough3000": true,
+      "dEqualsZeroFrom4000": true,
+      "operatorClosureMax": 9.094947017729282e-13
+    },
+    "inducedGradient": {
+      "all": {
+        "above005Fraction": 0.0011946882323209116,
+        "above010Fraction": 4.084404213062946e-06,
+        "absolute": {
+          "count": 979335,
+          "max": 0.11328283302850292,
+          "mean": 0.004271632749975499,
+          "median": 0.001088468289470495,
+          "min": 1.0305875275601399e-14,
+          "nmad": 0.001479590934510324,
+          "p05": 1.639212765442945e-05,
+          "p50": 0.001088468289470495,
+          "p95": 0.023317809473636857,
+          "p99": 0.037593683832122075,
+          "rms": 0.008977314287868247
+        },
+        "signed": {
+          "count": 979335,
+          "max": 0.08501913407168084,
+          "mean": 0.003051610509126942,
+          "median": 0.00042905044051617805,
+          "min": -0.11328283302850292,
+          "nmad": 0.0015613156648710046,
+          "p05": -0.0031110473969597372,
+          "p50": 0.00042905044051617805,
+          "p95": 0.0225342418479512,
+          "p99": 0.037383273009402106,
+          "rms": 0.008977314287868247
+        }
+      },
+      "connectedAbove010": {
+        "components": 1,
+        "largestCellCount": 4,
+        "longestGraphDistanceLowerBoundM": 19.919999999999998,
+        "method": "double BFS geodesic-diameter lower bound; no diagonal adjacency; centre ground spacing approximation"
+      },
+      "iceChange": {
+        "above005Fraction": 0.002327929186651786,
+        "above010Fraction": 8.519411479055027e-06,
+        "absolute": {
+          "count": 469516,
+          "max": 0.11328283302850292,
+          "mean": 0.0071348647790015285,
+          "median": 0.002340871139485848,
+          "min": 3.435999633229929e-14,
+          "nmad": 0.0032812760674368344,
+          "p05": 2.409039821616082e-05,
+          "p50": 0.002340871139485848,
+          "p95": 0.03190948848960511,
+          "p99": 0.04115518557008156,
+          "rms": 0.01251391470206563
+        },
+        "signed": {
+          "count": 469516,
+          "max": 0.08501913407168084,
+          "mean": 0.005711215482505093,
+          "median": 0.0013124886457227842,
+          "min": -0.11328283302850292,
+          "nmad": 0.003224116383780927,
+          "p05": -0.00362025565032913,
+          "p50": 0.0013124886457227842,
+          "p95": 0.031683952497249035,
+          "p99": 0.040984274690233975,
+          "rms": 0.01251391470206563
+        }
+      },
+      "nonIce": {
+        "above005Fraction": 0.00015103399441762666,
+        "above010Fraction": 0.0,
+        "absolute": {
+          "count": 509819,
+          "max": 0.06847780896016423,
+          "mean": 0.0016347493671667276,
+          "median": 0.0006805814954562334,
+          "min": 1.0305875275601399e-14,
+          "nmad": 0.0008729219365590888,
+          "p05": 1.2071081735929606e-05,
+          "p50": 0.0006805814954562334,
+          "p95": 0.0063259491883735685,
+          "p99": 0.013109719933471528,
+          "rms": 0.0032549681381098656
+        },
+        "signed": {
+          "count": 509819,
+          "max": 0.06847780896016423,
+          "mean": 0.0006022567410629505,
+          "median": 0.00015234142438417316,
+          "min": -0.04218653201762477,
+          "nmad": 0.0009783079957210526,
+          "p05": -0.0027934808573698336,
+          "p50": 0.00015234142438417316,
+          "p95": 0.00522015692075794,
+          "p99": 0.010767916211018476,
+          "rms": 0.0032549681381098656
+        }
+      },
+      "stableCandidates": {
+        "above005Fraction": 0.0,
+        "above010Fraction": 0.0,
+        "absolute": {
+          "count": 90790,
+          "max": 0.03785563631676099,
+          "mean": 0.0012211264739719033,
+          "median": 0.0005523923736417217,
+          "min": 2.8508671243323477e-13,
+          "nmad": 0.0006526068445317079,
+          "p05": 1.733249290239065e-05,
+          "p50": 0.0005523923736417217,
+          "p95": 0.004692494763797352,
+          "p99": 0.011442925050148899,
+          "rms": 0.0024632189024650364
+        },
+        "signed": {
+          "count": 90790,
+          "max": 0.03785563631676099,
+          "mean": 0.00016508026948764047,
+          "median": 8.292471040506166e-05,
+          "min": -0.025227786677974585,
+          "nmad": 0.0007988211118330913,
+          "p05": -0.0025316050141016926,
+          "p50": 8.292471040506166e-05,
+          "p95": 0.003271145307012956,
+          "p99": 0.007677762008249948,
+          "rms": 0.0024632189024650364
+        }
+      },
+      "steepNonIce": {
+        "above005Fraction": 0.004341180067257719,
+        "above010Fraction": 0.0,
+        "absolute": {
+          "count": 16355,
+          "max": 0.06416923071414936,
+          "mean": 0.006167333584975381,
+          "median": 0.0033430271930737585,
+          "min": 1.861726050090854e-13,
+          "nmad": 0.003909534023947356,
+          "p05": 0.0001217507070501799,
+          "p50": 0.0033430271930737585,
+          "p95": 0.021302929199100217,
+          "p99": 0.03804162792465287,
+          "rms": 0.010040015682819625
+        },
+        "signed": {
+          "count": 16355,
+          "max": 0.06416923071414936,
+          "mean": 0.002506547210604047,
+          "median": 0.0009117467083225139,
+          "min": -0.04218653201762477,
+          "nmad": 0.004912473454225382,
+          "p05": -0.010381911126509323,
+          "p50": 0.0009117467083225139,
+          "p95": 0.01967408221664322,
+          "p99": 0.03709512200882815,
+          "rms": 0.010040015682819625
+        }
+      }
+    },
+    "lod": {
+      "10-11": {
+        "count": 705,
+        "max": 41.832630159431574,
+        "mean": 0.13962250912918858,
+        "median": -0.3432377859026019,
+        "min": -31.517195779577833,
+        "nmad": 3.4393882063371737,
+        "p05": -8.073719986491415,
+        "p50": -0.3432377859026019,
+        "p95": 10.472528363038496,
+        "p99": 22.22985546638518,
+        "rms": 6.2732331122420995
+      },
+      "11-12": {
+        "count": 705,
+        "max": 17.092607679302546,
+        "mean": -0.006086113923579143,
+        "median": -0.05032496892590643,
+        "min": -15.808585341076196,
+        "nmad": 1.6762128434229915,
+        "p05": -3.870251953152638,
+        "p50": -0.05032496892590643,
+        "p95": 4.36527948904504,
+        "p99": 10.944822558097952,
+        "rms": 2.8982814691385617
+      },
+      "12-13": {
+        "count": 705,
+        "max": 8.282976433598833,
+        "mean": 0.04515744454511602,
+        "median": -0.012661649160236266,
+        "min": -7.338654722226238,
+        "nmad": 0.7569290589071321,
+        "p05": -1.7944951266547833,
+        "p50": -0.012661649160236266,
+        "p95": 2.121696495975993,
+        "p99": 4.138118743288598,
+        "rms": 1.3164632252680035
+      },
+      "13-14": {
+        "count": 705,
+        "max": 5.956406652109763,
+        "mean": 0.04282692012064036,
+        "median": -0.006854663946342043,
+        "min": -3.273973635996299,
+        "nmad": 0.34787442127318924,
+        "p05": -0.7880966763917059,
+        "p50": -0.006854663946342043,
+        "p95": 1.046830122816116,
+        "p99": 2.471261282076395,
+        "rms": 0.7106661279875456
+      },
+      "14-15": {
+        "count": 705,
+        "max": 2.045677097446969,
+        "mean": -0.01850392505685246,
+        "median": -0.0015694960557084414,
+        "min": -4.9967213745771915,
+        "nmad": 0.1877999580509432,
+        "p05": -0.4888333420767594,
+        "p50": -0.0015694960557084414,
+        "p95": 0.4712337741707415,
+        "p99": 1.010179014393254,
+        "rms": 0.440514205207654
+      },
+      "15-16": {
+        "count": 705,
+        "max": 1.6750163336564583,
+        "mean": -0.005255489465347224,
+        "median": -0.0025305274107267905,
+        "min": -3.7838095660772524,
+        "nmad": 0.09148788708682058,
+        "p05": -0.24411597322286976,
+        "p50": -0.0025305274107267905,
+        "p95": 0.2412025205021562,
+        "p99": 0.6858954308799758,
+        "rms": 0.2633218912091345
+      },
+      "16-17": {
+        "count": 705,
+        "max": 1.1364168763302587,
+        "mean": -0.0027979360239932254,
+        "median": -0.000986098427347315,
+        "min": -2.279752558787095,
+        "nmad": 0.039148312989026816,
+        "p05": -0.11057716402319782,
+        "p50": -0.000986098427347315,
+        "p95": 0.12438465064860792,
+        "p99": 0.333165975950598,
+        "rms": 0.14962072421353187
+      },
+      "17-18": {
+        "count": 705,
+        "max": 0.5769659620932543,
+        "mean": -0.0021612078908684125,
+        "median": -0.000641727937363612,
+        "min": -1.158482873946923,
+        "nmad": 0.016605256254702362,
+        "p05": -0.05444279481680496,
+        "p50": -0.000641727937363612,
+        "p95": 0.04340974158330934,
+        "p99": 0.14337314398269918,
+        "rms": 0.07240603911510647
+      }
+    },
+    "outsideUnencodedDifference": {
+      "count": 2071674,
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "min": 0.0,
+      "nmad": 0.0,
+      "p05": 0.0,
+      "p50": 0.0,
+      "p95": 0.0,
+      "p99": 0.0,
+      "rms": 0.0
+    },
+    "protectedFineDeliveredDifference": {
+      "14": {
+        "count": 705,
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "nmad": 0.0,
+        "p05": 0.0,
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "rms": 0.0
+      },
+      "15": {
+        "count": 705,
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "nmad": 0.0,
+        "p05": 0.0,
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "rms": 0.0
+      },
+      "16": {
+        "count": 705,
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "nmad": 0.0,
+        "p05": 0.0,
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "rms": 0.0
+      },
+      "17": {
+        "count": 705,
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "nmad": 0.0,
+        "p05": 0.0,
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "rms": 0.0
+      },
+      "18": {
+        "count": 705,
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "nmad": 0.0,
+        "p05": 0.0,
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "rms": 0.0
+      }
+    },
+    "protectedSamples": 705,
+    "protectedUnencodedDifference": {
+      "count": 160255,
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "min": 0.0,
+      "nmad": 0.0,
+      "p05": 0.0,
+      "p50": 0.0,
+      "p95": 0.0,
+      "p99": 0.0,
+      "rms": 0.0
+    },
+    "radialBands": {
+      "0-1500": {
+        "broadContribution": {
+          "count": 160255,
+          "max": 145.64474415779114,
+          "mean": -18.793697292487604,
+          "median": -1.1939332485198975,
+          "min": -109.39638590812683,
+          "nmad": 7.385018571853637,
+          "p05": -80.48537836074829,
+          "p50": -1.1939332485198975,
+          "p95": 26.319770407676685,
+          "p99": 54.561463441848595,
+          "rms": 39.59140139654018
+        },
+        "broadWeight": {
+          "count": 160255,
+          "max": 1.0,
+          "mean": 1.0,
+          "median": 1.0,
+          "min": 1.0,
+          "nmad": 0.0,
+          "p05": 1.0,
+          "p50": 1.0,
+          "p95": 1.0,
+          "p99": 1.0,
+          "rms": 1.0
+        },
+        "detailWeight": {
+          "count": 160255,
+          "max": 1.0,
+          "mean": 1.0,
+          "median": 1.0,
+          "min": 1.0,
+          "nmad": 0.0,
+          "p05": 1.0,
+          "p50": 1.0,
+          "p95": 1.0,
+          "p99": 1.0,
+          "rms": 1.0
+        },
+        "regionalDetailContribution": {
+          "count": 160255,
+          "max": 35.835535526275635,
+          "mean": -0.014747039256596215,
+          "median": -0.04836606979370117,
+          "min": -39.766496658325195,
+          "nmad": 1.2301425486087798,
+          "p05": -2.827366495132446,
+          "p50": -0.04836606979370117,
+          "p95": 2.920645236968993,
+          "p99": 6.695934324264505,
+          "rms": 2.279222514099174
+        },
+        "terrainMinusCommon": {
+          "count": 160255,
+          "max": 159.120361328125,
+          "mean": -18.795348171602974,
+          "median": -1.739501953125,
+          "min": -114.679443359375,
+          "nmad": 8.87894970703125,
+          "p05": -80.919189453125,
+          "p50": -1.739501953125,
+          "p95": 26.6162109375,
+          "p99": 56.83804687499993,
+          "rms": 39.858410722240514
+        },
+        "terrainMinusSwiss": {
+          "count": 160255,
+          "max": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "nmad": 0.0,
+          "p05": 0.0,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "rms": 0.0
+        }
+      },
+      "1500-2000": {
+        "broadContribution": {
+          "count": 124641,
+          "max": 77.19142622778936,
+          "mean": -10.304985594060769,
+          "median": -0.47851560951775296,
+          "min": -160.97839613146655,
+          "nmad": 2.317409823965718,
+          "p05": -66.69263354624628,
+          "p50": -0.47851560951775296,
+          "p95": 9.272222512987605,
+          "p99": 24.787017247768947,
+          "rms": 26.680797181494356
+        },
+        "broadWeight": {
+          "count": 124641,
+          "max": 0.9999999999999999,
+          "mean": 0.9831898848003339,
+          "median": 0.9896029855591202,
+          "min": 0.9420802647247655,
+          "nmad": 0.01485677963200893,
+          "p05": 0.9486352194405936,
+          "p50": 0.9896029855591202,
+          "p95": 0.9999848658460334,
+          "p99": 0.9999998720106691,
+          "rms": 0.9833402899534608
+        },
+        "detailWeight": {
+          "count": 124641,
+          "max": 1.0,
+          "mean": 1.0,
+          "median": 1.0,
+          "min": 1.0,
+          "nmad": 0.0,
+          "p05": 1.0,
+          "p50": 1.0,
+          "p95": 1.0,
+          "p99": 1.0,
+          "rms": 1.0
+        },
+        "regionalDetailContribution": {
+          "count": 124641,
+          "max": 44.03093099594116,
+          "mean": 0.03729191468633695,
+          "median": -0.01647353172302246,
+          "min": -40.74801254272461,
+          "nmad": 1.2282715822219847,
+          "p05": -2.8373265266418457,
+          "p50": -0.01647353172302246,
+          "p95": 3.1166529655456543,
+          "p99": 7.284771108627331,
+          "rms": 2.3362243761321233
+        },
+        "terrainMinusCommon": {
+          "count": 124641,
+          "max": 90.61675072470871,
+          "mean": -10.298014958621632,
+          "median": -0.7129819234373826,
+          "min": -166.565648998715,
+          "nmad": 3.4341100744305857,
+          "p05": -67.1057866515057,
+          "p50": -0.7129819234373826,
+          "p95": 10.2217673430805,
+          "p99": 27.55684481205399,
+          "rms": 27.030974503706524
+        },
+        "terrainMinusSwiss": {
+          "count": 124641,
+          "max": 5.208904146097666,
+          "mean": 0.1592209749326603,
+          "median": 0.001178765468466736,
+          "min": -2.0144389117972423,
+          "nmad": 0.022143069266711245,
+          "p05": -0.10409987465300219,
+          "p50": 0.001178765468466736,
+          "p95": 1.2920625765109435,
+          "p99": 3.021372202600834,
+          "rms": 0.5881846316051995
+        }
+      },
+      "2000-2500": {
+        "broadContribution": {
+          "count": 160257,
+          "max": 44.27598868184848,
+          "mean": -7.129713626528607,
+          "median": -0.7223663742217719,
+          "min": -89.20401473491214,
+          "nmad": 2.0088085997535345,
+          "p05": -47.05341623119142,
+          "p50": -0.7223663742217719,
+          "p95": 4.231017003567077,
+          "p99": 15.513542837509508,
+          "rms": 17.714020460027587
+        },
+        "broadWeight": {
+          "count": 160257,
+          "max": 0.9420773910803849,
+          "mean": 0.8237930363813915,
+          "median": 0.8295336151953169,
+          "min": 0.6825609462790481,
+          "nmad": 0.0977869381182421,
+          "p05": 0.6980576928269842,
+          "p50": 0.8295336151953169,
+          "p95": 0.9331340801202647,
+          "p99": 0.9403513918684957,
+          "rms": 0.8273025287298247
+        },
+        "detailWeight": {
+          "count": 160257,
+          "max": 1.0,
+          "mean": 1.0,
+          "median": 1.0,
+          "min": 1.0,
+          "nmad": 0.0,
+          "p05": 1.0,
+          "p50": 1.0,
+          "p95": 1.0,
+          "p99": 1.0,
+          "rms": 1.0
+        },
+        "regionalDetailContribution": {
+          "count": 160257,
+          "max": 35.55126619338989,
+          "mean": -0.030156268331229842,
+          "median": -0.07897281646728516,
+          "min": -49.29857897758484,
+          "nmad": 1.2059228480815887,
+          "p05": -2.7778254985809325,
+          "p50": -0.07897281646728516,
+          "p95": 2.8912999629974356,
+          "p99": 6.36687591552735,
+          "rms": 2.05435996079542
+        },
+        "terrainMinusCommon": {
+          "count": 160257,
+          "max": 61.07648258424979,
+          "mean": -7.136524626568764,
+          "median": -0.9871492998945541,
+          "min": -91.53192528728414,
+          "nmad": 3.090769524591053,
+          "p05": -47.17682593927812,
+          "p50": -0.9871492998945541,
+          "p95": 5.748411802180347,
+          "p99": 17.501092486305666,
+          "rms": 18.02096722739344
+        },
+        "terrainMinusSwiss": {
+          "count": 160257,
+          "max": 28.830870875358414,
+          "mean": 1.4396587274905563,
+          "median": 0.1374047284725748,
+          "min": -18.36543877592203,
+          "nmad": 0.3974609214564303,
+          "p05": -0.8337996365275103,
+          "p50": 0.1374047284725748,
+          "p95": 9.733842207377439,
+          "p99": 13.858614433830663,
+          "rms": 3.672220248610983
+        }
+      },
+      "2500-3000": {
+        "broadContribution": {
+          "count": 195870,
+          "max": 30.828822859477235,
+          "mean": -3.2831441358898914,
+          "median": -0.6355185703088932,
+          "min": -60.84867239561212,
+          "nmad": 1.6932389023214298,
+          "p05": -23.145054922382553,
+          "p50": -0.6355185703088932,
+          "p95": 3.008460900596122,
+          "p99": 9.61413433310443,
+          "rms": 8.437490589888473
+        },
+        "broadWeight": {
+          "count": 195870,
+          "max": 0.6825548086092262,
+          "mean": 0.494397312638045,
+          "median": 0.49145904576177446,
+          "min": 0.31744049052378087,
+          "nmad": 0.1374749736504666,
+          "p05": 0.3334348506962906,
+          "p50": 0.49145904576177446,
+          "p95": 0.6635004683516381,
+          "p99": 0.6787504396045119,
+          "rms": 0.5057156012773425
+        },
+        "detailWeight": {
+          "count": 195870,
+          "max": 1.0,
+          "mean": 1.0,
+          "median": 1.0,
+          "min": 1.0,
+          "nmad": 0.0,
+          "p05": 1.0,
+          "p50": 1.0,
+          "p95": 1.0,
+          "p99": 1.0,
+          "rms": 1.0
+        },
+        "regionalDetailContribution": {
+          "count": 195870,
+          "max": 49.22534799575806,
+          "mean": 0.008994590929372877,
+          "median": -0.022699594497680664,
+          "min": -63.237401723861694,
+          "nmad": 1.2984405982732772,
+          "p05": -2.9884519934654237,
+          "p50": -0.022699594497680664,
+          "p95": 3.2249606490135188,
+          "p99": 6.947980942726127,
+          "rms": 2.369974489004267
+        },
+        "terrainMinusCommon": {
+          "count": 195870,
+          "max": 51.93800146271724,
+          "mean": -3.278649796551751,
+          "median": -0.9478132186809489,
+          "min": -70.18364225220694,
+          "nmad": 2.8341066738907617,
+          "p05": -23.574605616259237,
+          "p50": -0.9478132186809489,
+          "p95": 4.828675686582686,
+          "p99": 13.921274686398235,
+          "rms": 9.012032181241693
+        },
+        "terrainMinusSwiss": {
+          "count": 195870,
+          "max": 55.29133343131389,
+          "mean": 3.2712122453608137,
+          "median": 0.649031592855863,
+          "min": -45.14072488908823,
+          "nmad": 1.726208029555507,
+          "p05": -3.059067874658535,
+          "p50": 0.649031592855863,
+          "p95": 22.046732148260407,
+          "p99": 32.51576694375559,
+          "rms": 8.693046422429761
+        }
+      },
+      "3000-3500": {
+        "broadContribution": {
+          "count": 231472,
+          "max": 15.37682287218694,
+          "mean": -1.2966879322128084,
+          "median": -0.36184135179418797,
+          "min": -25.65505885194308,
+          "nmad": 0.6623622320983544,
+          "p05": -7.445622519847613,
+          "p50": -0.36184135179418797,
+          "p95": 0.655239144319333,
+          "p99": 3.696522978096611,
+          "rms": 3.3050894360280036
+        },
+        "broadWeight": {
+          "count": 231472,
+          "max": 0.31743961337306714,
+          "mean": 0.16800055895351432,
+          "median": 0.15803795947135324,
+          "min": 0.0579212484181757,
+          "nmad": 0.09368984517781202,
+          "p05": 0.06532824662209456,
+          "p50": 0.15803795947135324,
+          "p95": 0.29896714557367676,
+          "p99": 0.3136790473962496,
+          "rms": 0.18418118994653743
+        },
+        "detailWeight": {
+          "count": 231472,
+          "max": 1.0,
+          "mean": 0.8372158242513303,
+          "median": 0.8861034158315761,
+          "min": 0.5000076196933942,
+          "nmad": 0.15989489811284527,
+          "p05": 0.5436246725741488,
+          "p50": 0.8861034158315761,
+          "p95": 0.9998115461335431,
+          "p99": 0.9999983933923137,
+          "rms": 0.8514794355933955
+        },
+        "regionalDetailContribution": {
+          "count": 231472,
+          "max": 48.73122268181708,
+          "mean": -0.004530859374794768,
+          "median": -0.016742660878587244,
+          "min": -51.87246629830097,
+          "nmad": 0.9570313880644826,
+          "p05": -2.490321888861628,
+          "p50": -0.016742660878587244,
+          "p95": 2.669179395000958,
+          "p99": 6.039839977796802,
+          "rms": 2.173095893589269
+        },
+        "terrainMinusCommon": {
+          "count": 231472,
+          "max": 51.76104216052045,
+          "mean": -1.3003696369670803,
+          "median": -0.5799581097760438,
+          "min": -55.32344489385605,
+          "nmad": 1.5601666476540181,
+          "p05": -8.477605298664002,
+          "p50": -0.5799581097760438,
+          "p95": 2.64222723090388,
+          "p99": 7.728014482441293,
+          "rms": 4.084810572995682
+        },
+        "terrainMinusSwiss": {
+          "count": 231472,
+          "max": 114.87273093655631,
+          "mean": 6.7459984457461495,
+          "median": 2.0637094609967335,
+          "min": -62.90658358531573,
+          "nmad": 3.8207607857394144,
+          "p05": -3.2081872456711826,
+          "p50": 2.0637094609967335,
+          "p95": 38.66203544765342,
+          "p99": 67.99896201653719,
+          "rms": 16.127345104978023
+        }
+      },
+      "3500-4000": {
+        "broadContribution": {
+          "count": 267095,
+          "max": 2.7479194543255567,
+          "mean": -0.1308818053937751,
+          "median": -0.006552857994464927,
+          "min": -6.173972821109081,
+          "nmad": 0.022531127782335084,
+          "p05": -0.7826948787573482,
+          "p50": -0.006552857994464927,
+          "p95": 0.058428813838914136,
+          "p99": 0.43417031799861383,
+          "rms": 0.4528770152251891
+        },
+        "broadWeight": {
+          "count": 267095,
+          "max": 0.05791992538207236,
+          "mean": 0.014917253483384461,
+          "median": 0.007774235504261817,
+          "min": -1.7763568394002505e-15,
+          "nmad": 0.011306418301825936,
+          "p05": 8.176458860198467e-06,
+          "p50": 0.007774235504261817,
+          "p95": 0.050046390148636405,
+          "p99": 0.05627646720890919,
+          "rms": 0.02231416915061732
+        },
+        "detailWeight": {
+          "count": 267095,
+          "max": 0.4999995445681496,
+          "mean": 0.15058751181309166,
+          "median": 0.09492704755796355,
+          "min": -8.881784197001252e-16,
+          "nmad": 0.13600218244878204,
+          "p05": 0.00012505408235359284,
+          "p50": 0.09492704755796355,
+          "p95": 0.45003744127384715,
+          "p99": 0.4898876619648805,
+          "rms": 0.21402301557621065
+        },
+        "regionalDetailContribution": {
+          "count": 267095,
+          "max": 10.841110039844834,
+          "mean": -0.005284981900383985,
+          "median": -5.352110655812015e-06,
+          "min": -15.687825366169653,
+          "nmad": 0.07732424966439871,
+          "p05": -0.5466545765723022,
+          "p50": -5.352110655812015e-06,
+          "p95": 0.5313212599939424,
+          "p99": 1.4464710910684984,
+          "rms": 0.4838188734333122
+        },
+        "terrainMinusCommon": {
+          "count": 267095,
+          "max": 12.021796811202421,
+          "mean": -0.13237252269503955,
+          "median": -0.004490768907999154,
+          "min": -16.83236335633319,
+          "nmad": 0.09909084627074743,
+          "p05": -1.1429611592885975,
+          "p50": -0.004490768907999154,
+          "p95": 0.4439215641123379,
+          "p99": 1.437252903667302,
+          "rms": 0.6911333137868658
+        },
+        "terrainMinusSwiss": {
+          "count": 267095,
+          "max": 102.71449476634689,
+          "mean": 7.510530628479958,
+          "median": 2.203673990758034,
+          "min": -102.62317033734826,
+          "nmad": 5.176037691355709,
+          "p05": -6.3765073312938965,
+          "p50": 2.203673990758034,
+          "p95": 42.69556923439354,
+          "p99": 66.34292936316672,
+          "rms": 17.770945778646407
+        }
+      },
+      "4000-4500": {
+        "broadContribution": {
+          "count": 302713,
+          "max": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "nmad": 0.0,
+          "p05": -0.0,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": -0.0,
+          "rms": 0.0
+        },
+        "broadWeight": {
+          "count": 302713,
+          "max": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "nmad": 0.0,
+          "p05": 0.0,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "rms": 0.0
+        },
+        "detailWeight": {
+          "count": 302713,
+          "max": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "nmad": 0.0,
+          "p05": 0.0,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "rms": 0.0
+        },
+        "regionalDetailContribution": {
+          "count": 302713,
+          "max": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "nmad": 0.0,
+          "p05": -0.0,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "rms": 0.0
+        },
+        "terrainMinusCommon": {
+          "count": 302713,
+          "max": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "nmad": 0.0,
+          "p05": 0.0,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "rms": 0.0
+        },
+        "terrainMinusSwiss": {
+          "count": 302713,
+          "max": 179.31103515625,
+          "mean": 6.770644212856552,
+          "median": 1.99365234375,
+          "min": -201.25439453125,
+          "nmad": 5.3005845703125,
+          "p05": -7.08955078125,
+          "p50": 1.99365234375,
+          "p95": 27.834472656249957,
+          "p99": 98.18042968750001,
+          "rms": 19.75806182245259
+        }
+      }
+    }
+  },
+  "productionChanged": false,
+  "productionHashes": {
+    "src/atlas/map/AtlasMap.ts": "cb45f5963716d636e903ed515008b66dab2fca0ab6d2aa28214a8c6303ef4b05",
+    "src/atlas/map/atlasVisuals.ts": "48426ab2132d5192069254ec9fe3fb7d9d433c2c9059f6f2223166c34c22dcfc",
+    "src/atlas/map/terrainLayers.ts": "c71099083d3184d5c70c148ea2c3f0574b0b170fb0737b9c041df579ed4e5497",
+    "src/atlas/map/visualTerrainConfig.ts": "2fc10a5bb50501a82186b4e6a1d2c176ac87d7431dbfdc702b3da69660e6b0ee",
+    "src/atlas/terrain/analyticalElevationConfig.ts": "6fd90c2fb39dc925c8de90cf6b7cf3a907696d71cc116e42563255addb41a9bb",
+    "src/atlas/terrain/terrainElevationSampler.ts": "d941ad5474ff7370da4e67c135018a777ed440d84bf00cff0f536600270f1b7b"
+  },
+  "requestedTerrainLevels": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "schemaVersion": 1,
+  "sourceIdentityPolicy": "Canonical source hashes and immutable product identities are verified by seam_corridor.verify_inputs; each used source PNG rechecked on read. No source writing operation.",
+  "supportPreflight": {
+    "complete": true,
+    "levels": {
+      "12": {
+        "missing": [],
+        "requiredTileCount": 5,
+        "supportedCircleCells": 71212
+      },
+      "13": {
+        "missing": [],
+        "requiredTileCount": 11,
+        "supportedCircleCells": 284890
+      },
+      "14": {
+        "missing": [],
+        "requiredTileCount": 29,
+        "supportedCircleCells": 1139590
+      },
+      "15": {
+        "missing": [],
+        "requiredTileCount": 92,
+        "supportedCircleCells": 4558336
+      },
+      "16": {
+        "missing": [],
+        "requiredTileCount": 318,
+        "supportedCircleCells": 18233277
+      },
+      "17": {
+        "missing": [],
+        "requiredTileCount": 1191,
+        "supportedCircleCells": 72933272
+      },
+      "18": {
+        "missing": [],
+        "requiredTileCount": 4603,
+        "supportedCircleCells": 291733088
+      }
+    },
+    "sha256": "eb65cdae101ac702a45bcec32718c7885f1a71bff1b81b9bc75e10086ed338bb"
+  },
+  "usedMeshLevels": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "verification": {
+    "allMaskWeightsVerified": true,
+    "inventoryIdentity": "cb50566a80e27a9ed015c6fa35c176cb111de6fa568da85a5c41dc4dfb7037f2",
+    "maximumEncodingErrorM": 0.0019531250031832315,
+    "outsideCellsByZoom": {
+      "12": 3205588,
+      "13": 5089062,
+      "14": 6069370,
+      "15": 10056192,
+      "16": 30641044,
+      "17": 4550515
+    },
+    "parentSupport": {
+      "10-532-361.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "10-532-362.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "10-532-363.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "10-532-364.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "10-532-365.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "10-532-366.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "10-532-367.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "10-533-361.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "10-533-362.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "10-533-363.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "10-533-364.npz": {
+        "partialCells": 70,
+        "regionalRequiredCells": 856,
+        "sha256": "0583db1d951e8b5b61468c1b8d4a73d6d37200e2cbadeae99c42d2967e50c95c"
+      },
+      "10-533-365.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "10-533-366.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "10-533-367.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "10-534-361.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "10-534-362.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "10-534-363.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "10-534-364.npz": {
+        "partialCells": 142,
+        "regionalRequiredCells": 3701,
+        "sha256": "c4b1f2d06d4da26b628fb5f061ce5bead62275423ab63698ebee59cba5a0bfeb"
+      },
+      "10-534-365.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "10-534-366.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "10-534-367.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "10-535-361.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "10-535-362.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "10-535-363.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "10-535-364.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "10-535-365.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "10-535-366.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "10-535-367.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1064-725.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1064-726.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1064-727.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1064-730.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1064-731.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1065-725.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1065-726.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1065-727.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1065-728.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1065-729.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1065-730.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1065-731.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1065-732.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1066-725.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1066-726.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1066-727.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1066-728.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1066-729.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1066-730.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1066-731.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1067-725.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1067-726.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1067-727.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1067-728.npz": {
+        "partialCells": 85,
+        "regionalRequiredCells": 3304,
+        "sha256": "46c5b98b292dceee9164aca4e0918252151df741692bec02537d026bae218d1c"
+      },
+      "11-1067-729.npz": {
+        "partialCells": 8,
+        "regionalRequiredCells": 29,
+        "sha256": "3ee5c21fa1b3fffd99006511b5591257ed02e801e48e90715bcb287b31b499f2"
+      },
+      "11-1067-730.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1067-731.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1068-725.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1068-726.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1068-727.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1068-728.npz": {
+        "partialCells": 130,
+        "regionalRequiredCells": 13523,
+        "sha256": "d115be96e8ed2714a85f67ca9c5c12a1bf396dae2a40e90edb94586bd44ce05a"
+      },
+      "11-1068-729.npz": {
+        "partialCells": 59,
+        "regionalRequiredCells": 1091,
+        "sha256": "c49818329692326c879bbd130978061a9993990d56d947659a6d54e88d983005"
+      },
+      "11-1068-730.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1068-731.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1069-725.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1069-726.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1069-727.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1069-728.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1069-729.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1069-730.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1069-731.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1070-725.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1070-726.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1070-727.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1070-728.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1070-729.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1070-730.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1070-731.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1070-732.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1071-725.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1071-726.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1071-727.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1071-728.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1071-729.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1071-730.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      },
+      "11-1071-731.npz": {
+        "partialCells": 0,
+        "regionalRequiredCells": 0,
+        "sha256": "b3d749de21534bd791d62ff92ef7cf4697e024f5de3e2fac8239482f34cf068c"
+      }
+    },
+    "parentSupportMeaning": "Fraction of z12 descendant centres requiring regional operator; all required regional/broad cells passed strict support preflight. Not confidence, not equality with mean b/d. Common input complete everywhere delivered.",
+    "protectedCellsByZoom": {
+      "12": 10014,
+      "13": 40057,
+      "14": 160255,
+      "15": 641013,
+      "16": 2564045,
+      "17": 10202758,
+      "18": 40175309
+    },
+    "sourceInputs": {
+      "glacierAssets": {
+        "sgi1973": {
+          "path": "sources/atlas/riffelhorn/global-reference-assessment-v1/sgi1973/inventory_sgi1973_r1976.zip",
+          "sha256": "69a13fde7b142dd29b2f07a6bf5a4923750b502661995ca518e992a591e86145"
+        },
+        "sgi2016": {
+          "path": "sources/atlas/riffelhorn/global-reference-assessment-v1/sgi2016/inventory_sgi2016_r2020.zip",
+          "sha256": "36ff3252f24f76f0a93eafaa29086ba63725cc2cc99593deca34c15699e933a7"
+        },
+        "sgi2023": {
+          "path": "sources/atlas/riffelhorn/global-reference-assessment-v1/sgi2023/inventory_sgi2023_r2026.zip",
+          "sha256": "ecef353d4b70f760eda83c6131e5345a2fd999527ea560b0bda4b7c27823f9fb"
+        }
+      },
+      "overlapArrayHashes": {
+        "aws": "d7012f20ebf7e4e632769b5c095f7b12b0408d720390d9e252dfd40e243bbbbc",
+        "awsRaw": "8eed03ff7513618d4fb67f75927c831e578186d91e11bc80a9c5c8357d58a534",
+        "bareMask": "828c9e75aa9d2608c3fc49a0e4c2850a73fcb4b8c633ff503405e1ba1ec20dea",
+        "copernicus": "88914a34b20fdec0d517257123c8029d3e3d5a5ba840e4499ac280ace95d2b78",
+        "copernicusCommonHeight": "c969d633f71c91277dbc1c8b38c0906a9ae5ebc99c550abeaa10c021a63e8fe3",
+        "copernicusRaw": "d8f08f297c2aa7077cc7c8e9fdd65f420b57d03db747f3d107452c025553dc07",
+        "coverNearest": "275dfc480152ac6953bbc8cc3c4f446c5d477764da0f98c950ccadc665bb635d",
+        "edgeMask": "e29b251c13b94e75b0e31278f240274f7d9ad603149616154d15d097ea732a97",
+        "glacier250Mask": "9b96796bbfa4c48b920d4a2efa98a1b2c8b805cf2b9db5eeb432bf1574be7903",
+        "iceBuffer100": "9a990d248895c0c593826d8044a8b351ab4361045aabb4d868e9975ed746113a",
+        "iceBuffer500": "eee5150c2f0c7e3de4925839639374912497ff2a269115e8e79ef8922073ae94",
+        "primary": "ea7c4f39a698cce938e00f43e8773532d66756e17c96892317e9eff4316c10b2",
+        "primaryMask": "ea7c4f39a698cce938e00f43e8773532d66756e17c96892317e9eff4316c10b2",
+        "slope": "0a6726a1d79f69a6e00fbb3252a6a2fcb8e661e0b9c2d5bd1f64f1f794283715",
+        "slope10to35": "812c7ce61e665e8afb0780a7eefa5ef4065fd33fb8c6e5e2a91103af02868fa3",
+        "slope3to45": "d0f10b6b55bcffa3f5a8f35ad62f33c4689ec7612b268ca71fa9517a1f9d1f61",
+        "swissEgm2008Diagnostic": "cfa0a0c984210e783481a32f9284811a08cb7048776ddc7ee6501780a15f1763",
+        "swissLn02": "88b5f35e387b716b839536fab974d53ff684783f5b0b9394ea33ff540764b7b1"
+      },
+      "overlapFileSha256": "56dc810cc68763704b7a30daed4f3446bf698b9d6f332088afaf90dc3417ffc8",
+      "products": {
+        "common": "8f002dcbdeceb6aa37cc9eeef9f2d2060193b1eff7922ddb1d0535a6b8030da2",
+        "regionalParents": "b92c9a3dfa05a87e4fcce4a6e6638efd2d9ab8e86537f52833ff1ed6def78672",
+        "swiss": "1a44a0644de1bde73a3ba84d1b761dc0aa17d48cc971e5f6b5d2c14fb329d7ea"
+      },
+      "regionalFilesVerified": 35,
+      "sourceAssetsVerified": {
+        "common": 6,
+        "swiss": 100
+      },
+      "sources": {
+        "common": "74c55b0cbad123778294647fa9770b1d673735401ae5d5b1854c4b32e57e0a85",
+        "swiss": "b24a4fdc7b378ba79d442d0ce216a031dfb95a6bc6eed5ad9c33be61175651f4"
+      }
+    },
+    "tiles": {
+      "10": 28,
+      "11": 56,
+      "12": 50,
+      "13": 82,
+      "14": 110,
+      "15": 223,
+      "16": 733,
+      "17": 373,
+      "18": 632,
+      "8": 2,
+      "9": 8
+    }
+  }
+}
