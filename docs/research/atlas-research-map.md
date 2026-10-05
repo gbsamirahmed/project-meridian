@@ -99,6 +99,16 @@ height semantics. No transformation, smoothing collar, general resolver or
 production adoption was accepted; the suggested regional-parent diagnostic is
 a future direction, not an automatically started phase.
 
+The [regional-preserving parent diagnostic](../atlas/regional-parent-diagnostic.md)
+then tested recursive Swiss coarse summaries with explicit partial support.
+It demonstrates internally related regional refinement (13→14 RMS0.71 m versus
+39.82 m for the unrelated common parent), with unchanged fine Swiss/protected
+terrain. Coarsening through10 does not yield a natural common handoff; incomplete
+tiles are not invented and the spatial edge remains. LOD and spatial continuity
+are distinct evidenced problems. A regional-pyramid concept is supported, but
+no final hierarchy contract or production adoption follows. The smallest next
+direction is one bounded support-aware same-level boundary assessment.
+
 ## Evidence classes
 
 - **MERIDIAN EVIDENCE (M):** measurements, inspected outputs and negative results

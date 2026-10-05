@@ -1,0 +1,4407 @@
+{
+  "control": {
+    "browserVersion": "151.0.7922.34",
+    "contributorResponseCounts": {
+      "0": 430,
+      "1": 334
+    },
+    "failedRequests": [
+      {
+        "error": "net::ERR_ABORTED",
+        "url": "http://127.0.0.1:4184/tiles/control/16/34182/23318.png"
+      }
+    ],
+    "failure": null,
+    "navigation": [
+      {
+        "bearing": 0,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "filename": "navigation-0--control.png",
+        "frames": [
+          {
+            "actualDEMLevels": [
+              13
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3757.472644657663,
+            "levels": [
+              8,
+              13,
+              14
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 14.2
+          },
+          {
+            "actualDEMLevels": [
+              13
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3757.472644657663,
+            "levels": [
+              8,
+              13,
+              14
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 14.2
+          },
+          {
+            "actualDEMLevels": [
+              13
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3757.472644657663,
+            "levels": [
+              8,
+              13,
+              14
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 14.2
+          },
+          {
+            "actualDEMLevels": [
+              13
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3757.472644657663,
+            "levels": [
+              8,
+              13,
+              14
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 14.2
+          },
+          {
+            "actualDEMLevels": [
+              13
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3757.472644657663,
+            "levels": [
+              8,
+              13,
+              14
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 14.2
+          },
+          {
+            "actualDEMLevels": [
+              13
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3757.472644657663,
+            "levels": [
+              8,
+              13,
+              14
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 14.2
+          },
+          {
+            "actualDEMLevels": [
+              13
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3757.472644657663,
+            "levels": [
+              8,
+              13,
+              14
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 14.2
+          },
+          {
+            "actualDEMLevels": [
+              13
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3757.472644657663,
+            "levels": [
+              8,
+              13,
+              14
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 14.2
+          },
+          {
+            "actualDEMLevels": [
+              13
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3757.472644657663,
+            "levels": [
+              8,
+              13,
+              14
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 14.2
+          }
+        ],
+        "newTileResponses": 0,
+        "pitch": 0,
+        "scope": "interior",
+        "zoom": 14.2
+      },
+      {
+        "bearing": 0,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "filename": "navigation-1--control.png",
+        "frames": [
+          {
+            "actualDEMLevels": [
+              14,
+              13
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3752.5982518256033,
+            "levels": [
+              8,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3752.5982518256033,
+            "levels": [
+              8,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3752.5982518256033,
+            "levels": [
+              8,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3752.5982518256033,
+            "levels": [
+              8,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3752.5982518256033,
+            "levels": [
+              8,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3752.5982518256033,
+            "levels": [
+              8,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3752.5982518256033,
+            "levels": [
+              8,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3752.5982518256033,
+            "levels": [
+              8,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3752.5982518256033,
+            "levels": [
+              8,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 15.2
+          }
+        ],
+        "newTileResponses": 30,
+        "pitch": 0,
+        "scope": "interior",
+        "zoom": 15.2
+      },
+      {
+        "bearing": 0,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "filename": "navigation-2--control.png",
+        "frames": [
+          {
+            "actualDEMLevels": [
+              15,
+              14
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3752.321485969016,
+            "levels": [
+              8,
+              14,
+              15,
+              16
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 16.2
+          },
+          {
+            "actualDEMLevels": [
+              15,
+              14
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3752.321485969016,
+            "levels": [
+              8,
+              14,
+              15,
+              16
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 16.2
+          },
+          {
+            "actualDEMLevels": [
+              15,
+              14
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3752.321485969016,
+            "levels": [
+              8,
+              14,
+              15,
+              16
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 16.2
+          },
+          {
+            "actualDEMLevels": [
+              15,
+              14
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3752.321485969016,
+            "levels": [
+              8,
+              14,
+              15,
+              16
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 16.2
+          },
+          {
+            "actualDEMLevels": [
+              15,
+              14
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3752.321485969016,
+            "levels": [
+              8,
+              14,
+              15,
+              16
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 16.2
+          },
+          {
+            "actualDEMLevels": [
+              15,
+              14
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3752.321485969016,
+            "levels": [
+              8,
+              14,
+              15,
+              16
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 16.2
+          },
+          {
+            "actualDEMLevels": [
+              15,
+              14
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3752.321485969016,
+            "levels": [
+              8,
+              14,
+              15,
+              16
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 16.2
+          },
+          {
+            "actualDEMLevels": [
+              15,
+              14
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3752.321485969016,
+            "levels": [
+              8,
+              14,
+              15,
+              16
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 16.2
+          },
+          {
+            "actualDEMLevels": [
+              15,
+              14
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3752.321485969016,
+            "levels": [
+              8,
+              14,
+              15,
+              16
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 16.2
+          }
+        ],
+        "newTileResponses": 36,
+        "pitch": 0,
+        "scope": "interior",
+        "zoom": 16.2
+      },
+      {
+        "bearing": 180,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "filename": "navigation-3--control.png",
+        "frames": [
+          {
+            "actualDEMLevels": [
+              13
+            ],
+            "bearing": 180,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3757.472644657663,
+            "levels": [
+              8,
+              13,
+              14
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 14.2
+          },
+          {
+            "actualDEMLevels": [
+              13
+            ],
+            "bearing": 180,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3757.472644657663,
+            "levels": [
+              8,
+              13,
+              14
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 14.2
+          },
+          {
+            "actualDEMLevels": [
+              13
+            ],
+            "bearing": 180,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3757.472644657663,
+            "levels": [
+              8,
+              13,
+              14
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 14.2
+          },
+          {
+            "actualDEMLevels": [
+              13
+            ],
+            "bearing": 180,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3757.472644657663,
+            "levels": [
+              8,
+              13,
+              14
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 14.2
+          },
+          {
+            "actualDEMLevels": [
+              13
+            ],
+            "bearing": 180,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3757.472644657663,
+            "levels": [
+              8,
+              13,
+              14
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 14.2
+          },
+          {
+            "actualDEMLevels": [
+              13
+            ],
+            "bearing": 180,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3757.472644657663,
+            "levels": [
+              8,
+              13,
+              14
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 14.2
+          },
+          {
+            "actualDEMLevels": [
+              13
+            ],
+            "bearing": 180,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3757.472644657663,
+            "levels": [
+              8,
+              13,
+              14
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 14.2
+          },
+          {
+            "actualDEMLevels": [
+              13
+            ],
+            "bearing": 180,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3757.472644657663,
+            "levels": [
+              8,
+              13,
+              14
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 14.2
+          },
+          {
+            "actualDEMLevels": [
+              13
+            ],
+            "bearing": 180,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3757.472644657663,
+            "levels": [
+              8,
+              13,
+              14
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 14.2
+          }
+        ],
+        "newTileResponses": 0,
+        "pitch": 0,
+        "scope": "interior",
+        "zoom": 14.2
+      },
+      {
+        "bearing": 180,
+        "center": [
+          7.695,
+          45.9793
+        ],
+        "filename": "navigation-4--control.png",
+        "frames": [
+          {
+            "actualDEMLevels": [
+              14,
+              13,
+              11
+            ],
+            "bearing": 180,
+            "center": [
+              7.695000000000022,
+              45.979299999999995
+            ],
+            "elevation": 4089.4547930229737,
+            "levels": [
+              8,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13,
+              11
+            ],
+            "bearing": 180,
+            "center": [
+              7.695000000000022,
+              45.979299999999995
+            ],
+            "elevation": 4089.4547930229737,
+            "levels": [
+              8,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13,
+              11
+            ],
+            "bearing": 180,
+            "center": [
+              7.695000000000022,
+              45.979299999999995
+            ],
+            "elevation": 4089.4547930229737,
+            "levels": [
+              8,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13,
+              11
+            ],
+            "bearing": 180,
+            "center": [
+              7.695000000000022,
+              45.979299999999995
+            ],
+            "elevation": 4089.4547930229737,
+            "levels": [
+              8,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13,
+              11
+            ],
+            "bearing": 180,
+            "center": [
+              7.695000000000022,
+              45.979299999999995
+            ],
+            "elevation": 4089.4547930229737,
+            "levels": [
+              8,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13,
+              11
+            ],
+            "bearing": 180,
+            "center": [
+              7.695000000000022,
+              45.979299999999995
+            ],
+            "elevation": 4089.4547930229737,
+            "levels": [
+              8,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13,
+              11
+            ],
+            "bearing": 180,
+            "center": [
+              7.695000000000022,
+              45.979299999999995
+            ],
+            "elevation": 4089.4547930229737,
+            "levels": [
+              8,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13,
+              11
+            ],
+            "bearing": 180,
+            "center": [
+              7.695000000000022,
+              45.979299999999995
+            ],
+            "elevation": 4089.4547930229737,
+            "levels": [
+              8,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13,
+              11
+            ],
+            "bearing": 180,
+            "center": [
+              7.695000000000022,
+              45.979299999999995
+            ],
+            "elevation": 4089.4547930229737,
+            "levels": [
+              8,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          }
+        ],
+        "newTileResponses": 3,
+        "pitch": 55,
+        "scope": "edge/context",
+        "zoom": 15.2
+      },
+      {
+        "bearing": 0,
+        "center": [
+          7.681,
+          45.9793
+        ],
+        "filename": "navigation-5--control.png",
+        "frames": [
+          {
+            "actualDEMLevels": [
+              14,
+              13,
+              11,
+              9,
+              15
+            ],
+            "bearing": 0,
+            "center": [
+              7.681000000000012,
+              45.979299999999995
+            ],
+            "elevation": 4120.821693892771,
+            "levels": [
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13,
+              11,
+              9,
+              15
+            ],
+            "bearing": 0,
+            "center": [
+              7.681000000000012,
+              45.979299999999995
+            ],
+            "elevation": 4120.821693892771,
+            "levels": [
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13,
+              11,
+              9,
+              15
+            ],
+            "bearing": 0,
+            "center": [
+              7.681000000000012,
+              45.979299999999995
+            ],
+            "elevation": 4120.821693892771,
+            "levels": [
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13,
+              12,
+              11,
+              9,
+              15
+            ],
+            "bearing": 0,
+            "center": [
+              7.681000000000012,
+              45.979299999999995
+            ],
+            "elevation": 4120.821693892771,
+            "levels": [
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16
+            ],
+            "moving": false,
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13,
+              12,
+              11,
+              9,
+              15
+            ],
+            "bearing": 0,
+            "center": [
+              7.681000000000012,
+              45.979299999999995
+            ],
+            "elevation": 4120.821693892771,
+            "levels": [
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16
+            ],
+            "moving": false,
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13,
+              12,
+              11,
+              9,
+              15
+            ],
+            "bearing": 0,
+            "center": [
+              7.681000000000012,
+              45.979299999999995
+            ],
+            "elevation": 4120.821693892771,
+            "levels": [
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16
+            ],
+            "moving": false,
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13,
+              12,
+              11,
+              9,
+              15
+            ],
+            "bearing": 0,
+            "center": [
+              7.681000000000012,
+              45.979299999999995
+            ],
+            "elevation": 4120.821693892771,
+            "levels": [
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16
+            ],
+            "moving": false,
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13,
+              12,
+              11,
+              9,
+              15
+            ],
+            "bearing": 0,
+            "center": [
+              7.681000000000012,
+              45.979299999999995
+            ],
+            "elevation": 4120.821693892771,
+            "levels": [
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16
+            ],
+            "moving": false,
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13,
+              12,
+              11,
+              9,
+              15
+            ],
+            "bearing": 0,
+            "center": [
+              7.681000000000012,
+              45.979299999999995
+            ],
+            "elevation": 4120.821693892771,
+            "levels": [
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16
+            ],
+            "moving": false,
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          }
+        ],
+        "newTileResponses": 71,
+        "pitch": 55,
+        "scope": "edge/context",
+        "zoom": 15.2
+      },
+      {
+        "bearing": 0,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "filename": "navigation-6--control.png",
+        "frames": [
+          {
+            "actualDEMLevels": [
+              10,
+              9
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000034
+            ],
+            "elevation": 3762.5844177542303,
+            "levels": [
+              8,
+              9,
+              10,
+              11
+            ],
+            "moving": false,
+            "pitch": 45,
+            "zoom": 11.4
+          },
+          {
+            "actualDEMLevels": [
+              10,
+              9
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000034
+            ],
+            "elevation": 3762.5844177542303,
+            "levels": [
+              8,
+              9,
+              10,
+              11
+            ],
+            "moving": false,
+            "pitch": 45,
+            "zoom": 11.4
+          },
+          {
+            "actualDEMLevels": [
+              10,
+              9
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000034
+            ],
+            "elevation": 3762.5844177542303,
+            "levels": [
+              8,
+              9,
+              10,
+              11
+            ],
+            "moving": false,
+            "pitch": 45,
+            "zoom": 11.4
+          },
+          {
+            "actualDEMLevels": [
+              10,
+              9
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000034
+            ],
+            "elevation": 3762.5844177542303,
+            "levels": [
+              8,
+              9,
+              10,
+              11
+            ],
+            "moving": false,
+            "pitch": 45,
+            "zoom": 11.4
+          },
+          {
+            "actualDEMLevels": [
+              10,
+              9
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000034
+            ],
+            "elevation": 3762.5844177542303,
+            "levels": [
+              8,
+              9,
+              10,
+              11
+            ],
+            "moving": false,
+            "pitch": 45,
+            "zoom": 11.4
+          },
+          {
+            "actualDEMLevels": [
+              10,
+              9
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000034
+            ],
+            "elevation": 3762.5844177542303,
+            "levels": [
+              8,
+              9,
+              10,
+              11
+            ],
+            "moving": false,
+            "pitch": 45,
+            "zoom": 11.4
+          },
+          {
+            "actualDEMLevels": [
+              10,
+              9
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000034
+            ],
+            "elevation": 3762.5844177542303,
+            "levels": [
+              8,
+              9,
+              10,
+              11
+            ],
+            "moving": false,
+            "pitch": 45,
+            "zoom": 11.4
+          },
+          {
+            "actualDEMLevels": [
+              10,
+              9
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000034
+            ],
+            "elevation": 3762.5844177542303,
+            "levels": [
+              8,
+              9,
+              10,
+              11
+            ],
+            "moving": false,
+            "pitch": 45,
+            "zoom": 11.4
+          },
+          {
+            "actualDEMLevels": [
+              10,
+              9
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000034
+            ],
+            "elevation": 3762.5844177542303,
+            "levels": [
+              8,
+              9,
+              10,
+              11
+            ],
+            "moving": false,
+            "pitch": 45,
+            "zoom": 11.4
+          }
+        ],
+        "newTileResponses": 50,
+        "pitch": 45,
+        "scope": "edge/context",
+        "zoom": 11.4
+      }
+    ],
+    "pageErrors": [],
+    "productionHashes": {
+      "src/atlas/map/AtlasMap.ts": "cb45f5963716d636e903ed515008b66dab2fca0ab6d2aa28214a8c6303ef4b05",
+      "src/atlas/map/atlasVisuals.ts": "48426ab2132d5192069254ec9fe3fb7d9d433c2c9059f6f2223166c34c22dcfc",
+      "src/atlas/map/terrainLayers.ts": "c71099083d3184d5c70c148ea2c3f0574b0b170fb0737b9c041df579ed4e5497",
+      "src/atlas/map/visualTerrainConfig.ts": "2fc10a5bb50501a82186b4e6a1d2c176ac87d7431dbfdc702b3da69660e6b0ee",
+      "src/atlas/terrain/analyticalElevationConfig.ts": "6fd90c2fb39dc925c8de90cf6b7cf3a907696d71cc116e42563255addb41a9bb",
+      "src/atlas/terrain/terrainElevationSampler.ts": "d941ad5474ff7370da4e67c135018a777ed440d84bf00cff0f536600270f1b7b"
+    },
+    "records": [
+      {
+        "bounds": [
+          [
+            6.637192520766234,
+            45.63282873579416
+          ],
+          [
+            8.885234059228566,
+            46.66521101605366
+          ]
+        ],
+        "camera": {
+          "bearing": 0,
+          "center": [
+            7.76121329,
+            45.97910794
+          ],
+          "pitch": 45,
+          "zoom": 9.4
+        },
+        "captureSha256": "3de52db3cb890596b00a8a965087eb00028d8cb421862b43a375deb0ff958138",
+        "centerExaggeratedElevation": 3776.0900240605165,
+        "filename": "landscape--control.png",
+        "geometryLevels": [
+          8,
+          9
+        ],
+        "newTileResponses": 38,
+        "reliefLevels": [
+          9,
+          10,
+          11
+        ],
+        "scene": "landscape",
+        "usedDEMLevels": [
+          8
+        ]
+      },
+      {
+        "bounds": [
+          [
+            7.480208097691843,
+            45.892739934416966
+          ],
+          [
+            8.042218482308385,
+            46.15144043793484
+          ]
+        ],
+        "camera": {
+          "bearing": 0,
+          "center": [
+            7.76121329,
+            45.97910794
+          ],
+          "pitch": 45,
+          "zoom": 11.4
+        },
+        "captureSha256": "f1db32e3a564273f1cf56b173a202cd5ce4d14ad1dc9d13a6ce89177d024a711",
+        "centerExaggeratedElevation": 3762.584417752497,
+        "filename": "planning--control.png",
+        "geometryLevels": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "newTileResponses": 68,
+        "reliefLevels": [
+          11,
+          12,
+          13
+        ],
+        "scene": "planning",
+        "usedDEMLevels": [
+          9,
+          10
+        ]
+      },
+      {
+        "bounds": [
+          [
+            7.658534983282522,
+            45.95150213867879
+          ],
+          [
+            7.863891596712108,
+            46.056803750160555
+          ]
+        ],
+        "camera": {
+          "bearing": 0,
+          "center": [
+            7.76121329,
+            45.97910794
+          ],
+          "pitch": 55.00000000000001,
+          "zoom": 13.2
+        },
+        "captureSha256": "127a71a2357738f395b169a26483ae56f6ddee383f63c276c65c48481e5a9939",
+        "centerExaggeratedElevation": 3758.927108881669,
+        "filename": "close-context--control.png",
+        "geometryLevels": [
+          8,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "newTileResponses": 89,
+        "reliefLevels": [
+          12,
+          13,
+          14,
+          15
+        ],
+        "scene": "close-context",
+        "usedDEMLevels": [
+          10,
+          11,
+          12,
+          13
+        ]
+      },
+      {
+        "bounds": [
+          [
+            7.734314106485499,
+            45.96742370913381
+          ],
+          [
+            7.788112473511205,
+            45.990789705781
+          ]
+        ],
+        "camera": {
+          "bearing": 0,
+          "center": [
+            7.76121329,
+            45.97910794
+          ],
+          "pitch": 0,
+          "zoom": 14.2
+        },
+        "captureSha256": "d7e4b47081d1f42f044c505dce43bc90c011ee5e1395aaed8fd7ec0e76bf1e42",
+        "centerExaggeratedElevation": 3757.472644657663,
+        "filename": "interior-parent--control.png",
+        "geometryLevels": [
+          8,
+          13,
+          14
+        ],
+        "newTileResponses": 37,
+        "reliefLevels": [
+          15
+        ],
+        "scene": "interior-parent",
+        "usedDEMLevels": [
+          13
+        ]
+      },
+      {
+        "bounds": [
+          [
+            7.747763698242636,
+            45.973266132704794
+          ],
+          [
+            7.77466288175475,
+            45.98494913102385
+          ]
+        ],
+        "camera": {
+          "bearing": 0,
+          "center": [
+            7.76121329,
+            45.97910794
+          ],
+          "pitch": 0,
+          "zoom": 15.2
+        },
+        "captureSha256": "fc5301aaf57c387d98466fa969522ffeafa8757a124f067ea1a1d3f29832e4de",
+        "centerExaggeratedElevation": 3752.5982518256033,
+        "filename": "interior-child--control.png",
+        "geometryLevels": [
+          8,
+          13,
+          14,
+          15
+        ],
+        "newTileResponses": 42,
+        "reliefLevels": [
+          16
+        ],
+        "scene": "interior-child",
+        "usedDEMLevels": [
+          13,
+          14
+        ]
+      },
+      {
+        "bounds": [
+          [
+            7.754488494122313,
+            45.97618711338629
+          ],
+          [
+            7.767938085878342,
+            45.98202861254555
+          ]
+        ],
+        "camera": {
+          "bearing": 0,
+          "center": [
+            7.76121329,
+            45.97910794
+          ],
+          "pitch": 0,
+          "zoom": 16.2
+        },
+        "captureSha256": "029e6e10fffc4502eec9d0989620c0954793f7c825c8fc57895ff789726467e3",
+        "centerExaggeratedElevation": 3752.321485969016,
+        "filename": "interior-detail--control.png",
+        "geometryLevels": [
+          8,
+          14,
+          15,
+          16
+        ],
+        "newTileResponses": 49,
+        "reliefLevels": [
+          17
+        ],
+        "scene": "interior-detail",
+        "usedDEMLevels": [
+          14,
+          15
+        ]
+      },
+      {
+        "bounds": [
+          [
+            7.734314106486977,
+            45.96742370913333
+          ],
+          [
+            7.788112473512598,
+            45.990789705780514
+          ]
+        ],
+        "camera": {
+          "bearing": 180,
+          "center": [
+            7.76121329,
+            45.97910794
+          ],
+          "pitch": 0,
+          "zoom": 14.2
+        },
+        "captureSha256": "6ff5516c4509c46e4a115498d4fcdc6fdf93ce747759b586a10ed48b1bc4bbc6",
+        "centerExaggeratedElevation": 3757.472644657663,
+        "filename": "interior-rotation--control.png",
+        "geometryLevels": [
+          8,
+          13,
+          14
+        ],
+        "newTileResponses": 0,
+        "reliefLevels": [
+          15
+        ],
+        "scene": "interior-rotation",
+        "usedDEMLevels": [
+          13
+        ]
+      },
+      {
+        "bounds": [
+          [
+            7.671031412157731,
+            45.972373835518056
+          ],
+          [
+            7.722370565513188,
+            45.99870810460169
+          ]
+        ],
+        "camera": {
+          "bearing": 0,
+          "center": [
+            7.69670098884,
+            45.97927397547
+          ],
+          "pitch": 55.00000000000001,
+          "zoom": 15.2
+        },
+        "captureSha256": "bda84019af15f01491f9643ebb0e995dafef22531b40df4871f317c5e827a6fa",
+        "centerExaggeratedElevation": 4036.8514118901708,
+        "filename": "edge-west--control.png",
+        "geometryLevels": [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ],
+        "newTileResponses": 86,
+        "reliefLevels": [
+          12,
+          13,
+          14,
+          15,
+          16,
+          17
+        ],
+        "scene": "edge-west",
+        "usedDEMLevels": [
+          9,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      {
+        "bounds": [
+          [
+            7.735279234108958,
+            45.92722560559923
+          ],
+          [
+            7.78661838746504,
+            45.95358133886114
+          ]
+        ],
+        "camera": {
+          "bearing": 0,
+          "center": [
+            7.76094881079,
+            45.9341313687
+          ],
+          "pitch": 55.00000000000001,
+          "zoom": 15.2
+        },
+        "captureSha256": "f91f5bacd951d897c6313e215ab0e07dcedf4e22186bb71b3905bf35d871988a",
+        "centerExaggeratedElevation": 5479.798342216432,
+        "filename": "edge-south--control.png",
+        "geometryLevels": [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "newTileResponses": 52,
+        "reliefLevels": [
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17
+        ],
+        "scene": "edge-south",
+        "usedDEMLevels": [
+          9,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      {
+        "bounds": [
+          [
+            7.671031412154292,
+            45.95983302282008
+          ],
+          [
+            7.722370565514268,
+            45.986173255642626
+          ]
+        ],
+        "camera": {
+          "bearing": 180,
+          "center": [
+            7.69670098884,
+            45.97927397547
+          ],
+          "pitch": 55.00000000000001,
+          "zoom": 15.2
+        },
+        "captureSha256": "e374cc212014e2203052f55094b9cd3858958dea5cb30d2d0b93b56b352c75fa",
+        "centerExaggeratedElevation": 4036.8514118901708,
+        "filename": "edge-west-rotation--control.png",
+        "geometryLevels": [
+          8,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "newTileResponses": 57,
+        "reliefLevels": [
+          12,
+          13,
+          14,
+          15,
+          16,
+          17
+        ],
+        "scene": "edge-west-rotation",
+        "usedDEMLevels": [
+          11,
+          12,
+          13,
+          14
+        ]
+      }
+    ],
+    "responseBytes": 81067035,
+    "responses": 764,
+    "sourceReportSha256": "f1b87b6a1de5bb030686a2bd1a37de47a8bf44ee425885fd8f26d801e38603b9",
+    "statusCounts": {
+      "200": 764
+    },
+    "viewport": {
+      "height": 900,
+      "width": 1440
+    }
+  },
+  "control-oblique": {
+    "browserVersion": "151.0.7922.34",
+    "contributorResponseCounts": {
+      "0": 30,
+      "1": 172
+    },
+    "failedRequests": [
+      {
+        "error": "net::ERR_ABORTED",
+        "url": "http://127.0.0.1:4184/tiles/control/15/17091/11659.png"
+      },
+      {
+        "error": "net::ERR_ABORTED",
+        "url": "http://127.0.0.1:4184/tiles/control/15/17087/11660.png"
+      },
+      {
+        "error": "net::ERR_ABORTED",
+        "url": "http://127.0.0.1:4184/tiles/control/14/8547/5833.png"
+      },
+      {
+        "error": "net::ERR_ABORTED",
+        "url": "http://127.0.0.1:4184/tiles/control/14/8547/5832.png"
+      },
+      {
+        "error": "net::ERR_ABORTED",
+        "url": "http://127.0.0.1:4184/tiles/control/14/8546/5833.png"
+      }
+    ],
+    "failure": null,
+    "navigation": [],
+    "pageErrors": [],
+    "productionHashes": {
+      "src/atlas/map/AtlasMap.ts": "cb45f5963716d636e903ed515008b66dab2fca0ab6d2aa28214a8c6303ef4b05",
+      "src/atlas/map/atlasVisuals.ts": "48426ab2132d5192069254ec9fe3fb7d9d433c2c9059f6f2223166c34c22dcfc",
+      "src/atlas/map/terrainLayers.ts": "c71099083d3184d5c70c148ea2c3f0574b0b170fb0737b9c041df579ed4e5497",
+      "src/atlas/map/visualTerrainConfig.ts": "2fc10a5bb50501a82186b4e6a1d2c176ac87d7431dbfdc702b3da69660e6b0ee",
+      "src/atlas/terrain/analyticalElevationConfig.ts": "6fd90c2fb39dc925c8de90cf6b7cf3a907696d71cc116e42563255addb41a9bb",
+      "src/atlas/terrain/terrainElevationSampler.ts": "d941ad5474ff7370da4e67c135018a777ed440d84bf00cff0f536600270f1b7b"
+    },
+    "records": [
+      {
+        "bounds": [
+          [
+            7.727903666443979,
+            45.96779363617151
+          ],
+          [
+            7.79452291355193,
+            45.995810721163025
+          ]
+        ],
+        "camera": {
+          "bearing": 0,
+          "center": [
+            7.76121329,
+            45.97910794
+          ],
+          "pitch": 30,
+          "zoom": 14.2
+        },
+        "captureSha256": "4e0543dd9b2e9f3f5e5e32ae00aef456741e8d00ce92b977a9cbf72f7707a970",
+        "centerExaggeratedElevation": 3757.472644657663,
+        "filename": "oblique-parent--control.png",
+        "geometryLevels": [
+          8,
+          11,
+          12,
+          13,
+          14
+        ],
+        "newTileResponses": 80,
+        "reliefLevels": [
+          14,
+          15
+        ],
+        "scene": "oblique-parent",
+        "usedDEMLevels": [
+          11,
+          12,
+          13
+        ]
+      },
+      {
+        "bounds": [
+          [
+            7.744558478221052,
+            45.97345107702256
+          ],
+          [
+            7.777868101775226,
+            45.987459960576984
+          ]
+        ],
+        "camera": {
+          "bearing": 0,
+          "center": [
+            7.76121329,
+            45.97910794
+          ],
+          "pitch": 30,
+          "zoom": 15.2
+        },
+        "captureSha256": "6859e191b26b7e040353c38eacf31b779672a007a84502f23731cc2a40f0e85b",
+        "centerExaggeratedElevation": 3752.5982518256033,
+        "filename": "oblique-child--control.png",
+        "geometryLevels": [
+          8,
+          13,
+          14,
+          15
+        ],
+        "newTileResponses": 50,
+        "reliefLevels": [
+          15,
+          16
+        ],
+        "scene": "oblique-child",
+        "usedDEMLevels": [
+          13,
+          14
+        ]
+      },
+      {
+        "bounds": [
+          [
+            7.751126096185658,
+            45.97600993058538
+          ],
+          [
+            7.771300483821619,
+            45.98530343884801
+          ]
+        ],
+        "camera": {
+          "bearing": 0,
+          "center": [
+            7.76121329,
+            45.97910794
+          ],
+          "pitch": 45,
+          "zoom": 16.2
+        },
+        "captureSha256": "f7fe1db2c6f702fe860457023da9c196d59004beb51a51bade0285f7226618e3",
+        "centerExaggeratedElevation": 3752.321485969016,
+        "filename": "oblique-detail--control.png",
+        "geometryLevels": [
+          8,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ],
+        "newTileResponses": 55,
+        "reliefLevels": [
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        "scene": "oblique-detail",
+        "usedDEMLevels": [
+          11,
+          13,
+          14,
+          15
+        ]
+      },
+      {
+        "bounds": [
+          [
+            7.727903666445684,
+            45.962400118822075
+          ],
+          [
+            7.794522913555397,
+            45.99041993234903
+          ]
+        ],
+        "camera": {
+          "bearing": 180,
+          "center": [
+            7.76121329,
+            45.97910794
+          ],
+          "pitch": 30,
+          "zoom": 14.2
+        },
+        "captureSha256": "4234f82a51a5587455a4ce3d2cc42a6325df0842f071e28577921251d21f0b64",
+        "centerExaggeratedElevation": 3757.472644657663,
+        "filename": "oblique-rotation--control.png",
+        "geometryLevels": [
+          8,
+          11,
+          12,
+          13,
+          14
+        ],
+        "newTileResponses": 17,
+        "reliefLevels": [
+          15
+        ],
+        "scene": "oblique-rotation",
+        "usedDEMLevels": [
+          11,
+          12,
+          13
+        ]
+      }
+    ],
+    "responseBytes": 21582403,
+    "responses": 202,
+    "sourceReportSha256": "9f93f84981f65a67478a902f5fcae249fe05e873b77291b7dad6c41fdb00c0ae",
+    "statusCounts": {
+      "200": 202
+    },
+    "viewport": {
+      "height": 900,
+      "width": 1440
+    }
+  },
+  "regional": {
+    "browserVersion": "151.0.7922.34",
+    "contributorResponseCounts": {
+      "0": 420,
+      "1": 345
+    },
+    "failedRequests": [
+      {
+        "error": "net::ERR_ABORTED",
+        "url": "http://127.0.0.1:4184/tiles/regional/15/17093/11659.png"
+      },
+      {
+        "error": "net::ERR_ABORTED",
+        "url": "http://127.0.0.1:4184/tiles/regional/15/17093/11658.png"
+      },
+      {
+        "error": "net::ERR_ABORTED",
+        "url": "http://127.0.0.1:4184/tiles/regional/16/34180/23318.png"
+      },
+      {
+        "error": "net::ERR_ABORTED",
+        "url": "http://127.0.0.1:4184/tiles/regional/16/34181/23318.png"
+      },
+      {
+        "error": "net::ERR_ABORTED",
+        "url": "http://127.0.0.1:4184/tiles/regional/17/68361/46639.png"
+      },
+      {
+        "error": "net::ERR_ABORTED",
+        "url": "http://127.0.0.1:4184/tiles/regional/17/68360/46639.png"
+      }
+    ],
+    "failure": null,
+    "navigation": [
+      {
+        "bearing": 0,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "filename": "navigation-0--regional.png",
+        "frames": [
+          {
+            "actualDEMLevels": [
+              13
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3754.3484306749097,
+            "levels": [
+              8,
+              13,
+              14
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 14.2
+          },
+          {
+            "actualDEMLevels": [
+              13
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3754.3484306749097,
+            "levels": [
+              8,
+              13,
+              14
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 14.2
+          },
+          {
+            "actualDEMLevels": [
+              13
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3754.3484306749097,
+            "levels": [
+              8,
+              13,
+              14
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 14.2
+          },
+          {
+            "actualDEMLevels": [
+              13
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3754.3484306749097,
+            "levels": [
+              8,
+              13,
+              14
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 14.2
+          },
+          {
+            "actualDEMLevels": [
+              13
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3754.3484306749097,
+            "levels": [
+              8,
+              13,
+              14
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 14.2
+          },
+          {
+            "actualDEMLevels": [
+              13
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3754.3484306749097,
+            "levels": [
+              8,
+              13,
+              14
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 14.2
+          },
+          {
+            "actualDEMLevels": [
+              13
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3754.3484306749097,
+            "levels": [
+              8,
+              13,
+              14
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 14.2
+          },
+          {
+            "actualDEMLevels": [
+              13
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3754.3484306749097,
+            "levels": [
+              8,
+              13,
+              14
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 14.2
+          },
+          {
+            "actualDEMLevels": [
+              13
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3754.3484306749097,
+            "levels": [
+              8,
+              13,
+              14
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 14.2
+          }
+        ],
+        "newTileResponses": 0,
+        "pitch": 0,
+        "scope": "interior",
+        "zoom": 14.2
+      },
+      {
+        "bearing": 0,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "filename": "navigation-1--regional.png",
+        "frames": [
+          {
+            "actualDEMLevels": [
+              14,
+              13
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3752.5982518256033,
+            "levels": [
+              8,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3752.5982518256033,
+            "levels": [
+              8,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3752.5982518256033,
+            "levels": [
+              8,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3752.5982518256033,
+            "levels": [
+              8,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3752.5982518256033,
+            "levels": [
+              8,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3752.5982518256033,
+            "levels": [
+              8,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3752.5982518256033,
+            "levels": [
+              8,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3752.5982518256033,
+            "levels": [
+              8,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3752.5982518256033,
+            "levels": [
+              8,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 15.2
+          }
+        ],
+        "newTileResponses": 30,
+        "pitch": 0,
+        "scope": "interior",
+        "zoom": 15.2
+      },
+      {
+        "bearing": 0,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "filename": "navigation-2--regional.png",
+        "frames": [
+          {
+            "actualDEMLevels": [
+              15,
+              14
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3752.321485969016,
+            "levels": [
+              8,
+              14,
+              15,
+              16
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 16.2
+          },
+          {
+            "actualDEMLevels": [
+              15,
+              14
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3752.321485969016,
+            "levels": [
+              8,
+              14,
+              15,
+              16
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 16.2
+          },
+          {
+            "actualDEMLevels": [
+              15,
+              14
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3752.321485969016,
+            "levels": [
+              8,
+              14,
+              15,
+              16
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 16.2
+          },
+          {
+            "actualDEMLevels": [
+              15,
+              14
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3752.321485969016,
+            "levels": [
+              8,
+              14,
+              15,
+              16
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 16.2
+          },
+          {
+            "actualDEMLevels": [
+              15,
+              14
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3752.321485969016,
+            "levels": [
+              8,
+              14,
+              15,
+              16
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 16.2
+          },
+          {
+            "actualDEMLevels": [
+              15,
+              14
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3752.321485969016,
+            "levels": [
+              8,
+              14,
+              15,
+              16
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 16.2
+          },
+          {
+            "actualDEMLevels": [
+              15,
+              14
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3752.321485969016,
+            "levels": [
+              8,
+              14,
+              15,
+              16
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 16.2
+          },
+          {
+            "actualDEMLevels": [
+              15,
+              14
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3752.321485969016,
+            "levels": [
+              8,
+              14,
+              15,
+              16
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 16.2
+          },
+          {
+            "actualDEMLevels": [
+              15,
+              14
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3752.321485969016,
+            "levels": [
+              8,
+              14,
+              15,
+              16
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 16.2
+          }
+        ],
+        "newTileResponses": 36,
+        "pitch": 0,
+        "scope": "interior",
+        "zoom": 16.2
+      },
+      {
+        "bearing": 180,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "filename": "navigation-3--regional.png",
+        "frames": [
+          {
+            "actualDEMLevels": [
+              13
+            ],
+            "bearing": 180,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3754.3484306749097,
+            "levels": [
+              8,
+              13,
+              14
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 14.2
+          },
+          {
+            "actualDEMLevels": [
+              13
+            ],
+            "bearing": 180,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3754.3484306749097,
+            "levels": [
+              8,
+              13,
+              14
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 14.2
+          },
+          {
+            "actualDEMLevels": [
+              13
+            ],
+            "bearing": 180,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3754.3484306749097,
+            "levels": [
+              8,
+              13,
+              14
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 14.2
+          },
+          {
+            "actualDEMLevels": [
+              13
+            ],
+            "bearing": 180,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3754.3484306749097,
+            "levels": [
+              8,
+              13,
+              14
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 14.2
+          },
+          {
+            "actualDEMLevels": [
+              13
+            ],
+            "bearing": 180,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3754.3484306749097,
+            "levels": [
+              8,
+              13,
+              14
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 14.2
+          },
+          {
+            "actualDEMLevels": [
+              13
+            ],
+            "bearing": 180,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3754.3484306749097,
+            "levels": [
+              8,
+              13,
+              14
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 14.2
+          },
+          {
+            "actualDEMLevels": [
+              13
+            ],
+            "bearing": 180,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3754.3484306749097,
+            "levels": [
+              8,
+              13,
+              14
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 14.2
+          },
+          {
+            "actualDEMLevels": [
+              13
+            ],
+            "bearing": 180,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3754.3484306749097,
+            "levels": [
+              8,
+              13,
+              14
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 14.2
+          },
+          {
+            "actualDEMLevels": [
+              13
+            ],
+            "bearing": 180,
+            "center": [
+              7.761213290000001,
+              45.979107940000006
+            ],
+            "elevation": 3754.3484306749097,
+            "levels": [
+              8,
+              13,
+              14
+            ],
+            "moving": false,
+            "pitch": 0,
+            "zoom": 14.2
+          }
+        ],
+        "newTileResponses": 0,
+        "pitch": 0,
+        "scope": "interior",
+        "zoom": 14.2
+      },
+      {
+        "bearing": 180,
+        "center": [
+          7.695,
+          45.9793
+        ],
+        "filename": "navigation-4--regional.png",
+        "frames": [
+          {
+            "actualDEMLevels": [
+              14,
+              13,
+              11
+            ],
+            "bearing": 180,
+            "center": [
+              7.695000000000022,
+              45.979299999999995
+            ],
+            "elevation": 4089.4547930229737,
+            "levels": [
+              8,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13,
+              11
+            ],
+            "bearing": 180,
+            "center": [
+              7.695000000000022,
+              45.979299999999995
+            ],
+            "elevation": 4089.4547930229737,
+            "levels": [
+              8,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13,
+              11
+            ],
+            "bearing": 180,
+            "center": [
+              7.695000000000022,
+              45.979299999999995
+            ],
+            "elevation": 4089.4547930229737,
+            "levels": [
+              8,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13,
+              11
+            ],
+            "bearing": 180,
+            "center": [
+              7.695000000000022,
+              45.979299999999995
+            ],
+            "elevation": 4089.4547930229737,
+            "levels": [
+              8,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13,
+              11
+            ],
+            "bearing": 180,
+            "center": [
+              7.695000000000022,
+              45.979299999999995
+            ],
+            "elevation": 4089.4547930229737,
+            "levels": [
+              8,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13,
+              11
+            ],
+            "bearing": 180,
+            "center": [
+              7.695000000000022,
+              45.979299999999995
+            ],
+            "elevation": 4089.4547930229737,
+            "levels": [
+              8,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13,
+              11
+            ],
+            "bearing": 180,
+            "center": [
+              7.695000000000022,
+              45.979299999999995
+            ],
+            "elevation": 4089.4547930229737,
+            "levels": [
+              8,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13,
+              11
+            ],
+            "bearing": 180,
+            "center": [
+              7.695000000000022,
+              45.979299999999995
+            ],
+            "elevation": 4089.4547930229737,
+            "levels": [
+              8,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13,
+              11
+            ],
+            "bearing": 180,
+            "center": [
+              7.695000000000022,
+              45.979299999999995
+            ],
+            "elevation": 4089.4547930229737,
+            "levels": [
+              8,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          }
+        ],
+        "newTileResponses": 3,
+        "pitch": 55,
+        "scope": "edge/context",
+        "zoom": 15.2
+      },
+      {
+        "bearing": 0,
+        "center": [
+          7.681,
+          45.9793
+        ],
+        "filename": "navigation-5--regional.png",
+        "frames": [
+          {
+            "actualDEMLevels": [
+              14,
+              13,
+              11,
+              9,
+              15
+            ],
+            "bearing": 0,
+            "center": [
+              7.681000000000012,
+              45.979299999999995
+            ],
+            "elevation": 4120.821693892771,
+            "levels": [
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "moving": false,
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13,
+              11,
+              9,
+              15
+            ],
+            "bearing": 0,
+            "center": [
+              7.681000000000012,
+              45.979299999999995
+            ],
+            "elevation": 4120.821693892771,
+            "levels": [
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16
+            ],
+            "moving": false,
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13,
+              11,
+              9,
+              15
+            ],
+            "bearing": 0,
+            "center": [
+              7.681000000000012,
+              45.979299999999995
+            ],
+            "elevation": 4120.821693892771,
+            "levels": [
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16
+            ],
+            "moving": false,
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13,
+              12,
+              11,
+              9,
+              15
+            ],
+            "bearing": 0,
+            "center": [
+              7.681000000000012,
+              45.979299999999995
+            ],
+            "elevation": 4120.821693892771,
+            "levels": [
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16
+            ],
+            "moving": false,
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13,
+              12,
+              11,
+              9,
+              15
+            ],
+            "bearing": 0,
+            "center": [
+              7.681000000000012,
+              45.979299999999995
+            ],
+            "elevation": 4120.821693892771,
+            "levels": [
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16
+            ],
+            "moving": false,
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13,
+              12,
+              11,
+              9,
+              15
+            ],
+            "bearing": 0,
+            "center": [
+              7.681000000000012,
+              45.979299999999995
+            ],
+            "elevation": 4120.821693892771,
+            "levels": [
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16
+            ],
+            "moving": false,
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13,
+              12,
+              11,
+              9,
+              15
+            ],
+            "bearing": 0,
+            "center": [
+              7.681000000000012,
+              45.979299999999995
+            ],
+            "elevation": 4120.821693892771,
+            "levels": [
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16
+            ],
+            "moving": false,
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13,
+              12,
+              11,
+              9,
+              15
+            ],
+            "bearing": 0,
+            "center": [
+              7.681000000000012,
+              45.979299999999995
+            ],
+            "elevation": 4120.821693892771,
+            "levels": [
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16
+            ],
+            "moving": false,
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          },
+          {
+            "actualDEMLevels": [
+              14,
+              13,
+              12,
+              11,
+              9,
+              15
+            ],
+            "bearing": 0,
+            "center": [
+              7.681000000000012,
+              45.979299999999995
+            ],
+            "elevation": 4120.821693892771,
+            "levels": [
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16
+            ],
+            "moving": false,
+            "pitch": 55.00000000000001,
+            "zoom": 15.2
+          }
+        ],
+        "newTileResponses": 70,
+        "pitch": 55,
+        "scope": "edge/context",
+        "zoom": 15.2
+      },
+      {
+        "bearing": 0,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "filename": "navigation-6--regional.png",
+        "frames": [
+          {
+            "actualDEMLevels": [
+              10,
+              9
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000034
+            ],
+            "elevation": 3762.5844177542303,
+            "levels": [
+              8,
+              9,
+              10,
+              11
+            ],
+            "moving": false,
+            "pitch": 45,
+            "zoom": 11.4
+          },
+          {
+            "actualDEMLevels": [
+              10,
+              9
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000034
+            ],
+            "elevation": 3762.5844177542303,
+            "levels": [
+              8,
+              9,
+              10,
+              11
+            ],
+            "moving": false,
+            "pitch": 45,
+            "zoom": 11.4
+          },
+          {
+            "actualDEMLevels": [
+              10,
+              9
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000034
+            ],
+            "elevation": 3762.5844177542303,
+            "levels": [
+              8,
+              9,
+              10,
+              11
+            ],
+            "moving": false,
+            "pitch": 45,
+            "zoom": 11.4
+          },
+          {
+            "actualDEMLevels": [
+              10,
+              9
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000034
+            ],
+            "elevation": 3762.5844177542303,
+            "levels": [
+              8,
+              9,
+              10,
+              11
+            ],
+            "moving": false,
+            "pitch": 45,
+            "zoom": 11.4
+          },
+          {
+            "actualDEMLevels": [
+              10,
+              9
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000034
+            ],
+            "elevation": 3762.5844177542303,
+            "levels": [
+              8,
+              9,
+              10,
+              11
+            ],
+            "moving": false,
+            "pitch": 45,
+            "zoom": 11.4
+          },
+          {
+            "actualDEMLevels": [
+              10,
+              9
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000034
+            ],
+            "elevation": 3762.5844177542303,
+            "levels": [
+              8,
+              9,
+              10,
+              11
+            ],
+            "moving": false,
+            "pitch": 45,
+            "zoom": 11.4
+          },
+          {
+            "actualDEMLevels": [
+              10,
+              9
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000034
+            ],
+            "elevation": 3762.5844177542303,
+            "levels": [
+              8,
+              9,
+              10,
+              11
+            ],
+            "moving": false,
+            "pitch": 45,
+            "zoom": 11.4
+          },
+          {
+            "actualDEMLevels": [
+              10,
+              9
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000034
+            ],
+            "elevation": 3762.5844177542303,
+            "levels": [
+              8,
+              9,
+              10,
+              11
+            ],
+            "moving": false,
+            "pitch": 45,
+            "zoom": 11.4
+          },
+          {
+            "actualDEMLevels": [
+              10,
+              9
+            ],
+            "bearing": 0,
+            "center": [
+              7.761213290000001,
+              45.979107940000034
+            ],
+            "elevation": 3762.5844177542303,
+            "levels": [
+              8,
+              9,
+              10,
+              11
+            ],
+            "moving": false,
+            "pitch": 45,
+            "zoom": 11.4
+          }
+        ],
+        "newTileResponses": 50,
+        "pitch": 45,
+        "scope": "edge/context",
+        "zoom": 11.4
+      }
+    ],
+    "pageErrors": [],
+    "productionHashes": {
+      "src/atlas/map/AtlasMap.ts": "cb45f5963716d636e903ed515008b66dab2fca0ab6d2aa28214a8c6303ef4b05",
+      "src/atlas/map/atlasVisuals.ts": "48426ab2132d5192069254ec9fe3fb7d9d433c2c9059f6f2223166c34c22dcfc",
+      "src/atlas/map/terrainLayers.ts": "c71099083d3184d5c70c148ea2c3f0574b0b170fb0737b9c041df579ed4e5497",
+      "src/atlas/map/visualTerrainConfig.ts": "2fc10a5bb50501a82186b4e6a1d2c176ac87d7431dbfdc702b3da69660e6b0ee",
+      "src/atlas/terrain/analyticalElevationConfig.ts": "6fd90c2fb39dc925c8de90cf6b7cf3a907696d71cc116e42563255addb41a9bb",
+      "src/atlas/terrain/terrainElevationSampler.ts": "d941ad5474ff7370da4e67c135018a777ed440d84bf00cff0f536600270f1b7b"
+    },
+    "records": [
+      {
+        "bounds": [
+          [
+            6.637192520766234,
+            45.63282873579416
+          ],
+          [
+            8.885234059228566,
+            46.66521101605366
+          ]
+        ],
+        "camera": {
+          "bearing": 0,
+          "center": [
+            7.76121329,
+            45.97910794
+          ],
+          "pitch": 45,
+          "zoom": 9.4
+        },
+        "captureSha256": "3de52db3cb890596b00a8a965087eb00028d8cb421862b43a375deb0ff958138",
+        "centerExaggeratedElevation": 3776.0900240605165,
+        "filename": "landscape--regional.png",
+        "geometryLevels": [
+          8,
+          9
+        ],
+        "newTileResponses": 38,
+        "reliefLevels": [
+          9,
+          10,
+          11
+        ],
+        "scene": "landscape",
+        "usedDEMLevels": [
+          8
+        ]
+      },
+      {
+        "bounds": [
+          [
+            7.480208097691843,
+            45.892739934416966
+          ],
+          [
+            8.042218482308385,
+            46.15144043793484
+          ]
+        ],
+        "camera": {
+          "bearing": 0,
+          "center": [
+            7.76121329,
+            45.97910794
+          ],
+          "pitch": 45,
+          "zoom": 11.4
+        },
+        "captureSha256": "f6e4cd2aff9b9fd51539be5c5c1c2c2a9572c93182e4bd0d5fd9150eae57a389",
+        "centerExaggeratedElevation": 3762.584417752497,
+        "filename": "planning--regional.png",
+        "geometryLevels": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "newTileResponses": 68,
+        "reliefLevels": [
+          11,
+          12,
+          13
+        ],
+        "scene": "planning",
+        "usedDEMLevels": [
+          9,
+          10
+        ]
+      },
+      {
+        "bounds": [
+          [
+            7.658534983285108,
+            45.95150213867859
+          ],
+          [
+            7.863891596714694,
+            46.05680375016084
+          ]
+        ],
+        "camera": {
+          "bearing": 0,
+          "center": [
+            7.76121329,
+            45.97910794
+          ],
+          "pitch": 55.00000000000001,
+          "zoom": 13.2
+        },
+        "captureSha256": "23ac03f77ea1933b3579d9348314f363149963d803e9af03aff4c7c0276bd22a",
+        "centerExaggeratedElevation": 3757.688803712747,
+        "filename": "close-context--regional.png",
+        "geometryLevels": [
+          8,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "newTileResponses": 89,
+        "reliefLevels": [
+          12,
+          13,
+          14,
+          15
+        ],
+        "scene": "close-context",
+        "usedDEMLevels": [
+          10,
+          11,
+          12,
+          13
+        ]
+      },
+      {
+        "bounds": [
+          [
+            7.734314106486693,
+            45.96742370913418
+          ],
+          [
+            7.788112473512314,
+            45.99078970578137
+          ]
+        ],
+        "camera": {
+          "bearing": 0,
+          "center": [
+            7.76121329,
+            45.97910794
+          ],
+          "pitch": 0,
+          "zoom": 14.2
+        },
+        "captureSha256": "c04f0f31dbd02bf3c0d2b2a06ac56207a533f4479e3076c922bd038c1e2a5abc",
+        "centerExaggeratedElevation": 3754.3484306749097,
+        "filename": "interior-parent--regional.png",
+        "geometryLevels": [
+          8,
+          13,
+          14
+        ],
+        "newTileResponses": 37,
+        "reliefLevels": [
+          15
+        ],
+        "scene": "interior-parent",
+        "usedDEMLevels": [
+          13
+        ]
+      },
+      {
+        "bounds": [
+          [
+            7.747763698242636,
+            45.973266132704794
+          ],
+          [
+            7.77466288175475,
+            45.98494913102385
+          ]
+        ],
+        "camera": {
+          "bearing": 0,
+          "center": [
+            7.76121329,
+            45.97910794
+          ],
+          "pitch": 0,
+          "zoom": 15.2
+        },
+        "captureSha256": "8ac4f44af0f43b621852b3e82d93d6a5805dcdf974857a5da81ca04ca5e2589a",
+        "centerExaggeratedElevation": 3752.5982518256033,
+        "filename": "interior-child--regional.png",
+        "geometryLevels": [
+          8,
+          13,
+          14,
+          15
+        ],
+        "newTileResponses": 42,
+        "reliefLevels": [
+          16
+        ],
+        "scene": "interior-child",
+        "usedDEMLevels": [
+          13,
+          14
+        ]
+      },
+      {
+        "bounds": [
+          [
+            7.754488494122313,
+            45.97618711338629
+          ],
+          [
+            7.767938085878342,
+            45.98202861254555
+          ]
+        ],
+        "camera": {
+          "bearing": 0,
+          "center": [
+            7.76121329,
+            45.97910794
+          ],
+          "pitch": 0,
+          "zoom": 16.2
+        },
+        "captureSha256": "b9cb2795124b96fa718fef448085f9db2b890941a59be93de922eacdb6d9a48a",
+        "centerExaggeratedElevation": 3752.321485969016,
+        "filename": "interior-detail--regional.png",
+        "geometryLevels": [
+          8,
+          14,
+          15,
+          16
+        ],
+        "newTileResponses": 51,
+        "reliefLevels": [
+          17
+        ],
+        "scene": "interior-detail",
+        "usedDEMLevels": [
+          14,
+          15
+        ]
+      },
+      {
+        "bounds": [
+          [
+            7.734314106486693,
+            45.96742370913316
+          ],
+          [
+            7.788112473512314,
+            45.99078970578037
+          ]
+        ],
+        "camera": {
+          "bearing": 180,
+          "center": [
+            7.76121329,
+            45.97910794
+          ],
+          "pitch": 0,
+          "zoom": 14.2
+        },
+        "captureSha256": "7852f21e2634fdb413d5b74b69f26dee3efcd32564894cf8e19562a0a2ce44ba",
+        "centerExaggeratedElevation": 3754.3484306749097,
+        "filename": "interior-rotation--regional.png",
+        "geometryLevels": [
+          8,
+          13,
+          14
+        ],
+        "newTileResponses": 0,
+        "reliefLevels": [
+          15
+        ],
+        "scene": "interior-rotation",
+        "usedDEMLevels": [
+          13
+        ]
+      },
+      {
+        "bounds": [
+          [
+            7.671031412157731,
+            45.972373835518056
+          ],
+          [
+            7.722370565513188,
+            45.99870810460169
+          ]
+        ],
+        "camera": {
+          "bearing": 0,
+          "center": [
+            7.69670098884,
+            45.97927397547
+          ],
+          "pitch": 55.00000000000001,
+          "zoom": 15.2
+        },
+        "captureSha256": "882c521fa3850dc3bb047cae2fe6743e7bafd27c8fef050fc01d769378ca85a3",
+        "centerExaggeratedElevation": 4036.8514118901708,
+        "filename": "edge-west--regional.png",
+        "geometryLevels": [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ],
+        "newTileResponses": 86,
+        "reliefLevels": [
+          12,
+          13,
+          14,
+          15,
+          16,
+          17
+        ],
+        "scene": "edge-west",
+        "usedDEMLevels": [
+          9,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      {
+        "bounds": [
+          [
+            7.735279234108958,
+            45.92722560559923
+          ],
+          [
+            7.78661838746504,
+            45.95358133886114
+          ]
+        ],
+        "camera": {
+          "bearing": 0,
+          "center": [
+            7.76094881079,
+            45.9341313687
+          ],
+          "pitch": 55.00000000000001,
+          "zoom": 15.2
+        },
+        "captureSha256": "f82746b7180466f39ea316e380b13db0b77dc31771c6ffc1b932e60065045e83",
+        "centerExaggeratedElevation": 5479.798342216432,
+        "filename": "edge-south--regional.png",
+        "geometryLevels": [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "newTileResponses": 52,
+        "reliefLevels": [
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17
+        ],
+        "scene": "edge-south",
+        "usedDEMLevels": [
+          9,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      {
+        "bounds": [
+          [
+            7.671031412154292,
+            45.95983302282008
+          ],
+          [
+            7.722370565514268,
+            45.986173255642626
+          ]
+        ],
+        "camera": {
+          "bearing": 180,
+          "center": [
+            7.69670098884,
+            45.97927397547
+          ],
+          "pitch": 55.00000000000001,
+          "zoom": 15.2
+        },
+        "captureSha256": "05c6af40878970edbfd152780792a7d0567e9535da657756d19d21d66ae19a7d",
+        "centerExaggeratedElevation": 4036.8514118901708,
+        "filename": "edge-west-rotation--regional.png",
+        "geometryLevels": [
+          8,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "newTileResponses": 57,
+        "reliefLevels": [
+          12,
+          13,
+          14,
+          15,
+          16,
+          17
+        ],
+        "scene": "edge-west-rotation",
+        "usedDEMLevels": [
+          11,
+          12,
+          13,
+          14
+        ]
+      }
+    ],
+    "responseBytes": 81201878,
+    "responses": 765,
+    "sourceReportSha256": "db4d43d518eb318bc76900c756c06f008a6693852129f408d83e4894408db518",
+    "statusCounts": {
+      "200": 765
+    },
+    "viewport": {
+      "height": 900,
+      "width": 1440
+    }
+  },
+  "regional-oblique": {
+    "browserVersion": "151.0.7922.34",
+    "contributorResponseCounts": {
+      "0": 23,
+      "1": 181
+    },
+    "failedRequests": [
+      {
+        "error": "net::ERR_ABORTED",
+        "url": "http://127.0.0.1:4184/tiles/regional/15/17090/11660.png"
+      },
+      {
+        "error": "net::ERR_ABORTED",
+        "url": "http://127.0.0.1:4184/tiles/regional/15/17091/11660.png"
+      },
+      {
+        "error": "net::ERR_ABORTED",
+        "url": "http://127.0.0.1:4184/tiles/regional/15/17091/11659.png"
+      },
+      {
+        "error": "net::ERR_ABORTED",
+        "url": "http://127.0.0.1:4184/tiles/regional/15/17088/11660.png"
+      },
+      {
+        "error": "net::ERR_ABORTED",
+        "url": "http://127.0.0.1:4184/tiles/regional/15/17088/11658.png"
+      },
+      {
+        "error": "net::ERR_ABORTED",
+        "url": "http://127.0.0.1:4184/tiles/regional/14/8547/5830.png"
+      },
+      {
+        "error": "net::ERR_ABORTED",
+        "url": "http://127.0.0.1:4184/tiles/regional/14/8542/5830.png"
+      },
+      {
+        "error": "net::ERR_ABORTED",
+        "url": "http://127.0.0.1:4184/tiles/regional/14/8548/5833.png"
+      },
+      {
+        "error": "net::ERR_ABORTED",
+        "url": "http://127.0.0.1:4184/tiles/regional/14/8548/5832.png"
+      },
+      {
+        "error": "net::ERR_ABORTED",
+        "url": "http://127.0.0.1:4184/tiles/regional/14/8547/5833.png"
+      },
+      {
+        "error": "net::ERR_ABORTED",
+        "url": "http://127.0.0.1:4184/tiles/regional/14/8547/5832.png"
+      },
+      {
+        "error": "net::ERR_ABORTED",
+        "url": "http://127.0.0.1:4184/tiles/regional/14/8546/5833.png"
+      }
+    ],
+    "failure": null,
+    "navigation": [],
+    "pageErrors": [],
+    "productionHashes": {
+      "src/atlas/map/AtlasMap.ts": "cb45f5963716d636e903ed515008b66dab2fca0ab6d2aa28214a8c6303ef4b05",
+      "src/atlas/map/atlasVisuals.ts": "48426ab2132d5192069254ec9fe3fb7d9d433c2c9059f6f2223166c34c22dcfc",
+      "src/atlas/map/terrainLayers.ts": "c71099083d3184d5c70c148ea2c3f0574b0b170fb0737b9c041df579ed4e5497",
+      "src/atlas/map/visualTerrainConfig.ts": "2fc10a5bb50501a82186b4e6a1d2c176ac87d7431dbfdc702b3da69660e6b0ee",
+      "src/atlas/terrain/analyticalElevationConfig.ts": "6fd90c2fb39dc925c8de90cf6b7cf3a907696d71cc116e42563255addb41a9bb",
+      "src/atlas/terrain/terrainElevationSampler.ts": "d941ad5474ff7370da4e67c135018a777ed440d84bf00cff0f536600270f1b7b"
+    },
+    "records": [
+      {
+        "bounds": [
+          [
+            7.727903666442415,
+            45.967793636171336
+          ],
+          [
+            7.79452291355031,
+            45.9958107211628
+          ]
+        ],
+        "camera": {
+          "bearing": 0,
+          "center": [
+            7.76121329,
+            45.97910794
+          ],
+          "pitch": 30,
+          "zoom": 14.2
+        },
+        "captureSha256": "3f4f3672288bbde0c685f84d8960518d967cb871e597a7da90720ed3c025053f",
+        "centerExaggeratedElevation": 3754.3484306749097,
+        "filename": "oblique-parent--regional.png",
+        "geometryLevels": [
+          8,
+          11,
+          12,
+          13,
+          14
+        ],
+        "newTileResponses": 82,
+        "reliefLevels": [
+          14,
+          15
+        ],
+        "scene": "oblique-parent",
+        "usedDEMLevels": [
+          11,
+          12,
+          13
+        ]
+      },
+      {
+        "bounds": [
+          [
+            7.744558478221052,
+            45.97345107702256
+          ],
+          [
+            7.777868101775226,
+            45.987459960576984
+          ]
+        ],
+        "camera": {
+          "bearing": 0,
+          "center": [
+            7.76121329,
+            45.97910794
+          ],
+          "pitch": 30,
+          "zoom": 15.2
+        },
+        "captureSha256": "c8d78f392d9850faffcf03ef19f0a308ecfe66531b844f99d77b6bbed1be3a3c",
+        "centerExaggeratedElevation": 3752.5982518256033,
+        "filename": "oblique-child--regional.png",
+        "geometryLevels": [
+          8,
+          13,
+          14,
+          15
+        ],
+        "newTileResponses": 50,
+        "reliefLevels": [
+          15,
+          16
+        ],
+        "scene": "oblique-child",
+        "usedDEMLevels": [
+          13,
+          14
+        ]
+      },
+      {
+        "bounds": [
+          [
+            7.751126096185658,
+            45.97600993058538
+          ],
+          [
+            7.771300483821619,
+            45.98530343884801
+          ]
+        ],
+        "camera": {
+          "bearing": 0,
+          "center": [
+            7.76121329,
+            45.97910794
+          ],
+          "pitch": 45,
+          "zoom": 16.2
+        },
+        "captureSha256": "f7fe1db2c6f702fe860457023da9c196d59004beb51a51bade0285f7226618e3",
+        "centerExaggeratedElevation": 3752.321485969016,
+        "filename": "oblique-detail--regional.png",
+        "geometryLevels": [
+          8,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ],
+        "newTileResponses": 55,
+        "reliefLevels": [
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        "scene": "oblique-detail",
+        "usedDEMLevels": [
+          11,
+          13,
+          14,
+          15
+        ]
+      },
+      {
+        "bounds": [
+          [
+            7.72790366644378,
+            45.96240011882216
+          ],
+          [
+            7.794522913553465,
+            45.99041993234863
+          ]
+        ],
+        "camera": {
+          "bearing": 180,
+          "center": [
+            7.76121329,
+            45.97910794
+          ],
+          "pitch": 30,
+          "zoom": 14.2
+        },
+        "captureSha256": "aa1dfbc88f126e1e1d138d63f907e45cd78aec9040ac5a83d06098dc7bc636e0",
+        "centerExaggeratedElevation": 3754.3484306749097,
+        "filename": "oblique-rotation--regional.png",
+        "geometryLevels": [
+          8,
+          11,
+          12,
+          13,
+          14
+        ],
+        "newTileResponses": 17,
+        "reliefLevels": [
+          14,
+          15
+        ],
+        "scene": "oblique-rotation",
+        "usedDEMLevels": [
+          11,
+          12,
+          13
+        ]
+      }
+    ],
+    "responseBytes": 21620631,
+    "responses": 204,
+    "sourceReportSha256": "03a0fd6b86de6e48e5be3caa27efbc29070ec699246fabb646babb53173d513a",
+    "statusCounts": {
+      "200": 204
+    },
+    "viewport": {
+      "height": 900,
+      "width": 1440
+    }
+  }
+}

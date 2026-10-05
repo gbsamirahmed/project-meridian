@@ -1,0 +1,17 @@
+{
+  "baseline": "6e2687e11626501a11fa7e87e89d523d3572694d",
+  "hypothesis": "An internally related regional parent chain can remove the source-change component of interior LOD transitions, without resolving the spatial disagreement with common terrain.",
+  "products": {
+    "swiss": "1a44a0644de1bde73a3ba84d1b761dc0aa17d48cc971e5f6b5d2c14fb329d7ea",
+    "common": "8f002dcbdeceb6aa37cc9eeef9f2d2060193b1eff7922ddb1d0535a6b8030da2"
+  },
+  "basis": "Unencoded z14 GDAL area-average from immutable Swiss native source VRT, same warp contract as published Swiss z14. A coarse diagnostic basis, not the highest Swiss information level or a regeneration of fine terrain.",
+  "levels": [10, 11, 12, 13, 14],
+  "parents": "Recursive supported-sample sum/count, float64 accumulation. Uniform Web Mercator base-cell area. Independent Terrarium encoding only for complete tiles. Partial-cell mean is diagnostic only.",
+  "support": "At z14 reject nonfinite samples and cells whose corners/edge midpoints fail the inverse-LV95 source-bound test with 0.5 m guard. Parent count records complete z14 cells out of 4^(14-z). No values invented outside support; fraction is observed area support, not confidence.",
+  "rendering": "H1 frozen control versus regional parents at complete z12/13 tiles, original Swiss z14-18; common elsewhere. Both use the same existing fixed presentation and source ceilings.",
+  "height": "Swiss LN02 and common EGM2008 preserved. No correction, registration, transformation or blending.",
+  "metrics": "Same 705 protected points; same-level full-cell comparisons and sectors; exact aggregation checks, support fractions and footprints; fixed frontier strips; separate interior and edge captures plus continuous zoom.",
+  "stopping": "One chain through z10 only. No spatial reconciliation. Do not expand support, algorithms or source selection to force success. No final hierarchy contract.",
+  "limitations": "Eight perimeter checks are a conservative numerical support diagnostic for this small smooth transformed rectangle, not a certified generic polygon intersection algorithm. Rejected boundary cells remain absent. Whole-tile publication can remove usable supported cells. Source grid spacing is not measurement resolution."
+}

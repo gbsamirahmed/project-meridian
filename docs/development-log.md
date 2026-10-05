@@ -3292,3 +3292,35 @@ Next suggested bounded investigation: a regional-preserving parent diagnostic on
 one protected-interior tile and neighboring support, keeping common reference
 and best available representation distinct. Spatial seam/transition support and
 global coverage remain separate unresolved decisions. No next phase started.
+
+
+## 2026-10-05 — Regional-preserving terrain parent diagnostic
+
+Completed the [bounded Swiss parent diagnostic](atlas/regional-parent-diagnostic.md)
+from checkpoint6e2687e. Both frozen products and source hashes verified. A separate
+unencoded z14 Swiss basis reproduces all25 original basis tiles; recursive sum/count
+parents at13–10 retain full, partial and absent support. Only complete12/13 tiles
+are eligible for the isolated web stream; fine Swiss14–18 remains exact.
+
+On705 protected points, common13→Swiss14 RMS39.82 m becomes Swiss-parent13→Swiss14
+RMS0.71 m. Fine modification is zero. Coarsening does not establish a natural
+common handoff: protected Swiss/common RMS remains38.37 m at10, and whole regional
+tiles cease below12. The first delivered source jump moves to11→12 (39.77 m RMS).
+Same-level coarse edges reach48.40/61.77 m at12/13; west/south walls persist.
+Pitched parent views recover the summit form and fine views converge; sampled
+continuous zoom and rotation preserve supported internal refinement, not a global
+continuity guarantee. Native LN02/EGM2008 remain distinct, with no correction/blend.
+
+Independent rebuild matches all35 diagnostic files/support fields (14.69 MB).
+Normal runtime and all source/product inputs remain unchanged. All1935 completed
+local tile responses succeeded;24 failures were navigation cancellations. Captures
+and products remain external and owned evaluation servers are stopped.
+
+Validation:38 Atlas Python tests;167 active Node application/model tests with one
+existing optional skip; lint, TypeScript, application-only build, metadata/hash
+and reference checks passed. Existing deprecation/bundle warnings retained; no
+unrelated test changed. New tools are CLI-only; no production metadata imports or
+startup/CI dependency on external terrain. Regional pyramid is a supported concept,
+not a final hierarchy contract. Suggested smallest next investigation: one
+support-aware same-level boundary patch assessment preserving the interior.
+No spatial reconciliation, additional source acquisition or next phase started.

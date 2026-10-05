@@ -1,0 +1,790 @@
+{
+  "checks": {
+    "adapterCache": {
+      "identity": "71f3e69d25220a10c09f4565547281016165b9838cbadbecd3c16c2d20625349",
+      "maskBytes": 522230,
+      "tileBytes": 125049619,
+      "tiles": 1387
+    },
+    "basisTilesByteIdentical": 25,
+    "fileHashList": [
+      {
+        "bytes": 8081680,
+        "path": "fields/z14.npz",
+        "sha256": "60c22d996178805f40351f26ed64052aa20b046378fb1f17e70a52ef97a9247d"
+      },
+      {
+        "bytes": 118459,
+        "path": "tiles/14/8543/5828.png",
+        "sha256": "a063407b0e12b64c112855329c18ea3ad9f45dec23998e52062ffaa13232f0a2"
+      },
+      {
+        "bytes": 115597,
+        "path": "tiles/14/8544/5828.png",
+        "sha256": "ba7c0dfa366f2dfa5a469f7bf3ed24baebd0e509028bcb613c74834135c72fa8"
+      },
+      {
+        "bytes": 114563,
+        "path": "tiles/14/8545/5828.png",
+        "sha256": "5014d630a24058b9b8a88b09ca6677540a603cd11ecf3205cc1bce45d18299e4"
+      },
+      {
+        "bytes": 112800,
+        "path": "tiles/14/8546/5828.png",
+        "sha256": "63dd696f8ffac261327ee935ca345fee560f488f6f36145e1a98a51724313232"
+      },
+      {
+        "bytes": 112437,
+        "path": "tiles/14/8547/5828.png",
+        "sha256": "c7f96c977ce01fab25349c47631985dacb3d448c6b835d6123be51fadb0bd484"
+      },
+      {
+        "bytes": 119721,
+        "path": "tiles/14/8543/5829.png",
+        "sha256": "c39487b6290ded95ac003b53557aff95a19a685c6fb77a78c71b2b72e321e923"
+      },
+      {
+        "bytes": 118649,
+        "path": "tiles/14/8544/5829.png",
+        "sha256": "b57259584d7ac91bb7652161b00d13ca27235aa11ed056946213aef8b048db4c"
+      },
+      {
+        "bytes": 111649,
+        "path": "tiles/14/8545/5829.png",
+        "sha256": "d2a85986ff10956c88c13f4a785751285058cb4ae6e145fdff71a3c6bb649ee5"
+      },
+      {
+        "bytes": 116218,
+        "path": "tiles/14/8546/5829.png",
+        "sha256": "c323403333f67aed38a072ad74ed1f13bc4a46a4808af6ab1f97d98e2b520838"
+      },
+      {
+        "bytes": 116446,
+        "path": "tiles/14/8547/5829.png",
+        "sha256": "03458d786d8b0d35908661144dd2af659a2248ab29b81a3adf384546014b7e4f"
+      },
+      {
+        "bytes": 112784,
+        "path": "tiles/14/8543/5830.png",
+        "sha256": "1aeb3e168e441c688e5876c8308e61b139df34e4934bbd976487a8daa03c98dd"
+      },
+      {
+        "bytes": 121455,
+        "path": "tiles/14/8544/5830.png",
+        "sha256": "e2d067a761d04b3e5485be6faf42a9df5b77c22a7290d4b2beb0383e1500c631"
+      },
+      {
+        "bytes": 114903,
+        "path": "tiles/14/8545/5830.png",
+        "sha256": "84d87910d2e027cc6bd85eea871b74309d04bfe770ba386f2bf858d3dad64a9c"
+      },
+      {
+        "bytes": 110152,
+        "path": "tiles/14/8546/5830.png",
+        "sha256": "ad2975d616e8dfd89ef9b2960cd90568221842bcb128bd39615bfdb6faec20e6"
+      },
+      {
+        "bytes": 115327,
+        "path": "tiles/14/8547/5830.png",
+        "sha256": "3192c0de1dedcf15248b8199013581e7db52e77de4d0b00c15985a3656055a86"
+      },
+      {
+        "bytes": 112036,
+        "path": "tiles/14/8543/5831.png",
+        "sha256": "1c2fc07f517eb175277264e40f07cff0700c76ae8bf1bd99d5bbdcd7f0b8fd8f"
+      },
+      {
+        "bytes": 117579,
+        "path": "tiles/14/8544/5831.png",
+        "sha256": "81408541c2cc09f46e95f1bf9127dae7f4aebf64dc04e372509123609d6160e1"
+      },
+      {
+        "bytes": 117343,
+        "path": "tiles/14/8545/5831.png",
+        "sha256": "2f19f26dde4441e47cfe3dcebf0b1c591273d94f974bb781fc0bfb8d231f2159"
+      },
+      {
+        "bytes": 115813,
+        "path": "tiles/14/8546/5831.png",
+        "sha256": "f67c3a8b9c632b334cb7d484a4be7676fe45882a64b6b29b173642a93b5f6f3f"
+      },
+      {
+        "bytes": 114837,
+        "path": "tiles/14/8547/5831.png",
+        "sha256": "fffb17533e5a012af521aa90e033f1f8da630c039c60646e2821449a0026c074"
+      },
+      {
+        "bytes": 116811,
+        "path": "tiles/14/8543/5832.png",
+        "sha256": "c25dc9197d9e0d94f61590e8a39d8919d61562c7141e5faa51a26ca6c8dcf4af"
+      },
+      {
+        "bytes": 121719,
+        "path": "tiles/14/8544/5832.png",
+        "sha256": "c650d1b7b1f340b8f31e0d902f23f21b27efc876f9beee627b450f436ee351ca"
+      },
+      {
+        "bytes": 122632,
+        "path": "tiles/14/8545/5832.png",
+        "sha256": "9a58fe255b68f9c6875f18228ca3c1a94d9b3fb7a60983698d3a7aa30113737b"
+      },
+      {
+        "bytes": 118434,
+        "path": "tiles/14/8546/5832.png",
+        "sha256": "e7765c0145237eefbf4280ecc56076813c3b5c6d3dfdb02420b6621a14809aa8"
+      },
+      {
+        "bytes": 116937,
+        "path": "tiles/14/8547/5832.png",
+        "sha256": "4e0af2cf1b51c8f14bf6c9f9df9d842f31cba234d332e28974aad934729f8a9a"
+      },
+      {
+        "bytes": 2242229,
+        "path": "fields/z13.npz",
+        "sha256": "7fab47921279daa4e4cb706ae893127d2f1c496c4e8125eca1929d0063acb077"
+      },
+      {
+        "bytes": 124788,
+        "path": "tiles/13/4272/2914.png",
+        "sha256": "dea1d934d7fe528ffe2ca4a09597ccef923d5bd204f15d59acbc03ae15170b72"
+      },
+      {
+        "bytes": 123568,
+        "path": "tiles/13/4273/2914.png",
+        "sha256": "03a413b83a43cd8384e08edcb2f9e00442b7490ab5ea87afeec158462a321cc6"
+      },
+      {
+        "bytes": 127000,
+        "path": "tiles/13/4272/2915.png",
+        "sha256": "9b8f94539248ac19ef8c0c5ee82dd7e3e374724b9bf07526960d24e8dfa0efcb"
+      },
+      {
+        "bytes": 123136,
+        "path": "tiles/13/4273/2915.png",
+        "sha256": "404664df123d38b2e974f9ee533df8eeaf29ab16946d95ef9909fac9b684b7aa"
+      },
+      {
+        "bytes": 609098,
+        "path": "fields/z12.npz",
+        "sha256": "3abe7f2e95a715ba0e72a301e0491f31feb811bdf8c6cc21d27896cad0e47c73"
+      },
+      {
+        "bytes": 133794,
+        "path": "tiles/12/2136/1457.png",
+        "sha256": "e2007cbc67cc5230ff8db9bcd4224786e2004607fa2fa60835fe5f8fc44e7a23"
+      },
+      {
+        "bytes": 170199,
+        "path": "fields/z11.npz",
+        "sha256": "ee936d1e430a446eba8a40727dccdb405fce6d4562a492068e66031bf8d881f1"
+      },
+      {
+        "bytes": 50716,
+        "path": "fields/z10.npz",
+        "sha256": "a188d2732513c24d795f84aa3d733e065c95d250bcaf65e15b51a722aec458b3"
+      }
+    ],
+    "filesMatched": 35,
+    "generation": {
+      "bytes": 14691509,
+      "identity": "b92c9a3dfa05a87e4fcce4a6e6638efd2d9ab8e86537f52833ff1ed6def78672",
+      "seconds": 79.01769849983975,
+      "tileBytes": 3537587
+    },
+    "identity": "b92c9a3dfa05a87e4fcce4a6e6638efd2d9ab8e86537f52833ff1ed6def78672",
+    "levels": [
+      {
+        "completeCells": 2263632,
+        "completeDeliveryTiles": 25,
+        "extentTiles": [
+          8542,
+          8548,
+          5827,
+          5833
+        ],
+        "fullCount": 1,
+        "partialCells": 0,
+        "shape": [
+          1792,
+          1792
+        ],
+        "supportEquivalentCells": 2263632.0,
+        "unsupportedCells": 947632,
+        "zoom": 14
+      },
+      {
+        "completeCells": 565153,
+        "completeDeliveryTiles": 4,
+        "extentTiles": [
+          4271,
+          4274,
+          2913,
+          2916
+        ],
+        "fullCount": 4,
+        "partialCells": 1512,
+        "shape": [
+          1024,
+          1024
+        ],
+        "supportEquivalentCells": 565908.0,
+        "unsupportedCells": 481911,
+        "zoom": 13
+      },
+      {
+        "completeCells": 140923,
+        "completeDeliveryTiles": 1,
+        "extentTiles": [
+          2135,
+          2137,
+          1456,
+          1458
+        ],
+        "fullCount": 16,
+        "partialCells": 1103,
+        "shape": [
+          768,
+          768
+        ],
+        "supportEquivalentCells": 141477.0,
+        "unsupportedCells": 447798,
+        "zoom": 12
+      },
+      {
+        "completeCells": 35001,
+        "completeDeliveryTiles": 0,
+        "extentTiles": [
+          1067,
+          1068,
+          728,
+          729
+        ],
+        "fullCount": 64,
+        "partialCells": 647,
+        "shape": [
+          512,
+          512
+        ],
+        "supportEquivalentCells": 35369.25,
+        "unsupportedCells": 226496,
+        "zoom": 11
+      },
+      {
+        "completeCells": 8654,
+        "completeDeliveryTiles": 0,
+        "extentTiles": [
+          533,
+          534,
+          364,
+          364
+        ],
+        "fullCount": 256,
+        "partialCells": 371,
+        "shape": [
+          256,
+          512
+        ],
+        "supportEquivalentCells": 8842.3125,
+        "unsupportedCells": 122047,
+        "zoom": 10
+      }
+    ],
+    "maxQuantizationM": 0.001953125,
+    "parents": {
+      "common": "8f002dcbdeceb6aa37cc9eeef9f2d2060193b1eff7922ddb1d0535a6b8030da2",
+      "swiss": "1a44a0644de1bde73a3ba84d1b761dc0aa17d48cc971e5f6b5d2c14fb329d7ea"
+    },
+    "rebuildGeneration": {
+      "bytes": 14691509,
+      "identity": "b92c9a3dfa05a87e4fcce4a6e6638efd2d9ab8e86537f52833ff1ed6def78672",
+      "seconds": 81.2310849998612,
+      "tileBytes": 3537587
+    },
+    "rebuildIdentity": "b92c9a3dfa05a87e4fcce4a6e6638efd2d9ab8e86537f52833ff1ed6def78672"
+  },
+  "product": {
+    "delivery": {
+      "availability": "25 complete basis tiles at14, four derived at13, one at12; no complete tile at11/10. Offline NPZ fields at10-14 retain full, partial and absent support.",
+      "encoding": {
+        "description": "R*256+G+B/256-32768 metres",
+        "name": "terrarium",
+        "quantizationIncrement": {
+          "unit": "metre",
+          "value": 0.00390625
+        }
+      },
+      "format": "lossless RGB PNG",
+      "horizontalReference": {
+        "status": "known",
+        "value": {
+          "identifier": "EPSG:3857",
+          "name": "WGS 84 / Pseudo-Mercator"
+        }
+      },
+      "kind": "raster-tiles",
+      "resampling": {
+        "status": "known",
+        "value": "recursive supported 2x2 sample sum/count; float64; Mercator base-cell area"
+      },
+      "scheme": "xyz",
+      "tileSize": [
+        256,
+        256
+      ],
+      "tileTemplate": "${MERIDIAN_DATA_ROOT}/derived/atlas/riffelhorn/riffelhorn-regional-parents-v1/tiles/{z}/{x}/{y}.png",
+      "zoom": {
+        "max": {
+          "status": "known",
+          "value": 14
+        },
+        "min": 12
+      }
+    },
+    "documentation": [
+      "docs/atlas/regional-parent-diagnostic.md",
+      "docs/atlas/regional-parent-plan.json",
+      "docs/atlas/regional-parent-measurements.json"
+    ],
+    "elevationUnit": {
+      "status": "known",
+      "value": "metre"
+    },
+    "generation": {
+      "buildRecord": {
+        "href": "${MERIDIAN_DATA_ROOT}/derived/atlas/riffelhorn/riffelhorn-regional-parents-v1/manifest.json",
+        "sha256": "5dbd4991aa3d413f526b158b084233c1f393491cc235eca6b02324066545427d"
+      },
+      "timestamp": {
+        "reason": "Build time excluded from deterministic identity; execution durations retained separately",
+        "status": "unknown"
+      }
+    },
+    "id": "riffelhorn-swiss-regional-parents-diagnostic",
+    "lineage": {
+      "contributorList": "complete",
+      "contributors": [
+        {
+          "id": "swissalti3d-riffelhorn-support-selection",
+          "kind": "source",
+          "revision": {
+            "status": "known",
+            "value": "b24a4fdc7b378ba79d442d0ce216a031dfb95a6bc6eed5ad9c33be61175651f4"
+          }
+        }
+      ],
+      "limitations": "Only Swiss contributes to nonzero supported diagnostic cells. counts/4^(14-z) is retained base-cell support, not confidence or a Swiss/Copernicus blend. Original Swiss fine tiles remain immutable and are referenced by the separate evaluation stream.",
+      "processing": [
+        {
+          "method": "unencoded Swiss z14 GDAL average; same warp as original; no vertical operation",
+          "parameters": {
+            "basisZoom": 14,
+            "verticalTransformation": "none"
+          },
+          "record": {
+            "href": "${MERIDIAN_DATA_ROOT}/derived/atlas/riffelhorn/riffelhorn-regional-parents-v1/manifest.json",
+            "sha256": "5dbd4991aa3d413f526b158b084233c1f393491cc235eca6b02324066545427d"
+          },
+          "software": {
+            "gdal": "3.9.3",
+            "numpy": "2.5.3",
+            "rasterio": "1.4.3"
+          }
+        },
+        {
+          "method": "recursive supported 2x2 sample sum/count; float64; Mercator base-cell area",
+          "parameters": {
+            "minimumDiagnosticZoom": 10,
+            "partialMeanDeliverable": false
+          },
+          "record": {
+            "href": "${MERIDIAN_DATA_ROOT}/derived/atlas/riffelhorn/riffelhorn-regional-parents-v1/manifest.json",
+            "sha256": "5dbd4991aa3d413f526b158b084233c1f393491cc235eca6b02324066545427d"
+          }
+        }
+      ],
+      "spatialMapping": "uniform"
+    },
+    "name": "Swiss-derived regional parent diagnostic (no spatial reconciliation)",
+    "nodata": {
+      "status": "known",
+      "value": "Count0 => NaN; partial => observed-subset mean with exact count, never delivered as a whole terrain tile. No common/AWS padding or zero terrain."
+    },
+    "producer": {
+      "status": "known",
+      "value": "Meridian"
+    },
+    "revision": {
+      "status": "known",
+      "value": "b92c9a3dfa05a87e4fcce4a6e6638efd2d9ab8e86537f52833ff1ed6def78672"
+    },
+    "rights": {
+      "attribution": [
+        "\u00a9swisstopo"
+      ],
+      "licence": {
+        "status": "known",
+        "value": "swisstopo custom OGD terms, version 1.3.2021"
+      },
+      "references": [
+        "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-and-geoservices"
+      ]
+    },
+    "sourceInformation": {
+      "description": "Original 0.5 m distributed Swiss grid, not independent measurement resolution. z14 basis is area-averaged at about6.64 m locally; z13-10 summarize it. Original z14-18 delivery remains untouched.",
+      "informationCeiling": {
+        "status": "known",
+        "value": "No new observations or fine information beyond the Swiss source; diagnostic only coarsens the z14 signal. Not a regenerated complete fine pyramid."
+      }
+    },
+    "spatial": {
+      "coverage": {
+        "status": "known",
+        "value": {
+          "asset": {
+            "href": "${MERIDIAN_DATA_ROOT}/derived/atlas/riffelhorn/riffelhorn-regional-parents-v1/manifest.json",
+            "sha256": "5dbd4991aa3d413f526b158b084233c1f393491cc235eca6b02324066545427d"
+          },
+          "crs": {
+            "status": "known",
+            "value": {
+              "identifier": "EPSG:3857",
+              "name": "WGS 84 / Pseudo-Mercator"
+            }
+          },
+          "interpretation": "fields/z*.npz: nonzero counts mark supported subsets, fullCount marks complete cells; tile files mark complete delivered tiles. Tile envelopes include unsupported cells, not expanded Swiss coverage.",
+          "kind": "asset"
+        }
+      },
+      "protectedInterior": {
+        "status": "known",
+        "value": {
+          "area": {
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    7.780566904469132,
+                    45.97905091086851
+                  ],
+                  [
+                    7.78048196139084,
+                    45.98037373834171
+                  ],
+                  [
+                    7.780211437660678,
+                    45.981684391226075
+                  ],
+                  [
+                    7.7797579256280835,
+                    45.982970245882086
+                  ],
+                  [
+                    7.779125780909685,
+                    45.98421891663044
+                  ],
+                  [
+                    7.7783210809018835,
+                    45.98541837511734
+                  ],
+                  [
+                    7.777351566656226,
+                    45.98655706626847
+                  ],
+                  [
+                    7.7762265686615795,
+                    45.98762401970994
+                  ],
+                  [
+                    7.774956917235283,
+                    45.98860895557883
+                  ],
+                  [
+                    7.773554838376432,
+                    45.9895023836977
+                  ],
+                  [
+                    7.772033836078446,
+                    45.990295695150735
+                  ],
+                  [
+                    7.770408562232079,
+                    45.99098124537405
+                  ],
+                  [
+                    7.768694675373551,
+                    45.99155242795111
+                  ],
+                  [
+                    7.766908689643697,
+                    45.9920037383976
+                  ],
+                  [
+                    7.76506781542206,
+                    45.99233082731426
+                  ],
+                  [
+                    7.763189793183134,
+                    45.9925305423906
+                  ],
+                  [
+                    7.761292722190268,
+                    45.99260095885025
+                  ],
+                  [
+                    7.759394885694377,
+                    45.99254139804225
+                  ],
+                  [
+                    7.757514574340125,
+                    45.99235243399583
+                  ],
+                  [
+                    7.755669909500037,
+                    45.99203588787609
+                  ],
+                  [
+                    7.753878668257878,
+                    45.99159481039325
+                  ],
+                  [
+                    7.752158111745946,
+                    45.991033452338705
+                  ],
+                  [
+                    7.75052481850724,
+                    45.990357223532826
+                  ],
+                  [
+                    7.748994524502718,
+                    45.989572640585855
+                  ],
+                  [
+                    7.747581971317416,
+                    45.98868726397941
+                  ],
+                  [
+                    7.746300764036657,
+                    45.98770962508124
+                  ],
+                  [
+                    7.745163240167091,
+                    45.986649143802666
+                  ],
+                  [
+                    7.744180350866988,
+                    45.9855160376982
+                  ],
+                  [
+                    7.743361555627701,
+                    45.98432122339065
+                  ],
+                  [
+                    7.742714731414984,
+                    45.983076211276874
+                  ],
+                  [
+                    7.742246097135784,
+                    45.98179299453489
+                  ],
+                  [
+                    7.7419601541454,
+                    45.98048393350668
+                  ],
+                  [
+                    7.741859643352613,
+                    45.979161636574354
+                  ],
+                  [
+                    7.741945519318327,
+                    45.977838838680256
+                  ],
+                  [
+                    7.742216941578152,
+                    45.97652827866389
+                  ],
+                  [
+                    7.742671283252661,
+                    45.975242576595875
+                  ],
+                  [
+                    7.743304156842558,
+                    45.973994112291535
+                  ],
+                  [
+                    7.7441094569413185,
+                    45.97279490617116
+                  ],
+                  [
+                    7.745079419436235,
+                    45.971656503610845
+                  ],
+                  [
+                    7.746204696612474,
+                    45.97058986389404
+                  ],
+                  [
+                    7.747474447423891,
+                    45.969605254827414
+                  ],
+                  [
+                    7.748876442052077,
+                    45.968712154029596
+                  ],
+                  [
+                    7.750397179740537,
+                    45.96791915783757
+                  ],
+                  [
+                    7.752022018767305,
+                    45.96723389870006
+                  ],
+                  [
+                    7.753735317306036,
+                    45.96666297184719
+                  ],
+                  [
+                    7.755520583824689,
+                    45.96621187193598
+                  ],
+                  [
+                    7.7573606355826055,
+                    45.96588494027497
+                  ],
+                  [
+                    7.7592377637121155,
+                    45.96568532313139
+                  ],
+                  [
+                    7.761133903310004,
+                    45.965614941518055
+                  ],
+                  [
+                    7.763030806918344,
+                    45.965674472746876
+                  ],
+                  [
+                    7.764910219742829,
+                    45.96586334392525
+                  ],
+                  [
+                    7.766754054940928,
+                    45.96617973745711
+                  ],
+                  [
+                    7.768544567311564,
+                    45.96662060849591
+                  ],
+                  [
+                    7.770264523732558,
+                    45.967181714183845
+                  ],
+                  [
+                    7.771897368722074,
+                    45.96785765439891
+                  ],
+                  [
+                    7.77342738354511,
+                    45.96864192362118
+                  ],
+                  [
+                    7.774839837345413,
+                    45.969526973425374
+                  ],
+                  [
+                    7.776121128856967,
+                    45.970504285002455
+                  ],
+                  [
+                    7.777258917336169,
+                    45.97156445102001
+                  ],
+                  [
+                    7.778242241455939,
+                    45.97269726603873
+                  ],
+                  [
+                    7.779061625015056,
+                    45.97389182462213
+                  ],
+                  [
+                    7.779709168438949,
+                    45.97513662620066
+                  ],
+                  [
+                    7.7801786251818,
+                    45.976419685687006
+                  ],
+                  [
+                    7.780465462281492,
+                    45.97772864878242
+                  ],
+                  [
+                    7.780566904469132,
+                    45.97905091086851
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "kind": "geojson"
+          },
+          "basis": "1.5 km radius around established LV95 benchmark; encloses original 2 km crop and local camera targets. Selection intent, not global validation.",
+          "purpose": "Preserve Riffelhorn/Riffelsee benchmark and nearby landforms in future integration experiments"
+        }
+      },
+      "transitionSupport": {
+        "reason": "No geographic reconciliation tested or accepted. Same-level Swiss/common edge remains unsupported as a production join.",
+        "status": "unknown"
+      },
+      "validSupport": {
+        "status": "known",
+        "value": {
+          "area": {
+            "asset": {
+              "href": "${MERIDIAN_DATA_ROOT}/derived/atlas/riffelhorn/riffelhorn-regional-parents-v1/manifest.json",
+              "sha256": "5dbd4991aa3d413f526b158b084233c1f393491cc235eca6b02324066545427d"
+            },
+            "crs": {
+              "status": "known",
+              "value": {
+                "identifier": "EPSG:3857",
+                "name": "WGS 84 / Pseudo-Mercator"
+              }
+            },
+            "interpretation": "fields/z*.npz: nonzero counts mark supported subsets, fullCount marks complete cells; tile files mark complete delivered tiles. Tile envelopes include unsupported cells, not expanded Swiss coverage.",
+            "kind": "asset"
+          },
+          "basis": "Eight z14 cell-footprint checks plus finite source data; recursive exact support counts. Not production transition support or certified generic geometry.",
+          "purpose": "Diagnostic coarse summaries of complete or explicitly partial Swiss support"
+        }
+      }
+    },
+    "surface": {
+      "description": "Swiss source-derived terrain only, no AWS pixels or reconciliation.",
+      "kind": "dtm"
+    },
+    "version": {
+      "status": "known",
+      "value": "riffelhorn-regional-parents-v1"
+    },
+    "vertical": {
+      "from": {
+        "id": "swissalti3d-riffelhorn-support-selection",
+        "kind": "source",
+        "revision": {
+          "status": "known",
+          "value": "b24a4fdc7b378ba79d442d0ce216a031dfb95a6bc6eed5ad9c33be61175651f4"
+        }
+      },
+      "kind": "preserved",
+      "reference": {
+        "status": "known",
+        "value": {
+          "identifier": "EPSG:5728",
+          "name": "LN02 height"
+        }
+      }
+    }
+  },
+  "schemaVersion": 1
+}

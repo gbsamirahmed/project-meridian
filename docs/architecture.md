@@ -205,6 +205,16 @@ Per-level support, actual geometry/relief loading scales and parent compatibilit
 are now empirical requirements; no general hierarchy algorithm or production
 resolver is accepted. Production and independent analytical AWS remain unchanged.
 
+The [regional-parent diagnostic](atlas/regional-parent-diagnostic.md) subsequently
+derived Swiss coarse parents with explicit full/partial/absent support. At the
+same protected points, Swiss-derived13→Swiss14 reduces the source-change RMS from
+39.82 to0.71 m without altering fine terrain. Same-level common disagreement
+persists through10; complete regional tiles cease below12. The large first
+delivered source change moves to11→12 and geographic walls remain. A supported
+regional pyramid is justified for internal LOD consistency, while spatial/common
+handoff remains a separate unresolved problem. No general contract, source
+fusion, production dependency or height correction is accepted.
+
 The conceptual relationship is:
 
 ```text
