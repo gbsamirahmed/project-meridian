@@ -1,0 +1,250 @@
+{
+  "protocol": {
+    "baseline": "4130fa20b99ca921167cd5015fe38feb7a778aed",
+    "version": "terrain-scale-decomposition-v1",
+    "purpose": "Separate declared representation-scale residuals from persistent broad disagreement; diagnostic only, not causal error attribution or reconciliation.",
+    "basisZoom": 13,
+    "broadZooms": [
+      12,
+      11
+    ],
+    "products": {
+      "swiss": "1a44a0644de1bde73a3ba84d1b761dc0aa17d48cc971e5f6b5d2c14fb329d7ea",
+      "common": "8f002dcbdeceb6aa37cc9eeef9f2d2060193b1eff7922ddb1d0535a6b8030da2",
+      "regionalParents": "b92c9a3dfa05a87e4fcce4a6e6638efd2d9ab8e86537f52833ff1ed6def78672"
+    },
+    "operation": "Aligned recursive 2x2 area means on unencoded Swiss parent fields and decoded common z13; uniform Mercator cell area; identical complete-support restriction for both families. Cell-centred bilinear prolongation, requiring four complete parent neighbours. No Gaussian or extrapolation.",
+    "identity": "D=S-C; B=P(A(S))-P(A(C)); Rs=S-P(A(S)); Rc=C-P(A(C)); D=B+Rs-Rc. Also retain asymmetric P(A(S))-C. Cross terms prevent assigning an error percentage to detail.",
+    "support": "Fixed existing 10x10km; complete cells only; 200m source-edge guard; retained conservative stable candidates, >=45 degree steep non-ice, historical glacier union with 250m buffer, protected 1500m circle kept as separate strata. No exclusion from all-support statistics merely for high disagreement.",
+    "profilesLV95": {
+      "north-stable-context": [
+        [
+          2623000,
+          1095500
+        ],
+        [
+          2628000,
+          1095500
+        ]
+      ],
+      "riffelhorn-rough": [
+        [
+          2623500,
+          1092000
+        ],
+        [
+          2626500,
+          1092000
+        ]
+      ],
+      "south-change-context": [
+        [
+          2622000,
+          1089000
+        ],
+        [
+          2628500,
+          1089000
+        ]
+      ],
+      "west-boundary": [
+        [
+          2620200,
+          1090000
+        ],
+        [
+          2622500,
+          1090000
+        ]
+      ]
+    },
+    "profileStepM": 20,
+    "fineProfileZoom": 16,
+    "fineProfilePolicy": "Read only existing complete Swiss z16 delivery tiles touched by the fixed profiles; hash each. Compare bilinear pixel-centre samples against retained z13/broad components. Missing regional tile samples remain absent; no common padding. This supplementary ~1.66m delivery band does not establish independent 0.5m observations or a source transfer function.",
+    "limitations": "z13 basis is already generalised, ~13.28m local spacing; this isolates ~13->27/53m representation bands, not all 0.5m-grid Swiss information. Neither cut-off is an established Copernicus PSF or accuracy. Native LN02/EGM2008 remain distinct. No fitted registration, height transformation, source modification, new elevation, terrain generation or renderer evaluation.",
+    "stopping": "One decomposition with one declared scale sensitivity; specify one terminal reconciliation experiment, do not implement it. No further crop or glacier-ring search."
+  },
+  "protocolSha256": "43a551d88fdb2a9fb3e070faa7532b8201a848b22023d2ded6c8a5f7bf81e759",
+  "tools": {
+    "terrain_scale.py": "3079bec285c81a630316f682f139f72f0027932bc031ca3c53fdddcc869f4413",
+    "seam_corridor.py": "0687e323c37b4cdcb5321b4db642ba430169275574a4b3a59c28761c73933a98",
+    "regional_parents.py": "b00da57a0b2f8d1c1c0c4f5bf6b82b91a54c7998651fca359d200a3d9f5706ef",
+    "analyze_regional_parents.py": "e781392e2203df030ca1fa204a3e682d9908e32a5c791451f57914697d77629f",
+    "assess_global_reference.py": "cc126014654f0161821a634f3900313b6e31b234cbb42a971ab720ac8dd7fa7f"
+  },
+  "files": [
+    {
+      "path": "common.npy",
+      "sha256": "75b8cbaf42b305c8bdefff5ffb93f9236ce1cb3b652e9cd1edb7a0a0a66e32dc",
+      "bytes": 8388736
+    },
+    {
+      "path": "decomposition.png",
+      "sha256": "2f917bd4e0c3d82b1a99a98b52ce48c926fe1085de9c89d7a7684a18e2ceb395",
+      "bytes": 1562727
+    },
+    {
+      "path": "edge.npy",
+      "sha256": "2d2165d532057c3f7e2a7f967c7b3a6253b1e0db6644bd6372c0d51cb3200c0c",
+      "bytes": 8388736
+    },
+    {
+      "path": "glacier250.npy",
+      "sha256": "26d9e95ffbbf696ab2fd578698e1354bad814acc868c7b3523174aeca957364c",
+      "bytes": 1048704
+    },
+    {
+      "path": "measurements.json",
+      "sha256": "67abe9ff92f3dbd3ce69905c7405b86ae90341054f4dbcda5b0cd58386843418",
+      "bytes": 667807
+    },
+    {
+      "path": "profiles.png",
+      "sha256": "1f3f363a3958628f4ce2b59479a904a520b4c6446b1875c2d4091ac14485eccd",
+      "bytes": 435221
+    },
+    {
+      "path": "radius.npy",
+      "sha256": "08f7eb49c9fa6e77fd83b00b1427280f172896de771d682b9e88e40c3602f80e",
+      "bytes": 8388736
+    },
+    {
+      "path": "slope.npy",
+      "sha256": "19475410dfcd87e8312b131897bfe4647aaafd582e4547c028156c1fd6cf6cd4",
+      "bytes": 8388736
+    },
+    {
+      "path": "stable.npy",
+      "sha256": "098d18700ba08cb056ee0e90abc639046f3b044669ca8b2096a1c033a1096764",
+      "bytes": 1048704
+    },
+    {
+      "path": "swiss.npy",
+      "sha256": "8424eca223e87a8d84e62e2a2cad0ea1b421ca5e0639ee25155dd7bc09e71f9e",
+      "bytes": 8388736
+    },
+    {
+      "path": "z11_asymmetricSwissBroadMinusCommon.npy",
+      "sha256": "012981bdd15fe33e87c2dbbe577d37be32f540f98792c8dbe10f2e65e59c3aa8",
+      "bytes": 8388736
+    },
+    {
+      "path": "z11_broad.npy",
+      "sha256": "da322bdea81d4ba9da0a4d2b1fca7c2d9763e3b37059b336b3a4f0c03729f8d8",
+      "bytes": 8388736
+    },
+    {
+      "path": "z11_commonBroad.npy",
+      "sha256": "ea2cde4a1f4c8699443022d9e513e1ce4bf2640a141c11fd8365596db7695e38",
+      "bytes": 8388736
+    },
+    {
+      "path": "z11_commonDetail.npy",
+      "sha256": "74047fe17c46719f277ea19858777660d4712949826a140b3a6a725e7b993122",
+      "bytes": 8388736
+    },
+    {
+      "path": "z11_detailDifference.npy",
+      "sha256": "c778e7d1003efb3725d0c2985f0c61da7401bb7ab2428b613f09fd5d312f1aa5",
+      "bytes": 8388736
+    },
+    {
+      "path": "z11_raw.npy",
+      "sha256": "256b3de2234be849a37296ab4f5165303e5eaca511f88a9d95d6bd666c5e16e7",
+      "bytes": 8388736
+    },
+    {
+      "path": "z11_swissBroad.npy",
+      "sha256": "0264611a88edda51619e54c565be8745b372b76a74268a52c1d95a09000cf712",
+      "bytes": 8388736
+    },
+    {
+      "path": "z11_swissDetail.npy",
+      "sha256": "cf41bde018abc41a4d0f5b633b0a27037099fcb2b7167e45d8d6eaaac0aa41c4",
+      "bytes": 8388736
+    },
+    {
+      "path": "z11_valid.npy",
+      "sha256": "6d94b8d19480ace44461d3b088071e6f11f6c3594ec121e030fb9af9fec9d356",
+      "bytes": 1048704
+    },
+    {
+      "path": "z12_asymmetricSwissBroadMinusCommon.npy",
+      "sha256": "43f59b11a06824546e299da951719f0b5c9681a55c4ad31e4f293f4d97cfc70f",
+      "bytes": 8388736
+    },
+    {
+      "path": "z12_broad.npy",
+      "sha256": "a58e3b223ac1f45c5e5f972f3508f5606171b62dcc94dadde140afa11b8fc707",
+      "bytes": 8388736
+    },
+    {
+      "path": "z12_commonBroad.npy",
+      "sha256": "00d64d8b8ca37b923ca810b2b53677d8003551f1d8fa1e0a68eda10ada5c8625",
+      "bytes": 8388736
+    },
+    {
+      "path": "z12_commonDetail.npy",
+      "sha256": "1675a1fc8902d92c43e8c1720706fe8b25d37ebe7c4857255cbf8c14d6331862",
+      "bytes": 8388736
+    },
+    {
+      "path": "z12_detailDifference.npy",
+      "sha256": "1e61b0824daa7b95c8eb32b86dace658d02e3917361f3d1627d8c69649ec00cb",
+      "bytes": 8388736
+    },
+    {
+      "path": "z12_raw.npy",
+      "sha256": "256b3de2234be849a37296ab4f5165303e5eaca511f88a9d95d6bd666c5e16e7",
+      "bytes": 8388736
+    },
+    {
+      "path": "z12_swissBroad.npy",
+      "sha256": "85b56d0ecf813a7cb1c629f25e8723da832d1c1620053888ae1ac45c6828035e",
+      "bytes": 8388736
+    },
+    {
+      "path": "z12_swissDetail.npy",
+      "sha256": "cf1b7fd2ca0159f4badbe5717105e0bd8650cbc4b5470ae8cb8c5d4ec93eed9a",
+      "bytes": 8388736
+    },
+    {
+      "path": "z12_valid.npy",
+      "sha256": "6d94b8d19480ace44461d3b088071e6f11f6c3594ec121e030fb9af9fec9d356",
+      "bytes": 1048704
+    }
+  ],
+  "arrayHashes": {
+    "z12_swissBroad": "f423918628040271ecf8049ba20ee93614747444de0deaf652aa390ca103fbd0",
+    "z12_commonBroad": "939f54b5d6a4523ee03fa16c43f1e76f2ef5885bd3548073bdb6aae7537e3ed8",
+    "z12_raw": "a00b7643b430ac1291f74238403c4d2a445e9474ec660d63dd687b04fe8ab2c7",
+    "z12_broad": "bc6e8e434da83f966a5987452ce3710f108bf690d487ea44b5f2c700579eb6d0",
+    "z12_swissDetail": "5610c3c7b110699b73111dfda4003a0263cd7050e5285ff802eff5f078e00515",
+    "z12_commonDetail": "90e07301fd0da7204168ce5143f27fee99e108a54c8a4756b31496d5b0cbdf10",
+    "z12_detailDifference": "02d1a42fba4ef33e58aeaac4ae20767b8af53eb7c7652a87e548c21aa58edb8c",
+    "z12_asymmetricSwissBroadMinusCommon": "35839e311d9a46bf3295b39a7e05574304db778513d125a968b2c8e9c16064b7",
+    "z12_valid": "d2a1ea2a9f7042cefb8104ed4840494a01177421eb56538251b8ad46e6655899",
+    "z11_swissBroad": "767ef67fe6bb704abe540f3e968314ce92daf163063f62c082cb5d905904c524",
+    "z11_commonBroad": "b35463c7e82f34a34b34ecfeacaf2cd1ddfb6d9c638dd0c747afa2f66ec1f986",
+    "z11_raw": "a00b7643b430ac1291f74238403c4d2a445e9474ec660d63dd687b04fe8ab2c7",
+    "z11_broad": "26ecf210cd6ed9dfc7080a4dcec2bc59d73567879719ceaff517b5bb32a7bdcf",
+    "z11_swissDetail": "843f5cd39afbeb8f5f6100eeae72336a469b94c672e7183b32b0de4b4ec8eb29",
+    "z11_commonDetail": "f4172dd58ad6ccaf74d8c3a069fdba4a68c0aeca3d71631d0df3455764e46107",
+    "z11_detailDifference": "2c977f2494f3384ddc9925888a1b7ddaaba3903174cc4ba6fdac78ac2aa0c6e4",
+    "z11_asymmetricSwissBroadMinusCommon": "f0c5b3f8d79db26de4d22b39e8215bb0b2a1debb64a81602f71c4f08b710ef34",
+    "z11_valid": "d2a1ea2a9f7042cefb8104ed4840494a01177421eb56538251b8ad46e6655899",
+    "swiss": "7f515d23379f6ed53c8996332cdbc327c7cfe5cb170686d338bb930d0b0a1c70",
+    "common": "0377ba214c306a0a3d05795e5f2b3f0eb7b358c43e3a837563eeddc21c2fa20b",
+    "stable": "70da6ff371a1f6c871e42431539306ee3cb10c657418337de15cbf0ef8119fa7",
+    "slope": "59c43372ca5547886658a373f3c7705dffb912c76aa8e6e64fd81354e9784c2d",
+    "radius": "7a3bbbc35126a2409f30b10536b11d1c53fb8edc3affafd95a0105dfb8fe9e2f",
+    "edge": "74cf38784df027b49250dfa4b55a111a50e3d2b03bab87edb74c289ad5e7d013",
+    "glacier250": "edd9ea16ffe01c61c2f56bb3a4f51d04481dd021250e51c1bab37e5138dae8fa"
+  },
+  "products": {
+    "swiss": "1a44a0644de1bde73a3ba84d1b761dc0aa17d48cc971e5f6b5d2c14fb329d7ea",
+    "common": "8f002dcbdeceb6aa37cc9eeef9f2d2060193b1eff7922ddb1d0535a6b8030da2",
+    "regionalParents": "b92c9a3dfa05a87e4fcce4a6e6638efd2d9ab8e86537f52833ff1ed6def78672"
+  },
+  "identity": "f3ddeac64b54213f5380968e0cd60a9dda16e8bfdc5e48d715932a1fcef7e53c"
+}

@@ -1,0 +1,26 @@
+{
+  "baseline": "4130fa20b99ca921167cd5015fe38feb7a778aed",
+  "version": "terrain-scale-decomposition-v1",
+  "purpose": "Separate declared representation-scale residuals from persistent broad disagreement; diagnostic only, not causal error attribution or reconciliation.",
+  "basisZoom": 13,
+  "broadZooms": [12, 11],
+  "products": {
+    "swiss": "1a44a0644de1bde73a3ba84d1b761dc0aa17d48cc971e5f6b5d2c14fb329d7ea",
+    "common": "8f002dcbdeceb6aa37cc9eeef9f2d2060193b1eff7922ddb1d0535a6b8030da2",
+    "regionalParents": "b92c9a3dfa05a87e4fcce4a6e6638efd2d9ab8e86537f52833ff1ed6def78672"
+  },
+  "operation": "Aligned recursive 2x2 area means on unencoded Swiss parent fields and decoded common z13; uniform Mercator cell area; identical complete-support restriction for both families. Cell-centred bilinear prolongation, requiring four complete parent neighbours. No Gaussian or extrapolation.",
+  "identity": "D=S-C; B=P(A(S))-P(A(C)); Rs=S-P(A(S)); Rc=C-P(A(C)); D=B+Rs-Rc. Also retain asymmetric P(A(S))-C. Cross terms prevent assigning an error percentage to detail.",
+  "support": "Fixed existing 10x10km; complete cells only; 200m source-edge guard; retained conservative stable candidates, >=45 degree steep non-ice, historical glacier union with 250m buffer, protected 1500m circle kept as separate strata. No exclusion from all-support statistics merely for high disagreement.",
+  "profilesLV95": {
+    "north-stable-context": [[2623000,1095500],[2628000,1095500]],
+    "riffelhorn-rough": [[2623500,1092000],[2626500,1092000]],
+    "south-change-context": [[2622000,1089000],[2628500,1089000]],
+    "west-boundary": [[2620200,1090000],[2622500,1090000]]
+  },
+  "profileStepM": 20,
+  "fineProfileZoom": 16,
+  "fineProfilePolicy": "Read only existing complete Swiss z16 delivery tiles touched by the fixed profiles; hash each. Compare bilinear pixel-centre samples against retained z13/broad components. Missing regional tile samples remain absent; no common padding. This supplementary ~1.66m delivery band does not establish independent 0.5m observations or a source transfer function.",
+  "limitations": "z13 basis is already generalised, ~13.28m local spacing; this isolates ~13->27/53m representation bands, not all 0.5m-grid Swiss information. Neither cut-off is an established Copernicus PSF or accuracy. Native LN02/EGM2008 remain distinct. No fitted registration, height transformation, source modification, new elevation, terrain generation or renderer evaluation.",
+  "stopping": "One decomposition with one declared scale sensitivity; specify one terminal reconciliation experiment, do not implement it. No further crop or glacier-ring search."
+}

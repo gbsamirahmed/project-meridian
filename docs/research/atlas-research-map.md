@@ -134,8 +134,26 @@ then inspected retained whole inventories beyond the crop. The exclusion network
 is censored west/east/north even in a 26×18 km inventory window and reaches the
 national boundary south, including recent-only unbuffered ice. National territory
 is not exact elevation support. No minimum/robust acquisition extent is established;
-no new terrain is acquired. A bounded transboundary change/valid-support audit is
-the next prerequisite, not another larger square or a transition algorithm.
+no new terrain is acquired. Its proposed transboundary audit is retained as a
+historical direction, superseded by the bounded information-scale assessment below.
+
+
+The [information-scale/broad-surface diagnostic](../atlas/terrain-scale-decomposition.md)
+(2026-10-05) separates expected prediction residuals from persistent broad terrain
+family disagreement using identical averaging/prediction operations. Whole-support
+RMS20.35m becomes broad19.94m at approximately27m spacing; glacier/change broad
+RMS remains27.18m. Finer profiles confirm valuable regional structure alongside
+persistent broad offsets. This is band decomposition, not accuracy/error attribution.
+
+A closed stable ring is now a preferred comparison opportunity, not a universal
+integration requirement. Stable fitting support, temporal masks and source priority
+remain necessary evidence where relevant. No ring hunting or new acquisition follows.
+One [terminal two-band representation experiment](../atlas/riffelhorn-final-reconciliation-experiment.json)
+is specified, unimplemented: preserved regional interior, explicit synthetic broad
+accommodation and separate detail taper within existing support, native references
+honestly heterogeneous, independently assessed numerical/visual continuity. Regardless
+of success/fundamental failure, record limitations and proceed to the Terrain Hierarchy
+Contract in a separate task. No final contract or generic resolver is defined here.
 
 ## Evidence classes
 

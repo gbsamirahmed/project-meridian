@@ -3405,3 +3405,34 @@ Offline tooling/tests/plan/results/hash records retained; compressed fields/map
 external. Four outputs reproduce exactly. 54 Python and 40 focused Node tests,
 references/metadata/diff checks pass; Windows text hashing corrected to UTF-8.
 No runtime/dependency/UI change; no broader app build needed for isolated research.
+
+### 2026-10-05 — Separate Atlas detail bands from broad terrain disagreement
+
+Bounded design/diagnostic from `4130fa20`: identical recursive Mercator-area means
+and cell-centred prediction on immutable Swiss/common z13, z12 plus z11 sensitivity;
+42 hash-verified fine Swiss profile tiles add smaller-scale context. No terrain
+transition, acquisition, height/reference/registration operation or runtime change.
+
+Whole-support raw/broad z12 RMS20.35/19.94m; stable candidates5.56/5.06m;
+steep non-ice16.32/14.34m; change proxy27.62/27.18m. Decomposition is useful but
+broad mismatch persists. Residual bands/cross terms are retained; no causal error
+percentage or accuracy claim. Same-family LOD evidence remains0.71m refinement,
+not translation/accuracy. Closed stable enclosure is preferred rather than universal;
+stable support still constrains physically justified fitting and validation.
+
+One terminal protected-priority two-band visual representation test is specified
+in `docs/atlas/riffelhorn-final-reconciliation-experiment.json`, not implemented.
+Existing source products/pyramids remain immutable; synthetic transition would
+have explicit signed operator/support/change metadata and heterogeneous native
+height semantics. Fixed1.5km protected/4km outer footprint, separate broad/detail
+controls, numerical deformation guards plus renderer/navigation failure tests.
+No width search or additional crop. After its outcome, freeze the hierarchy contract
+with limitations in a separate task; no generic implementation begins here.
+
+60 Python tests and27 focused Node model/policy/record tests pass. All28 diagnostic
+files (~183MB per run, external) reproduce exactly; input/used-tile hashes rechecked;
+independent norm/scalar statistics and closure validated. Documentation/reference
+and diff checks complete before commit. No broad app/build/lint/TypeScript rerun
+because no runtime, build, package or TypeScript changes. Production AWS visual and
+independent analytical z15, strengthened IGOR, exaggeration1.45, Weather, Traverse,
+satellite/projection/lifecycle remain unchanged.
