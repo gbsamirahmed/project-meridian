@@ -89,3 +89,10 @@ export function validateTerrainProduct(product: TerrainProduct): string[] {
   }
   return errors;
 }
+
+/** Validate an owned support/query geometry without manufacturing a terrain product. */
+export function validateTerrainSpatialArea(area: SpatialArea): string[] {
+  const errors: string[] = [];
+  checkArea(area, errors, 'spatial area');
+  return errors;
+}

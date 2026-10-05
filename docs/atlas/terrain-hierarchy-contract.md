@@ -20,7 +20,7 @@ Atlas must be able to describe common terrain, zero or more regional families, t
 
 **EXTERNAL EVIDENCE:** the existing [metadata ADR](terrain-source-product-architecture.md#bounded-external-metadata-review) retains STAC identity/assets/time/projection, GDAL raster semantics, PROV lineage and CRS identifiers. The two retained methods reviews above distinguish DEM production from graphics-only continuity. This task adds no standards-compliance claim or new literature survey.
 
-**RESEARCH HYPOTHESES / DIRECTIONS:** the implementation and second-region plans below remain unimplemented. The contract permits testing them without representing unresolved scientific or rendering questions as solved.
+**RESEARCH HYPOTHESES / DIRECTIONS:** the declaration contract is now partially implemented by the [first runtime slice](terrain-runtime-selection.md); the second-region plan remains unimplemented. The contract permits testing them without representing unresolved scientific or rendering questions as solved.
 
 ## Entities and terminology
 
@@ -122,7 +122,9 @@ The contract preserves these unresolved limits:
 - **Rendering:** close-camera clipping/faceting occurs in matched pure-common controls; cause unknown and separate from hierarchy declarations.
 - **Coverage/geometry:** local common missing lower/global perimeter/ocean/polar support persists. True 3D/overhang/photogrammetric adapters remain future work.
 
-## Bounded first implementation — not performed
+## Bounded first implementation — runtime slice implemented
+
+Status: [registry, pure selector and heightfield delivery adapter](terrain-runtime-selection.md) implement the bounded slice. Production resolves the same AWS service through an explicit legacy compatibility policy; no regional or transition product is adopted. The following frozen plan remains the scope boundary.
 
 1. Register one common heightfield family and zero or more regional heightfield pyramids using these records, pinned revisions and explicit per-level support. No new fusion operator.
 2. Implement a pure deterministic selector over explicit requested level/footprint and declared eligibility/order. Return product/revision, family/level, derivation/overzoom, support, fallback reason and within-family versus handoff classification. Unknown/partial unsupported requests decline honestly. Test tie-breaking, empty regional sets, missing child/parent, missing common and revision changes.
@@ -153,4 +155,4 @@ Acceptance: register it without Switzerland-specific code/schema changes; resolv
 
 Code lives alongside the earlier foundation in `src/atlas/terrain/metadata/terrainHierarchy.ts`, `terrainHierarchyValidation.ts` and `terrainHierarchyExamples.ts`. Existing `terrainMetadata.ts` gains only compatible optional height/time detail. Validators check owned typed declarations, exact revision references, parent graphs, support claims, explicit synthetic permission/maps and immutable reuse; they are not an untrusted-input parser, geometric containment engine or resolver.
 
-Focused validation: `node --test scripts/atlas/test_terrain_hierarchy_contract.mjs scripts/atlas/test_terrain_metadata.mjs scripts/atlas/test_terrain_policies.mjs`. Type/lint and application-only bundling require no experimental assets. No external terrain was read, regenerated or acquired. No further Riffelhorn elevation-method experiment is performed or recommended. The next separate task should implement the bounded slice, followed by the second-region proof, under a new authorization; neither begins here.
+Focused validation: `node --test scripts/atlas/test_terrain_hierarchy_contract.mjs scripts/atlas/test_terrain_metadata.mjs scripts/atlas/test_terrain_policies.mjs`. Type/lint and application-only bundling require no experimental assets. No external terrain was read, regenerated or acquired. No further Riffelhorn elevation-method experiment is performed or recommended. The bounded runtime slice is now implemented; the next separate task is the Wales/Tryfan proof under new authorization. No reconciliation or further Riffelhorn elevation-method work follows.

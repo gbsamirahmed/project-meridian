@@ -46,12 +46,13 @@ test('height transformation is explicit, with unknown accuracy and independent s
   assert.equal(diagnostic.spatial.transitionSupport.status, 'unknown');
 });
 
-test('predeclared protocol remains frozen and production configuration has no metadata dependency', () => {
+test('predeclared protocol remains frozen and production has no experimental reference dependency', () => {
   const hash = createHash('sha256').update(readFileSync('docs/atlas/global-reference-protocol.json')).digest('hex');
   assert.equal(hash, acquisition.protocolSha256);
   for (const path of ['src/atlas/map/visualTerrainConfig.ts', 'src/atlas/terrain/analyticalElevationConfig.ts']) {
     const source = readFileSync(path, 'utf8');
-    assert.match(source, /elevation-tiles-prod\/terrarium/);
+    if (path.includes('analytical')) assert.match(source, /elevation-tiles-prod\/terrarium/);
+    else assert.match(source, /productionTerrainRegistry/);
     assert.doesNotMatch(source, /global-reference|metadata\//);
   }
 });

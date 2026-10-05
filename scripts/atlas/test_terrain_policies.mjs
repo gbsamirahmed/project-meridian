@@ -331,3 +331,35 @@ test('support evaluation changes only delivery; no fallback or production/analyt
   const producer=readFileSync(new URL('./riffelhorn_support.py',import.meta.url),'utf8');
   assert.doesNotMatch(producer,/AwsCache|aws[.]at_tile|adaptive_width|weights[(]/);
 });
+
+test('generic AWS path matches legacy lifecycle calls through zoom, satellite and style restoration', async (context) => {
+  const legacy = { tileTemplate: AWS_TERRARIUM, encoding: 'terrarium', tileSize: 256,
+    geometryMaxZoom: 14, reliefMaxZoom: 15, attribution: CREDITS };
+  const baseline = (await modules(context, legacy)).layers;
+  const current = (await modules(context)).layers;
+  function run(api) {
+    const map = mapHarness(4), calls = [], snapshots = [];
+    for (const name of ['addSource', 'addLayer', 'setSky', 'moveLayer', 'setPaintProperty', 'setTerrain', 'setProjection']) {
+      const original = map[name].bind(map);
+      map[name] = (...args) => { calls.push([name, structuredClone(args)]); return original(...args); };
+    }
+    const snapshot = label => snapshots.push({ label, sources: [...map.sources], layers: [...map.layers],
+      sky: map.sky, terrain: map.getTerrain(), projection: map.getProjection() });
+    api.configurePlanetAndTerrain(map); snapshot('initial-globe');
+    for (const zoom of [5.49, 5.5, 11.4, 18, 4, 5.5]) {
+      map.setZoom(zoom); api.updateTerrainActivation(map); api.updateTerrainActivation(map); snapshot(`zoom-${zoom}`);
+    }
+    api.applyTerrainLayerState(map, 'satellite', true); snapshot('satellite');
+    api.applyTerrainLayerState(map, 'terrain', false); snapshot('terrain-restored');
+    map.sources.clear(); map.layers.clear(); map.setTerrain(null);
+    api.configurePlanetAndTerrain(map); api.applyTerrainLayerState(map, 'satellite', true); snapshot('style-restored');
+    return { calls, snapshots };
+  }
+  const expected = run(baseline), actual = run(current);
+  assert.deepEqual(actual, expected);
+  // Explicit ordering checks also live in updateTerrainActivation; equality includes every call and guard.
+  assert.ok(actual.calls.some(([name,args])=>name==='setTerrain' && args[0]?.exaggeration===1.45));
+  assert.ok(actual.calls.some(([name,args])=>name==='setProjection' && args[0].type==='globe'));
+  assert.ok(actual.calls.some(([name,args], i)=>name==='setProjection' && args[0].type==='globe' && actual.calls[i-1]?.[0]==='setTerrain' && actual.calls[i-1][1][0]===null));
+  assert.ok(actual.calls.some(([name,args], i)=>name==='setTerrain' && args[0]!==null && actual.calls[i-1]?.[0]==='setProjection' && actual.calls[i-1][1][0].type==='mercator'));
+});

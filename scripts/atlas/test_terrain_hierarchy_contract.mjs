@@ -167,10 +167,10 @@ test('generic second-region fixture requires no Swiss heights, geography, transi
   assert.deepEqual(validateTerrainHierarchy(copy), []);
 });
 
-test('contract modules remain isolated from production and analytical elevation', () => {
+test('visual compatibility uses the contract while analytical elevation and map lifecycle stay independent', () => {
   const visual = readFileSync('src/atlas/map/visualTerrainConfig.ts', 'utf8');
   const analytical = readFileSync('src/atlas/terrain/analyticalElevationConfig.ts', 'utf8');
-  assert.match(visual, /elevation-tiles-prod\/terrarium/);
+  assert.match(visual, /productionTerrainRegistry/);
   assert.match(analytical, /elevation-tiles-prod\/terrarium/);
   assert.match(analytical, /samplingZoom: 15/);
   for (const path of ['src/atlas/map/AtlasMap.ts', 'src/atlas/map/terrainLayers.ts',

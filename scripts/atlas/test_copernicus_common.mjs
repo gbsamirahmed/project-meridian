@@ -31,7 +31,7 @@ test('evaluation changes both visual source contracts and preserves presentation
 });
 test('production visual and analytical AWS policies remain independent and untouched',()=>{
   for(const p of ['src/atlas/map/visualTerrainConfig.ts','src/atlas/terrain/analyticalElevationConfig.ts']){
-    const source=readFileSync(p,'utf8');assert.match(source,/elevation-tiles-prod\/terrarium/);assert.doesNotMatch(source,/copernicus|metadata\//i);
+    const source=readFileSync(p,'utf8');assert.match(source,p.includes('visualTerrainConfig')?/productionTerrainRegistry/:/elevation-tiles-prod\/terrarium/);assert.doesNotMatch(source,/copernicus|metadata\//i);
   }
   assert.match(readFileSync('src/atlas/terrain/analyticalElevationConfig.ts','utf8'),/samplingZoom: 15/);
   assert.doesNotMatch(readFileSync('vite.config.ts','utf8'),/copernicus_common/);

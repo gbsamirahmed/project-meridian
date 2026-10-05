@@ -231,7 +231,10 @@ now freezes declarations for common/regional families, coherent regional pyramid
 per-level spatial/scale support, exact product revisions, height/time semantics,
 optional derived transitions, scoped validation evidence and explicit fallback.
 It extends the existing Atlas metadata foundation in `atlas/terrain/metadata`;
-no normal runtime imports it and no resolver or composition algorithm is implemented.
+a [small registry, pure selector and MapLibre adapter](atlas/terrain-runtime-selection.md)
+now resolve current AWS visual delivery without changing its output. Regional
+eligibility, same-family parent reuse and explicit common/unavailable fallback are
+tested against canonical metadata; composition remains unimplemented.
 
 Within-family LOD refinement is distinct from source-family handoff. Synthetic
 terrain requires recoverable processing/contribution identity; numerical continuity
@@ -241,7 +244,8 @@ limitation remain explicit. Source products stay immutable; rendering owns portr
 Analytical elevation, Weather/Traverse and production AWS remain independent and unchanged.
 
 The contract contains bounded first-implementation and Wales/Tryfan proof plans.
-Neither begins at this checkpoint. Earlier investigation summaries above retain
+The runtime slice is implemented; the bounded Wales/Tryfan proof remains next.
+Earlier investigation summaries above retain
 their historical decisions; no further Riffelhorn elevation-method experiment follows.
 
 The conceptual relationship is:

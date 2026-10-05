@@ -52,7 +52,7 @@ test('evaluation changes only both visual DEM delivery contracts, not relief pai
 
 test('production policies and startup remain independent of the experiment',()=>{
   for(const file of ['src/atlas/map/visualTerrainConfig.ts','src/atlas/terrain/analyticalElevationConfig.ts']){
-    const text=readFileSync(file,'utf8');assert.match(text,/elevation-tiles-prod\/terrarium/);assert.doesNotMatch(text,/terrain_hierarchy|copernicus|metadata\//i);
+    const text=readFileSync(file,'utf8');assert.match(text,file.includes('visualTerrainConfig')?/productionTerrainRegistry/:/elevation-tiles-prod\/terrarium/);assert.doesNotMatch(text,/terrain_hierarchy|copernicus|metadata\//i);
   }
   assert.match(readFileSync('src/atlas/terrain/analyticalElevationConfig.ts','utf8'),/samplingZoom: 15/);
   assert.match(readFileSync('src/atlas/map/terrainLayers.ts','utf8'),/TERRAIN_EXAGGERATION = 1\.45/);

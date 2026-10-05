@@ -3506,3 +3506,49 @@ support/height/scale/family/provenance/fallback invariants and final diff are ch
 Normal tests require no external research assets. Production visual AWS, independent
 analytical AWSz15, IGOR/exaggeration1.45, Weather, Traverse, satellite and map lifecycle
 remain unchanged. No further Riffelhorn elevation-method experiment is recommended.
+
+## 2026-10-05 — First Atlas terrain hierarchy runtime slice
+
+Confirmed clean main at `53d75f2`, fetched origin and verified divergence0/0.
+Implemented the frozen contract's bounded path: canonical metadata registration,
+conservative point/footprint eligibility, declared scale ordering, same-source-family
+regional parent reuse, explicit common/unavailable fallback and a small MapLibre
+heightfield delivery adapter. Registration snapshots are validated/frozen; duplicate
+identities, broken revisions/parents, cycles and conflicting scale catalogues fail.
+Prepared immutable reuse can be checked against a previous registry.
+
+Selection exposes exact product/family/representation/level identity, information
+ceiling, derivation/overzoom, composition-policy reference and an ordered trace.
+Direct selection, within-family LOD and source-family handoff remain distinct.
+Prepared transitions require explicit enablement/request; no processing operator runs.
+Partial/unknown regional support is declined, and unresolved asset geometries remain
+unknown unless an owned assessed geometry is supplied. No projection/GIS engine or
+viewport-aware resolver is added. Offline partial Swiss parent diagnostics remain
+registered without falsely becoming raster-deliverable levels.
+
+Extracted the existing canonical AWS record unchanged from research examples,
+retaining compatibility re-export. Production registers only that external common
+service. An explicit legacy operational policy preserves unknown assessed support
+rather than inventing a validity polygon: selection reports legacy-unassessed and
+retains unknown provenance/height/information semantics. Geometry z14 and relief z15
+resolve through the generic selector/adapter to the exact prior configuration.
+The existing MapLibre lifecycle, IGOR/exaggeration1.45, satellite and projection code
+are untouched. Analytical AWS256/z15, Weather and Traverse remain independent.
+
+The [runtime record](atlas/terrain-runtime-selection.md) documents ownership, API,
+policy/error semantics, limitations and reproduction. Contract edits record partial
+implementation status only; no frozen entity/schema redesign was required. No
+external terrain was read/acquired/regenerated, no Riffelhorn method experiment or
+reconciliation was performed. The bounded Wales/Tryfan second-source proof remains
+next, not part of this task.
+
+Validation:19 focused runtime tests and one added matched lifecycle test;56 combined
+runtime/model/policy tests; application suite212 passed with one existing optional
+external-data skip. Exact legacy/generic source configurations and all lifecycle
+calls/snapshots match across zoom, satellite and style restoration. ESLint,
+TypeScript, application-only Vite bundle, metadata/local references and final diff
+checks pass. A concurrent build/test run had two transient test-file startup
+failures; isolated reruns and the full four-process suite passed. Cause not
+established; no assertion or application defect was reproduced. Existing
+large-chunk warning remains. Normal CI/startup requires no
+experimental terrain or local evaluation service.
