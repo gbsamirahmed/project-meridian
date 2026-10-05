@@ -3641,3 +3641,27 @@ Weather/Traverse/lifecycle remain unchanged. No external-data CI requirement.
 Elevation remains closed. Next: one bounded same-footprint acquisition/multiview-
 support feasibility assessment; no correction, frame acquisition or reconstruction
 starts automatically.
+
+
+## 2026-10-06 — Riffelhorn acquisition/multiview-support feasibility
+
+After 1de9e44, completed a metadata-only assessment on the unchanged 4 km² benchmark
+and exact steep/summit/dark patches. [Record](atlas/riffelhorn-observation-support.md):
+PARTIAL — COVERAGE WITHOUT SUFFICIENT GEOMETRY. Official 2023 strip polygons cover
+the targets but do not expose calibrated per-line trajectories/rays or exact times.
+The separately retained 2026 frame CSV publishes poses but has no local camera centre.
+Normal/aspect distributions and orthographic stretch are reproduced with native
+frozen geometry; no incidence or visibility claim is invented.
+
+Added one offline metadata/normal/footprint diagnostic and eight synthetic tests;
+raw lightweight metadata and map remain in meridian-data, small identities/results
+in Git. Verified source/product/geometry/production hashes, catalogue checksum, CRS,
+normal signs, repeated output hashes, JSON/local references and final diff. No shared
+runtime change or external-data CI dependency; application checks are not rerun.
+An upstream rasterio/NumPy shape-deprecation warning remains non-failing.
+
+Production terrain/analytical elevation, MapTiler, IGOR, exaggeration 1.45,
+Weather/Traverse/projection/lifecycle and the source-derived baseline are unchanged.
+No aerial frames, correction/reconstruction, texture product or elevation research.
+Next is one precisely scoped metadata-only swisstopo query; no contact sent or image
+order placed, and no frame-acquisition set justified until that geometry is supplied.

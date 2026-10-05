@@ -1,6 +1,6 @@
 # Atlas research map and fresh-session handoff
 
-Updated 2026-10-05. The 012A–012G terrain-research epoch is **closed** at the
+Updated 2026-10-06. The 012A–012G terrain-research epoch is **closed** at the
 Lab 012G evidence checkpoint `abf95bcfb50c681244a146626565a471ba791418`.
 This index records knowledge and research status, not a roadmap, new Lab or
 production architecture. It is the starting point for humans and fresh tooling.
@@ -19,9 +19,11 @@ provenance primitives do not turn heights and radiometry into one universal mode
 The [SWISSIMAGE/Riffelhorn source-derived baseline](../atlas/swissimage-source-derived-baseline.md)
 has completed that frozen comparison. It establishes useful regional detail and
 source-darkness/stretch limits; opposed-close Atlas probes do not show the earlier
-Unreal black-crushing behavior. Its one next task is bounded acquisition/multiview-
-support feasibility within the same four-tile footprint. Correction, illumination
-recovery, frame acquisition/reconstruction and appearance runtime remain deferred.
+Unreal black-crushing behavior. The subsequent [observation-support assessment](../atlas/riffelhorn-observation-support.md)
+is PARTIAL: footprint coverage exists without calibrated target rays or visibility.
+The one next prerequisite is a metadata-only swisstopo query for the retained
+September 2023 ADS strip. Correction, illumination recovery, frame acquisition/
+reconstruction and appearance runtime remain deferred.
 This is a new explicitly bounded programme, not a reopened 012A–012G Lab.
 
 ## Read before changing Atlas
@@ -261,3 +263,15 @@ section with date and sources. Preserve historical Lab identities and historical
 knowledge. Keep this area to an index and one terrain literature record until real
 maintenance needs justify another document. External references were checked on
 2026-10-03; recheck living standards, release availability and licences before use.
+
+## 2026-10-06 — bounded Riffelhorn observation-support assessment
+
+[Metadata feasibility](../atlas/riffelhorn-observation-support.md) is **PARTIAL —
+COVERAGE WITHOUT SUFFICIENT GEOMETRY**. Two published 2023 ADS strip footprints cover
+all frozen steep/summit/dark patches. Public records provide no target-specific
+calibrated scan-line pose/rays; visibility and improved incidence are unknown. The
+separate 2026 camera catalogue has no local centre in this snapshot. No pixels,
+correction, reconstruction or benchmark expansion. One exact next prerequisite:
+a metadata-only swisstopo query for strip 20230907_1035_12504's target-specific
+forward/nadir/backward geometry, timing and calibration. No speculative image
+acquisition or additional appearance branch; elevation remains closed.

@@ -270,8 +270,13 @@ source/display probes demonstrate useful regional appearance, persistent steep
 projection limitations and unknown acquisition geometry/Sun. The traceable opposed
 close patch does not reproduce Unreal black crushing. Experimental preparation and
 delivery are isolated; no AppearanceHierarchy runtime or correction was introduced.
-The next bounded task is acquisition/multiview-support feasibility for the same
-footprint, not automatic frame acquisition or reconstruction.
+The bounded [acquisition/multiview-support assessment](atlas/riffelhorn-observation-support.md)
+is PARTIAL: two 2023 strip footprints cover the frozen patches, but actual calibrated
+scan-line geometry and visibility remain unavailable. Newer frame metadata is
+separate and supplies no local candidate in the assessed catalogue. The one next
+prerequisite is a metadata-only swisstopo query, with no image order. Observation
+provenance must accommodate time-dependent pushbroom geometry as well as frame
+poses; no appearance runtime or TerrainHierarchy change is introduced.
 
 The conceptual relationship is:
 
