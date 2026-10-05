@@ -3324,3 +3324,29 @@ startup/CI dependency on external terrain. Regional pyramid is a supported conce
 not a final hierarchy contract. Suggested smallest next investigation: one
 support-aware same-level boundary patch assessment preserving the interior.
 No spatial reconciliation, additional source acquisition or next phase started.
+
+## 2026-10-05 — Spatial terrain reconciliation research/design review
+
+Completed a [bounded primary-literature and production-practice review](atlas/spatial-terrain-reconciliation-research.md)
+from checkpoint `3e54ca8`. The problem was frozen before external review: related
+Swiss parents address internal LOD, while independent DTM/DSM source disagreement,
+height semantics, registration, epoch and spatial support remain distinct.
+Reviewed co-registration, height transformations, priority mosaicking, weighted
+fusion, seam selection, constrained transitions, national production examples
+and nested rendering. Reference retrieval limits are recorded explicitly.
+
+No new diagnostic, correction, blend, terrain hierarchy or external-data access
+was needed. Existing stable support is uneven; a common frame does not explain
+the much larger terrain discrepancy. The next proposed bounded experiment is a
+same-level, support-constrained seam-corridor feasibility assessment with no height
+modification. The 10 km asset is sufficient to attempt that assessment, not proven
+sufficient for a defensible closed transition. Protected terrain, source identity
+and partial support remain constraints. No generic contract is adopted.
+
+Documentation/navigation only; production AWS, analytical AWS z15, IGOR,
+exaggeration, Weather, Traverse, satellite and lifecycle remain unchanged.
+Validation: all 33 focused terrain-policy/model/hierarchy Node tests passed;
+132 local documentation links/anchors, UTF-8, retained numerical claims and diff
+checks passed. Implementation/configuration diff is empty. No lint, TypeScript,
+full application suite, build, browser run or external checksum pass was rerun
+for these documentation-only changes.

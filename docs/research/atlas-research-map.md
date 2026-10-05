@@ -1,6 +1,6 @@
 # Atlas research map and fresh-session handoff
 
-Updated 2026-10-04. The 012A–012G terrain-research epoch is **closed** at the
+Updated 2026-10-05. The 012A–012G terrain-research epoch is **closed** at the
 Lab 012G evidence checkpoint `abf95bcfb50c681244a146626565a471ba791418`.
 This index records knowledge and research status, not a roadmap, new Lab or
 production architecture. It is the starting point for humans and fresh tooling.
@@ -108,6 +108,16 @@ tiles are not invented and the spatial edge remains. LOD and spatial continuity
 are distinct evidenced problems. A regional-pyramid concept is supported, but
 no final hierarchy contract or production adoption follows. The smallest next
 direction is one bounded support-aware same-level boundary assessment.
+
+The [spatial reconciliation research/design review](../atlas/spatial-terrain-reconciliation-research.md)
+then separates datum accounting, demonstrated registration error, surface/epoch
+differences, spatial source reconciliation and render-time continuity. Established
+priority/weighted mosaicking does not justify a broad arbitrary deformation of
+protected terrain. Existing support permits a next **seam-corridor feasibility
+diagnostic**, not a blend: examine connected, supported routes and bottlenecks
+around the protected interior before deriving another surface. Sparse stable
+support and glacier sectors may defeat that test. No terrain, hierarchy algorithm,
+height correction or production behavior changed; this direction remains untested.
 
 ## Evidence classes
 

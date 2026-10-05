@@ -391,6 +391,28 @@ justified hierarchy is a research model, not a required architecture. **M:** non
 of the Riffelhorn Labs implemented planet-scale streaming. **Open:** real product
 scope, client limits, acceptable errors and heterogeneous source rights/provenance.
 
+## DEM mosaicking, registration and spatial reconciliation
+
+The [bounded spatial reconciliation review](../../atlas/spatial-terrain-reconciliation-research.md)
+contains primary references, retrieval limits and the reduced method matrix.
+**E:** Nuth & Kääb-style registration addresses demonstrated shifts; stable-terrain
+fits need spatial validation and can extrapolate badly onto changing terrain.
+Datum transformation is distinct from empirical bias correction. GDAL priority
+mosaics, ASP priority blending, GRASS adaptive local updates and USGS outward
+topobathymetric fusion represent different source-preservation policies, not one
+universal seam solution. Frequency/uncertainty fusion needs a supported error
+model. Image seam selection is relevant prior art, but an Alpine elevation
+seam-cost model remains an adaptation requiring evaluation.
+
+**M:** regional Swiss parents substantially improve internal LOD coherence;
+same-level spatial disagreement remains. Earlier feathering reduced steps by
+deforming substantial terrain, not by establishing the correct elevation.
+**H / status:** test support-constrained seam-corridor feasibility before another
+transition surface. Existing 10 km support permits this diagnostic but does not
+certify a closed transition or a correction model. Keep world-model reconciliation,
+derived representation construction and rendering continuity distinct. No new
+algorithm, terrain product or general hierarchy contract is adopted.
+
 ## Swisstopo 2026 opportunity
 
 **Official sources (E):** swisstopo, 23 April 2026,

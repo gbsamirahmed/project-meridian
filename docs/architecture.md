@@ -215,6 +215,15 @@ regional pyramid is justified for internal LOD consistency, while spatial/common
 handoff remains a separate unresolved problem. No general contract, source
 fusion, production dependency or height correction is accepted.
 
+The [spatial reconciliation research review](atlas/spatial-terrain-reconciliation-research.md)
+keeps three questions distinct: elevation/reference reconciliation, construction
+of a derived terrain representation, and render-time continuity. A regional
+pyramid supports internal LOD but does not establish a spatial join. Common
+height semantics and an accepted registration/error model must be explicit before
+claiming numerical fusion; no correction or blend is accepted here. The suggested
+next seam-corridor feasibility diagnostic is research, not a production seamline
+or hierarchy contract. Current metadata is sufficient without extension.
+
 The conceptual relationship is:
 
 ```text
