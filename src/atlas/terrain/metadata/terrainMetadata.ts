@@ -23,6 +23,19 @@ export interface AssetReference {
   selector?: string;
 }
 
+/** Optional vertical detail; absence remains unknown, never inferred from a dataset name. */
+export interface HeightReference extends ReferenceSystem {
+  heightKind?: 'ellipsoidal' | 'orthometric' | 'normal' | 'national-height-system' | 'other';
+  geoidModel?: Knowledge<ReferenceSystem>;
+}
+
+export interface TerrainTemporalSupport {
+  epochs: Knowledge<{ description: string; start?: string; end?: string; heterogeneous: boolean }>;
+  /** Optional spatial epochs/change evidence; a change mask is not a source-error mask. */
+  epochMap?: AssetReference;
+  change?: { mask: AssetReference; classification: string; basis: string; limitations: string };
+}
+
 export interface EntityReference {
   kind: 'source' | 'product';
   id: string;
@@ -78,11 +91,12 @@ export interface TerrainSource {
   revision: Knowledge<string>;
   surface: TerrainSurface;
   horizontalReference: Knowledge<ReferenceSystem>;
-  verticalReference: Knowledge<ReferenceSystem>;
+  verticalReference: Knowledge<HeightReference>;
   elevationUnit: Knowledge<string>;
   resolution: ResolutionInformation;
   /** Acquisition period/basis, independent of release, download and build dates. */
   acquisition: Knowledge<{ description: string; start?: string; end?: string }>;
+  temporal?: TerrainTemporalSupport;
   coverage: { scope: 'dataset' | 'retained-input-selection'; area: Knowledge<SpatialArea> };
   nodata: Knowledge<string>;
   quality?: Knowledge<string>;
@@ -92,18 +106,18 @@ export interface TerrainSource {
 }
 
 export interface VerticalTransformation {
-  from: ReferenceSystem;
-  to: ReferenceSystem;
+  from: HeightReference;
+  to: HeightReference;
   method: string;
   accuracy: Knowledge<string>;
   limitations: string;
 }
 
 export type ProductVerticalSemantics =
-  | { kind: 'known'; reference: ReferenceSystem }
-  | { kind: 'preserved'; from: EntityReference; reference: Knowledge<ReferenceSystem> }
+  | { kind: 'known'; reference: HeightReference }
+  | { kind: 'preserved'; from: EntityReference; reference: Knowledge<HeightReference> }
   | { kind: 'transformed'; transformation: VerticalTransformation }
-  | { kind: 'heterogeneous'; parts: readonly { contributor: EntityReference; reference: Knowledge<ReferenceSystem> }[]; description: string }
+  | { kind: 'heterogeneous'; parts: readonly { contributor: EntityReference; reference: Knowledge<HeightReference> }[]; description: string }
   | { kind: 'unknown'; reason: string };
 
 export interface ProcessingStep {
@@ -173,6 +187,8 @@ export interface TerrainProduct {
   fallback?: { product: EntityReference; when: string; behavior: string };
   rights: RightsInformation;
   generation: { timestamp: Knowledge<string>; buildRecord?: AssetReference };
+  /** Supplements source acquisition lineage; generation timestamp is never acquisition time. */
+  temporal?: TerrainTemporalSupport;
   documentation: readonly string[];
 }
 

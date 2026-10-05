@@ -3469,3 +3469,40 @@ The experiment is closed. Next task: **Atlas Terrain Hierarchy Contract**, retai
 synthetic morphology, low-scale handoff, height/support and renderer limitations.
 No further Riffelhorn elevation-method experiment is recommended; no contract or
 generic resolver implemented here. Historical Lab/design records remain unchanged.
+
+## 2026-10-05 — Freeze Atlas Terrain Hierarchy Contract
+
+Confirmed clean main at `019486f`, recorded origin divergence 0/0. Reviewed the
+completed terrain programme and froze the canonical
+[Terrain Hierarchy Contract](atlas/terrain-hierarchy-contract.md). It reuses the
+source/product metadata foundation, adds provider-neutral representation families,
+regional pyramid levels/parent relationships, per-level complete/partial/absent
+support, explicit selection/fallback declarations and separate composition policy.
+Prepared recipe identity and frozen content-manifest/inventory identity remain
+distinct. Mutable external AWS identity and incomplete origin remain honest.
+
+Optional height-reference details and temporal/change supplements extend existing
+types compatibly. Scoped validation separates preparation, continuity, morphology,
+accuracy, provenance and renderer evidence. Heterogeneous native heights require
+explicit visual composition permission; weights/signed operators are not confidence.
+Same-family LOD and source-family handoff are classified independently. The final
+3.19/1.35m synthetic pits, 41.84m RMS coarse handoff, unresolved reconciliation,
+height/change semantics and independently reproduced close-camera clipping remain
+limitations. No experimental rule, provider, band width or tile encoding is made a
+generic invariant.
+
+Typed evidence examples exercise current AWS, Copernicus common, Swiss regional
+pyramid and the synthetic transition using retained repository records. A synthetic
+second-region fixture uses non-Swiss geometry and unknown unverified heights/rights/
+epochs; no Wales terrain is acquired. The contract contains bounded implementation
+and Wales/Tryfan proof plans, neither performed. No external terrain/product read,
+regeneration, new experiment, resolver or production adoption occurred.
+
+Validation: 12 focused contract tests, 36 combined model/policy tests, and the
+application suite (192 passed, one existing optional external-data skip); ESLint,
+TypeScript and application-only Vite build pass. Existing large-chunk warning remains.
+Local/reference links and anchors, source/product record bindings, immutable reuse,
+support/height/scale/family/provenance/fallback invariants and final diff are checked.
+Normal tests require no external research assets. Production visual AWS, independent
+analytical AWSz15, IGOR/exaggeration1.45, Weather, Traverse, satellite and map lifecycle
+remain unchanged. No further Riffelhorn elevation-method experiment is recommended.

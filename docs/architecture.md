@@ -224,6 +224,26 @@ claiming numerical fusion; no correction or blend is accepted here. The suggeste
 next seam-corridor feasibility diagnostic is research, not a production seamline
 or hierarchy contract. Current metadata is sufficient without extension.
 
+### Atlas Terrain Hierarchy Contract
+
+The canonical [Terrain Hierarchy Contract](atlas/terrain-hierarchy-contract.md)
+now freezes declarations for common/regional families, coherent regional pyramids,
+per-level spatial/scale support, exact product revisions, height/time semantics,
+optional derived transitions, scoped validation evidence and explicit fallback.
+It extends the existing Atlas metadata foundation in `atlas/terrain/metadata`;
+no normal runtime imports it and no resolver or composition algorithm is implemented.
+
+Within-family LOD refinement is distinct from source-family handoff. Synthetic
+terrain requires recoverable processing/contribution identity; numerical continuity
+does not establish morphology or accuracy. The final Riffelhorn pits, unresolved
+coarse handoff, heterogeneous native heights and independent close-camera rendering
+limitation remain explicit. Source products stay immutable; rendering owns portrayal.
+Analytical elevation, Weather/Traverse and production AWS remain independent and unchanged.
+
+The contract contains bounded first-implementation and Wales/Tryfan proof plans.
+Neither begins at this checkpoint. Earlier investigation summaries above retain
+their historical decisions; no further Riffelhorn elevation-method experiment follows.
+
 The conceptual relationship is:
 
 ```text

@@ -10,6 +10,8 @@ production architecture. It is the starting point for humans and fresh tooling.
 1. Read the [architecture contract](../architecture.md): Atlas represents the
    physical world; Weather the atmosphere; Traverse movement; App composition.
    The current client-only application and its ownership boundaries are implemented.
+   For terrain declarations, read the canonical
+   [Terrain Hierarchy Contract](../atlas/terrain-hierarchy-contract.md).
 2. Read the [final terrain-representation synthesis](../earth-lab/atlas-terrain-representation-synthesis.md).
 3. Read this map and the relevant [terrain literature record](literature/terrain-representation.md).
 4. Read the relevant [development-log history](../development-log.md), then inspect
@@ -159,6 +161,19 @@ heights remain explicit; all terrain/masks and21diagnostic outputs reproduce exa
 This closes substantive Riffelhorn elevation-method work. The next separate task is
 Terrain Hierarchy Contract with limits preserved; no further method variant/acquisition,
 final contract, generic resolver or production adoption is authorized by this record.
+
+## Current terrain declaration contract
+
+The [Atlas Terrain Hierarchy Contract](../atlas/terrain-hierarchy-contract.md)
+is now accepted as a provider-neutral declaration boundary. It reuses source/product
+metadata, adds regional-family levels/parents/support, distinguishes source-family
+handoffs from LOD and records optional synthetic composition/fallback without executing
+them. Scoped validation preserves morphology failure independently of continuity;
+native height/change provenance, immutable content identity and visual/analytical
+separation remain explicit. Five real/synthetic cases exercise the model without
+external assets. No production source, resolver or reconciliation method is adopted.
+The bounded implementation slice and Wales/Tryfan proof are future separate tasks;
+Riffelhorn elevation-method experimentation remains closed.
 
 ## Evidence classes
 
