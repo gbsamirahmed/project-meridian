@@ -1,0 +1,1817 @@
+{
+  "baseline": "9827b17923442a8c61e813fea103bc291bb11cef",
+  "glacierMasks": {
+    "sgi1973": {
+      "aoiCells": 62089,
+      "intersectingFootprints": 17,
+      "layer": "SGI_1973.shp",
+      "sourceCrs": "PROJCS[\"CH1903+_LV95\",GEOGCS[\"GCS_CH1903+\",DATUM[\"D_CH1903+\",SPHEROID[\"Bessel_1841\",6377397.155,299.1528128]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Hotine_Oblique_Mercator_Azimuth_Center\"],PARAMETER[\"False_Easting\",2600000.0],PARAMETER[\"False_Northing\",1200000.0],PARAMETER[\"Scale_Factor\",1.0],PARAMETER[\"Azimuth\",90.0],PARAMETER[\"Longitude_Of_Center\",7.439583333333333],PARAMETER[\"Latitude_Of_Center\",46.95240555555556],UNIT[\"Meter\",1.0]],VERTCS[\"LN_1902\",VDATUM[\"Landesnivellement_1902\"],PARAMETER[\"Vertical_Shift\",0.0],PARAMETER[\"Direction\",1.0],UNIT[\"Meter\",1.0]]"
+    },
+    "sgi2016": {
+      "aoiCells": 49303,
+      "intersectingFootprints": 11,
+      "layer": "SGI_2016_glaciers.shp",
+      "sourceCrs": "PROJCS[\"CH1903+_LV95\",GEOGCS[\"GCS_CH1903+\",DATUM[\"D_CH1903+\",SPHEROID[\"Bessel_1841\",6377397.155,299.1528128]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Hotine_Oblique_Mercator_Azimuth_Center\"],PARAMETER[\"False_Easting\",2600000.0],PARAMETER[\"False_Northing\",1200000.0],PARAMETER[\"Scale_Factor\",1.0],PARAMETER[\"Azimuth\",90.0],PARAMETER[\"Longitude_Of_Center\",7.43958333333333],PARAMETER[\"Latitude_Of_Center\",46.9524055555556],UNIT[\"Meter\",1.0]]"
+    },
+    "sgi2023": {
+      "aoiCells": 43681,
+      "intersectingFootprints": 13,
+      "layer": "SGI_2023_glaciers.shp",
+      "sourceCrs": "PROJCS[\"CH1903+_LV95\",GEOGCS[\"GCS_CH1903+\",DATUM[\"D_CH1903+\",SPHEROID[\"Bessel_1841\",6377397.155,299.1528128]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Hotine_Oblique_Mercator_Azimuth_Center\"],PARAMETER[\"False_Easting\",2600000.0],PARAMETER[\"False_Northing\",1200000.0],PARAMETER[\"Scale_Factor\",1.0],PARAMETER[\"Azimuth\",90.0],PARAMETER[\"Longitude_Of_Center\",7.43958333333333],PARAMETER[\"Latitude_Of_Center\",46.9524055555556],UNIT[\"Meter\",1.0]]"
+    }
+  },
+  "heightPolicy": "Native LN02 Swiss and EGM2008 common. No datum diagnostic applied, fitted offset, registration, blend or height smoothing.",
+  "levels": {
+    "12": {
+      "arrayHashes": {
+        "counts": "8cc1c663669b64860c50ebfbcdfd4f2eb8f958b00e09c0c91b8b811daff5dcf3",
+        "difference": "9674f88751f3025a4ec7dfdf80ff3c036c82ce51343db4225d56f02156805b86",
+        "domain_edge100": "80c87da8064f13e773d80cd64fc33ca06885e37de3d14e27e6698f3058ffb7d6",
+        "domain_edge500": "f494179a8ee7eb38e920e84585767cc11316fa3e91bc69c43d8b7838769a8c87",
+        "domain_glacierOnlyAttribution": "6fd86d0eeda0034404589d8f099cea20083cfd4aa06acf3480c165b9d316c6f9",
+        "domain_ice100": "f2b1d804dd90e8e8e59f81ef1f64e1f76f47c300e31b9a0c0991be311c24bb06",
+        "domain_ice500": "1bcbad85aaacd74c6c814d637785de599b57147b13006dec11118c8aef422f23",
+        "domain_noChangeExclusionControl": "8dc8050c0dcd42ceda1c68c3ce6441c7f09548d907d1bbc141f5cf69934c95c5",
+        "domain_primary": "2f1e6fbe67921e5f029e94e21b34f719074dea3c3de5261cecca4f53792bbfc8",
+        "domain_snowOnlyAttribution": "305d3c44c704a00f8524ad995f276f7fee731fa0e3b2f2fbe90f4e4334ccfc4c",
+        "domain_strictStable": "38d1261c26cd17e006c16c1cc51500542bc2b1a9701358c074ea73f36ab73fb0",
+        "edge": "3ced5ebfda94bf939c40284c93ba040661267cc7c11fc0ea584f111666bec376",
+        "edge100_escape": "3f8f9d38c75cd2b6777c4d16775bc7a732b4489658742e8c8a87c4c46f21c243",
+        "edge500_escape": "3f8f9d38c75cd2b6777c4d16775bc7a732b4489658742e8c8a87c4c46f21c243",
+        "glacier250": "49d014346e40f5443c4762cd70ce0622436b41dc2bd4112a837dec2e890445ec",
+        "glacierOnlyAttribution_escape": "3f8f9d38c75cd2b6777c4d16775bc7a732b4489658742e8c8a87c4c46f21c243",
+        "ice100_escape": "3f8f9d38c75cd2b6777c4d16775bc7a732b4489658742e8c8a87c4c46f21c243",
+        "ice500_escape": "3f8f9d38c75cd2b6777c4d16775bc7a732b4489658742e8c8a87c4c46f21c243",
+        "localMedianAbsolute": "e87f2ffa0318b9242c260ed181af99cafbc9d245f3ac45652f0b16a173ea0ca2",
+        "noChangeExclusionControl_cycle": "7ae30dade3aeb10390c1930412bcc1af737742f5b62ea73437257e68f8dbb0eb",
+        "primary_escape": "3f8f9d38c75cd2b6777c4d16775bc7a732b4489658742e8c8a87c4c46f21c243",
+        "radius": "bcd772ffddb15bcb94948c763d3d84dbd2e0d949f76a884f0a820bd311a654c3",
+        "roughness": "1ad1cad737603921aae32c87a4851a10bb0d9149c2beae3afe35b6ee1cf39567",
+        "slope": "736f6a06d215161701c8884fa6287433e0516b1a5112440c150d090443bca6de",
+        "snow": "0015ac63a75cb942d558ad269a3f69c5922941117b8bf3d6fba3dd8ec2e7d9a2",
+        "snowOnlyAttribution_escape": "fb6d3dd3868a04237b0ee85b0d8f9975c097603cd7bc548ab9728787fad12000",
+        "stable": "5bc0fd05093c82b290a01205a48678c55ed243dddf4f102f793db87b0d487d15",
+        "strictStable_escape": "fb8778a602179b5760320a2b6f4a6f4b9c0dda61547dbfecee4f58bb55e7bf85",
+        "water": "190fee20b7de1f50526680f7b595bed8b42fd7c05201154cbec22ec91fdd24e2"
+      },
+      "commonFilesVerified": [
+        {
+          "path": "tiles/12/2135/1456.png",
+          "sha256": "111d8961560eeb4e29828e200d7b9beee896603d4fd96c10d5bfaa516bf3b15b"
+        },
+        {
+          "path": "tiles/12/2136/1456.png",
+          "sha256": "2f3f6c55bcfd93b9ae935cfde160c6e674c69078ada787e5f2eb9db8573eff3c"
+        },
+        {
+          "path": "tiles/12/2137/1456.png",
+          "sha256": "ba00c41aaa13d868735c8b96e1c850d71fdfbd338b319665b96e54fffb23267f"
+        },
+        {
+          "path": "tiles/12/2135/1457.png",
+          "sha256": "a7b243dbe2a9fc4010b2590d9a1533f3dd8d976e7821d8d56e98f90abf2faf75"
+        },
+        {
+          "path": "tiles/12/2136/1457.png",
+          "sha256": "815ed5c24928506b9e97925003ed24981c3bcb2920eb8b66fc895f1fc590adbf"
+        },
+        {
+          "path": "tiles/12/2137/1457.png",
+          "sha256": "de4eeb6b0487aa7423a65f175a811b741f19cbb0819896c62fbc54cf6a77f088"
+        },
+        {
+          "path": "tiles/12/2135/1458.png",
+          "sha256": "75e266693af2c317b61b860318f907df6684439eb9de64d1f37e39f0bd9296dd"
+        },
+        {
+          "path": "tiles/12/2136/1458.png",
+          "sha256": "bd677efaf6556516dfeaebb28609f6841386a643776c99465afbca6cdb1d28ee"
+        },
+        {
+          "path": "tiles/12/2137/1458.png",
+          "sha256": "1400a5345287e2a72f51e629e8c05cf5f1290737ebec0c4129fa8f6ab0d9d018"
+        }
+      ],
+      "corners": {
+        "NE": {
+          "absoluteDifference": {
+            "count": 1382,
+            "max": 24.81817626953125,
+            "mean": 1.5831164458036078,
+            "median": 1.0355758666992188,
+            "min": 0.0007171630859375,
+            "nmad": 0.9612490127563476,
+            "p05": 0.10025711059570312,
+            "p95": 5.063653564453126,
+            "p99": 9.742183990478523,
+            "rms": 2.5224057385098355
+          },
+          "changeExcludedFraction": 0.19826338639652677,
+          "fullSupportedNodes": 1382,
+          "permittedNodes": 854
+        },
+        "NW": {
+          "absoluteDifference": {
+            "count": 1369,
+            "max": 79.88566589355469,
+            "mean": 4.494317633640688,
+            "median": 1.3765869140625,
+            "min": 0.0006103515625,
+            "nmad": 1.5186831756591797,
+            "p05": 0.111102294921875,
+            "p95": 22.648858642578123,
+            "p99": 36.168943481445275,
+            "rms": 9.224263776388813
+          },
+          "changeExcludedFraction": 0.13659605551497445,
+          "fullSupportedNodes": 1369,
+          "permittedNodes": 767
+        },
+        "SE": {
+          "absoluteDifference": {
+            "count": 1392,
+            "max": 72.4412841796875,
+            "mean": 6.1596713778616365,
+            "median": 4.360633850097656,
+            "min": 0.029144287109375,
+            "nmad": 2.7424231521606446,
+            "p05": 0.7348388671875,
+            "p95": 17.247446441650396,
+            "p99": 46.01311782836878,
+            "rms": 9.74053460318178
+          },
+          "changeExcludedFraction": 1.0,
+          "fullSupportedNodes": 1392,
+          "permittedNodes": 0
+        },
+        "SW": {
+          "absoluteDifference": {
+            "count": 1369,
+            "max": 31.656875610351562,
+            "mean": 5.428535177204363,
+            "median": 4.0682830810546875,
+            "min": 0.0044403076171875,
+            "nmad": 4.772752185058594,
+            "p05": 0.2029571533203125,
+            "p95": 16.410168457031236,
+            "p99": 22.186539306640615,
+            "rms": 7.57937615108865
+          },
+          "changeExcludedFraction": 0.7633308984660336,
+          "fullSupportedNodes": 1369,
+          "permittedNodes": 202
+        }
+      },
+      "domainNodes": 54724,
+      "evidenceFields": {
+        "correlations": {
+          "edge": 0.0031679059989134398,
+          "radius": 0.012187457653326631,
+          "roughness": 0.46790857062747543,
+          "slope": 0.3719339058182062
+        },
+        "difference": {
+          "count": 54724,
+          "max": 80.22836303710938,
+          "mean": -1.0882092014354847,
+          "median": -0.4865570068359375,
+          "min": -96.20808410644531,
+          "nmad": 2.187364370727539,
+          "p05": -10.441813278198243,
+          "p95": 5.792777252197265,
+          "p99": 16.574329833984343,
+          "rms": 6.057790578068649
+        },
+        "edge": {
+          "count": 54724,
+          "max": 3894.5735006211326,
+          "mean": 1665.666492991278,
+          "median": 1583.744551386335,
+          "min": 200.0540717258118,
+          "nmad": 1173.9123167035302,
+          "p05": 326.013462331146,
+          "p95": 3288.2027122656345,
+          "p99": 3599.5628060834106,
+          "rms": 1915.1298953843263
+        },
+        "localMedianAbsolute": {
+          "count": 54724,
+          "max": 81.99736022949219,
+          "mean": 3.0508636761527255,
+          "median": 1.4341049194335938,
+          "min": 0.04156494140625,
+          "nmad": 1.2870608596801758,
+          "p05": 0.36294021606445315,
+          "p95": 11.04266357421875,
+          "p99": 19.69696044921875,
+          "rms": 5.168965187638833
+        },
+        "radius": {
+          "count": 54724,
+          "max": 6752.564541154017,
+          "mean": 3819.4840263004307,
+          "median": 3869.3436576093054,
+          "min": 1537.6932970925989,
+          "nmad": 1336.7605689484112,
+          "p05": 1914.8976617184671,
+          "p95": 5783.73279470272,
+          "p99": 6344.83949278354,
+          "rms": 3997.1939361905183
+        },
+        "roughness": {
+          "count": 54724,
+          "max": 33.96731185913086,
+          "mean": 1.7747041792402873,
+          "median": 1.2082633972167969,
+          "min": 1.52587890625e-05,
+          "nmad": 1.15752904586792,
+          "p05": 0.10158329010009766,
+          "p95": 5.3092089653015115,
+          "p99": 9.767321472167957,
+          "rms": 2.6777328133163287
+        },
+        "slope": {
+          "count": 54724,
+          "max": 75.21087814381963,
+          "mean": 26.172838554160194,
+          "median": 26.11422989437962,
+          "min": 0.057835242233474075,
+          "nmad": 12.307514840007803,
+          "p05": 7.182136799752183,
+          "p95": 46.25101018438203,
+          "p99": 56.86272798448818,
+          "rms": 28.753951334540467
+        }
+      },
+      "groundCellMetresNearCentre": 26.557592556643048,
+      "maskCounts": {
+        "full": 140923,
+        "glacier250": 72577,
+        "partial": 1103,
+        "snow": 59833,
+        "stable": 5494,
+        "water": 2042
+      },
+      "rectangleControl": {
+        "absoluteDifference": {
+          "count": 3136,
+          "max": 207.81161499023438,
+          "mean": 5.968335273314495,
+          "median": 2.4248275756835938,
+          "min": 0.0003814697265625,
+          "nmad": 2.825832975769043,
+          "p05": 0.16004180908203125,
+          "p95": 20.138961791992188,
+          "p99": 45.63142013549805,
+          "rms": 14.433517422552336
+        },
+        "changeExcludedFraction": 0.6313775510204082,
+        "edgeDistanceMetres": {
+          "count": 3136,
+          "max": 56.31897402089089,
+          "mean": 28.162064715562614,
+          "median": 28.315826335572638,
+          "min": 0.5034844542387873,
+          "nmad": 20.93988936273863,
+          "p05": 3.31252699426841,
+          "p95": 53.41199140442768,
+          "p99": 55.70790344116976,
+          "rms": 32.48067723436228
+        },
+        "sectors": {
+          "NE": {
+            "count": 777,
+            "max": 57.815765380859375,
+            "mean": 3.9990099559572827,
+            "median": 1.67523193359375,
+            "min": 0.0003814697265625,
+            "nmad": 1.8705337280273437,
+            "p05": 0.1199554443359375,
+            "p95": 13.784011840820309,
+            "p99": 42.002874755859416,
+            "rms": 8.002920732193429
+          },
+          "NW": {
+            "count": 776,
+            "max": 48.56883239746094,
+            "mean": 5.682523206337211,
+            "median": 2.615875244140625,
+            "min": 0.001373291015625,
+            "nmad": 3.072985762023926,
+            "p05": 0.1864166259765625,
+            "p95": 20.84408950805664,
+            "p99": 33.90534019470215,
+            "rms": 9.257147371496385
+          },
+          "SE": {
+            "count": 780,
+            "max": 207.81161499023438,
+            "mean": 10.424763097518529,
+            "median": 3.7642898559570312,
+            "min": 0.0123443603515625,
+            "nmad": 4.604190591430664,
+            "p05": 0.27767333984375,
+            "p95": 32.28797683715818,
+            "p99": 149.53290969848652,
+            "rms": 25.442313754723084
+          },
+          "SW": {
+            "count": 803,
+            "max": 38.0718994140625,
+            "mean": 3.8213143924698882,
+            "median": 2.3216094970703125,
+            "min": 0.0050811767578125,
+            "nmad": 2.562787756347656,
+            "p05": 0.13524017333984376,
+            "p95": 15.4928237915039,
+            "p99": 24.225133972167974,
+            "rms": 6.3270523708219715
+          },
+          "east": {
+            "count": 766,
+            "max": 57.815765380859375,
+            "mean": 5.482498348226124,
+            "median": 2.2878341674804688,
+            "min": 0.0006561279296875,
+            "nmad": 2.7161129745483397,
+            "p05": 0.16807174682617188,
+            "p95": 15.9561767578125,
+            "p99": 42.4875488281251,
+            "rms": 9.34455013945635
+          },
+          "north": {
+            "count": 796,
+            "max": 45.639404296875,
+            "mean": 5.861383275171021,
+            "median": 3.0861968994140625,
+            "min": 0.0003814697265625,
+            "nmad": 3.4934961502075192,
+            "p05": 0.17528533935546875,
+            "p95": 20.673511505126953,
+            "p99": 31.022859573364123,
+            "rms": 9.059180200676712
+          },
+          "south": {
+            "count": 794,
+            "max": 207.81161499023438,
+            "mean": 9.003830763194664,
+            "median": 3.0432968139648438,
+            "min": 0.0102081298828125,
+            "nmad": 2.9104644241333006,
+            "p05": 0.2738365173339844,
+            "p95": 32.25243453979492,
+            "p99": 148.8191160583493,
+            "rms": 24.759306649711117
+          },
+          "west": {
+            "count": 780,
+            "max": 48.56883239746094,
+            "mean": 3.46461919148763,
+            "median": 1.1707992553710938,
+            "min": 0.001373291015625,
+            "nmad": 1.3525987655639649,
+            "p05": 0.10455169677734376,
+            "p95": 15.183316040039058,
+            "p99": 27.94937713623051,
+            "rms": 6.636812812496612
+          }
+        },
+        "signedDifference": {
+          "count": 3136,
+          "max": 48.56883239746094,
+          "mean": -2.343996140421653,
+          "median": -1.0840606689453125,
+          "min": -207.81161499023438,
+          "nmad": 3.2034281387329098,
+          "p05": -14.931293487548828,
+          "p95": 11.964042663574219,
+          "p99": 29.426765441894553,
+          "rms": 14.433517422552336
+        },
+        "slopeDegrees": {
+          "count": 1638,
+          "max": 73.4230209594192,
+          "mean": 25.841189096460564,
+          "median": 23.857816403879802,
+          "min": 0.03258991062580572,
+          "nmad": 15.732525538711812,
+          "p05": 6.616975564181479,
+          "p95": 51.34103183717702,
+          "p99": 58.656481005118984,
+          "rms": 29.41598534440751
+        },
+        "stableFraction": 0.0,
+        "stripDefinition": "Full-supported cells within 1.5 cell diagonals of native source boundary; not original whole-tile delivery frontier."
+      },
+      "scenarios": {
+        "edge100": {
+          "closedCycleAtUnlimitedDisagreement": false,
+          "domainNodes": 56857,
+          "escapeEndLV95": [
+            2625022.5634086593,
+            1082134.780333357
+          ],
+          "escapeFaces": 373,
+          "minimumThresholdMetres": null
+        },
+        "edge500": {
+          "closedCycleAtUnlimitedDisagreement": false,
+          "domainNodes": 48066,
+          "escapeEndLV95": [
+            2625022.5634086593,
+            1082134.780333357
+          ],
+          "escapeFaces": 373,
+          "minimumThresholdMetres": null
+        },
+        "glacierOnlyAttribution": {
+          "closedCycleAtUnlimitedDisagreement": false,
+          "domainNodes": 58062,
+          "escapeEndLV95": [
+            2625022.5634086593,
+            1082134.780333357
+          ],
+          "escapeFaces": 373,
+          "minimumThresholdMetres": null
+        },
+        "ice100": {
+          "closedCycleAtUnlimitedDisagreement": false,
+          "domainNodes": 59532,
+          "escapeEndLV95": [
+            2625022.5634086593,
+            1082134.780333357
+          ],
+          "escapeFaces": 373,
+          "minimumThresholdMetres": null
+        },
+        "ice500": {
+          "closedCycleAtUnlimitedDisagreement": false,
+          "domainNodes": 48417,
+          "escapeEndLV95": [
+            2625022.5634086593,
+            1082134.780333357
+          ],
+          "escapeFaces": 373,
+          "minimumThresholdMetres": null
+        },
+        "noChangeExclusionControl": {
+          "belowMinimumFeasible": false,
+          "closedCycleAtUnlimitedDisagreement": true,
+          "domainNodes": 117607,
+          "minimumThresholdMetres": 19.416946411132812,
+          "route": {
+            "absoluteDifference": {
+              "count": 1346,
+              "max": 19.416946411132812,
+              "mean": 9.2572170104527,
+              "median": 9.986175537109375,
+              "min": 0.0009613037109375,
+              "nmad": 9.544938803100585,
+              "p05": 0.19021224975585938,
+              "p95": 18.863510131835938,
+              "p99": 19.32725601196289,
+              "rms": 11.376264378478785
+            },
+            "allNodesAllowed": true,
+            "glacier250Fraction": 0.8032665181885672,
+            "integratedAbsoluteDifferenceMetresSquared": 331093.02762573585,
+            "lengthMetres": 35765.36452533477,
+            "minimumCommonEdgeApproxGroundMetres": 47553.11112913508,
+            "minimumProtectedClearanceMetres": 37.67387568760546,
+            "minimumSourceEdgeMetres": 214.73940260661766,
+            "roughnessMetres": {
+              "count": 1347,
+              "max": 23.689056396484375,
+              "mean": 2.188476389748305,
+              "median": 1.1606178283691406,
+              "min": 0.000713348388671875,
+              "nmad": 1.180711637878418,
+              "p05": 0.10511932373046874,
+              "p95": 8.157777786254886,
+              "p99": 15.185395431518549,
+              "rms": 3.747569186780951
+            },
+            "sectorAbsoluteDifference": {
+              "NE": {
+                "count": 200,
+                "max": 19.416946411132812,
+                "mean": 4.126886978149414,
+                "median": 1.310089111328125,
+                "min": 0.0009613037109375,
+                "nmad": 1.7193915985107422,
+                "p05": 0.06632614135742189,
+                "p95": 17.62697601318359,
+                "p99": 19.06176315307617,
+                "rms": 6.905750334844243
+              },
+              "NW": {
+                "count": 157,
+                "max": 19.14337158203125,
+                "mean": 5.337260155161475,
+                "median": 2.9539337158203125,
+                "min": 0.0109710693359375,
+                "nmad": 4.064639657592773,
+                "p05": 0.10253906250000001,
+                "p95": 15.562701416015624,
+                "p99": 18.708785400390624,
+                "rms": 7.665573389612184
+              },
+              "SE": {
+                "count": 804,
+                "max": 19.407516479492188,
+                "mean": 12.14457539420816,
+                "median": 13.260459899902344,
+                "min": 0.004150390625,
+                "nmad": 5.918217686462402,
+                "p05": 1.341985321044922,
+                "p95": 19.02482757568359,
+                "p99": 19.35136276245117,
+                "rms": 13.332989149367817
+              },
+              "SW": {
+                "count": 185,
+                "max": 19.361099243164062,
+                "mean": 5.581882373706715,
+                "median": 2.4637451171875,
+                "min": 0.042449951171875,
+                "nmad": 3.1432857421875,
+                "p05": 0.1349884033203125,
+                "p95": 17.194381713867188,
+                "p99": 19.198421020507812,
+                "rms": 8.222970295560105
+              },
+              "east": {
+                "count": 635,
+                "max": 19.416946411132812,
+                "mean": 10.874362855445682,
+                "median": 11.985000610351562,
+                "min": 0.001556396484375,
+                "nmad": 8.147354837036133,
+                "p05": 0.37422485351562507,
+                "p95": 19.135543823242188,
+                "p99": 19.36697296142578,
+                "rms": 12.601683360569508
+              },
+              "north": {
+                "count": 117,
+                "max": 5.000946044921875,
+                "mean": 0.7775314200637687,
+                "median": 0.683074951171875,
+                "min": 0.0009613037109375,
+                "nmad": 0.5802943817138672,
+                "p05": 0.050555419921875004,
+                "p95": 1.9330413818359373,
+                "p99": 3.9170013427734407,
+                "rms": 1.0804273456862525
+              },
+              "south": {
+                "count": 393,
+                "max": 19.407516479492188,
+                "mean": 9.5722902797864,
+                "median": 10.863555908203125,
+                "min": 0.004150390625,
+                "nmad": 8.179049212646484,
+                "p05": 0.330718994140625,
+                "p95": 18.574090576171873,
+                "p99": 19.17320556640625,
+                "rms": 11.499803835979128
+              },
+              "west": {
+                "count": 201,
+                "max": 19.361099243164062,
+                "mean": 8.468221028645834,
+                "median": 8.49407958984375,
+                "min": 0.099273681640625,
+                "nmad": 7.5964246948242184,
+                "p05": 0.4098052978515625,
+                "p95": 18.068313598632812,
+                "p99": 19.183609008789062,
+                "rms": 10.282068612028176
+              }
+            },
+            "signedDifference": {
+              "count": 1346,
+              "max": 19.395111083984375,
+              "mean": -6.554003495872464,
+              "median": -7.139411926269531,
+              "min": -19.416946411132812,
+              "nmad": 10.69684045715332,
+              "p05": -18.821151733398438,
+              "p95": 11.354995727539062,
+              "p99": 17.70666122436521,
+              "rms": 11.376264378478785
+            },
+            "slopeDegrees": {
+              "count": 1347,
+              "max": 71.70562827196802,
+              "mean": 29.42745070601792,
+              "median": 27.87060206015199,
+              "min": 1.0629650204158374,
+              "nmad": 14.265437207748546,
+              "p05": 8.950116099239178,
+              "p95": 57.84681319716327,
+              "p99": 65.97313049052934,
+              "rms": 32.822473812076716
+            },
+            "snowClassFraction": 0.4662212323682257,
+            "stableVertexFraction": 0.017817371937639197,
+            "vertices": 1346,
+            "worstNode": {
+              "LV95": [
+                2629771.5023691156,
+                1092057.1129457457
+              ],
+              "glacier250Excluded": true,
+              "signedDifferenceMetres": -19.416946411132812,
+              "slopeDegrees": 14.860726914822822,
+              "snowExcluded": true,
+              "sourceEdgeMetres": 215.12853845814243
+            }
+          }
+        },
+        "primary": {
+          "closedCycleAtUnlimitedDisagreement": false,
+          "domainNodes": 54724,
+          "escapeEndLV95": [
+            2625022.5634086593,
+            1082134.780333357
+          ],
+          "escapeFaces": 373,
+          "minimumThresholdMetres": null,
+          "obstruction": {
+            "crossedAbsentEdges": 372,
+            "fullySupportedOutsideProtected": {
+              "edges": 122,
+              "glacier250EndpointFraction": 1.0,
+              "rangeLV95": [
+                2624988.4936958137,
+                1087233.1747901975,
+                2625028.2884251713,
+                1090444.1542991053
+              ],
+              "snowEndpointFraction": 0.9508196721311475
+            },
+            "overlappingReasonCounts": {
+              "glacier250": 365,
+              "incompleteSupport": 184,
+              "protected": 58,
+              "snow": 352,
+              "sourceEdge": 192,
+              "water": 189
+            }
+          }
+        },
+        "snowOnlyAttribution": {
+          "closedCycleAtUnlimitedDisagreement": false,
+          "domainNodes": 67450,
+          "escapeEndLV95": [
+            2625155.8230618113,
+            1082135.3281921716
+          ],
+          "escapeFaces": 378,
+          "minimumThresholdMetres": null
+        },
+        "strictStable": {
+          "closedCycleAtUnlimitedDisagreement": false,
+          "domainNodes": 5164,
+          "escapeEndLV95": [
+            2616122.5517228213,
+            1091528.2970999936
+          ],
+          "escapeFaces": 351,
+          "minimumThresholdMetres": null
+        }
+      },
+      "sectors": {
+        "NE": {
+          "absoluteDifference": {
+            "count": 22080,
+            "max": 37.519134521484375,
+            "mean": 1.9939185367114303,
+            "median": 1.0918350219726562,
+            "min": 1.52587890625e-05,
+            "nmad": 1.0937387420654296,
+            "p05": 0.09328994750976563,
+            "p95": 7.355826568603514,
+            "p99": 13.308863220214837,
+            "rms": 3.3709040560024053
+          },
+          "bestAvailableDifference": 1.52587890625e-05,
+          "domainNodes": 22080,
+          "excludedChangeFraction": 0.2554668634290314
+        },
+        "NW": {
+          "absoluteDifference": {
+            "count": 28595,
+            "max": 96.20808410644531,
+            "mean": 4.481102505754103,
+            "median": 2.1438446044921875,
+            "min": 0.0001220703125,
+            "nmad": 2.5169428939819336,
+            "p05": 0.14674835205078127,
+            "p95": 15.470860290527341,
+            "p99": 29.57596603393556,
+            "rms": 7.63416570428414
+          },
+          "bestAvailableDifference": 0.0001220703125,
+          "domainNodes": 28595,
+          "excludedChangeFraction": 0.03756073044060982
+        },
+        "SE": {
+          "absoluteDifference": {
+            "count": 541,
+            "max": 26.257614135742188,
+            "mean": 3.50628399804868,
+            "median": 2.06536865234375,
+            "min": 0.000518798828125,
+            "nmad": 2.323507662963867,
+            "p05": 0.17633056640625,
+            "p95": 11.692581176757812,
+            "p99": 18.21157226562501,
+            "rms": 5.325273133842004
+          },
+          "bestAvailableDifference": 0.000518798828125,
+          "domainNodes": 541,
+          "excludedChangeFraction": 0.9811808118081181
+        },
+        "SW": {
+          "absoluteDifference": {
+            "count": 3508,
+            "max": 79.921630859375,
+            "mean": 2.2400138750587386,
+            "median": 0.9920272827148438,
+            "min": 0.000457763671875,
+            "nmad": 0.9889731079101562,
+            "p05": 0.07771453857421876,
+            "p95": 9.555056762695303,
+            "p99": 19.472412261962887,
+            "rms": 4.637048043607065
+          },
+          "bestAvailableDifference": 0.000457763671875,
+          "domainNodes": 3508,
+          "excludedChangeFraction": 0.8821244390864644
+        },
+        "east": {
+          "absoluteDifference": {
+            "count": 7909,
+            "max": 26.257614135742188,
+            "mean": 1.722686057597802,
+            "median": 0.9680023193359375,
+            "min": 0.0006103515625,
+            "nmad": 0.944021841430664,
+            "p05": 0.08309936523437501,
+            "p95": 6.375674438476555,
+            "p99": 12.474492187500008,
+            "rms": 3.0018646271544345
+          },
+          "bestAvailableDifference": 0.0006103515625,
+          "domainNodes": 7909,
+          "excludedChangeFraction": 0.7336907354665774
+        },
+        "north": {
+          "absoluteDifference": {
+            "count": 29419,
+            "max": 96.20808410644531,
+            "mean": 3.3711948405797156,
+            "median": 1.6899871826171875,
+            "min": 1.52587890625e-05,
+            "nmad": 1.865963946533203,
+            "p05": 0.12551422119140626,
+            "p95": 12.25398254394531,
+            "p99": 20.742308502197265,
+            "rms": 5.751632495048299
+          },
+          "bestAvailableDifference": 1.52587890625e-05,
+          "domainNodes": 29419,
+          "excludedChangeFraction": 0.008947421333065246
+        },
+        "south": {
+          "absoluteDifference": {
+            "count": 542,
+            "max": 28.933639526367188,
+            "mean": 2.2771996360863267,
+            "median": 1.193328857421875,
+            "min": 0.000518798828125,
+            "nmad": 1.1741284378051757,
+            "p05": 0.13626480102539062,
+            "p95": 8.779832458496092,
+            "p99": 16.357555999755974,
+            "rms": 4.001063992796954
+          },
+          "bestAvailableDifference": 0.000518798828125,
+          "domainNodes": 542,
+          "excludedChangeFraction": 0.9818297629823326
+        },
+        "west": {
+          "absoluteDifference": {
+            "count": 16854,
+            "max": 80.22836303710938,
+            "mean": 4.027623621215313,
+            "median": 1.5487174987792969,
+            "min": 0.0001220703125,
+            "nmad": 1.7811345497131346,
+            "p05": 0.11742401123046879,
+            "p95": 15.270208740234358,
+            "p99": 31.779969024658346,
+            "rms": 7.5276199186678605
+          },
+          "bestAvailableDifference": 0.0001220703125,
+          "domainNodes": 16854,
+          "excludedChangeFraction": 0.4318867797974378
+        }
+      },
+      "shape": [
+        768,
+        768
+      ],
+      "thresholds": [
+        {
+          "closedCycle": false,
+          "eligibleNodes": 11328,
+          "metres": 0.5
+        },
+        {
+          "closedCycle": false,
+          "eligibleNodes": 20851,
+          "metres": 1
+        },
+        {
+          "closedCycle": false,
+          "eligibleNodes": 32391,
+          "metres": 2
+        },
+        {
+          "closedCycle": false,
+          "eligibleNodes": 43816,
+          "metres": 5
+        },
+        {
+          "closedCycle": false,
+          "eligibleNodes": 50379,
+          "metres": 10
+        },
+        {
+          "closedCycle": false,
+          "eligibleNodes": 53875,
+          "metres": 20
+        },
+        {
+          "closedCycle": false,
+          "eligibleNodes": 54620,
+          "metres": 40
+        },
+        {
+          "closedCycle": false,
+          "eligibleNodes": 54718,
+          "metres": 80
+        },
+        {
+          "closedCycle": false,
+          "eligibleNodes": 54724,
+          "metres": 160
+        }
+      ]
+    },
+    "13": {
+      "arrayHashes": {
+        "counts": "3ac2a41dd6d985a06f50bb7823ef76a9dc6e2f9541769e5a5a245d122da6e91a",
+        "difference": "ad1f996d37a2162498acf6a5593ec3bc5a983bb7d858b3840c2c0adcacf1325b",
+        "domain_edge100": "20665b2be6621d780d3305d8a9f5d1df8c3bbce9610ea0da3d17f849766360d7",
+        "domain_edge500": "9c26ccf63f1908a2cd17332d1c1ade1e169a9572e704458cd73e8d37dbd1a8cb",
+        "domain_glacierOnlyAttribution": "c23ccf8d52979bb69424ec03194543dcd8a47247c94e5535fb3b655658a0c82f",
+        "domain_ice100": "c27b41f8ad927fb943b1a194c79d090b3b901c256b101bba297964475a57138e",
+        "domain_ice500": "81e2eaffd1d75aaf7cf25f29553c737d50ee3d05a251aae4178a12a84a9d75a3",
+        "domain_noChangeExclusionControl": "9bee80eef56f9ea5db23e754b6467925aba4e77a9fd81341ae4884ea4c659dca",
+        "domain_primary": "db5b0d33998c64aae72f28dd07f7aae9699c6d286d9b3d06d2bf32292cbb2a87",
+        "domain_snowOnlyAttribution": "3b79baf4438467c9630be8e88016d619b2a28f7cf755a8d43b3cd35763836344",
+        "domain_strictStable": "cdc6688a5432f8b44a4d6bb66a0a65b1bca75105862b75b00a842caf241beaef",
+        "edge": "74cf38784df027b49250dfa4b55a111a50e3d2b03bab87edb74c289ad5e7d013",
+        "edge100_escape": "f3386df92b0d59eecf82f50533037e9c93131b8f23948c56ec1d3cf7e2820317",
+        "edge500_escape": "f3386df92b0d59eecf82f50533037e9c93131b8f23948c56ec1d3cf7e2820317",
+        "glacier250": "edd9ea16ffe01c61c2f56bb3a4f51d04481dd021250e51c1bab37e5138dae8fa",
+        "glacierOnlyAttribution_escape": "f3386df92b0d59eecf82f50533037e9c93131b8f23948c56ec1d3cf7e2820317",
+        "ice100_escape": "f3386df92b0d59eecf82f50533037e9c93131b8f23948c56ec1d3cf7e2820317",
+        "ice500_escape": "f3386df92b0d59eecf82f50533037e9c93131b8f23948c56ec1d3cf7e2820317",
+        "localMedianAbsolute": "6bb2b3d5bd929641f4e1f8c88276e252932f013844d4b11764a78f40ad9912bd",
+        "noChangeExclusionControl_cycle": "51685281e26c5c180b7cc5dce9106054f25a17b9d17715215ad912849009078c",
+        "primary_escape": "f3386df92b0d59eecf82f50533037e9c93131b8f23948c56ec1d3cf7e2820317",
+        "radius": "7a3bbbc35126a2409f30b10536b11d1c53fb8edc3affafd95a0105dfb8fe9e2f",
+        "roughness": "094479aa51cdc526420f311244e89ff31073e9bcc9970b3c9b7226d838208389",
+        "slope": "59c43372ca5547886658a373f3c7705dffb912c76aa8e6e64fd81354e9784c2d",
+        "snow": "5629b9d68d35dde2477cafab8664bab027d0d5c934c0cea6beb1746d34dd86b1",
+        "snowOnlyAttribution_escape": "821b86dd56dacaf15f4af407b75e7d763000429c461e26825f8a243bb526f34f",
+        "stable": "70da6ff371a1f6c871e42431539306ee3cb10c657418337de15cbf0ef8119fa7",
+        "strictStable_escape": "a618d19e00720796489b5e1882d3693a492815cca808aa81cb101e19efd9cf23",
+        "water": "b9106b569f66ac8a958c6cd70bd19b6d3fca4c475f6755c54c4257f03b45b02d"
+      },
+      "commonFilesVerified": [
+        {
+          "path": "tiles/13/4271/2913.png",
+          "sha256": "77b4f036841e0590e93f0b4e18a2d1d7d891e182d0fc37639ff8dfddfbc6c57d"
+        },
+        {
+          "path": "tiles/13/4272/2913.png",
+          "sha256": "a444a576dddcab2933ba0a2918cdbb995579754352780face84e5668899e4cb9"
+        },
+        {
+          "path": "tiles/13/4273/2913.png",
+          "sha256": "d9135ab468d215bb53615e6d0d04202b99bf28203cb93364943d3c5b035de877"
+        },
+        {
+          "path": "tiles/13/4274/2913.png",
+          "sha256": "36f85ed8ffa30c43565f17fc8acf5f2c118bcab8e533a68d670e4d1c1b45fdc4"
+        },
+        {
+          "path": "tiles/13/4271/2914.png",
+          "sha256": "bf6ef4139258de4293af503857e6b22235d5f36b5abcbec9791d84eeca673579"
+        },
+        {
+          "path": "tiles/13/4272/2914.png",
+          "sha256": "1fcfc182ac0f064b1621fce0a0eeca21fe916399718018d40ceaea18377bac0f"
+        },
+        {
+          "path": "tiles/13/4273/2914.png",
+          "sha256": "c8f80be430e056443d5284f17dd94e01458b180f64c743d24266c9583dbf5aab"
+        },
+        {
+          "path": "tiles/13/4274/2914.png",
+          "sha256": "b847b3fe8bb777112c69aeb164feaffa8a0ed58cd6764c844b445f6d20345a12"
+        },
+        {
+          "path": "tiles/13/4271/2915.png",
+          "sha256": "12d86ca83d01f27651fb638da2b63011f8665bf2d0cd2ce5f86ba3dd0465968f"
+        },
+        {
+          "path": "tiles/13/4272/2915.png",
+          "sha256": "1aa9deea36c3c219e0f3ce678abd86800d8fe03bec855ed9423f27dbd427ef23"
+        },
+        {
+          "path": "tiles/13/4273/2915.png",
+          "sha256": "c322b29783d2f8bfb66466df85fc25d73cce5984d2ef2db71c7268e63b4850f6"
+        },
+        {
+          "path": "tiles/13/4274/2915.png",
+          "sha256": "b5f29394aa46d38cb04eef350b922cb7fe85469d10e66234332777b6d177194a"
+        },
+        {
+          "path": "tiles/13/4271/2916.png",
+          "sha256": "5b2fa8d9ff1a4c1420529e7101c4db2ca41f27f76969952d2c56d81a1c519b56"
+        },
+        {
+          "path": "tiles/13/4272/2916.png",
+          "sha256": "dd804859915884ff4fb00af03720cf7d4338d9c7fa887660d6368a8a420c406e"
+        },
+        {
+          "path": "tiles/13/4273/2916.png",
+          "sha256": "e9969930d25ec2a79fa3245429481749b73d89d08dec7c0094950a703d780415"
+        },
+        {
+          "path": "tiles/13/4274/2916.png",
+          "sha256": "f183c94095f6b73849ab843431668554a1f5bc07fe68cc455ee0629f053c43b0"
+        }
+      ],
+      "corners": {
+        "NE": {
+          "absoluteDifference": {
+            "count": 5551,
+            "max": 49.77880859375,
+            "mean": 1.9180188118026313,
+            "median": 1.177978515625,
+            "min": 0.0001220703125,
+            "nmad": 1.1295956909179687,
+            "p05": 0.116790771484375,
+            "p95": 6.234466552734375,
+            "p99": 12.58819580078125,
+            "rms": 3.236949579445864
+          },
+          "changeExcludedFraction": 0.19023599351468204,
+          "fullSupportedNodes": 5551,
+          "permittedNodes": 3398
+        },
+        "NW": {
+          "absoluteDifference": {
+            "count": 5625,
+            "max": 93.51641845703125,
+            "mean": 4.687539963107639,
+            "median": 1.57879638671875,
+            "min": 0.00030517578125,
+            "nmad": 1.7016780395507811,
+            "p05": 0.12303466796875,
+            "p95": 23.47600097656253,
+            "p99": 38.15458740234385,
+            "rms": 9.533347939460667
+          },
+          "changeExcludedFraction": 0.10328888888888889,
+          "fullSupportedNodes": 5625,
+          "permittedNodes": 3347
+        },
+        "SE": {
+          "absoluteDifference": {
+            "count": 5584,
+            "max": 79.44598388671875,
+            "mean": 6.419758302092894,
+            "median": 4.469970703125,
+            "min": 0.00079345703125,
+            "nmad": 3.1575380310058594,
+            "p05": 0.5964447021484375,
+            "p95": 18.707672119140625,
+            "p99": 47.19437805175786,
+            "rms": 10.254101852975957
+          },
+          "changeExcludedFraction": 1.0,
+          "fullSupportedNodes": 5584,
+          "permittedNodes": 0
+        },
+        "SW": {
+          "absoluteDifference": {
+            "count": 5597,
+            "max": 36.11846923828125,
+            "mean": 5.611759285980492,
+            "median": 4.2586669921875,
+            "min": 0.00067138671875,
+            "nmad": 4.868762841796875,
+            "p05": 0.18929443359375,
+            "p95": 16.6143798828125,
+            "p99": 23.9090234375,
+            "rms": 7.832946011647908
+          },
+          "changeExcludedFraction": 0.7209219224584599,
+          "fullSupportedNodes": 5597,
+          "permittedNodes": 962
+        }
+      },
+      "domainNodes": 224315,
+      "evidenceFields": {
+        "correlations": {
+          "edge": 0.006239680009582245,
+          "radius": 0.010162973234654024,
+          "roughness": 0.4312856830041674,
+          "slope": 0.37205427208819464
+        },
+        "difference": {
+          "count": 224315,
+          "max": 86.83404541015625,
+          "mean": -1.0781339142646345,
+          "median": -0.50579833984375,
+          "min": -102.5404052734375,
+          "nmad": 2.3945655029296873,
+          "p05": -10.690093994140625,
+          "p95": 6.3216552734375,
+          "p99": 17.722575683593675,
+          "rms": 6.3491722815308975
+        },
+        "edge": {
+          "count": 224315,
+          "max": 3913.5134256700985,
+          "mean": 1672.795014639628,
+          "median": 1590.836184388958,
+          "min": 200.00747257471085,
+          "nmad": 1179.4273517766817,
+          "p05": 324.0334491548594,
+          "p95": 3308.658171496121,
+          "p99": 3616.9179174104374,
+          "rms": 1924.2942060907963
+        },
+        "localMedianAbsolute": {
+          "count": 224315,
+          "max": 95.55029296875,
+          "mean": 3.394879378815,
+          "median": 1.57672119140625,
+          "min": 0.01031494140625,
+          "nmad": 1.4521046264648436,
+          "p05": 0.3570556640625,
+          "p95": 12.340576171875,
+          "p99": 23.575204467773435,
+          "rms": 5.973194639729761
+        },
+        "radius": {
+          "count": 224315,
+          "max": 6771.397953130057,
+          "mean": 3819.279433048163,
+          "median": 3867.2322549552864,
+          "min": 1518.782804052368,
+          "nmad": 1345.1491598133607,
+          "p05": 1902.3930495506615,
+          "p95": 5802.865021014742,
+          "p99": 6363.303776225801,
+          "rms": 3999.403783242913
+        },
+        "roughness": {
+          "count": 224315,
+          "max": 35.31890869140625,
+          "mean": 0.8408038265931554,
+          "median": 0.5250091552734375,
+          "min": 0.0,
+          "nmad": 0.5171318572998047,
+          "p05": 0.04498062133789063,
+          "p95": 2.6227989196777304,
+          "p99": 5.484902191162106,
+          "rms": 1.3933138451565863
+        },
+        "slope": {
+          "count": 224315,
+          "max": 80.65478196568345,
+          "mean": 26.771497654248925,
+          "median": 26.743049925058042,
+          "min": 0.04751162800861293,
+          "nmad": 12.763383489064863,
+          "p05": 7.04621299800246,
+          "p95": 48.2995808393682,
+          "p99": 60.12484392354329,
+          "rms": 29.563077459196908
+        }
+      },
+      "groundCellMetresNearCentre": 13.278796278321524,
+      "maskCounts": {
+        "full": 565153,
+        "glacier250": 289591,
+        "partial": 1512,
+        "snow": 226960,
+        "stable": 30489,
+        "water": 6192
+      },
+      "rectangleControl": {
+        "absoluteDifference": {
+          "count": 6218,
+          "max": 201.86602783203125,
+          "mean": 6.174366108970115,
+          "median": 2.48455810546875,
+          "min": 0.000732421875,
+          "nmad": 2.8401418212890626,
+          "p05": 0.17426147460937502,
+          "p95": 21.559007263183588,
+          "p99": 49.98988952636718,
+          "rms": 14.62683955893982
+        },
+        "changeExcludedFraction": 0.6137021550337729,
+        "edgeDistanceMetres": {
+          "count": 6218,
+          "max": 28.189754015533254,
+          "mean": 14.280265360207235,
+          "median": 14.313803853816353,
+          "min": 0.5004349679220468,
+          "nmad": 10.180859428108041,
+          "p05": 2.0728904254501686,
+          "p95": 26.590546435292342,
+          "p99": 27.856533011561257,
+          "rms": 16.319108800098885
+        },
+        "sectors": {
+          "NE": {
+            "count": 1552,
+            "max": 60.51971435546875,
+            "mean": 4.417539419587126,
+            "median": 1.77655029296875,
+            "min": 0.0010986328125,
+            "nmad": 1.9299408874511719,
+            "p05": 0.14222412109375004,
+            "p95": 15.076541137695258,
+            "p99": 49.8115771484375,
+            "rms": 9.052888564655769
+          },
+          "NW": {
+            "count": 1548,
+            "max": 51.74066162109375,
+            "mean": 6.156532839595194,
+            "median": 2.7880706787109375,
+            "min": 0.00201416015625,
+            "nmad": 3.168962484741211,
+            "p05": 0.2280914306640625,
+            "p95": 25.92022705078123,
+            "p99": 36.76078979492186,
+            "rms": 10.269054620008472
+          },
+          "SE": {
+            "count": 1570,
+            "max": 201.86602783203125,
+            "mean": 10.486470644033638,
+            "median": 3.652099609375,
+            "min": 0.00079345703125,
+            "nmad": 4.342242572021484,
+            "p05": 0.28602294921875004,
+            "p95": 37.62701110839843,
+            "p99": 151.62132751464807,
+            "rms": 25.09564759748604
+          },
+          "SW": {
+            "count": 1548,
+            "max": 33.99224853515625,
+            "mean": 3.5801779971258276,
+            "median": 2.216094970703125,
+            "min": 0.000732421875,
+            "nmad": 2.454198889160156,
+            "p05": 0.11041870117187501,
+            "p95": 12.531478881835922,
+            "p99": 22.583926391601562,
+            "rms": 5.745348235740918
+          },
+          "east": {
+            "count": 1548,
+            "max": 60.51971435546875,
+            "mean": 5.9581249148346656,
+            "median": 2.665435791015625,
+            "min": 0.00439453125,
+            "nmad": 3.031891662597656,
+            "p05": 0.19511413574218753,
+            "p95": 17.810806274414052,
+            "p99": 49.8140478515625,
+            "rms": 10.23962569946098
+          },
+          "north": {
+            "count": 1559,
+            "max": 51.74066162109375,
+            "mean": 6.0597138762703455,
+            "median": 2.89898681640625,
+            "min": 0.0010986328125,
+            "nmad": 3.359920532226562,
+            "p05": 0.20860595703125,
+            "p95": 23.67028198242181,
+            "p99": 36.722346191406274,
+            "rms": 9.96508761201885
+          },
+          "south": {
+            "count": 1559,
+            "max": 201.86602783203125,
+            "mean": 9.132651670993024,
+            "median": 3.02593994140625,
+            "min": 0.00079345703125,
+            "nmad": 3.0012153076171875,
+            "p05": 0.29422607421875,
+            "p95": 37.7582092285156,
+            "p99": 152.3450354003911,
+            "rms": 24.657681089556547
+          },
+          "west": {
+            "count": 1552,
+            "max": 42.0045166015625,
+            "mean": 3.5335909853276517,
+            "median": 1.378448486328125,
+            "min": 0.000732421875,
+            "nmad": 1.6090155395507812,
+            "p05": 0.08588256835937502,
+            "p95": 14.498870849609343,
+            "p99": 28.869141235351563,
+            "rms": 6.487077821066593
+          }
+        },
+        "signedDifference": {
+          "count": 6218,
+          "max": 53.1153564453125,
+          "mean": -2.3489779830937527,
+          "median": -1.0802154541015625,
+          "min": -201.86602783203125,
+          "nmad": 3.3298323669433594,
+          "p05": -15.898989868164062,
+          "p95": 10.85634460449217,
+          "p99": 34.39870910644531,
+          "rms": 14.62683955893982
+        },
+        "slopeDegrees": {
+          "count": 3215,
+          "max": 79.93698983299733,
+          "mean": 26.025122508023312,
+          "median": 24.484538531872108,
+          "min": 0.03081068847191136,
+          "nmad": 15.383640711766018,
+          "p05": 6.112851936880987,
+          "p95": 53.30872341590497,
+          "p99": 65.14121691552691,
+          "rms": 29.78452763332521
+        },
+        "stableFraction": 0.0,
+        "stripDefinition": "Full-supported cells within 1.5 cell diagonals of native source boundary; not original whole-tile delivery frontier."
+      },
+      "scenarios": {
+        "edge100": {
+          "closedCycleAtUnlimitedDisagreement": false,
+          "domainNodes": 233133,
+          "escapeEndLV95": [
+            2625015.3659747317,
+            1085514.2961487973
+          ],
+          "escapeFaces": 490,
+          "minimumThresholdMetres": null
+        },
+        "edge500": {
+          "closedCycleAtUnlimitedDisagreement": false,
+          "domainNodes": 196975,
+          "escapeEndLV95": [
+            2625015.3659747317,
+            1085514.2961487973
+          ],
+          "escapeFaces": 490,
+          "minimumThresholdMetres": null
+        },
+        "glacierOnlyAttribution": {
+          "closedCycleAtUnlimitedDisagreement": false,
+          "domainNodes": 235356,
+          "escapeEndLV95": [
+            2625015.3659747317,
+            1085514.2961487973
+          ],
+          "escapeFaces": 490,
+          "minimumThresholdMetres": null
+        },
+        "ice100": {
+          "closedCycleAtUnlimitedDisagreement": false,
+          "domainNodes": 244846,
+          "escapeEndLV95": [
+            2625015.3659747317,
+            1085514.2961487973
+          ],
+          "escapeFaces": 490,
+          "minimumThresholdMetres": null
+        },
+        "ice500": {
+          "closedCycleAtUnlimitedDisagreement": false,
+          "domainNodes": 197224,
+          "escapeEndLV95": [
+            2625015.3659747317,
+            1085514.2961487973
+          ],
+          "escapeFaces": 490,
+          "minimumThresholdMetres": null
+        },
+        "noChangeExclusionControl": {
+          "belowMinimumFeasible": false,
+          "closedCycleAtUnlimitedDisagreement": true,
+          "domainNodes": 474565,
+          "minimumThresholdMetres": 19.86224365234375,
+          "route": {
+            "absoluteDifference": {
+              "count": 2954,
+              "max": 19.86224365234375,
+              "mean": 12.060691363438611,
+              "median": 14.8829345703125,
+              "min": 0.0013427734375,
+              "nmad": 5.630016046142578,
+              "p05": 0.36734619140625,
+              "p95": 19.470086669921873,
+              "p99": 19.783245239257813,
+              "rms": 13.91668175460912
+            },
+            "allNodesAllowed": true,
+            "glacier250Fraction": 0.8294416243654822,
+            "integratedAbsoluteDifferenceMetresSquared": 473385.94992389984,
+            "lengthMetres": 39248.91473239407,
+            "minimumCommonEdgeApproxGroundMetres": 47533.345816578876,
+            "minimumProtectedClearanceMetres": 18.782804052367965,
+            "minimumSourceEdgeMetres": 201.75938795646653,
+            "roughnessMetres": {
+              "count": 2955,
+              "max": 20.601333618164062,
+              "mean": 1.0481405861688347,
+              "median": 0.570648193359375,
+              "min": 1.52587890625e-05,
+              "nmad": 0.5719692352294922,
+              "p05": 0.05192260742187501,
+              "p95": 3.495054626464843,
+              "p99": 9.039986267089846,
+              "rms": 1.9038731961219186
+            },
+            "sectorAbsoluteDifference": {
+              "NE": {
+                "count": 375,
+                "max": 19.86224365234375,
+                "mean": 6.717076009114583,
+                "median": 1.84405517578125,
+                "min": 0.01251220703125,
+                "nmad": 2.391941271972656,
+                "p05": 0.17562255859374998,
+                "p95": 19.422503662109374,
+                "p99": 19.810430908203124,
+                "rms": 9.921166501363626
+              },
+              "NW": {
+                "count": 358,
+                "max": 19.7852783203125,
+                "mean": 7.668810114514228,
+                "median": 6.12213134765625,
+                "min": 0.0013427734375,
+                "nmad": 8.326141882324219,
+                "p05": 0.16305541992187503,
+                "p95": 18.24397277832031,
+                "p99": 19.289020385742187,
+                "rms": 10.094097347123887
+              },
+              "SE": {
+                "count": 1821,
+                "max": 19.86187744140625,
+                "mean": 15.352807101019787,
+                "median": 16.84979248046875,
+                "min": 0.0208740234375,
+                "nmad": 3.0240189697265625,
+                "p05": 4.21844482421875,
+                "p95": 19.567138671875,
+                "p99": 19.7890869140625,
+                "rms": 16.01599699703437
+              },
+              "SW": {
+                "count": 400,
+                "max": 19.815185546875,
+                "mean": 6.013707580566407,
+                "median": 2.07647705078125,
+                "min": 0.00457763671875,
+                "nmad": 2.7714141174316405,
+                "p05": 0.1356719970703125,
+                "p95": 18.031509399414055,
+                "p99": 19.046932373046868,
+                "rms": 8.89050878847939
+              },
+              "east": {
+                "count": 1553,
+                "max": 19.86224365234375,
+                "mean": 14.560804967640756,
+                "median": 16.6444091796875,
+                "min": 0.01251220703125,
+                "nmad": 3.4257977783203124,
+                "p05": 1.2133178710937504,
+                "p95": 19.58994140625,
+                "p99": 19.80908203125,
+                "rms": 15.565991484078495
+              },
+              "north": {
+                "count": 230,
+                "max": 5.9552001953125,
+                "mean": 1.0001706330672555,
+                "median": 0.714141845703125,
+                "min": 0.0013427734375,
+                "nmad": 0.650447314453125,
+                "p05": 0.055001831054687506,
+                "p95": 2.8281829833984364,
+                "p99": 5.020267944335938,
+                "rms": 1.3973211790197586
+              },
+              "south": {
+                "count": 714,
+                "max": 19.8546142578125,
+                "mean": 11.156353349445247,
+                "median": 14.461883544921875,
+                "min": 0.00457763671875,
+                "nmad": 6.296751690673828,
+                "p05": 0.2037109375,
+                "p95": 19.338015747070312,
+                "p99": 19.720943603515625,
+                "rms": 13.388827352950083
+              },
+              "west": {
+                "count": 457,
+                "max": 19.815185546875,
+                "mean": 10.544150187619666,
+                "median": 12.08782958984375,
+                "min": 0.0408935546875,
+                "nmad": 7.356171826171875,
+                "p05": 0.72694091796875,
+                "p95": 18.61246337890625,
+                "p99": 19.57997802734375,
+                "rms": 12.14246502781577
+              }
+            },
+            "signedDifference": {
+              "count": 2954,
+              "max": 19.74365234375,
+              "mean": -9.182378233003714,
+              "median": -14.158294677734375,
+              "min": -19.86224365234375,
+              "nmad": 7.192700335693359,
+              "p05": -19.463720703125,
+              "p95": 13.325103759765621,
+              "p99": 18.01584533691406,
+              "rms": 13.91668175460912
+            },
+            "slopeDegrees": {
+              "count": 2955,
+              "max": 78.95226686272773,
+              "mean": 29.243590255348366,
+              "median": 26.317706647103233,
+              "min": 0.15238504366190492,
+              "nmad": 14.774805831974787,
+              "p05": 8.97679206455062,
+              "p95": 60.707610571688654,
+              "p99": 70.92664134615391,
+              "rms": 33.10401427153234
+            },
+            "snowClassFraction": 0.45854483925549916,
+            "stableVertexFraction": 0.018612521150592216,
+            "vertices": 2954,
+            "worstNode": {
+              "LV95": [
+                2629791.491159468,
+                1092050.579991876
+              ],
+              "glacier250Excluded": true,
+              "signedDifferenceMetres": -19.86224365234375,
+              "slopeDegrees": 11.648164080709837,
+              "snowExcluded": true,
+              "sourceEdgeMetres": 201.82427261257544
+            }
+          }
+        },
+        "primary": {
+          "closedCycleAtUnlimitedDisagreement": false,
+          "domainNodes": 224315,
+          "escapeEndLV95": [
+            2625015.3659747317,
+            1085514.2961487973
+          ],
+          "escapeFaces": 490,
+          "minimumThresholdMetres": null,
+          "obstruction": {
+            "crossedAbsentEdges": 489,
+            "fullySupportedOutsideProtected": {
+              "edges": 247,
+              "glacier250EndpointFraction": 1.0,
+              "rangeLV95": [
+                2624995.011577955,
+                1087213.2947463864,
+                2625021.712713996,
+                1090477.288345756
+              ],
+              "snowEndpointFraction": 0.9251012145748988
+            },
+            "overlappingReasonCounts": {
+              "glacier250": 476,
+              "incompleteSupport": 113,
+              "protected": 114,
+              "snow": 426,
+              "sourceEdge": 128,
+              "water": 121
+            }
+          }
+        },
+        "snowOnlyAttribution": {
+          "closedCycleAtUnlimitedDisagreement": false,
+          "domainNodes": 282129,
+          "escapeEndLV95": [
+            2625295.055820297,
+            1085515.449675333
+          ],
+          "escapeFaces": 513,
+          "minimumThresholdMetres": null
+        },
+        "strictStable": {
+          "closedCycleAtUnlimitedDisagreement": false,
+          "domainNodes": 28599,
+          "escapeEndLV95": [
+            2619518.0663569034,
+            1092791.3787602123
+          ],
+          "escapeFaces": 475,
+          "minimumThresholdMetres": null
+        }
+      },
+      "sectors": {
+        "NE": {
+          "absoluteDifference": {
+            "count": 91056,
+            "max": 42.89324951171875,
+            "mean": 2.1658709128404454,
+            "median": 1.211669921875,
+            "min": 0.0,
+            "nmad": 1.2201316589355469,
+            "p05": 0.10174560546875,
+            "p95": 7.856597900390625,
+            "p99": 14.181939697265593,
+            "rms": 3.6145348252208724
+          },
+          "bestAvailableDifference": 0.0,
+          "domainNodes": 91056,
+          "excludedChangeFraction": 0.23838676628601416
+        },
+        "NW": {
+          "absoluteDifference": {
+            "count": 115636,
+            "max": 102.5404052734375,
+            "mean": 4.677068220047039,
+            "median": 2.29345703125,
+            "min": 0.0,
+            "nmad": 2.6606082275390626,
+            "p05": 0.1564788818359375,
+            "p95": 16.280288696289062,
+            "p99": 31.083389282226555,
+            "rms": 7.983785264402945
+          },
+          "bestAvailableDifference": 0.0,
+          "domainNodes": 115636,
+          "excludedChangeFraction": 0.034023237413067925
+        },
+        "SE": {
+          "absoluteDifference": {
+            "count": 2411,
+            "max": 27.74627685546875,
+            "mean": 3.7396420226063487,
+            "median": 2.2264404296875,
+            "min": 6.103515625e-05,
+            "nmad": 2.413659045410156,
+            "p05": 0.1907958984375,
+            "p95": 12.6427001953125,
+            "p99": 20.054718017578125,
+            "rms": 5.6604593515154855
+          },
+          "bestAvailableDifference": 6.103515625e-05,
+          "domainNodes": 2411,
+          "excludedChangeFraction": 0.9791967422415447
+        },
+        "SW": {
+          "absoluteDifference": {
+            "count": 15212,
+            "max": 90.82464599609375,
+            "mean": 2.543593036291507,
+            "median": 1.2091064453125,
+            "min": 6.103515625e-05,
+            "nmad": 1.225244384765625,
+            "p05": 0.0977569580078125,
+            "p95": 9.90142822265625,
+            "p99": 22.29178588867181,
+            "rms": 5.159594714516413
+          },
+          "bestAvailableDifference": 6.103515625e-05,
+          "domainNodes": 15212,
+          "excludedChangeFraction": 0.872745323789024
+        },
+        "east": {
+          "absoluteDifference": {
+            "count": 33780,
+            "max": 28.87432861328125,
+            "mean": 1.941090777020542,
+            "median": 1.089111328125,
+            "min": 6.103515625e-05,
+            "nmad": 1.0668856201171875,
+            "p05": 0.0915496826171875,
+            "p95": 7.006906127929687,
+            "p99": 14.115784301757808,
+            "rms": 3.342005738381257
+          },
+          "bestAvailableDifference": 6.103515625e-05,
+          "domainNodes": 33780,
+          "excludedChangeFraction": 0.7170520664877211
+        },
+        "north": {
+          "absoluteDifference": {
+            "count": 118824,
+            "max": 102.5404052734375,
+            "mean": 3.5419371226159266,
+            "median": 1.81036376953125,
+            "min": 0.0,
+            "nmad": 1.9910673706054687,
+            "p05": 0.13739471435546877,
+            "p95": 12.658158874511718,
+            "p99": 21.917568054199222,
+            "rms": 6.024054395528447
+          },
+          "bestAvailableDifference": 0.0,
+          "domainNodes": 118824,
+          "excludedChangeFraction": 0.00666255808917834
+        },
+        "south": {
+          "absoluteDifference": {
+            "count": 2520,
+            "max": 30.0877685546875,
+            "mean": 2.5108470613994296,
+            "median": 1.400360107421875,
+            "min": 0.00067138671875,
+            "nmad": 1.3502573181152342,
+            "p05": 0.1099151611328125,
+            "p95": 8.90203552246093,
+            "p99": 19.68579772949218,
+            "rms": 4.418114519016241
+          },
+          "bestAvailableDifference": 0.00067138671875,
+          "domainNodes": 2520,
+          "excludedChangeFraction": 0.9789698567947391
+        },
+        "west": {
+          "absoluteDifference": {
+            "count": 69191,
+            "max": 90.82464599609375,
+            "mean": 4.2346244311736205,
+            "median": 1.7081298828125,
+            "min": 0.0,
+            "nmad": 1.9511609619140624,
+            "p05": 0.1265869140625,
+            "p95": 16.167556762695312,
+            "p99": 33.17145385742196,
+            "rms": 7.887058000727894
+          },
+          "bestAvailableDifference": 0.0,
+          "domainNodes": 69191,
+          "excludedChangeFraction": 0.4212426119359437
+        }
+      },
+      "shape": [
+        1024,
+        1024
+      ],
+      "thresholds": [
+        {
+          "closedCycle": false,
+          "eligibleNodes": 42965,
+          "metres": 0.5
+        },
+        {
+          "closedCycle": false,
+          "eligibleNodes": 79196,
+          "metres": 1
+        },
+        {
+          "closedCycle": false,
+          "eligibleNodes": 126802,
+          "metres": 2
+        },
+        {
+          "closedCycle": false,
+          "eligibleNodes": 177770,
+          "metres": 5
+        },
+        {
+          "closedCycle": false,
+          "eligibleNodes": 205259,
+          "metres": 10
+        },
+        {
+          "closedCycle": false,
+          "eligibleNodes": 220301,
+          "metres": 20
+        },
+        {
+          "closedCycle": false,
+          "eligibleNodes": 223778,
+          "metres": 40
+        },
+        {
+          "closedCycle": false,
+          "eligibleNodes": 224283,
+          "metres": 80
+        },
+        {
+          "closedCycle": false,
+          "eligibleNodes": 224315,
+          "metres": 160
+        }
+      ]
+    }
+  },
+  "products": {
+    "common": "8f002dcbdeceb6aa37cc9eeef9f2d2060193b1eff7922ddb1d0535a6b8030da2",
+    "regionalParents": "b92c9a3dfa05a87e4fcce4a6e6638efd2d9ab8e86537f52833ff1ed6def78672",
+    "swiss": "1a44a0644de1bde73a3ba84d1b761dc0aa17d48cc971e5f6b5d2c14fb329d7ea"
+  },
+  "software": {
+    "gdal": "3.9.3",
+    "numpy": "2.5.3",
+    "pyproj": "3.7.2",
+    "python": "3.12.6",
+    "rasterio": "1.4.3"
+  },
+  "verification": {
+    "glacierAssets": {
+      "sgi1973": {
+        "path": "sources/atlas/riffelhorn/global-reference-assessment-v1/sgi1973/inventory_sgi1973_r1976.zip",
+        "sha256": "69a13fde7b142dd29b2f07a6bf5a4923750b502661995ca518e992a591e86145"
+      },
+      "sgi2016": {
+        "path": "sources/atlas/riffelhorn/global-reference-assessment-v1/sgi2016/inventory_sgi2016_r2020.zip",
+        "sha256": "36ff3252f24f76f0a93eafaa29086ba63725cc2cc99593deca34c15699e933a7"
+      },
+      "sgi2023": {
+        "path": "sources/atlas/riffelhorn/global-reference-assessment-v1/sgi2023/inventory_sgi2023_r2026.zip",
+        "sha256": "ecef353d4b70f760eda83c6131e5345a2fd999527ea560b0bda4b7c27823f9fb"
+      }
+    },
+    "overlapArrayHashes": {
+      "aws": "d7012f20ebf7e4e632769b5c095f7b12b0408d720390d9e252dfd40e243bbbbc",
+      "awsRaw": "8eed03ff7513618d4fb67f75927c831e578186d91e11bc80a9c5c8357d58a534",
+      "bareMask": "828c9e75aa9d2608c3fc49a0e4c2850a73fcb4b8c633ff503405e1ba1ec20dea",
+      "copernicus": "88914a34b20fdec0d517257123c8029d3e3d5a5ba840e4499ac280ace95d2b78",
+      "copernicusCommonHeight": "c969d633f71c91277dbc1c8b38c0906a9ae5ebc99c550abeaa10c021a63e8fe3",
+      "copernicusRaw": "d8f08f297c2aa7077cc7c8e9fdd65f420b57d03db747f3d107452c025553dc07",
+      "coverNearest": "275dfc480152ac6953bbc8cc3c4f446c5d477764da0f98c950ccadc665bb635d",
+      "edgeMask": "e29b251c13b94e75b0e31278f240274f7d9ad603149616154d15d097ea732a97",
+      "glacier250Mask": "9b96796bbfa4c48b920d4a2efa98a1b2c8b805cf2b9db5eeb432bf1574be7903",
+      "iceBuffer100": "9a990d248895c0c593826d8044a8b351ab4361045aabb4d868e9975ed746113a",
+      "iceBuffer500": "eee5150c2f0c7e3de4925839639374912497ff2a269115e8e79ef8922073ae94",
+      "primary": "ea7c4f39a698cce938e00f43e8773532d66756e17c96892317e9eff4316c10b2",
+      "primaryMask": "ea7c4f39a698cce938e00f43e8773532d66756e17c96892317e9eff4316c10b2",
+      "slope": "0a6726a1d79f69a6e00fbb3252a6a2fcb8e661e0b9c2d5bd1f64f1f794283715",
+      "slope10to35": "812c7ce61e665e8afb0780a7eefa5ef4065fd33fb8c6e5e2a91103af02868fa3",
+      "slope3to45": "d0f10b6b55bcffa3f5a8f35ad62f33c4689ec7612b268ca71fa9517a1f9d1f61",
+      "swissEgm2008Diagnostic": "cfa0a0c984210e783481a32f9284811a08cb7048776ddc7ee6501780a15f1763",
+      "swissLn02": "88b5f35e387b716b839536fab974d53ff684783f5b0b9394ea33ff540764b7b1"
+    },
+    "overlapFileSha256": "56dc810cc68763704b7a30daed4f3446bf698b9d6f332088afaf90dc3417ffc8",
+    "products": {
+      "common": "8f002dcbdeceb6aa37cc9eeef9f2d2060193b1eff7922ddb1d0535a6b8030da2",
+      "regionalParents": "b92c9a3dfa05a87e4fcce4a6e6638efd2d9ab8e86537f52833ff1ed6def78672",
+      "swiss": "1a44a0644de1bde73a3ba84d1b761dc0aa17d48cc971e5f6b5d2c14fb329d7ea"
+    },
+    "regionalFilesVerified": 35,
+    "sourceAssetsVerified": {
+      "common": 6,
+      "swiss": 100
+    },
+    "sources": {
+      "common": "74c55b0cbad123778294647fa9770b1d673735401ae5d5b1854c4b32e57e0a85",
+      "swiss": "b24a4fdc7b378ba79d442d0ce216a031dfb95a6bc6eed5ad9c33be61175651f4"
+    }
+  }
+}

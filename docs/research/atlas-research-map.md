@@ -119,6 +119,16 @@ around the protected interior before deriving another surface. Sparse stable
 support and glacier sectors may defeat that test. No terrain, hierarchy algorithm,
 height correction or production behavior changed; this direction remains untested.
 
+The [same-level seam-corridor feasibility diagnostic](../atlas/seam-corridor-feasibility.md)
+then tested z12/13 enclosing graph cycles under independent support/change
+constraints. No admissible cycle exists even at unlimited disagreement; edge and
+glacier-buffer sensitivities preserve failure. The southern excluded glacier/change
+system connects protected terrain to the source edge. Relaxed change-mask controls
+close around 19–20 m disagreement but mostly traverse excluded terrain and are not
+accepted corridors. The next prerequisite is glacier-aware support-extent planning
+using retained inventories, before further acquisition or any transition. No
+heights, products, references, rendering or production policy changed.
+
 ## Evidence classes
 
 - **MERIDIAN EVIDENCE (M):** measurements, inspected outputs and negative results

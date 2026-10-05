@@ -1,0 +1,67 @@
+{
+  "version": "riffelhorn-seam-corridor-v1",
+  "baseline": "9827b17923442a8c61e813fea103bc291bb11cef",
+  "question": "Does retained supported overlap contain a closed, robust compatibility corridor around the protected interior? No heights or terrain products change.",
+  "products": {
+    "swiss": "1a44a0644de1bde73a3ba84d1b761dc0aa17d48cc971e5f6b5d2c14fb329d7ea",
+    "regionalParents": "b92c9a3dfa05a87e4fcce4a6e6638efd2d9ab8e86537f52833ff1ed6def78672",
+    "common": "8f002dcbdeceb6aa37cc9eeef9f2d2060193b1eff7922ddb1d0535a6b8030da2"
+  },
+  "levels": [
+    12,
+    13
+  ],
+  "levelRationale": "Compare unchanged unencoded Swiss-derived parents with decoded common delivery at the identical XYZ cell centres and level. z13 is the common information-bearing delivery ceiling; z12 tests one coarser level. Neither is measurement accuracy. Quantization asymmetry is <=1/512 m and explicitly reported.",
+  "heightPolicy": "Native LN02 Swiss and EGM2008 common. No datum diagnostic applied, fitted offset, registration, blend or height smoothing.",
+  "topology": "Four-neighbour planar grid graph at DEM cell centres. A candidate must contain a simple closed graph cycle enclosing the whole protected circle. Threshold edges join two permitted nodes. Flood the dual faces from the protected interior: escape to the outer face proves no enclosing candidate cycle; separation certifies a closed cycle. No prescribed rectangular or star-shaped ring.",
+  "protectedInterior": {
+    "centreLV95": [
+      2625000,
+      1092000
+    ],
+    "radiusMetres": 1500,
+    "nodeGuard": "At least one local cell diagonal beyond radius; graph edges cannot cut the protected circle."
+  },
+  "hardConstraints": {
+    "support": "Swiss count exactly 4^(14-z), finite common tile/cell, no partial Swiss means treated as complete heights.",
+    "sourceEdgeGuardMetres": 200,
+    "change": "Retained union SGI1973/2016/2023 glaciers with 250 m buffer; WorldCover nearest diagnostic water/snow-ice classes excluded. Masks conservatively resampled with maximum, not terrain heights.",
+    "waterLimit": "Retained 25 m nearest WorldCover classification is a diagnostic exclusion, not complete shoreline validation.",
+    "slope": "No hard slope cutoff; 5-40 degree stable-fit screen is not automatically a seam mask."
+  },
+  "fields": [
+    "absolute native-reference same-level disagreement",
+    "same-level Swiss slope",
+    "four-neighbour Swiss relief/roughness",
+    "protected-interior distance",
+    "source-edge distance",
+    "candidate stable-mask membership",
+    "glacier/water/snow exclusion",
+    "complete/partial/absent support"
+  ],
+  "cost": "No weighted composite score. Primary feasibility minimizes the maximum endpoint absolute disagreement admitted for a closed cycle. At a few physical thresholds retain the reachable-face boundary and eligible region as witnesses/corridors, not globally shortest or final seamlines. Report route length, integrated disagreement and worst segments independently.",
+  "thresholdsMetres": [
+    0.5,
+    1,
+    2,
+    5,
+    10,
+    20,
+    40,
+    80,
+    160
+  ],
+  "minimumThreshold": "Binary search sorted finite eligible-node absolute differences, with exact below/at witnesses. Hard-domain failure is reported as no finite threshold, not repaired by scoring.",
+  "sensitivity": [
+    "z12 versus z13",
+    "source-edge guards 100/200/500 m",
+    "SGI glacier buffers 100/250/500 m from retained official inventory assets",
+    "strict candidate-stable support as a separately labelled domain",
+    "glacier/snow exclusion disabled only as a scientifically invalid obstruction control, never accepted corridor"
+  ],
+  "rectangleControl": "Nearest full-supported graph-cell strip to the original 10x10 km LV95 source rectangle, with explicit footprint/sample offset, excluded fractions and zero remaining collar; compare with candidate witnesses if any.",
+  "supportMetrics": "Distance to protected circle and source edge, common-root edge; clearance to exclusions, stable support nearby. No future transition width assumed.",
+  "outputs": "Immutable external diagnostic fields, topology witnesses, optional closed routes, maps and hash manifest; lightweight protocol/results and pure synthetic graph tests in Git. No renderer stream or DEM output.",
+  "stopping": "One two-level diagnostic. Do not relax hard constraints into a success, acquire more terrain, construct a seam/transition, or perform follow-on work.",
+  "obstructionAttributionAddendum": "After the first topology pass found no admissible cycle, separate glacier-only and snow-only exclusion ablations identify which class independently blocks closure. These are obstruction controls, not relaxed candidate corridors. No scoring or heights change."
+}

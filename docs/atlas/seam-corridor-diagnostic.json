@@ -1,0 +1,104 @@
+{
+  "files": [
+    {
+      "bytes": 68840,
+      "path": "measurements.json",
+      "sha256": "98a22ce10c584daa52bf70f7763ab79ea122dff92af1a07be60b6c0c2c64de41"
+    },
+    {
+      "bytes": 10471313,
+      "path": "z12-diagnostic.npz",
+      "sha256": "8bf49b9c9c25c5be6f723a43b3066f968175f7c80befddc9d1f90e82b4bc3876"
+    },
+    {
+      "bytes": 749385,
+      "path": "z12-evidence.png",
+      "sha256": "b88b780c99e8c3c85c4c86892900138b2bb1565b821d29b37d3b6a20b28a8112"
+    },
+    {
+      "bytes": 396095,
+      "path": "z12-witnesses-lv95.json",
+      "sha256": "783f392498089d1d39d7a3957bd731bfb765ab56b24e377070baaaeaa07be973"
+    },
+    {
+      "bytes": 23680625,
+      "path": "z13-diagnostic.npz",
+      "sha256": "c1475ac05e96208e5364c952008a43ffd20f2b4200029f6f5ee3f85a56661e7f"
+    },
+    {
+      "bytes": 1444628,
+      "path": "z13-evidence.png",
+      "sha256": "5f929dd12db095606bb8c74fa204946232c22a6557df3529ab551c4127a6b82a"
+    },
+    {
+      "bytes": 630684,
+      "path": "z13-witnesses-lv95.json",
+      "sha256": "1c0a6e9f3072300b148b6079af6c5d0a081d8e8d2fc2639be3f958ac9e19e928"
+    }
+  ],
+  "heightsUnmodified": true,
+  "identity": "253fdd01d661a0282fd241b915358d1b6c980efae74797bb2af78999b8816cf5",
+  "inputs": {
+    "glacierAssets": {
+      "sgi1973": {
+        "path": "sources/atlas/riffelhorn/global-reference-assessment-v1/sgi1973/inventory_sgi1973_r1976.zip",
+        "sha256": "69a13fde7b142dd29b2f07a6bf5a4923750b502661995ca518e992a591e86145"
+      },
+      "sgi2016": {
+        "path": "sources/atlas/riffelhorn/global-reference-assessment-v1/sgi2016/inventory_sgi2016_r2020.zip",
+        "sha256": "36ff3252f24f76f0a93eafaa29086ba63725cc2cc99593deca34c15699e933a7"
+      },
+      "sgi2023": {
+        "path": "sources/atlas/riffelhorn/global-reference-assessment-v1/sgi2023/inventory_sgi2023_r2026.zip",
+        "sha256": "ecef353d4b70f760eda83c6131e5345a2fd999527ea560b0bda4b7c27823f9fb"
+      }
+    },
+    "overlapArrayHashes": {
+      "aws": "d7012f20ebf7e4e632769b5c095f7b12b0408d720390d9e252dfd40e243bbbbc",
+      "awsRaw": "8eed03ff7513618d4fb67f75927c831e578186d91e11bc80a9c5c8357d58a534",
+      "bareMask": "828c9e75aa9d2608c3fc49a0e4c2850a73fcb4b8c633ff503405e1ba1ec20dea",
+      "copernicus": "88914a34b20fdec0d517257123c8029d3e3d5a5ba840e4499ac280ace95d2b78",
+      "copernicusCommonHeight": "c969d633f71c91277dbc1c8b38c0906a9ae5ebc99c550abeaa10c021a63e8fe3",
+      "copernicusRaw": "d8f08f297c2aa7077cc7c8e9fdd65f420b57d03db747f3d107452c025553dc07",
+      "coverNearest": "275dfc480152ac6953bbc8cc3c4f446c5d477764da0f98c950ccadc665bb635d",
+      "edgeMask": "e29b251c13b94e75b0e31278f240274f7d9ad603149616154d15d097ea732a97",
+      "glacier250Mask": "9b96796bbfa4c48b920d4a2efa98a1b2c8b805cf2b9db5eeb432bf1574be7903",
+      "iceBuffer100": "9a990d248895c0c593826d8044a8b351ab4361045aabb4d868e9975ed746113a",
+      "iceBuffer500": "eee5150c2f0c7e3de4925839639374912497ff2a269115e8e79ef8922073ae94",
+      "primary": "ea7c4f39a698cce938e00f43e8773532d66756e17c96892317e9eff4316c10b2",
+      "primaryMask": "ea7c4f39a698cce938e00f43e8773532d66756e17c96892317e9eff4316c10b2",
+      "slope": "0a6726a1d79f69a6e00fbb3252a6a2fcb8e661e0b9c2d5bd1f64f1f794283715",
+      "slope10to35": "812c7ce61e665e8afb0780a7eefa5ef4065fd33fb8c6e5e2a91103af02868fa3",
+      "slope3to45": "d0f10b6b55bcffa3f5a8f35ad62f33c4689ec7612b268ca71fa9517a1f9d1f61",
+      "swissEgm2008Diagnostic": "cfa0a0c984210e783481a32f9284811a08cb7048776ddc7ee6501780a15f1763",
+      "swissLn02": "88b5f35e387b716b839536fab974d53ff684783f5b0b9394ea33ff540764b7b1"
+    },
+    "overlapFileSha256": "56dc810cc68763704b7a30daed4f3446bf698b9d6f332088afaf90dc3417ffc8",
+    "products": {
+      "common": "8f002dcbdeceb6aa37cc9eeef9f2d2060193b1eff7922ddb1d0535a6b8030da2",
+      "regionalParents": "b92c9a3dfa05a87e4fcce4a6e6638efd2d9ab8e86537f52833ff1ed6def78672",
+      "swiss": "1a44a0644de1bde73a3ba84d1b761dc0aa17d48cc971e5f6b5d2c14fb329d7ea"
+    },
+    "regionalFilesVerified": 35,
+    "sourceAssetsVerified": {
+      "common": 6,
+      "swiss": 100
+    },
+    "sources": {
+      "common": "74c55b0cbad123778294647fa9770b1d673735401ae5d5b1854c4b32e57e0a85",
+      "swiss": "b24a4fdc7b378ba79d442d0ce216a031dfb95a6bc6eed5ad9c33be61175651f4"
+    }
+  },
+  "noTerrainOutput": true,
+  "noVerticalTransformation": true,
+  "planSha256": "92dd792a25eaa1be62f18926f9fdc1cffe7722bbb3812c84195193fab83d2b6b",
+  "software": {
+    "gdal": "3.9.3",
+    "numpy": "2.5.3",
+    "pyproj": "3.7.2",
+    "python": "3.12.6",
+    "rasterio": "1.4.3"
+  },
+  "toolSha256": "0687e323c37b4cdcb5321b4db642ba430169275574a4b3a59c28761c73933a98",
+  "version": "riffelhorn-seam-corridor-v1"
+}

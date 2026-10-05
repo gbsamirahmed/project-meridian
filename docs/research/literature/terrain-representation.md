@@ -413,6 +413,14 @@ certify a closed transition or a correction model. Keep world-model reconciliati
 derived representation construction and rendering continuity distinct. No new
 algorithm, terrain product or general hierarchy contract is adopted.
 
+**M — subsequent bounded result:** the
+[same-level corridor diagnostic](../../atlas/seam-corridor-feasibility.md) finds no
+enclosing route in the retained stable/change-supported domain at z12 or z13,
+regardless of compatibility tolerance. Planar cut/cycle duality supplies a failure
+certificate; source-area enlargement may be necessary but is not yet scoped.
+This does not disprove every future change-aware spatial handoff or establish a
+fusion method. The relaxed mask control is explicitly inadmissible.
+
 ## Swisstopo 2026 opportunity
 
 **Official sources (E):** swisstopo, 23 April 2026,

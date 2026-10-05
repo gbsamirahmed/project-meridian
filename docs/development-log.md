@@ -3350,3 +3350,34 @@ Validation: all 33 focused terrain-policy/model/hierarchy Node tests passed;
 checks passed. Implementation/configuration diff is empty. No lint, TypeScript,
 full application suite, build, browser run or external checksum pass was rerun
 for these documentation-only changes.
+
+## 2026-10-05 — Same-level seam-corridor feasibility
+
+Completed the [bounded corridor diagnostic](atlas/seam-corridor-feasibility.md)
+from `9827b17`. Frozen native-reference Swiss-derived parents and common delivery
+at z12/13 are compared on identical cell centres with explicit complete support.
+Thresholded planar cycles/dual escape certificates test enclosure of the protected
+1.5 km circle; no rectangular seam, composite confidence score or height changes.
+
+Result: no admissible enclosing cycle even at unlimited disagreement, robust to
+100–500 m source-edge and glacier-buffer sensitivities. The southern excluded
+glacier/change system reaches the regional edge. Glacier-only and snow-only
+attribution checks independently fail. Removing change constraints permits
+19.42/19.86 m minimax witness loops, but these are mostly glacier-excluded and
+are not seam candidates. No transition experiment is justified. Next prerequisite:
+glacier-aware support-extent feasibility using retained inventories, before any
+additional terrain acquisition. No follow-on work performed.
+
+All 106 canonical terrain source files, parent fields and used common tiles,
+retained overlap masks and glacier archives verify. Independent rebuild matches
+all seven external diagnostic files and the manifest; 37.44 MB per diagnostic.
+Large fields/maps remain external. Lightweight plan/results/hash records and
+synthetic tests are in Git; no runtime or CI dependency on the estate is added.
+
+Validation: 46 Atlas Python tests, 171 active Node tests with one existing optional
+skip, lint, TypeScript, application-only Vite build, metadata/reference and diff
+checks pass. Existing deprecation/bundle warnings retained. The normal build was
+also inadvertently run and copied existing Weather publication into ignored dist;
+no forecast calculation/update occurred. Application-only build was then verified
+separately. Production AWS, analytical AWS z15, IGOR, exaggeration, Weather,
+Traverse, satellite and lifecycle remain unchanged.
