@@ -1,0 +1,1905 @@
+{
+  "baseline": "6f2eb0217c167630154fe4e9d4aa6c8c5d59a76e",
+  "benchmarkExpanded": false,
+  "capture": {
+    "DPR": 1,
+    "browser": "151.0.7922.34",
+    "cancellations": {
+      "net::ERR_ABORTED": 10
+    },
+    "httpErrors": 0,
+    "limitations": "Navigation state telemetry, not a perceptual video or a universal no-popping claim. Common hosted imagery is unpinned and not archived as provider tiles.",
+    "navigationLegs": 6,
+    "navigationSequences": 2,
+    "pageErrors": 0,
+    "requestCounts": {
+      "imagery": 50,
+      "maptiler": 126,
+      "terrain": 430
+    },
+    "sampledStates": 36,
+    "viewport": {
+      "height": 1080,
+      "width": 1920
+    },
+    "visualIndex": [
+      {
+        "filename": "centre-12.4-b0--common.png",
+        "geometryLevels": [
+          9,
+          10,
+          11,
+          12
+        ],
+        "imageryLevels": [],
+        "mode": "common",
+        "scene": {
+          "bearing": 0,
+          "center": [
+            7.76121329,
+            45.97910794
+          ],
+          "id": "centre-12.4-b0",
+          "pitch": 55,
+          "zoom": 12.4
+        },
+        "sha256": "caeab1569f5a5c5f325a872e624e84248ddf70fd4e29d459d644b58bf8b8318e"
+      },
+      {
+        "filename": "centre-14.2-b0--common.png",
+        "geometryLevels": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "imageryLevels": [],
+        "mode": "common",
+        "scene": {
+          "bearing": 0,
+          "center": [
+            7.76121329,
+            45.97910794
+          ],
+          "id": "centre-14.2-b0",
+          "pitch": 55,
+          "zoom": 14.2
+        },
+        "sha256": "31d530e1fe16a1797d64cc2b21a8397056f6f01faf4fc47af3ba4af9736e4ac1"
+      },
+      {
+        "filename": "centre-16.2-b0--common.png",
+        "geometryLevels": [
+          9,
+          11,
+          13,
+          14,
+          15
+        ],
+        "imageryLevels": [],
+        "mode": "common",
+        "scene": {
+          "bearing": 0,
+          "center": [
+            7.76121329,
+            45.97910794
+          ],
+          "id": "centre-16.2-b0",
+          "pitch": 55,
+          "zoom": 16.2
+        },
+        "sha256": "24357fee25699c4bb93a5c582fb01e33d8f11e94e2390e1ffef81851a057c402"
+      },
+      {
+        "filename": "centre-16.2-b180--common.png",
+        "geometryLevels": [
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ],
+        "imageryLevels": [],
+        "mode": "common",
+        "scene": {
+          "bearing": 180,
+          "center": [
+            7.76121329,
+            45.97910794
+          ],
+          "id": "centre-16.2-b180",
+          "pitch": 55,
+          "zoom": 16.2
+        },
+        "sha256": "be2fbab3e714b5eb9a0244bf8616fdaafdfebf612f5fa442bb9fa5fa05d0b2a0"
+      },
+      {
+        "filename": "centre-12.4-b0--regional.png",
+        "geometryLevels": [
+          9,
+          10,
+          11,
+          12
+        ],
+        "imageryLevels": [
+          12
+        ],
+        "mode": "regional",
+        "scene": {
+          "bearing": 0,
+          "center": [
+            7.76121329,
+            45.97910794
+          ],
+          "id": "centre-12.4-b0",
+          "pitch": 55,
+          "zoom": 12.4
+        },
+        "sha256": "610df63aa16d4548e97534f413dcc9279cd244da0d58fc9646e0287af3bc20bb"
+      },
+      {
+        "filename": "centre-14.2-b0--regional.png",
+        "geometryLevels": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "imageryLevels": [
+          14
+        ],
+        "mode": "regional",
+        "scene": {
+          "bearing": 0,
+          "center": [
+            7.76121329,
+            45.97910794
+          ],
+          "id": "centre-14.2-b0",
+          "pitch": 55,
+          "zoom": 14.2
+        },
+        "sha256": "00ef9110ef4cc750ea27a960245b2ce82f0c5cc622cdcd8bf64f9a6d21ad7d7a"
+      },
+      {
+        "filename": "centre-16.2-b0--regional.png",
+        "geometryLevels": [
+          9,
+          11,
+          13,
+          14,
+          15
+        ],
+        "imageryLevels": [
+          15,
+          16,
+          17
+        ],
+        "mode": "regional",
+        "scene": {
+          "bearing": 0,
+          "center": [
+            7.76121329,
+            45.97910794
+          ],
+          "id": "centre-16.2-b0",
+          "pitch": 55,
+          "zoom": 16.2
+        },
+        "sha256": "0878395e9f3e190d724db99d4264b49d42626286c4742c7965aaf8cccd8d278e"
+      },
+      {
+        "filename": "centre-16.2-b180--regional.png",
+        "geometryLevels": [
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ],
+        "imageryLevels": [
+          15,
+          16,
+          17
+        ],
+        "mode": "regional",
+        "scene": {
+          "bearing": 180,
+          "center": [
+            7.76121329,
+            45.97910794
+          ],
+          "id": "centre-16.2-b180",
+          "pitch": 55,
+          "zoom": 16.2
+        },
+        "sha256": "b9ff658c24363f46cb9278ec849b8682a67d052982b4500f8aaf1afb728d90be"
+      }
+    ]
+  },
+  "classification": "BASELINE PROOF ESTABLISHED WITH EXPLICIT INTERPRETATION LIMITS",
+  "correctionPerformed": false,
+  "externalOutputs": {
+    "captureReportSha256": "309c1ef7e80dbc9ae4a80f68a189f3184fd42a203d6661b645a71b0be284cbc4",
+    "captures": "experiments/atlas/riffelhorn-swissimage-baseline-v1/captures",
+    "diagnosticHashes": {
+      "probe-locations.json": "1dab747ccad22245ab6b9db42b46204078175643cf381afaa914e6576661c63a",
+      "source-diagnostics.json": "3d5c859f03d71037b8d9cfeeb56c3c80dd6be93b7a58cd097845d9b82c4d1618",
+      "transparent.png": "b262bd68d44f93637b9949caf7ff7ce0b6b6ed839c3a2468681952b215ec4d95"
+    },
+    "product": "derived/atlas/riffelhorn/riffelhorn-swissimage-baseline-v1",
+    "signalReportSha256": "b747dd83fa946aaff37dd0ea933000c0f590dac05d998e7e07605e4c96553846"
+  },
+  "geometry": [
+    {
+      "manifestSha256": "5dbd4991aa3d413f526b158b084233c1f393491cc235eca6b02324066545427d",
+      "product": "riffelhorn-swiss-regional-parents-diagnostic",
+      "revision": "b92c9a3dfa05a87e4fcce4a6e6638efd2d9ab8e86537f52833ff1ed6def78672",
+      "verifiedTiles": 30
+    },
+    {
+      "manifestSha256": "30413b6698c1e75e27fd169f61925d8d60044fa14f444fb072b652c54816e106",
+      "product": "riffelhorn-swiss-support",
+      "revision": "1a44a0644de1bde73a3ba84d1b761dc0aa17d48cc971e5f6b5d2c14fb329d7ea",
+      "verifiedTiles": 11429
+    }
+  ],
+  "geometrySourceHashesVerified": {
+    "assets": 100,
+    "identity": "b24a4fdc7b378ba79d442d0ce216a031dfb95a6bc6eed5ad9c33be61175651f4",
+    "vrtSha256": "8b097d62be84e110cdf8efd695f63d685a9069fcad98aae91660b7fb42e17998"
+  },
+  "independentFullRebuildManifestIdentical": true,
+  "levels": [
+    {
+      "groundSampleMetresAtRiffelhorn": 13.279416789102807,
+      "partialTiles": 1,
+      "supportedSampleArea": 22675.953125,
+      "tileCount": 1,
+      "zoom": 12
+    },
+    {
+      "groundSampleMetresAtRiffelhorn": 6.639708394551404,
+      "partialTiles": 2,
+      "supportedSampleArea": 90703.810546875,
+      "tileCount": 2,
+      "zoom": 13
+    },
+    {
+      "groundSampleMetresAtRiffelhorn": 3.319854197275702,
+      "partialTiles": 4,
+      "supportedSampleArea": 362815.24609375,
+      "tileCount": 4,
+      "zoom": 14
+    },
+    {
+      "groundSampleMetresAtRiffelhorn": 1.659927098637851,
+      "partialTiles": 8,
+      "supportedSampleArea": 1451261.0,
+      "tileCount": 9,
+      "zoom": 15
+    },
+    {
+      "groundSampleMetresAtRiffelhorn": 0.8299635493189255,
+      "partialTiles": 20,
+      "supportedSampleArea": 5805044.0,
+      "tileCount": 36,
+      "zoom": 16
+    },
+    {
+      "groundSampleMetresAtRiffelhorn": 0.41498177465946273,
+      "partialTiles": 38,
+      "supportedSampleArea": 23220176.0,
+      "tileCount": 110,
+      "zoom": 17
+    },
+    {
+      "groundSampleMetresAtRiffelhorn": 0.20749088732973137,
+      "partialTiles": 74,
+      "supportedSampleArea": 92880704.0,
+      "tileCount": 380,
+      "zoom": 18
+    }
+  ],
+  "next": "One bounded steep-face acquisition/multiview-support feasibility assessment for these four retained tiles; no additional imagery acquisition, correction or reconstruction implied.",
+  "product": {
+    "delivery": {
+      "alpha": "area support fraction, not quality/shadow mask; valid black pixels retained; absent children transparent",
+      "colour": "Assumed sRGB RGB8, no colour profile calibration or exposure modification",
+      "crs": "EPSG:3857",
+      "finest": "GDAL area average of assumed-sRGB decoded linear-light premultiplied RGB and validity; one thread",
+      "format": "lossless RGBA PNG",
+      "informationCeiling": "25cm nominal upstream information; 10cm distributed grid and z18 ~0.207m are resampling, not new observations",
+      "maxzoom": 18,
+      "minzoom": 12,
+      "parents": "recursive 2x2 equal Mercator-area means of unencoded premultiplied linear RGB/alpha; independently encoded",
+      "scheme": "xyz",
+      "tileSize": 512
+    },
+    "id": "riffelhorn-swissimage-baseline-v1",
+    "identity": "f6edd630206ed02f255176935d72126cbc6ad7987b12d2986edbe6d05619bc1b",
+    "lineage": {
+      "geometryUsedForPreparation": "none; upstream orthorectification geometry exact revision UNKNOWN",
+      "radiometricCorrection": "none",
+      "reprojection": "EPSG:2056 to EPSG:3857, horizontal only",
+      "syntheticFilling": "none"
+    },
+    "origin": "source-derived regional appearance; processed orthophoto, not raw observation",
+    "recipeSha256": "d917612512380cb6940c103fe679d3af9acc0390a5a0681deb6e4fdda2667cf7",
+    "revision": "v1",
+    "software": {
+      "gdal": "3.9.3",
+      "numpy": "2.5.3",
+      "pillow": "12.3.0",
+      "pyproj": "3.7.2",
+      "python": "3.12.6",
+      "rasterio": "1.4.3"
+    }
+  },
+  "productionUnchanged": {
+    "analyticalElevation": "independent AWS z15",
+    "hashes": {
+      "src/atlas/map/AtlasMap.ts": "cb45f5963716d636e903ed515008b66dab2fca0ab6d2aa28214a8c6303ef4b05",
+      "src/atlas/map/atlasVisuals.ts": "48426ab2132d5192069254ec9fe3fb7d9d433c2c9059f6f2223166c34c22dcfc",
+      "src/atlas/map/satelliteLayer.ts": "ffcd24310e5a2ef7d1485528f42fb39d52b8b2503b138fb51efd385412cd715e",
+      "src/atlas/map/satelliteProvider.ts": "1f5c44821ecb05e04fbe5884450d3e52adbb7944c6330bc8994915aeeeb49015",
+      "src/atlas/map/terrainLayers.ts": "c71099083d3184d5c70c148ea2c3f0574b0b170fb0737b9c041df579ed4e5497",
+      "src/atlas/map/visualTerrainConfig.ts": "583da7dc4ac885bf1a9a4b440c45d71d24c0ddfc9212b58772914ab9ccce0920",
+      "src/atlas/terrain/analyticalElevationConfig.ts": "6fd90c2fb39dc925c8de90cf6b7cf3a907696d71cc116e42563255addb41a9bb",
+      "src/atlas/terrain/terrainElevationSampler.ts": "d941ad5474ff7370da4e67c135018a777ed440d84bf00cff0f536600270f1b7b"
+    },
+    "runtimeFilesChanged": false
+  },
+  "source": {
+    "acquisition": {
+      "mosaicYear": 2023,
+      "pixelTimestamp": "UNKNOWN",
+      "sensor": "UNKNOWN",
+      "sun": "UNKNOWN",
+      "viewGeometry": "UNKNOWN"
+    },
+    "assets": [
+      {
+        "bounds": [
+          2624000.0,
+          1091000.0,
+          2625000.0,
+          1092000.0
+        ],
+        "bytes": 50530470,
+        "colourInterpretation": [
+          "red",
+          "green",
+          "blue"
+        ],
+        "nodata": null,
+        "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissimage-dop10/swissimage-dop10_2023_2624-1091_0.1_2056.tif",
+        "sha256": "eb81b3df75538dc0da5cd6ce898976dd74f22dcb3b2586760f0a7df159de8c41",
+        "tile": "2624-1091"
+      },
+      {
+        "bounds": [
+          2624000.0,
+          1092000.0,
+          2625000.0,
+          1093000.0
+        ],
+        "bytes": 45485267,
+        "colourInterpretation": [
+          "red",
+          "green",
+          "blue"
+        ],
+        "nodata": null,
+        "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissimage-dop10/swissimage-dop10_2023_2624-1092_0.1_2056.tif",
+        "sha256": "8cd275f75f653d192d9d7619771746ff93fbdd8646e2d1d06214af832c49f62e",
+        "tile": "2624-1092"
+      },
+      {
+        "bounds": [
+          2625000.0,
+          1091000.0,
+          2626000.0,
+          1092000.0
+        ],
+        "bytes": 43921676,
+        "colourInterpretation": [
+          "red",
+          "green",
+          "blue"
+        ],
+        "nodata": null,
+        "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissimage-dop10/swissimage-dop10_2023_2625-1091_0.1_2056.tif",
+        "sha256": "66ff157b2eb008e8c2e2ae41ee427c2b483ae69faf352b6d4c12c7713285d2bc",
+        "tile": "2625-1091"
+      },
+      {
+        "bounds": [
+          2625000.0,
+          1092000.0,
+          2626000.0,
+          1093000.0
+        ],
+        "bytes": 46321615,
+        "colourInterpretation": [
+          "red",
+          "green",
+          "blue"
+        ],
+        "nodata": null,
+        "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissimage-dop10/swissimage-dop10_2023_2625-1092_0.1_2056.tif",
+        "sha256": "31c4219580f87fd54268c04f2773f30a715392bde47581cf1245207b7c7ff90f",
+        "tile": "2625-1092"
+      }
+    ],
+    "authority": "swisstopo",
+    "colourTransfer": "Not calibrated/established; sRGB assumed explicitly for preparation and signal diagnostics",
+    "distributedSpacingMetres": 0.1,
+    "encoding": "RGB8 COG; internal YCbCr JPEG95; three bands",
+    "nativeCRS": "EPSG:2056",
+    "nominalUpstreamInformationMetres": 0.25,
+    "origin": "already orthorectified/processed upstream; not raw aerial images",
+    "orthorectificationGeometryRevision": "UNKNOWN",
+    "product": "SWISSIMAGE 2023 DOP10 RGB orthophoto mosaic",
+    "retainedNotReacquired": true,
+    "rights": {
+      "attribution": "\u00a9swisstopo",
+      "licence": "swisstopo custom OGD terms",
+      "reference": "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-and-geoservices"
+    },
+    "sourceBounds": [
+      2624000,
+      1091000,
+      2626000,
+      1093000
+    ],
+    "sourceBytes": 186259028,
+    "sourceFamily": "swissimage-retained-2023"
+  },
+  "sourceDisplay": {
+    "limits": "Map.project followed by terrain unproject checks first-visible support; <=2m horizontal roundtrip required. Nearest displayed pixel sampling, inherited atmosphere/filtering, and native-vs-render mesh differences remain. Correlation is signal retention evidence, not radiometric calibration or accuracy.",
+    "scenes": [
+      {
+        "camera": "centre-12.4-b0",
+        "mode": "common",
+        "patches": {
+          "dark-context": {
+            "display": {
+              "encodedLumaAtMost5Fraction": 0.0,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.01301692831888795,
+                0.022553159492462872,
+                0.1839623659580946
+              ],
+              "linearMean": 0.05211499008160107,
+              "linearStd": 0.05534531795973111,
+              "samples": 961
+            },
+            "geographicGradientEnergy": 0.0003171464663130432,
+            "linearLuminanceCorrelation": 0.9438864823858144,
+            "matchedPrepared": {
+              "encodedLumaAtMost5Fraction": 0.0,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.004405986524373293,
+                0.005862467475514858,
+                0.2931439733892679
+              ],
+              "linearMean": 0.06385458382703528,
+              "linearStd": 0.09793842168510002,
+              "samples": 961
+            },
+            "maxRoundtripMetres": 9.91122596017488e-05,
+            "sampleRectangle": [
+              927,
+              501,
+              942,
+              509
+            ],
+            "sampledRegionalLevels": [
+              12
+            ],
+            "traceableSamples": 961,
+            "uniqueDisplayPixels": 122
+          },
+          "ordinary": {
+            "display": {
+              "encodedLumaAtMost5Fraction": 0.0,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.14995883563011886,
+                0.21723898445665835,
+                0.282866627651453
+              ],
+              "linearMean": 0.21121568783806804,
+              "linearStd": 0.04599019404917839,
+              "samples": 961
+            },
+            "geographicGradientEnergy": 0.0001695727391708551,
+            "linearLuminanceCorrelation": 0.829977929353122,
+            "matchedPrepared": {
+              "encodedLumaAtMost5Fraction": 0.0,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.2176203333377838,
+                0.2829184861212969,
+                0.392267395067215
+              ],
+              "linearMean": 0.29565556679394217,
+              "linearStd": 0.057560562606636216,
+              "samples": 961
+            },
+            "maxRoundtripMetres": 3.2698746627771305e-07,
+            "sampleRectangle": [
+              981,
+              486,
+              986,
+              491
+            ],
+            "sampledRegionalLevels": [
+              12
+            ],
+            "traceableSamples": 961,
+            "uniqueDisplayPixels": 31
+          },
+          "steep": {
+            "display": {
+              "encodedLumaAtMost5Fraction": 0.0,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.017189201552420853,
+                0.019791929154284297,
+                0.04285870558172464
+              ],
+              "linearMean": 0.022489297425757775,
+              "linearStd": 0.010515423571481702,
+              "samples": 961
+            },
+            "geographicGradientEnergy": 2.344926880823546e-05,
+            "linearLuminanceCorrelation": 0.8149147344585839,
+            "matchedPrepared": {
+              "encodedLumaAtMost5Fraction": 0.0,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.0036990234613884236,
+                0.005798447784874588,
+                0.031324889076501126
+              ],
+              "linearMean": 0.011203082029038457,
+              "linearStd": 0.019979337282773343,
+              "samples": 961
+            },
+            "maxRoundtripMetres": 1.305095430953163e-07,
+            "sampleRectangle": [
+              938,
+              502,
+              944,
+              506
+            ],
+            "sampledRegionalLevels": [
+              12
+            ],
+            "traceableSamples": 961,
+            "uniqueDisplayPixels": 28
+          },
+          "summit": {
+            "display": {
+              "encodedLumaAtMost5Fraction": 0.0,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.01740017192866653,
+                0.15546945148855446,
+                0.27182318087220186
+              ],
+              "linearMean": 0.14847326016276646,
+              "linearStd": 0.09924943227596031,
+              "samples": 961
+            },
+            "geographicGradientEnergy": 0.00035914871759220056,
+            "linearLuminanceCorrelation": 0.9848245318763758,
+            "matchedPrepared": {
+              "encodedLumaAtMost5Fraction": 0.0,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.004372041042242199,
+                0.2627642849773168,
+                0.41342022615671153
+              ],
+              "linearMean": 0.21990364172500604,
+              "linearStd": 0.16450055800109745,
+              "samples": 961
+            },
+            "maxRoundtripMetres": 1.569335295634615e-07,
+            "sampleRectangle": [
+              934,
+              503,
+              949,
+              514
+            ],
+            "sampledRegionalLevels": [
+              12
+            ],
+            "traceableSamples": 961,
+            "uniqueDisplayPixels": 168
+          }
+        },
+        "regionalLoadedZoom": 12
+      },
+      {
+        "camera": "centre-14.2-b0",
+        "mode": "common",
+        "patches": {
+          "dark-context": {
+            "display": {
+              "encodedLumaAtMost5Fraction": 0.0,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.06335986051470043,
+                0.21359084940850734,
+                0.2843910052537918
+              ],
+              "linearMean": 0.20097149569901263,
+              "linearStd": 0.06689431904052658,
+              "samples": 97
+            },
+            "geographicGradientEnergy": 0.003325540794015636,
+            "linearLuminanceCorrelation": 0.7585191168014862,
+            "matchedPrepared": {
+              "encodedLumaAtMost5Fraction": 0.0,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.17183348846793176,
+                0.3159664628028869,
+                0.3821077220058441
+              ],
+              "linearMean": 0.30660850837124687,
+              "linearStd": 0.06634338840493541,
+              "samples": 97
+            },
+            "maxRoundtripMetres": 1.1883009591534336e-06,
+            "sampleRectangle": [
+              844,
+              349,
+              895,
+              377
+            ],
+            "sampledRegionalLevels": [
+              14
+            ],
+            "traceableSamples": 97,
+            "uniqueDisplayPixels": 94
+          },
+          "ordinary": {
+            "display": {
+              "encodedLumaAtMost5Fraction": 0.0,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.12990980293452742,
+                0.19732568530142308,
+                0.3397147734165192
+              ],
+              "linearMean": 0.21505557189095495,
+              "linearStd": 0.07156255751326146,
+              "samples": 961
+            },
+            "geographicGradientEnergy": 0.0009718623746650736,
+            "linearLuminanceCorrelation": 0.8530820499192131,
+            "matchedPrepared": {
+              "encodedLumaAtMost5Fraction": 0.0,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.19432013882696628,
+                0.2714332353532314,
+                0.43397317228913307
+              ],
+              "linearMean": 0.2954362112062887,
+              "linearStd": 0.08019529506484259,
+              "samples": 961
+            },
+            "maxRoundtripMetres": 2.1439825735275366e-07,
+            "sampleRectangle": [
+              1029,
+              349,
+              1049,
+              371
+            ],
+            "sampledRegionalLevels": [
+              14
+            ],
+            "traceableSamples": 961,
+            "uniqueDisplayPixels": 334
+          },
+          "steep": {
+            "state": "insufficient first-visible unoccluded screen support",
+            "traceableSamples": 0
+          },
+          "summit": {
+            "display": {
+              "encodedLumaAtMost5Fraction": 0.0,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.18899310395121574,
+                0.2844951356649399,
+                0.3439264534235001
+              ],
+              "linearMean": 0.2791438390966822,
+              "linearStd": 0.050336285880080704,
+              "samples": 481
+            },
+            "geographicGradientEnergy": 0.001417155090277947,
+            "linearLuminanceCorrelation": 0.8087174586819318,
+            "matchedPrepared": {
+              "encodedLumaAtMost5Fraction": 0.0,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.29724132959842675,
+                0.379272586196661,
+                0.441732095515728
+              ],
+              "linearMean": 0.37723650352514954,
+              "linearStd": 0.04594141815176651,
+              "samples": 481
+            },
+            "maxRoundtripMetres": 3.2494385147722746e-07,
+            "sampleRectangle": [
+              868,
+              349,
+              920,
+              423
+            ],
+            "sampledRegionalLevels": [
+              14
+            ],
+            "traceableSamples": 481,
+            "uniqueDisplayPixels": 480
+          }
+        },
+        "regionalLoadedZoom": 14
+      },
+      {
+        "camera": "centre-16.2-b0",
+        "mode": "common",
+        "patches": {
+          "dark-context": {
+            "state": "insufficient first-visible unoccluded screen support",
+            "traceableSamples": 0
+          },
+          "ordinary": {
+            "state": "insufficient first-visible unoccluded screen support",
+            "traceableSamples": 0
+          },
+          "steep": {
+            "state": "insufficient first-visible unoccluded screen support",
+            "traceableSamples": 0
+          },
+          "summit": {
+            "state": "insufficient first-visible unoccluded screen support",
+            "traceableSamples": 0
+          }
+        },
+        "regionalLoadedZoom": 16
+      },
+      {
+        "camera": "centre-16.2-b180",
+        "mode": "common",
+        "patches": {
+          "dark-context": {
+            "display": {
+              "encodedLumaAtMost5Fraction": 0.22529069767441862,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.0009634219870122614,
+                0.0019737145287217575,
+                0.056725497611649175
+              ],
+              "linearMean": 0.010398195064501996,
+              "linearStd": 0.03685725818167368,
+              "samples": 688
+            },
+            "geographicGradientEnergy": 0.0007982146889104475,
+            "linearLuminanceCorrelation": 0.9368560003601308,
+            "matchedPrepared": {
+              "encodedLumaAtMost5Fraction": 0.0,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.0029602711251168513,
+                0.005063011417724192,
+                0.12577721319459353
+              ],
+              "linearMean": 0.018077997162307444,
+              "linearStd": 0.05209769651656077,
+              "samples": 688
+            },
+            "maxRoundtripMetres": 1.4626279021565022e-06,
+            "sampleRectangle": [
+              1371,
+              96,
+              1720,
+              622
+            ],
+            "sampledRegionalLevels": [
+              16
+            ],
+            "traceableSamples": 688,
+            "uniqueDisplayPixels": 688
+          },
+          "ordinary": {
+            "state": "insufficient first-visible unoccluded screen support",
+            "traceableSamples": 0
+          },
+          "steep": {
+            "display": {
+              "encodedLumaAtMost5Fraction": 0.2670157068062827,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.0008898804323514923,
+                0.0019323134471429513,
+                0.0037710677852528162
+              ],
+              "linearMean": 0.0045759655756055714,
+              "linearStd": 0.018551152798351685,
+              "samples": 955
+            },
+            "geographicGradientEnergy": 0.00033557861640727093,
+            "linearLuminanceCorrelation": 0.9046386003040429,
+            "matchedPrepared": {
+              "encodedLumaAtMost5Fraction": 0.0,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.0025406039646593856,
+                0.004955591477733105,
+                0.009281457312321285
+              ],
+              "linearMean": 0.009056271695386744,
+              "linearStd": 0.025678261148987396,
+              "samples": 955
+            },
+            "maxRoundtripMetres": 1.4153075757257096,
+            "sampleRectangle": [
+              1326,
+              97,
+              1496,
+              519
+            ],
+            "sampledRegionalLevels": [
+              16
+            ],
+            "traceableSamples": 955,
+            "uniqueDisplayPixels": 955
+          },
+          "summit": {
+            "display": {
+              "encodedLumaAtMost5Fraction": 0.34397163120567376,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.0007629545505053829,
+                0.0018004614054923877,
+                0.046101716001499364
+              ],
+              "linearMean": 0.009619287731384707,
+              "linearStd": 0.03432812359124726,
+              "samples": 282
+            },
+            "geographicGradientEnergy": 0.0006523462334355592,
+            "linearLuminanceCorrelation": 0.9243902260108743,
+            "matchedPrepared": {
+              "encodedLumaAtMost5Fraction": 0.0035460992907801418,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.0024365712581342082,
+                0.004581311818398535,
+                0.10991681351393459
+              ],
+              "linearMean": 0.017534197242845325,
+              "linearStd": 0.051442993231888286,
+              "samples": 282
+            },
+            "maxRoundtripMetres": 1.7728525805118363,
+            "sampleRectangle": [
+              1212,
+              95,
+              1570,
+              410
+            ],
+            "sampledRegionalLevels": [
+              16
+            ],
+            "traceableSamples": 282,
+            "uniqueDisplayPixels": 282
+          }
+        },
+        "regionalLoadedZoom": 16
+      },
+      {
+        "camera": "centre-12.4-b0",
+        "mode": "regional",
+        "patches": {
+          "dark-context": {
+            "display": {
+              "encodedLumaAtMost5Fraction": 0.0,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.00473561409311369,
+                0.012054786260426045,
+                0.31174308370947834
+              ],
+              "linearMean": 0.0773972420270076,
+              "linearStd": 0.10440739582420908,
+              "samples": 961
+            },
+            "geographicGradientEnergy": 0.0009207074724954955,
+            "linearLuminanceCorrelation": 0.9343358295257806,
+            "matchedPrepared": {
+              "encodedLumaAtMost5Fraction": 0.0,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.004405986524373293,
+                0.005862467475514858,
+                0.2931439733892679
+              ],
+              "linearMean": 0.06385458382703528,
+              "linearStd": 0.09793842168510002,
+              "samples": 961
+            },
+            "maxRoundtripMetres": 9.91122596017488e-05,
+            "sampleRectangle": [
+              927,
+              501,
+              942,
+              509
+            ],
+            "sampledRegionalLevels": [
+              12
+            ],
+            "traceableSamples": 961,
+            "uniqueDisplayPixels": 122
+          },
+          "ordinary": {
+            "display": {
+              "encodedLumaAtMost5Fraction": 0.0,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.23602800668179988,
+                0.33234144070744515,
+                0.4135444094896316
+              ],
+              "linearMean": 0.3178945439715167,
+              "linearStd": 0.056205242701481195,
+              "samples": 961
+            },
+            "geographicGradientEnergy": 0.00030766476890511495,
+            "linearLuminanceCorrelation": 0.7891668106911969,
+            "matchedPrepared": {
+              "encodedLumaAtMost5Fraction": 0.0,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.2176203333377838,
+                0.2829184861212969,
+                0.392267395067215
+              ],
+              "linearMean": 0.29565556679394217,
+              "linearStd": 0.057560562606636216,
+              "samples": 961
+            },
+            "maxRoundtripMetres": 3.2698746627771305e-07,
+            "sampleRectangle": [
+              981,
+              486,
+              986,
+              491
+            ],
+            "sampledRegionalLevels": [
+              12
+            ],
+            "traceableSamples": 961,
+            "uniqueDisplayPixels": 31
+          },
+          "steep": {
+            "display": {
+              "encodedLumaAtMost5Fraction": 0.0,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.004561048898287117,
+                0.006263644537981599,
+                0.0643285226419568
+              ],
+              "linearMean": 0.013785051902015493,
+              "linearStd": 0.022437776565698873,
+              "samples": 961
+            },
+            "geographicGradientEnergy": 0.00011323810404388268,
+            "linearLuminanceCorrelation": 0.6044399118709223,
+            "matchedPrepared": {
+              "encodedLumaAtMost5Fraction": 0.0,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.0036990234613884236,
+                0.005798447784874588,
+                0.031324889076501126
+              ],
+              "linearMean": 0.011203082029038457,
+              "linearStd": 0.019979337282773343,
+              "samples": 961
+            },
+            "maxRoundtripMetres": 1.305095430953163e-07,
+            "sampleRectangle": [
+              938,
+              502,
+              944,
+              506
+            ],
+            "sampledRegionalLevels": [
+              12
+            ],
+            "traceableSamples": 961,
+            "uniqueDisplayPixels": 28
+          },
+          "summit": {
+            "display": {
+              "encodedLumaAtMost5Fraction": 0.0,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.0058193010260351,
+                0.2889569608300924,
+                0.40803634489178653
+              ],
+              "linearMean": 0.23319061170487637,
+              "linearStd": 0.1573344648654972,
+              "samples": 961
+            },
+            "geographicGradientEnergy": 0.000910939532874895,
+            "linearLuminanceCorrelation": 0.9798488289822744,
+            "matchedPrepared": {
+              "encodedLumaAtMost5Fraction": 0.0,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.004372041042242199,
+                0.2627642849773168,
+                0.41342022615671153
+              ],
+              "linearMean": 0.21990364172500604,
+              "linearStd": 0.16450055800109745,
+              "samples": 961
+            },
+            "maxRoundtripMetres": 1.569335295634615e-07,
+            "sampleRectangle": [
+              934,
+              503,
+              949,
+              514
+            ],
+            "sampledRegionalLevels": [
+              12
+            ],
+            "traceableSamples": 961,
+            "uniqueDisplayPixels": 168
+          }
+        },
+        "regionalLoadedZoom": 12
+      },
+      {
+        "camera": "centre-14.2-b0",
+        "mode": "regional",
+        "patches": {
+          "dark-context": {
+            "display": {
+              "encodedLumaAtMost5Fraction": 0.0,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.15234114047139882,
+                0.3059898101568222,
+                0.37801826487898815
+              ],
+              "linearMean": 0.2956791563268098,
+              "linearStd": 0.0701508601748908,
+              "samples": 97
+            },
+            "geographicGradientEnergy": 0.0037218032192173475,
+            "linearLuminanceCorrelation": 0.7747400543042462,
+            "matchedPrepared": {
+              "encodedLumaAtMost5Fraction": 0.0,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.17183348846793176,
+                0.3159664628028869,
+                0.3821077220058441
+              ],
+              "linearMean": 0.30660850837124687,
+              "linearStd": 0.06634338840493541,
+              "samples": 97
+            },
+            "maxRoundtripMetres": 1.1883009591534336e-06,
+            "sampleRectangle": [
+              844,
+              349,
+              895,
+              377
+            ],
+            "sampledRegionalLevels": [
+              14
+            ],
+            "traceableSamples": 97,
+            "uniqueDisplayPixels": 94
+          },
+          "ordinary": {
+            "display": {
+              "encodedLumaAtMost5Fraction": 0.0,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.20594159943312404,
+                0.2813602930575609,
+                0.4356795212090015
+              ],
+              "linearMean": 0.30209434117906636,
+              "linearStd": 0.07959323113460669,
+              "samples": 961
+            },
+            "geographicGradientEnergy": 0.0011400471047438951,
+            "linearLuminanceCorrelation": 0.8672523085723894,
+            "matchedPrepared": {
+              "encodedLumaAtMost5Fraction": 0.0,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.19432013882696628,
+                0.2714332353532314,
+                0.43397317228913307
+              ],
+              "linearMean": 0.2954362112062887,
+              "linearStd": 0.08019529506484259,
+              "samples": 961
+            },
+            "maxRoundtripMetres": 2.1439825735275366e-07,
+            "sampleRectangle": [
+              1029,
+              349,
+              1049,
+              371
+            ],
+            "sampledRegionalLevels": [
+              14
+            ],
+            "traceableSamples": 961,
+            "uniqueDisplayPixels": 334
+          },
+          "steep": {
+            "state": "insufficient first-visible unoccluded screen support",
+            "traceableSamples": 0
+          },
+          "summit": {
+            "display": {
+              "encodedLumaAtMost5Fraction": 0.0,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.2871384186595678,
+                0.3805493954122066,
+                0.4408215854287147
+              ],
+              "linearMean": 0.3737460729042761,
+              "linearStd": 0.05166273612747374,
+              "samples": 481
+            },
+            "geographicGradientEnergy": 0.001381259537349163,
+            "linearLuminanceCorrelation": 0.8442865494275305,
+            "matchedPrepared": {
+              "encodedLumaAtMost5Fraction": 0.0,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.29724132959842675,
+                0.379272586196661,
+                0.441732095515728
+              ],
+              "linearMean": 0.37723650352514954,
+              "linearStd": 0.04594141815176651,
+              "samples": 481
+            },
+            "maxRoundtripMetres": 3.2494385147722746e-07,
+            "sampleRectangle": [
+              868,
+              349,
+              920,
+              423
+            ],
+            "sampledRegionalLevels": [
+              14
+            ],
+            "traceableSamples": 481,
+            "uniqueDisplayPixels": 480
+          }
+        },
+        "regionalLoadedZoom": 14
+      },
+      {
+        "camera": "centre-16.2-b0",
+        "mode": "regional",
+        "patches": {
+          "dark-context": {
+            "state": "insufficient first-visible unoccluded screen support",
+            "traceableSamples": 0
+          },
+          "ordinary": {
+            "state": "insufficient first-visible unoccluded screen support",
+            "traceableSamples": 0
+          },
+          "steep": {
+            "state": "insufficient first-visible unoccluded screen support",
+            "traceableSamples": 0
+          },
+          "summit": {
+            "state": "insufficient first-visible unoccluded screen support",
+            "traceableSamples": 0
+          }
+        },
+        "regionalLoadedZoom": 17
+      },
+      {
+        "camera": "centre-16.2-b180",
+        "mode": "regional",
+        "patches": {
+          "dark-context": {
+            "display": {
+              "encodedLumaAtMost5Fraction": 0.0,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.002697080606576055,
+                0.00487986814584583,
+                0.12237999511547358
+              ],
+              "linearMean": 0.018276655470904506,
+              "linearStd": 0.05393758186503173,
+              "samples": 688
+            },
+            "geographicGradientEnergy": 0.0014265852977139075,
+            "linearLuminanceCorrelation": 0.9733104374250023,
+            "matchedPrepared": {
+              "encodedLumaAtMost5Fraction": 0.0014534883720930232,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.0027865357981924897,
+                0.004993274460732937,
+                0.12484026120647786
+              ],
+              "linearMean": 0.018442104069748687,
+              "linearStd": 0.05416099418174085,
+              "samples": 688
+            },
+            "maxRoundtripMetres": 1.4626279021565022e-06,
+            "sampleRectangle": [
+              1371,
+              96,
+              1720,
+              622
+            ],
+            "sampledRegionalLevels": [
+              16,
+              17
+            ],
+            "traceableSamples": 688,
+            "uniqueDisplayPixels": 688
+          },
+          "ordinary": {
+            "state": "insufficient first-visible unoccluded screen support",
+            "traceableSamples": 0
+          },
+          "steep": {
+            "display": {
+              "encodedLumaAtMost5Fraction": 0.0,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.002323174866836052,
+                0.004851406281813979,
+                0.009304018048653375
+              ],
+              "linearMean": 0.00918987617900517,
+              "linearStd": 0.027933885735888096,
+              "samples": 955
+            },
+            "geographicGradientEnergy": 0.0006638082617656155,
+            "linearLuminanceCorrelation": 0.9044888268373477,
+            "matchedPrepared": {
+              "encodedLumaAtMost5Fraction": 0.0,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.0022919025312177835,
+                0.004813527545705438,
+                0.009997790614124378
+              ],
+              "linearMean": 0.008827710831357598,
+              "linearStd": 0.02623425700099879,
+              "samples": 955
+            },
+            "maxRoundtripMetres": 1.4153075757257096,
+            "sampleRectangle": [
+              1326,
+              97,
+              1496,
+              519
+            ],
+            "sampledRegionalLevels": [
+              17
+            ],
+            "traceableSamples": 955,
+            "uniqueDisplayPixels": 955
+          },
+          "summit": {
+            "display": {
+              "encodedLumaAtMost5Fraction": 0.0,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.0024720765039115207,
+                0.0044273819652386,
+                0.0951005882334709
+              ],
+              "linearMean": 0.01764508741795901,
+              "linearStd": 0.0524428592407418,
+              "samples": 282
+            },
+            "geographicGradientEnergy": 0.0015346703430041478,
+            "linearLuminanceCorrelation": 0.9294348312026028,
+            "matchedPrepared": {
+              "encodedLumaAtMost5Fraction": 0.0035460992907801418,
+              "exactBlackFraction": 0.0,
+              "linearLuminanceP05P50P95": [
+                0.002303011024020379,
+                0.00450330141428858,
+                0.08624565989963705
+              ],
+              "linearMean": 0.017249604162549205,
+              "linearStd": 0.05243468743619871,
+              "samples": 282
+            },
+            "maxRoundtripMetres": 1.7728525805118363,
+            "sampleRectangle": [
+              1212,
+              95,
+              1570,
+              410
+            ],
+            "sampledRegionalLevels": [
+              16,
+              17
+            ],
+            "traceableSamples": 282,
+            "uniqueDisplayPixels": 282
+          }
+        },
+        "regionalLoadedZoom": 17
+      }
+    ]
+  },
+  "sourcePatches": {
+    "dark-context": {
+      "centreLV95": [
+        2624740,
+        1092318
+      ],
+      "encodedLumaAtMost5Fraction": 0.013000444444444445,
+      "exactBlackFraction": 0.0,
+      "finestEncodedVersusUnencodedMaxCodeDifference": 0.0,
+      "independentTransferMaxLinearDifference": 0.0,
+      "levelSignals": {
+        "12": {
+          "encodedLumaAtMost5Fraction": 0.0,
+          "exactBlackFraction": 0.0,
+          "linearLuminanceP05P50P95": [
+            0.004405986524373293,
+            0.005862467475514858,
+            0.2931439733892679
+          ],
+          "linearMean": 0.06385458382703528,
+          "linearStd": 0.09793842168510002,
+          "samples": 961
+        },
+        "13": {
+          "encodedLumaAtMost5Fraction": 0.0,
+          "exactBlackFraction": 0.0,
+          "linearLuminanceP05P50P95": [
+            0.003909581002779304,
+            0.005748707138188184,
+            0.3103882023960352
+          ],
+          "linearMean": 0.06417353379143063,
+          "linearStd": 0.10267129369434727,
+          "samples": 961
+        },
+        "14": {
+          "encodedLumaAtMost5Fraction": 0.0,
+          "exactBlackFraction": 0.0,
+          "linearLuminanceP05P50P95": [
+            0.0036563700899947434,
+            0.005716767786536366,
+            0.3168216335833073
+          ],
+          "linearMean": 0.06436925498805644,
+          "linearStd": 0.10603398254857109,
+          "samples": 961
+        },
+        "15": {
+          "encodedLumaAtMost5Fraction": 0.0,
+          "exactBlackFraction": 0.0,
+          "linearLuminanceP05P50P95": [
+            0.0035189963445067408,
+            0.005651497631706297,
+            0.3322757807195187
+          ],
+          "linearMean": 0.06406007138293315,
+          "linearStd": 0.10946596585305667,
+          "samples": 961
+        },
+        "16": {
+          "encodedLumaAtMost5Fraction": 0.0,
+          "exactBlackFraction": 0.0,
+          "linearLuminanceP05P50P95": [
+            0.003096450735395774,
+            0.00570633638864383,
+            0.3359342785835266
+          ],
+          "linearMean": 0.06281799461356313,
+          "linearStd": 0.11187546199874253,
+          "samples": 961
+        },
+        "17": {
+          "encodedLumaAtMost5Fraction": 0.001040582726326743,
+          "exactBlackFraction": 0.0,
+          "linearLuminanceP05P50P95": [
+            0.0028598652899265286,
+            0.0056398554895073175,
+            0.34343345139622683
+          ],
+          "linearMean": 0.061763981086235736,
+          "linearStd": 0.11442479216028674,
+          "samples": 961
+        },
+        "18": {
+          "encodedLumaAtMost5Fraction": 0.002081165452653486,
+          "exactBlackFraction": 0.0,
+          "linearLuminanceP05P50P95": [
+            0.002504052435560152,
+            0.005531800489127636,
+            0.3548265492558479
+          ],
+          "linearMean": 0.06287782374370564,
+          "linearStd": 0.11835772778962915,
+          "samples": 961
+        }
+      },
+      "linearLuminanceP05P50P95": [
+        0.002124688820913434,
+        0.0057831215147860346,
+        0.36710423114299773
+      ],
+      "linearMean": 0.06291609357264744,
+      "linearStd": 0.12270324248768666,
+      "nativeGradientEnergy": 0.001100066624309242,
+      "nominalTangentFootprintMetresP05P50P95": [
+        0.2626153696650447,
+        0.341499583517092,
+        1.0719771768052844
+      ],
+      "rendererExaggeratedAreaFactorP05P50P95": [
+        1.103423872047038,
+        1.6794829325847287,
+        6.1281647883615165
+      ],
+      "samples": 2250000,
+      "sideMetres": 150,
+      "slopeDegreesP05P50P95": [
+        17.8312422681978,
+        42.94018276371267,
+        76.51363714328852
+      ],
+      "stretchAbove2Fraction": 0.2256,
+      "stretchAbove5Fraction": 0.03781111111111111,
+      "surfaceAreaFactorP05P50P95": [
+        1.0504614786601787,
+        1.365998334068368,
+        4.2879087072211375
+      ]
+    },
+    "ordinary": {
+      "centreLV95": [
+        2625240,
+        1092530
+      ],
+      "encodedLumaAtMost5Fraction": 1.6666666666666667e-05,
+      "exactBlackFraction": 0.0,
+      "finestEncodedVersusUnencodedMaxCodeDifference": 0.0,
+      "independentTransferMaxLinearDifference": 0.0,
+      "levelSignals": {
+        "12": {
+          "encodedLumaAtMost5Fraction": 0.0,
+          "exactBlackFraction": 0.0,
+          "linearLuminanceP05P50P95": [
+            0.2176203333377838,
+            0.2829184861212969,
+            0.392267395067215
+          ],
+          "linearMean": 0.29565556679394217,
+          "linearStd": 0.057560562606636216,
+          "samples": 961
+        },
+        "13": {
+          "encodedLumaAtMost5Fraction": 0.0,
+          "exactBlackFraction": 0.0,
+          "linearLuminanceP05P50P95": [
+            0.20344898010641332,
+            0.2760698282301426,
+            0.41860841084718703
+          ],
+          "linearMean": 0.29455915566218416,
+          "linearStd": 0.07114556819094445,
+          "samples": 961
+        },
+        "14": {
+          "encodedLumaAtMost5Fraction": 0.0,
+          "exactBlackFraction": 0.0,
+          "linearLuminanceP05P50P95": [
+            0.19432013882696628,
+            0.2714332353532314,
+            0.43397317228913307
+          ],
+          "linearMean": 0.2954362112062887,
+          "linearStd": 0.08019529506484259,
+          "samples": 961
+        },
+        "15": {
+          "encodedLumaAtMost5Fraction": 0.0,
+          "exactBlackFraction": 0.0,
+          "linearLuminanceP05P50P95": [
+            0.18602835215330124,
+            0.2703701519221067,
+            0.4541371317267418
+          ],
+          "linearMean": 0.29552825848434305,
+          "linearStd": 0.08770633079531193,
+          "samples": 961
+        },
+        "16": {
+          "encodedLumaAtMost5Fraction": 0.0,
+          "exactBlackFraction": 0.0,
+          "linearLuminanceP05P50P95": [
+            0.17841498631089925,
+            0.27266178921461104,
+            0.4713031469166279
+          ],
+          "linearMean": 0.29637958551451066,
+          "linearStd": 0.09397329540412071,
+          "samples": 961
+        },
+        "17": {
+          "encodedLumaAtMost5Fraction": 0.0,
+          "exactBlackFraction": 0.0,
+          "linearLuminanceP05P50P95": [
+            0.17161469248086214,
+            0.27301106061637403,
+            0.48014322233796114
+          ],
+          "linearMean": 0.2969490606745606,
+          "linearStd": 0.10001452515570836,
+          "samples": 961
+        },
+        "18": {
+          "encodedLumaAtMost5Fraction": 0.0,
+          "exactBlackFraction": 0.0,
+          "linearLuminanceP05P50P95": [
+            0.16852995130568743,
+            0.2717217548668384,
+            0.49289654017686846
+          ],
+          "linearMean": 0.2977149279605646,
+          "linearStd": 0.10495768469561712,
+          "samples": 961
+        }
+      },
+      "linearLuminanceP05P50P95": [
+        0.16371725728958844,
+        0.2697267438292504,
+        0.49895240405201907
+      ],
+      "linearMean": 0.296356181113271,
+      "linearStd": 0.10801922533810532,
+      "nativeGradientEnergy": 0.0012838464423585768,
+      "nominalTangentFootprintMetresP05P50P95": [
+        0.2526848893452377,
+        0.26546078048256955,
+        0.3144935418813522
+      ],
+      "rendererExaggeratedAreaFactorP05P50P95": [
+        1.0224491855928566,
+        1.1260956838959382,
+        1.4915442199998945
+      ],
+      "samples": 360000,
+      "sideMetres": 60,
+      "slopeDegreesP05P50P95": [
+        8.359811549109459,
+        19.650963419101075,
+        37.35146098410545
+      ],
+      "stretchAbove2Fraction": 0.008194444444444445,
+      "stretchAbove5Fraction": 0.00020833333333333335,
+      "surfaceAreaFactorP05P50P95": [
+        1.0107395573809508,
+        1.0618431219302782,
+        1.2579741675254088
+      ]
+    },
+    "steep": {
+      "centreLV95": [
+        2624805,
+        1092330
+      ],
+      "encodedLumaAtMost5Fraction": 0.02178333333333333,
+      "exactBlackFraction": 0.0,
+      "finestEncodedVersusUnencodedMaxCodeDifference": 0.0,
+      "independentTransferMaxLinearDifference": 0.0,
+      "levelSignals": {
+        "12": {
+          "encodedLumaAtMost5Fraction": 0.0,
+          "exactBlackFraction": 0.0,
+          "linearLuminanceP05P50P95": [
+            0.0036990234613884236,
+            0.005798447784874588,
+            0.031324889076501126
+          ],
+          "linearMean": 0.011203082029038457,
+          "linearStd": 0.019979337282773343,
+          "samples": 961
+        },
+        "13": {
+          "encodedLumaAtMost5Fraction": 0.0,
+          "exactBlackFraction": 0.0,
+          "linearLuminanceP05P50P95": [
+            0.0030695802376605567,
+            0.0053704911281354725,
+            0.02891902659870684
+          ],
+          "linearMean": 0.009430678139195093,
+          "linearStd": 0.020380764571360423,
+          "samples": 961
+        },
+        "14": {
+          "encodedLumaAtMost5Fraction": 0.0,
+          "exactBlackFraction": 0.0,
+          "linearLuminanceP05P50P95": [
+            0.002775190216396004,
+            0.0051771268988028175,
+            0.018772753382846712
+          ],
+          "linearMean": 0.00916471219497137,
+          "linearStd": 0.02267494966770922,
+          "samples": 961
+        },
+        "15": {
+          "encodedLumaAtMost5Fraction": 0.0,
+          "exactBlackFraction": 0.0,
+          "linearLuminanceP05P50P95": [
+            0.002671719821728766,
+            0.005085260786209255,
+            0.010991602327488362
+          ],
+          "linearMean": 0.009110496046309554,
+          "linearStd": 0.02444056643641096,
+          "samples": 961
+        },
+        "16": {
+          "encodedLumaAtMost5Fraction": 0.0,
+          "exactBlackFraction": 0.0,
+          "linearLuminanceP05P50P95": [
+            0.0024644356841687113,
+            0.004949714292027056,
+            0.009251733229402452
+          ],
+          "linearMean": 0.009013515182510992,
+          "linearStd": 0.025603680157442018,
+          "samples": 961
+        },
+        "17": {
+          "encodedLumaAtMost5Fraction": 0.0,
+          "exactBlackFraction": 0.0,
+          "linearLuminanceP05P50P95": [
+            0.0022362801455892618,
+            0.004787048619333654,
+            0.009942493592202662
+          ],
+          "linearMean": 0.00878665971545942,
+          "linearStd": 0.026157390758313442,
+          "samples": 961
+        },
+        "18": {
+          "encodedLumaAtMost5Fraction": 0.004162330905306972,
+          "exactBlackFraction": 0.0,
+          "linearLuminanceP05P50P95": [
+            0.0021142815825529395,
+            0.004718116580508649,
+            0.010347245784290134
+          ],
+          "linearMean": 0.008942148732968927,
+          "linearStd": 0.028032196934242627,
+          "samples": 961
+        }
+      },
+      "linearLuminanceP05P50P95": [
+        0.0018004614054923877,
+        0.004567010887525975,
+        0.011298778171092271
+      ],
+      "linearMean": 0.009503360674253968,
+      "linearStd": 0.034610473334690584,
+      "nativeGradientEnergy": 0.00017079005045227293,
+      "nominalTangentFootprintMetresP05P50P95": [
+        0.2672725227100268,
+        0.34757395368477184,
+        1.5480799641806433
+      ],
+      "rendererExaggeratedAreaFactorP05P50P95": [
+        1.1404209709307738,
+        1.720892052448141,
+        8.917258264977612
+      ],
+      "samples": 360000,
+      "sideMetres": 60,
+      "slopeDegreesP05P50P95": [
+        20.71120829480768,
+        44.00564241101404,
+        80.70658671841592
+      ],
+      "stretchAbove2Fraction": 0.27069444444444446,
+      "stretchAbove5Fraction": 0.06833333333333333,
+      "surfaceAreaFactorP05P50P95": [
+        1.0690900908401073,
+        1.3902958147390874,
+        6.192319856722573
+      ]
+    },
+    "summit": {
+      "centreLV95": [
+        2624810,
+        1092252
+      ],
+      "encodedLumaAtMost5Fraction": 0.008088888888888889,
+      "exactBlackFraction": 0.0,
+      "finestEncodedVersusUnencodedMaxCodeDifference": 0.0,
+      "independentTransferMaxLinearDifference": 0.0,
+      "levelSignals": {
+        "12": {
+          "encodedLumaAtMost5Fraction": 0.0,
+          "exactBlackFraction": 0.0,
+          "linearLuminanceP05P50P95": [
+            0.004372041042242199,
+            0.2627642849773168,
+            0.41342022615671153
+          ],
+          "linearMean": 0.21990364172500604,
+          "linearStd": 0.16450055800109745,
+          "samples": 961
+        },
+        "13": {
+          "encodedLumaAtMost5Fraction": 0.0,
+          "exactBlackFraction": 0.0,
+          "linearLuminanceP05P50P95": [
+            0.003915375283919275,
+            0.2814600147753954,
+            0.4215094721198082
+          ],
+          "linearMean": 0.22157009659064136,
+          "linearStd": 0.16859041531836322,
+          "samples": 961
+        },
+        "14": {
+          "encodedLumaAtMost5Fraction": 0.0,
+          "exactBlackFraction": 0.0,
+          "linearLuminanceP05P50P95": [
+            0.003730186680797487,
+            0.28208225128352643,
+            0.4319969467997551
+          ],
+          "linearMean": 0.22239312375121623,
+          "linearStd": 0.17154520523936448,
+          "samples": 961
+        },
+        "15": {
+          "encodedLumaAtMost5Fraction": 0.0,
+          "exactBlackFraction": 0.0,
+          "linearLuminanceP05P50P95": [
+            0.0034652804854325946,
+            0.27684981807470316,
+            0.4418592708826065
+          ],
+          "linearMean": 0.2215571801858113,
+          "linearStd": 0.17397687190593697,
+          "samples": 961
+        },
+        "16": {
+          "encodedLumaAtMost5Fraction": 0.001040582726326743,
+          "exactBlackFraction": 0.0,
+          "linearLuminanceP05P50P95": [
+            0.003182436853507533,
+            0.27714456902742385,
+            0.45076577295064924
+          ],
+          "linearMean": 0.2221063997347822,
+          "linearStd": 0.1781849273897898,
+          "samples": 961
+        },
+        "17": {
+          "encodedLumaAtMost5Fraction": 0.001040582726326743,
+          "exactBlackFraction": 0.0,
+          "linearLuminanceP05P50P95": [
+            0.0030102501022629437,
+            0.27110660634338857,
+            0.465214229029417
+          ],
+          "linearMean": 0.2214212450343078,
+          "linearStd": 0.18128637229156724,
+          "samples": 961
+        },
+        "18": {
+          "encodedLumaAtMost5Fraction": 0.002081165452653486,
+          "exactBlackFraction": 0.0,
+          "linearLuminanceP05P50P95": [
+            0.0027492963516153393,
+            0.26552722957134245,
+            0.47770631904006
+          ],
+          "linearMean": 0.22137219240037373,
+          "linearStd": 0.18447554747683287,
+          "samples": 961
+        }
+      },
+      "linearLuminanceP05P50P95": [
+        0.0024325867254519832,
+        0.2692801553934812,
+        0.48304696662425994
+      ],
+      "linearMean": 0.22338014924315674,
+      "linearStd": 0.1872804567795328,
+      "nativeGradientEnergy": 0.0017409898209129644,
+      "nominalTangentFootprintMetresP05P50P95": [
+        0.26302916325522663,
+        0.4071784345403798,
+        1.4214562926737366
+      ],
+      "rendererExaggeratedAreaFactorP05P50P95": [
+        1.1067344857325407,
+        2.1153769160288824,
+        8.177309951936845
+      ],
+      "samples": 2250000,
+      "sideMetres": 150,
+      "slopeDegreesP05P50P95": [
+        18.109363293416394,
+        52.12205314315182,
+        79.87036200380903
+      ],
+      "stretchAbove2Fraction": 0.3624777777777778,
+      "stretchAbove5Fraction": 0.06368888888888889,
+      "surfaceAreaFactorP05P50P95": [
+        1.0521166530209065,
+        1.628713738161519,
+        5.6858251706949465
+      ]
+    }
+  },
+  "storage": {
+    "fieldBytes": 1294380168,
+    "identity": "f6edd630206ed02f255176935d72126cbc6ad7987b12d2986edbe6d05619bc1b",
+    "seconds": 194.07174620009027,
+    "sourceBytes": 186259028,
+    "tileBytes": 269852875
+  },
+  "verification": {
+    "identity": "f6edd630206ed02f255176935d72126cbc6ad7987b12d2986edbe6d05619bc1b",
+    "manifestSha256": "3c8b50fb9d7721b678abc46b9450495b417ccafff15d4ee8a67d9d6a3fee4934",
+    "maxLinearEncodingDifference": 0.004454553127288818,
+    "noCorrection": true,
+    "parentMaxLinearError": 2.9802322387695312e-08,
+    "partialTiles": 147,
+    "sourceHashesUnchanged": true,
+    "verifiedFiles": 1084
+  }
+}

@@ -16,9 +16,12 @@ Read the [appearance baseline and architecture](../atlas/appearance-baseline-and
 for the current MapTiler/satellite/IGOR audit, bounded primary-source review,
 appearance failure taxonomy and separate AppearanceHierarchy proposal. Shared
 provenance primitives do not turn heights and radiometry into one universal model.
-The exact next task is its bounded SWISSIMAGE/Riffelhorn **source-derived appearance
-baseline** using retained imagery, fixed geometry and cameras. Correction,
-illumination recovery, multiview acquisition and appearance runtime remain deferred.
+The [SWISSIMAGE/Riffelhorn source-derived baseline](../atlas/swissimage-source-derived-baseline.md)
+has completed that frozen comparison. It establishes useful regional detail and
+source-darkness/stretch limits; opposed-close Atlas probes do not show the earlier
+Unreal black-crushing behavior. Its one next task is bounded acquisition/multiview-
+support feasibility within the same four-tile footprint. Correction, illumination
+recovery, frame acquisition/reconstruction and appearance runtime remain deferred.
 This is a new explicitly bounded programme, not a reopened 012A–012G Lab.
 
 ## Read before changing Atlas
@@ -42,7 +45,8 @@ This is a new explicitly bounded programme, not a reopened 012A–012G Lab.
    Keep experiments bounded, products external, provenance reproducible and evidence
    classes distinct. Never silently promote experimental findings into architecture.
 
-Current return point: the appearance baseline task specified above. The historical
+Current return point: the completed source-derived baseline and its one bounded
+acquisition/multiview-support prerequisite above. The historical
 012A–012G handoff did not select a next architecture or experiment. The pre-012F
 [finite programme](../earth-lab/riffelhorn-visual-synthesis-and-experiment-design.md)
 is historical; its two core slots were used and its conditional third was refused.

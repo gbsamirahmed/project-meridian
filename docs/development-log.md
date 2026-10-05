@@ -3614,3 +3614,30 @@ acquired, processed or regenerated, no external-data CI requirement. AWS visual
 terrain via generic hierarchy, independent analytical AWS z15, MapTiler imagery,
 IGOR, exaggeration 1.45, Weather/Traverse/satellite/projection/lifecycle unchanged.
 Next task is the bounded SWISSIMAGE/Riffelhorn source-derived appearance baseline.
+
+
+## 2026-10-05 — source-derived SWISSIMAGE/Riffelhorn appearance baseline
+
+Completed the frozen four-tile 2023 / 4km² baseline after checkpoint6f2eb02.
+Retained hashes match; no acquisition, expansion or correction. New opt-in scripts
+prepare deterministic linear-light/alpha-aware XYZ512 PNG parents z12–18, register
+fixed existing Swiss geometry through the terrain runtime, and capture eight matched
+MapTiler/regional views with satellite IGOR suppressed. A connected-support harness
+defect was corrected and rejected captures segregated before accepted evaluation.
+
+The [report](atlas/swissimage-source-derived-baseline.md) and lightweight JSON retain
+identity, rights/unknown acquisition semantics, fidelity, actual delivery levels,
+stretch and source/display evidence. Useful regional rock/path information is most
+clear in the opposed close view. Steep source/display median luminance0.00481/0.00485
+and correlation0.90 do not reproduce Unreal black crushing. Projection support and
+source darkness remain, with no justified Sun reconstruction or albedo claim.
+
+Validation: independent full rebuild/hash equality, source/geometry hashes, parent
+arithmetic and repeated diagnostics; eight Python/five Node focused tests; application
+tests, lint, TypeScript, application-only build, metadata/references/final diff.
+No application code or defaults changed: AWS visual through TerrainHierarchy,
+independent analytical AWSz15, MapTiler/satellite/IGOR/exaggeration1.45 and
+Weather/Traverse/lifecycle remain unchanged. No external-data CI requirement.
+Elevation remains closed. Next: one bounded same-footprint acquisition/multiview-
+support feasibility assessment; no correction, frame acquisition or reconstruction
+starts automatically.

@@ -260,14 +260,18 @@ framework. AppearanceSource/Product/Representation and regional imagery families
 need their own bands/colour, acquisition/illumination, visibility, processing and
 geometry-revision dependencies. Corrected and synthetic appearance must be
 identifiable; orthophoto RGB is not albedo. These are architecture declarations,
-not implemented imagery types, registry, selector or preparation machinery.
+not implemented generic imagery types, registry or selector. The isolated baseline preparation is experimental.
 
 Production remains MapTiler satellite-v2 through the existing satellite lifecycle,
 with IGOR suppressed in satellite mode, independent elevation colour overlay and
-unchanged AWS visual/analytical terrain. The next task is one bounded source-derived
-SWISSIMAGE/Riffelhorn appearance baseline using retained four-tile 2023 imagery,
-fixed geometry and cameras. No acquisition, processing, correction, new elevation
-benchmark or runtime change occurred in this architecture task.
+unchanged AWS visual/analytical terrain. The [source-derived SWISSIMAGE baseline](atlas/swissimage-source-derived-baseline.md)
+is now complete: an immutable four-tile imagery pyramid, matched Atlas captures and
+source/display probes demonstrate useful regional appearance, persistent steep
+projection limitations and unknown acquisition geometry/Sun. The traceable opposed
+close patch does not reproduce Unreal black crushing. Experimental preparation and
+delivery are isolated; no AppearanceHierarchy runtime or correction was introduced.
+The next bounded task is acquisition/multiview-support feasibility for the same
+footprint, not automatic frame acquisition or reconstruction.
 
 The conceptual relationship is:
 
