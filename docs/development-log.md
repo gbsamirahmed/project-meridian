@@ -3581,3 +3581,36 @@ Weather/Traverse/satellite/projection/lifecycle remain unchanged. No normal CI o
 startup dependency on external assets or the evaluation gateway. Regional elevation
 foundation established; no additional elevation benchmark recommended. Next
 programme boundary is imagery/appearance, not started here.
+
+## 2026-10-05 — Atlas appearance baseline and architecture
+
+Completed the bounded [appearance architecture investigation](atlas/appearance-baseline-and-architecture.md)
+at baseline `8598c30`, clean main and fetched origin 0/0. Regional elevation foundation
+is established and closed; no further benchmark, reconciliation or terrain-contract
+change. Audited actual MapTiler satellite-v2 delivery, TileJSON metadata limits,
+cache/failure/style restoration, branding and deliberate satellite IGOR suppression.
+One existing-service TileJSON request verified z0–22/JPEG, omitted scheme (XYZ
+default), 512 configured tiles and returned attribution; sanitized receipt retained.
+Geometry, observations, processed appearance and display effects remain distinct.
+Retained 012F/G evidence includes useful ordinary-ground appearance, steep projection
+loss and inconclusive dark-face causality: final display suppressed real source
+variation, so darkness is not proof of absent imagery.
+
+Bounded primary/provider/standards review supports separate AppearanceHierarchy and
+TerrainHierarchy sharing small provenance primitives. Proposed appearance records
+retain source/product/representation identity, colour/bands, support/scale,
+time/illumination basis, derived/synthetic provenance and exact geometry dependencies
+where known. No universal hierarchy or executable schema/runtime is added. Official
+SWISSIMAGE generation transition and source-access limits are recorded without
+assuming new Riffelhorn coverage. Defined one next source-derived regional appearance
+baseline with the retained four-tile 2023 selection and frozen Atlas cameras; no
+correction/albedo/multiview experiment is started.
+
+Validation: primary references checked, local document/code/camera references,
+storage arithmetic, architecture consistency, final whitespace/diff and unchanged
+production file scope verified. Documentation-only; application tests/build not
+rerun and historical results not relabelled as new checks. No terrain/imagery assets accessed,
+acquired, processed or regenerated, no external-data CI requirement. AWS visual
+terrain via generic hierarchy, independent analytical AWS z15, MapTiler imagery,
+IGOR, exaggeration 1.45, Weather/Traverse/satellite/projection/lifecycle unchanged.
+Next task is the bounded SWISSIMAGE/Riffelhorn source-derived appearance baseline.

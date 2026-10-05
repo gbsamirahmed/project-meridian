@@ -248,6 +248,27 @@ The runtime slice and [bounded Wales/Tryfan second-region proof](atlas/tryfan-se
 Earlier investigation summaries above retain
 their historical decisions; no further Riffelhorn elevation-method experiment follows.
 
+### Atlas appearance architecture — proposal
+
+The regional elevation foundation is established; its unresolved reconciliation,
+height, coarse-handoff and rendering limits remain recorded without reopening
+experiments. The [appearance baseline and architecture](atlas/appearance-baseline-and-architecture.md)
+now separates geometry, source observations, prepared appearance and rendering.
+The decision is a separate AppearanceHierarchy sharing small identity/provenance,
+rights, spatial and scale primitives with terrain, rather than a universal terrain
+framework. AppearanceSource/Product/Representation and regional imagery families
+need their own bands/colour, acquisition/illumination, visibility, processing and
+geometry-revision dependencies. Corrected and synthetic appearance must be
+identifiable; orthophoto RGB is not albedo. These are architecture declarations,
+not implemented imagery types, registry, selector or preparation machinery.
+
+Production remains MapTiler satellite-v2 through the existing satellite lifecycle,
+with IGOR suppressed in satellite mode, independent elevation colour overlay and
+unchanged AWS visual/analytical terrain. The next task is one bounded source-derived
+SWISSIMAGE/Riffelhorn appearance baseline using retained four-tile 2023 imagery,
+fixed geometry and cameras. No acquisition, processing, correction, new elevation
+benchmark or runtime change occurred in this architecture task.
+
 The conceptual relationship is:
 
 ```text

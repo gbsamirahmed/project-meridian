@@ -1,0 +1,46 @@
+{
+  "checkedAt": "2026-10-05T22:09:04.917Z",
+  "status": 200,
+  "name": "Satellite",
+  "minzoom": 0,
+  "maxzoom": 22,
+  "scheme": "absent; MapLibre default xyz",
+  "bounds": [
+    -180,
+    -85.0511287798066,
+    180,
+    85.0511287798066
+  ],
+  "tileSizeMetadata": "absent",
+  "configuredTileSize": 512,
+  "tilePaths": [
+    "https://api.maptiler.com/tiles/satellite-v2/%7Bz%7D/%7Bx%7D/%7By%7D.jpg"
+  ],
+  "attribution": "<a href=\"https://www.maptiler.com/copyright/\" target=\"_blank\">&copy; MapTiler</a> <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">&copy; OpenStreetMap contributors</a>",
+  "exposedFields": [
+    "attribution",
+    "bounds",
+    "center",
+    "crs",
+    "crs_wkt",
+    "description",
+    "extent",
+    "format",
+    "format_arguments",
+    "generator",
+    "id",
+    "legend",
+    "logo",
+    "maxzoom",
+    "minzoom",
+    "name",
+    "profile",
+    "scale",
+    "schema",
+    "tilejson",
+    "tiles",
+    "type",
+    "version"
+  ],
+  "scope": "Sanitized existing-service TileJSON audit only; no credentials, query strings or imagery tiles retained. Mutable metadata is not an immutable imagery revision."
+}

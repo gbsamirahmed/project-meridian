@@ -5,6 +5,22 @@ Lab 012G evidence checkpoint `abf95bcfb50c681244a146626565a471ba791418`.
 This index records knowledge and research status, not a roadmap, new Lab or
 production architecture. It is the starting point for humans and fresh tooling.
 
+## Current programme boundary — appearance
+
+**REGIONAL ELEVATION FOUNDATION = ESTABLISHED** by the
+[real Wales/Tryfan proof](../atlas/tryfan-second-region-proof.md). No further
+elevation benchmark or Riffelhorn reconciliation is recommended. The frozen terrain
+contract and runtime remain intact, with their known limitations.
+
+Read the [appearance baseline and architecture](../atlas/appearance-baseline-and-architecture.md)
+for the current MapTiler/satellite/IGOR audit, bounded primary-source review,
+appearance failure taxonomy and separate AppearanceHierarchy proposal. Shared
+provenance primitives do not turn heights and radiometry into one universal model.
+The exact next task is its bounded SWISSIMAGE/Riffelhorn **source-derived appearance
+baseline** using retained imagery, fixed geometry and cameras. Correction,
+illumination recovery, multiview acquisition and appearance runtime remain deferred.
+This is a new explicitly bounded programme, not a reopened 012A–012G Lab.
+
 ## Read before changing Atlas
 
 1. Read the [architecture contract](../architecture.md): Atlas represents the
@@ -26,9 +42,8 @@ production architecture. It is the starting point for humans and fresh tooling.
    Keep experiments bounded, products external, provenance reproducible and evidence
    classes distinct. Never silently promote experimental findings into architecture.
 
-Recommended return point: **deliberate Atlas design / implementation planning informed
-by accumulated Meridian evidence and external research**. This handoff chooses no
-next architecture or experiment. The pre-012F
+Current return point: the appearance baseline task specified above. The historical
+012A–012G handoff did not select a next architecture or experiment. The pre-012F
 [finite programme](../earth-lab/riffelhorn-visual-synthesis-and-experiment-design.md)
 is historical; its two core slots were used and its conditional third was refused.
 
