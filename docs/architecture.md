@@ -627,7 +627,13 @@ pixel contribution/time and source transfer prevent a precise Riffelhorn physica
 The [frozen residual trial](research/tryfan-illumination-normalization.md) completed at its
 minimum-evidence stop (**D — INCONCLUSIVE**, SE SCL5 has 12<20 cells). No corrected
 appearance product is justified or published; source identity and unknown outcomes remain
-separate. Exactly one next task is the **Retained Riffelhorn imagery-terrain registration and epoch-consistency assessment**,
-[scope/exit](research/tryfan-illumination-normalization.md#27-exactly-one-next-bounded-task), not begun.
+separate. The [registration/epoch assessment](research/riffelhorn-registration-epoch.md) now
+completes that recommendation (**B - SCALE-CONDITIONAL CONSISTENCY**). Coordinate/preparation checks
+agree, while mixed epochs and ambiguous steep/dark controls limit fine physical matching. No
+registration correction is justified by proxy optima. Exactly one next task is **Retained Tryfan
+vegetation-only residual-normalization protocol assessment**;
+[scope/exit](research/riffelhorn-registration-epoch.md#27-exactly-one-next-bounded-task). It has not
+begun; assess a separate question/protocol or no-go, without changing the old criteria or running
+correction.
 Open/parked appearance science remains non-blocking, not solved; Swiss pixels remain parked.
 Frozen contracts/current production remain unchanged.

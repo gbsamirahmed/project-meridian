@@ -1,0 +1,53 @@
+{
+  "proof": "riffelhorn-registration-epoch/v1",
+  "checkpoint": "1842008ea4996d941226a428aa20aba7dec8fd5e",
+  "patches": {
+    "ordinary": [
+      2625240,
+      1092530,
+      60
+    ],
+    "steep": [
+      2624805,
+      1092330,
+      60
+    ],
+    "summit": [
+      2624810,
+      1092252,
+      150
+    ],
+    "dark-context": [
+      2624740,
+      1092318,
+      150
+    ]
+  },
+  "analysisGridMetres": 0.5,
+  "haloMetres": 6,
+  "searchHalfWidthMetres": 5,
+  "searchStepMetres": 0.5,
+  "smoothingSigmaCells": 2,
+  "pairs": [
+    "RGB encoded-luminance gradient vs DTM slope",
+    "RGB encoded-luminance gradient vs absolute DTM Laplacian"
+  ],
+  "subregions": [
+    "whole",
+    "NW",
+    "NE",
+    "SW",
+    "SE"
+  ],
+  "population": "fixed central patch; identical support at all shifts; source black retained; no luminance/cover tuning",
+  "controls": "stable summit/ridge/break-of-slope candidates only; no shadows/snow/glacier boundaries accepted as control; proxy optima are not measured registration",
+  "beforeResults": true,
+  "noCorrection": true,
+  "noSubpixelFit": true,
+  "noRegistrationPassThreshold": "fitness assessed by use, not similarity score",
+  "knownLimitations": [
+    "image edges and terrain derivatives are different physical quantities",
+    "unknown pixel epochs and original orthorectification revision",
+    "no surveyed independent control points"
+  ]
+}

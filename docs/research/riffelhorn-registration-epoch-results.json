@@ -1,0 +1,1762 @@
+{
+  "assessment": "riffelhorn-registration-epoch/v2",
+  "coordinateAudit": {
+    "coordinateRampIsAveragedFieldNotSurveyControl": true,
+    "coordinateRampMaxNativeMetres": 0.0006040716991745479,
+    "coordinateRampMedianNativeMetres": 0.00029181029387478593,
+    "horizontalOperation": "Inverse of Swiss Oblique Mercator 1995 + CH1903+ to WGS 84 (1) + Popular Visualisation Pseudo-Mercator",
+    "maxCRSRoundtripMetres": 0.0012498371267457109,
+    "maxIndependentXYZCentreErrorMercatorMetres": 2.0954757928848267e-09,
+    "nativeCellCentreDifferenceMetres": [
+      0.2,
+      -0.2
+    ],
+    "nativeCellEdgesAlign": true,
+    "nativeLocalTerrainGrids": [
+      {
+        "areaOrPoint": "Area",
+        "asset": "swissalti3d_2024_2624-1091_0.5_2056_5728.tif",
+        "bounds": [
+          2624000.0,
+          1091000.0,
+          2625000.0,
+          1092000.0
+        ],
+        "crs": "EPSG:2056",
+        "firstCentre": [
+          2624000.25,
+          1091999.75
+        ],
+        "nodata": -9999.0,
+        "pixelCorner": [
+          2624000.0,
+          1092000.0
+        ],
+        "shape": [
+          2000,
+          2000
+        ],
+        "transform": [
+          0.5,
+          0.0,
+          2624000.0,
+          0.0,
+          -0.5,
+          1092000.0
+        ]
+      },
+      {
+        "areaOrPoint": "Area",
+        "asset": "swissalti3d_2024_2624-1092_0.5_2056_5728.tif",
+        "bounds": [
+          2624000.0,
+          1092000.0,
+          2625000.0,
+          1093000.0
+        ],
+        "crs": "EPSG:2056",
+        "firstCentre": [
+          2624000.25,
+          1092999.75
+        ],
+        "nodata": -9999.0,
+        "pixelCorner": [
+          2624000.0,
+          1093000.0
+        ],
+        "shape": [
+          2000,
+          2000
+        ],
+        "transform": [
+          0.5,
+          0.0,
+          2624000.0,
+          0.0,
+          -0.5,
+          1093000.0
+        ]
+      },
+      {
+        "areaOrPoint": "Area",
+        "asset": "swissalti3d_2024_2625-1091_0.5_2056_5728.tif",
+        "bounds": [
+          2625000.0,
+          1091000.0,
+          2626000.0,
+          1092000.0
+        ],
+        "crs": "EPSG:2056",
+        "firstCentre": [
+          2625000.25,
+          1091999.75
+        ],
+        "nodata": -9999.0,
+        "pixelCorner": [
+          2625000.0,
+          1092000.0
+        ],
+        "shape": [
+          2000,
+          2000
+        ],
+        "transform": [
+          0.5,
+          0.0,
+          2625000.0,
+          0.0,
+          -0.5,
+          1092000.0
+        ]
+      },
+      {
+        "areaOrPoint": "Area",
+        "asset": "swissalti3d_2024_2625-1092_0.5_2056_5728.tif",
+        "bounds": [
+          2625000.0,
+          1092000.0,
+          2626000.0,
+          1093000.0
+        ],
+        "crs": "EPSG:2056",
+        "firstCentre": [
+          2625000.25,
+          1092999.75
+        ],
+        "nodata": -9999.0,
+        "pixelCorner": [
+          2625000.0,
+          1093000.0
+        ],
+        "shape": [
+          2000,
+          2000
+        ],
+        "transform": [
+          0.5,
+          0.0,
+          2625000.0,
+          0.0,
+          -0.5,
+          1093000.0
+        ]
+      }
+    ],
+    "operationStatedAccuracyMetres": 1.0,
+    "sourceGrids": [
+      {
+        "areaOrPoint": "Area",
+        "bounds": [
+          2624000.0,
+          1091000.0,
+          2625000.0,
+          1092000.0
+        ],
+        "crs": "EPSG:2056",
+        "firstCentre": [
+          2624000.05,
+          1091999.95
+        ],
+        "nodata": null,
+        "pixelCorner": [
+          2624000.0,
+          1092000.0
+        ],
+        "shape": [
+          10000,
+          10000
+        ],
+        "transform": [
+          0.1,
+          0.0,
+          2624000.0,
+          0.0,
+          -0.1,
+          1092000.0
+        ]
+      },
+      {
+        "areaOrPoint": "Area",
+        "bounds": [
+          2624000.0,
+          1092000.0,
+          2625000.0,
+          1093000.0
+        ],
+        "crs": "EPSG:2056",
+        "firstCentre": [
+          2624000.05,
+          1092999.95
+        ],
+        "nodata": null,
+        "pixelCorner": [
+          2624000.0,
+          1093000.0
+        ],
+        "shape": [
+          10000,
+          10000
+        ],
+        "transform": [
+          0.1,
+          0.0,
+          2624000.0,
+          0.0,
+          -0.1,
+          1093000.0
+        ]
+      },
+      {
+        "areaOrPoint": "Area",
+        "bounds": [
+          2625000.0,
+          1091000.0,
+          2626000.0,
+          1092000.0
+        ],
+        "crs": "EPSG:2056",
+        "firstCentre": [
+          2625000.05,
+          1091999.95
+        ],
+        "nodata": null,
+        "pixelCorner": [
+          2625000.0,
+          1092000.0
+        ],
+        "shape": [
+          10000,
+          10000
+        ],
+        "transform": [
+          0.1,
+          0.0,
+          2625000.0,
+          0.0,
+          -0.1,
+          1092000.0
+        ]
+      },
+      {
+        "areaOrPoint": "Area",
+        "bounds": [
+          2625000.0,
+          1092000.0,
+          2626000.0,
+          1093000.0
+        ],
+        "crs": "EPSG:2056",
+        "firstCentre": [
+          2625000.05,
+          1092999.95
+        ],
+        "nodata": null,
+        "pixelCorner": [
+          2625000.0,
+          1093000.0
+        ],
+        "shape": [
+          10000,
+          10000
+        ],
+        "transform": [
+          0.1,
+          0.0,
+          2625000.0,
+          0.0,
+          -0.1,
+          1093000.0
+        ]
+      }
+    ],
+    "terrainGrid": {
+      "areaOrPoint": null,
+      "bounds": [
+        2620000.0,
+        1087000.0,
+        2630000.0,
+        1097000.0
+      ],
+      "crs": "EPSG:2056",
+      "firstCentre": [
+        2620000.25,
+        1096999.75
+      ],
+      "nodata": -9999.0,
+      "pixelCorner": [
+        2620000.0,
+        1097000.0
+      ],
+      "shape": [
+        20000,
+        20000
+      ],
+      "transform": [
+        0.5,
+        0.0,
+        2620000.0,
+        0.0,
+        -0.5,
+        1097000.0
+      ]
+    },
+    "terrainZ18NativeBilinearChecks": [
+      {
+        "maxAbsoluteHeightDifferenceMetres": 0.002071922604500287,
+        "notHorizontalRegistrationAccuracy": true,
+        "patch": "ordinary",
+        "rmsHeightDifferenceMetres": 0.001104752048701426,
+        "samples": 81,
+        "tile": [
+          18,
+          136725,
+          93277
+        ]
+      },
+      {
+        "maxAbsoluteHeightDifferenceMetres": 0.0020675849646067945,
+        "notHorizontalRegistrationAccuracy": true,
+        "patch": "steep",
+        "rmsHeightDifferenceMetres": 0.0011794192278392693,
+        "samples": 81,
+        "tile": [
+          18,
+          136721,
+          93279
+        ]
+      },
+      {
+        "maxAbsoluteHeightDifferenceMetres": 0.002053155574685661,
+        "notHorizontalRegistrationAccuracy": true,
+        "patch": "summit",
+        "rmsHeightDifferenceMetres": 0.001132348064107398,
+        "samples": 81,
+        "tile": [
+          18,
+          136721,
+          93280
+        ]
+      },
+      {
+        "maxAbsoluteHeightDifferenceMetres": 0.0020675849646067945,
+        "notHorizontalRegistrationAccuracy": true,
+        "patch": "dark-context",
+        "rmsHeightDifferenceMetres": 0.0011794192278392693,
+        "samples": 81,
+        "tile": [
+          18,
+          136721,
+          93279
+        ]
+      }
+    ],
+    "verticalTransformationPerformed": false,
+    "z18FieldRegeneration": [
+      {
+        "maxAbsoluteFieldDifference": 0.0,
+        "patch": "ordinary",
+        "sha256": "5a6e73f473fcd9e2d41cbd080430efec1f31adffd6a30281de0188f21e7abe5c",
+        "tile": [
+          18,
+          136725,
+          93277
+        ]
+      },
+      {
+        "maxAbsoluteFieldDifference": 0.0,
+        "patch": "steep",
+        "sha256": "10778e01bcc8463f9859c4e797fd04d9eebbe84bb846c4002b6a850a124f5925",
+        "tile": [
+          18,
+          136721,
+          93279
+        ]
+      },
+      {
+        "maxAbsoluteFieldDifference": 0.0,
+        "patch": "summit",
+        "sha256": "2d2d53ff0c671f6a5dcaa1de00708c41e7b5cb077406bb45d7711a980ace4449",
+        "tile": [
+          18,
+          136721,
+          93280
+        ]
+      },
+      {
+        "maxAbsoluteFieldDifference": 0.0,
+        "patch": "dark-context",
+        "sha256": "10778e01bcc8463f9859c4e797fd04d9eebbe84bb846c4002b6a850a124f5925",
+        "tile": [
+          18,
+          136721,
+          93279
+        ]
+      }
+    ]
+  },
+  "heightHorizontalCouplingHypothetical": [
+    {
+      "heightDifferenceMetres": 0.3,
+      "horizontalMetres": 0.05289809421253949,
+      "offNadirDegrees": 10
+    },
+    {
+      "heightDifferenceMetres": 0.3,
+      "horizontalMetres": 0.1091910702798607,
+      "offNadirDegrees": 20
+    },
+    {
+      "heightDifferenceMetres": 0.3,
+      "horizontalMetres": 0.1732050807568877,
+      "offNadirDegrees": 30
+    },
+    {
+      "heightDifferenceMetres": 1,
+      "horizontalMetres": 0.17632698070846498,
+      "offNadirDegrees": 10
+    },
+    {
+      "heightDifferenceMetres": 1,
+      "horizontalMetres": 0.36397023426620234,
+      "offNadirDegrees": 20
+    },
+    {
+      "heightDifferenceMetres": 1,
+      "horizontalMetres": 0.5773502691896257,
+      "offNadirDegrees": 30
+    },
+    {
+      "heightDifferenceMetres": 5,
+      "horizontalMetres": 0.8816349035423249,
+      "offNadirDegrees": 10
+    },
+    {
+      "heightDifferenceMetres": 5,
+      "horizontalMetres": 1.8198511713310117,
+      "offNadirDegrees": 20
+    },
+    {
+      "heightDifferenceMetres": 5,
+      "horizontalMetres": 2.8867513459481287,
+      "offNadirDegrees": 30
+    }
+  ],
+  "imageryProductIdentity": "f6edd630206ed02f255176935d72126cbc6ad7987b12d2986edbe6d05619bc1b",
+  "inputVerification": [
+    {
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/metadata/official-documents/swissimage-specification.pdf",
+      "role": "retained-document",
+      "sha256": "3cfce137b3cfc54ae29eba54c8f9b6fd053cfc7915f11dc090c169d31f53b435"
+    },
+    {
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/metadata/official-documents/swissalti3d-release-2024-2.pdf",
+      "role": "retained-document",
+      "sha256": "cec9d46967be920d467fd22aafe042ca2846809a63cd175b2ae7a099a5cc1167"
+    },
+    {
+      "bounds": [
+        2624000.0,
+        1091000.0,
+        2625000.0,
+        1092000.0
+      ],
+      "bytes": 50530470,
+      "colourInterpretation": [
+        "red",
+        "green",
+        "blue"
+      ],
+      "nodata": null,
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissimage-dop10/swissimage-dop10_2023_2624-1091_0.1_2056.tif",
+      "role": "source-image",
+      "sha256": "eb81b3df75538dc0da5cd6ce898976dd74f22dcb3b2586760f0a7df159de8c41",
+      "tile": "2624-1091"
+    },
+    {
+      "bounds": [
+        2624000.0,
+        1092000.0,
+        2625000.0,
+        1093000.0
+      ],
+      "bytes": 45485267,
+      "colourInterpretation": [
+        "red",
+        "green",
+        "blue"
+      ],
+      "nodata": null,
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissimage-dop10/swissimage-dop10_2023_2624-1092_0.1_2056.tif",
+      "role": "source-image",
+      "sha256": "8cd275f75f653d192d9d7619771746ff93fbdd8646e2d1d06214af832c49f62e",
+      "tile": "2624-1092"
+    },
+    {
+      "bounds": [
+        2625000.0,
+        1091000.0,
+        2626000.0,
+        1092000.0
+      ],
+      "bytes": 43921676,
+      "colourInterpretation": [
+        "red",
+        "green",
+        "blue"
+      ],
+      "nodata": null,
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissimage-dop10/swissimage-dop10_2023_2625-1091_0.1_2056.tif",
+      "role": "source-image",
+      "sha256": "66ff157b2eb008e8c2e2ae41ee427c2b483ae69faf352b6d4c12c7713285d2bc",
+      "tile": "2625-1091"
+    },
+    {
+      "bounds": [
+        2625000.0,
+        1092000.0,
+        2626000.0,
+        1093000.0
+      ],
+      "bytes": 46321615,
+      "colourInterpretation": [
+        "red",
+        "green",
+        "blue"
+      ],
+      "nodata": null,
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissimage-dop10/swissimage-dop10_2023_2625-1092_0.1_2056.tif",
+      "role": "source-image",
+      "sha256": "31c4219580f87fd54268c04f2773f30a715392bde47581cf1245207b7c7ff90f",
+      "tile": "2625-1092"
+    },
+    {
+      "bytes": 17401386,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1087_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "b10d5b3e3275d9c651b508f58492222ee98016abd086e4954ccc519d12074ed2"
+    },
+    {
+      "bytes": 16953881,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1088_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "587630e5935c4b8037909abd76cbd729676a3c180b6d123ea6f343fb3934bb5f"
+    },
+    {
+      "bytes": 16403722,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1089_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "4c0236e6b289010cc2523729759c52387bf9996fd313d33d31499aba7a12e4cc"
+    },
+    {
+      "bytes": 15320244,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1090_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "11d214ef1a4f45cee9cc0a54a94245ed01b7db129b98973be2c21eb76d6d5ea3"
+    },
+    {
+      "bytes": 14874442,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1091_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "3f48474933d8ef527f3d8230a7fcaf5c189c34a1df8d08947668d92d50a81ce4"
+    },
+    {
+      "bytes": 16584867,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1092_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "145e6a56cce12e5a1c6e27eae9f989793b2f7f4d1bfdc56088aa725fc9d5202c"
+    },
+    {
+      "bytes": 16394245,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1093_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "caf5bd8f68bdb213d7e295d05fa9b2e99fdbc1a3c59a17a268817662bc6f9627"
+    },
+    {
+      "bytes": 16098701,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1094_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "995d22067407347dfa631ee019cf8a265a4bfee4e0b5d3d0bad3ec7eca4c103f"
+    },
+    {
+      "bytes": 16582300,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1095_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "8edf7167f60946fc23c284f369f4fecfadaa62680b03005f7de5b62b62d1e1b5"
+    },
+    {
+      "bytes": 16848901,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1096_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "229bd00fc2d9f293f5272745eb82359ed55fd8ab2fb0be513575f9eeecc0a342"
+    },
+    {
+      "bytes": 15954427,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1087_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "b66ad46a08ac53df0c3394d3709bd9f0466fcc1375c6c62ad805f82d511145eb"
+    },
+    {
+      "bytes": 15922567,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1088_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "f13e4d9359805e61fc32ebb8276bc54b853ec0869e73b186c31c537aabd96c39"
+    },
+    {
+      "bytes": 16111025,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1089_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "ee2729eba5a82ee16d10dda08d2468a056a1e1d3e0bd7d26eaa2044442722442"
+    },
+    {
+      "bytes": 15742045,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1090_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "76422e5d2089ea7b8d0a625c085e58264410a2adc52106611096300abcceae2f"
+    },
+    {
+      "bytes": 14739777,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1091_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "6ec921b4bb6a5c537c2be19a11fdf3253fad233b0c808af53f591c14320c1684"
+    },
+    {
+      "bytes": 16001761,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1092_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "9e666305d72e452400fff3bad770a7ef461b7c4c7d0d5b456d7973751abe324a"
+    },
+    {
+      "bytes": 16959765,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1093_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "441997950f43e8bcbb2a7c26bf0e57f36da743665902712116312bb2291cf91e"
+    },
+    {
+      "bytes": 17214339,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1094_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "cc3e92a4d77af3159dd339de6b50115354ef51143b201604498c1c759442a83b"
+    },
+    {
+      "bytes": 16931627,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1095_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "7c97faf4fa013e31a2a3e3a0c8e3cdc584d35712b5ce61df217c420f658e3002"
+    },
+    {
+      "bytes": 16648827,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1096_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "bffda95d135e3fb74f6459cf6ebbf9bb0f14eeff19ca9eca8041dbf82ce60429"
+    },
+    {
+      "bytes": 17656200,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1087_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "18c4d3511c1a3a1bb8d3b35efc625df5f88bc79cd10000b51849fdb79798dbb8"
+    },
+    {
+      "bytes": 16758827,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1088_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "f1fa1c8317bd8f6042f2d8d804a7a4daecac4c6d6bdd9d721588ac6a9a48480d"
+    },
+    {
+      "bytes": 15870919,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1089_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "7977b8282cb05038368d26ae1b508172a6c2afdb68e9d78311ef610d76034bb5"
+    },
+    {
+      "bytes": 16807812,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1090_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "ca3dfe0d1e2a322f71e3a53bc26ba94e17f3beb6a74a5d7fd9af1528f540c1a7"
+    },
+    {
+      "bytes": 16274480,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1091_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "014d778f4b3cd0dadb17c1ac0b19df0f6e4ada7c212bdc82ab825207fc6cb92d"
+    },
+    {
+      "bytes": 17227718,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1092_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "53b85a4bf30b01637b68601a61004298a13cf40364616d8a3521512a76b45f26"
+    },
+    {
+      "bytes": 17752404,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1093_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "1bb728d6191a526c5a527cce37c1a93d935d54a04cb12040a01265e1dba8dce8"
+    },
+    {
+      "bytes": 17733493,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1094_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "2c8f0c6a9d9b1613eaeb53dfe7216a054f970e101078ae6bc1cd80bc881e2d7f"
+    },
+    {
+      "bytes": 18379595,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1095_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "a103daec543361d7d786d7d0e3b066d9bd2ec3cd5a69f1e4d4a7620849cf1041"
+    },
+    {
+      "bytes": 18040620,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1096_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "d779af7c6698f43bcf4b230507aaee9802f64625cb8a38f37d59ebacfcc09286"
+    },
+    {
+      "bytes": 17065620,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1087_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "99a9fdcb1d904f6c518f364ae0d248b1eea3dafcf8b3138cfe5f31efa2c946d4"
+    },
+    {
+      "bytes": 17182870,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1088_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "375147312cda5fe811adf38aa8e4f16be64cf8919f3912bf7c0971c42c8926d9"
+    },
+    {
+      "bytes": 16823122,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1089_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "c669f4a1f3589fd604bac3a9da5654f0e61f101c8e9a2a411b4c7b9232a7d64b"
+    },
+    {
+      "bytes": 16759414,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1090_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "9ad35be9ccd26ca728f62495a6f3d74262e8d1449b43f8a124887e34debdf8d9"
+    },
+    {
+      "bytes": 17480806,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1091_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "56378b8b0cd1138de5f10098fa6838bc229cf34c918fd2847540b9fd89c83771"
+    },
+    {
+      "bytes": 17498230,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1092_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "f24239d38c80537328b141bed50b63831df9645a9a94a813c98a35b70f3b3fda"
+    },
+    {
+      "bytes": 17399178,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1093_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "604fcd83c4cc7868745fb843f23fef4daf5b1c3e9cbbcd28e1dc9e161b6a7f1a"
+    },
+    {
+      "bytes": 17951264,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1094_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "0f4a8153fb08a59974985619915265a4a8352cf727338de0275f9caacb06af6e"
+    },
+    {
+      "bytes": 17418044,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1095_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "a6ea488ecbb54b97100f22d867c38b8cd1efc37b68d61f175c98e53fb2c810ca"
+    },
+    {
+      "bytes": 18073992,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1096_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "0e251928c93b53107618d576cf11a52299352d08532f50e3f764c635e72cc581"
+    },
+    {
+      "bytes": 17085638,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2624-1087_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "72b64738927ab260b47a9979b248bb6235e72ca65a34a6816c2733e51fdaa0e1"
+    },
+    {
+      "bytes": 17261890,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2624-1088_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "e15a31af5ddab240672322a51780ed755436c2e3813ff37a286a6cec0b20b60d"
+    },
+    {
+      "bytes": 17015934,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2624-1089_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "d2e79d7de72df078b8defcfe853f2c579a9137e7a89397b5b52f94042894a7f8"
+    },
+    {
+      "bytes": 17059381,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2624-1090_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "54e86e526618b067f773a96da881c33e71ea545125da39c0fe902058d9990677"
+    },
+    {
+      "bytes": 16490312,
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2624-1091_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "c68c305e4a142da416b46b555a80916ecc52f8fa50bf1efd5cd2c3f24f9cd4bc"
+    },
+    {
+      "bytes": 16862345,
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2624-1092_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "9fa4a4391e2e1bfd650f2f31c7d38ed9a5a94494a967011468e6c44559bbcb2c"
+    },
+    {
+      "bytes": 16342473,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2624-1093_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "a17f61660e8bc295173f90922578d583798384b997ecbe36641552f592cc033b"
+    },
+    {
+      "bytes": 16722258,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2624-1094_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "8b50585c677dacb5e15ca75de174b7628a04e3cc0be8a84a20e4e248a339777a"
+    },
+    {
+      "bytes": 18007501,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2624-1095_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "57f12bcf71d823f32a3186667f8d7dbbfac80e2335454fd4d505dd17ce6e08aa"
+    },
+    {
+      "bytes": 18145643,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2624-1096_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "cdc98b65fccf96f1eeb2ba65009bf12cd41716d8bd2ba18260f4a072a8921f59"
+    },
+    {
+      "bytes": 17664082,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2625-1087_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "d8b715383ac23f76634b743aad585661df386d85c8dc68ff924aa71a7a7ce645"
+    },
+    {
+      "bytes": 16640746,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2625-1088_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "7b9df08e8cc9b9c8bea55b2d8641618d78e3bce1dbf32b0d0be6476f2586fafb"
+    },
+    {
+      "bytes": 16581503,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2625-1089_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "6917ceb87a5a58a8f5787c7222286902dca1f0ceee973b80dcfdeebb19acb9da"
+    },
+    {
+      "bytes": 16253102,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2625-1090_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "4d918d88b47a6bdb2faa959ced434d37fbb677671ec168fb54e32380148c5a0b"
+    },
+    {
+      "bytes": 15925644,
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2625-1091_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "0d2ebc6d0b4fd06ab2191cbf2a2f5ab77728249fa8c835075040bce4dc4899de"
+    },
+    {
+      "bytes": 16329103,
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2625-1092_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "4dffaad9efb82d3bf327a86b4f82d55762165ea5f825c386c23380a9320ff875"
+    },
+    {
+      "bytes": 16183047,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2625-1093_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "f302035dfae29b9d07a0f6c22918080871954cd1b06b6523a51acf647840f790"
+    },
+    {
+      "bytes": 16897280,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2625-1094_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "a40fbf29d431c827faac57fd5b06819593de3f14f94fa0767fdef4ea7a67fa48"
+    },
+    {
+      "bytes": 16335764,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2625-1095_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "f353e9d2572ae28a663eba1892ccbbb9c9d690cc150697477af60270e9244c13"
+    },
+    {
+      "bytes": 17111800,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2625-1096_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "fa2c43d94f33508eaf75f53c428554dec436c42a21932d18ef2e5fd5c0f677f9"
+    },
+    {
+      "bytes": 16462798,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1087_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "cac2b6a412264b7221fb09cfb9ea4dda4e23b66cbc8fb516395e3cb220ebba54"
+    },
+    {
+      "bytes": 16495321,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1088_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "2fbe87ca858b305295a0c796babbc80f057f7c277a1dba268f6f0c95fe51467e"
+    },
+    {
+      "bytes": 16790384,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1089_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "be976949f9efc30cf4b8d413425a1cd4409b7b8e58397b80d6773cb3d191d7cc"
+    },
+    {
+      "bytes": 15906078,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1090_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "b1e94efebda0182f5a81c6bc79da06c4331b1351dfb284ea506ed2eb1fe551ef"
+    },
+    {
+      "bytes": 15906230,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1091_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "cd371e983e6f525c1653f3f9a98209a5533b6f5f18423f4be65a444c016b9f8e"
+    },
+    {
+      "bytes": 16192272,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1092_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "3ed05cb8ac3fcf4363def4332c0ddc452eafeb55ef86802bcc5e30d4e6893dd1"
+    },
+    {
+      "bytes": 16602919,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1093_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "5acc79cbb13a7a13c9ef0b182e78a84733edc32fb7b44a6f8ec2d0c11f3d5f87"
+    },
+    {
+      "bytes": 16281214,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1094_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "64fbf6607dc068b01665c55d5cf2dbe4ea2465a6811df14fdaa0cc0ed83ea42f"
+    },
+    {
+      "bytes": 16376502,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1095_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "d16098b7e40e07942b48df4387dfe33c67bb29cb8f86e518c0a9110a7f41c941"
+    },
+    {
+      "bytes": 17053629,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1096_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "dd41533b3a1e93354f3ce6981b656d5be135e4311ac0e6050e7d5c2fd9b9d090"
+    },
+    {
+      "bytes": 16942448,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1087_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "a1ee161970e0d31e267f412542386096c0ed7a0427eb8591924ad91d2d0f661c"
+    },
+    {
+      "bytes": 16920001,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1088_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "5d6995ceefa75feb42537b35bd4ca129d691ed5138da9b9e58803ed465c4d8dd"
+    },
+    {
+      "bytes": 16797814,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1089_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "335eb30fd08e2ed53455cf4086fac9dcca6f481402e3cce163f38bde7a71938a"
+    },
+    {
+      "bytes": 15549836,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1090_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "9b63b175e61f510026b689cf91c983eed91ba5def220412f064266f08b18d28e"
+    },
+    {
+      "bytes": 15761686,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1091_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "10e84994bf3012e8a06460725a2c131a1372554ab600502fb59506182d729f04"
+    },
+    {
+      "bytes": 16604376,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1092_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "f826c927d7bd1f2e27325a63eca76194e419bd68e42fcd430345383482b0acae"
+    },
+    {
+      "bytes": 17040570,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1093_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "2a0cd8f674c444c255100822509c37999d10450fca131ab244f527429470a3ff"
+    },
+    {
+      "bytes": 16221733,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1094_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "d7be5da78f5842fdcc83a9536cd53eca6dbe86b67ab2e7e3dba4180b599d9af9"
+    },
+    {
+      "bytes": 15996146,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1095_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "cba28399a5a6e5bca5320456ce26bbe6eaacf44ec284f098146166767309edc6"
+    },
+    {
+      "bytes": 17231136,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1096_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "910ca9cf743cc0272d57ba3c088b64887963d23037d9497f0c89b29142098d44"
+    },
+    {
+      "bytes": 16459404,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1087_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "bb37d77bf8c367f9c5cd43f56fd3c3c1c9f9fa13e3d78c102585fe2c4464a7f4"
+    },
+    {
+      "bytes": 16351190,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1088_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "4a7af161792cc6ed54377f605ce570268bfeb059fcf1e5fb1c20dea2e4d0ad64"
+    },
+    {
+      "bytes": 16600853,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1089_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "099a9160abaac1beddc5704b4f8326a06df87b9d9a68ecd240f8e71332009281"
+    },
+    {
+      "bytes": 16590964,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1090_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "52d3c8ae560f4a564ead56a7e6ca309a1b4ed09da8a2b1e655dea7305768a891"
+    },
+    {
+      "bytes": 16642485,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1091_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "9afccaf8aa5dcb7af657d414261e56cebee9af5353e8a2a4adc69a8c7cf8330d"
+    },
+    {
+      "bytes": 16870394,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1092_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "e05807372eaa2ade01dd30cd1b4e50f3dba5a6e2faea2ec2528442a64a79c36e"
+    },
+    {
+      "bytes": 16544107,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1093_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "d63946296ab16a4f7e199eea570e375a6bb26324855b03b67d3628559e314204"
+    },
+    {
+      "bytes": 16074001,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1094_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "fa46a45f7092725a7a9bff86a53ea606996f466f61e478b2aa7b6ae35eb42d9a"
+    },
+    {
+      "bytes": 15996376,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1095_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "94a128ca09790c345bb58efe24ff3ab54fd17597aa80fdb7e47ffa93ce02c385"
+    },
+    {
+      "bytes": 16646500,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1096_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "076ba72f90cf1752ddddc10ea215bbdee745476c302f97984ce7c55cd311a7ba"
+    },
+    {
+      "bytes": 16520631,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1087_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "08ad1eb9e46c2e1a9efed25a414561b2aee1d035223987f00c874f8872043750"
+    },
+    {
+      "bytes": 16408067,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1088_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "02f79a090e0c7f3d9b3b69f18387fd363ec7a7396f9ff1f77bdc95a4f62b5664"
+    },
+    {
+      "bytes": 16878766,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1089_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "19e94991fcbd6ae6629c1e2540d063370821c6c529d9086b68242c71be48bb29"
+    },
+    {
+      "bytes": 16645302,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1090_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "bbbba6acf6734468d214978cae058fbb3a3c700281386560b8af33cf7efb48d3"
+    },
+    {
+      "bytes": 16396342,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1091_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "bdefae29ec27ee1e9aa554d43049938bcbffd098e5a6019a49403d38a7327456"
+    },
+    {
+      "bytes": 16925910,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1092_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "e3ace395664bf31f0662b98f820f506f7f2aecf9981052dc9adff8618ee3985f"
+    },
+    {
+      "bytes": 16069973,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1093_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "0aaf036112bf954f1e852bf266e7ba692ebec4b290383ac1c8e0556bb9ed190e"
+    },
+    {
+      "bytes": 16206866,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1094_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "2956c294d23827c1e0dae9f21ba666aec8a780ede57aca401ed87b38e25b3fe7"
+    },
+    {
+      "bytes": 15932460,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1095_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "7390addf349c79f1c4fea9dd748af565156fc09b158f435a2aab03fc107d998c"
+    },
+    {
+      "bytes": 16513439,
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1096_0.5_2056_5728.tif",
+      "role": "source-terrain",
+      "sha256": "4b2cbfa7f1167abb091354b3b92603aba39721b9ee3370e59f36b66a26bfb894"
+    },
+    {
+      "bytes": 1564233043,
+      "files": 1084,
+      "manifestSha256": "3c8b50fb9d7721b678abc46b9450495b417ccafff15d4ee8a67d9d6a3fee4934",
+      "role": "prepared-image"
+    },
+    {
+      "bytes": 930914852,
+      "files": 11429,
+      "manifestSha256": "30413b6698c1e75e27fd169f61925d8d60044fa14f444fb072b652c54816e106",
+      "role": "prepared-terrain"
+    }
+  ],
+  "methodSha256": "7bd02db549074bad8cf2315c9655dab22572e0fea396e4fd0e0b98021942dcd4",
+  "nativeTerrainVrtSha256": "8b097d62be84e110cdf8efd695f63d685a9069fcad98aae91660b7fb42e17998",
+  "noTrueLocalShiftEstimated": true,
+  "noWarpOrCorrection": true,
+  "patches": {
+    "dark-context": {
+      "actualReadBoundsEPSG2056": [
+        2624655.0,
+        1092233.0,
+        2624825.0,
+        1092403.0
+      ],
+      "cells": 90000,
+      "centreEPSG2056": [
+        2624740,
+        1092318
+      ],
+      "meanEncodedLuminance": 0.16494802464139433,
+      "proxies": {
+        "break-of-slope": {
+          "NE": {
+            "atSearchBoundary": true,
+            "best": {
+              "eastMetres": 0.0,
+              "northMetres": -5.0,
+              "score": 0.17939556579091182
+            },
+            "bestMarginBeyond1m": 0.005218169275162637,
+            "bestMinusZero": 0.12287392630434076,
+            "notGeospatialShift": true,
+            "zero": 0.05652163948657106
+          },
+          "NW": {
+            "atSearchBoundary": true,
+            "best": {
+              "eastMetres": 5.0,
+              "northMetres": -5.0,
+              "score": 0.011239583320280728
+            },
+            "bestMarginBeyond1m": 0.00510937552656317,
+            "bestMinusZero": 0.02281318866028486,
+            "notGeospatialShift": true,
+            "zero": -0.011573605340004131
+          },
+          "SE": {
+            "atSearchBoundary": true,
+            "best": {
+              "eastMetres": 1.5,
+              "northMetres": 5.0,
+              "score": -0.10305579841001768
+            },
+            "bestMarginBeyond1m": 0.0020366200034953597,
+            "bestMinusZero": 0.05339435530621016,
+            "notGeospatialShift": true,
+            "zero": -0.15645015371622784
+          },
+          "SW": {
+            "atSearchBoundary": true,
+            "best": {
+              "eastMetres": 5.0,
+              "northMetres": -5.0,
+              "score": 0.1256930016662804
+            },
+            "bestMarginBeyond1m": 0.004884666325606538,
+            "bestMinusZero": 0.06524470963487264,
+            "notGeospatialShift": true,
+            "zero": 0.06044829203140775
+          },
+          "whole": {
+            "atSearchBoundary": true,
+            "best": {
+              "eastMetres": 1.5,
+              "northMetres": -5.0,
+              "score": 0.04733710540397112
+            },
+            "bestMarginBeyond1m": 0.001964066078343582,
+            "bestMinusZero": 0.015639251947563493,
+            "notGeospatialShift": true,
+            "zero": 0.031697853456407625
+          }
+        },
+        "slope": {
+          "NE": {
+            "atSearchBoundary": true,
+            "best": {
+              "eastMetres": -2.0,
+              "northMetres": -5.0,
+              "score": -0.050846085382023794
+            },
+            "bestMarginBeyond1m": 0.0019295688868777583,
+            "bestMinusZero": 0.12503288023487852,
+            "notGeospatialShift": true,
+            "zero": -0.1758789656169023
+          },
+          "NW": {
+            "atSearchBoundary": true,
+            "best": {
+              "eastMetres": 5.0,
+              "northMetres": -5.0,
+              "score": 0.019309568644711637
+            },
+            "bestMarginBeyond1m": 0.009313526789257141,
+            "bestMinusZero": 0.10705459006033718,
+            "notGeospatialShift": true,
+            "zero": -0.08774502141562555
+          },
+          "SE": {
+            "atSearchBoundary": true,
+            "best": {
+              "eastMetres": 2.5,
+              "northMetres": -5.0,
+              "score": -0.25002433289909837
+            },
+            "bestMarginBeyond1m": 0.001835403259583701,
+            "bestMinusZero": 0.09578190854177804,
+            "notGeospatialShift": true,
+            "zero": -0.3458062414408764
+          },
+          "SW": {
+            "atSearchBoundary": true,
+            "best": {
+              "eastMetres": 0.5,
+              "northMetres": -5.0,
+              "score": -0.16821818586572576
+            },
+            "bestMarginBeyond1m": 0.0010319689183038716,
+            "bestMinusZero": 0.1379661641076982,
+            "notGeospatialShift": true,
+            "zero": -0.306184349973424
+          },
+          "whole": {
+            "atSearchBoundary": true,
+            "best": {
+              "eastMetres": 0.5,
+              "northMetres": -5.0,
+              "score": -0.04547478782477079
+            },
+            "bestMarginBeyond1m": 0.0014298005328987687,
+            "bestMinusZero": 0.09808281514340761,
+            "notGeospatialShift": true,
+            "zero": -0.1435576029681784
+          }
+        }
+      },
+      "sizeMetres": 150,
+      "slopeDegreesP05MedianP95": [
+        22.49895688427976,
+        44.65142464715025,
+        75.17735535540479
+      ],
+      "sourceImageAsset": "swissimage-dop10_2023_2624-1092_0.1_2056.tif"
+    },
+    "ordinary": {
+      "actualReadBoundsEPSG2056": [
+        2625200.0,
+        1092490.0,
+        2625280.0,
+        1092570.0
+      ],
+      "cells": 14400,
+      "centreEPSG2056": [
+        2625240,
+        1092530
+      ],
+      "meanEncodedLuminance": 0.569557749030501,
+      "proxies": {
+        "break-of-slope": {
+          "NE": {
+            "atSearchBoundary": false,
+            "best": {
+              "eastMetres": 0.5,
+              "northMetres": 1.0,
+              "score": 0.6314235526569361
+            },
+            "bestMarginBeyond1m": 0.043869236684713986,
+            "bestMinusZero": 0.05107542326718917,
+            "notGeospatialShift": true,
+            "zero": 0.5803481293897469
+          },
+          "NW": {
+            "atSearchBoundary": false,
+            "best": {
+              "eastMetres": -0.5,
+              "northMetres": 0.5,
+              "score": 0.20175761778976878
+            },
+            "bestMarginBeyond1m": 0.014260859695165634,
+            "bestMinusZero": 0.019353959197284276,
+            "notGeospatialShift": true,
+            "zero": 0.1824036585924845
+          },
+          "SE": {
+            "atSearchBoundary": false,
+            "best": {
+              "eastMetres": 0.0,
+              "northMetres": -0.5,
+              "score": 0.157129622256344
+            },
+            "bestMarginBeyond1m": 0.006538826461244679,
+            "bestMinusZero": 0.005107336664308709,
+            "notGeospatialShift": true,
+            "zero": 0.1520222855920353
+          },
+          "SW": {
+            "atSearchBoundary": false,
+            "best": {
+              "eastMetres": 3.5,
+              "northMetres": -3.0,
+              "score": 0.31010122956245956
+            },
+            "bestMarginBeyond1m": 0.021911880752520763,
+            "bestMinusZero": 0.20712567878125765,
+            "notGeospatialShift": true,
+            "zero": 0.1029755507812019
+          },
+          "whole": {
+            "atSearchBoundary": false,
+            "best": {
+              "eastMetres": 0.5,
+              "northMetres": 0.5,
+              "score": 0.3126341815537139
+            },
+            "bestMarginBeyond1m": 0.017468416474537396,
+            "bestMinusZero": 0.02139364037346697,
+            "notGeospatialShift": true,
+            "zero": 0.29124054118024695
+          }
+        },
+        "slope": {
+          "NE": {
+            "atSearchBoundary": false,
+            "best": {
+              "eastMetres": -0.5,
+              "northMetres": 2.0,
+              "score": 0.536515748863002
+            },
+            "bestMarginBeyond1m": 0.014730040397906374,
+            "bestMinusZero": 0.11282295850567253,
+            "notGeospatialShift": true,
+            "zero": 0.4236927903573295
+          },
+          "NW": {
+            "atSearchBoundary": true,
+            "best": {
+              "eastMetres": 2.0,
+              "northMetres": -5.0,
+              "score": -0.1023468339401802
+            },
+            "bestMarginBeyond1m": 0.00833908943574252,
+            "bestMinusZero": 0.18814766110145936,
+            "notGeospatialShift": true,
+            "zero": -0.29049449504163954
+          },
+          "SE": {
+            "atSearchBoundary": false,
+            "best": {
+              "eastMetres": 2.5,
+              "northMetres": -3.0,
+              "score": 0.08711636848967841
+            },
+            "bestMarginBeyond1m": 0.0023058379127951917,
+            "bestMinusZero": 0.025022061761605652,
+            "notGeospatialShift": true,
+            "zero": 0.06209430672807276
+          },
+          "SW": {
+            "atSearchBoundary": true,
+            "best": {
+              "eastMetres": 5.0,
+              "northMetres": 5.0,
+              "score": 0.25333095653435495
+            },
+            "bestMarginBeyond1m": 0.0056319842738134784,
+            "bestMinusZero": 0.14374767013189346,
+            "notGeospatialShift": true,
+            "zero": 0.10958328640246148
+          },
+          "whole": {
+            "atSearchBoundary": true,
+            "best": {
+              "eastMetres": 3.5,
+              "northMetres": 5.0,
+              "score": 0.10241980648824776
+            },
+            "bestMarginBeyond1m": 0.001619598211258469,
+            "bestMinusZero": 0.09039448396065794,
+            "notGeospatialShift": true,
+            "zero": 0.012025322527589827
+          }
+        }
+      },
+      "sizeMetres": 60,
+      "slopeDegreesP05MedianP95": [
+        9.605284391162485,
+        18.87369261905107,
+        35.16563704441377
+      ],
+      "sourceImageAsset": "swissimage-dop10_2023_2625-1092_0.1_2056.tif"
+    },
+    "steep": {
+      "actualReadBoundsEPSG2056": [
+        2624765.0,
+        1092290.0,
+        2624845.0,
+        1092370.0
+      ],
+      "cells": 14400,
+      "centreEPSG2056": [
+        2624805,
+        1092330
+      ],
+      "meanEncodedLuminance": 0.06629266719825708,
+      "proxies": {
+        "break-of-slope": {
+          "NE": {
+            "atSearchBoundary": true,
+            "best": {
+              "eastMetres": -5.0,
+              "northMetres": -5.0,
+              "score": 0.06006058128957052
+            },
+            "bestMarginBeyond1m": 0.008491122041438807,
+            "bestMinusZero": 0.17045785607098107,
+            "notGeospatialShift": true,
+            "zero": -0.11039727478141056
+          },
+          "NW": {
+            "atSearchBoundary": true,
+            "best": {
+              "eastMetres": -5.0,
+              "northMetres": 3.0,
+              "score": 0.26604013226120216
+            },
+            "bestMarginBeyond1m": 0.02035262362045262,
+            "bestMinusZero": 0.045028304194145996,
+            "notGeospatialShift": true,
+            "zero": 0.22101182806705616
+          },
+          "SE": {
+            "atSearchBoundary": false,
+            "best": {
+              "eastMetres": -4.5,
+              "northMetres": -3.0,
+              "score": 0.6445111056057131
+            },
+            "bestMarginBeyond1m": 0.010695131340848985,
+            "bestMinusZero": 0.42479304094286274,
+            "notGeospatialShift": true,
+            "zero": 0.21971806466285038
+          },
+          "SW": {
+            "atSearchBoundary": true,
+            "best": {
+              "eastMetres": 3.0,
+              "northMetres": -5.0,
+              "score": 0.29724270468038144
+            },
+            "bestMarginBeyond1m": 0.006277962414916405,
+            "bestMinusZero": 0.2250606557474975,
+            "notGeospatialShift": true,
+            "zero": 0.07218204893288395
+          },
+          "whole": {
+            "atSearchBoundary": false,
+            "best": {
+              "eastMetres": -4.5,
+              "northMetres": -4.0,
+              "score": 0.3148556475447067
+            },
+            "bestMarginBeyond1m": 0.0016309351800936067,
+            "bestMinusZero": 0.23056602621267547,
+            "notGeospatialShift": true,
+            "zero": 0.08428962133203122
+          }
+        },
+        "slope": {
+          "NE": {
+            "atSearchBoundary": true,
+            "best": {
+              "eastMetres": -5.0,
+              "northMetres": -4.0,
+              "score": -0.05101543755891398
+            },
+            "bestMarginBeyond1m": 0.0028054814884169166,
+            "bestMinusZero": 0.05142387657198044,
+            "notGeospatialShift": true,
+            "zero": -0.10243931413089442
+          },
+          "NW": {
+            "atSearchBoundary": false,
+            "best": {
+              "eastMetres": -3.0,
+              "northMetres": -2.5,
+              "score": 0.43324839645306457
+            },
+            "bestMarginBeyond1m": 0.0038004399753127083,
+            "bestMinusZero": 0.01063302167261998,
+            "notGeospatialShift": true,
+            "zero": 0.4226153747804446
+          },
+          "SE": {
+            "atSearchBoundary": true,
+            "best": {
+              "eastMetres": -5.0,
+              "northMetres": -1.5,
+              "score": 0.44388770094579866
+            },
+            "bestMarginBeyond1m": 0.004952126322794126,
+            "bestMinusZero": 0.2989635162368137,
+            "notGeospatialShift": true,
+            "zero": 0.1449241847089849
+          },
+          "SW": {
+            "atSearchBoundary": true,
+            "best": {
+              "eastMetres": -2.0,
+              "northMetres": -5.0,
+              "score": 0.19281284448247438
+            },
+            "bestMarginBeyond1m": 0.018133686737606125,
+            "bestMinusZero": 0.3323577255538996,
+            "notGeospatialShift": true,
+            "zero": -0.1395448810714252
+          },
+          "whole": {
+            "atSearchBoundary": true,
+            "best": {
+              "eastMetres": -5.0,
+              "northMetres": -3.5,
+              "score": 0.22749446191732972
+            },
+            "bestMarginBeyond1m": 0.0025424546396455305,
+            "bestMinusZero": 0.23947910139317513,
+            "notGeospatialShift": true,
+            "zero": -0.011984639475845398
+          }
+        }
+      },
+      "sizeMetres": 60,
+      "slopeDegreesP05MedianP95": [
+        26.226628450805983,
+        47.120062641902365,
+        78.99435926318164
+      ],
+      "sourceImageAsset": "swissimage-dop10_2023_2624-1092_0.1_2056.tif"
+    },
+    "summit": {
+      "actualReadBoundsEPSG2056": [
+        2624725.0,
+        1092167.0,
+        2624895.0,
+        1092337.0
+      ],
+      "cells": 90000,
+      "centreEPSG2056": [
+        2624810,
+        1092252
+      ],
+      "meanEncodedLuminance": 0.4116796331586927,
+      "proxies": {
+        "break-of-slope": {
+          "NE": {
+            "atSearchBoundary": true,
+            "best": {
+              "eastMetres": -5.0,
+              "northMetres": -4.5,
+              "score": -0.017754395230943312
+            },
+            "bestMarginBeyond1m": 0.004787119332221448,
+            "bestMinusZero": 0.06980313928489613,
+            "notGeospatialShift": true,
+            "zero": -0.08755753451583945
+          },
+          "NW": {
+            "atSearchBoundary": true,
+            "best": {
+              "eastMetres": 0.5,
+              "northMetres": -5.0,
+              "score": -0.13878029116796314
+            },
+            "bestMarginBeyond1m": 0.0015606265653564932,
+            "bestMinusZero": 0.012499825775286272,
+            "notGeospatialShift": true,
+            "zero": -0.15128011694324942
+          },
+          "SE": {
+            "atSearchBoundary": false,
+            "best": {
+              "eastMetres": 0.0,
+              "northMetres": -0.5,
+              "score": 0.00648419027498453
+            },
+            "bestMarginBeyond1m": 0.006366884793888227,
+            "bestMinusZero": 0.015658151780117712,
+            "notGeospatialShift": true,
+            "zero": -0.009173961505133181
+          },
+          "SW": {
+            "atSearchBoundary": true,
+            "best": {
+              "eastMetres": -1.0,
+              "northMetres": 5.0,
+              "score": 0.2029322034643894
+            },
+            "bestMarginBeyond1m": 0.00862260066604914,
+            "bestMinusZero": 0.10569730399626687,
+            "notGeospatialShift": true,
+            "zero": 0.09723489946812253
+          },
+          "whole": {
+            "atSearchBoundary": false,
+            "best": {
+              "eastMetres": -0.5,
+              "northMetres": 0.0,
+              "score": -0.05744543067235354
+            },
+            "bestMarginBeyond1m": 0.003995002515641603,
+            "bestMinusZero": 0.0015031650700678204,
+            "notGeospatialShift": true,
+            "zero": -0.05894859574242136
+          }
+        },
+        "slope": {
+          "NE": {
+            "atSearchBoundary": true,
+            "best": {
+              "eastMetres": -5.0,
+              "northMetres": -5.0,
+              "score": 0.07429095101591189
+            },
+            "bestMarginBeyond1m": 0.008984743781699181,
+            "bestMinusZero": 0.1693520723492467,
+            "notGeospatialShift": true,
+            "zero": -0.09506112133333482
+          },
+          "NW": {
+            "atSearchBoundary": true,
+            "best": {
+              "eastMetres": 2.5,
+              "northMetres": -5.0,
+              "score": -0.2370695626081657
+            },
+            "bestMarginBeyond1m": 0.0030909440921009224,
+            "bestMinusZero": 0.12266070777766697,
+            "notGeospatialShift": true,
+            "zero": -0.35973027038583266
+          },
+          "SE": {
+            "atSearchBoundary": true,
+            "best": {
+              "eastMetres": 3.0,
+              "northMetres": -5.0,
+              "score": -0.21707719259767022
+            },
+            "bestMarginBeyond1m": 0.0033115805075583093,
+            "bestMinusZero": 0.03522254837960703,
+            "notGeospatialShift": true,
+            "zero": -0.25229974097727725
+          },
+          "SW": {
+            "atSearchBoundary": true,
+            "best": {
+              "eastMetres": 5.0,
+              "northMetres": -3.0,
+              "score": -0.052144680139537596
+            },
+            "bestMarginBeyond1m": 0.005583269302298952,
+            "bestMinusZero": 0.11539545340581206,
+            "notGeospatialShift": true,
+            "zero": -0.16754013354534966
+          },
+          "whole": {
+            "atSearchBoundary": true,
+            "best": {
+              "eastMetres": -5.0,
+              "northMetres": -5.0,
+              "score": -0.1531518741089116
+            },
+            "bestMarginBeyond1m": 0.0011648621580285234,
+            "bestMinusZero": 0.10106535803939928,
+            "notGeospatialShift": true,
+            "zero": -0.2542172321483109
+          }
+        }
+      },
+      "sizeMetres": 150,
+      "slopeDegreesP05MedianP95": [
+        22.529157145815603,
+        54.946879582310025,
+        78.24132872363172
+      ],
+      "sourceImageAsset": "swissimage-dop10_2023_2624-1092_0.1_2056.tif"
+    }
+  },
+  "pixelEpochsAndOriginalOrthoRevisionUnknown": true,
+  "planSha256": "9b5ac979da1236855f7d4d08cddb060f6de8d245febef5c6df889e95b523c9ef",
+  "readOnlyMetadataSha256": {
+    "docs/atlas/riffelhorn-data-catalog.json": "b9d125e60e90435bfab362b4b2056b67295ecd7d90634b58dbd8105646bc9a62",
+    "docs/atlas/riffelhorn-observation-support.json": "b6f9bdc44f5288b83c6d371551f75294715dd8eef271ce48250cca5c2885d806",
+    "docs/atlas/riffelhorn-support-product.json": "9e68fc417bce9a3f2c93d7f0cd07cb940c00b0229ba1f9ae63624613310926e5",
+    "docs/atlas/swissimage-source-derived-baseline.json": "49ab12594ca1c0737fdcd0b2e53f21e5d2acda8d7122bb574789a906a29cdd67"
+  },
+  "software": {
+    "gdal": "3.9.3",
+    "numpy": "2.5.3",
+    "pyproj": "3.7.2",
+    "python": "3.12.6",
+    "rasterio": "1.4.3"
+  },
+  "terrainProductRevision": {
+    "status": "known",
+    "value": "1a44a0644de1bde73a3ba84d1b761dc0aa17d48cc971e5f6b5d2c14fb329d7ea"
+  },
+  "terrainSourceRevision": {
+    "status": "known",
+    "value": "b24a4fdc7b378ba79d442d0ce216a031dfb95a6bc6eed5ad9c33be61175651f4"
+  }
+}

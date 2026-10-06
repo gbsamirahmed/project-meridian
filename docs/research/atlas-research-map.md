@@ -61,8 +61,12 @@ The [illumination/shadow assessment](illumination-identifiability.md) now comple
 shadow cause or physical radiometry. A constrained already-processed Sentinel residual test is justified.
 The [frozen residual trial](tryfan-illumination-normalization.md) now completes that recommendation
 (**D — INCONCLUSIVE**): SE SCL5 has 12<20 eligible cells, so fitting/correction did not run.
-Exactly one next task: **Retained Riffelhorn imagery-terrain registration and epoch-consistency assessment**;
-[scope/exit](tryfan-illumination-normalization.md#27-exactly-one-next-bounded-task). It has not begun.
+The [registration/epoch assessment](riffelhorn-registration-epoch.md) now completes that recommendation
+(**B - SCALE-CONDITIONAL CONSISTENCY**): coordinate/preparation fidelity is consistent, but
+mixed epochs and ambiguous steep/dark controls limit close physical correspondence.
+No accepted shift or corrected product. Exactly one next task: **Retained Tryfan vegetation-only residual-normalization protocol assessment**;
+[scope/exit](riffelhorn-registration-epoch.md#27-exactly-one-next-bounded-task). It has not begun.
+This is a separate protocol assessment or no-go decision, not relaxation of the old trial or correction.
 Open/parked appearance work remains independent; no correction or acquisition follows automatically.
 
 Production, Weather and Traverse remain unchanged. The map below retains chronological
@@ -518,3 +522,10 @@ The [frozen trial report](tryfan-illumination-normalization.md), [baseline](tryf
 The 42-thread statuses are preserved. A7 has a stopping outcome, while correction benefit and all stronger A6/A8-A11/A14/A15 science remain unresolved. Swiss pixels stay parked. The earlier dated next-step entry is historical; current sequencing is at the top and in the canonical register.
 
 Exactly one next, separately authorized: **Retained Riffelhorn imagery-terrain registration and epoch-consistency assessment**. Retained A15 registration/epoch evidence and defensible-test limits only; no warping, multiview, correction or new data. It has not begun.
+
+
+## 2026-10-07 - retained Riffelhorn registration and epoch consistency
+
+The [assessment](riffelhorn-registration-epoch.md), [results](riffelhorn-registration-epoch-results.json) and [validation](riffelhorn-registration-epoch-validation.json) record **B - SCALE-CONDITIONAL CONSISTENCY**. Four inherited patches and all retained source/prepared hashes are preserved. Native cell edges/area conventions and independent coordinate/terrain-preparation tests agree. Ordinary forms have useful correspondence; summit/steep/dark search peaks do not identify physical displacement. Ortho model family is documented, exact revision and pixel epochs unknown. Broad/planning uses are qualified; finer inference requires independent controls. No source correction/warp or new data.
+
+All 42 status columns remain. A15 gains scale/epoch qualification, not closure; A6-A11/A14 remain separate and A13 Swiss pixels parked. The Tryfan normalization stopping result remains INCONCLUSIVE. One next: **Retained Tryfan vegetation-only residual-normalization protocol assessment**; a distinct scientific question needs its own justified protocol or no-go before fitting. It has not begun; no original criteria changes.

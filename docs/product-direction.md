@@ -48,9 +48,14 @@ Only a constrained post-L2A residual test is justified on retained dated Tryfan 
 The [frozen residual experiment](research/tryfan-illumination-normalization.md) now completes
 that recommendation (**D — INCONCLUSIVE**): SE SCL5 count 12<20 fails the entry gate.
 No C coefficient or corrected representation exists; no benefit/physical claim follows.
-Exactly one next task is the **Retained Riffelhorn imagery-terrain registration and epoch-consistency assessment**;
-[scope/exit](research/tryfan-illumination-normalization.md#27-exactly-one-next-bounded-task). It has not begun. No production storage, correction, cloud build, classifier or broad ingestion
-has occurred. Swiss pixels stay parked.
+The [registration/epoch assessment](research/riffelhorn-registration-epoch.md) now completes that
+recommendation (**B - SCALE-CONDITIONAL CONSISTENCY**). Coordinate/preparation checks agree, while
+mixed epochs and ambiguous steep/dark controls limit fine physical matching. No registration
+correction is justified by proxy optima. Exactly one next task is **Retained Tryfan vegetation-only
+residual-normalization protocol assessment**;
+[scope/exit](research/riffelhorn-registration-epoch.md#27-exactly-one-next-bounded-task). It has not
+begun; assess a separate question/protocol or no-go, without changing the old criteria or running
+correction. Swiss pixels remain parked.
 Historical analytical filter/calibration
 suggestions are separate from closed visual-terrain research. No Weather/Traverse redesign follows.
 
