@@ -1,0 +1,275 @@
+{
+  "changedDerivations": 2,
+  "counts": {
+    "claims": 7,
+    "derivations": 6,
+    "reverseKeys": 6,
+    "roots": 3
+  },
+  "decision": "C — SUCCESS",
+  "initialCounts": {
+    "claims": 5,
+    "derivations": 4,
+    "reverseKeys": 4,
+    "roots": 2
+  },
+  "limits": "Local single writer; no power-loss, multi-writer, load or production throughput guarantee. Warm local assets; replay rehashes and samples retained pixels. Snapshot rewrite is full metadata, not incremental record storage.",
+  "logical": {
+    "current": [
+      {
+        "freshness": "fresh",
+        "probe": "summit",
+        "property": "slope",
+        "ref": {
+          "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+          "revision": "4f4d6ae182d3821d1a002c855d8b886112c0aea0e13af2023b10d5294f70ef93"
+        },
+        "value": {
+          "kind": "assertion",
+          "value": {
+            "kind": "quantity",
+            "unit": "degree",
+            "value": 32.918524028483965
+          }
+        }
+      },
+      {
+        "freshness": "fresh",
+        "probe": "summit",
+        "property": "area-ratio",
+        "ref": {
+          "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+          "revision": "dbc1746d41c191d251628d3409d5db3bf4064c8c29e9f0ba50a332804196c1d2"
+        },
+        "value": {
+          "kind": "assertion",
+          "value": {
+            "kind": "quantity",
+            "unit": "m2 represented planar surface / m2 map plane",
+            "value": 1.191264396968292
+          }
+        }
+      },
+      {
+        "freshness": "fresh",
+        "probe": "southern-observer",
+        "property": "slope",
+        "ref": {
+          "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+          "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+        },
+        "value": {
+          "kind": "assertion",
+          "value": {
+            "kind": "quantity",
+            "unit": "degree",
+            "value": 8.811499729681492
+          }
+        }
+      },
+      {
+        "freshness": "fresh",
+        "probe": "southern-observer",
+        "property": "area-ratio",
+        "ref": {
+          "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+          "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+        },
+        "value": {
+          "kind": "assertion",
+          "value": {
+            "kind": "quantity",
+            "unit": "m2 represented planar surface / m2 map plane",
+            "value": 1.011943302930815
+          }
+        }
+      }
+    ],
+    "history": [
+      {
+        "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+        "preferred": false,
+        "replay": "fresh",
+        "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839"
+      },
+      {
+        "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+        "preferred": false,
+        "replay": "fresh",
+        "revision": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527"
+      },
+      {
+        "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+        "preferred": true,
+        "replay": "fresh",
+        "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+      },
+      {
+        "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+        "preferred": true,
+        "replay": "fresh",
+        "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+      }
+    ],
+    "initial": "b5a89ffb6ceaa4372afd3e8bb12d7db7d52625ad2820989d3840b28cfa747b47",
+    "recomputed": [
+      {
+        "probe": "summit",
+        "property": "slope",
+        "ref": {
+          "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+          "revision": "4f4d6ae182d3821d1a002c855d8b886112c0aea0e13af2023b10d5294f70ef93"
+        }
+      },
+      {
+        "probe": "summit",
+        "property": "area-ratio",
+        "ref": {
+          "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+          "revision": "dbc1746d41c191d251628d3409d5db3bf4064c8c29e9f0ba50a332804196c1d2"
+        }
+      }
+    ],
+    "unavailable": {
+      "hierarchy": {
+        "id": "tryfan-second-region-proof",
+        "revision": "1"
+      },
+      "reason": "common-unavailable",
+      "status": "unavailable",
+      "trace": [
+        {
+          "family": "welsh-regional",
+          "level": "z14",
+          "outcome": "outside-valid-support"
+        },
+        {
+          "family": "production-common",
+          "level": "z14",
+          "outcome": "spatial-contributors-unavailable"
+        }
+      ]
+    },
+    "unknown": {
+      "explanation": "No supported fine/current mineral-exposure fraction. Missing classification does not mean mineral absent.",
+      "kind": "gap",
+      "reason": "unsupported"
+    },
+    "updated": "29acd22959d2a90e3aec826c271126287420b627d46dec968ac0e7418a1c298e"
+  },
+  "logicalSha256": "bb948409bc740cb7f2dfb187551fc43be8cd6b4dc82d3cef5971c7d7f86b0550",
+  "machine": {
+    "arch": "x64",
+    "node": "v24.11.0",
+    "platform": "win32"
+  },
+  "measures": {
+    "afterInterruption": {
+      "exitCode": 0,
+      "loadMs": 9.583999999999946,
+      "queryBatchMs": 102.81899999999996,
+      "startupMs": 595.8797,
+      "totalMs": 708.3081,
+      "wallMs": 908.2648999999997
+    },
+    "init": {
+      "constructedMs": 407.4528,
+      "exitCode": 0,
+      "publicationMs": 23.108299999999872,
+      "startupMs": 613.9748,
+      "totalMs": 1137.8571000000002,
+      "wallMs": 1456.269
+    },
+    "interrupted": {
+      "exitCode": 73,
+      "wallMs": 1217.638
+    },
+    "rebuildInit": {
+      "constructedMs": 419.02510000000007,
+      "exitCode": 0,
+      "publicationMs": 22.524799999999914,
+      "startupMs": 579.3405,
+      "totalMs": 1113.9117,
+      "wallMs": 1320.159599999999
+    },
+    "rebuildUpdate": {
+      "exitCode": 0,
+      "loadMs": 10.096499999999992,
+      "publicationMs": 11.55989999999997,
+      "startupMs": 598.7366999999999,
+      "totalMs": 1131.9376,
+      "updateMs": 407.6851999999999,
+      "wallMs": 1458.744700000001
+    },
+    "replay": {
+      "exitCode": 0,
+      "loadMs": 9.552599999999984,
+      "replayMs": 443.4172,
+      "startupMs": 595.2152,
+      "totalMs": 1048.2093,
+      "wallMs": 1369.0955999999996
+    },
+    "restartA": {
+      "exitCode": 0,
+      "loadMs": 9.824499999999944,
+      "queryBatchMs": 96.17250000000001,
+      "startupMs": 606.0053,
+      "totalMs": 712.0267,
+      "wallMs": 1028.8432999999998
+    },
+    "restartB": {
+      "exitCode": 0,
+      "loadMs": 11.568700000000035,
+      "queryBatchMs": 108.02099999999996,
+      "startupMs": 591.3371000000001,
+      "totalMs": 710.9626000000001,
+      "wallMs": 1033.9592999999995
+    },
+    "update": {
+      "exitCode": 0,
+      "loadMs": 9.733699999999999,
+      "publicationMs": 21.607499999999845,
+      "startupMs": 582.0354,
+      "totalMs": 1123.0323,
+      "updateMs": 410.88660000000004,
+      "wallMs": 1429.6368000000002
+    }
+  },
+  "methods": {
+    "scripts/atlas/local-persistent-proof/cli.mjs": "ba1bd2508ff3dc8d705a1ba23f7e712bdf427f1eccc620647d508a838766f994",
+    "scripts/atlas/local-persistent-proof/run-proof.mjs": "73ed11b8df85cbdfbaed86275c2dd5e38c335d6064d21e42693575458e8e7f1e",
+    "scripts/atlas/local-persistent-proof/runtime.mjs": "ae3dbe98b171e8c036fb38f103f6a6310abe65a601c3cda2e0a684174f9dd085",
+    "scripts/atlas/local-persistent-proof/store.mjs": "209b2e640e006f4ce9fa53d9c7edfc9a4247598b6b2ebee9a5347699dac0ec39"
+  },
+  "normalRebuildPublication": {
+    "bytes": 133709,
+    "pointerBytes": 133,
+    "snapshot": "29acd22959d2a90e3aec826c271126287420b627d46dec968ac0e7418a1c298e",
+    "snapshotWritten": true
+  },
+  "planSha256": "c91458865ed574a522d473d61f28fda121d627450bb5cfa692fa9df6a25838b2",
+  "preservedDerivations": 2,
+  "proof": "tryfan-local-persistent-proof/v1",
+  "proofDirectory": "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\derived\\atlas\\tryfan\\local-persistent-proof-v1\\runs\\1791309691906",
+  "realProcesses": 9,
+  "rebuiltEquivalent": true,
+  "retryPublication": {
+    "bytes": 133709,
+    "pointerBytes": 133,
+    "snapshot": "29acd22959d2a90e3aec826c271126287420b627d46dec968ac0e7418a1c298e",
+    "snapshotWritten": false
+  },
+  "snapshots": [
+    {
+      "bytes": 133709,
+      "name": "29acd22959d2a90e3aec826c271126287420b627d46dec968ac0e7418a1c298e.json"
+    },
+    {
+      "bytes": 100440,
+      "name": "b5a89ffb6ceaa4372afd3e8bb12d7db7d52625ad2820989d3840b28cfa747b47.json"
+    }
+  ],
+  "startingCheckpoint": "3c143ebea99ce366a1b00083f64a4ee11149a1e0",
+  "storeBytes": 234282,
+  "updateSnapshotBytes": 133709
+}

@@ -30,9 +30,12 @@ The [storage/processing/serving requirements assessment](research/atlas-storage-
 now completes that recommendation (**decision C**). Five logical storage responsibilities,
 scoped lookup/freshness and coherent publication/recovery are established requirements;
 technologies and production capacity remain provisional/unmeasured. The next recommendation
-is separately authorized: implement and evaluate one local persistent retained Tryfan
-regional world-model proof, with reversible design and bounded restart/update measurements.
-No production storage, cloud build or broad ingestion has begun.
+was the local persistent retained Tryfan proof, now complete
+([report](research/tryfan-local-persistent-proof.md), **C — SUCCESS**). Real restart, coherent publication,
+scoped update and historical replay survive; whole-metadata snapshots remain a small
+replaceable single-writer mechanism. Exactly one next task is separately authorized:
+retained Tryfan WorldCover native-raster binding and qualified semantic-query proof.
+It has not begun. No production storage, cloud build or broad ingestion has occurred.
 Historical analytical filter/calibration
 suggestions are separate from closed visual-terrain research. No Weather/Traverse redesign follows.
 

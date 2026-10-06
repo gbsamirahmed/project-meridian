@@ -1,0 +1,11 @@
+{
+  "proof": "tryfan-local-persistent-proof/v1",
+  "startingCheckpoint": "3c143ebea99ce366a1b00083f64a4ee11149a1e0",
+  "evidence": ["docs/research/tryfan-qualified-query-plan.json", "docs/research/tryfan-qualified-query-inputs.json", "docs/research/tryfan-qualified-query-results.json"],
+  "mechanism": "Single-writer immutable canonical JSON snapshots and atomically replaced current pointer; local, replaceable research mechanism, not a production stack choice.",
+  "scenario": "Reuse two frozen z14 Tryfan queries and unchanged Horn slope / dependent planar area ratio. Initial common four-result state, process exit/restart A, retained Welsh registration and scoped two-result recompute, exit/restart B, replay four historical AWS claims from retained pixels.",
+  "durable": ["pinned evidence and method references", "domain hierarchy declaration/options", "qualified v1 evidence bundle", "claim references and dependency receipts", "actual consumed scopes", "accepted snapshot parent/reason"],
+  "notDurable": ["fresh flags", "query responses", "decoded tiles", "9-height sample buffers", "reverse-index cache", "performance timings"],
+  "failureCases": ["missing store", "incompatible proof schema", "invalid v1 record", "missing dependency", "snapshot checksum failure", "process exit before pointer publication", "unavailable retained asset"],
+  "scope": "No network, new sources, production consumer, frozen contract change, general scheduler or large payload copies. Generated stores and traces belong in meridian-data. Publication is atomic for one writer; power-loss durability and concurrent writers are not established."
+}

@@ -4046,3 +4046,36 @@ Exactly one next recommendation: implement and evaluate one local persistent
 retained Tryfan regional world-model proof against R1–R12, with a short reversible
 design and bounded cold/warm, update, replay and restart/failure measurements.
 That task has not begun; no broad ingestion or productionisation is implied.
+
+## 2026-10-06 — local persistent retained Tryfan world-model proof
+
+Starting clean main at `3c143ebea99ce366a1b00083f64a4ee11149a1e0`, origin fetch 0/0.
+The [persistent proof](research/tryfan-local-persistent-proof.md) records **C — SUCCESS**.
+A small single-writer, immutable sorted JSON snapshot and atomic publication pointer
+reuse TerrainHierarchy, v1 and original scientific/lifecycle methods unchanged.
+No database/cloud/service, production consumer, new data or duplicated terrain archive.
+
+Fresh subprocess restart A recovers the four AWS assertions and explicit exposure gap.
+Welsh applicability stales/recomputes only summit slope and dependent planar area ratio;
+southern results remain identical. Restart B recovers six derived revisions/four current
+answers and all four AWS histories. Historical replay rehashes/decodes retained PNGs and
+reruns unchanged methods; all six complete derived records reproduce exactly.
+
+An abrupt exit before publication leaves the complete common view visible; retry accepts
+the same closed update snapshot. Invalid schema/record/dependency, corrupt snapshot,
+missing store and unavailable external inputs fail honestly. Reverse lookup/freshness
+are reconstructed, not persistent truth flags. Accepted metadata is 100,440 + 133,709
+bytes plus a 133-byte pointer. Whole-metadata rewrite differs from scoped computation;
+concurrent writers, power loss and national/global capacity remain untested.
+
+[Validation](research/tryfan-local-persistent-validation.json) covers 18 new real-process,
+roundtrip/failure/scope/replay tests, existing contract/domain/proof checks, logical rebuild,
+scoped lint, local links/anchors, 42 unchanged statuses, historical reports, frozen code
+and 113 protected production hashes. Generated stores/traces remain in meridian-data.
+Production Atlas, Weather, Traverse and frozen contracts remain untouched; multiscale
+closed and Swiss multiview parked. Appearance correction/visibility/fusion are unresolved.
+
+Exactly one next bounded task: retained Tryfan WorldCover native-raster binding and
+qualified semantic-query proof, using the existing small crop and shared native metadata.
+This follows S3's retained implementation-validation idea; no inference or broad ingestion.
+That task has not begun. Successful persistence does not select production infrastructure.

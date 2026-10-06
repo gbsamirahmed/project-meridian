@@ -5,7 +5,7 @@ Lab 012G evidence checkpoint `abf95bcfb50c681244a146626565a471ba791418`.
 This index records knowledge and research status, not a roadmap, new Lab or
 production architecture. It is the starting point for humans and fresh tooling.
 
-## Current programme state — foundations, vertical proof and requirements assessment complete
+## Current programme state — foundations and retained persistent proof complete
 
 The [Atlas research-state audit and thread register](atlas-research-state.md) is the
 current status/sequence companion to this historical research map. It reconstructs
@@ -47,10 +47,12 @@ or frozen contract changes, broad semantic ingestion or persistent-world build.
 The [storage/processing/serving requirements assessment](atlas-storage-processing-serving-requirements.md)
 now completes the proof's recommendation with **decision C**: sufficient requirements for
 one bounded local persistent regional proof; national/global capacity and production
-technologies remain unselected. Exactly one next recommendation: **implement and evaluate
-one local persistent retained Tryfan regional world-model proof**, separately authorized.
-Follow [R1–R12](atlas-storage-processing-serving-requirements.md#27-requirements-for-the-first-persistent-regional-proof)
-for durable references, scoped dependencies, restart/recovery and bounded measurements.
+technologies remain unselected. The [local persistent Tryfan proof](tryfan-local-persistent-proof.md)
+now completes that recommendation (**C — SUCCESS**): real restarts, coherent publication,
+scoped recomputation and retained-pixel historical replay preserve the qualified slice.
+Exactly one next recommendation: **Retained Tryfan WorldCover native-raster binding and
+qualified semantic-query proof**, separately authorized. Its [scope](tryfan-local-persistent-proof.md#27-exactly-one-next-bounded-task)
+uses the existing small crop; no new acquisition, inference or production ingestion.
 Open/parked appearance work remains independent; nothing starts automatically.
 
 Production, Weather and Traverse remain unchanged. The map below retains chronological
@@ -440,3 +442,19 @@ Next is one local persistent retained Tryfan proof with R1–R12 acceptance evid
 not begun. No storage/database/cloud/service build, data acquisition or production
 change occurred. All 42 register statuses and historical reports remain unchanged;
 appearance remains unresolved and Swiss multiview parked.
+
+## 2026-10-06 — local persistent retained Tryfan proof
+
+[Proof](tryfan-local-persistent-proof.md): **C — SUCCESS**. Immutable local JSON snapshots
+and an atomic pointer preserve qualified identity/provenance and exact dependency scopes.
+Fresh-process restart A/B, scoped Welsh update, two-result chain recomputation and
+four-record AWS historical replay pass; all six results reproduce from retained pixels.
+Abrupt exit before pointer publication leaves the accepted old view intact. Accepted
+metadata totals 234,282 bytes; terrain assets stay externally referenced. Whole-snapshot
+rewrites, one writer and untested power-loss/scale are explicit limits, not a production
+stack decision. [Validation](tryfan-local-persistent-validation.json) covers failure/gap,
+roundtrip, scope and history tests plus frozen/protected documentation/source integrity.
+The requirements assessment's historical next recommendation is complete. Next: one
+retained Tryfan WorldCover native-raster binding/qualified-query proof, not begun.
+All 42 status columns and historical reports remain; appearance partial/advanced,
+Swiss multiview parked, production/Weather/Traverse unchanged.

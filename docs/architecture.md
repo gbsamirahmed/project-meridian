@@ -604,6 +604,11 @@ consumer or general query/dependency runtime is introduced. The
 now completes the proof recommendation (**decision C**): logical storage responsibilities,
 shared qualified knowledge, scoped indexes/dependencies, coherent publication/recovery and
 separate serving classes. These are requirements, not selected technologies or deployments.
-Exactly one next recommendation is a local persistent retained Tryfan proof with reversible
-design and operational acceptance measurements; it has not begun. Open/parked appearance
-work is non-blocking, not solved. Frozen contracts/current production remain unchanged.
+The [local persistent Tryfan proof](research/tryfan-local-persistent-proof.md) now completes that
+recommendation (**C — SUCCESS**): explicit input-use receipts, qualified v1 claims and
+stored hierarchy declarations survive real restarts, scoped update and historical
+replay. Accepted publication is coherent; freshness/reverse lookup rebuild from facts.
+JSON snapshots are a replaceable single-writer proof, not a production store decision.
+Exactly one next task: retained Tryfan WorldCover native-raster binding and qualified
+semantic-query proof, not begun. Open/parked appearance work is non-blocking, not solved.
+Frozen contracts/current production remain unchanged.

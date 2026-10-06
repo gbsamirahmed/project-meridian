@@ -1,0 +1,350 @@
+{
+  "proof": "tryfan-local-persistent-proof/v1",
+  "date": "2026-10-06",
+  "startingCheckpoint": "3c143ebea99ce366a1b00083f64a4ee11149a1e0",
+  "branch": "main",
+  "upstream": "origin/main",
+  "fetchedStartingDivergence": [
+    0,
+    0
+  ],
+  "decision": "C — SUCCESS; bounded local proof, not production",
+  "checks": [
+    {
+      "check": "expected starting requirements checkpoint ancestor",
+      "passed": true
+    },
+    {
+      "check": "existing clean main upstream context",
+      "passed": true
+    },
+    {
+      "check": "precommit divergence 0/0",
+      "passed": true
+    },
+    {
+      "check": "113 protected production hashes unchanged",
+      "passed": true
+    },
+    {
+      "check": "seven frozen semantic code fixture hashes unchanged",
+      "passed": true
+    },
+    {
+      "check": "production contracts metadata Atlas/EarthLab sources unchanged",
+      "passed": true
+    },
+    {
+      "check": "all existing scripts/research assets and 43 Atlas/EarthLab reports preserved",
+      "passed": true
+    },
+    {
+      "check": "all42 canonical status columns unchanged",
+      "passed": true
+    },
+    {
+      "check": "historical audit gate preserved",
+      "passed": true
+    },
+    {
+      "check": "development log append-only",
+      "passed": true
+    },
+    {
+      "check": "27 report sections present",
+      "passed": true
+    },
+    {
+      "check": "exactly one next native binding task consistent and not begun",
+      "passed": true
+    },
+    {
+      "check": "bounded success and appearance remains unresolved parked",
+      "passed": true
+    },
+    {
+      "check": "measurement wrapper and original plan hashes match",
+      "passed": true
+    },
+    {
+      "check": "4 initial6 final,2 recomputed2 unaffected and nine real acceptance processes",
+      "passed": true
+    },
+    {
+      "check": "crash before publication, retry reuse and normal full snapshot write recorded",
+      "passed": true
+    },
+    {
+      "check": "accepted snapshot content hash and counts match receipt",
+      "passed": true
+    },
+    {
+      "check": "no raster/nine-height/freshness buffers persisted",
+      "passed": true
+    },
+    {
+      "check": "accepted store bytes match physical files",
+      "passed": true
+    },
+    {
+      "check": "four historical AWS contexts retained and unknown gap not zero",
+      "passed": true
+    },
+    {
+      "check": "99 tests:18 persistence17 original proof64 frozen contract/domain",
+      "passed": true
+    },
+    {
+      "check": "all99 tests counted",
+      "passed": true
+    },
+    {
+      "check": "focused new JavaScript lint",
+      "passed": true
+    },
+    {
+      "check": "script syntax scripts/atlas/local-persistent-proof/store.mjs",
+      "passed": true
+    },
+    {
+      "check": "script syntax scripts/atlas/local-persistent-proof/runtime.mjs",
+      "passed": true
+    },
+    {
+      "check": "script syntax scripts/atlas/local-persistent-proof/cli.mjs",
+      "passed": true
+    },
+    {
+      "check": "script syntax scripts/atlas/local-persistent-proof/run-proof.mjs",
+      "passed": true
+    },
+    {
+      "check": "script syntax scripts/atlas/test_local_persistent_tryfan.mjs",
+      "passed": true
+    },
+    {
+      "check": "only new isolated proof and current navigation changed",
+      "passed": true
+    },
+    {
+      "check": "no store runtime payloads/large files tracked",
+      "passed": true
+    },
+    {
+      "check": "local references and anchors resolve",
+      "passed": true
+    },
+    {
+      "check": "all research JSON parses",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 3c143eb",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 1c2d10e",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 6e17e79",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 43afe78",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 5f14511",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor e65c2d6",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 052374e",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor c4da565",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 75ea9d8",
+      "passed": true
+    },
+    {
+      "check": "unstaged whitespace",
+      "passed": true
+    },
+    {
+      "check": "staged whitespace",
+      "passed": true
+    },
+    {
+      "check": "changed Markdown no trailing whitespace",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "commands": [
+    {
+      "check": "99 tests:18 persistence17 original proof64 frozen contract/domain",
+      "command": [
+        "node",
+        "--test",
+        "scripts/atlas/test_local_persistent_tryfan.mjs",
+        "scripts/atlas/test_qualified_query_proof.mjs",
+        "scripts/atlas/test_semantic_evidence_contract.mjs",
+        "scripts/atlas/test_terrain_hierarchy_contract.mjs",
+        "scripts/atlas/test_terrain_runtime.mjs",
+        "scripts/atlas/test_tryfan_terrain.mjs"
+      ],
+      "exitCode": 0
+    },
+    {
+      "check": "focused new JavaScript lint",
+      "command": [
+        "npx.cmd",
+        "eslint",
+        "--no-config-lookup",
+        "--rule",
+        "no-unused-vars:error",
+        "--rule",
+        "no-unreachable:error",
+        "scripts/atlas/local-persistent-proof/store.mjs",
+        "scripts/atlas/local-persistent-proof/runtime.mjs",
+        "scripts/atlas/local-persistent-proof/cli.mjs",
+        "scripts/atlas/local-persistent-proof/run-proof.mjs",
+        "scripts/atlas/test_local_persistent_tryfan.mjs"
+      ],
+      "exitCode": 0
+    },
+    {
+      "check": "script syntax scripts/atlas/local-persistent-proof/store.mjs",
+      "command": [
+        "node",
+        "--check",
+        "scripts/atlas/local-persistent-proof/store.mjs"
+      ],
+      "exitCode": 0
+    },
+    {
+      "check": "script syntax scripts/atlas/local-persistent-proof/runtime.mjs",
+      "command": [
+        "node",
+        "--check",
+        "scripts/atlas/local-persistent-proof/runtime.mjs"
+      ],
+      "exitCode": 0
+    },
+    {
+      "check": "script syntax scripts/atlas/local-persistent-proof/cli.mjs",
+      "command": [
+        "node",
+        "--check",
+        "scripts/atlas/local-persistent-proof/cli.mjs"
+      ],
+      "exitCode": 0
+    },
+    {
+      "check": "script syntax scripts/atlas/local-persistent-proof/run-proof.mjs",
+      "command": [
+        "node",
+        "--check",
+        "scripts/atlas/local-persistent-proof/run-proof.mjs"
+      ],
+      "exitCode": 0
+    },
+    {
+      "check": "script syntax scripts/atlas/test_local_persistent_tryfan.mjs",
+      "command": [
+        "node",
+        "--check",
+        "scripts/atlas/test_local_persistent_tryfan.mjs"
+      ],
+      "exitCode": 0
+    },
+    {
+      "check": "unstaged whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0
+    },
+    {
+      "check": "staged whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "resultsSha256": "d6cb1220d458a3ae980415965fb648cf2e1d6b610c6f00441cbd7becb73b0610",
+  "logicalSha256": "bb948409bc740cb7f2dfb187551fc43be8cd6b4dc82d3cef5971c7d7f86b0550",
+  "reportSha256": "93310c9f77abb360f2841279378550b810fb58971c26d50ef466fef32fa3aac0",
+  "protectedProductionHashChecks": 113,
+  "productionMismatches": [],
+  "frozenSemanticHashChecks": 7,
+  "frozenMismatches": [],
+  "unchangedScripts": 291,
+  "unchangedHistoricalAtlasEarthLabReports": 43,
+  "unchangedPriorResearchAssets": 14,
+  "preservationMismatches": [],
+  "canonicalThreadCount": 42,
+  "canonicalStatusColumnsUnchanged": true,
+  "localReferencesChecked": 310,
+  "anchorsChecked": 49,
+  "missingReferences": [],
+  "researchJsonChecked": 116,
+  "checkpointAncestors": {
+    "3c143eb": "3c143ebea99ce366a1b00083f64a4ee11149a1e0",
+    "1c2d10e": "1c2d10e522f54e60f83bae2e416008bd1a241eb1",
+    "6e17e79": "6e17e7923f2130b2cfce3671e026fe56b6397f5f",
+    "43afe78": "43afe78e549f6707f0648465af6d7c6e0aabb430",
+    "5f14511": "5f145117072b1cde2e696fb8d8f8d11995a2c06f",
+    "e65c2d6": "e65c2d6c29ed4421d5f2cc7133604332e8dfd71b",
+    "052374e": "052374e07d613a549f5a88640b42932f97a7f896",
+    "c4da565": "c4da56577c27f56ee1a5829e85d8daa951a517c1",
+    "75ea9d8": "75ea9d837c86506b0e278f79e209a8533e9664b7"
+  },
+  "changedPaths": [
+    "docs/architecture.md",
+    "docs/development-log.md",
+    "docs/product-direction.md",
+    "docs/research/atlas-research-map.md",
+    "docs/research/atlas-research-state.md",
+    "docs/research/tryfan-local-persistent-plan.json",
+    "docs/research/tryfan-local-persistent-proof.md",
+    "docs/research/tryfan-local-persistent-results.json",
+    "docs/research/tryfan-local-persistent-validation.json",
+    "scripts/atlas/local-persistent-proof/README.md",
+    "scripts/atlas/local-persistent-proof/cli.mjs",
+    "scripts/atlas/local-persistent-proof/run-proof.mjs",
+    "scripts/atlas/local-persistent-proof/runtime.mjs",
+    "scripts/atlas/local-persistent-proof/store.mjs",
+    "scripts/atlas/local-persistent-proof/validate.py",
+    "scripts/atlas/test_local_persistent_tryfan.mjs"
+  ],
+  "nextTask": "Retained Tryfan WorldCover native-raster binding and qualified semantic-query proof; not started",
+  "scopeConfirmations": {
+    "noNewAcquisition": true,
+    "noTerrainPayloadCopy": true,
+    "retainedProductsUnchanged": true,
+    "noPrivateInspection": true,
+    "noFrozenContractChanges": true,
+    "noProductionChanges": true,
+    "weatherTraverseUnchanged": true,
+    "multiscaleClosed": true,
+    "multiviewParked": true,
+    "noCloudDatabaseServices": true,
+    "noInferenceHydrology": true
+  },
+  "limits": "Single writer, whole metadata snapshot rewrite, no power-loss/multiwriter/load/temporal-state/production throughput guarantee."
+}
