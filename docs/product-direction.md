@@ -22,10 +22,12 @@ Atlas's physical-world foundation is not optimised for that application.
 The [derived-understanding lifecycle assessment](research/atlas-derived-understanding-lifecycle.md)
 closes the audit’s pre-synthesis gate using retained cases. Immutable revision snapshots
 can support revisable understanding; scoped input-use/current-assessment descriptions are
-justified beside existing v1. The next recommendation is separately authorized bounded
-world-model architecture synthesis, not implemented infrastructure or authority to start
-an experiment. Historical analytical filter/calibration suggestions are separate from
-closed visual-terrain research. No Weather/Traverse redesign follows.
+justified beside existing v1. The [world-model architecture synthesis](research/atlas-world-model-architecture-synthesis.md)
+is now complete (decision C), with domain-specific evidence and question-local answers.
+The next recommendation is one separately authorized retained Tryfan integrated proof
+of qualified queries/revision lifecycle, not broad ingestion, implemented infrastructure
+or authority to start an empirical experiment. Historical analytical filter/calibration
+suggestions are separate from closed visual-terrain research. No Weather/Traverse redesign follows.
 
 ## Product idea
 

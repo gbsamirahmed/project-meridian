@@ -585,6 +585,15 @@ closes the audit’s pre-synthesis gate. Stable revision snapshots preserve evid
 qualified current interpretation can evolve. Most result provenance is already in v1;
 actual scoped input uses and policy-relative current assessment need a small compatible
 companion description before automation. This is an assessed boundary, not an implemented
-subsystem or modification of frozen contracts/current dependency policy. World-model
-synthesis remains separately authorised; persistent proof and measured storage/processing
-architecture follow later.
+subsystem or modification of frozen contracts/current dependency policy.
+
+The [world-model architecture synthesis](research/atlas-world-model-architecture-synthesis.md)
+now defines Atlas target responsibilities: coordinated source evidence, domain preparation,
+qualified claims/features/state, reproducible derivations, question-local resolution and
+independent presentation. **Decision C:** sufficiently founded for a bounded integrated
+retained-region proof; no operational world model or production capability is implied.
+Domain-specific representations remain distinct, with v1 semantic evidence and small linked
+input-use/current-assessment responsibilities. Current client-only ownership and Atlas/Weather/
+Traverse dependency boundaries remain unchanged. Exactly one next recommendation is the
+separately authorized retained Tryfan proof; measured storage/processing/serving architecture
+follows its evidence. Open/parked appearance work is non-blocking, not solved.

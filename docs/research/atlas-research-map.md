@@ -5,7 +5,7 @@ Lab 012G evidence checkpoint `abf95bcfb50c681244a146626565a471ba791418`.
 This index records knowledge and research status, not a roadmap, new Lab or
 production architecture. It is the starting point for humans and fresh tooling.
 
-## Current programme state — audit 5f14511 and completed lifecycle follow-up
+## Current programme state — audit, lifecycle and world-model synthesis complete
 
 The [Atlas research-state audit and thread register](atlas-research-state.md) is the
 current status/sequence companion to this historical research map. It reconstructs
@@ -37,10 +37,13 @@ The [derived-understanding lifecycle assessment](atlas-derived-understanding-lif
 is **CLOSED FOR FOUNDATION**: qualified revision snapshots can coexist with revisable
 understanding; actual scoped input uses and current-use assessment need a small compatible
 companion description, without changing v1. No remaining foundational blocker is demonstrated.
-Exactly one next bounded recommendation: **world-model architecture synthesis**, separately
-authorized, with domain contracts and one retained-region proof specification as its exit.
-No proof, ingestion or storage system is implemented. The older single-product adapter
-recommendation stays sequenced after synthesis. Nothing starts automatically.
+The [world-model architecture synthesis](atlas-world-model-architecture-synthesis.md) is
+complete: **decision C**, sufficiently founded for one bounded integrated retained-region proof.
+Exactly one next recommendation: **Atlas integrated retained-region proof — qualified queries
+and revision lifecycle**, separately authorized within existing Tryfan support. Its finite
+specification tests qualified evidence/current/historical queries and measures requirements
+before general storage/processing architecture. No proof, ingestion or storage system is
+implemented. A small native adapter may be part of that proof; nothing starts automatically.
 
 Production, Weather and Traverse remain unchanged. The map below retains chronological
 milestones; current statuses and supersession are in the linked register.
@@ -66,8 +69,8 @@ milestones; current statuses and supersession are in the linked register.
    Keep experiments bounded, products external, provenance reproducible and evidence
    classes distinct. Never silently promote experimental findings into architecture.
 
-Current return point: the [lifecycle assessment](atlas-derived-understanding-lifecycle.md)
-and updated [research-state register](atlas-research-state.md), following the audit and
+Current return point: the [world-model architecture synthesis](atlas-world-model-architecture-synthesis.md)
+and updated [research-state register](atlas-research-state.md), following the lifecycle assessment and
 [Semantic Evidence Contract v1](../atlas/semantic-evidence-contract.md).
 The preceding [information-aware display/selection synthesis](../atlas/information-aware-display-selection.md)
 remains the completed multiscale handoff.
@@ -386,3 +389,19 @@ Next recommendation supersedes the audit’s completed lifecycle task: separatel
 bounded world-model synthesis and one proof specification. No additional empirical blocker.
 Terrain/multiscale/semantic foundations remain closed; Swiss frames parked; production,
 Weather and Traverse unchanged. Operational propagation and storage remain later work.
+
+## 2026-10-06 — Atlas world-model architecture synthesis
+
+[Synthesis](atlas-world-model-architecture-synthesis.md): **decision C**, architecture
+sufficiently founded for a bounded integrated proof; no foundational contradiction.
+Coordinated domain representations/native claims and reproducible derivations resolve
+place/time/question under explicit policies. Feature/state/reference, physical/knowledge
+time, exact scoped dependencies, policy-relative freshness and materialization remain
+distinct. V1 and TerrainHierarchy stay unchanged; no universal ontology/source winner.
+
+Synthesis completes the lifecycle report's historical next recommendation. Exactly one
+next task: separately authorized retained Tryfan integrated proof of qualified queries
+and revision lifecycle, with measured requirements before general storage/serving.
+No proof, ingestion, source acquisition, runtime or production change. All 42 research
+threads remain navigable; appearance correction/visibility/fusion remain open/partial/
+advanced and Swiss pixels parked. Weather/Traverse and closed foundations unchanged.

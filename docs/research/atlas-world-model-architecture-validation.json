@@ -1,0 +1,203 @@
+{
+  "assessment": "atlas-world-model-architecture-synthesis",
+  "date": "2026-10-06",
+  "startingCheckpoint": "43afe78e549f6707f0648465af6d7c6e0aabb430",
+  "startingBranch": "main",
+  "upstream": "origin/main",
+  "fetchedStartingDivergence": [
+    0,
+    0
+  ],
+  "decision": "C — sufficiently founded for bounded integrated retained-region proof; separate research remains open/parked",
+  "validationScope": "Documentation/reference, retained-case identity and integrity only. No new empirical result, numerical calculation, runtime test or operational resolver/dependency proof.",
+  "checks": [
+    {
+      "check": "expected lifecycle starting HEAD",
+      "passed": true
+    },
+    {
+      "check": "main uses existing origin/main upstream",
+      "passed": true
+    },
+    {
+      "check": "fetched starting divergence0/0",
+      "passed": true
+    },
+    {
+      "check": "113 protected production source SHA256s match",
+      "passed": true
+    },
+    {
+      "check": "seven frozen semantic code/fixture hashes match",
+      "passed": true
+    },
+    {
+      "check": "production/data/research-code/frozen domains have no diff",
+      "passed": true
+    },
+    {
+      "check": "43 Atlas/EarthLab report Git contents preserved",
+      "passed": true
+    },
+    {
+      "check": "lifecycle report and earlier validation receipts preserved",
+      "passed": true
+    },
+    {
+      "check": "all42 canonical thread IDs and status columns preserved",
+      "passed": true
+    },
+    {
+      "check": "historical audit gate text preserved",
+      "passed": true
+    },
+    {
+      "check": "development log is append-only",
+      "passed": true
+    },
+    {
+      "check": "exact retained Tryfan source/product/footprint",
+      "passed": true
+    },
+    {
+      "check": "nextproof summit patch is retained400m support",
+      "passed": true
+    },
+    {
+      "check": "Exe P1 retained March/September counts",
+      "passed": true
+    },
+    {
+      "check": "Riffelhorn footprint and stretch have authoritative report support",
+      "passed": true
+    },
+    {
+      "check": "parked Swiss frame IDs remain exact",
+      "passed": true
+    },
+    {
+      "check": "Exe feature/event identities supported",
+      "passed": true
+    },
+    {
+      "check": "all27 requested report sections present once",
+      "passed": true
+    },
+    {
+      "check": "decision C and operational limits explicit",
+      "passed": true
+    },
+    {
+      "check": "input-use/output support and freshness/truth boundaries explicit",
+      "passed": true
+    },
+    {
+      "check": "contract frozen/no contradiction explicit",
+      "passed": true
+    },
+    {
+      "check": "appearance open/parked extension remains explicit",
+      "passed": true
+    },
+    {
+      "check": "materialization and semantic roles separate",
+      "passed": true
+    },
+    {
+      "check": "one next bounded proof specification; no execution",
+      "passed": true
+    },
+    {
+      "check": "canonical next recommendation updated",
+      "passed": true
+    },
+    {
+      "check": "all changed paths are documentation only",
+      "passed": true
+    },
+    {
+      "check": "all added/current local references and anchors resolve",
+      "passed": true
+    },
+    {
+      "check": "external links have syntactically valid URLs",
+      "passed": true
+    },
+    {
+      "check": "15 relevant checkpoints resolve as ancestors",
+      "passed": true
+    },
+    {
+      "check": "research JSON parses",
+      "passed": true
+    },
+    {
+      "check": "tracked/staged diff whitespace clean",
+      "passed": true
+    },
+    {
+      "check": "changed Markdown trailing whitespace clean",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "localReferencesChecked": 279,
+  "localAnchorsChecked": 49,
+  "missingReferences": [],
+  "externalLinkPolicy": "Syntax only; linked producer/literature facts retain their previous review dates, no new access/rights verification.",
+  "protectedProductionSha256Checks": 113,
+  "productionMismatches": [],
+  "frozenSemanticCodeSha256Checks": 7,
+  "frozenMismatches": [],
+  "unchangedHistoricalReportGitBlobChecks": 43,
+  "historicalReportMismatches": [],
+  "additionalPreservedReportsReceipts": [
+    "docs/research/atlas-derived-understanding-lifecycle.md",
+    "docs/research/atlas-derived-understanding-validation.json",
+    "docs/research/atlas-research-audit-validation.json"
+  ],
+  "canonicalThreadCount": 42,
+  "canonicalStatusColumnsUnchanged": true,
+  "checkpointAncestors": {
+    "43afe78": "43afe78e549f6707f0648465af6d7c6e0aabb430",
+    "5f14511": "5f145117072b1cde2e696fb8d8f8d11995a2c06f",
+    "e65c2d6": "e65c2d6c29ed4421d5f2cc7133604332e8dfd71b",
+    "052374e": "052374e07d613a549f5a88640b42932f97a7f896",
+    "c4da565": "c4da56577c27f56ee1a5829e85d8daa951a517c1",
+    "75ea9d8": "75ea9d837c86506b0e278f79e209a8533e9664b7",
+    "57688cb": "57688cb48e0a0c7768b066df548b6959b924bfc7",
+    "ca74a84": "ca74a84713b443d408467dd17835083bbbf0771a",
+    "3d406ae": "3d406aee212a5be071728d85db443111e483e7bf",
+    "e3edd0f": "e3edd0f32ca109175cb456581abb804dc542519c",
+    "e14148a": "e14148af00ef01ea77c9ec08141bc17cffd70735",
+    "1de9e44": "1de9e44968dcb5c2f8601c4f6844f1b626522b4b",
+    "8598c30": "8598c30a64dc789c22ae81cef1c14bea3a9e6ff0",
+    "ba24e54": "ba24e546fcb13dcdaf0bb01bf8550c3cf8c5c2dd",
+    "53d75f2": "53d75f2c2594c6bd627bb7bfe9c10b0b272c8651"
+  },
+  "researchJsonChecked": 107,
+  "jsonErrors": [],
+  "documentationOnlyPaths": [
+    "docs/architecture.md",
+    "docs/development-log.md",
+    "docs/product-direction.md",
+    "docs/research/atlas-research-map.md",
+    "docs/research/atlas-research-state.md",
+    "docs/research/atlas-world-model-architecture-synthesis.md",
+    "docs/research/atlas-world-model-architecture-validation.json"
+  ],
+  "nextTask": "Atlas integrated retained-region proof — qualified queries and revision lifecycle; not started",
+  "scopeConfirmations": {
+    "productionUnchanged": true,
+    "frozenContractsUnchanged": true,
+    "noArchitectureImplementation": true,
+    "noPersistentStorage": true,
+    "noIngestion": true,
+    "noDatasetAcquisition": true,
+    "noNewEmpiricalExperiment": true,
+    "multiscaleClosed": true,
+    "multiviewParked": true,
+    "weatherTraverseUnchanged": true,
+    "noPrivateInspection": true
+  }
+}

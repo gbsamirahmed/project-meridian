@@ -3951,3 +3951,34 @@ anchors, source/case identities, checkpoint ancestry, frozen contract hashes, un
 No application tests/build required for documentation-only changes. Multiscale remains
 closed; multiview parked; AWS visual/analytical,1.45 exaggeration, IGOR, MapTiler satellite
 and lifecycle/Weather/Traverse remain unchanged.
+
+## 2026-10-06 — Atlas world-model architecture synthesis
+
+Started clean main at 43afe78; origin fetched, divergence 0/0, no work discarded.
+Followed the canonical 42-thread register and lifecycle report to terrain, appearance,
+multiscale and semantic contracts/retained evidence. No new research experiment,
+literature survey, data acquisition or source availability claims.
+
+[Architecture synthesis](research/atlas-world-model-architecture-synthesis.md):
+**decision C**, coherent target architecture sufficiently founded for a bounded integrated
+proof. Coordinated evidence-backed representations/claims resolve a place/time/question;
+geometry, appearance, features, qualified state, derivations, materialization and rendering
+remain distinct. Exact actual-use receipts and policy-relative current assessment sit
+beside v1 lineage; historical references persist without being automatically preferred.
+No foundational contradiction or frozen contract change. Current implementation remains
+separate from target architecture. Appearance correction/visibility/lighting/fusion remain
+partial/open/advanced; Swiss 2026 frames remain parked.
+
+Updated current register/map/architecture/direction navigation, preserving all 42 rows,
+historical gate text, empirical reports and earlier development chronology. Exactly one
+next recommendation: separately authorized integrated retained Tryfan proof of qualified
+queries/revision lifecycle, measuring requirements before general storage/processing/serving.
+It is not started; no production/source ingestion, database, services, inference or hydrology.
+
+[Validation receipt](research/atlas-world-model-architecture-validation.json) records
+local references/anchors, checkpoint/retained-case identities, all 42 rows, seven frozen
+semantic code hashes, 43 unchanged Atlas/Earth Lab reports, retained lifecycle report/receipt,
+113 protected production SHA256s, JSON, documentation-only scope and whitespace checks.
+No application build/tests required for unchanged runtime/dependencies. AWS visual/analytical,
+exaggeration 1.45, IGOR, MapTiler/satellite behaviour, projection/lifecycle, Weather and Traverse
+remain unchanged. Multiscale closed; multiview parked; no meridian-private inspection.
