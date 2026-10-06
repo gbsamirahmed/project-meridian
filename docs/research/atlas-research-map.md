@@ -50,9 +50,12 @@ one bounded local persistent regional proof; national/global capacity and produc
 technologies remain unselected. The [local persistent Tryfan proof](tryfan-local-persistent-proof.md)
 now completes that recommendation (**C — SUCCESS**): real restarts, coherent publication,
 scoped recomputation and retained-pixel historical replay preserve the qualified slice.
-Exactly one next recommendation: **Retained Tryfan WorldCover native-raster binding and
-qualified semantic-query proof**, separately authorized. Its [scope](tryfan-local-persistent-proof.md#27-exactly-one-next-bounded-task)
-uses the existing small crop; no new acquisition, inference or production ingestion.
+The [WorldCover proof](tryfan-worldcover-binding-proof.md) now completes that recommendation
+(**C — SUCCESS**): native templates/queries, qualifications, NRW coexistence and restart
+work without changing v1. Exactly one next recommendation: **Retained Riffelhorn appearance
+identity, provenance and qualified-resolution assessment**, separately authorized; its
+[scope](tryfan-worldcover-binding-proof.md#25-exactly-one-recommended-next-bounded-task) uses
+retained metadata/products, without correction, acquisition or production implementation.
 Open/parked appearance work remains independent; nothing starts automatically.
 
 Production, Weather and Traverse remain unchanged. The map below retains chronological
@@ -458,3 +461,20 @@ The requirements assessment's historical next recommendation is complete. Next: 
 retained Tryfan WorldCover native-raster binding/qualified-query proof, not begun.
 All 42 status columns and historical reports remain; appearance partial/advanced,
 Swiss multiview parked, production/Weather/Traverse unchanged.
+
+## 2026-10-06 — retained Tryfan WorldCover native-raster binding proof
+
+[Report](tryfan-worldcover-binding-proof.md): **C — SUCCESS** for categorical native-raster
+binding, qualified point/support queries and real restart. The unchanged native TIFF
+supplies shared code templates and lazily assigned cell support; native meanings,
+2021 epoch, classification mode, product quality and explicit mapping loss survive.
+Original frozen patch counts reproduce; WorldCover 30 and NRW dry acid heath coexist.
+No classifier, raster resampling, per-cell confidence or production consumer.
+[Results](tryfan-worldcover-binding-results.json) and [validation](tryfan-worldcover-binding-validation.json)
+separate deterministic logical identity from local timings. Broader semantic storage
+forms remain conceptual, not empirically implemented by this proof. Historical
+recommendations above are complete/superseded by current programme state.
+
+Next is the retained Riffelhorn appearance identity, provenance and qualified-resolution
+assessment, not begun. All 42 register statuses, frozen contracts, production and
+open/parked appearance work remain unchanged; Swiss frames stay parked.

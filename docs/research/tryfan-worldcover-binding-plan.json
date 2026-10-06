@@ -1,0 +1,79 @@
+{
+  "id": "retained-worldcover-binding/v1",
+  "baseline": "691450ff540e0e15ade58cba8464d221e89dc119",
+  "originalPlan": "docs/atlas/semantic-comparison-plan.json",
+  "originalPlanSha256": "62739330a5931120dbdcf14743b5be6f8acc5da5dfc3acbe6747e0aaa0daacd7",
+  "study": {
+    "crs": "EPSG:27700",
+    "bounds": [
+      264900,
+      357800,
+      267900,
+      360800
+    ],
+    "reference": "scripts/earth_lab/aois/tryfan-004.json",
+    "patches": [
+      {
+        "id": "summit",
+        "centre": [
+          266405,
+          359387
+        ],
+        "side": 400,
+        "reason": "Existing summit reference; rocky mountain target, not an asserted class."
+      },
+      {
+        "id": "southern-observer",
+        "centre": [
+          265876.05347833806,
+          358339.7631202109
+        ],
+        "side": 400,
+        "reason": "Existing photographic observer reference; mixed-surface opportunity, not a class assertion."
+      },
+      {
+        "id": "northern-context",
+        "centre": [
+          266400,
+          360450
+        ],
+        "side": 400,
+        "reason": "Fixed north-central lower-context part of the established window; vegetation/water opportunity only."
+      }
+    ]
+  },
+  "additionalSupport": {
+    "id": "summit-20m",
+    "bounds": [
+      266395,
+      359377,
+      266415,
+      359397
+    ],
+    "crs": "EPSG:27700",
+    "rationale": "20m centred on original summit; defined in reader before first execution; no new study/disagreement selection"
+  },
+  "outsideQuery": {
+    "point": [
+      264800,
+      357700
+    ],
+    "crs": "EPSG:27700"
+  },
+  "timeQueries": [
+    "2021",
+    "2026"
+  ],
+  "propertyQueries": [
+    "native",
+    "common",
+    "substrate"
+  ],
+  "syntheticOnly": [
+    "code0 no-data",
+    "code255 unbound"
+  ],
+  "comparisonRule": "Native centres inside half-open BNG rectangle; code counts are raster assignment composition, never physical cover fractions.",
+  "persistence": "Unchanged local-persistent-proof/store.mjs; separate proof schema and data directory; three fresh processes.",
+  "noAcquisition": true
+}

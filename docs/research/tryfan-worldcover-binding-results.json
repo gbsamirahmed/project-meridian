@@ -1,0 +1,3439 @@
+{
+  "baseline": "691450ff540e0e15ade58cba8464d221e89dc119",
+  "decision": "C - SUCCESS",
+  "logical": {
+    "coexistence": {
+      "decision": "Multiple native claims; no truth winner or simultaneity asserted.",
+      "nativeFeatureIntersections": [
+        {
+          "id": "486814",
+          "pointContains": false,
+          "summitOverlapM2": 7451.775074
+        },
+        {
+          "id": "486820",
+          "pointContains": false,
+          "summitOverlapM2": 8616.302301
+        },
+        {
+          "id": "486832",
+          "pointContains": true,
+          "summitOverlapM2": 124419.355972
+        }
+      ],
+      "nrw": {
+        "claims": [
+          {
+            "context": {
+              "support": {
+                "geometry": {
+                  "asset": {
+                    "href": "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\derived\\atlas\\semantic-comparison-v1\\nrw-vegetation-full-features.json",
+                    "selector": "objectid=486814"
+                  },
+                  "crs": {
+                    "status": "known",
+                    "value": {
+                      "identifier": "EPSG:27700",
+                      "name": "EPSG:27700"
+                    }
+                  },
+                  "interpretation": "Exact retained native Voronoi feature; geometry not copied into proof.",
+                  "kind": "asset"
+                },
+                "grain": {
+                  "reason": "Converted native polygon semantic MMU and local confidence not established.",
+                  "status": "unknown"
+                },
+                "meaning": "Original retained feature support, not the query patch or a physical sharp edge"
+              }
+            },
+            "id": "claim:nrw-record-486814",
+            "native": {
+              "fields": {
+                "acid_flush": null,
+                "area_ha": 5.46000004,
+                "dominant_species": null,
+                "habitation_change": null,
+                "label": "D.1.1",
+                "label1": null,
+                "label3": null,
+                "mosaicpoly": "M",
+                "objectid": 486814,
+                "original_unique_id": "sh66sw_293968",
+                "phase1_code": "D.1.1",
+                "scattered_code": null,
+                "shape_starea__": 54584.12685394287,
+                "shape_stlength__": 1986.7256663549092,
+                "survey": "Upland_UplandSurvey",
+                "thematic_s": "B1.1",
+                "upland_site_name": "Snowdonia_east",
+                "vegetated_spoil": null,
+                "voronoi_uid": "v_2447"
+              },
+              "property": {
+                "id": "nrw:habitat",
+                "revision": "1"
+              },
+              "term": {
+                "id": "nrw:D.1.1",
+                "revision": "1"
+              }
+            },
+            "record": {
+              "href": "docs/atlas/semantic-comparison-sources.json",
+              "selector": "nrw-vegetation-full-features.json objectid=486814"
+            },
+            "result": {
+              "kind": "assertion",
+              "value": {
+                "kind": "category",
+                "term": {
+                  "id": "nrw:D.1.1",
+                  "revision": "1"
+                }
+              }
+            },
+            "revision": "1"
+          },
+          {
+            "context": {
+              "support": {
+                "geometry": {
+                  "asset": {
+                    "href": "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\derived\\atlas\\semantic-comparison-v1\\nrw-vegetation-full-features.json",
+                    "selector": "objectid=486820"
+                  },
+                  "crs": {
+                    "status": "known",
+                    "value": {
+                      "identifier": "EPSG:27700",
+                      "name": "EPSG:27700"
+                    }
+                  },
+                  "interpretation": "Exact retained native Voronoi feature; geometry not copied into proof.",
+                  "kind": "asset"
+                },
+                "grain": {
+                  "reason": "Converted native polygon semantic MMU and local confidence not established.",
+                  "status": "unknown"
+                },
+                "meaning": "Original retained feature support, not the query patch or a physical sharp edge"
+              }
+            },
+            "id": "claim:nrw-record-486820",
+            "native": {
+              "fields": {
+                "acid_flush": null,
+                "area_ha": 97.80000305,
+                "dominant_species": null,
+                "habitation_change": null,
+                "label": "D.1.1",
+                "label1": null,
+                "label3": null,
+                "mosaicpoly": "M",
+                "objectid": 486820,
+                "original_unique_id": "sh66se_293999",
+                "phase1_code": "D.1.1",
+                "scattered_code": null,
+                "shape_starea__": 978041.2007598877,
+                "shape_stlength__": 9012.046331182872,
+                "survey": "Upland_UplandSurvey",
+                "thematic_s": "D1.1",
+                "upland_site_name": "Snowdonia_east",
+                "vegetated_spoil": null,
+                "voronoi_uid": "v_2454"
+              },
+              "property": {
+                "id": "nrw:habitat",
+                "revision": "1"
+              },
+              "term": {
+                "id": "nrw:D.1.1",
+                "revision": "1"
+              }
+            },
+            "record": {
+              "href": "docs/atlas/semantic-comparison-sources.json",
+              "selector": "nrw-vegetation-full-features.json objectid=486820"
+            },
+            "result": {
+              "kind": "assertion",
+              "value": {
+                "kind": "category",
+                "term": {
+                  "id": "nrw:D.1.1",
+                  "revision": "1"
+                }
+              }
+            },
+            "revision": "1"
+          },
+          {
+            "context": {
+              "support": {
+                "geometry": {
+                  "asset": {
+                    "href": "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\derived\\atlas\\semantic-comparison-v1\\nrw-vegetation-full-features.json",
+                    "selector": "objectid=486832"
+                  },
+                  "crs": {
+                    "status": "known",
+                    "value": {
+                      "identifier": "EPSG:27700",
+                      "name": "EPSG:27700"
+                    }
+                  },
+                  "interpretation": "Exact retained native Voronoi feature; geometry not copied into proof.",
+                  "kind": "asset"
+                },
+                "grain": {
+                  "reason": "Converted native polygon semantic MMU and local confidence not established.",
+                  "status": "unknown"
+                },
+                "meaning": "Original retained feature support, not the query patch or a physical sharp edge"
+              }
+            },
+            "id": "claim:nrw-record-486832",
+            "native": {
+              "fields": {
+                "acid_flush": null,
+                "area_ha": 39.90000153,
+                "dominant_species": null,
+                "habitation_change": null,
+                "label": "D.1.1",
+                "label1": null,
+                "label3": null,
+                "mosaicpoly": "M",
+                "objectid": 486832,
+                "original_unique_id": "sh66se_294197",
+                "phase1_code": "D.1.1",
+                "scattered_code": null,
+                "shape_starea__": 398973.37704467773,
+                "shape_stlength__": 4043.4185528964126,
+                "survey": "Upland_UplandSurvey",
+                "thematic_s": "D1.1",
+                "upland_site_name": "Snowdonia_east",
+                "vegetated_spoil": null,
+                "voronoi_uid": "v_2469"
+              },
+              "property": {
+                "id": "nrw:habitat",
+                "revision": "1"
+              },
+              "term": {
+                "id": "nrw:D.1.1",
+                "revision": "1"
+              }
+            },
+            "record": {
+              "href": "docs/atlas/semantic-comparison-sources.json",
+              "selector": "nrw-vegetation-full-features.json objectid=486832"
+            },
+            "result": {
+              "kind": "assertion",
+              "value": {
+                "kind": "category",
+                "term": {
+                  "id": "nrw:D.1.1",
+                  "revision": "1"
+                }
+              }
+            },
+            "revision": "1"
+          }
+        ],
+        "context": {
+          "evidence": {
+            "completeness": "partial",
+            "description": "Source-native evidence as retained in the empirical report.",
+            "inputs": [
+              {
+                "kind": "resource",
+                "ref": {
+                  "id": "nrw-phase1",
+                  "kind": "product",
+                  "revision": {
+                    "status": "known",
+                    "value": "retained-2026-10-06"
+                  }
+                },
+                "role": "source semantic product"
+              }
+            ],
+            "limitations": "Exact local observation lineage/precision may be unavailable; no new inference.",
+            "modes": [
+              "survey-inventory",
+              "classification"
+            ],
+            "processing": []
+          },
+          "support": {
+            "geometry": {
+              "asset": {
+                "href": "docs/atlas/semantic-comparison-sources.json",
+                "selector": "nrw-vegetation-full-features.json WHERE original_unique_id=sh66se_293233"
+              },
+              "crs": {
+                "status": "known",
+                "value": {
+                  "identifier": "EPSG:27700",
+                  "name": "EPSG:27700"
+                }
+              },
+              "interpretation": "Retained Voronoi feature geometry; native mosaic percentages refer to ORIGINAL mosaic support.",
+              "kind": "asset"
+            },
+            "grain": {
+              "status": "known",
+              "value": "Historical Phase1 mapping; Voronoi subdivision is preparation, not new survey detail."
+            },
+            "meaning": "Retained Voronoi feature geometry; native mosaic percentages refer to ORIGINAL mosaic support."
+          },
+          "time": [
+            {
+              "extent": {
+                "kind": "unknown",
+                "reason": "Historic survey lineage; exact feature observation epoch not established by these retained properties."
+              },
+              "role": "survey"
+            }
+          ]
+        },
+        "id": "collection:nrw",
+        "product": {
+          "id": "nrw-phase1",
+          "kind": "product",
+          "revision": {
+            "status": "known",
+            "value": "retained-2026-10-06"
+          }
+        },
+        "representation": "vector",
+        "revision": "1"
+      },
+      "worldcover": {
+        "kind": "assertion",
+        "limitation": "Historical annual classification; no local confidence or homogeneous physical cover claim.",
+        "native": {
+          "context": {
+            "evidence": {
+              "completeness": "partial",
+              "description": "Annual WorldCover2021 v200 classification derived from Sentinel1/2; binding reads the retained native categorical raster without inference.",
+              "inputs": [
+                {
+                  "kind": "resource",
+                  "ref": {
+                    "id": "worldcover",
+                    "kind": "product",
+                    "revision": {
+                      "status": "known",
+                      "value": "v200/2021"
+                    }
+                  },
+                  "role": "source semantic product"
+                }
+              ],
+              "limitations": "Per-cell acquisition lineage, local confidence, semantic MMU and exact physical composition are unavailable. Source agreement is not ground truth.",
+              "modes": [
+                "classification"
+              ],
+              "processing": []
+            },
+            "quality": [
+              {
+                "kind": "validation",
+                "meaning": "Reported WorldCover2021 validation population; not local confidence.",
+                "metric": "Global overall accuracy",
+                "reference": {
+                  "href": "docs/atlas/physical-surface-sources.md",
+                  "selector": "WorldCover2021 global overall validation"
+                },
+                "scope": {
+                  "description": "WorldCover validation population, not this cell.",
+                  "kind": "product"
+                },
+                "value": {
+                  "kind": "numeric",
+                  "unit": "percent",
+                  "value": 76.7
+                }
+              }
+            ],
+            "support": {
+              "geometry": {
+                "axisOrder": "xy",
+                "bounds": [
+                  -3.9975000000000005,
+                  53.11483333333334,
+                  -3.997416666666667,
+                  53.114916666666666
+                ],
+                "crs": {
+                  "identifier": "EPSG:4326",
+                  "name": "EPSG:4326"
+                },
+                "kind": "native-rectangle"
+              },
+              "grain": {
+                "status": "known",
+                "value": "Native1/12000 degree classification grid; nominal10m; semantic MMU and local confidence unknown."
+              },
+              "meaning": "Whole native classified cell assignment, not independently observed homogeneous ground"
+            },
+            "time": [
+              {
+                "extent": {
+                  "basis": "WorldCover annual product epoch; not local acquisition instant.",
+                  "kind": "epoch",
+                  "precision": "year",
+                  "value": "2021"
+                },
+                "role": "nominal-epoch"
+              },
+              {
+                "extent": {
+                  "kind": "unknown",
+                  "reason": "Sentinel1/2 annual2021 source observations; exact acquisition times supporting this cell are not retained."
+                },
+                "role": "observation"
+              }
+            ]
+          },
+          "id": "claim:wc2021v200-N51W006-parent-r10621-c24030",
+          "interpretation": {
+            "disposition": "qualified",
+            "mapping": {
+              "id": "mapping:wc30",
+              "revision": "1"
+            }
+          },
+          "native": {
+            "fields": {
+              "code": 30,
+              "label": "Grassland"
+            },
+            "property": {
+              "id": "wc:cover",
+              "revision": "1"
+            },
+            "term": {
+              "id": "wc:30",
+              "revision": "1"
+            }
+          },
+          "record": {
+            "href": "docs/atlas/semantic-comparison-sources.json",
+            "selector": "tryfan-worldcover.tif native code=30"
+          },
+          "result": {
+            "kind": "assertion",
+            "value": {
+              "kind": "category",
+              "term": {
+                "id": "wc:30",
+                "revision": "1"
+              }
+            }
+          },
+          "revision": "native-code-cell/v1@9a0ad7162b1fb5fdc276a90c219c8d1d1daa0e83650ccd22d1dfbb51cbe98f6d"
+        },
+        "query": {
+          "probe": "summit",
+          "property": "native",
+          "time": "2021"
+        },
+        "raster": {
+          "bindingRevision": "native-code-cell/v1",
+          "product": {
+            "id": "worldcover",
+            "kind": "product",
+            "revision": {
+              "status": "known",
+              "value": "v200/2021"
+            }
+          },
+          "representationId": "worldcover-v200-2021-N51W006-native-window",
+          "revision": "9a0ad7162b1fb5fdc276a90c219c8d1d1daa0e83650ccd22d1dfbb51cbe98f6d"
+        },
+        "template": {
+          "id": "template:wc30",
+          "revision": "1"
+        }
+      }
+    },
+    "common": [
+      {
+        "kind": "qualified-interpretation",
+        "limitation": "Historical annual classification; no local confidence or homogeneous physical cover claim.",
+        "mapping": {
+          "from": {
+            "id": "wc:30",
+            "revision": "1"
+          },
+          "id": "mapping:wc30",
+          "loss": [
+            "Native growth form, source thresholds, mixture and specific source class meaning are lost in the broader concept."
+          ],
+          "method": {
+            "method": "Retained c4da565 conceptual crosswalk",
+            "record": {
+              "href": "docs/atlas/semantic-comparison-results.json",
+              "selector": "worldcoverCrosswalk/30"
+            }
+          },
+          "qualification": "Native extension relative to target; compatible is qualified usability, not equivalence, accuracy or homogeneous ground.",
+          "relationship": "narrower",
+          "revision": "1",
+          "target": {
+            "id": "fixture:common-nonwoody-vegetation",
+            "revision": "1"
+          }
+        },
+        "native": {
+          "context": {
+            "evidence": {
+              "completeness": "partial",
+              "description": "Annual WorldCover2021 v200 classification derived from Sentinel1/2; binding reads the retained native categorical raster without inference.",
+              "inputs": [
+                {
+                  "kind": "resource",
+                  "ref": {
+                    "id": "worldcover",
+                    "kind": "product",
+                    "revision": {
+                      "status": "known",
+                      "value": "v200/2021"
+                    }
+                  },
+                  "role": "source semantic product"
+                }
+              ],
+              "limitations": "Per-cell acquisition lineage, local confidence, semantic MMU and exact physical composition are unavailable. Source agreement is not ground truth.",
+              "modes": [
+                "classification"
+              ],
+              "processing": []
+            },
+            "quality": [
+              {
+                "kind": "validation",
+                "meaning": "Reported WorldCover2021 validation population; not local confidence.",
+                "metric": "Global overall accuracy",
+                "reference": {
+                  "href": "docs/atlas/physical-surface-sources.md",
+                  "selector": "WorldCover2021 global overall validation"
+                },
+                "scope": {
+                  "description": "WorldCover validation population, not this cell.",
+                  "kind": "product"
+                },
+                "value": {
+                  "kind": "numeric",
+                  "unit": "percent",
+                  "value": 76.7
+                }
+              }
+            ],
+            "support": {
+              "geometry": {
+                "axisOrder": "xy",
+                "bounds": [
+                  -3.9975000000000005,
+                  53.11483333333334,
+                  -3.997416666666667,
+                  53.114916666666666
+                ],
+                "crs": {
+                  "identifier": "EPSG:4326",
+                  "name": "EPSG:4326"
+                },
+                "kind": "native-rectangle"
+              },
+              "grain": {
+                "status": "known",
+                "value": "Native1/12000 degree classification grid; nominal10m; semantic MMU and local confidence unknown."
+              },
+              "meaning": "Whole native classified cell assignment, not independently observed homogeneous ground"
+            },
+            "time": [
+              {
+                "extent": {
+                  "basis": "WorldCover annual product epoch; not local acquisition instant.",
+                  "kind": "epoch",
+                  "precision": "year",
+                  "value": "2021"
+                },
+                "role": "nominal-epoch"
+              },
+              {
+                "extent": {
+                  "kind": "unknown",
+                  "reason": "Sentinel1/2 annual2021 source observations; exact acquisition times supporting this cell are not retained."
+                },
+                "role": "observation"
+              }
+            ]
+          },
+          "id": "claim:wc2021v200-N51W006-parent-r10621-c24030",
+          "interpretation": {
+            "disposition": "qualified",
+            "mapping": {
+              "id": "mapping:wc30",
+              "revision": "1"
+            }
+          },
+          "native": {
+            "fields": {
+              "code": 30,
+              "label": "Grassland"
+            },
+            "property": {
+              "id": "wc:cover",
+              "revision": "1"
+            },
+            "term": {
+              "id": "wc:30",
+              "revision": "1"
+            }
+          },
+          "record": {
+            "href": "docs/atlas/semantic-comparison-sources.json",
+            "selector": "tryfan-worldcover.tif native code=30"
+          },
+          "result": {
+            "kind": "assertion",
+            "value": {
+              "kind": "category",
+              "term": {
+                "id": "wc:30",
+                "revision": "1"
+              }
+            }
+          },
+          "revision": "native-code-cell/v1@9a0ad7162b1fb5fdc276a90c219c8d1d1daa0e83650ccd22d1dfbb51cbe98f6d"
+        },
+        "query": {
+          "probe": "summit",
+          "property": "common",
+          "time": "2021"
+        },
+        "raster": {
+          "bindingRevision": "native-code-cell/v1",
+          "product": {
+            "id": "worldcover",
+            "kind": "product",
+            "revision": {
+              "status": "known",
+              "value": "v200/2021"
+            }
+          },
+          "representationId": "worldcover-v200-2021-N51W006-native-window",
+          "revision": "9a0ad7162b1fb5fdc276a90c219c8d1d1daa0e83650ccd22d1dfbb51cbe98f6d"
+        },
+        "template": {
+          "id": "template:wc30",
+          "revision": "1"
+        }
+      },
+      {
+        "kind": "qualified-interpretation",
+        "limitation": "Historical annual classification; no local confidence or homogeneous physical cover claim.",
+        "mapping": {
+          "from": {
+            "id": "wc:30",
+            "revision": "1"
+          },
+          "id": "mapping:wc30",
+          "loss": [
+            "Native growth form, source thresholds, mixture and specific source class meaning are lost in the broader concept."
+          ],
+          "method": {
+            "method": "Retained c4da565 conceptual crosswalk",
+            "record": {
+              "href": "docs/atlas/semantic-comparison-results.json",
+              "selector": "worldcoverCrosswalk/30"
+            }
+          },
+          "qualification": "Native extension relative to target; compatible is qualified usability, not equivalence, accuracy or homogeneous ground.",
+          "relationship": "narrower",
+          "revision": "1",
+          "target": {
+            "id": "fixture:common-nonwoody-vegetation",
+            "revision": "1"
+          }
+        },
+        "native": {
+          "context": {
+            "evidence": {
+              "completeness": "partial",
+              "description": "Annual WorldCover2021 v200 classification derived from Sentinel1/2; binding reads the retained native categorical raster without inference.",
+              "inputs": [
+                {
+                  "kind": "resource",
+                  "ref": {
+                    "id": "worldcover",
+                    "kind": "product",
+                    "revision": {
+                      "status": "known",
+                      "value": "v200/2021"
+                    }
+                  },
+                  "role": "source semantic product"
+                }
+              ],
+              "limitations": "Per-cell acquisition lineage, local confidence, semantic MMU and exact physical composition are unavailable. Source agreement is not ground truth.",
+              "modes": [
+                "classification"
+              ],
+              "processing": []
+            },
+            "quality": [
+              {
+                "kind": "validation",
+                "meaning": "Reported WorldCover2021 validation population; not local confidence.",
+                "metric": "Global overall accuracy",
+                "reference": {
+                  "href": "docs/atlas/physical-surface-sources.md",
+                  "selector": "WorldCover2021 global overall validation"
+                },
+                "scope": {
+                  "description": "WorldCover validation population, not this cell.",
+                  "kind": "product"
+                },
+                "value": {
+                  "kind": "numeric",
+                  "unit": "percent",
+                  "value": 76.7
+                }
+              }
+            ],
+            "support": {
+              "geometry": {
+                "axisOrder": "xy",
+                "bounds": [
+                  -4.005,
+                  53.105333333333334,
+                  -4.004916666666667,
+                  53.10541666666667
+                ],
+                "crs": {
+                  "identifier": "EPSG:4326",
+                  "name": "EPSG:4326"
+                },
+                "kind": "native-rectangle"
+              },
+              "grain": {
+                "status": "known",
+                "value": "Native1/12000 degree classification grid; nominal10m; semantic MMU and local confidence unknown."
+              },
+              "meaning": "Whole native classified cell assignment, not independently observed homogeneous ground"
+            },
+            "time": [
+              {
+                "extent": {
+                  "basis": "WorldCover annual product epoch; not local acquisition instant.",
+                  "kind": "epoch",
+                  "precision": "year",
+                  "value": "2021"
+                },
+                "role": "nominal-epoch"
+              },
+              {
+                "extent": {
+                  "kind": "unknown",
+                  "reason": "Sentinel1/2 annual2021 source observations; exact acquisition times supporting this cell are not retained."
+                },
+                "role": "observation"
+              }
+            ]
+          },
+          "id": "claim:wc2021v200-N51W006-parent-r10735-c23940",
+          "interpretation": {
+            "disposition": "qualified",
+            "mapping": {
+              "id": "mapping:wc30",
+              "revision": "1"
+            }
+          },
+          "native": {
+            "fields": {
+              "code": 30,
+              "label": "Grassland"
+            },
+            "property": {
+              "id": "wc:cover",
+              "revision": "1"
+            },
+            "term": {
+              "id": "wc:30",
+              "revision": "1"
+            }
+          },
+          "record": {
+            "href": "docs/atlas/semantic-comparison-sources.json",
+            "selector": "tryfan-worldcover.tif native code=30"
+          },
+          "result": {
+            "kind": "assertion",
+            "value": {
+              "kind": "category",
+              "term": {
+                "id": "wc:30",
+                "revision": "1"
+              }
+            }
+          },
+          "revision": "native-code-cell/v1@9a0ad7162b1fb5fdc276a90c219c8d1d1daa0e83650ccd22d1dfbb51cbe98f6d"
+        },
+        "query": {
+          "probe": "southern-observer",
+          "property": "common",
+          "time": "2021"
+        },
+        "raster": {
+          "bindingRevision": "native-code-cell/v1",
+          "product": {
+            "id": "worldcover",
+            "kind": "product",
+            "revision": {
+              "status": "known",
+              "value": "v200/2021"
+            }
+          },
+          "representationId": "worldcover-v200-2021-N51W006-native-window",
+          "revision": "9a0ad7162b1fb5fdc276a90c219c8d1d1daa0e83650ccd22d1dfbb51cbe98f6d"
+        },
+        "template": {
+          "id": "template:wc30",
+          "revision": "1"
+        }
+      },
+      {
+        "kind": "qualified-interpretation",
+        "limitation": "Historical annual classification; no local confidence or homogeneous physical cover claim.",
+        "mapping": {
+          "from": {
+            "id": "wc:80",
+            "revision": "1"
+          },
+          "id": "mapping:wc80",
+          "loss": [
+            "Annual persistence criterion and water feature identity/instantaneous state are not preserved by a broad concept."
+          ],
+          "method": {
+            "method": "Retained c4da565 conceptual crosswalk",
+            "record": {
+              "href": "docs/atlas/semantic-comparison-results.json",
+              "selector": "worldcoverCrosswalk/80"
+            }
+          },
+          "qualification": "Native extension relative to target; compatible is qualified usability, not equivalence, accuracy or homogeneous ground.",
+          "relationship": "compatible",
+          "revision": "1",
+          "target": {
+            "id": "fixture:common-persistent-water-cover",
+            "revision": "1"
+          }
+        },
+        "native": {
+          "context": {
+            "evidence": {
+              "completeness": "partial",
+              "description": "Annual WorldCover2021 v200 classification derived from Sentinel1/2; binding reads the retained native categorical raster without inference.",
+              "inputs": [
+                {
+                  "kind": "resource",
+                  "ref": {
+                    "id": "worldcover",
+                    "kind": "product",
+                    "revision": {
+                      "status": "known",
+                      "value": "v200/2021"
+                    }
+                  },
+                  "role": "source semantic product"
+                }
+              ],
+              "limitations": "Per-cell acquisition lineage, local confidence, semantic MMU and exact physical composition are unavailable. Source agreement is not ground truth.",
+              "modes": [
+                "classification"
+              ],
+              "processing": []
+            },
+            "quality": [
+              {
+                "kind": "validation",
+                "meaning": "Reported WorldCover2021 validation population; not local confidence.",
+                "metric": "Global overall accuracy",
+                "reference": {
+                  "href": "docs/atlas/physical-surface-sources.md",
+                  "selector": "WorldCover2021 global overall validation"
+                },
+                "scope": {
+                  "description": "WorldCover validation population, not this cell.",
+                  "kind": "product"
+                },
+                "value": {
+                  "kind": "numeric",
+                  "unit": "percent",
+                  "value": 76.7
+                }
+              }
+            ],
+            "support": {
+              "geometry": {
+                "axisOrder": "xy",
+                "bounds": [
+                  -3.9980833333333337,
+                  53.12441666666667,
+                  -3.998,
+                  53.1245
+                ],
+                "crs": {
+                  "identifier": "EPSG:4326",
+                  "name": "EPSG:4326"
+                },
+                "kind": "native-rectangle"
+              },
+              "grain": {
+                "status": "known",
+                "value": "Native1/12000 degree classification grid; nominal10m; semantic MMU and local confidence unknown."
+              },
+              "meaning": "Whole native classified cell assignment, not independently observed homogeneous ground"
+            },
+            "time": [
+              {
+                "extent": {
+                  "basis": "WorldCover annual product epoch; not local acquisition instant.",
+                  "kind": "epoch",
+                  "precision": "year",
+                  "value": "2021"
+                },
+                "role": "nominal-epoch"
+              },
+              {
+                "extent": {
+                  "kind": "unknown",
+                  "reason": "Sentinel1/2 annual2021 source observations; exact acquisition times supporting this cell are not retained."
+                },
+                "role": "observation"
+              }
+            ]
+          },
+          "id": "claim:wc2021v200-N51W006-parent-r10506-c24023",
+          "interpretation": {
+            "disposition": "qualified",
+            "mapping": {
+              "id": "mapping:wc80",
+              "revision": "1"
+            }
+          },
+          "native": {
+            "fields": {
+              "code": 80,
+              "label": "Permanent water bodies"
+            },
+            "property": {
+              "id": "wc:cover",
+              "revision": "1"
+            },
+            "term": {
+              "id": "wc:80",
+              "revision": "1"
+            }
+          },
+          "record": {
+            "href": "docs/atlas/semantic-comparison-sources.json",
+            "selector": "tryfan-worldcover.tif native code=80"
+          },
+          "result": {
+            "kind": "assertion",
+            "value": {
+              "kind": "category",
+              "term": {
+                "id": "wc:80",
+                "revision": "1"
+              }
+            }
+          },
+          "revision": "native-code-cell/v1@9a0ad7162b1fb5fdc276a90c219c8d1d1daa0e83650ccd22d1dfbb51cbe98f6d"
+        },
+        "query": {
+          "probe": "northern-context",
+          "property": "common",
+          "time": "2021"
+        },
+        "raster": {
+          "bindingRevision": "native-code-cell/v1",
+          "product": {
+            "id": "worldcover",
+            "kind": "product",
+            "revision": {
+              "status": "known",
+              "value": "v200/2021"
+            }
+          },
+          "representationId": "worldcover-v200-2021-N51W006-native-window",
+          "revision": "9a0ad7162b1fb5fdc276a90c219c8d1d1daa0e83650ccd22d1dfbb51cbe98f6d"
+        },
+        "template": {
+          "id": "template:wc80",
+          "revision": "1"
+        }
+      }
+    ],
+    "current": {
+      "explanation": "2021 annual classification cannot answer current or other-year surface state.",
+      "kind": "gap",
+      "limitation": "Historical annual classification; no local confidence or homogeneous physical cover claim.",
+      "native": {
+        "context": {
+          "evidence": {
+            "completeness": "partial",
+            "description": "Annual WorldCover2021 v200 classification derived from Sentinel1/2; binding reads the retained native categorical raster without inference.",
+            "inputs": [
+              {
+                "kind": "resource",
+                "ref": {
+                  "id": "worldcover",
+                  "kind": "product",
+                  "revision": {
+                    "status": "known",
+                    "value": "v200/2021"
+                  }
+                },
+                "role": "source semantic product"
+              }
+            ],
+            "limitations": "Per-cell acquisition lineage, local confidence, semantic MMU and exact physical composition are unavailable. Source agreement is not ground truth.",
+            "modes": [
+              "classification"
+            ],
+            "processing": []
+          },
+          "quality": [
+            {
+              "kind": "validation",
+              "meaning": "Reported WorldCover2021 validation population; not local confidence.",
+              "metric": "Global overall accuracy",
+              "reference": {
+                "href": "docs/atlas/physical-surface-sources.md",
+                "selector": "WorldCover2021 global overall validation"
+              },
+              "scope": {
+                "description": "WorldCover validation population, not this cell.",
+                "kind": "product"
+              },
+              "value": {
+                "kind": "numeric",
+                "unit": "percent",
+                "value": 76.7
+              }
+            }
+          ],
+          "support": {
+            "geometry": {
+              "axisOrder": "xy",
+              "bounds": [
+                -3.9975000000000005,
+                53.11483333333334,
+                -3.997416666666667,
+                53.114916666666666
+              ],
+              "crs": {
+                "identifier": "EPSG:4326",
+                "name": "EPSG:4326"
+              },
+              "kind": "native-rectangle"
+            },
+            "grain": {
+              "status": "known",
+              "value": "Native1/12000 degree classification grid; nominal10m; semantic MMU and local confidence unknown."
+            },
+            "meaning": "Whole native classified cell assignment, not independently observed homogeneous ground"
+          },
+          "time": [
+            {
+              "extent": {
+                "basis": "WorldCover annual product epoch; not local acquisition instant.",
+                "kind": "epoch",
+                "precision": "year",
+                "value": "2021"
+              },
+              "role": "nominal-epoch"
+            },
+            {
+              "extent": {
+                "kind": "unknown",
+                "reason": "Sentinel1/2 annual2021 source observations; exact acquisition times supporting this cell are not retained."
+              },
+              "role": "observation"
+            }
+          ]
+        },
+        "id": "claim:wc2021v200-N51W006-parent-r10621-c24030",
+        "interpretation": {
+          "disposition": "qualified",
+          "mapping": {
+            "id": "mapping:wc30",
+            "revision": "1"
+          }
+        },
+        "native": {
+          "fields": {
+            "code": 30,
+            "label": "Grassland"
+          },
+          "property": {
+            "id": "wc:cover",
+            "revision": "1"
+          },
+          "term": {
+            "id": "wc:30",
+            "revision": "1"
+          }
+        },
+        "record": {
+          "href": "docs/atlas/semantic-comparison-sources.json",
+          "selector": "tryfan-worldcover.tif native code=30"
+        },
+        "result": {
+          "kind": "assertion",
+          "value": {
+            "kind": "category",
+            "term": {
+              "id": "wc:30",
+              "revision": "1"
+            }
+          }
+        },
+        "revision": "native-code-cell/v1@9a0ad7162b1fb5fdc276a90c219c8d1d1daa0e83650ccd22d1dfbb51cbe98f6d"
+      },
+      "query": {
+        "probe": "summit",
+        "property": "native",
+        "time": "2026"
+      },
+      "raster": {
+        "bindingRevision": "native-code-cell/v1",
+        "product": {
+          "id": "worldcover",
+          "kind": "product",
+          "revision": {
+            "status": "known",
+            "value": "v200/2021"
+          }
+        },
+        "representationId": "worldcover-v200-2021-N51W006-native-window",
+        "revision": "9a0ad7162b1fb5fdc276a90c219c8d1d1daa0e83650ccd22d1dfbb51cbe98f6d"
+      },
+      "reason": "unsupported",
+      "template": {
+        "id": "template:wc30",
+        "revision": "1"
+      }
+    },
+    "definitions": [
+      {
+        "id": "wc:cover",
+        "kind": "property",
+        "label": "WorldCover class",
+        "meaning": "Annual source-native land-cover classification, not homogeneous local exposure.",
+        "reference": {
+          "href": "docs/atlas/source-native-semantic-comparison.md"
+        },
+        "requiredModes": [
+          "classification"
+        ],
+        "revision": "1",
+        "valueKinds": [
+          "category"
+        ],
+        "vocabulary": {
+          "id": "ESA WorldCover nomenclature",
+          "version": {
+            "status": "known",
+            "value": "v200/2021 PUM2.0"
+          }
+        }
+      },
+      {
+        "id": "nrw:habitat",
+        "kind": "property",
+        "label": "Welsh Phase1 habitat",
+        "meaning": "Historical habitat classification; mosaic composition belongs to original surveyed mosaic, not every Voronoi cell.",
+        "reference": {
+          "href": "docs/atlas/source-native-semantic-comparison.md"
+        },
+        "revision": "1",
+        "valueKinds": [
+          "category",
+          "composition"
+        ],
+        "vocabulary": {
+          "id": "Welsh Phase1 / JNCC nomenclature",
+          "version": {
+            "status": "known",
+            "value": "retained JNCC2008 Welsh column; historical survey labels"
+          }
+        }
+      },
+      {
+        "id": "nrw:D.1.1",
+        "kind": "value",
+        "label": "Dry acid heath",
+        "meaning": "Welsh Phase1 dry acid heath; native D.1.1 retains ecological meaning and survey context.",
+        "reference": {
+          "href": "docs/atlas/source-native-semantic-comparison.md"
+        },
+        "revision": "1",
+        "vocabulary": {
+          "id": "Welsh Phase1 / JNCC nomenclature",
+          "version": {
+            "status": "known",
+            "value": "retained JNCC2008 Welsh column; historical survey labels"
+          }
+        }
+      },
+      {
+        "id": "wc:0",
+        "kind": "value",
+        "label": "No data",
+        "meaning": "Native no-data code; not evidence of physical absence.",
+        "reference": {
+          "href": "docs/atlas/semantic-comparison-sources.json",
+          "selector": "worldcover-manual.pdf PUMv2 table3"
+        },
+        "revision": "1",
+        "vocabulary": {
+          "id": "ESA WorldCover nomenclature",
+          "version": {
+            "status": "known",
+            "value": "v200/2021 PUM2.0"
+          }
+        }
+      },
+      {
+        "id": "wc:10",
+        "kind": "value",
+        "label": "Tree cover",
+        "meaning": "Tree-dominated cover, at least10% tree cover; native class can include vegetation/other cover beneath canopy.",
+        "reference": {
+          "href": "docs/atlas/semantic-comparison-sources.json",
+          "selector": "worldcover-manual.pdf PUMv2 table3"
+        },
+        "revision": "1",
+        "vocabulary": {
+          "id": "ESA WorldCover nomenclature",
+          "version": {
+            "status": "known",
+            "value": "v200/2021 PUM2.0"
+          }
+        }
+      },
+      {
+        "id": "fixture:common-woody-vegetation",
+        "kind": "property",
+        "label": "woody vegetation",
+        "meaning": "Small retained common interpretation, not a production ontology or per-cell physical truth.",
+        "reference": {
+          "href": "docs/atlas/source-native-semantic-comparison.md",
+          "selector": "Small test vocabulary"
+        },
+        "revision": "1",
+        "valueKinds": [
+          "category"
+        ],
+        "vocabulary": {
+          "id": "Meridian retained crosswalk TEST concepts",
+          "version": {
+            "status": "known",
+            "value": "c4da565"
+          }
+        }
+      },
+      {
+        "id": "wc:20",
+        "kind": "value",
+        "label": "Shrubland",
+        "meaning": "Woody perennial vegetation below5m, at least10% shrub cover; native annual classification.",
+        "reference": {
+          "href": "docs/atlas/semantic-comparison-sources.json",
+          "selector": "worldcover-manual.pdf PUMv2 table3"
+        },
+        "revision": "1",
+        "vocabulary": {
+          "id": "ESA WorldCover nomenclature",
+          "version": {
+            "status": "known",
+            "value": "v200/2021 PUM2.0"
+          }
+        }
+      },
+      {
+        "id": "wc:30",
+        "kind": "value",
+        "label": "Grassland",
+        "meaning": "Herbaceous vegetation below5m and at least10% grass cover; not a specific habitat identity.",
+        "reference": {
+          "href": "docs/atlas/semantic-comparison-sources.json",
+          "selector": "worldcover-manual.pdf PUMv2 table3"
+        },
+        "revision": "1",
+        "vocabulary": {
+          "id": "ESA WorldCover nomenclature",
+          "version": {
+            "status": "known",
+            "value": "v200/2021 PUM2.0"
+          }
+        }
+      },
+      {
+        "id": "fixture:common-nonwoody-vegetation",
+        "kind": "property",
+        "label": "nonwoody vegetation",
+        "meaning": "Small retained common interpretation, not a production ontology or per-cell physical truth.",
+        "reference": {
+          "href": "docs/atlas/source-native-semantic-comparison.md",
+          "selector": "Small test vocabulary"
+        },
+        "revision": "1",
+        "valueKinds": [
+          "category"
+        ],
+        "vocabulary": {
+          "id": "Meridian retained crosswalk TEST concepts",
+          "version": {
+            "status": "known",
+            "value": "c4da565"
+          }
+        }
+      },
+      {
+        "id": "wc:50",
+        "kind": "value",
+        "label": "Built-up",
+        "meaning": "Buildings, roads and other human-made structures; native exclusions/thresholds in PUM table3; not land use.",
+        "reference": {
+          "href": "docs/atlas/semantic-comparison-sources.json",
+          "selector": "worldcover-manual.pdf PUMv2 table3"
+        },
+        "revision": "1",
+        "vocabulary": {
+          "id": "ESA WorldCover nomenclature",
+          "version": {
+            "status": "known",
+            "value": "v200/2021 PUM2.0"
+          }
+        }
+      },
+      {
+        "id": "fixture:common-artificial-cover",
+        "kind": "property",
+        "label": "artificial cover",
+        "meaning": "Small retained common interpretation, not a production ontology or per-cell physical truth.",
+        "reference": {
+          "href": "docs/atlas/source-native-semantic-comparison.md",
+          "selector": "Small test vocabulary"
+        },
+        "revision": "1",
+        "valueKinds": [
+          "category"
+        ],
+        "vocabulary": {
+          "id": "Meridian retained crosswalk TEST concepts",
+          "version": {
+            "status": "known",
+            "value": "c4da565"
+          }
+        }
+      },
+      {
+        "id": "wc:60",
+        "kind": "value",
+        "label": "Bare / sparse vegetation",
+        "meaning": "Exposed soil, sand or rocks, never exceeding10% vegetation during the year; does not distinguish bedrock, scree or soil.",
+        "reference": {
+          "href": "docs/atlas/semantic-comparison-sources.json",
+          "selector": "worldcover-manual.pdf PUMv2 table3"
+        },
+        "revision": "1",
+        "vocabulary": {
+          "id": "ESA WorldCover nomenclature",
+          "version": {
+            "status": "known",
+            "value": "v200/2021 PUM2.0"
+          }
+        }
+      },
+      {
+        "id": "fixture:common-mineral-exposure-with-sparse-vegetation",
+        "kind": "property",
+        "label": "mineral exposure with sparse vegetation",
+        "meaning": "Small retained common interpretation, not a production ontology or per-cell physical truth.",
+        "reference": {
+          "href": "docs/atlas/source-native-semantic-comparison.md",
+          "selector": "Small test vocabulary"
+        },
+        "revision": "1",
+        "valueKinds": [
+          "category"
+        ],
+        "vocabulary": {
+          "id": "Meridian retained crosswalk TEST concepts",
+          "version": {
+            "status": "known",
+            "value": "c4da565"
+          }
+        }
+      },
+      {
+        "id": "wc:80",
+        "kind": "value",
+        "label": "Permanent water bodies",
+        "meaning": "Water-covered areas for more than9 months of the year; not instantaneous water edge or depth.",
+        "reference": {
+          "href": "docs/atlas/semantic-comparison-sources.json",
+          "selector": "worldcover-manual.pdf PUMv2 table3"
+        },
+        "revision": "1",
+        "vocabulary": {
+          "id": "ESA WorldCover nomenclature",
+          "version": {
+            "status": "known",
+            "value": "v200/2021 PUM2.0"
+          }
+        }
+      },
+      {
+        "id": "fixture:common-persistent-water-cover",
+        "kind": "property",
+        "label": "persistent water cover",
+        "meaning": "Small retained common interpretation, not a production ontology or per-cell physical truth.",
+        "reference": {
+          "href": "docs/atlas/source-native-semantic-comparison.md",
+          "selector": "Small test vocabulary"
+        },
+        "revision": "1",
+        "valueKinds": [
+          "category"
+        ],
+        "vocabulary": {
+          "id": "Meridian retained crosswalk TEST concepts",
+          "version": {
+            "status": "known",
+            "value": "c4da565"
+          }
+        }
+      },
+      {
+        "id": "wc:100",
+        "kind": "value",
+        "label": "Moss and lichen",
+        "meaning": "Moss and lichen cover; source taxonomy/thresholds in PUM table3; not generic habitat truth.",
+        "reference": {
+          "href": "docs/atlas/semantic-comparison-sources.json",
+          "selector": "worldcover-manual.pdf PUMv2 table3"
+        },
+        "revision": "1",
+        "vocabulary": {
+          "id": "ESA WorldCover nomenclature",
+          "version": {
+            "status": "known",
+            "value": "v200/2021 PUM2.0"
+          }
+        }
+      },
+      {
+        "id": "fixture:substrate",
+        "kind": "property",
+        "label": "Geological substrate",
+        "meaning": "Material beneath the current cover; annual cover classification cannot establish it.",
+        "reference": {
+          "href": "docs/atlas/physical-surface-semantics.md"
+        },
+        "revision": "1",
+        "valueKinds": [
+          "category"
+        ],
+        "vocabulary": {
+          "id": "Meridian TEST unsupported property",
+          "version": {
+            "status": "known",
+            "value": "1"
+          }
+        }
+      }
+    ],
+    "outside": {
+      "explanation": "Geographic query falls outside retained raster support; no physical absence asserted.",
+      "id": "outside",
+      "kind": "gap",
+      "nativeQuery": [
+        -4.020738268761131,
+        53.099321987570995
+      ],
+      "query": [
+        264800,
+        357700
+      ],
+      "queryCrs": "EPSG:27700",
+      "reason": "outside-support"
+    },
+    "points": [
+      {
+        "kind": "assertion",
+        "limitation": "Historical annual classification; no local confidence or homogeneous physical cover claim.",
+        "native": {
+          "context": {
+            "evidence": {
+              "completeness": "partial",
+              "description": "Annual WorldCover2021 v200 classification derived from Sentinel1/2; binding reads the retained native categorical raster without inference.",
+              "inputs": [
+                {
+                  "kind": "resource",
+                  "ref": {
+                    "id": "worldcover",
+                    "kind": "product",
+                    "revision": {
+                      "status": "known",
+                      "value": "v200/2021"
+                    }
+                  },
+                  "role": "source semantic product"
+                }
+              ],
+              "limitations": "Per-cell acquisition lineage, local confidence, semantic MMU and exact physical composition are unavailable. Source agreement is not ground truth.",
+              "modes": [
+                "classification"
+              ],
+              "processing": []
+            },
+            "quality": [
+              {
+                "kind": "validation",
+                "meaning": "Reported WorldCover2021 validation population; not local confidence.",
+                "metric": "Global overall accuracy",
+                "reference": {
+                  "href": "docs/atlas/physical-surface-sources.md",
+                  "selector": "WorldCover2021 global overall validation"
+                },
+                "scope": {
+                  "description": "WorldCover validation population, not this cell.",
+                  "kind": "product"
+                },
+                "value": {
+                  "kind": "numeric",
+                  "unit": "percent",
+                  "value": 76.7
+                }
+              }
+            ],
+            "support": {
+              "geometry": {
+                "axisOrder": "xy",
+                "bounds": [
+                  -3.9975000000000005,
+                  53.11483333333334,
+                  -3.997416666666667,
+                  53.114916666666666
+                ],
+                "crs": {
+                  "identifier": "EPSG:4326",
+                  "name": "EPSG:4326"
+                },
+                "kind": "native-rectangle"
+              },
+              "grain": {
+                "status": "known",
+                "value": "Native1/12000 degree classification grid; nominal10m; semantic MMU and local confidence unknown."
+              },
+              "meaning": "Whole native classified cell assignment, not independently observed homogeneous ground"
+            },
+            "time": [
+              {
+                "extent": {
+                  "basis": "WorldCover annual product epoch; not local acquisition instant.",
+                  "kind": "epoch",
+                  "precision": "year",
+                  "value": "2021"
+                },
+                "role": "nominal-epoch"
+              },
+              {
+                "extent": {
+                  "kind": "unknown",
+                  "reason": "Sentinel1/2 annual2021 source observations; exact acquisition times supporting this cell are not retained."
+                },
+                "role": "observation"
+              }
+            ]
+          },
+          "id": "claim:wc2021v200-N51W006-parent-r10621-c24030",
+          "interpretation": {
+            "disposition": "qualified",
+            "mapping": {
+              "id": "mapping:wc30",
+              "revision": "1"
+            }
+          },
+          "native": {
+            "fields": {
+              "code": 30,
+              "label": "Grassland"
+            },
+            "property": {
+              "id": "wc:cover",
+              "revision": "1"
+            },
+            "term": {
+              "id": "wc:30",
+              "revision": "1"
+            }
+          },
+          "record": {
+            "href": "docs/atlas/semantic-comparison-sources.json",
+            "selector": "tryfan-worldcover.tif native code=30"
+          },
+          "result": {
+            "kind": "assertion",
+            "value": {
+              "kind": "category",
+              "term": {
+                "id": "wc:30",
+                "revision": "1"
+              }
+            }
+          },
+          "revision": "native-code-cell/v1@9a0ad7162b1fb5fdc276a90c219c8d1d1daa0e83650ccd22d1dfbb51cbe98f6d"
+        },
+        "query": {
+          "probe": "summit",
+          "property": "native",
+          "time": "2021"
+        },
+        "raster": {
+          "bindingRevision": "native-code-cell/v1",
+          "product": {
+            "id": "worldcover",
+            "kind": "product",
+            "revision": {
+              "status": "known",
+              "value": "v200/2021"
+            }
+          },
+          "representationId": "worldcover-v200-2021-N51W006-native-window",
+          "revision": "9a0ad7162b1fb5fdc276a90c219c8d1d1daa0e83650ccd22d1dfbb51cbe98f6d"
+        },
+        "template": {
+          "id": "template:wc30",
+          "revision": "1"
+        }
+      },
+      {
+        "kind": "assertion",
+        "limitation": "Historical annual classification; no local confidence or homogeneous physical cover claim.",
+        "native": {
+          "context": {
+            "evidence": {
+              "completeness": "partial",
+              "description": "Annual WorldCover2021 v200 classification derived from Sentinel1/2; binding reads the retained native categorical raster without inference.",
+              "inputs": [
+                {
+                  "kind": "resource",
+                  "ref": {
+                    "id": "worldcover",
+                    "kind": "product",
+                    "revision": {
+                      "status": "known",
+                      "value": "v200/2021"
+                    }
+                  },
+                  "role": "source semantic product"
+                }
+              ],
+              "limitations": "Per-cell acquisition lineage, local confidence, semantic MMU and exact physical composition are unavailable. Source agreement is not ground truth.",
+              "modes": [
+                "classification"
+              ],
+              "processing": []
+            },
+            "quality": [
+              {
+                "kind": "validation",
+                "meaning": "Reported WorldCover2021 validation population; not local confidence.",
+                "metric": "Global overall accuracy",
+                "reference": {
+                  "href": "docs/atlas/physical-surface-sources.md",
+                  "selector": "WorldCover2021 global overall validation"
+                },
+                "scope": {
+                  "description": "WorldCover validation population, not this cell.",
+                  "kind": "product"
+                },
+                "value": {
+                  "kind": "numeric",
+                  "unit": "percent",
+                  "value": 76.7
+                }
+              }
+            ],
+            "support": {
+              "geometry": {
+                "axisOrder": "xy",
+                "bounds": [
+                  -4.005,
+                  53.105333333333334,
+                  -4.004916666666667,
+                  53.10541666666667
+                ],
+                "crs": {
+                  "identifier": "EPSG:4326",
+                  "name": "EPSG:4326"
+                },
+                "kind": "native-rectangle"
+              },
+              "grain": {
+                "status": "known",
+                "value": "Native1/12000 degree classification grid; nominal10m; semantic MMU and local confidence unknown."
+              },
+              "meaning": "Whole native classified cell assignment, not independently observed homogeneous ground"
+            },
+            "time": [
+              {
+                "extent": {
+                  "basis": "WorldCover annual product epoch; not local acquisition instant.",
+                  "kind": "epoch",
+                  "precision": "year",
+                  "value": "2021"
+                },
+                "role": "nominal-epoch"
+              },
+              {
+                "extent": {
+                  "kind": "unknown",
+                  "reason": "Sentinel1/2 annual2021 source observations; exact acquisition times supporting this cell are not retained."
+                },
+                "role": "observation"
+              }
+            ]
+          },
+          "id": "claim:wc2021v200-N51W006-parent-r10735-c23940",
+          "interpretation": {
+            "disposition": "qualified",
+            "mapping": {
+              "id": "mapping:wc30",
+              "revision": "1"
+            }
+          },
+          "native": {
+            "fields": {
+              "code": 30,
+              "label": "Grassland"
+            },
+            "property": {
+              "id": "wc:cover",
+              "revision": "1"
+            },
+            "term": {
+              "id": "wc:30",
+              "revision": "1"
+            }
+          },
+          "record": {
+            "href": "docs/atlas/semantic-comparison-sources.json",
+            "selector": "tryfan-worldcover.tif native code=30"
+          },
+          "result": {
+            "kind": "assertion",
+            "value": {
+              "kind": "category",
+              "term": {
+                "id": "wc:30",
+                "revision": "1"
+              }
+            }
+          },
+          "revision": "native-code-cell/v1@9a0ad7162b1fb5fdc276a90c219c8d1d1daa0e83650ccd22d1dfbb51cbe98f6d"
+        },
+        "query": {
+          "probe": "southern-observer",
+          "property": "native",
+          "time": "2021"
+        },
+        "raster": {
+          "bindingRevision": "native-code-cell/v1",
+          "product": {
+            "id": "worldcover",
+            "kind": "product",
+            "revision": {
+              "status": "known",
+              "value": "v200/2021"
+            }
+          },
+          "representationId": "worldcover-v200-2021-N51W006-native-window",
+          "revision": "9a0ad7162b1fb5fdc276a90c219c8d1d1daa0e83650ccd22d1dfbb51cbe98f6d"
+        },
+        "template": {
+          "id": "template:wc30",
+          "revision": "1"
+        }
+      },
+      {
+        "kind": "assertion",
+        "limitation": "Historical annual classification; no local confidence or homogeneous physical cover claim.",
+        "native": {
+          "context": {
+            "evidence": {
+              "completeness": "partial",
+              "description": "Annual WorldCover2021 v200 classification derived from Sentinel1/2; binding reads the retained native categorical raster without inference.",
+              "inputs": [
+                {
+                  "kind": "resource",
+                  "ref": {
+                    "id": "worldcover",
+                    "kind": "product",
+                    "revision": {
+                      "status": "known",
+                      "value": "v200/2021"
+                    }
+                  },
+                  "role": "source semantic product"
+                }
+              ],
+              "limitations": "Per-cell acquisition lineage, local confidence, semantic MMU and exact physical composition are unavailable. Source agreement is not ground truth.",
+              "modes": [
+                "classification"
+              ],
+              "processing": []
+            },
+            "quality": [
+              {
+                "kind": "validation",
+                "meaning": "Reported WorldCover2021 validation population; not local confidence.",
+                "metric": "Global overall accuracy",
+                "reference": {
+                  "href": "docs/atlas/physical-surface-sources.md",
+                  "selector": "WorldCover2021 global overall validation"
+                },
+                "scope": {
+                  "description": "WorldCover validation population, not this cell.",
+                  "kind": "product"
+                },
+                "value": {
+                  "kind": "numeric",
+                  "unit": "percent",
+                  "value": 76.7
+                }
+              }
+            ],
+            "support": {
+              "geometry": {
+                "axisOrder": "xy",
+                "bounds": [
+                  -3.9980833333333337,
+                  53.12441666666667,
+                  -3.998,
+                  53.1245
+                ],
+                "crs": {
+                  "identifier": "EPSG:4326",
+                  "name": "EPSG:4326"
+                },
+                "kind": "native-rectangle"
+              },
+              "grain": {
+                "status": "known",
+                "value": "Native1/12000 degree classification grid; nominal10m; semantic MMU and local confidence unknown."
+              },
+              "meaning": "Whole native classified cell assignment, not independently observed homogeneous ground"
+            },
+            "time": [
+              {
+                "extent": {
+                  "basis": "WorldCover annual product epoch; not local acquisition instant.",
+                  "kind": "epoch",
+                  "precision": "year",
+                  "value": "2021"
+                },
+                "role": "nominal-epoch"
+              },
+              {
+                "extent": {
+                  "kind": "unknown",
+                  "reason": "Sentinel1/2 annual2021 source observations; exact acquisition times supporting this cell are not retained."
+                },
+                "role": "observation"
+              }
+            ]
+          },
+          "id": "claim:wc2021v200-N51W006-parent-r10506-c24023",
+          "interpretation": {
+            "disposition": "qualified",
+            "mapping": {
+              "id": "mapping:wc80",
+              "revision": "1"
+            }
+          },
+          "native": {
+            "fields": {
+              "code": 80,
+              "label": "Permanent water bodies"
+            },
+            "property": {
+              "id": "wc:cover",
+              "revision": "1"
+            },
+            "term": {
+              "id": "wc:80",
+              "revision": "1"
+            }
+          },
+          "record": {
+            "href": "docs/atlas/semantic-comparison-sources.json",
+            "selector": "tryfan-worldcover.tif native code=80"
+          },
+          "result": {
+            "kind": "assertion",
+            "value": {
+              "kind": "category",
+              "term": {
+                "id": "wc:80",
+                "revision": "1"
+              }
+            }
+          },
+          "revision": "native-code-cell/v1@9a0ad7162b1fb5fdc276a90c219c8d1d1daa0e83650ccd22d1dfbb51cbe98f6d"
+        },
+        "query": {
+          "probe": "northern-context",
+          "property": "native",
+          "time": "2021"
+        },
+        "raster": {
+          "bindingRevision": "native-code-cell/v1",
+          "product": {
+            "id": "worldcover",
+            "kind": "product",
+            "revision": {
+              "status": "known",
+              "value": "v200/2021"
+            }
+          },
+          "representationId": "worldcover-v200-2021-N51W006-native-window",
+          "revision": "9a0ad7162b1fb5fdc276a90c219c8d1d1daa0e83650ccd22d1dfbb51cbe98f6d"
+        },
+        "template": {
+          "id": "template:wc80",
+          "revision": "1"
+        }
+      }
+    ],
+    "raster": {
+      "grid": {
+        "bounds": [
+          -4.020583333333334,
+          53.10016666666667,
+          -3.974416666666667,
+          53.128
+        ],
+        "cells": 185036,
+        "crs": "EPSG:4326",
+        "dtype": "uint8",
+        "nativeCodes": [
+          10,
+          20,
+          30,
+          50,
+          60,
+          80,
+          100
+        ],
+        "nodata": 0,
+        "sampling": "native angular classification grid; nominal10m, not local accuracy or homogeneous ground",
+        "shape": [
+          334,
+          554
+        ],
+        "transform": [
+          0.00008333333333333333,
+          0,
+          -4.020583333333334,
+          0,
+          -0.00008333333333333333,
+          53.128,
+          0,
+          0,
+          1
+        ],
+        "transformAccuracyM": 2,
+        "transformOperation": "axis order change (2D) + Inverse of OSGB36 to WGS 84 (6) + British National Grid"
+      },
+      "parentWindow": [
+        23753,
+        10464,
+        554,
+        334
+      ],
+      "representationId": "worldcover-v200-2021-N51W006-native-window",
+      "revision": "9a0ad7162b1fb5fdc276a90c219c8d1d1daa0e83650ccd22d1dfbb51cbe98f6d",
+      "sources": {
+        "nrw-vegetation-full-features.json": {
+          "bytes": 558917,
+          "path": "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\derived\\atlas\\semantic-comparison-v1\\nrw-vegetation-full-features.json",
+          "sha256": "d6d389a7c2a853a15e5a592c08d06f81d500c8778b7370144d246c62c2b7fab8"
+        },
+        "tryfan-worldcover.tif": {
+          "bytes": 4918,
+          "path": "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\derived\\atlas\\semantic-comparison-v1\\tryfan-worldcover.tif",
+          "sha256": "9a0ad7162b1fb5fdc276a90c219c8d1d1daa0e83650ccd22d1dfbb51cbe98f6d"
+        }
+      }
+    },
+    "resources": [
+      {
+        "definition": {
+          "href": "docs/atlas/source-native-semantic-comparison.md"
+        },
+        "domain": "semantics",
+        "inputs": [],
+        "name": "worldcover authoritative source",
+        "ref": {
+          "id": "worldcover-source",
+          "kind": "source",
+          "revision": {
+            "status": "known",
+            "value": "v200/2021"
+          }
+        },
+        "rights": {
+          "attribution": [
+            "© ESA WorldCover project2021 / Contains modified Copernicus Sentinel data(2021) processed by ESA WorldCover consortium. Native-grid subsets/analysis by Meridian."
+          ],
+          "licence": {
+            "status": "known",
+            "value": "CC-BY-4.0"
+          },
+          "limitations": "Full primary terms/contributor notices remain linked by the retained source inventory and receipts; this is not a substitute licence.",
+          "references": [
+            "docs/atlas/source-native-semantic-comparison.md",
+            "docs/atlas/physical-surface-sources.md",
+            "docs/atlas/semantic-comparison-sources.json"
+          ]
+        }
+      },
+      {
+        "dates": [
+          {
+            "extent": {
+              "basis": "v200 publication year retained in source-native comparison; not observation year.",
+              "kind": "epoch",
+              "precision": "year",
+              "value": "2022"
+            },
+            "role": "publication"
+          }
+        ],
+        "definition": {
+          "href": "docs/atlas/source-native-semantic-comparison.md"
+        },
+        "domain": "semantics",
+        "inputs": [
+          {
+            "id": "worldcover-source",
+            "kind": "source",
+            "revision": {
+              "status": "known",
+              "value": "v200/2021"
+            }
+          }
+        ],
+        "name": "worldcover v200/2021",
+        "ref": {
+          "id": "worldcover",
+          "kind": "product",
+          "revision": {
+            "status": "known",
+            "value": "v200/2021"
+          }
+        },
+        "rights": {
+          "attribution": [
+            "© ESA WorldCover project2021 / Contains modified Copernicus Sentinel data(2021) processed by ESA WorldCover consortium. Native-grid subsets/analysis by Meridian."
+          ],
+          "licence": {
+            "status": "known",
+            "value": "CC-BY-4.0"
+          },
+          "limitations": "Full primary terms/contributor notices remain linked by the retained source inventory and receipts; this is not a substitute licence.",
+          "references": [
+            "docs/atlas/source-native-semantic-comparison.md",
+            "docs/atlas/physical-surface-sources.md",
+            "docs/atlas/semantic-comparison-sources.json"
+          ]
+        }
+      },
+      {
+        "definition": {
+          "href": "docs/atlas/source-native-semantic-comparison.md"
+        },
+        "domain": "semantics",
+        "inputs": [],
+        "name": "nrw-phase1 authoritative source",
+        "ref": {
+          "id": "nrw-phase1-source",
+          "kind": "source",
+          "revision": {
+            "status": "known",
+            "value": "retained-2026-10-06"
+          }
+        },
+        "rights": {
+          "attribution": [
+            "NRW / Ordnance Survey / JNCC, full notices in semantic-comparison-sources.json"
+          ],
+          "licence": {
+            "status": "known",
+            "value": "OGL3"
+          },
+          "limitations": "Full primary terms/contributor notices remain linked by the retained source inventory and receipts; this is not a substitute licence.",
+          "references": [
+            "docs/atlas/source-native-semantic-comparison.md",
+            "docs/atlas/physical-surface-sources.md",
+            "docs/atlas/semantic-comparison-sources.json"
+          ]
+        }
+      },
+      {
+        "definition": {
+          "href": "docs/atlas/source-native-semantic-comparison.md"
+        },
+        "domain": "semantics",
+        "inputs": [
+          {
+            "id": "nrw-phase1-source",
+            "kind": "source",
+            "revision": {
+              "status": "known",
+              "value": "retained-2026-10-06"
+            }
+          }
+        ],
+        "name": "nrw-phase1 retained-2026-10-06",
+        "ref": {
+          "id": "nrw-phase1",
+          "kind": "product",
+          "revision": {
+            "status": "known",
+            "value": "retained-2026-10-06"
+          }
+        },
+        "rights": {
+          "attribution": [
+            "NRW / Ordnance Survey / JNCC, full notices in semantic-comparison-sources.json"
+          ],
+          "licence": {
+            "status": "known",
+            "value": "OGL3"
+          },
+          "limitations": "Full primary terms/contributor notices remain linked by the retained source inventory and receipts; this is not a substitute licence.",
+          "references": [
+            "docs/atlas/source-native-semantic-comparison.md",
+            "docs/atlas/physical-surface-sources.md",
+            "docs/atlas/semantic-comparison-sources.json"
+          ]
+        }
+      }
+    ],
+    "supports": [
+      {
+        "assignments": [
+          {
+            "code": 10,
+            "count": 29,
+            "interpretation": {
+              "disposition": "qualified",
+              "mapping": {
+                "id": "mapping:wc10",
+                "revision": "1"
+              }
+            },
+            "mapping": {
+              "from": {
+                "id": "wc:10",
+                "revision": "1"
+              },
+              "id": "mapping:wc10",
+              "loss": [
+                "Native growth form, source thresholds, mixture and specific source class meaning are lost in the broader concept."
+              ],
+              "method": {
+                "method": "Retained c4da565 conceptual crosswalk",
+                "record": {
+                  "href": "docs/atlas/semantic-comparison-results.json",
+                  "selector": "worldcoverCrosswalk/10"
+                }
+              },
+              "qualification": "Native extension relative to target; compatible is qualified usability, not equivalence, accuracy or homogeneous ground.",
+              "relationship": "narrower",
+              "revision": "1",
+              "target": {
+                "id": "fixture:common-woody-vegetation",
+                "revision": "1"
+              }
+            },
+            "native": {
+              "fields": {
+                "code": 10,
+                "label": "Tree cover"
+              },
+              "property": {
+                "id": "wc:cover",
+                "revision": "1"
+              },
+              "term": {
+                "id": "wc:10",
+                "revision": "1"
+              }
+            },
+            "result": {
+              "kind": "assertion",
+              "value": {
+                "kind": "category",
+                "term": {
+                  "id": "wc:10",
+                  "revision": "1"
+                }
+              }
+            }
+          },
+          {
+            "code": 30,
+            "count": 3039,
+            "interpretation": {
+              "disposition": "qualified",
+              "mapping": {
+                "id": "mapping:wc30",
+                "revision": "1"
+              }
+            },
+            "mapping": {
+              "from": {
+                "id": "wc:30",
+                "revision": "1"
+              },
+              "id": "mapping:wc30",
+              "loss": [
+                "Native growth form, source thresholds, mixture and specific source class meaning are lost in the broader concept."
+              ],
+              "method": {
+                "method": "Retained c4da565 conceptual crosswalk",
+                "record": {
+                  "href": "docs/atlas/semantic-comparison-results.json",
+                  "selector": "worldcoverCrosswalk/30"
+                }
+              },
+              "qualification": "Native extension relative to target; compatible is qualified usability, not equivalence, accuracy or homogeneous ground.",
+              "relationship": "narrower",
+              "revision": "1",
+              "target": {
+                "id": "fixture:common-nonwoody-vegetation",
+                "revision": "1"
+              }
+            },
+            "native": {
+              "fields": {
+                "code": 30,
+                "label": "Grassland"
+              },
+              "property": {
+                "id": "wc:cover",
+                "revision": "1"
+              },
+              "term": {
+                "id": "wc:30",
+                "revision": "1"
+              }
+            },
+            "result": {
+              "kind": "assertion",
+              "value": {
+                "kind": "category",
+                "term": {
+                  "id": "wc:30",
+                  "revision": "1"
+                }
+              }
+            }
+          },
+          {
+            "code": 60,
+            "count": 28,
+            "interpretation": {
+              "disposition": "qualified",
+              "mapping": {
+                "id": "mapping:wc60",
+                "revision": "1"
+              }
+            },
+            "mapping": {
+              "from": {
+                "id": "wc:60",
+                "revision": "1"
+              },
+              "id": "mapping:wc60",
+              "loss": [
+                "Soil/sand/rock and loose/solid distinction, actual vegetation fraction and material identity remain unknown."
+              ],
+              "method": {
+                "method": "Retained c4da565 conceptual crosswalk",
+                "record": {
+                  "href": "docs/atlas/semantic-comparison-results.json",
+                  "selector": "worldcoverCrosswalk/60"
+                }
+              },
+              "qualification": "Native extension relative to target; compatible is qualified usability, not equivalence, accuracy or homogeneous ground.",
+              "relationship": "compatible",
+              "revision": "1",
+              "target": {
+                "id": "fixture:common-mineral-exposure-with-sparse-vegetation",
+                "revision": "1"
+              }
+            },
+            "native": {
+              "fields": {
+                "code": 60,
+                "label": "Bare / sparse vegetation"
+              },
+              "property": {
+                "id": "wc:cover",
+                "revision": "1"
+              },
+              "term": {
+                "id": "wc:60",
+                "revision": "1"
+              }
+            },
+            "result": {
+              "kind": "assertion",
+              "value": {
+                "kind": "category",
+                "term": {
+                  "id": "wc:60",
+                  "revision": "1"
+                }
+              }
+            }
+          }
+        ],
+        "bindingRevision": "native-code-cell/v1",
+        "bounds": [
+          266205,
+          359187,
+          266605,
+          359587
+        ],
+        "cells": 3096,
+        "collection": {
+          "id": "collection:worldcover",
+          "revision": "1"
+        },
+        "counts": {
+          "10": 29,
+          "30": 3039,
+          "60": 28
+        },
+        "crs": "EPSG:27700",
+        "evidence": {
+          "completeness": "partial",
+          "description": "Annual WorldCover2021 v200 classification derived from Sentinel1/2; binding reads the retained native categorical raster without inference.",
+          "inputs": [
+            {
+              "kind": "resource",
+              "ref": {
+                "id": "worldcover",
+                "kind": "product",
+                "revision": {
+                  "status": "known",
+                  "value": "v200/2021"
+                }
+              },
+              "role": "source semantic product"
+            }
+          ],
+          "limitations": "Per-cell acquisition lineage, local confidence, semantic MMU and exact physical composition are unavailable. Source agreement is not ground truth.",
+          "modes": [
+            "classification"
+          ],
+          "processing": []
+        },
+        "id": "summit",
+        "meaning": "Raster-class assignment counts, not physical surface fractions; edge-intersecting cells without centres are excluded.",
+        "quality": [
+          {
+            "kind": "validation",
+            "meaning": "Reported WorldCover2021 validation population; not local confidence.",
+            "metric": "Global overall accuracy",
+            "reference": {
+              "href": "docs/atlas/physical-surface-sources.md",
+              "selector": "WorldCover2021 global overall validation"
+            },
+            "scope": {
+              "description": "WorldCover validation population, not this cell.",
+              "kind": "product"
+            },
+            "value": {
+              "kind": "numeric",
+              "unit": "percent",
+              "value": 76.7
+            }
+          }
+        ],
+        "rasterRevision": "9a0ad7162b1fb5fdc276a90c219c8d1d1daa0e83650ccd22d1dfbb51cbe98f6d",
+        "selection": "native cell centres inside half-open BNG rectangle",
+        "time": [
+          {
+            "extent": {
+              "basis": "WorldCover annual product epoch; not local acquisition instant.",
+              "kind": "epoch",
+              "precision": "year",
+              "value": "2021"
+            },
+            "role": "nominal-epoch"
+          },
+          {
+            "extent": {
+              "kind": "unknown",
+              "reason": "Sentinel1/2 annual2021 source observations; exact acquisition times supporting this cell are not retained."
+            },
+            "role": "observation"
+          }
+        ]
+      },
+      {
+        "assignments": [
+          {
+            "code": 10,
+            "count": 9,
+            "interpretation": {
+              "disposition": "qualified",
+              "mapping": {
+                "id": "mapping:wc10",
+                "revision": "1"
+              }
+            },
+            "mapping": {
+              "from": {
+                "id": "wc:10",
+                "revision": "1"
+              },
+              "id": "mapping:wc10",
+              "loss": [
+                "Native growth form, source thresholds, mixture and specific source class meaning are lost in the broader concept."
+              ],
+              "method": {
+                "method": "Retained c4da565 conceptual crosswalk",
+                "record": {
+                  "href": "docs/atlas/semantic-comparison-results.json",
+                  "selector": "worldcoverCrosswalk/10"
+                }
+              },
+              "qualification": "Native extension relative to target; compatible is qualified usability, not equivalence, accuracy or homogeneous ground.",
+              "relationship": "narrower",
+              "revision": "1",
+              "target": {
+                "id": "fixture:common-woody-vegetation",
+                "revision": "1"
+              }
+            },
+            "native": {
+              "fields": {
+                "code": 10,
+                "label": "Tree cover"
+              },
+              "property": {
+                "id": "wc:cover",
+                "revision": "1"
+              },
+              "term": {
+                "id": "wc:10",
+                "revision": "1"
+              }
+            },
+            "result": {
+              "kind": "assertion",
+              "value": {
+                "kind": "category",
+                "term": {
+                  "id": "wc:10",
+                  "revision": "1"
+                }
+              }
+            }
+          },
+          {
+            "code": 30,
+            "count": 2668,
+            "interpretation": {
+              "disposition": "qualified",
+              "mapping": {
+                "id": "mapping:wc30",
+                "revision": "1"
+              }
+            },
+            "mapping": {
+              "from": {
+                "id": "wc:30",
+                "revision": "1"
+              },
+              "id": "mapping:wc30",
+              "loss": [
+                "Native growth form, source thresholds, mixture and specific source class meaning are lost in the broader concept."
+              ],
+              "method": {
+                "method": "Retained c4da565 conceptual crosswalk",
+                "record": {
+                  "href": "docs/atlas/semantic-comparison-results.json",
+                  "selector": "worldcoverCrosswalk/30"
+                }
+              },
+              "qualification": "Native extension relative to target; compatible is qualified usability, not equivalence, accuracy or homogeneous ground.",
+              "relationship": "narrower",
+              "revision": "1",
+              "target": {
+                "id": "fixture:common-nonwoody-vegetation",
+                "revision": "1"
+              }
+            },
+            "native": {
+              "fields": {
+                "code": 30,
+                "label": "Grassland"
+              },
+              "property": {
+                "id": "wc:cover",
+                "revision": "1"
+              },
+              "term": {
+                "id": "wc:30",
+                "revision": "1"
+              }
+            },
+            "result": {
+              "kind": "assertion",
+              "value": {
+                "kind": "category",
+                "term": {
+                  "id": "wc:30",
+                  "revision": "1"
+                }
+              }
+            }
+          },
+          {
+            "code": 50,
+            "count": 77,
+            "interpretation": {
+              "disposition": "qualified",
+              "mapping": {
+                "id": "mapping:wc50",
+                "revision": "1"
+              }
+            },
+            "mapping": {
+              "from": {
+                "id": "wc:50",
+                "revision": "1"
+              },
+              "id": "mapping:wc50",
+              "loss": [
+                "Native growth form, source thresholds, mixture and specific source class meaning are lost in the broader concept."
+              ],
+              "method": {
+                "method": "Retained c4da565 conceptual crosswalk",
+                "record": {
+                  "href": "docs/atlas/semantic-comparison-results.json",
+                  "selector": "worldcoverCrosswalk/50"
+                }
+              },
+              "qualification": "Native extension relative to target; compatible is qualified usability, not equivalence, accuracy or homogeneous ground.",
+              "relationship": "compatible",
+              "revision": "1",
+              "target": {
+                "id": "fixture:common-artificial-cover",
+                "revision": "1"
+              }
+            },
+            "native": {
+              "fields": {
+                "code": 50,
+                "label": "Built-up"
+              },
+              "property": {
+                "id": "wc:cover",
+                "revision": "1"
+              },
+              "term": {
+                "id": "wc:50",
+                "revision": "1"
+              }
+            },
+            "result": {
+              "kind": "assertion",
+              "value": {
+                "kind": "category",
+                "term": {
+                  "id": "wc:50",
+                  "revision": "1"
+                }
+              }
+            }
+          },
+          {
+            "code": 60,
+            "count": 336,
+            "interpretation": {
+              "disposition": "qualified",
+              "mapping": {
+                "id": "mapping:wc60",
+                "revision": "1"
+              }
+            },
+            "mapping": {
+              "from": {
+                "id": "wc:60",
+                "revision": "1"
+              },
+              "id": "mapping:wc60",
+              "loss": [
+                "Soil/sand/rock and loose/solid distinction, actual vegetation fraction and material identity remain unknown."
+              ],
+              "method": {
+                "method": "Retained c4da565 conceptual crosswalk",
+                "record": {
+                  "href": "docs/atlas/semantic-comparison-results.json",
+                  "selector": "worldcoverCrosswalk/60"
+                }
+              },
+              "qualification": "Native extension relative to target; compatible is qualified usability, not equivalence, accuracy or homogeneous ground.",
+              "relationship": "compatible",
+              "revision": "1",
+              "target": {
+                "id": "fixture:common-mineral-exposure-with-sparse-vegetation",
+                "revision": "1"
+              }
+            },
+            "native": {
+              "fields": {
+                "code": 60,
+                "label": "Bare / sparse vegetation"
+              },
+              "property": {
+                "id": "wc:cover",
+                "revision": "1"
+              },
+              "term": {
+                "id": "wc:60",
+                "revision": "1"
+              }
+            },
+            "result": {
+              "kind": "assertion",
+              "value": {
+                "kind": "category",
+                "term": {
+                  "id": "wc:60",
+                  "revision": "1"
+                }
+              }
+            }
+          }
+        ],
+        "bindingRevision": "native-code-cell/v1",
+        "bounds": [
+          265676.05347833806,
+          358139.7631202109,
+          266076.05347833806,
+          358539.7631202109
+        ],
+        "cells": 3090,
+        "collection": {
+          "id": "collection:worldcover",
+          "revision": "1"
+        },
+        "counts": {
+          "10": 9,
+          "30": 2668,
+          "50": 77,
+          "60": 336
+        },
+        "crs": "EPSG:27700",
+        "evidence": {
+          "completeness": "partial",
+          "description": "Annual WorldCover2021 v200 classification derived from Sentinel1/2; binding reads the retained native categorical raster without inference.",
+          "inputs": [
+            {
+              "kind": "resource",
+              "ref": {
+                "id": "worldcover",
+                "kind": "product",
+                "revision": {
+                  "status": "known",
+                  "value": "v200/2021"
+                }
+              },
+              "role": "source semantic product"
+            }
+          ],
+          "limitations": "Per-cell acquisition lineage, local confidence, semantic MMU and exact physical composition are unavailable. Source agreement is not ground truth.",
+          "modes": [
+            "classification"
+          ],
+          "processing": []
+        },
+        "id": "southern-observer",
+        "meaning": "Raster-class assignment counts, not physical surface fractions; edge-intersecting cells without centres are excluded.",
+        "quality": [
+          {
+            "kind": "validation",
+            "meaning": "Reported WorldCover2021 validation population; not local confidence.",
+            "metric": "Global overall accuracy",
+            "reference": {
+              "href": "docs/atlas/physical-surface-sources.md",
+              "selector": "WorldCover2021 global overall validation"
+            },
+            "scope": {
+              "description": "WorldCover validation population, not this cell.",
+              "kind": "product"
+            },
+            "value": {
+              "kind": "numeric",
+              "unit": "percent",
+              "value": 76.7
+            }
+          }
+        ],
+        "rasterRevision": "9a0ad7162b1fb5fdc276a90c219c8d1d1daa0e83650ccd22d1dfbb51cbe98f6d",
+        "selection": "native cell centres inside half-open BNG rectangle",
+        "time": [
+          {
+            "extent": {
+              "basis": "WorldCover annual product epoch; not local acquisition instant.",
+              "kind": "epoch",
+              "precision": "year",
+              "value": "2021"
+            },
+            "role": "nominal-epoch"
+          },
+          {
+            "extent": {
+              "kind": "unknown",
+              "reason": "Sentinel1/2 annual2021 source observations; exact acquisition times supporting this cell are not retained."
+            },
+            "role": "observation"
+          }
+        ]
+      },
+      {
+        "assignments": [
+          {
+            "code": 10,
+            "count": 18,
+            "interpretation": {
+              "disposition": "qualified",
+              "mapping": {
+                "id": "mapping:wc10",
+                "revision": "1"
+              }
+            },
+            "mapping": {
+              "from": {
+                "id": "wc:10",
+                "revision": "1"
+              },
+              "id": "mapping:wc10",
+              "loss": [
+                "Native growth form, source thresholds, mixture and specific source class meaning are lost in the broader concept."
+              ],
+              "method": {
+                "method": "Retained c4da565 conceptual crosswalk",
+                "record": {
+                  "href": "docs/atlas/semantic-comparison-results.json",
+                  "selector": "worldcoverCrosswalk/10"
+                }
+              },
+              "qualification": "Native extension relative to target; compatible is qualified usability, not equivalence, accuracy or homogeneous ground.",
+              "relationship": "narrower",
+              "revision": "1",
+              "target": {
+                "id": "fixture:common-woody-vegetation",
+                "revision": "1"
+              }
+            },
+            "native": {
+              "fields": {
+                "code": 10,
+                "label": "Tree cover"
+              },
+              "property": {
+                "id": "wc:cover",
+                "revision": "1"
+              },
+              "term": {
+                "id": "wc:10",
+                "revision": "1"
+              }
+            },
+            "result": {
+              "kind": "assertion",
+              "value": {
+                "kind": "category",
+                "term": {
+                  "id": "wc:10",
+                  "revision": "1"
+                }
+              }
+            }
+          },
+          {
+            "code": 30,
+            "count": 794,
+            "interpretation": {
+              "disposition": "qualified",
+              "mapping": {
+                "id": "mapping:wc30",
+                "revision": "1"
+              }
+            },
+            "mapping": {
+              "from": {
+                "id": "wc:30",
+                "revision": "1"
+              },
+              "id": "mapping:wc30",
+              "loss": [
+                "Native growth form, source thresholds, mixture and specific source class meaning are lost in the broader concept."
+              ],
+              "method": {
+                "method": "Retained c4da565 conceptual crosswalk",
+                "record": {
+                  "href": "docs/atlas/semantic-comparison-results.json",
+                  "selector": "worldcoverCrosswalk/30"
+                }
+              },
+              "qualification": "Native extension relative to target; compatible is qualified usability, not equivalence, accuracy or homogeneous ground.",
+              "relationship": "narrower",
+              "revision": "1",
+              "target": {
+                "id": "fixture:common-nonwoody-vegetation",
+                "revision": "1"
+              }
+            },
+            "native": {
+              "fields": {
+                "code": 30,
+                "label": "Grassland"
+              },
+              "property": {
+                "id": "wc:cover",
+                "revision": "1"
+              },
+              "term": {
+                "id": "wc:30",
+                "revision": "1"
+              }
+            },
+            "result": {
+              "kind": "assertion",
+              "value": {
+                "kind": "category",
+                "term": {
+                  "id": "wc:30",
+                  "revision": "1"
+                }
+              }
+            }
+          },
+          {
+            "code": 50,
+            "count": 46,
+            "interpretation": {
+              "disposition": "qualified",
+              "mapping": {
+                "id": "mapping:wc50",
+                "revision": "1"
+              }
+            },
+            "mapping": {
+              "from": {
+                "id": "wc:50",
+                "revision": "1"
+              },
+              "id": "mapping:wc50",
+              "loss": [
+                "Native growth form, source thresholds, mixture and specific source class meaning are lost in the broader concept."
+              ],
+              "method": {
+                "method": "Retained c4da565 conceptual crosswalk",
+                "record": {
+                  "href": "docs/atlas/semantic-comparison-results.json",
+                  "selector": "worldcoverCrosswalk/50"
+                }
+              },
+              "qualification": "Native extension relative to target; compatible is qualified usability, not equivalence, accuracy or homogeneous ground.",
+              "relationship": "compatible",
+              "revision": "1",
+              "target": {
+                "id": "fixture:common-artificial-cover",
+                "revision": "1"
+              }
+            },
+            "native": {
+              "fields": {
+                "code": 50,
+                "label": "Built-up"
+              },
+              "property": {
+                "id": "wc:cover",
+                "revision": "1"
+              },
+              "term": {
+                "id": "wc:50",
+                "revision": "1"
+              }
+            },
+            "result": {
+              "kind": "assertion",
+              "value": {
+                "kind": "category",
+                "term": {
+                  "id": "wc:50",
+                  "revision": "1"
+                }
+              }
+            }
+          },
+          {
+            "code": 80,
+            "count": 2234,
+            "interpretation": {
+              "disposition": "qualified",
+              "mapping": {
+                "id": "mapping:wc80",
+                "revision": "1"
+              }
+            },
+            "mapping": {
+              "from": {
+                "id": "wc:80",
+                "revision": "1"
+              },
+              "id": "mapping:wc80",
+              "loss": [
+                "Annual persistence criterion and water feature identity/instantaneous state are not preserved by a broad concept."
+              ],
+              "method": {
+                "method": "Retained c4da565 conceptual crosswalk",
+                "record": {
+                  "href": "docs/atlas/semantic-comparison-results.json",
+                  "selector": "worldcoverCrosswalk/80"
+                }
+              },
+              "qualification": "Native extension relative to target; compatible is qualified usability, not equivalence, accuracy or homogeneous ground.",
+              "relationship": "compatible",
+              "revision": "1",
+              "target": {
+                "id": "fixture:common-persistent-water-cover",
+                "revision": "1"
+              }
+            },
+            "native": {
+              "fields": {
+                "code": 80,
+                "label": "Permanent water bodies"
+              },
+              "property": {
+                "id": "wc:cover",
+                "revision": "1"
+              },
+              "term": {
+                "id": "wc:80",
+                "revision": "1"
+              }
+            },
+            "result": {
+              "kind": "assertion",
+              "value": {
+                "kind": "category",
+                "term": {
+                  "id": "wc:80",
+                  "revision": "1"
+                }
+              }
+            }
+          }
+        ],
+        "bindingRevision": "native-code-cell/v1",
+        "bounds": [
+          266200,
+          360250,
+          266600,
+          360650
+        ],
+        "cells": 3092,
+        "collection": {
+          "id": "collection:worldcover",
+          "revision": "1"
+        },
+        "counts": {
+          "10": 18,
+          "30": 794,
+          "50": 46,
+          "80": 2234
+        },
+        "crs": "EPSG:27700",
+        "evidence": {
+          "completeness": "partial",
+          "description": "Annual WorldCover2021 v200 classification derived from Sentinel1/2; binding reads the retained native categorical raster without inference.",
+          "inputs": [
+            {
+              "kind": "resource",
+              "ref": {
+                "id": "worldcover",
+                "kind": "product",
+                "revision": {
+                  "status": "known",
+                  "value": "v200/2021"
+                }
+              },
+              "role": "source semantic product"
+            }
+          ],
+          "limitations": "Per-cell acquisition lineage, local confidence, semantic MMU and exact physical composition are unavailable. Source agreement is not ground truth.",
+          "modes": [
+            "classification"
+          ],
+          "processing": []
+        },
+        "id": "northern-context",
+        "meaning": "Raster-class assignment counts, not physical surface fractions; edge-intersecting cells without centres are excluded.",
+        "quality": [
+          {
+            "kind": "validation",
+            "meaning": "Reported WorldCover2021 validation population; not local confidence.",
+            "metric": "Global overall accuracy",
+            "reference": {
+              "href": "docs/atlas/physical-surface-sources.md",
+              "selector": "WorldCover2021 global overall validation"
+            },
+            "scope": {
+              "description": "WorldCover validation population, not this cell.",
+              "kind": "product"
+            },
+            "value": {
+              "kind": "numeric",
+              "unit": "percent",
+              "value": 76.7
+            }
+          }
+        ],
+        "rasterRevision": "9a0ad7162b1fb5fdc276a90c219c8d1d1daa0e83650ccd22d1dfbb51cbe98f6d",
+        "selection": "native cell centres inside half-open BNG rectangle",
+        "time": [
+          {
+            "extent": {
+              "basis": "WorldCover annual product epoch; not local acquisition instant.",
+              "kind": "epoch",
+              "precision": "year",
+              "value": "2021"
+            },
+            "role": "nominal-epoch"
+          },
+          {
+            "extent": {
+              "kind": "unknown",
+              "reason": "Sentinel1/2 annual2021 source observations; exact acquisition times supporting this cell are not retained."
+            },
+            "role": "observation"
+          }
+        ]
+      },
+      {
+        "assignments": [
+          {
+            "code": 30,
+            "count": 10,
+            "interpretation": {
+              "disposition": "qualified",
+              "mapping": {
+                "id": "mapping:wc30",
+                "revision": "1"
+              }
+            },
+            "mapping": {
+              "from": {
+                "id": "wc:30",
+                "revision": "1"
+              },
+              "id": "mapping:wc30",
+              "loss": [
+                "Native growth form, source thresholds, mixture and specific source class meaning are lost in the broader concept."
+              ],
+              "method": {
+                "method": "Retained c4da565 conceptual crosswalk",
+                "record": {
+                  "href": "docs/atlas/semantic-comparison-results.json",
+                  "selector": "worldcoverCrosswalk/30"
+                }
+              },
+              "qualification": "Native extension relative to target; compatible is qualified usability, not equivalence, accuracy or homogeneous ground.",
+              "relationship": "narrower",
+              "revision": "1",
+              "target": {
+                "id": "fixture:common-nonwoody-vegetation",
+                "revision": "1"
+              }
+            },
+            "native": {
+              "fields": {
+                "code": 30,
+                "label": "Grassland"
+              },
+              "property": {
+                "id": "wc:cover",
+                "revision": "1"
+              },
+              "term": {
+                "id": "wc:30",
+                "revision": "1"
+              }
+            },
+            "result": {
+              "kind": "assertion",
+              "value": {
+                "kind": "category",
+                "term": {
+                  "id": "wc:30",
+                  "revision": "1"
+                }
+              }
+            }
+          }
+        ],
+        "bindingRevision": "native-code-cell/v1",
+        "bounds": [
+          266395,
+          359377,
+          266415,
+          359397
+        ],
+        "cells": 10,
+        "collection": {
+          "id": "collection:worldcover",
+          "revision": "1"
+        },
+        "counts": {
+          "30": 10
+        },
+        "crs": "EPSG:27700",
+        "evidence": {
+          "completeness": "partial",
+          "description": "Annual WorldCover2021 v200 classification derived from Sentinel1/2; binding reads the retained native categorical raster without inference.",
+          "inputs": [
+            {
+              "kind": "resource",
+              "ref": {
+                "id": "worldcover",
+                "kind": "product",
+                "revision": {
+                  "status": "known",
+                  "value": "v200/2021"
+                }
+              },
+              "role": "source semantic product"
+            }
+          ],
+          "limitations": "Per-cell acquisition lineage, local confidence, semantic MMU and exact physical composition are unavailable. Source agreement is not ground truth.",
+          "modes": [
+            "classification"
+          ],
+          "processing": []
+        },
+        "id": "summit-20m",
+        "meaning": "Raster-class assignment counts only; does not assert homogeneous physical support.",
+        "quality": [
+          {
+            "kind": "validation",
+            "meaning": "Reported WorldCover2021 validation population; not local confidence.",
+            "metric": "Global overall accuracy",
+            "reference": {
+              "href": "docs/atlas/physical-surface-sources.md",
+              "selector": "WorldCover2021 global overall validation"
+            },
+            "scope": {
+              "description": "WorldCover validation population, not this cell.",
+              "kind": "product"
+            },
+            "value": {
+              "kind": "numeric",
+              "unit": "percent",
+              "value": 76.7
+            }
+          }
+        ],
+        "rasterRevision": "9a0ad7162b1fb5fdc276a90c219c8d1d1daa0e83650ccd22d1dfbb51cbe98f6d",
+        "selection": "native cell centres inside half-open BNG rectangle",
+        "time": [
+          {
+            "extent": {
+              "basis": "WorldCover annual product epoch; not local acquisition instant.",
+              "kind": "epoch",
+              "precision": "year",
+              "value": "2021"
+            },
+            "role": "nominal-epoch"
+          },
+          {
+            "extent": {
+              "kind": "unknown",
+              "reason": "Sentinel1/2 annual2021 source observations; exact acquisition times supporting this cell are not retained."
+            },
+            "role": "observation"
+          }
+        ]
+      }
+    ],
+    "unavailable": {
+      "explanation": "Infrastructure availability, not a physical evidence gap.",
+      "kind": "unavailable",
+      "reason": "retained-data-unavailable"
+    },
+    "unmappable": {
+      "interpretation": {
+        "disposition": "rejected",
+        "mapping": {
+          "id": "mapping:wc-substrate",
+          "revision": "1"
+        }
+      },
+      "kind": "unresolved",
+      "limitation": "Historical annual classification; no local confidence or homogeneous physical cover claim.",
+      "mapping": {
+        "from": {
+          "id": "wc:cover",
+          "revision": "1"
+        },
+        "id": "mapping:wc-substrate",
+        "loss": [
+          "Source cover cannot establish geological substrate."
+        ],
+        "method": {
+          "method": "Retained cover versus substrate distinction c4da565"
+        },
+        "qualification": "Reject target assertion; retain native cover evidence.",
+        "relationship": "unmappable",
+        "revision": "1",
+        "target": {
+          "id": "fixture:substrate",
+          "revision": "1"
+        }
+      },
+      "native": {
+        "context": {
+          "evidence": {
+            "completeness": "partial",
+            "description": "Annual WorldCover2021 v200 classification derived from Sentinel1/2; binding reads the retained native categorical raster without inference.",
+            "inputs": [
+              {
+                "kind": "resource",
+                "ref": {
+                  "id": "worldcover",
+                  "kind": "product",
+                  "revision": {
+                    "status": "known",
+                    "value": "v200/2021"
+                  }
+                },
+                "role": "source semantic product"
+              }
+            ],
+            "limitations": "Per-cell acquisition lineage, local confidence, semantic MMU and exact physical composition are unavailable. Source agreement is not ground truth.",
+            "modes": [
+              "classification"
+            ],
+            "processing": []
+          },
+          "quality": [
+            {
+              "kind": "validation",
+              "meaning": "Reported WorldCover2021 validation population; not local confidence.",
+              "metric": "Global overall accuracy",
+              "reference": {
+                "href": "docs/atlas/physical-surface-sources.md",
+                "selector": "WorldCover2021 global overall validation"
+              },
+              "scope": {
+                "description": "WorldCover validation population, not this cell.",
+                "kind": "product"
+              },
+              "value": {
+                "kind": "numeric",
+                "unit": "percent",
+                "value": 76.7
+              }
+            }
+          ],
+          "support": {
+            "geometry": {
+              "axisOrder": "xy",
+              "bounds": [
+                -3.9975000000000005,
+                53.11483333333334,
+                -3.997416666666667,
+                53.114916666666666
+              ],
+              "crs": {
+                "identifier": "EPSG:4326",
+                "name": "EPSG:4326"
+              },
+              "kind": "native-rectangle"
+            },
+            "grain": {
+              "status": "known",
+              "value": "Native1/12000 degree classification grid; nominal10m; semantic MMU and local confidence unknown."
+            },
+            "meaning": "Whole native classified cell assignment, not independently observed homogeneous ground"
+          },
+          "time": [
+            {
+              "extent": {
+                "basis": "WorldCover annual product epoch; not local acquisition instant.",
+                "kind": "epoch",
+                "precision": "year",
+                "value": "2021"
+              },
+              "role": "nominal-epoch"
+            },
+            {
+              "extent": {
+                "kind": "unknown",
+                "reason": "Sentinel1/2 annual2021 source observations; exact acquisition times supporting this cell are not retained."
+              },
+              "role": "observation"
+            }
+          ]
+        },
+        "id": "claim:wc2021v200-N51W006-parent-r10621-c24030",
+        "interpretation": {
+          "disposition": "qualified",
+          "mapping": {
+            "id": "mapping:wc30",
+            "revision": "1"
+          }
+        },
+        "native": {
+          "fields": {
+            "code": 30,
+            "label": "Grassland"
+          },
+          "property": {
+            "id": "wc:cover",
+            "revision": "1"
+          },
+          "term": {
+            "id": "wc:30",
+            "revision": "1"
+          }
+        },
+        "record": {
+          "href": "docs/atlas/semantic-comparison-sources.json",
+          "selector": "tryfan-worldcover.tif native code=30"
+        },
+        "result": {
+          "kind": "assertion",
+          "value": {
+            "kind": "category",
+            "term": {
+              "id": "wc:30",
+              "revision": "1"
+            }
+          }
+        },
+        "revision": "native-code-cell/v1@9a0ad7162b1fb5fdc276a90c219c8d1d1daa0e83650ccd22d1dfbb51cbe98f6d"
+      },
+      "query": {
+        "probe": "summit",
+        "property": "substrate",
+        "time": "2021"
+      },
+      "raster": {
+        "bindingRevision": "native-code-cell/v1",
+        "product": {
+          "id": "worldcover",
+          "kind": "product",
+          "revision": {
+            "status": "known",
+            "value": "v200/2021"
+          }
+        },
+        "representationId": "worldcover-v200-2021-N51W006-native-window",
+        "revision": "9a0ad7162b1fb5fdc276a90c219c8d1d1daa0e83650ccd22d1dfbb51cbe98f6d"
+      },
+      "reason": "unsupported-property",
+      "template": {
+        "id": "template:wc30",
+        "revision": "1"
+      }
+    }
+  },
+  "logicalSha256": "82de4c007b58f111081b37e3a23f5903bf6214dd4bb558c16ab2c84337fbc0d9",
+  "measurements": [
+    {
+      "action": "build",
+      "elapsedMs": 1154.2271,
+      "qualifiedQueryMs": 0.7939000000001215,
+      "readerMs": 113.993,
+      "wallMs": 1720.6225
+    },
+    {
+      "action": "query",
+      "elapsedMs": 1134.746,
+      "qualifiedQueryMs": 0.7053000000000793,
+      "readerMs": 114.111,
+      "wallMs": 1728.3251
+    },
+    {
+      "action": "build",
+      "elapsedMs": 1175.8519000000001,
+      "qualifiedQueryMs": 0.7580000000000382,
+      "readerMs": 116.022,
+      "wallMs": 1485.9573999999998
+    }
+  ],
+  "methods": {
+    "scripts/atlas/worldcover-binding-proof/cli.mjs": "634604b023b70fa5142bb822eb33bd86eb321eda827871549dd0ef627c4992d3",
+    "scripts/atlas/worldcover-binding-proof/reader.py": "477cf874e3dcfcd2b2f21b5452249390bd04aeb3294839a1476c7ca92c324c6a",
+    "scripts/atlas/worldcover-binding-proof/run-proof.mjs": "e4dd565c57db899cc2dffe44f0badea13c4844f8ca649b4e3bf191bff6c0cae0",
+    "scripts/atlas/worldcover-binding-proof/runtime.mjs": "28c03a3d776763bf6b75b50c44e0593c7310133a2fe38dff86dcdaa863bcbeab"
+  },
+  "planSha256": "a05b3fd9065c51ac9e6b83bedd1556d6b642d343342ad08b64c026d4b6131bd5",
+  "pointerBytes": 133,
+  "realProcesses": 3,
+  "rebuildEquivalent": true,
+  "restartEquivalent": true,
+  "snapshot": "d7fd9307ecc7306f4944e7462bd8121c237d475f516d9759abf62d02bd9e646a",
+  "snapshotBytes": 48708,
+  "store": "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\derived\\atlas\\worldcover-binding-proof-v1\\store",
+  "storeBytes": 98602,
+  "storeSnapshots": [
+    {
+      "bytes": 49761,
+      "name": "83137533e2ec117a26f5114b841bdcbfc1d7872e649f77c1a2508381b6674438.json"
+    },
+    {
+      "bytes": 48708,
+      "name": "d7fd9307ecc7306f4944e7462bd8121c237d475f516d9759abf62d02bd9e646a.json"
+    }
+  ]
+}

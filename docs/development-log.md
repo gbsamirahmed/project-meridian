@@ -4079,3 +4079,13 @@ Exactly one next bounded task: retained Tryfan WorldCover native-raster binding 
 qualified semantic-query proof, using the existing small crop and shared native metadata.
 This follows S3's retained implementation-validation idea; no inference or broad ingestion.
 That task has not begun. Successful persistence does not select production infrastructure.
+
+
+## 2026-10-06 — retained Tryfan WorldCover native-raster binding proof
+
+- Goal: exercise the native categorical-raster intake boundary using the retained 2021 v200 Tryfan crop; no new data/classification.
+- [Report](research/tryfan-worldcover-binding-proof.md), [plan](research/tryfan-worldcover-binding-plan.json), [results](research/tryfan-worldcover-binding-results.json), [validation](research/tryfan-worldcover-binding-validation.json): **C — SUCCESS**. Eight shared v1 templates handle 185,036 native assignments; requested cell claims and centre-selected patch compositions retain native code/meaning, exact support, epoch, classification mode, product-wide quality and mapping loss.
+- Summit WorldCover 30 and retained NRW dry acid heath coexist without selecting truth. Current 2026/substrate requests remain unsupported; geographic support miss, unavailable raster and synthetic native nodata are distinct. All original frozen patch counts reproduce. Three real processes establish restart/rebuild logical equivalence using the unchanged local snapshot mechanism and retained raster reads.
+- Current accepted binding snapshot 48,708 bytes; no raster payload/index/per-cell object persistence. Local timings are proof measurements, not production capacity. The original archive, all frozen contracts, historical reports, production hashes, Weather and Traverse remain unchanged. No inference/hydrology/runtime/layer, cloud or new dataset.
+- Validation: 14 focused Node tests plus 2 synthetic affine/CRS tests and frozen domain checks; exact source hashes, lazy v1 validation, roundtrip/restart, deterministic logical results, links/anchors, 42 status preservation and full protected/history checks.
+- Next, separately authorized only: **Retained Riffelhorn appearance identity, provenance and qualified-resolution assessment** (A2/A15), using retained metadata/products. Native-raster intake is complete for this slice; no automatic ingestion expansion or infrastructure build. Unresolved appearance/correction and externally parked Swiss frame pixels remain visible. The next task has not begun.

@@ -33,9 +33,12 @@ technologies and production capacity remain provisional/unmeasured. The next rec
 was the local persistent retained Tryfan proof, now complete
 ([report](research/tryfan-local-persistent-proof.md), **C — SUCCESS**). Real restart, coherent publication,
 scoped update and historical replay survive; whole-metadata snapshots remain a small
-replaceable single-writer mechanism. Exactly one next task is separately authorized:
-retained Tryfan WorldCover native-raster binding and qualified semantic-query proof.
-It has not begun. No production storage, cloud build or broad ingestion has occurred.
+replaceable single-writer mechanism. The [WorldCover binding proof](research/tryfan-worldcover-binding-proof.md)
+now completes that recommendation (**C — SUCCESS**) for one native categorical raster,
+qualified queries and semantic restart; other semantic input forms remain conceptual.
+Exactly one next task is separately authorized: retained Riffelhorn appearance identity,
+provenance and qualified-resolution assessment. It has not begun. No production storage,
+cloud build, classifier or broad ingestion has occurred.
 Historical analytical filter/calibration
 suggestions are separate from closed visual-terrain research. No Weather/Traverse redesign follows.
 

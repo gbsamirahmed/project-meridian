@@ -609,6 +609,11 @@ recommendation (**C — SUCCESS**): explicit input-use receipts, qualified v1 cl
 stored hierarchy declarations survive real restarts, scoped update and historical
 replay. Accepted publication is coherent; freshness/reverse lookup rebuild from facts.
 JSON snapshots are a replaceable single-writer proof, not a production store decision.
-Exactly one next task: retained Tryfan WorldCover native-raster binding and qualified
-semantic-query proof, not begun. Open/parked appearance work is non-blocking, not solved.
+The [WorldCover binding proof](research/tryfan-worldcover-binding-proof.md) now completes
+that recommendation (**C — SUCCESS**): native categorical assignments resolve through
+shared v1 templates, qualified cell/support queries, time/quality/mapping-loss and
+coexisting habitat evidence. Real restart preserves meaning; no contract/runtime changes.
+This does not establish all semantic input forms. Exactly one next task is the retained
+Riffelhorn appearance identity, provenance and qualified-resolution assessment, not begun.
+Open/parked appearance work is non-blocking, not solved.
 Frozen contracts/current production remain unchanged.
