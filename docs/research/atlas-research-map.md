@@ -5,7 +5,7 @@ Lab 012G evidence checkpoint `abf95bcfb50c681244a146626565a471ba791418`.
 This index records knowledge and research status, not a roadmap, new Lab or
 production architecture. It is the starting point for humans and fresh tooling.
 
-## Current programme state — reconstructed at e65c2d6
+## Current programme state — audit 5f14511 and completed lifecycle follow-up
 
 The [Atlas research-state audit and thread register](atlas-research-state.md) is the
 current status/sequence companion to this historical research map. It reconstructs
@@ -33,12 +33,14 @@ Detailed reports retain their original evidence; historical next steps are not l
   [Frozen metadata benchmark](../atlas/swiss-multiview-benchmark.md) is not a completed
   pixel-information/texture-fusion proof. No new acquisition/contact/order follows.
 
-Exactly one next bounded research recommendation: **derived physical understanding —
-dependency, identity and revision lifecycle assessment**, using retained cases, before
-world-model synthesis. Its [scope/exit criterion](atlas-research-state.md#current-finite-pre-maturity-programme)
-does not implement a dependency engine, change frozen contracts or reopen foundations.
-The older single-product ingestion recommendation is implementation validation, now
-sequenced after that investigation and subsequent synthesis. Nothing starts automatically.
+The [derived-understanding lifecycle assessment](atlas-derived-understanding-lifecycle.md)
+is **CLOSED FOR FOUNDATION**: qualified revision snapshots can coexist with revisable
+understanding; actual scoped input uses and current-use assessment need a small compatible
+companion description, without changing v1. No remaining foundational blocker is demonstrated.
+Exactly one next bounded recommendation: **world-model architecture synthesis**, separately
+authorized, with domain contracts and one retained-region proof specification as its exit.
+No proof, ingestion or storage system is implemented. The older single-product adapter
+recommendation stays sequenced after synthesis. Nothing starts automatically.
 
 Production, Weather and Traverse remain unchanged. The map below retains chronological
 milestones; current statuses and supersession are in the linked register.
@@ -64,8 +66,9 @@ milestones; current statuses and supersession are in the linked register.
    Keep experiments bounded, products external, provenance reproducible and evidence
    classes distinct. Never silently promote experimental findings into architecture.
 
-Current return point: the [research-state audit](atlas-research-state.md), following
-completion of [Semantic Evidence Contract v1](../atlas/semantic-evidence-contract.md).
+Current return point: the [lifecycle assessment](atlas-derived-understanding-lifecycle.md)
+and updated [research-state register](atlas-research-state.md), following the audit and
+[Semantic Evidence Contract v1](../atlas/semantic-evidence-contract.md).
 The preceding [information-aware display/selection synthesis](../atlas/information-aware-display-selection.md)
 remains the completed multiscale handoff.
 The current multiscale research programme is **CLOSED**: the baseline established
@@ -371,3 +374,15 @@ Recommended separately authorized next step: one retained WorldCover/Tryfan lazy
 native-code ingestion proof against v1, without new data, map layers or inference.
 Not started here. No additional benchmark. Production/Weather/Traverse unchanged;
 elevation/multiscale stay closed and multiview remains parked.
+
+## 2026-10-06 — derived understanding lifecycle assessment
+
+[Assessment](atlas-derived-understanding-lifecycle.md): pre-synthesis gate **CLOSED FOR FOUNDATION**.
+Five retained cases distinguish source/representation/method/context revisions, physical
+change and knowledge correction. Existing v1 covers most evidence results; small compatible
+input-use/current-assessment information roles address scoped freshness/recomputation and
+coexistence. No contract change, runtime, new algorithm/observation or synthesis performed.
+Next recommendation supersedes the audit’s completed lifecycle task: separately authorized
+bounded world-model synthesis and one proof specification. No additional empirical blocker.
+Terrain/multiscale/semantic foundations remain closed; Swiss frames parked; production,
+Weather and Traverse unchanged. Operational propagation and storage remain later work.

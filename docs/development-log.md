@@ -3920,3 +3920,34 @@ No dedicated package Markdown command exists; established reference/diff/hash ch
 apply. Application tests/build are unnecessary for unchanged runtime/dependencies.
 Terrain/elevation, multiscale and physical-surface foundations remain closed; multiview
 parked; Weather/Traverse, imagery, data, rendering, projection and lifecycle unchanged.
+
+## 2026-10-06 — Atlas derived physical understanding lifecycle assessment
+
+Started clean main at 5f14511; origin fetched, divergence0/0. Followed the canonical
+register to frozen v1, terrain/appearance metadata, multiscale limits and retained
+Tryfan/Exe evidence. Targeted primary provenance/workflow/EO-versioning/incremental
+and caching documentation supplies established precedents; no new data or algorithms.
+
+[Lifecycle report](research/atlas-derived-understanding-lifecycle.md) closes the sole
+pre-synthesis gate with five paper walkthroughs: terrain/source/support revision,
+method revision, new dated observation versus correction, derived-on-derived incidence,
+and richer structure context. OutcomeC: small compatible derivation-use/current-assessment
+information roles plus lifecycle clarification; most result requirements already in v1.
+Snapshots stay immutable/referenceable while understanding/preferences can evolve;
+stale is policy-relative, not historically false. Changes propagate by actual scoped
+uses/availability baselines, not universal revision-triggered rebuilding.
+
+Frozen contract/types/fixtures, all historical empirical reports, production and data
+are unchanged. No dependency engine, inference, ingestion, hydrology, Weather/Traverse
+redesign or world-model synthesis. Updated current research/map/direction/architecture
+navigation, preserving the audit’s historical gate specification and older reports.
+Exactly one next recommendation: separately authorised bounded world-model architecture
+synthesis, ending in boundaries/contracts and one retained-region proof specification.
+No remaining foundational blocker demonstrated; operational/cost/coverage work deferred.
+
+[Validation receipt](research/atlas-derived-understanding-validation.json): local links/
+anchors, source/case identities, checkpoint ancestry, frozen contract hashes, unchanged
+43 Atlas/Earth Lab reports,113 protected production SHA256s, JSON and final diff checks.
+No application tests/build required for documentation-only changes. Multiscale remains
+closed; multiview parked; AWS visual/analytical,1.45 exaggeration, IGOR, MapTiler satellite
+and lifecycle/Weather/Traverse remain unchanged.

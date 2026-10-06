@@ -19,10 +19,12 @@ foundations are closed; Swiss frame pixels remain externally parked. This notebo
 route-first hypotheses preserve product history and downstream Traverse possibilities;
 Atlas's physical-world foundation is not optimised for that application.
 
-The current pre-synthesis recommendation is one bounded derived-understanding
-identity/dependency/revision-lifecycle investigation using retained evidence.
-It is a design question, not implemented infrastructure or authority to start a new
-experiment. Historical analytical filter/calibration suggestions are separate from
+The [derived-understanding lifecycle assessment](research/atlas-derived-understanding-lifecycle.md)
+closes the audit’s pre-synthesis gate using retained cases. Immutable revision snapshots
+can support revisable understanding; scoped input-use/current-assessment descriptions are
+justified beside existing v1. The next recommendation is separately authorized bounded
+world-model architecture synthesis, not implemented infrastructure or authority to start
+an experiment. Historical analytical filter/calibration suggestions are separate from
 closed visual-terrain research. No Weather/Traverse redesign follows.
 
 ## Product idea

@@ -1,0 +1,170 @@
+{
+  "assessment": "atlas-derived-understanding-lifecycle",
+  "date": "2026-10-06",
+  "startingCheckpoint": "5f145117072b1cde2e696fb8d8f8d11995a2c06f",
+  "startingBranch": "main",
+  "upstream": "origin/main",
+  "fetchedDivergence": [
+    0,
+    0
+  ],
+  "classification": "C — small compatible input-use/current-assessment roles; lifecycle gate closed for foundation",
+  "validationScope": "Documentation/reference and retained-case facts; no new numerical/engine tests or empirical derivations.",
+  "checks": [
+    {
+      "check": "HEAD is expected audit checkpoint",
+      "passed": true
+    },
+    {
+      "check": "main with existing upstream",
+      "passed": true
+    },
+    {
+      "check": "fetched upstream divergence0/0",
+      "passed": true
+    },
+    {
+      "check": "113 protected production SHA256s",
+      "passed": true
+    },
+    {
+      "check": "all seven frozen semantic code/fixture SHA256s",
+      "passed": true
+    },
+    {
+      "check": "production/research code/data and empirical reports diff empty",
+      "passed": true
+    },
+    {
+      "check": "43 empirical report Git contents preserved",
+      "passed": true
+    },
+    {
+      "check": "nine relevant checkpoints resolve as ancestors",
+      "passed": true
+    },
+    {
+      "check": "A exact Tryfan bounds/source/product identities",
+      "passed": true
+    },
+    {
+      "check": "A summit patch is retained400m patch",
+      "passed": true
+    },
+    {
+      "check": "A AWS revision honestly unknown",
+      "passed": true
+    },
+    {
+      "check": "A identical-tile support correction is retained proof fact",
+      "passed": true
+    },
+    {
+      "check": "B exact005A input and method",
+      "passed": true
+    },
+    {
+      "check": "C exact P1 March/September retained counts",
+      "passed": true
+    },
+    {
+      "check": "C WFD feature/event identities retained",
+      "passed": true
+    },
+    {
+      "check": "D derived chain pins canonicalR16",
+      "passed": true
+    },
+    {
+      "check": "D actual aggregate-slope/aspect to incidence code",
+      "passed": true
+    },
+    {
+      "check": "E hypothetical context distinguished from new observation",
+      "passed": true
+    },
+    {
+      "check": "report has all16 specified sections",
+      "passed": true
+    },
+    {
+      "check": "report explicitly preserves v1 and separatesstale/truth",
+      "passed": true
+    },
+    {
+      "check": "v1 roles/revisionknowledge already present",
+      "passed": true
+    },
+    {
+      "check": "documentation-only scope",
+      "passed": true
+    },
+    {
+      "check": "local files/anchors resolve",
+      "passed": true
+    },
+    {
+      "check": "research JSON parses",
+      "passed": true
+    },
+    {
+      "check": "trackeddiff whitespace clean",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "localReferencesChecked": 265,
+  "localAnchorsChecked": 44,
+  "missingReferences": [],
+  "protectedProductionSha256Checks": 113,
+  "protectedProductionMismatches": [],
+  "frozenContractCodeSha256Checks": 7,
+  "frozenContractMismatches": [],
+  "unchangedHistoricalReportGitBlobChecks": 43,
+  "historicalReportMismatches": [],
+  "checkpointAncestors": {
+    "5f14511": "5f145117072b1cde2e696fb8d8f8d11995a2c06f",
+    "e65c2d6": "e65c2d6c29ed4421d5f2cc7133604332e8dfd71b",
+    "052374e": "052374e07d613a549f5a88640b42932f97a7f896",
+    "c4da565": "c4da56577c27f56ee1a5829e85d8daa951a517c1",
+    "75ea9d8": "75ea9d837c86506b0e278f79e209a8533e9664b7",
+    "57688cb": "57688cb48e0a0c7768b066df548b6959b924bfc7",
+    "3d406ae": "3d406aee212a5be071728d85db443111e483e7bf",
+    "ca74a84": "ca74a84713b443d408467dd17835083bbbf0771a",
+    "8598c30": "8598c30a64dc789c22ae81cef1c14bea3a9e6ff0"
+  },
+  "researchJsonChecked": 106,
+  "documentationOnlyPaths": [
+    "docs/architecture.md",
+    "docs/development-log.md",
+    "docs/product-direction.md",
+    "docs/research/atlas-derived-understanding-lifecycle.md",
+    "docs/research/atlas-derived-understanding-validation.json",
+    "docs/research/atlas-research-map.md",
+    "docs/research/atlas-research-state.md"
+  ],
+  "primaryLiteratureUrlsReviewed": [
+    "https://www.w3.org/TR/prov-dm/",
+    "https://www.w3.org/TR/vocab-ssn/",
+    "https://www.commonwl.org/v1.2/Workflow.html#execution-model",
+    "https://www.researchobject.org/workflow-run-crate/profiles/provenance_run_crate/",
+    "https://github.com/stac-extensions/processing",
+    "https://github.com/stac-extensions/version",
+    "https://bazel.build/basics/hermeticity",
+    "https://bazel.build/remote/caching",
+    "https://adapton.org/",
+    "https://gdal.org/en/stable/programs/gdaldem.html#slope"
+  ],
+  "literatureLimitations": "Adapton author overview inspected; attempted PDF unavailable. No conformance/runtime adoption claim.",
+  "scopeConfirmations": {
+    "frozenContractUnchanged": true,
+    "productionUnchanged": true,
+    "noDataAcquisition": true,
+    "noNewDerivation": true,
+    "noRuntime": true,
+    "noWorldModelSynthesis": true,
+    "multiscaleClosed": true,
+    "multiviewParked": true,
+    "weatherTraverseUnchanged": true
+  }
+}

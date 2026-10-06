@@ -580,9 +580,11 @@ foundations from partial appearance results, parked acquisition, future implemen
 and surviving research. Historical investigation/next-step summaries above retain
 their checkpoint context; the register records their completion or supersession.
 
-The 2026-10-06 audit recommends a bounded derived-understanding dependency/identity/
-revision-lifecycle assessment before world-model synthesis. Immutable evidence/product
-revisions and semantic lineage do not themselves define freshness, current interpretation
-or recomputation. This is an unresolved design boundary, not a modification of either
-frozen contract, the current dependency policy, or production runtime. Final world-model
-synthesis and persistent/storage architecture remain later separately authorised work.
+The [completed lifecycle assessment](research/atlas-derived-understanding-lifecycle.md)
+closes the audit’s pre-synthesis gate. Stable revision snapshots preserve evidence while
+qualified current interpretation can evolve. Most result provenance is already in v1;
+actual scoped input uses and policy-relative current assessment need a small compatible
+companion description before automation. This is an assessed boundary, not an implemented
+subsystem or modification of frozen contracts/current dependency policy. World-model
+synthesis remains separately authorised; persistent proof and measured storage/processing
+architecture follow later.
