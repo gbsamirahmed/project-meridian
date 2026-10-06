@@ -45,9 +45,11 @@ The [illumination/shadow identifiability assessment](research/illumination-ident
 now completes that recommendation (**B — PARTIAL IDENTIFIABILITY**). Date-conditioned terrain
 geometry does not recover pixel exposure/shadow truth; source RGB is not calibrated reflectance.
 Only a constrained post-L2A residual test is justified on retained dated Tryfan evidence.
-Exactly one next task is the **Retained Tryfan post-L2A residual terrain-illumination normalization experiment**;
-[predeclared scope/exit](research/illumination-identifiability.md#23-predeclared-evaluation-criteria).
-It has not begun. No production storage, correction, cloud build, classifier or broad ingestion
+The [frozen residual experiment](research/tryfan-illumination-normalization.md) now completes
+that recommendation (**D — INCONCLUSIVE**): SE SCL5 count 12<20 fails the entry gate.
+No C coefficient or corrected representation exists; no benefit/physical claim follows.
+Exactly one next task is the **Retained Riffelhorn imagery-terrain registration and epoch-consistency assessment**;
+[scope/exit](research/tryfan-illumination-normalization.md#27-exactly-one-next-bounded-task). It has not begun. No production storage, correction, cloud build, classifier or broad ingestion
 has occurred. Swiss pixels stay parked.
 Historical analytical filter/calibration
 suggestions are separate from closed visual-terrain research. No Weather/Traverse redesign follows.

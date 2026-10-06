@@ -59,8 +59,10 @@ appearance eligibility. No full hierarchy is implemented or scientifically justi
 The [illumination/shadow assessment](illumination-identifiability.md) now completes that recommendation
 (**B — PARTIAL IDENTIFIABILITY**): conditional Riffelhorn geometry does not identify exact exposure,
 shadow cause or physical radiometry. A constrained already-processed Sentinel residual test is justified.
-Exactly one next task: **Retained Tryfan post-L2A residual terrain-illumination normalization experiment**;
-[predeclared scope/exit](illumination-identifiability.md#23-predeclared-evaluation-criteria). It has not begun.
+The [frozen residual trial](tryfan-illumination-normalization.md) now completes that recommendation
+(**D — INCONCLUSIVE**): SE SCL5 has 12<20 eligible cells, so fitting/correction did not run.
+Exactly one next task: **Retained Riffelhorn imagery-terrain registration and epoch-consistency assessment**;
+[scope/exit](tryfan-illumination-normalization.md#27-exactly-one-next-bounded-task). It has not begun.
 Open/parked appearance work remains independent; no correction or acquisition follows automatically.
 
 Production, Weather and Traverse remain unchanged. The map below retains chronological
@@ -507,3 +509,12 @@ The [assessment](illumination-identifiability.md), [diagnostics](illumination-id
 Readiness **B — PARTIALLY** supports one qualified residual empirical test on retained Tryfan July 2026 L2A, which may already include terrain/BRDF processing. The [frozen criteria](../../scripts/atlas/illumination-assessment/future-evaluation.json) preserve an unchanged control, held-out support, explicit unknowns and negative/inconclusive exits. No albedo/shadow-recovery claim. All 42 status columns remain unchanged; separate open/partial/advanced appearance science remains visible.
 
 Next, separately authorized only: **Retained Tryfan post-L2A residual terrain-illumination normalization experiment**. It has not begun; no production build, cloud, broad ingestion or Swiss pixel provisioning follows.
+
+
+## 2026-10-07 — retained Tryfan residual normalization stopping result
+
+The [frozen trial report](tryfan-illumination-normalization.md), [baseline](tryfan-illumination-normalization-baseline.json), [outcome](tryfan-illumination-normalization-results.json) and [validation](tryfan-illumination-normalization-validation.json) complete the preceding recommendation with **D — INCONCLUSIVE**. RetainedJuly L2A native RGB/SCL, documented mean Sun and Welsh 1 m DTM were verified; fixed core/folds were preserved. SE SCL5 has 12 eligible 10 m analysis cells, below 20. No empirical C fit, corrected image, shadow lifting or normalization-benefit claim; no input substitution or relaxed criterion.
+
+The 42-thread statuses are preserved. A7 has a stopping outcome, while correction benefit and all stronger A6/A8-A11/A14/A15 science remain unresolved. Swiss pixels stay parked. The earlier dated next-step entry is historical; current sequencing is at the top and in the canonical register.
+
+Exactly one next, separately authorized: **Retained Riffelhorn imagery-terrain registration and epoch-consistency assessment**. Retained A15 registration/epoch evidence and defensible-test limits only; no warping, multiview, correction or new data. It has not begun.

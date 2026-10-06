@@ -1,0 +1,19 @@
+{
+  "revision": "tryfan-residual-normalization-stopped/v1",
+  "decision": "D - INCONCLUSIVE (predeclared insufficient-evidence stop)",
+  "baselineSha256": "f580e17274341ca599e35b4befff6d47158694ceef1705f2f71e71bdc84c32a2",
+  "gateFailures": [
+    "SCL5 SE heldout 12<20"
+  ],
+  "fittedModels": 0,
+  "correctedCells": 0,
+  "correctedRepresentationPublished": false,
+  "sensitivity": "NOT RUN; nominal design failed before fitting",
+  "heldoutNormalizationBenefit": "NOT EVALUABLE",
+  "informationPreservationAfterCorrection": "NOT EVALUABLE",
+  "spectralDamageAfterCorrection": "NOT EVALUABLE",
+  "originalInputsUnmodified": true,
+  "protocolSha256": "0e1b884bd64c94effffeb1cb024f01c6f385d87eda73f20fa134f0a2add5ca28",
+  "implementationPlanSha256": "39d2df989e622c42b11b02d9b4a4e7b82ab2b6a2bb68af778d8901cfa7ad7f25",
+  "methodSha256": "b36907e2e73e9ce61ed8dc6f1de707c1f1e17dbcfa891fc248aa113a69f5f786"
+}

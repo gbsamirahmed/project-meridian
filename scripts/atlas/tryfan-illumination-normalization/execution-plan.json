@@ -1,0 +1,23 @@
+{
+  "revision": "tryfan-residual-normalization-implementation/v1",
+  "frozenProtocolSha256": "0e1b884bd64c94effffeb1cb024f01c6f385d87eda73f20fa134f0a2add5ca28",
+  "beforeBaseline": true,
+  "grid": "10m BNG aligned to frozen 3km study, central100x100 core; continuous decoded RGB bilinear once, SCL nearest; single GDAL thread",
+  "terrain": "mean each10x10 native1m block; central-difference normals on full300x300 analysis grid; true-north Sun transformed to BNG at core centre",
+  "ray": "native1m nearest samples at core cell centre, distances2..1000m inclusive step1m; full finite support required, any sample above Sun ray excludes cell; non-terrain and beyond1km visibility unknown",
+  "folds": [
+    "NW",
+    "NE",
+    "SW",
+    "SE"
+  ],
+  "primaryBrightness": "RGB weighted sum0.2126R+0.7152G+0.0722B; absolute Pearson correlation versus mu and standard deviation as within-stratum spread; report each band too",
+  "minimumGate": "nominal eligibility first, require both native SCL4/5 overall>=100, every heldout quadrant>=20 and each complementary training muP95-P05>=0.2; any failure stops before fitting without resizing",
+  "sensitivity": "five fixed Sun cases; recompute geometry/masks, apply same gates and folds, no tuned angle",
+  "texture": "adjacent eligible same-SCL pixels within same heldout fold, absolute difference divided by pair mean, p05/median/p95; excluded/fold boundary edges omitted",
+  "spectral": "positive RGB R/G and B/G ratio p05/median/p95 and fractional changes; no spectral classification",
+  "visual": "fullcore and four fixed folds, before/after same010 fixed RGB transfer (rho-0.02)/0.28 clipped for display only, gamma1; numeric data never clipped",
+  "materialization": "heldout predictions only, no full-data refit or extra method; transient corrected numeric arrays outside Git",
+  "failure": "protocol minimum failure stops INCONCLUSIVE, distinct from failed valid normalization; invalid individual fits no-change per protocol",
+  "noThresholdAddition": "texture/colour sanity reported and inspected; no invented numerical acceptance threshold replaces frozen qualitative guardrails"
+}

@@ -1,0 +1,414 @@
+{
+  "experiment": "tryfan-post-L2A-residual/v1",
+  "startingCheckpoint": "96957570b585781995feaec52b1598784b4db3d9",
+  "decision": "D - INCONCLUSIVE (predeclared insufficient-evidence stop)",
+  "checks": [
+    {
+      "check": "checkpoint is ancestor",
+      "passed": true
+    },
+    {
+      "check": "main origin/main",
+      "passed": true
+    },
+    {
+      "check": "upstream divergence0/0 before commit",
+      "passed": true
+    },
+    {
+      "check": "113 protected production hashes",
+      "passed": true
+    },
+    {
+      "check": "seven frozen semantic contract code/fixture hashes",
+      "passed": true
+    },
+    {
+      "check": "production terrain contracts metadata unchanged",
+      "passed": true
+    },
+    {
+      "check": "all historical scripts/research and43 Atlas/EarthLab reports",
+      "passed": true
+    },
+    {
+      "check": "all42 canonical status columns unchanged",
+      "passed": true
+    },
+    {
+      "check": "historical audit gate retained",
+      "passed": true
+    },
+    {
+      "check": "append-only development log",
+      "passed": true
+    },
+    {
+      "check": "exact frozen criteria unchanged",
+      "passed": true
+    },
+    {
+      "check": "pre-baseline execution plan stable",
+      "passed": true
+    },
+    {
+      "check": "27 report sections",
+      "passed": true
+    },
+    {
+      "check": "explicit D stopped result and next task",
+      "passed": true
+    },
+    {
+      "check": "no mojibake",
+      "passed": true
+    },
+    {
+      "check": "deterministic fresh-process experiment stopping diagnostics",
+      "passed": true
+    },
+    {
+      "check": "byte-identical JSON and PNG rerun",
+      "passed": true
+    },
+    {
+      "check": "exact failed prerequisite",
+      "passed": true
+    },
+    {
+      "check": "all8 fold counts preserved",
+      "passed": true
+    },
+    {
+      "check": "no alternative observation or altered core",
+      "passed": true
+    },
+    {
+      "check": "zero correction/models no publication",
+      "passed": true
+    },
+    {
+      "check": "sensitivity and comparison honestly unavailable",
+      "passed": true
+    },
+    {
+      "check": "baseline persisted and referenced",
+      "passed": true
+    },
+    {
+      "check": "mask and numeric counts",
+      "passed": true
+    },
+    {
+      "check": "code plan shared geometry exact references",
+      "passed": true
+    },
+    {
+      "check": "three retained metadata revisions unchanged",
+      "passed": true
+    },
+    {
+      "check": "retained source blue",
+      "passed": true
+    },
+    {
+      "check": "retained source green",
+      "passed": true
+    },
+    {
+      "check": "retained source red",
+      "passed": true
+    },
+    {
+      "check": "retained source scl",
+      "passed": true
+    },
+    {
+      "check": "retained native terrain exact revision",
+      "passed": true
+    },
+    {
+      "check": "native and analysis grain support distinct",
+      "passed": true
+    },
+    {
+      "check": "reconstructed times not pixel bounds",
+      "passed": true
+    },
+    {
+      "check": "baseline texture and ratios not corrections",
+      "passed": true
+    },
+    {
+      "check": "16 focused safeguards",
+      "passed": true
+    },
+    {
+      "check": "16 focused tests counted",
+      "passed": true
+    },
+    {
+      "check": "64 frozen domain tests",
+      "passed": true
+    },
+    {
+      "check": "64 tests counted",
+      "passed": true
+    },
+    {
+      "check": "frozen isolated TypeScript declarations",
+      "passed": true
+    },
+    {
+      "check": "current canonical recommendation consistent",
+      "passed": true
+    },
+    {
+      "check": "current navigation docs/architecture.md",
+      "passed": true
+    },
+    {
+      "check": "current navigation docs/product-direction.md",
+      "passed": true
+    },
+    {
+      "check": "current navigation docs/research/atlas-research-map.md",
+      "passed": true
+    },
+    {
+      "check": "only isolated experiment and navigation changed",
+      "passed": true
+    },
+    {
+      "check": "bounded artifacts no transient raster/index/store",
+      "passed": true
+    },
+    {
+      "check": "all local document links and anchors resolve",
+      "passed": true
+    },
+    {
+      "check": "all research JSON parses",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 9695757",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor b12dc06",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 944326b",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 691450f",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 3c143eb",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 1c2d10e",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 6e17e79",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 43afe78",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 5f14511",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor e65c2d6",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 052374e",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor c4da565",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 75ea9d8",
+      "passed": true
+    },
+    {
+      "check": "unstaged whitespace",
+      "passed": true
+    },
+    {
+      "check": "staged whitespace",
+      "passed": true
+    },
+    {
+      "check": "Markdown no trailing whitespace",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "commands": [
+    {
+      "check": "deterministic fresh-process experiment stopping diagnostics",
+      "command": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/tryfan-illumination-normalization/experiment.py"
+      ],
+      "exitCode": 0,
+      "localElapsedSeconds": 2.0738776000216603
+    },
+    {
+      "check": "16 focused safeguards",
+      "command": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/tryfan-illumination-normalization/test_experiment.py"
+      ],
+      "exitCode": 0,
+      "localElapsedSeconds": 1.6864114000927657
+    },
+    {
+      "check": "64 frozen domain tests",
+      "command": [
+        "node",
+        "--test",
+        "scripts/atlas/test_semantic_evidence_contract.mjs",
+        "scripts/atlas/test_terrain_hierarchy_contract.mjs",
+        "scripts/atlas/test_terrain_runtime.mjs",
+        "scripts/atlas/test_tryfan_terrain.mjs"
+      ],
+      "exitCode": 0,
+      "localElapsedSeconds": 1.4254674001131207
+    },
+    {
+      "check": "frozen isolated TypeScript declarations",
+      "command": [
+        "npx.cmd",
+        "tsc",
+        "-p",
+        "scripts/atlas/semantic-evidence/tsconfig.json"
+      ],
+      "exitCode": 0,
+      "localElapsedSeconds": 1.4995627000462264
+    },
+    {
+      "check": "unstaged whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0,
+      "localElapsedSeconds": 0.07303710002452135
+    },
+    {
+      "check": "staged whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exitCode": 0,
+      "localElapsedSeconds": 0.04747739993035793
+    }
+  ],
+  "localElapsedTimesNotPerformancePromises": true,
+  "artifactSha256": {
+    "docs/research/tryfan-illumination-normalization-baseline.json": "f580e17274341ca599e35b4befff6d47158694ceef1705f2f71e71bdc84c32a2",
+    "docs/research/tryfan-illumination-normalization-results.json": "802dcf7c8e8b5965cb993601693e0d0d210c0c1e0d4b7fc8ec92e875b0e0440b",
+    "docs/research/tryfan-illumination-normalization-baseline.png": "e75968a892b7e0cad09482fff93ee9812c2b726383c37da70d293c942ad00791",
+    "docs/research/tryfan-illumination-normalization-association.png": "c4868900263a447990950cd5869c9d9b55ff2ad31014e393b6ebe46443f29b39"
+  },
+  "codeSha256": {
+    "scripts/atlas/tryfan-illumination-normalization/README.md": "01de0f7c0465c09eb911571855f3e4386b508045141d173d5d7a07ea6a3c8223",
+    "scripts/atlas/tryfan-illumination-normalization/execution-plan.json": "39d2df989e622c42b11b02d9b4a4e7b82ab2b6a2bb68af778d8901cfa7ad7f25",
+    "scripts/atlas/tryfan-illumination-normalization/experiment.py": "b36907e2e73e9ce61ed8dc6f1de707c1f1e17dbcfa891fc248aa113a69f5f786",
+    "scripts/atlas/tryfan-illumination-normalization/test_experiment.py": "02c7699e7346f1cc594d14600ff0d2959cc552fb2d21af4257960baea2543b3f",
+    "scripts/atlas/tryfan-illumination-normalization/validate.py": "a67efbbef975350b3e4b3ec4452878a534d51c4cd8d85359a4ddd109c2af1892",
+    "scripts/atlas/tryfan-illumination-normalization/visuals.py": "208d5287781a56c04eb219abc5a6c6627b419833f12187cf8f2a6ab28cf84738"
+  },
+  "reportSha256": "711b96c43ca5de7732313cbc33705ec72ec347d05fd94d6757c8897afe0828d5",
+  "frozenProtocolSha256": "0e1b884bd64c94effffeb1cb024f01c6f385d87eda73f20fa134f0a2add5ca28",
+  "sourceVerification": [
+    {
+      "role": "blue",
+      "path": "earth-lab/tryfan-005b/sentinel2-surface-evidence/source-native/B02_10m-native-window.tif",
+      "sha256": "dba087002d85ee85c1772f570acefd60d2eaabe33fd8dba63e17d38505a34ee9",
+      "bytes": 233812
+    },
+    {
+      "role": "green",
+      "path": "earth-lab/tryfan-005b/sentinel2-surface-evidence/source-native/B03_10m-native-window.tif",
+      "sha256": "79684a3055429b256d351ee22563b3770709063b71cb2cadf1bc874c0898bb79",
+      "bytes": 237936
+    },
+    {
+      "role": "red",
+      "path": "earth-lab/tryfan-005b/sentinel2-surface-evidence/source-native/B04_10m-native-window.tif",
+      "sha256": "8fbfa498771db35f60698b7dcfc2e0c89b3d0fd75d55a41332051ce72b596f86",
+      "bytes": 239636
+    },
+    {
+      "role": "scl",
+      "path": "earth-lab/tryfan-005b/sentinel2-surface-evidence/source-native/SCL_20m-native-window.tif",
+      "sha256": "050f4f3a9671d134e3a8e613ae93f252018ba963114172a4acec9d8280d9ad9f",
+      "bytes": 3160
+    }
+  ],
+  "terrainSha256": "49c131d7de62e0df35f8e02c2f8db3161bfd37f24fea56060fcbb9e6d109b326",
+  "protectedProductionHashChecks": 113,
+  "productionMismatches": [],
+  "frozenSemanticHashChecks": 7,
+  "frozenMismatches": [],
+  "unchangedScripts": 316,
+  "unchangedHistoricalAtlasEarthLabReports": 43,
+  "unchangedPriorResearchAssets": 28,
+  "preservationMismatches": [],
+  "canonicalThreadCount": 42,
+  "canonicalStatusColumnsUnchanged": true,
+  "localReferencesChecked": 378,
+  "anchorsChecked": 58,
+  "missingReferences": [],
+  "changedPaths": [
+    "docs/architecture.md",
+    "docs/development-log.md",
+    "docs/product-direction.md",
+    "docs/research/atlas-research-map.md",
+    "docs/research/atlas-research-state.md",
+    "docs/research/tryfan-illumination-normalization-association.png",
+    "docs/research/tryfan-illumination-normalization-baseline.json",
+    "docs/research/tryfan-illumination-normalization-baseline.png",
+    "docs/research/tryfan-illumination-normalization-results.json",
+    "docs/research/tryfan-illumination-normalization-validation.json",
+    "docs/research/tryfan-illumination-normalization.md",
+    "scripts/atlas/tryfan-illumination-normalization/README.md",
+    "scripts/atlas/tryfan-illumination-normalization/execution-plan.json",
+    "scripts/atlas/tryfan-illumination-normalization/experiment.py",
+    "scripts/atlas/tryfan-illumination-normalization/test_experiment.py",
+    "scripts/atlas/tryfan-illumination-normalization/validate.py",
+    "scripts/atlas/tryfan-illumination-normalization/visuals.py"
+  ],
+  "nextTask": "Retained Riffelhorn imagery-terrain registration and epoch-consistency assessment; not started",
+  "confirmations": {
+    "noAcquisition": true,
+    "noPayloadDuplication": true,
+    "noFrozenContractChanges": true,
+    "noProductionChanges": true,
+    "weatherTraverseUnchanged": true,
+    "multiscaleClosed": true,
+    "multiviewParked": true,
+    "noCorrectionExecuted": true,
+    "noClassifier": true,
+    "noPrivateInspection": true
+  }
+}

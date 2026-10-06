@@ -624,7 +624,10 @@ physical/corrected appearance requests remain unsupported. The
 (**B — PARTIAL IDENTIFIABILITY**): documented, reconstructed and conditional illumination use
 existing provenance/input-use machinery; no universal illumination contract is needed. Unknown
 pixel contribution/time and source transfer prevent a precise Riffelhorn physical correction.
-Exactly one next task is the **Retained Tryfan post-L2A residual terrain-illumination normalization experiment**,
-[preregistered](research/illumination-identifiability.md#23-predeclared-evaluation-criteria), not begun.
+The [frozen residual trial](research/tryfan-illumination-normalization.md) completed at its
+minimum-evidence stop (**D — INCONCLUSIVE**, SE SCL5 has 12<20 cells). No corrected
+appearance product is justified or published; source identity and unknown outcomes remain
+separate. Exactly one next task is the **Retained Riffelhorn imagery-terrain registration and epoch-consistency assessment**,
+[scope/exit](research/tryfan-illumination-normalization.md#27-exactly-one-next-bounded-task), not begun.
 Open/parked appearance science remains non-blocking, not solved; Swiss pixels remain parked.
 Frozen contracts/current production remain unchanged.
