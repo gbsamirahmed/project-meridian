@@ -553,3 +553,21 @@ be renamed.
 
 The concrete, non-destructive Phase 4 inventory is recorded in
 [Phase 4 data migration inventory](phase-4-migration-inventory.md).
+
+## Atlas semantic evidence foundation
+
+The [Atlas Semantic Evidence Contract v1](atlas/semantic-evidence-contract.md) is
+frozen after the physical-surface domain review and the Tryfan/Riffelhorn and Exe
+empirical stress tests. Physical-surface semantics foundation is established/closed.
+The unused declaration/validation boundary is `scripts/atlas/semantic-evidence`; no
+application consumer, semantic registry/runtime, layer, inference or hydrology is
+introduced. Source-native claims, optional qualified/lossy mapping, claim-local
+space/time/reference, feature/event association, evidence mode/lineage, scoped
+quality, unknown reason and shared rights remain independent of resolved world truth.
+
+TerrainHierarchy selects geometry; Appearance retains observations/processed colour.
+Semantic evidence may reference either as an input without modifying those domains.
+Future interpretation and ingestion are separate work; no automatic source winner,
+cover ontology, feature database or camera/render policy is frozen by this contract.
+Elevation/multiscale remain closed; externally provisioned multiview stays parked.
+Weather/Traverse and production lifecycle remain unchanged.

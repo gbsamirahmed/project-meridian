@@ -341,3 +341,22 @@ LIMITED. Mountain plus water evidence is sufficient for the separately authorize
 minimal semantic evidence contract; no further empirical blocker/benchmark. That
 contract is not started here. Production/Weather/Traverse unchanged; multiscale
 closed and multiview parked; no hydrology, semantic runtime or classifier.
+
+## 2026-10-06 — minimal semantic evidence contract and foundation closure
+
+[ATLAS SEMANTIC EVIDENCE CONTRACT v1](../atlas/semantic-evidence-contract.md) is
+**FROZEN** (`atlas-semantic-evidence/v1`). Domain review `75ea9d8`, mountain evidence
+c4da565 and water evidence `052374e` establish a qualified-claim foundation, not one
+exclusive cover class. Native semantics, directional mapping/loss, feature/state/
+event/reference separation, claim-local space/time, mixed evidence origin, scoped
+quality and honest gaps are representable. Tiny retained fixtures plus asset-free
+validation prove raster/vector/time-series/scenario/layered/conflicting declaration
+viability; no truth resolver or runtime consumption.
+
+**Foundational physical-surface semantics: ESTABLISHED / CLOSED**, no foundational
+blocker. Later source coverage/ingestion, property-specific interpretation and
+LIMITED inference recoverability remain separate research/implementation decisions.
+Recommended separately authorized next step: one retained WorldCover/Tryfan lazy
+native-code ingestion proof against v1, without new data, map layers or inference.
+Not started here. No additional benchmark. Production/Weather/Traverse unchanged;
+elevation/multiscale stay closed and multiview remains parked.

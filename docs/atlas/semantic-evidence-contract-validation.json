@@ -1,0 +1,69 @@
+{
+  "contract": "atlas-semantic-evidence/v1",
+  "startingCheckpoint": "052374e07d613a549f5a88640b42932f97a7f896",
+  "evidenceCheckpoints": [
+    "75ea9d8",
+    "c4da565",
+    "052374e"
+  ],
+  "fixtureCounts": {
+    "resources": 20,
+    "definitions": 26,
+    "mappings": 4,
+    "collections": 11,
+    "claims": 21
+  },
+  "fixtureJsonSha256": "a2ce2c9c28ec0e57c798992482428f7b11a0f745baf0ba5fb0b10994d8089e6d",
+  "code": [
+    {
+      "href": "scripts/atlas/semantic-evidence/contract.ts",
+      "sha256": "3821ca3e9ae6b6b1aa620ad6b367c2dbac23acfbb96713522b64ff8d8a5d99ce"
+    },
+    {
+      "href": "scripts/atlas/semantic-evidence/validate.ts",
+      "sha256": "2ab33a13b0287b9412889557e8af0f545c94a6583828abf5ee9e6fd79f81ebee"
+    },
+    {
+      "href": "scripts/atlas/semantic-evidence/fixtures.ts",
+      "sha256": "55bb068c041f1638857aa8cae6b2a85ab376f9e6e52ebbcc8be016c723f6afb9"
+    },
+    {
+      "href": "scripts/atlas/semantic-evidence/empirical-extract.json",
+      "sha256": "274df2a9eda39c49e92ef79bfb7f501df6d0a0727f1deff15a621cf655d5699c"
+    },
+    {
+      "href": "scripts/atlas/semantic-evidence/tsconfig.json",
+      "sha256": "a0c13be638c4dff7d25268bc536353b97c7850ab578f26a8b8f35b7b27d435d6"
+    },
+    {
+      "href": "scripts/atlas/test_semantic_evidence_contract.mjs",
+      "sha256": "d553c0ad2d27209df433547a09d0446e448740f3533a5c6c4e8d63a78c09823d"
+    },
+    {
+      "href": "scripts/atlas/validate_semantic_evidence_contract.mjs",
+      "sha256": "6cbe473d3a04197ad649d5badb3b09237bd3bda7fb165889d9c804315795ecc4"
+    }
+  ],
+  "retainedEvidence": [
+    {
+      "href": "docs/atlas/semantic-comparison-results.json",
+      "sha256": "67ce5180e0f66c8ad6ca95fab55a97f9c743cbeb03950b65be80fa47cf9ddb53"
+    },
+    {
+      "href": "docs/atlas/water-check-results.json",
+      "sha256": "d490f30bc64b89c7bb6034dee0515496011d42a88a6a4c5d06b49d6631298538"
+    },
+    {
+      "href": "docs/atlas/semantic-comparison-sources.json",
+      "sha256": "e13c8bd1f4e9c30d739955a398512cc6aa96aed1586de0972c997cc95a49e837"
+    },
+    {
+      "href": "docs/atlas/water-check-sources.json",
+      "sha256": "d6e574a175400edc0c8c15bcc8bcfa5a9064c9f04084d6f8702e825e7dffecb9"
+    }
+  ],
+  "protectedProductionHashesChecked": 113,
+  "productionSourceDiffEmpty": true,
+  "errors": [],
+  "scope": "Owned declaration integrity only; no source-truth, rights-clearance or ingestion validation."
+}

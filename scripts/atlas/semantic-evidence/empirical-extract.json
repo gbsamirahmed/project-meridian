@@ -1,0 +1,169 @@
+{
+  "receipts": [
+    {
+      "href": "docs/atlas/semantic-comparison-results.json",
+      "sha256": "67ce5180e0f66c8ad6ca95fab55a97f9c743cbeb03950b65be80fa47cf9ddb53"
+    },
+    {
+      "href": "docs/atlas/water-check-results.json",
+      "sha256": "d490f30bc64b89c7bb6034dee0515496011d42a88a6a4c5d06b49d6631298538"
+    },
+    {
+      "href": "docs/atlas/semantic-comparison-sources.json",
+      "sha256": "e13c8bd1f4e9c30d739955a398512cc6aa96aed1586de0972c997cc95a49e837"
+    },
+    {
+      "href": "docs/atlas/water-check-sources.json",
+      "sha256": "d6e574a175400edc0c8c15bcc8bcfa5a9064c9f04084d6f8702e825e7dffecb9"
+    }
+  ],
+  "nrwMosaic": {
+    "area_ha": 9.01000023,
+    "id": "nrw_phase1_vegetation_voronoi.466226",
+    "label": "Mosaic of:50% B.1.1,50% E.2.1",
+    "mosaicpoly": "M",
+    "original_unique_id": "sh66se_293233",
+    "phase1_code": "mosaic",
+    "survey": "Upland_UplandSurvey",
+    "voronoi_uid": "sh66se_293233"
+  },
+  "nrwHeathDefinition": {
+    "jnccCode": "D1.1",
+    "jnccName": "Dry dwarf shrub heath - acid",
+    "welshName": "Dry acid heath"
+  },
+  "nrwD5Definition": {
+    "jnccCode": "D5",
+    "jnccName": "Dry heath/acid grassland",
+    "welshName": "Wet heath/acid grassland mosaic"
+  },
+  "nrwGrassDefinition": {
+    "jnccCode": "B1.1",
+    "jnccName": "Acid grassland - unimproved",
+    "welshName": "Unimproved acid grassland"
+  },
+  "nrwFlushDefinition": {
+    "jnccCode": "E2.1",
+    "jnccName": "Flush and spring - acid/neutral flush",
+    "welshName": "Acid/neutral flush"
+  },
+  "glacier": {
+    "area_km2": 41.226955,
+    "aspect_deg": 318,
+    "gid": 7587.0,
+    "i_code": "07",
+    "id": "683",
+    "layer": "SGI_2016_glaciers",
+    "length_km": 13.369,
+    "masl_max": 4599,
+    "masl_mean": 3342,
+    "masl_med": 3364,
+    "masl_min": 2190,
+    "name": "Gornergletscher",
+    "pk_glacier": "7fdce98f-4ec8-11e8-9185-985fd331b2ee",
+    "rl_0": "B",
+    "rl_1": 5,
+    "rl_2": 6,
+    "rl_3": null,
+    "sgi-id": "B56-07",
+    "slope_deg": 19.41,
+    "year_acq": 2015,
+    "year_rel": 2020
+  },
+  "debris": {
+    "area_km2": 0.782755,
+    "gid": 3739.0,
+    "id": "3738",
+    "layer": "SGI_2016_debriscover",
+    "name": "Gornergletscher",
+    "sgi-id": "B56-07",
+    "year_acq": 2016,
+    "year_rel": 2020
+  },
+  "geocoverOrdinary": {
+    "featureIds": [
+      "178895",
+      "179296"
+    ],
+    "groupOverlapM2": 0,
+    "nativeAreaM2": {
+      "Undifferenzierte lithologische Einheit: Serpentinit": 1928.734,
+      "Zermatt-Saas-Decke: Ophiolith": 1671.266
+    },
+    "uncoveredAreaM2": 0.0,
+    "unionAreaM2": 3600.0
+  },
+  "wfd": {
+    "classification_year": 2019,
+    "export_date": "2024-02-02T00:00:00Z",
+    "featureId": "Simplified_WFD_Transitional_and_Coastal_Water_Bodies_Cycle_3_Classification_2019.73",
+    "water_body_id": "GB510804505600",
+    "water_body_name": "EXE"
+  },
+  "wetland": {
+    "addhabs": "",
+    "featureId": "Priority_Habitat_Inventory_England.16774",
+    "habcodes": "CFPGM",
+    "mainhabs": "Coastal and floodplain grazing marsh",
+    "primsource": "Feedback from Natural England adviser or specialist 2024 (CFPGM)",
+    "uid": "PHID29564851_008718684",
+    "version": "Sept_26"
+  },
+  "event": {
+    "coastal_f": "True",
+    "data_prov": "Environment Agency",
+    "data_qual": null,
+    "data_src": "Survey",
+    "end_date": "2014-02-05T00:00:00Z",
+    "featureId": "Recorded_Flood_Outlines.25870",
+    "flood_caus": "overtopping of defences",
+    "flood_src": "sea",
+    "fluvial_f": "False",
+    "fm_status": "considered and rejected",
+    "hfm_status": "considered and accepted",
+    "interpretedTime": {
+      "nativeEnd": "2014-02-05T00:00:00Z",
+      "nativeStart": "2014-02-04T00:00:00Z",
+      "status": "published event interval; timestamp precision not established"
+    },
+    "name": "Topsham Tidal Flood Feb 2014",
+    "rec_grp_id": 4124,
+    "rec_out_id": 31383,
+    "start_date": "2014-02-04T00:00:00Z",
+    "tidal_f": "True",
+    "withinBenchmarkAreaM2": 42892.376
+  },
+  "wetlandProbe": [
+    295700,
+    87050,
+    295900,
+    87250
+  ],
+  "geocoverNative": {
+    "erl_link": "https://data.geo.admin.ch/ch.swisstopo.geologie-geologischer_atlas/erlaeuterungen/GA25-ERL-29.pdf",
+    "ber_link": null,
+    "gmu_de": "Undifferenzierte lithologische Einheit: Serpentinit",
+    "gmu_fr": "Undifferenzierte lithologische Einheit: Serpentinit",
+    "tecto_de": "Oberpenninikum",
+    "tecto_fr": "Pennique supérieur",
+    "litho_combined_de": "Serpentinit",
+    "litho_combined_fr": "serpentinite",
+    "chrono_combined_de": "Proterozoikum | Känozoikum",
+    "chrono_combined_fr": "Protérozoïque | Cénozoïque",
+    "correlation_de": null,
+    "correlation_fr": null,
+    "strati_link": null,
+    "litstrat_formation_bank_de": null,
+    "litstrat_formation_bank_fr": null,
+    "label": "Undifferenzierte lithologische Einheit: Serpentinit"
+  },
+  "combinedWetland": {
+    "addhabs": "",
+    "featureId": "Priority_Habitat_Inventory_England.700528",
+    "habcodes": "RBEDS, SALTM",
+    "mainhabs": "Reedbeds,Coastal saltmarsh",
+    "primsource": "Environment Agency Saltmarsh Extent and Zonation dataset 2019 (RBEDS), Environment Agency Saltmarsh Extent and Zonation dataset 2026 (SALTM)",
+    "uid": "PHID29754549_008760925",
+    "version": "Sept_26"
+  }
+}

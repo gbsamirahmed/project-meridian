@@ -3855,3 +3855,32 @@ raw evidence external. Enough evidence now exists for a separate minimal semanti
 evidence contract; no implementation or freeze performed. Production, analytical
 terrain, IGOR, imagery, Weather, Traverse and lifecycle unchanged. Elevation/multiscale
 closed; multiview parked. No new layers, hydrology, classifier or semantic runtime.
+
+## 2026-10-06 — Atlas semantic evidence contract v1
+
+Froze the [minimal evidence contract](atlas/semantic-evidence-contract.md), starting
+from clean main `052374e` and fetched origin divergence 0/0. Claims retain native
+property/value/nomenclature, optional revisioned qualified mapping/loss, source-scoped
+feature/event references, spatial/temporal support and reference conditions. Mixed
+evidence lineage, quality population and typed fraction/probability/occurrence
+remain distinct; non-detection/missing inventory do not establish physical absence.
+Shared collection templates support categorical raster/vector/history products
+without per-pixel metadata. Reused existing identity/assets/CRS/rights; composed
+small spatial and versioned-processing extensions without editing frozen terrain
+metadata. No production imports or consumer.
+
+Eleven small collections exercise actual WorldCover/NRW/GeoCover/GLAMOS/WFD/JRC/
+PHI/Flood Zone/RFO evidence and an unperformed-inference gap. Native extracts are
+pinned to retained receipts/diagnostics; PHI compound components preserve 2019/2026
+contributor vintages. Tests include synthetic conflicting/derived declarations,
+not a classifier or new empirical claim. Validation: 26 offline tests, isolated
+strict TypeScript, focused lint, documentation references and deterministic checks;
+all 113 protected production source hashes unchanged. No app build/tests needed
+(shared runtime unchanged). Final diff restricted to research contract/tooling/docs.
+
+Physical-surface foundation is established/closed with no remaining foundational
+blocker. Next recommendation only: separately authorized retained WorldCover native
+ingestion proof; no new ontology, semantic runtime/layer, inference, hydrology or
+benchmark begun. AWS visual/independent analytical z15, exaggeration 1.45, IGOR,
+MapTiler satellite/opacity/suppression and lifecycle unchanged. Weather/Traverse
+unchanged; elevation/multiscale closed; externally provisioned multiview parked.
