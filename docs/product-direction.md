@@ -26,8 +26,13 @@ justified beside existing v1. The [world-model architecture synthesis](research/
 is now complete (decision C), with domain-specific evidence and question-local answers.
 The [retained Tryfan qualified-query/revision proof](research/tryfan-qualified-query-proof.md)
 now completes that recommendation (**C — SUCCESS**), without production or contract changes.
-The next recommendation is a separately authorized bounded storage/processing/serving
-requirements assessment informed by this proof, not broad ingestion or a persistent-world build.
+The [storage/processing/serving requirements assessment](research/atlas-storage-processing-serving-requirements.md)
+now completes that recommendation (**decision C**). Five logical storage responsibilities,
+scoped lookup/freshness and coherent publication/recovery are established requirements;
+technologies and production capacity remain provisional/unmeasured. The next recommendation
+is separately authorized: implement and evaluate one local persistent retained Tryfan
+regional world-model proof, with reversible design and bounded restart/update measurements.
+No production storage, cloud build or broad ingestion has begun.
 Historical analytical filter/calibration
 suggestions are separate from closed visual-terrain research. No Weather/Traverse redesign follows.
 

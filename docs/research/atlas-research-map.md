@@ -5,7 +5,7 @@ Lab 012G evidence checkpoint `abf95bcfb50c681244a146626565a471ba791418`.
 This index records knowledge and research status, not a roadmap, new Lab or
 production architecture. It is the starting point for humans and fresh tooling.
 
-## Current programme state — foundations, synthesis and retained vertical proof complete
+## Current programme state — foundations, vertical proof and requirements assessment complete
 
 The [Atlas research-state audit and thread register](atlas-research-state.md) is the
 current status/sequence companion to this historical research map. It reconstructs
@@ -44,10 +44,13 @@ completes that recommendation with **C — SUCCESS** in isolated research code: 
 selection and v1 claims compose with scoped dependency receipts; only affected summit
 results recompute, southern results remain fresh and history replays. No production/runtime
 or frozen contract changes, broad semantic ingestion or persistent-world build.
-Exactly one next recommendation: **Atlas bounded storage, processing and serving requirements
-assessment informed by the retained Tryfan proof**, separately authorized. The proof's
-[next specification](tryfan-qualified-query-proof.md#20-exactly-one-recommended-next-bounded-task)
-stops at requirements/trade-offs and a bounded later implementation-proof specification.
+The [storage/processing/serving requirements assessment](atlas-storage-processing-serving-requirements.md)
+now completes the proof's recommendation with **decision C**: sufficient requirements for
+one bounded local persistent regional proof; national/global capacity and production
+technologies remain unselected. Exactly one next recommendation: **implement and evaluate
+one local persistent retained Tryfan regional world-model proof**, separately authorized.
+Follow [R1–R12](atlas-storage-processing-serving-requirements.md#27-requirements-for-the-first-persistent-regional-proof)
+for durable references, scoped dependencies, restart/recovery and bounded measurements.
 Open/parked appearance work remains independent; nothing starts automatically.
 
 Production, Weather and Traverse remain unchanged. The map below retains chronological
@@ -423,3 +426,17 @@ No new datasets, semantic ingestion/runtime, permanent store or production chang
 The synthesis's historical next step is complete. Next is the bounded measured
 storage/processing/serving requirements assessment, not begun. All 42 register status
 columns, closed foundations and open/parked appearance questions are preserved.
+
+## 2026-10-06 — storage, processing and serving requirements assessment
+
+[Assessment](atlas-storage-processing-serving-requirements.md): **decision C**, sufficiently understood to design a bounded
+local persistent proof with reversible technology choices. [Read-only measurements](atlas-storage-requirements-measurements.json)
+verify five manifests and 16,632 listed file sizes; terrain objects, imagery working
+fields, shared claims and scoped dependencies have different workload patterns.
+Logical tiers are not services. Coherent publication, recovery, exact references,
+coverage/output/input-use indexing and policy-relative freshness are requirements.
+Production capacity, country/global graph density and query/update rates are unmeasured.
+Next is one local persistent retained Tryfan proof with R1–R12 acceptance evidence;
+not begun. No storage/database/cloud/service build, data acquisition or production
+change occurred. All 42 register statuses and historical reports remain unchanged;
+appearance remains unresolved and Swiss multiview parked.

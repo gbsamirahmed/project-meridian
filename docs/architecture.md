@@ -599,6 +599,11 @@ Traverse dependency boundaries remain unchanged.
 The [retained Tryfan proof](research/tryfan-qualified-query-proof.md) now composes one
 research-only vertical slice (**C — SUCCESS**): domain selection, v1 claims and scoped
 input-use receipts support selective recomputation and historical replay. No production
-consumer or general query/dependency runtime is introduced. Exactly one next recommendation
-is a bounded storage/processing/serving requirements assessment informed by these measured
-results; no persistent-world build begins. Open/parked appearance work is non-blocking, not solved.
+consumer or general query/dependency runtime is introduced. The
+[storage/processing/serving requirements assessment](research/atlas-storage-processing-serving-requirements.md)
+now completes the proof recommendation (**decision C**): logical storage responsibilities,
+shared qualified knowledge, scoped indexes/dependencies, coherent publication/recovery and
+separate serving classes. These are requirements, not selected technologies or deployments.
+Exactly one next recommendation is a local persistent retained Tryfan proof with reversible
+design and operational acceptance measurements; it has not begun. Open/parked appearance
+work is non-blocking, not solved. Frozen contracts/current production remain unchanged.

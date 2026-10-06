@@ -1,0 +1,320 @@
+{
+  "assessment": "atlas-storage-processing-serving-requirements",
+  "date": "2026-10-06",
+  "startingCheckpoint": "1c2d10e522f54e60f83bae2e416008bd1a241eb1",
+  "startingBranch": "main",
+  "upstream": "origin/main",
+  "fetchedStartingDivergence": [
+    0,
+    0
+  ],
+  "decision": "C; bounded local persistent proof can be designed; production stack not selected",
+  "checks": [
+    {
+      "check": "expected starting proof checkpoint ancestor",
+      "passed": true
+    },
+    {
+      "check": "existing main/origin-main upstream",
+      "passed": true
+    },
+    {
+      "check": "precommit divergence 0/0",
+      "passed": true
+    },
+    {
+      "check": "113 protected production hashes unchanged",
+      "passed": true
+    },
+    {
+      "check": "seven frozen semantic code fixture hashes unchanged",
+      "passed": true
+    },
+    {
+      "check": "production metadata contracts and Atlas-EarthLab evidence domains unchanged",
+      "passed": true
+    },
+    {
+      "check": "all existing scripts and historical research assets preserved",
+      "passed": true
+    },
+    {
+      "check": "43 Atlas/EarthLab reports preserved",
+      "passed": true
+    },
+    {
+      "check": "42 canonical status columns unchanged",
+      "passed": true
+    },
+    {
+      "check": "historical audit gate preserved",
+      "passed": true
+    },
+    {
+      "check": "development log append-only",
+      "passed": true
+    },
+    {
+      "check": "30 required sections present",
+      "passed": true
+    },
+    {
+      "check": "decision C not production architecture selected",
+      "passed": true
+    },
+    {
+      "check": "measured estimated hypothetical distinguished",
+      "passed": true
+    },
+    {
+      "check": "appearance and Swiss parked work explicit",
+      "passed": true
+    },
+    {
+      "check": "one next task consistent and not begun",
+      "passed": true
+    },
+    {
+      "check": "12 persistent proof requirements present",
+      "passed": true
+    },
+    {
+      "check": "new Python syntax passes",
+      "passed": true
+    },
+    {
+      "check": "six focused inventory mathematical tests",
+      "passed": true
+    },
+    {
+      "check": "deterministic read-only inventory check 1",
+      "passed": true
+    },
+    {
+      "check": "deterministic read-only inventory check 2",
+      "passed": true
+    },
+    {
+      "check": "two exact deterministic measurements agree",
+      "passed": true
+    },
+    {
+      "check": "64 frozen semantic/hierarchy/runtime/Tryfan tests",
+      "passed": true
+    },
+    {
+      "check": "64 contract domain tests counted",
+      "passed": true
+    },
+    {
+      "check": "only assessment analysis and current navigation changed",
+      "passed": true
+    },
+    {
+      "check": "new outputs lightweight maximum 100KB",
+      "passed": true
+    },
+    {
+      "check": "all added/current local references and anchors resolve",
+      "passed": true
+    },
+    {
+      "check": "external documentation links syntactically valid",
+      "passed": true
+    },
+    {
+      "check": "all research JSON parses",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 1c2d10e",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 6e17e79",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 43afe78",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 5f14511",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor e65c2d6",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 052374e",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor c4da565",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 75ea9d8",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 57688cb",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor ca74a84",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 3d406ae",
+      "passed": true
+    },
+    {
+      "check": "unstaged whitespace",
+      "passed": true
+    },
+    {
+      "check": "staged whitespace",
+      "passed": true
+    },
+    {
+      "check": "changed Markdown no trailing whitespace",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "commands": [
+    {
+      "check": "six focused inventory mathematical tests",
+      "command": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/storage_requirements/test_measure.py"
+      ],
+      "exitCode": 0
+    },
+    {
+      "check": "deterministic read-only inventory check 1",
+      "command": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/storage_requirements/measure.py",
+        "--check"
+      ],
+      "exitCode": 0
+    },
+    {
+      "check": "deterministic read-only inventory check 2",
+      "command": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/storage_requirements/measure.py",
+        "--check"
+      ],
+      "exitCode": 0
+    },
+    {
+      "check": "64 frozen semantic/hierarchy/runtime/Tryfan tests",
+      "command": [
+        "node",
+        "--test",
+        "scripts/atlas/test_semantic_evidence_contract.mjs",
+        "scripts/atlas/test_terrain_hierarchy_contract.mjs",
+        "scripts/atlas/test_terrain_runtime.mjs",
+        "scripts/atlas/test_tryfan_terrain.mjs"
+      ],
+      "exitCode": 0
+    },
+    {
+      "check": "unstaged whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0
+    },
+    {
+      "check": "staged whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "measurementSha256": "bdc0ea15a6c5efaa900dd00ff96955caa9c197a1c3cbd518886180a40e97b0b1",
+  "measurementRechecks": [
+    {
+      "mode": "check",
+      "sha256": "bdc0ea15a6c5efaa900dd00ff96955caa9c197a1c3cbd518886180a40e97b0b1",
+      "products": 5,
+      "payloadFilesStatChecked": 16632
+    },
+    {
+      "mode": "check",
+      "sha256": "bdc0ea15a6c5efaa900dd00ff96955caa9c197a1c3cbd518886180a40e97b0b1",
+      "products": 5,
+      "payloadFilesStatChecked": 16632
+    }
+  ],
+  "protectedProductionHashChecks": 113,
+  "productionMismatches": [],
+  "frozenSemanticHashChecks": 7,
+  "frozenMismatches": [],
+  "unchangedScripts": 287,
+  "unchangedAtlasEarthLabReports": 43,
+  "unchangedPriorResearchAssets": 11,
+  "preservationMismatches": [],
+  "canonicalStatusColumnsUnchanged": true,
+  "canonicalThreadCount": 42,
+  "localReferencesChecked": 306,
+  "anchorsChecked": 49,
+  "missingReferences": [],
+  "externalDocumentationLinks": [
+    "https://docs.ogc.org/cs/25-004/25-004.html",
+    "https://www.w3.org/TR/prov-dm/"
+  ],
+  "researchJsonChecked": 113,
+  "checkpointAncestors": {
+    "1c2d10e": "1c2d10e522f54e60f83bae2e416008bd1a241eb1",
+    "6e17e79": "6e17e7923f2130b2cfce3671e026fe56b6397f5f",
+    "43afe78": "43afe78e549f6707f0648465af6d7c6e0aabb430",
+    "5f14511": "5f145117072b1cde2e696fb8d8f8d11995a2c06f",
+    "e65c2d6": "e65c2d6c29ed4421d5f2cc7133604332e8dfd71b",
+    "052374e": "052374e07d613a549f5a88640b42932f97a7f896",
+    "c4da565": "c4da56577c27f56ee1a5829e85d8daa951a517c1",
+    "75ea9d8": "75ea9d837c86506b0e278f79e209a8533e9664b7",
+    "57688cb": "57688cb48e0a0c7768b066df548b6959b924bfc7",
+    "ca74a84": "ca74a84713b443d408467dd17835083bbbf0771a",
+    "3d406ae": "3d406aee212a5be071728d85db443111e483e7bf"
+  },
+  "changedPaths": [
+    "docs/architecture.md",
+    "docs/development-log.md",
+    "docs/product-direction.md",
+    "docs/research/atlas-research-map.md",
+    "docs/research/atlas-research-state.md",
+    "docs/research/atlas-storage-processing-serving-requirements.md",
+    "docs/research/atlas-storage-requirements-measurements.json",
+    "docs/research/atlas-storage-requirements-validation.json",
+    "scripts/atlas/storage_requirements/README.md",
+    "scripts/atlas/storage_requirements/measure.py",
+    "scripts/atlas/storage_requirements/test_measure.py",
+    "scripts/atlas/storage_requirements/validate.py"
+  ],
+  "nextTask": "implement and evaluate one local persistent retained Tryfan regional world-model proof; not started",
+  "scopeConfirmations": {
+    "noAcquisition": true,
+    "retainedPayloadsReadOnly": true,
+    "noPrivateInspection": true,
+    "noStorageDatabaseCloudServices": true,
+    "noTechnologySelection": true,
+    "noFrozenContractChanges": true,
+    "noProductionChanges": true,
+    "multiscaleClosed": true,
+    "multiviewParked": true,
+    "weatherTraverseUnchanged": true
+  },
+  "measurementLimits": "Manifest hashes verified and listed payload sizes checked; no fresh payload content rehash, preparation/network/RSS/load benchmark; historical timings and source receipts remain qualified."
+}

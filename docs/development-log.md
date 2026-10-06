@@ -4011,3 +4011,38 @@ Multiscale stays closed; appearance correction/visibility/fusion survive and Swi
 stay parked. No private inspection. Current navigation records the completed proof;
 exactly one next recommendation is the bounded measured storage/processing/serving
 requirements assessment, not started here.
+
+## 2026-10-06 — Atlas storage, processing and serving requirements assessment
+
+Starting clean main at `1c2d10e522f54e60f83bae2e416008bd1a241eb1`; origin fetch confirmed
+0/0 divergence. The [assessment](research/atlas-storage-processing-serving-requirements.md)
+records **decision C**: requirements are sufficient for a bounded local persistent
+regional proof, with reversible engineering choices. It does not select a durable
+production stack or build storage, a database, cloud infrastructure or services.
+
+A read-only [inventory](research/atlas-storage-requirements-measurements.json) verifies
+five named retained manifests and size-checks 16,632 listed payload files. Encoded
+terrain objects, SWISSIMAGE working fields (about 4.8× delivery bytes), semantic
+source/document extracts and the six-result query bundle have different workloads.
+Historical preparation/loopback figures remain qualified; no global capacity or
+latency target is inferred. Unknown recorded metadata sizes remain unknown.
+
+Five logical storage responsibilities, revision/content identity separation,
+coverage/output/input-use indexing, claim-local time/reference, forward/reverse
+scoped dependency lookup, policy-relative freshness, staged coherent publication,
+restart recovery and honest failure/gap outcomes are specified. Logical tiers do
+not imply microservices. Shared contract metadata does not require full objects
+per raster cell. Rights, history and recovery availability survive eviction.
+
+[Validation](research/atlas-storage-requirements-validation.json) covers six focused
+inventory/math tests, deterministic repeated read-only measurement checks, frozen
+semantic/hierarchy integrity, protected production hashes, preserved historical
+reports/scripts, local links/anchors, JSON, status/navigation and whitespace.
+The canonical 42-thread statuses remain unchanged. Production Atlas, Weather,
+Traverse, frozen contracts and retained products remain untouched; multiscale is
+closed, Swiss multiview parked. No acquisition or inference occurred.
+
+Exactly one next recommendation: implement and evaluate one local persistent
+retained Tryfan regional world-model proof against R1–R12, with a short reversible
+design and bounded cold/warm, update, replay and restart/failure measurements.
+That task has not begun; no broad ingestion or productionisation is implied.

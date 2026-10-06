@@ -1,0 +1,264 @@
+{
+  "assessment": "atlas-storage-processing-serving-requirements",
+  "evidenceSha256": {
+    "docs/atlas/copernicus-common-generation.json": "738e2e104bdcc3ba5aec39666985e7e3a02aac773db1de2ea270231a91b4e783",
+    "docs/atlas/copernicus-common-renderer.json": "91dbe7a8c345e3167c592b59532d2516d7b528c7a5ac9d93131c2c99f7b66717",
+    "docs/atlas/riffelhorn-regional-product.json": "1ee072eb603c8a3725f345ea60f0570df5c7c8d448e9bd4a5c3643af3d722780",
+    "docs/atlas/riffelhorn-support-product.json": "9e68fc417bce9a3f2c93d7f0cd07cb940c00b0229ba1f9ae63624613310926e5",
+    "docs/atlas/riffelhorn-support-reproducibility.json": "20ef4985eec0692259f2053a59d12b770273ee3e6a2bfb383d900c951e5d97f0",
+    "docs/atlas/semantic-comparison-sources.json": "e13c8bd1f4e9c30d739955a398512cc6aa96aed1586de0972c997cc95a49e837",
+    "docs/atlas/swissimage-source-derived-baseline.json": "49ab12594ca1c0737fdcd0b2e53f21e5d2acda8d7122bb574789a906a29cdd67",
+    "docs/atlas/water-check-sources.json": "d6e574a175400edc0c8c15bcc8bcfa5a9064c9f04084d6f8702e825e7dffecb9",
+    "docs/research/tryfan-qualified-query-inputs.json": "ab2062b81b7e84b749700cae13c499e837e0705de96c22192ef9ad2f6d13a9a7",
+    "docs/research/tryfan-qualified-query-results.json": "871be961f6df0ff479c4ec935980eb35070e5a9363bcddc5fe73bfd6051fc3f2",
+    "src/atlas/terrain/metadata/tryfanProductRecord.json": "510a559ea70ea16f6d7a5d2308e924dce872d6f6322b41619df02aac8d9e6fed"
+  },
+  "measurementScope": "Named manifests verified by SHA; listed payload sizes checked via stat, no payload hashing or reprocessing; repository receipt arithmetic and logical serialization sizes, not network/memory/throughput benchmarks. No directory-wide/private scan.",
+  "products": [
+    {
+      "groups": {
+        "tiles": {
+          "bytes": 23889573,
+          "maxBytes": 112921,
+          "medianBytes": 84234,
+          "minBytes": 8236,
+          "objects": 295,
+          "p95Bytes": 100999.6
+        }
+      },
+      "id": "tryfan-welsh-regional-v2",
+      "manifest": "derived/atlas/tryfan/tryfan-welsh-regional-v2/manifest.json",
+      "manifestBytes": 87014,
+      "manifestSha256": "b254a21b1ec346cc07b43d269d937b059851e95ac168565359a81d3872c69e54",
+      "payloadFilesStatChecked": 295,
+      "revision": "db8e4d87b5fa609d455d1e0f8ec3fdebc834579a7e102f69f4d0b0283efa690c"
+    },
+    {
+      "groups": {
+        "masks": {
+          "bytes": 238866,
+          "maxBytes": 481,
+          "medianBytes": 464,
+          "minBytes": 149,
+          "objects": 547,
+          "p95Bytes": 473.0
+        },
+        "tiles": {
+          "bytes": 41855904,
+          "maxBytes": 158556,
+          "medianBytes": 76446,
+          "minBytes": 19377,
+          "objects": 547,
+          "p95Bytes": 101230.59999999998
+        }
+      },
+      "id": "riffelhorn-regional-terrain-v1",
+      "manifest": "derived/atlas/riffelhorn/riffelhorn-regional-terrain-v1/manifest.json",
+      "manifestBytes": 222168,
+      "manifestSha256": "778745c36f2208e72a28a99923d00d81fcd0bd7f90e8759ba3f03362ccfc4627",
+      "payloadFilesStatChecked": 1094,
+      "revision": "4fc837f299271c7238591865a393f98facc6fa7b93d9cc75305160df900b1fe5"
+    },
+    {
+      "groups": {
+        "tiles": {
+          "bytes": 930914852,
+          "maxBytes": 133755,
+          "medianBytes": 82079,
+          "minBytes": 761,
+          "objects": 11429,
+          "p95Bytes": 100601.2
+        }
+      },
+      "id": "riffelhorn-swiss-support-v1",
+      "manifest": "derived/atlas/riffelhorn/riffelhorn-swiss-support-v1/manifest.json",
+      "manifestBytes": 1897650,
+      "manifestSha256": "30413b6698c1e75e27fd169f61925d8d60044fa14f444fb072b652c54816e106",
+      "payloadFilesStatChecked": 11429,
+      "revision": "1a44a0644de1bde73a3ba84d1b761dc0aa17d48cc971e5f6b5d2c14fb329d7ea"
+    },
+    {
+      "groups": {
+        "tiles": {
+          "bytes": 327636998,
+          "maxBytes": 161226,
+          "medianBytes": 122200.0,
+          "minBytes": 11890,
+          "objects": 2730,
+          "p95Bytes": 138315.9
+        }
+      },
+      "id": "riffelhorn-copernicus-common-v1",
+      "manifest": "derived/atlas/riffelhorn/riffelhorn-copernicus-common-v1/manifest.json",
+      "manifestBytes": 450369,
+      "manifestSha256": "9393fbadf807592ed67e94408d82bc0f508d4a29d7aa90cf78e605b2053bb177",
+      "payloadFilesStatChecked": 2730,
+      "revision": "8f002dcbdeceb6aa37cc9eeef9f2d2060193b1eff7922ddb1d0535a6b8030da2"
+    },
+    {
+      "groups": {
+        "fields": {
+          "bytes": 1294380168,
+          "maxBytes": 2863862,
+          "medianBytes": 2724499.0,
+          "minBytes": 35293,
+          "objects": 542,
+          "p95Bytes": 2788733.05
+        },
+        "tiles": {
+          "bytes": 269852875,
+          "maxBytes": 703045,
+          "medianBytes": 554853.0,
+          "minBytes": 9150,
+          "objects": 542,
+          "p95Bytes": 642900.3999999999
+        }
+      },
+      "id": "riffelhorn-swissimage-baseline-v1",
+      "manifest": "derived/atlas/riffelhorn/riffelhorn-swissimage-baseline-v1/manifest.json",
+      "manifestBytes": 218993,
+      "manifestSha256": "3c8b50fb9d7721b678abc46b9450495b417ccafff15d4ee8a67d9d6a3fee4934",
+      "payloadFilesStatChecked": 1084,
+      "revision": "f6edd630206ed02f255176935d72126cbc6ad7987b12d2986edbe6d05619bc1b"
+    }
+  ],
+  "qualifiedProof": {
+    "claimRevisions": 6,
+    "compactClaimsBytes": 3453,
+    "compactContextsBytes": 11211,
+    "compactReceiptsBytes": 6021,
+    "currentResults": 4,
+    "derivedOnDerivedUses": 3,
+    "directInputUses": 6,
+    "localTileBytes": 320857,
+    "pinnedInputFileBytes": 15189,
+    "qualification": "Compact byte counts serialize logical components separately; sum is not total storage or one heavy object per raster cell. Trace/diagnostic repetition inflates full proof bundle.",
+    "recomputed": 2,
+    "resultFileBytes": 92034,
+    "rootSubsets": 3
+  },
+  "reportedArchiveAndWorking": {
+    "copernicus": {
+      "generationSeconds": 103.60355890006758,
+      "sourceAreaMeaning": "six 1-degree native COGs; delivered aligned rectangle differs from source footprint",
+      "sourceBytes": 254113117,
+      "workingBytes": 416136764
+    },
+    "imagery": {
+      "fieldBytes": 1294380168,
+      "identity": "f6edd630206ed02f255176935d72126cbc6ad7987b12d2986edbe6d05619bc1b",
+      "seconds": 194.07174620009027,
+      "sourceBytes": 186259028,
+      "tileBytes": 269852875
+    },
+    "swissOriginal": {
+      "sourceAreaKm2": 4,
+      "sourceBytes": 65607404
+    },
+    "swissSupport": {
+      "generationSeconds": 770.1632222000044,
+      "nodataCells": 0,
+      "sourceAreaKm2": 100,
+      "sourceBytes": 1667166026,
+      "sourceMosaic": "${MERIDIAN_DATA_ROOT}/derived/atlas/riffelhorn/riffelhorn-swiss-support-v1/source-mosaic.vrt",
+      "sourceMosaicSha256": "8b097d62be84e110cdf8efd695f63d685a9069fcad98aae91660b7fb42e17998",
+      "storageBytes": 930914852,
+      "tileCounts": [
+        {
+          "omittedPartialOrNodataTiles": 8,
+          "tiles": 1,
+          "zoom": 12
+        },
+        {
+          "omittedPartialOrNodataTiles": 12,
+          "tiles": 4,
+          "zoom": 13
+        },
+        {
+          "omittedPartialOrNodataTiles": 24,
+          "tiles": 25,
+          "zoom": 14
+        },
+        {
+          "omittedPartialOrNodataTiles": 48,
+          "tiles": 121,
+          "zoom": 15
+        },
+        {
+          "omittedPartialOrNodataTiles": 94,
+          "tiles": 506,
+          "zoom": 16
+        },
+        {
+          "omittedPartialOrNodataTiles": 234,
+          "tiles": 2118,
+          "zoom": 17
+        },
+        {
+          "omittedPartialOrNodataTiles": 466,
+          "tiles": 8654,
+          "zoom": 18
+        }
+      ],
+      "tiles": 11429
+    },
+    "welsh": {
+      "sourceAreaKm2": 9,
+      "sourceBytes": 15639072,
+      "workingBytes": 46691533
+    }
+  },
+  "reportedLocalDelivery": {
+    "bodyInterpretation": "Not network wire volume; browser-cache responses can expose status 200/body again.",
+    "cachePolicy": [
+      "public,max-age=3600"
+    ],
+    "consoleErrors": [
+      "Failed to load resource: the server responded with a status of 503 (Service Unavailable)",
+      "Failed to load resource: the server responded with a status of 503 (Service Unavailable)"
+    ],
+    "cors": [
+      "*"
+    ],
+    "localFailedRequests": {
+      "net::ERR_ABORTED": 25
+    },
+    "otherFailedRequests": {
+      "net::ERR_ABORTED": 21
+    },
+    "pageErrors": [],
+    "responseBodyBytesIncludingCacheRepeats": 43343466,
+    "responses": 344,
+    "separateProbes": {
+      "conditionalEtag": 304,
+      "interpretation": "Manual loopback HTTP probes, outside browser capture counts; no AWS fallback or zero terrain.",
+      "missingBelowMinimumZoom": 404
+    },
+    "statusCounts": {
+      "200": 344
+    },
+    "uniqueTileUrls": 204
+  },
+  "scalingIllustrations": {
+    "fullXYZLevels0to13Addresses": 89478485,
+    "kind": "hypothetical raw arithmetic; not measured compressed storage, source information, cost or recommended products",
+    "oneMetreFloat32SingleBandBytes": 4000000000.0,
+    "quarterMetreRGB8BaseBytes": 48000000000.0,
+    "quarterMetreRGB8IdealInfinitePyramidBytes": 64000000000.0,
+    "regionAreaKm2": 1000
+  },
+  "semanticReceipts": {
+    "mountainEntriesWithUnknownBytes": [
+      "swisstopo-rights.html",
+      "geocover-structure.html",
+      "glamos-rights.html"
+    ],
+    "mountainFileEntries": 15,
+    "mountainSourceDocumentBytes": 24555804,
+    "qualification": "Receipts include documentation/excess smallest official units; not all are physical claim payloads; prior recorded directory size is not a current directory scan.",
+    "waterPriorRecordedDirectoryBytes": 9923141,
+    "waterSourceDocumentBytes": 9892590,
+    "worldcoverCropBytes": 9964
+  },
+  "startingCheckpoint": "1c2d10e522f54e60f83bae2e416008bd1a241eb1"
+}
