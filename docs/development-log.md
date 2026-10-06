@@ -4110,3 +4110,14 @@ hashes are verified in the receipt. No production/Weather/Traverse or frozen con
 The previous next recommendation is complete; exactly one next is **Retained dated-observation illumination and shadow identifiability assessment**,
 using retained dated observations to determine correction readiness without performing it.
 It has not begun. Appearance science stays open/partial/advanced; Swiss multiview parked.
+
+
+## 2026-10-07 — retained dated-observation illumination and shadow identifiability
+
+Started clean main at b12dc06; fetched origin, divergence 0/0. The [report](research/illumination-identifiability.md), [deterministic diagnostics](research/illumination-identifiability-results.json) and [validation](research/illumination-identifiability-validation.json) classify **B — PARTIAL IDENTIFIABILITY**, readiness **B — PARTIALLY**. Two official 2023 strip dates/footprints do not establish contributor or pixel UTC. SWISSIMAGE documented radiometric balancing and8-bit RGB prevent physical radiance inversion. Four inherited Riffelhorn patches use fixed Sun scenarios, native DTM normals and finite 1 km sampled rays; terrain contribution is plausible, unique source-shadow attribution unidentifiable. No fitted exposure or new shadow classification.
+
+Timestamped Sentinel and parked 2026 metadata allow geometric Sun calculation, with scope/time-role qualifications. L2A may already contain terrain/BRDF correction; winter/autumn high-zenith products are excluded from a quantitative test. One retained July 2026 residual C-normalization-versus-unchanged experiment is justified only under [frozen eligibility/held-out/failure criteria](research/illumination-identifiability.md#23-predeclared-evaluation-criteria). No correction occurred, and no albedo/shadow-recovery/relighting claim follows.
+
+Focused 12 tests, deterministic fresh-process rebuild, source/prepared/terrain/metadata hashes, 64 frozen domain checks, isolated types, links/anchors,42 unchanged canonical status columns, historical reports/tooling and 113 protected production hashes are checked. No production/Weather/Traverse, retained dataset or frozen-contract mutation. Appearance science stays unresolved; Swiss frame pixels remain parked; multiscale closed.
+
+Exactly one next, separately authorized: **Retained Tryfan post-L2A residual terrain-illumination normalization experiment**. It has not begun. No new imagery, physical lighting, correction, shadow lifting, albedo/inference or multiview processing was performed by this assessment.

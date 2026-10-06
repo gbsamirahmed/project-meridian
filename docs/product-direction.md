@@ -10,7 +10,7 @@ This document is Meridian's living design and research notebook. It records prod
 
 Terms such as **direction**, **candidate**, **potential**, **research question**, and **not yet implemented** are deliberate. When an experiment changes a decision, retain the hypothesis → experiment → finding → decision trail rather than rewriting history.
 
-## Current Atlas research direction — 2026-10-06
+## Current Atlas research direction — 2026-10-07
 
 The [research map](research/atlas-research-map.md) and
 [current research-state register](research/atlas-research-state.md) govern Atlas
@@ -41,8 +41,12 @@ now completes that recommendation (**C — SUCCESS**, resolution conclusion **B*
 imagery fits shared identity/provenance plus bounded appearance eligibility, without a full
 hierarchy/runtime. Exact 2023 geometry/illumination and physical appearance remain unknown;
 correction/recovery/BRDF/relighting/fusion/registration science is still unresolved.
-Exactly one next task is the **Retained dated-observation illumination and shadow identifiability assessment**;
-[scope/exit](research/riffelhorn-appearance-assessment.md#27-exactly-one-next-bounded-task).
+The [illumination/shadow identifiability assessment](research/illumination-identifiability.md)
+now completes that recommendation (**B — PARTIAL IDENTIFIABILITY**). Date-conditioned terrain
+geometry does not recover pixel exposure/shadow truth; source RGB is not calibrated reflectance.
+Only a constrained post-L2A residual test is justified on retained dated Tryfan evidence.
+Exactly one next task is the **Retained Tryfan post-L2A residual terrain-illumination normalization experiment**;
+[predeclared scope/exit](research/illumination-identifiability.md#23-predeclared-evaluation-criteria).
 It has not begun. No production storage, correction, cloud build, classifier or broad ingestion
 has occurred. Swiss pixels stay parked.
 Historical analytical filter/calibration

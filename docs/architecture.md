@@ -619,7 +619,12 @@ now completes that recommendation (**C — SUCCESS**, resolution conclusion **B*
 Shared source/product/representation provenance plus bounded appearance eligibility suffice
 for retained source-derived imagery; no full AppearanceHierarchy/runtime is introduced.
 Support, information scale, acquisition unknowns and render-only effects stay distinct;
-physical/corrected appearance requests remain unsupported. Exactly one next task is the
-**Retained dated-observation illumination and shadow identifiability assessment**, not begun.
+physical/corrected appearance requests remain unsupported. The
+[illumination/shadow assessment](research/illumination-identifiability.md) completes that recommendation
+(**B — PARTIAL IDENTIFIABILITY**): documented, reconstructed and conditional illumination use
+existing provenance/input-use machinery; no universal illumination contract is needed. Unknown
+pixel contribution/time and source transfer prevent a precise Riffelhorn physical correction.
+Exactly one next task is the **Retained Tryfan post-L2A residual terrain-illumination normalization experiment**,
+[preregistered](research/illumination-identifiability.md#23-predeclared-evaluation-criteria), not begun.
 Open/parked appearance science remains non-blocking, not solved; Swiss pixels remain parked.
 Frozen contracts/current production remain unchanged.

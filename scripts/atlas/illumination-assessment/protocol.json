@@ -1,0 +1,65 @@
+{
+  "revision": "retained-illumination-identifiability/v1",
+  "frozenBeforeNewDiagnostics": true,
+  "patches": {
+    "ordinary": [
+      2625240,
+      1092530,
+      60
+    ],
+    "steep": [
+      2624805,
+      1092330,
+      60
+    ],
+    "summit": [
+      2624810,
+      1092252,
+      150
+    ],
+    "dark-context": [
+      2624740,
+      1092318,
+      150
+    ]
+  },
+  "probeSource": "unchanged SWISSIMAGE baseline 31x31 inset lattice and source RGB samples",
+  "dates": [
+    "2023-08-21",
+    "2023-09-07"
+  ],
+  "envelopeUTCStepMinutes": 10,
+  "conditionalSwissimageMinimumElevationDegrees": 35,
+  "candidateUTCHours": [
+    8,
+    10,
+    12,
+    14,
+    16
+  ],
+  "castShadowProbeRowsColumns": [
+    0,
+    15,
+    30
+  ],
+  "rayMaximumMetres": 1000,
+  "rayStepMetres": 1,
+  "rayStartMetres": 2,
+  "dtmReadBoundsLV95": [
+    2623600,
+    1091100,
+    2626400,
+    1093700
+  ],
+  "normalStencilMetres": 0.5,
+  "encodedLumaWeights": [
+    0.2126,
+    0.7152,
+    0.0722
+  ],
+  "noFittedTimeOrSun": true,
+  "noCorrection": true,
+  "noClaimOfObservedShadow": true,
+  "noPixelContributionAssumed": true,
+  "supportCorrectionBeforeFirstCompletedRun": "Initial halo failed fixed 1km-ray containment; expanded bounds geometrically, not against image results."
+}

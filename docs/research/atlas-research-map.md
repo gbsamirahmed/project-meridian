@@ -1,6 +1,6 @@
 # Atlas research map and fresh-session handoff
 
-Updated 2026-10-06. The 012A–012G terrain-research epoch is **closed** at the
+Updated 2026-10-07. The 012A–012G terrain-research epoch is **closed** at the
 Lab 012G evidence checkpoint `abf95bcfb50c681244a146626565a471ba791418`.
 This index records knowledge and research status, not a roadmap, new Lab or
 production architecture. It is the starting point for humans and fresh tooling.
@@ -56,8 +56,11 @@ work without changing v1. The [retained Riffelhorn appearance assessment](riffel
 now completes that recommendation (**C — SUCCESS**): source-derived identity/provenance,
 support/scale/time and honest acquisition/physical gaps fit shared machinery plus small
 appearance eligibility. No full hierarchy is implemented or scientifically justified here.
-Exactly one next task: **Retained dated-observation illumination and shadow identifiability assessment**;
-[scope/exit](riffelhorn-appearance-assessment.md#27-exactly-one-next-bounded-task). It has not begun.
+The [illumination/shadow assessment](illumination-identifiability.md) now completes that recommendation
+(**B — PARTIAL IDENTIFIABILITY**): conditional Riffelhorn geometry does not identify exact exposure,
+shadow cause or physical radiometry. A constrained already-processed Sentinel residual test is justified.
+Exactly one next task: **Retained Tryfan post-L2A residual terrain-illumination normalization experiment**;
+[predeclared scope/exit](illumination-identifiability.md#23-predeclared-evaluation-criteria). It has not begun.
 Open/parked appearance work remains independent; no correction or acquisition follows automatically.
 
 Production, Weather and Traverse remain unchanged. The map below retains chronological
@@ -495,3 +498,12 @@ This is the A6/A7 scientific entry gate using existing dated observations, not a
 world-model proof or correction experiment. All 42 status columns, historic reports,
 production and frozen contracts remain; A13 Swiss pixels remain parked. Appearance
 correction, recovery, BRDF, physical lighting, view/fusion and registration are unresolved.
+
+
+## 2026-10-07 — retained illumination and shadow identifiability
+
+The [assessment](illumination-identifiability.md), [diagnostics](illumination-identifiability-results.json) and [validation](illumination-identifiability-validation.json) complete the preceding recommendation with **B — PARTIAL IDENTIFIABILITY**. Two documented strip dates permit conditional Sun envelopes; unknown pixel contributors/UTC and processed RGB prevent a unique Riffelhorn illumination correction. Four inherited patches receive fixed-Sun normal/horizon diagnostics, not observed-shadow labels. Timestamped Sentinel and parked 2026 frame metadata support geometry at their own scopes. No correction, acquisition or source mutation; Swiss frames stay parked.
+
+Readiness **B — PARTIALLY** supports one qualified residual empirical test on retained Tryfan July 2026 L2A, which may already include terrain/BRDF processing. The [frozen criteria](../../scripts/atlas/illumination-assessment/future-evaluation.json) preserve an unchanged control, held-out support, explicit unknowns and negative/inconclusive exits. No albedo/shadow-recovery claim. All 42 status columns remain unchanged; separate open/partial/advanced appearance science remains visible.
+
+Next, separately authorized only: **Retained Tryfan post-L2A residual terrain-illumination normalization experiment**. It has not begun; no production build, cloud, broad ingestion or Swiss pixel provisioning follows.

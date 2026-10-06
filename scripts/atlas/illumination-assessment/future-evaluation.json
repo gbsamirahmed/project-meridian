@@ -1,0 +1,67 @@
+{
+  "revision": "tryfan-post-L2A-residual-normalization-entry/v1",
+  "experimentNotStarted": true,
+  "nextTask": "Retained Tryfan post-L2A residual terrain-illumination normalization experiment",
+  "entryConclusion": "PARTIAL; residual empirical test only, not initial terrain correction",
+  "observation": "S2A_MSIL2A_20260712T113331_N0512_R080_T30UVD_20260712T174812",
+  "retainedMirror": "S2A_T30UVD_20260712T113332_L2A",
+  "retainedFootprintEPSG27700": [
+    264900,
+    357800,
+    267900,
+    360800
+  ],
+  "evaluationCoreEPSG27700": [
+    265900,
+    358800,
+    266900,
+    359800
+  ],
+  "analysisGridMetres": 10,
+  "terrainSourceSha256": "49c131d7de62e0df35f8e02c2f8db3161bfd37f24fea56060fcbb9e6d109b326",
+  "radiometry": "retained source-native B02 B03 B04, decode DN*0.0001-0.1; DN0 nodata, never PNG",
+  "sourceSun": {
+    "role": "documented scene/COG mean, not exact pixel Sun",
+    "azimuthDegrees": 160.700929790374,
+    "elevationDegrees": 58.062309162853
+  },
+  "method": "one per-band empirical C residual normalization versus unchanged L2A control; explicit no-change remains valid",
+  "strata": "retained SCL4 vegetation / SCL5 not-vegetated, assessed separately; not homogeneous material truth",
+  "excludeSCL": [
+    0,
+    1,
+    2,
+    3,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "eligibility": "positive valid RGB, local incidence mu>=0.3, finite terrain and full 1km shadow-ray support; model-blocked cells excluded and not brightened",
+  "crossValidation": "four fixed 500m quadrants of core, leave-one-quadrant-out; fit only on training cells within native stratum",
+  "minimumEvidence": "at least100 eligible cells per stratum overall, each held-out fold>=20 eligible cells and training mu P95-P05>=0.2; otherwise stop INCONCLUSIVE without widening",
+  "parameterValidity": "C=intercept/slope from rho=intercept+slope*mu; positive slope and C>=0, finite denominator, held-out cells not used to select method/angles; invalid fit returns no-change",
+  "gainBound": "0.5<=gain<=2 for eligible cells; cells outside bound remain unmodified and count as rejected, no clipping to hide failure",
+  "sensitivity": "repeat azimuth +/-2 degrees and elevation +/-1 degree, engineering perturbations not uncertainty bounds; no fitted solar direction",
+  "criteria": [
+    "held-out absolute brightness-versus-mu correlation and within-stratum spread must improve in at least3 of4 admissible folds",
+    "no new nodata/nonfinite values; no value clipping; original and excluded cells remain exact",
+    "report per-band gains, negative/over-unit values and fold failures, including low-signal behavior without lifting shadows",
+    "normalized local gradient/mean texture distribution compared with unchanged control; do not claim recovered detail",
+    "inspect fixed folds and full-core views with identical display transfer, reject visible halos/noise/colour inconsistency even if correlation improves",
+    "results must be stable in direction under predeclared Sun perturbations; contradictory folds/material proxies classify PARTIAL/NEGATIVE",
+    "decorrelation and visual preference alone do not establish physical accuracy"
+  ],
+  "allowedConclusion": "useful or unsuccessful residual normalization of this already-processed dated product, on eligible supported cells",
+  "forbiddenConclusion": [
+    "albedo",
+    "intrinsic colour",
+    "first-pass illumination removal",
+    "shadow information recovery",
+    "Riffelhorn correction validated",
+    "Meridian-controlled physical relighting now justified"
+  ],
+  "upstreamCaution": "local Sen2Cor terrain/BRDF parameters not retained; never assume uncorrected source; inability to attribute residual causally stays explicit"
+}
