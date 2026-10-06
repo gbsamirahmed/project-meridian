@@ -3884,3 +3884,39 @@ ingestion proof; no new ontology, semantic runtime/layer, inference, hydrology o
 benchmark begun. AWS visual/independent analytical z15, exaggeration 1.45, IGOR,
 MapTiler satellite/opacity/suppression and lifecycle unchanged. Weather/Traverse
 unchanged; elevation/multiscale closed; externally provisioned multiview parked.
+
+## 2026-10-06 — Atlas research-state reconstruction and documentation audit
+
+Started clean main at `e65c2d6c29ed4421d5f2cc7133604332e8dfd71b`; fetched origin,
+divergence 0/0. Reconstructed the programme from all Atlas/Earth Lab reports, early
+analytical/Tryfan logs/configs, research/literature navigation, direction, contracts
+and selective Git history. No private evidence inspected, datasets acquired or new experiments run.
+
+The [current thread register and pre-synthesis audit](research/atlas-research-state.md)
+records 42 coherent questions with controlled statuses, local evidence, supersession,
+implementation boundaries and surviving limitations. Appearance is separated into
+15 threads: measured source/stretch/display results are not literature-only correction,
+albedo, BRDF, relighting or fusion success. The frozen Swiss 2026 pair remains parked.
+Early morphology, multi-input inference, temporal spectral and synthetic reconstruction
+work is now discoverable without promoting historical probabilities/detail to truth.
+
+Navigation repair: refresh the research map's stale water/contract return point;
+label its 012 epoch status table historical; link this companion from README, architecture,
+direction and literature. Preserve every empirical report and frozen contract unchanged.
+Existing logging preserved evidence but did not reliably maintain current statuses.
+Historical next recommendations remain as history, with supersession in the register.
+
+Exactly one recommended pre-synthesis investigation: derived physical understanding —
+dependency, identity and revision lifecycle, using retained-case walkthroughs. Existing
+revision/lineage declarations do not implement current-result freshness/recomputation.
+This is a design question, not a new framework. The earlier WorldCover adapter idea
+remains implementation validation but is sequenced after this gate and synthesis.
+No final world-model synthesis, next task, source contact/order or implementation begun.
+
+Validation is recorded in the [audit receipt](research/atlas-research-audit-validation.json):
+local file/anchor references, checkpoint ancestry, JSON, whitespace, documentation-only
+scope, 113 production SHA256s and unchanged historical reports/contracts/scripts.
+No dedicated package Markdown command exists; established reference/diff/hash checks
+apply. Application tests/build are unnecessary for unchanged runtime/dependencies.
+Terrain/elevation, multiscale and physical-surface foundations remain closed; multiview
+parked; Weather/Traverse, imagery, data, rendering, projection and lifecycle unchanged.

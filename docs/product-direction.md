@@ -10,6 +10,21 @@ This document is Meridian's living design and research notebook. It records prod
 
 Terms such as **direction**, **candidate**, **potential**, **research question**, and **not yet implemented** are deliberate. When an experiment changes a decision, retain the hypothesis → experiment → finding → decision trail rather than rewriting history.
 
+## Current Atlas research direction — 2026-10-06
+
+The [research map](research/atlas-research-map.md) and
+[current research-state register](research/atlas-research-state.md) govern Atlas
+research status and supersession. Terrain, multiscale and physical-surface semantic
+foundations are closed; Swiss frame pixels remain externally parked. This notebook's
+route-first hypotheses preserve product history and downstream Traverse possibilities;
+Atlas's physical-world foundation is not optimised for that application.
+
+The current pre-synthesis recommendation is one bounded derived-understanding
+identity/dependency/revision-lifecycle investigation using retained evidence.
+It is a design question, not implemented infrastructure or authority to start a new
+experiment. Historical analytical filter/calibration suggestions are separate from
+closed visual-terrain research. No Weather/Traverse redesign follows.
+
 ## Product idea
 
 Meridian is moving toward a terrain-first outdoor journey intelligence system, while retaining the exploratory global weather map as a valuable way to understand the wider atmosphere.

@@ -5,38 +5,43 @@ Lab 012G evidence checkpoint `abf95bcfb50c681244a146626565a471ba791418`.
 This index records knowledge and research status, not a roadmap, new Lab or
 production architecture. It is the starting point for humans and fresh tooling.
 
-## Current programme boundary — physical surface semantics
+## Current programme state — reconstructed at e65c2d6
 
-The [physical-surface domain review](../atlas/physical-surface-semantics.md) is complete,
-with a [bounded authoritative source inventory](../atlas/physical-surface-sources.md).
-It proposes property/layer-aware cover, physical features/structure and dated state,
-retaining source-native meaning, evidence, quality and rights. It does not adopt a
-land-cover runtime, universal ontology or production layer. The completed
-[source-native comparison](../atlas/source-native-semantic-comparison.md) supports
-that hybrid direction: native meaning, layered/mixed claims, explicit mapping loss
-and unknown reasons remain indispensable. Next is the separate bounded water-feature/
-state check, then a minimal evidence contract; neither starts automatically.
+The [Atlas research-state audit and thread register](atlas-research-state.md) is the
+current status/sequence companion to this historical research map. It reconstructs
+earlier analytical/Tryfan work, the closed terrain epoch, regional hierarchy,
+appearance, multiscale and semantic programmes, including surviving deferred questions.
+Detailed reports retain their original evidence; historical next steps are not live orders.
 
-**REGIONAL ELEVATION FOUNDATION = ESTABLISHED** by the
-[real Wales/Tryfan proof](../atlas/tryfan-second-region-proof.md). No further
-elevation benchmark or Riffelhorn reconciliation is recommended. The frozen terrain
-contract and runtime remain intact, with their known limitations.
+- **Regional elevation foundation: CLOSED FOR FOUNDATION**, established by the
+  [Wales/Tryfan proof](../atlas/tryfan-second-region-proof.md). No further elevation
+  benchmark, Riffelhorn interpolation or reconciliation variant is recommended.
+- **Multiscale foundation: CLOSED FOR FOUNDATION**, after the
+  [information-aware synthesis](../atlas/information-aware-display-selection.md).
+  One relief control was negative; universal modes/geometry generalisation are not justified.
+- **Physical-surface semantics: CLOSED FOR FOUNDATION**, after the
+  [mountain comparison](../atlas/source-native-semantic-comparison.md),
+  [Exe water check](../atlas/water-feature-state-check.md) and frozen
+  [Semantic Evidence Contract v1](../atlas/semantic-evidence-contract.md).
+  The contract is not a populated/resolved world model or semantic runtime.
+- **Appearance: scoped proofs complete, wider support/correction questions partial**.
+  [SWISSIMAGE baseline](../atlas/swissimage-source-derived-baseline.md) demonstrates
+  useful regional information and steep-surface stretching; original occlusion remains
+  unknown. See the audit's separate appearance threads rather than assuming recovery
+  or correction was solved by literature or a failed gain control.
+- **Swiss 2026 two-frame experiment: PARKED**, awaiting external source-image provisioning.
+  [Frozen metadata benchmark](../atlas/swiss-multiview-benchmark.md) is not a completed
+  pixel-information/texture-fusion proof. No new acquisition/contact/order follows.
 
-Read the [appearance baseline and architecture](../atlas/appearance-baseline-and-architecture.md)
-for the current MapTiler/satellite/IGOR audit, bounded primary-source review,
-appearance failure taxonomy and separate AppearanceHierarchy proposal. Shared
-provenance primitives do not turn heights and radiometry into one universal model.
-The [SWISSIMAGE/Riffelhorn source-derived baseline](../atlas/swissimage-source-derived-baseline.md)
-has completed that frozen comparison. It establishes useful regional detail and
-source-darkness/stretch limits; opposed-close Atlas probes do not show the earlier
-Unreal black-crushing behavior. The subsequent [observation-support assessment](../atlas/riffelhorn-observation-support.md)
-is PARTIAL: footprint coverage exists without calibrated target rays or visibility.
-That branch remains closed without pixels. The [Swiss 2026 benchmark selection](../atlas/swiss-multiview-benchmark.md)
-uses public frame centres/GORI/footprints to freeze one 60 m target and two same-strip
-observations. Source pixels require official individual-frame provisioning by quotation;
-no contact/order occurred. The multiview branch now waits for external source-image
-provisioning; it is not the active task. Correction/reconstruction and appearance runtime remain deferred.
-This is a new explicitly bounded programme, not a reopened 012A–012G Lab.
+Exactly one next bounded research recommendation: **derived physical understanding —
+dependency, identity and revision lifecycle assessment**, using retained cases, before
+world-model synthesis. Its [scope/exit criterion](atlas-research-state.md#current-finite-pre-maturity-programme)
+does not implement a dependency engine, change frozen contracts or reopen foundations.
+The older single-product ingestion recommendation is implementation validation, now
+sequenced after that investigation and subsequent synthesis. Nothing starts automatically.
+
+Production, Weather and Traverse remain unchanged. The map below retains chronological
+milestones; current statuses and supersession are in the linked register.
 
 ## Read before changing Atlas
 
@@ -59,7 +64,8 @@ This is a new explicitly bounded programme, not a reopened 012A–012G Lab.
    Keep experiments bounded, products external, provenance reproducible and evidence
    classes distinct. Never silently promote experimental findings into architecture.
 
-Current return point: the [source-native semantic comparison](../atlas/source-native-semantic-comparison.md), with the water-feature/state check still unstarted.
+Current return point: the [research-state audit](atlas-research-state.md), following
+completion of [Semantic Evidence Contract v1](../atlas/semantic-evidence-contract.md).
 The preceding [information-aware display/selection synthesis](../atlas/information-aware-display-selection.md)
 remains the completed multiscale handoff.
 The current multiscale research programme is **CLOSED**: the baseline established
@@ -75,7 +81,7 @@ The historical
 [finite programme](../earth-lab/riffelhorn-visual-synthesis-and-experiment-design.md)
 is historical; its two core slots were used and its conditional third was refused.
 
-## Bounded post-epoch production evaluations
+## Bounded post-epoch production evaluations — historical progression
 
 The closed terrain epoch is followed by deliberate product evaluations, not new
 Labs: [native relief](../atlas/native-relief-evaluation.md) retained IGOR with a
@@ -231,7 +237,12 @@ Riffelhorn elevation-method experimentation remains closed.
 Observed / derived / inferred / reconstructed / rendered are additional provenance
 roles, not substitutes for these three evidence classes.
 
-## Research status — no priority ranking
+## Research status at the 012A–012G closure — historical
+
+The following table preserves the original epoch assessment. Later source-derived,
+multiscale and 2026 metadata work supersedes parts of its “open/deferred” wording.
+Use the [current thread register](atlas-research-state.md#research-thread-register)
+for present status, limitations and sequencing; a historical row is not a current queue.
 
 | Status | Topic and bounded meaning | Evidence / reading |
 | --- | --- | --- |
@@ -282,8 +293,8 @@ ground truth explicit; do not manufacture an accuracy claim from an internal fit
 
 When evidence changes, update the synthesis/status here and the relevant literature
 section with date and sources. Preserve historical Lab identities and historical
-knowledge. Keep this area to an index and one terrain literature record until real
-maintenance needs justify another document. External references were checked on
+knowledge. Keep this area small. The 2026-10-06 audit demonstrates the maintenance need for
+one current thread register alongside this chronological map and literature record. External references were checked on
 2026-10-03; recheck living standards, release availability and licences before use.
 
 ## 2026-10-06 — bounded Riffelhorn observation-support assessment

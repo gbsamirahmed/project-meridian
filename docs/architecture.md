@@ -571,3 +571,18 @@ Future interpretation and ingestion are separate work; no automatic source winne
 cover ontology, feature database or camera/render policy is frozen by this contract.
 Elevation/multiscale remain closed; externally provisioned multiview stays parked.
 Weather/Traverse and production lifecycle remain unchanged.
+
+## Atlas research status and synthesis boundary
+
+The [current research-state register](research/atlas-research-state.md), reached
+through the [research map](research/atlas-research-map.md), separates established
+foundations from partial appearance results, parked acquisition, future implementation
+and surviving research. Historical investigation/next-step summaries above retain
+their checkpoint context; the register records their completion or supersession.
+
+The 2026-10-06 audit recommends a bounded derived-understanding dependency/identity/
+revision-lifecycle assessment before world-model synthesis. Immutable evidence/product
+revisions and semantic lineage do not themselves define freshness, current interpretation
+or recomputation. This is an unresolved design boundary, not a modification of either
+frozen contract, the current dependency policy, or production runtime. Final world-model
+synthesis and persistent/storage architecture remain later separately authorised work.

@@ -211,6 +211,7 @@ Provider availability, acceptable-use policies, rate limits, attribution require
 ## Further reading
 
 - [Atlas research map and fresh-session handoff](docs/research/atlas-research-map.md) — read before changing Atlas; evidence classes, closed branches and literature status.
+- [Atlas research state and pre-synthesis audit](docs/research/atlas-research-state.md) — current thread statuses, superseded/deferred work and the remaining bounded synthesis prerequisite.
 - [Atlas terrain representation research synthesis](docs/earth-lab/atlas-terrain-representation-synthesis.md) — final 012A–012G findings, limitations and external-product map.
 - [Product direction](docs/product-direction.md) — the problem Meridian is exploring and the decisions still open.
 - [Global weather architecture](docs/global-weather-architecture.md) — the provider-neutral migration design and implemented global precipitation pipeline.

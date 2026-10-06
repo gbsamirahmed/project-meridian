@@ -5,6 +5,13 @@ and [final Meridian synthesis](../../earth-lab/atlas-terrain-representation-synt
 This is a representative cross-disciplinary review, not an exhaustive systematic
 review or an implementation plan. No paper, model or dataset was integrated.
 
+Current-state navigation (2026-10-06): the
+[research-state register](../atlas-research-state.md) distinguishes later Meridian
+experiments from this retained external review. In particular, source-derived/DPR
+comparisons and 2026 frame geometry advanced some earlier questions; physical correction,
+albedo recovery, BRDF treatment and texture fusion remain untested locally. The
+review date and source-specific limitations below are preserved, not freshly revalidated.
+
 ## Evidence and source status
 
 **E — external evidence** describes what the cited publication/document establishes.

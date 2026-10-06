@@ -1,0 +1,257 @@
+{
+  "audit": "atlas-research-state-2026-10-06",
+  "baseline": "e65c2d6c29ed4421d5f2cc7133604332e8dfd71b",
+  "startingBranch": "main",
+  "startingUpstream": "origin/main",
+  "startingClean": true,
+  "afterFetchDivergence": {
+    "ahead": 0,
+    "behind": 0
+  },
+  "evidenceScope": {
+    "atlasMarkdownReports": 32,
+    "earthLabMarkdownReports": 11,
+    "preExistingResearchMarkdown": 2,
+    "atlasAndEarthLabJsonParsed": 104,
+    "threadCount": 42,
+    "appearanceThreadCount": 15
+  },
+  "validation": {
+    "localLinksChecked": 322,
+    "localAnchorsChecked": 50,
+    "missingReferences": [],
+    "protectedProductionSha256Checks": 113,
+    "protectedProductionMismatches": [],
+    "unchangedHistoricalReportGitBlobChecks": 43,
+    "productionScriptsRenderersPackageAndEvidenceDiffEmpty": true,
+    "documentationOnlyPaths": [
+      "README.md",
+      "docs/architecture.md",
+      "docs/development-log.md",
+      "docs/product-direction.md",
+      "docs/research/atlas-research-map.md",
+      "docs/research/literature/terrain-representation.md",
+      "docs/research/atlas-research-state.md",
+      "docs/research/atlas-research-audit-validation.json"
+    ],
+    "whitespaceCheck": "passed",
+    "applicationBuildAndTests": "not run: production/runtime/dependencies unchanged",
+    "externalFacts": "retained review dates; no live source revalidation or acquisition"
+  },
+  "reportSha256": "1962ca58d68876178b2d380c605828ff32babbe75468f65f62ea38df2d11592b",
+  "verifiedCheckpointAncestors": [
+    {
+      "commit": "330665bef60c0d1cbe0d031ca1b6a7d8254cd9b0",
+      "subject": "Establish Tryfan terrain pipeline"
+    },
+    {
+      "commit": "abf7db7a0b2e9f2fe66721f9258b54601ad52704",
+      "subject": "Validate corrected Tryfan Landscape"
+    },
+    {
+      "commit": "99194186265d4bbaf0326debc1dc984bbe0d8dc4",
+      "subject": "Add Tryfan reference benchmark tooling"
+    },
+    {
+      "commit": "f135715ee18bd5750099fc67d1466dcdd8f75b3e",
+      "subject": "Add terrain and Sentinel evidence labs"
+    },
+    {
+      "commit": "de0052290036f2a83dc179f1b2449662217034c8",
+      "subject": "Add contextual surface evidence lab"
+    },
+    {
+      "commit": "4890f4d00e6b1fce49dbf09e6f94a48b9e0cd284",
+      "subject": "Add uncertain underlying surface model"
+    },
+    {
+      "commit": "474fc9a3965884db76664c332e0614ff31fa2802",
+      "subject": "Add surface uncertainty audit"
+    },
+    {
+      "commit": "f2fd3ef523a335c4292d74a75a55727f37b6bdf0",
+      "subject": "Add evidence-constrained surface reconstruction"
+    },
+    {
+      "commit": "2a01679909c7eef3738367c24c7f135451146b17",
+      "subject": "Document Earth Lab 003 through 009"
+    },
+    {
+      "commit": "fa7a1ff4fd79fc578602ce6373154c8f10c51d54",
+      "subject": "Add Welsh high-resolution terrain research"
+    },
+    {
+      "commit": "4cc2552039450389b73ed71469630583afad00e9",
+      "subject": "Add England terrain generalisation research"
+    },
+    {
+      "commit": "a6f88dabf090a15216f757b6bce5d3f754431aeb",
+      "subject": "Add Tryfan observed natural-colour lab"
+    },
+    {
+      "commit": "e232ea1a4b44834695553dccdf73e385a2a79fd6",
+      "subject": "Add Tryfan observed surface-height lab"
+    },
+    {
+      "commit": "3412738dae5974ce495c5de90e3bc98eed68483f",
+      "subject": "Add Bluesky aerial reconstruction lab"
+    },
+    {
+      "commit": "6fd363a84dd5e7effcbe4fe839659f28a8d7ff0a",
+      "subject": "Acquire Riffelhorn Swiss geodata"
+    },
+    {
+      "commit": "eb1cca15462c362a8c25855aaef03605089bb1f7",
+      "subject": "Add Riffelhorn mountain reconstruction lab"
+    },
+    {
+      "commit": "a33e7938e3e6500c23f56ac51280eae7774b6ed5",
+      "subject": "Add Riffelhorn raw LiDAR retention lab"
+    },
+    {
+      "commit": "44dc05d812131986af672d1050f6c9e54cb19c39",
+      "subject": "Add Riffelhorn adaptive cliff heightfield lab"
+    },
+    {
+      "commit": "d01218f4a285cc20b628319046ccb31e6e228859",
+      "subject": "Add Riffelhorn robust cliff heightfield lab"
+    },
+    {
+      "commit": "00395605ed046ff2f16f427b4d10ed6be2d55ee4",
+      "subject": "Synthesise Riffelhorn evidence and visual experiment programme"
+    },
+    {
+      "commit": "45d101351d9dbcab29845f73b2364e0be7b3e319",
+      "subject": "Add Riffelhorn terrain lighting lab"
+    },
+    {
+      "commit": "abf95bcfb50c681244a146626565a471ba791418",
+      "subject": "Add Riffelhorn projection and illumination lab"
+    },
+    {
+      "commit": "4c15639b08369ded1c41e070d687ad8dca668bf5",
+      "subject": "Close Atlas terrain research epoch"
+    },
+    {
+      "commit": "d05f054c96249754cc712044a82d6af1f24d628b",
+      "subject": "Improve Atlas readability with stronger native IGOR relief"
+    },
+    {
+      "commit": "340bf521bc8a042ac34d5a28d95351b9f6fb5077",
+      "subject": "Evaluate Mapterhorn visual terrain foundation"
+    },
+    {
+      "commit": "fe8addcbce4b7b7966dc41c93361d69d6c416f49",
+      "subject": "Prototype direct Riffelhorn regional visual terrain"
+    },
+    {
+      "commit": "6d36b460008495757689e466de6af830a980bf47",
+      "subject": "Investigate Riffelhorn regional terrain reconciliation"
+    },
+    {
+      "commit": "12945b9751ca30df2863bdef096e16781251d7eb",
+      "subject": "Define Atlas terrain source and product metadata"
+    },
+    {
+      "commit": "68fccda1516515bf08ad63867ace8696362ad796",
+      "subject": "Prepare larger Riffelhorn Swiss terrain support product"
+    },
+    {
+      "commit": "9f45d3ae7611f5b4710436d6de5318b0aa31ab29",
+      "subject": "Assess Atlas global terrain reference and stable overlap"
+    },
+    {
+      "commit": "74ea75b1577fbdd7a85af3a1989ac8aee42c54f0",
+      "subject": "Prepare Copernicus common coarse terrain product"
+    },
+    {
+      "commit": "6e2687e11626501a11fa7e87e89d523d3572694d",
+      "subject": "Evaluate Copernicus and Swiss terrain hierarchy"
+    },
+    {
+      "commit": "3e54ca8e195c5a4669f5f9d1c909cc83c4d6830e",
+      "subject": "Diagnose Swiss regional terrain parent consistency"
+    },
+    {
+      "commit": "9827b17923442a8c61e813fea103bc291bb11cef",
+      "subject": "Review Atlas spatial terrain reconciliation methods"
+    },
+    {
+      "commit": "28f677ce29e2e2945d6898036d9b20c0411b5c45",
+      "subject": "Assess Riffelhorn seam corridor feasibility"
+    },
+    {
+      "commit": "4130fa20b99ca921167cd5015fe38feb7a778aed",
+      "subject": "Assess glacier-aware Riffelhorn support extent"
+    },
+    {
+      "commit": "53b9efbc9e1e2d9393291a1b3fe90abcfcf3f7d0",
+      "subject": "Separate Atlas terrain detail and broad surface disagreement"
+    },
+    {
+      "commit": "019486f72ae88090b5bcebd7151e6d34b88bb216",
+      "subject": "Evaluate protected-priority Riffelhorn terrain transition"
+    },
+    {
+      "commit": "53d75f2c2594c6bd627bb7bfe9c10b0b272c8651",
+      "subject": "Define Atlas terrain hierarchy contract"
+    },
+    {
+      "commit": "ba24e546fcb13dcdaf0bb01bf8550c3cf8c5c2dd",
+      "subject": "Implement deterministic Atlas terrain hierarchy selection"
+    },
+    {
+      "commit": "8598c30a64dc789c22ae81cef1c14bea3a9e6ff0",
+      "subject": "Prove Atlas terrain hierarchy with Welsh Tryfan DTM"
+    },
+    {
+      "commit": "6f2eb0217c167630154fe4e9d4aa6c8c5d59a76e",
+      "subject": "Define Atlas appearance baseline and architecture"
+    },
+    {
+      "commit": "1de9e44968dcb5c2f8601c4f6844f1b626522b4b",
+      "subject": "Prove source-derived SWISSIMAGE appearance baseline"
+    },
+    {
+      "commit": "e14148af00ef01ea77c9ec08141bc17cffd70735",
+      "subject": "Assess Riffelhorn aerial observation support feasibility"
+    },
+    {
+      "commit": "e3edd0f32ca109175cb456581abb804dc542519c",
+      "subject": "Select Swiss alpine frame-camera multiview benchmark"
+    },
+    {
+      "commit": "3d406aee212a5be071728d85db443111e483e7bf",
+      "subject": "Characterize Atlas multiscale representation baseline"
+    },
+    {
+      "commit": "ca74a84713b443d408467dd17835083bbbf0771a",
+      "subject": "Evaluate scale-separated Atlas terrain relief"
+    },
+    {
+      "commit": "57688cb48e0a0c7768b066df548b6959b924bfc7",
+      "subject": "Characterize Atlas information-aware display limits"
+    },
+    {
+      "commit": "75ea9d837c86506b0e278f79e209a8533e9664b7",
+      "subject": "Review Atlas physical surface semantics"
+    },
+    {
+      "commit": "c4da56577c27f56ee1a5829e85d8daa951a517c1",
+      "subject": "Compare source-native Atlas surface semantics"
+    },
+    {
+      "commit": "052374e07d613a549f5a88640b42932f97a7f896",
+      "subject": "Test Atlas water feature and state semantics"
+    },
+    {
+      "commit": "e65c2d6c29ed4421d5f2cc7133604332e8dfd71b",
+      "subject": "Freeze Atlas semantic evidence contract v1"
+    }
+  ],
+  "limits": [
+    "This verifies documentation/reference/integrity consistency, not fresh scientific results.",
+    "Original empirical findings and frozen contracts were not rewritten.",
+    "Current lifecycle recommendation is an audit interpretation, not frozen world-model architecture."
+  ]
+}
