@@ -2,7 +2,10 @@
 
 Companion to [the domain review](physical-surface-semantics.md). Reviewed
 2026-10-06 from primary documentation/catalogues; **no products acquired**.
-This is a bounded inventory, not source selection. Access listed means documented
+This is a bounded inventory, not source selection. The later
+[source-native comparison](source-native-semantic-comparison.md) acquired small
+WorldCover/NRW/GeoCover subsets and the smallest GLAMOS distribution; the review
+above itself acquired no data. Access listed means documented
 mechanism, not verified download success. Sampling, MMU and quality are distinct.
 Unknown means not established in this review. Every future acquisition must retain
 its actual version, observation period and exact terms; portal availability alone
@@ -414,3 +417,37 @@ This inventory requires no external-data dependency in normal startup or CI.
 Primary URLs were inspected for the facts cited; no bulk link crawl, account
 access, paid licence or data download was performed. References are retained as
 reproduction starting points rather than silently cached as current product truth.
+
+
+## 2026-10-06 — verified bounded comparison access
+
+The [comparison](source-native-semantic-comparison.md) adds these specific facts;
+other inventory products remain unacquired:
+
+- WorldCover v200 producer AWS native COG range reads work. Two native windows
+  total 9,964 bytes after lossless extraction; authoritative PUM v2.0 is also
+  available under the producer AWS `v200/2021/docs` path. Parent hashes/wire bytes
+  remain unknown; subset definitions and hashes are pinned.
+- NRW WFS vegetation Voronoi returns 193 complete intersecting features in the
+  fixed Tryfan window; survey-area layer returns two date-context polygons.
+  Native mosaics retain composition percentages and parent identifiers. JNCC's
+  Welsh legend includes NA (not accessed), `?` (illegible original code) and a
+  D.5 wet/dry naming conflict; none is silently normalized. Survey-area dates
+  do not prove each upland component's epoch. OGL/NRW/OS notices still apply.
+- The GeoCover [August 2026 restructuring](https://www.geo.admin.ch/en/new-structure-of-the-swissgeocover2d-datasets-on-mapgeoadminch)
+  exposes separate `ch.swisstopo.geologie-swissgeocover2d_bedrock` and
+  `_unconsolidated` layers through small geo.admin.ch identify-envelope queries.
+  Retained 23/8 features carry native lithology/chronology and sheet links.
+  Catalogue dataStatus 20260901 is not local survey time. No exposure class is
+  inferred from geological units. Standard swisstopo terms/source credit apply.
+- GLAMOS SGI2016 r2020 smallest published ZIP is 9,787,779 bytes. One glacier and
+  six debris records intersect Riffelhorn. Published debris `sgi-id` identifies
+  the underlying glacier; local acquisition fields are 2015 (glacier), 2016
+  (debris), release 2020. Nominal 2016 does not erase this difference.
+- TLM 2026-02 national Shapefile archive is 3.59 GB; compressed WEST cover geometry
+  alone is 420.78 MB. Bounded archive-directory metadata informed exclusion,
+  not a local TLM cover acquisition or change to its documented semantics.
+
+Exact queries, attribution requirements, retained identities and byte counts are
+in [the receipt manifest](semantic-comparison-sources.json). No paid/restricted
+UKCEH raster, canopy model, new imagery or new elevation was acquired.

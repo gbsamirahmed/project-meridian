@@ -1,0 +1,113 @@
+{
+  "id": "atlas-native-semantic-comparison-v1",
+  "baseline": "75ea9d837c86506b0e278f79e209a8533e9664b7",
+  "frozenBeforeSemanticAcquisition": true,
+  "sites": {
+    "tryfan": {
+      "crs": "EPSG:27700",
+      "bounds": [
+        264900,
+        357800,
+        267900,
+        360800
+      ],
+      "reference": "scripts/earth_lab/aois/tryfan-004.json",
+      "patches": [
+        {
+          "id": "summit",
+          "centre": [
+            266405,
+            359387
+          ],
+          "side": 400,
+          "reason": "Existing summit reference; rocky mountain target, not an asserted class."
+        },
+        {
+          "id": "southern-observer",
+          "centre": [
+            265876.05347833806,
+            358339.7631202109
+          ],
+          "side": 400,
+          "reason": "Existing photographic observer reference; mixed-surface opportunity, not a class assertion."
+        },
+        {
+          "id": "northern-context",
+          "centre": [
+            266400,
+            360450
+          ],
+          "side": 400,
+          "reason": "Fixed north-central lower-context part of the established window; vegetation/water opportunity only."
+        }
+      ]
+    },
+    "riffelhorn": {
+      "crs": "EPSG:2056",
+      "bounds": [
+        2624000,
+        1091000,
+        2626000,
+        1093000
+      ],
+      "reference": "docs/atlas/swissimage-source-derived-baseline.md",
+      "patches": [
+        {
+          "id": "ordinary",
+          "centre": [
+            2625240,
+            1092530
+          ],
+          "side": 60,
+          "reason": "Exact retained appearance probe; no semantic class is asserted."
+        },
+        {
+          "id": "steep",
+          "centre": [
+            2624805,
+            1092330
+          ],
+          "side": 60,
+          "reason": "Exact retained appearance probe; no semantic class is asserted."
+        },
+        {
+          "id": "summit",
+          "centre": [
+            2624810,
+            1092252
+          ],
+          "side": 150,
+          "reason": "Exact retained appearance probe; no semantic class is asserted."
+        },
+        {
+          "id": "southern-quadrant",
+          "centre": [
+            2625750,
+            1091250
+          ],
+          "side": 500,
+          "reason": "Fixed southeast quarter of the southern half, wholly within retained footprint; opportunity for glacier/debris context, not a declared glacier class."
+        }
+      ]
+    }
+  },
+  "comparison": "Full footprints and frozen patches; native vectors retained; no common-raster homogenisation. Raster cell-centre masks and physical cell-area weighting; vector intersections in local metre CRS. No accuracy inferred.",
+  "sourceBudget": {
+    "tryfanFamilies": 2,
+    "riffelhornFamilies": 3,
+    "preferred": [
+      "ESA WorldCover 2021 v200",
+      "NRW Phase 1 family",
+      "swisstopo physical-cover subset",
+      "GLAMOS SGI2016 release2020"
+    ],
+    "largeNationwideDownloads": false
+  },
+  "rules": [
+    "No patch change after native results",
+    "Keep source-native value and crosswalk separate",
+    "No classifiers or imagery inference",
+    "Rights verified before acquisition",
+    "Source agreement is not truth"
+  ]
+}

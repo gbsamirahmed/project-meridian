@@ -3797,3 +3797,46 @@ files. Documentation-only work requires no application build/tests. AWS visual a
 independent analytical z15, exaggeration 1.45, IGOR, MapTiler satellite/suppression,
 Weather, Traverse and lifecycle remain unchanged. Multiscale/elevation stay closed;
 externally provisioned multiview stays parked.
+
+
+## 2026-10-06 — source-native physical-surface crosswalk stress test
+
+Completed the [bounded Tryfan/Riffelhorn comparison](atlas/source-native-semantic-comparison.md)
+at clean main 75ea9d8 after origin fetch (0/0). Frozen 9 km² BNG Tryfan / 4 km²
+LV95 Riffelhorn footprints and seven patches preceded semantic acquisition. Used
+WorldCover 2021 v200, NRW Phase 1 field/habitat/mosaic records, small GeoCover
+bedrock/deposit API responses and GLAMOS SGI2016 r2020 glacier/debris inventory.
+Rights gates passed with source notices; no paid/restricted UKCEH product. TLM
+national/WEST cover payload was excluded after bounded archive-cost inspection.
+12.03 MB semantic source payloads remain in meridian-data; the indivisible 9.79 MB
+GLAMOS national ZIP is documented excess, with only intersecting features analysed.
+
+Real native claims support a hybrid property model. Tryfan summit is 98.16%
+WorldCover grassland versus 87.80% historical NRW dry acid heath polygon area;
+this is not a truth/accuracy verdict. NRW mosaic composition and access/illegibility
+reasons cannot become local fractions or physical absence. Riffelhorn glacier and
+debris overlap in 774,841.484 m² of dated mapped support; geological units cannot
+become current exposed-rock labels. Small common predicates preserve usefulness
+only with native claim, mapping relation/loss, support/time, layered identity and
+quality-kind retained. Inference role LIMITED for fine/current exposure/fractions;
+recoverability remains unproved. Overall SUCCESS for empirical contract requirements,
+not an ontology, classifier, automatic source ranking or semantic runtime.
+
+Added explicit opt-in acquisition, offline native/vector comparison, one diagnostic
+map and eleven asset-free tests. Source manifest pins 16 retained source/document/
+metadata hashes and exact analytic queries/window transforms. Repeated offline
+analysis and repository summary are byte-identical; independent WorldCover window
+reads match every native value and transform. Native geometries validate, NRW
+responses are complete, CRS/reference/overlap/unknown tests pass. Map reruns match
+b4532573091e6abceac20155e8d792b2b1576bf313562aeba41c605fbea26a76.
+Python syntax, 183 local documentation references, final diff and all 113 retained
+production source hashes pass. Rasterio/NumPy emit a dependency deprecation warning
+on reads; values, transforms and deterministic outputs match. No app build/tests
+are needed: src/dependencies/runtime unchanged, no normal CI/live-data dependency.
+
+Next: separate bounded water-feature/state check, then later minimal evidence
+contract. Neither started/frozen here. No NDVI, segmentation, derived classification,
+new DEM/imagery, correction, traversability or Weather parameter inference.
+AWS visual TerrainHierarchy, independent analytical z15, exaggeration1.45, IGOR,
+MapTiler satellite/opacity/suppression, Weather, Traverse and lifecycle unchanged.
+Elevation/multiscale remain closed; externally provisioned multiview stays parked.

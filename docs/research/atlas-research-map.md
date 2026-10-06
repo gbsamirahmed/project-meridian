@@ -11,9 +11,11 @@ The [physical-surface domain review](../atlas/physical-surface-semantics.md) is 
 with a [bounded authoritative source inventory](../atlas/physical-surface-sources.md).
 It proposes property/layer-aware cover, physical features/structure and dated state,
 retaining source-native meaning, evidence, quality and rights. It does not adopt a
-land-cover runtime, universal ontology or production layer. Next work is bounded
-source-native semantic comparison, then water-feature/state definition, then a minimal
-evidence contract; these recommendations are not implementation authority.
+land-cover runtime, universal ontology or production layer. The completed
+[source-native comparison](../atlas/source-native-semantic-comparison.md) supports
+that hybrid direction: native meaning, layered/mixed claims, explicit mapping loss
+and unknown reasons remain indispensable. Next is the separate bounded water-feature/
+state check, then a minimal evidence contract; neither starts automatically.
 
 **REGIONAL ELEVATION FOUNDATION = ESTABLISHED** by the
 [real Wales/Tryfan proof](../atlas/tryfan-second-region-proof.md). No further
@@ -57,7 +59,7 @@ This is a new explicitly bounded programme, not a reopened 012A–012G Lab.
    Keep experiments bounded, products external, provenance reproducible and evidence
    classes distinct. Never silently promote experimental findings into architecture.
 
-Current return point: the [physical-surface problem definition](../atlas/physical-surface-semantics.md).
+Current return point: the [source-native semantic comparison](../atlas/source-native-semantic-comparison.md), with the water-feature/state check still unstarted.
 The preceding [information-aware display/selection synthesis](../atlas/information-aware-display-selection.md)
 remains the completed multiscale handoff.
 The current multiscale research programme is **CLOSED**: the baseline established
@@ -309,3 +311,18 @@ Riffelhorn2023 remains PARTIAL; no renewed metadata search/contact. Next: compar
 only this frozen pair's actual source information with a small orthographic control
 after confirming provisioning. No additional benchmark, correction, reconstruction,
 production/runtime change or reopened elevation research.
+
+
+## 2026-10-06 — source-native surface semantics stress test
+
+[Tryfan/Riffelhorn comparison](../atlas/source-native-semantic-comparison.md):
+**SUCCESS** for empirical requirements, not a local accuracy validation. WorldCover
+2021 versus NRW habitat/mosaics exposes coarse/native and dated-claim differences.
+GeoCover geological units cannot become current exposure; GLAMOS glacier/debris
+identity can coexist vertically. Property-scoped common interpretations retain native
+meaning, mapping relation/loss, support/time and unknown reason. No universal class,
+classifier, semantic layer or frozen evidence contract. Inference role is LIMITED
+for fine/current exposure and fractions, with recoverability still unproved.
+Next is only the separately authorized lowland/estuary water feature/state check;
+no extra mountain comparison is required. Elevation/multiscale stay closed; multiview
+stays parked. Production, Weather and Traverse remain unchanged.

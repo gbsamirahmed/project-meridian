@@ -1,0 +1,2286 @@
+{
+  "crosswalkScope": "Native claim -> common property, not source -> winner. Broader/narrower refer to semantic extension, not grain.",
+  "glamosNativeRecords": [
+    {
+      "area_km2": 41.226955,
+      "aspect_deg": 318,
+      "gid": 7587.0,
+      "i_code": "07",
+      "id": "683",
+      "layer": "SGI_2016_glaciers",
+      "length_km": 13.369,
+      "masl_max": 4599,
+      "masl_mean": 3342,
+      "masl_med": 3364,
+      "masl_min": 2190,
+      "name": "Gornergletscher",
+      "pk_glacier": "7fdce98f-4ec8-11e8-9185-985fd331b2ee",
+      "rl_0": "B",
+      "rl_1": 5,
+      "rl_2": 6,
+      "rl_3": null,
+      "sgi-id": "B56-07",
+      "slope_deg": 19.41,
+      "year_acq": 2015,
+      "year_rel": 2020
+    },
+    {
+      "area_km2": 0.782755,
+      "gid": 3739.0,
+      "id": "3738",
+      "layer": "SGI_2016_debriscover",
+      "name": "Gornergletscher",
+      "sgi-id": "B56-07",
+      "year_acq": 2016,
+      "year_rel": 2020
+    },
+    {
+      "area_km2": 1.822422,
+      "gid": 3740.0,
+      "id": "3739",
+      "layer": "SGI_2016_debriscover",
+      "name": "Gornergletscher",
+      "sgi-id": "B56-07",
+      "year_acq": 2016,
+      "year_rel": 2020
+    },
+    {
+      "area_km2": 0.00069,
+      "gid": 3756.0,
+      "id": "3755",
+      "layer": "SGI_2016_debriscover",
+      "name": "Gornergletscher",
+      "sgi-id": "B56-07",
+      "year_acq": 2016,
+      "year_rel": 2020
+    },
+    {
+      "area_km2": 0.002275,
+      "gid": 3764.0,
+      "id": "3763",
+      "layer": "SGI_2016_debriscover",
+      "name": "Gornergletscher",
+      "sgi-id": "B56-07",
+      "year_acq": 2016,
+      "year_rel": 2020
+    },
+    {
+      "area_km2": 0.00049,
+      "gid": 3765.0,
+      "id": "3764",
+      "layer": "SGI_2016_debriscover",
+      "name": "Gornergletscher",
+      "sgi-id": "B56-07",
+      "year_acq": 2016,
+      "year_rel": 2020
+    },
+    {
+      "area_km2": 0.000848,
+      "gid": 3769.0,
+      "id": "3768",
+      "layer": "SGI_2016_debriscover",
+      "name": "Gornergletscher",
+      "sgi-id": "B56-07",
+      "year_acq": 2016,
+      "year_rel": 2020
+    }
+  ],
+  "method": "Native grid cell-centres, ellipsoidal cell area; metre-CRS vector intersections. No semantic resampling. Centre-area and polygon areas have different boundary support.",
+  "nrwCrosswalk": [
+    {
+      "code": "?",
+      "concept": null,
+      "loss": "Original habitat code illegible; other mosaic components remain known.",
+      "relation": "UNMAPPABLE"
+    },
+    {
+      "code": "A.1.1.2",
+      "concept": "woody vegetation",
+      "loss": "Growth form, planting, ecology and mixed ground cover.",
+      "relation": "NARROWER"
+    },
+    {
+      "code": "A.1.2.2",
+      "concept": "woody vegetation",
+      "loss": "Growth form, planting, ecology and mixed ground cover.",
+      "relation": "NARROWER"
+    },
+    {
+      "code": "A.2.1",
+      "concept": "woody vegetation",
+      "loss": "Growth form, planting, ecology and mixed ground cover.",
+      "relation": "NARROWER"
+    },
+    {
+      "code": "B.1.1",
+      "concept": "nonwoody vegetation",
+      "loss": "Species, management, substrate and ecological conditions.",
+      "relation": "NARROWER"
+    },
+    {
+      "code": "B.1.2",
+      "concept": "nonwoody vegetation",
+      "loss": "Species, management, substrate and ecological conditions.",
+      "relation": "NARROWER"
+    },
+    {
+      "code": "B.3.1",
+      "concept": "nonwoody vegetation",
+      "loss": "Species, management, substrate and ecological conditions.",
+      "relation": "NARROWER"
+    },
+    {
+      "code": "B.4",
+      "concept": "nonwoody vegetation",
+      "loss": "Species, management, substrate and ecological conditions.",
+      "relation": "NARROWER"
+    },
+    {
+      "code": "B.5",
+      "concept": "nonwoody vegetation",
+      "loss": "Species, management, substrate and ecological conditions.",
+      "relation": "NARROWER"
+    },
+    {
+      "code": "B.5.2",
+      "concept": "nonwoody vegetation",
+      "loss": "Species, management, substrate and ecological conditions.",
+      "relation": "NARROWER"
+    },
+    {
+      "code": "C.1.1",
+      "concept": "nonwoody vegetation",
+      "loss": "Species, management, substrate and ecological conditions.",
+      "relation": "NARROWER"
+    },
+    {
+      "code": "C.2",
+      "concept": "vegetation / ledge habitat",
+      "loss": "Ecological habitat and landform; not a pure vegetation fraction.",
+      "relation": "PARTIAL OVERLAP"
+    },
+    {
+      "code": "D.1.1",
+      "concept": "woody vegetation",
+      "loss": "Growth form, planting, ecology and mixed ground cover.",
+      "relation": "NARROWER"
+    },
+    {
+      "code": "D.2",
+      "concept": "woody vegetation",
+      "loss": "Growth form, planting, ecology and mixed ground cover.",
+      "relation": "NARROWER"
+    },
+    {
+      "code": "D.3",
+      "concept": "nonwoody vegetation",
+      "loss": "Species, management, substrate and ecological conditions.",
+      "relation": "NARROWER"
+    },
+    {
+      "code": "D.5",
+      "concept": "vegetation",
+      "loss": "Mixed heath/grassland and conflicting Welsh/JNCC wet/dry names.",
+      "relation": "PARTIAL OVERLAP"
+    },
+    {
+      "code": "E.1.6.1",
+      "concept": "vegetation / wet substrate",
+      "loss": "Mire ecology and hydrological regime; not equivalent to open water.",
+      "relation": "PARTIAL OVERLAP"
+    },
+    {
+      "code": "E.1.7",
+      "concept": "vegetation / wet substrate",
+      "loss": "Mire ecology and hydrological regime; not equivalent to open water.",
+      "relation": "PARTIAL OVERLAP"
+    },
+    {
+      "code": "E.1.8",
+      "concept": "vegetation / wet substrate",
+      "loss": "Mire ecology and hydrological regime; not equivalent to open water.",
+      "relation": "PARTIAL OVERLAP"
+    },
+    {
+      "code": "E.2.1",
+      "concept": "vegetation / wet substrate",
+      "loss": "Mire ecology and hydrological regime; not equivalent to open water.",
+      "relation": "PARTIAL OVERLAP"
+    },
+    {
+      "code": "E.2.3",
+      "concept": "vegetation / wet substrate",
+      "loss": "Mire ecology and hydrological regime; not equivalent to open water.",
+      "relation": "PARTIAL OVERLAP"
+    },
+    {
+      "code": "E.3.2",
+      "concept": "vegetation / wet substrate",
+      "loss": "Mire ecology and hydrological regime; not equivalent to open water.",
+      "relation": "PARTIAL OVERLAP"
+    },
+    {
+      "code": "G.1",
+      "concept": "water",
+      "loss": "Standing/running distinction; no contemporaneous inundation extent.",
+      "relation": "NARROWER"
+    },
+    {
+      "code": "G.2",
+      "concept": "water",
+      "loss": "Standing/running distinction; no contemporaneous inundation extent.",
+      "relation": "NARROWER"
+    },
+    {
+      "code": "I.1",
+      "concept": "mineral exposure inventory",
+      "loss": "Rock/scree and acid/neutral distinction; exposure inventory not bare-percentage field.",
+      "relation": "NARROWER"
+    },
+    {
+      "code": "I.1.2",
+      "concept": "mineral exposure inventory",
+      "loss": "Rock/scree and acid/neutral distinction; exposure inventory not bare-percentage field.",
+      "relation": "NARROWER"
+    },
+    {
+      "code": "I.1.2.1",
+      "concept": "mineral exposure inventory",
+      "loss": "Rock/scree and acid/neutral distinction; exposure inventory not bare-percentage field.",
+      "relation": "NARROWER"
+    },
+    {
+      "code": "I.1.4",
+      "concept": "mineral exposure inventory",
+      "loss": "Rock/scree and acid/neutral distinction; exposure inventory not bare-percentage field.",
+      "relation": "NARROWER"
+    },
+    {
+      "code": "J.3.6",
+      "concept": "artificial structure",
+      "loss": "Building identity versus general built cover.",
+      "relation": "NARROWER"
+    },
+    {
+      "code": "NA",
+      "concept": null,
+      "loss": "Not accessed land: observation absence, not physical absence.",
+      "relation": "UNMAPPABLE"
+    }
+  ],
+  "nrwLegend": {
+    "?": {
+      "jnccCode": "Only used in Phase 1 habitat survey of Wales",
+      "jnccName": "-",
+      "welshName": "Habitat code illedgible on the original vegetation map"
+    },
+    "A.1.1.2": {
+      "jnccCode": "A1.1.2",
+      "jnccName": "Broadleaved woodland - plantation",
+      "welshName": "Planted broadleaved woodland"
+    },
+    "A.1.2.2": {
+      "jnccCode": "A1.2.2",
+      "jnccName": "Coniferous woodland - plantation",
+      "welshName": "Planted coniferous woodland"
+    },
+    "A.2.1": {
+      "jnccCode": "A2.1",
+      "jnccName": "Scrub - dense/continuous",
+      "welshName": "Dense scrub"
+    },
+    "B.1.1": {
+      "jnccCode": "B1.1",
+      "jnccName": "Acid grassland - unimproved",
+      "welshName": "Unimproved acid grassland"
+    },
+    "B.1.2": {
+      "jnccCode": "B1.2",
+      "jnccName": "Acid grassland - semi-improved",
+      "welshName": "Semi-improved acid grassland"
+    },
+    "B.3.1": {
+      "jnccCode": "B3.1",
+      "jnccName": "Calcareous grassland - unimproved",
+      "welshName": "Unimproved calcareous grassland"
+    },
+    "B.4": {
+      "jnccCode": "B4",
+      "jnccName": "Improved grassland",
+      "welshName": "Improved grassland"
+    },
+    "B.5": {
+      "jnccCode": "B5",
+      "jnccName": "Marsh/marshy grassland",
+      "welshName": "Marshy grassland"
+    },
+    "B.5.2": {
+      "jnccCode": "Only used in Phase 1 habitat survey of Wales",
+      "jnccName": "-",
+      "welshName": "Marshy grassland Molinia dominated"
+    },
+    "C.1.1": {
+      "jnccCode": "C1.1",
+      "jnccName": "Bracken - continuous",
+      "welshName": "Bracken"
+    },
+    "C.2": {
+      "jnccCode": "C2",
+      "jnccName": "Upland species-rich ledges",
+      "welshName": "Upland species rich ledges"
+    },
+    "D.1.1": {
+      "jnccCode": "D1.1",
+      "jnccName": "Dry dwarf shrub heath - acid",
+      "welshName": "Dry acid heath"
+    },
+    "D.2": {
+      "jnccCode": "D2",
+      "jnccName": "Wet dwarf shrub heath",
+      "welshName": "Wet heath"
+    },
+    "D.3": {
+      "jnccCode": "D3",
+      "jnccName": "Lichen/bryophyte heath",
+      "welshName": "Lichen/bryophyte heath"
+    },
+    "D.5": {
+      "jnccCode": "D5",
+      "jnccName": "Dry heath/acid grassland",
+      "welshName": "Wet heath/acid grassland mosaic"
+    },
+    "E.1.6.1": {
+      "jnccCode": "E1.6.1",
+      "jnccName": "Blanket sphagnum bog",
+      "welshName": "Blanket bog"
+    },
+    "E.1.7": {
+      "jnccCode": "E1.7",
+      "jnccName": "Wet modified bog",
+      "welshName": "Wet modified bog"
+    },
+    "E.1.8": {
+      "jnccCode": "E1.8",
+      "jnccName": "Dry modified bog",
+      "welshName": "Dry modified bog"
+    },
+    "E.2.1": {
+      "jnccCode": "E2.1",
+      "jnccName": "Flush and spring - acid/neutral flush",
+      "welshName": "Acid/neutral flush"
+    },
+    "E.2.3": {
+      "jnccCode": "E2.3",
+      "jnccName": "Brophyte-dominated spring",
+      "welshName": "Brophyte-dominated spring"
+    },
+    "E.3.2": {
+      "jnccCode": "E3.2",
+      "jnccName": "Fen - basin mire",
+      "welshName": "Basin mire"
+    },
+    "G.1": {
+      "jnccCode": "G1",
+      "jnccName": "Standing water",
+      "welshName": "Standing water"
+    },
+    "G.2": {
+      "jnccCode": "G2",
+      "jnccName": "Running water",
+      "welshName": "Running water"
+    },
+    "I.1": {
+      "jnccCode": "I1",
+      "jnccName": "Natural rock exposure and waste",
+      "welshName": "Natural rock exposure"
+    },
+    "I.1.2": {
+      "jnccCode": "I1.2",
+      "jnccName": "Scree",
+      "welshName": "Scree"
+    },
+    "I.1.2.1": {
+      "jnccCode": "I1.2.1",
+      "jnccName": "Scree - acid/neutral",
+      "welshName": "Acid/neutral scree"
+    },
+    "I.1.4": {
+      "jnccCode": "I1.4",
+      "jnccName": "Other rock exposure",
+      "welshName": "Other rock exposure"
+    },
+    "J.3.6": {
+      "jnccCode": "J3.6",
+      "jnccName": "Buildings",
+      "welshName": "Buildings"
+    },
+    "NA": {
+      "jnccCode": "Only used in Phase 1 habitat survey of Wales",
+      "jnccName": "-",
+      "welshName": "Not accessed land"
+    }
+  },
+  "nrwMosaicRecords": [
+    {
+      "area_ha": 9.01000023,
+      "id": "nrw_phase1_vegetation_voronoi.466226",
+      "label": "Mosaic of:50% B.1.1,50% E.2.1",
+      "mosaicpoly": "M",
+      "original_unique_id": "sh66se_293233",
+      "phase1_code": "mosaic",
+      "survey": "Upland_UplandSurvey",
+      "voronoi_uid": "sh66se_293233"
+    },
+    {
+      "area_ha": 2.51999998,
+      "id": "nrw_phase1_vegetation_voronoi.466231",
+      "label": "Mosaic of:49% B.1.1,49% C.1.1,2% B.5.2",
+      "mosaicpoly": "M",
+      "original_unique_id": "sh66sw_293427",
+      "phase1_code": "mosaic",
+      "survey": "Upland_UplandSurvey",
+      "voronoi_uid": "sh66sw_293427"
+    },
+    {
+      "area_ha": 5.65999985,
+      "id": "nrw_phase1_vegetation_voronoi.466237",
+      "label": "Mosaic of:50% B.1.1,50% C.1.1",
+      "mosaicpoly": "M",
+      "original_unique_id": "sh66se_293726",
+      "phase1_code": "mosaic",
+      "survey": "Upland_UplandSurvey",
+      "voronoi_uid": "sh66se_293726"
+    },
+    {
+      "area_ha": 21.72999954,
+      "id": "nrw_phase1_vegetation_voronoi.466244",
+      "label": "Mosaic of:98% B.1.1,2% E.1.8",
+      "mosaicpoly": "M",
+      "original_unique_id": "sh66se_294037",
+      "phase1_code": "mosaic",
+      "survey": "Upland_UplandSurvey",
+      "voronoi_uid": "sh66se_294037"
+    },
+    {
+      "area_ha": 3.70000005,
+      "id": "nrw_phase1_vegetation_voronoi.466250",
+      "label": "Mosaic of:50% B.1.1,50% E.2.1",
+      "mosaicpoly": "M",
+      "original_unique_id": "sh65ne_294369",
+      "phase1_code": "mosaic",
+      "survey": "Upland_UplandSurvey",
+      "voronoi_uid": "sh65ne_294369"
+    },
+    {
+      "area_ha": 2.23000002,
+      "id": "nrw_phase1_vegetation_voronoi.466252",
+      "label": "Mosaic of:98% D.2,2% E.2.1",
+      "mosaicpoly": "M",
+      "original_unique_id": "sh65ne_294520",
+      "phase1_code": "mosaic",
+      "survey": "Upland_UplandSurvey",
+      "voronoi_uid": "sh65ne_294520"
+    },
+    {
+      "area_ha": 5.01000023,
+      "id": "nrw_phase1_vegetation_voronoi.482334",
+      "label": "Mosaic of:34% E.2.1,33% B.1.1,33% C.1.1",
+      "mosaicpoly": "M",
+      "original_unique_id": "sh66se_291620",
+      "phase1_code": "mosaic",
+      "survey": "Upland_UplandSurvey",
+      "voronoi_uid": "v_2266"
+    },
+    {
+      "area_ha": 22.65999985,
+      "id": "nrw_phase1_vegetation_voronoi.482363",
+      "label": "Mosaic of:50% B.1.1,24% C.1.1,24% I.1.2,2% E.2.1",
+      "mosaicpoly": "M",
+      "original_unique_id": "sh66se_292325",
+      "phase1_code": "mosaic",
+      "survey": "Upland_UplandSurvey",
+      "voronoi_uid": "v_2351"
+    },
+    {
+      "area_ha": 3.6099999,
+      "id": "nrw_phase1_vegetation_voronoi.482377",
+      "label": "Mosaic of:98% B.1.1,2% D.1.1",
+      "mosaicpoly": "M",
+      "original_unique_id": "sh66se_293286",
+      "phase1_code": "mosaic",
+      "survey": "Upland_UplandSurvey",
+      "voronoi_uid": "v_2394"
+    },
+    {
+      "area_ha": 7.07999992,
+      "id": "nrw_phase1_vegetation_voronoi.482378",
+      "label": "Mosaic of:50% B.1.1,50% I.1.2",
+      "mosaicpoly": "M",
+      "original_unique_id": "sh66se_293286",
+      "phase1_code": "mosaic",
+      "survey": "Upland_UplandSurvey",
+      "voronoi_uid": "v_2395"
+    },
+    {
+      "area_ha": 1.77999997,
+      "id": "nrw_phase1_vegetation_voronoi.482385",
+      "label": "Mosaic of:98% I.1.2.1,2% D.1.1",
+      "mosaicpoly": "M",
+      "original_unique_id": "sh66sw_293601",
+      "phase1_code": "mosaic",
+      "survey": "Upland_UplandSurvey",
+      "voronoi_uid": "v_2421"
+    },
+    {
+      "area_ha": 7.51999998,
+      "id": "nrw_phase1_vegetation_voronoi.482388",
+      "label": "Mosaic of:96% B.1.1,2% D.2,2% E.2.1",
+      "mosaicpoly": "M",
+      "original_unique_id": "sh66se_293719",
+      "phase1_code": "mosaic",
+      "survey": "Upland_UplandSurvey",
+      "voronoi_uid": "v_2428"
+    },
+    {
+      "area_ha": 4.88000011,
+      "id": "nrw_phase1_vegetation_voronoi.482398",
+      "label": "Mosaic of:98% B.1.1,2% C.1.1",
+      "mosaicpoly": "M",
+      "original_unique_id": "sh66sw_293968",
+      "phase1_code": "mosaic",
+      "survey": "Upland_UplandSurvey",
+      "voronoi_uid": "v_2445"
+    },
+    {
+      "area_ha": 5.15999985,
+      "id": "nrw_phase1_vegetation_voronoi.482400",
+      "label": "Mosaic of:98% E.2.1,2% D.2",
+      "mosaicpoly": "M",
+      "original_unique_id": "sh66se_293999",
+      "phase1_code": "mosaic",
+      "survey": "Upland_UplandSurvey",
+      "voronoi_uid": "v_2455"
+    },
+    {
+      "area_ha": 20.42000008,
+      "id": "nrw_phase1_vegetation_voronoi.482402",
+      "label": "Mosaic of:49% B.1.1,49% D.1.1,2% E.2.1",
+      "mosaicpoly": "M",
+      "original_unique_id": "sh66se_294045",
+      "phase1_code": "mosaic",
+      "survey": "Upland_UplandSurvey",
+      "voronoi_uid": "v_2461"
+    },
+    {
+      "area_ha": 1.12,
+      "id": "nrw_phase1_vegetation_voronoi.466261",
+      "label": "Mosaic of:50% B.1.1,50% E.2.1",
+      "mosaicpoly": "M",
+      "original_unique_id": "sh65ne_294954",
+      "phase1_code": "mosaic",
+      "survey": "Upland_UplandSurvey",
+      "voronoi_uid": "sh65ne_294954"
+    },
+    {
+      "area_ha": 0.38,
+      "id": "nrw_phase1_vegetation_voronoi.466262",
+      "label": "Mosaic of:98% E.2.1,2% D.1.1",
+      "mosaicpoly": "M",
+      "original_unique_id": "sh65ne_294968",
+      "phase1_code": "mosaic",
+      "survey": "Upland_UplandSurvey",
+      "voronoi_uid": "sh65ne_294968"
+    },
+    {
+      "area_ha": 4.53999996,
+      "id": "nrw_phase1_vegetation_voronoi.466263",
+      "label": "Mosaic of:50% D.1.1,50% E.2.1",
+      "mosaicpoly": "M",
+      "original_unique_id": "sh65ne_295007",
+      "phase1_code": "mosaic",
+      "survey": "Upland_UplandSurvey",
+      "voronoi_uid": "sh65ne_295007"
+    },
+    {
+      "area_ha": 8.06000042,
+      "id": "nrw_phase1_vegetation_voronoi.482397",
+      "label": "Mosaic of:98% B.1.1,2% ?",
+      "mosaicpoly": "M",
+      "original_unique_id": "sh66sw_293968",
+      "phase1_code": "mosaic",
+      "survey": "Upland_UplandSurvey",
+      "voronoi_uid": "v_2444"
+    },
+    {
+      "area_ha": 2.72000003,
+      "id": "nrw_phase1_vegetation_voronoi.482399",
+      "label": "Mosaic of:50% D.1.1,50% I.1.2.1",
+      "mosaicpoly": "M",
+      "original_unique_id": "sh66sw_293968",
+      "phase1_code": "mosaic",
+      "survey": "Upland_UplandSurvey",
+      "voronoi_uid": "v_2453"
+    },
+    {
+      "area_ha": 4.44000006,
+      "id": "nrw_phase1_vegetation_voronoi.482403",
+      "label": "Mosaic of:50% D.1.1,50% I.1.4",
+      "mosaicpoly": "M",
+      "original_unique_id": "sh66se_294197",
+      "phase1_code": "mosaic",
+      "survey": "Upland_UplandSurvey",
+      "voronoi_uid": "v_2471"
+    },
+    {
+      "area_ha": 1.36000001,
+      "id": "nrw_phase1_vegetation_voronoi.482493",
+      "label": "Mosaic of:50% E.1.6.1,50% E.3.2",
+      "mosaicpoly": "M",
+      "original_unique_id": "sh65ne_294967",
+      "phase1_code": "mosaic",
+      "survey": "Upland_UplandSurvey",
+      "voronoi_uid": "v_2620"
+    },
+    {
+      "area_ha": 6.21999979,
+      "id": "nrw_phase1_vegetation_voronoi.482510",
+      "label": "Mosaic of:50% B.1.1,50% D.3",
+      "mosaicpoly": "M",
+      "original_unique_id": "sh65ne_295943",
+      "phase1_code": "mosaic",
+      "survey": "Upland_UplandSurvey",
+      "voronoi_uid": "v_2672"
+    },
+    {
+      "area_ha": 5.63999987,
+      "id": "nrw_phase1_vegetation_voronoi.482511",
+      "label": "Mosaic of:100% D.3",
+      "mosaicpoly": "M",
+      "original_unique_id": "sh65ne_295943",
+      "phase1_code": "mosaic",
+      "survey": "Upland_UplandSurvey",
+      "voronoi_uid": "v_2673"
+    },
+    {
+      "area_ha": 27.19000053,
+      "id": "nrw_phase1_vegetation_voronoi.466289",
+      "label": "Mosaic of:50% B.1.1,50% E.1.8",
+      "mosaicpoly": "M",
+      "original_unique_id": "sh65ne_295948",
+      "phase1_code": "mosaic",
+      "survey": "Upland_UplandSurvey",
+      "voronoi_uid": "sh65ne_295948"
+    },
+    {
+      "area_ha": 22.28000069,
+      "id": "nrw_phase1_vegetation_voronoi.482505",
+      "label": "Mosaic of:96% B.1.1,2% E.2.1,2% E.3.2",
+      "mosaicpoly": "M",
+      "original_unique_id": "sh65ne_295789",
+      "phase1_code": "mosaic",
+      "survey": "Upland_UplandSurvey",
+      "voronoi_uid": "v_2663"
+    },
+    {
+      "area_ha": 26.87000084,
+      "id": "nrw_phase1_vegetation_voronoi.482506",
+      "label": "Mosaic of:50% D.1.1,50% E.2.1",
+      "mosaicpoly": "M",
+      "original_unique_id": "sh65ne_295789",
+      "phase1_code": "mosaic",
+      "survey": "Upland_UplandSurvey",
+      "voronoi_uid": "v_2665"
+    },
+    {
+      "area_ha": 7.21999979,
+      "id": "nrw_phase1_vegetation_voronoi.482522",
+      "label": "Mosaic of:98% I.1.2.1,2% B.1.1",
+      "mosaicpoly": "M",
+      "original_unique_id": "sh65nw_296332",
+      "phase1_code": "mosaic",
+      "survey": "Upland_UplandSurvey",
+      "voronoi_uid": "v_2702"
+    },
+    {
+      "area_ha": 11.97000027,
+      "id": "nrw_phase1_vegetation_voronoi.482526",
+      "label": "Mosaic of:50% E.2.1,50% E.3.2",
+      "mosaicpoly": "M",
+      "original_unique_id": "sh65ne_296497",
+      "phase1_code": "mosaic",
+      "survey": "Upland_UplandSurvey",
+      "voronoi_uid": "v_2710"
+    },
+    {
+      "area_ha": 36.93999863,
+      "id": "nrw_phase1_vegetation_voronoi.482530",
+      "label": "Mosaic of:94% D.1.1,2% B.1.1,2% C.1.1,2% D.2",
+      "mosaicpoly": "M",
+      "original_unique_id": "sh65nw_296655",
+      "phase1_code": "mosaic",
+      "survey": "Upland_UplandSurvey",
+      "voronoi_uid": "v_2719"
+    }
+  ],
+  "nrwMosaics": [
+    "Mosaic of:100% D.3",
+    "Mosaic of:34% E.2.1,33% B.1.1,33% C.1.1",
+    "Mosaic of:49% B.1.1,49% C.1.1,2% B.5.2",
+    "Mosaic of:49% B.1.1,49% D.1.1,2% E.2.1",
+    "Mosaic of:50% B.1.1,24% C.1.1,24% I.1.2,2% E.2.1",
+    "Mosaic of:50% B.1.1,50% C.1.1",
+    "Mosaic of:50% B.1.1,50% D.3",
+    "Mosaic of:50% B.1.1,50% E.1.8",
+    "Mosaic of:50% B.1.1,50% E.2.1",
+    "Mosaic of:50% B.1.1,50% I.1.2",
+    "Mosaic of:50% D.1.1,50% E.2.1",
+    "Mosaic of:50% D.1.1,50% I.1.2.1",
+    "Mosaic of:50% D.1.1,50% I.1.4",
+    "Mosaic of:50% E.1.6.1,50% E.3.2",
+    "Mosaic of:50% E.2.1,50% E.3.2",
+    "Mosaic of:94% D.1.1,2% B.1.1,2% C.1.1,2% D.2",
+    "Mosaic of:96% B.1.1,2% D.2,2% E.2.1",
+    "Mosaic of:96% B.1.1,2% E.2.1,2% E.3.2",
+    "Mosaic of:98% B.1.1,2% ?",
+    "Mosaic of:98% B.1.1,2% C.1.1",
+    "Mosaic of:98% B.1.1,2% D.1.1",
+    "Mosaic of:98% B.1.1,2% E.1.8",
+    "Mosaic of:98% D.2,2% E.2.1",
+    "Mosaic of:98% E.2.1,2% D.1.1",
+    "Mosaic of:98% E.2.1,2% D.2",
+    "Mosaic of:98% I.1.2.1,2% B.1.1",
+    "Mosaic of:98% I.1.2.1,2% D.1.1"
+  ],
+  "nrwRecordCounts": {
+    "geocoverBedrock": 23,
+    "geocoverUnconsolidated": 8,
+    "surveyAreas": 2,
+    "vegetation": 193
+  },
+  "otherCrosswalk": [
+    {
+      "loss": "soil/sand/rock and sparse vegetation cannot be separated",
+      "native": "WorldCover 60",
+      "relation": "PARTIAL OVERLAP",
+      "target": "exposed bedrock or scree specifically"
+    },
+    {
+      "loss": "snow versus ice",
+      "native": "WorldCover 70",
+      "relation": "BROADER",
+      "target": "persistent ice cover only"
+    },
+    {
+      "loss": "no object identity; snow and debris distinctions",
+      "native": "WorldCover 70",
+      "relation": "AMBIGUOUS",
+      "target": "glacier membership"
+    },
+    {
+      "loss": "subsurface/geological claim cannot establish exposure",
+      "native": "GeoCover bedrock unit",
+      "relation": "UNMAPPABLE",
+      "target": "current exposed rock cover"
+    },
+    {
+      "loss": "none for membership; geometric/epoch uncertainty remains",
+      "native": "GLAMOS SGI glacier outline",
+      "relation": "COMPATIBLE",
+      "target": "glacier inventory membership at feature epoch"
+    },
+    {
+      "loss": "source material and glacier identity if reduced to mineral-only category",
+      "native": "GLAMOS debris cover",
+      "relation": "NARROWER",
+      "target": "loose mineral cover above identified glacier"
+    }
+  ],
+  "planSha256": "62739330a5931120dbdcf14743b5be6f8acc5da5dfc3acbe6747e0aaa0daacd7",
+  "sites": {
+    "riffelhorn": {
+      "grid": {
+        "angularStep": 8.333333333333333e-05,
+        "crs": "EPSG:4326",
+        "nodata": 0.0,
+        "projectionOperation": {
+          "declaredAccuracyM": 1.0,
+          "description": "axis order change (2D) + Inverse of CH1903+ to WGS 84 (1) + Swiss Oblique Mercator 1995"
+        },
+        "shape": [
+          218,
+          312
+        ],
+        "topRowCellDimensionsM": [
+          6.457,
+          9.263
+        ]
+      },
+      "regions": {
+        "ordinary": {
+          "bounds": [
+            2625210.0,
+            1092500.0,
+            2625270.0,
+            1092560.0
+          ],
+          "debrisWithinGlacierM2": 0.0,
+          "polygonAreaM2": 3600.0,
+          "rasterCells": 70,
+          "rasterCentreAreaM2": 4186.692,
+          "vectors": {
+            "bedrock": {
+              "areas": {
+                "featureIds": [
+                  "178895",
+                  "179296"
+                ],
+                "groupOverlapM2": 0,
+                "nativeAreaM2": {
+                  "Undifferenzierte lithologische Einheit: Serpentinit": 1928.734,
+                  "Zermatt-Saas-Decke: Ophiolith": 1671.266
+                },
+                "uncoveredAreaM2": 0.0,
+                "unionAreaM2": 3600.0
+              },
+              "pairs": {
+                "nativePairsM2": {
+                  "100 | Undifferenzierte lithologische Einheit: Serpentinit": 1435.435,
+                  "100 | Zermatt-Saas-Decke: Ophiolith": 598.099,
+                  "30 | Undifferenzierte lithologische Einheit: Serpentinit": 418.668,
+                  "30 | Zermatt-Saas-Decke: Ophiolith": 119.619,
+                  "60 | Undifferenzierte lithologische Einheit: Serpentinit": 418.67,
+                  "60 | Zermatt-Saas-Decke: Ophiolith": 1196.202
+                },
+                "unmatchedCentreAreaM2": 0.0,
+                "warning": "Cell-centre area approximation; multiple vector claims remain multiple, not exclusive. No accuracy or simultaneity implied."
+              }
+            },
+            "debris": {
+              "areas": {
+                "featureIds": [],
+                "groupOverlapM2": 0,
+                "nativeAreaM2": {},
+                "uncoveredAreaM2": 3600.0,
+                "unionAreaM2": 0.0
+              },
+              "pairs": {
+                "nativePairsM2": {},
+                "unmatchedCentreAreaM2": 4186.692,
+                "warning": "Cell-centre area approximation; multiple vector claims remain multiple, not exclusive. No accuracy or simultaneity implied."
+              }
+            },
+            "glacier": {
+              "areas": {
+                "featureIds": [],
+                "groupOverlapM2": 0,
+                "nativeAreaM2": {},
+                "uncoveredAreaM2": 3600.0,
+                "unionAreaM2": 0.0
+              },
+              "pairs": {
+                "nativePairsM2": {},
+                "unmatchedCentreAreaM2": 4186.692,
+                "warning": "Cell-centre area approximation; multiple vector claims remain multiple, not exclusive. No accuracy or simultaneity implied."
+              }
+            },
+            "unconsolidated": {
+              "areas": {
+                "featureIds": [],
+                "groupOverlapM2": 0,
+                "nativeAreaM2": {},
+                "uncoveredAreaM2": 3600.0,
+                "unionAreaM2": 0.0
+              },
+              "pairs": {
+                "nativePairsM2": {},
+                "unmatchedCentreAreaM2": 4186.692,
+                "warning": "Cell-centre area approximation; multiple vector claims remain multiple, not exclusive. No accuracy or simultaneity implied."
+              }
+            }
+          },
+          "worldcover": {
+            "100": {
+              "cells": 34,
+              "centreAreaM2": 2033.533,
+              "label": "Moss and lichen"
+            },
+            "30": {
+              "cells": 9,
+              "centreAreaM2": 538.287,
+              "label": "Grassland"
+            },
+            "60": {
+              "cells": 27,
+              "centreAreaM2": 1614.872,
+              "label": "Bare / sparse vegetation"
+            }
+          }
+        },
+        "southern-quadrant": {
+          "bounds": [
+            2625500.0,
+            1091000.0,
+            2626000.0,
+            1091500.0
+          ],
+          "debrisWithinGlacierM2": 59462.661,
+          "polygonAreaM2": 250000.0,
+          "rasterCells": 4187,
+          "rasterCentreAreaM2": 250475.569,
+          "vectors": {
+            "bedrock": {
+              "areas": {
+                "featureIds": [
+                  "289040"
+                ],
+                "groupOverlapM2": 0,
+                "nativeAreaM2": {
+                  "Undifferenzierte lithologische Einheit": 250000.0
+                },
+                "uncoveredAreaM2": 0.0,
+                "unionAreaM2": 250000.0
+              },
+              "pairs": {
+                "nativePairsM2": {
+                  "60 | Undifferenzierte lithologische Einheit": 1316.133,
+                  "70 | Undifferenzierte lithologische Einheit": 249159.437
+                },
+                "unmatchedCentreAreaM2": 0.0,
+                "warning": "Cell-centre area approximation; multiple vector claims remain multiple, not exclusive. No accuracy or simultaneity implied."
+              }
+            },
+            "debris": {
+              "areas": {
+                "featureIds": [
+                  "3738",
+                  "3739"
+                ],
+                "groupOverlapM2": 0,
+                "nativeAreaM2": {
+                  "B56-07 | 2016": 59462.661
+                },
+                "uncoveredAreaM2": 190537.339,
+                "unionAreaM2": 59462.661
+              },
+              "pairs": {
+                "nativePairsM2": {
+                  "60 | B56-07 | 2016": 1316.133,
+                  "70 | B56-07 | 2016": 58448.032
+                },
+                "unmatchedCentreAreaM2": 190711.405,
+                "warning": "Cell-centre area approximation; multiple vector claims remain multiple, not exclusive. No accuracy or simultaneity implied."
+              }
+            },
+            "glacier": {
+              "areas": {
+                "featureIds": [
+                  "683"
+                ],
+                "groupOverlapM2": 0,
+                "nativeAreaM2": {
+                  "B56-07 | 2015": 250000.0
+                },
+                "uncoveredAreaM2": 0.0,
+                "unionAreaM2": 250000.0
+              },
+              "pairs": {
+                "nativePairsM2": {
+                  "60 | B56-07 | 2015": 1316.133,
+                  "70 | B56-07 | 2015": 249159.437
+                },
+                "unmatchedCentreAreaM2": 0.0,
+                "warning": "Cell-centre area approximation; multiple vector claims remain multiple, not exclusive. No accuracy or simultaneity implied."
+              }
+            },
+            "unconsolidated": {
+              "areas": {
+                "featureIds": [],
+                "groupOverlapM2": 0,
+                "nativeAreaM2": {},
+                "uncoveredAreaM2": 250000.0,
+                "unionAreaM2": 0.0
+              },
+              "pairs": {
+                "nativePairsM2": {},
+                "unmatchedCentreAreaM2": 250475.569,
+                "warning": "Cell-centre area approximation; multiple vector claims remain multiple, not exclusive. No accuracy or simultaneity implied."
+              }
+            }
+          },
+          "worldcover": {
+            "60": {
+              "cells": 22,
+              "centreAreaM2": 1316.133,
+              "label": "Bare / sparse vegetation"
+            },
+            "70": {
+              "cells": 4165,
+              "centreAreaM2": 249159.437,
+              "label": "Snow and ice"
+            }
+          }
+        },
+        "steep": {
+          "bounds": [
+            2624775.0,
+            1092300.0,
+            2624835.0,
+            1092360.0
+          ],
+          "debrisWithinGlacierM2": 0.0,
+          "polygonAreaM2": 3600.0,
+          "rasterCells": 54,
+          "rasterCentreAreaM2": 3229.837,
+          "vectors": {
+            "bedrock": {
+              "areas": {
+                "featureIds": [
+                  "178895"
+                ],
+                "groupOverlapM2": 0,
+                "nativeAreaM2": {
+                  "Undifferenzierte lithologische Einheit: Serpentinit": 3600.0
+                },
+                "uncoveredAreaM2": 0.0,
+                "unionAreaM2": 3600.0
+              },
+              "pairs": {
+                "nativePairsM2": {
+                  "60 | Undifferenzierte lithologische Einheit: Serpentinit": 3229.837
+                },
+                "unmatchedCentreAreaM2": 0.0,
+                "warning": "Cell-centre area approximation; multiple vector claims remain multiple, not exclusive. No accuracy or simultaneity implied."
+              }
+            },
+            "debris": {
+              "areas": {
+                "featureIds": [],
+                "groupOverlapM2": 0,
+                "nativeAreaM2": {},
+                "uncoveredAreaM2": 3600.0,
+                "unionAreaM2": 0.0
+              },
+              "pairs": {
+                "nativePairsM2": {},
+                "unmatchedCentreAreaM2": 3229.837,
+                "warning": "Cell-centre area approximation; multiple vector claims remain multiple, not exclusive. No accuracy or simultaneity implied."
+              }
+            },
+            "glacier": {
+              "areas": {
+                "featureIds": [],
+                "groupOverlapM2": 0,
+                "nativeAreaM2": {},
+                "uncoveredAreaM2": 3600.0,
+                "unionAreaM2": 0.0
+              },
+              "pairs": {
+                "nativePairsM2": {},
+                "unmatchedCentreAreaM2": 3229.837,
+                "warning": "Cell-centre area approximation; multiple vector claims remain multiple, not exclusive. No accuracy or simultaneity implied."
+              }
+            },
+            "unconsolidated": {
+              "areas": {
+                "featureIds": [],
+                "groupOverlapM2": 0,
+                "nativeAreaM2": {},
+                "uncoveredAreaM2": 3600.0,
+                "unionAreaM2": 0.0
+              },
+              "pairs": {
+                "nativePairsM2": {},
+                "unmatchedCentreAreaM2": 3229.837,
+                "warning": "Cell-centre area approximation; multiple vector claims remain multiple, not exclusive. No accuracy or simultaneity implied."
+              }
+            }
+          },
+          "worldcover": {
+            "60": {
+              "cells": 54,
+              "centreAreaM2": 3229.837,
+              "label": "Bare / sparse vegetation"
+            }
+          }
+        },
+        "summit": {
+          "bounds": [
+            2624735.0,
+            1092177.0,
+            2624885.0,
+            1092327.0
+          ],
+          "debrisWithinGlacierM2": 0.0,
+          "polygonAreaM2": 22500.0,
+          "rasterCells": 385,
+          "rasterCentreAreaM2": 23027.83,
+          "vectors": {
+            "bedrock": {
+              "areas": {
+                "featureIds": [
+                  "178895"
+                ],
+                "groupOverlapM2": 0,
+                "nativeAreaM2": {
+                  "Undifferenzierte lithologische Einheit: Serpentinit": 22500.0
+                },
+                "uncoveredAreaM2": 0.0,
+                "unionAreaM2": 22500.0
+              },
+              "pairs": {
+                "nativePairsM2": {
+                  "100 | Undifferenzierte lithologische Einheit: Serpentinit": 119.626,
+                  "60 | Undifferenzierte lithologische Einheit: Serpentinit": 22728.767,
+                  "70 | Undifferenzierte lithologische Einheit: Serpentinit": 179.436
+                },
+                "unmatchedCentreAreaM2": 0.0,
+                "warning": "Cell-centre area approximation; multiple vector claims remain multiple, not exclusive. No accuracy or simultaneity implied."
+              }
+            },
+            "debris": {
+              "areas": {
+                "featureIds": [],
+                "groupOverlapM2": 0,
+                "nativeAreaM2": {},
+                "uncoveredAreaM2": 22500.0,
+                "unionAreaM2": 0.0
+              },
+              "pairs": {
+                "nativePairsM2": {},
+                "unmatchedCentreAreaM2": 23027.83,
+                "warning": "Cell-centre area approximation; multiple vector claims remain multiple, not exclusive. No accuracy or simultaneity implied."
+              }
+            },
+            "glacier": {
+              "areas": {
+                "featureIds": [],
+                "groupOverlapM2": 0,
+                "nativeAreaM2": {},
+                "uncoveredAreaM2": 22500.0,
+                "unionAreaM2": 0.0
+              },
+              "pairs": {
+                "nativePairsM2": {},
+                "unmatchedCentreAreaM2": 23027.83,
+                "warning": "Cell-centre area approximation; multiple vector claims remain multiple, not exclusive. No accuracy or simultaneity implied."
+              }
+            },
+            "unconsolidated": {
+              "areas": {
+                "featureIds": [],
+                "groupOverlapM2": 0,
+                "nativeAreaM2": {},
+                "uncoveredAreaM2": 22500.0,
+                "unionAreaM2": 0.0
+              },
+              "pairs": {
+                "nativePairsM2": {},
+                "unmatchedCentreAreaM2": 23027.83,
+                "warning": "Cell-centre area approximation; multiple vector claims remain multiple, not exclusive. No accuracy or simultaneity implied."
+              }
+            }
+          },
+          "worldcover": {
+            "100": {
+              "cells": 2,
+              "centreAreaM2": 119.626,
+              "label": "Moss and lichen"
+            },
+            "60": {
+              "cells": 380,
+              "centreAreaM2": 22728.767,
+              "label": "Bare / sparse vegetation"
+            },
+            "70": {
+              "cells": 3,
+              "centreAreaM2": 179.436,
+              "label": "Snow and ice"
+            }
+          }
+        },
+        "window": {
+          "bounds": [
+            2624000.0,
+            1091000.0,
+            2626000.0,
+            1093000.0
+          ],
+          "debrisWithinGlacierM2": 774841.484,
+          "polygonAreaM2": 4000000.0,
+          "rasterCells": 66862,
+          "rasterCentreAreaM2": 3999348.855,
+          "vectors": {
+            "bedrock": {
+              "areas": {
+                "featureIds": [
+                  "178893",
+                  "178895",
+                  "178904",
+                  "178907",
+                  "179011",
+                  "179019",
+                  "179032",
+                  "179070",
+                  "179082",
+                  "179116",
+                  "179254",
+                  "179296",
+                  "179320",
+                  "179373",
+                  "179382",
+                  "179510",
+                  "179526",
+                  "179643",
+                  "179678",
+                  "179715",
+                  "179731",
+                  "179832",
+                  "289040"
+                ],
+                "groupOverlapM2": 0.0,
+                "nativeAreaM2": {
+                  "Oberpenninikum: Metasedimente": 145069.608,
+                  "Undifferenzierte lithologische Einheit": 1955451.796,
+                  "Undifferenzierte lithologische Einheit: Dolomitmarmor": 2783.228,
+                  "Undifferenzierte lithologische Einheit: Ophikalzit": 2888.665,
+                  "Undifferenzierte lithologische Einheit: Quarzit": 28718.295,
+                  "Undifferenzierte lithologische Einheit: Rauwacke": 1905.185,
+                  "Undifferenzierte lithologische Einheit: Serpentinit": 866013.991,
+                  "Undifferenzierte lithologische Einheit: Talkschiefer": 13217.205,
+                  "Zermatt-Saas-Decke: Ophiolith": 420839.038,
+                  "Zermatt-Saas-Decke: Riffelberg-Melange": 322521.881
+                },
+                "uncoveredAreaM2": 240591.107,
+                "unionAreaM2": 3759408.893
+              },
+              "pairs": {
+                "nativePairsM2": {
+                  "100 | Oberpenninikum: Metasedimente": 35227.724,
+                  "100 | Undifferenzierte lithologische Einheit": 5921.785,
+                  "100 | Undifferenzierte lithologische Einheit: Dolomitmarmor": 777.576,
+                  "100 | Undifferenzierte lithologische Einheit: Ophikalzit": 1674.686,
+                  "100 | Undifferenzierte lithologische Einheit: Quarzit": 1196.276,
+                  "100 | Undifferenzierte lithologische Einheit: Serpentinit": 212630.682,
+                  "100 | Undifferenzierte lithologische Einheit: Talkschiefer": 4306.299,
+                  "100 | Zermatt-Saas-Decke: Ophiolith": 116325.176,
+                  "100 | Zermatt-Saas-Decke: Riffelberg-Melange": 89591.754,
+                  "20 | Zermatt-Saas-Decke: Ophiolith": 1674.578,
+                  "30 | Oberpenninikum: Metasedimente": 36603.422,
+                  "30 | Undifferenzierte lithologische Einheit": 1794.463,
+                  "30 | Undifferenzierte lithologische Einheit: Dolomitmarmor": 1914.051,
+                  "30 | Undifferenzierte lithologische Einheit: Ophikalzit": 239.24,
+                  "30 | Undifferenzierte lithologische Einheit: Quarzit": 18482.652,
+                  "30 | Undifferenzierte lithologische Einheit: Rauwacke": 1854.257,
+                  "30 | Undifferenzierte lithologische Einheit: Serpentinit": 133737.584,
+                  "30 | Undifferenzierte lithologische Einheit: Talkschiefer": 6220.184,
+                  "30 | Zermatt-Saas-Decke: Ophiolith": 116204.213,
+                  "30 | Zermatt-Saas-Decke: Riffelberg-Melange": 208249.256,
+                  "60 | Oberpenninikum: Metasedimente": 72730.279,
+                  "60 | Undifferenzierte lithologische Einheit": 840266.773,
+                  "60 | Undifferenzierte lithologische Einheit: Dolomitmarmor": 59.814,
+                  "60 | Undifferenzierte lithologische Einheit: Ophikalzit": 897.154,
+                  "60 | Undifferenzierte lithologische Einheit: Quarzit": 8673.113,
+                  "60 | Undifferenzierte lithologische Einheit: Serpentinit": 512112.111,
+                  "60 | Undifferenzierte lithologische Einheit: Talkschiefer": 2691.44,
+                  "60 | Zermatt-Saas-Decke: Ophiolith": 187137.567,
+                  "60 | Zermatt-Saas-Decke: Riffelberg-Melange": 24820.157,
+                  "70 | Undifferenzierte lithologische Einheit": 1082336.965,
+                  "70 | Undifferenzierte lithologische Einheit: Serpentinit": 3768.113,
+                  "70 | Zermatt-Saas-Decke: Ophiolith": 418.644,
+                  "80 | Undifferenzierte lithologische Einheit": 25005.258,
+                  "80 | Undifferenzierte lithologische Einheit: Serpentinit": 3469.027
+                },
+                "unmatchedCentreAreaM2": 240336.581,
+                "warning": "Cell-centre area approximation; multiple vector claims remain multiple, not exclusive. No accuracy or simultaneity implied."
+              }
+            },
+            "debris": {
+              "areas": {
+                "featureIds": [
+                  "3738",
+                  "3739",
+                  "3755",
+                  "3763",
+                  "3764",
+                  "3768"
+                ],
+                "groupOverlapM2": 0,
+                "nativeAreaM2": {
+                  "B56-07 | 2016": 774841.924
+                },
+                "uncoveredAreaM2": 3225158.076,
+                "unionAreaM2": 774841.924
+              },
+              "pairs": {
+                "nativePairsM2": {
+                  "100 | B56-07 | 2016": 1076.725,
+                  "60 | B56-07 | 2016": 311484.06,
+                  "70 | B56-07 | 2016": 443396.142,
+                  "80 | B56-07 | 2016": 21117.026
+                },
+                "unmatchedCentreAreaM2": 3222274.901,
+                "warning": "Cell-centre area approximation; multiple vector claims remain multiple, not exclusive. No accuracy or simultaneity implied."
+              }
+            },
+            "glacier": {
+              "areas": {
+                "featureIds": [
+                  "683"
+                ],
+                "groupOverlapM2": 0,
+                "nativeAreaM2": {
+                  "B56-07 | 2015": 1384679.981
+                },
+                "uncoveredAreaM2": 2615320.019,
+                "unionAreaM2": 1384679.981
+              },
+              "pairs": {
+                "nativePairsM2": {
+                  "100 | B56-07 | 2015": 1076.725,
+                  "60 | B56-07 | 2015": 326618.254,
+                  "70 | B56-07 | 2015": 1035081.191,
+                  "80 | B56-07 | 2015": 24167.752
+                },
+                "unmatchedCentreAreaM2": 2612404.934,
+                "warning": "Cell-centre area approximation; multiple vector claims remain multiple, not exclusive. No accuracy or simultaneity implied."
+              }
+            },
+            "unconsolidated": {
+              "areas": {
+                "featureIds": [
+                  "101156",
+                  "142911",
+                  "142912",
+                  "142917",
+                  "208112",
+                  "208134",
+                  "208180",
+                  "98749"
+                ],
+                "groupOverlapM2": 0.0,
+                "nativeAreaM2": {
+                  "Hangschutt, Holozän": 104154.847,
+                  "Lockergestein": 5977.29,
+                  "Moräne (Till), lokalgletscher, Holozän": 130458.97
+                },
+                "uncoveredAreaM2": 3759408.893,
+                "unionAreaM2": 240591.107
+              },
+              "pairs": {
+                "nativePairsM2": {
+                  "100 | Hangschutt, Holozän": 24044.745,
+                  "100 | Lockergestein": 59.811,
+                  "100 | Moräne (Till), lokalgletscher, Holozän": 6818.942,
+                  "30 | Hangschutt, Holozän": 71715.48,
+                  "30 | Lockergestein": 418.672,
+                  "30 | Moräne (Till), lokalgletscher, Holozän": 10766.701,
+                  "60 | Hangschutt, Holozän": 8194.47,
+                  "60 | Lockergestein": 1196.208,
+                  "60 | Moräne (Till), lokalgletscher, Holozän": 105337.512,
+                  "70 | Moräne (Till), lokalgletscher, Holozän": 7058.931,
+                  "80 | Lockergestein": 4306.354,
+                  "80 | Moräne (Till), lokalgletscher, Holozän": 418.755
+                },
+                "unmatchedCentreAreaM2": 3759012.274,
+                "warning": "Cell-centre area approximation; multiple vector claims remain multiple, not exclusive. No accuracy or simultaneity implied."
+              }
+            }
+          },
+          "worldcover": {
+            "100": {
+              "cells": 8336,
+              "centreAreaM2": 498575.457,
+              "label": "Moss and lichen"
+            },
+            "20": {
+              "cells": 28,
+              "centreAreaM2": 1674.578,
+              "label": "Shrubland"
+            },
+            "30": {
+              "cells": 10169,
+              "centreAreaM2": 608200.175,
+              "label": "Grassland"
+            },
+            "60": {
+              "cells": 29493,
+              "centreAreaM2": 1764116.598,
+              "label": "Bare / sparse vegetation"
+            },
+            "70": {
+              "cells": 18281,
+              "centreAreaM2": 1093582.654,
+              "label": "Snow and ice"
+            },
+            "80": {
+              "cells": 555,
+              "centreAreaM2": 33199.394,
+              "label": "Permanent water bodies"
+            }
+          }
+        }
+      }
+    },
+    "tryfan": {
+      "grid": {
+        "angularStep": 8.333333333333333e-05,
+        "crs": "EPSG:4326",
+        "nodata": 0.0,
+        "projectionOperation": {
+          "declaredAccuracyM": 2.0,
+          "description": "axis order change (2D) + Inverse of OSGB36 to WGS 84 (6) + British National Grid"
+        },
+        "shape": [
+          334,
+          554
+        ],
+        "topRowCellDimensionsM": [
+          5.578,
+          9.274
+        ]
+      },
+      "regions": {
+        "northern-context": {
+          "bounds": [
+            266200.0,
+            360250.0,
+            266600.0,
+            360650.0
+          ],
+          "polygonAreaM2": 160000.0,
+          "rasterCells": 3092,
+          "rasterCentreAreaM2": 159970.436,
+          "vectors": {
+            "nrw": {
+              "areas": {
+                "featureIds": [
+                  "nrw_phase1_vegetation_voronoi.270700",
+                  "nrw_phase1_vegetation_voronoi.270743",
+                  "nrw_phase1_vegetation_voronoi.270756",
+                  "nrw_phase1_vegetation_voronoi.270772",
+                  "nrw_phase1_vegetation_voronoi.270852",
+                  "nrw_phase1_vegetation_voronoi.270876",
+                  "nrw_phase1_vegetation_voronoi.270930",
+                  "nrw_phase1_vegetation_voronoi.271128",
+                  "nrw_phase1_vegetation_voronoi.271149",
+                  "nrw_phase1_vegetation_voronoi.466237",
+                  "nrw_phase1_vegetation_voronoi.486812",
+                  "nrw_phase1_vegetation_voronoi.486820"
+                ],
+                "groupOverlapM2": 0,
+                "nativeAreaM2": {
+                  "B.1.1 | B.1.1": 3863.63,
+                  "B.1.2 | B.1.2": 3927.615,
+                  "B.4 | B.4": 29.691,
+                  "B.5 | B.5": 548.042,
+                  "D.1.1 | D.1.1": 215.625,
+                  "G.1 | G.1": 104296.94,
+                  "G.2 | G.2": 319.789,
+                  "NA | NA": 8246.776,
+                  "mosaic | Mosaic of:50% B.1.1,50% C.1.1": 31603.621
+                },
+                "uncoveredAreaM2": 6948.271,
+                "unionAreaM2": 153051.729
+              },
+              "pairs": {
+                "nativePairsM2": {
+                  "10 | D.1.1 | D.1.1": 310.433,
+                  "10 | mosaic | Mosaic of:50% B.1.1,50% C.1.1": 258.694,
+                  "30 | B.1.1 | B.1.1": 3725.202,
+                  "30 | B.1.2 | B.1.2": 2172.88,
+                  "30 | B.5 | B.5": 569.1,
+                  "30 | G.2 | G.2": 258.681,
+                  "30 | NA | NA": 982.998,
+                  "30 | mosaic | Mosaic of:50% B.1.1,50% C.1.1": 30887.604,
+                  "50 | B.1.1 | B.1.1": 413.911,
+                  "50 | NA | NA": 51.738,
+                  "50 | mosaic | Mosaic of:50% B.1.1,50% C.1.1": 103.476,
+                  "80 | B.1.2 | B.1.2": 1552.066,
+                  "80 | G.1 | G.1": 104197.113,
+                  "80 | G.2 | G.2": 103.472,
+                  "80 | NA | NA": 7346.681,
+                  "80 | mosaic | Mosaic of:50% B.1.1,50% C.1.1": 51.738
+                },
+                "unmatchedCentreAreaM2": 6984.649,
+                "warning": "Cell-centre area approximation; multiple vector claims remain multiple, not exclusive. No accuracy or simultaneity implied."
+              }
+            },
+            "surveyArea": {
+              "areas": {
+                "featureIds": [
+                  "nrw_phase1_survey_area.10",
+                  "nrw_phase1_survey_area.11"
+                ],
+                "groupOverlapM2": 0.115,
+                "nativeAreaM2": {
+                  "Aberconwy | 1995-1996": 52250.261,
+                  "Arfon & Dwyfor | 1987-1989": 107749.577
+                },
+                "uncoveredAreaM2": 0.276,
+                "unionAreaM2": 159999.724
+              },
+              "pairs": {
+                "nativePairsM2": {
+                  "10 | Aberconwy | 1995-1996": 931.299,
+                  "30 | Aberconwy | 1995-1996": 41079.869,
+                  "50 | Aberconwy | 1995-1996": 2379.969,
+                  "80 | Aberconwy | 1995-1996": 7605.389,
+                  "80 | Arfon & Dwyfor | 1987-1989": 107973.909
+                },
+                "unmatchedCentreAreaM2": 0.0,
+                "warning": "Cell-centre area approximation; multiple vector claims remain multiple, not exclusive. No accuracy or simultaneity implied."
+              }
+            }
+          },
+          "worldcover": {
+            "10": {
+              "cells": 18,
+              "centreAreaM2": 931.299,
+              "label": "Tree cover"
+            },
+            "30": {
+              "cells": 794,
+              "centreAreaM2": 41079.869,
+              "label": "Grassland"
+            },
+            "50": {
+              "cells": 46,
+              "centreAreaM2": 2379.969,
+              "label": "Built-up"
+            },
+            "80": {
+              "cells": 2234,
+              "centreAreaM2": 115579.299,
+              "label": "Permanent water bodies"
+            }
+          }
+        },
+        "southern-observer": {
+          "bounds": [
+            265676.05347833806,
+            358139.7631202109,
+            266076.05347833806,
+            358539.7631202109
+          ],
+          "polygonAreaM2": 160000.0,
+          "rasterCells": 3090,
+          "rasterCentreAreaM2": 159937.255,
+          "vectors": {
+            "nrw": {
+              "areas": {
+                "featureIds": [
+                  "nrw_phase1_vegetation_voronoi.471598",
+                  "nrw_phase1_vegetation_voronoi.471608",
+                  "nrw_phase1_vegetation_voronoi.482403",
+                  "nrw_phase1_vegetation_voronoi.482510",
+                  "nrw_phase1_vegetation_voronoi.482511",
+                  "nrw_phase1_vegetation_voronoi.486833",
+                  "nrw_phase1_vegetation_voronoi.486926",
+                  "nrw_phase1_vegetation_voronoi.486927"
+                ],
+                "groupOverlapM2": 0.006,
+                "nativeAreaM2": {
+                  "B.1.1 | B.1.1": 6758.832,
+                  "D.1.1 | D.1.1": 47335.761,
+                  "D.3 | D.3": 33336.229,
+                  "mosaic | Mosaic of:100% D.3": 46845.712,
+                  "mosaic | Mosaic of:50% B.1.1,50% D.3": 21048.147,
+                  "mosaic | Mosaic of:50% D.1.1,50% I.1.4": 4675.321
+                },
+                "uncoveredAreaM2": 0.005,
+                "unionAreaM2": 159999.995
+              },
+              "pairs": {
+                "nativePairsM2": {
+                  "10 | D.1.1 | D.1.1": 414.062,
+                  "10 | mosaic | Mosaic of:50% D.1.1,50% I.1.4": 51.758,
+                  "30 | B.1.1 | B.1.1": 6004.324,
+                  "30 | D.1.1 | D.1.1": 41562.285,
+                  "30 | D.3 | D.3": 21791.141,
+                  "30 | mosaic | Mosaic of:100% D.3": 43736.523,
+                  "30 | mosaic | Mosaic of:50% B.1.1,50% D.3": 20756.075,
+                  "30 | mosaic | Mosaic of:50% D.1.1,50% I.1.4": 4244.13,
+                  "50 | D.1.1 | D.1.1": 258.807,
+                  "50 | D.3 | D.3": 3726.69,
+                  "60 | B.1.1 | B.1.1": 724.663,
+                  "60 | D.1.1 | D.1.1": 4917.292,
+                  "60 | D.3 | D.3": 8074.604,
+                  "60 | mosaic | Mosaic of:100% D.3": 3002.044,
+                  "60 | mosaic | Mosaic of:50% B.1.1,50% D.3": 207.039,
+                  "60 | mosaic | Mosaic of:50% D.1.1,50% I.1.4": 465.819
+                },
+                "unmatchedCentreAreaM2": 0.0,
+                "warning": "Cell-centre area approximation; multiple vector claims remain multiple, not exclusive. No accuracy or simultaneity implied."
+              }
+            },
+            "surveyArea": {
+              "areas": {
+                "featureIds": [
+                  "nrw_phase1_survey_area.10"
+                ],
+                "groupOverlapM2": 0,
+                "nativeAreaM2": {
+                  "Aberconwy | 1995-1996": 160000.0
+                },
+                "uncoveredAreaM2": 0.0,
+                "unionAreaM2": 160000.0
+              },
+              "pairs": {
+                "nativePairsM2": {
+                  "10 | Aberconwy | 1995-1996": 465.82,
+                  "30 | Aberconwy | 1995-1996": 138094.478,
+                  "50 | Aberconwy | 1995-1996": 3985.497,
+                  "60 | Aberconwy | 1995-1996": 17391.46
+                },
+                "unmatchedCentreAreaM2": 0.0,
+                "warning": "Cell-centre area approximation; multiple vector claims remain multiple, not exclusive. No accuracy or simultaneity implied."
+              }
+            }
+          },
+          "worldcover": {
+            "10": {
+              "cells": 9,
+              "centreAreaM2": 465.82,
+              "label": "Tree cover"
+            },
+            "30": {
+              "cells": 2668,
+              "centreAreaM2": 138094.478,
+              "label": "Grassland"
+            },
+            "50": {
+              "cells": 77,
+              "centreAreaM2": 3985.497,
+              "label": "Built-up"
+            },
+            "60": {
+              "cells": 336,
+              "centreAreaM2": 17391.46,
+              "label": "Bare / sparse vegetation"
+            }
+          }
+        },
+        "summit": {
+          "bounds": [
+            266205.0,
+            359187.0,
+            266605.0,
+            359587.0
+          ],
+          "polygonAreaM2": 160000.0,
+          "rasterCells": 3096,
+          "rasterCentreAreaM2": 160212.607,
+          "vectors": {
+            "nrw": {
+              "areas": {
+                "featureIds": [
+                  "nrw_phase1_vegetation_voronoi.471406",
+                  "nrw_phase1_vegetation_voronoi.486814",
+                  "nrw_phase1_vegetation_voronoi.486817",
+                  "nrw_phase1_vegetation_voronoi.486820",
+                  "nrw_phase1_vegetation_voronoi.486832"
+                ],
+                "groupOverlapM2": 0,
+                "nativeAreaM2": {
+                  "D.1.1 | D.1.1": 140487.433,
+                  "D.5 | D.5": 16229.599,
+                  "I.1.2 | I.1.2": 3282.967
+                },
+                "uncoveredAreaM2": 0.0,
+                "unionAreaM2": 160000.0
+              },
+              "pairs": {
+                "nativePairsM2": {
+                  "10 | D.1.1 | D.1.1": 1500.669,
+                  "30 | D.1.1 | D.1.1": 137340.168,
+                  "30 | D.5 | D.5": 16455.55,
+                  "30 | I.1.2 | I.1.2": 3467.257,
+                  "60 | D.1.1 | D.1.1": 1448.963
+                },
+                "unmatchedCentreAreaM2": 0.0,
+                "warning": "Cell-centre area approximation; multiple vector claims remain multiple, not exclusive. No accuracy or simultaneity implied."
+              }
+            },
+            "surveyArea": {
+              "areas": {
+                "featureIds": [
+                  "nrw_phase1_survey_area.10"
+                ],
+                "groupOverlapM2": 0,
+                "nativeAreaM2": {
+                  "Aberconwy | 1995-1996": 160000.0
+                },
+                "uncoveredAreaM2": 0.0,
+                "unionAreaM2": 160000.0
+              },
+              "pairs": {
+                "nativePairsM2": {
+                  "10 | Aberconwy | 1995-1996": 1500.669,
+                  "30 | Aberconwy | 1995-1996": 157262.975,
+                  "60 | Aberconwy | 1995-1996": 1448.963
+                },
+                "unmatchedCentreAreaM2": 0.0,
+                "warning": "Cell-centre area approximation; multiple vector claims remain multiple, not exclusive. No accuracy or simultaneity implied."
+              }
+            }
+          },
+          "worldcover": {
+            "10": {
+              "cells": 29,
+              "centreAreaM2": 1500.669,
+              "label": "Tree cover"
+            },
+            "30": {
+              "cells": 3039,
+              "centreAreaM2": 157262.975,
+              "label": "Grassland"
+            },
+            "60": {
+              "cells": 28,
+              "centreAreaM2": 1448.963,
+              "label": "Bare / sparse vegetation"
+            }
+          }
+        },
+        "window": {
+          "bounds": [
+            264900.0,
+            357800.0,
+            267900.0,
+            360800.0
+          ],
+          "polygonAreaM2": 9000000.0,
+          "rasterCells": 173967,
+          "rasterCentreAreaM2": 9002651.652,
+          "vectors": {
+            "nrw": {
+              "areas": {
+                "featureIds": [
+                  "nrw_phase1_vegetation_voronoi.270305",
+                  "nrw_phase1_vegetation_voronoi.270457",
+                  "nrw_phase1_vegetation_voronoi.270566",
+                  "nrw_phase1_vegetation_voronoi.270604",
+                  "nrw_phase1_vegetation_voronoi.270613",
+                  "nrw_phase1_vegetation_voronoi.270631",
+                  "nrw_phase1_vegetation_voronoi.270665",
+                  "nrw_phase1_vegetation_voronoi.270690",
+                  "nrw_phase1_vegetation_voronoi.270694",
+                  "nrw_phase1_vegetation_voronoi.270699",
+                  "nrw_phase1_vegetation_voronoi.270700",
+                  "nrw_phase1_vegetation_voronoi.270722",
+                  "nrw_phase1_vegetation_voronoi.270734",
+                  "nrw_phase1_vegetation_voronoi.270743",
+                  "nrw_phase1_vegetation_voronoi.270754",
+                  "nrw_phase1_vegetation_voronoi.270756",
+                  "nrw_phase1_vegetation_voronoi.270763",
+                  "nrw_phase1_vegetation_voronoi.270772",
+                  "nrw_phase1_vegetation_voronoi.270799",
+                  "nrw_phase1_vegetation_voronoi.270824",
+                  "nrw_phase1_vegetation_voronoi.270828",
+                  "nrw_phase1_vegetation_voronoi.270843",
+                  "nrw_phase1_vegetation_voronoi.270852",
+                  "nrw_phase1_vegetation_voronoi.270856",
+                  "nrw_phase1_vegetation_voronoi.270863",
+                  "nrw_phase1_vegetation_voronoi.270866",
+                  "nrw_phase1_vegetation_voronoi.270876",
+                  "nrw_phase1_vegetation_voronoi.270879",
+                  "nrw_phase1_vegetation_voronoi.270880",
+                  "nrw_phase1_vegetation_voronoi.270888",
+                  "nrw_phase1_vegetation_voronoi.270894",
+                  "nrw_phase1_vegetation_voronoi.270895",
+                  "nrw_phase1_vegetation_voronoi.270896",
+                  "nrw_phase1_vegetation_voronoi.270897",
+                  "nrw_phase1_vegetation_voronoi.270900",
+                  "nrw_phase1_vegetation_voronoi.270901",
+                  "nrw_phase1_vegetation_voronoi.270903",
+                  "nrw_phase1_vegetation_voronoi.270904",
+                  "nrw_phase1_vegetation_voronoi.270913",
+                  "nrw_phase1_vegetation_voronoi.270919",
+                  "nrw_phase1_vegetation_voronoi.270930",
+                  "nrw_phase1_vegetation_voronoi.270937",
+                  "nrw_phase1_vegetation_voronoi.270980",
+                  "nrw_phase1_vegetation_voronoi.270981",
+                  "nrw_phase1_vegetation_voronoi.271016",
+                  "nrw_phase1_vegetation_voronoi.271035",
+                  "nrw_phase1_vegetation_voronoi.271041",
+                  "nrw_phase1_vegetation_voronoi.271089",
+                  "nrw_phase1_vegetation_voronoi.271097",
+                  "nrw_phase1_vegetation_voronoi.271128",
+                  "nrw_phase1_vegetation_voronoi.271136",
+                  "nrw_phase1_vegetation_voronoi.271149",
+                  "nrw_phase1_vegetation_voronoi.271214",
+                  "nrw_phase1_vegetation_voronoi.466226",
+                  "nrw_phase1_vegetation_voronoi.466231",
+                  "nrw_phase1_vegetation_voronoi.466237",
+                  "nrw_phase1_vegetation_voronoi.466244",
+                  "nrw_phase1_vegetation_voronoi.466250",
+                  "nrw_phase1_vegetation_voronoi.466252",
+                  "nrw_phase1_vegetation_voronoi.466261",
+                  "nrw_phase1_vegetation_voronoi.466262",
+                  "nrw_phase1_vegetation_voronoi.466263",
+                  "nrw_phase1_vegetation_voronoi.466289",
+                  "nrw_phase1_vegetation_voronoi.471183",
+                  "nrw_phase1_vegetation_voronoi.471211",
+                  "nrw_phase1_vegetation_voronoi.471218",
+                  "nrw_phase1_vegetation_voronoi.471242",
+                  "nrw_phase1_vegetation_voronoi.471249",
+                  "nrw_phase1_vegetation_voronoi.471250",
+                  "nrw_phase1_vegetation_voronoi.471253",
+                  "nrw_phase1_vegetation_voronoi.471263",
+                  "nrw_phase1_vegetation_voronoi.471277",
+                  "nrw_phase1_vegetation_voronoi.471278",
+                  "nrw_phase1_vegetation_voronoi.471290",
+                  "nrw_phase1_vegetation_voronoi.471291",
+                  "nrw_phase1_vegetation_voronoi.471292",
+                  "nrw_phase1_vegetation_voronoi.471293",
+                  "nrw_phase1_vegetation_voronoi.471302",
+                  "nrw_phase1_vegetation_voronoi.471303",
+                  "nrw_phase1_vegetation_voronoi.471328",
+                  "nrw_phase1_vegetation_voronoi.471340",
+                  "nrw_phase1_vegetation_voronoi.471343",
+                  "nrw_phase1_vegetation_voronoi.471348",
+                  "nrw_phase1_vegetation_voronoi.471352",
+                  "nrw_phase1_vegetation_voronoi.471361",
+                  "nrw_phase1_vegetation_voronoi.471363",
+                  "nrw_phase1_vegetation_voronoi.471366",
+                  "nrw_phase1_vegetation_voronoi.471368",
+                  "nrw_phase1_vegetation_voronoi.471369",
+                  "nrw_phase1_vegetation_voronoi.471370",
+                  "nrw_phase1_vegetation_voronoi.471372",
+                  "nrw_phase1_vegetation_voronoi.471373",
+                  "nrw_phase1_vegetation_voronoi.471378",
+                  "nrw_phase1_vegetation_voronoi.471380",
+                  "nrw_phase1_vegetation_voronoi.471382",
+                  "nrw_phase1_vegetation_voronoi.471383",
+                  "nrw_phase1_vegetation_voronoi.471384",
+                  "nrw_phase1_vegetation_voronoi.471390",
+                  "nrw_phase1_vegetation_voronoi.471396",
+                  "nrw_phase1_vegetation_voronoi.471401",
+                  "nrw_phase1_vegetation_voronoi.471402",
+                  "nrw_phase1_vegetation_voronoi.471404",
+                  "nrw_phase1_vegetation_voronoi.471406",
+                  "nrw_phase1_vegetation_voronoi.471409",
+                  "nrw_phase1_vegetation_voronoi.471410",
+                  "nrw_phase1_vegetation_voronoi.471415",
+                  "nrw_phase1_vegetation_voronoi.471418",
+                  "nrw_phase1_vegetation_voronoi.471420",
+                  "nrw_phase1_vegetation_voronoi.471423",
+                  "nrw_phase1_vegetation_voronoi.471424",
+                  "nrw_phase1_vegetation_voronoi.471427",
+                  "nrw_phase1_vegetation_voronoi.471437",
+                  "nrw_phase1_vegetation_voronoi.471444",
+                  "nrw_phase1_vegetation_voronoi.471448",
+                  "nrw_phase1_vegetation_voronoi.471462",
+                  "nrw_phase1_vegetation_voronoi.471465",
+                  "nrw_phase1_vegetation_voronoi.471488",
+                  "nrw_phase1_vegetation_voronoi.471491",
+                  "nrw_phase1_vegetation_voronoi.471500",
+                  "nrw_phase1_vegetation_voronoi.471504",
+                  "nrw_phase1_vegetation_voronoi.471506",
+                  "nrw_phase1_vegetation_voronoi.471511",
+                  "nrw_phase1_vegetation_voronoi.471520",
+                  "nrw_phase1_vegetation_voronoi.471526",
+                  "nrw_phase1_vegetation_voronoi.471527",
+                  "nrw_phase1_vegetation_voronoi.471534",
+                  "nrw_phase1_vegetation_voronoi.471538",
+                  "nrw_phase1_vegetation_voronoi.471543",
+                  "nrw_phase1_vegetation_voronoi.471580",
+                  "nrw_phase1_vegetation_voronoi.471598",
+                  "nrw_phase1_vegetation_voronoi.471608",
+                  "nrw_phase1_vegetation_voronoi.471619",
+                  "nrw_phase1_vegetation_voronoi.471623",
+                  "nrw_phase1_vegetation_voronoi.482334",
+                  "nrw_phase1_vegetation_voronoi.482363",
+                  "nrw_phase1_vegetation_voronoi.482377",
+                  "nrw_phase1_vegetation_voronoi.482378",
+                  "nrw_phase1_vegetation_voronoi.482385",
+                  "nrw_phase1_vegetation_voronoi.482388",
+                  "nrw_phase1_vegetation_voronoi.482397",
+                  "nrw_phase1_vegetation_voronoi.482398",
+                  "nrw_phase1_vegetation_voronoi.482399",
+                  "nrw_phase1_vegetation_voronoi.482400",
+                  "nrw_phase1_vegetation_voronoi.482402",
+                  "nrw_phase1_vegetation_voronoi.482403",
+                  "nrw_phase1_vegetation_voronoi.482493",
+                  "nrw_phase1_vegetation_voronoi.482505",
+                  "nrw_phase1_vegetation_voronoi.482506",
+                  "nrw_phase1_vegetation_voronoi.482510",
+                  "nrw_phase1_vegetation_voronoi.482511",
+                  "nrw_phase1_vegetation_voronoi.482522",
+                  "nrw_phase1_vegetation_voronoi.482526",
+                  "nrw_phase1_vegetation_voronoi.482530",
+                  "nrw_phase1_vegetation_voronoi.486681",
+                  "nrw_phase1_vegetation_voronoi.486684",
+                  "nrw_phase1_vegetation_voronoi.486780",
+                  "nrw_phase1_vegetation_voronoi.486801",
+                  "nrw_phase1_vegetation_voronoi.486806",
+                  "nrw_phase1_vegetation_voronoi.486808",
+                  "nrw_phase1_vegetation_voronoi.486810",
+                  "nrw_phase1_vegetation_voronoi.486811",
+                  "nrw_phase1_vegetation_voronoi.486812",
+                  "nrw_phase1_vegetation_voronoi.486813",
+                  "nrw_phase1_vegetation_voronoi.486814",
+                  "nrw_phase1_vegetation_voronoi.486815",
+                  "nrw_phase1_vegetation_voronoi.486816",
+                  "nrw_phase1_vegetation_voronoi.486817",
+                  "nrw_phase1_vegetation_voronoi.486818",
+                  "nrw_phase1_vegetation_voronoi.486819",
+                  "nrw_phase1_vegetation_voronoi.486820",
+                  "nrw_phase1_vegetation_voronoi.486822",
+                  "nrw_phase1_vegetation_voronoi.486824",
+                  "nrw_phase1_vegetation_voronoi.486825",
+                  "nrw_phase1_vegetation_voronoi.486826",
+                  "nrw_phase1_vegetation_voronoi.486832",
+                  "nrw_phase1_vegetation_voronoi.486833",
+                  "nrw_phase1_vegetation_voronoi.486876",
+                  "nrw_phase1_vegetation_voronoi.486877",
+                  "nrw_phase1_vegetation_voronoi.486892",
+                  "nrw_phase1_vegetation_voronoi.486899",
+                  "nrw_phase1_vegetation_voronoi.486909",
+                  "nrw_phase1_vegetation_voronoi.486911",
+                  "nrw_phase1_vegetation_voronoi.486913",
+                  "nrw_phase1_vegetation_voronoi.486914",
+                  "nrw_phase1_vegetation_voronoi.486915",
+                  "nrw_phase1_vegetation_voronoi.486921",
+                  "nrw_phase1_vegetation_voronoi.486922",
+                  "nrw_phase1_vegetation_voronoi.486924",
+                  "nrw_phase1_vegetation_voronoi.486925",
+                  "nrw_phase1_vegetation_voronoi.486926",
+                  "nrw_phase1_vegetation_voronoi.486927",
+                  "nrw_phase1_vegetation_voronoi.486951"
+                ],
+                "groupOverlapM2": 0.157,
+                "nativeAreaM2": {
+                  "A.1.1.2 | A.1.1.2": 7253.075,
+                  "A.1.2.2 | A.1.2.2": 15037.826,
+                  "A.2.1 | A.2.1": 12557.206,
+                  "B.1.1 | B.1.1": 1939880.785,
+                  "B.1.2 | B.1.2": 18824.778,
+                  "B.3.1 | B.3.1": 2104.813,
+                  "B.4 | B.4": 68547.124,
+                  "B.5 | B.5": 4838.685,
+                  "B.5.2 | B.5.2": 154827.529,
+                  "C.1.1 | C.1.1": 30253.435,
+                  "C.2 | C.2": 2246.015,
+                  "D.1.1 | D.1.1": 3042013.487,
+                  "D.2 | D.2": 86016.903,
+                  "D.3 | D.3": 85987.163,
+                  "D.5 | D.5": 402822.99,
+                  "E.1.6.1 | E.1.6.1": 130308.381,
+                  "E.1.7 | E.1.7": 96269.854,
+                  "E.1.8 | E.1.8": 4485.109,
+                  "E.2.1 | E.2.1": 299270.02,
+                  "E.2.3 | E.2.3": 11242.486,
+                  "G.1 | G.1": 384668.846,
+                  "G.2 | G.2": 24935.503,
+                  "I.1 | I.1": 16771.918,
+                  "I.1.2 | I.1.2": 41928.042,
+                  "I.1.2.1 | I.1.2.1": 277874.109,
+                  "J.3.6 | J.3.6": 15164.341,
+                  "NA | NA": 52888.785,
+                  "mosaic | Mosaic of:100% D.3": 56420.736,
+                  "mosaic | Mosaic of:34% E.2.1,33% B.1.1,33% C.1.1": 572.434,
+                  "mosaic | Mosaic of:49% B.1.1,49% C.1.1,2% B.5.2": 35.915,
+                  "mosaic | Mosaic of:49% B.1.1,49% D.1.1,2% E.2.1": 41358.262,
+                  "mosaic | Mosaic of:50% B.1.1,24% C.1.1,24% I.1.2,2% E.2.1": 102979.81,
+                  "mosaic | Mosaic of:50% B.1.1,50% C.1.1": 56580.286,
+                  "mosaic | Mosaic of:50% B.1.1,50% D.3": 62213.606,
+                  "mosaic | Mosaic of:50% B.1.1,50% E.1.8": 271866.868,
+                  "mosaic | Mosaic of:50% B.1.1,50% E.2.1": 100094.553,
+                  "mosaic | Mosaic of:50% B.1.1,50% I.1.2": 70795.243,
+                  "mosaic | Mosaic of:50% D.1.1,50% E.2.1": 134290.968,
+                  "mosaic | Mosaic of:50% D.1.1,50% I.1.2.1": 27156.318,
+                  "mosaic | Mosaic of:50% D.1.1,50% I.1.4": 44398.436,
+                  "mosaic | Mosaic of:50% E.1.6.1,50% E.3.2": 13631.895,
+                  "mosaic | Mosaic of:50% E.2.1,50% E.3.2": 32711.946,
+                  "mosaic | Mosaic of:94% D.1.1,2% B.1.1,2% C.1.1,2% D.2": 578.144,
+                  "mosaic | Mosaic of:96% B.1.1,2% D.2,2% E.2.1": 75239.419,
+                  "mosaic | Mosaic of:96% B.1.1,2% E.2.1,2% E.3.2": 157885.264,
+                  "mosaic | Mosaic of:98% B.1.1,2% ?": 80593.599,
+                  "mosaic | Mosaic of:98% B.1.1,2% C.1.1": 48806.36,
+                  "mosaic | Mosaic of:98% B.1.1,2% D.1.1": 12525.178,
+                  "mosaic | Mosaic of:98% B.1.1,2% E.1.8": 198287.77,
+                  "mosaic | Mosaic of:98% D.2,2% E.2.1": 22327.603,
+                  "mosaic | Mosaic of:98% E.2.1,2% D.1.1": 3801.374,
+                  "mosaic | Mosaic of:98% E.2.1,2% D.2": 51633.447,
+                  "mosaic | Mosaic of:98% I.1.2.1,2% B.1.1": 39994.229,
+                  "mosaic | Mosaic of:98% I.1.2.1,2% D.1.1": 17798.56
+                },
+                "uncoveredAreaM2": 46402.726,
+                "unionAreaM2": 8953597.274
+              },
+              "pairs": {
+                "nativePairsM2": {
+                  "10 | A.1.1.2 | A.1.1.2": 2845.466,
+                  "10 | A.1.2.2 | A.1.2.2": 9571.231,
+                  "10 | A.2.1 | A.2.1": 6673.95,
+                  "10 | B.1.1 | B.1.1": 23856.362,
+                  "10 | B.4 | B.4": 1086.428,
+                  "10 | B.5 | B.5": 465.623,
+                  "10 | B.5.2 | B.5.2": 155.213,
+                  "10 | C.1.1 | C.1.1": 258.698,
+                  "10 | D.1.1 | D.1.1": 293183.907,
+                  "10 | D.2 | D.2": 776.053,
+                  "10 | D.5 | D.5": 5072.374,
+                  "10 | E.1.6.1 | E.1.6.1": 3414.54,
+                  "10 | E.1.7 | E.1.7": 3259.41,
+                  "10 | E.2.1 | E.2.1": 569.171,
+                  "10 | E.2.3 | E.2.3": 258.725,
+                  "10 | G.1 | G.1": 155.214,
+                  "10 | G.2 | G.2": 3983.807,
+                  "10 | I.1.2 | I.1.2": 8848.166,
+                  "10 | I.1.2.1 | I.1.2.1": 45529.493,
+                  "10 | J.3.6 | J.3.6": 8950.69,
+                  "10 | NA | NA": 4449.376,
+                  "10 | mosaic | Mosaic of:50% B.1.1,50% C.1.1": 3983.948,
+                  "10 | mosaic | Mosaic of:50% B.1.1,50% E.1.8": 103.518,
+                  "10 | mosaic | Mosaic of:50% B.1.1,50% I.1.2": 310.409,
+                  "10 | mosaic | Mosaic of:50% D.1.1,50% I.1.4": 1811.455,
+                  "10 | mosaic | Mosaic of:96% B.1.1,2% D.2,2% E.2.1": 1086.471,
+                  "10 | mosaic | Mosaic of:98% B.1.1,2% ?": 362.21,
+                  "10 | mosaic | Mosaic of:98% B.1.1,2% C.1.1": 1810.948,
+                  "10 | mosaic | Mosaic of:98% B.1.1,2% D.1.1": 258.668,
+                  "10 | mosaic | Mosaic of:98% E.2.1,2% D.2": 3052.987,
+                  "10 | mosaic | Mosaic of:98% I.1.2.1,2% D.1.1": 5949.632,
+                  "100 | B.1.1 | B.1.1": 103.523,
+                  "100 | D.5 | D.5": 103.522,
+                  "20 | I.1.2.1 | I.1.2.1": 258.668,
+                  "30 | A.1.1.2 | A.1.1.2": 4242.326,
+                  "30 | A.1.2.2 | A.1.2.2": 258.692,
+                  "30 | A.2.1 | A.2.1": 5949.64,
+                  "30 | B.1.1 | B.1.1": 1898952.05,
+                  "30 | B.1.2 | B.1.2": 17382.968,
+                  "30 | B.3.1 | B.3.1": 2018.142,
+                  "30 | B.4 | B.4": 67565.089,
+                  "30 | B.5 | B.5": 4294.085,
+                  "30 | B.5.2 | B.5.2": 153922.738,
+                  "30 | C.1.1 | C.1.1": 30008.402,
+                  "30 | C.2 | C.2": 2173.505,
+                  "30 | D.1.1 | D.1.1": 2721211.898,
+                  "30 | D.2 | D.2": 84399.073,
+                  "30 | D.3 | D.3": 69982.066,
+                  "30 | D.5 | D.5": 398377.189,
+                  "30 | E.1.6.1 | E.1.6.1": 126451.438,
+                  "30 | E.1.7 | E.1.7": 91521.722,
+                  "30 | E.1.8 | E.1.8": 4450.465,
+                  "30 | E.2.1 | E.2.1": 265400.748,
+                  "30 | E.2.3 | E.2.3": 11075.059,
+                  "30 | G.1 | G.1": 15158.681,
+                  "30 | G.2 | G.2": 18936.873,
+                  "30 | I.1 | I.1": 16768.316,
+                  "30 | I.1.2 | I.1.2": 33429.563,
+                  "30 | I.1.2.1 | I.1.2.1": 230307.034,
+                  "30 | J.3.6 | J.3.6": 3673.387,
+                  "30 | NA | NA": 31928.07,
+                  "30 | mosaic | Mosaic of:100% D.3": 48291.283,
+                  "30 | mosaic | Mosaic of:34% E.2.1,33% B.1.1,33% C.1.1": 775.997,
+                  "30 | mosaic | Mosaic of:49% B.1.1,49% D.1.1,2% E.2.1": 41395.699,
+                  "30 | mosaic | Mosaic of:50% B.1.1,24% C.1.1,24% I.1.2,2% E.2.1": 103055.69,
+                  "30 | mosaic | Mosaic of:50% B.1.1,50% C.1.1": 51944.869,
+                  "30 | mosaic | Mosaic of:50% B.1.1,50% D.3": 45290.692,
+                  "30 | mosaic | Mosaic of:50% B.1.1,50% E.1.8": 272260.181,
+                  "30 | mosaic | Mosaic of:50% B.1.1,50% E.2.1": 99753.067,
+                  "30 | mosaic | Mosaic of:50% B.1.1,50% I.1.2": 70360.598,
+                  "30 | mosaic | Mosaic of:50% D.1.1,50% E.2.1": 134833.022,
+                  "30 | mosaic | Mosaic of:50% D.1.1,50% I.1.2.1": 27067.226,
+                  "30 | mosaic | Mosaic of:50% D.1.1,50% I.1.4": 39075.923,
+                  "30 | mosaic | Mosaic of:50% E.1.6.1,50% E.3.2": 13299.403,
+                  "30 | mosaic | Mosaic of:50% E.2.1,50% E.3.2": 32611.459,
+                  "30 | mosaic | Mosaic of:94% D.1.1,2% B.1.1,2% C.1.1,2% D.2": 672.952,
+                  "30 | mosaic | Mosaic of:96% B.1.1,2% D.2,2% E.2.1": 73933.383,
+                  "30 | mosaic | Mosaic of:96% B.1.1,2% E.2.1,2% E.3.2": 157465.575,
+                  "30 | mosaic | Mosaic of:98% B.1.1,2% ?": 80206.389,
+                  "30 | mosaic | Mosaic of:98% B.1.1,2% C.1.1": 47394.291,
+                  "30 | mosaic | Mosaic of:98% B.1.1,2% D.1.1": 12726.496,
+                  "30 | mosaic | Mosaic of:98% B.1.1,2% E.1.8": 198479.243,
+                  "30 | mosaic | Mosaic of:98% D.2,2% E.2.1": 22250.243,
+                  "30 | mosaic | Mosaic of:98% E.2.1,2% D.1.1": 3932.905,
+                  "30 | mosaic | Mosaic of:98% E.2.1,2% D.2": 48381.402,
+                  "30 | mosaic | Mosaic of:98% I.1.2.1,2% B.1.1": 39961.847,
+                  "30 | mosaic | Mosaic of:98% I.1.2.1,2% D.1.1": 11123.303,
+                  "50 | A.1.2.2 | A.1.2.2": 4501.176,
+                  "50 | B.1.1 | B.1.1": 3156.208,
+                  "50 | B.5.2 | B.5.2": 155.213,
+                  "50 | D.1.1 | D.1.1": 4451.446,
+                  "50 | D.2 | D.2": 103.473,
+                  "50 | D.3 | D.3": 6677.018,
+                  "50 | E.1.7 | E.1.7": 310.417,
+                  "50 | G.1 | G.1": 51.739,
+                  "50 | G.2 | G.2": 155.207,
+                  "50 | J.3.6 | J.3.6": 3000.777,
+                  "50 | NA | NA": 1655.624,
+                  "50 | mosaic | Mosaic of:50% B.1.1,50% C.1.1": 413.894,
+                  "50 | mosaic | Mosaic of:50% B.1.1,50% D.3": 207.039,
+                  "50 | mosaic | Mosaic of:50% D.1.1,50% I.1.4": 51.755,
+                  "50 | mosaic | Mosaic of:96% B.1.1,2% D.2,2% E.2.1": 51.736,
+                  "50 | mosaic | Mosaic of:98% B.1.1,2% C.1.1": 155.219,
+                  "60 | B.1.1 | B.1.1": 10507.142,
+                  "60 | D.1.1 | D.1.1": 21480.645,
+                  "60 | D.2 | D.2": 1189.954,
+                  "60 | D.3 | D.3": 9368.627,
+                  "60 | D.5 | D.5": 51.762,
+                  "60 | G.1 | G.1": 362.16,
+                  "60 | G.2 | G.2": 569.111,
+                  "60 | I.1.2.1 | I.1.2.1": 1863.23,
+                  "60 | mosaic | Mosaic of:100% D.3": 8074.372,
+                  "60 | mosaic | Mosaic of:50% B.1.1,50% D.3": 16821.861,
+                  "60 | mosaic | Mosaic of:50% D.1.1,50% I.1.4": 3519.455,
+                  "60 | mosaic | Mosaic of:96% B.1.1,2% E.2.1,2% E.3.2": 310.573,
+                  "60 | mosaic | Mosaic of:98% I.1.2.1,2% B.1.1": 51.762,
+                  "60 | mosaic | Mosaic of:98% I.1.2.1,2% D.1.1": 517.369,
+                  "80 | A.1.2.2 | A.1.2.2": 776.077,
+                  "80 | B.1.1 | B.1.1": 5019.681,
+                  "80 | B.1.2 | B.1.2": 1603.801,
+                  "80 | D.1.1 | D.1.1": 362.262,
+                  "80 | E.1.6.1 | E.1.6.1": 258.747,
+                  "80 | E.2.1 | E.2.1": 35190.107,
+                  "80 | G.1 | G.1": 368730.661,
+                  "80 | G.2 | G.2": 362.16,
+                  "80 | NA | NA": 14952.269,
+                  "80 | mosaic | Mosaic of:50% B.1.1,50% C.1.1": 51.738
+                },
+                "unmatchedCentreAreaM2": 46615.974,
+                "warning": "Cell-centre area approximation; multiple vector claims remain multiple, not exclusive. No accuracy or simultaneity implied."
+              }
+            },
+            "surveyArea": {
+              "areas": {
+                "featureIds": [
+                  "nrw_phase1_survey_area.10",
+                  "nrw_phase1_survey_area.11"
+                ],
+                "groupOverlapM2": 1.273,
+                "nativeAreaM2": {
+                  "Aberconwy | 1995-1996": 8442668.72,
+                  "Arfon & Dwyfor | 1987-1989": 557330.631
+                },
+                "uncoveredAreaM2": 1.922,
+                "unionAreaM2": 8999998.078
+              },
+              "pairs": {
+                "nativePairsM2": {
+                  "10 | Aberconwy | 1995-1996": 423417.393,
+                  "10 | Arfon & Dwyfor | 1987-1989": 24109.115,
+                  "100 | Aberconwy | 1995-1996": 155.283,
+                  "100 | Arfon & Dwyfor | 1987-1989": 51.762,
+                  "20 | Aberconwy | 1995-1996": 258.668,
+                  "30 | Aberconwy | 1995-1996": 7853568.247,
+                  "30 | Arfon & Dwyfor | 1987-1989": 151543.068,
+                  "50 | Aberconwy | 1995-1996": 37980.904,
+                  "50 | Arfon & Dwyfor | 1987-1989": 2638.682,
+                  "60 | Aberconwy | 1995-1996": 72877.04,
+                  "60 | Arfon & Dwyfor | 1987-1989": 1810.983,
+                  "80 | Aberconwy | 1995-1996": 56300.504,
+                  "80 | Arfon & Dwyfor | 1987-1989": 377940.004
+                },
+                "unmatchedCentreAreaM2": 0.0,
+                "warning": "Cell-centre area approximation; multiple vector claims remain multiple, not exclusive. No accuracy or simultaneity implied."
+              }
+            }
+          },
+          "worldcover": {
+            "10": {
+              "cells": 8649,
+              "centreAreaM2": 447526.507,
+              "label": "Tree cover"
+            },
+            "100": {
+              "cells": 4,
+              "centreAreaM2": 207.045,
+              "label": "Moss and lichen"
+            },
+            "20": {
+              "cells": 5,
+              "centreAreaM2": 258.668,
+              "label": "Shrubland"
+            },
+            "30": {
+              "cells": 154688,
+              "centreAreaM2": 8005111.314,
+              "label": "Grassland"
+            },
+            "50": {
+              "cells": 785,
+              "centreAreaM2": 40619.586,
+              "label": "Built-up"
+            },
+            "60": {
+              "cells": 1443,
+              "centreAreaM2": 74688.024,
+              "label": "Bare / sparse vegetation"
+            },
+            "80": {
+              "cells": 8393,
+              "centreAreaM2": 434240.508,
+              "label": "Permanent water bodies"
+            }
+          }
+        }
+      }
+    }
+  },
+  "sourceManifest": "semantic-comparison-sources.json",
+  "sourceManifestSha256": "e13c8bd1f4e9c30d739955a398512cc6aa96aed1586de0972c997cc95a49e837",
+  "worldcoverCrosswalk": {
+    "0": {
+      "concept": null,
+      "native": "No data",
+      "relation": "UNMAPPABLE"
+    },
+    "10": {
+      "concept": "woody vegetation",
+      "native": "Tree cover",
+      "relation": "NARROWER"
+    },
+    "100": {
+      "concept": "nonwoody vegetation",
+      "native": "Moss and lichen",
+      "relation": "NARROWER"
+    },
+    "20": {
+      "concept": "woody vegetation",
+      "native": "Shrubland",
+      "relation": "NARROWER"
+    },
+    "30": {
+      "concept": "nonwoody vegetation",
+      "native": "Grassland",
+      "relation": "NARROWER"
+    },
+    "40": {
+      "concept": null,
+      "native": "Cropland",
+      "relation": "UNMAPPABLE"
+    },
+    "50": {
+      "concept": "artificial cover",
+      "native": "Built-up",
+      "relation": "COMPATIBLE"
+    },
+    "60": {
+      "concept": "mineral exposure with sparse vegetation",
+      "native": "Bare / sparse vegetation",
+      "relation": "COMPATIBLE"
+    },
+    "70": {
+      "concept": "persistent snow/ice cover",
+      "native": "Snow and ice",
+      "relation": "COMPATIBLE"
+    },
+    "80": {
+      "concept": "persistent water cover",
+      "native": "Permanent water bodies",
+      "relation": "COMPATIBLE"
+    },
+    "90": {
+      "concept": "vegetated wetland",
+      "native": "Herbaceous wetland",
+      "relation": "COMPATIBLE"
+    },
+    "95": {
+      "concept": "woody vegetation",
+      "native": "Mangroves",
+      "relation": "NARROWER"
+    }
+  }
+}

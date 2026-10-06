@@ -1,0 +1,248 @@
+{
+  "excess": "GLAMOS smallest published unit is the 9.79MB national inventory ZIP; only intersecting glacier/debris features enter comparison. API responses retain complete intersecting feature geometries beyond the fixed windows. WC reads native compressed COG blocks, not whole 3-degree products; transfer bytes unknown.",
+  "exclusions": "No national TLM archive, UKCEH restricted raster, imagery or elevation acquired.",
+  "extraMetadata": [
+    {
+      "bytes": 35008,
+      "file": "tlm-zip-index.json",
+      "sha256": "9b6d7aa3c238de16a5c59ddde65e71d5c569752aa16b4e3b68228b8a8f50f28e"
+    },
+    {
+      "bytes": 2534889,
+      "file": "swiss-layers.txt",
+      "sha256": "a55d6c3afae20d03b46e54f4443eb30fb4a91be3c13dbe5dbb06cf9ca7b60387"
+    },
+    {
+      "bytes": 17594,
+      "file": "swiss-tlm-items.txt",
+      "sha256": "b4b102664ee256848e60830b0f52d18776a2e1d555d0ccde6c222d8a0a853d9c"
+    },
+    {
+      "bytes": 39432,
+      "file": "nrw-vegetation-metadata.txt",
+      "sha256": "12847c22dd1aa4cabf297c35314888954a9f2f6faaa10b64652cbe0af82b6a7f"
+    }
+  ],
+  "files": [
+    {
+      "bytes": 4102952,
+      "file": "worldcover-manual.pdf",
+      "licence": "See named rights/primary documentation",
+      "retainedUtcFromFilesystem": "2026-10-06T10:35:24.684832+00:00",
+      "rightsReference": "https://esa-worldcover.org/en/data-access",
+      "sha256": "4301a3d95260d88bd4315f43ccf2a12ef74ad391109b9f36e22b6e51d8490107",
+      "url": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/docs/WorldCover_PUM_V2.0.pdf"
+    },
+    {
+      "bytes": 558917,
+      "file": "nrw-vegetation-full-features.json",
+      "licence": "OGL3 with NRW/OS notices",
+      "retainedUtcFromFilesystem": "2026-10-06T10:22:00.419168+00:00",
+      "sha256": "d6d389a7c2a853a15e5a592c08d06f81d500c8778b7370144d246c62c2b7fab8",
+      "url": "https://datamap.gov.wales/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typename=geonode%3Anrw_phase1_vegetation_voronoi&outputFormat=application%2Fjson&srsName=EPSG%3A27700&bbox=264900%2C357800%2C267900%2C360800%2CEPSG%3A27700&maxFeatures=2000"
+    },
+    {
+      "bytes": 589835,
+      "file": "nrw-survey-area.json",
+      "licence": "OGL3 with NRW/OS notices",
+      "retainedUtcFromFilesystem": "2026-10-06T10:25:29.029596+00:00",
+      "sha256": "9508789477d1ea882a08ef5e8e013d7eb6187e5e2aaf9786c2df8506ff1384c2",
+      "url": "https://datamap.gov.wales/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typename=geonode%3Anrw_phase1_survey_area&outputFormat=application%2Fjson&srsName=EPSG%3A27700&bbox=264900%2C357800%2C267900%2C360800%2CEPSG%3A27700&maxFeatures=2000"
+    },
+    {
+      "bytes": 9787779,
+      "file": "glamos.zip",
+      "licence": "CC-BY-4.0",
+      "retainedUtcFromFilesystem": "2026-10-06T10:24:59.724159+00:00",
+      "sha256": "36ff3252f24f76f0a93eafaa29086ba63725cc2cc99593deca34c15699e933a7",
+      "url": "https://doi.glamos.ch/data/inventory/inventory_sgi2016_r2020.zip"
+    },
+    {
+      "bytes": 101376,
+      "file": "jncc-codes.xls",
+      "licence": "OGL v3, JNCC source acknowledgement",
+      "retainedUtcFromFilesystem": "2026-10-06T10:28:07.803034+00:00",
+      "sha256": "f6a22507bd8800d37053651b2dc134f7340781657bc1cb1e4a09248e257ddb2c",
+      "url": "https://data.jncc.gov.uk/data/9578d07b-e018-4c66-9c1b-47110f14df2a/phase-1-habitat-dominant-species-codes-2008.xls"
+    },
+    {
+      "bytes": 8142007,
+      "file": "jncc-handbook.pdf",
+      "licence": "OGL v3, JNCC source acknowledgement",
+      "retainedUtcFromFilesystem": "2026-10-06T10:26:35.436366+00:00",
+      "sha256": "0bcf3f56d4fceb90bbc28fb70a12176186c61e83d9ad671122a2bb07b627cae3",
+      "url": "https://data.jncc.gov.uk/data/9578d07b-e018-4c66-9c1b-47110f14df2a/handbook-phase-1-habitat-survey-revised-2016.pdf"
+    },
+    {
+      "bytes": 130011,
+      "file": "nrw-group.html",
+      "licence": "OGL3 with NRW/OS notices",
+      "retainedUtcFromFilesystem": "2026-10-06T10:29:58.189621+00:00",
+      "sha256": "e7160143c906159e0a828d21b1560191967f5169c2d0db4f4fecf4bf4f2e27f9",
+      "url": "https://datamap.gov.wales/layergroups/geonode:nrw_terrestrial_phase_1_habitat_survey"
+    },
+    {
+      "bytes": 49866,
+      "file": "worldcover-rights.html",
+      "licence": "See named rights/primary documentation",
+      "retainedUtcFromFilesystem": "2026-10-06T10:30:21.953765+00:00",
+      "rightsReference": "https://esa-worldcover.org/en/data-access",
+      "sha256": "7645b74f70102799bad26dc751706f630cfee7e3e3d60bc25f343053a7a57d5e",
+      "url": "https://esa-worldcover.org/en/data-access"
+    },
+    {
+      "file": "swisstopo-rights.html",
+      "status": "Rights verified through authoritative web documentation; optional local HTML not retained",
+      "url": "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-and-geoservices"
+    },
+    {
+      "file": "geocover-structure.html",
+      "status": "Rights verified through authoritative web documentation; optional local HTML not retained",
+      "url": "https://www.geo.admin.ch/en/new-structure-of-the-swissgeocover2d-datasets-on-mapgeoadminch"
+    },
+    {
+      "file": "glamos-rights.html",
+      "status": "Rights verified through authoritative web documentation; optional local HTML not retained",
+      "url": "https://doi.glamos.ch/data/inventory/inventory_sgi2016_r2020.html"
+    },
+    {
+      "bytes": 985424,
+      "file": "geocover-bedrock.json",
+      "licence": "swisstopo OGD source-credit terms",
+      "retainedUtcFromFilesystem": "2026-10-06T10:23:09.754466+00:00",
+      "sha256": "75855416dccc84c6c7cbf60e7df1d10dcbf73caf94af25ad5fe3b437a9bf64d6",
+      "url": "https://api3.geo.admin.ch/rest/services/all/MapServer/identify?geometry=2624000%2C1091000%2C2626000%2C1093000&geometryType=esriGeometryEnvelope&sr=2056&layers=all%3Ach.swisstopo.geologie-swissgeocover2d_bedrock&mapExtent=2624000%2C1091000%2C2626000%2C1093000&imageDisplay=1000%2C1000%2C96&tolerance=0&returnGeometry=true&geometryFormat=geojson&lang=en"
+    },
+    {
+      "bytes": 97673,
+      "file": "geocover-unconsolidated.json",
+      "licence": "swisstopo OGD source-credit terms",
+      "retainedUtcFromFilesystem": "2026-10-06T10:23:10.019890+00:00",
+      "sha256": "25dba9784af81e7c89a2a375110bddb4b819e825ae7a5e681cb84bbefe1311e2",
+      "url": "https://api3.geo.admin.ch/rest/services/all/MapServer/identify?geometry=2624000%2C1091000%2C2626000%2C1093000&geometryType=esriGeometryEnvelope&sr=2056&layers=all%3Ach.swisstopo.geologie-swissgeocover2d_unconsolidated&mapExtent=2624000%2C1091000%2C2626000%2C1093000&imageDisplay=1000%2C1000%2C96&tolerance=0&returnGeometry=true&geometryFormat=geojson&lang=en"
+    },
+    {
+      "bytes": 4918,
+      "completeParentHashKnown": false,
+      "file": "tryfan-worldcover.tif",
+      "licence": "CC-BY-4.0, ESA WorldCover 2021 and modified Sentinel credit",
+      "operation": "Native grid window read, no reprojection/resampling; lossless uint8 GeoTIFF re-encoding; mask is applied only in analysis.",
+      "parentHeaders": {
+        "Content-Length": "29037566",
+        "ETag": "\"c5cdcb14e2526653c410cdcd4f7da7d2-4\"",
+        "Last-Modified": "Wed, 26 Oct 2022 12:54:17 GMT"
+      },
+      "parentHeadersCheckedUtc": "2026-10-06T10:35:24.797840+00:00",
+      "retainedUtcFromFilesystem": "2026-10-06T10:25:28.265854+00:00",
+      "rightsReference": "https://esa-worldcover.org/en/data-access",
+      "sha256": "9a0ad7162b1fb5fdc276a90c219c8d1d1daa0e83650ccd22d1dfbb51cbe98f6d",
+      "subsetDefinition": {
+        "sourceCrs": "EPSG:4326",
+        "sourceShape": [
+          36000,
+          36000
+        ],
+        "sourceTransform": [
+          8.333333333333333e-05,
+          0.0,
+          -6.0,
+          0.0,
+          -8.333333333333333e-05,
+          54.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "url": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N51W006_Map.tif",
+        "window": [
+          23753,
+          10464,
+          554,
+          334
+        ],
+        "windowTransform": [
+          8.333333333333333e-05,
+          0.0,
+          -4.020583333333334,
+          0.0,
+          -8.333333333333333e-05,
+          53.128,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "url": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N51W006_Map.tif",
+      "wireBytesKnown": false
+    },
+    {
+      "bytes": 5046,
+      "completeParentHashKnown": false,
+      "file": "riffelhorn-worldcover.tif",
+      "licence": "CC-BY-4.0, ESA WorldCover 2021 and modified Sentinel credit",
+      "operation": "Native grid window read, no reprojection/resampling; lossless uint8 GeoTIFF re-encoding; mask is applied only in analysis.",
+      "parentHeaders": {
+        "Content-Length": "106497465",
+        "ETag": "\"53f02eadc5f9d57125bdde707c9d744f-13\"",
+        "Last-Modified": "Wed, 26 Oct 2022 12:53:27 GMT"
+      },
+      "parentHeadersCheckedUtc": "2026-10-06T10:35:24.879761+00:00",
+      "retainedUtcFromFilesystem": "2026-10-06T10:25:28.578001+00:00",
+      "rightsReference": "https://esa-worldcover.org/en/data-access",
+      "sha256": "86579f0b5f87e9c50e499c3ab0752b39357fe7379ab227a11c31c2dee1e676ee",
+      "subsetDefinition": {
+        "sourceCrs": "EPSG:4326",
+        "sourceShape": [
+          36000,
+          36000
+        ],
+        "sourceTransform": [
+          8.333333333333333e-05,
+          0.0,
+          6.0,
+          0.0,
+          -8.333333333333333e-05,
+          48.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "url": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N45E006_Map.tif",
+        "window": [
+          20979,
+          24142,
+          312,
+          218
+        ],
+        "windowTransform": [
+          8.333333333333333e-05,
+          0.0,
+          7.74825,
+          0.0,
+          -8.333333333333333e-05,
+          45.988166666666665,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "url": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N45E006_Map.tif",
+      "wireBytesKnown": false
+    }
+  ],
+  "planSha256": "62739330a5931120dbdcf14743b5be6f8acc5da5dfc3acbe6747e0aaa0daacd7",
+  "primaryDefinitions": {
+    "GLAMOS": "ZIP ReadMe: year_acq=image acquisition year, sgi-id=underlying glacier identity in debris layer",
+    "GeoCover": "September 2026 layer catalogue, dataStatus 20260901; unit chronology is geological age, not observation epoch",
+    "NRW": "Welsh column of JNCC 2008 spreadsheet; D.5 Welsh wet versus JNCC dry mismatch retained",
+    "WorldCover": "PUM v2.0 table 3, pp15; native codes unchanged"
+  },
+  "requiredCredits": {
+    "GLAMOS": "GLAMOS (2020), Swiss Glacier Inventory 2016, release r2020; https://doi.glamos.ch/data/inventory/inventory_sgi2016_r2020.html, CC BY 4.0. Meridian subsets/analysis.",
+    "GeoCover": "© swisstopo. Meridian bounded extraction and analysis.",
+    "JNCC": "© JNCC, Phase 1 habitat survey handbook and Welsh habitat code list; OGL v3.",
+    "NRW": "Natural Resources Wales; Ordnance Survey AC0000849444; Crown copyright and database rights. Use the specified notice retained in nrw-group.html for redistributed extracts.",
+    "WorldCover": "© ESA WorldCover project 2021 / Contains modified Copernicus Sentinel data (2021) processed by the ESA WorldCover consortium. Native-grid subsets and analysis by Meridian."
+  },
+  "rightsGate": "Primary terms reviewed before dataset acquisition; source credit required on redistribution, research summaries and transformations marked. No paid or UKCEH restricted product."
+}

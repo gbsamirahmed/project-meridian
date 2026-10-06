@@ -319,9 +319,15 @@ processed appearance and portrayal stay independent. Property-compatible regiona
 fallback needs explicit ontology/epoch/grain/rights, not automatic provider priority.
 Human land use, full ecology/subsurface models, hydrological simulation and application
 suitability remain separate. Dynamic physical state is not automatically Weather-owned.
-The next bounded work is a source-native comparison, then a water-feature/state check,
-then a minimal evidence contract. No implementation or acquisition is adopted here.
+The source-native comparison is complete; the water-feature/state check and then
+a minimal evidence contract remain separate next work. No runtime is adopted here.
 Production is unchanged; multiscale stays closed and multiview stays parked.
+
+The [bounded source-native semantic comparison](atlas/source-native-semantic-comparison.md)
+now supplies empirical requirements for that proposal: independent properties and
+native evidence survive mixed habitat, glacier/debris and substrate/cover contrasts.
+No semantic entities or runtime are frozen. The separate water-feature/state check
+remains next, before a minimal evidence contract.
 
 The conceptual relationship is:
 
