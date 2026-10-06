@@ -5,7 +5,7 @@ Lab 012G evidence checkpoint `abf95bcfb50c681244a146626565a471ba791418`.
 This index records knowledge and research status, not a roadmap, new Lab or
 production architecture. It is the starting point for humans and fresh tooling.
 
-## Current programme state — audit, lifecycle and world-model synthesis complete
+## Current programme state — foundations, synthesis and retained vertical proof complete
 
 The [Atlas research-state audit and thread register](atlas-research-state.md) is the
 current status/sequence companion to this historical research map. It reconstructs
@@ -39,11 +39,16 @@ understanding; actual scoped input uses and current-use assessment need a small 
 companion description, without changing v1. No remaining foundational blocker is demonstrated.
 The [world-model architecture synthesis](atlas-world-model-architecture-synthesis.md) is
 complete: **decision C**, sufficiently founded for one bounded integrated retained-region proof.
-Exactly one next recommendation: **Atlas integrated retained-region proof — qualified queries
-and revision lifecycle**, separately authorized within existing Tryfan support. Its finite
-specification tests qualified evidence/current/historical queries and measures requirements
-before general storage/processing architecture. No proof, ingestion or storage system is
-implemented. A small native adapter may be part of that proof; nothing starts automatically.
+The [retained Tryfan qualified-query/revision proof](tryfan-qualified-query-proof.md) now
+completes that recommendation with **C — SUCCESS** in isolated research code: existing
+selection and v1 claims compose with scoped dependency receipts; only affected summit
+results recompute, southern results remain fresh and history replays. No production/runtime
+or frozen contract changes, broad semantic ingestion or persistent-world build.
+Exactly one next recommendation: **Atlas bounded storage, processing and serving requirements
+assessment informed by the retained Tryfan proof**, separately authorized. The proof's
+[next specification](tryfan-qualified-query-proof.md#20-exactly-one-recommended-next-bounded-task)
+stops at requirements/trade-offs and a bounded later implementation-proof specification.
+Open/parked appearance work remains independent; nothing starts automatically.
 
 Production, Weather and Traverse remain unchanged. The map below retains chronological
 milestones; current statuses and supersession are in the linked register.
@@ -405,3 +410,16 @@ and revision lifecycle, with measured requirements before general storage/servin
 No proof, ingestion, source acquisition, runtime or production change. All 42 research
 threads remain navigable; appearance correction/visibility/fusion remain open/partial/
 advanced and Swiss pixels parked. Weather/Traverse and closed foundations unchanged.
+
+## 2026-10-06 — retained Tryfan qualified-query and revision proof
+
+[Proof](tryfan-qualified-query-proof.md): **C — SUCCESS**. Two fixed Tryfan queries
+reuse TerrainHierarchy z14 support/fallback, actual retained pixels, ordinary slope and
+its dependent planar area ratio. V1 qualified claims retain exact local input/method
+references, unknown epochs and rights; separate research receipts capture consumed scopes.
+After regional applicability only two summit results recompute; four historical AWS
+results replay, southern results stay preferred, scoped notifications/unknowns validate.
+No new datasets, semantic ingestion/runtime, permanent store or production changes.
+The synthesis's historical next step is complete. Next is the bounded measured
+storage/processing/serving requirements assessment, not begun. All 42 register status
+columns, closed foundations and open/parked appearance questions are preserved.

@@ -1,0 +1,373 @@
+{
+  "proof": "tryfan-qualified-query-proof-v1",
+  "date": "2026-10-06",
+  "startingCheckpoint": "6e17e7923f2130b2cfce3671e026fe56b6397f5f",
+  "startingBranch": "main",
+  "upstream": "origin/main",
+  "fetchedStartingDivergence": [
+    0,
+    0
+  ],
+  "decision": "C — SUCCESS; retained bounded vertical slice, not production/global runtime",
+  "checks": [
+    {
+      "check": "synthesis starting checkpoint remains an ancestor",
+      "passed": true
+    },
+    {
+      "check": "main uses existing origin/main upstream",
+      "passed": true
+    },
+    {
+      "check": "validation main/upstream divergence0/0",
+      "passed": true
+    },
+    {
+      "check": "113 protected production SHA256s match",
+      "passed": true
+    },
+    {
+      "check": "seven frozen semantic code/fixture hashes match",
+      "passed": true
+    },
+    {
+      "check": "production/frozen metadata/retained report/data domains have no diff",
+      "passed": true
+    },
+    {
+      "check": "all existing scripts preserved",
+      "passed": true
+    },
+    {
+      "check": "43 Atlas/EarthLab reports preserved",
+      "passed": true
+    },
+    {
+      "check": "prior lifecycle/synthesis reports and receipts preserved",
+      "passed": true
+    },
+    {
+      "check": "all42 canonical IDs/status columns preserved",
+      "passed": true
+    },
+    {
+      "check": "historical audit gate preserved",
+      "passed": true
+    },
+    {
+      "check": "development chronology append-only",
+      "passed": true
+    },
+    {
+      "check": "freeze reuses exact retained window/locations",
+      "passed": true
+    },
+    {
+      "check": "plan freeze timestamp/checkpoint precedes declared first reads",
+      "passed": true
+    },
+    {
+      "check": "input/plan/code hashes match deterministic output",
+      "passed": true
+    },
+    {
+      "check": "CRS axis order and frozen coordinate roundtrip,not geodeticaccuracy",
+      "passed": true
+    },
+    {
+      "check": "actual input scopes lie inside frozen eligibility supports",
+      "passed": true
+    },
+    {
+      "check": "6 exact revisions,4 current results,2 summit recomputations",
+      "passed": true
+    },
+    {
+      "check": "existingselector regional summit/common control",
+      "passed": true
+    },
+    {
+      "check": "v1 validation and exact historical replay pass",
+      "passed": true
+    },
+    {
+      "check": "quality/epoch remain honestly unknown",
+      "passed": true
+    },
+    {
+      "check": "unknown property and provenance-unavailable are distinct",
+      "passed": true
+    },
+    {
+      "check": "synthetic scope notifications do not claim observed physicalchange",
+      "passed": true
+    },
+    {
+      "check": "all20 requested report sections present",
+      "passed": true
+    },
+    {
+      "check": "bounded SUCCESS and unresolved limitations explicit",
+      "passed": true
+    },
+    {
+      "check": "exactly one next requirements assessment,not started",
+      "passed": true
+    },
+    {
+      "check": "17 proof-specific tests",
+      "passed": true
+    },
+    {
+      "check": "all17 proof tests counted",
+      "passed": true
+    },
+    {
+      "check": "64 existing frozen contract/hierarchy/runtime/Tryfan tests",
+      "passed": true
+    },
+    {
+      "check": "all64 existing tests counted",
+      "passed": true
+    },
+    {
+      "check": "strict proof TypeScript",
+      "passed": true
+    },
+    {
+      "check": "scoped research lint",
+      "passed": true
+    },
+    {
+      "check": "offline Python adapter syntax",
+      "passed": true
+    },
+    {
+      "check": "offline deterministic rebuild 1",
+      "passed": true
+    },
+    {
+      "check": "offline deterministic rebuild 2",
+      "passed": true
+    },
+    {
+      "check": "two exact output rebuilds and historical replay agree",
+      "passed": true
+    },
+    {
+      "check": "changed paths confined to proof plus current navigation",
+      "passed": true
+    },
+    {
+      "check": "all newtracked candidates lightweight,maximum100KB",
+      "passed": true
+    },
+    {
+      "check": "current/added local documents and anchors resolve",
+      "passed": true
+    },
+    {
+      "check": "external references are syntactically valid,no new sourcefacts",
+      "passed": true
+    },
+    {
+      "check": "all research JSON parses",
+      "passed": true
+    },
+    {
+      "check": "14 relevant checkpoints verified ancestors",
+      "passed": true
+    },
+    {
+      "check": "unstaged whitespace",
+      "passed": true
+    },
+    {
+      "check": "staged whitespace",
+      "passed": true
+    },
+    {
+      "check": "changed Markdown has no trailing whitespace",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "commands": [
+    {
+      "check": "17 proof-specific tests",
+      "command": [
+        "node",
+        "--test",
+        "scripts/atlas/test_qualified_query_proof.mjs"
+      ],
+      "exitCode": 0
+    },
+    {
+      "check": "64 existing frozen contract/hierarchy/runtime/Tryfan tests",
+      "command": [
+        "node",
+        "--test",
+        "scripts/atlas/test_semantic_evidence_contract.mjs",
+        "scripts/atlas/test_terrain_hierarchy_contract.mjs",
+        "scripts/atlas/test_terrain_runtime.mjs",
+        "scripts/atlas/test_tryfan_terrain.mjs"
+      ],
+      "exitCode": 0
+    },
+    {
+      "check": "strict proof TypeScript",
+      "command": [
+        "npx.cmd",
+        "tsc",
+        "-p",
+        "scripts/atlas/qualified-query-proof/tsconfig.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "check": "scoped research lint",
+      "command": [
+        "npx.cmd",
+        "eslint",
+        "scripts/atlas/qualified-query-proof/proof.ts",
+        "scripts/atlas/qualified-query-proof/run.mjs",
+        "scripts/atlas/test_qualified_query_proof.mjs"
+      ],
+      "exitCode": 0
+    },
+    {
+      "check": "offline deterministic rebuild 1",
+      "command": [
+        "node",
+        "scripts/atlas/qualified-query-proof/run.mjs",
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data",
+        "--check"
+      ],
+      "exitCode": 0
+    },
+    {
+      "check": "offline deterministic rebuild 2",
+      "command": [
+        "node",
+        "scripts/atlas/qualified-query-proof/run.mjs",
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data",
+        "--check"
+      ],
+      "exitCode": 0
+    },
+    {
+      "check": "unstaged whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0
+    },
+    {
+      "check": "staged whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "deterministicRebuilds": [
+    {
+      "mode": "deterministic-check",
+      "outputSha256": "871be961f6df0ff479c4ec935980eb35070e5a9363bcddc5fe73bfd6051fc3f2",
+      "claims": 6,
+      "recomputed": 2,
+      "historicalReplay": true,
+      "materializationBytes": 92034
+    },
+    {
+      "mode": "deterministic-check",
+      "outputSha256": "871be961f6df0ff479c4ec935980eb35070e5a9363bcddc5fe73bfd6051fc3f2",
+      "claims": 6,
+      "recomputed": 2,
+      "historicalReplay": true,
+      "materializationBytes": 92034
+    }
+  ],
+  "resultSha256": "871be961f6df0ff479c4ec935980eb35070e5a9363bcddc5fe73bfd6051fc3f2",
+  "planSha256": "06097cb52471721c7aefe7e25886c51bf0a2249ea306feff42695a17ff06d67e",
+  "inputSnapshotSha256": "ab2062b81b7e84b749700cae13c499e837e0705de96c22192ef9ad2f6d13a9a7",
+  "methodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+  "inputTileBytes": 320857,
+  "resultBytes": 92034,
+  "localReferencesChecked": 285,
+  "localAnchorsChecked": 47,
+  "missingReferences": [],
+  "protectedProductionSha256Checks": 113,
+  "productionMismatches": [],
+  "frozenSemanticCodeSha256Checks": 7,
+  "frozenMismatches": [],
+  "unchangedExistingScripts": 281,
+  "unchangedHistoricalReportGitBlobChecks": 43,
+  "historicalReportMismatches": [],
+  "additionalPreservedReportsReceipts": [
+    "docs/research/atlas-derived-understanding-lifecycle.md",
+    "docs/research/atlas-derived-understanding-validation.json",
+    "docs/research/atlas-world-model-architecture-synthesis.md",
+    "docs/research/atlas-world-model-architecture-validation.json",
+    "docs/research/atlas-research-audit-validation.json"
+  ],
+  "canonicalThreadCount": 42,
+  "canonicalStatusColumnsUnchanged": true,
+  "checkpointAncestors": {
+    "6e17e79": "6e17e7923f2130b2cfce3671e026fe56b6397f5f",
+    "43afe78": "43afe78e549f6707f0648465af6d7c6e0aabb430",
+    "5f14511": "5f145117072b1cde2e696fb8d8f8d11995a2c06f",
+    "e65c2d6": "e65c2d6c29ed4421d5f2cc7133604332e8dfd71b",
+    "052374e": "052374e07d613a549f5a88640b42932f97a7f896",
+    "c4da565": "c4da56577c27f56ee1a5829e85d8daa951a517c1",
+    "75ea9d8": "75ea9d837c86506b0e278f79e209a8533e9664b7",
+    "57688cb": "57688cb48e0a0c7768b066df548b6959b924bfc7",
+    "ca74a84": "ca74a84713b443d408467dd17835083bbbf0771a",
+    "3d406ae": "3d406aee212a5be071728d85db443111e483e7bf",
+    "1de9e44": "1de9e44968dcb5c2f8601c4f6844f1b626522b4b",
+    "8598c30": "8598c30a64dc789c22ae81cef1c14bea3a9e6ff0",
+    "ba24e54": "ba24e546fcb13dcdaf0bb01bf8550c3cf8c5c2dd",
+    "53d75f2": "53d75f2c2594c6bd627bb7bfe9c10b0b272c8651"
+  },
+  "researchJsonChecked": 111,
+  "jsonErrors": [],
+  "changedPaths": [
+    "docs/architecture.md",
+    "docs/development-log.md",
+    "docs/product-direction.md",
+    "docs/research/atlas-research-map.md",
+    "docs/research/atlas-research-state.md",
+    "docs/research/tryfan-qualified-query-inputs.json",
+    "docs/research/tryfan-qualified-query-plan.json",
+    "docs/research/tryfan-qualified-query-proof.md",
+    "docs/research/tryfan-qualified-query-results.json",
+    "docs/research/tryfan-qualified-query-validation.json",
+    "scripts/atlas/qualified-query-proof/proof.ts",
+    "scripts/atlas/qualified-query-proof/retained_inputs.py",
+    "scripts/atlas/qualified-query-proof/run.mjs",
+    "scripts/atlas/qualified-query-proof/tsconfig.json",
+    "scripts/atlas/qualified-query-proof/validate.py",
+    "scripts/atlas/test_qualified_query_proof.mjs"
+  ],
+  "nextTask": "Atlas bounded storage, processing and serving requirements assessment informed by the retained Tryfan proof; not started",
+  "scopeConfirmations": {
+    "researchOnly": true,
+    "frozenContractsUnchanged": true,
+    "productionUnchanged": true,
+    "noDatasetAcquisition": true,
+    "retainedProductsNotModified": true,
+    "noSemanticInference": true,
+    "noPersistentWorldBuild": true,
+    "noNewSemanticIngestion": true,
+    "multiscaleClosed": true,
+    "multiviewParked": true,
+    "weatherTraverseUnchanged": true,
+    "noPrivateInspection": true
+  },
+  "limits": "Exact local retained input replay and finite two-level scope propagation; unknown upstream AWS lineage/epoch/quality, conservative bounds, synthetic change notices, no temporal-state or general-graph runtime proof."
+}

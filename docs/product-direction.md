@@ -24,9 +24,11 @@ closes the audit’s pre-synthesis gate using retained cases. Immutable revision
 can support revisable understanding; scoped input-use/current-assessment descriptions are
 justified beside existing v1. The [world-model architecture synthesis](research/atlas-world-model-architecture-synthesis.md)
 is now complete (decision C), with domain-specific evidence and question-local answers.
-The next recommendation is one separately authorized retained Tryfan integrated proof
-of qualified queries/revision lifecycle, not broad ingestion, implemented infrastructure
-or authority to start an empirical experiment. Historical analytical filter/calibration
+The [retained Tryfan qualified-query/revision proof](research/tryfan-qualified-query-proof.md)
+now completes that recommendation (**C — SUCCESS**), without production or contract changes.
+The next recommendation is a separately authorized bounded storage/processing/serving
+requirements assessment informed by this proof, not broad ingestion or a persistent-world build.
+Historical analytical filter/calibration
 suggestions are separate from closed visual-terrain research. No Weather/Traverse redesign follows.
 
 ## Product idea

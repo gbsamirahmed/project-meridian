@@ -1,0 +1,2369 @@
+{
+  "proof": "tryfan-qualified-query-proof-v1",
+  "startingCheckpoint": "6e17e7923f2130b2cfce3671e026fe56b6397f5f",
+  "planSha256": "06097cb52471721c7aefe7e25886c51bf0a2249ea306feff42695a17ff06d67e",
+  "inputSnapshotSha256": "ab2062b81b7e84b749700cae13c499e837e0705de96c22192ef9ad2f6d13a9a7",
+  "methodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+  "methodFiles": {
+    "scripts/atlas/qualified-query-proof/proof.ts": "bcd85ff5101ddd079e2e4d3c0c32054b6a75c0525797bc9258a8cfe9e59e3bcc",
+    "scripts/atlas/qualified-query-proof/retained_inputs.py": "b58edc66fcb9b0302632610c666a4e2ade44a03caadf2643d03247ba54a4cc1d",
+    "scripts/atlas/qualified-query-proof/run.mjs": "56fbf2bd47fcd9ec04fbd61c2f7f9a4c0e0bfe005e514cdda60b4f8609b30414"
+  },
+  "selections": {
+    "before": {
+      "summit": {
+        "status": "selected",
+        "hierarchy": {
+          "id": "tryfan-proof-common-context",
+          "revision": "1"
+        },
+        "family": "production-common",
+        "sourceFamily": "legacy-hosted-terrain",
+        "role": "common",
+        "product": {
+          "kind": "product",
+          "id": "aws-terrarium",
+          "revision": {
+            "status": "unknown",
+            "reason": "Mutable public hosted tiles; no complete immutable product revision established."
+          }
+        },
+        "representation": {
+          "family": "production-common",
+          "level": "z14",
+          "kind": "raster-dem-heightfield"
+        },
+        "level": "z14",
+        "requestedLevel": "z14",
+        "derivation": "resampled",
+        "informationCeiling": {
+          "status": "unknown",
+          "reason": "Neither Atlas geometry z14 nor relief z15 ceilings prove measurement resolution."
+        },
+        "sampleSpacing": {
+          "status": "unknown",
+          "reason": "Consumer level does not establish independent information."
+        },
+        "overzoom": false,
+        "support": "legacy-unassessed",
+        "reason": "direct",
+        "refinement": "direct",
+        "handoffState": "unresolved",
+        "trace": [
+          {
+            "family": "production-common",
+            "level": "z14",
+            "outcome": "legacy-external-common-policy; valid-support-remains-unknown"
+          }
+        ]
+      },
+      "southern-observer": {
+        "status": "selected",
+        "hierarchy": {
+          "id": "tryfan-proof-common-context",
+          "revision": "1"
+        },
+        "family": "production-common",
+        "sourceFamily": "legacy-hosted-terrain",
+        "role": "common",
+        "product": {
+          "kind": "product",
+          "id": "aws-terrarium",
+          "revision": {
+            "status": "unknown",
+            "reason": "Mutable public hosted tiles; no complete immutable product revision established."
+          }
+        },
+        "representation": {
+          "family": "production-common",
+          "level": "z14",
+          "kind": "raster-dem-heightfield"
+        },
+        "level": "z14",
+        "requestedLevel": "z14",
+        "derivation": "resampled",
+        "informationCeiling": {
+          "status": "unknown",
+          "reason": "Neither Atlas geometry z14 nor relief z15 ceilings prove measurement resolution."
+        },
+        "sampleSpacing": {
+          "status": "unknown",
+          "reason": "Consumer level does not establish independent information."
+        },
+        "overzoom": false,
+        "support": "legacy-unassessed",
+        "reason": "direct",
+        "refinement": "direct",
+        "handoffState": "unresolved",
+        "trace": [
+          {
+            "family": "production-common",
+            "level": "z14",
+            "outcome": "legacy-external-common-policy; valid-support-remains-unknown"
+          }
+        ]
+      }
+    },
+    "after": {
+      "summit": {
+        "status": "selected",
+        "hierarchy": {
+          "id": "tryfan-second-region-proof",
+          "revision": "1"
+        },
+        "family": "welsh-regional",
+        "sourceFamily": "welsh-2021-regional",
+        "role": "regional",
+        "product": {
+          "kind": "product",
+          "id": "tryfan-welsh-regional-v2",
+          "revision": {
+            "status": "known",
+            "value": "db8e4d87b5fa609d455d1e0f8ec3fdebc834579a7e102f69f4d0b0283efa690c"
+          }
+        },
+        "representation": {
+          "family": "welsh-regional",
+          "level": "z14",
+          "kind": "raster-dem-heightfield"
+        },
+        "level": "z14",
+        "requestedLevel": "z14",
+        "derivation": "regional-derived-parent",
+        "informationCeiling": {
+          "status": "known",
+          "value": "1m distributed source grid. z17 samples approximately 0.72m near Tryfan and is resampled; no level asserts new independent measurements."
+        },
+        "sampleSpacing": {
+          "status": "known",
+          "value": "5.735m near latitude 53.115°; delivery sampling, not measurement resolution"
+        },
+        "overzoom": false,
+        "support": "complete",
+        "reason": "direct",
+        "refinement": "direct",
+        "handoffState": "unresolved",
+        "trace": [
+          {
+            "family": "welsh-regional",
+            "level": "z14",
+            "outcome": "eligible-complete-support"
+          }
+        ]
+      },
+      "southern-observer": {
+        "status": "selected",
+        "hierarchy": {
+          "id": "tryfan-second-region-proof",
+          "revision": "1"
+        },
+        "family": "production-common",
+        "sourceFamily": "legacy-hosted-terrain",
+        "role": "common",
+        "product": {
+          "kind": "product",
+          "id": "aws-terrarium",
+          "revision": {
+            "status": "unknown",
+            "reason": "Mutable public hosted tiles; no complete immutable product revision established."
+          }
+        },
+        "representation": {
+          "family": "production-common",
+          "level": "z14",
+          "kind": "raster-dem-heightfield"
+        },
+        "level": "z14",
+        "requestedLevel": "z14",
+        "derivation": "resampled",
+        "informationCeiling": {
+          "status": "unknown",
+          "reason": "Neither Atlas geometry z14 nor relief z15 ceilings prove measurement resolution."
+        },
+        "sampleSpacing": {
+          "status": "unknown",
+          "reason": "Consumer level does not establish independent information."
+        },
+        "overzoom": false,
+        "support": "legacy-unassessed",
+        "reason": "common-fallback",
+        "refinement": "source-family-handoff",
+        "handoffState": "unresolved",
+        "trace": [
+          {
+            "family": "welsh-regional",
+            "level": "z14",
+            "outcome": "outside-valid-support"
+          },
+          {
+            "family": "production-common",
+            "level": "z14",
+            "outcome": "legacy-external-common-policy; valid-support-remains-unknown"
+          }
+        ]
+      }
+    }
+  },
+  "results": [
+    {
+      "question": "slope|EPSG:27700|266405,359387|8m|represented-heightfield",
+      "probe": "summit",
+      "property": "slope",
+      "claim": {
+        "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+        "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839"
+      },
+      "value": {
+        "kind": "assertion",
+        "value": {
+          "kind": "quantity",
+          "value": 11.837956999552308,
+          "unit": "degree"
+        }
+      },
+      "receipt": {
+        "method": "Horn-3x3-grid-slope",
+        "methodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+        "parameters": {
+          "analysisSpacingM": 8,
+          "horizontalUnits": "BNG grid metres"
+        },
+        "inputs": [
+          {
+            "kind": "resource",
+            "id": "retained-input:production-common:summit",
+            "revision": "6236293d8e15726a1d16934d25bdddf58d74919f7aba1dee8f84cad03bc9e33c",
+            "role": "bilinear pixels consumed by Horn stencil",
+            "spatial": {
+              "crs": "EPSG:27700",
+              "bounds": [
+                266387.7627433144,
+                359370.7661387139,
+                266417.3022244023,
+                359400.23799928307
+              ],
+              "meaning": "Bounding rectangle of all bilinear source-cell footprints; densified transformed boundary +0.01m numerical guard. Logical pixel use differs from whole-PNG I/O."
+            },
+            "temporal": {
+              "kind": "unknown",
+              "reason": "Exact source-cell observation epoch is unknown; Welsh catalogue date is not a mapped per-cell epoch and AWS lineage is unpinned."
+            }
+          }
+        ],
+        "id": "run:7c5cea0537242da67f688b365274963bdeb7b6395e00f13b0d0ad22e226b71af",
+        "artifact": {
+          "sha256": "4454d641a71b9143044610a203dfb2ddf1cb4e9ca08436729755d3aa1a5c5cfa",
+          "encoding": "JSON numeric scalar"
+        }
+      }
+    },
+    {
+      "question": "area-ratio|EPSG:27700|266405,359387|8m|represented-heightfield",
+      "probe": "summit",
+      "property": "area-ratio",
+      "claim": {
+        "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+        "revision": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527"
+      },
+      "value": {
+        "kind": "assertion",
+        "value": {
+          "kind": "quantity",
+          "value": 1.0217304696061646,
+          "unit": "m2 represented planar surface / m2 map plane"
+        }
+      },
+      "receipt": {
+        "method": "planar-area-ratio-from-slope",
+        "methodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+        "parameters": {
+          "analysisSpacingM": 8,
+          "horizontalUnits": "BNG grid metres"
+        },
+        "inputs": [
+          {
+            "kind": "claim",
+            "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+            "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839",
+            "role": "slope angle",
+            "spatial": {
+              "crs": "EPSG:27700",
+              "bounds": [
+                266405,
+                359387,
+                266405,
+                359387
+              ],
+              "meaning": "Exact slope claim at point; transitive terrain read scope remains in upstream receipt."
+            },
+            "temporal": {
+              "kind": "unknown",
+              "reason": "Exact source-cell observation epoch is unknown; Welsh catalogue date is not a mapped per-cell epoch and AWS lineage is unpinned."
+            }
+          }
+        ],
+        "id": "run:1f2704717179feb186be9dcbb4f69ae6c9d734168080c83e84840af518822d4c",
+        "artifact": {
+          "sha256": "c0723a22847510624345dee13d94de2d9aaac220480226005eea657658adb03c",
+          "encoding": "JSON numeric scalar"
+        }
+      }
+    },
+    {
+      "question": "slope|EPSG:27700|265876.05347833806,358339.7631202109|8m|represented-heightfield",
+      "probe": "southern-observer",
+      "property": "slope",
+      "claim": {
+        "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+        "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+      },
+      "value": {
+        "kind": "assertion",
+        "value": {
+          "kind": "quantity",
+          "value": 8.811499729681492,
+          "unit": "degree"
+        }
+      },
+      "receipt": {
+        "method": "Horn-3x3-grid-slope",
+        "methodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+        "parameters": {
+          "analysisSpacingM": 8,
+          "horizontalUnits": "BNG grid metres"
+        },
+        "inputs": [
+          {
+            "kind": "resource",
+            "id": "retained-input:production-common:southern-observer",
+            "revision": "cd734229df3370bb8216be68680b37b9dfdb3ceeb7d81425dd22f7b22440732c",
+            "role": "bilinear pixels consumed by Horn stencil",
+            "spatial": {
+              "crs": "EPSG:27700",
+              "bounds": [
+                265864.08542228315,
+                358324.54352891364,
+                265887.88898207236,
+                358353.86385104374
+              ],
+              "meaning": "Bounding rectangle of all bilinear source-cell footprints; densified transformed boundary +0.01m numerical guard. Logical pixel use differs from whole-PNG I/O."
+            },
+            "temporal": {
+              "kind": "unknown",
+              "reason": "Exact source-cell observation epoch is unknown; Welsh catalogue date is not a mapped per-cell epoch and AWS lineage is unpinned."
+            }
+          }
+        ],
+        "id": "run:ebbdd8f70fe39e773427771f5203e977f8180504f0edbee69b862f4831829797",
+        "artifact": {
+          "sha256": "16c566135fd14fec422ebe635cd54f7d922eadf372ce62b4c9a24239f76f9d36",
+          "encoding": "JSON numeric scalar"
+        }
+      }
+    },
+    {
+      "question": "area-ratio|EPSG:27700|265876.05347833806,358339.7631202109|8m|represented-heightfield",
+      "probe": "southern-observer",
+      "property": "area-ratio",
+      "claim": {
+        "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+        "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+      },
+      "value": {
+        "kind": "assertion",
+        "value": {
+          "kind": "quantity",
+          "value": 1.011943302930815,
+          "unit": "m2 represented planar surface / m2 map plane"
+        }
+      },
+      "receipt": {
+        "method": "planar-area-ratio-from-slope",
+        "methodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+        "parameters": {
+          "analysisSpacingM": 8,
+          "horizontalUnits": "BNG grid metres"
+        },
+        "inputs": [
+          {
+            "kind": "claim",
+            "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+            "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d",
+            "role": "slope angle",
+            "spatial": {
+              "crs": "EPSG:27700",
+              "bounds": [
+                265876.05347833806,
+                358339.7631202109,
+                265876.05347833806,
+                358339.7631202109
+              ],
+              "meaning": "Exact slope claim at point; transitive terrain read scope remains in upstream receipt."
+            },
+            "temporal": {
+              "kind": "unknown",
+              "reason": "Exact source-cell observation epoch is unknown; Welsh catalogue date is not a mapped per-cell epoch and AWS lineage is unpinned."
+            }
+          }
+        ],
+        "id": "run:b120b2151ecfff72f86166c75182ca3d01d0f2b25ef4669f82a5306e80cbd66d",
+        "artifact": {
+          "sha256": "3b19320c10e5c5b44db3b8afaf2ac97f30cb5272d5111e618c64f63d6692b674",
+          "encoding": "JSON numeric scalar"
+        }
+      }
+    },
+    {
+      "question": "slope|EPSG:27700|266405,359387|8m|represented-heightfield",
+      "probe": "summit",
+      "property": "slope",
+      "claim": {
+        "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+        "revision": "4f4d6ae182d3821d1a002c855d8b886112c0aea0e13af2023b10d5294f70ef93"
+      },
+      "value": {
+        "kind": "assertion",
+        "value": {
+          "kind": "quantity",
+          "value": 32.918524028483965,
+          "unit": "degree"
+        }
+      },
+      "receipt": {
+        "method": "Horn-3x3-grid-slope",
+        "methodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+        "parameters": {
+          "analysisSpacingM": 8,
+          "horizontalUnits": "BNG grid metres"
+        },
+        "inputs": [
+          {
+            "kind": "resource",
+            "id": "retained-input:welsh-regional:summit",
+            "revision": "8fb888f767c92da121dfe82f94a25262060d284fc1b19a208e848bc5900f01a4",
+            "role": "bilinear pixels consumed by Horn stencil",
+            "spatial": {
+              "crs": "EPSG:27700",
+              "bounds": [
+                266387.7627433144,
+                359370.7661387139,
+                266417.3022244023,
+                359400.23799928307
+              ],
+              "meaning": "Bounding rectangle of all bilinear source-cell footprints; densified transformed boundary +0.01m numerical guard. Logical pixel use differs from whole-PNG I/O."
+            },
+            "temporal": {
+              "kind": "unknown",
+              "reason": "Exact source-cell observation epoch is unknown; Welsh catalogue date is not a mapped per-cell epoch and AWS lineage is unpinned."
+            }
+          }
+        ],
+        "id": "run:74d287efd48a4d4139a46e42ce7932391fec03729f66547b8222a786f9a92ac8",
+        "artifact": {
+          "sha256": "4d14ac57b79dec65ec09a9175a57a4d84c7eb982c071e749fd2720437b826894",
+          "encoding": "JSON numeric scalar"
+        }
+      }
+    },
+    {
+      "question": "area-ratio|EPSG:27700|266405,359387|8m|represented-heightfield",
+      "probe": "summit",
+      "property": "area-ratio",
+      "claim": {
+        "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+        "revision": "dbc1746d41c191d251628d3409d5db3bf4064c8c29e9f0ba50a332804196c1d2"
+      },
+      "value": {
+        "kind": "assertion",
+        "value": {
+          "kind": "quantity",
+          "value": 1.191264396968292,
+          "unit": "m2 represented planar surface / m2 map plane"
+        }
+      },
+      "receipt": {
+        "method": "planar-area-ratio-from-slope",
+        "methodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+        "parameters": {
+          "analysisSpacingM": 8,
+          "horizontalUnits": "BNG grid metres"
+        },
+        "inputs": [
+          {
+            "kind": "claim",
+            "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+            "revision": "4f4d6ae182d3821d1a002c855d8b886112c0aea0e13af2023b10d5294f70ef93",
+            "role": "slope angle",
+            "spatial": {
+              "crs": "EPSG:27700",
+              "bounds": [
+                266405,
+                359387,
+                266405,
+                359387
+              ],
+              "meaning": "Exact slope claim at point; transitive terrain read scope remains in upstream receipt."
+            },
+            "temporal": {
+              "kind": "unknown",
+              "reason": "Exact source-cell observation epoch is unknown; Welsh catalogue date is not a mapped per-cell epoch and AWS lineage is unpinned."
+            }
+          }
+        ],
+        "id": "run:87ceb299c5044a0538e3c0670fcf8d0f7c9aa30f220987a72745494fd974129e",
+        "artifact": {
+          "sha256": "ae87ebbdf8d127c8d9c79b6c55dfad61fb13775eb82254acc737de040b6393dc",
+          "encoding": "JSON numeric scalar"
+        }
+      }
+    }
+  ],
+  "assessments": [
+    {
+      "probe": "summit",
+      "property": "slope",
+      "historical": {
+        "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+        "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839"
+      },
+      "replay": {
+        "policy": "fixed-input-replay-v1",
+        "status": "fresh",
+        "reason": "Exact local bytes/receipt and method available for historical replay; upstream global revision/time remain unknown",
+        "result": {
+          "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+          "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839"
+        },
+        "policyRevision": "cca2e154b84c67380fdafc794cb3f349a95693c83d21c0e56c868aaa07f6a6b8",
+        "baseline": {
+          "hierarchy": {
+            "id": "tryfan-second-region-proof",
+            "revision": "1"
+          },
+          "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+          "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "selectedFamily": "welsh-regional"
+      },
+      "current": {
+        "policy": "current-applicable-terrain-v1",
+        "status": "stale",
+        "reason": "Current explicit hierarchy policy selects another applicable representation; stale is not false",
+        "result": {
+          "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+          "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839"
+        },
+        "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+        "baseline": {
+          "hierarchy": {
+            "id": "tryfan-second-region-proof",
+            "revision": "1"
+          },
+          "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+          "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "selectedFamily": "welsh-regional"
+      }
+    },
+    {
+      "probe": "summit",
+      "property": "area-ratio",
+      "historical": {
+        "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+        "revision": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527"
+      },
+      "replay": {
+        "policy": "fixed-input-replay-v1",
+        "status": "fresh",
+        "reason": "Transitive slope assessment: Exact local bytes/receipt and method available for historical replay; upstream global revision/time remain unknown",
+        "result": {
+          "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+          "revision": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527"
+        },
+        "policyRevision": "cca2e154b84c67380fdafc794cb3f349a95693c83d21c0e56c868aaa07f6a6b8",
+        "baseline": {
+          "hierarchy": {
+            "id": "tryfan-second-region-proof",
+            "revision": "1"
+          },
+          "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+          "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "selectedFamily": "welsh-regional"
+      },
+      "current": {
+        "policy": "current-applicable-terrain-v1",
+        "status": "stale",
+        "reason": "Transitive slope assessment: Current explicit hierarchy policy selects another applicable representation; stale is not false",
+        "result": {
+          "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+          "revision": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527"
+        },
+        "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+        "baseline": {
+          "hierarchy": {
+            "id": "tryfan-second-region-proof",
+            "revision": "1"
+          },
+          "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+          "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "selectedFamily": "welsh-regional"
+      }
+    },
+    {
+      "probe": "southern-observer",
+      "property": "slope",
+      "historical": {
+        "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+        "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+      },
+      "replay": {
+        "policy": "fixed-input-replay-v1",
+        "status": "fresh",
+        "reason": "Exact local bytes/receipt and method available for historical replay; upstream global revision/time remain unknown",
+        "result": {
+          "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+          "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+        },
+        "policyRevision": "cca2e154b84c67380fdafc794cb3f349a95693c83d21c0e56c868aaa07f6a6b8",
+        "baseline": {
+          "hierarchy": {
+            "id": "tryfan-second-region-proof",
+            "revision": "1"
+          },
+          "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+          "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "selectedFamily": "production-common"
+      },
+      "current": {
+        "policy": "current-applicable-terrain-v1",
+        "status": "fresh",
+        "reason": "Selected representation still applies; no intersecting relevant input changes",
+        "result": {
+          "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+          "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+        },
+        "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+        "baseline": {
+          "hierarchy": {
+            "id": "tryfan-second-region-proof",
+            "revision": "1"
+          },
+          "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+          "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "selectedFamily": "production-common"
+      }
+    },
+    {
+      "probe": "southern-observer",
+      "property": "area-ratio",
+      "historical": {
+        "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+        "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+      },
+      "replay": {
+        "policy": "fixed-input-replay-v1",
+        "status": "fresh",
+        "reason": "Transitive slope assessment: Exact local bytes/receipt and method available for historical replay; upstream global revision/time remain unknown",
+        "result": {
+          "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+          "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+        },
+        "policyRevision": "cca2e154b84c67380fdafc794cb3f349a95693c83d21c0e56c868aaa07f6a6b8",
+        "baseline": {
+          "hierarchy": {
+            "id": "tryfan-second-region-proof",
+            "revision": "1"
+          },
+          "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+          "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "selectedFamily": "production-common"
+      },
+      "current": {
+        "policy": "current-applicable-terrain-v1",
+        "status": "fresh",
+        "reason": "Transitive slope assessment: Selected representation still applies; no intersecting relevant input changes",
+        "result": {
+          "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+          "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+        },
+        "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+        "baseline": {
+          "hierarchy": {
+            "id": "tryfan-second-region-proof",
+            "revision": "1"
+          },
+          "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+          "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "selectedFamily": "production-common"
+      }
+    }
+  ],
+  "currentResults": [
+    {
+      "question": "slope|EPSG:27700|266405,359387|8m|represented-heightfield",
+      "result": {
+        "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+        "revision": "4f4d6ae182d3821d1a002c855d8b886112c0aea0e13af2023b10d5294f70ef93"
+      },
+      "value": {
+        "kind": "assertion",
+        "value": {
+          "kind": "quantity",
+          "value": 32.918524028483965,
+          "unit": "degree"
+        }
+      },
+      "preferredUnder": "current-applicable-terrain-v1"
+    },
+    {
+      "question": "area-ratio|EPSG:27700|266405,359387|8m|represented-heightfield",
+      "result": {
+        "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+        "revision": "dbc1746d41c191d251628d3409d5db3bf4064c8c29e9f0ba50a332804196c1d2"
+      },
+      "value": {
+        "kind": "assertion",
+        "value": {
+          "kind": "quantity",
+          "value": 1.191264396968292,
+          "unit": "m2 represented planar surface / m2 map plane"
+        }
+      },
+      "preferredUnder": "current-applicable-terrain-v1"
+    },
+    {
+      "question": "slope|EPSG:27700|265876.05347833806,358339.7631202109|8m|represented-heightfield",
+      "result": {
+        "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+        "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+      },
+      "value": {
+        "kind": "assertion",
+        "value": {
+          "kind": "quantity",
+          "value": 8.811499729681492,
+          "unit": "degree"
+        }
+      },
+      "preferredUnder": "current-applicable-terrain-v1"
+    },
+    {
+      "question": "area-ratio|EPSG:27700|265876.05347833806,358339.7631202109|8m|represented-heightfield",
+      "result": {
+        "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+        "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+      },
+      "value": {
+        "kind": "assertion",
+        "value": {
+          "kind": "quantity",
+          "value": 1.011943302930815,
+          "unit": "m2 represented planar surface / m2 map plane"
+        }
+      },
+      "preferredUnder": "current-applicable-terrain-v1"
+    }
+  ],
+  "recomputed": [
+    {
+      "probe": "summit",
+      "property": "slope",
+      "claim": {
+        "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+        "revision": "4f4d6ae182d3821d1a002c855d8b886112c0aea0e13af2023b10d5294f70ef93"
+      }
+    },
+    {
+      "probe": "summit",
+      "property": "area-ratio",
+      "claim": {
+        "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+        "revision": "dbc1746d41c191d251628d3409d5db3bf4064c8c29e9f0ba50a332804196c1d2"
+      }
+    }
+  ],
+  "spatialNotifications": {
+    "outside": {
+      "inputId": "retained-input:welsh-regional:summit",
+      "bounds": [
+        266437.3022244023,
+        359420.23799928307,
+        266438.3022244023,
+        359421.23799928307
+      ],
+      "scopeKnown": true,
+      "description": "Synthetic change notification outside actual used neighbourhood; retained terrain not changed"
+    },
+    "halo": {
+      "inputId": "retained-input:welsh-regional:summit",
+      "bounds": [
+        266387.7627433144,
+        359370.7661387139,
+        266387.7727433144,
+        359370.77613871393
+      ],
+      "scopeKnown": true,
+      "description": "Synthetic notification inside actual read footprint, outside output point; no physical change asserted"
+    }
+  },
+  "spatialAssessments": [
+    {
+      "result": {
+        "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+        "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+      },
+      "probe": "southern-observer",
+      "property": "slope",
+      "outside": {
+        "policy": "current-applicable-terrain-v1",
+        "status": "fresh",
+        "reason": "Selected representation still applies; no intersecting relevant input changes",
+        "result": {
+          "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+          "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+        },
+        "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+        "baseline": {
+          "hierarchy": {
+            "id": "tryfan-second-region-proof",
+            "revision": "1"
+          },
+          "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+          "changesDigest": "a16814ff4fd14c50e85d474b4436b02843ce8e2afda90fa3df67364b473d1577"
+        },
+        "selectedFamily": "production-common"
+      },
+      "halo": {
+        "policy": "current-applicable-terrain-v1",
+        "status": "fresh",
+        "reason": "Selected representation still applies; no intersecting relevant input changes",
+        "result": {
+          "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+          "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+        },
+        "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+        "baseline": {
+          "hierarchy": {
+            "id": "tryfan-second-region-proof",
+            "revision": "1"
+          },
+          "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+          "changesDigest": "5735c2bac6a9e057c8aa3b94b2967652891ab9fc04ba5e940f80654fb784dc1d"
+        },
+        "selectedFamily": "production-common"
+      }
+    },
+    {
+      "result": {
+        "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+        "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+      },
+      "probe": "southern-observer",
+      "property": "area-ratio",
+      "outside": {
+        "policy": "current-applicable-terrain-v1",
+        "status": "fresh",
+        "reason": "Transitive slope assessment: Selected representation still applies; no intersecting relevant input changes",
+        "result": {
+          "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+          "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+        },
+        "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+        "baseline": {
+          "hierarchy": {
+            "id": "tryfan-second-region-proof",
+            "revision": "1"
+          },
+          "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+          "changesDigest": "a16814ff4fd14c50e85d474b4436b02843ce8e2afda90fa3df67364b473d1577"
+        },
+        "selectedFamily": "production-common"
+      },
+      "halo": {
+        "policy": "current-applicable-terrain-v1",
+        "status": "fresh",
+        "reason": "Transitive slope assessment: Selected representation still applies; no intersecting relevant input changes",
+        "result": {
+          "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+          "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+        },
+        "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+        "baseline": {
+          "hierarchy": {
+            "id": "tryfan-second-region-proof",
+            "revision": "1"
+          },
+          "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+          "changesDigest": "5735c2bac6a9e057c8aa3b94b2967652891ab9fc04ba5e940f80654fb784dc1d"
+        },
+        "selectedFamily": "production-common"
+      }
+    },
+    {
+      "result": {
+        "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+        "revision": "4f4d6ae182d3821d1a002c855d8b886112c0aea0e13af2023b10d5294f70ef93"
+      },
+      "probe": "summit",
+      "property": "slope",
+      "outside": {
+        "policy": "current-applicable-terrain-v1",
+        "status": "fresh",
+        "reason": "Selected representation still applies; no intersecting relevant input changes",
+        "result": {
+          "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+          "revision": "4f4d6ae182d3821d1a002c855d8b886112c0aea0e13af2023b10d5294f70ef93"
+        },
+        "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+        "baseline": {
+          "hierarchy": {
+            "id": "tryfan-second-region-proof",
+            "revision": "1"
+          },
+          "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+          "changesDigest": "a16814ff4fd14c50e85d474b4436b02843ce8e2afda90fa3df67364b473d1577"
+        },
+        "selectedFamily": "welsh-regional"
+      },
+      "halo": {
+        "policy": "current-applicable-terrain-v1",
+        "status": "stale",
+        "reason": "Known changed scope intersects actual input use including interpolation halo",
+        "result": {
+          "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+          "revision": "4f4d6ae182d3821d1a002c855d8b886112c0aea0e13af2023b10d5294f70ef93"
+        },
+        "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+        "baseline": {
+          "hierarchy": {
+            "id": "tryfan-second-region-proof",
+            "revision": "1"
+          },
+          "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+          "changesDigest": "5735c2bac6a9e057c8aa3b94b2967652891ab9fc04ba5e940f80654fb784dc1d"
+        },
+        "selectedFamily": "welsh-regional"
+      }
+    },
+    {
+      "result": {
+        "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+        "revision": "dbc1746d41c191d251628d3409d5db3bf4064c8c29e9f0ba50a332804196c1d2"
+      },
+      "probe": "summit",
+      "property": "area-ratio",
+      "outside": {
+        "policy": "current-applicable-terrain-v1",
+        "status": "fresh",
+        "reason": "Transitive slope assessment: Selected representation still applies; no intersecting relevant input changes",
+        "result": {
+          "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+          "revision": "dbc1746d41c191d251628d3409d5db3bf4064c8c29e9f0ba50a332804196c1d2"
+        },
+        "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+        "baseline": {
+          "hierarchy": {
+            "id": "tryfan-second-region-proof",
+            "revision": "1"
+          },
+          "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+          "changesDigest": "a16814ff4fd14c50e85d474b4436b02843ce8e2afda90fa3df67364b473d1577"
+        },
+        "selectedFamily": "welsh-regional"
+      },
+      "halo": {
+        "policy": "current-applicable-terrain-v1",
+        "status": "stale",
+        "reason": "Transitive slope assessment: Known changed scope intersects actual input use including interpolation halo",
+        "result": {
+          "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+          "revision": "dbc1746d41c191d251628d3409d5db3bf4064c8c29e9f0ba50a332804196c1d2"
+        },
+        "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+        "baseline": {
+          "hierarchy": {
+            "id": "tryfan-second-region-proof",
+            "revision": "1"
+          },
+          "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+          "changesDigest": "5735c2bac6a9e057c8aa3b94b2967652891ab9fc04ba5e940f80654fb784dc1d"
+        },
+        "selectedFamily": "welsh-regional"
+      }
+    }
+  ],
+  "evidence": {
+    "contract": "atlas-semantic-evidence/v1",
+    "resources": [
+      {
+        "ref": {
+          "kind": "source",
+          "id": "aws-hosted-delivery",
+          "revision": {
+            "status": "unknown",
+            "reason": "Mutable public hosted tiles; no complete immutable product revision established."
+          }
+        },
+        "domain": "terrain",
+        "name": "Delivered AWS mosaic as available source; original measurement contributors unknown",
+        "definition": {
+          "href": "src/atlas/terrain/metadata/awsVisualTerrainProduct.ts"
+        },
+        "rights": {
+          "licence": {
+            "status": "unknown",
+            "reason": "Source-specific data rights; attribution page is not a single universal licence."
+          },
+          "references": [
+            "https://github.com/tilezen/joerd/blob/master/docs/attribution.md"
+          ],
+          "attribution": [
+            "Terrain data credits (Tilezen/Joerd attribution link)"
+          ]
+        },
+        "inputs": []
+      },
+      {
+        "ref": {
+          "kind": "product",
+          "id": "aws-terrarium",
+          "revision": {
+            "status": "unknown",
+            "reason": "Mutable public hosted tiles; no complete immutable product revision established."
+          }
+        },
+        "domain": "terrain",
+        "name": "AWS hosted Terrarium terrain used by production Atlas",
+        "definition": {
+          "href": "docs/atlas/terrain-runtime-selection.md"
+        },
+        "rights": {
+          "licence": {
+            "status": "unknown",
+            "reason": "Source-specific data rights; attribution page is not a single universal licence."
+          },
+          "references": [
+            "https://github.com/tilezen/joerd/blob/master/docs/attribution.md"
+          ],
+          "attribution": [
+            "Terrain data credits (Tilezen/Joerd attribution link)"
+          ]
+        },
+        "inputs": [
+          {
+            "kind": "source",
+            "id": "aws-hosted-delivery",
+            "revision": {
+              "status": "unknown",
+              "reason": "Mutable public hosted tiles; no complete immutable product revision established."
+            }
+          }
+        ]
+      },
+      {
+        "ref": {
+          "kind": "source",
+          "id": "welsh-government-tryfan-dtm-selection",
+          "revision": {
+            "status": "known",
+            "value": "49c131d7de62e0df35f8e02c2f8db3161bfd37f24fea56060fcbb9e6d109b326"
+          }
+        },
+        "domain": "terrain",
+        "name": "Welsh Government Tryfan 1m DTM retained selection",
+        "definition": {
+          "href": "docs/atlas/tryfan-second-region-proof.md"
+        },
+        "rights": {
+          "licence": {
+            "status": "known",
+            "value": "Open Government Licence v3.0"
+          },
+          "references": [
+            "https://datamap.gov.wales/maps/lidar-data-download/",
+            "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          ],
+          "attribution": [
+            "Contains Welsh Government information licensed under the Open Government Licence v3.0."
+          ],
+          "limitations": "Prepared research product; retain attribution and check source-specific notices before public delivery. Catalogue licence is unspecified; the official download page explicitly licenses the linked DTM."
+        },
+        "inputs": []
+      },
+      {
+        "ref": {
+          "kind": "product",
+          "id": "tryfan-welsh-regional-v2",
+          "revision": {
+            "status": "known",
+            "value": "db8e4d87b5fa609d455d1e0f8ec3fdebc834579a7e102f69f4d0b0283efa690c"
+          }
+        },
+        "domain": "terrain",
+        "name": "Meridian Tryfan Welsh regional pyramid",
+        "definition": {
+          "href": "docs/atlas/tryfan-second-region-proof.md"
+        },
+        "rights": {
+          "licence": {
+            "status": "known",
+            "value": "Open Government Licence v3.0"
+          },
+          "references": [
+            "https://datamap.gov.wales/maps/lidar-data-download/",
+            "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          ],
+          "attribution": [
+            "Contains Welsh Government information licensed under the Open Government Licence v3.0."
+          ],
+          "limitations": "Prepared research product; retain attribution and check source-specific notices before public delivery. Catalogue licence is unspecified; the official download page explicitly licenses the linked DTM."
+        },
+        "inputs": [
+          {
+            "kind": "source",
+            "id": "welsh-government-tryfan-dtm-selection",
+            "revision": {
+              "status": "known",
+              "value": "49c131d7de62e0df35f8e02c2f8db3161bfd37f24fea56060fcbb9e6d109b326"
+            }
+          }
+        ]
+      },
+      {
+        "ref": {
+          "kind": "product",
+          "id": "retained-input:production-common:summit",
+          "revision": {
+            "status": "known",
+            "value": "6236293d8e15726a1d16934d25bdddf58d74919f7aba1dee8f84cad03bc9e33c"
+          }
+        },
+        "domain": "terrain",
+        "name": "Retained exact input subset production-common:summit",
+        "definition": {
+          "href": "docs/research/tryfan-qualified-query-inputs.json",
+          "selector": "production-common:summit"
+        },
+        "rights": {
+          "licence": {
+            "status": "unknown",
+            "reason": "Source-specific data rights; attribution page is not a single universal licence."
+          },
+          "references": [
+            "https://github.com/tilezen/joerd/blob/master/docs/attribution.md"
+          ],
+          "attribution": [
+            "Terrain data credits (Tilezen/Joerd attribution link)"
+          ]
+        },
+        "inputs": [
+          {
+            "kind": "product",
+            "id": "aws-terrarium",
+            "revision": {
+              "status": "unknown",
+              "reason": "Mutable public hosted tiles; no complete immutable product revision established."
+            }
+          }
+        ]
+      },
+      {
+        "ref": {
+          "kind": "product",
+          "id": "retained-input:welsh-regional:summit",
+          "revision": {
+            "status": "known",
+            "value": "8fb888f767c92da121dfe82f94a25262060d284fc1b19a208e848bc5900f01a4"
+          }
+        },
+        "domain": "terrain",
+        "name": "Retained exact input subset welsh-regional:summit",
+        "definition": {
+          "href": "docs/research/tryfan-qualified-query-inputs.json",
+          "selector": "welsh-regional:summit"
+        },
+        "rights": {
+          "licence": {
+            "status": "known",
+            "value": "Open Government Licence v3.0"
+          },
+          "references": [
+            "https://datamap.gov.wales/maps/lidar-data-download/",
+            "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          ],
+          "attribution": [
+            "Contains Welsh Government information licensed under the Open Government Licence v3.0."
+          ],
+          "limitations": "Prepared research product; retain attribution and check source-specific notices before public delivery. Catalogue licence is unspecified; the official download page explicitly licenses the linked DTM."
+        },
+        "inputs": [
+          {
+            "kind": "product",
+            "id": "tryfan-welsh-regional-v2",
+            "revision": {
+              "status": "known",
+              "value": "db8e4d87b5fa609d455d1e0f8ec3fdebc834579a7e102f69f4d0b0283efa690c"
+            }
+          }
+        ]
+      },
+      {
+        "ref": {
+          "kind": "product",
+          "id": "retained-input:production-common:southern-observer",
+          "revision": {
+            "status": "known",
+            "value": "cd734229df3370bb8216be68680b37b9dfdb3ceeb7d81425dd22f7b22440732c"
+          }
+        },
+        "domain": "terrain",
+        "name": "Retained exact input subset production-common:southern-observer",
+        "definition": {
+          "href": "docs/research/tryfan-qualified-query-inputs.json",
+          "selector": "production-common:southern-observer"
+        },
+        "rights": {
+          "licence": {
+            "status": "unknown",
+            "reason": "Source-specific data rights; attribution page is not a single universal licence."
+          },
+          "references": [
+            "https://github.com/tilezen/joerd/blob/master/docs/attribution.md"
+          ],
+          "attribution": [
+            "Terrain data credits (Tilezen/Joerd attribution link)"
+          ]
+        },
+        "inputs": [
+          {
+            "kind": "product",
+            "id": "aws-terrarium",
+            "revision": {
+              "status": "unknown",
+              "reason": "Mutable public hosted tiles; no complete immutable product revision established."
+            }
+          }
+        ]
+      },
+      {
+        "ref": {
+          "kind": "product",
+          "id": "derived-product:claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+          "revision": {
+            "status": "known",
+            "value": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839"
+          }
+        },
+        "domain": "semantics",
+        "name": "slope result artifact/evidence collection",
+        "definition": {
+          "href": "docs/research/tryfan-qualified-query-results.json",
+          "selector": "run:7c5cea0537242da67f688b365274963bdeb7b6395e00f13b0d0ad22e226b71af"
+        },
+        "rights": {
+          "licence": {
+            "status": "unknown",
+            "reason": "Source-specific data rights; attribution page is not a single universal licence."
+          },
+          "references": [
+            "https://github.com/tilezen/joerd/blob/master/docs/attribution.md"
+          ],
+          "attribution": [
+            "Terrain data credits (Tilezen/Joerd attribution link)"
+          ]
+        },
+        "inputs": [
+          {
+            "kind": "product",
+            "id": "retained-input:production-common:summit",
+            "revision": {
+              "status": "known",
+              "value": "6236293d8e15726a1d16934d25bdddf58d74919f7aba1dee8f84cad03bc9e33c"
+            }
+          }
+        ]
+      },
+      {
+        "ref": {
+          "kind": "product",
+          "id": "derived-product:claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+          "revision": {
+            "status": "known",
+            "value": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527"
+          }
+        },
+        "domain": "semantics",
+        "name": "area-ratio result artifact/evidence collection",
+        "definition": {
+          "href": "docs/research/tryfan-qualified-query-results.json",
+          "selector": "run:1f2704717179feb186be9dcbb4f69ae6c9d734168080c83e84840af518822d4c"
+        },
+        "rights": {
+          "licence": {
+            "status": "unknown",
+            "reason": "Source-specific data rights; attribution page is not a single universal licence."
+          },
+          "references": [
+            "https://github.com/tilezen/joerd/blob/master/docs/attribution.md"
+          ],
+          "attribution": [
+            "Terrain data credits (Tilezen/Joerd attribution link)"
+          ]
+        },
+        "inputs": [
+          {
+            "kind": "product",
+            "id": "retained-input:production-common:summit",
+            "revision": {
+              "status": "known",
+              "value": "6236293d8e15726a1d16934d25bdddf58d74919f7aba1dee8f84cad03bc9e33c"
+            }
+          }
+        ]
+      },
+      {
+        "ref": {
+          "kind": "product",
+          "id": "derived-product:claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+          "revision": {
+            "status": "known",
+            "value": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+          }
+        },
+        "domain": "semantics",
+        "name": "slope result artifact/evidence collection",
+        "definition": {
+          "href": "docs/research/tryfan-qualified-query-results.json",
+          "selector": "run:ebbdd8f70fe39e773427771f5203e977f8180504f0edbee69b862f4831829797"
+        },
+        "rights": {
+          "licence": {
+            "status": "unknown",
+            "reason": "Source-specific data rights; attribution page is not a single universal licence."
+          },
+          "references": [
+            "https://github.com/tilezen/joerd/blob/master/docs/attribution.md"
+          ],
+          "attribution": [
+            "Terrain data credits (Tilezen/Joerd attribution link)"
+          ]
+        },
+        "inputs": [
+          {
+            "kind": "product",
+            "id": "retained-input:production-common:southern-observer",
+            "revision": {
+              "status": "known",
+              "value": "cd734229df3370bb8216be68680b37b9dfdb3ceeb7d81425dd22f7b22440732c"
+            }
+          }
+        ]
+      },
+      {
+        "ref": {
+          "kind": "product",
+          "id": "derived-product:claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+          "revision": {
+            "status": "known",
+            "value": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+          }
+        },
+        "domain": "semantics",
+        "name": "area-ratio result artifact/evidence collection",
+        "definition": {
+          "href": "docs/research/tryfan-qualified-query-results.json",
+          "selector": "run:b120b2151ecfff72f86166c75182ca3d01d0f2b25ef4669f82a5306e80cbd66d"
+        },
+        "rights": {
+          "licence": {
+            "status": "unknown",
+            "reason": "Source-specific data rights; attribution page is not a single universal licence."
+          },
+          "references": [
+            "https://github.com/tilezen/joerd/blob/master/docs/attribution.md"
+          ],
+          "attribution": [
+            "Terrain data credits (Tilezen/Joerd attribution link)"
+          ]
+        },
+        "inputs": [
+          {
+            "kind": "product",
+            "id": "retained-input:production-common:southern-observer",
+            "revision": {
+              "status": "known",
+              "value": "cd734229df3370bb8216be68680b37b9dfdb3ceeb7d81425dd22f7b22440732c"
+            }
+          }
+        ]
+      },
+      {
+        "ref": {
+          "kind": "product",
+          "id": "derived-product:claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+          "revision": {
+            "status": "known",
+            "value": "4f4d6ae182d3821d1a002c855d8b886112c0aea0e13af2023b10d5294f70ef93"
+          }
+        },
+        "domain": "semantics",
+        "name": "slope result artifact/evidence collection",
+        "definition": {
+          "href": "docs/research/tryfan-qualified-query-results.json",
+          "selector": "run:74d287efd48a4d4139a46e42ce7932391fec03729f66547b8222a786f9a92ac8"
+        },
+        "rights": {
+          "licence": {
+            "status": "known",
+            "value": "Open Government Licence v3.0"
+          },
+          "references": [
+            "https://datamap.gov.wales/maps/lidar-data-download/",
+            "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          ],
+          "attribution": [
+            "Contains Welsh Government information licensed under the Open Government Licence v3.0."
+          ],
+          "limitations": "Prepared research product; retain attribution and check source-specific notices before public delivery. Catalogue licence is unspecified; the official download page explicitly licenses the linked DTM."
+        },
+        "inputs": [
+          {
+            "kind": "product",
+            "id": "retained-input:welsh-regional:summit",
+            "revision": {
+              "status": "known",
+              "value": "8fb888f767c92da121dfe82f94a25262060d284fc1b19a208e848bc5900f01a4"
+            }
+          }
+        ]
+      },
+      {
+        "ref": {
+          "kind": "product",
+          "id": "derived-product:claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+          "revision": {
+            "status": "known",
+            "value": "dbc1746d41c191d251628d3409d5db3bf4064c8c29e9f0ba50a332804196c1d2"
+          }
+        },
+        "domain": "semantics",
+        "name": "area-ratio result artifact/evidence collection",
+        "definition": {
+          "href": "docs/research/tryfan-qualified-query-results.json",
+          "selector": "run:87ceb299c5044a0538e3c0670fcf8d0f7c9aa30f220987a72745494fd974129e"
+        },
+        "rights": {
+          "licence": {
+            "status": "known",
+            "value": "Open Government Licence v3.0"
+          },
+          "references": [
+            "https://datamap.gov.wales/maps/lidar-data-download/",
+            "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          ],
+          "attribution": [
+            "Contains Welsh Government information licensed under the Open Government Licence v3.0."
+          ],
+          "limitations": "Prepared research product; retain attribution and check source-specific notices before public delivery. Catalogue licence is unspecified; the official download page explicitly licenses the linked DTM."
+        },
+        "inputs": [
+          {
+            "kind": "product",
+            "id": "retained-input:welsh-regional:summit",
+            "revision": {
+              "status": "known",
+              "value": "8fb888f767c92da121dfe82f94a25262060d284fc1b19a208e848bc5900f01a4"
+            }
+          }
+        ]
+      }
+    ],
+    "definitions": [
+      {
+        "id": "proof-property:represented-heightfield-slope",
+        "revision": "1",
+        "kind": "property",
+        "vocabulary": {
+          "id": "Research proof physical quantities",
+          "version": {
+            "status": "known",
+            "value": "1"
+          }
+        },
+        "label": "Represented heightfield slope",
+        "meaning": "Qualified ordinary geometric quantity; source surface/epoch limitations remain in the claim.",
+        "reference": {
+          "href": "docs/research/tryfan-qualified-query-proof.md"
+        },
+        "valueKinds": [
+          "quantity"
+        ]
+      },
+      {
+        "id": "proof-property:represented-heightfield-area-ratio",
+        "revision": "1",
+        "kind": "property",
+        "vocabulary": {
+          "id": "Research proof physical quantities",
+          "version": {
+            "status": "known",
+            "value": "1"
+          }
+        },
+        "label": "Represented heightfield area-ratio",
+        "meaning": "Qualified ordinary geometric quantity; source surface/epoch limitations remain in the claim.",
+        "reference": {
+          "href": "docs/research/tryfan-qualified-query-proof.md"
+        },
+        "valueKinds": [
+          "quantity"
+        ]
+      },
+      {
+        "id": "proof-property:current-mineral-exposure-fraction",
+        "revision": "1",
+        "kind": "property",
+        "vocabulary": {
+          "id": "Research proof physical quantities",
+          "version": {
+            "status": "known",
+            "value": "1"
+          }
+        },
+        "label": "Current exposed mineral fraction",
+        "meaning": "Unsupported by the retained terrain quantities or coarse cover/habitat summary; not inferred in this proof.",
+        "reference": {
+          "href": "docs/atlas/source-native-semantic-comparison.md"
+        },
+        "valueKinds": [
+          "fraction"
+        ]
+      }
+    ],
+    "mappings": [],
+    "collections": [
+      {
+        "id": "collection:claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+        "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839",
+        "product": {
+          "kind": "product",
+          "id": "derived-product:claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+          "revision": {
+            "status": "known",
+            "value": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839"
+          }
+        },
+        "context": {
+          "support": {
+            "geometry": {
+              "kind": "native-point",
+              "crs": {
+                "name": "OSGB36 / British National Grid",
+                "identifier": "EPSG:27700"
+              },
+              "coordinates": [
+                266405,
+                359387
+              ]
+            },
+            "meaning": "Local derivative at fixed query point, sampled 3x3 on the BNG analysis grid; not a homogeneous patch.",
+            "grain": {
+              "status": "known",
+              "value": "8m grid spacing; 16m centre-to-centre stencil, plus actual interpolation footprint; not effective source resolution."
+            }
+          },
+          "time": [
+            {
+              "role": "observation",
+              "extent": {
+                "kind": "unknown",
+                "reason": "Exact source-cell observation epoch is unknown; Welsh catalogue date is not a mapped per-cell epoch and AWS lineage is unpinned."
+              }
+            }
+          ],
+          "evidence": {
+            "modes": [
+              "derived"
+            ],
+            "description": "Horn slope from retained selected Terrarium cells; upstream semantic surface may be unknown.",
+            "inputs": [
+              {
+                "kind": "resource",
+                "ref": {
+                  "kind": "product",
+                  "id": "retained-input:production-common:summit",
+                  "revision": {
+                    "status": "known",
+                    "value": "6236293d8e15726a1d16934d25bdddf58d74919f7aba1dee8f84cad03bc9e33c"
+                  }
+                },
+                "role": "actual selected z14 pixel neighbourhood"
+              }
+            ],
+            "completeness": "complete",
+            "limitations": "Complete immediate logical inputs/receipt; upstream measurement lineage and uncertainty remain incomplete. Geometric quantity of this represented heightfield, not verified bare-earth slope, accuracy, material, exposure, traversability or true surface area. BNG grid metres approximate horizontal distance. Unknown vertical/epoch/upstream information retained; no source-family fusion.",
+            "processing": [
+              {
+                "method": "Horn-3x3-grid-slope",
+                "revision": {
+                  "status": "known",
+                  "value": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9"
+                },
+                "parameters": {
+                  "analysisSpacingM": 8,
+                  "horizontalDistance": "BNG grid metres",
+                  "sampling": "pixel-centre bilinear Terrarium"
+                },
+                "record": {
+                  "href": "docs/research/tryfan-qualified-query-results.json",
+                  "selector": "run:7c5cea0537242da67f688b365274963bdeb7b6395e00f13b0d0ad22e226b71af"
+                }
+              }
+            ]
+          }
+        },
+        "representation": "records",
+        "claims": [
+          {
+            "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+            "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839",
+            "native": {
+              "property": {
+                "id": "proof-property:represented-heightfield-slope",
+                "revision": "1"
+              },
+              "fields": {
+                "quantity": "slope",
+                "analysisSpacingM": 8
+              }
+            },
+            "result": {
+              "kind": "assertion",
+              "value": {
+                "kind": "quantity",
+                "value": 11.837956999552308,
+                "unit": "degree"
+              }
+            },
+            "record": {
+              "href": "docs/research/tryfan-qualified-query-results.json",
+              "selector": "run:7c5cea0537242da67f688b365274963bdeb7b6395e00f13b0d0ad22e226b71af"
+            }
+          }
+        ]
+      },
+      {
+        "id": "collection:claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+        "revision": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527",
+        "product": {
+          "kind": "product",
+          "id": "derived-product:claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+          "revision": {
+            "status": "known",
+            "value": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527"
+          }
+        },
+        "context": {
+          "support": {
+            "geometry": {
+              "kind": "native-point",
+              "crs": {
+                "name": "OSGB36 / British National Grid",
+                "identifier": "EPSG:27700"
+              },
+              "coordinates": [
+                266405,
+                359387
+              ]
+            },
+            "meaning": "Local derivative at fixed query point, sampled 3x3 on the BNG analysis grid; not a homogeneous patch.",
+            "grain": {
+              "status": "known",
+              "value": "8m grid spacing; 16m centre-to-centre stencil, plus actual interpolation footprint; not effective source resolution."
+            }
+          },
+          "time": [
+            {
+              "role": "observation",
+              "extent": {
+                "kind": "unknown",
+                "reason": "Exact source-cell observation epoch is unknown; Welsh catalogue date is not a mapped per-cell epoch and AWS lineage is unpinned."
+              }
+            }
+          ],
+          "evidence": {
+            "modes": [
+              "derived"
+            ],
+            "description": "Area ratio of locally planar represented surface to map plane, derived from the exact slope claim.",
+            "inputs": [
+              {
+                "kind": "claim",
+                "ref": {
+                  "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+                  "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839"
+                },
+                "role": "local slope angle"
+              }
+            ],
+            "completeness": "complete",
+            "limitations": "Complete immediate logical inputs/receipt; upstream measurement lineage and uncertainty remain incomplete. Geometric quantity of this represented heightfield, not verified bare-earth slope, accuracy, material, exposure, traversability or true surface area. BNG grid metres approximate horizontal distance. Unknown vertical/epoch/upstream information retained; no source-family fusion.",
+            "processing": [
+              {
+                "method": "planar-area-ratio-from-slope",
+                "revision": {
+                  "status": "known",
+                  "value": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9"
+                },
+                "parameters": {
+                  "analysisSpacingM": 8,
+                  "horizontalDistance": "BNG grid metres",
+                  "sampling": "pixel-centre bilinear Terrarium"
+                },
+                "record": {
+                  "href": "docs/research/tryfan-qualified-query-results.json",
+                  "selector": "run:1f2704717179feb186be9dcbb4f69ae6c9d734168080c83e84840af518822d4c"
+                }
+              }
+            ]
+          }
+        },
+        "representation": "records",
+        "claims": [
+          {
+            "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+            "revision": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527",
+            "native": {
+              "property": {
+                "id": "proof-property:represented-heightfield-area-ratio",
+                "revision": "1"
+              },
+              "fields": {
+                "quantity": "area-ratio",
+                "analysisSpacingM": 8
+              }
+            },
+            "result": {
+              "kind": "assertion",
+              "value": {
+                "kind": "quantity",
+                "value": 1.0217304696061646,
+                "unit": "m2 represented planar surface / m2 map plane"
+              }
+            },
+            "record": {
+              "href": "docs/research/tryfan-qualified-query-results.json",
+              "selector": "run:1f2704717179feb186be9dcbb4f69ae6c9d734168080c83e84840af518822d4c"
+            }
+          }
+        ]
+      },
+      {
+        "id": "collection:claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+        "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d",
+        "product": {
+          "kind": "product",
+          "id": "derived-product:claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+          "revision": {
+            "status": "known",
+            "value": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+          }
+        },
+        "context": {
+          "support": {
+            "geometry": {
+              "kind": "native-point",
+              "crs": {
+                "name": "OSGB36 / British National Grid",
+                "identifier": "EPSG:27700"
+              },
+              "coordinates": [
+                265876.05347833806,
+                358339.7631202109
+              ]
+            },
+            "meaning": "Local derivative at fixed query point, sampled 3x3 on the BNG analysis grid; not a homogeneous patch.",
+            "grain": {
+              "status": "known",
+              "value": "8m grid spacing; 16m centre-to-centre stencil, plus actual interpolation footprint; not effective source resolution."
+            }
+          },
+          "time": [
+            {
+              "role": "observation",
+              "extent": {
+                "kind": "unknown",
+                "reason": "Exact source-cell observation epoch is unknown; Welsh catalogue date is not a mapped per-cell epoch and AWS lineage is unpinned."
+              }
+            }
+          ],
+          "evidence": {
+            "modes": [
+              "derived"
+            ],
+            "description": "Horn slope from retained selected Terrarium cells; upstream semantic surface may be unknown.",
+            "inputs": [
+              {
+                "kind": "resource",
+                "ref": {
+                  "kind": "product",
+                  "id": "retained-input:production-common:southern-observer",
+                  "revision": {
+                    "status": "known",
+                    "value": "cd734229df3370bb8216be68680b37b9dfdb3ceeb7d81425dd22f7b22440732c"
+                  }
+                },
+                "role": "actual selected z14 pixel neighbourhood"
+              }
+            ],
+            "completeness": "complete",
+            "limitations": "Complete immediate logical inputs/receipt; upstream measurement lineage and uncertainty remain incomplete. Geometric quantity of this represented heightfield, not verified bare-earth slope, accuracy, material, exposure, traversability or true surface area. BNG grid metres approximate horizontal distance. Unknown vertical/epoch/upstream information retained; no source-family fusion.",
+            "processing": [
+              {
+                "method": "Horn-3x3-grid-slope",
+                "revision": {
+                  "status": "known",
+                  "value": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9"
+                },
+                "parameters": {
+                  "analysisSpacingM": 8,
+                  "horizontalDistance": "BNG grid metres",
+                  "sampling": "pixel-centre bilinear Terrarium"
+                },
+                "record": {
+                  "href": "docs/research/tryfan-qualified-query-results.json",
+                  "selector": "run:ebbdd8f70fe39e773427771f5203e977f8180504f0edbee69b862f4831829797"
+                }
+              }
+            ]
+          }
+        },
+        "representation": "records",
+        "claims": [
+          {
+            "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+            "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d",
+            "native": {
+              "property": {
+                "id": "proof-property:represented-heightfield-slope",
+                "revision": "1"
+              },
+              "fields": {
+                "quantity": "slope",
+                "analysisSpacingM": 8
+              }
+            },
+            "result": {
+              "kind": "assertion",
+              "value": {
+                "kind": "quantity",
+                "value": 8.811499729681492,
+                "unit": "degree"
+              }
+            },
+            "record": {
+              "href": "docs/research/tryfan-qualified-query-results.json",
+              "selector": "run:ebbdd8f70fe39e773427771f5203e977f8180504f0edbee69b862f4831829797"
+            }
+          }
+        ]
+      },
+      {
+        "id": "collection:claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+        "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7",
+        "product": {
+          "kind": "product",
+          "id": "derived-product:claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+          "revision": {
+            "status": "known",
+            "value": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+          }
+        },
+        "context": {
+          "support": {
+            "geometry": {
+              "kind": "native-point",
+              "crs": {
+                "name": "OSGB36 / British National Grid",
+                "identifier": "EPSG:27700"
+              },
+              "coordinates": [
+                265876.05347833806,
+                358339.7631202109
+              ]
+            },
+            "meaning": "Local derivative at fixed query point, sampled 3x3 on the BNG analysis grid; not a homogeneous patch.",
+            "grain": {
+              "status": "known",
+              "value": "8m grid spacing; 16m centre-to-centre stencil, plus actual interpolation footprint; not effective source resolution."
+            }
+          },
+          "time": [
+            {
+              "role": "observation",
+              "extent": {
+                "kind": "unknown",
+                "reason": "Exact source-cell observation epoch is unknown; Welsh catalogue date is not a mapped per-cell epoch and AWS lineage is unpinned."
+              }
+            }
+          ],
+          "evidence": {
+            "modes": [
+              "derived"
+            ],
+            "description": "Area ratio of locally planar represented surface to map plane, derived from the exact slope claim.",
+            "inputs": [
+              {
+                "kind": "claim",
+                "ref": {
+                  "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+                  "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+                },
+                "role": "local slope angle"
+              }
+            ],
+            "completeness": "complete",
+            "limitations": "Complete immediate logical inputs/receipt; upstream measurement lineage and uncertainty remain incomplete. Geometric quantity of this represented heightfield, not verified bare-earth slope, accuracy, material, exposure, traversability or true surface area. BNG grid metres approximate horizontal distance. Unknown vertical/epoch/upstream information retained; no source-family fusion.",
+            "processing": [
+              {
+                "method": "planar-area-ratio-from-slope",
+                "revision": {
+                  "status": "known",
+                  "value": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9"
+                },
+                "parameters": {
+                  "analysisSpacingM": 8,
+                  "horizontalDistance": "BNG grid metres",
+                  "sampling": "pixel-centre bilinear Terrarium"
+                },
+                "record": {
+                  "href": "docs/research/tryfan-qualified-query-results.json",
+                  "selector": "run:b120b2151ecfff72f86166c75182ca3d01d0f2b25ef4669f82a5306e80cbd66d"
+                }
+              }
+            ]
+          }
+        },
+        "representation": "records",
+        "claims": [
+          {
+            "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+            "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7",
+            "native": {
+              "property": {
+                "id": "proof-property:represented-heightfield-area-ratio",
+                "revision": "1"
+              },
+              "fields": {
+                "quantity": "area-ratio",
+                "analysisSpacingM": 8
+              }
+            },
+            "result": {
+              "kind": "assertion",
+              "value": {
+                "kind": "quantity",
+                "value": 1.011943302930815,
+                "unit": "m2 represented planar surface / m2 map plane"
+              }
+            },
+            "record": {
+              "href": "docs/research/tryfan-qualified-query-results.json",
+              "selector": "run:b120b2151ecfff72f86166c75182ca3d01d0f2b25ef4669f82a5306e80cbd66d"
+            }
+          }
+        ]
+      },
+      {
+        "id": "collection:claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+        "revision": "4f4d6ae182d3821d1a002c855d8b886112c0aea0e13af2023b10d5294f70ef93",
+        "product": {
+          "kind": "product",
+          "id": "derived-product:claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+          "revision": {
+            "status": "known",
+            "value": "4f4d6ae182d3821d1a002c855d8b886112c0aea0e13af2023b10d5294f70ef93"
+          }
+        },
+        "context": {
+          "support": {
+            "geometry": {
+              "kind": "native-point",
+              "crs": {
+                "name": "OSGB36 / British National Grid",
+                "identifier": "EPSG:27700"
+              },
+              "coordinates": [
+                266405,
+                359387
+              ]
+            },
+            "meaning": "Local derivative at fixed query point, sampled 3x3 on the BNG analysis grid; not a homogeneous patch.",
+            "grain": {
+              "status": "known",
+              "value": "8m grid spacing; 16m centre-to-centre stencil, plus actual interpolation footprint; not effective source resolution."
+            }
+          },
+          "time": [
+            {
+              "role": "observation",
+              "extent": {
+                "kind": "unknown",
+                "reason": "Exact source-cell observation epoch is unknown; Welsh catalogue date is not a mapped per-cell epoch and AWS lineage is unpinned."
+              }
+            }
+          ],
+          "evidence": {
+            "modes": [
+              "derived"
+            ],
+            "description": "Horn slope from retained selected Terrarium cells; upstream semantic surface may be unknown.",
+            "inputs": [
+              {
+                "kind": "resource",
+                "ref": {
+                  "kind": "product",
+                  "id": "retained-input:welsh-regional:summit",
+                  "revision": {
+                    "status": "known",
+                    "value": "8fb888f767c92da121dfe82f94a25262060d284fc1b19a208e848bc5900f01a4"
+                  }
+                },
+                "role": "actual selected z14 pixel neighbourhood"
+              }
+            ],
+            "completeness": "complete",
+            "limitations": "Complete immediate logical inputs/receipt; upstream measurement lineage and uncertainty remain incomplete. Geometric quantity of this represented heightfield, not verified bare-earth slope, accuracy, material, exposure, traversability or true surface area. BNG grid metres approximate horizontal distance. Unknown vertical/epoch/upstream information retained; no source-family fusion.",
+            "processing": [
+              {
+                "method": "Horn-3x3-grid-slope",
+                "revision": {
+                  "status": "known",
+                  "value": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9"
+                },
+                "parameters": {
+                  "analysisSpacingM": 8,
+                  "horizontalDistance": "BNG grid metres",
+                  "sampling": "pixel-centre bilinear Terrarium"
+                },
+                "record": {
+                  "href": "docs/research/tryfan-qualified-query-results.json",
+                  "selector": "run:74d287efd48a4d4139a46e42ce7932391fec03729f66547b8222a786f9a92ac8"
+                }
+              }
+            ]
+          }
+        },
+        "representation": "records",
+        "claims": [
+          {
+            "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+            "revision": "4f4d6ae182d3821d1a002c855d8b886112c0aea0e13af2023b10d5294f70ef93",
+            "native": {
+              "property": {
+                "id": "proof-property:represented-heightfield-slope",
+                "revision": "1"
+              },
+              "fields": {
+                "quantity": "slope",
+                "analysisSpacingM": 8
+              }
+            },
+            "result": {
+              "kind": "assertion",
+              "value": {
+                "kind": "quantity",
+                "value": 32.918524028483965,
+                "unit": "degree"
+              }
+            },
+            "record": {
+              "href": "docs/research/tryfan-qualified-query-results.json",
+              "selector": "run:74d287efd48a4d4139a46e42ce7932391fec03729f66547b8222a786f9a92ac8"
+            }
+          }
+        ]
+      },
+      {
+        "id": "collection:claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+        "revision": "dbc1746d41c191d251628d3409d5db3bf4064c8c29e9f0ba50a332804196c1d2",
+        "product": {
+          "kind": "product",
+          "id": "derived-product:claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+          "revision": {
+            "status": "known",
+            "value": "dbc1746d41c191d251628d3409d5db3bf4064c8c29e9f0ba50a332804196c1d2"
+          }
+        },
+        "context": {
+          "support": {
+            "geometry": {
+              "kind": "native-point",
+              "crs": {
+                "name": "OSGB36 / British National Grid",
+                "identifier": "EPSG:27700"
+              },
+              "coordinates": [
+                266405,
+                359387
+              ]
+            },
+            "meaning": "Local derivative at fixed query point, sampled 3x3 on the BNG analysis grid; not a homogeneous patch.",
+            "grain": {
+              "status": "known",
+              "value": "8m grid spacing; 16m centre-to-centre stencil, plus actual interpolation footprint; not effective source resolution."
+            }
+          },
+          "time": [
+            {
+              "role": "observation",
+              "extent": {
+                "kind": "unknown",
+                "reason": "Exact source-cell observation epoch is unknown; Welsh catalogue date is not a mapped per-cell epoch and AWS lineage is unpinned."
+              }
+            }
+          ],
+          "evidence": {
+            "modes": [
+              "derived"
+            ],
+            "description": "Area ratio of locally planar represented surface to map plane, derived from the exact slope claim.",
+            "inputs": [
+              {
+                "kind": "claim",
+                "ref": {
+                  "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+                  "revision": "4f4d6ae182d3821d1a002c855d8b886112c0aea0e13af2023b10d5294f70ef93"
+                },
+                "role": "local slope angle"
+              }
+            ],
+            "completeness": "complete",
+            "limitations": "Complete immediate logical inputs/receipt; upstream measurement lineage and uncertainty remain incomplete. Geometric quantity of this represented heightfield, not verified bare-earth slope, accuracy, material, exposure, traversability or true surface area. BNG grid metres approximate horizontal distance. Unknown vertical/epoch/upstream information retained; no source-family fusion.",
+            "processing": [
+              {
+                "method": "planar-area-ratio-from-slope",
+                "revision": {
+                  "status": "known",
+                  "value": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9"
+                },
+                "parameters": {
+                  "analysisSpacingM": 8,
+                  "horizontalDistance": "BNG grid metres",
+                  "sampling": "pixel-centre bilinear Terrarium"
+                },
+                "record": {
+                  "href": "docs/research/tryfan-qualified-query-results.json",
+                  "selector": "run:87ceb299c5044a0538e3c0670fcf8d0f7c9aa30f220987a72745494fd974129e"
+                }
+              }
+            ]
+          }
+        },
+        "representation": "records",
+        "claims": [
+          {
+            "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+            "revision": "dbc1746d41c191d251628d3409d5db3bf4064c8c29e9f0ba50a332804196c1d2",
+            "native": {
+              "property": {
+                "id": "proof-property:represented-heightfield-area-ratio",
+                "revision": "1"
+              },
+              "fields": {
+                "quantity": "area-ratio",
+                "analysisSpacingM": 8
+              }
+            },
+            "result": {
+              "kind": "assertion",
+              "value": {
+                "kind": "quantity",
+                "value": 1.191264396968292,
+                "unit": "m2 represented planar surface / m2 map plane"
+              }
+            },
+            "record": {
+              "href": "docs/research/tryfan-qualified-query-results.json",
+              "selector": "run:87ceb299c5044a0538e3c0670fcf8d0f7c9aa30f220987a72745494fd974129e"
+            }
+          }
+        ]
+      },
+      {
+        "id": "collection:unsupported-exposure",
+        "revision": "1",
+        "product": {
+          "kind": "product",
+          "id": "aws-terrarium",
+          "revision": {
+            "status": "unknown",
+            "reason": "Mutable public hosted tiles; no complete immutable product revision established."
+          }
+        },
+        "context": {
+          "support": {
+            "geometry": {
+              "kind": "native-point",
+              "crs": {
+                "name": "OSGB36 / British National Grid",
+                "identifier": "EPSG:27700"
+              },
+              "coordinates": [
+                266405,
+                359387
+              ]
+            },
+            "meaning": "Unanswered physical question at query location, not a fabricated exposure observation.",
+            "grain": {
+              "status": "unknown",
+              "reason": "No validated fine/current fractional exposure claim"
+            }
+          },
+          "time": [
+            {
+              "role": "asserted-validity",
+              "extent": {
+                "kind": "unknown",
+                "reason": "No dated validated current exposure inference"
+              }
+            }
+          ],
+          "evidence": {
+            "modes": [
+              "interpreted-mapping"
+            ],
+            "description": "Coverage-gap assessment from retained comparison; no exposure classification performed.",
+            "inputs": [],
+            "completeness": "partial",
+            "limitations": "Terrain is shape, broad classification is not fine/current exposure.",
+            "processing": []
+          }
+        },
+        "representation": "records",
+        "claims": [
+          {
+            "id": "claim:unsupported-exposure",
+            "revision": "1",
+            "native": {
+              "property": {
+                "id": "proof-property:current-mineral-exposure-fraction",
+                "revision": "1"
+              },
+              "fields": {
+                "requested": "current mineral exposure fraction"
+              }
+            },
+            "result": {
+              "kind": "gap",
+              "reason": "unsupported",
+              "explanation": "No supported fine/current mineral-exposure fraction. Missing classification does not mean mineral absent."
+            },
+            "record": {
+              "href": "docs/research/tryfan-qualified-query-proof.md"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "unknown": {
+    "exposure": {
+      "id": "claim:unsupported-exposure",
+      "revision": "1",
+      "native": {
+        "property": {
+          "id": "proof-property:current-mineral-exposure-fraction",
+          "revision": "1"
+        },
+        "fields": {
+          "requested": "current mineral exposure fraction"
+        }
+      },
+      "result": {
+        "kind": "gap",
+        "reason": "unsupported",
+        "explanation": "No supported fine/current mineral-exposure fraction. Missing classification does not mean mineral absent."
+      },
+      "record": {
+        "href": "docs/research/tryfan-qualified-query-proof.md"
+      }
+    },
+    "terrainWithSpatialContributorRequirement": {
+      "status": "unavailable",
+      "hierarchy": {
+        "id": "tryfan-second-region-proof",
+        "revision": "1"
+      },
+      "reason": "common-unavailable",
+      "trace": [
+        {
+          "family": "welsh-regional",
+          "level": "z14",
+          "outcome": "outside-valid-support"
+        },
+        {
+          "family": "production-common",
+          "level": "z14",
+          "outcome": "spatial-contributors-unavailable"
+        }
+      ]
+    }
+  },
+  "retainedNativeContext": {
+    "source": {
+      "href": "docs/atlas/semantic-comparison-results.json",
+      "sha256": "67ce5180e0f66c8ad6ca95fab55a97f9c743cbeb03950b65be80fa47cf9ddb53"
+    },
+    "patch": "summit",
+    "bounds": [
+      266205,
+      359187,
+      266605,
+      359587
+    ],
+    "worldcoverNativeCellCounts": {
+      "10": {
+        "cells": 29,
+        "centreAreaM2": 1500.669,
+        "label": "Tree cover"
+      },
+      "30": {
+        "cells": 3039,
+        "centreAreaM2": 157262.975,
+        "label": "Grassland"
+      },
+      "60": {
+        "cells": 28,
+        "centreAreaM2": 1448.963,
+        "label": "Bare / sparse vegetation"
+      }
+    },
+    "qualification": "Retained 2021 classification counts over original400m patch, not source-derived exposure fractions or labels at the derivative point."
+  },
+  "validation": {
+    "dependencyReceiptIssues": [],
+    "semanticContractIssues": [],
+    "historicalReplay": true,
+    "identityContinuity": [
+      {
+        "question": "slope|EPSG:27700|266405,359387|8m|represented-heightfield",
+        "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+        "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839",
+        "artifact": "4454d641a71b9143044610a203dfb2ddf1cb4e9ca08436729755d3aa1a5c5cfa"
+      },
+      {
+        "question": "slope|EPSG:27700|266405,359387|8m|represented-heightfield",
+        "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+        "revision": "4f4d6ae182d3821d1a002c855d8b886112c0aea0e13af2023b10d5294f70ef93",
+        "artifact": "4d14ac57b79dec65ec09a9175a57a4d84c7eb982c071e749fd2720437b826894"
+      }
+    ]
+  }
+}

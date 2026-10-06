@@ -1,0 +1,49 @@
+{
+  "id": "tryfan-qualified-query-proof-v1",
+  "frozenAt": "2026-10-06T16:23:43.442342+00:00",
+  "startingCheckpoint": "6e17e7923f2130b2cfce3671e026fe56b6397f5f",
+  "window": {
+    "crs": "EPSG:27700",
+    "bounds": [
+      264900,
+      357800,
+      267900,
+      360800
+    ]
+  },
+  "probes": [
+    {
+      "id": "summit",
+      "centre": [
+        266405,
+        359387
+      ]
+    },
+    {
+      "id": "southern-observer",
+      "centre": [
+        265876.05347833806,
+        358339.7631202109
+      ]
+    }
+  ],
+  "selection": {
+    "scheme": "XYZ Web Mercator zoom (delivery)",
+    "requestedLevel": "z14",
+    "eligibilityReadHalfWidthM": 24,
+    "before": "common-only retained registry",
+    "after": "existing Tryfan regional registry; native complete support unchanged"
+  },
+  "derivation": {
+    "gridSpacingM": 8,
+    "slope": "Horn 3x3 weighted central gradient; atan(hypot(dx,dy)), degrees; map-grid horizontal metre approximation",
+    "downstream": "locally planar represented surface area / map-plane area = 1/cos(slope); dimensionless ratio, not cover fraction",
+    "sampling": "pixel-centre bilinear Terrarium; retained PNG only, no source acquisition"
+  },
+  "unknownQuery": "current exposed mineral fraction; neither terrain derivatives nor coarse classification establish it",
+  "policies": [
+    "fixed-input-replay-v1",
+    "current-applicable-terrain-v1"
+  ],
+  "limits": "No accuracy/ranking claim. AWS observation/vertical/surface lineage unknown. Welsh grid/source dates not effective measurement resolution or exact epoch."
+}

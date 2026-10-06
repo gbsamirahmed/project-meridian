@@ -594,6 +594,11 @@ independent presentation. **Decision C:** sufficiently founded for a bounded int
 retained-region proof; no operational world model or production capability is implied.
 Domain-specific representations remain distinct, with v1 semantic evidence and small linked
 input-use/current-assessment responsibilities. Current client-only ownership and Atlas/Weather/
-Traverse dependency boundaries remain unchanged. Exactly one next recommendation is the
-separately authorized retained Tryfan proof; measured storage/processing/serving architecture
-follows its evidence. Open/parked appearance work is non-blocking, not solved.
+Traverse dependency boundaries remain unchanged.
+
+The [retained Tryfan proof](research/tryfan-qualified-query-proof.md) now composes one
+research-only vertical slice (**C — SUCCESS**): domain selection, v1 claims and scoped
+input-use receipts support selective recomputation and historical replay. No production
+consumer or general query/dependency runtime is introduced. Exactly one next recommendation
+is a bounded storage/processing/serving requirements assessment informed by these measured
+results; no persistent-world build begins. Open/parked appearance work is non-blocking, not solved.

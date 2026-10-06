@@ -3982,3 +3982,32 @@ semantic code hashes, 43 unchanged Atlas/Earth Lab reports, retained lifecycle r
 No application build/tests required for unchanged runtime/dependencies. AWS visual/analytical,
 exaggeration 1.45, IGOR, MapTiler/satellite behaviour, projection/lifecycle, Weather and Traverse
 remain unchanged. Multiscale closed; multiview parked; no meridian-private inspection.
+
+## 2026-10-06 — retained Tryfan qualified-query and revision lifecycle proof
+
+Started clean main at 6e17e79; fetched origin, divergence 0/0, no work discarded.
+[Integrated proof](research/tryfan-qualified-query-proof.md): **C — SUCCESS**.
+Two frozen existing Tryfan locations use the existing TerrainHierarchy selector and
+three retained z14 PNGs (320,857 bytes). Ordinary Horn slope at 8 m analysis spacing
+and a transparent dependent planar area ratio become qualified Contract v1 claims.
+Exact local input/method revisions, unknown upstream epochs/quality and rights survive.
+A small separate research receipt describes actual read neighbourhoods/interpolation
+scope; no frozen contract or shared runtime changes.
+
+Common-only to unchanged regional context recomputes only the summit pair; southern
+AWS results remain preferred, all four historical results replay. Synthetic outside/halo
+notifications exercise scoped/transitive freshness; unknown input scope is indeterminate.
+Unsupported current exposure and unavailable strict provenance are not fabricated absence.
+Six revisions/four preferred results, deterministic 92,034-byte artifact and serialization
+replay. This is research-only local materialization, not a persistent world or new DEM.
+
+[Validation](research/tryfan-qualified-query-validation.json): 17 proof tests, 64 existing
+semantic/hierarchy/runtime/Tryfan tests, strict proof TypeScript, scoped lint, deterministic
+rebuilds, local references, seven frozen semantic hashes, 113 production hashes, unchanged
+43 Atlas/Earth Lab reports, prior lifecycle/synthesis records and all 42 status columns.
+No new datasets/classifier, semantic ingestion, services, database or production changes;
+AWS analytical z15, geometry/exaggeration, IGOR, satellite, Weather and Traverse unchanged.
+Multiscale stays closed; appearance correction/visibility/fusion survive and Swiss frames
+stay parked. No private inspection. Current navigation records the completed proof;
+exactly one next recommendation is the bounded measured storage/processing/serving
+requirements assessment, not started here.
