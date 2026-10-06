@@ -1,0 +1,1753 @@
+{
+  "acquisitionNoteSha256": "2b86444bd9998514e252089181db6101a686b304731e7b6fa58a6e2187d224d8",
+  "benchmark": {
+    "areaM2": 10500000.0,
+    "floodOriginsAreaM2": {
+      "direct rainfall model": 8341.57,
+      "direct rainfall model and recorded": 2176.38,
+      "modelled": 4046405.239,
+      "modelled and direct rainfall model": 102017.933,
+      "modelled and direct rainfall model and recorded": 44205.723,
+      "modelled and recorded": 2403998.932,
+      "recorded": 330661.946
+    },
+    "floodZoneUnionAreaM2": 6937807.721,
+    "floodZonesAreaM2": {
+      "FZ2": 503082.391,
+      "FZ3": 6434725.331
+    },
+    "habitatsAreaM2": {
+      "Coastal and floodplain grazing marsh": 2817730.826,
+      "Coastal saltmarsh": 186537.495,
+      "Deciduous woodland": 84003.297,
+      "Good quality semi improved grassland": 51272.226,
+      "Lowland fens": 235825.587,
+      "Lowland fens,Reedbeds": 5188.526,
+      "Mudflats": 1812194.652,
+      "No main habitat but additional habitats present": 217653.544,
+      "Reedbeds": 273054.856,
+      "Reedbeds,Coastal saltmarsh": 133475.96,
+      "Traditional orchard": 13871.354
+    },
+    "raster": {
+      "March2024": {
+        "no observations": 354,
+        "water detected": 4271,
+        "water not detected": 16754
+      },
+      "MarchDetectedSeptemberNotDetected": 231,
+      "September2024": {
+        "no observations": 3372,
+        "water detected": 816,
+        "water not detected": 17191
+      },
+      "SeptemberDetectedMarchNotDetected": 0,
+      "anyMonthUnobserved": 3673,
+      "bothMonthsObserved": 17706,
+      "occurrence": {
+        "cellCentres": 21379,
+        "meanOccurrencePercent": 15.845,
+        "noData255": 0,
+        "notWater0": 16890,
+        "occurrence100": 0,
+        "positiveOccurrence1to99": 4489,
+        "positiveRange": [
+          1,
+          99
+        ]
+      }
+    },
+    "wfdAreaM2": 2677788.734
+  },
+  "counts": {
+    "flood": {
+      "exactIntersections": 542,
+      "positiveAreaIntersections": 492,
+      "returned": 546
+    },
+    "phi": {
+      "exactIntersections": 280,
+      "positiveAreaIntersections": 280,
+      "returned": 280
+    },
+    "rfo": {
+      "exactIntersections": 23,
+      "positiveAreaIntersections": 23,
+      "returned": 25
+    },
+    "wfd": {
+      "exactIntersections": 1,
+      "positiveAreaIntersections": 1,
+      "returned": 2
+    }
+  },
+  "crosswalk": [
+    {
+      "concept": "named waterbody / assessment-unit membership",
+      "loss": "Identity needs its WFD namespace; administrative segmentation, heavily-modified designation and source reference boundary remain native. Not instantaneous wet extent.",
+      "native": "WFD GB510804505600 EXE",
+      "relationship": "compatible"
+    },
+    {
+      "concept": "reference waterbody boundary",
+      "loss": "OS/UWWTD source convention and simplification must remain; actual survey date/tidal datum details unknown.",
+      "native": "WFD MHW-derived polygon",
+      "relationship": "compatible"
+    },
+    {
+      "concept": "dated water-detection claim",
+      "loss": "Month/cell and classification lineage mandatory; no instantaneous edge, depth, tide or feature identity.",
+      "native": "GSW monthly code2",
+      "relationship": "compatible"
+    },
+    {
+      "concept": "historical water-detection occurrence",
+      "loss": "Keep numeric value and observation-conditioned period; binary water discards history, no present-state equivalence.",
+      "native": "GSW occurrence1-100",
+      "relationship": "compatible"
+    },
+    {
+      "concept": "wetland-related habitat property",
+      "loss": "Saltmarsh vegetation, saline/intertidal context and habitat ontology lost in broad wetland label; not open-water state.",
+      "native": "PHI SALTM",
+      "relationship": "narrower"
+    },
+    {
+      "concept": "wetland-related vegetation property",
+      "loss": "Reed vegetation/ecological definition and mixed-habitat co-membership lost.",
+      "native": "PHI RBEDS",
+      "relationship": "narrower"
+    },
+    {
+      "concept": "wetland-related habitat property",
+      "loss": "Periodically inundated pasture/meadow, ditch system and management meaning not equivalent to saturated/open water everywhere.",
+      "native": "PHI CFPGM",
+      "relationship": "partial"
+    },
+    {
+      "concept": "intertidal habitat claim",
+      "loss": "Fine sediment/ecology and native extent/grain remain; current water presence cannot be inferred.",
+      "native": "PHI MUDFL",
+      "relationship": "compatible"
+    },
+    {
+      "concept": "reference-conditioned planning probability-zone claim",
+      "loss": "AEP/source/defence convention and mixed origins retained; this is neither a dated inundation state nor local pixel confidence.",
+      "native": "FZ2/FZ3",
+      "relationship": "compatible"
+    },
+    {
+      "concept": "historical event-associated inundation record",
+      "loss": "Event ID, interval, boundary evidence, cause and quality retained; footprint need not be synchronous maximum at every point.",
+      "native": "RFO outline/event group",
+      "relationship": "compatible"
+    },
+    {
+      "concept": "water present now",
+      "loss": "Reference/habitat/scenario claim cannot be relabelled as current observed state.",
+      "native": "WFD / PHI / Flood Zones",
+      "relationship": "incompatible"
+    },
+    {
+      "concept": "physical water absence",
+      "loss": "No valid observations; physical state unknown.",
+      "native": "GSW monthly code0",
+      "relationship": "unmappable"
+    },
+    {
+      "concept": "one dominant exclusive surface class",
+      "loss": "Native co-membership provides no fractional split or dominant label.",
+      "native": "PHI combined RBEDS,SALTM",
+      "relationship": "ambiguous"
+    },
+    {
+      "concept": "water-related property",
+      "loss": "Generic water-related category merges feature, state, habitat and scenario; deliberately rejected as sole interpretation.",
+      "native": "current state unknown",
+      "relationship": "broader"
+    }
+  ],
+  "crs": "EPSG:27700",
+  "habitatWaterComparisons": {
+    "CFPGM": {
+      "raster": {
+        "March2024": {
+          "no observations": 40,
+          "water detected": 14,
+          "water not detected": 5697
+        },
+        "MarchDetectedSeptemberNotDetected": 8,
+        "September2024": {
+          "no observations": 1,
+          "water detected": 6,
+          "water not detected": 5744
+        },
+        "SeptemberDetectedMarchNotDetected": 0,
+        "anyMonthUnobserved": 41,
+        "bothMonthsObserved": 5710,
+        "occurrence": {
+          "cellCentres": 5751,
+          "meanOccurrencePercent": 0.08,
+          "noData255": 0,
+          "notWater0": 5735,
+          "occurrence100": 0,
+          "positiveOccurrence1to99": 16,
+          "positiveRange": [
+            6,
+            49
+          ]
+        }
+      },
+      "unionAreaM2": 2817730.826,
+      "withinFloodZoneAreaM2": 2815313.867,
+      "withinWfdAreaM2": 0.0
+    },
+    "MUDFL": {
+      "raster": {
+        "March2024": {
+          "no observations": 53,
+          "water detected": 3492,
+          "water not detected": 139
+        },
+        "MarchDetectedSeptemberNotDetected": 157,
+        "September2024": {
+          "no observations": 2911,
+          "water detected": 448,
+          "water not detected": 325
+        },
+        "SeptemberDetectedMarchNotDetected": 0,
+        "anyMonthUnobserved": 2961,
+        "bothMonthsObserved": 723,
+        "occurrence": {
+          "cellCentres": 3684,
+          "meanOccurrencePercent": 74.253,
+          "noData255": 0,
+          "notWater0": 158,
+          "occurrence100": 0,
+          "positiveOccurrence1to99": 3526,
+          "positiveRange": [
+            1,
+            99
+          ]
+        }
+      },
+      "unionAreaM2": 1812194.652,
+      "withinFloodZoneAreaM2": 1812046.728,
+      "withinWfdAreaM2": 1804232.409
+    },
+    "RBEDS": {
+      "raster": {
+        "March2024": {
+          "no observations": 26,
+          "water detected": 11,
+          "water not detected": 801
+        },
+        "MarchDetectedSeptemberNotDetected": 10,
+        "September2024": {
+          "no observations": 1,
+          "water not detected": 837
+        },
+        "SeptemberDetectedMarchNotDetected": 0,
+        "anyMonthUnobserved": 27,
+        "bothMonthsObserved": 811,
+        "occurrence": {
+          "cellCentres": 838,
+          "meanOccurrencePercent": 3.589,
+          "noData255": 0,
+          "notWater0": 752,
+          "occurrence100": 0,
+          "positiveOccurrence1to99": 86,
+          "positiveRange": [
+            3,
+            86
+          ]
+        }
+      },
+      "unionAreaM2": 411719.342,
+      "withinFloodZoneAreaM2": 411649.675,
+      "withinWfdAreaM2": 312083.554
+    },
+    "SALTM": {
+      "raster": {
+        "March2024": {
+          "no observations": 42,
+          "water detected": 46,
+          "water not detected": 581
+        },
+        "MarchDetectedSeptemberNotDetected": 38,
+        "September2024": {
+          "no observations": 8,
+          "water detected": 2,
+          "water not detected": 659
+        },
+        "SeptemberDetectedMarchNotDetected": 0,
+        "anyMonthUnobserved": 50,
+        "bothMonthsObserved": 619,
+        "occurrence": {
+          "cellCentres": 669,
+          "meanOccurrencePercent": 4.52,
+          "noData255": 0,
+          "notWater0": 555,
+          "occurrence100": 0,
+          "positiveOccurrence1to99": 114,
+          "positiveRange": [
+            2,
+            94
+          ]
+        }
+      },
+      "unionAreaM2": 320013.454,
+      "withinFloodZoneAreaM2": 319865.841,
+      "withinWfdAreaM2": 219196.881
+    }
+  },
+  "method": "Exact native polygon intersection/unions in BNG; transformed native raster centre counts, no raster resampling, confidence estimation, classification or hydrological modelling. Overlap is support, not truth or simultaneous state. No-observations excluded from paired detected/non-detected comparisons.",
+  "nativeEventRecords": [
+    {
+      "coastal_f": "False",
+      "data_prov": "Environment Agency",
+      "data_qual": "Fair",
+      "data_src": "Aerial Photography",
+      "end_date": "1960-10-31T00:00:00Z",
+      "featureId": "Recorded_Flood_Outlines.286",
+      "flood_caus": "channel capacity exceeded (no raised defences)",
+      "flood_src": "main river",
+      "fluvial_f": "True",
+      "fm_status": "considered and rejected",
+      "hfm_status": "considered and accepted",
+      "interpretedTime": {
+        "nativeEnd": "1960-10-31T00:00:00Z",
+        "nativeStart": "1960-10-01T00:00:00Z",
+        "status": "published event interval; timestamp precision not established"
+      },
+      "name": "River Exe: Exminster Marshes and Turf Locks",
+      "rec_grp_id": 2527,
+      "rec_out_id": 559,
+      "start_date": "1960-10-01T00:00:00Z",
+      "tidal_f": "False",
+      "withinBenchmarkAreaM2": 3626550.81
+    },
+    {
+      "coastal_f": "False",
+      "data_prov": null,
+      "data_qual": null,
+      "data_src": "Aerial Photography",
+      "end_date": "1960-10-31T00:00:00Z",
+      "featureId": "Recorded_Flood_Outlines.386",
+      "flood_caus": "channel capacity exceeded (no raised defences)",
+      "flood_src": "main river",
+      "fluvial_f": "True",
+      "fm_status": "considered and rejected",
+      "hfm_status": "considered and accepted",
+      "interpretedTime": {
+        "nativeEnd": "1960-10-31T00:00:00Z",
+        "nativeStart": "1960-10-01T00:00:00Z",
+        "status": "published event interval; timestamp precision not established"
+      },
+      "name": "River Exe: Countess Wear and Matford Marshes",
+      "rec_grp_id": 2527,
+      "rec_out_id": 556,
+      "start_date": "1960-10-01T00:00:00Z",
+      "tidal_f": "False",
+      "withinBenchmarkAreaM2": 534077.755
+    },
+    {
+      "coastal_f": "False",
+      "data_prov": null,
+      "data_qual": null,
+      "data_src": "Aerial Photography",
+      "end_date": "1960-12-31T00:00:00Z",
+      "featureId": "Recorded_Flood_Outlines.14644",
+      "flood_caus": "channel capacity exceeded (no raised defences)",
+      "flood_src": "main river",
+      "fluvial_f": "True",
+      "fm_status": "considered and rejected",
+      "hfm_status": "considered and accepted",
+      "interpretedTime": {
+        "nativeEnd": "1960-12-31T00:00:00Z",
+        "nativeStart": "1960-12-01T00:00:00Z",
+        "status": "published event interval; timestamp precision not established"
+      },
+      "name": "River Exe: Matford Marshes and Countess Wear",
+      "rec_grp_id": 2567,
+      "rec_out_id": 16558,
+      "start_date": "1960-12-01T00:00:00Z",
+      "tidal_f": "False",
+      "withinBenchmarkAreaM2": 1324378.273
+    },
+    {
+      "coastal_f": "False",
+      "data_prov": "Environment Agency",
+      "data_qual": "Fair",
+      "data_src": "Aerial Photography",
+      "end_date": "1979-12-31T00:00:00Z",
+      "featureId": "Recorded_Flood_Outlines.14648",
+      "flood_caus": "channel capacity exceeded (no raised defences)",
+      "flood_src": "main river",
+      "fluvial_f": "True",
+      "fm_status": "considered and rejected",
+      "hfm_status": "considered and accepted",
+      "interpretedTime": {
+        "nativeEnd": "1979-12-31T00:00:00Z",
+        "nativeStart": "1979-12-01T00:00:00Z",
+        "status": "published event interval; timestamp precision not established"
+      },
+      "name": "River Exe: Exminster Marshes and Exe Estuary",
+      "rec_grp_id": 2529,
+      "rec_out_id": 16562,
+      "start_date": "1979-12-01T00:00:00Z",
+      "tidal_f": "False",
+      "withinBenchmarkAreaM2": 4435292.644
+    },
+    {
+      "coastal_f": "False",
+      "data_prov": null,
+      "data_qual": null,
+      "data_src": "Aerial Photography",
+      "end_date": "1992-12-31T00:00:00Z",
+      "featureId": "Recorded_Flood_Outlines.14890",
+      "flood_caus": "channel capacity exceeded (no raised defences)",
+      "flood_src": "main river",
+      "fluvial_f": "True",
+      "fm_status": "considered and rejected",
+      "hfm_status": "considered and accepted",
+      "interpretedTime": {
+        "nativeEnd": "1992-12-31T00:00:00Z",
+        "nativeStart": "1992-12-01T00:00:00Z",
+        "status": "published event interval; timestamp precision not established"
+      },
+      "name": "River Exe: Exminster Marshes",
+      "rec_grp_id": 2345,
+      "rec_out_id": 17337,
+      "start_date": "1992-12-01T00:00:00Z",
+      "tidal_f": "False",
+      "withinBenchmarkAreaM2": 1079085.809
+    },
+    {
+      "coastal_f": "False",
+      "data_prov": "Environment Agency",
+      "data_qual": null,
+      "data_src": "Survey",
+      "end_date": "1985-04-07T00:00:00Z",
+      "featureId": "Recorded_Flood_Outlines.21187",
+      "flood_caus": "channel capacity exceeded (no raised defences)",
+      "flood_src": "main river",
+      "fluvial_f": "False",
+      "fm_status": "considered and accepted",
+      "hfm_status": "considered and accepted",
+      "interpretedTime": {
+        "nativeEnd": "1985-04-07T00:00:00Z",
+        "nativeStart": "1985-04-07T00:00:00Z",
+        "status": "published event interval; timestamp precision not established"
+      },
+      "name": "River Exe: Topsham",
+      "rec_grp_id": 2463,
+      "rec_out_id": 24372,
+      "start_date": "1985-04-07T00:00:00Z",
+      "tidal_f": "True",
+      "withinBenchmarkAreaM2": 80.771
+    },
+    {
+      "coastal_f": "False",
+      "data_prov": "Environment Agency",
+      "data_qual": null,
+      "data_src": "Survey",
+      "end_date": "1985-04-07T00:00:00Z",
+      "featureId": "Recorded_Flood_Outlines.21188",
+      "flood_caus": "channel capacity exceeded (no raised defences)",
+      "flood_src": "main river",
+      "fluvial_f": "False",
+      "fm_status": "considered and accepted",
+      "hfm_status": "considered and accepted",
+      "interpretedTime": {
+        "nativeEnd": "1985-04-07T00:00:00Z",
+        "nativeStart": "1985-04-07T00:00:00Z",
+        "status": "published event interval; timestamp precision not established"
+      },
+      "name": "River Exe: Topsham",
+      "rec_grp_id": 2463,
+      "rec_out_id": 24373,
+      "start_date": "1985-04-07T00:00:00Z",
+      "tidal_f": "True",
+      "withinBenchmarkAreaM2": 645.603
+    },
+    {
+      "coastal_f": "False",
+      "data_prov": "Environment Agency",
+      "data_qual": null,
+      "data_src": "Survey",
+      "end_date": "1985-04-07T00:00:00Z",
+      "featureId": "Recorded_Flood_Outlines.21189",
+      "flood_caus": "channel capacity exceeded (no raised defences)",
+      "flood_src": "main river",
+      "fluvial_f": "False",
+      "fm_status": "considered and accepted",
+      "hfm_status": "considered and accepted",
+      "interpretedTime": {
+        "nativeEnd": "1985-04-07T00:00:00Z",
+        "nativeStart": "1985-04-07T00:00:00Z",
+        "status": "published event interval; timestamp precision not established"
+      },
+      "name": "River Exe: Topsham",
+      "rec_grp_id": 2463,
+      "rec_out_id": 24374,
+      "start_date": "1985-04-07T00:00:00Z",
+      "tidal_f": "True",
+      "withinBenchmarkAreaM2": 1012.008
+    },
+    {
+      "coastal_f": "False",
+      "data_prov": "Environment Agency",
+      "data_qual": null,
+      "data_src": "Survey",
+      "end_date": "1985-04-07T00:00:00Z",
+      "featureId": "Recorded_Flood_Outlines.21210",
+      "flood_caus": "channel capacity exceeded (no raised defences)",
+      "flood_src": "main river",
+      "fluvial_f": "False",
+      "fm_status": "considered and accepted",
+      "hfm_status": "considered and accepted",
+      "interpretedTime": {
+        "nativeEnd": "1985-04-07T00:00:00Z",
+        "nativeStart": "1985-04-07T00:00:00Z",
+        "status": "published event interval; timestamp precision not established"
+      },
+      "name": "River Exe: Topsham",
+      "rec_grp_id": 2463,
+      "rec_out_id": 24394,
+      "start_date": "1985-04-07T00:00:00Z",
+      "tidal_f": "True",
+      "withinBenchmarkAreaM2": 306.273
+    },
+    {
+      "coastal_f": "False",
+      "data_prov": "Environment Agency",
+      "data_qual": null,
+      "data_src": "Survey",
+      "end_date": "1965-12-19T00:00:00Z",
+      "featureId": "Recorded_Flood_Outlines.22792",
+      "flood_caus": "channel capacity exceeded (no raised defences)",
+      "flood_src": "main river",
+      "fluvial_f": "True",
+      "fm_status": "considered and accepted",
+      "hfm_status": "considered and accepted",
+      "interpretedTime": {
+        "nativeEnd": "1965-12-19T00:00:00Z",
+        "nativeStart": "1965-12-19T00:00:00Z",
+        "status": "published event interval; timestamp precision not established"
+      },
+      "name": "River Clyst/Brindle Brook: Dec 1965",
+      "rec_grp_id": 2474,
+      "rec_out_id": 26108,
+      "start_date": "1965-12-19T00:00:00Z",
+      "tidal_f": "False",
+      "withinBenchmarkAreaM2": 205064.696
+    },
+    {
+      "coastal_f": "False",
+      "data_prov": "Environment Agency",
+      "data_qual": null,
+      "data_src": "Survey",
+      "end_date": "1965-12-19T00:00:00Z",
+      "featureId": "Recorded_Flood_Outlines.22896",
+      "flood_caus": "channel capacity exceeded (no raised defences)",
+      "flood_src": "main river",
+      "fluvial_f": "True",
+      "fm_status": "considered and accepted",
+      "hfm_status": "considered and accepted",
+      "interpretedTime": {
+        "nativeEnd": "1965-12-19T00:00:00Z",
+        "nativeStart": "1965-12-19T00:00:00Z",
+        "status": "published event interval; timestamp precision not established"
+      },
+      "name": "River Clyst/Brindle Brook: Dec 1965",
+      "rec_grp_id": 2474,
+      "rec_out_id": 26206,
+      "start_date": "1965-12-19T00:00:00Z",
+      "tidal_f": "False",
+      "withinBenchmarkAreaM2": 941.504
+    },
+    {
+      "coastal_f": "False",
+      "data_prov": "Environment Agency",
+      "data_qual": null,
+      "data_src": "Survey",
+      "end_date": "1965-12-19T00:00:00Z",
+      "featureId": "Recorded_Flood_Outlines.22904",
+      "flood_caus": "channel capacity exceeded (no raised defences)",
+      "flood_src": "main river",
+      "fluvial_f": "True",
+      "fm_status": "considered and accepted",
+      "hfm_status": "considered and accepted",
+      "interpretedTime": {
+        "nativeEnd": "1965-12-19T00:00:00Z",
+        "nativeStart": "1965-12-19T00:00:00Z",
+        "status": "published event interval; timestamp precision not established"
+      },
+      "name": "River Clyst/Brindle Brook: Dec 1965",
+      "rec_grp_id": 2474,
+      "rec_out_id": 26219,
+      "start_date": "1965-12-19T00:00:00Z",
+      "tidal_f": "False",
+      "withinBenchmarkAreaM2": 3743.468
+    },
+    {
+      "coastal_f": "False",
+      "data_prov": "Environment Agency",
+      "data_qual": "Good",
+      "data_src": "Survey",
+      "end_date": "1960-12-04T00:00:00Z",
+      "featureId": "Recorded_Flood_Outlines.23169",
+      "flood_caus": "channel capacity exceeded (no raised defences)",
+      "flood_src": "main river",
+      "fluvial_f": "True",
+      "fm_status": "considered and accepted",
+      "hfm_status": "considered and accepted",
+      "interpretedTime": {
+        "nativeEnd": "1960-12-04T00:00:00Z",
+        "nativeStart": "1960-12-04T00:00:00Z",
+        "status": "published event interval; timestamp precision not established"
+      },
+      "name": "River Exe: Dec 1960",
+      "rec_grp_id": 2496,
+      "rec_out_id": 26483,
+      "start_date": "1960-12-04T00:00:00Z",
+      "tidal_f": "False",
+      "withinBenchmarkAreaM2": 1535212.092
+    },
+    {
+      "coastal_f": "False",
+      "data_prov": "Environment Agency",
+      "data_qual": null,
+      "data_src": "Survey",
+      "end_date": "1985-04-07T00:00:00Z",
+      "featureId": "Recorded_Flood_Outlines.23308",
+      "flood_caus": "channel capacity exceeded (no raised defences)",
+      "flood_src": "main river",
+      "fluvial_f": "False",
+      "fm_status": "considered and accepted",
+      "hfm_status": "considered and accepted",
+      "interpretedTime": {
+        "nativeEnd": "1985-04-07T00:00:00Z",
+        "nativeStart": "1985-04-07T00:00:00Z",
+        "status": "published event interval; timestamp precision not established"
+      },
+      "name": "River Exe: Topsham",
+      "rec_grp_id": 2463,
+      "rec_out_id": 26632,
+      "start_date": "1985-04-07T00:00:00Z",
+      "tidal_f": "True",
+      "withinBenchmarkAreaM2": 38973.417
+    },
+    {
+      "coastal_f": "False",
+      "data_prov": "Environment Agency",
+      "data_qual": null,
+      "data_src": "Survey",
+      "end_date": "1985-04-07T00:00:00Z",
+      "featureId": "Recorded_Flood_Outlines.23314",
+      "flood_caus": "channel capacity exceeded (no raised defences)",
+      "flood_src": "main river",
+      "fluvial_f": "False",
+      "fm_status": "considered and accepted",
+      "hfm_status": "considered and accepted",
+      "interpretedTime": {
+        "nativeEnd": "1985-04-07T00:00:00Z",
+        "nativeStart": "1985-04-07T00:00:00Z",
+        "status": "published event interval; timestamp precision not established"
+      },
+      "name": "River Exe: Topsham",
+      "rec_grp_id": 2463,
+      "rec_out_id": 26641,
+      "start_date": "1985-04-07T00:00:00Z",
+      "tidal_f": "True",
+      "withinBenchmarkAreaM2": 1027.393
+    },
+    {
+      "coastal_f": "False",
+      "data_prov": "Environment Agency",
+      "data_qual": null,
+      "data_src": "Survey",
+      "end_date": "1985-04-07T00:00:00Z",
+      "featureId": "Recorded_Flood_Outlines.23320",
+      "flood_caus": "channel capacity exceeded (no raised defences)",
+      "flood_src": "main river",
+      "fluvial_f": "False",
+      "fm_status": "considered and accepted",
+      "hfm_status": "considered and accepted",
+      "interpretedTime": {
+        "nativeEnd": "1985-04-07T00:00:00Z",
+        "nativeStart": "1985-04-07T00:00:00Z",
+        "status": "published event interval; timestamp precision not established"
+      },
+      "name": "River Exe: Topsham",
+      "rec_grp_id": 2463,
+      "rec_out_id": 26642,
+      "start_date": "1985-04-07T00:00:00Z",
+      "tidal_f": "True",
+      "withinBenchmarkAreaM2": 1060.585
+    },
+    {
+      "coastal_f": "False",
+      "data_prov": "Environment Agency",
+      "data_qual": null,
+      "data_src": "Survey",
+      "end_date": "1985-04-07T00:00:00Z",
+      "featureId": "Recorded_Flood_Outlines.23321",
+      "flood_caus": "channel capacity exceeded (no raised defences)",
+      "flood_src": "main river",
+      "fluvial_f": "False",
+      "fm_status": "considered and accepted",
+      "hfm_status": "considered and accepted",
+      "interpretedTime": {
+        "nativeEnd": "1985-04-07T00:00:00Z",
+        "nativeStart": "1985-04-07T00:00:00Z",
+        "status": "published event interval; timestamp precision not established"
+      },
+      "name": "River Exe: Topsham",
+      "rec_grp_id": 2463,
+      "rec_out_id": 26643,
+      "start_date": "1985-04-07T00:00:00Z",
+      "tidal_f": "True",
+      "withinBenchmarkAreaM2": 150.23
+    },
+    {
+      "coastal_f": "True",
+      "data_prov": "Environment Agency",
+      "data_qual": null,
+      "data_src": "Survey",
+      "end_date": "2014-02-05T00:00:00Z",
+      "featureId": "Recorded_Flood_Outlines.25870",
+      "flood_caus": "overtopping of defences",
+      "flood_src": "sea",
+      "fluvial_f": "False",
+      "fm_status": "considered and rejected",
+      "hfm_status": "considered and accepted",
+      "interpretedTime": {
+        "nativeEnd": "2014-02-05T00:00:00Z",
+        "nativeStart": "2014-02-04T00:00:00Z",
+        "status": "published event interval; timestamp precision not established"
+      },
+      "name": "Topsham Tidal Flood Feb 2014",
+      "rec_grp_id": 4124,
+      "rec_out_id": 31383,
+      "start_date": "2014-02-04T00:00:00Z",
+      "tidal_f": "True",
+      "withinBenchmarkAreaM2": 42892.376
+    },
+    {
+      "coastal_f": "False",
+      "data_prov": "Environment Agency",
+      "data_qual": "Fair",
+      "data_src": "Survey",
+      "end_date": "1960-12-31T00:00:00Z",
+      "featureId": "Recorded_Flood_Outlines.28295",
+      "flood_caus": "channel capacity exceeded (no raised defences)",
+      "flood_src": "main river",
+      "fluvial_f": "True",
+      "fm_status": "considered and rejected",
+      "hfm_status": "considered and rejected",
+      "interpretedTime": {
+        "nativeEnd": "1960-12-31T00:00:00Z",
+        "nativeStart": "1960-01-01T00:00:00Z",
+        "status": "published event interval; timestamp precision not established"
+      },
+      "name": "River Exe: 1960",
+      "rec_grp_id": 3246,
+      "rec_out_id": 4094967,
+      "start_date": "1960-01-01T00:00:00Z",
+      "tidal_f": "False",
+      "withinBenchmarkAreaM2": 2502212.282
+    },
+    {
+      "coastal_f": "False",
+      "data_prov": "Environment Agency",
+      "data_qual": "Good",
+      "data_src": "Survey",
+      "end_date": "1980-12-31T00:00:00Z",
+      "featureId": "Recorded_Flood_Outlines.30542",
+      "flood_caus": "channel capacity exceeded (no raised defences)",
+      "flood_src": "main river",
+      "fluvial_f": "True",
+      "fm_status": "considered and rejected",
+      "hfm_status": "considered and rejected",
+      "interpretedTime": {
+        "nativeEnd": "1980-12-31T00:00:00Z",
+        "nativeStart": "1980-01-01T00:00:00Z",
+        "status": "published event interval; timestamp precision not established"
+      },
+      "name": "Clyst 1980",
+      "rec_grp_id": 3188,
+      "rec_out_id": 4085932,
+      "start_date": "1980-01-01T00:00:00Z",
+      "tidal_f": "False",
+      "withinBenchmarkAreaM2": 782107.938
+    },
+    {
+      "coastal_f": "False",
+      "data_prov": "Environment Agency",
+      "data_qual": "Good",
+      "data_src": "Survey",
+      "end_date": "1965-12-19T00:00:00Z",
+      "featureId": "Recorded_Flood_Outlines.30584",
+      "flood_caus": "channel capacity exceeded (no raised defences)",
+      "flood_src": "main river",
+      "fluvial_f": "True",
+      "fm_status": "considered and accepted",
+      "hfm_status": "considered and accepted",
+      "interpretedTime": {
+        "nativeEnd": "1965-12-19T00:00:00Z",
+        "nativeStart": "1965-12-19T00:00:00Z",
+        "status": "published event interval; timestamp precision not established"
+      },
+      "name": "River Clyst/Brindle Brook: Dec 1965",
+      "rec_grp_id": 2474,
+      "rec_out_id": 16415,
+      "start_date": "1965-12-19T00:00:00Z",
+      "tidal_f": "False",
+      "withinBenchmarkAreaM2": 4192.601
+    },
+    {
+      "coastal_f": "False",
+      "data_prov": "Environment Agency",
+      "data_qual": "Good",
+      "data_src": "Survey",
+      "end_date": "1965-12-19T00:00:00Z",
+      "featureId": "Recorded_Flood_Outlines.30621",
+      "flood_caus": "channel capacity exceeded (no raised defences)",
+      "flood_src": "main river",
+      "fluvial_f": "True",
+      "fm_status": "considered and accepted",
+      "hfm_status": "considered and accepted",
+      "interpretedTime": {
+        "nativeEnd": "1965-12-19T00:00:00Z",
+        "nativeStart": "1965-12-19T00:00:00Z",
+        "status": "published event interval; timestamp precision not established"
+      },
+      "name": "River Clyst/Brindle Brook: Dec 1965",
+      "rec_grp_id": 2474,
+      "rec_out_id": 26246,
+      "start_date": "1965-12-19T00:00:00Z",
+      "tidal_f": "False",
+      "withinBenchmarkAreaM2": 43279.417
+    },
+    {
+      "coastal_f": "False",
+      "data_prov": "Environment Agency",
+      "data_qual": "Good",
+      "data_src": "Survey",
+      "end_date": "2000-11-01T00:00:00Z",
+      "featureId": "Recorded_Flood_Outlines.30623",
+      "flood_caus": "channel capacity exceeded (no raised defences)",
+      "flood_src": "ordinary watercourse",
+      "fluvial_f": "True",
+      "fm_status": "considered and accepted",
+      "hfm_status": "considered and accepted",
+      "interpretedTime": {
+        "nativeEnd": "2000-11-01T00:00:00Z",
+        "nativeStart": "2000-10-30T00:00:00Z",
+        "status": "published event interval; timestamp precision not established"
+      },
+      "name": "Autumn 2000 Event - Exton",
+      "rec_grp_id": 2665,
+      "rec_out_id": 22156,
+      "start_date": "2000-10-30T00:00:00Z",
+      "tidal_f": "False",
+      "withinBenchmarkAreaM2": 57674.928
+    }
+  ],
+  "planSha256": "04a9deefbf7ae763268ff9d0974624239c5f02b12ec688fd36927f26a94f2415",
+  "probes": [
+    {
+      "areaM2": 40000.0,
+      "bounds": [
+        296600,
+        86550,
+        296800,
+        86750
+      ],
+      "flood": {
+        "originAreaM2": {
+          "modelled": 40000.0
+        },
+        "zonesAreaM2": {
+          "FZ3": 40000.0
+        }
+      },
+      "id": "P1",
+      "name": "Exe channel",
+      "phi": {
+        "nativeClaims": [
+          {
+            "addhabs": "",
+            "featureId": "Priority_Habitat_Inventory_England.588588",
+            "habcodes": "MUDFL",
+            "mainhabs": "Mudflats",
+            "primsource": "Biodiversity Key Resources Inventory - Environment Agency R&D Technical Report E2A 2002 (MUDFL)",
+            "uid": "PHID29661278_008669364",
+            "version": "Sept_26"
+          }
+        ],
+        "nativeHabitatsAreaM2": {
+          "Mudflats": 40000.0
+        }
+      },
+      "raster": {
+        "March2024": {
+          "water detected": 77
+        },
+        "MarchDetectedSeptemberNotDetected": 1,
+        "September2024": {
+          "no observations": 76,
+          "water not detected": 1
+        },
+        "SeptemberDetectedMarchNotDetected": 0,
+        "anyMonthUnobserved": 76,
+        "bothMonthsObserved": 1,
+        "occurrence": {
+          "cellCentres": 77,
+          "meanOccurrencePercent": 71.883,
+          "noData255": 0,
+          "notWater0": 0,
+          "occurrence100": 0,
+          "positiveOccurrence1to99": 77,
+          "positiveRange": [
+            63,
+            80
+          ]
+        }
+      },
+      "rfo": {
+        "claims": [
+          {
+            "coastal_f": "False",
+            "data_prov": "Environment Agency",
+            "data_qual": "Fair",
+            "data_src": "Aerial Photography",
+            "end_date": "1960-10-31T00:00:00Z",
+            "featureId": "Recorded_Flood_Outlines.286",
+            "flood_caus": "channel capacity exceeded (no raised defences)",
+            "flood_src": "main river",
+            "fluvial_f": "True",
+            "fm_status": "considered and rejected",
+            "hfm_status": "considered and accepted",
+            "interpretedTime": {
+              "nativeEnd": "1960-10-31T00:00:00Z",
+              "nativeStart": "1960-10-01T00:00:00Z",
+              "status": "published event interval; timestamp precision not established"
+            },
+            "intersectionAreaM2": 40000.0,
+            "name": "River Exe: Exminster Marshes and Turf Locks",
+            "rec_grp_id": 2527,
+            "rec_out_id": 559,
+            "start_date": "1960-10-01T00:00:00Z",
+            "tidal_f": "False"
+          },
+          {
+            "coastal_f": "False",
+            "data_prov": "Environment Agency",
+            "data_qual": "Fair",
+            "data_src": "Aerial Photography",
+            "end_date": "1979-12-31T00:00:00Z",
+            "featureId": "Recorded_Flood_Outlines.14648",
+            "flood_caus": "channel capacity exceeded (no raised defences)",
+            "flood_src": "main river",
+            "fluvial_f": "True",
+            "fm_status": "considered and rejected",
+            "hfm_status": "considered and accepted",
+            "interpretedTime": {
+              "nativeEnd": "1979-12-31T00:00:00Z",
+              "nativeStart": "1979-12-01T00:00:00Z",
+              "status": "published event interval; timestamp precision not established"
+            },
+            "intersectionAreaM2": 40000.0,
+            "name": "River Exe: Exminster Marshes and Exe Estuary",
+            "rec_grp_id": 2529,
+            "rec_out_id": 16562,
+            "start_date": "1979-12-01T00:00:00Z",
+            "tidal_f": "False"
+          }
+        ],
+        "unionAreaM2": 40000.0
+      },
+      "wfd": {
+        "areaM2": 40000.0,
+        "nativeIdentities": [
+          {
+            "classification_year": 2019,
+            "export_date": "2024-02-02T00:00:00Z",
+            "featureId": "Simplified_WFD_Transitional_and_Coastal_Water_Bodies_Cycle_3_Classification_2019.73",
+            "water_body_id": "GB510804505600",
+            "water_body_name": "EXE"
+          }
+        ]
+      }
+    },
+    {
+      "areaM2": 40000.0,
+      "bounds": [
+        296750,
+        87000,
+        296950,
+        87200
+      ],
+      "flood": {
+        "originAreaM2": {
+          "modelled": 40000.0
+        },
+        "zonesAreaM2": {
+          "FZ3": 40000.0
+        }
+      },
+      "id": "P2",
+      "name": "Exe eastern margin",
+      "phi": {
+        "nativeClaims": [
+          {
+            "addhabs": "",
+            "featureId": "Priority_Habitat_Inventory_England.588588",
+            "habcodes": "MUDFL",
+            "mainhabs": "Mudflats",
+            "primsource": "Biodiversity Key Resources Inventory - Environment Agency R&D Technical Report E2A 2002 (MUDFL)",
+            "uid": "PHID29661278_008669364",
+            "version": "Sept_26"
+          },
+          {
+            "addhabs": "",
+            "featureId": "Priority_Habitat_Inventory_England.588591",
+            "habcodes": "MUDFL",
+            "mainhabs": "Mudflats",
+            "primsource": "Biodiversity Key Resources Inventory - Environment Agency R&D Technical Report E2A 2002 (MUDFL)",
+            "uid": "PHID29715262_008617833",
+            "version": "Sept_26"
+          }
+        ],
+        "nativeHabitatsAreaM2": {
+          "Mudflats": 27931.051
+        }
+      },
+      "raster": {
+        "March2024": {
+          "water detected": 77
+        },
+        "MarchDetectedSeptemberNotDetected": 0,
+        "September2024": {
+          "no observations": 64,
+          "water detected": 13
+        },
+        "SeptemberDetectedMarchNotDetected": 0,
+        "anyMonthUnobserved": 64,
+        "bothMonthsObserved": 13,
+        "occurrence": {
+          "cellCentres": 77,
+          "meanOccurrencePercent": 86.987,
+          "noData255": 0,
+          "notWater0": 0,
+          "occurrence100": 0,
+          "positiveOccurrence1to99": 77,
+          "positiveRange": [
+            76,
+            98
+          ]
+        }
+      },
+      "rfo": {
+        "claims": [
+          {
+            "coastal_f": "False",
+            "data_prov": "Environment Agency",
+            "data_qual": "Fair",
+            "data_src": "Aerial Photography",
+            "end_date": "1960-10-31T00:00:00Z",
+            "featureId": "Recorded_Flood_Outlines.286",
+            "flood_caus": "channel capacity exceeded (no raised defences)",
+            "flood_src": "main river",
+            "fluvial_f": "True",
+            "fm_status": "considered and rejected",
+            "hfm_status": "considered and accepted",
+            "interpretedTime": {
+              "nativeEnd": "1960-10-31T00:00:00Z",
+              "nativeStart": "1960-10-01T00:00:00Z",
+              "status": "published event interval; timestamp precision not established"
+            },
+            "intersectionAreaM2": 40000.0,
+            "name": "River Exe: Exminster Marshes and Turf Locks",
+            "rec_grp_id": 2527,
+            "rec_out_id": 559,
+            "start_date": "1960-10-01T00:00:00Z",
+            "tidal_f": "False"
+          },
+          {
+            "coastal_f": "False",
+            "data_prov": "Environment Agency",
+            "data_qual": "Fair",
+            "data_src": "Aerial Photography",
+            "end_date": "1979-12-31T00:00:00Z",
+            "featureId": "Recorded_Flood_Outlines.14648",
+            "flood_caus": "channel capacity exceeded (no raised defences)",
+            "flood_src": "main river",
+            "fluvial_f": "True",
+            "fm_status": "considered and rejected",
+            "hfm_status": "considered and accepted",
+            "interpretedTime": {
+              "nativeEnd": "1979-12-31T00:00:00Z",
+              "nativeStart": "1979-12-01T00:00:00Z",
+              "status": "published event interval; timestamp precision not established"
+            },
+            "intersectionAreaM2": 40000.0,
+            "name": "River Exe: Exminster Marshes and Exe Estuary",
+            "rec_grp_id": 2529,
+            "rec_out_id": 16562,
+            "start_date": "1979-12-01T00:00:00Z",
+            "tidal_f": "False"
+          }
+        ],
+        "unionAreaM2": 40000.0
+      },
+      "wfd": {
+        "areaM2": 40000.0,
+        "nativeIdentities": [
+          {
+            "classification_year": 2019,
+            "export_date": "2024-02-02T00:00:00Z",
+            "featureId": "Simplified_WFD_Transitional_and_Coastal_Water_Bodies_Cycle_3_Classification_2019.73",
+            "water_body_id": "GB510804505600",
+            "water_body_name": "EXE"
+          }
+        ]
+      }
+    },
+    {
+      "areaM2": 40000.0,
+      "bounds": [
+        297050,
+        87250,
+        297250,
+        87450
+      ],
+      "flood": {
+        "originAreaM2": {
+          "modelled": 11225.255,
+          "modelled and recorded": 25506.741
+        },
+        "zonesAreaM2": {
+          "FZ2": 1504.0,
+          "FZ3": 35227.996
+        }
+      },
+      "id": "P3",
+      "name": "Bowling Green anchor",
+      "phi": {
+        "nativeClaims": [
+          {
+            "addhabs": "CFPGM, RBEDS",
+            "featureId": "Priority_Habitat_Inventory_England.522792",
+            "habcodes": "LFENS",
+            "mainhabs": "Lowland fens",
+            "primsource": "BogBASE/FenBASE (LFENS)",
+            "uid": "PHID29729822_008745170",
+            "version": "Sept_26"
+          }
+        ],
+        "nativeHabitatsAreaM2": {
+          "Lowland fens": 22292.985
+        }
+      },
+      "raster": {
+        "March2024": {
+          "water not detected": 84
+        },
+        "MarchDetectedSeptemberNotDetected": 0,
+        "September2024": {
+          "water not detected": 84
+        },
+        "SeptemberDetectedMarchNotDetected": 0,
+        "anyMonthUnobserved": 0,
+        "bothMonthsObserved": 84,
+        "occurrence": {
+          "cellCentres": 84,
+          "meanOccurrencePercent": 0.0,
+          "noData255": 0,
+          "notWater0": 84,
+          "occurrence100": 0,
+          "positiveOccurrence1to99": 0,
+          "positiveRange": null
+        }
+      },
+      "rfo": {
+        "claims": [
+          {
+            "coastal_f": "False",
+            "data_prov": "Environment Agency",
+            "data_qual": "Fair",
+            "data_src": "Aerial Photography",
+            "end_date": "1979-12-31T00:00:00Z",
+            "featureId": "Recorded_Flood_Outlines.14648",
+            "flood_caus": "channel capacity exceeded (no raised defences)",
+            "flood_src": "main river",
+            "fluvial_f": "True",
+            "fm_status": "considered and rejected",
+            "hfm_status": "considered and accepted",
+            "interpretedTime": {
+              "nativeEnd": "1979-12-31T00:00:00Z",
+              "nativeStart": "1979-12-01T00:00:00Z",
+              "status": "published event interval; timestamp precision not established"
+            },
+            "intersectionAreaM2": 0.001,
+            "name": "River Exe: Exminster Marshes and Exe Estuary",
+            "rec_grp_id": 2529,
+            "rec_out_id": 16562,
+            "start_date": "1979-12-01T00:00:00Z",
+            "tidal_f": "False"
+          },
+          {
+            "coastal_f": "True",
+            "data_prov": "Environment Agency",
+            "data_qual": null,
+            "data_src": "Survey",
+            "end_date": "2014-02-05T00:00:00Z",
+            "featureId": "Recorded_Flood_Outlines.25870",
+            "flood_caus": "overtopping of defences",
+            "flood_src": "sea",
+            "fluvial_f": "False",
+            "fm_status": "considered and rejected",
+            "hfm_status": "considered and accepted",
+            "interpretedTime": {
+              "nativeEnd": "2014-02-05T00:00:00Z",
+              "nativeStart": "2014-02-04T00:00:00Z",
+              "status": "published event interval; timestamp precision not established"
+            },
+            "intersectionAreaM2": 4719.651,
+            "name": "Topsham Tidal Flood Feb 2014",
+            "rec_grp_id": 4124,
+            "rec_out_id": 31383,
+            "start_date": "2014-02-04T00:00:00Z",
+            "tidal_f": "True"
+          },
+          {
+            "coastal_f": "False",
+            "data_prov": "Environment Agency",
+            "data_qual": "Good",
+            "data_src": "Survey",
+            "end_date": "1980-12-31T00:00:00Z",
+            "featureId": "Recorded_Flood_Outlines.30542",
+            "flood_caus": "channel capacity exceeded (no raised defences)",
+            "flood_src": "main river",
+            "fluvial_f": "True",
+            "fm_status": "considered and rejected",
+            "hfm_status": "considered and rejected",
+            "interpretedTime": {
+              "nativeEnd": "1980-12-31T00:00:00Z",
+              "nativeStart": "1980-01-01T00:00:00Z",
+              "status": "published event interval; timestamp precision not established"
+            },
+            "intersectionAreaM2": 27382.857,
+            "name": "Clyst 1980",
+            "rec_grp_id": 3188,
+            "rec_out_id": 4085932,
+            "start_date": "1980-01-01T00:00:00Z",
+            "tidal_f": "False"
+          }
+        ],
+        "unionAreaM2": 29345.472
+      },
+      "wfd": {
+        "areaM2": 0.0,
+        "nativeIdentities": []
+      }
+    },
+    {
+      "areaM2": 40000.0,
+      "bounds": [
+        297550,
+        87500,
+        297750,
+        87700
+      ],
+      "flood": {
+        "originAreaM2": {
+          "modelled": 1524.911,
+          "modelled and recorded": 1567.089,
+          "recorded": 126.06
+        },
+        "zonesAreaM2": {
+          "FZ2": 126.06,
+          "FZ3": 3092.0
+        }
+      },
+      "id": "P4",
+      "name": "Goosemoor / Clyst-side anchor",
+      "phi": {
+        "nativeClaims": [
+          {
+            "addhabs": "",
+            "featureId": "Priority_Habitat_Inventory_England.588600",
+            "habcodes": "MUDFL",
+            "mainhabs": "Mudflats",
+            "primsource": "Biodiversity Key Resources Inventory - Environment Agency R&D Technical Report E2A 2002 (MUDFL)",
+            "uid": "PHID29756602_008780807",
+            "version": "Sept_26"
+          },
+          {
+            "addhabs": "",
+            "featureId": "Priority_Habitat_Inventory_England.700528",
+            "habcodes": "RBEDS, SALTM",
+            "mainhabs": "Reedbeds,Coastal saltmarsh",
+            "primsource": "Environment Agency Saltmarsh Extent and Zonation dataset 2019 (RBEDS), Environment Agency Saltmarsh Extent and Zonation dataset 2026 (SALTM)",
+            "uid": "PHID29754549_008760925",
+            "version": "Sept_26"
+          },
+          {
+            "addhabs": "MUDFL",
+            "featureId": "Priority_Habitat_Inventory_England.700529",
+            "habcodes": "RBEDS, SALTM",
+            "mainhabs": "Reedbeds,Coastal saltmarsh",
+            "primsource": "Environment Agency Saltmarsh Extent and Zonation dataset 2026 (RBEDS), Environment Agency Saltmarsh Extents 2009 (SALTM)",
+            "uid": "PHID29757440_008736435",
+            "version": "Sept_26"
+          },
+          {
+            "addhabs": "",
+            "featureId": "Priority_Habitat_Inventory_England.705169",
+            "habcodes": "SALTM",
+            "mainhabs": "Coastal saltmarsh",
+            "primsource": "Environment Agency Saltmarsh Extents 2009 (SALTM)",
+            "uid": "PHID29754566_008764074",
+            "version": "Sept_26"
+          },
+          {
+            "addhabs": "",
+            "featureId": "Priority_Habitat_Inventory_England.705172",
+            "habcodes": "SALTM",
+            "mainhabs": "Coastal saltmarsh",
+            "primsource": "Environment Agency Saltmarsh Extent and Zonation dataset 2026 (SALTM)",
+            "uid": "PHID29755334_008766312",
+            "version": "Sept_26"
+          },
+          {
+            "addhabs": "MUDFL",
+            "featureId": "Priority_Habitat_Inventory_England.705173",
+            "habcodes": "SALTM",
+            "mainhabs": "Coastal saltmarsh",
+            "primsource": "Environment Agency Saltmarsh Extent and Zonation dataset 2026 (SALTM)",
+            "uid": "PHID29756252_008770257",
+            "version": "Sept_26"
+          },
+          {
+            "addhabs": "",
+            "featureId": "Priority_Habitat_Inventory_England.705174",
+            "habcodes": "SALTM",
+            "mainhabs": "Coastal saltmarsh",
+            "primsource": "Environment Agency Saltmarsh Extent and Zonation dataset 2019 (SALTM)",
+            "uid": "PHID29756338_008774826",
+            "version": "Sept_26"
+          }
+        ],
+        "nativeHabitatsAreaM2": {
+          "Coastal saltmarsh": 785.129,
+          "Mudflats": 110.78,
+          "Reedbeds,Coastal saltmarsh": 772.402
+        }
+      },
+      "raster": {
+        "March2024": {
+          "water not detected": 88
+        },
+        "MarchDetectedSeptemberNotDetected": 0,
+        "September2024": {
+          "water not detected": 88
+        },
+        "SeptemberDetectedMarchNotDetected": 0,
+        "anyMonthUnobserved": 0,
+        "bothMonthsObserved": 88,
+        "occurrence": {
+          "cellCentres": 88,
+          "meanOccurrencePercent": 0.0,
+          "noData255": 0,
+          "notWater0": 88,
+          "occurrence100": 0,
+          "positiveOccurrence1to99": 0,
+          "positiveRange": null
+        }
+      },
+      "rfo": {
+        "claims": [
+          {
+            "coastal_f": "False",
+            "data_prov": "Environment Agency",
+            "data_qual": "Fair",
+            "data_src": "Aerial Photography",
+            "end_date": "1979-12-31T00:00:00Z",
+            "featureId": "Recorded_Flood_Outlines.14648",
+            "flood_caus": "channel capacity exceeded (no raised defences)",
+            "flood_src": "main river",
+            "fluvial_f": "True",
+            "fm_status": "considered and rejected",
+            "hfm_status": "considered and accepted",
+            "interpretedTime": {
+              "nativeEnd": "1979-12-31T00:00:00Z",
+              "nativeStart": "1979-12-01T00:00:00Z",
+              "status": "published event interval; timestamp precision not established"
+            },
+            "intersectionAreaM2": 626.675,
+            "name": "River Exe: Exminster Marshes and Exe Estuary",
+            "rec_grp_id": 2529,
+            "rec_out_id": 16562,
+            "start_date": "1979-12-01T00:00:00Z",
+            "tidal_f": "False"
+          },
+          {
+            "coastal_f": "False",
+            "data_prov": "Environment Agency",
+            "data_qual": null,
+            "data_src": "Survey",
+            "end_date": "1965-12-19T00:00:00Z",
+            "featureId": "Recorded_Flood_Outlines.22792",
+            "flood_caus": "channel capacity exceeded (no raised defences)",
+            "flood_src": "main river",
+            "fluvial_f": "True",
+            "fm_status": "considered and accepted",
+            "hfm_status": "considered and accepted",
+            "interpretedTime": {
+              "nativeEnd": "1965-12-19T00:00:00Z",
+              "nativeStart": "1965-12-19T00:00:00Z",
+              "status": "published event interval; timestamp precision not established"
+            },
+            "intersectionAreaM2": 856.885,
+            "name": "River Clyst/Brindle Brook: Dec 1965",
+            "rec_grp_id": 2474,
+            "rec_out_id": 26108,
+            "start_date": "1965-12-19T00:00:00Z",
+            "tidal_f": "False"
+          },
+          {
+            "coastal_f": "False",
+            "data_prov": "Environment Agency",
+            "data_qual": "Good",
+            "data_src": "Survey",
+            "end_date": "1980-12-31T00:00:00Z",
+            "featureId": "Recorded_Flood_Outlines.30542",
+            "flood_caus": "channel capacity exceeded (no raised defences)",
+            "flood_src": "main river",
+            "fluvial_f": "True",
+            "fm_status": "considered and rejected",
+            "hfm_status": "considered and rejected",
+            "interpretedTime": {
+              "nativeEnd": "1980-12-31T00:00:00Z",
+              "nativeStart": "1980-01-01T00:00:00Z",
+              "status": "published event interval; timestamp precision not established"
+            },
+            "intersectionAreaM2": 25.36,
+            "name": "Clyst 1980",
+            "rec_grp_id": 3188,
+            "rec_out_id": 4085932,
+            "start_date": "1980-01-01T00:00:00Z",
+            "tidal_f": "False"
+          }
+        ],
+        "unionAreaM2": 1483.56
+      },
+      "wfd": {
+        "areaM2": 1280.264,
+        "nativeIdentities": [
+          {
+            "classification_year": 2019,
+            "export_date": "2024-02-02T00:00:00Z",
+            "featureId": "Simplified_WFD_Transitional_and_Coastal_Water_Bodies_Cycle_3_Classification_2019.73",
+            "water_body_id": "GB510804505600",
+            "water_body_name": "EXE"
+          }
+        ]
+      }
+    },
+    {
+      "areaM2": 40000.0,
+      "bounds": [
+        295700,
+        87050,
+        295900,
+        87250
+      ],
+      "flood": {
+        "originAreaM2": {
+          "modelled": 11189.277,
+          "modelled and direct rainfall model": 1439.215,
+          "modelled and direct rainfall model and recorded": 2789.697,
+          "modelled and recorded": 24581.811
+        },
+        "zonesAreaM2": {
+          "FZ3": 40000.0
+        }
+      },
+      "id": "P5",
+      "name": "Exminster marsh interior",
+      "phi": {
+        "nativeClaims": [
+          {
+            "addhabs": "",
+            "featureId": "Priority_Habitat_Inventory_England.16774",
+            "habcodes": "CFPGM",
+            "mainhabs": "Coastal and floodplain grazing marsh",
+            "primsource": "Feedback from Natural England adviser or specialist 2024 (CFPGM)",
+            "uid": "PHID29564851_008718684",
+            "version": "Sept_26"
+          },
+          {
+            "addhabs": "",
+            "featureId": "Priority_Habitat_Inventory_England.16780",
+            "habcodes": "CFPGM",
+            "mainhabs": "Coastal and floodplain grazing marsh",
+            "primsource": "Feedback from Natural England adviser or specialist 2024 (CFPGM)",
+            "uid": "PHID29579610_008725283",
+            "version": "Sept_26"
+          },
+          {
+            "addhabs": "",
+            "featureId": "Priority_Habitat_Inventory_England.16783",
+            "habcodes": "CFPGM",
+            "mainhabs": "Coastal and floodplain grazing marsh",
+            "primsource": "Feedback from Natural England adviser or specialist 2024 (CFPGM)",
+            "uid": "PHID29585957_008675141",
+            "version": "Sept_26"
+          }
+        ],
+        "nativeHabitatsAreaM2": {
+          "Coastal and floodplain grazing marsh": 39910.117
+        }
+      },
+      "raster": {
+        "March2024": {
+          "no observations": 9,
+          "water not detected": 72
+        },
+        "MarchDetectedSeptemberNotDetected": 0,
+        "September2024": {
+          "water not detected": 81
+        },
+        "SeptemberDetectedMarchNotDetected": 0,
+        "anyMonthUnobserved": 9,
+        "bothMonthsObserved": 72,
+        "occurrence": {
+          "cellCentres": 81,
+          "meanOccurrencePercent": 0.0,
+          "noData255": 0,
+          "notWater0": 81,
+          "occurrence100": 0,
+          "positiveOccurrence1to99": 0,
+          "positiveRange": null
+        }
+      },
+      "rfo": {
+        "claims": [
+          {
+            "coastal_f": "False",
+            "data_prov": "Environment Agency",
+            "data_qual": "Fair",
+            "data_src": "Aerial Photography",
+            "end_date": "1960-10-31T00:00:00Z",
+            "featureId": "Recorded_Flood_Outlines.286",
+            "flood_caus": "channel capacity exceeded (no raised defences)",
+            "flood_src": "main river",
+            "fluvial_f": "True",
+            "fm_status": "considered and rejected",
+            "hfm_status": "considered and accepted",
+            "interpretedTime": {
+              "nativeEnd": "1960-10-31T00:00:00Z",
+              "nativeStart": "1960-10-01T00:00:00Z",
+              "status": "published event interval; timestamp precision not established"
+            },
+            "intersectionAreaM2": 40000.0,
+            "name": "River Exe: Exminster Marshes and Turf Locks",
+            "rec_grp_id": 2527,
+            "rec_out_id": 559,
+            "start_date": "1960-10-01T00:00:00Z",
+            "tidal_f": "False"
+          },
+          {
+            "coastal_f": "False",
+            "data_prov": "Environment Agency",
+            "data_qual": "Fair",
+            "data_src": "Aerial Photography",
+            "end_date": "1979-12-31T00:00:00Z",
+            "featureId": "Recorded_Flood_Outlines.14648",
+            "flood_caus": "channel capacity exceeded (no raised defences)",
+            "flood_src": "main river",
+            "fluvial_f": "True",
+            "fm_status": "considered and rejected",
+            "hfm_status": "considered and accepted",
+            "interpretedTime": {
+              "nativeEnd": "1979-12-31T00:00:00Z",
+              "nativeStart": "1979-12-01T00:00:00Z",
+              "status": "published event interval; timestamp precision not established"
+            },
+            "intersectionAreaM2": 40000.0,
+            "name": "River Exe: Exminster Marshes and Exe Estuary",
+            "rec_grp_id": 2529,
+            "rec_out_id": 16562,
+            "start_date": "1979-12-01T00:00:00Z",
+            "tidal_f": "False"
+          },
+          {
+            "coastal_f": "False",
+            "data_prov": null,
+            "data_qual": null,
+            "data_src": "Aerial Photography",
+            "end_date": "1992-12-31T00:00:00Z",
+            "featureId": "Recorded_Flood_Outlines.14890",
+            "flood_caus": "channel capacity exceeded (no raised defences)",
+            "flood_src": "main river",
+            "fluvial_f": "True",
+            "fm_status": "considered and rejected",
+            "hfm_status": "considered and accepted",
+            "interpretedTime": {
+              "nativeEnd": "1992-12-31T00:00:00Z",
+              "nativeStart": "1992-12-01T00:00:00Z",
+              "status": "published event interval; timestamp precision not established"
+            },
+            "intersectionAreaM2": 4015.658,
+            "name": "River Exe: Exminster Marshes",
+            "rec_grp_id": 2345,
+            "rec_out_id": 17337,
+            "start_date": "1992-12-01T00:00:00Z",
+            "tidal_f": "False"
+          },
+          {
+            "coastal_f": "False",
+            "data_prov": "Environment Agency",
+            "data_qual": "Good",
+            "data_src": "Survey",
+            "end_date": "1960-12-04T00:00:00Z",
+            "featureId": "Recorded_Flood_Outlines.23169",
+            "flood_caus": "channel capacity exceeded (no raised defences)",
+            "flood_src": "main river",
+            "fluvial_f": "True",
+            "fm_status": "considered and accepted",
+            "hfm_status": "considered and accepted",
+            "interpretedTime": {
+              "nativeEnd": "1960-12-04T00:00:00Z",
+              "nativeStart": "1960-12-04T00:00:00Z",
+              "status": "published event interval; timestamp precision not established"
+            },
+            "intersectionAreaM2": 27371.507,
+            "name": "River Exe: Dec 1960",
+            "rec_grp_id": 2496,
+            "rec_out_id": 26483,
+            "start_date": "1960-12-04T00:00:00Z",
+            "tidal_f": "False"
+          },
+          {
+            "coastal_f": "False",
+            "data_prov": "Environment Agency",
+            "data_qual": "Fair",
+            "data_src": "Survey",
+            "end_date": "1960-12-31T00:00:00Z",
+            "featureId": "Recorded_Flood_Outlines.28295",
+            "flood_caus": "channel capacity exceeded (no raised defences)",
+            "flood_src": "main river",
+            "fluvial_f": "True",
+            "fm_status": "considered and rejected",
+            "hfm_status": "considered and rejected",
+            "interpretedTime": {
+              "nativeEnd": "1960-12-31T00:00:00Z",
+              "nativeStart": "1960-01-01T00:00:00Z",
+              "status": "published event interval; timestamp precision not established"
+            },
+            "intersectionAreaM2": 40000.0,
+            "name": "River Exe: 1960",
+            "rec_grp_id": 3246,
+            "rec_out_id": 4094967,
+            "start_date": "1960-01-01T00:00:00Z",
+            "tidal_f": "False"
+          }
+        ],
+        "unionAreaM2": 40000.0
+      },
+      "wfd": {
+        "areaM2": 0.0,
+        "nativeIdentities": []
+      }
+    },
+    {
+      "areaM2": 40000.0,
+      "bounds": [
+        296750,
+        88250,
+        296950,
+        88450
+      ],
+      "flood": {
+        "originAreaM2": {},
+        "zonesAreaM2": {}
+      },
+      "id": "P6",
+      "name": "Topsham landward bank",
+      "phi": {
+        "nativeClaims": [],
+        "nativeHabitatsAreaM2": {}
+      },
+      "raster": {
+        "March2024": {
+          "water not detected": 84
+        },
+        "MarchDetectedSeptemberNotDetected": 0,
+        "September2024": {
+          "no observations": 4,
+          "water not detected": 80
+        },
+        "SeptemberDetectedMarchNotDetected": 0,
+        "anyMonthUnobserved": 4,
+        "bothMonthsObserved": 80,
+        "occurrence": {
+          "cellCentres": 84,
+          "meanOccurrencePercent": 0.0,
+          "noData255": 0,
+          "notWater0": 84,
+          "occurrence100": 0,
+          "positiveOccurrence1to99": 0,
+          "positiveRange": null
+        }
+      },
+      "rfo": {
+        "claims": [],
+        "unionAreaM2": 0.0
+      },
+      "wfd": {
+        "areaM2": 0.0,
+        "nativeIdentities": []
+      }
+    }
+  ],
+  "sourceFiles": {
+    "flood-catalogue.html": "ff5713b1b8301e95101cd08ec6d08f9d250bcdfd06d86c7c4f6dff35a2160566",
+    "flood-collection.json": "6f83442cbae1843c3ebbea7bb2ffa746359f238be38646e91d088628961fff06",
+    "flood-description.pdf": "9622f7af48de5f738dfa14f243c5f50282319c872d9b64f1edfae744b5f75385",
+    "flood-schema.json": "f26bdd21d23070584dfd5c64a3183e72044c49aabafb27cc0f0171cde2fa2cbb",
+    "flood.geojson": "199dd9d33ada752071d56cf0940596a2e0951bfbad09ca5e762a4810228d4388",
+    "grazing-marsh-definition.pdf": "aeb0ddfd9bce1db63c05c76714dfae2b6c41727e8d50d9516e352936fee72ddd",
+    "jrc-access.html": "8b8d8613efb3078b2c2f64c3a76ccdc6fbacdb7d35a7654be2bb98314eb81e62",
+    "jrc-guide.pdf": "94aebddbb2d66bcbacea14326d84d0b9d9401c8ef95bc48b42991448f36b839b",
+    "monthly-2024-03-listing.json": "57e681a997c33c4019f24fbb9361927260bb6548034de71a1f9e324bb9b85360",
+    "monthly-2024-03.tif": "336c5746c4d1145bf212fa65b7c2ff11d7f5691b17ded1d6eb7127a72ca311c6",
+    "monthly-2024-09-listing.json": "eca93456aa48c865280564f847f1b124cc878af970e614373e21912bcf786abe",
+    "monthly-2024-09.tif": "e5e51bd87b72668dfaf84a65cc9f7bec10ef326002a9bb0d0b77b786c6737499",
+    "occurrence-listing.json": "d0b4157aba16c2dce585e99c80f0c79c8ea3e7727428f8a6f7a79f0e677acb81",
+    "occurrence.tif": "adb86f717cb37c23b7a36d79d123c79bd865a556ef61897e8f6c664d14c742b6",
+    "ogl3.html": "f5b2b9f2af63647cde889fa6c3508f5705925295b74912c68caa28dd37e64aa5",
+    "phi-attributes.pdf": "f3744b98b1db0b32ba48ddf6fbde9f119547151fb2f02d1398c95067aab48b97",
+    "phi-catalogue.html": "c9eea28045677de0ec9b1b14109762b06fda4189cfc4c1d765ea4d19bc14fd0d",
+    "phi-collection.json": "81c101f304c25fe3034fdca1845152a31f9208d3555b05edff026161dd3a7745",
+    "phi-lineage.xlsx": "b33a536f142bd6410f6daf79d9be81c36cc8329f9be0833d40204319b5bc858a",
+    "phi-schema.json": "2aae721448b162c7b3977f7c7b8a6a8742baa092b24f04bafc19d1b803a1c3bc",
+    "phi-spatial.pdf": "f112a00d842466aa2698e45214697f06249810a9779697f2cd526851489fc944",
+    "phi.geojson": "7500807fd1a383941e00b2ab5e4925159f1ba97c3e651640a0a89fc5c2b4a2a9",
+    "rfo-catalogue.html": "bde2087f5291d6404b82bff596f130db4d4a8f8a2eb0675b137bd92fffeb394a",
+    "rfo-collection.json": "c3c92e822a8a177c64c4053291ec6ec73d6ed87c536d8f0c0dace25913565cf9",
+    "rfo-description.pdf": "c75dd7c8c8ea617a1bb7044a92aa9e56f8fae719b37958371b832209b4749d44",
+    "rfo-schema.json": "b2170f0e304e12d33e9b11b4800890c5ebe25bf9c12224e2b1f71595770c7960",
+    "rfo.geojson": "ee1f4a7c7264dc73ee3073f3dc7ae3b7313409e48172dc2cf2feac536ad8087b",
+    "wfd-catalogue.html": "6cebba72b13eb2f16af1c3058d593cd144613b742cb54322f23f13a24df64b59",
+    "wfd-collection.json": "fa4d11ea9029991183a24bd35836208898b88ba642b8f1dc1f290db1854ce4ae",
+    "wfd-schema.json": "afd9f693cf0b41c3d931971b9a69be750d2bcb6b4f0e65f61d558060ee374e5b",
+    "wfd.geojson": "ed2b3bc7affff3b82857b3f3818ef31a925ee992a7202e4bd93049711a62d520"
+  }
+}

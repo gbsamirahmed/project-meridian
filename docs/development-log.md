@@ -3840,3 +3840,18 @@ new DEM/imagery, correction, traversability or Weather parameter inference.
 AWS visual TerrainHierarchy, independent analytical z15, exaggeration1.45, IGOR,
 MapTiler satellite/opacity/suppression, Weather, Traverse and lifecycle unchanged.
 Elevation/multiscale remain closed; externally provisioned multiview stays parked.
+
+## 2026-10-06 — Atlas water feature/state check
+
+Completed the second/final physical-surface empirical stress test, **SUCCESS**:
+[upper-Exe water evidence](atlas/water-feature-state-check.md). Retained five small
+source products/four families, 10.5km² pre-frozen window and six probes. WFD reference
+identity, PHI habitat, JRC monthly/occurrence, EA flood planning zones and dated flood
+records demonstrate feature/state/event/reference-condition distinctions and mixed
+lineage. Source-native meaning, claim-local time/quality, mapping loss and absence
+reason remain necessary; no global water class or product ranking. Inference role
+remains LIMITED. Research-only acquisition/diagnostics/synthetic tests and receipts;
+raw evidence external. Enough evidence now exists for a separate minimal semantic
+evidence contract; no implementation or freeze performed. Production, analytical
+terrain, IGOR, imagery, Weather, Traverse and lifecycle unchanged. Elevation/multiscale
+closed; multiview parked. No new layers, hydrology, classifier or semantic runtime.

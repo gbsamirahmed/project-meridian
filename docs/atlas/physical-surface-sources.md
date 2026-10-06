@@ -451,3 +451,42 @@ other inventory products remain unacquired:
 Exact queries, attribution requirements, retained identities and byte counts are
 in [the receipt manifest](semantic-comparison-sources.json). No paid/restricted
 UKCEH raster, canopy model, new imagery or new elevation was acquired.
+
+## 2026-10-06 — water feature/state source check
+
+The [upper-Exe empirical report](water-feature-state-check.md) retains five products
+from four families, a 10.5km² BNG window and six pre-frozen 200m probes. New facts:
+
+- [EA WFD Cycle3 classification2019 simplified](https://www.data.gov.uk/dataset/52fa8958-ea30-46fc-8ecb-f31ea8f89aa6/water-framework-directive-wfd-transitional-and-coastal-water-bodies-cycle-3-classification-20191)
+  exposes named EXE `GB510804505600` and MHW/OS OpenMap Local/UWWTD-derived geometry.
+  This is an assessment-unit/reference boundary, not current wet extent. OGL, EA2024
+  and OS2024 attribution; classification2019/export2024 differs from later catalogue.
+- [NE Priority Habitats Inventory](https://www.data.gov.uk/dataset/4b6ddab7-6c0f-4407-946e-d6499f19fcde/priority-habitats-inventory-england)
+  supports small OGC Features BNG queries. All 280 local native features are `Sept_26`,
+  although linked catalogue/spatial-document revisions are 2025. Main/additional
+  habitats, UID and primary-source descriptions preserve mixed contributors and
+  different vintages. Reedbed/saltmarsh co-membership is explicit, not an exclusive
+  label or fraction. Local contributor-year strings do not establish acquisition
+  dates. OGL plus contributor notices/CC-BY4; complete NE/OS/contributor notices
+  retained in source metadata. No universal local MMU or probability established.
+- [JRC GSW v1.5 access](https://global-surface-water.appspot.com/download) now links
+  a public CloudFerro object listing: retained native occurrence1984–2024 and
+  March/September2024 history windows. These files use 0.00025° grids (locally
+  approximately 17.67×27.81m), distinct from nominal 30 m Landsat sampling. Monthly0
+  is no observations,1 non-detection,2 detection; not a local confidence score or
+  instantaneous tide/state. Later extensions do not inherit original validation
+  automatically. Copernicus reuse requires EC JRC/Google/Pekel2016 acknowledgement.
+- [EA Flood Zones](https://www.data.gov.uk/dataset/104434b0-5263-4c90-9b1e-e43b1d57c750/flood-map-for-planning-flood-zones1)
+  current present-day product has mixed modelled/recorded/direct-rainfall origins.
+  Annual-probability and ignored-defence convention are reference conditions, not
+  observations of water now. OGL/EA2025; revision2026-05-20; sub-model vintage unknown.
+- [EA Recorded Flood Outlines](https://www.data.gov.uk/dataset/16e32c53-35a6-4d54-a111-ca09031eaaaf/recorded-flood-outlines1)
+  provides outline/group IDs, event intervals, boundary evidence and qualitative
+  outline quality. Revision2026-09-16; OGL/EA2025. No record means no held record,
+  not no past flood. Guidance6.2 documents unknown 2050 dates; no such sentinel in
+  this local set. Historical defences/conditions can differ from today.
+
+Receipts/hashes/exact queries and rights are in [water-check-sources.json](water-check-sources.json).
+Raw source/document payloads remain external; no restricted source or national
+archive, new terrain or imagery acquired. This updates source facts only; it does
+not establish a water ontology, runtime, classifier or semantic evidence contract.

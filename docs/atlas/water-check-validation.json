@@ -1,0 +1,15 @@
+{
+  "applicationValidation": "Not run: no shared production/runtime change",
+  "finalDiff": "Research code/metadata/report and navigation/inventory only; no production/source changes",
+  "localMarkdownReferencesChecked": 158,
+  "offlineRepeatExact": true,
+  "planSha256": "04a9deefbf7ae763268ff9d0974624239c5f02b12ec688fd36927f26a94f2415",
+  "plotRepeatExact": true,
+  "plotSha256": "80bbd4ec58d1376336b00c396e75356f87ea8d23c4e4115fc180e51dff054034",
+  "productionHashesMatched": 113,
+  "resultSha256": "d490f30bc64b89c7bb6034dee0515496011d42a88a6a4c5d06b49d6631298538",
+  "sourceHashValidation": "All retained source receipt entries verified in offline comparison",
+  "sourceScope": "Five products/four families; one fixed window; six pre-frozen probes; no imagery/DEM/frame acquisition",
+  "startingCommit": "c4da56577c27f56ee1a5829e85d8daa951a517c1",
+  "syntheticTests": 16
+}

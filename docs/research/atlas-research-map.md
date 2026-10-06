@@ -326,3 +326,18 @@ for fine/current exposure and fractions, with recoverability still unproved.
 Next is only the separately authorized lowland/estuary water feature/state check;
 no extra mountain comparison is required. Elevation/multiscale stay closed; multiview
 stays parked. Production, Weather and Traverse remain unchanged.
+
+## 2026-10-06 — water feature/state empirical stress test
+
+[Upper-Exe water check](../atlas/water-feature-state-check.md): **SUCCESS**. Five
+products from four open families, one 10.5km² footprint/six frozen probes. Named WFD
+reference unit, habitat, observation-derived history, planning probability zones
+and dated flood-event records make different compatible/complementary claims.
+Feature identity/state/event/reference conditions and mixed evidence origins must
+remain distinguishable; claim-local time/quality/unknown reason survive. Wetland is
+not open water; no-observation is not non-detection; modelled zone is not current
+state. Native source meanings and mapping loss remain first-class. Inference remains
+LIMITED. Mountain plus water evidence is sufficient for the separately authorized
+minimal semantic evidence contract; no further empirical blocker/benchmark. That
+contract is not started here. Production/Weather/Traverse unchanged; multiscale
+closed and multiview parked; no hydrology, semantic runtime or classifier.

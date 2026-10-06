@@ -1,0 +1,13 @@
+{
+  "recordedUtc": "2026-10-06T11:20:10.511120+00:00",
+  "originalPlanSha256": "04a9deefbf7ae763268ff9d0974624239c5f02b12ec688fd36927f26a94f2415",
+  "additionalProduct": "EA Recorded Flood Outlines; fifth product, within existing EA flood evidence family",
+  "reason": "Flood-zone Origin includes recorded evidence but lacks event identities/dates. Add bounded event inventory to test event versus state from actual records. Addition decided after inspecting flood Origin fields, before any RFO local values. No probe/footprint changes.",
+  "rightsGate": "Official EA catalogue OGL, EA2025 notice; verified before extraction.",
+  "bounds": [
+    295000,
+    86000,
+    298500,
+    89000
+  ]
+}

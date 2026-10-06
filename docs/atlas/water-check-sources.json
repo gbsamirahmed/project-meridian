@@ -1,0 +1,608 @@
+{
+  "acquisitionNoteSha256": "2b86444bd9998514e252089181db6101a686b304731e7b6fa58a6e2187d224d8",
+  "coordinateOperation": {
+    "approximateCellMetresAtBenchmarkCentre": [
+      17.670619748641215,
+      27.8105264978189
+    ],
+    "nativeJrcGridDegrees": [
+      0.00025,
+      0.00025
+    ],
+    "nominalObservationSampling": "Landsat30m; geographic delivery cells vary in ground dimensions",
+    "rasterCentres": "4326 to27700 always_xy; OSGB36/WGS84 operation6 counterpart declared2m accuracy; no grid download. No survey-accuracy claim.",
+    "vectors": "Native EPSG27700 unchanged"
+  },
+  "dataRoot": "meridian-data/derived/atlas/water-check-v1",
+  "environment": {
+    "certifi": "2026.7.22",
+    "matplotlib": "3.10.6",
+    "numpy": "2.5.3",
+    "pypdf": "6.19.0",
+    "pyproj": "3.7.2",
+    "python": "3.12.6",
+    "rasterio": "1.4.3",
+    "shapely": "2.1.2"
+  },
+  "excess": "Complete intersecting API polygons may extend beyond frozen window. Raster compressed native blocks read remotely; no 10-degree TIFF downloaded in full; wire bytes unknown.",
+  "familyRights": {
+    "Flood Zones": {
+      "attribution": "EA2025",
+      "licence": "OGL3",
+      "nativeVersion": "Present-day Flood Zones; catalogue revision2026-05-20/update2026-07-06; modelled/recorded/mixed Origins preserved"
+    },
+    "GSW": {
+      "attribution": "Source: EC JRC/Google; Pekel et al.2016 DOI10.1038/nature20584",
+      "licence": "Copernicus free reuse with acknowledgement",
+      "nativeVersion": "v1.5 occurrence1984-2024, monthly2024-03/09"
+    },
+    "PHI": {
+      "attribution": "Natural England / OS plus full contributor notices retained in phi-spatial.pdf and catalogue HTML; preserve when redistributing extracts",
+      "licence": "OGL3 with contributor CC-BY4 notices",
+      "nativeVersion": "All280 retained features Sept_26; catalogue revision2025-10-23 and spatial metadata revision2025-10-01 are older, not local observation dates"
+    },
+    "RFO": {
+      "attribution": "EA2025",
+      "licence": "OGL3",
+      "nativeVersion": "Catalogue revision2026-09-16/update2026-09-18; guidance6.2 August2025; event dates retained"
+    },
+    "WFD": {
+      "attribution": "EA2024 and OS Crown/database2024",
+      "licence": "OGL3",
+      "nativeVersion": "Cycle3 classification2019, export_date2024-02-02; metadata revision2024-03-01, publication2025-06-23; catalogue updated2026-09-18"
+    }
+  },
+  "files": [
+    {
+      "bytes": 6020,
+      "file": "wfd-collection.json",
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": null,
+        "Last-Modified": null
+      },
+      "licence": "OGL3, EA/OS credit as applicable",
+      "retrievedUtc": "2026-10-06T11:18:10.314756+00:00",
+      "sha256": "fa4d11ea9029991183a24bd35836208898b88ba642b8f1dc1f290db1854ce4ae",
+      "url": "https://environment.data.gov.uk/spatialdata/simplified-wfd-transitional-and-coastal-water-bodies-cycle-3-classification-2019/ogc/features/v1/collections/Simplified_WFD_Transitional_and_Coastal_Water_Bodies_Cycle_3_Classification_2019?f=json"
+    },
+    {
+      "bytes": 5205,
+      "file": "wfd-schema.json",
+      "headers": {
+        "Content-Type": "application/schema+json",
+        "ETag": null,
+        "Last-Modified": null
+      },
+      "licence": "OGL3",
+      "retrievedUtc": "2026-10-06T11:18:10.688094+00:00",
+      "sha256": "afd9f693cf0b41c3d931971b9a69be750d2bcb6b4f0e65f61d558060ee374e5b",
+      "url": "https://environment.data.gov.uk/spatialdata/simplified-wfd-transitional-and-coastal-water-bodies-cycle-3-classification-2019/ogc/features/v1/collections/Simplified_WFD_Transitional_and_Coastal_Water_Bodies_Cycle_3_Classification_2019/queryables?f=json"
+    },
+    {
+      "bytes": 34267,
+      "file": "wfd.geojson",
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": null,
+        "Last-Modified": null
+      },
+      "licence": "OGL3; retain publisher/contributor credits",
+      "retrievedUtc": "2026-10-06T11:18:11.061030+00:00",
+      "sha256": "ed2b3bc7affff3b82857b3f3818ef31a925ee992a7202e4bd93049711a62d520",
+      "url": "https://environment.data.gov.uk/spatialdata/simplified-wfd-transitional-and-coastal-water-bodies-cycle-3-classification-2019/ogc/features/v1/collections/Simplified_WFD_Transitional_and_Coastal_Water_Bodies_Cycle_3_Classification_2019/items?f=json&bbox=295000%2C86000%2C298500%2C89000&bbox-crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F27700&crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F27700&limit=2000"
+    },
+    {
+      "bytes": 4960,
+      "file": "phi-collection.json",
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": null,
+        "Last-Modified": null
+      },
+      "licence": "OGL3; PHI contributor CC-BY4 notice retained",
+      "retrievedUtc": "2026-10-06T11:18:11.178619+00:00",
+      "sha256": "81c101f304c25fe3034fdca1845152a31f9208d3555b05edff026161dd3a7745",
+      "url": "https://environment.data.gov.uk/spatialdata/priority-habitat-inventory-england/ogc/features/v1/collections/Priority_Habitat_Inventory_England?f=json"
+    },
+    {
+      "bytes": 1508,
+      "file": "phi-schema.json",
+      "headers": {
+        "Content-Type": "application/schema+json",
+        "ETag": null,
+        "Last-Modified": null
+      },
+      "licence": "OGL3",
+      "retrievedUtc": "2026-10-06T11:18:11.399875+00:00",
+      "sha256": "2aae721448b162c7b3977f7c7b8a6a8742baa092b24f04bafc19d1b803a1c3bc",
+      "url": "https://environment.data.gov.uk/spatialdata/priority-habitat-inventory-england/ogc/features/v1/collections/Priority_Habitat_Inventory_England/queryables?f=json"
+    },
+    {
+      "bytes": 3666881,
+      "file": "phi.geojson",
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": null,
+        "Last-Modified": null
+      },
+      "licence": "OGL3; retain publisher/contributor credits",
+      "retrievedUtc": "2026-10-06T11:18:11.767619+00:00",
+      "sha256": "7500807fd1a383941e00b2ab5e4925159f1ba97c3e651640a0a89fc5c2b4a2a9",
+      "url": "https://environment.data.gov.uk/spatialdata/priority-habitat-inventory-england/ogc/features/v1/collections/Priority_Habitat_Inventory_England/items?f=json&bbox=295000%2C86000%2C298500%2C89000&bbox-crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F27700&crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F27700&limit=2000"
+    },
+    {
+      "bytes": 4872,
+      "file": "flood-collection.json",
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": null,
+        "Last-Modified": null
+      },
+      "licence": "OGL3, EA/OS credit as applicable",
+      "retrievedUtc": "2026-10-06T11:18:11.916517+00:00",
+      "sha256": "6f83442cbae1843c3ebbea7bb2ffa746359f238be38646e91d088628961fff06",
+      "url": "https://environment.data.gov.uk/spatialdata/flood-map-for-planning-flood-zones/ogc/features/v1/collections/Flood_Zones_2_3_Rivers_and_Sea?f=json"
+    },
+    {
+      "bytes": 1143,
+      "file": "flood-schema.json",
+      "headers": {
+        "Content-Type": "application/schema+json",
+        "ETag": null,
+        "Last-Modified": null
+      },
+      "licence": "OGL3",
+      "retrievedUtc": "2026-10-06T11:18:12.049287+00:00",
+      "sha256": "f26bdd21d23070584dfd5c64a3183e72044c49aabafb27cc0f0171cde2fa2cbb",
+      "url": "https://environment.data.gov.uk/spatialdata/flood-map-for-planning-flood-zones/ogc/features/v1/collections/Flood_Zones_2_3_Rivers_and_Sea/queryables?f=json"
+    },
+    {
+      "bytes": 3512241,
+      "file": "flood.geojson",
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": null,
+        "Last-Modified": null
+      },
+      "licence": "OGL3; retain publisher/contributor credits",
+      "retrievedUtc": "2026-10-06T11:18:12.429441+00:00",
+      "sha256": "199dd9d33ada752071d56cf0940596a2e0951bfbad09ca5e762a4810228d4388",
+      "url": "https://environment.data.gov.uk/spatialdata/flood-map-for-planning-flood-zones/ogc/features/v1/collections/Flood_Zones_2_3_Rivers_and_Sea/items?f=json&bbox=295000%2C86000%2C298500%2C89000&bbox-crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F27700&crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F27700&limit=2000"
+    },
+    {
+      "bytes": 4706,
+      "file": "rfo-collection.json",
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": null,
+        "Last-Modified": null
+      },
+      "licence": "OGL3, EA/OS credit as applicable",
+      "retrievedUtc": "2026-10-06T11:20:11.316696+00:00",
+      "sha256": "c3c92e822a8a177c64c4053291ec6ec73d6ed87c536d8f0c0dace25913565cf9",
+      "url": "https://environment.data.gov.uk/spatialdata/recorded-flood-outlines/ogc/features/v1/collections/Recorded_Flood_Outlines?f=json"
+    },
+    {
+      "bytes": 1778,
+      "file": "rfo-schema.json",
+      "headers": {
+        "Content-Type": "application/schema+json",
+        "ETag": null,
+        "Last-Modified": null
+      },
+      "licence": "OGL3",
+      "retrievedUtc": "2026-10-06T11:20:11.446942+00:00",
+      "sha256": "b2170f0e304e12d33e9b11b4800890c5ebe25bf9c12224e2b1f71595770c7960",
+      "url": "https://environment.data.gov.uk/spatialdata/recorded-flood-outlines/ogc/features/v1/collections/Recorded_Flood_Outlines/queryables?f=json"
+    },
+    {
+      "bytes": 548075,
+      "file": "rfo.geojson",
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": null,
+        "Last-Modified": null
+      },
+      "licence": "OGL3; retain publisher/contributor credits",
+      "retrievedUtc": "2026-10-06T11:20:11.629194+00:00",
+      "sha256": "ee1f4a7c7264dc73ee3073f3dc7ae3b7313409e48172dc2cf2feac536ad8087b",
+      "url": "https://environment.data.gov.uk/spatialdata/recorded-flood-outlines/ogc/features/v1/collections/Recorded_Flood_Outlines/items?f=json&bbox=295000%2C86000%2C298500%2C89000&bbox-crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F27700&crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F27700&limit=2000"
+    },
+    {
+      "bytes": 36740,
+      "file": "rfo-catalogue.html",
+      "headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "ETag": null,
+        "Last-Modified": null
+      },
+      "licence": "Publisher documentation; rights and notices retained",
+      "retrievedUtc": "2026-10-06T11:20:11.822593+00:00",
+      "sha256": "bde2087f5291d6404b82bff596f130db4d4a8f8a2eb0675b137bd92fffeb394a",
+      "url": "https://www.data.gov.uk/dataset/16e32c53-35a6-4d54-a111-ca09031eaaaf/recorded-flood-outlines1"
+    },
+    {
+      "bytes": 194250,
+      "file": "rfo-description.pdf",
+      "headers": {
+        "Content-Type": "application/pdf",
+        "ETag": null,
+        "Last-Modified": null
+      },
+      "licence": "Publisher documentation; rights and notices retained",
+      "retrievedUtc": "2026-10-06T11:20:12.283990+00:00",
+      "sha256": "c75dd7c8c8ea617a1bb7044a92aa9e56f8fae719b37958371b832209b4749d44",
+      "url": "https://environment.data.gov.uk/file-management-open/data-sets/ed73f2e8-a3c2-44db-952d-6e359c7c3987/files/Guidance_Recorded_Flood_Outline_v6_2.pdf"
+    },
+    {
+      "bytes": 75055,
+      "file": "grazing-marsh-definition.pdf",
+      "headers": {
+        "Content-Type": "application/pdf",
+        "ETag": "\"9be061770b8eafc3309f1844445aea2f\"",
+        "Last-Modified": "Mon, 04 Mar 2024 12:20:51 GMT"
+      },
+      "licence": "Publisher documentation; rights and notices retained",
+      "retrievedUtc": "2026-10-06T11:20:12.461964+00:00",
+      "sha256": "aeb0ddfd9bce1db63c05c76714dfae2b6c41727e8d50d9516e352936fee72ddd",
+      "url": "https://data.jncc.gov.uk/data/82b0af67-d19a-4a89-b987-9dba73be1272/UKBAP-BAPHabitats-07-CoastFloodGrazingMarsh.pdf"
+    },
+    {
+      "bytes": 41058,
+      "file": "wfd-catalogue.html",
+      "headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "ETag": null,
+        "Last-Modified": null
+      },
+      "licence": "Publisher documentation; rights and notices retained",
+      "retrievedUtc": "2026-10-06T11:18:12.622408+00:00",
+      "sha256": "6cebba72b13eb2f16af1c3058d593cd144613b742cb54322f23f13a24df64b59",
+      "url": "https://www.data.gov.uk/dataset/52fa8958-ea30-46fc-8ecb-f31ea8f89aa6/water-framework-directive-wfd-transitional-and-coastal-water-bodies-cycle-3-classification-20191"
+    },
+    {
+      "bytes": 40482,
+      "file": "phi-catalogue.html",
+      "headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "ETag": null,
+        "Last-Modified": null
+      },
+      "licence": "Publisher documentation; rights and notices retained",
+      "retrievedUtc": "2026-10-06T11:18:12.930099+00:00",
+      "sha256": "c9eea28045677de0ec9b1b14109762b06fda4189cfc4c1d765ea4d19bc14fd0d",
+      "url": "https://www.data.gov.uk/dataset/4b6ddab7-6c0f-4407-946e-d6499f19fcde/priority-habitats-inventory-england"
+    },
+    {
+      "bytes": 36527,
+      "file": "flood-catalogue.html",
+      "headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "ETag": null,
+        "Last-Modified": null
+      },
+      "licence": "Publisher documentation; rights and notices retained",
+      "retrievedUtc": "2026-10-06T11:18:13.287275+00:00",
+      "sha256": "ff5713b1b8301e95101cd08ec6d08f9d250bcdfd06d86c7c4f6dff35a2160566",
+      "url": "https://www.data.gov.uk/dataset/104434b0-5263-4c90-9b1e-e43b1d57c750/flood-map-for-planning-flood-zones1"
+    },
+    {
+      "bytes": 85521,
+      "file": "phi-attributes.pdf",
+      "headers": {
+        "Content-Type": "application/pdf",
+        "ETag": null,
+        "Last-Modified": null
+      },
+      "licence": "Publisher documentation; rights and notices retained",
+      "retrievedUtc": "2026-10-06T11:18:13.984087+00:00",
+      "sha256": "f3744b98b1db0b32ba48ddf6fbde9f119547151fb2f02d1398c95067aab48b97",
+      "url": "https://environment.data.gov.uk/api/file/download?fileDataSetId=d30e3fa2-5ca6-4851-b19d-1429ad9d84e0&fileName=Priority_Habitats_Inventory_Attribute_Metadata.pdf"
+    },
+    {
+      "bytes": 115586,
+      "file": "phi-spatial.pdf",
+      "headers": {
+        "Content-Type": "application/pdf",
+        "ETag": null,
+        "Last-Modified": null
+      },
+      "licence": "Publisher documentation; rights and notices retained",
+      "retrievedUtc": "2026-10-06T11:18:14.586116+00:00",
+      "sha256": "f112a00d842466aa2698e45214697f06249810a9779697f2cd526851489fc944",
+      "url": "https://environment.data.gov.uk/api/file/download?fileDataSetId=d30e3fa2-5ca6-4851-b19d-1429ad9d84e0&fileName=Priority_Habitats_Inventory_Spatial_Metadata.pdf"
+    },
+    {
+      "bytes": 25214,
+      "file": "phi-lineage.xlsx",
+      "headers": {
+        "Content-Type": "application/octet-stream",
+        "ETag": null,
+        "Last-Modified": null
+      },
+      "licence": "Publisher documentation; rights and notices retained",
+      "retrievedUtc": "2026-10-06T11:18:15.111558+00:00",
+      "sha256": "b33a536f142bd6410f6daf79d9be81c36cc8329f9be0833d40204319b5bc858a",
+      "url": "https://environment.data.gov.uk/api/file/download?fileDataSetId=d30e3fa2-5ca6-4851-b19d-1429ad9d84e0&fileName=PHI%20V3%20Datasets.xlsx"
+    },
+    {
+      "bytes": 203978,
+      "file": "flood-description.pdf",
+      "headers": {
+        "Content-Type": "application/pdf",
+        "ETag": null,
+        "Last-Modified": null
+      },
+      "licence": "Publisher documentation; rights and notices retained",
+      "retrievedUtc": "2026-10-06T11:18:15.601847+00:00",
+      "sha256": "9622f7af48de5f738dfa14f243c5f50282319c872d9b64f1edfae744b5f75385",
+      "url": "https://environment.data.gov.uk/api/file/download?fileDataSetId=455d2eb3-3065-4d20-871b-c4d5dee23f67&fileName=Flood%20Zones%20Product%20Description.pdf"
+    },
+    {
+      "bytes": 1142853,
+      "file": "jrc-guide.pdf",
+      "headers": {
+        "Content-Type": "application/pdf",
+        "ETag": "\"7893174feca61acb7a124151035a5efe\"",
+        "Last-Modified": "Tue, 23 Jun 2026 12:25:15 GMT"
+      },
+      "licence": "Publisher documentation; rights and notices retained",
+      "retrievedUtc": "2026-10-06T11:18:15.779160+00:00",
+      "sha256": "94aebddbb2d66bcbacea14326d84d0b9d9401c8ef95bc48b42991448f36b839b",
+      "url": "https://storage.googleapis.com/water-world/downloads_ancillary/DataUsersGuidev2024_v.5.pdf"
+    },
+    {
+      "bytes": 85116,
+      "file": "jrc-access.html",
+      "headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "ETag": null,
+        "Last-Modified": null
+      },
+      "licence": "Publisher documentation; rights and notices retained",
+      "retrievedUtc": "2026-10-06T11:18:16.090718+00:00",
+      "sha256": "8b8d8613efb3078b2c2f64c3a76ccdc6fbacdb7d35a7654be2bb98314eb81e62",
+      "url": "https://global-surface-water.appspot.com/download"
+    },
+    {
+      "bytes": 10450,
+      "file": "ogl3.html",
+      "headers": {
+        "Content-Type": "text/html",
+        "ETag": null,
+        "Last-Modified": null
+      },
+      "licence": "Publisher documentation; rights and notices retained",
+      "retrievedUtc": "2026-10-06T11:18:16.148562+00:00",
+      "sha256": "f5b2b9f2af63647cde889fa6c3508f5705925295b74912c68caa28dd37e64aa5",
+      "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+    },
+    {
+      "bytes": 234,
+      "file": "occurrence-listing.json",
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": null,
+        "Last-Modified": "Wed, 01 Jul 2026 07:28:19 GMT"
+      },
+      "licence": "Copernicus reuse, EC JRC/Google, Pekel et al.2016",
+      "retrievedUtc": "2026-10-06T11:18:16.320988+00:00",
+      "sha256": "d0b4157aba16c2dce585e99c80f0c79c8ea3e7727428f8a6f7a79f0e677acb81",
+      "url": "https://s3.waw4-1.cloudferro.com/swift/v1/global-surface-water/?format=json&prefix=download2024%2FAggregated%2FVER1-5%2Foccurrence%2Foccurrence_10W_60N_v1_5_2024.tif&limit=2"
+    },
+    {
+      "bytes": 4453,
+      "file": "occurrence.tif",
+      "licence": "Copernicus reuse; Source: EC JRC/Google; Pekel et al.2016 DOI10.1038/nature20584",
+      "parentListing": [
+        {
+          "bytes": 110064004,
+          "content_type": "application/octet-stream",
+          "hash": "88b360d937d6bfdc417c7c96c9996152-1",
+          "last_modified": "2026-07-01T10:28:31.453Z",
+          "name": "download2024/Aggregated/VER1-5/occurrence/occurrence_10W_60N_v1_5_2024.tif"
+        }
+      ],
+      "sha256": "adb86f717cb37c23b7a36d79d123c79bd865a556ef61897e8f6c664d14c742b6",
+      "subset": {
+        "blockShape": [
+          512,
+          512
+        ],
+        "operation": "Native integer grid window; no reprojection/resampling; lossless re-encoding. Cell-centre selection only in analysis.",
+        "parentSha256Known": false,
+        "retrievedUtc": "2026-10-06T11:18:16.764822+00:00",
+        "sourceCrs": "EPSG:4326",
+        "sourceNodata": null,
+        "sourceShape": [
+          40000,
+          40000
+        ],
+        "sourceTransform": [
+          0.00025,
+          0.0,
+          -9.999999999999886,
+          0.0,
+          -0.00025,
+          59.999999999999986,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "sourceUrl": "https://s3.waw4-1.cloudferro.com/swift/v1/global-surface-water/download2024/Aggregated/VER1-5/occurrence/occurrence_10W_60N_v1_5_2024.tif",
+        "window": [
+          26048,
+          37232,
+          202,
+          112
+        ],
+        "windowTransform": [
+          0.00025,
+          0.0,
+          -3.487999999999886,
+          0.0,
+          -0.00025,
+          50.691999999999986,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "wireBytesKnown": false
+      },
+      "url": "https://s3.waw4-1.cloudferro.com/swift/v1/global-surface-water/download2024/Aggregated/VER1-5/occurrence/occurrence_10W_60N_v1_5_2024.tif"
+    },
+    {
+      "bytes": 226,
+      "file": "monthly-2024-03-listing.json",
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": null,
+        "Last-Modified": "Wed, 01 Jul 2026 07:28:19 GMT"
+      },
+      "licence": "Copernicus reuse, EC JRC/Google, Pekel et al.2016",
+      "retrievedUtc": "2026-10-06T11:18:16.870300+00:00",
+      "sha256": "57e681a997c33c4019f24fbb9361927260bb6548034de71a1f9e324bb9b85360",
+      "url": "https://s3.waw4-1.cloudferro.com/swift/v1/global-surface-water/?format=json&prefix=MonthlyHistory%2F2024%2F2024_03%2Fmonthlyhistory_10W_60N_v1_5_2024_03.tif&limit=2"
+    },
+    {
+      "bytes": 1443,
+      "file": "monthly-2024-03.tif",
+      "licence": "Copernicus reuse; Source: EC JRC/Google; Pekel et al.2016 DOI10.1038/nature20584",
+      "parentListing": [
+        {
+          "bytes": 28567680,
+          "content_type": "application/octet-stream",
+          "hash": "0ee424d18dd3918cf557a478c8528409-1",
+          "last_modified": "2026-10-05T14:35:44.885Z",
+          "name": "MonthlyHistory/2024/2024_03/monthlyhistory_10W_60N_v1_5_2024_03.tif"
+        }
+      ],
+      "sha256": "336c5746c4d1145bf212fa65b7c2ff11d7f5691b17ded1d6eb7127a72ca311c6",
+      "subset": {
+        "blockShape": [
+          1024,
+          1024
+        ],
+        "operation": "Native integer grid window; no reprojection/resampling; lossless re-encoding. Cell-centre selection only in analysis.",
+        "parentSha256Known": false,
+        "retrievedUtc": "2026-10-06T11:18:17.064598+00:00",
+        "sourceCrs": "EPSG:4326",
+        "sourceNodata": null,
+        "sourceShape": [
+          40000,
+          40000
+        ],
+        "sourceTransform": [
+          0.00025,
+          0.0,
+          -9.999999999999886,
+          0.0,
+          -0.00025,
+          59.999999999999986,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "sourceUrl": "https://s3.waw4-1.cloudferro.com/swift/v1/global-surface-water/MonthlyHistory/2024/2024_03/monthlyhistory_10W_60N_v1_5_2024_03.tif",
+        "window": [
+          26048,
+          37232,
+          202,
+          112
+        ],
+        "windowTransform": [
+          0.00025,
+          0.0,
+          -3.487999999999886,
+          0.0,
+          -0.00025,
+          50.691999999999986,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "wireBytesKnown": false
+      },
+      "url": "https://s3.waw4-1.cloudferro.com/swift/v1/global-surface-water/MonthlyHistory/2024/2024_03/monthlyhistory_10W_60N_v1_5_2024_03.tif"
+    },
+    {
+      "bytes": 226,
+      "file": "monthly-2024-09-listing.json",
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": null,
+        "Last-Modified": "Wed, 01 Jul 2026 07:28:19 GMT"
+      },
+      "licence": "Copernicus reuse, EC JRC/Google, Pekel et al.2016",
+      "retrievedUtc": "2026-10-06T11:18:17.194670+00:00",
+      "sha256": "eca93456aa48c865280564f847f1b124cc878af970e614373e21912bcf786abe",
+      "url": "https://s3.waw4-1.cloudferro.com/swift/v1/global-surface-water/?format=json&prefix=MonthlyHistory%2F2024%2F2024_09%2Fmonthlyhistory_10W_60N_v1_5_2024_09.tif&limit=2"
+    },
+    {
+      "bytes": 1522,
+      "file": "monthly-2024-09.tif",
+      "licence": "Copernicus reuse; Source: EC JRC/Google; Pekel et al.2016 DOI10.1038/nature20584",
+      "parentListing": [
+        {
+          "bytes": 24030644,
+          "content_type": "application/octet-stream",
+          "hash": "3dece159f4941f67b7e9195ca646bec2-2",
+          "last_modified": "2026-10-05T14:57:14.469Z",
+          "name": "MonthlyHistory/2024/2024_09/monthlyhistory_10W_60N_v1_5_2024_09.tif"
+        }
+      ],
+      "sha256": "e5e51bd87b72668dfaf84a65cc9f7bec10ef326002a9bb0d0b77b786c6737499",
+      "subset": {
+        "blockShape": [
+          1024,
+          1024
+        ],
+        "operation": "Native integer grid window; no reprojection/resampling; lossless re-encoding. Cell-centre selection only in analysis.",
+        "parentSha256Known": false,
+        "retrievedUtc": "2026-10-06T11:18:17.358968+00:00",
+        "sourceCrs": "EPSG:4326",
+        "sourceNodata": null,
+        "sourceShape": [
+          40000,
+          40000
+        ],
+        "sourceTransform": [
+          0.00025,
+          0.0,
+          -9.999999999999886,
+          0.0,
+          -0.00025,
+          59.999999999999986,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "sourceUrl": "https://s3.waw4-1.cloudferro.com/swift/v1/global-surface-water/MonthlyHistory/2024/2024_09/monthlyhistory_10W_60N_v1_5_2024_09.tif",
+        "window": [
+          26048,
+          37232,
+          202,
+          112
+        ],
+        "windowTransform": [
+          0.00025,
+          0.0,
+          -3.487999999999886,
+          0.0,
+          -0.00025,
+          50.691999999999986,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "wireBytesKnown": false
+      },
+      "url": "https://s3.waw4-1.cloudferro.com/swift/v1/global-surface-water/MonthlyHistory/2024/2024_09/monthlyhistory_10W_60N_v1_5_2024_09.tif"
+    }
+  ],
+  "freezeOrderVerified": true,
+  "planSha256": "04a9deefbf7ae763268ff9d0974624239c5f02b12ec688fd36927f26a94f2415",
+  "retainedBytes": 9892590,
+  "totalDirectoryBytes": 9923141
+}

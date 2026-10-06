@@ -1,0 +1,158 @@
+{
+  "id": "upper-exe-water-semantics-v1",
+  "startingCommit": "c4da56577c27f56ee1a5829e85d8daa951a517c1",
+  "frozenUtc": "2026-10-06T11:15:13.686195+00:00",
+  "freezeOrder": "After documentation/rights and candidate geography screen; before any local semantic feature or raster retrieval. No results inspected.",
+  "crs": "EPSG:27700",
+  "bounds": [
+    295000,
+    86000,
+    298500,
+    89000
+  ],
+  "areaKm2": 10.5,
+  "candidates": [
+    {
+      "site": "Upper Exe / Topsham",
+      "decision": "selected",
+      "reason": "Compact Exe/Clyst confluence, tidal estuary, managed marsh and canal context; four open families expose identity/reference, habitat, observation history and scenario propositions. RSPB published grid references fix geographical anchors."
+    },
+    {
+      "site": "Deben / Woodbridge",
+      "decision": "not acquired",
+      "reason": "Authoritative SMP describes reclaimed intertidal land; meets tidal semantics, but no extra distinction required beyond Exe."
+    },
+    {
+      "site": "Medway estuary",
+      "decision": "not acquired",
+      "reason": "Authoritative EA strategy describes tidal defences/habitat; larger and more complex industrial/channel system unnecessary for this bounded check."
+    }
+  ],
+  "selectionSources": [
+    "https://www.rspb.org.uk/days-out/reserves/bowling-green-and-goosemoor/location",
+    "https://www.rspb.org.uk/days-out/reserves/exminster-and-powderham-marshes/location",
+    "https://www.rspb.org.uk/days-out/reserves/exminster-and-powderham-marshes",
+    "https://environment.data.gov.uk/shoreline-planning/documents/SMP7%2FAppendix%20I-%20Estuaries%20Assessment.PDF",
+    "https://www.gov.uk/government/publications/medway-estuary-and-swale-flood-and-coastal-risk-management-strategy/medway-estuary-and-swale-flood-and-coastal-risk-management-strategy"
+  ],
+  "probes": [
+    {
+      "id": "P1",
+      "name": "Exe channel",
+      "bounds": [
+        296600,
+        86550,
+        296800,
+        86750
+      ],
+      "centre": [
+        296700,
+        86650
+      ],
+      "rationale": "Channel opportunity south of confluence; test persistent feature versus detected water history.",
+      "selection": "Geographical anchors/opportunities, not semantic ground truth. Fixed 200m square; no relocation after results."
+    },
+    {
+      "id": "P2",
+      "name": "Exe eastern margin",
+      "bounds": [
+        296750,
+        87000,
+        296950,
+        87200
+      ],
+      "centre": [
+        296850,
+        87100
+      ],
+      "rationale": "Intertidal-margin opportunity; no assertion about exact current wet edge.",
+      "selection": "Geographical anchors/opportunities, not semantic ground truth. Fixed 200m square; no relocation after results."
+    },
+    {
+      "id": "P3",
+      "name": "Bowling Green anchor",
+      "bounds": [
+        297050,
+        87250,
+        297250,
+        87450
+      ],
+      "centre": [
+        297150,
+        87350
+      ],
+      "rationale": "Published reserve grid reference vicinity; managed wetland/state comparison.",
+      "selection": "Geographical anchors/opportunities, not semantic ground truth. Fixed 200m square; no relocation after results."
+    },
+    {
+      "id": "P4",
+      "name": "Goosemoor / Clyst-side anchor",
+      "bounds": [
+        297550,
+        87500,
+        297750,
+        87700
+      ],
+      "centre": [
+        297650,
+        87600
+      ],
+      "rationale": "East of Bowling Green at named Clyst/Exe junction; wetland and tidal-margin opportunity.",
+      "selection": "Geographical anchors/opportunities, not semantic ground truth. Fixed 200m square; no relocation after results."
+    },
+    {
+      "id": "P5",
+      "name": "Exminster marsh interior",
+      "bounds": [
+        295700,
+        87050,
+        295900,
+        87250
+      ],
+      "centre": [
+        295800,
+        87150
+      ],
+      "rationale": "East of published reserve entrance, within marsh landscape; floodable land and habitat opportunity.",
+      "selection": "Geographical anchors/opportunities, not semantic ground truth. Fixed 200m square; no relocation after results."
+    },
+    {
+      "id": "P6",
+      "name": "Topsham landward bank",
+      "bounds": [
+        296750,
+        88250,
+        296950,
+        88450
+      ],
+      "centre": [
+        296850,
+        88350
+      ],
+      "rationale": "Landward bank control north of confluence; no preassertion that surface is dry or immune to flooding.",
+      "selection": "Geographical anchors/opportunities, not semantic ground truth. Fixed 200m square; no relocation after results."
+    }
+  ],
+  "families": [
+    "EA WFD transitional/coastal Cycle3 classification2019 simplified",
+    "NE Priority Habitats Inventory",
+    "JRC GSW v1.5 occurrence1984-2024 and monthly history2024",
+    "EA Flood Map for Planning present-day Flood Zones"
+  ],
+  "rightsGate": "Checked official catalogue OGL for EA; PHI OGL3 plus contributor CC-BY4 notice; JRC free Copernicus reuse with EC JRC/Google and Pekel2016 credit. Retain notices. No restricted products.",
+  "budgets": {
+    "vectorQueryFeaturesMax": 2000,
+    "responseBytesMax": 12000000,
+    "rasterNativeWindowMaxPixels": 100000,
+    "noNationalArchive": true
+  },
+  "analysis": "Native polygons retained; area intersections in BNG. JRC native cell centres inside fixed polygons, no interpolation or harmonised raster. Compare claims, not truth or a quality score. No imagery classification/tide reconstruction.",
+  "jrcLayers": {
+    "occurrence": "1984-2024",
+    "monthlyHistory": [
+      "2024-03",
+      "2024-09"
+    ],
+    "reason": "Predetermined half-year-separated months, before retrieving any local values; tests time-local detection and no-observation states, not tide or flood-event selection."
+  }
+}
