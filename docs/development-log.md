@@ -3688,3 +3688,30 @@ orderable by quotation, not currently public TIFF assets; no contact/order made.
 No aerial pixels, thumbnails, reconstruction/correction, runtime or production
 changes; no normal-CI external assets. Next is the bounded two-frame source-pixel
 comparison after provisioning confirmation, not executed here. Elevation remains closed.
+
+## 2026-10-06 — Atlas multiscale representation baseline
+
+Completed [research and production characterization](atlas/multiscale-representation.md)
+from clean e3edd0f with origin divergence 0/0. Frozen physical 128→0.125 m/CSS-pixel
+mountain sequences and two existing rolling/low-relief controls produce 54 matched
+captures on unchanged production or explicit research configurations. Actual tile
+telemetry distinguishes geometry from relief refinement; pitched surface probes show
+anisotropic sampling. The pinned MapLibre hillshade shader adds implicit source-level
+derivative gain to the unchanged explicit IGOR curve. Retained SWISSIMAGE gains remain
+useful but screenshot frequency is not a universal quality measure. Fixed read-only
+terrain spectra express physical wavelengths without accuracy/morphology claims.
+
+Bounded primary-source review supports discrete product eligibility/coherent parents,
+local screen-space footprints and independent continuous portrayal. No universal three
+modes, new geometry-generalization requirement or production strength tuning. Next is
+one isolated relief-depiction experiment with fixed geometry, then a scoped display/
+selection envelope; morphology preparation is conditional, not another elevation branch.
+TerrainHierarchy/Appearance proposal remain intact; multiview waits on provisioning.
+
+Ten asset-free synthetic tests, repeated byte-identical diagnostics, all 100 Swiss DEM
+source hashes/four imagery sources, product/capture/camera checks and 113 production
+source hashes pass. Lint, syntax, local-reference and diff checks pass. Upstream
+rasterio/NumPy warnings are non-failing. No runtime edits require application tests/build;
+normal CI has no external-data requirement. Large captures stay in meridian-data.
+No production, IGOR, exaggeration 1.45, satellite, Weather/Traverse or analytical elevation
+changes, new source data, correction, multiview work or reopened elevation research.

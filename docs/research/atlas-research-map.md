@@ -5,7 +5,7 @@ Lab 012G evidence checkpoint `abf95bcfb50c681244a146626565a471ba791418`.
 This index records knowledge and research status, not a roadmap, new Lab or
 production architecture. It is the starting point for humans and fresh tooling.
 
-## Current programme boundary — appearance
+## Current programme boundary — multiscale representation
 
 **REGIONAL ELEVATION FOUNDATION = ESTABLISHED** by the
 [real Wales/Tryfan proof](../atlas/tryfan-second-region-proof.md). No further
@@ -24,8 +24,8 @@ is PARTIAL: footprint coverage exists without calibrated target rays or visibili
 That branch remains closed without pixels. The [Swiss 2026 benchmark selection](../atlas/swiss-multiview-benchmark.md)
 uses public frame centres/GORI/footprints to freeze one 60 m target and two same-strip
 observations. Source pixels require official individual-frame provisioning by quotation;
-no contact/order occurred. Next is the bounded two-frame information comparison,
-subject to access confirmation. Correction/reconstruction and appearance runtime remain deferred.
+no contact/order occurred. The multiview branch now waits for external source-image
+provisioning; it is not the active task. Correction/reconstruction and appearance runtime remain deferred.
 This is a new explicitly bounded programme, not a reopened 012A–012G Lab.
 
 ## Read before changing Atlas
@@ -49,8 +49,13 @@ This is a new explicitly bounded programme, not a reopened 012A–012G Lab.
    Keep experiments bounded, products external, provenance reproducible and evidence
    classes distinct. Never silently promote experimental findings into architecture.
 
-Current return point: the completed source-derived baseline and its one bounded
-acquisition/multiview-support prerequisite above. The historical
+Current return point: the [multiscale representation baseline and synthesis](../atlas/multiscale-representation.md).
+The frozen physical camera sequences, 54 matched captures and read-only wavelength
+diagnostics distinguish source eligibility, geometry, relief and imagery sampling.
+Production remains unchanged; no three viewing modes or new generalization algorithm
+is established. Next is one bounded experiment isolating relief depiction from fixed
+geometry, then information-aware display/selection characterization. The waiting
+multiview branch and closed elevation foundation remain independent. The historical
 012A–012G handoff did not select a next architecture or experiment. The pre-012F
 [finite programme](../earth-lab/riffelhorn-visual-synthesis-and-experiment-design.md)
 is historical; its two core slots were used and its conditional third was refused.

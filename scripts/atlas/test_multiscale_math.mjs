@@ -1,0 +1,7 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {WORLD,metresPerPixel,zoomForScale,surfaceMetric,igorStrength} from './multiscale_math.mjs';
+const near=(a,b,t=1e-9)=>assert.ok(Math.abs(a-b)<t,`${a} != ${b}`);
+test('Mercator latitude, tile-size and zoom distinctions',()=>{near(metresPerPixel(0,0),WORLD/512);near(metresPerPixel(60,10),metresPerPixel(0,10)/2);near(metresPerPixel(45,10,256),2*metresPerPixel(45,10));for(const lat of [0,45,53.115])for(const m of [128,32,8,2,.5,.125])near(metresPerPixel(lat,zoomForScale(lat,m)),m);assert.throws(()=>zoomForScale(0,0));assert.throws(()=>metresPerPixel(90,5));});
+test('Surface differential separates horizontal, slope and perspective axes',()=>{const degree=180/(Math.PI*6378137),o=[0,0,0];const flat=surfaceMetric(o,[2*degree,0,0],[0,-2*degree,0]);near(flat.surfaceAreaPerPixel,1);near(flat.principalMajor,1);const slope=surfaceMetric(o,[2*degree,0,2],[0,-2*degree,0]);near(slope.surfaceX,Math.sqrt(2));near(slope.principalMajor,Math.sqrt(2));near(slope.principalMinor,1);const oblique=surfaceMetric(o,[2*degree,0,0],[0,-8*degree,0]);near(oblique.anisotropy,4);assert.throws(()=>surfaceMetric(o,o,o,0));});
+test('Continuous relief curve is audited, not changed',()=>{const s=[[5.5,0],[7,.09],[9,.3],[11,.54],[12,.45],[13,.36],[14,.33],[15,.3],[16,.3]];near(igorStrength(10,s),.42);near(igorStrength(20,s),.3);near(igorStrength(5,s),0);});
