@@ -1,0 +1,455 @@
+{
+  "id": "atlas-scale-separated-relief-v1",
+  "baseline": "3d406aee212a5be071728d85db443111e483e7bf",
+  "cameraPlanSha256": "e69e14c79596c450bf15ad9b3cd4dd899178a4a7c94887c07076677db9301719",
+  "scenes": [
+    {
+      "id": "tryfan-128m",
+      "site": "tryfan",
+      "center": [
+        -3.999,
+        53.115
+      ],
+      "targetMetresPerCssPixel": 128,
+      "zoom": 8.519741083832674,
+      "pitch": 0,
+      "bearing": 0,
+      "igorStrength": 0.24957281380243077
+    },
+    {
+      "id": "tryfan-32m",
+      "site": "tryfan",
+      "center": [
+        -3.999,
+        53.115
+      ],
+      "targetMetresPerCssPixel": 32,
+      "zoom": 10.519741083832674,
+      "pitch": 0,
+      "bearing": 0,
+      "igorStrength": 0.4823689300599209
+    },
+    {
+      "id": "tryfan-8m",
+      "site": "tryfan",
+      "center": [
+        -3.999,
+        53.115
+      ],
+      "targetMetresPerCssPixel": 8,
+      "zoom": 12.519741083832674,
+      "pitch": 0,
+      "bearing": 0,
+      "igorStrength": 0.40322330245505933
+    },
+    {
+      "id": "tryfan-2m",
+      "site": "tryfan",
+      "center": [
+        -3.999,
+        53.115
+      ],
+      "targetMetresPerCssPixel": 2,
+      "zoom": 14.519741083832674,
+      "pitch": 0,
+      "bearing": 0,
+      "igorStrength": 0.3144077674850198
+    },
+    {
+      "id": "tryfan-0.5m",
+      "site": "tryfan",
+      "center": [
+        -3.999,
+        53.115
+      ],
+      "targetMetresPerCssPixel": 0.5,
+      "zoom": 16.519741083832674,
+      "pitch": 0,
+      "bearing": 0,
+      "igorStrength": 0.3
+    },
+    {
+      "id": "tryfan-0.125m",
+      "site": "tryfan",
+      "center": [
+        -3.999,
+        53.115
+      ],
+      "targetMetresPerCssPixel": 0.125,
+      "zoom": 18.519741083832674,
+      "pitch": 0,
+      "bearing": 0,
+      "igorStrength": 0.3
+    },
+    {
+      "id": "tryfan-8m-p55",
+      "site": "tryfan",
+      "center": [
+        -3.999,
+        53.115
+      ],
+      "targetMetresPerCssPixel": 8,
+      "zoom": 12.519741083832674,
+      "pitch": 55,
+      "bearing": 0,
+      "igorStrength": 0.40322330245505933
+    },
+    {
+      "id": "tryfan-0.5m-p55",
+      "site": "tryfan",
+      "center": [
+        -3.999,
+        53.115
+      ],
+      "targetMetresPerCssPixel": 0.5,
+      "zoom": 16.519741083832674,
+      "pitch": 55,
+      "bearing": 0,
+      "igorStrength": 0.3
+    },
+    {
+      "id": "riffelhorn-128m",
+      "site": "riffelhorn",
+      "center": [
+        7.76121329,
+        45.97910794
+      ],
+      "targetMetresPerCssPixel": 128,
+      "zoom": 8.731119882088368,
+      "pitch": 0,
+      "bearing": 0,
+      "igorStrength": 0.27176758761927866
+    },
+    {
+      "id": "riffelhorn-32m",
+      "site": "riffelhorn",
+      "center": [
+        7.76121329,
+        45.97910794
+      ],
+      "targetMetresPerCssPixel": 32,
+      "zoom": 10.731119882088368,
+      "pitch": 0,
+      "bearing": 0,
+      "igorStrength": 0.5077343858506043
+    },
+    {
+      "id": "riffelhorn-8m",
+      "site": "riffelhorn",
+      "center": [
+        7.76121329,
+        45.97910794
+      ],
+      "targetMetresPerCssPixel": 8,
+      "zoom": 12.731119882088368,
+      "pitch": 0,
+      "bearing": 0,
+      "igorStrength": 0.38419921061204687
+    },
+    {
+      "id": "riffelhorn-2m",
+      "site": "riffelhorn",
+      "center": [
+        7.76121329,
+        45.97910794
+      ],
+      "targetMetresPerCssPixel": 2,
+      "zoom": 14.731119882088368,
+      "pitch": 0,
+      "bearing": 0,
+      "igorStrength": 0.30806640353734893
+    },
+    {
+      "id": "riffelhorn-0.5m",
+      "site": "riffelhorn",
+      "center": [
+        7.76121329,
+        45.97910794
+      ],
+      "targetMetresPerCssPixel": 0.5,
+      "zoom": 16.731119882088368,
+      "pitch": 0,
+      "bearing": 0,
+      "igorStrength": 0.3
+    },
+    {
+      "id": "riffelhorn-0.125m",
+      "site": "riffelhorn",
+      "center": [
+        7.76121329,
+        45.97910794
+      ],
+      "targetMetresPerCssPixel": 0.125,
+      "zoom": 18.731119882088368,
+      "pitch": 0,
+      "bearing": 0,
+      "igorStrength": 0.3
+    },
+    {
+      "id": "riffelhorn-8m-p55",
+      "site": "riffelhorn",
+      "center": [
+        7.76121329,
+        45.97910794
+      ],
+      "targetMetresPerCssPixel": 8,
+      "zoom": 12.731119882088368,
+      "pitch": 55,
+      "bearing": 0,
+      "igorStrength": 0.38419921061204687
+    },
+    {
+      "id": "riffelhorn-0.5m-p55",
+      "site": "riffelhorn",
+      "center": [
+        7.76121329,
+        45.97910794
+      ],
+      "targetMetresPerCssPixel": 0.5,
+      "zoom": 16.731119882088368,
+      "pitch": 55,
+      "bearing": 0,
+      "igorStrength": 0.3
+    },
+    {
+      "id": "downs-128m",
+      "site": "downs",
+      "center": [
+        -0.766,
+        50.908
+      ],
+      "targetMetresPerCssPixel": 128,
+      "zoom": 8.590922378181507,
+      "pitch": 0,
+      "bearing": 0,
+      "igorStrength": 0.25704684970905817
+    },
+    {
+      "id": "downs-8m",
+      "site": "downs",
+      "center": [
+        -0.766,
+        50.908
+      ],
+      "targetMetresPerCssPixel": 8,
+      "zoom": 12.590922378181507,
+      "pitch": 0,
+      "bearing": 0,
+      "igorStrength": 0.39681698596366444
+    },
+    {
+      "id": "downs-0.5m",
+      "site": "downs",
+      "center": [
+        -0.766,
+        50.908
+      ],
+      "targetMetresPerCssPixel": 0.5,
+      "zoom": 16.590922378181507,
+      "pitch": 0,
+      "bearing": 0,
+      "igorStrength": 0.3
+    },
+    {
+      "id": "cambridge-128m",
+      "site": "cambridge",
+      "center": [
+        0.12,
+        52.2
+      ],
+      "targetMetresPerCssPixel": 128,
+      "zoom": 8.549939998554946,
+      "pitch": 0,
+      "bearing": 0,
+      "igorStrength": 0.2527436998482693
+    },
+    {
+      "id": "cambridge-8m",
+      "site": "cambridge",
+      "center": [
+        0.12,
+        52.2
+      ],
+      "targetMetresPerCssPixel": 8,
+      "zoom": 12.549939998554946,
+      "pitch": 0,
+      "bearing": 0,
+      "igorStrength": 0.40050540013005487
+    },
+    {
+      "id": "cambridge-0.5m",
+      "site": "cambridge",
+      "center": [
+        0.12,
+        52.2
+      ],
+      "targetMetresPerCssPixel": 0.5,
+      "zoom": 16.549939998554947,
+      "pitch": 0,
+      "bearing": 0,
+      "igorStrength": 0.3
+    }
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "devicePixelRatio": 1,
+  "productionHashes": {
+    "src/app/App.css": "ea5d02599894e1537800a3d8323bcca48a91741739b1b8a3eca772adc28488a1",
+    "src/app/App.tsx": "f76e834f8ad1b72d730187eb8897822003645b0a4c6a094dda99552ca55296c6",
+    "src/app/components/DesktopWorkspace.tsx": "d4cab9c141f55f6ec39e4469be2fefd783bdb02da1d7079fefec8c42985ba076",
+    "src/app/components/DetailWorkspace.tsx": "b515ad9b98c6f21c19d0efd5f4a541adb8659ac62bf5b5fd6754b86c8ab33b57",
+    "src/app/components/ForecastTimeline.tsx": "79293a07c531ed69131a6de44d4fde2e72ef37b8b5e8dfc7380a6985bb531b25",
+    "src/app/components/ForecastWorkspace.tsx": "73e19599fea7886877e6f5020af1cefbbe2e2ef6cd3d7cd411b4cf0af0157b0a",
+    "src/app/components/GlobalSettings.tsx": "d2e9f7f526fc7584c9f71dc0ab4c5d12d848552ba426705be7af254550612aca",
+    "src/app/components/LayerLegend.tsx": "38fea16e62c825c596a914fe7e3fef55369c7a0e70b29b3063632a81b8d521c2",
+    "src/app/components/LayerPanel.tsx": "63d61d515f0beee7dd245e4a5d95b7223267d386b4b04af226adb34d0e2cb6dc",
+    "src/app/components/MapControls.tsx": "117a0ec745659343ef5277aa687b79c1589b4d36eeb37bb8a64e5979b536fe85",
+    "src/app/components/MobileWorkspace.tsx": "51e227da8c771fdef2dd190ba6b99b471d58cf10d078ea2e68efcd1b4252dd4c",
+    "src/app/map/MeridianMap.tsx": "932e7bf5524bf4dc86faca593da07415209f9c9b217cc409b518346d0739dc15",
+    "src/app/state/desktopControlOptions.ts": "a4899073b8ec4f0b7eff7cfe8bfb95c1404f113d9d609dd2ef1dd6bf180e7f76",
+    "src/app/state/desktopWorkspaceState.ts": "a9139bb07fbd4bb21d8b138e699ee9582ef53a29096e10e3cf6b813731df67c9",
+    "src/app/state/mapOverlayState.ts": "ec9bba17b43684a487c0700728b635b9b6848a1be9d0d90c777cebc8995216c2",
+    "src/atlas/location/location.ts": "bb8a27d61d002ad563e0548137e6cd5afb7bfdd6a9784971abe8413085e81b80",
+    "src/atlas/location/locationService.ts": "d5ffe5441c75ea616e3dda61864ea61393da1afc3d3d9cf09eb38d145cb4fa41",
+    "src/atlas/location/nominatimClient.ts": "5c78d52c93bd6b815300ee021ec5f4324a6fe5a1cf80def672b9dd7d722a9fd1",
+    "src/atlas/location/place.ts": "a7bf42c9fcb4fade83dafa76afe71b30cfdcf9fee0d8910b1f7b08250b706414",
+    "src/atlas/location/searchService.ts": "93d64e602c4676a4d92001468fbf411d8c8f4f061f6f66aff433dc51cb53ff15",
+    "src/atlas/map/AtlasMap.ts": "cb45f5963716d636e903ed515008b66dab2fca0ab6d2aa28214a8c6303ef4b05",
+    "src/atlas/map/atlasAttribution.ts": "5ad92ae99bbbdbe586b520a42630a28b78fed2229d6da3377b85c384939c2595",
+    "src/atlas/map/atlasVisuals.ts": "48426ab2132d5192069254ec9fe3fb7d9d433c2c9059f6f2223166c34c22dcfc",
+    "src/atlas/map/mapLayerAnchors.ts": "744a415158451a3c779fddb51ff458220264c24c0b0b6070a37eef1d9888cc26",
+    "src/atlas/map/mapTypes.ts": "40634ce861c9dd70c09d919e84f2f11a6a696a3d614db3326a474ac1b40aa5ab",
+    "src/atlas/map/satelliteLayer.ts": "ffcd24310e5a2ef7d1485528f42fb39d52b8b2503b138fb51efd385412cd715e",
+    "src/atlas/map/satelliteProvider.ts": "1f5c44821ecb05e04fbe5884450d3e52adbb7944c6330bc8994915aeeeb49015",
+    "src/atlas/map/terrainDeliveryAdapter.ts": "e9140b4e025df3925558100337eb9d6448b2d4a20ac3d93cbc99326b4733d92a",
+    "src/atlas/map/terrainLayers.ts": "c71099083d3184d5c70c148ea2c3f0574b0b170fb0737b9c041df579ed4e5497",
+    "src/atlas/map/visualTerrainConfig.ts": "583da7dc4ac885bf1a9a4b440c45d71d24c0ddfc9212b58772914ab9ccce0920",
+    "src/atlas/terrain/analyticalElevationConfig.ts": "6fd90c2fb39dc925c8de90cf6b7cf3a907696d71cc116e42563255addb41a9bb",
+    "src/atlas/terrain/metadata/awsVisualTerrainProduct.ts": "9919460bd899961dccdae1db4608ab17ac7bad660a34598dea8c7cf24469eabd",
+    "src/atlas/terrain/metadata/terrainHierarchy.ts": "d80fe85ff6f379df9fbe9f565c7a2af3d4700ecc1f4b8a08c99b8a786f76fca7",
+    "src/atlas/terrain/metadata/terrainHierarchyExamples.ts": "6dcd03e183ed67bbbfad8add0de257931a1157be691f51a8e7cc0c50e34a35fa",
+    "src/atlas/terrain/metadata/terrainHierarchyValidation.ts": "7a475de2ad2724952dcbfb77acf1b14512535079cc23828807b6d11eb09caafc",
+    "src/atlas/terrain/metadata/terrainMetadata.ts": "4055f9b2282f98fcc0faac0ca5f90c9462799871ab377b4e93fcb854aa45b06a",
+    "src/atlas/terrain/metadata/terrainMetadataExamples.ts": "81b4fb58e0a6a5bf1d1d2442027899917afb7ebf5c44710f3d0ffb69c44f1895",
+    "src/atlas/terrain/metadata/terrainMetadataValidation.ts": "4ca00e0d22ee9cf06be74f4a34845b7ebdad171ce828837eab79912bf666f8c4",
+    "src/atlas/terrain/metadata/tryfanProductRecord.json": "510a559ea70ea16f6d7a5d2308e924dce872d6f6322b41619df02aac8d9e6fed",
+    "src/atlas/terrain/metadata/tryfanTerrainProof.ts": "f25fbc48b0ddd7b4029d08913e18187728129965e76a90dee0f13e3db9153405",
+    "src/atlas/terrain/runtime/productionTerrainHierarchy.ts": "5cb97ad259fd9eb688fdc7ae4f4558b6df611b7b223a17d3f1f2966226b0b47b",
+    "src/atlas/terrain/runtime/terrainRegistry.ts": "6a6529a50096fc72cea62b4c7887878410c9b7efc575c878e8d731c767d8b7ab",
+    "src/atlas/terrain/runtime/terrainSelector.ts": "b2a9c906d0ce1ad8dedb229cc175242df5f5cfa596473e379f069c8561b45646",
+    "src/atlas/terrain/runtime/terrainSpatialEligibility.ts": "b5bf076c16eeff47d35b6252bc26813720695e406ed4ba6581a391979ef114d8",
+    "src/atlas/terrain/terrainElevationSampler.ts": "d941ad5474ff7370da4e67c135018a777ed440d84bf00cff0f536600270f1b7b",
+    "src/index.css": "da09f95eedd39e2c3dac79fad48aba408b6b8868cbf16db5191626c0532dd679",
+    "src/main.tsx": "c08fd49e5b5b8f4880f2440407591ad436e716e72e0dc6ec5c0c3fe11f353a2f",
+    "src/traverse/components/DerivedConditionContext.tsx": "3c1bf3837e398309ba252a0e32806bc92d2ed7fa7125bbd5e1deca0009ba7d3f",
+    "src/traverse/components/JourneyOverview.tsx": "a95d7f69efc52da639b0f3f8ff038252adbf7d58447e5e7a57ff283afced9b02",
+    "src/traverse/components/JourneySettings.tsx": "eb961aa06b0143e210d78e3ce88b03d299ab812ce9b07919b7f27f4e01bc306d",
+    "src/traverse/components/RouteAnalysis.tsx": "35064f41d0ff9929a0b2cb5dbd86f3c218384f835f48a70b24a6c3af1e769982",
+    "src/traverse/components/RoutePlannerPanel.tsx": "6592df27e335cd35fdd595367371e62cbe3390dca68abf841832010bf43de433",
+    "src/traverse/components/RoutePointDetails.tsx": "a46799ce3d7c0b8186d84ffd5fee7d95366f00872e1d7187b19c39ea55529dc4",
+    "src/traverse/components/RouteProfile.tsx": "137c1ff19c951796098aa7e3aaec888a42f66f0a87b9647dc676ed968c6b888d",
+    "src/traverse/map/TraverseMapController.ts": "a82a7d7f6b0af7b022ed3a8ce5458f9c9730e0870600832b2fe3356516f3a3c7",
+    "src/traverse/map/routeCamera.ts": "7e848f95ba353a9771c26213fd19d9621a1c2435659e5810e14b9e8a3613d9a1",
+    "src/traverse/map/routeLayer.ts": "80b9ab9821764a9d53ce1990217d0b6e7550a03dc60b7a01c44315e31665a943",
+    "src/traverse/model/atmosphericFormatting.ts": "a646cc25f4da939e3f078d65189919f57a9dca14cbebd4826317c19b9be17c9f",
+    "src/traverse/model/derivedConditionFormatting.ts": "a848d797d8b2e30dc445b1dd74e57e6a1bd911eef114d2d9ec32af980beb7c6e",
+    "src/traverse/model/derivedRouteConditions.ts": "5c38ac60308539d522ebff280be52969f3b318d10c7970cd50120a33bf0a2a70",
+    "src/traverse/model/journeyModel.ts": "369e6e3d1043fdead5047fc7f28d8c5ef49f9c923f536b3b22d457c804ced0b8",
+    "src/traverse/model/journeyPresentation.ts": "30168519651c50ec39c59dc5fa48fbd42745bd86e001b44cd6c61accd54dbb32",
+    "src/traverse/model/routeAnalysisModes.ts": "fc3bc2b6827adcaeda3e335cbb5d0faba17179912cc7a913a792e15f51f17ba7",
+    "src/traverse/model/routeConditionStyle.ts": "d15655d6fbcc3306d1e51d69da4e2ecf52781834c142d21301d41707a03ef62e",
+    "src/traverse/model/routeConditionTimeLabel.ts": "93df1508e7a70b5e321ded5aadfb9317c030f52ecf8f35380b8a52d978e47017",
+    "src/traverse/model/routeConditions.ts": "53b977379cbe6ca538c9037f771c7e04da12e2be9e2abc074a65413cbc776b13",
+    "src/traverse/model/routeGeometry.ts": "5bde57202e7be431c1c014a76202c2956d97ea173f00889f795119aa8033b63a",
+    "src/traverse/model/routeProfileInteraction.ts": "29e27e3e5c56ab858f1973c90fbf7ebd80d57d2eeab8863fb4334164149de385",
+    "src/traverse/model/routeTerrain.ts": "b562bce1a2478e2c15a7442915b86a1751003772044240fb3a02d99840db49c4",
+    "src/traverse/types/derivedRouteConditions.ts": "618d4e958d2d4d47bbca9af30b28c1a2fd099dc8d87d9463c6f43a0810d71660",
+    "src/traverse/types/route.ts": "468417bb9f8707ee62259f95ecf34a3f56dbfb0c6703ac983f880f7858cd373b",
+    "src/traverse/types/routeConditionBase.ts": "7ce730c597af9f236b23ebae72b749550b7831811aae54bc522eddd1c4e21250",
+    "src/traverse/types/routeConditions.ts": "58308f9d3ad5e11522f034aa953aa9c116fbdbd3e4c1c2176eaa01aa77ac1883",
+    "src/weather/components/ForecastPanel.tsx": "36c3ba052d6314f2989a402462a13339818a985371806c3ab04de320e4b28481",
+    "src/weather/components/LocationWorkspace.tsx": "98a6213b07cb140a2d478cdda5084a498e59323b50e63f7197178b618c75031d",
+    "src/weather/components/TimeSlider.tsx": "77400d06e9b15faf9e05463a16a3f7b23b95c22ce318fb81f78d72c80f0927a4",
+    "src/weather/components/WeatherFreshness.tsx": "49279e05fb9ad319e04f08121b125585b4791ca9b7c7c3f726441f60ad0b53ca",
+    "src/weather/data/atmosphericFields.ts": "e2f239b3c65319851b70a6c69920498fdf071eb7984a5b74cdf289335e617f01",
+    "src/weather/data/globalWeatherService.ts": "4c29e1eb7d8858a7870573989823a01d6c310e7b97e8d44911123415106b7143",
+    "src/weather/data/numericTileCache.ts": "a6debe0cb1ad5a871e265e80f76328523134c01bac0b7307be90ef24a789ea92",
+    "src/weather/data/routeWeatherSampler.ts": "445424598979a586f6a6a4d8d04e55a5e308200d4a0920bb17464f0f06040211",
+    "src/weather/data/weatherCatalogueRefresh.ts": "7193f1cecb8746e84d1b87e6c219f992a6b646a9a805e41a1e93aa8c8852bfc2",
+    "src/weather/data/weatherService.ts": "bef05368a3102cca02ef1cb18e69283abf2991e511114f9c88765e39016f2671",
+    "src/weather/map/WeatherMapController.ts": "3aec6e7c5d912983587e5f714bd38fc936a67049a98b873763e6efbb6e673e6f",
+    "src/weather/map/cloudStyle.ts": "629f1c5775639e688a4462cdf586dc87bb35b96963af74b6b0a229bc5f2427d5",
+    "src/weather/map/contourGeometry.ts": "f6205441cbad6f25794347ee58ef86e30f276756e433081870e86bce9e31ccd9",
+    "src/weather/map/globalCloudLayer.ts": "b332d54e3264bf226dc90cb81b931f6f450bef6c8ab551978cb544cc9b834ae3",
+    "src/weather/map/globalPrecipitationLayer.ts": "eafd8c1bbfdca2e2cc9bba1599df948082149383c1a46dca72516e87cd6ce3ba",
+    "src/weather/map/globalScalarSurface.ts": "4d683be4b021c6636ed3522379c5cd8e2468718f27f2ba44933aa719c3d66e5a",
+    "src/weather/map/globalWindSource.ts": "8475f0df05fe0711c249b1ff7bf4e75e1dc591427059a02d95b0c1657e27a6a5",
+    "src/weather/map/interpolation.ts": "895410a013336511f56c4598da494accb3bb3bc392f7d539daad446c0df46021",
+    "src/weather/map/pressureContourModel.ts": "07590363ee193eddadcfe0ccff4d2a9fd16dbd9b39b465142e5bf3b968cc6fd9",
+    "src/weather/map/pressureLayer.ts": "c8ffd7d1ed844f120eb9d4ad8c3dc7201e049ad7c76e0cc4317df198b8d53580",
+    "src/weather/map/scalarRaster.ts": "fb115db19210bd4c26f8935c28d271aa1683bdae799ec56894ce4aec114f4f62",
+    "src/weather/map/temperatureContourLayer.ts": "f0884e8f21d942a63fda8a16fdb603afc2927468e0cce3edf62afda93b0d4901",
+    "src/weather/map/temperatureContourModel.ts": "97d824d8d83bcb28bcd1ac958392db761d5abccdb77f14b70cc36fa55ceec2f5",
+    "src/weather/map/useWeatherMapInspection.ts": "560a0f27d8cb45f035997270619d90335f95331196ff605269065d28b8318b23",
+    "src/weather/map/weatherAttribution.ts": "7bc4b7d5fb7c43062914c852a23c3d92ca87849541128d27ddc518f0ab24354a",
+    "src/weather/map/weatherLayerOrder.ts": "25bddd083bf489665cde1a82b4b3d90818d649874bb7690f8915b839411fc758",
+    "src/weather/map/weatherVisuals.ts": "4d3eebcb4748766ee38a0534087c848070293e97c837f30709848ef33e3da6f3",
+    "src/weather/map/windField.ts": "e346dd719b7de3de24f2ff6c6b6b3c5cf9e3e9b10c706374e15d6a6657e13ffd",
+    "src/weather/map/windLayer.ts": "0fac2496e91a314348a6ee4a836e6e443c5a672e690ca78b1702562a0aea2d77",
+    "src/weather/map/windParticleLayer.ts": "4b247be98e2db31ff357e2d4f057ca0af32390dbf3b69c5be3950644b31c4811",
+    "src/weather/map/windVector.ts": "48632f797a534cea29aa244fcd323e16156f252aa45972e3634751ac6c005f71",
+    "src/weather/presentation/forecastWorkspaceModel.ts": "3762571b2729b9c333abe784b1ff85fe760b1ab66c2939156c708794030769ce",
+    "src/weather/presentation/precipitationStyle.ts": "52c8568abb16ac84957eff899782bbb0d322622ed7509c2096a69434d72d327d",
+    "src/weather/presentation/weatherFreshness.ts": "8f3ebfc8321d811c0a727c659ac723d16d8936c62317703e01a1dd39b09317be",
+    "src/weather/presentation/weatherTimeLabel.ts": "c421bbed4241166dff355d7d68a02d4cbf093e62e745b2a5e8e951f62a8bc943",
+    "src/weather/types/atmosphericFields.ts": "0ea38c671ddb46a4af5ba2144e050e358ddc976baf5f4a9a43d7c6b94aa6ff19",
+    "src/weather/types/forecastCoverage.ts": "b7229622797829aca613f83af8dd83f8fe29decc996b354df869be36fb5b8ed7",
+    "src/weather/types/globalWeather.ts": "171ed35e90eb56b98fe388e56c3cd2fb4de6b5bdf5096cde79e1ec824eaf26b7",
+    "src/weather/types/routeWeather.ts": "651ef3f1802b71af064f6e2258c8c32c883f5f756a520223837160e2dcdb15e6",
+    "src/weather/types/weather.ts": "90efc45831dc9ba2e205b843dc51e38bcacfd06483d8be64eaa9fa68b78dbe50"
+  },
+  "geometry": {
+    "tryfan": "Existing tryfan-regional capture configuration; exact immutable v2 family and AWS fallback",
+    "riffelhorn": "Existing riffelhorn-regional parent/support configuration; no synthetic transition",
+    "downs": "Unchanged production AWS geometry/relief configuration",
+    "cambridge": "Unchanged production AWS geometry/relief configuration"
+  },
+  "method": {
+    "name": "Gaussian scale-space of prepared relief derivatives",
+    "classification": "Cartographic derived relief; adaptation of established low-pass relief generalization, not full curvature-enhancement method",
+    "sigmaCssPixels": 1,
+    "kernelRadiusDerivativeTexels": 6,
+    "kernel": "Normalized sampled separable Gaussian product on 13x13 tap lattice, applied to encoded prepared slope channels before stock IGOR",
+    "combination": "D=L_sigma+(D-L_sigma); display L_sigma only, withholding high-frequency depiction residual; no added ridge amplitude",
+    "illuminationDegrees": 315,
+    "stockGainStrengthColours": "Unchanged",
+    "physicalSigmaMetres": "Frozen nominal map-plane metres/CSS pixel; local tile latitude converts to derivative-texel sigma",
+    "limitations": [
+      "Filtering after derivative quantization/clipping does not undo those losses",
+      "Prepared slope texture has only one-texel halo; farther filter support clamps at its edge, potentially causing tile-edge artifacts",
+      "Nominal map-plane scale under pitch, not a per-fragment screen-space footprint",
+      "Does not implement feature enhancement or physically correct illumination"
+    ]
+  },
+  "criteria": [
+    "Broad mountain/valley organization remains readable without displaced or invented depicted ridges",
+    "Intermediate ridge/gully organization easier to trace or equally readable with reduced unresolved clutter",
+    "Useful fine structure retained when sufficiently resolved; no universal sharpness optimum",
+    "Low-relief and rolling controls do not gain false prominence/noise",
+    "Scale changes avoid material method-induced pumping, moving emphasis or seams; separate shared source LOD/loading effects",
+    "Geometry/data/LOD/exaggeration/cameras match numerically and by loaded DEM buffer hashes"
+  ],
+  "navigation": {
+    "sites": [
+      "tryfan",
+      "riffelhorn"
+    ],
+    "startMetresPerCssPixel": 8,
+    "endMetresPerCssPixel": 2,
+    "steps": 9,
+    "operation": "Log-uniform scale steps at frozen centre, bearing0/pitch0; settled-frame sequence, not interactive frame-rate validation"
+  },
+  "decision": "SUCCESS/PARTIAL/NEGATIVE/INCONCLUSIVE; no tuning after inspection"
+}

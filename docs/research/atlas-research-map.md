@@ -49,13 +49,16 @@ This is a new explicitly bounded programme, not a reopened 012A–012G Lab.
    Keep experiments bounded, products external, provenance reproducible and evidence
    classes distinct. Never silently promote experimental findings into architecture.
 
-Current return point: the [multiscale representation baseline and synthesis](../atlas/multiscale-representation.md).
-The frozen physical camera sequences, 54 matched captures and read-only wavelength
-diagnostics distinguish source eligibility, geometry, relief and imagery sampling.
-Production remains unchanged; no three viewing modes or new generalization algorithm
-is established. Next is one bounded experiment isolating relief depiction from fixed
-geometry, then information-aware display/selection characterization. The waiting
-multiview branch and closed elevation foundation remain independent. The historical
+Current return point: the [scale-separated relief experiment](../atlas/scale-separated-relief.md),
+following the [multiscale baseline](../atlas/multiscale-representation.md). One frozen
+Gaussian prepared-derivative control, 22 camera pairs and two nine-step sequences
+produce a **NEGATIVE** legibility result: fine contrast falls, but useful ridges/gullies
+also soften without consistent improvement over IGOR. All 40 paired geometry/data/LOD
+states match. Source-faithful geometry and independent depiction remain separate;
+no demonstrated geometry deficiency activates morphology preparation. Next is the
+already ordered bounded information-aware display/selection characterization, not a
+new relief comparison or production tuning. The waiting multiview branch and closed
+elevation foundation remain independent. The historical
 012A–012G handoff did not select a next architecture or experiment. The pre-012F
 [finite programme](../earth-lab/riffelhorn-visual-synthesis-and-experiment-design.md)
 is historical; its two core slots were used and its conditional third was refused.

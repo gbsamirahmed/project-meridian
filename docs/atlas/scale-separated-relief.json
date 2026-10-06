@@ -1,0 +1,2472 @@
+{
+  "contactSheets": [
+    {
+      "path": "cambridge-relief.jpg",
+      "sha256": "9c1c67412ea045ff4c498a18d7a18266a02b33d5b52fad7684d352eda49311a7"
+    },
+    {
+      "path": "downs-relief.jpg",
+      "sha256": "342c681a158dcf366485e8ff64d36c702dd8c6b2c85cf29c755bdb91e7818cc8"
+    },
+    {
+      "path": "tryfan-relief.jpg",
+      "sha256": "e9855e66ecacdf40dab38c3a8aa8ea64ed924aeec370bd8cd959b3cb5c154a60"
+    },
+    {
+      "path": "tryfan-navigation.jpg",
+      "sha256": "ebe6974619381ad52815a1056eff78bb0b7eab8bdb3b374207b6583989b9cd15"
+    },
+    {
+      "path": "riffelhorn-relief.jpg",
+      "sha256": "2c4afe96ca234818e5621fc2e6b3caa4226f1fa3df8afe4d8ed156a09af40746"
+    },
+    {
+      "path": "riffelhorn-navigation.jpg",
+      "sha256": "e9e40b7c3f595caef6c60db7b9db10cb3d84893e1e92bfffdf52a788f1bbe853"
+    }
+  ],
+  "geometryPairsVerified": 40,
+  "id": "atlas-scale-separated-relief-v1",
+  "limitations": [
+    "Derivative quantization emulation is an offline proxy, not an exact GPU readback",
+    "Central tile window is 64 derivative texels, variable physical support across levels",
+    "Shader filter clamps beyond the one-texel prepared halo; tile-edge behavior must be evaluated separately",
+    "Settled-step navigation is not interactive frame-rate or loading-continuity validation"
+  ],
+  "measurements": [
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          -0.766,
+          50.908
+        ],
+        "id": "downs-128m",
+        "igorStrength": 0.25704684970905817,
+        "pitch": 0,
+        "site": "downs",
+        "targetMetresPerCssPixel": 128,
+        "zoom": 8.590922378181507
+      },
+      "captureLuminanceMeanAbsoluteChange": 0.0034199359826954604,
+      "captureLuminanceP95P05Control": 0.4006480363898204,
+      "captureLuminanceP95P05Stock": 0.4006480363898204,
+      "derivatives": {
+        "canonicalLevel": 10,
+        "deliverySpacingMetres": 96.52248478754582,
+        "filteredSlopeMedianP95": [
+          0.00828908434938637,
+          0.0924481635645229
+        ],
+        "filteredVectorRms": 0.040935486894851304,
+        "kernelEdgeWeight": 1.0792017465386924e-05,
+        "level": 10,
+        "sigmaDerivativeTexels": 1.3261158815144354,
+        "stockSlopeMedianP95": [
+          0.0,
+          0.11110666327019862
+        ],
+        "stockVectorRms": 0.047689034686519104,
+        "tileCentreLatitude": 50.84757295365388,
+        "windowPhysicalSideMetres": 6177.4390264029325,
+        "withheldDerivativeRms": 0.016405193690641823
+      },
+      "group": "scenes",
+      "scene": "downs-128m",
+      "sigmaMetres": 128,
+      "site": "downs"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          -0.766,
+          50.908
+        ],
+        "id": "downs-8m",
+        "igorStrength": 0.39681698596366444,
+        "pitch": 0,
+        "site": "downs",
+        "targetMetresPerCssPixel": 8,
+        "zoom": 12.590922378181507
+      },
+      "captureLuminanceMeanAbsoluteChange": 0.002290266183385292,
+      "captureLuminanceP95P05Control": 0.20983988522416563,
+      "captureLuminanceP95P05Stock": 0.21309051898594555,
+      "derivatives": {
+        "canonicalLevel": 14,
+        "deliverySpacingMetres": 6.024583931596705,
+        "filteredSlopeMedianP95": [
+          0.015812719193558113,
+          0.07470357523425275
+        ],
+        "filteredVectorRms": 0.03935909726684989,
+        "kernelEdgeWeight": 1.1076643677039228e-05,
+        "level": 14,
+        "sigmaDerivativeTexels": 1.3278925301451892,
+        "stockSlopeMedianP95": [
+          0.0,
+          0.07036416729418878
+        ],
+        "stockVectorRms": 0.044066843526664484,
+        "tileCentreLatitude": 50.90996067566235,
+        "windowPhysicalSideMetres": 385.57337162218914,
+        "withheldDerivativeRms": 0.012707838780310366
+      },
+      "group": "scenes",
+      "scene": "downs-8m",
+      "sigmaMetres": 8,
+      "site": "downs"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          -0.766,
+          50.908
+        ],
+        "id": "downs-0.5m",
+        "igorStrength": 0.3,
+        "pitch": 0,
+        "site": "downs",
+        "targetMetresPerCssPixel": 0.5,
+        "zoom": 16.590922378181507
+      },
+      "captureLuminanceMeanAbsoluteChange": 0.0,
+      "captureLuminanceP95P05Control": 0.11765408836968771,
+      "captureLuminanceP95P05Stock": 0.11765408836968771,
+      "derivatives": {
+        "canonicalLevel": 15,
+        "deliverySpacingMetres": 3.0125161224000423,
+        "filteredSlopeMedianP95": [
+          0.0703589316068203,
+          0.15732735369097148
+        ],
+        "filteredVectorRms": 0.0914848437674969,
+        "kernelEdgeWeight": 1.6751830924885307e-284,
+        "level": 15,
+        "sigmaDerivativeTexels": 0.1659742154679839,
+        "stockSlopeMedianP95": [
+          0.0703589316068163,
+          0.1573273538970998
+        ],
+        "stockVectorRms": 0.09148484382045843,
+        "tileCentreLatitude": 50.90649688226159,
+        "windowPhysicalSideMetres": 192.8010318336027,
+        "withheldDerivativeRms": 4.5434498009787667e-10
+      },
+      "group": "scenes",
+      "scene": "downs-0.5m",
+      "sigmaMetres": 0.5,
+      "site": "downs"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          0.12,
+          52.2
+        ],
+        "id": "cambridge-128m",
+        "igorStrength": 0.2527436998482693,
+        "pitch": 0,
+        "site": "cambridge",
+        "targetMetresPerCssPixel": 128,
+        "zoom": 8.549939998554946
+      },
+      "captureLuminanceMeanAbsoluteChange": 0.0026553340286194645,
+      "captureLuminanceP95P05Control": 0.18380911195420746,
+      "captureLuminanceP95P05Stock": 0.18460285002040655,
+      "derivatives": {
+        "canonicalLevel": 10,
+        "deliverySpacingMetres": 93.78093720575718,
+        "filteredSlopeMedianP95": [
+          0.048654669314422944,
+          0.11283420124321644
+        ],
+        "filteredVectorRms": 0.06296577345691816,
+        "kernelEdgeWeight": 1.8600308210682028e-05,
+        "level": 10,
+        "sigmaDerivativeTexels": 1.3648829262514783,
+        "stockSlopeMedianP95": [
+          0.051140977862665714,
+          0.14464852897280814
+        ],
+        "stockVectorRms": 0.07450730791420707,
+        "tileCentreLatitude": 52.160454557747045,
+        "windowPhysicalSideMetres": 6001.97998116846,
+        "withheldDerivativeRms": 0.022986701113292672
+      },
+      "group": "scenes",
+      "scene": "cambridge-128m",
+      "sigmaMetres": 128,
+      "site": "cambridge"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          0.12,
+          52.2
+        ],
+        "id": "cambridge-8m",
+        "igorStrength": 0.40050540013005487,
+        "pitch": 0,
+        "site": "cambridge",
+        "targetMetresPerCssPixel": 8,
+        "zoom": 12.549939998554946
+      },
+      "captureLuminanceMeanAbsoluteChange": 0.0012118124522750655,
+      "captureLuminanceP95P05Control": 0.21552788713116633,
+      "captureLuminanceP95P05Stock": 0.21648688024583462,
+      "derivatives": {
+        "canonicalLevel": 14,
+        "deliverySpacingMetres": 5.85687137690699,
+        "filteredSlopeMedianP95": [
+          0.00597774985621145,
+          0.0658617880474015
+        ],
+        "filteredVectorRms": 0.030116298423909723,
+        "kernelEdgeWeight": 1.886002681189379e-05,
+        "level": 14,
+        "sigmaDerivativeTexels": 1.3659169691762627,
+        "stockSlopeMedianP95": [
+          0.0,
+          0.07237905775295023
+        ],
+        "stockVectorRms": 0.03603014187240252,
+        "tileCentreLatitude": 52.19413974159753,
+        "windowPhysicalSideMetres": 374.83976812204736,
+        "withheldDerivativeRms": 0.01306506926851714
+      },
+      "group": "scenes",
+      "scene": "cambridge-8m",
+      "sigmaMetres": 8,
+      "site": "cambridge"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          0.12,
+          52.2
+        ],
+        "id": "cambridge-0.5m",
+        "igorStrength": 0.3,
+        "pitch": 0,
+        "site": "cambridge",
+        "targetMetresPerCssPixel": 0.5,
+        "zoom": 16.549939998554947
+      },
+      "captureLuminanceMeanAbsoluteChange": 0.0,
+      "captureLuminanceP95P05Control": 0.23982937760347856,
+      "captureLuminanceP95P05Stock": 0.23982937760347856,
+      "derivatives": {
+        "canonicalLevel": 15,
+        "deliverySpacingMetres": 2.928213865276957,
+        "filteredSlopeMedianP95": [
+          2.582177426360564e-09,
+          0.0723845407378833
+        ],
+        "filteredVectorRms": 0.042151881224283545,
+        "kernelEdgeWeight": 7.659649353786977e-269,
+        "level": 15,
+        "sigmaDerivativeTexels": 0.17075255531334246,
+        "stockSlopeMedianP95": [
+          0.0,
+          0.07238454073788379
+        ],
+        "stockVectorRms": 0.04215188222673832,
+        "tileCentreLatitude": 52.19750685699392,
+        "windowPhysicalSideMetres": 187.40568737772526,
+        "withheldDerivativeRms": 2.076567267970402e-09
+      },
+      "group": "scenes",
+      "scene": "cambridge-0.5m",
+      "sigmaMetres": 0.5,
+      "site": "cambridge"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          -3.999,
+          53.115
+        ],
+        "id": "tryfan-128m",
+        "igorStrength": 0.24957281380243077,
+        "pitch": 0,
+        "site": "tryfan",
+        "targetMetresPerCssPixel": 128,
+        "zoom": 8.519741083832674
+      },
+      "captureLuminanceMeanAbsoluteChange": 0.006701773349732396,
+      "captureLuminanceP95P05Control": 0.39223043342424657,
+      "captureLuminanceP95P05Stock": 0.39817041007948994,
+      "derivatives": {
+        "canonicalLevel": 10,
+        "deliverySpacingMetres": 91.97039945261986,
+        "filteredSlopeMedianP95": [
+          0.49990939330606665,
+          1.0860474354076222
+        ],
+        "filteredVectorRms": 0.6059598505729938,
+        "kernelEdgeWeight": 2.6394747660463266e-05,
+        "level": 10,
+        "sigmaDerivativeTexels": 1.3917521372291246,
+        "stockSlopeMedianP95": [
+          0.5318047270886371,
+          1.2602071730177136
+        ],
+        "stockVectorRms": 0.6748464156891306,
+        "tileCentreLatitude": 53.01478324585922,
+        "windowPhysicalSideMetres": 5886.105564967671,
+        "withheldDerivativeRms": 0.11646743007482405
+      },
+      "group": "scenes",
+      "scene": "tryfan-128m",
+      "sigmaMetres": 128,
+      "site": "tryfan"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          -3.999,
+          53.115
+        ],
+        "id": "tryfan-32m",
+        "igorStrength": 0.4823689300599209,
+        "pitch": 0,
+        "site": "tryfan",
+        "targetMetresPerCssPixel": 32,
+        "zoom": 10.519741083832674
+      },
+      "captureLuminanceMeanAbsoluteChange": 0.004673464718078296,
+      "captureLuminanceP95P05Control": 0.5105372870162032,
+      "captureLuminanceP95P05Stock": 0.5137824247648923,
+      "derivatives": {
+        "canonicalLevel": 12,
+        "deliverySpacingMetres": 22.950356441505082,
+        "filteredSlopeMedianP95": [
+          0.6414375139503077,
+          0.9230337044305906
+        ],
+        "filteredVectorRms": 0.6584177061578299,
+        "kernelEdgeWeight": 2.7260576692853092e-05,
+        "level": 12,
+        "sigmaDerivativeTexels": 1.3943138565869455,
+        "stockSlopeMedianP95": [
+          0.6355723975950988,
+          0.9345642402222718
+        ],
+        "stockVectorRms": 0.6618246670569766,
+        "tileCentreLatitude": 53.09402405506325,
+        "windowPhysicalSideMetres": 1468.8228122563253,
+        "withheldDerivativeRms": 0.024398889866344933
+      },
+      "group": "scenes",
+      "scene": "tryfan-32m",
+      "sigmaMetres": 32,
+      "site": "tryfan"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          -3.999,
+          53.115
+        ],
+        "id": "tryfan-8m",
+        "igorStrength": 0.40322330245505933,
+        "pitch": 0,
+        "site": "tryfan",
+        "targetMetresPerCssPixel": 8,
+        "zoom": 12.519741083832674
+      },
+      "captureLuminanceMeanAbsoluteChange": 0.004587889174857674,
+      "captureLuminanceP95P05Control": 0.34002280901173404,
+      "captureLuminanceP95P05Stock": 0.3436674848020508,
+      "derivatives": {
+        "canonicalLevel": 14,
+        "deliverySpacingMetres": 5.734950217252779,
+        "filteredSlopeMedianP95": [
+          0.21513320646241513,
+          0.5402447133702681
+        ],
+        "filteredVectorRms": 0.29009487671952516,
+        "kernelEdgeWeight": 2.748104119891188e-05,
+        "level": 14,
+        "sigmaDerivativeTexels": 1.3949554393572838,
+        "stockSlopeMedianP95": [
+          0.21550553162367025,
+          0.6794809945447409
+        ],
+        "stockVectorRms": 0.3377528502666257,
+        "tileCentreLatitude": 53.113811493168235,
+        "windowPhysicalSideMetres": 367.03681390417785,
+        "withheldDerivativeRms": 0.11157212285603071
+      },
+      "group": "scenes",
+      "scene": "tryfan-8m",
+      "sigmaMetres": 8,
+      "site": "tryfan"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          -3.999,
+          53.115
+        ],
+        "id": "tryfan-2m",
+        "igorStrength": 0.3144077674850198,
+        "pitch": 0,
+        "site": "tryfan",
+        "targetMetresPerCssPixel": 2,
+        "zoom": 14.519741083832674
+      },
+      "captureLuminanceMeanAbsoluteChange": 0.012962030306776137,
+      "captureLuminanceP95P05Control": 0.4458096642347353,
+      "captureLuminanceP95P05Stock": 0.45063922828155456,
+      "derivatives": {
+        "canonicalLevel": 16,
+        "deliverySpacingMetres": 1.4336825833541977,
+        "filteredSlopeMedianP95": [
+          1.5147198079392028,
+          2.7402146850931834
+        ],
+        "filteredVectorRms": 1.7128306791745138,
+        "kernelEdgeWeight": 2.7499486391642588e-05,
+        "level": 16,
+        "sigmaDerivativeTexels": 1.3950089254211795,
+        "stockSlopeMedianP95": [
+          1.5443926815033797,
+          3.3882748166533365
+        ],
+        "stockVectorRms": 1.904875938366576,
+        "tileCentreLatitude": 53.115460035462974,
+        "windowPhysicalSideMetres": 91.75568533466866,
+        "withheldDerivativeRms": 0.5249742351474579
+      },
+      "group": "scenes",
+      "scene": "tryfan-2m",
+      "sigmaMetres": 2,
+      "site": "tryfan"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          -3.999,
+          53.115
+        ],
+        "id": "tryfan-0.5m",
+        "igorStrength": 0.3,
+        "pitch": 0,
+        "site": "tryfan",
+        "targetMetresPerCssPixel": 0.5,
+        "zoom": 16.519741083832674
+      },
+      "captureLuminanceMeanAbsoluteChange": 0.006363880988760469,
+      "captureLuminanceP95P05Control": 0.17154017542333555,
+      "captureLuminanceP95P05Stock": 0.1799257235983246,
+      "derivatives": {
+        "canonicalLevel": 17,
+        "deliverySpacingMetres": 0.7168550343592994,
+        "filteredSlopeMedianP95": [
+          0.9804609229163856,
+          2.99010532631695
+        ],
+        "filteredVectorRms": 1.497418639287894,
+        "kernelEdgeWeight": 4.882690710670705e-17,
+        "level": 17,
+        "sigmaDerivativeTexels": 0.6974910909942663,
+        "stockSlopeMedianP95": [
+          0.9637885128697866,
+          3.2436123684706137
+        ],
+        "stockVectorRms": 1.5797418250684971,
+        "tileCentreLatitude": 53.11463577221661,
+        "windowPhysicalSideMetres": 45.87872219899516,
+        "withheldDerivativeRms": 0.18900238766680186
+      },
+      "group": "scenes",
+      "scene": "tryfan-0.5m",
+      "sigmaMetres": 0.5,
+      "site": "tryfan"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          -3.999,
+          53.115
+        ],
+        "id": "tryfan-0.125m",
+        "igorStrength": 0.3,
+        "pitch": 0,
+        "site": "tryfan",
+        "targetMetresPerCssPixel": 0.125,
+        "zoom": 18.519741083832674
+      },
+      "captureLuminanceMeanAbsoluteChange": 1.201675984019454e-06,
+      "captureLuminanceP95P05Control": 0.13602286739390212,
+      "captureLuminanceP95P05Stock": 0.13602286739390212,
+      "derivatives": {
+        "canonicalLevel": 17,
+        "deliverySpacingMetres": 0.7168550343592994,
+        "filteredSlopeMedianP95": [
+          0.9637885151202465,
+          3.2436122668328893
+        ],
+        "filteredVectorRms": 1.57974179570713,
+        "kernelEdgeWeight": 7.9715602445709645e-258,
+        "level": 17,
+        "sigmaDerivativeTexels": 0.17437277274856658,
+        "stockSlopeMedianP95": [
+          0.9637885128697866,
+          3.2436123684706137
+        ],
+        "stockVectorRms": 1.5797418250684971,
+        "tileCentreLatitude": 53.11463577221661,
+        "windowPhysicalSideMetres": 45.87872219899516,
+        "withheldDerivativeRms": 6.365768544519464e-08
+      },
+      "group": "scenes",
+      "scene": "tryfan-0.125m",
+      "sigmaMetres": 0.125,
+      "site": "tryfan"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          -3.999,
+          53.115
+        ],
+        "id": "tryfan-8m-p55",
+        "igorStrength": 0.40322330245505933,
+        "pitch": 55,
+        "site": "tryfan",
+        "targetMetresPerCssPixel": 8,
+        "zoom": 12.519741083832674
+      },
+      "captureLuminanceMeanAbsoluteChange": 0.002525397892776465,
+      "captureLuminanceP95P05Control": 0.4365614955754196,
+      "captureLuminanceP95P05Stock": 0.4374580194465517,
+      "derivatives": {
+        "canonicalLevel": 14,
+        "deliverySpacingMetres": 5.734950217252779,
+        "filteredSlopeMedianP95": [
+          0.21513320646241513,
+          0.5402447133702681
+        ],
+        "filteredVectorRms": 0.29009487671952516,
+        "kernelEdgeWeight": 2.748104119891188e-05,
+        "level": 14,
+        "sigmaDerivativeTexels": 1.3949554393572838,
+        "stockSlopeMedianP95": [
+          0.21550553162367025,
+          0.6794809945447409
+        ],
+        "stockVectorRms": 0.3377528502666257,
+        "tileCentreLatitude": 53.113811493168235,
+        "windowPhysicalSideMetres": 367.03681390417785,
+        "withheldDerivativeRms": 0.11157212285603071
+      },
+      "group": "scenes",
+      "scene": "tryfan-8m-p55",
+      "sigmaMetres": 8,
+      "site": "tryfan"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          -3.999,
+          53.115
+        ],
+        "id": "tryfan-0.5m-p55",
+        "igorStrength": 0.3,
+        "pitch": 55,
+        "site": "tryfan",
+        "targetMetresPerCssPixel": 0.5,
+        "zoom": 16.519741083832674
+      },
+      "captureLuminanceMeanAbsoluteChange": 0.0049825682689015795,
+      "captureLuminanceP95P05Control": 0.48739011566876694,
+      "captureLuminanceP95P05Stock": 0.4876601481825162,
+      "derivatives": {
+        "canonicalLevel": 17,
+        "deliverySpacingMetres": 0.7168550343592994,
+        "filteredSlopeMedianP95": [
+          0.9804609229163856,
+          2.99010532631695
+        ],
+        "filteredVectorRms": 1.497418639287894,
+        "kernelEdgeWeight": 4.882690710670705e-17,
+        "level": 17,
+        "sigmaDerivativeTexels": 0.6974910909942663,
+        "stockSlopeMedianP95": [
+          0.9637885128697866,
+          3.2436123684706137
+        ],
+        "stockVectorRms": 1.5797418250684971,
+        "tileCentreLatitude": 53.11463577221661,
+        "windowPhysicalSideMetres": 45.87872219899516,
+        "withheldDerivativeRms": 0.18900238766680186
+      },
+      "group": "scenes",
+      "scene": "tryfan-0.5m-p55",
+      "sigmaMetres": 0.5,
+      "site": "tryfan"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          -3.999,
+          53.115
+        ],
+        "id": "tryfan-nav-0",
+        "pitch": 0,
+        "site": "tryfan",
+        "targetMetresPerCssPixel": 8,
+        "zoom": 12.519741083832674
+      },
+      "captureLuminanceMeanAbsoluteChange": 0.004587889174857674,
+      "captureLuminanceP95P05Control": 0.34002280901173404,
+      "captureLuminanceP95P05Stock": 0.3436674848020508,
+      "derivatives": {
+        "canonicalLevel": 14,
+        "deliverySpacingMetres": 5.734950217252779,
+        "filteredSlopeMedianP95": [
+          0.21513320646241513,
+          0.5402447133702681
+        ],
+        "filteredVectorRms": 0.29009487671952516,
+        "kernelEdgeWeight": 2.748104119891188e-05,
+        "level": 14,
+        "sigmaDerivativeTexels": 1.3949554393572838,
+        "stockSlopeMedianP95": [
+          0.21550553162367025,
+          0.6794809945447409
+        ],
+        "stockVectorRms": 0.3377528502666257,
+        "tileCentreLatitude": 53.113811493168235,
+        "windowPhysicalSideMetres": 367.03681390417785,
+        "withheldDerivativeRms": 0.11157212285603071
+      },
+      "group": "navigation",
+      "scene": "tryfan-nav-0",
+      "sigmaMetres": 8,
+      "site": "tryfan"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          -3.999,
+          53.115
+        ],
+        "id": "tryfan-nav-1",
+        "pitch": 0,
+        "site": "tryfan",
+        "targetMetresPerCssPixel": 6.727171322029716,
+        "zoom": 12.769741083832674
+      },
+      "captureLuminanceMeanAbsoluteChange": 0.004922461992985738,
+      "captureLuminanceP95P05Control": 0.32274474629739675,
+      "captureLuminanceP95P05Stock": 0.32943000945533407,
+      "derivatives": {
+        "canonicalLevel": 14,
+        "deliverySpacingMetres": 5.734950217252779,
+        "filteredSlopeMedianP95": [
+          0.21595953968863937,
+          0.5592744189671869
+        ],
+        "filteredVectorRms": 0.29780660726072233,
+        "kernelEdgeWeight": 7.083737635901574e-07,
+        "level": 14,
+        "sigmaDerivativeTexels": 1.1730130283942102,
+        "stockSlopeMedianP95": [
+          0.21550553162367025,
+          0.6794809945447409
+        ],
+        "stockVectorRms": 0.3377528502666257,
+        "tileCentreLatitude": 53.113811493168235,
+        "windowPhysicalSideMetres": 367.03681390417785,
+        "withheldDerivativeRms": 0.09433295439860986
+      },
+      "group": "navigation",
+      "scene": "tryfan-nav-1",
+      "sigmaMetres": 6.727171322029716,
+      "site": "tryfan"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          -3.999,
+          53.115
+        ],
+        "id": "tryfan-nav-2",
+        "pitch": 0,
+        "site": "tryfan",
+        "targetMetresPerCssPixel": 5.656854249492381,
+        "zoom": 13.019741083832674
+      },
+      "captureLuminanceMeanAbsoluteChange": 0.004004213457239001,
+      "captureLuminanceP95P05Control": 0.3540380143033461,
+      "captureLuminanceP95P05Stock": 0.3594099211918792,
+      "derivatives": {
+        "canonicalLevel": 14,
+        "deliverySpacingMetres": 5.734950217252779,
+        "filteredSlopeMedianP95": [
+          0.2168662107385066,
+          0.5827624322918397
+        ],
+        "filteredVectorRms": 0.3050209538037268,
+        "kernelEdgeWeight": 3.734477968785774e-09,
+        "level": 14,
+        "sigmaDerivativeTexels": 0.9863824506225952,
+        "stockSlopeMedianP95": [
+          0.21550553162367025,
+          0.6794809945447409
+        ],
+        "stockVectorRms": 0.3377528502666257,
+        "tileCentreLatitude": 53.113811493168235,
+        "windowPhysicalSideMetres": 367.03681390417785,
+        "withheldDerivativeRms": 0.07803665542232542
+      },
+      "group": "navigation",
+      "scene": "tryfan-nav-2",
+      "sigmaMetres": 5.656854249492381,
+      "site": "tryfan"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          -3.999,
+          53.115
+        ],
+        "id": "tryfan-nav-3",
+        "pitch": 0,
+        "site": "tryfan",
+        "targetMetresPerCssPixel": 4.756828460010884,
+        "zoom": 13.269741083832674
+      },
+      "captureLuminanceMeanAbsoluteChange": 0.003907909891373926,
+      "captureLuminanceP95P05Control": 0.3882272127403196,
+      "captureLuminanceP95P05Stock": 0.3889515026458618,
+      "derivatives": {
+        "canonicalLevel": 14,
+        "deliverySpacingMetres": 5.734950217252779,
+        "filteredSlopeMedianP95": [
+          0.21658061927931954,
+          0.6002350710085825
+        ],
+        "filteredVectorRms": 0.31151786613104426,
+        "kernelEdgeWeight": 2.0865634372436446e-12,
+        "level": 14,
+        "sigmaDerivativeTexels": 0.8294454667977142,
+        "stockSlopeMedianP95": [
+          0.21550553162367025,
+          0.6794809945447409
+        ],
+        "stockVectorRms": 0.3377528502666257,
+        "tileCentreLatitude": 53.113811493168235,
+        "windowPhysicalSideMetres": 367.03681390417785,
+        "withheldDerivativeRms": 0.06311101118460187
+      },
+      "group": "navigation",
+      "scene": "tryfan-nav-3",
+      "sigmaMetres": 4.756828460010884,
+      "site": "tryfan"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          -3.999,
+          53.115
+        ],
+        "id": "tryfan-nav-4",
+        "pitch": 0,
+        "site": "tryfan",
+        "targetMetresPerCssPixel": 4,
+        "zoom": 13.519741083832674
+      },
+      "captureLuminanceMeanAbsoluteChange": 0.01037096059234704,
+      "captureLuminanceP95P05Control": 0.3699471294168626,
+      "captureLuminanceP95P05Stock": 0.3730972619388824,
+      "derivatives": {
+        "canonicalLevel": 15,
+        "deliverySpacingMetres": 2.8672552266321025,
+        "filteredSlopeMedianP95": [
+          0.840524006118043,
+          1.1659133501273509
+        ],
+        "filteredVectorRms": 0.8683638882055023,
+        "kernelEdgeWeight": 2.7517942866659274e-05,
+        "level": 15,
+        "sigmaDerivativeTexels": 1.395062414690731,
+        "stockSlopeMedianP95": [
+          0.836348433343543,
+          1.372071918737061
+        ],
+        "stockVectorRms": 0.9166115862264654,
+        "tileCentreLatitude": 53.11710851455023,
+        "windowPhysicalSideMetres": 183.50433450445456,
+        "withheldDerivativeRms": 0.20194526361388115
+      },
+      "group": "navigation",
+      "scene": "tryfan-nav-4",
+      "sigmaMetres": 4,
+      "site": "tryfan"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          -3.999,
+          53.115
+        ],
+        "id": "tryfan-nav-5",
+        "pitch": 0,
+        "site": "tryfan",
+        "targetMetresPerCssPixel": 3.363585661014858,
+        "zoom": 13.769741083832674
+      },
+      "captureLuminanceMeanAbsoluteChange": 0.010468319305605179,
+      "captureLuminanceP95P05Control": 0.38584330813760503,
+      "captureLuminanceP95P05Stock": 0.3889593409234051,
+      "derivatives": {
+        "canonicalLevel": 15,
+        "deliverySpacingMetres": 2.8672552266321025,
+        "filteredSlopeMedianP95": [
+          0.8350063114452768,
+          1.1936280394463494
+        ],
+        "filteredVectorRms": 0.8747957158502586,
+        "kernelEdgeWeight": 7.097418881459955e-07,
+        "level": 15,
+        "sigmaDerivativeTexels": 1.1731029835686266,
+        "stockSlopeMedianP95": [
+          0.836348433343543,
+          1.372071918737061
+        ],
+        "stockVectorRms": 0.9166115862264654,
+        "tileCentreLatitude": 53.11710851455023,
+        "windowPhysicalSideMetres": 183.50433450445456,
+        "withheldDerivativeRms": 0.17246408743966432
+      },
+      "group": "navigation",
+      "scene": "tryfan-nav-5",
+      "sigmaMetres": 3.363585661014858,
+      "site": "tryfan"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          -3.999,
+          53.115
+        ],
+        "id": "tryfan-nav-6",
+        "pitch": 0,
+        "site": "tryfan",
+        "targetMetresPerCssPixel": 2.8284271247461903,
+        "zoom": 14.019741083832674
+      },
+      "captureLuminanceMeanAbsoluteChange": 0.008295744188135515,
+      "captureLuminanceP95P05Control": 0.4045862696940202,
+      "captureLuminanceP95P05Stock": 0.4070844907911259,
+      "derivatives": {
+        "canonicalLevel": 15,
+        "deliverySpacingMetres": 2.8672552266321025,
+        "filteredSlopeMedianP95": [
+          0.8339527252168437,
+          1.22074890495849
+        ],
+        "filteredVectorRms": 0.8813145605926492,
+        "kernelEdgeWeight": 3.744801179542439e-09,
+        "level": 15,
+        "sigmaDerivativeTexels": 0.9864580936062954,
+        "stockSlopeMedianP95": [
+          0.836348433343543,
+          1.372071918737061
+        ],
+        "stockVectorRms": 0.9166115862264654,
+        "tileCentreLatitude": 53.11710851455023,
+        "windowPhysicalSideMetres": 183.50433450445456,
+        "withheldDerivativeRms": 0.14350346215627802
+      },
+      "group": "navigation",
+      "scene": "tryfan-nav-6",
+      "sigmaMetres": 2.8284271247461903,
+      "site": "tryfan"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          -3.999,
+          53.115
+        ],
+        "id": "tryfan-nav-7",
+        "pitch": 0,
+        "site": "tryfan",
+        "targetMetresPerCssPixel": 2.378414230005442,
+        "zoom": 14.269741083832674
+      },
+      "captureLuminanceMeanAbsoluteChange": 0.007070502104964494,
+      "captureLuminanceP95P05Control": 0.42250095454422903,
+      "captureLuminanceP95P05Stock": 0.4266427371520344,
+      "derivatives": {
+        "canonicalLevel": 15,
+        "deliverySpacingMetres": 2.8672552266321025,
+        "filteredSlopeMedianP95": [
+          0.8323996427942076,
+          1.256401159239626
+        ],
+        "filteredVectorRms": 0.8876138958665272,
+        "kernelEdgeWeight": 2.0947916720419593e-12,
+        "level": 15,
+        "sigmaDerivativeTexels": 0.8295090747115469,
+        "stockSlopeMedianP95": [
+          0.836348433343543,
+          1.372071918737061
+        ],
+        "stockVectorRms": 0.9166115862264654,
+        "tileCentreLatitude": 53.11710851455023,
+        "windowPhysicalSideMetres": 183.50433450445456,
+        "withheldDerivativeRms": 0.11629135860973903
+      },
+      "group": "navigation",
+      "scene": "tryfan-nav-7",
+      "sigmaMetres": 2.378414230005442,
+      "site": "tryfan"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          -3.999,
+          53.115
+        ],
+        "id": "tryfan-nav-8",
+        "pitch": 0,
+        "site": "tryfan",
+        "targetMetresPerCssPixel": 2,
+        "zoom": 14.519741083832674
+      },
+      "captureLuminanceMeanAbsoluteChange": 0.012962030306776137,
+      "captureLuminanceP95P05Control": 0.4458096642347353,
+      "captureLuminanceP95P05Stock": 0.45063922828155456,
+      "derivatives": {
+        "canonicalLevel": 16,
+        "deliverySpacingMetres": 1.4336825833541977,
+        "filteredSlopeMedianP95": [
+          1.5147198079392028,
+          2.7402146850931834
+        ],
+        "filteredVectorRms": 1.7128306791745138,
+        "kernelEdgeWeight": 2.7499486391642588e-05,
+        "level": 16,
+        "sigmaDerivativeTexels": 1.3950089254211795,
+        "stockSlopeMedianP95": [
+          1.5443926815033797,
+          3.3882748166533365
+        ],
+        "stockVectorRms": 1.904875938366576,
+        "tileCentreLatitude": 53.115460035462974,
+        "windowPhysicalSideMetres": 91.75568533466866,
+        "withheldDerivativeRms": 0.5249742351474579
+      },
+      "group": "navigation",
+      "scene": "tryfan-nav-8",
+      "sigmaMetres": 2,
+      "site": "tryfan"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "id": "riffelhorn-128m",
+        "igorStrength": 0.27176758761927866,
+        "pitch": 0,
+        "site": "riffelhorn",
+        "targetMetresPerCssPixel": 128,
+        "zoom": 8.731119882088368
+      },
+      "captureLuminanceMeanAbsoluteChange": 0.025576463142229368,
+      "captureLuminanceP95P05Control": 0.5635231358582008,
+      "captureLuminanceP95P05Stock": 0.5773298151283117,
+      "derivatives": {
+        "canonicalLevel": 10,
+        "deliverySpacingMetres": 106.28896333434304,
+        "filteredSlopeMedianP95": [
+          1.5998848920355868,
+          3.0757243522082955
+        ],
+        "filteredVectorRms": 1.8196913483441741,
+        "kernelEdgeWeight": 1.3486050117943561e-06,
+        "level": 10,
+        "sigmaDerivativeTexels": 1.2042642621074648,
+        "stockSlopeMedianP95": [
+          1.662206911096409,
+          3.4351117451856044
+        ],
+        "stockVectorRms": 1.9754012034032955,
+        "tileCentreLatitude": 45.951149686691394,
+        "windowPhysicalSideMetres": 6802.493653397954,
+        "withheldDerivativeRms": 0.3381013445713471
+      },
+      "group": "scenes",
+      "scene": "riffelhorn-128m",
+      "sigmaMetres": 128,
+      "site": "riffelhorn"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "id": "riffelhorn-32m",
+        "igorStrength": 0.5077343858506043,
+        "pitch": 0,
+        "site": "riffelhorn",
+        "targetMetresPerCssPixel": 32,
+        "zoom": 10.731119882088368
+      },
+      "captureLuminanceMeanAbsoluteChange": 0.014331865002504636,
+      "captureLuminanceP95P05Control": 0.6098049697017651,
+      "captureLuminanceP95P05Stock": 0.6114994458353294,
+      "derivatives": {
+        "canonicalLevel": 12,
+        "deliverySpacingMetres": 26.557592556643055,
+        "filteredSlopeMedianP95": [
+          0.9145984893769632,
+          1.7528010241065002
+        ],
+        "filteredVectorRms": 1.0664174926083676,
+        "kernelEdgeWeight": 1.3664275145339867e-06,
+        "level": 12,
+        "sigmaDerivativeTexels": 1.2049284938666474,
+        "stockSlopeMedianP95": [
+          0.9307421166043834,
+          1.8971404304324904
+        ],
+        "stockVectorRms": 1.1174183953371115,
+        "tileCentreLatitude": 45.98169518512228,
+        "windowPhysicalSideMetres": 1699.6859236251555,
+        "withheldDerivativeRms": 0.17898122102709477
+      },
+      "group": "scenes",
+      "scene": "riffelhorn-32m",
+      "sigmaMetres": 32,
+      "site": "riffelhorn"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "id": "riffelhorn-8m",
+        "igorStrength": 0.38419921061204687,
+        "pitch": 0,
+        "site": "riffelhorn",
+        "targetMetresPerCssPixel": 8,
+        "zoom": 12.731119882088368
+      },
+      "captureLuminanceMeanAbsoluteChange": 0.01657912408639421,
+      "captureLuminanceP95P05Control": 0.49683951638560575,
+      "captureLuminanceP95P05Stock": 0.49445003377704094,
+      "derivatives": {
+        "canonicalLevel": 14,
+        "deliverySpacingMetres": 6.64031364408417,
+        "filteredSlopeMedianP95": [
+          0.2531385388920774,
+          0.5690949804754035
+        ],
+        "filteredVectorRms": 0.313923558202219,
+        "kernelEdgeWeight": 1.3619509907540327e-06,
+        "level": 14,
+        "sigmaDerivativeTexels": 1.2047623694894547,
+        "stockSlopeMedianP95": [
+          0.2854992794093656,
+          0.6831133329544982
+        ],
+        "stockVectorRms": 0.3696577961409799,
+        "tileCentreLatitude": 45.97406038956238,
+        "windowPhysicalSideMetres": 424.9800732213869,
+        "withheldDerivativeRms": 0.11239611908307494
+      },
+      "group": "scenes",
+      "scene": "riffelhorn-8m",
+      "sigmaMetres": 8,
+      "site": "riffelhorn"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "id": "riffelhorn-2m",
+        "igorStrength": 0.30806640353734893,
+        "pitch": 0,
+        "site": "riffelhorn",
+        "targetMetresPerCssPixel": 2,
+        "zoom": 14.731119882088368
+      },
+      "captureLuminanceMeanAbsoluteChange": 0.01934544141543855,
+      "captureLuminanceP95P05Control": 0.5215462088838808,
+      "captureLuminanceP95P05Stock": 0.5324340456035319,
+      "derivatives": {
+        "canonicalLevel": 16,
+        "deliverySpacingMetres": 1.659906753652508,
+        "filteredSlopeMedianP95": [
+          0.9493629947769706,
+          1.7592747993132192
+        ],
+        "filteredVectorRms": 1.1051043325942531,
+        "kernelEdgeWeight": 1.365307072673889e-06,
+        "level": 16,
+        "sigmaDerivativeTexels": 1.2048869586192963,
+        "stockSlopeMedianP95": [
+          0.9130227193907944,
+          1.9600881712262717
+        ],
+        "stockVectorRms": 1.1522421952068158,
+        "tileCentreLatitude": 45.979786584921676,
+        "windowPhysicalSideMetres": 106.23403223376052,
+        "withheldDerivativeRms": 0.19885689246337704
+      },
+      "group": "scenes",
+      "scene": "riffelhorn-2m",
+      "sigmaMetres": 2,
+      "site": "riffelhorn"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "id": "riffelhorn-0.5m",
+        "igorStrength": 0.3,
+        "pitch": 0,
+        "site": "riffelhorn",
+        "targetMetresPerCssPixel": 0.5,
+        "zoom": 16.731119882088368
+      },
+      "captureLuminanceMeanAbsoluteChange": 0.022480405671028315,
+      "captureLuminanceP95P05Control": 0.4082604249203762,
+      "captureLuminanceP95P05Stock": 0.43321096222009525,
+      "derivatives": {
+        "canonicalLevel": 18,
+        "deliverySpacingMetres": 0.4149802645971192,
+        "filteredSlopeMedianP95": [
+          1.2157996950857433,
+          2.353086219324249
+        ],
+        "filteredVectorRms": 1.428763393523212,
+        "kernelEdgeWeight": 1.365027098854118e-06,
+        "level": 18,
+        "sigmaDerivativeTexels": 1.204876575240082,
+        "stockSlopeMedianP95": [
+          1.1863088577887608,
+          2.735574294829014
+        ],
+        "stockVectorRms": 1.5517090759918708,
+        "tileCentreLatitude": 45.979309424591406,
+        "windowPhysicalSideMetres": 26.558736934215627,
+        "withheldDerivativeRms": 0.3750080970282088
+      },
+      "group": "scenes",
+      "scene": "riffelhorn-0.5m",
+      "sigmaMetres": 0.5,
+      "site": "riffelhorn"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "id": "riffelhorn-0.125m",
+        "igorStrength": 0.3,
+        "pitch": 0,
+        "site": "riffelhorn",
+        "targetMetresPerCssPixel": 0.125,
+        "zoom": 18.731119882088368
+      },
+      "captureLuminanceMeanAbsoluteChange": 0.00043875596450720363,
+      "captureLuminanceP95P05Control": 0.46171726320321027,
+      "captureLuminanceP95P05Stock": 0.46171726320321027,
+      "derivatives": {
+        "canonicalLevel": 18,
+        "deliverySpacingMetres": 0.4149802645971192,
+        "filteredSlopeMedianP95": [
+          1.1859011808584554,
+          2.7342515887711074
+        ],
+        "filteredVectorRms": 1.550318160433934,
+        "kernelEdgeWeight": 6.906884163201039e-87,
+        "level": 18,
+        "sigmaDerivativeTexels": 0.3012191438100205,
+        "stockSlopeMedianP95": [
+          1.1863088577887608,
+          2.735574294829014
+        ],
+        "stockVectorRms": 1.5517090759918708,
+        "tileCentreLatitude": 45.979309424591406,
+        "windowPhysicalSideMetres": 26.558736934215627,
+        "withheldDerivativeRms": 0.003860358730902572
+      },
+      "group": "scenes",
+      "scene": "riffelhorn-0.125m",
+      "sigmaMetres": 0.125,
+      "site": "riffelhorn"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "id": "riffelhorn-8m-p55",
+        "igorStrength": 0.38419921061204687,
+        "pitch": 55,
+        "site": "riffelhorn",
+        "targetMetresPerCssPixel": 8,
+        "zoom": 12.731119882088368
+      },
+      "captureLuminanceMeanAbsoluteChange": 0.012402514052010314,
+      "captureLuminanceP95P05Control": 0.5867101895066891,
+      "captureLuminanceP95P05Stock": 0.5873872778716998,
+      "derivatives": {
+        "canonicalLevel": 14,
+        "deliverySpacingMetres": 6.64031364408417,
+        "filteredSlopeMedianP95": [
+          0.2531385388920774,
+          0.5690949804754035
+        ],
+        "filteredVectorRms": 0.313923558202219,
+        "kernelEdgeWeight": 1.3619509907540327e-06,
+        "level": 14,
+        "sigmaDerivativeTexels": 1.2047623694894547,
+        "stockSlopeMedianP95": [
+          0.2854992794093656,
+          0.6831133329544982
+        ],
+        "stockVectorRms": 0.3696577961409799,
+        "tileCentreLatitude": 45.97406038956238,
+        "windowPhysicalSideMetres": 424.9800732213869,
+        "withheldDerivativeRms": 0.11239611908307494
+      },
+      "group": "scenes",
+      "scene": "riffelhorn-8m-p55",
+      "sigmaMetres": 8,
+      "site": "riffelhorn"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "id": "riffelhorn-0.5m-p55",
+        "igorStrength": 0.3,
+        "pitch": 55,
+        "site": "riffelhorn",
+        "targetMetresPerCssPixel": 0.5,
+        "zoom": 16.731119882088368
+      },
+      "captureLuminanceMeanAbsoluteChange": 0.024400295645676768,
+      "captureLuminanceP95P05Control": 0.40312121928615224,
+      "captureLuminanceP95P05Stock": 0.4307549698406093,
+      "derivatives": {
+        "canonicalLevel": 18,
+        "deliverySpacingMetres": 0.4149802645971192,
+        "filteredSlopeMedianP95": [
+          1.2157996950857433,
+          2.353086219324249
+        ],
+        "filteredVectorRms": 1.428763393523212,
+        "kernelEdgeWeight": 1.365027098854118e-06,
+        "level": 18,
+        "sigmaDerivativeTexels": 1.204876575240082,
+        "stockSlopeMedianP95": [
+          1.1863088577887608,
+          2.735574294829014
+        ],
+        "stockVectorRms": 1.5517090759918708,
+        "tileCentreLatitude": 45.979309424591406,
+        "windowPhysicalSideMetres": 26.558736934215627,
+        "withheldDerivativeRms": 0.3750080970282088
+      },
+      "group": "scenes",
+      "scene": "riffelhorn-0.5m-p55",
+      "sigmaMetres": 0.5,
+      "site": "riffelhorn"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "id": "riffelhorn-nav-0",
+        "pitch": 0,
+        "site": "riffelhorn",
+        "targetMetresPerCssPixel": 8,
+        "zoom": 12.731119882088368
+      },
+      "captureLuminanceMeanAbsoluteChange": 0.01657912408639421,
+      "captureLuminanceP95P05Control": 0.49683951638560575,
+      "captureLuminanceP95P05Stock": 0.49445003377704094,
+      "derivatives": {
+        "canonicalLevel": 14,
+        "deliverySpacingMetres": 6.64031364408417,
+        "filteredSlopeMedianP95": [
+          0.2531385388920774,
+          0.5690949804754035
+        ],
+        "filteredVectorRms": 0.313923558202219,
+        "kernelEdgeWeight": 1.3619509907540327e-06,
+        "level": 14,
+        "sigmaDerivativeTexels": 1.2047623694894547,
+        "stockSlopeMedianP95": [
+          0.2854992794093656,
+          0.6831133329544982
+        ],
+        "stockVectorRms": 0.3696577961409799,
+        "tileCentreLatitude": 45.97406038956238,
+        "windowPhysicalSideMetres": 424.9800732213869,
+        "withheldDerivativeRms": 0.11239611908307494
+      },
+      "group": "navigation",
+      "scene": "riffelhorn-nav-0",
+      "sigmaMetres": 8,
+      "site": "riffelhorn"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "id": "riffelhorn-nav-1",
+        "pitch": 0,
+        "site": "riffelhorn",
+        "targetMetresPerCssPixel": 6.727171322029716,
+        "zoom": 12.981119882088368
+      },
+      "captureLuminanceMeanAbsoluteChange": 0.011700401911431665,
+      "captureLuminanceP95P05Control": 0.4877826875320648,
+      "captureLuminanceP95P05Stock": 0.490699119717325,
+      "derivatives": {
+        "canonicalLevel": 14,
+        "deliverySpacingMetres": 6.64031364408417,
+        "filteredSlopeMedianP95": [
+          0.2587725563097675,
+          0.5899888370190101
+        ],
+        "filteredVectorRms": 0.3243899697570157,
+        "kernelEdgeWeight": 9.517612230027526e-09,
+        "level": 14,
+        "sigmaDerivativeTexels": 1.0130803577362535,
+        "stockSlopeMedianP95": [
+          0.2854992794093656,
+          0.6831133329544982
+        ],
+        "stockVectorRms": 0.3696577961409799,
+        "tileCentreLatitude": 45.97406038956238,
+        "windowPhysicalSideMetres": 424.9800732213869,
+        "withheldDerivativeRms": 0.09322070978102961
+      },
+      "group": "navigation",
+      "scene": "riffelhorn-nav-1",
+      "sigmaMetres": 6.727171322029716,
+      "site": "riffelhorn"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "id": "riffelhorn-nav-2",
+        "pitch": 0,
+        "site": "riffelhorn",
+        "targetMetresPerCssPixel": 5.656854249492381,
+        "zoom": 13.231119882088368
+      },
+      "captureLuminanceMeanAbsoluteChange": 0.009592224535507305,
+      "captureLuminanceP95P05Control": 0.49728997774943784,
+      "captureLuminanceP95P05Stock": 0.4974159700213242,
+      "derivatives": {
+        "canonicalLevel": 14,
+        "deliverySpacingMetres": 6.64031364408417,
+        "filteredSlopeMedianP95": [
+          0.2636603201015132,
+          0.6058746617125923
+        ],
+        "filteredVectorRms": 0.33359371639159013,
+        "kernelEdgeWeight": 7.92188871346037e-12,
+        "level": 14,
+        "sigmaDerivativeTexels": 0.8518956411843664,
+        "stockSlopeMedianP95": [
+          0.2854992794093656,
+          0.6831133329544982
+        ],
+        "stockVectorRms": 0.3696577961409799,
+        "tileCentreLatitude": 45.97406038956238,
+        "windowPhysicalSideMetres": 424.9800732213869,
+        "withheldDerivativeRms": 0.07557332766978524
+      },
+      "group": "navigation",
+      "scene": "riffelhorn-nav-2",
+      "sigmaMetres": 5.656854249492381,
+      "site": "riffelhorn"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "id": "riffelhorn-nav-3",
+        "pitch": 0,
+        "site": "riffelhorn",
+        "targetMetresPerCssPixel": 4.756828460010884,
+        "zoom": 13.481119882088368
+      },
+      "captureLuminanceMeanAbsoluteChange": 0.01571838114347309,
+      "captureLuminanceP95P05Control": 0.4579572095853459,
+      "captureLuminanceP95P05Stock": 0.455847130642333,
+      "derivatives": {
+        "canonicalLevel": 15,
+        "deliverySpacingMetres": 3.319927945290511,
+        "filteredSlopeMedianP95": [
+          0.9689434366041912,
+          1.7496179111941852
+        ],
+        "filteredVectorRms": 1.0825764523862926,
+        "kernelEdgeWeight": 4.333899408435468e-05,
+        "level": 15,
+        "sigmaDerivativeTexels": 1.4328107532450187,
+        "stockSlopeMedianP95": [
+          0.9306779512771854,
+          2.100430647143293
+        ],
+        "stockVectorRms": 1.2055701171410023,
+        "tileCentreLatitude": 45.977877918928264,
+        "windowPhysicalSideMetres": 212.4753884985927,
+        "withheldDerivativeRms": 0.35495060332256906
+      },
+      "group": "navigation",
+      "scene": "riffelhorn-nav-3",
+      "sigmaMetres": 4.756828460010884,
+      "site": "riffelhorn"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "id": "riffelhorn-nav-4",
+        "pitch": 0,
+        "site": "riffelhorn",
+        "targetMetresPerCssPixel": 4,
+        "zoom": 13.731119882088368
+      },
+      "captureLuminanceMeanAbsoluteChange": 0.015308919669449847,
+      "captureLuminanceP95P05Control": 0.4612090274994939,
+      "captureLuminanceP95P05Stock": 0.4642256716513744,
+      "derivatives": {
+        "canonicalLevel": 15,
+        "deliverySpacingMetres": 3.319927945290511,
+        "filteredSlopeMedianP95": [
+          0.9553679149116469,
+          1.815847835767678
+        ],
+        "filteredVectorRms": 1.1004800685896152,
+        "kernelEdgeWeight": 1.3641875051834558e-06,
+        "level": 15,
+        "sigmaDerivativeTexels": 1.2048454261407107,
+        "stockSlopeMedianP95": [
+          0.9306779512771854,
+          2.100430647143293
+        ],
+        "stockVectorRms": 1.2055701171410023,
+        "tileCentreLatitude": 45.977877918928264,
+        "windowPhysicalSideMetres": 212.4753884985927,
+        "withheldDerivativeRms": 0.3049946262982871
+      },
+      "group": "navigation",
+      "scene": "riffelhorn-nav-4",
+      "sigmaMetres": 4,
+      "site": "riffelhorn"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "id": "riffelhorn-nav-5",
+        "pitch": 0,
+        "site": "riffelhorn",
+        "targetMetresPerCssPixel": 3.363585661014858,
+        "zoom": 13.981119882088368
+      },
+      "captureLuminanceMeanAbsoluteChange": 0.011901910913014376,
+      "captureLuminanceP95P05Control": 0.4790537544377527,
+      "captureLuminanceP95P05Stock": 0.48329943433827827,
+      "derivatives": {
+        "canonicalLevel": 15,
+        "deliverySpacingMetres": 3.319927945290511,
+        "filteredSlopeMedianP95": [
+          0.9482132268110939,
+          1.867054243325184
+        ],
+        "filteredVectorRms": 1.1177200648066166,
+        "kernelEdgeWeight": 9.539995256844426e-09,
+        "level": 15,
+        "sigmaDerivativeTexels": 1.0131501997765577,
+        "stockSlopeMedianP95": [
+          0.9306779512771854,
+          2.100430647143293
+        ],
+        "stockVectorRms": 1.2055701171410023,
+        "tileCentreLatitude": 45.977877918928264,
+        "windowPhysicalSideMetres": 212.4753884985927,
+        "withheldDerivativeRms": 0.25583472466726387
+      },
+      "group": "navigation",
+      "scene": "riffelhorn-nav-5",
+      "sigmaMetres": 3.363585661014858,
+      "site": "riffelhorn"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "id": "riffelhorn-nav-6",
+        "pitch": 0,
+        "site": "riffelhorn",
+        "targetMetresPerCssPixel": 2.8284271247461903,
+        "zoom": 14.231119882088368
+      },
+      "captureLuminanceMeanAbsoluteChange": 0.010320304794864395,
+      "captureLuminanceP95P05Control": 0.49735890326065857,
+      "captureLuminanceP95P05Stock": 0.5023263565944676,
+      "derivatives": {
+        "canonicalLevel": 15,
+        "deliverySpacingMetres": 3.319927945290511,
+        "filteredSlopeMedianP95": [
+          0.9383822970339114,
+          1.9101241384764145
+        ],
+        "filteredVectorRms": 1.1337905544583837,
+        "kernelEdgeWeight": 7.94847572921472e-12,
+        "level": 15,
+        "sigmaDerivativeTexels": 0.8519543711056922,
+        "stockSlopeMedianP95": [
+          0.9306779512771854,
+          2.100430647143293
+        ],
+        "stockVectorRms": 1.2055701171410023,
+        "tileCentreLatitude": 45.977877918928264,
+        "windowPhysicalSideMetres": 212.4753884985927,
+        "withheldDerivativeRms": 0.20897708290479608
+      },
+      "group": "navigation",
+      "scene": "riffelhorn-nav-6",
+      "sigmaMetres": 2.8284271247461903,
+      "site": "riffelhorn"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "id": "riffelhorn-nav-7",
+        "pitch": 0,
+        "site": "riffelhorn",
+        "targetMetresPerCssPixel": 2.378414230005442,
+        "zoom": 14.481119882088368
+      },
+      "captureLuminanceMeanAbsoluteChange": 0.01947952037235422,
+      "captureLuminanceP95P05Control": 0.5046414497207783,
+      "captureLuminanceP95P05Stock": 0.5131538438727298,
+      "derivatives": {
+        "canonicalLevel": 16,
+        "deliverySpacingMetres": 1.659906753652508,
+        "filteredSlopeMedianP95": [
+          0.9572521937543014,
+          1.7265241216097023
+        ],
+        "filteredVectorRms": 1.0969490117076375,
+        "kernelEdgeWeight": 4.336370349852877e-05,
+        "level": 16,
+        "sigmaDerivativeTexels": 1.4328601439640563,
+        "stockSlopeMedianP95": [
+          0.9130227193907944,
+          1.9600881712262717
+        ],
+        "stockVectorRms": 1.1522421952068158,
+        "tileCentreLatitude": 45.979786584921676,
+        "windowPhysicalSideMetres": 106.23403223376052,
+        "withheldDerivativeRms": 0.23299134779103248
+      },
+      "group": "navigation",
+      "scene": "riffelhorn-nav-7",
+      "sigmaMetres": 2.378414230005442,
+      "site": "riffelhorn"
+    },
+    {
+      "camera": {
+        "bearing": 0,
+        "center": [
+          7.76121329,
+          45.97910794
+        ],
+        "id": "riffelhorn-nav-8",
+        "pitch": 0,
+        "site": "riffelhorn",
+        "targetMetresPerCssPixel": 2,
+        "zoom": 14.731119882088368
+      },
+      "captureLuminanceMeanAbsoluteChange": 0.01934544141543855,
+      "captureLuminanceP95P05Control": 0.5215462088838808,
+      "captureLuminanceP95P05Stock": 0.5324340456035319,
+      "derivatives": {
+        "canonicalLevel": 16,
+        "deliverySpacingMetres": 1.659906753652508,
+        "filteredSlopeMedianP95": [
+          0.9493629947769706,
+          1.7592747993132192
+        ],
+        "filteredVectorRms": 1.1051043325942531,
+        "kernelEdgeWeight": 1.365307072673889e-06,
+        "level": 16,
+        "sigmaDerivativeTexels": 1.2048869586192963,
+        "stockSlopeMedianP95": [
+          0.9130227193907944,
+          1.9600881712262717
+        ],
+        "stockVectorRms": 1.1522421952068158,
+        "tileCentreLatitude": 45.979786584921676,
+        "windowPhysicalSideMetres": 106.23403223376052,
+        "withheldDerivativeRms": 0.19885689246337704
+      },
+      "group": "navigation",
+      "scene": "riffelhorn-nav-8",
+      "sigmaMetres": 2,
+      "site": "riffelhorn"
+    }
+  ],
+  "operator": {
+    "analyzerSha256": "fbce13d7012f998be0d57be95aef0d7e81dcc5beeda2a649eee5e66ce108410b",
+    "kernel": "normalized 13x13 Gaussian of prepared RG derivative channels",
+    "kind": "cartographic-derived-relief",
+    "radiusTexels": 6,
+    "sigma": "one nominal map-plane CSS pixel in metres",
+    "sourceCodeSha256": "be112bec1f175c9ac694af4787ce3c7dbf2146cb928dc8aa5a06e02925d1c9f4"
+  },
+  "pinnedShaderHashes": {
+    "hillshade.fragment.glsl": "8d53b455567423c86dfe810df791527b5df1467b4590b5d72574275fa40a8d7a",
+    "hillshade_prepare.fragment.glsl": "6d5ed165b413f51d56274f7ac035c9be3d21a919996da944748c78948ec4813d"
+  },
+  "planSha256": "cd89a84734449659e8ba2256f1be1257ff0f717c63c437f3a7ea7c0912f3e203",
+  "productionFilesVerified": 113,
+  "responsePlot": {
+    "path": "filter-response.png",
+    "sha256": "c38a5e1c6661111d93220706fb90ec143ce66fe40d755dd49940196acd0bb438"
+  },
+  "runs": [
+    {
+      "browser": "151.0.7922.34",
+      "httpErrors": [
+        {
+          "status": 503,
+          "url": "http://127.0.0.1:4173/weather/gfs/latest.json"
+        },
+        {
+          "status": 503,
+          "url": "http://127.0.0.1:4173/weather/gfs/latest.json"
+        }
+      ],
+      "identities": [],
+      "mode": "aws",
+      "navigationCancellations": [],
+      "navigationFrames": 0,
+      "reportSha256": "bb5c92902512dcf86a426a76b9759fa00ae7cc7f0fd51f47cddb505c73d35ef4",
+      "scenes": 12,
+      "shaderSourceHashes": [
+        "b6ee09b6cc6deffeb53d62e97e050038cabe7984625f6472b1919fbc1048d54e"
+      ]
+    },
+    {
+      "browser": "151.0.7922.34",
+      "httpErrors": [
+        {
+          "status": 503,
+          "url": "http://127.0.0.1:4173/weather/gfs/latest.json"
+        },
+        {
+          "status": 503,
+          "url": "http://127.0.0.1:4173/weather/gfs/latest.json"
+        },
+        {
+          "status": 503,
+          "url": "http://127.0.0.1:4173/weather/gfs/latest.json"
+        }
+      ],
+      "identities": [
+        {
+          "manifestSha256": "b254a21b1ec346cc07b43d269d937b059851e95ac168565359a81d3872c69e54",
+          "product": "tryfan-welsh-regional-v2",
+          "revision": "db8e4d87b5fa609d455d1e0f8ec3fdebc834579a7e102f69f4d0b0283efa690c",
+          "verifiedFiles": 295
+        }
+      ],
+      "mode": "tryfan-regional",
+      "navigationCancellations": [
+        {
+          "error": "net::ERR_ABORTED",
+          "url": "http://127.0.0.1:4188/terrain/17/64080/42629.png"
+        },
+        {
+          "error": "net::ERR_ABORTED",
+          "url": "http://127.0.0.1:4188/terrain/17/64081/42629.png"
+        }
+      ],
+      "navigationFrames": 18,
+      "reportSha256": "da6478298700e67969c2722dae76e5ea94897f37a4f9e142e1088f1dfc3ffc22",
+      "scenes": 16,
+      "shaderSourceHashes": [
+        "b6ee09b6cc6deffeb53d62e97e050038cabe7984625f6472b1919fbc1048d54e"
+      ]
+    },
+    {
+      "browser": "151.0.7922.34",
+      "httpErrors": [
+        {
+          "status": 503,
+          "url": "http://127.0.0.1:4173/weather/gfs/latest.json"
+        },
+        {
+          "status": 503,
+          "url": "http://127.0.0.1:4173/weather/gfs/latest.json"
+        },
+        {
+          "status": 503,
+          "url": "http://127.0.0.1:4173/weather/gfs/latest.json"
+        }
+      ],
+      "identities": [
+        {
+          "manifestSha256": "5dbd4991aa3d413f526b158b084233c1f393491cc235eca6b02324066545427d",
+          "product": "riffelhorn-swiss-regional-parents-diagnostic",
+          "revision": "b92c9a3dfa05a87e4fcce4a6e6638efd2d9ab8e86537f52833ff1ed6def78672",
+          "verifiedTiles": 30
+        },
+        {
+          "manifestSha256": "30413b6698c1e75e27fd169f61925d8d60044fa14f444fb072b652c54816e106",
+          "product": "riffelhorn-swiss-support",
+          "revision": "1a44a0644de1bde73a3ba84d1b761dc0aa17d48cc971e5f6b5d2c14fb329d7ea",
+          "verifiedTiles": 11429
+        }
+      ],
+      "mode": "riffelhorn-regional",
+      "navigationCancellations": [],
+      "navigationFrames": 18,
+      "reportSha256": "604bd77b12274d7b8e9f54dfb366f9a869922f142d0cc2ffde0539f1271de154",
+      "scenes": 16,
+      "shaderSourceHashes": [
+        "b6ee09b6cc6deffeb53d62e97e050038cabe7984625f6472b1919fbc1048d54e"
+      ]
+    }
+  ],
+  "software": {
+    "maplibre": "6.11.2",
+    "matplotlib": "3.10.6",
+    "numpy": "2.5.3",
+    "pillow": "12.3.0",
+    "python": "3.12.6"
+  },
+  "visualIndex": [
+    {
+      "depiction": "igor",
+      "group": "scenes",
+      "mode": "aws",
+      "path": "captures/aws/downs-128m--igor.png",
+      "scene": "downs-128m",
+      "sha256": "fad1d2aab839baa42387f2eb4e8d3364081487d118e6cdad63b4c8dceeb7f38e"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "scenes",
+      "mode": "aws",
+      "path": "captures/aws/downs-128m--scale-separated.png",
+      "scene": "downs-128m",
+      "sha256": "bfb6307a0c9353e48c8f5a6c0aac62491ea1e514a3e2ebf16ec5889d766e437a"
+    },
+    {
+      "depiction": "igor",
+      "group": "scenes",
+      "mode": "aws",
+      "path": "captures/aws/downs-8m--igor.png",
+      "scene": "downs-8m",
+      "sha256": "0f7ee2d2a12aca19673c82cbc0409671189c39aba6a95979e75b70b4ef22fc28"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "scenes",
+      "mode": "aws",
+      "path": "captures/aws/downs-8m--scale-separated.png",
+      "scene": "downs-8m",
+      "sha256": "75b7425deef1d65793051d9d30bd81c816fb9cb22d8d1d5f05e4ed62a3610886"
+    },
+    {
+      "depiction": "igor",
+      "group": "scenes",
+      "mode": "aws",
+      "path": "captures/aws/downs-0.5m--igor.png",
+      "scene": "downs-0.5m",
+      "sha256": "7fab12e4bdad29dcfae01808e45eae2acf78e2e15537d4d6057fb967dcc7150d"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "scenes",
+      "mode": "aws",
+      "path": "captures/aws/downs-0.5m--scale-separated.png",
+      "scene": "downs-0.5m",
+      "sha256": "7fab12e4bdad29dcfae01808e45eae2acf78e2e15537d4d6057fb967dcc7150d"
+    },
+    {
+      "depiction": "igor",
+      "group": "scenes",
+      "mode": "aws",
+      "path": "captures/aws/cambridge-128m--igor.png",
+      "scene": "cambridge-128m",
+      "sha256": "f450576b501ae85c7ebe8176005233686485fd4902435d3860ef2d68fc05e1c5"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "scenes",
+      "mode": "aws",
+      "path": "captures/aws/cambridge-128m--scale-separated.png",
+      "scene": "cambridge-128m",
+      "sha256": "13b084a06e83d3763a4f8dcd5738bb61f93cd13c3c4c1fa459d7234685167b21"
+    },
+    {
+      "depiction": "igor",
+      "group": "scenes",
+      "mode": "aws",
+      "path": "captures/aws/cambridge-8m--igor.png",
+      "scene": "cambridge-8m",
+      "sha256": "29819c559c98294fede639ebaff62e8c75ee745ddc54a4292a539721a72157c1"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "scenes",
+      "mode": "aws",
+      "path": "captures/aws/cambridge-8m--scale-separated.png",
+      "scene": "cambridge-8m",
+      "sha256": "b6915305928d6943de9cb1ded9e53f06ef59eb1933e6ff0f5b211dc4c5673e66"
+    },
+    {
+      "depiction": "igor",
+      "group": "scenes",
+      "mode": "aws",
+      "path": "captures/aws/cambridge-0.5m--igor.png",
+      "scene": "cambridge-0.5m",
+      "sha256": "15c679ebc29e431e0844f7af19a3482eaf40f5180a4c98a1789a72fe7b29ed41"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "scenes",
+      "mode": "aws",
+      "path": "captures/aws/cambridge-0.5m--scale-separated.png",
+      "scene": "cambridge-0.5m",
+      "sha256": "f80fa89bca4bad933584ff6db4e4e3dc39e8ec431f361102972ad33ec99bf99c"
+    },
+    {
+      "depiction": "igor",
+      "group": "scenes",
+      "mode": "tryfan-regional",
+      "path": "captures/tryfan-regional/tryfan-128m--igor.png",
+      "scene": "tryfan-128m",
+      "sha256": "c12d9155519b3f76eeb081c13a318286115a8ea905592932a72b8f3e7edfb1ff"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "scenes",
+      "mode": "tryfan-regional",
+      "path": "captures/tryfan-regional/tryfan-128m--scale-separated.png",
+      "scene": "tryfan-128m",
+      "sha256": "1bfed0513f68168f29c75c299963ca1909153304ad28e03e735fe498e991a8a9"
+    },
+    {
+      "depiction": "igor",
+      "group": "scenes",
+      "mode": "tryfan-regional",
+      "path": "captures/tryfan-regional/tryfan-32m--igor.png",
+      "scene": "tryfan-32m",
+      "sha256": "7f466b45236de098c99a7f4be0d75e07f2fa2e7bce85f47337672309471bd196"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "scenes",
+      "mode": "tryfan-regional",
+      "path": "captures/tryfan-regional/tryfan-32m--scale-separated.png",
+      "scene": "tryfan-32m",
+      "sha256": "8dc0c9c587f90e426b3ed9808897f066e460265e0a751e3ee6e2c30ab9c7c17b"
+    },
+    {
+      "depiction": "igor",
+      "group": "scenes",
+      "mode": "tryfan-regional",
+      "path": "captures/tryfan-regional/tryfan-8m--igor.png",
+      "scene": "tryfan-8m",
+      "sha256": "5d1c4b4e5e94fc0678a4ca880b3600827e29b6d2a182b47d37afd1f7472346f1"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "scenes",
+      "mode": "tryfan-regional",
+      "path": "captures/tryfan-regional/tryfan-8m--scale-separated.png",
+      "scene": "tryfan-8m",
+      "sha256": "0eb6764a16da19c758cbc170d446acbbe479f7fd1036ef15be411afa4e580cd1"
+    },
+    {
+      "depiction": "igor",
+      "group": "scenes",
+      "mode": "tryfan-regional",
+      "path": "captures/tryfan-regional/tryfan-2m--igor.png",
+      "scene": "tryfan-2m",
+      "sha256": "4a2f97515bce7bf24142090113fcebd959f27f128b9f30f5d836e0a5ae3c38b6"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "scenes",
+      "mode": "tryfan-regional",
+      "path": "captures/tryfan-regional/tryfan-2m--scale-separated.png",
+      "scene": "tryfan-2m",
+      "sha256": "6a30d5a1a349879034ce866c547fa49019dac9560a55ca5eb32ce462951c6fcb"
+    },
+    {
+      "depiction": "igor",
+      "group": "scenes",
+      "mode": "tryfan-regional",
+      "path": "captures/tryfan-regional/tryfan-0.5m--igor.png",
+      "scene": "tryfan-0.5m",
+      "sha256": "5a5084cc585879a3a28bceabf8eda1fc8de6b11554a931af3f4c3ae42d652e05"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "scenes",
+      "mode": "tryfan-regional",
+      "path": "captures/tryfan-regional/tryfan-0.5m--scale-separated.png",
+      "scene": "tryfan-0.5m",
+      "sha256": "19dc7030183a7febefbf613b5e157a660c2a2db0c9d603219f32a3d24e74a137"
+    },
+    {
+      "depiction": "igor",
+      "group": "scenes",
+      "mode": "tryfan-regional",
+      "path": "captures/tryfan-regional/tryfan-0.125m--igor.png",
+      "scene": "tryfan-0.125m",
+      "sha256": "fc21b0ae34781843400fc877091b39f59952d7b635a471ac0c1a88a26d2120a8"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "scenes",
+      "mode": "tryfan-regional",
+      "path": "captures/tryfan-regional/tryfan-0.125m--scale-separated.png",
+      "scene": "tryfan-0.125m",
+      "sha256": "52742c2f987008f7232231c459a1de798a83156b7b7a152b66cdc256110fd59f"
+    },
+    {
+      "depiction": "igor",
+      "group": "scenes",
+      "mode": "tryfan-regional",
+      "path": "captures/tryfan-regional/tryfan-8m-p55--igor.png",
+      "scene": "tryfan-8m-p55",
+      "sha256": "67a9d17050e80a5ee09292d6b542268db9b429ba08151290cdfc13f4b5ef44c4"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "scenes",
+      "mode": "tryfan-regional",
+      "path": "captures/tryfan-regional/tryfan-8m-p55--scale-separated.png",
+      "scene": "tryfan-8m-p55",
+      "sha256": "9251f82bee9f650f7ec24613118b8d29920f6d8c329476fdf652685a3e1a6296"
+    },
+    {
+      "depiction": "igor",
+      "group": "scenes",
+      "mode": "tryfan-regional",
+      "path": "captures/tryfan-regional/tryfan-0.5m-p55--igor.png",
+      "scene": "tryfan-0.5m-p55",
+      "sha256": "17a868f62fd05392bdc9d03d6da7e0879c86e4f6c3a61ade7673c9978a47f846"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "scenes",
+      "mode": "tryfan-regional",
+      "path": "captures/tryfan-regional/tryfan-0.5m-p55--scale-separated.png",
+      "scene": "tryfan-0.5m-p55",
+      "sha256": "5b9ee32476e2a174ac9ccf8073e58f7970ec4d889ce9e5867a6b1f6631ae3c28"
+    },
+    {
+      "depiction": "igor",
+      "group": "navigation",
+      "mode": "tryfan-regional",
+      "path": "captures/tryfan-regional/tryfan-nav-0--igor.png",
+      "scene": "tryfan-nav-0",
+      "sha256": "a6774e291079612f53c46e0895056bb6b8c84147b564a3e8a9fb5cb0ef56ebeb"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "navigation",
+      "mode": "tryfan-regional",
+      "path": "captures/tryfan-regional/tryfan-nav-0--scale-separated.png",
+      "scene": "tryfan-nav-0",
+      "sha256": "c9f4393cc1c5b93e353afe2bcab83f633bc51a03d0524a5ef6a8e82f393c4568"
+    },
+    {
+      "depiction": "igor",
+      "group": "navigation",
+      "mode": "tryfan-regional",
+      "path": "captures/tryfan-regional/tryfan-nav-1--igor.png",
+      "scene": "tryfan-nav-1",
+      "sha256": "a35c74ed976e906cdef53495ab4782eab47fca81f4ac916a33506ff6abf99fdb"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "navigation",
+      "mode": "tryfan-regional",
+      "path": "captures/tryfan-regional/tryfan-nav-1--scale-separated.png",
+      "scene": "tryfan-nav-1",
+      "sha256": "9089e01e714cfa87353d796677d675800409e452465354a25c0ed93fabccae61"
+    },
+    {
+      "depiction": "igor",
+      "group": "navigation",
+      "mode": "tryfan-regional",
+      "path": "captures/tryfan-regional/tryfan-nav-2--igor.png",
+      "scene": "tryfan-nav-2",
+      "sha256": "63f9d4198140ae14a2a338f3fe409ad1b897ceb00bb372727ce8ddad451ad0b2"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "navigation",
+      "mode": "tryfan-regional",
+      "path": "captures/tryfan-regional/tryfan-nav-2--scale-separated.png",
+      "scene": "tryfan-nav-2",
+      "sha256": "1910f5da0358fa734ee83aece45e67e85a6437bd925a004e6fe3e51d9985c9b3"
+    },
+    {
+      "depiction": "igor",
+      "group": "navigation",
+      "mode": "tryfan-regional",
+      "path": "captures/tryfan-regional/tryfan-nav-3--igor.png",
+      "scene": "tryfan-nav-3",
+      "sha256": "76a3fa6051cf217e6bbf80e3edfa46824a41e65ab6b859e3eee1c70a99b375f2"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "navigation",
+      "mode": "tryfan-regional",
+      "path": "captures/tryfan-regional/tryfan-nav-3--scale-separated.png",
+      "scene": "tryfan-nav-3",
+      "sha256": "3e47830a76a4495891a225490905f8bb6426f9c79cf59f88f3e3e9d7097a28f3"
+    },
+    {
+      "depiction": "igor",
+      "group": "navigation",
+      "mode": "tryfan-regional",
+      "path": "captures/tryfan-regional/tryfan-nav-4--igor.png",
+      "scene": "tryfan-nav-4",
+      "sha256": "a5c1a6d408365b957addc13dcf60f9c56b74a7c6820e6932d5c03fe9111933aa"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "navigation",
+      "mode": "tryfan-regional",
+      "path": "captures/tryfan-regional/tryfan-nav-4--scale-separated.png",
+      "scene": "tryfan-nav-4",
+      "sha256": "38c1936f05f1a479ce2ff36d314aa9e4504ae2026bbbc6eed05ebc6e2c8818e3"
+    },
+    {
+      "depiction": "igor",
+      "group": "navigation",
+      "mode": "tryfan-regional",
+      "path": "captures/tryfan-regional/tryfan-nav-5--igor.png",
+      "scene": "tryfan-nav-5",
+      "sha256": "7b6fba086bf1ac0548ca5dd4dc425a861e17d8b1b4e40c0e7067c5c92686e024"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "navigation",
+      "mode": "tryfan-regional",
+      "path": "captures/tryfan-regional/tryfan-nav-5--scale-separated.png",
+      "scene": "tryfan-nav-5",
+      "sha256": "33b28ae98e741f4937a005d4512495e44686e7f7d048f66911ee3f44b75a8674"
+    },
+    {
+      "depiction": "igor",
+      "group": "navigation",
+      "mode": "tryfan-regional",
+      "path": "captures/tryfan-regional/tryfan-nav-6--igor.png",
+      "scene": "tryfan-nav-6",
+      "sha256": "f986001c0a777c435eb5deb204b52f4986973ad0c19f7b9f4a9e1a019b165bbd"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "navigation",
+      "mode": "tryfan-regional",
+      "path": "captures/tryfan-regional/tryfan-nav-6--scale-separated.png",
+      "scene": "tryfan-nav-6",
+      "sha256": "925e015cdb51adc7157476cbcd242c6990bb6b7bdeb5e88d76a0f198c45b0b2e"
+    },
+    {
+      "depiction": "igor",
+      "group": "navigation",
+      "mode": "tryfan-regional",
+      "path": "captures/tryfan-regional/tryfan-nav-7--igor.png",
+      "scene": "tryfan-nav-7",
+      "sha256": "d70952c6f11c2d54ebebe4692b9234c233eb550b2b049231bdb6dea6fb8984f9"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "navigation",
+      "mode": "tryfan-regional",
+      "path": "captures/tryfan-regional/tryfan-nav-7--scale-separated.png",
+      "scene": "tryfan-nav-7",
+      "sha256": "a16c482a648d5927904500e1317ac31dbbc1c01311037e15222ec7cdc74d352f"
+    },
+    {
+      "depiction": "igor",
+      "group": "navigation",
+      "mode": "tryfan-regional",
+      "path": "captures/tryfan-regional/tryfan-nav-8--igor.png",
+      "scene": "tryfan-nav-8",
+      "sha256": "a6edab99172f0a29527898a37347f739453abd0ac5785056482f402f2af8c1bd"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "navigation",
+      "mode": "tryfan-regional",
+      "path": "captures/tryfan-regional/tryfan-nav-8--scale-separated.png",
+      "scene": "tryfan-nav-8",
+      "sha256": "2a4a376e76a072641606d8cc3cbd3c6df683dd65bbdace40a98511063f0b7407"
+    },
+    {
+      "depiction": "igor",
+      "group": "scenes",
+      "mode": "riffelhorn-regional",
+      "path": "captures/riffelhorn-regional/riffelhorn-128m--igor.png",
+      "scene": "riffelhorn-128m",
+      "sha256": "a97e61cd1d6d250d703daa13f43fa01a3fb3098f5dfc21c4999504942b9c6c7a"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "scenes",
+      "mode": "riffelhorn-regional",
+      "path": "captures/riffelhorn-regional/riffelhorn-128m--scale-separated.png",
+      "scene": "riffelhorn-128m",
+      "sha256": "058da0ee41d4eb589b673a60f113bcfc5f68a76fe83c3522fe5cd5b29f82c734"
+    },
+    {
+      "depiction": "igor",
+      "group": "scenes",
+      "mode": "riffelhorn-regional",
+      "path": "captures/riffelhorn-regional/riffelhorn-32m--igor.png",
+      "scene": "riffelhorn-32m",
+      "sha256": "5de36ad198c465b29025699f7d9a197c75e995f9b02f1d94d67ebdb26cc6934c"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "scenes",
+      "mode": "riffelhorn-regional",
+      "path": "captures/riffelhorn-regional/riffelhorn-32m--scale-separated.png",
+      "scene": "riffelhorn-32m",
+      "sha256": "c0f5709c4a24cffcfe8104982c026b2011da1d00e2b69a9a32a8f945134ae860"
+    },
+    {
+      "depiction": "igor",
+      "group": "scenes",
+      "mode": "riffelhorn-regional",
+      "path": "captures/riffelhorn-regional/riffelhorn-8m--igor.png",
+      "scene": "riffelhorn-8m",
+      "sha256": "ae8c1b62e5ced9555baaa38310a3cfcb3bd7f67b46486da8ca8e31068f2c0cf5"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "scenes",
+      "mode": "riffelhorn-regional",
+      "path": "captures/riffelhorn-regional/riffelhorn-8m--scale-separated.png",
+      "scene": "riffelhorn-8m",
+      "sha256": "52fa37aa8d75d170e8494a1ff9b16cb1c40943e596424f543d8635220417c45d"
+    },
+    {
+      "depiction": "igor",
+      "group": "scenes",
+      "mode": "riffelhorn-regional",
+      "path": "captures/riffelhorn-regional/riffelhorn-2m--igor.png",
+      "scene": "riffelhorn-2m",
+      "sha256": "fd9c0f0fc89cebfa236cbf67d465b22e34c078a1d1f318965d50919c2f6971fc"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "scenes",
+      "mode": "riffelhorn-regional",
+      "path": "captures/riffelhorn-regional/riffelhorn-2m--scale-separated.png",
+      "scene": "riffelhorn-2m",
+      "sha256": "e2030c6e9ee67f9bda8e60b8753983958bf93e3cc10f106144ff372f9b0498a8"
+    },
+    {
+      "depiction": "igor",
+      "group": "scenes",
+      "mode": "riffelhorn-regional",
+      "path": "captures/riffelhorn-regional/riffelhorn-0.5m--igor.png",
+      "scene": "riffelhorn-0.5m",
+      "sha256": "4af3395bfc4fa74c98c2fb4a3e0f6ae0be43e1aa1a4ac8758a6bd5cb8681be57"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "scenes",
+      "mode": "riffelhorn-regional",
+      "path": "captures/riffelhorn-regional/riffelhorn-0.5m--scale-separated.png",
+      "scene": "riffelhorn-0.5m",
+      "sha256": "0e0716ea7a49376f0303b7f88d74f6ef6cc0cc6504c6e8d64ec3df56d263121a"
+    },
+    {
+      "depiction": "igor",
+      "group": "scenes",
+      "mode": "riffelhorn-regional",
+      "path": "captures/riffelhorn-regional/riffelhorn-0.125m--igor.png",
+      "scene": "riffelhorn-0.125m",
+      "sha256": "64c188f99f63ea178c83da39d6c3ea1f7b95281cd79b46e92910de061bed671b"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "scenes",
+      "mode": "riffelhorn-regional",
+      "path": "captures/riffelhorn-regional/riffelhorn-0.125m--scale-separated.png",
+      "scene": "riffelhorn-0.125m",
+      "sha256": "e1b74e05df68288713840e6ef662d96721d9e8526eb3538bcc1db0b62dcf6db6"
+    },
+    {
+      "depiction": "igor",
+      "group": "scenes",
+      "mode": "riffelhorn-regional",
+      "path": "captures/riffelhorn-regional/riffelhorn-8m-p55--igor.png",
+      "scene": "riffelhorn-8m-p55",
+      "sha256": "3efc88a10d14abb4a45c7941584bdc310b8d5259f6202caaebcef3f5d5c9e9f8"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "scenes",
+      "mode": "riffelhorn-regional",
+      "path": "captures/riffelhorn-regional/riffelhorn-8m-p55--scale-separated.png",
+      "scene": "riffelhorn-8m-p55",
+      "sha256": "adf51f552190c1bfb2b8fc78e28324b20352be111bc089edcc1a2c047bcbc35b"
+    },
+    {
+      "depiction": "igor",
+      "group": "scenes",
+      "mode": "riffelhorn-regional",
+      "path": "captures/riffelhorn-regional/riffelhorn-0.5m-p55--igor.png",
+      "scene": "riffelhorn-0.5m-p55",
+      "sha256": "f5e351c1dd1089bedd507c868cac1b5a8db01b5bc86353615edac601e8a82754"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "scenes",
+      "mode": "riffelhorn-regional",
+      "path": "captures/riffelhorn-regional/riffelhorn-0.5m-p55--scale-separated.png",
+      "scene": "riffelhorn-0.5m-p55",
+      "sha256": "3a6e34701a021a2f546db6921ad4a9fa2e62ab4230a877ab0d97e0766d4ceff2"
+    },
+    {
+      "depiction": "igor",
+      "group": "navigation",
+      "mode": "riffelhorn-regional",
+      "path": "captures/riffelhorn-regional/riffelhorn-nav-0--igor.png",
+      "scene": "riffelhorn-nav-0",
+      "sha256": "ae8c1b62e5ced9555baaa38310a3cfcb3bd7f67b46486da8ca8e31068f2c0cf5"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "navigation",
+      "mode": "riffelhorn-regional",
+      "path": "captures/riffelhorn-regional/riffelhorn-nav-0--scale-separated.png",
+      "scene": "riffelhorn-nav-0",
+      "sha256": "52fa37aa8d75d170e8494a1ff9b16cb1c40943e596424f543d8635220417c45d"
+    },
+    {
+      "depiction": "igor",
+      "group": "navigation",
+      "mode": "riffelhorn-regional",
+      "path": "captures/riffelhorn-regional/riffelhorn-nav-1--igor.png",
+      "scene": "riffelhorn-nav-1",
+      "sha256": "4be6d850a2872f8cd975aa45b6e9c7263b7ee329202d3b86b4f3f81f7e588609"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "navigation",
+      "mode": "riffelhorn-regional",
+      "path": "captures/riffelhorn-regional/riffelhorn-nav-1--scale-separated.png",
+      "scene": "riffelhorn-nav-1",
+      "sha256": "4b0863b8580b082d8c61f4f132c5b6ba77ca435a65c6df61a3074e916c5e44b8"
+    },
+    {
+      "depiction": "igor",
+      "group": "navigation",
+      "mode": "riffelhorn-regional",
+      "path": "captures/riffelhorn-regional/riffelhorn-nav-2--igor.png",
+      "scene": "riffelhorn-nav-2",
+      "sha256": "41d7152a2505f8ebeb06d768131cac746e7fec087b7f055a950bc7237bb62fce"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "navigation",
+      "mode": "riffelhorn-regional",
+      "path": "captures/riffelhorn-regional/riffelhorn-nav-2--scale-separated.png",
+      "scene": "riffelhorn-nav-2",
+      "sha256": "28d3f5d7fee99f0b3df67a1d3249466660063c6f7635147d8e55c97c596b5022"
+    },
+    {
+      "depiction": "igor",
+      "group": "navigation",
+      "mode": "riffelhorn-regional",
+      "path": "captures/riffelhorn-regional/riffelhorn-nav-3--igor.png",
+      "scene": "riffelhorn-nav-3",
+      "sha256": "6175a684aab79ddc5c5f80c9c3520a3d13dbb49be882fba2602eeccbb1060aee"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "navigation",
+      "mode": "riffelhorn-regional",
+      "path": "captures/riffelhorn-regional/riffelhorn-nav-3--scale-separated.png",
+      "scene": "riffelhorn-nav-3",
+      "sha256": "5d1495f527ae5d71d27e065ea684c1d9324c801bcd445710e9dd951d140fe779"
+    },
+    {
+      "depiction": "igor",
+      "group": "navigation",
+      "mode": "riffelhorn-regional",
+      "path": "captures/riffelhorn-regional/riffelhorn-nav-4--igor.png",
+      "scene": "riffelhorn-nav-4",
+      "sha256": "b8eeb0fdd360951b3dbec48e26f11b82207b5eda34183ce9b3fce55ba596f099"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "navigation",
+      "mode": "riffelhorn-regional",
+      "path": "captures/riffelhorn-regional/riffelhorn-nav-4--scale-separated.png",
+      "scene": "riffelhorn-nav-4",
+      "sha256": "3a7fffcaed67f4ca14eaadfcd2aac672e18d3f3fa0be004f047e06c7bc971425"
+    },
+    {
+      "depiction": "igor",
+      "group": "navigation",
+      "mode": "riffelhorn-regional",
+      "path": "captures/riffelhorn-regional/riffelhorn-nav-5--igor.png",
+      "scene": "riffelhorn-nav-5",
+      "sha256": "1afbf897b56bac49b12de8bd3e976e02656e59a5da7f61f4ee19929e90a0020e"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "navigation",
+      "mode": "riffelhorn-regional",
+      "path": "captures/riffelhorn-regional/riffelhorn-nav-5--scale-separated.png",
+      "scene": "riffelhorn-nav-5",
+      "sha256": "5499fe871feb5f140ee8a8f72a0c46eb376fb1f9fba191c112ed8776e1058c83"
+    },
+    {
+      "depiction": "igor",
+      "group": "navigation",
+      "mode": "riffelhorn-regional",
+      "path": "captures/riffelhorn-regional/riffelhorn-nav-6--igor.png",
+      "scene": "riffelhorn-nav-6",
+      "sha256": "be3170c7d8ceae1ef6aea0296f9947ad10783fa6ad5b5d1beaf8ed43ae0d703e"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "navigation",
+      "mode": "riffelhorn-regional",
+      "path": "captures/riffelhorn-regional/riffelhorn-nav-6--scale-separated.png",
+      "scene": "riffelhorn-nav-6",
+      "sha256": "69d07ed30cbfe05d23f6af1a5153a79a20dad3e0b3405bc39e0898442605b644"
+    },
+    {
+      "depiction": "igor",
+      "group": "navigation",
+      "mode": "riffelhorn-regional",
+      "path": "captures/riffelhorn-regional/riffelhorn-nav-7--igor.png",
+      "scene": "riffelhorn-nav-7",
+      "sha256": "25e59faca55de3147641a5407fbcc02a236a3dff4565d88c84f8b6381066637a"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "navigation",
+      "mode": "riffelhorn-regional",
+      "path": "captures/riffelhorn-regional/riffelhorn-nav-7--scale-separated.png",
+      "scene": "riffelhorn-nav-7",
+      "sha256": "3a4b722bbc97c615cd3da58842515e76ec247401c34fc2939edbf1820d41e2b0"
+    },
+    {
+      "depiction": "igor",
+      "group": "navigation",
+      "mode": "riffelhorn-regional",
+      "path": "captures/riffelhorn-regional/riffelhorn-nav-8--igor.png",
+      "scene": "riffelhorn-nav-8",
+      "sha256": "fd9c0f0fc89cebfa236cbf67d465b22e34c078a1d1f318965d50919c2f6971fc"
+    },
+    {
+      "depiction": "scale-separated",
+      "group": "navigation",
+      "mode": "riffelhorn-regional",
+      "path": "captures/riffelhorn-regional/riffelhorn-nav-8--scale-separated.png",
+      "scene": "riffelhorn-nav-8",
+      "sha256": "e2030c6e9ee67f9bda8e60b8753983958bf93e3cc10f106144ff372f9b0498a8"
+    }
+  ]
+}

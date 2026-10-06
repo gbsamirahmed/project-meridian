@@ -3715,3 +3715,29 @@ rasterio/NumPy warnings are non-failing. No runtime edits require application te
 normal CI has no external-data requirement. Large captures stay in meridian-data.
 No production, IGOR, exaggeration 1.45, satellite, Weather/Traverse or analytical elevation
 changes, new source data, correction, multiview work or reopened elevation research.
+
+## 2026-10-06 — Scale-separated terrain relief depiction
+
+Completed [one frozen derivative-only control](atlas/scale-separated-relief.md) from
+clean 3d406ae, origin divergence 0/0. Gaussian scale-space uses sigma equal to one
+nominal map-plane CSS pixel in metres before unchanged nonlinear IGOR; no height,
+mesh, source, camera, colour or strength tuning. Reused four benchmarks/22 cameras
+and two nine-step settled sequences: 80 captures, all 40 geometry/data/LOD pairs
+verified. Prepared-derivative RMS falls, while useful narrow structure also softens;
+low-relief controls show no obvious added prominence/noise but no material gain.
+Result **NEGATIVE for this control**, not a claim against all multiscale depiction.
+Discrete source-level contrast/refinement persists; interactive continuity/performance
+is not established. Clipped input, limited halo and nominal scale under pitch remain
+explicit. One stale navigation metadata field was removed without changing captures.
+
+Added research-only shader/capture tooling, offline diagnostics, nine asset-free
+synthetic tests, frozen plan/results and navigation; large captures remain external.
+Regional product hashes, 100 Swiss source assets, all 113 production source hashes,
+matched cameras, lint, syntax, local references and deterministic rebuilds pass.
+No application/shared runtime changes require broader application tests/build.
+
+Source-faithful geometry remains; no demonstrated deficiency activates conditional
+morphology preparation. Next is the bounded information-aware display/selection
+experiment, not executed here. Production AWS visual/analytical terrain, IGOR,
+exaggeration 1.45, satellite/opacity/suppression, Weather/Traverse and lifecycle remain
+unchanged. No appearance/multiview work, source acquisition or reopened elevation.
