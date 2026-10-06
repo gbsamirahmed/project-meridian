@@ -4089,3 +4089,24 @@ That task has not begun. Successful persistence does not select production infra
 - Current accepted binding snapshot 48,708 bytes; no raster payload/index/per-cell object persistence. Local timings are proof measurements, not production capacity. The original archive, all frozen contracts, historical reports, production hashes, Weather and Traverse remain unchanged. No inference/hydrology/runtime/layer, cloud or new dataset.
 - Validation: 14 focused Node tests plus 2 synthetic affine/CRS tests and frozen domain checks; exact source hashes, lazy v1 validation, roundtrip/restart, deterministic logical results, links/anchors, 42 status preservation and full protected/history checks.
 - Next, separately authorized only: **Retained Riffelhorn appearance identity, provenance and qualified-resolution assessment** (A2/A15), using retained metadata/products. Native-raster intake is complete for this slice; no automatic ingestion expansion or infrastructure build. Unresolved appearance/correction and externally parked Swiss frame pixels remain visible. The next task has not begun.
+
+
+## 2026-10-06 — retained Riffelhorn appearance identity and qualified-resolution assessment
+
+Started clean `main` at `944326b`, fetched origin with 0/0 divergence. The
+[report](research/riffelhorn-appearance-assessment.md), [results](research/riffelhorn-appearance-assessment-results.json)
+and [validation](research/riffelhorn-appearance-assessment-validation.json) classify **C — SUCCESS**
+at metadata/scenario level. Resolution conclusion **B**: shared source/product/representation
+machinery with a small appearance-specific eligibility policy, not a full hierarchy runtime.
+A–E preserve support/scale/time, acquisition unknowns, rights and processing meaning; stronger
+physical/current-state requests fail honestly. F remains conceptual multiview compatibility.
+Four source rasters, 1,084 prepared payloads and 112 parked input hashes match; five alpha
+samples demonstrate support distinct from tile presence/visibility/confidence. No RGB
+interpretation, correction, physical lighting, inference, acquisition or dataset mutation.
+
+Focused tests, deterministic fresh-process reruns, frozen domain/type checks, report links,
+42 unchanged canonical status columns, all historical reports/tooling and 113 production
+hashes are verified in the receipt. No production/Weather/Traverse or frozen contract changes.
+The previous next recommendation is complete; exactly one next is **Retained dated-observation illumination and shadow identifiability assessment**,
+using retained dated observations to determine correction readiness without performing it.
+It has not begun. Appearance science stays open/partial/advanced; Swiss multiview parked.

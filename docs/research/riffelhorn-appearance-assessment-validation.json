@@ -1,0 +1,341 @@
+{
+  "assessment": "riffelhorn-appearance-metadata/v1",
+  "startingCheckpoint": "944326b6c6fcbe277e3d71a65c463c6fcecd5960",
+  "decision": "C - SUCCESS",
+  "checks": [
+    {
+      "check": "expected starting requirements checkpoint ancestor",
+      "passed": true
+    },
+    {
+      "check": "existing clean main upstream context",
+      "passed": true
+    },
+    {
+      "check": "precommit divergence 0/0",
+      "passed": true
+    },
+    {
+      "check": "113 protected production hashes unchanged",
+      "passed": true
+    },
+    {
+      "check": "seven frozen semantic code fixture hashes unchanged",
+      "passed": true
+    },
+    {
+      "check": "production contracts metadata Atlas/EarthLab sources unchanged",
+      "passed": true
+    },
+    {
+      "check": "all existing scripts/research assets and 43 Atlas/EarthLab reports preserved",
+      "passed": true
+    },
+    {
+      "check": "all42 canonical status columns unchanged",
+      "passed": true
+    },
+    {
+      "check": "historical audit gate preserved",
+      "passed": true
+    },
+    {
+      "check": "development log append-only",
+      "passed": true
+    },
+    {
+      "check": "27 durable assessment sections",
+      "passed": true
+    },
+    {
+      "check": "C success separate from B small eligibility and parked science",
+      "passed": true
+    },
+    {
+      "check": "exact next task consistent unstarted",
+      "passed": true
+    },
+    {
+      "check": "finite evaluator method revision",
+      "passed": true
+    },
+    {
+      "check": "fresh process deterministic retained metadata reevaluation",
+      "passed": true
+    },
+    {
+      "check": "byte-equivalent deterministic receipt after fresh process",
+      "passed": true
+    },
+    {
+      "check": "canonical logical receipt hash",
+      "passed": true
+    },
+    {
+      "check": "pinned retained SWISSIMAGE manifest",
+      "passed": true
+    },
+    {
+      "check": "four original and1084prepared files all exact hashes",
+      "passed": true
+    },
+    {
+      "check": "parked112metadata inputs unchanged no pixels",
+      "passed": true
+    },
+    {
+      "check": "retained baseline source metadata preserved",
+      "passed": true
+    },
+    {
+      "check": "metadata receipts exact revisions",
+      "passed": true
+    },
+    {
+      "check": "ordinary steep parent qualified support and delivery sampling",
+      "passed": true
+    },
+    {
+      "check": "boundary remains partial rather than supported whole",
+      "passed": true
+    },
+    {
+      "check": "physical and current state not ordinary RGB substitute",
+      "passed": true
+    },
+    {
+      "check": "2023 geometry unknown not borrowed2026",
+      "passed": true
+    },
+    {
+      "check": "outside no equivalent automatic fallback",
+      "passed": true
+    },
+    {
+      "check": "alpha support independent of tile presence visibility confidence",
+      "passed": true
+    },
+    {
+      "check": "F conceptual no fused product",
+      "passed": true
+    },
+    {
+      "check": "11 focused eligibility support time identity and CRS tests",
+      "passed": true
+    },
+    {
+      "check": "11 focused tests counted",
+      "passed": true
+    },
+    {
+      "check": "64 unchanged frozen domain checks",
+      "passed": true
+    },
+    {
+      "check": "64domain tests counted",
+      "passed": true
+    },
+    {
+      "check": "frozen isolated TypeScript declarations",
+      "passed": true
+    },
+    {
+      "check": "current navigation completes old appearance recommendation",
+      "passed": true
+    },
+    {
+      "check": "only isolated assessment and current navigation changed",
+      "passed": true
+    },
+    {
+      "check": "no payloads stores large artifacts added",
+      "passed": true
+    },
+    {
+      "check": "local references and anchors resolve",
+      "passed": true
+    },
+    {
+      "check": "all research JSON parses",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 944326b",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 691450f",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 3c143eb",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 1c2d10e",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 6e17e79",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 43afe78",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 5f14511",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor e65c2d6",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 052374e",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor c4da565",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 75ea9d8",
+      "passed": true
+    },
+    {
+      "check": "unstaged whitespace",
+      "passed": true
+    },
+    {
+      "check": "staged whitespace",
+      "passed": true
+    },
+    {
+      "check": "changed Markdown no trailing whitespace",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "commands": [
+    {
+      "check": "fresh process deterministic retained metadata reevaluation",
+      "command": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/appearance-assessment/assess.py"
+      ],
+      "exitCode": 0
+    },
+    {
+      "check": "11 focused eligibility support time identity and CRS tests",
+      "command": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/appearance-assessment/test_assess.py"
+      ],
+      "exitCode": 0
+    },
+    {
+      "check": "64 unchanged frozen domain checks",
+      "command": [
+        "node",
+        "--test",
+        "scripts/atlas/test_semantic_evidence_contract.mjs",
+        "scripts/atlas/test_terrain_hierarchy_contract.mjs",
+        "scripts/atlas/test_terrain_runtime.mjs",
+        "scripts/atlas/test_tryfan_terrain.mjs"
+      ],
+      "exitCode": 0
+    },
+    {
+      "check": "frozen isolated TypeScript declarations",
+      "command": [
+        "npx.cmd",
+        "tsc",
+        "-p",
+        "scripts/atlas/semantic-evidence/tsconfig.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "check": "unstaged whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0
+    },
+    {
+      "check": "staged whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "toolSha256": {
+    "scripts/atlas/appearance-assessment/assess.py": "2950efdba17516f4834d6ad9affc0b998788af6ec77f503c35f60c50b708b6fd",
+    "scripts/atlas/appearance-assessment/test_assess.py": "53607f0ed9dcbfa73db9bf2a95539c8349452679b10c67a5c3f00877e7eeebd6",
+    "scripts/atlas/appearance-assessment/validate.py": "9648ffb248d74951a361a5f61ffba2c79b4f9e5baccaced4212dcaf6d621a643"
+  },
+  "resultsSha256": "ba640142b39459f2fbe9b155b5eaf5ba274cf81b4fdc34988817286ab5441425",
+  "logicalSha256": "cadab4e8a9630fc3823b7f4984275a260e416ab3114b6be209b7d044014c8554",
+  "reportSha256": "7b849da9355738deff86454cb2cf57d2bd38468d20050d896b52c9ce2a7c4bd2",
+  "protectedProductionHashChecks": 113,
+  "productionMismatches": [],
+  "frozenSemanticHashChecks": 7,
+  "frozenMismatches": [],
+  "unchangedScripts": 306,
+  "unchangedHistoricalAtlasEarthLabReports": 43,
+  "unchangedPriorResearchAssets": 22,
+  "preservationMismatches": [],
+  "canonicalThreadCount": 42,
+  "canonicalStatusColumnsUnchanged": true,
+  "localReferencesChecked": 346,
+  "anchorsChecked": 53,
+  "missingReferences": [],
+  "checkpointAncestors": {
+    "944326b": "944326b6c6fcbe277e3d71a65c463c6fcecd5960",
+    "691450f": "691450ff540e0e15ade58cba8464d221e89dc119",
+    "3c143eb": "3c143ebea99ce366a1b00083f64a4ee11149a1e0",
+    "1c2d10e": "1c2d10e522f54e60f83bae2e416008bd1a241eb1",
+    "6e17e79": "6e17e7923f2130b2cfce3671e026fe56b6397f5f",
+    "43afe78": "43afe78e549f6707f0648465af6d7c6e0aabb430",
+    "5f14511": "5f145117072b1cde2e696fb8d8f8d11995a2c06f",
+    "e65c2d6": "e65c2d6c29ed4421d5f2cc7133604332e8dfd71b",
+    "052374e": "052374e07d613a549f5a88640b42932f97a7f896",
+    "c4da565": "c4da56577c27f56ee1a5829e85d8daa951a517c1",
+    "75ea9d8": "75ea9d837c86506b0e278f79e209a8533e9664b7"
+  },
+  "changedPaths": [
+    "docs/architecture.md",
+    "docs/development-log.md",
+    "docs/product-direction.md",
+    "docs/research/atlas-research-map.md",
+    "docs/research/atlas-research-state.md",
+    "docs/research/riffelhorn-appearance-assessment-results.json",
+    "docs/research/riffelhorn-appearance-assessment-validation.json",
+    "docs/research/riffelhorn-appearance-assessment.md",
+    "scripts/atlas/appearance-assessment/README.md",
+    "scripts/atlas/appearance-assessment/assess.py",
+    "scripts/atlas/appearance-assessment/test_assess.py",
+    "scripts/atlas/appearance-assessment/validate.py"
+  ],
+  "nextTask": "Retained dated-observation illumination and shadow identifiability assessment; not started",
+  "confirmations": {
+    "noAcquisition": true,
+    "noPayloadDuplication": true,
+    "noFrozenContractChanges": true,
+    "noProductionChanges": true,
+    "weatherTraverseUnchanged": true,
+    "multiscaleClosed": true,
+    "multiviewParked": true,
+    "noCorrection": true,
+    "noIlluminationNormalization": true,
+    "noClassifier": true,
+    "noPrivateInspection": true
+  }
+}

@@ -52,11 +52,13 @@ now completes that recommendation (**C — SUCCESS**): real restarts, coherent p
 scoped recomputation and retained-pixel historical replay preserve the qualified slice.
 The [WorldCover proof](tryfan-worldcover-binding-proof.md) now completes that recommendation
 (**C — SUCCESS**): native templates/queries, qualifications, NRW coexistence and restart
-work without changing v1. Exactly one next recommendation: **Retained Riffelhorn appearance
-identity, provenance and qualified-resolution assessment**, separately authorized; its
-[scope](tryfan-worldcover-binding-proof.md#25-exactly-one-recommended-next-bounded-task) uses
-retained metadata/products, without correction, acquisition or production implementation.
-Open/parked appearance work remains independent; nothing starts automatically.
+work without changing v1. The [retained Riffelhorn appearance assessment](riffelhorn-appearance-assessment.md)
+now completes that recommendation (**C — SUCCESS**): source-derived identity/provenance,
+support/scale/time and honest acquisition/physical gaps fit shared machinery plus small
+appearance eligibility. No full hierarchy is implemented or scientifically justified here.
+Exactly one next task: **Retained dated-observation illumination and shadow identifiability assessment**;
+[scope/exit](riffelhorn-appearance-assessment.md#27-exactly-one-next-bounded-task). It has not begun.
+Open/parked appearance work remains independent; no correction or acquisition follows automatically.
 
 Production, Weather and Traverse remain unchanged. The map below retains chronological
 milestones; current statuses and supersession are in the linked register.
@@ -478,3 +480,18 @@ recommendations above are complete/superseded by current programme state.
 Next is the retained Riffelhorn appearance identity, provenance and qualified-resolution
 assessment, not begun. All 42 register statuses, frozen contracts, production and
 open/parked appearance work remain unchanged; Swiss frames stay parked.
+
+## 2026-10-06 — retained Riffelhorn appearance identity and resolution assessment
+
+[Report](riffelhorn-appearance-assessment.md): **C — SUCCESS**, resolution conclusion **B**.
+Retained source/product/recipe identity, delivery support and sampling, acquisition unknowns,
+rights and physical-processing meaning remain distinct. A–E are finite metadata scenarios;
+F is future multiview compatibility, not pixel gain. Four sources and 1,084 prepared payloads
+match their hashes; alpha is supported area, not confidence or visibility. Historical
+recommendations above are superseded by the current programme return point.
+
+Next: **Retained dated-observation illumination and shadow identifiability assessment**, not begun.
+This is the A6/A7 scientific entry gate using existing dated observations, not another
+world-model proof or correction experiment. All 42 status columns, historic reports,
+production and frozen contracts remain; A13 Swiss pixels remain parked. Appearance
+correction, recovery, BRDF, physical lighting, view/fusion and registration are unresolved.

@@ -36,9 +36,15 @@ scoped update and historical replay survive; whole-metadata snapshots remain a s
 replaceable single-writer mechanism. The [WorldCover binding proof](research/tryfan-worldcover-binding-proof.md)
 now completes that recommendation (**C — SUCCESS**) for one native categorical raster,
 qualified queries and semantic restart; other semantic input forms remain conceptual.
-Exactly one next task is separately authorized: retained Riffelhorn appearance identity,
-provenance and qualified-resolution assessment. It has not begun. No production storage,
-cloud build, classifier or broad ingestion has occurred.
+The [retained Riffelhorn appearance assessment](research/riffelhorn-appearance-assessment.md)
+now completes that recommendation (**C — SUCCESS**, resolution conclusion **B**): source-derived
+imagery fits shared identity/provenance plus bounded appearance eligibility, without a full
+hierarchy/runtime. Exact 2023 geometry/illumination and physical appearance remain unknown;
+correction/recovery/BRDF/relighting/fusion/registration science is still unresolved.
+Exactly one next task is the **Retained dated-observation illumination and shadow identifiability assessment**;
+[scope/exit](research/riffelhorn-appearance-assessment.md#27-exactly-one-next-bounded-task).
+It has not begun. No production storage, correction, cloud build, classifier or broad ingestion
+has occurred. Swiss pixels stay parked.
 Historical analytical filter/calibration
 suggestions are separate from closed visual-terrain research. No Weather/Traverse redesign follows.
 

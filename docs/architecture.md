@@ -613,7 +613,13 @@ The [WorldCover binding proof](research/tryfan-worldcover-binding-proof.md) now 
 that recommendation (**C — SUCCESS**): native categorical assignments resolve through
 shared v1 templates, qualified cell/support queries, time/quality/mapping-loss and
 coexisting habitat evidence. Real restart preserves meaning; no contract/runtime changes.
-This does not establish all semantic input forms. Exactly one next task is the retained
-Riffelhorn appearance identity, provenance and qualified-resolution assessment, not begun.
-Open/parked appearance work is non-blocking, not solved.
+This does not establish all semantic input forms. The
+[retained Riffelhorn appearance assessment](research/riffelhorn-appearance-assessment.md)
+now completes that recommendation (**C — SUCCESS**, resolution conclusion **B**).
+Shared source/product/representation provenance plus bounded appearance eligibility suffice
+for retained source-derived imagery; no full AppearanceHierarchy/runtime is introduced.
+Support, information scale, acquisition unknowns and render-only effects stay distinct;
+physical/corrected appearance requests remain unsupported. Exactly one next task is the
+**Retained dated-observation illumination and shadow identifiability assessment**, not begun.
+Open/parked appearance science remains non-blocking, not solved; Swiss pixels remain parked.
 Frozen contracts/current production remain unchanged.

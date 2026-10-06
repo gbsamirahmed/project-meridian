@@ -1,0 +1,696 @@
+{
+  "assessment": "riffelhorn-appearance-metadata/v1",
+  "decision": "C - SUCCESS",
+  "resolutionConclusion": "B - generic machinery plus bounded appearance-specific eligibility",
+  "methodSha256": "2950efdba17516f4834d6ad9affc0b998788af6ec77f503c35f60c50b708b6fd",
+  "logicalSha256": "cadab4e8a9630fc3823b7f4984275a260e416ab3114b6be209b7d044014c8554",
+  "logical": {
+    "manifestSha256": "3c8b50fb9d7721b678abc46b9450495b417ccafff15d4ee8a67d9d6a3fee4934",
+    "productIdentity": "f6edd630206ed02f255176935d72126cbc6ad7987b12d2986edbe6d05619bc1b",
+    "recipeSha256": "d917612512380cb6940c103fe679d3af9acc0390a5a0681deb6e4fdda2667cf7",
+    "sourceVerification": {
+      "files": 4,
+      "bytes": 186259028,
+      "allHashesMatch": true
+    },
+    "preparedVerification": {
+      "files": 1084,
+      "bytes": 1564233043,
+      "allHashesMatch": true
+    },
+    "parkedMetadataVerification": {
+      "files": 112,
+      "bytes": 19357606,
+      "allHashesMatch": true
+    },
+    "noAerialPixels": true,
+    "support": [
+      2624000,
+      1091000,
+      2626000,
+      1093000
+    ],
+    "levels": [
+      {
+        "groundSampleMetresAtRiffelhorn": 13.279416789102807,
+        "partialTiles": 1,
+        "supportedSampleArea": 22675.953125,
+        "zoom": 12,
+        "tileCount": 1
+      },
+      {
+        "groundSampleMetresAtRiffelhorn": 6.639708394551404,
+        "partialTiles": 2,
+        "supportedSampleArea": 90703.810546875,
+        "zoom": 13,
+        "tileCount": 2
+      },
+      {
+        "groundSampleMetresAtRiffelhorn": 3.319854197275702,
+        "partialTiles": 4,
+        "supportedSampleArea": 362815.24609375,
+        "zoom": 14,
+        "tileCount": 4
+      },
+      {
+        "groundSampleMetresAtRiffelhorn": 1.659927098637851,
+        "partialTiles": 8,
+        "supportedSampleArea": 1451261.0,
+        "zoom": 15,
+        "tileCount": 9
+      },
+      {
+        "groundSampleMetresAtRiffelhorn": 0.8299635493189255,
+        "partialTiles": 20,
+        "supportedSampleArea": 5805044.0,
+        "zoom": 16,
+        "tileCount": 36
+      },
+      {
+        "groundSampleMetresAtRiffelhorn": 0.41498177465946273,
+        "partialTiles": 38,
+        "supportedSampleArea": 23220176.0,
+        "zoom": 17,
+        "tileCount": 110
+      },
+      {
+        "groundSampleMetresAtRiffelhorn": 0.20749088732973137,
+        "partialTiles": 74,
+        "supportedSampleArea": 92880704.0,
+        "zoom": 18,
+        "tileCount": 380
+      }
+    ],
+    "delivery": {
+      "alpha": "area support fraction, not quality/shadow mask; valid black pixels retained; absent children transparent",
+      "colour": "Assumed sRGB RGB8, no colour profile calibration or exposure modification",
+      "crs": "EPSG:3857",
+      "finest": "GDAL area average of assumed-sRGB decoded linear-light premultiplied RGB and validity; one thread",
+      "format": "lossless RGBA PNG",
+      "informationCeiling": "25cm nominal upstream information; 10cm distributed grid and z18 ~0.207m are resampling, not new observations",
+      "maxzoom": 18,
+      "minzoom": 12,
+      "parents": "recursive 2x2 equal Mercator-area means of unencoded premultiplied linear RGB/alpha; independently encoded",
+      "scheme": "xyz",
+      "tileSize": 512
+    },
+    "footprintAttribution": "Source asset footprints are known; contributing raw exposures per location are UNKNOWN",
+    "queries": {
+      "A-ordinary": {
+        "query": {
+          "purpose": "source-derived",
+          "point": [
+            2625240,
+            1092530
+          ],
+          "deliveryBudgetMetres": 1
+        },
+        "answer": {
+          "kind": "qualified-regional",
+          "support": {
+            "relation": "inside",
+            "crs": "EPSG:2056",
+            "point": [
+              2625240,
+              1092530
+            ]
+          },
+          "product": "riffelhorn-swissimage-baseline-v1",
+          "revision": "f6edd630206ed02f255176935d72126cbc6ad7987b12d2986edbe6d05619bc1b",
+          "representation": {
+            "zoom": 16,
+            "groundSamplingMetresAtRiffelhorn": 0.8299635493189255
+          },
+          "origin": "source-derived regional appearance; processed orthophoto, not raw observation",
+          "acquisition": {
+            "mosaicYear": 2023,
+            "pixelTimestamp": "UNKNOWN",
+            "sensor": "UNKNOWN",
+            "sun": "UNKNOWN",
+            "viewGeometry": "UNKNOWN"
+          },
+          "lineage": {
+            "geometryUsedForPreparation": "none; upstream orthorectification geometry exact revision UNKNOWN",
+            "radiometricCorrection": "none",
+            "reprojection": "EPSG:2056 to EPSG:3857, horizontal only",
+            "syntheticFilling": "none"
+          },
+          "rights": {
+            "attribution": "©swisstopo",
+            "licence": "swisstopo custom OGD terms",
+            "reference": "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-and-geoservices"
+          },
+          "scale": {
+            "distributedGridMetres": 0.1,
+            "nominalSourceInformationMetres": 0.25,
+            "newInformationFromResampling": false
+          },
+          "limitations": [
+            "processed RGB, not albedo",
+            "visibility and per-pixel acquisition geometry unknown",
+            "source illumination retained",
+            "alpha is support, not confidence"
+          ],
+          "outsidePart": null
+        }
+      },
+      "B-steep": {
+        "query": {
+          "purpose": "source-derived",
+          "point": [
+            2624805,
+            1092330
+          ],
+          "deliveryBudgetMetres": 0.25
+        },
+        "answer": {
+          "kind": "qualified-regional",
+          "support": {
+            "relation": "inside",
+            "crs": "EPSG:2056",
+            "point": [
+              2624805,
+              1092330
+            ]
+          },
+          "product": "riffelhorn-swissimage-baseline-v1",
+          "revision": "f6edd630206ed02f255176935d72126cbc6ad7987b12d2986edbe6d05619bc1b",
+          "representation": {
+            "zoom": 18,
+            "groundSamplingMetresAtRiffelhorn": 0.20749088732973137
+          },
+          "origin": "source-derived regional appearance; processed orthophoto, not raw observation",
+          "acquisition": {
+            "mosaicYear": 2023,
+            "pixelTimestamp": "UNKNOWN",
+            "sensor": "UNKNOWN",
+            "sun": "UNKNOWN",
+            "viewGeometry": "UNKNOWN"
+          },
+          "lineage": {
+            "geometryUsedForPreparation": "none; upstream orthorectification geometry exact revision UNKNOWN",
+            "radiometricCorrection": "none",
+            "reprojection": "EPSG:2056 to EPSG:3857, horizontal only",
+            "syntheticFilling": "none"
+          },
+          "rights": {
+            "attribution": "©swisstopo",
+            "licence": "swisstopo custom OGD terms",
+            "reference": "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-and-geoservices"
+          },
+          "scale": {
+            "distributedGridMetres": 0.1,
+            "nominalSourceInformationMetres": 0.25,
+            "newInformationFromResampling": false
+          },
+          "limitations": [
+            "processed RGB, not albedo",
+            "visibility and per-pixel acquisition geometry unknown",
+            "source illumination retained",
+            "alpha is support, not confidence"
+          ],
+          "outsidePart": null,
+          "retainedPatchQualification": {
+            "source": "docs/atlas/swissimage-source-derived-baseline.json#sourcePatches.steep",
+            "surfaceAreaFactorP05P50P95": [
+              1.0690900908401073,
+              1.3902958147390874,
+              6.192319856722573
+            ],
+            "nominalTangentFootprintMetresP05P50P95": [
+              0.2672725227100268,
+              0.34757395368477184,
+              1.5480799641806433
+            ],
+            "meaning": "retained whole 60m patch; not occlusion or confidence"
+          }
+        }
+      },
+      "C-outside-display": {
+        "query": {
+          "purpose": "map-display",
+          "point": [
+            2623900,
+            1092000
+          ]
+        },
+        "answer": {
+          "kind": "conditional-display-service",
+          "support": {
+            "relation": "outside",
+            "crs": "EPSG:2056",
+            "point": [
+              2623900,
+              1092000
+            ]
+          },
+          "candidate": "maptiler-satellite-v2",
+          "liveAvailabilityVerified": false,
+          "equivalentRegionalProvenance": false
+        }
+      },
+      "C-outside-pinned": {
+        "query": {
+          "purpose": "source-derived",
+          "point": [
+            2623900,
+            1092000
+          ],
+          "pinnedRegional": true
+        },
+        "answer": {
+          "kind": "outside-support",
+          "support": {
+            "relation": "outside",
+            "crs": "EPSG:2056",
+            "point": [
+              2623900,
+              1092000
+            ]
+          },
+          "candidate": null,
+          "liveAvailabilityVerified": false,
+          "equivalentRegionalProvenance": false
+        }
+      },
+      "D-physical": {
+        "query": {
+          "purpose": "illumination-independent",
+          "point": [
+            2625240,
+            1092530
+          ]
+        },
+        "answer": {
+          "kind": "unsupported",
+          "reason": "no retained estimate of requested processing/physical class",
+          "support": {
+            "relation": "inside",
+            "crs": "EPSG:2056",
+            "point": [
+              2625240,
+              1092530
+            ]
+          },
+          "ordinaryRGBSubstituted": false
+        }
+      },
+      "E-geometry": {
+        "query": {
+          "purpose": "acquisition-geometry",
+          "point": [
+            2624805,
+            1092330
+          ]
+        },
+        "answer": {
+          "kind": "known-unknown",
+          "support": {
+            "relation": "inside",
+            "crs": "EPSG:2056",
+            "point": [
+              2624805,
+              1092330
+            ]
+          },
+          "acquisition": {
+            "mosaicYear": 2023,
+            "pixelTimestamp": "UNKNOWN",
+            "sensor": "UNKNOWN",
+            "sun": "UNKNOWN",
+            "viewGeometry": "UNKNOWN"
+          },
+          "upstreamOrthorectificationGeometry": "UNKNOWN",
+          "radiometricCalibration": "UNKNOWN",
+          "geometry2026Substituted": false
+        }
+      },
+      "boundary": {
+        "query": {
+          "purpose": "source-derived",
+          "area": [
+            2623990,
+            1091990,
+            2624010,
+            1092010
+          ],
+          "deliveryBudgetMetres": 1
+        },
+        "answer": {
+          "kind": "partial-regional",
+          "support": {
+            "relation": "partial",
+            "crs": "EPSG:2056",
+            "requested": [
+              2623990,
+              1091990,
+              2624010,
+              1092010
+            ],
+            "supportedIntersection": [
+              2624000,
+              1091990,
+              2624010,
+              1092010
+            ]
+          },
+          "product": "riffelhorn-swissimage-baseline-v1",
+          "revision": "f6edd630206ed02f255176935d72126cbc6ad7987b12d2986edbe6d05619bc1b",
+          "representation": {
+            "zoom": 16,
+            "groundSamplingMetresAtRiffelhorn": 0.8299635493189255
+          },
+          "origin": "source-derived regional appearance; processed orthophoto, not raw observation",
+          "acquisition": {
+            "mosaicYear": 2023,
+            "pixelTimestamp": "UNKNOWN",
+            "sensor": "UNKNOWN",
+            "sun": "UNKNOWN",
+            "viewGeometry": "UNKNOWN"
+          },
+          "lineage": {
+            "geometryUsedForPreparation": "none; upstream orthorectification geometry exact revision UNKNOWN",
+            "radiometricCorrection": "none",
+            "reprojection": "EPSG:2056 to EPSG:3857, horizontal only",
+            "syntheticFilling": "none"
+          },
+          "rights": {
+            "attribution": "©swisstopo",
+            "licence": "swisstopo custom OGD terms",
+            "reference": "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-and-geoservices"
+          },
+          "scale": {
+            "distributedGridMetres": 0.1,
+            "nominalSourceInformationMetres": 0.25,
+            "newInformationFromResampling": false
+          },
+          "limitations": [
+            "processed RGB, not albedo",
+            "visibility and per-pixel acquisition geometry unknown",
+            "source illumination retained",
+            "alpha is support, not confidence"
+          ],
+          "outsidePart": "unresolved; optional conditional MapTiler display candidate"
+        }
+      },
+      "regional-parent": {
+        "query": {
+          "purpose": "source-derived",
+          "point": [
+            2625240,
+            1092530
+          ],
+          "deliveryBudgetMetres": 14
+        },
+        "answer": {
+          "kind": "qualified-regional",
+          "support": {
+            "relation": "inside",
+            "crs": "EPSG:2056",
+            "point": [
+              2625240,
+              1092530
+            ]
+          },
+          "product": "riffelhorn-swissimage-baseline-v1",
+          "revision": "f6edd630206ed02f255176935d72126cbc6ad7987b12d2986edbe6d05619bc1b",
+          "representation": {
+            "zoom": 12,
+            "groundSamplingMetresAtRiffelhorn": 13.279416789102807
+          },
+          "origin": "source-derived regional appearance; processed orthophoto, not raw observation",
+          "acquisition": {
+            "mosaicYear": 2023,
+            "pixelTimestamp": "UNKNOWN",
+            "sensor": "UNKNOWN",
+            "sun": "UNKNOWN",
+            "viewGeometry": "UNKNOWN"
+          },
+          "lineage": {
+            "geometryUsedForPreparation": "none; upstream orthorectification geometry exact revision UNKNOWN",
+            "radiometricCorrection": "none",
+            "reprojection": "EPSG:2056 to EPSG:3857, horizontal only",
+            "syntheticFilling": "none"
+          },
+          "rights": {
+            "attribution": "©swisstopo",
+            "licence": "swisstopo custom OGD terms",
+            "reference": "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-and-geoservices"
+          },
+          "scale": {
+            "distributedGridMetres": 0.1,
+            "nominalSourceInformationMetres": 0.25,
+            "newInformationFromResampling": false
+          },
+          "limitations": [
+            "processed RGB, not albedo",
+            "visibility and per-pixel acquisition geometry unknown",
+            "source illumination retained",
+            "alpha is support, not confidence"
+          ],
+          "outsidePart": null
+        }
+      },
+      "current-state": {
+        "query": {
+          "purpose": "source-derived",
+          "point": [
+            2625240,
+            1092530
+          ],
+          "requireCurrentState": true
+        },
+        "answer": {
+          "kind": "unsupported",
+          "reason": "2023 mosaic is not a current-state assertion",
+          "support": {
+            "relation": "inside",
+            "crs": "EPSG:2056",
+            "point": [
+              2625240,
+              1092530
+            ]
+          }
+        }
+      }
+    },
+    "deliveryAlphaChecks": [
+      {
+        "zoom": 18,
+        "tile": [
+          136725,
+          93277
+        ],
+        "delivered": true,
+        "alpha": 1.0,
+        "meaning": "area-support fraction; no visibility/confidence assertion"
+      },
+      {
+        "zoom": 18,
+        "tile": [
+          136721,
+          93279
+        ],
+        "delivered": true,
+        "alpha": 1.0,
+        "meaning": "area-support fraction; no visibility/confidence assertion"
+      },
+      {
+        "zoom": 12,
+        "tile": [
+          2136,
+          1457
+        ],
+        "delivered": true,
+        "alpha": 1.0,
+        "meaning": "area-support fraction; no visibility/confidence assertion"
+      },
+      {
+        "zoom": 18,
+        "tile": [
+          136714,
+          93282
+        ],
+        "delivered": true,
+        "alpha": 1.0,
+        "meaning": "area-support fraction; no visibility/confidence assertion"
+      },
+      {
+        "zoom": 18,
+        "tile": [
+          136714,
+          93282
+        ],
+        "delivered": true,
+        "alpha": 0.0,
+        "meaning": "area-support fraction; no visibility/confidence assertion"
+      }
+    ],
+    "maptilerRetainedMetadata": {
+      "checkedAt": "2026-10-05T22:09:04.917Z",
+      "status": 200,
+      "name": "Satellite",
+      "minzoom": 0,
+      "maxzoom": 22,
+      "scheme": "absent; MapLibre default xyz",
+      "bounds": [
+        -180,
+        -85.0511287798066,
+        180,
+        85.0511287798066
+      ],
+      "tileSizeMetadata": "absent",
+      "configuredTileSize": 512,
+      "tilePaths": [
+        "https://api.maptiler.com/tiles/satellite-v2/%7Bz%7D/%7Bx%7D/%7By%7D.jpg"
+      ],
+      "attribution": "<a href=\"https://www.maptiler.com/copyright/\" target=\"_blank\">&copy; MapTiler</a> <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">&copy; OpenStreetMap contributors</a>",
+      "exposedFields": [
+        "attribution",
+        "bounds",
+        "center",
+        "crs",
+        "crs_wkt",
+        "description",
+        "extent",
+        "format",
+        "format_arguments",
+        "generator",
+        "id",
+        "legend",
+        "logo",
+        "maxzoom",
+        "minzoom",
+        "name",
+        "profile",
+        "scale",
+        "schema",
+        "tilejson",
+        "tiles",
+        "type",
+        "version"
+      ],
+      "scope": "Sanitized existing-service TileJSON audit only; no credentials, query strings or imagery tiles retained. Mutable metadata is not an immutable imagery revision."
+    },
+    "scenarioF": {
+      "kind": "conceptual-only",
+      "frameBenchmarkSeparateFrom2023": true,
+      "multipleSourceReferences": true,
+      "perObservationGeometry": true,
+      "pushbroomTimeDependentGeometryNotFramePose": true,
+      "fusedRepresentationExists": false
+    },
+    "sourceFamily": "swissimage-retained-2023",
+    "sourceMetadata": {
+      "acquisition": {
+        "mosaicYear": 2023,
+        "pixelTimestamp": "UNKNOWN",
+        "sensor": "UNKNOWN",
+        "sun": "UNKNOWN",
+        "viewGeometry": "UNKNOWN"
+      },
+      "assets": [
+        {
+          "bounds": [
+            2624000.0,
+            1091000.0,
+            2625000.0,
+            1092000.0
+          ],
+          "bytes": 50530470,
+          "colourInterpretation": [
+            "red",
+            "green",
+            "blue"
+          ],
+          "nodata": null,
+          "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissimage-dop10/swissimage-dop10_2023_2624-1091_0.1_2056.tif",
+          "sha256": "eb81b3df75538dc0da5cd6ce898976dd74f22dcb3b2586760f0a7df159de8c41",
+          "tile": "2624-1091"
+        },
+        {
+          "bounds": [
+            2624000.0,
+            1092000.0,
+            2625000.0,
+            1093000.0
+          ],
+          "bytes": 45485267,
+          "colourInterpretation": [
+            "red",
+            "green",
+            "blue"
+          ],
+          "nodata": null,
+          "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissimage-dop10/swissimage-dop10_2023_2624-1092_0.1_2056.tif",
+          "sha256": "8cd275f75f653d192d9d7619771746ff93fbdd8646e2d1d06214af832c49f62e",
+          "tile": "2624-1092"
+        },
+        {
+          "bounds": [
+            2625000.0,
+            1091000.0,
+            2626000.0,
+            1092000.0
+          ],
+          "bytes": 43921676,
+          "colourInterpretation": [
+            "red",
+            "green",
+            "blue"
+          ],
+          "nodata": null,
+          "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissimage-dop10/swissimage-dop10_2023_2625-1091_0.1_2056.tif",
+          "sha256": "66ff157b2eb008e8c2e2ae41ee427c2b483ae69faf352b6d4c12c7713285d2bc",
+          "tile": "2625-1091"
+        },
+        {
+          "bounds": [
+            2625000.0,
+            1092000.0,
+            2626000.0,
+            1093000.0
+          ],
+          "bytes": 46321615,
+          "colourInterpretation": [
+            "red",
+            "green",
+            "blue"
+          ],
+          "nodata": null,
+          "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissimage-dop10/swissimage-dop10_2023_2625-1092_0.1_2056.tif",
+          "sha256": "31c4219580f87fd54268c04f2773f30a715392bde47581cf1245207b7c7ff90f",
+          "tile": "2625-1092"
+        }
+      ],
+      "authority": "swisstopo",
+      "colourTransfer": "Not calibrated/established; sRGB assumed explicitly for preparation and signal diagnostics",
+      "distributedSpacingMetres": 0.1,
+      "encoding": "RGB8 COG; internal YCbCr JPEG95; three bands",
+      "nativeCRS": "EPSG:2056",
+      "nominalUpstreamInformationMetres": 0.25,
+      "origin": "already orthorectified/processed upstream; not raw aerial images",
+      "orthorectificationGeometryRevision": "UNKNOWN",
+      "product": "SWISSIMAGE 2023 DOP10 RGB orthophoto mosaic",
+      "retainedNotReacquired": true,
+      "rights": {
+        "attribution": "©swisstopo",
+        "licence": "swisstopo custom OGD terms",
+        "reference": "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-and-geoservices"
+      },
+      "sourceBounds": [
+        2624000,
+        1091000,
+        2626000,
+        1093000
+      ],
+      "sourceBytes": 186259028,
+      "sourceFamily": "swissimage-retained-2023"
+    },
+    "inputMetadataSha256": {
+      "docs/atlas/swissimage-source-derived-baseline.json": "49ab12594ca1c0737fdcd0b2e53f21e5d2acda8d7122bb574789a906a29cdd67",
+      "docs/atlas/appearance-baseline-metadata.json": "d0feb05a795b706996f893f775724f3b08bf07f8450733507b1c6a3d997b4d12",
+      "docs/atlas/swiss-multiview-input-manifest.json": "4322e7f4ab93d64b3e97712b71fe2d6638eccfdb3309df6b6cc976a8d4eb7f0d"
+    }
+  }
+}
