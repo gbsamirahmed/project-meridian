@@ -21,9 +21,11 @@ has completed that frozen comparison. It establishes useful regional detail and
 source-darkness/stretch limits; opposed-close Atlas probes do not show the earlier
 Unreal black-crushing behavior. The subsequent [observation-support assessment](../atlas/riffelhorn-observation-support.md)
 is PARTIAL: footprint coverage exists without calibrated target rays or visibility.
-The one next prerequisite is a metadata-only swisstopo query for the retained
-September 2023 ADS strip. Correction, illumination recovery, frame acquisition/
-reconstruction and appearance runtime remain deferred.
+That branch remains closed without pixels. The [Swiss 2026 benchmark selection](../atlas/swiss-multiview-benchmark.md)
+uses public frame centres/GORI/footprints to freeze one 60 m target and two same-strip
+observations. Source pixels require official individual-frame provisioning by quotation;
+no contact/order occurred. Next is the bounded two-frame information comparison,
+subject to access confirmation. Correction/reconstruction and appearance runtime remain deferred.
 This is a new explicitly bounded programme, not a reopened 012A–012G Lab.
 
 ## Read before changing Atlas
@@ -275,3 +277,17 @@ correction, reconstruction or benchmark expansion. One exact next prerequisite:
 a metadata-only swisstopo query for strip 20230907_1035_12504's target-specific
 forward/nadir/backward geometry, timing and calibration. No speculative image
 acquisition or additional appearance branch; elevation remains closed.
+
+## 2026-10-06 — Swiss frame-camera benchmark selected
+
+[Metadata-first discovery](../atlas/swiss-multiview-benchmark.md) selects
+`ch-frame2026-lv95-2713830-1206710-v1`, exact60m patch, 2026 DMC-4S frames001/009
+from line004_082750. Screened768 patches on three small2m DTM tiles; three candidates.
+Published camera centres, GORI/composite calibration and footprints support17.30°
+direction diversity and a materially more favourable incidence on219/342 difficult
+cells. Nine sampled LOS rays/view are supported, not proof of actual visibility.
+Individual-image order/quotation is documented; no free TIFF URL or pixels acquired.
+Riffelhorn2023 remains PARTIAL; no renewed metadata search/contact. Next: compare
+only this frozen pair's actual source information with a small orthographic control
+after confirming provisioning. No additional benchmark, correction, reconstruction,
+production/runtime change or reopened elevation research.

@@ -3665,3 +3665,26 @@ Weather/Traverse/projection/lifecycle and the source-derived baseline are unchan
 No aerial frames, correction/reconstruction, texture product or elevation research.
 Next is one precisely scoped metadata-only swisstopo query; no contact sent or image
 order placed, and no frame-acquisition set justified until that geometry is supplied.
+
+## 2026-10-06 — Swiss 2026 multiview benchmark discovery
+
+Completed [metadata-first selection](atlas/swiss-multiview-benchmark.md) from clean
+e14148a. The2026 catalogue sufficed; no secondary-source survey or renewedRiffelhorn
+search/contact. Frozen criteria precede candidate screening:60m patches, ≥50° median
+slope, incidence≤60° on half difficult cells, ≥15° ray diversity.14 lightweight
+profiles/three2m DTM tiles yield768 screened patches,80 steep and29 geometry-gate
+patches; three candidates. Freeze LV95[2713830,1206710], frames
+20260813_004_082750_001_41216 /009_41216, ten seconds apart. Better incidence43.26°
+vs59.71°,17.30° separation,219/342 vs5/342 difficult cells. Nine sampled LOS rays
+per view pass; actual visibility/texture remains unproved. Output-composite camera
+calibration is distinct from physical heads; nativeLHN95/LN02 references are explicit.
+
+Added offline discovery/geometry tooling,12 asset-free synthetic tests, lightweight
+benchmark/hash records and navigation.12 orientation JSON/GORI/provider checksums,
+three DTM checksums, CSV/schema/CRS/pose/footprint checks, byte-identical10-output
+rebuilds and8 production hashes pass. One high-west candidate's edge projection
+mismatch is recorded rather than tuned away. Source frames are individually
+orderable by quotation, not currently public TIFF assets; no contact/order made.
+No aerial pixels, thumbnails, reconstruction/correction, runtime or production
+changes; no normal-CI external assets. Next is the bounded two-frame source-pixel
+comparison after provisioning confirmation, not executed here. Elevation remains closed.

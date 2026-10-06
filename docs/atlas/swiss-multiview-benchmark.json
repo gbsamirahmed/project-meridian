@@ -1,0 +1,1213 @@
+{
+  "access": {
+    "approximateFutureBytes": "2 GB for two RGBN Deflate TIFF composites, provider-level estimate, not quote",
+    "guessedFilenameHEAD": 404,
+    "mode": "official individual-frame order/quotation",
+    "publicSTACPixels": false,
+    "quoteOrContactRequested": false
+  },
+  "analysis": {
+    "aerialPixelsDownloaded": false,
+    "augustFrames": 319,
+    "benchmarkId": "ch-frame2026-lv95-2713830-1206710-v1",
+    "catalogueRows": 26601,
+    "coarseProfilePoints": 1414,
+    "geometryReferences": {
+      "camera": "EPSG:2056+5729 (LHN95)",
+      "terrain": "EPSG:2056+5728 (LN02)",
+      "transformation": "NONE; +/-5m sensitivity is an engineering perturbation, not an error bound"
+    },
+    "inputManifestSha256": "4322e7f4ab93d64b3e97712b71fe2d6638eccfdb3309df6b6cc976a8d4eb7f0d",
+    "patchesScreened": 768,
+    "qualifyingPatches": 29,
+    "selected": {
+      "aspectCircularMeanDegrees": 239.01591559497763,
+      "aspectOffsetsDegrees": {
+        "median": 0.3224369168978001,
+        "p05": -26.532842331751272,
+        "p95": 27.85614156052985
+      },
+      "bounds": [
+        2713800,
+        1206680,
+        2713860,
+        1206740
+      ],
+      "centre": [
+        2713830,
+        1206710,
+        1345.1217088487413
+      ],
+      "difficultFraction": 0.38,
+      "medianSlope": 52.55916802094811,
+      "normalMean": [
+        -0.6565251031117941,
+        -0.3942319106387461,
+        0.5649322918560005
+      ],
+      "observationCount": 18,
+      "pair": {
+        "best": "20260813_004_082750_001_41216",
+        "contrast": 16.45069448882117,
+        "poor": "20260813_004_082750_009_41216",
+        "sameLine": true,
+        "separation": 17.295022958250108
+      },
+      "slopeP95": 75.46952325648328,
+      "stretchMedian": 1.6449012815098616,
+      "stretchP95": 3.9857621655783118,
+      "tile": "2713-1206",
+      "views": [
+        {
+          "acquisitionUTC": "2026-08-13T08:28:22Z",
+          "backfacingFraction": 0.0,
+          "calibratedTargetInside": true,
+          "calibratedTargetInsideFraction": 1.0,
+          "direction": [
+            -0.06638398453448141,
+            -0.2961873770613286,
+            0.9528201321691603
+          ],
+          "footprintProjectionEdgeRange": [
+            0.9842857353525919,
+            1.0050075782204537
+          ],
+          "goodDifficultFraction": 0.6403508771929824,
+          "gori": {
+            "focal": 107.0,
+            "kappa": -1.46770758,
+            "lines": 13440.0,
+            "omega": -0.00027332,
+            "phi": 0.0001686,
+            "ppx": 0.0,
+            "ppy": 0.0,
+            "samples": 31520.0,
+            "ux": 265.957447,
+            "vy": -265.957447,
+            "x0": 2713654.774,
+            "y0": 1205928.189,
+            "z0": 3860.169
+          },
+          "heightReferenceSensitivity": [
+            {
+              "cameraHeightPerturbationMetres": -5,
+              "goodDifficultFraction": 0.6403508771929824,
+              "medianIncidence": 43.24357173709828
+            },
+            {
+              "cameraHeightPerturbationMetres": 0,
+              "goodDifficultFraction": 0.6403508771929824,
+              "medianIncidence": 43.25632878888638
+            },
+            {
+              "cameraHeightPerturbationMetres": 5,
+              "goodDifficultFraction": 0.6403508771929824,
+              "medianIncidence": 43.28153376380799
+            }
+          ],
+          "id": "20260813_004_082750_001_41216",
+          "incidenceDegrees": {
+            "median": 43.25632878888638,
+            "p05": 25.919101066732495,
+            "p95": 63.400017532522405
+          },
+          "line": "20260813_0822_41216_004_082750",
+          "losMinimumClearanceMetres": 39.64030711141231,
+          "losSamples": 9,
+          "losSupported": 9,
+          "maximumTargetImageExtentRatio": 0.5829921277829261,
+          "medianFactor": 1.37306954025823,
+          "medianIncidence": 43.25632878888638,
+          "profileNativeStartDeltaMetres": [
+            -0.9065429687500455,
+            0.13669433593759095
+          ],
+          "published": {
+            "altitude": "3860.169",
+            "calibration_certificate": "leica_dmc-4_41216-calibration_certificate_20260415.pdf",
+            "capture_time": "2026-08-13T08:28:22",
+            "collection_id": "ch.swisstopo.lubis-luftbilder_digital",
+            "easting": "2713654.774",
+            "feature_id": "20260813_004_082750_001_41216",
+            "focal_length": "0.107",
+            "image_uuid": "{a279d4ba-3185-4827-b05b-9ffe6cb2b309}",
+            "kappa": "-84.09345",
+            "line_id": "20260813_0822_41216_004_082750",
+            "lines": "13440",
+            "northing": "1205928.189",
+            "omega": "-0.01566",
+            "phi": "0.00966",
+            "pixel_size": "0.00376",
+            "ppx": "0",
+            "ppy": "0",
+            "samples": "31520",
+            "sensor_id": "41216",
+            "sensor_type": "DMC-4S"
+          },
+          "role": "best",
+          "supportFactor": {
+            "median": 1.37306954025823,
+            "p05": 1.111837376751255,
+            "p95": 2.233345281162911
+          },
+          "tangentMetresPerCompositePixelFrontfaces": {
+            "major": {
+              "median": 0.11963971950614954,
+              "p05": 0.0965689072076736,
+              "p95": 0.19257686162820653
+            },
+            "minor": {
+              "median": 0.0853943900538528,
+              "p05": 0.08298534052569394,
+              "p95": 0.08809907702977582
+            }
+          },
+          "viewAzimuth": 192.6328385814894,
+          "viewElevation": 72.32992264035873
+        },
+        {
+          "acquisitionUTC": "2026-08-13T08:28:32Z",
+          "backfacingFraction": 0.0022222222222222222,
+          "calibratedTargetInside": true,
+          "calibratedTargetInsideFraction": 1.0,
+          "direction": [
+            0.23217403964202396,
+            -0.2644343115220315,
+            0.9360393742819653
+          ],
+          "footprintProjectionEdgeRange": [
+            0.9869156458104438,
+            1.0094096254833675
+          ],
+          "goodDifficultFraction": 0.014619883040935672,
+          "gori": {
+            "focal": 107.0,
+            "kappa": -1.4674964,
+            "lines": 13440.0,
+            "omega": -0.00029723,
+            "phi": 0.00011327,
+            "ppx": 0.0,
+            "ppy": 0.0,
+            "samples": 31520.0,
+            "ux": 265.957447,
+            "vy": -265.957447,
+            "x0": 2714452.273,
+            "y0": 1206001.263,
+            "z0": 3853.895
+          },
+          "heightReferenceSensitivity": [
+            {
+              "cameraHeightPerturbationMetres": -5,
+              "goodDifficultFraction": 0.014619883040935672,
+              "medianIncidence": 59.73181142953135
+            },
+            {
+              "cameraHeightPerturbationMetres": 0,
+              "goodDifficultFraction": 0.014619883040935672,
+              "medianIncidence": 59.70702327770755
+            },
+            {
+              "cameraHeightPerturbationMetres": 5,
+              "goodDifficultFraction": 0.014619883040935672,
+              "medianIncidence": 59.6898250066696
+            }
+          ],
+          "id": "20260813_004_082750_009_41216",
+          "incidenceDegrees": {
+            "median": 59.70702327770755,
+            "p05": 40.84879143839876,
+            "p95": 78.9699159992603
+          },
+          "line": "20260813_0822_41216_004_082750",
+          "losMinimumClearanceMetres": 21.67461698023635,
+          "losSamples": 9,
+          "losSupported": 9,
+          "maximumTargetImageExtentRatio": 0.9581856102170488,
+          "medianFactor": 1.9824729066793243,
+          "medianIncidence": 59.70702327770755,
+          "profileNativeStartDeltaMetres": [
+            -0.9065429687500455,
+            0.13669433593759095
+          ],
+          "published": {
+            "altitude": "3853.895",
+            "calibration_certificate": "leica_dmc-4_41216-calibration_certificate_20260415.pdf",
+            "capture_time": "2026-08-13T08:28:32",
+            "collection_id": "ch.swisstopo.lubis-luftbilder_digital",
+            "easting": "2714452.273",
+            "feature_id": "20260813_004_082750_009_41216",
+            "focal_length": "0.107",
+            "image_uuid": "{297e579f-a5dc-4482-827e-70cf8fce81aa}",
+            "kappa": "-84.08135",
+            "line_id": "20260813_0822_41216_004_082750",
+            "lines": "13440",
+            "northing": "1206001.263",
+            "omega": "-0.01703",
+            "phi": "0.00649",
+            "pixel_size": "0.00376",
+            "ppx": "0",
+            "ppy": "0",
+            "samples": "31520",
+            "sensor_id": "41216",
+            "sensor_type": "DMC-4S"
+          },
+          "role": "poor",
+          "supportFactor": {
+            "median": 1.9824729066793243,
+            "p05": 1.3219873804323703,
+            "p95": 5.226725542515443
+          },
+          "tangentMetresPerCompositePixelFrontfaces": {
+            "major": {
+              "median": 0.17040569347472018,
+              "p05": 0.11622001222207799,
+              "p95": 0.4525079508783961
+            },
+            "minor": {
+              "median": 0.08341372051570084,
+              "p05": 0.08135559777230132,
+              "p95": 0.08589083322367465
+            }
+          },
+          "viewAzimuth": 138.71677995232898,
+          "viewElevation": 69.39671705052139
+        }
+      ]
+    },
+    "shortlist": [
+      {
+        "aspectCircularMeanDegrees": 239.01591559497763,
+        "aspectOffsetsDegrees": {
+          "median": 0.3224369168978001,
+          "p05": -26.532842331751272,
+          "p95": 27.85614156052985
+        },
+        "bounds": [
+          2713800,
+          1206680,
+          2713860,
+          1206740
+        ],
+        "centre": [
+          2713830,
+          1206710,
+          1345.1217088487413
+        ],
+        "difficultFraction": 0.38,
+        "medianSlope": 52.55916802094811,
+        "normalMean": [
+          -0.6565251031117941,
+          -0.3942319106387461,
+          0.5649322918560005
+        ],
+        "observationCount": 18,
+        "pair": {
+          "best": "20260813_004_082750_001_41216",
+          "contrast": 16.45069448882117,
+          "poor": "20260813_004_082750_009_41216",
+          "sameLine": true,
+          "separation": 17.295022958250108
+        },
+        "slopeP95": 75.46952325648328,
+        "stretchMedian": 1.6449012815098616,
+        "stretchP95": 3.9857621655783118,
+        "tile": "2713-1206",
+        "views": [
+          {
+            "acquisitionUTC": "2026-08-13T08:28:22Z",
+            "backfacingFraction": 0.0,
+            "calibratedTargetInside": true,
+            "calibratedTargetInsideFraction": 1.0,
+            "direction": [
+              -0.06638398453448141,
+              -0.2961873770613286,
+              0.9528201321691603
+            ],
+            "footprintProjectionEdgeRange": [
+              0.9842857353525919,
+              1.0050075782204537
+            ],
+            "goodDifficultFraction": 0.6403508771929824,
+            "gori": {
+              "focal": 107.0,
+              "kappa": -1.46770758,
+              "lines": 13440.0,
+              "omega": -0.00027332,
+              "phi": 0.0001686,
+              "ppx": 0.0,
+              "ppy": 0.0,
+              "samples": 31520.0,
+              "ux": 265.957447,
+              "vy": -265.957447,
+              "x0": 2713654.774,
+              "y0": 1205928.189,
+              "z0": 3860.169
+            },
+            "heightReferenceSensitivity": [
+              {
+                "cameraHeightPerturbationMetres": -5,
+                "goodDifficultFraction": 0.6403508771929824,
+                "medianIncidence": 43.24357173709828
+              },
+              {
+                "cameraHeightPerturbationMetres": 0,
+                "goodDifficultFraction": 0.6403508771929824,
+                "medianIncidence": 43.25632878888638
+              },
+              {
+                "cameraHeightPerturbationMetres": 5,
+                "goodDifficultFraction": 0.6403508771929824,
+                "medianIncidence": 43.28153376380799
+              }
+            ],
+            "id": "20260813_004_082750_001_41216",
+            "incidenceDegrees": {
+              "median": 43.25632878888638,
+              "p05": 25.919101066732495,
+              "p95": 63.400017532522405
+            },
+            "line": "20260813_0822_41216_004_082750",
+            "losMinimumClearanceMetres": 39.64030711141231,
+            "losSamples": 9,
+            "losSupported": 9,
+            "maximumTargetImageExtentRatio": 0.5829921277829261,
+            "medianFactor": 1.37306954025823,
+            "medianIncidence": 43.25632878888638,
+            "profileNativeStartDeltaMetres": [
+              -0.9065429687500455,
+              0.13669433593759095
+            ],
+            "published": {
+              "altitude": "3860.169",
+              "calibration_certificate": "leica_dmc-4_41216-calibration_certificate_20260415.pdf",
+              "capture_time": "2026-08-13T08:28:22",
+              "collection_id": "ch.swisstopo.lubis-luftbilder_digital",
+              "easting": "2713654.774",
+              "feature_id": "20260813_004_082750_001_41216",
+              "focal_length": "0.107",
+              "image_uuid": "{a279d4ba-3185-4827-b05b-9ffe6cb2b309}",
+              "kappa": "-84.09345",
+              "line_id": "20260813_0822_41216_004_082750",
+              "lines": "13440",
+              "northing": "1205928.189",
+              "omega": "-0.01566",
+              "phi": "0.00966",
+              "pixel_size": "0.00376",
+              "ppx": "0",
+              "ppy": "0",
+              "samples": "31520",
+              "sensor_id": "41216",
+              "sensor_type": "DMC-4S"
+            },
+            "role": "best",
+            "supportFactor": {
+              "median": 1.37306954025823,
+              "p05": 1.111837376751255,
+              "p95": 2.233345281162911
+            },
+            "tangentMetresPerCompositePixelFrontfaces": {
+              "major": {
+                "median": 0.11963971950614954,
+                "p05": 0.0965689072076736,
+                "p95": 0.19257686162820653
+              },
+              "minor": {
+                "median": 0.0853943900538528,
+                "p05": 0.08298534052569394,
+                "p95": 0.08809907702977582
+              }
+            },
+            "viewAzimuth": 192.6328385814894,
+            "viewElevation": 72.32992264035873
+          },
+          {
+            "acquisitionUTC": "2026-08-13T08:28:32Z",
+            "backfacingFraction": 0.0022222222222222222,
+            "calibratedTargetInside": true,
+            "calibratedTargetInsideFraction": 1.0,
+            "direction": [
+              0.23217403964202396,
+              -0.2644343115220315,
+              0.9360393742819653
+            ],
+            "footprintProjectionEdgeRange": [
+              0.9869156458104438,
+              1.0094096254833675
+            ],
+            "goodDifficultFraction": 0.014619883040935672,
+            "gori": {
+              "focal": 107.0,
+              "kappa": -1.4674964,
+              "lines": 13440.0,
+              "omega": -0.00029723,
+              "phi": 0.00011327,
+              "ppx": 0.0,
+              "ppy": 0.0,
+              "samples": 31520.0,
+              "ux": 265.957447,
+              "vy": -265.957447,
+              "x0": 2714452.273,
+              "y0": 1206001.263,
+              "z0": 3853.895
+            },
+            "heightReferenceSensitivity": [
+              {
+                "cameraHeightPerturbationMetres": -5,
+                "goodDifficultFraction": 0.014619883040935672,
+                "medianIncidence": 59.73181142953135
+              },
+              {
+                "cameraHeightPerturbationMetres": 0,
+                "goodDifficultFraction": 0.014619883040935672,
+                "medianIncidence": 59.70702327770755
+              },
+              {
+                "cameraHeightPerturbationMetres": 5,
+                "goodDifficultFraction": 0.014619883040935672,
+                "medianIncidence": 59.6898250066696
+              }
+            ],
+            "id": "20260813_004_082750_009_41216",
+            "incidenceDegrees": {
+              "median": 59.70702327770755,
+              "p05": 40.84879143839876,
+              "p95": 78.9699159992603
+            },
+            "line": "20260813_0822_41216_004_082750",
+            "losMinimumClearanceMetres": 21.67461698023635,
+            "losSamples": 9,
+            "losSupported": 9,
+            "maximumTargetImageExtentRatio": 0.9581856102170488,
+            "medianFactor": 1.9824729066793243,
+            "medianIncidence": 59.70702327770755,
+            "profileNativeStartDeltaMetres": [
+              -0.9065429687500455,
+              0.13669433593759095
+            ],
+            "published": {
+              "altitude": "3853.895",
+              "calibration_certificate": "leica_dmc-4_41216-calibration_certificate_20260415.pdf",
+              "capture_time": "2026-08-13T08:28:32",
+              "collection_id": "ch.swisstopo.lubis-luftbilder_digital",
+              "easting": "2714452.273",
+              "feature_id": "20260813_004_082750_009_41216",
+              "focal_length": "0.107",
+              "image_uuid": "{297e579f-a5dc-4482-827e-70cf8fce81aa}",
+              "kappa": "-84.08135",
+              "line_id": "20260813_0822_41216_004_082750",
+              "lines": "13440",
+              "northing": "1206001.263",
+              "omega": "-0.01703",
+              "phi": "0.00649",
+              "pixel_size": "0.00376",
+              "ppx": "0",
+              "ppy": "0",
+              "samples": "31520",
+              "sensor_id": "41216",
+              "sensor_type": "DMC-4S"
+            },
+            "role": "poor",
+            "supportFactor": {
+              "median": 1.9824729066793243,
+              "p05": 1.3219873804323703,
+              "p95": 5.226725542515443
+            },
+            "tangentMetresPerCompositePixelFrontfaces": {
+              "major": {
+                "median": 0.17040569347472018,
+                "p05": 0.11622001222207799,
+                "p95": 0.4525079508783961
+              },
+              "minor": {
+                "median": 0.08341372051570084,
+                "p05": 0.08135559777230132,
+                "p95": 0.08589083322367465
+              }
+            },
+            "viewAzimuth": 138.71677995232898,
+            "viewElevation": 69.39671705052139
+          }
+        ]
+      },
+      {
+        "aspectCircularMeanDegrees": 161.7928239915829,
+        "aspectOffsetsDegrees": {
+          "median": -0.5121120636726033,
+          "p05": -32.304820981221596,
+          "p95": 36.05667191895626
+        },
+        "bounds": [
+          2719020,
+          1206740,
+          2719080,
+          1206800
+        ],
+        "centre": [
+          2719050,
+          1206770,
+          2659.4157915581595
+        ],
+        "difficultFraction": 0.5344444444444445,
+        "medianSlope": 61.28645357224664,
+        "normalMean": [
+          0.2418800083885135,
+          -0.7353718020526555,
+          0.4961022757110982
+        ],
+        "observationCount": 9,
+        "pair": {
+          "best": "20260813_004_082750_058_41216",
+          "contrast": 3.4414311584303405,
+          "poor": "20260813_004_082750_054_41216",
+          "sameLine": true,
+          "separation": 18.642685050188966
+        },
+        "slopeP95": 79.78995662726093,
+        "stretchMedian": 2.081464937013333,
+        "stretchP95": 5.641617404276306,
+        "tile": "2719-1206",
+        "views": [
+          {
+            "acquisitionUTC": "2026-08-13T08:29:34Z",
+            "backfacingFraction": 0.0,
+            "calibratedTargetInside": false,
+            "calibratedTargetInsideFraction": 0.9577777777777777,
+            "direction": [
+              0.22112618905847534,
+              -0.21301887325809468,
+              0.951696468496299
+            ],
+            "footprintProjectionEdgeRange": [
+              0.9818157081414778,
+              0.9966308397371068
+            ],
+            "goodDifficultFraction": 0.6715176715176715,
+            "gori": {
+              "focal": 107.0,
+              "kappa": -1.46666963,
+              "lines": 13440.0,
+              "omega": -5.864e-05,
+              "phi": 0.00078941,
+              "ppx": 0.0,
+              "ppy": 0.0,
+              "samples": 31520.0,
+              "ux": 265.957447,
+              "vy": -265.957447,
+              "x0": 2719323.349,
+              "y0": 1206506.673,
+              "z0": 3835.872
+            },
+            "heightReferenceSensitivity": [
+              {
+                "cameraHeightPerturbationMetres": -5,
+                "goodDifficultFraction": 0.6715176715176715,
+                "medianIncidence": 46.58407293563599
+              },
+              {
+                "cameraHeightPerturbationMetres": 0,
+                "goodDifficultFraction": 0.6715176715176715,
+                "medianIncidence": 46.5987260012787
+              },
+              {
+                "cameraHeightPerturbationMetres": 5,
+                "goodDifficultFraction": 0.6652806652806653,
+                "medianIncidence": 46.632858610192436
+              }
+            ],
+            "id": "20260813_004_082750_058_41216",
+            "incidenceDegrees": {
+              "median": 46.5987260012787,
+              "p05": 18.341866079473167,
+              "p95": 65.79665673942269
+            },
+            "line": "20260813_0822_41216_004_082750",
+            "losMinimumClearanceMetres": 38.77256350142807,
+            "losSamples": 9,
+            "losSupported": 9,
+            "maximumTargetImageExtentRatio": 1.02523324180579,
+            "medianFactor": 1.4553848832292045,
+            "medianIncidence": 46.5987260012787,
+            "profileNativeStartDeltaMetres": [
+              -1.085742187499818,
+              1.36279296875
+            ],
+            "published": {
+              "altitude": "3835.872",
+              "calibration_certificate": "leica_dmc-4_41216-calibration_certificate_20260415.pdf",
+              "capture_time": "2026-08-13T08:29:34",
+              "collection_id": "ch.swisstopo.lubis-luftbilder_digital",
+              "easting": "2719323.349",
+              "feature_id": "20260813_004_082750_058_41216",
+              "focal_length": "0.107",
+              "image_uuid": "{f3548b83-8852-4e71-b021-95da3016b9c0}",
+              "kappa": "-84.03398",
+              "line_id": "20260813_0822_41216_004_082750",
+              "lines": "13440",
+              "northing": "1206506.673",
+              "omega": "-0.00336",
+              "phi": "0.04523",
+              "pixel_size": "0.00376",
+              "ppx": "0",
+              "ppy": "0",
+              "samples": "31520",
+              "sensor_id": "41216",
+              "sensor_type": "DMC-4S"
+            },
+            "role": "best",
+            "supportFactor": {
+              "median": 1.4553848832292045,
+              "p05": 1.0535241269924562,
+              "p95": 2.4391656466403684
+            },
+            "tangentMetresPerCompositePixelFrontfaces": {
+              "major": {
+                "median": 0.057400511955935554,
+                "p05": 0.04471622164747119,
+                "p95": 0.09939626624695741
+              },
+              "minor": {
+                "median": 0.04078680378848058,
+                "p05": 0.037164217029447666,
+                "p95": 0.04279185607916288
+              }
+            },
+            "viewAzimuth": 133.9301709636101,
+            "viewElevation": 72.1190361319438
+          },
+          {
+            "acquisitionUTC": "2026-08-13T08:29:29Z",
+            "backfacingFraction": 0.0,
+            "calibratedTargetInside": true,
+            "calibratedTargetInsideFraction": 1.0,
+            "direction": [
+              -0.10013507274944498,
+              -0.25326590907149543,
+              0.9622002632028596
+            ],
+            "footprintProjectionEdgeRange": [
+              0.9809157395441416,
+              1.0066170120452154
+            ],
+            "goodDifficultFraction": 0.5426195426195426,
+            "gori": {
+              "focal": 107.0,
+              "kappa": -1.46675376,
+              "lines": 13440.0,
+              "omega": -4.01e-06,
+              "phi": 0.00078941,
+              "ppx": 0.0,
+              "ppy": 0.0,
+              "samples": 31520.0,
+              "ux": 265.957447,
+              "vy": -265.957447,
+              "x0": 2718927.474,
+              "y0": 1206460.102,
+              "z0": 3836.771
+            },
+            "heightReferenceSensitivity": [
+              {
+                "cameraHeightPerturbationMetres": -5,
+                "goodDifficultFraction": 0.5446985446985447,
+                "medianIncidence": 49.97719190229467
+              },
+              {
+                "cameraHeightPerturbationMetres": 0,
+                "goodDifficultFraction": 0.5426195426195426,
+                "medianIncidence": 50.04015715970904
+              },
+              {
+                "cameraHeightPerturbationMetres": 5,
+                "goodDifficultFraction": 0.5426195426195426,
+                "medianIncidence": 50.09519197551451
+              }
+            ],
+            "id": "20260813_004_082750_054_41216",
+            "incidenceDegrees": {
+              "median": 50.04015715970904,
+              "p05": 21.583643558222743,
+              "p95": 69.11399418339072
+            },
+            "line": "20260813_0822_41216_004_082750",
+            "losMinimumClearanceMetres": 47.25756298679744,
+            "losSamples": 9,
+            "losSupported": 9,
+            "maximumTargetImageExtentRatio": 0.7000277114590098,
+            "medianFactor": 1.5570256671085778,
+            "medianIncidence": 50.04015715970904,
+            "profileNativeStartDeltaMetres": [
+              -1.085742187499818,
+              1.36279296875
+            ],
+            "published": {
+              "altitude": "3836.771",
+              "calibration_certificate": "leica_dmc-4_41216-calibration_certificate_20260415.pdf",
+              "capture_time": "2026-08-13T08:29:29",
+              "collection_id": "ch.swisstopo.lubis-luftbilder_digital",
+              "easting": "2718927.474",
+              "feature_id": "20260813_004_082750_054_41216",
+              "focal_length": "0.107",
+              "image_uuid": "{095f84d9-9b02-41cf-9f0a-bc24d6553fac}",
+              "kappa": "-84.0388",
+              "line_id": "20260813_0822_41216_004_082750",
+              "lines": "13440",
+              "northing": "1206460.102",
+              "omega": "-0.00023",
+              "phi": "0.04523",
+              "pixel_size": "0.00376",
+              "ppx": "0",
+              "ppy": "0",
+              "samples": "31520",
+              "sensor_id": "41216",
+              "sensor_type": "DMC-4S"
+            },
+            "role": "poor",
+            "supportFactor": {
+              "median": 1.5570256671085778,
+              "p05": 1.075405857108621,
+              "p95": 2.8049727364033563
+            },
+            "tangentMetresPerCompositePixelFrontfaces": {
+              "major": {
+                "median": 0.06318327356443613,
+                "p05": 0.04537236694773903,
+                "p95": 0.11638796230057395
+              },
+              "minor": {
+                "median": 0.04049174909821392,
+                "p05": 0.0379993452128695,
+                "p95": 0.042456763241075515
+              }
+            },
+            "viewAzimuth": 201.57261608188105,
+            "viewElevation": 74.1962694465539
+          }
+        ]
+      },
+      {
+        "aspectCircularMeanDegrees": 256.6508441181061,
+        "aspectOffsetsDegrees": {
+          "median": -5.5386694226985185,
+          "p05": -41.946328523630406,
+          "p95": 52.25172355603073
+        },
+        "bounds": [
+          2801440,
+          1191020,
+          2801500,
+          1191080
+        ],
+        "centre": [
+          2801470,
+          1191050,
+          2868.932537434896
+        ],
+        "difficultFraction": 0.31222222222222223,
+        "medianSlope": 53.89056276723059,
+        "normalMean": [
+          -0.6720765611582593,
+          -0.15948110680197602,
+          0.5702817964711238
+        ],
+        "observationCount": 17,
+        "pair": {
+          "best": "20260813_002_085104_026_41216",
+          "contrast": 15.391821872009004,
+          "poor": "20260813_002_085104_034_41216",
+          "sameLine": true,
+          "separation": 24.102721430095084
+        },
+        "slopeP95": 72.5432140078078,
+        "stretchMedian": 1.6968439646686744,
+        "stretchP95": 3.333484537257617,
+        "tile": "2801-1191",
+        "views": [
+          {
+            "acquisitionUTC": "2026-08-13T08:52:35Z",
+            "backfacingFraction": 0.0,
+            "calibratedTargetInside": true,
+            "calibratedTargetInsideFraction": 1.0,
+            "direction": [
+              -0.15571207188905864,
+              0.19414277684654788,
+              0.9685361804632433
+            ],
+            "footprintProjectionEdgeRange": [
+              0.9794049833697573,
+              1.0024354558078759
+            ],
+            "goodDifficultFraction": 0.597864768683274,
+            "gori": {
+              "focal": 107.0,
+              "kappa": 1.23462741,
+              "lines": 13440.0,
+              "omega": -0.0004496,
+              "phi": -0.00083689,
+              "ppx": 0.0,
+              "ppy": 0.0,
+              "samples": 31520.0,
+              "ux": 265.957447,
+              "vy": -265.957447,
+              "x0": 2801057.247,
+              "y0": 1191564.623,
+              "z0": 5436.275
+            },
+            "heightReferenceSensitivity": [
+              {
+                "cameraHeightPerturbationMetres": -5,
+                "goodDifficultFraction": 0.597864768683274,
+                "medianIncidence": 50.99942691002812
+              },
+              {
+                "cameraHeightPerturbationMetres": 0,
+                "goodDifficultFraction": 0.597864768683274,
+                "medianIncidence": 50.99911072110105
+              },
+              {
+                "cameraHeightPerturbationMetres": 5,
+                "goodDifficultFraction": 0.597864768683274,
+                "medianIncidence": 51.00014080968327
+              }
+            ],
+            "id": "20260813_002_085104_026_41216",
+            "incidenceDegrees": {
+              "median": 50.99911072110105,
+              "p05": 36.13728473305224,
+              "p95": 64.38020819284961
+            },
+            "line": "20260813_0822_41216_002_085104",
+            "losMinimumClearanceMetres": 35.697832775635106,
+            "losSamples": 9,
+            "losSupported": 9,
+            "maximumTargetImageExtentRatio": 0.9964341634525594,
+            "medianFactor": 1.5889852804234925,
+            "medianIncidence": 50.99911072110105,
+            "profileNativeStartDeltaMetres": [
+              -0.04262695312490905,
+              0.033203125
+            ],
+            "published": {
+              "altitude": "5436.275",
+              "calibration_certificate": "leica_dmc-4_41216-calibration_certificate_20260415.pdf",
+              "capture_time": "2026-08-13T08:52:35",
+              "collection_id": "ch.swisstopo.lubis-luftbilder_digital",
+              "easting": "2801057.247",
+              "feature_id": "20260813_002_085104_026_41216",
+              "focal_length": "0.107",
+              "image_uuid": "{f9092697-bbb9-40b9-a1ad-c3c007f2a946}",
+              "kappa": "70.73894",
+              "line_id": "20260813_0822_41216_002_085104",
+              "lines": "13440",
+              "northing": "1191564.623",
+              "omega": "-0.02576",
+              "phi": "-0.04795",
+              "pixel_size": "0.00376",
+              "ppx": "0",
+              "ppy": "0",
+              "samples": "31520",
+              "sensor_id": "41216",
+              "sensor_type": "DMC-4S"
+            },
+            "role": "best",
+            "supportFactor": {
+              "median": 1.5889852804234925,
+              "p05": 1.2382270940488633,
+              "p95": 2.3126914035565713
+            },
+            "tangentMetresPerCompositePixelFrontfaces": {
+              "major": {
+                "median": 0.14163248690793678,
+                "p05": 0.11163096808631082,
+                "p95": 0.20641834840800397
+              },
+              "minor": {
+                "median": 0.08817783507183577,
+                "p05": 0.08633922048321888,
+                "p95": 0.09001022416984054
+              }
+            },
+            "viewAzimuth": 321.268669159474,
+            "viewElevation": 75.5891800814477
+          },
+          {
+            "acquisitionUTC": "2026-08-13T08:52:21Z",
+            "backfacingFraction": 0.011111111111111112,
+            "calibratedTargetInside": true,
+            "calibratedTargetInsideFraction": 1.0,
+            "direction": [
+              0.24026580679422557,
+              0.06158369400376502,
+              0.9687516661757907
+            ],
+            "footprintProjectionEdgeRange": [
+              0.9816531358945015,
+              1.0015778816733691
+            ],
+            "goodDifficultFraction": 0.0,
+            "gori": {
+              "focal": 107.0,
+              "kappa": 1.23475657,
+              "lines": 13440.0,
+              "omega": -0.00056514,
+              "phi": -0.00074805,
+              "ppx": 0.0,
+              "ppy": 0.0,
+              "samples": 31520.0,
+              "ux": 265.957447,
+              "vy": -265.957447,
+              "x0": 2802108.02,
+              "y0": 1191213.534,
+              "z0": 5441.429
+            },
+            "heightReferenceSensitivity": [
+              {
+                "cameraHeightPerturbationMetres": -5,
+                "goodDifficultFraction": 0.0,
+                "medianIncidence": 66.41314770461906
+              },
+              {
+                "cameraHeightPerturbationMetres": 0,
+                "goodDifficultFraction": 0.0,
+                "medianIncidence": 66.39093259311005
+              },
+              {
+                "cameraHeightPerturbationMetres": 5,
+                "goodDifficultFraction": 0.0,
+                "medianIncidence": 66.3687997763922
+              }
+            ],
+            "id": "20260813_002_085104_034_41216",
+            "incidenceDegrees": {
+              "median": 66.39093259311005,
+              "p05": 49.37996573843778,
+              "p95": 85.26538974809581
+            },
+            "line": "20260813_0822_41216_002_085104",
+            "losMinimumClearanceMetres": 9.544144956118998,
+            "losSamples": 9,
+            "losSupported": 9,
+            "maximumTargetImageExtentRatio": 0.95143236430228,
+            "medianFactor": 2.496916012012324,
+            "medianIncidence": 66.39093259311005,
+            "profileNativeStartDeltaMetres": [
+              -0.04262695312490905,
+              0.033203125
+            ],
+            "published": {
+              "altitude": "5441.429",
+              "calibration_certificate": "leica_dmc-4_41216-calibration_certificate_20260415.pdf",
+              "capture_time": "2026-08-13T08:52:21",
+              "collection_id": "ch.swisstopo.lubis-luftbilder_digital",
+              "easting": "2802108.02",
+              "feature_id": "20260813_002_085104_034_41216",
+              "focal_length": "0.107",
+              "image_uuid": "{24e0c43b-c6c2-4933-b64b-53ccc59c0232}",
+              "kappa": "70.74634",
+              "line_id": "20260813_0822_41216_002_085104",
+              "lines": "13440",
+              "northing": "1191213.534",
+              "omega": "-0.03238",
+              "phi": "-0.04286",
+              "pixel_size": "0.00376",
+              "ppx": "0",
+              "ppy": "0",
+              "samples": "31520",
+              "sensor_id": "41216",
+              "sensor_type": "DMC-4S"
+            },
+            "role": "poor",
+            "supportFactor": {
+              "median": 2.496916012012324,
+              "p05": 1.5360054512671037,
+              "p95": 12.117817531133053
+            },
+            "tangentMetresPerCompositePixelFrontfaces": {
+              "major": {
+                "median": 0.21876822828077302,
+                "p05": 0.13492701096045753,
+                "p95": 0.9401278684465233
+              },
+              "minor": {
+                "median": 0.08970660634839278,
+                "p05": 0.08806548768564078,
+                "p95": 0.09169981673515204
+              }
+            },
+            "viewAzimuth": 75.62373473859961,
+            "viewElevation": 75.63887332019334
+          }
+        ]
+      }
+    ],
+    "steepPatches": 80,
+    "versions": {
+      "gdal": "3.9.3",
+      "matplotlib": "3.10.6",
+      "numpy": "2.5.3",
+      "pyproj": "3.7.2",
+      "python": "3.12.6",
+      "rasterio": "1.4.3"
+    }
+  },
+  "baselineCommit": "e14148af00ef01ea77c9ec08141bc17cffd70735",
+  "calibration": {
+    "certificateDate": "2026-04-15",
+    "model": "DMC-4S distortion-free output composite; 107 mm; 0.00376 mm pixel; zero principal point",
+    "serial": "41216",
+    "sha256": "ba53b06a06b08bf3b416eab57a1d3aad56fd20d0a0be306c0c51e2d8fbd070de",
+    "url": "https://data.geo.admin.ch/ch.swisstopo.lubis-luftbilder_digital/leica_dmc-4_41216-calibration_certificate_20260415.pdf"
+  },
+  "catalogue": {
+    "publicationLastModified": "2026-09-25",
+    "rows": 26601,
+    "schema": [
+      "altitude",
+      "calibration_certificate",
+      "capture_time",
+      "collection_id",
+      "easting",
+      "feature_id",
+      "focal_length",
+      "image_uuid",
+      "kappa",
+      "line_id",
+      "lines",
+      "northing",
+      "omega",
+      "phi",
+      "pixel_size",
+      "ppx",
+      "ppy",
+      "samples",
+      "sensor_id",
+      "sensor_type"
+    ],
+    "sha256": "19560a1b890b8ddd2df1b67604f6d6c37396df54e99f679a0543d6c05955a598",
+    "url": "https://data.geo.admin.ch/ch.swisstopo.lubis-luftbilder_digital/lubis-luftbilder_digital.csv"
+  },
+  "diagnosticOutputs": [
+    {
+      "bytes": 21728,
+      "file": "2713-1206-normals.npy",
+      "sha256": "8d0e3c0606f22340a6df06cfdb060ea40e074ec7887a2c745a4a94776ec7a01d"
+    },
+    {
+      "bytes": 21728,
+      "file": "2713-1206-points.npy",
+      "sha256": "d36f54136302de1c6265215f1083997febc7005e3e7a0177e27690bb57946695"
+    },
+    {
+      "bytes": 21728,
+      "file": "2719-1206-normals.npy",
+      "sha256": "e6eacb5bba9b3cf59db081863b3a6d21469c26f67ac880d61214fd755c098583"
+    },
+    {
+      "bytes": 21728,
+      "file": "2719-1206-points.npy",
+      "sha256": "db08c6b47410e74c41e03ff4ca3d9b6749c617a75827bf9feb3ee8c55c254afa"
+    },
+    {
+      "bytes": 21728,
+      "file": "2801-1191-normals.npy",
+      "sha256": "a396dc3edcd78b43ab07be60241f2e5a1b9942c29afb5634de3a7e907a0f12c9"
+    },
+    {
+      "bytes": 21728,
+      "file": "2801-1191-points.npy",
+      "sha256": "9314a45429f2edcc564ac33454a210306a3b88cec5f8559fa624d2be7b183ac5"
+    },
+    {
+      "bytes": 34630,
+      "file": "analysis.json",
+      "sha256": "423b371daada7e03c3703506291f1808ff97ae7f9230a81ef38fc75a0119e467"
+    },
+    {
+      "bytes": 717345,
+      "file": "benchmark-map.png",
+      "sha256": "01889837b416f3765b27e1d5e348b124853e48bcf61599b76aa5d93a0ee9a5ff"
+    },
+    {
+      "bytes": 617715,
+      "file": "screened-patches.json",
+      "sha256": "59cbf608f9a0d33f2ec314314f006951b319fbd5350fa67d302af9b1cb2bdaee"
+    },
+    {
+      "bytes": 35757,
+      "file": "shortlist.json",
+      "sha256": "7ad0a5498e0de5da26899af3c609cc12c371830aa29806005a780e6146369186"
+    }
+  ],
+  "evidenceClass": "MERIDIAN EVIDENCE",
+  "frozenCriteria": {
+    "baseline": "e14148af00ef01ea77c9ec08141bc17cffd70735",
+    "candidateBudget": {
+      "maximumShortlist": 3,
+      "maximumSourceImagesSelected": 3,
+      "priority": "same flight, calibrated rays, steep non-overhang represented heightfield, publicly obtainable individual observations",
+      "terrainDiscovery": "metadata/coarse height samples first; bounded native windows or a few 2m 1km tiles only, never a national DEM",
+      "tieBreak": "passing candidates: same-flight pair, LOS-supported difficult cells, smallest required frame set, then deterministic coordinate order; no composite score"
+    },
+    "difficultDefinition": "orthographic stretch >2",
+    "dimensions": [
+      "terrain steepness",
+      "terrain geometry provenance/grid/limitations",
+      "number of covering observations",
+      "verified camera model and orientation",
+      "directional diversity",
+      "incidence support improvement",
+      "visibility analysability",
+      "pixel availability",
+      "temporal coherence",
+      "rights",
+      "minimal experiment size"
+    ],
+    "frozenUTC": "2026-10-06T00:16:24.380624+00:00",
+    "materialGate": {
+      "maximumCandidateIncidenceDegrees": 60,
+      "minimumAngularSeparationDegrees": 15,
+      "minimumFractionDifficultCellsImproved": 0.5
+    },
+    "minimumDifficultCellFraction": 0.25,
+    "minimumMedianSlopeDegrees": 50,
+    "patchSideMetres": 60
+  },
+  "productionHashes": {
+    "src/atlas/map/AtlasMap.ts": "cb45f5963716d636e903ed515008b66dab2fca0ab6d2aa28214a8c6303ef4b05",
+    "src/atlas/map/atlasVisuals.ts": "48426ab2132d5192069254ec9fe3fb7d9d433c2c9059f6f2223166c34c22dcfc",
+    "src/atlas/map/satelliteLayer.ts": "ffcd24310e5a2ef7d1485528f42fb39d52b8b2503b138fb51efd385412cd715e",
+    "src/atlas/map/satelliteProvider.ts": "1f5c44821ecb05e04fbe5884450d3e52adbb7944c6330bc8994915aeeeb49015",
+    "src/atlas/map/terrainLayers.ts": "c71099083d3184d5c70c148ea2c3f0574b0b170fb0737b9c041df579ed4e5497",
+    "src/atlas/map/visualTerrainConfig.ts": "583da7dc4ac885bf1a9a4b440c45d71d24c0ddfc9212b58772914ab9ccce0920",
+    "src/atlas/terrain/analyticalElevationConfig.ts": "6fd90c2fb39dc925c8de90cf6b7cf3a907696d71cc116e42563255addb41a9bb",
+    "src/atlas/terrain/terrainElevationSampler.ts": "d941ad5474ff7370da4e67c135018a777ed440d84bf00cff0f536600270f1b7b"
+  },
+  "retainedInputManifest": {
+    "bytes": 19357606,
+    "files": 112,
+    "relativeDataRoot": "experiments/atlas/swiss-alpine-multiview-discovery-v1",
+    "sha256": "4322e7f4ab93d64b3e97712b71fe2d6638eccfdb3309df6b6cc976a8d4eb7f0d"
+  },
+  "retrievalDate": "2026-10-06",
+  "terrainInputs": [
+    {
+      "bytes": 1270769,
+      "item": "swissalti3d_2026_2719-1206",
+      "sha256": "5e353741871a27773efa37419286d77006787ff85bccb793a7eec7e2759c14ad",
+      "tile": "2719-1206",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2026_2719-1206/swissalti3d_2026_2719-1206_2_2056_5728.tif"
+    },
+    {
+      "bytes": 1308284,
+      "item": "swissalti3d_2026_2713-1206",
+      "sha256": "e8f021d2149cf24ef0097c79c0577947cfef10892f0850b095aca25c96fb6aac",
+      "tile": "2713-1206",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2026_2713-1206/swissalti3d_2026_2713-1206_2_2056_5728.tif"
+    },
+    {
+      "bytes": 1141918,
+      "item": "swissalti3d_2023_2801-1191",
+      "sha256": "be639fabf4a269a9b63e6886801e989087447859f0ba68ae1be2420833e70d1c",
+      "tile": "2801-1191",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2023_2801-1191/swissalti3d_2023_2801-1191_2_2056_5728.tif"
+    }
+  ]
+}

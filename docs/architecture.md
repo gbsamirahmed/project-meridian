@@ -273,8 +273,11 @@ delivery are isolated; no AppearanceHierarchy runtime or correction was introduc
 The bounded [acquisition/multiview-support assessment](atlas/riffelhorn-observation-support.md)
 is PARTIAL: two 2023 strip footprints cover the frozen patches, but actual calibrated
 scan-line geometry and visibility remain unavailable. Newer frame metadata is
-separate and supplies no local candidate in the assessed catalogue. The one next
-prerequisite is a metadata-only swisstopo query, with no image order. Observation
+separate and supplies no local candidate in the assessed catalogue. That assessment
+remains a completed limitation. A separate
+[Swiss 2026 frame benchmark](atlas/swiss-multiview-benchmark.md) now freezes two
+observations with public camera geometry; actual pixels are deferred and require
+individual provisioning/quotation. No contact/order or source pixels acquired. Observation
 provenance must accommodate time-dependent pushbroom geometry as well as frame
 poses; no appearance runtime or TerrainHierarchy change is introduced.
 
