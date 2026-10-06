@@ -3741,3 +3741,35 @@ morphology preparation. Next is the bounded information-aware display/selection
 experiment, not executed here. Production AWS visual/analytical terrain, IGOR,
 exaggeration 1.45, satellite/opacity/suppression, Weather/Traverse and lifecycle remain
 unchanged. No appearance/multiview work, source acquisition or reopened elevation.
+
+## 2026-10-06 — Information-aware display limits and multiscale closure
+
+Completed [bounded DPR/oblique characterisation](atlas/information-aware-display-selection.md)
+from clean ca74a84, origin divergence0/0. Reused four benchmarks and frozen cameras:
+22 accepted captures,198 local probes, DPR1/2/3. RequestedDPR3 is clamped to4096x2560
+rather than4320x2700 at1440x900 CSS; screenshot, framebuffer and CSS densities differ.
+Mesh128/RTT1024 and tile-level families remain distinct from rasterisation. AWS extreme
+close geometry still spans45.9 nominal CSS pixels/sample (51.34 local-major median).
+Local oblique sampling is directional and spatially variable, not one zoom constant.
+Common/regional appearance controls match camera/full geometry within each pair.
+Padded DEM hashes/tile lists vary in someDPR groups; these loading/border qualifications
+remain explicit. Satellite activation guards required research-only public-controller
+synchronisation, not a production lifecycle fix; failed runs remain external.
+
+Added pure research maths, capture/analyser/plot tooling, frozen plan/measurements,
+ten synthetic tests and two snapshot checks. All198 probes pass declared reliability
+flags; repeated analysis is byte-identical. Regional manifests,100 Swiss source DEMs,
+four imagery assets,113 production source hashes and11 renderer hashes verify. Lint,
+syntax, reference and diff checks pass; no shared/runtime edits require app tests/build.
+Large evidence stays in meridian-data, normal startup/CI requires no external assets.
+
+Combined metadata/view-local-diagnostic conclusion with uncertainty: eligibility is
+not informational usefulness; projected sampling can be calculated, source optical
+response/human legibility often cannot. TerrainHierarchy does not acquire camera/DPR
+policy; AppearanceHierarchy remains separate. No automatic quality ranking, new modes,
+zoom limits, renderer tuning or geometry generalisation is justified. Morphology
+preparation remains inactive. The current multiscale research programme can close
+without another experiment; recommendations are not implemented. Production AWS
+visual/independent analytical z15, IGOR, exaggeration1.45, MapTiler satellite/suppression,
+Weather/Traverse and lifecycle remain unchanged. Elevation stays closed and externally
+provisioned multiview stays parked; no acquisition/correction/appearance changes.

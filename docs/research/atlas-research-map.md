@@ -5,7 +5,7 @@ Lab 012G evidence checkpoint `abf95bcfb50c681244a146626565a471ba791418`.
 This index records knowledge and research status, not a roadmap, new Lab or
 production architecture. It is the starting point for humans and fresh tooling.
 
-## Current programme boundary — multiscale representation
+## Current programme boundary — multiscale research complete
 
 **REGIONAL ELEVATION FOUNDATION = ESTABLISHED** by the
 [real Wales/Tryfan proof](../atlas/tryfan-second-region-proof.md). No further
@@ -49,16 +49,16 @@ This is a new explicitly bounded programme, not a reopened 012A–012G Lab.
    Keep experiments bounded, products external, provenance reproducible and evidence
    classes distinct. Never silently promote experimental findings into architecture.
 
-Current return point: the [scale-separated relief experiment](../atlas/scale-separated-relief.md),
-following the [multiscale baseline](../atlas/multiscale-representation.md). One frozen
-Gaussian prepared-derivative control, 22 camera pairs and two nine-step sequences
-produce a **NEGATIVE** legibility result: fine contrast falls, but useful ridges/gullies
-also soften without consistent improvement over IGOR. All 40 paired geometry/data/LOD
-states match. Source-faithful geometry and independent depiction remain separate;
-no demonstrated geometry deficiency activates morphology preparation. Next is the
-already ordered bounded information-aware display/selection characterization, not a
-new relief comparison or production tuning. The waiting multiview branch and closed
-elevation foundation remain independent. The historical
+Current return point: the [information-aware display/selection synthesis](../atlas/information-aware-display-selection.md).
+The current multiscale research programme is **CLOSED**: the baseline established
+separate physical/information/display scales; the one relief control was negative;
+the final DPR/oblique characterisation supports local directional sampling diagnostics,
+explicit unknown information and eligibility versus usefulness. No production policy,
+universal modes, geometry generalisation or automatic source-quality ranking is adopted.
+No demonstrated deficiency activates morphology preparation. No additional multiscale
+experiment is recommended. Elevation remains closed; multiview remains independently
+parked awaiting external provisioning. Recommendations are not implementation authority.
+The historical
 012A–012G handoff did not select a next architecture or experiment. The pre-012F
 [finite programme](../earth-lab/riffelhorn-visual-synthesis-and-experiment-design.md)
 is historical; its two core slots were used and its conditional third was refused.

@@ -283,17 +283,24 @@ poses; no appearance runtime or TerrainHierarchy change is introduced.
 
 ### Atlas multiscale representation — research status
 
-The [production-baseline synthesis](atlas/multiscale-representation.md) now separates
-physical feature/wavelength scale, source information, product delivery and local
-screen-space sampling. Existing geometry, relief and imagery can refine at different
-levels. The supported direction is discrete eligible product/family selection with
-coherent parents, local directional screen-space sampling and independent continuous
-depiction; no context/planning/close modes or replacement rendering system are frozen.
-TerrainHierarchy remains the identity/support/level/fallback boundary, not a renderer
-policy object. AppearanceHierarchy remains a separate proposal. The next bounded
-question isolates relief depiction from fixed geometry before changing selection or
-representation policy. Production, analytical elevation and Weather/Traverse remain
-unchanged; elevation is closed and multiview awaits external provisioning.
+The [baseline](atlas/multiscale-representation.md), [negative scale-separated relief
+control](atlas/scale-separated-relief.md) and [information-aware display synthesis](atlas/information-aware-display-selection.md)
+complete the current bounded multiscale research programme. Identity/support/eligible
+levels/coherent parents remain TerrainHierarchy responsibilities. Camera projection,
+actual CSS/framebuffer sampling and local directional footprints belong to a separate
+optional view-local diagnostic/policy boundary. Eligibility does not guarantee useful
+additional information at a particular view. Unknown effective source resolution and
+perception prevent automatic quality ranking from nominal sampling ratios.
+
+No runtime/schema change is adopted here. Future numerical metadata must retain scope,
+units, evidence kind, contributor revision and unknowns. AppearanceHierarchy remains
+a separate proposal; distributed pixels, nominal GSD/information and surface-projected
+orthophoto support are distinct. Renderer filtering/portrayal cannot create observations.
+No universal three modes/zoom thresholds, replacement IGOR, zoom blocking or blanket
+geometry generalisation is justified. Morphology preparation is not activated.
+Production, analytical elevation, Weather/Traverse and lifecycle remain unchanged.
+Elevation is closed; multiview awaits external provisioning. No further foundational
+multiscale experiment is required before moving to another separately authorised area.
 
 The conceptual relationship is:
 
