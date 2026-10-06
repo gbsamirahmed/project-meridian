@@ -302,6 +302,27 @@ Production, analytical elevation, Weather/Traverse and lifecycle remain unchange
 Elevation is closed; multiview awaits external provisioning. No further foundational
 multiscale experiment is required before moving to another separately authorised area.
 
+### Atlas physical surface semantics — domain review
+
+The [physical-surface review](atlas/physical-surface-semantics.md) and
+[source inventory](atlas/physical-surface-sources.md) propose independent cover/exposure
+properties, physical features/vertical structure and time-qualified state, with
+source-native semantic evidence and mapping lineage. This is a candidate decomposition,
+not a frozen contract or runtime. Cover is distinct from use; fractions, classification
+probabilities and validation accuracy have different meanings. Layer/support/time and
+unknowns must survive interpretation. Water extent, network identity and water geometry
+are distinct; canopy/ground and snow/substrate can coexist.
+
+No semantics are attached to TerrainProduct or AppearanceProduct. Small provenance
+primitives may eventually be shared; physical claims, geometry, observations,
+processed appearance and portrayal stay independent. Property-compatible regional
+fallback needs explicit ontology/epoch/grain/rights, not automatic provider priority.
+Human land use, full ecology/subsurface models, hydrological simulation and application
+suitability remain separate. Dynamic physical state is not automatically Weather-owned.
+The next bounded work is a source-native comparison, then a water-feature/state check,
+then a minimal evidence contract. No implementation or acquisition is adopted here.
+Production is unchanged; multiscale stays closed and multiview stays parked.
+
 The conceptual relationship is:
 
 ```text

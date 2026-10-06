@@ -3773,3 +3773,27 @@ without another experiment; recommendations are not implemented. Production AWS
 visual/independent analytical z15, IGOR, exaggeration1.45, MapTiler satellite/suppression,
 Weather/Traverse and lifecycle remain unchanged. Elevation stays closed and externally
 provisioned multiview stays parked; no acquisition/correction/appearance changes.
+
+
+## 2026-10-06 — Atlas physical-surface semantics domain review
+
+Reviewed physical cover versus human use, classifications versus observations,
+fractional/layered properties, feature identity and time-qualified state. The
+[domain report](atlas/physical-surface-semantics.md) and
+[source inventory](atlas/physical-surface-sources.md) assess global, European,
+GB and Swiss products, including native legends, MMU, validation, rights and
+unknowns. They propose a small hybrid decomposition with recoverable semantic
+evidence; no ontology/schema/runtime is adopted. UKCEH raster restrictions and
+regional/global definition mismatches prevent automatic source substitution.
+
+Water extent/network/geometry, canopy/ground, snow/ice identity and exposed material
+remain distinct. Land use, full ecology/subsurface models, simulation and downstream
+suitability are deferred. Next: bounded native-semantic comparison, water-feature/state
+check, then a minimal evidence contract. No data or production layers acquired/added.
+
+Validation: primary documentation/rights checks, documentation reference checks,
+final diff inspection and SHA-256 verification of all 113 retained production source
+files. Documentation-only work requires no application build/tests. AWS visual and
+independent analytical z15, exaggeration 1.45, IGOR, MapTiler satellite/suppression,
+Weather, Traverse and lifecycle remain unchanged. Multiscale/elevation stay closed;
+externally provisioned multiview stays parked.

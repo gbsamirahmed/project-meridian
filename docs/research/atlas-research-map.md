@@ -5,7 +5,15 @@ Lab 012G evidence checkpoint `abf95bcfb50c681244a146626565a471ba791418`.
 This index records knowledge and research status, not a roadmap, new Lab or
 production architecture. It is the starting point for humans and fresh tooling.
 
-## Current programme boundary — multiscale research complete
+## Current programme boundary — physical surface semantics
+
+The [physical-surface domain review](../atlas/physical-surface-semantics.md) is complete,
+with a [bounded authoritative source inventory](../atlas/physical-surface-sources.md).
+It proposes property/layer-aware cover, physical features/structure and dated state,
+retaining source-native meaning, evidence, quality and rights. It does not adopt a
+land-cover runtime, universal ontology or production layer. Next work is bounded
+source-native semantic comparison, then water-feature/state definition, then a minimal
+evidence contract; these recommendations are not implementation authority.
 
 **REGIONAL ELEVATION FOUNDATION = ESTABLISHED** by the
 [real Wales/Tryfan proof](../atlas/tryfan-second-region-proof.md). No further
@@ -49,7 +57,9 @@ This is a new explicitly bounded programme, not a reopened 012A–012G Lab.
    Keep experiments bounded, products external, provenance reproducible and evidence
    classes distinct. Never silently promote experimental findings into architecture.
 
-Current return point: the [information-aware display/selection synthesis](../atlas/information-aware-display-selection.md).
+Current return point: the [physical-surface problem definition](../atlas/physical-surface-semantics.md).
+The preceding [information-aware display/selection synthesis](../atlas/information-aware-display-selection.md)
+remains the completed multiscale handoff.
 The current multiscale research programme is **CLOSED**: the baseline established
 separate physical/information/display scales; the one relief control was negative;
 the final DPR/oblique characterisation supports local directional sampling diagnostics,
