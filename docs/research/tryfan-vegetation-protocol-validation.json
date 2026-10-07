@@ -1,0 +1,461 @@
+{
+  "assessment": "tryfan-vegetation-protocol/v1",
+  "startingCheckpoint": "9dc4445d491fd59bab2b8e1b613ef62a4bf486b6",
+  "decision": "A - NOT JUSTIFIED",
+  "checks": [
+    {
+      "check": "checkpoint is ancestor",
+      "passed": true
+    },
+    {
+      "check": "main origin/main",
+      "passed": true
+    },
+    {
+      "check": "upstream divergence0/0 before commit",
+      "passed": true
+    },
+    {
+      "check": "113 protected production hashes",
+      "passed": true
+    },
+    {
+      "check": "seven frozen semantic contract code/fixture hashes",
+      "passed": true
+    },
+    {
+      "check": "production terrain contracts metadata unchanged",
+      "passed": true
+    },
+    {
+      "check": "all historical scripts/research and43 Atlas/EarthLab reports",
+      "passed": true
+    },
+    {
+      "check": "all42 canonical status columns unchanged",
+      "passed": true
+    },
+    {
+      "check": "historical audit gate retained",
+      "passed": true
+    },
+    {
+      "check": "append-only development log",
+      "passed": true
+    },
+    {
+      "check": "original illumination criteria hash unchanged",
+      "passed": true
+    },
+    {
+      "check": "27 report sections",
+      "passed": true
+    },
+    {
+      "check": "explicit protocol no-go and next",
+      "passed": true
+    },
+    {
+      "check": "no mojibake",
+      "passed": true
+    },
+    {
+      "check": "fresh process deterministic diagnostics",
+      "passed": true
+    },
+    {
+      "check": "byte identical metrics and PNG rerun",
+      "passed": true
+    },
+    {
+      "check": "predeclared assessment plan exact hash",
+      "passed": true
+    },
+    {
+      "check": "isolated method exact revision",
+      "passed": true
+    },
+    {
+      "check": "no fitting or corrected arrays",
+      "passed": true
+    },
+    {
+      "check": "same fixed study and core",
+      "passed": true
+    },
+    {
+      "check": "three motivated candidates fixed20m boundary and100m holdout guard",
+      "passed": true
+    },
+    {
+      "check": "native SCL nearest lookup equivalence",
+      "passed": true
+    },
+    {
+      "check": "exact nested population counts",
+      "passed": true
+    },
+    {
+      "check": "native SCL counts not independent10m labels",
+      "passed": true
+    },
+    {
+      "check": "all candidate gates fail before fitting",
+      "passed": true
+    },
+    {
+      "check": "P2 central support shortage retained",
+      "passed": true
+    },
+    {
+      "check": "P3 east support absent not zero reflectance",
+      "passed": true
+    },
+    {
+      "check": "prior stopped experiment exactly reproduced",
+      "passed": true
+    },
+    {
+      "check": "six retained semantic hashes and bytes",
+      "passed": true
+    },
+    {
+      "check": "observation and terrain hashes",
+      "passed": true
+    },
+    {
+      "check": "known mean Sun and qualified reconstruction",
+      "passed": true
+    },
+    {
+      "check": "source native annual class retained",
+      "passed": true
+    },
+    {
+      "check": "semantic coexistence without universal truth",
+      "passed": true
+    },
+    {
+      "check": "no physical area/fraction from assignment counts",
+      "passed": true
+    },
+    {
+      "check": "retained metadata exact hashes",
+      "passed": true
+    },
+    {
+      "check": "16 focused mask and support safeguards",
+      "passed": true
+    },
+    {
+      "check": "16 tests counted",
+      "passed": true
+    },
+    {
+      "check": "64 frozen domain tests",
+      "passed": true
+    },
+    {
+      "check": "64 tests counted",
+      "passed": true
+    },
+    {
+      "check": "frozen isolated declarations",
+      "passed": true
+    },
+    {
+      "check": "canonical next assessment explicit",
+      "passed": true
+    },
+    {
+      "check": "current navigation docs/architecture.md",
+      "passed": true
+    },
+    {
+      "check": "current navigation docs/product-direction.md",
+      "passed": true
+    },
+    {
+      "check": "current navigation docs/research/atlas-research-map.md",
+      "passed": true
+    },
+    {
+      "check": "only isolated assessment and navigation",
+      "passed": true
+    },
+    {
+      "check": "bounded artifacts no warped imagery or scratch store",
+      "passed": true
+    },
+    {
+      "check": "all local document links and anchors resolve",
+      "passed": true
+    },
+    {
+      "check": "all research JSON parses",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 9dc4445",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 1842008",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 9695757",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor b12dc06",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 944326b",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 691450f",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 3c143eb",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 1c2d10e",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 6e17e79",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 43afe78",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 5f14511",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor e65c2d6",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 052374e",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor c4da565",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 75ea9d8",
+      "passed": true
+    },
+    {
+      "check": "unstaged whitespace",
+      "passed": true
+    },
+    {
+      "check": "staged whitespace",
+      "passed": true
+    },
+    {
+      "check": "Markdown no trailing whitespace",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "commands": [
+    {
+      "check": "fresh process deterministic diagnostics",
+      "command": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/tryfan-vegetation-protocol/assess.py"
+      ],
+      "exitCode": 0,
+      "localElapsedSeconds": 3.2493462001439184
+    },
+    {
+      "check": "16 focused mask and support safeguards",
+      "command": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/tryfan-vegetation-protocol/test_assess.py"
+      ],
+      "exitCode": 0,
+      "localElapsedSeconds": 0.5662694999482483
+    },
+    {
+      "check": "64 frozen domain tests",
+      "command": [
+        "node",
+        "--test",
+        "scripts/atlas/test_semantic_evidence_contract.mjs",
+        "scripts/atlas/test_terrain_hierarchy_contract.mjs",
+        "scripts/atlas/test_terrain_runtime.mjs",
+        "scripts/atlas/test_tryfan_terrain.mjs"
+      ],
+      "exitCode": 0,
+      "localElapsedSeconds": 1.5151625000871718
+    },
+    {
+      "check": "frozen isolated declarations",
+      "command": [
+        "npx.cmd",
+        "tsc",
+        "-p",
+        "scripts/atlas/semantic-evidence/tsconfig.json"
+      ],
+      "exitCode": 0,
+      "localElapsedSeconds": 1.6092461000662297
+    },
+    {
+      "check": "unstaged whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0,
+      "localElapsedSeconds": 0.07486499985679984
+    },
+    {
+      "check": "staged whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exitCode": 0,
+      "localElapsedSeconds": 0.049073300091549754
+    }
+  ],
+  "localElapsedTimesNotPerformancePromises": true,
+  "artifactSha256": {
+    "docs/research/tryfan-vegetation-protocol-results.json": "4e2f547c3618536b430268371b0fbf129445b709f661870ba28c2ef9ea6c2a88",
+    "docs/research/tryfan-vegetation-protocol-populations.png": "9b83fe69f19fd6a3b3a8e830c433505a8a5c17ad75b70730db7bf16f23efe1db",
+    "docs/research/tryfan-vegetation-protocol-support.png": "85da87d724fe156f182a07ac900961c269a389ad500ae9a0d2bbbacf8f696f7d"
+  },
+  "codeSha256": {
+    "scripts/atlas/tryfan-vegetation-protocol/README.md": "780f24e70ec367826dde5184133941afe000d25df3fd3c16c0250748defae00a",
+    "scripts/atlas/tryfan-vegetation-protocol/assess.py": "90119a86cae602df547784d2c8332aea5189e03642e6e4b1f34bed3d160f7b9e",
+    "scripts/atlas/tryfan-vegetation-protocol/assessment-plan.json": "1754a4cddc32d1b7ed76032f9009e813475c542ab0d2514f1e13596aad32394c",
+    "scripts/atlas/tryfan-vegetation-protocol/test_assess.py": "eedff950c56029be23ff9b5213f6aa377c4b2f08fe3cfdedab21dd724e349331",
+    "scripts/atlas/tryfan-vegetation-protocol/validate.py": "03b601120e5a4753843c522d6f51b88b4de475cb8a2b9f8618acd357fb70834f"
+  },
+  "reportSha256": "a02b665fb2dc69fa06f41c7fd5a07bb48a05ccce4a7368339ac45863707ed90e",
+  "frozenProtocolSha256": "0e1b884bd64c94effffeb1cb024f01c6f385d87eda73f20fa134f0a2add5ca28",
+  "sourceVerification": [
+    {
+      "path": "earth-lab/tryfan-005b/sentinel2-surface-evidence/source-native/B02_10m-native-window.tif",
+      "sha256": "dba087002d85ee85c1772f570acefd60d2eaabe33fd8dba63e17d38505a34ee9",
+      "bytes": 233812
+    },
+    {
+      "path": "earth-lab/tryfan-005b/sentinel2-surface-evidence/source-native/B03_10m-native-window.tif",
+      "sha256": "79684a3055429b256d351ee22563b3770709063b71cb2cadf1bc874c0898bb79",
+      "bytes": 237936
+    },
+    {
+      "path": "earth-lab/tryfan-005b/sentinel2-surface-evidence/source-native/B04_10m-native-window.tif",
+      "sha256": "8fbfa498771db35f60698b7dcfc2e0c89b3d0fd75d55a41332051ce72b596f86",
+      "bytes": 239636
+    },
+    {
+      "path": "earth-lab/tryfan-005b/sentinel2-surface-evidence/source-native/SCL_20m-native-window.tif",
+      "sha256": "050f4f3a9671d134e3a8e613ae93f252018ba963114172a4acec9d8280d9ad9f",
+      "bytes": 3160
+    },
+    {
+      "path": "sources/atlas/tryfan/welsh-lidar-1m/rasters/tryfan-004-dtm-1m.tif",
+      "sha256": "49c131d7de62e0df35f8e02c2f8db3161bfd37f24fea56060fcbb9e6d109b326",
+      "bytes": 15639072,
+      "actualReadBoundsEPSG27700": [
+        264900,
+        357800,
+        267900,
+        360800
+      ],
+      "normalAnalysisGridMetres": 10,
+      "rayNativeSamplingMetres": 1,
+      "rayRadiusMetres": 1000
+    },
+    {
+      "path": "derived/atlas/semantic-comparison-v1/tryfan-worldcover.tif",
+      "sha256": "9a0ad7162b1fb5fdc276a90c219c8d1d1daa0e83650ccd22d1dfbb51cbe98f6d",
+      "bytes": 4918
+    },
+    {
+      "path": "derived/atlas/semantic-comparison-v1/nrw-vegetation-full-features.json",
+      "sha256": "d6d389a7c2a853a15e5a592c08d06f81d500c8778b7370144d246c62c2b7fab8",
+      "bytes": 558917
+    },
+    {
+      "path": "derived/atlas/semantic-comparison-v1/nrw-survey-area.json",
+      "sha256": "9508789477d1ea882a08ef5e8e013d7eb6187e5e2aaf9786c2df8506ff1384c2",
+      "bytes": 589835
+    },
+    {
+      "path": "derived/atlas/semantic-comparison-v1/worldcover-manual.pdf",
+      "sha256": "4301a3d95260d88bd4315f43ccf2a12ef74ad391109b9f36e22b6e51d8490107",
+      "bytes": 4102952
+    },
+    {
+      "path": "derived/atlas/semantic-comparison-v1/jncc-handbook.pdf",
+      "sha256": "0bcf3f56d4fceb90bbc28fb70a12176186c61e83d9ad671122a2bb07b627cae3",
+      "bytes": 8142007
+    },
+    {
+      "path": "derived/atlas/semantic-comparison-v1/nrw-vegetation-metadata.txt",
+      "sha256": "12847c22dd1aa4cabf297c35314888954a9f2f6faaa10b64652cbe0af82b6a7f",
+      "bytes": 39432
+    }
+  ],
+  "protectedProductionHashChecks": 113,
+  "productionMismatches": [],
+  "frozenSemanticHashChecks": 7,
+  "frozenMismatches": [],
+  "unchangedScripts": 328,
+  "unchangedHistoricalAtlasEarthLabReports": 43,
+  "unchangedPriorResearchAssets": 39,
+  "preservationMismatches": [],
+  "canonicalThreadCount": 42,
+  "canonicalStatusColumnsUnchanged": true,
+  "localReferencesChecked": 412,
+  "anchorsChecked": 56,
+  "missingReferences": [],
+  "changedPaths": [
+    "docs/architecture.md",
+    "docs/development-log.md",
+    "docs/product-direction.md",
+    "docs/research/atlas-research-map.md",
+    "docs/research/atlas-research-state.md",
+    "docs/research/tryfan-vegetation-protocol-populations.png",
+    "docs/research/tryfan-vegetation-protocol-results.json",
+    "docs/research/tryfan-vegetation-protocol-support.png",
+    "docs/research/tryfan-vegetation-protocol-validation.json",
+    "docs/research/tryfan-vegetation-protocol.md",
+    "scripts/atlas/tryfan-vegetation-protocol/README.md",
+    "scripts/atlas/tryfan-vegetation-protocol/assess.py",
+    "scripts/atlas/tryfan-vegetation-protocol/assessment-plan.json",
+    "scripts/atlas/tryfan-vegetation-protocol/test_assess.py",
+    "scripts/atlas/tryfan-vegetation-protocol/validate.py"
+  ],
+  "nextTask": "Retained Riffelhorn dark-source signal and texture-support assessment; not started",
+  "confirmations": {
+    "noAcquisition": true,
+    "noPayloadDuplication": true,
+    "noFrozenContractChanges": true,
+    "noProductionChanges": true,
+    "weatherTraverseUnchanged": true,
+    "multiscaleClosed": true,
+    "multiviewParked": true,
+    "noFittingOrCorrection": true,
+    "noClassifier": true,
+    "noPrivateInspection": true
+  }
+}

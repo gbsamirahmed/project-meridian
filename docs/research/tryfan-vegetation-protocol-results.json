@@ -1,0 +1,4247 @@
+{
+  "revision": "tryfan-vegetation-assessment-results/v1",
+  "planSha256": "1754a4cddc32d1b7ed76032f9009e813475c542ab0d2514f1e13596aad32394c",
+  "methodSha256": "90119a86cae602df547784d2c8332aea5189e03642e6e4b1f34bed3d160f7b9e",
+  "oldProtocolSha256": "0e1b884bd64c94effffeb1cb024f01c6f385d87eda73f20fa134f0a2add5ca28",
+  "metadata": {
+    "protocolSha256": "0e1b884bd64c94effffeb1cb024f01c6f385d87eda73f20fa134f0a2add5ca28",
+    "implementationPlanSha256": "39d2df989e622c42b11b02d9b4a4e7b82ab2b6a2bb68af778d8901cfa7ad7f25",
+    "methodSha256": "b36907e2e73e9ce61ed8dc6f1de707c1f1e17dbcfa891fc248aa113a69f5f786",
+    "sharedGeometryMethodSha256": "ab63e796f7eef454de036ee4bb0ad492852ea998ab502640d00b07260a89b504",
+    "inputs": {
+      "blue": {
+        "path": "earth-lab/tryfan-005b/sentinel2-surface-evidence/source-native/B02_10m-native-window.tif",
+        "sha256": "dba087002d85ee85c1772f570acefd60d2eaabe33fd8dba63e17d38505a34ee9",
+        "bytes": 233812
+      },
+      "green": {
+        "path": "earth-lab/tryfan-005b/sentinel2-surface-evidence/source-native/B03_10m-native-window.tif",
+        "sha256": "79684a3055429b256d351ee22563b3770709063b71cb2cadf1bc874c0898bb79",
+        "bytes": 237936
+      },
+      "red": {
+        "path": "earth-lab/tryfan-005b/sentinel2-surface-evidence/source-native/B04_10m-native-window.tif",
+        "sha256": "8fbfa498771db35f60698b7dcfc2e0c89b3d0fd75d55a41332051ce72b596f86",
+        "bytes": 239636
+      },
+      "scl": {
+        "path": "earth-lab/tryfan-005b/sentinel2-surface-evidence/source-native/SCL_20m-native-window.tif",
+        "sha256": "050f4f3a9671d134e3a8e613ae93f252018ba963114172a4acec9d8280d9ad9f",
+        "bytes": 3160
+      }
+    },
+    "nativeGrids": {
+      "blue": {
+        "crs": "EPSG:32630",
+        "shape": [
+          405,
+          405
+        ],
+        "transform": [
+          10.0,
+          0.0,
+          431200.0,
+          0.0,
+          -10.0,
+          5887460.0
+        ],
+        "nodata": 0.0
+      },
+      "green": {
+        "crs": "EPSG:32630",
+        "shape": [
+          405,
+          405
+        ],
+        "transform": [
+          10.0,
+          0.0,
+          431200.0,
+          0.0,
+          -10.0,
+          5887460.0
+        ],
+        "nodata": 0.0
+      },
+      "red": {
+        "crs": "EPSG:32630",
+        "shape": [
+          405,
+          405
+        ],
+        "transform": [
+          10.0,
+          0.0,
+          431200.0,
+          0.0,
+          -10.0,
+          5887460.0
+        ],
+        "nodata": 0.0
+      },
+      "scl": {
+        "crs": "EPSG:32630",
+        "shape": [
+          203,
+          203
+        ],
+        "transform": [
+          20.0,
+          0.0,
+          431200.0,
+          0.0,
+          -20.0,
+          5887460.0
+        ],
+        "nodata": 0.0
+      }
+    },
+    "terrain": {
+      "path": "sources/atlas/tryfan/welsh-lidar-1m/rasters/tryfan-004-dtm-1m.tif",
+      "sha256": "49c131d7de62e0df35f8e02c2f8db3161bfd37f24fea56060fcbb9e6d109b326",
+      "bytes": 15639072,
+      "actualReadBoundsEPSG27700": [
+        264900,
+        357800,
+        267900,
+        360800
+      ],
+      "normalAnalysisGridMetres": 10,
+      "rayNativeSamplingMetres": 1,
+      "rayRadiusMetres": 1000
+    },
+    "retainedMetadataSha256": {
+      "docs/earth-lab/tryfan-005c-temporal-evidence.json": "0564ceb4bcfd0245ec42b792a68d794bc11c779f689393d0f44d94d237b2676a",
+      "docs/earth-lab/tryfan-010-observed-natural-colour.json": "914c2b81b7dcb7b8ed1d0817b3aeb54ccad2bf87e881602a26eb9acecd2bc873",
+      "docs/atlas/tryfan-second-region-proof.json": "2b4c35e50dbc1b7a0d44277f8d961b653cfd3132b43450fa8dd6a6a2e9342e35"
+    },
+    "core": [
+      265900,
+      358800,
+      266900,
+      359800
+    ],
+    "sourceSun": {
+      "role": "documented scene/COG mean, not exact pixel Sun",
+      "azimuthDegrees": 160.700929790374,
+      "elevationDegrees": 58.062309162853
+    },
+    "reconstructedSunAtCore": {
+      "official": {
+        "inputUTC": "2026-07-12T11:33:31.024000Z",
+        "lonlat": [
+          -3.9975235847910118,
+          53.11409885023405
+        ],
+        "azimuthTrueNorthDegrees": 158.95411719299125,
+        "geometricElevationDegrees": 57.665038376110985,
+        "unitENU": [
+          0.19207937217260534,
+          -0.49918866046894533,
+          0.8449356165087359
+        ],
+        "method": "NOAA fractional-year equations/v1; no refraction, parallax or irradiance"
+      },
+      "granule": {
+        "inputUTC": "2026-07-12T11:36:51.535000Z",
+        "lonlat": [
+          -3.9975235847910118,
+          53.11409885023405
+        ],
+        "azimuthTrueNorthDegrees": 160.36762734183432,
+        "geometricElevationDegrees": 57.83901849711,
+        "unitENU": [
+          0.17884413448929193,
+          -0.5013561136166079,
+          0.84655585928988
+        ],
+        "method": "NOAA fractional-year equations/v1; no refraction, parallax or irradiance"
+      },
+      "notPixelTimeBounds": true
+    },
+    "basisTrueEastBNG": [
+      0.9996110491418788,
+      -0.02788817730638129
+    ],
+    "basisTrueNorthBNG": [
+      0.027888893627671964,
+      0.9996110291569539
+    ],
+    "SCLCounts": {
+      "2": 196,
+      "4": 9248,
+      "5": 556
+    },
+    "slopeDegreesP05P50P95": [
+      10.452345859951043,
+      32.14997977255206,
+      51.795396555967
+    ]
+  },
+  "semanticSources": [
+    {
+      "path": "derived/atlas/semantic-comparison-v1/tryfan-worldcover.tif",
+      "sha256": "9a0ad7162b1fb5fdc276a90c219c8d1d1daa0e83650ccd22d1dfbb51cbe98f6d",
+      "bytes": 4918
+    },
+    {
+      "path": "derived/atlas/semantic-comparison-v1/nrw-vegetation-full-features.json",
+      "sha256": "d6d389a7c2a853a15e5a592c08d06f81d500c8778b7370144d246c62c2b7fab8",
+      "bytes": 558917
+    },
+    {
+      "path": "derived/atlas/semantic-comparison-v1/nrw-survey-area.json",
+      "sha256": "9508789477d1ea882a08ef5e8e013d7eb6187e5e2aaf9786c2df8506ff1384c2",
+      "bytes": 589835
+    },
+    {
+      "path": "derived/atlas/semantic-comparison-v1/worldcover-manual.pdf",
+      "sha256": "4301a3d95260d88bd4315f43ccf2a12ef74ad391109b9f36e22b6e51d8490107",
+      "bytes": 4102952
+    },
+    {
+      "path": "derived/atlas/semantic-comparison-v1/jncc-handbook.pdf",
+      "sha256": "0bcf3f56d4fceb90bbc28fb70a12176186c61e83d9ad671122a2bb07b627cae3",
+      "bytes": 8142007
+    },
+    {
+      "path": "derived/atlas/semantic-comparison-v1/nrw-vegetation-metadata.txt",
+      "sha256": "12847c22dd1aa4cabf297c35314888954a9f2f6faaa10b64652cbe0af82b6a7f",
+      "bytes": 39432
+    }
+  ],
+  "nativeSupportTransformOperations": {
+    "SCL": {
+      "sourceCrs": "EPSG:32630",
+      "targetCrs": "EPSG:27700",
+      "operation": "Inverse of UTM zone 30N + Inverse of OSGB36 to WGS 84 (6) + British National Grid",
+      "statedAccuracyMetres": 2.0,
+      "notMeasuredLocalRegistrationAccuracy": true
+    },
+    "WorldCover": {
+      "sourceCrs": "EPSG:4326",
+      "targetCrs": "EPSG:27700",
+      "operation": "axis order change (2D) + Inverse of OSGB36 to WGS 84 (6) + British National Grid",
+      "statedAccuracyMetres": 2.0,
+      "notMeasuredLocalRegistrationAccuracy": true
+    }
+  },
+  "numericRuntime": {
+    "numpy": "2.5.3",
+    "rasterio": "1.4.3",
+    "GDAL": "3.9.3",
+    "shapely": "2.1.2"
+  },
+  "sourceSCLLookupMismatchCells": 0,
+  "noCorrectionModelFitted": true,
+  "correctedArraysProduced": 0,
+  "coreCells": 10000,
+  "SCL4BeforeGeometry": 9248,
+  "SCL4AfterOriginalGeometry": 8741,
+  "constructionCounts": {
+    "P1": 8053,
+    "P2WC30BeforeWCGuard": 7227,
+    "P2AfterWCGuard": 5370,
+    "P3StrictNonMosaicHeathBeforeNRWGuard": 494,
+    "P3AfterNRWGuard": 205
+  },
+  "maskCountsOverlapping": {
+    "invalidRGB": 0,
+    "notSCL4": 752,
+    "muBelow0point3": 676,
+    "incompleteRay": 0,
+    "modelBlockedWithin1km": 132
+  },
+  "oldGateReproduced": {
+    "passed": false,
+    "folds": [
+      {
+        "SCL": 4,
+        "heldout": "NW",
+        "totalEligible": 8741,
+        "heldoutCells": 1648,
+        "trainingCells": 7093,
+        "trainingMuP95MinusP05": 0.43858418916562214
+      },
+      {
+        "SCL": 4,
+        "heldout": "NE",
+        "totalEligible": 8741,
+        "heldoutCells": 2286,
+        "trainingCells": 6455,
+        "trainingMuP95MinusP05": 0.5730162928966589
+      },
+      {
+        "SCL": 4,
+        "heldout": "SW",
+        "totalEligible": 8741,
+        "heldoutCells": 2321,
+        "trainingCells": 6420,
+        "trainingMuP95MinusP05": 0.5624701844955662
+      },
+      {
+        "SCL": 4,
+        "heldout": "SE",
+        "totalEligible": 8741,
+        "heldoutCells": 2486,
+        "trainingCells": 6255,
+        "trainingMuP95MinusP05": 0.5765550717904584
+      },
+      {
+        "SCL": 5,
+        "heldout": "NW",
+        "totalEligible": 501,
+        "heldoutCells": 271,
+        "trainingCells": 230,
+        "trainingMuP95MinusP05": 0.5459640795417758
+      },
+      {
+        "SCL": 5,
+        "heldout": "NE",
+        "totalEligible": 501,
+        "heldoutCells": 46,
+        "trainingCells": 455,
+        "trainingMuP95MinusP05": 0.6083217400601815
+      },
+      {
+        "SCL": 5,
+        "heldout": "SW",
+        "totalEligible": 501,
+        "heldoutCells": 172,
+        "trainingCells": 329,
+        "trainingMuP95MinusP05": 0.6109648626243189
+      },
+      {
+        "SCL": 5,
+        "heldout": "SE",
+        "totalEligible": 501,
+        "heldoutCells": 12,
+        "trainingCells": 489,
+        "trainingMuP95MinusP05": 0.6137436641117576
+      }
+    ],
+    "failures": [
+      "SCL5 SE heldout 12<20"
+    ]
+  },
+  "candidates": {
+    "P1": {
+      "cells": 8053,
+      "logicalMaskSha256": "64f4a172cde36025b9bd59b21435720e9b173290d5c3258ca6b7098857e342e4",
+      "retainedNRWFeatureIDsUsed": [
+        "471291",
+        "486818",
+        "471369",
+        "471384",
+        "471404",
+        "471406",
+        "471415",
+        "471448",
+        "471465",
+        "482397",
+        "486811",
+        "486814",
+        "486816",
+        "486817",
+        "486820",
+        "486832",
+        "486915"
+      ],
+      "distanceToCoreOrInvalidRadiometryGeometryBoundaryP05P50P95Metres": [
+        5.0,
+        73.824115301167,
+        198.11612756158948
+      ],
+      "selectedAnalysisAreaM2": 805300,
+      "notPhysicalVegetationArea": true,
+      "nativeSCLCellsUsed": 2142,
+      "nativeWorldCoverCellsUsed": 8053,
+      "components4Connected": {
+        "count": 13,
+        "largestCells": [
+          8002,
+          16,
+          11,
+          5,
+          5,
+          3,
+          2,
+          2,
+          2,
+          2
+        ],
+        "largestFraction": 0.9936669564137588,
+        "sizeP05P50P95": [
+          1.0,
+          2.0,
+          3210.3999999999887
+        ]
+      },
+      "blocks100m": [
+        {
+          "id": "0:0",
+          "quadrant": "NW",
+          "cells": 79,
+          "muMedian": 0.42720678486635844,
+          "brightnessMedian": 0.07697286453080641
+        },
+        {
+          "id": "0:1",
+          "quadrant": "NW",
+          "cells": 9,
+          "muMedian": 0.3781007963673348,
+          "brightnessMedian": 0.08327990389390635
+        },
+        {
+          "id": "0:2",
+          "quadrant": "NW",
+          "cells": 53,
+          "muMedian": 0.3707638447919495,
+          "brightnessMedian": 0.08932119851004802
+        },
+        {
+          "id": "0:3",
+          "quadrant": "NW",
+          "cells": 45,
+          "muMedian": 0.37417642273338847,
+          "brightnessMedian": 0.09807571799443264
+        },
+        {
+          "id": "0:4",
+          "quadrant": "NW",
+          "cells": 4,
+          "muMedian": 0.3580148659921337,
+          "brightnessMedian": 0.12848573521340767
+        },
+        {
+          "id": "0:5",
+          "quadrant": "NE",
+          "cells": 48,
+          "muMedian": 0.36138964646893845,
+          "brightnessMedian": 0.09134819718624942
+        },
+        {
+          "id": "0:6",
+          "quadrant": "NE",
+          "cells": 83,
+          "muMedian": 0.7069613790243162,
+          "brightnessMedian": 0.08150459722873334
+        },
+        {
+          "id": "0:7",
+          "quadrant": "NE",
+          "cells": 100,
+          "muMedian": 0.7760457678624311,
+          "brightnessMedian": 0.07604613941380095
+        },
+        {
+          "id": "0:8",
+          "quadrant": "NE",
+          "cells": 100,
+          "muMedian": 0.7883762015913528,
+          "brightnessMedian": 0.05599014376857647
+        },
+        {
+          "id": "0:9",
+          "quadrant": "NE",
+          "cells": 100,
+          "muMedian": 0.8430387843640843,
+          "brightnessMedian": 0.047554665746648024
+        },
+        {
+          "id": "1:0",
+          "quadrant": "NW",
+          "cells": 100,
+          "muMedian": 0.4555792552322361,
+          "brightnessMedian": 0.08058106094338394
+        },
+        {
+          "id": "1:1",
+          "quadrant": "NW",
+          "cells": 90,
+          "muMedian": 0.4979121465984382,
+          "brightnessMedian": 0.08777379861751222
+        },
+        {
+          "id": "1:2",
+          "quadrant": "NW",
+          "cells": 73,
+          "muMedian": 0.4688046422280505,
+          "brightnessMedian": 0.09526135917297499
+        },
+        {
+          "id": "1:3",
+          "quadrant": "NW",
+          "cells": 44,
+          "muMedian": 0.35248830677331516,
+          "brightnessMedian": 0.1191153759873369
+        },
+        {
+          "id": "1:4",
+          "quadrant": "NW",
+          "cells": 18,
+          "muMedian": 0.3571078863341436,
+          "brightnessMedian": 0.13177837349305066
+        },
+        {
+          "id": "1:5",
+          "quadrant": "NE",
+          "cells": 10,
+          "muMedian": 0.5167135383325878,
+          "brightnessMedian": 0.09160793900187475
+        },
+        {
+          "id": "1:6",
+          "quadrant": "NE",
+          "cells": 100,
+          "muMedian": 0.6719660919301342,
+          "brightnessMedian": 0.07705186212628509
+        },
+        {
+          "id": "1:7",
+          "quadrant": "NE",
+          "cells": 100,
+          "muMedian": 0.7709742011443157,
+          "brightnessMedian": 0.06739723199288518
+        },
+        {
+          "id": "1:8",
+          "quadrant": "NE",
+          "cells": 100,
+          "muMedian": 0.8001831404031775,
+          "brightnessMedian": 0.05135848240553005
+        },
+        {
+          "id": "1:9",
+          "quadrant": "NE",
+          "cells": 100,
+          "muMedian": 0.8251113091563407,
+          "brightnessMedian": 0.04905332842388334
+        },
+        {
+          "id": "2:0",
+          "quadrant": "NW",
+          "cells": 98,
+          "muMedian": 0.5476019120353175,
+          "brightnessMedian": 0.07233555023390054
+        },
+        {
+          "id": "2:1",
+          "quadrant": "NW",
+          "cells": 100,
+          "muMedian": 0.46851243179335955,
+          "brightnessMedian": 0.08143430998380548
+        },
+        {
+          "id": "2:2",
+          "quadrant": "NW",
+          "cells": 100,
+          "muMedian": 0.4603728696970397,
+          "brightnessMedian": 0.08338878742237954
+        },
+        {
+          "id": "2:3",
+          "quadrant": "NW",
+          "cells": 35,
+          "muMedian": 0.36560692706582587,
+          "brightnessMedian": 0.0918121181113613
+        },
+        {
+          "id": "2:5",
+          "quadrant": "NE",
+          "cells": 32,
+          "muMedian": 0.47464376980039097,
+          "brightnessMedian": 0.07953406508186343
+        },
+        {
+          "id": "2:6",
+          "quadrant": "NE",
+          "cells": 98,
+          "muMedian": 0.6798668234945436,
+          "brightnessMedian": 0.08290208793810849
+        },
+        {
+          "id": "2:7",
+          "quadrant": "NE",
+          "cells": 100,
+          "muMedian": 0.7445221561020795,
+          "brightnessMedian": 0.06055125207478307
+        },
+        {
+          "id": "2:8",
+          "quadrant": "NE",
+          "cells": 100,
+          "muMedian": 0.805329103140509,
+          "brightnessMedian": 0.0527999961503484
+        },
+        {
+          "id": "2:9",
+          "quadrant": "NE",
+          "cells": 100,
+          "muMedian": 0.8318654118887552,
+          "brightnessMedian": 0.0497518204094672
+        },
+        {
+          "id": "3:0",
+          "quadrant": "NW",
+          "cells": 100,
+          "muMedian": 0.6241197036944044,
+          "brightnessMedian": 0.0657675259444933
+        },
+        {
+          "id": "3:1",
+          "quadrant": "NW",
+          "cells": 97,
+          "muMedian": 0.5016470102840918,
+          "brightnessMedian": 0.0811124734742859
+        },
+        {
+          "id": "3:2",
+          "quadrant": "NW",
+          "cells": 93,
+          "muMedian": 0.47378684735705767,
+          "brightnessMedian": 0.07259728854448079
+        },
+        {
+          "id": "3:3",
+          "quadrant": "NW",
+          "cells": 4,
+          "muMedian": 0.43748047281073166,
+          "brightnessMedian": 0.08944611246998518
+        },
+        {
+          "id": "3:5",
+          "quadrant": "NE",
+          "cells": 16,
+          "muMedian": 0.5819835008638129,
+          "brightnessMedian": 0.07574959503540346
+        },
+        {
+          "id": "3:6",
+          "quadrant": "NE",
+          "cells": 92,
+          "muMedian": 0.6657520005900548,
+          "brightnessMedian": 0.08998821807115147
+        },
+        {
+          "id": "3:7",
+          "quadrant": "NE",
+          "cells": 100,
+          "muMedian": 0.7378751121960808,
+          "brightnessMedian": 0.05870792367693869
+        },
+        {
+          "id": "3:8",
+          "quadrant": "NE",
+          "cells": 100,
+          "muMedian": 0.7928462754547458,
+          "brightnessMedian": 0.053517130318099806
+        },
+        {
+          "id": "3:9",
+          "quadrant": "NE",
+          "cells": 100,
+          "muMedian": 0.7839313554066318,
+          "brightnessMedian": 0.053533279447932514
+        },
+        {
+          "id": "4:0",
+          "quadrant": "NW",
+          "cells": 100,
+          "muMedian": 0.7641857816955011,
+          "brightnessMedian": 0.05848909519165791
+        },
+        {
+          "id": "4:1",
+          "quadrant": "NW",
+          "cells": 100,
+          "muMedian": 0.6761200579055852,
+          "brightnessMedian": 0.06933896674645798
+        },
+        {
+          "id": "4:2",
+          "quadrant": "NW",
+          "cells": 100,
+          "muMedian": 0.6039281424707055,
+          "brightnessMedian": 0.067822830906989
+        },
+        {
+          "id": "4:3",
+          "quadrant": "NW",
+          "cells": 25,
+          "muMedian": 0.4742394030498634,
+          "brightnessMedian": 0.07241064025991899
+        },
+        {
+          "id": "4:5",
+          "quadrant": "NE",
+          "cells": 76,
+          "muMedian": 0.7293452743659119,
+          "brightnessMedian": 0.0894811199846777
+        },
+        {
+          "id": "4:6",
+          "quadrant": "NE",
+          "cells": 98,
+          "muMedian": 0.7355534712206815,
+          "brightnessMedian": 0.06555490029579022
+        },
+        {
+          "id": "4:7",
+          "quadrant": "NE",
+          "cells": 100,
+          "muMedian": 0.7674352593071029,
+          "brightnessMedian": 0.05248640538384887
+        },
+        {
+          "id": "4:8",
+          "quadrant": "NE",
+          "cells": 100,
+          "muMedian": 0.786394919794523,
+          "brightnessMedian": 0.051355109008807125
+        },
+        {
+          "id": "4:9",
+          "quadrant": "NE",
+          "cells": 100,
+          "muMedian": 0.8353483464729878,
+          "brightnessMedian": 0.04483642606158744
+        },
+        {
+          "id": "5:0",
+          "quadrant": "SW",
+          "cells": 98,
+          "muMedian": 0.7450807916685472,
+          "brightnessMedian": 0.05515322523033329
+        },
+        {
+          "id": "5:1",
+          "quadrant": "SW",
+          "cells": 77,
+          "muMedian": 0.6575369886499433,
+          "brightnessMedian": 0.06752236817598038
+        },
+        {
+          "id": "5:2",
+          "quadrant": "SW",
+          "cells": 49,
+          "muMedian": 0.7170228049075109,
+          "brightnessMedian": 0.08424728919570686
+        },
+        {
+          "id": "5:3",
+          "quadrant": "SW",
+          "cells": 6,
+          "muMedian": 0.7302851731419766,
+          "brightnessMedian": 0.07725442725442738
+        },
+        {
+          "id": "5:4",
+          "quadrant": "SW",
+          "cells": 22,
+          "muMedian": 0.9359791749066516,
+          "brightnessMedian": 0.08890859697877401
+        },
+        {
+          "id": "5:5",
+          "quadrant": "SE",
+          "cells": 98,
+          "muMedian": 0.9056678787147197,
+          "brightnessMedian": 0.08277127224292981
+        },
+        {
+          "id": "5:6",
+          "quadrant": "SE",
+          "cells": 100,
+          "muMedian": 0.8287991167217055,
+          "brightnessMedian": 0.054608720930694535
+        },
+        {
+          "id": "5:7",
+          "quadrant": "SE",
+          "cells": 100,
+          "muMedian": 0.8316654725498251,
+          "brightnessMedian": 0.055687666000883054
+        },
+        {
+          "id": "5:8",
+          "quadrant": "SE",
+          "cells": 100,
+          "muMedian": 0.8426337729924074,
+          "brightnessMedian": 0.05244590201945801
+        },
+        {
+          "id": "5:9",
+          "quadrant": "SE",
+          "cells": 100,
+          "muMedian": 0.8279299215850016,
+          "brightnessMedian": 0.04490334888791048
+        },
+        {
+          "id": "6:0",
+          "quadrant": "SW",
+          "cells": 99,
+          "muMedian": 0.7959456777665297,
+          "brightnessMedian": 0.060413798868542784
+        },
+        {
+          "id": "6:1",
+          "quadrant": "SW",
+          "cells": 100,
+          "muMedian": 0.8013232489290733,
+          "brightnessMedian": 0.06353053258786336
+        },
+        {
+          "id": "6:2",
+          "quadrant": "SW",
+          "cells": 98,
+          "muMedian": 0.6279045789197655,
+          "brightnessMedian": 0.0772763311658908
+        },
+        {
+          "id": "6:3",
+          "quadrant": "SW",
+          "cells": 39,
+          "muMedian": 0.6683510490741047,
+          "brightnessMedian": 0.08492070758815504
+        },
+        {
+          "id": "6:4",
+          "quadrant": "SW",
+          "cells": 95,
+          "muMedian": 0.8436427516132822,
+          "brightnessMedian": 0.07590733667792006
+        },
+        {
+          "id": "6:5",
+          "quadrant": "SE",
+          "cells": 100,
+          "muMedian": 0.9242495016095262,
+          "brightnessMedian": 0.08489347353302963
+        },
+        {
+          "id": "6:6",
+          "quadrant": "SE",
+          "cells": 61,
+          "muMedian": 0.8958323645255358,
+          "brightnessMedian": 0.061984207250456454
+        },
+        {
+          "id": "6:7",
+          "quadrant": "SE",
+          "cells": 67,
+          "muMedian": 0.8833661727415855,
+          "brightnessMedian": 0.05947169314180589
+        },
+        {
+          "id": "6:8",
+          "quadrant": "SE",
+          "cells": 100,
+          "muMedian": 0.7506425431690681,
+          "brightnessMedian": 0.050478289881412335
+        },
+        {
+          "id": "6:9",
+          "quadrant": "SE",
+          "cells": 100,
+          "muMedian": 0.7957075011760197,
+          "brightnessMedian": 0.05409490112406419
+        },
+        {
+          "id": "7:0",
+          "quadrant": "SW",
+          "cells": 100,
+          "muMedian": 0.7658431830896417,
+          "brightnessMedian": 0.06166706790197721
+        },
+        {
+          "id": "7:1",
+          "quadrant": "SW",
+          "cells": 100,
+          "muMedian": 0.6747710901070438,
+          "brightnessMedian": 0.06681747300264373
+        },
+        {
+          "id": "7:2",
+          "quadrant": "SW",
+          "cells": 100,
+          "muMedian": 0.773611141420057,
+          "brightnessMedian": 0.07074107323947637
+        },
+        {
+          "id": "7:3",
+          "quadrant": "SW",
+          "cells": 39,
+          "muMedian": 0.8605714178692196,
+          "brightnessMedian": 0.07444555661259908
+        },
+        {
+          "id": "7:4",
+          "quadrant": "SW",
+          "cells": 91,
+          "muMedian": 0.9594348651202146,
+          "brightnessMedian": 0.08380570253938298
+        },
+        {
+          "id": "7:5",
+          "quadrant": "SE",
+          "cells": 100,
+          "muMedian": 0.914590376614612,
+          "brightnessMedian": 0.07935148071363364
+        },
+        {
+          "id": "7:6",
+          "quadrant": "SE",
+          "cells": 93,
+          "muMedian": 0.8442532709708489,
+          "brightnessMedian": 0.06369296295474719
+        },
+        {
+          "id": "7:7",
+          "quadrant": "SE",
+          "cells": 100,
+          "muMedian": 0.8583280019561198,
+          "brightnessMedian": 0.051070121879035466
+        },
+        {
+          "id": "7:8",
+          "quadrant": "SE",
+          "cells": 100,
+          "muMedian": 0.7932239925790873,
+          "brightnessMedian": 0.04582309647415318
+        },
+        {
+          "id": "7:9",
+          "quadrant": "SE",
+          "cells": 100,
+          "muMedian": 0.8080055350971649,
+          "brightnessMedian": 0.05041215783195919
+        },
+        {
+          "id": "8:0",
+          "quadrant": "SW",
+          "cells": 100,
+          "muMedian": 0.6089124470021594,
+          "brightnessMedian": 0.07504849375525535
+        },
+        {
+          "id": "8:1",
+          "quadrant": "SW",
+          "cells": 100,
+          "muMedian": 0.7069154063700446,
+          "brightnessMedian": 0.07461409305464209
+        },
+        {
+          "id": "8:2",
+          "quadrant": "SW",
+          "cells": 100,
+          "muMedian": 0.7970092474333592,
+          "brightnessMedian": 0.07105295469579324
+        },
+        {
+          "id": "8:3",
+          "quadrant": "SW",
+          "cells": 100,
+          "muMedian": 0.9422709089162522,
+          "brightnessMedian": 0.0632190138264089
+        },
+        {
+          "id": "8:4",
+          "quadrant": "SW",
+          "cells": 100,
+          "muMedian": 0.967083356634818,
+          "brightnessMedian": 0.05012748306148038
+        },
+        {
+          "id": "8:5",
+          "quadrant": "SE",
+          "cells": 100,
+          "muMedian": 0.928780485752611,
+          "brightnessMedian": 0.04799638683852431
+        },
+        {
+          "id": "8:6",
+          "quadrant": "SE",
+          "cells": 99,
+          "muMedian": 0.8276266017170001,
+          "brightnessMedian": 0.06332549808385776
+        },
+        {
+          "id": "8:7",
+          "quadrant": "SE",
+          "cells": 100,
+          "muMedian": 0.8470076859720751,
+          "brightnessMedian": 0.05072460347228707
+        },
+        {
+          "id": "8:8",
+          "quadrant": "SE",
+          "cells": 100,
+          "muMedian": 0.861115298168264,
+          "brightnessMedian": 0.05441302626153495
+        },
+        {
+          "id": "8:9",
+          "quadrant": "SE",
+          "cells": 100,
+          "muMedian": 0.7557256123352046,
+          "brightnessMedian": 0.05617093690841884
+        },
+        {
+          "id": "9:0",
+          "quadrant": "SW",
+          "cells": 83,
+          "muMedian": 0.5915699003699032,
+          "brightnessMedian": 0.0853700712869595
+        },
+        {
+          "id": "9:1",
+          "quadrant": "SW",
+          "cells": 54,
+          "muMedian": 0.6738713393886402,
+          "brightnessMedian": 0.08614444443312297
+        },
+        {
+          "id": "9:2",
+          "quadrant": "SW",
+          "cells": 66,
+          "muMedian": 0.7502798795997947,
+          "brightnessMedian": 0.08334883853403746
+        },
+        {
+          "id": "9:3",
+          "quadrant": "SW",
+          "cells": 100,
+          "muMedian": 0.9211847919409786,
+          "brightnessMedian": 0.06388817768165622
+        },
+        {
+          "id": "9:4",
+          "quadrant": "SW",
+          "cells": 100,
+          "muMedian": 0.921396844989976,
+          "brightnessMedian": 0.05131919854184036
+        },
+        {
+          "id": "9:5",
+          "quadrant": "SE",
+          "cells": 100,
+          "muMedian": 0.9423520007007385,
+          "brightnessMedian": 0.04680195243201387
+        },
+        {
+          "id": "9:6",
+          "quadrant": "SE",
+          "cells": 100,
+          "muMedian": 0.9398808429209649,
+          "brightnessMedian": 0.051731171249513125
+        },
+        {
+          "id": "9:7",
+          "quadrant": "SE",
+          "cells": 100,
+          "muMedian": 0.8651534423926135,
+          "brightnessMedian": 0.05258504684422052
+        },
+        {
+          "id": "9:8",
+          "quadrant": "SE",
+          "cells": 100,
+          "muMedian": 0.81268587671143,
+          "brightnessMedian": 0.05096993580131287
+        },
+        {
+          "id": "9:9",
+          "quadrant": "SE",
+          "cells": 99,
+          "muMedian": 0.7644830286640568,
+          "brightnessMedian": 0.0552520131685994
+        }
+      ],
+      "occupiedBlocksAtLeast20Cells": 90,
+      "slopeP05P50P95": [
+        9.675939116898617,
+        29.86391285739876,
+        48.51783299712835
+      ],
+      "elevationP05P50P95": [
+        510.000634765625,
+        650.6405639648438,
+        774.8967529296874
+      ],
+      "aspect45DegreeBinCounts": [
+        499,
+        1624,
+        2627,
+        402,
+        108,
+        766,
+        997,
+        1030
+      ],
+      "nativeWCCodeCounts": {
+        "10": 826,
+        "30": 7227
+      },
+      "NRWCodeIncidenceCounts": {
+        "B.1.1": 213,
+        "D.1.1": 6322,
+        "D.5": 760,
+        "E.2.1": 30,
+        "I.1.2": 235,
+        "I.1.2.1": 25,
+        "mosaic": 468
+      },
+      "NRWNoReturnedSupportCells": 0,
+      "NRWMultipleMembershipCells": 0,
+      "NRWSubgroupBaseline": {
+        "B.1.1": {
+          "cells": 213,
+          "muP05P50P95": [
+            0.4295210117431225,
+            0.7653683043023428,
+            0.853396021739071
+          ],
+          "brightness": {
+            "pearson": 0.3303138667809326,
+            "absPearson": 0.3303138667809326,
+            "std": 0.006753273556678318,
+            "p05p50p95": [
+              0.04934132573575941,
+              0.05745240835212329,
+              0.07207877398670252
+            ]
+          },
+          "bands": {
+            "B04": {
+              "pearson": 0.056453220747046354,
+              "absPearson": 0.056453220747046354,
+              "std": 0.008643414479624656,
+              "p05p50p95": [
+                0.03865915317990491,
+                0.045932613416419035,
+                0.06671689212755631
+              ]
+            },
+            "B03": {
+              "pearson": 0.44830386076066475,
+              "absPearson": 0.44830386076066475,
+              "std": 0.006715769060592952,
+              "p05p50p95": [
+                0.05419623663099199,
+                0.06378635669024614,
+                0.07586356026358763
+              ]
+            },
+            "B02": {
+              "pearson": -0.0508944983443733,
+              "absPearson": 0.0508944983443733,
+              "std": 0.007155730714223178,
+              "p05p50p95": [
+                0.024724331318283412,
+                0.03082398509164808,
+                0.048128787519076344
+              ]
+            }
+          }
+        },
+        "D.1.1": {
+          "cells": 6322,
+          "muP05P50P95": [
+            0.4340984494132557,
+            0.796014640539674,
+            0.9554422240737859
+          ],
+          "brightness": {
+            "pearson": -0.3253056822088679,
+            "absPearson": 0.3253056822088679,
+            "std": 0.0180893096391682,
+            "p05p50p95": [
+              0.04298368054464209,
+              0.06105327724513332,
+              0.09965726301915258
+            ]
+          },
+          "bands": {
+            "B04": {
+              "pearson": -0.1975303428073004,
+              "absPearson": 0.1975303428073004,
+              "std": 0.017912322159428513,
+              "p05p50p95": [
+                0.04041622477269879,
+                0.058173832932973256,
+                0.09771666363517686
+              ]
+            },
+            "B03": {
+              "pearson": -0.36134395429718813,
+              "absPearson": 0.36134395429718813,
+              "std": 0.0187439620674514,
+              "p05p50p95": [
+                0.04482304404156954,
+                0.06398606753638733,
+                0.10326025767292694
+              ]
+            },
+            "B02": {
+              "pearson": -0.2502328734052644,
+              "absPearson": 0.2502328734052644,
+              "std": 0.0159555584791881,
+              "p05p50p95": [
+                0.026117889738483672,
+                0.0407891015967831,
+                0.0765571539711105
+              ]
+            }
+          }
+        },
+        "D.5": {
+          "cells": 760,
+          "muP05P50P95": [
+            0.3631780920588837,
+            0.5784277528115684,
+            0.8500232519779318
+          ],
+          "brightness": {
+            "pearson": -0.4383464607078519,
+            "absPearson": 0.4383464607078519,
+            "std": 0.013744481516316624,
+            "p05p50p95": [
+              0.05960647563384829,
+              0.07810229727890994,
+              0.10362544234275348
+            ]
+          },
+          "bands": {
+            "B04": {
+              "pearson": -0.17553145581299792,
+              "absPearson": 0.17553145581299792,
+              "std": 0.01350791517776643,
+              "p05p50p95": [
+                0.05044011520351264,
+                0.06648900745161004,
+                0.09390660429311556
+              ]
+            },
+            "B03": {
+              "pearson": -0.4841789357213269,
+              "absPearson": 0.4841789357213269,
+              "std": 0.015151201162332312,
+              "p05p50p95": [
+                0.06392053954260313,
+                0.08430802478788743,
+                0.11158973802234201
+              ]
+            },
+            "B02": {
+              "pearson": -0.3325471379485057,
+              "absPearson": 0.3325471379485057,
+              "std": 0.011417219391881346,
+              "p05p50p95": [
+                0.034360246948550416,
+                0.04943730392635709,
+                0.07201275379423233
+              ]
+            }
+          }
+        },
+        "E.2.1": {
+          "cells": 30,
+          "muP05P50P95": [
+            0.43551212594592814,
+            0.6956760146200955,
+            0.7679798336416078
+          ],
+          "brightness": {
+            "pearson": -0.0005855264423586788,
+            "absPearson": 0.0005855264423586788,
+            "std": 0.0035586882327981045,
+            "p05p50p95": [
+              0.06507149705267974,
+              0.06870095163852978,
+              0.07580442733383175
+            ]
+          },
+          "bands": {
+            "B04": {
+              "pearson": -0.4004658451900041,
+              "absPearson": 0.4004658451900041,
+              "std": 0.005225333212227423,
+              "p05p50p95": [
+                0.05209182905759038,
+                0.05662309158118836,
+                0.06661394362289816
+              ]
+            },
+            "B03": {
+              "pearson": 0.2229187704119485,
+              "absPearson": 0.2229187704119485,
+              "std": 0.0035544148240337177,
+              "p05p50p95": [
+                0.07085090682108097,
+                0.07545899384618569,
+                0.0816720078702851
+              ]
+            },
+            "B02": {
+              "pearson": -0.4695394882734978,
+              "absPearson": 0.4695394882734978,
+              "std": 0.0036544784131317923,
+              "p05p50p95": [
+                0.036274148884216324,
+                0.03974089257129101,
+                0.04757929511467765
+              ]
+            }
+          }
+        },
+        "I.1.2": {
+          "cells": 235,
+          "muP05P50P95": [
+            0.7262307796627346,
+            0.8669345246884356,
+            0.9411568993905981
+          ],
+          "brightness": {
+            "pearson": 0.2953511508089078,
+            "absPearson": 0.2953511508089078,
+            "std": 0.014238718377743086,
+            "p05p50p95": [
+              0.04552972494731472,
+              0.06070693815272649,
+              0.09224717522281363
+            ]
+          },
+          "bands": {
+            "B04": {
+              "pearson": 0.22131167744591485,
+              "absPearson": 0.22131167744591485,
+              "std": 0.016134071773748673,
+              "p05p50p95": [
+                0.04055395843370352,
+                0.058847430095544453,
+                0.0935536985984103
+              ]
+            },
+            "B03": {
+              "pearson": 0.3246034816583362,
+              "absPearson": 0.3246034816583362,
+              "std": 0.013744239651798358,
+              "p05p50p95": [
+                0.04877855788832276,
+                0.06315404987114405,
+                0.09367923180140128
+              ]
+            },
+            "B02": {
+              "pearson": 0.24203183630841746,
+              "absPearson": 0.24203183630841746,
+              "std": 0.014620368199311132,
+              "p05p50p95": [
+                0.02665423908740439,
+                0.042190653537488174,
+                0.07441172563563474
+              ]
+            }
+          }
+        },
+        "I.1.2.1": {
+          "cells": 25,
+          "muP05P50P95": [
+            0.8982246578931105,
+            0.9126237704077264,
+            0.9291649202566257
+          ],
+          "brightness": {
+            "pearson": -0.4892541595622705,
+            "absPearson": 0.4892541595622705,
+            "std": 0.00887104727196177,
+            "p05p50p95": [
+              0.05215315984306284,
+              0.05743863917081079,
+              0.07662978338558063
+            ]
+          },
+          "bands": {
+            "B04": {
+              "pearson": -0.506044102882748,
+              "absPearson": 0.506044102882748,
+              "std": 0.009542032869410412,
+              "p05p50p95": [
+                0.0509865213713045,
+                0.0545341117441239,
+                0.07744988790864918
+              ]
+            },
+            "B03": {
+              "pearson": -0.47327576059596216,
+              "absPearson": 0.47327576059596216,
+              "std": 0.008869420152828565,
+              "p05p50p95": [
+                0.05354904294886088,
+                0.060447150907203644,
+                0.07849989654354925
+              ]
+            },
+            "B02": {
+              "pearson": -0.5057305685142827,
+              "absPearson": 0.5057305685142827,
+              "std": 0.008529268145838176,
+              "p05p50p95": [
+                0.03384687332880434,
+                0.03857760323983995,
+                0.05692638225391289
+              ]
+            }
+          }
+        },
+        "mosaic": {
+          "cells": 468,
+          "muP05P50P95": [
+            0.36345455928169523,
+            0.48739161684816484,
+            0.6600210647083888
+          ],
+          "brightness": {
+            "pearson": -0.25726825574162315,
+            "absPearson": 0.25726825574162315,
+            "std": 0.009949383449434556,
+            "p05p50p95": [
+              0.06191453164362826,
+              0.07734785518362637,
+              0.09461584441625961
+            ]
+          },
+          "bands": {
+            "B04": {
+              "pearson": -0.38785391124542434,
+              "absPearson": 0.38785391124542434,
+              "std": 0.011879713189369137,
+              "p05p50p95": [
+                0.048230810080802156,
+                0.06318668683161327,
+                0.08641344467218534
+              ]
+            },
+            "B03": {
+              "pearson": -0.17195501000814756,
+              "absPearson": 0.17195501000814756,
+              "std": 0.010354935293948948,
+              "p05p50p95": [
+                0.06802916554535891,
+                0.08394691816879064,
+                0.1008306307795634
+              ]
+            },
+            "B02": {
+              "pearson": -0.4509006111124209,
+              "absPearson": 0.4509006111124209,
+              "std": 0.009418307965447353,
+              "p05p50p95": [
+                0.03442977749707003,
+                0.04863226246449802,
+                0.06576122374263077
+              ]
+            }
+          }
+        }
+      },
+      "nativeSCLBoundaryDistanceP05P50P95Metres": [
+        30.890266759331197,
+        128.87751254138865,
+        314.90332987777924
+      ],
+      "nativeWC30BoundaryDistanceP05P50P95Metres": [
+        0.0,
+        48.15693137759152,
+        279.69198063805385
+      ],
+      "historicalNRWHeathBoundaryDistanceP05P50P95Metres": [
+        0.0,
+        0.0,
+        9.813124737376569
+      ],
+      "baseline": {
+        "cells": 8053,
+        "muP05P50P95": [
+          0.4043989281679316,
+          0.7773226610248658,
+          0.9496443802122868
+        ],
+        "brightness": {
+          "pearson": -0.3895842902018447,
+          "absPearson": 0.3895842902018447,
+          "std": 0.017690825893842996,
+          "p05p50p95": [
+            0.04390361486203685,
+            0.06415092449542678,
+            0.0989635300375194
+          ]
+        },
+        "bands": {
+          "B04": {
+            "pearson": -0.20657098093447498,
+            "absPearson": 0.20657098093447498,
+            "std": 0.017222871046860423,
+            "p05p50p95": [
+              0.04086735497010373,
+              0.059190375734574384,
+              0.09617435939093344
+            ]
+          },
+          "B03": {
+            "pearson": -0.43769758805927195,
+            "absPearson": 0.43769758805927195,
+            "std": 0.01864631838328991,
+            "p05p50p95": [
+              0.04568999108574208,
+              0.06771366847609067,
+              0.10371948491152629
+            ]
+          },
+          "B02": {
+            "pearson": -0.27055419376446155,
+            "absPearson": 0.27055419376446155,
+            "std": 0.015287343207900952,
+            "p05p50p95": [
+              0.02655362030571483,
+              0.04241540469969905,
+              0.07486799546614033
+            ]
+          }
+        }
+      },
+      "baselineQuadrants": {
+        "NW": {
+          "cells": 1467,
+          "muP05P50P95": [
+            0.33381965083793486,
+            0.48433254394765324,
+            0.7787551385524846
+          ],
+          "brightness": {
+            "pearson": -0.4906210330518534,
+            "absPearson": 0.4906210330518534,
+            "std": 0.016407134256319834,
+            "p05p50p95": [
+              0.05900820601574401,
+              0.07832425597614737,
+              0.112393728572938
+            ]
+          },
+          "bands": {
+            "B04": {
+              "pearson": -0.45562179461081326,
+              "absPearson": 0.45562179461081326,
+              "std": 0.01766255638652376,
+              "p05p50p95": [
+                0.045644295243130954,
+                0.0637669235847497,
+                0.10186286012268374
+              ]
+            },
+            "B03": {
+              "pearson": -0.47952851551864767,
+              "absPearson": 0.47952851551864767,
+              "std": 0.01685053567698982,
+              "p05p50p95": [
+                0.06463870106446569,
+                0.08567698598797255,
+                0.11889220844856001
+              ]
+            },
+            "B02": {
+              "pearson": -0.5208292680259313,
+              "absPearson": 0.5208292680259313,
+              "std": 0.014885669203257068,
+              "p05p50p95": [
+                0.031442276560184196,
+                0.04903751877146601,
+                0.07921230261197713
+              ]
+            }
+          }
+        },
+        "NE": {
+          "cells": 2153,
+          "muP05P50P95": [
+            0.4532061616871218,
+            0.7781111843057786,
+            0.8881538942212619
+          ],
+          "brightness": {
+            "pearson": -0.2691406537404422,
+            "absPearson": 0.2691406537404422,
+            "std": 0.018330757172504743,
+            "p05p50p95": [
+              0.04407499534049736,
+              0.05864446490511765,
+              0.10187840899359128
+            ]
+          },
+          "bands": {
+            "B04": {
+              "pearson": -0.20043636774170007,
+              "absPearson": 0.20043636774170007,
+              "std": 0.018580878767441467,
+              "p05p50p95": [
+                0.041812121112103404,
+                0.05590583007766829,
+                0.10068109926969189
+              ]
+            },
+            "B03": {
+              "pearson": -0.28818328148784583,
+              "absPearson": 0.28818328148784583,
+              "std": 0.018616018485917568,
+              "p05p50p95": [
+                0.046089078116444374,
+                0.061420323024257734,
+                0.10505616409550544
+              ]
+            },
+            "B02": {
+              "pearson": -0.2539835580354947,
+              "absPearson": 0.2539835580354947,
+              "std": 0.016624092406054374,
+              "p05p50p95": [
+                0.027369515069133092,
+                0.03960435345964697,
+                0.0792532535852566
+              ]
+            }
+          }
+        },
+        "SW": {
+          "cells": 2016,
+          "muP05P50P95": [
+            0.5148784867743995,
+            0.7722329746713541,
+            0.9710404973393197
+          ],
+          "brightness": {
+            "pearson": -0.13271830043778468,
+            "absPearson": 0.13271830043778468,
+            "std": 0.01376453656236581,
+            "p05p50p95": [
+              0.04916723519203282,
+              0.06897255652302986,
+              0.0944702331692066
+            ]
+          },
+          "bands": {
+            "B04": {
+              "pearson": -0.09907177027111765,
+              "absPearson": 0.09907177027111765,
+              "std": 0.015759504669757982,
+              "p05p50p95": [
+                0.04241320298223236,
+                0.06464151513014807,
+                0.09341278292981481
+              ]
+            },
+            "B03": {
+              "pearson": -0.14449071551538137,
+              "absPearson": 0.14449071551538137,
+              "std": 0.013570668193905034,
+              "p05p50p95": [
+                0.051601820597230015,
+                0.07273985657152959,
+                0.09780983371945684
+              ]
+            },
+            "B02": {
+              "pearson": -0.09630502836860035,
+              "absPearson": 0.09630502836860035,
+              "std": 0.013300198315250578,
+              "p05p50p95": [
+                0.02747055920603891,
+                0.0462651853576909,
+                0.07082976562708432
+              ]
+            }
+          }
+        },
+        "SE": {
+          "cells": 2417,
+          "muP05P50P95": [
+            0.6514800738109306,
+            0.8508231792206107,
+            0.9535451984503907
+          ],
+          "brightness": {
+            "pearson": 0.21590897830429373,
+            "absPearson": 0.21590897830429373,
+            "std": 0.014478854352492538,
+            "p05p50p95": [
+              0.04090073327443417,
+              0.05404539932821358,
+              0.09040396580904908
+            ]
+          },
+          "bands": {
+            "B04": {
+              "pearson": 0.22319987070361114,
+              "absPearson": 0.22319987070361114,
+              "std": 0.015389185870654255,
+              "p05p50p95": [
+                0.03820459823725429,
+                0.05449495545480813,
+                0.09057369208734399
+              ]
+            },
+            "B03": {
+              "pearson": 0.21322258703529498,
+              "absPearson": 0.21322258703529498,
+              "std": 0.014469740876410927,
+              "p05p50p95": [
+                0.04287640750999126,
+                0.05592297581583643,
+                0.09290932021738132
+              ]
+            },
+            "B02": {
+              "pearson": 0.18705544173123145,
+              "absPearson": 0.18705544173123145,
+              "std": 0.014014643255499521,
+              "p05p50p95": [
+                0.02433427966879725,
+                0.03626585257388814,
+                0.0719897133255673
+              ]
+            }
+          }
+        }
+      },
+      "spectral": {
+        "RoverG": [
+          0.6836661269025963,
+          0.9139784910916772,
+          1.0586411293945621
+        ],
+        "BoverG": [
+          0.4905496576000778,
+          0.6412565581750072,
+          0.7783160527803783
+        ],
+        "adjacentEligibleEdges": 15568,
+        "perBandNormalizedGradientP05P50P95": {
+          "B04": [
+            0.00600603846724292,
+            0.06842315747658691,
+            0.2323693813288521
+          ],
+          "B03": [
+            0.004663930918799894,
+            0.052484932351936464,
+            0.19246975575473657
+          ],
+          "B02": [
+            0.00793229559156778,
+            0.08402885289677063,
+            0.28658413784417663
+          ]
+        },
+        "nonfiniteValues": 0,
+        "negativeValues": 0,
+        "aboveOneValues": 0
+      },
+      "dependence": [
+        {
+          "distanceMetres": 10,
+          "direction": "E",
+          "endpointPairs": 7765,
+          "brightnessPearson": 0.9295255450254682,
+          "muPearson": 0.9489949408138608
+        },
+        {
+          "distanceMetres": 10,
+          "direction": "N",
+          "endpointPairs": 7803,
+          "brightnessPearson": 0.9117415842524751,
+          "muPearson": 0.9150318669640732
+        },
+        {
+          "distanceMetres": 20,
+          "direction": "E",
+          "endpointPairs": 7524,
+          "brightnessPearson": 0.8135078023944463,
+          "muPearson": 0.8691333438257672
+        },
+        {
+          "distanceMetres": 20,
+          "direction": "N",
+          "endpointPairs": 7615,
+          "brightnessPearson": 0.7743072280052303,
+          "muPearson": 0.7878385650557567
+        },
+        {
+          "distanceMetres": 50,
+          "direction": "E",
+          "endpointPairs": 6891,
+          "brightnessPearson": 0.6063337056049654,
+          "muPearson": 0.7072404346438512
+        },
+        {
+          "distanceMetres": 50,
+          "direction": "N",
+          "endpointPairs": 7190,
+          "brightnessPearson": 0.6583497111535345,
+          "muPearson": 0.696568455162498
+        },
+        {
+          "distanceMetres": 100,
+          "direction": "E",
+          "endpointPairs": 6079,
+          "brightnessPearson": 0.4368774250245416,
+          "muPearson": 0.5834581185874204
+        },
+        {
+          "distanceMetres": 100,
+          "direction": "N",
+          "endpointPairs": 6654,
+          "brightnessPearson": 0.5510445914415354,
+          "muPearson": 0.6281157217769072
+        },
+        {
+          "distanceMetres": 200,
+          "direction": "E",
+          "endpointPairs": 4741,
+          "brightnessPearson": 0.2628707351103071,
+          "muPearson": 0.4330325094572522
+        },
+        {
+          "distanceMetres": 200,
+          "direction": "N",
+          "endpointPairs": 5729,
+          "brightnessPearson": 0.3873320185755651,
+          "muPearson": 0.525898528991294
+        },
+        {
+          "distanceMetres": 300,
+          "direction": "E",
+          "endpointPairs": 3780,
+          "brightnessPearson": 0.14562009707700227,
+          "muPearson": 0.27750410722924934
+        },
+        {
+          "distanceMetres": 300,
+          "direction": "N",
+          "endpointPairs": 4788,
+          "brightnessPearson": 0.32001078954700785,
+          "muPearson": 0.4317580375322519
+        }
+      ],
+      "feasibility": {
+        "passed": false,
+        "failures": [
+          "NW: testWithinTrainingP05P95Fraction",
+          "SW: testWithinTrainingP05P95Fraction",
+          "SE: testWithinTrainingP05P95Fraction"
+        ],
+        "folds": [
+          {
+            "heldout": "NW",
+            "testCells": 1467,
+            "trainCellsAfter100mGuard": 6075,
+            "testOccupied100mBlocks": 18,
+            "trainOccupied100mBlocks": 65,
+            "trainingMuP05P50P95": [
+              0.5738892565898686,
+              0.8095195585243409,
+              0.9556066502268112
+            ],
+            "testMuP05P50P95": [
+              0.33381965083793486,
+              0.48433254394765324,
+              0.7787551385524846
+            ],
+            "trainMuSpread": 0.3817173936369427,
+            "testMuSpread": 0.4449354877145497,
+            "trainBlockMedianMuSpread": 0.27552108543032994,
+            "testWithinTrainingP05P95Fraction": 0.27880027266530333,
+            "failures": [
+              "testWithinTrainingP05P95Fraction"
+            ]
+          },
+          {
+            "heldout": "NE",
+            "testCells": 2153,
+            "trainCellsAfter100mGuard": 5361,
+            "testOccupied100mBlocks": 23,
+            "trainOccupied100mBlocks": 61,
+            "trainingMuP05P50P95": [
+              0.39430707390678704,
+              0.7584036517271947,
+              0.9576784553975537
+            ],
+            "testMuP05P50P95": [
+              0.4532061616871218,
+              0.7781111843057786,
+              0.8881538942212619
+            ],
+            "trainMuSpread": 0.5633713814907666,
+            "testMuSpread": 0.4349477325341401,
+            "trainBlockMedianMuSpread": 0.5680944861828637,
+            "testWithinTrainingP05P95Fraction": 0.9633070134695774,
+            "failures": []
+          },
+          {
+            "heldout": "SW",
+            "testCells": 2016,
+            "trainCellsAfter100mGuard": 5158,
+            "testOccupied100mBlocks": 24,
+            "trainOccupied100mBlocks": 57,
+            "trainingMuP05P50P95": [
+              0.38012513895099853,
+              0.7708025057781224,
+              0.914438709883271
+            ],
+            "testMuP05P50P95": [
+              0.5148784867743995,
+              0.7722329746713541,
+              0.9710404973393197
+            ],
+            "trainMuSpread": 0.5343135709322725,
+            "testMuSpread": 0.45616201056492023,
+            "trainBlockMedianMuSpread": 0.49906352721568303,
+            "testWithinTrainingP05P95Fraction": 0.7867063492063492,
+            "failures": [
+              "testWithinTrainingP05P95Fraction"
+            ]
+          },
+          {
+            "heldout": "SE",
+            "testCells": 2417,
+            "trainCellsAfter100mGuard": 4754,
+            "testOccupied100mBlocks": 25,
+            "trainOccupied100mBlocks": 55,
+            "trainingMuP05P50P95": [
+              0.37095013420094236,
+              0.7069718278358377,
+              0.8998328585179347
+            ],
+            "testMuP05P50P95": [
+              0.6514800738109306,
+              0.8508231792206107,
+              0.9535451984503907
+            ],
+            "trainMuSpread": 0.5288827243169923,
+            "testMuSpread": 0.30206512463946,
+            "trainBlockMedianMuSpread": 0.4790818049415124,
+            "testWithinTrainingP05P95Fraction": 0.7174182871328093,
+            "failures": [
+              "testWithinTrainingP05P95Fraction"
+            ]
+          }
+        ]
+      }
+    },
+    "P2": {
+      "cells": 5370,
+      "logicalMaskSha256": "05e1f2ecb9beaba3c149fb56b10133a70fdacc1da26b0293f6779f116f67f677",
+      "retainedNRWFeatureIDsUsed": [
+        "471291",
+        "486818",
+        "471369",
+        "471384",
+        "471404",
+        "471406",
+        "471415",
+        "471448",
+        "471465",
+        "482397",
+        "486811",
+        "486814",
+        "486816",
+        "486817",
+        "486820",
+        "486832",
+        "486915"
+      ],
+      "distanceToCoreOrInvalidRadiometryGeometryBoundaryP05P50P95Metres": [
+        5.0,
+        65.0,
+        205.0
+      ],
+      "selectedAnalysisAreaM2": 537000,
+      "notPhysicalVegetationArea": true,
+      "nativeSCLCellsUsed": 1535,
+      "nativeWorldCoverCellsUsed": 5370,
+      "components4Connected": {
+        "count": 28,
+        "largestCells": [
+          5099,
+          76,
+          36,
+          30,
+          26,
+          16,
+          13,
+          13,
+          9,
+          7
+        ],
+        "largestFraction": 0.9495344506517691,
+        "sizeP05P50P95": [
+          1.0,
+          4.5,
+          61.99999999999994
+        ]
+      },
+      "blocks100m": [
+        {
+          "id": "0:0",
+          "quadrant": "NW",
+          "cells": 79,
+          "muMedian": 0.42720678486635844,
+          "brightnessMedian": 0.07697286453080641
+        },
+        {
+          "id": "0:1",
+          "quadrant": "NW",
+          "cells": 1,
+          "muMedian": 0.4387160615894306,
+          "brightnessMedian": 0.09928965076053717
+        },
+        {
+          "id": "0:2",
+          "quadrant": "NW",
+          "cells": 11,
+          "muMedian": 0.41540940559858813,
+          "brightnessMedian": 0.09262722392110799
+        },
+        {
+          "id": "0:3",
+          "quadrant": "NW",
+          "cells": 2,
+          "muMedian": 0.37946415954053503,
+          "brightnessMedian": 0.08656068013844909
+        },
+        {
+          "id": "0:5",
+          "quadrant": "NE",
+          "cells": 28,
+          "muMedian": 0.36177561876578046,
+          "brightnessMedian": 0.08028798248869315
+        },
+        {
+          "id": "0:6",
+          "quadrant": "NE",
+          "cells": 83,
+          "muMedian": 0.7069613790243162,
+          "brightnessMedian": 0.08150459722873334
+        },
+        {
+          "id": "0:7",
+          "quadrant": "NE",
+          "cells": 89,
+          "muMedian": 0.7757119087731917,
+          "brightnessMedian": 0.07599396456282992
+        },
+        {
+          "id": "0:8",
+          "quadrant": "NE",
+          "cells": 20,
+          "muMedian": 0.7582454834365933,
+          "brightnessMedian": 0.058849936238493536
+        },
+        {
+          "id": "0:9",
+          "quadrant": "NE",
+          "cells": 7,
+          "muMedian": 0.8936924032488025,
+          "brightnessMedian": 0.049808656569009194
+        },
+        {
+          "id": "1:0",
+          "quadrant": "NW",
+          "cells": 100,
+          "muMedian": 0.4555792552322361,
+          "brightnessMedian": 0.08058106094338394
+        },
+        {
+          "id": "1:1",
+          "quadrant": "NW",
+          "cells": 88,
+          "muMedian": 0.500072830121066,
+          "brightnessMedian": 0.08748148933541386
+        },
+        {
+          "id": "1:2",
+          "quadrant": "NW",
+          "cells": 63,
+          "muMedian": 0.4805475998753158,
+          "brightnessMedian": 0.09457119759727688
+        },
+        {
+          "id": "1:3",
+          "quadrant": "NW",
+          "cells": 28,
+          "muMedian": 0.34850545566338004,
+          "brightnessMedian": 0.11409264100941696
+        },
+        {
+          "id": "1:4",
+          "quadrant": "NW",
+          "cells": 3,
+          "muMedian": 0.40961660532715405,
+          "brightnessMedian": 0.13198859727877643
+        },
+        {
+          "id": "1:5",
+          "quadrant": "NE",
+          "cells": 10,
+          "muMedian": 0.5167135383325878,
+          "brightnessMedian": 0.09160793900187475
+        },
+        {
+          "id": "1:6",
+          "quadrant": "NE",
+          "cells": 100,
+          "muMedian": 0.6719660919301342,
+          "brightnessMedian": 0.07705186212628509
+        },
+        {
+          "id": "1:7",
+          "quadrant": "NE",
+          "cells": 50,
+          "muMedian": 0.7485424105564149,
+          "brightnessMedian": 0.07245238707847347
+        },
+        {
+          "id": "1:9",
+          "quadrant": "NE",
+          "cells": 5,
+          "muMedian": 0.7951607383664099,
+          "brightnessMedian": 0.04972326647057569
+        },
+        {
+          "id": "2:0",
+          "quadrant": "NW",
+          "cells": 98,
+          "muMedian": 0.5476019120353175,
+          "brightnessMedian": 0.07233555023390054
+        },
+        {
+          "id": "2:1",
+          "quadrant": "NW",
+          "cells": 100,
+          "muMedian": 0.46851243179335955,
+          "brightnessMedian": 0.08143430998380548
+        },
+        {
+          "id": "2:2",
+          "quadrant": "NW",
+          "cells": 100,
+          "muMedian": 0.4603728696970397,
+          "brightnessMedian": 0.08338878742237954
+        },
+        {
+          "id": "2:3",
+          "quadrant": "NW",
+          "cells": 35,
+          "muMedian": 0.36560692706582587,
+          "brightnessMedian": 0.0918121181113613
+        },
+        {
+          "id": "2:5",
+          "quadrant": "NE",
+          "cells": 32,
+          "muMedian": 0.47464376980039097,
+          "brightnessMedian": 0.07953406508186343
+        },
+        {
+          "id": "2:6",
+          "quadrant": "NE",
+          "cells": 82,
+          "muMedian": 0.7208617864621035,
+          "brightnessMedian": 0.08558815117912535
+        },
+        {
+          "id": "2:7",
+          "quadrant": "NE",
+          "cells": 29,
+          "muMedian": 0.7474656008594057,
+          "brightnessMedian": 0.0753291301117768
+        },
+        {
+          "id": "2:8",
+          "quadrant": "NE",
+          "cells": 16,
+          "muMedian": 0.783591209695621,
+          "brightnessMedian": 0.051298542592285945
+        },
+        {
+          "id": "2:9",
+          "quadrant": "NE",
+          "cells": 5,
+          "muMedian": 0.8528723343417884,
+          "brightnessMedian": 0.049829007603147624
+        },
+        {
+          "id": "3:0",
+          "quadrant": "NW",
+          "cells": 100,
+          "muMedian": 0.6241197036944044,
+          "brightnessMedian": 0.0657675259444933
+        },
+        {
+          "id": "3:1",
+          "quadrant": "NW",
+          "cells": 97,
+          "muMedian": 0.5016470102840918,
+          "brightnessMedian": 0.0811124734742859
+        },
+        {
+          "id": "3:2",
+          "quadrant": "NW",
+          "cells": 93,
+          "muMedian": 0.47378684735705767,
+          "brightnessMedian": 0.07259728854448079
+        },
+        {
+          "id": "3:3",
+          "quadrant": "NW",
+          "cells": 4,
+          "muMedian": 0.43748047281073166,
+          "brightnessMedian": 0.08944611246998518
+        },
+        {
+          "id": "3:5",
+          "quadrant": "NE",
+          "cells": 16,
+          "muMedian": 0.5819835008638129,
+          "brightnessMedian": 0.07574959503540346
+        },
+        {
+          "id": "3:6",
+          "quadrant": "NE",
+          "cells": 74,
+          "muMedian": 0.6560183326381424,
+          "brightnessMedian": 0.09738600902871458
+        },
+        {
+          "id": "3:7",
+          "quadrant": "NE",
+          "cells": 5,
+          "muMedian": 0.7156812910559874,
+          "brightnessMedian": 0.06790943902854055
+        },
+        {
+          "id": "3:8",
+          "quadrant": "NE",
+          "cells": 37,
+          "muMedian": 0.7931012543609394,
+          "brightnessMedian": 0.05093468019207628
+        },
+        {
+          "id": "4:0",
+          "quadrant": "NW",
+          "cells": 100,
+          "muMedian": 0.7641857816955011,
+          "brightnessMedian": 0.05848909519165791
+        },
+        {
+          "id": "4:1",
+          "quadrant": "NW",
+          "cells": 100,
+          "muMedian": 0.6761200579055852,
+          "brightnessMedian": 0.06933896674645798
+        },
+        {
+          "id": "4:2",
+          "quadrant": "NW",
+          "cells": 100,
+          "muMedian": 0.6039281424707055,
+          "brightnessMedian": 0.067822830906989
+        },
+        {
+          "id": "4:3",
+          "quadrant": "NW",
+          "cells": 25,
+          "muMedian": 0.4742394030498634,
+          "brightnessMedian": 0.07241064025991899
+        },
+        {
+          "id": "4:5",
+          "quadrant": "NE",
+          "cells": 76,
+          "muMedian": 0.7293452743659119,
+          "brightnessMedian": 0.0894811199846777
+        },
+        {
+          "id": "4:6",
+          "quadrant": "NE",
+          "cells": 83,
+          "muMedian": 0.7376475220376558,
+          "brightnessMedian": 0.07058689452132734
+        },
+        {
+          "id": "4:7",
+          "quadrant": "NE",
+          "cells": 14,
+          "muMedian": 0.7686039391643311,
+          "brightnessMedian": 0.05087398212818301
+        },
+        {
+          "id": "4:8",
+          "quadrant": "NE",
+          "cells": 19,
+          "muMedian": 0.8090423123891076,
+          "brightnessMedian": 0.05118387762229392
+        },
+        {
+          "id": "4:9",
+          "quadrant": "NE",
+          "cells": 16,
+          "muMedian": 0.8331508629733213,
+          "brightnessMedian": 0.044355130829886485
+        },
+        {
+          "id": "5:0",
+          "quadrant": "SW",
+          "cells": 98,
+          "muMedian": 0.7450807916685472,
+          "brightnessMedian": 0.05515322523033329
+        },
+        {
+          "id": "5:1",
+          "quadrant": "SW",
+          "cells": 77,
+          "muMedian": 0.6575369886499433,
+          "brightnessMedian": 0.06752236817598038
+        },
+        {
+          "id": "5:2",
+          "quadrant": "SW",
+          "cells": 49,
+          "muMedian": 0.7170228049075109,
+          "brightnessMedian": 0.08424728919570686
+        },
+        {
+          "id": "5:3",
+          "quadrant": "SW",
+          "cells": 6,
+          "muMedian": 0.7302851731419766,
+          "brightnessMedian": 0.07725442725442738
+        },
+        {
+          "id": "5:4",
+          "quadrant": "SW",
+          "cells": 22,
+          "muMedian": 0.9359791749066516,
+          "brightnessMedian": 0.08890859697877401
+        },
+        {
+          "id": "5:5",
+          "quadrant": "SE",
+          "cells": 98,
+          "muMedian": 0.9056678787147197,
+          "brightnessMedian": 0.08277127224292981
+        },
+        {
+          "id": "5:6",
+          "quadrant": "SE",
+          "cells": 77,
+          "muMedian": 0.8119498686709776,
+          "brightnessMedian": 0.0570920523862966
+        },
+        {
+          "id": "5:7",
+          "quadrant": "SE",
+          "cells": 27,
+          "muMedian": 0.823671351791308,
+          "brightnessMedian": 0.06014138395871673
+        },
+        {
+          "id": "5:8",
+          "quadrant": "SE",
+          "cells": 35,
+          "muMedian": 0.8577109365668601,
+          "brightnessMedian": 0.05126052563385208
+        },
+        {
+          "id": "5:9",
+          "quadrant": "SE",
+          "cells": 2,
+          "muMedian": 0.8429305318753559,
+          "brightnessMedian": 0.039234590593415525
+        },
+        {
+          "id": "6:0",
+          "quadrant": "SW",
+          "cells": 99,
+          "muMedian": 0.7959456777665297,
+          "brightnessMedian": 0.060413798868542784
+        },
+        {
+          "id": "6:1",
+          "quadrant": "SW",
+          "cells": 100,
+          "muMedian": 0.8013232489290733,
+          "brightnessMedian": 0.06353053258786336
+        },
+        {
+          "id": "6:2",
+          "quadrant": "SW",
+          "cells": 98,
+          "muMedian": 0.6279045789197655,
+          "brightnessMedian": 0.0772763311658908
+        },
+        {
+          "id": "6:3",
+          "quadrant": "SW",
+          "cells": 24,
+          "muMedian": 0.7065749953184208,
+          "brightnessMedian": 0.08967357942380562
+        },
+        {
+          "id": "6:4",
+          "quadrant": "SW",
+          "cells": 75,
+          "muMedian": 0.8568695199180324,
+          "brightnessMedian": 0.07802266689954197
+        },
+        {
+          "id": "6:5",
+          "quadrant": "SE",
+          "cells": 77,
+          "muMedian": 0.9273428780285007,
+          "brightnessMedian": 0.08910480513496738
+        },
+        {
+          "id": "6:6",
+          "quadrant": "SE",
+          "cells": 40,
+          "muMedian": 0.9038626971715462,
+          "brightnessMedian": 0.06500837684314398
+        },
+        {
+          "id": "6:7",
+          "quadrant": "SE",
+          "cells": 22,
+          "muMedian": 0.8931816384469142,
+          "brightnessMedian": 0.08415689400129339
+        },
+        {
+          "id": "6:8",
+          "quadrant": "SE",
+          "cells": 4,
+          "muMedian": 0.8039041717218118,
+          "brightnessMedian": 0.05966835617177324
+        },
+        {
+          "id": "6:9",
+          "quadrant": "SE",
+          "cells": 47,
+          "muMedian": 0.8025574365420719,
+          "brightnessMedian": 0.05193843498095659
+        },
+        {
+          "id": "7:0",
+          "quadrant": "SW",
+          "cells": 100,
+          "muMedian": 0.7658431830896417,
+          "brightnessMedian": 0.06166706790197721
+        },
+        {
+          "id": "7:1",
+          "quadrant": "SW",
+          "cells": 100,
+          "muMedian": 0.6747710901070438,
+          "brightnessMedian": 0.06681747300264373
+        },
+        {
+          "id": "7:2",
+          "quadrant": "SW",
+          "cells": 100,
+          "muMedian": 0.773611141420057,
+          "brightnessMedian": 0.07074107323947637
+        },
+        {
+          "id": "7:3",
+          "quadrant": "SW",
+          "cells": 39,
+          "muMedian": 0.8605714178692196,
+          "brightnessMedian": 0.07444555661259908
+        },
+        {
+          "id": "7:4",
+          "quadrant": "SW",
+          "cells": 91,
+          "muMedian": 0.9594348651202146,
+          "brightnessMedian": 0.08380570253938298
+        },
+        {
+          "id": "7:5",
+          "quadrant": "SE",
+          "cells": 30,
+          "muMedian": 0.9159468839158363,
+          "brightnessMedian": 0.07991394225770151
+        },
+        {
+          "id": "7:6",
+          "quadrant": "SE",
+          "cells": 8,
+          "muMedian": 0.882652274985241,
+          "brightnessMedian": 0.06759645941008222
+        },
+        {
+          "id": "7:7",
+          "quadrant": "SE",
+          "cells": 13,
+          "muMedian": 0.8345299767234114,
+          "brightnessMedian": 0.07201060891368084
+        },
+        {
+          "id": "7:8",
+          "quadrant": "SE",
+          "cells": 12,
+          "muMedian": 0.829437575870555,
+          "brightnessMedian": 0.054851821819727906
+        },
+        {
+          "id": "7:9",
+          "quadrant": "SE",
+          "cells": 78,
+          "muMedian": 0.8137482616171599,
+          "brightnessMedian": 0.04908582525228792
+        },
+        {
+          "id": "8:0",
+          "quadrant": "SW",
+          "cells": 100,
+          "muMedian": 0.6089124470021594,
+          "brightnessMedian": 0.07504849375525535
+        },
+        {
+          "id": "8:1",
+          "quadrant": "SW",
+          "cells": 100,
+          "muMedian": 0.7069154063700446,
+          "brightnessMedian": 0.07461409305464209
+        },
+        {
+          "id": "8:2",
+          "quadrant": "SW",
+          "cells": 100,
+          "muMedian": 0.7970092474333592,
+          "brightnessMedian": 0.07105295469579324
+        },
+        {
+          "id": "8:3",
+          "quadrant": "SW",
+          "cells": 100,
+          "muMedian": 0.9422709089162522,
+          "brightnessMedian": 0.0632190138264089
+        },
+        {
+          "id": "8:4",
+          "quadrant": "SW",
+          "cells": 100,
+          "muMedian": 0.967083356634818,
+          "brightnessMedian": 0.05012748306148038
+        },
+        {
+          "id": "8:5",
+          "quadrant": "SE",
+          "cells": 55,
+          "muMedian": 0.9406819364240238,
+          "brightnessMedian": 0.04585689547475015
+        },
+        {
+          "id": "8:6",
+          "quadrant": "SE",
+          "cells": 40,
+          "muMedian": 0.8953346409000984,
+          "brightnessMedian": 0.06063239109092826
+        },
+        {
+          "id": "8:7",
+          "quadrant": "SE",
+          "cells": 6,
+          "muMedian": 0.7275335077597074,
+          "brightnessMedian": 0.0564261084659823
+        },
+        {
+          "id": "8:8",
+          "quadrant": "SE",
+          "cells": 39,
+          "muMedian": 0.8632389721993751,
+          "brightnessMedian": 0.05478739260036101
+        },
+        {
+          "id": "8:9",
+          "quadrant": "SE",
+          "cells": 71,
+          "muMedian": 0.7900965938802988,
+          "brightnessMedian": 0.055697369235288834
+        },
+        {
+          "id": "9:0",
+          "quadrant": "SW",
+          "cells": 83,
+          "muMedian": 0.5915699003699032,
+          "brightnessMedian": 0.0853700712869595
+        },
+        {
+          "id": "9:1",
+          "quadrant": "SW",
+          "cells": 54,
+          "muMedian": 0.6738713393886402,
+          "brightnessMedian": 0.08614444443312297
+        },
+        {
+          "id": "9:2",
+          "quadrant": "SW",
+          "cells": 59,
+          "muMedian": 0.7327886919901164,
+          "brightnessMedian": 0.08448003953990399
+        },
+        {
+          "id": "9:3",
+          "quadrant": "SW",
+          "cells": 100,
+          "muMedian": 0.9211847919409786,
+          "brightnessMedian": 0.06388817768165622
+        },
+        {
+          "id": "9:4",
+          "quadrant": "SW",
+          "cells": 100,
+          "muMedian": 0.921396844989976,
+          "brightnessMedian": 0.05131919854184036
+        },
+        {
+          "id": "9:5",
+          "quadrant": "SE",
+          "cells": 100,
+          "muMedian": 0.9423520007007385,
+          "brightnessMedian": 0.04680195243201387
+        },
+        {
+          "id": "9:6",
+          "quadrant": "SE",
+          "cells": 56,
+          "muMedian": 0.9442133166960786,
+          "brightnessMedian": 0.052522482004922696
+        },
+        {
+          "id": "9:7",
+          "quadrant": "SE",
+          "cells": 42,
+          "muMedian": 0.8849997075380338,
+          "brightnessMedian": 0.05238201982025402
+        },
+        {
+          "id": "9:8",
+          "quadrant": "SE",
+          "cells": 95,
+          "muMedian": 0.8075029220246197,
+          "brightnessMedian": 0.05002386340872534
+        },
+        {
+          "id": "9:9",
+          "quadrant": "SE",
+          "cells": 99,
+          "muMedian": 0.7644830286640568,
+          "brightnessMedian": 0.0552520131685994
+        }
+      ],
+      "occupiedBlocksAtLeast20Cells": 72,
+      "slopeP05P50P95": [
+        11.001884250100364,
+        30.214605921384276,
+        50.36873897794276
+      ],
+      "elevationP05P50P95": [
+        538.2374084472656,
+        681.0541687011719,
+        786.7282897949219
+      ],
+      "aspect45DegreeBinCounts": [
+        305,
+        609,
+        1430,
+        359,
+        104,
+        755,
+        952,
+        856
+      ],
+      "nativeWCCodeCounts": {
+        "30": 5370
+      },
+      "NRWCodeIncidenceCounts": {
+        "B.1.1": 213,
+        "D.1.1": 3809,
+        "D.5": 757,
+        "E.2.1": 30,
+        "I.1.2": 75,
+        "I.1.2.1": 25,
+        "mosaic": 461
+      },
+      "NRWNoReturnedSupportCells": 0,
+      "NRWMultipleMembershipCells": 0,
+      "NRWSubgroupBaseline": {
+        "B.1.1": {
+          "cells": 213,
+          "muP05P50P95": [
+            0.4295210117431225,
+            0.7653683043023428,
+            0.853396021739071
+          ],
+          "brightness": {
+            "pearson": 0.3303138667809326,
+            "absPearson": 0.3303138667809326,
+            "std": 0.006753273556678318,
+            "p05p50p95": [
+              0.04934132573575941,
+              0.05745240835212329,
+              0.07207877398670252
+            ]
+          },
+          "bands": {
+            "B04": {
+              "pearson": 0.056453220747046354,
+              "absPearson": 0.056453220747046354,
+              "std": 0.008643414479624656,
+              "p05p50p95": [
+                0.03865915317990491,
+                0.045932613416419035,
+                0.06671689212755631
+              ]
+            },
+            "B03": {
+              "pearson": 0.44830386076066475,
+              "absPearson": 0.44830386076066475,
+              "std": 0.006715769060592952,
+              "p05p50p95": [
+                0.05419623663099199,
+                0.06378635669024614,
+                0.07586356026358763
+              ]
+            },
+            "B02": {
+              "pearson": -0.0508944983443733,
+              "absPearson": 0.0508944983443733,
+              "std": 0.007155730714223178,
+              "p05p50p95": [
+                0.024724331318283412,
+                0.03082398509164808,
+                0.048128787519076344
+              ]
+            }
+          }
+        },
+        "D.1.1": {
+          "cells": 3809,
+          "muP05P50P95": [
+            0.4395064329415129,
+            0.7872438798679057,
+            0.9660032884608161
+          ],
+          "brightness": {
+            "pearson": -0.21506566345464745,
+            "absPearson": 0.21506566345464745,
+            "std": 0.017479051180000788,
+            "p05p50p95": [
+              0.045041113271711626,
+              0.06804681297578997,
+              0.10129545968619842
+            ]
+          },
+          "bands": {
+            "B04": {
+              "pearson": -0.08400392761776754,
+              "absPearson": 0.08400392761776754,
+              "std": 0.01826000094892365,
+              "p05p50p95": [
+                0.041323290093009155,
+                0.06339969499927055,
+                0.09995842847849383
+              ]
+            },
+            "B03": {
+              "pearson": -0.25683854158758646,
+              "absPearson": 0.25683854158758646,
+              "std": 0.017827973378799034,
+              "p05p50p95": [
+                0.04733795303381136,
+                0.07234551843219529,
+                0.10458045128388857
+              ]
+            },
+            "B02": {
+              "pearson": -0.13600972589790478,
+              "absPearson": 0.13600972589790478,
+              "std": 0.016109851923972508,
+              "p05p50p95": [
+                0.027077682458757673,
+                0.045856247987041965,
+                0.07888234868113596
+              ]
+            }
+          }
+        },
+        "D.5": {
+          "cells": 757,
+          "muP05P50P95": [
+            0.36290402730118565,
+            0.580226967649657,
+            0.8501569140440922
+          ],
+          "brightness": {
+            "pearson": -0.43509257135524904,
+            "absPearson": 0.43509257135524904,
+            "std": 0.013721538871988573,
+            "p05p50p95": [
+              0.05958645420573134,
+              0.07801592936708988,
+              0.10365650235812812
+            ]
+          },
+          "bands": {
+            "B04": {
+              "pearson": -0.1676698115050933,
+              "absPearson": 0.1676698115050933,
+              "std": 0.013428642719159674,
+              "p05p50p95": [
+                0.05041804407360941,
+                0.06645305613423344,
+                0.09334175656426857
+              ]
+            },
+            "B03": {
+              "pearson": -0.4822159411619861,
+              "absPearson": 0.4822159411619861,
+              "std": 0.015145051737642561,
+              "p05p50p95": [
+                0.06391683705123613,
+                0.08426916709335563,
+                0.11160442222264638
+              ]
+            },
+            "B02": {
+              "pearson": -0.3269286546690903,
+              "absPearson": 0.3269286546690903,
+              "std": 0.011363037594998338,
+              "p05p50p95": [
+                0.034348495531706255,
+                0.04941646720491366,
+                0.07172968564270955
+              ]
+            }
+          }
+        },
+        "E.2.1": {
+          "cells": 30,
+          "muP05P50P95": [
+            0.43551212594592814,
+            0.6956760146200955,
+            0.7679798336416078
+          ],
+          "brightness": {
+            "pearson": -0.0005855264423586788,
+            "absPearson": 0.0005855264423586788,
+            "std": 0.0035586882327981045,
+            "p05p50p95": [
+              0.06507149705267974,
+              0.06870095163852978,
+              0.07580442733383175
+            ]
+          },
+          "bands": {
+            "B04": {
+              "pearson": -0.4004658451900041,
+              "absPearson": 0.4004658451900041,
+              "std": 0.005225333212227423,
+              "p05p50p95": [
+                0.05209182905759038,
+                0.05662309158118836,
+                0.06661394362289816
+              ]
+            },
+            "B03": {
+              "pearson": 0.2229187704119485,
+              "absPearson": 0.2229187704119485,
+              "std": 0.0035544148240337177,
+              "p05p50p95": [
+                0.07085090682108097,
+                0.07545899384618569,
+                0.0816720078702851
+              ]
+            },
+            "B02": {
+              "pearson": -0.4695394882734978,
+              "absPearson": 0.4695394882734978,
+              "std": 0.0036544784131317923,
+              "p05p50p95": [
+                0.036274148884216324,
+                0.03974089257129101,
+                0.04757929511467765
+              ]
+            }
+          }
+        },
+        "I.1.2": {
+          "cells": 75,
+          "muP05P50P95": [
+            0.7781046767497105,
+            0.8835245469088382,
+            0.9441988344280188
+          ],
+          "brightness": {
+            "pearson": 0.21644425568993073,
+            "absPearson": 0.21644425568993073,
+            "std": 0.012150393478895084,
+            "p05p50p95": [
+              0.04610892507473174,
+              0.061984207250456454,
+              0.08434581754334648
+            ]
+          },
+          "bands": {
+            "B04": {
+              "pearson": 0.08511510655019074,
+              "absPearson": 0.08511510655019074,
+              "std": 0.013865775801071548,
+              "p05p50p95": [
+                0.04091448311131951,
+                0.05785974684478676,
+                0.08634398851788852
+              ]
+            },
+            "B03": {
+              "pearson": 0.2707199858166401,
+              "absPearson": 0.2707199858166401,
+              "std": 0.011711422434459561,
+              "p05p50p95": [
+                0.04924695854901237,
+                0.06501808314203794,
+                0.08565140508165361
+              ]
+            },
+            "B02": {
+              "pearson": 0.12151263624957181,
+              "absPearson": 0.12151263624957181,
+              "std": 0.012700250484003368,
+              "p05p50p95": [
+                0.026879961478520745,
+                0.042416480121251376,
+                0.06738405159371609
+              ]
+            }
+          }
+        },
+        "I.1.2.1": {
+          "cells": 25,
+          "muP05P50P95": [
+            0.8982246578931105,
+            0.9126237704077264,
+            0.9291649202566257
+          ],
+          "brightness": {
+            "pearson": -0.4892541595622705,
+            "absPearson": 0.4892541595622705,
+            "std": 0.00887104727196177,
+            "p05p50p95": [
+              0.05215315984306284,
+              0.05743863917081079,
+              0.07662978338558063
+            ]
+          },
+          "bands": {
+            "B04": {
+              "pearson": -0.506044102882748,
+              "absPearson": 0.506044102882748,
+              "std": 0.009542032869410412,
+              "p05p50p95": [
+                0.0509865213713045,
+                0.0545341117441239,
+                0.07744988790864918
+              ]
+            },
+            "B03": {
+              "pearson": -0.47327576059596216,
+              "absPearson": 0.47327576059596216,
+              "std": 0.008869420152828565,
+              "p05p50p95": [
+                0.05354904294886088,
+                0.060447150907203644,
+                0.07849989654354925
+              ]
+            },
+            "B02": {
+              "pearson": -0.5057305685142827,
+              "absPearson": 0.5057305685142827,
+              "std": 0.008529268145838176,
+              "p05p50p95": [
+                0.03384687332880434,
+                0.03857760323983995,
+                0.05692638225391289
+              ]
+            }
+          }
+        },
+        "mosaic": {
+          "cells": 461,
+          "muP05P50P95": [
+            0.36799366559958746,
+            0.49043368458442216,
+            0.6606284940420609
+          ],
+          "brightness": {
+            "pearson": -0.26445295113035827,
+            "absPearson": 0.26445295113035827,
+            "std": 0.009943066809212777,
+            "p05p50p95": [
+              0.061910649819033145,
+              0.07736125186129875,
+              0.09468110979403985
+            ]
+          },
+          "bands": {
+            "B04": {
+              "pearson": -0.3847250863250903,
+              "absPearson": 0.3847250863250903,
+              "std": 0.011815522388619087,
+              "p05p50p95": [
+                0.04820745777458137,
+                0.06304720499370352,
+                0.08561698709455583
+              ]
+            },
+            "B03": {
+              "pearson": -0.1834509497782156,
+              "absPearson": 0.1834509497782156,
+              "std": 0.010357026759782563,
+              "p05p50p95": [
+                0.06803575574132294,
+                0.08395417795492613,
+                0.10083157364482744
+              ]
+            },
+            "B02": {
+              "pearson": -0.4484229651781086,
+              "absPearson": 0.4484229651781086,
+              "std": 0.00939479070739485,
+              "p05p50p95": [
+                0.03442949823154707,
+                0.04858908263057352,
+                0.06555199440019968
+              ]
+            }
+          }
+        }
+      },
+      "nativeSCLBoundaryDistanceP05P50P95Metres": [
+        29.41183476083303,
+        109.51090022970132,
+        286.0027821859138
+      ],
+      "nativeWC30BoundaryDistanceP05P50P95Metres": [
+        24.23800506170222,
+        93.83416562676948,
+        304.3337097192753
+      ],
+      "historicalNRWHeathBoundaryDistanceP05P50P95Metres": [
+        0.0,
+        0.0,
+        15.449161153525727
+      ],
+      "baseline": {
+        "cells": 5370,
+        "muP05P50P95": [
+          0.4043582316431967,
+          0.7454587719386756,
+          0.9575212588354173
+        ],
+        "brightness": {
+          "pearson": -0.30147391453265615,
+          "absPearson": 0.30147391453265615,
+          "std": 0.016642764444816386,
+          "p05p50p95": [
+            0.046374749256151905,
+            0.07007044612981342,
+            0.10029699351874735
+          ]
+        },
+        "bands": {
+          "B04": {
+            "pearson": -0.0990928587932924,
+            "absPearson": 0.0990928587932924,
+            "std": 0.01716727203298259,
+            "p05p50p95": [
+              0.041892369305318776,
+              0.06300926307280086,
+              0.09808632305827669
+            ]
+          },
+          "B03": {
+            "pearson": -0.36076464045363005,
+            "absPearson": 0.36076464045363005,
+            "std": 0.01733873868427497,
+            "p05p50p95": [
+              0.04867691483067433,
+              0.07418534999214842,
+              0.10503864892247787
+            ]
+          },
+          "B02": {
+            "pearson": -0.16758494481910652,
+            "absPearson": 0.16758494481910652,
+            "std": 0.01503948213773057,
+            "p05p50p95": [
+              0.02742570379970772,
+              0.04628929022946923,
+              0.07632217376818977
+            ]
+          }
+        }
+      },
+      "baselineQuadrants": {
+        "NW": {
+          "cells": 1327,
+          "muP05P50P95": [
+            0.35263285850706083,
+            0.4998997911551164,
+            0.7826685247843611
+          ],
+          "brightness": {
+            "pearson": -0.4582064289555165,
+            "absPearson": 0.4582064289555165,
+            "std": 0.013952654939802208,
+            "p05p50p95": [
+              0.05835153854534098,
+              0.07722771427875667,
+              0.10466457578521642
+            ]
+          },
+          "bands": {
+            "B04": {
+              "pearson": -0.41434568204474626,
+              "absPearson": 0.41434568204474626,
+              "std": 0.01479076210786521,
+              "p05p50p95": [
+                0.045410104203389964,
+                0.0625290451494812,
+                0.09223217095710073
+              ]
+            },
+            "B03": {
+              "pearson": -0.44301068626341594,
+              "absPearson": 0.44301068626341594,
+              "std": 0.014665977487599936,
+              "p05p50p95": [
+                0.06416293453262252,
+                0.08443105130225141,
+                0.11175529142114342
+              ]
+            },
+            "B02": {
+              "pearson": -0.49987242240427254,
+              "absPearson": 0.49987242240427254,
+              "std": 0.012288260715979509,
+              "p05p50p95": [
+                0.031164975426920278,
+                0.048030514621859616,
+                0.0709663750595661
+              ]
+            }
+          }
+        },
+        "NE": {
+          "cells": 896,
+          "muP05P50P95": [
+            0.38502762097642107,
+            0.7408712763674039,
+            0.9140900600837438
+          ],
+          "brightness": {
+            "pearson": 0.06515397386736,
+            "absPearson": 0.06515397386736,
+            "std": 0.018439631453334857,
+            "p05p50p95": [
+              0.04928355528242387,
+              0.07654928439233262,
+              0.10911315495568569
+            ]
+          },
+          "bands": {
+            "B04": {
+              "pearson": 0.131194612524763,
+              "absPearson": 0.131194612524763,
+              "std": 0.01925854267425868,
+              "p05p50p95": [
+                0.04625187624540536,
+                0.07341607753762316,
+                0.1082714260052643
+              ]
+            },
+            "B03": {
+              "pearson": 0.04426868523225955,
+              "absPearson": 0.04426868523225955,
+              "std": 0.018516883923379104,
+              "p05p50p95": [
+                0.05193496600520077,
+                0.0794060465659921,
+                0.11154007154855235
+              ]
+            },
+            "B02": {
+              "pearson": 0.06330117290644288,
+              "absPearson": 0.06330117290644288,
+              "std": 0.017065254014263016,
+              "p05p50p95": [
+                0.030645164924912704,
+                0.05642105049023455,
+                0.08655301223731855
+              ]
+            }
+          }
+        },
+        "SW": {
+          "cells": 1974,
+          "muP05P50P95": [
+            0.5136328648721973,
+            0.7732817740604527,
+            0.9716156566966813
+          ],
+          "brightness": {
+            "pearson": -0.13750716823994166,
+            "absPearson": 0.13750716823994166,
+            "std": 0.013869649293091216,
+            "p05p50p95": [
+              0.04908079482947727,
+              0.06887304567301696,
+              0.094519502016803
+            ]
+          },
+          "bands": {
+            "B04": {
+              "pearson": -0.1024245920053081,
+              "absPearson": 0.1024245920053081,
+              "std": 0.015873955428609095,
+              "p05p50p95": [
+                0.04232419027923185,
+                0.06426238755766686,
+                0.0935381087182835
+              ]
+            },
+            "B03": {
+              "pearson": -0.1501839623667876,
+              "absPearson": 0.1501839623667876,
+              "std": 0.013674122787584184,
+              "p05p50p95": [
+                0.05126778239080144,
+                0.07272955481868237,
+                0.09787889542322357
+              ]
+            },
+            "B02": {
+              "pearson": -0.09601456544293903,
+              "absPearson": 0.09601456544293903,
+              "std": 0.013380124637623926,
+              "p05p50p95": [
+                0.027433593679334574,
+                0.04596303634576291,
+                0.07105803482559335
+              ]
+            }
+          }
+        },
+        "SE": {
+          "cells": 1173,
+          "muP05P50P95": [
+            0.6531524833033421,
+            0.8657522544999766,
+            0.9628323866810068
+          ],
+          "brightness": {
+            "pearson": 0.17209104443741063,
+            "absPearson": 0.17209104443741063,
+            "std": 0.016063011214144798,
+            "p05p50p95": [
+              0.04245605030511222,
+              0.05527886925850183,
+              0.09490442970522699
+            ]
+          },
+          "bands": {
+            "B04": {
+              "pearson": 0.19955990998330422,
+              "absPearson": 0.19955990998330422,
+              "std": 0.017050785895919175,
+              "p05p50p95": [
+                0.03857027186061921,
+                0.05539521721958048,
+                0.09529272600226288
+              ]
+            },
+            "B03": {
+              "pearson": 0.16286101586253235,
+              "absPearson": 0.16286101586253235,
+              "std": 0.016025807484315993,
+              "p05p50p95": [
+                0.04460038702640892,
+                0.05752468442253223,
+                0.09665076778033932
+              ]
+            },
+            "B02": {
+              "pearson": 0.15425807637171382,
+              "absPearson": 0.15425807637171382,
+              "std": 0.015644457533378807,
+              "p05p50p95": [
+                0.02527700933246515,
+                0.03686645334476355,
+                0.07517777573283448
+              ]
+            }
+          }
+        }
+      },
+      "spectral": {
+        "RoverG": [
+          0.6656415341615409,
+          0.8943431587373905,
+          1.0316676347576441
+        ],
+        "BoverG": [
+          0.47512132228125653,
+          0.6358629663199151,
+          0.7817382134511627
+        ],
+        "adjacentEligibleEdges": 9959,
+        "perBandNormalizedGradientP05P50P95": {
+          "B04": [
+            0.0061946531417490175,
+            0.06869278486309786,
+            0.23146550114418613
+          ],
+          "B03": [
+            0.00446768508104206,
+            0.05099239282995917,
+            0.18620325644166685
+          ],
+          "B02": [
+            0.008250895342960052,
+            0.08297305598753671,
+            0.2787652096946264
+          ]
+        },
+        "nonfiniteValues": 0,
+        "negativeValues": 0,
+        "aboveOneValues": 0
+      },
+      "dependence": [
+        {
+          "distanceMetres": 10,
+          "direction": "E",
+          "endpointPairs": 4961,
+          "brightnessPearson": 0.91986922616341,
+          "muPearson": 0.9525988758969562
+        },
+        {
+          "distanceMetres": 10,
+          "direction": "N",
+          "endpointPairs": 4998,
+          "brightnessPearson": 0.88788590548118,
+          "muPearson": 0.9127387067078604
+        },
+        {
+          "distanceMetres": 20,
+          "direction": "E",
+          "endpointPairs": 4632,
+          "brightnessPearson": 0.7873871213827088,
+          "muPearson": 0.8744771384539985
+        },
+        {
+          "distanceMetres": 20,
+          "direction": "N",
+          "endpointPairs": 4717,
+          "brightnessPearson": 0.7135601375873745,
+          "muPearson": 0.7851058087879289
+        },
+        {
+          "distanceMetres": 50,
+          "direction": "E",
+          "endpointPairs": 3874,
+          "brightnessPearson": 0.5446277224942555,
+          "muPearson": 0.7128748214561007
+        },
+        {
+          "distanceMetres": 50,
+          "direction": "N",
+          "endpointPairs": 4119,
+          "brightnessPearson": 0.565997323691661,
+          "muPearson": 0.6927022323890287
+        },
+        {
+          "distanceMetres": 100,
+          "direction": "E",
+          "endpointPairs": 3111,
+          "brightnessPearson": 0.36779197424488047,
+          "muPearson": 0.613610676822182
+        },
+        {
+          "distanceMetres": 100,
+          "direction": "N",
+          "endpointPairs": 3643,
+          "brightnessPearson": 0.42742319425489567,
+          "muPearson": 0.6102822877026532
+        },
+        {
+          "distanceMetres": 200,
+          "direction": "E",
+          "endpointPairs": 2127,
+          "brightnessPearson": 0.20070184054860243,
+          "muPearson": 0.4865832058138433
+        },
+        {
+          "distanceMetres": 200,
+          "direction": "N",
+          "endpointPairs": 2887,
+          "brightnessPearson": 0.1361657774627193,
+          "muPearson": 0.45262409682466337
+        },
+        {
+          "distanceMetres": 300,
+          "direction": "E",
+          "endpointPairs": 1689,
+          "brightnessPearson": 0.1728727977763451,
+          "muPearson": 0.23339430228597094
+        },
+        {
+          "distanceMetres": 300,
+          "direction": "N",
+          "endpointPairs": 2391,
+          "brightnessPearson": 0.015073495140793208,
+          "muPearson": 0.408449748716124
+        }
+      ],
+      "feasibility": {
+        "passed": false,
+        "failures": [
+          "NW: testWithinTrainingP05P95Fraction",
+          "SE: testWithinTrainingP05P95Fraction"
+        ],
+        "folds": [
+          {
+            "heldout": "NW",
+            "testCells": 1327,
+            "trainCellsAfter100mGuard": 3552,
+            "testOccupied100mBlocks": 16,
+            "trainOccupied100mBlocks": 49,
+            "trainingMuP05P50P95": [
+              0.5334179894396828,
+              0.8055730561226617,
+              0.966584142558154
+            ],
+            "testMuP05P50P95": [
+              0.35263285850706083,
+              0.4998997911551164,
+              0.7826685247843611
+            ],
+            "trainMuSpread": 0.4331661531184712,
+            "testMuSpread": 0.4300356662773003,
+            "trainBlockMedianMuSpread": 0.3043187098908263,
+            "testWithinTrainingP05P95Fraction": 0.4024114544084401,
+            "failures": [
+              "testWithinTrainingP05P95Fraction"
+            ]
+          },
+          {
+            "heldout": "NE",
+            "testCells": 896,
+            "trainCellsAfter100mGuard": 4213,
+            "testOccupied100mBlocks": 13,
+            "trainOccupied100mBlocks": 54,
+            "trainingMuP05P50P95": [
+              0.4043989281679316,
+              0.7334737164710176,
+              0.9621598914853975
+            ],
+            "testMuP05P50P95": [
+              0.38502762097642107,
+              0.7408712763674039,
+              0.9140900600837438
+            ],
+            "trainMuSpread": 0.5577609633174658,
+            "testMuSpread": 0.5290624391073228,
+            "trainBlockMedianMuSpread": 0.4973545706949286,
+            "testWithinTrainingP05P95Fraction": 0.9263392857142857,
+            "failures": []
+          },
+          {
+            "heldout": "SW",
+            "testCells": 1974,
+            "trainCellsAfter100mGuard": 2655,
+            "testOccupied100mBlocks": 24,
+            "trainOccupied100mBlocks": 39,
+            "trainingMuP05P50P95": [
+              0.3738737384236316,
+              0.6802683643706946,
+              0.9214385057469114
+            ],
+            "testMuP05P50P95": [
+              0.5136328648721973,
+              0.7732817740604527,
+              0.9716156566966813
+            ],
+            "trainMuSpread": 0.5475647673232799,
+            "testMuSpread": 0.457982791824484,
+            "trainBlockMedianMuSpread": 0.5309636502914219,
+            "testWithinTrainingP05P95Fraction": 0.8014184397163121,
+            "failures": []
+          },
+          {
+            "heldout": "SE",
+            "testCells": 1173,
+            "trainCellsAfter100mGuard": 3601,
+            "testOccupied100mBlocks": 19,
+            "trainOccupied100mBlocks": 46,
+            "trainingMuP05P50P95": [
+              0.3809215087512578,
+              0.6680660416640181,
+              0.9129117415263855
+            ],
+            "testMuP05P50P95": [
+              0.6531524833033421,
+              0.8657522544999766,
+              0.9628323866810068
+            ],
+            "trainMuSpread": 0.5319902327751278,
+            "testMuSpread": 0.3096799033776647,
+            "trainBlockMedianMuSpread": 0.464752484118224,
+            "testWithinTrainingP05P95Fraction": 0.7050298380221653,
+            "failures": [
+              "testWithinTrainingP05P95Fraction"
+            ]
+          }
+        ]
+      }
+    },
+    "P3": {
+      "cells": 205,
+      "logicalMaskSha256": "795b34451ad0c1b16e217ca64540a690ecdd47106fdcf850725fd30cd2e57ec2",
+      "retainedNRWFeatureIDsUsed": [
+        "471291",
+        "471369",
+        "471384",
+        "471415",
+        "471448",
+        "471465"
+      ],
+      "distanceToCoreOrInvalidRadiometryGeometryBoundaryP05P50P95Metres": [
+        5.0,
+        55.226805085936306,
+        125.00000000000001
+      ],
+      "selectedAnalysisAreaM2": 20500,
+      "notPhysicalVegetationArea": true,
+      "nativeSCLCellsUsed": 75,
+      "nativeWorldCoverCellsUsed": 205,
+      "components4Connected": {
+        "count": 7,
+        "largestCells": [
+          101,
+          61,
+          21,
+          13,
+          4,
+          3,
+          2
+        ],
+        "largestFraction": 0.4926829268292683,
+        "sizeP05P50P95": [
+          2.3,
+          13.0,
+          88.99999999999997
+        ]
+      },
+      "blocks100m": [
+        {
+          "id": "0:2",
+          "quadrant": "NW",
+          "cells": 11,
+          "muMedian": 0.41540940559858813,
+          "brightnessMedian": 0.09262722392110799
+        },
+        {
+          "id": "0:3",
+          "quadrant": "NW",
+          "cells": 2,
+          "muMedian": 0.37946415954053503,
+          "brightnessMedian": 0.08656068013844909
+        },
+        {
+          "id": "2:1",
+          "quadrant": "NW",
+          "cells": 2,
+          "muMedian": 0.43711271059356527,
+          "brightnessMedian": 0.07611268105180924
+        },
+        {
+          "id": "2:2",
+          "quadrant": "NW",
+          "cells": 1,
+          "muMedian": 0.4388414496600856,
+          "brightnessMedian": 0.08066452883680483
+        },
+        {
+          "id": "3:1",
+          "quadrant": "NW",
+          "cells": 12,
+          "muMedian": 0.4670324501899962,
+          "brightnessMedian": 0.07744334385444993
+        },
+        {
+          "id": "3:2",
+          "quadrant": "NW",
+          "cells": 39,
+          "muMedian": 0.47378684735705767,
+          "brightnessMedian": 0.0692864238503285
+        },
+        {
+          "id": "4:0",
+          "quadrant": "NW",
+          "cells": 2,
+          "muMedian": 0.7184928619820283,
+          "brightnessMedian": 0.0694201597803103
+        },
+        {
+          "id": "4:2",
+          "quadrant": "NW",
+          "cells": 7,
+          "muMedian": 0.6462473057696503,
+          "brightnessMedian": 0.07375313113437361
+        },
+        {
+          "id": "5:1",
+          "quadrant": "SW",
+          "cells": 4,
+          "muMedian": 0.5914776942533129,
+          "brightnessMedian": 0.07076215475968906
+        },
+        {
+          "id": "5:2",
+          "quadrant": "SW",
+          "cells": 1,
+          "muMedian": 0.6320336490877986,
+          "brightnessMedian": 0.09195729600227594
+        },
+        {
+          "id": "6:1",
+          "quadrant": "SW",
+          "cells": 2,
+          "muMedian": 0.707218700371479,
+          "brightnessMedian": 0.06602076171208777
+        },
+        {
+          "id": "7:0",
+          "quadrant": "SW",
+          "cells": 21,
+          "muMedian": 0.7750261412227183,
+          "brightnessMedian": 0.05863718970066478
+        },
+        {
+          "id": "8:0",
+          "quadrant": "SW",
+          "cells": 2,
+          "muMedian": 0.6371376492213416,
+          "brightnessMedian": 0.07600448042185456
+        },
+        {
+          "id": "8:1",
+          "quadrant": "SW",
+          "cells": 37,
+          "muMedian": 0.6603785412945684,
+          "brightnessMedian": 0.07756373515204702
+        },
+        {
+          "id": "9:0",
+          "quadrant": "SW",
+          "cells": 54,
+          "muMedian": 0.5933192012806485,
+          "brightnessMedian": 0.08246340095239976
+        },
+        {
+          "id": "9:1",
+          "quadrant": "SW",
+          "cells": 8,
+          "muMedian": 0.6484043185432247,
+          "brightnessMedian": 0.08036341657400294
+        }
+      ],
+      "occupiedBlocksAtLeast20Cells": 4,
+      "slopeP05P50P95": [
+        11.612918051890485,
+        24.273345963641354,
+        34.90224018706111
+      ],
+      "elevationP05P50P95": [
+        531.176513671875,
+        691.6461181640625,
+        734.2474975585938
+      ],
+      "aspect45DegreeBinCounts": [
+        42,
+        1,
+        0,
+        0,
+        0,
+        10,
+        38,
+        114
+      ],
+      "nativeWCCodeCounts": {
+        "30": 205
+      },
+      "NRWCodeIncidenceCounts": {
+        "D.1.1": 205
+      },
+      "NRWNoReturnedSupportCells": 0,
+      "NRWMultipleMembershipCells": 0,
+      "NRWSubgroupBaseline": {
+        "D.1.1": {
+          "cells": 205,
+          "muP05P50P95": [
+            0.39420027876116026,
+            0.5877972238997332,
+            0.7813994836403583
+          ],
+          "brightness": {
+            "pearson": -0.02100942264132658,
+            "absPearson": 0.02100942264132658,
+            "std": 0.011571034435408946,
+            "p05p50p95": [
+              0.0587040619655645,
+              0.07552310339526774,
+              0.09689198176174219
+            ]
+          },
+          "bands": {
+            "B04": {
+              "pearson": 0.22079969477119255,
+              "absPearson": 0.22079969477119255,
+              "std": 0.016603481932272356,
+              "p05p50p95": [
+                0.04300959912440279,
+                0.06624747664888259,
+                0.09296730321027846
+              ]
+            },
+            "B03": {
+              "pearson": -0.1383229216651646,
+              "absPearson": 0.1383229216651646,
+              "std": 0.010970030593220246,
+              "p05p50p95": [
+                0.06450181210101359,
+                0.08169972581872972,
+                0.10101260260069278
+              ]
+            },
+            "B02": {
+              "pearson": 0.07300644361365369,
+              "absPearson": 0.07300644361365369,
+              "std": 0.011904160538362745,
+              "p05p50p95": [
+                0.031381683451329884,
+                0.04696464240527623,
+                0.06736053586214595
+              ]
+            }
+          }
+        }
+      },
+      "nativeSCLBoundaryDistanceP05P50P95Metres": [
+        37.015261332407306,
+        81.52410371869401,
+        234.6106478469161
+      ],
+      "nativeWC30BoundaryDistanceP05P50P95Metres": [
+        31.89684536669121,
+        158.2349756960072,
+        286.00983330417876
+      ],
+      "historicalNRWHeathBoundaryDistanceP05P50P95Metres": [
+        21.173301532123872,
+        30.398874942492316,
+        56.88810922034672
+      ],
+      "baseline": {
+        "cells": 205,
+        "muP05P50P95": [
+          0.39420027876116026,
+          0.5877972238997332,
+          0.7813994836403583
+        ],
+        "brightness": {
+          "pearson": -0.02100942264132658,
+          "absPearson": 0.02100942264132658,
+          "std": 0.011571034435408946,
+          "p05p50p95": [
+            0.0587040619655645,
+            0.07552310339526774,
+            0.09689198176174219
+          ]
+        },
+        "bands": {
+          "B04": {
+            "pearson": 0.22079969477119255,
+            "absPearson": 0.22079969477119255,
+            "std": 0.016603481932272356,
+            "p05p50p95": [
+              0.04300959912440279,
+              0.06624747664888259,
+              0.09296730321027846
+            ]
+          },
+          "B03": {
+            "pearson": -0.1383229216651646,
+            "absPearson": 0.1383229216651646,
+            "std": 0.010970030593220246,
+            "p05p50p95": [
+              0.06450181210101359,
+              0.08169972581872972,
+              0.10101260260069278
+            ]
+          },
+          "B02": {
+            "pearson": 0.07300644361365369,
+            "absPearson": 0.07300644361365369,
+            "std": 0.011904160538362745,
+            "p05p50p95": [
+              0.031381683451329884,
+              0.04696464240527623,
+              0.06736053586214595
+            ]
+          }
+        }
+      },
+      "baselineQuadrants": {
+        "NW": {
+          "cells": 76,
+          "muP05P50P95": [
+            0.38746653672740394,
+            0.46536837142193743,
+            0.6505841480020873
+          ],
+          "brightness": {
+            "pearson": -0.33207248563617847,
+            "absPearson": 0.33207248563617847,
+            "std": 0.00950001972440142,
+            "p05p50p95": [
+              0.06506894975332027,
+              0.07330909596872148,
+              0.09643554935610771
+            ]
+          },
+          "bands": {
+            "B04": {
+              "pearson": -0.14414060724619468,
+              "absPearson": 0.14414060724619468,
+              "std": 0.011482186002651962,
+              "p05p50p95": [
+                0.04422030937851025,
+                0.05165811816405137,
+                0.08086388932123448
+              ]
+            },
+            "B03": {
+              "pearson": -0.3903583727143766,
+              "absPearson": 0.3903583727143766,
+              "std": 0.009377842367007816,
+              "p05p50p95": [
+                0.07332260537985527,
+                0.08313374724055973,
+                0.10563126244026454
+              ]
+            },
+            "B02": {
+              "pearson": -0.2880981788068662,
+              "absPearson": 0.2880981788068662,
+              "std": 0.00887880498621363,
+              "p05p50p95": [
+                0.03422969849591852,
+                0.040697985566425204,
+                0.06233726526890293
+              ]
+            }
+          }
+        },
+        "NE": {
+          "cells": 0,
+          "muP05P50P95": null,
+          "brightness": {
+            "pearson": null,
+            "absPearson": null,
+            "std": null,
+            "p05p50p95": null
+          },
+          "bands": {
+            "B04": {
+              "pearson": null,
+              "absPearson": null,
+              "std": null,
+              "p05p50p95": null
+            },
+            "B03": {
+              "pearson": null,
+              "absPearson": null,
+              "std": null,
+              "p05p50p95": null
+            },
+            "B02": {
+              "pearson": null,
+              "absPearson": null,
+              "std": null,
+              "p05p50p95": null
+            }
+          }
+        },
+        "SW": {
+          "cells": 129,
+          "muP05P50P95": [
+            0.4969096244025864,
+            0.6377093277791642,
+            0.7908141465514998
+          ],
+          "brightness": {
+            "pearson": -0.03217979178188503,
+            "absPearson": 0.03217979178188503,
+            "std": 0.012545687703048458,
+            "p05p50p95": [
+              0.055361112985686,
+              0.07790871445691178,
+              0.09685566918936836
+            ]
+          },
+          "bands": {
+            "B04": {
+              "pearson": -0.10772478518312976,
+              "absPearson": 0.10772478518312976,
+              "std": 0.016115358286005976,
+              "p05p50p95": [
+                0.042299369816878665,
+                0.07376038316359565,
+                0.09492518019792885
+              ]
+            },
+            "B03": {
+              "pearson": 0.013341543137138558,
+              "absPearson": 0.013341543137138558,
+              "std": 0.011721235679534828,
+              "p05p50p95": [
+                0.06200763908995149,
+                0.081545613514001,
+                0.10014620120952726
+              ]
+            },
+            "B02": {
+              "pearson": -0.1645156450151949,
+              "absPearson": 0.1645156450151949,
+              "std": 0.012332141918976665,
+              "p05p50p95": [
+                0.02856432846209387,
+                0.05172238530514291,
+                0.06912068275705649
+              ]
+            }
+          }
+        },
+        "SE": {
+          "cells": 0,
+          "muP05P50P95": null,
+          "brightness": {
+            "pearson": null,
+            "absPearson": null,
+            "std": null,
+            "p05p50p95": null
+          },
+          "bands": {
+            "B04": {
+              "pearson": null,
+              "absPearson": null,
+              "std": null,
+              "p05p50p95": null
+            },
+            "B03": {
+              "pearson": null,
+              "absPearson": null,
+              "std": null,
+              "p05p50p95": null
+            },
+            "B02": {
+              "pearson": null,
+              "absPearson": null,
+              "std": null,
+              "p05p50p95": null
+            }
+          }
+        }
+      },
+      "spectral": {
+        "RoverG": [
+          0.5677173813143249,
+          0.8171028463640616,
+          0.9736442189368861
+        ],
+        "BoverG": [
+          0.4385617141128449,
+          0.5919485972559742,
+          0.7083620933629159
+        ],
+        "adjacentEligibleEdges": 320,
+        "perBandNormalizedGradientP05P50P95": {
+          "B04": [
+            0.005325751755289542,
+            0.07356203097196415,
+            0.22222686774760161
+          ],
+          "B03": [
+            0.002242606706722923,
+            0.04111763611605611,
+            0.15718708948771035
+          ],
+          "B02": [
+            0.007556946609250994,
+            0.07041436977400507,
+            0.2211795850703051
+          ]
+        },
+        "nonfiniteValues": 0,
+        "negativeValues": 0,
+        "aboveOneValues": 0
+      },
+      "dependence": [
+        {
+          "distanceMetres": 10,
+          "direction": "E",
+          "endpointPairs": 162,
+          "brightnessPearson": 0.8284435600732775,
+          "muPearson": 0.8965218138589416
+        },
+        {
+          "distanceMetres": 10,
+          "direction": "N",
+          "endpointPairs": 158,
+          "brightnessPearson": 0.8552956696678002,
+          "muPearson": 0.8596579448339695
+        },
+        {
+          "distanceMetres": 20,
+          "direction": "E",
+          "endpointPairs": 121,
+          "brightnessPearson": 0.5289935163401474,
+          "muPearson": 0.7073915251076025
+        },
+        {
+          "distanceMetres": 20,
+          "direction": "N",
+          "endpointPairs": 127,
+          "brightnessPearson": 0.5563287789773821,
+          "muPearson": 0.6925900899715323
+        },
+        {
+          "distanceMetres": 50,
+          "direction": "E",
+          "endpointPairs": 35,
+          "brightnessPearson": -0.11144940241588609,
+          "muPearson": 0.2872351474533578
+        },
+        {
+          "distanceMetres": 50,
+          "direction": "N",
+          "endpointPairs": 47,
+          "brightnessPearson": 0.08210029190932149,
+          "muPearson": 0.5822494236362317
+        },
+        {
+          "distanceMetres": 100,
+          "direction": "E",
+          "endpointPairs": 2,
+          "brightnessPearson": 1.0,
+          "muPearson": 1.0
+        },
+        {
+          "distanceMetres": 100,
+          "direction": "N",
+          "endpointPairs": 3,
+          "brightnessPearson": 0.041374905408805625,
+          "muPearson": -0.9432787823412248
+        },
+        {
+          "distanceMetres": 200,
+          "direction": "E",
+          "endpointPairs": 0,
+          "brightnessPearson": null,
+          "muPearson": null
+        },
+        {
+          "distanceMetres": 200,
+          "direction": "N",
+          "endpointPairs": 18,
+          "brightnessPearson": 0.4115349152864085,
+          "muPearson": 0.5155123694956758
+        },
+        {
+          "distanceMetres": 300,
+          "direction": "E",
+          "endpointPairs": 0,
+          "brightnessPearson": null,
+          "muPearson": null
+        },
+        {
+          "distanceMetres": 300,
+          "direction": "N",
+          "endpointPairs": 0,
+          "brightnessPearson": null,
+          "muPearson": null
+        }
+      ],
+      "feasibility": {
+        "passed": false,
+        "failures": [
+          "total cells",
+          "NW: testCells",
+          "NW: trainCellsAfter100mGuard",
+          "NW: testOccupied100mBlocks",
+          "NW: trainOccupied100mBlocks",
+          "NW: testWithinTrainingP05P95Fraction",
+          "NE: testCells",
+          "NE: trainCellsAfter100mGuard",
+          "NE: testOccupied100mBlocks",
+          "NE: trainOccupied100mBlocks",
+          "NE: testMuSpread",
+          "NE: testWithinTrainingP05P95Fraction",
+          "SW: trainCellsAfter100mGuard",
+          "SW: testOccupied100mBlocks",
+          "SW: trainOccupied100mBlocks",
+          "SW: trainMuSpread",
+          "SW: trainBlockMedianMuSpread",
+          "SW: testWithinTrainingP05P95Fraction",
+          "SE: testCells",
+          "SE: trainCellsAfter100mGuard",
+          "SE: testOccupied100mBlocks",
+          "SE: trainOccupied100mBlocks",
+          "SE: testMuSpread",
+          "SE: testWithinTrainingP05P95Fraction"
+        ],
+        "folds": [
+          {
+            "heldout": "NW",
+            "testCells": 76,
+            "trainCellsAfter100mGuard": 124,
+            "testOccupied100mBlocks": 1,
+            "trainOccupied100mBlocks": 3,
+            "trainingMuP05P50P95": [
+              0.49526752240964655,
+              0.6484043185432247,
+              0.7909146763789013
+            ],
+            "testMuP05P50P95": [
+              0.38746653672740394,
+              0.46536837142193743,
+              0.6505841480020873
+            ],
+            "trainMuSpread": 0.2956471539692548,
+            "testMuSpread": 0.26311761127468336,
+            "trainBlockMedianMuSpread": 0.16353624594786276,
+            "testWithinTrainingP05P95Fraction": 0.2894736842105263,
+            "failures": [
+              "testCells",
+              "trainCellsAfter100mGuard",
+              "testOccupied100mBlocks",
+              "trainOccupied100mBlocks",
+              "testWithinTrainingP05P95Fraction"
+            ]
+          },
+          {
+            "heldout": "NE",
+            "testCells": 0,
+            "trainCellsAfter100mGuard": 205,
+            "testOccupied100mBlocks": 0,
+            "trainOccupied100mBlocks": 4,
+            "trainingMuP05P50P95": [
+              0.39420027876116026,
+              0.5877972238997332,
+              0.7813994836403583
+            ],
+            "testMuP05P50P95": null,
+            "trainMuSpread": 0.387199204879198,
+            "testMuSpread": 0,
+            "trainBlockMedianMuSpread": 0.26611230078789944,
+            "testWithinTrainingP05P95Fraction": 0,
+            "failures": [
+              "testCells",
+              "trainCellsAfter100mGuard",
+              "testOccupied100mBlocks",
+              "trainOccupied100mBlocks",
+              "testMuSpread",
+              "testWithinTrainingP05P95Fraction"
+            ]
+          },
+          {
+            "heldout": "SW",
+            "testCells": 129,
+            "trainCellsAfter100mGuard": 67,
+            "testOccupied100mBlocks": 3,
+            "trainOccupied100mBlocks": 1,
+            "trainingMuP05P50P95": [
+              0.38676688444886226,
+              0.4609926205115825,
+              0.5448678731414524
+            ],
+            "testMuP05P50P95": [
+              0.4969096244025864,
+              0.6377093277791642,
+              0.7908141465514998
+            ],
+            "trainMuSpread": 0.1581009886925901,
+            "testMuSpread": 0.29390452214891344,
+            "trainBlockMedianMuSpread": 0.0,
+            "testWithinTrainingP05P95Fraction": 0.14728682170542637,
+            "failures": [
+              "trainCellsAfter100mGuard",
+              "testOccupied100mBlocks",
+              "trainOccupied100mBlocks",
+              "trainMuSpread",
+              "trainBlockMedianMuSpread",
+              "testWithinTrainingP05P95Fraction"
+            ]
+          },
+          {
+            "heldout": "SE",
+            "testCells": 0,
+            "trainCellsAfter100mGuard": 205,
+            "testOccupied100mBlocks": 0,
+            "trainOccupied100mBlocks": 4,
+            "trainingMuP05P50P95": [
+              0.39420027876116026,
+              0.5877972238997332,
+              0.7813994836403583
+            ],
+            "testMuP05P50P95": null,
+            "trainMuSpread": 0.387199204879198,
+            "testMuSpread": 0,
+            "trainBlockMedianMuSpread": 0.26611230078789944,
+            "testWithinTrainingP05P95Fraction": 0,
+            "failures": [
+              "testCells",
+              "trainCellsAfter100mGuard",
+              "testOccupied100mBlocks",
+              "trainOccupied100mBlocks",
+              "testMuSpread",
+              "testWithinTrainingP05P95Fraction"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "decision": "A - NOT JUSTIFIED (tested candidates and fixed heldout design)"
+}

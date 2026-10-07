@@ -64,9 +64,12 @@ The [frozen residual trial](tryfan-illumination-normalization.md) now completes 
 The [registration/epoch assessment](riffelhorn-registration-epoch.md) now completes that recommendation
 (**B - SCALE-CONDITIONAL CONSISTENCY**): coordinate/preparation fidelity is consistent, but
 mixed epochs and ambiguous steep/dark controls limit close physical correspondence.
-No accepted shift or corrected product. Exactly one next task: **Retained Tryfan vegetation-only residual-normalization protocol assessment**;
-[scope/exit](riffelhorn-registration-epoch.md#27-exactly-one-next-bounded-task). It has not begun.
-This is a separate protocol assessment or no-go decision, not relaxation of the old trial or correction.
+No accepted shift or corrected product. The [vegetation-only protocol assessment](tryfan-vegetation-protocol.md)
+now completes that recommendation (**A - NOT JUSTIFIED**): three fixed candidate populations
+fail spatial/central-incidence eligibility or stricter historical-habitat support. No fit,
+correction or new executable correction protocol; the original trial remains INCONCLUSIVE.
+Exactly one next task: **Retained Riffelhorn dark-source signal and texture-support assessment**;
+[scope/exit](tryfan-vegetation-protocol.md#27-exactly-one-next-bounded-task). It has not begun.
 Open/parked appearance work remains independent; no correction or acquisition follows automatically.
 
 Production, Weather and Traverse remain unchanged. The map below retains chronological
@@ -529,3 +532,10 @@ Exactly one next, separately authorized: **Retained Riffelhorn imagery-terrain r
 The [assessment](riffelhorn-registration-epoch.md), [results](riffelhorn-registration-epoch-results.json) and [validation](riffelhorn-registration-epoch-validation.json) record **B - SCALE-CONDITIONAL CONSISTENCY**. Four inherited patches and all retained source/prepared hashes are preserved. Native cell edges/area conventions and independent coordinate/terrain-preparation tests agree. Ordinary forms have useful correspondence; summit/steep/dark search peaks do not identify physical displacement. Ortho model family is documented, exact revision and pixel epochs unknown. Broad/planning uses are qualified; finer inference requires independent controls. No source correction/warp or new data.
 
 All 42 status columns remain. A15 gains scale/epoch qualification, not closure; A6-A11/A14 remain separate and A13 Swiss pixels parked. The Tryfan normalization stopping result remains INCONCLUSIVE. One next: **Retained Tryfan vegetation-only residual-normalization protocol assessment**; a distinct scientific question needs its own justified protocol or no-go before fitting. It has not begun; no original criteria changes.
+
+
+## 2026-10-07 - retained Tryfan vegetation-only protocol assessment
+
+[Report](tryfan-vegetation-protocol.md), [plan](../../scripts/atlas/tryfan-vegetation-protocol/assessment-plan.json), [diagnostics](tryfan-vegetation-protocol-results.json) and [validation](tryfan-vegetation-protocol-validation.json): **A - NOT JUSTIFIED** for the predeclared candidates/fixed spatial holdouts. P1 buffered SCL4=8053, P2 plus native WC30=5370, P3 plus strict historical D.1.1=205. P1/P2 have shifted heldout incidence support and unresolved contemporary mixture/dependence; P3 lacks both eastern quadrants. No fitting, parameters, correction or retrospective change to1842008 criteria; that experiment stays INCONCLUSIVE.
+
+All42 status columns remain unchanged. A7 now records a rejected eligibility design, not rejection of C-correction. Source/native/terrain hashes, deterministic masks/statistics/figures, focused safeguards, contracts/types, historical reports/tooling and113 production hashes are checked. Appearance science remains open/advanced and Swiss pixels parked. Exactly one next: **Retained Riffelhorn dark-source signal and texture-support assessment**; bounded source-encoding/recorded-detail evidence, no correction or acquisition. It has not begun.

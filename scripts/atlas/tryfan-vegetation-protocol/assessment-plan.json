@@ -1,0 +1,76 @@
+{
+  "revision": "tryfan-vegetation-population-assessment/v1",
+  "recordedBeforeNewPopulationStatistics": true,
+  "purpose": "Protocol assessment only; no normalization fitting, parameters or corrected arrays",
+  "studyEPSG27700": [
+    264900,
+    357800,
+    267900,
+    360800
+  ],
+  "coreEPSG27700": [
+    265900,
+    358800,
+    266900,
+    359800
+  ],
+  "analysisCellMetres": 10,
+  "boundaryGuardMetres": 20,
+  "boundaryRationale": "One native SCL20m cell width measured against native class-support geometry; reduces boundary mixture without guaranteeing purity or choosing a width by radiometry. Do not erode the artificial core boundary.",
+  "candidates": [
+    {
+      "id": "P1",
+      "rule": "Original finite positive RGB, SCL4, mu>=0.3, complete1km native terrain ray, no model blocker, and distance>=20m from native non-SCL4 support",
+      "meaning": "Broad dated processor vegetation only; diagnostic comparator"
+    },
+    {
+      "id": "P2",
+      "rule": "P1 AND native WorldCover2021 code30 grassland support with distance>=20m from non-code30 support",
+      "meaning": "Dated SCL vegetation plus older annual herbaceous-cover context; not current grass/material truth"
+    },
+    {
+      "id": "P3",
+      "rule": "P2 AND historical NRW Phase1 D.1.1 dry acid heath support, distance>=20m inside union of native non-mosaic D.1.1 polygons",
+      "meaning": "Historically habitat-stratified comparator; does not assert contemporary dry acid heath"
+    }
+  ],
+  "candidateChoice": "Compare semantic specificity first, not count/correlation optimization. No other mask, class or guard search. NRW D.1.1 chosen from the pre-existing documented summit heath case before new statistics.",
+  "spatialDesign": {
+    "blocksMetres": 100,
+    "quadrantsMetres": 500,
+    "folds": [
+      "NW",
+      "NE",
+      "SW",
+      "SE"
+    ],
+    "futureTrainGuardMetres": 100,
+    "minimumCellsPerOccupiedBlock": 20,
+    "lagDistancesMetres": [
+      10,
+      20,
+      50,
+      100,
+      200,
+      300
+    ],
+    "dependenceStatistic": "Descriptive eligible endpoint Pearson at E/N offsets; no exact effective sample size or independence claim"
+  },
+  "prospectiveFeasibilityGates": {
+    "minimumTotalCells": 400,
+    "minimumHeldoutCellsEachQuadrant": 100,
+    "minimumHeldoutOccupiedBlocksEachQuadrant": 4,
+    "minimumTrainingOccupiedBlocksAfterGuard": 12,
+    "minimumTrainingCellsAfterGuard": 300,
+    "minimumTrainingMuP95MinusP05": 0.2,
+    "minimumHeldoutMuP95MinusP05": 0.15,
+    "minimumHeldoutWithinTrainingP05P95Fraction": 0.8,
+    "minimumTrainingOccupiedBlockMedianMuP95MinusP05": 0.1
+  },
+  "gateRationale": "Design safeguards for two fitted coefficients per band and four spatial holdouts, not universal power thresholds or effective sample sizes. 20 is an occupied-block support guard, not a substitute for four dispersed heldout blocks. Failure of any gate stops a proposed experiment.",
+  "fixedOldProtocol": "scripts/atlas/illumination-assessment/future-evaluation.json",
+  "fixedOldProtocolSha256": "0e1b884bd64c94effffeb1cb024f01c6f385d87eda73f20fa134f0a2add5ca28",
+  "reusedGeometry": "Only read-only load/sun/rays from tryfan-illumination-normalization/experiment.py; no baseline/run writes",
+  "allowedDiagnostics": "Masks, counts, distributions, descriptive Pearson, texture, spectral ratios, connected components, spatial blocking and endpoint dependence; no regression coefficients or correction model fit",
+  "choiceAfterAssessment": "Can select a semantically justified candidate passing all predeclared gates; no new masks or softened gates after results. If none passes, record no-go."
+}

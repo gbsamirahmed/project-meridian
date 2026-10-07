@@ -630,10 +630,14 @@ appearance product is justified or published; source identity and unknown outcom
 separate. The [registration/epoch assessment](research/riffelhorn-registration-epoch.md) now
 completes that recommendation (**B - SCALE-CONDITIONAL CONSISTENCY**). Coordinate/preparation checks
 agree, while mixed epochs and ambiguous steep/dark controls limit fine physical matching. No
-registration correction is justified by proxy optima. Exactly one next task is **Retained Tryfan
-vegetation-only residual-normalization protocol assessment**;
-[scope/exit](research/riffelhorn-registration-epoch.md#27-exactly-one-next-bounded-task). It has not
-begun; assess a separate question/protocol or no-go, without changing the old criteria or running
-correction.
+registration correction is justified by proxy optima. The [vegetation-only protocol assessment](research/tryfan-vegetation-protocol.md)
+now completes that recommendation (**A - NOT JUSTIFIED**): three candidate masks/fixed spatial
+holdouts do not provide sufficient controlled support; counts do not prove current homogeneous
+vegetation. No model fitting, corrected bands or new executable correction protocol.
+Original1842008 remains INCONCLUSIVE; all42 status columns and old criteria remain unchanged.
+Exactly one next task is **Retained Riffelhorn dark-source signal and texture-support assessment**;
+[scope/exit](research/tryfan-vegetation-protocol.md#27-exactly-one-next-bounded-task).
+It has not begun. Source encoding/recorded detail, not brightening, correction, physical inference
+or another mask search. Swiss pixels remain parked.
 Open/parked appearance science remains non-blocking, not solved; Swiss pixels remain parked.
 Frozen contracts/current production remain unchanged.
