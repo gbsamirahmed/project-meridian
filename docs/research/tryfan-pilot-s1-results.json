@@ -1,0 +1,223 @@
+{
+  "assessment": "atlas-tryfan-pilot-s1-results/v1",
+  "decision": "C - S1 SUCCESS",
+  "logical": {
+    "capabilities": {
+      "derivations": false,
+      "mixedFamilyUpdate": false,
+      "queries": false,
+      "registration": true,
+      "serving": false
+    },
+    "catalogueBytes": 324627,
+    "catalogueSha256": "d1664f3f553a44478112e0fa8755c11f48ceb9c9d5e0d47e565cdb3b116d45ff",
+    "counts": {
+      "artifacts": 310,
+      "families": 5,
+      "products": 5,
+      "representations": 8,
+      "sources": 5
+    },
+    "format": "atlas-tryfan-pilot-store/v1",
+    "generationBytes": 343264,
+    "historicalPreserved": true,
+    "independentSeedGeneration": "14a6105c60241ba68c1f5765e2bec0f411cf4818d702ec34aacf8dc147edaab2",
+    "locatorMapSha256": "14d703d77c17cff88f06eb14eed753d06fbbc1a1594cd617292974f869faaf78",
+    "nextTask": "Tryfan pilot qualified native evidence readers and queries - S2 only",
+    "parent": "3408e5e9909c47b7e16d9d136f39cffa548c86808893468aa4a0de3d599c1f8c",
+    "planSha256": "d9b9c99cb5d0277998439bc51c28990643e6c0feb9c2361b0258ba46ca5ebf46",
+    "pointerBytes": 130,
+    "publishedGeneration": "2ffa20f9ac33123c3babb62381ba4559cbd045fb180d978a9ed6228514ed9b92",
+    "sourceInventorySha256": "1319aeca79ff767d2b8b8c24ca9cb99dbc77c6488ce3c6463ad9d1ea429d2102",
+    "verification": {
+      "artifacts": 310,
+      "bytes": 42473107
+    }
+  },
+  "measurements": {
+    "builds": [
+      {
+        "buildMilliseconds": 878.7116000000001,
+        "catalogueBytes": 324627,
+        "generation": "14a6105c60241ba68c1f5765e2bec0f411cf4818d702ec34aacf8dc147edaab2",
+        "generationBytes": 343202,
+        "pointerBytes": 130,
+        "processMilliseconds": 1162.3007,
+        "publicationMilliseconds": 4.19640000000004,
+        "rssBytes": 250900480,
+        "spawnWallMilliseconds": 1495.5269,
+        "validationMilliseconds": 216.07000000000016
+      },
+      {
+        "buildMilliseconds": 879.7945,
+        "catalogueBytes": 324627,
+        "generation": "14a6105c60241ba68c1f5765e2bec0f411cf4818d702ec34aacf8dc147edaab2",
+        "generationBytes": 343202,
+        "pointerBytes": 130,
+        "processMilliseconds": 1152.3891,
+        "publicationMilliseconds": 3.7295000000001437,
+        "rssBytes": 252141568,
+        "spawnWallMilliseconds": 1468.0981,
+        "validationMilliseconds": 216.22950000000014
+      },
+      {
+        "buildMilliseconds": 887.6200999999999,
+        "catalogueBytes": 324627,
+        "generation": "14a6105c60241ba68c1f5765e2bec0f411cf4818d702ec34aacf8dc147edaab2",
+        "generationBytes": 343202,
+        "pointerBytes": 130,
+        "processMilliseconds": 1155.1057999999998,
+        "publicationMilliseconds": 4.143299999999954,
+        "rssBytes": 335069184,
+        "spawnWallMilliseconds": 1373.5769999999998,
+        "validationMilliseconds": 213.59680000000003
+      },
+      {
+        "buildMilliseconds": 895.2955,
+        "catalogueBytes": 324627,
+        "generation": "14a6105c60241ba68c1f5765e2bec0f411cf4818d702ec34aacf8dc147edaab2",
+        "generationBytes": 343202,
+        "pointerBytes": 130,
+        "processMilliseconds": 1172.7819,
+        "publicationMilliseconds": 3.579300000000103,
+        "rssBytes": 340152320,
+        "spawnWallMilliseconds": 1385.9465,
+        "validationMilliseconds": 222.74929999999995
+      },
+      {
+        "buildMilliseconds": 890.3845,
+        "catalogueBytes": 324627,
+        "generation": "14a6105c60241ba68c1f5765e2bec0f411cf4818d702ec34aacf8dc147edaab2",
+        "generationBytes": 343202,
+        "pointerBytes": 130,
+        "processMilliseconds": 1161.7793000000001,
+        "publicationMilliseconds": 3.548599999999851,
+        "rssBytes": 243027968,
+        "spawnWallMilliseconds": 1472.2633000000005,
+        "validationMilliseconds": 212.21569999999997
+      }
+    ],
+    "buildsSummary": {
+      "buildMilliseconds": {
+        "max": 895.2955,
+        "median": 887.6200999999999,
+        "min": 878.7116000000001
+      },
+      "catalogueBytes": {
+        "max": 324627,
+        "median": 324627,
+        "min": 324627
+      },
+      "generationBytes": {
+        "max": 343202,
+        "median": 343202,
+        "min": 343202
+      },
+      "pointerBytes": {
+        "max": 130,
+        "median": 130,
+        "min": 130
+      },
+      "processMilliseconds": {
+        "max": 1172.7819,
+        "median": 1161.7793000000001,
+        "min": 1152.3891
+      },
+      "publicationMilliseconds": {
+        "max": 4.19640000000004,
+        "median": 3.7295000000001437,
+        "min": 3.548599999999851
+      },
+      "rssBytes": {
+        "max": 340152320,
+        "median": 252141568,
+        "min": 243027968
+      },
+      "spawnWallMilliseconds": {
+        "max": 1495.5269,
+        "median": 1468.0981,
+        "min": 1373.5769999999998
+      },
+      "validationMilliseconds": {
+        "max": 222.74929999999995,
+        "median": 216.07000000000016,
+        "min": 212.21569999999997
+      }
+    },
+    "conditions": {
+      "architecture": "x64",
+      "builds": "Five fresh Node processes and independent empty runtime stores; retained OS file cache not cleared",
+      "loads": "Five fresh Node processes against published generation with full310asset hash verification and parent metadata integrity",
+      "memory": "End-of-command process RSS, not peak RSS; Vite loader used only by construction",
+      "node": "v24.11.0",
+      "platform": "win32",
+      "warmFilesystemCache": true
+    },
+    "freshLoads": [
+      {
+        "generationBytes": 343264,
+        "loadMilliseconds": 248.4396,
+        "processMilliseconds": 248.66300000000004,
+        "rssBytes": 102764544,
+        "spawnWallMilliseconds": 430.2996000000003
+      },
+      {
+        "generationBytes": 343264,
+        "loadMilliseconds": 254.5316,
+        "processMilliseconds": 254.75730000000001,
+        "rssBytes": 103014400,
+        "spawnWallMilliseconds": 427.0619000000006
+      },
+      {
+        "generationBytes": 343264,
+        "loadMilliseconds": 243.957,
+        "processMilliseconds": 244.18859999999998,
+        "rssBytes": 102858752,
+        "spawnWallMilliseconds": 420.1748000000007
+      },
+      {
+        "generationBytes": 343264,
+        "loadMilliseconds": 251.38719999999998,
+        "processMilliseconds": 251.61699999999996,
+        "rssBytes": 103014400,
+        "spawnWallMilliseconds": 429.8554000000004
+      },
+      {
+        "generationBytes": 343264,
+        "loadMilliseconds": 251.81779999999998,
+        "processMilliseconds": 252.02890000000002,
+        "rssBytes": 103030784,
+        "spawnWallMilliseconds": 421.5595000000012
+      }
+    ],
+    "freshLoadsSummary": {
+      "generationBytes": {
+        "max": 343264,
+        "median": 343264,
+        "min": 343264
+      },
+      "loadMilliseconds": {
+        "max": 254.5316,
+        "median": 251.38719999999998,
+        "min": 243.957
+      },
+      "processMilliseconds": {
+        "max": 254.75730000000001,
+        "median": 251.61699999999996,
+        "min": 244.18859999999998
+      },
+      "rssBytes": {
+        "max": 103030784,
+        "median": 103014400,
+        "min": 102764544
+      },
+      "spawnWallMilliseconds": {
+        "max": 430.2996000000003,
+        "median": 427.0619000000006,
+        "min": 420.1748000000007
+      }
+    },
+    "outsideIdentity": true
+  },
+  "startingCheckpoint": "7809147ae86b14a19d195e0cdc9791b47caa59eb"
+}

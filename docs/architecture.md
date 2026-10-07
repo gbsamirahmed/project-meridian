@@ -655,16 +655,19 @@ The [programme acceptance](research/atlas-regional-pilot-acceptance.md) complete
 plus3 explicit unproven/excluded classes,42 thread dispositions and9 frozen admission gates.
 No demonstrated foundational blocker; integrated mixed-family publication/serving and operational
 measurements become pilot exit obligations. Admission does not mean the pilot exists or science is complete.
-The [bounded Tryfan pilot plan](research/tryfan-regional-pilot-plan.md) completes that recommendation
-(**C - IMPLEMENTABLE AS PLANNED**): the programme has entered the regional-pilot phase at
-`f16ce63`, with the same9 km² retained support, five evidence families, two derived chains,
-immutable local JSON generations and a generation-pinned read-only local HTTP/isolated consumer boundary.
-Twenty-one query cases, A-P acceptance and six ordered slices are frozen. U1 preserves the summit-only
-Welsh update; separate controlled U2 terrain/NRW registration and interruption/race tests address
-mixed-family publication. Integrated serving and mixed publication are still implementation exit
-tests, not demonstrated by a plan. No pilot implementation has begun; no final production stack is selected.
-Exactly one next task is **Tryfan pilot retained catalogue and immutable generation foundation**
-(S1 only); [scope/stop](research/tryfan-regional-pilot-plan.md#37-exactly-one-next-bounded-task).
+The [bounded Tryfan pilot plan](research/tryfan-regional-pilot-plan.md) at `7809147`
+(**C - IMPLEMENTABLE AS PLANNED**) defines six ordered slices following admission at `f16ce63`.
+The [S1 catalogue/generation foundation](research/tryfan-pilot-s1.md) is now **C - S1 SUCCESS**:
+five retained families,310 hash-verified artifacts/42.47MB, eight native/prepared representation
+references, immutable external JSON generations, one coherent root, explicit writer recovery and
+fresh-process/history/interruption tests. Median fresh hash-verifying load was251.39ms in the
+[local measurements](research/tryfan-pilot-s1-results.json); this is not a production SLA.
+Registration-only capabilities are explicit; no query, derivation, HTTP, client or later slice is
+implemented. Integrated serving and mixed-family scientific publication remain pilot exit tests.
+Production Atlas, Weather, Traverse, frozen contracts and retained evidence remain unchanged.
+Appearance remains unresolved/non-blocking and Swiss multiview parked; no final production stack.
+Exactly one next task: **Tryfan pilot qualified native evidence readers and queries - S2 only**,
+not begun; [scope/stop](research/tryfan-pilot-s1.md#31-exactly-one-next-bounded-task).
 It has not begun. Open appearance remains non-blocking research debt, not solved; Swiss multiview remains parked.
 A6-A11/A14 remain unresolved separately; Swiss pixels remain parked.
 Open/parked appearance science remains non-blocking, not solved; Swiss pixels remain parked.

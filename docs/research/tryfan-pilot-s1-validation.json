@@ -1,0 +1,920 @@
+{
+  "anchors": 55,
+  "artifactSha256": {
+    "docs/research/tryfan-pilot-s1-results.json": "aed031cec89a82b7c6c4e9cb45afb892fb437ede435251d187ae26e0eb67de6f",
+    "docs/research/tryfan-pilot-s1.md": "acfe5160a3eb024ab0d0cd14f9502842eb552872683e6738e7c2c855079d99e2"
+  },
+  "assessment": "atlas-tryfan-pilot-s1-validation/v1",
+  "canonicalThreads": 42,
+  "changedPaths": [
+    "docs/architecture.md",
+    "docs/development-log.md",
+    "docs/product-direction.md",
+    "docs/research/atlas-research-map.md",
+    "docs/research/atlas-research-state.md",
+    "docs/research/tryfan-pilot-s1-results.json",
+    "docs/research/tryfan-pilot-s1-validation.json",
+    "docs/research/tryfan-pilot-s1.md",
+    "pilots/atlas/tryfan/README.md",
+    "pilots/atlas/tryfan/catalogue.mjs",
+    "pilots/atlas/tryfan/cli.mjs",
+    "pilots/atlas/tryfan/generations.mjs",
+    "pilots/atlas/tryfan/identity.mjs",
+    "pilots/atlas/tryfan/measure_s1.mjs",
+    "pilots/atlas/tryfan/tests/catalogue.test.mjs",
+    "pilots/atlas/tryfan/tests/worker.mjs",
+    "pilots/atlas/tryfan/validate_s1.py"
+  ],
+  "checks": [
+    {
+      "check": "expected7809147checkpoint ancestor",
+      "passed": true
+    },
+    {
+      "check": "existing main upstream and0/0 precommit",
+      "passed": true
+    },
+    {
+      "check": "unchanged frozen plan structure",
+      "passed": true
+    },
+    {
+      "check": "authoritative pin TH",
+      "passed": true
+    },
+    {
+      "check": "authoritative pin RUNTIME",
+      "passed": true
+    },
+    {
+      "check": "authoritative pin WALES",
+      "passed": true
+    },
+    {
+      "check": "authoritative pin V1",
+      "passed": true
+    },
+    {
+      "check": "authoritative pin LIFE",
+      "passed": true
+    },
+    {
+      "check": "authoritative pin MODEL",
+      "passed": true
+    },
+    {
+      "check": "authoritative pin QUERY",
+      "passed": true
+    },
+    {
+      "check": "authoritative pin REQ",
+      "passed": true
+    },
+    {
+      "check": "authoritative pin PERSIST",
+      "passed": true
+    },
+    {
+      "check": "authoritative pin WC",
+      "passed": true
+    },
+    {
+      "check": "authoritative pin APP",
+      "passed": true
+    },
+    {
+      "check": "authoritative pin EXE",
+      "passed": true
+    },
+    {
+      "check": "authoritative pin DATED",
+      "passed": true
+    },
+    {
+      "check": "authoritative pin atlas-regional-pilot-acceptance.md",
+      "passed": true
+    },
+    {
+      "check": "authoritative pin docs/atlas/semantic-comparison-plan.json",
+      "passed": true
+    },
+    {
+      "check": "authoritative pin docs/atlas/semantic-comparison-results.json",
+      "passed": true
+    },
+    {
+      "check": "authoritative pin docs/atlas/semantic-comparison-sources.json",
+      "passed": true
+    },
+    {
+      "check": "authoritative pin docs/atlas/tryfan-second-region-proof.json",
+      "passed": true
+    },
+    {
+      "check": "authoritative pin docs/earth-lab/tryfan-005c-temporal-evidence.json",
+      "passed": true
+    },
+    {
+      "check": "authoritative pin docs/earth-lab/tryfan-010-observed-natural-colour.json",
+      "passed": true
+    },
+    {
+      "check": "authoritative pin scripts/atlas/semantic-evidence/fixtures.ts",
+      "passed": true
+    },
+    {
+      "check": "authoritative pin scripts/atlas/worldcover-binding-proof/runtime.mjs",
+      "passed": true
+    },
+    {
+      "check": "authoritative pin src/atlas/terrain/metadata/awsVisualTerrainProduct.ts",
+      "passed": true
+    },
+    {
+      "check": "authoritative pin src/atlas/terrain/metadata/tryfanProductRecord.json",
+      "passed": true
+    },
+    {
+      "check": "authoritative pin src/atlas/terrain/metadata/tryfanTerrainProof.ts",
+      "passed": true
+    },
+    {
+      "check": "retained37proof/50capability/9PASS admission",
+      "passed": true
+    },
+    {
+      "check": "1575 admission sources unchanged",
+      "passed": true
+    },
+    {
+      "check": "all113 protected production hashes",
+      "passed": true
+    },
+    {
+      "check": "seven frozen semantic files",
+      "passed": true
+    },
+    {
+      "check": "production Atlas Weather Traverse frozen docs packages unchanged",
+      "passed": true
+    },
+    {
+      "check": "all42 historical status columns unchanged",
+      "passed": true
+    },
+    {
+      "check": "all42 admission dispositions and Swiss parked preserved",
+      "passed": true
+    },
+    {
+      "check": "development log append only",
+      "passed": true
+    },
+    {
+      "check": "every prior report research asset and tool unchanged including frozen plan receipts",
+      "passed": true
+    },
+    {
+      "check": "22 S1 public interface retained/restart/failure tests",
+      "passed": true
+    },
+    {
+      "check": "22 S1 tests counted",
+      "passed": true
+    },
+    {
+      "check": "existing22 planning invariants",
+      "passed": true
+    },
+    {
+      "check": "22 planning safeguards counted",
+      "passed": true
+    },
+    {
+      "check": "64 frozen domain tests",
+      "passed": true
+    },
+    {
+      "check": "frozen semantic isolated TypeScript",
+      "passed": true
+    },
+    {
+      "check": "genuine external published state recovered by independent CLI",
+      "passed": true
+    },
+    {
+      "check": "registration only capability boundary",
+      "passed": true
+    },
+    {
+      "check": "exact frozen310file inventory no expansion or substitution",
+      "passed": true
+    },
+    {
+      "check": "measurement logical receipt matches current generation/catalogue",
+      "passed": true
+    },
+    {
+      "check": "five independent builds and fresh loads recorded outside identity",
+      "passed": true
+    },
+    {
+      "check": "genuine previous generation remains independently recoverable",
+      "passed": true
+    },
+    {
+      "check": "31 required implementation report sections",
+      "passed": true
+    },
+    {
+      "check": "S1 result and one next slice docs/research/atlas-research-map.md",
+      "passed": true
+    },
+    {
+      "check": "S1 result and one next slice docs/research/atlas-research-state.md",
+      "passed": true
+    },
+    {
+      "check": "S1 result and one next slice docs/development-log.md",
+      "passed": true
+    },
+    {
+      "check": "S1 result and one next slice docs/product-direction.md",
+      "passed": true
+    },
+    {
+      "check": "S1 result and one next slice docs/architecture.md",
+      "passed": true
+    },
+    {
+      "check": "report explicit limits and remaining admission tests",
+      "passed": true
+    },
+    {
+      "check": "S1 only changed files no later slice modules",
+      "passed": true
+    },
+    {
+      "check": "no large/duplicate/runtime payload tracked",
+      "passed": true
+    },
+    {
+      "check": "no HTTP/native-reader/derived runtime modules created",
+      "passed": true
+    },
+    {
+      "check": "all new report/navigation/tooling references and anchors",
+      "passed": true
+    },
+    {
+      "check": "canonical reference H1 ../development-log.md#2026-09-02--high-resolution-welsh-terrain-experiment-v1",
+      "passed": true
+    },
+    {
+      "check": "canonical reference H1 ../development-log.md#2026-09-02--high-resolution-terrain-generalisation-experiment-v2",
+      "passed": true
+    },
+    {
+      "check": "canonical reference H1 ../../scripts/terrain_research/README.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference H2 ../../scripts/earth_lab/README.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference H2 ../earth-lab/tryfan-004b-photo-fit.json",
+      "passed": true
+    },
+    {
+      "check": "canonical reference H2 ../development-log.md#2026-09-24--meridian-earth-laboratory-004b-quantitative-alignment",
+      "passed": true
+    },
+    {
+      "check": "canonical reference H3 ../earth-lab/tryfan-005a-surface-analysis.json",
+      "passed": true
+    },
+    {
+      "check": "canonical reference H3 ../development-log.md#2026-09-24--meridian-earth-laboratory-005a-terrain-derived-surface-analysis",
+      "passed": true
+    },
+    {
+      "check": "canonical reference H3 atlas-derived-understanding-lifecycle.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference H4 ../earth-lab/tryfan-005b-sentinel2.json",
+      "passed": true
+    },
+    {
+      "check": "canonical reference H4 ../earth-lab/tryfan-005c-temporal-evidence.json",
+      "passed": true
+    },
+    {
+      "check": "canonical reference H4 ../development-log.md#2026-09-25--meridian-earth-laboratory-005c-temporal-surface-evidence",
+      "passed": true
+    },
+    {
+      "check": "canonical reference H4 ../earth-lab/tryfan-010-observed-natural-colour.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference H5 ../earth-lab/tryfan-006-contextual-evidence.json",
+      "passed": true
+    },
+    {
+      "check": "canonical reference H5 ../earth-lab/tryfan-007-underlying-surface.json",
+      "passed": true
+    },
+    {
+      "check": "canonical reference H5 ../earth-lab/tryfan-008-uncertainty-audit.json",
+      "passed": true
+    },
+    {
+      "check": "canonical reference H5 ../development-log.md#2026-09-25--meridian-earth-laboratory-007-uncertain-underlying-surface",
+      "passed": true
+    },
+    {
+      "check": "canonical reference H6 ../earth-lab/tryfan-009-surface-reconstruction.json",
+      "passed": true
+    },
+    {
+      "check": "canonical reference H6 ../development-log.md#2026-09-28--meridian-earth-laboratory-009-reconstruction-v01",
+      "passed": true
+    },
+    {
+      "check": "canonical reference H7 ../earth-lab/tryfan-011-observed-surface-height.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference H7 ../earth-lab/riffelhorn-012b-mountain-reconstruction.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference H8 ../earth-lab/riffelhorn-012c-raw-lidar-retention.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference H8 ../earth-lab/riffelhorn-012d-adaptive-cliff-heightfield.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference H8 ../earth-lab/riffelhorn-012e-robust-cliff-heightfield.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference H8 ../earth-lab/atlas-terrain-representation-synthesis.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference T1 ../atlas/tryfan-lidar-reconnaissance.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference T1 ../atlas/global-terrain-foundation-evaluation.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference T1 ../atlas/riffelhorn-regional-terrain-prototype.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference T1 ../atlas/tryfan-second-region-proof.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference T2 ../atlas/terrain-source-product-architecture.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference T2 ../atlas/terrain-hierarchy-contract.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference T2 ../atlas/terrain-runtime-selection.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference T2 ../atlas/tryfan-second-region-proof.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference T3 ../atlas/terrain-hierarchy-prototype.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference T3 ../atlas/regional-parent-diagnostic.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference T4 ../atlas/riffelhorn-swiss-support-product.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference T4 ../atlas/global-reference-assessment.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference T4 ../atlas/copernicus-common-product.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference T5 ../atlas/riffelhorn-terrain-reconciliation.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference T5 ../atlas/global-reference-assessment.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference T5 ../atlas/spatial-terrain-reconciliation-research.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference T6 ../atlas/seam-corridor-feasibility.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference T6 ../atlas/support-extent-assessment.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference T6 ../atlas/terrain-scale-decomposition.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference T7 ../atlas/riffelhorn-terrain-reconciliation.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference T7 ../atlas/protected-priority-two-band-transition.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference T8 ../earth-lab/atlas-terrain-representation-synthesis.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference T8 ../atlas/physical-surface-semantics.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A1 ../earth-lab/bluesky-012a-aerial-reconstruction.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A1 ../earth-lab/riffelhorn-012b-mountain-reconstruction.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A1 ../atlas/swissimage-source-derived-baseline.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A2 ../atlas/appearance-baseline-and-architecture.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A2 ../atlas/swissimage-source-derived-baseline.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A2 atlas-world-model-architecture-synthesis.md#11-appearance-model-and-unresolved-programme",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A2 riffelhorn-appearance-assessment.md#24-architecture-consequence",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A3 ../earth-lab/riffelhorn-012g-projection-and-illumination.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A3 ../atlas/swissimage-source-derived-baseline.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A4 ../atlas/riffelhorn-data-discovery.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A4 ../atlas/appearance-baseline-and-architecture.md#bounded-methods-review--external-evidence",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A5 ../earth-lab/riffelhorn-visual-synthesis-and-experiment-design.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A5 ../earth-lab/riffelhorn-012f-terrain-lighting.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A5 ../earth-lab/riffelhorn-012g-projection-and-illumination.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A5 ../atlas/swissimage-source-derived-baseline.md#source-darkness-versus-atlas-display--meridian-evidence",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A5 riffelhorn-dark-source-signal.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A5 riffelhorn-display-transfer.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A6 ../earth-lab/tryfan-005c-temporal-evidence.json",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A6 literature/terrain-representation.md#acquisition-sun-and-illumination-reconstruction",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A6 ../atlas/riffelhorn-observation-support.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A6 illumination-identifiability.md#20-known-reconstructible-inferable-and-unidentifiable-quantities",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A7 ../earth-lab/riffelhorn-012g-projection-and-illumination.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A7 literature/terrain-representation.md#topographic-correction",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A7 ../atlas/appearance-baseline-and-architecture.md#ranked-questions-requiring-experiment",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A7 illumination-identifiability.md#22-is-a-correction-experiment-justified",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A7 tryfan-illumination-normalization.md#25-decision-abcd",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A7 tryfan-vegetation-protocol.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A8 ../atlas/appearance-baseline-and-architecture.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A8 ../atlas/swissimage-source-derived-baseline.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A9 literature/terrain-representation.md#inverse-rendering-and-albedo-recovery",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A9 literature/terrain-representation.md#olbedo-2026",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A9 ../atlas/appearance-baseline-and-architecture.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A10 literature/terrain-representation.md#view-dependent-appearance",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A10 ../atlas/appearance-baseline-and-architecture.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A11 ../earth-lab/riffelhorn-012f-terrain-lighting.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A11 literature/terrain-representation.md#inverse-rendering-and-albedo-recovery",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A11 ../atlas/native-relief-evaluation.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A12 ../atlas/riffelhorn-observation-support.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A13 ../atlas/swiss-multiview-benchmark.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A13 ../atlas/swiss-multiview-input-manifest.json",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A14 literature/terrain-representation.md#multiview-texture-reconstruction",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A14 ../atlas/swiss-multiview-benchmark.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A15 ../atlas/riffelhorn-data-discovery.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A15 ../earth-lab/bluesky-012a-aerial-reconstruction.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A15 ../earth-lab/riffelhorn-012b-mountain-reconstruction.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A15 ../atlas/appearance-baseline-and-architecture.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference A15 riffelhorn-registration-epoch.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference M1 ../atlas/multiscale-representation.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference M2 ../atlas/scale-separated-relief.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference M3 ../atlas/information-aware-display-selection.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference M4 ../atlas/information-aware-display-selection.md#programme-synthesis-and-closure",
+      "passed": true
+    },
+    {
+      "check": "canonical reference M4 ../earth-lab/riffelhorn-012g-projection-and-illumination.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference S1 ../atlas/physical-surface-semantics.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference S1 ../atlas/physical-surface-sources.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference S1 ../atlas/source-native-semantic-comparison.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference S2 ../atlas/water-feature-state-check.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference S3 ../atlas/semantic-evidence-contract.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference S3 ../atlas/semantic-evidence-contract-validation.json",
+      "passed": true
+    },
+    {
+      "check": "canonical reference S4 ../atlas/source-native-semantic-comparison.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference S4 ../atlas/water-feature-state-check.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference S4 ../atlas/semantic-evidence-contract.md#physical-surface-synthesis-and-closure",
+      "passed": true
+    },
+    {
+      "check": "canonical reference S5 ../atlas/source-native-semantic-comparison.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference S5 ../atlas/water-feature-state-check.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference S5 exe-water-query-proof.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference S6 atlas-derived-understanding-lifecycle.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference S6 ../atlas/water-feature-state-check.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference S6 ../atlas/semantic-evidence-contract.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference S6 tryfan-qualified-query-proof.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference S6 atlas-world-model-architecture-synthesis.md#14-dependency-revision-and-freshness-model",
+      "passed": true
+    },
+    {
+      "check": "canonical reference S6 exe-water-query-proof.md",
+      "passed": true
+    },
+    {
+      "check": "canonical reference S7 atlas-derived-understanding-lifecycle.md#e--richer-structure-context",
+      "passed": true
+    },
+    {
+      "check": "canonical reference S7 ../atlas/water-feature-state-check.md",
+      "passed": true
+    },
+    {
+      "check": "working diff whitespace",
+      "passed": true
+    },
+    {
+      "check": "staged diff whitespace",
+      "passed": true
+    },
+    {
+      "check": "new Markdown whitespace",
+      "passed": true
+    }
+  ],
+  "codeSha256": {
+    "pilots/atlas/tryfan/README.md": "c4b4202b75de9144ae668e8f2151e73ff9a2820ec1469fb5ca67774a3bfb0978",
+    "pilots/atlas/tryfan/catalogue.mjs": "c8d52c9355bc030ae0e97f8767cb62088830606acdc39c6b32fb09e6edcbe52b",
+    "pilots/atlas/tryfan/cli.mjs": "f8cd012b7694b21c448bcfa4adf67597896f18cd43e3e75a0caea7ff60756db4",
+    "pilots/atlas/tryfan/generations.mjs": "cb6bc647fbe4ba8fc2534cb0f2d1f6966e7540b4d22581b74d37f4b86ae8f646",
+    "pilots/atlas/tryfan/identity.mjs": "04eaf65fa268a6ad875cadb4dfe04ee6892686844069555186f05d3858ddc5f2",
+    "pilots/atlas/tryfan/measure_s1.mjs": "17aba420be8bd4267ca648ff23b979fd824343a8320e760b4bd814b8ec72c85f",
+    "pilots/atlas/tryfan/tests/catalogue.test.mjs": "86a1fc6c6cfce55c55dbd91cfbec8b3275df17481f95bbb086ae5e07fcf496a4",
+    "pilots/atlas/tryfan/tests/worker.mjs": "325ddaaf6e9f0d4c34482a8578c698ec370c9157d7c69857839171cc05b9a14d",
+    "pilots/atlas/tryfan/validate_s1.py": "0760d4f241d255413f8de347a8e3fa4cb313d0b65444b88d91ee5cb4d8ba651f"
+  },
+  "commands": [
+    {
+      "check": "22 S1 public interface retained/restart/failure tests",
+      "command": [
+        "node",
+        "--test",
+        "pilots/atlas/tryfan/tests/catalogue.test.mjs"
+      ],
+      "exitCode": 0
+    },
+    {
+      "check": "existing22 planning invariants",
+      "command": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/regional-pilot-plan/test_plan.py"
+      ],
+      "exitCode": 0
+    },
+    {
+      "check": "64 frozen domain tests",
+      "command": [
+        "node",
+        "--test",
+        "scripts/atlas/test_semantic_evidence_contract.mjs",
+        "scripts/atlas/test_terrain_hierarchy_contract.mjs",
+        "scripts/atlas/test_terrain_runtime.mjs",
+        "scripts/atlas/test_tryfan_terrain.mjs"
+      ],
+      "exitCode": 0
+    },
+    {
+      "check": "frozen semantic isolated TypeScript",
+      "command": [
+        "npx.cmd",
+        "tsc",
+        "-p",
+        "scripts/atlas/semantic-evidence/tsconfig.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "check": "working diff whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0
+    },
+    {
+      "check": "staged diff whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "confirmations": {
+    "appearanceUnresolvedNonBlocking": true,
+    "noFrozenChanges": true,
+    "noNewData": true,
+    "noPrivateAccess": true,
+    "noProductionChanges": true,
+    "noRetainedMutation": true,
+    "noS2OrLater": true,
+    "swissMultiviewParked": true
+  },
+  "decision": "C - S1 SUCCESS",
+  "errors": [],
+  "frozenSemanticHashes": 7,
+  "historicalMismatches": [],
+  "localReferences": 471,
+  "missingReferences": [],
+  "nextTask": "Tryfan pilot qualified native evidence readers and queries - S2 only; not begun",
+  "previousGeneration": "3408e5e9909c47b7e16d9d136f39cffa548c86808893468aa4a0de3d599c1f8c",
+  "priorAdmissionSourceVerification": {
+    "groups": {
+      "Complete retained Exe directory": {
+        "bytes": 10295691,
+        "files": 66,
+        "verifiedEntriesSha256": "7043358dd1d3c10efe1b3483ac65e6ec2b5d2c637c4eff5f3d7a6df77082794a"
+      },
+      "July native post-L2A RGB and SCL": {
+        "bytes": 714544,
+        "files": 4,
+        "verifiedEntriesSha256": "c91c42dcad464a78a200ee6ef0a945e0b246eff75830efa2b8ed6e10a47e060f"
+      },
+      "Lab010 existing natural-colour preparation": {
+        "bytes": 1305121,
+        "files": 3,
+        "verifiedEntriesSha256": "86edf76941cbf6b48bc49e198dceb3f64debd0a7200ab3c83df32d06823113ee"
+      },
+      "Parked Swiss metadata only": {
+        "bytes": 19357606,
+        "files": 112,
+        "verifiedEntriesSha256": "e0179dbb4695a66bbf3cb61f2a215d88dc45bdcfd9c09e886da9fd0c9d6fc2cc"
+      },
+      "Pinned Exe sources/documents": {
+        "bytes": 9892590,
+        "files": 31,
+        "verifiedEntriesSha256": "0e1301af8fcdb00f126ba2886216b2a96bfdd68de71e14c6079beece12e6342a"
+      },
+      "SWISSIMAGE manifest": {
+        "bytes": 218993,
+        "files": 1,
+        "verifiedEntriesSha256": "9e3dcb15bd21260896eab7be966f8fdc59cf2e729ecc952fbc60f489c4873225"
+      },
+      "SWISSIMAGE prepared": {
+        "bytes": 1564233043,
+        "files": 1084,
+        "verifiedEntriesSha256": "944ee3136c7ac91224b59ec369fd8bc90e4bbd299a51b65d6a09a8395a35a327"
+      },
+      "SWISSIMAGE source": {
+        "bytes": 186259028,
+        "files": 4,
+        "verifiedEntriesSha256": "9edd9aaf20eb3481b5b9aec077e715d1d350d73cd4885474cac24cabeec5f203"
+      },
+      "Tryfan native semantic crop and habitat": {
+        "bytes": 563835,
+        "files": 2,
+        "verifiedEntriesSha256": "1d4388d183544fd3a135bde05dece5b6950bfcd77e969c2ef518cd5df98d5771"
+      },
+      "Tryfan source and pinned common samples": {
+        "bytes": 16046943,
+        "files": 5,
+        "verifiedEntriesSha256": "16bbf4ef3222be6619ccfb316e0d5b8e7c86a117476d14d98fae76c61a222e1d"
+      },
+      "Welsh prepared terrain": {
+        "bytes": 23889573,
+        "files": 295,
+        "verifiedEntriesSha256": "6091994b08ed611dd1a44d4be1700f2858d9eb197a5c248189f97a5256f2b593"
+      }
+    },
+    "noWritesOrAcquisition": true,
+    "uniqueFiles": 1575
+  },
+  "protectedProductionHashes": 113,
+  "publishedGeneration": "2ffa20f9ac33123c3babb62381ba4559cbd045fb180d978a9ed6228514ed9b92",
+  "retainedSourceVerification": {
+    "artifacts": 310,
+    "bytes": 42473107
+  },
+  "startingCheckpoint": "7809147ae86b14a19d195e0cdc9791b47caa59eb",
+  "unchangedHistoricalFiles": 575
+}

@@ -4203,3 +4203,30 @@ is selected. Open appearance remains non-blocking debt and Swiss multiview remai
 Exactly one next bounded task: **Tryfan pilot retained catalogue and immutable generation foundation**,
 S1 only; not begun. Register exact five-family identity/support/time/rights references and persist a
 registration-only seed with restart/schema/hash/atomic-root tests; no query/derivation/HTTP/client yet.
+
+
+## 2026-10-07 - Tryfan pilot S1 retained catalogue and immutable generation foundation
+
+Started clean main at `7809147`; fetched origin/main and confirmed0/0 divergence. The
+[S1 report](research/tryfan-pilot-s1.md) records **C - S1 SUCCESS**. Five frozen retained families,
+310 assets/42,473,107 bytes, five sources/products and eight native/prepared representation
+references now register under `pilots/atlas/tryfan/`. Reused frozen terrain/semantic metadata and
+validators, original rights/time/support and source identity; all retained files stay external.
+
+Registration-only immutable JSON generations, external locators, exclusive writer lock, staged
+validation and one atomic current-pointer switch survive fresh process loading. Historical
+metadata refinement is an administrative successor, not a fabricated source release. Real abrupt
+exits at three points preserve old root; explicit dead-owner recovery and retry work. No query,
+derivation/freshness, HTTP, client or S2-S6 runtime begun. No production code, frozen contract,
+Weather, Traverse or retained evidence change. Appearance remains non-blocking debt; Swiss parked.
+
+[Measurements](research/tryfan-pilot-s1-results.json):catalogue324,627 bytes, current generation343,264,
+root130; five fresh builds median887.62ms, validation216.07ms, root switch3.73ms; fresh verified
+load251.39ms. Local warm-filesystem observations, not production SLAs. [Validation](research/tryfan-pilot-s1-validation.json)
+covers22 S1 tests,22 planning safeguards,64 frozen domain tests, deterministic retained construction,
+all42 status columns, historical reports/scripts, source hashes and113 protected production hashes.
+The historical planning no-implementation check remains historical; stage-aware S1 validation
+preserves/reuses the frozen planning structure and source invariants. No architecture deviation.
+
+Exactly one next task: **Tryfan pilot qualified native evidence readers and queries - S2 only**;
+not begun. Integrated serving and mixed-family scientific publication remain later pilot acceptance.
