@@ -1,0 +1,770 @@
+{
+  "proof": "exe-qualified-water/v1",
+  "startingCheckpoint": "b85c296ba480a3d26159a759f1d26d829efc2f50",
+  "frozenBeforeNewQueryEvaluation": true,
+  "sourcePlanSha256": "04a9deefbf7ae763268ff9d0974624239c5f02b12ec688fd36927f26a94f2415",
+  "crs": "EPSG:27700",
+  "bounds": [
+    295000,
+    86000,
+    298500,
+    89000
+  ],
+  "queries": [
+    {
+      "id": "P1-wfd",
+      "kind": "wfd",
+      "point": [
+        296700.0,
+        86650.0
+      ],
+      "probe": "P1"
+    },
+    {
+      "id": "P1-phi",
+      "kind": "phi",
+      "point": [
+        296700.0,
+        86650.0
+      ],
+      "probe": "P1"
+    },
+    {
+      "id": "P1-flood",
+      "kind": "flood",
+      "point": [
+        296700.0,
+        86650.0
+      ],
+      "probe": "P1"
+    },
+    {
+      "id": "P1-rfo",
+      "kind": "rfo",
+      "point": [
+        296700.0,
+        86650.0
+      ],
+      "probe": "P1"
+    },
+    {
+      "id": "P1-point-2024-03",
+      "kind": "detection",
+      "point": [
+        296700.0,
+        86650.0
+      ],
+      "month": "2024-03"
+    },
+    {
+      "id": "P1-support-2024-03",
+      "kind": "detection",
+      "bounds": [
+        296600,
+        86550,
+        296800,
+        86750
+      ],
+      "month": "2024-03"
+    },
+    {
+      "id": "P1-point-2024-09",
+      "kind": "detection",
+      "point": [
+        296700.0,
+        86650.0
+      ],
+      "month": "2024-09"
+    },
+    {
+      "id": "P1-support-2024-09",
+      "kind": "detection",
+      "bounds": [
+        296600,
+        86550,
+        296800,
+        86750
+      ],
+      "month": "2024-09"
+    },
+    {
+      "id": "P1-compare",
+      "kind": "compare",
+      "bounds": [
+        296600,
+        86550,
+        296800,
+        86750
+      ],
+      "months": [
+        "2024-03",
+        "2024-09"
+      ]
+    },
+    {
+      "id": "P1-coexist",
+      "kind": "coexist",
+      "point": [
+        296700.0,
+        86650.0
+      ]
+    },
+    {
+      "id": "P1-current",
+      "kind": "current",
+      "point": [
+        296700.0,
+        86650.0
+      ],
+      "time": "2026-10-07"
+    },
+    {
+      "id": "P2-wfd",
+      "kind": "wfd",
+      "point": [
+        296850.0,
+        87100.0
+      ],
+      "probe": "P2"
+    },
+    {
+      "id": "P2-phi",
+      "kind": "phi",
+      "point": [
+        296850.0,
+        87100.0
+      ],
+      "probe": "P2"
+    },
+    {
+      "id": "P2-flood",
+      "kind": "flood",
+      "point": [
+        296850.0,
+        87100.0
+      ],
+      "probe": "P2"
+    },
+    {
+      "id": "P2-rfo",
+      "kind": "rfo",
+      "point": [
+        296850.0,
+        87100.0
+      ],
+      "probe": "P2"
+    },
+    {
+      "id": "P2-point-2024-03",
+      "kind": "detection",
+      "point": [
+        296850.0,
+        87100.0
+      ],
+      "month": "2024-03"
+    },
+    {
+      "id": "P2-support-2024-03",
+      "kind": "detection",
+      "bounds": [
+        296750,
+        87000,
+        296950,
+        87200
+      ],
+      "month": "2024-03"
+    },
+    {
+      "id": "P2-point-2024-09",
+      "kind": "detection",
+      "point": [
+        296850.0,
+        87100.0
+      ],
+      "month": "2024-09"
+    },
+    {
+      "id": "P2-support-2024-09",
+      "kind": "detection",
+      "bounds": [
+        296750,
+        87000,
+        296950,
+        87200
+      ],
+      "month": "2024-09"
+    },
+    {
+      "id": "P2-compare",
+      "kind": "compare",
+      "bounds": [
+        296750,
+        87000,
+        296950,
+        87200
+      ],
+      "months": [
+        "2024-03",
+        "2024-09"
+      ]
+    },
+    {
+      "id": "P2-coexist",
+      "kind": "coexist",
+      "point": [
+        296850.0,
+        87100.0
+      ]
+    },
+    {
+      "id": "P2-current",
+      "kind": "current",
+      "point": [
+        296850.0,
+        87100.0
+      ],
+      "time": "2026-10-07"
+    },
+    {
+      "id": "P3-wfd",
+      "kind": "wfd",
+      "point": [
+        297150.0,
+        87350.0
+      ],
+      "probe": "P3"
+    },
+    {
+      "id": "P3-phi",
+      "kind": "phi",
+      "point": [
+        297150.0,
+        87350.0
+      ],
+      "probe": "P3"
+    },
+    {
+      "id": "P3-flood",
+      "kind": "flood",
+      "point": [
+        297150.0,
+        87350.0
+      ],
+      "probe": "P3"
+    },
+    {
+      "id": "P3-rfo",
+      "kind": "rfo",
+      "point": [
+        297150.0,
+        87350.0
+      ],
+      "probe": "P3"
+    },
+    {
+      "id": "P3-point-2024-03",
+      "kind": "detection",
+      "point": [
+        297150.0,
+        87350.0
+      ],
+      "month": "2024-03"
+    },
+    {
+      "id": "P3-support-2024-03",
+      "kind": "detection",
+      "bounds": [
+        297050,
+        87250,
+        297250,
+        87450
+      ],
+      "month": "2024-03"
+    },
+    {
+      "id": "P3-point-2024-09",
+      "kind": "detection",
+      "point": [
+        297150.0,
+        87350.0
+      ],
+      "month": "2024-09"
+    },
+    {
+      "id": "P3-support-2024-09",
+      "kind": "detection",
+      "bounds": [
+        297050,
+        87250,
+        297250,
+        87450
+      ],
+      "month": "2024-09"
+    },
+    {
+      "id": "P3-compare",
+      "kind": "compare",
+      "bounds": [
+        297050,
+        87250,
+        297250,
+        87450
+      ],
+      "months": [
+        "2024-03",
+        "2024-09"
+      ]
+    },
+    {
+      "id": "P3-coexist",
+      "kind": "coexist",
+      "point": [
+        297150.0,
+        87350.0
+      ]
+    },
+    {
+      "id": "P3-current",
+      "kind": "current",
+      "point": [
+        297150.0,
+        87350.0
+      ],
+      "time": "2026-10-07"
+    },
+    {
+      "id": "P4-wfd",
+      "kind": "wfd",
+      "point": [
+        297650.0,
+        87600.0
+      ],
+      "probe": "P4"
+    },
+    {
+      "id": "P4-phi",
+      "kind": "phi",
+      "point": [
+        297650.0,
+        87600.0
+      ],
+      "probe": "P4"
+    },
+    {
+      "id": "P4-flood",
+      "kind": "flood",
+      "point": [
+        297650.0,
+        87600.0
+      ],
+      "probe": "P4"
+    },
+    {
+      "id": "P4-rfo",
+      "kind": "rfo",
+      "point": [
+        297650.0,
+        87600.0
+      ],
+      "probe": "P4"
+    },
+    {
+      "id": "P4-point-2024-03",
+      "kind": "detection",
+      "point": [
+        297650.0,
+        87600.0
+      ],
+      "month": "2024-03"
+    },
+    {
+      "id": "P4-support-2024-03",
+      "kind": "detection",
+      "bounds": [
+        297550,
+        87500,
+        297750,
+        87700
+      ],
+      "month": "2024-03"
+    },
+    {
+      "id": "P4-point-2024-09",
+      "kind": "detection",
+      "point": [
+        297650.0,
+        87600.0
+      ],
+      "month": "2024-09"
+    },
+    {
+      "id": "P4-support-2024-09",
+      "kind": "detection",
+      "bounds": [
+        297550,
+        87500,
+        297750,
+        87700
+      ],
+      "month": "2024-09"
+    },
+    {
+      "id": "P4-compare",
+      "kind": "compare",
+      "bounds": [
+        297550,
+        87500,
+        297750,
+        87700
+      ],
+      "months": [
+        "2024-03",
+        "2024-09"
+      ]
+    },
+    {
+      "id": "P4-coexist",
+      "kind": "coexist",
+      "point": [
+        297650.0,
+        87600.0
+      ]
+    },
+    {
+      "id": "P4-current",
+      "kind": "current",
+      "point": [
+        297650.0,
+        87600.0
+      ],
+      "time": "2026-10-07"
+    },
+    {
+      "id": "P5-wfd",
+      "kind": "wfd",
+      "point": [
+        295800.0,
+        87150.0
+      ],
+      "probe": "P5"
+    },
+    {
+      "id": "P5-phi",
+      "kind": "phi",
+      "point": [
+        295800.0,
+        87150.0
+      ],
+      "probe": "P5"
+    },
+    {
+      "id": "P5-flood",
+      "kind": "flood",
+      "point": [
+        295800.0,
+        87150.0
+      ],
+      "probe": "P5"
+    },
+    {
+      "id": "P5-rfo",
+      "kind": "rfo",
+      "point": [
+        295800.0,
+        87150.0
+      ],
+      "probe": "P5"
+    },
+    {
+      "id": "P5-point-2024-03",
+      "kind": "detection",
+      "point": [
+        295800.0,
+        87150.0
+      ],
+      "month": "2024-03"
+    },
+    {
+      "id": "P5-support-2024-03",
+      "kind": "detection",
+      "bounds": [
+        295700,
+        87050,
+        295900,
+        87250
+      ],
+      "month": "2024-03"
+    },
+    {
+      "id": "P5-point-2024-09",
+      "kind": "detection",
+      "point": [
+        295800.0,
+        87150.0
+      ],
+      "month": "2024-09"
+    },
+    {
+      "id": "P5-support-2024-09",
+      "kind": "detection",
+      "bounds": [
+        295700,
+        87050,
+        295900,
+        87250
+      ],
+      "month": "2024-09"
+    },
+    {
+      "id": "P5-compare",
+      "kind": "compare",
+      "bounds": [
+        295700,
+        87050,
+        295900,
+        87250
+      ],
+      "months": [
+        "2024-03",
+        "2024-09"
+      ]
+    },
+    {
+      "id": "P5-coexist",
+      "kind": "coexist",
+      "point": [
+        295800.0,
+        87150.0
+      ]
+    },
+    {
+      "id": "P5-current",
+      "kind": "current",
+      "point": [
+        295800.0,
+        87150.0
+      ],
+      "time": "2026-10-07"
+    },
+    {
+      "id": "P6-wfd",
+      "kind": "wfd",
+      "point": [
+        296850.0,
+        88350.0
+      ],
+      "probe": "P6"
+    },
+    {
+      "id": "P6-phi",
+      "kind": "phi",
+      "point": [
+        296850.0,
+        88350.0
+      ],
+      "probe": "P6"
+    },
+    {
+      "id": "P6-flood",
+      "kind": "flood",
+      "point": [
+        296850.0,
+        88350.0
+      ],
+      "probe": "P6"
+    },
+    {
+      "id": "P6-rfo",
+      "kind": "rfo",
+      "point": [
+        296850.0,
+        88350.0
+      ],
+      "probe": "P6"
+    },
+    {
+      "id": "P6-point-2024-03",
+      "kind": "detection",
+      "point": [
+        296850.0,
+        88350.0
+      ],
+      "month": "2024-03"
+    },
+    {
+      "id": "P6-support-2024-03",
+      "kind": "detection",
+      "bounds": [
+        296750,
+        88250,
+        296950,
+        88450
+      ],
+      "month": "2024-03"
+    },
+    {
+      "id": "P6-point-2024-09",
+      "kind": "detection",
+      "point": [
+        296850.0,
+        88350.0
+      ],
+      "month": "2024-09"
+    },
+    {
+      "id": "P6-support-2024-09",
+      "kind": "detection",
+      "bounds": [
+        296750,
+        88250,
+        296950,
+        88450
+      ],
+      "month": "2024-09"
+    },
+    {
+      "id": "P6-compare",
+      "kind": "compare",
+      "bounds": [
+        296750,
+        88250,
+        296950,
+        88450
+      ],
+      "months": [
+        "2024-03",
+        "2024-09"
+      ]
+    },
+    {
+      "id": "P6-coexist",
+      "kind": "coexist",
+      "point": [
+        296850.0,
+        88350.0
+      ]
+    },
+    {
+      "id": "P6-current",
+      "kind": "current",
+      "point": [
+        296850.0,
+        88350.0
+      ],
+      "time": "2026-10-07"
+    },
+    {
+      "id": "feature-exe",
+      "kind": "feature",
+      "feature": "GB510804505600",
+      "bounds": [
+        295000,
+        86000,
+        298500,
+        89000
+      ]
+    },
+    {
+      "id": "P1-unavailable-month",
+      "kind": "detection",
+      "point": [
+        296700,
+        86650
+      ],
+      "month": "2024-03",
+      "unavailable": [
+        "monthly-2024-03"
+      ]
+    },
+    {
+      "id": "outside-study",
+      "kind": "detection",
+      "point": [
+        294999,
+        86000
+      ],
+      "month": "2024-03"
+    },
+    {
+      "id": "unsupported-month",
+      "kind": "detection",
+      "point": [
+        296700,
+        86650
+      ],
+      "month": "2025-03"
+    },
+    {
+      "id": "wrong-condition",
+      "kind": "flood",
+      "point": [
+        296700,
+        86650
+      ],
+      "condition": "observed-current-level"
+    },
+    {
+      "id": "wrong-mode",
+      "kind": "flood",
+      "point": [
+        296700,
+        86650
+      ],
+      "requiredMode": "observation"
+    },
+    {
+      "id": "wrong-epoch-inventory",
+      "kind": "phi",
+      "point": [
+        296700,
+        86650
+      ],
+      "time": "2026-10-07"
+    },
+    {
+      "id": "event-filter",
+      "kind": "rfo",
+      "point": [
+        295800,
+        87150
+      ],
+      "interval": [
+        "1960-10-01",
+        "1960-10-31"
+      ]
+    },
+    {
+      "id": "not-applicable-feature",
+      "kind": "feature",
+      "feature": "nonexistent-source-id",
+      "bounds": [
+        295000,
+        86000,
+        298500,
+        89000
+      ]
+    }
+  ],
+  "spatialRules": {
+    "points": "native vector covers(point), boundary contacts qualified; native raster containing cell, half-open grid; no homogeneous-area assertion",
+    "supports": "native raster centres inside requested BNG rectangle; selected-assignment counts, never physical fractional cover",
+    "features": "intersection of native reference polygon with fixed study only; association by spatial overlap is not cross-source identity",
+    "outside": "queries outside the retained study return outside-support even if returned native features extend beyond it"
+  },
+  "resolution": "explicit property/family then time/mode/reference eligibility; never best water provider",
+  "categories": [
+    "assertion/detected",
+    "assertion/not-detected",
+    "gap/no-observation",
+    "gap/outside-support",
+    "gap/missing-inventory",
+    "gap/unknown",
+    "gap/unsupported",
+    "gap/not-applicable",
+    "operational-unavailable"
+  ],
+  "comparison": "paired nonzero native cells can report code transition, not physical drying; code0 excluded; exact exposure/tide/conditions unknown even on paired support",
+  "noHydrologicalInference": true,
+  "noNewSourceRelease": true,
+  "noProbeRelocation": true
+}

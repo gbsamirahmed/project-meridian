@@ -1,0 +1,801 @@
+{
+  "proof": "exe-qualified-water/v1",
+  "startingCheckpoint": "b85c296ba480a3d26159a759f1d26d829efc2f50",
+  "decision": "C - SUCCESS",
+  "checks": [
+    {
+      "check": "checkpoint is ancestor",
+      "passed": true
+    },
+    {
+      "check": "main origin/main",
+      "passed": true
+    },
+    {
+      "check": "upstream divergence0/0 before commit",
+      "passed": true
+    },
+    {
+      "check": "113 protected production hashes",
+      "passed": true
+    },
+    {
+      "check": "seven frozen semantic contract code/fixture hashes",
+      "passed": true
+    },
+    {
+      "check": "production terrain contracts metadata unchanged",
+      "passed": true
+    },
+    {
+      "check": "all historical scripts/research and43 Atlas/EarthLab reports",
+      "passed": true
+    },
+    {
+      "check": "all42 canonical status columns unchanged",
+      "passed": true
+    },
+    {
+      "check": "historical audit gate retained",
+      "passed": true
+    },
+    {
+      "check": "append-only development log",
+      "passed": true
+    },
+    {
+      "check": "original illumination criteria hash unchanged",
+      "passed": true
+    },
+    {
+      "check": "32 report sections",
+      "passed": true
+    },
+    {
+      "check": "explicit semantic integration success and next",
+      "passed": true
+    },
+    {
+      "check": "no mojibake",
+      "passed": true
+    },
+    {
+      "check": "initialize final deterministic artifact",
+      "passed": true
+    },
+    {
+      "check": "repeat four fresh-process recovery/rebuild proof",
+      "passed": true
+    },
+    {
+      "check": "byte identical query/result manifest rerun",
+      "passed": true
+    },
+    {
+      "check": "frozen75-query matrix exact",
+      "passed": true
+    },
+    {
+      "check": "code revisions exact",
+      "passed": true
+    },
+    {
+      "check": "four processes exact recovery and independent build",
+      "passed": true
+    },
+    {
+      "check": "31 pinned source hashes and exact bytes",
+      "passed": true
+    },
+    {
+      "check": "66 retained files unchanged through all fresh processes",
+      "passed": true
+    },
+    {
+      "check": "native3-code raster and vector counts preserved",
+      "passed": true
+    },
+    {
+      "check": "75 outputs match frozen IDs",
+      "passed": true
+    },
+    {
+      "check": "source-native WFD identity stable",
+      "passed": true
+    },
+    {
+      "check": "positive negative no-observation distinct",
+      "passed": true
+    },
+    {
+      "check": "current state unsupported",
+      "passed": true
+    },
+    {
+      "check": "unavailable outside unknown unsupported not-applicable",
+      "passed": true
+    },
+    {
+      "check": "incompatible fallback rejected despite coexisting evidence",
+      "passed": true
+    },
+    {
+      "check": "comparison never implies drying",
+      "passed": true
+    },
+    {
+      "check": "all four vector meanings coexist atP1",
+      "passed": true
+    },
+    {
+      "check": "prior appearance decisions preserved",
+      "passed": true
+    },
+    {
+      "check": "20 focused retained semantic/query safeguards",
+      "passed": true
+    },
+    {
+      "check": "20 tests counted",
+      "passed": true
+    },
+    {
+      "check": "64 frozen domain tests",
+      "passed": true
+    },
+    {
+      "check": "64 tests counted",
+      "passed": true
+    },
+    {
+      "check": "frozen isolated declarations",
+      "passed": true
+    },
+    {
+      "check": "canonical next assessment explicit",
+      "passed": true
+    },
+    {
+      "check": "current navigation docs/architecture.md",
+      "passed": true
+    },
+    {
+      "check": "current navigation docs/product-direction.md",
+      "passed": true
+    },
+    {
+      "check": "current navigation docs/research/atlas-research-map.md",
+      "passed": true
+    },
+    {
+      "check": "only isolated assessment and navigation",
+      "passed": true
+    },
+    {
+      "check": "bounded artifacts no warped imagery or scratch store",
+      "passed": true
+    },
+    {
+      "check": "all local document links and anchors resolve",
+      "passed": true
+    },
+    {
+      "check": "all research JSON parses",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor b85c296",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 20461af",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor e276d81",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 9dc4445",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 1842008",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 9695757",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor b12dc06",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 944326b",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 691450f",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 3c143eb",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 1c2d10e",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 6e17e79",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 43afe78",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 5f14511",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor e65c2d6",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 052374e",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor c4da565",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 75ea9d8",
+      "passed": true
+    },
+    {
+      "check": "unstaged whitespace",
+      "passed": true
+    },
+    {
+      "check": "staged whitespace",
+      "passed": true
+    },
+    {
+      "check": "Markdown no trailing whitespace",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "commands": [
+    {
+      "check": "initialize final deterministic artifact",
+      "command": [
+        "node",
+        "scripts/atlas/exe-water-query-proof/run-proof.mjs"
+      ],
+      "exitCode": 0,
+      "localElapsedSeconds": 16.6829990001861
+    },
+    {
+      "check": "repeat four fresh-process recovery/rebuild proof",
+      "command": [
+        "node",
+        "scripts/atlas/exe-water-query-proof/run-proof.mjs"
+      ],
+      "exitCode": 0,
+      "localElapsedSeconds": 17.229137799935415
+    },
+    {
+      "check": "20 focused retained semantic/query safeguards",
+      "command": [
+        "node",
+        "--test",
+        "scripts/atlas/exe-water-query-proof/test-proof.mjs"
+      ],
+      "exitCode": 0,
+      "localElapsedSeconds": 4.311421300051734
+    },
+    {
+      "check": "64 frozen domain tests",
+      "command": [
+        "node",
+        "--test",
+        "scripts/atlas/test_semantic_evidence_contract.mjs",
+        "scripts/atlas/test_terrain_hierarchy_contract.mjs",
+        "scripts/atlas/test_terrain_runtime.mjs",
+        "scripts/atlas/test_tryfan_terrain.mjs"
+      ],
+      "exitCode": 0,
+      "localElapsedSeconds": 1.6099908999167383
+    },
+    {
+      "check": "frozen isolated declarations",
+      "command": [
+        "npx.cmd",
+        "tsc",
+        "-p",
+        "scripts/atlas/semantic-evidence/tsconfig.json"
+      ],
+      "exitCode": 0,
+      "localElapsedSeconds": 1.5612826999276876
+    },
+    {
+      "check": "unstaged whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0,
+      "localElapsedSeconds": 0.06873519998043776
+    },
+    {
+      "check": "staged whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exitCode": 0,
+      "localElapsedSeconds": 0.03990119998343289
+    }
+  ],
+  "localElapsedTimesNotPerformancePromises": true,
+  "storeBytes": 3527834,
+  "resultArtifactBytes": 1038642,
+  "restart": {
+    "freshProcesses": 4,
+    "independentBuildExact": true,
+    "initialRecoveryExact": true,
+    "logicalResultsSha256": "4f68fdbc89b0902ab75fa29c734526be20d5984448918c3047acd8d2e0949ee8",
+    "secondRecoveryExact": true
+  },
+  "artifactSha256": {
+    "docs/research/exe-water-query-results.json": "29f9797ee267b00027dc02470e9b62a69ff56ebc7f033c3f79306de0e5a19de1"
+  },
+  "codeSha256": {
+    "scripts/atlas/exe-water-query-proof/README.md": "c8c7b4c1f399885e601acfca73989b90771ddd92f7258c236212db1699c2cabf",
+    "scripts/atlas/exe-water-query-proof/cli.mjs": "70f8c954e763b9c80756c3cab604da4bee18d88f07071ba16f313b16c0a568ea",
+    "scripts/atlas/exe-water-query-proof/matrix.json": "d8afb247c2030367d2a85ae912e42a446cc09e34a49b03b46b4635478d9a304b",
+    "scripts/atlas/exe-water-query-proof/reader.py": "50ac86955af3bf2af7603893948f2a1ef257929de98a3b7fbaadb0850d43146e",
+    "scripts/atlas/exe-water-query-proof/run-proof.mjs": "1e1470937da90fb9c49e9ea8e06964e559fe04d731a997f5d994a20de031a37d",
+    "scripts/atlas/exe-water-query-proof/runtime.mjs": "e547e3f92baa30d715bb5f180dd7321192baccad1ef704929c64415a1993138b",
+    "scripts/atlas/exe-water-query-proof/test-proof.mjs": "b655ceeceb8a20a01f0489e0fef4c3b2b3689182afdd6820ed303bc8245b1984",
+    "scripts/atlas/exe-water-query-proof/validate.py": "fbb01ced5ea28cbf4d66b827a03495ba59a0acc5993ee124d6b87b48b60ab2be"
+  },
+  "reportSha256": "9a9fef4fee7d756a82626923b7873a760ce6718bbc3f260456aa61d7663b98fb",
+  "frozenMatrixSha256": "d8afb247c2030367d2a85ae912e42a446cc09e34a49b03b46b4635478d9a304b",
+  "originalIlluminationCriteriaSha256": "0e1b884bd64c94effffeb1cb024f01c6f385d87eda73f20fa134f0a2add5ca28",
+  "sourceVerification": {
+    "flood-catalogue.html": {
+      "bytes": 36527,
+      "path": "meridian-data/derived/atlas/water-check-v1/flood-catalogue.html",
+      "retrievedUtc": "2026-10-06T11:18:13.287275+00:00",
+      "sha256": "ff5713b1b8301e95101cd08ec6d08f9d250bcdfd06d86c7c4f6dff35a2160566",
+      "url": "https://www.data.gov.uk/dataset/104434b0-5263-4c90-9b1e-e43b1d57c750/flood-map-for-planning-flood-zones1"
+    },
+    "flood-collection.json": {
+      "bytes": 4872,
+      "path": "meridian-data/derived/atlas/water-check-v1/flood-collection.json",
+      "retrievedUtc": "2026-10-06T11:18:11.916517+00:00",
+      "sha256": "6f83442cbae1843c3ebbea7bb2ffa746359f238be38646e91d088628961fff06",
+      "url": "https://environment.data.gov.uk/spatialdata/flood-map-for-planning-flood-zones/ogc/features/v1/collections/Flood_Zones_2_3_Rivers_and_Sea?f=json"
+    },
+    "flood-description.pdf": {
+      "bytes": 203978,
+      "path": "meridian-data/derived/atlas/water-check-v1/flood-description.pdf",
+      "retrievedUtc": "2026-10-06T11:18:15.601847+00:00",
+      "sha256": "9622f7af48de5f738dfa14f243c5f50282319c872d9b64f1edfae744b5f75385",
+      "url": "https://environment.data.gov.uk/api/file/download?fileDataSetId=455d2eb3-3065-4d20-871b-c4d5dee23f67&fileName=Flood%20Zones%20Product%20Description.pdf"
+    },
+    "flood-schema.json": {
+      "bytes": 1143,
+      "path": "meridian-data/derived/atlas/water-check-v1/flood-schema.json",
+      "retrievedUtc": "2026-10-06T11:18:12.049287+00:00",
+      "sha256": "f26bdd21d23070584dfd5c64a3183e72044c49aabafb27cc0f0171cde2fa2cbb",
+      "url": "https://environment.data.gov.uk/spatialdata/flood-map-for-planning-flood-zones/ogc/features/v1/collections/Flood_Zones_2_3_Rivers_and_Sea/queryables?f=json"
+    },
+    "flood.geojson": {
+      "bytes": 3512241,
+      "path": "meridian-data/derived/atlas/water-check-v1/flood.geojson",
+      "retrievedUtc": "2026-10-06T11:18:12.429441+00:00",
+      "sha256": "199dd9d33ada752071d56cf0940596a2e0951bfbad09ca5e762a4810228d4388",
+      "url": "https://environment.data.gov.uk/spatialdata/flood-map-for-planning-flood-zones/ogc/features/v1/collections/Flood_Zones_2_3_Rivers_and_Sea/items?f=json&bbox=295000%2C86000%2C298500%2C89000&bbox-crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F27700&crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F27700&limit=2000"
+    },
+    "grazing-marsh-definition.pdf": {
+      "bytes": 75055,
+      "path": "meridian-data/derived/atlas/water-check-v1/grazing-marsh-definition.pdf",
+      "retrievedUtc": "2026-10-06T11:20:12.461964+00:00",
+      "sha256": "aeb0ddfd9bce1db63c05c76714dfae2b6c41727e8d50d9516e352936fee72ddd",
+      "url": "https://data.jncc.gov.uk/data/82b0af67-d19a-4a89-b987-9dba73be1272/UKBAP-BAPHabitats-07-CoastFloodGrazingMarsh.pdf"
+    },
+    "jrc-access.html": {
+      "bytes": 85116,
+      "path": "meridian-data/derived/atlas/water-check-v1/jrc-access.html",
+      "retrievedUtc": "2026-10-06T11:18:16.090718+00:00",
+      "sha256": "8b8d8613efb3078b2c2f64c3a76ccdc6fbacdb7d35a7654be2bb98314eb81e62",
+      "url": "https://global-surface-water.appspot.com/download"
+    },
+    "jrc-guide.pdf": {
+      "bytes": 1142853,
+      "path": "meridian-data/derived/atlas/water-check-v1/jrc-guide.pdf",
+      "retrievedUtc": "2026-10-06T11:18:15.779160+00:00",
+      "sha256": "94aebddbb2d66bcbacea14326d84d0b9d9401c8ef95bc48b42991448f36b839b",
+      "url": "https://storage.googleapis.com/water-world/downloads_ancillary/DataUsersGuidev2024_v.5.pdf"
+    },
+    "monthly-2024-03-listing.json": {
+      "bytes": 226,
+      "path": "meridian-data/derived/atlas/water-check-v1/monthly-2024-03-listing.json",
+      "retrievedUtc": "2026-10-06T11:18:16.870300+00:00",
+      "sha256": "57e681a997c33c4019f24fbb9361927260bb6548034de71a1f9e324bb9b85360",
+      "url": "https://s3.waw4-1.cloudferro.com/swift/v1/global-surface-water/?format=json&prefix=MonthlyHistory%2F2024%2F2024_03%2Fmonthlyhistory_10W_60N_v1_5_2024_03.tif&limit=2"
+    },
+    "monthly-2024-03.tif": {
+      "bytes": 1443,
+      "parentListing": [
+        {
+          "bytes": 28567680,
+          "content_type": "application/octet-stream",
+          "hash": "0ee424d18dd3918cf557a478c8528409-1",
+          "last_modified": "2026-10-05T14:35:44.885Z",
+          "name": "MonthlyHistory/2024/2024_03/monthlyhistory_10W_60N_v1_5_2024_03.tif"
+        }
+      ],
+      "path": "meridian-data/derived/atlas/water-check-v1/monthly-2024-03.tif",
+      "retrievedUtc": null,
+      "sha256": "336c5746c4d1145bf212fa65b7c2ff11d7f5691b17ded1d6eb7127a72ca311c6",
+      "subset": {
+        "blockShape": [
+          1024,
+          1024
+        ],
+        "operation": "Native integer grid window; no reprojection/resampling; lossless re-encoding. Cell-centre selection only in analysis.",
+        "parentSha256Known": false,
+        "retrievedUtc": "2026-10-06T11:18:17.064598+00:00",
+        "sourceCrs": "EPSG:4326",
+        "sourceNodata": null,
+        "sourceShape": [
+          40000,
+          40000
+        ],
+        "sourceTransform": [
+          0.00025,
+          0,
+          -9.999999999999886,
+          0,
+          -0.00025,
+          59.999999999999986,
+          0,
+          0,
+          1
+        ],
+        "sourceUrl": "https://s3.waw4-1.cloudferro.com/swift/v1/global-surface-water/MonthlyHistory/2024/2024_03/monthlyhistory_10W_60N_v1_5_2024_03.tif",
+        "window": [
+          26048,
+          37232,
+          202,
+          112
+        ],
+        "windowTransform": [
+          0.00025,
+          0,
+          -3.487999999999886,
+          0,
+          -0.00025,
+          50.691999999999986,
+          0,
+          0,
+          1
+        ],
+        "wireBytesKnown": false
+      },
+      "url": "https://s3.waw4-1.cloudferro.com/swift/v1/global-surface-water/MonthlyHistory/2024/2024_03/monthlyhistory_10W_60N_v1_5_2024_03.tif"
+    },
+    "monthly-2024-09-listing.json": {
+      "bytes": 226,
+      "path": "meridian-data/derived/atlas/water-check-v1/monthly-2024-09-listing.json",
+      "retrievedUtc": "2026-10-06T11:18:17.194670+00:00",
+      "sha256": "eca93456aa48c865280564f847f1b124cc878af970e614373e21912bcf786abe",
+      "url": "https://s3.waw4-1.cloudferro.com/swift/v1/global-surface-water/?format=json&prefix=MonthlyHistory%2F2024%2F2024_09%2Fmonthlyhistory_10W_60N_v1_5_2024_09.tif&limit=2"
+    },
+    "monthly-2024-09.tif": {
+      "bytes": 1522,
+      "parentListing": [
+        {
+          "bytes": 24030644,
+          "content_type": "application/octet-stream",
+          "hash": "3dece159f4941f67b7e9195ca646bec2-2",
+          "last_modified": "2026-10-05T14:57:14.469Z",
+          "name": "MonthlyHistory/2024/2024_09/monthlyhistory_10W_60N_v1_5_2024_09.tif"
+        }
+      ],
+      "path": "meridian-data/derived/atlas/water-check-v1/monthly-2024-09.tif",
+      "retrievedUtc": null,
+      "sha256": "e5e51bd87b72668dfaf84a65cc9f7bec10ef326002a9bb0d0b77b786c6737499",
+      "subset": {
+        "blockShape": [
+          1024,
+          1024
+        ],
+        "operation": "Native integer grid window; no reprojection/resampling; lossless re-encoding. Cell-centre selection only in analysis.",
+        "parentSha256Known": false,
+        "retrievedUtc": "2026-10-06T11:18:17.358968+00:00",
+        "sourceCrs": "EPSG:4326",
+        "sourceNodata": null,
+        "sourceShape": [
+          40000,
+          40000
+        ],
+        "sourceTransform": [
+          0.00025,
+          0,
+          -9.999999999999886,
+          0,
+          -0.00025,
+          59.999999999999986,
+          0,
+          0,
+          1
+        ],
+        "sourceUrl": "https://s3.waw4-1.cloudferro.com/swift/v1/global-surface-water/MonthlyHistory/2024/2024_09/monthlyhistory_10W_60N_v1_5_2024_09.tif",
+        "window": [
+          26048,
+          37232,
+          202,
+          112
+        ],
+        "windowTransform": [
+          0.00025,
+          0,
+          -3.487999999999886,
+          0,
+          -0.00025,
+          50.691999999999986,
+          0,
+          0,
+          1
+        ],
+        "wireBytesKnown": false
+      },
+      "url": "https://s3.waw4-1.cloudferro.com/swift/v1/global-surface-water/MonthlyHistory/2024/2024_09/monthlyhistory_10W_60N_v1_5_2024_09.tif"
+    },
+    "occurrence-listing.json": {
+      "bytes": 234,
+      "path": "meridian-data/derived/atlas/water-check-v1/occurrence-listing.json",
+      "retrievedUtc": "2026-10-06T11:18:16.320988+00:00",
+      "sha256": "d0b4157aba16c2dce585e99c80f0c79c8ea3e7727428f8a6f7a79f0e677acb81",
+      "url": "https://s3.waw4-1.cloudferro.com/swift/v1/global-surface-water/?format=json&prefix=download2024%2FAggregated%2FVER1-5%2Foccurrence%2Foccurrence_10W_60N_v1_5_2024.tif&limit=2"
+    },
+    "occurrence.tif": {
+      "bytes": 4453,
+      "parentListing": [
+        {
+          "bytes": 110064004,
+          "content_type": "application/octet-stream",
+          "hash": "88b360d937d6bfdc417c7c96c9996152-1",
+          "last_modified": "2026-07-01T10:28:31.453Z",
+          "name": "download2024/Aggregated/VER1-5/occurrence/occurrence_10W_60N_v1_5_2024.tif"
+        }
+      ],
+      "path": "meridian-data/derived/atlas/water-check-v1/occurrence.tif",
+      "retrievedUtc": null,
+      "sha256": "adb86f717cb37c23b7a36d79d123c79bd865a556ef61897e8f6c664d14c742b6",
+      "subset": {
+        "blockShape": [
+          512,
+          512
+        ],
+        "operation": "Native integer grid window; no reprojection/resampling; lossless re-encoding. Cell-centre selection only in analysis.",
+        "parentSha256Known": false,
+        "retrievedUtc": "2026-10-06T11:18:16.764822+00:00",
+        "sourceCrs": "EPSG:4326",
+        "sourceNodata": null,
+        "sourceShape": [
+          40000,
+          40000
+        ],
+        "sourceTransform": [
+          0.00025,
+          0,
+          -9.999999999999886,
+          0,
+          -0.00025,
+          59.999999999999986,
+          0,
+          0,
+          1
+        ],
+        "sourceUrl": "https://s3.waw4-1.cloudferro.com/swift/v1/global-surface-water/download2024/Aggregated/VER1-5/occurrence/occurrence_10W_60N_v1_5_2024.tif",
+        "window": [
+          26048,
+          37232,
+          202,
+          112
+        ],
+        "windowTransform": [
+          0.00025,
+          0,
+          -3.487999999999886,
+          0,
+          -0.00025,
+          50.691999999999986,
+          0,
+          0,
+          1
+        ],
+        "wireBytesKnown": false
+      },
+      "url": "https://s3.waw4-1.cloudferro.com/swift/v1/global-surface-water/download2024/Aggregated/VER1-5/occurrence/occurrence_10W_60N_v1_5_2024.tif"
+    },
+    "ogl3.html": {
+      "bytes": 10450,
+      "path": "meridian-data/derived/atlas/water-check-v1/ogl3.html",
+      "retrievedUtc": "2026-10-06T11:18:16.148562+00:00",
+      "sha256": "f5b2b9f2af63647cde889fa6c3508f5705925295b74912c68caa28dd37e64aa5",
+      "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+    },
+    "phi-attributes.pdf": {
+      "bytes": 85521,
+      "path": "meridian-data/derived/atlas/water-check-v1/phi-attributes.pdf",
+      "retrievedUtc": "2026-10-06T11:18:13.984087+00:00",
+      "sha256": "f3744b98b1db0b32ba48ddf6fbde9f119547151fb2f02d1398c95067aab48b97",
+      "url": "https://environment.data.gov.uk/api/file/download?fileDataSetId=d30e3fa2-5ca6-4851-b19d-1429ad9d84e0&fileName=Priority_Habitats_Inventory_Attribute_Metadata.pdf"
+    },
+    "phi-catalogue.html": {
+      "bytes": 40482,
+      "path": "meridian-data/derived/atlas/water-check-v1/phi-catalogue.html",
+      "retrievedUtc": "2026-10-06T11:18:12.930099+00:00",
+      "sha256": "c9eea28045677de0ec9b1b14109762b06fda4189cfc4c1d765ea4d19bc14fd0d",
+      "url": "https://www.data.gov.uk/dataset/4b6ddab7-6c0f-4407-946e-d6499f19fcde/priority-habitats-inventory-england"
+    },
+    "phi-collection.json": {
+      "bytes": 4960,
+      "path": "meridian-data/derived/atlas/water-check-v1/phi-collection.json",
+      "retrievedUtc": "2026-10-06T11:18:11.178619+00:00",
+      "sha256": "81c101f304c25fe3034fdca1845152a31f9208d3555b05edff026161dd3a7745",
+      "url": "https://environment.data.gov.uk/spatialdata/priority-habitat-inventory-england/ogc/features/v1/collections/Priority_Habitat_Inventory_England?f=json"
+    },
+    "phi-lineage.xlsx": {
+      "bytes": 25214,
+      "path": "meridian-data/derived/atlas/water-check-v1/phi-lineage.xlsx",
+      "retrievedUtc": "2026-10-06T11:18:15.111558+00:00",
+      "sha256": "b33a536f142bd6410f6daf79d9be81c36cc8329f9be0833d40204319b5bc858a",
+      "url": "https://environment.data.gov.uk/api/file/download?fileDataSetId=d30e3fa2-5ca6-4851-b19d-1429ad9d84e0&fileName=PHI%20V3%20Datasets.xlsx"
+    },
+    "phi-schema.json": {
+      "bytes": 1508,
+      "path": "meridian-data/derived/atlas/water-check-v1/phi-schema.json",
+      "retrievedUtc": "2026-10-06T11:18:11.399875+00:00",
+      "sha256": "2aae721448b162c7b3977f7c7b8a6a8742baa092b24f04bafc19d1b803a1c3bc",
+      "url": "https://environment.data.gov.uk/spatialdata/priority-habitat-inventory-england/ogc/features/v1/collections/Priority_Habitat_Inventory_England/queryables?f=json"
+    },
+    "phi-spatial.pdf": {
+      "bytes": 115586,
+      "path": "meridian-data/derived/atlas/water-check-v1/phi-spatial.pdf",
+      "retrievedUtc": "2026-10-06T11:18:14.586116+00:00",
+      "sha256": "f112a00d842466aa2698e45214697f06249810a9779697f2cd526851489fc944",
+      "url": "https://environment.data.gov.uk/api/file/download?fileDataSetId=d30e3fa2-5ca6-4851-b19d-1429ad9d84e0&fileName=Priority_Habitats_Inventory_Spatial_Metadata.pdf"
+    },
+    "phi.geojson": {
+      "bytes": 3666881,
+      "path": "meridian-data/derived/atlas/water-check-v1/phi.geojson",
+      "retrievedUtc": "2026-10-06T11:18:11.767619+00:00",
+      "sha256": "7500807fd1a383941e00b2ab5e4925159f1ba97c3e651640a0a89fc5c2b4a2a9",
+      "url": "https://environment.data.gov.uk/spatialdata/priority-habitat-inventory-england/ogc/features/v1/collections/Priority_Habitat_Inventory_England/items?f=json&bbox=295000%2C86000%2C298500%2C89000&bbox-crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F27700&crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F27700&limit=2000"
+    },
+    "rfo-catalogue.html": {
+      "bytes": 36740,
+      "path": "meridian-data/derived/atlas/water-check-v1/rfo-catalogue.html",
+      "retrievedUtc": "2026-10-06T11:20:11.822593+00:00",
+      "sha256": "bde2087f5291d6404b82bff596f130db4d4a8f8a2eb0675b137bd92fffeb394a",
+      "url": "https://www.data.gov.uk/dataset/16e32c53-35a6-4d54-a111-ca09031eaaaf/recorded-flood-outlines1"
+    },
+    "rfo-collection.json": {
+      "bytes": 4706,
+      "path": "meridian-data/derived/atlas/water-check-v1/rfo-collection.json",
+      "retrievedUtc": "2026-10-06T11:20:11.316696+00:00",
+      "sha256": "c3c92e822a8a177c64c4053291ec6ec73d6ed87c536d8f0c0dace25913565cf9",
+      "url": "https://environment.data.gov.uk/spatialdata/recorded-flood-outlines/ogc/features/v1/collections/Recorded_Flood_Outlines?f=json"
+    },
+    "rfo-description.pdf": {
+      "bytes": 194250,
+      "path": "meridian-data/derived/atlas/water-check-v1/rfo-description.pdf",
+      "retrievedUtc": "2026-10-06T11:20:12.283990+00:00",
+      "sha256": "c75dd7c8c8ea617a1bb7044a92aa9e56f8fae719b37958371b832209b4749d44",
+      "url": "https://environment.data.gov.uk/file-management-open/data-sets/ed73f2e8-a3c2-44db-952d-6e359c7c3987/files/Guidance_Recorded_Flood_Outline_v6_2.pdf"
+    },
+    "rfo-schema.json": {
+      "bytes": 1778,
+      "path": "meridian-data/derived/atlas/water-check-v1/rfo-schema.json",
+      "retrievedUtc": "2026-10-06T11:20:11.446942+00:00",
+      "sha256": "b2170f0e304e12d33e9b11b4800890c5ebe25bf9c12224e2b1f71595770c7960",
+      "url": "https://environment.data.gov.uk/spatialdata/recorded-flood-outlines/ogc/features/v1/collections/Recorded_Flood_Outlines/queryables?f=json"
+    },
+    "rfo.geojson": {
+      "bytes": 548075,
+      "path": "meridian-data/derived/atlas/water-check-v1/rfo.geojson",
+      "retrievedUtc": "2026-10-06T11:20:11.629194+00:00",
+      "sha256": "ee1f4a7c7264dc73ee3073f3dc7ae3b7313409e48172dc2cf2feac536ad8087b",
+      "url": "https://environment.data.gov.uk/spatialdata/recorded-flood-outlines/ogc/features/v1/collections/Recorded_Flood_Outlines/items?f=json&bbox=295000%2C86000%2C298500%2C89000&bbox-crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F27700&crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F27700&limit=2000"
+    },
+    "wfd-catalogue.html": {
+      "bytes": 41058,
+      "path": "meridian-data/derived/atlas/water-check-v1/wfd-catalogue.html",
+      "retrievedUtc": "2026-10-06T11:18:12.622408+00:00",
+      "sha256": "6cebba72b13eb2f16af1c3058d593cd144613b742cb54322f23f13a24df64b59",
+      "url": "https://www.data.gov.uk/dataset/52fa8958-ea30-46fc-8ecb-f31ea8f89aa6/water-framework-directive-wfd-transitional-and-coastal-water-bodies-cycle-3-classification-20191"
+    },
+    "wfd-collection.json": {
+      "bytes": 6020,
+      "path": "meridian-data/derived/atlas/water-check-v1/wfd-collection.json",
+      "retrievedUtc": "2026-10-06T11:18:10.314756+00:00",
+      "sha256": "fa4d11ea9029991183a24bd35836208898b88ba642b8f1dc1f290db1854ce4ae",
+      "url": "https://environment.data.gov.uk/spatialdata/simplified-wfd-transitional-and-coastal-water-bodies-cycle-3-classification-2019/ogc/features/v1/collections/Simplified_WFD_Transitional_and_Coastal_Water_Bodies_Cycle_3_Classification_2019?f=json"
+    },
+    "wfd-schema.json": {
+      "bytes": 5205,
+      "path": "meridian-data/derived/atlas/water-check-v1/wfd-schema.json",
+      "retrievedUtc": "2026-10-06T11:18:10.688094+00:00",
+      "sha256": "afd9f693cf0b41c3d931971b9a69be750d2bcb6b4f0e65f61d558060ee374e5b",
+      "url": "https://environment.data.gov.uk/spatialdata/simplified-wfd-transitional-and-coastal-water-bodies-cycle-3-classification-2019/ogc/features/v1/collections/Simplified_WFD_Transitional_and_Coastal_Water_Bodies_Cycle_3_Classification_2019/queryables?f=json"
+    },
+    "wfd.geojson": {
+      "bytes": 34267,
+      "path": "meridian-data/derived/atlas/water-check-v1/wfd.geojson",
+      "retrievedUtc": "2026-10-06T11:18:11.061030+00:00",
+      "sha256": "ed2b3bc7affff3b82857b3f3818ef31a925ee992a7202e4bd93049711a62d520",
+      "url": "https://environment.data.gov.uk/spatialdata/simplified-wfd-transitional-and-coastal-water-bodies-cycle-3-classification-2019/ogc/features/v1/collections/Simplified_WFD_Transitional_and_Coastal_Water_Bodies_Cycle_3_Classification_2019/items?f=json&bbox=295000%2C86000%2C298500%2C89000&bbox-crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F27700&crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F27700&limit=2000"
+    }
+  },
+  "protectedProductionHashChecks": 113,
+  "productionMismatches": [],
+  "frozenSemanticHashChecks": 7,
+  "frozenMismatches": [],
+  "unchangedScripts": 343,
+  "unchangedHistoricalAtlasEarthLabReports": 43,
+  "unchangedPriorResearchAssets": 55,
+  "preservationMismatches": [],
+  "canonicalThreadCount": 42,
+  "canonicalStatusColumnsUnchanged": true,
+  "localReferencesChecked": 450,
+  "anchorsChecked": 55,
+  "missingReferences": [],
+  "changedPaths": [
+    "docs/architecture.md",
+    "docs/development-log.md",
+    "docs/product-direction.md",
+    "docs/research/atlas-research-map.md",
+    "docs/research/atlas-research-state.md",
+    "docs/research/exe-water-query-proof.md",
+    "docs/research/exe-water-query-results.json",
+    "docs/research/exe-water-query-validation.json",
+    "scripts/atlas/exe-water-query-proof/README.md",
+    "scripts/atlas/exe-water-query-proof/cli.mjs",
+    "scripts/atlas/exe-water-query-proof/matrix.json",
+    "scripts/atlas/exe-water-query-proof/reader.py",
+    "scripts/atlas/exe-water-query-proof/run-proof.mjs",
+    "scripts/atlas/exe-water-query-proof/runtime.mjs",
+    "scripts/atlas/exe-water-query-proof/test-proof.mjs",
+    "scripts/atlas/exe-water-query-proof/validate.py"
+  ],
+  "nextTask": "Atlas retained-proof coverage and bounded regional-pilot acceptance assessment; not started",
+  "confirmations": {
+    "noAcquisition": true,
+    "noPayloadDuplication": true,
+    "noFrozenContractChanges": true,
+    "noProductionChanges": true,
+    "weatherTraverseUnchanged": true,
+    "multiscaleClosed": true,
+    "multiviewParked": true,
+    "noFittingOrCorrection": true,
+    "noUniversalWaterLayer": true,
+    "noHydrologyOrCurrentStateInference": true,
+    "noPhysicalSNR": true,
+    "noClassifier": true,
+    "noPrivateInspection": true
+  }
+}

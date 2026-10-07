@@ -76,9 +76,15 @@ recommendation (**B - PARTIAL**). A fixed global bounded toe4 modestly improves 
 structure visibility, with bright/deep anchors unchanged; toe8 fails codec amplification limits.
 Toe4 remains visually constrained by mottling and limited benefit: research-only, no production
 prototype justified. This is a render-only operation, not illumination normalization or corrected
-appearance. Exactly one next task is **Retained Exe time-qualified water-observation and feature-query proof**;
-[scope/exit](riffelhorn-display-transfer.md#28-exactly-one-next-bounded-task).
-It has not begun. The retained temporal/feature query boundary is not yet empirically exercised.
+appearance. The [retained Exe query proof](exe-water-query-proof.md) completes that recommendation
+(**C - SUCCESS**):75 frozen native point/support/feature/time/reference queries preserve WFD
+identity, monthly detection/no-observation, PHI contributor vintages, mixed planning lineage,
+event intervals and incompatible fallback rejection. Real restart/rebuild preserves qualifications;
+no current hydraulic state or hydrological model is inferred. No foundation/production change.
+Exactly one next task is **Atlas retained-proof coverage and bounded regional-pilot acceptance assessment**;
+[scope/exit](exe-water-query-proof.md#32-exactly-one-next-bounded-task).
+It has not begun; assessment of proven versus conceptual responsibilities and finite pilot gates,
+not automatic implementation/technology selection. Open appearance remains separate.
 Open/parked appearance work remains independent; no correction or acquisition follows automatically.
 
 Production, Weather and Traverse remain unchanged. The map below retains chronological
@@ -560,3 +566,9 @@ All 42 status columns remain; A5 gains bounded signal-support evidence. A6-A11/A
 [Report](riffelhorn-display-transfer.md), [protocol](../../scripts/atlas/riffelhorn-display-transfer/protocol.json), [metrics](riffelhorn-display-transfer-results.json), [validation](riffelhorn-display-transfer-validation.json): **B - PARTIAL**. Fixed four patches, two amplitudes of one global smooth toe, source-conditioned populations and predeclared gates. Toe4 improves digital dark separability while retaining brightest/deepest values; visual benefit remains modest/mottled. Toe8 promotes codec-phase variation beyond the gate. Research-only, no production display prototype accepted. No source/prepared writes, illumination normalization, recovered colour or new information.
 
 All42 status columns remain, A5 gains display evidence, A6-A11/A14 remain unresolved, A13 PARKED and A15 scale-qualified. Historical stopping/no-go/signal/registration decisions are unchanged. One next: **Retained Exe time-qualified water-observation and feature-query proof**; native monthly2024-03/09 GSW and separate EA WFD Exe reference identity, not broad ingestion. It has not begun.
+
+## 2026-10-07 - retained Exe time-qualified water and feature queries
+
+[Report](exe-water-query-proof.md), [matrix](../../scripts/atlas/exe-water-query-proof/matrix.json), [results](exe-water-query-results.json), [validation](exe-water-query-validation.json): **C - SUCCESS**.75 frozen queries at all six original probes use native monthly2024-03/09 and WFD/PHI/Flood/RFO. Feature identity, observation/event/contributor time, evidence modes, reference conditions, no-observation/non-detection and unavailable/unsupported remain distinct; no universal winner/current state. Four real subprocesses recover/rebuild qualified answers; frozen v1/local snapshot tooling unchanged.
+
+All42 status columns remain; S5/S6 gain bounded query proof, not general identity/state closure. Recent appearance/stopping outcomes remain unchanged and Swiss pixels PARKED. Exactly one next: **Atlas retained-proof coverage and bounded regional-pilot acceptance assessment**; finite readiness/acceptance assessment, not automatic production implementation. It has not begun.

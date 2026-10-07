@@ -645,9 +645,15 @@ recommendation (**B - PARTIAL**). A fixed global bounded toe4 modestly improves 
 structure visibility, with bright/deep anchors unchanged; toe8 fails codec amplification limits.
 Toe4 remains visually constrained by mottling and limited benefit: research-only, no production
 prototype justified. This is a render-only operation, not illumination normalization or corrected
-appearance. Exactly one next task is **Retained Exe time-qualified water-observation and feature-query proof**;
-[scope/exit](research/riffelhorn-display-transfer.md#28-exactly-one-next-bounded-task).
-It has not begun. The retained temporal/feature query boundary is not yet empirically exercised.
+appearance. The [retained Exe query proof](research/exe-water-query-proof.md) completes that recommendation
+(**C - SUCCESS**):75 frozen native point/support/feature/time/reference queries preserve WFD
+identity, monthly detection/no-observation, PHI contributor vintages, mixed planning lineage,
+event intervals and incompatible fallback rejection. Real restart/rebuild preserves qualifications;
+no current hydraulic state or hydrological model is inferred. No foundation/production change.
+Exactly one next task is **Atlas retained-proof coverage and bounded regional-pilot acceptance assessment**;
+[scope/exit](research/exe-water-query-proof.md#32-exactly-one-next-bounded-task).
+It has not begun; assessment of proven versus conceptual responsibilities and finite pilot gates,
+not automatic implementation/technology selection. Open appearance remains separate.
 A6-A11/A14 remain unresolved separately; Swiss pixels remain parked.
 Open/parked appearance science remains non-blocking, not solved; Swiss pixels remain parked.
 Frozen contracts/current production remain unchanged.
