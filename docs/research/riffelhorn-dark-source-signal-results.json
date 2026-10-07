@@ -1,0 +1,3560 @@
+{
+  "assessment": "riffelhorn-dark-source/v1",
+  "encoding": [
+    {
+      "AREA_OR_POINT": "Area",
+      "blocks": [
+        [
+          256,
+          256
+        ],
+        [
+          256,
+          256
+        ],
+        [
+          256,
+          256
+        ]
+      ],
+      "crs": 2056,
+      "dtype": [
+        "uint8",
+        "uint8",
+        "uint8"
+      ],
+      "imageStructure": {
+        "COMPRESSION": "YCbCr JPEG",
+        "INTERLEAVE": "PIXEL",
+        "JPEGTABLESMODE": "1",
+        "JPEG_QUALITY": "95",
+        "LAYOUT": "COG",
+        "SOURCE_COLOR_SPACE": "YCbCr"
+      },
+      "res": [
+        0.1,
+        0.1
+      ],
+      "tile": "2624-1091"
+    },
+    {
+      "AREA_OR_POINT": "Area",
+      "blocks": [
+        [
+          256,
+          256
+        ],
+        [
+          256,
+          256
+        ],
+        [
+          256,
+          256
+        ]
+      ],
+      "crs": 2056,
+      "dtype": [
+        "uint8",
+        "uint8",
+        "uint8"
+      ],
+      "imageStructure": {
+        "COMPRESSION": "YCbCr JPEG",
+        "INTERLEAVE": "PIXEL",
+        "JPEGTABLESMODE": "1",
+        "JPEG_QUALITY": "95",
+        "LAYOUT": "COG",
+        "SOURCE_COLOR_SPACE": "YCbCr"
+      },
+      "res": [
+        0.1,
+        0.1
+      ],
+      "tile": "2624-1092"
+    },
+    {
+      "AREA_OR_POINT": "Area",
+      "blocks": [
+        [
+          256,
+          256
+        ],
+        [
+          256,
+          256
+        ],
+        [
+          256,
+          256
+        ]
+      ],
+      "crs": 2056,
+      "dtype": [
+        "uint8",
+        "uint8",
+        "uint8"
+      ],
+      "imageStructure": {
+        "COMPRESSION": "YCbCr JPEG",
+        "INTERLEAVE": "PIXEL",
+        "JPEGTABLESMODE": "1",
+        "JPEG_QUALITY": "95",
+        "LAYOUT": "COG",
+        "SOURCE_COLOR_SPACE": "YCbCr"
+      },
+      "res": [
+        0.1,
+        0.1
+      ],
+      "tile": "2625-1091"
+    },
+    {
+      "AREA_OR_POINT": "Area",
+      "blocks": [
+        [
+          256,
+          256
+        ],
+        [
+          256,
+          256
+        ],
+        [
+          256,
+          256
+        ]
+      ],
+      "crs": 2056,
+      "dtype": [
+        "uint8",
+        "uint8",
+        "uint8"
+      ],
+      "imageStructure": {
+        "COMPRESSION": "YCbCr JPEG",
+        "INTERLEAVE": "PIXEL",
+        "JPEGTABLESMODE": "1",
+        "JPEG_QUALITY": "95",
+        "LAYOUT": "COG",
+        "SOURCE_COLOR_SPACE": "YCbCr"
+      },
+      "res": [
+        0.1,
+        0.1
+      ],
+      "tile": "2625-1092"
+    }
+  ],
+  "methodSha256": "49a9e87f31f3b93a10034a886b6d6c0be22141ea846d928e35b5552befb9de01",
+  "noCorrection": true,
+  "noFitting": true,
+  "noiseModel": "unavailable; no physical SNR",
+  "patches": {
+    "dark-context": {
+      "JPEGPhaseAudit": {
+        "bright": {
+          "columns": [
+            {
+              "meanAbsoluteDN": 6.437285064719549,
+              "pairs": 54234,
+              "phase": 0
+            },
+            {
+              "meanAbsoluteDN": 6.359841616838078,
+              "pairs": 54353,
+              "phase": 1
+            },
+            {
+              "meanAbsoluteDN": 6.430472871978679,
+              "pairs": 54405,
+              "phase": 2
+            },
+            {
+              "meanAbsoluteDN": 6.416826554498903,
+              "pairs": 54680,
+              "phase": 3
+            },
+            {
+              "meanAbsoluteDN": 6.318553859668388,
+              "pairs": 54642,
+              "phase": 4
+            },
+            {
+              "meanAbsoluteDN": 6.350488411813111,
+              "pairs": 54685,
+              "phase": 5
+            },
+            {
+              "meanAbsoluteDN": 6.452232315985061,
+              "pairs": 54357,
+              "phase": 6
+            },
+            {
+              "meanAbsoluteDN": 6.415146952072443,
+              "pairs": 54332,
+              "phase": 7
+            }
+          ],
+          "rows": [
+            {
+              "meanAbsoluteDN": 9.515406031734262,
+              "pairs": 53948,
+              "phase": 0
+            },
+            {
+              "meanAbsoluteDN": 9.616509769775679,
+              "pairs": 54208,
+              "phase": 1
+            },
+            {
+              "meanAbsoluteDN": 9.803228736609421,
+              "pairs": 52929,
+              "phase": 2
+            },
+            {
+              "meanAbsoluteDN": 9.694550306020602,
+              "pairs": 53101,
+              "phase": 3
+            },
+            {
+              "meanAbsoluteDN": 9.592044208552139,
+              "pairs": 53320,
+              "phase": 4
+            },
+            {
+              "meanAbsoluteDN": 9.670924821096524,
+              "pairs": 53241,
+              "phase": 5
+            },
+            {
+              "meanAbsoluteDN": 9.576013056815402,
+              "pairs": 53137,
+              "phase": 6
+            },
+            {
+              "meanAbsoluteDN": 9.689501417422562,
+              "pairs": 53689,
+              "phase": 7
+            }
+          ]
+        },
+        "dark": {
+          "columns": [
+            {
+              "meanAbsoluteDN": 2.1801705333249575,
+              "pairs": 159190,
+              "phase": 0
+            },
+            {
+              "meanAbsoluteDN": 1.915005626172637,
+              "pairs": 160962,
+              "phase": 1
+            },
+            {
+              "meanAbsoluteDN": 1.8729912652114882,
+              "pairs": 161309,
+              "phase": 2
+            },
+            {
+              "meanAbsoluteDN": 1.9596147595993116,
+              "pairs": 161522,
+              "phase": 3
+            },
+            {
+              "meanAbsoluteDN": 1.9433934930362118,
+              "pairs": 161550,
+              "phase": 4
+            },
+            {
+              "meanAbsoluteDN": 1.9550258257812116,
+              "pairs": 161544,
+              "phase": 5
+            },
+            {
+              "meanAbsoluteDN": 1.874513334488049,
+              "pairs": 161656,
+              "phase": 6
+            },
+            {
+              "meanAbsoluteDN": 1.9247364816297645,
+              "pairs": 161103,
+              "phase": 7
+            }
+          ],
+          "rows": [
+            {
+              "meanAbsoluteDN": 2.2763943981109325,
+              "pairs": 159232,
+              "phase": 0
+            },
+            {
+              "meanAbsoluteDN": 2.034408768036206,
+              "pairs": 160857,
+              "phase": 1
+            },
+            {
+              "meanAbsoluteDN": 2.012881208693323,
+              "pairs": 160537,
+              "phase": 2
+            },
+            {
+              "meanAbsoluteDN": 2.08552491992152,
+              "pairs": 159531,
+              "phase": 3
+            },
+            {
+              "meanAbsoluteDN": 2.0448752634872953,
+              "pairs": 159780,
+              "phase": 4
+            },
+            {
+              "meanAbsoluteDN": 2.08625179498134,
+              "pairs": 159166,
+              "phase": 5
+            },
+            {
+              "meanAbsoluteDN": 2.0040800988504883,
+              "pairs": 160242,
+              "phase": 6
+            },
+            {
+              "meanAbsoluteDN": 2.0216847396746087,
+              "pairs": 160914,
+              "phase": 7
+            }
+          ]
+        }
+      },
+      "allRGBZeroCells": 0,
+      "anyChannel255Cells": 0,
+      "anyChannelZeroCells": 6508,
+      "blockStrata": {
+        "0-5": {
+          "adjacency05m": null,
+          "adjacency1m": null,
+          "blocks": 0,
+          "coherence05m": null,
+          "contrastRMS_DN": {
+            "0.1": null,
+            "0.5": null,
+            "1.0": null,
+            "2.5": null
+          },
+          "gradientRMS05m_DN": null,
+          "notIndependentSamples": true,
+          "shuffleAdjacency05m": null,
+          "shuffleCoherence05m": null
+        },
+        "10-20": {
+          "adjacency05m": [
+            0.12992630342326683,
+            0.3943919882612068,
+            0.625907604423151
+          ],
+          "adjacency1m": [
+            -0.07309781357575021,
+            0.22181645013341938,
+            0.5343854346608188
+          ],
+          "blocks": 586,
+          "coherence05m": [
+            0.0562919414816617,
+            0.16398445665233002,
+            0.33551520199578116
+          ],
+          "contrastRMS_DN": {
+            "0.1": [
+              4.14029869537857,
+              5.098150846073345,
+              6.935677628837299
+            ],
+            "0.5": [
+              2.3839828726006993,
+              3.556468849560648,
+              5.370883545320888
+            ],
+            "1.0": [
+              1.4004357576925055,
+              2.490195647405635,
+              4.205387462927885
+            ],
+            "2.5": [
+              0.35439252147487915,
+              1.0934609502459005,
+              2.77548059492222
+            ]
+          },
+          "gradientRMS05m_DN": [
+            2.9167729863660288,
+            3.845531677939382,
+            5.369343784233013
+          ],
+          "notIndependentSamples": true,
+          "shuffleAdjacency05m": [
+            -0.13459366147411617,
+            -0.00971544175698289,
+            0.1070631029656533
+          ],
+          "shuffleCoherence05m": [
+            0.143823142274119,
+            0.251069413104762,
+            0.37167759208486734
+          ]
+        },
+        "128-256": {
+          "adjacency05m": [
+            0.31472368052788025,
+            0.5186080326076496,
+            0.6918057352337635
+          ],
+          "adjacency1m": [
+            0.055266554543772044,
+            0.34470311517270835,
+            0.6077508842281031
+          ],
+          "blocks": 92,
+          "coherence05m": [
+            0.08503274836568521,
+            0.20840603032958666,
+            0.4231048933083808
+          ],
+          "contrastRMS_DN": {
+            "0.1": [
+              11.322264352822756,
+              25.365031793367137,
+              39.80854990274581
+            ],
+            "0.5": [
+              8.598009623464172,
+              19.024241410549223,
+              31.639077432029527
+            ],
+            "1.0": [
+              5.7729222061896595,
+              14.679208470242022,
+              26.49283198573937
+            ],
+            "2.5": [
+              2.4718252823331066,
+              7.389281202312984,
+              14.724575284802564
+            ]
+          },
+          "gradientRMS05m_DN": [
+            8.23741077169403,
+            19.094554289235795,
+            32.04492533319722
+          ],
+          "notIndependentSamples": true,
+          "shuffleAdjacency05m": [
+            -0.12280401492665544,
+            -0.003797217799274893,
+            0.1170500166323298
+          ],
+          "shuffleCoherence05m": [
+            0.16163347272783046,
+            0.2530012076122009,
+            0.3880501205644356
+          ]
+        },
+        "20-40": {
+          "adjacency05m": [
+            0.4492782807214204,
+            0.6766715924566229,
+            0.8308741731279793
+          ],
+          "adjacency1m": [
+            0.11871534538188792,
+            0.45543723136477493,
+            0.6723061244753519
+          ],
+          "blocks": 41,
+          "coherence05m": [
+            0.03589514213875915,
+            0.22502564887014603,
+            0.5793832388670772
+          ],
+          "contrastRMS_DN": {
+            "0.1": [
+              6.236585849345764,
+              23.923755251279967,
+              43.48153323381864
+            ],
+            "0.5": [
+              4.7656447989810236,
+              22.215932693992293,
+              38.36917451416134
+            ],
+            "1.0": [
+              4.238821614736661,
+              17.95905854901375,
+              35.53152067250867
+            ],
+            "2.5": [
+              2.023968636893966,
+              10.158378437930525,
+              25.969438396089615
+            ]
+          },
+          "gradientRMS05m_DN": [
+            4.500285360305164,
+            17.011447162590798,
+            27.103266709163368
+          ],
+          "notIndependentSamples": true,
+          "shuffleAdjacency05m": [
+            -0.10876919154103343,
+            -0.012307406697659222,
+            0.08177527714127865
+          ],
+          "shuffleCoherence05m": [
+            0.162821306179666,
+            0.259335092075943,
+            0.37203855568124405
+          ]
+        },
+        "40-80": {
+          "adjacency05m": [
+            0.5647503554011427,
+            0.7202931116902899,
+            0.8530476038597644
+          ],
+          "adjacency1m": [
+            0.2185290361242896,
+            0.5542197747611842,
+            0.7427229822369446
+          ],
+          "blocks": 67,
+          "coherence05m": [
+            0.0338439547184172,
+            0.18975983059176493,
+            0.45740508963709986
+          ],
+          "contrastRMS_DN": {
+            "0.1": [
+              40.20031562176193,
+              50.74570420022197,
+              57.90395848992516
+            ],
+            "0.5": [
+              34.58379471258709,
+              45.25901834376836,
+              52.96246159545871
+            ],
+            "1.0": [
+              28.060686482446172,
+              40.27087786476233,
+              48.93799467520723
+            ],
+            "2.5": [
+              11.357058559454433,
+              26.64883131654259,
+              42.1668212985807
+            ]
+          },
+          "gradientRMS05m_DN": [
+            22.89642892128931,
+            33.908782775854434,
+            41.06267928172155
+          ],
+          "notIndependentSamples": true,
+          "shuffleAdjacency05m": [
+            -0.12637946974555483,
+            -0.015801203491131288,
+            0.10819009634038174
+          ],
+          "shuffleCoherence05m": [
+            0.16657824196610335,
+            0.2579103416495223,
+            0.38580061801526105
+          ]
+        },
+        "5-10": {
+          "adjacency05m": [
+            0.22777164978939032,
+            0.5188900124979473,
+            0.6304829392046933
+          ],
+          "adjacency1m": [
+            0.1365796745292742,
+            0.3705813534160134,
+            0.5482496227326007
+          ],
+          "blocks": 19,
+          "coherence05m": [
+            0.07774666577290475,
+            0.17533652988134732,
+            0.3093910111440409
+          ],
+          "contrastRMS_DN": {
+            "0.1": [
+              2.347719910763363,
+              3.663048505056204,
+              4.5653861988463555
+            ],
+            "0.5": [
+              1.4984339015611103,
+              2.5305375596884883,
+              3.5780121246686596
+            ],
+            "1.0": [
+              1.0547522040775208,
+              1.8493575163826972,
+              2.867978209673224
+            ],
+            "2.5": [
+              0.476374375560526,
+              1.0319210705953297,
+              1.8518529367646568
+            ]
+          },
+          "gradientRMS05m_DN": [
+            1.5461281122087116,
+            2.5188991444099615,
+            3.2290815561210406
+          ],
+          "notIndependentSamples": true,
+          "shuffleAdjacency05m": [
+            -0.14812435841033803,
+            -0.03554244835450976,
+            0.058323338408500056
+          ],
+          "shuffleCoherence05m": [
+            0.15972378544468677,
+            0.2384629074275081,
+            0.3674284817660478
+          ]
+        },
+        "80-128": {
+          "adjacency05m": [
+            0.41729555217369574,
+            0.612379227138035,
+            0.7955337769289307
+          ],
+          "adjacency1m": [
+            0.06409828042652158,
+            0.36232621920126973,
+            0.6985287164131824
+          ],
+          "blocks": 95,
+          "coherence05m": [
+            0.11283189771558248,
+            0.2694276586883151,
+            0.47388204039210163
+          ],
+          "contrastRMS_DN": {
+            "0.1": [
+              36.25805718762763,
+              49.608554722441355,
+              60.02673131698941
+            ],
+            "0.5": [
+              28.392967353600508,
+              42.76189481991383,
+              55.29046292030437
+            ],
+            "1.0": [
+              19.485057927010175,
+              34.977039437536796,
+              49.781676864997266
+            ],
+            "2.5": [
+              6.367474276559295,
+              18.262189268832103,
+              36.2357733789174
+            ]
+          },
+          "gradientRMS05m_DN": [
+            27.418745794650345,
+            36.824296832247754,
+            44.4932119040594
+          ],
+          "notIndependentSamples": true,
+          "shuffleAdjacency05m": [
+            -0.11526560368962938,
+            -0.009226322493469908,
+            0.1317721911613147
+          ],
+          "shuffleCoherence05m": [
+            0.14639501393175203,
+            0.257725431612348,
+            0.37109774094921416
+          ]
+        }
+      },
+      "blocks5m": 900,
+      "intensityP05P50P95": [
+        6.931799999999999,
+        17.1484,
+        163.0402
+      ],
+      "nativeCells": 2250000,
+      "nativeStrata": {
+        "0-5": {
+          "GBCorrelation": -0.34179137154812844,
+          "RGCorrelation": -0.528305033658803,
+          "cells": 29251,
+          "channel255": [
+            0,
+            0,
+            0
+          ],
+          "channelOccupiedLevels": [
+            19,
+            7,
+            29
+          ],
+          "channelP05P50P95": [
+            [
+              0.0,
+              4.0,
+              9.0
+            ],
+            [
+              1.0,
+              4.0,
+              5.0
+            ],
+            [
+              5.0,
+              9.0,
+              17.0
+            ]
+          ],
+          "channelZeros": [
+            2174,
+            457,
+            20
+          ]
+        },
+        "10-20": {
+          "GBCorrelation": 0.3436439614423446,
+          "RGCorrelation": 0.14765823058490232,
+          "cells": 1032327,
+          "channel255": [
+            0,
+            0,
+            0
+          ],
+          "channelOccupiedLevels": [
+            41,
+            22,
+            49
+          ],
+          "channelP05P50P95": [
+            [
+              7.0,
+              14.0,
+              21.0
+            ],
+            [
+              9.0,
+              14.0,
+              19.0
+            ],
+            [
+              13.0,
+              22.0,
+              31.0
+            ]
+          ],
+          "channelZeros": [
+            664,
+            0,
+            5
+          ]
+        },
+        "128-256": {
+          "GBCorrelation": 0.9300898014456424,
+          "RGCorrelation": 0.9530840487342381,
+          "cells": 325194,
+          "channel255": [
+            0,
+            0,
+            0
+          ],
+          "channelOccupiedLevels": [
+            137,
+            118,
+            147
+          ],
+          "channelP05P50P95": [
+            [
+              132.0,
+              159.0,
+              188.0
+            ],
+            [
+              133.0,
+              157.0,
+              185.0
+            ],
+            [
+              116.0,
+              139.0,
+              166.0
+            ]
+          ],
+          "channelZeros": [
+            0,
+            0,
+            0
+          ]
+        },
+        "20-40": {
+          "GBCorrelation": 0.4796099280745098,
+          "RGCorrelation": 0.46878983199249785,
+          "cells": 365477,
+          "channel255": [
+            0,
+            0,
+            0
+          ],
+          "channelOccupiedLevels": [
+            60,
+            35,
+            74
+          ],
+          "channelP05P50P95": [
+            [
+              14.0,
+              22.0,
+              34.0
+            ],
+            [
+              19.0,
+              23.0,
+              34.0
+            ],
+            [
+              22.0,
+              32.0,
+              43.0
+            ]
+          ],
+          "channelZeros": [
+            0,
+            0,
+            0
+          ]
+        },
+        "40-80": {
+          "GBCorrelation": 0.7682862856607593,
+          "RGCorrelation": 0.8207126336857419,
+          "cells": 60379,
+          "channel255": [
+            0,
+            0,
+            0
+          ],
+          "channelOccupiedLevels": [
+            83,
+            54,
+            109
+          ],
+          "channelP05P50P95": [
+            [
+              38.0,
+              59.0,
+              80.0
+            ],
+            [
+              41.0,
+              60.0,
+              79.0
+            ],
+            [
+              40.0,
+              59.0,
+              79.0
+            ]
+          ],
+          "channelZeros": [
+            0,
+            0,
+            0
+          ]
+        },
+        "5-10": {
+          "GBCorrelation": 0.05073545540739315,
+          "RGCorrelation": -0.24000826617400478,
+          "cells": 314702,
+          "channel255": [
+            0,
+            0,
+            0
+          ],
+          "channelOccupiedLevels": [
+            32,
+            14,
+            37
+          ],
+          "channelP05P50P95": [
+            [
+              2.0,
+              8.0,
+              15.0
+            ],
+            [
+              4.0,
+              7.0,
+              10.0
+            ],
+            [
+              7.0,
+              13.0,
+              22.0
+            ]
+          ],
+          "channelZeros": [
+            3170,
+            14,
+            23
+          ]
+        },
+        "80-128": {
+          "GBCorrelation": 0.8368212127079061,
+          "RGCorrelation": 0.8931670393327912,
+          "cells": 122670,
+          "channel255": [
+            0,
+            0,
+            0
+          ],
+          "channelOccupiedLevels": [
+            94,
+            63,
+            98
+          ],
+          "channelP05P50P95": [
+            [
+              82.0,
+              110.0,
+              130.0
+            ],
+            [
+              84.0,
+              111.0,
+              128.0
+            ],
+            [
+              76.0,
+              100.0,
+              118.0
+            ]
+          ],
+          "channelZeros": [
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "sourceTile": "2624-1092",
+      "sourceWindow": {
+        "column": 6650,
+        "row": 6070,
+        "size": 1500
+      }
+    },
+    "ordinary": {
+      "JPEGPhaseAudit": {
+        "bright": {
+          "columns": [
+            {
+              "meanAbsoluteDN": 3.803581898553313,
+              "pairs": 44792,
+              "phase": 0
+            },
+            {
+              "meanAbsoluteDN": 3.518697117358322,
+              "pairs": 44820,
+              "phase": 1
+            },
+            {
+              "meanAbsoluteDN": 3.60112770401446,
+              "pairs": 44813,
+              "phase": 2
+            },
+            {
+              "meanAbsoluteDN": 3.6547109122556454,
+              "pairs": 44812,
+              "phase": 3
+            },
+            {
+              "meanAbsoluteDN": 3.6651754370886387,
+              "pairs": 44213,
+              "phase": 4
+            },
+            {
+              "meanAbsoluteDN": 3.620098696021078,
+              "pairs": 44786,
+              "phase": 5
+            },
+            {
+              "meanAbsoluteDN": 3.5905836962590727,
+              "pairs": 44775,
+              "phase": 6
+            },
+            {
+              "meanAbsoluteDN": 3.5645488631795237,
+              "pairs": 44774,
+              "phase": 7
+            }
+          ],
+          "rows": [
+            {
+              "meanAbsoluteDN": 4.236040982122652,
+              "pairs": 44190,
+              "phase": 0
+            },
+            {
+              "meanAbsoluteDN": 4.067290752361598,
+              "pairs": 44779,
+              "phase": 1
+            },
+            {
+              "meanAbsoluteDN": 4.148557268545398,
+              "pairs": 44782,
+              "phase": 2
+            },
+            {
+              "meanAbsoluteDN": 4.2333905901258815,
+              "pairs": 44804,
+              "phase": 3
+            },
+            {
+              "meanAbsoluteDN": 4.089803688652704,
+              "pairs": 44786,
+              "phase": 4
+            },
+            {
+              "meanAbsoluteDN": 4.167636735605486,
+              "pairs": 44774,
+              "phase": 5
+            },
+            {
+              "meanAbsoluteDN": 4.114464370535714,
+              "pairs": 44800,
+              "phase": 6
+            },
+            {
+              "meanAbsoluteDN": 4.111877605143317,
+              "pairs": 44796,
+              "phase": 7
+            }
+          ]
+        },
+        "dark": {
+          "columns": [
+            {
+              "meanAbsoluteDN": 2.474166666666667,
+              "pairs": 30,
+              "phase": 0
+            },
+            {
+              "meanAbsoluteDN": 3.1038482758620685,
+              "pairs": 29,
+              "phase": 1
+            },
+            {
+              "meanAbsoluteDN": 2.9086846153846158,
+              "pairs": 26,
+              "phase": 2
+            },
+            {
+              "meanAbsoluteDN": 2.777346153846154,
+              "pairs": 26,
+              "phase": 3
+            },
+            {
+              "meanAbsoluteDN": 2.925588888888889,
+              "pairs": 18,
+              "phase": 4
+            },
+            {
+              "meanAbsoluteDN": 3.1162869565217384,
+              "pairs": 23,
+              "phase": 5
+            },
+            {
+              "meanAbsoluteDN": 3.4812399999999997,
+              "pairs": 25,
+              "phase": 6
+            },
+            {
+              "meanAbsoluteDN": 3.311541666666667,
+              "pairs": 24,
+              "phase": 7
+            }
+          ],
+          "rows": [
+            {
+              "meanAbsoluteDN": 2.899535714285714,
+              "pairs": 28,
+              "phase": 0
+            },
+            {
+              "meanAbsoluteDN": 3.3017741935483875,
+              "pairs": 31,
+              "phase": 1
+            },
+            {
+              "meanAbsoluteDN": 3.317151724137931,
+              "pairs": 29,
+              "phase": 2
+            },
+            {
+              "meanAbsoluteDN": 3.6961833333333325,
+              "pairs": 12,
+              "phase": 3
+            },
+            {
+              "meanAbsoluteDN": 3.1328,
+              "pairs": 13,
+              "phase": 4
+            },
+            {
+              "meanAbsoluteDN": 3.7785391304347833,
+              "pairs": 23,
+              "phase": 5
+            },
+            {
+              "meanAbsoluteDN": 2.611807999999999,
+              "pairs": 25,
+              "phase": 6
+            },
+            {
+              "meanAbsoluteDN": 3.410096296296296,
+              "pairs": 27,
+              "phase": 7
+            }
+          ]
+        }
+      },
+      "allRGBZeroCells": 0,
+      "anyChannel255Cells": 0,
+      "anyChannelZeroCells": 6,
+      "blockStrata": {
+        "0-5": {
+          "adjacency05m": null,
+          "adjacency1m": null,
+          "blocks": 0,
+          "coherence05m": null,
+          "contrastRMS_DN": {
+            "0.1": null,
+            "0.5": null,
+            "1.0": null,
+            "2.5": null
+          },
+          "gradientRMS05m_DN": null,
+          "notIndependentSamples": true,
+          "shuffleAdjacency05m": null,
+          "shuffleCoherence05m": null
+        },
+        "10-20": {
+          "adjacency05m": null,
+          "adjacency1m": null,
+          "blocks": 0,
+          "coherence05m": null,
+          "contrastRMS_DN": {
+            "0.1": null,
+            "0.5": null,
+            "1.0": null,
+            "2.5": null
+          },
+          "gradientRMS05m_DN": null,
+          "notIndependentSamples": true,
+          "shuffleAdjacency05m": null,
+          "shuffleCoherence05m": null
+        },
+        "128-256": {
+          "adjacency05m": [
+            0.34991143012339576,
+            0.5682795382007126,
+            0.8271984652791163
+          ],
+          "adjacency1m": [
+            0.0950119141797649,
+            0.4113994003173189,
+            0.7259956038350006
+          ],
+          "blocks": 118,
+          "coherence05m": [
+            0.049383982370170165,
+            0.17689585414678743,
+            0.4691126731592117
+          ],
+          "contrastRMS_DN": {
+            "0.1": [
+              8.46805362326485,
+              14.336525946448806,
+              27.395891786117428
+            ],
+            "0.5": [
+              6.385326029782256,
+              11.952314088688055,
+              22.346092545560065
+            ],
+            "1.0": [
+              4.250775446486657,
+              9.341758552720751,
+              19.230165139771394
+            ],
+            "2.5": [
+              1.835837233432019,
+              5.687199318091292,
+              14.717191435969841
+            ]
+          },
+          "gradientRMS05m_DN": [
+            6.23820471189027,
+            10.521588467662895,
+            18.878408411678755
+          ],
+          "notIndependentSamples": true,
+          "shuffleAdjacency05m": [
+            -0.1316165066159259,
+            -0.021817800837165228,
+            0.10286123984622877
+          ],
+          "shuffleCoherence05m": [
+            0.16644438384254082,
+            0.2620057808043778,
+            0.38305131120476965
+          ]
+        },
+        "20-40": {
+          "adjacency05m": null,
+          "adjacency1m": null,
+          "blocks": 0,
+          "coherence05m": null,
+          "contrastRMS_DN": {
+            "0.1": null,
+            "0.5": null,
+            "1.0": null,
+            "2.5": null
+          },
+          "gradientRMS05m_DN": null,
+          "notIndependentSamples": true,
+          "shuffleAdjacency05m": null,
+          "shuffleCoherence05m": null
+        },
+        "40-80": {
+          "adjacency05m": null,
+          "adjacency1m": null,
+          "blocks": 0,
+          "coherence05m": null,
+          "contrastRMS_DN": {
+            "0.1": null,
+            "0.5": null,
+            "1.0": null,
+            "2.5": null
+          },
+          "gradientRMS05m_DN": null,
+          "notIndependentSamples": true,
+          "shuffleAdjacency05m": null,
+          "shuffleCoherence05m": null
+        },
+        "5-10": {
+          "adjacency05m": null,
+          "adjacency1m": null,
+          "blocks": 0,
+          "coherence05m": null,
+          "contrastRMS_DN": {
+            "0.1": null,
+            "0.5": null,
+            "1.0": null,
+            "2.5": null
+          },
+          "gradientRMS05m_DN": null,
+          "notIndependentSamples": true,
+          "shuffleAdjacency05m": null,
+          "shuffleCoherence05m": null
+        },
+        "80-128": {
+          "adjacency05m": [
+            0.19394623998982932,
+            0.41199767740045945,
+            0.5931494439784337
+          ],
+          "adjacency1m": [
+            -0.03025386415080278,
+            0.22022686013117826,
+            0.5672462844711426
+          ],
+          "blocks": 26,
+          "coherence05m": [
+            0.04376173447006334,
+            0.15707381640280446,
+            0.27957849104627247
+          ],
+          "contrastRMS_DN": {
+            "0.1": [
+              7.833410027792416,
+              12.68411170739542,
+              20.71002275451418
+            ],
+            "0.5": [
+              5.601726034654522,
+              9.683724227045872,
+              16.455344948271073
+            ],
+            "1.0": [
+              3.506533473309808,
+              7.251435547043581,
+              11.981634058826556
+            ],
+            "2.5": [
+              0.6609944496305,
+              3.0034507522652953,
+              10.288431398637965
+            ]
+          },
+          "gradientRMS05m_DN": [
+            6.443018726087068,
+            9.853696378144976,
+            18.61295166670708
+          ],
+          "notIndependentSamples": true,
+          "shuffleAdjacency05m": [
+            -0.08372354469108838,
+            -0.0017987681362400957,
+            0.06992891416238989
+          ],
+          "shuffleCoherence05m": [
+            0.1650758659774851,
+            0.26158193445138733,
+            0.34876134966210726
+          ]
+        }
+      },
+      "blocks5m": 144,
+      "intensityP05P50P95": [
+        112.10679999999999,
+        141.619,
+        187.21219999999997
+      ],
+      "nativeCells": 360000,
+      "nativeStrata": {
+        "0-5": {
+          "GBCorrelation": -0.6736330697086077,
+          "RGCorrelation": -0.8205714097040218,
+          "cells": 6,
+          "channel255": [
+            0,
+            0,
+            0
+          ],
+          "channelOccupiedLevels": [
+            4,
+            4,
+            6
+          ],
+          "channelP05P50P95": [
+            [
+              0.0,
+              5.5,
+              11.25
+            ],
+            [
+              2.25,
+              3.5,
+              5.5
+            ],
+            [
+              5.25,
+              7.5,
+              11.5
+            ]
+          ],
+          "channelZeros": [
+            2,
+            0,
+            0
+          ]
+        },
+        "10-20": {
+          "GBCorrelation": 0.268397458707248,
+          "RGCorrelation": 0.014716830274602244,
+          "cells": 214,
+          "channel255": [
+            0,
+            0,
+            0
+          ],
+          "channelOccupiedLevels": [
+            26,
+            17,
+            33
+          ],
+          "channelP05P50P95": [
+            [
+              7.0,
+              15.0,
+              25.0
+            ],
+            [
+              10.0,
+              14.0,
+              20.0
+            ],
+            [
+              6.0,
+              18.0,
+              28.0
+            ]
+          ],
+          "channelZeros": [
+            1,
+            0,
+            1
+          ]
+        },
+        "128-256": {
+          "GBCorrelation": 0.9650910596637072,
+          "RGCorrelation": 0.977575264411853,
+          "cells": 261009,
+          "channel255": [
+            0,
+            0,
+            0
+          ],
+          "channelOccupiedLevels": [
+            125,
+            112,
+            159
+          ],
+          "channelP05P50P95": [
+            [
+              132.0,
+              156.0,
+              193.0
+            ],
+            [
+              132.0,
+              154.0,
+              191.0
+            ],
+            [
+              101.0,
+              134.0,
+              174.0
+            ]
+          ],
+          "channelZeros": [
+            0,
+            0,
+            0
+          ]
+        },
+        "20-40": {
+          "GBCorrelation": 0.4044716609319593,
+          "RGCorrelation": 0.45152782969156985,
+          "cells": 209,
+          "channel255": [
+            0,
+            0,
+            0
+          ],
+          "channelOccupiedLevels": [
+            38,
+            25,
+            45
+          ],
+          "channelP05P50P95": [
+            [
+              12.4,
+              28.0,
+              40.0
+            ],
+            [
+              21.0,
+              30.0,
+              40.0
+            ],
+            [
+              9.0,
+              27.0,
+              43.0
+            ]
+          ],
+          "channelZeros": [
+            0,
+            0,
+            0
+          ]
+        },
+        "40-80": {
+          "GBCorrelation": 0.5099670037479911,
+          "RGCorrelation": 0.8155423850159841,
+          "cells": 859,
+          "channel255": [
+            0,
+            0,
+            0
+          ],
+          "channelOccupiedLevels": [
+            64,
+            48,
+            72
+          ],
+          "channelP05P50P95": [
+            [
+              39.0,
+              64.0,
+              80.0
+            ],
+            [
+              44.900000000000006,
+              69.0,
+              81.0
+            ],
+            [
+              30.0,
+              53.0,
+              76.0
+            ]
+          ],
+          "channelZeros": [
+            0,
+            0,
+            0
+          ]
+        },
+        "5-10": {
+          "GBCorrelation": 0.027777865780124044,
+          "RGCorrelation": -0.4601025696173678,
+          "cells": 53,
+          "channel255": [
+            0,
+            0,
+            0
+          ],
+          "channelOccupiedLevels": [
+            15,
+            9,
+            20
+          ],
+          "channelP05P50P95": [
+            [
+              3.0,
+              9.0,
+              14.399999999999999
+            ],
+            [
+              5.0,
+              8.0,
+              11.0
+            ],
+            [
+              3.2,
+              12.0,
+              18.4
+            ]
+          ],
+          "channelZeros": [
+            0,
+            0,
+            2
+          ]
+        },
+        "80-128": {
+          "GBCorrelation": 0.6850668227095028,
+          "RGCorrelation": 0.8486879479416358,
+          "cells": 97650,
+          "channel255": [
+            0,
+            0,
+            0
+          ],
+          "channelOccupiedLevels": [
+            77,
+            58,
+            98
+          ],
+          "channelP05P50P95": [
+            [
+              106.0,
+              123.0,
+              132.0
+            ],
+            [
+              106.0,
+              123.0,
+              129.0
+            ],
+            [
+              70.0,
+              90.0,
+              105.0
+            ]
+          ],
+          "channelZeros": [
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "sourceTile": "2625-1092",
+      "sourceWindow": {
+        "column": 2100,
+        "row": 4400,
+        "size": 600
+      }
+    },
+    "steep": {
+      "JPEGPhaseAudit": {
+        "bright": {
+          "columns": [
+            {
+              "meanAbsoluteDN": 10.737498255033556,
+              "pairs": 745,
+              "phase": 0
+            },
+            {
+              "meanAbsoluteDN": 10.916900643500643,
+              "pairs": 777,
+              "phase": 1
+            },
+            {
+              "meanAbsoluteDN": 10.351981956797967,
+              "pairs": 787,
+              "phase": 2
+            },
+            {
+              "meanAbsoluteDN": 10.200169461827283,
+              "pairs": 799,
+              "phase": 3
+            },
+            {
+              "meanAbsoluteDN": 9.975582316313824,
+              "pairs": 803,
+              "phase": 4
+            },
+            {
+              "meanAbsoluteDN": 10.283515099009902,
+              "pairs": 808,
+              "phase": 5
+            },
+            {
+              "meanAbsoluteDN": 10.174667431850787,
+              "pairs": 697,
+              "phase": 6
+            },
+            {
+              "meanAbsoluteDN": 10.509204513399153,
+              "pairs": 709,
+              "phase": 7
+            }
+          ],
+          "rows": [
+            {
+              "meanAbsoluteDN": 15.11616331521739,
+              "pairs": 736,
+              "phase": 0
+            },
+            {
+              "meanAbsoluteDN": 13.577050395778365,
+              "pairs": 758,
+              "phase": 1
+            },
+            {
+              "meanAbsoluteDN": 13.104949171270716,
+              "pairs": 724,
+              "phase": 2
+            },
+            {
+              "meanAbsoluteDN": 13.172174393530996,
+              "pairs": 742,
+              "phase": 3
+            },
+            {
+              "meanAbsoluteDN": 14.249274504623513,
+              "pairs": 757,
+              "phase": 4
+            },
+            {
+              "meanAbsoluteDN": 13.459209946236559,
+              "pairs": 744,
+              "phase": 5
+            },
+            {
+              "meanAbsoluteDN": 13.282445660881175,
+              "pairs": 749,
+              "phase": 6
+            },
+            {
+              "meanAbsoluteDN": 14.014958947368424,
+              "pairs": 760,
+              "phase": 7
+            }
+          ]
+        },
+        "dark": {
+          "columns": [
+            {
+              "meanAbsoluteDN": 1.9655035739030022,
+              "pairs": 34640,
+              "phase": 0
+            },
+            {
+              "meanAbsoluteDN": 1.6889736943241458,
+              "pairs": 34867,
+              "phase": 1
+            },
+            {
+              "meanAbsoluteDN": 1.6606056554532678,
+              "pairs": 34869,
+              "phase": 2
+            },
+            {
+              "meanAbsoluteDN": 1.7311662254704494,
+              "pairs": 34754,
+              "phase": 3
+            },
+            {
+              "meanAbsoluteDN": 1.710305995975855,
+              "pairs": 34790,
+              "phase": 4
+            },
+            {
+              "meanAbsoluteDN": 1.734942911943204,
+              "pairs": 34932,
+              "phase": 5
+            },
+            {
+              "meanAbsoluteDN": 1.648020239841256,
+              "pairs": 34773,
+              "phase": 6
+            },
+            {
+              "meanAbsoluteDN": 1.672537153947143,
+              "pairs": 35038,
+              "phase": 7
+            }
+          ],
+          "rows": [
+            {
+              "meanAbsoluteDN": 2.076399970443932,
+              "pairs": 33834,
+              "phase": 0
+            },
+            {
+              "meanAbsoluteDN": 1.8753559617612976,
+              "pairs": 34520,
+              "phase": 1
+            },
+            {
+              "meanAbsoluteDN": 1.8484065130781224,
+              "pairs": 34638,
+              "phase": 2
+            },
+            {
+              "meanAbsoluteDN": 1.9231067112739015,
+              "pairs": 34673,
+              "phase": 3
+            },
+            {
+              "meanAbsoluteDN": 1.8627138613861385,
+              "pairs": 34744,
+              "phase": 4
+            },
+            {
+              "meanAbsoluteDN": 1.910849235289035,
+              "pairs": 34719,
+              "phase": 5
+            },
+            {
+              "meanAbsoluteDN": 1.8310870851659333,
+              "pairs": 35014,
+              "phase": 6
+            },
+            {
+              "meanAbsoluteDN": 1.8514480647290046,
+              "pairs": 34853,
+              "phase": 7
+            }
+          ]
+        }
+      },
+      "allRGBZeroCells": 0,
+      "anyChannel255Cells": 0,
+      "anyChannelZeroCells": 1362,
+      "blockStrata": {
+        "0-5": {
+          "adjacency05m": null,
+          "adjacency1m": null,
+          "blocks": 0,
+          "coherence05m": null,
+          "contrastRMS_DN": {
+            "0.1": null,
+            "0.5": null,
+            "1.0": null,
+            "2.5": null
+          },
+          "gradientRMS05m_DN": null,
+          "notIndependentSamples": true,
+          "shuffleAdjacency05m": null,
+          "shuffleCoherence05m": null
+        },
+        "10-20": {
+          "adjacency05m": [
+            0.17710668431509016,
+            0.44822510033622154,
+            0.6525732216332337
+          ],
+          "adjacency1m": [
+            -0.009670172546111086,
+            0.27407846241474515,
+            0.5613263690454684
+          ],
+          "blocks": 123,
+          "coherence05m": [
+            0.04946184764983824,
+            0.14276328957026407,
+            0.3349156260244503
+          ],
+          "contrastRMS_DN": {
+            "0.1": [
+              4.054398389469255,
+              4.983672541813232,
+              6.470945312083707
+            ],
+            "0.5": [
+              2.430954883023216,
+              3.575973475613329,
+              5.1153141824055925
+            ],
+            "1.0": [
+              1.4739794586774004,
+              2.6727342278941775,
+              4.15274179944827
+            ],
+            "2.5": [
+              0.4136197236447567,
+              1.1774787189212443,
+              2.670814873675548
+            ]
+          },
+          "gradientRMS05m_DN": [
+            2.7958689325469144,
+            3.598606919125274,
+            5.156006196094017
+          ],
+          "notIndependentSamples": true,
+          "shuffleAdjacency05m": [
+            -0.11301758893113065,
+            0.0019097480263369822,
+            0.12081511234681336
+          ],
+          "shuffleCoherence05m": [
+            0.1474894522607685,
+            0.24589597453658532,
+            0.3748755581441486
+          ]
+        },
+        "128-256": {
+          "adjacency05m": null,
+          "adjacency1m": null,
+          "blocks": 0,
+          "coherence05m": null,
+          "contrastRMS_DN": {
+            "0.1": null,
+            "0.5": null,
+            "1.0": null,
+            "2.5": null
+          },
+          "gradientRMS05m_DN": null,
+          "notIndependentSamples": true,
+          "shuffleAdjacency05m": null,
+          "shuffleCoherence05m": null
+        },
+        "20-40": {
+          "adjacency05m": [
+            0.5782555056094161,
+            0.6574242130629321,
+            0.8392925401327211
+          ],
+          "adjacency1m": [
+            0.3841942287489109,
+            0.5110877282182278,
+            0.6773486604206813
+          ],
+          "blocks": 6,
+          "coherence05m": [
+            0.027052924289658803,
+            0.17932330820663472,
+            0.3129200067754221
+          ],
+          "contrastRMS_DN": {
+            "0.1": [
+              8.528039062215969,
+              26.621178729105672,
+              37.33841897101144
+            ],
+            "0.5": [
+              7.0190932102779895,
+              24.17606184981385,
+              34.99009872476178
+            ],
+            "1.0": [
+              5.519194666185902,
+              19.4739459315953,
+              31.694677291356797
+            ],
+            "2.5": [
+              3.362599739503368,
+              10.812330265416165,
+              21.465113698700307
+            ]
+          },
+          "gradientRMS05m_DN": [
+            6.386136127197434,
+            15.38013128107907,
+            22.779235840436783
+          ],
+          "notIndependentSamples": true,
+          "shuffleAdjacency05m": [
+            -0.1010145419468852,
+            -0.023668651714409142,
+            0.14627868277005923
+          ],
+          "shuffleCoherence05m": [
+            0.19931493811537893,
+            0.24234808033697697,
+            0.46538511897473883
+          ]
+        },
+        "40-80": {
+          "adjacency05m": [
+            0.7428828738822381,
+            0.8091703541470394,
+            0.8436464837653628
+          ],
+          "adjacency1m": [
+            0.6385248949289221,
+            0.7037977320856103,
+            0.7693232580907641
+          ],
+          "blocks": 3,
+          "coherence05m": [
+            0.00823208559973972,
+            0.03864016308992707,
+            0.06568960965824085
+          ],
+          "contrastRMS_DN": {
+            "0.1": [
+              51.95889494110376,
+              52.55459875164612,
+              55.20043737347213
+            ],
+            "0.5": [
+              47.16758285314985,
+              48.5659228749025,
+              51.70960201577954
+            ],
+            "1.0": [
+              42.40969513533128,
+              45.31709677664502,
+              47.578290597698945
+            ],
+            "2.5": [
+              35.55913346775771,
+              36.08813913420293,
+              40.236402207253725
+            ]
+          },
+          "gradientRMS05m_DN": [
+            27.410278659687883,
+            31.569097403454446,
+            33.16674088290522
+          ],
+          "notIndependentSamples": true,
+          "shuffleAdjacency05m": [
+            -0.0067626486025835104,
+            0.015850648490777698,
+            0.026809096110738364
+          ],
+          "shuffleCoherence05m": [
+            0.2618899556903833,
+            0.26425726258821297,
+            0.28666665569866173
+          ]
+        },
+        "5-10": {
+          "adjacency05m": [
+            0.2890254789418491,
+            0.44491810352066624,
+            0.6169427474644117
+          ],
+          "adjacency1m": [
+            0.15911386556191548,
+            0.32743201396152555,
+            0.5916394711973187
+          ],
+          "blocks": 10,
+          "coherence05m": [
+            0.09090040868480323,
+            0.18546114191069846,
+            0.2430256508440539
+          ],
+          "contrastRMS_DN": {
+            "0.1": [
+              2.2294422985331415,
+              2.9726961643152316,
+              3.980720314368959
+            ],
+            "0.5": [
+              1.4626074997378418,
+              2.1638418575986655,
+              3.107909012227407
+            ],
+            "1.0": [
+              0.9486403499093587,
+              1.7163646673729875,
+              2.4647342014602245
+            ],
+            "2.5": [
+              0.4225365939885254,
+              0.8766751312785519,
+              1.6455300839071998
+            ]
+          },
+          "gradientRMS05m_DN": [
+            1.6310713623491861,
+            2.1607237543935387,
+            3.011013267372903
+          ],
+          "notIndependentSamples": true,
+          "shuffleAdjacency05m": [
+            -0.12725687598581772,
+            0.004827812626117901,
+            0.06744891657674842
+          ],
+          "shuffleCoherence05m": [
+            0.10923510979270602,
+            0.21835502281149788,
+            0.28124217313146305
+          ]
+        },
+        "80-128": {
+          "adjacency05m": [
+            0.5201642923289822,
+            0.5507207316519434,
+            0.5812771709749044
+          ],
+          "adjacency1m": [
+            0.21030048664389794,
+            0.3260700578351536,
+            0.4418396290264093
+          ],
+          "blocks": 2,
+          "coherence05m": [
+            0.14453289229796668,
+            0.19728999810108494,
+            0.2500471039042032
+          ],
+          "contrastRMS_DN": {
+            "0.1": [
+              49.071414508747075,
+              50.31142120780965,
+              51.55142790687223
+            ],
+            "0.5": [
+              40.99746737690897,
+              41.45980687394169,
+              41.922146370974396
+            ],
+            "1.0": [
+              32.37658747588804,
+              32.51566215517957,
+              32.654736834471095
+            ],
+            "2.5": [
+              16.986649534987478,
+              20.85826563267601,
+              24.729881730364536
+            ]
+          },
+          "gradientRMS05m_DN": [
+            38.34837697175549,
+            40.42618515348122,
+            42.50399333520695
+          ],
+          "notIndependentSamples": true,
+          "shuffleAdjacency05m": [
+            -0.1342731848401623,
+            -0.09637958301497745,
+            -0.058485981189792625
+          ],
+          "shuffleCoherence05m": [
+            0.32949146212113806,
+            0.35442422040414956,
+            0.3793569786871611
+          ]
+        }
+      },
+      "blocks5m": 144,
+      "intensityP05P50P95": [
+        5.931800000000001,
+        14.231399999999999,
+        27.3152
+      ],
+      "nativeCells": 360000,
+      "nativeStrata": {
+        "0-5": {
+          "GBCorrelation": -0.2844842713338719,
+          "RGCorrelation": -0.48864324124310177,
+          "cells": 7842,
+          "channel255": [
+            0,
+            0,
+            0
+          ],
+          "channelOccupiedLevels": [
+            16,
+            7,
+            26
+          ],
+          "channelP05P50P95": [
+            [
+              0.0,
+              4.0,
+              8.0
+            ],
+            [
+              2.0,
+              4.0,
+              5.0
+            ],
+            [
+              5.0,
+              8.0,
+              13.0
+            ]
+          ],
+          "channelZeros": [
+            593,
+            24,
+            1
+          ]
+        },
+        "10-20": {
+          "GBCorrelation": 0.41243290296312296,
+          "RGCorrelation": 0.18801479441549518,
+          "cells": 206312,
+          "channel255": [
+            0,
+            0,
+            0
+          ],
+          "channelOccupiedLevels": [
+            36,
+            20,
+            44
+          ],
+          "channelP05P50P95": [
+            [
+              7.0,
+              14.0,
+              20.0
+            ],
+            [
+              10.0,
+              15.0,
+              20.0
+            ],
+            [
+              12.0,
+              21.0,
+              30.0
+            ]
+          ],
+          "channelZeros": [
+            132,
+            0,
+            0
+          ]
+        },
+        "128-256": {
+          "GBCorrelation": 0.8742206714262727,
+          "RGCorrelation": 0.9307465394016349,
+          "cells": 3371,
+          "channel255": [
+            0,
+            0,
+            0
+          ],
+          "channelOccupiedLevels": [
+            101,
+            94,
+            114
+          ],
+          "channelP05P50P95": [
+            [
+              127.0,
+              149.0,
+              186.0
+            ],
+            [
+              131.0,
+              151.0,
+              184.0
+            ],
+            [
+              119.0,
+              140.0,
+              177.0
+            ]
+          ],
+          "channelZeros": [
+            0,
+            0,
+            0
+          ]
+        },
+        "20-40": {
+          "GBCorrelation": 0.478741306814988,
+          "RGCorrelation": 0.38162493854288543,
+          "cells": 55981,
+          "channel255": [
+            0,
+            0,
+            0
+          ],
+          "channelOccupiedLevels": [
+            48,
+            30,
+            70
+          ],
+          "channelP05P50P95": [
+            [
+              13.0,
+              20.0,
+              30.0
+            ],
+            [
+              19.0,
+              23.0,
+              32.0
+            ],
+            [
+              21.0,
+              30.0,
+              42.0
+            ]
+          ],
+          "channelZeros": [
+            0,
+            0,
+            0
+          ]
+        },
+        "40-80": {
+          "GBCorrelation": 0.5824012310502309,
+          "RGCorrelation": 0.7888394010493947,
+          "cells": 3311,
+          "channel255": [
+            0,
+            0,
+            0
+          ],
+          "channelOccupiedLevels": [
+            70,
+            49,
+            104
+          ],
+          "channelP05P50P95": [
+            [
+              35.0,
+              54.0,
+              76.0
+            ],
+            [
+              42.0,
+              58.0,
+              78.0
+            ],
+            [
+              40.0,
+              59.0,
+              101.0
+            ]
+          ],
+          "channelZeros": [
+            0,
+            0,
+            0
+          ]
+        },
+        "5-10": {
+          "GBCorrelation": 0.18110944082852246,
+          "RGCorrelation": -0.07997545239355991,
+          "cells": 79907,
+          "channel255": [
+            0,
+            0,
+            0
+          ],
+          "channelOccupiedLevels": [
+            25,
+            14,
+            34
+          ],
+          "channelP05P50P95": [
+            [
+              2.0,
+              8.0,
+              13.0
+            ],
+            [
+              5.0,
+              7.0,
+              10.0
+            ],
+            [
+              7.0,
+              11.0,
+              19.0
+            ]
+          ],
+          "channelZeros": [
+            611,
+            1,
+            1
+          ]
+        },
+        "80-128": {
+          "GBCorrelation": 0.8523516598541648,
+          "RGCorrelation": 0.8890153897431853,
+          "cells": 3276,
+          "channel255": [
+            0,
+            0,
+            0
+          ],
+          "channelOccupiedLevels": [
+            78,
+            57,
+            77
+          ],
+          "channelP05P50P95": [
+            [
+              79.0,
+              102.0,
+              125.0
+            ],
+            [
+              84.0,
+              106.0,
+              127.0
+            ],
+            [
+              75.0,
+              100.0,
+              121.0
+            ]
+          ],
+          "channelZeros": [
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "sourceTile": "2624-1092",
+      "sourceWindow": {
+        "column": 7750,
+        "row": 6400,
+        "size": 600
+      }
+    },
+    "summit": {
+      "JPEGPhaseAudit": {
+        "bright": {
+          "columns": [
+            {
+              "meanAbsoluteDN": 4.481187569914886,
+              "pairs": 172710,
+              "phase": 0
+            },
+            {
+              "meanAbsoluteDN": 4.174232971192748,
+              "pairs": 172769,
+              "phase": 1
+            },
+            {
+              "meanAbsoluteDN": 4.257840360335213,
+              "pairs": 171951,
+              "phase": 2
+            },
+            {
+              "meanAbsoluteDN": 4.224625899573557,
+              "pairs": 171887,
+              "phase": 3
+            },
+            {
+              "meanAbsoluteDN": 4.231691143881375,
+              "pairs": 171836,
+              "phase": 4
+            },
+            {
+              "meanAbsoluteDN": 4.237060334233312,
+              "pairs": 171856,
+              "phase": 5
+            },
+            {
+              "meanAbsoluteDN": 4.28507462111512,
+              "pairs": 171820,
+              "phase": 6
+            },
+            {
+              "meanAbsoluteDN": 4.224418239922191,
+              "pairs": 172731,
+              "phase": 7
+            }
+          ],
+          "rows": [
+            {
+              "meanAbsoluteDN": 6.092651784158613,
+              "pairs": 171033,
+              "phase": 0
+            },
+            {
+              "meanAbsoluteDN": 6.120512329583289,
+              "pairs": 171198,
+              "phase": 1
+            },
+            {
+              "meanAbsoluteDN": 6.108972361747454,
+              "pairs": 171335,
+              "phase": 2
+            },
+            {
+              "meanAbsoluteDN": 6.218314783196096,
+              "pairs": 171722,
+              "phase": 3
+            },
+            {
+              "meanAbsoluteDN": 6.113734983598166,
+              "pairs": 171932,
+              "phase": 4
+            },
+            {
+              "meanAbsoluteDN": 6.168751964740497,
+              "pairs": 171982,
+              "phase": 5
+            },
+            {
+              "meanAbsoluteDN": 6.07420927684484,
+              "pairs": 170489,
+              "phase": 6
+            },
+            {
+              "meanAbsoluteDN": 6.127909814258352,
+              "pairs": 170721,
+              "phase": 7
+            }
+          ]
+        },
+        "dark": {
+          "columns": [
+            {
+              "meanAbsoluteDN": 2.0139957223588505,
+              "pairs": 76444,
+              "phase": 0
+            },
+            {
+              "meanAbsoluteDN": 1.7439705523538171,
+              "pairs": 77215,
+              "phase": 1
+            },
+            {
+              "meanAbsoluteDN": 1.7156755121418257,
+              "pairs": 76883,
+              "phase": 2
+            },
+            {
+              "meanAbsoluteDN": 1.7830087728009198,
+              "pairs": 76532,
+              "phase": 3
+            },
+            {
+              "meanAbsoluteDN": 1.7629429689852452,
+              "pairs": 76383,
+              "phase": 4
+            },
+            {
+              "meanAbsoluteDN": 1.7802513188569031,
+              "pairs": 76354,
+              "phase": 5
+            },
+            {
+              "meanAbsoluteDN": 1.7016696949134849,
+              "pairs": 76634,
+              "phase": 6
+            },
+            {
+              "meanAbsoluteDN": 1.7516654550650834,
+              "pairs": 76978,
+              "phase": 7
+            }
+          ],
+          "rows": [
+            {
+              "meanAbsoluteDN": 2.095445779810433,
+              "pairs": 75435,
+              "phase": 0
+            },
+            {
+              "meanAbsoluteDN": 1.858999821205548,
+              "pairs": 76065,
+              "phase": 1
+            },
+            {
+              "meanAbsoluteDN": 1.859149845683083,
+              "pairs": 75818,
+              "phase": 2
+            },
+            {
+              "meanAbsoluteDN": 1.9078289699346402,
+              "pairs": 76500,
+              "phase": 3
+            },
+            {
+              "meanAbsoluteDN": 1.8863036712715489,
+              "pairs": 76513,
+              "phase": 4
+            },
+            {
+              "meanAbsoluteDN": 1.9070860160529668,
+              "pairs": 76123,
+              "phase": 5
+            },
+            {
+              "meanAbsoluteDN": 1.8470796672343768,
+              "pairs": 76330,
+              "phase": 6
+            },
+            {
+              "meanAbsoluteDN": 1.8492023131111346,
+              "pairs": 76088,
+              "phase": 7
+            }
+          ]
+        }
+      },
+      "allRGBZeroCells": 0,
+      "anyChannel255Cells": 0,
+      "anyChannelZeroCells": 2749,
+      "blockStrata": {
+        "0-5": {
+          "adjacency05m": null,
+          "adjacency1m": null,
+          "blocks": 0,
+          "coherence05m": null,
+          "contrastRMS_DN": {
+            "0.1": null,
+            "0.5": null,
+            "1.0": null,
+            "2.5": null
+          },
+          "gradientRMS05m_DN": null,
+          "notIndependentSamples": true,
+          "shuffleAdjacency05m": null,
+          "shuffleCoherence05m": null
+        },
+        "10-20": {
+          "adjacency05m": [
+            0.19206359097219916,
+            0.43191347903347077,
+            0.6495186072897924
+          ],
+          "adjacency1m": [
+            -0.027608246850572612,
+            0.2740687667324156,
+            0.5925924221982818
+          ],
+          "blocks": 232,
+          "coherence05m": [
+            0.05492641844322521,
+            0.16584972849681678,
+            0.3872532458907601
+          ],
+          "contrastRMS_DN": {
+            "0.1": [
+              4.003684982066557,
+              4.773194022678904,
+              9.35871107728004
+            ],
+            "0.5": [
+              2.4371402271923848,
+              3.421789557055085,
+              6.606868399233128
+            ],
+            "1.0": [
+              1.5184811372432645,
+              2.474541674567596,
+              4.916376664506585
+            ],
+            "2.5": [
+              0.4821672238820694,
+              1.211550253120209,
+              3.3490733633179173
+            ]
+          },
+          "gradientRMS05m_DN": [
+            2.7285602814669554,
+            3.589423732087444,
+            6.16575336840029
+          ],
+          "notIndependentSamples": true,
+          "shuffleAdjacency05m": [
+            -0.12143626634011,
+            -0.0017902586473795034,
+            0.10364960224812
+          ],
+          "shuffleCoherence05m": [
+            0.14349965635158474,
+            0.23947511567104418,
+            0.37686333002617745
+          ]
+        },
+        "128-256": {
+          "adjacency05m": [
+            0.31161151865452275,
+            0.5246290611609172,
+            0.7291407938830128
+          ],
+          "adjacency1m": [
+            0.035942959623082686,
+            0.3490838803843471,
+            0.6256241371340886
+          ],
+          "blocks": 476,
+          "coherence05m": [
+            0.039117761850568325,
+            0.16746285115440912,
+            0.38929129933896117
+          ],
+          "contrastRMS_DN": {
+            "0.1": [
+              8.949035286695203,
+              14.96990363593075,
+              31.40455897630748
+            ],
+            "0.5": [
+              6.811844634294648,
+              11.915624872761565,
+              26.78743679623001
+            ],
+            "1.0": [
+              4.702333894212065,
+              9.191492013509968,
+              20.446758502012123
+            ],
+            "2.5": [
+              1.5528022396504522,
+              5.0233135856523345,
+              13.834258925085457
+            ]
+          },
+          "gradientRMS05m_DN": [
+            6.987808792096899,
+            11.172447588426813,
+            24.338621137476228
+          ],
+          "notIndependentSamples": true,
+          "shuffleAdjacency05m": [
+            -0.12306859164793771,
+            -0.013767746777933219,
+            0.11445965399590138
+          ],
+          "shuffleCoherence05m": [
+            0.15010102487297125,
+            0.25577219310365484,
+            0.3824358128258311
+          ]
+        },
+        "20-40": {
+          "adjacency05m": [
+            0.5401443486885279,
+            0.6858122170126681,
+            0.8519364060436024
+          ],
+          "adjacency1m": [
+            0.14921088932957285,
+            0.44292222433552264,
+            0.6951400818573636
+          ],
+          "blocks": 24,
+          "coherence05m": [
+            0.0401975592496795,
+            0.12330232851792644,
+            0.49552557871498326
+          ],
+          "contrastRMS_DN": {
+            "0.1": [
+              19.592025804365964,
+              31.949975778219464,
+              41.83640067992442
+            ],
+            "0.5": [
+              16.020902242255154,
+              28.502421199261626,
+              38.93178952939968
+            ],
+            "1.0": [
+              12.576169756028358,
+              25.162546185133927,
+              35.90022633278941
+            ],
+            "2.5": [
+              3.0694164741350827,
+              13.635892719000614,
+              24.803701054254653
+            ]
+          },
+          "gradientRMS05m_DN": [
+            12.427927082694659,
+            19.70938667794541,
+            29.670878488596053
+          ],
+          "notIndependentSamples": true,
+          "shuffleAdjacency05m": [
+            -0.1347133641345273,
+            -0.020180232576811626,
+            0.13773832415482168
+          ],
+          "shuffleCoherence05m": [
+            0.15122220984068574,
+            0.25180180645453193,
+            0.3775844889038668
+          ]
+        },
+        "40-80": {
+          "adjacency05m": [
+            0.5252794564342658,
+            0.7086140585537865,
+            0.8349514037920843
+          ],
+          "adjacency1m": [
+            0.22782985750176143,
+            0.47092906836942877,
+            0.7507334523574718
+          ],
+          "blocks": 59,
+          "coherence05m": [
+            0.030828132611339192,
+            0.19477928726706145,
+            0.5685150121150457
+          ],
+          "contrastRMS_DN": {
+            "0.1": [
+              41.61826596619751,
+              50.60639592622438,
+              58.83208523394516
+            ],
+            "0.5": [
+              37.00638820900348,
+              44.98945365158574,
+              54.046148685620174
+            ],
+            "1.0": [
+              30.09750011300637,
+              38.93669108018126,
+              48.84066540059839
+            ],
+            "2.5": [
+              11.411917917458718,
+              23.751393707140043,
+              38.23447291227727
+            ]
+          },
+          "gradientRMS05m_DN": [
+            24.52333205127188,
+            34.74314398059562,
+            43.15908952707208
+          ],
+          "notIndependentSamples": true,
+          "shuffleAdjacency05m": [
+            -0.10327766323484584,
+            0.008463249699619667,
+            0.10250947082048723
+          ],
+          "shuffleCoherence05m": [
+            0.15828528547756296,
+            0.2481495569372737,
+            0.35106479039382427
+          ]
+        },
+        "5-10": {
+          "adjacency05m": [
+            0.2911847924971873,
+            0.45925134930669537,
+            0.6769632369618634
+          ],
+          "adjacency1m": [
+            0.14466539407779977,
+            0.3261834961585626,
+            0.5300221022122882
+          ],
+          "blocks": 21,
+          "coherence05m": [
+            0.06963079836903627,
+            0.15217707115738272,
+            0.29643555998540905
+          ],
+          "contrastRMS_DN": {
+            "0.1": [
+              2.2866757368472244,
+              3.3797883077519053,
+              5.1607805762103265
+            ],
+            "0.5": [
+              1.4197619479051269,
+              2.515185627297739,
+              3.94106411784152
+            ],
+            "1.0": [
+              1.013217467562295,
+              1.8490160459168608,
+              2.844653058894448
+            ],
+            "2.5": [
+              0.31523905853386613,
+              1.0694270697739305,
+              2.213485853425107
+            ]
+          },
+          "gradientRMS05m_DN": [
+            1.5733014580163418,
+            2.1597087825983374,
+            3.8984492370066115
+          ],
+          "notIndependentSamples": true,
+          "shuffleAdjacency05m": [
+            -0.09936292641075287,
+            -0.004540182188068675,
+            0.07598019956888134
+          ],
+          "shuffleCoherence05m": [
+            0.15127192492791663,
+            0.23686154329955184,
+            0.43541814099553566
+          ]
+        },
+        "80-128": {
+          "adjacency05m": [
+            0.3849082652198789,
+            0.6370037279792173,
+            0.8303956988546858
+          ],
+          "adjacency1m": [
+            0.11258132010679918,
+            0.4144202424175315,
+            0.729672819683313
+          ],
+          "blocks": 88,
+          "coherence05m": [
+            0.09290944839112864,
+            0.2681669874090176,
+            0.4592915699682092
+          ],
+          "contrastRMS_DN": {
+            "0.1": [
+              33.32649116328074,
+              48.95771570801956,
+              57.376698767190014
+            ],
+            "0.5": [
+              26.05746891082203,
+              42.71820843013843,
+              53.22630842782062
+            ],
+            "1.0": [
+              17.905992940076484,
+              35.371351958183666,
+              49.331280799848095
+            ],
+            "2.5": [
+              5.836493371952956,
+              21.064109973551858,
+              40.395516844344236
+            ]
+          },
+          "gradientRMS05m_DN": [
+            24.910392986654966,
+            34.573688745887566,
+            42.83238104238536
+          ],
+          "notIndependentSamples": true,
+          "shuffleAdjacency05m": [
+            -0.12148993824617692,
+            0.0005699084787188797,
+            0.0885575404296183
+          ],
+          "shuffleCoherence05m": [
+            0.15836039795744172,
+            0.24268605543085753,
+            0.38227789984825633
+          ]
+        }
+      },
+      "blocks5m": 900,
+      "intensityP05P50P95": [
+        7.9936,
+        141.5588,
+        184.5548
+      ],
+      "nativeCells": 2250000,
+      "nativeStrata": {
+        "0-5": {
+          "GBCorrelation": -0.27460211950694663,
+          "RGCorrelation": -0.5407950997596503,
+          "cells": 18200,
+          "channel255": [
+            0,
+            0,
+            0
+          ],
+          "channelOccupiedLevels": [
+            18,
+            7,
+            29
+          ],
+          "channelP05P50P95": [
+            [
+              0.0,
+              4.0,
+              9.0
+            ],
+            [
+              2.0,
+              4.0,
+              5.0
+            ],
+            [
+              5.0,
+              8.0,
+              13.0
+            ]
+          ],
+          "channelZeros": [
+            1174,
+            195,
+            18
+          ]
+        },
+        "10-20": {
+          "GBCorrelation": 0.39227352104777735,
+          "RGCorrelation": 0.17323639427102372,
+          "cells": 446648,
+          "channel255": [
+            0,
+            0,
+            0
+          ],
+          "channelOccupiedLevels": [
+            41,
+            22,
+            50
+          ],
+          "channelP05P50P95": [
+            [
+              7.0,
+              14.0,
+              22.0
+            ],
+            [
+              10.0,
+              14.0,
+              20.0
+            ],
+            [
+              11.0,
+              19.0,
+              27.0
+            ]
+          ],
+          "channelZeros": [
+            129,
+            0,
+            11
+          ]
+        },
+        "128-256": {
+          "GBCorrelation": 0.950824181409455,
+          "RGCorrelation": 0.9594391437909106,
+          "cells": 1249316,
+          "channel255": [
+            0,
+            0,
+            0
+          ],
+          "channelOccupiedLevels": [
+            136,
+            118,
+            153
+          ],
+          "channelP05P50P95": [
+            [
+              137.0,
+              170.0,
+              193.0
+            ],
+            [
+              137.0,
+              166.0,
+              189.0
+            ],
+            [
+              118.0,
+              147.0,
+              171.0
+            ]
+          ],
+          "channelZeros": [
+            0,
+            0,
+            0
+          ]
+        },
+        "20-40": {
+          "GBCorrelation": 0.5412530580925299,
+          "RGCorrelation": 0.5495125990609342,
+          "cells": 157015,
+          "channel255": [
+            0,
+            0,
+            0
+          ],
+          "channelOccupiedLevels": [
+            62,
+            34,
+            68
+          ],
+          "channelP05P50P95": [
+            [
+              15.0,
+              23.0,
+              38.0
+            ],
+            [
+              20.0,
+              24.0,
+              36.0
+            ],
+            [
+              19.0,
+              29.0,
+              41.0
+            ]
+          ],
+          "channelZeros": [
+            1,
+            0,
+            0
+          ]
+        },
+        "40-80": {
+          "GBCorrelation": 0.7918799763629937,
+          "RGCorrelation": 0.826889018886183,
+          "cells": 55657,
+          "channel255": [
+            0,
+            0,
+            0
+          ],
+          "channelOccupiedLevels": [
+            78,
+            54,
+            91
+          ],
+          "channelP05P50P95": [
+            [
+              39.0,
+              60.0,
+              81.0
+            ],
+            [
+              41.0,
+              60.0,
+              79.0
+            ],
+            [
+              39.0,
+              57.0,
+              76.0
+            ]
+          ],
+          "channelZeros": [
+            0,
+            0,
+            0
+          ]
+        },
+        "5-10": {
+          "GBCorrelation": 0.12266528068853694,
+          "RGCorrelation": -0.14268070544703232,
+          "cells": 183094,
+          "channel255": [
+            0,
+            0,
+            0
+          ],
+          "channelOccupiedLevels": [
+            28,
+            14,
+            36
+          ],
+          "channelP05P50P95": [
+            [
+              3.0,
+              8.0,
+              14.0
+            ],
+            [
+              5.0,
+              7.0,
+              10.0
+            ],
+            [
+              7.0,
+              11.0,
+              18.0
+            ]
+          ],
+          "channelZeros": [
+            1214,
+            5,
+            15
+          ]
+        },
+        "80-128": {
+          "GBCorrelation": 0.7267752681229239,
+          "RGCorrelation": 0.8910949105821868,
+          "cells": 140070,
+          "channel255": [
+            0,
+            0,
+            0
+          ],
+          "channelOccupiedLevels": [
+            94,
+            64,
+            108
+          ],
+          "channelP05P50P95": [
+            [
+              84.0,
+              114.0,
+              131.0
+            ],
+            [
+              85.0,
+              114.0,
+              129.0
+            ],
+            [
+              75.0,
+              98.0,
+              116.0
+            ]
+          ],
+          "channelZeros": [
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "sourceTile": "2624-1092",
+      "sourceWindow": {
+        "column": 7350,
+        "row": 6730,
+        "size": 1500
+      }
+    }
+  },
+  "planSha256": "3d586fd3fd9bfefb19f5d979797b4371670a7f394776e4b7a15b99fb48654e32",
+  "prepared": {
+    "comparisonIsPreparationFidelityNotNativePointwiseEquality": true,
+    "encodingStrata": {
+      "dark-context": {
+        "0-5": {
+          "encodedAllRGBZero": 0,
+          "maxIntensityRoundingErrorDN": 0.47912939953803946,
+          "meanIntensityRoundingErrorDN": 0.1901071723282645,
+          "samples": 2540
+        },
+        "10-20": {
+          "encodedAllRGBZero": 0,
+          "maxIntensityRoundingErrorDN": 0.4938361896514891,
+          "meanIntensityRoundingErrorDN": 0.18469741230386694,
+          "samples": 257457
+        },
+        "128-256": {
+          "encodedAllRGBZero": 0,
+          "maxIntensityRoundingErrorDN": 0.4993943206787037,
+          "meanIntensityRoundingErrorDN": 0.18517499825752606,
+          "samples": 75873
+        },
+        "20-40": {
+          "encodedAllRGBZero": 0,
+          "maxIntensityRoundingErrorDN": 0.4970603591918952,
+          "meanIntensityRoundingErrorDN": 0.18514784789892264,
+          "samples": 77866
+        },
+        "40-80": {
+          "encodedAllRGBZero": 0,
+          "maxIntensityRoundingErrorDN": 0.48978573303223527,
+          "meanIntensityRoundingErrorDN": 0.18521468696254345,
+          "samples": 14815
+        },
+        "5-10": {
+          "encodedAllRGBZero": 0,
+          "maxIntensityRoundingErrorDN": 0.492419770383834,
+          "meanIntensityRoundingErrorDN": 0.18526024305566596,
+          "samples": 63667
+        },
+        "80-128": {
+          "encodedAllRGBZero": 0,
+          "maxIntensityRoundingErrorDN": 0.49044866333007064,
+          "meanIntensityRoundingErrorDN": 0.18518470350186989,
+          "samples": 30174
+        }
+      },
+      "ordinary": {
+        "0-5": {
+          "samples": 0
+        },
+        "10-20": {
+          "encodedAllRGBZero": 0,
+          "maxIntensityRoundingErrorDN": 0.45857981109619317,
+          "meanIntensityRoundingErrorDN": 0.21237584513127777,
+          "samples": 32
+        },
+        "128-256": {
+          "encodedAllRGBZero": 0,
+          "maxIntensityRoundingErrorDN": 0.4982594970703076,
+          "meanIntensityRoundingErrorDN": 0.18713234937158038,
+          "samples": 61170
+        },
+        "20-40": {
+          "encodedAllRGBZero": 0,
+          "maxIntensityRoundingErrorDN": 0.3869677089691166,
+          "meanIntensityRoundingErrorDN": 0.19363721018473248,
+          "samples": 45
+        },
+        "40-80": {
+          "encodedAllRGBZero": 0,
+          "maxIntensityRoundingErrorDN": 0.4704030326843167,
+          "meanIntensityRoundingErrorDN": 0.18446010970443857,
+          "samples": 183
+        },
+        "5-10": {
+          "encodedAllRGBZero": 0,
+          "maxIntensityRoundingErrorDN": 0.1484009784698479,
+          "meanIntensityRoundingErrorDN": 0.1484009784698479,
+          "samples": 1
+        },
+        "80-128": {
+          "encodedAllRGBZero": 0,
+          "maxIntensityRoundingErrorDN": 0.4887471008300679,
+          "meanIntensityRoundingErrorDN": 0.18418060864115618,
+          "samples": 22148
+        }
+      },
+      "steep": {
+        "0-5": {
+          "encodedAllRGBZero": 0,
+          "maxIntensityRoundingErrorDN": 0.492973838901519,
+          "meanIntensityRoundingErrorDN": 0.1923958069611392,
+          "samples": 945
+        },
+        "10-20": {
+          "encodedAllRGBZero": 0,
+          "maxIntensityRoundingErrorDN": 0.4920092941284189,
+          "meanIntensityRoundingErrorDN": 0.18558444062087842,
+          "samples": 51414
+        },
+        "128-256": {
+          "encodedAllRGBZero": 0,
+          "maxIntensityRoundingErrorDN": 0.4407139221191301,
+          "meanIntensityRoundingErrorDN": 0.18079049557593543,
+          "samples": 775
+        },
+        "20-40": {
+          "encodedAllRGBZero": 0,
+          "maxIntensityRoundingErrorDN": 0.4828850791931174,
+          "meanIntensityRoundingErrorDN": 0.1837128360623573,
+          "samples": 11707
+        },
+        "40-80": {
+          "encodedAllRGBZero": 0,
+          "maxIntensityRoundingErrorDN": 0.4750403671264678,
+          "meanIntensityRoundingErrorDN": 0.18610817942373287,
+          "samples": 814
+        },
+        "5-10": {
+          "encodedAllRGBZero": 0,
+          "maxIntensityRoundingErrorDN": 0.4995173528671266,
+          "meanIntensityRoundingErrorDN": 0.18408561267150744,
+          "samples": 17101
+        },
+        "80-128": {
+          "encodedAllRGBZero": 0,
+          "maxIntensityRoundingErrorDN": 0.4537408340454192,
+          "meanIntensityRoundingErrorDN": 0.1889205974313371,
+          "samples": 819
+        }
+      },
+      "summit": {
+        "0-5": {
+          "encodedAllRGBZero": 0,
+          "maxIntensityRoundingErrorDN": 0.492973838901519,
+          "meanIntensityRoundingErrorDN": 0.19252377692651795,
+          "samples": 2003
+        },
+        "10-20": {
+          "encodedAllRGBZero": 0,
+          "maxIntensityRoundingErrorDN": 0.4938361896514891,
+          "meanIntensityRoundingErrorDN": 0.18508789730262074,
+          "samples": 109546
+        },
+        "128-256": {
+          "encodedAllRGBZero": 0,
+          "maxIntensityRoundingErrorDN": 0.49979316711423394,
+          "meanIntensityRoundingErrorDN": 0.1874551094837231,
+          "samples": 291594
+        },
+        "20-40": {
+          "encodedAllRGBZero": 0,
+          "maxIntensityRoundingErrorDN": 0.49326564254760896,
+          "meanIntensityRoundingErrorDN": 0.1842541361104078,
+          "samples": 33198
+        },
+        "40-80": {
+          "encodedAllRGBZero": 0,
+          "maxIntensityRoundingErrorDN": 0.48498741149902,
+          "meanIntensityRoundingErrorDN": 0.1843744734185028,
+          "samples": 13778
+        },
+        "5-10": {
+          "encodedAllRGBZero": 0,
+          "maxIntensityRoundingErrorDN": 0.4995173528671266,
+          "meanIntensityRoundingErrorDN": 0.18549481879095445,
+          "samples": 39403
+        },
+        "80-128": {
+          "encodedAllRGBZero": 0,
+          "maxIntensityRoundingErrorDN": 0.48377935333252253,
+          "meanIntensityRoundingErrorDN": 0.18447146441601653,
+          "samples": 32875
+        }
+      }
+    },
+    "identity": "f6edd630206ed02f255176935d72126cbc6ad7987b12d2986edbe6d05619bc1b",
+    "manifestSha256": "3c8b50fb9d7721b678abc46b9450495b417ccafff15d4ee8a67d9d6a3fee4934",
+    "noNewLossyCompression": true,
+    "patchSamples": {
+      "dark-context": 522392,
+      "ordinary": 83579,
+      "steep": 83575,
+      "summit": 522397
+    },
+    "payloadsVerified": 1084,
+    "recipeSha256": "d917612512380cb6940c103fe679d3af9acc0390a5a0681deb6e4fdda2667cf7",
+    "revision": "v1",
+    "tilesRegenerated": [
+      {
+        "PNGExactDeclaredEncoding": true,
+        "fieldExact": true,
+        "x": 136720,
+        "y": 93278,
+        "z": 18
+      },
+      {
+        "PNGExactDeclaredEncoding": true,
+        "fieldExact": true,
+        "x": 136720,
+        "y": 93279,
+        "z": 18
+      },
+      {
+        "PNGExactDeclaredEncoding": true,
+        "fieldExact": true,
+        "x": 136720,
+        "y": 93280,
+        "z": 18
+      },
+      {
+        "PNGExactDeclaredEncoding": true,
+        "fieldExact": true,
+        "x": 136721,
+        "y": 93278,
+        "z": 18
+      },
+      {
+        "PNGExactDeclaredEncoding": true,
+        "fieldExact": true,
+        "x": 136721,
+        "y": 93279,
+        "z": 18
+      },
+      {
+        "PNGExactDeclaredEncoding": true,
+        "fieldExact": true,
+        "x": 136721,
+        "y": 93280,
+        "z": 18
+      },
+      {
+        "PNGExactDeclaredEncoding": true,
+        "fieldExact": true,
+        "x": 136721,
+        "y": 93281,
+        "z": 18
+      },
+      {
+        "PNGExactDeclaredEncoding": true,
+        "fieldExact": true,
+        "x": 136722,
+        "y": 93279,
+        "z": 18
+      },
+      {
+        "PNGExactDeclaredEncoding": true,
+        "fieldExact": true,
+        "x": 136722,
+        "y": 93280,
+        "z": 18
+      },
+      {
+        "PNGExactDeclaredEncoding": true,
+        "fieldExact": true,
+        "x": 136722,
+        "y": 93281,
+        "z": 18
+      },
+      {
+        "PNGExactDeclaredEncoding": true,
+        "fieldExact": true,
+        "x": 136725,
+        "y": 93277,
+        "z": 18
+      },
+      {
+        "PNGExactDeclaredEncoding": true,
+        "fieldExact": true,
+        "x": 136725,
+        "y": 93278,
+        "z": 18
+      },
+      {
+        "PNGExactDeclaredEncoding": true,
+        "fieldExact": true,
+        "x": 136726,
+        "y": 93277,
+        "z": 18
+      },
+      {
+        "PNGExactDeclaredEncoding": true,
+        "fieldExact": true,
+        "x": 136726,
+        "y": 93278,
+        "z": 18
+      }
+    ]
+  },
+  "retainedMetadataSha256": {
+    "docs/atlas/riffelhorn-data-catalog.json": "b9d125e60e90435bfab362b4b2056b67295ecd7d90634b58dbd8105646bc9a62",
+    "docs/atlas/swissimage-source-derived-baseline.json": "49ab12594ca1c0737fdcd0b2e53f21e5d2acda8d7122bb574789a906a29cdd67",
+    "docs/research/riffelhorn-registration-epoch-results.json": "1cb0abbf53c26db6e5c5fc906bdc4fe0d9ae09ac3ec963484937c4c73dc7df48",
+    "scripts/atlas/riffelhorn-registration/plan.json": "9b5ac979da1236855f7d4d08cddb060f6de8d245febef5c6df889e95b523c9ef"
+  },
+  "software": {
+    "GDAL": "3.9.3",
+    "numpy": "2.5.3",
+    "rasterio": "1.4.3"
+  },
+  "sourceBytes": 186259028,
+  "sources": [
+    {
+      "bounds": [
+        2624000.0,
+        1091000.0,
+        2625000.0,
+        1092000.0
+      ],
+      "bytes": 50530470,
+      "colourInterpretation": [
+        "red",
+        "green",
+        "blue"
+      ],
+      "nodata": null,
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissimage-dop10/swissimage-dop10_2023_2624-1091_0.1_2056.tif",
+      "sha256": "eb81b3df75538dc0da5cd6ce898976dd74f22dcb3b2586760f0a7df159de8c41",
+      "tile": "2624-1091"
+    },
+    {
+      "bounds": [
+        2624000.0,
+        1092000.0,
+        2625000.0,
+        1093000.0
+      ],
+      "bytes": 45485267,
+      "colourInterpretation": [
+        "red",
+        "green",
+        "blue"
+      ],
+      "nodata": null,
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissimage-dop10/swissimage-dop10_2023_2624-1092_0.1_2056.tif",
+      "sha256": "8cd275f75f653d192d9d7619771746ff93fbdd8646e2d1d06214af832c49f62e",
+      "tile": "2624-1092"
+    },
+    {
+      "bounds": [
+        2625000.0,
+        1091000.0,
+        2626000.0,
+        1092000.0
+      ],
+      "bytes": 43921676,
+      "colourInterpretation": [
+        "red",
+        "green",
+        "blue"
+      ],
+      "nodata": null,
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissimage-dop10/swissimage-dop10_2023_2625-1091_0.1_2056.tif",
+      "sha256": "66ff157b2eb008e8c2e2ae41ee427c2b483ae69faf352b6d4c12c7713285d2bc",
+      "tile": "2625-1091"
+    },
+    {
+      "bounds": [
+        2625000.0,
+        1092000.0,
+        2626000.0,
+        1093000.0
+      ],
+      "bytes": 46321615,
+      "colourInterpretation": [
+        "red",
+        "green",
+        "blue"
+      ],
+      "nodata": null,
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissimage-dop10/swissimage-dop10_2023_2625-1092_0.1_2056.tif",
+      "sha256": "31c4219580f87fd54268c04f2773f30a715392bde47581cf1245207b7c7ff90f",
+      "tile": "2625-1092"
+    }
+  ]
+}

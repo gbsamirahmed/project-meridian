@@ -1,0 +1,483 @@
+{
+  "assessment": "riffelhorn-dark-source/v1",
+  "startingCheckpoint": "e276d814942b5e94adfa2353a95a10e78536b028",
+  "decision": "B - PARTIAL RETAINED SIGNAL",
+  "checks": [
+    {
+      "check": "checkpoint is ancestor",
+      "passed": true
+    },
+    {
+      "check": "main origin/main",
+      "passed": true
+    },
+    {
+      "check": "upstream divergence0/0 before commit",
+      "passed": true
+    },
+    {
+      "check": "113 protected production hashes",
+      "passed": true
+    },
+    {
+      "check": "seven frozen semantic contract code/fixture hashes",
+      "passed": true
+    },
+    {
+      "check": "production terrain contracts metadata unchanged",
+      "passed": true
+    },
+    {
+      "check": "all historical scripts/research and43 Atlas/EarthLab reports",
+      "passed": true
+    },
+    {
+      "check": "all42 canonical status columns unchanged",
+      "passed": true
+    },
+    {
+      "check": "historical audit gate retained",
+      "passed": true
+    },
+    {
+      "check": "append-only development log",
+      "passed": true
+    },
+    {
+      "check": "original illumination criteria hash unchanged",
+      "passed": true
+    },
+    {
+      "check": "27 report sections",
+      "passed": true
+    },
+    {
+      "check": "explicit partial signal and next",
+      "passed": true
+    },
+    {
+      "check": "no mojibake",
+      "passed": true
+    },
+    {
+      "check": "fresh process deterministic diagnostics",
+      "passed": true
+    },
+    {
+      "check": "byte identical metrics and PNG rerun",
+      "passed": true
+    },
+    {
+      "check": "predeclared plan exact revision",
+      "passed": true
+    },
+    {
+      "check": "exact method revision",
+      "passed": true
+    },
+    {
+      "check": "no correction or fitting",
+      "passed": true
+    },
+    {
+      "check": "four frozen patches",
+      "passed": true
+    },
+    {
+      "check": "four source hashes and bytes",
+      "passed": true
+    },
+    {
+      "check": "source metadata preserved",
+      "passed": true
+    },
+    {
+      "check": "source bytes fixed",
+      "passed": true
+    },
+    {
+      "check": "prepared product exact identity",
+      "passed": true
+    },
+    {
+      "check": "prepared1084 verified and14 regenerated",
+      "passed": true
+    },
+    {
+      "check": "all42 statuses and old source qualification independent",
+      "passed": true
+    },
+    {
+      "check": "native counts",
+      "passed": true
+    },
+    {
+      "check": "blocks mean-stratified all accounted",
+      "passed": true
+    },
+    {
+      "check": "native strata all accounted",
+      "passed": true
+    },
+    {
+      "check": "no allRGBblack or255 support collapse",
+      "passed": true
+    },
+    {
+      "check": "below5 no complete block not absent pixels",
+      "passed": true
+    },
+    {
+      "check": "darkest green occupancy7",
+      "passed": true
+    },
+    {
+      "check": "dark block support fixed",
+      "passed": true
+    },
+    {
+      "check": "dark multiscale recorded adjacency",
+      "passed": true
+    },
+    {
+      "check": "tensor comparator limitation retained",
+      "passed": true
+    },
+    {
+      "check": "same-field encoding error bound andnozero",
+      "passed": true
+    },
+    {
+      "check": "retained metadata exact",
+      "passed": true
+    },
+    {
+      "check": "13 focused signal and support safeguards",
+      "passed": true
+    },
+    {
+      "check": "13 tests counted",
+      "passed": true
+    },
+    {
+      "check": "64 frozen domain tests",
+      "passed": true
+    },
+    {
+      "check": "64 tests counted",
+      "passed": true
+    },
+    {
+      "check": "frozen isolated declarations",
+      "passed": true
+    },
+    {
+      "check": "canonical next assessment explicit",
+      "passed": true
+    },
+    {
+      "check": "current navigation docs/architecture.md",
+      "passed": true
+    },
+    {
+      "check": "current navigation docs/product-direction.md",
+      "passed": true
+    },
+    {
+      "check": "current navigation docs/research/atlas-research-map.md",
+      "passed": true
+    },
+    {
+      "check": "only isolated assessment and navigation",
+      "passed": true
+    },
+    {
+      "check": "bounded artifacts no warped imagery or scratch store",
+      "passed": true
+    },
+    {
+      "check": "all local document links and anchors resolve",
+      "passed": true
+    },
+    {
+      "check": "all research JSON parses",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor e276d81",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 9dc4445",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 1842008",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 9695757",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor b12dc06",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 944326b",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 691450f",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 3c143eb",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 1c2d10e",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 6e17e79",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 43afe78",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 5f14511",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor e65c2d6",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 052374e",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor c4da565",
+      "passed": true
+    },
+    {
+      "check": "checkpoint ancestor 75ea9d8",
+      "passed": true
+    },
+    {
+      "check": "unstaged whitespace",
+      "passed": true
+    },
+    {
+      "check": "staged whitespace",
+      "passed": true
+    },
+    {
+      "check": "Markdown no trailing whitespace",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "commands": [
+    {
+      "check": "fresh process deterministic diagnostics",
+      "command": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/riffelhorn-dark-source/assess.py"
+      ],
+      "exitCode": 0,
+      "localElapsedSeconds": 48.64304960006848
+    },
+    {
+      "check": "13 focused signal and support safeguards",
+      "command": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/riffelhorn-dark-source/test_assess.py"
+      ],
+      "exitCode": 0,
+      "localElapsedSeconds": 1.68979680002667
+    },
+    {
+      "check": "64 frozen domain tests",
+      "command": [
+        "node",
+        "--test",
+        "scripts/atlas/test_semantic_evidence_contract.mjs",
+        "scripts/atlas/test_terrain_hierarchy_contract.mjs",
+        "scripts/atlas/test_terrain_runtime.mjs",
+        "scripts/atlas/test_tryfan_terrain.mjs"
+      ],
+      "exitCode": 0,
+      "localElapsedSeconds": 2.154265600023791
+    },
+    {
+      "check": "frozen isolated declarations",
+      "command": [
+        "npx.cmd",
+        "tsc",
+        "-p",
+        "scripts/atlas/semantic-evidence/tsconfig.json"
+      ],
+      "exitCode": 0,
+      "localElapsedSeconds": 1.9300404000096023
+    },
+    {
+      "check": "unstaged whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0,
+      "localElapsedSeconds": 0.06661979993805289
+    },
+    {
+      "check": "staged whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exitCode": 0,
+      "localElapsedSeconds": 0.042384699918329716
+    }
+  ],
+  "localElapsedTimesNotPerformancePromises": true,
+  "artifactSha256": {
+    "docs/research/riffelhorn-dark-source-signal-results.json": "9267f27bfbd36cc2210ec9452069285e853e2d928ca4ce329fa24890462b3967",
+    "docs/research/riffelhorn-dark-source-signal-views.png": "b9b52d555843dea8ff5d1d20bbb7d157afeda8e433854d85f33844abb1952831",
+    "docs/research/riffelhorn-dark-source-signal-support.png": "ad9ba868a2f48eceffaf82f59a9404f2ea75c8bc909c96ce822f02e3f3e9fc18"
+  },
+  "codeSha256": {
+    "scripts/atlas/riffelhorn-dark-source/README.md": "d7f24514aee4235986eaa1ba6ce732b84871f191c71325d40c18cbd067a44723",
+    "scripts/atlas/riffelhorn-dark-source/assess.py": "49a9e87f31f3b93a10034a886b6d6c0be22141ea846d928e35b5552befb9de01",
+    "scripts/atlas/riffelhorn-dark-source/assessment-plan.json": "3d586fd3fd9bfefb19f5d979797b4371670a7f394776e4b7a15b99fb48654e32",
+    "scripts/atlas/riffelhorn-dark-source/test_assess.py": "b5fed681176932bc0a614b092fc31fedddb2223d730a4e224eff8bf95a85d3b2",
+    "scripts/atlas/riffelhorn-dark-source/validate.py": "cf4f84aec17f575b52b124ffd1bc929f5d1e8e65c00311d4f0fba67d830cdda3"
+  },
+  "reportSha256": "340c19953941e3bde83dcb54739ecb0b19b5fa571be038c8a61070c16dd91624",
+  "frozenProtocolSha256": "0e1b884bd64c94effffeb1cb024f01c6f385d87eda73f20fa134f0a2add5ca28",
+  "sourceVerification": [
+    {
+      "bounds": [
+        2624000.0,
+        1091000.0,
+        2625000.0,
+        1092000.0
+      ],
+      "bytes": 50530470,
+      "colourInterpretation": [
+        "red",
+        "green",
+        "blue"
+      ],
+      "nodata": null,
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissimage-dop10/swissimage-dop10_2023_2624-1091_0.1_2056.tif",
+      "sha256": "eb81b3df75538dc0da5cd6ce898976dd74f22dcb3b2586760f0a7df159de8c41",
+      "tile": "2624-1091"
+    },
+    {
+      "bounds": [
+        2624000.0,
+        1092000.0,
+        2625000.0,
+        1093000.0
+      ],
+      "bytes": 45485267,
+      "colourInterpretation": [
+        "red",
+        "green",
+        "blue"
+      ],
+      "nodata": null,
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissimage-dop10/swissimage-dop10_2023_2624-1092_0.1_2056.tif",
+      "sha256": "8cd275f75f653d192d9d7619771746ff93fbdd8646e2d1d06214af832c49f62e",
+      "tile": "2624-1092"
+    },
+    {
+      "bounds": [
+        2625000.0,
+        1091000.0,
+        2626000.0,
+        1092000.0
+      ],
+      "bytes": 43921676,
+      "colourInterpretation": [
+        "red",
+        "green",
+        "blue"
+      ],
+      "nodata": null,
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissimage-dop10/swissimage-dop10_2023_2625-1091_0.1_2056.tif",
+      "sha256": "66ff157b2eb008e8c2e2ae41ee427c2b483ae69faf352b6d4c12c7713285d2bc",
+      "tile": "2625-1091"
+    },
+    {
+      "bounds": [
+        2625000.0,
+        1092000.0,
+        2626000.0,
+        1093000.0
+      ],
+      "bytes": 46321615,
+      "colourInterpretation": [
+        "red",
+        "green",
+        "blue"
+      ],
+      "nodata": null,
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissimage-dop10/swissimage-dop10_2023_2625-1092_0.1_2056.tif",
+      "sha256": "31c4219580f87fd54268c04f2773f30a715392bde47581cf1245207b7c7ff90f",
+      "tile": "2625-1092"
+    }
+  ],
+  "protectedProductionHashChecks": 113,
+  "productionMismatches": [],
+  "frozenSemanticHashChecks": 7,
+  "frozenMismatches": [],
+  "unchangedScripts": 333,
+  "unchangedHistoricalAtlasEarthLabReports": 43,
+  "unchangedPriorResearchAssets": 44,
+  "preservationMismatches": [],
+  "canonicalThreadCount": 42,
+  "canonicalStatusColumnsUnchanged": true,
+  "localReferencesChecked": 426,
+  "anchorsChecked": 57,
+  "missingReferences": [],
+  "changedPaths": [
+    "docs/architecture.md",
+    "docs/development-log.md",
+    "docs/product-direction.md",
+    "docs/research/atlas-research-map.md",
+    "docs/research/atlas-research-state.md",
+    "docs/research/riffelhorn-dark-source-signal-results.json",
+    "docs/research/riffelhorn-dark-source-signal-support.png",
+    "docs/research/riffelhorn-dark-source-signal-validation.json",
+    "docs/research/riffelhorn-dark-source-signal-views.png",
+    "docs/research/riffelhorn-dark-source-signal.md",
+    "scripts/atlas/riffelhorn-dark-source/README.md",
+    "scripts/atlas/riffelhorn-dark-source/assess.py",
+    "scripts/atlas/riffelhorn-dark-source/assessment-plan.json",
+    "scripts/atlas/riffelhorn-dark-source/test_assess.py",
+    "scripts/atlas/riffelhorn-dark-source/validate.py"
+  ],
+  "nextTask": "Retained Riffelhorn dark-detail display-transfer experiment; not started",
+  "confirmations": {
+    "noAcquisition": true,
+    "noPayloadDuplication": true,
+    "noFrozenContractChanges": true,
+    "noProductionChanges": true,
+    "weatherTraverseUnchanged": true,
+    "multiscaleClosed": true,
+    "multiviewParked": true,
+    "noFittingOrCorrection": true,
+    "diagnosticLiftOnly": true,
+    "noPhysicalSNR": true,
+    "noClassifier": true,
+    "noPrivateInspection": true
+  }
+}

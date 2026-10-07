@@ -68,8 +68,11 @@ No accepted shift or corrected product. The [vegetation-only protocol assessment
 now completes that recommendation (**A - NOT JUSTIFIED**): three fixed candidate populations
 fail spatial/central-incidence eligibility or stricter historical-habitat support. No fit,
 correction or new executable correction protocol; the original trial remains INCONCLUSIVE.
-Exactly one next task: **Retained Riffelhorn dark-source signal and texture-support assessment**;
-[scope/exit](tryfan-vegetation-protocol.md#27-exactly-one-next-bounded-task). It has not begun.
+The [dark-source signal assessment](riffelhorn-dark-source-signal.md) completes that recommendation
+(**B - PARTIAL RETAINED SIGNAL**): organized 0.5-1 m image-space variation survives in dark supports,
+with low-range/codec/deepest-support and steep/registration limits; no corrected appearance.
+Exactly one next task: **Retained Riffelhorn dark-detail display-transfer experiment**;
+[scope/exit](riffelhorn-dark-source-signal.md#27-exactly-one-next-bounded-task). It has not begun.
 Open/parked appearance work remains independent; no correction or acquisition follows automatically.
 
 Production, Weather and Traverse remain unchanged. The map below retains chronological
@@ -539,3 +542,9 @@ All 42 status columns remain. A15 gains scale/epoch qualification, not closure; 
 [Report](tryfan-vegetation-protocol.md), [plan](../../scripts/atlas/tryfan-vegetation-protocol/assessment-plan.json), [diagnostics](tryfan-vegetation-protocol-results.json) and [validation](tryfan-vegetation-protocol-validation.json): **A - NOT JUSTIFIED** for the predeclared candidates/fixed spatial holdouts. P1 buffered SCL4=8053, P2 plus native WC30=5370, P3 plus strict historical D.1.1=205. P1/P2 have shifted heldout incidence support and unresolved contemporary mixture/dependence; P3 lacks both eastern quadrants. No fitting, parameters, correction or retrospective change to1842008 criteria; that experiment stays INCONCLUSIVE.
 
 All42 status columns remain unchanged. A7 now records a rejected eligibility design, not rejection of C-correction. Source/native/terrain hashes, deterministic masks/statistics/figures, focused safeguards, contracts/types, historical reports/tooling and113 production hashes are checked. Appearance science remains open/advanced and Swiss pixels parked. Exactly one next: **Retained Riffelhorn dark-source signal and texture-support assessment**; bounded source-encoding/recorded-detail evidence, no correction or acquisition. It has not begun.
+
+## 2026-10-07 - retained Riffelhorn dark-source signal and texture-support assessment
+
+[Report](riffelhorn-dark-source-signal.md), [fixed plan](../../scripts/atlas/riffelhorn-dark-source/assessment-plan.json), [metrics](riffelhorn-dark-source-signal-results.json), [validation](riffelhorn-dark-source-signal-validation.json): **B - PARTIAL RETAINED SIGNAL**. Original four-patch RGB8/JPEG95 analysis retains dark 5-20 DN block-scale adjacency/contrast; deepest pixels lack equivalent block support, limited green levels and codec/mottling confound fine interpretation. All 1084 prepared payloads verify; 14 intersecting fields/encoders agree. Diagnostic lift is display-only, no correction/noise-model/albedo/terrain attribution.
+
+All 42 status columns remain; A5 gains bounded signal-support evidence. A6-A11/A14 remain separate, A13 pixels parked; registration/projection limitations and Tryfan INCONCLUSIVE/protocol no-go remain. Exactly one next: **Retained Riffelhorn dark-detail display-transfer experiment**; a bounded source-referenced render-only visibility experiment with predeclared artefact/colour/clipping checks, not physical normalization. It has not begun.

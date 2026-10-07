@@ -635,9 +635,14 @@ now completes that recommendation (**A - NOT JUSTIFIED**): three candidate masks
 holdouts do not provide sufficient controlled support; counts do not prove current homogeneous
 vegetation. No model fitting, corrected bands or new executable correction protocol.
 Original1842008 remains INCONCLUSIVE; all42 status columns and old criteria remain unchanged.
-Exactly one next task is **Retained Riffelhorn dark-source signal and texture-support assessment**;
-[scope/exit](research/tryfan-vegetation-protocol.md#27-exactly-one-next-bounded-task).
-It has not begun. Source encoding/recorded detail, not brightening, correction, physical inference
-or another mask search. Swiss pixels remain parked.
+The [dark-source signal assessment](research/riffelhorn-dark-source-signal.md) completes that
+recommendation (**B - PARTIAL RETAINED SIGNAL**): coherent 0.5-1 m image-space variation survives
+in fixed dark supports, with low range, JPEG-phase/colour variation and deepest-support ambiguity.
+Source/prepared hashes/encoding agree. Diagnostic lifting is a view, not corrected physical appearance;
+steep projection and fine registration remain qualifications. All 42 status columns are preserved.
+Exactly one next task is **Retained Riffelhorn dark-detail display-transfer experiment**;
+[scope/exit](research/riffelhorn-dark-source-signal.md#27-exactly-one-next-bounded-task).
+It has not begun. Render-only visibility/preservation, no physical normalization or acquisition.
+A6-A11/A14 remain unresolved separately; Swiss pixels remain parked.
 Open/parked appearance science remains non-blocking, not solved; Swiss pixels remain parked.
 Frozen contracts/current production remain unchanged.

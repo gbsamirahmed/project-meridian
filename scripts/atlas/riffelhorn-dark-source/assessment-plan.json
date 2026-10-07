@@ -1,0 +1,75 @@
+{
+  "assessment": "riffelhorn-dark-source/v1",
+  "checkpoint": "e276d814942b5e94adfa2353a95a10e78536b028",
+  "recordedBeforeStatistics": true,
+  "patches": {
+    "ordinary": [
+      2625240,
+      1092530,
+      60
+    ],
+    "steep": [
+      2624805,
+      1092330,
+      60
+    ],
+    "summit": [
+      2624810,
+      1092252,
+      150
+    ],
+    "dark-context": [
+      2624740,
+      1092318,
+      150
+    ]
+  },
+  "nativeGridMetres": 0.1,
+  "intensityWeights": [
+    0.2126,
+    0.7152,
+    0.0722
+  ],
+  "intensityMeaning": "encoded RGB digital proxy, not linear luminance/radiance/reflectance",
+  "binsDN": [
+    0,
+    5,
+    10,
+    20,
+    40,
+    80,
+    128,
+    256
+  ],
+  "blockMetres": 5,
+  "aggregationFactors": [
+    1,
+    5,
+    10,
+    25
+  ],
+  "shuffleSeed": 20261007,
+  "JPEGPhases": 8,
+  "diagnosticLift": "sqrt(channel DN/255); display only; applied equally to every patch",
+  "figureInsetMetres": 10,
+  "figureInsetRule": "fixed patch centre, not selected from image values",
+  "statistics": [
+    "native count, per-channel occupied levels, zero/255 counts and quantiles",
+    "5m fixed-block mean intensity assigns stratum at every scale; within-block RMS contrast",
+    "0.5m within-block demeaned neighbour correlation and squared structure-tensor coherence; histogram-preserving shuffle comparator",
+    "native 8-phase gradient audit using original source indices; not a sensor noise model",
+    "source-field regeneration and declared RGBA encoding check on intersecting z18 tiles; low-value encoding occupancy"
+  ],
+  "interpretationRules": [
+    "do not classify physical shadow",
+    "no calibrated SNR or inferred sensor-native bit depth",
+    "source structure may include processing artefacts; shuffled control is descriptive not significance test",
+    "no universal support/confidence score or predeclared darkness pass threshold",
+    "all blocks retained, no mask selected to strengthen correlation; dataset support only",
+    "constant blocks return undefined correlation/coherence, not evidence of absence",
+    "within-patch strata are not controlled experiments on darkness/material",
+    "block counts do not imply spatial independence"
+  ],
+  "noCorrection": true,
+  "noFitting": true
+}
