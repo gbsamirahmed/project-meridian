@@ -1,0 +1,1269 @@
+{
+  "acceptanceCases": 16,
+  "assessment": "atlas-tryfan-regional-pilot-plan/v1",
+  "decision": "C - IMPLEMENTABLE AS PLANNED",
+  "familyCount": 5,
+  "foundationReports": 14,
+  "integratedServingImplemented": false,
+  "mixedFamilyPublicationImplemented": false,
+  "nextTask": "Tryfan pilot retained catalogue and immutable generation foundation",
+  "nextTaskStarted": false,
+  "noPilotImplementation": true,
+  "orderedSlices": [
+    "S1",
+    "S2",
+    "S3",
+    "S4",
+    "S5",
+    "S6"
+  ],
+  "planSha256": "d9b9c99cb5d0277998439bc51c28990643e6c0feb9c2361b0258ba46ca5ebf46",
+  "queryCases": 21,
+  "retainedBytes": 42473107,
+  "retainedInventorySha256": "7860d1b0067fd44d4e032a851078f445cf397e1e0cab84d5b1252fdac11cbb44",
+  "selectedAssetCount": 15,
+  "sourceHashes": {
+    "cache/atlas/tryfan/second-region-proof/aws/14/8009/5329.png": {
+      "bytes": 105706,
+      "sha256": "56728a2c278801c3aea6cf9d1e7c513c829636404696472819640c4581e70a12"
+    },
+    "cache/atlas/tryfan/second-region-proof/aws/14/8010/5328.png": {
+      "bytes": 102230,
+      "sha256": "cb81fc13e12e530cbdb5bdb899a665f70e2f740430102498c0a276d99d1b0ef9"
+    },
+    "cache/atlas/tryfan/second-region-proof/aws/5/15/10.json": {
+      "bytes": 706,
+      "sha256": "b9aa2c5bd91f91342f5f38b19d415a26edf0047ec8aa4b2da43fac9d5bfe4b54"
+    },
+    "cache/atlas/tryfan/second-region-proof/aws/5/15/10.png": {
+      "bytes": 65306,
+      "sha256": "9b661bb849997f0e07d9a0cb865d13487080922c80196cc59f1d434cfa889e5c"
+    },
+    "derived/atlas/semantic-comparison-v1/nrw-vegetation-full-features.json": {
+      "bytes": 558917,
+      "sha256": "d6d389a7c2a853a15e5a592c08d06f81d500c8778b7370144d246c62c2b7fab8"
+    },
+    "derived/atlas/semantic-comparison-v1/tryfan-worldcover.tif": {
+      "bytes": 4918,
+      "sha256": "9a0ad7162b1fb5fdc276a90c219c8d1d1daa0e83650ccd22d1dfbb51cbe98f6d"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/manifest.json": {
+      "bytes": 87014,
+      "sha256": "b254a21b1ec346cc07b43d269d937b059851e95ac168565359a81d3872c69e54"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/14/8010/5328.png": {
+      "bytes": 112921,
+      "sha256": "d261c4b95a6b24421d3509a6530ac20d74ba19c9c9229a3812f5337c3a5c5c75"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/15/16019/10655.png": {
+      "bytes": 70860,
+      "sha256": "6388e00db7d8729004d7a7a5ba200f88975978046d90dcb7409f1e37d6334669"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/15/16019/10656.png": {
+      "bytes": 104652,
+      "sha256": "a7f9a8227c7af581eb18986ea379a98834ee333dde177c762f4366268f4453d7"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/15/16019/10657.png": {
+      "bytes": 106483,
+      "sha256": "d3f813b398e06248422fa90d8d90d8539fa96e935f613a590616137a2e4213b3"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/15/16019/10658.png": {
+      "bytes": 104452,
+      "sha256": "cac4176a1d01647e1fe4dbced7e2daa5a7776098e509ccd86796c33cf5d13715"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/15/16020/10655.png": {
+      "bytes": 89012,
+      "sha256": "0e6962f4a95dfdba3990aa5d4c3c98035f33bc5cd82711d052c95e2a22ef00d2"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/15/16020/10656.png": {
+      "bytes": 110330,
+      "sha256": "92b084f64906421891d16606c85ad09e54e7e500a09eeedede61718df95bd0cf"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/15/16020/10657.png": {
+      "bytes": 104287,
+      "sha256": "61253ada673998c7eb79d59f32b183bd78b2665982fc59cd1e6d566a58ee0b96"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/15/16021/10655.png": {
+      "bytes": 91487,
+      "sha256": "890a554b1f00f02a8691acc0d5ba7c08e78e2fc48ef44f1a90dd4f318aa4b3cc"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/15/16021/10656.png": {
+      "bytes": 100095,
+      "sha256": "44248084ee2f78aa1b5e5d56366489ace6611f308786a19a003208acea282d39"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/15/16021/10657.png": {
+      "bytes": 102755,
+      "sha256": "ded882d4d2d365ffa3303d9b5f69e370c9cc2c2ee1adc18f3329ed8a970d90d5"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32037/21310.png": {
+      "bytes": 83465,
+      "sha256": "3b75356545d3396fce528a2b74fe42420fc8d6bdf34a882b119cadf06caecf9c"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32037/21311.png": {
+      "bytes": 75198,
+      "sha256": "fbb8419e87def5b7af63a99071c96ea5ede87a0612a3a511f41339aa93bc7dc9"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32037/21312.png": {
+      "bytes": 88738,
+      "sha256": "c4ee0412c33b73b42525102beabba09599735f3744bfaab163044168eae3071b"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32037/21313.png": {
+      "bytes": 90789,
+      "sha256": "48f3c36a78dbe59bbc94d7e9a51eac982ecf485da2c18522a66cac59eea5f7db"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32037/21314.png": {
+      "bytes": 86599,
+      "sha256": "47aad258373a33f9462b66956addb176e9b5673935ba4b936972570ea40577c4"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32037/21315.png": {
+      "bytes": 99989,
+      "sha256": "b50108438155e8b5c0d6318c4b0f9747ae8108ca21a23ae771bb7f412314a00d"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32037/21316.png": {
+      "bytes": 103323,
+      "sha256": "b225b6b64667e6a365bca96a80790d0e22527081663b20d166cfe7236552eeaf"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32037/21317.png": {
+      "bytes": 100849,
+      "sha256": "ec2d10d6d0172ccdfa9e8fb0edc81b493972ba903f6e9105b922146638b4e42d"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32038/21310.png": {
+      "bytes": 67310,
+      "sha256": "29370f5ef9d5297e3446bd8aa38caa5c9fea86e413719787b6a0c76de69e86ab"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32038/21311.png": {
+      "bytes": 65475,
+      "sha256": "b41cd511e75874518556ff3e6619cddfa4e2484c54aff21f0c390084bee4e037"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32038/21312.png": {
+      "bytes": 94612,
+      "sha256": "775830c91b1e205ec0952f28ea27a03a11d2356c440abcf43ac22c0db561d618"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32038/21313.png": {
+      "bytes": 93824,
+      "sha256": "bb215a8a471a4dd07880d429abe8f619fb1481ad527d0445e18bab173ddc5607"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32038/21314.png": {
+      "bytes": 95130,
+      "sha256": "4b98efb999fc44f25ea3b76760f09143638c7a1cfb85cfd0db86c1659b04cbeb"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32038/21315.png": {
+      "bytes": 100335,
+      "sha256": "426d4932f1c380dfdfecd87122fc88964793fd44a78f1e51022511375e2e84f2"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32038/21316.png": {
+      "bytes": 99918,
+      "sha256": "deb0ae7bc0b3bcc4f18b908040f5c7e2f65910e6683485d6efe5d0ded73942c2"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32038/21317.png": {
+      "bytes": 95767,
+      "sha256": "2a8538b9ccd78b9e8e20d2759b0495f307a2b61561b749f36f25e59712a74785"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32039/21310.png": {
+      "bytes": 35772,
+      "sha256": "b1993cd0f83f3106e34db5d2a6e589fe6721ebdd1288eba665db65788ec61d58"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32039/21311.png": {
+      "bytes": 78469,
+      "sha256": "3ed913ee338fa65de434bb4678ae7becb4ab11c232bb7420dcf61ab25d11b193"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32039/21312.png": {
+      "bytes": 101351,
+      "sha256": "e9b9367712e60ad34695ef33dfb71e9149a1720720c204c2e173eecf252f3378"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32039/21313.png": {
+      "bytes": 100012,
+      "sha256": "7b5941f66dc41797a76a0219abb8e5d067d05c28a82514e964be874019ff7d62"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32039/21314.png": {
+      "bytes": 99962,
+      "sha256": "326feeeeda613e4674bf5795f35207b9782f2f5fc33fd9c023f7af2c1394d0d2"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32039/21315.png": {
+      "bytes": 101741,
+      "sha256": "75a28da89302f9b3013654621afb18daca60e242ac57bb6cdad5988e27cfb4bd"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32039/21316.png": {
+      "bytes": 96137,
+      "sha256": "8040eb52c4431b2e16cb685aac605911a5c0eebc6f4bd548feff887dc69c1d0a"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32039/21317.png": {
+      "bytes": 86462,
+      "sha256": "d92ae6e1456e608efcdcf42e24d857cdf526674cb492943bd4f1df932391e119"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32040/21310.png": {
+      "bytes": 50941,
+      "sha256": "a76a41415191488abd63b7cb43a8e0c6ca769bf04880f2d74c07a8b15edf5135"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32040/21311.png": {
+      "bytes": 98547,
+      "sha256": "70fbd70cb3e174bccab8d477a4b5009f77dad4a32371c5a6d2996c7bdf95eed3"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32040/21312.png": {
+      "bytes": 105241,
+      "sha256": "8033d6c99bed4204e26e5e8b0fca11d57f5b594b68c771566e61571812312d8e"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32040/21313.png": {
+      "bytes": 108395,
+      "sha256": "386eeeeabab90e8a215d17ad30ea01551eccb3684b4f1f96cbbac332480a2f1d"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32040/21314.png": {
+      "bytes": 100333,
+      "sha256": "1d426349726517616edff34a31afbd1e1f0165dd4abd43d7ae4260d756ea1d5b"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32040/21315.png": {
+      "bytes": 95877,
+      "sha256": "d11074bd7449ecc5f4602ac3b7e07df32af6cd7452c5f0611f390f9cd7bce14d"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32040/21316.png": {
+      "bytes": 97012,
+      "sha256": "624fc988488bcd7d6d3edb63f1cae525c5835a165536aea289d7490e7a1e665f"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32041/21310.png": {
+      "bytes": 72274,
+      "sha256": "fb3db1323206ebf4a319ad553b92a8bfe9c6d9894c7ac5b7b4588b5f71402282"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32041/21311.png": {
+      "bytes": 98828,
+      "sha256": "50a42d25c720e7d045eba01ff1cf6c00162b8c10c0d2987e80277962b4b43701"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32041/21312.png": {
+      "bytes": 98904,
+      "sha256": "f30c5a405038a57b398941517d35d264009f9c6cbe8601eae3063e0bcde74c51"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32041/21313.png": {
+      "bytes": 94689,
+      "sha256": "8d886bc5a4db39e7ccb1e5e7c33ffa05406ee81ad88213d4715a86392672e51b"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32041/21314.png": {
+      "bytes": 97145,
+      "sha256": "d70c5208309f766b07734ae65185be5cc3a1bf09c77abedae21750301356717e"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32041/21315.png": {
+      "bytes": 96975,
+      "sha256": "d8bcaffd070eca79b7ebad092028a59a63c3791bb9941e9b3db856de94006f98"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32041/21316.png": {
+      "bytes": 90434,
+      "sha256": "0cfbab438c9ca207023de725d9344a0592dd4934ffa21df08358b3b8140eb155"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32042/21310.png": {
+      "bytes": 71945,
+      "sha256": "c141e954541e9430c46ef3100f61a17db15a202c44d46b2a58507842db9a1417"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32042/21311.png": {
+      "bytes": 93717,
+      "sha256": "1ee57080470cbfc9eee67c3c5ef64991b5d8719c71b0b348f9c066e4fdb2c592"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32042/21312.png": {
+      "bytes": 90785,
+      "sha256": "b8ffbfbabd52f4db7a967a1d94da786efd55702a03ac58d171e1ab380d44e76b"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32042/21313.png": {
+      "bytes": 87623,
+      "sha256": "2d0213ae6a0a3fc6b2a4baa28fae38fedf6a77417036a4a354eec8cc87069dea"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32042/21314.png": {
+      "bytes": 93321,
+      "sha256": "c1a19ef0440f0bbfb850490e1355cc389b051707ef1aa26d9909b070461726d6"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32042/21315.png": {
+      "bytes": 100294,
+      "sha256": "2feef1a851c68ea9d447c7301da45c6479b480c0fd7053fb1b382411c88d79b4"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32042/21316.png": {
+      "bytes": 82200,
+      "sha256": "2b367c810fc1b4b16ef2c661edade1df49738da67a7da1fe95699c69b033fe9c"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32043/21310.png": {
+      "bytes": 72713,
+      "sha256": "dc83221d60c29b0b271191e4032528a6bace1040182c5b93739fbf2ea0e7e142"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32043/21311.png": {
+      "bytes": 85199,
+      "sha256": "54939e5ca20c7628f0af6857586af7aa617e9b8b088327bb53d92bf43131af19"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32043/21312.png": {
+      "bytes": 93401,
+      "sha256": "b625983f6aa41245615ff655a08055dc285221808a664e5a9051269f2c91e044"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32043/21313.png": {
+      "bytes": 93812,
+      "sha256": "9a587a97ed2527a660992a424916fb799abb9cc20ae0c6790a242b4c382a82fc"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32043/21314.png": {
+      "bytes": 94702,
+      "sha256": "fdedbfc1da31812332807f2889449fc757ba6f0c12358e4c59c985a862287617"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32043/21315.png": {
+      "bytes": 85034,
+      "sha256": "825c41913ce3bc4b0dbead0a673dbde448c0e28bfd0fd42c59b55e1c3a0b3ec1"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/16/32043/21316.png": {
+      "bytes": 93337,
+      "sha256": "05f6afe1a8fd25b0c132f9fc15cdf89f0cb48d40c6d48bffeb6fb733461a52bf"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64073/42620.png": {
+      "bytes": 85188,
+      "sha256": "2f82281c5b05a0fc88e9fdff869790af5454e4254494b9e993609d67421c661e"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64073/42621.png": {
+      "bytes": 66394,
+      "sha256": "18e145ab3ac6c4347aba00ec8099ffdf8b2c6542e35cb519e3ba872f6de8a2ab"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64073/42622.png": {
+      "bytes": 68170,
+      "sha256": "353d4a9d482b81d589d582b187453048715a1378c5dd4b4e2cace1916a2df6ad"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64073/42623.png": {
+      "bytes": 72544,
+      "sha256": "e2c4ee3c13cc56453afabf42da733d4c35f5b4973fa95b4ec343d611f1bc7d60"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64073/42624.png": {
+      "bytes": 64905,
+      "sha256": "befe6353f8ed81ab10a3834cf1adcfc2059e0a4e429d5d937651fb4d8d41fa4c"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64073/42625.png": {
+      "bytes": 74560,
+      "sha256": "87b2d40ed696eb4f2f59f0d096cb7a9e051fa24511f2a4e42fe712d61f9e0031"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64073/42626.png": {
+      "bytes": 92858,
+      "sha256": "1f21f4884ddbf7ccf44870ac1a10049958390b76ed7a00634005a156efe4f186"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64073/42627.png": {
+      "bytes": 90095,
+      "sha256": "85fce82f6648c81009e585916cf4db1834f52a33466406aa74c1378cd7be89d5"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64073/42628.png": {
+      "bytes": 91357,
+      "sha256": "0ac4970906a0e0b1e9b6718d0c992ea16695117556b0c0fc1b3ad0991b5492f5"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64073/42629.png": {
+      "bytes": 93884,
+      "sha256": "eeb5f9267aa918011b466092f77d25be6a342379d128f7c0908db6413fd29574"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64073/42630.png": {
+      "bytes": 92579,
+      "sha256": "54f756c670674160b25d07e3051fd01a1b52e4f39ab398117b4b610fd9c0fd7c"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64073/42631.png": {
+      "bytes": 85145,
+      "sha256": "11a05e4bcc19c7ed1f77fe962ae826b152a48f8797af48cccef9150f005926b9"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64073/42632.png": {
+      "bytes": 98501,
+      "sha256": "09055ee77615cc59024a9b3be472d5701e3bc4dcdbccb129a1e3d70f635e0fc3"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64073/42633.png": {
+      "bytes": 90845,
+      "sha256": "9cd5e2dd79641e8794debf37ad9046cae2de9c0425a4b2cf41bb12ef690780b8"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64073/42634.png": {
+      "bytes": 73178,
+      "sha256": "eb9623169e140f50a7344f1fe9ff43092acd35c0012f07c631138e69eef54839"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64073/42635.png": {
+      "bytes": 85781,
+      "sha256": "2f70f380e7f2716320c693a7d767482a8fa029715066806c36e7fec187da4f04"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64074/42620.png": {
+      "bytes": 88183,
+      "sha256": "a946bb256984732a8fa65a0e6eee5ce2946838824d59168bd21e9d09fa7d93a8"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64074/42621.png": {
+      "bytes": 61866,
+      "sha256": "0f24d5607f9b8b2ae9a28563c3d3392026ebae983d4eb812f8e821785f925d88"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64074/42622.png": {
+      "bytes": 54754,
+      "sha256": "44e66fc8b8001ae19a3feeea55bfd2718a5fc5e4007a2c93fcfb39808743e83c"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64074/42623.png": {
+      "bytes": 74957,
+      "sha256": "963300a5432cc3673777b93dc791dbbec5d71ee09477a5d61e1806ede9783f2f"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64074/42624.png": {
+      "bytes": 70108,
+      "sha256": "1ec6a561e50ae6f3aed57c4702eafe306f15ba8ce061aae635c07ff2446c400a"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64074/42625.png": {
+      "bytes": 77048,
+      "sha256": "304d94dc969b1625fe9e725498b8d493699def55b522a8656d121bfa03d75bc3"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64074/42626.png": {
+      "bytes": 92504,
+      "sha256": "808a29e14621835dc6a3774cf7fa68ae2ecb01d022f701071f6cb048fc66a932"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64074/42627.png": {
+      "bytes": 81393,
+      "sha256": "67086b77f4134e33d516927dd804449462defd502b2a5e0f628342644702e8dd"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64074/42628.png": {
+      "bytes": 80800,
+      "sha256": "c3badf3189e7c6efdb9fe98fa57ae5898f2b11fdd45b643d0085a3fae6a543b9"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64074/42629.png": {
+      "bytes": 90887,
+      "sha256": "079f8dc5e2f0a95495e08c9ca42c2f2f3d99c31190ce64c2d15f98ef677a0c66"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64074/42630.png": {
+      "bytes": 92824,
+      "sha256": "0b3836b2ee0f5570564a154615020e78e6241f676e0e9c3dbf7f89db4129c208"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64074/42631.png": {
+      "bytes": 92043,
+      "sha256": "2012aa4d9356f9d5e69c81a4bc4a25dc8ad39381ab0eda986b47e90f044f4fd2"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64074/42632.png": {
+      "bytes": 89462,
+      "sha256": "8d4835a5492037a867360529abc922263a86b45bc7960cf643655c3e580aded9"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64074/42633.png": {
+      "bytes": 98314,
+      "sha256": "0a5bbb143fff0a64c481162f797e70c748076637360753d376a7f4f4f592d5b7"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64074/42634.png": {
+      "bytes": 89586,
+      "sha256": "2171749bf2b7854bdce1146a7087af79a89a3561974f5d076e3f35eff9f7cdd9"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64074/42635.png": {
+      "bytes": 91212,
+      "sha256": "a19d941fc961cfebbe796a9b1955ac435f4fa79e498386aaaeaae4f8618f6c26"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64075/42620.png": {
+      "bytes": 83070,
+      "sha256": "ae182c537db524ef1eb7354209a5641c6283d1d86de764a1f34a5fabb0ea4d95"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64075/42621.png": {
+      "bytes": 53779,
+      "sha256": "2ac749bf0c7278efc98d08f170afaccacf672822f91cbb56b541edaa4f200f50"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64075/42622.png": {
+      "bytes": 41091,
+      "sha256": "911ce5d01facd695482317abe7a4c5675b71e55342df57abea58b9fbf434a4bf"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64075/42623.png": {
+      "bytes": 77467,
+      "sha256": "d727c9c9d313e419d0511134262ba0ab9f401e24c388ab1a3f579648f60797ad"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64075/42624.png": {
+      "bytes": 74037,
+      "sha256": "e4e21936b9f4f1136e1207b6ecf1311cb22ae6d9cd4ce70af8f49437386633d9"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64075/42625.png": {
+      "bytes": 82137,
+      "sha256": "6079ffb2131fcd284f8771e2df80c171eed523668387e7aca12901fff0c01bf5"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64075/42626.png": {
+      "bytes": 87453,
+      "sha256": "dc1307d92d006b80f8feb895a9133f729f20401bdacc9d3b67b4a871e2b5850f"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64075/42627.png": {
+      "bytes": 53805,
+      "sha256": "8dbff696d868224260282819ac999de3a8f68a5103580c9ea3b4882ad418b433"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64075/42628.png": {
+      "bytes": 44837,
+      "sha256": "b7f9248b6d1b575807545a855d0edef7aaab7b9211c47120e04f629021c1e524"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64075/42629.png": {
+      "bytes": 80745,
+      "sha256": "f05cfe027c1e32a24e5b27d2ddcbd98852098c54ee2db309f1fae8ec30ac9253"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64075/42630.png": {
+      "bytes": 87397,
+      "sha256": "75597c55b78f3cc27272d461aa97c8b18eb048a79e0d6ff3652b5a0cb496f8a3"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64075/42631.png": {
+      "bytes": 89049,
+      "sha256": "874478425f8fa9043ed4a7bb2786912325f3f813006d27f9b484d121db2f9518"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64075/42632.png": {
+      "bytes": 99283,
+      "sha256": "c26728f9bcfc79b17b41db49286037ef450b4962b18eb56d07a9eeadb797c58e"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64075/42633.png": {
+      "bytes": 94874,
+      "sha256": "67aec038ccc0ca6c4d455010e9b90d419fc0749f1fbbb75cb1558781dc8d7cb1"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64075/42634.png": {
+      "bytes": 89636,
+      "sha256": "31de4745cfab1250b93e7eebcb962f22c62419782a61ed5823f023c257629ec4"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64075/42635.png": {
+      "bytes": 95970,
+      "sha256": "bea4f73933626d3032f8839476f26ce3a1383ab29be062347f66aa60d673ade2"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64076/42620.png": {
+      "bytes": 74830,
+      "sha256": "3318e6c521f32c6261acc7551ef5a39cc938bf99fb5f4ffdfb760300e8ccb753"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64076/42621.png": {
+      "bytes": 46881,
+      "sha256": "be7aaa0a54374f7aad8c36f618e060f5d660882e5a50744174d9c49440e8ce75"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64076/42622.png": {
+      "bytes": 26320,
+      "sha256": "a2b6d7f2ed38f27f15884ce1aa17828447c0434e526fa59819ffa55fb9ddc1e2"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64076/42623.png": {
+      "bytes": 76830,
+      "sha256": "a77822cbba61e292716e89a5afd1e19ab7ed50f12ebe356311597a2ebaf5d197"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64076/42624.png": {
+      "bytes": 73513,
+      "sha256": "039ab413256ba0d314c95f9cc3ce1426b6caf6186c86a2b7e3abace9aa44d727"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64076/42625.png": {
+      "bytes": 90984,
+      "sha256": "d125be16fbc80e3fddf258cd3dd159d2b94439621723f7e4c360adf89c483163"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64076/42626.png": {
+      "bytes": 85692,
+      "sha256": "8a018780e86084ee1c8992f0eee6e802c84b1f7865da0f5b67507672e012a1d2"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64076/42627.png": {
+      "bytes": 80099,
+      "sha256": "c7b9c66747484cc9bddc3a4bace9b65c0841ffcddc492431b83c072c751d7d5c"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64076/42628.png": {
+      "bytes": 80719,
+      "sha256": "aaa06bb3eec5af72b25937a0a9d292e332ff334fdf3305e15488b03c47c146ce"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64076/42629.png": {
+      "bytes": 82099,
+      "sha256": "07746e874f308209e24114eb90720e30a4919259e43287a5b2a8b30005d11100"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64076/42630.png": {
+      "bytes": 86948,
+      "sha256": "c307d5895cdbdf7565df2358fec144f7c2ab989236121bc3d79e408334cd84ef"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64076/42631.png": {
+      "bytes": 93736,
+      "sha256": "e3bd75718bbff4264117b4b52d9b791fccae71ab685a498ebc64f8675bbf90f7"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64076/42632.png": {
+      "bytes": 100695,
+      "sha256": "ea45921c08bcdd3b077bb01bb6c29cf347cd274c6093c126316a7e85e9b548a3"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64076/42633.png": {
+      "bytes": 83232,
+      "sha256": "6a20526e224dd8cee1eae8f12a94162f12721601cedd53d95c852d51ed9a3ff9"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64076/42634.png": {
+      "bytes": 82818,
+      "sha256": "0380f1711e4c65c9dcfb5cf2b87813255c9ed5a74e1e3c65d6b711520eb10aea"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64076/42635.png": {
+      "bytes": 96710,
+      "sha256": "be789684eeeac044d2a7b0ea7fe61ffb023101eb2f1ca45c05cfceb22fb2e426"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64077/42620.png": {
+      "bytes": 71955,
+      "sha256": "f4ba8ef89b2f7449c9432dd82261775731157bdce296f3e26ad5c2c8f6616b5b"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64077/42621.png": {
+      "bytes": 20368,
+      "sha256": "147d64a6c62432dae08c3aaefc7d4edf80136a9e6edb8966456b5419605c77b7"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64077/42622.png": {
+      "bytes": 35372,
+      "sha256": "d940053395041e9791121d02da40c276352add16e4cb0eb8a55de62aea45bd92"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64077/42623.png": {
+      "bytes": 78805,
+      "sha256": "9be592624d21eb38e439b8f0697a403f90f10a07ab9b757c3b0da9597c739a65"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64077/42624.png": {
+      "bytes": 77371,
+      "sha256": "d1ce20c1c965dd33c0740d5c9552b70325c5cbd625c7785ade0f8b5778614ee4"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64077/42625.png": {
+      "bytes": 83985,
+      "sha256": "4fc6cc7fbf0d188a0bb6fa27c2ccf1458e6a7da5d0b8e7f73267d61a91d96bc8"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64077/42626.png": {
+      "bytes": 74817,
+      "sha256": "63e00855d110f31bc1eb96bc4f86d83381a2472c39d98718d490902fc5214f01"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64077/42627.png": {
+      "bytes": 76148,
+      "sha256": "c3dcc77d4dc6ca9f1aeda23c3c3049f56fcc7abff7a9c0819d484ea2b66e9e50"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64077/42628.png": {
+      "bytes": 77476,
+      "sha256": "cfee869f6a139a4327e67164616b28019886af79e91d6d902cfbc1928f02f891"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64077/42629.png": {
+      "bytes": 86983,
+      "sha256": "35a72746360173f8d8b0d24d697da3eacc6b15b534bf3dfd1637d85bbfa11ea2"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64077/42630.png": {
+      "bytes": 90412,
+      "sha256": "8c67d695513eed909c3446ec830589848d41442b4fde3cacc396560981a27bc8"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64077/42631.png": {
+      "bytes": 94362,
+      "sha256": "8ed9501f81168d31667dc1acdae49a23f112578d9b5cad31cfa05f18ae9033d0"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64077/42632.png": {
+      "bytes": 91269,
+      "sha256": "39a0bc10ee6798a92637e5d2cd8c681e7ed2cb4b4f1c67dffd9a49f0b75758a0"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64077/42633.png": {
+      "bytes": 82995,
+      "sha256": "030579f394389e11c2dd985595eca04d5784d76a4748d0b1f284283ebffe34ef"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64077/42634.png": {
+      "bytes": 78544,
+      "sha256": "362f63c672497315efe2c5b91051e6f6bffd6db07107394054ba3116d76b84cd"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64077/42635.png": {
+      "bytes": 76334,
+      "sha256": "d59c38a7dc9f4805dd29891e9ad06886c60fd6dce36b380840eb10a3fb2927e7"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64078/42620.png": {
+      "bytes": 52640,
+      "sha256": "ab3c42a2115f66c820d86e60bab1729601fe50b8b75c358730fba0e34b22ac92"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64078/42621.png": {
+      "bytes": 8236,
+      "sha256": "5cdc6eebb8680bb49def2c56360c3bfa0f88d6de0e052c5f97d8246375f7fab6"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64078/42622.png": {
+      "bytes": 45949,
+      "sha256": "56ea3ed42c8d2b6b1dd24cb8bba78c292b83423db67b1187480a0d6682595306"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64078/42623.png": {
+      "bytes": 85806,
+      "sha256": "ea3a1800a3c83d95816f0d43a33a26fb15a2a7c43bf2b3e7c5b3deda6a5940f9"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64078/42624.png": {
+      "bytes": 85434,
+      "sha256": "ce4476a283727e01e252067096a50079f4cd58e6246b4691c2c20f7720d6641e"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64078/42625.png": {
+      "bytes": 92316,
+      "sha256": "b73e0eb5571bceac83af7517894d8ff745dfb55336f1ca586b60678209729b8e"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64078/42626.png": {
+      "bytes": 87624,
+      "sha256": "5face41327b2d61b5def59073921f5c8b43687697bbc96edd202e2141a92d54d"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64078/42627.png": {
+      "bytes": 86876,
+      "sha256": "8bfb2c1b04fdd193204b422c23998ab526079de72cac6a1a772be878852f9c76"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64078/42628.png": {
+      "bytes": 87593,
+      "sha256": "6a2123b0346ef51b9730affe7da7b8a9894d7d87defddae65f3e9d815f070624"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64078/42629.png": {
+      "bytes": 89203,
+      "sha256": "7084d2c64b7c276c3ccd1f7e679dc3930bf00ed9737efab51f2d8b782b35835b"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64078/42630.png": {
+      "bytes": 91886,
+      "sha256": "5d58d39230694f44774c88efe3821069e188ab01cbca315de2320c604f4a3a25"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64078/42631.png": {
+      "bytes": 99894,
+      "sha256": "642c8f7f9d30f658146b31a364203291fd8a2fceef2762b1ba2154fc31bd706b"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64078/42632.png": {
+      "bytes": 95114,
+      "sha256": "2a2554817075cc47e9e379c039f91f0cc41ec80dc1dc175beb15ed4968183461"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64078/42633.png": {
+      "bytes": 74206,
+      "sha256": "8724564ed753c653bf58f9c6d55147a3f8abbe6d0ffca30dd979448af47261eb"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64078/42634.png": {
+      "bytes": 74002,
+      "sha256": "789239b854896413d2784f07a9781d8faf7b4113bd07fcb16368024345e5a9a7"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64078/42635.png": {
+      "bytes": 70642,
+      "sha256": "97e70bf552e779b3766a1b091ceca44d228424d226276f1b7f12c967cf0d2c5d"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64079/42620.png": {
+      "bytes": 37226,
+      "sha256": "200e01b66750df6a02b42f0a69690d490c9bcd2841ba79375986ee40a7905a91"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64079/42621.png": {
+      "bytes": 8926,
+      "sha256": "cff5c55355eff146df8c354e0618ecca6183046739485bd6cd1912b4efcf93db"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64079/42622.png": {
+      "bytes": 51163,
+      "sha256": "a6cdadcf4a2a2ce30fdaa466bc32c1846dd52701b4f3f18584ab6714c68ad2e1"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64079/42623.png": {
+      "bytes": 90430,
+      "sha256": "5e70c9d430099c420dd8f18a1847f481b0d4754b554aac104a8bcd0da0bdd72f"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64079/42624.png": {
+      "bytes": 96827,
+      "sha256": "328057166bfbea333db33b68392c0099e3654062e30d33ea4ac696bcf3bdbd27"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64079/42625.png": {
+      "bytes": 98073,
+      "sha256": "910e341836178b702e3e26aa3f9fb716f91d0fe9681453ebf4fec0faacabdd97"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64079/42626.png": {
+      "bytes": 95417,
+      "sha256": "1847d8577884e154bcb6b735301ca10fda970eadb72a84c32430d677a0f36a13"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64079/42627.png": {
+      "bytes": 93963,
+      "sha256": "ea6c3a442a8bd5aff42cab4c97926a7577b612d8eef93e6effb22632a9909391"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64079/42628.png": {
+      "bytes": 92214,
+      "sha256": "f659066bf2778eb1953455f1e24cdfb56eac57a052eb758445763db174f07c2f"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64079/42629.png": {
+      "bytes": 89342,
+      "sha256": "0b16fee9327a7240d46a76ddebcd7d6b110c7372386a38b47af1e48219af301c"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64079/42630.png": {
+      "bytes": 84234,
+      "sha256": "f718c1d2deca8bc0090ac084c89f86cd0979a01812ae7689c0edd28a06be970b"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64079/42631.png": {
+      "bytes": 89114,
+      "sha256": "09851fa398cecdd917f5d401172ff8ce8d30011d1a7c6d9475d5b3c933b2279a"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64079/42632.png": {
+      "bytes": 96419,
+      "sha256": "adf75d28f4cd582b51275d702f5408b21b7b0df9551b9ed93c4c7286f4c2937a"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64079/42633.png": {
+      "bytes": 74991,
+      "sha256": "4c5ebd5c6673e67532fa376558d5b69a35104a2011eca5abfcf85c054355c54d"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64079/42634.png": {
+      "bytes": 73127,
+      "sha256": "9a25553f733630f1ba4920bbfb3598bbe9b367b150aba9983df257fb48974f9e"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64079/42635.png": {
+      "bytes": 68787,
+      "sha256": "268b871cfdd339fda7e6119c4d85f2e6725fb0d220f3d8ba5516a4c59ebb17f1"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64080/42620.png": {
+      "bytes": 20181,
+      "sha256": "c67b210043f04ec9ad26642931743edc9553a5de92407e1a2a8d469217d2954f"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64080/42621.png": {
+      "bytes": 24007,
+      "sha256": "a88b6b5c62aa72c171d6ce9c3bbbf5d43e0003dcaa850f137c069fc4ea948d3c"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64080/42622.png": {
+      "bytes": 79107,
+      "sha256": "0d847b7e8e59a85326b42ddf04b6961a959c47fdfadd89eacce4452198b5da68"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64080/42623.png": {
+      "bytes": 97946,
+      "sha256": "e40888bdf6db62f9761488e758561c9c27d0c7256138016098e45e6322959b6d"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64080/42624.png": {
+      "bytes": 98586,
+      "sha256": "d88754bfb5b2e515f107c3123eac4185978562a5d7f2cb4fa7ce049eb8e7d35c"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64080/42625.png": {
+      "bytes": 99195,
+      "sha256": "53071fbcc45702061428eed68b1101bf5fd0fca92918ec3db519c98c40eabe13"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64080/42626.png": {
+      "bytes": 101679,
+      "sha256": "8209e1c93334637e04bacc7c9ad6d916f6e1e5207940b2ad56f5593dd6d13471"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64080/42627.png": {
+      "bytes": 102139,
+      "sha256": "344544de4c90e4d71cee970093ec2ccc3fd3f5908618d26a2ee166618f2548bd"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64080/42628.png": {
+      "bytes": 97488,
+      "sha256": "b75cd4ef7b0049ad1708fec4dac35b312f8f342123ff07b899652533289f06e0"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64080/42629.png": {
+      "bytes": 85727,
+      "sha256": "ab1a4da417cf73609412ef6e0c38b0645b75c1584ea8ccc3e40285d1e56b8831"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64080/42630.png": {
+      "bytes": 78189,
+      "sha256": "5b00aa4a84190cfcfc4b9a369cf1ac61b7835cb443a68ca854e450d692d33e3b"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64080/42631.png": {
+      "bytes": 82924,
+      "sha256": "e570cdb3b65ceed0ab5e1ef0f424b0c089e706e85c1123f35443dd538efafb0c"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64080/42632.png": {
+      "bytes": 93774,
+      "sha256": "b4b0e71956c207cfc7c98580c3c326e14282187870b1f7790d88f4d6d02ba52c"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64080/42633.png": {
+      "bytes": 82411,
+      "sha256": "2331c063b091e86a909debb66c70da41a66f1e8625dd2594cf9c9fbfcf699a6f"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64080/42634.png": {
+      "bytes": 68674,
+      "sha256": "260bebf6056c3e21bd6c0c18890283fb93154cc57f0a56d3429a9f786b1f9ef4"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64081/42620.png": {
+      "bytes": 44522,
+      "sha256": "3d91d27e1933546a2e8e8f4fadad8bef0d4d86b46666ce0d65a7fd3dc20d5a99"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64081/42621.png": {
+      "bytes": 65246,
+      "sha256": "627e09b8cffe87273286220eba872d2b1a3450165c3dc595e1e7f2594267614d"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64081/42622.png": {
+      "bytes": 87828,
+      "sha256": "855637ba649f6c1b946840925c1561b30dc1c2cf015adb788ecf4d8f1e2fea20"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64081/42623.png": {
+      "bytes": 93056,
+      "sha256": "9da84a7e9ee180010734b431a3a1184147aa68ec33fc9b81634928bf5cfbf717"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64081/42624.png": {
+      "bytes": 99233,
+      "sha256": "5726a0471c2025abc37e66543e6ce7ffd48d2d7c197e724b64eacc7a09d10964"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64081/42625.png": {
+      "bytes": 96363,
+      "sha256": "ce83c89e9f526ee7605bb858ed26be6d84aedc0abb207d132e9dbeb3d78f35b6"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64081/42626.png": {
+      "bytes": 101450,
+      "sha256": "e3f098807295748766c0a82f262ea638e33752b409ae0cf6faec700d0f7c8c5e"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64081/42627.png": {
+      "bytes": 97590,
+      "sha256": "4fc9178fcd74fc7d24cf250a46a5e04ba7c788af29bd1a3c2b78738433758f0b"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64081/42628.png": {
+      "bytes": 87503,
+      "sha256": "7fada88d5a18e6052a7c651f1b9899c7bd183ac39a0783404798a21ecb49cf42"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64081/42629.png": {
+      "bytes": 87249,
+      "sha256": "4036526f0a94510d472773d1f7a7099c7bcee75ffc0430bbce29edc8eef54150"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64081/42630.png": {
+      "bytes": 81244,
+      "sha256": "22e9dbee6c894d006c8240569e3b67cd55b6f441162916735f9733c4aac82547"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64081/42631.png": {
+      "bytes": 85683,
+      "sha256": "80c420ae89f8c3f427af9dcdc488d8c288b0e77b7da10d1cc86e41180bc41f02"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64081/42632.png": {
+      "bytes": 89093,
+      "sha256": "5b64b6c3d55efe9cb1e08eb5bc7bab16fc8fef93bd1e8c13b5b9bce432bf4a14"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64081/42633.png": {
+      "bytes": 81073,
+      "sha256": "a31d835419c8ee6e50fc07c04c851ec6714e2b70b2908531a61e7ee12df8d46b"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64081/42634.png": {
+      "bytes": 60892,
+      "sha256": "aaae098961d8ff63278a62528e188943627b5be88cc3168ed2a6f7ea65793d11"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64082/42620.png": {
+      "bytes": 59130,
+      "sha256": "3d1254ce18cae5ef4bd36bb8bc9abfb70b09a9a7c32eafc33c2c1fa21e814b3c"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64082/42621.png": {
+      "bytes": 70424,
+      "sha256": "3352fc292961c0e6a1e73ab06d8fda7c3b2adeb5ce1f1b778ab9059886bf07b9"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64082/42622.png": {
+      "bytes": 84162,
+      "sha256": "8171c9c872281c4d52220896e1bf0d815776078607f7e85cc7629e475e71d8d6"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64082/42623.png": {
+      "bytes": 97170,
+      "sha256": "c108647eb40326c180810e1664ae23eb0ad94f6d8eeb126ca0ace7bc0a744764"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64082/42624.png": {
+      "bytes": 96586,
+      "sha256": "0ba12e5cd6bf19ed80079af45c9f4cdee8baf99203a8b1ed0b22bcaaf6b50e27"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64082/42625.png": {
+      "bytes": 88129,
+      "sha256": "da530a6bd432e00e055777b13a8e1a172c8efd0d99e5fb126277cd6e5331d10f"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64082/42626.png": {
+      "bytes": 85449,
+      "sha256": "6b2e32924ce215529fc1297dd05eb835d769b83853a8f845c9caa45f50de93c9"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64082/42627.png": {
+      "bytes": 86409,
+      "sha256": "5419c13ecad09c72fbb4283d2cae7625935245148af6efd09ad8333c30bd5950"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64082/42628.png": {
+      "bytes": 87121,
+      "sha256": "103c6aa3eadac7d60b3f83928343fbe77f67501ed901a41055b9ce497fa13857"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64082/42629.png": {
+      "bytes": 84804,
+      "sha256": "8a353e4ee6dddc0945162e0d61413220bcef88715f4c20f5dc10c9fccd4826b9"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64082/42630.png": {
+      "bytes": 82609,
+      "sha256": "f99eafa2ed7336993ab650b66950bea73544b414e45a4459762d2081bf4138eb"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64082/42631.png": {
+      "bytes": 82366,
+      "sha256": "e5cbca2aeee2b20da69623590b3b96395fbd46f2bdb76ed8dd0cd37395578113"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64082/42632.png": {
+      "bytes": 88551,
+      "sha256": "c1941a06a6a563b6353cf83046d4568f970427d976b96e3e562b514a7988ee7c"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64082/42633.png": {
+      "bytes": 71952,
+      "sha256": "593ca6a1247ccf6b8bb4ce4c203382434f3e55a542eff41f43b0d764a56422fc"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64082/42634.png": {
+      "bytes": 56032,
+      "sha256": "3c506e35262fe2d9157917f5b204c39dd164c77e8db2fb8d8b25e71d75267b21"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64083/42620.png": {
+      "bytes": 50231,
+      "sha256": "d71a2f053a77c26246af314f1ad6c713b47d297bd146b88a0121fa92fa76c9de"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64083/42621.png": {
+      "bytes": 57671,
+      "sha256": "c8e354ec5d260edb8caac38452a71e0f9938115417b58506dec64d3b86b023da"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64083/42622.png": {
+      "bytes": 81359,
+      "sha256": "75fb551170e3e2ba25a40040f12af75d11a1eca51b592af81da7f3020122e271"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64083/42623.png": {
+      "bytes": 91469,
+      "sha256": "90c94aa4958aa1308f326a6e67f78ebd7fcab58800e303c895fc86f6c90d8d11"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64083/42624.png": {
+      "bytes": 90448,
+      "sha256": "85cffe06fc31d0f9586b27ff895df8de471a0770af235c02efa52c52217cc878"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64083/42625.png": {
+      "bytes": 80033,
+      "sha256": "66be54c3d995a3579a5ba2edd98f868c051cc028a4137f4beb18c988ed72816c"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64083/42626.png": {
+      "bytes": 80489,
+      "sha256": "4a4e7aba0340708c16452054418fc71d025f3e3183e6d847a482e8dfdf5eaab5"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64083/42627.png": {
+      "bytes": 76918,
+      "sha256": "281da986d0dcb31e9291649dab58e76954f865b14756568d9070163634c7c39b"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64083/42628.png": {
+      "bytes": 80867,
+      "sha256": "f9b5d67a57b20e52155a51b435907a11bf3f2e617c4e61141fc563daf01ff1b3"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64083/42629.png": {
+      "bytes": 86205,
+      "sha256": "4b3f8dc8ff2aa7a9c987f4aebde16e70f183f23ef8f32559155125f75954b382"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64083/42630.png": {
+      "bytes": 86684,
+      "sha256": "40b6abfdee256f15a0cbe27a47989589bded3be971603727033530b28384ec58"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64083/42631.png": {
+      "bytes": 82706,
+      "sha256": "80e7a3e162e8d5159f8d1ccb876a2feef1e39e15339d79488779fbf90c317d02"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64083/42632.png": {
+      "bytes": 88003,
+      "sha256": "03e331173e516094c0e35f80b85a5933906ac9fe42403097bae91c77c6b4744d"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64083/42633.png": {
+      "bytes": 61238,
+      "sha256": "913e7761f6760419dd27aaa8fa346cf558b871295138487b4b32e87f5092e0e2"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64083/42634.png": {
+      "bytes": 67167,
+      "sha256": "20c89486bc02677ff1971f9c2383ada10f6774d2b7f7df4494aa3aade8830f5b"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64084/42620.png": {
+      "bytes": 52535,
+      "sha256": "67f10000b59901de21102712afa0a49f42b0a170e217eb698f850c483e387e4d"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64084/42621.png": {
+      "bytes": 53792,
+      "sha256": "a20440beb5c6c844fe6bdde2edc5d4550112bd0c824035805b3128f3051c3b0b"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64084/42622.png": {
+      "bytes": 69622,
+      "sha256": "180c92c137dbe448b5dedb83598bb25993638483bb5ce6d994609fe2644cf78b"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64084/42623.png": {
+      "bytes": 93391,
+      "sha256": "28525de05cb0216a38e23f269bf6e85a787947076ba1db5a7ed63cadfeac1817"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64084/42624.png": {
+      "bytes": 82789,
+      "sha256": "77d6015758fdd659c16ec01b1bd6b0eeaf9c77a7fd6e1f778f0766d6ef03fb87"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64084/42625.png": {
+      "bytes": 77897,
+      "sha256": "4359dfcc1aff18b477f0605375c496fdd4c1b321e3ba6a6699bab772065531cc"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64084/42626.png": {
+      "bytes": 75666,
+      "sha256": "61a3d621f2378a186c74e4cce45765ee6e233cd2cb8895ce9cf339a9e1fa0b41"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64084/42627.png": {
+      "bytes": 64882,
+      "sha256": "26f9d682c5061ac2b02fe2dd6d43f6c0b286281213dbce8b3cf11b0c95d1449a"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64084/42628.png": {
+      "bytes": 74360,
+      "sha256": "9cf8c52bee746d81340b245f69d52e24b86994bf804826e12fe79d981f592f40"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64084/42629.png": {
+      "bytes": 79806,
+      "sha256": "63d921a7e1db75d0e8aa88f26d9187a2526f2d0bd12a6f968f2c18938b96a0e2"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64084/42630.png": {
+      "bytes": 87244,
+      "sha256": "6beea26d48575a27259830ac7b78d3f51499816d4df0d09f89795488f4691ebe"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64084/42631.png": {
+      "bytes": 91204,
+      "sha256": "ebdb3aa0cf3f63a1faf06627f06aa6487a197cf0ef5466656258be533ad12d04"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64084/42632.png": {
+      "bytes": 70857,
+      "sha256": "84e10a7b0cd99e6dbadc9c0060dac466c2ea989b492f5656ef551f09f98440cb"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64084/42633.png": {
+      "bytes": 57536,
+      "sha256": "5a0f979d3bb613059087b2e683c14260d12bb119d3141bcb73664fd0c94b934a"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64084/42634.png": {
+      "bytes": 65695,
+      "sha256": "f720c4261cbcb877d7d0484681fdb386aa9e8d5e3ca0d0dccd7ffe62cd146b66"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64085/42620.png": {
+      "bytes": 61303,
+      "sha256": "2dfc38af3ce8ea61f27c2310b12a5c35585eab11fc29349d56dc0e1a8b1cf344"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64085/42621.png": {
+      "bytes": 65557,
+      "sha256": "db98000d1964d16b88b4b7b0fb66d590969ef039ec5bd8388bc7e425ce23f0bb"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64085/42622.png": {
+      "bytes": 79185,
+      "sha256": "21055750e4f93ec76449bddce0e2e6de0c4c43cfb23c5028e3093add2aafad61"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64085/42623.png": {
+      "bytes": 81409,
+      "sha256": "b1d33525cd0bfed25094f1577ce0fcc413c4192743512ef6f8262f7f15bb3954"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64085/42624.png": {
+      "bytes": 73910,
+      "sha256": "acf24cbfe40f135405cc5a446904034fd41244c448d701389172c710355052d9"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64085/42625.png": {
+      "bytes": 70571,
+      "sha256": "78b13066fa57bab685476950ac6f91305b19836fe722bfcac2d275b8a45750bb"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64085/42626.png": {
+      "bytes": 80369,
+      "sha256": "e449143835aecaefb80fd641d354655475028981f8f89ba8179ac8e7e111735a"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64085/42627.png": {
+      "bytes": 71003,
+      "sha256": "995681f6e378333ddaed4f332b714f49f83b49f64db2a606d6e15baf89042371"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64085/42628.png": {
+      "bytes": 77815,
+      "sha256": "89b5118c3ca44854f0f3c9fb826d112c372ae3808618f12307b40a7807b6cf06"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64085/42629.png": {
+      "bytes": 85378,
+      "sha256": "b73ce9173bcc21e49db707d8ffb029bb0f8e4d4b615b9634b81699d896b6d252"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64085/42630.png": {
+      "bytes": 91802,
+      "sha256": "4c5c931e16d57c1feedfd942ce3815bb3ee1beff55686a54c4b6eb8b6dc7d74a"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64085/42631.png": {
+      "bytes": 86269,
+      "sha256": "9d4ac61182c9436f0c40f3839aa73b5460ee342af679ed5ec3691dec920d8570"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64085/42632.png": {
+      "bytes": 79675,
+      "sha256": "97c98cb702db4cbad04f861d8f16ae672f0b62314d2b8c48a3be93c61ef1ae0b"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64085/42633.png": {
+      "bytes": 57547,
+      "sha256": "961d7adb937c9b9cd4533f8c1815f832132208c80ca30efd85f3e7c350f37d21"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64085/42634.png": {
+      "bytes": 71891,
+      "sha256": "2ce7dee6d0536a6f11560f976cdb079603277787711b5fb6783a58f050e0f99d"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64086/42620.png": {
+      "bytes": 53149,
+      "sha256": "71111df3e864cb240a0591f73d86c5670e98e747aa1ce3f26cf3c1c96fb0f6b0"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64086/42621.png": {
+      "bytes": 60287,
+      "sha256": "1e6d5e1412f3a4c30b729146c12ff46c60795b55c452077eee7c3272f2950963"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64086/42622.png": {
+      "bytes": 67522,
+      "sha256": "0c14a487992e0148ba1cbe31fe0465ed43c8b7385d0537215474e4b38b17a79e"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64086/42623.png": {
+      "bytes": 69299,
+      "sha256": "9b54e5dad239d35d6c8c6993728e4b8d1739ca2c7bd66e80c7335a44b5bb54ed"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64086/42624.png": {
+      "bytes": 69958,
+      "sha256": "5298c9731a9b4aa2c3c28941cb5235430b2a1cea5d88e5d4f4c6c3d5f0a31c44"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64086/42625.png": {
+      "bytes": 81329,
+      "sha256": "852e43f5b1ce98a33bfc77919bb3859bdbe7506ae24592ce888eeb81835e6d48"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64086/42626.png": {
+      "bytes": 79473,
+      "sha256": "668a807a5379e7cadec997a9498151bd43e849085b47271a77f47465e05210cf"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64086/42627.png": {
+      "bytes": 73934,
+      "sha256": "b781b7bd393a72a9d548b411634a385bd05a0a250215d15c87f3eb707dddfcb1"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64086/42628.png": {
+      "bytes": 77535,
+      "sha256": "d692b66dcdf802bdab3c2d27801070456235d94899769c1302786a48605b7d1e"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64086/42629.png": {
+      "bytes": 88431,
+      "sha256": "400d2dfb978d93acdbc4749ab7325d33a742e103207f4ddcb18521f5d747d132"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64086/42630.png": {
+      "bytes": 74932,
+      "sha256": "24690a8b6a0b6ef0f6c40ea7df45542ade5546d9be8c7d10386e7ca4416ff28a"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64086/42631.png": {
+      "bytes": 72724,
+      "sha256": "426f649b80287ec60068e7b1edd9d78285b5c7086b938113ba78a94ff6dd90a6"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64086/42632.png": {
+      "bytes": 91520,
+      "sha256": "ef11d337a6c0fbb787e4adf07a35c2632bbb425bb180e862e3894da9f7e49293"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64086/42633.png": {
+      "bytes": 68960,
+      "sha256": "20ec53e99b1fce4c7b5948050c4d059ee05ba97ecd134fb272e8299c7ec6d51f"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64086/42634.png": {
+      "bytes": 78485,
+      "sha256": "78a11fe7403f462c900f3b41da7d31b9264395a1ff98b786918b73f8ddfeb791"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64087/42620.png": {
+      "bytes": 61425,
+      "sha256": "c092f45760a22d60b0b5302ae846a919bb11b4fffee5df76f7f18d347e3f210d"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64087/42621.png": {
+      "bytes": 58365,
+      "sha256": "3aaffe04469788a2894ecb20c9d017c7d63ab81341a2ac701e73868ff1a6214c"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64087/42622.png": {
+      "bytes": 67225,
+      "sha256": "b7634659d7d56fe35dd961dcae14c3eccf09884f0fd39b3d5aa3dbdd410c440c"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64087/42623.png": {
+      "bytes": 75876,
+      "sha256": "fcf4f40207a58fb1ac7740cf6fb6580b90519d0f231ef1e87481eb8c1674438b"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64087/42624.png": {
+      "bytes": 77802,
+      "sha256": "1b864c438af12d8b32d2d95fd99db0c16f118d436e7a05eabd8b92743244e987"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64087/42625.png": {
+      "bytes": 88142,
+      "sha256": "72c225bb1950403b8f3312c460727edbb79c1753294ac5ea835e4808dae60dc6"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64087/42626.png": {
+      "bytes": 82781,
+      "sha256": "113f7acbb1ba70a7ad3b75aea9a28f8817817fe3ae189276c16bd781a7cb33ff"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64087/42627.png": {
+      "bytes": 73055,
+      "sha256": "00a4c520ac0f16dec09ab73cf65049a222a469cbc48ae800c58551784eb35f12"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64087/42628.png": {
+      "bytes": 79085,
+      "sha256": "b73641e7e9e3fef1646a7ddd75bc48f8b31072f7adeaccb87dd0f344b0bdc26a"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64087/42629.png": {
+      "bytes": 71994,
+      "sha256": "fc1e4d043fba028c600d492f3611518c317ce044ae5e06c095922d4301603a80"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64087/42630.png": {
+      "bytes": 59340,
+      "sha256": "ed31bb97760a5117c70532127e81f00c444635e8e1bfa866f8f1354fd21c7de9"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64087/42631.png": {
+      "bytes": 67791,
+      "sha256": "77b6db0d4f1c695d0866ad4621ff00bfe1957927d89e3fc3f3e9e50d99243501"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64087/42632.png": {
+      "bytes": 89506,
+      "sha256": "103592339b121ec33c721c101c91ebf31ec0796802ce3083b22eadfe6a0cfd21"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64087/42633.png": {
+      "bytes": 72265,
+      "sha256": "394abe617a9d2d3c94d7bd60ffac9a8a366ae63509f17a52df9dfc19ec3ea49d"
+    },
+    "derived/atlas/tryfan/tryfan-welsh-regional-v2/tiles/17/64087/42634.png": {
+      "bytes": 78219,
+      "sha256": "0cee1eb3b330f6081bc0b0eb3ab059822baf9a8a4d6d59af294e33fdb1e3f683"
+    },
+    "earth-lab/tryfan-005b/sentinel2-surface-evidence/source-native/B02_10m-native-window.tif": {
+      "bytes": 233812,
+      "sha256": "dba087002d85ee85c1772f570acefd60d2eaabe33fd8dba63e17d38505a34ee9"
+    },
+    "earth-lab/tryfan-005b/sentinel2-surface-evidence/source-native/B03_10m-native-window.tif": {
+      "bytes": 237936,
+      "sha256": "79684a3055429b256d351ee22563b3770709063b71cb2cadf1bc874c0898bb79"
+    },
+    "earth-lab/tryfan-005b/sentinel2-surface-evidence/source-native/B04_10m-native-window.tif": {
+      "bytes": 239636,
+      "sha256": "8fbfa498771db35f60698b7dcfc2e0c89b3d0fd75d55a41332051ce72b596f86"
+    },
+    "earth-lab/tryfan-005b/sentinel2-surface-evidence/source-native/SCL_20m-native-window.tif": {
+      "bytes": 3160,
+      "sha256": "050f4f3a9671d134e3a8e613ae93f252018ba963114172a4acec9d8280d9ad9f"
+    },
+    "experiments/earth-lab/tryfan-010/observed-natural-colour-v1/lab010-natural-colour-10m.png": {
+      "bytes": 148616,
+      "sha256": "4d618ab2f0c8ab5dfc6ae0c7f5e99d27f2fa91d0d5f9cba0b1776327094add52"
+    },
+    "experiments/earth-lab/tryfan-010/observed-natural-colour-v1/lab010-natural-colour-10m.tif": {
+      "bytes": 207657,
+      "sha256": "f682f4a52af3f5d5f1c635f0d3800ba6bfefad186157c4795ff530adf4d4bd75"
+    },
+    "experiments/earth-lab/tryfan-010/observed-natural-colour-v1/lab010-rgb-reflectance-10m.tif": {
+      "bytes": 948848,
+      "sha256": "89304e0045bc72b49c360c20bb62acd977673897c170ed5ee73b5920e1fb70b2"
+    },
+    "sources/atlas/tryfan/welsh-lidar-1m/rasters/tryfan-004-dtm-1m.tif": {
+      "bytes": 15639072,
+      "sha256": "49c131d7de62e0df35f8e02c2f8db3161bfd37f24fea56060fcbb9e6d109b326"
+    }
+  },
+  "startingCheckpoint": "f16ce63e7c8fd85b6465b0e2cdcd1d872e36df54",
+  "uniqueRetainedFiles": 310
+}

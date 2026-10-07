@@ -76,10 +76,17 @@ The [programme acceptance](research/atlas-regional-pilot-acceptance.md) complete
 plus3 explicit unproven/excluded classes,42 thread dispositions and9 frozen admission gates.
 No demonstrated foundational blocker; integrated mixed-family publication/serving and operational
 measurements become pilot exit obligations. Admission does not mean the pilot exists or science is complete.
-Exactly one next task is **Bounded retained Tryfan regional-pilot architecture and implementation plan**;
-[scope/exit](research/atlas-regional-pilot-acceptance.md#36-exactly-one-next-bounded-task).
-It has not begun. The admitted phase is local retained Tryfan integration, not production/cloud
-architecture. Open appearance remains separate.
+The [bounded Tryfan pilot plan](research/tryfan-regional-pilot-plan.md) completes that recommendation
+(**C - IMPLEMENTABLE AS PLANNED**): the programme has entered the regional-pilot phase at
+`f16ce63`, with the same9 km² retained support, five evidence families, two derived chains,
+immutable local JSON generations and a generation-pinned read-only local HTTP/isolated consumer boundary.
+Twenty-one query cases, A-P acceptance and six ordered slices are frozen. U1 preserves the summit-only
+Welsh update; separate controlled U2 terrain/NRW registration and interruption/race tests address
+mixed-family publication. Integrated serving and mixed publication are still implementation exit
+tests, not demonstrated by a plan. No pilot implementation has begun; no final production stack is selected.
+Exactly one next task is **Tryfan pilot retained catalogue and immutable generation foundation**
+(S1 only); [scope/stop](research/tryfan-regional-pilot-plan.md#37-exactly-one-next-bounded-task).
+It has not begun. Open appearance remains non-blocking research debt, not solved; Swiss multiview remains parked.
 A6-A11/A14 remain unresolved separately; Swiss pixels remain parked.
 Historical analytical filter/calibration
 suggestions are separate from closed visual-terrain research. No Weather/Traverse redesign follows.

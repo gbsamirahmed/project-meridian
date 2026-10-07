@@ -4175,3 +4175,31 @@ Four genuine fresh CLI processes recover and independently rebuild the same meta
 Started clean main4acd191, fetched origin, confirmed expected checkpoint and0/0 divergence; no discarded work. [Programme report](research/atlas-regional-pilot-acceptance.md), [manifest](research/atlas-regional-pilot-acceptance.json), [accounting](research/atlas-regional-pilot-acceptance-results.json), [validation](research/atlas-regional-pilot-acceptance-validation.json): **C - READY FOR BOUNDED REGIONAL PILOT**.37 pinned proof records cover50 requested capabilities plus3 explicit gaps/exclusions; all9 prospectively frozen admission gates PASS. Real terrain/lifecycle, native categorical and Exe temporal/feature proofs are sufficiently diverse; no concrete foundational blocker. Scientific partial/negative results constrain claims without forcing another general domain proof.
 
 Admit retained Tryfan9km² local mixed-family pilot: AWS/Welsh terrain, WorldCover, NRW and dated Sentinel natural colour, scoped derivations/history, coherent publication/recovery and isolated interactive read path. No pilot built here; integrated serving and mixed publication remain implementation exit tests. All42 canonical status columns and historical reports remain, Swiss pixels PARKED, appearance science unresolved. Deterministic accounting/source checks, focused acceptance tests, frozen tooling/contracts and113 production hashes validate. Production Atlas/Weather/Traverse and retained inputs remain unchanged. Exactly one next: **Bounded retained Tryfan regional-pilot architecture and implementation plan**, not begun; finite design/build packages and measurements, no final cloud/production technology commitment.
+
+
+## 2026-10-07 - Bounded retained Tryfan regional-pilot architecture and implementation plan
+
+Started clean main at `f16ce63e7c8fd85b6465b0e2cdcd1d872e36df54`; fetch confirmed origin/main0/0.
+The [pilot plan](research/tryfan-regional-pilot-plan.md) is **C - IMPLEMENTABLE AS PLANNED**,
+following admission C/all9 gates PASS. Exact retained9 km² scope: common/Welsh terrain,
+WorldCover, NRW and one July2026 Sentinel/Lab010 appearance observation, plus two slope→ratio chains.
+Fifteen asset references and295 Welsh payloads are pinned; no data acquired or rewritten.
+
+Pilot-only decisions: whole-metadata immutable JSON generations/external artifacts, one CLI writer,
+atomic current root, generation-pinned read-only local HTTP with a bounded existing Python adapter,
+and isolated map-plane consumer/native terrain inspector. U1 retains the proven summit-only change;
+separate U2 controlled terrain/NRW applicability registration tests mixed-family publication without
+inventing source releases. Twenty-one query cases, A-P acceptance, three real interruption points and
+six dependency-ordered implementation slices are frozen. Serving/publication remain unproven pilot
+exit obligations. No pilot runtime, store, server or consumer is created by this planning task.
+
+[Deterministic plan results](research/tryfan-regional-pilot-plan-results.json) and
+[validation](research/tryfan-regional-pilot-plan-validation.json) cover retained files, interface/
+publication/slice consistency, focused safeguards, reference/anchor checks, all42 historical status
+columns, all historical reports/scripts, frozen contracts/tooling and113 protected production hashes.
+Production Atlas, Weather, Traverse and retained data remain unchanged; no final production technology
+is selected. Open appearance remains non-blocking debt and Swiss multiview remains parked.
+
+Exactly one next bounded task: **Tryfan pilot retained catalogue and immutable generation foundation**,
+S1 only; not begun. Register exact five-family identity/support/time/rights references and persist a
+registration-only seed with restart/schema/hash/atomic-root tests; no query/derivation/HTTP/client yet.

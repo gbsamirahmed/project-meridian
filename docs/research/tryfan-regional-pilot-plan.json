@@ -1,0 +1,1269 @@
+{
+  "acceptance": [
+    {
+      "id": "A",
+      "name": "Cold restart",
+      "passCondition": "New CLI process recovers identical qualified results and identities",
+      "slices": "S1,S3"
+    },
+    {
+      "id": "B",
+      "name": "Integrated query",
+      "passCondition": "Q21 one-request coordinator resolves actual terrain/derived/semantic/appearance answers from one generation with separate native times/scopes; no source ranking. Q09 coexistence still required.",
+      "slices": "S2,S3"
+    },
+    {
+      "id": "C",
+      "name": "Terrain serving",
+      "passCondition": "Exact Terrarium bytes and unchanged hierarchy eligibility; missing tile explicit",
+      "slices": "S4"
+    },
+    {
+      "id": "D",
+      "name": "Dense semantic serving/query",
+      "passCondition": "Q05-Q07/Q11/Q19/Q20 native grid, code, mapping and assignment counts",
+      "slices": "S2,S4"
+    },
+    {
+      "id": "E",
+      "name": "Vector semantic serving/query",
+      "passCondition": "Q08;193 native records, source-scoped identity, holes/boundaries and survey qualifiers",
+      "slices": "S2,S4"
+    },
+    {
+      "id": "F",
+      "name": "Coexistence",
+      "passCondition": "Q09 both qualified claims, no winner",
+      "slices": "S2"
+    },
+    {
+      "id": "G",
+      "name": "Derived result",
+      "passCondition": "Q02-Q03 match original method/values/scopes and exact upstream dependency",
+      "slices": "S3"
+    },
+    {
+      "id": "H",
+      "name": "Scoped update",
+      "passCondition": "U1 recomputes2 summit revisions only, retains4 historical AWS; southern/semantic/appearance unchanged",
+      "slices": "S5"
+    },
+    {
+      "id": "I",
+      "name": "Historical replay",
+      "passCondition": "Recalculate4 AWS and2 Welsh records from retained pixels/method; old generation identical",
+      "slices": "S3,S5"
+    },
+    {
+      "id": "J",
+      "name": "Mixed-family publication",
+      "passCondition": "U2 terrain+NRW registration changes atomically, no impossible intermediate reader view",
+      "slices": "S5"
+    },
+    {
+      "id": "K",
+      "name": "Interrupted publication",
+      "passCondition": "F1-F3 abrupt subprocess exit before root switch leaves old root queryable after restart; retry coherent",
+      "slices": "S5"
+    },
+    {
+      "id": "L",
+      "name": "Provenance trace",
+      "passCondition": "Q18 exact source/product/representation/method/dependencies/rights and honest unknowns",
+      "slices": "S2,S4"
+    },
+    {
+      "id": "M",
+      "name": "Unsupported query",
+      "passCondition": "Q13-Q17 plus labelled synthetic no-data binding; distinct contract gaps, rejected mapping, infrastructure unavailable; no invented real non-detection",
+      "slices": "S2,S4"
+    },
+    {
+      "id": "N",
+      "name": "Fresh process",
+      "passCondition": "Independent HTTP service loads only accepted generation, retained assets and declared runtime; equals CLI results",
+      "slices": "S4,S5"
+    },
+    {
+      "id": "O",
+      "name": "Source immutability",
+      "passCondition": "All pinned assets and295 Welsh payload hashes unchanged before/after acceptance",
+      "slices": "S1-S6"
+    },
+    {
+      "id": "P",
+      "name": "Pinned reader and display QA",
+      "passCondition": "Publish between bootstrap/query/tile reads; pinned old generation stays old. Fixed full-core/400m views use identical Lab010 pixels, footprints, legends/date/rights; no extra transfer. Do not claim pending original Lab010 camera gate complete",
+      "slices": "S4,S5"
+    }
+  ],
+  "acceptanceFrozen": true,
+  "admission": {
+    "decision": "C - READY FOR BOUNDED REGIONAL PILOT",
+    "gates": 9,
+    "manifest": "docs/research/atlas-regional-pilot-acceptance.json",
+    "outstandingAcceptance": [
+      "integrated-serving",
+      "mixed-family-coherent-publication"
+    ],
+    "sha256": "18e5e81c1c5430dbce8eb370ca41714464be5b0180b329e580bb9f71a137d929"
+  },
+  "assetSets": [
+    {
+      "base": "derived/atlas/tryfan/tryfan-welsh-regional-v2",
+      "bytes": 23889573,
+      "count": 295,
+      "entries": "files",
+      "id": "welsh-terrain-payloads",
+      "manifest": "derived/atlas/tryfan/tryfan-welsh-regional-v2/manifest.json",
+      "sha256": "b254a21b1ec346cc07b43d269d937b059851e95ac168565359a81d3872c69e54"
+    }
+  ],
+  "assets": [
+    {
+      "bytes": 15639072,
+      "immutable": true,
+      "path": "sources/atlas/tryfan/welsh-lidar-1m/rasters/tryfan-004-dtm-1m.tif",
+      "role": "Welsh source",
+      "sha256": "49c131d7de62e0df35f8e02c2f8db3161bfd37f24fea56060fcbb9e6d109b326"
+    },
+    {
+      "bytes": 87014,
+      "immutable": true,
+      "path": "derived/atlas/tryfan/tryfan-welsh-regional-v2/manifest.json",
+      "role": "Welsh manifest",
+      "sha256": "b254a21b1ec346cc07b43d269d937b059851e95ac168565359a81d3872c69e54"
+    },
+    {
+      "bytes": 105706,
+      "immutable": true,
+      "path": "cache/atlas/tryfan/second-region-proof/aws/14/8009/5329.png",
+      "role": "Pinned common terrain sample",
+      "sha256": "56728a2c278801c3aea6cf9d1e7c513c829636404696472819640c4581e70a12"
+    },
+    {
+      "bytes": 102230,
+      "immutable": true,
+      "path": "cache/atlas/tryfan/second-region-proof/aws/14/8010/5328.png",
+      "role": "Pinned common terrain sample",
+      "sha256": "cb81fc13e12e530cbdb5bdb899a665f70e2f740430102498c0a276d99d1b0ef9"
+    },
+    {
+      "bytes": 65306,
+      "immutable": true,
+      "path": "cache/atlas/tryfan/second-region-proof/aws/5/15/10.png",
+      "role": "Common broad context",
+      "sha256": "9b661bb849997f0e07d9a0cb865d13487080922c80196cc59f1d434cfa889e5c"
+    },
+    {
+      "bytes": 706,
+      "immutable": true,
+      "path": "cache/atlas/tryfan/second-region-proof/aws/5/15/10.json",
+      "role": "Common broad context",
+      "sha256": "b9aa2c5bd91f91342f5f38b19d415a26edf0047ec8aa4b2da43fac9d5bfe4b54"
+    },
+    {
+      "bytes": 4918,
+      "immutable": true,
+      "path": "derived/atlas/semantic-comparison-v1/tryfan-worldcover.tif",
+      "role": "Native semantic evidence",
+      "sha256": "9a0ad7162b1fb5fdc276a90c219c8d1d1daa0e83650ccd22d1dfbb51cbe98f6d"
+    },
+    {
+      "bytes": 558917,
+      "immutable": true,
+      "path": "derived/atlas/semantic-comparison-v1/nrw-vegetation-full-features.json",
+      "role": "Native semantic evidence",
+      "sha256": "d6d389a7c2a853a15e5a592c08d06f81d500c8778b7370144d246c62c2b7fab8"
+    },
+    {
+      "bytes": 233812,
+      "immutable": true,
+      "path": "earth-lab/tryfan-005b/sentinel2-surface-evidence/source-native/B02_10m-native-window.tif",
+      "role": "Native July RGB/SCL",
+      "sha256": "dba087002d85ee85c1772f570acefd60d2eaabe33fd8dba63e17d38505a34ee9"
+    },
+    {
+      "bytes": 237936,
+      "immutable": true,
+      "path": "earth-lab/tryfan-005b/sentinel2-surface-evidence/source-native/B03_10m-native-window.tif",
+      "role": "Native July RGB/SCL",
+      "sha256": "79684a3055429b256d351ee22563b3770709063b71cb2cadf1bc874c0898bb79"
+    },
+    {
+      "bytes": 239636,
+      "immutable": true,
+      "path": "earth-lab/tryfan-005b/sentinel2-surface-evidence/source-native/B04_10m-native-window.tif",
+      "role": "Native July RGB/SCL",
+      "sha256": "8fbfa498771db35f60698b7dcfc2e0c89b3d0fd75d55a41332051ce72b596f86"
+    },
+    {
+      "bytes": 3160,
+      "immutable": true,
+      "path": "earth-lab/tryfan-005b/sentinel2-surface-evidence/source-native/SCL_20m-native-window.tif",
+      "role": "Native July RGB/SCL",
+      "sha256": "050f4f3a9671d134e3a8e613ae93f252018ba963114172a4acec9d8280d9ad9f"
+    },
+    {
+      "bytes": 948848,
+      "immutable": true,
+      "path": "experiments/earth-lab/tryfan-010/observed-natural-colour-v1/lab010-rgb-reflectance-10m.tif",
+      "role": "Lab010 appearance",
+      "sha256": "89304e0045bc72b49c360c20bb62acd977673897c170ed5ee73b5920e1fb70b2"
+    },
+    {
+      "bytes": 207657,
+      "immutable": true,
+      "path": "experiments/earth-lab/tryfan-010/observed-natural-colour-v1/lab010-natural-colour-10m.tif",
+      "role": "Lab010 appearance",
+      "sha256": "f682f4a52af3f5d5f1c635f0d3800ba6bfefad186157c4795ff530adf4d4bd75"
+    },
+    {
+      "bytes": 148616,
+      "immutable": true,
+      "path": "experiments/earth-lab/tryfan-010/observed-natural-colour-v1/lab010-natural-colour-10m.png",
+      "role": "Lab010 appearance",
+      "sha256": "4d618ab2f0c8ab5dfc6ae0c7f5e99d27f2fa91d0d5f9cba0b1776327094add52"
+    }
+  ],
+  "constrained": [
+    "immutable-evidence",
+    "native-semantics",
+    "qualified-context",
+    "distinct-semantic-process-artifact-identity",
+    "scoped-dependency",
+    "policy-relative-freshness",
+    "coherent-publication",
+    "application-separation"
+  ],
+  "decideNow": [
+    "localJSON",
+    "singlewriterCLI",
+    "generationpin",
+    "nativeadapters",
+    "loopbackHTTP",
+    "isolatedCanvas",
+    "existingruntime"
+  ],
+  "decision": "C - IMPLEMENTABLE AS PLANNED",
+  "defer": [
+    "productiondatabase",
+    "cloudprovider",
+    "objectstorevendor",
+    "CDN",
+    "distributed-jobs",
+    "global-tilearchive",
+    "global-index",
+    "concurrentwriters",
+    "powerloss",
+    "mobileoffline",
+    "public-access-policy"
+  ],
+  "delivery": {
+    "appearance": "Existing148616byte Lab010PNG andfootprint; native RGB/floatBOA separate assets; no lift/gamma change",
+    "nrw": "Optional193-feature CRS84 GeoJSON always_xy display transform; preserve source native geometry/objectid; NA/mosaic opaque with unknown interpretation",
+    "terrain": "295 Welsh and3 common immutable tiles only; no new pyramid or nodata padding",
+    "worldcover": "Optional native334x554 RGBA categorical PNG, fixed code palette/support alpha, no resampling; displayed in linked native-grid inspector. Queries native TIFF and return transformed/native support. No new common-grid classification."
+  },
+  "excluded": [
+    "global-production",
+    "global-ingestion",
+    "final-cloud-database",
+    "SLA",
+    "Weather",
+    "Traverse",
+    "hydrology",
+    "true3D",
+    "multiview",
+    "albedo",
+    "illumination-normalization",
+    "physical-relighting",
+    "universal-imagery-correction",
+    "billing-Prime-Meridian",
+    "accounts-social",
+    "final-mobile-offline",
+    "meridian-private",
+    "newdata",
+    "production-renderer",
+    "Riffelhorn-Exe-localclaims",
+    "newsemanticclassifier",
+    "display-toe-adoption"
+  ],
+  "failures": [
+    {
+      "at": "after staging artifacts",
+      "expected": "Old published root andqueries unchanged; staging visible only diagnostics",
+      "id": "F1"
+    },
+    {
+      "at": "after recompute before validation/root",
+      "expected": "No partial freshness/serving manifest visible",
+      "id": "F2"
+    },
+    {
+      "at": "after closed generation before pointer rename",
+      "expected": "Abrupt subprocess exit leaves old root; retry identical validated candidate",
+      "id": "F3"
+    }
+  ],
+  "families": [
+    {
+      "crs": "EPSG:3857",
+      "id": "terrain-common",
+      "identity": "aws-terrarium; exact retained XYZ hashes; global product revision unknown",
+      "include": true,
+      "qualification": "Only z5/15/10 and z14/8009/5329,8010/5328; other local requests unavailable. z5 broad display only. z5 ETOPO receipt label not transferable toz14. Source/provider notices retained.",
+      "reason": "Common fallback and historical provenance with unknown global revision"
+    },
+    {
+      "crs": "EPSG:27700 native; EPSG:3857 delivery",
+      "grid": "1m native; Terrarium256 z14-17,1/10/52/232 complete tiles",
+      "heightReference": "Unknown native vertical datum; no transform",
+      "id": "terrain-regional",
+      "identity": "tryfan-welsh-regional-v2@db8e4d87b5fa609d455d1e0f8ec3fdebc834579a7e102f69f4d0b0283efa690c",
+      "include": true,
+      "reason": "Regional hierarchy/parents/support and scoped applicability",
+      "rights": "Welsh Government OGL3; source notices",
+      "time": "2021-03-02 catalogue delivery11; cell survey epochs unknown; distribution2020-2023 not one epoch"
+    },
+    {
+      "crs": "EPSG:4326",
+      "grid": "334x554;1/12000 degree; parentWindow[23753,10464,554,334]",
+      "id": "worldcover",
+      "identity": "WorldCover2021v200N51W006-native-window",
+      "include": true,
+      "reason": "Dense categorical native binding/common mapping loss",
+      "rights": "ESA WorldCover2021 CC BY4.0 plus modified Copernicus notices",
+      "time": "Annual epoch2021; publication2022; exact cell acquisition unknown"
+    },
+    {
+      "crs": "EPSG:27700",
+      "id": "nrw",
+      "identity": "nrw-phase1 refs reused; source-scoped objectid; exact extract hash",
+      "include": true,
+      "nativeCodes": 28,
+      "reason": "Vector inventory, feature references and layered historical ecology",
+      "records": 193,
+      "rights": "NRW OGL3 and OS/JNCC retained credits",
+      "time": "1980s-1990s survey lineage; exact feature survey/validity unknown"
+    },
+    {
+      "bands": [
+        "B04",
+        "B03",
+        "B02"
+      ],
+      "crs": "EPSG:32630 native; EPSG:27700 prepared",
+      "delivery": "Existing Lab010300x30010m PNG, fixed stretch only; RGB405x40510m/SCL203x20320m native grids",
+      "id": "appearance",
+      "identity": "S2A_MSIL2A_20260712T113331_N0512_R080_T30UVD_20260712T174812",
+      "include": true,
+      "manualQualification": "pending_manual_fixed_camera_comparison",
+      "mirror": "S2A_T30UVD_20260712T113332_L2A",
+      "observationUTC": "2026-07-12T11:33:31.024Z",
+      "preparedIdentity": "95da30643ea0d7b25408182cbea11adc2dd842ae1557b545d1de8e77c39c3dce",
+      "radiometry": "Post-L2A BOA; DN*0.0001-0.1, DN0 nodata; valid negatives retained",
+      "reason": "Accepted dated continuous observation/source-prepared-display distinction",
+      "rights": {
+        "attribution": "Contains modified Copernicus Sentinel data 2026.",
+        "data_terms": "Copernicus Sentinel Data Legal Notice / free, full and open access",
+        "sentinel_legal_notice": "https://sentinels.copernicus.eu/documents/247904/690755/Sentinel_Data_Legal_Notice",
+        "terms_url": "https://dataspace.copernicus.eu/terms-and-conditions"
+      }
+    }
+  ],
+  "foundations": [
+    {
+      "checkpoint": "53d75f2c2594c6bd627bb7bfe9c10b0b272c8651",
+      "id": "TH",
+      "report": "docs/atlas/terrain-hierarchy-contract.md",
+      "sha256": "054e46ed18279f25dfa3ad1dee962559ee6b61e950e241d25a909dbb5c3eb360"
+    },
+    {
+      "checkpoint": "ba24e546fcb13dcdaf0bb01bf8550c3cf8c5c2dd",
+      "id": "RUNTIME",
+      "report": "docs/atlas/terrain-runtime-selection.md",
+      "sha256": "83ec4be378db60493458207c202c270b7c52ed9d7fff646ccbc50531ebf14719"
+    },
+    {
+      "checkpoint": "8598c30a64dc789c22ae81cef1c14bea3a9e6ff0",
+      "id": "WALES",
+      "report": "docs/atlas/tryfan-second-region-proof.md",
+      "sha256": "0195d4e6d2ef873733b49c8906dd85300555ec61e90df957159ef6de2c6e9f1b"
+    },
+    {
+      "checkpoint": "e65c2d6c29ed4421d5f2cc7133604332e8dfd71b",
+      "id": "V1",
+      "report": "docs/atlas/semantic-evidence-contract.md",
+      "sha256": "92cdeb0ec6963e7d2355b69edba4e7ce1abb85cbb5c9ea7fce5ea66270a0d268"
+    },
+    {
+      "checkpoint": "43afe78e549f6707f0648465af6d7c6e0aabb430",
+      "id": "LIFE",
+      "report": "docs/research/atlas-derived-understanding-lifecycle.md",
+      "sha256": "aee8a563754e3471cbb24a25ea1463eb9cee3d1606be4ed2e3cb1fe62414b3a3"
+    },
+    {
+      "checkpoint": "6e17e7923f2130b2cfce3671e026fe56b6397f5f",
+      "id": "MODEL",
+      "report": "docs/research/atlas-world-model-architecture-synthesis.md",
+      "sha256": "ba074a8a1fa88c256780281314b3a1ca4a8bc2d3e0bcdcf75ad512b733d2d8c1"
+    },
+    {
+      "checkpoint": "1c2d10e522f54e60f83bae2e416008bd1a241eb1",
+      "id": "QUERY",
+      "report": "docs/research/tryfan-qualified-query-proof.md",
+      "sha256": "d77246bdcf99eadafb8b569315b78edfd343765db8c5dd87f74cafada4df4852"
+    },
+    {
+      "checkpoint": "3c143ebea99ce366a1b00083f64a4ee11149a1e0",
+      "id": "REQ",
+      "report": "docs/research/atlas-storage-processing-serving-requirements.md",
+      "sha256": "826ce49eab42c37d62b0a74762fdd6fa0636ebc1cbd2ad5d8ef3704ef829978a"
+    },
+    {
+      "checkpoint": "691450ff540e0e15ade58cba8464d221e89dc119",
+      "id": "PERSIST",
+      "report": "docs/research/tryfan-local-persistent-proof.md",
+      "sha256": "93310c9f77abb360f2841279378550b810fb58971c26d50ef466fef32fa3aac0"
+    },
+    {
+      "checkpoint": "944326b6c6fcbe277e3d71a65c463c6fcecd5960",
+      "id": "WC",
+      "report": "docs/research/tryfan-worldcover-binding-proof.md",
+      "sha256": "ec4b184def509965e2322b8a5958ef96a68330c686e462a9d398c2df9b7cf1c2"
+    },
+    {
+      "checkpoint": "b12dc06dc51d86b85d8635f6741398dde9a65801",
+      "id": "APP",
+      "report": "docs/research/riffelhorn-appearance-assessment.md",
+      "sha256": "7b849da9355738deff86454cb2cf57d2bd38468d20050d896b52c9ce2a7c4bd2"
+    },
+    {
+      "checkpoint": "4acd1916031d868c9a327d09445b770578f01b79",
+      "id": "EXE",
+      "report": "docs/research/exe-water-query-proof.md",
+      "sha256": "9a9fef4fee7d756a82626923b7873a760ce6718bbc3f260456aa61d7663b98fb"
+    },
+    {
+      "checkpoint": "a6f88dabf090a15216f757b6bce5d3f754431aeb",
+      "id": "DATED",
+      "report": "docs/earth-lab/tryfan-010-observed-natural-colour.md",
+      "sha256": "3e0b36f611e0db0f04545830781e46d509d9e2f3da3047f20990d7c78fe926a6"
+    },
+    {
+      "checkpoint": "f16ce63e7c8fd85b6465b0e2cdcd1d872e36df54",
+      "id": "atlas-regional-pilot-acceptance.md",
+      "report": "docs/research/atlas-regional-pilot-acceptance.md",
+      "sha256": "a1b08a2995d0b3fe6ce42238d1fec681cc65b22c8cb512e13405fadc0db90715"
+    }
+  ],
+  "instrumentation": {
+    "fields": [
+      "catalogue-size",
+      "counts-by-class",
+      "storage-source-prepared-new",
+      "startup-restart-ms",
+      "cold-warm-query-ms",
+      "tile-representation-ms-bytes",
+      "publication-ms-rewrittenbytes",
+      "recompute-ms-count",
+      "dependency-traversal-ms-fanout",
+      "replay-ms",
+      "Node-and-Python-RSS",
+      "throughput",
+      "cache-hits-misses-readamplification",
+      "orphan-staging-bytes"
+    ],
+    "outsideIdentity": true,
+    "productionSLA": null,
+    "workload": "5 fresh-process runs,20 warm fixed query batches;1 and4 readers100requests each; record rawtimes/median/p95, software/hardware/cache conditions andresponse sizes, not production extrapolation"
+  },
+  "metadataReceipts": [
+    {
+      "path": "docs/atlas/semantic-comparison-plan.json",
+      "sha256": "62739330a5931120dbdcf14743b5be6f8acc5da5dfc3acbe6747e0aaa0daacd7"
+    },
+    {
+      "path": "docs/atlas/semantic-comparison-results.json",
+      "sha256": "67ce5180e0f66c8ad6ca95fab55a97f9c743cbeb03950b65be80fa47cf9ddb53"
+    },
+    {
+      "path": "docs/atlas/semantic-comparison-sources.json",
+      "sha256": "e13c8bd1f4e9c30d739955a398512cc6aa96aed1586de0972c997cc95a49e837"
+    },
+    {
+      "path": "docs/atlas/tryfan-second-region-proof.json",
+      "sha256": "2b4c35e50dbc1b7a0d44277f8d961b653cfd3132b43450fa8dd6a6a2e9342e35"
+    },
+    {
+      "path": "docs/earth-lab/tryfan-005c-temporal-evidence.json",
+      "sha256": "0564ceb4bcfd0245ec42b792a68d794bc11c779f689393d0f44d94d237b2676a"
+    },
+    {
+      "path": "docs/earth-lab/tryfan-010-observed-natural-colour.json",
+      "sha256": "914c2b81b7dcb7b8ed1d0817b3aeb54ccad2bf87e881602a26eb9acecd2bc873"
+    },
+    {
+      "path": "scripts/atlas/semantic-evidence/fixtures.ts",
+      "sha256": "55bb068c041f1638857aa8cae6b2a85ab376f9e6e52ebbcc8be016c723f6afb9"
+    },
+    {
+      "path": "scripts/atlas/worldcover-binding-proof/runtime.mjs",
+      "sha256": "28c03a3d776763bf6b75b50c44e0593c7310133a2fe38dff86dcdaa863bcbeab"
+    },
+    {
+      "path": "src/atlas/terrain/metadata/awsVisualTerrainProduct.ts",
+      "sha256": "9919460bd899961dccdae1db4608ab17ac7bad660a34598dea8c7cf24469eabd"
+    },
+    {
+      "path": "src/atlas/terrain/metadata/tryfanProductRecord.json",
+      "sha256": "510a559ea70ea16f6d7a5d2308e924dce872d6f6322b41619df02aac8d9e6fed"
+    },
+    {
+      "path": "src/atlas/terrain/metadata/tryfanTerrainProof.ts",
+      "sha256": "f25fbc48b0ddd7b4029d08913e18187728129965e76a90dee0f13e3db9153405"
+    }
+  ],
+  "nextTask": "Tryfan pilot retained catalogue and immutable generation foundation",
+  "nextTaskStarted": false,
+  "noImplementationPathsCreated": [
+    "pilots/atlas/tryfan",
+    "../meridian-data/experiments/atlas/tryfan-regional-pilot-v1"
+  ],
+  "persistence": {
+    "capabilities": "S1 seed registration-only; other capabilities explicitly absent. Full G0 built inS3. Never present an incomplete seed as full pilot.",
+    "choice": "Immutable whole-metadata canonical JSON generations and local content-addressed artifacts; atomic current pointer rename",
+    "generationHash": "SHA256 canonical UTF8 sorted keys, unordered collections sorted stable identity, meaningful arrays keep order. No physical host locators/clocks/PID/timings in logical identity.",
+    "historicalRetention": "All accepted generations and reference closure; no automatic GC",
+    "immutable": true,
+    "lock": "Exclusive writer.lock created with wx; owner PID + operation nonce recorded outside generation. Never reclaim by age. recover-lock --operation <id> only after PID liveness probe confirms dead; alive/unknown refuses recovery. Retry validates orphan candidate explicitly; no automatic publication.",
+    "pointer": "current.json {format,generation}; no separate mutable current indices/manifests",
+    "rootAtomic": true,
+    "runtimeDirectory": "../meridian-data/experiments/atlas/tryfan-regional-pilot-v1",
+    "schema": "atlas-tryfan-pilot-store/v1",
+    "semanticContract": "atlas-semantic-evidence/v1",
+    "singleWriter": true,
+    "validation": [
+      "schema",
+      "Contractv1",
+      "reference-integrity",
+      "acyclic-dependencies",
+      "scope-crs-time-rights",
+      "artifact-hashes",
+      "serving-manifest",
+      "current-freshness",
+      "retained-availability"
+    ]
+  },
+  "planningOnly": true,
+  "publication": {
+    "allFamiliesSameRoot": true,
+    "clientPinsGeneration": true,
+    "mutableGeneration": false,
+    "powerLossGuarantee": false,
+    "reader": "Current read once or explicit generation; hash/schema validate then freeze root for request; cache keys/asset URLs echo generation. Never adopt orphan by scanning. Corrupt current fails visibly; explicit validated rollback only.",
+    "steps": [
+      "exclusive-lock",
+      "stage-immutable-artifacts",
+      "affected-closure",
+      "topological-derive",
+      "assemble-catalogue-and-serving-manifest",
+      "validate-entire-candidate",
+      "write-flush-generation",
+      "write-flush-temp-pointer",
+      "atomic-rename-current",
+      "release-lock"
+    ]
+  },
+  "query": {
+    "defaultTime": "Native qualified context, never implicit current physical state",
+    "derivedDomain": "Only two inherited probes,8m method; other derivation queries unsupported",
+    "gapVocabulary": "Frozen Contractv1 exactly; rejected/unmappable mapping separate; synthetic no-data labelled. Do not invent negative detection from cover.",
+    "matrix": [
+      {
+        "expectation": "XYZ z14 current selection with support/information trace",
+        "id": "Q01",
+        "probe": "summit",
+        "property": "terrain-selection",
+        "time": null
+      },
+      {
+        "expectation": "8m Horn quantity and computed freshness",
+        "id": "Q02",
+        "probe": "summit",
+        "property": "derived-slope",
+        "time": null
+      },
+      {
+        "expectation": "Planar secant ratio with exact upstream claim",
+        "id": "Q03",
+        "probe": "summit",
+        "property": "derived-area-ratio",
+        "time": null
+      },
+      {
+        "expectation": "Unchanged common result",
+        "id": "Q04",
+        "probe": "southern-observer",
+        "property": "derived-slope",
+        "time": null
+      },
+      {
+        "expectation": "Native30 Grassland; whole-cell classification",
+        "id": "Q05",
+        "probe": "summit",
+        "property": "worldcover-native",
+        "time": "2021"
+      },
+      {
+        "expectation": "Existing mapping relationship/loss, never habitat identity",
+        "id": "Q06",
+        "probe": "summit",
+        "property": "worldcover-common",
+        "time": "2021"
+      },
+      {
+        "expectation": "Inherited400m and20m native-centre assignment counts, not fractions",
+        "id": "Q07",
+        "probe": "summit",
+        "property": "worldcover-support",
+        "time": "2021"
+      },
+      {
+        "expectation": "Feature486832 D.1.1 with historic/unknown survey qualification",
+        "id": "Q08",
+        "probe": "summit",
+        "property": "nrw-native",
+        "time": null
+      },
+      {
+        "expectation": "Both native claims; no winner or simultaneity",
+        "id": "Q09",
+        "probe": "summit",
+        "property": "coexisting-semantic",
+        "time": null
+      },
+      {
+        "expectation": "Existing Lab010 representation and native July lineage",
+        "id": "Q10",
+        "probe": "summit",
+        "property": "appearance",
+        "time": "2026-07-12"
+      },
+      {
+        "expectation": "Code80 annual persistence, not current water",
+        "id": "Q11",
+        "probe": "northern-context",
+        "property": "worldcover-native",
+        "time": "2021"
+      },
+      {
+        "context": {
+          "policy": "fixed-input-replay-v1",
+          "resultRefs": [
+            {
+              "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+              "probe": "summit",
+              "property": "slope",
+              "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839"
+            },
+            {
+              "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+              "probe": "summit",
+              "property": "area-ratio",
+              "revision": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527"
+            },
+            {
+              "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+              "probe": "southern-observer",
+              "property": "slope",
+              "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+            },
+            {
+              "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+              "probe": "southern-observer",
+              "property": "area-ratio",
+              "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+            }
+          ]
+        },
+        "expectation": "Four AWS records referenced and pixel/method replayed",
+        "id": "Q12",
+        "probe": "summit",
+        "property": "historical-derived",
+        "time": null
+      },
+      {
+        "expectation": "Unsupported; no historical inventory fallback",
+        "id": "Q13",
+        "probe": "summit",
+        "property": "current-cover",
+        "time": "current"
+      },
+      {
+        "expectation": "Unsupported illumination-independent appearance; no RGB substitution",
+        "id": "Q14",
+        "probe": "summit",
+        "property": "physical-appearance",
+        "time": null
+      },
+      {
+        "expectation": "Unmappable interpretation; preserve native claim",
+        "id": "Q15",
+        "probe": "summit",
+        "property": "geological-substrate",
+        "time": null
+      },
+      {
+        "expectation": "Outside pilot support, not physical absence",
+        "id": "Q16",
+        "probe": "outside",
+        "property": "worldcover-native",
+        "time": "2021"
+      },
+      {
+        "context": {
+          "availabilityFixture": "separate locator override to missing temporary WorldCover path, never move retained file"
+        },
+        "expectation": "Test-local unavailable asset; no NRW fallback",
+        "id": "Q17",
+        "probe": "summit",
+        "property": "worldcover-native",
+        "time": "2021"
+      },
+      {
+        "expectation": "Source/product/representation/method/revisions/scopes/rights",
+        "id": "Q18",
+        "probe": "summit",
+        "property": "provenance",
+        "time": null
+      },
+      {
+        "expectation": "Inherited400m native counts",
+        "id": "Q19",
+        "probe": "southern-observer",
+        "property": "worldcover-support",
+        "time": "2021"
+      },
+      {
+        "expectation": "Inherited400m native counts",
+        "id": "Q20",
+        "probe": "northern-context",
+        "property": "worldcover-support",
+        "time": "2021"
+      },
+      {
+        "context": {
+          "fixedQuestions": [
+            "terrain-selection",
+            "derived-slope",
+            "derived-area-ratio",
+            "worldcover-native",
+            "nrw-native",
+            "appearance"
+          ],
+          "policy": "current-applicable-terrain-v1"
+        },
+        "expectation": "One pinned request coordinates z14 terrain,8m slope/ratio,WorldCover2021,qualified historical NRW and July2026 appearance metadata; separate answer times/scopes, no combined current-world state",
+        "id": "Q21",
+        "probe": "summit",
+        "property": "place-evidence",
+        "time": null
+      }
+    ],
+    "maxSupport": "Finite rectangle within core; inherited400m and20m supports acceptance",
+    "operationalStates": [
+      "available",
+      "unavailable",
+      "invalid-request",
+      "excluded-by-context"
+    ],
+    "pointCRS": [
+      "EPSG:27700",
+      "OGC:CRS84"
+    ],
+    "properties": [
+      "appearance",
+      "coexisting-semantic",
+      "current-cover",
+      "derived-area-ratio",
+      "derived-slope",
+      "geological-substrate",
+      "historical-derived",
+      "nrw-native",
+      "physical-appearance",
+      "provenance",
+      "terrain-selection",
+      "worldcover-common",
+      "worldcover-native",
+      "worldcover-support",
+      "place-evidence"
+    ],
+    "vectorSupportPolicy": "Native polygon covers(point), including boundary with onBoundary flag; holes excluded except own boundary, overlaps return all qualified source records. Support query uses exact intersection after bbox candidates. Invalid native geometry fails visibly; no repair/buffer/overwrite. Original inherited interior point answers unchanged."
+  },
+  "registrationBindings": [
+    {
+      "family": "terrain-common",
+      "metadata": "src/atlas/terrain/metadata/awsVisualTerrainProduct.ts",
+      "product": {
+        "id": "aws-terrarium",
+        "revision": {
+          "reason": "Mutable hosted product; exact retained subsets hashed separately",
+          "status": "unknown"
+        }
+      },
+      "representation": "Existing production-common family / z14 and explicit z5 retained XYZ; prototype identity unchanged",
+      "rights": "Unknown source-specific universal licence; retain Tilezen/Joerd credit link; no public permission inferred",
+      "source": {
+        "id": "aws-hosted-delivery",
+        "revision": {
+          "reason": "Exact hosted measurement/global release lineage unavailable",
+          "status": "unknown"
+        }
+      },
+      "time": "Unknown measurement and build epochs; HTTP Date/Last-Modified are not observations"
+    },
+    {
+      "family": "terrain-regional",
+      "metadata": "src/atlas/terrain/metadata/tryfanTerrainProof.ts",
+      "product": {
+        "id": "tryfan-welsh-regional-v2",
+        "revision": {
+          "status": "known",
+          "value": "db8e4d87b5fa609d455d1e0f8ec3fdebc834579a7e102f69f4d0b0283efa690c"
+        }
+      },
+      "representation": "Existing welsh-regional family/levelsz14-17; 295-file manifest hash",
+      "source": {
+        "id": "welsh-government-tryfan-dtm-selection",
+        "revision": {
+          "status": "known",
+          "value": "49c131d7de62e0df35f8e02c2f8db3161bfd37f24fea56060fcbb9e6d109b326"
+        }
+      }
+    },
+    {
+      "claimId": "Existing parent-r/c claim pattern; preserve template IDs/revisions and qualified crosswalk",
+      "family": "worldcover",
+      "metadata": "scripts/atlas/worldcover-binding-proof/runtime.mjs",
+      "product": {
+        "id": "worldcover",
+        "revision": {
+          "status": "known",
+          "value": "v200/2021"
+        }
+      },
+      "representation": "worldcover-v200-2021-N51W006-native-window; exact subset SHA, native-code-cell/v1 binding",
+      "source": {
+        "id": "worldcover-source",
+        "revision": {
+          "status": "known",
+          "value": "v200/2021"
+        }
+      },
+      "vocabulary": {
+        "id": "ESA WorldCover nomenclature",
+        "version": "v200/2021 PUM2.0"
+      }
+    },
+    {
+      "claimId": "Reuse claim:nrw-record-{objectid} existing D.1.1 records exactly/revision1; other records extend source-scoped pattern with canonical native record/context hash; do not silently revise existing records",
+      "family": "nrw",
+      "metadata": "scripts/atlas/semantic-evidence/fixtures.ts",
+      "product": {
+        "id": "nrw-phase1",
+        "revision": {
+          "status": "known",
+          "value": "retained-2026-10-06"
+        }
+      },
+      "representation": "Native extract hash; source/product-scoped objectid selector, EPSG:27700 original geometry",
+      "source": {
+        "id": "nrw-phase1-source",
+        "revision": {
+          "status": "known",
+          "value": "retained-2026-10-06"
+        }
+      },
+      "vocabulary": {
+        "id": "Welsh Phase1 / JNCC nomenclature",
+        "version": "retained JNCC2008 Welsh column; historical survey labels"
+      }
+    },
+    {
+      "family": "appearance",
+      "identityQualification": "Bounded pilot source reference added for mission/sensor, not a new physical observation or acquisition time; native official/mirror/asset IDs remain separate",
+      "metadata": "docs/earth-lab/tryfan-010-observed-natural-colour.json",
+      "product": {
+        "id": "S2A_MSIL2A_20260712T113331_N0512_R080_T30UVD_20260712T174812",
+        "revision": {
+          "status": "known",
+          "value": "processing-baseline:05.12"
+        }
+      },
+      "representation": "lab010-observed-natural-colour-v1@95da30643ea0d7b25408182cbea11adc2dd842ae1557b545d1de8e77c39c3dce; independent native RGB/SCL assets",
+      "source": {
+        "id": "source:copernicus-sentinel-2-msi",
+        "revision": {
+          "reason": "Mission/source identity; exact observation is separately known product",
+          "status": "unknown"
+        }
+      }
+    }
+  ],
+  "rollback": "Retain allaccepted generations; explicit CLI validate closure then atomic pointer rollback. Operation log outside immutable generation. No automatic orphanGC; delete/rebuild only verified isolated pilot runtime root, never retained sources.",
+  "schema": "atlas-tryfan-regional-pilot-plan/v1",
+  "scienceBasis": {
+    "contract": "atlas-semantic-evidence/v1",
+    "counts": {
+      "current": 4,
+      "historicalAWS": 4,
+      "initial": 4,
+      "recomputed": 2,
+      "updatedTotal": 6
+    },
+    "golden": "docs/research/tryfan-qualified-query-results.json",
+    "goldenSha256": "871be961f6df0ff479c4ec935980eb35070e5a9363bcddc5fe73bfd6051fc3f2",
+    "historicalRefs": [
+      {
+        "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+        "probe": "summit",
+        "property": "slope",
+        "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839"
+      },
+      {
+        "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+        "probe": "summit",
+        "property": "area-ratio",
+        "revision": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527"
+      },
+      {
+        "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+        "probe": "southern-observer",
+        "property": "slope",
+        "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+      },
+      {
+        "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+        "probe": "southern-observer",
+        "property": "area-ratio",
+        "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+      }
+    ],
+    "inputs": "docs/research/tryfan-qualified-query-inputs.json",
+    "inputsSha256": "ab2062b81b7e84b749700cae13c499e837e0705de96c22192ef9ad2f6d13a9a7",
+    "methodFiles": {
+      "scripts/atlas/qualified-query-proof/proof.ts": "bcd85ff5101ddd079e2e4d3c0c32054b6a75c0525797bc9258a8cfe9e59e3bcc",
+      "scripts/atlas/qualified-query-proof/retained_inputs.py": "b58edc66fcb9b0302632610c666a4e2ade44a03caadf2643d03247ba54a4cc1d",
+      "scripts/atlas/qualified-query-proof/run.mjs": "56fbf2bd47fcd9ec04fbd61c2f7f9a4c0e0bfe005e514cdda60b4f8609b30414"
+    },
+    "methodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+    "policies": [
+      "fixed-input-replay-v1",
+      "current-applicable-terrain-v1"
+    ],
+    "properties": [
+      "slope",
+      "area-ratio"
+    ],
+    "protocol": "docs/research/tryfan-qualified-query-plan.json",
+    "protocolSha256": "06097cb52471721c7aefe7e25886c51bf0a2249ea306feff42695a17ff06d67e",
+    "rootRevisions": {
+      "production-common:southern-observer": "cd734229df3370bb8216be68680b37b9dfdb3ceeb7d81425dd22f7b22440732c",
+      "production-common:summit": "6236293d8e15726a1d16934d25bdddf58d74919f7aba1dee8f84cad03bc9e33c",
+      "welsh-regional:summit": "8fb888f767c92da121dfe82f94a25262060d284fc1b19a208e848bc5900f01a4"
+    },
+    "selection": {
+      "after": "existing Tryfan regional registry; native complete support unchanged",
+      "before": "common-only retained registry",
+      "eligibilityReadHalfWidthM": 24,
+      "requestedLevel": "z14",
+      "scheme": "XYZ Web Mercator zoom (delivery)"
+    },
+    "spacingMetres": 8
+  },
+  "scope": {
+    "areaKm2": 9,
+    "boundary": "Core half-open west/south included east/north excluded; native raster indexing west/north included east/south excluded",
+    "bounds": [
+      264900,
+      357800,
+      267900,
+      360800
+    ],
+    "context": "Only retained parent/common support; no query expansion or network fallback",
+    "crs": "EPSG:27700",
+    "probes": [
+      {
+        "centre": [
+          266405,
+          359387
+        ],
+        "id": "summit",
+        "reason": "Existing summit reference; rocky mountain target, not an asserted class.",
+        "side": 400
+      },
+      {
+        "centre": [
+          265876.05347833806,
+          358339.7631202109
+        ],
+        "id": "southern-observer",
+        "reason": "Existing photographic observer reference; mixed-surface opportunity, not a class assertion.",
+        "side": 400
+      },
+      {
+        "centre": [
+          266400,
+          360450
+        ],
+        "id": "northern-context",
+        "reason": "Fixed north-central lower-context part of the established window; vegetation/water opportunity only.",
+        "side": 400
+      },
+      {
+        "centre": [
+          264800,
+          357700
+        ],
+        "id": "outside",
+        "reason": "Inherited WorldCover miss"
+      }
+    ]
+  },
+  "serving": {
+    "cache": "No query cache initially. Verified file handles/decoded buffers keyed by hash+generation bounded64MiB; record hits/bytes. Immutable artifact private ETag caching; queries/current no-store; external file mismatch fails visibly.",
+    "consumer": "Isolated Canvas2D BNG map-plane pan/zoom/click with unchanged Lab010 footprint and native NRW outlines; linked native WorldCover categorical-grid inspector and native-Mercator exact Terrarium tile inspector share queried place/generation. Service returns native point/cell/XYZ/support positions. No cross-CRS image corner stretch, production MapLibre or client truth selection.",
+    "errors": "400 invalid query/protocol;404 unknown generation/ref/asset;200 qualified gap;503 registered asset unavailable/checksum failure or corrupt root/queue full. No compatible-looking substitution.",
+    "limits": {
+      "readCacheBytes": 67108864,
+      "requestBodyBytes": 65536,
+      "workerQueue": 32
+    },
+    "routes": [
+      {
+        "generationRequired": false,
+        "method": "GET",
+        "path": "/pilot/v1/current",
+        "returns": "Generation, capabilities and scope; no-store; explicit refresh"
+      },
+      {
+        "generationRequired": true,
+        "method": "GET",
+        "path": "/pilot/v1/g/{generation}/manifest",
+        "returns": "Published assets/support/levels/rights/URLs; no host paths"
+      },
+      {
+        "generationRequired": true,
+        "method": "POST",
+        "path": "/pilot/v1/g/{generation}/query",
+        "returns": "Read-only qualified results and provenance, echo generation"
+      },
+      {
+        "generationRequired": true,
+        "method": "GET",
+        "path": "/pilot/v1/g/{generation}/provenance/{refKey}",
+        "returns": "Lookup URLsafe hashed ref key; immutable reference closure"
+      },
+      {
+        "generationRequired": true,
+        "method": "GET",
+        "path": "/pilot/v1/g/{generation}/assets/{assetKey}",
+        "returns": "Allowlisted bytes; SHA256 ETag/MIME/length/rights"
+      },
+      {
+        "generationRequired": true,
+        "method": "GET",
+        "path": "/pilot/v1/g/{generation}/terrain/{family}/{z}/{x}/{y}.png",
+        "returns": "Exact retained Terrarium tile; query selects family/level; no network fetch"
+      },
+      {
+        "generationRequired": false,
+        "method": "GET",
+        "path": "/",
+        "returns": "Isolated static client code; scene bootstrap pins generation"
+      }
+    ],
+    "runtime": "Existing Node/ViteSSR frozen module loader; one bounded Python JSONlines adapter worker using existing DATA venv/rasterio/pyproj/shapely; no new npm dependency",
+    "transport": "Node builtin HTTP 127.0.0.1:4190, explicit port override; read-only same-origin"
+  },
+  "slices": [
+    {
+      "acceptance": [
+        "A",
+        "O"
+      ],
+      "dependsOn": [],
+      "id": "S1",
+      "modules": [
+        "pilots/atlas/tryfan/catalogue.mjs",
+        "pilots/atlas/tryfan/identity.mjs",
+        "pilots/atlas/tryfan/generations.mjs",
+        "pilots/atlas/tryfan/cli.mjs",
+        "pilots/atlas/tryfan/tests/catalogue.test.mjs"
+      ],
+      "objective": "Retained catalogue and immutable generation foundation",
+      "stop": "Register all5 families and15 pinned assets/295 Welsh payloads with native references, support/time/rights; registration-only generation and capability marker. CLI register/inspect, schema/hash/reference validation and real restart. No query, derivation, HTTP or client."
+    },
+    {
+      "acceptance": [
+        "B",
+        "D",
+        "E",
+        "F",
+        "L",
+        "M"
+      ],
+      "dependsOn": [
+        "S1"
+      ],
+      "id": "S2",
+      "modules": [
+        "pilots/atlas/tryfan/adapters/native.py",
+        "pilots/atlas/tryfan/semantic.mjs",
+        "pilots/atlas/tryfan/query.mjs",
+        "pilots/atlas/tryfan/tests/query.test.mjs"
+      ],
+      "objective": "Qualified native evidence readers and queries",
+      "stop": "WorldCover8 templates/lazy cell binding;193 NRW feature references28 opaque native codes including NA/mosaic; source dictionary only where retained. Q05-Q11/Q13-Q20 and dated appearance metadata. No new truth raster."
+    },
+    {
+      "acceptance": [
+        "A",
+        "B",
+        "G",
+        "I"
+      ],
+      "dependsOn": [
+        "S2"
+      ],
+      "id": "S3",
+      "modules": [
+        "pilots/atlas/tryfan/derivations.mjs",
+        "pilots/atlas/tryfan/dependencies.mjs",
+        "pilots/atlas/tryfan/tests/lifecycle.test.mjs"
+      ],
+      "objective": "Retained derivation and lifecycle integration",
+      "stop": "Freshly sample two probes; original science basis and4 AWS IDs/revisions/values; G0, reverse uses/policy freshness/replay. No update publication yet. Add Q21 fixed place-evidence coordinator with separate answer contexts; no cross-family truth merge."
+    },
+    {
+      "acceptance": [
+        "C",
+        "D",
+        "E",
+        "L",
+        "M",
+        "N",
+        "P"
+      ],
+      "dependsOn": [
+        "S3"
+      ],
+      "id": "S4",
+      "modules": [
+        "pilots/atlas/tryfan/server.mjs",
+        "pilots/atlas/tryfan/delivery.mjs",
+        "pilots/atlas/tryfan/client/index.html",
+        "pilots/atlas/tryfan/client/view.mjs",
+        "pilots/atlas/tryfan/tests/http.test.mjs"
+      ],
+      "objective": "Generation-pinned serving and isolated consumer",
+      "stop": "Read-only loopback HTTP and bounded Python worker; Canvas2D map-plane pan/zoom/click/native overlays. CLI/HTTP equality, fixed views/date/rights. No production MapLibre changes."
+    },
+    {
+      "acceptance": [
+        "H",
+        "I",
+        "J",
+        "K",
+        "N",
+        "P"
+      ],
+      "dependsOn": [
+        "S4"
+      ],
+      "id": "S5",
+      "modules": [
+        "pilots/atlas/tryfan/updates.mjs",
+        "pilots/atlas/tryfan/tests/publication.test.mjs",
+        "pilots/atlas/tryfan/tests/restart.test.mjs"
+      ],
+      "objective": "Scoped and mixed-family publication with interruption",
+      "stop": "U1 and isolated U2 branch, F1-F3 real exits and reader races; validated closure then one atomic root switch; historical replay unchanged."
+    },
+    {
+      "acceptance": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P"
+      ],
+      "dependsOn": [
+        "S5"
+      ],
+      "id": "S6",
+      "modules": [
+        "pilots/atlas/tryfan/measure.mjs",
+        "pilots/atlas/tryfan/tests/acceptance.test.mjs",
+        "pilots/atlas/tryfan/README.md"
+      ],
+      "objective": "Measured pilot exit acceptance",
+      "stop": "A-P in fresh processes and empty independent rebuild; local measured load/cache/memory/bytes/replay; report pass/fail/limits, no arbitrary SLA or production attachment."
+    }
+  ],
+  "startingCheckpoint": "f16ce63e7c8fd85b6465b0e2cdcd1d872e36df54",
+  "updates": [
+    {
+      "expected": "Summit slope/ratio stale then recomputed; southern2 fresh; all4 AWS fixed-input reproducible; append2 Welsh revisions.",
+      "familiesChanged": [
+        "terrain",
+        "derived-understanding"
+      ],
+      "from": "G0: common-only terrain applicability; all semantic/appearance registered and eligible",
+      "history": 4,
+      "id": "U1",
+      "kind": "Retained applicability update, not new source release",
+      "recompute": 2,
+      "to": "G1: Welsh applicability via original selector policy",
+      "unchanged": [
+        "southern-chain",
+        "WorldCover",
+        "NRW",
+        "appearance"
+      ]
+    },
+    {
+      "expected": "Old generation common summit and NRW excluded-by-context envelope; new Welsh summit chain and NRW D.1.1. No hybrid. NRW creates no terrain dependency. Supplements U1 without changing its unaffected semantics.",
+      "familiesChanged": [
+        "terrain",
+        "vector-inventory",
+        "derived-understanding"
+      ],
+      "from": "M0 isolated branch/store: same retainedrecords asG0; Welsh+NRW applicability withheld; native NRW records still registered",
+      "history": 4,
+      "id": "U2",
+      "kind": "Controlled registration/applicability transaction, not source/native claim/content revision",
+      "recompute": 2,
+      "to": "M1: atomically activate Welsh and retained NRW for same core",
+      "unchanged": [
+        "southern-chain",
+        "WorldCover",
+        "appearance",
+        "all-native-evidence-bytes"
+      ]
+    }
+  ]
+}
