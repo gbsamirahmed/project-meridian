@@ -1,0 +1,590 @@
+{
+  "baseline": "docs/research/tryfan-pilot-s6-baseline.json",
+  "criteria": [
+    {
+      "id": "A",
+      "limitation": "Bounded original criterion; related detailed native/error/failure assertions are retained regression tests, not rewritten conditions",
+      "name": "Cold restart",
+      "passCondition": "New CLI process recovers identical qualified results and identities",
+      "regressionEvidence": "docs/research/tryfan-pilot-s6-validation.json",
+      "regressionTests": [
+        {
+          "file": "pilots/atlas/tryfan/tests/catalogue.test.mjs",
+          "test": "actual retained evidence reproduced by a separately constructed process"
+        },
+        {
+          "file": "pilots/atlas/tryfan/tests/restart.test.mjs",
+          "test": "new CLI and service reproduce persisted current without construction globals"
+        }
+      ],
+      "result": "PASS",
+      "s6CheckId": "A",
+      "s6Evidence": "docs/research/tryfan-pilot-s6-results.json",
+      "slices": "S1,S3"
+    },
+    {
+      "id": "B",
+      "limitation": "Bounded original criterion; related detailed native/error/failure assertions are retained regression tests, not rewritten conditions",
+      "name": "Integrated query",
+      "passCondition": "Q21 one-request coordinator resolves actual terrain/derived/semantic/appearance answers from one generation with separate native times/scopes; no source ranking. Q09 coexistence still required.",
+      "regressionEvidence": "docs/research/tryfan-pilot-s6-validation.json",
+      "regressionTests": [
+        {
+          "file": "pilots/atlas/tryfan/tests/lifecycle.test.mjs",
+          "test": "Q21 six separate answers preserve native temporal/support/meaning contexts"
+        },
+        {
+          "file": "pilots/atlas/tryfan/tests/http.test.mjs",
+          "test": "H04 coexistence has both native families; no winner"
+        }
+      ],
+      "result": "PASS",
+      "s6CheckId": "B",
+      "s6Evidence": "docs/research/tryfan-pilot-s6-results.json",
+      "slices": "S2,S3"
+    },
+    {
+      "id": "C",
+      "limitation": "Bounded original criterion; related detailed native/error/failure assertions are retained regression tests, not rewritten conditions",
+      "name": "Terrain serving",
+      "passCondition": "Exact Terrarium bytes and unchanged hierarchy eligibility; missing tile explicit",
+      "regressionEvidence": "docs/research/tryfan-pilot-s6-validation.json",
+      "regressionTests": [
+        {
+          "file": "pilots/atlas/tryfan/tests/http.test.mjs",
+          "test": "H19-H20 exact terrain bytes, ETag and explicit missingz13"
+        }
+      ],
+      "result": "PASS",
+      "s6CheckId": "C",
+      "s6Evidence": "docs/research/tryfan-pilot-s6-results.json",
+      "slices": "S4"
+    },
+    {
+      "id": "D",
+      "limitation": "Bounded original criterion; related detailed native/error/failure assertions are retained regression tests, not rewritten conditions",
+      "name": "Dense semantic serving/query",
+      "passCondition": "Q05-Q07/Q11/Q19/Q20 native grid, code, mapping and assignment counts",
+      "regressionEvidence": "docs/research/tryfan-pilot-s6-validation.json",
+      "regressionTests": [
+        {
+          "file": "pilots/atlas/tryfan/tests/query.test.mjs",
+          "test": "native assignment counts reproduce old frozen proof, no physical fractions"
+        },
+        {
+          "file": "pilots/atlas/tryfan/tests/query.test.mjs",
+          "test": "WorldCover native30 exact parent cell and definition"
+        }
+      ],
+      "result": "PASS",
+      "s6CheckId": "D",
+      "s6Evidence": "docs/research/tryfan-pilot-s6-results.json",
+      "slices": "S2,S4"
+    },
+    {
+      "id": "E",
+      "limitation": "Bounded original criterion; related detailed native/error/failure assertions are retained regression tests, not rewritten conditions",
+      "name": "Vector semantic serving/query",
+      "passCondition": "Q08;193 native records, source-scoped identity, holes/boundaries and survey qualifiers",
+      "regressionEvidence": "docs/research/tryfan-pilot-s6-validation.json",
+      "regressionTests": [
+        {
+          "file": "pilots/atlas/tryfan/tests/query.test.mjs",
+          "test": "NRW native feature486832 fields and whole polygon support"
+        }
+      ],
+      "result": "PASS",
+      "s6CheckId": "E",
+      "s6Evidence": "docs/research/tryfan-pilot-s6-results.json",
+      "slices": "S2,S4"
+    },
+    {
+      "id": "F",
+      "limitation": "Bounded original criterion; related detailed native/error/failure assertions are retained regression tests, not rewritten conditions",
+      "name": "Coexistence",
+      "passCondition": "Q09 both qualified claims, no winner",
+      "regressionEvidence": "docs/research/tryfan-pilot-s6-validation.json",
+      "regressionTests": [
+        {
+          "file": "pilots/atlas/tryfan/tests/query.test.mjs",
+          "test": "coexistence preserves Grassland and historical dry acid heath without winner"
+        }
+      ],
+      "result": "PASS",
+      "s6CheckId": "F",
+      "s6Evidence": "docs/research/tryfan-pilot-s6-results.json",
+      "slices": "S2"
+    },
+    {
+      "id": "G",
+      "limitation": "Bounded original criterion; related detailed native/error/failure assertions are retained regression tests, not rewritten conditions",
+      "name": "Derived result",
+      "passCondition": "Q02-Q03 match original method/values/scopes and exact upstream dependency",
+      "regressionEvidence": "docs/research/tryfan-pilot-s6-validation.json",
+      "regressionTests": [
+        {
+          "file": "pilots/atlas/tryfan/tests/lifecycle.test.mjs",
+          "test": "explicit methods, scopes, graph and source asset linkage survive metadata loading"
+        },
+        {
+          "file": "pilots/atlas/tryfan/tests/http.test.mjs",
+          "test": "H05 retained slope/ratio and freshness/method survive serving"
+        }
+      ],
+      "result": "PASS",
+      "s6CheckId": "G",
+      "s6Evidence": "docs/research/tryfan-pilot-s6-results.json",
+      "slices": "S3"
+    },
+    {
+      "id": "H",
+      "limitation": "Bounded original criterion; related detailed native/error/failure assertions are retained regression tests, not rewritten conditions",
+      "name": "Scoped update",
+      "passCondition": "U1 recomputes2 summit revisions only, retains4 historical AWS; southern/semantic/appearance unchanged",
+      "regressionEvidence": "docs/research/tryfan-pilot-s6-validation.json",
+      "regressionTests": [
+        {
+          "file": "pilots/atlas/tryfan/tests/publication.test.mjs",
+          "test": "S3 freshness identifies exactly summit pair and transitive ratio"
+        },
+        {
+          "file": "pilots/atlas/tryfan/tests/publication.test.mjs",
+          "test": "only summit records appended; unchanged native state and southern lineage"
+        }
+      ],
+      "result": "PASS",
+      "s6CheckId": "H",
+      "s6Evidence": "docs/research/tryfan-pilot-s6-results.json",
+      "slices": "S5"
+    },
+    {
+      "id": "I",
+      "limitation": "Bounded original criterion; related detailed native/error/failure assertions are retained regression tests, not rewritten conditions",
+      "name": "Historical replay",
+      "passCondition": "Recalculate4 AWS and2 Welsh records from retained pixels/method; old generation identical",
+      "regressionEvidence": "docs/research/tryfan-pilot-s6-validation.json",
+      "regressionTests": [
+        {
+          "file": "pilots/atlas/tryfan/tests/publication.test.mjs",
+          "test": "all six historical/current records replay from exact pixels and method"
+        },
+        {
+          "file": "pilots/atlas/tryfan/tests/publication.test.mjs",
+          "test": "retained historical slope explicit context remains replayable"
+        }
+      ],
+      "result": "PASS",
+      "s6CheckId": "I",
+      "s6Evidence": "docs/research/tryfan-pilot-s6-results.json",
+      "slices": "S3,S5"
+    },
+    {
+      "id": "J",
+      "limitation": "Bounded original criterion; related detailed native/error/failure assertions are retained regression tests, not rewritten conditions",
+      "name": "Mixed-family publication",
+      "passCondition": "U2 terrain+NRW registration changes atomically, no impossible intermediate reader view",
+      "regressionEvidence": "docs/research/tryfan-pilot-s6-validation.json",
+      "regressionTests": [
+        {
+          "file": "pilots/atlas/tryfan/tests/publication.test.mjs",
+          "test": "U2 independent terrain plus vector applicability transaction and abrupt exits"
+        },
+        {
+          "file": "pilots/atlas/tryfan/tests/publication.test.mjs",
+          "test": "cannot silently replace native knowledge or catalogue during applicability update"
+        }
+      ],
+      "result": "PASS",
+      "s6CheckId": "J",
+      "s6Evidence": "docs/research/tryfan-pilot-s6-results.json",
+      "slices": "S5"
+    },
+    {
+      "id": "K",
+      "limitation": "Bounded original criterion; related detailed native/error/failure assertions are retained regression tests, not rewritten conditions",
+      "name": "Interrupted publication",
+      "passCondition": "F1-F3 abrupt subprocess exit before root switch leaves old root queryable after restart; retry coherent",
+      "regressionEvidence": "docs/research/tryfan-pilot-s6-validation.json",
+      "regressionTests": [
+        {
+          "file": "pilots/atlas/tryfan/tests/publication.test.mjs",
+          "test": "U1 real abrupt exits, selective publication, isolated old/new consumers"
+        },
+        {
+          "file": "pilots/atlas/tryfan/tests/publication.test.mjs",
+          "test": "U2 independent terrain plus vector applicability transaction and abrupt exits"
+        },
+        {
+          "file": "pilots/atlas/tryfan/tests/publication.test.mjs",
+          "test": "incomplete result closure fails before any root switch"
+        }
+      ],
+      "result": "PASS",
+      "s6CheckId": "K",
+      "s6Evidence": "docs/research/tryfan-pilot-s6-results.json",
+      "slices": "S5"
+    },
+    {
+      "id": "L",
+      "limitation": "Bounded original criterion; related detailed native/error/failure assertions are retained regression tests, not rewritten conditions",
+      "name": "Provenance trace",
+      "passCondition": "Q18 exact source/product/representation/method/dependencies/rights and honest unknowns",
+      "regressionEvidence": "docs/research/tryfan-pilot-s6-validation.json",
+      "regressionTests": [
+        {
+          "file": "pilots/atlas/tryfan/tests/query.test.mjs",
+          "test": "provenance traces through generation, native artifact and product/source refs"
+        },
+        {
+          "file": "pilots/atlas/tryfan/tests/http.test.mjs",
+          "test": "H21 durable provenance/rights route, no internal filenames in consumer"
+        }
+      ],
+      "result": "PASS",
+      "s6CheckId": "L",
+      "s6Evidence": "docs/research/tryfan-pilot-s6-results.json",
+      "slices": "S2,S4"
+    },
+    {
+      "id": "M",
+      "limitation": "Bounded original criterion; related detailed native/error/failure assertions are retained regression tests, not rewritten conditions",
+      "name": "Unsupported query",
+      "passCondition": "Q13-Q17 plus labelled synthetic no-data binding; distinct contract gaps, rejected mapping, infrastructure unavailable; no invented real non-detection",
+      "regressionEvidence": "docs/research/tryfan-pilot-s6-validation.json",
+      "regressionTests": [
+        {
+          "file": "pilots/atlas/tryfan/tests/query.test.mjs",
+          "test": "labelled code0 fixture remains not-classified, not detection or absence"
+        },
+        {
+          "file": "pilots/atlas/tryfan/tests/query.test.mjs",
+          "test": "missing registered WC is unavailable and never substituted with NRW (Q17)"
+        },
+        {
+          "file": "pilots/atlas/tryfan/tests/http.test.mjs",
+          "test": "H14 unsupported/current/property fallback remains qualified200"
+        }
+      ],
+      "result": "PASS",
+      "s6CheckId": "M",
+      "s6Evidence": "docs/research/tryfan-pilot-s6-results.json",
+      "slices": "S2,S4"
+    },
+    {
+      "id": "N",
+      "limitation": "Bounded original criterion; related detailed native/error/failure assertions are retained regression tests, not rewritten conditions",
+      "name": "Fresh process",
+      "passCondition": "Independent HTTP service loads only accepted generation, retained assets and declared runtime; equals CLI results",
+      "regressionEvidence": "docs/research/tryfan-pilot-s6-validation.json",
+      "regressionTests": [
+        {
+          "file": "pilots/atlas/tryfan/tests/http.test.mjs",
+          "test": "H17-H18 genuinely fresh serving and boundary-only consumer reproduce"
+        },
+        {
+          "file": "pilots/atlas/tryfan/tests/restart.test.mjs",
+          "test": "new CLI and service reproduce persisted current without construction globals"
+        }
+      ],
+      "result": "PASS",
+      "s6CheckId": "N",
+      "s6Evidence": "docs/research/tryfan-pilot-s6-results.json",
+      "slices": "S4,S5"
+    },
+    {
+      "id": "O",
+      "limitation": "Bounded original criterion; related detailed native/error/failure assertions are retained regression tests, not rewritten conditions",
+      "name": "Source immutability",
+      "passCondition": "All pinned assets and295 Welsh payload hashes unchanged before/after acceptance",
+      "regressionEvidence": "docs/research/tryfan-pilot-s6-validation.json",
+      "regressionTests": [
+        {
+          "file": "pilots/atlas/tryfan/tests/catalogue.test.mjs",
+          "test": "retained source hashes still match after all fixture operations"
+        },
+        {
+          "file": "pilots/atlas/tryfan/tests/publication.test.mjs",
+          "test": "published and staged states retain native source hashes and immutable history"
+        }
+      ],
+      "result": "PASS",
+      "s6CheckId": "O",
+      "s6Evidence": "docs/research/tryfan-pilot-s6-results.json",
+      "slices": "S1-S6"
+    },
+    {
+      "id": "P",
+      "limitation": "Bounded original criterion; related detailed native/error/failure assertions are retained regression tests, not rewritten conditions",
+      "name": "Pinned reader and display QA",
+      "passCondition": "Publish between bootstrap/query/tile reads; pinned old generation stays old. Fixed full-core/400m views use identical Lab010 pixels, footprints, legends/date/rights; no extra transfer. Do not claim pending original Lab010 camera gate complete",
+      "regressionEvidence": "docs/research/tryfan-pilot-s6-validation.json",
+      "regressionTests": [
+        {
+          "file": "pilots/atlas/tryfan/tests/http.test.mjs",
+          "test": "H08-H11 actual separate writer publication between active reader queries"
+        },
+        {
+          "file": "pilots/atlas/tryfan/tests/http.test.mjs",
+          "test": "H22 consumer code isolation and native portrayal geometry/raster"
+        }
+      ],
+      "result": "PASS",
+      "s6CheckId": "P",
+      "s6Evidence": "docs/research/tryfan-pilot-s6-results.json",
+      "slices": "S4,S5"
+    }
+  ],
+  "decision": "C - PILOT EXIT ACCEPTED",
+  "gates": [
+    {
+      "admissionEvidence": [
+        "WC",
+        "EXE",
+        "QUERY",
+        "APP"
+      ],
+      "cases": [
+        "B",
+        "D",
+        "E",
+        "F"
+      ],
+      "exitCriterion": "one accepted mixed-family catalogue must preserve native meanings and validate v1 references; no ingestion shortcut that turns imagery or classification into material truth.",
+      "id": "G1",
+      "limitation": "Only five finite retained families; no universal ontology/truth selection",
+      "name": "Representation",
+      "pilotEvidence": [
+        "docs/research/tryfan-pilot-s1.md",
+        "docs/research/tryfan-pilot-s2.md",
+        "docs/research/tryfan-pilot-s3.md",
+        "docs/research/tryfan-pilot-s4.md",
+        "docs/research/tryfan-pilot-s5.md"
+      ],
+      "s6Evidence": "docs/research/tryfan-pilot-s6-results.json",
+      "status": "PASS"
+    },
+    {
+      "admissionEvidence": [
+        "WALES",
+        "PERSIST",
+        "WC",
+        "EXE",
+        "APP"
+      ],
+      "cases": [
+        "A",
+        "L",
+        "G",
+        "O"
+      ],
+      "exitCriterion": "inspect exact input/resource/method references and rights from every returned answer. A missing original parent revision stays unknown; local SHA must not imply complete global lineage.",
+      "id": "G2",
+      "limitation": "Local hashes do not prove complete upstream releases or redistribution permission",
+      "name": "Identity/provenance",
+      "pilotEvidence": [
+        "docs/research/tryfan-pilot-s1.md",
+        "docs/research/tryfan-pilot-s2.md",
+        "docs/research/tryfan-pilot-s3.md",
+        "docs/research/tryfan-pilot-s4.md",
+        "docs/research/tryfan-pilot-s5.md"
+      ],
+      "s6Evidence": "docs/research/tryfan-pilot-s6-results.json",
+      "status": "PASS"
+    },
+    {
+      "admissionEvidence": [
+        "WALES",
+        "QUERY",
+        "LIMITS",
+        "WC",
+        "APP"
+      ],
+      "cases": [
+        "C",
+        "D",
+        "G"
+      ],
+      "exitCriterion": "native grid/CRS support, partial cells/regions and southern common fallback remain inspectable; no new seam/datum reconciliation is required or accepted.",
+      "id": "G3",
+      "limitation": "Qualified heightfields and map/native grids; no datum correction/3D/cliff recovery",
+      "name": "Space/scale",
+      "pilotEvidence": [
+        "docs/research/tryfan-pilot-s1.md",
+        "docs/research/tryfan-pilot-s2.md",
+        "docs/research/tryfan-pilot-s3.md",
+        "docs/research/tryfan-pilot-s4.md",
+        "docs/research/tryfan-pilot-s5.md"
+      ],
+      "s6Evidence": "docs/research/tryfan-pilot-s6-results.json",
+      "status": "PASS"
+    },
+    {
+      "admissionEvidence": [
+        "EXE",
+        "WC",
+        "DATED"
+      ],
+      "cases": [
+        "B",
+        "E",
+        "M"
+      ],
+      "exitCriterion": "dated/current questions differ, time-role fields survive restart, and no publication date or reference convention becomes an observation. Exe remains a regression reference, not a required Tryfan flood product.",
+      "id": "G4",
+      "limitation": "Tryfan known/unknown date roles; Exe reference/event regression remains external, no live dynamics",
+      "name": "Time/reference",
+      "pilotEvidence": [
+        "docs/research/tryfan-pilot-s1.md",
+        "docs/research/tryfan-pilot-s2.md",
+        "docs/research/tryfan-pilot-s3.md",
+        "docs/research/tryfan-pilot-s4.md",
+        "docs/research/tryfan-pilot-s5.md"
+      ],
+      "s6Evidence": "docs/research/tryfan-pilot-s6-results.json",
+      "status": "PASS"
+    },
+    {
+      "admissionEvidence": [
+        "QUERY",
+        "PERSIST"
+      ],
+      "cases": [
+        "G",
+        "H",
+        "I"
+      ],
+      "exitCriterion": "Welsh applicability recomputes exactly the summit chain, leaves south and unrelated semantic/appearance results intact, and preserves fixed-input replay; assess freshness, do not store truth flags.",
+      "id": "G5",
+      "limitation": "Two probes/two methods and one short chain; no generic scheduler",
+      "name": "Derivation/lifecycle",
+      "pilotEvidence": [
+        "docs/research/tryfan-pilot-s1.md",
+        "docs/research/tryfan-pilot-s2.md",
+        "docs/research/tryfan-pilot-s3.md",
+        "docs/research/tryfan-pilot-s4.md",
+        "docs/research/tryfan-pilot-s5.md"
+      ],
+      "s6Evidence": "docs/research/tryfan-pilot-s6-results.json",
+      "status": "PASS"
+    },
+    {
+      "admissionEvidence": [
+        "PERSIST",
+        "EXE"
+      ],
+      "cases": [
+        "A",
+        "H",
+        "I",
+        "J",
+        "K",
+        "N"
+      ],
+      "exitCriterion": "mixed-family publication pins one catalogue/asset view; interrupted staging and invalid candidates leave the old accepted view; recovery/retry reproduces it. Power-loss durability and concurrent publication are explicitly not demonstrated.",
+      "id": "G6",
+      "limitation": "Single-writer/local process failure only; no directory-fsync power-loss/cloud guarantee",
+      "name": "Persistence/publication",
+      "pilotEvidence": [
+        "docs/research/tryfan-pilot-s1.md",
+        "docs/research/tryfan-pilot-s2.md",
+        "docs/research/tryfan-pilot-s3.md",
+        "docs/research/tryfan-pilot-s4.md",
+        "docs/research/tryfan-pilot-s5.md"
+      ],
+      "s6Evidence": "docs/research/tryfan-pilot-s6-results.json",
+      "status": "PASS"
+    },
+    {
+      "admissionEvidence": [
+        "EXE",
+        "WC",
+        "APP"
+      ],
+      "cases": [
+        "B",
+        "D",
+        "E",
+        "F",
+        "L",
+        "M"
+      ],
+      "exitCriterion": "actual pilot point/support/property/time answers preserve qualifiers and reject mismatched meanings, unsupported present state, missing data and unavailable execution distinctly.",
+      "id": "G7",
+      "limitation": "Finite questions and native gaps; zero/non-detection tests stay labelled fixtures",
+      "name": "Query semantics",
+      "pilotEvidence": [
+        "docs/research/tryfan-pilot-s1.md",
+        "docs/research/tryfan-pilot-s2.md",
+        "docs/research/tryfan-pilot-s3.md",
+        "docs/research/tryfan-pilot-s4.md",
+        "docs/research/tryfan-pilot-s5.md"
+      ],
+      "s6Evidence": "docs/research/tryfan-pilot-s6-results.json",
+      "status": "PASS"
+    },
+    {
+      "admissionEvidence": [
+        "MODEL",
+        "LIFE",
+        "APP",
+        "SUN",
+        "REG",
+        "VEG"
+      ],
+      "cases": [
+        "B",
+        "F",
+        "G",
+        "J",
+        "L"
+      ],
+      "exitCriterion": "domain processing class/provenance is separate from claims, rendering and geometry. Keep an extension boundary for future observations/derivations; do not build a universal camera/river/material ontology.",
+      "id": "G8",
+      "limitation": "Credible bounded extension path, not arbitrary domains/DAGs",
+      "name": "Extensibility",
+      "pilotEvidence": [
+        "docs/research/tryfan-pilot-s1.md",
+        "docs/research/tryfan-pilot-s2.md",
+        "docs/research/tryfan-pilot-s3.md",
+        "docs/research/tryfan-pilot-s4.md",
+        "docs/research/tryfan-pilot-s5.md"
+      ],
+      "s6Evidence": "docs/research/tryfan-pilot-s6-results.json",
+      "status": "PASS"
+    },
+    {
+      "admissionEvidence": [
+        "REQ",
+        "PERSIST",
+        "WC",
+        "EXE",
+        "DATED"
+      ],
+      "cases": [
+        "A",
+        "C",
+        "N",
+        "H",
+        "O",
+        "P"
+      ],
+      "exitCriterion": "record reads, bytes, selectivity, query/update/replay cost and working space on this mixed retained slice before broader technology decisions. No new benchmark is needed just to repeat class viability.",
+      "id": "G9",
+      "limitation": "One local machine/warm OS caches; no SLA or production sizing",
+      "name": "Bounded implementation",
+      "pilotEvidence": [
+        "docs/research/tryfan-pilot-s1.md",
+        "docs/research/tryfan-pilot-s2.md",
+        "docs/research/tryfan-pilot-s3.md",
+        "docs/research/tryfan-pilot-s4.md",
+        "docs/research/tryfan-pilot-s5.md"
+      ],
+      "s6Evidence": "docs/research/tryfan-pilot-s6-results.json",
+      "status": "PASS"
+    }
+  ],
+  "nextTask": "Atlas measured storage, processing and serving architecture assessment",
+  "nextTaskBegun": false,
+  "pilotClosed": true,
+  "schema": "atlas-tryfan-s6-acceptance/v1"
+}

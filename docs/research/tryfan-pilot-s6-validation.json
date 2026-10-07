@@ -1,0 +1,963 @@
+{
+  "artifactSha256": {
+    "docs/research/atlas-research-map.md": "d536a2c6f62bd0b1d342b69808eb4d06daa811bee2b7f4cdc3a2524d6e659bbb",
+    "docs/research/atlas-research-state.md": "7e3e62cab72cd366ed77d0ecf0dffa7ff88c82e3f436b40f8c7ed38a359ef0f8",
+    "docs/research/tryfan-pilot-s6-acceptance.json": "3a20c9dfd3f0c58202fb45b9195c91703c6be223fb5006371a9a4a058c214bc2",
+    "docs/research/tryfan-pilot-s6-baseline.json": "a7bcae1b3fdf31c4100b295991b776ab98af8fc29cbedec41ad980e633492e34",
+    "docs/research/tryfan-pilot-s6-results.json": "e7a9474fc702ba3f3ab15a7d04b1fbbce127ba58174fe12c4fb49208ca78bafc",
+    "docs/research/tryfan-pilot-s6.md": "8f44bcaa535d97510cb9759653cba80fa1d5837a0db2a0a87ef8ded2678d7eef"
+  },
+  "canonicalThreads": 42,
+  "changedPaths": [
+    "docs/architecture.md",
+    "docs/development-log.md",
+    "docs/product-direction.md",
+    "docs/research/atlas-research-map.md",
+    "docs/research/atlas-research-state.md",
+    "docs/research/tryfan-pilot-s6-acceptance.json",
+    "docs/research/tryfan-pilot-s6-baseline.json",
+    "docs/research/tryfan-pilot-s6-results.json",
+    "docs/research/tryfan-pilot-s6-validation.json",
+    "docs/research/tryfan-pilot-s6.md",
+    "pilots/atlas/tryfan/README-S6.md",
+    "pilots/atlas/tryfan/measure.mjs",
+    "pilots/atlas/tryfan/rebuild-s6.mjs",
+    "pilots/atlas/tryfan/tests/acceptance.test.mjs",
+    "pilots/atlas/tryfan/tests/browser-s6.mjs",
+    "pilots/atlas/tryfan/tests/read-metrics-s6.mjs",
+    "pilots/atlas/tryfan/tests/visual-s6.mjs",
+    "pilots/atlas/tryfan/tests/warm-matrix-s6.mjs",
+    "pilots/atlas/tryfan/validate_s6.py"
+  ],
+  "checks": [
+    {
+      "check": "baseline expected clean main 0/0",
+      "passed": true
+    },
+    {
+      "check": "frozen original A-P",
+      "passed": true
+    },
+    {
+      "check": "all16 exercised",
+      "passed": true
+    },
+    {
+      "check": "nine gates independent exact wording mapping",
+      "passed": true
+    },
+    {
+      "check": "exact nine prospective exit criteria",
+      "passed": true
+    },
+    {
+      "check": "matrix exact original conditions",
+      "passed": true
+    },
+    {
+      "check": "expected frozen starting ancestor",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/README-S2.md",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/README-S3.md",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/README-S4.md",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/README-S5.md",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/README.md",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/adapters/native.py",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/adapters/retained_derivation.py",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/adapters/test_native.py",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/catalogue.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/cli.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/client/http-consumer.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/client/index.html",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/client/publication-consumer.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/client/session-consumer.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/client/view.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/delivery-cli.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/delivery-schema.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/delivery.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/dependencies.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/derivations.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/display-recipe.json",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/generations.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/identity.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/lifecycle-cli.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/lifecycle-matrix.json",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/measure_s1.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/measure_s2.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/measure_s3.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/measure_s4.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/measure_s5.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/publication-matrix.json",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/query-cli.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/query-matrix.json",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/query.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/semantic.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/server.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/serving-matrix.json",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/tests/browser-runner.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/tests/catalogue.test.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/tests/http-worker.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/tests/http.test.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/tests/lifecycle-worker.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/tests/lifecycle.test.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/tests/publication-browser.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/tests/publication-harness.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/tests/publication.test.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/tests/query.test.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/tests/restart.test.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/tests/service-process.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/tests/visual.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/tests/worker.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/update-cli.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/update-schema.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/updates.mjs",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/validate_s1.py",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/validate_s2.py",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/validate_s3.py",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/validate_s4.py",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/validate_s5.py",
+      "passed": true
+    },
+    {
+      "check": "frozen system pilots/atlas/tryfan/world.mjs",
+      "passed": true
+    },
+    {
+      "check": "historical S1",
+      "passed": true
+    },
+    {
+      "check": "historical S2",
+      "passed": true
+    },
+    {
+      "check": "historical S3",
+      "passed": true
+    },
+    {
+      "check": "historical S4",
+      "passed": true
+    },
+    {
+      "check": "historical S5",
+      "passed": true
+    },
+    {
+      "check": "all pre-existing files except navigation preserved",
+      "passed": true
+    },
+    {
+      "check": "1575 retained admission sources",
+      "passed": true
+    },
+    {
+      "check": "planning structure",
+      "passed": true
+    },
+    {
+      "check": "113 protected production hashes",
+      "passed": true
+    },
+    {
+      "check": "42 statuses unchanged",
+      "passed": true
+    },
+    {
+      "check": "development log append-only",
+      "passed": true
+    },
+    {
+      "check": "s6",
+      "passed": true
+    },
+    {
+      "check": "s1-s5",
+      "passed": true
+    },
+    {
+      "check": "s6-browser",
+      "passed": true
+    },
+    {
+      "check": "s5-browser",
+      "passed": true
+    },
+    {
+      "check": "native",
+      "passed": true
+    },
+    {
+      "check": "planning",
+      "passed": true
+    },
+    {
+      "check": "frozen",
+      "passed": true
+    },
+    {
+      "check": "qualified",
+      "passed": true
+    },
+    {
+      "check": "persistent",
+      "passed": true
+    },
+    {
+      "check": "exe",
+      "passed": true
+    },
+    {
+      "check": "s5-reproduction",
+      "passed": true
+    },
+    {
+      "check": "semantic-types",
+      "passed": true
+    },
+    {
+      "check": "lint",
+      "passed": true
+    },
+    {
+      "check": "build",
+      "passed": true
+    },
+    {
+      "check": "current remains frozen with310 verified assets",
+      "passed": true
+    },
+    {
+      "check": "all historical generations retained",
+      "passed": true
+    },
+    {
+      "check": "acceptance only allowed paths",
+      "passed": true
+    },
+    {
+      "check": "lightweight new artifacts",
+      "passed": true
+    },
+    {
+      "check": "no source products",
+      "passed": true
+    },
+    {
+      "check": "35 report sections",
+      "passed": true
+    },
+    {
+      "check": "nine gate report classifications",
+      "passed": true
+    },
+    {
+      "check": "canonical closure next docs/product-direction.md",
+      "passed": true
+    },
+    {
+      "check": "canonical closure next docs/architecture.md",
+      "passed": true
+    },
+    {
+      "check": "canonical closure next docs/development-log.md",
+      "passed": true
+    },
+    {
+      "check": "canonical closure next docs/research/atlas-research-state.md",
+      "passed": true
+    },
+    {
+      "check": "canonical closure next docs/research/atlas-research-map.md",
+      "passed": true
+    },
+    {
+      "check": "references anchors",
+      "passed": true
+    },
+    {
+      "check": "diff",
+      "passed": true
+    },
+    {
+      "check": "all retained source hashes unchanged after regressions",
+      "passed": true
+    },
+    {
+      "check": "all pre-existing tracked content still intact after regressions",
+      "passed": true
+    },
+    {
+      "check": "all113 protected hashes still intact after regressions",
+      "passed": true
+    }
+  ],
+  "codeSha256": {
+    "pilots/atlas/tryfan/README-S6.md": "df4c4de55c4f3ceb1aa4b7bf87fae71daaee4dbfe3ec9d332afdf013e13fecda",
+    "pilots/atlas/tryfan/measure.mjs": "e18ec47d532e956e890258bf179587c1f99f0322996499da168ff27de3ce5ba8",
+    "pilots/atlas/tryfan/rebuild-s6.mjs": "8b87bfe2e6c90bd3de68a90a1b0645c47c43227e24c09fd983d948bcbc8b139f",
+    "pilots/atlas/tryfan/tests/acceptance.test.mjs": "aa51bf576b88d438eec66294d0033c57f299f3075c13c56c2ea24ea6db87981b",
+    "pilots/atlas/tryfan/tests/browser-s6.mjs": "6d45bacf4cae574231d490408af8ef73835de42523111bba2cd8e09779af2073",
+    "pilots/atlas/tryfan/tests/read-metrics-s6.mjs": "2081511282ef489dfdfe2a3ad3fb1c6ef200a650a4191cbf909d83a11daf2828",
+    "pilots/atlas/tryfan/tests/visual-s6.mjs": "3776f152de9d9ebd1b33145a02fdfca014ebf200fc506ace14f6d917c2d0be62",
+    "pilots/atlas/tryfan/tests/warm-matrix-s6.mjs": "d284264c1e874e4bbdb41e7ceab6f986a32f236199724db50bc5677f00d9eaab",
+    "pilots/atlas/tryfan/validate_s6.py": "4c1f60233c035a26cefb49e89dd0fdc98afc166eddefecc52d46e5e6a1774f55"
+  },
+  "commands": [
+    {
+      "args": [
+        "node",
+        "--test",
+        "pilots/atlas/tryfan/tests/acceptance.test.mjs"
+      ],
+      "exitCode": 0,
+      "name": "s6"
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "pilots/atlas/tryfan/tests/catalogue.test.mjs",
+        "pilots/atlas/tryfan/tests/query.test.mjs",
+        "pilots/atlas/tryfan/tests/lifecycle.test.mjs",
+        "pilots/atlas/tryfan/tests/http.test.mjs",
+        "pilots/atlas/tryfan/tests/publication.test.mjs",
+        "pilots/atlas/tryfan/tests/restart.test.mjs"
+      ],
+      "exitCode": 0,
+      "name": "s1-s5"
+    },
+    {
+      "args": [
+        "node",
+        "pilots/atlas/tryfan/tests/browser-s6.mjs"
+      ],
+      "exitCode": 0,
+      "name": "s6-browser"
+    },
+    {
+      "args": [
+        "node",
+        "pilots/atlas/tryfan/tests/publication-browser.mjs"
+      ],
+      "exitCode": 0,
+      "name": "s5-browser"
+    },
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "pilots/atlas/tryfan/adapters/test_native.py"
+      ],
+      "exitCode": 0,
+      "name": "native"
+    },
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/regional-pilot-plan/test_plan.py"
+      ],
+      "exitCode": 0,
+      "name": "planning"
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "scripts/atlas/test_semantic_evidence_contract.mjs",
+        "scripts/atlas/test_terrain_hierarchy_contract.mjs",
+        "scripts/atlas/test_terrain_runtime.mjs",
+        "scripts/atlas/test_tryfan_terrain.mjs"
+      ],
+      "exitCode": 0,
+      "name": "frozen"
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "scripts/atlas/test_qualified_query_proof.mjs"
+      ],
+      "exitCode": 0,
+      "name": "qualified"
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "scripts/atlas/test_local_persistent_tryfan.mjs"
+      ],
+      "exitCode": 0,
+      "name": "persistent"
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "scripts/atlas/exe-water-query-proof/test-proof.mjs"
+      ],
+      "exitCode": 0,
+      "name": "exe"
+    },
+    {
+      "args": [
+        "node",
+        "pilots/atlas/tryfan/measure_s5.mjs",
+        "--check"
+      ],
+      "exitCode": 0,
+      "name": "s5-reproduction"
+    },
+    {
+      "args": [
+        "npx.cmd",
+        "tsc",
+        "-p",
+        "scripts/atlas/semantic-evidence/tsconfig.json"
+      ],
+      "exitCode": 0,
+      "name": "semantic-types"
+    },
+    {
+      "args": [
+        "npm.cmd",
+        "run",
+        "lint"
+      ],
+      "exitCode": 0,
+      "name": "lint"
+    },
+    {
+      "args": [
+        "npm.cmd",
+        "run",
+        "build"
+      ],
+      "exitCode": 0,
+      "name": "build"
+    },
+    {
+      "args": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0,
+      "name": "diff"
+    }
+  ],
+  "decision": "C - PILOT EXIT ACCEPTED",
+  "errors": [],
+  "finalReview": {
+    "codeAndReportHashesCurrent": true,
+    "concreteRegressionSelectorsVerified": 31,
+    "focusedRegressionTestCounts": {
+      "exe": 20,
+      "frozen": 64,
+      "native": 9,
+      "persistent": 18,
+      "planning": 22,
+      "qualified": 17,
+      "s1-s5": 121,
+      "s6": 7
+    },
+    "focusedRegressionTests": 278,
+    "originalRawReceiptsPreserved": true,
+    "scope": "S6 acceptance/measurement/reporting only; existing60 pilot files and799 pre-existing non-navigation files unchanged; no post-pilot functionality, source payloads or private access."
+  },
+  "gates": [
+    {
+      "admissionEvidence": [
+        "WC",
+        "EXE",
+        "QUERY",
+        "APP"
+      ],
+      "cases": [
+        "B",
+        "D",
+        "E",
+        "F"
+      ],
+      "exitCriterion": "one accepted mixed-family catalogue must preserve native meanings and validate v1 references; no ingestion shortcut that turns imagery or classification into material truth.",
+      "id": "G1",
+      "limitation": "Only five finite retained families; no universal ontology/truth selection",
+      "name": "Representation",
+      "pilotEvidence": [
+        "docs/research/tryfan-pilot-s1.md",
+        "docs/research/tryfan-pilot-s2.md",
+        "docs/research/tryfan-pilot-s3.md",
+        "docs/research/tryfan-pilot-s4.md",
+        "docs/research/tryfan-pilot-s5.md"
+      ],
+      "s6Evidence": "docs/research/tryfan-pilot-s6-results.json",
+      "status": "PASS"
+    },
+    {
+      "admissionEvidence": [
+        "WALES",
+        "PERSIST",
+        "WC",
+        "EXE",
+        "APP"
+      ],
+      "cases": [
+        "A",
+        "L",
+        "G",
+        "O"
+      ],
+      "exitCriterion": "inspect exact input/resource/method references and rights from every returned answer. A missing original parent revision stays unknown; local SHA must not imply complete global lineage.",
+      "id": "G2",
+      "limitation": "Local hashes do not prove complete upstream releases or redistribution permission",
+      "name": "Identity/provenance",
+      "pilotEvidence": [
+        "docs/research/tryfan-pilot-s1.md",
+        "docs/research/tryfan-pilot-s2.md",
+        "docs/research/tryfan-pilot-s3.md",
+        "docs/research/tryfan-pilot-s4.md",
+        "docs/research/tryfan-pilot-s5.md"
+      ],
+      "s6Evidence": "docs/research/tryfan-pilot-s6-results.json",
+      "status": "PASS"
+    },
+    {
+      "admissionEvidence": [
+        "WALES",
+        "QUERY",
+        "LIMITS",
+        "WC",
+        "APP"
+      ],
+      "cases": [
+        "C",
+        "D",
+        "G"
+      ],
+      "exitCriterion": "native grid/CRS support, partial cells/regions and southern common fallback remain inspectable; no new seam/datum reconciliation is required or accepted.",
+      "id": "G3",
+      "limitation": "Qualified heightfields and map/native grids; no datum correction/3D/cliff recovery",
+      "name": "Space/scale",
+      "pilotEvidence": [
+        "docs/research/tryfan-pilot-s1.md",
+        "docs/research/tryfan-pilot-s2.md",
+        "docs/research/tryfan-pilot-s3.md",
+        "docs/research/tryfan-pilot-s4.md",
+        "docs/research/tryfan-pilot-s5.md"
+      ],
+      "s6Evidence": "docs/research/tryfan-pilot-s6-results.json",
+      "status": "PASS"
+    },
+    {
+      "admissionEvidence": [
+        "EXE",
+        "WC",
+        "DATED"
+      ],
+      "cases": [
+        "B",
+        "E",
+        "M"
+      ],
+      "exitCriterion": "dated/current questions differ, time-role fields survive restart, and no publication date or reference convention becomes an observation. Exe remains a regression reference, not a required Tryfan flood product.",
+      "id": "G4",
+      "limitation": "Tryfan known/unknown date roles; Exe reference/event regression remains external, no live dynamics",
+      "name": "Time/reference",
+      "pilotEvidence": [
+        "docs/research/tryfan-pilot-s1.md",
+        "docs/research/tryfan-pilot-s2.md",
+        "docs/research/tryfan-pilot-s3.md",
+        "docs/research/tryfan-pilot-s4.md",
+        "docs/research/tryfan-pilot-s5.md"
+      ],
+      "s6Evidence": "docs/research/tryfan-pilot-s6-results.json",
+      "status": "PASS"
+    },
+    {
+      "admissionEvidence": [
+        "QUERY",
+        "PERSIST"
+      ],
+      "cases": [
+        "G",
+        "H",
+        "I"
+      ],
+      "exitCriterion": "Welsh applicability recomputes exactly the summit chain, leaves south and unrelated semantic/appearance results intact, and preserves fixed-input replay; assess freshness, do not store truth flags.",
+      "id": "G5",
+      "limitation": "Two probes/two methods and one short chain; no generic scheduler",
+      "name": "Derivation/lifecycle",
+      "pilotEvidence": [
+        "docs/research/tryfan-pilot-s1.md",
+        "docs/research/tryfan-pilot-s2.md",
+        "docs/research/tryfan-pilot-s3.md",
+        "docs/research/tryfan-pilot-s4.md",
+        "docs/research/tryfan-pilot-s5.md"
+      ],
+      "s6Evidence": "docs/research/tryfan-pilot-s6-results.json",
+      "status": "PASS"
+    },
+    {
+      "admissionEvidence": [
+        "PERSIST",
+        "EXE"
+      ],
+      "cases": [
+        "A",
+        "H",
+        "I",
+        "J",
+        "K",
+        "N"
+      ],
+      "exitCriterion": "mixed-family publication pins one catalogue/asset view; interrupted staging and invalid candidates leave the old accepted view; recovery/retry reproduces it. Power-loss durability and concurrent publication are explicitly not demonstrated.",
+      "id": "G6",
+      "limitation": "Single-writer/local process failure only; no directory-fsync power-loss/cloud guarantee",
+      "name": "Persistence/publication",
+      "pilotEvidence": [
+        "docs/research/tryfan-pilot-s1.md",
+        "docs/research/tryfan-pilot-s2.md",
+        "docs/research/tryfan-pilot-s3.md",
+        "docs/research/tryfan-pilot-s4.md",
+        "docs/research/tryfan-pilot-s5.md"
+      ],
+      "s6Evidence": "docs/research/tryfan-pilot-s6-results.json",
+      "status": "PASS"
+    },
+    {
+      "admissionEvidence": [
+        "EXE",
+        "WC",
+        "APP"
+      ],
+      "cases": [
+        "B",
+        "D",
+        "E",
+        "F",
+        "L",
+        "M"
+      ],
+      "exitCriterion": "actual pilot point/support/property/time answers preserve qualifiers and reject mismatched meanings, unsupported present state, missing data and unavailable execution distinctly.",
+      "id": "G7",
+      "limitation": "Finite questions and native gaps; zero/non-detection tests stay labelled fixtures",
+      "name": "Query semantics",
+      "pilotEvidence": [
+        "docs/research/tryfan-pilot-s1.md",
+        "docs/research/tryfan-pilot-s2.md",
+        "docs/research/tryfan-pilot-s3.md",
+        "docs/research/tryfan-pilot-s4.md",
+        "docs/research/tryfan-pilot-s5.md"
+      ],
+      "s6Evidence": "docs/research/tryfan-pilot-s6-results.json",
+      "status": "PASS"
+    },
+    {
+      "admissionEvidence": [
+        "MODEL",
+        "LIFE",
+        "APP",
+        "SUN",
+        "REG",
+        "VEG"
+      ],
+      "cases": [
+        "B",
+        "F",
+        "G",
+        "J",
+        "L"
+      ],
+      "exitCriterion": "domain processing class/provenance is separate from claims, rendering and geometry. Keep an extension boundary for future observations/derivations; do not build a universal camera/river/material ontology.",
+      "id": "G8",
+      "limitation": "Credible bounded extension path, not arbitrary domains/DAGs",
+      "name": "Extensibility",
+      "pilotEvidence": [
+        "docs/research/tryfan-pilot-s1.md",
+        "docs/research/tryfan-pilot-s2.md",
+        "docs/research/tryfan-pilot-s3.md",
+        "docs/research/tryfan-pilot-s4.md",
+        "docs/research/tryfan-pilot-s5.md"
+      ],
+      "s6Evidence": "docs/research/tryfan-pilot-s6-results.json",
+      "status": "PASS"
+    },
+    {
+      "admissionEvidence": [
+        "REQ",
+        "PERSIST",
+        "WC",
+        "EXE",
+        "DATED"
+      ],
+      "cases": [
+        "A",
+        "C",
+        "N",
+        "H",
+        "O",
+        "P"
+      ],
+      "exitCriterion": "record reads, bytes, selectivity, query/update/replay cost and working space on this mixed retained slice before broader technology decisions. No new benchmark is needed just to repeat class viability.",
+      "id": "G9",
+      "limitation": "One local machine/warm OS caches; no SLA or production sizing",
+      "name": "Bounded implementation",
+      "pilotEvidence": [
+        "docs/research/tryfan-pilot-s1.md",
+        "docs/research/tryfan-pilot-s2.md",
+        "docs/research/tryfan-pilot-s3.md",
+        "docs/research/tryfan-pilot-s4.md",
+        "docs/research/tryfan-pilot-s5.md"
+      ],
+      "s6Evidence": "docs/research/tryfan-pilot-s6-results.json",
+      "status": "PASS"
+    }
+  ],
+  "historicalMismatches": [],
+  "missingReferences": [],
+  "nextTask": "Atlas measured storage, processing and serving architecture assessment",
+  "protectedHashes": 113,
+  "publishedGeneration": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+  "references": 524,
+  "retainedVerification": {
+    "artifacts": 310,
+    "bytes": 42473107
+  },
+  "schema": "atlas-tryfan-s6-validation/v1",
+  "sourceAdmission": {
+    "groups": {
+      "Complete retained Exe directory": {
+        "bytes": 10295691,
+        "files": 66,
+        "verifiedEntriesSha256": "7043358dd1d3c10efe1b3483ac65e6ec2b5d2c637c4eff5f3d7a6df77082794a"
+      },
+      "July native post-L2A RGB and SCL": {
+        "bytes": 714544,
+        "files": 4,
+        "verifiedEntriesSha256": "c91c42dcad464a78a200ee6ef0a945e0b246eff75830efa2b8ed6e10a47e060f"
+      },
+      "Lab010 existing natural-colour preparation": {
+        "bytes": 1305121,
+        "files": 3,
+        "verifiedEntriesSha256": "86edf76941cbf6b48bc49e198dceb3f64debd0a7200ab3c83df32d06823113ee"
+      },
+      "Parked Swiss metadata only": {
+        "bytes": 19357606,
+        "files": 112,
+        "verifiedEntriesSha256": "e0179dbb4695a66bbf3cb61f2a215d88dc45bdcfd9c09e886da9fd0c9d6fc2cc"
+      },
+      "Pinned Exe sources/documents": {
+        "bytes": 9892590,
+        "files": 31,
+        "verifiedEntriesSha256": "0e1301af8fcdb00f126ba2886216b2a96bfdd68de71e14c6079beece12e6342a"
+      },
+      "SWISSIMAGE manifest": {
+        "bytes": 218993,
+        "files": 1,
+        "verifiedEntriesSha256": "9e3dcb15bd21260896eab7be966f8fdc59cf2e729ecc952fbc60f489c4873225"
+      },
+      "SWISSIMAGE prepared": {
+        "bytes": 1564233043,
+        "files": 1084,
+        "verifiedEntriesSha256": "944ee3136c7ac91224b59ec369fd8bc90e4bbd299a51b65d6a09a8395a35a327"
+      },
+      "SWISSIMAGE source": {
+        "bytes": 186259028,
+        "files": 4,
+        "verifiedEntriesSha256": "9edd9aaf20eb3481b5b9aec077e715d1d350d73cd4885474cac24cabeec5f203"
+      },
+      "Tryfan native semantic crop and habitat": {
+        "bytes": 563835,
+        "files": 2,
+        "verifiedEntriesSha256": "1d4388d183544fd3a135bde05dece5b6950bfcd77e969c2ef518cd5df98d5771"
+      },
+      "Tryfan source and pinned common samples": {
+        "bytes": 16046943,
+        "files": 5,
+        "verifiedEntriesSha256": "16bbf4ef3222be6619ccfb316e0d5b8e7c86a117476d14d98fae76c61a222e1d"
+      },
+      "Welsh prepared terrain": {
+        "bytes": 23889573,
+        "files": 295,
+        "verifiedEntriesSha256": "6091994b08ed611dd1a44d4be1700f2858d9eb197a5c248189f97a5256f2b593"
+      }
+    },
+    "noWritesOrAcquisition": true,
+    "uniqueFiles": 1575
+  },
+  "unchangedTrackedFiles": 799
+}

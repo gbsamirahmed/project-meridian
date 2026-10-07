@@ -1,0 +1,489 @@
+{
+  "admissionGates": [
+    {
+      "admissionOnly": true,
+      "id": "G1",
+      "proofs": [
+        "WC",
+        "EXE",
+        "QUERY",
+        "APP"
+      ],
+      "rationale": "Different forms compose without contract change; raw/processed source meaning retained.",
+      "status": "PASS"
+    },
+    {
+      "admissionOnly": true,
+      "id": "G2",
+      "proofs": [
+        "WALES",
+        "PERSIST",
+        "WC",
+        "EXE",
+        "APP"
+      ],
+      "rationale": "Exact local bytes/IDs and known/unknown upstream lineage/rights preserved.",
+      "status": "PASS"
+    },
+    {
+      "admissionOnly": true,
+      "id": "G3",
+      "proofs": [
+        "WALES",
+        "QUERY",
+        "LIMITS",
+        "WC",
+        "APP"
+      ],
+      "rationale": "Coverage/use/scale semantics sufficient; no approved Swiss reconciliation required.",
+      "status": "PASS"
+    },
+    {
+      "admissionOnly": true,
+      "id": "G4",
+      "proofs": [
+        "EXE",
+        "WC",
+        "DATED"
+      ],
+      "rationale": "Observation/event/contributor/reference time survives real queries/restart; live state unsupported.",
+      "status": "PASS"
+    },
+    {
+      "admissionOnly": true,
+      "id": "G5",
+      "proofs": [
+        "QUERY",
+        "PERSIST"
+      ],
+      "rationale": "Two-stage scoped refinement and fresh-pixel replay; only summit chain changes.",
+      "status": "PASS"
+    },
+    {
+      "admissionOnly": true,
+      "id": "G6",
+      "proofs": [
+        "PERSIST",
+        "EXE"
+      ],
+      "rationale": "Real restarts, exit73 before pointer, invalid candidate/corruption tests. Single writer/process failure scope.",
+      "status": "PASS"
+    },
+    {
+      "admissionOnly": true,
+      "id": "G7",
+      "proofs": [
+        "EXE",
+        "WC",
+        "APP"
+      ],
+      "rationale": "Property/purpose/mode/reference fallback rejects incompatible answers and current state.",
+      "status": "PASS"
+    },
+    {
+      "admissionOnly": true,
+      "id": "G8",
+      "proofs": [
+        "MODEL",
+        "LIFE",
+        "APP",
+        "SUN",
+        "REG",
+        "VEG"
+      ],
+      "rationale": "Open science changes future claims/representations, not foundational mandatory identity/lifecycle.",
+      "status": "PASS"
+    },
+    {
+      "admissionOnly": true,
+      "id": "G9",
+      "proofs": [
+        "REQ",
+        "PERSIST",
+        "WC",
+        "EXE",
+        "DATED"
+      ],
+      "rationale": "Known finite inputs/R1-R12 plus unproven integrated serving become pilot exit tests, not abstract prerequisites.",
+      "status": "PASS"
+    }
+  ],
+  "branch": "main",
+  "canonicalThreads": 42,
+  "clean": true,
+  "commit": "fc441c5619e1c8448c057e0796ee334884e4ed02",
+  "counts": {
+    "artifacts": 310,
+    "families": 5,
+    "representations": 8
+  },
+  "current": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+  "divergence": "0\t0",
+  "exitCriteria": [
+    {
+      "id": "A",
+      "name": "Cold restart",
+      "passCondition": "New CLI process recovers identical qualified results and identities",
+      "slices": "S1,S3"
+    },
+    {
+      "id": "B",
+      "name": "Integrated query",
+      "passCondition": "Q21 one-request coordinator resolves actual terrain/derived/semantic/appearance answers from one generation with separate native times/scopes; no source ranking. Q09 coexistence still required.",
+      "slices": "S2,S3"
+    },
+    {
+      "id": "C",
+      "name": "Terrain serving",
+      "passCondition": "Exact Terrarium bytes and unchanged hierarchy eligibility; missing tile explicit",
+      "slices": "S4"
+    },
+    {
+      "id": "D",
+      "name": "Dense semantic serving/query",
+      "passCondition": "Q05-Q07/Q11/Q19/Q20 native grid, code, mapping and assignment counts",
+      "slices": "S2,S4"
+    },
+    {
+      "id": "E",
+      "name": "Vector semantic serving/query",
+      "passCondition": "Q08;193 native records, source-scoped identity, holes/boundaries and survey qualifiers",
+      "slices": "S2,S4"
+    },
+    {
+      "id": "F",
+      "name": "Coexistence",
+      "passCondition": "Q09 both qualified claims, no winner",
+      "slices": "S2"
+    },
+    {
+      "id": "G",
+      "name": "Derived result",
+      "passCondition": "Q02-Q03 match original method/values/scopes and exact upstream dependency",
+      "slices": "S3"
+    },
+    {
+      "id": "H",
+      "name": "Scoped update",
+      "passCondition": "U1 recomputes2 summit revisions only, retains4 historical AWS; southern/semantic/appearance unchanged",
+      "slices": "S5"
+    },
+    {
+      "id": "I",
+      "name": "Historical replay",
+      "passCondition": "Recalculate4 AWS and2 Welsh records from retained pixels/method; old generation identical",
+      "slices": "S3,S5"
+    },
+    {
+      "id": "J",
+      "name": "Mixed-family publication",
+      "passCondition": "U2 terrain+NRW registration changes atomically, no impossible intermediate reader view",
+      "slices": "S5"
+    },
+    {
+      "id": "K",
+      "name": "Interrupted publication",
+      "passCondition": "F1-F3 abrupt subprocess exit before root switch leaves old root queryable after restart; retry coherent",
+      "slices": "S5"
+    },
+    {
+      "id": "L",
+      "name": "Provenance trace",
+      "passCondition": "Q18 exact source/product/representation/method/dependencies/rights and honest unknowns",
+      "slices": "S2,S4"
+    },
+    {
+      "id": "M",
+      "name": "Unsupported query",
+      "passCondition": "Q13-Q17 plus labelled synthetic no-data binding; distinct contract gaps, rejected mapping, infrastructure unavailable; no invented real non-detection",
+      "slices": "S2,S4"
+    },
+    {
+      "id": "N",
+      "name": "Fresh process",
+      "passCondition": "Independent HTTP service loads only accepted generation, retained assets and declared runtime; equals CLI results",
+      "slices": "S4,S5"
+    },
+    {
+      "id": "O",
+      "name": "Source immutability",
+      "passCondition": "All pinned assets and295 Welsh payload hashes unchanged before/after acceptance",
+      "slices": "S1-S6"
+    },
+    {
+      "id": "P",
+      "name": "Pinned reader and display QA",
+      "passCondition": "Publish between bootstrap/query/tile reads; pinned old generation stays old. Fixed full-core/400m views use identical Lab010 pixels, footprints, legends/date/rights; no extra transfer. Do not claim pending original Lab010 camera gate complete",
+      "slices": "S4,S5"
+    }
+  ],
+  "expectedS6Modules": [
+    "pilots/atlas/tryfan/measure.mjs",
+    "pilots/atlas/tryfan/tests/acceptance.test.mjs",
+    "pilots/atlas/tryfan/README.md"
+  ],
+  "history": [
+    {
+      "bytes": 1241281,
+      "generation": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+      "parent": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+      "results": 6,
+      "serving": true,
+      "sha256": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+      "stage": "regional"
+    },
+    {
+      "bytes": 1212494,
+      "generation": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+      "parent": "6d8a127e4924d3b165f143fbeaab39467e4b0e45addf706e648e9c2c2bc948b6",
+      "results": 4,
+      "serving": true,
+      "sha256": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+      "stage": "common"
+    },
+    {
+      "bytes": 1091184,
+      "generation": "6d8a127e4924d3b165f143fbeaab39467e4b0e45addf706e648e9c2c2bc948b6",
+      "parent": "e0e2d20a1d065c713e954283443c8a7762dd91ab00fa5856b1fe75d1860a51be",
+      "results": 4,
+      "serving": true,
+      "sha256": "6d8a127e4924d3b165f143fbeaab39467e4b0e45addf706e648e9c2c2bc948b6",
+      "stage": "common"
+    },
+    {
+      "bytes": 1085705,
+      "generation": "e0e2d20a1d065c713e954283443c8a7762dd91ab00fa5856b1fe75d1860a51be",
+      "parent": "2ffa20f9ac33123c3babb62381ba4559cbd045fb180d978a9ed6228514ed9b92",
+      "results": 4,
+      "serving": false,
+      "sha256": "e0e2d20a1d065c713e954283443c8a7762dd91ab00fa5856b1fe75d1860a51be",
+      "stage": "common"
+    },
+    {
+      "bytes": 343264,
+      "generation": "2ffa20f9ac33123c3babb62381ba4559cbd045fb180d978a9ed6228514ed9b92",
+      "parent": "3408e5e9909c47b7e16d9d136f39cffa548c86808893468aa4a0de3d599c1f8c",
+      "results": 0,
+      "serving": false,
+      "sha256": "2ffa20f9ac33123c3babb62381ba4559cbd045fb180d978a9ed6228514ed9b92",
+      "stage": "registration"
+    },
+    {
+      "bytes": 342954,
+      "generation": "3408e5e9909c47b7e16d9d136f39cffa548c86808893468aa4a0de3d599c1f8c",
+      "parent": "e967c5066f42839b5cd50bd76df225c2bc0736b3ebd65706f9fd0adad3b2f53f",
+      "results": 0,
+      "serving": false,
+      "sha256": "3408e5e9909c47b7e16d9d136f39cffa548c86808893468aa4a0de3d599c1f8c",
+      "stage": "registration"
+    },
+    {
+      "bytes": 341203,
+      "generation": "e967c5066f42839b5cd50bd76df225c2bc0736b3ebd65706f9fd0adad3b2f53f",
+      "parent": null,
+      "results": 0,
+      "serving": false,
+      "sha256": "e967c5066f42839b5cd50bd76df225c2bc0736b3ebd65706f9fd0adad3b2f53f",
+      "stage": "registration"
+    }
+  ],
+  "limitations": [
+    "Single-writer/local process failures, not power loss or distributed atomicity",
+    "Current-ancestry serving only;16context limit",
+    "No query/byte cache;conservative metadata validation",
+    "Two probes/two methods;no arbitrary derivation engine",
+    "Unknown epochs/datum/source rights remain qualified",
+    "Appearance unresolved/non-blocking;Swiss multiview parked",
+    "Lab010 original fixed-camera gate pending, separate from pilot portrayal"
+  ],
+  "measurementProtocol": "Five fresh processes;20 warm batches;1 and4 readers,100requests each;raw median/p95,bytes,memory,cache/replay; no SLA",
+  "planSha256": "d9b9c99cb5d0277998439bc51c28990643e6c0feb9c2361b0258ba46ca5ebf46",
+  "protectedProductionHashes": 113,
+  "reports": {
+    "S1": {
+      "decision": "C - S1 SUCCESS",
+      "report": "docs/research/tryfan-pilot-s1.md",
+      "sha256": "acfe5160a3eb024ab0d0cd14f9502842eb552872683e6738e7c2c855079d99e2",
+      "validationChecks": 183
+    },
+    "S2": {
+      "decision": "C - S2 SUCCESS",
+      "report": "docs/research/tryfan-pilot-s2.md",
+      "sha256": "0badb0165a8064d00bc6c439ffdd53039ec22981525607d2e6e0e085d1499100",
+      "validationChecks": 209
+    },
+    "S3": {
+      "decision": "C - S3 SUCCESS",
+      "report": "docs/research/tryfan-pilot-s3.md",
+      "sha256": "e443005b9efb4e0ce3fa7a0bf988faacd1da6f5f1fdc3e49e90d869514f2df5d",
+      "validationChecks": 212
+    },
+    "S4": {
+      "decision": "C - S4 SUCCESS",
+      "report": "docs/research/tryfan-pilot-s4.md",
+      "sha256": "ad4885b17c802d1dc03735719b7579c1a02a2c176ce16b3165961af9933ea5f3",
+      "validationChecks": 219
+    },
+    "S5": {
+      "decision": "C - S5 SUCCESS",
+      "report": "docs/research/tryfan-pilot-s5.md",
+      "sha256": "cc719fda3be8f8115b3f419ab1bc327ebeb0981a1b7604e534f3a5aeb5e46325",
+      "validationChecks": 249
+    }
+  },
+  "resultRefs": [
+    {
+      "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+      "probe": "summit",
+      "property": "slope",
+      "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839"
+    },
+    {
+      "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+      "probe": "summit",
+      "property": "area-ratio",
+      "revision": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527"
+    },
+    {
+      "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+      "probe": "southern-observer",
+      "property": "slope",
+      "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+    },
+    {
+      "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+      "probe": "southern-observer",
+      "property": "area-ratio",
+      "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+    },
+    {
+      "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+      "probe": "summit",
+      "property": "slope",
+      "revision": "4f4d6ae182d3821d1a002c855d8b886112c0aea0e13af2023b10d5294f70ef93"
+    },
+    {
+      "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+      "probe": "summit",
+      "property": "area-ratio",
+      "revision": "dbc1746d41c191d251628d3409d5db3bf4064c8c29e9f0ba50a332804196c1d2"
+    }
+  ],
+  "schema": "atlas-tryfan-s6-frozen-baseline/v1",
+  "scope": {
+    "areaKm2": 9,
+    "boundary": "Core half-open west/south included east/north excluded; native raster indexing west/north included east/south excluded",
+    "bounds": [
+      264900,
+      357800,
+      267900,
+      360800
+    ],
+    "context": "Only retained parent/common support; no query expansion or network fallback",
+    "crs": "EPSG:27700",
+    "probes": [
+      {
+        "centre": [
+          266405,
+          359387
+        ],
+        "id": "summit",
+        "reason": "Existing summit reference; rocky mountain target, not an asserted class.",
+        "side": 400
+      },
+      {
+        "centre": [
+          265876.05347833806,
+          358339.7631202109
+        ],
+        "id": "southern-observer",
+        "reason": "Existing photographic observer reference; mixed-surface opportunity, not a class assertion.",
+        "side": 400
+      },
+      {
+        "centre": [
+          266400,
+          360450
+        ],
+        "id": "northern-context",
+        "reason": "Fixed north-central lower-context part of the established window; vegetation/water opportunity only.",
+        "side": 400
+      },
+      {
+        "centre": [
+          264800,
+          357700
+        ],
+        "id": "outside",
+        "reason": "Inherited WorldCover miss"
+      }
+    ]
+  },
+  "sources": {
+    "artifacts": 310,
+    "bytes": 42473107
+  },
+  "systemSha256": {
+    "pilots/atlas/tryfan/README-S2.md": "52b8038f85970e6e91a621ac9118c57cad13e36756747c603402c8d1ea18703f",
+    "pilots/atlas/tryfan/README-S3.md": "794a3104c4075fb66a0d75c6a378fd1a48427b54070e6d4b77678a9dc6777a06",
+    "pilots/atlas/tryfan/README-S4.md": "177860a7550956b3f5122e15d585f579b4ac3dbc0e94fc97b1d9b0e10dc11bbd",
+    "pilots/atlas/tryfan/README-S5.md": "62f4f84bca22245ce4a200afb0c025e75e3640640c7499e07927d7d4b7a4b5ad",
+    "pilots/atlas/tryfan/README.md": "c4b4202b75de9144ae668e8f2151e73ff9a2820ec1469fb5ca67774a3bfb0978",
+    "pilots/atlas/tryfan/adapters/native.py": "b86601c49f048e4288fc748b8e75f269298cdeb74107d43e62fc33d10240c6c7",
+    "pilots/atlas/tryfan/adapters/retained_derivation.py": "946f921d0cd1cfcf35fb1786f5cb1715400dda689f3eb1a065775ab179f98642",
+    "pilots/atlas/tryfan/adapters/test_native.py": "d6f272ddede8ddf4684cc02fc6ded2c15de0f3c52b208f66ae6538be2c2fb01f",
+    "pilots/atlas/tryfan/catalogue.mjs": "c8d52c9355bc030ae0e97f8767cb62088830606acdc39c6b32fb09e6edcbe52b",
+    "pilots/atlas/tryfan/cli.mjs": "f8cd012b7694b21c448bcfa4adf67597896f18cd43e3e75a0caea7ff60756db4",
+    "pilots/atlas/tryfan/client/http-consumer.mjs": "195f0db6af20e51b026338e4d0a2becffcb237510d3e3516697a390e1920d428",
+    "pilots/atlas/tryfan/client/index.html": "f7577496fe05dbd815d80a90248ad83bce1db17948eec4092976e583c11b3aaa",
+    "pilots/atlas/tryfan/client/publication-consumer.mjs": "83ca0d903fcd051f2e48df3e37a736d2fa98a67da411244d81403d21de120981",
+    "pilots/atlas/tryfan/client/session-consumer.mjs": "fe9a9676944ddfa086d04f81e787be100615ff09b0d23d156c9cc17e23fa1512",
+    "pilots/atlas/tryfan/client/view.mjs": "6f011921cd5005f9d7fc3bda49df783483c4ae675b667a2eedd6576a9509be5e",
+    "pilots/atlas/tryfan/delivery-cli.mjs": "b64bc31b2f3a15fd1285a45bdb284be4e0650fe9343b10b38afc72a3c24f3086",
+    "pilots/atlas/tryfan/delivery-schema.mjs": "46030ddc81374123ef9b948ea04075435567b6c5250b40a95e0083cf31e8b48f",
+    "pilots/atlas/tryfan/delivery.mjs": "23a4e8be8d449ad57956472d333fb7eeda9cc4b177f195d749d15154f3e6e61d",
+    "pilots/atlas/tryfan/dependencies.mjs": "6f07d7f48e1dc94eb08e1f1a3b74de29acd3053a60ed169ee4be4c57b93940d9",
+    "pilots/atlas/tryfan/derivations.mjs": "c750339fb121626964bb20dc173bbdc4b16d30b0b8ec0bba55ad3045d4a075c3",
+    "pilots/atlas/tryfan/display-recipe.json": "74347f95578fc3d479a54d44b2defe5c7ddd35fa84e0a48a497ce3059ab74060",
+    "pilots/atlas/tryfan/generations.mjs": "1b50f5d879d6ed5fc39d9a42cf56dec9ea103c8b928876fb8585795897e5d03d",
+    "pilots/atlas/tryfan/identity.mjs": "04eaf65fa268a6ad875cadb4dfe04ee6892686844069555186f05d3858ddc5f2",
+    "pilots/atlas/tryfan/lifecycle-cli.mjs": "e653ccc5987c873f1dfe6b2c541d271ecb399532402f628a783bd2b3a16f2abd",
+    "pilots/atlas/tryfan/lifecycle-matrix.json": "d23fed53307b481389667611000a767c3f2a50fed2daa40bfd508e276cced632",
+    "pilots/atlas/tryfan/measure_s1.mjs": "17aba420be8bd4267ca648ff23b979fd824343a8320e760b4bd814b8ec72c85f",
+    "pilots/atlas/tryfan/measure_s2.mjs": "f8dabc594eb7633cdb9b013d05de2c62067fb39b82ba71515172c015051690c2",
+    "pilots/atlas/tryfan/measure_s3.mjs": "15229b9826950ff092dfdd5b3d3145bc0c5d7faad9cca86f68fe75114e3af289",
+    "pilots/atlas/tryfan/measure_s4.mjs": "920503970772180866cbaa0e1e44e59edad961c805a71270242d03cd2b11d40b",
+    "pilots/atlas/tryfan/measure_s5.mjs": "85b954827273df4dbba4c1e2f583b5534f2c3e403e7d5425dee769381138bf1c",
+    "pilots/atlas/tryfan/publication-matrix.json": "9e7cfe6312e85bdbf4d7ba57b09aaf9d76ee00c81e60200cfb2239790e1b261a",
+    "pilots/atlas/tryfan/query-cli.mjs": "fcfeb026cde4b921e785784447c9bec27aa5b61201ba7d93426405bee4b1017e",
+    "pilots/atlas/tryfan/query-matrix.json": "45829681952c060351c63177e6c55385783f6d94e368cfd7612ad494353daa18",
+    "pilots/atlas/tryfan/query.mjs": "27d3e686b00537d28a0c558ead4f5840fc92df07eab92716e20ede0046e4d623",
+    "pilots/atlas/tryfan/semantic.mjs": "c387b2fd4d8c3b43d23923060cb4e225125255c25dafa719b384c1c262b1c129",
+    "pilots/atlas/tryfan/server.mjs": "36e4cb83b47d9f9af91884e047205e8b508e8d488dad801f852988b9e2e9d866",
+    "pilots/atlas/tryfan/serving-matrix.json": "c2aa53227d188248111133c3bbdf206ef0bc4ba549e2067d4aed0ffaf34aa8e3",
+    "pilots/atlas/tryfan/tests/browser-runner.mjs": "fd52dc67e73eb6cc4e72053f42f0a15f96d7a4e63435238ea7b6a60fcc8649b6",
+    "pilots/atlas/tryfan/tests/catalogue.test.mjs": "86a1fc6c6cfce55c55dbd91cfbec8b3275df17481f95bbb086ae5e07fcf496a4",
+    "pilots/atlas/tryfan/tests/http-worker.mjs": "9bc7ca1b96efcbb0bd139b47139b642cc89b4554b58bc62c12d96b3031fb494f",
+    "pilots/atlas/tryfan/tests/http.test.mjs": "240bb8ca4894003b0db6b30925e42488fd1681159c7f8497ea9b49c85b1add56",
+    "pilots/atlas/tryfan/tests/lifecycle-worker.mjs": "9ce6046c1ac2585dc5a4f9a57156ddb2afc2aa99eb069021b5b3e272ded3a9a5",
+    "pilots/atlas/tryfan/tests/lifecycle.test.mjs": "e4256781d2fc10335a2330172622b9b26e26c4e6f94e6eb3976388bad9ec8cdf",
+    "pilots/atlas/tryfan/tests/publication-browser.mjs": "a434d8bca214d18e0f11b8e037126ddc76d0a897c46d17a0e34902e7f74fb30d",
+    "pilots/atlas/tryfan/tests/publication-harness.mjs": "993ca5a905a22f45b8fd4ae7b60d5128b55c0d7d202cdb05fa7a323b06b6f827",
+    "pilots/atlas/tryfan/tests/publication.test.mjs": "726a44b347230c63480b8d7eaee801fc9d859b2ccf2281859f2bc87c56ba13e3",
+    "pilots/atlas/tryfan/tests/query.test.mjs": "b3ddbe6e07559c80a3186a7514515d109a2b5ebbd0bb5d7a4591ab7921e2e954",
+    "pilots/atlas/tryfan/tests/restart.test.mjs": "64ed9773f75c99fe07b8e593615ae396b7a68d8ae7685c9e2352f02134f7d6d6",
+    "pilots/atlas/tryfan/tests/service-process.mjs": "32ebe7d29509d7f53132e0e28214e52ee6ee3c0c78f51efb8b9c945627e31e7d",
+    "pilots/atlas/tryfan/tests/visual.mjs": "b0eb4da5dfe3037209417010866b95f5a80d9d4116068887a0b1541c24b3b33d",
+    "pilots/atlas/tryfan/tests/worker.mjs": "325ddaaf6e9f0d4c34482a8578c698ec370c9157d7c69857839171cc05b9a14d",
+    "pilots/atlas/tryfan/update-cli.mjs": "7dba92fc81094bf3292eda3784fe56babb0cabe2d20868a8ab3e25a0aef5aa79",
+    "pilots/atlas/tryfan/update-schema.mjs": "9bf6568762482a4bb24d20fcbb449a6a7f8db1a4d7e26791089073cb51757cfa",
+    "pilots/atlas/tryfan/updates.mjs": "690e819d5a7bb9fb0425a4e86092f125a4d0529722fa4fe4fd534080a874b56a",
+    "pilots/atlas/tryfan/validate_s1.py": "0760d4f241d255413f8de347a8e3fa4cb313d0b65444b88d91ee5cb4d8ba651f",
+    "pilots/atlas/tryfan/validate_s2.py": "765a5da4b336a0a1d8b91e7fa313e23d9cc644624a80dd38d9817225e4a7be2c",
+    "pilots/atlas/tryfan/validate_s3.py": "b1dbc91eee4167840ef68aa561c23267fda63292c744aca99461dcadf8033721",
+    "pilots/atlas/tryfan/validate_s4.py": "376346197d51045dfbd8e383253eb8dd326c25e88c21f987a37f41e6711797b5",
+    "pilots/atlas/tryfan/validate_s5.py": "6f0e8c626edb78acf774820027b837712e71b8b98285dd01015de006e5616f32",
+    "pilots/atlas/tryfan/world.mjs": "f2fd467bb3637e03e36a06faf44dc43bf6cdb2ed02bddcf91282b92800aba495"
+  },
+  "upstream": "origin/main"
+}

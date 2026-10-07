@@ -1,0 +1,5945 @@
+{
+  "acceptanceStorage": {
+    "bytes": 37939408,
+    "files": 81
+  },
+  "assets": [
+    {
+      "bytes": 148616,
+      "family": "appearance",
+      "milliseconds": 122.875,
+      "sha256": "4d618ab2f0c8ab5dfc6ae0c7f5e99d27f2fa91d0d5f9cba0b1776327094add52"
+    },
+    {
+      "bytes": 3051333,
+      "family": "nrw",
+      "milliseconds": 146.20310000001336,
+      "sha256": "6ead2e9b3a44acc35506c376a58d36dfad2695a02e02f2111fecea4f446d2475"
+    },
+    {
+      "bytes": 6158,
+      "family": "worldcover",
+      "milliseconds": 129.0005999999994,
+      "sha256": "208cc2a8ac76aa06e448c841558cf5136a1881354854417db99bac083f1766b9"
+    }
+  ],
+  "browserQA": {
+    "allDataGenerationPinned": true,
+    "errors": [],
+    "generation": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+    "manualInspection": "Pending explicit visual review; this executable verifies functionality only",
+    "mapDimensions": [
+      960,
+      720
+    ],
+    "panZoomClickLayersProvenanceRefresh": true,
+    "requests": 26,
+    "schema": "atlas-tryfan-s6-browser-qa/v1",
+    "viewport": [
+      1400,
+      1150
+    ],
+    "views": [
+      {
+        "bytes": 628542,
+        "height": 720,
+        "sha256": "58ee0e67603a0371c608a99c4aaec93f122e658998d547a7e1944df93fd5ce67",
+        "view": "full",
+        "width": 960
+      },
+      {
+        "bytes": 58376,
+        "height": 720,
+        "sha256": "276c91bc38625f4563df694c61e6bf57f86f1e66287e83699ee5fb44be70acd9",
+        "view": "summit",
+        "width": 960
+      },
+      {
+        "bytes": 68890,
+        "height": 720,
+        "sha256": "13b586546da79aeb9a8c2677bbb6673603d10d9c6cf83b2172d058e89aa2c216",
+        "view": "southern",
+        "width": 960
+      },
+      {
+        "bytes": 64550,
+        "height": 720,
+        "sha256": "063cea633ad301983cc793f25964b0f45d4142bce7367d52fba5a6c42fa1fd21",
+        "view": "north",
+        "width": 960
+      }
+    ]
+  },
+  "checks": [
+    {
+      "detail": {
+        "canonicalDifferentParentHistory": true,
+        "generations": [
+          "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+          "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08"
+        ],
+        "sameSequence": true
+      },
+      "id": "A",
+      "name": "Independent empty builds",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "from": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+        "recomputed": [
+          {
+            "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+            "revision": "4f4d6ae182d3821d1a002c855d8b886112c0aea0e13af2023b10d5294f70ef93"
+          },
+          {
+            "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+            "revision": "dbc1746d41c191d251628d3409d5db3bf4064c8c29e9f0ba50a332804196c1d2"
+          }
+        ],
+        "reused": [
+          {
+            "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+            "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+          },
+          {
+            "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+            "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+          }
+        ],
+        "to": "fb812e1dedfad87dec0894c3108b1b6576d77ae1769567088208e3b85746f6e5"
+      },
+      "id": "H",
+      "name": "U1 actual mixed update",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "from": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+        "recomputed": [
+          {
+            "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+            "revision": "4f4d6ae182d3821d1a002c855d8b886112c0aea0e13af2023b10d5294f70ef93"
+          },
+          {
+            "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+            "revision": "dbc1746d41c191d251628d3409d5db3bf4064c8c29e9f0ba50a332804196c1d2"
+          }
+        ],
+        "reused": [
+          {
+            "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+            "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+          },
+          {
+            "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+            "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+          }
+        ],
+        "to": "844e044f0020264b305bb71aaebc1150451d17115538f3dce2e37845254f542b"
+      },
+      "id": "J",
+      "name": "U2 actual mixed update",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "checkpoints": [
+          "F1",
+          "E1",
+          "F2",
+          "F3"
+        ],
+        "failures": 8
+      },
+      "id": "K",
+      "name": "Abrupt process exits with fresh recovery",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "active": 4,
+        "method": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+        "results": 6
+      },
+      "id": "G",
+      "name": "Independent scalar records equal final retained pilot",
+      "status": "PASS"
+    },
+    {
+      "detail": [
+        {
+          "exact": true,
+          "ref": {
+            "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+            "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839"
+          }
+        },
+        {
+          "exact": true,
+          "ref": {
+            "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+            "revision": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527"
+          }
+        },
+        {
+          "exact": true,
+          "ref": {
+            "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+            "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+          }
+        },
+        {
+          "exact": true,
+          "ref": {
+            "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+            "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+          }
+        },
+        {
+          "exact": true,
+          "ref": {
+            "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+            "revision": "4f4d6ae182d3821d1a002c855d8b886112c0aea0e13af2023b10d5294f70ef93"
+          }
+        },
+        {
+          "exact": true,
+          "ref": {
+            "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+            "revision": "dbc1746d41c191d251628d3409d5db3bf4064c8c29e9f0ba50a332804196c1d2"
+          }
+        }
+      ],
+      "id": "I",
+      "name": "Replay six from retained pixels",
+      "status": "PASS"
+    },
+    {
+      "detail": [
+        "f01fd46ea38a9dbd865a5e56d1f5f4716532f65a27724cc38251039edcf54376",
+        "f01fd46ea38a9dbd865a5e56d1f5f4716532f65a27724cc38251039edcf54376",
+        "f01fd46ea38a9dbd865a5e56d1f5f4716532f65a27724cc38251039edcf54376",
+        "f01fd46ea38a9dbd865a5e56d1f5f4716532f65a27724cc38251039edcf54376",
+        "f01fd46ea38a9dbd865a5e56d1f5f4716532f65a27724cc38251039edcf54376"
+      ],
+      "id": "N",
+      "name": "Five fresh HTTP/consumer processes",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "bytes": 112921,
+        "milliseconds": 124.49729999998817,
+        "missing": 503,
+        "tile": {
+          "artifact": "sha256:d261c4b95a6b24421d3509a6530ac20d74ba19c9c9229a3812f5337c3a5c5c75",
+          "bytes": 112921,
+          "family": "terrain-regional",
+          "sha256": "d261c4b95a6b24421d3509a6530ac20d74ba19c9c9229a3812f5337c3a5c5c75",
+          "tile": {
+            "crs": "EPSG:3857",
+            "scheme": "xyz",
+            "x": 8010,
+            "y": 5328,
+            "z": 14
+          },
+          "url": "/pilot/v1/g/5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06/terrain/terrain-regional/14/8010/5328.png"
+        }
+      },
+      "id": "C",
+      "name": "Exact tile and missing support",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "sha256": "f01fd46ea38a9dbd865a5e56d1f5f4716532f65a27724cc38251039edcf54376"
+      },
+      "id": "B",
+      "name": "Single generation Q21",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "code": 30,
+        "grid": {
+          "bounds": [
+            -4.020583333333334,
+            53.10016666666667,
+            -3.974416666666667,
+            53.128
+          ],
+          "cells": 185036,
+          "crs": "EPSG:4326",
+          "dtype": "uint8",
+          "nativeCodes": [
+            10,
+            20,
+            30,
+            50,
+            60,
+            80,
+            100
+          ],
+          "nodata": 0,
+          "sampling": "Native angular categorical grid; nominal10m is not semantic accuracy.",
+          "shape": [
+            334,
+            554
+          ],
+          "transform": [
+            8.333333333333333e-05,
+            0,
+            -4.020583333333334,
+            0,
+            -8.333333333333333e-05,
+            53.128,
+            0,
+            0,
+            1
+          ]
+        },
+        "matrixHashes": [
+          {
+            "id": "Q05",
+            "sha256": "6be643a51ffa6180ae49574d76b1d2d9b8f80c2d28aaa4cb8cc10f4d01d1c352"
+          },
+          {
+            "id": "Q06",
+            "sha256": "2bd5f7779fcf91cde36f8d364fada7be430b7465898229657eb5b8df6eb97e09"
+          },
+          {
+            "id": "Q07",
+            "sha256": "cb925fd591ec5cdcccdc945b4c673524efe30980fea951dacd94c0e945576a4e"
+          },
+          {
+            "id": "Q08",
+            "sha256": "cea55e029f80bda04d386ff7a3517c79d0f1224be052a59fd3a56b2fdd7806f9"
+          },
+          {
+            "id": "Q09",
+            "sha256": "bff74d0a978fdcee5223e464bd3a4fc72fbe4a5c93214706273b837e4ecd3984"
+          },
+          {
+            "id": "Q10",
+            "sha256": "e67df874905ca7da5a7b92884d1b9ca17b9e5215fb6edf1c663082276da618de"
+          },
+          {
+            "id": "Q11",
+            "sha256": "7002ab48a3e9860aad43e65d4376d33f917385f0fbf256dc08cd61f3fc6385ea"
+          },
+          {
+            "id": "Q13",
+            "sha256": "2a6db1a1a4f6d0a5c7dbeb2fb4878de8013d40276fdf9086ba855602060a6b4d"
+          },
+          {
+            "id": "Q14",
+            "sha256": "4169d34dad83a562b8737dcc4a3c85963c29bd99786d1724e0b52a07b940961e"
+          },
+          {
+            "id": "Q15",
+            "sha256": "4d76634c2d37321c4bfe0d77cfe50ab4cc1e583e6163c10462c858ff6630d034"
+          },
+          {
+            "id": "Q16",
+            "sha256": "dc01880607f4c9ba5547bc2e6b6737a9172758479775c14b6ac3289bd0e36283"
+          },
+          {
+            "id": "Q18",
+            "sha256": "396499f7f479c8c42a161fa2bb1e82c68db625679aadf1e37d9c7ca0fc4170d7"
+          },
+          {
+            "id": "Q19",
+            "sha256": "3e56dedff293793bb12414ea2f70863c9c207a7045973b286a8446dc6cd153e7"
+          },
+          {
+            "id": "Q20",
+            "sha256": "f37ef98f46e5f06573b1c4e9d1ea65e039d26e1f3f76e6fd9c7c175de24b2ba0"
+          }
+        ]
+      },
+      "id": "D",
+      "name": "Native raster and frozen support queries",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "feature": {
+          "id": "486832",
+          "kind": "inventory-object",
+          "namespace": {
+            "id": "nrw-phase1",
+            "kind": "product",
+            "revision": {
+              "status": "known",
+              "value": "retained-2026-10-06"
+            }
+          }
+        },
+        "time": [
+          {
+            "extent": {
+              "kind": "unknown",
+              "reason": "Historic survey lineage; exact feature observation epoch not established by these retained properties."
+            },
+            "role": "survey"
+          }
+        ]
+      },
+      "id": "E",
+      "name": "Native vector identity and survey time",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "mapping": {
+          "disposition": "qualified",
+          "mapping": {
+            "id": "mapping:wc30",
+            "revision": "1"
+          }
+        },
+        "time": [
+          [
+            {
+              "extent": {
+                "basis": "WorldCover annual product epoch; not local acquisition instant.",
+                "kind": "epoch",
+                "precision": "year",
+                "value": "2021"
+              },
+              "role": "nominal-epoch"
+            },
+            {
+              "extent": {
+                "kind": "unknown",
+                "reason": "Sentinel1/2 annual2021 source observations; exact acquisition times supporting this cell are not retained."
+              },
+              "role": "observation"
+            }
+          ],
+          [
+            {
+              "extent": {
+                "kind": "unknown",
+                "reason": "Historic survey lineage; exact feature observation epoch not established by these retained properties."
+              },
+              "role": "survey"
+            }
+          ]
+        ]
+      },
+      "id": "F",
+      "name": "Coexisting native evidence",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "bytes": 23473,
+        "milliseconds": 623.1068999999843,
+        "sha256": "d1de49e46f7415d6d451005d1bb24d7fccfede81279b2bccf086a945fc5b1256"
+      },
+      "id": "L",
+      "name": "Generation provenance and rights",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "fixtureEvidence": "S2 query/native tests and S4 HTTP H15 independently rerun; no real zero/non-detection invented"
+      },
+      "id": "M",
+      "name": "Unsupported and current queries reject fallback",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "browserEvidence": "S4 matched full-core/400m; S5 U2 actual scene refresh rerun by regression suite",
+        "races": [
+          [
+            {
+              "family": "production-common",
+              "generation": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+              "nrwCode": "D.1.1",
+              "nrwStatus": "available",
+              "pinned": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+              "slope": 11.837956999552308
+            },
+            {
+              "family": "production-common",
+              "generation": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+              "nrwCode": "D.1.1",
+              "nrwStatus": "available",
+              "pinned": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+              "slope": 11.837956999552308
+            },
+            {
+              "family": "production-common",
+              "generation": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+              "nrwCode": "D.1.1",
+              "nrwStatus": "available",
+              "pinned": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+              "slope": 11.837956999552308
+            },
+            {
+              "family": "production-common",
+              "generation": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+              "nrwCode": "D.1.1",
+              "nrwStatus": "available",
+              "pinned": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+              "slope": 11.837956999552308
+            },
+            {
+              "family": "production-common",
+              "generation": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+              "nrwCode": "D.1.1",
+              "nrwStatus": "available",
+              "pinned": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+              "slope": 11.837956999552308
+            },
+            {
+              "family": "welsh-regional",
+              "generation": "fb812e1dedfad87dec0894c3108b1b6576d77ae1769567088208e3b85746f6e5",
+              "nrwCode": "D.1.1",
+              "nrwStatus": "available",
+              "pinned": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+              "slope": 32.918524028483965
+            }
+          ],
+          [
+            {
+              "family": "production-common",
+              "generation": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+              "nrwCode": null,
+              "nrwStatus": "excluded-by-context",
+              "pinned": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+              "slope": 11.837956999552308
+            },
+            {
+              "family": "production-common",
+              "generation": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+              "nrwCode": null,
+              "nrwStatus": "excluded-by-context",
+              "pinned": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+              "slope": 11.837956999552308
+            },
+            {
+              "family": "production-common",
+              "generation": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+              "nrwCode": null,
+              "nrwStatus": "excluded-by-context",
+              "pinned": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+              "slope": 11.837956999552308
+            },
+            {
+              "family": "production-common",
+              "generation": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+              "nrwCode": null,
+              "nrwStatus": "excluded-by-context",
+              "pinned": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+              "slope": 11.837956999552308
+            },
+            {
+              "family": "welsh-regional",
+              "generation": "844e044f0020264b305bb71aaebc1150451d17115538f3dce2e37845254f542b",
+              "nrwCode": "D.1.1",
+              "nrwStatus": "available",
+              "pinned": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+              "slope": 32.918524028483965
+            }
+          ]
+        ]
+      },
+      "id": "P",
+      "name": "Pinned readers through real publication",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "artifacts": 310,
+        "bytes": 42473107
+      },
+      "id": "O",
+      "name": "Retained bytes and canonical state immutable",
+      "status": "PASS"
+    }
+  ],
+  "endToEndMilliseconds": 219877.9098,
+  "fresh": [
+    {
+      "answerSha256": "f01fd46ea38a9dbd865a5e56d1f5f4716532f65a27724cc38251039edcf54376",
+      "bytes": 446238,
+      "consumerMilliseconds": 1600.0153999999893,
+      "generation": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+      "loadMilliseconds": 348.81129999999996,
+      "processStartupMilliseconds": 2099.8804999999993,
+      "recoveryMilliseconds": 530.1824999999953,
+      "serviceStartupMilliseconds": 1930.4633
+    },
+    {
+      "answerSha256": "f01fd46ea38a9dbd865a5e56d1f5f4716532f65a27724cc38251039edcf54376",
+      "bytes": 446238,
+      "consumerMilliseconds": 1570.1705000000075,
+      "generation": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+      "loadMilliseconds": 363.032,
+      "processStartupMilliseconds": 2122.4732000000076,
+      "recoveryMilliseconds": 532.5782999999938,
+      "serviceStartupMilliseconds": 1946.5538000000001
+    },
+    {
+      "answerSha256": "f01fd46ea38a9dbd865a5e56d1f5f4716532f65a27724cc38251039edcf54376",
+      "bytes": 446238,
+      "consumerMilliseconds": 1658.6086000000068,
+      "generation": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+      "loadMilliseconds": 361.3127,
+      "processStartupMilliseconds": 2098.3462,
+      "recoveryMilliseconds": 535.3024000000005,
+      "serviceStartupMilliseconds": 1927.8573000000001
+    },
+    {
+      "answerSha256": "f01fd46ea38a9dbd865a5e56d1f5f4716532f65a27724cc38251039edcf54376",
+      "bytes": 446238,
+      "consumerMilliseconds": 1681.6284999999916,
+      "generation": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+      "loadMilliseconds": 357.23900000000003,
+      "processStartupMilliseconds": 2246.9825999999885,
+      "recoveryMilliseconds": 531.4652999999962,
+      "serviceStartupMilliseconds": 2076.3410000000003
+    },
+    {
+      "answerSha256": "f01fd46ea38a9dbd865a5e56d1f5f4716532f65a27724cc38251039edcf54376",
+      "bytes": 446238,
+      "consumerMilliseconds": 1587.794200000004,
+      "generation": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+      "loadMilliseconds": 363.0997,
+      "processStartupMilliseconds": 2124.415399999998,
+      "recoveryMilliseconds": 532.4292999999889,
+      "serviceStartupMilliseconds": 1948.1495000000002
+    }
+  ],
+  "freshness": {
+    "max": 23.18420000000333,
+    "median": 17.19289999999455,
+    "min": 11.728200000012293,
+    "p95": 22.350800000000163,
+    "samples": [
+      {
+        "milliseconds": 17.457599999994272,
+        "statuses": [
+          "stale",
+          "stale",
+          "fresh",
+          "fresh",
+          "fresh",
+          "fresh"
+        ]
+      },
+      {
+        "milliseconds": 13.23059999999532,
+        "statuses": [
+          "stale",
+          "stale",
+          "fresh",
+          "fresh",
+          "fresh",
+          "fresh"
+        ]
+      },
+      {
+        "milliseconds": 18.567600000009406,
+        "statuses": [
+          "stale",
+          "stale",
+          "fresh",
+          "fresh",
+          "fresh",
+          "fresh"
+        ]
+      },
+      {
+        "milliseconds": 22.350800000000163,
+        "statuses": [
+          "stale",
+          "stale",
+          "fresh",
+          "fresh",
+          "fresh",
+          "fresh"
+        ]
+      },
+      {
+        "milliseconds": 17.092699999993783,
+        "statuses": [
+          "stale",
+          "stale",
+          "fresh",
+          "fresh",
+          "fresh",
+          "fresh"
+        ]
+      },
+      {
+        "milliseconds": 20.621200000008685,
+        "statuses": [
+          "stale",
+          "stale",
+          "fresh",
+          "fresh",
+          "fresh",
+          "fresh"
+        ]
+      },
+      {
+        "milliseconds": 16.582399999999325,
+        "statuses": [
+          "stale",
+          "stale",
+          "fresh",
+          "fresh",
+          "fresh",
+          "fresh"
+        ]
+      },
+      {
+        "milliseconds": 13.432300000000396,
+        "statuses": [
+          "stale",
+          "stale",
+          "fresh",
+          "fresh",
+          "fresh",
+          "fresh"
+        ]
+      },
+      {
+        "milliseconds": 23.18420000000333,
+        "statuses": [
+          "stale",
+          "stale",
+          "fresh",
+          "fresh",
+          "fresh",
+          "fresh"
+        ]
+      },
+      {
+        "milliseconds": 12.546000000002095,
+        "statuses": [
+          "stale",
+          "stale",
+          "fresh",
+          "fresh",
+          "fresh",
+          "fresh"
+        ]
+      },
+      {
+        "milliseconds": 12.046300000001793,
+        "statuses": [
+          "stale",
+          "stale",
+          "fresh",
+          "fresh",
+          "fresh",
+          "fresh"
+        ]
+      },
+      {
+        "milliseconds": 14.77740000000631,
+        "statuses": [
+          "stale",
+          "stale",
+          "fresh",
+          "fresh",
+          "fresh",
+          "fresh"
+        ]
+      },
+      {
+        "milliseconds": 20.027699999991455,
+        "statuses": [
+          "stale",
+          "stale",
+          "fresh",
+          "fresh",
+          "fresh",
+          "fresh"
+        ]
+      },
+      {
+        "milliseconds": 17.327900000003865,
+        "statuses": [
+          "stale",
+          "stale",
+          "fresh",
+          "fresh",
+          "fresh",
+          "fresh"
+        ]
+      },
+      {
+        "milliseconds": 13.818799999993644,
+        "statuses": [
+          "stale",
+          "stale",
+          "fresh",
+          "fresh",
+          "fresh",
+          "fresh"
+        ]
+      },
+      {
+        "milliseconds": 17.19289999999455,
+        "statuses": [
+          "stale",
+          "stale",
+          "fresh",
+          "fresh",
+          "fresh",
+          "fresh"
+        ]
+      },
+      {
+        "milliseconds": 19.92849999999453,
+        "statuses": [
+          "stale",
+          "stale",
+          "fresh",
+          "fresh",
+          "fresh",
+          "fresh"
+        ]
+      },
+      {
+        "milliseconds": 18.107499999998254,
+        "statuses": [
+          "stale",
+          "stale",
+          "fresh",
+          "fresh",
+          "fresh",
+          "fresh"
+        ]
+      },
+      {
+        "milliseconds": 11.728200000012293,
+        "statuses": [
+          "stale",
+          "stale",
+          "fresh",
+          "fresh",
+          "fresh",
+          "fresh"
+        ]
+      },
+      {
+        "milliseconds": 17.157400000010966,
+        "statuses": [
+          "stale",
+          "stale",
+          "fresh",
+          "fresh",
+          "fresh",
+          "fresh"
+        ]
+      }
+    ]
+  },
+  "fullWarmMatrix": {
+    "batches": 20,
+    "cache": "Initialized service and warm OS cache; no query/byte cache",
+    "elapsedMilliseconds": 145847.2337,
+    "errors": 0,
+    "excluded": {
+      "Q17": "Unavailable-file fixture rerun by original S2/S4/S6 regression, no retained locator mutation"
+    },
+    "generation": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+    "rawReceipt": "s6-acceptance/warm-matrix.json",
+    "rawReceiptSha256": "c21600ead3bbf03d01e38d32340a9d8019fa92f433a58367ece4d34122f2b777",
+    "requests": 480,
+    "rows": {
+      "Q01": {
+        "count": 20,
+        "max": 345.35339999999997,
+        "median": 305.7476999999999,
+        "min": 262.3411999999953,
+        "p95": 341.0145000000193,
+        "responseBytes": 7283,
+        "responseSha256": "770408edaec8c959329f9d2c0b63416062c397a53e32d95655f80d1b588b4d70"
+      },
+      "Q02": {
+        "count": 20,
+        "max": 374.21779999999853,
+        "median": 298.81960000000254,
+        "min": 258.1683000000048,
+        "p95": 347.90730000000076,
+        "responseBytes": 15733,
+        "responseSha256": "0784e81076dfdec271aef7e29f7b42714a23b1ee636701758d43fd8ad9f30b02"
+      },
+      "Q03": {
+        "count": 20,
+        "max": 347.6453000000038,
+        "median": 285.5810000000056,
+        "min": 256.0776000000001,
+        "p95": 320.25620000000345,
+        "responseBytes": 15587,
+        "responseSha256": "221cfea35ed91c456b4c3665bd1ee896c8e8034878e4ea82a2f763591d99aa7c"
+      },
+      "Q04": {
+        "count": 20,
+        "max": 360.1735000000044,
+        "median": 295.71800000000076,
+        "min": 264.5764999999956,
+        "p95": 335.8850999999995,
+        "responseBytes": 15336,
+        "responseSha256": "0de6e115138392db6d44c7f4352c5ec19c34316a7cdf57d5284e080b78b26e67"
+      },
+      "Q05": {
+        "count": 20,
+        "max": 334.0161999999982,
+        "median": 267.13769999999204,
+        "min": 237.10439999999653,
+        "p95": 311.8160000000007,
+        "responseBytes": 32858,
+        "responseSha256": "6be643a51ffa6180ae49574d76b1d2d9b8f80c2d28aaa4cb8cc10f4d01d1c352"
+      },
+      "Q06": {
+        "count": 20,
+        "max": 335.6074000000008,
+        "median": 260.9802999999956,
+        "min": 234.17480000000796,
+        "p95": 311.65170000000035,
+        "responseBytes": 32858,
+        "responseSha256": "2bd5f7779fcf91cde36f8d364fada7be430b7465898229657eb5b8df6eb97e09"
+      },
+      "Q07-20m": {
+        "count": 20,
+        "max": 324.4640999999974,
+        "median": 263.7276000000056,
+        "min": 236.80499999999302,
+        "p95": 300.67269999999553,
+        "responseBytes": 43472,
+        "responseSha256": "d429fea9f78d0d80c19a891e029067e57918ed4a86262d1a5685b271010d0ef9"
+      },
+      "Q07-400m": {
+        "count": 20,
+        "max": 306.325499999999,
+        "median": 268.8194999999978,
+        "min": 241.2554999999993,
+        "p95": 294.1923999999999,
+        "responseBytes": 63557,
+        "responseSha256": "cb925fd591ec5cdcccdc945b4c673524efe30980fea951dacd94c0e945576a4e"
+      },
+      "Q08": {
+        "count": 20,
+        "max": 330.6535999999978,
+        "median": 263.1179999999995,
+        "min": 238.49989999999525,
+        "p95": 315.210699999996,
+        "responseBytes": 29106,
+        "responseSha256": "cea55e029f80bda04d386ff7a3517c79d0f1224be052a59fd3a56b2fdd7806f9"
+      },
+      "Q09": {
+        "count": 20,
+        "max": 340.9320999999982,
+        "median": 280.1241000000009,
+        "min": 235.08809999999357,
+        "p95": 337.8035999999993,
+        "responseBytes": 60236,
+        "responseSha256": "bff74d0a978fdcee5223e464bd3a4fc72fbe4a5c93214706273b837e4ecd3984"
+      },
+      "Q10": {
+        "count": 20,
+        "max": 342.8809000000001,
+        "median": 280.5257999999885,
+        "min": 246.01710000000458,
+        "p95": 322.70870000000286,
+        "responseBytes": 24087,
+        "responseSha256": "e67df874905ca7da5a7b92884d1b9ca17b9e5215fb6edf1c663082276da618de"
+      },
+      "Q11": {
+        "count": 20,
+        "max": 326.92019999999866,
+        "median": 284.877800000002,
+        "min": 235.26880000000529,
+        "p95": 322.95389999999315,
+        "responseBytes": 32829,
+        "responseSha256": "7002ab48a3e9860aad43e65d4376d33f917385f0fbf256dc08cd61f3fc6385ea"
+      },
+      "Q12-southern-observer-area-ratio": {
+        "count": 20,
+        "max": 420.77579999999944,
+        "median": 297.91859999998996,
+        "min": 263.585699999996,
+        "p95": 364.41300000000047,
+        "responseBytes": 15516,
+        "responseSha256": "052bd34eda4e4841b40a8d786a22e49eff15f69691a3fd6a4cd84e80f26065f1"
+      },
+      "Q12-southern-observer-slope": {
+        "count": 20,
+        "max": 375.0737000000081,
+        "median": 312.33450000001176,
+        "min": 252.71270000000368,
+        "p95": 370.15380000000005,
+        "responseBytes": 15636,
+        "responseSha256": "4e643df71ff3d839aa493e1923ba207c518cb24f7acdc9e2ffb31b512ac285ea"
+      },
+      "Q12-summit-area-ratio": {
+        "count": 20,
+        "max": 355.83810000000085,
+        "median": 298.7925000000032,
+        "min": 261.27509999999893,
+        "p95": 330.1820000000007,
+        "responseBytes": 15309,
+        "responseSha256": "e316d345f64992d5751430a9fb8f64e52d11ae3612a3f75fcd82f00d3a85abb8"
+      },
+      "Q12-summit-slope": {
+        "count": 20,
+        "max": 354.48189999999886,
+        "median": 293.6622999999963,
+        "min": 250.42580000000453,
+        "p95": 346.2961000000005,
+        "responseBytes": 15471,
+        "responseSha256": "8108f8d3d8affb72ede7de53547b452d0a7b5d4f2f3662bbd872318e3033546a"
+      },
+      "Q13": {
+        "count": 20,
+        "max": 319.38409999999567,
+        "median": 277.1862000000001,
+        "min": 227.5503999999928,
+        "p95": 317.2363000000187,
+        "responseBytes": 1952,
+        "responseSha256": "2a6db1a1a4f6d0a5c7dbeb2fb4878de8013d40276fdf9086ba855602060a6b4d"
+      },
+      "Q14": {
+        "count": 20,
+        "max": 364.3655999999901,
+        "median": 275.6359999999986,
+        "min": 238.71189999999478,
+        "p95": 319.78859999999986,
+        "responseBytes": 1954,
+        "responseSha256": "4169d34dad83a562b8737dcc4a3c85963c29bd99786d1724e0b52a07b940961e"
+      },
+      "Q15": {
+        "count": 20,
+        "max": 381.41609999999855,
+        "median": 269.1912999999913,
+        "min": 238.46630000000005,
+        "p95": 358.49400000000605,
+        "responseBytes": 33714,
+        "responseSha256": "4d76634c2d37321c4bfe0d77cfe50ab4cc1e583e6163c10462c858ff6630d034"
+      },
+      "Q16": {
+        "count": 20,
+        "max": 347.873599999999,
+        "median": 267.5127999999968,
+        "min": 232.91659999999683,
+        "p95": 281.35009999999875,
+        "responseBytes": 813,
+        "responseSha256": "dc01880607f4c9ba5547bc2e6b6737a9172758479775c14b6ac3289bd0e36283"
+      },
+      "Q18": {
+        "count": 20,
+        "max": 755.2905000000028,
+        "median": 666.9306999999972,
+        "min": 580.3208999999915,
+        "p95": 700.9097000000002,
+        "responseBytes": 23473,
+        "responseSha256": "d1de49e46f7415d6d451005d1bb24d7fccfede81279b2bccf086a945fc5b1256"
+      },
+      "Q19": {
+        "count": 20,
+        "max": 343.7186999999976,
+        "median": 280.27640000000247,
+        "min": 240.25410000000556,
+        "p95": 332.1984999999986,
+        "responseBytes": 73687,
+        "responseSha256": "3e56dedff293793bb12414ea2f70863c9c207a7045973b286a8446dc6cd153e7"
+      },
+      "Q20": {
+        "count": 20,
+        "max": 336.9686999999976,
+        "median": 283.75909999999567,
+        "min": 245.04529999999795,
+        "p95": 306.64689999999973,
+        "responseBytes": 73436,
+        "responseSha256": "f37ef98f46e5f06573b1c4e9d1ea65e039d26e1f3f76e6fd9c7c175de24b2ba0"
+      },
+      "Q21": {
+        "count": 20,
+        "max": 489.3185999999987,
+        "median": 387.9744000000064,
+        "min": 329.43820000000414,
+        "p95": 467.92879999999786,
+        "responseBytes": 142590,
+        "responseSha256": "93e1372cc9f856938220571d36c4b378c755c70e2205f4ccfb19c9b7f64bc37d"
+      }
+    },
+    "schema": "atlas-tryfan-s6-full-warm-matrix/v1"
+  },
+  "history": {
+    "bodyReadMilliseconds": 2.253599999996368,
+    "generation": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+    "sha256": "26a42aa568e15af35d217f560aab83c570d99064b1de918a4ef3c85430313ba9",
+    "slope": 11.837956999552308
+  },
+  "independentBuilds": [
+    {
+      "generation": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+      "milliseconds": 8006.3305
+    },
+    {
+      "generation": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+      "milliseconds": 7561.740099999999
+    }
+  ],
+  "independentReproduction": {
+    "history": {
+      "bodyReadMilliseconds": 2.184399999998277,
+      "generation": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+      "requestMilliseconds": 2562.734399999994,
+      "sha256": "26a42aa568e15af35d217f560aab83c570d99064b1de918a4ef3c85430313ba9",
+      "slope": 11.837956999552308
+    },
+    "logicalSha256": "5544b0f059fa535e7da8d28c8a66a1805cd5ea309e37033f50452d91eb557268",
+    "milliseconds": 124835.2414,
+    "nodeMemory": {
+      "arrayBuffers": 4386890,
+      "external": 8492529,
+      "heapTotal": 256434176,
+      "heapUsed": 161021744,
+      "rss": 374820864
+    },
+    "pythonProcessTree": [
+      {
+        "name": "python.exe",
+        "pid": 3176,
+        "workingSetBytes": 5021696
+      },
+      {
+        "name": "python.exe",
+        "pid": 38568,
+        "workingSetBytes": 85270528
+      }
+    ],
+    "qualification": "Initial Python sample measured the Windows venv launcher only; follow-up traversed its targeted child and measured the actual worker. Working sets at observation, not peak/aggregate memory.",
+    "receiptSha256": "7eb288fc7c1d46a9f7b8ed211ef9f7f3340ed9eea7fdc75cf25e661e7dab5269"
+  },
+  "limitations": [
+    "Single-writer/local process failures, not power loss or distributed atomicity",
+    "Current-ancestry serving only;16context limit",
+    "No query/byte cache;conservative metadata validation",
+    "Two probes/two methods;no arbitrary derivation engine",
+    "Unknown epochs/datum/source rights remain qualified",
+    "Appearance unresolved/non-blocking;Swiss multiview parked",
+    "Lab010 original fixed-camera gate pending, separate from pilot portrayal"
+  ],
+  "logical": {
+    "baselineSha256": "a7bcae1b3fdf31c4100b295991b776ab98af8fc29cbedec41ad980e633492e34",
+    "canonical": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+    "emptyGeneration": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+    "freshAnswerSha256": "f01fd46ea38a9dbd865a5e56d1f5f4716532f65a27724cc38251039edcf54376",
+    "queryHashes": [
+      {
+        "id": "Q05",
+        "sha256": "6be643a51ffa6180ae49574d76b1d2d9b8f80c2d28aaa4cb8cc10f4d01d1c352",
+        "status": 200
+      },
+      {
+        "id": "Q06",
+        "sha256": "2bd5f7779fcf91cde36f8d364fada7be430b7465898229657eb5b8df6eb97e09",
+        "status": 200
+      },
+      {
+        "id": "Q07",
+        "sha256": "cb925fd591ec5cdcccdc945b4c673524efe30980fea951dacd94c0e945576a4e",
+        "status": 200
+      },
+      {
+        "id": "Q08",
+        "sha256": "cea55e029f80bda04d386ff7a3517c79d0f1224be052a59fd3a56b2fdd7806f9",
+        "status": 200
+      },
+      {
+        "id": "Q09",
+        "sha256": "bff74d0a978fdcee5223e464bd3a4fc72fbe4a5c93214706273b837e4ecd3984",
+        "status": 200
+      },
+      {
+        "id": "Q10",
+        "sha256": "e67df874905ca7da5a7b92884d1b9ca17b9e5215fb6edf1c663082276da618de",
+        "status": 200
+      },
+      {
+        "id": "Q11",
+        "sha256": "7002ab48a3e9860aad43e65d4376d33f917385f0fbf256dc08cd61f3fc6385ea",
+        "status": 200
+      },
+      {
+        "id": "Q13",
+        "sha256": "2a6db1a1a4f6d0a5c7dbeb2fb4878de8013d40276fdf9086ba855602060a6b4d",
+        "status": 200
+      },
+      {
+        "id": "Q14",
+        "sha256": "4169d34dad83a562b8737dcc4a3c85963c29bd99786d1724e0b52a07b940961e",
+        "status": 200
+      },
+      {
+        "id": "Q15",
+        "sha256": "4d76634c2d37321c4bfe0d77cfe50ab4cc1e583e6163c10462c858ff6630d034",
+        "status": 200
+      },
+      {
+        "id": "Q16",
+        "sha256": "dc01880607f4c9ba5547bc2e6b6737a9172758479775c14b6ac3289bd0e36283",
+        "status": 200
+      },
+      {
+        "id": "Q18",
+        "sha256": "396499f7f479c8c42a161fa2bb1e82c68db625679aadf1e37d9c7ca0fc4170d7",
+        "status": 200
+      },
+      {
+        "id": "Q19",
+        "sha256": "3e56dedff293793bb12414ea2f70863c9c207a7045973b286a8446dc6cd153e7",
+        "status": 200
+      },
+      {
+        "id": "Q20",
+        "sha256": "f37ef98f46e5f06573b1c4e9d1ea65e039d26e1f3f76e6fd9c7c175de24b2ba0",
+        "status": 200
+      }
+    ],
+    "sourceVerification": {
+      "artifacts": 310,
+      "bytes": 42473107
+    },
+    "understandingSha256": "e85a1417814b2977a0622f6ae0a2de7ae3ddefaf0cf206955c35671a8a654608",
+    "updated": "fb812e1dedfad87dec0894c3108b1b6576d77ae1769567088208e3b85746f6e5"
+  },
+  "logicalSha256": "5544b0f059fa535e7da8d28c8a66a1805cd5ea309e37033f50452d91eb557268",
+  "manualVisualReview": "Reviewed full-core and summit consumer screenshots: original source-derived pixels, historical outlines, legends/time/rights and readable UTF-8 labels preserved. Current Welsh slope/NRW/WorldCover remain separate. No new display transform or Lab010 fixed-camera acceptance.",
+  "nativeReaderMetrics": {
+    "bboxCoordinatesBytes": 6176,
+    "initializationMilliseconds": 121.15469994023442,
+    "nativeGeometryWkbBytes": 211666,
+    "processMilliseconds": 1447.7005,
+    "rasterArrayBytes": 3145612,
+    "readerInitializationMilliseconds": 1445.2567999999999,
+    "rssBytes": 156581888
+  },
+  "pythonMemory": {
+    "pid": 10708,
+    "workingSetBytes": 4968448
+  },
+  "readMeter": {
+    "bootstrap": {
+      "external-artifacts": {
+        "bytes": 13114786,
+        "calls": 14
+      },
+      "generations": {
+        "bytes": 40299556,
+        "calls": 52
+      },
+      "locators": {
+        "bytes": 187440,
+        "calls": 4
+      },
+      "runtime-code-and-metadata": {
+        "bytes": 11521814,
+        "calls": 303
+      }
+    },
+    "generation": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+    "limitations": "Node synchronous readFileSync bytes only;excludes Python IO,fs asynchronous reads,wire/kernel paging and physical disk. Files may be served from warm OS cache. Not a total IO or bill estimate.",
+    "samples": [
+      {
+        "milliseconds": 275.2996000000003,
+        "phase": "first",
+        "reads": {
+          "external-artifacts": {
+            "bytes": 7242912,
+            "calls": 10
+          },
+          "generations": {
+            "bytes": 20149778,
+            "calls": 26
+          },
+          "locators": {
+            "bytes": 93720,
+            "calls": 2
+          },
+          "runtime-code-and-metadata": {
+            "bytes": 4337180,
+            "calls": 110
+          }
+        },
+        "responseBytes": 32836
+      },
+      {
+        "milliseconds": 250.02179999999998,
+        "phase": "initialized",
+        "reads": {
+          "external-artifacts": {
+            "bytes": 7242912,
+            "calls": 10
+          },
+          "generations": {
+            "bytes": 20149778,
+            "calls": 26
+          },
+          "locators": {
+            "bytes": 93720,
+            "calls": 2
+          },
+          "runtime-code-and-metadata": {
+            "bytes": 4337180,
+            "calls": 110
+          }
+        },
+        "responseBytes": 32836
+      },
+      {
+        "milliseconds": 252.38819999999987,
+        "phase": "initialized",
+        "reads": {
+          "external-artifacts": {
+            "bytes": 7242912,
+            "calls": 10
+          },
+          "generations": {
+            "bytes": 20149778,
+            "calls": 26
+          },
+          "locators": {
+            "bytes": 93720,
+            "calls": 2
+          },
+          "runtime-code-and-metadata": {
+            "bytes": 4337180,
+            "calls": 110
+          }
+        },
+        "responseBytes": 32836
+      },
+      {
+        "milliseconds": 261.8570999999997,
+        "phase": "initialized",
+        "reads": {
+          "external-artifacts": {
+            "bytes": 7242912,
+            "calls": 10
+          },
+          "generations": {
+            "bytes": 20149778,
+            "calls": 26
+          },
+          "locators": {
+            "bytes": 93720,
+            "calls": 2
+          },
+          "runtime-code-and-metadata": {
+            "bytes": 4337180,
+            "calls": 110
+          }
+        },
+        "responseBytes": 32836
+      },
+      {
+        "milliseconds": 253.91700000000037,
+        "phase": "initialized",
+        "reads": {
+          "external-artifacts": {
+            "bytes": 7242912,
+            "calls": 10
+          },
+          "generations": {
+            "bytes": 20149778,
+            "calls": 26
+          },
+          "locators": {
+            "bytes": 93720,
+            "calls": 2
+          },
+          "runtime-code-and-metadata": {
+            "bytes": 4337180,
+            "calls": 110
+          }
+        },
+        "responseBytes": 32836
+      },
+      {
+        "milliseconds": 256.6100000000001,
+        "phase": "initialized",
+        "reads": {
+          "external-artifacts": {
+            "bytes": 7242912,
+            "calls": 10
+          },
+          "generations": {
+            "bytes": 20149778,
+            "calls": 26
+          },
+          "locators": {
+            "bytes": 93720,
+            "calls": 2
+          },
+          "runtime-code-and-metadata": {
+            "bytes": 4337180,
+            "calls": 110
+          }
+        },
+        "responseBytes": 32836
+      },
+      {
+        "milliseconds": 287.9539999999997,
+        "phase": "initialized",
+        "reads": {
+          "external-artifacts": {
+            "bytes": 7242912,
+            "calls": 10
+          },
+          "generations": {
+            "bytes": 20149778,
+            "calls": 26
+          },
+          "locators": {
+            "bytes": 93720,
+            "calls": 2
+          },
+          "runtime-code-and-metadata": {
+            "bytes": 4337180,
+            "calls": 110
+          }
+        },
+        "responseBytes": 32836
+      },
+      {
+        "milliseconds": 267.0555999999997,
+        "phase": "initialized",
+        "reads": {
+          "external-artifacts": {
+            "bytes": 7242912,
+            "calls": 10
+          },
+          "generations": {
+            "bytes": 20149778,
+            "calls": 26
+          },
+          "locators": {
+            "bytes": 93720,
+            "calls": 2
+          },
+          "runtime-code-and-metadata": {
+            "bytes": 4337180,
+            "calls": 110
+          }
+        },
+        "responseBytes": 32836
+      },
+      {
+        "milliseconds": 287.2593000000006,
+        "phase": "initialized",
+        "reads": {
+          "external-artifacts": {
+            "bytes": 7242912,
+            "calls": 10
+          },
+          "generations": {
+            "bytes": 20149778,
+            "calls": 26
+          },
+          "locators": {
+            "bytes": 93720,
+            "calls": 2
+          },
+          "runtime-code-and-metadata": {
+            "bytes": 4337180,
+            "calls": 110
+          }
+        },
+        "responseBytes": 32836
+      },
+      {
+        "milliseconds": 262.8713000000007,
+        "phase": "initialized",
+        "reads": {
+          "external-artifacts": {
+            "bytes": 7242912,
+            "calls": 10
+          },
+          "generations": {
+            "bytes": 20149778,
+            "calls": 26
+          },
+          "locators": {
+            "bytes": 93720,
+            "calls": 2
+          },
+          "runtime-code-and-metadata": {
+            "bytes": 4337180,
+            "calls": 110
+          }
+        },
+        "responseBytes": 32836
+      },
+      {
+        "milliseconds": 290.4292000000005,
+        "phase": "initialized",
+        "reads": {
+          "external-artifacts": {
+            "bytes": 7242912,
+            "calls": 10
+          },
+          "generations": {
+            "bytes": 20149778,
+            "calls": 26
+          },
+          "locators": {
+            "bytes": 93720,
+            "calls": 2
+          },
+          "runtime-code-and-metadata": {
+            "bytes": 4337180,
+            "calls": 110
+          }
+        },
+        "responseBytes": 32836
+      },
+      {
+        "milliseconds": 268.08890000000065,
+        "phase": "initialized",
+        "reads": {
+          "external-artifacts": {
+            "bytes": 7242912,
+            "calls": 10
+          },
+          "generations": {
+            "bytes": 20149778,
+            "calls": 26
+          },
+          "locators": {
+            "bytes": 93720,
+            "calls": 2
+          },
+          "runtime-code-and-metadata": {
+            "bytes": 4337180,
+            "calls": 110
+          }
+        },
+        "responseBytes": 32836
+      },
+      {
+        "milliseconds": 259.98489999999947,
+        "phase": "initialized",
+        "reads": {
+          "external-artifacts": {
+            "bytes": 7242912,
+            "calls": 10
+          },
+          "generations": {
+            "bytes": 20149778,
+            "calls": 26
+          },
+          "locators": {
+            "bytes": 93720,
+            "calls": 2
+          },
+          "runtime-code-and-metadata": {
+            "bytes": 4337180,
+            "calls": 110
+          }
+        },
+        "responseBytes": 32836
+      },
+      {
+        "milliseconds": 291.1201999999994,
+        "phase": "initialized",
+        "reads": {
+          "external-artifacts": {
+            "bytes": 7242912,
+            "calls": 10
+          },
+          "generations": {
+            "bytes": 20149778,
+            "calls": 26
+          },
+          "locators": {
+            "bytes": 93720,
+            "calls": 2
+          },
+          "runtime-code-and-metadata": {
+            "bytes": 4337180,
+            "calls": 110
+          }
+        },
+        "responseBytes": 32836
+      },
+      {
+        "milliseconds": 284.65150000000085,
+        "phase": "initialized",
+        "reads": {
+          "external-artifacts": {
+            "bytes": 7242912,
+            "calls": 10
+          },
+          "generations": {
+            "bytes": 20149778,
+            "calls": 26
+          },
+          "locators": {
+            "bytes": 93720,
+            "calls": 2
+          },
+          "runtime-code-and-metadata": {
+            "bytes": 4337180,
+            "calls": 110
+          }
+        },
+        "responseBytes": 32836
+      },
+      {
+        "milliseconds": 249.29989999999998,
+        "phase": "initialized",
+        "reads": {
+          "external-artifacts": {
+            "bytes": 7242912,
+            "calls": 10
+          },
+          "generations": {
+            "bytes": 20149778,
+            "calls": 26
+          },
+          "locators": {
+            "bytes": 93720,
+            "calls": 2
+          },
+          "runtime-code-and-metadata": {
+            "bytes": 4337180,
+            "calls": 110
+          }
+        },
+        "responseBytes": 32836
+      },
+      {
+        "milliseconds": 259.7377999999999,
+        "phase": "initialized",
+        "reads": {
+          "external-artifacts": {
+            "bytes": 7242912,
+            "calls": 10
+          },
+          "generations": {
+            "bytes": 20149778,
+            "calls": 26
+          },
+          "locators": {
+            "bytes": 93720,
+            "calls": 2
+          },
+          "runtime-code-and-metadata": {
+            "bytes": 4337180,
+            "calls": 110
+          }
+        },
+        "responseBytes": 32836
+      },
+      {
+        "milliseconds": 284.1815999999999,
+        "phase": "initialized",
+        "reads": {
+          "external-artifacts": {
+            "bytes": 7242912,
+            "calls": 10
+          },
+          "generations": {
+            "bytes": 20149778,
+            "calls": 26
+          },
+          "locators": {
+            "bytes": 93720,
+            "calls": 2
+          },
+          "runtime-code-and-metadata": {
+            "bytes": 4337180,
+            "calls": 110
+          }
+        },
+        "responseBytes": 32836
+      },
+      {
+        "milliseconds": 309.91939999999977,
+        "phase": "initialized",
+        "reads": {
+          "external-artifacts": {
+            "bytes": 7242912,
+            "calls": 10
+          },
+          "generations": {
+            "bytes": 20149778,
+            "calls": 26
+          },
+          "locators": {
+            "bytes": 93720,
+            "calls": 2
+          },
+          "runtime-code-and-metadata": {
+            "bytes": 4337180,
+            "calls": 110
+          }
+        },
+        "responseBytes": 32836
+      },
+      {
+        "milliseconds": 270.21219999999994,
+        "phase": "initialized",
+        "reads": {
+          "external-artifacts": {
+            "bytes": 7242912,
+            "calls": 10
+          },
+          "generations": {
+            "bytes": 20149778,
+            "calls": 26
+          },
+          "locators": {
+            "bytes": 93720,
+            "calls": 2
+          },
+          "runtime-code-and-metadata": {
+            "bytes": 4337180,
+            "calls": 110
+          }
+        },
+        "responseBytes": 32836
+      },
+      {
+        "milliseconds": 248.08360000000084,
+        "phase": "initialized",
+        "reads": {
+          "external-artifacts": {
+            "bytes": 7242912,
+            "calls": 10
+          },
+          "generations": {
+            "bytes": 20149778,
+            "calls": 26
+          },
+          "locators": {
+            "bytes": 93720,
+            "calls": 2
+          },
+          "runtime-code-and-metadata": {
+            "bytes": 4337180,
+            "calls": 110
+          }
+        },
+        "responseBytes": 32836
+      }
+    ],
+    "schema": "atlas-tryfan-s6-read-meter/v1"
+  },
+  "replay": {
+    "checks": [
+      {
+        "exact": true,
+        "ref": {
+          "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+          "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839"
+        }
+      },
+      {
+        "exact": true,
+        "ref": {
+          "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+          "revision": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527"
+        }
+      },
+      {
+        "exact": true,
+        "ref": {
+          "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+          "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+        }
+      },
+      {
+        "exact": true,
+        "ref": {
+          "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+          "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+        }
+      },
+      {
+        "exact": true,
+        "ref": {
+          "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+          "revision": "4f4d6ae182d3821d1a002c855d8b886112c0aea0e13af2023b10d5294f70ef93"
+        }
+      },
+      {
+        "exact": true,
+        "ref": {
+          "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+          "revision": "dbc1746d41c191d251628d3409d5db3bf4064c8c29e9f0ba50a332804196c1d2"
+        }
+      }
+    ],
+    "fromRetainedPixels": true,
+    "measurement": {
+      "seconds": 0.12044910015538335,
+      "tileBytesRead": 320857,
+      "uniqueTileBytes": 320857
+    },
+    "methodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+    "milliseconds": 477.1958000000013
+  },
+  "runtime": {
+    "cache": "Warm OS caches;no query/byte cache. Native initialized array/bbox reused. Private ETag responses verify bytes even for304.",
+    "cores": 20,
+    "cpu": "12th Gen Intel(R) Core(TM) i7-12700H",
+    "memory": "Node RSS and direct Python worker working set separately; no aggregate or peak-RSS claim",
+    "node": "v24.11.0",
+    "platform": "win32",
+    "totalMemoryBytes": 16830959616
+  },
+  "schema": "atlas-tryfan-s6-measured-exit/v1",
+  "service": {
+    "delivery": {
+      "assetReads": 4,
+      "bytesRead": 3319028,
+      "pins": 324,
+      "queries": 316,
+      "workerCount": 1
+    },
+    "memory": {
+      "arrayBuffers": 3791784,
+      "external": 7897423,
+      "heapTotal": 201043968,
+      "heapUsed": 54851256,
+      "rss": 313626624
+    },
+    "metrics": {
+      "errors": 1,
+      "requests": 323,
+      "responses": [
+        {
+          "bytes": 32836,
+          "milliseconds": 247.6639,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 243.85210000000006,
+          "status": 200
+        },
+        {
+          "bytes": 15715,
+          "milliseconds": 268.5884000000001,
+          "status": 200
+        },
+        {
+          "bytes": 15569,
+          "milliseconds": 275.2882999999997,
+          "status": 200
+        },
+        {
+          "bytes": 142572,
+          "milliseconds": 364.3291999999997,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 262.16600000000017,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 245.17529999999988,
+          "status": 200
+        },
+        {
+          "bytes": 15715,
+          "milliseconds": 307.14550000000054,
+          "status": 200
+        },
+        {
+          "bytes": 15569,
+          "milliseconds": 331.16169999999966,
+          "status": 200
+        },
+        {
+          "bytes": 142572,
+          "milliseconds": 341.66260000000057,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 247.65300000000025,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 249.08899999999994,
+          "status": 200
+        },
+        {
+          "bytes": 15715,
+          "milliseconds": 339.79449999999997,
+          "status": 200
+        },
+        {
+          "bytes": 15569,
+          "milliseconds": 283.03200000000015,
+          "status": 200
+        },
+        {
+          "bytes": 142572,
+          "milliseconds": 349.7599,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 251.3790999999992,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 242.73390000000018,
+          "status": 200
+        },
+        {
+          "bytes": 15715,
+          "milliseconds": 274.7046,
+          "status": 200
+        },
+        {
+          "bytes": 15569,
+          "milliseconds": 293.35129999999936,
+          "status": 200
+        },
+        {
+          "bytes": 142572,
+          "milliseconds": 399.90769999999975,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 239.1791000000003,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 250.04339999999956,
+          "status": 200
+        },
+        {
+          "bytes": 15715,
+          "milliseconds": 271.128200000001,
+          "status": 200
+        },
+        {
+          "bytes": 15569,
+          "milliseconds": 272.8807000000015,
+          "status": 200
+        },
+        {
+          "bytes": 142572,
+          "milliseconds": 390.13560000000143,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 298.27109999999993,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 245.3230999999996,
+          "status": 200
+        },
+        {
+          "bytes": 15715,
+          "milliseconds": 276.35189999999966,
+          "status": 200
+        },
+        {
+          "bytes": 15569,
+          "milliseconds": 272.4842000000008,
+          "status": 200
+        },
+        {
+          "bytes": 142572,
+          "milliseconds": 397.91609999999855,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 311.6239000000005,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 270.33669999999984,
+          "status": 200
+        },
+        {
+          "bytes": 15715,
+          "milliseconds": 288.4534999999996,
+          "status": 200
+        },
+        {
+          "bytes": 15569,
+          "milliseconds": 265.03900000000067,
+          "status": 200
+        },
+        {
+          "bytes": 142572,
+          "milliseconds": 372.35939999999937,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 274.1177000000007,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 248.09499999999935,
+          "status": 200
+        },
+        {
+          "bytes": 15715,
+          "milliseconds": 291.09070000000065,
+          "status": 200
+        },
+        {
+          "bytes": 15569,
+          "milliseconds": 311.8129000000008,
+          "status": 200
+        },
+        {
+          "bytes": 142572,
+          "milliseconds": 367.057499999999,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 237.3670000000002,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 269.01370000000134,
+          "status": 200
+        },
+        {
+          "bytes": 15715,
+          "milliseconds": 274.29609999999957,
+          "status": 200
+        },
+        {
+          "bytes": 15569,
+          "milliseconds": 291.34080000000176,
+          "status": 200
+        },
+        {
+          "bytes": 142572,
+          "milliseconds": 357.9314999999988,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 260.89620000000104,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 290.3783000000003,
+          "status": 200
+        },
+        {
+          "bytes": 15715,
+          "milliseconds": 271.02950000000055,
+          "status": 200
+        },
+        {
+          "bytes": 15569,
+          "milliseconds": 285.4344999999994,
+          "status": 200
+        },
+        {
+          "bytes": 142572,
+          "milliseconds": 412.10629999999946,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 253.21299999999974,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 239.91410000000178,
+          "status": 200
+        },
+        {
+          "bytes": 15715,
+          "milliseconds": 294.53269999999975,
+          "status": 200
+        },
+        {
+          "bytes": 15569,
+          "milliseconds": 305.6850000000013,
+          "status": 200
+        },
+        {
+          "bytes": 142572,
+          "milliseconds": 349.06089999999676,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 259.83770000000004,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 265.5439000000006,
+          "status": 200
+        },
+        {
+          "bytes": 15715,
+          "milliseconds": 312.7063999999991,
+          "status": 200
+        },
+        {
+          "bytes": 15569,
+          "milliseconds": 317.71459999999934,
+          "status": 200
+        },
+        {
+          "bytes": 142572,
+          "milliseconds": 389.674500000001,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 243.4828000000016,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 278.48709999999846,
+          "status": 200
+        },
+        {
+          "bytes": 15715,
+          "milliseconds": 292.0813999999991,
+          "status": 200
+        },
+        {
+          "bytes": 15569,
+          "milliseconds": 289.8113999999987,
+          "status": 200
+        },
+        {
+          "bytes": 142572,
+          "milliseconds": 356.21780000000217,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 250.87580000000162,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 250.79669999999896,
+          "status": 200
+        },
+        {
+          "bytes": 15715,
+          "milliseconds": 288.01820000000225,
+          "status": 200
+        },
+        {
+          "bytes": 15569,
+          "milliseconds": 272.13370000000214,
+          "status": 200
+        },
+        {
+          "bytes": 142572,
+          "milliseconds": 410.9630999999972,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 301.15320000000065,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 339.4876000000004,
+          "status": 200
+        },
+        {
+          "bytes": 15715,
+          "milliseconds": 332.34739999999874,
+          "status": 200
+        },
+        {
+          "bytes": 15569,
+          "milliseconds": 361.9553999999989,
+          "status": 200
+        },
+        {
+          "bytes": 142572,
+          "milliseconds": 432.78060000000187,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 322.1381000000001,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 283.4879000000001,
+          "status": 200
+        },
+        {
+          "bytes": 15715,
+          "milliseconds": 267.2962000000007,
+          "status": 200
+        },
+        {
+          "bytes": 15569,
+          "milliseconds": 314.8188999999984,
+          "status": 200
+        },
+        {
+          "bytes": 142572,
+          "milliseconds": 388.0534000000007,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 336.27230000000054,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 290.59869999999864,
+          "status": 200
+        },
+        {
+          "bytes": 15715,
+          "milliseconds": 385.619200000001,
+          "status": 200
+        },
+        {
+          "bytes": 15569,
+          "milliseconds": 371.2072999999982,
+          "status": 200
+        },
+        {
+          "bytes": 142572,
+          "milliseconds": 471.77530000000115,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 272.5689999999995,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 300.1957000000002,
+          "status": 200
+        },
+        {
+          "bytes": 15715,
+          "milliseconds": 281.40369999999893,
+          "status": 200
+        },
+        {
+          "bytes": 15569,
+          "milliseconds": 271.8162000000011,
+          "status": 200
+        },
+        {
+          "bytes": 142572,
+          "milliseconds": 356.78369999999995,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 261.6869999999981,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 278.9295999999995,
+          "status": 200
+        },
+        {
+          "bytes": 15715,
+          "milliseconds": 262.77779999999984,
+          "status": 200
+        },
+        {
+          "bytes": 15569,
+          "milliseconds": 284.8878999999979,
+          "status": 200
+        },
+        {
+          "bytes": 142572,
+          "milliseconds": 364.52140000000145,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 284.19550000000163,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 238.06780000000072,
+          "status": 200
+        },
+        {
+          "bytes": 15715,
+          "milliseconds": 266.8913999999968,
+          "status": 200
+        },
+        {
+          "bytes": 15569,
+          "milliseconds": 251.03600000000006,
+          "status": 200
+        },
+        {
+          "bytes": 142572,
+          "milliseconds": 351.97699999999895,
+          "status": 200
+        },
+        {
+          "bytes": 32858,
+          "milliseconds": 245.9318999999996,
+          "status": 200
+        },
+        {
+          "bytes": 32858,
+          "milliseconds": 250.75100000000384,
+          "status": 200
+        },
+        {
+          "bytes": 63557,
+          "milliseconds": 240.9024999999965,
+          "status": 200
+        },
+        {
+          "bytes": 29106,
+          "milliseconds": 277.99409999999625,
+          "status": 200
+        },
+        {
+          "bytes": 60236,
+          "milliseconds": 270.7488999999987,
+          "status": 200
+        },
+        {
+          "bytes": 24087,
+          "milliseconds": 259.70330000000104,
+          "status": 200
+        },
+        {
+          "bytes": 32829,
+          "milliseconds": 266.80539999999746,
+          "status": 200
+        },
+        {
+          "bytes": 1952,
+          "milliseconds": 269.21889999999985,
+          "status": 200
+        },
+        {
+          "bytes": 1954,
+          "milliseconds": 249.64549999999872,
+          "status": 200
+        },
+        {
+          "bytes": 33714,
+          "milliseconds": 324.91619999999966,
+          "status": 200
+        },
+        {
+          "bytes": 813,
+          "milliseconds": 258.9828999999954,
+          "status": 200
+        },
+        {
+          "bytes": 60218,
+          "milliseconds": 243.96450000000186,
+          "status": 200
+        },
+        {
+          "bytes": 73687,
+          "milliseconds": 242.88009999999485,
+          "status": 200
+        },
+        {
+          "bytes": 73436,
+          "milliseconds": 245.10519999999815,
+          "status": 200
+        },
+        {
+          "bytes": 280747,
+          "milliseconds": 894.8222999999998,
+          "status": 200
+        },
+        {
+          "bytes": 148616,
+          "milliseconds": 121.84500000000116,
+          "status": 200
+        },
+        {
+          "bytes": 3051333,
+          "milliseconds": 117.20530000000144,
+          "status": 200
+        },
+        {
+          "bytes": 6158,
+          "milliseconds": 128.26350000000093,
+          "status": 200
+        },
+        {
+          "bytes": 112921,
+          "milliseconds": 123.48539999999775,
+          "status": 200
+        },
+        {
+          "bytes": 202,
+          "milliseconds": 128.52209999999468,
+          "status": 503
+        },
+        {
+          "bytes": 60218,
+          "milliseconds": 256.4317999999985,
+          "status": 200
+        },
+        {
+          "bytes": 23473,
+          "milliseconds": 622.3056999999972,
+          "status": 200
+        },
+        {
+          "bytes": 141341,
+          "milliseconds": 2387.5406999999977,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 247.64650000000256,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 237.5601999999999,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 234.78620000000228,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 234.14749999999913,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 243.76350000000093,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 265.3813999999984,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 236.84429999999702,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 255.58139999999548,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 259.38870000000315,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 267.3127999999997,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 244.56670000000304,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 235.92609999999695,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 262.92179999999644,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 252.8127999999997,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 242.41210000000137,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 268.599000000002,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 254.2876000000033,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 260.409900000006,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 246.2077999999965,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 278.28919999999925,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 262.72639999999956,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 249.26630000000296,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 235.0503000000026,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 260.6953999999969,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 260.42089999999735,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 245.2621999999974,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 277.5970000000016,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 236.5465999999942,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 250.5541000000012,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 237.12739999999758,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 235.10899999999674,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 270.01950000000215,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 255.56789999999455,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 255.2086999999956,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 260.4222000000009,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 289.0347000000038,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 248.10490000000573,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 235.9346000000005,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 254.0983000000051,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 250.69340000000375,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 234.09530000000086,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 250.0460000000021,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 284.8599999999933,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 311.03979999999865,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 239.1406999999963,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 253.69560000000638,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 300.7838000000047,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 249.64080000000104,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 249.76919999999518,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 296.64310000000114,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 243.73619999999937,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 272.6036000000022,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 271.1229999999996,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 252.66279999999824,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 271.5161999999982,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 287.2303000000029,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 255.32589999999618,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 258.0113999999958,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 279.414300000004,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 233.09330000000045,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 245.12290000000212,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 275.5078999999969,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 296.9262000000017,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 279.56499999999505,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 275.8041999999987,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 246.99790000000212,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 249.24359999999433,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 244.6330999999991,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 262.1751000000004,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 245.08879999999772,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 256.9380000000019,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 275.988400000002,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 276.65580000000045,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 267.0167000000001,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 278.5146999999997,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 247.99489999999787,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 273.57210000000487,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 277.9579999999987,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 314.696299999996,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 240.46340000000055,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 235.74119999999675,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 239.65810000000056,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 243.6163000000015,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 253.95089999999618,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 260.27610000000277,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 250.77590000000055,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 253.693299999999,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 257.6998999999996,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 239.76610000000073,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 250.68959999999788,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 244.11319999999978,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 253.0697,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 284.17179999999644,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 278.6722000000009,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 265.9939000000013,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 241.14190000000235,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 263.59889999999723,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 246.42949999999837,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 239.2960999999923,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 245.69959999999264,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 716.3862999999983,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 1060.9340999999986,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 906.3133999999991,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 779.7342000000062,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 635.3385000000126,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 871.0023000000074,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 735.3613000000041,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 613.0685000000085,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 641.1830999999947,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 923.7652999999991,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 779.7593999999954,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 645.1716000000015,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 866.6119000000035,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 736.3267999999953,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 878.1000000000058,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 713.9998999999953,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 741.063599999994,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 614.165599999993,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 742.0067000000126,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 621.9064999999973,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 622.4389000000083,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 750.5690999999933,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 619.2837999999902,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 725.7363999999943,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 741.5160000000033,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 837.2439000000013,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 716.4280999999901,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 901.1725000000006,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 854.6290000000008,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 788.2994999999937,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 663.9388999999937,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 825.5804999999964,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 818.2358999999997,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 821.8649000000005,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 675.6356999999989,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 818.4918999999936,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 779.6238999999914,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 743.3453000000009,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 600.8638999999966,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 735.6185000000114,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 758.3678000000073,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 743.1036000000022,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 621.4919000000082,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 740.7411999999895,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 722.2683000000106,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 729.5461000000068,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 614.751700000008,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 790.327099999995,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 838.7661999999982,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 798.8718999999983,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 663.1143000000011,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 785.9781000000075,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 766.7674999999872,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 759.3171000000002,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 646.6742999999988,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 833.4682999999932,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 826.3041000000085,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 765.5985000000073,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 631.6682999999903,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 784.9101999999984,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 819.5120000000024,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 787.5811000000103,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 658.6273000000074,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 785.8061999999918,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 744.2739000000001,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 785.915399999998,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 652.4360000000015,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 812.6956000000064,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 872.6383999999962,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 854.6848000000027,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 726.7859999999928,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 829.0534999999945,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 835.1559999999881,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 822.2063999999955,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 667.3937999999907,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 772.1010999999999,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 756.7595000000001,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 761.1303000000044,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 613.2347000000009,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 760.0896999999968,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 837.045100000003,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 922.8494000000064,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 792.7148999999918,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 958.7802000000083,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 884.5334999999905,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 836.7658999999985,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 693.7290000000066,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 822.7249000000011,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 748.8671000000031,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 746.2037999999884,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 626.7400000000052,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 738.7476000000024,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 717.4974999999977,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 731.719900000011,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 612.9208999999973,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 741.562699999995,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 852.9487000000081,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 834.574299999993,
+          "status": 200
+        },
+        {
+          "bytes": 32836,
+          "milliseconds": 699.0779000000039,
+          "status": 200
+        },
+        {
+          "bytes": 29088,
+          "milliseconds": 671.9679000000033,
+          "status": 200
+        }
+      ],
+      "startupMilliseconds": 1934.3810999999998
+    }
+  },
+  "storage": {
+    "artifacts": {
+      "bytes": 3057491,
+      "files": 2
+    },
+    "generations": {
+      "bytes": 5658085,
+      "files": 7
+    },
+    "locators": {
+      "bytes": 328020,
+      "files": 7
+    },
+    "staging": {
+      "bytes": 9576561,
+      "files": 28
+    }
+  },
+  "updates": {
+    "U1": {
+      "failures": [
+        {
+          "current": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+          "exitCode": 91,
+          "freshConsumerMilliseconds": 1023.3427000000011,
+          "freshService": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+          "milliseconds": 3931.357500000002,
+          "oldConsumer": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+          "operation": "87205c42-8b9e-4bc8-b3ef-341ccecf6b6e",
+          "orphan": null,
+          "point": "after-artifacts",
+          "retainedDiagnostics": true
+        },
+        {
+          "current": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+          "exitCode": 91,
+          "freshConsumerMilliseconds": 1013.0962,
+          "freshService": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+          "milliseconds": 4644.280200000001,
+          "oldConsumer": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+          "operation": "73e5d230-b91d-43ed-b6f8-7a5e96b54662",
+          "orphan": null,
+          "point": "after-evidence",
+          "retainedDiagnostics": true
+        },
+        {
+          "current": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+          "exitCode": 91,
+          "freshConsumerMilliseconds": 1026.726300000002,
+          "freshService": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+          "milliseconds": 5182.732900000003,
+          "oldConsumer": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+          "operation": "bbe343dc-763c-4d36-b88a-b2088caf14bf",
+          "orphan": null,
+          "point": "after-recompute",
+          "retainedDiagnostics": true
+        },
+        {
+          "current": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+          "exitCode": 91,
+          "freshConsumerMilliseconds": 986.0321999999942,
+          "freshService": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+          "milliseconds": 5967.659,
+          "oldConsumer": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+          "operation": "7c3d2d73-de61-4185-af9a-2bbd51c22acc",
+          "orphan": "fb812e1dedfad87dec0894c3108b1b6576d77ae1769567088208e3b85746f6e5",
+          "point": "before-switch",
+          "retainedDiagnostics": true
+        }
+      ],
+      "logical": {
+        "after": {
+          "appearanceBytes": 148616,
+          "family": "welsh-regional",
+          "generation": "fb812e1dedfad87dec0894c3108b1b6576d77ae1769567088208e3b85746f6e5",
+          "nrwCode": "D.1.1",
+          "nrwStatus": "available",
+          "ratio": 1.191264396968292,
+          "slope": 32.918524028483965,
+          "worldcover": 30
+        },
+        "before": {
+          "appearanceBytes": 148616,
+          "family": "production-common",
+          "generation": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+          "nrwCode": "D.1.1",
+          "nrwStatus": "available",
+          "ratio": 1.0217304696061646,
+          "slope": 11.837956999552308,
+          "worldcover": 30
+        },
+        "catalogueSha256": "d1664f3f553a44478112e0fa8755c11f48ceb9c9d5e0d47e565cdb3b116d45ff",
+        "changedArtifactBytes": 0,
+        "from": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+        "historicalSha256": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+        "knowledgeSha256": "9bbaa0c10db1a1f03810ef3a4e708eca09e25a94c9a8474f07ab944e162438a5",
+        "recomputed": [
+          {
+            "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+            "revision": "4f4d6ae182d3821d1a002c855d8b886112c0aea0e13af2023b10d5294f70ef93"
+          },
+          {
+            "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+            "revision": "dbc1746d41c191d251628d3409d5db3bf4064c8c29e9f0ba50a332804196c1d2"
+          }
+        ],
+        "registeredArtifacts": 310,
+        "retainedHistoricalResults": 4,
+        "reused": [
+          {
+            "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+            "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+          },
+          {
+            "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+            "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+          }
+        ],
+        "scenario": "U1",
+        "statuses": [
+          {
+            "assessment": {
+              "baseline": {
+                "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+                "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+                "hierarchy": {
+                  "id": "tryfan-second-region-proof",
+                  "revision": "1"
+                }
+              },
+              "policy": "current-applicable-terrain-v1",
+              "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+              "reason": "Current explicit hierarchy policy selects another applicable representation; stale is not false",
+              "result": {
+                "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+                "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839"
+              },
+              "selectedFamily": "welsh-regional",
+              "status": "stale"
+            },
+            "probe": "summit",
+            "property": "slope",
+            "ref": {
+              "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+              "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839"
+            }
+          },
+          {
+            "assessment": {
+              "baseline": {
+                "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+                "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+                "hierarchy": {
+                  "id": "tryfan-second-region-proof",
+                  "revision": "1"
+                }
+              },
+              "policy": "current-applicable-terrain-v1",
+              "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+              "reason": "Transitive slope assessment: Current explicit hierarchy policy selects another applicable representation; stale is not false",
+              "result": {
+                "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+                "revision": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527"
+              },
+              "selectedFamily": "welsh-regional",
+              "status": "stale"
+            },
+            "probe": "summit",
+            "property": "area-ratio",
+            "ref": {
+              "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+              "revision": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527"
+            }
+          },
+          {
+            "assessment": {
+              "baseline": {
+                "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+                "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+                "hierarchy": {
+                  "id": "tryfan-second-region-proof",
+                  "revision": "1"
+                }
+              },
+              "policy": "current-applicable-terrain-v1",
+              "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+              "reason": "Selected representation still applies; no intersecting relevant input changes",
+              "result": {
+                "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+                "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+              },
+              "selectedFamily": "production-common",
+              "status": "fresh"
+            },
+            "probe": "southern-observer",
+            "property": "slope",
+            "ref": {
+              "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+              "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+            }
+          },
+          {
+            "assessment": {
+              "baseline": {
+                "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+                "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+                "hierarchy": {
+                  "id": "tryfan-second-region-proof",
+                  "revision": "1"
+                }
+              },
+              "policy": "current-applicable-terrain-v1",
+              "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+              "reason": "Transitive slope assessment: Selected representation still applies; no intersecting relevant input changes",
+              "result": {
+                "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+                "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+              },
+              "selectedFamily": "production-common",
+              "status": "fresh"
+            },
+            "probe": "southern-observer",
+            "property": "area-ratio",
+            "ref": {
+              "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+              "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+            }
+          }
+        ],
+        "to": "fb812e1dedfad87dec0894c3108b1b6576d77ae1769567088208e3b85746f6e5",
+        "totalResults": 6,
+        "understandingSha256": "e85a1417814b2977a0622f6ae0a2de7ae3ddefaf0cf206955c35671a8a654608"
+      },
+      "logicalSha256": "510741ec82251791161fa5982c8f721e7b83d5c05cfaabfa7aa51f5cd15ec6e8",
+      "metrics": {
+        "afterConsumer": 1366.7621999999974,
+        "assemblyMilliseconds": 1207.6159,
+        "beforeConsumer": 1041.8596000000034,
+        "catalogueBytes": 324627,
+        "changedArtifacts": 0,
+        "considered": 4,
+        "generationBytes": 1241281,
+        "oldServiceStartup": 1942.6416,
+        "pointerBytes": 130,
+        "publicationAndConsumerVerificationMilliseconds": 14168.354,
+        "publicationMilliseconds": 18.088999999999942,
+        "publicationProcessMilliseconds": 2404.013399999996,
+        "recomputed": [
+          {
+            "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+            "revision": "4f4d6ae182d3821d1a002c855d8b886112c0aea0e13af2023b10d5294f70ef93"
+          },
+          {
+            "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+            "revision": "dbc1746d41c191d251628d3409d5db3bf4064c8c29e9f0ba50a332804196c1d2"
+          }
+        ],
+        "restartedConsumer": 1272.9072000000015,
+        "retainedBytes": 42473107,
+        "reused": [
+          {
+            "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+            "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+          },
+          {
+            "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+            "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+          }
+        ],
+        "reusedArtifacts": 310,
+        "sampling": {
+          "seconds": 0.11139610013924539,
+          "tileBytesRead": 112921,
+          "uniqueTileBytes": 112921
+        },
+        "statuses": [
+          {
+            "assessment": {
+              "baseline": {
+                "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+                "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+                "hierarchy": {
+                  "id": "tryfan-second-region-proof",
+                  "revision": "1"
+                }
+              },
+              "policy": "current-applicable-terrain-v1",
+              "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+              "reason": "Current explicit hierarchy policy selects another applicable representation; stale is not false",
+              "result": {
+                "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+                "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839"
+              },
+              "selectedFamily": "welsh-regional",
+              "status": "stale"
+            },
+            "probe": "summit",
+            "property": "slope",
+            "ref": {
+              "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+              "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839"
+            }
+          },
+          {
+            "assessment": {
+              "baseline": {
+                "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+                "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+                "hierarchy": {
+                  "id": "tryfan-second-region-proof",
+                  "revision": "1"
+                }
+              },
+              "policy": "current-applicable-terrain-v1",
+              "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+              "reason": "Transitive slope assessment: Current explicit hierarchy policy selects another applicable representation; stale is not false",
+              "result": {
+                "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+                "revision": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527"
+              },
+              "selectedFamily": "welsh-regional",
+              "status": "stale"
+            },
+            "probe": "summit",
+            "property": "area-ratio",
+            "ref": {
+              "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+              "revision": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527"
+            }
+          },
+          {
+            "assessment": {
+              "baseline": {
+                "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+                "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+                "hierarchy": {
+                  "id": "tryfan-second-region-proof",
+                  "revision": "1"
+                }
+              },
+              "policy": "current-applicable-terrain-v1",
+              "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+              "reason": "Selected representation still applies; no intersecting relevant input changes",
+              "result": {
+                "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+                "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+              },
+              "selectedFamily": "production-common",
+              "status": "fresh"
+            },
+            "probe": "southern-observer",
+            "property": "slope",
+            "ref": {
+              "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+              "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+            }
+          },
+          {
+            "assessment": {
+              "baseline": {
+                "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+                "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+                "hierarchy": {
+                  "id": "tryfan-second-region-proof",
+                  "revision": "1"
+                }
+              },
+              "policy": "current-applicable-terrain-v1",
+              "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+              "reason": "Transitive slope assessment: Selected representation still applies; no intersecting relevant input changes",
+              "result": {
+                "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+                "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+              },
+              "selectedFamily": "production-common",
+              "status": "fresh"
+            },
+            "probe": "southern-observer",
+            "property": "area-ratio",
+            "ref": {
+              "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+              "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+            }
+          }
+        ],
+        "validationMilliseconds": 566.7712999999999
+      },
+      "racing": [
+        {
+          "family": "production-common",
+          "generation": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+          "nrwCode": "D.1.1",
+          "nrwStatus": "available",
+          "pinned": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+          "slope": 11.837956999552308
+        },
+        {
+          "family": "production-common",
+          "generation": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+          "nrwCode": "D.1.1",
+          "nrwStatus": "available",
+          "pinned": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+          "slope": 11.837956999552308
+        },
+        {
+          "family": "production-common",
+          "generation": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+          "nrwCode": "D.1.1",
+          "nrwStatus": "available",
+          "pinned": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+          "slope": 11.837956999552308
+        },
+        {
+          "family": "production-common",
+          "generation": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+          "nrwCode": "D.1.1",
+          "nrwStatus": "available",
+          "pinned": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+          "slope": 11.837956999552308
+        },
+        {
+          "family": "production-common",
+          "generation": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+          "nrwCode": "D.1.1",
+          "nrwStatus": "available",
+          "pinned": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+          "slope": 11.837956999552308
+        },
+        {
+          "family": "welsh-regional",
+          "generation": "fb812e1dedfad87dec0894c3108b1b6576d77ae1769567088208e3b85746f6e5",
+          "nrwCode": "D.1.1",
+          "nrwStatus": "available",
+          "pinned": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+          "slope": 32.918524028483965
+        }
+      ],
+      "responseBytes": 446238,
+      "responseSha256": "0d67a1aff3523570b42019612b37fdac13c635cfd807a68707d665c695719793"
+    },
+    "U2": {
+      "failures": [
+        {
+          "current": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+          "exitCode": 91,
+          "freshConsumerMilliseconds": 1369.4190999999992,
+          "freshService": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+          "milliseconds": 4515.483899999992,
+          "oldConsumer": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+          "operation": "507f9298-b411-4b1a-90c8-cd031ec49ea3",
+          "orphan": null,
+          "point": "after-artifacts",
+          "retainedDiagnostics": true
+        },
+        {
+          "current": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+          "exitCode": 91,
+          "freshConsumerMilliseconds": 1338.2174999999988,
+          "freshService": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+          "milliseconds": 5293.744900000005,
+          "oldConsumer": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+          "operation": "294cf8d3-4eb0-4065-904c-a0eccc4d31d9",
+          "orphan": null,
+          "point": "after-evidence",
+          "retainedDiagnostics": true
+        },
+        {
+          "current": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+          "exitCode": 91,
+          "freshConsumerMilliseconds": 1311.8435999999929,
+          "freshService": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+          "milliseconds": 5412.497900000002,
+          "oldConsumer": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+          "operation": "93af3968-7bcb-4331-9498-765bfd06408e",
+          "orphan": null,
+          "point": "after-recompute",
+          "retainedDiagnostics": true
+        },
+        {
+          "current": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+          "exitCode": 91,
+          "freshConsumerMilliseconds": 1269.779899999994,
+          "freshService": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+          "milliseconds": 6335.551299999992,
+          "oldConsumer": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+          "operation": "08048abf-03d1-4a05-a956-cb05f9295416",
+          "orphan": "844e044f0020264b305bb71aaebc1150451d17115538f3dce2e37845254f542b",
+          "point": "before-switch",
+          "retainedDiagnostics": true
+        }
+      ],
+      "logical": {
+        "after": {
+          "appearanceBytes": 148616,
+          "family": "welsh-regional",
+          "generation": "844e044f0020264b305bb71aaebc1150451d17115538f3dce2e37845254f542b",
+          "nrwCode": "D.1.1",
+          "nrwStatus": "available",
+          "ratio": 1.191264396968292,
+          "slope": 32.918524028483965,
+          "worldcover": 30
+        },
+        "before": {
+          "appearanceBytes": 148616,
+          "family": "production-common",
+          "generation": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+          "nrwCode": null,
+          "nrwStatus": "excluded-by-context",
+          "ratio": 1.0217304696061646,
+          "slope": 11.837956999552308,
+          "worldcover": 30
+        },
+        "catalogueSha256": "d1664f3f553a44478112e0fa8755c11f48ceb9c9d5e0d47e565cdb3b116d45ff",
+        "changedArtifactBytes": 0,
+        "from": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+        "historicalSha256": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+        "knowledgeSha256": "9bbaa0c10db1a1f03810ef3a4e708eca09e25a94c9a8474f07ab944e162438a5",
+        "recomputed": [
+          {
+            "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+            "revision": "4f4d6ae182d3821d1a002c855d8b886112c0aea0e13af2023b10d5294f70ef93"
+          },
+          {
+            "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+            "revision": "dbc1746d41c191d251628d3409d5db3bf4064c8c29e9f0ba50a332804196c1d2"
+          }
+        ],
+        "registeredArtifacts": 310,
+        "retainedHistoricalResults": 4,
+        "reused": [
+          {
+            "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+            "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+          },
+          {
+            "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+            "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+          }
+        ],
+        "scenario": "U2",
+        "statuses": [
+          {
+            "assessment": {
+              "baseline": {
+                "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+                "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+                "hierarchy": {
+                  "id": "tryfan-second-region-proof",
+                  "revision": "1"
+                }
+              },
+              "policy": "current-applicable-terrain-v1",
+              "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+              "reason": "Current explicit hierarchy policy selects another applicable representation; stale is not false",
+              "result": {
+                "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+                "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839"
+              },
+              "selectedFamily": "welsh-regional",
+              "status": "stale"
+            },
+            "probe": "summit",
+            "property": "slope",
+            "ref": {
+              "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+              "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839"
+            }
+          },
+          {
+            "assessment": {
+              "baseline": {
+                "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+                "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+                "hierarchy": {
+                  "id": "tryfan-second-region-proof",
+                  "revision": "1"
+                }
+              },
+              "policy": "current-applicable-terrain-v1",
+              "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+              "reason": "Transitive slope assessment: Current explicit hierarchy policy selects another applicable representation; stale is not false",
+              "result": {
+                "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+                "revision": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527"
+              },
+              "selectedFamily": "welsh-regional",
+              "status": "stale"
+            },
+            "probe": "summit",
+            "property": "area-ratio",
+            "ref": {
+              "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+              "revision": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527"
+            }
+          },
+          {
+            "assessment": {
+              "baseline": {
+                "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+                "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+                "hierarchy": {
+                  "id": "tryfan-second-region-proof",
+                  "revision": "1"
+                }
+              },
+              "policy": "current-applicable-terrain-v1",
+              "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+              "reason": "Selected representation still applies; no intersecting relevant input changes",
+              "result": {
+                "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+                "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+              },
+              "selectedFamily": "production-common",
+              "status": "fresh"
+            },
+            "probe": "southern-observer",
+            "property": "slope",
+            "ref": {
+              "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+              "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+            }
+          },
+          {
+            "assessment": {
+              "baseline": {
+                "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+                "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+                "hierarchy": {
+                  "id": "tryfan-second-region-proof",
+                  "revision": "1"
+                }
+              },
+              "policy": "current-applicable-terrain-v1",
+              "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+              "reason": "Transitive slope assessment: Selected representation still applies; no intersecting relevant input changes",
+              "result": {
+                "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+                "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+              },
+              "selectedFamily": "production-common",
+              "status": "fresh"
+            },
+            "probe": "southern-observer",
+            "property": "area-ratio",
+            "ref": {
+              "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+              "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+            }
+          }
+        ],
+        "to": "844e044f0020264b305bb71aaebc1150451d17115538f3dce2e37845254f542b",
+        "totalResults": 6,
+        "understandingSha256": "e85a1417814b2977a0622f6ae0a2de7ae3ddefaf0cf206955c35671a8a654608"
+      },
+      "logicalSha256": "87810234e001a4be90c5cee0628a78c81c3657a77ee32ddd3a27e64866753d12",
+      "metrics": {
+        "afterConsumer": 1621.7946999999986,
+        "assemblyMilliseconds": 1271.26,
+        "beforeConsumer": 1407.8457999999955,
+        "catalogueBytes": 324627,
+        "changedArtifacts": 0,
+        "considered": 4,
+        "generationBytes": 1241308,
+        "oldServiceStartup": 1903.6298,
+        "pointerBytes": 130,
+        "publicationAndConsumerVerificationMilliseconds": 15360.465200000006,
+        "publicationMilliseconds": 16.01220000000012,
+        "publicationProcessMilliseconds": 2514.4717999999993,
+        "recomputed": [
+          {
+            "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+            "revision": "4f4d6ae182d3821d1a002c855d8b886112c0aea0e13af2023b10d5294f70ef93"
+          },
+          {
+            "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+            "revision": "dbc1746d41c191d251628d3409d5db3bf4064c8c29e9f0ba50a332804196c1d2"
+          }
+        ],
+        "restartedConsumer": 1530.9051000000036,
+        "retainedBytes": 42473107,
+        "reused": [
+          {
+            "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+            "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+          },
+          {
+            "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+            "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+          }
+        ],
+        "reusedArtifacts": 310,
+        "sampling": {
+          "seconds": 0.11243190011009574,
+          "tileBytesRead": 112921,
+          "uniqueTileBytes": 112921
+        },
+        "statuses": [
+          {
+            "assessment": {
+              "baseline": {
+                "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+                "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+                "hierarchy": {
+                  "id": "tryfan-second-region-proof",
+                  "revision": "1"
+                }
+              },
+              "policy": "current-applicable-terrain-v1",
+              "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+              "reason": "Current explicit hierarchy policy selects another applicable representation; stale is not false",
+              "result": {
+                "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+                "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839"
+              },
+              "selectedFamily": "welsh-regional",
+              "status": "stale"
+            },
+            "probe": "summit",
+            "property": "slope",
+            "ref": {
+              "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+              "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839"
+            }
+          },
+          {
+            "assessment": {
+              "baseline": {
+                "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+                "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+                "hierarchy": {
+                  "id": "tryfan-second-region-proof",
+                  "revision": "1"
+                }
+              },
+              "policy": "current-applicable-terrain-v1",
+              "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+              "reason": "Transitive slope assessment: Current explicit hierarchy policy selects another applicable representation; stale is not false",
+              "result": {
+                "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+                "revision": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527"
+              },
+              "selectedFamily": "welsh-regional",
+              "status": "stale"
+            },
+            "probe": "summit",
+            "property": "area-ratio",
+            "ref": {
+              "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+              "revision": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527"
+            }
+          },
+          {
+            "assessment": {
+              "baseline": {
+                "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+                "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+                "hierarchy": {
+                  "id": "tryfan-second-region-proof",
+                  "revision": "1"
+                }
+              },
+              "policy": "current-applicable-terrain-v1",
+              "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+              "reason": "Selected representation still applies; no intersecting relevant input changes",
+              "result": {
+                "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+                "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+              },
+              "selectedFamily": "production-common",
+              "status": "fresh"
+            },
+            "probe": "southern-observer",
+            "property": "slope",
+            "ref": {
+              "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+              "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+            }
+          },
+          {
+            "assessment": {
+              "baseline": {
+                "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+                "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+                "hierarchy": {
+                  "id": "tryfan-second-region-proof",
+                  "revision": "1"
+                }
+              },
+              "policy": "current-applicable-terrain-v1",
+              "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+              "reason": "Transitive slope assessment: Selected representation still applies; no intersecting relevant input changes",
+              "result": {
+                "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+                "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+              },
+              "selectedFamily": "production-common",
+              "status": "fresh"
+            },
+            "probe": "southern-observer",
+            "property": "area-ratio",
+            "ref": {
+              "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+              "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+            }
+          }
+        ],
+        "validationMilliseconds": 594.2819999999997
+      },
+      "racing": [
+        {
+          "family": "production-common",
+          "generation": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+          "nrwCode": null,
+          "nrwStatus": "excluded-by-context",
+          "pinned": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+          "slope": 11.837956999552308
+        },
+        {
+          "family": "production-common",
+          "generation": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+          "nrwCode": null,
+          "nrwStatus": "excluded-by-context",
+          "pinned": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+          "slope": 11.837956999552308
+        },
+        {
+          "family": "production-common",
+          "generation": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+          "nrwCode": null,
+          "nrwStatus": "excluded-by-context",
+          "pinned": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+          "slope": 11.837956999552308
+        },
+        {
+          "family": "production-common",
+          "generation": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+          "nrwCode": null,
+          "nrwStatus": "excluded-by-context",
+          "pinned": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+          "slope": 11.837956999552308
+        },
+        {
+          "family": "welsh-regional",
+          "generation": "844e044f0020264b305bb71aaebc1150451d17115538f3dce2e37845254f542b",
+          "nrwCode": "D.1.1",
+          "nrwStatus": "available",
+          "pinned": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+          "slope": 32.918524028483965
+        }
+      ],
+      "responseBytes": 446238,
+      "responseSha256": "8ffcf6fcba44ef7d6730c926ed7febcb65e18fb07df71695fa31c500bf717778"
+    }
+  },
+  "workload": {
+    "controlledLoad": [
+      {
+        "elapsedMilliseconds": 25881.645099999994,
+        "errors": 0,
+        "max": 315.54750000001513,
+        "median": 254.71140000000014,
+        "min": 233.89640000002692,
+        "p95": 289.8070000000007,
+        "readers": 1,
+        "requests": 100,
+        "samples": [
+          {
+            "bytes": 32836,
+            "milliseconds": 248.50969999999506,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 238.42860000001383,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 235.58989999999176,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 235.0608999999822,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 244.52700000000186,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 266.4451999999874,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 237.80689999999595,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 256.4046999999846,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 260.2689000000246,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 268.25459999998566,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 245.51880000001984,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 236.89100000000326,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 263.67619999998715,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 253.23300000000745,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 244.16800000000512,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 269.45249999998487,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 255.663899999985,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 261.3335000000079,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 247.7687000000151,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 279.08380000002217,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 264.4608999999764,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 250.15150000000722,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 235.92960000000312,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 261.42559999998775,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 261.27760000000126,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 246.0066999999981,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 278.3556000000099,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 237.34880000000703,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 251.2895000000135,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 237.93529999998282,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 235.92389999999432,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 270.8107000000018,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 256.4009000000078,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 256.0940999999875,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 261.2306000000099,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 289.8070000000007,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 249.95639999999548,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 236.659799999994,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 255.02150000000256,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 251.27999999999884,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 234.91849999999977,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 250.94490000000224,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 285.6463999999978,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 311.8835000000254,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 239.9657999999763,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 254.53130000000237,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 301.64019999999437,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 250.6198999999906,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 250.51980000000913,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 297.3867999999784,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 244.59579999998095,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 273.66300000000047,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 273.14990000001853,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 253.48060000000987,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 272.30139999999665,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 288.0032999999821,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 256.2189000000071,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 258.85800000000745,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 280.29749999998603,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 233.89640000002692,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 245.93880000000354,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 276.29790000000503,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 297.82640000001993,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 281.86269999999786,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 276.55059999998775,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 247.7599999999802,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 250.09839999998803,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 245.37890000001062,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 262.9802999999956,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 245.96689999999944,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 257.7936000000045,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 276.710699999996,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 277.4684000000125,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 267.93840000001364,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 279.60349999999744,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 248.83810000002268,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 274.47119999999995,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 278.77090000000317,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 315.54750000001513,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 241.38259999998263,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 236.48539999997593,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 240.5742999999784,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 244.5668000000005,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 254.71140000000014,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 261.07809999998426,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 251.48279999999795,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 254.574099999998,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 258.6314999999886,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 241.32070000001113,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 251.62300000002142,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 244.87409999998636,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 254.0501000000222,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 285.2130000000179,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 279.4940999999817,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 266.8044000000227,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 242.0952999999863,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 264.24869999999646,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 247.17430000001332,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 240.1024000000034,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 246.6975000000093,
+            "status": 200
+          }
+        ]
+      },
+      {
+        "elapsedMilliseconds": 26461.6397,
+        "errors": 0,
+        "max": 1270.4014999999781,
+        "median": 1058.4130000000005,
+        "min": 718.1045999999915,
+        "p95": 1190.0439999999944,
+        "readers": 4,
+        "requests": 100,
+        "samples": [
+          {
+            "bytes": 32836,
+            "milliseconds": 718.1045999999915,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 1190.0439999999944,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 1190.7831999999762,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 1192.1645999999892,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 1108.3249999999825,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 988.5105999999796,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 988.3013999999966,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 987.369800000015,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 994.1440999999759,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 1044.6775999999954,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 1044.6775999999954,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 1044.6267999999982,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 1270.4014999999781,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 868.2746999999799,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 1142.114899999986,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 1142.4278999999806,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 1016.4549999999872,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 1016.4879000000074,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 984.6524000000209,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 984.6848000000173,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 866.0178000000014,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 1110.8119999999763,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 868.8334000000032,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 1093.7617000000027,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 987.0169000000169,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 1063.5997000000207,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 1063.474199999997,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 1157.9568999999901,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 1176.9997999999905,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 1109.0492999999842,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 1109.4159999999974,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 1067.9897000000055,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 1072.7021999999997,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 1101.4910999999847,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 1101.1318999999785,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 1086.8264999999956,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 1062.7318999999843,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 1008.2613000000129,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 1008.1444999999949,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 990.3607000000193,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 987.2520999999833,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 990.0693000000028,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 990.0365999999922,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 980.7255999999761,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 953.6277999999875,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 967.2925000000105,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 967.530299999984,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 1029.9021000000066,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 1083.7767999999924,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 1098.9533999999985,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 1098.8662999999942,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 1056.513099999982,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 1027.1303999999946,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 1017.2442999999912,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 1017.3168000000005,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 1061.0656000000017,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 1076.7176000000036,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 1067.2719999999972,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 1067.5781000000134,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 1036.571100000001,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 1060.2814000000071,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 1058.4130000000005,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 1058.2130999999936,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 1031.0199999999895,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 983.2576000000117,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 1029.4575000000186,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 1029.6010999999999,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 1073.8744999999763,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 1157.8190999999933,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 1142.4881000000169,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 1142.22080000001,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 1111.3821999999927,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 1104.9786000000022,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 1078.956199999986,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 1078.953600000008,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 1072.6352000000188,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 1000.6192999999912,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 1011.5327000000107,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 1011.5646999999881,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 1023.8249999999825,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 1091.8717999999935,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 1185.3898000000045,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 1185.3867000000027,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 1216.512800000026,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 1232.835300000006,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 1130.6208000000042,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 1130.6747000000032,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 1099.409800000023,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 994.9391000000178,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 1008.7217999999993,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 1008.7732000000251,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 980.1442999999854,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 977.3543000000063,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 966.3420999999798,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 966.6681000000099,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 985.7266999999993,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 1101.506400000013,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 1087.815900000016,
+            "status": 200
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 1087.3291000000027,
+            "status": 200
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 949.5111000000034,
+            "status": 200
+          }
+        ]
+      }
+    ],
+    "nativeMatrix": [
+      {
+        "id": "Q05",
+        "sha256": "6be643a51ffa6180ae49574d76b1d2d9b8f80c2d28aaa4cb8cc10f4d01d1c352",
+        "status": 200
+      },
+      {
+        "id": "Q06",
+        "sha256": "2bd5f7779fcf91cde36f8d364fada7be430b7465898229657eb5b8df6eb97e09",
+        "status": 200
+      },
+      {
+        "id": "Q07",
+        "sha256": "cb925fd591ec5cdcccdc945b4c673524efe30980fea951dacd94c0e945576a4e",
+        "status": 200
+      },
+      {
+        "id": "Q08",
+        "sha256": "cea55e029f80bda04d386ff7a3517c79d0f1224be052a59fd3a56b2fdd7806f9",
+        "status": 200
+      },
+      {
+        "id": "Q09",
+        "sha256": "bff74d0a978fdcee5223e464bd3a4fc72fbe4a5c93214706273b837e4ecd3984",
+        "status": 200
+      },
+      {
+        "id": "Q10",
+        "sha256": "e67df874905ca7da5a7b92884d1b9ca17b9e5215fb6edf1c663082276da618de",
+        "status": 200
+      },
+      {
+        "id": "Q11",
+        "sha256": "7002ab48a3e9860aad43e65d4376d33f917385f0fbf256dc08cd61f3fc6385ea",
+        "status": 200
+      },
+      {
+        "id": "Q13",
+        "sha256": "2a6db1a1a4f6d0a5c7dbeb2fb4878de8013d40276fdf9086ba855602060a6b4d",
+        "status": 200
+      },
+      {
+        "id": "Q14",
+        "sha256": "4169d34dad83a562b8737dcc4a3c85963c29bd99786d1724e0b52a07b940961e",
+        "status": 200
+      },
+      {
+        "id": "Q15",
+        "sha256": "4d76634c2d37321c4bfe0d77cfe50ab4cc1e583e6163c10462c858ff6630d034",
+        "status": 200
+      },
+      {
+        "id": "Q16",
+        "sha256": "dc01880607f4c9ba5547bc2e6b6737a9172758479775c14b6ac3289bd0e36283",
+        "status": 200
+      },
+      {
+        "id": "Q18",
+        "sha256": "396499f7f479c8c42a161fa2bb1e82c68db625679aadf1e37d9c7ca0fc4170d7",
+        "status": 200
+      },
+      {
+        "id": "Q19",
+        "sha256": "3e56dedff293793bb12414ea2f70863c9c207a7045973b286a8446dc6cd153e7",
+        "status": 200
+      },
+      {
+        "id": "Q20",
+        "sha256": "f37ef98f46e5f06573b1c4e9d1ea65e039d26e1f3f76e6fd9c7c175de24b2ba0",
+        "status": 200
+      }
+    ],
+    "provenance": {
+      "bytes": 23473,
+      "milliseconds": 623.1068999999843
+    },
+    "warm": {
+      "derived-area-ratio": {
+        "max": 372.25740000000224,
+        "median": 291.67860000001383,
+        "min": 251.976399999985,
+        "p95": 364.4314000000013,
+        "samples": [
+          {
+            "bytes": 15569,
+            "milliseconds": 276.8335000000079,
+            "sha256": "a271a8c611a0b2d8a61501970625a0844c0b8885408e7efdb785bce0b65b0576"
+          },
+          {
+            "bytes": 15569,
+            "milliseconds": 332.3972999999969,
+            "sha256": "a271a8c611a0b2d8a61501970625a0844c0b8885408e7efdb785bce0b65b0576"
+          },
+          {
+            "bytes": 15569,
+            "milliseconds": 285.03830000000016,
+            "sha256": "a271a8c611a0b2d8a61501970625a0844c0b8885408e7efdb785bce0b65b0576"
+          },
+          {
+            "bytes": 15569,
+            "milliseconds": 295.3279999999795,
+            "sha256": "a271a8c611a0b2d8a61501970625a0844c0b8885408e7efdb785bce0b65b0576"
+          },
+          {
+            "bytes": 15569,
+            "milliseconds": 274.8680999999924,
+            "sha256": "a271a8c611a0b2d8a61501970625a0844c0b8885408e7efdb785bce0b65b0576"
+          },
+          {
+            "bytes": 15569,
+            "milliseconds": 273.9441999999981,
+            "sha256": "a271a8c611a0b2d8a61501970625a0844c0b8885408e7efdb785bce0b65b0576"
+          },
+          {
+            "bytes": 15569,
+            "milliseconds": 266.8552999999956,
+            "sha256": "a271a8c611a0b2d8a61501970625a0844c0b8885408e7efdb785bce0b65b0576"
+          },
+          {
+            "bytes": 15569,
+            "milliseconds": 312.5541000000085,
+            "sha256": "a271a8c611a0b2d8a61501970625a0844c0b8885408e7efdb785bce0b65b0576"
+          },
+          {
+            "bytes": 15569,
+            "milliseconds": 293.5887000000221,
+            "sha256": "a271a8c611a0b2d8a61501970625a0844c0b8885408e7efdb785bce0b65b0576"
+          },
+          {
+            "bytes": 15569,
+            "milliseconds": 287.04000000000815,
+            "sha256": "a271a8c611a0b2d8a61501970625a0844c0b8885408e7efdb785bce0b65b0576"
+          },
+          {
+            "bytes": 15569,
+            "milliseconds": 307.38569999998435,
+            "sha256": "a271a8c611a0b2d8a61501970625a0844c0b8885408e7efdb785bce0b65b0576"
+          },
+          {
+            "bytes": 15569,
+            "milliseconds": 319.3466999999946,
+            "sha256": "a271a8c611a0b2d8a61501970625a0844c0b8885408e7efdb785bce0b65b0576"
+          },
+          {
+            "bytes": 15569,
+            "milliseconds": 291.67860000001383,
+            "sha256": "a271a8c611a0b2d8a61501970625a0844c0b8885408e7efdb785bce0b65b0576"
+          },
+          {
+            "bytes": 15569,
+            "milliseconds": 273.87049999999,
+            "sha256": "a271a8c611a0b2d8a61501970625a0844c0b8885408e7efdb785bce0b65b0576"
+          },
+          {
+            "bytes": 15569,
+            "milliseconds": 364.4314000000013,
+            "sha256": "a271a8c611a0b2d8a61501970625a0844c0b8885408e7efdb785bce0b65b0576"
+          },
+          {
+            "bytes": 15569,
+            "milliseconds": 316.6368000000075,
+            "sha256": "a271a8c611a0b2d8a61501970625a0844c0b8885408e7efdb785bce0b65b0576"
+          },
+          {
+            "bytes": 15569,
+            "milliseconds": 372.25740000000224,
+            "sha256": "a271a8c611a0b2d8a61501970625a0844c0b8885408e7efdb785bce0b65b0576"
+          },
+          {
+            "bytes": 15569,
+            "milliseconds": 273.4713000000047,
+            "sha256": "a271a8c611a0b2d8a61501970625a0844c0b8885408e7efdb785bce0b65b0576"
+          },
+          {
+            "bytes": 15569,
+            "milliseconds": 286.41929999997956,
+            "sha256": "a271a8c611a0b2d8a61501970625a0844c0b8885408e7efdb785bce0b65b0576"
+          },
+          {
+            "bytes": 15569,
+            "milliseconds": 251.976399999985,
+            "sha256": "a271a8c611a0b2d8a61501970625a0844c0b8885408e7efdb785bce0b65b0576"
+          }
+        ]
+      },
+      "derived-slope": {
+        "max": 386.7396000000008,
+        "median": 288.9586999999883,
+        "min": 263.5939000000071,
+        "p95": 340.8252999999968,
+        "samples": [
+          {
+            "bytes": 15715,
+            "milliseconds": 269.9895000000106,
+            "sha256": "ee59aed75c1d12666f757d4776d34bc39ca3c5d8e656240d54e2ff537e8c2bce"
+          },
+          {
+            "bytes": 15715,
+            "milliseconds": 308.2983999999997,
+            "sha256": "ee59aed75c1d12666f757d4776d34bc39ca3c5d8e656240d54e2ff537e8c2bce"
+          },
+          {
+            "bytes": 15715,
+            "milliseconds": 340.8252999999968,
+            "sha256": "ee59aed75c1d12666f757d4776d34bc39ca3c5d8e656240d54e2ff537e8c2bce"
+          },
+          {
+            "bytes": 15715,
+            "milliseconds": 275.5426999999909,
+            "sha256": "ee59aed75c1d12666f757d4776d34bc39ca3c5d8e656240d54e2ff537e8c2bce"
+          },
+          {
+            "bytes": 15715,
+            "milliseconds": 272.0472000000009,
+            "sha256": "ee59aed75c1d12666f757d4776d34bc39ca3c5d8e656240d54e2ff537e8c2bce"
+          },
+          {
+            "bytes": 15715,
+            "milliseconds": 277.3575000000128,
+            "sha256": "ee59aed75c1d12666f757d4776d34bc39ca3c5d8e656240d54e2ff537e8c2bce"
+          },
+          {
+            "bytes": 15715,
+            "milliseconds": 289.21410000001197,
+            "sha256": "ee59aed75c1d12666f757d4776d34bc39ca3c5d8e656240d54e2ff537e8c2bce"
+          },
+          {
+            "bytes": 15715,
+            "milliseconds": 292.0462000000116,
+            "sha256": "ee59aed75c1d12666f757d4776d34bc39ca3c5d8e656240d54e2ff537e8c2bce"
+          },
+          {
+            "bytes": 15715,
+            "milliseconds": 275.2603999999992,
+            "sha256": "ee59aed75c1d12666f757d4776d34bc39ca3c5d8e656240d54e2ff537e8c2bce"
+          },
+          {
+            "bytes": 15715,
+            "milliseconds": 272.0229999999865,
+            "sha256": "ee59aed75c1d12666f757d4776d34bc39ca3c5d8e656240d54e2ff537e8c2bce"
+          },
+          {
+            "bytes": 15715,
+            "milliseconds": 295.47929999997723,
+            "sha256": "ee59aed75c1d12666f757d4776d34bc39ca3c5d8e656240d54e2ff537e8c2bce"
+          },
+          {
+            "bytes": 15715,
+            "milliseconds": 313.5359999999928,
+            "sha256": "ee59aed75c1d12666f757d4776d34bc39ca3c5d8e656240d54e2ff537e8c2bce"
+          },
+          {
+            "bytes": 15715,
+            "milliseconds": 293.3142999999982,
+            "sha256": "ee59aed75c1d12666f757d4776d34bc39ca3c5d8e656240d54e2ff537e8c2bce"
+          },
+          {
+            "bytes": 15715,
+            "milliseconds": 288.9586999999883,
+            "sha256": "ee59aed75c1d12666f757d4776d34bc39ca3c5d8e656240d54e2ff537e8c2bce"
+          },
+          {
+            "bytes": 15715,
+            "milliseconds": 333.3209999999963,
+            "sha256": "ee59aed75c1d12666f757d4776d34bc39ca3c5d8e656240d54e2ff537e8c2bce"
+          },
+          {
+            "bytes": 15715,
+            "milliseconds": 268.2660999999789,
+            "sha256": "ee59aed75c1d12666f757d4776d34bc39ca3c5d8e656240d54e2ff537e8c2bce"
+          },
+          {
+            "bytes": 15715,
+            "milliseconds": 386.7396000000008,
+            "sha256": "ee59aed75c1d12666f757d4776d34bc39ca3c5d8e656240d54e2ff537e8c2bce"
+          },
+          {
+            "bytes": 15715,
+            "milliseconds": 282.2271999999939,
+            "sha256": "ee59aed75c1d12666f757d4776d34bc39ca3c5d8e656240d54e2ff537e8c2bce"
+          },
+          {
+            "bytes": 15715,
+            "milliseconds": 263.5939000000071,
+            "sha256": "ee59aed75c1d12666f757d4776d34bc39ca3c5d8e656240d54e2ff537e8c2bce"
+          },
+          {
+            "bytes": 15715,
+            "milliseconds": 267.844299999997,
+            "sha256": "ee59aed75c1d12666f757d4776d34bc39ca3c5d8e656240d54e2ff537e8c2bce"
+          }
+        ]
+      },
+      "nrw-native": {
+        "max": 340.4960999999894,
+        "median": 266.31690000000526,
+        "min": 239.75210000001243,
+        "p95": 301.0732999999891,
+        "samples": [
+          {
+            "bytes": 29088,
+            "milliseconds": 246.1310999999987,
+            "sha256": "b3601b34c8f86ea2d1e4bb4a4f650e0456c1104a2bb71f12cfe333adbebf7e49"
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 246.50940000000992,
+            "sha256": "b3601b34c8f86ea2d1e4bb4a4f650e0456c1104a2bb71f12cfe333adbebf7e49"
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 250.1521999999968,
+            "sha256": "b3601b34c8f86ea2d1e4bb4a4f650e0456c1104a2bb71f12cfe333adbebf7e49"
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 243.77489999998943,
+            "sha256": "b3601b34c8f86ea2d1e4bb4a4f650e0456c1104a2bb71f12cfe333adbebf7e49"
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 251.02289999998175,
+            "sha256": "b3601b34c8f86ea2d1e4bb4a4f650e0456c1104a2bb71f12cfe333adbebf7e49"
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 246.28070000000298,
+            "sha256": "b3601b34c8f86ea2d1e4bb4a4f650e0456c1104a2bb71f12cfe333adbebf7e49"
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 271.28080000000773,
+            "sha256": "b3601b34c8f86ea2d1e4bb4a4f650e0456c1104a2bb71f12cfe333adbebf7e49"
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 249.1025999999838,
+            "sha256": "b3601b34c8f86ea2d1e4bb4a4f650e0456c1104a2bb71f12cfe333adbebf7e49"
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 269.8100999999733,
+            "sha256": "b3601b34c8f86ea2d1e4bb4a4f650e0456c1104a2bb71f12cfe333adbebf7e49"
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 291.19920000000275,
+            "sha256": "b3601b34c8f86ea2d1e4bb4a4f650e0456c1104a2bb71f12cfe333adbebf7e49"
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 240.98849999997765,
+            "sha256": "b3601b34c8f86ea2d1e4bb4a4f650e0456c1104a2bb71f12cfe333adbebf7e49"
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 266.31690000000526,
+            "sha256": "b3601b34c8f86ea2d1e4bb4a4f650e0456c1104a2bb71f12cfe333adbebf7e49"
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 279.44679999997607,
+            "sha256": "b3601b34c8f86ea2d1e4bb4a4f650e0456c1104a2bb71f12cfe333adbebf7e49"
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 251.6536999999953,
+            "sha256": "b3601b34c8f86ea2d1e4bb4a4f650e0456c1104a2bb71f12cfe333adbebf7e49"
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 340.4960999999894,
+            "sha256": "b3601b34c8f86ea2d1e4bb4a4f650e0456c1104a2bb71f12cfe333adbebf7e49"
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 284.3875999999873,
+            "sha256": "b3601b34c8f86ea2d1e4bb4a4f650e0456c1104a2bb71f12cfe333adbebf7e49"
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 291.72199999997974,
+            "sha256": "b3601b34c8f86ea2d1e4bb4a4f650e0456c1104a2bb71f12cfe333adbebf7e49"
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 301.0732999999891,
+            "sha256": "b3601b34c8f86ea2d1e4bb4a4f650e0456c1104a2bb71f12cfe333adbebf7e49"
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 279.6903000000166,
+            "sha256": "b3601b34c8f86ea2d1e4bb4a4f650e0456c1104a2bb71f12cfe333adbebf7e49"
+          },
+          {
+            "bytes": 29088,
+            "milliseconds": 239.75210000001243,
+            "sha256": "b3601b34c8f86ea2d1e4bb4a4f650e0456c1104a2bb71f12cfe333adbebf7e49"
+          }
+        ]
+      },
+      "place-evidence": {
+        "max": 474.40009999999893,
+        "median": 373.51190000001225,
+        "min": 343.33690000000934,
+        "p95": 433.86799999998766,
+        "samples": [
+          {
+            "bytes": 142572,
+            "milliseconds": 365.73519999999553,
+            "sha256": "f01fd46ea38a9dbd865a5e56d1f5f4716532f65a27724cc38251039edcf54376"
+          },
+          {
+            "bytes": 142572,
+            "milliseconds": 343.33690000000934,
+            "sha256": "f01fd46ea38a9dbd865a5e56d1f5f4716532f65a27724cc38251039edcf54376"
+          },
+          {
+            "bytes": 142572,
+            "milliseconds": 350.7658999999985,
+            "sha256": "f01fd46ea38a9dbd865a5e56d1f5f4716532f65a27724cc38251039edcf54376"
+          },
+          {
+            "bytes": 142572,
+            "milliseconds": 401.36310000001686,
+            "sha256": "f01fd46ea38a9dbd865a5e56d1f5f4716532f65a27724cc38251039edcf54376"
+          },
+          {
+            "bytes": 142572,
+            "milliseconds": 391.24849999998696,
+            "sha256": "f01fd46ea38a9dbd865a5e56d1f5f4716532f65a27724cc38251039edcf54376"
+          },
+          {
+            "bytes": 142572,
+            "milliseconds": 399.35699999998906,
+            "sha256": "f01fd46ea38a9dbd865a5e56d1f5f4716532f65a27724cc38251039edcf54376"
+          },
+          {
+            "bytes": 142572,
+            "milliseconds": 373.51190000001225,
+            "sha256": "f01fd46ea38a9dbd865a5e56d1f5f4716532f65a27724cc38251039edcf54376"
+          },
+          {
+            "bytes": 142572,
+            "milliseconds": 369.86939999999595,
+            "sha256": "f01fd46ea38a9dbd865a5e56d1f5f4716532f65a27724cc38251039edcf54376"
+          },
+          {
+            "bytes": 142572,
+            "milliseconds": 358.9755999999761,
+            "sha256": "f01fd46ea38a9dbd865a5e56d1f5f4716532f65a27724cc38251039edcf54376"
+          },
+          {
+            "bytes": 142572,
+            "milliseconds": 413.394100000005,
+            "sha256": "f01fd46ea38a9dbd865a5e56d1f5f4716532f65a27724cc38251039edcf54376"
+          },
+          {
+            "bytes": 142572,
+            "milliseconds": 350.1777000000002,
+            "sha256": "f01fd46ea38a9dbd865a5e56d1f5f4716532f65a27724cc38251039edcf54376"
+          },
+          {
+            "bytes": 142572,
+            "milliseconds": 390.85860000000685,
+            "sha256": "f01fd46ea38a9dbd865a5e56d1f5f4716532f65a27724cc38251039edcf54376"
+          },
+          {
+            "bytes": 142572,
+            "milliseconds": 357.26699999999255,
+            "sha256": "f01fd46ea38a9dbd865a5e56d1f5f4716532f65a27724cc38251039edcf54376"
+          },
+          {
+            "bytes": 142572,
+            "milliseconds": 412.13809999998193,
+            "sha256": "f01fd46ea38a9dbd865a5e56d1f5f4716532f65a27724cc38251039edcf54376"
+          },
+          {
+            "bytes": 142572,
+            "milliseconds": 433.86799999998766,
+            "sha256": "f01fd46ea38a9dbd865a5e56d1f5f4716532f65a27724cc38251039edcf54376"
+          },
+          {
+            "bytes": 142572,
+            "milliseconds": 389.25900000002,
+            "sha256": "f01fd46ea38a9dbd865a5e56d1f5f4716532f65a27724cc38251039edcf54376"
+          },
+          {
+            "bytes": 142572,
+            "milliseconds": 474.40009999999893,
+            "sha256": "f01fd46ea38a9dbd865a5e56d1f5f4716532f65a27724cc38251039edcf54376"
+          },
+          {
+            "bytes": 142572,
+            "milliseconds": 357.70350000000326,
+            "sha256": "f01fd46ea38a9dbd865a5e56d1f5f4716532f65a27724cc38251039edcf54376"
+          },
+          {
+            "bytes": 142572,
+            "milliseconds": 365.62289999998757,
+            "sha256": "f01fd46ea38a9dbd865a5e56d1f5f4716532f65a27724cc38251039edcf54376"
+          },
+          {
+            "bytes": 142572,
+            "milliseconds": 353.55790000001434,
+            "sha256": "f01fd46ea38a9dbd865a5e56d1f5f4716532f65a27724cc38251039edcf54376"
+          }
+        ]
+      },
+      "worldcover-native": {
+        "max": 337.2074999999895,
+        "median": 262.55670000001555,
+        "min": 238.5331999999762,
+        "p95": 323.0084999999963,
+        "samples": [
+          {
+            "bytes": 32836,
+            "milliseconds": 260.3606,
+            "sha256": "9efa6fa04b5765711d913db2ae0f538d871e7f2a5f77459b011c75c24f93a476"
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 263.42949999999837,
+            "sha256": "9efa6fa04b5765711d913db2ae0f538d871e7f2a5f77459b011c75c24f93a476"
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 249.09619999999995,
+            "sha256": "9efa6fa04b5765711d913db2ae0f538d871e7f2a5f77459b011c75c24f93a476"
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 252.3416000000143,
+            "sha256": "9efa6fa04b5765711d913db2ae0f538d871e7f2a5f77459b011c75c24f93a476"
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 240.2551000000094,
+            "sha256": "9efa6fa04b5765711d913db2ae0f538d871e7f2a5f77459b011c75c24f93a476"
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 299.00380000000587,
+            "sha256": "9efa6fa04b5765711d913db2ae0f538d871e7f2a5f77459b011c75c24f93a476"
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 312.7815000000119,
+            "sha256": "9efa6fa04b5765711d913db2ae0f538d871e7f2a5f77459b011c75c24f93a476"
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 275.3434000000125,
+            "sha256": "9efa6fa04b5765711d913db2ae0f538d871e7f2a5f77459b011c75c24f93a476"
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 238.5331999999762,
+            "sha256": "9efa6fa04b5765711d913db2ae0f538d871e7f2a5f77459b011c75c24f93a476"
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 262.070000000007,
+            "sha256": "9efa6fa04b5765711d913db2ae0f538d871e7f2a5f77459b011c75c24f93a476"
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 254.05939999999828,
+            "sha256": "9efa6fa04b5765711d913db2ae0f538d871e7f2a5f77459b011c75c24f93a476"
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 260.70569999999134,
+            "sha256": "9efa6fa04b5765711d913db2ae0f538d871e7f2a5f77459b011c75c24f93a476"
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 244.34779999998864,
+            "sha256": "9efa6fa04b5765711d913db2ae0f538d871e7f2a5f77459b011c75c24f93a476"
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 251.77550000001793,
+            "sha256": "9efa6fa04b5765711d913db2ae0f538d871e7f2a5f77459b011c75c24f93a476"
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 302.22000000000116,
+            "sha256": "9efa6fa04b5765711d913db2ae0f538d871e7f2a5f77459b011c75c24f93a476"
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 323.0084999999963,
+            "sha256": "9efa6fa04b5765711d913db2ae0f538d871e7f2a5f77459b011c75c24f93a476"
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 337.2074999999895,
+            "sha256": "9efa6fa04b5765711d913db2ae0f538d871e7f2a5f77459b011c75c24f93a476"
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 273.69510000001173,
+            "sha256": "9efa6fa04b5765711d913db2ae0f538d871e7f2a5f77459b011c75c24f93a476"
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 262.55670000001555,
+            "sha256": "9efa6fa04b5765711d913db2ae0f538d871e7f2a5f77459b011c75c24f93a476"
+          },
+          {
+            "bytes": 32836,
+            "milliseconds": 285.2286000000022,
+            "sha256": "9efa6fa04b5765711d913db2ae0f538d871e7f2a5f77459b011c75c24f93a476"
+          }
+        ]
+      }
+    }
+  }
+}
