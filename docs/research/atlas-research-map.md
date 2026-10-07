@@ -5,7 +5,7 @@ Lab 012G evidence checkpoint `abf95bcfb50c681244a146626565a471ba791418`.
 This index records knowledge and research status, not a roadmap, new Lab or
 production architecture. It is the starting point for humans and fresh tooling.
 
-## Current programme state — regional-pilot S1 complete
+## Current programme state — regional-pilot S2 complete
 
 The [Atlas research-state audit and thread register](atlas-research-state.md) is the
 current status/sequence companion to this historical research map. It reconstructs
@@ -86,7 +86,7 @@ The [programme acceptance](atlas-regional-pilot-acceptance.md) completes that re
 plus3 explicit unproven/excluded classes,42 thread dispositions and9 frozen admission gates.
 No demonstrated foundational blocker; integrated mixed-family publication/serving and operational
 measurements become pilot exit obligations. Admission does not mean the pilot exists or science is complete.
-The [bounded Tryfan pilot plan](tryfan-regional-pilot-plan.md) at `7809147` remains **C - IMPLEMENTABLE AS PLANNED** following admission at `f16ce63`. The [S1 retained catalogue and immutable generation foundation](tryfan-pilot-s1.md) is **C - S1 SUCCESS**:five retained families,310 files/42.47MB, eight representation references, external immutable generations, coherent root and independent restart/history/interruption tests. Median verified fresh load251.39ms ([measurements](tryfan-pilot-s1-results.json)). Capabilities remain registration-only; later slices are not complete. Integrated serving and mixed-family scientific publication remain pilot exit obligations. Appearance remains unresolved/non-blocking and Swiss multiview parked. Exactly one next task: **Tryfan pilot qualified native evidence readers and queries - S2 only**, not begun.
+The [bounded Tryfan pilot plan](tryfan-regional-pilot-plan.md) at `7809147` remains **C - IMPLEMENTABLE AS PLANNED** following admission at `f16ce63`. The [S1 retained catalogue and immutable generation foundation](tryfan-pilot-s1.md) is **C - S1 SUCCESS**:five retained families,310 files/42.47MB, eight representation references, external immutable generations, coherent root and independent restart/history/interruption tests. Median verified fresh load251.39ms ([measurements](tryfan-pilot-s1-results.json)). S1 remains successful at `b5ac715`; its immutable seed remains registration-only. The [S2 native evidence/query layer](tryfan-pilot-s2.md) is **C - S2 SUCCESS**: generation-pinned native WorldCover and193 NRW records/28 code strings coexist, preserving mappings/time/support/rights/provenance and honest unsupported/unavailable states; July appearance metadata only. Five fresh processes match the matrix; [measurements](tryfan-pilot-s2-results.json) record about1.2ms initialized query medians/1.64s process matrix median. Runtime reader capability is separate, no foundational deviation. S3-S6 have not begun; integrated serving and mixed-family scientific publication remain exit obligations. Appearance remains unresolved/non-blocking and Swiss multiview parked. Exactly one next task: **Tryfan pilot retained derivation and lifecycle integration - S3 only**, not begun.
 
 Production, Weather and Traverse remain unchanged. The map below retains chronological
 milestones; current statuses and supersession are in the linked register.
@@ -579,3 +579,16 @@ All42 status columns remain; S5/S6 gain bounded query proof, not general identit
 [Report](atlas-regional-pilot-acceptance.md), [manifest](atlas-regional-pilot-acceptance.json), [accounting](atlas-regional-pilot-acceptance-results.json), [validation](atlas-regional-pilot-acceptance-validation.json): **C - READY FOR BOUNDED REGIONAL PILOT**.37 proof records /50 required capabilities /42 thread dispositions /9 frozen admission gates; no demonstrated foundational blocker. Partial survey/validity/appearance and designed integrated serving are explicit, not upgraded to proof by a contract field. Admission permits a finite local Tryfan integration phase; it does not accept an implemented pilot or production infrastructure.
 
 All42 status columns/history remain. Open appearance debt and Swiss PARKED status persist; normalization INCONCLUSIVE/protocol NOT JUSTIFIED and Riffelhorn partial/scale-conditional outcomes are unchanged. Exactly one next: **Bounded retained Tryfan regional-pilot architecture and implementation plan**, not begun. Define finite mixed-catalogue publication/recovery/query/consumer exit tests and reversible local design; no new benchmark, acquisition or global stack decision.
+
+## 2026-10-07 — Tryfan pilot S2 native evidence/query milestone
+
+The [S2 report](tryfan-pilot-s2.md) records **C - S2 SUCCESS** following successful S1 at
+`b5ac715`, admitted at `f16ce63` and planned at `7809147`. Native raster/vector evidence reads
+through the immutable published generation; native cell/feature identity, mappings/loss,
+historical time, support, rights and provenance survive fresh-process query reproduction.
+Opaque NRW codes remain unknown, not inferred physical absence. Dated appearance is metadata
+only. No new scientific release, semantic truth layer, derivation/freshness or serving runtime.
+All42 research statuses/history remain; appearance unresolved/non-blocking, Swiss multiview parked.
+[Validation](tryfan-pilot-s2-validation.json) preserves sources/contracts/production and S1 semantics.
+Exactly one next: **Tryfan pilot retained derivation and lifecycle integration - S3 only**;
+not begun. The S2 checkpoint is the commit introducing this report/navigation entry.

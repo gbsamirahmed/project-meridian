@@ -662,13 +662,21 @@ five retained families,310 hash-verified artifacts/42.47MB, eight native/prepare
 references, immutable external JSON generations, one coherent root, explicit writer recovery and
 fresh-process/history/interruption tests. Median fresh hash-verifying load was251.39ms in the
 [local measurements](research/tryfan-pilot-s1-results.json); this is not a production SLA.
-Registration-only capabilities are explicit; no query, derivation, HTTP, client or later slice is
-implemented. Integrated serving and mixed-family scientific publication remain pilot exit tests.
-Production Atlas, Weather, Traverse, frozen contracts and retained evidence remain unchanged.
-Appearance remains unresolved/non-blocking and Swiss multiview parked; no final production stack.
-Exactly one next task: **Tryfan pilot qualified native evidence readers and queries - S2 only**,
-not begun; [scope/stop](research/tryfan-pilot-s1.md#31-exactly-one-next-bounded-task).
-It has not begun. Open appearance remains non-blocking research debt, not solved; Swiss multiview remains parked.
+S1 remains **C - S1 SUCCESS** at `b5ac715`; its published seed remains registration-only.
+The [S2 native evidence/query layer](research/tryfan-pilot-s2.md) is now **C - S2 SUCCESS**:
+WorldCover native cells/templates and all193 NRW records/28 code strings are readable through the
+pinned published generation, with coexistence, mapping loss, native time/support, rights/provenance
+and honest unsupported/unavailable states. July appearance is metadata only. Independent fresh
+processes reproduce the same qualified matrix. [Measurements](research/tryfan-pilot-s2-results.json)
+record about1.2ms median initialized queries and1.64s median fresh-process matrix execution;
+these are local observations, not SLAs. No foundational/technology deviation; runtime reader
+capability is separate from immutable seed capability. The checkpoint is the commit introducing
+this S2 report. No S3-S6 implementation, derivation/freshness, HTTP or client yet.
+Integrated serving and mixed-family scientific publication remain pilot exit tests. Production
+Atlas, Weather, Traverse, frozen contracts and retained evidence remain unchanged. Appearance
+remains unresolved/non-blocking and Swiss multiview parked; no final production stack.
+Exactly one next task: **Tryfan pilot retained derivation and lifecycle integration - S3 only**,
+not begun; [scope/stop](research/tryfan-pilot-s2.md#32-exactly-one-next-bounded-task).
 A6-A11/A14 remain unresolved separately; Swiss pixels remain parked.
 Open/parked appearance science remains non-blocking, not solved; Swiss pixels remain parked.
 Frozen contracts/current production remain unchanged.

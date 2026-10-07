@@ -1,0 +1,155 @@
+{
+  "schema": "atlas-tryfan-s2-query-matrix/v1",
+  "basis": "7809147; frozen before S2 evaluation",
+  "queries": [
+    {
+      "expectation": "Native30 Grassland; whole-cell classification",
+      "id": "Q05",
+      "probe": "summit",
+      "property": "worldcover-native",
+      "time": "2021"
+    },
+    {
+      "expectation": "Existing mapping relationship/loss, never habitat identity",
+      "id": "Q06",
+      "probe": "summit",
+      "property": "worldcover-common",
+      "time": "2021"
+    },
+    {
+      "expectation": "Inherited400m and20m native-centre assignment counts, not fractions",
+      "id": "Q07",
+      "probe": "summit",
+      "property": "worldcover-support",
+      "time": "2021"
+    },
+    {
+      "expectation": "Feature486832 D.1.1 with historic/unknown survey qualification",
+      "id": "Q08",
+      "probe": "summit",
+      "property": "nrw-native",
+      "time": null
+    },
+    {
+      "expectation": "Both native claims; no winner or simultaneity",
+      "id": "Q09",
+      "probe": "summit",
+      "property": "coexisting-semantic",
+      "time": null
+    },
+    {
+      "expectation": "Existing Lab010 representation and native July lineage",
+      "id": "Q10",
+      "probe": "summit",
+      "property": "appearance",
+      "time": "2026-07-12"
+    },
+    {
+      "expectation": "Code80 annual persistence, not current water",
+      "id": "Q11",
+      "probe": "northern-context",
+      "property": "worldcover-native",
+      "time": "2021"
+    },
+    {
+      "expectation": "Unsupported; no historical inventory fallback",
+      "id": "Q13",
+      "probe": "summit",
+      "property": "current-cover",
+      "time": "current"
+    },
+    {
+      "expectation": "Unsupported illumination-independent appearance; no RGB substitution",
+      "id": "Q14",
+      "probe": "summit",
+      "property": "physical-appearance",
+      "time": null
+    },
+    {
+      "expectation": "Unmappable interpretation; preserve native claim",
+      "id": "Q15",
+      "probe": "summit",
+      "property": "geological-substrate",
+      "time": null
+    },
+    {
+      "expectation": "Outside pilot support, not physical absence",
+      "id": "Q16",
+      "probe": "outside",
+      "property": "worldcover-native",
+      "time": "2021"
+    },
+    {
+      "context": {
+        "availabilityFixture": "separate locator override to missing temporary WorldCover path, never move retained file"
+      },
+      "expectation": "Test-local unavailable asset; no NRW fallback",
+      "id": "Q17",
+      "probe": "summit",
+      "property": "worldcover-native",
+      "time": "2021"
+    },
+    {
+      "expectation": "Source/product/representation/method/revisions/scopes/rights",
+      "id": "Q18",
+      "probe": "summit",
+      "property": "provenance",
+      "time": null
+    },
+    {
+      "expectation": "Inherited400m native counts",
+      "id": "Q19",
+      "probe": "southern-observer",
+      "property": "worldcover-support",
+      "time": "2021"
+    },
+    {
+      "expectation": "Inherited400m native counts",
+      "id": "Q20",
+      "probe": "northern-context",
+      "property": "worldcover-support",
+      "time": "2021"
+    }
+  ],
+  "probes": {
+    "summit": [
+      266405,
+      359387
+    ],
+    "southern-observer": [
+      265876.05347833806,
+      358339.7631202109
+    ],
+    "northern-context": [
+      266400,
+      360450
+    ],
+    "outside": [
+      264800,
+      357700
+    ]
+  },
+  "supportSidesM": [
+    400,
+    20
+  ],
+  "additionalTests": [
+    "Native NW/E/S grid edges using registered transform, no new geographic selection",
+    "Synthetic code0, unknown code, empty vector membership, overlapping polygons and hole/boundaries are labelled fixtures, never retained findings",
+    "Registered193 features all readable, opaque NA/mosaic preserved without inferred current state",
+    "Explicit S1 parent generation: same native evidence, no fabricated revision",
+    "EPSG27700/CRS84 equivalence with disclosed transform qualification",
+    "Missing WC test locator: NRW still available but cannot substitute for WC property",
+    "Hash mismatch, invalid CRS/coordinate/support, unknown generation fail explicitly",
+    "Prospective core southwest corner [264900,357800]: record actual family support outcome; no guarantee a real within-core family miss exists"
+  ],
+  "criteria": [
+    "All15 inherited cases preserve their expected semantic dimensions",
+    "Separate WorldCover and NRW claims and native support/time survive",
+    "Existing crosswalk direction/loss retained; rejected target never asserted",
+    "No data/no inventory membership/outside/unsupported/unavailable remain separate",
+    "Result generation and retained artifact trace exposed",
+    "Independent process matches canonical results",
+    "No S3 execution, HTTP, retained mutation or source expansion"
+  ]
+}

@@ -4230,3 +4230,30 @@ preserves/reuses the frozen planning structure and source invariants. No archite
 
 Exactly one next task: **Tryfan pilot qualified native evidence readers and queries - S2 only**;
 not begun. Integrated serving and mixed-family scientific publication remain later pilot acceptance.
+
+## 2026-10-07 - Tryfan pilot S2 qualified native evidence readers and queries
+
+Started clean main at `b5ac715`; fetched origin, confirmed origin/main0/0, no discarded work.
+[S2 report](research/tryfan-pilot-s2.md): **C - S2 SUCCESS**. S1 remains successful and unchanged.
+Native WorldCover334x554/185,036 cells/eight templates and all193 NRW native inventory records/
+28 code strings read through one published generation. Summit Grassland and dry acid heath
+coexist with separate times/support/modes/native definitions; retained common crosswalk loss,
+opaque-code unknowns and rejected geology/current/physical-appearance fallback remain explicit.
+Dated July appearance metadata preserves source/prepared/display boundaries; no pixel correction.
+
+Five independent processes reproduce the complete qualified matrix/hash. Actual S1 history reads
+the same native evidence without a fabricated scientific revision. [Measurements](research/tryfan-pilot-s2-results.json):
+initialized query medians about1.2ms, fresh complete-matrix process median1.64s; allocated raster/
+centre arrays3.15MB, finite bbox proxy6.18KB. Runtime overhead/RSS remains qualified, not an SLA.
+[S2 validation](research/tryfan-pilot-s2-validation.json) runs33 Node S2/9 native Python tests,
+22 S1 tests,22 planning safeguards,64 frozen domain tests and semantic TypeScript; preserves
+all310 pilot sources,1575 admission sources,42 historical statuses, frozen contracts/tooling,
+historical reports and113 protected production hashes. No production/Weather/Traverse change.
+Final boundary QA uses exact native-grid edges to avoid inverse-affine corner cancellation;
+original query matrix results/hash remain unchanged. No foundational/technology deviation. Seed capabilities remain immutable registration-only;
+separate S2 reader capability is explicit. No dependency/freshness execution, scientific update,
+HTTP/serving/client or S3-S6 implementation. Appearance non-blocking debt, Swiss multiview parked.
+
+Exactly one next task: **Tryfan pilot retained derivation and lifecycle integration - S3 only**;
+not begun. Integrated serving and mixed-family scientific publication remain later acceptance.
+The S2 checkpoint is the commit introducing this report; no later slice follows automatically.
