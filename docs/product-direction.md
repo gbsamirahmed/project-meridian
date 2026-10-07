@@ -61,9 +61,14 @@ recommendation (**B - PARTIAL RETAINED SIGNAL**): coherent 0.5-1 m image-space v
 in fixed dark supports, with low range, JPEG-phase/colour variation and deepest-support ambiguity.
 Source/prepared hashes/encoding agree. Diagnostic lifting is a view, not corrected physical appearance;
 steep projection and fine registration remain qualifications. All 42 status columns are preserved.
-Exactly one next task is **Retained Riffelhorn dark-detail display-transfer experiment**;
-[scope/exit](research/riffelhorn-dark-source-signal.md#27-exactly-one-next-bounded-task).
-It has not begun. Render-only visibility/preservation, no physical normalization or acquisition.
+The [display-transfer experiment](research/riffelhorn-display-transfer.md) now completes that
+recommendation (**B - PARTIAL**). A fixed global bounded toe4 modestly improves recorded dark
+structure visibility, with bright/deep anchors unchanged; toe8 fails codec amplification limits.
+Toe4 remains visually constrained by mottling and limited benefit: research-only, no production
+prototype justified. This is a render-only operation, not illumination normalization or corrected
+appearance. Exactly one next task is **Retained Exe time-qualified water-observation and feature-query proof**;
+[scope/exit](research/riffelhorn-display-transfer.md#28-exactly-one-next-bounded-task).
+It has not begun. The retained temporal/feature query boundary is not yet empirically exercised.
 A6-A11/A14 remain unresolved separately; Swiss pixels remain parked.
 Historical analytical filter/calibration
 suggestions are separate from closed visual-terrain research. No Weather/Traverse redesign follows.

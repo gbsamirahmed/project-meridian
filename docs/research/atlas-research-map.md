@@ -71,8 +71,14 @@ correction or new executable correction protocol; the original trial remains INC
 The [dark-source signal assessment](riffelhorn-dark-source-signal.md) completes that recommendation
 (**B - PARTIAL RETAINED SIGNAL**): organized 0.5-1 m image-space variation survives in dark supports,
 with low-range/codec/deepest-support and steep/registration limits; no corrected appearance.
-Exactly one next task: **Retained Riffelhorn dark-detail display-transfer experiment**;
-[scope/exit](riffelhorn-dark-source-signal.md#27-exactly-one-next-bounded-task). It has not begun.
+The [display-transfer experiment](riffelhorn-display-transfer.md) now completes that
+recommendation (**B - PARTIAL**). A fixed global bounded toe4 modestly improves recorded dark
+structure visibility, with bright/deep anchors unchanged; toe8 fails codec amplification limits.
+Toe4 remains visually constrained by mottling and limited benefit: research-only, no production
+prototype justified. This is a render-only operation, not illumination normalization or corrected
+appearance. Exactly one next task is **Retained Exe time-qualified water-observation and feature-query proof**;
+[scope/exit](riffelhorn-display-transfer.md#28-exactly-one-next-bounded-task).
+It has not begun. The retained temporal/feature query boundary is not yet empirically exercised.
 Open/parked appearance work remains independent; no correction or acquisition follows automatically.
 
 Production, Weather and Traverse remain unchanged. The map below retains chronological
@@ -548,3 +554,9 @@ All42 status columns remain unchanged. A7 now records a rejected eligibility des
 [Report](riffelhorn-dark-source-signal.md), [fixed plan](../../scripts/atlas/riffelhorn-dark-source/assessment-plan.json), [metrics](riffelhorn-dark-source-signal-results.json), [validation](riffelhorn-dark-source-signal-validation.json): **B - PARTIAL RETAINED SIGNAL**. Original four-patch RGB8/JPEG95 analysis retains dark 5-20 DN block-scale adjacency/contrast; deepest pixels lack equivalent block support, limited green levels and codec/mottling confound fine interpretation. All 1084 prepared payloads verify; 14 intersecting fields/encoders agree. Diagnostic lift is display-only, no correction/noise-model/albedo/terrain attribution.
 
 All 42 status columns remain; A5 gains bounded signal-support evidence. A6-A11/A14 remain separate, A13 pixels parked; registration/projection limitations and Tryfan INCONCLUSIVE/protocol no-go remain. Exactly one next: **Retained Riffelhorn dark-detail display-transfer experiment**; a bounded source-referenced render-only visibility experiment with predeclared artefact/colour/clipping checks, not physical normalization. It has not begun.
+
+## 2026-10-07 - retained Riffelhorn dark-detail display-transfer experiment
+
+[Report](riffelhorn-display-transfer.md), [protocol](../../scripts/atlas/riffelhorn-display-transfer/protocol.json), [metrics](riffelhorn-display-transfer-results.json), [validation](riffelhorn-display-transfer-validation.json): **B - PARTIAL**. Fixed four patches, two amplitudes of one global smooth toe, source-conditioned populations and predeclared gates. Toe4 improves digital dark separability while retaining brightest/deepest values; visual benefit remains modest/mottled. Toe8 promotes codec-phase variation beyond the gate. Research-only, no production display prototype accepted. No source/prepared writes, illumination normalization, recovered colour or new information.
+
+All42 status columns remain, A5 gains display evidence, A6-A11/A14 remain unresolved, A13 PARKED and A15 scale-qualified. Historical stopping/no-go/signal/registration decisions are unchanged. One next: **Retained Exe time-qualified water-observation and feature-query proof**; native monthly2024-03/09 GSW and separate EA WFD Exe reference identity, not broad ingestion. It has not begun.

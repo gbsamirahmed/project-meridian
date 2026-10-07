@@ -1,0 +1,137 @@
+{
+  "experiment": "riffelhorn-display-transfer/v1",
+  "checkpoint": "20461af84b0619abc8b7b218aac9ef1e53de1fae",
+  "frozenBeforeCandidateOutputs": true,
+  "patches": {
+    "ordinary": [
+      2625240,
+      1092530,
+      60
+    ],
+    "steep": [
+      2624805,
+      1092330,
+      60
+    ],
+    "summit": [
+      2624810,
+      1092252,
+      150
+    ],
+    "dark-context": [
+      2624740,
+      1092318,
+      150
+    ]
+  },
+  "intensityWeights": [
+    0.2126,
+    0.7152,
+    0.0722
+  ],
+  "binsDN": [
+    0,
+    5,
+    10,
+    20,
+    40,
+    80,
+    128,
+    256
+  ],
+  "blockMetres": 5,
+  "aggregationFactors": [
+    1,
+    5,
+    10,
+    25
+  ],
+  "candidateOrder": [
+    "toe4",
+    "toe8"
+  ],
+  "candidates": {
+    "toe4": {
+      "amplitudeDN": 4
+    },
+    "toe8": {
+      "amplitudeDN": 8
+    }
+  },
+  "operator": {
+    "family": "global pointwise smooth bounded tone curve",
+    "s": "s(u)=clamp(u,0,1)^2*(3-2*clamp(u,0,1))",
+    "curve": "T(I)=I+A*s((I-5)/15)*(1-s((I-20)/60))",
+    "colour": "all encoded RGB channels share g=min(T(I)/I,1.5,255/maxRGB); zero anchored; exact identity at I<=5 or I>=80",
+    "output": "nearest-even RGB8 rounding; alpha/support unchanged; not physical radiometry",
+    "darkAnchorDN": 5,
+    "onsetFullDN": 20,
+    "fadeEndDN": 80,
+    "gainCap": 1.5
+  },
+  "populations": "unchanged native 5m block-mean strata from20461af at every scale; all support, no retuned masks",
+  "preparedCheck": "same operator applied AFTER existing z18 PNG decoding, only already retained patch centres; no product writes",
+  "figures": {
+    "fullPatches": true,
+    "insetMetres": 10,
+    "insetRule": "fixed patch centre",
+    "columns": [
+      "identity",
+      "toe4",
+      "toe8"
+    ],
+    "sampling": "native0.1m RGB, identical nearest display; no camera or terrain reprojection",
+    "display": "same RGB8 presumed-sRGB image panels; no autocontrast; monitor not calibrated"
+  },
+  "criteria": {
+    "darkLegibility": {
+      "populations": [
+        "steep/10-20",
+        "dark-context/10-20"
+      ],
+      "medianGradient05mGainMin": 1.15,
+      "medianContrast1mGainMin": 1.1,
+      "visual": "more readable inherited structures in BOTH fixed patches; not just coloured grain; no calibrated psychophysical claim"
+    },
+    "weakRestraint": {
+      "exactIdentityBelowOrEqual5": true,
+      "native5to10GainP95Max": 1.25
+    },
+    "quantization": {
+      "greyRampMaximumAdjacentOutputStepDN": 2,
+      "noNewVisibleContourBands": true
+    },
+    "codec": {
+      "darkSourcePhase0MeanAbsoluteGradientGainMax": 1.35,
+      "bothAxesBothDarkPatches": true,
+      "noNewDominantVisibleBlockOrMottlePattern": true,
+      "coarseToNativeContrastGainRatioMin": 0.9,
+      "note": "prospective display tolerances, not a physical noise floor; preserve failures"
+    },
+    "bright": {
+      "exactIdentityAboveOrEqual80": true,
+      "noNewRGB255OrAllZero": true
+    },
+    "colour": {
+      "rawCommonGainRatioErrorMax": 1e-12,
+      "roundedHueP95DegreesMax": 5,
+      "roundedHSVSaturationP95AbsMax": 0.05,
+      "qualification": "HSV defined only for source max-min>=4DN; no spectral/calibrated chromaticity claim"
+    },
+    "spatial": "pointwise input-value function, constant fields stay constant; no neighbour reads/halos; monotonic intensity curve",
+    "determinism": "exact RGB8 hashes, JSON and PNG rerun",
+    "runtime": "constant pointwise arithmetic, no spatial context or new architecture; timings local CPU diagnostics only"
+  },
+  "selection": "first (least amplitude) candidate passing ALL numerical and matched visual checks; if none, report constraints; do not tune params or thresholds",
+  "decision": "C requires all checks and bounded visual legibility; B if useful legibility constrained by any material check; A if no useful improvement; D only if unavailable input/evaluation prevents conclusion",
+  "allowedClaim": "display of some already-recorded source structure may improve; no new information or physical correction",
+  "prohibited": [
+    "illumination normalization",
+    "shadow removal",
+    "albedo/intrinsic colour",
+    "calibrated radiance/reflectance",
+    "denoising or reconstruction",
+    "production changes"
+  ],
+  "thresholdRationale": "15% gradient/10% metre-contrast are modest prospective digital separability tests; cap codec amplification35%, low-range gain25%, channel rounding colour tolerance5deg/.05; these are engineering experiment tolerances, not validated human thresholds"
+}
