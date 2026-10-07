@@ -92,12 +92,19 @@ processes reproduce the same qualified matrix. [Measurements](research/tryfan-pi
 record about1.2ms median initialized queries and1.64s median fresh-process matrix execution;
 these are local observations, not SLAs. No foundational/technology deviation; runtime reader
 capability is separate from immutable seed capability. The checkpoint is the commit introducing
-this S2 report. No S3-S6 implementation, derivation/freshness, HTTP or client yet.
+this S2 report (`7db385a`). S1 and S2 remain successful; their historical reports stay intact.
+The [S3 derivation/lifecycle integration](research/tryfan-pilot-s3.md) is **C - S3 SUCCESS**:
+four exact original AWS results persist in full G0 with explicit methods/input-use scopes,
+computed freshness and pixel replay. Isolated Welsh-context recomputation adds only two summit
+revisions and reuses southern results; no applicability update is published. Q21 composes six
+separate generation-pinned evidence contexts. Median baseline436.85ms/freshness10.00ms/fixture
+recomputation443.22ms; full metadata1.09MB ([observations](research/tryfan-pilot-s3-results.json)).
+No foundational deviation; no S4-S6 HTTP/client or actual mixed-family update implementation.
 Integrated serving and mixed-family scientific publication remain pilot exit tests. Production
 Atlas, Weather, Traverse, frozen contracts and retained evidence remain unchanged. Appearance
 remains unresolved/non-blocking and Swiss multiview parked; no final production stack.
-Exactly one next task: **Tryfan pilot retained derivation and lifecycle integration - S3 only**,
-not begun; [scope/stop](research/tryfan-pilot-s2.md#32-exactly-one-next-bounded-task).
+Exactly one next task: **Tryfan pilot generation-pinned serving and isolated consumer - S4 only**,
+not begun; [scope/stop](research/tryfan-pilot-s3.md#31-exactly-one-next-bounded-task).
 A6-A11/A14 remain unresolved separately; Swiss pixels remain parked.
 Historical analytical filter/calibration
 suggestions are separate from closed visual-terrain research. No Weather/Traverse redesign follows.

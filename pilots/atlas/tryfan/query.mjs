@@ -61,6 +61,8 @@ export async function openEvidence({store=STORE,generation,dataRoot=DATA,locator
   try {
     const initialized=await worker.call({operation:'init',core:snapshot.value.core.bounds,artifacts:descriptors,gridTransform});
     const semantics=await nativeSemantics(catalogue,initialized.metadata);
+    if(snapshot.value.knowledge && initialized.metadata.families.worldcover.status==='available' && initialized.metadata.families.nrw.status==='available')
+      requireThat(encode(snapshot.value.knowledge)===encode(semantics.state.bundle),'knowledge-drift','Published native knowledge differs from verified S2 reconstruction');
     const initMilliseconds=performance.now()-start;
     const trace=family=>{
       const f=catalogue.families.find(f=>f.id===family),s=catalogue.sources.find(s=>s.id===f.source),p=catalogue.products.find(p=>p.id===f.product);

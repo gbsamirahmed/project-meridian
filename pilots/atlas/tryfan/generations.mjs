@@ -3,6 +3,7 @@ import { mkdirSync, readFileSync, openSync, closeSync, writeFileSync, fsyncSync,
 import { resolve, join } from 'node:path';
 import { randomUUID } from 'node:crypto';
 import { performance } from 'node:perf_hooks';
+import { validateDependencies } from './dependencies.mjs';
 import { FORMAT, PilotError, requireThat, fields, encode, sha, json } from './identity.mjs';
 import { canonicalCatalogue, validateCatalogue, verifyArtifacts, DATA, ROOT } from './catalogue.mjs';
 export const STORE = resolve(DATA,'experiments/atlas/tryfan-regional-pilot-v1');
@@ -29,17 +30,23 @@ function writeImmutable(file,body) {
 function idCheck(id) {requireThat(typeof id==='string' && hashPattern.test(id),'invalid-generation-id','Invalid generation address');}
 function opCheck(id) {requireThat(typeof id==='string' && /^[a-f0-9-]{36}$/.test(id),'invalid-operation','Invalid operation address');}
 export function validateGeneration(value) {
-  fields(value,['format','semanticContract','capabilities','core','parent','catalogue']);
+  fields(value,['format','semanticContract','capabilities','core','parent','catalogue'],['understanding','knowledge']);
   requireThat(value.format===FORMAT,'unknown-generation-schema','Unsupported generation schema');
   requireThat(value.semanticContract==='atlas-semantic-evidence/v1','contract-invalid','Unexpected frozen contract version');
   fields(value.capabilities,['registration','queries','derivations','serving','mixedFamilyUpdate']);
-  requireThat(value.capabilities.registration===true && ['queries','derivations','serving','mixedFamilyUpdate'].every(k=>value.capabilities[k]===false),
-    'unsupported-capability','S1 only registers retained evidence');
+  requireThat(value.capabilities.registration===true && value.capabilities.serving===false && value.capabilities.mixedFamilyUpdate===false &&
+    value.capabilities.queries===!!value.understanding && value.capabilities.derivations===!!value.understanding, 'unsupported-capability','Only registration or complete S3 baseline capabilities');
+  validateCatalogue(value.catalogue);
+  if(value.understanding) {
+    requireThat(value.understanding.stage==='common','unsupported-capability','S3 publishes baseline only; live applicability updates remain deferred');
+    validateDependencies(value.understanding,value.catalogue);
+    requireThat(value.knowledge?.contract==='atlas-semantic-evidence/v1' && sha(encode(value.knowledge))==='9bbaa0c10db1a1f03810ef3a4e708eca09e25a94c9a8474f07ab944e162438a5','required-state-unavailable','Exact retained native knowledge closure required');
+    requireThat(sha(encode(value.understanding.terrain))==='4ee2af71dbf6978b11b4b8249d25fae83862209d113349a1f66e4a8cd36c4fdd','invalid-hierarchy','Exact common G0 applicability required');
+  } else requireThat(!value.knowledge,'unsupported-capability','Registration seed cannot advertise incomplete knowledge');
   fields(value.core,['crs','bounds','boundary']);
   requireThat(value.core.crs==='EPSG:27700' && encode(value.core.bounds)===encode([264900,357800,267900,360800]) &&
     typeof value.core.boundary==='string' && value.core.boundary.length,'invalid-scope','Core support differs from bounded pilot');
   requireThat(value.parent===null || (typeof value.parent==='string' && hashPattern.test(value.parent)),'invalid-reference','Invalid parent generation');
-  validateCatalogue(value.catalogue);
   return value;
 }
 export function canonicalGeneration(value) {

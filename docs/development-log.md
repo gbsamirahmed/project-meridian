@@ -4257,3 +4257,11 @@ HTTP/serving/client or S3-S6 implementation. Appearance non-blocking debt, Swiss
 Exactly one next task: **Tryfan pilot retained derivation and lifecycle integration - S3 only**;
 not begun. Integrated serving and mixed-family scientific publication remain later acceptance.
 The S2 checkpoint is the commit introducing this report; no later slice follows automatically.
+
+## 2026-10-07 - Tryfan pilot S3 retained derivation/lifecycle integration
+
+Starting clean main `7db385a`, origin fetched0/0. [S3 report](research/tryfan-pilot-s3.md): **C - S3 SUCCESS**. S1 remains **C - S1 SUCCESS** and S2 remains **C - S2 SUCCESS**. Full G0 persists four original AWS slope/ratio records, pinned methods, actual consumed scopes and finite forward/reverse dependencies. Fresh processes recover native/derived Q21 contexts and exact pixel replay. Scoped/method-relative assessments distinguish fresh/stale/indeterminate; isolated retained Welsh-context recomputation computes only two summit revisions, preserves two southern results and all four historical AWS records. No live update publication.
+
+Local observations:1.09MB generation,436.85ms baseline median,10.00ms freshness,443.22ms isolated recompute; no SLAs. The read-only locator bridge leaves the scientific sampler/method unchanged. Generation validation admits complete G0 alongside historical registration seeds; S2 test capability assertions are stage-aware. No architecture/technology deviation. Focused29 S3 tests and established S1/S2/planning/frozen/runtime regressions, source/hash/status/reference checks are recorded in the [validation receipt](research/tryfan-pilot-s3-validation.json). No production, Weather, Traverse, frozen contract, retained source or research-status change; no private access. Appearance remains unresolved/non-blocking and Swiss multiview parked.
+
+Exactly one next task: **Tryfan pilot generation-pinned serving and isolated consumer - S4 only**, not begun. Actual mixed-family publication remains S5; broader pilot acceptance remains S6.

@@ -1,0 +1,167 @@
+{
+  "schema": "atlas-tryfan-s3-lifecycle-matrix/v1",
+  "basis": "7809147;43afe78;1c2d10e;691450f",
+  "frozenBeforeEvaluation": true,
+  "queries": [
+    {
+      "expectation": "XYZ z14 current selection with support/information trace",
+      "id": "Q01",
+      "probe": "summit",
+      "property": "terrain-selection",
+      "time": null
+    },
+    {
+      "expectation": "8m Horn quantity and computed freshness",
+      "id": "Q02",
+      "probe": "summit",
+      "property": "derived-slope",
+      "time": null
+    },
+    {
+      "expectation": "Planar secant ratio with exact upstream claim",
+      "id": "Q03",
+      "probe": "summit",
+      "property": "derived-area-ratio",
+      "time": null
+    },
+    {
+      "expectation": "Unchanged common result",
+      "id": "Q04",
+      "probe": "southern-observer",
+      "property": "derived-slope",
+      "time": null
+    },
+    {
+      "context": {
+        "policy": "fixed-input-replay-v1",
+        "resultRefs": [
+          {
+            "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+            "probe": "summit",
+            "property": "slope",
+            "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839"
+          },
+          {
+            "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+            "probe": "summit",
+            "property": "area-ratio",
+            "revision": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527"
+          },
+          {
+            "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+            "probe": "southern-observer",
+            "property": "slope",
+            "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+          },
+          {
+            "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+            "probe": "southern-observer",
+            "property": "area-ratio",
+            "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+          }
+        ]
+      },
+      "expectation": "Four AWS records referenced and pixel/method replayed",
+      "id": "Q12",
+      "probe": "summit",
+      "property": "historical-derived",
+      "time": null
+    },
+    {
+      "context": {
+        "fixedQuestions": [
+          "terrain-selection",
+          "derived-slope",
+          "derived-area-ratio",
+          "worldcover-native",
+          "nrw-native",
+          "appearance"
+        ],
+        "policy": "current-applicable-terrain-v1"
+      },
+      "expectation": "One pinned request coordinates z14 terrain,8m slope/ratio,WorldCover2021,qualified historical NRW and July2026 appearance metadata; separate answer times/scopes, no combined current-world state",
+      "id": "Q21",
+      "probe": "summit",
+      "property": "place-evidence",
+      "time": null
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "L01",
+      "case": "baseline",
+      "expectation": "Four original AWS slope/ratio claims exactly match frozen proof"
+    },
+    {
+      "id": "L02",
+      "case": "repeat",
+      "expectation": "Same bytes/method reproduce identical records"
+    },
+    {
+      "id": "L03",
+      "case": "fresh-process",
+      "expectation": "Persisted G0, methods and scopes recover independently"
+    },
+    {
+      "id": "L04",
+      "case": "unchanged-context",
+      "expectation": "All four remain fresh"
+    },
+    {
+      "id": "L05",
+      "case": "unrelated-family",
+      "expectation": "NRW administrative change cannot stale terrain"
+    },
+    {
+      "id": "L06",
+      "case": "unrelated-space",
+      "expectation": "Nonintersecting scope leaves terrain fresh"
+    },
+    {
+      "id": "L07",
+      "case": "relevant-scope",
+      "expectation": "Actual interpolation halo makes summit slope stale"
+    },
+    {
+      "id": "L08",
+      "case": "unaffected-probe",
+      "expectation": "Southern chain remains fresh"
+    },
+    {
+      "id": "L09",
+      "case": "transitive",
+      "expectation": "Summit ratio stales via exact slope dependency"
+    },
+    {
+      "id": "L10",
+      "case": "selective-recompute",
+      "expectation": "Isolated Welsh applicability context computes two summit results only"
+    },
+    {
+      "id": "L11",
+      "case": "reuse",
+      "expectation": "Two southern results retained unchanged; no resampling"
+    },
+    {
+      "id": "L12",
+      "case": "historical",
+      "expectation": "Four AWS results retained alongside two Welsh revisions in fixture only"
+    },
+    {
+      "id": "L13",
+      "case": "replay",
+      "expectation": "Fresh registered sampling reproduces all fixture historical/current records exactly"
+    },
+    {
+      "id": "L14",
+      "case": "method-policy",
+      "expectation": "New required method revision stales current result, original historical replay remains supported"
+    },
+    {
+      "id": "L15",
+      "case": "missing-dependency",
+      "expectation": "Unavailable exact registered input is indeterminate, never fresh"
+    }
+  ],
+  "publication": "G0 baseline only; regional applicability/recomputation isolated fixture, actual U1/U2 publication remains S5"
+}

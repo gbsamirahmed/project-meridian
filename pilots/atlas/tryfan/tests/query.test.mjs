@@ -14,8 +14,9 @@ let e,snapshot,initialRoot;
 const summit=[266405,359387],query=(property,extra={})=>e.query({point:summit,property,...extra});
 before(async()=>{initialRoot=currentId(STORE);snapshot=load(STORE,{verify:false});e=await openEvidence();});
 after(()=>e.close());
-test('published S1 state pinned, read capabilities do not mislabel registration-only seed',()=>{
- assert.equal(e.generation,initialRoot);assert.equal(e.publishedCapabilities.queries,false);assert.equal(e.capabilities.nativeQueries,true);
+test('published state pinned; seed versus complete baseline capabilities remain honest',()=>{
+ assert.equal(e.generation,initialRoot);assert.equal(e.publishedCapabilities.queries,!!snapshot.value.understanding);assert.equal(e.capabilities.nativeQueries,true);
+ const seed=load(STORE,{generation:'2ffa20f9ac33123c3babb62381ba4559cbd045fb180d978a9ed6228514ed9b92',verify:false});assert.equal(seed.value.capabilities.queries,false);
 });
 test('retained native grid and finite vector inventory sizes',()=>{
  assert.equal(e.metadata.families.worldcover.grid.cells,185036);assert.equal(e.metadata.families.nrw.featureCount,193);assert.equal(e.metadata.families.nrw.codeCount,28);
