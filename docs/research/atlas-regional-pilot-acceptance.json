@@ -1,0 +1,2021 @@
+{
+  "schema": "atlas-regional-pilot-admission/v1",
+  "startingCheckpoint": "4acd1916031d868c9a327d09445b770578f01b79",
+  "gatesSha256": "fc7a4093d2880495ab5a1b0dc6baf4a63654cb20c24a17ab5e4632fc11d386ef",
+  "decision": "C - READY FOR BOUNDED REGIONAL PILOT",
+  "prePilotPrerequisites": [],
+  "architecturalBlockers": [],
+  "nextTask": "Bounded retained Tryfan regional-pilot architecture and implementation plan",
+  "nextTaskStarted": false,
+  "proofs": [
+    {
+      "id": "META",
+      "report": "docs/atlas/terrain-source-product-architecture.md",
+      "checkpoint": "12945b9751ca30df2863bdef096e16781251d7eb",
+      "evidenceClass": "designed",
+      "establishes": "Source/product/support/height/rights boundary, exercised by later regional proofs.",
+      "limitsAreAuthoritativeInReport": true,
+      "references": [
+        {
+          "path": "docs/atlas/terrain-source-product-architecture.md",
+          "sha256": "594151e90a1e867e7612b48b0825bab8a405edc744d817177638ced7b047d491"
+        }
+      ]
+    },
+    {
+      "id": "SWISS",
+      "report": "docs/atlas/riffelhorn-swiss-support-product.md",
+      "checkpoint": "68fccda1516515bf08ad63867ace8696362ad796",
+      "evidenceClass": "retained",
+      "establishes": "Larger100km2 geometry support; finite coverage, not global.",
+      "limitsAreAuthoritativeInReport": true,
+      "references": [
+        {
+          "path": "docs/atlas/riffelhorn-swiss-support-product.md",
+          "sha256": "7ff89ea5ecc1c72bd4753318782fdba36395caaf70b85d152825f921e151039c"
+        }
+      ]
+    },
+    {
+      "id": "COMMON",
+      "report": "docs/atlas/global-reference-assessment.md",
+      "checkpoint": "9f45d3ae7611f5b4710436d6de5318b0aa31ab29",
+      "evidenceClass": "retained",
+      "establishes": "Different height/epoch/surface meanings; no universal datum fusion.",
+      "limitsAreAuthoritativeInReport": true,
+      "references": [
+        {
+          "path": "docs/atlas/global-reference-assessment.md",
+          "sha256": "b224c4680a964fd4b7ec5482b7ae3d45f48727fcebd443e1481154ff11490583"
+        },
+        {
+          "path": "docs/atlas/copernicus-common-product.md",
+          "sha256": "16ac66dd8fa47dd609c0947a45dd71bd7fecf19f2fd7c60dd1ba0f3830a219d3"
+        }
+      ]
+    },
+    {
+      "id": "PARENTS",
+      "report": "docs/atlas/regional-parent-diagnostic.md",
+      "checkpoint": "3e54ca8e195c5a4669f5f9d1c909cc83c4d6830e",
+      "evidenceClass": "retained",
+      "establishes": "Within-family parents distinct from source handoff.",
+      "limitsAreAuthoritativeInReport": true,
+      "references": [
+        {
+          "path": "docs/atlas/regional-parent-diagnostic.md",
+          "sha256": "66c11e05560635e34aaf99ea7824960156c542a3972fd173fc55d3bdd66edd03"
+        },
+        {
+          "path": "docs/atlas/terrain-hierarchy-prototype.md",
+          "sha256": "5b4b6c13c27531990d6ceecb775dec8a4b5f1b4b681f3d26b5c9db4d5499770c"
+        }
+      ]
+    },
+    {
+      "id": "RECON",
+      "report": "docs/atlas/riffelhorn-terrain-reconciliation.md",
+      "checkpoint": "6d36b460008495757689e466de6af830a980bf47",
+      "evidenceClass": "retained",
+      "establishes": "Source-specific alignment limitations; universal corridor prerequisite superseded.",
+      "limitsAreAuthoritativeInReport": true,
+      "references": [
+        {
+          "path": "docs/atlas/riffelhorn-terrain-reconciliation.md",
+          "sha256": "488e49856cb10496b5bd5c7df07c0613dfae9749cb422373273e6f567427992e"
+        },
+        {
+          "path": "docs/atlas/spatial-terrain-reconciliation-research.md",
+          "sha256": "ef972c790c4be4e6f9f9eb554616cd11f7868fddfdec11aa958af88a11c8f7ab"
+        },
+        {
+          "path": "docs/atlas/terrain-scale-decomposition.md",
+          "sha256": "0e586dc620f511973be30fe1a6997e9ab5eefb278b48d8540009bd044dfb34e3"
+        },
+        {
+          "path": "docs/atlas/support-extent-assessment.md",
+          "sha256": "52e68e95016c650418ba463f8467cf94af97fd2e826770eadf25558b69b33d72"
+        },
+        {
+          "path": "docs/atlas/seam-corridor-feasibility.md",
+          "sha256": "8a45b1fde0c4bba32632a9973fe815f0b7a6184e886e344f341b0310b9c979bf"
+        }
+      ]
+    },
+    {
+      "id": "TRANSITION",
+      "report": "docs/atlas/protected-priority-two-band-transition.md",
+      "checkpoint": "019486f72ae88090b5bcebd7151e6d34b88bb216",
+      "evidenceClass": "retained",
+      "establishes": "Numerical continuity insufficient for morphology/visual acceptance.",
+      "limitsAreAuthoritativeInReport": true,
+      "references": [
+        {
+          "path": "docs/atlas/protected-priority-two-band-transition.md",
+          "sha256": "3730dc6ec2b4907a1b032d041f12bdcae985f6b74e328faa4383ade0c2715051"
+        }
+      ]
+    },
+    {
+      "id": "TH",
+      "report": "docs/atlas/terrain-hierarchy-contract.md",
+      "checkpoint": "53d75f2c2594c6bd627bb7bfe9c10b0b272c8651",
+      "evidenceClass": "fixture",
+      "establishes": "Frozen declarations and contract fixtures; later runtime consumes them.",
+      "limitsAreAuthoritativeInReport": true,
+      "references": [
+        {
+          "path": "docs/atlas/terrain-hierarchy-contract.md",
+          "sha256": "054e46ed18279f25dfa3ad1dee962559ee6b61e950e241d25a909dbb5c3eb360"
+        },
+        {
+          "path": "scripts/atlas/test_terrain_hierarchy_contract.mjs",
+          "sha256": "c354f9b60694a5aaa4a5188c712c65971ef0aec39a0c2d0c28f54156f54bb68d"
+        }
+      ]
+    },
+    {
+      "id": "RUNTIME",
+      "report": "docs/atlas/terrain-runtime-selection.md",
+      "checkpoint": "ba24e546fcb13dcdaf0bb01bf8550c3cf8c5c2dd",
+      "evidenceClass": "fixture",
+      "establishes": "Domain eligibility/scale/fallback without universal ranking.",
+      "limitsAreAuthoritativeInReport": true,
+      "references": [
+        {
+          "path": "docs/atlas/terrain-runtime-selection.md",
+          "sha256": "83ec4be378db60493458207c202c270b7c52ed9d7fff646ccbc50531ebf14719"
+        },
+        {
+          "path": "scripts/atlas/test_terrain_runtime.mjs",
+          "sha256": "8cca0b26cdcb987c4958966848b86734ffe8fbc15a1ecef0740870936d32275c"
+        }
+      ]
+    },
+    {
+      "id": "WALES",
+      "report": "docs/atlas/tryfan-second-region-proof.md",
+      "checkpoint": "8598c30a64dc789c22ae81cef1c14bea3a9e6ff0",
+      "evidenceClass": "retained",
+      "establishes": "Real Welsh pyramid/source support and independent common selection.",
+      "limitsAreAuthoritativeInReport": true,
+      "references": [
+        {
+          "path": "docs/atlas/tryfan-second-region-proof.md",
+          "sha256": "0195d4e6d2ef873733b49c8906dd85300555ec61e90df957159ef6de2c6e9f1b"
+        },
+        {
+          "path": "scripts/atlas/test_tryfan_terrain.mjs",
+          "sha256": "983d6d2e200d4cca5e3ce7f1e834539139ade9d0378a3db5903b839071902d2b"
+        }
+      ]
+    },
+    {
+      "id": "SCALE",
+      "report": "docs/atlas/multiscale-representation.md",
+      "checkpoint": "3d406aee212a5be071728d85db443111e483e7bf",
+      "evidenceClass": "retained",
+      "establishes": "Physical/source/information/delivery/display scale distinct.",
+      "limitsAreAuthoritativeInReport": true,
+      "references": [
+        {
+          "path": "docs/atlas/multiscale-representation.md",
+          "sha256": "51b71a17b3c5f37144b3c361f2e99bd9894bb150ccad0d1b8665c24fd06557bf"
+        }
+      ]
+    },
+    {
+      "id": "RELIEF",
+      "report": "docs/atlas/scale-separated-relief.md",
+      "checkpoint": "ca74a84713b443d408467dd17835083bbbf0771a",
+      "evidenceClass": "retained",
+      "establishes": "Negative portrayal experiment; no new geometry requirement.",
+      "limitsAreAuthoritativeInReport": true,
+      "references": [
+        {
+          "path": "docs/atlas/scale-separated-relief.md",
+          "sha256": "2d8f2a052fe8fa69501d268bae58fb80aae95fd43390b603fadae82653a2b19c"
+        }
+      ]
+    },
+    {
+      "id": "LIMITS",
+      "report": "docs/atlas/information-aware-display-selection.md",
+      "checkpoint": "57688cb48e0a0c7768b066df548b6959b924bfc7",
+      "evidenceClass": "retained",
+      "establishes": "Local directional display sampling does not imply new source information.",
+      "limitsAreAuthoritativeInReport": true,
+      "references": [
+        {
+          "path": "docs/atlas/information-aware-display-selection.md",
+          "sha256": "e9255f33823f862f97496aa5ba7bfcce4a603d305e15efe5ef630dc87fc61f3b"
+        }
+      ]
+    },
+    {
+      "id": "SURFACE",
+      "report": "docs/atlas/physical-surface-semantics.md",
+      "checkpoint": "75ea9d837c86506b0e278f79e209a8533e9664b7",
+      "evidenceClass": "designed",
+      "establishes": "Hybrid layered properties; material/habitat/state distinct.",
+      "limitsAreAuthoritativeInReport": true,
+      "references": [
+        {
+          "path": "docs/atlas/physical-surface-semantics.md",
+          "sha256": "e7cb8321a4f713b7d6a3c9f6a02cbcb42966df07f0ccc0ee69fd0f5111646db2"
+        }
+      ]
+    },
+    {
+      "id": "NATIVE",
+      "report": "docs/atlas/source-native-semantic-comparison.md",
+      "checkpoint": "c4da56577c27f56ee1a5829e85d8daa951a517c1",
+      "evidenceClass": "retained",
+      "establishes": "Tryfan/Riffelhorn source meanings coexist and mappings lose information.",
+      "limitsAreAuthoritativeInReport": true,
+      "references": [
+        {
+          "path": "docs/atlas/source-native-semantic-comparison.md",
+          "sha256": "e57cda8c1c1972bf0f67fd0129a8a9c75753a58b9e07dfa7365aec37a48b8de6"
+        },
+        {
+          "path": "docs/atlas/semantic-comparison-sources.json",
+          "sha256": "e13c8bd1f4e9c30d739955a398512cc6aa96aed1586de0972c997cc95a49e837"
+        }
+      ]
+    },
+    {
+      "id": "EXE0",
+      "report": "docs/atlas/water-feature-state-check.md",
+      "checkpoint": "052374e07d613a549f5a88640b42932f97a7f896",
+      "evidenceClass": "retained",
+      "establishes": "Observation/inventory/feature/event/planning distinctions.",
+      "limitsAreAuthoritativeInReport": true,
+      "references": [
+        {
+          "path": "docs/atlas/water-feature-state-check.md",
+          "sha256": "718239fad01cf9bb65dcb03f9b3a9791ba57f657239299b33e5c623d71d7aa9f"
+        },
+        {
+          "path": "docs/atlas/water-check-results.json",
+          "sha256": "d490f30bc64b89c7bb6034dee0515496011d42a88a6a4c5d06b49d6631298538"
+        },
+        {
+          "path": "docs/atlas/water-check-sources.json",
+          "sha256": "d6e574a175400edc0c8c15bcc8bcfa5a9064c9f04084d6f8702e825e7dffecb9"
+        }
+      ]
+    },
+    {
+      "id": "V1",
+      "report": "docs/atlas/semantic-evidence-contract.md",
+      "checkpoint": "e65c2d6c29ed4421d5f2cc7133604332e8dfd71b",
+      "evidenceClass": "fixture",
+      "establishes": "Frozen claims/contexts/bindings/mappings; fixture viability is not real source coverage.",
+      "limitsAreAuthoritativeInReport": true,
+      "references": [
+        {
+          "path": "docs/atlas/semantic-evidence-contract.md",
+          "sha256": "92cdeb0ec6963e7d2355b69edba4e7ce1abb85cbb5c9ea7fce5ea66270a0d268"
+        },
+        {
+          "path": "scripts/atlas/semantic-evidence/contract.ts",
+          "sha256": "3821ca3e9ae6b6b1aa620ad6b367c2dbac23acfbb96713522b64ff8d8a5d99ce"
+        },
+        {
+          "path": "scripts/atlas/semantic-evidence/validate.ts",
+          "sha256": "2ab33a13b0287b9412889557e8af0f545c94a6583828abf5ee9e6fd79f81ebee"
+        },
+        {
+          "path": "scripts/atlas/semantic-evidence/fixtures.ts",
+          "sha256": "55bb068c041f1638857aa8cae6b2a85ab376f9e6e52ebbcc8be016c723f6afb9"
+        },
+        {
+          "path": "scripts/atlas/test_semantic_evidence_contract.mjs",
+          "sha256": "d553c0ad2d27209df433547a09d0446e448740f3533a5c6c4e8d63a78c09823d"
+        },
+        {
+          "path": "docs/atlas/semantic-evidence-contract-validation.json",
+          "sha256": "2aa00e7e493bebe5b97a14e79455906972464d1f7d35e659277379125aad8668"
+        }
+      ]
+    },
+    {
+      "id": "AUDIT",
+      "report": "docs/research/atlas-research-state.md",
+      "checkpoint": "5f145117072b1cde2e696fb8d8f8d11995a2c06f",
+      "evidenceClass": "designed",
+      "establishes": "42 authoritative thread records; historical state pinned at starting commit.",
+      "limitsAreAuthoritativeInReport": true,
+      "references": [
+        {
+          "path": "docs/research/atlas-research-state.md",
+          "sha256": "b8614470b81301fa9fad1aa0bccbd95b3a03efe634e754f2cb0ce0596b912f37"
+        },
+        {
+          "path": "docs/research/atlas-research-audit-validation.json",
+          "sha256": "5101b3cefb98c4bd60960ff5cc8e99d2dcdade4d0b74944b7809fd16b410aa74"
+        }
+      ]
+    },
+    {
+      "id": "LIFE",
+      "report": "docs/research/atlas-derived-understanding-lifecycle.md",
+      "checkpoint": "43afe78e549f6707f0648465af6d7c6e0aabb430",
+      "evidenceClass": "designed",
+      "establishes": "Five retained-case walkthroughs, compatible dependency/use companion.",
+      "limitsAreAuthoritativeInReport": true,
+      "references": [
+        {
+          "path": "docs/research/atlas-derived-understanding-lifecycle.md",
+          "sha256": "aee8a563754e3471cbb24a25ea1463eb9cee3d1606be4ed2e3cb1fe62414b3a3"
+        }
+      ]
+    },
+    {
+      "id": "MODEL",
+      "report": "docs/research/atlas-world-model-architecture-synthesis.md",
+      "checkpoint": "6e17e7923f2130b2cfce3671e026fe56b6397f5f",
+      "evidenceClass": "designed",
+      "establishes": "Coordinated domain representations/qualified claims; no universal Earth object.",
+      "limitsAreAuthoritativeInReport": true,
+      "references": [
+        {
+          "path": "docs/research/atlas-world-model-architecture-synthesis.md",
+          "sha256": "ba074a8a1fa88c256780281314b3a1ca4a8bc2d3e0bcdcf75ad512b733d2d8c1"
+        }
+      ]
+    },
+    {
+      "id": "QUERY",
+      "report": "docs/research/tryfan-qualified-query-proof.md",
+      "checkpoint": "1c2d10e522f54e60f83bae2e416008bd1a241eb1",
+      "evidenceClass": "retained",
+      "establishes": "Scoped summit chain; unaffected southern chain; exact historical replay.",
+      "limitsAreAuthoritativeInReport": true,
+      "references": [
+        {
+          "path": "docs/research/tryfan-qualified-query-proof.md",
+          "sha256": "d77246bdcf99eadafb8b569315b78edfd343765db8c5dd87f74cafada4df4852"
+        },
+        {
+          "path": "docs/research/tryfan-qualified-query-results.json",
+          "sha256": "871be961f6df0ff479c4ec935980eb35070e5a9363bcddc5fe73bfd6051fc3f2"
+        },
+        {
+          "path": "docs/research/tryfan-qualified-query-inputs.json",
+          "sha256": "ab2062b81b7e84b749700cae13c499e837e0705de96c22192ef9ad2f6d13a9a7"
+        },
+        {
+          "path": "docs/research/tryfan-qualified-query-validation.json",
+          "sha256": "99e00f3b6a60ca577857fdecba49bd2ca2114f424355b1839772894645bd2e95"
+        },
+        {
+          "path": "scripts/atlas/test_qualified_query_proof.mjs",
+          "sha256": "3a99518ba5b55a81769abca58b3b1890056e2b3cdd260763f1ebf05b598bfe57"
+        }
+      ]
+    },
+    {
+      "id": "REQ",
+      "report": "docs/research/atlas-storage-processing-serving-requirements.md",
+      "checkpoint": "3c143ebea99ce366a1b00083f64a4ee11149a1e0",
+      "evidenceClass": "designed",
+      "establishes": "Five responsibilities/R1-R12; capacity/serving choices remain measurement gates.",
+      "limitsAreAuthoritativeInReport": true,
+      "references": [
+        {
+          "path": "docs/research/atlas-storage-processing-serving-requirements.md",
+          "sha256": "826ce49eab42c37d62b0a74762fdd6fa0636ebc1cbd2ad5d8ef3704ef829978a"
+        },
+        {
+          "path": "docs/research/atlas-storage-requirements-validation.json",
+          "sha256": "ad1d751b9531a0f27a8898608e0f4eca72a1cc573d6493c7b1d2c904ad1b3625"
+        }
+      ]
+    },
+    {
+      "id": "PERSIST",
+      "report": "docs/research/tryfan-local-persistent-proof.md",
+      "checkpoint": "691450ff540e0e15ade58cba8464d221e89dc119",
+      "evidenceClass": "retained",
+      "establishes": "RestartA/B, abrupt exit73, invalid candidates, replay and selective update.",
+      "limitsAreAuthoritativeInReport": true,
+      "references": [
+        {
+          "path": "docs/research/tryfan-local-persistent-proof.md",
+          "sha256": "93310c9f77abb360f2841279378550b810fb58971c26d50ef466fef32fa3aac0"
+        },
+        {
+          "path": "docs/research/tryfan-local-persistent-results.json",
+          "sha256": "d6cb1220d458a3ae980415965fb648cf2e1d6b610c6f00441cbd7becb73b0610"
+        },
+        {
+          "path": "docs/research/tryfan-local-persistent-validation.json",
+          "sha256": "da2eb5065e70fbf7a0cd295a212bff16f726c68e8edac5c06bcae959bb55ca9e"
+        },
+        {
+          "path": "scripts/atlas/local-persistent-proof/store.mjs",
+          "sha256": "209b2e640e006f4ce9fa53d9c7edfc9a4247598b6b2ebee9a5347699dac0ec39"
+        },
+        {
+          "path": "scripts/atlas/test_local_persistent_tryfan.mjs",
+          "sha256": "f8bf44a9511a0ce19c0ffeb4f3b987bb81577b03d81777739910d6457328f0c8"
+        }
+      ]
+    },
+    {
+      "id": "WC",
+      "report": "docs/research/tryfan-worldcover-binding-proof.md",
+      "checkpoint": "944326b6c6fcbe277e3d71a65c463c6fcecd5960",
+      "evidenceClass": "retained",
+      "establishes": "Native categorical raster shared templates, mappings, NRW and restart.",
+      "limitsAreAuthoritativeInReport": true,
+      "references": [
+        {
+          "path": "docs/research/tryfan-worldcover-binding-proof.md",
+          "sha256": "ec4b184def509965e2322b8a5958ef96a68330c686e462a9d398c2df9b7cf1c2"
+        },
+        {
+          "path": "docs/research/tryfan-worldcover-binding-results.json",
+          "sha256": "51190aaa33119e0c24bac98ba222bc42068b77dcdcb504b573965f5c87dc1084"
+        },
+        {
+          "path": "docs/research/tryfan-worldcover-binding-validation.json",
+          "sha256": "4f4d351f69ffd863b823fedf34642d93bdbd2d2ce53121fb800bf5377cb1c81c"
+        }
+      ]
+    },
+    {
+      "id": "APP0",
+      "report": "docs/atlas/appearance-baseline-and-architecture.md",
+      "checkpoint": "6f2eb0217c167630154fe4e9d4aa6c8c5d59a76e",
+      "evidenceClass": "designed",
+      "establishes": "Source/prepared/corrected/inferred/render boundaries.",
+      "limitsAreAuthoritativeInReport": true,
+      "references": [
+        {
+          "path": "docs/atlas/appearance-baseline-and-architecture.md",
+          "sha256": "ce1ab95572d0b71285fa3037a72a1a5e8af495bb4189f2beb72b8a661e3b6414"
+        }
+      ]
+    },
+    {
+      "id": "SWISSIMAGE",
+      "report": "docs/atlas/swissimage-source-derived-baseline.md",
+      "checkpoint": "1de9e44968dcb5c2f8601c4f6844f1b626522b4b",
+      "evidenceClass": "retained",
+      "establishes": "Four source tiles, prepared parents/alpha support, RGB scale/stretch limitations.",
+      "limitsAreAuthoritativeInReport": true,
+      "references": [
+        {
+          "path": "docs/atlas/swissimage-source-derived-baseline.md",
+          "sha256": "1526951af8c4985625ca857a47b3abbd8d1e65ed806b338fe3af04d0cf256c75"
+        },
+        {
+          "path": "docs/atlas/swissimage-source-derived-baseline.json",
+          "sha256": "49ab12594ca1c0737fdcd0b2e53f21e5d2acda8d7122bb574789a906a29cdd67"
+        }
+      ]
+    },
+    {
+      "id": "ADS",
+      "report": "docs/atlas/riffelhorn-observation-support.md",
+      "checkpoint": "e14148af00ef01ea77c9ec08141bc17cffd70735",
+      "evidenceClass": "retained",
+      "establishes": "Plausible strip footprint not pixel contributor or physical visibility.",
+      "limitsAreAuthoritativeInReport": true,
+      "references": [
+        {
+          "path": "docs/atlas/riffelhorn-observation-support.md",
+          "sha256": "0910ecf3a8442829ea99303d929bc9e0cfca7bf6d7e905d9a15aa5a86215ca1f"
+        }
+      ]
+    },
+    {
+      "id": "FRAMES",
+      "report": "docs/atlas/swiss-multiview-benchmark.md",
+      "checkpoint": "e3edd0f32ca109175cb456581abb804dc542519c",
+      "evidenceClass": "retained",
+      "establishes": "Rich metadata only; frame pixels parked, no fusion proof.",
+      "limitsAreAuthoritativeInReport": true,
+      "references": [
+        {
+          "path": "docs/atlas/swiss-multiview-benchmark.md",
+          "sha256": "f29d2f1e5d21ab7d98f8d55abf97caa214c6b3a7a360188111fdc10ab847643d"
+        },
+        {
+          "path": "docs/atlas/swiss-multiview-input-manifest.json",
+          "sha256": "4322e7f4ab93d64b3e97712b71fe2d6638eccfdb3309df6b6cc976a8d4eb7f0d"
+        }
+      ]
+    },
+    {
+      "id": "APP",
+      "report": "docs/research/riffelhorn-appearance-assessment.md",
+      "checkpoint": "b12dc06dc51d86b85d8635f6741398dde9a65801",
+      "evidenceClass": "retained",
+      "establishes": "Metadata/scenario integration; small eligibility policy, not full hierarchy/pixel persistence.",
+      "limitsAreAuthoritativeInReport": true,
+      "references": [
+        {
+          "path": "docs/research/riffelhorn-appearance-assessment.md",
+          "sha256": "7b849da9355738deff86454cb2cf57d2bd38468d20050d896b52c9ce2a7c4bd2"
+        },
+        {
+          "path": "docs/research/riffelhorn-appearance-assessment-results.json",
+          "sha256": "ba640142b39459f2fbe9b155b5eaf5ba274cf81b4fdc34988817286ab5441425"
+        },
+        {
+          "path": "docs/research/riffelhorn-appearance-assessment-validation.json",
+          "sha256": "0a2d15379b5edb0d8f7c5f9ecaf375c1953171bf3b78ee4a0fed4f5a29fe58b3"
+        }
+      ]
+    },
+    {
+      "id": "SUN",
+      "report": "docs/research/illumination-identifiability.md",
+      "checkpoint": "96957570b585781995feaec52b1598784b4db3d9",
+      "evidenceClass": "retained",
+      "establishes": "PARTIAL identification; Riffelhorn exposure/physical radiometry unknown.",
+      "limitsAreAuthoritativeInReport": true,
+      "references": [
+        {
+          "path": "docs/research/illumination-identifiability.md",
+          "sha256": "f264644525f8186c31c27baf5c928c12259bf087582540460e3816a3a98dfc93"
+        },
+        {
+          "path": "scripts/atlas/illumination-assessment/future-evaluation.json",
+          "sha256": "0e1b884bd64c94effffeb1cb024f01c6f385d87eda73f20fa134f0a2add5ca28"
+        }
+      ]
+    },
+    {
+      "id": "NORM",
+      "report": "docs/research/tryfan-illumination-normalization.md",
+      "checkpoint": "1842008ea4996d941226a428aa20aba7dec8fd5e",
+      "evidenceClass": "retained",
+      "establishes": "INCONCLUSIVE12<20; stop before fitting, no normalization result.",
+      "limitsAreAuthoritativeInReport": true,
+      "references": [
+        {
+          "path": "docs/research/tryfan-illumination-normalization.md",
+          "sha256": "711b96c43ca5de7732313cbc33705ec72ec347d05fd94d6757c8897afe0828d5"
+        },
+        {
+          "path": "docs/research/tryfan-illumination-normalization-results.json",
+          "sha256": "802dcf7c8e8b5965cb993601693e0d0d210c0c1e0d4b7fc8ec92e875b0e0440b"
+        }
+      ]
+    },
+    {
+      "id": "VEG",
+      "report": "docs/research/tryfan-vegetation-protocol.md",
+      "checkpoint": "e276d814942b5e94adfa2353a95a10e78536b028",
+      "evidenceClass": "retained",
+      "establishes": "NOT JUSTIFIED for tested populations; no new correction protocol.",
+      "limitsAreAuthoritativeInReport": true,
+      "references": [
+        {
+          "path": "docs/research/tryfan-vegetation-protocol.md",
+          "sha256": "a02b665fb2dc69fa06f41c7fd5a07bb48a05ccce4a7368339ac45863707ed90e"
+        },
+        {
+          "path": "docs/research/tryfan-vegetation-protocol-results.json",
+          "sha256": "4e2f547c3618536b430268371b0fbf129445b709f661870ba28c2ef9ea6c2a88"
+        }
+      ]
+    },
+    {
+      "id": "REG",
+      "report": "docs/research/riffelhorn-registration-epoch.md",
+      "checkpoint": "9dc4445d491fd59bab2b8e1b613ef62a4bf486b6",
+      "evidenceClass": "retained",
+      "establishes": "SCALE-CONDITIONAL; preparation consistent, fine physical controls unresolved.",
+      "limitsAreAuthoritativeInReport": true,
+      "references": [
+        {
+          "path": "docs/research/riffelhorn-registration-epoch.md",
+          "sha256": "c1fc787e844a2a70a4c37105d00359f3dfbdb501c49472a2a12314b641e4084c"
+        }
+      ]
+    },
+    {
+      "id": "DARK",
+      "report": "docs/research/riffelhorn-dark-source-signal.md",
+      "checkpoint": "20461af84b0619abc8b7b218aac9ef1e53de1fae",
+      "evidenceClass": "retained",
+      "establishes": "PARTIAL coherent digital signal; deepest-dark/codec/stretch limitations.",
+      "limitsAreAuthoritativeInReport": true,
+      "references": [
+        {
+          "path": "docs/research/riffelhorn-dark-source-signal.md",
+          "sha256": "340c19953941e3bde83dcb54739ecb0b19b5fa571be038c8a61070c16dd91624"
+        }
+      ]
+    },
+    {
+      "id": "DISPLAY",
+      "report": "docs/research/riffelhorn-display-transfer.md",
+      "checkpoint": "b85c296ba480a3d26159a759f1d26d829efc2f50",
+      "evidenceClass": "retained",
+      "establishes": "PARTIAL research-only toe; no accepted production prototype.",
+      "limitsAreAuthoritativeInReport": true,
+      "references": [
+        {
+          "path": "docs/research/riffelhorn-display-transfer.md",
+          "sha256": "e595ce05d3260329618c53d8b419525840fcb52a6c8072bd279faedf2e9091b1"
+        }
+      ]
+    },
+    {
+      "id": "EXE",
+      "report": "docs/research/exe-water-query-proof.md",
+      "checkpoint": "4acd1916031d868c9a327d09445b770578f01b79",
+      "evidenceClass": "retained",
+      "establishes": "75 frozen queries, native time/feature/reference coexistence, four fresh processes.",
+      "limitsAreAuthoritativeInReport": true,
+      "references": [
+        {
+          "path": "docs/research/exe-water-query-proof.md",
+          "sha256": "9a9fef4fee7d756a82626923b7873a760ce6718bbc3f260456aa61d7663b98fb"
+        },
+        {
+          "path": "docs/research/exe-water-query-results.json",
+          "sha256": "29f9797ee267b00027dc02470e9b62a69ff56ebc7f033c3f79306de0e5a19de1"
+        },
+        {
+          "path": "docs/research/exe-water-query-validation.json",
+          "sha256": "de2b2935ed9165ac7a06ae34c9ae430bcac196b2b4ccc1df8b54102d350d207c"
+        },
+        {
+          "path": "scripts/atlas/exe-water-query-proof/test-proof.mjs",
+          "sha256": "b655ceeceb8a20a01f0489e0fef4c3b2b3689182afdd6820ed303bc8245b1984"
+        }
+      ]
+    },
+    {
+      "id": "CLIFF",
+      "report": "docs/earth-lab/atlas-terrain-representation-synthesis.md",
+      "checkpoint": "4c15639b08369ded1c41e070d687ad8dca668bf5",
+      "evidenceClass": "retained",
+      "establishes": "Closed inconclusive reconstruction; no mandatory true3D remedy.",
+      "limitsAreAuthoritativeInReport": true,
+      "references": [
+        {
+          "path": "docs/earth-lab/atlas-terrain-representation-synthesis.md",
+          "sha256": "4ca913debb2e5348aae4417649ffa7d257dfd82e9ff5946f870919c507a42dbe"
+        },
+        {
+          "path": "docs/earth-lab/riffelhorn-012d-adaptive-cliff-heightfield.md",
+          "sha256": "a89fbf8a8a9d791fd2e746ed7f843f20b8ab516c702da27fd80d482ab6cdd259"
+        },
+        {
+          "path": "docs/earth-lab/riffelhorn-012e-robust-cliff-heightfield.md",
+          "sha256": "4450173f2e6ec458c1fb0b26e00b5019e421b20a888a9c3715fa64bb25e1e473"
+        }
+      ]
+    },
+    {
+      "id": "DATED",
+      "report": "docs/earth-lab/tryfan-010-observed-natural-colour.md",
+      "checkpoint": "a6f88dabf090a15216f757b6bce5d3f754431aeb",
+      "evidenceClass": "retained",
+      "establishes": "Retained dated BOA observations/display preparation; not illumination independent; manual fixed-camera visual acceptance pending.",
+      "limitsAreAuthoritativeInReport": true,
+      "references": [
+        {
+          "path": "docs/earth-lab/tryfan-010-observed-natural-colour.md",
+          "sha256": "3e0b36f611e0db0f04545830781e46d509d9e2f3da3047f20990d7c78fe926a6"
+        },
+        {
+          "path": "docs/earth-lab/tryfan-010-observed-natural-colour.json",
+          "sha256": "914c2b81b7dcb7b8ed1d0817b3aeb54ccad2bf87e881602a26eb9acecd2bc873"
+        },
+        {
+          "path": "docs/earth-lab/tryfan-005b-sentinel2.json",
+          "sha256": "b6570381e6bf7ffeec43eacc95f6a3535199f1c0c47a360465e775c365727eba"
+        },
+        {
+          "path": "docs/earth-lab/tryfan-005c-temporal-evidence.json",
+          "sha256": "0564ceb4bcfd0245ec42b792a68d794bc11c779f689393d0f44d94d237b2676a"
+        }
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "id": "C01",
+      "capability": "Source identity",
+      "classification": "PROVEN",
+      "proofs": [
+        "WALES",
+        "QUERY",
+        "WC",
+        "EXE",
+        "APP"
+      ],
+      "boundedMeaning": "Pinned local source identity, hosted upstream unknowns preserved.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C02",
+      "capability": "Product identity",
+      "classification": "PROVEN",
+      "proofs": [
+        "WALES",
+        "PERSIST",
+        "WC",
+        "EXE",
+        "SWISSIMAGE"
+      ],
+      "boundedMeaning": "Immutable prepared and retained snapshot identities; not full parent hashes.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C03",
+      "capability": "Representation identity",
+      "classification": "PROVEN",
+      "proofs": [
+        "WALES",
+        "QUERY",
+        "WC",
+        "APP"
+      ],
+      "boundedMeaning": "Level/grid/recipe identities separated from payload/cache.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C04",
+      "capability": "Provenance",
+      "classification": "PROVEN",
+      "proofs": [
+        "QUERY",
+        "PERSIST",
+        "WC",
+        "EXE",
+        "APP"
+      ],
+      "boundedMeaning": "Exact local lineage; completeness remains qualified.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C05",
+      "capability": "Rights/licensing metadata",
+      "classification": "PROVEN",
+      "proofs": [
+        "PERSIST",
+        "WC",
+        "EXE",
+        "APP"
+      ],
+      "boundedMeaning": "Retained notices round-trip; enforcement/public clearance not proven.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C06",
+      "capability": "Spatial support",
+      "classification": "PROVEN",
+      "proofs": [
+        "WALES",
+        "QUERY",
+        "WC",
+        "EXE",
+        "APP"
+      ],
+      "boundedMeaning": "Coverage/output/use scopes, cell/polygon and alpha-support distinctions.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C07",
+      "capability": "Scale/resolution semantics",
+      "classification": "PROVEN",
+      "proofs": [
+        "LIMITS",
+        "WC",
+        "APP",
+        "QUERY"
+      ],
+      "boundedMeaning": "Information/delivery/display/analysis/tangent sampling differ.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C08",
+      "capability": "CRS/reference semantics",
+      "classification": "PROVEN",
+      "proofs": [
+        "WALES",
+        "WC",
+        "REG",
+        "EXE"
+      ],
+      "boundedMeaning": "Explicit native grids/axis/reference unknowns; not physical registration truth.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C09",
+      "capability": "Geometry hierarchy",
+      "classification": "PROVEN",
+      "proofs": [
+        "WALES",
+        "RUNTIME",
+        "PARENTS"
+      ],
+      "boundedMeaning": "Coherent eligible regional levels and common family.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C10",
+      "capability": "Regional/global fallback",
+      "classification": "PROVEN",
+      "proofs": [
+        "QUERY",
+        "WALES"
+      ],
+      "boundedMeaning": "Support-driven AWS fallback; no analytical datum fusion.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C11",
+      "capability": "Source-native semantics",
+      "classification": "PROVEN",
+      "proofs": [
+        "WC",
+        "EXE"
+      ],
+      "boundedMeaning": "Native category codes/features/planning modes preserved.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C12",
+      "capability": "Common interpretation without flattening",
+      "classification": "PROVEN",
+      "proofs": [
+        "WC",
+        "NATIVE"
+      ],
+      "boundedMeaning": "Qualified lossy mappings and rejected substrate inference.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C13",
+      "capability": "Feature identity",
+      "classification": "PROVEN",
+      "proofs": [
+        "EXE",
+        "WC"
+      ],
+      "boundedMeaning": "Source-scoped WFD/NRW IDs; cross-source entity matching not proven.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C14",
+      "capability": "Categorical evidence",
+      "classification": "PROVEN",
+      "proofs": [
+        "WC",
+        "EXE"
+      ],
+      "boundedMeaning": "Lazy native code templates/cell binding, not one full object per pixel.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C15",
+      "capability": "Continuous/quantity evidence",
+      "classification": "PROVEN",
+      "proofs": [
+        "QUERY",
+        "PERSIST",
+        "DATED"
+      ],
+      "boundedMeaning": "Represented-heightfield slope/ratio plus retained band quantities; no catalogue of all quantities.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C16",
+      "capability": "Layered/coexisting claims",
+      "classification": "PROVEN",
+      "proofs": [
+        "WC",
+        "EXE"
+      ],
+      "boundedMeaning": "Native grassland/heath and feature/habitat/event/detection coexist.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C17",
+      "capability": "Contradictory versus merely different claims",
+      "classification": "PARTIALLY PROVEN",
+      "proofs": [
+        "V1",
+        "WC",
+        "EXE"
+      ],
+      "boundedMeaning": "Contradictory fixture claims viable; real different-property coexistence, no empirical truth adjudication.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C18",
+      "capability": "Observation time",
+      "classification": "PROVEN",
+      "proofs": [
+        "EXE",
+        "DATED",
+        "APP"
+      ],
+      "boundedMeaning": "Monthly bins/exact dated source metadata/mosaic epoch distinguished.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C19",
+      "capability": "Survey time",
+      "classification": "PARTIALLY PROVEN",
+      "proofs": [
+        "EXE",
+        "WC"
+      ],
+      "boundedMeaning": "Contributor years and explicit unknown actual survey; no exact local survey replay.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C20",
+      "capability": "Event time",
+      "classification": "PROVEN",
+      "proofs": [
+        "EXE"
+      ],
+      "boundedMeaning": "Published day-bound flood intervals with native timestamps retained.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C21",
+      "capability": "Validity/reference periods",
+      "classification": "PARTIALLY PROVEN",
+      "proofs": [
+        "EXE",
+        "V1"
+      ],
+      "boundedMeaning": "Planning and interval evidence; unsupported validity date, no live validity-update engine.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C22",
+      "capability": "Reference-conditioned evidence",
+      "classification": "PROVEN",
+      "proofs": [
+        "EXE"
+      ],
+      "boundedMeaning": "MHW/AEP/ignored-defence qualifications; rejected current-level condition.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C23",
+      "capability": "Unknown",
+      "classification": "PROVEN",
+      "proofs": [
+        "WC",
+        "EXE",
+        "PERSIST"
+      ],
+      "boundedMeaning": "Explicit gap/unknown metadata rather than physical absence.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C24",
+      "capability": "Non-detection",
+      "classification": "PROVEN",
+      "proofs": [
+        "EXE"
+      ],
+      "boundedMeaning": "Native1 differs from no-observation0 and absence proof.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C25",
+      "capability": "Unavailable",
+      "classification": "PROVEN",
+      "proofs": [
+        "PERSIST",
+        "EXE"
+      ],
+      "boundedMeaning": "Missing external input/control execution condition distinct from native gap.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C26",
+      "capability": "Unsupported",
+      "classification": "PROVEN",
+      "proofs": [
+        "QUERY",
+        "WC",
+        "EXE",
+        "APP"
+      ],
+      "boundedMeaning": "Exposure/current cover/current water/intrinsic appearance rejected.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C27",
+      "capability": "Derived-result identity",
+      "classification": "PROVEN",
+      "proofs": [
+        "QUERY",
+        "PERSIST"
+      ],
+      "boundedMeaning": "Stable question/claim versus process/artifact, historical/current revisions.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C28",
+      "capability": "Method/revision identity",
+      "classification": "PROVEN",
+      "proofs": [
+        "QUERY",
+        "PERSIST",
+        "EXE"
+      ],
+      "boundedMeaning": "Pinned methods/parameters/code; no immutable-method assumption.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C29",
+      "capability": "Dependency identity",
+      "classification": "PROVEN",
+      "proofs": [
+        "QUERY",
+        "PERSIST",
+        "EXE"
+      ],
+      "boundedMeaning": "Exact direct roots/upstream claims with role/revision.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C30",
+      "capability": "Actual input-use scope",
+      "classification": "PROVEN",
+      "proofs": [
+        "QUERY",
+        "PERSIST",
+        "EXE"
+      ],
+      "boundedMeaning": "Stencil halo and selected native observation support not whole I/O file.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C31",
+      "capability": "Scoped freshness",
+      "classification": "PROVEN",
+      "proofs": [
+        "QUERY",
+        "PERSIST"
+      ],
+      "boundedMeaning": "Summit vs south; outside/halo synthetic notifications over real retained inputs.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C32",
+      "capability": "Recomputation",
+      "classification": "PROVEN",
+      "proofs": [
+        "QUERY",
+        "PERSIST"
+      ],
+      "boundedMeaning": "Only summit slope then ratio; no generic scheduler.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C33",
+      "capability": "Supersession/coexistence",
+      "classification": "PROVEN",
+      "proofs": [
+        "QUERY",
+        "PERSIST"
+      ],
+      "boundedMeaning": "Policy preference changes without deleting historical AWS claims.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C34",
+      "capability": "Historical replay",
+      "classification": "PROVEN",
+      "proofs": [
+        "PERSIST"
+      ],
+      "boundedMeaning": "Fresh decoding/method reruns four AWS records, not just old scalar retrieval.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C35",
+      "capability": "Persistence/restart",
+      "classification": "PROVEN",
+      "proofs": [
+        "PERSIST",
+        "WC",
+        "EXE"
+      ],
+      "boundedMeaning": "Actual process termination/load and deterministic independent rebuild.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C36",
+      "capability": "Coherent publication",
+      "classification": "PROVEN",
+      "proofs": [
+        "PERSIST"
+      ],
+      "boundedMeaning": "Validated immutable candidate plus accepted pointer; one writer.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C37",
+      "capability": "Interrupted-publication behaviour",
+      "classification": "PROVEN",
+      "proofs": [
+        "PERSIST"
+      ],
+      "boundedMeaning": "Exit73 before pointer, old view recovered, retry; not power-loss/distributed durability.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C38",
+      "capability": "Query resolution by physical question",
+      "classification": "PROVEN",
+      "proofs": [
+        "QUERY",
+        "WC",
+        "EXE",
+        "APP"
+      ],
+      "boundedMeaning": "Bounded property/purpose/time/reference resolvers; no general public API.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C39",
+      "capability": "Incompatible fallback rejection",
+      "classification": "PROVEN",
+      "proofs": [
+        "WC",
+        "EXE",
+        "APP"
+      ],
+      "boundedMeaning": "Other meanings are not substitutes for unavailable requested property.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C40",
+      "capability": "Evidence coexistence",
+      "classification": "PROVEN",
+      "proofs": [
+        "WC",
+        "EXE"
+      ],
+      "boundedMeaning": "Multiple qualified answers no universal winner.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C41",
+      "capability": "Dense raster evidence",
+      "classification": "PROVEN",
+      "proofs": [
+        "WC",
+        "EXE"
+      ],
+      "boundedMeaning": "185036 categorical assignments and monthly native windows via templates.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C42",
+      "capability": "Vector evidence",
+      "classification": "PROVEN",
+      "proofs": [
+        "EXE",
+        "WC"
+      ],
+      "boundedMeaning": "Native containment/intersection and separate component claims.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C43",
+      "capability": "Time-qualified observations",
+      "classification": "PROVEN",
+      "proofs": [
+        "EXE",
+        "DATED"
+      ],
+      "boundedMeaning": "Bins/exposures with support qualification; no continuous dynamics.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C44",
+      "capability": "Event evidence",
+      "classification": "PROVEN",
+      "proofs": [
+        "EXE"
+      ],
+      "boundedMeaning": "Native outline/group/date relations, not present probability.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C45",
+      "capability": "Scenario/model evidence",
+      "classification": "PROVEN",
+      "proofs": [
+        "EXE"
+      ],
+      "boundedMeaning": "Annual reference and mixed model/event origin, not observed flooding.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C46",
+      "capability": "Appearance evidence identity/provenance",
+      "classification": "PARTIALLY PROVEN",
+      "proofs": [
+        "APP",
+        "SWISSIMAGE",
+        "DATED"
+      ],
+      "boundedMeaning": "Real manifest/pixel/preparation/scenario evidence; not integrated persistent imagery serving.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C47",
+      "capability": "Uncertainty/qualification",
+      "classification": "PROVEN",
+      "proofs": [
+        "WC",
+        "EXE",
+        "APP",
+        "PERSIST"
+      ],
+      "boundedMeaning": "Scoped product quality and unknowns; no fake local confidence.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C48",
+      "capability": "Deterministic rebuild/reproduction",
+      "classification": "PROVEN",
+      "proofs": [
+        "PERSIST",
+        "WC",
+        "EXE"
+      ],
+      "boundedMeaning": "Fresh process/rebuild logical equivalence; no scientific accuracy inference.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C49",
+      "capability": "Source immutability",
+      "classification": "PROVEN",
+      "proofs": [
+        "QUERY",
+        "PERSIST",
+        "WC",
+        "EXE",
+        "SWISSIMAGE"
+      ],
+      "boundedMeaning": "Pinned source checks, derived/store changes do not alter observations.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "C50",
+      "capability": "Separation from application concerns",
+      "classification": "PROVEN",
+      "proofs": [
+        "EXE",
+        "QUERY",
+        "APP"
+      ],
+      "boundedMeaning": "Proofs avoid route safety, hydrology, Weather and render-as-knowledge.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "X1",
+      "capability": "Integrated regional interactive serving",
+      "classification": "DESIGNED BUT NOT PROVEN",
+      "proofs": [
+        "REQ",
+        "PERSIST",
+        "DATED"
+      ],
+      "boundedMeaning": "Separate read-only consumer path and payload/catalogue publication must be implemented/measured in pilot.",
+      "pilotRequirement": true
+    },
+    {
+      "id": "X2",
+      "capability": "Automated cross-source entity/truth adjudication",
+      "classification": "UNRESOLVED",
+      "proofs": [
+        "MODEL",
+        "EXE",
+        "WC"
+      ],
+      "boundedMeaning": "Not required; preserve source-scoped identity and competing meanings.",
+      "pilotRequirement": false
+    },
+    {
+      "id": "X3",
+      "capability": "Corrected/intrinsic appearance, multiview and hydraulic state",
+      "classification": "OUTSIDE PILOT SCOPE",
+      "proofs": [
+        "SUN",
+        "VEG",
+        "FRAMES",
+        "EXE"
+      ],
+      "boundedMeaning": "Scientific debt/parked evidence; not a pilot acceptance promise.",
+      "pilotRequirement": false
+    }
+  ],
+  "threads": [
+    {
+      "id": "H1",
+      "question": "H1 — Does finer analytical terrain/sampling improve physical profiles? Early Welsh/England terrain research, before the Atlas pivot",
+      "historicalStatus": "**PARTIAL**. [Public development entries](../development-log.md#2026-09-02--high-resolution-welsh-terrain-experiment-v1), [second environment](../development-log.md#2026-09-02--high-resolution-terrain-generalisation-experiment-v2), [tooling](../../scripts/terrain_research/README.md): source resolution matters route-dependently; finer sampling of a coarse DEM is interpolation; COG and WCS bounded reads work.",
+      "historicalStatusSha256": "ca3ba85f18ef72d0e8ed063c4ed280bc5ff84cbb1cd867b2ddb8dda638260cf4",
+      "pilotClass": "POST-PILOT RESEARCH",
+      "reason": "Regional analytical profile/source-specific filter evaluation, not a prerequisite to qualified slope of a represented field.",
+      "canonicalReferences": [
+        "../development-log.md#2026-09-02--high-resolution-welsh-terrain-experiment-v1",
+        "../development-log.md#2026-09-02--high-resolution-terrain-generalisation-experiment-v2",
+        "../../scripts/terrain_research/README.md"
+      ]
+    },
+    {
+      "id": "H2",
+      "question": "H2 — Can authoritative geometry be registered and independently inspected? Tryfan 001–004B",
+      "historicalStatus": "**CLOSED FOR FOUNDATION** for the retained pipeline. [Earth Lab guide](../../scripts/earth_lab/README.md), [004B configuration](../earth-lab/tryfan-004b-photo-fit.json), [log](../development-log.md#2026-09-24--meridian-earth-laboratory-004b-quantitative-alignment): imported R16 preserves broad skyline; position fitting was boundary-limited and not promoted.",
+      "historicalStatusSha256": "57367d0a118d865ccc28dc310d5593b5f535178ba9ae7a91395eec3242999661",
+      "pilotClass": "CLOSED",
+      "reason": "Retained reference pipeline sufficient; photograph fit is not ground truth.",
+      "canonicalReferences": [
+        "../../scripts/earth_lab/README.md",
+        "../earth-lab/tryfan-004b-photo-fit.json",
+        "../development-log.md#2026-09-24--meridian-earth-laboratory-004b-quantitative-alignment"
+      ]
+    },
+    {
+      "id": "H3",
+      "question": "H3 — What physical understanding can DEM morphology supply? Tryfan 005A",
+      "historicalStatus": "**PARTIAL**. [005A definition](../earth-lab/tryfan-005a-surface-analysis.json), [result log](../development-log.md#2026-09-24--meridian-earth-laboratory-005a-terrain-derived-surface-analysis): slope/aspect, curvature and detrended roughness at approximately 5/15/51 m expose coherent ridges/gullies and scale dependence.",
+      "historicalStatusSha256": "cddb90598b58115a877b98864c0bac8243e6931e370f5209cf0e2eef8c570489",
+      "pilotClass": "PILOT NON-BLOCKER / RESEARCH DEBT",
+      "reason": "More morphology/landform interpretations add methods, not a new persistent model.",
+      "canonicalReferences": [
+        "../earth-lab/tryfan-005a-surface-analysis.json",
+        "../development-log.md#2026-09-24--meridian-earth-laboratory-005a-terrain-derived-surface-analysis",
+        "atlas-derived-understanding-lifecycle.md"
+      ]
+    },
+    {
+      "id": "H4",
+      "question": "H4 — What do independent spectral observations and time add? Tryfan 005B/C and 010",
+      "historicalStatus": "**CLOSED** for the bounded observation proofs; wider interpretation **PARTIAL**. [005B](../earth-lab/tryfan-005b-sentinel2.json), [005C](../earth-lab/tryfan-005c-temporal-evidence.json), [temporal findings](../development-log.md#2026-09-25--meridian-earth-laboratory-005c-temporal-surface-evidence), [010](../earth-lab/tryfan-010-observed-natural-colour.md). Corrected mirror scale/offset handling; four seasons separate some spectral persistence from snow/phenology/illumination.",
+      "historicalStatusSha256": "d570ffc21afc704af43aedba43cc6ba4a81677d097e029e4266793ea8debe099",
+      "pilotClass": "PILOT NON-BLOCKER / RESEARCH DEBT",
+      "reason": "Dated evidence exists; material/state interpretation remains partial and excluded.",
+      "canonicalReferences": [
+        "../earth-lab/tryfan-005b-sentinel2.json",
+        "../earth-lab/tryfan-005c-temporal-evidence.json",
+        "../development-log.md#2026-09-25--meridian-earth-laboratory-005c-temporal-surface-evidence",
+        "../earth-lab/tryfan-010-observed-natural-colour.md"
+      ]
+    },
+    {
+      "id": "H5",
+      "question": "H5 — Can contextual geology/habitat and observations infer underlying surface? Tryfan 006–008",
+      "historicalStatus": "**PARTIAL**; single six-class world abstraction **SUPERSEDED** by the later hybrid direction. [006](../earth-lab/tryfan-006-contextual-evidence.json), [007](../earth-lab/tryfan-007-underlying-surface.json), [008](../earth-lab/tryfan-008-uncertainty-audit.json), [results](../development-log.md#2026-09-25--meridian-earth-laboratory-007-uncertain-underlying-surface). Deterministic capped preferences yielded broad tendencies and high ambiguity; 008 found overlap/coarse context more important than missing coverage and refused further acquisition.",
+      "historicalStatusSha256": "3452402d306bcf8793f4a7d579f0343987d9f093b7352260b7351ded1672ad44",
+      "pilotClass": "POST-PILOT RESEARCH",
+      "reason": "Historical exclusive heuristic classes are not pilot canonical truth.",
+      "canonicalReferences": [
+        "../earth-lab/tryfan-006-contextual-evidence.json",
+        "../earth-lab/tryfan-007-underlying-surface.json",
+        "../earth-lab/tryfan-008-uncertainty-audit.json",
+        "../development-log.md#2026-09-25--meridian-earth-laboratory-007-uncertain-underlying-surface"
+      ]
+    },
+    {
+      "id": "H6",
+      "question": "H6 — Can evidence-constrained synthetic detail improve appearance? Tryfan 009",
+      "historicalStatus": "**OPTIONAL / ADVANCED**; historical visual acceptance remains **PARTIAL**. [009 definition](../earth-lab/tryfan-009-surface-reconstruction.json), [log](../development-log.md#2026-09-28--meridian-earth-laboratory-009-reconstruction-v01): deterministic continuous renderer controls and reversible Unreal material were prepared. Fixed-camera improvement remained pending; transient captures were invalid.",
+      "historicalStatusSha256": "f58ffa1be1eb5044fb44bf9657e971cab9dcd085ba013ffe5f99eb4a31f9c3fb",
+      "pilotClass": "POST-PILOT RESEARCH",
+      "reason": "Synthetic appearance optional and explicitly invented; excluded.",
+      "canonicalReferences": [
+        "../earth-lab/tryfan-009-surface-reconstruction.json",
+        "../development-log.md#2026-09-28--meridian-earth-laboratory-009-reconstruction-v01"
+      ]
+    },
+    {
+      "id": "H7",
+      "question": "H7 — Does DSM–DTM retain structure beyond bare earth? Tryfan 011, Riffelhorn 012B",
+      "historicalStatus": "**PARTIAL**. [011](../earth-lab/tryfan-011-observed-surface-height.md), [012B](../earth-lab/riffelhorn-012b-mountain-reconstruction.md): coherent differences exist; Swiss ice/debris/epoch differences dominate some regions. 011's manual interpretation is still pending.",
+      "historicalStatusSha256": "370d4811117c318bc268590cc4be8e408ea5129ef8d51b34d3c78e4fd9cc2708",
+      "pilotClass": "POST-PILOT RESEARCH",
+      "reason": "Independent surface/residual semantics sufficient; canopy/object interpretation excluded.",
+      "canonicalReferences": [
+        "../earth-lab/tryfan-011-observed-surface-height.md",
+        "../earth-lab/riffelhorn-012b-mountain-reconstruction.md"
+      ]
+    },
+    {
+      "id": "H8",
+      "question": "H8 — Can raw returns recover difficult cliff geometry? Riffelhorn 012C/D/E",
+      "historicalStatus": "**CLOSED** bounded reconstruction branch; wider causality **PARTIAL**. [012C](../earth-lab/riffelhorn-012c-raw-lidar-retention.md), [012D](../earth-lab/riffelhorn-012d-adaptive-cliff-heightfield.md), [012E](../earth-lab/riffelhorn-012e-robust-cliff-heightfield.md), [closure](../earth-lab/atlas-terrain-representation-synthesis.md). Local loss is measured, but finer/adaptive and plane-voting surfaces failed held-out/continuity acceptance.",
+      "historicalStatusSha256": "0d9f72e8bca9cda5cbbf422fbfc4d4d5dcb025c29febeb2ca3caf35ba1304638",
+      "pilotClass": "CLOSED",
+      "reason": "Closed estimator branch; connecting cliffs not identifiable, no reopening.",
+      "canonicalReferences": [
+        "../earth-lab/riffelhorn-012c-raw-lidar-retention.md",
+        "../earth-lab/riffelhorn-012d-adaptive-cliff-heightfield.md",
+        "../earth-lab/riffelhorn-012e-robust-cliff-heightfield.md",
+        "../earth-lab/atlas-terrain-representation-synthesis.md"
+      ]
+    },
+    {
+      "id": "T1",
+      "question": "T1 — Do better regional sources improve the existing renderer? Mapterhorn/direct Swiss/Wales",
+      "historicalStatus": "**CLOSED FOR FOUNDATION**. [Tryfan source reconnaissance](../atlas/tryfan-lidar-reconnaissance.md), [global service evaluation](../atlas/global-terrain-foundation-evaluation.md), [direct Swiss](../atlas/riffelhorn-regional-terrain-prototype.md), [Tryfan proof](../atlas/tryfan-second-region-proof.md). Interior structure improves; regional portability is demonstrated.",
+      "historicalStatusSha256": "befcd614be958512a785359c540822aa7deb156e57a40af70d57ca2c3f1b59a8",
+      "pilotClass": "CLOSED",
+      "reason": "Welsh/Swiss portability proved; local implementation still needs acceptance.",
+      "canonicalReferences": [
+        "../atlas/tryfan-lidar-reconnaissance.md",
+        "../atlas/global-terrain-foundation-evaluation.md",
+        "../atlas/riffelhorn-regional-terrain-prototype.md",
+        "../atlas/tryfan-second-region-proof.md"
+      ]
+    },
+    {
+      "id": "T2",
+      "question": "T2 — What separates source, product, representation and support? Metadata ADR → hierarchy contract/runtime",
+      "historicalStatus": "**CLOSED FOR FOUNDATION**. [Metadata ADR](../atlas/terrain-source-product-architecture.md), [contract](../atlas/terrain-hierarchy-contract.md), [runtime](../atlas/terrain-runtime-selection.md), [Welsh proof](../atlas/tryfan-second-region-proof.md).",
+      "historicalStatusSha256": "47f3ec343d2df527ac26cd58105c4f84c13db801e386fabfe9f81048b4dfaa1d",
+      "pilotClass": "CLOSED",
+      "reason": "Frozen identity/support contract is sufficient; operational catalogue engineering remains.",
+      "canonicalReferences": [
+        "../atlas/terrain-source-product-architecture.md",
+        "../atlas/terrain-hierarchy-contract.md",
+        "../atlas/terrain-runtime-selection.md",
+        "../atlas/tryfan-second-region-proof.md"
+      ]
+    },
+    {
+      "id": "T3",
+      "question": "T3 — Are coherent regional parents better than unrelated common parents? First hierarchy → parent diagnostic",
+      "historicalStatus": "**CLOSED FOR FOUNDATION**. [Negative hierarchy](../atlas/terrain-hierarchy-prototype.md), [regional parents](../atlas/regional-parent-diagnostic.md): protected z13→14 RMS change 39.82→0.71 m.",
+      "historicalStatusSha256": "1379d641eaa1e12c0de4e3233f98d28eb8cc508dad9b9abba764e6b225ac4d57",
+      "pilotClass": "CLOSED",
+      "reason": "Coherent regional parents proved; handoff remains distinct.",
+      "canonicalReferences": [
+        "../atlas/terrain-hierarchy-prototype.md",
+        "../atlas/regional-parent-diagnostic.md"
+      ]
+    },
+    {
+      "id": "T4",
+      "question": "T4 — Which common/coarse reference and support are accountable? Larger Swiss → global reference → Copernicus",
+      "historicalStatus": "**CLOSED** bounded asset/reference assessment. [Swiss support](../atlas/riffelhorn-swiss-support-product.md), [reference](../atlas/global-reference-assessment.md), [common product](../atlas/copernicus-common-product.md). Deterministic supported regional/common products exist; Copernicus is a justified local common-reference candidate.",
+      "historicalStatusSha256": "92c5b7b13645841ed92521846f7649e59dd55a1efc7c949e04509341a7d8557d",
+      "pilotClass": "CLOSED",
+      "reason": "Finite reference products sufficient; global coverage is not pilot scope.",
+      "canonicalReferences": [
+        "../atlas/riffelhorn-swiss-support-product.md",
+        "../atlas/global-reference-assessment.md",
+        "../atlas/copernicus-common-product.md"
+      ]
+    },
+    {
+      "id": "T5",
+      "question": "T5 — Can independent height/datum/epoch semantics be safely fused? Reconciliation and stable-overlap reviews",
+      "historicalStatus": "**PARTIAL**. [Reconciliation](../atlas/riffelhorn-terrain-reconciliation.md), [reference](../atlas/global-reference-assessment.md), [methods review](../atlas/spatial-terrain-reconciliation-research.md). Swiss LN02, Copernicus EGM2008, AWS hosted lineage unknown; bounded transform/registration diagnostics don't explain all large offsets.",
+      "historicalStatusSha256": "da9e159540fa00031037ba183f070bbf027ee758eda62bc8def5911d5b8802eb",
+      "pilotClass": "PILOT NON-BLOCKER / RESEARCH DEBT",
+      "reason": "No datum/surface fusion required; preserve unknown heterogeneous heights and source-specific fitness.",
+      "canonicalReferences": [
+        "../atlas/riffelhorn-terrain-reconciliation.md",
+        "../atlas/global-reference-assessment.md",
+        "../atlas/spatial-terrain-reconciliation-research.md"
+      ]
+    },
+    {
+      "id": "T6",
+      "question": "T6 — Is a closed stable seam corridor a necessary route to integration? Corridor → expanded inventory → band analysis",
+      "historicalStatus": "Proposed universal prerequisite **SUPERSEDED**. [Corridor failure](../atlas/seam-corridor-feasibility.md), [extent censorship](../atlas/support-extent-assessment.md), [broad/detail assessment](../atlas/terrain-scale-decomposition.md). No admissible stable cycle; larger inventory did not establish acquisition extent.",
+      "historicalStatusSha256": "b98ea423ad647828a3507260a5ad68dfa03d46c7001a3b89c4fe8ce444ddc471",
+      "pilotClass": "CLOSED",
+      "reason": "Universal stable ring requirement superseded, no new ring search.",
+      "canonicalReferences": [
+        "../atlas/seam-corridor-feasibility.md",
+        "../atlas/support-extent-assessment.md",
+        "../atlas/terrain-scale-decomposition.md"
+      ]
+    },
+    {
+      "id": "T7",
+      "question": "T7 — Can synthetic transition terrain solve spatial continuity without damaging form? Early blends → terminal two-band control",
+      "historicalStatus": "**CLOSED** method branch; accepted general reconciliation **PARTIAL**. [Early controls](../atlas/riffelhorn-terrain-reconciliation.md), [terminal control](../atlas/protected-priority-two-band-transition.md). Endpoints/numerical continuity passed, protected terrain/parents survived, but synthetic 3.19/1.35 m depressions, collar deformation and coarse 41.84 m RMS handoff prevented adoption. Shared close-camera clipping/faceting also failed visual acceptance, including pure-common controls; exact renderer cause remains unknown.",
+      "historicalStatusSha256": "bc7a9ebc0799147788d86b6865f7139b7afaad94fb0f7419f717168365a83318",
+      "pilotClass": "PILOT NON-BLOCKER / RESEARCH DEBT",
+      "reason": "No rejected synthetic surface promoted; transitions/visual seam quality qualified, later source-specific integration.",
+      "canonicalReferences": [
+        "../atlas/riffelhorn-terrain-reconciliation.md",
+        "../atlas/protected-priority-two-band-transition.md"
+      ]
+    },
+    {
+      "id": "T8",
+      "question": "T8 — Does exceptional geometry require true 3D? Raw cliff screens and subsequent architecture",
+      "historicalStatus": "**OPTIONAL / ADVANCED**, with the old “true 3D is the next remedy” proposal **CLOSED**. [012C/E and synthesis](../earth-lab/atlas-terrain-representation-synthesis.md), [surface review](../atlas/physical-surface-semantics.md). No defensible measured Riffelhorn overhang established; canopy/buildings/bridges/water layers are nevertheless not one bare-earth heightfield.",
+      "historicalStatusSha256": "f89668bc01688e0607c220992e35f207c7835429448402d5c3d3c8cd72f645bb",
+      "pilotClass": "POST-PILOT RESEARCH",
+      "reason": "Heightfield limitations recorded; no demonstrated mandatory true3D remedy.",
+      "canonicalReferences": [
+        "../earth-lab/atlas-terrain-representation-synthesis.md",
+        "../atlas/physical-surface-semantics.md"
+      ]
+    },
+    {
+      "id": "A1",
+      "question": "A1 — What useful information does high-resolution imagery add? Bluesky 012A, Swiss 012B → Atlas baseline",
+      "historicalStatus": "**CLOSED** bounded source-derived proof. [012A](../earth-lab/bluesky-012a-aerial-reconstruction.md), [012B](../earth-lab/riffelhorn-012b-mountain-reconstruction.md), [SWISSIMAGE baseline](../atlas/swissimage-source-derived-baseline.md). Preparation/parent fidelity and matched regional/common comparison tested.",
+      "historicalStatusSha256": "1c9dc324327a3f4312b1eeac0cc71d869743213e7fbd55feb962232748f94c87",
+      "pilotClass": "CLOSED",
+      "reason": "Source-derived preparation proof complete within its support.",
+      "canonicalReferences": [
+        "../earth-lab/bluesky-012a-aerial-reconstruction.md",
+        "../earth-lab/riffelhorn-012b-mountain-reconstruction.md",
+        "../atlas/swissimage-source-derived-baseline.md"
+      ]
+    },
+    {
+      "id": "A2",
+      "question": "A2 — How should appearance be declared separately from geometry? Closed Lab synthesis → appearance review",
+      "historicalStatus": "**PARTIAL** architecture proposal, supported by proof. [Appearance baseline/architecture](../atlas/appearance-baseline-and-architecture.md), [source-derived delivery](../atlas/swissimage-source-derived-baseline.md).",
+      "historicalStatusSha256": "e17e4a2c61c9be6419c94280c415dff6f78f29b2371021085ab127a356b30dc3",
+      "pilotClass": "PILOT NON-BLOCKER / RESEARCH DEBT",
+      "reason": "Small eligibility policy sufficient; integrated serving still engineering, full hierarchy not required.",
+      "canonicalReferences": [
+        "../atlas/appearance-baseline-and-architecture.md",
+        "../atlas/swissimage-source-derived-baseline.md",
+        "atlas-world-model-architecture-synthesis.md#11-appearance-model-and-unresolved-programme",
+        "riffelhorn-appearance-assessment.md#24-architecture-consequence"
+      ]
+    },
+    {
+      "id": "A3",
+      "question": "A3 — How much steep-face loss is projection/stretch rather than missing pixels? 012G → matched Atlas baseline",
+      "historicalStatus": "**CLOSED** bounded geometric diagnosis; exact historical visibility **PARTIAL**. [012G](../earth-lab/riffelhorn-012g-projection-and-illumination.md), [Atlas proof](../atlas/swissimage-source-derived-baseline.md).",
+      "historicalStatusSha256": "50f3cc5975fc4d50e3fc13b44aca7230879c3643a76ebbbde75189916fcf572f",
+      "pilotClass": "PILOT NON-BLOCKER / RESEARCH DEBT",
+      "reason": "Stretch/unknown visibility remain qualifications; no cliff-detail accuracy promise.",
+      "canonicalReferences": [
+        "../earth-lab/riffelhorn-012g-projection-and-illumination.md",
+        "../atlas/swissimage-source-derived-baseline.md"
+      ]
+    },
+    {
+      "id": "A4",
+      "question": "A4 — What orthorectification/true-ortho support exists? Swiss acquisition, projection review",
+      "historicalStatus": "**PARTIAL** product semantics and projection evidence; true-ortho generation only reviewed. [Acquisition](../atlas/riffelhorn-data-discovery.md), [appearance methods](../atlas/appearance-baseline-and-architecture.md#bounded-methods-review--external-evidence).",
+      "historicalStatusSha256": "c3b802527909c7160c9eb652a34476875879a4e57cc8dbaaf481d28abdd3b32c",
+      "pilotClass": "PILOT NON-BLOCKER / RESEARCH DEBT",
+      "reason": "Processed orthophoto retained as such; true ortho output excluded.",
+      "canonicalReferences": [
+        "../atlas/riffelhorn-data-discovery.md",
+        "../atlas/appearance-baseline-and-architecture.md#bounded-methods-review--external-evidence"
+      ]
+    },
+    {
+      "id": "A5",
+      "question": "A5 — Is darkness in the source or renderer? Pre-012F diagnosis →012F/G → Atlas baseline",
+      "historicalStatus": "**CLOSED** scoped comparisons; general causal attribution **PARTIAL**. [Visual design](../earth-lab/riffelhorn-visual-synthesis-and-experiment-design.md), [012F](../earth-lab/riffelhorn-012f-terrain-lighting.md), [012G](../earth-lab/riffelhorn-012g-projection-and-illumination.md), [Atlas source/display](../atlas/swissimage-source-derived-baseline.md#source-darkness-versus-atlas-display--meridian-evidence).",
+      "historicalStatusSha256": "0b84eb7fc7e300013e18b864fdaea3122a171ad01a9278b29725776a9f739a19",
+      "pilotClass": "PILOT NON-BLOCKER / RESEARCH DEBT",
+      "reason": "Source/display distinctions proven; partial digital signal/display does not entail recovery.",
+      "canonicalReferences": [
+        "../earth-lab/riffelhorn-visual-synthesis-and-experiment-design.md",
+        "../earth-lab/riffelhorn-012f-terrain-lighting.md",
+        "../earth-lab/riffelhorn-012g-projection-and-illumination.md",
+        "../atlas/swissimage-source-derived-baseline.md#source-darkness-versus-atlas-display--meridian-evidence",
+        "riffelhorn-dark-source-signal.md",
+        "riffelhorn-display-transfer.md"
+      ]
+    },
+    {
+      "id": "A6",
+      "question": "A6 — Can exact acquisition Sun/shadow geometry explain source appearance? Tryfan temporal evidence,012G literature → acquisition metadata",
+      "historicalStatus": "**PARTIAL** metadata; local illumination reconstruction **PARKED** on adequate contributor/time/pose support. [Temporal evidence](../earth-lab/tryfan-005c-temporal-evidence.json), [Sun review](literature/terrain-representation.md#acquisition-sun-and-illumination-reconstruction), [Riffelhorn support](../atlas/riffelhorn-observation-support.md).",
+      "historicalStatusSha256": "1ebccf2532742493684f30117a430006ecaa25a9478111e2495648fab840efa8",
+      "pilotClass": "PILOT NON-BLOCKER / RESEARCH DEBT",
+      "reason": "Exact mosaic illumination unknown; no correction dependency required by pilot.",
+      "canonicalReferences": [
+        "../earth-lab/tryfan-005c-temporal-evidence.json",
+        "literature/terrain-representation.md#acquisition-sun-and-illumination-reconstruction",
+        "../atlas/riffelhorn-observation-support.md",
+        "illumination-identifiability.md#20-known-reconstructible-inferable-and-unidentifiable-quantities"
+      ]
+    },
+    {
+      "id": "A7",
+      "question": "A7 — Can topographic correction improve observed ordinary-surface legibility?012G and methods review",
+      "historicalStatus": "**OPTIONAL / ADVANCED**, untested physically in Meridian. [012G](../earth-lab/riffelhorn-012g-projection-and-illumination.md), [correction literature](literature/terrain-representation.md#topographic-correction), [appearance gate](../atlas/appearance-baseline-and-architecture.md#ranked-questions-requiring-experiment).",
+      "historicalStatusSha256": "93f9698ec9c1a1d288b86a3c1d3d6febaaff87e8a649d0da6bfda2e2b1053d3b",
+      "pilotClass": "POST-PILOT RESEARCH",
+      "reason": "INCONCLUSIVE/NOT JUSTIFIED trials leave correction open, not mandatory.",
+      "canonicalReferences": [
+        "../earth-lab/riffelhorn-012g-projection-and-illumination.md",
+        "literature/terrain-representation.md#topographic-correction",
+        "../atlas/appearance-baseline-and-architecture.md#ranked-questions-requiring-experiment",
+        "illumination-identifiability.md#22-is-a-correction-experiment-justified",
+        "tryfan-illumination-normalization.md#25-decision-abcd",
+        "tryfan-vegetation-protocol.md"
+      ]
+    },
+    {
+      "id": "A8",
+      "question": "A8 — Can radiometric normalisation/mosaic reconciliation remove inconsistent appearance? Appearance review and seams",
+      "historicalStatus": "**OPTIONAL / ADVANCED**. [Methods/taxonomy](../atlas/appearance-baseline-and-architecture.md), [hard regional boundary](../atlas/swissimage-source-derived-baseline.md).",
+      "historicalStatusSha256": "ed9dd5fd968908914b5135f0d43252bf1b7527ad0ed33f52fe3bdc118f63a911",
+      "pilotClass": "POST-PILOT RESEARCH",
+      "reason": "Mosaic radiometry improvement independent of storing raw/prepared evidence.",
+      "canonicalReferences": [
+        "../atlas/appearance-baseline-and-architecture.md",
+        "../atlas/swissimage-source-derived-baseline.md"
+      ]
+    },
+    {
+      "id": "A9",
+      "question": "A9 — Can albedo/illumination-independent appearance be recovered?012G → inverse-rendering/Olbedo review",
+      "historicalStatus": "**OPTIONAL / ADVANCED**, literature reviewed, no local recovery experiment. [Inverse rendering](literature/terrain-representation.md#inverse-rendering-and-albedo-recovery), [Olbedo](literature/terrain-representation.md#olbedo-2026), [appearance distinctions](../atlas/appearance-baseline-and-architecture.md).",
+      "historicalStatusSha256": "d554c0a0ee4947e0c326af7dcf31bf4d030e41ba778c2e4b6cec4925ece49f46",
+      "pilotClass": "POST-PILOT RESEARCH",
+      "reason": "Intrinsic appearance is unidentified and excluded; future qualified inference may coexist.",
+      "canonicalReferences": [
+        "literature/terrain-representation.md#inverse-rendering-and-albedo-recovery",
+        "literature/terrain-representation.md#olbedo-2026",
+        "../atlas/appearance-baseline-and-architecture.md"
+      ]
+    },
+    {
+      "id": "A10",
+      "question": "A10 — Do BRDF/view-dependent appearance and material response matter? Literature and uniform Lab materials",
+      "historicalStatus": "**OPTIONAL / ADVANCED**. [View dependence](literature/terrain-representation.md#view-dependent-appearance), [appearance review](../atlas/appearance-baseline-and-architecture.md).",
+      "historicalStatusSha256": "3562b78cf853ec335006cb7cd22fd439cfb452d3f21a3f3d6fda5ef459d117ba",
+      "pilotClass": "POST-PILOT RESEARCH",
+      "reason": "No measured BRDF/PBR model, no physical relighting promise.",
+      "canonicalReferences": [
+        "literature/terrain-representation.md#view-dependent-appearance",
+        "../atlas/appearance-baseline-and-architecture.md"
+      ]
+    },
+    {
+      "id": "A11",
+      "question": "A11 — Can Meridian-controlled physical lighting/shadows be applied after source correction?012F plus relighting literature",
+      "historicalStatus": "**PARTIAL** geometric lighting evidence; corrected-source relighting **OPTIONAL / ADVANCED**. [012F](../earth-lab/riffelhorn-012f-terrain-lighting.md), [inverse-rendering review](literature/terrain-representation.md#inverse-rendering-and-albedo-recovery), [native IGOR](../atlas/native-relief-evaluation.md).",
+      "historicalStatusSha256": "7e809496050e2aa87b3ecef3f70ea5f0abc8cc65349dab525629481e2b54e51c",
+      "pilotClass": "POST-PILOT RESEARCH",
+      "reason": "Render illumination distinct; no required de-shading/cast-shadow engine.",
+      "canonicalReferences": [
+        "../earth-lab/riffelhorn-012f-terrain-lighting.md",
+        "literature/terrain-representation.md#inverse-rendering-and-albedo-recovery",
+        "../atlas/native-relief-evaluation.md"
+      ]
+    },
+    {
+      "id": "A12",
+      "question": "A12 — Do 2023 Riffelhorn acquisitions provide better steep-face support? Public ADS metadata assessment",
+      "historicalStatus": "**CLOSED** bounded public discovery, general support conclusion **PARTIAL**. [Assessment](../atlas/riffelhorn-observation-support.md), `e14148a`: two relevant strip footprints cover retained targets; calibrated target-specific pushbroom rays/time mapping are unavailable publicly in the retained records.",
+      "historicalStatusSha256": "4243c1d8bfb2e2bacca2f44b6bee797052f3c4c8f964bd1ab6b4f6af0baf9f7f",
+      "pilotClass": "CLOSED",
+      "reason": "Bounded ADS coverage review closed; actual view gain partial, no new contact/acquisition.",
+      "canonicalReferences": [
+        "../atlas/riffelhorn-observation-support.md"
+      ]
+    },
+    {
+      "id": "A13",
+      "question": "A13 — Is richer public observation geometry available, and does it predict improved support? Swiss 2026 discovery",
+      "historicalStatus": "**CLOSED** metadata selection proof; actual pixel-information comparison **PARKED** behind provisioning. [Benchmark](../atlas/swiss-multiview-benchmark.md), [input manifest](../atlas/swiss-multiview-input-manifest.json), `e3edd0f`. CSV/GORI/calibration, footprints, centre-target incidence and sampled terrain LOS checked.",
+      "historicalStatusSha256": "299fafd05a9971d7bbeaf0e49978c81f12686c5c4497e7f7f1b48085d6e80bd5",
+      "pilotClass": "PARKED EXTERNAL DEPENDENCY",
+      "reason": "Pixel provisioning unchanged; metadata benchmark does not establish fused information.",
+      "canonicalReferences": [
+        "../atlas/swiss-multiview-benchmark.md",
+        "../atlas/swiss-multiview-input-manifest.json"
+      ]
+    },
+    {
+      "id": "A14",
+      "question": "A14 — Can view/texture selection or fusion improve difficult surfaces? Steep-support taxonomy and texturing review",
+      "historicalStatus": "**OPTIONAL / ADVANCED**, downstream of actual observation-support proof. [Texturing literature](literature/terrain-representation.md#multiview-texture-reconstruction), [frozen pair experiment](../atlas/swiss-multiview-benchmark.md).",
+      "historicalStatusSha256": "da3e0dfa51e570cbacac6e348b3d50cc5b4e118a8a1bcb45826a8ce2e4eb86ad",
+      "pilotClass": "POST-PILOT RESEARCH",
+      "reason": "View fusion/visibility selection adds future domain processing and scoped lineage.",
+      "canonicalReferences": [
+        "literature/terrain-representation.md#multiview-texture-reconstruction",
+        "../atlas/swiss-multiview-benchmark.md"
+      ]
+    },
+    {
+      "id": "A15",
+      "question": "A15 — How do imagery/geometry registration and temporal/mosaic inconsistency affect interpretation?012A/B, source acquisition and appearance metadata",
+      "historicalStatus": "**PARTIAL** diagnosed/provenance requirements; comprehensive correction untested. [Acquisition](../atlas/riffelhorn-data-discovery.md), [012A](../earth-lab/bluesky-012a-aerial-reconstruction.md), [012B](../earth-lab/riffelhorn-012b-mountain-reconstruction.md), [architecture](../atlas/appearance-baseline-and-architecture.md).",
+      "historicalStatusSha256": "16636a6192222032fe0140db8b56267f34836b8d7139ab904a345bf10f03d2f8",
+      "pilotClass": "PILOT NON-BLOCKER / RESEARCH DEBT",
+      "reason": "Preparation consistent; fine physical registration unresolved, so pixel-normal causal inference excluded.",
+      "canonicalReferences": [
+        "../atlas/riffelhorn-data-discovery.md",
+        "../earth-lab/bluesky-012a-aerial-reconstruction.md",
+        "../earth-lab/riffelhorn-012b-mountain-reconstruction.md",
+        "../atlas/appearance-baseline-and-architecture.md",
+        "riffelhorn-registration-epoch.md"
+      ]
+    },
+    {
+      "id": "M1",
+      "question": "M1 — Which physical/information/display quantities govern scale?012F/G synthesis → four-landscape baseline",
+      "historicalStatus": "**CLOSED FOR FOUNDATION**. [Baseline](../atlas/multiscale-representation.md), `3d406ae`: Tryfan, Riffelhorn, South Downs, Cambridge; physical scales 128/32/8/2/0.5/0.125 m per CSS pixel, controlled oblique checks and wavelength diagnostics.",
+      "historicalStatusSha256": "9f9f797f63b035003aaa464518f82e669263c9abefbdbcebafbe3845942644ab",
+      "pilotClass": "CLOSED",
+      "reason": "Scale quantities and discrete levels sufficiently established.",
+      "canonicalReferences": [
+        "../atlas/multiscale-representation.md"
+      ]
+    },
+    {
+      "id": "M2",
+      "question": "M2 — Does one scale-separated relief control improve legibility with identical geometry? Baseline ordered task",
+      "historicalStatus": "**CLOSED — NEGATIVE**. [Relief experiment](../atlas/scale-separated-relief.md), `ca74a84`: filtering fine derivatives reduces variation but also softens useful ridges/gullies/ledges, without consistent improvement.",
+      "historicalStatusSha256": "2977c5e1b9195c1a84aa3709ca27255177c19652f65b48ca90b9a50b36ed833d",
+      "pilotClass": "CLOSED",
+      "reason": "Negative relief control complete, not an open depiction prerequisite.",
+      "canonicalReferences": [
+        "../atlas/scale-separated-relief.md"
+      ]
+    },
+    {
+      "id": "M3",
+      "question": "M3 — Can local source/representation/display information limits be known? DPR/oblique characterisation",
+      "historicalStatus": "**CLOSED FOR FOUNDATION**. [Information-aware limits](../atlas/information-aware-display-selection.md), `57688cb`. Requested DPR differs from applied framebuffer and screenshot density; local anisotropic sampling varies with projection/orientation. The extreme AWS close view places one geometry sample across approximately 46–53 CSS pixels; higher DPR rasterises the same interpolated surface more densely.",
+      "historicalStatusSha256": "17a0da617e5c5c990494530965cbcc708c15a02702f8a6867db81992b844fb8a",
+      "pilotClass": "CLOSED",
+      "reason": "Information/delivery/display limits sufficiently qualified; unknown optical information allowed.",
+      "canonicalReferences": [
+        "../atlas/information-aware-display-selection.md"
+      ]
+    },
+    {
+      "id": "M4",
+      "question": "M4 — Should geometry be generalised or relief retuned universally? Historical generalisation/normal proposals",
+      "historicalStatus": "**SUPERSEDED** as a mandatory research/implementation direction; advanced source-specific generalisation remains **OPTIONAL / ADVANCED**. [Closure synthesis](../atlas/information-aware-display-selection.md#programme-synthesis-and-closure), [012G closure](../earth-lab/riffelhorn-012g-projection-and-illumination.md).",
+      "historicalStatusSha256": "51191183f60f1dbc27d14d1c97b726b6e55602f563d5ef9405b975d608cfd473",
+      "pilotClass": "POST-PILOT RESEARCH",
+      "reason": "Universal generalisation superseded; perception/portrayal studies optional.",
+      "canonicalReferences": [
+        "../atlas/information-aware-display-selection.md#programme-synthesis-and-closure",
+        "../earth-lab/riffelhorn-012g-projection-and-illumination.md"
+      ]
+    },
+    {
+      "id": "S1",
+      "question": "S1 — Is one land-cover class an adequate physical-world model? Domain review → real mountain comparison",
+      "historicalStatus": "**CLOSED FOR FOUNDATION**. [Review](../atlas/physical-surface-semantics.md), [inventory](../atlas/physical-surface-sources.md), [native comparison](../atlas/source-native-semantic-comparison.md), `75ea9d8`→`c4da565`.",
+      "historicalStatusSha256": "18ca47b0af435abe3dd70358f7b54f33c98ec0c9f1d2b93f53a56a14c1eda92c",
+      "pilotClass": "CLOSED",
+      "reason": "Hybrid native/layered contract replaces one cover truth.",
+      "canonicalReferences": [
+        "../atlas/physical-surface-semantics.md",
+        "../atlas/physical-surface-sources.md",
+        "../atlas/source-native-semantic-comparison.md"
+      ]
+    },
+    {
+      "id": "S2",
+      "question": "S2 — Can water identity, extent, reference, state and event coexist? Exe stress test",
+      "historicalStatus": "**CLOSED FOR FOUNDATION**. [Water check](../atlas/water-feature-state-check.md), `052374e`: WFD reference unit, habitat, JRC detections/history, Flood Zone scenario and recorded flood events differ within one compact case.",
+      "historicalStatusSha256": "d0717348d3ee87d1d5cf028a64b4a39325aaab2f7f5577d977a66e5f4caee20a",
+      "pilotClass": "CLOSED",
+      "reason": "Water feature/state/event/reference foundation complete; hydrology excluded.",
+      "canonicalReferences": [
+        "../atlas/water-feature-state-check.md"
+      ]
+    },
+    {
+      "id": "S3",
+      "question": "S3 — Can a minimal evidence contract preserve those distinctions? Mountain+water fixtures",
+      "historicalStatus": "**CLOSED FOR FOUNDATION**, contract v1 frozen at `e65c2d6`. [Contract](../atlas/semantic-evidence-contract.md), [receipt](../atlas/semantic-evidence-contract-validation.json). Native property/value, interpretation relation/loss, space/time/reference, feature association, modes/lineage, scoped quality, gaps and rights tested.",
+      "historicalStatusSha256": "a7b8c0d931729c6b2059a2dd3ff89cfa33f3b8e1e80f59f87dd5c717bfd73cb8",
+      "pilotClass": "CLOSED",
+      "reason": "Frozen contract used by two materially different retained proofs.",
+      "canonicalReferences": [
+        "../atlas/semantic-evidence-contract.md",
+        "../atlas/semantic-evidence-contract-validation.json"
+      ]
+    },
+    {
+      "id": "S4",
+      "question": "S4 — Can fine/current physical exposure and fractions be recovered from existing observations? Earlier 005–008 gaps → mountain/water review",
+      "historicalStatus": "**OPTIONAL / ADVANCED**, assessment **LIMITED**, recoverability untested. [Mountain gaps](../atlas/source-native-semantic-comparison.md), [water gaps](../atlas/water-feature-state-check.md), [contract closure](../atlas/semantic-evidence-contract.md#physical-surface-synthesis-and-closure).",
+      "historicalStatusSha256": "042ba7dc1d858c3173bcefc72cbcbc5a498d50ce0563a910cdfbc77b8a5540fb",
+      "pilotClass": "POST-PILOT RESEARCH",
+      "reason": "Fine/current exposure/fractions not inferred; targeted future properties outside scope.",
+      "canonicalReferences": [
+        "../atlas/source-native-semantic-comparison.md",
+        "../atlas/water-feature-state-check.md",
+        "../atlas/semantic-evidence-contract.md#physical-surface-synthesis-and-closure"
+      ]
+    },
+    {
+      "id": "S5",
+      "question": "S5 — Can heterogeneous semantic sources be reconciled/fallback truthfully? Native comparisons",
+      "historicalStatus": "**PARTIAL**, property-scoped conditional viability established. [Mountain comparison](../atlas/source-native-semantic-comparison.md), [water comparison](../atlas/water-feature-state-check.md).",
+      "historicalStatusSha256": "c19c50b6b0330e4bae8b72b3809cc9edd91fc115b28619d5a52f76c88c2c75b1",
+      "pilotClass": "PILOT NON-BLOCKER / RESEARCH DEBT",
+      "reason": "Question-scoped fallback/mapping loss proved; general semantic reconciliation not a pilot dependency.",
+      "canonicalReferences": [
+        "../atlas/source-native-semantic-comparison.md",
+        "../atlas/water-feature-state-check.md",
+        "exe-water-query-proof.md"
+      ]
+    },
+    {
+      "id": "S6",
+      "question": "S6 — What are persistent features, dynamic states and derived understanding? Older005–009, Exe/GLAMOS and lifecycle assessment",
+      "historicalStatus": "**CLOSED FOR FOUNDATION** at the identity/dependency/revision boundary; full feature resolution and state methods **OPTIONAL / ADVANCED**. [Lifecycle assessment](atlas-derived-understanding-lifecycle.md), [feature/state evidence](../atlas/water-feature-state-check.md), [v1](../atlas/semantic-evidence-contract.md).",
+      "historicalStatusSha256": "7abd8f0ac6505829d0bab8c5a83693588a02610311a1faf96e948d0a38ef567e",
+      "pilotClass": "PILOT NON-BLOCKER / RESEARCH DEBT",
+      "reason": "Terrain lifecycle and Exe source identity sufficient; cross-source matching/continuous state remain excluded.",
+      "canonicalReferences": [
+        "atlas-derived-understanding-lifecycle.md",
+        "../atlas/water-feature-state-check.md",
+        "../atlas/semantic-evidence-contract.md",
+        "tryfan-qualified-query-proof.md",
+        "atlas-world-model-architecture-synthesis.md#14-dependency-revision-and-freshness-model",
+        "exe-water-query-proof.md"
+      ]
+    },
+    {
+      "id": "S7",
+      "question": "S7 — Which ground states interact with future Weather? Direction notebook, water studies and lifecycle assessment",
+      "historicalStatus": "**CLOSED FOR FOUNDATION** for the clean dependency/interface boundary; process models **OPTIONAL / ADVANCED**. [Lifecycle caseE](atlas-derived-understanding-lifecycle.md#e--richer-structure-context), [water boundary](../atlas/water-feature-state-check.md).",
+      "historicalStatusSha256": "089e5b1aac055226163dd03964fac510dc9b167215d9202417cf40b3e4f833b5",
+      "pilotClass": "POST-PILOT RESEARCH",
+      "reason": "External Weather dependency architecture contemplated, no Weather rebuild/input required.",
+      "canonicalReferences": [
+        "atlas-derived-understanding-lifecycle.md#e--richer-structure-context",
+        "../atlas/water-feature-state-check.md"
+      ]
+    }
+  ],
+  "gates": [
+    {
+      "id": "G1",
+      "status": "PASS",
+      "proofs": [
+        "WC",
+        "EXE",
+        "QUERY",
+        "APP"
+      ],
+      "rationale": "Different forms compose without contract change; raw/processed source meaning retained.",
+      "admissionOnly": true
+    },
+    {
+      "id": "G2",
+      "status": "PASS",
+      "proofs": [
+        "WALES",
+        "PERSIST",
+        "WC",
+        "EXE",
+        "APP"
+      ],
+      "rationale": "Exact local bytes/IDs and known/unknown upstream lineage/rights preserved.",
+      "admissionOnly": true
+    },
+    {
+      "id": "G3",
+      "status": "PASS",
+      "proofs": [
+        "WALES",
+        "QUERY",
+        "LIMITS",
+        "WC",
+        "APP"
+      ],
+      "rationale": "Coverage/use/scale semantics sufficient; no approved Swiss reconciliation required.",
+      "admissionOnly": true
+    },
+    {
+      "id": "G4",
+      "status": "PASS",
+      "proofs": [
+        "EXE",
+        "WC",
+        "DATED"
+      ],
+      "rationale": "Observation/event/contributor/reference time survives real queries/restart; live state unsupported.",
+      "admissionOnly": true
+    },
+    {
+      "id": "G5",
+      "status": "PASS",
+      "proofs": [
+        "QUERY",
+        "PERSIST"
+      ],
+      "rationale": "Two-stage scoped refinement and fresh-pixel replay; only summit chain changes.",
+      "admissionOnly": true
+    },
+    {
+      "id": "G6",
+      "status": "PASS",
+      "proofs": [
+        "PERSIST",
+        "EXE"
+      ],
+      "rationale": "Real restarts, exit73 before pointer, invalid candidate/corruption tests. Single writer/process failure scope.",
+      "admissionOnly": true
+    },
+    {
+      "id": "G7",
+      "status": "PASS",
+      "proofs": [
+        "EXE",
+        "WC",
+        "APP"
+      ],
+      "rationale": "Property/purpose/mode/reference fallback rejects incompatible answers and current state.",
+      "admissionOnly": true
+    },
+    {
+      "id": "G8",
+      "status": "PASS",
+      "proofs": [
+        "MODEL",
+        "LIFE",
+        "APP",
+        "SUN",
+        "REG",
+        "VEG"
+      ],
+      "rationale": "Open science changes future claims/representations, not foundational mandatory identity/lifecycle.",
+      "admissionOnly": true
+    },
+    {
+      "id": "G9",
+      "status": "PASS",
+      "proofs": [
+        "REQ",
+        "PERSIST",
+        "WC",
+        "EXE",
+        "DATED"
+      ],
+      "rationale": "Known finite inputs/R1-R12 plus unproven integrated serving become pilot exit tests, not abstract prerequisites.",
+      "admissionOnly": true
+    }
+  ],
+  "pilot": {
+    "region": "Retained Tryfan",
+    "crs": "EPSG:27700",
+    "bounds": [
+      264900,
+      357800,
+      267900,
+      360800
+    ],
+    "areaKm2": 9,
+    "operationalScope": "Local, single writer, immutable accepted revisions, replaceable isolated read path; production unmodified.",
+    "requiredFamilies": [
+      "retained AWS common terrain tiles",
+      "tryfan-welsh-regional-v2 terrain manifest/parents",
+      "WorldCover2021v200 native crop",
+      "retained NRW Phase1 native features",
+      "retained July2026 Sentinel2 post-L2A native/display observation"
+    ],
+    "derivation": "Existing two-point Horn slope -> planar area ratio only",
+    "update": "Retained common-only -> Welsh applicability; affected summit chain, untouched south, four historical AWS replays",
+    "temporalScope": "Source dates/unknowns and qualified July observation/2021 classification; no unified current-world timestamp",
+    "externalEvidence": "Riffelhorn and Exe remain acceptance references, not relocated/copied into Tryfan.",
+    "exitChecksDuringImplementation": [
+      "coherent mixed-family registration/publication and provenance closure",
+      "native point/support queries and vector/coexisting meanings",
+      "historical-time/current-state rejection",
+      "scoped/transitive recomputation and unchanged unrelated semantic/appearance records",
+      "fresh-process recovery and independent logical rebuild",
+      "controlled pre-publication interruption/corrupt candidate/missing asset safe outcomes",
+      "isolated interactive consumer reads accepted catalogue plus existing payloads; client not source of truth",
+      "measure actual metadata/assets/indexes and cold/warm queries/update/replay/read amplification",
+      "rights notices and query fitness retained, disallowed export not silently enabled"
+    ],
+    "limits": [
+      "No production/cloud/global architecture selection",
+      "No new source acquisition or broad ingestion",
+      "No correction/fusion/albedo/physical relighting",
+      "No hydrology/Weather/Traverse inference",
+      "No concurrent writer/power-loss/production SLA guarantee"
+    ]
+  }
+}

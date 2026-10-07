@@ -1,0 +1,113 @@
+{
+  "schema": "atlas-pilot-acceptance-gates/v1",
+  "startingCheckpoint": "4acd1916031d868c9a327d09445b770578f01b79",
+  "frozenBeforeFinalDecision": true,
+  "scope": "Admission to design/build a retained local single-writer regional pilot, not acceptance of an implemented pilot or production readiness.",
+  "decisionRule": {
+    "A": "Any demonstrated foundational FAIL.",
+    "B": "No foundational FAIL but a specific prerequisite must be completed before pilot work can begin.",
+    "C": "All gates pass admission within declared scope; remaining conditions are implementation exit tests, research debt or scaling, not a pre-pilot prerequisite.",
+    "noScores": "No voting, weighted score or requirement for every capability to be fully empirically proven."
+  },
+  "gates": [
+    {
+      "id": "G1",
+      "title": "Representation",
+      "passCriterion": "Retained geometry, raster classification, inventory and event/model evidence retain different meanings; no mandatory universal object.",
+      "failCriterion": "Ordinary retained evidence requires changing a frozen contract or flattening meaning.",
+      "allowedStatus": [
+        "PASS",
+        "CONDITIONAL PASS",
+        "FAIL"
+      ]
+    },
+    {
+      "id": "G2",
+      "title": "Identity/provenance",
+      "passCriterion": "Exact local evidence, representations, claims, methods and artifacts are separately referenced; upstream unknowns and rights remain explicit.",
+      "failCriterion": "Durable identities depend on process memory or lineage/rights must be discarded.",
+      "allowedStatus": [
+        "PASS",
+        "CONDITIONAL PASS",
+        "FAIL"
+      ]
+    },
+    {
+      "id": "G3",
+      "title": "Space/scale",
+      "passCriterion": "Native CRS/support/grain, regional levels and compatible fallback remain distinct from display sampling and Earth accuracy.",
+      "failCriterion": "Pilot requires unsupported datum fusion, synthetic seam approval or a universal source score.",
+      "allowedStatus": [
+        "PASS",
+        "CONDITIONAL PASS",
+        "FAIL"
+      ]
+    },
+    {
+      "id": "G4",
+      "title": "Time/reference",
+      "passCriterion": "Observation bins, survey unknowns, event intervals and planning conditions coexist without one generic timestamp/current state.",
+      "failCriterion": "Publication must be treated as observation or scenario membership as present physical state.",
+      "allowedStatus": [
+        "PASS",
+        "CONDITIONAL PASS",
+        "FAIL"
+      ]
+    },
+    {
+      "id": "G5",
+      "title": "Derivation/lifecycle",
+      "passCriterion": "Exact scoped dependencies, two-stage derivation, policy-relative freshness, affected-only recomputation and historical replay are retained.",
+      "failCriterion": "Source change requires global invalidation, deleting history or storing unconditional freshness.",
+      "allowedStatus": [
+        "PASS",
+        "CONDITIONAL PASS",
+        "FAIL"
+      ]
+    },
+    {
+      "id": "G6",
+      "title": "Persistence/publication",
+      "passCriterion": "Fresh processes recover equivalent states; controlled pre-publication interruption and invalid candidates retain an accepted coherent state.",
+      "failCriterion": "Half-published result chains become current or a restart loses semantic facts.",
+      "allowedStatus": [
+        "PASS",
+        "CONDITIONAL PASS",
+        "FAIL"
+      ]
+    },
+    {
+      "id": "G7",
+      "title": "Query semantics",
+      "passCriterion": "Physical-question-specific queries reject incompatible fallback and distinguish detection/non-detection, unknown, unsupported and unavailable.",
+      "failCriterion": "A present-state question must silently substitute inventory/model evidence or fabricate certainty.",
+      "allowedStatus": [
+        "PASS",
+        "CONDITIONAL PASS",
+        "FAIL"
+      ]
+    },
+    {
+      "id": "G8",
+      "title": "Extensibility",
+      "passCriterion": "Known remaining science can be represented as future qualified inputs/results without an evident incompatible foundational dependency.",
+      "failCriterion": "An unresolved answer could realistically invalidate the pilot model rather than add an adapter/derivation.",
+      "allowedStatus": [
+        "PASS",
+        "CONDITIONAL PASS",
+        "FAIL"
+      ]
+    },
+    {
+      "id": "G9",
+      "title": "Bounded implementation",
+      "passCriterion": "Finite retained-region inputs and acceptance boundaries exist; remaining integration/serving measurements can be obtained reversibly in the pilot.",
+      "failCriterion": "A mandatory pre-pilot foundational input is missing, or proceeding commits global/production infrastructure.",
+      "allowedStatus": [
+        "PASS",
+        "CONDITIONAL PASS",
+        "FAIL"
+      ]
+    }
+  ]
+}

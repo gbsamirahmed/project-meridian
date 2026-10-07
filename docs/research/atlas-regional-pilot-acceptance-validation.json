@@ -1,0 +1,499 @@
+{
+  "anchorsChecked": 55,
+  "artifactSha256": {
+    "docs/research/atlas-regional-pilot-acceptance-results.json": "092cb94c2d3b9458facdc99914661038ffe419ac32d4711f9b59740d583a6842",
+    "docs/research/atlas-regional-pilot-acceptance.json": "18e5e81c1c5430dbce8eb370ca41714464be5b0180b329e580bb9f71a137d929",
+    "docs/research/atlas-regional-pilot-acceptance.md": "a1b08a2995d0b3fe6ce42238d1fec681cc65b22c8cb512e13405fadc0db90715",
+    "scripts/atlas/pilot-acceptance/gates.json": "fc7a4093d2880495ab5a1b0dc6baf4a63654cb20c24a17ab5e4632fc11d386ef"
+  },
+  "assessment": "atlas-pilot-admission-validation/v1",
+  "canonicalStatusColumnsUnchanged": true,
+  "canonicalThreadCount": 42,
+  "changedPaths": [
+    "docs/architecture.md",
+    "docs/development-log.md",
+    "docs/product-direction.md",
+    "docs/research/atlas-regional-pilot-acceptance-results.json",
+    "docs/research/atlas-regional-pilot-acceptance-validation.json",
+    "docs/research/atlas-regional-pilot-acceptance.json",
+    "docs/research/atlas-regional-pilot-acceptance.md",
+    "docs/research/atlas-research-map.md",
+    "docs/research/atlas-research-state.md",
+    "scripts/atlas/pilot-acceptance/README.md",
+    "scripts/atlas/pilot-acceptance/assess.py",
+    "scripts/atlas/pilot-acceptance/gates.json",
+    "scripts/atlas/pilot-acceptance/test_assess.py",
+    "scripts/atlas/pilot-acceptance/validate.py"
+  ],
+  "checks": [
+    {
+      "check": "expected checkpoint ancestor",
+      "passed": true
+    },
+    {
+      "check": "main and existing upstream",
+      "passed": true
+    },
+    {
+      "check": "fetched pre-commit divergence0/0",
+      "passed": true
+    },
+    {
+      "check": "frozen admission gates exact",
+      "passed": true
+    },
+    {
+      "check": "50capabilities 42threads 9gates evidence structure",
+      "passed": true
+    },
+    {
+      "check": "deterministic coverage gates source verification",
+      "passed": true
+    },
+    {
+      "check": "explicit C admission with no identified prerequisite",
+      "passed": true
+    },
+    {
+      "check": "all50coverage roles plus3 explicit limits",
+      "passed": true
+    },
+    {
+      "check": "37proof records mapped to immutable references",
+      "passed": true
+    },
+    {
+      "check": "all9gates reproduced without scoring",
+      "passed": true
+    },
+    {
+      "check": "1575 retained sources/prepared/metadata files verify",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition H1",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition H2",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition H3",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition H4",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition H5",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition H6",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition H7",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition H8",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition T1",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition T2",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition T3",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition T4",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition T5",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition T6",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition T7",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition T8",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition A1",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition A2",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition A3",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition A4",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition A5",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition A6",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition A7",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition A8",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition A9",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition A10",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition A11",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition A12",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition A13",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition A14",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition A15",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition M1",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition M2",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition M3",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition M4",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition S1",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition S2",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition S3",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition S4",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition S5",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition S6",
+      "passed": true
+    },
+    {
+      "check": "canonical disposition S7",
+      "passed": true
+    },
+    {
+      "check": "42 original status columns unchanged",
+      "passed": true
+    },
+    {
+      "check": "historical audit gate preserved",
+      "passed": true
+    },
+    {
+      "check": "development log append-only",
+      "passed": true
+    },
+    {
+      "check": "113 protected production hashes",
+      "passed": true
+    },
+    {
+      "check": "seven frozen semantic declarations fixtures tooling",
+      "passed": true
+    },
+    {
+      "check": "production Atlas Weather Traverse contracts source unchanged",
+      "passed": true
+    },
+    {
+      "check": "all historical reports research assets and scripts frozen",
+      "passed": true
+    },
+    {
+      "check": "current programme transition docs/architecture.md",
+      "passed": true
+    },
+    {
+      "check": "current programme transition docs/product-direction.md",
+      "passed": true
+    },
+    {
+      "check": "current programme transition docs/research/atlas-research-map.md",
+      "passed": true
+    },
+    {
+      "check": "current programme transition docs/research/atlas-research-state.md",
+      "passed": true
+    },
+    {
+      "check": "36required report sections",
+      "passed": true
+    },
+    {
+      "check": "one next design task unstarted",
+      "passed": true
+    },
+    {
+      "check": "partial outcomes and parked status preserved",
+      "passed": true
+    },
+    {
+      "check": "pilot admission not implementation or final tech",
+      "passed": true
+    },
+    {
+      "check": "only acceptance tooling artifacts and navigation",
+      "passed": true
+    },
+    {
+      "check": "lightweight files no datasets runtime stores",
+      "passed": true
+    },
+    {
+      "check": "all local references and anchors",
+      "passed": true
+    },
+    {
+      "check": "all42native thread evidence references",
+      "passed": true
+    },
+    {
+      "check": "research JSON parses",
+      "passed": true
+    },
+    {
+      "check": "17 focused acceptance safeguards",
+      "passed": true
+    },
+    {
+      "check": "17 tests counted",
+      "passed": true
+    },
+    {
+      "check": "64 frozen domain tests",
+      "passed": true
+    },
+    {
+      "check": "frozen isolated semantic declarations",
+      "passed": true
+    },
+    {
+      "check": "working diff whitespace",
+      "passed": true
+    },
+    {
+      "check": "staged diff whitespace",
+      "passed": true
+    },
+    {
+      "check": "Markdown trailing whitespace",
+      "passed": true
+    }
+  ],
+  "codeSha256": {
+    "scripts/atlas/pilot-acceptance/README.md": "3575de812554daab26f065248e525f50621657b3920341bad33a776e43b61b8f",
+    "scripts/atlas/pilot-acceptance/assess.py": "e14e38bbc244ee03e2c976acb84a465ca60bb97353975cb3cc2fde5d90a2c280",
+    "scripts/atlas/pilot-acceptance/gates.json": "fc7a4093d2880495ab5a1b0dc6baf4a63654cb20c24a17ab5e4632fc11d386ef",
+    "scripts/atlas/pilot-acceptance/test_assess.py": "760fb1f65b74c84bb29891eb60da28394db9a60949c0f96e736ab9adf732f688",
+    "scripts/atlas/pilot-acceptance/validate.py": "c858d5a809cae5099ed818b238c790eb9af7de3456f7b8dccc3bfa1ebce38d96"
+  },
+  "commands": [
+    {
+      "check": "17 focused acceptance safeguards",
+      "command": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/pilot-acceptance/test_assess.py"
+      ],
+      "exitCode": 0
+    },
+    {
+      "check": "64 frozen domain tests",
+      "command": [
+        "node",
+        "--test",
+        "scripts/atlas/test_semantic_evidence_contract.mjs",
+        "scripts/atlas/test_terrain_hierarchy_contract.mjs",
+        "scripts/atlas/test_terrain_runtime.mjs",
+        "scripts/atlas/test_tryfan_terrain.mjs"
+      ],
+      "exitCode": 0
+    },
+    {
+      "check": "frozen isolated semantic declarations",
+      "command": [
+        "npx.cmd",
+        "tsc",
+        "-p",
+        "scripts/atlas/semantic-evidence/tsconfig.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "check": "working diff whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0
+    },
+    {
+      "check": "staged diff whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "confirmations": {
+    "noDomainExperiment": true,
+    "noFinalInfrastructureSelection": true,
+    "noFrozenChanges": true,
+    "noPilotImplementation": true,
+    "noProductionChanges": true,
+    "noRetainedDatasetWrites": true,
+    "noScienceClosureByAdmission": true,
+    "noSourceAcquisition": true,
+    "noWeatherTraverseChanges": true,
+    "swissMultiviewParked": true
+  },
+  "coverageAndGatesReproduce": true,
+  "decision": "C - READY FOR BOUNDED REGIONAL PILOT",
+  "errors": [],
+  "frozenMismatches": [],
+  "frozenSemanticHashChecks": 7,
+  "gatesSha256": "fc7a4093d2880495ab5a1b0dc6baf4a63654cb20c24a17ab5e4632fc11d386ef",
+  "localReferencesChecked": 659,
+  "missingReferences": [],
+  "nextTask": "Bounded retained Tryfan regional-pilot architecture and implementation plan; not begun",
+  "preservationMismatches": [],
+  "productionMismatches": [],
+  "protectedProductionHashChecks": 113,
+  "sourceVerification": {
+    "groups": {
+      "Complete retained Exe directory": {
+        "bytes": 10295691,
+        "files": 66,
+        "verifiedEntriesSha256": "7043358dd1d3c10efe1b3483ac65e6ec2b5d2c637c4eff5f3d7a6df77082794a"
+      },
+      "July native post-L2A RGB and SCL": {
+        "bytes": 714544,
+        "files": 4,
+        "verifiedEntriesSha256": "c91c42dcad464a78a200ee6ef0a945e0b246eff75830efa2b8ed6e10a47e060f"
+      },
+      "Lab010 existing natural-colour preparation": {
+        "bytes": 1305121,
+        "files": 3,
+        "verifiedEntriesSha256": "86edf76941cbf6b48bc49e198dceb3f64debd0a7200ab3c83df32d06823113ee"
+      },
+      "Parked Swiss metadata only": {
+        "bytes": 19357606,
+        "files": 112,
+        "verifiedEntriesSha256": "e0179dbb4695a66bbf3cb61f2a215d88dc45bdcfd9c09e886da9fd0c9d6fc2cc"
+      },
+      "Pinned Exe sources/documents": {
+        "bytes": 9892590,
+        "files": 31,
+        "verifiedEntriesSha256": "0e1301af8fcdb00f126ba2886216b2a96bfdd68de71e14c6079beece12e6342a"
+      },
+      "SWISSIMAGE manifest": {
+        "bytes": 218993,
+        "files": 1,
+        "verifiedEntriesSha256": "9e3dcb15bd21260896eab7be966f8fdc59cf2e729ecc952fbc60f489c4873225"
+      },
+      "SWISSIMAGE prepared": {
+        "bytes": 1564233043,
+        "files": 1084,
+        "verifiedEntriesSha256": "944ee3136c7ac91224b59ec369fd8bc90e4bbd299a51b65d6a09a8395a35a327"
+      },
+      "SWISSIMAGE source": {
+        "bytes": 186259028,
+        "files": 4,
+        "verifiedEntriesSha256": "9edd9aaf20eb3481b5b9aec077e715d1d350d73cd4885474cac24cabeec5f203"
+      },
+      "Tryfan native semantic crop and habitat": {
+        "bytes": 563835,
+        "files": 2,
+        "verifiedEntriesSha256": "1d4388d183544fd3a135bde05dece5b6950bfcd77e969c2ef518cd5df98d5771"
+      },
+      "Tryfan source and pinned common samples": {
+        "bytes": 16046943,
+        "files": 5,
+        "verifiedEntriesSha256": "16bbf4ef3222be6619ccfb316e0d5b8e7c86a117476d14d98fae76c61a222e1d"
+      },
+      "Welsh prepared terrain": {
+        "bytes": 23889573,
+        "files": 295,
+        "verifiedEntriesSha256": "6091994b08ed611dd1a44d4be1700f2858d9eb197a5c248189f97a5256f2b593"
+      }
+    },
+    "noWritesOrAcquisition": true,
+    "uniqueFiles": 1575
+  },
+  "startingCheckpoint": "4acd1916031d868c9a327d09445b770578f01b79",
+  "unchangedHistorical": {
+    "AtlasEarthLabReports": 43,
+    "priorResearchAssets": 58,
+    "scripts": 351
+  }
+}

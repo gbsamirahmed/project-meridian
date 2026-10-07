@@ -650,10 +650,15 @@ appearance. The [retained Exe query proof](research/exe-water-query-proof.md) co
 identity, monthly detection/no-observation, PHI contributor vintages, mixed planning lineage,
 event intervals and incompatible fallback rejection. Real restart/rebuild preserves qualifications;
 no current hydraulic state or hydrological model is inferred. No foundation/production change.
-Exactly one next task is **Atlas retained-proof coverage and bounded regional-pilot acceptance assessment**;
-[scope/exit](research/exe-water-query-proof.md#32-exactly-one-next-bounded-task).
-It has not begun; assessment of proven versus conceptual responsibilities and finite pilot gates,
-not automatic implementation/technology selection. Open appearance remains separate.
+The [programme acceptance](research/atlas-regional-pilot-acceptance.md) completes that recommendation
+(**C - READY FOR BOUNDED REGIONAL PILOT**):37 retained proof records,50 required capabilities
+plus3 explicit unproven/excluded classes,42 thread dispositions and9 frozen admission gates.
+No demonstrated foundational blocker; integrated mixed-family publication/serving and operational
+measurements become pilot exit obligations. Admission does not mean the pilot exists or science is complete.
+Exactly one next task is **Bounded retained Tryfan regional-pilot architecture and implementation plan**;
+[scope/exit](research/atlas-regional-pilot-acceptance.md#36-exactly-one-next-bounded-task).
+It has not begun. The admitted phase is local retained Tryfan integration, not production/cloud
+architecture. Open appearance remains separate.
 A6-A11/A14 remain unresolved separately; Swiss pixels remain parked.
 Open/parked appearance science remains non-blocking, not solved; Swiss pixels remain parked.
 Frozen contracts/current production remain unchanged.

@@ -81,10 +81,15 @@ appearance. The [retained Exe query proof](exe-water-query-proof.md) completes t
 identity, monthly detection/no-observation, PHI contributor vintages, mixed planning lineage,
 event intervals and incompatible fallback rejection. Real restart/rebuild preserves qualifications;
 no current hydraulic state or hydrological model is inferred. No foundation/production change.
-Exactly one next task is **Atlas retained-proof coverage and bounded regional-pilot acceptance assessment**;
-[scope/exit](exe-water-query-proof.md#32-exactly-one-next-bounded-task).
-It has not begun; assessment of proven versus conceptual responsibilities and finite pilot gates,
-not automatic implementation/technology selection. Open appearance remains separate.
+The [programme acceptance](atlas-regional-pilot-acceptance.md) completes that recommendation
+(**C - READY FOR BOUNDED REGIONAL PILOT**):37 retained proof records,50 required capabilities
+plus3 explicit unproven/excluded classes,42 thread dispositions and9 frozen admission gates.
+No demonstrated foundational blocker; integrated mixed-family publication/serving and operational
+measurements become pilot exit obligations. Admission does not mean the pilot exists or science is complete.
+Exactly one next task is **Bounded retained Tryfan regional-pilot architecture and implementation plan**;
+[scope/exit](atlas-regional-pilot-acceptance.md#36-exactly-one-next-bounded-task).
+It has not begun. The admitted phase is local retained Tryfan integration, not production/cloud
+architecture. Open appearance remains separate.
 Open/parked appearance work remains independent; no correction or acquisition follows automatically.
 
 Production, Weather and Traverse remain unchanged. The map below retains chronological
@@ -572,3 +577,9 @@ All42 status columns remain, A5 gains display evidence, A6-A11/A14 remain unreso
 [Report](exe-water-query-proof.md), [matrix](../../scripts/atlas/exe-water-query-proof/matrix.json), [results](exe-water-query-results.json), [validation](exe-water-query-validation.json): **C - SUCCESS**.75 frozen queries at all six original probes use native monthly2024-03/09 and WFD/PHI/Flood/RFO. Feature identity, observation/event/contributor time, evidence modes, reference conditions, no-observation/non-detection and unavailable/unsupported remain distinct; no universal winner/current state. Four real subprocesses recover/rebuild qualified answers; frozen v1/local snapshot tooling unchanged.
 
 All42 status columns remain; S5/S6 gain bounded query proof, not general identity/state closure. Recent appearance/stopping outcomes remain unchanged and Swiss pixels PARKED. Exactly one next: **Atlas retained-proof coverage and bounded regional-pilot acceptance assessment**; finite readiness/acceptance assessment, not automatic production implementation. It has not begun.
+
+## 2026-10-07 - retained-proof coverage and bounded regional-pilot admission
+
+[Report](atlas-regional-pilot-acceptance.md), [manifest](atlas-regional-pilot-acceptance.json), [accounting](atlas-regional-pilot-acceptance-results.json), [validation](atlas-regional-pilot-acceptance-validation.json): **C - READY FOR BOUNDED REGIONAL PILOT**.37 proof records /50 required capabilities /42 thread dispositions /9 frozen admission gates; no demonstrated foundational blocker. Partial survey/validity/appearance and designed integrated serving are explicit, not upgraded to proof by a contract field. Admission permits a finite local Tryfan integration phase; it does not accept an implemented pilot or production infrastructure.
+
+All42 status columns/history remain. Open appearance debt and Swiss PARKED status persist; normalization INCONCLUSIVE/protocol NOT JUSTIFIED and Riffelhorn partial/scale-conditional outcomes are unchanged. Exactly one next: **Bounded retained Tryfan regional-pilot architecture and implementation plan**, not begun. Define finite mixed-catalogue publication/recovery/query/consumer exit tests and reversible local design; no new benchmark, acquisition or global stack decision.
