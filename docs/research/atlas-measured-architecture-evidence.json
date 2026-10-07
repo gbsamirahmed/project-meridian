@@ -1,0 +1,1392 @@
+{
+  "baselineCounts": {
+    "artifacts": 310,
+    "families": 5,
+    "representations": 8
+  },
+  "current": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+  "metrics": [
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-baseline.json",
+        "pointer": "/counts"
+      },
+      "id": "registered-inventory",
+      "qualification": "",
+      "value": {
+        "artifacts": 310,
+        "families": 5,
+        "representations": 8
+      }
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-baseline.json",
+        "pointer": "/sources/bytes"
+      },
+      "id": "registered-bytes",
+      "qualification": "",
+      "value": 42473107
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-baseline.json",
+        "pointer": "/current"
+      },
+      "id": "published-generation",
+      "qualification": "",
+      "value": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06"
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-baseline.json",
+        "pointer": "/history"
+      },
+      "id": "historical-generations",
+      "qualification": "",
+      "value": [
+        {
+          "bytes": 1241281,
+          "generation": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+          "parent": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+          "results": 6,
+          "serving": true,
+          "sha256": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+          "stage": "regional"
+        },
+        {
+          "bytes": 1212494,
+          "generation": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+          "parent": "6d8a127e4924d3b165f143fbeaab39467e4b0e45addf706e648e9c2c2bc948b6",
+          "results": 4,
+          "serving": true,
+          "sha256": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+          "stage": "common"
+        },
+        {
+          "bytes": 1091184,
+          "generation": "6d8a127e4924d3b165f143fbeaab39467e4b0e45addf706e648e9c2c2bc948b6",
+          "parent": "e0e2d20a1d065c713e954283443c8a7762dd91ab00fa5856b1fe75d1860a51be",
+          "results": 4,
+          "serving": true,
+          "sha256": "6d8a127e4924d3b165f143fbeaab39467e4b0e45addf706e648e9c2c2bc948b6",
+          "stage": "common"
+        },
+        {
+          "bytes": 1085705,
+          "generation": "e0e2d20a1d065c713e954283443c8a7762dd91ab00fa5856b1fe75d1860a51be",
+          "parent": "2ffa20f9ac33123c3babb62381ba4559cbd045fb180d978a9ed6228514ed9b92",
+          "results": 4,
+          "serving": false,
+          "sha256": "e0e2d20a1d065c713e954283443c8a7762dd91ab00fa5856b1fe75d1860a51be",
+          "stage": "common"
+        },
+        {
+          "bytes": 343264,
+          "generation": "2ffa20f9ac33123c3babb62381ba4559cbd045fb180d978a9ed6228514ed9b92",
+          "parent": "3408e5e9909c47b7e16d9d136f39cffa548c86808893468aa4a0de3d599c1f8c",
+          "results": 0,
+          "serving": false,
+          "sha256": "2ffa20f9ac33123c3babb62381ba4559cbd045fb180d978a9ed6228514ed9b92",
+          "stage": "registration"
+        },
+        {
+          "bytes": 342954,
+          "generation": "3408e5e9909c47b7e16d9d136f39cffa548c86808893468aa4a0de3d599c1f8c",
+          "parent": "e967c5066f42839b5cd50bd76df225c2bc0736b3ebd65706f9fd0adad3b2f53f",
+          "results": 0,
+          "serving": false,
+          "sha256": "3408e5e9909c47b7e16d9d136f39cffa548c86808893468aa4a0de3d599c1f8c",
+          "stage": "registration"
+        },
+        {
+          "bytes": 341203,
+          "generation": "e967c5066f42839b5cd50bd76df225c2bc0736b3ebd65706f9fd0adad3b2f53f",
+          "parent": null,
+          "results": 0,
+          "serving": false,
+          "sha256": "e967c5066f42839b5cd50bd76df225c2bc0736b3ebd65706f9fd0adad3b2f53f",
+          "stage": "registration"
+        }
+      ]
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-results.json",
+        "pointer": "/storage"
+      },
+      "id": "persistent-classes",
+      "qualification": "Accepted main store only; source bytes separate; includes unpublished staging diagnostics.",
+      "value": {
+        "artifacts": {
+          "bytes": 3057491,
+          "files": 2
+        },
+        "generations": {
+          "bytes": 5658085,
+          "files": 7
+        },
+        "locators": {
+          "bytes": 328020,
+          "files": 7
+        },
+        "staging": {
+          "bytes": 9576561,
+          "files": 28
+        }
+      }
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-results.json",
+        "pointer": "/acceptanceStorage"
+      },
+      "id": "acceptance-footprint",
+      "qualification": "Initial S6 acceptance store only; not a source census, later follow-ups can add files.",
+      "value": {
+        "bytes": 37939408,
+        "files": 81
+      }
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-results.json",
+        "pointer": "/fresh"
+      },
+      "id": "fresh-process-runs",
+      "qualification": "Five runs; warm OS cache, fresh processes, not physically cold disk.",
+      "value": [
+        {
+          "answerSha256": "f01fd46ea38a9dbd865a5e56d1f5f4716532f65a27724cc38251039edcf54376",
+          "bytes": 446238,
+          "consumerMilliseconds": 1600.0153999999893,
+          "generation": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+          "loadMilliseconds": 348.81129999999996,
+          "processStartupMilliseconds": 2099.8804999999993,
+          "recoveryMilliseconds": 530.1824999999953,
+          "serviceStartupMilliseconds": 1930.4633
+        },
+        {
+          "answerSha256": "f01fd46ea38a9dbd865a5e56d1f5f4716532f65a27724cc38251039edcf54376",
+          "bytes": 446238,
+          "consumerMilliseconds": 1570.1705000000075,
+          "generation": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+          "loadMilliseconds": 363.032,
+          "processStartupMilliseconds": 2122.4732000000076,
+          "recoveryMilliseconds": 532.5782999999938,
+          "serviceStartupMilliseconds": 1946.5538000000001
+        },
+        {
+          "answerSha256": "f01fd46ea38a9dbd865a5e56d1f5f4716532f65a27724cc38251039edcf54376",
+          "bytes": 446238,
+          "consumerMilliseconds": 1658.6086000000068,
+          "generation": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+          "loadMilliseconds": 361.3127,
+          "processStartupMilliseconds": 2098.3462,
+          "recoveryMilliseconds": 535.3024000000005,
+          "serviceStartupMilliseconds": 1927.8573000000001
+        },
+        {
+          "answerSha256": "f01fd46ea38a9dbd865a5e56d1f5f4716532f65a27724cc38251039edcf54376",
+          "bytes": 446238,
+          "consumerMilliseconds": 1681.6284999999916,
+          "generation": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+          "loadMilliseconds": 357.23900000000003,
+          "processStartupMilliseconds": 2246.9825999999885,
+          "recoveryMilliseconds": 531.4652999999962,
+          "serviceStartupMilliseconds": 2076.3410000000003
+        },
+        {
+          "answerSha256": "f01fd46ea38a9dbd865a5e56d1f5f4716532f65a27724cc38251039edcf54376",
+          "bytes": 446238,
+          "consumerMilliseconds": 1587.794200000004,
+          "generation": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+          "loadMilliseconds": 363.0997,
+          "processStartupMilliseconds": 2124.415399999998,
+          "recoveryMilliseconds": 532.4292999999889,
+          "serviceStartupMilliseconds": 1948.1495000000002
+        }
+      ]
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-results.json",
+        "pointer": "/runtime"
+      },
+      "id": "machine",
+      "qualification": "",
+      "value": {
+        "cache": "Warm OS caches;no query/byte cache. Native initialized array/bbox reused. Private ETag responses verify bytes even for304.",
+        "cores": 20,
+        "cpu": "12th Gen Intel(R) Core(TM) i7-12700H",
+        "memory": "Node RSS and direct Python worker working set separately; no aggregate or peak-RSS claim",
+        "node": "v24.11.0",
+        "platform": "win32",
+        "totalMemoryBytes": 16830959616
+      }
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-results.json",
+        "pointer": "/endToEndMilliseconds"
+      },
+      "id": "end-to-end-ms",
+      "qualification": "",
+      "value": 219877.9098
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-results.json",
+        "pointer": "/independentBuilds"
+      },
+      "id": "independent-builds",
+      "qualification": "Two empty stores, same construction sequence; IDs include administrative parent history.",
+      "value": [
+        {
+          "generation": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+          "milliseconds": 8006.3305
+        },
+        {
+          "generation": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+          "milliseconds": 7561.740099999999
+        }
+      ]
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-results.json",
+        "pointer": "/freshness/median"
+      },
+      "id": "freshness-median-ms",
+      "qualification": "20 assessments over six retained result revisions.",
+      "value": 17.19289999999455
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-results.json",
+        "pointer": "/freshness/p95"
+      },
+      "id": "freshness-p95-ms",
+      "qualification": "",
+      "value": 22.350800000000163
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-results.json",
+        "pointer": "/replay/milliseconds"
+      },
+      "id": "replay-ms",
+      "qualification": "Six exact retained revisions from retained pixels; includes process overhead.",
+      "value": 477.1958000000013
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-results.json",
+        "pointer": "/replay/measurement"
+      },
+      "id": "pixel-replay",
+      "qualification": "Native sampler sub-operation; not full end-to-end replay.",
+      "value": {
+        "seconds": 0.12044910015538335,
+        "tileBytesRead": 320857,
+        "uniqueTileBytes": 320857
+      }
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-results.json",
+        "pointer": "/independentReproduction/history"
+      },
+      "id": "historical-query",
+      "qualification": "Full cold context request versus body read; do not use initial body-only time as latency.",
+      "value": {
+        "bodyReadMilliseconds": 2.184399999998277,
+        "generation": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+        "requestMilliseconds": 2562.734399999994,
+        "sha256": "26a42aa568e15af35d217f560aab83c570d99064b1de918a4ef3c85430313ba9",
+        "slope": 11.837956999552308
+      }
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-results.json",
+        "pointer": "/independentReproduction/milliseconds"
+      },
+      "id": "independent-reproduction-ms",
+      "qualification": "Existing update artifacts can be reused in this second reproduction.",
+      "value": 124835.2414
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-results.json",
+        "pointer": "/independentReproduction/nodeMemory"
+      },
+      "id": "node-memory",
+      "qualification": "Observed RSS, not peak or evidence-only memory.",
+      "value": {
+        "arrayBuffers": 4386890,
+        "external": 8492529,
+        "heapTotal": 256434176,
+        "heapUsed": 161021744,
+        "rss": 374820864
+      }
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-results.json",
+        "pointer": "/independentReproduction/pythonProcessTree"
+      },
+      "id": "python-memory",
+      "qualification": "Launcher and actual worker distinct; observed working sets not peak.",
+      "value": [
+        {
+          "name": "python.exe",
+          "pid": 3176,
+          "workingSetBytes": 5021696
+        },
+        {
+          "name": "python.exe",
+          "pid": 38568,
+          "workingSetBytes": 85270528
+        }
+      ]
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-results.json",
+        "pointer": "/nativeReaderMetrics"
+      },
+      "id": "reader-allocations",
+      "qualification": "Array/bbox/WKB sizes are narrow proxies; process overhead separate.",
+      "value": {
+        "bboxCoordinatesBytes": 6176,
+        "initializationMilliseconds": 121.15469994023442,
+        "nativeGeometryWkbBytes": 211666,
+        "processMilliseconds": 1447.7005,
+        "rasterArrayBytes": 3145612,
+        "readerInitializationMilliseconds": 1445.2567999999999,
+        "rssBytes": 156581888
+      }
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-results.json",
+        "pointer": "/assets"
+      },
+      "id": "served-assets",
+      "qualification": "Three explicit responses; no aggregate network/egress claim.",
+      "value": [
+        {
+          "bytes": 148616,
+          "family": "appearance",
+          "milliseconds": 122.875,
+          "sha256": "4d618ab2f0c8ab5dfc6ae0c7f5e99d27f2fa91d0d5f9cba0b1776327094add52"
+        },
+        {
+          "bytes": 3051333,
+          "family": "nrw",
+          "milliseconds": 146.20310000001336,
+          "sha256": "6ead2e9b3a44acc35506c376a58d36dfad2695a02e02f2111fecea4f446d2475"
+        },
+        {
+          "bytes": 6158,
+          "family": "worldcover",
+          "milliseconds": 129.0005999999994,
+          "sha256": "208cc2a8ac76aa06e448c841558cf5136a1881354854417db99bac083f1766b9"
+        }
+      ]
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-results.json",
+        "pointer": "/service/delivery"
+      },
+      "id": "delivery-counters",
+      "qualification": "Only explicit service counters, not total IO.",
+      "value": {
+        "assetReads": 4,
+        "bytesRead": 3319028,
+        "pins": 324,
+        "queries": 316,
+        "workerCount": 1
+      }
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-results.json",
+        "pointer": "/fullWarmMatrix"
+      },
+      "id": "full-query-matrix",
+      "qualification": "20 batches, 480 requests, native Q17 missing-file fixture separately tested; raw payload remains external.",
+      "value": {
+        "batches": 20,
+        "cache": "Initialized service and warm OS cache; no query/byte cache",
+        "elapsedMilliseconds": 145847.2337,
+        "errors": 0,
+        "excluded": {
+          "Q17": "Unavailable-file fixture rerun by original S2/S4/S6 regression, no retained locator mutation"
+        },
+        "generation": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+        "rawReceipt": "s6-acceptance/warm-matrix.json",
+        "rawReceiptSha256": "c21600ead3bbf03d01e38d32340a9d8019fa92f433a58367ece4d34122f2b777",
+        "requests": 480,
+        "rows": {
+          "Q01": {
+            "count": 20,
+            "max": 345.35339999999997,
+            "median": 305.7476999999999,
+            "min": 262.3411999999953,
+            "p95": 341.0145000000193,
+            "responseBytes": 7283,
+            "responseSha256": "770408edaec8c959329f9d2c0b63416062c397a53e32d95655f80d1b588b4d70"
+          },
+          "Q02": {
+            "count": 20,
+            "max": 374.21779999999853,
+            "median": 298.81960000000254,
+            "min": 258.1683000000048,
+            "p95": 347.90730000000076,
+            "responseBytes": 15733,
+            "responseSha256": "0784e81076dfdec271aef7e29f7b42714a23b1ee636701758d43fd8ad9f30b02"
+          },
+          "Q03": {
+            "count": 20,
+            "max": 347.6453000000038,
+            "median": 285.5810000000056,
+            "min": 256.0776000000001,
+            "p95": 320.25620000000345,
+            "responseBytes": 15587,
+            "responseSha256": "221cfea35ed91c456b4c3665bd1ee896c8e8034878e4ea82a2f763591d99aa7c"
+          },
+          "Q04": {
+            "count": 20,
+            "max": 360.1735000000044,
+            "median": 295.71800000000076,
+            "min": 264.5764999999956,
+            "p95": 335.8850999999995,
+            "responseBytes": 15336,
+            "responseSha256": "0de6e115138392db6d44c7f4352c5ec19c34316a7cdf57d5284e080b78b26e67"
+          },
+          "Q05": {
+            "count": 20,
+            "max": 334.0161999999982,
+            "median": 267.13769999999204,
+            "min": 237.10439999999653,
+            "p95": 311.8160000000007,
+            "responseBytes": 32858,
+            "responseSha256": "6be643a51ffa6180ae49574d76b1d2d9b8f80c2d28aaa4cb8cc10f4d01d1c352"
+          },
+          "Q06": {
+            "count": 20,
+            "max": 335.6074000000008,
+            "median": 260.9802999999956,
+            "min": 234.17480000000796,
+            "p95": 311.65170000000035,
+            "responseBytes": 32858,
+            "responseSha256": "2bd5f7779fcf91cde36f8d364fada7be430b7465898229657eb5b8df6eb97e09"
+          },
+          "Q07-20m": {
+            "count": 20,
+            "max": 324.4640999999974,
+            "median": 263.7276000000056,
+            "min": 236.80499999999302,
+            "p95": 300.67269999999553,
+            "responseBytes": 43472,
+            "responseSha256": "d429fea9f78d0d80c19a891e029067e57918ed4a86262d1a5685b271010d0ef9"
+          },
+          "Q07-400m": {
+            "count": 20,
+            "max": 306.325499999999,
+            "median": 268.8194999999978,
+            "min": 241.2554999999993,
+            "p95": 294.1923999999999,
+            "responseBytes": 63557,
+            "responseSha256": "cb925fd591ec5cdcccdc945b4c673524efe30980fea951dacd94c0e945576a4e"
+          },
+          "Q08": {
+            "count": 20,
+            "max": 330.6535999999978,
+            "median": 263.1179999999995,
+            "min": 238.49989999999525,
+            "p95": 315.210699999996,
+            "responseBytes": 29106,
+            "responseSha256": "cea55e029f80bda04d386ff7a3517c79d0f1224be052a59fd3a56b2fdd7806f9"
+          },
+          "Q09": {
+            "count": 20,
+            "max": 340.9320999999982,
+            "median": 280.1241000000009,
+            "min": 235.08809999999357,
+            "p95": 337.8035999999993,
+            "responseBytes": 60236,
+            "responseSha256": "bff74d0a978fdcee5223e464bd3a4fc72fbe4a5c93214706273b837e4ecd3984"
+          },
+          "Q10": {
+            "count": 20,
+            "max": 342.8809000000001,
+            "median": 280.5257999999885,
+            "min": 246.01710000000458,
+            "p95": 322.70870000000286,
+            "responseBytes": 24087,
+            "responseSha256": "e67df874905ca7da5a7b92884d1b9ca17b9e5215fb6edf1c663082276da618de"
+          },
+          "Q11": {
+            "count": 20,
+            "max": 326.92019999999866,
+            "median": 284.877800000002,
+            "min": 235.26880000000529,
+            "p95": 322.95389999999315,
+            "responseBytes": 32829,
+            "responseSha256": "7002ab48a3e9860aad43e65d4376d33f917385f0fbf256dc08cd61f3fc6385ea"
+          },
+          "Q12-southern-observer-area-ratio": {
+            "count": 20,
+            "max": 420.77579999999944,
+            "median": 297.91859999998996,
+            "min": 263.585699999996,
+            "p95": 364.41300000000047,
+            "responseBytes": 15516,
+            "responseSha256": "052bd34eda4e4841b40a8d786a22e49eff15f69691a3fd6a4cd84e80f26065f1"
+          },
+          "Q12-southern-observer-slope": {
+            "count": 20,
+            "max": 375.0737000000081,
+            "median": 312.33450000001176,
+            "min": 252.71270000000368,
+            "p95": 370.15380000000005,
+            "responseBytes": 15636,
+            "responseSha256": "4e643df71ff3d839aa493e1923ba207c518cb24f7acdc9e2ffb31b512ac285ea"
+          },
+          "Q12-summit-area-ratio": {
+            "count": 20,
+            "max": 355.83810000000085,
+            "median": 298.7925000000032,
+            "min": 261.27509999999893,
+            "p95": 330.1820000000007,
+            "responseBytes": 15309,
+            "responseSha256": "e316d345f64992d5751430a9fb8f64e52d11ae3612a3f75fcd82f00d3a85abb8"
+          },
+          "Q12-summit-slope": {
+            "count": 20,
+            "max": 354.48189999999886,
+            "median": 293.6622999999963,
+            "min": 250.42580000000453,
+            "p95": 346.2961000000005,
+            "responseBytes": 15471,
+            "responseSha256": "8108f8d3d8affb72ede7de53547b452d0a7b5d4f2f3662bbd872318e3033546a"
+          },
+          "Q13": {
+            "count": 20,
+            "max": 319.38409999999567,
+            "median": 277.1862000000001,
+            "min": 227.5503999999928,
+            "p95": 317.2363000000187,
+            "responseBytes": 1952,
+            "responseSha256": "2a6db1a1a4f6d0a5c7dbeb2fb4878de8013d40276fdf9086ba855602060a6b4d"
+          },
+          "Q14": {
+            "count": 20,
+            "max": 364.3655999999901,
+            "median": 275.6359999999986,
+            "min": 238.71189999999478,
+            "p95": 319.78859999999986,
+            "responseBytes": 1954,
+            "responseSha256": "4169d34dad83a562b8737dcc4a3c85963c29bd99786d1724e0b52a07b940961e"
+          },
+          "Q15": {
+            "count": 20,
+            "max": 381.41609999999855,
+            "median": 269.1912999999913,
+            "min": 238.46630000000005,
+            "p95": 358.49400000000605,
+            "responseBytes": 33714,
+            "responseSha256": "4d76634c2d37321c4bfe0d77cfe50ab4cc1e583e6163c10462c858ff6630d034"
+          },
+          "Q16": {
+            "count": 20,
+            "max": 347.873599999999,
+            "median": 267.5127999999968,
+            "min": 232.91659999999683,
+            "p95": 281.35009999999875,
+            "responseBytes": 813,
+            "responseSha256": "dc01880607f4c9ba5547bc2e6b6737a9172758479775c14b6ac3289bd0e36283"
+          },
+          "Q18": {
+            "count": 20,
+            "max": 755.2905000000028,
+            "median": 666.9306999999972,
+            "min": 580.3208999999915,
+            "p95": 700.9097000000002,
+            "responseBytes": 23473,
+            "responseSha256": "d1de49e46f7415d6d451005d1bb24d7fccfede81279b2bccf086a945fc5b1256"
+          },
+          "Q19": {
+            "count": 20,
+            "max": 343.7186999999976,
+            "median": 280.27640000000247,
+            "min": 240.25410000000556,
+            "p95": 332.1984999999986,
+            "responseBytes": 73687,
+            "responseSha256": "3e56dedff293793bb12414ea2f70863c9c207a7045973b286a8446dc6cd153e7"
+          },
+          "Q20": {
+            "count": 20,
+            "max": 336.9686999999976,
+            "median": 283.75909999999567,
+            "min": 245.04529999999795,
+            "p95": 306.64689999999973,
+            "responseBytes": 73436,
+            "responseSha256": "f37ef98f46e5f06573b1c4e9d1ea65e039d26e1f3f76e6fd9c7c175de24b2ba0"
+          },
+          "Q21": {
+            "count": 20,
+            "max": 489.3185999999987,
+            "median": 387.9744000000064,
+            "min": 329.43820000000414,
+            "p95": 467.92879999999786,
+            "responseBytes": 142590,
+            "responseSha256": "93e1372cc9f856938220571d36c4b378c755c70e2205f4ccfb19c9b7f64bc37d"
+          }
+        },
+        "schema": "atlas-tryfan-s6-full-warm-matrix/v1"
+      }
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-results.json",
+        "pointer": "/workload/warm/derived-area-ratio/median"
+      },
+      "id": "warm-derived-area-ratio-median",
+      "qualification": "20 samples, warm OS cache; no query/byte cache.",
+      "value": 291.67860000001383
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-results.json",
+        "pointer": "/workload/warm/derived-area-ratio/p95"
+      },
+      "id": "warm-derived-area-ratio-p95",
+      "qualification": "20 samples, warm OS cache; no query/byte cache.",
+      "value": 364.4314000000013
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-results.json",
+        "pointer": "/workload/warm/derived-slope/median"
+      },
+      "id": "warm-derived-slope-median",
+      "qualification": "20 samples, warm OS cache; no query/byte cache.",
+      "value": 288.9586999999883
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-results.json",
+        "pointer": "/workload/warm/derived-slope/p95"
+      },
+      "id": "warm-derived-slope-p95",
+      "qualification": "20 samples, warm OS cache; no query/byte cache.",
+      "value": 340.8252999999968
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-results.json",
+        "pointer": "/workload/warm/nrw-native/median"
+      },
+      "id": "warm-nrw-native-median",
+      "qualification": "20 samples, warm OS cache; no query/byte cache.",
+      "value": 266.31690000000526
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-results.json",
+        "pointer": "/workload/warm/nrw-native/p95"
+      },
+      "id": "warm-nrw-native-p95",
+      "qualification": "20 samples, warm OS cache; no query/byte cache.",
+      "value": 301.0732999999891
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-results.json",
+        "pointer": "/workload/warm/place-evidence/median"
+      },
+      "id": "warm-place-evidence-median",
+      "qualification": "20 samples, warm OS cache; no query/byte cache.",
+      "value": 373.51190000001225
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-results.json",
+        "pointer": "/workload/warm/place-evidence/p95"
+      },
+      "id": "warm-place-evidence-p95",
+      "qualification": "20 samples, warm OS cache; no query/byte cache.",
+      "value": 433.86799999998766
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-results.json",
+        "pointer": "/workload/warm/worldcover-native/median"
+      },
+      "id": "warm-worldcover-native-median",
+      "qualification": "20 samples, warm OS cache; no query/byte cache.",
+      "value": 262.55670000001555
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-results.json",
+        "pointer": "/workload/warm/worldcover-native/p95"
+      },
+      "id": "warm-worldcover-native-p95",
+      "qualification": "20 samples, warm OS cache; no query/byte cache.",
+      "value": 323.0084999999963
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-results.json",
+        "pointer": "/workload/controlledLoad/0"
+      },
+      "id": "load-1",
+      "qualification": "100 TOTAL requests per reader-count workload, one worker; not 100 per individual reader.",
+      "value": {
+        "elapsedMilliseconds": 25881.645099999994,
+        "errors": 0,
+        "max": 315.54750000001513,
+        "median": 254.71140000000014,
+        "min": 233.89640000002692,
+        "p95": 289.8070000000007,
+        "readers": 1,
+        "requests": 100
+      }
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-results.json",
+        "pointer": "/workload/controlledLoad/1"
+      },
+      "id": "load-4",
+      "qualification": "100 TOTAL requests per reader-count workload, one worker; not 100 per individual reader.",
+      "value": {
+        "elapsedMilliseconds": 26461.6397,
+        "errors": 0,
+        "max": 1270.4014999999781,
+        "median": 1058.4130000000005,
+        "min": 718.1045999999915,
+        "p95": 1190.0439999999944,
+        "readers": 4,
+        "requests": 100
+      }
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-results.json",
+        "pointer": "/updates/U1/metrics"
+      },
+      "id": "U1-publication",
+      "qualification": "Single local observations; applicability updates, zero source bytes revised.",
+      "value": {
+        "assemblyMilliseconds": 1207.6159,
+        "catalogueBytes": 324627,
+        "changedArtifacts": 0,
+        "considered": 4,
+        "generationBytes": 1241281,
+        "pointerBytes": 130,
+        "publicationMilliseconds": 18.088999999999942,
+        "retainedBytes": 42473107,
+        "reusedArtifacts": 310,
+        "sampling": {
+          "seconds": 0.11139610013924539,
+          "tileBytesRead": 112921,
+          "uniqueTileBytes": 112921
+        },
+        "validationMilliseconds": 566.7712999999999
+      }
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-results.json",
+        "pointer": "/updates/U1/logical/recomputed"
+      },
+      "id": "U1-recomputed",
+      "qualification": "",
+      "value": [
+        {
+          "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+          "revision": "4f4d6ae182d3821d1a002c855d8b886112c0aea0e13af2023b10d5294f70ef93"
+        },
+        {
+          "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+          "revision": "dbc1746d41c191d251628d3409d5db3bf4064c8c29e9f0ba50a332804196c1d2"
+        }
+      ]
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-results.json",
+        "pointer": "/updates/U1/logical/reused"
+      },
+      "id": "U1-reused",
+      "qualification": "",
+      "value": [
+        {
+          "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+          "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+        },
+        {
+          "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+          "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+        }
+      ]
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-results.json",
+        "pointer": "/updates/U1/failures"
+      },
+      "id": "U1-interruptions",
+      "qualification": "Abrupt subprocess exits, not disk power loss or cloud transaction proof.",
+      "value": [
+        {
+          "current": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+          "exitCode": 91,
+          "freshService": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+          "point": "after-artifacts",
+          "retainedDiagnostics": true
+        },
+        {
+          "current": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+          "exitCode": 91,
+          "freshService": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+          "point": "after-evidence",
+          "retainedDiagnostics": true
+        },
+        {
+          "current": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+          "exitCode": 91,
+          "freshService": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+          "point": "after-recompute",
+          "retainedDiagnostics": true
+        },
+        {
+          "current": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+          "exitCode": 91,
+          "freshService": "c90363a389ef1f45bdc5ce877fa6f4018ff57116f2ebc81c6e986676c44f0c08",
+          "point": "before-switch",
+          "retainedDiagnostics": true
+        }
+      ]
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-results.json",
+        "pointer": "/updates/U2/metrics"
+      },
+      "id": "U2-publication",
+      "qualification": "Single local observations; applicability updates, zero source bytes revised.",
+      "value": {
+        "assemblyMilliseconds": 1271.26,
+        "catalogueBytes": 324627,
+        "changedArtifacts": 0,
+        "considered": 4,
+        "generationBytes": 1241308,
+        "pointerBytes": 130,
+        "publicationMilliseconds": 16.01220000000012,
+        "retainedBytes": 42473107,
+        "reusedArtifacts": 310,
+        "sampling": {
+          "seconds": 0.11243190011009574,
+          "tileBytesRead": 112921,
+          "uniqueTileBytes": 112921
+        },
+        "validationMilliseconds": 594.2819999999997
+      }
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-results.json",
+        "pointer": "/updates/U2/logical/recomputed"
+      },
+      "id": "U2-recomputed",
+      "qualification": "",
+      "value": [
+        {
+          "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+          "revision": "4f4d6ae182d3821d1a002c855d8b886112c0aea0e13af2023b10d5294f70ef93"
+        },
+        {
+          "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+          "revision": "dbc1746d41c191d251628d3409d5db3bf4064c8c29e9f0ba50a332804196c1d2"
+        }
+      ]
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-results.json",
+        "pointer": "/updates/U2/logical/reused"
+      },
+      "id": "U2-reused",
+      "qualification": "",
+      "value": [
+        {
+          "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+          "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+        },
+        {
+          "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+          "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+        }
+      ]
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-results.json",
+        "pointer": "/updates/U2/failures"
+      },
+      "id": "U2-interruptions",
+      "qualification": "Abrupt subprocess exits, not disk power loss or cloud transaction proof.",
+      "value": [
+        {
+          "current": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+          "exitCode": 91,
+          "freshService": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+          "point": "after-artifacts",
+          "retainedDiagnostics": true
+        },
+        {
+          "current": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+          "exitCode": 91,
+          "freshService": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+          "point": "after-evidence",
+          "retainedDiagnostics": true
+        },
+        {
+          "current": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+          "exitCode": 91,
+          "freshService": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+          "point": "after-recompute",
+          "retainedDiagnostics": true
+        },
+        {
+          "current": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+          "exitCode": 91,
+          "freshService": "64affdcc043e827fbd27276d4c950b5a58cb778f6a8e3ab2e3bbfcbf42764094",
+          "point": "before-switch",
+          "retainedDiagnostics": true
+        }
+      ]
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/atlas-storage-requirements-measurements.json",
+        "pointer": "/products"
+      },
+      "id": "larger-retained-payload-counts",
+      "qualification": "Earlier stat/hash-pinned manifest receipt; not new larger-region serving measurements.",
+      "value": [
+        {
+          "groups": {
+            "tiles": {
+              "bytes": 23889573,
+              "maxBytes": 112921,
+              "medianBytes": 84234,
+              "minBytes": 8236,
+              "objects": 295,
+              "p95Bytes": 100999.6
+            }
+          },
+          "id": "tryfan-welsh-regional-v2",
+          "manifest": "derived/atlas/tryfan/tryfan-welsh-regional-v2/manifest.json",
+          "manifestBytes": 87014,
+          "manifestSha256": "b254a21b1ec346cc07b43d269d937b059851e95ac168565359a81d3872c69e54",
+          "payloadFilesStatChecked": 295,
+          "revision": "db8e4d87b5fa609d455d1e0f8ec3fdebc834579a7e102f69f4d0b0283efa690c"
+        },
+        {
+          "groups": {
+            "masks": {
+              "bytes": 238866,
+              "maxBytes": 481,
+              "medianBytes": 464,
+              "minBytes": 149,
+              "objects": 547,
+              "p95Bytes": 473.0
+            },
+            "tiles": {
+              "bytes": 41855904,
+              "maxBytes": 158556,
+              "medianBytes": 76446,
+              "minBytes": 19377,
+              "objects": 547,
+              "p95Bytes": 101230.59999999998
+            }
+          },
+          "id": "riffelhorn-regional-terrain-v1",
+          "manifest": "derived/atlas/riffelhorn/riffelhorn-regional-terrain-v1/manifest.json",
+          "manifestBytes": 222168,
+          "manifestSha256": "778745c36f2208e72a28a99923d00d81fcd0bd7f90e8759ba3f03362ccfc4627",
+          "payloadFilesStatChecked": 1094,
+          "revision": "4fc837f299271c7238591865a393f98facc6fa7b93d9cc75305160df900b1fe5"
+        },
+        {
+          "groups": {
+            "tiles": {
+              "bytes": 930914852,
+              "maxBytes": 133755,
+              "medianBytes": 82079,
+              "minBytes": 761,
+              "objects": 11429,
+              "p95Bytes": 100601.2
+            }
+          },
+          "id": "riffelhorn-swiss-support-v1",
+          "manifest": "derived/atlas/riffelhorn/riffelhorn-swiss-support-v1/manifest.json",
+          "manifestBytes": 1897650,
+          "manifestSha256": "30413b6698c1e75e27fd169f61925d8d60044fa14f444fb072b652c54816e106",
+          "payloadFilesStatChecked": 11429,
+          "revision": "1a44a0644de1bde73a3ba84d1b761dc0aa17d48cc971e5f6b5d2c14fb329d7ea"
+        },
+        {
+          "groups": {
+            "tiles": {
+              "bytes": 327636998,
+              "maxBytes": 161226,
+              "medianBytes": 122200.0,
+              "minBytes": 11890,
+              "objects": 2730,
+              "p95Bytes": 138315.9
+            }
+          },
+          "id": "riffelhorn-copernicus-common-v1",
+          "manifest": "derived/atlas/riffelhorn/riffelhorn-copernicus-common-v1/manifest.json",
+          "manifestBytes": 450369,
+          "manifestSha256": "9393fbadf807592ed67e94408d82bc0f508d4a29d7aa90cf78e605b2053bb177",
+          "payloadFilesStatChecked": 2730,
+          "revision": "8f002dcbdeceb6aa37cc9eeef9f2d2060193b1eff7922ddb1d0535a6b8030da2"
+        },
+        {
+          "groups": {
+            "fields": {
+              "bytes": 1294380168,
+              "maxBytes": 2863862,
+              "medianBytes": 2724499.0,
+              "minBytes": 35293,
+              "objects": 542,
+              "p95Bytes": 2788733.05
+            },
+            "tiles": {
+              "bytes": 269852875,
+              "maxBytes": 703045,
+              "medianBytes": 554853.0,
+              "minBytes": 9150,
+              "objects": 542,
+              "p95Bytes": 642900.3999999999
+            }
+          },
+          "id": "riffelhorn-swissimage-baseline-v1",
+          "manifest": "derived/atlas/riffelhorn/riffelhorn-swissimage-baseline-v1/manifest.json",
+          "manifestBytes": 218993,
+          "manifestSha256": "3c8b50fb9d7721b678abc46b9450495b417ccafff15d4ee8a67d9d6a3fee4934",
+          "payloadFilesStatChecked": 1084,
+          "revision": "f6edd630206ed02f255176935d72126cbc6ad7987b12d2986edbe6d05619bc1b"
+        }
+      ]
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/atlas-storage-requirements-measurements.json",
+        "pointer": "/reportedArchiveAndWorking"
+      },
+      "id": "earlier-source-working-sizes",
+      "qualification": "Earlier receipt, not additive pilot bytes.",
+      "value": {
+        "copernicus": {
+          "generationSeconds": 103.60355890006758,
+          "sourceAreaMeaning": "six 1-degree native COGs; delivered aligned rectangle differs from source footprint",
+          "sourceBytes": 254113117,
+          "workingBytes": 416136764
+        },
+        "imagery": {
+          "fieldBytes": 1294380168,
+          "identity": "f6edd630206ed02f255176935d72126cbc6ad7987b12d2986edbe6d05619bc1b",
+          "seconds": 194.07174620009027,
+          "sourceBytes": 186259028,
+          "tileBytes": 269852875
+        },
+        "swissOriginal": {
+          "sourceAreaKm2": 4,
+          "sourceBytes": 65607404
+        },
+        "swissSupport": {
+          "generationSeconds": 770.1632222000044,
+          "nodataCells": 0,
+          "sourceAreaKm2": 100,
+          "sourceBytes": 1667166026,
+          "sourceMosaic": "${MERIDIAN_DATA_ROOT}/derived/atlas/riffelhorn/riffelhorn-swiss-support-v1/source-mosaic.vrt",
+          "sourceMosaicSha256": "8b097d62be84e110cdf8efd695f63d685a9069fcad98aae91660b7fb42e17998",
+          "storageBytes": 930914852,
+          "tileCounts": [
+            {
+              "omittedPartialOrNodataTiles": 8,
+              "tiles": 1,
+              "zoom": 12
+            },
+            {
+              "omittedPartialOrNodataTiles": 12,
+              "tiles": 4,
+              "zoom": 13
+            },
+            {
+              "omittedPartialOrNodataTiles": 24,
+              "tiles": 25,
+              "zoom": 14
+            },
+            {
+              "omittedPartialOrNodataTiles": 48,
+              "tiles": 121,
+              "zoom": 15
+            },
+            {
+              "omittedPartialOrNodataTiles": 94,
+              "tiles": 506,
+              "zoom": 16
+            },
+            {
+              "omittedPartialOrNodataTiles": 234,
+              "tiles": 2118,
+              "zoom": 17
+            },
+            {
+              "omittedPartialOrNodataTiles": 466,
+              "tiles": 8654,
+              "zoom": 18
+            }
+          ],
+          "tiles": 11429
+        },
+        "welsh": {
+          "sourceAreaKm2": 9,
+          "sourceBytes": 15639072,
+          "workingBytes": 46691533
+        }
+      }
+    },
+    {
+      "classification": "MEASURED",
+      "evidence": {
+        "file": "docs/research/tryfan-pilot-s6-results.json",
+        "pointer": "/readMeter/samples"
+      },
+      "id": "requested-sync-reads",
+      "qualification": "Node synchronous readFileSync bytes only;excludes Python IO,fs asynchronous reads,wire/kernel paging and physical disk. Files may be served from warm OS cache. Not a total IO or bill estimate.",
+      "value": {
+        "reads": {
+          "external-artifacts": {
+            "bytes": 7242912,
+            "calls": 10
+          },
+          "generations": {
+            "bytes": 20149778,
+            "calls": 26
+          },
+          "locators": {
+            "bytes": 93720,
+            "calls": 2
+          },
+          "runtime-code-and-metadata": {
+            "bytes": 4337180,
+            "calls": 110
+          }
+        },
+        "responseBytes": 32836,
+        "samples": 21
+      }
+    },
+    {
+      "classification": "DERIVED FROM MEASUREMENTS",
+      "formula": "sum(read-category bytes) / responseBytes",
+      "id": "requested-read-amplification",
+      "inputs": [
+        "requested-sync-reads"
+      ],
+      "qualification": "Requested synchronous Node bytes only; not disk, total IO, wire traffic, or cost.",
+      "value": {
+        "ratio": 969.1676818126447,
+        "requestedBytes": 31823590,
+        "responseBytes": 32836
+      }
+    },
+    {
+      "classification": "DERIVED FROM MEASUREMENTS",
+      "formula": "2 / (2+2)",
+      "id": "active-recompute-share",
+      "inputs": [
+        "U1-recomputed",
+        "U1-reused"
+      ],
+      "qualification": "Two original chains only; no global fan-out extrapolation.",
+      "value": 0.5
+    },
+    {
+      "classification": "DERIVED FROM MEASUREMENTS",
+      "formula": "requests / elapsed seconds",
+      "id": "observed-throughput",
+      "inputs": [
+        "load-1",
+        "load-4"
+      ],
+      "qualification": "One retained worker/workload, not a production capacity estimate.",
+      "value": [
+        {
+          "readers": 1,
+          "requestsPerSecond": 3.8637420308340458
+        },
+        {
+          "readers": 4,
+          "requestsPerSecond": 3.779055309259615
+        }
+      ]
+    },
+    {
+      "classification": "DERIVED FROM MEASUREMENTS",
+      "formula": "sum(seven stored generation lengths)",
+      "id": "retained-generation-bytes",
+      "inputs": [
+        "historical-generations"
+      ],
+      "qualification": "Metadata only; source/artifact bytes separate.",
+      "value": 5658085
+    },
+    {
+      "classification": "ESTIMATED",
+      "formula": "A / r**2",
+      "id": "resolution-sensitivity",
+      "qualification": "Illustrative arithmetic only; compression/support/levels/channels and compute excluded.",
+      "value": "Four times native samples when linear spacing halves on an equal fully filled area."
+    },
+    {
+      "classification": "UNKNOWN",
+      "id": "scale-unknowns",
+      "qualification": "Tryfan did not measure these; no invented throughput, bill or global cardinality.",
+      "value": [
+        "claim/index growth",
+        "multi-region publication",
+        "dependency fan-out",
+        "many independent revisions",
+        "cold physical IO",
+        "network RTT and egress",
+        "writer concurrency",
+        "dynamic cadence",
+        "peak scratch",
+        "restricted distribution"
+      ]
+    }
+  ],
+  "pilotDecision": "C - PILOT EXIT ACCEPTED",
+  "pilotGates": [
+    {
+      "name": "Representation",
+      "status": "PASS"
+    },
+    {
+      "name": "Identity/provenance",
+      "status": "PASS"
+    },
+    {
+      "name": "Space/scale",
+      "status": "PASS"
+    },
+    {
+      "name": "Time/reference",
+      "status": "PASS"
+    },
+    {
+      "name": "Derivation/lifecycle",
+      "status": "PASS"
+    },
+    {
+      "name": "Persistence/publication",
+      "status": "PASS"
+    },
+    {
+      "name": "Query semantics",
+      "status": "PASS"
+    },
+    {
+      "name": "Extensibility",
+      "status": "PASS"
+    },
+    {
+      "name": "Bounded implementation",
+      "status": "PASS"
+    }
+  ],
+  "schema": "atlas-measured-architecture-evidence/v1",
+  "scope": "Receipt extraction and analysis only; accepted pilot unchanged.",
+  "sources": {
+    "docs/research/atlas-derived-understanding-lifecycle.md": "aee8a563754e3471cbb24a25ea1463eb9cee3d1606be4ed2e3cb1fe62414b3a3",
+    "docs/research/atlas-regional-pilot-acceptance.md": "a1b08a2995d0b3fe6ce42238d1fec681cc65b22c8cb512e13405fadc0db90715",
+    "docs/research/atlas-storage-processing-serving-requirements.md": "826ce49eab42c37d62b0a74762fdd6fa0636ebc1cbd2ad5d8ef3704ef829978a",
+    "docs/research/atlas-storage-requirements-measurements.json": "bdc0ea15a6c5efaa900dd00ff96955caa9c197a1c3cbd518886180a40e97b0b1",
+    "docs/research/atlas-world-model-architecture-synthesis.md": "ba074a8a1fa88c256780281314b3a1ca4a8bc2d3e0bcdcf75ad512b733d2d8c1",
+    "docs/research/tryfan-local-persistent-proof.md": "93310c9f77abb360f2841279378550b810fb58971c26d50ef466fef32fa3aac0",
+    "docs/research/tryfan-pilot-s1-results.json": "aed031cec89a82b7c6c4e9cb45afb892fb437ede435251d187ae26e0eb67de6f",
+    "docs/research/tryfan-pilot-s1.md": "acfe5160a3eb024ab0d0cd14f9502842eb552872683e6738e7c2c855079d99e2",
+    "docs/research/tryfan-pilot-s2-results.json": "f85a56f72653e2eb33dd09dedb386db72dbce9e404288cf6fe661ac952161729",
+    "docs/research/tryfan-pilot-s2.md": "0badb0165a8064d00bc6c439ffdd53039ec22981525607d2e6e0e085d1499100",
+    "docs/research/tryfan-pilot-s3-results.json": "7c55c14dfabeef597037fcb644d4f3ad256d3d5b548c0216c6b6101e75302bb5",
+    "docs/research/tryfan-pilot-s3.md": "e443005b9efb4e0ce3fa7a0bf988faacd1da6f5f1fdc3e49e90d869514f2df5d",
+    "docs/research/tryfan-pilot-s4.md": "ad4885b17c802d1dc03735719b7579c1a02a2c176ce16b3165961af9933ea5f3",
+    "docs/research/tryfan-pilot-s5.md": "cc719fda3be8f8115b3f419ab1bc327ebeb0981a1b7604e534f3a5aeb5e46325",
+    "docs/research/tryfan-pilot-s6-baseline.json": "a7bcae1b3fdf31c4100b295991b776ab98af8fc29cbedec41ad980e633492e34",
+    "docs/research/tryfan-pilot-s6-results.json": "e7a9474fc702ba3f3ab15a7d04b1fbbce127ba58174fe12c4fb49208ca78bafc",
+    "docs/research/tryfan-pilot-s6-validation.json": "05b0522a41eb03a41497cd039ba6e3ddbee2b5f511bddafe7b415cad712d33d8",
+    "docs/research/tryfan-pilot-s6.md": "8f44bcaa535d97510cb9759653cba80fa1d5837a0db2a0a87ef8ded2678d7eef",
+    "docs/research/tryfan-qualified-query-proof.md": "d77246bdcf99eadafb8b569315b78edfd343765db8c5dd87f74cafada4df4852",
+    "docs/research/tryfan-regional-pilot-plan.md": "b525699606bd9408ad837cb7d686668f3db74bdd7f3c6a301c1bf7051b38defd"
+  },
+  "startingCheckpoint": "bae7c3e01f03ba91d0d780fedc61593467a022b3"
+}

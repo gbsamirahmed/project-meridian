@@ -1,0 +1,180 @@
+{
+  "decision": "C - ARCHITECTURE DIRECTION ESTABLISHED",
+  "nextExperiment": {
+    "decisionBranches": {
+      "historyStillDominates": "Prioritize component publication manifests or selective immutable metadata indexing in the next separately authorized task.",
+      "integrityCannotBePreserved": "Reject reuse variant; retain validation semantics and reassess storage trust boundary.",
+      "reuseSuffices": "Keep simple catalogue plus verified request contexts; defer database adoption to selective/cardinality evidence."
+    },
+    "historyDepths": [
+      7,
+      28,
+      112
+    ],
+    "queries": [
+      "Q05 native WorldCover",
+      "Q21 composed evidence/derived answer",
+      "Q18 provenance"
+    ],
+    "question": "How much generation/history read cost is duplicated within a request, and does request-scoped verified reuse remain adequate as ancestry grows?",
+    "requirements": [
+      "Freeze fixture identities and failure semantics before measurement.",
+      "Do not modify accepted pilot; fixture roots/payload references remain isolated.",
+      "Retain per-request corruption/unavailability checks; no cross-request trusted mutable-file cache.",
+      "Compare identical qualified answers, pins, freshness and history; reject incomplete publication.",
+      "Five fresh processes and twenty warm queries per fixed case; record requested reads, wall time, peak/observed memory explicitly, metadata bytes and load/pin cost.",
+      "Inject missing required artifact, corrupt ancestor and pre-switch orphan in isolated fixtures.",
+      "Report shape selection conditional on correctness and observed growth; no production backend or DB benchmark required."
+    ],
+    "scope": "Same Tryfan evidence; isolated labelled administrative-history fixtures, no scientific revisions or new source data.",
+    "status": "NOT BEGUN",
+    "variants": [
+      "accepted whole-closure path",
+      "experimental request-scoped once-per-distinct-file verification and parsed-metadata reuse"
+    ]
+  },
+  "nextTask": "Atlas retained generation metadata read-amplification and verified-reuse scaling experiment",
+  "records": [
+    {
+      "classification": "DECIDE NOW",
+      "conclusion": "Immutable recoverable source and exact evidence/result revisions; identity differs from locator and byte identity alone.",
+      "consequence": "Every backend must preserve identity and retained closure.",
+      "evidence": "S1/S3/S6; source support can revise without pixel changes.",
+      "id": "N01"
+    },
+    {
+      "classification": "DECIDE NOW",
+      "conclusion": "Native semantics, mapping loss, support/scale/time/reference, gaps and rights survive storage and serving.",
+      "consequence": "Shared metadata, source-native selectors; no per-cell universal truth objects.",
+      "evidence": "S2/S4/S6; distinct WorldCover/NRW epochs and grain coexist.",
+      "id": "N02"
+    },
+    {
+      "classification": "DECIDE NOW",
+      "conclusion": "Exact actual-use dependencies and policy-relative freshness remain separate from immutable history.",
+      "consequence": "Forward receipts canonical; reverse indexes rebuildable; stale is not false.",
+      "evidence": "S3/S5: only two of four active results recomputed.",
+      "id": "N03"
+    },
+    {
+      "classification": "DECIDE NOW",
+      "conclusion": "Validated publication closure and explicit consumer pin are mandatory.",
+      "consequence": "Only publication preference mutates; all referenced state must be durable first.",
+      "evidence": "S1/S4/S5/S6: staged orphans rejected and pinned readers survive eight exits.",
+      "id": "N04"
+    },
+    {
+      "classification": "DECIDE NOW",
+      "conclusion": "Bulk portrayal, qualified resolution and preparation have distinct responsibilities.",
+      "consequence": "They may share process/infrastructure; cache is not canonical knowledge.",
+      "evidence": "S4 isolated consumer; S6 provenance/interactive latency differ.",
+      "id": "N05"
+    },
+    {
+      "classification": "DECIDE NOW",
+      "conclusion": "Local retained reproduction and domain/application boundaries remain acceptance obligations.",
+      "consequence": "No mandatory cloud; Weather/Traverse ownership unchanged.",
+      "evidence": "Plan and all six slices; production hashes unchanged.",
+      "id": "N06"
+    },
+    {
+      "classification": "PROVISIONAL DIRECTION",
+      "conclusion": "Immutable object/file payloads plus one shared structured metadata catalogue with replaceable selective indexes.",
+      "consequence": "Archive/prepared/derived share payload substrate; catalogue/qualification/dependencies share structured store, not one schema for all domains.",
+      "evidence": "310 assets, shared templates, five families; repeated whole-metadata overhead.",
+      "id": "P01"
+    },
+    {
+      "classification": "PROVISIONAL DIRECTION",
+      "conclusion": "Lightweight publication manifests reference reusable immutable regional/domain components.",
+      "consequence": "Avoid copy-the-world publication; metadata chunking and cross-region coherence must be measured.",
+      "evidence": "Zero changed source artifacts, 310 reused; whole generation still 1.24 MB.",
+      "id": "P02"
+    },
+    {
+      "classification": "PROVISIONAL DIRECTION",
+      "conclusion": "Serve immutable artifacts separately from generation-pinned qualified query/provenance resolution.",
+      "consequence": "May share local service initially; public cache requires rights/access eligibility.",
+      "evidence": "S4 contract and S6 timings/read amplification.",
+      "id": "P03"
+    },
+    {
+      "classification": "PROVISIONAL DIRECTION",
+      "conclusion": "Finite batch/local workers, eager cheap reused results and selectively materialized expensive work.",
+      "consequence": "Queue adoption depends on measured backlog/failure/parallelism, not presence of a DAG.",
+      "evidence": "S3 bounded chains and S5 selective updates.",
+      "id": "P04"
+    },
+    {
+      "classification": "DEFER PENDING EVIDENCE",
+      "conclusion": "Final embedded versus service relational/spatial catalogue and durable index layout.",
+      "consequence": "Next verified-reuse experiment tests whether repeated closure work dominates before attributing cost to lack of SQL.",
+      "evidence": "Only 193 features, six results and seven ancestors measured.",
+      "id": "D01"
+    },
+    {
+      "classification": "DEFER PENDING EVIDENCE",
+      "conclusion": "Metadata partition/chunk size and regional versus composite publication roots.",
+      "consequence": "Measure history/selectivity then explicit cross-region dependency workloads; no universal cell imposed.",
+      "evidence": "One nine-square-kilometre pilot and local single writer.",
+      "id": "D02"
+    },
+    {
+      "classification": "DEFER PENDING EVIDENCE",
+      "conclusion": "Payload packaging, cloud/object vendor, CDN, deployment topology and public API.",
+      "consequence": "Require window/seek/egress/rights/consumer workload and deployment failure tests.",
+      "evidence": "Larger retained object counts exist, network/packaging performance does not.",
+      "id": "D03"
+    },
+    {
+      "classification": "DEFER PENDING EVIDENCE",
+      "conclusion": "Writer concurrency, distributed job coordination, power-loss durability and retention/GC.",
+      "consequence": "Measure conflicting publishers, durable root mechanics and live/history reference retention before deployment.",
+      "evidence": "Local process-exit tests only.",
+      "id": "D04"
+    },
+    {
+      "classification": "DEFER PENDING EVIDENCE",
+      "conclusion": "Dynamic cadence, global graph fan-out, production costs/SLAs, offline/mobile and access policy.",
+      "consequence": "No numeric global capacity or prices; Weather-specific design stays outside Atlas assessment.",
+      "evidence": "No such pilot workload or commercial/private evidence.",
+      "id": "D05"
+    },
+    {
+      "classification": "REJECT",
+      "conclusion": "Universal wet/dry or land-cover truth, newest-wins ranking, one timestamp and one grid for every family.",
+      "consequence": "Reject as Atlas foundation.",
+      "evidence": "Conflicts with frozen semantics and S2 coexistence.",
+      "id": "R01"
+    },
+    {
+      "classification": "REJECT",
+      "conclusion": "Mutable current rows without retained revisions, storage paths as identity, generation change as blanket invalidation.",
+      "consequence": "Reject correctness model.",
+      "evidence": "Contradicts S1/S3/S5.",
+      "id": "R02"
+    },
+    {
+      "classification": "REJECT",
+      "conclusion": "Six databases/services, graph DB, event bus, generic workflow engine, microservice fleet or global coordination now.",
+      "consequence": "Reject current adoption; reassess only when concrete measured requirements earn complexity.",
+      "evidence": "Finite workload establishes no operational need.",
+      "id": "R03"
+    },
+    {
+      "classification": "REJECT",
+      "conclusion": "Full-world payload copying on every publication or cache as sole canonical lineage/history.",
+      "consequence": "Reject default; materializations remain separately recoverable.",
+      "evidence": "310 payloads reused and historic exact replay required.",
+      "id": "R04"
+    },
+    {
+      "classification": "REJECT",
+      "conclusion": "Local rename as proof of cloud atomicity, cache headers as access control, four-reader numbers as production capacity.",
+      "consequence": "Reject inference, not future controlled tests.",
+      "evidence": "S6 limitations and standards distinguish these guarantees.",
+      "id": "R05"
+    }
+  ],
+  "schema": "atlas-measured-architecture-decisions/v1"
+}
