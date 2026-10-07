@@ -10,10 +10,11 @@ import { methods,buildBaseline,openUnderstanding } from '../derivations.mjs';
 import { openWorld } from '../world.mjs';
 import { METHOD,ref,resultKey,validateDependencies } from '../dependencies.mjs';
 import { encode,sha } from '../identity.mjs';
-let dir,store,registration,snapshot,m,initial,generation,regional,d,w;
+let dir,store,registration,snapshot,m,initial,generation,regional,d,w,publishedAtStart;
 const summit=[266405,359387];
 const err=code=>e=>e.code===code;
 before(async()=>{
+ publishedAtStart=load(STORE);
  dir=mkdtempSync(join(tmpdir(),'meridian-s3-'));store=join(dir,'store');registration=await buildRetained();register(store,seed(registration),registration.locators);
  const built=await buildBaseline({store});initial=built.value;generation=register(store,initial,built.locators).generation;snapshot=load(store);
  m=await methods();regional=m.recompute(initial.understanding,registration.catalogue,registration.locators);d=await openUnderstanding({store});w=await openWorld({store});
@@ -94,7 +95,7 @@ test('L03 fresh subprocess inspection, L13 replay, fresh integrated coordinator 
  const request={property:'place-evidence',place:{crs:'EPSG:27700',point:summit}};
  const p=spawnSync(process.execPath,[...base,'query',...options,'--request',JSON.stringify(request)],{encoding:'utf8',timeout:30000});assert.equal(p.status,0,p.stderr);assert.deepEqual(JSON.parse(p.stdout),await w.query(request));
 });
-test('source hashes remain unchanged, actual published pilot not modified by tests',()=>{assert.deepEqual(load(store).verification,{artifacts:310,bytes:42473107});assert.equal(load(STORE).value.understanding?.stage??'common','common');});
+test('source hashes remain unchanged, actual published pilot not modified by tests',()=>{assert.deepEqual(load(store).verification,{artifacts:310,bytes:42473107});assert.deepEqual(load(STORE).value,publishedAtStart.value);});
 
 test('read-only locator bridge replay survives physical relocation without changing aliases/IDs',()=>{
  const base=join(DATA,'experiments/atlas/tryfan-regional-pilot-v1/staging');mkdirSync(base,{recursive:true});

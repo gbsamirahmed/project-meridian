@@ -1,0 +1,141 @@
+{
+  "schema": "atlas-tryfan-s5-scenarios/v1",
+  "frozenBeforeEvaluation": true,
+  "basis": "7809147",
+  "updates": [
+    "U1",
+    "U2"
+  ],
+  "interruptions": {
+    "F1": "after-artifacts",
+    "E1": "after-evidence",
+    "F2": "after-recompute",
+    "F3": "before-switch"
+  },
+  "scenarios": [
+    {
+      "id": "P01",
+      "question": "Load S4 baseline"
+    },
+    {
+      "id": "P02",
+      "question": "U1 activates Welsh summit only"
+    },
+    {
+      "id": "P03",
+      "question": "U2 isolated withheld NRW baseline"
+    },
+    {
+      "id": "P04",
+      "question": "Registered bytes unchanged"
+    },
+    {
+      "id": "P05",
+      "question": "Two summit results stale transitively"
+    },
+    {
+      "id": "P06",
+      "question": "Southern two remain fresh"
+    },
+    {
+      "id": "P07",
+      "question": "Only two recomputed"
+    },
+    {
+      "id": "P08",
+      "question": "Four historical AWS retained"
+    },
+    {
+      "id": "P09",
+      "question": "WorldCover and appearance reused"
+    },
+    {
+      "id": "P10",
+      "question": "Native NRW semantics unchanged"
+    },
+    {
+      "id": "P11",
+      "question": "F1 abrupt staging exit"
+    },
+    {
+      "id": "P12",
+      "question": "E1 evidence-only abrupt exit"
+    },
+    {
+      "id": "P13",
+      "question": "F2 recompute abrupt exit"
+    },
+    {
+      "id": "P14",
+      "question": "F3 closed orphan abrupt exit"
+    },
+    {
+      "id": "P15",
+      "question": "Fresh service resolves old root after each exit"
+    },
+    {
+      "id": "P16",
+      "question": "Existing pinned consumer remains old after each exit"
+    },
+    {
+      "id": "P17",
+      "question": "Unpublished candidate rejected"
+    },
+    {
+      "id": "P18",
+      "question": "Dead writer nonce recovery"
+    },
+    {
+      "id": "P19",
+      "question": "Retry canonical candidate identity"
+    },
+    {
+      "id": "P20",
+      "question": "One successful atomic root switch"
+    },
+    {
+      "id": "P21",
+      "question": "Old consumer stays old after switch"
+    },
+    {
+      "id": "P22",
+      "question": "New consumer resolves updated state"
+    },
+    {
+      "id": "P23",
+      "question": "No impossible terrain/NRW/derived mixture"
+    },
+    {
+      "id": "P24",
+      "question": "Explicit historical pin"
+    },
+    {
+      "id": "P25",
+      "question": "Replay all six results from pixels"
+    },
+    {
+      "id": "P26",
+      "question": "Invalid/incomplete candidate rejection"
+    },
+    {
+      "id": "P27",
+      "question": "Method and native rights unchanged"
+    },
+    {
+      "id": "P28",
+      "question": "Unrelated update no blanket invalidation"
+    },
+    {
+      "id": "P29",
+      "question": "Deterministic independent candidate construction"
+    },
+    {
+      "id": "P30",
+      "question": "Idempotent applied update"
+    },
+    {
+      "id": "P31",
+      "question": "Fresh process current reconstruction"
+    }
+  ]
+}

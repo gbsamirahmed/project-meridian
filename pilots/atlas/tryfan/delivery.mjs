@@ -82,7 +82,7 @@ export async function openDelivery({store=STORE,dataRoot=DATA}={}) {
   const {snapshot}=await context(g),s=project(snapshot.value.serving,g),c=snapshot.value.catalogue;
   return {protocol:'atlas-tryfan-serving/v1',generation:g,core:structuredClone(snapshot.value.core),capabilities:snapshot.value.capabilities,...s,
    assets:s.assets.map(a=>({...a,url:base(g)+'/assets/'+a.id,rightsURL:base(g)+'/provenance/'+a.rightsRef})),
-   families:c.families.map(f=>({id:f.id,source:f.source,product:f.product,representations:f.representations,rightsURL:base(g)+'/provenance/'+sha(encode({rights:f.id})),qualification:project(f.qualification,g)})),
+   families:c.families.map(f=>({applicability:f.id==='nrw' && snapshot.value.update?.phase==='withheld'?'withheld':'eligible',id:f.id,source:f.source,product:f.product,representations:f.representations,rightsURL:base(g)+'/provenance/'+sha(encode({rights:f.id})),qualification:project(f.qualification,g)})),
    terrain:terrainBindings(c).map(t=>({...t,url:base(g)+'/terrain/'+t.family+'/'+[t.tile.z,t.tile.x,t.tile.y].join('/')+'.png'}))};
  }
  async function query(g,request) {
@@ -132,6 +132,7 @@ export async function openDelivery({store=STORE,dataRoot=DATA}={}) {
    const portrayal=s.assets.find(a=>a.id===key);requireThat(portrayal,'asset-missing','Unknown serving asset');mime=portrayal.mime;family=portrayal.family;
    a=portrayal.origin.kind==='retained'?snapshot.value.catalogue.artifacts.find(a=>a.id===portrayal.origin.artifact):portrayal;
   }
+  requireThat(family!=='nrw' || snapshot.value.update?.phase!=='withheld','evidence-excluded-by-context','Controlled U2 NRW applicability is withheld; registered bytes remain retained');
   const file=a.origin?.kind==='materialized'?safePath(store,'artifacts/'+a.id+(mime==='image/png'?'.png':'.json')):safePath(dataRoot,snapshot.locators[a.id]);
   requireThat(statSync(file).size<64*1024*1024,'artifact-unavailable','Read exceeds bounded buffer');body=readFileSync(file);
   requireThat(body.length===a.bytes && sha(body)===a.sha256,'hash-mismatch','Registered delivery bytes changed');metrics.assetReads++;metrics.bytesRead+=body.length;

@@ -107,9 +107,7 @@ Warm query medians213-305ms; fresh service+consumer about3.46s; generation1.21MB
 ([measurements](research/tryfan-pilot-s4-results.json)). Port4191 replaces Fetch-blocked4190;
 this is a reversible pilot detail. Production Atlas, Weather, Traverse and frozen contracts
 remain unchanged. Appearance remains unresolved/non-blocking and Swiss multiview parked.
-Mixed-family scientific publication/S6 exit remain outstanding. Exactly one next task:
-**Tryfan pilot scoped and mixed-family publication with interruption - S5 only**, not begun;
-[scope/stop](research/tryfan-pilot-s4.md#26-exactly-one-next-bounded-task).
+The [S5 scoped/mixed-family publication](research/tryfan-pilot-s5.md) now passes **C - S5 SUCCESS**: U1 and isolated U2 activate retained applicability, recompute only two summit revisions, reuse southern/native state and preserve all history. Eight abrupt exits and fresh/pinned HTTP consumers keep old roots coherent; retry reuses identical closed candidates. Actual browser refresh changes the whole scene explicitly. Assembly1.22–1.34s/validation584–651ms/root switch~5ms,1.24MB generations ([observations](research/tryfan-pilot-s5-results.json)). No new source revision or foundational deviation. S1–S4 remain successful. Appearance remains unresolved/non-blocking and Swiss multiview remains parked. Exactly one next task is **Tryfan pilot measured exit acceptance - S6 only**, not begun. No S6 implementation or full pilot exit is claimed.
 A6-A11/A14 remain unresolved separately; Swiss pixels remain parked.
 Historical analytical filter/calibration
 suggestions are separate from closed visual-terrain research. No Weather/Traverse redesign follows.

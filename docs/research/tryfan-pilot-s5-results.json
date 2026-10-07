@@ -1,0 +1,904 @@
+{
+  "U1": {
+    "failures": [
+      {
+        "current": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+        "exitCode": 91,
+        "freshConsumerMilliseconds": 1383.6598000000013,
+        "freshService": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+        "milliseconds": 4487.0057,
+        "oldConsumer": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+        "operation": "8395c43d-4f5d-46e7-8e90-cffe459c16c2",
+        "orphan": null,
+        "point": "after-artifacts",
+        "retainedDiagnostics": true
+      },
+      {
+        "current": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+        "exitCode": 91,
+        "freshConsumerMilliseconds": 1357.4789000000019,
+        "freshService": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+        "milliseconds": 5096.401900000001,
+        "oldConsumer": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+        "operation": "ad60f151-4d87-45a2-92d1-c34812ded68f",
+        "orphan": null,
+        "point": "after-evidence",
+        "retainedDiagnostics": true
+      },
+      {
+        "current": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+        "exitCode": 91,
+        "freshConsumerMilliseconds": 1293.7122999999992,
+        "freshService": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+        "milliseconds": 5520.3763,
+        "oldConsumer": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+        "operation": "b3871856-8370-43c9-8380-82601f2436bb",
+        "orphan": null,
+        "point": "after-recompute",
+        "retainedDiagnostics": true
+      },
+      {
+        "current": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+        "exitCode": 91,
+        "freshConsumerMilliseconds": 1329.5221999999994,
+        "freshService": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+        "milliseconds": 6443.231,
+        "oldConsumer": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+        "operation": "3645956b-fdd3-4774-9ad4-2e4362befb60",
+        "orphan": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+        "point": "before-switch",
+        "retainedDiagnostics": true
+      }
+    ],
+    "logical": {
+      "after": {
+        "appearanceBytes": 148616,
+        "family": "welsh-regional",
+        "generation": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+        "nrwCode": "D.1.1",
+        "nrwStatus": "available",
+        "ratio": 1.191264396968292,
+        "slope": 32.918524028483965,
+        "worldcover": 30
+      },
+      "before": {
+        "appearanceBytes": 148616,
+        "family": "production-common",
+        "generation": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+        "nrwCode": "D.1.1",
+        "nrwStatus": "available",
+        "ratio": 1.0217304696061646,
+        "slope": 11.837956999552308,
+        "worldcover": 30
+      },
+      "catalogueSha256": "d1664f3f553a44478112e0fa8755c11f48ceb9c9d5e0d47e565cdb3b116d45ff",
+      "changedArtifactBytes": 0,
+      "from": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+      "historicalSha256": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+      "knowledgeSha256": "9bbaa0c10db1a1f03810ef3a4e708eca09e25a94c9a8474f07ab944e162438a5",
+      "recomputed": [
+        {
+          "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+          "revision": "4f4d6ae182d3821d1a002c855d8b886112c0aea0e13af2023b10d5294f70ef93"
+        },
+        {
+          "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+          "revision": "dbc1746d41c191d251628d3409d5db3bf4064c8c29e9f0ba50a332804196c1d2"
+        }
+      ],
+      "registeredArtifacts": 310,
+      "retainedHistoricalResults": 4,
+      "reused": [
+        {
+          "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+          "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+        },
+        {
+          "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+          "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+        }
+      ],
+      "scenario": "U1",
+      "statuses": [
+        {
+          "assessment": {
+            "baseline": {
+              "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+              "hierarchy": {
+                "id": "tryfan-second-region-proof",
+                "revision": "1"
+              }
+            },
+            "policy": "current-applicable-terrain-v1",
+            "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+            "reason": "Current explicit hierarchy policy selects another applicable representation; stale is not false",
+            "result": {
+              "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+              "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839"
+            },
+            "selectedFamily": "welsh-regional",
+            "status": "stale"
+          },
+          "probe": "summit",
+          "property": "slope",
+          "ref": {
+            "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+            "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839"
+          }
+        },
+        {
+          "assessment": {
+            "baseline": {
+              "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+              "hierarchy": {
+                "id": "tryfan-second-region-proof",
+                "revision": "1"
+              }
+            },
+            "policy": "current-applicable-terrain-v1",
+            "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+            "reason": "Transitive slope assessment: Current explicit hierarchy policy selects another applicable representation; stale is not false",
+            "result": {
+              "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+              "revision": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527"
+            },
+            "selectedFamily": "welsh-regional",
+            "status": "stale"
+          },
+          "probe": "summit",
+          "property": "area-ratio",
+          "ref": {
+            "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+            "revision": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527"
+          }
+        },
+        {
+          "assessment": {
+            "baseline": {
+              "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+              "hierarchy": {
+                "id": "tryfan-second-region-proof",
+                "revision": "1"
+              }
+            },
+            "policy": "current-applicable-terrain-v1",
+            "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+            "reason": "Selected representation still applies; no intersecting relevant input changes",
+            "result": {
+              "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+              "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+            },
+            "selectedFamily": "production-common",
+            "status": "fresh"
+          },
+          "probe": "southern-observer",
+          "property": "slope",
+          "ref": {
+            "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+            "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+          }
+        },
+        {
+          "assessment": {
+            "baseline": {
+              "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+              "hierarchy": {
+                "id": "tryfan-second-region-proof",
+                "revision": "1"
+              }
+            },
+            "policy": "current-applicable-terrain-v1",
+            "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+            "reason": "Transitive slope assessment: Selected representation still applies; no intersecting relevant input changes",
+            "result": {
+              "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+              "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+            },
+            "selectedFamily": "production-common",
+            "status": "fresh"
+          },
+          "probe": "southern-observer",
+          "property": "area-ratio",
+          "ref": {
+            "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+            "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+          }
+        }
+      ],
+      "to": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+      "totalResults": 6,
+      "understandingSha256": "e85a1417814b2977a0622f6ae0a2de7ae3ddefaf0cf206955c35671a8a654608"
+    },
+    "logicalSha256": "0c488cd12208ba31e9f7c76c59e215924fa09460bfafd0cc30835abedbee1426",
+    "metrics": {
+      "afterConsumer": 1646.6546000000017,
+      "assemblyMilliseconds": 1219.1683,
+      "beforeConsumer": 1551.390800000001,
+      "catalogueBytes": 324627,
+      "changedArtifacts": 0,
+      "considered": 4,
+      "generationBytes": 1241281,
+      "oldServiceStartup": 1995.9383,
+      "pointerBytes": 130,
+      "publicationAndConsumerVerificationMilliseconds": 15524.684700000002,
+      "publicationMilliseconds": 5.381900000000314,
+      "publicationProcessMilliseconds": 2435.704800000003,
+      "recomputed": [
+        {
+          "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+          "revision": "4f4d6ae182d3821d1a002c855d8b886112c0aea0e13af2023b10d5294f70ef93"
+        },
+        {
+          "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+          "revision": "dbc1746d41c191d251628d3409d5db3bf4064c8c29e9f0ba50a332804196c1d2"
+        }
+      ],
+      "restartedConsumer": 1817.5556999999972,
+      "retainedBytes": 42473107,
+      "reused": [
+        {
+          "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+          "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+        },
+        {
+          "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+          "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+        }
+      ],
+      "reusedArtifacts": 310,
+      "sampling": {
+        "seconds": 0.10943690012209117,
+        "tileBytesRead": 112921,
+        "uniqueTileBytes": 112921
+      },
+      "statuses": [
+        {
+          "assessment": {
+            "baseline": {
+              "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+              "hierarchy": {
+                "id": "tryfan-second-region-proof",
+                "revision": "1"
+              }
+            },
+            "policy": "current-applicable-terrain-v1",
+            "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+            "reason": "Current explicit hierarchy policy selects another applicable representation; stale is not false",
+            "result": {
+              "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+              "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839"
+            },
+            "selectedFamily": "welsh-regional",
+            "status": "stale"
+          },
+          "probe": "summit",
+          "property": "slope",
+          "ref": {
+            "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+            "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839"
+          }
+        },
+        {
+          "assessment": {
+            "baseline": {
+              "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+              "hierarchy": {
+                "id": "tryfan-second-region-proof",
+                "revision": "1"
+              }
+            },
+            "policy": "current-applicable-terrain-v1",
+            "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+            "reason": "Transitive slope assessment: Current explicit hierarchy policy selects another applicable representation; stale is not false",
+            "result": {
+              "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+              "revision": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527"
+            },
+            "selectedFamily": "welsh-regional",
+            "status": "stale"
+          },
+          "probe": "summit",
+          "property": "area-ratio",
+          "ref": {
+            "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+            "revision": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527"
+          }
+        },
+        {
+          "assessment": {
+            "baseline": {
+              "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+              "hierarchy": {
+                "id": "tryfan-second-region-proof",
+                "revision": "1"
+              }
+            },
+            "policy": "current-applicable-terrain-v1",
+            "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+            "reason": "Selected representation still applies; no intersecting relevant input changes",
+            "result": {
+              "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+              "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+            },
+            "selectedFamily": "production-common",
+            "status": "fresh"
+          },
+          "probe": "southern-observer",
+          "property": "slope",
+          "ref": {
+            "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+            "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+          }
+        },
+        {
+          "assessment": {
+            "baseline": {
+              "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+              "hierarchy": {
+                "id": "tryfan-second-region-proof",
+                "revision": "1"
+              }
+            },
+            "policy": "current-applicable-terrain-v1",
+            "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+            "reason": "Transitive slope assessment: Selected representation still applies; no intersecting relevant input changes",
+            "result": {
+              "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+              "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+            },
+            "selectedFamily": "production-common",
+            "status": "fresh"
+          },
+          "probe": "southern-observer",
+          "property": "area-ratio",
+          "ref": {
+            "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+            "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+          }
+        }
+      ],
+      "validationMilliseconds": 583.6539
+    },
+    "racing": [
+      {
+        "family": "production-common",
+        "generation": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+        "nrwCode": "D.1.1",
+        "nrwStatus": "available",
+        "pinned": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+        "slope": 11.837956999552308
+      },
+      {
+        "family": "production-common",
+        "generation": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+        "nrwCode": "D.1.1",
+        "nrwStatus": "available",
+        "pinned": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+        "slope": 11.837956999552308
+      },
+      {
+        "family": "production-common",
+        "generation": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+        "nrwCode": "D.1.1",
+        "nrwStatus": "available",
+        "pinned": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+        "slope": 11.837956999552308
+      },
+      {
+        "family": "production-common",
+        "generation": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+        "nrwCode": "D.1.1",
+        "nrwStatus": "available",
+        "pinned": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+        "slope": 11.837956999552308
+      },
+      {
+        "family": "welsh-regional",
+        "generation": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+        "nrwCode": "D.1.1",
+        "nrwStatus": "available",
+        "pinned": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+        "slope": 32.918524028483965
+      }
+    ],
+    "responseBytes": 446238,
+    "responseSha256": "5cec9743ce867ad7aa62ab37c3f472e1eb14771e561810f045fe7a699a8fd970"
+  },
+  "U2": {
+    "failures": [
+      {
+        "current": "fc916b06ba582735f1fae26eba51a0d66603e00e1734d536ba579e97ec5a86e6",
+        "exitCode": 91,
+        "freshConsumerMilliseconds": 1699.9153000000006,
+        "freshService": "fc916b06ba582735f1fae26eba51a0d66603e00e1734d536ba579e97ec5a86e6",
+        "milliseconds": 4840.135899999994,
+        "oldConsumer": "fc916b06ba582735f1fae26eba51a0d66603e00e1734d536ba579e97ec5a86e6",
+        "operation": "975cf4f9-ea32-4fd8-9410-35e92330efc6",
+        "orphan": null,
+        "point": "after-artifacts",
+        "retainedDiagnostics": true
+      },
+      {
+        "current": "fc916b06ba582735f1fae26eba51a0d66603e00e1734d536ba579e97ec5a86e6",
+        "exitCode": 91,
+        "freshConsumerMilliseconds": 1633.1326000000045,
+        "freshService": "fc916b06ba582735f1fae26eba51a0d66603e00e1734d536ba579e97ec5a86e6",
+        "milliseconds": 5488.869200000001,
+        "oldConsumer": "fc916b06ba582735f1fae26eba51a0d66603e00e1734d536ba579e97ec5a86e6",
+        "operation": "1867b24e-cae9-4661-a5d0-f010c658e7f4",
+        "orphan": null,
+        "point": "after-evidence",
+        "retainedDiagnostics": true
+      },
+      {
+        "current": "fc916b06ba582735f1fae26eba51a0d66603e00e1734d536ba579e97ec5a86e6",
+        "exitCode": 91,
+        "freshConsumerMilliseconds": 2684.597800000003,
+        "freshService": "fc916b06ba582735f1fae26eba51a0d66603e00e1734d536ba579e97ec5a86e6",
+        "milliseconds": 8364.894200000002,
+        "oldConsumer": "fc916b06ba582735f1fae26eba51a0d66603e00e1734d536ba579e97ec5a86e6",
+        "operation": "6e092537-e729-4dd5-b37e-95e232f1d875",
+        "orphan": null,
+        "point": "after-recompute",
+        "retainedDiagnostics": true
+      },
+      {
+        "current": "fc916b06ba582735f1fae26eba51a0d66603e00e1734d536ba579e97ec5a86e6",
+        "exitCode": 91,
+        "freshConsumerMilliseconds": 2047.7753999999986,
+        "freshService": "fc916b06ba582735f1fae26eba51a0d66603e00e1734d536ba579e97ec5a86e6",
+        "milliseconds": 8962.131300000008,
+        "oldConsumer": "fc916b06ba582735f1fae26eba51a0d66603e00e1734d536ba579e97ec5a86e6",
+        "operation": "508326e9-079b-465a-a29d-516aeba3a139",
+        "orphan": "071c9c80a93e7594d7d00cb7c6c94c12f36c8494891c8c1ca14f86fad756ee93",
+        "point": "before-switch",
+        "retainedDiagnostics": true
+      }
+    ],
+    "logical": {
+      "after": {
+        "appearanceBytes": 148616,
+        "family": "welsh-regional",
+        "generation": "071c9c80a93e7594d7d00cb7c6c94c12f36c8494891c8c1ca14f86fad756ee93",
+        "nrwCode": "D.1.1",
+        "nrwStatus": "available",
+        "ratio": 1.191264396968292,
+        "slope": 32.918524028483965,
+        "worldcover": 30
+      },
+      "before": {
+        "appearanceBytes": 148616,
+        "family": "production-common",
+        "generation": "fc916b06ba582735f1fae26eba51a0d66603e00e1734d536ba579e97ec5a86e6",
+        "nrwCode": null,
+        "nrwStatus": "excluded-by-context",
+        "ratio": 1.0217304696061646,
+        "slope": 11.837956999552308,
+        "worldcover": 30
+      },
+      "catalogueSha256": "d1664f3f553a44478112e0fa8755c11f48ceb9c9d5e0d47e565cdb3b116d45ff",
+      "changedArtifactBytes": 0,
+      "from": "fc916b06ba582735f1fae26eba51a0d66603e00e1734d536ba579e97ec5a86e6",
+      "historicalSha256": "fc916b06ba582735f1fae26eba51a0d66603e00e1734d536ba579e97ec5a86e6",
+      "knowledgeSha256": "9bbaa0c10db1a1f03810ef3a4e708eca09e25a94c9a8474f07ab944e162438a5",
+      "recomputed": [
+        {
+          "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+          "revision": "4f4d6ae182d3821d1a002c855d8b886112c0aea0e13af2023b10d5294f70ef93"
+        },
+        {
+          "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+          "revision": "dbc1746d41c191d251628d3409d5db3bf4064c8c29e9f0ba50a332804196c1d2"
+        }
+      ],
+      "registeredArtifacts": 310,
+      "retainedHistoricalResults": 4,
+      "reused": [
+        {
+          "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+          "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+        },
+        {
+          "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+          "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+        }
+      ],
+      "scenario": "U2",
+      "statuses": [
+        {
+          "assessment": {
+            "baseline": {
+              "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+              "hierarchy": {
+                "id": "tryfan-second-region-proof",
+                "revision": "1"
+              }
+            },
+            "policy": "current-applicable-terrain-v1",
+            "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+            "reason": "Current explicit hierarchy policy selects another applicable representation; stale is not false",
+            "result": {
+              "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+              "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839"
+            },
+            "selectedFamily": "welsh-regional",
+            "status": "stale"
+          },
+          "probe": "summit",
+          "property": "slope",
+          "ref": {
+            "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+            "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839"
+          }
+        },
+        {
+          "assessment": {
+            "baseline": {
+              "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+              "hierarchy": {
+                "id": "tryfan-second-region-proof",
+                "revision": "1"
+              }
+            },
+            "policy": "current-applicable-terrain-v1",
+            "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+            "reason": "Transitive slope assessment: Current explicit hierarchy policy selects another applicable representation; stale is not false",
+            "result": {
+              "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+              "revision": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527"
+            },
+            "selectedFamily": "welsh-regional",
+            "status": "stale"
+          },
+          "probe": "summit",
+          "property": "area-ratio",
+          "ref": {
+            "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+            "revision": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527"
+          }
+        },
+        {
+          "assessment": {
+            "baseline": {
+              "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+              "hierarchy": {
+                "id": "tryfan-second-region-proof",
+                "revision": "1"
+              }
+            },
+            "policy": "current-applicable-terrain-v1",
+            "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+            "reason": "Selected representation still applies; no intersecting relevant input changes",
+            "result": {
+              "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+              "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+            },
+            "selectedFamily": "production-common",
+            "status": "fresh"
+          },
+          "probe": "southern-observer",
+          "property": "slope",
+          "ref": {
+            "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+            "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+          }
+        },
+        {
+          "assessment": {
+            "baseline": {
+              "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+              "hierarchy": {
+                "id": "tryfan-second-region-proof",
+                "revision": "1"
+              }
+            },
+            "policy": "current-applicable-terrain-v1",
+            "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+            "reason": "Transitive slope assessment: Selected representation still applies; no intersecting relevant input changes",
+            "result": {
+              "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+              "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+            },
+            "selectedFamily": "production-common",
+            "status": "fresh"
+          },
+          "probe": "southern-observer",
+          "property": "area-ratio",
+          "ref": {
+            "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+            "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+          }
+        }
+      ],
+      "to": "071c9c80a93e7594d7d00cb7c6c94c12f36c8494891c8c1ca14f86fad756ee93",
+      "totalResults": 6,
+      "understandingSha256": "e85a1417814b2977a0622f6ae0a2de7ae3ddefaf0cf206955c35671a8a654608"
+    },
+    "logicalSha256": "535e9a5e154b7d21d0e46c35756c6b5b357a63d3d0c3bc0b318387d1748b7202",
+    "metrics": {
+      "afterConsumer": 2765.844399999987,
+      "assemblyMilliseconds": 1335.5673,
+      "beforeConsumer": 1679.313900000001,
+      "catalogueBytes": 324627,
+      "changedArtifacts": 0,
+      "considered": 4,
+      "generationBytes": 1241308,
+      "oldServiceStartup": 1981.8674999999998,
+      "pointerBytes": 130,
+      "publicationAndConsumerVerificationMilliseconds": 22412.572700000004,
+      "publicationMilliseconds": 5.242300000000341,
+      "publicationProcessMilliseconds": 2712.640499999994,
+      "recomputed": [
+        {
+          "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+          "revision": "4f4d6ae182d3821d1a002c855d8b886112c0aea0e13af2023b10d5294f70ef93"
+        },
+        {
+          "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+          "revision": "dbc1746d41c191d251628d3409d5db3bf4064c8c29e9f0ba50a332804196c1d2"
+        }
+      ],
+      "restartedConsumer": 2140.4732000000076,
+      "retainedBytes": 42473107,
+      "reused": [
+        {
+          "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+          "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+        },
+        {
+          "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+          "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+        }
+      ],
+      "reusedArtifacts": 310,
+      "sampling": {
+        "seconds": 0.11500900005921721,
+        "tileBytesRead": 112921,
+        "uniqueTileBytes": 112921
+      },
+      "statuses": [
+        {
+          "assessment": {
+            "baseline": {
+              "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+              "hierarchy": {
+                "id": "tryfan-second-region-proof",
+                "revision": "1"
+              }
+            },
+            "policy": "current-applicable-terrain-v1",
+            "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+            "reason": "Current explicit hierarchy policy selects another applicable representation; stale is not false",
+            "result": {
+              "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+              "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839"
+            },
+            "selectedFamily": "welsh-regional",
+            "status": "stale"
+          },
+          "probe": "summit",
+          "property": "slope",
+          "ref": {
+            "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+            "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839"
+          }
+        },
+        {
+          "assessment": {
+            "baseline": {
+              "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+              "hierarchy": {
+                "id": "tryfan-second-region-proof",
+                "revision": "1"
+              }
+            },
+            "policy": "current-applicable-terrain-v1",
+            "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+            "reason": "Transitive slope assessment: Current explicit hierarchy policy selects another applicable representation; stale is not false",
+            "result": {
+              "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+              "revision": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527"
+            },
+            "selectedFamily": "welsh-regional",
+            "status": "stale"
+          },
+          "probe": "summit",
+          "property": "area-ratio",
+          "ref": {
+            "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+            "revision": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527"
+          }
+        },
+        {
+          "assessment": {
+            "baseline": {
+              "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+              "hierarchy": {
+                "id": "tryfan-second-region-proof",
+                "revision": "1"
+              }
+            },
+            "policy": "current-applicable-terrain-v1",
+            "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+            "reason": "Selected representation still applies; no intersecting relevant input changes",
+            "result": {
+              "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+              "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+            },
+            "selectedFamily": "production-common",
+            "status": "fresh"
+          },
+          "probe": "southern-observer",
+          "property": "slope",
+          "ref": {
+            "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+            "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+          }
+        },
+        {
+          "assessment": {
+            "baseline": {
+              "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+              "hierarchy": {
+                "id": "tryfan-second-region-proof",
+                "revision": "1"
+              }
+            },
+            "policy": "current-applicable-terrain-v1",
+            "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+            "reason": "Transitive slope assessment: Selected representation still applies; no intersecting relevant input changes",
+            "result": {
+              "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+              "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+            },
+            "selectedFamily": "production-common",
+            "status": "fresh"
+          },
+          "probe": "southern-observer",
+          "property": "area-ratio",
+          "ref": {
+            "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+            "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+          }
+        }
+      ],
+      "validationMilliseconds": 650.729
+    },
+    "racing": [
+      {
+        "family": "production-common",
+        "generation": "fc916b06ba582735f1fae26eba51a0d66603e00e1734d536ba579e97ec5a86e6",
+        "nrwCode": null,
+        "nrwStatus": "excluded-by-context",
+        "pinned": "fc916b06ba582735f1fae26eba51a0d66603e00e1734d536ba579e97ec5a86e6",
+        "slope": 11.837956999552308
+      },
+      {
+        "family": "production-common",
+        "generation": "fc916b06ba582735f1fae26eba51a0d66603e00e1734d536ba579e97ec5a86e6",
+        "nrwCode": null,
+        "nrwStatus": "excluded-by-context",
+        "pinned": "fc916b06ba582735f1fae26eba51a0d66603e00e1734d536ba579e97ec5a86e6",
+        "slope": 11.837956999552308
+      },
+      {
+        "family": "production-common",
+        "generation": "fc916b06ba582735f1fae26eba51a0d66603e00e1734d536ba579e97ec5a86e6",
+        "nrwCode": null,
+        "nrwStatus": "excluded-by-context",
+        "pinned": "fc916b06ba582735f1fae26eba51a0d66603e00e1734d536ba579e97ec5a86e6",
+        "slope": 11.837956999552308
+      },
+      {
+        "family": "production-common",
+        "generation": "fc916b06ba582735f1fae26eba51a0d66603e00e1734d536ba579e97ec5a86e6",
+        "nrwCode": null,
+        "nrwStatus": "excluded-by-context",
+        "pinned": "fc916b06ba582735f1fae26eba51a0d66603e00e1734d536ba579e97ec5a86e6",
+        "slope": 11.837956999552308
+      },
+      {
+        "family": "welsh-regional",
+        "generation": "071c9c80a93e7594d7d00cb7c6c94c12f36c8494891c8c1ca14f86fad756ee93",
+        "nrwCode": "D.1.1",
+        "nrwStatus": "available",
+        "pinned": "fc916b06ba582735f1fae26eba51a0d66603e00e1734d536ba579e97ec5a86e6",
+        "slope": 32.918524028483965
+      }
+    ],
+    "responseBytes": 446238,
+    "responseSha256": "240db48efc4ec8a76b8a75e1acfd80ab196d94fbcc930c9bf564139da723bf1a"
+  },
+  "assessment": "atlas-tryfan-pilot-s5/v1",
+  "bytes": {
+    "catalogue": 324627,
+    "generation": 1241281,
+    "serving": 118679,
+    "understanding": 104433
+  },
+  "currentGeneration": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+  "decision": "C - S5 SUCCESS",
+  "initialMatrixBytesSha256": "4a185f40d22a25ddf10c3dfe2b806152cc375d3b7880387add2909e5f999781d",
+  "limitations": [
+    "Single writer/local filesystem/process interruption only",
+    "Whole-metadata writes despite selective computation",
+    "No S6/full pilot acceptance",
+    "No production/public/Weather/Traverse integration"
+  ],
+  "logical": {
+    "U1": "0c488cd12208ba31e9f7c76c59e215924fa09460bfafd0cc30835abedbee1426",
+    "U2": "535e9a5e154b7d21d0e46c35756c6b5b357a63d3d0c3bc0b318387d1748b7202",
+    "replay": [
+      {
+        "exact": true,
+        "ref": {
+          "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+          "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839"
+        }
+      },
+      {
+        "exact": true,
+        "ref": {
+          "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+          "revision": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527"
+        }
+      },
+      {
+        "exact": true,
+        "ref": {
+          "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+          "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+        }
+      },
+      {
+        "exact": true,
+        "ref": {
+          "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+          "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+        }
+      },
+      {
+        "exact": true,
+        "ref": {
+          "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+          "revision": "4f4d6ae182d3821d1a002c855d8b886112c0aea0e13af2023b10d5294f70ef93"
+        }
+      },
+      {
+        "exact": true,
+        "ref": {
+          "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+          "revision": "dbc1746d41c191d251628d3409d5db3bf4064c8c29e9f0ba50a332804196c1d2"
+        }
+      }
+    ],
+    "sourceVerification": {
+      "artifacts": 310,
+      "bytes": 42473107
+    },
+    "startingGeneration": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431"
+  },
+  "logicalSha256": "f2e1d015f22ed2edbd208e1f1fd612b0a329ced7fbf38fc546038a1d07dd6289",
+  "matrixEncoding": "Canonical LF normalization; parsed prospective protocol unchanged",
+  "matrixSemanticSha256": "0c926d646aafcaade59d77b6a283ea5af0b9b20dbae5717b9e76111a7cfd397b",
+  "matrixSha256": "9e7cfe6312e85bdbf4d7ba57b09aaf9d76ee00c81e60200cfb2239790e1b261a",
+  "parent": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+  "provenance": "Applicability only; no new source release, source bytes/native claims unchanged; original method and exact scopes retained.",
+  "startingCheckpoint": "f8d3ce98d01f1596a6a2ee9f3041bb721fbbde8f"
+}

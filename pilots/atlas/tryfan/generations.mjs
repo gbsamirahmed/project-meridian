@@ -5,6 +5,7 @@ import { randomUUID } from 'node:crypto';
 import { performance } from 'node:perf_hooks';
 import { validateDelivery,verifyDelivery } from './delivery-schema.mjs';
 import { validateDependencies } from './dependencies.mjs';
+import { validateUpdate,validateTransition } from './update-schema.mjs';
 import { FORMAT, PilotError, requireThat, fields, encode, sha, json } from './identity.mjs';
 import { canonicalCatalogue, validateCatalogue, verifyArtifacts, DATA, ROOT } from './catalogue.mjs';
 export const STORE = resolve(DATA,'experiments/atlas/tryfan-regional-pilot-v1');
@@ -31,20 +32,21 @@ function writeImmutable(file,body) {
 function idCheck(id) {requireThat(typeof id==='string' && hashPattern.test(id),'invalid-generation-id','Invalid generation address');}
 function opCheck(id) {requireThat(typeof id==='string' && /^[a-f0-9-]{36}$/.test(id),'invalid-operation','Invalid operation address');}
 export function validateGeneration(value) {
-  fields(value,['format','semanticContract','capabilities','core','parent','catalogue'],['understanding','knowledge','serving']);
+  fields(value,['format','semanticContract','capabilities','core','parent','catalogue'],['understanding','knowledge','serving','update']);
   requireThat(value.format===FORMAT,'unknown-generation-schema','Unsupported generation schema');
   requireThat(value.semanticContract==='atlas-semantic-evidence/v1','contract-invalid','Unexpected frozen contract version');
   fields(value.capabilities,['registration','queries','derivations','serving','mixedFamilyUpdate']);
-  requireThat(value.capabilities.registration===true && value.capabilities.serving===!!value.serving && (!value.serving || !!value.understanding) && value.capabilities.mixedFamilyUpdate===false &&
+  requireThat(value.capabilities.registration===true && value.capabilities.serving===!!value.serving && (!value.serving || !!value.understanding) && value.capabilities.mixedFamilyUpdate===(value.update?.phase==='applied') &&
     value.capabilities.queries===!!value.understanding && value.capabilities.derivations===!!value.understanding, 'unsupported-capability','Only registration or complete S3 baseline capabilities');
   validateCatalogue(value.catalogue);
   if(value.serving)validateDelivery(value.serving,value.catalogue);
   if(value.understanding) {
-    requireThat(value.understanding.stage==='common','unsupported-capability','S3 publishes baseline only; live applicability updates remain deferred');
+    requireThat(value.understanding.stage===(value.update?.phase==='applied'?'regional':'common'),'unsupported-capability','Applicability requires complete bounded S5 receipt');
     validateDependencies(value.understanding,value.catalogue);
     requireThat(value.knowledge?.contract==='atlas-semantic-evidence/v1' && sha(encode(value.knowledge))==='9bbaa0c10db1a1f03810ef3a4e708eca09e25a94c9a8474f07ab944e162438a5','required-state-unavailable','Exact retained native knowledge closure required');
-    requireThat(sha(encode(value.understanding.terrain))==='4ee2af71dbf6978b11b4b8249d25fae83862209d113349a1f66e4a8cd36c4fdd','invalid-hierarchy','Exact common G0 applicability required');
-  } else requireThat(!value.knowledge,'unsupported-capability','Registration seed cannot advertise incomplete knowledge');
+    if(!value.update)requireThat(sha(encode(value.understanding.terrain))==='4ee2af71dbf6978b11b4b8249d25fae83862209d113349a1f66e4a8cd36c4fdd','invalid-hierarchy','Exact common G0 applicability required');
+    validateUpdate(value);
+  } else requireThat(!value.update && !value.knowledge,'unsupported-capability','Registration seed cannot advertise incomplete knowledge');
   fields(value.core,['crs','bounds','boundary']);
   requireThat(value.core.crs==='EPSG:27700' && encode(value.core.bounds)===encode([264900,357800,267900,360800]) &&
     typeof value.core.boundary==='string' && value.core.boundary.length,'invalid-scope','Core support differs from bounded pilot');
@@ -92,8 +94,18 @@ function withWriter(dir,callback) {
   const operation=randomUUID(),lock=join(store,'writer.lock');
   try {writeDurable(lock,encode({pid:process.pid,operation}));}
   catch(error) {if(error.code==='EEXIST')throw new PilotError('writer-locked','One writer already owns this store; explicit dead-owner recovery required');throw error;}
-  try {return callback(store,operation);}
-  finally {if(existsSync(lock)) {const owner=json(lock);requireThat(owner.operation===operation,'lock-conflict','Writer ownership changed');unlinkSync(lock);}}
+  function release() {
+    if(existsSync(lock)) {
+      const owner=json(lock);requireThat(owner.operation===operation,'lock-conflict','Writer ownership changed');unlinkSync(lock);
+    }
+  }
+  // S5 holds the same exclusive lock across asynchronous finite assembly.
+  // Existing synchronous S1 callers retain their synchronous return/error semantics.
+  try {
+    const result=callback(store,operation);
+    if(result && typeof result.then==='function')return result.finally(release);
+    release();return result;
+  } catch(error) {release();throw error;}
 }
 export function recoverLock(dir,operation) {
   const lock=join(storePath(dir),'writer.lock'),owner=json(lock,'invalid-lock');opCheck(operation);
@@ -116,7 +128,7 @@ function publishCandidate(store,path,{dataRoot=DATA,...options}={}) {
   validateGeneration(value);if(value.serving)verifyDelivery(store,value.serving);const verification=verifyArtifacts(value.catalogue,locators,dataRoot);
   const existing=existsSync(join(store,'current.json'))?currentId(store):null;
   requireThat(value.parent===existing,'publication-conflict','Candidate parent is not the currently published generation');
-  if(existing) load(store,{generation:existing,dataRoot});
+  if(existing) {const previous=load(store,{generation:existing,dataRoot});validateTransition(value,previous.value);}
   const validationMilliseconds=performance.now()-validationStart;
   interrupt('after-validation',options);
   const body=encode(canonicalGeneration(value)),id=sha(body);
@@ -153,5 +165,21 @@ export function rollback(dir,generation,{dataRoot=DATA}={}) {
     load(store,{generation,dataRoot});
     const temp=join(store,'current-'+randomUUID()+'.pending');writeDurable(temp,encode({format:FORMAT,generation}));renameSync(temp,join(store,'current.json'));
     return {generation,rollback:true};
+  });
+}
+
+// Finite S5 construction inside the existing publication lock, not a job scheduler.
+export function assembleAndRegister(dir,builder,{dataRoot=DATA,...options}={}) {
+  return withWriter(dir,async(store,operation)=>{
+    const snapshot=load(store,{dataRoot}),path=join(store,'staging',operation);
+    mkdirSync(path,{recursive:true});
+    const checkpoint=(name,state)=>{
+      requireThat(['after-artifacts','after-evidence','after-recompute'].includes(name),'invalid-operation','Unknown assembly checkpoint');
+      writeDurable(join(path,name+'.json'),encode(state));interrupt(name,options);
+    };
+    const built=await builder(snapshot,checkpoint);
+    if(built.alreadyPublished)return built;
+    staged(store,operation,built.value,built.locators);
+    return {operation,...publishCandidate(store,path,{dataRoot,...options}),buildMetrics:built.metrics};
   });
 }

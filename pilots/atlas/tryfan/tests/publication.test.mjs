@@ -1,0 +1,36 @@
+import test,{before,after} from 'node:test';
+import assert from 'node:assert/strict';
+import { mkdtempSync,rmSync,existsSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join,resolve,sep } from 'node:path';
+import { forkBaseline,prepareMixedBaseline,publishUpdate,inheritedS4 } from '../updates.mjs';
+import { load,STORE,currentId,register,validateGeneration,assembleAndRegister } from '../generations.mjs';
+import { methods } from '../derivations.mjs';
+import { openEvidence } from '../query.mjs';
+import { openWorld } from '../world.mjs';
+import { exercise,service } from './publication-harness.mjs';
+let dir,stores={},observations={},m;
+before(async()=>{dir=mkdtempSync(join(tmpdir(),'meridian-s5-'));m=await methods();for(const id of ['U1','U2']){const s=join(dir,id);forkBaseline(s);stores[id]=s;}prepareMixedBaseline({store:stores.U2});});
+after(async()=>{await m?.close();assert.ok(resolve(dir).startsWith(resolve(tmpdir())+sep));rmSync(dir,{recursive:true,force:true});});
+test('U1 real abrupt exits, selective publication, isolated old/new consumers',async()=>{observations.U1=await exercise(stores.U1,'U1');});
+test('U2 independent terrain plus vector applicability transaction and abrupt exits',async()=>{observations.U2=await exercise(stores.U2,'U2');});
+test('S3 freshness identifies exactly summit pair and transitive ratio',()=>{for(const x of Object.values(observations)){assert.deepEqual(x.logical.statuses.map(s=>[s.probe,s.property,s.assessment.status]),[['summit','slope','stale'],['summit','area-ratio','stale'],['southern-observer','slope','fresh'],['southern-observer','area-ratio','fresh']]);}});
+test('only summit records appended; unchanged native state and southern lineage',()=>{const a=load(stores.U1),b=load(stores.U2),base=inheritedS4();assert.deepEqual(a.value.understanding,b.value.understanding);assert.deepEqual(a.value.knowledge,base.value.knowledge);assert.deepEqual(a.value.catalogue,base.value.catalogue);assert.deepEqual(a.value.understanding.results.slice(0,4),base.value.understanding.results);});
+test('all six historical/current records replay from exact pixels and method',()=>{for(const id of ['U1','U2']){const s=load(stores[id]),r=m.replay(s.value.understanding,s.value.catalogue,s.locators);assert.equal(r.checks.length,6);assert.ok(r.checks.every(c=>c.exact));}});
+test('retained historical slope explicit context remains replayable',async()=>{const s=load(stores.U1),old=s.value.understanding.results[0],w=await openWorld({store:stores.U1});try{const r=await w.query({property:'historical-derived',place:{crs:'EPSG:27700',point:[266405,359387]},resultRef:{id:old.claim.id,revision:old.claim.revision}});assert.equal(r.freshness.status,'stale');assert.equal(r.answers[0].replayAssessment.status,'fresh');assert.equal(r.answers[0].result.claim.result.value.value,11.837956999552308);}finally{await w.close();}});
+test('independent assembly from same baseline gives identical U1 generation',async()=>{const s=join(dir,'deterministic');forkBaseline(s);const r=await publishUpdate({store:s});assert.equal(r.generation,currentId(stores.U1));});
+test('incomplete result closure fails before any root switch',()=>{const s=load(stores.U1),bad=structuredClone(s.value);bad.parent=s.generation;bad.understanding.results.pop();assert.throws(()=>register(stores.U1,bad,s.locators));assert.equal(currentId(stores.U1),s.generation);});
+test('tampered reuse/family receipt rejected',()=>{const s=load(stores.U1),bad=structuredClone(s.value);bad.update.reused=[];assert.throws(()=>validateGeneration(bad),e=>e.code==='invalid-update');bad.update.reused=s.value.update.reused;bad.update.changed.push('WorldCover');assert.throws(()=>validateGeneration(bad),e=>e.code==='invalid-update');});
+test('cannot silently replace native knowledge or catalogue during applicability update',()=>{const s=join(dir,'bad-native');forkBaseline(s);const base=load(s),valid=structuredClone(load(stores.U1).value);valid.parent=base.generation;valid.update.from=base.generation;valid.catalogue.families[0].qualification='wrong';assert.throws(()=>register(s,valid,base.locators));assert.equal(currentId(s),base.generation);});
+test('unimplemented update type and interruption fail explicitly',async()=>{assert.throws(()=>publishUpdate({store:stores.U1,scenario:'U3'}),e=>e.code==='invalid-update');assert.throws(()=>publishUpdate({store:stores.U1,failAt:'typo'}),e=>e.code==='invalid-operation');});
+test('U2 withheld is explicit registration context, not inventory absence',async()=>{const s=load(stores.U2),historical=load(stores.U2,{generation:s.value.parent}),e=await openEvidence({store:stores.U2,generation:historical.generation});try{const nrw=await e.query({point:[266405,359387],property:'nrw-native'});assert.equal(nrw.operationalStatus,'excluded-by-context');assert.equal(nrw.records[0].operationalStatus,'excluded-by-context');assert.match(nrw.records[0].result.explanation,/registered/);const wc=await e.query({point:[266405,359387],property:'worldcover-native'});assert.equal(wc.records[0].cell.code,30);}finally{e.close();}});
+test('withheld vector display cannot silently bypass eligibility',async()=>{const s=load(stores.U2),old=load(stores.U2,{generation:s.value.parent}),v=await service(stores.U2);try{const manifest=await(await fetch(v.url+'/pilot/v1/g/'+old.generation+'/manifest')).json();assert.equal(manifest.layers.nrw.applicability,'withheld');const asset=manifest.assets.find(a=>a.family==='nrw');assert.equal((await fetch(v.url+asset.url)).status,503);}finally{await v.close();}});
+test('published and staged states retain native source hashes and immutable history',()=>{for(const id of ['U1','U2']){const s=load(stores[id]);assert.deepEqual(s.verification,{artifacts:310,bytes:42473107});assert.equal(s.value.understanding.basis.methodRevision,'7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9');assert.equal(s.value.capabilities.mixedFamilyUpdate,true);for(const f of observations[id].failures)assert.ok(existsSync(join(stores[id],'staging',f.operation)));}});
+
+test('async assembly retains the single-writer lock until completion',async()=>{
+ const store=join(dir,'locked');forkBaseline(store);let release,entered;
+ const waiting=new Promise(r=>{entered=r;}),barrier=new Promise(r=>{release=r;});
+ const assembly=assembleAndRegister(store,async s=>{entered();await barrier;return {alreadyPublished:true,generation:s.generation};});
+ await waiting;const s=load(store);assert.throws(()=>register(store,{...s.value,parent:s.generation},s.locators),e=>e.code==='writer-locked');release();await assembly;
+ assert.equal(currentId(store),s.generation);
+});

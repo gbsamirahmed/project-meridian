@@ -107,6 +107,9 @@ export async function openEvidence({store=STORE,generation,dataRoot=DATA,locator
           records.push({family:f,operationalStatus:assets.some(a=>a.status==='unavailable')?'unavailable':'available',metadata:meta,provenance,
             qualification:'Metadata only: source/prepared/display distinction. No appearance correction, current physical colour or physical relighting assertion.'});continue;
         }
+        if(f==='nrw' && snapshot.value.update?.phase==='withheld') {
+          records.push({family:f,operationalStatus:'excluded-by-context',result:gap('unsupported','Controlled U2 applicability withheld; native inventory remains registered, not absent or revised.'),provenance});continue;
+        }
         if(descriptors[f].status==='unavailable'){records.push({family:f,operationalStatus:'unavailable',reason:'artifact-unavailable',provenance});continue;}
         if(time && (f==='worldcover'?time!=='2021':true)){records.push({family:f,result:gap('unsupported',f==='worldcover'?'Annual2021 classification cannot answer other/current epoch.':'Exact native feature survey/validity time is unknown; no requested-time assertion.'),provenance});continue;}
         if(f==='worldcover') {
@@ -130,7 +133,7 @@ export async function openEvidence({store=STORE,generation,dataRoot=DATA,locator
           }
         }
       }
-      return {...base,records,operationalStatus:records.length && records.every(r=>r.operationalStatus==='unavailable')?'unavailable':'available',
+      return {...base,records,operationalStatus:records.length && records.every(r=>r.operationalStatus==='excluded-by-context')?'excluded-by-context':records.length && records.every(r=>r.operationalStatus==='unavailable')?'unavailable':'available',
         qualification:'Independent qualified evidence; no canonical cover value, ranking, simultaneity or current-state inference.'};
     }
     return {generation:snapshot.generation,parent:snapshot.value.parent,query:async request=>structuredClone(await query(request)),close:release,

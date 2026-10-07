@@ -21,8 +21,8 @@ function processLines(file,args) {
 }
 function cloneStore(target) {
  for(const folder of ['generations','locators','artifacts'])mkdirSync(join(target,folder),{recursive:true});
- let s=load(STORE,{verify:false});for(;;){writeFileSync(join(target,'generations',s.generation+'.json'),encode(s.value));writeFileSync(join(target,'locators',s.generation+'.json'),encode(s.locators));if(!s.value.parent)break;s=load(STORE,{generation:s.value.parent,verify:false});}
- writeFileSync(join(target,'current.json'),readFileSync(join(STORE,'current.json')));
+ let s=load(STORE,{verify:false});while(s.value.update)s=load(STORE,{generation:s.value.parent,verify:false});const selected=s.generation;for(;;){writeFileSync(join(target,'generations',s.generation+'.json'),encode(s.value));writeFileSync(join(target,'locators',s.generation+'.json'),encode(s.locators));if(!s.value.parent)break;s=load(STORE,{generation:s.value.parent,verify:false});}
+ writeFileSync(join(target,'current.json'),encode({format:'atlas-tryfan-pilot-store/v1',generation:selected}));
  for(const file of readdirSync(join(STORE,'artifacts')))writeFileSync(join(target,'artifacts',file),readFileSync(join(STORE,'artifacts',file)));
 }
 async function http(path,body){const r=await fetch(url+path,body===undefined?{}:{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});return {status:r.status,value:await r.json(),headers:r.headers};}
