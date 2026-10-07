@@ -46,5 +46,5 @@ export async function openWorld(options={}) {
   const response=await native.query({point,crs:place.crs,property,time,...(evidence?{family:evidence}:{}) ,...(place.bounds?{support:place.bounds}:{})});
   return {...base,status:response.operationalStatus,answers:[response],provenanceRefs:response.records.map(r=>r.provenance),...(response.result?{result:response.result}:{})};
  }
- return {generation:snapshot.generation,query:async r=>structuredClone(await query(r)),inspect:()=>derived.inspect(),replay:r=>derived.replay(r),close:async()=>{native.close();await derived.close();},metrics:{...derived.metrics,nativeInitializationMilliseconds:native.metrics.readerInitializationMilliseconds}};
+ return {generation:snapshot.generation,query:async r=>structuredClone(await query(r)),inspect:()=>derived.inspect(),assess:options=>derived.assess(options),replay:r=>derived.replay(r),close:async()=>{native.close();await derived.close();},metrics:{...derived.metrics,nativeInitializationMilliseconds:native.metrics.readerInitializationMilliseconds}};
 }

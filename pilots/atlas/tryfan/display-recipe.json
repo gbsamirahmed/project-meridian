@@ -1,0 +1,102 @@
+{
+  "appearance": {
+    "bounds": [
+      264900,
+      357800,
+      267900,
+      360800
+    ],
+    "crs": "EPSG:27700",
+    "display": "Exact retained Lab010 PNG, fixed recipe unchanged"
+  },
+  "nrw": {
+    "export": "CRS84 GeoJSON193 records with native BNG geometry/support reference preserved",
+    "geometry": "No clipping or repair; display transform only"
+  },
+  "purpose": "Display only; original native assignments and geometry survive; no correction",
+  "schema": "atlas-tryfan-display/v1",
+  "views": {
+    "full": [
+      264900,
+      357800,
+      267900,
+      360800
+    ],
+    "north": [
+      266200,
+      360250,
+      266600,
+      360650
+    ],
+    "size": [
+      960,
+      720
+    ],
+    "southern": [
+      265676.05347833806,
+      358139.7631202109,
+      266076.05347833806,
+      358539.7631202109
+    ],
+    "summit": [
+      266205,
+      359187,
+      266605,
+      359587
+    ]
+  },
+  "worldcover": {
+    "palette": {
+      "0": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "10": [
+        0,
+        100,
+        0,
+        255
+      ],
+      "100": [
+        250,
+        230,
+        160,
+        255
+      ],
+      "20": [
+        255,
+        187,
+        34,
+        255
+      ],
+      "30": [
+        255,
+        255,
+        76,
+        255
+      ],
+      "50": [
+        250,
+        0,
+        0,
+        255
+      ],
+      "60": [
+        180,
+        180,
+        180,
+        255
+      ],
+      "80": [
+        0,
+        100,
+        200,
+        255
+      ]
+    },
+    "sampling": "nearest; native334x554 grid, never corner-stretched onto BNG",
+    "supportAlpha": "255 for native cell centres inside half-open BNG core, otherwise0"
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "schema": "atlas-tryfan-s4-scenarios/v1",
+  "basis": "7809147; prospectively frozen before evaluation",
+  "publication": "Same retained evidence successor via real S1 writer; no U1/U2 scientific update",
+  "scenarios": [
+    {
+      "id": "H01",
+      "requirement": "pin current"
+    },
+    {
+      "id": "H02",
+      "requirement": "serve WorldCover native30 and support counts"
+    },
+    {
+      "id": "H03",
+      "requirement": "serve NRW486832"
+    },
+    {
+      "id": "H04",
+      "requirement": "coexisting independent native claims"
+    },
+    {
+      "id": "H05",
+      "requirement": "retained slope and ratio with freshness"
+    },
+    {
+      "id": "H06",
+      "requirement": "generation in each envelope"
+    },
+    {
+      "id": "H07",
+      "requirement": "repeat pinned request"
+    },
+    {
+      "id": "H08",
+      "requirement": "real S1 publication during consumer operation"
+    },
+    {
+      "id": "H09",
+      "requirement": "old context remains G1"
+    },
+    {
+      "id": "H10",
+      "requirement": "new context sees G2"
+    },
+    {
+      "id": "H11",
+      "requirement": "combined answers all one generation"
+    },
+    {
+      "id": "H12",
+      "requirement": "explicit historical pin"
+    },
+    {
+      "id": "H13",
+      "requirement": "unknown/unpublished generation404"
+    },
+    {
+      "id": "H14",
+      "requirement": "unsupported property qualified200"
+    },
+    {
+      "id": "H15",
+      "requirement": "unavailable503 vs nodata qualified gap"
+    },
+    {
+      "id": "H16",
+      "requirement": "method-relative stale result, no recomputation"
+    },
+    {
+      "id": "H17",
+      "requirement": "fresh HTTP service process"
+    },
+    {
+      "id": "H18",
+      "requirement": "isolated fresh consumer process"
+    },
+    {
+      "id": "H19",
+      "requirement": "deterministic repeated response"
+    },
+    {
+      "id": "H20",
+      "requirement": "exact terrain PNG and missingz13"
+    },
+    {
+      "id": "H21",
+      "requirement": "rights/provenance without storage paths"
+    },
+    {
+      "id": "H22",
+      "requirement": "fixed full/400m display QA"
+    },
+    {
+      "id": "H23",
+      "requirement": "hash corruption fails before delivery"
+    },
+    {
+      "id": "H24",
+      "requirement": "bounded body/worker queue"
+    }
+  ]
+}

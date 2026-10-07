@@ -1,0 +1,28 @@
+// Measurements are operational observations, never generation identity or an SLA.
+import { fork,spawnSync } from 'node:child_process';
+import { readFileSync,writeFileSync } from 'node:fs';
+import { join,resolve } from 'node:path';
+import { performance } from 'node:perf_hooks';
+import { load,STORE } from './generations.mjs';
+import { ROOT,verifyArtifacts,DATA } from './catalogue.mjs';
+import { encode,sha,requireThat } from './identity.mjs';
+const file=resolve(ROOT,'docs/research/tryfan-pilot-s4-results.json'),snapshot=load(STORE),fresh=[];
+function next(child){return new Promise((r,j)=>{const t=setTimeout(()=>j(new Error('Service timeout')),30000);child.once('message',v=>{clearTimeout(t);r(v);});child.once('error',j);});}
+async function service(){const child=fork(join(import.meta.dirname,'tests/service-process.mjs'),['{}'],{silent:true});child.stderr.on('data',()=>{});const ready=await next(child);return {child,...ready,stop:async()=>{const n=next(child);child.send('stop');return n;}};}
+function stats(samples){const sorted=[...samples].sort((a,b)=>a-b);return {samples,median:sorted[Math.floor(sorted.length/2)],p95:sorted[Math.min(sorted.length-1,Math.ceil(sorted.length*.95)-1)]};}
+for(let i=0;i<5;i++){
+ const t=performance.now(),s=await service();const p=spawnSync(process.execPath,[join(import.meta.dirname,'client/http-consumer.mjs'),s.url],{encoding:'utf8',timeout:30000,maxBuffer:4*1024*1024});requireThat(p.status===0,'consumer-failed',p.stderr);const result=JSON.parse(p.stdout);fresh.push({servingStartupMilliseconds:s.startup,processStartupAndConsumerMilliseconds:performance.now()-t,consumerBytes:Buffer.byteLength(p.stdout),answerSha256:sha(encode(result.answer)),generation:result.generation});await s.stop();
+}
+const s=await service(),root=s.url+'/pilot/v1/g/'+s.generation,point=[266405,359387],query=p=>({property:p,place:{crs:'EPSG:27700',point}});
+async function timed(path,body){const t=performance.now(),r=await fetch(root+path,body?{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}:{}),bytes=Buffer.from(await r.arrayBuffer());requireThat(r.ok,'request-failed',String(r.status));return {milliseconds:performance.now()-t,bytes:bytes.length,sha256:sha(bytes),value:path==='/query'?JSON.parse(bytes):null};}
+try {
+ const warm={};for(const p of ['worldcover-native','nrw-native','derived-slope','place-evidence']){const samples=[];let last;for(let i=0;i<20;i++){last=await timed('/query',query(p));samples.push(last.milliseconds);}warm[p]={...stats(samples),responseBytes:last.bytes,responseSha256:last.sha256};}
+ const manifest=await(await fetch(root+'/manifest')).json(),assets=[];for(const a of manifest.assets){const r=await timed('/assets/'+a.id);assets.push({family:a.family,bytes:r.bytes,sha256:r.sha256,milliseconds:r.milliseconds});}
+ const tile=manifest.terrain.find(t=>t.family==='terrain-common'&&t.tile.z===14),terrain=await timed(tile.url.slice(('/pilot/v1/g/'+s.generation).length));
+ const loads=[];for(const readers of [1,4]){const samples=[];let counter=0;const began=performance.now();await Promise.all(Array.from({length:readers},async()=>{while(counter<100){const i=counter++;const r=await timed('/query',query(i%2?'nrw-native':'worldcover-native'));samples.push(r.milliseconds);}}));loads.push({readers,requests:100,elapsedMilliseconds:performance.now()-began,...stats(samples),errors:0});}
+ const stopped=await s.stop(),qa=JSON.parse(readFileSync(join(STORE,'s4-qa/browser.json'),'utf8'));
+ const logical={generation:snapshot.generation,parent:snapshot.value.parent,catalogueSha256:sha(encode(snapshot.value.catalogue)),knowledgeSha256:sha(encode(snapshot.value.knowledge)),understandingSha256:sha(encode(snapshot.value.understanding)),serving:snapshot.value.serving,sourceVerification:verifyArtifacts(snapshot.value.catalogue,snapshot.locators,DATA),matrixSha256:sha(readFileSync(join(import.meta.dirname,'serving-matrix.json'))),recipeSha256:sha(readFileSync(join(import.meta.dirname,'display-recipe.json'))),responseHashes:Object.fromEntries(Object.entries(warm).map(([p,r])=>[p,r.responseSha256]))};
+ const receipt={schema:'atlas-tryfan-s4-measurements/v1',logical,logicalSha256:sha(encode(logical)),fresh,warm,assets,terrain:{bytes:terrain.bytes,sha256:terrain.sha256,milliseconds:terrain.milliseconds},controlledLoad:loads,service:stopped,qa,qaFigures:Object.fromEntries(['full','summit'].map(v=>{const p='docs/research/tryfan-pilot-s4-figures/'+v+'.jpg';return [p,{sha256:sha(readFileSync(resolve(ROOT,p))),bytes:readFileSync(resolve(ROOT,p)).length}];})),runtime:{node:process.version,platform:process.platform,python:'Retained Python3.12.6 environment',cache:'OS/read cache warm; no query or byte cache; integrity verified on every read',memoryScope:'Node process including reused Vite functions; excludes Python RSS'},limits:'100 requests total per1/4-reader workload. S4 observations, not complete S6 workload acceptance or production capacity.'};
+ if(process.argv.includes('--check')){const old=JSON.parse(readFileSync(file,'utf8'));requireThat(old.logicalSha256===receipt.logicalSha256,'reproduction-mismatch','Independent transfer/query/source logical receipt differs');console.log(encode({deterministic:true,logicalSha256:receipt.logicalSha256}));}
+ else{writeFileSync(file,encode(receipt));console.log(encode({logicalSha256:receipt.logicalSha256,fresh:fresh.map(r=>r.processStartupAndConsumerMilliseconds),warm:Object.fromEntries(Object.entries(warm).map(([p,r])=>[p,r.median])),controlledLoad:loads.map(l=>({readers:l.readers,median:l.median,p95:l.p95})),memory:stopped.memory}));}
+}catch(e){s.child.kill();throw e;}

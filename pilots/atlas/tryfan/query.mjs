@@ -11,7 +11,7 @@ import { nativeSemantics, instantiate, qualified } from './semantic.mjs';
 const PYTHON=resolve(DATA,'earth-lab/.venv/Scripts/python.exe');
 const PROPERTIES=['worldcover-native','worldcover-common','worldcover-support','nrw-native','coexisting-semantic','appearance','current-cover','physical-appearance','geological-substrate','provenance'];
 const gap=(reason,explanation)=>({kind:'gap',reason,explanation});
-class Worker {
+export class NativeSession {
   constructor() {
     this.pending=[];this.closed=false;this.stderr='';
     this.child=spawn(PYTHON,[resolve(import.meta.dirname,'adapters/native.py')],{cwd:ROOT,stdio:['pipe','pipe','pipe'],
@@ -23,6 +23,7 @@ class Worker {
       catch(e){p.reject(e);}
     });
     const fail=e=>{this.closed=true;for(const p of this.pending.splice(0)){clearTimeout(p.timer);p.reject(e);}};
+    this.child.stdin.on('error',e=>fail(new PilotError('worker-unavailable',e.message)));
     this.child.on('error',e=>fail(new PilotError('worker-unavailable',e.message)));
     this.child.on('exit',code=>fail(new PilotError('worker-unavailable','Worker exited '+code+': '+this.stderr)));
   }
@@ -32,6 +33,12 @@ class Worker {
       const timer=setTimeout(()=>{this.child.kill();},30000);this.pending.push({resolve,reject,timer});
       this.child.stdin.write(JSON.stringify(value)+'\n');
     });
+  }
+  async initialize(value) {
+    const identity={...value,artifacts:Object.fromEntries(Object.entries(value.artifacts).map(([family,record])=>[family,Object.fromEntries(Object.entries(record).filter(([k])=>k!=='path'))]))};
+    const key=sha(encode(identity));
+    if(this.initializing){requireThat(this.key===key,'unsupported-representation','Shared worker requires identical registered native bytes/support');return this.initializing;}
+    this.key=key;this.initializing=this.call(value);return this.initializing;
   }
   close(){this.child.stdin.end();}
 }
@@ -46,7 +53,7 @@ function available(a,locators,dataRoot) {
     return {path,bytes:a.bytes,sha256:a.sha256,status:'available'};
   } catch(e) {if(e.code==='artifact-unavailable')return {status:'unavailable',reason:'artifact-unavailable',artifact:a.id};throw e;}
 }
-export async function openEvidence({store=STORE,generation,dataRoot=DATA,locators}={}) {
+export async function openEvidence({store=STORE,generation,dataRoot=DATA,locators,nativeSession}={}) {
   const start=performance.now();
   // Metadata/root integrity still mandatory; per-family verification permits honest unavailable
   // WC without declaring an otherwise valid NRW artifact absent. Never arbitrary data discovery.
@@ -57,9 +64,10 @@ export async function openEvidence({store=STORE,generation,dataRoot=DATA,locator
   const descriptors={worldcover:available(wc,snapshot.locators,dataRoot),nrw:available(nrw,snapshot.locators,dataRoot)};
   const receipts=JSON.parse(readFileSync(resolve(ROOT,'docs/atlas/semantic-comparison-sources.json'),'utf8'));
   const gridTransform=receipts.files.find(f=>f.file==='tryfan-worldcover.tif').subsetDefinition.windowTransform;
-  const worker=new Worker();
+  const worker=nativeSession??new NativeSession();
+  const release=()=>{if(!nativeSession)worker.close();};
   try {
-    const initialized=await worker.call({operation:'init',core:snapshot.value.core.bounds,artifacts:descriptors,gridTransform});
+    const initialized=await worker.initialize({operation:'init',core:snapshot.value.core.bounds,artifacts:descriptors,gridTransform});
     const semantics=await nativeSemantics(catalogue,initialized.metadata);
     if(snapshot.value.knowledge && initialized.metadata.families.worldcover.status==='available' && initialized.metadata.families.nrw.status==='available')
       requireThat(encode(snapshot.value.knowledge)===encode(semantics.state.bundle),'knowledge-drift','Published native knowledge differs from verified S2 reconstruction');
@@ -82,6 +90,7 @@ export async function openEvidence({store=STORE,generation,dataRoot=DATA,locator
       requireThat(!support || Array.isArray(support) && support.length===4 && support.every(Number.isFinite),'invalid-support','Ordered BNG support required');
       requireThat(property!=='worldcover-support' || support,'invalid-support','Support query requires explicit BNG rectangle');
       const base={schema:'atlas-tryfan-s2-answer/v1',generation:snapshot.generation,query:structuredClone(request),operationalStatus:'available',records:[]};
+      for(const [family,a] of [['worldcover',wc],['nrw',nrw]])if(descriptors[family].status==='available')requireThat(available(a,snapshot.locators,dataRoot).status==='available','artifact-unavailable','Registered native evidence disappeared');
       const raw=await worker.call({operation:'query',point,crs,...(support?{support}:{})});
       base.location={pointBNG:raw.pointBNG,pointCRS84:raw.pointCRS84,transform:initialized.metadata.transform};
       if(!raw.insideCore)return {...base,result:gap('outside-support','Outside admitted half-open pilot core; no physical absence asserted.')};
@@ -124,9 +133,9 @@ export async function openEvidence({store=STORE,generation,dataRoot=DATA,locator
       return {...base,records,operationalStatus:records.length && records.every(r=>r.operationalStatus==='unavailable')?'unavailable':'available',
         qualification:'Independent qualified evidence; no canonical cover value, ranking, simultaneity or current-state inference.'};
     }
-    return {generation:snapshot.generation,parent:snapshot.value.parent,query:async request=>structuredClone(await query(request)),close:()=>worker.close(),
+    return {generation:snapshot.generation,parent:snapshot.value.parent,query:async request=>structuredClone(await query(request)),close:release,
       metadata:structuredClone(initialized.metadata),semantics:structuredClone(semantics.state),metrics:{...initialized.metrics,readerInitializationMilliseconds:initMilliseconds},
       capabilities:{nativeQueries:true,derivedUnderstanding:false,serving:false},publishedCapabilities:snapshot.value.capabilities};
-  } catch(e){worker.close();throw e;}
+  } catch(e){release();throw e;}
 }
 export { encode };

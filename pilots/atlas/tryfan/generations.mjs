@@ -3,6 +3,7 @@ import { mkdirSync, readFileSync, openSync, closeSync, writeFileSync, fsyncSync,
 import { resolve, join } from 'node:path';
 import { randomUUID } from 'node:crypto';
 import { performance } from 'node:perf_hooks';
+import { validateDelivery,verifyDelivery } from './delivery-schema.mjs';
 import { validateDependencies } from './dependencies.mjs';
 import { FORMAT, PilotError, requireThat, fields, encode, sha, json } from './identity.mjs';
 import { canonicalCatalogue, validateCatalogue, verifyArtifacts, DATA, ROOT } from './catalogue.mjs';
@@ -30,13 +31,14 @@ function writeImmutable(file,body) {
 function idCheck(id) {requireThat(typeof id==='string' && hashPattern.test(id),'invalid-generation-id','Invalid generation address');}
 function opCheck(id) {requireThat(typeof id==='string' && /^[a-f0-9-]{36}$/.test(id),'invalid-operation','Invalid operation address');}
 export function validateGeneration(value) {
-  fields(value,['format','semanticContract','capabilities','core','parent','catalogue'],['understanding','knowledge']);
+  fields(value,['format','semanticContract','capabilities','core','parent','catalogue'],['understanding','knowledge','serving']);
   requireThat(value.format===FORMAT,'unknown-generation-schema','Unsupported generation schema');
   requireThat(value.semanticContract==='atlas-semantic-evidence/v1','contract-invalid','Unexpected frozen contract version');
   fields(value.capabilities,['registration','queries','derivations','serving','mixedFamilyUpdate']);
-  requireThat(value.capabilities.registration===true && value.capabilities.serving===false && value.capabilities.mixedFamilyUpdate===false &&
+  requireThat(value.capabilities.registration===true && value.capabilities.serving===!!value.serving && (!value.serving || !!value.understanding) && value.capabilities.mixedFamilyUpdate===false &&
     value.capabilities.queries===!!value.understanding && value.capabilities.derivations===!!value.understanding, 'unsupported-capability','Only registration or complete S3 baseline capabilities');
   validateCatalogue(value.catalogue);
+  if(value.serving)validateDelivery(value.serving,value.catalogue);
   if(value.understanding) {
     requireThat(value.understanding.stage==='common','unsupported-capability','S3 publishes baseline only; live applicability updates remain deferred');
     validateDependencies(value.understanding,value.catalogue);
@@ -81,6 +83,7 @@ export function load(dir,{generation,dataRoot=DATA,locators,verify=true}={}) {
   }
   let map=locators;
   if(!map) {try {map=json(join(store,'locators',id+'.json'),'invalid-locator');} catch {throw new PilotError('required-state-unavailable','Generation locator closure unavailable');}}
+  if(value.serving)verifyDelivery(store,value.serving);
   const verification=verify?verifyArtifacts(value.catalogue,map,dataRoot):{status:'not-verified'};
   return {generation:id,value,locators:map,verification,metrics:{loadMilliseconds:performance.now()-start,generationBytes:Buffer.byteLength(body)}};
 }
@@ -110,7 +113,7 @@ function staged(store,operation,value,locators) {
 function interrupt(point,options) { if(options.failAt===point) process.exit(91); }
 function publishCandidate(store,path,{dataRoot=DATA,...options}={}) {
   const validationStart=performance.now(),value=json(join(path,'candidate.json')),locators=json(join(path,'locators.json'));
-  validateGeneration(value);const verification=verifyArtifacts(value.catalogue,locators,dataRoot);
+  validateGeneration(value);if(value.serving)verifyDelivery(store,value.serving);const verification=verifyArtifacts(value.catalogue,locators,dataRoot);
   const existing=existsSync(join(store,'current.json'))?currentId(store):null;
   requireThat(value.parent===existing,'publication-conflict','Candidate parent is not the currently published generation');
   if(existing) load(store,{generation:existing,dataRoot});
@@ -130,7 +133,7 @@ function publishCandidate(store,path,{dataRoot=DATA,...options}={}) {
 export function stage(dir,value,locators,{dataRoot=DATA,...options}={}) {
   return withWriter(dir,(store,operation)=>{
     const path=staged(store,operation,value,locators);interrupt('after-staging',options);
-    validateGeneration(value);verifyArtifacts(value.catalogue,locators,dataRoot);
+    validateGeneration(value);if(value.serving)verifyDelivery(store,value.serving);verifyArtifacts(value.catalogue,locators,dataRoot);
     return {operation,generation:generationId(value),published:false};
   });
 }

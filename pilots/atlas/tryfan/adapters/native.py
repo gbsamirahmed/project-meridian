@@ -1,7 +1,7 @@
 """One bounded read-only JSON-lines worker. Paths come only from S1 catalogue locators.
 No discovery, acquisition, resampling, geometry repair or persistent query cache.
 """
-import hashlib, json, math, sys, time
+import hashlib, json, math, sys, time, base64, struct, zlib
 from bisect import bisect_right
 from pathlib import Path
 import numpy as np
@@ -85,6 +85,30 @@ class Reader:
         self.inverse.transform(-4,53); op=self.inverse.get_last_used_operation()
         out['transform']={'runtime':'pyproj '+proj_version,'operation':op.description,'accuracyM':op.accuracy,'axisOrder':'xy','qualification':'Declared operation accuracy is not local imagery/terrain registration accuracy; no network grid acquisition.'}
         self.initial=out;self.metrics={'initializationMilliseconds':(time.perf_counter()-start)*1000,'rasterArrayBytes':0 if self.values is None else int(self.values.nbytes+self.east.nbytes+self.north.nbytes),'bboxCoordinatesBytes':0 if self.features is None else len(self.features)*4*8,'nativeGeometryWkbBytes':0 if self.features is None else sum(len(g.wkb) for _,g in self.features)}
+    def display(self,q):
+        if self.values is None or self.features is None:raise NativeError('artifact-unavailable','Display requires registered native evidence')
+        palette=q['palette']; rgba=np.zeros((self.height,self.width,4),dtype=np.uint8)
+        for code in np.unique(self.values):rgba[self.values==code]=palette[str(int(code))]
+        w,s,e,n=self.core
+        rgba[:,:,3]=np.where((self.east>=w)&(self.east<e)&(self.north>=s)&(self.north<n),rgba[:,:,3],0)
+        def chunk(kind,data):return struct.pack('>I',len(data))+kind+data+struct.pack('>I',zlib.crc32(kind+data)&0xffffffff)
+        scan=b''.join(b'\x00'+row.tobytes() for row in rgba)
+        png=b'\x89PNG\r\n\x1a\n'+chunk(b'IHDR',struct.pack('>IIBBBBB',self.width,self.height,8,6,0,0,0))+chunk(b'IDAT',zlib.compress(scan,9))+chunk(b'IEND',b'')
+        def coordinates(c):
+            if isinstance(c[0],(int,float)):return list(self.forward.transform(*c))
+            return [coordinates(v) for v in c]
+        features=[]
+        for f,g in self.features:
+            features.append({'type':'Feature','id':str(f['properties']['objectid']),
+                'properties':{'native':f['properties'],'nativeSupport':{'crs':'EPSG:27700','geometry':f['geometry']}},
+                'geometry':{'type':f['geometry']['type'],'coordinates':coordinates(f['geometry']['coordinates'])}})
+        merc=Transformer.from_crs(27700,3857,always_xy=True)
+        probes=[]
+        for p in q['probes']:
+            x,y=merc.transform(*p['centre']); z=14; size=40075016.68557849;tx=(x+size/2)/size*2**z;ty=(size/2-y)/size*2**z
+            probes.append({'id':p['id'],'pointBNG':p['centre'],'pointCRS84':list(self.forward.transform(*p['centre'])),
+                'mercator':[x,y],'xyz':{'z':z,'x':math.floor(tx),'y':math.floor(ty),'pixel':[(tx%1)*256,(ty%1)*256]}})
+        return {'worldcoverPNG':base64.b64encode(png).decode('ascii'),'nrw':{'type':'FeatureCollection','features':features},'probes':probes}
     def query(self,q):
         x,y=q['point']; crs=q['crs']
         if crs=='OGC:CRS84':
@@ -118,6 +142,7 @@ def main():
                 if reader is not None:raise NativeError('invalid-request','Already initialized')
                 reader=Reader(request);value={'metadata':reader.initial,'metrics':reader.metrics}
             elif request['operation']=='query' and reader is not None:value=reader.query(request)
+            elif request['operation']=='display' and reader is not None:value=reader.display(request)
             else:raise NativeError('invalid-request','Unsupported worker operation')
             answer={'value':value}
         except Exception as e:answer={'error':{'code':getattr(e,'code','native-reader-error'),'message':str(e)}}

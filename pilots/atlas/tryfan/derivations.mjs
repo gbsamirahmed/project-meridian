@@ -20,6 +20,7 @@ export async function methods({dataRoot=DATA}={}) {
  const {selectTerrain}=await server.ssrLoadModule('/src/atlas/terrain/runtime/terrainSelector.ts');
  const {createTryfanTerrainProof}=await server.ssrLoadModule('/src/atlas/terrain/metadata/tryfanTerrainProof.ts');
  const {validateSemanticEvidence}=await server.ssrLoadModule('/scripts/atlas/semantic-evidence/validate.ts');
+ await server.close(); // Loaded frozen functions remain usable; no loader listener retained.
  const input=json(resolve(ROOT,'docs/research/tryfan-qualified-query-inputs.json')),old=json(resolve(ROOT,'docs/research/tryfan-qualified-query-results.json'));
  function terrain(stage) {
   requireThat(['common','regional'].includes(stage),'invalid-context','Unknown applicability stage');const r=createTryfanTerrainProof();const hierarchy=clone(r.hierarchy);

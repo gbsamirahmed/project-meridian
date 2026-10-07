@@ -99,12 +99,17 @@ computed freshness and pixel replay. Isolated Welsh-context recomputation adds o
 revisions and reuses southern results; no applicability update is published. Q21 composes six
 separate generation-pinned evidence contexts. Median baseline436.85ms/freshness10.00ms/fixture
 recomputation443.22ms; full metadata1.09MB ([observations](research/tryfan-pilot-s3-results.json)).
-No foundational deviation; no S4-S6 HTTP/client or actual mixed-family update implementation.
-Integrated serving and mixed-family scientific publication remain pilot exit tests. Production
-Atlas, Weather, Traverse, frozen contracts and retained evidence remain unchanged. Appearance
-remains unresolved/non-blocking and Swiss multiview parked; no final production stack.
-Exactly one next task: **Tryfan pilot generation-pinned serving and isolated consumer - S4 only**,
-not begun; [scope/stop](research/tryfan-pilot-s3.md#31-exactly-one-next-bounded-task).
+The [S4 serving/isolated consumer](research/tryfan-pilot-s4.md) is **C - S4 SUCCESS**:
+read-only generation-pinned loopback HTTP, native/derived answers, exact retained artifacts,
+provenance/rights and isolated Canvas2D consumer. A separate writer publishes a same-evidence
+successor while the old consumer stays G1 and a new consumer sees G2. No scientific update.
+Warm query medians213-305ms; fresh service+consumer about3.46s; generation1.21MB
+([measurements](research/tryfan-pilot-s4-results.json)). Port4191 replaces Fetch-blocked4190;
+this is a reversible pilot detail. Production Atlas, Weather, Traverse and frozen contracts
+remain unchanged. Appearance remains unresolved/non-blocking and Swiss multiview parked.
+Mixed-family scientific publication/S6 exit remain outstanding. Exactly one next task:
+**Tryfan pilot scoped and mixed-family publication with interruption - S5 only**, not begun;
+[scope/stop](research/tryfan-pilot-s4.md#26-exactly-one-next-bounded-task).
 A6-A11/A14 remain unresolved separately; Swiss pixels remain parked.
 Historical analytical filter/calibration
 suggestions are separate from closed visual-terrain research. No Weather/Traverse redesign follows.
