@@ -1,0 +1,185 @@
+{
+  "authoritativeHashes": {
+    "docs/research/atlas-generation-scaling-decisions.json": "942d08c82ba7e454a9968db79a9f9757508bc4a463d5b41900891e57dfa8a0d3",
+    "docs/research/atlas-generation-scaling-results.json": "df995d7e342c987165f8864ea7bb3627b2b08467968ce0a352c80b739f69bfe2",
+    "docs/research/atlas-generation-scaling.md": "bf75df02b2945507bbf94cf5c241145b52e168ecb4f5ae6ca5dbc15f81c1d981",
+    "docs/research/atlas-measured-storage-processing-serving.md": "1696fa267595d6974adbe09a77f616ebc61de1e770372e34478b0db61916b9a7",
+    "docs/research/tryfan-pilot-s6-baseline.json": "a7bcae1b3fdf31c4100b295991b776ab98af8fc29cbedec41ad980e633492e34",
+    "pilots/atlas/tryfan/delivery.mjs": "23a4e8be8d449ad57956472d333fb7eeda9cc4b177f195d749d15154f3e6e61d",
+    "pilots/atlas/tryfan/dependencies.mjs": "6f07d7f48e1dc94eb08e1f1a3b74de29acd3053a60ed169ee4be4c57b93940d9",
+    "pilots/atlas/tryfan/derivations.mjs": "c750339fb121626964bb20dc173bbdc4b16d30b0b8ec0bba55ad3045d4a075c3",
+    "pilots/atlas/tryfan/generations.mjs": "1b50f5d879d6ed5fc39d9a42cf56dec9ea103c8b928876fb8585795897e5d03d",
+    "pilots/atlas/tryfan/update-schema.mjs": "9bf6568762482a4bb24d20fcbb449a6a7f8db1a4d7e26791089073cb51757cfa"
+  },
+  "branch": "main",
+  "cases": [
+    {
+      "generations": 7,
+      "id": "G7-current",
+      "selection": "current"
+    },
+    {
+      "generations": 7,
+      "id": "G7-recent",
+      "selection": "recent"
+    },
+    {
+      "generations": 7,
+      "id": "G7-oldest",
+      "selection": "oldest"
+    },
+    {
+      "generations": 28,
+      "id": "G28-current",
+      "selection": "current"
+    },
+    {
+      "generations": 28,
+      "id": "G28-recent",
+      "selection": "recent"
+    },
+    {
+      "generations": 28,
+      "id": "G28-oldest",
+      "selection": "oldest"
+    },
+    {
+      "generations": 112,
+      "id": "G112-current",
+      "selection": "current"
+    },
+    {
+      "generations": 112,
+      "id": "G112-recent",
+      "selection": "recent"
+    },
+    {
+      "generations": 112,
+      "id": "G112-oldest",
+      "selection": "oldest"
+    }
+  ],
+  "componentRule": "Exact existing field values in immutable kind-tagged envelopes; no component parents/deltas. Locators remain materialization binding, not source identity. Header retains exact legacy generation context.",
+  "components": [
+    "catalogue",
+    "knowledge",
+    "understanding",
+    "serving",
+    "locators"
+  ],
+  "divergence": [
+    0,
+    0
+  ],
+  "eligibilityRule": "Persistent immutable byte-radix membership trie (32 key bytes, max33 nodes) committed alongside current publication by one local atomic root replacement. No generation existence implies publication.",
+  "failureCases": [
+    "unpublished-complete-orphan",
+    "corrupt-selected-component",
+    "missing-selected-component",
+    "corrupt-membership-node",
+    "unknown-generation",
+    "between-request-mutation",
+    "corrupt-unselected-history-detected-by-historical-read"
+  ],
+  "freshProcesses": 5,
+  "hypotheses": {
+    "H1": "Bounded explicit component/membership resolution preserves all tested semantic invariants",
+    "H2": "Hidden history traversal reappears in components, provenance, dependency/freshness or integrity work",
+    "H3": "Speed requires lost qualification, lineage, replay, selective recomputation, pins or interruption safety",
+    "H4": "Publication and registry metadata duplication defeats scientific component sharing within tested range",
+    "H5": "Only another observed regime"
+  },
+  "initialWorkingTree": "clean",
+  "integrityBoundary": "Fresh request verifies selected publication, selected component bodies and SHA-committed membership path; frozen full domain validation and portrayal/source-specific checks retained. Unselected history independently verified when selected or explicit archive audit, not required evidence dependency of current state.",
+  "interruptionPoints": [
+    "after-components",
+    "before-switch"
+  ],
+  "lifecycle": "One isolated retained U1 common-to-regional applicability transition using S3 methods; two summit results recomputed, two south results reused, six historical results replayed; no new scientific source/method",
+  "limitations": [
+    "One fixed public retained region and single writer",
+    "Fresh process does not flush OS caches",
+    "Byte-radix registry is an experimental membership witness, not chosen production index",
+    "No cloud/distributed durability or arbitrary component granularity",
+    "No in-flight unsupported manual mutation safety; fresh requests detect selected-state corruption"
+  ],
+  "metrics": [
+    "root/publication/component/membership records and bytes read",
+    "ancestry traversals",
+    "integrity operations",
+    "validation calls",
+    "elapsed time",
+    "observed RSS not peak",
+    "published-manifest bytes",
+    "unique component bytes",
+    "registry node bytes/count",
+    "incremental publication metadata",
+    "shared versus changed component identities"
+  ],
+  "modes": [
+    "membership",
+    "hydrate"
+  ],
+  "problem": "Repeated whole-ancestry verification and publication eligibility suffix walks at e88b575",
+  "publicationRule": "Immutable direct five-component membership, exact reconstructible legacy hash, administrative ordinal and predecessor for lineage only",
+  "rejectionCriteria": [
+    "Any target resolution traverses publication ancestors",
+    "Different retained native/derived/provenance answer beyond explicit publication identity",
+    "Missing or corrupt selected component/membership accepted",
+    "Pre-switch orphan pin succeeds",
+    "Relevant/unrelated freshness or exact historical replay differs",
+    "Partial publication becomes current"
+  ],
+  "reuseInsufficient": "Each distinct full ancestor still parsed/hashed; observed 136 MB and large parsed-state RSS at 112 publications",
+  "schema": "atlas-component-membership-proof-plan/v1",
+  "servingCases": [
+    {
+      "depth": 7,
+      "query": "Q05"
+    },
+    {
+      "depth": 7,
+      "query": "Q21"
+    },
+    {
+      "depth": 7,
+      "query": "Q18"
+    },
+    {
+      "depth": 28,
+      "query": "Q05"
+    },
+    {
+      "depth": 28,
+      "query": "Q21"
+    },
+    {
+      "depth": 28,
+      "query": "Q18"
+    },
+    {
+      "depth": 112,
+      "query": "Q05"
+    },
+    {
+      "depth": 112,
+      "query": "Q21"
+    },
+    {
+      "depth": 112,
+      "query": "Q18"
+    }
+  ],
+  "servingFreshProcesses": 3,
+  "servingQueries": [
+    "Q05",
+    "Q21",
+    "Q18"
+  ],
+  "servingWarmRequests": 10,
+  "startingCommit": "e88b575f51dc294806752a05bbbaee3a5d04efc8",
+  "stateRoot": "C:/Users/gbsam/Documents/Codex/atlas-component-membership-v1",
+  "target": "Publication resolution bounded by fixed SHA256 key width plus explicit component memberships, not predecessor depth",
+  "upstream": "origin/main",
+  "warmRequests": 20
+}

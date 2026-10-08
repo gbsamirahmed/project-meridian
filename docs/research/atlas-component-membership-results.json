@@ -1,0 +1,3340 @@
+{
+  "baselineComparison": {
+    "commit": "e88b575",
+    "historical112": {
+      "current": "0fddbd10bbb5e9a29569c3c02834b5a544ba866b2c003a44909013558df8e5b1",
+      "depth": 112,
+      "pin": {
+        "counters": {
+          "generationValidations": 218,
+          "integrityChecks": 112,
+          "loadCalls": 109,
+          "referenceTraversals": 111
+        },
+        "milliseconds": 7407.033100000001,
+        "nodeRSSAfter": 640393216,
+        "nodeRSSBefore": 72302592,
+        "reads": {
+          "external": {
+            "bytes": 884692,
+            "calls": 5,
+            "distinctFiles": 5
+          },
+          "generations": {
+            "bytes": 135992590,
+            "calls": 112,
+            "distinctFiles": 112
+          },
+          "locators": {
+            "bytes": 4967160,
+            "calls": 106,
+            "distinctFiles": 106
+          },
+          "portrayal": {
+            "bytes": 324094046,
+            "calls": 212,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 96206009,
+            "calls": 2545,
+            "distinctFiles": 23
+          }
+        }
+      },
+      "query": {
+        "answerSha256": "6be643a51ffa6180ae49574d76b1d2d9b8f80c2d28aaa4cb8cc10f4d01d1c352",
+        "counters": {
+          "generationValidations": 218,
+          "integrityChecks": 112,
+          "loadCalls": 212,
+          "referenceTraversals": 111
+        },
+        "milliseconds": 5822.458799999999,
+        "nodeRSSAfter": 1052684288,
+        "nodeRSSBefore": 640393216,
+        "qualifiedSha256": "6ae398e1fe9f5dab5f98acb694af7ddb858cd4d210bb4f972a564482ddf94431",
+        "reads": {
+          "external": {
+            "bytes": 1127670,
+            "calls": 4,
+            "distinctFiles": 2
+          },
+          "generations": {
+            "bytes": 135992590,
+            "calls": 112,
+            "distinctFiles": 112
+          },
+          "locators": {
+            "bytes": 4967160,
+            "calls": 106,
+            "distinctFiles": 106
+          },
+          "portrayal": {
+            "bytes": 324094046,
+            "calls": 212,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 93428760,
+            "calls": 2472,
+            "distinctFiles": 5
+          }
+        },
+        "responseBytes": 32858
+      },
+      "rawSha256": "aed0c7fb485337845b2c118cb2876abe90c9cb9de11f39077736b923b056e47d",
+      "selected": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+      "startupMilliseconds": 7561.335300000001,
+      "variant": "request-reuse"
+    },
+    "sourceResultsSha256": "df995d7e342c987165f8864ea7bb3627b2b08467968ce0a352c80b739f69bfe2"
+  },
+  "codeHashes": {
+    "core.mjs": "59f4a350d3f0c3fbd95a75b1fa4a7b8ac997d9f68d79a214a687e421a76a6842",
+    "failure-worker.mjs": "2207efa4088adb27d418539850ef53bfef402c8317df9351fc13e592881a3dc3",
+    "fixtures.mjs": "4f2bf6f026f335b529747a4e518bb29d4002d7656aaea3fbd5ff0ecf1c645b18",
+    "interruption-worker.mjs": "6c412e7f511d0b076029d0aaa7aab3d31a738a163d86dc4040e76d4aa1848492",
+    "lifecycle-worker.mjs": "d41a2aba4003cee73ec253f80ff352a0061f4d374fef1d6fe2b2ad1df931e22c",
+    "plan.json": "11c41e38c762526e116c9b05e8b0769f2ba66887445df0bf82c107f54f4f9f88",
+    "plot.py": "4da058a3e3397ec9d644a6a4069ac703ff75b9fd117c7cc12d94b679ce0f54fc",
+    "run.py": "2b861c8b32db1d47c91f3bef49d83ea644bf272686d8e93baa3ecb1fcc98dde8",
+    "runtime.mjs": "a48dcc748b904c4e703df30aa36cd85cfc68277efd3a4b7c3f7d50e6a2ba2dae",
+    "service-worker.mjs": "04c7da58b14538a058ba6898ab3db6583f8bbe9e824a743555becd434bb03f07",
+    "test-proof.mjs": "f69efff39a8d6bd6b8fdbaf7df584a16a549671cf3eba966b0955ce33bfc49ee",
+    "worker.mjs": "ce702880411215732434f27568404a97dab1e9c773c0f962301e4e4a67af157f"
+  },
+  "decision": "C - PROOF SUCCESS",
+  "failures": {
+    "cases": [
+      {
+        "code": "generation-unpublished",
+        "rootUnchanged": true,
+        "scenario": "unpublished-complete-orphan"
+      },
+      {
+        "code": "generation-unpublished",
+        "rootUnchanged": true,
+        "scenario": "unknown-generation"
+      },
+      {
+        "code": "metadata-integrity",
+        "rootUnchanged": true,
+        "scenario": "corrupt-selected-component"
+      },
+      {
+        "code": "component-unavailable",
+        "rootUnchanged": true,
+        "scenario": "missing-selected-component"
+      },
+      {
+        "code": "metadata-integrity",
+        "rootUnchanged": true,
+        "scenario": "corrupt-membership-node"
+      },
+      {
+        "code": "metadata-integrity",
+        "rootUnchanged": true,
+        "scenario": "between-request-mutation"
+      },
+      {
+        "code": "metadata-integrity",
+        "rootUnchanged": true,
+        "scenario": "corrupt-unselected-history-detected-by-historical-read"
+      }
+    ],
+    "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\failure-matrix.json",
+    "sha256": "2c92153c1414a5ef15c55149879a5c0ebd50c97c3c1a5f9f36986686a54f2266"
+  },
+  "fixtureSha256": "26cd1c7e90175cb84a3a35c1e3f8afc7403049fb12003789492a9ac69a6747bb",
+  "fixtures": [
+    {
+      "current": "c8c8ce081ba304e2c852b615724e9dd0ffc83e407877faec50e6211a74941397",
+      "depth": 7,
+      "footprint": {
+        "artifacts": {
+          "bytes": 3057491,
+          "files": 2
+        },
+        "components": {
+          "bytes": 1287421,
+          "files": 5
+        },
+        "membership": {
+          "bytes": 39123,
+          "files": 231
+        },
+        "publications": {
+          "bytes": 17312,
+          "files": 7
+        }
+      },
+      "history": [
+        "82d09ff299bca9dc35229d845b7c24d4e1b1ee4f06ab79b6cd639a7fea19a841",
+        "0c9c383b37a9410ac5065b078cad057c14b74fec982c18834e1115fcafbda228",
+        "d882e7dc580c1ebd6cf2f01f846ad99a0542b01b165bc21cd8e7c59d6bfbef61",
+        "ceae1552ebd60621c6e2cd37299d25459d2e35fd79840fcc6974fc7f0b600296",
+        "056fa10c7ed33d0081132a0401d367d3bbb2716f685fe6c0151699224529f36b",
+        "5f09905b5fb2ed831c06e6ca4401ed0d22fce14d3289dc83a37955a0c826c97d",
+        "c8c8ce081ba304e2c852b615724e9dd0ffc83e407877faec50e6211a74941397"
+      ],
+      "legacy": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+      "members": {
+        "catalogue": "dfe689ab616d99e4a7334b6f8671b5481a9561c53c692350bb6ac473325546d2",
+        "knowledge": "2713d13923d73b703b39aa60e25744374ba1d4dba08e21ec9d82b3570b87a179",
+        "locators": "4a63ed57bc29a6f562eb30233ca1bce64901710111cf14b9cecaa5dd29349cf4",
+        "serving": "d0f77089610bad2d4230ef13286d4ef87fe00af844a497daf835f6b97feceb42",
+        "understanding": "22b3162432ef78f989c28073ef5f20e1388053dd4147e3edd49e27e612e689ab"
+      },
+      "oldest": "82d09ff299bca9dc35229d845b7c24d4e1b1ee4f06ab79b6cd639a7fea19a841",
+      "publicationObservations": {
+        "count": 7,
+        "first": {
+          "generation": "82d09ff299bca9dc35229d845b7c24d4e1b1ee4f06ab79b6cd639a7fea19a841",
+          "switchMilliseconds": 1.2507000000000517,
+          "totalMilliseconds": 323.6984,
+          "validationMilliseconds": 226.46699999999998
+        },
+        "fullReceipt": "fixtures.json; SHA256 pinned by fixtureSha256",
+        "last": {
+          "generation": "c8c8ce081ba304e2c852b615724e9dd0ffc83e407877faec50e6211a74941397",
+          "switchMilliseconds": 1.3488999999999578,
+          "totalMilliseconds": 429.47450000000026,
+          "validationMilliseconds": 231.28560000000016
+        },
+        "timing": {
+          "switchMilliseconds": {
+            "max": 1.4225999999998749,
+            "median": 1.3188000000000102,
+            "min": 1.1835999999998421
+          },
+          "totalMilliseconds": {
+            "max": 429.47450000000026,
+            "median": 394.6085999999998,
+            "min": 323.6984
+          },
+          "validationMilliseconds": {
+            "max": 231.28560000000016,
+            "median": 216.4143999999999,
+            "min": 209.81169999999975
+          }
+        }
+      },
+      "recent": "5f09905b5fb2ed831c06e6ca4401ed0d22fce14d3289dc83a37955a0c826c97d",
+      "store": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\history-7"
+    },
+    {
+      "current": "32805ed5646f2b81b091624a63e607296e5c2472ff19306077f3419266d328e2",
+      "depth": 28,
+      "footprint": {
+        "artifacts": {
+          "bytes": 3057491,
+          "files": 2
+        },
+        "components": {
+          "bytes": 1287421,
+          "files": 5
+        },
+        "membership": {
+          "bytes": 179268,
+          "files": 924
+        },
+        "publications": {
+          "bytes": 69453,
+          "files": 28
+        }
+      },
+      "history": [
+        "82d09ff299bca9dc35229d845b7c24d4e1b1ee4f06ab79b6cd639a7fea19a841",
+        "0c9c383b37a9410ac5065b078cad057c14b74fec982c18834e1115fcafbda228",
+        "d882e7dc580c1ebd6cf2f01f846ad99a0542b01b165bc21cd8e7c59d6bfbef61",
+        "ceae1552ebd60621c6e2cd37299d25459d2e35fd79840fcc6974fc7f0b600296",
+        "056fa10c7ed33d0081132a0401d367d3bbb2716f685fe6c0151699224529f36b",
+        "5f09905b5fb2ed831c06e6ca4401ed0d22fce14d3289dc83a37955a0c826c97d",
+        "c8c8ce081ba304e2c852b615724e9dd0ffc83e407877faec50e6211a74941397",
+        "cfc67867bf00c3bfa518246fbd1b3918032c9eae40cbd084bb6ec4ef1450cedc",
+        "7cac92d2c4b49eb6ad9519f2255d7b5af65710f98af2486c649a2700ce7020cf",
+        "ca9a2c69b890cfcb1fdac9fc220b93fcc6a486e16b11439d0fc4884bc3c205b1",
+        "a9b6bc94c000c01c6c16e1b608b9875c5a9e8fe1377b8d216142d804baa82eaa",
+        "942382df05d9d1f389cb57a4fb9c2152709fb4550d23ac173f8e35d8a4235edf",
+        "09da1423446e53c9c17d961e13aa0fbafc45bfd18d54eee21885571808973a4b",
+        "e8827214fd01d3bd6b6c9af51811b1046db8230ab6414161103e2a51dfc5f3cb",
+        "4232df8294cde7ae863b61db000bcec4eab2c248efc53c6f399d1955a2e365d2",
+        "db88c33b1fa704acf484399c9f520b09c26c94645b65e02babc400a769b36ef7",
+        "37cbe52e895fd25ee2dcaacaa74ff9e6f5b44ecbced785b8116b129e3abd0f37",
+        "bbaf0e66662adb067ed38250e8ccfe6280494b6da5819df36b4ad6572c488b44",
+        "a5229dee0e5de798019c0f4d84cede0bed98c94bf90b797e44bdbf5bc245ddd4",
+        "0eb7ccd5ae0794f43406cfe06c1b969bcea0acaedd534bbb1ee529907c4960ff",
+        "1de47b03a210f87291a0fcf20846c6a3b46804e62eefda3e8c3ee2929e1f3705",
+        "b58abae6e90014e0dcb759dd3590d7acefb3d79aec27d5aa6479ba361a9a526b",
+        "edeeb8f5cbab00989aabcb71eb4e3a01a0ac81b6981025b5c65e105d5493098e",
+        "1c0e3176bf1382cf9916596fcd8974e4c5bdbc4829421b640f0c366ff7aeaf83",
+        "100c303a79bb16c156eb34267de22ac4bdf9ef946b4bd36586d7a9b8a5f2b04a",
+        "bb718a521830bec817394ea8bf530fd7bcea663a2181c76c9303f63faf089af1",
+        "d2cad3fc453841f26d4055b08185a3a6c65f467fb51cd738abce9e776a73c3f7",
+        "32805ed5646f2b81b091624a63e607296e5c2472ff19306077f3419266d328e2"
+      ],
+      "legacy": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+      "members": {
+        "catalogue": "dfe689ab616d99e4a7334b6f8671b5481a9561c53c692350bb6ac473325546d2",
+        "knowledge": "2713d13923d73b703b39aa60e25744374ba1d4dba08e21ec9d82b3570b87a179",
+        "locators": "4a63ed57bc29a6f562eb30233ca1bce64901710111cf14b9cecaa5dd29349cf4",
+        "serving": "d0f77089610bad2d4230ef13286d4ef87fe00af844a497daf835f6b97feceb42",
+        "understanding": "22b3162432ef78f989c28073ef5f20e1388053dd4147e3edd49e27e612e689ab"
+      },
+      "oldest": "82d09ff299bca9dc35229d845b7c24d4e1b1ee4f06ab79b6cd639a7fea19a841",
+      "publicationObservations": {
+        "count": 28,
+        "first": {
+          "generation": "82d09ff299bca9dc35229d845b7c24d4e1b1ee4f06ab79b6cd639a7fea19a841",
+          "switchMilliseconds": 1.286200000000008,
+          "totalMilliseconds": 332.9966000000004,
+          "validationMilliseconds": 216.4734999999996
+        },
+        "fullReceipt": "fixtures.json; SHA256 pinned by fixtureSha256",
+        "last": {
+          "generation": "32805ed5646f2b81b091624a63e607296e5c2472ff19306077f3419266d328e2",
+          "switchMilliseconds": 1.3767000000007101,
+          "totalMilliseconds": 442.57120000000214,
+          "validationMilliseconds": 250.7487000000001
+        },
+        "timing": {
+          "switchMilliseconds": {
+            "max": 2.1370000000006257,
+            "median": 1.5034500000001572,
+            "min": 1.16019999999844
+          },
+          "totalMilliseconds": {
+            "max": 541.2122000000008,
+            "median": 480.68415000000005,
+            "min": 332.9966000000004
+          },
+          "validationMilliseconds": {
+            "max": 327.5494000000008,
+            "median": 272.62459999999965,
+            "min": 216.4734999999996
+          }
+        }
+      },
+      "recent": "d2cad3fc453841f26d4055b08185a3a6c65f467fb51cd738abce9e776a73c3f7",
+      "store": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\history-28"
+    },
+    {
+      "current": "1992f3deffe1ad91f192bf911d4f5237e271fbf6c4d9336e4a88d3aa167cdd40",
+      "depth": 112,
+      "footprint": {
+        "artifacts": {
+          "bytes": 3057491,
+          "files": 2
+        },
+        "components": {
+          "bytes": 1287421,
+          "files": 5
+        },
+        "membership": {
+          "bytes": 1016124,
+          "files": 3696
+        },
+        "publications": {
+          "bytes": 278038,
+          "files": 112
+        }
+      },
+      "history": [
+        "82d09ff299bca9dc35229d845b7c24d4e1b1ee4f06ab79b6cd639a7fea19a841",
+        "0c9c383b37a9410ac5065b078cad057c14b74fec982c18834e1115fcafbda228",
+        "d882e7dc580c1ebd6cf2f01f846ad99a0542b01b165bc21cd8e7c59d6bfbef61",
+        "ceae1552ebd60621c6e2cd37299d25459d2e35fd79840fcc6974fc7f0b600296",
+        "056fa10c7ed33d0081132a0401d367d3bbb2716f685fe6c0151699224529f36b",
+        "5f09905b5fb2ed831c06e6ca4401ed0d22fce14d3289dc83a37955a0c826c97d",
+        "c8c8ce081ba304e2c852b615724e9dd0ffc83e407877faec50e6211a74941397",
+        "cfc67867bf00c3bfa518246fbd1b3918032c9eae40cbd084bb6ec4ef1450cedc",
+        "7cac92d2c4b49eb6ad9519f2255d7b5af65710f98af2486c649a2700ce7020cf",
+        "ca9a2c69b890cfcb1fdac9fc220b93fcc6a486e16b11439d0fc4884bc3c205b1",
+        "a9b6bc94c000c01c6c16e1b608b9875c5a9e8fe1377b8d216142d804baa82eaa",
+        "942382df05d9d1f389cb57a4fb9c2152709fb4550d23ac173f8e35d8a4235edf",
+        "09da1423446e53c9c17d961e13aa0fbafc45bfd18d54eee21885571808973a4b",
+        "e8827214fd01d3bd6b6c9af51811b1046db8230ab6414161103e2a51dfc5f3cb",
+        "4232df8294cde7ae863b61db000bcec4eab2c248efc53c6f399d1955a2e365d2",
+        "db88c33b1fa704acf484399c9f520b09c26c94645b65e02babc400a769b36ef7",
+        "37cbe52e895fd25ee2dcaacaa74ff9e6f5b44ecbced785b8116b129e3abd0f37",
+        "bbaf0e66662adb067ed38250e8ccfe6280494b6da5819df36b4ad6572c488b44",
+        "a5229dee0e5de798019c0f4d84cede0bed98c94bf90b797e44bdbf5bc245ddd4",
+        "0eb7ccd5ae0794f43406cfe06c1b969bcea0acaedd534bbb1ee529907c4960ff",
+        "1de47b03a210f87291a0fcf20846c6a3b46804e62eefda3e8c3ee2929e1f3705",
+        "b58abae6e90014e0dcb759dd3590d7acefb3d79aec27d5aa6479ba361a9a526b",
+        "edeeb8f5cbab00989aabcb71eb4e3a01a0ac81b6981025b5c65e105d5493098e",
+        "1c0e3176bf1382cf9916596fcd8974e4c5bdbc4829421b640f0c366ff7aeaf83",
+        "100c303a79bb16c156eb34267de22ac4bdf9ef946b4bd36586d7a9b8a5f2b04a",
+        "bb718a521830bec817394ea8bf530fd7bcea663a2181c76c9303f63faf089af1",
+        "d2cad3fc453841f26d4055b08185a3a6c65f467fb51cd738abce9e776a73c3f7",
+        "32805ed5646f2b81b091624a63e607296e5c2472ff19306077f3419266d328e2",
+        "06044b5c0a37fb6bb6fbb2417ef33ff172c5745bdebb9c0834f0f3e9ca845b9a",
+        "8ce93567f643af6f3858dfb9194498035861895454ef77d7c0c54e09cd00e4c8",
+        "1d6ebf417013e2c33c29eea4b20ff79cc39536b193aa0d5aa8a436a816a123e1",
+        "35d99f80a99fb2eb350fa6eecadd3697aa606f54d1e33dabb60119346dbfa0b8",
+        "5a3280c3da76124c1537514749a6902312efe6ce941e7b129922320d26914089",
+        "96e7d8e479e85b4d4b3a664125d8ebea137a620dae3ebbb27186f9e2bc1dc37d",
+        "518d9e40821862649e7ff71b63ee6ddf9364e45ef640559f9b2791bd3891bc95",
+        "fa39fc654129a1b671a15d70b4c110519f35c2950cd251dcafb3f82a3bcf54fe",
+        "175269dc29e7d39dd05f771998a3d814449e2f594154ed5aa67206764e2a2b1f",
+        "099675dc69d697dbef24082aae2a4085f160a1bdd774b2bb24d4833375ec50ab",
+        "1a5dbd74288ea414b95bdb8ea91322a56197aaf83e5364e4389e89ad179d39d1",
+        "4a0caae251a5584f85f8080bd4090debeb833b1dd88e23d90c2aa70d8276424e",
+        "169427ee9e3d9b343451eef97c395cc4574cfdcb78777b98b49a5b32caef8991",
+        "7a5d7cd22c2a3cf990470df5fd679b13da59bb2d80eb49fb12610df5c3be5b4c",
+        "188892d0a6eea164567087492494d15bf1affc9c76011ffdc45c8aea4ff9f7c5",
+        "ca0852b55a652adf81a252470193c7e1b6ffce1fb8bd8b290bee620b1b8ac63f",
+        "f13a4929425aa19b5b5246a668f4d44874bd69e85d60757beabb8f007d59fc36",
+        "9f36a4db0ce72be3347eb5d77a77dfa3d0f734cb78f0002bc4947a7ef9a41b68",
+        "94ac9b9a6b2dba15ffca0d36ca6a69e3344131bef7adf1b0d775c12446873e34",
+        "32a458f7f94bbc54d149576ed95872097a9511e8f7371da0ab7d3a992de3e553",
+        "4adcbe18946e040cdbb0544e7714347f30e5f4dec5a3bddbb5198a1c36acf8b1",
+        "72de8a86d321f1571a5eb5a00a7055de3b9446731686171619d81a4b97796584",
+        "b39164d4fddc5bca46895b0d4ee7590818e59d7109f422bd304f039ac46c2a34",
+        "3eb0624243f9f753d0296d730d924e6b1c5955968286eee9af4d0f6f92e92545",
+        "de7a0171c997e6d9c79b4046aa913e00e0b1a10b18cb59767c0019e8a69361e9",
+        "67a736787521deb3be18c9908b215fe59e98ed43ba070c455032cde6a0dfc379",
+        "64c4ba442f1f8af2ab29ef8a6d2422cccd19e63ed38b26e8e74bbb10c5fa1625",
+        "af8be63d171fc4ba70b86c0bf12b48113feadef4ab71430d5c79d97a50dd34d5",
+        "f55ee476e3d6a8584b867a808f51e1b31cce461dc349dd98077b9aa38b07e3b4",
+        "92347f802457900704c25e1acfb73b3e1da6f6596b572458eca3a31a45cecaa6",
+        "bbdfbe409e63bedf2552099da186c782dc607a4a0ed9171a135ae90768890d98",
+        "fb86f3dda12710b70759176e3c776be0bb378e7b9cd09152943bc1cd66850af4",
+        "38c1cf0263c324ce522a61e7071eb3bab10f735fb1534cdf43571c17cb6bdade",
+        "a5d90f5a56f844b1bb42d89a589c9bc48aad019f1639bdf9bfb862380917d89a",
+        "92662d9b79b020a3003baa3bb67144242b80a955253e4f67502f45183deff4f8",
+        "21f67636f2a1a623fc766934e41a902d2bc26ced8858023fc30ae3665a03ece5",
+        "47e2630f5d138c51fcfc19a8ad465750f4cf822ad5ccbaec224ee3567cffcb93",
+        "c34fc0583792400c8aadf59b1a0b0fa8b4407f5db816082d81d391a2c3c19c5e",
+        "75918e86706013ec2055f201a06315353b56d1ed07295265166146d9642ac273",
+        "6253d7b68cb08f64a48e8eed0b28c77c8c61c6bfa662048200d9e56df3bec0df",
+        "25c8a874776fe3fcb25c83b0ec0ee868a556ce644cfa5de8aa40cf0da0af1f2f",
+        "e4034b4c1e88c185bc87262d5b372bf914fc7db9041a3c9b51f8b15f928246c2",
+        "dd966535dd35f46386ffdaeb9df9ec6ab256ac5b48212840352093cefa048f03",
+        "0f1e00cf8a43432f9a259e5178bb6e98cff0cc74fd002cf9f0286a1ef7955034",
+        "5c38f32e15e7b051f4f3a42795d141b315bb4cd33efb876cf32eed7f3a316553",
+        "394c68d1bf7dc9e44b152615ad9ba6fad4d5122108f561fe5c51285c8b1ad83b",
+        "bce4710aa361d3d51dd3a6418ab548bf6152c231597d1a9f20fa08d103bc4c12",
+        "72c444c1d9156df97dd2c85ef59d36748fe4ea7890b2969860021ff8ae3f2a08",
+        "9b99c72fa3e8b578a67db9615ccfefa5c085b580804880e7b8aa4233384cfbfe",
+        "d89e0eb8cd11446d53236b79858f31d70c17380a7ba1429430f14c72699c2efb",
+        "bd659778b8e901fd1118133ba8a8f617361f07389c43d6be62f8b18d8b88b285",
+        "d4cc9e943f19c62020fe5861049324caf05562513eb62c16374a2ed0e7decb37",
+        "269c59a98e0fb60c438be6693c06bc1e15a5bf8877f74aa339eb81ca084570a7",
+        "cfa65bb57e4ce4468305e216f7303a802a5949343830db95d806778264874691",
+        "18b6c94ab0f4fd31a3ad24e39ba1dd944f7495d67be254d4b365d24da10c6d48",
+        "e920a3fb60eeb708fde84163d019d8bc0659e871019aa3fef39bced35f40c60f",
+        "5426f904f7343163f2bf6bf40477ad9eeabdd87eb47aa1fbc53bf5597b31bc01",
+        "3aa9f25cfe9881b64be3524c940c3a472eefee7f2b54ce8ccbe0314f36420d65",
+        "40dd3966423d8d3fe4eeb8a956ac0db2e6d82d6b11665519972a4fd7409cec9d",
+        "92ca9bb3b6c126b41f1984681a1e6da8ff3f8ea6ee2bc9c9e3e3b4cbb4a1ff1d",
+        "1cc82f9e0fbf70805770953fb65411aa6888890540210bac7c384d315b047a99",
+        "48887b4e28b1919a6c1eb91b0c9bf6d1b28ab5c216f770aa63a53817b72c753f",
+        "c742386664d54ad1aa75f002ca0ba63e3de59f37b6788b820a3011e043118646",
+        "0e08befd91935376777fe98a2771900cd4eb356388533893e79955cbeaa651a8",
+        "57a390e639d8b6f6afde53391783fb3e315a5e5c79c174580248f8ceeb493acd",
+        "4fb57d2a1ba48a5f7479ad353a9564b30aca300842176dd722014fa9e7029614",
+        "3716919719bc1988c5cfd7a5cf7c0ec2f6c098fce0baf3913515679cf1e30a42",
+        "cc834cb6ed02a6b03d2040d4dea094caa6ed635018b310d3b958a6512821a273",
+        "b0f73ac314f9aab700eacd94bc8cc8d8fab40010c942ad2620fc586d5c9f4044",
+        "779bf4b4fafd2099ab6b9b2169bb954f6f42847d238fa7bcbbd23287eefdca4b",
+        "2d6c470bd72764717ba81cde2feb3998259d1bab2e16ac6ba007e9c5d58a18c1",
+        "b1bd52999c6670522e032cd1b257ba3a3f4727da23f98d2c872a5202b46537c1",
+        "b7021fff1022377126511a4256df1ed030fc4ffa98720bf8cb9a65a1d1b558ca",
+        "899efc18060f629424513246906494f05887c69aec85549a1ed534b7b8fee544",
+        "d6172d48747e9430935e14ecaf9ac5bea5f8355a2871fc4d815abb63c7edf257",
+        "37b47d9f8c1e6d3f8a902086db62c3f9449a2f5fc9e15c9e41f96a7ee5aa4993",
+        "acee4e82308c1e533c4262968e7f82180d24be2efe41477dbda4055e4827fb82",
+        "f7a3ba360b127076cdb8f72a20beff6185daea0b4d52b95f194c001d8feab528",
+        "ca630b5f62d58820a3dcf8130516fd2936c0827fd8f851e319d9ad47de72ab94",
+        "e2c7e638a9382d6cb432d69fbaa44f6c283159fe73ae8e48ff74d51f774c9460",
+        "9be27257c85f9dd55302b1868389fafedaccd8950a86378475fc8b0b1b70cc8a",
+        "e6ac69b2ae0cf3054e14030d91d8256a6be63a09066c59c1adb50337efb24802",
+        "3d5907bbf1768afa12fbca795c27eed106fa1c709069db8cb1d59b6bc8f3fcd3",
+        "1992f3deffe1ad91f192bf911d4f5237e271fbf6c4d9336e4a88d3aa167cdd40"
+      ],
+      "legacy": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+      "members": {
+        "catalogue": "dfe689ab616d99e4a7334b6f8671b5481a9561c53c692350bb6ac473325546d2",
+        "knowledge": "2713d13923d73b703b39aa60e25744374ba1d4dba08e21ec9d82b3570b87a179",
+        "locators": "4a63ed57bc29a6f562eb30233ca1bce64901710111cf14b9cecaa5dd29349cf4",
+        "serving": "d0f77089610bad2d4230ef13286d4ef87fe00af844a497daf835f6b97feceb42",
+        "understanding": "22b3162432ef78f989c28073ef5f20e1388053dd4147e3edd49e27e612e689ab"
+      },
+      "oldest": "82d09ff299bca9dc35229d845b7c24d4e1b1ee4f06ab79b6cd639a7fea19a841",
+      "publicationObservations": {
+        "count": 112,
+        "first": {
+          "generation": "82d09ff299bca9dc35229d845b7c24d4e1b1ee4f06ab79b6cd639a7fea19a841",
+          "switchMilliseconds": 2.249100000000908,
+          "totalMilliseconds": 469.51330000000235,
+          "validationMilliseconds": 290.6126000000004
+        },
+        "fullReceipt": "fixtures.json; SHA256 pinned by fixtureSha256",
+        "last": {
+          "generation": "1992f3deffe1ad91f192bf911d4f5237e271fbf6c4d9336e4a88d3aa167cdd40",
+          "switchMilliseconds": 1.3018000000010943,
+          "totalMilliseconds": 419.68039999999746,
+          "validationMilliseconds": 209.2222000000038
+        },
+        "timing": {
+          "switchMilliseconds": {
+            "max": 6.137900000001537,
+            "median": 1.6132000000015978,
+            "min": 1.1623000000035972
+          },
+          "totalMilliseconds": {
+            "max": 668.1782999999996,
+            "median": 466.70550000000003,
+            "min": 406.085699999996
+          },
+          "validationMilliseconds": {
+            "max": 385.5237000000052,
+            "median": 250.74075000000448,
+            "min": 204.61989999999787
+          }
+        }
+      },
+      "recent": "3d5907bbf1768afa12fbca795c27eed106fa1c709069db8cb1d59b6bc8f3fcd3",
+      "store": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\history-112"
+    }
+  ],
+  "historicalServed": [
+    {
+      "current": "1992f3deffe1ad91f192bf911d4f5237e271fbf6c4d9336e4a88d3aa167cdd40",
+      "generation": "82d09ff299bca9dc35229d845b7c24d4e1b1ee4f06ab79b6cd639a7fea19a841",
+      "mode": "Q05",
+      "pin": {
+        "RSSAfter": 170008576,
+        "RSSBefore": 70881280,
+        "counters": {
+          "ancestryTraversals": 0,
+          "componentEdges": 5,
+          "generationValidations": 1,
+          "integrityChecks": 39,
+          "membershipEdges": 128,
+          "membershipVisits": 132
+        },
+        "milliseconds": 2017.3618999999999,
+        "reads": {
+          "components": {
+            "bytes": 1287421,
+            "calls": 5
+          },
+          "membership": {
+            "bytes": 12375,
+            "calls": 33
+          },
+          "portrayal": {
+            "bytes": 3057491,
+            "calls": 2
+          },
+          "publications": {
+            "bytes": 2420,
+            "calls": 1
+          },
+          "retained": {
+            "bytes": 884692,
+            "calls": 5
+          },
+          "root": {
+            "bytes": 840,
+            "calls": 4
+          },
+          "runtime": {
+            "bytes": 3212803,
+            "calls": 86
+          }
+        }
+      },
+      "qualification": "Supplementary single fresh process/one query at112 oldest; original frozen27 cells unchanged",
+      "query": "Q05",
+      "raw": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measurements\\historical-served-Q05.json",
+        "sha256": "6404600cfd6f1d4b28023e6bd4a0da24401e741a3499f1e61971f71a8a88babc"
+      },
+      "samples": [
+        {
+          "RSSAfter": 177782784,
+          "RSSBefore": 170012672,
+          "answerSha256": "73a9abe50d171a259df867ef219272b0629af9df2e13a5aa2e2dd99abc83d872",
+          "counters": {
+            "ancestryTraversals": 0,
+            "componentEdges": 5,
+            "generationValidations": 1,
+            "integrityChecks": 39,
+            "membershipEdges": 64,
+            "membershipVisits": 66
+          },
+          "milliseconds": 104.14800000000014,
+          "qualifiedSha256": "6ae398e1fe9f5dab5f98acb694af7ddb858cd4d210bb4f972a564482ddf94431",
+          "reads": {
+            "components": {
+              "bytes": 1287421,
+              "calls": 5
+            },
+            "membership": {
+              "bytes": 12375,
+              "calls": 33
+            },
+            "portrayal": {
+              "bytes": 3057491,
+              "calls": 2
+            },
+            "publications": {
+              "bytes": 2420,
+              "calls": 1
+            },
+            "retained": {
+              "bytes": 1127670,
+              "calls": 4
+            },
+            "root": {
+              "bytes": 420,
+              "calls": 2
+            },
+            "runtime": {
+              "bytes": 435424,
+              "calls": 12
+            }
+          },
+          "responseBytes": 32858
+        }
+      ],
+      "startupMilliseconds": 2041.0946999999999
+    },
+    {
+      "current": "1992f3deffe1ad91f192bf911d4f5237e271fbf6c4d9336e4a88d3aa167cdd40",
+      "generation": "82d09ff299bca9dc35229d845b7c24d4e1b1ee4f06ab79b6cd639a7fea19a841",
+      "mode": "Q21",
+      "pin": {
+        "RSSAfter": 172679168,
+        "RSSBefore": 71012352,
+        "counters": {
+          "ancestryTraversals": 0,
+          "componentEdges": 5,
+          "generationValidations": 1,
+          "integrityChecks": 39,
+          "membershipEdges": 128,
+          "membershipVisits": 132
+        },
+        "milliseconds": 1871.1509,
+        "reads": {
+          "components": {
+            "bytes": 1287421,
+            "calls": 5
+          },
+          "membership": {
+            "bytes": 12375,
+            "calls": 33
+          },
+          "portrayal": {
+            "bytes": 3057491,
+            "calls": 2
+          },
+          "publications": {
+            "bytes": 2420,
+            "calls": 1
+          },
+          "retained": {
+            "bytes": 884692,
+            "calls": 5
+          },
+          "root": {
+            "bytes": 840,
+            "calls": 4
+          },
+          "runtime": {
+            "bytes": 3212803,
+            "calls": 86
+          }
+        }
+      },
+      "qualification": "Supplementary single fresh process/one query at112 oldest; original frozen27 cells unchanged",
+      "query": "Q21",
+      "raw": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measurements\\historical-served-Q21.json",
+        "sha256": "9e20ee2f740c0ed0a336c2f108ba29aa90ebaf4c87443b9ec71387cf87bafe0c"
+      },
+      "samples": [
+        {
+          "RSSAfter": 182652928,
+          "RSSBefore": 172679168,
+          "answerSha256": "73bf319f2aba964fe5572d99ffcc6f0113550bfb09297300d1cb7f70ba6a0c0f",
+          "counters": {
+            "ancestryTraversals": 0,
+            "componentEdges": 5,
+            "generationValidations": 1,
+            "integrityChecks": 39,
+            "membershipEdges": 64,
+            "membershipVisits": 66
+          },
+          "milliseconds": 211.87879999999996,
+          "qualifiedSha256": "b9dda67f0472ad9cc086b8a36074b8e2a643ea92614a38bab782e6bfb9ce8918",
+          "reads": {
+            "components": {
+              "bytes": 1287421,
+              "calls": 5
+            },
+            "membership": {
+              "bytes": 12375,
+              "calls": 33
+            },
+            "portrayal": {
+              "bytes": 3057491,
+              "calls": 2
+            },
+            "publications": {
+              "bytes": 2420,
+              "calls": 1
+            },
+            "retained": {
+              "bytes": 9262300,
+              "calls": 42
+            },
+            "root": {
+              "bytes": 420,
+              "calls": 2
+            },
+            "runtime": {
+              "bytes": 3027496,
+              "calls": 72
+            }
+          },
+          "responseBytes": 142590
+        }
+      ],
+      "startupMilliseconds": 1897.6335000000001
+    },
+    {
+      "current": "1992f3deffe1ad91f192bf911d4f5237e271fbf6c4d9336e4a88d3aa167cdd40",
+      "generation": "82d09ff299bca9dc35229d845b7c24d4e1b1ee4f06ab79b6cd639a7fea19a841",
+      "mode": "Q18",
+      "pin": {
+        "RSSAfter": 170983424,
+        "RSSBefore": 71094272,
+        "counters": {
+          "ancestryTraversals": 0,
+          "componentEdges": 5,
+          "generationValidations": 1,
+          "integrityChecks": 39,
+          "membershipEdges": 128,
+          "membershipVisits": 132
+        },
+        "milliseconds": 1857.9758,
+        "reads": {
+          "components": {
+            "bytes": 1287421,
+            "calls": 5
+          },
+          "membership": {
+            "bytes": 12375,
+            "calls": 33
+          },
+          "portrayal": {
+            "bytes": 3057491,
+            "calls": 2
+          },
+          "publications": {
+            "bytes": 2420,
+            "calls": 1
+          },
+          "retained": {
+            "bytes": 884692,
+            "calls": 5
+          },
+          "root": {
+            "bytes": 840,
+            "calls": 4
+          },
+          "runtime": {
+            "bytes": 3212803,
+            "calls": 86
+          }
+        }
+      },
+      "qualification": "Supplementary single fresh process/one query at112 oldest; original frozen27 cells unchanged",
+      "query": "Q18",
+      "raw": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measurements\\historical-served-Q18.json",
+        "sha256": "f1fa0a3f00f07efaae004736cfac152fa1720a7a69e3f1f4601ecf7b1d70e283"
+      },
+      "samples": [
+        {
+          "RSSAfter": 189915136,
+          "RSSBefore": 170983424,
+          "answerSha256": "e515706a9dfdb9762941fedcbb9ca1f28892d8ec75ff364fb625d1fa26e5b97c",
+          "counters": {
+            "ancestryTraversals": 0,
+            "componentEdges": 5,
+            "generationValidations": 1,
+            "integrityChecks": 39,
+            "membershipEdges": 160,
+            "membershipVisits": 165
+          },
+          "milliseconds": 124.69829999999979,
+          "qualifiedSha256": "cc4df91a6a313986e6f91c76a30c6c66a0ea6a32927cc1a2b70671bee017f54d",
+          "reads": {
+            "components": {
+              "bytes": 1287421,
+              "calls": 5
+            },
+            "membership": {
+              "bytes": 12375,
+              "calls": 33
+            },
+            "portrayal": {
+              "bytes": 3057491,
+              "calls": 2
+            },
+            "publications": {
+              "bytes": 2420,
+              "calls": 1
+            },
+            "root": {
+              "bytes": 1050,
+              "calls": 5
+            },
+            "runtime": {
+              "bytes": 435424,
+              "calls": 12
+            }
+          },
+          "responseBytes": 23473
+        }
+      ],
+      "startupMilliseconds": 1884.0041
+    }
+  ],
+  "hypothesisResults": {
+    "H1": "Supported within fixed-key/membership/component scope",
+    "H2": "Not observed: explicit bound, no component or dependency/provenance ancestry walks",
+    "H3": "Not observed: exact normalized qualification, U1 replay/scoped lifecycle and pinned/interrupted publication pass",
+    "H4": "Not observed within tested range: modest explicit membership/registry duplication; coarse changed components still duplicate unchanged internal fields",
+    "H5": "No replacement regime required; registry fan-out and small-file population remain costs"
+  },
+  "lifecycle": {
+    "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\lifecycle.json",
+    "receipt": {
+      "changedComponents": [
+        "serving",
+        "understanding"
+      ],
+      "components": [
+        {
+          "bytes": 110074,
+          "id": "22b3162432ef78f989c28073ef5f20e1388053dd4147e3edd49e27e612e689ab"
+        },
+        {
+          "bytes": 660107,
+          "id": "2713d13923d73b703b39aa60e25744374ba1d4dba08e21ec9d82b3570b87a179"
+        },
+        {
+          "bytes": 47562,
+          "id": "4a63ed57bc29a6f562eb30233ca1bce64901710111cf14b9cecaa5dd29349cf4"
+        },
+        {
+          "bytes": 82466,
+          "id": "98fe12bc937efab4a42b39c3eeef9d4e8ab129e56b26b06eede48dee720dcc44"
+        },
+        {
+          "bytes": 126855,
+          "id": "a93d05afa4f0e030516237543de74ed6a03b904acd5a673ccb7721d5bb4963a8"
+        },
+        {
+          "bytes": 126936,
+          "id": "d0f77089610bad2d4230ef13286d4ef87fe00af844a497daf835f6b97feceb42"
+        },
+        {
+          "bytes": 342742,
+          "id": "dfe689ab616d99e4a7334b6f8671b5481a9561c53c692350bb6ac473325546d2"
+        }
+      ],
+      "exactAcceptedU1": true,
+      "failures": [
+        {
+          "current": "63e5538d8abc714280347980df7e6982ceecc0ee81ee641f6503341604c62468",
+          "exitCode": 91,
+          "freshServiceRecovered": true,
+          "orphanRejected": true,
+          "pinnedConsumerUnchanged": true,
+          "point": "after-components"
+        },
+        {
+          "current": "63e5538d8abc714280347980df7e6982ceecc0ee81ee641f6503341604c62468",
+          "exitCode": 91,
+          "freshServiceRecovered": true,
+          "orphanRejected": true,
+          "pinnedConsumerUnchanged": true,
+          "point": "before-switch"
+        }
+      ],
+      "freshConsumer": true,
+      "freshnessAfter": [
+        {
+          "assessment": {
+            "baseline": {
+              "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+              "hierarchy": {
+                "id": "tryfan-second-region-proof",
+                "revision": "1"
+              }
+            },
+            "policy": "current-applicable-terrain-v1",
+            "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+            "reason": "Current explicit hierarchy policy selects another applicable representation; stale is not false",
+            "result": {
+              "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+              "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839"
+            },
+            "selectedFamily": "welsh-regional",
+            "status": "stale"
+          },
+          "probe": "summit",
+          "property": "slope",
+          "ref": {
+            "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+            "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839"
+          }
+        },
+        {
+          "assessment": {
+            "baseline": {
+              "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+              "hierarchy": {
+                "id": "tryfan-second-region-proof",
+                "revision": "1"
+              }
+            },
+            "policy": "current-applicable-terrain-v1",
+            "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+            "reason": "Transitive slope assessment: Current explicit hierarchy policy selects another applicable representation; stale is not false",
+            "result": {
+              "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+              "revision": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527"
+            },
+            "selectedFamily": "welsh-regional",
+            "status": "stale"
+          },
+          "probe": "summit",
+          "property": "area-ratio",
+          "ref": {
+            "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+            "revision": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527"
+          }
+        },
+        {
+          "assessment": {
+            "baseline": {
+              "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+              "hierarchy": {
+                "id": "tryfan-second-region-proof",
+                "revision": "1"
+              }
+            },
+            "policy": "current-applicable-terrain-v1",
+            "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+            "reason": "Selected representation still applies; no intersecting relevant input changes",
+            "result": {
+              "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+              "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+            },
+            "selectedFamily": "production-common",
+            "status": "fresh"
+          },
+          "probe": "southern-observer",
+          "property": "slope",
+          "ref": {
+            "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+            "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+          }
+        },
+        {
+          "assessment": {
+            "baseline": {
+              "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+              "hierarchy": {
+                "id": "tryfan-second-region-proof",
+                "revision": "1"
+              }
+            },
+            "policy": "current-applicable-terrain-v1",
+            "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+            "reason": "Transitive slope assessment: Selected representation still applies; no intersecting relevant input changes",
+            "result": {
+              "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+              "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+            },
+            "selectedFamily": "production-common",
+            "status": "fresh"
+          },
+          "probe": "southern-observer",
+          "property": "area-ratio",
+          "ref": {
+            "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+            "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+          }
+        },
+        {
+          "assessment": {
+            "baseline": {
+              "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+              "hierarchy": {
+                "id": "tryfan-second-region-proof",
+                "revision": "1"
+              }
+            },
+            "policy": "current-applicable-terrain-v1",
+            "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+            "reason": "Selected representation still applies; no intersecting relevant input changes",
+            "result": {
+              "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+              "revision": "4f4d6ae182d3821d1a002c855d8b886112c0aea0e13af2023b10d5294f70ef93"
+            },
+            "selectedFamily": "welsh-regional",
+            "status": "fresh"
+          },
+          "probe": "summit",
+          "property": "slope",
+          "ref": {
+            "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+            "revision": "4f4d6ae182d3821d1a002c855d8b886112c0aea0e13af2023b10d5294f70ef93"
+          }
+        },
+        {
+          "assessment": {
+            "baseline": {
+              "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+              "hierarchy": {
+                "id": "tryfan-second-region-proof",
+                "revision": "1"
+              }
+            },
+            "policy": "current-applicable-terrain-v1",
+            "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+            "reason": "Transitive slope assessment: Selected representation still applies; no intersecting relevant input changes",
+            "result": {
+              "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+              "revision": "dbc1746d41c191d251628d3409d5db3bf4064c8c29e9f0ba50a332804196c1d2"
+            },
+            "selectedFamily": "welsh-regional",
+            "status": "fresh"
+          },
+          "probe": "summit",
+          "property": "area-ratio",
+          "ref": {
+            "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+            "revision": "dbc1746d41c191d251628d3409d5db3bf4064c8c29e9f0ba50a332804196c1d2"
+          }
+        }
+      ],
+      "freshnessBefore": [
+        {
+          "assessment": {
+            "baseline": {
+              "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+              "hierarchy": {
+                "id": "tryfan-second-region-proof",
+                "revision": "1"
+              }
+            },
+            "policy": "current-applicable-terrain-v1",
+            "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+            "reason": "Current explicit hierarchy policy selects another applicable representation; stale is not false",
+            "result": {
+              "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+              "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839"
+            },
+            "selectedFamily": "welsh-regional",
+            "status": "stale"
+          },
+          "probe": "summit",
+          "property": "slope",
+          "ref": {
+            "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+            "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839"
+          }
+        },
+        {
+          "assessment": {
+            "baseline": {
+              "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+              "hierarchy": {
+                "id": "tryfan-second-region-proof",
+                "revision": "1"
+              }
+            },
+            "policy": "current-applicable-terrain-v1",
+            "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+            "reason": "Transitive slope assessment: Current explicit hierarchy policy selects another applicable representation; stale is not false",
+            "result": {
+              "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+              "revision": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527"
+            },
+            "selectedFamily": "welsh-regional",
+            "status": "stale"
+          },
+          "probe": "summit",
+          "property": "area-ratio",
+          "ref": {
+            "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+            "revision": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527"
+          }
+        },
+        {
+          "assessment": {
+            "baseline": {
+              "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+              "hierarchy": {
+                "id": "tryfan-second-region-proof",
+                "revision": "1"
+              }
+            },
+            "policy": "current-applicable-terrain-v1",
+            "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+            "reason": "Selected representation still applies; no intersecting relevant input changes",
+            "result": {
+              "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+              "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+            },
+            "selectedFamily": "production-common",
+            "status": "fresh"
+          },
+          "probe": "southern-observer",
+          "property": "slope",
+          "ref": {
+            "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+            "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+          }
+        },
+        {
+          "assessment": {
+            "baseline": {
+              "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "expectedMethodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+              "hierarchy": {
+                "id": "tryfan-second-region-proof",
+                "revision": "1"
+              }
+            },
+            "policy": "current-applicable-terrain-v1",
+            "policyRevision": "41b94b438e4ad1aa01940b54787fb98fef9d688d81522822bdf6ceaaa8df02e3",
+            "reason": "Transitive slope assessment: Selected representation still applies; no intersecting relevant input changes",
+            "result": {
+              "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+              "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+            },
+            "selectedFamily": "production-common",
+            "status": "fresh"
+          },
+          "probe": "southern-observer",
+          "property": "area-ratio",
+          "ref": {
+            "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+            "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+          }
+        }
+      ],
+      "g1": "63e5538d8abc714280347980df7e6982ceecc0ee81ee641f6503341604c62468",
+      "g2": "25455fde7c77847cdb51e504e976594d787ecf49563aaf353f3136b5e28141a5",
+      "historicalAnswerSha256": "6520f65315c8def51ca3aadf218baf21dde5cd3eb5069e2c225ef0df00485a00",
+      "methodRelative": [
+        {
+          "assessment": {
+            "baseline": {
+              "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "expectedMethodRevision": "retained-method-policy-comparison",
+              "hierarchy": {
+                "id": "tryfan-second-region-proof",
+                "revision": "1"
+              }
+            },
+            "policy": "current-applicable-terrain-v1",
+            "policyRevision": "20a4f92eb45ea4e25583c43e1ce2b92e80773c309c591414db1a2c18ffacb22a",
+            "reason": "Explicit current method policy requires a different revision; no automatic scientific superiority",
+            "result": {
+              "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+              "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839"
+            },
+            "selectedFamily": "welsh-regional",
+            "status": "stale"
+          },
+          "probe": "summit",
+          "property": "slope",
+          "ref": {
+            "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+            "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839"
+          }
+        },
+        {
+          "assessment": {
+            "baseline": {
+              "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "expectedMethodRevision": "retained-method-policy-comparison",
+              "hierarchy": {
+                "id": "tryfan-second-region-proof",
+                "revision": "1"
+              }
+            },
+            "policy": "current-applicable-terrain-v1",
+            "policyRevision": "20a4f92eb45ea4e25583c43e1ce2b92e80773c309c591414db1a2c18ffacb22a",
+            "reason": "Transitive slope assessment: Explicit current method policy requires a different revision; no automatic scientific superiority",
+            "result": {
+              "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+              "revision": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527"
+            },
+            "selectedFamily": "welsh-regional",
+            "status": "stale"
+          },
+          "probe": "summit",
+          "property": "area-ratio",
+          "ref": {
+            "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+            "revision": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527"
+          }
+        },
+        {
+          "assessment": {
+            "baseline": {
+              "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "expectedMethodRevision": "retained-method-policy-comparison",
+              "hierarchy": {
+                "id": "tryfan-second-region-proof",
+                "revision": "1"
+              }
+            },
+            "policy": "current-applicable-terrain-v1",
+            "policyRevision": "20a4f92eb45ea4e25583c43e1ce2b92e80773c309c591414db1a2c18ffacb22a",
+            "reason": "Explicit current method policy requires a different revision; no automatic scientific superiority",
+            "result": {
+              "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+              "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+            },
+            "selectedFamily": "production-common",
+            "status": "stale"
+          },
+          "probe": "southern-observer",
+          "property": "slope",
+          "ref": {
+            "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+            "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+          }
+        },
+        {
+          "assessment": {
+            "baseline": {
+              "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "expectedMethodRevision": "retained-method-policy-comparison",
+              "hierarchy": {
+                "id": "tryfan-second-region-proof",
+                "revision": "1"
+              }
+            },
+            "policy": "current-applicable-terrain-v1",
+            "policyRevision": "20a4f92eb45ea4e25583c43e1ce2b92e80773c309c591414db1a2c18ffacb22a",
+            "reason": "Transitive slope assessment: Explicit current method policy requires a different revision; no automatic scientific superiority",
+            "result": {
+              "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+              "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+            },
+            "selectedFamily": "production-common",
+            "status": "stale"
+          },
+          "probe": "southern-observer",
+          "property": "area-ratio",
+          "ref": {
+            "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+            "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+          }
+        },
+        {
+          "assessment": {
+            "baseline": {
+              "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "expectedMethodRevision": "retained-method-policy-comparison",
+              "hierarchy": {
+                "id": "tryfan-second-region-proof",
+                "revision": "1"
+              }
+            },
+            "policy": "current-applicable-terrain-v1",
+            "policyRevision": "20a4f92eb45ea4e25583c43e1ce2b92e80773c309c591414db1a2c18ffacb22a",
+            "reason": "Explicit current method policy requires a different revision; no automatic scientific superiority",
+            "result": {
+              "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+              "revision": "4f4d6ae182d3821d1a002c855d8b886112c0aea0e13af2023b10d5294f70ef93"
+            },
+            "selectedFamily": "welsh-regional",
+            "status": "stale"
+          },
+          "probe": "summit",
+          "property": "slope",
+          "ref": {
+            "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+            "revision": "4f4d6ae182d3821d1a002c855d8b886112c0aea0e13af2023b10d5294f70ef93"
+          }
+        },
+        {
+          "assessment": {
+            "baseline": {
+              "changesDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "expectedMethodRevision": "retained-method-policy-comparison",
+              "hierarchy": {
+                "id": "tryfan-second-region-proof",
+                "revision": "1"
+              }
+            },
+            "policy": "current-applicable-terrain-v1",
+            "policyRevision": "20a4f92eb45ea4e25583c43e1ce2b92e80773c309c591414db1a2c18ffacb22a",
+            "reason": "Transitive slope assessment: Explicit current method policy requires a different revision; no automatic scientific superiority",
+            "result": {
+              "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+              "revision": "dbc1746d41c191d251628d3409d5db3bf4064c8c29e9f0ba50a332804196c1d2"
+            },
+            "selectedFamily": "welsh-regional",
+            "status": "stale"
+          },
+          "probe": "summit",
+          "property": "area-ratio",
+          "ref": {
+            "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+            "revision": "dbc1746d41c191d251628d3409d5db3bf4064c8c29e9f0ba50a332804196c1d2"
+          }
+        }
+      ],
+      "newAnswerSha256": "a206cca8954f94b14754d218faa5ce8518792d65164553e5f1f73e00c889c4ed",
+      "newMembers": {
+        "catalogue": "dfe689ab616d99e4a7334b6f8671b5481a9561c53c692350bb6ac473325546d2",
+        "knowledge": "2713d13923d73b703b39aa60e25744374ba1d4dba08e21ec9d82b3570b87a179",
+        "locators": "4a63ed57bc29a6f562eb30233ca1bce64901710111cf14b9cecaa5dd29349cf4",
+        "serving": "d0f77089610bad2d4230ef13286d4ef87fe00af844a497daf835f6b97feceb42",
+        "understanding": "22b3162432ef78f989c28073ef5f20e1388053dd4147e3edd49e27e612e689ab"
+      },
+      "oldAnswerSha256": "4baec5416c8741d90e9c9a0274a2b49cfc4d35673d086b0086e3d6a249378288",
+      "oldMembers": {
+        "catalogue": "dfe689ab616d99e4a7334b6f8671b5481a9561c53c692350bb6ac473325546d2",
+        "knowledge": "2713d13923d73b703b39aa60e25744374ba1d4dba08e21ec9d82b3570b87a179",
+        "locators": "4a63ed57bc29a6f562eb30233ca1bce64901710111cf14b9cecaa5dd29349cf4",
+        "serving": "a93d05afa4f0e030516237543de74ed6a03b904acd5a673ccb7721d5bb4963a8",
+        "understanding": "98fe12bc937efab4a42b39c3eeef9d4e8ab129e56b26b06eede48dee720dcc44"
+      },
+      "pinnedAcrossPublication": true,
+      "publication": {
+        "generation": "25455fde7c77847cdb51e504e976594d787ecf49563aaf353f3136b5e28141a5",
+        "switchMilliseconds": 14.641199999998207,
+        "validationMilliseconds": 436.0511000000006
+      },
+      "recomputeMilliseconds": 539.06,
+      "recomputed": [
+        {
+          "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+          "revision": "4f4d6ae182d3821d1a002c855d8b886112c0aea0e13af2023b10d5294f70ef93"
+        },
+        {
+          "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+          "revision": "dbc1746d41c191d251628d3409d5db3bf4064c8c29e9f0ba50a332804196c1d2"
+        }
+      ],
+      "replayAfter": {
+        "checks": [
+          {
+            "exact": true,
+            "ref": {
+              "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+              "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839"
+            }
+          },
+          {
+            "exact": true,
+            "ref": {
+              "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+              "revision": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527"
+            }
+          },
+          {
+            "exact": true,
+            "ref": {
+              "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+              "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+            }
+          },
+          {
+            "exact": true,
+            "ref": {
+              "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+              "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+            }
+          },
+          {
+            "exact": true,
+            "ref": {
+              "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+              "revision": "4f4d6ae182d3821d1a002c855d8b886112c0aea0e13af2023b10d5294f70ef93"
+            }
+          },
+          {
+            "exact": true,
+            "ref": {
+              "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+              "revision": "dbc1746d41c191d251628d3409d5db3bf4064c8c29e9f0ba50a332804196c1d2"
+            }
+          }
+        ],
+        "fromRetainedPixels": true,
+        "measurement": {
+          "seconds": 0.12884410005062819,
+          "tileBytesRead": 320857,
+          "uniqueTileBytes": 320857
+        },
+        "methodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9"
+      },
+      "replayBefore": {
+        "checks": [
+          {
+            "exact": true,
+            "ref": {
+              "id": "claim:622e3876f370c17a3a12c5d07637fc28e3d224ca7bb1484944afe2c38e2af6bf",
+              "revision": "0cdaf8a524884ae0d9a993024f3b6b21d62ba740e618e21565795b00e31a4839"
+            }
+          },
+          {
+            "exact": true,
+            "ref": {
+              "id": "claim:866bed4503267a90a0a9a5e5bef1c7869ef30217101914377e6d019b6e19d06e",
+              "revision": "3072f8820ea060b1754e3ef5d4f1e00275870e8b52ff2afa2681ac1056274527"
+            }
+          },
+          {
+            "exact": true,
+            "ref": {
+              "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+              "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+            }
+          },
+          {
+            "exact": true,
+            "ref": {
+              "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+              "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+            }
+          }
+        ],
+        "fromRetainedPixels": true,
+        "measurement": {
+          "seconds": 0.11737270001322031,
+          "tileBytesRead": 207936,
+          "uniqueTileBytes": 207936
+        },
+        "methodRevision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9"
+      },
+      "reusedComponents": [
+        "catalogue",
+        "knowledge",
+        "locators"
+      ],
+      "reusedResults": [
+        {
+          "id": "claim:99cbf47f633fb22bd9305ec82778ed5873985f536f29430e713dce08e9f0e178",
+          "revision": "b9c1647494bd0b1e4a08c034c195615f68d36f8557d7d1486ad554bc011da86d"
+        },
+        {
+          "id": "claim:9bcc3258bb19248b826a53cd7a6dcd62a26c9f868b928722b0def76b9d684073",
+          "revision": "82efaed61d41b9059e067aa6e52e844353a6645acc85634b6c91ce8968bdadb7"
+        }
+      ],
+      "schema": "atlas-component-membership-lifecycle/v1",
+      "sourceVerification": {
+        "artifacts": 310,
+        "bytes": 42473107
+      },
+      "sourceVerificationMetrics": {
+        "RSSAfter": 144744448,
+        "RSSBefore": 141266944,
+        "counters": {
+          "ancestryTraversals": 0,
+          "componentEdges": 5,
+          "generationValidations": 1,
+          "integrityChecks": 39,
+          "membershipEdges": 32,
+          "membershipVisits": 33
+        },
+        "milliseconds": 462.8279000000002,
+        "reads": {
+          "components": {
+            "bytes": 1287421,
+            "calls": 5
+          },
+          "membership": {
+            "bytes": 5433,
+            "calls": 33
+          },
+          "portrayal": {
+            "bytes": 3057491,
+            "calls": 2
+          },
+          "publications": {
+            "bytes": 2482,
+            "calls": 1
+          },
+          "retained": {
+            "bytes": 42473107,
+            "calls": 310
+          },
+          "root": {
+            "bytes": 210,
+            "calls": 1
+          },
+          "runtime": {
+            "bytes": 435424,
+            "calls": 12
+          }
+        }
+      },
+      "store": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\lifecycle-f531671f-02f2-4953-85a9-27f751dac66e"
+    },
+    "sha256": "a74c823ad6183ab92ade6f21f7a54fa3bcf46cfa1c4ba91d4827ab5b6e295367"
+  },
+  "measurementCodePackaging": {
+    "files": {
+      "core.mjs": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measured-code\\core.mjs",
+        "sha256": "d5bc46cb80d16bdeaaec84a0fa9d79d77f66b7a7a6ca66cd29c207f71cd3ce13"
+      },
+      "failure-worker.mjs": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measured-code\\failure-worker.mjs",
+        "sha256": "f1cb38eb6c4c5975412783a75e3a4140f08d1b46d246842268daa6694f068288"
+      },
+      "fixtures.mjs": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measured-code\\fixtures.mjs",
+        "sha256": "de09d28047ae30fdc9f715d50cf2c93e0e5da8a52ca84497cf016537633207e0"
+      },
+      "interruption-worker.mjs": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measured-code\\interruption-worker.mjs",
+        "sha256": "29e8a977e5b9517a3ddb96bc2ef7037f0aa1814e91dbd40e0d46e3474dd2ab27"
+      },
+      "lifecycle-worker.mjs": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measured-code\\lifecycle-worker.mjs",
+        "sha256": "d41a2aba4003cee73ec253f80ff352a0061f4d374fef1d6fe2b2ad1df931e22c"
+      },
+      "plan.json": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measured-code\\plan.json",
+        "sha256": "11c41e38c762526e116c9b05e8b0769f2ba66887445df0bf82c107f54f4f9f88"
+      },
+      "plot.py": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measured-code\\plot.py",
+        "sha256": "ccded7ffb683566f5e1c85724f68ab1aef780bc49a4a4d0e5c167923f77a185e"
+      },
+      "run.py": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measured-code\\run.py",
+        "sha256": "cef83f36bc7ffff2fd123e86ab66605f674441da582d2709c1eb2c1fd8708184"
+      },
+      "runtime.mjs": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measured-code\\runtime.mjs",
+        "sha256": "a48dcc748b904c4e703df30aa36cd85cfc68277efd3a4b7c3f7d50e6a2ba2dae"
+      },
+      "service-worker.mjs": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measured-code\\service-worker.mjs",
+        "sha256": "ed25b6618ab07d4cf4402bbc3cc9fd13c53f712fe4c2575af73eab917927f52c"
+      },
+      "test-proof.mjs": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measured-code\\test-proof.mjs",
+        "sha256": "f69efff39a8d6bd6b8fdbaf7df584a16a549671cf3eba966b0955ce33bfc49ee"
+      },
+      "worker.mjs": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measured-code\\worker.mjs",
+        "sha256": "72a17be26a8a778a56d602133658a1e4f44cbf89552399502175668b2ff2b4f4"
+      }
+    },
+    "rule": "Original measured code bytes retained externally; committed source normalized CRLF to LF only. Canonical source equivalence checked during regression. No logical measurement implementation changed."
+  },
+  "planSha256": "11c41e38c762526e116c9b05e8b0769f2ba66887445df0bf82c107f54f4f9f88",
+  "rows": [
+    {
+      "answerSha256": "1cd00303d9a3e8f234039aa0913142157cf169681da24ce7e370aa5f50f5d7fb",
+      "counters": {
+        "ancestryTraversals": 0,
+        "componentEdges": 0,
+        "generationValidations": 0,
+        "integrityChecks": 34,
+        "membershipEdges": 32,
+        "membershipVisits": 33
+      },
+      "depth": 7,
+      "fresh": 5,
+      "freshQueryMilliseconds": {
+        "max": 33.12540000000001,
+        "median": 29.356100000000026,
+        "min": 27.690799999999996
+      },
+      "freshStartupMilliseconds": {
+        "max": 34.889700000000005,
+        "median": 33.66640000000001,
+        "min": 32.598900000000015
+      },
+      "generation": "c8c8ce081ba304e2c852b615724e9dd0ffc83e407877faec50e6211a74941397",
+      "id": "G7-current-membership",
+      "mode": "membership",
+      "qualifiedSha256": "6e1709a6e5bc0e77aaa5e338e5569c0870a2d145e236667a56b7df59c17c2202",
+      "raw": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measurements\\G7-current-membership.json",
+        "sha256": "ee0f23d0e48e10dfd6c4247a6cc5ab299c2b1c92f52689fce608dda1480d6134"
+      },
+      "reads": {
+        "membership": {
+          "bytes": 5823,
+          "calls": 33
+        },
+        "publications": {
+          "bytes": 2482,
+          "calls": 1
+        },
+        "root": {
+          "bytes": 210,
+          "calls": 1
+        }
+      },
+      "responseBytes": 2715,
+      "selection": "current",
+      "warm": 20,
+      "warmMilliseconds": {
+        "max": 32.86099999999999,
+        "median": 29.065800000000024,
+        "min": 27.440400000000068
+      },
+      "warmRSSAfter": {
+        "max": 74625024,
+        "median": 74280960.0,
+        "min": 71372800
+      }
+    },
+    {
+      "answerSha256": "8f22fc33f0c53ac556c501c1613cb937808b70b0210ab09b5679bcc7f7f484a1",
+      "counters": {
+        "ancestryTraversals": 0,
+        "componentEdges": 5,
+        "generationValidations": 1,
+        "integrityChecks": 39,
+        "membershipEdges": 32,
+        "membershipVisits": 33
+      },
+      "depth": 7,
+      "fresh": 5,
+      "freshQueryMilliseconds": {
+        "max": 93.27919999999997,
+        "median": 87.23840000000001,
+        "min": 81.16209999999998
+      },
+      "freshStartupMilliseconds": {
+        "max": 41.417,
+        "median": 38.3314,
+        "min": 36.7415
+      },
+      "generation": "c8c8ce081ba304e2c852b615724e9dd0ffc83e407877faec50e6211a74941397",
+      "id": "G7-current-hydrate",
+      "mode": "hydrate",
+      "qualifiedSha256": "a548f7c0d47246b440c4975b0dafcdae089095f96cf86e97c01c5f9757fd88bd",
+      "raw": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measurements\\G7-current-hydrate.json",
+        "sha256": "4622f7abb14d41fa0e95df3628d6bc3a2f1203dfe76c3ea23ec1c6370f2d8da0"
+      },
+      "reads": {
+        "components": {
+          "bytes": 1287421,
+          "calls": 5
+        },
+        "membership": {
+          "bytes": 5823,
+          "calls": 33
+        },
+        "publications": {
+          "bytes": 2482,
+          "calls": 1
+        },
+        "root": {
+          "bytes": 210,
+          "calls": 1
+        },
+        "runtime": {
+          "bytes": 433718,
+          "calls": 11
+        }
+      },
+      "responseBytes": 1358543,
+      "selection": "current",
+      "warm": 20,
+      "warmMilliseconds": {
+        "max": 85.6599,
+        "median": 74.6142000000001,
+        "min": 70.16169999999988
+      },
+      "warmRSSAfter": {
+        "max": 305983488,
+        "median": 246069248.0,
+        "min": 91230208
+      }
+    },
+    {
+      "answerSha256": "58dacb1393381741fbf387f97f75a9625c4223addcbce8a8f1c1bc3b15e7dc6c",
+      "counters": {
+        "ancestryTraversals": 0,
+        "componentEdges": 0,
+        "generationValidations": 0,
+        "integrityChecks": 34,
+        "membershipEdges": 32,
+        "membershipVisits": 33
+      },
+      "depth": 7,
+      "fresh": 5,
+      "freshQueryMilliseconds": {
+        "max": 34.77249999999998,
+        "median": 32.26740000000001,
+        "min": 29.860500000000002
+      },
+      "freshStartupMilliseconds": {
+        "max": 39.2106,
+        "median": 36.0197,
+        "min": 32.666799999999995
+      },
+      "generation": "5f09905b5fb2ed831c06e6ca4401ed0d22fce14d3289dc83a37955a0c826c97d",
+      "id": "G7-recent-membership",
+      "mode": "membership",
+      "qualifiedSha256": "0cada63dd0ce8fb6027ad3371044da8bcb386996a7fc2c8463b644b1c870e818",
+      "raw": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measurements\\G7-recent-membership.json",
+        "sha256": "7562cbbb71e9c2ed1f9a318dad9ad7a10215e3edbff361d03c87643a416f173e"
+      },
+      "reads": {
+        "membership": {
+          "bytes": 5823,
+          "calls": 33
+        },
+        "publications": {
+          "bytes": 2482,
+          "calls": 1
+        },
+        "root": {
+          "bytes": 210,
+          "calls": 1
+        }
+      },
+      "responseBytes": 2715,
+      "selection": "recent",
+      "warm": 20,
+      "warmMilliseconds": {
+        "max": 32.28109999999998,
+        "median": 29.550300000000007,
+        "min": 25.181699999999978
+      },
+      "warmRSSAfter": {
+        "max": 74645504,
+        "median": 74344448.0,
+        "min": 71327744
+      }
+    },
+    {
+      "answerSha256": "a7408cc157928218878af21af7487a762294d42c9643ed81e6cee4976028ef0c",
+      "counters": {
+        "ancestryTraversals": 0,
+        "componentEdges": 5,
+        "generationValidations": 1,
+        "integrityChecks": 39,
+        "membershipEdges": 32,
+        "membershipVisits": 33
+      },
+      "depth": 7,
+      "fresh": 5,
+      "freshQueryMilliseconds": {
+        "max": 88.14620000000002,
+        "median": 86.22040000000001,
+        "min": 85.09469999999999
+      },
+      "freshStartupMilliseconds": {
+        "max": 37.443899999999985,
+        "median": 35.27950000000001,
+        "min": 34.266099999999994
+      },
+      "generation": "5f09905b5fb2ed831c06e6ca4401ed0d22fce14d3289dc83a37955a0c826c97d",
+      "id": "G7-recent-hydrate",
+      "mode": "hydrate",
+      "qualifiedSha256": "b3cc829d983fb459474446c1e76e712f167a7a0047e66a397b2d0e541604e328",
+      "raw": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measurements\\G7-recent-hydrate.json",
+        "sha256": "10c09634e3c59e068ee2aa60caea2144930d61a610fd5cf8f271298de9d4eb0a"
+      },
+      "reads": {
+        "components": {
+          "bytes": 1287421,
+          "calls": 5
+        },
+        "membership": {
+          "bytes": 5823,
+          "calls": 33
+        },
+        "publications": {
+          "bytes": 2482,
+          "calls": 1
+        },
+        "root": {
+          "bytes": 210,
+          "calls": 1
+        },
+        "runtime": {
+          "bytes": 433718,
+          "calls": 11
+        }
+      },
+      "responseBytes": 1358543,
+      "selection": "recent",
+      "warm": 20,
+      "warmMilliseconds": {
+        "max": 86.74060000000003,
+        "median": 76.09890000000001,
+        "min": 67.58059999999978
+      },
+      "warmRSSAfter": {
+        "max": 306147328,
+        "median": 246083584.0,
+        "min": 91459584
+      }
+    },
+    {
+      "answerSha256": "127ad4ed041df8106175449478636f3e0fd1d846d899fe869e23cbeca172d214",
+      "counters": {
+        "ancestryTraversals": 0,
+        "componentEdges": 0,
+        "generationValidations": 0,
+        "integrityChecks": 34,
+        "membershipEdges": 32,
+        "membershipVisits": 33
+      },
+      "depth": 7,
+      "fresh": 5,
+      "freshQueryMilliseconds": {
+        "max": 33.83530000000002,
+        "median": 29.85839999999999,
+        "min": 29.391500000000008
+      },
+      "freshStartupMilliseconds": {
+        "max": 40.221599999999995,
+        "median": 36.28660000000002,
+        "min": 33.2766
+      },
+      "generation": "82d09ff299bca9dc35229d845b7c24d4e1b1ee4f06ab79b6cd639a7fea19a841",
+      "id": "G7-oldest-membership",
+      "mode": "membership",
+      "qualifiedSha256": "e1e82cb31dd30f32ca1244b4885bd382f675cf4ca1fc45f43292609227428f31",
+      "raw": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measurements\\G7-oldest-membership.json",
+        "sha256": "1f97fc819dd2c157ff2ec04218a99c8afdbf3d4bea795c131e4756195e8ee1e2"
+      },
+      "reads": {
+        "membership": {
+          "bytes": 5823,
+          "calls": 33
+        },
+        "publications": {
+          "bytes": 2420,
+          "calls": 1
+        },
+        "root": {
+          "bytes": 210,
+          "calls": 1
+        }
+      },
+      "responseBytes": 2653,
+      "selection": "oldest",
+      "warm": 20,
+      "warmMilliseconds": {
+        "max": 31.49890000000005,
+        "median": 29.403899999999993,
+        "min": 26.4932
+      },
+      "warmRSSAfter": {
+        "max": 75128832,
+        "median": 74905600.0,
+        "min": 71827456
+      }
+    },
+    {
+      "answerSha256": "ad5a52f657f38b17dc8a666f58cdfacaf8a3467a80ffad3dedef9a3a840dab8f",
+      "counters": {
+        "ancestryTraversals": 0,
+        "componentEdges": 5,
+        "generationValidations": 1,
+        "integrityChecks": 39,
+        "membershipEdges": 32,
+        "membershipVisits": 33
+      },
+      "depth": 7,
+      "fresh": 5,
+      "freshQueryMilliseconds": {
+        "max": 92.78010000000003,
+        "median": 89.38509999999997,
+        "min": 86.6034
+      },
+      "freshStartupMilliseconds": {
+        "max": 37.50319999999999,
+        "median": 34.75999999999999,
+        "min": 34.34469999999999
+      },
+      "generation": "82d09ff299bca9dc35229d845b7c24d4e1b1ee4f06ab79b6cd639a7fea19a841",
+      "id": "G7-oldest-hydrate",
+      "mode": "hydrate",
+      "qualifiedSha256": "61c63ad1ac675239f0cc71db32c7d9d998f3ec2ae19cc07c1fd3f390ef11bb0f",
+      "raw": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measurements\\G7-oldest-hydrate.json",
+        "sha256": "28f5d56b2b2f9592291e8698e077f57c58e5f49076527cb7e4e1940cb4ecc3a6"
+      },
+      "reads": {
+        "components": {
+          "bytes": 1287421,
+          "calls": 5
+        },
+        "membership": {
+          "bytes": 5823,
+          "calls": 33
+        },
+        "publications": {
+          "bytes": 2420,
+          "calls": 1
+        },
+        "root": {
+          "bytes": 210,
+          "calls": 1
+        },
+        "runtime": {
+          "bytes": 433718,
+          "calls": 11
+        }
+      },
+      "responseBytes": 1358481,
+      "selection": "oldest",
+      "warm": 20,
+      "warmMilliseconds": {
+        "max": 94.69050000000001,
+        "median": 79.32060000000018,
+        "min": 73.02599999999995
+      },
+      "warmRSSAfter": {
+        "max": 295055360,
+        "median": 249198592.0,
+        "min": 91656192
+      }
+    },
+    {
+      "answerSha256": "bf09e0f0c739c4cf4114f9b84b2dbe812a6136db9b37e9ef12223542aadef06d",
+      "counters": {
+        "ancestryTraversals": 0,
+        "componentEdges": 0,
+        "generationValidations": 0,
+        "integrityChecks": 34,
+        "membershipEdges": 32,
+        "membershipVisits": 33
+      },
+      "depth": 28,
+      "fresh": 5,
+      "freshQueryMilliseconds": {
+        "max": 31.280100000000004,
+        "median": 30.35470000000001,
+        "min": 30.254199999999997
+      },
+      "freshStartupMilliseconds": {
+        "max": 39.368300000000005,
+        "median": 36.084900000000005,
+        "min": 33.83879999999999
+      },
+      "generation": "32805ed5646f2b81b091624a63e607296e5c2472ff19306077f3419266d328e2",
+      "id": "G28-current-membership",
+      "mode": "membership",
+      "qualifiedSha256": "e52e0557076e6b13461a21a905938b9766c38c5a48be0503fef1ad843b3e5a35",
+      "raw": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measurements\\G28-current-membership.json",
+        "sha256": "d8932194e461b8e52e81e80872e60b47a0238c900617c90cea77a3c48e4b4f08"
+      },
+      "reads": {
+        "membership": {
+          "bytes": 7383,
+          "calls": 33
+        },
+        "publications": {
+          "bytes": 2483,
+          "calls": 1
+        },
+        "root": {
+          "bytes": 210,
+          "calls": 1
+        }
+      },
+      "responseBytes": 2716,
+      "selection": "current",
+      "warm": 20,
+      "warmMilliseconds": {
+        "max": 31.393599999999992,
+        "median": 28.387,
+        "min": 26.430799999999977
+      },
+      "warmRSSAfter": {
+        "max": 75051008,
+        "median": 74770432.0,
+        "min": 71729152
+      }
+    },
+    {
+      "answerSha256": "3ff41bc45c5c11e01191d18ef00f08a2db459f2992ee9848ffebb40aa1e68c1f",
+      "counters": {
+        "ancestryTraversals": 0,
+        "componentEdges": 5,
+        "generationValidations": 1,
+        "integrityChecks": 39,
+        "membershipEdges": 32,
+        "membershipVisits": 33
+      },
+      "depth": 28,
+      "fresh": 5,
+      "freshQueryMilliseconds": {
+        "max": 88.44289999999998,
+        "median": 85.98880000000003,
+        "min": 83.172
+      },
+      "freshStartupMilliseconds": {
+        "max": 36.7294,
+        "median": 36.24419999999998,
+        "min": 33.890299999999996
+      },
+      "generation": "32805ed5646f2b81b091624a63e607296e5c2472ff19306077f3419266d328e2",
+      "id": "G28-current-hydrate",
+      "mode": "hydrate",
+      "qualifiedSha256": "86b10d9f5b1c3d326b38f564d8942d5fd23051bcfca6370584a4923dc6e1d1cf",
+      "raw": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measurements\\G28-current-hydrate.json",
+        "sha256": "56737950911dc5726c7e61a12beb85c74e3c8b1db5cbf477d757b171ca43c90e"
+      },
+      "reads": {
+        "components": {
+          "bytes": 1287421,
+          "calls": 5
+        },
+        "membership": {
+          "bytes": 7383,
+          "calls": 33
+        },
+        "publications": {
+          "bytes": 2483,
+          "calls": 1
+        },
+        "root": {
+          "bytes": 210,
+          "calls": 1
+        },
+        "runtime": {
+          "bytes": 433718,
+          "calls": 11
+        }
+      },
+      "responseBytes": 1358544,
+      "selection": "current",
+      "warm": 20,
+      "warmMilliseconds": {
+        "max": 86.43950000000001,
+        "median": 72.34950000000003,
+        "min": 67.81940000000009
+      },
+      "warmRSSAfter": {
+        "max": 303788032,
+        "median": 249245696.0,
+        "min": 91623424
+      }
+    },
+    {
+      "answerSha256": "86adc23e849571f4569ee7698596c2a08cf7992772f9baf162b225e69248b0c0",
+      "counters": {
+        "ancestryTraversals": 0,
+        "componentEdges": 0,
+        "generationValidations": 0,
+        "integrityChecks": 34,
+        "membershipEdges": 32,
+        "membershipVisits": 33
+      },
+      "depth": 28,
+      "fresh": 5,
+      "freshQueryMilliseconds": {
+        "max": 30.349400000000003,
+        "median": 29.64190000000002,
+        "min": 28.575400000000002
+      },
+      "freshStartupMilliseconds": {
+        "max": 35.08109999999999,
+        "median": 34.78539999999998,
+        "min": 31.5608
+      },
+      "generation": "d2cad3fc453841f26d4055b08185a3a6c65f467fb51cd738abce9e776a73c3f7",
+      "id": "G28-recent-membership",
+      "mode": "membership",
+      "qualifiedSha256": "7d341e4bd624b4973b5c3faae4eaa441c7ee1437c04533c69c4f19ea5303720f",
+      "raw": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measurements\\G28-recent-membership.json",
+        "sha256": "4880d423417268febcaa16dc95a8df57c234d99f532feead564e6ee9e4b27fdf"
+      },
+      "reads": {
+        "membership": {
+          "bytes": 7383,
+          "calls": 33
+        },
+        "publications": {
+          "bytes": 2483,
+          "calls": 1
+        },
+        "root": {
+          "bytes": 210,
+          "calls": 1
+        }
+      },
+      "responseBytes": 2716,
+      "selection": "recent",
+      "warm": 20,
+      "warmMilliseconds": {
+        "max": 31.7038,
+        "median": 28.64734999999996,
+        "min": 24.65949999999998
+      },
+      "warmRSSAfter": {
+        "max": 74956800,
+        "median": 74598400.0,
+        "min": 71544832
+      }
+    },
+    {
+      "answerSha256": "15b318d61ed1547ce1cd7667ed917f757278739fa432c8e02d3b8a8b616a1883",
+      "counters": {
+        "ancestryTraversals": 0,
+        "componentEdges": 5,
+        "generationValidations": 1,
+        "integrityChecks": 39,
+        "membershipEdges": 32,
+        "membershipVisits": 33
+      },
+      "depth": 28,
+      "fresh": 5,
+      "freshQueryMilliseconds": {
+        "max": 84.58720000000002,
+        "median": 82.4768,
+        "min": 79.89149999999998
+      },
+      "freshStartupMilliseconds": {
+        "max": 35.32640000000001,
+        "median": 33.52359999999999,
+        "min": 31.22240000000002
+      },
+      "generation": "d2cad3fc453841f26d4055b08185a3a6c65f467fb51cd738abce9e776a73c3f7",
+      "id": "G28-recent-hydrate",
+      "mode": "hydrate",
+      "qualifiedSha256": "8755bb78e74b2eb345c878bf463a18703015601ed6ccd5ac893b616136794511",
+      "raw": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measurements\\G28-recent-hydrate.json",
+        "sha256": "4aaa03f57189ab69540f1aef8cfc61e9ef96967096edfd11a02ef8825607f389"
+      },
+      "reads": {
+        "components": {
+          "bytes": 1287421,
+          "calls": 5
+        },
+        "membership": {
+          "bytes": 7383,
+          "calls": 33
+        },
+        "publications": {
+          "bytes": 2483,
+          "calls": 1
+        },
+        "root": {
+          "bytes": 210,
+          "calls": 1
+        },
+        "runtime": {
+          "bytes": 433718,
+          "calls": 11
+        }
+      },
+      "responseBytes": 1358544,
+      "selection": "recent",
+      "warm": 20,
+      "warmMilliseconds": {
+        "max": 81.5556,
+        "median": 76.3424500000001,
+        "min": 71.73009999999977
+      },
+      "warmRSSAfter": {
+        "max": 304644096,
+        "median": 247441408.0,
+        "min": 91979776
+      }
+    },
+    {
+      "answerSha256": "127ad4ed041df8106175449478636f3e0fd1d846d899fe869e23cbeca172d214",
+      "counters": {
+        "ancestryTraversals": 0,
+        "componentEdges": 0,
+        "generationValidations": 0,
+        "integrityChecks": 34,
+        "membershipEdges": 32,
+        "membershipVisits": 33
+      },
+      "depth": 28,
+      "fresh": 5,
+      "freshQueryMilliseconds": {
+        "max": 34.263300000000015,
+        "median": 30.126000000000005,
+        "min": 28.053799999999995
+      },
+      "freshStartupMilliseconds": {
+        "max": 34.6524,
+        "median": 34.2586,
+        "min": 33.142300000000006
+      },
+      "generation": "82d09ff299bca9dc35229d845b7c24d4e1b1ee4f06ab79b6cd639a7fea19a841",
+      "id": "G28-oldest-membership",
+      "mode": "membership",
+      "qualifiedSha256": "e1e82cb31dd30f32ca1244b4885bd382f675cf4ca1fc45f43292609227428f31",
+      "raw": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measurements\\G28-oldest-membership.json",
+        "sha256": "5397747077c1af97ff548043701683822efc7d7dee5ec37a3b54a3b5827678ab"
+      },
+      "reads": {
+        "membership": {
+          "bytes": 7383,
+          "calls": 33
+        },
+        "publications": {
+          "bytes": 2420,
+          "calls": 1
+        },
+        "root": {
+          "bytes": 210,
+          "calls": 1
+        }
+      },
+      "responseBytes": 2653,
+      "selection": "oldest",
+      "warm": 20,
+      "warmMilliseconds": {
+        "max": 33.202800000000025,
+        "median": 28.52155000000002,
+        "min": 25.08389999999997
+      },
+      "warmRSSAfter": {
+        "max": 74661888,
+        "median": 74283008.0,
+        "min": 71393280
+      }
+    },
+    {
+      "answerSha256": "ad5a52f657f38b17dc8a666f58cdfacaf8a3467a80ffad3dedef9a3a840dab8f",
+      "counters": {
+        "ancestryTraversals": 0,
+        "componentEdges": 5,
+        "generationValidations": 1,
+        "integrityChecks": 39,
+        "membershipEdges": 32,
+        "membershipVisits": 33
+      },
+      "depth": 28,
+      "fresh": 5,
+      "freshQueryMilliseconds": {
+        "max": 88.167,
+        "median": 84.80879999999999,
+        "min": 81.77439999999999
+      },
+      "freshStartupMilliseconds": {
+        "max": 35.6994,
+        "median": 34.857500000000016,
+        "min": 32.239599999999996
+      },
+      "generation": "82d09ff299bca9dc35229d845b7c24d4e1b1ee4f06ab79b6cd639a7fea19a841",
+      "id": "G28-oldest-hydrate",
+      "mode": "hydrate",
+      "qualifiedSha256": "61c63ad1ac675239f0cc71db32c7d9d998f3ec2ae19cc07c1fd3f390ef11bb0f",
+      "raw": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measurements\\G28-oldest-hydrate.json",
+        "sha256": "96097aa2da9b0988a2e74c8433e0a6eeda39e9e64f7ec58c28e05a208b952d59"
+      },
+      "reads": {
+        "components": {
+          "bytes": 1287421,
+          "calls": 5
+        },
+        "membership": {
+          "bytes": 7383,
+          "calls": 33
+        },
+        "publications": {
+          "bytes": 2420,
+          "calls": 1
+        },
+        "root": {
+          "bytes": 210,
+          "calls": 1
+        },
+        "runtime": {
+          "bytes": 433718,
+          "calls": 11
+        }
+      },
+      "responseBytes": 1358481,
+      "selection": "oldest",
+      "warm": 20,
+      "warmMilliseconds": {
+        "max": 89.40170000000003,
+        "median": 75.2482,
+        "min": 67.95200000000023
+      },
+      "warmRSSAfter": {
+        "max": 294871040,
+        "median": 248965120.0,
+        "min": 91742208
+      }
+    },
+    {
+      "answerSha256": "b9445cb86da8778a801db0203dc0663cc3c5ceec83936e432b11541c0ae7b0de",
+      "counters": {
+        "ancestryTraversals": 0,
+        "componentEdges": 0,
+        "generationValidations": 0,
+        "integrityChecks": 34,
+        "membershipEdges": 32,
+        "membershipVisits": 33
+      },
+      "depth": 112,
+      "fresh": 5,
+      "freshQueryMilliseconds": {
+        "max": 30.1122,
+        "median": 29.086100000000016,
+        "min": 28.415899999999993
+      },
+      "freshStartupMilliseconds": {
+        "max": 35.7501,
+        "median": 35.4931,
+        "min": 32.0626
+      },
+      "generation": "1992f3deffe1ad91f192bf911d4f5237e271fbf6c4d9336e4a88d3aa167cdd40",
+      "id": "G112-current-membership",
+      "mode": "membership",
+      "qualifiedSha256": "98df24e55122c709b14db4cd1360efddffac9a6cce6e3e0e32ae9b1a9070d09a",
+      "raw": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measurements\\G112-current-membership.json",
+        "sha256": "457181158724f9c1eca226afb51ce43f632f6ffaa2472604f5ee923b99dda73f"
+      },
+      "reads": {
+        "membership": {
+          "bytes": 12375,
+          "calls": 33
+        },
+        "publications": {
+          "bytes": 2484,
+          "calls": 1
+        },
+        "root": {
+          "bytes": 210,
+          "calls": 1
+        }
+      },
+      "responseBytes": 2717,
+      "selection": "current",
+      "warm": 20,
+      "warmMilliseconds": {
+        "max": 30.728700000000003,
+        "median": 27.681849999999997,
+        "min": 25.24339999999995
+      },
+      "warmRSSAfter": {
+        "max": 74780672,
+        "median": 74549248.0,
+        "min": 71630848
+      }
+    },
+    {
+      "answerSha256": "d8b9472da312e82df9adf565fa7ec60e72dc135b9c8f27c15009a7d483924143",
+      "counters": {
+        "ancestryTraversals": 0,
+        "componentEdges": 5,
+        "generationValidations": 1,
+        "integrityChecks": 39,
+        "membershipEdges": 32,
+        "membershipVisits": 33
+      },
+      "depth": 112,
+      "fresh": 5,
+      "freshQueryMilliseconds": {
+        "max": 86.4572,
+        "median": 83.6722,
+        "min": 77.0505
+      },
+      "freshStartupMilliseconds": {
+        "max": 36.31220000000002,
+        "median": 33.925700000000006,
+        "min": 32.3117
+      },
+      "generation": "1992f3deffe1ad91f192bf911d4f5237e271fbf6c4d9336e4a88d3aa167cdd40",
+      "id": "G112-current-hydrate",
+      "mode": "hydrate",
+      "qualifiedSha256": "13f48fb3d4306fcca90ff0ca97b87f769e68d78c1bc2933bebc4d78aa7970b86",
+      "raw": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measurements\\G112-current-hydrate.json",
+        "sha256": "e2e1d099c188c39531e04390254c0c3280c2eae3805059541146c377bcbe68a9"
+      },
+      "reads": {
+        "components": {
+          "bytes": 1287421,
+          "calls": 5
+        },
+        "membership": {
+          "bytes": 12375,
+          "calls": 33
+        },
+        "publications": {
+          "bytes": 2484,
+          "calls": 1
+        },
+        "root": {
+          "bytes": 210,
+          "calls": 1
+        },
+        "runtime": {
+          "bytes": 433718,
+          "calls": 11
+        }
+      },
+      "responseBytes": 1358545,
+      "selection": "current",
+      "warm": 20,
+      "warmMilliseconds": {
+        "max": 84.99289999999996,
+        "median": 73.18104999999997,
+        "min": 68.94119999999998
+      },
+      "warmRSSAfter": {
+        "max": 302116864,
+        "median": 248805376.0,
+        "min": 91443200
+      }
+    },
+    {
+      "answerSha256": "bd5bedbd2dae08103b1bb914330fb0590783b3c6753159fa6f490785a90712b3",
+      "counters": {
+        "ancestryTraversals": 0,
+        "componentEdges": 0,
+        "generationValidations": 0,
+        "integrityChecks": 34,
+        "membershipEdges": 32,
+        "membershipVisits": 33
+      },
+      "depth": 112,
+      "fresh": 5,
+      "freshQueryMilliseconds": {
+        "max": 33.43530000000001,
+        "median": 29.788599999999974,
+        "min": 29.345499999999987
+      },
+      "freshStartupMilliseconds": {
+        "max": 36.81299999999999,
+        "median": 35.25029999999998,
+        "min": 31.648600000000016
+      },
+      "generation": "3d5907bbf1768afa12fbca795c27eed106fa1c709069db8cb1d59b6bc8f3fcd3",
+      "id": "G112-recent-membership",
+      "mode": "membership",
+      "qualifiedSha256": "530e05173268d9fa37e6d4264223352d7be81a4a77c2fd8b36c2bacba6d0d92f",
+      "raw": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measurements\\G112-recent-membership.json",
+        "sha256": "efd7094b9f7a14c68d0fdfdbcd5d7169d05c0af29cfad0e16a1cf32ae03430f3"
+      },
+      "reads": {
+        "membership": {
+          "bytes": 12375,
+          "calls": 33
+        },
+        "publications": {
+          "bytes": 2484,
+          "calls": 1
+        },
+        "root": {
+          "bytes": 210,
+          "calls": 1
+        }
+      },
+      "responseBytes": 2717,
+      "selection": "recent",
+      "warm": 20,
+      "warmMilliseconds": {
+        "max": 34.983600000000024,
+        "median": 28.858000000000004,
+        "min": 25.026800000000094
+      },
+      "warmRSSAfter": {
+        "max": 75280384,
+        "median": 74917888.0,
+        "min": 71704576
+      }
+    },
+    {
+      "answerSha256": "74482be63e169b4b515b347876a60ef15ce25cead7557311b30946b2bbc0aa97",
+      "counters": {
+        "ancestryTraversals": 0,
+        "componentEdges": 5,
+        "generationValidations": 1,
+        "integrityChecks": 39,
+        "membershipEdges": 32,
+        "membershipVisits": 33
+      },
+      "depth": 112,
+      "fresh": 5,
+      "freshQueryMilliseconds": {
+        "max": 86.25969999999998,
+        "median": 84.0019,
+        "min": 82.73509999999996
+      },
+      "freshStartupMilliseconds": {
+        "max": 36.0633,
+        "median": 33.2576,
+        "min": 31.201899999999995
+      },
+      "generation": "3d5907bbf1768afa12fbca795c27eed106fa1c709069db8cb1d59b6bc8f3fcd3",
+      "id": "G112-recent-hydrate",
+      "mode": "hydrate",
+      "qualifiedSha256": "613ff24f60efd3532a747141f60fb35e495c9dc75c8407b7b86677fc80a5ab5f",
+      "raw": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measurements\\G112-recent-hydrate.json",
+        "sha256": "84a24028c956bde46be66ff9b4fb9780e8ebcfafe4c92e6c1c7cf082f65d4cf1"
+      },
+      "reads": {
+        "components": {
+          "bytes": 1287421,
+          "calls": 5
+        },
+        "membership": {
+          "bytes": 12375,
+          "calls": 33
+        },
+        "publications": {
+          "bytes": 2484,
+          "calls": 1
+        },
+        "root": {
+          "bytes": 210,
+          "calls": 1
+        },
+        "runtime": {
+          "bytes": 433718,
+          "calls": 11
+        }
+      },
+      "responseBytes": 1358545,
+      "selection": "recent",
+      "warm": 20,
+      "warmMilliseconds": {
+        "max": 87.3808,
+        "median": 73.2853,
+        "min": 67.86160000000018
+      },
+      "warmRSSAfter": {
+        "max": 290025472,
+        "median": 254482432.0,
+        "min": 91856896
+      }
+    },
+    {
+      "answerSha256": "127ad4ed041df8106175449478636f3e0fd1d846d899fe869e23cbeca172d214",
+      "counters": {
+        "ancestryTraversals": 0,
+        "componentEdges": 0,
+        "generationValidations": 0,
+        "integrityChecks": 34,
+        "membershipEdges": 32,
+        "membershipVisits": 33
+      },
+      "depth": 112,
+      "fresh": 5,
+      "freshQueryMilliseconds": {
+        "max": 31.457599999999985,
+        "median": 31.142500000000013,
+        "min": 28.696200000000005
+      },
+      "freshStartupMilliseconds": {
+        "max": 36.036699999999996,
+        "median": 34.7422,
+        "min": 32.98429999999999
+      },
+      "generation": "82d09ff299bca9dc35229d845b7c24d4e1b1ee4f06ab79b6cd639a7fea19a841",
+      "id": "G112-oldest-membership",
+      "mode": "membership",
+      "qualifiedSha256": "e1e82cb31dd30f32ca1244b4885bd382f675cf4ca1fc45f43292609227428f31",
+      "raw": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measurements\\G112-oldest-membership.json",
+        "sha256": "1e2a89cd0468ddcf4b45bfd5a8bc9590d4e227b0c90cc1314ea05fecdb78d33c"
+      },
+      "reads": {
+        "membership": {
+          "bytes": 12375,
+          "calls": 33
+        },
+        "publications": {
+          "bytes": 2420,
+          "calls": 1
+        },
+        "root": {
+          "bytes": 210,
+          "calls": 1
+        }
+      },
+      "responseBytes": 2653,
+      "selection": "oldest",
+      "warm": 20,
+      "warmMilliseconds": {
+        "max": 34.680499999999995,
+        "median": 28.90039999999999,
+        "min": 26.556100000000015
+      },
+      "warmRSSAfter": {
+        "max": 74817536,
+        "median": 74500096.0,
+        "min": 71401472
+      }
+    },
+    {
+      "answerSha256": "ad5a52f657f38b17dc8a666f58cdfacaf8a3467a80ffad3dedef9a3a840dab8f",
+      "counters": {
+        "ancestryTraversals": 0,
+        "componentEdges": 5,
+        "generationValidations": 1,
+        "integrityChecks": 39,
+        "membershipEdges": 32,
+        "membershipVisits": 33
+      },
+      "depth": 112,
+      "fresh": 5,
+      "freshQueryMilliseconds": {
+        "max": 87.08020000000002,
+        "median": 85.31709999999998,
+        "min": 82.69229999999999
+      },
+      "freshStartupMilliseconds": {
+        "max": 36.89429999999999,
+        "median": 35.268400000000014,
+        "min": 34.8621
+      },
+      "generation": "82d09ff299bca9dc35229d845b7c24d4e1b1ee4f06ab79b6cd639a7fea19a841",
+      "id": "G112-oldest-hydrate",
+      "mode": "hydrate",
+      "qualifiedSha256": "61c63ad1ac675239f0cc71db32c7d9d998f3ec2ae19cc07c1fd3f390ef11bb0f",
+      "raw": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measurements\\G112-oldest-hydrate.json",
+        "sha256": "895317e45fec78465ed0384a68d8c65cb1200076162bef78e532d84f630b6e6d"
+      },
+      "reads": {
+        "components": {
+          "bytes": 1287421,
+          "calls": 5
+        },
+        "membership": {
+          "bytes": 12375,
+          "calls": 33
+        },
+        "publications": {
+          "bytes": 2420,
+          "calls": 1
+        },
+        "root": {
+          "bytes": 210,
+          "calls": 1
+        },
+        "runtime": {
+          "bytes": 433718,
+          "calls": 11
+        }
+      },
+      "responseBytes": 1358481,
+      "selection": "oldest",
+      "warm": 20,
+      "warmMilliseconds": {
+        "max": 79.09630000000001,
+        "median": 74.38864999999998,
+        "min": 69.27409999999986
+      },
+      "warmRSSAfter": {
+        "max": 301277184,
+        "median": 247271424.0,
+        "min": 91799552
+      }
+    },
+    {
+      "answerSha256": "818367d1224e438ec10db0b87292f6eb13262a81c1980220a9c95d7d0128e571",
+      "counters": {
+        "ancestryTraversals": 0,
+        "componentEdges": 5,
+        "generationValidations": 1,
+        "integrityChecks": 39,
+        "membershipEdges": 64,
+        "membershipVisits": 66
+      },
+      "depth": 7,
+      "fresh": 3,
+      "freshQueryMilliseconds": {
+        "max": 109.18110000000001,
+        "median": 103.13860000000022,
+        "min": 101.76790000000028
+      },
+      "freshStartupMilliseconds": {
+        "max": 1986.0634000000002,
+        "median": 1879.4121,
+        "min": 1861.7811
+      },
+      "generation": "c8c8ce081ba304e2c852b615724e9dd0ffc83e407877faec50e6211a74941397",
+      "id": "G7-Q05",
+      "mode": "Q05",
+      "qualifiedSha256": "6ae398e1fe9f5dab5f98acb694af7ddb858cd4d210bb4f972a564482ddf94431",
+      "raw": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measurements\\G7-Q05.json",
+        "sha256": "9eb032d0c80efcb019234ee9932024410ec532f90ca165a4897f9e10c77ef6da"
+      },
+      "reads": {
+        "components": {
+          "bytes": 1287421,
+          "calls": 5
+        },
+        "membership": {
+          "bytes": 5823,
+          "calls": 33
+        },
+        "portrayal": {
+          "bytes": 3057491,
+          "calls": 2
+        },
+        "publications": {
+          "bytes": 2482,
+          "calls": 1
+        },
+        "retained": {
+          "bytes": 1127670,
+          "calls": 4
+        },
+        "root": {
+          "bytes": 420,
+          "calls": 2
+        },
+        "runtime": {
+          "bytes": 435424,
+          "calls": 12
+        }
+      },
+      "responseBytes": 32858,
+      "selection": "current",
+      "warm": 10,
+      "warmMilliseconds": {
+        "max": 106.5764999999999,
+        "median": 96.90149999999994,
+        "min": 93.66110000000026
+      },
+      "warmRSSAfter": {
+        "max": 215027712,
+        "median": 179734528.0,
+        "min": 168288256
+      }
+    },
+    {
+      "answerSha256": "4038dfd2edd16e9f90300de2326f4e8f545066489021cc56e3f390cc9601594b",
+      "counters": {
+        "ancestryTraversals": 0,
+        "componentEdges": 5,
+        "generationValidations": 1,
+        "integrityChecks": 39,
+        "membershipEdges": 64,
+        "membershipVisits": 66
+      },
+      "depth": 7,
+      "fresh": 3,
+      "freshQueryMilliseconds": {
+        "max": 218.0284999999999,
+        "median": 214.81010000000015,
+        "min": 208.1474000000003
+      },
+      "freshStartupMilliseconds": {
+        "max": 1864.5103,
+        "median": 1860.8856,
+        "min": 1843.8305
+      },
+      "generation": "c8c8ce081ba304e2c852b615724e9dd0ffc83e407877faec50e6211a74941397",
+      "id": "G7-Q21",
+      "mode": "Q21",
+      "qualifiedSha256": "b9dda67f0472ad9cc086b8a36074b8e2a643ea92614a38bab782e6bfb9ce8918",
+      "raw": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measurements\\G7-Q21.json",
+        "sha256": "71dfde362665320afdb9d37661f24d12abbfceac6b6d35376718c58e69f2d553"
+      },
+      "reads": {
+        "components": {
+          "bytes": 1287421,
+          "calls": 5
+        },
+        "membership": {
+          "bytes": 5823,
+          "calls": 33
+        },
+        "portrayal": {
+          "bytes": 3057491,
+          "calls": 2
+        },
+        "publications": {
+          "bytes": 2482,
+          "calls": 1
+        },
+        "retained": {
+          "bytes": 9262300,
+          "calls": 42
+        },
+        "root": {
+          "bytes": 420,
+          "calls": 2
+        },
+        "runtime": {
+          "bytes": 3027496,
+          "calls": 72
+        }
+      },
+      "responseBytes": 142590,
+      "selection": "current",
+      "warm": 10,
+      "warmMilliseconds": {
+        "max": 351.4101999999998,
+        "median": 250.12195000000008,
+        "min": 195.90099999999984
+      },
+      "warmRSSAfter": {
+        "max": 255275008,
+        "median": 249487360.0,
+        "min": 200151040
+      }
+    },
+    {
+      "answerSha256": "462e50b246d961caca61ab2280811bfa8d27258c5054a1ecdb87ac455c891206",
+      "counters": {
+        "ancestryTraversals": 0,
+        "componentEdges": 5,
+        "generationValidations": 1,
+        "integrityChecks": 39,
+        "membershipEdges": 160,
+        "membershipVisits": 165
+      },
+      "depth": 7,
+      "fresh": 3,
+      "freshQueryMilliseconds": {
+        "max": 133.7447000000002,
+        "median": 130.41859999999997,
+        "min": 125.53309999999988
+      },
+      "freshStartupMilliseconds": {
+        "max": 1920.9873,
+        "median": 1912.3548,
+        "min": 1894.9654
+      },
+      "generation": "c8c8ce081ba304e2c852b615724e9dd0ffc83e407877faec50e6211a74941397",
+      "id": "G7-Q18",
+      "mode": "Q18",
+      "qualifiedSha256": "cc4df91a6a313986e6f91c76a30c6c66a0ea6a32927cc1a2b70671bee017f54d",
+      "raw": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measurements\\G7-Q18.json",
+        "sha256": "ed989dba021b16b47b1513e4d378580b36926f3ee7f0f1faceca9745628bed74"
+      },
+      "reads": {
+        "components": {
+          "bytes": 1287421,
+          "calls": 5
+        },
+        "membership": {
+          "bytes": 5823,
+          "calls": 33
+        },
+        "portrayal": {
+          "bytes": 3057491,
+          "calls": 2
+        },
+        "publications": {
+          "bytes": 2482,
+          "calls": 1
+        },
+        "root": {
+          "bytes": 1050,
+          "calls": 5
+        },
+        "runtime": {
+          "bytes": 435424,
+          "calls": 12
+        }
+      },
+      "responseBytes": 23473,
+      "selection": "current",
+      "warm": 10,
+      "warmMilliseconds": {
+        "max": 163.0639000000001,
+        "median": 127.47564999999997,
+        "min": 119.56089999999995
+      },
+      "warmRSSAfter": {
+        "max": 196231168,
+        "median": 192604160.0,
+        "min": 183504896
+      }
+    },
+    {
+      "answerSha256": "f07d47c1bd8663901a7d8c1e52ba33e1fa09daa7b99613652674851c430925d3",
+      "counters": {
+        "ancestryTraversals": 0,
+        "componentEdges": 5,
+        "generationValidations": 1,
+        "integrityChecks": 39,
+        "membershipEdges": 64,
+        "membershipVisits": 66
+      },
+      "depth": 28,
+      "fresh": 3,
+      "freshQueryMilliseconds": {
+        "max": 111.90120000000024,
+        "median": 105.02219999999988,
+        "min": 103.17740000000003
+      },
+      "freshStartupMilliseconds": {
+        "max": 1862.6007,
+        "median": 1848.5411,
+        "min": 1834.2293
+      },
+      "generation": "32805ed5646f2b81b091624a63e607296e5c2472ff19306077f3419266d328e2",
+      "id": "G28-Q05",
+      "mode": "Q05",
+      "qualifiedSha256": "6ae398e1fe9f5dab5f98acb694af7ddb858cd4d210bb4f972a564482ddf94431",
+      "raw": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measurements\\G28-Q05.json",
+        "sha256": "420521f6f6a06f06d67bfb74adea7ff79471b9858280cc16b5e3998d200a495c"
+      },
+      "reads": {
+        "components": {
+          "bytes": 1287421,
+          "calls": 5
+        },
+        "membership": {
+          "bytes": 7383,
+          "calls": 33
+        },
+        "portrayal": {
+          "bytes": 3057491,
+          "calls": 2
+        },
+        "publications": {
+          "bytes": 2483,
+          "calls": 1
+        },
+        "retained": {
+          "bytes": 1127670,
+          "calls": 4
+        },
+        "root": {
+          "bytes": 420,
+          "calls": 2
+        },
+        "runtime": {
+          "bytes": 435424,
+          "calls": 12
+        }
+      },
+      "responseBytes": 32858,
+      "selection": "current",
+      "warm": 10,
+      "warmMilliseconds": {
+        "max": 105.28590000000031,
+        "median": 95.6875,
+        "min": 91.57949999999983
+      },
+      "warmRSSAfter": {
+        "max": 197312512,
+        "median": 187590656.0,
+        "min": 176254976
+      }
+    },
+    {
+      "answerSha256": "eee64480b6775668e7c56f91b009afb26f8e71d97f8cf1f69a01566c4cb593dc",
+      "counters": {
+        "ancestryTraversals": 0,
+        "componentEdges": 5,
+        "generationValidations": 1,
+        "integrityChecks": 39,
+        "membershipEdges": 64,
+        "membershipVisits": 66
+      },
+      "depth": 28,
+      "fresh": 3,
+      "freshQueryMilliseconds": {
+        "max": 235.35579999999982,
+        "median": 222.1949999999997,
+        "min": 220.66820000000007
+      },
+      "freshStartupMilliseconds": {
+        "max": 2062.7626,
+        "median": 1914.2734,
+        "min": 1879.0668
+      },
+      "generation": "32805ed5646f2b81b091624a63e607296e5c2472ff19306077f3419266d328e2",
+      "id": "G28-Q21",
+      "mode": "Q21",
+      "qualifiedSha256": "b9dda67f0472ad9cc086b8a36074b8e2a643ea92614a38bab782e6bfb9ce8918",
+      "raw": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measurements\\G28-Q21.json",
+        "sha256": "d5eeeeea302ff8d906fb4cbed0e190ffba057df2094a9fa487cf332f50d9ab37"
+      },
+      "reads": {
+        "components": {
+          "bytes": 1287421,
+          "calls": 5
+        },
+        "membership": {
+          "bytes": 7383,
+          "calls": 33
+        },
+        "portrayal": {
+          "bytes": 3057491,
+          "calls": 2
+        },
+        "publications": {
+          "bytes": 2483,
+          "calls": 1
+        },
+        "retained": {
+          "bytes": 9262300,
+          "calls": 42
+        },
+        "root": {
+          "bytes": 420,
+          "calls": 2
+        },
+        "runtime": {
+          "bytes": 3027496,
+          "calls": 72
+        }
+      },
+      "responseBytes": 142590,
+      "selection": "current",
+      "warm": 10,
+      "warmMilliseconds": {
+        "max": 305.6174000000001,
+        "median": 259.5951499999999,
+        "min": 219.1497000000004
+      },
+      "warmRSSAfter": {
+        "max": 254918656,
+        "median": 244672512.0,
+        "min": 183209984
+      }
+    },
+    {
+      "answerSha256": "ce0503cbaa7019b287eb23bfb9e3caaa44798b01d446fdb33bd694e382f18aa1",
+      "counters": {
+        "ancestryTraversals": 0,
+        "componentEdges": 5,
+        "generationValidations": 1,
+        "integrityChecks": 39,
+        "membershipEdges": 160,
+        "membershipVisits": 165
+      },
+      "depth": 28,
+      "fresh": 3,
+      "freshQueryMilliseconds": {
+        "max": 154.51510000000007,
+        "median": 136.5277000000001,
+        "min": 135.11020000000008
+      },
+      "freshStartupMilliseconds": {
+        "max": 2174.4311,
+        "median": 2145.6797,
+        "min": 2010.9056
+      },
+      "generation": "32805ed5646f2b81b091624a63e607296e5c2472ff19306077f3419266d328e2",
+      "id": "G28-Q18",
+      "mode": "Q18",
+      "qualifiedSha256": "cc4df91a6a313986e6f91c76a30c6c66a0ea6a32927cc1a2b70671bee017f54d",
+      "raw": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measurements\\G28-Q18.json",
+        "sha256": "945e48a0028dbfcddffefef36982707534313e864b901da3815fe547236d3d83"
+      },
+      "reads": {
+        "components": {
+          "bytes": 1287421,
+          "calls": 5
+        },
+        "membership": {
+          "bytes": 7383,
+          "calls": 33
+        },
+        "portrayal": {
+          "bytes": 3057491,
+          "calls": 2
+        },
+        "publications": {
+          "bytes": 2483,
+          "calls": 1
+        },
+        "root": {
+          "bytes": 1050,
+          "calls": 5
+        },
+        "runtime": {
+          "bytes": 435424,
+          "calls": 12
+        }
+      },
+      "responseBytes": 23473,
+      "selection": "current",
+      "warm": 10,
+      "warmMilliseconds": {
+        "max": 197.38560000000007,
+        "median": 137.95680000000016,
+        "min": 130.42930000000024
+      },
+      "warmRSSAfter": {
+        "max": 197451776,
+        "median": 193509376.0,
+        "min": 182673408
+      }
+    },
+    {
+      "answerSha256": "de1abd9491938dfad17797ef16fbbb9222f6e601bbd0987f0b7f8221eb5e11b8",
+      "counters": {
+        "ancestryTraversals": 0,
+        "componentEdges": 5,
+        "generationValidations": 1,
+        "integrityChecks": 39,
+        "membershipEdges": 64,
+        "membershipVisits": 66
+      },
+      "depth": 112,
+      "fresh": 3,
+      "freshQueryMilliseconds": {
+        "max": 123.70380000000023,
+        "median": 103.25880000000006,
+        "min": 97.22859999999991
+      },
+      "freshStartupMilliseconds": {
+        "max": 2016.5085000000001,
+        "median": 2007.0939,
+        "min": 1885.4703
+      },
+      "generation": "1992f3deffe1ad91f192bf911d4f5237e271fbf6c4d9336e4a88d3aa167cdd40",
+      "id": "G112-Q05",
+      "mode": "Q05",
+      "qualifiedSha256": "6ae398e1fe9f5dab5f98acb694af7ddb858cd4d210bb4f972a564482ddf94431",
+      "raw": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measurements\\G112-Q05.json",
+        "sha256": "fd581e74fa42d77b02544719becbd11639d91bcb5e7641cb6c982f938e582bc9"
+      },
+      "reads": {
+        "components": {
+          "bytes": 1287421,
+          "calls": 5
+        },
+        "membership": {
+          "bytes": 12375,
+          "calls": 33
+        },
+        "portrayal": {
+          "bytes": 3057491,
+          "calls": 2
+        },
+        "publications": {
+          "bytes": 2484,
+          "calls": 1
+        },
+        "retained": {
+          "bytes": 1127670,
+          "calls": 4
+        },
+        "root": {
+          "bytes": 420,
+          "calls": 2
+        },
+        "runtime": {
+          "bytes": 435424,
+          "calls": 12
+        }
+      },
+      "responseBytes": 32858,
+      "selection": "current",
+      "warm": 10,
+      "warmMilliseconds": {
+        "max": 105.75049999999987,
+        "median": 96.19350000000009,
+        "min": 91.20139999999992
+      },
+      "warmRSSAfter": {
+        "max": 222568448,
+        "median": 186642432.0,
+        "min": 175960064
+      }
+    },
+    {
+      "answerSha256": "5784fbbf538a9204dc2dc7ed2f6c12eaf7214b3e9290e3da9fb23789a4855022",
+      "counters": {
+        "ancestryTraversals": 0,
+        "componentEdges": 5,
+        "generationValidations": 1,
+        "integrityChecks": 39,
+        "membershipEdges": 64,
+        "membershipVisits": 66
+      },
+      "depth": 112,
+      "fresh": 3,
+      "freshQueryMilliseconds": {
+        "max": 212.04829999999993,
+        "median": 203.59709999999995,
+        "min": 202.0418000000002
+      },
+      "freshStartupMilliseconds": {
+        "max": 1868.0331999999999,
+        "median": 1842.4694,
+        "min": 1842.1254
+      },
+      "generation": "1992f3deffe1ad91f192bf911d4f5237e271fbf6c4d9336e4a88d3aa167cdd40",
+      "id": "G112-Q21",
+      "mode": "Q21",
+      "qualifiedSha256": "b9dda67f0472ad9cc086b8a36074b8e2a643ea92614a38bab782e6bfb9ce8918",
+      "raw": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measurements\\G112-Q21.json",
+        "sha256": "39cd1fd34b79f9ca27bbff57095e93b2a976fdf22fa2343160680b3226cf8e8f"
+      },
+      "reads": {
+        "components": {
+          "bytes": 1287421,
+          "calls": 5
+        },
+        "membership": {
+          "bytes": 12375,
+          "calls": 33
+        },
+        "portrayal": {
+          "bytes": 3057491,
+          "calls": 2
+        },
+        "publications": {
+          "bytes": 2484,
+          "calls": 1
+        },
+        "retained": {
+          "bytes": 9262300,
+          "calls": 42
+        },
+        "root": {
+          "bytes": 420,
+          "calls": 2
+        },
+        "runtime": {
+          "bytes": 3027496,
+          "calls": 72
+        }
+      },
+      "responseBytes": 142590,
+      "selection": "current",
+      "warm": 10,
+      "warmMilliseconds": {
+        "max": 220.23669999999993,
+        "median": 200.64674999999988,
+        "min": 191.44950000000017
+      },
+      "warmRSSAfter": {
+        "max": 254590976,
+        "median": 232785920.0,
+        "min": 190869504
+      }
+    },
+    {
+      "answerSha256": "9c74de62d7dc46b2b4cbdb6cc521eccdbe648e64206363d018d4affda0e63074",
+      "counters": {
+        "ancestryTraversals": 0,
+        "componentEdges": 5,
+        "generationValidations": 1,
+        "integrityChecks": 39,
+        "membershipEdges": 160,
+        "membershipVisits": 165
+      },
+      "depth": 112,
+      "fresh": 3,
+      "freshQueryMilliseconds": {
+        "max": 130.6133000000002,
+        "median": 130.2496000000001,
+        "min": 129.23149999999987
+      },
+      "freshStartupMilliseconds": {
+        "max": 1884.3238999999999,
+        "median": 1861.0873,
+        "min": 1853.0408
+      },
+      "generation": "1992f3deffe1ad91f192bf911d4f5237e271fbf6c4d9336e4a88d3aa167cdd40",
+      "id": "G112-Q18",
+      "mode": "Q18",
+      "qualifiedSha256": "cc4df91a6a313986e6f91c76a30c6c66a0ea6a32927cc1a2b70671bee017f54d",
+      "raw": {
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-component-membership-v1\\measurements\\G112-Q18.json",
+        "sha256": "992d1bec6ca431df1c0f8fbe937cb3f4518344197f84fe629455e8119a0621a5"
+      },
+      "reads": {
+        "components": {
+          "bytes": 1287421,
+          "calls": 5
+        },
+        "membership": {
+          "bytes": 12375,
+          "calls": 33
+        },
+        "portrayal": {
+          "bytes": 3057491,
+          "calls": 2
+        },
+        "publications": {
+          "bytes": 2484,
+          "calls": 1
+        },
+        "root": {
+          "bytes": 1050,
+          "calls": 5
+        },
+        "runtime": {
+          "bytes": 435424,
+          "calls": 12
+        }
+      },
+      "responseBytes": 23473,
+      "selection": "current",
+      "warm": 10,
+      "warmMilliseconds": {
+        "max": 150.1241,
+        "median": 134.49905000000012,
+        "min": 127.31899999999996
+      },
+      "warmRSSAfter": {
+        "max": 196116480,
+        "median": 192806912.0,
+        "min": 183054336
+      }
+    }
+  ],
+  "runtime": {
+    "memory": "Observed Node RSS, not peak/live heap or total Python tree",
+    "node": "v24.11.0",
+    "platform": "win32",
+    "timing": "Library boundaries, not HTTP/network. Fresh process, warm OS cache; no physical cold-disk claim."
+  },
+  "schema": "atlas-component-membership-results/v1"
+}

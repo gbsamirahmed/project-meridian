@@ -1,0 +1,40 @@
+// Retained U1 composition, existing lifecycle methods and unchanged separate HTTP consumers.
+import fs from 'node:fs';import {join,resolve} from 'node:path';import {spawn,fork,spawnSync} from 'node:child_process';import {createInterface} from 'node:readline';import assert from 'node:assert/strict';import {randomUUID} from 'node:crypto';
+import {initialize} from './runtime.mjs';import {encode,sha} from '../../../pilots/atlas/tryfan/identity.mjs';
+const {core}=await initialize({hooks:true}),store=join(core.plan.stateRoot,'lifecycle-'+randomUUID());fs.mkdirSync(store);core.owned(store);
+fs.cpSync(join(core.plan.stateRoot,'history-7','artifacts'),join(store,'artifacts'),{recursive:true});
+const source=resolve('../meridian-data/experiments/atlas/tryfan-regional-pilot-v1'),legacy='76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431',body=fs.readFileSync(join(source,'generations',legacy+'.json'),'utf8');assert.equal(sha(body),legacy);
+const baseline=JSON.parse(body),locators=JSON.parse(fs.readFileSync(join(source,'locators',legacy+'.json'),'utf8'));
+const g1=core.prepare(store,baseline,locators,{ordinal:1});core.publish(store,g1);const rootBefore=fs.readFileSync(join(store,'current.json')),manifestBefore=fs.readFileSync(join(store,'publications',g1+'.json'));
+const {methods}=await import('../../../pilots/atlas/tryfan/derivations.mjs'),m=await methods();
+const t=performance.now(),before=m.assess(baseline.understanding,baseline.catalogue,locators,{stage:'regional'}),computed=m.recompute(baseline.understanding,baseline.catalogue,locators,{stage:'regional'}),recomputeMilliseconds=performance.now()-t;
+assert.equal(before.filter(a=>a.assessment.status==='stale').length,2);assert.equal(computed.recomputed.length,2);assert.equal(computed.reused.length,2);
+const next=structuredClone(baseline);next.parent=legacy;next.capabilities.mixedFamilyUpdate=true;next.understanding=computed.understanding;
+next.update={schema:'atlas-tryfan-applicability-update/v1',scenario:'U1',phase:'applied',from:legacy,recomputed:computed.recomputed,reused:computed.reused,changed:['terrain-applicability','derived-understanding']};
+next.serving.layers.nrw.applicability='eligible';next.serving.layers.terrain.availability='Retained Welsh applicability via original z14 selector; summit regional, southern common. Missing levels remain explicit.';
+const expected=fs.readFileSync(join(source,'generations','5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06.json'),'utf8');assert.equal(encode(next),expected,'U1 remains exact accepted state');
+const replayBefore=m.replay(baseline.understanding,baseline.catalogue,locators),replayAfter=m.replay(next.understanding,next.catalogue,locators),statuses=m.assess(next.understanding,next.catalogue,locators),methodStatuses=m.assess(next.understanding,next.catalogue,locators,{methodRevision:'retained-method-policy-comparison'});
+assert.equal(replayBefore.checks.length,4);assert.equal(replayAfter.checks.length,6);assert.ok([...replayBefore.checks,...replayAfter.checks].every(x=>x.exact));assert.equal(statuses.filter(x=>x.assessment.status==='stale').length,2);assert.ok(methodStatuses.every(x=>x.assessment.status==='stale'));
+await m.close();const g2=core.prepare(store,next,locators,{ordinal:2,predecessor:g1});
+function service(){const p=fork('scripts/atlas/component-membership/service-worker.mjs',[store],{stdio:['ignore','ignore','pipe','ipc']});let stderr='';p.stderr.on('data',b=>stderr+=b);return new Promise((resolve,reject)=>{const timer=setTimeout(()=>{p.kill();reject(Error(stderr));},30000);p.once('message',value=>{clearTimeout(timer);resolve({...value,close:()=>new Promise(r=>{p.once('exit',r);p.send('stop');})});});p.once('exit',code=>{if(code){clearTimeout(timer);reject(Error(stderr));}});});}
+function consumer(url){const p=spawn(process.execPath,['pilots/atlas/tryfan/client/session-consumer.mjs',url],{stdio:['pipe','pipe','pipe']}),queue=[],waiting=[];let err='';p.stderr.on('data',b=>err+=b);createInterface({input:p.stdout}).on('line',s=>waiting.length?waiting.shift()(s):queue.push(s));return {close:()=>p.stdin.end(),call:async value=>{p.stdin.write(JSON.stringify(value)+'\n');const s=queue.length?queue.shift():await new Promise((r,j)=>{const t=setTimeout(()=>j(Error(err||'consumer timeout')),30000);waiting.push(v=>{clearTimeout(t);r(v);});});const result=JSON.parse(s);assert.ok(!result.error,JSON.stringify(result));return result;}};}
+async function fresh(url,g){const p=spawn(process.execPath,['pilots/atlas/tryfan/client/http-consumer.mjs',url,...(g?[g]:[])],{stdio:['ignore','pipe','pipe']});let out='',err='';p.stdout.on('data',b=>out+=b);p.stderr.on('data',b=>err+=b);const code=await new Promise(r=>p.once('exit',r));assert.equal(code,0,err);return JSON.parse(out);}
+const query={property:'place-evidence',place:{crs:'EPSG:27700',point:[266405,359387]}},s=await service(),old=consumer(s.url),failures=[];let receipt;
+try{
+ assert.equal((await old.call({operation:'pin'})).generation,g1);const oldAnswer=await old.call({query});
+ for(const point of core.plan.interruptionPoints){const p=spawnSync(process.execPath,['scripts/atlas/component-membership/interruption-worker.mjs',store,g2,point],{encoding:'utf8',timeout:60000});assert.equal(p.status,91,p.stderr);assert.deepEqual(fs.readFileSync(join(store,'current.json')),rootBefore);
+  assert.throws(()=>core.resolveGeneration(store,g2),e=>e.code==='generation-unpublished');const unchanged=await old.call({query});assert.deepEqual(unchanged,oldAnswer);
+  const restarted=await service();try{const answer=await fresh(restarted.url);assert.equal(answer.generation,g1);}finally{await restarted.close();}
+  core.recover(store);failures.push({point,exitCode:91,current:g1,orphanRejected:true,freshServiceRecovered:true,pinnedConsumerUnchanged:true});
+ }
+ const publication=core.publish(store,g2),oldAfter=await old.call({query});assert.deepEqual(oldAfter,oldAnswer);const newer=await fresh(s.url),historical=await fresh(s.url,g1);assert.equal(newer.generation,g2);assert.equal(historical.generation,g1);
+ assert.deepEqual(fs.readFileSync(join(store,'publications',g1+'.json')),manifestBefore);
+ for(const q of newer.answer.answers)assert.equal(q.response.generation,g2);
+ const oldMembers=core.resolveGeneration(store,g1).publication.members,newMembers=core.resolveGeneration(store,g2).publication.members;
+ assert.deepEqual(Object.keys(newMembers).filter(k=>newMembers[k]!==oldMembers[k]).sort(),['serving','understanding']);
+ const reused=Object.keys(newMembers).filter(k=>newMembers[k]===oldMembers[k]);assert.equal(reused.length,3);
+ const final=core.resolveGeneration(store,g2,{hydrate:true});assert.equal(encode(final.value),expected);assert.deepEqual(final.value.understanding.results.slice(0,4),baseline.understanding.results);
+ const metrics=await core.measured(()=>core.load(store,{generation:g2,verify:true}));assert.equal(metrics.value.verification.artifacts,310);
+ receipt={schema:'atlas-component-membership-lifecycle/v1',store,g1,g2,oldMembers,newMembers,reusedComponents:reused,changedComponents:['serving','understanding'],recomputed:computed.recomputed,reusedResults:computed.reused,freshnessBefore:before,freshnessAfter:statuses,methodRelative:methodStatuses,recomputeMilliseconds,replayBefore,replayAfter,publication,failures,sourceVerification:metrics.value.verification,sourceVerificationMetrics:metrics.measurement,oldAnswerSha256:sha(encode(oldAnswer)),newAnswerSha256:sha(encode(newer.answer)),historicalAnswerSha256:sha(encode(historical.answer)),exactAcceptedU1:true,freshConsumer:true,pinnedAcrossPublication:true,components:fs.readdirSync(join(store,'components')).map(f=>({id:f.slice(0,-5),bytes:fs.statSync(join(store,'components',f)).size}))};
+}finally{old.close();await s.close();}
+fs.writeFileSync(join(core.plan.stateRoot,fs.existsSync(join(core.plan.stateRoot,'lifecycle.json'))?'lifecycle-repeat.json':'lifecycle.json'),encode(receipt));console.log(encode({g1,g2,failures:failures.length,recomputed:computed.recomputed.length,reused:computed.reused.length,exactReplays:10}));

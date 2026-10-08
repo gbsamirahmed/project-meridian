@@ -1,0 +1,628 @@
+{
+  "acceptedPilotUnchanged": true,
+  "canonicalThreads": 42,
+  "changedPaths": [
+    "docs/architecture.md",
+    "docs/development-log.md",
+    "docs/product-direction.md",
+    "docs/research/atlas-component-membership-baseline.json",
+    "docs/research/atlas-component-membership-decisions.json",
+    "docs/research/atlas-component-membership-results.json",
+    "docs/research/atlas-component-membership-validation.json",
+    "docs/research/atlas-component-membership.md",
+    "docs/research/atlas-component-membership.svg",
+    "docs/research/atlas-research-map.md",
+    "docs/research/atlas-research-state.md",
+    "scripts/atlas/component-membership/README.md",
+    "scripts/atlas/component-membership/core.mjs",
+    "scripts/atlas/component-membership/failure-worker.mjs",
+    "scripts/atlas/component-membership/fixtures.mjs",
+    "scripts/atlas/component-membership/interruption-worker.mjs",
+    "scripts/atlas/component-membership/lifecycle-worker.mjs",
+    "scripts/atlas/component-membership/plan.json",
+    "scripts/atlas/component-membership/plot.py",
+    "scripts/atlas/component-membership/run.py",
+    "scripts/atlas/component-membership/runtime.mjs",
+    "scripts/atlas/component-membership/service-worker.mjs",
+    "scripts/atlas/component-membership/test-proof.mjs",
+    "scripts/atlas/component-membership/validate.py",
+    "scripts/atlas/component-membership/worker.mjs"
+  ],
+  "checks": [
+    {
+      "check": "starting baseline ancestor",
+      "passed": true
+    },
+    {
+      "check": "all accepted pilot and non-navigation history unchanged",
+      "passed": true
+    },
+    {
+      "check": "all42 research statuses unchanged",
+      "passed": true
+    },
+    {
+      "check": "all113 protected production hashes",
+      "passed": true
+    },
+    {
+      "check": "all seven historical generations unchanged",
+      "passed": true
+    },
+    {
+      "check": "1575 retained sources verified",
+      "passed": true
+    },
+    {
+      "check": "planning structure preserved",
+      "passed": true
+    },
+    {
+      "check": "receipt reproduces",
+      "passed": true
+    },
+    {
+      "check": "results and decision agree",
+      "passed": true
+    },
+    {
+      "check": "four decision levels",
+      "passed": true
+    },
+    {
+      "check": "prospective plan SHA",
+      "passed": true
+    },
+    {
+      "check": "measurement code hashes",
+      "passed": true
+    },
+    {
+      "check": "measured source unchanged except LF packaging",
+      "passed": true
+    },
+    {
+      "check": "all authoritative contracts modules reports unchanged",
+      "passed": true
+    },
+    {
+      "check": "accepted store unchanged",
+      "passed": true
+    },
+    {
+      "check": "previous scaling receipt preserved",
+      "passed": true
+    },
+    {
+      "check": "fixture receipt pinned",
+      "passed": true
+    },
+    {
+      "check": "7 28 112 explicit immutable histories",
+      "passed": true
+    },
+    {
+      "check": "five direct components shared across all depths",
+      "passed": true
+    },
+    {
+      "check": "bounded index footprint explicit",
+      "passed": true
+    },
+    {
+      "check": "all27 prospective primary cells",
+      "passed": true
+    },
+    {
+      "check": "bounded membership selected lookup",
+      "passed": true
+    },
+    {
+      "check": "five components integrity per hydrated request",
+      "passed": true
+    },
+    {
+      "check": "membership only34 identity checks",
+      "passed": true
+    },
+    {
+      "check": "raw observations hash pinned",
+      "passed": true
+    },
+    {
+      "check": "fresh warm repeats and counter parity",
+      "passed": true
+    },
+    {
+      "check": "WorldCover composed provenance exact qualified parity",
+      "passed": true
+    },
+    {
+      "check": "three supplementary historical raw receipts",
+      "passed": true
+    },
+    {
+      "check": "retained U1 first receipt pinned",
+      "passed": true
+    },
+    {
+      "check": "retained scientific U1 exact",
+      "passed": true
+    },
+    {
+      "check": "actual relevant versus unrelated freshness",
+      "passed": true
+    },
+    {
+      "check": "three components reused two replaced",
+      "passed": true
+    },
+    {
+      "check": "four original plus six historical current replays",
+      "passed": true
+    },
+    {
+      "check": "method policy comparison explicit stale",
+      "passed": true
+    },
+    {
+      "check": "two interruptions coherent fresh historical consumers",
+      "passed": true
+    },
+    {
+      "check": "required source hashing preserved",
+      "passed": true
+    },
+    {
+      "check": "seven failure receipt pinned",
+      "passed": true
+    },
+    {
+      "check": "proof-reproduction",
+      "passed": true
+    },
+    {
+      "check": "proof",
+      "passed": true
+    },
+    {
+      "check": "scaling-reproduction",
+      "passed": true
+    },
+    {
+      "check": "scaling",
+      "passed": true
+    },
+    {
+      "check": "assessment",
+      "passed": true
+    },
+    {
+      "check": "s6",
+      "passed": true
+    },
+    {
+      "check": "s1-s5",
+      "passed": true
+    },
+    {
+      "check": "s6-browser",
+      "passed": true
+    },
+    {
+      "check": "s5-browser",
+      "passed": true
+    },
+    {
+      "check": "native",
+      "passed": true
+    },
+    {
+      "check": "planning",
+      "passed": true
+    },
+    {
+      "check": "frozen",
+      "passed": true
+    },
+    {
+      "check": "qualified",
+      "passed": true
+    },
+    {
+      "check": "persistent",
+      "passed": true
+    },
+    {
+      "check": "exe",
+      "passed": true
+    },
+    {
+      "check": "s5-reproduction",
+      "passed": true
+    },
+    {
+      "check": "semantic-types",
+      "passed": true
+    },
+    {
+      "check": "lint",
+      "passed": true
+    },
+    {
+      "check": "build",
+      "passed": true
+    },
+    {
+      "check": "current published generation preserved with310 asset hashes",
+      "passed": true
+    },
+    {
+      "check": "experiment-only exact allowed paths",
+      "passed": true
+    },
+    {
+      "check": "small artifacts no source payloads",
+      "passed": true
+    },
+    {
+      "check": "all40 report sections",
+      "passed": true
+    },
+    {
+      "check": "all conclusions explicitly classified",
+      "passed": true
+    },
+    {
+      "check": "canonical experiment and one next docs/research/atlas-research-map.md",
+      "passed": true
+    },
+    {
+      "check": "canonical experiment and one next docs/development-log.md",
+      "passed": true
+    },
+    {
+      "check": "canonical experiment and one next docs/product-direction.md",
+      "passed": true
+    },
+    {
+      "check": "canonical experiment and one next docs/research/atlas-research-state.md",
+      "passed": true
+    },
+    {
+      "check": "canonical experiment and one next docs/architecture.md",
+      "passed": true
+    },
+    {
+      "check": "development log append-only",
+      "passed": true
+    },
+    {
+      "check": "references and anchors resolve",
+      "passed": true
+    },
+    {
+      "check": "diff",
+      "passed": true
+    },
+    {
+      "check": "retained sources unchanged after regression",
+      "passed": true
+    },
+    {
+      "check": "accepted persistent store unchanged after regression",
+      "passed": true
+    },
+    {
+      "check": "all non-navigation bytes unchanged after regression",
+      "passed": true
+    },
+    {
+      "check": "protected hashes unchanged after regression",
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/component-membership/run.py",
+        "--check"
+      ],
+      "exitCode": 0,
+      "name": "proof-reproduction",
+      "tests": null
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "scripts/atlas/component-membership/test-proof.mjs"
+      ],
+      "exitCode": 0,
+      "name": "proof",
+      "tests": 20
+    },
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/generation-scaling/run.py",
+        "--check"
+      ],
+      "exitCode": 0,
+      "name": "scaling-reproduction",
+      "tests": null
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "scripts/atlas/generation-scaling/test-experiment.mjs"
+      ],
+      "exitCode": 0,
+      "name": "scaling",
+      "tests": 13
+    },
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/measured-architecture/test_assess.py"
+      ],
+      "exitCode": 0,
+      "name": "assessment",
+      "tests": 10
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "pilots/atlas/tryfan/tests/acceptance.test.mjs"
+      ],
+      "exitCode": 0,
+      "name": "s6",
+      "tests": 7
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "pilots/atlas/tryfan/tests/catalogue.test.mjs",
+        "pilots/atlas/tryfan/tests/query.test.mjs",
+        "pilots/atlas/tryfan/tests/lifecycle.test.mjs",
+        "pilots/atlas/tryfan/tests/http.test.mjs",
+        "pilots/atlas/tryfan/tests/publication.test.mjs",
+        "pilots/atlas/tryfan/tests/restart.test.mjs"
+      ],
+      "exitCode": 0,
+      "name": "s1-s5",
+      "tests": 121
+    },
+    {
+      "args": [
+        "node",
+        "pilots/atlas/tryfan/tests/browser-s6.mjs"
+      ],
+      "exitCode": 0,
+      "name": "s6-browser",
+      "tests": null
+    },
+    {
+      "args": [
+        "node",
+        "pilots/atlas/tryfan/tests/publication-browser.mjs"
+      ],
+      "exitCode": 0,
+      "name": "s5-browser",
+      "tests": null
+    },
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "pilots/atlas/tryfan/adapters/test_native.py"
+      ],
+      "exitCode": 0,
+      "name": "native",
+      "tests": 9
+    },
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/regional-pilot-plan/test_plan.py"
+      ],
+      "exitCode": 0,
+      "name": "planning",
+      "tests": 22
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "scripts/atlas/test_semantic_evidence_contract.mjs",
+        "scripts/atlas/test_terrain_hierarchy_contract.mjs",
+        "scripts/atlas/test_terrain_runtime.mjs",
+        "scripts/atlas/test_tryfan_terrain.mjs"
+      ],
+      "exitCode": 0,
+      "name": "frozen",
+      "tests": 64
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "scripts/atlas/test_qualified_query_proof.mjs"
+      ],
+      "exitCode": 0,
+      "name": "qualified",
+      "tests": 17
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "scripts/atlas/test_local_persistent_tryfan.mjs"
+      ],
+      "exitCode": 0,
+      "name": "persistent",
+      "tests": 18
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "scripts/atlas/exe-water-query-proof/test-proof.mjs"
+      ],
+      "exitCode": 0,
+      "name": "exe",
+      "tests": 20
+    },
+    {
+      "args": [
+        "node",
+        "pilots/atlas/tryfan/measure_s5.mjs",
+        "--check"
+      ],
+      "exitCode": 0,
+      "name": "s5-reproduction",
+      "tests": null
+    },
+    {
+      "args": [
+        "npx.cmd",
+        "tsc",
+        "-p",
+        "scripts/atlas/semantic-evidence/tsconfig.json"
+      ],
+      "exitCode": 0,
+      "name": "semantic-types",
+      "tests": null
+    },
+    {
+      "args": [
+        "npm.cmd",
+        "run",
+        "lint"
+      ],
+      "exitCode": 0,
+      "name": "lint",
+      "tests": null
+    },
+    {
+      "args": [
+        "npm.cmd",
+        "run",
+        "build"
+      ],
+      "exitCode": 0,
+      "name": "build",
+      "tests": null
+    },
+    {
+      "args": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0,
+      "name": "diff",
+      "tests": null
+    }
+  ],
+  "decision": "C - PROOF SUCCESS",
+  "errors": [],
+  "experimentHashes": {
+    "docs/research/atlas-component-membership-baseline.json": "01b59ee33f035215640c88ecd5f32a7670a1d9b4060115f98f4fafd3870b57a1",
+    "docs/research/atlas-component-membership-decisions.json": "6261a700f50ca37dadb88aeb0398cf706ff095cfeaa4901aeb8dba7f3aa50794",
+    "docs/research/atlas-component-membership-results.json": "3942a85bc87a36f4bc2b470f7d19b0c8b0563ee5f05af76ed48dafc697740bfb",
+    "docs/research/atlas-component-membership.md": "3c72d52657455abeb0a126cdc5c4f889f1897271ca166d02943fc33368e48c66",
+    "docs/research/atlas-component-membership.svg": "8eddaa94c28856b29b30ae9de316e2215fcf4f6939f1dff68ef2bdf0ba387fd9",
+    "scripts/atlas/component-membership/README.md": "e58adff78a163c3e3bcfa7ae4bfd36e07dd3b0819ffa5eaacf0e8a21f6d8f345",
+    "scripts/atlas/component-membership/core.mjs": "59f4a350d3f0c3fbd95a75b1fa4a7b8ac997d9f68d79a214a687e421a76a6842",
+    "scripts/atlas/component-membership/failure-worker.mjs": "2207efa4088adb27d418539850ef53bfef402c8317df9351fc13e592881a3dc3",
+    "scripts/atlas/component-membership/fixtures.mjs": "4f2bf6f026f335b529747a4e518bb29d4002d7656aaea3fbd5ff0ecf1c645b18",
+    "scripts/atlas/component-membership/interruption-worker.mjs": "6c412e7f511d0b076029d0aaa7aab3d31a738a163d86dc4040e76d4aa1848492",
+    "scripts/atlas/component-membership/lifecycle-worker.mjs": "d41a2aba4003cee73ec253f80ff352a0061f4d374fef1d6fe2b2ad1df931e22c",
+    "scripts/atlas/component-membership/plan.json": "11c41e38c762526e116c9b05e8b0769f2ba66887445df0bf82c107f54f4f9f88",
+    "scripts/atlas/component-membership/plot.py": "4da058a3e3397ec9d644a6a4069ac703ff75b9fd117c7cc12d94b679ce0f54fc",
+    "scripts/atlas/component-membership/run.py": "2b861c8b32db1d47c91f3bef49d83ea644bf272686d8e93baa3ecb1fcc98dde8",
+    "scripts/atlas/component-membership/runtime.mjs": "a48dcc748b904c4e703df30aa36cd85cfc68277efd3a4b7c3f7d50e6a2ba2dae",
+    "scripts/atlas/component-membership/service-worker.mjs": "04c7da58b14538a058ba6898ab3db6583f8bbe9e824a743555becd434bb03f07",
+    "scripts/atlas/component-membership/test-proof.mjs": "f69efff39a8d6bd6b8fdbaf7df584a16a549671cf3eba966b0955ce33bfc49ee",
+    "scripts/atlas/component-membership/validate.py": "fcea8331aab4384ce32a98efeee16bd31a7089e359b848ef91c04362501096ac",
+    "scripts/atlas/component-membership/worker.mjs": "ce702880411215732434f27568404a97dab1e9c773c0f962301e4e4a67af157f"
+  },
+  "missingReferences": [],
+  "nextTask": "Atlas retained component granularity and selective metadata-read scaling experiment",
+  "preservedTrackedFiles": 838,
+  "protectedHashes": 113,
+  "publishedGeneration": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+  "references": 571,
+  "retainedVerification": {
+    "artifacts": 310,
+    "bytes": 42473107
+  },
+  "schema": "atlas-component-membership-validation/v1",
+  "sourceAdmission": {
+    "groups": {
+      "Complete retained Exe directory": {
+        "bytes": 10295691,
+        "files": 66,
+        "verifiedEntriesSha256": "7043358dd1d3c10efe1b3483ac65e6ec2b5d2c637c4eff5f3d7a6df77082794a"
+      },
+      "July native post-L2A RGB and SCL": {
+        "bytes": 714544,
+        "files": 4,
+        "verifiedEntriesSha256": "c91c42dcad464a78a200ee6ef0a945e0b246eff75830efa2b8ed6e10a47e060f"
+      },
+      "Lab010 existing natural-colour preparation": {
+        "bytes": 1305121,
+        "files": 3,
+        "verifiedEntriesSha256": "86edf76941cbf6b48bc49e198dceb3f64debd0a7200ab3c83df32d06823113ee"
+      },
+      "Parked Swiss metadata only": {
+        "bytes": 19357606,
+        "files": 112,
+        "verifiedEntriesSha256": "e0179dbb4695a66bbf3cb61f2a215d88dc45bdcfd9c09e886da9fd0c9d6fc2cc"
+      },
+      "Pinned Exe sources/documents": {
+        "bytes": 9892590,
+        "files": 31,
+        "verifiedEntriesSha256": "0e1301af8fcdb00f126ba2886216b2a96bfdd68de71e14c6079beece12e6342a"
+      },
+      "SWISSIMAGE manifest": {
+        "bytes": 218993,
+        "files": 1,
+        "verifiedEntriesSha256": "9e3dcb15bd21260896eab7be966f8fdc59cf2e729ecc952fbc60f489c4873225"
+      },
+      "SWISSIMAGE prepared": {
+        "bytes": 1564233043,
+        "files": 1084,
+        "verifiedEntriesSha256": "944ee3136c7ac91224b59ec369fd8bc90e4bbd299a51b65d6a09a8395a35a327"
+      },
+      "SWISSIMAGE source": {
+        "bytes": 186259028,
+        "files": 4,
+        "verifiedEntriesSha256": "9edd9aaf20eb3481b5b9aec077e715d1d350d73cd4885474cac24cabeec5f203"
+      },
+      "Tryfan native semantic crop and habitat": {
+        "bytes": 563835,
+        "files": 2,
+        "verifiedEntriesSha256": "1d4388d183544fd3a135bde05dece5b6950bfcd77e969c2ef518cd5df98d5771"
+      },
+      "Tryfan source and pinned common samples": {
+        "bytes": 16046943,
+        "files": 5,
+        "verifiedEntriesSha256": "16bbf4ef3222be6619ccfb316e0d5b8e7c86a117476d14d98fae76c61a222e1d"
+      },
+      "Welsh prepared terrain": {
+        "bytes": 23889573,
+        "files": 295,
+        "verifiedEntriesSha256": "6091994b08ed611dd1a44d4be1700f2858d9eb197a5c248189f97a5256f2b593"
+      }
+    },
+    "noWritesOrAcquisition": true,
+    "uniqueFiles": 1575
+  },
+  "startingCheckpoint": "e88b575f51dc294806752a05bbbaee3a5d04efc8",
+  "testCount": 321
+}
