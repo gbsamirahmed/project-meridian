@@ -1,0 +1,189 @@
+{
+  "artifacts": [
+    {
+      "bytes": 6100,
+      "path": "input-manifest.json",
+      "sha256": "ff1e462486ab49a7c5b961298f4b393f9dd679d48ef94fd4e450e5300c13e829"
+    },
+    {
+      "bytes": 22667,
+      "path": "raster-bindings.json",
+      "sha256": "81ddecfaa894afbcf5730c3fb471ccabdd51dd1f58179e49f39c1e7972c5ab6a"
+    },
+    {
+      "bytes": 5386941,
+      "path": "features.json",
+      "sha256": "3929964622f6eaaf3ba0251d2a686ca53effc50174ed84cd2fa314d645a6d923"
+    },
+    {
+      "bytes": 171368,
+      "path": "semantic-evidence.json",
+      "sha256": "24b0d84802d8804d51b6fd4edd0fa3c74dc0019a6fecc7315005e430906416a2"
+    },
+    {
+      "bytes": 16843,
+      "path": "qualification.json",
+      "sha256": "c7b9c91d49a5b44887ac60569d1fd6b6d2dab0e989ce818286bf941a106c1e02"
+    }
+  ],
+  "distinctions": "38 real full features;6 prepared bindings;12 semantic WorldCover dictionary/gap templates, not12 observations. Native raster cells exist in retained inputs, not duplicated synthetic records.",
+  "evidenceEpochDistribution": {
+    "2015-survey": 1,
+    "2016-survey": 6,
+    "2021-nominal": 1,
+    "unknown-exact-epoch": 36
+  },
+  "families": {
+    "debris": 6,
+    "dsm": 1,
+    "dtm": 4,
+    "geocover-bedrock": 23,
+    "geocover-unconsolidated": 8,
+    "glaciers": 1,
+    "worldcover": 1
+  },
+  "featureIdentities": [
+    "geocover-bedrock:179373",
+    "geocover-bedrock:179510",
+    "geocover-bedrock:179526",
+    "geocover-bedrock:179643",
+    "geocover-bedrock:179715",
+    "geocover-bedrock:179832",
+    "geocover-bedrock:178893",
+    "geocover-bedrock:178895",
+    "geocover-bedrock:178904",
+    "geocover-bedrock:178907",
+    "geocover-bedrock:179011",
+    "geocover-bedrock:179019",
+    "geocover-bedrock:179032",
+    "geocover-bedrock:179070",
+    "geocover-bedrock:179254",
+    "geocover-bedrock:179731",
+    "geocover-bedrock:289040",
+    "geocover-bedrock:179320",
+    "geocover-bedrock:179382",
+    "geocover-bedrock:179678",
+    "geocover-bedrock:179082",
+    "geocover-bedrock:179116",
+    "geocover-bedrock:179296",
+    "geocover-unconsolidated:208112",
+    "geocover-unconsolidated:208134",
+    "geocover-unconsolidated:208180",
+    "geocover-unconsolidated:98749",
+    "geocover-unconsolidated:101156",
+    "geocover-unconsolidated:142911",
+    "geocover-unconsolidated:142912",
+    "geocover-unconsolidated:142917",
+    "glaciers:683",
+    "debris:3738",
+    "debris:3739",
+    "debris:3755",
+    "debris:3763",
+    "debris:3764",
+    "debris:3768"
+  ],
+  "featurePairPositiveAreaOverlaps": 15,
+  "features": 38,
+  "geometryTypes": {
+    "MultiPolygon": 32,
+    "Polygon": 6
+  },
+  "metadataRecords": 44,
+  "parentAssociations": 6,
+  "preparationManifestSha256": "3f78d7f408319d6fbd4e34b7d61a4d07054e1ad73c107834abda935719dbcc54",
+  "preparedRevision": "357b28e705f7c2647cdf2d54467fc9ee851465814d8ed645cae30713ef9187bb",
+  "rasterSupports": 6,
+  "rasterSupportsNative": [
+    {
+      "bounds": [
+        2624000.0,
+        1091000.0,
+        2625000.0,
+        1092000.0
+      ],
+      "crs": "EPSG:2056",
+      "family": "dtm",
+      "identity": "dtm:c68c305e4a142da416b46b555a80916ecc52f8fa50bf1efd5cd2c3f24f9cd4bc",
+      "shape": [
+        2000,
+        2000
+      ]
+    },
+    {
+      "bounds": [
+        2624000.0,
+        1092000.0,
+        2625000.0,
+        1093000.0
+      ],
+      "crs": "EPSG:2056",
+      "family": "dtm",
+      "identity": "dtm:9fa4a4391e2e1bfd650f2f31c7d38ed9a5a94494a967011468e6c44559bbcb2c",
+      "shape": [
+        2000,
+        2000
+      ]
+    },
+    {
+      "bounds": [
+        2625000.0,
+        1091000.0,
+        2626000.0,
+        1092000.0
+      ],
+      "crs": "EPSG:2056",
+      "family": "dtm",
+      "identity": "dtm:0d2ebc6d0b4fd06ab2191cbf2a2f5ab77728249fa8c835075040bce4dc4899de",
+      "shape": [
+        2000,
+        2000
+      ]
+    },
+    {
+      "bounds": [
+        2625000.0,
+        1092000.0,
+        2626000.0,
+        1093000.0
+      ],
+      "crs": "EPSG:2056",
+      "family": "dtm",
+      "identity": "dtm:4dffaad9efb82d3bf327a86b4f82d55762165ea5f825c386c23380a9320ff875",
+      "shape": [
+        2000,
+        2000
+      ]
+    },
+    {
+      "bounds": [
+        6.9998611111111115,
+        45.00013888888889,
+        7.9998611111111115,
+        46.00013888888889
+      ],
+      "crs": "EPSG:4326",
+      "family": "dsm",
+      "identity": "dsm:638c155dd9a5f0b7ee818146def740093da33cee4606071b2bbf7ce3fa00ab95",
+      "shape": [
+        3600,
+        3600
+      ]
+    },
+    {
+      "bounds": [
+        7.74825,
+        45.97,
+        7.774249999999999,
+        45.988166666666665
+      ],
+      "crs": "EPSG:4326",
+      "family": "worldcover",
+      "identity": "worldcover:86579f0b5f87e9c50e499c3ab0752b39357fe7379ab227a11c31c2dee1e676ee",
+      "shape": [
+        218,
+        312
+      ]
+    }
+  ],
+  "schema": "atlas-riffelhorn-retrieval-population/v1"
+}

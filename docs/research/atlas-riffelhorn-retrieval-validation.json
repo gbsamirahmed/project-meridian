@@ -1,0 +1,570 @@
+{
+  "acceptedPilotUnchanged": true,
+  "canonicalThreads": 42,
+  "changedPaths": [
+    "docs/architecture.md",
+    "docs/development-log.md",
+    "docs/product-direction.md",
+    "docs/research/atlas-research-map.md",
+    "docs/research/atlas-research-state.md",
+    "docs/research/atlas-riffelhorn-retrieval-baseline.json",
+    "docs/research/atlas-riffelhorn-retrieval-population.json",
+    "docs/research/atlas-riffelhorn-retrieval-results.json",
+    "docs/research/atlas-riffelhorn-retrieval-validation.json",
+    "docs/research/atlas-riffelhorn-retrieval.md",
+    "scripts/atlas/riffelhorn-retrieval/README.md",
+    "scripts/atlas/riffelhorn-retrieval/matrix.json",
+    "scripts/atlas/riffelhorn-retrieval/measure.py",
+    "scripts/atlas/riffelhorn-retrieval/next-task.json",
+    "scripts/atlas/riffelhorn-retrieval/plan.json",
+    "scripts/atlas/riffelhorn-retrieval/query.py",
+    "scripts/atlas/riffelhorn-retrieval/test_query.py",
+    "scripts/atlas/riffelhorn-retrieval/validate.py"
+  ],
+  "checks": [
+    {
+      "check": "all original non-navigation tracked files unchanged before regression",
+      "passed": true
+    },
+    {
+      "check": "all113 production hashes unchanged",
+      "passed": true
+    },
+    {
+      "check": "admitted retained source inventory unchanged before regression",
+      "passed": true
+    },
+    {
+      "check": "all42 canonical research statuses unchanged",
+      "passed": true
+    },
+    {
+      "check": "accepted17 store files unchanged",
+      "passed": true
+    },
+    {
+      "check": "accepted6prepared artifacts unchanged before regression",
+      "passed": true
+    },
+    {
+      "check": "exact starting checkpoint",
+      "passed": true
+    },
+    {
+      "check": "exact immutable fixture revision",
+      "passed": true
+    },
+    {
+      "check": "actual population44not synthetic",
+      "passed": true
+    },
+    {
+      "check": "three distinct candidate organisations",
+      "passed": true
+    },
+    {
+      "check": "all29real matrix cases measured",
+      "passed": true
+    },
+    {
+      "check": "all435repeated full-envelope comparisons agree",
+      "passed": true
+    },
+    {
+      "check": "case hashes agree across organisations",
+      "passed": true
+    },
+    {
+      "check": "all3fresh processes agree",
+      "passed": true
+    },
+    {
+      "check": "no ancestry/persistent index",
+      "passed": true
+    },
+    {
+      "check": "full startup hydration explicitly accounted",
+      "passed": true
+    },
+    {
+      "check": "actualyearqualifications not fabricated",
+      "passed": true
+    },
+    {
+      "check": "source implementation measured unchanged",
+      "passed": true
+    },
+    {
+      "check": "frozen matrix and plan measured",
+      "passed": true
+    },
+    {
+      "check": "exactlyone next task not begun",
+      "passed": true
+    },
+    {
+      "check": "next task complete bounded definition",
+      "passed": true
+    },
+    {
+      "check": "all30report sections",
+      "passed": true
+    },
+    {
+      "check": "all four decision classes",
+      "passed": true
+    },
+    {
+      "check": "result boundary and next task in docs/research/atlas-research-state.md",
+      "passed": true
+    },
+    {
+      "check": "result boundary and next task in docs/product-direction.md",
+      "passed": true
+    },
+    {
+      "check": "result boundary and next task in docs/development-log.md",
+      "passed": true
+    },
+    {
+      "check": "result boundary and next task in docs/architecture.md",
+      "passed": true
+    },
+    {
+      "check": "result boundary and next task in docs/research/atlas-research-map.md",
+      "passed": true
+    },
+    {
+      "check": "append-only development history",
+      "passed": true
+    },
+    {
+      "check": "retrieval-focused",
+      "passed": true
+    },
+    {
+      "check": "preparation-focused",
+      "passed": true
+    },
+    {
+      "check": "preparation-fresh-verification",
+      "passed": true
+    },
+    {
+      "check": "assessment-inventory-reproduction",
+      "passed": true
+    },
+    {
+      "check": "assessment",
+      "passed": true
+    },
+    {
+      "check": "s6",
+      "passed": true
+    },
+    {
+      "check": "s1-s5",
+      "passed": true
+    },
+    {
+      "check": "native",
+      "passed": true
+    },
+    {
+      "check": "planning",
+      "passed": true
+    },
+    {
+      "check": "frozen",
+      "passed": true
+    },
+    {
+      "check": "qualified",
+      "passed": true
+    },
+    {
+      "check": "persistent",
+      "passed": true
+    },
+    {
+      "check": "exe",
+      "passed": true
+    },
+    {
+      "check": "semantic-types",
+      "passed": true
+    },
+    {
+      "check": "lint",
+      "passed": true
+    },
+    {
+      "check": "build",
+      "passed": true
+    },
+    {
+      "check": "diff",
+      "passed": true
+    },
+    {
+      "check": "application-types",
+      "passed": true
+    },
+    {
+      "check": "proof-only changed-path allowlist",
+      "passed": true
+    },
+    {
+      "check": "no large or source payload files committed",
+      "passed": true
+    },
+    {
+      "check": "full final structured-file and untracked-path review",
+      "passed": true
+    },
+    {
+      "check": "report/navigation references resolve",
+      "passed": true
+    },
+    {
+      "check": "all original non-navigation tracked files unchanged after regression",
+      "passed": true
+    },
+    {
+      "check": "all admitted source inventory unchanged after regression",
+      "passed": true
+    },
+    {
+      "check": "all113 protected production hashes unchanged after regression",
+      "passed": true
+    },
+    {
+      "check": "accepted store unchanged after regression",
+      "passed": true
+    },
+    {
+      "check": "accepted6Riffelhorn artifacts unchanged after regression",
+      "passed": true
+    },
+    {
+      "check": "accepted current and310source hashes unchanged",
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\gbsam\\Documents\\Projects\\project-meridian\\scripts\\atlas\\riffelhorn-retrieval\\test_query.py"
+      ],
+      "elapsedSeconds": 7.915003500180319,
+      "exitCode": 0,
+      "name": "retrieval-focused",
+      "tests": 31
+    },
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/riffelhorn-fixture/test_prepare.py"
+      ],
+      "elapsedSeconds": 21.423740499885753,
+      "exitCode": 0,
+      "name": "preparation-focused",
+      "tests": 30
+    },
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/riffelhorn-fixture/prepare.py",
+        "verify",
+        "--output",
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\derived\\atlas\\riffelhorn\\riffelhorn-qualified-fixture-v1\\357b28e705f7c2647cdf2d54467fc9ee851465814d8ed645cae30713ef9187bb"
+      ],
+      "elapsedSeconds": 1.7531244999263436,
+      "exitCode": 0,
+      "name": "preparation-fresh-verification",
+      "tests": null
+    },
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/regional-expansion/inventory.py",
+        "--check"
+      ],
+      "elapsedSeconds": 8.042548099998385,
+      "exitCode": 0,
+      "name": "assessment-inventory-reproduction",
+      "tests": null
+    },
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/measured-architecture/test_assess.py"
+      ],
+      "basis": "original non-navigation tracked inputs unchanged; focused preparation/final verification rerun",
+      "elapsedSeconds": 0.7510877000167966,
+      "exitCode": 0,
+      "name": "assessment",
+      "reusedUnchangedRegression": true,
+      "tests": 10
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "pilots/atlas/tryfan/tests/acceptance.test.mjs"
+      ],
+      "basis": "original non-navigation tracked inputs unchanged; focused preparation/final verification rerun",
+      "elapsedSeconds": 2.356557499850169,
+      "exitCode": 0,
+      "name": "s6",
+      "reusedUnchangedRegression": true,
+      "tests": 7
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "pilots/atlas/tryfan/tests/catalogue.test.mjs",
+        "pilots/atlas/tryfan/tests/query.test.mjs",
+        "pilots/atlas/tryfan/tests/lifecycle.test.mjs",
+        "pilots/atlas/tryfan/tests/http.test.mjs",
+        "pilots/atlas/tryfan/tests/publication.test.mjs",
+        "pilots/atlas/tryfan/tests/restart.test.mjs"
+      ],
+      "basis": "original non-navigation tracked inputs unchanged; focused preparation/final verification rerun",
+      "elapsedSeconds": 144.61598760006018,
+      "exitCode": 0,
+      "name": "s1-s5",
+      "reusedUnchangedRegression": true,
+      "tests": 121
+    },
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "pilots/atlas/tryfan/adapters/test_native.py"
+      ],
+      "basis": "original non-navigation tracked inputs unchanged; focused preparation/final verification rerun",
+      "elapsedSeconds": 0.6120454999618232,
+      "exitCode": 0,
+      "name": "native",
+      "reusedUnchangedRegression": true,
+      "tests": 9
+    },
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/regional-pilot-plan/test_plan.py"
+      ],
+      "basis": "original non-navigation tracked inputs unchanged; focused preparation/final verification rerun",
+      "elapsedSeconds": 0.21758639998733997,
+      "exitCode": 0,
+      "name": "planning",
+      "reusedUnchangedRegression": true,
+      "tests": 22
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "scripts/atlas/test_semantic_evidence_contract.mjs",
+        "scripts/atlas/test_terrain_hierarchy_contract.mjs",
+        "scripts/atlas/test_terrain_runtime.mjs",
+        "scripts/atlas/test_tryfan_terrain.mjs"
+      ],
+      "basis": "original non-navigation tracked inputs unchanged; focused preparation/final verification rerun",
+      "elapsedSeconds": 1.4306141999550164,
+      "exitCode": 0,
+      "name": "frozen",
+      "reusedUnchangedRegression": true,
+      "tests": 64
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "scripts/atlas/test_qualified_query_proof.mjs"
+      ],
+      "basis": "original non-navigation tracked inputs unchanged; focused preparation/final verification rerun",
+      "elapsedSeconds": 1.0228663000743836,
+      "exitCode": 0,
+      "name": "qualified",
+      "reusedUnchangedRegression": true,
+      "tests": 17
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "scripts/atlas/test_local_persistent_tryfan.mjs"
+      ],
+      "basis": "original non-navigation tracked inputs unchanged; focused preparation/final verification rerun",
+      "elapsedSeconds": 20.78267370001413,
+      "exitCode": 0,
+      "name": "persistent",
+      "reusedUnchangedRegression": true,
+      "tests": 18
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "scripts/atlas/exe-water-query-proof/test-proof.mjs"
+      ],
+      "basis": "original non-navigation tracked inputs unchanged; focused preparation/final verification rerun",
+      "elapsedSeconds": 4.183765500085428,
+      "exitCode": 0,
+      "name": "exe",
+      "reusedUnchangedRegression": true,
+      "tests": 20
+    },
+    {
+      "args": [
+        "npx.cmd",
+        "tsc",
+        "-p",
+        "scripts/atlas/semantic-evidence/tsconfig.json"
+      ],
+      "elapsedSeconds": 1.8861505999229848,
+      "exitCode": 0,
+      "name": "semantic-types",
+      "tests": null
+    },
+    {
+      "args": [
+        "npm.cmd",
+        "run",
+        "lint"
+      ],
+      "elapsedSeconds": 7.048044900177047,
+      "exitCode": 0,
+      "name": "lint",
+      "tests": null
+    },
+    {
+      "args": [
+        "npm.cmd",
+        "run",
+        "build"
+      ],
+      "elapsedSeconds": 44.2142350000795,
+      "exitCode": 0,
+      "name": "build",
+      "tests": null
+    },
+    {
+      "args": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "elapsedSeconds": 0.08500900003127754,
+      "exitCode": 0,
+      "name": "diff",
+      "tests": null
+    },
+    {
+      "args": [
+        "node",
+        "node_modules/typescript/bin/tsc",
+        "-b",
+        "--pretty",
+        "false"
+      ],
+      "elapsedSeconds": 2.4495176998898387,
+      "exitCode": 0,
+      "name": "application-types",
+      "tests": null
+    }
+  ],
+  "decision": "C - PROOF SUCCESS",
+  "errors": [],
+  "missingReferences": [],
+  "nextTask": "Atlas retained Tryfan and Riffelhorn coherent multi-region world-model integration proof",
+  "nextTaskStatus": "NOT BEGUN",
+  "preservedTrackedFiles": 955,
+  "proofHashes": {
+    "docs/research/atlas-riffelhorn-retrieval-baseline.json": "aff967640774b0891b4289c5718c14eaaf6684d84ae48a312c924776147d971a",
+    "docs/research/atlas-riffelhorn-retrieval-population.json": "141e5de410d84428cfe1436aeb27f56a7b79348d2464d92609175597e81bca81",
+    "docs/research/atlas-riffelhorn-retrieval-results.json": "d78dd211c67943aa4ba748105c1d358877e9d4a0733974b3f47893ee84ba3c0f",
+    "docs/research/atlas-riffelhorn-retrieval.md": "1d922bee04bf88093e398fafbdbeb2d989597d49a15ddbe10c28d9d7fb957040",
+    "scripts/atlas/riffelhorn-retrieval/README.md": "0973d9a44b0983695e88c07de41db8592fa0fa6b96807f5005429954661b57ad",
+    "scripts/atlas/riffelhorn-retrieval/matrix.json": "51a075c363b4d426a1598a574635d12e3c3b9bd9fbc2faeff11b05db9ee84c7c",
+    "scripts/atlas/riffelhorn-retrieval/measure.py": "9e998aab79d92ba687490c7b8d0bbd30cec7e6ef5b5b20df571e3cf5f115fed5",
+    "scripts/atlas/riffelhorn-retrieval/next-task.json": "c29db470994cc610043d70cebb88733cd166117a01610ed9361f4423687c02b5",
+    "scripts/atlas/riffelhorn-retrieval/plan.json": "0bc1a5d2d8131d8e7323bd7c7bb6b0b57844a5b896da8ab938f5206dab718ca5",
+    "scripts/atlas/riffelhorn-retrieval/query.py": "8f4d1b3b9aaa8edc926dace1cc557faee320b7e4933359b566d3fdb8365bc05f",
+    "scripts/atlas/riffelhorn-retrieval/test_query.py": "0a62be7281a1c6fc2c18004ba93167c30e957cb25fb0c0df9ad2cbd2a6c7f369",
+    "scripts/atlas/riffelhorn-retrieval/validate.py": "d8d5d1102a66a67a15954a73e387dc5b8b56bb6621d500ed7e5d9f502eef90cd"
+  },
+  "protectedHashes": 113,
+  "publishedGeneration": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+  "retainedVerification": {
+    "artifacts": 310,
+    "bytes": 42473107
+  },
+  "schema": "atlas-riffelhorn-retrieval-validation/v1",
+  "sourceAdmission": {
+    "groups": {
+      "Complete retained Exe directory": {
+        "bytes": 10295691,
+        "files": 66,
+        "verifiedEntriesSha256": "7043358dd1d3c10efe1b3483ac65e6ec2b5d2c637c4eff5f3d7a6df77082794a"
+      },
+      "July native post-L2A RGB and SCL": {
+        "bytes": 714544,
+        "files": 4,
+        "verifiedEntriesSha256": "c91c42dcad464a78a200ee6ef0a945e0b246eff75830efa2b8ed6e10a47e060f"
+      },
+      "Lab010 existing natural-colour preparation": {
+        "bytes": 1305121,
+        "files": 3,
+        "verifiedEntriesSha256": "86edf76941cbf6b48bc49e198dceb3f64debd0a7200ab3c83df32d06823113ee"
+      },
+      "Parked Swiss metadata only": {
+        "bytes": 19357606,
+        "files": 112,
+        "verifiedEntriesSha256": "e0179dbb4695a66bbf3cb61f2a215d88dc45bdcfd9c09e886da9fd0c9d6fc2cc"
+      },
+      "Pinned Exe sources/documents": {
+        "bytes": 9892590,
+        "files": 31,
+        "verifiedEntriesSha256": "0e1301af8fcdb00f126ba2886216b2a96bfdd68de71e14c6079beece12e6342a"
+      },
+      "SWISSIMAGE manifest": {
+        "bytes": 218993,
+        "files": 1,
+        "verifiedEntriesSha256": "9e3dcb15bd21260896eab7be966f8fdc59cf2e729ecc952fbc60f489c4873225"
+      },
+      "SWISSIMAGE prepared": {
+        "bytes": 1564233043,
+        "files": 1084,
+        "verifiedEntriesSha256": "944ee3136c7ac91224b59ec369fd8bc90e4bbd299a51b65d6a09a8395a35a327"
+      },
+      "SWISSIMAGE source": {
+        "bytes": 186259028,
+        "files": 4,
+        "verifiedEntriesSha256": "9edd9aaf20eb3481b5b9aec077e715d1d350d73cd4885474cac24cabeec5f203"
+      },
+      "Tryfan native semantic crop and habitat": {
+        "bytes": 563835,
+        "files": 2,
+        "verifiedEntriesSha256": "1d4388d183544fd3a135bde05dece5b6950bfcd77e969c2ef518cd5df98d5771"
+      },
+      "Tryfan source and pinned common samples": {
+        "bytes": 16046943,
+        "files": 5,
+        "verifiedEntriesSha256": "16bbf4ef3222be6619ccfb316e0d5b8e7c86a117476d14d98fae76c61a222e1d"
+      },
+      "Welsh prepared terrain": {
+        "bytes": 23889573,
+        "files": 295,
+        "verifiedEntriesSha256": "6091994b08ed611dd1a44d4be1700f2858d9eb197a5c248189f97a5256f2b593"
+      }
+    },
+    "noWritesOrAcquisition": true,
+    "uniqueFiles": 1575
+  },
+  "startingCheckpoint": "d55584feec520c0a550dc8a4b40f973bd4eee95e",
+  "testCount": 349
+}

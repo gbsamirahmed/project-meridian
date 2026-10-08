@@ -1,0 +1,3859 @@
+{
+  "agreement": true,
+  "byteLimit": "candidateRecordBytesRepresented is an equivalent JSON byte proxy, not actual bytes reread. metadataFileReads per warm query are0; startup parses all five prepared members after full verification. decodedPayloadBytes measures returned native window buffers, not compressed physical block I/O.",
+  "comparableRepeatedQueries": 435,
+  "decision": "C - PROOF SUCCESS",
+  "freshProcessAndMatrixSeconds": {
+    "max": 2.300935799954459,
+    "median": 2.275974899996072,
+    "min": 2.245672599878162,
+    "runs": 3
+  },
+  "freshProcessRuns": [
+    {
+      "answerHashesAgree": true,
+      "processAndMatrixSeconds": 2.300935799954459,
+      "setup": {
+        "elapsedSeconds": 1.4008100000210106,
+        "geometryRecordsBuilt": 38,
+        "loadedRecords": 44,
+        "metadataMemberBytes": 5603919,
+        "metadataMembersParsed": 5,
+        "organisationSeconds": 0.1334544001147151,
+        "persistentIndexBytes": 0,
+        "physicalIO": "current verification/reconstruction and GDAL/archive reads are additional; member parse bytes and hash bytes are logical, not cold disk traffic",
+        "verificationInputHashBytes": 120347916
+      }
+    },
+    {
+      "answerHashesAgree": true,
+      "processAndMatrixSeconds": 2.275974899996072,
+      "setup": {
+        "elapsedSeconds": 1.4105042000301182,
+        "geometryRecordsBuilt": 38,
+        "loadedRecords": 44,
+        "metadataMemberBytes": 5603919,
+        "metadataMembersParsed": 5,
+        "organisationSeconds": 0.12836740002967417,
+        "persistentIndexBytes": 0,
+        "physicalIO": "current verification/reconstruction and GDAL/archive reads are additional; member parse bytes and hash bytes are logical, not cold disk traffic",
+        "verificationInputHashBytes": 120347916
+      }
+    },
+    {
+      "answerHashesAgree": true,
+      "processAndMatrixSeconds": 2.245672599878162,
+      "setup": {
+        "elapsedSeconds": 1.3637035998981446,
+        "geometryRecordsBuilt": 38,
+        "loadedRecords": 44,
+        "metadataMemberBytes": 5603919,
+        "metadataMembersParsed": 5,
+        "organisationSeconds": 0.13110429979860783,
+        "persistentIndexBytes": 0,
+        "physicalIO": "current verification/reconstruction and GDAL/archive reads are additional; member parse bytes and hash bytes are logical, not cold disk traffic",
+        "verificationInputHashBytes": 120347916
+      }
+    }
+  ],
+  "freshSetupSeconds": {
+    "max": 1.4105042000301182,
+    "median": 1.4008100000210106,
+    "min": 1.3637035998981446,
+    "runs": 3
+  },
+  "fullFeaturePairsIntersectingInsideCore": 15,
+  "matrixCases": 29,
+  "matrixSha256": "51a075c363b4d426a1598a574635d12e3c3b9bd9fbc2faeff11b05db9ee84c7c",
+  "memoryLimit": "Python tracked allocation peak includes validation/reconstruction/transient JSON; excludes native GDAL/PROJ/GEOS and Node child RSS; not whole-process memory",
+  "nextTask": {
+    "acceptanceCriteria": [
+      "source/preparation/registration/publication identities stay distinct",
+      "both native regions/CRSs/height references/rights/time and gaps survive",
+      "explicit publication membership resolves without ancestry",
+      "pinned consumer remains coherent across one bounded regional update",
+      "new consumer resolves the new publication and historical region state remains accessible",
+      "incomplete/rejected/interrupted assembly leaves prior root intact",
+      "qualified retrieval agrees with standalone native evidence for supported questions",
+      "fresh-process recovery and all accepted evidence/contracts/statuses/production protections pass"
+    ],
+    "deliverable": "Reproducible isolated two-region world-model integration proof with qualified queries, immutable history, coherent publication/pinning and explicit unimplemented lifecycle limits.",
+    "permittedWork": [
+      "isolated registration adapters over retained qualified evidence",
+      "explicit coherent two-region membership using existing immutable state/publication semantics",
+      "generation-pinned offline or bounded existing pilot-boundary querying",
+      "bounded administrative/local applicability updates and history/recovery tests",
+      "no acquisition, terrain fusion, new physical derivations, production infrastructure or accepted-store mutation"
+    ],
+    "prerequisites": [
+      "accepted unchanged Tryfan S1-S6",
+      "verified Riffelhorn preparation and retrieval receipts",
+      "frozen semantic/world-model/lifecycle contracts",
+      "existing bounded component/publication/pinning mechanisms"
+    ],
+    "status": "NOT BEGUN",
+    "stopCondition": "Stop after bounded two-region composition is judged and documented. Do not begin regional derivation-density scaling, dated revisions, production runtime/service readiness or infrastructure. If existing mechanisms cannot compose without foundational redesign, classify that precise blocker rather than invent a parallel world model.",
+    "title": "Atlas retained Tryfan and Riffelhorn coherent multi-region world-model integration proof",
+    "uncertainty": "Can the accepted Tryfan semantics and qualified Riffelhorn evidence coexist in one isolated persistent coherent publication with explicit regional membership, native-qualified pinned querying and independent regional changes/history?",
+    "why": "Real source accountability, preparation and standalone retrieval now exist; registration/publication composition is the missing capability. No retrieval/validation optimisation blocker is demonstrated."
+  },
+  "observations": [
+    {
+      "agreement": true,
+      "answerSha256": "98af8b5f35de9e4787ba60a6a3fe6484e33ba912ddb95d88c9410c3c72cde4e7",
+      "case": "point-all",
+      "elapsedSeconds": {
+        "max": 0.03264610003679991,
+        "median": 0.03151070000603795,
+        "min": 0.031087999930605292,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 46605,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 9,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 44,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 3,
+        "payloadAvailabilityChecks": 3,
+        "payloadReadCalls": 3,
+        "provenanceChecks": 4,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 2,
+        "resultCount": 4,
+        "spatialFalsePositiveCandidates": 37,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "scan",
+      "query": {
+        "point": [
+          2625000,
+          1092000
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "98af8b5f35de9e4787ba60a6a3fe6484e33ba912ddb95d88c9410c3c72cde4e7",
+      "case": "point-all",
+      "elapsedSeconds": {
+        "max": 0.03248100006021559,
+        "median": 0.03197510004974902,
+        "min": 0.03085420001298189,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 46605,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 9,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 44,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 3,
+        "payloadAvailabilityChecks": 3,
+        "payloadReadCalls": 3,
+        "provenanceChecks": 4,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 2,
+        "resultCount": 4,
+        "spatialFalsePositiveCandidates": 37,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "grouped",
+      "query": {
+        "point": [
+          2625000,
+          1092000
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "98af8b5f35de9e4787ba60a6a3fe6484e33ba912ddb95d88c9410c3c72cde4e7",
+      "case": "point-all",
+      "elapsedSeconds": {
+        "max": 0.0315805000718683,
+        "median": 0.030634799972176552,
+        "min": 0.029806500067934394,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 46605,
+        "candidateRecordBytesRepresented": 3620617,
+        "candidates": 10,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 9,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 10,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 3,
+        "payloadAvailabilityChecks": 3,
+        "payloadReadCalls": 3,
+        "provenanceChecks": 4,
+        "qualificationChecks": 10,
+        "recordsConsidered": 10,
+        "resourceReferencesResolved": 2,
+        "resultCount": 4,
+        "spatialFalsePositiveCandidates": 3,
+        "spatialIndexQueries": 1
+      },
+      "organisation": "selective",
+      "query": {
+        "point": [
+          2625000,
+          1092000
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "5b9eaa99cea645f948fecce4fe2e887f4130c2ceae90b2a96ebe23861afea408",
+      "case": "narrow-all",
+      "elapsedSeconds": {
+        "max": 0.017560800071805716,
+        "median": 0.015263699926435947,
+        "min": 0.015079299919307232,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 240818,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 63,
+        "decodedPayloadBytes": 63,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 44,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 63,
+        "payloadAvailabilityChecks": 6,
+        "payloadReadCalls": 1,
+        "provenanceChecks": 8,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 4,
+        "resultCount": 8,
+        "spatialFalsePositiveCandidates": 36,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "scan",
+      "query": {
+        "area": [
+          2624975,
+          1091975,
+          2625025,
+          1092025
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "5b9eaa99cea645f948fecce4fe2e887f4130c2ceae90b2a96ebe23861afea408",
+      "case": "narrow-all",
+      "elapsedSeconds": {
+        "max": 0.015209800098091364,
+        "median": 0.014446800108999014,
+        "min": 0.014347200049087405,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 240818,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 63,
+        "decodedPayloadBytes": 63,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 44,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 63,
+        "payloadAvailabilityChecks": 6,
+        "payloadReadCalls": 1,
+        "provenanceChecks": 8,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 4,
+        "resultCount": 8,
+        "spatialFalsePositiveCandidates": 36,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "grouped",
+      "query": {
+        "area": [
+          2624975,
+          1091975,
+          2625025,
+          1092025
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "5b9eaa99cea645f948fecce4fe2e887f4130c2ceae90b2a96ebe23861afea408",
+      "case": "narrow-all",
+      "elapsedSeconds": {
+        "max": 0.015450499951839447,
+        "median": 0.015021400060504675,
+        "min": 0.014145799912512302,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 240818,
+        "candidateRecordBytesRepresented": 3620617,
+        "candidates": 10,
+        "cellCentrePredicates": 63,
+        "decodedPayloadBytes": 63,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 10,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 63,
+        "payloadAvailabilityChecks": 6,
+        "payloadReadCalls": 1,
+        "provenanceChecks": 8,
+        "qualificationChecks": 10,
+        "recordsConsidered": 10,
+        "resourceReferencesResolved": 4,
+        "resultCount": 8,
+        "spatialFalsePositiveCandidates": 2,
+        "spatialIndexQueries": 1
+      },
+      "organisation": "selective",
+      "query": {
+        "area": [
+          2624975,
+          1091975,
+          2625025,
+          1092025
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "ccd4fc76561b6e865846306cb0b54dcb107762034fba05b6fc9aee99f14a75d5",
+      "case": "broad-core",
+      "elapsedSeconds": {
+        "max": 0.1339805000461638,
+        "median": 0.11195090017281473,
+        "min": 0.1097677000798285,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 744566,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 68016,
+        "decodedPayloadBytes": 68016,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 44,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 68016,
+        "payloadAvailabilityChecks": 6,
+        "payloadReadCalls": 1,
+        "provenanceChecks": 44,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 88,
+        "resultCount": 44,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "scan",
+      "query": {
+        "area": [
+          2624000,
+          1091000,
+          2626000,
+          1093000
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "ccd4fc76561b6e865846306cb0b54dcb107762034fba05b6fc9aee99f14a75d5",
+      "case": "broad-core",
+      "elapsedSeconds": {
+        "max": 0.15027810004539788,
+        "median": 0.1297680998686701,
+        "min": 0.11035179998725653,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 744566,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 68016,
+        "decodedPayloadBytes": 68016,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 44,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 68016,
+        "payloadAvailabilityChecks": 6,
+        "payloadReadCalls": 1,
+        "provenanceChecks": 44,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 88,
+        "resultCount": 44,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "grouped",
+      "query": {
+        "area": [
+          2624000,
+          1091000,
+          2626000,
+          1093000
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "ccd4fc76561b6e865846306cb0b54dcb107762034fba05b6fc9aee99f14a75d5",
+      "case": "broad-core",
+      "elapsedSeconds": {
+        "max": 0.1441734000109136,
+        "median": 0.13211040012538433,
+        "min": 0.1273568000178784,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 744566,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 68016,
+        "decodedPayloadBytes": 68016,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 44,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 68016,
+        "payloadAvailabilityChecks": 6,
+        "payloadReadCalls": 1,
+        "provenanceChecks": 44,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 88,
+        "resultCount": 44,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 1
+      },
+      "organisation": "selective",
+      "query": {
+        "area": [
+          2624000,
+          1091000,
+          2626000,
+          1093000
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "0287010ead2bf138ff76be5f633a6b54cf35af1d514f2e3a769dd4b63c8a5887",
+      "case": "outside-point",
+      "elapsedSeconds": {
+        "max": 7.770000956952572e-05,
+        "median": 5.8999983593821526e-05,
+        "min": 5.270005203783512e-05,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 1556,
+        "candidateRecordBytesRepresented": 0,
+        "candidates": 0,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 0,
+        "qualificationChecks": 0,
+        "recordsConsidered": 0,
+        "resourceReferencesResolved": 0,
+        "resultCount": 0,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "scan",
+      "query": {
+        "point": [
+          2623000,
+          1092000
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "0287010ead2bf138ff76be5f633a6b54cf35af1d514f2e3a769dd4b63c8a5887",
+      "case": "outside-point",
+      "elapsedSeconds": {
+        "max": 6.860005669295788e-05,
+        "median": 5.4999953135848045e-05,
+        "min": 5.3999945521354675e-05,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 1556,
+        "candidateRecordBytesRepresented": 0,
+        "candidates": 0,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 0,
+        "qualificationChecks": 0,
+        "recordsConsidered": 0,
+        "resourceReferencesResolved": 0,
+        "resultCount": 0,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "grouped",
+      "query": {
+        "point": [
+          2623000,
+          1092000
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "0287010ead2bf138ff76be5f633a6b54cf35af1d514f2e3a769dd4b63c8a5887",
+      "case": "outside-point",
+      "elapsedSeconds": {
+        "max": 5.650008097290993e-05,
+        "median": 5.0999922677874565e-05,
+        "min": 5.020014941692352e-05,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 1556,
+        "candidateRecordBytesRepresented": 0,
+        "candidates": 0,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 0,
+        "qualificationChecks": 0,
+        "recordsConsidered": 0,
+        "resourceReferencesResolved": 0,
+        "resultCount": 0,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "selective",
+      "query": {
+        "point": [
+          2623000,
+          1092000
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "9c24454bd6bec56e1f1e9909acaa537520fea94d28bfe84d2b84ca4a6a7afb81",
+      "case": "outside-area",
+      "elapsedSeconds": {
+        "max": 0.00015549990348517895,
+        "median": 0.0001403999049216509,
+        "min": 0.00013470021076500416,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 1585,
+        "candidateRecordBytesRepresented": 0,
+        "candidates": 0,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 0,
+        "qualificationChecks": 0,
+        "recordsConsidered": 0,
+        "resourceReferencesResolved": 0,
+        "resultCount": 0,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "scan",
+      "query": {
+        "area": [
+          2622000,
+          1090000,
+          2623000,
+          1090500
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "9c24454bd6bec56e1f1e9909acaa537520fea94d28bfe84d2b84ca4a6a7afb81",
+      "case": "outside-area",
+      "elapsedSeconds": {
+        "max": 0.00015849992632865906,
+        "median": 0.00012859981507062912,
+        "min": 0.0001262999139726162,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 1585,
+        "candidateRecordBytesRepresented": 0,
+        "candidates": 0,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 0,
+        "qualificationChecks": 0,
+        "recordsConsidered": 0,
+        "resourceReferencesResolved": 0,
+        "resultCount": 0,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "grouped",
+      "query": {
+        "area": [
+          2622000,
+          1090000,
+          2623000,
+          1090500
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "9c24454bd6bec56e1f1e9909acaa537520fea94d28bfe84d2b84ca4a6a7afb81",
+      "case": "outside-area",
+      "elapsedSeconds": {
+        "max": 0.0002101000864058733,
+        "median": 0.00012809992767870426,
+        "min": 0.00012530013918876648,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 1585,
+        "candidateRecordBytesRepresented": 0,
+        "candidates": 0,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 0,
+        "qualificationChecks": 0,
+        "recordsConsidered": 0,
+        "resourceReferencesResolved": 0,
+        "resultCount": 0,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "selective",
+      "query": {
+        "area": [
+          2622000,
+          1090000,
+          2623000,
+          1090500
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "cb4829ea9c66c3fd1518d42d27aaaaa1ec1ea3249a0ec2e22ee7b24cd9c44e6c",
+      "case": "partial-area",
+      "elapsedSeconds": {
+        "max": 0.010967500042170286,
+        "median": 0.01066330005414784,
+        "min": 0.010493300156667829,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 109932,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 204,
+        "decodedPayloadBytes": 204,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 44,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 204,
+        "payloadAvailabilityChecks": 4,
+        "payloadReadCalls": 1,
+        "provenanceChecks": 5,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 2,
+        "resultCount": 5,
+        "spatialFalsePositiveCandidates": 37,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "scan",
+      "query": {
+        "area": [
+          2623900,
+          1091950,
+          2624100,
+          1092050
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "cb4829ea9c66c3fd1518d42d27aaaaa1ec1ea3249a0ec2e22ee7b24cd9c44e6c",
+      "case": "partial-area",
+      "elapsedSeconds": {
+        "max": 0.012305800104513764,
+        "median": 0.011406000005081296,
+        "min": 0.01068990002386272,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 109932,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 204,
+        "decodedPayloadBytes": 204,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 44,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 204,
+        "payloadAvailabilityChecks": 4,
+        "payloadReadCalls": 1,
+        "provenanceChecks": 5,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 2,
+        "resultCount": 5,
+        "spatialFalsePositiveCandidates": 37,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "grouped",
+      "query": {
+        "area": [
+          2623900,
+          1091950,
+          2624100,
+          1092050
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "cb4829ea9c66c3fd1518d42d27aaaaa1ec1ea3249a0ec2e22ee7b24cd9c44e6c",
+      "case": "partial-area",
+      "elapsedSeconds": {
+        "max": 0.0113045999314636,
+        "median": 0.011142400093376637,
+        "min": 0.010915599996224046,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 109932,
+        "candidateRecordBytesRepresented": 3563601,
+        "candidates": 9,
+        "cellCentrePredicates": 204,
+        "decodedPayloadBytes": 204,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 9,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 204,
+        "payloadAvailabilityChecks": 4,
+        "payloadReadCalls": 1,
+        "provenanceChecks": 5,
+        "qualificationChecks": 9,
+        "recordsConsidered": 9,
+        "resourceReferencesResolved": 2,
+        "resultCount": 5,
+        "spatialFalsePositiveCandidates": 2,
+        "spatialIndexQueries": 1
+      },
+      "organisation": "selective",
+      "query": {
+        "area": [
+          2623900,
+          1091950,
+          2624100,
+          1092050
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "3031c45612ae5aa79868e36a4ee01471535514f4a71a3cb58f17402f7bd611c6",
+      "case": "tile-seam",
+      "elapsedSeconds": {
+        "max": 0.0034054999705404043,
+        "median": 0.003091000020503998,
+        "min": 0.0029076000209897757,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 7260,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 4,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 4,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 1,
+        "payloadAvailabilityChecks": 1,
+        "payloadReadCalls": 1,
+        "provenanceChecks": 1,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 0,
+        "resultCount": 1,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "scan",
+      "query": {
+        "families": [
+          "dtm"
+        ],
+        "point": [
+          2625000,
+          1092000
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "3031c45612ae5aa79868e36a4ee01471535514f4a71a3cb58f17402f7bd611c6",
+      "case": "tile-seam",
+      "elapsedSeconds": {
+        "max": 0.005254599964246154,
+        "median": 0.0030149000231176615,
+        "min": 0.002844699891284108,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 7260,
+        "candidateRecordBytesRepresented": 11980,
+        "candidates": 4,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 4,
+        "directoryLookups": 1,
+        "exactSpatialChecks": 4,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 1,
+        "payloadAvailabilityChecks": 1,
+        "payloadReadCalls": 1,
+        "provenanceChecks": 1,
+        "qualificationChecks": 4,
+        "recordsConsidered": 4,
+        "resourceReferencesResolved": 0,
+        "resultCount": 1,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "grouped",
+      "query": {
+        "families": [
+          "dtm"
+        ],
+        "point": [
+          2625000,
+          1092000
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "3031c45612ae5aa79868e36a4ee01471535514f4a71a3cb58f17402f7bd611c6",
+      "case": "tile-seam",
+      "elapsedSeconds": {
+        "max": 0.0033340000081807375,
+        "median": 0.0030569001100957394,
+        "min": 0.0028926001396030188,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 7260,
+        "candidateRecordBytesRepresented": 11980,
+        "candidates": 4,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 4,
+        "directoryLookups": 1,
+        "exactSpatialChecks": 4,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 1,
+        "payloadAvailabilityChecks": 1,
+        "payloadReadCalls": 1,
+        "provenanceChecks": 1,
+        "qualificationChecks": 4,
+        "recordsConsidered": 4,
+        "resourceReferencesResolved": 0,
+        "resultCount": 1,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 1
+      },
+      "organisation": "selective",
+      "query": {
+        "families": [
+          "dtm"
+        ],
+        "point": [
+          2625000,
+          1092000
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "46e4590de1f77d3a552f2f4346394e406010cf274649a4f0a0f5df7ed2acc231",
+      "case": "outer-x-edge",
+      "elapsedSeconds": {
+        "max": 0.000161800067871809,
+        "median": 0.0001597998198121786,
+        "min": 0.00014239992015063763,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 1607,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 4,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 0,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 0,
+        "resultCount": 0,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "scan",
+      "query": {
+        "families": [
+          "dtm"
+        ],
+        "point": [
+          2626000,
+          1092000
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "46e4590de1f77d3a552f2f4346394e406010cf274649a4f0a0f5df7ed2acc231",
+      "case": "outer-x-edge",
+      "elapsedSeconds": {
+        "max": 0.00014279992319643497,
+        "median": 0.00013689999468624592,
+        "min": 0.00013509998098015785,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 1607,
+        "candidateRecordBytesRepresented": 11980,
+        "candidates": 4,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 1,
+        "exactSpatialChecks": 4,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 0,
+        "qualificationChecks": 4,
+        "recordsConsidered": 4,
+        "resourceReferencesResolved": 0,
+        "resultCount": 0,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "grouped",
+      "query": {
+        "families": [
+          "dtm"
+        ],
+        "point": [
+          2626000,
+          1092000
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "46e4590de1f77d3a552f2f4346394e406010cf274649a4f0a0f5df7ed2acc231",
+      "case": "outer-x-edge",
+      "elapsedSeconds": {
+        "max": 0.0002578999847173691,
+        "median": 0.0001531001180410385,
+        "min": 0.0001447000540792942,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 1607,
+        "candidateRecordBytesRepresented": 11980,
+        "candidates": 4,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 1,
+        "exactSpatialChecks": 4,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 0,
+        "qualificationChecks": 4,
+        "recordsConsidered": 4,
+        "resourceReferencesResolved": 0,
+        "resultCount": 0,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 1
+      },
+      "organisation": "selective",
+      "query": {
+        "families": [
+          "dtm"
+        ],
+        "point": [
+          2626000,
+          1092000
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "8694be7dcd0b5d41f17b50694fa892d7bb3c3e3dcab1451ec20805a42682ca0f",
+      "case": "outer-y-edge",
+      "elapsedSeconds": {
+        "max": 0.00015159999020397663,
+        "median": 0.0001403999049216509,
+        "min": 0.00013990001752972603,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 1607,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 4,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 0,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 0,
+        "resultCount": 0,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "scan",
+      "query": {
+        "families": [
+          "dtm"
+        ],
+        "point": [
+          2624500,
+          1091000
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "8694be7dcd0b5d41f17b50694fa892d7bb3c3e3dcab1451ec20805a42682ca0f",
+      "case": "outer-y-edge",
+      "elapsedSeconds": {
+        "max": 0.00022999988868832588,
+        "median": 0.00015109986998140812,
+        "min": 0.00013770000077784061,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 1607,
+        "candidateRecordBytesRepresented": 11980,
+        "candidates": 4,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 1,
+        "exactSpatialChecks": 4,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 0,
+        "qualificationChecks": 4,
+        "recordsConsidered": 4,
+        "resourceReferencesResolved": 0,
+        "resultCount": 0,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "grouped",
+      "query": {
+        "families": [
+          "dtm"
+        ],
+        "point": [
+          2624500,
+          1091000
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "8694be7dcd0b5d41f17b50694fa892d7bb3c3e3dcab1451ec20805a42682ca0f",
+      "case": "outer-y-edge",
+      "elapsedSeconds": {
+        "max": 0.00016029994003474712,
+        "median": 0.00015059998258948326,
+        "min": 0.00014480017125606537,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 1607,
+        "candidateRecordBytesRepresented": 11980,
+        "candidates": 4,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 1,
+        "exactSpatialChecks": 4,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 0,
+        "qualificationChecks": 4,
+        "recordsConsidered": 4,
+        "resourceReferencesResolved": 0,
+        "resultCount": 0,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 1
+      },
+      "organisation": "selective",
+      "query": {
+        "families": [
+          "dtm"
+        ],
+        "point": [
+          2624500,
+          1091000
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "d6b2eddb7750d7be69b1ffb40b3e9198481878cdc726bdb91a0b8e6d494b34fa",
+      "case": "feature-boundary",
+      "elapsedSeconds": {
+        "max": 0.0011146999895572662,
+        "median": 0.0010644998401403427,
+        "min": 0.0010484999511390924,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 42994,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 23,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 3,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 6,
+        "resultCount": 3,
+        "spatialFalsePositiveCandidates": 20,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "scan",
+      "query": {
+        "families": [
+          "geocover-bedrock"
+        ],
+        "point": [
+          2625307.9,
+          1092980.1
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "d6b2eddb7750d7be69b1ffb40b3e9198481878cdc726bdb91a0b8e6d494b34fa",
+      "case": "feature-boundary",
+      "elapsedSeconds": {
+        "max": 0.001101299887523055,
+        "median": 0.001070900121703744,
+        "min": 0.0010475998278707266,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 42994,
+        "candidateRecordBytesRepresented": 3052161,
+        "candidates": 23,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 1,
+        "exactSpatialChecks": 23,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 3,
+        "qualificationChecks": 23,
+        "recordsConsidered": 23,
+        "resourceReferencesResolved": 6,
+        "resultCount": 3,
+        "spatialFalsePositiveCandidates": 20,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "grouped",
+      "query": {
+        "families": [
+          "geocover-bedrock"
+        ],
+        "point": [
+          2625307.9,
+          1092980.1
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "d6b2eddb7750d7be69b1ffb40b3e9198481878cdc726bdb91a0b8e6d494b34fa",
+      "case": "feature-boundary",
+      "elapsedSeconds": {
+        "max": 0.0017975999508053064,
+        "median": 0.001680299872532487,
+        "min": 0.0009628001134842634,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 42994,
+        "candidateRecordBytesRepresented": 2743907,
+        "candidates": 4,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 1,
+        "exactSpatialChecks": 4,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 3,
+        "qualificationChecks": 4,
+        "recordsConsidered": 4,
+        "resourceReferencesResolved": 6,
+        "resultCount": 3,
+        "spatialFalsePositiveCandidates": 1,
+        "spatialIndexQueries": 1
+      },
+      "organisation": "selective",
+      "query": {
+        "families": [
+          "geocover-bedrock"
+        ],
+        "point": [
+          2625307.9,
+          1092980.1
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "273c3dcf30aef8c4a5989e346570347167a3f155077678c7b756c669f85da4b4",
+      "case": "bedrock-point",
+      "elapsedSeconds": {
+        "max": 0.0009034001268446445,
+        "median": 0.0008880998939275742,
+        "min": 0.0008735998999327421,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 15203,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 23,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 1,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 2,
+        "resultCount": 1,
+        "spatialFalsePositiveCandidates": 22,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "scan",
+      "query": {
+        "families": [
+          "geocover-bedrock"
+        ],
+        "point": [
+          2625256.0284210523,
+          1092838.2999999998
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "273c3dcf30aef8c4a5989e346570347167a3f155077678c7b756c669f85da4b4",
+      "case": "bedrock-point",
+      "elapsedSeconds": {
+        "max": 0.000999499810859561,
+        "median": 0.0009008999913930893,
+        "min": 0.0008819000795483589,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 15203,
+        "candidateRecordBytesRepresented": 3052161,
+        "candidates": 23,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 1,
+        "exactSpatialChecks": 23,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 1,
+        "qualificationChecks": 23,
+        "recordsConsidered": 23,
+        "resourceReferencesResolved": 2,
+        "resultCount": 1,
+        "spatialFalsePositiveCandidates": 22,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "grouped",
+      "query": {
+        "families": [
+          "geocover-bedrock"
+        ],
+        "point": [
+          2625256.0284210523,
+          1092838.2999999998
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "273c3dcf30aef8c4a5989e346570347167a3f155077678c7b756c669f85da4b4",
+      "case": "bedrock-point",
+      "elapsedSeconds": {
+        "max": 0.0008394999895244837,
+        "median": 0.0007935999892652035,
+        "min": 0.0007648000027984381,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 15203,
+        "candidateRecordBytesRepresented": 2832634,
+        "candidates": 5,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 1,
+        "exactSpatialChecks": 5,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 1,
+        "qualificationChecks": 5,
+        "recordsConsidered": 5,
+        "resourceReferencesResolved": 2,
+        "resultCount": 1,
+        "spatialFalsePositiveCandidates": 4,
+        "spatialIndexQueries": 1
+      },
+      "organisation": "selective",
+      "query": {
+        "families": [
+          "geocover-bedrock"
+        ],
+        "point": [
+          2625256.0284210523,
+          1092838.2999999998
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "9583bd8c2a0ad408a3e1c1e037150e8645e05724ef09aa89bce0f9771fd3470e",
+      "case": "bedrock-id",
+      "elapsedSeconds": {
+        "max": 0.000566599890589714,
+        "median": 0.0005536000244319439,
+        "min": 0.0005495999939739704,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 15122,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 1,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 2,
+        "resultCount": 1,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "scan",
+      "query": {
+        "feature": "geocover-bedrock:179373"
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "9583bd8c2a0ad408a3e1c1e037150e8645e05724ef09aa89bce0f9771fd3470e",
+      "case": "bedrock-id",
+      "elapsedSeconds": {
+        "max": 0.000649500172585249,
+        "median": 0.0005636001005768776,
+        "min": 0.0005497999954968691,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 15122,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 1,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 2,
+        "resultCount": 1,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "grouped",
+      "query": {
+        "feature": "geocover-bedrock:179373"
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "9583bd8c2a0ad408a3e1c1e037150e8645e05724ef09aa89bce0f9771fd3470e",
+      "case": "bedrock-id",
+      "elapsedSeconds": {
+        "max": 0.0005500998813658953,
+        "median": 0.0005266000516712666,
+        "min": 0.0005225001368671656,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 15122,
+        "candidateRecordBytesRepresented": 7507,
+        "candidates": 1,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 1,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 1,
+        "qualificationChecks": 1,
+        "recordsConsidered": 1,
+        "resourceReferencesResolved": 2,
+        "resultCount": 1,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "selective",
+      "query": {
+        "feature": "geocover-bedrock:179373"
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "5734a5d0f48b06bbd414c699f18e4d37013b7144e8b755c55e3b367e55b127cd",
+      "case": "absent-id",
+      "elapsedSeconds": {
+        "max": 0.00015320000238716602,
+        "median": 6.489991210401058e-05,
+        "min": 6.349990144371986e-05,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 1553,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 0,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 0,
+        "resultCount": 0,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "scan",
+      "query": {
+        "feature": "glaciers:absent"
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "5734a5d0f48b06bbd414c699f18e4d37013b7144e8b755c55e3b367e55b127cd",
+      "case": "absent-id",
+      "elapsedSeconds": {
+        "max": 7.180008105933666e-05,
+        "median": 6.440002471208572e-05,
+        "min": 6.160000339150429e-05,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 1553,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 0,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 0,
+        "resultCount": 0,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "grouped",
+      "query": {
+        "feature": "glaciers:absent"
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "5734a5d0f48b06bbd414c699f18e4d37013b7144e8b755c55e3b367e55b127cd",
+      "case": "absent-id",
+      "elapsedSeconds": {
+        "max": 5.220016464591026e-05,
+        "median": 4.830001853406429e-05,
+        "min": 4.359986633062363e-05,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 1553,
+        "candidateRecordBytesRepresented": 0,
+        "candidates": 0,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 1,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 0,
+        "qualificationChecks": 0,
+        "recordsConsidered": 0,
+        "resourceReferencesResolved": 0,
+        "resultCount": 0,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "selective",
+      "query": {
+        "feature": "glaciers:absent"
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "c311a54373b9c21713e6c4d17d65dcbad7b848e95e1347b03938c0b59a2d3ad3",
+      "case": "glacier-associations",
+      "elapsedSeconds": {
+        "max": 0.0024051000364124775,
+        "median": 0.0022897999733686447,
+        "min": 0.00220920005813241,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 111811,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 7,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 26,
+        "resultCount": 7,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "scan",
+      "query": {
+        "associated": true,
+        "feature": "glaciers:683"
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "c311a54373b9c21713e6c4d17d65dcbad7b848e95e1347b03938c0b59a2d3ad3",
+      "case": "glacier-associations",
+      "elapsedSeconds": {
+        "max": 0.0023363998625427485,
+        "median": 0.002228700090199709,
+        "min": 0.0022133998572826385,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 111811,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 7,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 26,
+        "resultCount": 7,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "grouped",
+      "query": {
+        "associated": true,
+        "feature": "glaciers:683"
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "c311a54373b9c21713e6c4d17d65dcbad7b848e95e1347b03938c0b59a2d3ad3",
+      "case": "glacier-associations",
+      "elapsedSeconds": {
+        "max": 0.0022847000509500504,
+        "median": 0.002235300140455365,
+        "min": 0.0022147002164274454,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 111811,
+        "candidateRecordBytesRepresented": 1172051,
+        "candidates": 7,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 2,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 7,
+        "qualificationChecks": 7,
+        "recordsConsidered": 7,
+        "resourceReferencesResolved": 26,
+        "resultCount": 7,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "selective",
+      "query": {
+        "associated": true,
+        "feature": "glaciers:683"
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "180a23004786b694b19f0fadde0252cc917543647c28955bdd433d8a6b8b3e2b",
+      "case": "feature-spatial-mismatch",
+      "elapsedSeconds": {
+        "max": 8.999998681247234e-05,
+        "median": 7.160007953643799e-05,
+        "min": 6.949994713068008e-05,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 1612,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 1,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 0,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 0,
+        "resultCount": 0,
+        "spatialFalsePositiveCandidates": 1,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "scan",
+      "query": {
+        "feature": "geocover-bedrock:179373",
+        "point": [
+          2624001,
+          1091001
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "180a23004786b694b19f0fadde0252cc917543647c28955bdd433d8a6b8b3e2b",
+      "case": "feature-spatial-mismatch",
+      "elapsedSeconds": {
+        "max": 7.6299998909235e-05,
+        "median": 7.38000962883234e-05,
+        "min": 6.919982843101025e-05,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 1612,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 1,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 0,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 0,
+        "resultCount": 0,
+        "spatialFalsePositiveCandidates": 1,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "grouped",
+      "query": {
+        "feature": "geocover-bedrock:179373",
+        "point": [
+          2624001,
+          1091001
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "180a23004786b694b19f0fadde0252cc917543647c28955bdd433d8a6b8b3e2b",
+      "case": "feature-spatial-mismatch",
+      "elapsedSeconds": {
+        "max": 8.290004916489124e-05,
+        "median": 6.410013884305954e-05,
+        "min": 6.250012665987015e-05,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 1612,
+        "candidateRecordBytesRepresented": 0,
+        "candidates": 0,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 1,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 0,
+        "qualificationChecks": 0,
+        "recordsConsidered": 0,
+        "resourceReferencesResolved": 0,
+        "resultCount": 0,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 1
+      },
+      "organisation": "selective",
+      "query": {
+        "feature": "geocover-bedrock:179373",
+        "point": [
+          2624001,
+          1091001
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "99af3ede8085e08a81a8fb317af9962f89775e8e51742e07e2b4b9fd30c8437f",
+      "case": "feature-source-match",
+      "elapsedSeconds": {
+        "max": 0.00041949981823563576,
+        "median": 0.00030419998802244663,
+        "min": 0.0002967000473290682,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 15210,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 1,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 2,
+        "resultCount": 1,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "scan",
+      "query": {
+        "feature": "geocover-bedrock:179373",
+        "product": "geocover-bedrock:retained-preparation",
+        "representation": "vector"
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "99af3ede8085e08a81a8fb317af9962f89775e8e51742e07e2b4b9fd30c8437f",
+      "case": "feature-source-match",
+      "elapsedSeconds": {
+        "max": 0.00035930005833506584,
+        "median": 0.0002970998175442219,
+        "min": 0.00029559992253780365,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 15210,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 1,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 2,
+        "resultCount": 1,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "grouped",
+      "query": {
+        "feature": "geocover-bedrock:179373",
+        "product": "geocover-bedrock:retained-preparation",
+        "representation": "vector"
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "99af3ede8085e08a81a8fb317af9962f89775e8e51742e07e2b4b9fd30c8437f",
+      "case": "feature-source-match",
+      "elapsedSeconds": {
+        "max": 0.00029499991796910763,
+        "median": 0.00028479984030127525,
+        "min": 0.0002829998265951872,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 15210,
+        "candidateRecordBytesRepresented": 7507,
+        "candidates": 1,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 1,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 1,
+        "qualificationChecks": 1,
+        "recordsConsidered": 1,
+        "resourceReferencesResolved": 2,
+        "resultCount": 1,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "selective",
+      "query": {
+        "feature": "geocover-bedrock:179373",
+        "product": "geocover-bedrock:retained-preparation",
+        "representation": "vector"
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "bda5acb9ad2bdefbfbe236fb4058020f660ea704d2172df0bea40d39e2d81200",
+      "case": "feature-source-mismatch",
+      "elapsedSeconds": {
+        "max": 3.460003063082695e-05,
+        "median": 3.320001997053623e-05,
+        "min": 3.20998951792717e-05,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 1601,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 0,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 0,
+        "resultCount": 0,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "scan",
+      "query": {
+        "families": [
+          "debris"
+        ],
+        "feature": "geocover-bedrock:179373"
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "bda5acb9ad2bdefbfbe236fb4058020f660ea704d2172df0bea40d39e2d81200",
+      "case": "feature-source-mismatch",
+      "elapsedSeconds": {
+        "max": 0.0001200998667627573,
+        "median": 3.1400006264448166e-05,
+        "min": 2.850010059773922e-05,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 1601,
+        "candidateRecordBytesRepresented": 297141,
+        "candidates": 6,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 1,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 0,
+        "qualificationChecks": 6,
+        "recordsConsidered": 6,
+        "resourceReferencesResolved": 0,
+        "resultCount": 0,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "grouped",
+      "query": {
+        "families": [
+          "debris"
+        ],
+        "feature": "geocover-bedrock:179373"
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "bda5acb9ad2bdefbfbe236fb4058020f660ea704d2172df0bea40d39e2d81200",
+      "case": "feature-source-mismatch",
+      "elapsedSeconds": {
+        "max": 3.109988756477833e-05,
+        "median": 2.6999972760677338e-05,
+        "min": 2.600019797682762e-05,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 1601,
+        "candidateRecordBytesRepresented": 0,
+        "candidates": 0,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 2,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 0,
+        "qualificationChecks": 0,
+        "recordsConsidered": 0,
+        "resourceReferencesResolved": 0,
+        "resultCount": 0,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "selective",
+      "query": {
+        "families": [
+          "debris"
+        ],
+        "feature": "geocover-bedrock:179373"
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "1dc551dcc93a9c63c267ee78db3a9eec75768a19a043dff8cf82f16d161255af",
+      "case": "epoch-2015",
+      "elapsedSeconds": {
+        "max": 0.00037880009040236473,
+        "median": 0.0003198001068085432,
+        "min": 0.0003122999332845211,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 13953,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 1,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 2,
+        "resultCount": 1,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "scan",
+      "query": {
+        "time": {
+          "end": 2015,
+          "role": "evidence-epoch",
+          "start": 2015
+        }
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "1dc551dcc93a9c63c267ee78db3a9eec75768a19a043dff8cf82f16d161255af",
+      "case": "epoch-2015",
+      "elapsedSeconds": {
+        "max": 0.0005174998659640551,
+        "median": 0.0003738999366760254,
+        "min": 0.0003293999470770359,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 13953,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 1,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 2,
+        "resultCount": 1,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "grouped",
+      "query": {
+        "time": {
+          "end": 2015,
+          "role": "evidence-epoch",
+          "start": 2015
+        }
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "1dc551dcc93a9c63c267ee78db3a9eec75768a19a043dff8cf82f16d161255af",
+      "case": "epoch-2015",
+      "elapsedSeconds": {
+        "max": 0.0004749998915940523,
+        "median": 0.00038650003261864185,
+        "min": 0.0003293000627309084,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 13953,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 1,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 2,
+        "resultCount": 1,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "selective",
+      "query": {
+        "time": {
+          "end": 2015,
+          "role": "evidence-epoch",
+          "start": 2015
+        }
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "7855bdf65cfe6ce72173b0ddd759968d8ef391f49386d2447337a92d24cc1ad4",
+      "case": "epoch-2016",
+      "elapsedSeconds": {
+        "max": 0.0022170001175254583,
+        "median": 0.0020029000006616116,
+        "min": 0.001990600023418665,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 99352,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 6,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 24,
+        "resultCount": 6,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "scan",
+      "query": {
+        "time": {
+          "end": 2016,
+          "role": "evidence-epoch",
+          "start": 2016
+        }
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "7855bdf65cfe6ce72173b0ddd759968d8ef391f49386d2447337a92d24cc1ad4",
+      "case": "epoch-2016",
+      "elapsedSeconds": {
+        "max": 0.010515300091356039,
+        "median": 0.0020319002214819193,
+        "min": 0.0019966999534517527,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 99352,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 6,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 24,
+        "resultCount": 6,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "grouped",
+      "query": {
+        "time": {
+          "end": 2016,
+          "role": "evidence-epoch",
+          "start": 2016
+        }
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "7855bdf65cfe6ce72173b0ddd759968d8ef391f49386d2447337a92d24cc1ad4",
+      "case": "epoch-2016",
+      "elapsedSeconds": {
+        "max": 0.0022926998790353537,
+        "median": 0.0020431000739336014,
+        "min": 0.0019813000690191984,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 99352,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 6,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 24,
+        "resultCount": 6,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "selective",
+      "query": {
+        "time": {
+          "end": 2016,
+          "role": "evidence-epoch",
+          "start": 2016
+        }
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "0227ba2068531a13ba725c722383de0a926ca011c28550ffce75dd80ff1a581d",
+      "case": "nominal-2021",
+      "elapsedSeconds": {
+        "max": 0.0005234999116510153,
+        "median": 0.0004743000026792288,
+        "min": 0.0004088999703526497,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 20218,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 1,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 0,
+        "resultCount": 1,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "scan",
+      "query": {
+        "time": {
+          "end": 2021,
+          "role": "evidence-epoch",
+          "start": 2021
+        }
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "0227ba2068531a13ba725c722383de0a926ca011c28550ffce75dd80ff1a581d",
+      "case": "nominal-2021",
+      "elapsedSeconds": {
+        "max": 0.00043640006333589554,
+        "median": 0.0003879999276250601,
+        "min": 0.00038049998693168163,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 20218,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 1,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 0,
+        "resultCount": 1,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "grouped",
+      "query": {
+        "time": {
+          "end": 2021,
+          "role": "evidence-epoch",
+          "start": 2021
+        }
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "0227ba2068531a13ba725c722383de0a926ca011c28550ffce75dd80ff1a581d",
+      "case": "nominal-2021",
+      "elapsedSeconds": {
+        "max": 0.0004048000555485487,
+        "median": 0.00038670003414154053,
+        "min": 0.00038330000825226307,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 20218,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 1,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 0,
+        "resultCount": 1,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "selective",
+      "query": {
+        "time": {
+          "end": 2021,
+          "role": "evidence-epoch",
+          "start": 2021
+        }
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "1abb785220928f0827194064be055211af3bf36a041f894b7e9fbadc28c319e1",
+      "case": "epoch-unmatched",
+      "elapsedSeconds": {
+        "max": 5.470006726682186e-05,
+        "median": 5.249981768429279e-05,
+        "min": 5.170004442334175e-05,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 1611,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 0,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 0,
+        "resultCount": 0,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "scan",
+      "query": {
+        "time": {
+          "end": 2026,
+          "role": "evidence-epoch",
+          "start": 2026
+        }
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "1abb785220928f0827194064be055211af3bf36a041f894b7e9fbadc28c319e1",
+      "case": "epoch-unmatched",
+      "elapsedSeconds": {
+        "max": 5.659996531903744e-05,
+        "median": 5.219993181526661e-05,
+        "min": 5.100015550851822e-05,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 1611,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 0,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 0,
+        "resultCount": 0,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "grouped",
+      "query": {
+        "time": {
+          "end": 2026,
+          "role": "evidence-epoch",
+          "start": 2026
+        }
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "1abb785220928f0827194064be055211af3bf36a041f894b7e9fbadc28c319e1",
+      "case": "epoch-unmatched",
+      "elapsedSeconds": {
+        "max": 0.0001322000753134489,
+        "median": 5.429983139038086e-05,
+        "min": 5.359994247555733e-05,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 1611,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 0,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 0,
+        "resultCount": 0,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "selective",
+      "query": {
+        "time": {
+          "end": 2026,
+          "role": "evidence-epoch",
+          "start": 2026
+        }
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "462125926986ab090902ef3deb3c425c175234b3d0862fa0c05284636a1e0e8a",
+      "case": "epoch-unknown",
+      "elapsedSeconds": {
+        "max": 0.01660420000553131,
+        "median": 0.012124900007620454,
+        "min": 0.008279099827632308,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 448821,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 36,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 62,
+        "resultCount": 36,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "scan",
+      "query": {
+        "time": {
+          "role": "evidence-epoch",
+          "unknown": true
+        }
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "462125926986ab090902ef3deb3c425c175234b3d0862fa0c05284636a1e0e8a",
+      "case": "epoch-unknown",
+      "elapsedSeconds": {
+        "max": 0.015238499967381358,
+        "median": 0.012663900153711438,
+        "min": 0.008189999964088202,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 448821,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 36,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 62,
+        "resultCount": 36,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "grouped",
+      "query": {
+        "time": {
+          "role": "evidence-epoch",
+          "unknown": true
+        }
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "462125926986ab090902ef3deb3c425c175234b3d0862fa0c05284636a1e0e8a",
+      "case": "epoch-unknown",
+      "elapsedSeconds": {
+        "max": 0.012012100080028176,
+        "median": 0.010989600094035268,
+        "min": 0.00833239988423884,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 448821,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 36,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 62,
+        "resultCount": 36,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "selective",
+      "query": {
+        "time": {
+          "role": "evidence-epoch",
+          "unknown": true
+        }
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "e6993bc8e22d31eefcba5eeadfb08be12f2374bd3465aa7087dcc113a75406c4",
+      "case": "product-2020",
+      "elapsedSeconds": {
+        "max": 0.004173200111836195,
+        "median": 0.004085200140252709,
+        "min": 0.0036023000720888376,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 111851,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 7,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 26,
+        "resultCount": 7,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "scan",
+      "query": {
+        "time": {
+          "end": 2020,
+          "role": "product-reference",
+          "start": 2020
+        }
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "e6993bc8e22d31eefcba5eeadfb08be12f2374bd3465aa7087dcc113a75406c4",
+      "case": "product-2020",
+      "elapsedSeconds": {
+        "max": 0.004216099856421351,
+        "median": 0.004096199991181493,
+        "min": 0.004047200083732605,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 111851,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 7,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 26,
+        "resultCount": 7,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "grouped",
+      "query": {
+        "time": {
+          "end": 2020,
+          "role": "product-reference",
+          "start": 2020
+        }
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "e6993bc8e22d31eefcba5eeadfb08be12f2374bd3465aa7087dcc113a75406c4",
+      "case": "product-2020",
+      "elapsedSeconds": {
+        "max": 0.004321000073105097,
+        "median": 0.004141499986872077,
+        "min": 0.00412350008264184,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 111851,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 7,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 26,
+        "resultCount": 7,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "selective",
+      "query": {
+        "time": {
+          "end": 2020,
+          "role": "product-reference",
+          "start": 2020
+        }
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "4de6c2280d873fd8dda4720df65bf19ce96b893c77f8fd181af24551096729d1",
+      "case": "product-unknown",
+      "elapsedSeconds": {
+        "max": 0.008872099919244647,
+        "median": 0.008216999936848879,
+        "min": 0.0076598001178354025,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 423834,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 31,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 62,
+        "resultCount": 31,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "scan",
+      "query": {
+        "time": {
+          "role": "product-reference",
+          "unknown": true
+        }
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "4de6c2280d873fd8dda4720df65bf19ce96b893c77f8fd181af24551096729d1",
+      "case": "product-unknown",
+      "elapsedSeconds": {
+        "max": 0.011890999972820282,
+        "median": 0.008347100112587214,
+        "min": 0.007669599959626794,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 423834,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 31,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 62,
+        "resultCount": 31,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "grouped",
+      "query": {
+        "time": {
+          "role": "product-reference",
+          "unknown": true
+        }
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "4de6c2280d873fd8dda4720df65bf19ce96b893c77f8fd181af24551096729d1",
+      "case": "product-unknown",
+      "elapsedSeconds": {
+        "max": 0.009345999918878078,
+        "median": 0.00852769985795021,
+        "min": 0.007845000131055713,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 423834,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 0,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 31,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 62,
+        "resultCount": 31,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "selective",
+      "query": {
+        "time": {
+          "role": "product-reference",
+          "unknown": true
+        }
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "e1ea48b9994315903adecdbefe97658b0048e563cda63e3f26a9568779dc9b49",
+      "case": "mixed-debris",
+      "elapsedSeconds": {
+        "max": 0.005130199948325753,
+        "median": 0.004933000076562166,
+        "min": 0.0027207001112401485,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 83157,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 6,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 5,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 20,
+        "resultCount": 5,
+        "spatialFalsePositiveCandidates": 1,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "scan",
+      "query": {
+        "area": [
+          2624000,
+          1091000,
+          2625000,
+          1092000
+        ],
+        "families": [
+          "debris"
+        ],
+        "time": {
+          "end": 2016,
+          "role": "evidence-epoch",
+          "start": 2016
+        }
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "e1ea48b9994315903adecdbefe97658b0048e563cda63e3f26a9568779dc9b49",
+      "case": "mixed-debris",
+      "elapsedSeconds": {
+        "max": 0.0027173999696969986,
+        "median": 0.0026702999603003263,
+        "min": 0.002621099818497896,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 83157,
+        "candidateRecordBytesRepresented": 297141,
+        "candidates": 6,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 1,
+        "exactSpatialChecks": 6,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 5,
+        "qualificationChecks": 6,
+        "recordsConsidered": 6,
+        "resourceReferencesResolved": 20,
+        "resultCount": 5,
+        "spatialFalsePositiveCandidates": 1,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "grouped",
+      "query": {
+        "area": [
+          2624000,
+          1091000,
+          2625000,
+          1092000
+        ],
+        "families": [
+          "debris"
+        ],
+        "time": {
+          "end": 2016,
+          "role": "evidence-epoch",
+          "start": 2016
+        }
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "e1ea48b9994315903adecdbefe97658b0048e563cda63e3f26a9568779dc9b49",
+      "case": "mixed-debris",
+      "elapsedSeconds": {
+        "max": 0.002765699988231063,
+        "median": 0.002662800019606948,
+        "min": 0.0026430999860167503,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 83157,
+        "candidateRecordBytesRepresented": 293928,
+        "candidates": 5,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 1,
+        "exactSpatialChecks": 5,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 5,
+        "qualificationChecks": 5,
+        "recordsConsidered": 5,
+        "resourceReferencesResolved": 20,
+        "resultCount": 5,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 1
+      },
+      "organisation": "selective",
+      "query": {
+        "area": [
+          2624000,
+          1091000,
+          2625000,
+          1092000
+        ],
+        "families": [
+          "debris"
+        ],
+        "time": {
+          "end": 2016,
+          "role": "evidence-epoch",
+          "start": 2016
+        }
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "cb14bbff2ba3d03a2b832bcb40f3a4a07949513b9121a2df1511c49563307696",
+      "case": "mixed-unknown-geology",
+      "elapsedSeconds": {
+        "max": 0.0005397999193519354,
+        "median": 0.000498299952596426,
+        "min": 0.0004908000119030476,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 15278,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 23,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 1,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 2,
+        "resultCount": 1,
+        "spatialFalsePositiveCandidates": 22,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "scan",
+      "query": {
+        "families": [
+          "geocover-bedrock"
+        ],
+        "point": [
+          2625256.0284210523,
+          1092838.2999999998
+        ],
+        "time": {
+          "role": "evidence-epoch",
+          "unknown": true
+        }
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "cb14bbff2ba3d03a2b832bcb40f3a4a07949513b9121a2df1511c49563307696",
+      "case": "mixed-unknown-geology",
+      "elapsedSeconds": {
+        "max": 0.0008640999440103769,
+        "median": 0.000538799911737442,
+        "min": 0.0004841999616473913,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 15278,
+        "candidateRecordBytesRepresented": 3052161,
+        "candidates": 23,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 1,
+        "exactSpatialChecks": 23,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 1,
+        "qualificationChecks": 23,
+        "recordsConsidered": 23,
+        "resourceReferencesResolved": 2,
+        "resultCount": 1,
+        "spatialFalsePositiveCandidates": 22,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "grouped",
+      "query": {
+        "families": [
+          "geocover-bedrock"
+        ],
+        "point": [
+          2625256.0284210523,
+          1092838.2999999998
+        ],
+        "time": {
+          "role": "evidence-epoch",
+          "unknown": true
+        }
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "cb14bbff2ba3d03a2b832bcb40f3a4a07949513b9121a2df1511c49563307696",
+      "case": "mixed-unknown-geology",
+      "elapsedSeconds": {
+        "max": 0.0004608000162988901,
+        "median": 0.00043720006942749023,
+        "min": 0.00041799992322921753,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 15278,
+        "candidateRecordBytesRepresented": 2832634,
+        "candidates": 5,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 0,
+        "directoryLookups": 1,
+        "exactSpatialChecks": 5,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 0,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "provenanceChecks": 1,
+        "qualificationChecks": 5,
+        "recordsConsidered": 5,
+        "resourceReferencesResolved": 2,
+        "resultCount": 1,
+        "spatialFalsePositiveCandidates": 4,
+        "spatialIndexQueries": 1
+      },
+      "organisation": "selective",
+      "query": {
+        "families": [
+          "geocover-bedrock"
+        ],
+        "point": [
+          2625256.0284210523,
+          1092838.2999999998
+        ],
+        "time": {
+          "role": "evidence-epoch",
+          "unknown": true
+        }
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "d91c647964c969b4063512686c58192b1a5ec56a420e42e171d75edafebc0bb7",
+      "case": "mixed-wc",
+      "elapsedSeconds": {
+        "max": 0.005826500011608005,
+        "median": 0.004411800066009164,
+        "min": 0.004282800015062094,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 51066,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 63,
+        "decodedPayloadBytes": 63,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 1,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 63,
+        "payloadAvailabilityChecks": 1,
+        "payloadReadCalls": 1,
+        "provenanceChecks": 1,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 0,
+        "resultCount": 1,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "scan",
+      "query": {
+        "area": [
+          2624975,
+          1091975,
+          2625025,
+          1092025
+        ],
+        "representation": "raster",
+        "time": {
+          "end": 2021,
+          "role": "evidence-epoch",
+          "start": 2021
+        }
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "d91c647964c969b4063512686c58192b1a5ec56a420e42e171d75edafebc0bb7",
+      "case": "mixed-wc",
+      "elapsedSeconds": {
+        "max": 0.007979700108990073,
+        "median": 0.005403000162914395,
+        "min": 0.004647199995815754,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 51066,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 63,
+        "decodedPayloadBytes": 63,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 1,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 63,
+        "payloadAvailabilityChecks": 1,
+        "payloadReadCalls": 1,
+        "provenanceChecks": 1,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 0,
+        "resultCount": 1,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "grouped",
+      "query": {
+        "area": [
+          2624975,
+          1091975,
+          2625025,
+          1092025
+        ],
+        "representation": "raster",
+        "time": {
+          "end": 2021,
+          "role": "evidence-epoch",
+          "start": 2021
+        }
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "d91c647964c969b4063512686c58192b1a5ec56a420e42e171d75edafebc0bb7",
+      "case": "mixed-wc",
+      "elapsedSeconds": {
+        "max": 0.009397099958732724,
+        "median": 0.008358700200915337,
+        "min": 0.0045402999967336655,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 51066,
+        "candidateRecordBytesRepresented": 3620617,
+        "candidates": 10,
+        "cellCentrePredicates": 63,
+        "decodedPayloadBytes": 63,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 1,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 63,
+        "payloadAvailabilityChecks": 1,
+        "payloadReadCalls": 1,
+        "provenanceChecks": 1,
+        "qualificationChecks": 10,
+        "recordsConsidered": 10,
+        "resourceReferencesResolved": 0,
+        "resultCount": 1,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 1
+      },
+      "organisation": "selective",
+      "query": {
+        "area": [
+          2624975,
+          1091975,
+          2625025,
+          1092025
+        ],
+        "representation": "raster",
+        "time": {
+          "end": 2021,
+          "role": "evidence-epoch",
+          "start": 2021
+        }
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "5805535deac1219005ac17f727da724e4743ee8c538e8d5aec0a9b044764fd9c",
+      "case": "height-independent",
+      "elapsedSeconds": {
+        "max": 0.028396799927577376,
+        "median": 0.02703589992597699,
+        "min": 0.02582180011086166,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 13119,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 8,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 5,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 2,
+        "payloadAvailabilityChecks": 2,
+        "payloadReadCalls": 2,
+        "provenanceChecks": 2,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 0,
+        "resultCount": 2,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "scan",
+      "query": {
+        "families": [
+          "dtm",
+          "dsm"
+        ],
+        "point": [
+          2624500,
+          1091500
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "5805535deac1219005ac17f727da724e4743ee8c538e8d5aec0a9b044764fd9c",
+      "case": "height-independent",
+      "elapsedSeconds": {
+        "max": 0.027668700087815523,
+        "median": 0.02699799998663366,
+        "min": 0.025866900105029345,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 13119,
+        "candidateRecordBytesRepresented": 14948,
+        "candidates": 5,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 8,
+        "directoryLookups": 2,
+        "exactSpatialChecks": 5,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 2,
+        "payloadAvailabilityChecks": 2,
+        "payloadReadCalls": 2,
+        "provenanceChecks": 2,
+        "qualificationChecks": 5,
+        "recordsConsidered": 5,
+        "resourceReferencesResolved": 0,
+        "resultCount": 2,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "grouped",
+      "query": {
+        "families": [
+          "dtm",
+          "dsm"
+        ],
+        "point": [
+          2624500,
+          1091500
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "5805535deac1219005ac17f727da724e4743ee8c538e8d5aec0a9b044764fd9c",
+      "case": "height-independent",
+      "elapsedSeconds": {
+        "max": 0.02794279996305704,
+        "median": 0.026668600039556623,
+        "min": 0.02617540000937879,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 13119,
+        "candidateRecordBytesRepresented": 14948,
+        "candidates": 5,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 8,
+        "directoryLookups": 2,
+        "exactSpatialChecks": 5,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 2,
+        "payloadAvailabilityChecks": 2,
+        "payloadReadCalls": 2,
+        "provenanceChecks": 2,
+        "qualificationChecks": 5,
+        "recordsConsidered": 5,
+        "resourceReferencesResolved": 0,
+        "resultCount": 2,
+        "spatialFalsePositiveCandidates": 0,
+        "spatialIndexQueries": 1
+      },
+      "organisation": "selective",
+      "query": {
+        "families": [
+          "dtm",
+          "dsm"
+        ],
+        "point": [
+          2624500,
+          1091500
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "020a5d097b49a09a2758d33472699e3c97b9e0075757680baa0a4e1476042f0f",
+      "case": "lonlat-point",
+      "elapsedSeconds": {
+        "max": 0.039015499874949455,
+        "median": 0.03712720004841685,
+        "min": 0.034400299889966846,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 60094,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 9,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 44,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 3,
+        "payloadAvailabilityChecks": 3,
+        "payloadReadCalls": 3,
+        "provenanceChecks": 5,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 4,
+        "resultCount": 5,
+        "spatialFalsePositiveCandidates": 36,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "scan",
+      "query": {
+        "crs": "EPSG:4326",
+        "point": [
+          7.754736144063116,
+          45.97462853866641
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "020a5d097b49a09a2758d33472699e3c97b9e0075757680baa0a4e1476042f0f",
+      "case": "lonlat-point",
+      "elapsedSeconds": {
+        "max": 0.042756699956953526,
+        "median": 0.03558799996972084,
+        "min": 0.03363980003632605,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 60094,
+        "candidateRecordBytesRepresented": 4539362,
+        "candidates": 44,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 9,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 44,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 3,
+        "payloadAvailabilityChecks": 3,
+        "payloadReadCalls": 3,
+        "provenanceChecks": 5,
+        "qualificationChecks": 44,
+        "recordsConsidered": 44,
+        "resourceReferencesResolved": 4,
+        "resultCount": 5,
+        "spatialFalsePositiveCandidates": 36,
+        "spatialIndexQueries": 0
+      },
+      "organisation": "grouped",
+      "query": {
+        "crs": "EPSG:4326",
+        "point": [
+          7.754736144063116,
+          45.97462853866641
+        ]
+      }
+    },
+    {
+      "agreement": true,
+      "answerSha256": "020a5d097b49a09a2758d33472699e3c97b9e0075757680baa0a4e1476042f0f",
+      "case": "lonlat-point",
+      "elapsedSeconds": {
+        "max": 0.04257290018722415,
+        "median": 0.035351699916645885,
+        "min": 0.033102900022640824,
+        "runs": 5
+      },
+      "metrics": {
+        "ancestryTraversals": 0,
+        "answerUtf8Bytes": 60094,
+        "candidateRecordBytesRepresented": 3758815,
+        "candidates": 10,
+        "cellCentrePredicates": 0,
+        "decodedPayloadBytes": 9,
+        "directoryLookups": 0,
+        "exactSpatialChecks": 10,
+        "metadataFileReads": 0,
+        "nativeSamplesRead": 3,
+        "payloadAvailabilityChecks": 3,
+        "payloadReadCalls": 3,
+        "provenanceChecks": 5,
+        "qualificationChecks": 10,
+        "recordsConsidered": 10,
+        "resourceReferencesResolved": 4,
+        "resultCount": 5,
+        "spatialFalsePositiveCandidates": 2,
+        "spatialIndexQueries": 1
+      },
+      "organisation": "selective",
+      "query": {
+        "crs": "EPSG:4326",
+        "point": [
+          7.754736144063116,
+          45.97462853866641
+        ]
+      }
+    }
+  ],
+  "organisations": [
+    "scan",
+    "grouped",
+    "selective"
+  ],
+  "persistentIndexBytes": 0,
+  "planSha256": "0bc1a5d2d8131d8e7323bd7c7bb6b0b57844a5b896da8ab938f5206dab718ca5",
+  "preparedRevision": "357b28e705f7c2647cdf2d54467fc9ee851465814d8ed645cae30713ef9187bb",
+  "pythonTrackedStartupPeakBytes": 27149212,
+  "realPopulation": {
+    "artifacts": [
+      {
+        "bytes": 6100,
+        "path": "input-manifest.json",
+        "sha256": "ff1e462486ab49a7c5b961298f4b393f9dd679d48ef94fd4e450e5300c13e829"
+      },
+      {
+        "bytes": 22667,
+        "path": "raster-bindings.json",
+        "sha256": "81ddecfaa894afbcf5730c3fb471ccabdd51dd1f58179e49f39c1e7972c5ab6a"
+      },
+      {
+        "bytes": 5386941,
+        "path": "features.json",
+        "sha256": "3929964622f6eaaf3ba0251d2a686ca53effc50174ed84cd2fa314d645a6d923"
+      },
+      {
+        "bytes": 171368,
+        "path": "semantic-evidence.json",
+        "sha256": "24b0d84802d8804d51b6fd4edd0fa3c74dc0019a6fecc7315005e430906416a2"
+      },
+      {
+        "bytes": 16843,
+        "path": "qualification.json",
+        "sha256": "c7b9c91d49a5b44887ac60569d1fd6b6d2dab0e989ce818286bf941a106c1e02"
+      }
+    ],
+    "distinctions": "38 real full features;6 prepared bindings;12 semantic WorldCover dictionary/gap templates, not12 observations. Native raster cells exist in retained inputs, not duplicated synthetic records.",
+    "evidenceEpochDistribution": {
+      "2015-survey": 1,
+      "2016-survey": 6,
+      "2021-nominal": 1,
+      "unknown-exact-epoch": 36
+    },
+    "families": {
+      "debris": 6,
+      "dsm": 1,
+      "dtm": 4,
+      "geocover-bedrock": 23,
+      "geocover-unconsolidated": 8,
+      "glaciers": 1,
+      "worldcover": 1
+    },
+    "featureIdentities": [
+      "geocover-bedrock:179373",
+      "geocover-bedrock:179510",
+      "geocover-bedrock:179526",
+      "geocover-bedrock:179643",
+      "geocover-bedrock:179715",
+      "geocover-bedrock:179832",
+      "geocover-bedrock:178893",
+      "geocover-bedrock:178895",
+      "geocover-bedrock:178904",
+      "geocover-bedrock:178907",
+      "geocover-bedrock:179011",
+      "geocover-bedrock:179019",
+      "geocover-bedrock:179032",
+      "geocover-bedrock:179070",
+      "geocover-bedrock:179254",
+      "geocover-bedrock:179731",
+      "geocover-bedrock:289040",
+      "geocover-bedrock:179320",
+      "geocover-bedrock:179382",
+      "geocover-bedrock:179678",
+      "geocover-bedrock:179082",
+      "geocover-bedrock:179116",
+      "geocover-bedrock:179296",
+      "geocover-unconsolidated:208112",
+      "geocover-unconsolidated:208134",
+      "geocover-unconsolidated:208180",
+      "geocover-unconsolidated:98749",
+      "geocover-unconsolidated:101156",
+      "geocover-unconsolidated:142911",
+      "geocover-unconsolidated:142912",
+      "geocover-unconsolidated:142917",
+      "glaciers:683",
+      "debris:3738",
+      "debris:3739",
+      "debris:3755",
+      "debris:3763",
+      "debris:3764",
+      "debris:3768"
+    ],
+    "featurePairPositiveAreaOverlaps": 15,
+    "features": 38,
+    "geometryTypes": {
+      "MultiPolygon": 32,
+      "Polygon": 6
+    },
+    "metadataRecords": 44,
+    "parentAssociations": 6,
+    "preparationManifestSha256": "3f78d7f408319d6fbd4e34b7d61a4d07054e1ad73c107834abda935719dbcc54",
+    "preparedRevision": "357b28e705f7c2647cdf2d54467fc9ee851465814d8ed645cae30713ef9187bb",
+    "rasterSupports": 6,
+    "rasterSupportsNative": [
+      {
+        "bounds": [
+          2624000.0,
+          1091000.0,
+          2625000.0,
+          1092000.0
+        ],
+        "crs": "EPSG:2056",
+        "family": "dtm",
+        "identity": "dtm:c68c305e4a142da416b46b555a80916ecc52f8fa50bf1efd5cd2c3f24f9cd4bc",
+        "shape": [
+          2000,
+          2000
+        ]
+      },
+      {
+        "bounds": [
+          2624000.0,
+          1092000.0,
+          2625000.0,
+          1093000.0
+        ],
+        "crs": "EPSG:2056",
+        "family": "dtm",
+        "identity": "dtm:9fa4a4391e2e1bfd650f2f31c7d38ed9a5a94494a967011468e6c44559bbcb2c",
+        "shape": [
+          2000,
+          2000
+        ]
+      },
+      {
+        "bounds": [
+          2625000.0,
+          1091000.0,
+          2626000.0,
+          1092000.0
+        ],
+        "crs": "EPSG:2056",
+        "family": "dtm",
+        "identity": "dtm:0d2ebc6d0b4fd06ab2191cbf2a2f5ab77728249fa8c835075040bce4dc4899de",
+        "shape": [
+          2000,
+          2000
+        ]
+      },
+      {
+        "bounds": [
+          2625000.0,
+          1092000.0,
+          2626000.0,
+          1093000.0
+        ],
+        "crs": "EPSG:2056",
+        "family": "dtm",
+        "identity": "dtm:4dffaad9efb82d3bf327a86b4f82d55762165ea5f825c386c23380a9320ff875",
+        "shape": [
+          2000,
+          2000
+        ]
+      },
+      {
+        "bounds": [
+          6.9998611111111115,
+          45.00013888888889,
+          7.9998611111111115,
+          46.00013888888889
+        ],
+        "crs": "EPSG:4326",
+        "family": "dsm",
+        "identity": "dsm:638c155dd9a5f0b7ee818146def740093da33cee4606071b2bbf7ce3fa00ab95",
+        "shape": [
+          3600,
+          3600
+        ]
+      },
+      {
+        "bounds": [
+          7.74825,
+          45.97,
+          7.774249999999999,
+          45.988166666666665
+        ],
+        "crs": "EPSG:4326",
+        "family": "worldcover",
+        "identity": "worldcover:86579f0b5f87e9c50e499c3ab0752b39357fe7379ab227a11c31c2dee1e676ee",
+        "shape": [
+          218,
+          312
+        ]
+      }
+    ],
+    "schema": "atlas-riffelhorn-retrieval-population/v1"
+  },
+  "schema": "atlas-riffelhorn-retrieval-results/v1",
+  "setup": {
+    "elapsedSeconds": 1.3960430999286473,
+    "geometryRecordsBuilt": 38,
+    "loadedRecords": 44,
+    "metadataMemberBytes": 5603919,
+    "metadataMembersParsed": 5,
+    "organisationSeconds": 0.1369088999927044,
+    "persistentIndexBytes": 0,
+    "physicalIO": "current verification/reconstruction and GDAL/archive reads are additional; member parse bytes and hash bytes are logical, not cold disk traffic",
+    "verificationInputHashBytes": 120347916
+  },
+  "sourceImplementationSha256": "8f4d1b3b9aaa8edc926dace1cc557faee320b7e4933359b566d3fdb8365bc05f",
+  "startingCheckpoint": "d55584feec520c0a550dc8a4b40f973bd4eee95e",
+  "syntheticPopulationExpansion": false,
+  "timingLimit": "five warm repetitions per case/organisation, three fresh processes. Filesystem/OS cache not cleared; genuine process-cold, not disk-cold. Query timing includes answer UTF8 encoding; no claim tiny differences imply scaling."
+}

@@ -1,0 +1,54 @@
+{
+  "acceptance": [
+    "all frozen cases agree on full result identities and qualifications for all3organisations",
+    "manual source-native raster and feature boundary checks pass",
+    "known/unknown time filtering honest and no invented dated records",
+    "missing/mismatched/malformed/provenance/identity/CRS failures explicit",
+    "fresh processes reproduce semantic answer hashes",
+    "accepted source/preparation/pilot/contracts/statuses/production remain unchanged"
+  ],
+  "decision": "family grouping versus ephemeral spatial/feature lookup; persistent indexing only if actual workload establishes need",
+  "exclusions": [
+    "new evidence/physical derivations",
+    "source ranking/fusion/datum reconciliation",
+    "production API/index/database/cloud",
+    "Atlas publication/registration or pilot modification",
+    "temporal histories fabricated to populate matrix"
+  ],
+  "metrics": [
+    "records considered/candidates/results",
+    "exact spatial predicates/bbox false positives",
+    "qualification evaluations",
+    "logical metadata reads/bytes and geometry construction",
+    "native windows/samples/logical decoded payload bytes",
+    "cold setup and warm query median/range",
+    "one-time organisation time/Python tracked memory/no persistent storage"
+  ],
+  "oracle": "transparent full scan of44 support/feature records with exact native predicates; candidate organisations share declared exact semantics but differ selection. Independent direct GDAL and brute-feature tests verify representative answers. Compare full identity/qualification envelopes, not counts.",
+  "organisations": [
+    "scan",
+    "grouped",
+    "selective"
+  ],
+  "population": {
+    "features": 38,
+    "knownEvidenceEpochRecords": 8,
+    "metadataRecords": 44,
+    "rasterSupports": 6,
+    "unknownEvidenceEpochRecords": 36
+  },
+  "preparationManifestSha256": "3f78d7f408319d6fbd4e34b7d61a4d07054e1ad73c107834abda935719dbcc54",
+  "preparedRevision": "357b28e705f7c2647cdf2d54467fc9ee851465814d8ed645cae30713ef9187bb",
+  "preparedRootRelative": "derived/atlas/riffelhorn/riffelhorn-qualified-fixture-v1/357b28e705f7c2647cdf2d54467fc9ee851465814d8ed645cae30713ef9187bb",
+  "schema": "atlas-riffelhorn-retrieval-plan/v1",
+  "semantics": {
+    "crs": "EPSG2056 and EPSG4326/OGC:CRS84 only, always_xy2D. Densify rectangle edges32steps for transformed query boundaries; explicit operation approximation/accuracy. No vertical conversions.",
+    "feature": "source-scoped exact identity; optional actual parent association. No global equivalence or inventory absence claim.",
+    "qualification": "full raw native record or raster header, semantic context/claim/definitions/resources, relevant source/preparation rights, unknowns, time, membership/selection and stable identities retained",
+    "spatial": "point covers native vector geometry; bounded area positive-area intersection. Queries clipped to closed4km2 applicability core, not source geometry. Raster points use native affine half-open row/column lookup; areas return exact intersecting support plus conservative native window candidates. WC area reports native cell-centre classification counts with exact transformed-query mask, not fractions. Height area returns selection descriptor, not invented aggregate.",
+    "time": "evidence-epoch inclusive calendar-year range over known source nominal/survey references; unknown evidence excluded unless explicitly requested. Product-reference years carry distinct release/distribution basis. No exact-date interpolation or change detection."
+  },
+  "startingCheckpoint": "d55584feec520c0a550dc8a4b40f973bd4eee95e",
+  "stop": "Measured adequate standalone organisation and integration readiness; do not register/publish or start optimisation/infrastructure.",
+  "uncertainty": "Can selective real native support/feature/epoch retrieval preserve exact qualified answers with practical regional organisation?"
+}

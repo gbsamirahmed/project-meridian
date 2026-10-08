@@ -1,0 +1,334 @@
+{
+  "cases": [
+    {
+      "id": "point-all",
+      "query": {
+        "point": [
+          2625000,
+          1092000
+        ]
+      }
+    },
+    {
+      "id": "narrow-all",
+      "query": {
+        "area": [
+          2624975,
+          1091975,
+          2625025,
+          1092025
+        ]
+      }
+    },
+    {
+      "id": "broad-core",
+      "query": {
+        "area": [
+          2624000,
+          1091000,
+          2626000,
+          1093000
+        ]
+      }
+    },
+    {
+      "id": "outside-point",
+      "query": {
+        "point": [
+          2623000,
+          1092000
+        ]
+      }
+    },
+    {
+      "id": "outside-area",
+      "query": {
+        "area": [
+          2622000,
+          1090000,
+          2623000,
+          1090500
+        ]
+      }
+    },
+    {
+      "id": "partial-area",
+      "query": {
+        "area": [
+          2623900,
+          1091950,
+          2624100,
+          1092050
+        ]
+      }
+    },
+    {
+      "id": "tile-seam",
+      "query": {
+        "families": [
+          "dtm"
+        ],
+        "point": [
+          2625000,
+          1092000
+        ]
+      }
+    },
+    {
+      "id": "outer-x-edge",
+      "query": {
+        "families": [
+          "dtm"
+        ],
+        "point": [
+          2626000,
+          1092000
+        ]
+      }
+    },
+    {
+      "id": "outer-y-edge",
+      "query": {
+        "families": [
+          "dtm"
+        ],
+        "point": [
+          2624500,
+          1091000
+        ]
+      }
+    },
+    {
+      "id": "feature-boundary",
+      "query": {
+        "families": [
+          "geocover-bedrock"
+        ],
+        "point": [
+          2625307.9,
+          1092980.1
+        ]
+      }
+    },
+    {
+      "id": "bedrock-point",
+      "query": {
+        "families": [
+          "geocover-bedrock"
+        ],
+        "point": [
+          2625256.0284210523,
+          1092838.2999999998
+        ]
+      }
+    },
+    {
+      "id": "bedrock-id",
+      "query": {
+        "feature": "geocover-bedrock:179373"
+      }
+    },
+    {
+      "id": "absent-id",
+      "query": {
+        "feature": "glaciers:absent"
+      }
+    },
+    {
+      "id": "glacier-associations",
+      "query": {
+        "associated": true,
+        "feature": "glaciers:683"
+      }
+    },
+    {
+      "id": "feature-spatial-mismatch",
+      "query": {
+        "feature": "geocover-bedrock:179373",
+        "point": [
+          2624001,
+          1091001
+        ]
+      }
+    },
+    {
+      "id": "feature-source-match",
+      "query": {
+        "feature": "geocover-bedrock:179373",
+        "product": "geocover-bedrock:retained-preparation",
+        "representation": "vector"
+      }
+    },
+    {
+      "id": "feature-source-mismatch",
+      "query": {
+        "families": [
+          "debris"
+        ],
+        "feature": "geocover-bedrock:179373"
+      }
+    },
+    {
+      "id": "epoch-2015",
+      "query": {
+        "time": {
+          "end": 2015,
+          "role": "evidence-epoch",
+          "start": 2015
+        }
+      }
+    },
+    {
+      "id": "epoch-2016",
+      "query": {
+        "time": {
+          "end": 2016,
+          "role": "evidence-epoch",
+          "start": 2016
+        }
+      }
+    },
+    {
+      "id": "nominal-2021",
+      "query": {
+        "time": {
+          "end": 2021,
+          "role": "evidence-epoch",
+          "start": 2021
+        }
+      }
+    },
+    {
+      "id": "epoch-unmatched",
+      "query": {
+        "time": {
+          "end": 2026,
+          "role": "evidence-epoch",
+          "start": 2026
+        }
+      }
+    },
+    {
+      "id": "epoch-unknown",
+      "query": {
+        "time": {
+          "role": "evidence-epoch",
+          "unknown": true
+        }
+      }
+    },
+    {
+      "id": "product-2020",
+      "query": {
+        "time": {
+          "end": 2020,
+          "role": "product-reference",
+          "start": 2020
+        }
+      }
+    },
+    {
+      "id": "product-unknown",
+      "query": {
+        "time": {
+          "role": "product-reference",
+          "unknown": true
+        }
+      }
+    },
+    {
+      "id": "mixed-debris",
+      "query": {
+        "area": [
+          2624000,
+          1091000,
+          2625000,
+          1092000
+        ],
+        "families": [
+          "debris"
+        ],
+        "time": {
+          "end": 2016,
+          "role": "evidence-epoch",
+          "start": 2016
+        }
+      }
+    },
+    {
+      "id": "mixed-unknown-geology",
+      "query": {
+        "families": [
+          "geocover-bedrock"
+        ],
+        "point": [
+          2625256.0284210523,
+          1092838.2999999998
+        ],
+        "time": {
+          "role": "evidence-epoch",
+          "unknown": true
+        }
+      }
+    },
+    {
+      "id": "mixed-wc",
+      "query": {
+        "area": [
+          2624975,
+          1091975,
+          2625025,
+          1092025
+        ],
+        "representation": "raster",
+        "time": {
+          "end": 2021,
+          "role": "evidence-epoch",
+          "start": 2021
+        }
+      }
+    },
+    {
+      "id": "height-independent",
+      "query": {
+        "families": [
+          "dtm",
+          "dsm"
+        ],
+        "point": [
+          2624500,
+          1091500
+        ]
+      }
+    },
+    {
+      "id": "lonlat-point",
+      "query": {
+        "crs": "EPSG:4326",
+        "point": [
+          7.754736144063116,
+          45.97462853866641
+        ]
+      }
+    }
+  ],
+  "freshProcessRepetitions": 3,
+  "negativeCases": [
+    "malformed query",
+    "invalid area",
+    "unknown CRS",
+    "unsupported exact-date time",
+    "missing/corrupt prepared member",
+    "duplicate/conflicting feature identity",
+    "invalid/missing provenance",
+    "missing native payload locator"
+  ],
+  "organisations": [
+    "scan",
+    "grouped",
+    "selective"
+  ],
+  "scale": "real frozen fixture only; no synthetic population expansion",
+  "schema": "atlas-riffelhorn-retrieval-matrix/v1",
+  "warmRepetitions": 5
+}
