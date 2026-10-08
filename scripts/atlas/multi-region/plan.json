@@ -1,0 +1,95 @@
+{
+  "acceptance": [
+    "full qualified native envelopes agree with both independent references",
+    "exact original identities/support/time/rights retained",
+    "direct seven-component membership; zero ancestry; independent history",
+    "one component replaced per administrative revision; no physical change/recomputation invented",
+    "old pin coherent before/during/after; new consumer latest",
+    "invalid/interrupted proposals leave root unchanged; unpublished state unservable",
+    "fresh-process current/historical replay deterministic",
+    "accepted files/contracts/statuses/production unchanged"
+  ],
+  "coherence": "One composite publication and membership-root/current switch. Disconnected native supports. No independent regional roots needed for this local single writer.",
+  "components": [
+    "catalogue",
+    "knowledge",
+    "understanding",
+    "serving",
+    "locators",
+    "tryfanRegistration",
+    "riffelhornRegistration"
+  ],
+  "exclusions": [
+    "accepted stores mutation",
+    "new acquisition/observations/physical methods",
+    "terrain fusion",
+    "production infrastructure/API",
+    "distributed writers/power-loss guarantees",
+    "receipt optimisation",
+    "S7/Appearance/Swiss multiview/Weather/Traverse"
+  ],
+  "failures": [
+    "missing prepared artifact",
+    "mismatched prepared identity",
+    "invalid registration",
+    "missing component",
+    "incomplete closure",
+    "cross-region support/reference mismatch",
+    "unpublished staged proposal",
+    "after-components crash",
+    "before-switch crash",
+    "dead-writer recovery and retry",
+    "unavailable historical-only component"
+  ],
+  "freshRepetitions": 3,
+  "measurements": [
+    "registration/immutable metadata footprint",
+    "full verification/assembly/root timings",
+    "membership/component reads/bytes/relationship checks",
+    "regional reused/replaced counts",
+    "warm candidates/predicates/native bytes and repeated timings",
+    "fresh recovery/query time and RSS excluding children"
+  ],
+  "mechanism": "Reuse component-membership core/runtime unchanged; extend component kinds and domain validator only in isolated proof processes. Exact Tryfan fields use the unchanged pilot validator. Two explicit registration components bind original identities/supports/qualifications. Full current source/preparation validation precedes atomic root switch inside its writer lock.",
+  "oracle": "Unhooked accepted Tryfan openWorld in separate process and unchanged Riffelhorn Python full scan. Compare complete native envelopes normalizing only composite publication references in Tryfan answers. Registration context separate from evidence.",
+  "regions": {
+    "riffelhorn": {
+      "core": {
+        "areaKm2": 4,
+        "bounds": [
+          2624000,
+          1091000,
+          2626000,
+          1093000
+        ],
+        "crs": "EPSG:2056"
+      },
+      "manifestSha256": "3f78d7f408319d6fbd4e34b7d61a4d07054e1ad73c107834abda935719dbcc54",
+      "preparedRevision": "357b28e705f7c2647cdf2d54467fc9ee851465814d8ed645cae30713ef9187bb",
+      "rootRelative": "derived/atlas/riffelhorn/riffelhorn-qualified-fixture-v1/357b28e705f7c2647cdf2d54467fc9ee851465814d8ed645cae30713ef9187bb"
+    },
+    "tryfan": {
+      "acceptedGeneration": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+      "core": {
+        "bounds": [
+          264900,
+          357800,
+          267900,
+          360800
+        ],
+        "crs": "EPSG:27700"
+      }
+    }
+  },
+  "schema": "atlas-multi-region-plan/v1",
+  "startingCheckpoint": "d208a8627f616bbb9a474cdf23eda72c7bfea588",
+  "stateRoot": "C:/Users/gbsam/Documents/Codex/atlas-multi-region-integration-v1",
+  "stop": "Judge bounded composition and select one next task; do not begin dependency-density, temporal revisions or runtime implementation.",
+  "uncertainty": "Can two native retained regions compose under one explicit immutable publication without mixed generations, accepted-state mutation or ancestry-dependent membership?",
+  "updates": [
+    "G1 exact scientific references plus initial registrations",
+    "G2 Riffelhorn administrative registration notice revision only; Tryfan components/answers unchanged",
+    "G3 inverse Tryfan administrative notice revision only; Riffelhorn components/native answers unchanged"
+  ],
+  "warmRepetitions": 3
+}

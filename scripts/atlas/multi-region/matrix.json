@@ -1,0 +1,498 @@
+{
+  "cases": [
+    {
+      "id": "tryfan-native-cover",
+      "query": {
+        "place": {
+          "crs": "EPSG:27700",
+          "point": [
+            266405,
+            359387
+          ]
+        },
+        "property": "worldcover-native",
+        "time": "2021"
+      },
+      "region": "tryfan"
+    },
+    {
+      "id": "tryfan-native-habitat",
+      "query": {
+        "place": {
+          "crs": "EPSG:27700",
+          "point": [
+            266405,
+            359387
+          ]
+        },
+        "property": "nrw-native"
+      },
+      "region": "tryfan"
+    },
+    {
+      "id": "tryfan-derived-slope",
+      "query": {
+        "place": {
+          "crs": "EPSG:27700",
+          "point": [
+            266405,
+            359387
+          ]
+        },
+        "property": "derived-slope"
+      },
+      "region": "tryfan"
+    },
+    {
+      "id": "tryfan-coordinated",
+      "query": {
+        "place": {
+          "crs": "EPSG:27700",
+          "point": [
+            266405,
+            359387
+          ]
+        },
+        "property": "place-evidence"
+      },
+      "region": "tryfan"
+    },
+    {
+      "id": "tryfan-broad-support",
+      "query": {
+        "place": {
+          "bounds": [
+            266205,
+            359187,
+            266605,
+            359587
+          ],
+          "crs": "EPSG:27700"
+        },
+        "property": "worldcover-support",
+        "time": "2021"
+      },
+      "region": "tryfan"
+    },
+    {
+      "id": "tryfan-outside",
+      "query": {
+        "place": {
+          "crs": "EPSG:27700",
+          "point": [
+            264800,
+            357700
+          ]
+        },
+        "property": "worldcover-native",
+        "time": "2021"
+      },
+      "region": "tryfan"
+    },
+    {
+      "id": "tryfan-unsupported-current",
+      "query": {
+        "place": {
+          "crs": "EPSG:27700",
+          "point": [
+            266405,
+            359387
+          ]
+        },
+        "property": "current-cover",
+        "time": "current"
+      },
+      "region": "tryfan"
+    },
+    {
+      "id": "tryfan-nonmatching-time",
+      "query": {
+        "place": {
+          "crs": "EPSG:27700",
+          "point": [
+            266405,
+            359387
+          ]
+        },
+        "property": "worldcover-native",
+        "time": "2026"
+      },
+      "region": "tryfan"
+    },
+    {
+      "id": "tryfan-provenance",
+      "query": {
+        "place": {
+          "crs": "EPSG:27700",
+          "point": [
+            266405,
+            359387
+          ]
+        },
+        "property": "provenance"
+      },
+      "region": "tryfan"
+    },
+    {
+      "id": "riffelhorn-point-all",
+      "query": {
+        "point": [
+          2625000,
+          1092000
+        ]
+      },
+      "region": "riffelhorn"
+    },
+    {
+      "id": "riffelhorn-narrow-all",
+      "query": {
+        "area": [
+          2624975,
+          1091975,
+          2625025,
+          1092025
+        ]
+      },
+      "region": "riffelhorn"
+    },
+    {
+      "id": "riffelhorn-broad-core",
+      "query": {
+        "area": [
+          2624000,
+          1091000,
+          2626000,
+          1093000
+        ]
+      },
+      "region": "riffelhorn"
+    },
+    {
+      "id": "riffelhorn-outside-point",
+      "query": {
+        "point": [
+          2623000,
+          1092000
+        ]
+      },
+      "region": "riffelhorn"
+    },
+    {
+      "id": "riffelhorn-outside-area",
+      "query": {
+        "area": [
+          2622000,
+          1090000,
+          2623000,
+          1090500
+        ]
+      },
+      "region": "riffelhorn"
+    },
+    {
+      "id": "riffelhorn-partial-area",
+      "query": {
+        "area": [
+          2623900,
+          1091950,
+          2624100,
+          1092050
+        ]
+      },
+      "region": "riffelhorn"
+    },
+    {
+      "id": "riffelhorn-tile-seam",
+      "query": {
+        "families": [
+          "dtm"
+        ],
+        "point": [
+          2625000,
+          1092000
+        ]
+      },
+      "region": "riffelhorn"
+    },
+    {
+      "id": "riffelhorn-outer-x-edge",
+      "query": {
+        "families": [
+          "dtm"
+        ],
+        "point": [
+          2626000,
+          1092000
+        ]
+      },
+      "region": "riffelhorn"
+    },
+    {
+      "id": "riffelhorn-outer-y-edge",
+      "query": {
+        "families": [
+          "dtm"
+        ],
+        "point": [
+          2624500,
+          1091000
+        ]
+      },
+      "region": "riffelhorn"
+    },
+    {
+      "id": "riffelhorn-feature-boundary",
+      "query": {
+        "families": [
+          "geocover-bedrock"
+        ],
+        "point": [
+          2625307.9,
+          1092980.1
+        ]
+      },
+      "region": "riffelhorn"
+    },
+    {
+      "id": "riffelhorn-bedrock-point",
+      "query": {
+        "families": [
+          "geocover-bedrock"
+        ],
+        "point": [
+          2625256.0284210523,
+          1092838.2999999998
+        ]
+      },
+      "region": "riffelhorn"
+    },
+    {
+      "id": "riffelhorn-bedrock-id",
+      "query": {
+        "feature": "geocover-bedrock:179373"
+      },
+      "region": "riffelhorn"
+    },
+    {
+      "id": "riffelhorn-absent-id",
+      "query": {
+        "feature": "glaciers:absent"
+      },
+      "region": "riffelhorn"
+    },
+    {
+      "id": "riffelhorn-glacier-associations",
+      "query": {
+        "associated": true,
+        "feature": "glaciers:683"
+      },
+      "region": "riffelhorn"
+    },
+    {
+      "id": "riffelhorn-feature-spatial-mismatch",
+      "query": {
+        "feature": "geocover-bedrock:179373",
+        "point": [
+          2624001,
+          1091001
+        ]
+      },
+      "region": "riffelhorn"
+    },
+    {
+      "id": "riffelhorn-feature-source-match",
+      "query": {
+        "feature": "geocover-bedrock:179373",
+        "product": "geocover-bedrock:retained-preparation",
+        "representation": "vector"
+      },
+      "region": "riffelhorn"
+    },
+    {
+      "id": "riffelhorn-feature-source-mismatch",
+      "query": {
+        "families": [
+          "debris"
+        ],
+        "feature": "geocover-bedrock:179373"
+      },
+      "region": "riffelhorn"
+    },
+    {
+      "id": "riffelhorn-epoch-2015",
+      "query": {
+        "time": {
+          "end": 2015,
+          "role": "evidence-epoch",
+          "start": 2015
+        }
+      },
+      "region": "riffelhorn"
+    },
+    {
+      "id": "riffelhorn-epoch-2016",
+      "query": {
+        "time": {
+          "end": 2016,
+          "role": "evidence-epoch",
+          "start": 2016
+        }
+      },
+      "region": "riffelhorn"
+    },
+    {
+      "id": "riffelhorn-nominal-2021",
+      "query": {
+        "time": {
+          "end": 2021,
+          "role": "evidence-epoch",
+          "start": 2021
+        }
+      },
+      "region": "riffelhorn"
+    },
+    {
+      "id": "riffelhorn-epoch-unmatched",
+      "query": {
+        "time": {
+          "end": 2026,
+          "role": "evidence-epoch",
+          "start": 2026
+        }
+      },
+      "region": "riffelhorn"
+    },
+    {
+      "id": "riffelhorn-epoch-unknown",
+      "query": {
+        "time": {
+          "role": "evidence-epoch",
+          "unknown": true
+        }
+      },
+      "region": "riffelhorn"
+    },
+    {
+      "id": "riffelhorn-product-2020",
+      "query": {
+        "time": {
+          "end": 2020,
+          "role": "product-reference",
+          "start": 2020
+        }
+      },
+      "region": "riffelhorn"
+    },
+    {
+      "id": "riffelhorn-product-unknown",
+      "query": {
+        "time": {
+          "role": "product-reference",
+          "unknown": true
+        }
+      },
+      "region": "riffelhorn"
+    },
+    {
+      "id": "riffelhorn-mixed-debris",
+      "query": {
+        "area": [
+          2624000,
+          1091000,
+          2625000,
+          1092000
+        ],
+        "families": [
+          "debris"
+        ],
+        "time": {
+          "end": 2016,
+          "role": "evidence-epoch",
+          "start": 2016
+        }
+      },
+      "region": "riffelhorn"
+    },
+    {
+      "id": "riffelhorn-mixed-unknown-geology",
+      "query": {
+        "families": [
+          "geocover-bedrock"
+        ],
+        "point": [
+          2625256.0284210523,
+          1092838.2999999998
+        ],
+        "time": {
+          "role": "evidence-epoch",
+          "unknown": true
+        }
+      },
+      "region": "riffelhorn"
+    },
+    {
+      "id": "riffelhorn-mixed-wc",
+      "query": {
+        "area": [
+          2624975,
+          1091975,
+          2625025,
+          1092025
+        ],
+        "representation": "raster",
+        "time": {
+          "end": 2021,
+          "role": "evidence-epoch",
+          "start": 2021
+        }
+      },
+      "region": "riffelhorn"
+    },
+    {
+      "id": "riffelhorn-height-independent",
+      "query": {
+        "families": [
+          "dtm",
+          "dsm"
+        ],
+        "point": [
+          2624500,
+          1091500
+        ]
+      },
+      "region": "riffelhorn"
+    },
+    {
+      "id": "riffelhorn-lonlat-point",
+      "query": {
+        "crs": "EPSG:4326",
+        "point": [
+          7.754736144063116,
+          45.97462853866641
+        ]
+      },
+      "region": "riffelhorn"
+    }
+  ],
+  "failures": [
+    "missing prepared artifact",
+    "mismatched prepared identity",
+    "invalid registration",
+    "missing component",
+    "incomplete closure",
+    "cross-region support/reference mismatch",
+    "unpublished staged proposal",
+    "after-components crash",
+    "before-switch crash",
+    "dead-writer recovery and retry",
+    "unavailable historical-only component"
+  ],
+  "freshRepetitions": 3,
+  "schema": "atlas-multi-region-matrix/v1",
+  "updates": [
+    "G1 exact scientific references plus initial registrations",
+    "G2 Riffelhorn administrative registration notice revision only; Tryfan components/answers unchanged",
+    "G3 inverse Tryfan administrative notice revision only; Riffelhorn components/native answers unchanged"
+  ],
+  "warmRepetitions": 3
+}

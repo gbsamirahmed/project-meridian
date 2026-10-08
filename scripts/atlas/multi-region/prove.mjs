@@ -1,0 +1,30 @@
+// Frozen real-regional sequence; measurement is not a production workload.
+import fs from 'node:fs';import {join} from 'node:path';import {spawnSync} from 'node:child_process';
+import assert from 'node:assert/strict';import * as I from './integration.mjs';import {encode,sha} from '../../../pilots/atlas/tryfan/identity.mjs';
+const matrix=JSON.parse(fs.readFileSync(new URL('./matrix.json',import.meta.url),'utf8'));
+const store=join(I.plan.stateRoot,'measured-'+Date.now());const began=performance.now(),seed=await I.seed(store),registrationMilliseconds=performance.now()-began;
+const oracle=I.reference('oracle').answers,riffOracle=I.python(['--describe']);assert.equal(riffOracle.records.length,44);
+// The independent Riffelhorn oracle uses the accepted full-scan CLI, not this bridge.
+const riffAnswers=I.python(['--oracle']);
+const history=[],publication=[],staging=[],rows=[],pins=[],states=[],semantics={},resolution=[];
+const summary=xs=>({median:[...xs].sort((a,b)=>a-b)[Math.floor(xs.length/2)],min:Math.min(...xs),max:Math.max(...xs),runs:xs.length});
+function semantic(v){const c=structuredClone(v);for(const a of c.answers)delete a.metrics;return c;}
+function equivalent(a,c,g){if(c.region==='tryfan')assert.deepEqual(I.normalizeTryfan(a,g),oracle[c.id],c.id);else assert.deepEqual(a,riffAnswers[c.id.slice(11)],c.id);}
+let value=seed.value,prior=null;
+for(let n=0;n<3;n++){
+ if(n)value=I.revise(value,n===1?'riffelhorn':'tryfan');states.push(structuredClone(value));const start=performance.now(),g=I.prepare(store,value,seed.locators,{ordinal:n+1,predecessor:prior});staging.push({generation:g,milliseconds:performance.now()-start});
+ if(n){assert.throws(()=>I.resolveGeneration(store,g),/Unknown|pre-switch|committed/);const before=await pins[0].query(matrix.cases.slice(0,1).concat(matrix.cases.slice(9,10)).map(({region,query})=>({region,query})));assert.equal(before.generation,history[0]);}
+ publication.push(await I.publish(store,g));history.push(g);prior=g;pins.push(await I.pin(store,g));
+ const prime=await pins[n].query(matrix.cases.map(({region,query})=>({region,query})));semantics[g]=sha(encode(semantic(prime)));
+ for(let repeat=0;repeat<3;repeat++)for(const c of matrix.cases){const measured=await I.measured(()=>pins[n].query([{region:c.region,query:c.query}]));const answer=measured.value;assert.equal(answer.generation,g);assert.equal(answer.answers[0].generation,g);equivalent(answer.answers[0].native,c,g);rows.push({generation:g,case:c.id,region:c.region,repeat,agreement:true,nativeHash:sha(encode(answer.answers[0].native)),measurement:measured.measurement,retrieval:answer.answers[0].metrics});}
+ for(let old=0;old<=n;old++){const replay=await pins[old].query(matrix.cases.map(({region,query})=>({region,query})));assert.equal(sha(encode(semantic(replay))),semantics[history[old]],'Pinned history changed');}
+ resolution.push(await I.measured(()=>I.resolveGeneration(store,g,{hydrate:true})));
+}
+for(const p of pins)await p.close();
+const fixture={store,history,semantics,states,locators:seed.locators};fs.writeFileSync(join(store,'fixture.json'),encode(fixture));
+const fresh=[];for(let n=0;n<3;n++){const t=performance.now(),p=spawnSync(process.execPath,[join(I.H,'worker.mjs'),'replay',store,join(store,'fixture.json')],{encoding:'utf8',maxBuffer:4*1024*1024});assert.equal(p.status,0,p.stderr);const r=JSON.parse(p.stdout);assert.deepEqual(r.answers,semantics);assert.equal(r.current,history.at(-1));fresh.push({...r,processMilliseconds:performance.now()-t,agreement:true});}
+function footprint(folder){const files=fs.readdirSync(join(store,folder));return {files:files.length,bytes:files.reduce((n,f)=>n+fs.statSync(join(store,folder,f)).size,0)};}
+const observations=[];for(const g of history)for(const c of matrix.cases){const runs=rows.filter(r=>r.generation===g&&r.case===c.id);observations.push({generation:g,case:c.id,region:c.region,agreement:true,milliseconds:summary(runs.map(r=>r.measurement.milliseconds)),measurement:runs[0].measurement,retrieval:runs[0].retrieval});}
+const members=history.map(g=>I.resolveGeneration(store,g).publication.members),reuse=members.slice(1).map((m,i)=>({from:history[i],to:history[i+1],changed:Object.keys(m).filter(k=>m[k]!==members[i][k]),reused:Object.keys(m).filter(k=>m[k]===members[i][k])}));assert.deepEqual(reuse.map(r=>r.changed),[['riffelhornRegistration'],['tryfanRegistration']]);
+const result={schema:'atlas-multi-region-results/v1',startingCheckpoint:I.plan.startingCheckpoint,planSha256:sha(fs.readFileSync(join(I.H,'plan.json'))),matrixSha256:sha(fs.readFileSync(join(I.H,'matrix.json'))),implementationSha256:sha(fs.readFileSync(join(I.H,'integration.mjs'))),store,history,members,reuse,realPopulation:{tryfanArtifacts:seed.value.catalogue.artifacts.length,tryfanFamilies:seed.value.catalogue.families.length,tryfanResults:seed.value.understanding.results.length,riffelhornInputs:riffOracle.inputs.length,riffelhornPreparedArtifacts:riffOracle.preparedArtifacts.length,riffelhornRecords:riffOracle.records.length,riffelhornDeclarations:riffOracle.semanticDeclarations,disconnectedCoreKm2:13},registrationMilliseconds,staging,publication,comparisons:rows.length,agreement:true,observations,resolution:resolution.map(r=>({generation:r.value.generation,measurement:r.measurement})),fresh,pinnedReplayAgreement:true,footprint:Object.fromEntries(['components','publications','membership','artifacts'].map(f=>[f,footprint(f)])),measurementLimits:'Synchronous Node requested reads only; Python verification records logical input hash bytes separately. OS cache uncontrolled. Native decoded window bytes are not physical block I/O. RSS excludes child processes. Request-scoped original core caches apply only inside measured call. Administrative revisions are not physical observations.',decision:'C - PROOF SUCCESS'};
+fs.writeFileSync(join(I.H,'../../../docs/research/atlas-multi-region-results.json'),JSON.stringify(result)+'\n');console.log(encode({store,comparisons:rows.length,reuse,fresh:fresh.map(f=>f.processMilliseconds),footprint:result.footprint}));
