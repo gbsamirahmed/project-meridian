@@ -1,0 +1,97 @@
+{
+  "additionalAssessments": [
+    "unknownscope indeterminate",
+    "unsupported prospective method stale, execution rejected",
+    "identicalcontent no-op",
+    "unrelated family/region unaffected"
+  ],
+  "cases": [
+    {
+      "id": "noop",
+      "kind": "none"
+    },
+    {
+      "id": "administrative",
+      "kind": "admin",
+      "region": "riffelhorn"
+    },
+    {
+      "bounds": [
+        2624350,
+        1091350,
+        2624350.5,
+        1091350.5
+      ],
+      "family": "dtm",
+      "id": "riff-local",
+      "kind": "note",
+      "region": "riffelhorn"
+    },
+    {
+      "family": "dtm",
+      "id": "riff-scattered",
+      "kind": "scattered",
+      "region": "riffelhorn"
+    },
+    {
+      "bounds": [
+        2624000,
+        1091000,
+        2625000,
+        1092000
+      ],
+      "family": "dtm",
+      "id": "riff-shared-file",
+      "kind": "note",
+      "region": "riffelhorn"
+    },
+    {
+      "family": "terrain",
+      "id": "tryfan-local",
+      "kind": "note",
+      "probe": "summit",
+      "region": "tryfan"
+    },
+    {
+      "bounds": [
+        2624000,
+        1091000,
+        2626000,
+        1093000
+      ],
+      "family": "worldcover",
+      "id": "cover-qualification",
+      "kind": "note",
+      "region": "riffelhorn"
+    },
+    {
+      "id": "parameter",
+      "kind": "parameter",
+      "probe": "dtm-grid-0-0",
+      "stride": 2
+    }
+  ],
+  "negativeCases": [
+    "missing source",
+    "invalid source/use/result identity",
+    "cycle",
+    "unsupportedcross-sourcefusion",
+    "incompatibleunit/datum",
+    "unsupported method/parameter",
+    "incomplete recompute",
+    "staleactive publication",
+    "invalidcomponentmembership",
+    "interruptedbeforeswitch",
+    "unpublished stagedstate",
+    "missinghistoricalonlycomponent"
+  ],
+  "publishedSequence": [
+    "initial",
+    "riff-local",
+    "tryfan-local",
+    "parameter",
+    "administrative"
+  ],
+  "repetitions": 3,
+  "schema": "atlas-regional-dependency-matrix/v1"
+}

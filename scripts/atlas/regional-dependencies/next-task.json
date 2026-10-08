@@ -1,0 +1,36 @@
+{
+  "title": "Atlas dated observation and knowledge-revision integration proof",
+  "status": "NOT BEGUN",
+  "uncertainty": "Can retained genuinely dated observations coexist with administrative corrections and later knowledge revisions in one coherent qualified world, with physical support/time distinguished from recording/publication time, honest observation gaps, scoped freshness and immutable historical answers?",
+  "why": "Real regional derivations now compose correctly with scoped dependencies. Their unknown cell epochs and administrative updates do not test observation-time revision semantics. Retained Exe JRC GSW March/September 2024 and historical event/inventory evidence provide a concrete existing dated population without acquisition.",
+  "prerequisites": [
+    "unchanged accepted Tryfan/Riffelhorn and completed multi-region/dependency proofs",
+    "frozen semantic and lifecycle contracts",
+    "inspect exact retained Exe source identities, rights, spatial support and month/event qualifications before selecting the bounded dated subset",
+    "accepted full-validation and composite publication/pinning boundaries"
+  ],
+  "evidence": [
+    "docs/atlas/water-feature-state-check.md",
+    "docs/research/atlas-derived-understanding-lifecycle.md sections C and physical/knowledge revision semantics",
+    "docs/research/atlas-regional-dependencies.md"
+  ],
+  "permittedWork": [
+    "freeze a small accountable retained dated observation subset; use already retained data only",
+    "register native dated observations, explicit no-observation/non-detection states and exact support in isolated proof state",
+    "exercise separately labelled administrative corrections/withdrawals or applicability revisions without claiming newly acquired physical observations",
+    "compare fixed-period and as-known-at answers, scoped freshness and coherent pinned/history replay",
+    "reuse established methods and publication boundaries; no tidal/seasonal inference, new algorithms, acquisition or infrastructure"
+  ],
+  "deliverable": "Bounded dated-observation and knowledge-revision integration proof with identities, physical versus knowledge time, correct qualified historical/current answers, failures, measurements and one next task.",
+  "acceptanceCriteria": [
+    "selected dated records and product versions are attributable to retained artifacts",
+    "observation month/event time remains distinct from product/processing/publication time",
+    "unobserved and non-detected remain distinct and neither is unqualified physical absence",
+    "corrections to a past slice and additions of another dated slice have explicit different revision semantics",
+    "fixed-period/current-policy invalidation and unaffected reuse match independent expected closures",
+    "qualified exact result and provenance identities agree with native/reference queries",
+    "old pins and fresh historical replay remain coherent; incomplete/invalid updates stay unpublished",
+    "all accepted evidence/contracts/statuses/production remain unchanged"
+  ],
+  "stopCondition": "Stop after judging the bounded dated/correction integration, measuring costs, documenting limitations and selecting one next task. Do not infer physical change from date differences or begin runtime/storage/service/Weather work. If retained dated provenance or rights are insufficient, identify the precise prerequisite rather than inventing dates or acquiring evidence."
+}

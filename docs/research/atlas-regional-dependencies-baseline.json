@@ -1,0 +1,153 @@
+{
+  "accepted": {
+    "artifacts/208cc2a8ac76aa06e448c841558cf5136a1881354854417db99bac083f1766b9.png": "208cc2a8ac76aa06e448c841558cf5136a1881354854417db99bac083f1766b9",
+    "artifacts/6ead2e9b3a44acc35506c376a58d36dfad2695a02e02f2111fecea4f446d2475.json": "6ead2e9b3a44acc35506c376a58d36dfad2695a02e02f2111fecea4f446d2475",
+    "current.json": "29ccaafa92093133e8db461c4863e3ec78d154481e36caa336599a915f38ca77",
+    "generations/2ffa20f9ac33123c3babb62381ba4559cbd045fb180d978a9ed6228514ed9b92.json": "2ffa20f9ac33123c3babb62381ba4559cbd045fb180d978a9ed6228514ed9b92",
+    "generations/3408e5e9909c47b7e16d9d136f39cffa548c86808893468aa4a0de3d599c1f8c.json": "3408e5e9909c47b7e16d9d136f39cffa548c86808893468aa4a0de3d599c1f8c",
+    "generations/5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06.json": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+    "generations/6d8a127e4924d3b165f143fbeaab39467e4b0e45addf706e648e9c2c2bc948b6.json": "6d8a127e4924d3b165f143fbeaab39467e4b0e45addf706e648e9c2c2bc948b6",
+    "generations/76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431.json": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+    "generations/e0e2d20a1d065c713e954283443c8a7762dd91ab00fa5856b1fe75d1860a51be.json": "e0e2d20a1d065c713e954283443c8a7762dd91ab00fa5856b1fe75d1860a51be",
+    "generations/e967c5066f42839b5cd50bd76df225c2bc0736b3ebd65706f9fd0adad3b2f53f.json": "e967c5066f42839b5cd50bd76df225c2bc0736b3ebd65706f9fd0adad3b2f53f",
+    "locators/2ffa20f9ac33123c3babb62381ba4559cbd045fb180d978a9ed6228514ed9b92.json": "14d703d77c17cff88f06eb14eed753d06fbbc1a1594cd617292974f869faaf78",
+    "locators/3408e5e9909c47b7e16d9d136f39cffa548c86808893468aa4a0de3d599c1f8c.json": "14d703d77c17cff88f06eb14eed753d06fbbc1a1594cd617292974f869faaf78",
+    "locators/5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06.json": "14d703d77c17cff88f06eb14eed753d06fbbc1a1594cd617292974f869faaf78",
+    "locators/6d8a127e4924d3b165f143fbeaab39467e4b0e45addf706e648e9c2c2bc948b6.json": "14d703d77c17cff88f06eb14eed753d06fbbc1a1594cd617292974f869faaf78",
+    "locators/76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431.json": "14d703d77c17cff88f06eb14eed753d06fbbc1a1594cd617292974f869faaf78",
+    "locators/e0e2d20a1d065c713e954283443c8a7762dd91ab00fa5856b1fe75d1860a51be.json": "14d703d77c17cff88f06eb14eed753d06fbbc1a1594cd617292974f869faaf78",
+    "locators/e967c5066f42839b5cd50bd76df225c2bc0736b3ebd65706f9fd0adad3b2f53f.json": "14d703d77c17cff88f06eb14eed753d06fbbc1a1594cd617292974f869faaf78"
+  },
+  "acceptedMultiRegionImplementationSha256": "e5fdcd70fe29e3ed54df6461f115321266a413529b254c271b9603078d80cc9e",
+  "baselineBasis": "Git checkpoint and existing accepted receipts; preparation freshly verified during initial read-only review before implementation",
+  "branch": "main",
+  "canonicalRows": {
+    "A1": "**CLOSED** bounded source-derived proof. [012A](../earth-lab/bluesky-012a-aerial-reconstruction.md), [012B](../earth-lab/riffelhorn-012b-mountain-reconstruction.md), [SWISSIMAGE baseline](../atlas/swissimage-source-derived-baseline.md). Preparation/parent fidelity and matched regional/common comparison tested.",
+    "A10": "**OPTIONAL / ADVANCED**. [View dependence](literature/terrain-representation.md#view-dependent-appearance), [appearance review](../atlas/appearance-baseline-and-architecture.md).",
+    "A11": "**PARTIAL** geometric lighting evidence; corrected-source relighting **OPTIONAL / ADVANCED**. [012F](../earth-lab/riffelhorn-012f-terrain-lighting.md), [inverse-rendering review](literature/terrain-representation.md#inverse-rendering-and-albedo-recovery), [native IGOR](../atlas/native-relief-evaluation.md).",
+    "A12": "**CLOSED** bounded public discovery, general support conclusion **PARTIAL**. [Assessment](../atlas/riffelhorn-observation-support.md), `e14148a`: two relevant strip footprints cover retained targets; calibrated target-specific pushbroom rays/time mapping are unavailable publicly in the retained records.",
+    "A13": "**CLOSED** metadata selection proof; actual pixel-information comparison **PARKED** behind provisioning. [Benchmark](../atlas/swiss-multiview-benchmark.md), [input manifest](../atlas/swiss-multiview-input-manifest.json), `e3edd0f`. CSV/GORI/calibration, footprints, centre-target incidence and sampled terrain LOS checked.",
+    "A14": "**OPTIONAL / ADVANCED**, downstream of actual observation-support proof. [Texturing literature](literature/terrain-representation.md#multiview-texture-reconstruction), [frozen pair experiment](../atlas/swiss-multiview-benchmark.md).",
+    "A15": "**PARTIAL** diagnosed/provenance requirements; comprehensive correction untested. [Acquisition](../atlas/riffelhorn-data-discovery.md), [012A](../earth-lab/bluesky-012a-aerial-reconstruction.md), [012B](../earth-lab/riffelhorn-012b-mountain-reconstruction.md), [architecture](../atlas/appearance-baseline-and-architecture.md).",
+    "A2": "**PARTIAL** architecture proposal, supported by proof. [Appearance baseline/architecture](../atlas/appearance-baseline-and-architecture.md), [source-derived delivery](../atlas/swissimage-source-derived-baseline.md).",
+    "A3": "**CLOSED** bounded geometric diagnosis; exact historical visibility **PARTIAL**. [012G](../earth-lab/riffelhorn-012g-projection-and-illumination.md), [Atlas proof](../atlas/swissimage-source-derived-baseline.md).",
+    "A4": "**PARTIAL** product semantics and projection evidence; true-ortho generation only reviewed. [Acquisition](../atlas/riffelhorn-data-discovery.md), [appearance methods](../atlas/appearance-baseline-and-architecture.md#bounded-methods-review--external-evidence).",
+    "A5": "**CLOSED** scoped comparisons; general causal attribution **PARTIAL**. [Visual design](../earth-lab/riffelhorn-visual-synthesis-and-experiment-design.md), [012F](../earth-lab/riffelhorn-012f-terrain-lighting.md), [012G](../earth-lab/riffelhorn-012g-projection-and-illumination.md), [Atlas source/display](../atlas/swissimage-source-derived-baseline.md#source-darkness-versus-atlas-display--meridian-evidence).",
+    "A6": "**PARTIAL** metadata; local illumination reconstruction **PARKED** on adequate contributor/time/pose support. [Temporal evidence](../earth-lab/tryfan-005c-temporal-evidence.json), [Sun review](literature/terrain-representation.md#acquisition-sun-and-illumination-reconstruction), [Riffelhorn support](../atlas/riffelhorn-observation-support.md).",
+    "A7": "**OPTIONAL / ADVANCED**, untested physically in Meridian. [012G](../earth-lab/riffelhorn-012g-projection-and-illumination.md), [correction literature](literature/terrain-representation.md#topographic-correction), [appearance gate](../atlas/appearance-baseline-and-architecture.md#ranked-questions-requiring-experiment).",
+    "A8": "**OPTIONAL / ADVANCED**. [Methods/taxonomy](../atlas/appearance-baseline-and-architecture.md), [hard regional boundary](../atlas/swissimage-source-derived-baseline.md).",
+    "A9": "**OPTIONAL / ADVANCED**, literature reviewed, no local recovery experiment. [Inverse rendering](literature/terrain-representation.md#inverse-rendering-and-albedo-recovery), [Olbedo](literature/terrain-representation.md#olbedo-2026), [appearance distinctions](../atlas/appearance-baseline-and-architecture.md).",
+    "H1": "**PARTIAL**. [Public development entries](../development-log.md#2026-09-02--high-resolution-welsh-terrain-experiment-v1), [second environment](../development-log.md#2026-09-02--high-resolution-terrain-generalisation-experiment-v2), [tooling](../../scripts/terrain_research/README.md): source resolution matters route-dependently; finer sampling of a coarse DEM is interpolation; COG and WCS bounded reads work.",
+    "H2": "**CLOSED FOR FOUNDATION** for the retained pipeline. [Earth Lab guide](../../scripts/earth_lab/README.md), [004B configuration](../earth-lab/tryfan-004b-photo-fit.json), [log](../development-log.md#2026-09-24--meridian-earth-laboratory-004b-quantitative-alignment): imported R16 preserves broad skyline; position fitting was boundary-limited and not promoted.",
+    "H3": "**PARTIAL**. [005A definition](../earth-lab/tryfan-005a-surface-analysis.json), [result log](../development-log.md#2026-09-24--meridian-earth-laboratory-005a-terrain-derived-surface-analysis): slope/aspect, curvature and detrended roughness at approximately 5/15/51 m expose coherent ridges/gullies and scale dependence.",
+    "H4": "**CLOSED** for the bounded observation proofs; wider interpretation **PARTIAL**. [005B](../earth-lab/tryfan-005b-sentinel2.json), [005C](../earth-lab/tryfan-005c-temporal-evidence.json), [temporal findings](../development-log.md#2026-09-25--meridian-earth-laboratory-005c-temporal-surface-evidence), [010](../earth-lab/tryfan-010-observed-natural-colour.md). Corrected mirror scale/offset handling; four seasons separate some spectral persistence from snow/phenology/illumination.",
+    "H5": "**PARTIAL**; single six-class world abstraction **SUPERSEDED** by the later hybrid direction. [006](../earth-lab/tryfan-006-contextual-evidence.json), [007](../earth-lab/tryfan-007-underlying-surface.json), [008](../earth-lab/tryfan-008-uncertainty-audit.json), [results](../development-log.md#2026-09-25--meridian-earth-laboratory-007-uncertain-underlying-surface). Deterministic capped preferences yielded broad tendencies and high ambiguity; 008 found overlap/coarse context more important than missing coverage and refused further acquisition.",
+    "H6": "**OPTIONAL / ADVANCED**; historical visual acceptance remains **PARTIAL**. [009 definition](../earth-lab/tryfan-009-surface-reconstruction.json), [log](../development-log.md#2026-09-28--meridian-earth-laboratory-009-reconstruction-v01): deterministic continuous renderer controls and reversible Unreal material were prepared. Fixed-camera improvement remained pending; transient captures were invalid.",
+    "H7": "**PARTIAL**. [011](../earth-lab/tryfan-011-observed-surface-height.md), [012B](../earth-lab/riffelhorn-012b-mountain-reconstruction.md): coherent differences exist; Swiss ice/debris/epoch differences dominate some regions. 011's manual interpretation is still pending.",
+    "H8": "**CLOSED** bounded reconstruction branch; wider causality **PARTIAL**. [012C](../earth-lab/riffelhorn-012c-raw-lidar-retention.md), [012D](../earth-lab/riffelhorn-012d-adaptive-cliff-heightfield.md), [012E](../earth-lab/riffelhorn-012e-robust-cliff-heightfield.md), [closure](../earth-lab/atlas-terrain-representation-synthesis.md). Local loss is measured, but finer/adaptive and plane-voting surfaces failed held-out/continuity acceptance.",
+    "M1": "**CLOSED FOR FOUNDATION**. [Baseline](../atlas/multiscale-representation.md), `3d406ae`: Tryfan, Riffelhorn, South Downs, Cambridge; physical scales 128/32/8/2/0.5/0.125 m per CSS pixel, controlled oblique checks and wavelength diagnostics.",
+    "M2": "**CLOSED \u2014 NEGATIVE**. [Relief experiment](../atlas/scale-separated-relief.md), `ca74a84`: filtering fine derivatives reduces variation but also softens useful ridges/gullies/ledges, without consistent improvement.",
+    "M3": "**CLOSED FOR FOUNDATION**. [Information-aware limits](../atlas/information-aware-display-selection.md), `57688cb`. Requested DPR differs from applied framebuffer and screenshot density; local anisotropic sampling varies with projection/orientation. The extreme AWS close view places one geometry sample across approximately 46\u201353 CSS pixels; higher DPR rasterises the same interpolated surface more densely.",
+    "M4": "**SUPERSEDED** as a mandatory research/implementation direction; advanced source-specific generalisation remains **OPTIONAL / ADVANCED**. [Closure synthesis](../atlas/information-aware-display-selection.md#programme-synthesis-and-closure), [012G closure](../earth-lab/riffelhorn-012g-projection-and-illumination.md).",
+    "S1": "**CLOSED FOR FOUNDATION**. [Review](../atlas/physical-surface-semantics.md), [inventory](../atlas/physical-surface-sources.md), [native comparison](../atlas/source-native-semantic-comparison.md), `75ea9d8`\u2192`c4da565`.",
+    "S2": "**CLOSED FOR FOUNDATION**. [Water check](../atlas/water-feature-state-check.md), `052374e`: WFD reference unit, habitat, JRC detections/history, Flood Zone scenario and recorded flood events differ within one compact case.",
+    "S3": "**CLOSED FOR FOUNDATION**, contract v1 frozen at `e65c2d6`. [Contract](../atlas/semantic-evidence-contract.md), [receipt](../atlas/semantic-evidence-contract-validation.json). Native property/value, interpretation relation/loss, space/time/reference, feature association, modes/lineage, scoped quality, gaps and rights tested.",
+    "S4": "**OPTIONAL / ADVANCED**, assessment **LIMITED**, recoverability untested. [Mountain gaps](../atlas/source-native-semantic-comparison.md), [water gaps](../atlas/water-feature-state-check.md), [contract closure](../atlas/semantic-evidence-contract.md#physical-surface-synthesis-and-closure).",
+    "S5": "**PARTIAL**, property-scoped conditional viability established. [Mountain comparison](../atlas/source-native-semantic-comparison.md), [water comparison](../atlas/water-feature-state-check.md).",
+    "S6": "**CLOSED FOR FOUNDATION** at the identity/dependency/revision boundary; full feature resolution and state methods **OPTIONAL / ADVANCED**. [Lifecycle assessment](atlas-derived-understanding-lifecycle.md), [feature/state evidence](../atlas/water-feature-state-check.md), [v1](../atlas/semantic-evidence-contract.md).",
+    "S7": "**CLOSED FOR FOUNDATION** for the clean dependency/interface boundary; process models **OPTIONAL / ADVANCED**. [Lifecycle caseE](atlas-derived-understanding-lifecycle.md#e--richer-structure-context), [water boundary](../atlas/water-feature-state-check.md).",
+    "T1": "**CLOSED FOR FOUNDATION**. [Tryfan source reconnaissance](../atlas/tryfan-lidar-reconnaissance.md), [global service evaluation](../atlas/global-terrain-foundation-evaluation.md), [direct Swiss](../atlas/riffelhorn-regional-terrain-prototype.md), [Tryfan proof](../atlas/tryfan-second-region-proof.md). Interior structure improves; regional portability is demonstrated.",
+    "T2": "**CLOSED FOR FOUNDATION**. [Metadata ADR](../atlas/terrain-source-product-architecture.md), [contract](../atlas/terrain-hierarchy-contract.md), [runtime](../atlas/terrain-runtime-selection.md), [Welsh proof](../atlas/tryfan-second-region-proof.md).",
+    "T3": "**CLOSED FOR FOUNDATION**. [Negative hierarchy](../atlas/terrain-hierarchy-prototype.md), [regional parents](../atlas/regional-parent-diagnostic.md): protected z13\u219214 RMS change 39.82\u21920.71 m.",
+    "T4": "**CLOSED** bounded asset/reference assessment. [Swiss support](../atlas/riffelhorn-swiss-support-product.md), [reference](../atlas/global-reference-assessment.md), [common product](../atlas/copernicus-common-product.md). Deterministic supported regional/common products exist; Copernicus is a justified local common-reference candidate.",
+    "T5": "**PARTIAL**. [Reconciliation](../atlas/riffelhorn-terrain-reconciliation.md), [reference](../atlas/global-reference-assessment.md), [methods review](../atlas/spatial-terrain-reconciliation-research.md). Swiss LN02, Copernicus EGM2008, AWS hosted lineage unknown; bounded transform/registration diagnostics don't explain all large offsets.",
+    "T6": "Proposed universal prerequisite **SUPERSEDED**. [Corridor failure](../atlas/seam-corridor-feasibility.md), [extent censorship](../atlas/support-extent-assessment.md), [broad/detail assessment](../atlas/terrain-scale-decomposition.md). No admissible stable cycle; larger inventory did not establish acquisition extent.",
+    "T7": "**CLOSED** method branch; accepted general reconciliation **PARTIAL**. [Early controls](../atlas/riffelhorn-terrain-reconciliation.md), [terminal control](../atlas/protected-priority-two-band-transition.md). Endpoints/numerical continuity passed, protected terrain/parents survived, but synthetic 3.19/1.35 m depressions, collar deformation and coarse 41.84 m RMS handoff prevented adoption. Shared close-camera clipping/faceting also failed visual acceptance, including pure-common controls; exact renderer cause remains unknown.",
+    "T8": "**OPTIONAL / ADVANCED**, with the old \u201ctrue 3D is the next remedy\u201d proposal **CLOSED**. [012C/E and synthesis](../earth-lab/atlas-terrain-representation-synthesis.md), [surface review](../atlas/physical-surface-semantics.md). No defensible measured Riffelhorn overhang established; canopy/buildings/bridges/water layers are nevertheless not one bare-earth heightfield."
+  },
+  "commit": "8e0f956b9ca0019a92fcde1c55d1fb0700f8deab",
+  "divergence": "0\t0",
+  "frozenBeforeImplementation": true,
+  "integrationPlanSha256": "dfde30fb94ec8ec82b001c1897387fd20e175403f6a38245673e2b06991d4121",
+  "matrixSha256": "4ffd5ce1fa1df42c10d693933e030cfbc6aae48557f94568e7c80219aa4a1f10",
+  "preparedHashes": {
+    "features.json": "3929964622f6eaaf3ba0251d2a686ca53effc50174ed84cd2fa314d645a6d923",
+    "input-manifest.json": "ff1e462486ab49a7c5b961298f4b393f9dd679d48ef94fd4e450e5300c13e829",
+    "manifest.json": "3f78d7f408319d6fbd4e34b7d61a4d07054e1ad73c107834abda935719dbcc54",
+    "qualification.json": "c7b9c91d49a5b44887ac60569d1fd6b6d2dab0e989ce818286bf941a106c1e02",
+    "raster-bindings.json": "81ddecfaa894afbcf5730c3fb471ccabdd51dd1f58179e49f39c1e7972c5ab6a",
+    "semantic-evidence.json": "24b0d84802d8804d51b6fd4edd0fa3c74dc0019a6fecc7315005e430906416a2"
+  },
+  "preparedRevision": "357b28e705f7c2647cdf2d54467fc9ee851465814d8ed645cae30713ef9187bb",
+  "preparedRootRelative": "derived/atlas/riffelhorn/riffelhorn-qualified-fixture-v1/357b28e705f7c2647cdf2d54467fc9ee851465814d8ed645cae30713ef9187bb",
+  "proofPlanSha256": "5cf6b530c46e07ee3c2d9a32dec623a136fd9c21b58786a19062cca0b3ac5eef",
+  "queryCases": 38,
+  "schema": "atlas-riffelhorn-retrieval-baseline/v1",
+  "sourceAdmission": {
+    "groups": {
+      "Complete retained Exe directory": {
+        "bytes": 10295691,
+        "files": 66,
+        "verifiedEntriesSha256": "7043358dd1d3c10efe1b3483ac65e6ec2b5d2c637c4eff5f3d7a6df77082794a"
+      },
+      "July native post-L2A RGB and SCL": {
+        "bytes": 714544,
+        "files": 4,
+        "verifiedEntriesSha256": "c91c42dcad464a78a200ee6ef0a945e0b246eff75830efa2b8ed6e10a47e060f"
+      },
+      "Lab010 existing natural-colour preparation": {
+        "bytes": 1305121,
+        "files": 3,
+        "verifiedEntriesSha256": "86edf76941cbf6b48bc49e198dceb3f64debd0a7200ab3c83df32d06823113ee"
+      },
+      "Parked Swiss metadata only": {
+        "bytes": 19357606,
+        "files": 112,
+        "verifiedEntriesSha256": "e0179dbb4695a66bbf3cb61f2a215d88dc45bdcfd9c09e886da9fd0c9d6fc2cc"
+      },
+      "Pinned Exe sources/documents": {
+        "bytes": 9892590,
+        "files": 31,
+        "verifiedEntriesSha256": "0e1301af8fcdb00f126ba2886216b2a96bfdd68de71e14c6079beece12e6342a"
+      },
+      "SWISSIMAGE manifest": {
+        "bytes": 218993,
+        "files": 1,
+        "verifiedEntriesSha256": "9e3dcb15bd21260896eab7be966f8fdc59cf2e729ecc952fbc60f489c4873225"
+      },
+      "SWISSIMAGE prepared": {
+        "bytes": 1564233043,
+        "files": 1084,
+        "verifiedEntriesSha256": "944ee3136c7ac91224b59ec369fd8bc90e4bbd299a51b65d6a09a8395a35a327"
+      },
+      "SWISSIMAGE source": {
+        "bytes": 186259028,
+        "files": 4,
+        "verifiedEntriesSha256": "9edd9aaf20eb3481b5b9aec077e715d1d350d73cd4885474cac24cabeec5f203"
+      },
+      "Tryfan native semantic crop and habitat": {
+        "bytes": 563835,
+        "files": 2,
+        "verifiedEntriesSha256": "1d4388d183544fd3a135bde05dece5b6950bfcd77e969c2ef518cd5df98d5771"
+      },
+      "Tryfan source and pinned common samples": {
+        "bytes": 16046943,
+        "files": 5,
+        "verifiedEntriesSha256": "16bbf4ef3222be6619ccfb316e0d5b8e7c86a117476d14d98fae76c61a222e1d"
+      },
+      "Welsh prepared terrain": {
+        "bytes": 23889573,
+        "files": 295,
+        "verifiedEntriesSha256": "6091994b08ed611dd1a44d4be1700f2858d9eb197a5c248189f97a5256f2b593"
+      }
+    },
+    "noWritesOrAcquisition": true,
+    "uniqueFiles": 1575
+  },
+  "unitEvidence": {
+    "sources/atlas/riffelhorn/swisstopo-2021-2024/metadata/official-documents/receipts.json": "edd48478c78c82010ca7627bbea38b38cd832b05a916c1063736f790f4e8c5f3",
+    "sources/atlas/riffelhorn/swisstopo-2021-2024/metadata/spatial-validation.json": "7ef48fd1408ea15f5f84ea3d906b3c9a21620f43d60cf5c6137e8d125e9dda89"
+  },
+  "workingTree": "clean",
+  "workingTreeBeforePlan": "clean"
+}

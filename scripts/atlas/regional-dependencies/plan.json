@@ -1,0 +1,714 @@
+{
+  "criteria": [
+    "all supported scientific probes finite/accountable; unit/header/support/nodata/time/rights explicit",
+    "all new quantities agree with independent NumPy/window reference within1e-10degree/1e-12ratio; counts exact",
+    "selective and fresh full canonical current result/use identities exactly agree in each validcase",
+    "independently computed brute closure matches stale set; no unrelated region/family invalidation",
+    "invalid/missing/cycle/mismatchedmethod/fusion/incomplete/stale proposals cannot publish",
+    "one composite11member publication; affected regional lifecycle/derived components change and unrelated members reused",
+    "old pins/historical exact snapshots survive three fresh-process replay runs; no ancestor resolution",
+    "full original/proof protections and regressions pass"
+  ],
+  "derivations": [
+    "existing Horn-3x3-grid-slope on true native Swiss cell centres, projected spacing0.5m or declared1m subsampling; same frozen arithmetic",
+    "existing planar-area-ratio-from-slope, immediate exact slope dependency",
+    "existing qualified native WorldCover cell-centre counts over four core quadrants; no fractional cover/physical absence",
+    "Tryfan accepted current slope/ratio claims wrapped accountably with original receipts and replayed source samples"
+  ],
+  "exclusions": [
+    "accepted evidence/contracts/proofs mutation",
+    "newscientific methods/physicalobservations/acquisition",
+    "DSM-DTM subtraction/datummixing/sourcefusion",
+    "generalDAG scheduler/workflow/productionruntime/API/infra",
+    "Appearance/Swissmultiview/Weather/Traverse/S7",
+    "receipt/publication optimisation"
+  ],
+  "freshness": "fixed exact inputs remain historically valid; current policy compares exact qualified-use projections and method parameters, then propagates along result edges. Scope unknown is indeterminate. Stale != false.",
+  "graph": "source artifacts -> actual scoped input-use snapshots -> slope -> planar ratio; separate categorical branches; independent Tryfan and Riffelhorn. No cross-region physical derivation.",
+  "identity": "physical question, artifact identity, scoped qualified-use snapshot, method/parameter/application, result and publication all distinct; full notes ledger not identity of unaffected uses",
+  "measurement": "three deterministic full/scoped repetitions; setup versus sample/count/derive/assess/selection/validation/publish/query/replay costs; decodedbytes vs physicalIO; Node/PythonRSS samples not aggregate peaks",
+  "methods": {
+    "nativeCountFile": "scripts/atlas/riffelhorn-retrieval/query.py",
+    "nativeCountFileSha256": "8f4d1b3b9aaa8edc926dace1cc557faee320b7e4933359b566d3fdb8365bc05f",
+    "terrainFile": "scripts/atlas/qualified-query-proof/proof.ts",
+    "terrainFileSha256": "bcd85ff5101ddd079e2e4d3c0c32054b6a75c0525797bc9258a8cfe9e59e3bcc"
+  },
+  "publication": "unchanged component core/current membership mechanism; seven accepted integration components plus two regional input-use state components and two regional derived-result components; full current validation, no receipts optimisation",
+  "sampling": {
+    "SwissProfiles": [
+      {
+        "spacingM": 0.5,
+        "stride": 1
+      },
+      {
+        "spacingM": 1.0,
+        "stride": 2
+      }
+    ],
+    "areas": [
+      {
+        "area": [
+          2624000,
+          1091000,
+          2625000,
+          1092000
+        ],
+        "id": "cover-0-0"
+      },
+      {
+        "area": [
+          2625000,
+          1091000,
+          2626000,
+          1092000
+        ],
+        "id": "cover-0-1"
+      },
+      {
+        "area": [
+          2624000,
+          1092000,
+          2625000,
+          1093000
+        ],
+        "id": "cover-1-0"
+      },
+      {
+        "area": [
+          2625000,
+          1092000,
+          2626000,
+          1093000
+        ],
+        "id": "cover-1-1"
+      }
+    ],
+    "nodata": "reject unsupported stencil; never interpolate/fill",
+    "probes": [
+      {
+        "id": "dtm-grid-0-0",
+        "point": [
+          2624125.25,
+          1091125.25
+        ]
+      },
+      {
+        "id": "dtm-grid-0-1",
+        "point": [
+          2624375.25,
+          1091125.25
+        ]
+      },
+      {
+        "id": "dtm-grid-0-2",
+        "point": [
+          2624625.25,
+          1091125.25
+        ]
+      },
+      {
+        "id": "dtm-grid-0-3",
+        "point": [
+          2624875.25,
+          1091125.25
+        ]
+      },
+      {
+        "id": "dtm-grid-0-4",
+        "point": [
+          2625125.25,
+          1091125.25
+        ]
+      },
+      {
+        "id": "dtm-grid-0-5",
+        "point": [
+          2625375.25,
+          1091125.25
+        ]
+      },
+      {
+        "id": "dtm-grid-0-6",
+        "point": [
+          2625625.25,
+          1091125.25
+        ]
+      },
+      {
+        "id": "dtm-grid-0-7",
+        "point": [
+          2625875.25,
+          1091125.25
+        ]
+      },
+      {
+        "id": "dtm-grid-1-0",
+        "point": [
+          2624125.25,
+          1091375.25
+        ]
+      },
+      {
+        "id": "dtm-grid-1-1",
+        "point": [
+          2624375.25,
+          1091375.25
+        ]
+      },
+      {
+        "id": "dtm-grid-1-2",
+        "point": [
+          2624625.25,
+          1091375.25
+        ]
+      },
+      {
+        "id": "dtm-grid-1-3",
+        "point": [
+          2624875.25,
+          1091375.25
+        ]
+      },
+      {
+        "id": "dtm-grid-1-4",
+        "point": [
+          2625125.25,
+          1091375.25
+        ]
+      },
+      {
+        "id": "dtm-grid-1-5",
+        "point": [
+          2625375.25,
+          1091375.25
+        ]
+      },
+      {
+        "id": "dtm-grid-1-6",
+        "point": [
+          2625625.25,
+          1091375.25
+        ]
+      },
+      {
+        "id": "dtm-grid-1-7",
+        "point": [
+          2625875.25,
+          1091375.25
+        ]
+      },
+      {
+        "id": "dtm-grid-2-0",
+        "point": [
+          2624125.25,
+          1091625.25
+        ]
+      },
+      {
+        "id": "dtm-grid-2-1",
+        "point": [
+          2624375.25,
+          1091625.25
+        ]
+      },
+      {
+        "id": "dtm-grid-2-2",
+        "point": [
+          2624625.25,
+          1091625.25
+        ]
+      },
+      {
+        "id": "dtm-grid-2-3",
+        "point": [
+          2624875.25,
+          1091625.25
+        ]
+      },
+      {
+        "id": "dtm-grid-2-4",
+        "point": [
+          2625125.25,
+          1091625.25
+        ]
+      },
+      {
+        "id": "dtm-grid-2-5",
+        "point": [
+          2625375.25,
+          1091625.25
+        ]
+      },
+      {
+        "id": "dtm-grid-2-6",
+        "point": [
+          2625625.25,
+          1091625.25
+        ]
+      },
+      {
+        "id": "dtm-grid-2-7",
+        "point": [
+          2625875.25,
+          1091625.25
+        ]
+      },
+      {
+        "id": "dtm-grid-3-0",
+        "point": [
+          2624125.25,
+          1091875.25
+        ]
+      },
+      {
+        "id": "dtm-grid-3-1",
+        "point": [
+          2624375.25,
+          1091875.25
+        ]
+      },
+      {
+        "id": "dtm-grid-3-2",
+        "point": [
+          2624625.25,
+          1091875.25
+        ]
+      },
+      {
+        "id": "dtm-grid-3-3",
+        "point": [
+          2624875.25,
+          1091875.25
+        ]
+      },
+      {
+        "id": "dtm-grid-3-4",
+        "point": [
+          2625125.25,
+          1091875.25
+        ]
+      },
+      {
+        "id": "dtm-grid-3-5",
+        "point": [
+          2625375.25,
+          1091875.25
+        ]
+      },
+      {
+        "id": "dtm-grid-3-6",
+        "point": [
+          2625625.25,
+          1091875.25
+        ]
+      },
+      {
+        "id": "dtm-grid-3-7",
+        "point": [
+          2625875.25,
+          1091875.25
+        ]
+      },
+      {
+        "id": "dtm-grid-4-0",
+        "point": [
+          2624125.25,
+          1092125.25
+        ]
+      },
+      {
+        "id": "dtm-grid-4-1",
+        "point": [
+          2624375.25,
+          1092125.25
+        ]
+      },
+      {
+        "id": "dtm-grid-4-2",
+        "point": [
+          2624625.25,
+          1092125.25
+        ]
+      },
+      {
+        "id": "dtm-grid-4-3",
+        "point": [
+          2624875.25,
+          1092125.25
+        ]
+      },
+      {
+        "id": "dtm-grid-4-4",
+        "point": [
+          2625125.25,
+          1092125.25
+        ]
+      },
+      {
+        "id": "dtm-grid-4-5",
+        "point": [
+          2625375.25,
+          1092125.25
+        ]
+      },
+      {
+        "id": "dtm-grid-4-6",
+        "point": [
+          2625625.25,
+          1092125.25
+        ]
+      },
+      {
+        "id": "dtm-grid-4-7",
+        "point": [
+          2625875.25,
+          1092125.25
+        ]
+      },
+      {
+        "id": "dtm-grid-5-0",
+        "point": [
+          2624125.25,
+          1092375.25
+        ]
+      },
+      {
+        "id": "dtm-grid-5-1",
+        "point": [
+          2624375.25,
+          1092375.25
+        ]
+      },
+      {
+        "id": "dtm-grid-5-2",
+        "point": [
+          2624625.25,
+          1092375.25
+        ]
+      },
+      {
+        "id": "dtm-grid-5-3",
+        "point": [
+          2624875.25,
+          1092375.25
+        ]
+      },
+      {
+        "id": "dtm-grid-5-4",
+        "point": [
+          2625125.25,
+          1092375.25
+        ]
+      },
+      {
+        "id": "dtm-grid-5-5",
+        "point": [
+          2625375.25,
+          1092375.25
+        ]
+      },
+      {
+        "id": "dtm-grid-5-6",
+        "point": [
+          2625625.25,
+          1092375.25
+        ]
+      },
+      {
+        "id": "dtm-grid-5-7",
+        "point": [
+          2625875.25,
+          1092375.25
+        ]
+      },
+      {
+        "id": "dtm-grid-6-0",
+        "point": [
+          2624125.25,
+          1092625.25
+        ]
+      },
+      {
+        "id": "dtm-grid-6-1",
+        "point": [
+          2624375.25,
+          1092625.25
+        ]
+      },
+      {
+        "id": "dtm-grid-6-2",
+        "point": [
+          2624625.25,
+          1092625.25
+        ]
+      },
+      {
+        "id": "dtm-grid-6-3",
+        "point": [
+          2624875.25,
+          1092625.25
+        ]
+      },
+      {
+        "id": "dtm-grid-6-4",
+        "point": [
+          2625125.25,
+          1092625.25
+        ]
+      },
+      {
+        "id": "dtm-grid-6-5",
+        "point": [
+          2625375.25,
+          1092625.25
+        ]
+      },
+      {
+        "id": "dtm-grid-6-6",
+        "point": [
+          2625625.25,
+          1092625.25
+        ]
+      },
+      {
+        "id": "dtm-grid-6-7",
+        "point": [
+          2625875.25,
+          1092625.25
+        ]
+      },
+      {
+        "id": "dtm-grid-7-0",
+        "point": [
+          2624125.25,
+          1092875.25
+        ]
+      },
+      {
+        "id": "dtm-grid-7-1",
+        "point": [
+          2624375.25,
+          1092875.25
+        ]
+      },
+      {
+        "id": "dtm-grid-7-2",
+        "point": [
+          2624625.25,
+          1092875.25
+        ]
+      },
+      {
+        "id": "dtm-grid-7-3",
+        "point": [
+          2624875.25,
+          1092875.25
+        ]
+      },
+      {
+        "id": "dtm-grid-7-4",
+        "point": [
+          2625125.25,
+          1092875.25
+        ]
+      },
+      {
+        "id": "dtm-grid-7-5",
+        "point": [
+          2625375.25,
+          1092875.25
+        ]
+      },
+      {
+        "id": "dtm-grid-7-6",
+        "point": [
+          2625625.25,
+          1092875.25
+        ]
+      },
+      {
+        "id": "dtm-grid-7-7",
+        "point": [
+          2625875.25,
+          1092875.25
+        ]
+      },
+      {
+        "id": "dtm-seam-x-0",
+        "point": [
+          2624999.75,
+          1091125.25
+        ]
+      },
+      {
+        "id": "dtm-seam-x-1",
+        "point": [
+          2624999.75,
+          1091625.25
+        ]
+      },
+      {
+        "id": "dtm-seam-x-2",
+        "point": [
+          2624999.75,
+          1092125.25
+        ]
+      },
+      {
+        "id": "dtm-seam-x-3",
+        "point": [
+          2624999.75,
+          1092625.25
+        ]
+      },
+      {
+        "id": "dtm-seam-y-0",
+        "point": [
+          2624125.25,
+          1091999.75
+        ]
+      },
+      {
+        "id": "dtm-seam-y-1",
+        "point": [
+          2624625.25,
+          1091999.75
+        ]
+      },
+      {
+        "id": "dtm-seam-y-2",
+        "point": [
+          2625125.25,
+          1091999.75
+        ]
+      },
+      {
+        "id": "dtm-seam-y-3",
+        "point": [
+          2625625.25,
+          1091999.75
+        ]
+      },
+      {
+        "id": "dtm-cluster-0-0",
+        "point": [
+          2624350.25,
+          1091350.25
+        ]
+      },
+      {
+        "id": "dtm-cluster-0-1",
+        "point": [
+          2624350.75,
+          1091350.25
+        ]
+      },
+      {
+        "id": "dtm-cluster-0-2",
+        "point": [
+          2624351.25,
+          1091350.25
+        ]
+      },
+      {
+        "id": "dtm-cluster-0-3",
+        "point": [
+          2624351.75,
+          1091350.25
+        ]
+      },
+      {
+        "id": "dtm-cluster-1-0",
+        "point": [
+          2624350.25,
+          1091350.75
+        ]
+      },
+      {
+        "id": "dtm-cluster-1-1",
+        "point": [
+          2624350.75,
+          1091350.75
+        ]
+      },
+      {
+        "id": "dtm-cluster-1-2",
+        "point": [
+          2624351.25,
+          1091350.75
+        ]
+      },
+      {
+        "id": "dtm-cluster-1-3",
+        "point": [
+          2624351.75,
+          1091350.75
+        ]
+      },
+      {
+        "id": "dtm-cluster-2-0",
+        "point": [
+          2624350.25,
+          1091351.25
+        ]
+      },
+      {
+        "id": "dtm-cluster-2-1",
+        "point": [
+          2624350.75,
+          1091351.25
+        ]
+      },
+      {
+        "id": "dtm-cluster-2-2",
+        "point": [
+          2624351.25,
+          1091351.25
+        ]
+      },
+      {
+        "id": "dtm-cluster-2-3",
+        "point": [
+          2624351.75,
+          1091351.25
+        ]
+      },
+      {
+        "id": "dtm-cluster-3-0",
+        "point": [
+          2624350.25,
+          1091351.75
+        ]
+      },
+      {
+        "id": "dtm-cluster-3-1",
+        "point": [
+          2624350.75,
+          1091351.75
+        ]
+      },
+      {
+        "id": "dtm-cluster-3-2",
+        "point": [
+          2624351.25,
+          1091351.75
+        ]
+      },
+      {
+        "id": "dtm-cluster-3-3",
+        "point": [
+          2624351.75,
+          1091351.75
+        ]
+      }
+    ],
+    "seams": "same product/grid/datum adjacent native files only; consume exact cells; no terrain fusion"
+  },
+  "schema": "atlas-regional-dependency-plan/v1",
+  "sourceBoundary": "Unchanged 310 Tryfan artifacts and exact active two-probe chains; unchanged12 Riffelhorn retained inputs/sixprepared artifacts. New sampling only four0.5mDTMs and existingWCcrop; no acquisition.",
+  "startingCheckpoint": "8e0f956b9ca0019a92fcde1c55d1fb0700f8deab",
+  "stateRoot": "C:/Users/gbsam/Documents/Codex/atlas-regional-dependency-proof-v1",
+  "stop": "Judge bounded real derivation/lifecycle and select exactly one unbegun nexttask; no dated-observation/runtime work.",
+  "storageEstimate": "<100MB positive retained states; <500MB including owned negative fixture copies; <10MB numerical sampling receipts, no newrasters. Original local29.1GB userestimate; below80GB planningbudget; noexternaldiskrequired",
+  "uncertainty": "Can real native regional source/use/result populations retain scoped, transitive and method-relative freshness with correct selective replay and coherent pins?"
+}
