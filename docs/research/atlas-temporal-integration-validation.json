@@ -1,0 +1,718 @@
+{
+  "acceptedPilotUnchanged": true,
+  "canonicalThreads": 42,
+  "changedPaths": [
+    "docs/architecture.md",
+    "docs/development-log.md",
+    "docs/product-direction.md",
+    "docs/research/atlas-research-map.md",
+    "docs/research/atlas-research-state.md",
+    "docs/research/atlas-temporal-integration-baseline.json",
+    "docs/research/atlas-temporal-integration-results.json",
+    "docs/research/atlas-temporal-integration-validation.json",
+    "docs/research/atlas-temporal-integration.md",
+    "scripts/atlas/temporal-integration/README.md",
+    "scripts/atlas/temporal-integration/evidence.mjs",
+    "scripts/atlas/temporal-integration/integration.mjs",
+    "scripts/atlas/temporal-integration/matrix.json",
+    "scripts/atlas/temporal-integration/model.mjs",
+    "scripts/atlas/temporal-integration/next-task.json",
+    "scripts/atlas/temporal-integration/oracle.py",
+    "scripts/atlas/temporal-integration/plan.json",
+    "scripts/atlas/temporal-integration/prove.mjs",
+    "scripts/atlas/temporal-integration/test-proof.mjs",
+    "scripts/atlas/temporal-integration/validate.py",
+    "scripts/atlas/temporal-integration/worker.mjs"
+  ],
+  "checks": [
+    {
+      "check": "all original non-navigation tracked files unchanged before regression",
+      "passed": true
+    },
+    {
+      "check": "all113 production hashes unchanged",
+      "passed": true
+    },
+    {
+      "check": "admitted retained source inventory unchanged before regression",
+      "passed": true
+    },
+    {
+      "check": "all42 canonical research statuses unchanged",
+      "passed": true
+    },
+    {
+      "check": "accepted17 store files unchanged",
+      "passed": true
+    },
+    {
+      "check": "accepted6prepared artifacts intact",
+      "passed": true
+    },
+    {
+      "check": "authoritative unit receipts intact",
+      "passed": true
+    },
+    {
+      "check": "frozen exact checkpoint cleanupstream andprefreeze",
+      "passed": true
+    },
+    {
+      "check": "plan andmatrix frozen beforeimplementation",
+      "passed": true
+    },
+    {
+      "check": "all66retained Exe files unchanged beforetests",
+      "passed": true
+    },
+    {
+      "check": "accepted multi-region external state unchanged",
+      "passed": true
+    },
+    {
+      "check": "accepted regional dependency state unchanged",
+      "passed": true
+    },
+    {
+      "check": "measured engine exactlymatches",
+      "passed": true
+    },
+    {
+      "check": "actual temporal17assignment population",
+      "passed": true
+    },
+    {
+      "check": "five frozen knowledge/population stages",
+      "passed": true
+    },
+    {
+      "check": "exactly3explicit supersessions",
+      "passed": true
+    },
+    {
+      "check": "477warm independent qualifiedcomparisons",
+      "passed": true
+    },
+    {
+      "check": "raw repeatedmeasurements external/checksummed",
+      "passed": true
+    },
+    {
+      "check": "five coherent13member publications",
+      "passed": true
+    },
+    {
+      "check": "independent temporal/scoped regional/admin memberships",
+      "passed": true
+    },
+    {
+      "check": "all9native/Tryfan component identities unchanged",
+      "passed": true
+    },
+    {
+      "check": "three correction full/scoped equivalences with8exact results",
+      "passed": true
+    },
+    {
+      "check": "correct scoped36native cells144decoded bytes",
+      "passed": true
+    },
+    {
+      "check": "metadata-only zero receipts/regional recompute",
+      "passed": true
+    },
+    {
+      "check": "three fresh477temporal/2760regional replays",
+      "passed": true
+    },
+    {
+      "check": "allfresh qualified/numerical hashes agree",
+      "passed": true
+    },
+    {
+      "check": "historical derivations for15combinedknowledge cases",
+      "passed": true
+    },
+    {
+      "check": "allquery histories zero ancestry/boundedmembership",
+      "passed": true
+    },
+    {
+      "check": "fullcurrentTryfan310payload/42473107B eachpub",
+      "passed": true
+    },
+    {
+      "check": "fullRiff120347916B eachpub",
+      "passed": true
+    },
+    {
+      "check": "fullExe31sources9892590B eachpub",
+      "passed": true
+    },
+    {
+      "check": "fullnumerical replay disclosed perpub",
+      "passed": true
+    },
+    {
+      "check": "unchangedportrayals onlyno scientificpayloadcopies",
+      "passed": true
+    },
+    {
+      "check": "single unbegun localimplementation decision nexttask",
+      "passed": true
+    },
+    {
+      "check": "all32durable report sections",
+      "passed": true
+    },
+    {
+      "check": "fourrequired classifications plusbounded scientific/custody limits",
+      "passed": true
+    },
+    {
+      "check": "resultandunbegun nexttask in docs/research/atlas-research-state.md",
+      "passed": true
+    },
+    {
+      "check": "resultandunbegun nexttask in docs/research/atlas-research-map.md",
+      "passed": true
+    },
+    {
+      "check": "resultandunbegun nexttask in docs/product-direction.md",
+      "passed": true
+    },
+    {
+      "check": "resultandunbegun nexttask in docs/development-log.md",
+      "passed": true
+    },
+    {
+      "check": "resultandunbegun nexttask in docs/architecture.md",
+      "passed": true
+    },
+    {
+      "check": "appendonly developmenthistory",
+      "passed": true
+    },
+    {
+      "check": "temporal-focused",
+      "passed": true
+    },
+    {
+      "check": "regional-dependencies-focused",
+      "passed": true
+    },
+    {
+      "check": "accepted-multi-region-focused",
+      "passed": true
+    },
+    {
+      "check": "retrieval-focused",
+      "passed": true
+    },
+    {
+      "check": "preparation-focused",
+      "passed": true
+    },
+    {
+      "check": "preparation-fresh-verification",
+      "passed": true
+    },
+    {
+      "check": "assessment-inventory-reproduction",
+      "passed": true
+    },
+    {
+      "check": "assessment",
+      "passed": true
+    },
+    {
+      "check": "s6",
+      "passed": true
+    },
+    {
+      "check": "s1-s5",
+      "passed": true
+    },
+    {
+      "check": "native",
+      "passed": true
+    },
+    {
+      "check": "planning",
+      "passed": true
+    },
+    {
+      "check": "frozen",
+      "passed": true
+    },
+    {
+      "check": "qualified",
+      "passed": true
+    },
+    {
+      "check": "persistent",
+      "passed": true
+    },
+    {
+      "check": "exe",
+      "passed": true
+    },
+    {
+      "check": "semantic-types",
+      "passed": true
+    },
+    {
+      "check": "lint",
+      "passed": true
+    },
+    {
+      "check": "build",
+      "passed": true
+    },
+    {
+      "check": "diff",
+      "passed": true
+    },
+    {
+      "check": "application-types",
+      "passed": true
+    },
+    {
+      "check": "proof/reporting onlyexact21path allowlist",
+      "passed": true
+    },
+    {
+      "check": "no unnecessarylargepayloads",
+      "passed": true
+    },
+    {
+      "check": "finalcomplete structured file/untracked review",
+      "passed": true
+    },
+    {
+      "check": "documentation/navigation references resolve",
+      "passed": true
+    },
+    {
+      "check": "all original non-navigation tracked files unchanged aftertests",
+      "passed": true
+    },
+    {
+      "check": "all admitted source inventory unchanged aftertests",
+      "passed": true
+    },
+    {
+      "check": "all113production hashes unchanged aftertests",
+      "passed": true
+    },
+    {
+      "check": "accepted17store files unchanged aftertests",
+      "passed": true
+    },
+    {
+      "check": "accepted6prepared files unchanged aftertests",
+      "passed": true
+    },
+    {
+      "check": "unit receipts unchanged aftertests",
+      "passed": true
+    },
+    {
+      "check": "all66Exe files unchanged aftertests",
+      "passed": true
+    },
+    {
+      "check": "accepted immutable state unchanged aftertests docs/research/atlas-multi-region-results.json",
+      "passed": true
+    },
+    {
+      "check": "accepted immutable state unchanged aftertests docs/research/atlas-regional-dependencies-results.json",
+      "passed": true
+    },
+    {
+      "check": "accepted current/310hashverification unchanged",
+      "passed": true
+    },
+    {
+      "check": "bounded external proof state below500MB",
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "args": [
+        "node",
+        "--test",
+        "C:\\Users\\gbsam\\Documents\\Projects\\project-meridian\\scripts\\atlas\\temporal-integration\\test-proof.mjs"
+      ],
+      "basis": "original accepted inputs unchanged; exact prior successful logs reused; temporal-focused reruns unless reporting-only unchanged proof review",
+      "elapsedSeconds": 90.34713770006783,
+      "exitCode": 0,
+      "name": "temporal-focused",
+      "reusedPassedCommand": true,
+      "tests": 39
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "C:\\Users\\gbsam\\Documents\\Projects\\project-meridian\\scripts\\atlas\\regional-dependencies\\test-proof.mjs"
+      ],
+      "basis": "original accepted inputs unchanged; exact prior successful logs reused; temporal-focused reruns unless reporting-only unchanged proof review",
+      "elapsedSeconds": 122.37121360003948,
+      "exitCode": 0,
+      "name": "regional-dependencies-focused",
+      "reusedPassedCommand": true,
+      "tests": 26
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "scripts/atlas/multi-region/test-proof.mjs"
+      ],
+      "basis": "original accepted inputs unchanged; exact prior successful logs reused; temporal-focused reruns unless reporting-only unchanged proof review",
+      "elapsedSeconds": 130.20889790006913,
+      "exitCode": 0,
+      "name": "accepted-multi-region-focused",
+      "reusedPassedCommand": true,
+      "tests": 24
+    },
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/riffelhorn-retrieval/test_query.py"
+      ],
+      "basis": "original accepted inputs unchanged; exact prior successful logs reused; temporal-focused reruns unless reporting-only unchanged proof review",
+      "elapsedSeconds": 7.151894500013441,
+      "exitCode": 0,
+      "name": "retrieval-focused",
+      "reusedPassedCommand": true,
+      "tests": 31
+    },
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/riffelhorn-fixture/test_prepare.py"
+      ],
+      "basis": "original accepted inputs unchanged; exact prior successful logs reused; temporal-focused reruns unless reporting-only unchanged proof review",
+      "elapsedSeconds": 21.689660699805245,
+      "exitCode": 0,
+      "name": "preparation-focused",
+      "reusedPassedCommand": true,
+      "tests": 30
+    },
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/riffelhorn-fixture/prepare.py",
+        "verify",
+        "--output",
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\derived\\atlas\\riffelhorn\\riffelhorn-qualified-fixture-v1\\357b28e705f7c2647cdf2d54467fc9ee851465814d8ed645cae30713ef9187bb"
+      ],
+      "basis": "original accepted inputs unchanged; exact prior successful logs reused; temporal-focused reruns unless reporting-only unchanged proof review",
+      "elapsedSeconds": 1.8463046001270413,
+      "exitCode": 0,
+      "name": "preparation-fresh-verification",
+      "reusedPassedCommand": true,
+      "tests": null
+    },
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/regional-expansion/inventory.py",
+        "--check"
+      ],
+      "basis": "original accepted inputs unchanged; exact prior successful logs reused; temporal-focused reruns unless reporting-only unchanged proof review",
+      "elapsedSeconds": 9.879164800047874,
+      "exitCode": 0,
+      "name": "assessment-inventory-reproduction",
+      "reusedPassedCommand": true,
+      "tests": null
+    },
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/measured-architecture/test_assess.py"
+      ],
+      "basis": "original accepted inputs unchanged; exact prior successful logs reused; temporal-focused reruns unless reporting-only unchanged proof review",
+      "elapsedSeconds": 0.7763455000240356,
+      "exitCode": 0,
+      "name": "assessment",
+      "reusedPassedCommand": true,
+      "tests": 10
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "pilots/atlas/tryfan/tests/acceptance.test.mjs"
+      ],
+      "basis": "original accepted inputs unchanged; exact prior successful logs reused; temporal-focused reruns unless reporting-only unchanged proof review",
+      "elapsedSeconds": 2.476185000035912,
+      "exitCode": 0,
+      "name": "s6",
+      "reusedPassedCommand": true,
+      "tests": 7
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "pilots/atlas/tryfan/tests/catalogue.test.mjs",
+        "pilots/atlas/tryfan/tests/query.test.mjs",
+        "pilots/atlas/tryfan/tests/lifecycle.test.mjs",
+        "pilots/atlas/tryfan/tests/http.test.mjs",
+        "pilots/atlas/tryfan/tests/publication.test.mjs",
+        "pilots/atlas/tryfan/tests/restart.test.mjs"
+      ],
+      "basis": "original accepted inputs unchanged; exact prior successful logs reused; temporal-focused reruns unless reporting-only unchanged proof review",
+      "elapsedSeconds": 182.4060014002025,
+      "exitCode": 0,
+      "name": "s1-s5",
+      "reusedPassedCommand": true,
+      "tests": 121
+    },
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "pilots/atlas/tryfan/adapters/test_native.py"
+      ],
+      "basis": "original accepted inputs unchanged; exact prior successful logs reused; temporal-focused reruns unless reporting-only unchanged proof review",
+      "elapsedSeconds": 0.7835130000021309,
+      "exitCode": 0,
+      "name": "native",
+      "reusedPassedCommand": true,
+      "tests": 9
+    },
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/regional-pilot-plan/test_plan.py"
+      ],
+      "basis": "original accepted inputs unchanged; exact prior successful logs reused; temporal-focused reruns unless reporting-only unchanged proof review",
+      "elapsedSeconds": 0.26008299994282424,
+      "exitCode": 0,
+      "name": "planning",
+      "reusedPassedCommand": true,
+      "tests": 22
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "scripts/atlas/test_semantic_evidence_contract.mjs",
+        "scripts/atlas/test_terrain_hierarchy_contract.mjs",
+        "scripts/atlas/test_terrain_runtime.mjs",
+        "scripts/atlas/test_tryfan_terrain.mjs"
+      ],
+      "basis": "original accepted inputs unchanged; exact prior successful logs reused; temporal-focused reruns unless reporting-only unchanged proof review",
+      "elapsedSeconds": 2.0243510000873357,
+      "exitCode": 0,
+      "name": "frozen",
+      "reusedPassedCommand": true,
+      "tests": 64
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "scripts/atlas/test_qualified_query_proof.mjs"
+      ],
+      "basis": "original accepted inputs unchanged; exact prior successful logs reused; temporal-focused reruns unless reporting-only unchanged proof review",
+      "elapsedSeconds": 1.1559464999008924,
+      "exitCode": 0,
+      "name": "qualified",
+      "reusedPassedCommand": true,
+      "tests": 17
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "scripts/atlas/test_local_persistent_tryfan.mjs"
+      ],
+      "basis": "original accepted inputs unchanged; exact prior successful logs reused; temporal-focused reruns unless reporting-only unchanged proof review",
+      "elapsedSeconds": 24.441556999925524,
+      "exitCode": 0,
+      "name": "persistent",
+      "reusedPassedCommand": true,
+      "tests": 18
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "scripts/atlas/exe-water-query-proof/test-proof.mjs"
+      ],
+      "basis": "original accepted inputs unchanged; exact prior successful logs reused; temporal-focused reruns unless reporting-only unchanged proof review",
+      "elapsedSeconds": 5.5171569001395255,
+      "exitCode": 0,
+      "name": "exe",
+      "reusedPassedCommand": true,
+      "tests": 20
+    },
+    {
+      "args": [
+        "npx.cmd",
+        "tsc",
+        "-p",
+        "scripts/atlas/semantic-evidence/tsconfig.json"
+      ],
+      "basis": "original accepted inputs unchanged; exact prior successful logs reused; temporal-focused reruns unless reporting-only unchanged proof review",
+      "elapsedSeconds": 2.2633168001193553,
+      "exitCode": 0,
+      "name": "semantic-types",
+      "reusedPassedCommand": true,
+      "tests": null
+    },
+    {
+      "args": [
+        "npm.cmd",
+        "run",
+        "lint"
+      ],
+      "basis": "original accepted inputs unchanged; exact prior successful logs reused; temporal-focused reruns unless reporting-only unchanged proof review",
+      "elapsedSeconds": 8.500944100087509,
+      "exitCode": 0,
+      "name": "lint",
+      "reusedPassedCommand": true,
+      "tests": null
+    },
+    {
+      "args": [
+        "npm.cmd",
+        "run",
+        "build"
+      ],
+      "basis": "original accepted inputs unchanged; exact prior successful logs reused; temporal-focused reruns unless reporting-only unchanged proof review",
+      "elapsedSeconds": 64.3414730001241,
+      "exitCode": 0,
+      "name": "build",
+      "reusedPassedCommand": true,
+      "tests": null
+    },
+    {
+      "args": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "basis": "original accepted inputs unchanged; exact prior successful logs reused; temporal-focused reruns unless reporting-only unchanged proof review",
+      "elapsedSeconds": 0.10140649997629225,
+      "exitCode": 0,
+      "name": "diff",
+      "reusedPassedCommand": true,
+      "tests": null
+    },
+    {
+      "args": [
+        "node",
+        "node_modules/typescript/bin/tsc",
+        "-b",
+        "--pretty",
+        "false"
+      ],
+      "basis": "original accepted inputs unchanged; exact prior successful logs reused; temporal-focused reruns unless reporting-only unchanged proof review",
+      "elapsedSeconds": 3.0191407999955118,
+      "exitCode": 0,
+      "name": "application-types",
+      "reusedPassedCommand": true,
+      "tests": null
+    }
+  ],
+  "decision": "C - PROOF SUCCESS",
+  "errors": [],
+  "externalProofBytes": 169896010,
+  "missingReferences": [],
+  "nextTask": "Atlas evidence-based local storage, processing and serving implementation decision",
+  "nextTaskStatus": "NOT BEGUN",
+  "preservedTrackedFiles": 1000,
+  "proofHashes": {
+    "docs/research/atlas-temporal-integration-baseline.json": "b2fad8c8bcbf9232d9365c2c952d59366824a7098500a85c5d4a9331276c55db",
+    "docs/research/atlas-temporal-integration-results.json": "b6a64938adba183934c7c616d919820286d48ed1aa027320fde6084a8473720f",
+    "docs/research/atlas-temporal-integration.md": "325f66df65e56e7546beefc1babccce6d2e5f371681091dde69229784c258a09",
+    "scripts/atlas/temporal-integration/README.md": "d154a17eee57e1dba6530f4633f02aaf3cc0059850155f8f7d5aa119c71ecb4b",
+    "scripts/atlas/temporal-integration/evidence.mjs": "b582f957f36f1ac8d2d6bd7cd250a948df6cd2667ef91ba9eb8a557c81a25283",
+    "scripts/atlas/temporal-integration/integration.mjs": "4621e628269ccf12b8bbd35a11e50b918401a1bb424652aa679e5bd66996a562",
+    "scripts/atlas/temporal-integration/matrix.json": "7ed4087b4e96261ad9fac234a08efb42245a560696f05f249e3972db555105b1",
+    "scripts/atlas/temporal-integration/model.mjs": "5c9c5c7e5d04d1d8939ddf92bd25a40b1a350ec2b325700d32b6d1d7b6e78e89",
+    "scripts/atlas/temporal-integration/next-task.json": "cf6f4522e6a9801febd10e1778ae976a439b45542d31a509e407cbbe3f0c7d93",
+    "scripts/atlas/temporal-integration/oracle.py": "b227c308318240d1ac8d6c390b6e6133080789bff413a1bfce19ee1161b75ac8",
+    "scripts/atlas/temporal-integration/plan.json": "c1e7e12416e520b2c8497d185929cc58883eb8f08b2528192d3ac978a32e20cf",
+    "scripts/atlas/temporal-integration/prove.mjs": "1247f2f585632639b68de9fb7a853fb8ff0021f66b44c70636cebfa5c29ea383",
+    "scripts/atlas/temporal-integration/test-proof.mjs": "7e220ad3d424714dd55a33bd0aff3b7025af197a6719e271071fde69f48c9396",
+    "scripts/atlas/temporal-integration/validate.py": "5151d7ee34ffce0bc7ab5583496fdf108e785a4e50316399f36d07bad31e06c6",
+    "scripts/atlas/temporal-integration/worker.mjs": "1da25b275ddcec2a2def22cf277604ae40d8994419d425a65d856dd7ffaee3d5"
+  },
+  "protectedHashes": 113,
+  "publishedGeneration": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+  "retainedVerification": {
+    "artifacts": 310,
+    "bytes": 42473107
+  },
+  "schema": "atlas-temporal-integration-validation/v1",
+  "sourceAdmission": {
+    "groups": {
+      "Complete retained Exe directory": {
+        "bytes": 10295691,
+        "files": 66,
+        "verifiedEntriesSha256": "7043358dd1d3c10efe1b3483ac65e6ec2b5d2c637c4eff5f3d7a6df77082794a"
+      },
+      "July native post-L2A RGB and SCL": {
+        "bytes": 714544,
+        "files": 4,
+        "verifiedEntriesSha256": "c91c42dcad464a78a200ee6ef0a945e0b246eff75830efa2b8ed6e10a47e060f"
+      },
+      "Lab010 existing natural-colour preparation": {
+        "bytes": 1305121,
+        "files": 3,
+        "verifiedEntriesSha256": "86edf76941cbf6b48bc49e198dceb3f64debd0a7200ab3c83df32d06823113ee"
+      },
+      "Parked Swiss metadata only": {
+        "bytes": 19357606,
+        "files": 112,
+        "verifiedEntriesSha256": "e0179dbb4695a66bbf3cb61f2a215d88dc45bdcfd9c09e886da9fd0c9d6fc2cc"
+      },
+      "Pinned Exe sources/documents": {
+        "bytes": 9892590,
+        "files": 31,
+        "verifiedEntriesSha256": "0e1301af8fcdb00f126ba2886216b2a96bfdd68de71e14c6079beece12e6342a"
+      },
+      "SWISSIMAGE manifest": {
+        "bytes": 218993,
+        "files": 1,
+        "verifiedEntriesSha256": "9e3dcb15bd21260896eab7be966f8fdc59cf2e729ecc952fbc60f489c4873225"
+      },
+      "SWISSIMAGE prepared": {
+        "bytes": 1564233043,
+        "files": 1084,
+        "verifiedEntriesSha256": "944ee3136c7ac91224b59ec369fd8bc90e4bbd299a51b65d6a09a8395a35a327"
+      },
+      "SWISSIMAGE source": {
+        "bytes": 186259028,
+        "files": 4,
+        "verifiedEntriesSha256": "9edd9aaf20eb3481b5b9aec077e715d1d350d73cd4885474cac24cabeec5f203"
+      },
+      "Tryfan native semantic crop and habitat": {
+        "bytes": 563835,
+        "files": 2,
+        "verifiedEntriesSha256": "1d4388d183544fd3a135bde05dece5b6950bfcd77e969c2ef518cd5df98d5771"
+      },
+      "Tryfan source and pinned common samples": {
+        "bytes": 16046943,
+        "files": 5,
+        "verifiedEntriesSha256": "16bbf4ef3222be6619ccfb316e0d5b8e7c86a117476d14d98fae76c61a222e1d"
+      },
+      "Welsh prepared terrain": {
+        "bytes": 23889573,
+        "files": 295,
+        "verifiedEntriesSha256": "6091994b08ed611dd1a44d4be1700f2858d9eb197a5c248189f97a5256f2b593"
+      }
+    },
+    "noWritesOrAcquisition": true,
+    "uniqueFiles": 1575
+  },
+  "startingCheckpoint": "f98e9c941084fd43e134a727d42de3e086e6e3cc",
+  "testCount": 438
+}

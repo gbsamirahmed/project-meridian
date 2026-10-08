@@ -1,0 +1,37 @@
+{
+  "title": "Atlas evidence-based local storage, processing and serving implementation decision",
+  "status": "NOT BEGUN",
+  "uncertainty": "Which smallest maintainable local implementation and operational boundaries can consolidate the demonstrated real retained regional/temporal workloads without losing qualified identity, scoped lifecycle, full validation, coherent pins/history or practical offline research?",
+  "why": "Real multi-region dependencies and dated/knowledge correction semantics now have bounded correctness evidence; no temporal blocker justifies another isolated optimisation. Proof adapters and repeated complete hydration/full replay remain proof-specific costs to evaluate for a local runtime.",
+  "prerequisites": [
+    "accepted Tryfan/Riffelhorn/accountability/preparation/query proofs unchanged",
+    "successful coherent regional/dependency/temporal proofs with measured limitations",
+    "existing full-validation default and closed receipt line",
+    "actual retained operational workloads, laptop80GB planning budget and offline reproducibility"
+  ],
+  "supportingEvidence": [
+    "docs/research/atlas-measured-storage-processing-serving.md",
+    "docs/research/atlas-integrity-cost.md",
+    "docs/research/atlas-multi-region.md",
+    "docs/research/atlas-regional-dependencies.md",
+    "docs/research/atlas-temporal-integration.md"
+  ],
+  "permittedWork": [
+    "inspect real local source/object/metadata/query/processing/publication needs and consolidate requirements",
+    "compare a small set of local implementation responsibility/format/interface options using existing evidence",
+    "document migration and maintenance/research costs, rule/temporal identity and custody boundaries",
+    "only narrowly necessary read-only measurement; no implementation, infrastructure, acquisition or new algorithms"
+  ],
+  "deliverable": "Evidence-dense local implementation decision with logical responsibilities, boundary contracts and staged migration/acceptance proposal; technology choices only where justified by actual workload, explicitly deferred alternatives and exactly one next bounded task.",
+  "acceptanceCriteria": [
+    "preserve all established semantics and source qualifications",
+    "distinguish authoritative records from rebuildable query organisations and materialization",
+    "cost actual retained workloads including complete validation and cold recovery",
+    "maintain offline bounded development/history and rights/source separation",
+    "choose minimal justified local direction or precise unresolved prerequisite",
+    "no automatic cloud/production service/graph/workflow/event platform",
+    "no code adoption by proof inertia; reusable versus proof-only identified",
+    "protections and exactly one bounded follow-up; next runtime implementation not begun"
+  ],
+  "stopCondition": "Stop after the durable local implementation decision and navigation/regression review; do not implement the runtime or begin service readiness/Weather/Traverse."
+}

@@ -1,0 +1,264 @@
+{
+  "schema": "atlas-temporal-query-matrix/v1",
+  "frozenBeforeImplementation": true,
+  "stages": 5,
+  "repetitions": 3,
+  "freshProcesses": 3,
+  "queries": [
+    {
+      "id": "all"
+    },
+    {
+      "id": "march",
+      "region": "exe",
+      "physical": {
+        "start": "2024-03-01",
+        "end": "2024-03-31",
+        "role": "observation"
+      }
+    },
+    {
+      "id": "september",
+      "region": "exe",
+      "physical": {
+        "start": "2024-09-01",
+        "end": "2024-09-30",
+        "role": "observation"
+      }
+    },
+    {
+      "id": "no-april",
+      "region": "exe",
+      "physical": {
+        "start": "2024-04-01",
+        "end": "2024-04-30",
+        "role": "observation"
+      }
+    },
+    {
+      "id": "march-boundary",
+      "region": "exe",
+      "physical": {
+        "start": "2024-03-31",
+        "end": "2024-03-31",
+        "role": "observation"
+      }
+    },
+    {
+      "id": "adjacent-no-match",
+      "region": "exe",
+      "physical": {
+        "start": "2024-04-01",
+        "end": "2024-04-01",
+        "role": "observation"
+      }
+    },
+    {
+      "id": "event2014",
+      "region": "exe",
+      "physical": {
+        "start": "2014-02-05",
+        "end": "2014-02-05",
+        "role": "event"
+      }
+    },
+    {
+      "id": "no-event2015",
+      "region": "exe",
+      "physical": {
+        "start": "2015-01-01",
+        "end": "2015-01-02",
+        "role": "event"
+      }
+    },
+    {
+      "id": "swiss-survey2015",
+      "region": "riffelhorn",
+      "physical": {
+        "start": "2015-01-01",
+        "end": "2015-12-31",
+        "role": "survey"
+      }
+    },
+    {
+      "id": "swiss-survey2016",
+      "region": "riffelhorn",
+      "physical": {
+        "start": "2016-12-31",
+        "end": "2016-12-31",
+        "role": "survey"
+      }
+    },
+    {
+      "id": "swiss-not-observed2016",
+      "region": "riffelhorn",
+      "physical": {
+        "start": "2016-01-01",
+        "end": "2016-12-31",
+        "role": "observation"
+      }
+    },
+    {
+      "id": "nominal2021",
+      "physical": {
+        "start": "2021-01-01",
+        "end": "2021-12-31",
+        "role": "nominal-epoch"
+      }
+    },
+    {
+      "id": "nominal-not-observation2021",
+      "physical": {
+        "start": "2021-01-01",
+        "end": "2021-12-31",
+        "role": "observation"
+      }
+    },
+    {
+      "id": "imagery-day",
+      "region": "tryfan",
+      "physical": {
+        "start": "2026-07-12",
+        "end": "2026-07-12",
+        "role": "observation"
+      }
+    },
+    {
+      "id": "imagery-instant",
+      "region": "tryfan",
+      "physical": {
+        "start": "2026-07-12T11:33:31.024Z",
+        "end": "2026-07-12T11:33:31.024Z",
+        "role": "observation"
+      }
+    },
+    {
+      "id": "unknown-physical",
+      "unknown": "physical"
+    },
+    {
+      "id": "unknown-source",
+      "unknown": "source"
+    },
+    {
+      "id": "source-published2025",
+      "sourcePeriod": [
+        "2025-06-23",
+        "2025-06-23"
+      ]
+    },
+    {
+      "id": "product-not-observation2024",
+      "region": "riffelhorn",
+      "physical": {
+        "start": "2024-01-01",
+        "end": "2024-12-31",
+        "role": "observation"
+      }
+    },
+    {
+      "id": "valid-throughout",
+      "physical": {
+        "start": "2024-03-01",
+        "end": "2024-03-31",
+        "role": "observation"
+      },
+      "mode": "valid-throughout"
+    },
+    {
+      "id": "march-atK0",
+      "knowledge": 0,
+      "region": "exe",
+      "physical": {
+        "start": "2024-03-01",
+        "end": "2024-03-31",
+        "role": "observation"
+      }
+    },
+    {
+      "id": "all-atK0",
+      "knowledge": 0
+    },
+    {
+      "id": "feature-rfo",
+      "feature": "rfo:31383"
+    },
+    {
+      "id": "absent-assignment",
+      "assignment": "does-not-exist"
+    },
+    {
+      "id": "terrain-unknown",
+      "region": "tryfan",
+      "assignment": "tryfan:terrain"
+    },
+    {
+      "id": "known-source-unknown-physical",
+      "assignment": "exe:wfd"
+    },
+    {
+      "id": "all-exe",
+      "region": "exe"
+    },
+    {
+      "id": "all-swiss",
+      "region": "riffelhorn"
+    },
+    {
+      "id": "all-tryfan",
+      "region": "tryfan"
+    }
+  ],
+  "additionalKnowledgeQueries": {
+    "stage1": [
+      0,
+      1
+    ],
+    "stage2": [
+      0,
+      1,
+      2
+    ],
+    "stage3": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "stage4": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "manualExpectations": {
+    "currentByStage": [
+      13,
+      15,
+      15,
+      17,
+      17
+    ],
+    "retainedByStage": [
+      13,
+      15,
+      18,
+      20,
+      20
+    ],
+    "MarchCounts": {
+      "0": 0,
+      "1": 0,
+      "2": 77
+    },
+    "SeptemberCounts": {
+      "0": 76,
+      "1": 1,
+      "2": 0
+    },
+    "corrections": 3,
+    "regionalAffected": 8
+  }
+}

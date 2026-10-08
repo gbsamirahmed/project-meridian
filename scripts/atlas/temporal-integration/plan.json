@@ -1,0 +1,171 @@
+{
+  "schema": "atlas-temporal-proof-plan/v1",
+  "startingCheckpoint": "f98e9c941084fd43e134a727d42de3e086e6e3cc",
+  "frozenBeforeImplementation": true,
+  "stateRoot": "C:/Users/gbsam/Documents/Codex/atlas-temporal-integration-v1",
+  "uncertainty": "Can physical/source/retention/accepted-knowledge/publication time remain distinct under late inclusion, same-observation correction, scoped derivation and immutable historical pins?",
+  "scope": "Retained two-region dependency model plus already retained Exe dated evidence explicitly selected by its authoritative next-task. Exe is a disconnected bounded temporal branch, not imported as Tryfan or Riffelhorn water evidence.",
+  "selected": {
+    "riffelhorn": [
+      "glaciers:683",
+      "debris:3738",
+      "debris:3739",
+      "debris:3755",
+      "debris:3763",
+      "debris:3764",
+      "debris:3768",
+      "dtm:c68c305e4a142da416b46b555a80916ecc52f8fa50bf1efd5cd2c3f24f9cd4bc",
+      "worldcover:86579f0b5f87e9c50e499c3ab0752b39357fe7379ab227a11c31c2dee1e676ee"
+    ],
+    "tryfan": [
+      "dated-appearance-metadata",
+      "represented-terrain-epoch-unknown"
+    ],
+    "exe": [
+      "wfd:GB510804505600",
+      "rfo:31383",
+      "P1-point-2024-03",
+      "P1-support-2024-03",
+      "P1-point-2024-09",
+      "P1-support-2024-09"
+    ]
+  },
+  "dimensions": {
+    "physical": "Frozen ClaimTime/TimeExtent with role and source precision. Monthly observation bin is not continuous validity.",
+    "source": "Provider publication/revision versus native survey time; listing last_modified is locator metadata only, not source publication.",
+    "retention": "Actual retained receipt retrieval/subset acquisition, or explicit unknown; no filesystem/commit dates.",
+    "preparation": "Exact method/artifact lineage, actual dated run receipt only if established; unknown otherwise.",
+    "knowledge": "Controlled accepted ordinals K0-K4 plus actual execution UTC receipts, explicitly not historical Atlas-global acquisition. Immutable same-assignment revisions/supersession.",
+    "publication": "Explicit committed generation identity/order; measured run switch receipt external. Never physical chronology."
+  },
+  "sequence": [
+    {
+      "stage": 0,
+      "event": "initial",
+      "expectedCurrent": 13,
+      "expectedRows": 13,
+      "regionalRecomputed": 0
+    },
+    {
+      "stage": 1,
+      "event": "late-March",
+      "expectedCurrent": 15,
+      "expectedRows": 15,
+      "regionalRecomputed": 0
+    },
+    {
+      "stage": 2,
+      "event": "controlled-correction",
+      "expectedCurrent": 15,
+      "expectedRows": 18,
+      "regionalRecomputed": 8
+    },
+    {
+      "stage": 3,
+      "event": "late-September",
+      "expectedCurrent": 17,
+      "expectedRows": 20,
+      "regionalRecomputed": 0
+    },
+    {
+      "stage": 4,
+      "event": "publication-note-only",
+      "expectedCurrent": 17,
+      "expectedRows": 20,
+      "regionalRecomputed": 0
+    }
+  ],
+  "correction": {
+    "meaning": "Controlled scoped qualification correction only; retained bytes and recorded codes/time unchanged. Not a provider correction or physical event.",
+    "exe": "March point/support get explicit qualification notice; March count and paired output receipts depend on changed qualification.",
+    "riffelhorn": {
+      "id": "temporal-scope-correction",
+      "kind": "note",
+      "region": "riffelhorn",
+      "family": "dtm",
+      "bounds": [
+        2624350,
+        1091350,
+        2624350.5,
+        1091350.5
+      ]
+    },
+    "tryfan": "All native/context/derived identities unchanged"
+  },
+  "querySemantics": [
+    "Observation/event/survey interval overlap with inclusive v1 date endpoints expanded by declared precision; exact instant seconds retained.",
+    "nominal-epoch is matched only if explicitly requested, never substituted for observation.",
+    "unknown requested-axis time partitions as indeterminate, not success/absence.",
+    "Unknown-source-publication handling is distinct from unknown physical time.",
+    "As-known-at cutoff is at most the pinned accepted ordinal; choose latest accepted same-assignment revision at/before cutoff, never future knowledge.",
+    "No asserted validity claims selected; valid-throughout query returns indeterminate rather than inventing continuity.",
+    "Same observation identity requires explicit source/product/selector/support, not co-location/value.",
+    "Old publication answers never upgraded; missing historical objects operationally fail."
+  ],
+  "oracle": [
+    "Python full-scan independent date/selection and full qualified identity envelopes over persisted ledger.",
+    "Hand-frozen expectations: G0 no March; G1 March support0/0/77; G2 corrected same physical/support/codes; G3 Sept76/1/0; three March/Riff corrections same assignment; metadata-only K4 no derived recomputation.",
+    "Existing Exe native reader/resolver and fresh retained pixels for full summary receipt comparisons. Existing regional independent closure and full NumPy/native recompute."
+  ],
+  "acceptance": [
+    "all frozen temporal queries agree in identity and complete qualification with independent full scan",
+    "hand expectations about G0/G1/G2/G3 old periods/correction and unknowns hold",
+    "all current v1 semantic bundles validate unchanged frozen contract",
+    "selective8 regional outputs and temporal summary receipts match full recomputation; other region exact reuse",
+    "stale remains referenceable historically but incompatible current publication rejects",
+    "five committed closures preserve old pins/staged invisibility and 3 fresh replay results",
+    "negative temporal identity/order/precision/lineage/membership/interruption cases fail explicitly",
+    "sources/contracts/42statuses/113production hashes unchanged; types/lint/build/relevant tests pass"
+  ],
+  "measurement": {
+    "repetitions": 3,
+    "queryCounters": [
+      "revisionRecordsInspected",
+      "temporalPredicates",
+      "sourceQualificationChecks",
+      "matches",
+      "indeterminate",
+      "metadataReads/bytes",
+      "membership/component traversal"
+    ],
+    "operationCosts": [
+      "source/registry setup",
+      "late arrival",
+      "correction full/scoped",
+      "publish full current verification",
+      "query warm",
+      "fresh historical replay",
+      "retained storage/RSS samples"
+    ],
+    "noise": "median/min/max; no OS-cache control or aggregate RSS peak claim"
+  },
+  "failureCases": [
+    "unknown time",
+    "broad survey precision",
+    "invalid interval",
+    "unsupported second precision",
+    "incompatible temporal role",
+    "ambiguous assignment identity",
+    "missing supersession",
+    "missing evidence",
+    "duplicate revision",
+    "bad knowledge order",
+    "stale derived",
+    "missing membership",
+    "incomplete closure",
+    "abrupt before-switch",
+    "cross-region leakage",
+    "missing historical object"
+  ],
+  "custody": "Existing immutable-addressed local files, current hash validation, single writer, process crash tests only. No power-loss/remote/multi-writer guarantee.",
+  "storageEstimate": "<150MB expected metadata/test copies; <500MB temporary ceiling estimate. No copied scientific raster/new data; laptop budget comfortable.",
+  "exclusions": [
+    "no new observation history or algorithms",
+    "no frozen contracts/source preparation changes",
+    "no world truth/change/continuous-validity inference",
+    "no production/database/cloud/event platform",
+    "no S7/private/Weather/Traverse/Appearance/multiview/receipt optimisations",
+    "no selected next-task execution"
+  ],
+  "stop": "Judge bounded temporal correctness, record measurements/limits, select one local-implementation decision task if no blocker, regress/commit/push; stop."
+}
