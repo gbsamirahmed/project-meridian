@@ -1,0 +1,177 @@
+{
+  "authoritativeHashes": {
+    "docs/atlas/semantic-evidence-contract.md": "92cdeb0ec6963e7d2355b69edba4e7ce1abb85cbb5c9ea7fce5ea66270a0d268",
+    "docs/research/atlas-component-granularity.md": "831e3965d7cdc871e9883cdd73f3fdca8c0dc8be5bfa20a1547dc95aaa11b56b",
+    "docs/research/atlas-component-membership.md": "3c72d52657455abeb0a126cdc5c4f889f1897271ca166d02943fc33368e48c66",
+    "docs/research/atlas-derived-understanding-lifecycle.md": "aee8a563754e3471cbb24a25ea1463eb9cee3d1606be4ed2e3cb1fe62414b3a3",
+    "docs/research/atlas-generation-scaling.md": "bf75df02b2945507bbf94cf5c241145b52e168ecb4f5ae6ca5dbc15f81c1d981",
+    "docs/research/atlas-measured-storage-processing-serving.md": "1696fa267595d6974adbe09a77f616ebc61de1e770372e34478b0db61916b9a7",
+    "docs/research/atlas-storage-processing-serving-requirements.md": "826ce49eab42c37d62b0a74762fdd6fa0636ebc1cbd2ad5d8ef3704ef829978a",
+    "docs/research/atlas-storage-requirements-measurements.json": "bdc0ea15a6c5efaa900dd00ff96955caa9c197a1c3cbd518886180a40e97b0b1",
+    "docs/research/atlas-validation-maintenance.md": "fc6c7e622a83343de62f7ec13d565a00c69f5a94243baef9e789baed21874105",
+    "docs/research/atlas-validation-packing-results.json": "26d0d4b3a1251964c87139b5e55996bbadb23aa5da6cc919bdd5f96a932f0ba5",
+    "docs/research/atlas-validation-packing.md": "eeb06823ce2a8ef288eec2e5d6ea3b43581ce2cff3eb530d80597fac612f3f97",
+    "docs/research/atlas-validation-reuse.md": "a846c6ab8e8beadf4bb4d7542b9715bc9c44eba110ad996821354031548e88d0",
+    "docs/research/atlas-world-model-architecture-synthesis.md": "ba074a8a1fa88c256780281314b3a1ca4a8bc2d3e0bcdcf75ad512b733d2d8c1",
+    "docs/research/tryfan-pilot-s1.md": "acfe5160a3eb024ab0d0cd14f9502842eb552872683e6738e7c2c855079d99e2",
+    "docs/research/tryfan-pilot-s2.md": "0badb0165a8064d00bc6c439ffdd53039ec22981525607d2e6e0e085d1499100",
+    "docs/research/tryfan-pilot-s3.md": "e443005b9efb4e0ce3fa7a0bf988faacd1da6f5f1fdc3e49e90d869514f2df5d",
+    "docs/research/tryfan-pilot-s4.md": "ad4885b17c802d1dc03735719b7579c1a02a2c176ce16b3165961af9933ea5f3",
+    "docs/research/tryfan-pilot-s5.md": "cc719fda3be8f8115b3f419ab1bc327ebeb0981a1b7604e534f3a5aeb5e46325",
+    "docs/research/tryfan-pilot-s6.md": "8f44bcaa535d97510cb9759653cba80fa1d5837a0db2a0a87ef8ded2678d7eef",
+    "pilots/atlas/tryfan/catalogue.mjs": "c8d52c9355bc030ae0e97f8767cb62088830606acdc39c6b32fb09e6edcbe52b",
+    "pilots/atlas/tryfan/delivery-schema.mjs": "46030ddc81374123ef9b948ea04075435567b6c5250b40a95e0083cf31e8b48f",
+    "pilots/atlas/tryfan/dependencies.mjs": "6f07d7f48e1dc94eb08e1f1a3b74de29acd3053a60ed169ee4be4c57b93940d9",
+    "pilots/atlas/tryfan/generations.mjs": "1b50f5d879d6ed5fc39d9a42cf56dec9ea103c8b928876fb8585795897e5d03d",
+    "pilots/atlas/tryfan/identity.mjs": "04eaf65fa268a6ad875cadb4dfe04ee6892686844069555186f05d3858ddc5f2",
+    "pilots/atlas/tryfan/update-schema.mjs": "9bf6568762482a4bb24d20fcbb449a6a7f8db1a4d7e26791089073cb51757cfa",
+    "scripts/atlas/component-granularity/model.py": "d65e5f23e20e8f2732dcabe6e4f66aab428fa6a42939d2dd667a5797975f5295",
+    "scripts/atlas/component-membership/core.mjs": "59f4a350d3f0c3fbd95a75b1fa4a7b8ac997d9f68d79a214a687e421a76a6842",
+    "scripts/atlas/component-membership/runtime.mjs": "a48dcc748b904c4e703df30aa36cd85cfc68277efd3a4b7c3f7d50e6a2ba2dae",
+    "scripts/atlas/validation-maintenance/model.py": "c73fc157ade842cc9b312597c60b431220d22b295a23ee39c21e380aa22d59a2",
+    "scripts/atlas/validation-reuse/core.py": "7badbe06ad94e51775e404bb046d275eb0e63c6b8ae6a2c21535ec5d1dacff88"
+  },
+  "criteria": {
+    "correctness": "instrumented and plain calls match outcomes and deterministic results; all explicit invalid controls rejected; interrupted/rejected writes preserve prior current",
+    "futureStudy": "only an observed cost exceeds screening and materially obstructs the identified intended capability, or a specific custody/failure contradiction; no automatic optimization from a large counter",
+    "measurement": "separate exclusive operation times and nested inclusive phases, instrumented versus plain wall time, 5 repeats, counters deterministic; report uncontrolled OS cache",
+    "proceed": "valid measured retained workloads, manageable batch cost, no acceptance/custody contradiction; 60s median per largest full payload sweep and 5s median pilot publish are predeclared screening budgets only, not SLAs or new pilot gates",
+    "stop": "record cost boundary and exactly one regional/source-accountability next task unless a concrete blocker; receipt optimization remains closed"
+  },
+  "custody": [
+    "ordinary files can change externally; content addresses do not enforce immutability",
+    "single writer controls publication but not hostile external payload writes",
+    "hash checks inspect bytes at read time, not continuous custody or guaranteed future availability",
+    "local same-directory rename and fsync; no power-loss/remote/multiwriter guarantee"
+  ],
+  "exclusions": [
+    "optimization, caches, incremental hashing, receipts, new policy",
+    "new sources/methods/cloud/database/production infrastructure",
+    "accepted state mutation, frozen contract change, S7, Appearance, Swiss multiview, Weather, Traverse"
+  ],
+  "failureCases": [
+    "missing-payload",
+    "same-size-corruption",
+    "wrong-size",
+    "wrong-hash",
+    "malformed-metadata",
+    "invalid-reference",
+    "incomplete-membership",
+    "invalid-closure",
+    "historical-payload-unavailable",
+    "pre-switch-interruption"
+  ],
+  "guarantees": [
+    "exact registered byte identity and present availability",
+    "native metadata consistency and required closure",
+    "policy-qualified dependencies, stale is not false",
+    "single-writer local coherent atomic root, history immutable",
+    "membership eligibility independent of file existence"
+  ],
+  "historyCases": [
+    {
+      "depth": 7,
+      "selection": "current"
+    },
+    {
+      "depth": 112,
+      "selection": "current"
+    },
+    {
+      "depth": 112,
+      "selection": "oldest"
+    }
+  ],
+  "metadataCases": [
+    {
+      "fanout": 1,
+      "id": "C48-E16",
+      "n": 16
+    },
+    {
+      "fanout": 1,
+      "id": "C192-E64",
+      "n": 64
+    },
+    {
+      "fanout": 1,
+      "id": "C768-E256",
+      "n": 256
+    },
+    {
+      "fanout": 4,
+      "id": "C192-E256",
+      "n": 64
+    }
+  ],
+  "nodeCases": [
+    "pilot-artifacts",
+    "pilot-structure",
+    "pilot-delivery",
+    "pilot-load",
+    "pilot-register",
+    "payload-sweeps",
+    "component-history"
+  ],
+  "payloadCases": [
+    {
+      "groups": [
+        "tiles"
+      ],
+      "id": "riffelhorn-swiss-support-v1",
+      "manifest": "derived/atlas/riffelhorn/riffelhorn-swiss-support-v1/manifest.json",
+      "manifestSha256": "30413b6698c1e75e27fd169f61925d8d60044fa14f444fb072b652c54816e106"
+    },
+    {
+      "groups": [
+        "tiles"
+      ],
+      "id": "riffelhorn-copernicus-common-v1",
+      "manifest": "derived/atlas/riffelhorn/riffelhorn-copernicus-common-v1/manifest.json",
+      "manifestSha256": "9393fbadf807592ed67e94408d82bc0f508d4a29d7aa90cf78e605b2053bb177"
+    },
+    {
+      "groups": [
+        "fields"
+      ],
+      "id": "riffelhorn-swissimage-baseline-v1",
+      "manifest": "derived/atlas/riffelhorn/riffelhorn-swissimage-baseline-v1/manifest.json",
+      "manifestSha256": "3c8b50fb9d7721b678abc46b9450495b417ccafff15d4ee8a67d9d6a3fee4934"
+    }
+  ],
+  "priorGap": "Counters left population-wide floors but no per-operation timing attribution; ordinary-file current integrity is not a trusted custody service.",
+  "repeatPublicationCases": [
+    {
+      "id": "unchanged",
+      "length": 8,
+      "pattern": "none"
+    },
+    {
+      "id": "localized",
+      "length": 8,
+      "pattern": "one-local"
+    }
+  ],
+  "repetitions": 5,
+  "schema": "atlas-integrity-cost-plan/v1",
+  "startingCheckpoint": "eb3459353b40a1305928a870645d5d5d3be3d114",
+  "stateRoot": "C:/Users/gbsam/Documents/Codex/atlas-integrity-cost-v1",
+  "syntheticPayloadCases": [
+    {
+      "bytes": 16777216,
+      "count": 1,
+      "id": "S1-16MiB"
+    },
+    {
+      "bytes": 16777216,
+      "count": 256,
+      "id": "S256-16MiB"
+    },
+    {
+      "bytes": 1048576,
+      "count": 256,
+      "id": "S256-1MiB"
+    }
+  ],
+  "uncertainty": "Separate actual current-byte integrity, metadata consistency, closure and root costs; establish adequacy for the next bounded retained regional integration, without changing guards."
+}

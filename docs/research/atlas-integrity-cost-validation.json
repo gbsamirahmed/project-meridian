@@ -1,0 +1,713 @@
+{
+  "acceptedPilotUnchanged": true,
+  "canonicalThreads": 42,
+  "changedPaths": [
+    "docs/architecture.md",
+    "docs/development-log.md",
+    "docs/product-direction.md",
+    "docs/research/atlas-integrity-cost-baseline.json",
+    "docs/research/atlas-integrity-cost-decisions.json",
+    "docs/research/atlas-integrity-cost-results.json",
+    "docs/research/atlas-integrity-cost.md",
+    "docs/research/atlas-research-map.md",
+    "docs/research/atlas-research-state.md",
+    "scripts/atlas/integrity-cost/README.md",
+    "scripts/atlas/integrity-cost/failures.mjs",
+    "scripts/atlas/integrity-cost/metadata-worker.py",
+    "scripts/atlas/integrity-cost/metadata.py",
+    "scripts/atlas/integrity-cost/meter.mjs",
+    "scripts/atlas/integrity-cost/plan.json",
+    "scripts/atlas/integrity-cost/report.py",
+    "scripts/atlas/integrity-cost/run.py",
+    "scripts/atlas/integrity-cost/test_measurement.py",
+    "scripts/atlas/integrity-cost/validate.py",
+    "scripts/atlas/integrity-cost/worker.mjs"
+  ],
+  "checks": [
+    {
+      "check": "all original non-navigation files unchanged before validation",
+      "passed": true
+    },
+    {
+      "check": "all42 research statuses unchanged",
+      "passed": true
+    },
+    {
+      "check": "all113 protected production hashes",
+      "passed": true
+    },
+    {
+      "check": "all17 accepted store hashes unchanged",
+      "passed": true
+    },
+    {
+      "check": "retained1575 files",
+      "passed": true
+    },
+    {
+      "check": "frozen plan before implementation",
+      "passed": true
+    },
+    {
+      "check": "all original validation guards unchanged",
+      "passed": true
+    },
+    {
+      "check": "all timed code pinned",
+      "passed": true
+    },
+    {
+      "check": "all raw measurements pinned",
+      "passed": true
+    },
+    {
+      "check": "isolated raw state",
+      "passed": true
+    },
+    {
+      "check": "14 cases five repeats both modes",
+      "passed": true
+    },
+    {
+      "check": "plain-meter scientific outcomes match",
+      "passed": true
+    },
+    {
+      "check": "all sample and complete-sequence costs retained",
+      "passed": true
+    },
+    {
+      "check": "current integrity no receipt optimization",
+      "passed": true
+    },
+    {
+      "check": "all14 failure controls preserve root",
+      "passed": true
+    },
+    {
+      "check": "abrupt exit at actual pre-switch boundary",
+      "passed": true
+    },
+    {
+      "check": "five independent fresh loads same identities",
+      "passed": true
+    },
+    {
+      "check": "full provisional default and closed receipts",
+      "passed": true
+    },
+    {
+      "check": "four conclusion classes",
+      "passed": true
+    },
+    {
+      "check": "unstarted exactly-one regional next task",
+      "passed": true
+    },
+    {
+      "check": "resolved judgement matches",
+      "passed": true
+    },
+    {
+      "check": "cost-reproduction",
+      "passed": true
+    },
+    {
+      "check": "cost-measurement-tests",
+      "passed": true
+    },
+    {
+      "check": "packing-reproduction",
+      "passed": true
+    },
+    {
+      "check": "packing",
+      "passed": true
+    },
+    {
+      "check": "maintenance-reproduction",
+      "passed": true
+    },
+    {
+      "check": "maintenance",
+      "passed": true
+    },
+    {
+      "check": "validation-reuse-reproduction",
+      "passed": true
+    },
+    {
+      "check": "validation-reuse",
+      "passed": true
+    },
+    {
+      "check": "granularity-reproduction",
+      "passed": true
+    },
+    {
+      "check": "granularity",
+      "passed": true
+    },
+    {
+      "check": "proof-reproduction",
+      "passed": true
+    },
+    {
+      "check": "proof",
+      "passed": true
+    },
+    {
+      "check": "scaling-reproduction",
+      "passed": true
+    },
+    {
+      "check": "scaling",
+      "passed": true
+    },
+    {
+      "check": "assessment",
+      "passed": true
+    },
+    {
+      "check": "s6",
+      "passed": true
+    },
+    {
+      "check": "s1-s5",
+      "passed": true
+    },
+    {
+      "check": "s6-browser",
+      "passed": true
+    },
+    {
+      "check": "s5-browser",
+      "passed": true
+    },
+    {
+      "check": "native",
+      "passed": true
+    },
+    {
+      "check": "planning",
+      "passed": true
+    },
+    {
+      "check": "frozen",
+      "passed": true
+    },
+    {
+      "check": "qualified",
+      "passed": true
+    },
+    {
+      "check": "persistent",
+      "passed": true
+    },
+    {
+      "check": "exe",
+      "passed": true
+    },
+    {
+      "check": "s5-reproduction",
+      "passed": true
+    },
+    {
+      "check": "semantic-types",
+      "passed": true
+    },
+    {
+      "check": "lint",
+      "passed": true
+    },
+    {
+      "check": "build",
+      "passed": true
+    },
+    {
+      "check": "diff",
+      "passed": true
+    },
+    {
+      "check": "assessment-only changed paths",
+      "passed": true
+    },
+    {
+      "check": "small reports no payloads committed",
+      "passed": true
+    },
+    {
+      "check": "all33 required report sections",
+      "passed": true
+    },
+    {
+      "check": "decision records referenced",
+      "passed": true
+    },
+    {
+      "check": "development log append-only",
+      "passed": true
+    },
+    {
+      "check": "result and next in docs/development-log.md",
+      "passed": true
+    },
+    {
+      "check": "result and next in docs/research/atlas-research-map.md",
+      "passed": true
+    },
+    {
+      "check": "result and next in docs/architecture.md",
+      "passed": true
+    },
+    {
+      "check": "result and next in docs/research/atlas-research-state.md",
+      "passed": true
+    },
+    {
+      "check": "result and next in docs/product-direction.md",
+      "passed": true
+    },
+    {
+      "check": "local report references resolve",
+      "passed": true
+    },
+    {
+      "check": "all original non-navigation files unchanged after regression",
+      "passed": true
+    },
+    {
+      "check": "sources unchanged after regression",
+      "passed": true
+    },
+    {
+      "check": "accepted store unchanged after regression",
+      "passed": true
+    },
+    {
+      "check": "all protected production after regression",
+      "passed": true
+    },
+    {
+      "check": "published generation and310 hashes unchanged",
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\gbsam\\Documents\\Projects\\project-meridian\\scripts\\atlas\\integrity-cost\\run.py",
+        "--check"
+      ],
+      "exitCode": 0,
+      "name": "cost-reproduction",
+      "tests": null
+    },
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\gbsam\\Documents\\Projects\\project-meridian\\scripts\\atlas\\integrity-cost\\test_measurement.py"
+      ],
+      "exitCode": 0,
+      "name": "cost-measurement-tests",
+      "tests": 8
+    },
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/validation-packing/run.py",
+        "--check"
+      ],
+      "exitCode": 0,
+      "name": "packing-reproduction",
+      "tests": null
+    },
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/validation-packing/test_model.py"
+      ],
+      "exitCode": 0,
+      "name": "packing",
+      "tests": 32
+    },
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/validation-maintenance/run.py",
+        "--check"
+      ],
+      "exitCode": 0,
+      "name": "maintenance-reproduction",
+      "tests": null
+    },
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/validation-maintenance/test_model.py"
+      ],
+      "exitCode": 0,
+      "name": "maintenance",
+      "tests": 30
+    },
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/validation-reuse/run.py",
+        "--check"
+      ],
+      "exitCode": 0,
+      "name": "validation-reuse-reproduction",
+      "tests": null
+    },
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/validation-reuse/test_proof.py"
+      ],
+      "exitCode": 0,
+      "name": "validation-reuse",
+      "tests": 36
+    },
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/component-granularity/run.py",
+        "--check"
+      ],
+      "exitCode": 0,
+      "name": "granularity-reproduction",
+      "tests": null
+    },
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/component-granularity/test_model.py"
+      ],
+      "exitCode": 0,
+      "name": "granularity",
+      "tests": 17
+    },
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/component-membership/run.py",
+        "--check"
+      ],
+      "exitCode": 0,
+      "name": "proof-reproduction",
+      "tests": null
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "scripts/atlas/component-membership/test-proof.mjs"
+      ],
+      "exitCode": 0,
+      "name": "proof",
+      "tests": 20
+    },
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/generation-scaling/run.py",
+        "--check"
+      ],
+      "exitCode": 0,
+      "name": "scaling-reproduction",
+      "tests": null
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "scripts/atlas/generation-scaling/test-experiment.mjs"
+      ],
+      "exitCode": 0,
+      "name": "scaling",
+      "tests": 13
+    },
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/measured-architecture/test_assess.py"
+      ],
+      "exitCode": 0,
+      "name": "assessment",
+      "tests": 10
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "pilots/atlas/tryfan/tests/acceptance.test.mjs"
+      ],
+      "exitCode": 0,
+      "name": "s6",
+      "tests": 7
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "pilots/atlas/tryfan/tests/catalogue.test.mjs",
+        "pilots/atlas/tryfan/tests/query.test.mjs",
+        "pilots/atlas/tryfan/tests/lifecycle.test.mjs",
+        "pilots/atlas/tryfan/tests/http.test.mjs",
+        "pilots/atlas/tryfan/tests/publication.test.mjs",
+        "pilots/atlas/tryfan/tests/restart.test.mjs"
+      ],
+      "exitCode": 0,
+      "name": "s1-s5",
+      "tests": 121
+    },
+    {
+      "args": [
+        "node",
+        "pilots/atlas/tryfan/tests/browser-s6.mjs"
+      ],
+      "exitCode": 0,
+      "name": "s6-browser",
+      "tests": null
+    },
+    {
+      "args": [
+        "node",
+        "pilots/atlas/tryfan/tests/publication-browser.mjs"
+      ],
+      "exitCode": 0,
+      "name": "s5-browser",
+      "tests": null
+    },
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "pilots/atlas/tryfan/adapters/test_native.py"
+      ],
+      "exitCode": 0,
+      "name": "native",
+      "tests": 9
+    },
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/regional-pilot-plan/test_plan.py"
+      ],
+      "exitCode": 0,
+      "name": "planning",
+      "tests": 22
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "scripts/atlas/test_semantic_evidence_contract.mjs",
+        "scripts/atlas/test_terrain_hierarchy_contract.mjs",
+        "scripts/atlas/test_terrain_runtime.mjs",
+        "scripts/atlas/test_tryfan_terrain.mjs"
+      ],
+      "exitCode": 0,
+      "name": "frozen",
+      "tests": 64
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "scripts/atlas/test_qualified_query_proof.mjs"
+      ],
+      "exitCode": 0,
+      "name": "qualified",
+      "tests": 17
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "scripts/atlas/test_local_persistent_tryfan.mjs"
+      ],
+      "exitCode": 0,
+      "name": "persistent",
+      "tests": 18
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "scripts/atlas/exe-water-query-proof/test-proof.mjs"
+      ],
+      "exitCode": 0,
+      "name": "exe",
+      "tests": 20
+    },
+    {
+      "args": [
+        "node",
+        "pilots/atlas/tryfan/measure_s5.mjs",
+        "--check"
+      ],
+      "exitCode": 0,
+      "name": "s5-reproduction",
+      "tests": null
+    },
+    {
+      "args": [
+        "npx.cmd",
+        "tsc",
+        "-p",
+        "scripts/atlas/semantic-evidence/tsconfig.json"
+      ],
+      "exitCode": 0,
+      "name": "semantic-types",
+      "tests": null
+    },
+    {
+      "args": [
+        "npm.cmd",
+        "run",
+        "lint"
+      ],
+      "exitCode": 0,
+      "name": "lint",
+      "tests": null
+    },
+    {
+      "args": [
+        "npm.cmd",
+        "run",
+        "build"
+      ],
+      "exitCode": 0,
+      "name": "build",
+      "tests": null
+    },
+    {
+      "args": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0,
+      "name": "diff",
+      "tests": null
+    }
+  ],
+  "decision": "C - ASSESSMENT RESOLVED",
+  "errors": [],
+  "experimentHashes": {
+    "docs/research/atlas-integrity-cost-baseline.json": "031349897d52325627a2c70aff1121bc49f63aebe7dafaa0f23b479584b77f27",
+    "docs/research/atlas-integrity-cost-decisions.json": "bc4ee547d35870e1822cebf2ab276d8360df71d83abec499844c6f2ae730cd60",
+    "docs/research/atlas-integrity-cost-results.json": "c1841fc6c5965eb0575424829d6f1f263a8b143107db8a77847b5e8df587176c",
+    "docs/research/atlas-integrity-cost.md": "58b99a7e19eecdfe4589ffdf8e7520307c32cd0cb5b9c2bd32d5dcc8bcd064b9",
+    "scripts/atlas/integrity-cost/README.md": "5d3294367f90419e674a28f7566d3539f7e00bba3868bdda6fbd7e6fc83cf842",
+    "scripts/atlas/integrity-cost/failures.mjs": "c6020491abc339fc0fe5234d92eb09f90ba1bf25cb30f3d3804b8f71446355e1",
+    "scripts/atlas/integrity-cost/metadata-worker.py": "22b05795f83280f6d1be7c05fed076b75121f4b03aad28fc00276956f25c390f",
+    "scripts/atlas/integrity-cost/metadata.py": "a1d41f7e742e964defc8330d330ff02090cf9950a509a570e39a551d6cb576e7",
+    "scripts/atlas/integrity-cost/meter.mjs": "794d9162b3cb657eba352de4a1b9aa9fef58c9fd14ebca7972a81cd8057f9250",
+    "scripts/atlas/integrity-cost/plan.json": "48f3cc4b0c3ae8cf2da7d5494ef4352b5d1f045bbca165b820b6ea8c6baaafce",
+    "scripts/atlas/integrity-cost/report.py": "ca111904c450533ff9e7853626d2e46bdae604e6a0bdde1787783967ffe9a131",
+    "scripts/atlas/integrity-cost/run.py": "672da35f4294a036e66f0abf18354d611b9af8cbd4a5538c4a4c90f852bae5eb",
+    "scripts/atlas/integrity-cost/test_measurement.py": "d9b83642f675fe8db72f40422e968324076a023b3830f6a22b4cc4e47da529cf",
+    "scripts/atlas/integrity-cost/validate.py": "be28d903aa20d3a3bbb0f42155468c6690b7de86a6d461c7c06a71d290af1b8c",
+    "scripts/atlas/integrity-cost/worker.mjs": "7ca3d7c23b0f775e0fca28942620b498fb19dbf1542bcaa7f9af5a9c2b326d3a"
+  },
+  "missingReferences": [],
+  "nextTask": "Atlas retained regional expansion and source-accountability assessment",
+  "postValidationAudit": {
+    "allOtherArtifactHashesUnchanged": true,
+    "files": [
+      {
+        "currentSha256": "c1841fc6c5965eb0575424829d6f1f263a8b143107db8a77847b5e8df587176c",
+        "path": "docs/research/atlas-integrity-cost-results.json",
+        "previousSha256": "994cf3068814e914ae35a8b29267e6e2f21ba3c2881f8e62b01960b14b80f083"
+      },
+      {
+        "currentSha256": "bc4ee547d35870e1822cebf2ab276d8360df71d83abec499844c6f2ae730cd60",
+        "path": "docs/research/atlas-integrity-cost-decisions.json",
+        "previousSha256": "c369b928db925e38c365af925f44748c13965c6e6a8976385dc752107c3fc92d"
+      },
+      {
+        "currentSha256": "ca111904c450533ff9e7853626d2e46bdae604e6a0bdde1787783967ffe9a131",
+        "path": "scripts/atlas/integrity-cost/report.py",
+        "previousSha256": "e583d700520244c5c0276ece0e94771df35b51190f57b45e8bb0cd3cb40b1fae"
+      }
+    ],
+    "jsonSemanticsUnchanged": true,
+    "measuredCodePlanAndRawUnchanged": true,
+    "reason": "Enforce UTF-8/LF in generated JSON; corrected temporary encoding drift before commit",
+    "reportContentUnchanged": true
+  },
+  "preservedTrackedFiles": 918,
+  "protectedHashes": 113,
+  "publishedGeneration": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+  "retainedVerification": {
+    "artifacts": 310,
+    "bytes": 42473107
+  },
+  "schema": "atlas-integrity-cost-validation/v1",
+  "sourceAdmission": {
+    "groups": {
+      "Complete retained Exe directory": {
+        "bytes": 10295691,
+        "files": 66,
+        "verifiedEntriesSha256": "7043358dd1d3c10efe1b3483ac65e6ec2b5d2c637c4eff5f3d7a6df77082794a"
+      },
+      "July native post-L2A RGB and SCL": {
+        "bytes": 714544,
+        "files": 4,
+        "verifiedEntriesSha256": "c91c42dcad464a78a200ee6ef0a945e0b246eff75830efa2b8ed6e10a47e060f"
+      },
+      "Lab010 existing natural-colour preparation": {
+        "bytes": 1305121,
+        "files": 3,
+        "verifiedEntriesSha256": "86edf76941cbf6b48bc49e198dceb3f64debd0a7200ab3c83df32d06823113ee"
+      },
+      "Parked Swiss metadata only": {
+        "bytes": 19357606,
+        "files": 112,
+        "verifiedEntriesSha256": "e0179dbb4695a66bbf3cb61f2a215d88dc45bdcfd9c09e886da9fd0c9d6fc2cc"
+      },
+      "Pinned Exe sources/documents": {
+        "bytes": 9892590,
+        "files": 31,
+        "verifiedEntriesSha256": "0e1301af8fcdb00f126ba2886216b2a96bfdd68de71e14c6079beece12e6342a"
+      },
+      "SWISSIMAGE manifest": {
+        "bytes": 218993,
+        "files": 1,
+        "verifiedEntriesSha256": "9e3dcb15bd21260896eab7be966f8fdc59cf2e729ecc952fbc60f489c4873225"
+      },
+      "SWISSIMAGE prepared": {
+        "bytes": 1564233043,
+        "files": 1084,
+        "verifiedEntriesSha256": "944ee3136c7ac91224b59ec369fd8bc90e4bbd299a51b65d6a09a8395a35a327"
+      },
+      "SWISSIMAGE source": {
+        "bytes": 186259028,
+        "files": 4,
+        "verifiedEntriesSha256": "9edd9aaf20eb3481b5b9aec077e715d1d350d73cd4885474cac24cabeec5f203"
+      },
+      "Tryfan native semantic crop and habitat": {
+        "bytes": 563835,
+        "files": 2,
+        "verifiedEntriesSha256": "1d4388d183544fd3a135bde05dece5b6950bfcd77e969c2ef518cd5df98d5771"
+      },
+      "Tryfan source and pinned common samples": {
+        "bytes": 16046943,
+        "files": 5,
+        "verifiedEntriesSha256": "16bbf4ef3222be6619ccfb316e0d5b8e7c86a117476d14d98fae76c61a222e1d"
+      },
+      "Welsh prepared terrain": {
+        "bytes": 23889573,
+        "files": 295,
+        "verifiedEntriesSha256": "6091994b08ed611dd1a44d4be1700f2858d9eb197a5c248189f97a5256f2b593"
+      }
+    },
+    "noWritesOrAcquisition": true,
+    "uniqueFiles": 1575
+  },
+  "startingCheckpoint": "eb3459353b40a1305928a870645d5d5d3be3d114",
+  "testCount": 444
+}

@@ -1,0 +1,361 @@
+{
+  "acceptedStoreHashes": {
+    "artifacts/208cc2a8ac76aa06e448c841558cf5136a1881354854417db99bac083f1766b9.png": "208cc2a8ac76aa06e448c841558cf5136a1881354854417db99bac083f1766b9",
+    "artifacts/6ead2e9b3a44acc35506c376a58d36dfad2695a02e02f2111fecea4f446d2475.json": "6ead2e9b3a44acc35506c376a58d36dfad2695a02e02f2111fecea4f446d2475",
+    "current.json": "29ccaafa92093133e8db461c4863e3ec78d154481e36caa336599a915f38ca77",
+    "generations/2ffa20f9ac33123c3babb62381ba4559cbd045fb180d978a9ed6228514ed9b92.json": "2ffa20f9ac33123c3babb62381ba4559cbd045fb180d978a9ed6228514ed9b92",
+    "generations/3408e5e9909c47b7e16d9d136f39cffa548c86808893468aa4a0de3d599c1f8c.json": "3408e5e9909c47b7e16d9d136f39cffa548c86808893468aa4a0de3d599c1f8c",
+    "generations/5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06.json": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+    "generations/6d8a127e4924d3b165f143fbeaab39467e4b0e45addf706e648e9c2c2bc948b6.json": "6d8a127e4924d3b165f143fbeaab39467e4b0e45addf706e648e9c2c2bc948b6",
+    "generations/76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431.json": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+    "generations/e0e2d20a1d065c713e954283443c8a7762dd91ab00fa5856b1fe75d1860a51be.json": "e0e2d20a1d065c713e954283443c8a7762dd91ab00fa5856b1fe75d1860a51be",
+    "generations/e967c5066f42839b5cd50bd76df225c2bc0736b3ebd65706f9fd0adad3b2f53f.json": "e967c5066f42839b5cd50bd76df225c2bc0736b3ebd65706f9fd0adad3b2f53f",
+    "locators/2ffa20f9ac33123c3babb62381ba4559cbd045fb180d978a9ed6228514ed9b92.json": "14d703d77c17cff88f06eb14eed753d06fbbc1a1594cd617292974f869faaf78",
+    "locators/3408e5e9909c47b7e16d9d136f39cffa548c86808893468aa4a0de3d599c1f8c.json": "14d703d77c17cff88f06eb14eed753d06fbbc1a1594cd617292974f869faaf78",
+    "locators/5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06.json": "14d703d77c17cff88f06eb14eed753d06fbbc1a1594cd617292974f869faaf78",
+    "locators/6d8a127e4924d3b165f143fbeaab39467e4b0e45addf706e648e9c2c2bc948b6.json": "14d703d77c17cff88f06eb14eed753d06fbbc1a1594cd617292974f869faaf78",
+    "locators/76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431.json": "14d703d77c17cff88f06eb14eed753d06fbbc1a1594cd617292974f869faaf78",
+    "locators/e0e2d20a1d065c713e954283443c8a7762dd91ab00fa5856b1fe75d1860a51be.json": "14d703d77c17cff88f06eb14eed753d06fbbc1a1594cd617292974f869faaf78",
+    "locators/e967c5066f42839b5cd50bd76df225c2bc0736b3ebd65706f9fd0adad3b2f53f.json": "14d703d77c17cff88f06eb14eed753d06fbbc1a1594cd617292974f869faaf78"
+  },
+  "architecture": "C - ARCHITECTURE DIRECTION ESTABLISHED",
+  "authoritativeHashes": {
+    "docs/research/atlas-component-granularity.md": "831e3965d7cdc871e9883cdd73f3fdca8c0dc8be5bfa20a1547dc95aaa11b56b",
+    "docs/research/atlas-component-membership.md": "3c72d52657455abeb0a126cdc5c4f889f1897271ca166d02943fc33368e48c66",
+    "docs/research/atlas-derived-understanding-lifecycle.md": "aee8a563754e3471cbb24a25ea1463eb9cee3d1606be4ed2e3cb1fe62414b3a3",
+    "docs/research/atlas-generation-scaling.md": "bf75df02b2945507bbf94cf5c241145b52e168ecb4f5ae6ca5dbc15f81c1d981",
+    "docs/research/atlas-measured-storage-processing-serving.md": "1696fa267595d6974adbe09a77f616ebc61de1e770372e34478b0db61916b9a7",
+    "docs/research/atlas-storage-processing-serving-requirements.md": "826ce49eab42c37d62b0a74762fdd6fa0636ebc1cbd2ad5d8ef3704ef829978a",
+    "docs/research/atlas-world-model-architecture-synthesis.md": "ba074a8a1fa88c256780281314b3a1ca4a8bc2d3e0bcdcf75ad512b733d2d8c1",
+    "docs/research/tryfan-pilot-s1.md": "acfe5160a3eb024ab0d0cd14f9502842eb552872683e6738e7c2c855079d99e2",
+    "docs/research/tryfan-pilot-s2.md": "0badb0165a8064d00bc6c439ffdd53039ec22981525607d2e6e0e085d1499100",
+    "docs/research/tryfan-pilot-s3.md": "e443005b9efb4e0ce3fa7a0bf988faacd1da6f5f1fdc3e49e90d869514f2df5d",
+    "docs/research/tryfan-pilot-s4.md": "ad4885b17c802d1dc03735719b7579c1a02a2c176ce16b3165961af9933ea5f3",
+    "docs/research/tryfan-pilot-s5.md": "cc719fda3be8f8115b3f419ab1bc327ebeb0981a1b7604e534f3a5aeb5e46325",
+    "docs/research/tryfan-pilot-s6.md": "8f44bcaa535d97510cb9759653cba80fa1d5837a0db2a0a87ef8ded2678d7eef",
+    "pilots/atlas/tryfan/catalogue.mjs": "c8d52c9355bc030ae0e97f8767cb62088830606acdc39c6b32fb09e6edcbe52b",
+    "pilots/atlas/tryfan/delivery-schema.mjs": "46030ddc81374123ef9b948ea04075435567b6c5250b40a95e0083cf31e8b48f",
+    "pilots/atlas/tryfan/dependencies.mjs": "6f07d7f48e1dc94eb08e1f1a3b74de29acd3053a60ed169ee4be4c57b93940d9",
+    "pilots/atlas/tryfan/derivations.mjs": "c750339fb121626964bb20dc173bbdc4b16d30b0b8ec0bba55ad3045d4a075c3",
+    "pilots/atlas/tryfan/generations.mjs": "1b50f5d879d6ed5fc39d9a42cf56dec9ea103c8b928876fb8585795897e5d03d",
+    "pilots/atlas/tryfan/update-schema.mjs": "9bf6568762482a4bb24d20fcbb449a6a7f8db1a4d7e26791089073cb51757cfa",
+    "pilots/atlas/tryfan/world.mjs": "f2fd467bb3637e03e36a06faf44dc43bf6cdb2ed02bddcf91282b92800aba495",
+    "scripts/atlas/component-granularity/model.py": "d65e5f23e20e8f2732dcabe6e4f66aab428fa6a42939d2dd667a5797975f5295",
+    "scripts/atlas/component-membership/core.mjs": "59f4a350d3f0c3fbd95a75b1fa4a7b8ac997d9f68d79a214a687e421a76a6842"
+  },
+  "branch": "main",
+  "canonicalThreads": 42,
+  "clean": true,
+  "current": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+  "divergence": [
+    0,
+    0
+  ],
+  "generationBytes": {
+    "bytes": 5658085,
+    "files": 7
+  },
+  "historicalLimitations": [
+    "Single-writer/local process failures, not power loss or distributed atomicity",
+    "Current-ancestry serving only;16context limit",
+    "No query/byte cache;conservative metadata validation",
+    "Two probes/two methods;no arbitrary derivation engine",
+    "Unknown epochs/datum/source rights remain qualified",
+    "Appearance unresolved/non-blocking;Swiss multiview parked",
+    "Lab010 original fixed-camera gate pending, separate from pilot portrayal"
+  ],
+  "history": [
+    {
+      "bytes": 1241281,
+      "generation": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+      "parent": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+      "results": 6,
+      "serving": true,
+      "sha256": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+      "stage": "regional"
+    },
+    {
+      "bytes": 1212494,
+      "generation": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+      "parent": "6d8a127e4924d3b165f143fbeaab39467e4b0e45addf706e648e9c2c2bc948b6",
+      "results": 4,
+      "serving": true,
+      "sha256": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+      "stage": "common"
+    },
+    {
+      "bytes": 1091184,
+      "generation": "6d8a127e4924d3b165f143fbeaab39467e4b0e45addf706e648e9c2c2bc948b6",
+      "parent": "e0e2d20a1d065c713e954283443c8a7762dd91ab00fa5856b1fe75d1860a51be",
+      "results": 4,
+      "serving": true,
+      "sha256": "6d8a127e4924d3b165f143fbeaab39467e4b0e45addf706e648e9c2c2bc948b6",
+      "stage": "common"
+    },
+    {
+      "bytes": 1085705,
+      "generation": "e0e2d20a1d065c713e954283443c8a7762dd91ab00fa5856b1fe75d1860a51be",
+      "parent": "2ffa20f9ac33123c3babb62381ba4559cbd045fb180d978a9ed6228514ed9b92",
+      "results": 4,
+      "serving": false,
+      "sha256": "e0e2d20a1d065c713e954283443c8a7762dd91ab00fa5856b1fe75d1860a51be",
+      "stage": "common"
+    },
+    {
+      "bytes": 343264,
+      "generation": "2ffa20f9ac33123c3babb62381ba4559cbd045fb180d978a9ed6228514ed9b92",
+      "parent": "3408e5e9909c47b7e16d9d136f39cffa548c86808893468aa4a0de3d599c1f8c",
+      "results": 0,
+      "serving": false,
+      "sha256": "2ffa20f9ac33123c3babb62381ba4559cbd045fb180d978a9ed6228514ed9b92",
+      "stage": "registration"
+    },
+    {
+      "bytes": 342954,
+      "generation": "3408e5e9909c47b7e16d9d136f39cffa548c86808893468aa4a0de3d599c1f8c",
+      "parent": "e967c5066f42839b5cd50bd76df225c2bc0736b3ebd65706f9fd0adad3b2f53f",
+      "results": 0,
+      "serving": false,
+      "sha256": "3408e5e9909c47b7e16d9d136f39cffa548c86808893468aa4a0de3d599c1f8c",
+      "stage": "registration"
+    },
+    {
+      "bytes": 341203,
+      "generation": "e967c5066f42839b5cd50bd76df225c2bc0736b3ebd65706f9fd0adad3b2f53f",
+      "parent": null,
+      "results": 0,
+      "serving": false,
+      "sha256": "e967c5066f42839b5cd50bd76df225c2bc0736b3ebd65706f9fd0adad3b2f53f",
+      "stage": "registration"
+    }
+  ],
+  "inventory": {
+    "artifacts": 310,
+    "families": 5,
+    "representations": 8
+  },
+  "locators": {
+    "bytes": 328020,
+    "files": 7
+  },
+  "originalS6Reads": {
+    "milliseconds": 250.02179999999998,
+    "phase": "initialized",
+    "reads": {
+      "external-artifacts": {
+        "bytes": 7242912,
+        "calls": 10
+      },
+      "generations": {
+        "bytes": 20149778,
+        "calls": 26
+      },
+      "locators": {
+        "bytes": 93720,
+        "calls": 2
+      },
+      "runtime-code-and-metadata": {
+        "bytes": 4337180,
+        "calls": 110
+      }
+    },
+    "responseBytes": 32836
+  },
+  "pilot": "CLOSED / ACCEPTED",
+  "planSha256": "cc67c4c513d9233d966143fafa2004fe7f2b49a7b80c5dfb9c1d8ffe4b9d2564",
+  "portrayals": {
+    "bytes": 3057491,
+    "files": 2
+  },
+  "previousExperiment": "35e4fbd",
+  "previousFullValidation": {
+    "changedRecords": [
+      2,
+      32,
+      512
+    ],
+    "recordsEach": 2048,
+    "scopedUpdates": 48
+  },
+  "previousPackingResult": {
+    "architectureDirection": "C - ARCHITECTURE DIRECTION ESTABLISHED",
+    "decision": "C - PROOF SUCCESS",
+    "materialWins": [],
+    "nextTask": "Atlas retained payload-integrity and publication-validation cost assessment",
+    "nextTaskScope": "Assessment and measurement only: recover actual retained payload/current-integrity and publication guard costs and failure/custody assumptions, separate metadata predicates from file/payload availability and hashing, identify which guarantees could justify later optimisation. Do not weaken guards, optimise receipts again, implement production infrastructure, acquire data or change accepted pilot.",
+    "nextTaskStatus": "NOT BEGUN",
+    "pilot": "CLOSED / ACCEPTED",
+    "receiptOptimisationClosed": true,
+    "records": [
+      {
+        "classification": "DECIDE NOW",
+        "conclusion": "Evaluate end-to-end lifecycle cost, not receipt count; retain exact content/rule/guarantee/trust binding and current integrity/completeness. A corrupt pack write collision is an explicit evidence-issuance failure, never permission to overwrite immutable evidence.",
+        "evidence": "4464 sequence oracle comparisons, 36 boundary comparisons and corrupt pack publication guard.",
+        "id": "N17"
+      },
+      {
+        "classification": "PROVISIONAL DIRECTION",
+        "conclusion": "Full validation is the provisional default for the measured lightweight-rule workloads; this receipt-optimisation line is CLOSED pending new evidence.",
+        "evidence": "The frozen criterion requires at least 10% median paired saving and positive savings in every repeat at both high-medium and high-long. Neither representation passes: [].",
+        "id": "P11"
+      },
+      {
+        "classification": "DEFER PENDING EVIDENCE",
+        "conclusion": "Real payload-integrity/availability costs, more expensive predicates, custody/trust boundaries, deployed latency, arbitrary graphs and retention/retirement obligations. No database, cloud or production receipt store selected.",
+        "evidence": "Metadata-only synthetic model and unchanged population-wide integrity floor; RSS unknown.",
+        "id": "D11"
+      },
+      {
+        "classification": "REJECT",
+        "conclusion": "Adopting incremental validation from row savings alone, excluding pack/directory costs, permanent valid booleans, untrusted candidate-selected anchors, skipped current hashes, stale-as-false or ancestry-dependent history. No further receipt representation to prolong this optimisation line after a negative materiality result.",
+        "evidence": "Four independently stored representations; all earlier negative evidence remains authoritative.",
+        "id": "R11"
+      }
+    ],
+    "schema": "atlas-validation-packing-decisions/v1",
+    "strategy": "Full validation is the provisional default for the measured lightweight-rule workloads; this receipt-optimisation line is CLOSED pending new evidence."
+  },
+  "priorProof": {
+    "checks": 77,
+    "creationLargestMsRange": [
+      478,
+      515
+    ],
+    "fullRelationships": 64,
+    "incrementalRelationships": 1,
+    "issuer": "full validation before every trust root",
+    "localUpdateRows": 128,
+    "maxComponents": 192,
+    "maxRows": 12288,
+    "proposals": 46,
+    "tests": 374
+  },
+  "priorValidation": {
+    "checks": 77,
+    "tests": 374
+  },
+  "productionHashes": 113,
+  "products": [
+    {
+      "groups": {
+        "tiles": {
+          "bytes": 23889573,
+          "maxBytes": 112921,
+          "medianBytes": 84234,
+          "minBytes": 8236,
+          "objects": 295,
+          "p95Bytes": 100999.6
+        }
+      },
+      "id": "tryfan-welsh-regional-v2",
+      "manifest": "derived/atlas/tryfan/tryfan-welsh-regional-v2/manifest.json",
+      "manifestBytes": 87014,
+      "manifestSha256": "b254a21b1ec346cc07b43d269d937b059851e95ac168565359a81d3872c69e54",
+      "payloadFilesStatChecked": 295,
+      "revision": "db8e4d87b5fa609d455d1e0f8ec3fdebc834579a7e102f69f4d0b0283efa690c"
+    },
+    {
+      "groups": {
+        "masks": {
+          "bytes": 238866,
+          "maxBytes": 481,
+          "medianBytes": 464,
+          "minBytes": 149,
+          "objects": 547,
+          "p95Bytes": 473.0
+        },
+        "tiles": {
+          "bytes": 41855904,
+          "maxBytes": 158556,
+          "medianBytes": 76446,
+          "minBytes": 19377,
+          "objects": 547,
+          "p95Bytes": 101230.59999999998
+        }
+      },
+      "id": "riffelhorn-regional-terrain-v1",
+      "manifest": "derived/atlas/riffelhorn/riffelhorn-regional-terrain-v1/manifest.json",
+      "manifestBytes": 222168,
+      "manifestSha256": "778745c36f2208e72a28a99923d00d81fcd0bd7f90e8759ba3f03362ccfc4627",
+      "payloadFilesStatChecked": 1094,
+      "revision": "4fc837f299271c7238591865a393f98facc6fa7b93d9cc75305160df900b1fe5"
+    },
+    {
+      "groups": {
+        "tiles": {
+          "bytes": 930914852,
+          "maxBytes": 133755,
+          "medianBytes": 82079,
+          "minBytes": 761,
+          "objects": 11429,
+          "p95Bytes": 100601.2
+        }
+      },
+      "id": "riffelhorn-swiss-support-v1",
+      "manifest": "derived/atlas/riffelhorn/riffelhorn-swiss-support-v1/manifest.json",
+      "manifestBytes": 1897650,
+      "manifestSha256": "30413b6698c1e75e27fd169f61925d8d60044fa14f444fb072b652c54816e106",
+      "payloadFilesStatChecked": 11429,
+      "revision": "1a44a0644de1bde73a3ba84d1b761dc0aa17d48cc971e5f6b5d2c14fb329d7ea"
+    },
+    {
+      "groups": {
+        "tiles": {
+          "bytes": 327636998,
+          "maxBytes": 161226,
+          "medianBytes": 122200.0,
+          "minBytes": 11890,
+          "objects": 2730,
+          "p95Bytes": 138315.9
+        }
+      },
+      "id": "riffelhorn-copernicus-common-v1",
+      "manifest": "derived/atlas/riffelhorn/riffelhorn-copernicus-common-v1/manifest.json",
+      "manifestBytes": 450369,
+      "manifestSha256": "9393fbadf807592ed67e94408d82bc0f508d4a29d7aa90cf78e605b2053bb177",
+      "payloadFilesStatChecked": 2730,
+      "revision": "8f002dcbdeceb6aa37cc9eeef9f2d2060193b1eff7922ddb1d0535a6b8030da2"
+    },
+    {
+      "groups": {
+        "fields": {
+          "bytes": 1294380168,
+          "maxBytes": 2863862,
+          "medianBytes": 2724499.0,
+          "minBytes": 35293,
+          "objects": 542,
+          "p95Bytes": 2788733.05
+        },
+        "tiles": {
+          "bytes": 269852875,
+          "maxBytes": 703045,
+          "medianBytes": 554853.0,
+          "minBytes": 9150,
+          "objects": 542,
+          "p95Bytes": 642900.3999999999
+        }
+      },
+      "id": "riffelhorn-swissimage-baseline-v1",
+      "manifest": "derived/atlas/riffelhorn/riffelhorn-swissimage-baseline-v1/manifest.json",
+      "manifestBytes": 218993,
+      "manifestSha256": "3c8b50fb9d7721b678abc46b9450495b417ccafff15d4ee8a67d9d6a3fee4934",
+      "payloadFilesStatChecked": 1084,
+      "revision": "f6edd630206ed02f255176935d72126cbc6ad7987b12d2986edbe6d05619bc1b"
+    }
+  ],
+  "retainedBaseline": "Recovered from clean 38f9ba7 and pinned unchanged accepted files; no pilot writes",
+  "reuse": {
+    "derivedRecomputedPerS5Update": 2,
+    "derivedReusedPerS5Update": 2,
+    "scientificArtifactsChanged": 0,
+    "scientificArtifactsReused": 310
+  },
+  "schema": "atlas-integrity-cost-baseline/v1",
+  "sources": {
+    "artifacts": 310,
+    "bytes": 42473107
+  },
+  "startingCheckpoint": "eb3459353b40a1305928a870645d5d5d3be3d114",
+  "startingCommit": "35e4fbd6730acf43ad3e0e33c69111f7431ec896",
+  "upstream": "origin/main"
+}

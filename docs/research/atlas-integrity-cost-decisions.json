@@ -1,0 +1,31 @@
+{
+  "schema": "atlas-integrity-cost-decisions/v1",
+  "decision": "C - ASSESSMENT RESOLVED",
+  "fullValidationDefault": true,
+  "receiptOptimisationClosed": true,
+  "anotherValidationStudyJustified": false,
+  "records": [
+    {
+      "id": "N18",
+      "classification": "DECIDE NOW",
+      "conclusion": "Separate present byte identity and availability, metadata consistency, publication acceptance, physical truth and future custody. A name does not enforce immutability."
+    },
+    {
+      "id": "P12",
+      "classification": "PROVISIONAL DIRECTION",
+      "conclusion": "Retain full validation for the next bounded local batch regional integration. No further validation study is justified now; receipt optimisation remains closed. Preserve bounded explicit component membership."
+    },
+    {
+      "id": "D12",
+      "classification": "DEFER PENDING EVIDENCE",
+      "conclusion": "Remote custody, cold I/O, power loss, multi-writer durability, larger real integrated GIS closure, licensing availability and backend decisions need new evidence. A separate verification-boundary study requires a concrete capability obstruction or custody contradiction."
+    },
+    {
+      "id": "R12",
+      "classification": "REJECT",
+      "conclusion": "Do not infer hashing dominance from counters, truth or licence validity from checksums, invalidity from staleness, world acceptance from a payload sweep, or permission for more receipt tuning from a hypothetical future gain."
+    }
+  ],
+  "nextTask": "Atlas retained regional expansion and source-accountability assessment",
+  "nextTaskStatus": "NOT BEGUN"
+}
