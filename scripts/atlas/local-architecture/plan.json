@@ -1,0 +1,39 @@
+{
+  "schema": "atlas-local-architecture-decision-plan/v1",
+  "startingCheckpoint": "d6a5514cdbee799d9a018b1660080568537428fa",
+  "frozenBeforeComparisonAndSelection": true,
+  "uncertainty": "Which local authority, indexing, processing and query boundaries make the accepted retained workloads maintainable without weakening scientific meaning, publication eligibility or historical pins?",
+  "criteria": {
+    "mandatory": ["unchanged scientific contracts and native qualifications", "immutable exact identities independent of data location", "full validation and committed-publication eligibility", "coherent pins/history and interruption isolation", "one local writer, offline restart, explicit missing-volume failures", "bounded memory and reproducible setup", "single documented authority and rebuildable accelerators", "no runtime implementation in this decision"],
+    "preferences": ["existing dependencies and tools", "small explicit modules", "selective metadata and reverse-dependency access", "portable laptop/external roots", "reversible indexes and versioned schema", "measured costs including initial build"],
+    "nonRequirements": ["global service throughput", "multi-writer or remote filesystem", "unrestricted scientific source fusion", "production crash durability", "public HTTP interface"]
+  },
+  "settled": ["immutable payload files", "qualified shared metadata", "explicit component membership with zero ancestry", "full validation default", "closed receipt optimization", "separate clocks and scoped dependencies"],
+  "alternatives": ["canonical files plus bounded ephemeral indexes", "canonical files plus rebuildable embedded metadata catalogue", "immutable payloads plus authoritative embedded transactional metadata/publication store"],
+  "comparison": {
+    "purpose": "Resolve indexed metadata build/read/storage trade-off on actual retained records; do not confuse metadata selection with native scientific query or full publication validation.",
+    "population": "Five accepted temporal publications and their real/controlled qualified revisions, current and retained regional results, actual prepared Riffelhorn feature geometries; no duplicated synthetic population.",
+    "methods": ["structured-file full scan", "parse once and in-memory identity/reverse lookup", "Python standard-library SQLite identity/reverse/spatial-bound candidate indexes"],
+    "repetitions": 5,
+    "cases": ["exact feature/revision", "spatial narrow and broad with exact filtering", "physical known versus unknown", "pinned historical membership", "reverse dependency selection", "cold reopen", "atomic index build rollback and unavailable index"],
+    "acceptance": "All candidate identities and retained qualification bodies must agree with scan; any disagreement prevents using timing as support. Report build/verification, bytes, memory and cold/warm costs separately. Small noisy timing differences alone cannot select technology.",
+    "stop": "One bounded comparison resolves material index/authority trade-offs; no optimizer, runtime, new receipt scheme or large benchmark matrix. Choose reversible concrete implementation boundaries or name a genuine blocker."
+  },
+  "externalOutputRoot": "C:/Users/gbsam/Documents/Codex/atlas-local-architecture-decision-v1",
+  "workloads": [
+    {"operation":"initial registration and verification","measuredBoundary":"Tryfan310 artifacts42,473,107B; Riff12 inputs120,347,916B and6 prepared5,605,110B; Exe temporal31 selected source/doc artifacts9,892,590B","growth":"artifact and payload population; retain sources once"},
+    {"operation":"source preparation","measuredBoundary":"Riff three byte-identical preparations median2.861s; no new raster copy","growth":"native representations and bounded extract size"},
+    {"operation":"qualified metadata insertion","measuredBoundary":"44 Riff retrieval records; temporal17 assignments20 revisions; no invented dates","growth":"unique qualified evidence/revisions, not raster pixels"},
+    {"operation":"spatial and feature lookup","measuredBoundary":"Riff point44->10 candidates; exact feature44->1; broad44->44","growth":"selectivity and exact geometry/CRS payload access"},
+    {"operation":"temporal/knowledge lookup","measuredBoundary":"477 accepted comparisons; five pins13/15/15/17/17 current rows","growth":"dated/unknown revision populations"},
+    {"operation":"dependency traversal/invalidation","measuredBoundary":"293 nodes294 edges184 active results; source fan-out36; depth3","growth":"actual input-use scope and affected closure"},
+    {"operation":"selective/full recomputation","measuredBoundary":"localized8 results reused176;24 prior full/scoped comparisons; full796 sampling calls","growth":"changed support versus full source volume"},
+    {"operation":"multi-region publication","measuredBoundary":"seven initial components; regional administrative updates changed1 reused6; temporal13 members","growth":"membership and full current validation"},
+    {"operation":"pinned current query","measuredBoundary":"33 committed-membership reads and13 components, zero ancestry; temporal complete metadata3.01-3.22MB","growth":"requested metadata, with existing full hydration acknowledged"},
+    {"operation":"historical query","measuredBoundary":"five independently resolved generations; no ancestor replay","growth":"unique retained component revisions"},
+    {"operation":"fresh restart","measuredBoundary":"three complete temporal historical replays median60.544s; NOT isolated restart latency","growth":"startup versus replay must be separated"},
+    {"operation":"interruption recovery","measuredBoundary":"S1 and multi-region/temporal pre-switch failures leave old root; single-writer process model","growth":"staging jobs and accepted eligibility, no power-loss claim"},
+    {"operation":"regional expansion","measuredBoundary":"retained Swiss11,429 tiles930,914,852B; integrity median9.61s","growth":"real archives plus active preparations, no invented request rate"}
+  ],
+  "exclusions": ["production Atlas/Weather/Traverse", "accepted evidence edits", "meridian-private", "new data", "cloud/services", "runtime slice", "validation optimization", "S7"]
+}

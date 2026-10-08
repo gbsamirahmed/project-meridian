@@ -1,0 +1,56 @@
+{
+  "method": "metadata-only stat inventory, no content reads; excludes symlinks/private-named paths",
+  "rootRole": "configured public-data, not identity",
+  "children": {
+    ".": {
+      "files": 0,
+      "bytes": 0
+    },
+    "activity-research": {
+      "files": 2266,
+      "bytes": 157282361
+    },
+    "bluesky": {
+      "files": 4,
+      "bytes": 186881967
+    },
+    "cache": {
+      "files": 1172,
+      "bytes": 63327357
+    },
+    "derived": {
+      "files": 118320,
+      "bytes": 9979497409
+    },
+    "earth-lab": {
+      "files": 6551,
+      "bytes": 1923641376
+    },
+    "experiments": {
+      "files": 4947,
+      "bytes": 14227541976
+    },
+    "route-benchmarks": {
+      "files": 11,
+      "bytes": 2212283
+    },
+    "scratch": {
+      "files": 4380,
+      "bytes": 169267346
+    },
+    "sources": {
+      "files": 390,
+      "bytes": 4403799538
+    },
+    "strava-export": {
+      "files": 341,
+      "bytes": 34779474
+    },
+    "terrain-research": {
+      "files": 385,
+      "bytes": 166167590
+    }
+  },
+  "totalBytes": 31314398677,
+  "elapsedSeconds": 26.90557699999772
+}

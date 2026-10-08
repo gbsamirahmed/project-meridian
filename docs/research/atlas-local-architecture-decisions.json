@@ -1,0 +1,21 @@
+{
+  "schema": "atlas-local-architecture-decision/v1",
+  "decision": "C — DECISION READY",
+  "authority": "Immutable canonical payload/evidence/component/publication files and one atomically replaced current+committed-eligibility root",
+  "queryCatalogue": "Rebuildable sealed SQLite epochs with unique record projections and exact generation/component joins; read-only readers; rollback-journal private build transactions",
+  "publication": "Full validation; finalized immutable files and completed index readiness before canonical root switch last; no cross-store atomicity claim; cache cannot confer eligibility",
+  "processing": "Deterministic Node/TypeScript domain library/CLI; bounded Python native GIS and SQLite stdlib adapters with explicit manifests/receipts",
+  "serving": "Pinned typed library and JSON CLI; no HTTP/daemon in first slice",
+  "roots": "Configurable logical volume roles and relative materialization locators; internal metadata/active data; optional archive volume; explicit unavailable errors",
+  "indexing": ["identity/source-scoped feature", "region/family/representation", "native/working-CRS spatial bounds followed by exact predicates", "independent temporal roles/precision/known/unknown", "generation/component/revision membership", "forward/reverse actual-use dependencies"],
+  "integrity": "Full current-byte and qualified closure checks unchanged; receipt optimization CLOSED",
+  "migration": "Separate runtime root; compatible adapters preserve all accepted scientific identities and historical bytes; new envelope identities explicitly trace import references",
+  "classifications": {
+    "DECIDE NOW": ["scientific identity/qualification preservation", "authority versus projection", "one coherent committed context", "exact predicates/full validation", "portable identity and explicit missing state"],
+    "PROVISIONAL DIRECTION": ["chosen hybrid SQLite/filesystem local runtime", "Node domain/Python native-catalogue ownership", "library/CLI", "sealed epoch rebuild then canonical root last"],
+    "DEFER PENDING EVIDENCE": ["HTTP consumers", "authoritative SQL acceptance", "global/dense temporal workloads", "multiple writers/distribution", "external-drive performance", "incremental catalogue construction"],
+    "REJECT": ["DB row as publication", "filesystem+DB atomicity assumption", "payload BLOB default", "absolute drive identity", "receipt reopening by hypothetical benefit", "unqualified fusion/history rewrite"]
+  },
+  "nextTask": "Atlas maintainable local runtime — first end-to-end vertical slice",
+  "nextTaskStatus": "NOT BEGUN"
+}

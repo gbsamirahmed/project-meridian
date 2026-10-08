@@ -1,0 +1,19 @@
+{
+  "cpu": {
+    "Name": "12th Gen Intel(R) Core(TM) i7-12700H",
+    "NumberOfCores": 14,
+    "NumberOfLogicalProcessors": 20
+  },
+  "memoryBytes": 16830959616,
+  "volumes": [
+    {
+      "DeviceID": "C:",
+      "DriveType": 3,
+      "Size": 1022703431680,
+      "FreeSpace": 158698692608
+    }
+  ],
+  "node": "v24.11.0",
+  "externalDrive": "Not mounted; no performance measurement or availability dependency",
+  "scope": "Capacity only; no machine identifiers or private-data access"
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Atlas maintainable local runtime — first end-to-end vertical slice",
+  "status": "NOT BEGUN",
+  "uncertainty": "Can explicit local runtime modules carry real retained qualified evidence through registration, native derivation, coherent publication, pinned queries and restart/history without proof globals or duplicate authorities?",
+  "importance": "All required scientific and visibility semantics now have bounded evidence; maintainable integration has higher value than another optional optimizer.",
+  "prerequisites": ["accepted contracts and Tryfan/Riffelhorn/multi-region/dependency/temporal evidence unchanged", "selected filesystem authority plus rebuildable SQLite architecture", "existing native tools and isolated configured runtime/scratch"],
+  "retainedBoundary": "Exact read-only Tryfan reference plus selected 4 km² Riffelhorn prepared revision357b28e705f7c2647cdf2d54467fc9ee851465814d8ed645cae30713ef9187bb/twelve inputs; one declared Horn-slope→planar-ratio stencil, one native categorical summary, one real dated glacier and unknown terrain time. No all184-result migration or acquisition.",
+  "interfaces": ["volume/artifact resolver", "canonical store/contract adapters", "sealed catalogue builder/binding", "native methods and actual-use receipts", "scoped lifecycle", "staged one-writer publisher/eligibility", "pinned query/CLI"],
+  "permittedImplementation": ["isolated offline runtime modules and schema adapters", "library/JSON CLI and existing Python worker environment", "two generations with controlled qualification revision, not physical change", "process-failure, missing-volume, recovery and independent oracle tests"],
+  "deliverable": "A maintainable two-generation real-data vertical slice, reproducible setup/commands/recovery and measured readiness decision.",
+  "acceptanceCriteria": ["exact source/qualification/provenance/rights and method/parameter identities preserved", "scoped/full recomputation agrees with independent accepted methods/tolerances", "unchanged region/components retain identity", "G0/G1 pinned answers and fresh historical replay agree", "invalid/staged/stale and interrupted updates never visible", "index installation/root races, corrupted or missing index/canonical/volume and schema failures explicit", "index rebuild reproduces qualified answers and canonical scan agreement", "full validation unchanged; costs recorded", "accepted evidence/contracts/42 statuses/113 hashes/production Atlas/Weather/Traverse protected"],
+  "stopCondition": "Stop after this first two-generation slice and regression/recovery review; no archive migration, ingestion platform, HTTP/service integration, broader coverage, cloud, private data, S7 or reopened receipts.",
+  "supportingEvidence": ["docs/research/atlas-local-architecture.md", "docs/research/atlas-regional-dependencies.md", "docs/research/atlas-temporal-integration.md"]
+}

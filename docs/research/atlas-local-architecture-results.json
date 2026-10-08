@@ -1,0 +1,791 @@
+{
+  "schema": "atlas-local-architecture-comparison/v1",
+  "planSha256": "5e5b9368b314ee1fda9c1853a6acf511633ce0379aa2ad9cbd2c28a2a401cd83",
+  "environment": {
+    "python": "3.12.6",
+    "sqlite": "3.45.3",
+    "memory": "Python tracemalloc, includes comparison setup and JSON bodies; excludes native allocations and OS page cache"
+  },
+  "sourceHashes": {
+    "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\derived\\atlas\\riffelhorn\\riffelhorn-qualified-fixture-v1\\357b28e705f7c2647cdf2d54467fc9ee851465814d8ed645cae30713ef9187bb\\features.json": "3929964622f6eaaf3ba0251d2a686ca53effc50174ed84cd2fa314d645a6d923",
+    "C:\\Users\\gbsam\\Documents\\Codex\\atlas-temporal-integration-v1\\measured-1791493425981\\components\\1cf858ab8cc59feac2c831becec884aeac22211f2102f6d85c9350f55fb6414d.json": "1cf858ab8cc59feac2c831becec884aeac22211f2102f6d85c9350f55fb6414d",
+    "C:\\Users\\gbsam\\Documents\\Codex\\atlas-temporal-integration-v1\\measured-1791493425981\\components\\d4c278a7c4c96de4aa6ada22763b27a4881b344d56abe970041f2f9ebaf3a9ae.json": "d4c278a7c4c96de4aa6ada22763b27a4881b344d56abe970041f2f9ebaf3a9ae",
+    "C:\\Users\\gbsam\\Documents\\Codex\\atlas-temporal-integration-v1\\measured-1791493425981\\components\\524514b97c3f77c6be56b50da34b634fe41c4737837ba0c630529674848331a1.json": "524514b97c3f77c6be56b50da34b634fe41c4737837ba0c630529674848331a1",
+    "C:\\Users\\gbsam\\Documents\\Codex\\atlas-temporal-integration-v1\\measured-1791493425981\\components\\8ae79bde883c6d8f02d392a35a53499d66eceb085109ff8dbebfa8df7fe4fb2f.json": "8ae79bde883c6d8f02d392a35a53499d66eceb085109ff8dbebfa8df7fe4fb2f",
+    "C:\\Users\\gbsam\\Documents\\Codex\\atlas-temporal-integration-v1\\measured-1791493425981\\components\\6c752934314c1471f75604ef27b1fba9043ab5852c2871324335b2ee5c4fe85e.json": "6c752934314c1471f75604ef27b1fba9043ab5852c2871324335b2ee5c4fe85e",
+    "C:\\Users\\gbsam\\Documents\\Codex\\atlas-temporal-integration-v1\\measured-1791493425981\\components\\c7c45ca0e960303e58376f4a3e1a30f336dafdc1147a8610efc76fd5ce007f5b.json": "c7c45ca0e960303e58376f4a3e1a30f336dafdc1147a8610efc76fd5ce007f5b",
+    "C:\\Users\\gbsam\\Documents\\Codex\\atlas-temporal-integration-v1\\measured-1791493425981\\components\\4366f967b8aa6b89c8b7e8bc7fadd0cd073a792806a718704bc6b740815d8c82.json": "4366f967b8aa6b89c8b7e8bc7fadd0cd073a792806a718704bc6b740815d8c82",
+    "C:\\Users\\gbsam\\Documents\\Codex\\atlas-temporal-integration-v1\\measured-1791493425981\\components\\e588c10e869c7a9a6dddb56b04613d33cce70e818c3e72af7309fcc065e9576c.json": "e588c10e869c7a9a6dddb56b04613d33cce70e818c3e72af7309fcc065e9576c"
+  },
+  "population": {
+    "records": 250,
+    "features": 38,
+    "temporalRevisions": 20,
+    "resultRevisions": 192,
+    "memberships": 1006,
+    "directInputEdges": 200,
+    "generations": 5
+  },
+  "preparation": {
+    "medianMs": 457.73669984191656,
+    "minMs": 457.73669984191656,
+    "maxMs": 457.73669984191656,
+    "samplesMs": [
+      457.73669984191656
+    ]
+  },
+  "sqliteBuildMs": [
+    336.53429988771677,
+    333.4512999281287,
+    330.20560001023114,
+    326.4474000316113,
+    337.86930004134774
+  ],
+  "memoryIndexBuildMs": 1.2487999629229307,
+  "footprint": {
+    "projectedJsonBytes": 2631413,
+    "sqliteBytes": 3055616,
+    "canonicalInputBytes": 9442905,
+    "sqlitePath": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-local-architecture-decision-v1\\comparison-4-1791496743076880700.sqlite",
+    "sqliteSha256": "f4d85d20d8ccdd904b840de58c42027828579e0b619e2b7bb52a81ad0950a117"
+  },
+  "queries": [
+    {
+      "query": {
+        "name": "feature",
+        "mode": "feature",
+        "value": "debris:3738"
+      },
+      "results": 2,
+      "methods": {
+        "files-parse-scan": {
+          "medianMs": 181.08840007334948,
+          "minMs": 159.9542999174446,
+          "maxMs": 213.0221000406891,
+          "samplesMs": [
+            189.20719996094704,
+            165.76469992287457,
+            159.9542999174446,
+            181.08840007334948,
+            213.0221000406891
+          ]
+        },
+        "warm-memory": {
+          "medianMs": 0.003400025889277458,
+          "minMs": 0.002499902620911598,
+          "maxMs": 0.008600065484642982,
+          "samplesMs": [
+            0.008600065484642982,
+            0.005699926987290382,
+            0.003400025889277458,
+            0.002600019797682762,
+            0.002499902620911598
+          ]
+        },
+        "warm-sqlite": {
+          "medianMs": 0.12370012700557709,
+          "minMs": 0.07990002632141113,
+          "maxMs": 0.5263998173177242,
+          "samplesMs": [
+            0.5263998173177242,
+            0.12370012700557709,
+            0.08889986202120781,
+            0.07990002632141113,
+            0.12589991092681885
+          ]
+        }
+      },
+      "qualificationBodiesAgree": true,
+      "structural": {
+        "fileBytesRequestedEachRun": 2631413,
+        "fileRecordsParsedEachRun": 250,
+        "sqliteCandidateRows": 2,
+        "exactGeometryEvaluations": 0,
+        "qualifiedBodyBytesRetrievedForComparison": 45923,
+        "nativePayloadReads": 0,
+        "ancestryTraversals": 0,
+        "scope": "logical rows/candidate bodies, not physical SQLite page I/O; geometry resident after setup"
+      }
+    },
+    {
+      "query": {
+        "name": "absent",
+        "mode": "feature",
+        "value": "absent"
+      },
+      "results": 0,
+      "methods": {
+        "files-parse-scan": {
+          "medianMs": 198.21049994789064,
+          "minMs": 175.81179994158447,
+          "maxMs": 202.74529978632927,
+          "samplesMs": [
+            177.54329997114837,
+            175.81179994158447,
+            198.21049994789064,
+            202.74529978632927,
+            201.3638000935316
+          ]
+        },
+        "warm-memory": {
+          "medianMs": 0.001200009137392044,
+          "minMs": 0.001100124791264534,
+          "maxMs": 0.005699926987290382,
+          "samplesMs": [
+            0.005699926987290382,
+            0.001800013706088066,
+            0.001200009137392044,
+            0.001100124791264534,
+            0.001200009137392044
+          ]
+        },
+        "warm-sqlite": {
+          "medianMs": 0.0475000124424696,
+          "minMs": 0.04460010677576065,
+          "maxMs": 0.1620999537408352,
+          "samplesMs": [
+            0.1620999537408352,
+            0.05519995465874672,
+            0.0475000124424696,
+            0.04569999873638153,
+            0.04460010677576065
+          ]
+        }
+      },
+      "qualificationBodiesAgree": true,
+      "structural": {
+        "fileBytesRequestedEachRun": 2631413,
+        "fileRecordsParsedEachRun": 250,
+        "sqliteCandidateRows": 0,
+        "exactGeometryEvaluations": 0,
+        "qualifiedBodyBytesRetrievedForComparison": 0,
+        "nativePayloadReads": 0,
+        "ancestryTraversals": 0,
+        "scope": "logical rows/candidate bodies, not physical SQLite page I/O; geometry resident after setup"
+      }
+    },
+    {
+      "query": {
+        "name": "physical-known",
+        "mode": "time",
+        "value": true
+      },
+      "results": 16,
+      "methods": {
+        "files-parse-scan": {
+          "medianMs": 181.8001999054104,
+          "minMs": 160.68580001592636,
+          "maxMs": 197.2261001355946,
+          "samplesMs": [
+            160.68580001592636,
+            197.2261001355946,
+            181.8001999054104,
+            169.12150010466576,
+            182.86760011687875
+          ]
+        },
+        "warm-memory": {
+          "medianMs": 0.018700025975704193,
+          "minMs": 0.017900019884109497,
+          "maxMs": 0.07129996083676815,
+          "samplesMs": [
+            0.07129996083676815,
+            0.021399930119514465,
+            0.018700025975704193,
+            0.01810002140700817,
+            0.017900019884109497
+          ]
+        },
+        "warm-sqlite": {
+          "medianMs": 0.15920004807412624,
+          "minMs": 0.14979997649788857,
+          "maxMs": 0.3472999669611454,
+          "samplesMs": [
+            0.3472999669611454,
+            0.15859981067478657,
+            0.15920004807412624,
+            0.14979997649788857,
+            0.15989993698894978
+          ]
+        }
+      },
+      "qualificationBodiesAgree": true,
+      "structural": {
+        "fileBytesRequestedEachRun": 2631413,
+        "fileRecordsParsedEachRun": 250,
+        "sqliteCandidateRows": 16,
+        "exactGeometryEvaluations": 0,
+        "qualifiedBodyBytesRetrievedForComparison": 127646,
+        "nativePayloadReads": 0,
+        "ancestryTraversals": 0,
+        "scope": "logical rows/candidate bodies, not physical SQLite page I/O; geometry resident after setup"
+      }
+    },
+    {
+      "query": {
+        "name": "physical-unknown",
+        "mode": "time",
+        "value": false
+      },
+      "results": 4,
+      "methods": {
+        "files-parse-scan": {
+          "medianMs": 164.24599988386035,
+          "minMs": 159.42860022187233,
+          "maxMs": 175.68750004284084,
+          "samplesMs": [
+            164.24599988386035,
+            164.3924000672996,
+            159.42860022187233,
+            175.68750004284084,
+            161.87929990701377
+          ]
+        },
+        "warm-memory": {
+          "medianMs": 0.009200070053339005,
+          "minMs": 0.008799834176898003,
+          "maxMs": 0.04320009611546993,
+          "samplesMs": [
+            0.04320009611546993,
+            0.010699965059757233,
+            0.009200070053339005,
+            0.00900006853044033,
+            0.008799834176898003
+          ]
+        },
+        "warm-sqlite": {
+          "medianMs": 0.05789985880255699,
+          "minMs": 0.0491999089717865,
+          "maxMs": 0.1637998502701521,
+          "samplesMs": [
+            0.1637998502701521,
+            0.05789985880255699,
+            0.049999915063381195,
+            0.06229989230632782,
+            0.0491999089717865
+          ]
+        }
+      },
+      "qualificationBodiesAgree": true,
+      "structural": {
+        "fileBytesRequestedEachRun": 2631413,
+        "fileRecordsParsedEachRun": 250,
+        "sqliteCandidateRows": 4,
+        "exactGeometryEvaluations": 0,
+        "qualifiedBodyBytesRetrievedForComparison": 39449,
+        "nativePayloadReads": 0,
+        "ancestryTraversals": 0,
+        "scope": "logical rows/candidate bodies, not physical SQLite page I/O; geometry resident after setup"
+      }
+    },
+    {
+      "query": {
+        "name": "history-0",
+        "mode": "pin",
+        "value": "bbccef9c61ddaafb33bf52ad79d1fa31684874b40bccf7d83466898a73a72bd6"
+      },
+      "results": 197,
+      "methods": {
+        "files-parse-scan": {
+          "medianMs": 159.4463000074029,
+          "minMs": 151.3935998082161,
+          "maxMs": 169.6164000313729,
+          "samplesMs": [
+            169.6164000313729,
+            151.3935998082161,
+            161.15820012055337,
+            159.4463000074029,
+            157.68949990160763
+          ]
+        },
+        "warm-memory": {
+          "medianMs": 0.003100140020251274,
+          "minMs": 0.0029001384973526,
+          "maxMs": 0.00900006853044033,
+          "samplesMs": [
+            0.00900006853044033,
+            0.005800044164061546,
+            0.0030999071896076202,
+            0.003100140020251274,
+            0.0029001384973526
+          ]
+        },
+        "warm-sqlite": {
+          "medianMs": 0.2009000163525343,
+          "minMs": 0.18640002235770226,
+          "maxMs": 0.3575000446289778,
+          "samplesMs": [
+            0.3575000446289778,
+            0.20839995704591274,
+            0.18640002235770226,
+            0.2009000163525343,
+            0.18720002844929695
+          ]
+        }
+      },
+      "qualificationBodiesAgree": true,
+      "structural": {
+        "fileBytesRequestedEachRun": 2631413,
+        "fileRecordsParsedEachRun": 250,
+        "sqliteCandidateRows": 197,
+        "exactGeometryEvaluations": 0,
+        "qualifiedBodyBytesRetrievedForComparison": 839181,
+        "nativePayloadReads": 0,
+        "ancestryTraversals": 0,
+        "scope": "logical rows/candidate bodies, not physical SQLite page I/O; geometry resident after setup"
+      }
+    },
+    {
+      "query": {
+        "name": "history-1",
+        "mode": "pin",
+        "value": "f3b3d6d987b698a0a40ff0c2566f7ddadb364a72feea2d85f5f82fa05045ed44"
+      },
+      "results": 199,
+      "methods": {
+        "files-parse-scan": {
+          "medianMs": 165.19850003533065,
+          "minMs": 149.6872000861913,
+          "maxMs": 186.017100000754,
+          "samplesMs": [
+            165.19850003533065,
+            162.5580999534577,
+            149.6872000861913,
+            180.4017999675125,
+            186.017100000754
+          ]
+        },
+        "warm-memory": {
+          "medianMs": 0.003500143066048622,
+          "minMs": 0.003200024366378784,
+          "maxMs": 0.007700175046920776,
+          "samplesMs": [
+            0.007700175046920776,
+            0.004399800673127174,
+            0.003500143066048622,
+            0.003400025889277458,
+            0.003200024366378784
+          ]
+        },
+        "warm-sqlite": {
+          "medianMs": 0.2134998794645071,
+          "minMs": 0.19489997066557407,
+          "maxMs": 0.35889982245862484,
+          "samplesMs": [
+            0.35889982245862484,
+            0.2134998794645071,
+            0.23539992980659008,
+            0.19940012134611607,
+            0.19489997066557407
+          ]
+        }
+      },
+      "qualificationBodiesAgree": true,
+      "structural": {
+        "fileBytesRequestedEachRun": 2631413,
+        "fileRecordsParsedEachRun": 250,
+        "sqliteCandidateRows": 199,
+        "exactGeometryEvaluations": 0,
+        "qualifiedBodyBytesRetrievedForComparison": 853937,
+        "nativePayloadReads": 0,
+        "ancestryTraversals": 0,
+        "scope": "logical rows/candidate bodies, not physical SQLite page I/O; geometry resident after setup"
+      }
+    },
+    {
+      "query": {
+        "name": "history-2",
+        "mode": "pin",
+        "value": "6d57b35003047aca8a4f461ad11afdc39f84944d00dd48c6620505a9799f4763"
+      },
+      "results": 202,
+      "methods": {
+        "files-parse-scan": {
+          "medianMs": 160.8285999391228,
+          "minMs": 150.4442999139428,
+          "maxMs": 177.0166999194771,
+          "samplesMs": [
+            175.00409996137023,
+            177.0166999194771,
+            160.8285999391228,
+            150.4442999139428,
+            154.04479997232556
+          ]
+        },
+        "warm-memory": {
+          "medianMs": 0.003400025889277458,
+          "minMs": 0.0029001384973526,
+          "maxMs": 0.0075998250395059586,
+          "samplesMs": [
+            0.0075998250395059586,
+            0.004500150680541992,
+            0.003400025889277458,
+            0.00300002284348011,
+            0.0029001384973526
+          ]
+        },
+        "warm-sqlite": {
+          "medianMs": 0.2204999327659607,
+          "minMs": 0.2030001487582922,
+          "maxMs": 0.3521000035107136,
+          "samplesMs": [
+            0.3521000035107136,
+            0.23680017329752445,
+            0.21760002709925175,
+            0.2204999327659607,
+            0.2030001487582922
+          ]
+        }
+      },
+      "qualificationBodiesAgree": true,
+      "structural": {
+        "fileBytesRequestedEachRun": 2631413,
+        "fileRecordsParsedEachRun": 250,
+        "sqliteCandidateRows": 202,
+        "exactGeometryEvaluations": 0,
+        "qualifiedBodyBytesRetrievedForComparison": 881529,
+        "nativePayloadReads": 0,
+        "ancestryTraversals": 0,
+        "scope": "logical rows/candidate bodies, not physical SQLite page I/O; geometry resident after setup"
+      }
+    },
+    {
+      "query": {
+        "name": "history-3",
+        "mode": "pin",
+        "value": "032157089d1df2cff54b5fa8a43c32225b8ed77b16d62c11779e0d55a2e0ff9c"
+      },
+      "results": 204,
+      "methods": {
+        "files-parse-scan": {
+          "medianMs": 167.10199997760355,
+          "minMs": 152.2039999254048,
+          "maxMs": 169.66879996471107,
+          "samplesMs": [
+            168.08620002120733,
+            167.10199997760355,
+            163.35300006903708,
+            152.2039999254048,
+            169.66879996471107
+          ]
+        },
+        "warm-memory": {
+          "medianMs": 0.003200024366378784,
+          "minMs": 0.00300002284348011,
+          "maxMs": 0.008400063961744308,
+          "samplesMs": [
+            0.008400063961744308,
+            0.004499917849898338,
+            0.003200024366378784,
+            0.00300002284348011,
+            0.00300002284348011
+          ]
+        },
+        "warm-sqlite": {
+          "medianMs": 0.2118998672813177,
+          "minMs": 0.1946000847965479,
+          "maxMs": 0.3521000035107136,
+          "samplesMs": [
+            0.3521000035107136,
+            0.21900003775954247,
+            0.2118998672813177,
+            0.1946000847965479,
+            0.1993998885154724
+          ]
+        }
+      },
+      "qualificationBodiesAgree": true,
+      "structural": {
+        "fileBytesRequestedEachRun": 2631413,
+        "fileRecordsParsedEachRun": 250,
+        "sqliteCandidateRows": 204,
+        "exactGeometryEvaluations": 0,
+        "qualifiedBodyBytesRetrievedForComparison": 896325,
+        "nativePayloadReads": 0,
+        "ancestryTraversals": 0,
+        "scope": "logical rows/candidate bodies, not physical SQLite page I/O; geometry resident after setup"
+      }
+    },
+    {
+      "query": {
+        "name": "history-4",
+        "mode": "pin",
+        "value": "e389151f04724995edb3a8e3e2905152e6b84130a9ae904a97f2d11cd417db3b"
+      },
+      "results": 204,
+      "methods": {
+        "files-parse-scan": {
+          "medianMs": 173.18299994803965,
+          "minMs": 153.50729995407164,
+          "maxMs": 205.8214999269694,
+          "samplesMs": [
+            168.86460012756288,
+            175.2170999534428,
+            205.8214999269694,
+            153.50729995407164,
+            173.18299994803965
+          ]
+        },
+        "warm-memory": {
+          "medianMs": 0.003400025889277458,
+          "minMs": 0.0032999087125062943,
+          "maxMs": 0.00809994526207447,
+          "samplesMs": [
+            0.00809994526207447,
+            0.004300149157643318,
+            0.003400025889277458,
+            0.0032999087125062943,
+            0.0033997930586338043
+          ]
+        },
+        "warm-sqlite": {
+          "medianMs": 0.22460008040070534,
+          "minMs": 0.20749983377754688,
+          "maxMs": 0.3614998422563076,
+          "samplesMs": [
+            0.3614998422563076,
+            0.25580008514225483,
+            0.22460008040070534,
+            0.21130009554326534,
+            0.20749983377754688
+          ]
+        }
+      },
+      "qualificationBodiesAgree": true,
+      "structural": {
+        "fileBytesRequestedEachRun": 2631413,
+        "fileRecordsParsedEachRun": 250,
+        "sqliteCandidateRows": 204,
+        "exactGeometryEvaluations": 0,
+        "qualifiedBodyBytesRetrievedForComparison": 896325,
+        "nativePayloadReads": 0,
+        "ancestryTraversals": 0,
+        "scope": "logical rows/candidate bodies, not physical SQLite page I/O; geometry resident after setup"
+      }
+    },
+    {
+      "query": {
+        "name": "reverse-use",
+        "mode": "reverse",
+        "value": "00c35079acdbc6ca426c26b689183ec3d88d2608031795adfd3bbaa48e033a42"
+      },
+      "results": 1,
+      "methods": {
+        "files-parse-scan": {
+          "medianMs": 158.3833999466151,
+          "minMs": 150.86639998480678,
+          "maxMs": 166.27340018749237,
+          "samplesMs": [
+            166.27340018749237,
+            159.08039989881217,
+            158.3833999466151,
+            153.886100044474,
+            150.86639998480678
+          ]
+        },
+        "warm-memory": {
+          "medianMs": 0.0018998980522155762,
+          "minMs": 0.0016998965293169022,
+          "maxMs": 0.0078000593930482864,
+          "samplesMs": [
+            0.0078000593930482864,
+            0.003200024366378784,
+            0.0018998980522155762,
+            0.0016998965293169022,
+            0.001700129359960556
+          ]
+        },
+        "warm-sqlite": {
+          "medianMs": 0.0646000262349844,
+          "minMs": 0.052999937906861305,
+          "maxMs": 0.2359000500291586,
+          "samplesMs": [
+            0.2359000500291586,
+            0.06589991971850395,
+            0.0646000262349844,
+            0.052999937906861305,
+            0.06320001557469368
+          ]
+        }
+      },
+      "qualificationBodiesAgree": true,
+      "structural": {
+        "fileBytesRequestedEachRun": 2631413,
+        "fileRecordsParsedEachRun": 250,
+        "sqliteCandidateRows": 1,
+        "exactGeometryEvaluations": 0,
+        "qualifiedBodyBytesRetrievedForComparison": 3679,
+        "nativePayloadReads": 0,
+        "ancestryTraversals": 0,
+        "scope": "logical rows/candidate bodies, not physical SQLite page I/O; geometry resident after setup"
+      }
+    },
+    {
+      "query": {
+        "name": "narrow",
+        "mode": "space",
+        "bounds": [
+          2627619.7888606647,
+          1091360.2158284292,
+          2627621.7888606647,
+          1091362.2158284292
+        ]
+      },
+      "results": 3,
+      "methods": {
+        "files-parse-scan": {
+          "medianMs": 171.00180010311306,
+          "minMs": 163.44380006194115,
+          "maxMs": 186.32040009833872,
+          "samplesMs": [
+            171.00180010311306,
+            163.44380006194115,
+            180.38649996742606,
+            186.32040009833872,
+            164.86350004561245
+          ]
+        },
+        "warm-memory": {
+          "medianMs": 4.272599937394261,
+          "minMs": 4.059400176629424,
+          "maxMs": 5.186999915167689,
+          "samplesMs": [
+            5.186999915167689,
+            4.059400176629424,
+            4.272599937394261,
+            4.609900061041117,
+            4.1380999609827995
+          ]
+        },
+        "warm-sqlite": {
+          "medianMs": 4.236500011757016,
+          "minMs": 3.582000033929944,
+          "maxMs": 5.359200062230229,
+          "samplesMs": [
+            3.61250014975667,
+            3.582000033929944,
+            5.359200062230229,
+            4.236500011757016,
+            4.566600080579519
+          ]
+        }
+      },
+      "qualificationBodiesAgree": true,
+      "structural": {
+        "fileBytesRequestedEachRun": 2631413,
+        "fileRecordsParsedEachRun": 250,
+        "sqliteCandidateRows": 4,
+        "exactGeometryEvaluations": 4,
+        "qualifiedBodyBytesRetrievedForComparison": 1145312,
+        "nativePayloadReads": 0,
+        "ancestryTraversals": 0,
+        "scope": "logical rows/candidate bodies, not physical SQLite page I/O; geometry resident after setup"
+      }
+    },
+    {
+      "query": {
+        "name": "broad",
+        "mode": "space",
+        "bounds": [
+          2624000,
+          1091000,
+          2626000,
+          1093000
+        ]
+      },
+      "results": 38,
+      "methods": {
+        "files-parse-scan": {
+          "medianMs": 167.96810016967356,
+          "minMs": 149.73159995861351,
+          "maxMs": 171.22439993545413,
+          "samplesMs": [
+            169.76980003528297,
+            171.22439993545413,
+            165.68470001220703,
+            167.96810016967356,
+            149.73159995861351
+          ]
+        },
+        "warm-memory": {
+          "medianMs": 6.731600034981966,
+          "minMs": 5.347599973902106,
+          "maxMs": 8.689899928867817,
+          "samplesMs": [
+            6.14119996316731,
+            7.76830012910068,
+            8.689899928867817,
+            6.731600034981966,
+            5.347599973902106
+          ]
+        },
+        "warm-sqlite": {
+          "medianMs": 5.508899921551347,
+          "minMs": 5.4010997992008924,
+          "maxMs": 5.635100184008479,
+          "samplesMs": [
+            5.635100184008479,
+            5.4010997992008924,
+            5.508899921551347,
+            5.454499972984195,
+            5.51749998703599
+          ]
+        }
+      },
+      "qualificationBodiesAgree": true,
+      "structural": {
+        "fileBytesRequestedEachRun": 2631413,
+        "fileRecordsParsedEachRun": 250,
+        "sqliteCandidateRows": 38,
+        "exactGeometryEvaluations": 38,
+        "qualifiedBodyBytesRetrievedForComparison": 1494024,
+        "nativePayloadReads": 0,
+        "ancestryTraversals": 0,
+        "scope": "logical rows/candidate bodies, not physical SQLite page I/O; geometry resident after setup"
+      }
+    }
+  ],
+  "agreement": true,
+  "comparisons": 192,
+  "coldReopenWithWholeIndexHash": {
+    "medianMs": 3.8544998969882727,
+    "minMs": 3.7289001047611237,
+    "maxMs": 5.533599993214011,
+    "samplesMs": [
+      5.533599993214011,
+      3.8544998969882727,
+      3.7289001047611237,
+      4.094099858775735,
+      3.7867999635636806
+    ]
+  },
+  "freshProcessHashOpenAndCount": {
+    "medianMs": 94.87849986180663,
+    "minMs": 91.6544001083821,
+    "maxMs": 101.84679995290935,
+    "samplesMs": [
+      101.84679995290935,
+      94.87849986180663,
+      95.07889999076724,
+      91.6544001083821,
+      94.51019996777177
+    ]
+  },
+  "failures": {
+    "missing-index": true,
+    "wrong-binding": true,
+    "altered-index": true
+  },
+  "rollbackAndReaderIsolation": true,
+  "tracedPeakBytes": 29955063,
+  "ancestryTraversals": 0,
+  "limitations": [
+    "metadata projection only; no native payload validation/query speedup claim",
+    "file baseline is compact projected JSON not original full components",
+    "warm memory spatial path is exact full geometry scan; SQLite uses conservative bounds then exact intersection",
+    "tracemalloc changes timing; all candidates measured under same instrumentation",
+    "SQLite cold means reopen/hash with warm OS cache, not flushed disk",
+    "transaction checks are index-only; accepted publication failure tests provide canonical-root evidence",
+    "direct result-input edges, not entire accepted293/294graph; source-to-use graph selection remains canonical"
+  ]
+}
