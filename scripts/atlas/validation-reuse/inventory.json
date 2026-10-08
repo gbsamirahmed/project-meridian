@@ -1,0 +1,119 @@
+{
+  "basis": {
+    "docs/research/atlas-component-granularity.md": "831e3965d7cdc871e9883cdd73f3fdca8c0dc8be5bfa20a1547dc95aaa11b56b",
+    "docs/research/atlas-component-membership.md": "3c72d52657455abeb0a126cdc5c4f889f1897271ca166d02943fc33368e48c66",
+    "docs/research/atlas-derived-understanding-lifecycle.md": "aee8a563754e3471cbb24a25ea1463eb9cee3d1606be4ed2e3cb1fe62414b3a3",
+    "docs/research/atlas-generation-scaling.md": "bf75df02b2945507bbf94cf5c241145b52e168ecb4f5ae6ca5dbc15f81c1d981",
+    "docs/research/atlas-measured-storage-processing-serving.md": "1696fa267595d6974adbe09a77f616ebc61de1e770372e34478b0db61916b9a7",
+    "docs/research/atlas-storage-processing-serving-requirements.md": "826ce49eab42c37d62b0a74762fdd6fa0636ebc1cbd2ad5d8ef3704ef829978a",
+    "docs/research/atlas-world-model-architecture-synthesis.md": "ba074a8a1fa88c256780281314b3a1ca4a8bc2d3e0bcdcf75ad512b733d2d8c1",
+    "docs/research/tryfan-pilot-s1.md": "acfe5160a3eb024ab0d0cd14f9502842eb552872683e6738e7c2c855079d99e2",
+    "docs/research/tryfan-pilot-s2.md": "0badb0165a8064d00bc6c439ffdd53039ec22981525607d2e6e0e085d1499100",
+    "docs/research/tryfan-pilot-s3.md": "e443005b9efb4e0ce3fa7a0bf988faacd1da6f5f1fdc3e49e90d869514f2df5d",
+    "docs/research/tryfan-pilot-s4.md": "ad4885b17c802d1dc03735719b7579c1a02a2c176ce16b3165961af9933ea5f3",
+    "docs/research/tryfan-pilot-s5.md": "cc719fda3be8f8115b3f419ab1bc327ebeb0981a1b7604e534f3a5aeb5e46325",
+    "docs/research/tryfan-pilot-s6.md": "8f44bcaa535d97510cb9759653cba80fa1d5837a0db2a0a87ef8ded2678d7eef",
+    "pilots/atlas/tryfan/catalogue.mjs": "c8d52c9355bc030ae0e97f8767cb62088830606acdc39c6b32fb09e6edcbe52b",
+    "pilots/atlas/tryfan/delivery-schema.mjs": "46030ddc81374123ef9b948ea04075435567b6c5250b40a95e0083cf31e8b48f",
+    "pilots/atlas/tryfan/dependencies.mjs": "6f07d7f48e1dc94eb08e1f1a3b74de29acd3053a60ed169ee4be4c57b93940d9",
+    "pilots/atlas/tryfan/derivations.mjs": "c750339fb121626964bb20dc173bbdc4b16d30b0b8ec0bba55ad3045d4a075c3",
+    "pilots/atlas/tryfan/generations.mjs": "1b50f5d879d6ed5fc39d9a42cf56dec9ea103c8b928876fb8585795897e5d03d",
+    "pilots/atlas/tryfan/update-schema.mjs": "9bf6568762482a4bb24d20fcbb449a6a7f8db1a4d7e26791089073cb51757cfa",
+    "pilots/atlas/tryfan/world.mjs": "f2fd467bb3637e03e36a06faf44dc43bf6cdb2ed02bddcf91282b92800aba495",
+    "scripts/atlas/component-granularity/model.py": "d65e5f23e20e8f2732dcabe6e4f66aab428fa6a42939d2dd667a5797975f5295",
+    "scripts/atlas/component-membership/core.mjs": "59f4a350d3f0c3fbd95a75b1fa4a7b8ac997d9f68d79a214a687e421a76a6842"
+  },
+  "checks": [
+    {
+      "category": "Component-local",
+      "existing": "catalogue.mjs validateCatalogue; generations.mjs validateGeneration; granular model audit",
+      "guarantee": "Schema/version, exact fields, identity/revision form, internal cardinality/uniqueness, canonical ordering and scoped descriptors",
+      "id": "L1",
+      "inputs": "Component bytes, expected logical family/partition slot captured by anchored membership, validator and serializer/rule identity",
+      "proofCoverage": "Model local() schema/partition/64 ordered unique keys/native-template/input-use/method/dependency syntax",
+      "reuseConditions": "Reuse only same bytes and complete rule binding; external SHA check remains"
+    },
+    {
+      "category": "Component-local with declared boundary",
+      "existing": "dependencies.mjs validateDependencies",
+      "guarantee": "Immutable retained claim/process/input-use receipts, local acyclicity and finite method set within complete understanding collection",
+      "id": "L2",
+      "inputs": "Complete result-collection bytes and pinned method/contract implementation",
+      "proofCoverage": "Finite terrain-to-derived dependency syntax only; original derived-on-derived chain tested by unchanged regression",
+      "reuseConditions": "Internal checks reusable only for whole captured immutable closure; catalogue/root/basis/current policy are separate"
+    },
+    {
+      "category": "Cross-component",
+      "existing": "catalogue.mjs validateCatalogue; delivery-schema.mjs validateDelivery",
+      "guarantee": "Source/product/representation/family/artifact joins, rights references, native-grid/layer/tile bindings",
+      "id": "X1",
+      "inputs": "Participating immutable component identities and qualifiers",
+      "proofCoverage": "Three-family completeness plus fixed exact retained native-qualifier hash; no generic licensing engine",
+      "reuseConditions": "Rerun when endpoint/membership or qualifier changes; cannot certify from one endpoint alone"
+    },
+    {
+      "category": "Cross-component",
+      "existing": "dependencies.mjs validateDependencies",
+      "guarantee": "Exact input identity/revision, support, root artifacts/catalogue and dependency closure",
+      "id": "X2",
+      "inputs": "Both endpoints, actual use scopes, method/context and complete dependency selector",
+      "proofCoverage": "Explicit outgoing and reverse target buckets; current identity/support and historical byte availability checks",
+      "reuseConditions": "Reuse accepted relationships only for unchanged endpoints and context, with trusted reverse selection"
+    },
+    {
+      "category": "Publication-level",
+      "existing": "generations.mjs validateGeneration; component-membership core.mjs resolveGeneration; granular model audit",
+      "guarantee": "Required capabilities/families, member cardinality, uniqueness, coherent publication identity, complete closure",
+      "id": "P1",
+      "inputs": "Current proposed explicit membership and required schema",
+      "proofCoverage": "publication_checks() scans all C slots and required native qualifier every call",
+      "reuseConditions": "Always run completeness/uniqueness and current identity checks; no population bypass"
+    },
+    {
+      "category": "Publication-level/context",
+      "existing": "update-schema.mjs validateTransition; generations.mjs publishCandidate; component-membership core.mjs publish",
+      "guarantee": "Allowed predecessor/update, preservation of historical and carried-forward state, atomic eligibility/current root",
+      "id": "P2",
+      "inputs": "Previous current identity, new validated publication, exact update rules",
+      "proofCoverage": "publish_checked() revalidates proposed publication, integrity rechecks, checks current predecessor, uses existing fixed33-node witness/root pair",
+      "reuseConditions": "Rerun root predecessor check at switch; candidate existence is not acceptance"
+    },
+    {
+      "category": "Freshness/policy-sensitive",
+      "existing": "derivations.mjs validate, assess; world.mjs read",
+      "guarantee": "Active-policy freshness versus fixed-input historical validity; method/reference/applicability and scoped transitive assessment",
+      "id": "F1",
+      "inputs": "Method identity, input identity/use scope, applicability/context, selected policy",
+      "proofCoverage": "requireFresh current context vs allowed historical context; changed target reaches sources via trusted buckets, no physical recomputation invented",
+      "reuseConditions": "Context changes rerun relevant relationships; stale historical result remains retained/valid"
+    },
+    {
+      "category": "External-state-sensitive",
+      "existing": "catalogue.mjs verifyArtifacts; delivery-schema.mjs verifyDelivery; generations.mjs load/publish",
+      "guarantee": "Current file availability/size/content hash, recipe/materialized integrity and locators",
+      "id": "E1",
+      "inputs": "Current referenced bytes and actual storage location",
+      "proofCoverage": "raw_component() hashes every current component in both paths; old historical inputs checked if referenced",
+      "reuseConditions": "Past receipt cannot establish present bytes/availability on ordinary files; always recheck in tested model"
+    },
+    {
+      "category": "External rule/evidence prerequisite",
+      "existing": "dependencies.mjs basis; derivations.mjs methods/sample; delivery-schema.mjs validateDelivery",
+      "guarantee": "Pinned report/method/recipe/environment/software inputs available and match declared identity",
+      "id": "E2",
+      "inputs": "Current pinned rule/evidence files and environment, including serializer helpers",
+      "proofCoverage": "Rule binds core.py plus reused granular model source; plan pins all foundational inputs and qualifier, regression verifies sources/software",
+      "reuseConditions": "Capture their immutable identity and maintain verification; unversioned external assumptions are never reusable"
+    },
+    {
+      "category": "Not implemented by existing pilot",
+      "existing": "Rights qualifications throughout; no live licence/provider/auth service",
+      "guarantee": "Retained source rights references preserved; no claim about evolving provider authorization or licences",
+      "id": "E3",
+      "inputs": "Potential mutable external rights/provider policy outside proof",
+      "proofCoverage": "No provider calls, credentials, licence engine or access-control proof",
+      "reuseConditions": "No timeless reuse asserted for legal authorization; remains separate future context"
+    }
+  ],
+  "schema": "atlas-validation-check-inventory/v1"
+}

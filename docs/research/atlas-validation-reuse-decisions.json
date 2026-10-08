@@ -1,0 +1,58 @@
+{
+  "architectureDirection": "C - ARCHITECTURE DIRECTION ESTABLISHED",
+  "decision": "C - PROOF SUCCESS",
+  "nextTask": "Atlas retained validation-evidence maintenance and amortization experiment",
+  "nextTaskScope": "Isolated repeated localized publication sequence comparing full evidence reissuance with authenticated carry-forward of eligible receipts and affected reverse buckets. Measure issuance/verification/read/write costs and amortization against full validation; retain oracle equivalence and history. No backend or production issuer. Packing remains deferred unless its cost changes the measured maintenance conclusion.",
+  "nextTaskStatus": "NOT BEGUN",
+  "pilot": "CLOSED / ACCEPTED",
+  "records": [
+    {
+      "classification": "DECIDE NOW",
+      "conclusion": "Validation reuse must bind exact immutable bytes, complete rule/implementation identity, explicit guarantee scope and a separately trusted verifier anchor. Current availability/integrity and contextual validity remain distinct. Revalidate when trust is unavailable.",
+      "evidence": "46 oracle-equivalent cases; rule/context/integrity/forged-evidence controls and 36 focused tests.",
+      "id": "N13",
+      "updates": [
+        "N11",
+        "N12"
+      ]
+    },
+    {
+      "classification": "DECIDE NOW",
+      "conclusion": "Always establish publication completeness/uniqueness and coherent validated-root eligibility. Report population-wide integrity, membership/directory scans and preparation; semantic reuse does not remove them.",
+      "evidence": "All valid192-component cases hash192 current components and scan192 memberships; all6 history pins retain33 eligibility reads/zero ancestry; four abrupt pre-switch exits leave current unchanged.",
+      "id": "N14",
+      "updates": [
+        "N08"
+      ]
+    },
+    {
+      "classification": "PROVISIONAL DIRECTION",
+      "conclusion": "Qualified component-local receipts plus trusted explicit reverse relationship buckets can reduce repeated semantic and affected-edge checks. Keep full validation as fallback/oracle; no production shortcut is adopted.",
+      "evidence": "Localized fanout1 case reduces12288 row checks to128 and64 relationships to1; median61.38ms to57.80ms, but193 reads become387.",
+      "id": "P09",
+      "updates": [
+        "P08",
+        "D08"
+      ]
+    },
+    {
+      "classification": "DEFER PENDING EVIDENCE",
+      "conclusion": "Evidence issuance/maintenance amortization, receipt packing, real rights/applicability and arbitrary/transitive selector closure, payload-integrity trust on deployed storage, component sizes and database/cloud remain unresolved. Test repeated accepted-state evidence maintenance next: this proof still prepares new trusted roots with full validation.",
+      "evidence": "Largest receipt preparation costs~0.48-0.52s/162-187KB. Every unchanged receipt currently requires a file read. Only fixed terrain-to-derived fanout1/4 controls tested.",
+      "id": "D09",
+      "updates": [
+        "D08"
+      ]
+    },
+    {
+      "classification": "REJECT",
+      "conclusion": "Permanent valid booleans, candidate-designated trust, identity-only skipping of current mutable-file integrity, unchanged-content-as-current-freshness, omission of publication completeness, hidden reverse-index preparation or ancestry, and claims of fully changed-state-only validation.",
+      "evidence": "All deliberate publication failures rejected; bad receipt alone falls back and preserves valid acceptance; stale historically allowed state stays valid; whole population hashing remains.",
+      "id": "R09",
+      "updates": [
+        "R08"
+      ]
+    }
+  ],
+  "schema": "atlas-validation-reuse-decisions/v1"
+}
