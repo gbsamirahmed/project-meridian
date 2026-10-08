@@ -1,0 +1,3750 @@
+{
+  "additionalCatalogueStorage": {
+    "extracted_las_bytes": 1415300836,
+    "original_download_bytes": 896360770,
+    "policy": "Originals/extractions/evidence/previews remain external. Git contains small provenance and offline tooling only.",
+    "source_count": 16
+  },
+  "additionalOriginalSources": [
+    {
+      "availability": "VERIFIED",
+      "bytes": 50530470,
+      "currentFullHash": false,
+      "family": "swissimage-dop10",
+      "horizontalReference": "CH1903+/LV95 (EPSG:2056), metres",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "nativeResolution": 0.25,
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissimage-dop10/swissimage-dop10_2023_2624-1091_0.1_2056.tif",
+      "previousOfficialChecksumMatch": true,
+      "priorHeaderReference": "docs/atlas/riffelhorn-data-catalog.json; asset actual_file",
+      "recordedSha256": "eb81b3df75538dc0da5cd6ce898976dd74f22dcb3b2586760f0a7df159de8c41",
+      "retainedAt": "2026-10-02T14:43:14.124109+00:00",
+      "sourceItem": "swissimage-dop10_2023_2624-1091",
+      "sourceMethod": "Aerial orthophoto mosaic",
+      "sourceUrl": "https://data.geo.admin.ch/ch.swisstopo.swissimage-dop10/swissimage-dop10_2023_2624-1091/swissimage-dop10_2023_2624-1091_0.1_2056.tif",
+      "verticalReference": null
+    },
+    {
+      "availability": "VERIFIED",
+      "bytes": 45485267,
+      "currentFullHash": false,
+      "family": "swissimage-dop10",
+      "horizontalReference": "CH1903+/LV95 (EPSG:2056), metres",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "nativeResolution": 0.25,
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissimage-dop10/swissimage-dop10_2023_2624-1092_0.1_2056.tif",
+      "previousOfficialChecksumMatch": true,
+      "priorHeaderReference": "docs/atlas/riffelhorn-data-catalog.json; asset actual_file",
+      "recordedSha256": "8cd275f75f653d192d9d7619771746ff93fbdd8646e2d1d06214af832c49f62e",
+      "retainedAt": "2026-10-02T14:43:16.559759+00:00",
+      "sourceItem": "swissimage-dop10_2023_2624-1092",
+      "sourceMethod": "Aerial orthophoto mosaic",
+      "sourceUrl": "https://data.geo.admin.ch/ch.swisstopo.swissimage-dop10/swissimage-dop10_2023_2624-1092/swissimage-dop10_2023_2624-1092_0.1_2056.tif",
+      "verticalReference": null
+    },
+    {
+      "availability": "VERIFIED",
+      "bytes": 43921676,
+      "currentFullHash": false,
+      "family": "swissimage-dop10",
+      "horizontalReference": "CH1903+/LV95 (EPSG:2056), metres",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "nativeResolution": 0.25,
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissimage-dop10/swissimage-dop10_2023_2625-1091_0.1_2056.tif",
+      "previousOfficialChecksumMatch": true,
+      "priorHeaderReference": "docs/atlas/riffelhorn-data-catalog.json; asset actual_file",
+      "recordedSha256": "66ff157b2eb008e8c2e2ae41ee427c2b483ae69faf352b6d4c12c7713285d2bc",
+      "retainedAt": "2026-10-02T14:43:18.919491+00:00",
+      "sourceItem": "swissimage-dop10_2023_2625-1091",
+      "sourceMethod": "Aerial orthophoto mosaic",
+      "sourceUrl": "https://data.geo.admin.ch/ch.swisstopo.swissimage-dop10/swissimage-dop10_2023_2625-1091/swissimage-dop10_2023_2625-1091_0.1_2056.tif",
+      "verticalReference": null
+    },
+    {
+      "availability": "VERIFIED",
+      "bytes": 46321615,
+      "currentFullHash": false,
+      "family": "swissimage-dop10",
+      "horizontalReference": "CH1903+/LV95 (EPSG:2056), metres",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "nativeResolution": 0.25,
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissimage-dop10/swissimage-dop10_2023_2625-1092_0.1_2056.tif",
+      "previousOfficialChecksumMatch": true,
+      "priorHeaderReference": "docs/atlas/riffelhorn-data-catalog.json; asset actual_file",
+      "recordedSha256": "31c4219580f87fd54268c04f2773f30a715392bde47581cf1245207b7c7ff90f",
+      "retainedAt": "2026-10-02T14:43:21.413286+00:00",
+      "sourceItem": "swissimage-dop10_2023_2625-1092",
+      "sourceMethod": "Aerial orthophoto mosaic",
+      "sourceUrl": "https://data.geo.admin.ch/ch.swisstopo.swissimage-dop10/swissimage-dop10_2023_2625-1092/swissimage-dop10_2023_2625-1092_0.1_2056.tif",
+      "verticalReference": null
+    },
+    {
+      "availability": "VERIFIED",
+      "bytes": 14676329,
+      "currentFullHash": false,
+      "currentHeader": {
+        "bands": 1,
+        "bounds": [
+          2624000.0,
+          1091000.0,
+          2625000.0,
+          1092000.0
+        ],
+        "crs": "EPSG:2056",
+        "dtypes": [
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "resolution": [
+          0.5,
+          0.5
+        ],
+        "shape": [
+          2000,
+          2000
+        ],
+        "tags": {
+          "AREA_OR_POINT": "Area",
+          "TIFFTAG_ARTIST": "''",
+          "TIFFTAG_SOFTWARE": "''"
+        },
+        "transform": [
+          0.5,
+          0.0,
+          2624000.0,
+          0.0,
+          -0.5,
+          1092000.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "family": "swisssurface3d-raster",
+      "horizontalReference": "CH1903+/LV95 (EPSG:2056), metres",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "nativeResolution": null,
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swisssurface3d-raster/swisssurface3d-raster_2021_2624-1091_0.5_2056_5728.tif",
+      "previousOfficialChecksumMatch": true,
+      "priorHeaderReference": "docs/atlas/riffelhorn-data-catalog.json; asset actual_file",
+      "recordedSha256": "706f3e63e553b3cef6e3ef314a15f32756fa21c79f382541658d876246df340d",
+      "retainedAt": "2026-10-02T14:43:22.318087+00:00",
+      "sourceItem": "swisssurface3d-raster_2021_2624-1091",
+      "sourceMethod": "Spike-free TIN interpolation of classified LiDAR and synthetic water inputs",
+      "sourceUrl": "https://data.geo.admin.ch/ch.swisstopo.swisssurface3d-raster/swisssurface3d-raster_2021_2624-1091/swisssurface3d-raster_2021_2624-1091_0.5_2056_5728.tif",
+      "verticalReference": "LN02 (EPSG:5728), metres; official product provenance, not a vertical CRS encoded in the actual file"
+    },
+    {
+      "availability": "VERIFIED",
+      "bytes": 15242665,
+      "currentFullHash": false,
+      "currentHeader": {
+        "bands": 1,
+        "bounds": [
+          2624000.0,
+          1092000.0,
+          2625000.0,
+          1093000.0
+        ],
+        "crs": "EPSG:2056",
+        "dtypes": [
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "resolution": [
+          0.5,
+          0.5
+        ],
+        "shape": [
+          2000,
+          2000
+        ],
+        "tags": {
+          "AREA_OR_POINT": "Area",
+          "TIFFTAG_ARTIST": "''",
+          "TIFFTAG_SOFTWARE": "''"
+        },
+        "transform": [
+          0.5,
+          0.0,
+          2624000.0,
+          0.0,
+          -0.5,
+          1093000.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "family": "swisssurface3d-raster",
+      "horizontalReference": "CH1903+/LV95 (EPSG:2056), metres",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "nativeResolution": null,
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swisssurface3d-raster/swisssurface3d-raster_2021_2624-1092_0.5_2056_5728.tif",
+      "previousOfficialChecksumMatch": true,
+      "priorHeaderReference": "docs/atlas/riffelhorn-data-catalog.json; asset actual_file",
+      "recordedSha256": "ddb1037a2e4efe85423ce59fe57d22a8e4e655d68192e4abcf08b7c49e9d5450",
+      "retainedAt": "2026-10-02T14:43:23.232897+00:00",
+      "sourceItem": "swisssurface3d-raster_2021_2624-1092",
+      "sourceMethod": "Spike-free TIN interpolation of classified LiDAR and synthetic water inputs",
+      "sourceUrl": "https://data.geo.admin.ch/ch.swisstopo.swisssurface3d-raster/swisssurface3d-raster_2021_2624-1092/swisssurface3d-raster_2021_2624-1092_0.5_2056_5728.tif",
+      "verticalReference": "LN02 (EPSG:5728), metres; official product provenance, not a vertical CRS encoded in the actual file"
+    },
+    {
+      "availability": "VERIFIED",
+      "bytes": 13911871,
+      "currentFullHash": false,
+      "currentHeader": {
+        "bands": 1,
+        "bounds": [
+          2625000.0,
+          1091000.0,
+          2626000.0,
+          1092000.0
+        ],
+        "crs": "EPSG:2056",
+        "dtypes": [
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "resolution": [
+          0.5,
+          0.5
+        ],
+        "shape": [
+          2000,
+          2000
+        ],
+        "tags": {
+          "AREA_OR_POINT": "Area",
+          "TIFFTAG_ARTIST": "''",
+          "TIFFTAG_SOFTWARE": "''"
+        },
+        "transform": [
+          0.5,
+          0.0,
+          2625000.0,
+          0.0,
+          -0.5,
+          1092000.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "family": "swisssurface3d-raster",
+      "horizontalReference": "CH1903+/LV95 (EPSG:2056), metres",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "nativeResolution": null,
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swisssurface3d-raster/swisssurface3d-raster_2021_2625-1091_0.5_2056_5728.tif",
+      "previousOfficialChecksumMatch": true,
+      "priorHeaderReference": "docs/atlas/riffelhorn-data-catalog.json; asset actual_file",
+      "recordedSha256": "8fc16223478d375cbaba8ebf42609fd3cfcf4b59cca76dd8931ce2dd1ec9a186",
+      "retainedAt": "2026-10-02T14:43:24.109012+00:00",
+      "sourceItem": "swisssurface3d-raster_2021_2625-1091",
+      "sourceMethod": "Spike-free TIN interpolation of classified LiDAR and synthetic water inputs",
+      "sourceUrl": "https://data.geo.admin.ch/ch.swisstopo.swisssurface3d-raster/swisssurface3d-raster_2021_2625-1091/swisssurface3d-raster_2021_2625-1091_0.5_2056_5728.tif",
+      "verticalReference": "LN02 (EPSG:5728), metres; official product provenance, not a vertical CRS encoded in the actual file"
+    },
+    {
+      "availability": "VERIFIED",
+      "bytes": 14653356,
+      "currentFullHash": false,
+      "currentHeader": {
+        "bands": 1,
+        "bounds": [
+          2625000.0,
+          1092000.0,
+          2626000.0,
+          1093000.0
+        ],
+        "crs": "EPSG:2056",
+        "dtypes": [
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "resolution": [
+          0.5,
+          0.5
+        ],
+        "shape": [
+          2000,
+          2000
+        ],
+        "tags": {
+          "AREA_OR_POINT": "Area",
+          "TIFFTAG_ARTIST": "''",
+          "TIFFTAG_SOFTWARE": "''"
+        },
+        "transform": [
+          0.5,
+          0.0,
+          2625000.0,
+          0.0,
+          -0.5,
+          1093000.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "family": "swisssurface3d-raster",
+      "horizontalReference": "CH1903+/LV95 (EPSG:2056), metres",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "nativeResolution": null,
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swisssurface3d-raster/swisssurface3d-raster_2021_2625-1092_0.5_2056_5728.tif",
+      "previousOfficialChecksumMatch": true,
+      "priorHeaderReference": "docs/atlas/riffelhorn-data-catalog.json; asset actual_file",
+      "recordedSha256": "728d9aa878809a6bf6cffe7f4cb7413ac70eed70d946e3afebba7b941839ec92",
+      "retainedAt": "2026-10-02T14:43:25.052917+00:00",
+      "sourceItem": "swisssurface3d-raster_2021_2625-1092",
+      "sourceMethod": "Spike-free TIN interpolation of classified LiDAR and synthetic water inputs",
+      "sourceUrl": "https://data.geo.admin.ch/ch.swisstopo.swisssurface3d-raster/swisssurface3d-raster_2021_2625-1092/swisssurface3d-raster_2021_2625-1092_0.5_2056_5728.tif",
+      "verticalReference": "LN02 (EPSG:5728), metres; official product provenance, not a vertical CRS encoded in the actual file"
+    },
+    {
+      "availability": "VERIFIED",
+      "bytes": 16490312,
+      "currentFullHash": false,
+      "family": "swissalti3d",
+      "horizontalReference": "CH1903+/LV95 (EPSG:2056), metres",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "nativeResolution": null,
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2624-1091_0.5_2056_5728.tif",
+      "previousOfficialChecksumMatch": true,
+      "priorHeaderReference": "docs/atlas/riffelhorn-data-catalog.json; asset actual_file",
+      "recordedSha256": "c68c305e4a142da416b46b555a80916ecc52f8fa50bf1efd5cd2c3f24f9cd4bc",
+      "retainedAt": "2026-10-02T14:43:26.032302+00:00",
+      "sourceItem": "swissalti3d_2024_2624-1091",
+      "sourceMethod": "DTM-TLM/TIN linear interpolation; Valais 2021/2022 LiDAR base with 2023 photogrammetric change updates",
+      "sourceUrl": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2624-1091/swissalti3d_2024_2624-1091_0.5_2056_5728.tif",
+      "verticalReference": "LN02 (EPSG:5728), metres; official product provenance, not a vertical CRS encoded in the actual file"
+    },
+    {
+      "availability": "VERIFIED",
+      "bytes": 16862345,
+      "currentFullHash": false,
+      "family": "swissalti3d",
+      "horizontalReference": "CH1903+/LV95 (EPSG:2056), metres",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "nativeResolution": null,
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2624-1092_0.5_2056_5728.tif",
+      "previousOfficialChecksumMatch": true,
+      "priorHeaderReference": "docs/atlas/riffelhorn-data-catalog.json; asset actual_file",
+      "recordedSha256": "9fa4a4391e2e1bfd650f2f31c7d38ed9a5a94494a967011468e6c44559bbcb2c",
+      "retainedAt": "2026-10-02T14:43:27.070671+00:00",
+      "sourceItem": "swissalti3d_2024_2624-1092",
+      "sourceMethod": "DTM-TLM/TIN linear interpolation; Valais 2021/2022 LiDAR base with 2023 photogrammetric change updates",
+      "sourceUrl": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2624-1092/swissalti3d_2024_2624-1092_0.5_2056_5728.tif",
+      "verticalReference": "LN02 (EPSG:5728), metres; official product provenance, not a vertical CRS encoded in the actual file"
+    },
+    {
+      "availability": "VERIFIED",
+      "bytes": 15925644,
+      "currentFullHash": false,
+      "family": "swissalti3d",
+      "horizontalReference": "CH1903+/LV95 (EPSG:2056), metres",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "nativeResolution": null,
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2625-1091_0.5_2056_5728.tif",
+      "previousOfficialChecksumMatch": true,
+      "priorHeaderReference": "docs/atlas/riffelhorn-data-catalog.json; asset actual_file",
+      "recordedSha256": "0d2ebc6d0b4fd06ab2191cbf2a2f5ab77728249fa8c835075040bce4dc4899de",
+      "retainedAt": "2026-10-02T14:43:28.005936+00:00",
+      "sourceItem": "swissalti3d_2024_2625-1091",
+      "sourceMethod": "DTM-TLM/TIN linear interpolation; Valais 2021/2022 LiDAR base with 2023 photogrammetric change updates",
+      "sourceUrl": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2625-1091/swissalti3d_2024_2625-1091_0.5_2056_5728.tif",
+      "verticalReference": "LN02 (EPSG:5728), metres; official product provenance, not a vertical CRS encoded in the actual file"
+    },
+    {
+      "availability": "VERIFIED",
+      "bytes": 16329103,
+      "currentFullHash": false,
+      "family": "swissalti3d",
+      "horizontalReference": "CH1903+/LV95 (EPSG:2056), metres",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "nativeResolution": null,
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2625-1092_0.5_2056_5728.tif",
+      "previousOfficialChecksumMatch": true,
+      "priorHeaderReference": "docs/atlas/riffelhorn-data-catalog.json; asset actual_file",
+      "recordedSha256": "4dffaad9efb82d3bf327a86b4f82d55762165ea5f825c386c23380a9320ff875",
+      "retainedAt": "2026-10-02T14:43:29.021960+00:00",
+      "sourceItem": "swissalti3d_2024_2625-1092",
+      "sourceMethod": "DTM-TLM/TIN linear interpolation; Valais 2021/2022 LiDAR base with 2023 photogrammetric change updates",
+      "sourceUrl": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2625-1092/swissalti3d_2024_2625-1092_0.5_2056_5728.tif",
+      "verticalReference": "LN02 (EPSG:5728), metres; official product provenance, not a vertical CRS encoded in the actual file"
+    },
+    {
+      "availability": "VERIFIED",
+      "bytes": 138581042,
+      "currentFullHash": false,
+      "family": "swisssurface3d",
+      "horizontalReference": "CH1903+/LV95 (EPSG:2056), metres",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "nativeResolution": null,
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swisssurface3d/swisssurface3d_2021_2624-1091_2056_5728.las.zip",
+      "previousOfficialChecksumMatch": true,
+      "priorHeaderReference": "docs/atlas/riffelhorn-data-catalog.json; asset actual_file",
+      "recordedSha256": "cfdd16247ea8c4dc30119601315f8eed3925e582739ac3a3cb095e8e363bcad9",
+      "retainedAt": "2026-10-02T14:43:36.282302+00:00",
+      "sourceItem": "swisssurface3d_2021_2624-1091",
+      "sourceMethod": "Airborne classified LiDAR",
+      "sourceUrl": "https://data.geo.admin.ch/ch.swisstopo.swisssurface3d/swisssurface3d_2021_2624-1091/swisssurface3d_2021_2624-1091_2056_5728.las.zip",
+      "verticalReference": "LN02 (EPSG:5728), metres; official product provenance, not a vertical CRS encoded in the actual file"
+    },
+    {
+      "availability": "VERIFIED",
+      "bytes": 154182049,
+      "currentFullHash": false,
+      "family": "swisssurface3d",
+      "horizontalReference": "CH1903+/LV95 (EPSG:2056), metres",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "nativeResolution": null,
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swisssurface3d/swisssurface3d_2021_2624-1092_2056_5728.las.zip",
+      "previousOfficialChecksumMatch": true,
+      "priorHeaderReference": "docs/atlas/riffelhorn-data-catalog.json; asset actual_file",
+      "recordedSha256": "8e73c72fff64adea00eb5449dece3d3918d2d04b91c067d7ff1cd5ec417b187c",
+      "retainedAt": "2026-10-02T14:43:44.501917+00:00",
+      "sourceItem": "swisssurface3d_2021_2624-1092",
+      "sourceMethod": "Airborne classified LiDAR",
+      "sourceUrl": "https://data.geo.admin.ch/ch.swisstopo.swisssurface3d/swisssurface3d_2021_2624-1092/swisssurface3d_2021_2624-1092_2056_5728.las.zip",
+      "verticalReference": "LN02 (EPSG:5728), metres; official product provenance, not a vertical CRS encoded in the actual file"
+    },
+    {
+      "availability": "VERIFIED",
+      "bytes": 144504352,
+      "currentFullHash": false,
+      "family": "swisssurface3d",
+      "horizontalReference": "CH1903+/LV95 (EPSG:2056), metres",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "nativeResolution": null,
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swisssurface3d/swisssurface3d_2021_2625-1091_2056_5728.las.zip",
+      "previousOfficialChecksumMatch": true,
+      "priorHeaderReference": "docs/atlas/riffelhorn-data-catalog.json; asset actual_file",
+      "recordedSha256": "0727486c18a3bfb0f8dce51f3d17f969a2258f21961abf65214a1a436b02763b",
+      "retainedAt": "2026-10-02T14:43:52.003473+00:00",
+      "sourceItem": "swisssurface3d_2021_2625-1091",
+      "sourceMethod": "Airborne classified LiDAR",
+      "sourceUrl": "https://data.geo.admin.ch/ch.swisstopo.swisssurface3d/swisssurface3d_2021_2625-1091/swisssurface3d_2021_2625-1091_2056_5728.las.zip",
+      "verticalReference": "LN02 (EPSG:5728), metres; official product provenance, not a vertical CRS encoded in the actual file"
+    },
+    {
+      "availability": "VERIFIED",
+      "bytes": 148742674,
+      "currentFullHash": false,
+      "family": "swisssurface3d",
+      "horizontalReference": "CH1903+/LV95 (EPSG:2056), metres",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "nativeResolution": null,
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swisssurface3d/swisssurface3d_2021_2625-1092_2056_5728.las.zip",
+      "previousOfficialChecksumMatch": true,
+      "priorHeaderReference": "docs/atlas/riffelhorn-data-catalog.json; asset actual_file",
+      "recordedSha256": "46c4ad60dd467818105fabbd368b4d345feaabc181fb0b4961aac6453c16ee7a",
+      "retainedAt": "2026-10-02T14:43:59.574689+00:00",
+      "sourceItem": "swisssurface3d_2021_2625-1092",
+      "sourceMethod": "Airborne classified LiDAR",
+      "sourceUrl": "https://data.geo.admin.ch/ch.swisstopo.swisssurface3d/swisssurface3d_2021_2625-1092/swisssurface3d_2021_2625-1092_2056_5728.las.zip",
+      "verticalReference": "LN02 (EPSG:5728), metres; official product provenance, not a vertical CRS encoded in the actual file"
+    }
+  ],
+  "currentPayloadHashBytes": 120347916,
+  "environment": {
+    "fiona": "1.10.1",
+    "gdal": "3.9.3",
+    "proj": "9.5.1",
+    "pyproj": "3.7.2",
+    "python": "3.12.6",
+    "rasterio": "1.4.3",
+    "shapely": "2.1.2"
+  },
+  "glamosArchive": {
+    "entries": [
+      "ReadMe.txt",
+      "SGI_2016_centerlines.cpg",
+      "SGI_2016_centerlines.dbf",
+      "SGI_2016_centerlines.prj",
+      "SGI_2016_centerlines.qpj",
+      "SGI_2016_centerlines.shp",
+      "SGI_2016_centerlines.shx",
+      "SGI_2016_debriscover.cpg",
+      "SGI_2016_debriscover.dbf",
+      "SGI_2016_debriscover.prj",
+      "SGI_2016_debriscover.qpj",
+      "SGI_2016_debriscover.shp",
+      "SGI_2016_debriscover.shx",
+      "SGI_2016_glaciers.cpg",
+      "SGI_2016_glaciers.dbf",
+      "SGI_2016_glaciers.prj",
+      "SGI_2016_glaciers.qpj",
+      "SGI_2016_glaciers.shp",
+      "SGI_2016_glaciers.shx",
+      "SGI_2016_glacier_locations.cpg",
+      "SGI_2016_glacier_locations.dbf",
+      "SGI_2016_glacier_locations.prj",
+      "SGI_2016_glacier_locations.qpj",
+      "SGI_2016_glacier_locations.shp",
+      "SGI_2016_glacier_locations.shx",
+      "SGI_2016_icedivides.cpg",
+      "SGI_2016_icedivides.dbf",
+      "SGI_2016_icedivides.prj",
+      "SGI_2016_icedivides.qpj",
+      "SGI_2016_icedivides.shp",
+      "SGI_2016_icedivides.shx",
+      "SGI_2016_surfacetype_10m_LV95.sld",
+      "SGI_2016_surfacetype_10m_LV95.tfw",
+      "SGI_2016_surfacetype_10m_LV95.tif"
+    ],
+    "prjHashes": {
+      "SGI_2016_centerlines.prj": "99b86fd1844abbef755d712c1ee13e3d49c3bfa17f9100fbfbdfb781b1c0299c",
+      "SGI_2016_debriscover.prj": "99b86fd1844abbef755d712c1ee13e3d49c3bfa17f9100fbfbdfb781b1c0299c",
+      "SGI_2016_glacier_locations.prj": "99b86fd1844abbef755d712c1ee13e3d49c3bfa17f9100fbfbdfb781b1c0299c",
+      "SGI_2016_glaciers.prj": "b271ff23e1a8e8f65f1afb9d4f5f396a71813b1bcba738ae97231e37e609016d",
+      "SGI_2016_icedivides.prj": "99b86fd1844abbef755d712c1ee13e3d49c3bfa17f9100fbfbdfb781b1c0299c"
+    },
+    "readme": "SWISS GLACIER INVENTORY 2016\r\n----------------------------\r\nThe Swiss Glacier Inventory 2016 provides glacier outlines (areas), debris cover, ice divides and location points of all glaciers in Switzerland \r\nreferring to the years 2013-2018. The data is based on aerial imagery and stereophotogramatic analysis of the Federal \r\noffice of Topography, Switzerland (swisstopo) within the framework of the Topographic landscape Model of Switzerland (swissTLM3D).\r\nFurthermore the dataset has been revised by Glaciologists of VAW-ETH Zurich, University of Zurich and University of Fribourg (Switzerland). \r\nPlease find more details about this dataset in the publications listet below.\r\n\r\nPublication:\r\n------------\r\n  - Linsbauer, A., Bauder, A., Fischer, M., Hodel, E., Huss, M.(2020) in prep.\r\n  - Weidmann, Y., Bärtschi, H., Zingg, Stefan., Schmassmann, E. (2019) Das Schweizerische Gletscherinventar als Produkt des \r\n    swissTLM3D. Geomatik Schweiz 5/2019, 114–119 (german only)\r\n\t\r\nContent: Swiss Glacier Inventory 2016: \r\n--------------------------------------\r\n  --------------------------------------------------\r\n  - Outlines: SGI_2016_glaciers.shp -\r\n  --------------------------------------------------\r\n    ATTRIBUTES:\r\n\t-----------\r\n\t - [gid]: geometry-ID\r\n\t - [pk_glacier]: uuid for internal use\r\n\t - [sgi-id]: Swiss Glacier Inventory ID: [rl_0,rl_1,rl_2,rl_3]-[i_code] (f.e. A54e-24) \r\n\t - [name]: name of glacier (if available, f.e. 'Triftgletscher')\r\n\t - [rl_0]: Riverlevel_0: Subdivision of the inventory area on the basis of catchment areas of major rivers (f.e. A)\r\n\t - [rl_1]: Riverlevel_1: Subdivision of the inventory area on the basis of catchment areas of major tributaries (f.e. 5)\r\n\t - [rl_2]: Riverlevel_2: Subdivision of the inventory area on the basis of catchment areas of medium-sized tributaries (f.e. 4)\r\n\t - [rl_3]: Riverlevel_3: Subdivision of the inventory area on the basis of catchment areas of small tributaries (f.e. e)\r\n\t - [i_code]: Inventory Code: Sequential number for glacier within a specific inventory region (f.e. 24)\r\n\t - [year_acq]: Year of acquisition of the aerial image\r\n\t - [year_rel]: Year of release of Swiss Glacier Inventory\r\n\t - [area_km2]: Area in square kilometers\r\n\t - [length_km]: Length of glacier according to ...\r\n\t - [masl_min]: Minimum of meter above sea level based on swissALTI3D release 2019\r\n\t - [masl_mean]: Mean of meter above sea level based on swissALTI3D release 2019\r\n\t - [masl_med]: Median of meter above sea level based on swissALTI3D release 2019\r\n\t - [masl_max]: Mximum of meter above sea level based on swissALTI3D release 2019\r\n\t - [slope_deg]: Average of slope in degree based on swissALTI3D release 2019\r\n\t - [aspect_deg]: Average of aspect in degree based on swissALTI3D release 2019\r\n\t \r\n  --------------------------------------------------\r\n  - Locations: SGI_2016_glaciers_locations.shp -\r\n  --------------------------------------------------\r\n    ATTRIBUTES:\r\n\t-----------\r\n\t - [gid]: geometry-ID\r\n\t - [pk_glacier]: uuid for internal use\r\n\t - [sgi-id]: Swiss Glacier Inventory ID: [rl_0,rl_1,rl_2,rl_3]-[i_code] (f.e. A54e-24)\r\n\t - [name]: name of glacier (if available, f.e. 'Triftgletscher')\r\n\t - [xcoor]: x coordinate of location point\r\n\t - [ycoor]: y coordinate of location point\r\n\t \r\n\t(Please note, that this points have been choosen manually, mainly for labeling purposes.)\r\n\t \r\n  ------------------------------------------\r\n  - Debris cover: SGI_2016_debriscover.shp -\r\n  ------------------------------------------\r\n    ATTRIBUTES:\r\n\t-----------\r\n     - [gid]: geometry-ID\r\n\t - [name]: name of glacier (if available)\r\n\t - [sgi-id]: Swiss Glacier Inventory ID of underlying glacier\r\n\t - [year_acq]: Year of acquisition of the aerial image\r\n\t - [year_rel]: Year of release of Swiss Glacier Inventory\r\n\t - [area_km2]: Area in square kilometers\r\n\t \r\n  ----------------------------------------\r\n  - Ice divides: SGI_2016_icedivides.shp -\r\n  ----------------------------------------\r\n    ATTRIBUTES:\r\n\t-----------\r\n     - [gid]: geometry-ID\r\n\t - [sgi-id_a]: Swiss Glacier Inventory ID of glacier a\r\n\t - [name_a]: Name of glacier a\r\n\t - [sgi-id_b]: Swiss Glacier Inventory ID of glacier b\r\n\t - [name_b]: Name of glacier b\r\n\t - [year_acq]: Year of acquisition of the aerial image\r\n\t - [year_rel]: Year of release of Swiss Glacier Inventory\r\n\t - [length_km]: lenght of ice divides im kilometers\r\n\t \r\n  ------------------------------------------\r\n  - Center lines: SGI_2016_centerlines.shp -\r\n  ------------------------------------------\r\n    ATTRIBUTES:\r\n\t-----------\r\n     - [gid]: geometry-ID\r\n\t - [sgi-id]: Swiss Glacier Inventory ID of glacier\r\n\t - [name]: Name of glacier\r\n\t - [year_acq]: Year of acquisition of the aerial image\r\n\t - [year_rel]: Year of release of Swiss Glacier Inventory\r\n\t - [length_km]: lenght of flow divides im kilometers\r\n\t \r\n\t according to Machguth, H. and Huss, M. (2014). The length of the world's glaciers - a new approach for the global calculation of center lines. The Cryosphere, 8, 1741-1755. doi:10.5194/tc-8-1741-2014\r\n\t \r\n  ------------------------------------------------\r\n  - Surfacetype Raster: SGI_2016_surfacetype.tif -\r\n  ------------------------------------------------\r\n\t 10m Raster aligned with swissALTI3D raster cells (2m)\r\n\t 0: no ice\r\n\t 1: ice/glacier\r\n\t 2: debris-covered ice/glacier\r\n\r\nAdditional Information:\r\n-----------------------\r\nCRS: CH1903+ / LV95 (EPSG 2056)\r\nEncoding: UTF-8\r\n\r\nWhen using these data, please cite as:\r\n--------------------------------------\r\nGLAMOS (2020). Swiss Glacier Inventory 2016, release 2020, Glacier Monitoring Switzerland, doi:10.18750/inventory.2016.r2020\r\n\r\n-------------------------------------\r\nDOI: 10.18750/inventory.sgi2016.r2020\r\n-------------------------------------"
+  },
+  "glamosOriginalVerification": [
+    {
+      "coordinateComparisonToleranceM": 1e-08,
+      "layer": "SGI_2016_glaciers",
+      "nativeCrs": "EPSG:2056",
+      "offlineSelectionIdentical": true,
+      "records": 1
+    },
+    {
+      "coordinateComparisonToleranceM": 1e-08,
+      "layer": "SGI_2016_debriscover",
+      "nativeCrs": "EPSG:2056",
+      "offlineSelectionIdentical": true,
+      "records": 6
+    }
+  ],
+  "inspectionScope": "Read-only named metadata/header/stat inventory; current hashes only selected compact inputs, four core Swiss TIFFs and one COG; no pixel preparation or new data",
+  "knownPreparationInventory": [
+    {
+      "groups": {
+        "tiles": {
+          "bytes": 23889573,
+          "maxBytes": 112921,
+          "medianBytes": 84234,
+          "minBytes": 8236,
+          "objects": 295,
+          "p95Bytes": 100999.6
+        }
+      },
+      "id": "tryfan-welsh-regional-v2",
+      "manifest": "derived/atlas/tryfan/tryfan-welsh-regional-v2/manifest.json",
+      "manifestBytes": 87014,
+      "manifestSha256": "b254a21b1ec346cc07b43d269d937b059851e95ac168565359a81d3872c69e54",
+      "payloadFilesStatChecked": 295,
+      "revision": "db8e4d87b5fa609d455d1e0f8ec3fdebc834579a7e102f69f4d0b0283efa690c"
+    },
+    {
+      "groups": {
+        "masks": {
+          "bytes": 238866,
+          "maxBytes": 481,
+          "medianBytes": 464,
+          "minBytes": 149,
+          "objects": 547,
+          "p95Bytes": 473.0
+        },
+        "tiles": {
+          "bytes": 41855904,
+          "maxBytes": 158556,
+          "medianBytes": 76446,
+          "minBytes": 19377,
+          "objects": 547,
+          "p95Bytes": 101230.59999999998
+        }
+      },
+      "id": "riffelhorn-regional-terrain-v1",
+      "manifest": "derived/atlas/riffelhorn/riffelhorn-regional-terrain-v1/manifest.json",
+      "manifestBytes": 222168,
+      "manifestSha256": "778745c36f2208e72a28a99923d00d81fcd0bd7f90e8759ba3f03362ccfc4627",
+      "payloadFilesStatChecked": 1094,
+      "revision": "4fc837f299271c7238591865a393f98facc6fa7b93d9cc75305160df900b1fe5"
+    },
+    {
+      "groups": {
+        "tiles": {
+          "bytes": 930914852,
+          "maxBytes": 133755,
+          "medianBytes": 82079,
+          "minBytes": 761,
+          "objects": 11429,
+          "p95Bytes": 100601.2
+        }
+      },
+      "id": "riffelhorn-swiss-support-v1",
+      "manifest": "derived/atlas/riffelhorn/riffelhorn-swiss-support-v1/manifest.json",
+      "manifestBytes": 1897650,
+      "manifestSha256": "30413b6698c1e75e27fd169f61925d8d60044fa14f444fb072b652c54816e106",
+      "payloadFilesStatChecked": 11429,
+      "revision": "1a44a0644de1bde73a3ba84d1b761dc0aa17d48cc971e5f6b5d2c14fb329d7ea"
+    },
+    {
+      "groups": {
+        "tiles": {
+          "bytes": 327636998,
+          "maxBytes": 161226,
+          "medianBytes": 122200.0,
+          "minBytes": 11890,
+          "objects": 2730,
+          "p95Bytes": 138315.9
+        }
+      },
+      "id": "riffelhorn-copernicus-common-v1",
+      "manifest": "derived/atlas/riffelhorn/riffelhorn-copernicus-common-v1/manifest.json",
+      "manifestBytes": 450369,
+      "manifestSha256": "9393fbadf807592ed67e94408d82bc0f508d4a29d7aa90cf78e605b2053bb177",
+      "payloadFilesStatChecked": 2730,
+      "revision": "8f002dcbdeceb6aa37cc9eeef9f2d2060193b1eff7922ddb1d0535a6b8030da2"
+    },
+    {
+      "groups": {
+        "fields": {
+          "bytes": 1294380168,
+          "maxBytes": 2863862,
+          "medianBytes": 2724499.0,
+          "minBytes": 35293,
+          "objects": 542,
+          "p95Bytes": 2788733.05
+        },
+        "tiles": {
+          "bytes": 269852875,
+          "maxBytes": 703045,
+          "medianBytes": 554853.0,
+          "minBytes": 9150,
+          "objects": 542,
+          "p95Bytes": 642900.3999999999
+        }
+      },
+      "id": "riffelhorn-swissimage-baseline-v1",
+      "manifest": "derived/atlas/riffelhorn/riffelhorn-swissimage-baseline-v1/manifest.json",
+      "manifestBytes": 218993,
+      "manifestSha256": "3c8b50fb9d7721b678abc46b9450495b417ccafff15d4ee8a67d9d6a3fee4934",
+      "payloadFilesStatChecked": 1084,
+      "revision": "f6edd630206ed02f255176935d72126cbc6ad7987b12d2986edbe6d05619bc1b"
+    }
+  ],
+  "limitation": "Stat/header checks do not prove all current payload hashes; recorded archive hashes and prior reproducibility are separately labelled. No website refresh implies retained data version or per-cell survey date.",
+  "planSha256": "0a640f8ec12ebc59c318dcafc814d7833a19456c633eec2c6a5ed71fd047d4b4",
+  "priorArchiveAndWorking": {
+    "copernicus": {
+      "generationSeconds": 103.60355890006758,
+      "sourceAreaMeaning": "six 1-degree native COGs; delivered aligned rectangle differs from source footprint",
+      "sourceBytes": 254113117,
+      "workingBytes": 416136764
+    },
+    "imagery": {
+      "fieldBytes": 1294380168,
+      "identity": "f6edd630206ed02f255176935d72126cbc6ad7987b12d2986edbe6d05619bc1b",
+      "seconds": 194.07174620009027,
+      "sourceBytes": 186259028,
+      "tileBytes": 269852875
+    },
+    "swissOriginal": {
+      "sourceAreaKm2": 4,
+      "sourceBytes": 65607404
+    },
+    "swissSupport": {
+      "generationSeconds": 770.1632222000044,
+      "nodataCells": 0,
+      "sourceAreaKm2": 100,
+      "sourceBytes": 1667166026,
+      "sourceMosaic": "${MERIDIAN_DATA_ROOT}/derived/atlas/riffelhorn/riffelhorn-swiss-support-v1/source-mosaic.vrt",
+      "sourceMosaicSha256": "8b097d62be84e110cdf8efd695f63d685a9069fcad98aae91660b7fb42e17998",
+      "storageBytes": 930914852,
+      "tileCounts": [
+        {
+          "omittedPartialOrNodataTiles": 8,
+          "tiles": 1,
+          "zoom": 12
+        },
+        {
+          "omittedPartialOrNodataTiles": 12,
+          "tiles": 4,
+          "zoom": 13
+        },
+        {
+          "omittedPartialOrNodataTiles": 24,
+          "tiles": 25,
+          "zoom": 14
+        },
+        {
+          "omittedPartialOrNodataTiles": 48,
+          "tiles": 121,
+          "zoom": 15
+        },
+        {
+          "omittedPartialOrNodataTiles": 94,
+          "tiles": 506,
+          "zoom": 16
+        },
+        {
+          "omittedPartialOrNodataTiles": 234,
+          "tiles": 2118,
+          "zoom": 17
+        },
+        {
+          "omittedPartialOrNodataTiles": 466,
+          "tiles": 8654,
+          "zoom": 18
+        }
+      ],
+      "tiles": 11429
+    },
+    "welsh": {
+      "sourceAreaKm2": 9,
+      "sourceBytes": 15639072,
+      "workingBytes": 46691533
+    }
+  },
+  "recordsReadSha256": {
+    "docs/atlas/copernicus-common-acquisition.json": "17ce25bd35d31d12150ca90441147e44a85da69f0ec6554c1396cf78f90bdd8e",
+    "docs/atlas/riffelhorn-data-catalog.json": "b9d125e60e90435bfab362b4b2056b67295ecd7d90634b58dbd8105646bc9a62",
+    "docs/atlas/riffelhorn-support-acquisition.json": "06a5f816bb5098096ad185c39cd2c154502391308733089ebc5cd535ed4b007f",
+    "docs/atlas/semantic-comparison-sources.json": "e13c8bd1f4e9c30d739955a398512cc6aa96aed1586de0972c997cc95a49e837",
+    "docs/atlas/water-check-sources.json": "d6e574a175400edc0c8c15bcc8bcfa5a9064c9f04084d6f8702e825e7dffecb9",
+    "src/atlas/terrain/metadata/tryfanProductRecord.json": "510a559ea70ea16f6d7a5d2308e924dce872d6f6322b41619df02aac8d9e6fed"
+  },
+  "schema": "atlas-regional-expansion-inventory/v1",
+  "selectedNativeInputsBytes": 77753124,
+  "semanticInputs": [
+    {
+      "availability": "VERIFIED",
+      "byteIdentity": "VERIFIED",
+      "bytes": 5046,
+      "header": {
+        "bands": 1,
+        "bounds": [
+          7.74825,
+          45.97,
+          7.774249999999999,
+          45.988166666666665
+        ],
+        "crs": "EPSG:4326",
+        "dtypes": [
+          "uint8"
+        ],
+        "nodata": 0.0,
+        "resolution": [
+          8.333333333333333e-05,
+          8.333333333333333e-05
+        ],
+        "shape": [
+          218,
+          312
+        ],
+        "tags": {
+          "AREA_OR_POINT": "Area"
+        },
+        "transform": [
+          8.333333333333333e-05,
+          0.0,
+          7.74825,
+          0.0,
+          -8.333333333333333e-05,
+          45.988166666666665,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "path": "derived/atlas/semantic-comparison-v1/riffelhorn-worldcover.tif",
+      "sha256": "86579f0b5f87e9c50e499c3ab0752b39357fe7379ab227a11c31c2dee1e676ee",
+      "sourceReceipt": {
+        "completeParentHashKnown": false,
+        "operation": "Native grid window read, no reprojection/resampling; lossless uint8 GeoTIFF re-encoding; mask is applied only in analysis.",
+        "parentHeadersCheckedUtc": "2026-10-06T10:35:24.879761+00:00",
+        "retainedUtcFromFilesystem": "2026-10-06T10:25:28.578001+00:00",
+        "subsetDefinition": {
+          "sourceCrs": "EPSG:4326",
+          "sourceShape": [
+            36000,
+            36000
+          ],
+          "sourceTransform": [
+            8.333333333333333e-05,
+            0.0,
+            6.0,
+            0.0,
+            -8.333333333333333e-05,
+            48.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "url": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N45E006_Map.tif",
+          "window": [
+            20979,
+            24142,
+            312,
+            218
+          ],
+          "windowTransform": [
+            8.333333333333333e-05,
+            0.0,
+            7.74825,
+            0.0,
+            -8.333333333333333e-05,
+            45.988166666666665,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "url": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N45E006_Map.tif"
+      },
+      "upstreamByteIdentity": "UNKNOWN"
+    },
+    {
+      "availability": "VERIFIED",
+      "byteIdentity": "VERIFIED",
+      "bytes": 602,
+      "path": "derived/atlas/semantic-comparison-v1/riffelhorn-worldcover-window.json",
+      "sha256": "84848fc783488fddfe1d92ef514201d1bd7453fc3ab8a36653198c1f0db9dc92",
+      "upstreamByteIdentity": "UNKNOWN"
+    },
+    {
+      "availability": "VERIFIED",
+      "byteIdentity": "VERIFIED",
+      "bytes": 985424,
+      "geometryBounds": [
+        [
+          2625199.4,
+          1092696.0,
+          2625307.9,
+          1092980.1
+        ],
+        [
+          2625891.5,
+          1092208.1,
+          2626176.3,
+          1092310.7
+        ],
+        [
+          2625865.4,
+          1092130.6,
+          2626266.5,
+          1092286.6
+        ],
+        [
+          2625623.7,
+          1092473.2,
+          2625802.7,
+          1092530.3
+        ],
+        [
+          2625890.2,
+          1091996.4,
+          2626024.7,
+          1092097.5
+        ],
+        [
+          2625924.1,
+          1091996.4,
+          2625987.6,
+          1092034.0
+        ],
+        [
+          2623588.2,
+          1092524.5,
+          2626311.2,
+          1093925.5
+        ],
+        [
+          2623263.6,
+          1091936.1,
+          2626824.8,
+          1092966.6
+        ],
+        [
+          2623217.6,
+          1092518.7,
+          2625249.6,
+          1093828.7
+        ],
+        [
+          2624031.9,
+          1092686.5,
+          2626089.0,
+          1093861.7
+        ],
+        [
+          2625484.5,
+          1091997.8,
+          2626843.7,
+          1092513.3
+        ],
+        [
+          2624158.9,
+          1092524.5,
+          2624985.5,
+          1092720.9
+        ],
+        [
+          2625238.0,
+          1092510.2,
+          2626244.0,
+          1092663.2
+        ],
+        [
+          2625612.9,
+          1091995.6,
+          2626189.8,
+          1092262.6
+        ],
+        [
+          2624217.9,
+          1092505.5,
+          2624990.3,
+          1092614.5
+        ],
+        [
+          2624562.9,
+          1092968.6,
+          2624651.5,
+          1093010.2
+        ],
+        [
+          2620000.0,
+          1084825.0,
+          2637500.0,
+          1098000.0
+        ],
+        [
+          2624566.4,
+          1092658.7,
+          2624834.7,
+          1092817.5
+        ],
+        [
+          2623753.6,
+          1092654.7,
+          2624061.6,
+          1092849.5
+        ],
+        [
+          2624491.3,
+          1092751.4,
+          2624560.6,
+          1092832.8
+        ],
+        [
+          2625848.4,
+          1092134.3,
+          2626909.6,
+          1092533.9
+        ],
+        [
+          2625959.1,
+          1091971.1,
+          2626370.1,
+          1092083.8
+        ],
+        [
+          2625044.8,
+          1092466.3,
+          2625415.2,
+          1092563.7
+        ]
+      ],
+      "geometryValid": true,
+      "identities": [
+        "179373",
+        "179510",
+        "179526",
+        "179643",
+        "179715",
+        "179832",
+        "178893",
+        "178895",
+        "178904",
+        "178907",
+        "179011",
+        "179019",
+        "179032",
+        "179070",
+        "179254",
+        "179731",
+        "289040",
+        "179320",
+        "179382",
+        "179678",
+        "179082",
+        "179116",
+        "179296"
+      ],
+      "path": "derived/atlas/semantic-comparison-v1/geocover-bedrock.json",
+      "propertyKeys": [
+        "ber_link",
+        "chrono_combined_de",
+        "chrono_combined_fr",
+        "correlation_de",
+        "correlation_fr",
+        "erl_link",
+        "gmu_de",
+        "gmu_fr",
+        "label",
+        "litho_combined_de",
+        "litho_combined_fr",
+        "litstrat_formation_bank_de",
+        "litstrat_formation_bank_fr",
+        "strati_link",
+        "tecto_de",
+        "tecto_fr"
+      ],
+      "records": 23,
+      "sha256": "75855416dccc84c6c7cbf60e7df1d10dcbf73caf94af25ad5fe3b437a9bf64d6",
+      "sourceReceipt": {
+        "retainedUtcFromFilesystem": "2026-10-06T10:23:09.754466+00:00",
+        "url": "https://api3.geo.admin.ch/rest/services/all/MapServer/identify?geometry=2624000%2C1091000%2C2626000%2C1093000&geometryType=esriGeometryEnvelope&sr=2056&layers=all%3Ach.swisstopo.geologie-swissgeocover2d_bedrock&mapExtent=2624000%2C1091000%2C2626000%2C1093000&imageDisplay=1000%2C1000%2C96&tolerance=0&returnGeometry=true&geometryFormat=geojson&lang=en"
+      },
+      "upstreamByteIdentity": "UNKNOWN"
+    },
+    {
+      "availability": "VERIFIED",
+      "byteIdentity": "VERIFIED",
+      "bytes": 97673,
+      "geometryBounds": [
+        [
+          2625972.8,
+          1091891.2,
+          2628368.1,
+          1092944.0
+        ],
+        [
+          2625147.4,
+          1091999.1,
+          2626181.5,
+          1092367.4
+        ],
+        [
+          2625766.4,
+          1092068.1,
+          2626087.6,
+          1092161.2
+        ],
+        [
+          2624696.0,
+          1092447.3,
+          2624779.1,
+          1092479.6
+        ],
+        [
+          2625002.4,
+          1092443.1,
+          2625114.1,
+          1092505.0
+        ],
+        [
+          2623135.6,
+          1089205.2,
+          2624922.6,
+          1091445.2
+        ],
+        [
+          2625889.5,
+          1092662.5,
+          2627243.9,
+          1093361.0
+        ],
+        [
+          2624411.7,
+          1091833.4,
+          2629469.4,
+          1092392.7
+        ]
+      ],
+      "geometryValid": true,
+      "identities": [
+        "208112",
+        "208134",
+        "208180",
+        "98749",
+        "101156",
+        "142911",
+        "142912",
+        "142917"
+      ],
+      "path": "derived/atlas/semantic-comparison-v1/geocover-unconsolidated.json",
+      "propertyKeys": [
+        "ber_link",
+        "erl_link",
+        "label",
+        "runc_chrono_b_de",
+        "runc_chrono_b_fr",
+        "runc_chrono_combined_de",
+        "runc_chrono_combined_fr",
+        "runc_chrono_t_de",
+        "runc_chrono_t_fr",
+        "runc_glac_typ_de",
+        "runc_glac_typ_fr",
+        "runc_litho_de",
+        "runc_litho_fr",
+        "runc_litstrat_de",
+        "runc_litstrat_fr",
+        "runc_morpholo_de",
+        "runc_morpholo_fr",
+        "runc_structur_de",
+        "runc_structur_fr"
+      ],
+      "records": 8,
+      "sha256": "25dba9784af81e7c89a2a375110bddb4b819e825ae7a5e681cb84bbefe1311e2",
+      "sourceReceipt": {
+        "retainedUtcFromFilesystem": "2026-10-06T10:23:10.019890+00:00",
+        "url": "https://api3.geo.admin.ch/rest/services/all/MapServer/identify?geometry=2624000%2C1091000%2C2626000%2C1093000&geometryType=esriGeometryEnvelope&sr=2056&layers=all%3Ach.swisstopo.geologie-swissgeocover2d_unconsolidated&mapExtent=2624000%2C1091000%2C2626000%2C1093000&imageDisplay=1000%2C1000%2C96&tolerance=0&returnGeometry=true&geometryFormat=geojson&lang=en"
+      },
+      "upstreamByteIdentity": "UNKNOWN"
+    },
+    {
+      "availability": "VERIFIED",
+      "byteIdentity": "VERIFIED",
+      "bytes": 9787779,
+      "path": "derived/atlas/semantic-comparison-v1/glamos.zip",
+      "sha256": "36ff3252f24f76f0a93eafaa29086ba63725cc2cc99593deca34c15699e933a7",
+      "sourceReceipt": {
+        "retainedUtcFromFilesystem": "2026-10-06T10:24:59.724159+00:00",
+        "url": "https://doi.glamos.ch/data/inventory/inventory_sgi2016_r2020.zip"
+      },
+      "upstreamByteIdentity": "UNKNOWN"
+    },
+    {
+      "availability": "VERIFIED",
+      "byteIdentity": "VERIFIED",
+      "bytes": 948105,
+      "featureYears": [
+        2015
+      ],
+      "geometryBounds": [
+        [
+          2623570.7396108788,
+          1085076.7740838008,
+          2634378.1146209612,
+          1092697.0080879866
+        ]
+      ],
+      "geometryValid": true,
+      "identities": [
+        "683"
+      ],
+      "nativeCrs": "EPSG:2056",
+      "path": "derived/atlas/semantic-comparison-v1/SGI_2016_glaciers-subset.json",
+      "propertyKeys": [
+        "area_km2",
+        "aspect_deg",
+        "gid",
+        "i_code",
+        "length_km",
+        "masl_max",
+        "masl_mean",
+        "masl_med",
+        "masl_min",
+        "name",
+        "pk_glacier",
+        "rl_0",
+        "rl_1",
+        "rl_2",
+        "rl_3",
+        "sgi-id",
+        "slope_deg",
+        "year_acq",
+        "year_rel"
+      ],
+      "records": 1,
+      "sgiIds": [
+        "B56-07"
+      ],
+      "sha256": "36467d038b2a0fe3c8285fdf40093c21ec64eaceb897c4b143310bcbccdf3ff6",
+      "upstreamByteIdentity": "UNKNOWN"
+    },
+    {
+      "availability": "VERIFIED",
+      "byteIdentity": "VERIFIED",
+      "bytes": 321091,
+      "featureYears": [
+        2016
+      ],
+      "geometryBounds": [
+        [
+          2624084.5506107504,
+          1090902.4243281009,
+          2628552.009614802,
+          1091823.5022292593
+        ],
+        [
+          2623570.7396103023,
+          1088502.1633273242,
+          2628005.9856147813,
+          1091907.0839296635
+        ],
+        [
+          2625259.6376119014,
+          1091260.6713290068,
+          2625331.5196119747,
+          1091303.0833290326
+        ],
+        [
+          2624732.0256113983,
+          1091417.0923292057,
+          2624836.827611498,
+          1091481.5843292181
+        ],
+        [
+          2624923.9756115656,
+          1091449.9503291748,
+          2624943.6506115845,
+          1091486.2423291903
+        ],
+        [
+          2624430.1356111364,
+          1091439.9903292954,
+          2624462.2796111596,
+          1091485.911329311
+        ]
+      ],
+      "geometryValid": true,
+      "identities": [
+        "3738",
+        "3739",
+        "3755",
+        "3763",
+        "3764",
+        "3768"
+      ],
+      "nativeCrs": "EPSG:2056",
+      "path": "derived/atlas/semantic-comparison-v1/SGI_2016_debriscover-subset.json",
+      "propertyKeys": [
+        "area_km2",
+        "gid",
+        "name",
+        "sgi-id",
+        "year_acq",
+        "year_rel"
+      ],
+      "records": 6,
+      "sgiIds": [
+        "B56-07"
+      ],
+      "sha256": "33a00778e1dd6ce5f891ba22ff067ced72984531f239210ea33084566b8a2618",
+      "upstreamByteIdentity": "UNKNOWN"
+    }
+  ],
+  "sourceAvailability": [
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 17401386,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1087_0.5_2056_5728.tif",
+      "recordedSha256": "b10d5b3e3275d9c651b508f58492222ee98016abd086e4954ccc519d12074ed2",
+      "selectedCoreInput": false,
+      "support": [
+        2620000,
+        1087000,
+        2621000,
+        1088000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16953881,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1088_0.5_2056_5728.tif",
+      "recordedSha256": "587630e5935c4b8037909abd76cbd729676a3c180b6d123ea6f343fb3934bb5f",
+      "selectedCoreInput": false,
+      "support": [
+        2620000,
+        1088000,
+        2621000,
+        1089000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16403722,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1089_0.5_2056_5728.tif",
+      "recordedSha256": "4c0236e6b289010cc2523729759c52387bf9996fd313d33d31499aba7a12e4cc",
+      "selectedCoreInput": false,
+      "support": [
+        2620000,
+        1089000,
+        2621000,
+        1090000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 15320244,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1090_0.5_2056_5728.tif",
+      "recordedSha256": "11d214ef1a4f45cee9cc0a54a94245ed01b7db129b98973be2c21eb76d6d5ea3",
+      "selectedCoreInput": false,
+      "support": [
+        2620000,
+        1090000,
+        2621000,
+        1091000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 14874442,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1091_0.5_2056_5728.tif",
+      "recordedSha256": "3f48474933d8ef527f3d8230a7fcaf5c189c34a1df8d08947668d92d50a81ce4",
+      "selectedCoreInput": false,
+      "support": [
+        2620000,
+        1091000,
+        2621000,
+        1092000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16584867,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1092_0.5_2056_5728.tif",
+      "recordedSha256": "145e6a56cce12e5a1c6e27eae9f989793b2f7f4d1bfdc56088aa725fc9d5202c",
+      "selectedCoreInput": false,
+      "support": [
+        2620000,
+        1092000,
+        2621000,
+        1093000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16394245,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1093_0.5_2056_5728.tif",
+      "recordedSha256": "caf5bd8f68bdb213d7e295d05fa9b2e99fdbc1a3c59a17a268817662bc6f9627",
+      "selectedCoreInput": false,
+      "support": [
+        2620000,
+        1093000,
+        2621000,
+        1094000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16098701,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1094_0.5_2056_5728.tif",
+      "recordedSha256": "995d22067407347dfa631ee019cf8a265a4bfee4e0b5d3d0bad3ec7eca4c103f",
+      "selectedCoreInput": false,
+      "support": [
+        2620000,
+        1094000,
+        2621000,
+        1095000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16582300,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1095_0.5_2056_5728.tif",
+      "recordedSha256": "8edf7167f60946fc23c284f369f4fecfadaa62680b03005f7de5b62b62d1e1b5",
+      "selectedCoreInput": false,
+      "support": [
+        2620000,
+        1095000,
+        2621000,
+        1096000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16848901,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2620-1096_0.5_2056_5728.tif",
+      "recordedSha256": "229bd00fc2d9f293f5272745eb82359ed55fd8ab2fb0be513575f9eeecc0a342",
+      "selectedCoreInput": false,
+      "support": [
+        2620000,
+        1096000,
+        2621000,
+        1097000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 15954427,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1087_0.5_2056_5728.tif",
+      "recordedSha256": "b66ad46a08ac53df0c3394d3709bd9f0466fcc1375c6c62ad805f82d511145eb",
+      "selectedCoreInput": false,
+      "support": [
+        2621000,
+        1087000,
+        2622000,
+        1088000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 15922567,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1088_0.5_2056_5728.tif",
+      "recordedSha256": "f13e4d9359805e61fc32ebb8276bc54b853ec0869e73b186c31c537aabd96c39",
+      "selectedCoreInput": false,
+      "support": [
+        2621000,
+        1088000,
+        2622000,
+        1089000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16111025,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1089_0.5_2056_5728.tif",
+      "recordedSha256": "ee2729eba5a82ee16d10dda08d2468a056a1e1d3e0bd7d26eaa2044442722442",
+      "selectedCoreInput": false,
+      "support": [
+        2621000,
+        1089000,
+        2622000,
+        1090000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 15742045,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1090_0.5_2056_5728.tif",
+      "recordedSha256": "76422e5d2089ea7b8d0a625c085e58264410a2adc52106611096300abcceae2f",
+      "selectedCoreInput": false,
+      "support": [
+        2621000,
+        1090000,
+        2622000,
+        1091000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 14739777,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1091_0.5_2056_5728.tif",
+      "recordedSha256": "6ec921b4bb6a5c537c2be19a11fdf3253fad233b0c808af53f591c14320c1684",
+      "selectedCoreInput": false,
+      "support": [
+        2621000,
+        1091000,
+        2622000,
+        1092000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16001761,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1092_0.5_2056_5728.tif",
+      "recordedSha256": "9e666305d72e452400fff3bad770a7ef461b7c4c7d0d5b456d7973751abe324a",
+      "selectedCoreInput": false,
+      "support": [
+        2621000,
+        1092000,
+        2622000,
+        1093000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16959765,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1093_0.5_2056_5728.tif",
+      "recordedSha256": "441997950f43e8bcbb2a7c26bf0e57f36da743665902712116312bb2291cf91e",
+      "selectedCoreInput": false,
+      "support": [
+        2621000,
+        1093000,
+        2622000,
+        1094000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 17214339,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1094_0.5_2056_5728.tif",
+      "recordedSha256": "cc3e92a4d77af3159dd339de6b50115354ef51143b201604498c1c759442a83b",
+      "selectedCoreInput": false,
+      "support": [
+        2621000,
+        1094000,
+        2622000,
+        1095000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16931627,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1095_0.5_2056_5728.tif",
+      "recordedSha256": "7c97faf4fa013e31a2a3e3a0c8e3cdc584d35712b5ce61df217c420f658e3002",
+      "selectedCoreInput": false,
+      "support": [
+        2621000,
+        1095000,
+        2622000,
+        1096000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16648827,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2621-1096_0.5_2056_5728.tif",
+      "recordedSha256": "bffda95d135e3fb74f6459cf6ebbf9bb0f14eeff19ca9eca8041dbf82ce60429",
+      "selectedCoreInput": false,
+      "support": [
+        2621000,
+        1096000,
+        2622000,
+        1097000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 17656200,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1087_0.5_2056_5728.tif",
+      "recordedSha256": "18c4d3511c1a3a1bb8d3b35efc625df5f88bc79cd10000b51849fdb79798dbb8",
+      "selectedCoreInput": false,
+      "support": [
+        2622000,
+        1087000,
+        2623000,
+        1088000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16758827,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1088_0.5_2056_5728.tif",
+      "recordedSha256": "f1fa1c8317bd8f6042f2d8d804a7a4daecac4c6d6bdd9d721588ac6a9a48480d",
+      "selectedCoreInput": false,
+      "support": [
+        2622000,
+        1088000,
+        2623000,
+        1089000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 15870919,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1089_0.5_2056_5728.tif",
+      "recordedSha256": "7977b8282cb05038368d26ae1b508172a6c2afdb68e9d78311ef610d76034bb5",
+      "selectedCoreInput": false,
+      "support": [
+        2622000,
+        1089000,
+        2623000,
+        1090000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16807812,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1090_0.5_2056_5728.tif",
+      "recordedSha256": "ca3dfe0d1e2a322f71e3a53bc26ba94e17f3beb6a74a5d7fd9af1528f540c1a7",
+      "selectedCoreInput": false,
+      "support": [
+        2622000,
+        1090000,
+        2623000,
+        1091000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16274480,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1091_0.5_2056_5728.tif",
+      "recordedSha256": "014d778f4b3cd0dadb17c1ac0b19df0f6e4ada7c212bdc82ab825207fc6cb92d",
+      "selectedCoreInput": false,
+      "support": [
+        2622000,
+        1091000,
+        2623000,
+        1092000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 17227718,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1092_0.5_2056_5728.tif",
+      "recordedSha256": "53b85a4bf30b01637b68601a61004298a13cf40364616d8a3521512a76b45f26",
+      "selectedCoreInput": false,
+      "support": [
+        2622000,
+        1092000,
+        2623000,
+        1093000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 17752404,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1093_0.5_2056_5728.tif",
+      "recordedSha256": "1bb728d6191a526c5a527cce37c1a93d935d54a04cb12040a01265e1dba8dce8",
+      "selectedCoreInput": false,
+      "support": [
+        2622000,
+        1093000,
+        2623000,
+        1094000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 17733493,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1094_0.5_2056_5728.tif",
+      "recordedSha256": "2c8f0c6a9d9b1613eaeb53dfe7216a054f970e101078ae6bc1cd80bc881e2d7f",
+      "selectedCoreInput": false,
+      "support": [
+        2622000,
+        1094000,
+        2623000,
+        1095000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 18379595,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1095_0.5_2056_5728.tif",
+      "recordedSha256": "a103daec543361d7d786d7d0e3b066d9bd2ec3cd5a69f1e4d4a7620849cf1041",
+      "selectedCoreInput": false,
+      "support": [
+        2622000,
+        1095000,
+        2623000,
+        1096000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 18040620,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1096_0.5_2056_5728.tif",
+      "recordedSha256": "d779af7c6698f43bcf4b230507aaee9802f64625cb8a38f37d59ebacfcc09286",
+      "selectedCoreInput": false,
+      "support": [
+        2622000,
+        1096000,
+        2623000,
+        1097000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 17065620,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1087_0.5_2056_5728.tif",
+      "recordedSha256": "99a9fdcb1d904f6c518f364ae0d248b1eea3dafcf8b3138cfe5f31efa2c946d4",
+      "selectedCoreInput": false,
+      "support": [
+        2623000,
+        1087000,
+        2624000,
+        1088000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 17182870,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1088_0.5_2056_5728.tif",
+      "recordedSha256": "375147312cda5fe811adf38aa8e4f16be64cf8919f3912bf7c0971c42c8926d9",
+      "selectedCoreInput": false,
+      "support": [
+        2623000,
+        1088000,
+        2624000,
+        1089000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16823122,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1089_0.5_2056_5728.tif",
+      "recordedSha256": "c669f4a1f3589fd604bac3a9da5654f0e61f101c8e9a2a411b4c7b9232a7d64b",
+      "selectedCoreInput": false,
+      "support": [
+        2623000,
+        1089000,
+        2624000,
+        1090000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16759414,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1090_0.5_2056_5728.tif",
+      "recordedSha256": "9ad35be9ccd26ca728f62495a6f3d74262e8d1449b43f8a124887e34debdf8d9",
+      "selectedCoreInput": false,
+      "support": [
+        2623000,
+        1090000,
+        2624000,
+        1091000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 17480806,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1091_0.5_2056_5728.tif",
+      "recordedSha256": "56378b8b0cd1138de5f10098fa6838bc229cf34c918fd2847540b9fd89c83771",
+      "selectedCoreInput": false,
+      "support": [
+        2623000,
+        1091000,
+        2624000,
+        1092000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 17498230,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1092_0.5_2056_5728.tif",
+      "recordedSha256": "f24239d38c80537328b141bed50b63831df9645a9a94a813c98a35b70f3b3fda",
+      "selectedCoreInput": false,
+      "support": [
+        2623000,
+        1092000,
+        2624000,
+        1093000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 17399178,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1093_0.5_2056_5728.tif",
+      "recordedSha256": "604fcd83c4cc7868745fb843f23fef4daf5b1c3e9cbbcd28e1dc9e161b6a7f1a",
+      "selectedCoreInput": false,
+      "support": [
+        2623000,
+        1093000,
+        2624000,
+        1094000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 17951264,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1094_0.5_2056_5728.tif",
+      "recordedSha256": "0f4a8153fb08a59974985619915265a4a8352cf727338de0275f9caacb06af6e",
+      "selectedCoreInput": false,
+      "support": [
+        2623000,
+        1094000,
+        2624000,
+        1095000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 17418044,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1095_0.5_2056_5728.tif",
+      "recordedSha256": "a6ea488ecbb54b97100f22d867c38b8cd1efc37b68d61f175c98e53fb2c810ca",
+      "selectedCoreInput": false,
+      "support": [
+        2623000,
+        1095000,
+        2624000,
+        1096000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 18073992,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2623-1096_0.5_2056_5728.tif",
+      "recordedSha256": "0e251928c93b53107618d576cf11a52299352d08532f50e3f764c635e72cc581",
+      "selectedCoreInput": false,
+      "support": [
+        2623000,
+        1096000,
+        2624000,
+        1097000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 17085638,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2624-1087_0.5_2056_5728.tif",
+      "recordedSha256": "72b64738927ab260b47a9979b248bb6235e72ca65a34a6816c2733e51fdaa0e1",
+      "selectedCoreInput": false,
+      "support": [
+        2624000,
+        1087000,
+        2625000,
+        1088000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 17261890,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2624-1088_0.5_2056_5728.tif",
+      "recordedSha256": "e15a31af5ddab240672322a51780ed755436c2e3813ff37a286a6cec0b20b60d",
+      "selectedCoreInput": false,
+      "support": [
+        2624000,
+        1088000,
+        2625000,
+        1089000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 17015934,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2624-1089_0.5_2056_5728.tif",
+      "recordedSha256": "d2e79d7de72df078b8defcfe853f2c579a9137e7a89397b5b52f94042894a7f8",
+      "selectedCoreInput": false,
+      "support": [
+        2624000,
+        1089000,
+        2625000,
+        1090000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 17059381,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2624-1090_0.5_2056_5728.tif",
+      "recordedSha256": "54e86e526618b067f773a96da881c33e71ea545125da39c0fe902058d9990677",
+      "selectedCoreInput": false,
+      "support": [
+        2624000,
+        1090000,
+        2625000,
+        1091000
+      ]
+    },
+    {
+      "availability": "VERIFIED",
+      "bytes": 16490312,
+      "currentFullHash": true,
+      "currentSha256": "c68c305e4a142da416b46b555a80916ecc52f8fa50bf1efd5cd2c3f24f9cd4bc",
+      "family": "swiss-support",
+      "header": {
+        "bands": 1,
+        "bounds": [
+          2624000.0,
+          1091000.0,
+          2625000.0,
+          1092000.0
+        ],
+        "crs": "EPSG:2056",
+        "dtypes": [
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "resolution": [
+          0.5,
+          0.5
+        ],
+        "shape": [
+          2000,
+          2000
+        ],
+        "tags": {
+          "AREA_OR_POINT": "Area"
+        },
+        "transform": [
+          0.5,
+          0.0,
+          2624000.0,
+          0.0,
+          -0.5,
+          1092000.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "identityVerification": "VERIFIED",
+      "officialItem": "swissalti3d_2024_2624-1091",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:18.392792Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:37:49.146955Z"
+      },
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2624-1091_0.5_2056_5728.tif",
+      "recordedSha256": "c68c305e4a142da416b46b555a80916ecc52f8fa50bf1efd5cd2c3f24f9cd4bc",
+      "selectedCoreInput": true,
+      "support": [
+        2624000,
+        1091000,
+        2625000,
+        1092000
+      ],
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2624-1091/swissalti3d_2024_2624-1091_0.5_2056_5728.tif"
+    },
+    {
+      "availability": "VERIFIED",
+      "bytes": 16862345,
+      "currentFullHash": true,
+      "currentSha256": "9fa4a4391e2e1bfd650f2f31c7d38ed9a5a94494a967011468e6c44559bbcb2c",
+      "family": "swiss-support",
+      "header": {
+        "bands": 1,
+        "bounds": [
+          2624000.0,
+          1092000.0,
+          2625000.0,
+          1093000.0
+        ],
+        "crs": "EPSG:2056",
+        "dtypes": [
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "resolution": [
+          0.5,
+          0.5
+        ],
+        "shape": [
+          2000,
+          2000
+        ],
+        "tags": {
+          "AREA_OR_POINT": "Area"
+        },
+        "transform": [
+          0.5,
+          0.0,
+          2624000.0,
+          0.0,
+          -0.5,
+          1093000.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "identityVerification": "VERIFIED",
+      "officialItem": "swissalti3d_2024_2624-1092",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:18.580437Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:37:49.322944Z"
+      },
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2624-1092_0.5_2056_5728.tif",
+      "recordedSha256": "9fa4a4391e2e1bfd650f2f31c7d38ed9a5a94494a967011468e6c44559bbcb2c",
+      "selectedCoreInput": true,
+      "support": [
+        2624000,
+        1092000,
+        2625000,
+        1093000
+      ],
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2624-1092/swissalti3d_2024_2624-1092_0.5_2056_5728.tif"
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16342473,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2624-1093_0.5_2056_5728.tif",
+      "recordedSha256": "a17f61660e8bc295173f90922578d583798384b997ecbe36641552f592cc033b",
+      "selectedCoreInput": false,
+      "support": [
+        2624000,
+        1093000,
+        2625000,
+        1094000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16722258,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2624-1094_0.5_2056_5728.tif",
+      "recordedSha256": "8b50585c677dacb5e15ca75de174b7628a04e3cc0be8a84a20e4e248a339777a",
+      "selectedCoreInput": false,
+      "support": [
+        2624000,
+        1094000,
+        2625000,
+        1095000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 18007501,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2624-1095_0.5_2056_5728.tif",
+      "recordedSha256": "57f12bcf71d823f32a3186667f8d7dbbfac80e2335454fd4d505dd17ce6e08aa",
+      "selectedCoreInput": false,
+      "support": [
+        2624000,
+        1095000,
+        2625000,
+        1096000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 18145643,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2624-1096_0.5_2056_5728.tif",
+      "recordedSha256": "cdc98b65fccf96f1eeb2ba65009bf12cd41716d8bd2ba18260f4a072a8921f59",
+      "selectedCoreInput": false,
+      "support": [
+        2624000,
+        1096000,
+        2625000,
+        1097000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 17664082,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2625-1087_0.5_2056_5728.tif",
+      "recordedSha256": "d8b715383ac23f76634b743aad585661df386d85c8dc68ff924aa71a7a7ce645",
+      "selectedCoreInput": false,
+      "support": [
+        2625000,
+        1087000,
+        2626000,
+        1088000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16640746,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2625-1088_0.5_2056_5728.tif",
+      "recordedSha256": "7b9df08e8cc9b9c8bea55b2d8641618d78e3bce1dbf32b0d0be6476f2586fafb",
+      "selectedCoreInput": false,
+      "support": [
+        2625000,
+        1088000,
+        2626000,
+        1089000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16581503,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2625-1089_0.5_2056_5728.tif",
+      "recordedSha256": "6917ceb87a5a58a8f5787c7222286902dca1f0ceee973b80dcfdeebb19acb9da",
+      "selectedCoreInput": false,
+      "support": [
+        2625000,
+        1089000,
+        2626000,
+        1090000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16253102,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2625-1090_0.5_2056_5728.tif",
+      "recordedSha256": "4d918d88b47a6bdb2faa959ced434d37fbb677671ec168fb54e32380148c5a0b",
+      "selectedCoreInput": false,
+      "support": [
+        2625000,
+        1090000,
+        2626000,
+        1091000
+      ]
+    },
+    {
+      "availability": "VERIFIED",
+      "bytes": 15925644,
+      "currentFullHash": true,
+      "currentSha256": "0d2ebc6d0b4fd06ab2191cbf2a2f5ab77728249fa8c835075040bce4dc4899de",
+      "family": "swiss-support",
+      "header": {
+        "bands": 1,
+        "bounds": [
+          2625000.0,
+          1091000.0,
+          2626000.0,
+          1092000.0
+        ],
+        "crs": "EPSG:2056",
+        "dtypes": [
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "resolution": [
+          0.5,
+          0.5
+        ],
+        "shape": [
+          2000,
+          2000
+        ],
+        "tags": {
+          "AREA_OR_POINT": "Area"
+        },
+        "transform": [
+          0.5,
+          0.0,
+          2625000.0,
+          0.0,
+          -0.5,
+          1092000.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "identityVerification": "VERIFIED",
+      "officialItem": "swissalti3d_2024_2625-1091",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:37.677084Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:00.116595Z"
+      },
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2625-1091_0.5_2056_5728.tif",
+      "recordedSha256": "0d2ebc6d0b4fd06ab2191cbf2a2f5ab77728249fa8c835075040bce4dc4899de",
+      "selectedCoreInput": true,
+      "support": [
+        2625000,
+        1091000,
+        2626000,
+        1092000
+      ],
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2625-1091/swissalti3d_2024_2625-1091_0.5_2056_5728.tif"
+    },
+    {
+      "availability": "VERIFIED",
+      "bytes": 16329103,
+      "currentFullHash": true,
+      "currentSha256": "4dffaad9efb82d3bf327a86b4f82d55762165ea5f825c386c23380a9320ff875",
+      "family": "swiss-support",
+      "header": {
+        "bands": 1,
+        "bounds": [
+          2625000.0,
+          1092000.0,
+          2626000.0,
+          1093000.0
+        ],
+        "crs": "EPSG:2056",
+        "dtypes": [
+          "float32"
+        ],
+        "nodata": -9999.0,
+        "resolution": [
+          0.5,
+          0.5
+        ],
+        "shape": [
+          2000,
+          2000
+        ],
+        "tags": {
+          "AREA_OR_POINT": "Area"
+        },
+        "transform": [
+          0.5,
+          0.0,
+          2625000.0,
+          0.0,
+          -0.5,
+          1093000.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "identityVerification": "VERIFIED",
+      "officialItem": "swissalti3d_2024_2625-1092",
+      "officialProperties": {
+        "created": "2024-12-19T06:29:37.778992Z",
+        "datetime": "2024-01-01T00:00:00Z",
+        "updated": "2024-12-19T10:38:00.177268Z"
+      },
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2625-1092_0.5_2056_5728.tif",
+      "recordedSha256": "4dffaad9efb82d3bf327a86b4f82d55762165ea5f825c386c23380a9320ff875",
+      "selectedCoreInput": true,
+      "support": [
+        2625000,
+        1092000,
+        2626000,
+        1093000
+      ],
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2625-1092/swissalti3d_2024_2625-1092_0.5_2056_5728.tif"
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16183047,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2625-1093_0.5_2056_5728.tif",
+      "recordedSha256": "f302035dfae29b9d07a0f6c22918080871954cd1b06b6523a51acf647840f790",
+      "selectedCoreInput": false,
+      "support": [
+        2625000,
+        1093000,
+        2626000,
+        1094000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16897280,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2625-1094_0.5_2056_5728.tif",
+      "recordedSha256": "a40fbf29d431c827faac57fd5b06819593de3f14f94fa0767fdef4ea7a67fa48",
+      "selectedCoreInput": false,
+      "support": [
+        2625000,
+        1094000,
+        2626000,
+        1095000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16335764,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2625-1095_0.5_2056_5728.tif",
+      "recordedSha256": "f353e9d2572ae28a663eba1892ccbbb9c9d690cc150697477af60270e9244c13",
+      "selectedCoreInput": false,
+      "support": [
+        2625000,
+        1095000,
+        2626000,
+        1096000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 17111800,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2625-1096_0.5_2056_5728.tif",
+      "recordedSha256": "fa2c43d94f33508eaf75f53c428554dec436c42a21932d18ef2e5fd5c0f677f9",
+      "selectedCoreInput": false,
+      "support": [
+        2625000,
+        1096000,
+        2626000,
+        1097000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16462798,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1087_0.5_2056_5728.tif",
+      "recordedSha256": "cac2b6a412264b7221fb09cfb9ea4dda4e23b66cbc8fb516395e3cb220ebba54",
+      "selectedCoreInput": false,
+      "support": [
+        2626000,
+        1087000,
+        2627000,
+        1088000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16495321,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1088_0.5_2056_5728.tif",
+      "recordedSha256": "2fbe87ca858b305295a0c796babbc80f057f7c277a1dba268f6f0c95fe51467e",
+      "selectedCoreInput": false,
+      "support": [
+        2626000,
+        1088000,
+        2627000,
+        1089000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16790384,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1089_0.5_2056_5728.tif",
+      "recordedSha256": "be976949f9efc30cf4b8d413425a1cd4409b7b8e58397b80d6773cb3d191d7cc",
+      "selectedCoreInput": false,
+      "support": [
+        2626000,
+        1089000,
+        2627000,
+        1090000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 15906078,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1090_0.5_2056_5728.tif",
+      "recordedSha256": "b1e94efebda0182f5a81c6bc79da06c4331b1351dfb284ea506ed2eb1fe551ef",
+      "selectedCoreInput": false,
+      "support": [
+        2626000,
+        1090000,
+        2627000,
+        1091000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 15906230,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1091_0.5_2056_5728.tif",
+      "recordedSha256": "cd371e983e6f525c1653f3f9a98209a5533b6f5f18423f4be65a444c016b9f8e",
+      "selectedCoreInput": false,
+      "support": [
+        2626000,
+        1091000,
+        2627000,
+        1092000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16192272,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1092_0.5_2056_5728.tif",
+      "recordedSha256": "3ed05cb8ac3fcf4363def4332c0ddc452eafeb55ef86802bcc5e30d4e6893dd1",
+      "selectedCoreInput": false,
+      "support": [
+        2626000,
+        1092000,
+        2627000,
+        1093000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16602919,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1093_0.5_2056_5728.tif",
+      "recordedSha256": "5acc79cbb13a7a13c9ef0b182e78a84733edc32fb7b44a6f8ec2d0c11f3d5f87",
+      "selectedCoreInput": false,
+      "support": [
+        2626000,
+        1093000,
+        2627000,
+        1094000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16281214,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1094_0.5_2056_5728.tif",
+      "recordedSha256": "64fbf6607dc068b01665c55d5cf2dbe4ea2465a6811df14fdaa0cc0ed83ea42f",
+      "selectedCoreInput": false,
+      "support": [
+        2626000,
+        1094000,
+        2627000,
+        1095000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16376502,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1095_0.5_2056_5728.tif",
+      "recordedSha256": "d16098b7e40e07942b48df4387dfe33c67bb29cb8f86e518c0a9110a7f41c941",
+      "selectedCoreInput": false,
+      "support": [
+        2626000,
+        1095000,
+        2627000,
+        1096000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 17053629,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2626-1096_0.5_2056_5728.tif",
+      "recordedSha256": "dd41533b3a1e93354f3ce6981b656d5be135e4311ac0e6050e7d5c2fd9b9d090",
+      "selectedCoreInput": false,
+      "support": [
+        2626000,
+        1096000,
+        2627000,
+        1097000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16942448,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1087_0.5_2056_5728.tif",
+      "recordedSha256": "a1ee161970e0d31e267f412542386096c0ed7a0427eb8591924ad91d2d0f661c",
+      "selectedCoreInput": false,
+      "support": [
+        2627000,
+        1087000,
+        2628000,
+        1088000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16920001,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1088_0.5_2056_5728.tif",
+      "recordedSha256": "5d6995ceefa75feb42537b35bd4ca129d691ed5138da9b9e58803ed465c4d8dd",
+      "selectedCoreInput": false,
+      "support": [
+        2627000,
+        1088000,
+        2628000,
+        1089000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16797814,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1089_0.5_2056_5728.tif",
+      "recordedSha256": "335eb30fd08e2ed53455cf4086fac9dcca6f481402e3cce163f38bde7a71938a",
+      "selectedCoreInput": false,
+      "support": [
+        2627000,
+        1089000,
+        2628000,
+        1090000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 15549836,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1090_0.5_2056_5728.tif",
+      "recordedSha256": "9b63b175e61f510026b689cf91c983eed91ba5def220412f064266f08b18d28e",
+      "selectedCoreInput": false,
+      "support": [
+        2627000,
+        1090000,
+        2628000,
+        1091000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 15761686,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1091_0.5_2056_5728.tif",
+      "recordedSha256": "10e84994bf3012e8a06460725a2c131a1372554ab600502fb59506182d729f04",
+      "selectedCoreInput": false,
+      "support": [
+        2627000,
+        1091000,
+        2628000,
+        1092000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16604376,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1092_0.5_2056_5728.tif",
+      "recordedSha256": "f826c927d7bd1f2e27325a63eca76194e419bd68e42fcd430345383482b0acae",
+      "selectedCoreInput": false,
+      "support": [
+        2627000,
+        1092000,
+        2628000,
+        1093000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 17040570,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1093_0.5_2056_5728.tif",
+      "recordedSha256": "2a0cd8f674c444c255100822509c37999d10450fca131ab244f527429470a3ff",
+      "selectedCoreInput": false,
+      "support": [
+        2627000,
+        1093000,
+        2628000,
+        1094000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16221733,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1094_0.5_2056_5728.tif",
+      "recordedSha256": "d7be5da78f5842fdcc83a9536cd53eca6dbe86b67ab2e7e3dba4180b599d9af9",
+      "selectedCoreInput": false,
+      "support": [
+        2627000,
+        1094000,
+        2628000,
+        1095000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 15996146,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1095_0.5_2056_5728.tif",
+      "recordedSha256": "cba28399a5a6e5bca5320456ce26bbe6eaacf44ec284f098146166767309edc6",
+      "selectedCoreInput": false,
+      "support": [
+        2627000,
+        1095000,
+        2628000,
+        1096000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 17231136,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1096_0.5_2056_5728.tif",
+      "recordedSha256": "910ca9cf743cc0272d57ba3c088b64887963d23037d9497f0c89b29142098d44",
+      "selectedCoreInput": false,
+      "support": [
+        2627000,
+        1096000,
+        2628000,
+        1097000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16459404,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1087_0.5_2056_5728.tif",
+      "recordedSha256": "bb37d77bf8c367f9c5cd43f56fd3c3c1c9f9fa13e3d78c102585fe2c4464a7f4",
+      "selectedCoreInput": false,
+      "support": [
+        2628000,
+        1087000,
+        2629000,
+        1088000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16351190,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1088_0.5_2056_5728.tif",
+      "recordedSha256": "4a7af161792cc6ed54377f605ce570268bfeb059fcf1e5fb1c20dea2e4d0ad64",
+      "selectedCoreInput": false,
+      "support": [
+        2628000,
+        1088000,
+        2629000,
+        1089000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16600853,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1089_0.5_2056_5728.tif",
+      "recordedSha256": "099a9160abaac1beddc5704b4f8326a06df87b9d9a68ecd240f8e71332009281",
+      "selectedCoreInput": false,
+      "support": [
+        2628000,
+        1089000,
+        2629000,
+        1090000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16590964,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1090_0.5_2056_5728.tif",
+      "recordedSha256": "52d3c8ae560f4a564ead56a7e6ca309a1b4ed09da8a2b1e655dea7305768a891",
+      "selectedCoreInput": false,
+      "support": [
+        2628000,
+        1090000,
+        2629000,
+        1091000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16642485,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1091_0.5_2056_5728.tif",
+      "recordedSha256": "9afccaf8aa5dcb7af657d414261e56cebee9af5353e8a2a4adc69a8c7cf8330d",
+      "selectedCoreInput": false,
+      "support": [
+        2628000,
+        1091000,
+        2629000,
+        1092000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16870394,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1092_0.5_2056_5728.tif",
+      "recordedSha256": "e05807372eaa2ade01dd30cd1b4e50f3dba5a6e2faea2ec2528442a64a79c36e",
+      "selectedCoreInput": false,
+      "support": [
+        2628000,
+        1092000,
+        2629000,
+        1093000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16544107,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1093_0.5_2056_5728.tif",
+      "recordedSha256": "d63946296ab16a4f7e199eea570e375a6bb26324855b03b67d3628559e314204",
+      "selectedCoreInput": false,
+      "support": [
+        2628000,
+        1093000,
+        2629000,
+        1094000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16074001,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1094_0.5_2056_5728.tif",
+      "recordedSha256": "fa46a45f7092725a7a9bff86a53ea606996f466f61e478b2aa7b6ae35eb42d9a",
+      "selectedCoreInput": false,
+      "support": [
+        2628000,
+        1094000,
+        2629000,
+        1095000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 15996376,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1095_0.5_2056_5728.tif",
+      "recordedSha256": "94a128ca09790c345bb58efe24ff3ab54fd17597aa80fdb7e47ffa93ce02c385",
+      "selectedCoreInput": false,
+      "support": [
+        2628000,
+        1095000,
+        2629000,
+        1096000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16646500,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2628-1096_0.5_2056_5728.tif",
+      "recordedSha256": "076ba72f90cf1752ddddc10ea215bbdee745476c302f97984ce7c55cd311a7ba",
+      "selectedCoreInput": false,
+      "support": [
+        2628000,
+        1096000,
+        2629000,
+        1097000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16520631,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1087_0.5_2056_5728.tif",
+      "recordedSha256": "08ad1eb9e46c2e1a9efed25a414561b2aee1d035223987f00c874f8872043750",
+      "selectedCoreInput": false,
+      "support": [
+        2629000,
+        1087000,
+        2630000,
+        1088000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16408067,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1088_0.5_2056_5728.tif",
+      "recordedSha256": "02f79a090e0c7f3d9b3b69f18387fd363ec7a7396f9ff1f77bdc95a4f62b5664",
+      "selectedCoreInput": false,
+      "support": [
+        2629000,
+        1088000,
+        2630000,
+        1089000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16878766,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1089_0.5_2056_5728.tif",
+      "recordedSha256": "19e94991fcbd6ae6629c1e2540d063370821c6c529d9086b68242c71be48bb29",
+      "selectedCoreInput": false,
+      "support": [
+        2629000,
+        1089000,
+        2630000,
+        1090000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16645302,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1090_0.5_2056_5728.tif",
+      "recordedSha256": "bbbba6acf6734468d214978cae058fbb3a3c700281386560b8af33cf7efb48d3",
+      "selectedCoreInput": false,
+      "support": [
+        2629000,
+        1090000,
+        2630000,
+        1091000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16396342,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1091_0.5_2056_5728.tif",
+      "recordedSha256": "bdefae29ec27ee1e9aa554d43049938bcbffd098e5a6019a49403d38a7327456",
+      "selectedCoreInput": false,
+      "support": [
+        2629000,
+        1091000,
+        2630000,
+        1092000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16925910,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1092_0.5_2056_5728.tif",
+      "recordedSha256": "e3ace395664bf31f0662b98f820f506f7f2aecf9981052dc9adff8618ee3985f",
+      "selectedCoreInput": false,
+      "support": [
+        2629000,
+        1092000,
+        2630000,
+        1093000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16069973,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1093_0.5_2056_5728.tif",
+      "recordedSha256": "0aaf036112bf954f1e852bf266e7ba692ebec4b290383ac1c8e0556bb9ed190e",
+      "selectedCoreInput": false,
+      "support": [
+        2629000,
+        1093000,
+        2630000,
+        1094000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16206866,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1094_0.5_2056_5728.tif",
+      "recordedSha256": "2956c294d23827c1e0dae9f21ba666aec8a780ede57aca401ed87b38e25b3fe7",
+      "selectedCoreInput": false,
+      "support": [
+        2629000,
+        1094000,
+        2630000,
+        1095000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 15932460,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1095_0.5_2056_5728.tif",
+      "recordedSha256": "7390addf349c79f1c4fea9dd748af565156fc09b158f435a2aab03fc107d998c",
+      "selectedCoreInput": false,
+      "support": [
+        2629000,
+        1095000,
+        2630000,
+        1096000
+      ]
+    },
+    {
+      "authoritativeRecord": "docs/atlas/riffelhorn-support-acquisition.json; exact path key",
+      "availability": "VERIFIED",
+      "bytes": 16513439,
+      "currentFullHash": false,
+      "family": "swiss-support",
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2629-1096_0.5_2056_5728.tif",
+      "recordedSha256": "4b2cbfa7f1167abb091354b3b92603aba39721b9ee3370e59f36b66a26bfb894",
+      "selectedCoreInput": false,
+      "support": [
+        2629000,
+        1096000,
+        2630000,
+        1097000
+      ]
+    },
+    {
+      "availability": "VERIFIED",
+      "bytes": 42594792,
+      "currentFullHash": true,
+      "currentSha256": "638c155dd9a5f0b7ee818146def740093da33cee4606071b2bbf7ce3fa00ab95",
+      "family": "copernicus",
+      "header": {
+        "bands": 1,
+        "bounds": [
+          6.9998611111111115,
+          45.00013888888889,
+          7.9998611111111115,
+          46.00013888888889
+        ],
+        "crs": "EPSG:4326",
+        "dtypes": [
+          "float32"
+        ],
+        "nodata": null,
+        "resolution": [
+          0.0002777777777777778,
+          0.0002777777777777778
+        ],
+        "shape": [
+          3600,
+          3600
+        ],
+        "tags": {
+          "AREA_OR_POINT": "Point"
+        },
+        "transform": [
+          0.0002777777777777778,
+          0.0,
+          6.9998611111111115,
+          0.0,
+          -0.0002777777777777778,
+          46.00013888888889,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "identityVerification": "VERIFIED",
+      "path": "sources/atlas/riffelhorn/global-reference-assessment-v1/cop45/Copernicus_DSM_COG_10_N45_00_E007_00_DEM.tif",
+      "recordedSha256": "638c155dd9a5f0b7ee818146def740093da33cee4606071b2bbf7ce3fa00ab95",
+      "retentionReference": "2026-10-04T15:51:22.654094+00:00",
+      "selectedCoreInput": false,
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N45_00_E007_00_DEM/Copernicus_DSM_COG_10_N45_00_E007_00_DEM.tif"
+    },
+    {
+      "availability": "VERIFIED",
+      "bytes": 43016696,
+      "currentFullHash": false,
+      "family": "copernicus",
+      "header": {
+        "bands": 1,
+        "bounds": [
+          7.9998611111111115,
+          45.00013888888889,
+          8.999861111111112,
+          46.00013888888889
+        ],
+        "crs": "EPSG:4326",
+        "dtypes": [
+          "float32"
+        ],
+        "nodata": null,
+        "resolution": [
+          0.0002777777777777778,
+          0.0002777777777777778
+        ],
+        "shape": [
+          3600,
+          3600
+        ],
+        "tags": {
+          "AREA_OR_POINT": "Point"
+        },
+        "transform": [
+          0.0002777777777777778,
+          0.0,
+          7.9998611111111115,
+          0.0,
+          -0.0002777777777777778,
+          46.00013888888889,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/copernicus-common-2021-v1/originals/Copernicus_DSM_COG_10_N45_00_E008_00_DEM.tif",
+      "recordedSha256": "02fac5d646f443f4f288a3d59b4cb995300e1c4fcbe4b5c1c6078a165a3d9ad4",
+      "retentionReference": "2026-10-04T17:02:33.217980+00:00",
+      "selectedCoreInput": false,
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N45_00_E008_00_DEM/Copernicus_DSM_COG_10_N45_00_E008_00_DEM.tif"
+    },
+    {
+      "availability": "VERIFIED",
+      "bytes": 41776750,
+      "currentFullHash": false,
+      "family": "copernicus",
+      "header": {
+        "bands": 1,
+        "bounds": [
+          6.9998611111111115,
+          46.00013888888889,
+          7.9998611111111115,
+          47.00013888888889
+        ],
+        "crs": "EPSG:4326",
+        "dtypes": [
+          "float32"
+        ],
+        "nodata": null,
+        "resolution": [
+          0.0002777777777777778,
+          0.0002777777777777778
+        ],
+        "shape": [
+          3600,
+          3600
+        ],
+        "tags": {
+          "AREA_OR_POINT": "Point"
+        },
+        "transform": [
+          0.0002777777777777778,
+          0.0,
+          6.9998611111111115,
+          0.0,
+          -0.0002777777777777778,
+          47.00013888888889,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/global-reference-assessment-v1/cop46/Copernicus_DSM_COG_10_N46_00_E007_00_DEM.tif",
+      "recordedSha256": "426e3d1492d94e4f23d444843f852ff5be675da5c4c14e661b5642006864047d",
+      "retentionReference": "2026-10-04T15:51:22.415167+00:00",
+      "selectedCoreInput": false,
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N46_00_E007_00_DEM/Copernicus_DSM_COG_10_N46_00_E007_00_DEM.tif"
+    },
+    {
+      "availability": "VERIFIED",
+      "bytes": 42038015,
+      "currentFullHash": false,
+      "family": "copernicus",
+      "header": {
+        "bands": 1,
+        "bounds": [
+          7.9998611111111115,
+          46.00013888888889,
+          8.999861111111112,
+          47.00013888888889
+        ],
+        "crs": "EPSG:4326",
+        "dtypes": [
+          "float32"
+        ],
+        "nodata": null,
+        "resolution": [
+          0.0002777777777777778,
+          0.0002777777777777778
+        ],
+        "shape": [
+          3600,
+          3600
+        ],
+        "tags": {
+          "AREA_OR_POINT": "Point"
+        },
+        "transform": [
+          0.0002777777777777778,
+          0.0,
+          7.9998611111111115,
+          0.0,
+          -0.0002777777777777778,
+          47.00013888888889,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/copernicus-common-2021-v1/originals/Copernicus_DSM_COG_10_N46_00_E008_00_DEM.tif",
+      "recordedSha256": "47769664394ee1ff3b51f5c1b43a3441d7f7bce8d086d0ed2f3a892b895fae3e",
+      "retentionReference": "2026-10-04T17:02:36.847854+00:00",
+      "selectedCoreInput": false,
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N46_00_E008_00_DEM/Copernicus_DSM_COG_10_N46_00_E008_00_DEM.tif"
+    },
+    {
+      "availability": "VERIFIED",
+      "bytes": 42939950,
+      "currentFullHash": false,
+      "family": "copernicus",
+      "header": {
+        "bands": 1,
+        "bounds": [
+          6.9998611111111115,
+          47.00013888888889,
+          7.9998611111111115,
+          48.00013888888889
+        ],
+        "crs": "EPSG:4326",
+        "dtypes": [
+          "float32"
+        ],
+        "nodata": null,
+        "resolution": [
+          0.0002777777777777778,
+          0.0002777777777777778
+        ],
+        "shape": [
+          3600,
+          3600
+        ],
+        "tags": {
+          "AREA_OR_POINT": "Point"
+        },
+        "transform": [
+          0.0002777777777777778,
+          0.0,
+          6.9998611111111115,
+          0.0,
+          -0.0002777777777777778,
+          48.00013888888889,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/copernicus-common-2021-v1/originals/Copernicus_DSM_COG_10_N47_00_E007_00_DEM.tif",
+      "recordedSha256": "5012dc32581b4aebbe71dec6f22507a2944b5e6b7f8fa301b0876f947976298b",
+      "retentionReference": "2026-10-04T17:02:36.558906+00:00",
+      "selectedCoreInput": false,
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N47_00_E007_00_DEM/Copernicus_DSM_COG_10_N47_00_E007_00_DEM.tif"
+    },
+    {
+      "availability": "VERIFIED",
+      "bytes": 41746914,
+      "currentFullHash": false,
+      "family": "copernicus",
+      "header": {
+        "bands": 1,
+        "bounds": [
+          7.9998611111111115,
+          47.00013888888889,
+          8.999861111111112,
+          48.00013888888889
+        ],
+        "crs": "EPSG:4326",
+        "dtypes": [
+          "float32"
+        ],
+        "nodata": null,
+        "resolution": [
+          0.0002777777777777778,
+          0.0002777777777777778
+        ],
+        "shape": [
+          3600,
+          3600
+        ],
+        "tags": {
+          "AREA_OR_POINT": "Point"
+        },
+        "transform": [
+          0.0002777777777777778,
+          0.0,
+          7.9998611111111115,
+          0.0,
+          -0.0002777777777777778,
+          48.00013888888889,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+      "path": "sources/atlas/riffelhorn/copernicus-common-2021-v1/originals/Copernicus_DSM_COG_10_N47_00_E008_00_DEM.tif",
+      "recordedSha256": "4e2917429d65e049a4f1ddee2093f7fc50f11d22d0fd7cee85f5c8334186d7fe",
+      "retentionReference": "2026-10-04T17:02:38.887653+00:00",
+      "selectedCoreInput": false,
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N47_00_E008_00_DEM/Copernicus_DSM_COG_10_N47_00_E008_00_DEM.tif"
+    }
+  ],
+  "startingCheckpoint": "aa920d97a6436dd94d86b1de724d9231c745effd",
+  "statusVocabulary": [
+    "VERIFIED",
+    "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+    "UNKNOWN",
+    "NOT APPLICABLE"
+  ],
+  "waterReceiptAvailability": [
+    {
+      "available": true,
+      "bytes": 6020,
+      "file": "wfd-collection.json",
+      "recordedBytes": 6020,
+      "recordedSha256": "fa4d11ea9029991183a24bd35836208898b88ba642b8f1dc1f290db1854ce4ae",
+      "sourceUrl": "https://environment.data.gov.uk/spatialdata/simplified-wfd-transitional-and-coastal-water-bodies-cycle-3-classification-2019/ogc/features/v1/collections/Simplified_WFD_Transitional_and_Coastal_Water_Bodies_Cycle_3_Classification_2019?f=json"
+    },
+    {
+      "available": true,
+      "bytes": 5205,
+      "file": "wfd-schema.json",
+      "recordedBytes": 5205,
+      "recordedSha256": "afd9f693cf0b41c3d931971b9a69be750d2bcb6b4f0e65f61d558060ee374e5b",
+      "sourceUrl": "https://environment.data.gov.uk/spatialdata/simplified-wfd-transitional-and-coastal-water-bodies-cycle-3-classification-2019/ogc/features/v1/collections/Simplified_WFD_Transitional_and_Coastal_Water_Bodies_Cycle_3_Classification_2019/queryables?f=json"
+    },
+    {
+      "available": true,
+      "bytes": 34267,
+      "file": "wfd.geojson",
+      "recordedBytes": 34267,
+      "recordedSha256": "ed2b3bc7affff3b82857b3f3818ef31a925ee992a7202e4bd93049711a62d520",
+      "sourceUrl": "https://environment.data.gov.uk/spatialdata/simplified-wfd-transitional-and-coastal-water-bodies-cycle-3-classification-2019/ogc/features/v1/collections/Simplified_WFD_Transitional_and_Coastal_Water_Bodies_Cycle_3_Classification_2019/items?f=json&bbox=295000%2C86000%2C298500%2C89000&bbox-crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F27700&crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F27700&limit=2000"
+    },
+    {
+      "available": true,
+      "bytes": 4960,
+      "file": "phi-collection.json",
+      "recordedBytes": 4960,
+      "recordedSha256": "81c101f304c25fe3034fdca1845152a31f9208d3555b05edff026161dd3a7745",
+      "sourceUrl": "https://environment.data.gov.uk/spatialdata/priority-habitat-inventory-england/ogc/features/v1/collections/Priority_Habitat_Inventory_England?f=json"
+    },
+    {
+      "available": true,
+      "bytes": 1508,
+      "file": "phi-schema.json",
+      "recordedBytes": 1508,
+      "recordedSha256": "2aae721448b162c7b3977f7c7b8a6a8742baa092b24f04bafc19d1b803a1c3bc",
+      "sourceUrl": "https://environment.data.gov.uk/spatialdata/priority-habitat-inventory-england/ogc/features/v1/collections/Priority_Habitat_Inventory_England/queryables?f=json"
+    },
+    {
+      "available": true,
+      "bytes": 3666881,
+      "file": "phi.geojson",
+      "recordedBytes": 3666881,
+      "recordedSha256": "7500807fd1a383941e00b2ab5e4925159f1ba97c3e651640a0a89fc5c2b4a2a9",
+      "sourceUrl": "https://environment.data.gov.uk/spatialdata/priority-habitat-inventory-england/ogc/features/v1/collections/Priority_Habitat_Inventory_England/items?f=json&bbox=295000%2C86000%2C298500%2C89000&bbox-crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F27700&crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F27700&limit=2000"
+    },
+    {
+      "available": true,
+      "bytes": 4872,
+      "file": "flood-collection.json",
+      "recordedBytes": 4872,
+      "recordedSha256": "6f83442cbae1843c3ebbea7bb2ffa746359f238be38646e91d088628961fff06",
+      "sourceUrl": "https://environment.data.gov.uk/spatialdata/flood-map-for-planning-flood-zones/ogc/features/v1/collections/Flood_Zones_2_3_Rivers_and_Sea?f=json"
+    },
+    {
+      "available": true,
+      "bytes": 1143,
+      "file": "flood-schema.json",
+      "recordedBytes": 1143,
+      "recordedSha256": "f26bdd21d23070584dfd5c64a3183e72044c49aabafb27cc0f0171cde2fa2cbb",
+      "sourceUrl": "https://environment.data.gov.uk/spatialdata/flood-map-for-planning-flood-zones/ogc/features/v1/collections/Flood_Zones_2_3_Rivers_and_Sea/queryables?f=json"
+    },
+    {
+      "available": true,
+      "bytes": 3512241,
+      "file": "flood.geojson",
+      "recordedBytes": 3512241,
+      "recordedSha256": "199dd9d33ada752071d56cf0940596a2e0951bfbad09ca5e762a4810228d4388",
+      "sourceUrl": "https://environment.data.gov.uk/spatialdata/flood-map-for-planning-flood-zones/ogc/features/v1/collections/Flood_Zones_2_3_Rivers_and_Sea/items?f=json&bbox=295000%2C86000%2C298500%2C89000&bbox-crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F27700&crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F27700&limit=2000"
+    },
+    {
+      "available": true,
+      "bytes": 4706,
+      "file": "rfo-collection.json",
+      "recordedBytes": 4706,
+      "recordedSha256": "c3c92e822a8a177c64c4053291ec6ec73d6ed87c536d8f0c0dace25913565cf9",
+      "sourceUrl": "https://environment.data.gov.uk/spatialdata/recorded-flood-outlines/ogc/features/v1/collections/Recorded_Flood_Outlines?f=json"
+    },
+    {
+      "available": true,
+      "bytes": 1778,
+      "file": "rfo-schema.json",
+      "recordedBytes": 1778,
+      "recordedSha256": "b2170f0e304e12d33e9b11b4800890c5ebe25bf9c12224e2b1f71595770c7960",
+      "sourceUrl": "https://environment.data.gov.uk/spatialdata/recorded-flood-outlines/ogc/features/v1/collections/Recorded_Flood_Outlines/queryables?f=json"
+    },
+    {
+      "available": true,
+      "bytes": 548075,
+      "file": "rfo.geojson",
+      "recordedBytes": 548075,
+      "recordedSha256": "ee1f4a7c7264dc73ee3073f3dc7ae3b7313409e48172dc2cf2feac536ad8087b",
+      "sourceUrl": "https://environment.data.gov.uk/spatialdata/recorded-flood-outlines/ogc/features/v1/collections/Recorded_Flood_Outlines/items?f=json&bbox=295000%2C86000%2C298500%2C89000&bbox-crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F27700&crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F27700&limit=2000"
+    },
+    {
+      "available": true,
+      "bytes": 36740,
+      "file": "rfo-catalogue.html",
+      "recordedBytes": 36740,
+      "recordedSha256": "bde2087f5291d6404b82bff596f130db4d4a8f8a2eb0675b137bd92fffeb394a",
+      "sourceUrl": "https://www.data.gov.uk/dataset/16e32c53-35a6-4d54-a111-ca09031eaaaf/recorded-flood-outlines1"
+    },
+    {
+      "available": true,
+      "bytes": 194250,
+      "file": "rfo-description.pdf",
+      "recordedBytes": 194250,
+      "recordedSha256": "c75dd7c8c8ea617a1bb7044a92aa9e56f8fae719b37958371b832209b4749d44",
+      "sourceUrl": "https://environment.data.gov.uk/file-management-open/data-sets/ed73f2e8-a3c2-44db-952d-6e359c7c3987/files/Guidance_Recorded_Flood_Outline_v6_2.pdf"
+    },
+    {
+      "available": true,
+      "bytes": 75055,
+      "file": "grazing-marsh-definition.pdf",
+      "recordedBytes": 75055,
+      "recordedSha256": "aeb0ddfd9bce1db63c05c76714dfae2b6c41727e8d50d9516e352936fee72ddd",
+      "sourceUrl": "https://data.jncc.gov.uk/data/82b0af67-d19a-4a89-b987-9dba73be1272/UKBAP-BAPHabitats-07-CoastFloodGrazingMarsh.pdf"
+    },
+    {
+      "available": true,
+      "bytes": 41058,
+      "file": "wfd-catalogue.html",
+      "recordedBytes": 41058,
+      "recordedSha256": "6cebba72b13eb2f16af1c3058d593cd144613b742cb54322f23f13a24df64b59",
+      "sourceUrl": "https://www.data.gov.uk/dataset/52fa8958-ea30-46fc-8ecb-f31ea8f89aa6/water-framework-directive-wfd-transitional-and-coastal-water-bodies-cycle-3-classification-20191"
+    },
+    {
+      "available": true,
+      "bytes": 40482,
+      "file": "phi-catalogue.html",
+      "recordedBytes": 40482,
+      "recordedSha256": "c9eea28045677de0ec9b1b14109762b06fda4189cfc4c1d765ea4d19bc14fd0d",
+      "sourceUrl": "https://www.data.gov.uk/dataset/4b6ddab7-6c0f-4407-946e-d6499f19fcde/priority-habitats-inventory-england"
+    },
+    {
+      "available": true,
+      "bytes": 36527,
+      "file": "flood-catalogue.html",
+      "recordedBytes": 36527,
+      "recordedSha256": "ff5713b1b8301e95101cd08ec6d08f9d250bcdfd06d86c7c4f6dff35a2160566",
+      "sourceUrl": "https://www.data.gov.uk/dataset/104434b0-5263-4c90-9b1e-e43b1d57c750/flood-map-for-planning-flood-zones1"
+    },
+    {
+      "available": true,
+      "bytes": 85521,
+      "file": "phi-attributes.pdf",
+      "recordedBytes": 85521,
+      "recordedSha256": "f3744b98b1db0b32ba48ddf6fbde9f119547151fb2f02d1398c95067aab48b97",
+      "sourceUrl": "https://environment.data.gov.uk/api/file/download?fileDataSetId=d30e3fa2-5ca6-4851-b19d-1429ad9d84e0&fileName=Priority_Habitats_Inventory_Attribute_Metadata.pdf"
+    },
+    {
+      "available": true,
+      "bytes": 115586,
+      "file": "phi-spatial.pdf",
+      "recordedBytes": 115586,
+      "recordedSha256": "f112a00d842466aa2698e45214697f06249810a9779697f2cd526851489fc944",
+      "sourceUrl": "https://environment.data.gov.uk/api/file/download?fileDataSetId=d30e3fa2-5ca6-4851-b19d-1429ad9d84e0&fileName=Priority_Habitats_Inventory_Spatial_Metadata.pdf"
+    },
+    {
+      "available": true,
+      "bytes": 25214,
+      "file": "phi-lineage.xlsx",
+      "recordedBytes": 25214,
+      "recordedSha256": "b33a536f142bd6410f6daf79d9be81c36cc8329f9be0833d40204319b5bc858a",
+      "sourceUrl": "https://environment.data.gov.uk/api/file/download?fileDataSetId=d30e3fa2-5ca6-4851-b19d-1429ad9d84e0&fileName=PHI%20V3%20Datasets.xlsx"
+    },
+    {
+      "available": true,
+      "bytes": 203978,
+      "file": "flood-description.pdf",
+      "recordedBytes": 203978,
+      "recordedSha256": "9622f7af48de5f738dfa14f243c5f50282319c872d9b64f1edfae744b5f75385",
+      "sourceUrl": "https://environment.data.gov.uk/api/file/download?fileDataSetId=455d2eb3-3065-4d20-871b-c4d5dee23f67&fileName=Flood%20Zones%20Product%20Description.pdf"
+    },
+    {
+      "available": true,
+      "bytes": 1142853,
+      "file": "jrc-guide.pdf",
+      "recordedBytes": 1142853,
+      "recordedSha256": "94aebddbb2d66bcbacea14326d84d0b9d9401c8ef95bc48b42991448f36b839b",
+      "sourceUrl": "https://storage.googleapis.com/water-world/downloads_ancillary/DataUsersGuidev2024_v.5.pdf"
+    },
+    {
+      "available": true,
+      "bytes": 85116,
+      "file": "jrc-access.html",
+      "recordedBytes": 85116,
+      "recordedSha256": "8b8d8613efb3078b2c2f64c3a76ccdc6fbacdb7d35a7654be2bb98314eb81e62",
+      "sourceUrl": "https://global-surface-water.appspot.com/download"
+    },
+    {
+      "available": true,
+      "bytes": 10450,
+      "file": "ogl3.html",
+      "recordedBytes": 10450,
+      "recordedSha256": "f5b2b9f2af63647cde889fa6c3508f5705925295b74912c68caa28dd37e64aa5",
+      "sourceUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+    },
+    {
+      "available": true,
+      "bytes": 234,
+      "file": "occurrence-listing.json",
+      "recordedBytes": 234,
+      "recordedSha256": "d0b4157aba16c2dce585e99c80f0c79c8ea3e7727428f8a6f7a79f0e677acb81",
+      "sourceUrl": "https://s3.waw4-1.cloudferro.com/swift/v1/global-surface-water/?format=json&prefix=download2024%2FAggregated%2FVER1-5%2Foccurrence%2Foccurrence_10W_60N_v1_5_2024.tif&limit=2"
+    },
+    {
+      "available": true,
+      "bytes": 4453,
+      "file": "occurrence.tif",
+      "recordedBytes": 4453,
+      "recordedSha256": "adb86f717cb37c23b7a36d79d123c79bd865a556ef61897e8f6c664d14c742b6",
+      "sourceUrl": "https://s3.waw4-1.cloudferro.com/swift/v1/global-surface-water/download2024/Aggregated/VER1-5/occurrence/occurrence_10W_60N_v1_5_2024.tif"
+    },
+    {
+      "available": true,
+      "bytes": 226,
+      "file": "monthly-2024-03-listing.json",
+      "recordedBytes": 226,
+      "recordedSha256": "57e681a997c33c4019f24fbb9361927260bb6548034de71a1f9e324bb9b85360",
+      "sourceUrl": "https://s3.waw4-1.cloudferro.com/swift/v1/global-surface-water/?format=json&prefix=MonthlyHistory%2F2024%2F2024_03%2Fmonthlyhistory_10W_60N_v1_5_2024_03.tif&limit=2"
+    },
+    {
+      "available": true,
+      "bytes": 1443,
+      "file": "monthly-2024-03.tif",
+      "recordedBytes": 1443,
+      "recordedSha256": "336c5746c4d1145bf212fa65b7c2ff11d7f5691b17ded1d6eb7127a72ca311c6",
+      "sourceUrl": "https://s3.waw4-1.cloudferro.com/swift/v1/global-surface-water/MonthlyHistory/2024/2024_03/monthlyhistory_10W_60N_v1_5_2024_03.tif"
+    },
+    {
+      "available": true,
+      "bytes": 226,
+      "file": "monthly-2024-09-listing.json",
+      "recordedBytes": 226,
+      "recordedSha256": "eca93456aa48c865280564f847f1b124cc878af970e614373e21912bcf786abe",
+      "sourceUrl": "https://s3.waw4-1.cloudferro.com/swift/v1/global-surface-water/?format=json&prefix=MonthlyHistory%2F2024%2F2024_09%2Fmonthlyhistory_10W_60N_v1_5_2024_09.tif&limit=2"
+    },
+    {
+      "available": true,
+      "bytes": 1522,
+      "file": "monthly-2024-09.tif",
+      "recordedBytes": 1522,
+      "recordedSha256": "e5e51bd87b72668dfaf84a65cc9f7bec10ef326002a9bb0d0b77b786c6737499",
+      "sourceUrl": "https://s3.waw4-1.cloudferro.com/swift/v1/global-surface-water/MonthlyHistory/2024/2024_09/monthlyhistory_10W_60N_v1_5_2024_09.tif"
+    }
+  ],
+  "waterReceiptSummary": {
+    "retainedBytes": 9892590,
+    "totalDirectoryBytes": 9923141
+  },
+  "welshDsm": {
+    "bytes": 16003194,
+    "currentFullHash": false,
+    "header": {
+      "bands": 1,
+      "bounds": [
+        264900.0,
+        357800.0,
+        267900.0,
+        360800.0
+      ],
+      "crs": "EPSG:27700",
+      "dtypes": [
+        "float32"
+      ],
+      "nodata": -9999.0,
+      "resolution": [
+        1.0,
+        1.0
+      ],
+      "shape": [
+        3000,
+        3000
+      ],
+      "tags": {
+        "AREA_OR_POINT": "Area",
+        "aoi_id": "tryfan-004",
+        "retrieval": "bounded COG HTTP range window",
+        "source_url": "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dsm_32bit_cog.tif"
+      },
+      "transform": [
+        1.0,
+        0.0,
+        264900.0,
+        0.0,
+        -1.0,
+        360800.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "identityVerification": "DOCUMENTED BUT NOT INDEPENDENTLY VERIFIED",
+    "path": "sources/atlas/tryfan/welsh-lidar-1m/rasters/tryfan-004-dsm-1m.tif",
+    "role": "retained observed-surface preparation; not adopted as bare-earth terrain"
+  },
+  "welshSource": {
+    "bytes": 15639072,
+    "currentFullHash": false,
+    "header": {
+      "bands": 1,
+      "bounds": [
+        264900.0,
+        357800.0,
+        267900.0,
+        360800.0
+      ],
+      "crs": "EPSG:27700",
+      "dtypes": [
+        "float32"
+      ],
+      "nodata": -9999.0,
+      "resolution": [
+        1.0,
+        1.0
+      ],
+      "shape": [
+        3000,
+        3000
+      ],
+      "tags": {
+        "AREA_OR_POINT": "Area",
+        "aoi_id": "tryfan-004",
+        "retrieval": "bounded COG HTTP range window",
+        "source_url": "https://dmwproductionblob.blob.core.windows.net/cogs/lidar/wales_dtm_32bit_cog.tif"
+      },
+      "transform": [
+        1.0,
+        0.0,
+        264900.0,
+        0.0,
+        -1.0,
+        360800.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "path": "sources/atlas/tryfan/welsh-lidar-1m/rasters/tryfan-004-dtm-1m.tif",
+    "priorSha256": "49c131d7de62e0df35f8e02c2f8db3161bfd37f24fea56060fcbb9e6d109b326"
+  }
+}

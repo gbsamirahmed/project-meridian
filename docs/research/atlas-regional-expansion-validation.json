@@ -1,0 +1,515 @@
+{
+  "acceptedPilotUnchanged": true,
+  "assessmentHashes": {
+    "docs/research/atlas-regional-expansion-baseline.json": "747d741c7ee1660df6a365b8fe51cfe49cce1ad7486270feeaa30fc71f465c42",
+    "docs/research/atlas-regional-expansion-fixture.json": "4e3dfc5d462e721f91cdb9ad5ae3af3917ee3ca6af300124568c0f5ba6720d35",
+    "docs/research/atlas-regional-expansion-inventory.json": "c450a73f23884bfeb549ccc08c9531fc991532f554511ba24da5c1abe0702d61",
+    "docs/research/atlas-regional-expansion.md": "b5923f7a5868cd127881e44843fc2d5cd44eb6ba154fb8e91388c0b731de28d9",
+    "scripts/atlas/regional-expansion/README.md": "16e0a25cc193c2dc641307310ac16bdee9a765bb412daa443e1b50b2e0262559",
+    "scripts/atlas/regional-expansion/inventory.py": "aaec79008ab0885043e4b4afd5216e75528dd56e25b5aa4aece3ce87016abc24",
+    "scripts/atlas/regional-expansion/plan.json": "0a640f8ec12ebc59c318dcafc814d7833a19456c633eec2c6a5ed71fd047d4b4",
+    "scripts/atlas/regional-expansion/validate.py": "84838fa94bfedbb5ea24f93bc098814ce7b6d197a102d6fcd904d4dec0b5726e"
+  },
+  "canonicalThreads": 42,
+  "changedPaths": [
+    "docs/architecture.md",
+    "docs/development-log.md",
+    "docs/product-direction.md",
+    "docs/research/atlas-regional-expansion-baseline.json",
+    "docs/research/atlas-regional-expansion-fixture.json",
+    "docs/research/atlas-regional-expansion-inventory.json",
+    "docs/research/atlas-regional-expansion-validation.json",
+    "docs/research/atlas-regional-expansion.md",
+    "docs/research/atlas-research-map.md",
+    "docs/research/atlas-research-state.md",
+    "scripts/atlas/regional-expansion/README.md",
+    "scripts/atlas/regional-expansion/inventory.py",
+    "scripts/atlas/regional-expansion/plan.json",
+    "scripts/atlas/regional-expansion/validate.py"
+  ],
+  "checks": [
+    {
+      "check": "all original non-navigation files unchanged before regression",
+      "passed": true
+    },
+    {
+      "check": "all42 research statuses unchanged",
+      "passed": true
+    },
+    {
+      "check": "all113 protected production hashes",
+      "passed": true
+    },
+    {
+      "check": "all17 accepted store files unchanged",
+      "passed": true
+    },
+    {
+      "check": "all1575 admitted retained files",
+      "passed": true
+    },
+    {
+      "check": "frozen criteria identities match",
+      "passed": true
+    },
+    {
+      "check": "exact starting checkpoint",
+      "passed": true
+    },
+    {
+      "check": "foundations present and byte-identical",
+      "passed": true
+    },
+    {
+      "check": "all ten mandatory criteria recovered",
+      "passed": true
+    },
+    {
+      "check": "no acceptance fixture implemented",
+      "passed": true
+    },
+    {
+      "check": "explicit supports4 and9",
+      "passed": true
+    },
+    {
+      "check": "exact twelve distinct selected inputs",
+      "passed": true
+    },
+    {
+      "check": "exact120347916 bytes available and matched",
+      "passed": true
+    },
+    {
+      "check": "input paths limited to public named geography",
+      "passed": true
+    },
+    {
+      "check": "four current native DTM headers",
+      "passed": true
+    },
+    {
+      "check": "Swiss source bounds match exact core area",
+      "passed": true
+    },
+    {
+      "check": "native218x312WorldCover grid",
+      "passed": true
+    },
+    {
+      "check": "23and8validGeoCoverfeatures",
+      "passed": true
+    },
+    {
+      "check": "oneand6GLAMOSsource selection independently reproduced",
+      "passed": true
+    },
+    {
+      "check": "GLAMOSfeature dates not release year",
+      "passed": true
+    },
+    {
+      "check": "five existing preparation identities verified",
+      "passed": true
+    },
+    {
+      "check": "106 retained original support entries available",
+      "passed": true
+    },
+    {
+      "check": "all16 original Swiss catalogue assets retained",
+      "passed": true
+    },
+    {
+      "check": "all four accountability labels",
+      "passed": true
+    },
+    {
+      "check": "exact one next bounded task",
+      "passed": true
+    },
+    {
+      "check": "all28 report sections",
+      "passed": true
+    },
+    {
+      "check": "all four decision classifications",
+      "passed": true
+    },
+    {
+      "check": "source-selection does not reopen validation",
+      "passed": true
+    },
+    {
+      "check": "result and exactlyone next in docs/research/atlas-research-state.md",
+      "passed": true
+    },
+    {
+      "check": "result and exactlyone next in docs/research/atlas-research-map.md",
+      "passed": true
+    },
+    {
+      "check": "result and exactlyone next in docs/product-direction.md",
+      "passed": true
+    },
+    {
+      "check": "result and exactlyone next in docs/development-log.md",
+      "passed": true
+    },
+    {
+      "check": "result and exactlyone next in docs/architecture.md",
+      "passed": true
+    },
+    {
+      "check": "append-only development history",
+      "passed": true
+    },
+    {
+      "check": "assessment-inventory-reproduction",
+      "passed": true
+    },
+    {
+      "check": "assessment",
+      "passed": true
+    },
+    {
+      "check": "s6",
+      "passed": true
+    },
+    {
+      "check": "s1-s5",
+      "passed": true
+    },
+    {
+      "check": "native",
+      "passed": true
+    },
+    {
+      "check": "planning",
+      "passed": true
+    },
+    {
+      "check": "frozen",
+      "passed": true
+    },
+    {
+      "check": "qualified",
+      "passed": true
+    },
+    {
+      "check": "persistent",
+      "passed": true
+    },
+    {
+      "check": "exe",
+      "passed": true
+    },
+    {
+      "check": "semantic-types",
+      "passed": true
+    },
+    {
+      "check": "lint",
+      "passed": true
+    },
+    {
+      "check": "build",
+      "passed": true
+    },
+    {
+      "check": "diff",
+      "passed": true
+    },
+    {
+      "check": "application-types",
+      "passed": true
+    },
+    {
+      "check": "assessment-only change allowlist",
+      "passed": true
+    },
+    {
+      "check": "small outputs no payloads",
+      "passed": true
+    },
+    {
+      "check": "local report references resolve",
+      "passed": true
+    },
+    {
+      "check": "original non-navigation bytes unchanged after validation",
+      "passed": true
+    },
+    {
+      "check": "all admitted source inventory unchanged",
+      "passed": true
+    },
+    {
+      "check": "accepted store unchanged after validation",
+      "passed": true
+    },
+    {
+      "check": "all113 production hashes unchanged after validation",
+      "passed": true
+    },
+    {
+      "check": "all12 selected native hashes unchanged after validation",
+      "passed": true
+    },
+    {
+      "check": "accepted current and310evidence hashes unchanged",
+      "passed": true
+    },
+    {
+      "check": "post-review inventory reconstruction; no publisher checksum authority inferred for semantic inputs",
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\gbsam\\Documents\\Projects\\project-meridian\\scripts\\atlas\\regional-expansion\\inventory.py",
+        "--check"
+      ],
+      "exitCode": 0,
+      "name": "assessment-inventory-reproduction",
+      "tests": null
+    },
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/measured-architecture/test_assess.py"
+      ],
+      "exitCode": 0,
+      "name": "assessment",
+      "tests": 10
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "pilots/atlas/tryfan/tests/acceptance.test.mjs"
+      ],
+      "exitCode": 0,
+      "name": "s6",
+      "tests": 7
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "pilots/atlas/tryfan/tests/catalogue.test.mjs",
+        "pilots/atlas/tryfan/tests/query.test.mjs",
+        "pilots/atlas/tryfan/tests/lifecycle.test.mjs",
+        "pilots/atlas/tryfan/tests/http.test.mjs",
+        "pilots/atlas/tryfan/tests/publication.test.mjs",
+        "pilots/atlas/tryfan/tests/restart.test.mjs"
+      ],
+      "exitCode": 0,
+      "name": "s1-s5",
+      "tests": 121
+    },
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "pilots/atlas/tryfan/adapters/test_native.py"
+      ],
+      "exitCode": 0,
+      "name": "native",
+      "tests": 9
+    },
+    {
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/regional-pilot-plan/test_plan.py"
+      ],
+      "exitCode": 0,
+      "name": "planning",
+      "tests": 22
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "scripts/atlas/test_semantic_evidence_contract.mjs",
+        "scripts/atlas/test_terrain_hierarchy_contract.mjs",
+        "scripts/atlas/test_terrain_runtime.mjs",
+        "scripts/atlas/test_tryfan_terrain.mjs"
+      ],
+      "exitCode": 0,
+      "name": "frozen",
+      "tests": 64
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "scripts/atlas/test_qualified_query_proof.mjs"
+      ],
+      "exitCode": 0,
+      "name": "qualified",
+      "tests": 17
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "scripts/atlas/test_local_persistent_tryfan.mjs"
+      ],
+      "exitCode": 0,
+      "name": "persistent",
+      "tests": 18
+    },
+    {
+      "args": [
+        "node",
+        "--test",
+        "scripts/atlas/exe-water-query-proof/test-proof.mjs"
+      ],
+      "exitCode": 0,
+      "name": "exe",
+      "tests": 20
+    },
+    {
+      "args": [
+        "npx.cmd",
+        "tsc",
+        "-p",
+        "scripts/atlas/semantic-evidence/tsconfig.json"
+      ],
+      "exitCode": 0,
+      "name": "semantic-types",
+      "tests": null
+    },
+    {
+      "args": [
+        "npm.cmd",
+        "run",
+        "lint"
+      ],
+      "exitCode": 0,
+      "name": "lint",
+      "tests": null
+    },
+    {
+      "args": [
+        "npm.cmd",
+        "run",
+        "build"
+      ],
+      "exitCode": 0,
+      "name": "build",
+      "tests": null
+    },
+    {
+      "args": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0,
+      "name": "diff",
+      "tests": null
+    },
+    {
+      "args": [
+        "node",
+        "node_modules/typescript/bin/tsc",
+        "-b",
+        "--pretty",
+        "false"
+      ],
+      "exitCode": 0,
+      "name": "application-types",
+      "tests": null
+    },
+    {
+      "args": [
+        "../meridian-data/earth-lab/.venv/Scripts/python.exe",
+        "scripts/atlas/regional-expansion/inventory.py",
+        "--check"
+      ],
+      "exitCode": 0,
+      "name": "post-review-inventory-reproduction",
+      "tests": null
+    }
+  ],
+  "decision": "C - ASSESSMENT RESOLVED",
+  "errors": [],
+  "missingReferences": [],
+  "nextTask": "Atlas retained Riffelhorn qualified regional fixture preparation proof",
+  "nextTaskStatus": "NOT BEGUN",
+  "preservedTrackedFiles": 934,
+  "protectedHashes": 113,
+  "publishedGeneration": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+  "retainedVerification": {
+    "artifacts": 310,
+    "bytes": 42473107
+  },
+  "reviewNote": "After compacting repeated optional-source metadata and clarifying semantic upstreamByteIdentity UNKNOWN, a focused read-only reconstruction passed. Existing code/test workloads and selected byte identities unchanged; no full suite repeated. Final staged-file list includes this validation output, created after the first changed-path scan.",
+  "schema": "atlas-regional-expansion-validation/v1",
+  "sourceAdmission": {
+    "groups": {
+      "Complete retained Exe directory": {
+        "bytes": 10295691,
+        "files": 66,
+        "verifiedEntriesSha256": "7043358dd1d3c10efe1b3483ac65e6ec2b5d2c637c4eff5f3d7a6df77082794a"
+      },
+      "July native post-L2A RGB and SCL": {
+        "bytes": 714544,
+        "files": 4,
+        "verifiedEntriesSha256": "c91c42dcad464a78a200ee6ef0a945e0b246eff75830efa2b8ed6e10a47e060f"
+      },
+      "Lab010 existing natural-colour preparation": {
+        "bytes": 1305121,
+        "files": 3,
+        "verifiedEntriesSha256": "86edf76941cbf6b48bc49e198dceb3f64debd0a7200ab3c83df32d06823113ee"
+      },
+      "Parked Swiss metadata only": {
+        "bytes": 19357606,
+        "files": 112,
+        "verifiedEntriesSha256": "e0179dbb4695a66bbf3cb61f2a215d88dc45bdcfd9c09e886da9fd0c9d6fc2cc"
+      },
+      "Pinned Exe sources/documents": {
+        "bytes": 9892590,
+        "files": 31,
+        "verifiedEntriesSha256": "0e1301af8fcdb00f126ba2886216b2a96bfdd68de71e14c6079beece12e6342a"
+      },
+      "SWISSIMAGE manifest": {
+        "bytes": 218993,
+        "files": 1,
+        "verifiedEntriesSha256": "9e3dcb15bd21260896eab7be966f8fdc59cf2e729ecc952fbc60f489c4873225"
+      },
+      "SWISSIMAGE prepared": {
+        "bytes": 1564233043,
+        "files": 1084,
+        "verifiedEntriesSha256": "944ee3136c7ac91224b59ec369fd8bc90e4bbd299a51b65d6a09a8395a35a327"
+      },
+      "SWISSIMAGE source": {
+        "bytes": 186259028,
+        "files": 4,
+        "verifiedEntriesSha256": "9edd9aaf20eb3481b5b9aec077e715d1d350d73cd4885474cac24cabeec5f203"
+      },
+      "Tryfan native semantic crop and habitat": {
+        "bytes": 563835,
+        "files": 2,
+        "verifiedEntriesSha256": "1d4388d183544fd3a135bde05dece5b6950bfcd77e969c2ef518cd5df98d5771"
+      },
+      "Tryfan source and pinned common samples": {
+        "bytes": 16046943,
+        "files": 5,
+        "verifiedEntriesSha256": "16bbf4ef3222be6619ccfb316e0d5b8e7c86a117476d14d98fae76c61a222e1d"
+      },
+      "Welsh prepared terrain": {
+        "bytes": 23889573,
+        "files": 295,
+        "verifiedEntriesSha256": "6091994b08ed611dd1a44d4be1700f2858d9eb197a5c248189f97a5256f2b593"
+      }
+    },
+    "noWritesOrAcquisition": true,
+    "uniqueFiles": 1575
+  },
+  "startingCheckpoint": "aa920d97a6436dd94d86b1de724d9231c745effd",
+  "testCount": 288
+}

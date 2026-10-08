@@ -1,0 +1,86 @@
+{
+  "allowedChanges": [
+    "assessment inspection/validation tooling",
+    "assessment report and compact inventory/specification",
+    "canonical navigation"
+  ],
+  "candidateSupports": [
+    "Tryfan contiguous enlargement",
+    "Riffelhorn full 100 km2 support",
+    "Riffelhorn 4 km2 core plus unchanged Tryfan reference",
+    "Exe retained water support"
+  ],
+  "date": "2026-10-08",
+  "decisionDependencies": [
+    "support selection",
+    "source and derived identity",
+    "offline preparation reproducibility",
+    "native scientific qualifications",
+    "local research rights",
+    "eventual fixture acceptance"
+  ],
+  "desirableNotMandatory": [
+    "larger contiguous area",
+    "complete upstream parent checksums for previously retained extracts",
+    "exact per-cell acquisition date",
+    "harmonised vertical datum",
+    "unrestricted future public-service redistribution",
+    "new dated revisions"
+  ],
+  "inspectionBoundary": "Named public atlas records only; stat five known preparation manifests, headers of named sources, current hash four core Swiss TIFFs, one Copernicus COG and selected compact semantic inputs. Prior full product verification remains distinct. No fixture creation, source mutation or private access.",
+  "mandatoryCriteria": [
+    {
+      "criterion": "Explicit bounded support in a named CRS; source/delivery/analysis support distinguished",
+      "id": "M1"
+    },
+    {
+      "criterion": "Named retained inputs exist; selected native byte identities verified or precise current/prior verification boundary recorded",
+      "id": "M2"
+    },
+    {
+      "criterion": "Upstream organisation/product and retained snapshot identity accountable; unknown parent/release/survey facts explicit",
+      "id": "M3"
+    },
+    {
+      "criterion": "Preparations, parameters, tools, losses and required offline steps identified",
+      "id": "M4"
+    },
+    {
+      "criterion": "Spatial, height/reference, time, meaning and quality qualifications permit stated operations",
+      "id": "M5"
+    },
+    {
+      "criterion": "Local research reproduction does not require new acquisition or live source queries",
+      "id": "M6"
+    },
+    {
+      "criterion": "Source-specific local-use/transformation/attribution conditions sufficient; redistribution separately qualified",
+      "id": "M7"
+    },
+    {
+      "criterion": "Real new regional/representational complexity changes an integration decision",
+      "id": "M8"
+    },
+    {
+      "criterion": "Bounded reuse of existing products, no infrastructure or processing campaign",
+      "id": "M9"
+    },
+    {
+      "criterion": "Subsequent proof has reproducible inputs, counts, native meaning, failure and immutability acceptance conditions",
+      "id": "M10"
+    }
+  ],
+  "nextTaskStatus": "NOT BEGUN",
+  "previousBoundary": "Accepted Tryfan is 9 km2; larger retained preparations are not integrated qualified world models. Full local validation is adequate; receipt optimisation remains closed.",
+  "rejectionCriteria": [
+    "Required native input missing",
+    "Required local research permission unresolved",
+    "Proposed operation requires unsupported physical equivalence",
+    "Offline preparation needs unavailable dependency",
+    "No useful new complexity beyond accepted pilot"
+  ],
+  "requiredDecision": "C only if all ten mandatory criteria can be established within declared qualifications; otherwise precise blocker",
+  "schema": "atlas-regional-expansion-assessment-plan/v1",
+  "startingCheckpoint": "aa920d97a6436dd94d86b1de724d9231c745effd",
+  "uncertainty": "Which existing retained public geographical products permit one accountable bounded regional expansion without new acquisition or unsupported equivalence?"
+}

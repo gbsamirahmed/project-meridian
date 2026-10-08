@@ -1,0 +1,39 @@
+{
+  "acceptedBaselineReference": "docs/research/atlas-integrity-cost-baseline.json",
+  "acceptedPilot": "CLOSED / ACCEPTED",
+  "branch": "main",
+  "foundationsSha256": {
+    "docs/atlas/copernicus-common-product.md": "16ac66dd8fa47dd609c0947a45dd71bd7fecf19f2fd7c60dd1ba0f3830a219d3",
+    "docs/atlas/riffelhorn-data-catalog.json": "b9d125e60e90435bfab362b4b2056b67295ecd7d90634b58dbd8105646bc9a62",
+    "docs/atlas/riffelhorn-data-discovery.md": "c58151ebf7d3cfa85c8ebe033202f570dfddfc508c60b216b7a4c298bc464f28",
+    "docs/atlas/riffelhorn-swiss-support-product.md": "7ff89ea5ecc1c72bd4753318782fdba36395caaf70b85d152825f921e151039c",
+    "docs/atlas/semantic-evidence-contract.md": "92cdeb0ec6963e7d2355b69edba4e7ce1abb85cbb5c9ea7fce5ea66270a0d268",
+    "docs/atlas/source-native-semantic-comparison.md": "e57cda8c1c1972bf0f67fd0129a8a9c75753a58b9e07dfa7365aec37a48b8de6",
+    "docs/atlas/terrain-hierarchy-contract.md": "054e46ed18279f25dfa3ad1dee962559ee6b61e950e241d25a909dbb5c3eb360",
+    "docs/atlas/water-feature-state-check.md": "718239fad01cf9bb65dcb03f9b3a9791ba57f657239299b33e5c623d71d7aa9f",
+    "docs/research/atlas-component-granularity.md": "831e3965d7cdc871e9883cdd73f3fdca8c0dc8be5bfa20a1547dc95aaa11b56b",
+    "docs/research/atlas-component-membership.md": "3c72d52657455abeb0a126cdc5c4f889f1897271ca166d02943fc33368e48c66",
+    "docs/research/atlas-derived-understanding-lifecycle.md": "aee8a563754e3471cbb24a25ea1463eb9cee3d1606be4ed2e3cb1fe62414b3a3",
+    "docs/research/atlas-integrity-cost.md": "58b99a7e19eecdfe4589ffdf8e7520307c32cd0cb5b9c2bd32d5dcc8bcd064b9",
+    "docs/research/atlas-measured-storage-processing-serving.md": "1696fa267595d6974adbe09a77f616ebc61de1e770372e34478b0db61916b9a7",
+    "docs/research/atlas-storage-processing-serving-requirements.md": "826ce49eab42c37d62b0a74762fdd6fa0636ebc1cbd2ad5d8ef3704ef829978a",
+    "docs/research/atlas-world-model-architecture-synthesis.md": "ba074a8a1fa88c256780281314b3a1ca4a8bc2d3e0bcdcf75ad512b733d2d8c1",
+    "docs/research/tryfan-pilot-s1.md": "acfe5160a3eb024ab0d0cd14f9502842eb552872683e6738e7c2c855079d99e2",
+    "docs/research/tryfan-pilot-s2.md": "0badb0165a8064d00bc6c439ffdd53039ec22981525607d2e6e0e085d1499100",
+    "docs/research/tryfan-pilot-s3.md": "e443005b9efb4e0ce3fa7a0bf988faacd1da6f5f1fdc3e49e90d869514f2df5d",
+    "docs/research/tryfan-pilot-s4.md": "ad4885b17c802d1dc03735719b7579c1a02a2c176ce16b3165961af9933ea5f3",
+    "docs/research/tryfan-pilot-s5.md": "cc719fda3be8f8115b3f419ab1bc327ebeb0981a1b7604e534f3a5aeb5e46325",
+    "docs/research/tryfan-pilot-s6.md": "8f44bcaa535d97510cb9759653cba80fa1d5837a0db2a0a87ef8ded2678d7eef",
+    "docs/research/tryfan-regional-pilot-plan.md": "b525699606bd9408ad837cb7d686668f3db74bdd7f3c6a301c1bf7051b38defd"
+  },
+  "method": "criteria frozen before final recommendation; verification is assessment-only, no fixture is constructed",
+  "nextTaskStatus": "NOT BEGUN",
+  "planSha256": "0a640f8ec12ebc59c318dcafc814d7833a19456c633eec2c6a5ed71fd047d4b4",
+  "startingCheckpoint": "aa920d97a6436dd94d86b1de724d9231c745effd",
+  "startingDivergence": [
+    0,
+    0
+  ],
+  "startingWorkingTree": "clean",
+  "upstream": "origin/main"
+}

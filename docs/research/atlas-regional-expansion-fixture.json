@@ -1,0 +1,242 @@
+{
+  "acceptanceConditions": [
+    "Exact twelve input paths and hashes resolve offline; no accepted pilot/data writes.",
+    "DTM four non-overlapping 2000x2000 float32 grids cover LV95 core at 0.5 m; LN02 retained; no DSM substitution or physical accuracy claim.",
+    "One N45 E007 Copernicus COG is separately qualified DSM/EGM2008, never welded/subtracted against LN02; Point grid registration and affine preserved.",
+    "WorldCover native 218x312 uint8 crop/window preserved, EPSG4326/no resampling; 2021 v200 classes/mapping loss/nodata0 distinct; no cell truth/confidence.",
+    "Exactly23 bedrock and8 unconsolidated retained API feature identities/geometries/raw fields preserved; API snapshot coverage unknown, no absent-feature or cross-layer exclusive cover claim.",
+    "Exactly1 SGI glacier and6 debris records reproduce from retained ZIP and native2056 positive-area core selection; full geometries/IDs and2015/2016 epochs plus2020 release retained.",
+    "Source/product, source byte identity, extract identity, preparation revision and locator remain distinct; namespace GeoCover/SGI IDs; source rights/credit references preserved.",
+    "Native core, transformed applicability, full-feature support, raster-crop envelope and optional existing100 km2 delivery support distinguished; edge/unsupported/unknown explicit.",
+    "Preparation tools/versions, coordinate operations and sampling/masking/geometry losses documented; repeat isolated preparation and fresh-process load reproduce same qualified metadata identities.",
+    "Missing/corrupt input, unsupported CRS and mismatched native field/selection fail explicitly, never advance accepted/current roots.",
+    "Future Horn slope/planar ratio method integration deferred; no new physical derivation, query service, tiles, source ranking or production changes.",
+    "Preparation proof stops after qualified metadata/input manifest, deterministic reproduction and protection checks; no multi-region publication or retrieval implementation."
+  ],
+  "anticipatedLaterQueries": [
+    "qualified native point/cell and small-area evidence by source",
+    "feature-ID and area intersection with multiple retained claims",
+    "feature-to-parent glacier/debris relationship",
+    "explicit observation-year/release/product qualification, not arbitrary temporal interpolation",
+    "qualified independent terrain/DSM support and later existing Horn slope/planar ratio queries"
+  ],
+  "assessmentCheckpoint": "aa920d97a6436dd94d86b1de724d9231c745effd",
+  "coverageMeaning": "13 km2 of disconnected nominal cores; no corridor/global coverage or all-family coverage of the100 km2 Swiss preparation",
+  "decision": "C - ASSESSMENT RESOLVED",
+  "derivedMethodBoundary": "Existing Horn slope and dependent planar ratio are algorithms available for a subsequent authorized regional lifecycle task. Existing AWS-specific receipts/probes cannot simply be relabelled as Swiss results; native grid/support/parameters need new exact method/application identities. No derivations in preparation proof.",
+  "distinctInputFiles": 12,
+  "excludedClaims": [
+    "unified or datum-corrected height surface",
+    "present-day glacier/land cover truth",
+    "complete GeoCover absence within core",
+    "geological ages as observation epochs",
+    "WorldCover fractional cover/pixel confidence",
+    "DSM minus DTM as vegetation or feature height",
+    "glacier source inventory slopes as newly computed Atlas results",
+    "regional accuracy from nominal sampling",
+    "new Appearance/raw-cliff/multiview work"
+  ],
+  "inputs": [
+    {
+      "bytes": 16490312,
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2624-1091_0.5_2056_5728.tif",
+      "role": "native DTM",
+      "sha256": "c68c305e4a142da416b46b555a80916ecc52f8fa50bf1efd5cd2c3f24f9cd4bc"
+    },
+    {
+      "bytes": 16862345,
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2624-1092_0.5_2056_5728.tif",
+      "role": "native DTM",
+      "sha256": "9fa4a4391e2e1bfd650f2f31c7d38ed9a5a94494a967011468e6c44559bbcb2c"
+    },
+    {
+      "bytes": 15925644,
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2625-1091_0.5_2056_5728.tif",
+      "role": "native DTM",
+      "sha256": "0d2ebc6d0b4fd06ab2191cbf2a2f5ab77728249fa8c835075040bce4dc4899de"
+    },
+    {
+      "bytes": 16329103,
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2625-1092_0.5_2056_5728.tif",
+      "role": "native DTM",
+      "sha256": "4dffaad9efb82d3bf327a86b4f82d55762165ea5f825c386c23380a9320ff875"
+    },
+    {
+      "bytes": 42594792,
+      "path": "sources/atlas/riffelhorn/global-reference-assessment-v1/cop45/Copernicus_DSM_COG_10_N45_00_E007_00_DEM.tif",
+      "role": "independent coarse DSM",
+      "sha256": "638c155dd9a5f0b7ee818146def740093da33cee4606071b2bbf7ce3fa00ab95"
+    },
+    {
+      "bytes": 5046,
+      "path": "derived/atlas/semantic-comparison-v1/riffelhorn-worldcover.tif",
+      "role": "native semantic original/subset/selection record",
+      "sha256": "86579f0b5f87e9c50e499c3ab0752b39357fe7379ab227a11c31c2dee1e676ee"
+    },
+    {
+      "bytes": 602,
+      "path": "derived/atlas/semantic-comparison-v1/riffelhorn-worldcover-window.json",
+      "role": "native semantic original/subset/selection record",
+      "sha256": "84848fc783488fddfe1d92ef514201d1bd7453fc3ab8a36653198c1f0db9dc92"
+    },
+    {
+      "bytes": 985424,
+      "path": "derived/atlas/semantic-comparison-v1/geocover-bedrock.json",
+      "role": "native semantic original/subset/selection record",
+      "sha256": "75855416dccc84c6c7cbf60e7df1d10dcbf73caf94af25ad5fe3b437a9bf64d6"
+    },
+    {
+      "bytes": 97673,
+      "path": "derived/atlas/semantic-comparison-v1/geocover-unconsolidated.json",
+      "role": "native semantic original/subset/selection record",
+      "sha256": "25dba9784af81e7c89a2a375110bddb4b819e825ae7a5e681cb84bbefe1311e2"
+    },
+    {
+      "bytes": 9787779,
+      "path": "derived/atlas/semantic-comparison-v1/glamos.zip",
+      "role": "native semantic original/subset/selection record",
+      "sha256": "36ff3252f24f76f0a93eafaa29086ba63725cc2cc99593deca34c15699e933a7"
+    },
+    {
+      "bytes": 948105,
+      "path": "derived/atlas/semantic-comparison-v1/SGI_2016_glaciers-subset.json",
+      "role": "native semantic original/subset/selection record",
+      "sha256": "36467d038b2a0fe3c8285fdf40093c21ec64eaceb897c4b143310bcbccdf3ff6"
+    },
+    {
+      "bytes": 321091,
+      "path": "derived/atlas/semantic-comparison-v1/SGI_2016_debriscover-subset.json",
+      "role": "native semantic original/subset/selection record",
+      "sha256": "33a00778e1dd6ce5f891ba22ff067ced72984531f239210ea33084566b8a2618"
+    }
+  ],
+  "mandatoryCriteriaResults": {
+    "M1": "PASS within stated qualifications",
+    "M10": "PASS within stated qualifications",
+    "M2": "PASS within stated qualifications",
+    "M3": "PASS within stated qualifications",
+    "M4": "PASS within stated qualifications",
+    "M5": "PASS within stated qualifications",
+    "M6": "PASS within stated qualifications",
+    "M7": "PASS within stated qualifications",
+    "M8": "PASS within stated qualifications",
+    "M9": "PASS within stated qualifications"
+  },
+  "nativeInputBytes": 120347916,
+  "nextTask": {
+    "acceptanceCriteria": [
+      "Exact twelve input paths and hashes resolve offline; no accepted pilot/data writes.",
+      "DTM four non-overlapping 2000x2000 float32 grids cover LV95 core at 0.5 m; LN02 retained; no DSM substitution or physical accuracy claim.",
+      "One N45 E007 Copernicus COG is separately qualified DSM/EGM2008, never welded/subtracted against LN02; Point grid registration and affine preserved.",
+      "WorldCover native 218x312 uint8 crop/window preserved, EPSG4326/no resampling; 2021 v200 classes/mapping loss/nodata0 distinct; no cell truth/confidence.",
+      "Exactly23 bedrock and8 unconsolidated retained API feature identities/geometries/raw fields preserved; API snapshot coverage unknown, no absent-feature or cross-layer exclusive cover claim.",
+      "Exactly1 SGI glacier and6 debris records reproduce from retained ZIP and native2056 positive-area core selection; full geometries/IDs and2015/2016 epochs plus2020 release retained.",
+      "Source/product, source byte identity, extract identity, preparation revision and locator remain distinct; namespace GeoCover/SGI IDs; source rights/credit references preserved.",
+      "Native core, transformed applicability, full-feature support, raster-crop envelope and optional existing100 km2 delivery support distinguished; edge/unsupported/unknown explicit.",
+      "Preparation tools/versions, coordinate operations and sampling/masking/geometry losses documented; repeat isolated preparation and fresh-process load reproduce same qualified metadata identities.",
+      "Missing/corrupt input, unsupported CRS and mismatched native field/selection fail explicitly, never advance accepted/current roots.",
+      "Future Horn slope/planar ratio method integration deferred; no new physical derivation, query service, tiles, source ranking or production changes.",
+      "Preparation proof stops after qualified metadata/input manifest, deterministic reproduction and protection checks; no multi-region publication or retrieval implementation."
+    ],
+    "classification": "bounded preparation/integration proof",
+    "deliverable": "Retained isolated qualified regional fixture/input manifest, preparation receipt and reproduction proof; no new tiles or query/runtime integration.",
+    "permittedWork": [
+      "isolated qualified metadata fixture and exact source references",
+      "source-preserving offline selection/support binding",
+      "repeat/fresh-process reproduction",
+      "small focused semantic/protection tests and report"
+    ],
+    "prerequisites": [
+      "this assessment/specification",
+      "existing source/native/terrain/lifecycle contracts",
+      "configured meridian-data public root and recorded offline GIS toolchain"
+    ],
+    "status": "NOT BEGUN",
+    "stopCondition": "All qualified input/preparation invariants demonstrated or one precise blocker classified; protection tests/report/navigation/commit complete. Do not begin realistic retrieval or coherent-world integration in that task.",
+    "title": "Atlas retained Riffelhorn qualified regional fixture preparation proof",
+    "uncertainty": "Can these accountable retained inputs become one reproducible, native-qualified second-region metadata fixture without losing support/time/identity/rights distinctions?",
+    "why": "Real sources are available and sufficient; preparation is the prerequisite for realistic spatial/feature retrieval and later coherent multi-region integration."
+  },
+  "nonBlockingUnknowns": [
+    "WorldCover complete parent hash and exact per-pixel observation dates",
+    "GeoCover full release identity/survey epochs/API completeness/third-coordinate vertical meaning",
+    "Copernicus exact2021 subrelease/per-cell infill dates",
+    "swissALTI3D per-cell mixed survey/update date",
+    "cross-datum equivalence and independent accuracy",
+    "future service redistribution/access architecture"
+  ],
+  "optionalReferencePreparations": [
+    {
+      "id": "riffelhorn-swiss-support-v1",
+      "manifest": "derived/atlas/riffelhorn/riffelhorn-swiss-support-v1/manifest.json",
+      "manifestSha256": "30413b6698c1e75e27fd169f61925d8d60044fa14f444fb072b652c54816e106",
+      "revision": "1a44a0644de1bde73a3ba84d1b761dc0aa17d48cc971e5f6b5d2c14fb329d7ea",
+      "role": "existing pure terrain preparation, optional read-only support reference; not required to rebuild or copy"
+    },
+    {
+      "id": "riffelhorn-copernicus-common-v1",
+      "manifest": "derived/atlas/riffelhorn/riffelhorn-copernicus-common-v1/manifest.json",
+      "manifestSha256": "9393fbadf807592ed67e94408d82bc0f508d4a29d7aa90cf78e605b2053bb177",
+      "revision": "8f002dcbdeceb6aa37cc9eeef9f2d2060193b1eff7922ddb1d0535a6b8030da2",
+      "role": "existing pure terrain preparation, optional read-only support reference; not required to rebuild or copy"
+    }
+  ],
+  "preparationSteps": [
+    "Resolve manifest and sources through configured public data root; verify exact source inventory, never use filenames as upstream identity.",
+    "Prepare source-scoped collection/context records and native support bindings over existing twelve inputs, leaving originals and retained extracts untouched.",
+    "Keep native raster grids; project only support/eligibility geometry where needed using recorded always_xy operations/densification/version, not vertical data.",
+    "Independently reproduce GLAMOS selection from ZIP in isolated metadata proof; retain full returned feature geometry and source IDs, query core applicability separately.",
+    "Carry rights, observation/reference/processing distinctions, unknowns, mapping relations/loss and explicit unsupported/not-covered states.",
+    "Record preparation identities, tools and dependencies; repeat from empty isolated state and recover qualified metadata in a fresh process. No raster tiling or original acquisition."
+  ],
+  "rightsBoundary": "Local retained research/transformation with source-specific credits and applicable terms. Source/derivative redistribution subject to notices/licence obligations, not package MIT or a blanket commercial-service clearance; no source payloads in Git.",
+  "rightsReferences": [
+    "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-and-geoservices",
+    "https://esa-worldcover.org/en/data-access",
+    "https://doi.glamos.ch/data/inventory/inventory_sgi2016_r2020.html",
+    "https://copernicus-dem-30m.s3.amazonaws.com/readme.html",
+    "https://s3.waw3-1.cloudferro.com/swift/v1/portal_uploads_prod/CSCDA_ESA_Mission-specific_Annex_31_Oct_22_latest.pdf"
+  ],
+  "schema": "atlas-regional-expansion-fixture-specification/v1",
+  "selectedTarget": "Riffelhorn native 4 km2 core as a second accountable region; accepted Tryfan remains a separate unchanged reference",
+  "sourceFamilies": [
+    "swissALTI3D2024 DTM",
+    "CopernicusGLO30 distribution2021 DSM",
+    "ESAWorldCover2021v200",
+    "swissGEOCOVER2D bedrock/unconsolidated retained API snapshots",
+    "GLAMOSSGI2016r2020 glacier/debris"
+  ],
+  "status": "SPECIFICATION ONLY - NOT CONSTRUCTED",
+  "supports": [
+    {
+      "areaKm2": 4,
+      "bounds": [
+        2624000,
+        1091000,
+        2626000,
+        1093000
+      ],
+      "crs": "EPSG:2056",
+      "envelopeAuthority": "existing acquisition catalogue; not a replacement for transformed curved boundary",
+      "id": "riffelhorn-core",
+      "longitudeLatitudeEnvelopeApprox": [
+        7.7482600564,
+        45.9700749623,
+        7.7741707774,
+        45.9881394575
+      ]
+    },
+    {
+      "areaKm2": 9,
+      "bounds": [
+        264900,
+        357800,
+        267900,
+        360800
+      ],
+      "crs": "EPSG:27700",
+      "id": "tryfan-reference",
+      "role": "unchanged accepted reference, not re-ingested or duplicated"
+    }
+  ]
+}
