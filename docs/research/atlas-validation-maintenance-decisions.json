@@ -1,0 +1,41 @@
+{
+  "architectureDirection": "C - ARCHITECTURE DIRECTION ESTABLISHED",
+  "decision": "C - EXPERIMENT RESOLVED",
+  "nextTask": "Atlas retained validation-evidence packing and shared-directory amortization proof",
+  "nextTaskScope": "Isolated comparison of current one-file-per-local-receipt evidence with modest immutable packed evidence, retaining exact input/rule/guarantee/trusted-anchor binding, current component hashes, full oracle equivalence, context checks and independent history. Include packing creation, requested bytes, reads, writes and cumulative amortization. Compare a modest immutable shared-directory representation only within that evidence-packing proof; report all present integrity and completeness costs. No production backend, index, garbage collector or pilot changes.",
+  "nextTaskStatus": "NOT BEGUN",
+  "pilot": "CLOSED / ACCEPTED",
+  "records": [
+    {
+      "classification": "DECIDE NOW",
+      "conclusion": "Count initial issuance, trust lookup/eligibility, contextual invalidation, new immutable evidence/directory writes and retention separately from avoided semantic checks. No permanent valid boolean or skipped present integrity.",
+      "evidence": "1296 paired valid proposals and ten boundary controls; all source predicates preserved.",
+      "id": "N15"
+    },
+    {
+      "classification": "DECIDE NOW",
+      "conclusion": "Share receipt identity for exact component/rule/guarantee combinations and preserve historical roots. Invalidation/supersession is eligibility change, never deletion of historically applicable evidence.",
+      "evidence": "Unchanged sequence shares local receipts; rule revisions create new immutable receipt IDs; old roots independently resolve.",
+      "id": "N16"
+    },
+    {
+      "classification": "PROVISIONAL DIRECTION",
+      "conclusion": "Conditional incremental validation remains logically safe in the fixed model, but adoption requires measured lifecycle break-even. Repeated full validation remains the economic baseline; lightweight checks and small files need not repay reuse.",
+      "evidence": "Cumulative paired timings include evidence maintenance, initial issuance and residual current integrity; final distributions are in the report.",
+      "id": "P10"
+    },
+    {
+      "classification": "DEFER PENDING EVIDENCE",
+      "conclusion": "Packed receipt lookup/issuance economics, directory sharing, storage/backend latency, expensive real checks, arbitrary graphs/legal contexts and production retention/trust. No storage product selected.",
+      "evidence": "Per-component evidence lookup and full immutable directory rewriting remain; metadata and current bytes are population-wide.",
+      "id": "D10"
+    },
+    {
+      "classification": "REJECT",
+      "conclusion": "Always-incremental adoption based on row-check savings, excluding initial/ongoing evidence cost, cross-context certificate reuse, global invalidation for unrelated rule changes, stale-as-false, ancestry lookup or deleting historical receipts while referenced.",
+      "evidence": "Full/incremental oracle equality plus rule/context, corrupt evidence, historical and interrupted-publication controls.",
+      "id": "R10"
+    }
+  ],
+  "schema": "atlas-validation-maintenance-decisions/v1"
+}

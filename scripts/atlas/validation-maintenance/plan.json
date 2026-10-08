@@ -1,0 +1,202 @@
+{
+  "acceptance": [
+    "Every proposal agrees with full and expected verdict",
+    "All present component bytes and publication invariants checked",
+    "Only externally pinned verifier evidence reused",
+    "Historical acceptance/evidence immutable; no ancestry",
+    "All maintenance writes/reads included, shared construction/publication separately recorded",
+    "No unlike-unit weighted score; elapsed break-even labelled observed range"
+  ],
+  "authoritativeHashes": {
+    "docs/research/atlas-component-granularity.md": "831e3965d7cdc871e9883cdd73f3fdca8c0dc8be5bfa20a1547dc95aaa11b56b",
+    "docs/research/atlas-component-membership.md": "3c72d52657455abeb0a126cdc5c4f889f1897271ca166d02943fc33368e48c66",
+    "docs/research/atlas-derived-understanding-lifecycle.md": "aee8a563754e3471cbb24a25ea1463eb9cee3d1606be4ed2e3cb1fe62414b3a3",
+    "docs/research/atlas-generation-scaling.md": "bf75df02b2945507bbf94cf5c241145b52e168ecb4f5ae6ca5dbc15f81c1d981",
+    "docs/research/atlas-measured-storage-processing-serving.md": "1696fa267595d6974adbe09a77f616ebc61de1e770372e34478b0db61916b9a7",
+    "docs/research/atlas-storage-processing-serving-requirements.md": "826ce49eab42c37d62b0a74762fdd6fa0636ebc1cbd2ad5d8ef3704ef829978a",
+    "docs/research/atlas-validation-reuse-baseline.json": "cb8d04223f707b19b4d2a115656ffccfc2e5793dfea054082b6a10e35d943627",
+    "docs/research/atlas-validation-reuse-decisions.json": "9b60f1a1277176eedc401e1a2a87b4927dfdd6198eb97d6b573f73bef55030f5",
+    "docs/research/atlas-validation-reuse-results.json": "f2d89ee08848685aa767c689b1516cc56bba17054c3fa50aa425c16da65130d3",
+    "docs/research/atlas-validation-reuse.md": "a846c6ab8e8beadf4bb4d7542b9715bc9c44eba110ad996821354031548e88d0",
+    "docs/research/atlas-world-model-architecture-synthesis.md": "ba074a8a1fa88c256780281314b3a1ca4a8bc2d3e0bcdcf75ad512b733d2d8c1",
+    "docs/research/tryfan-pilot-s1.md": "acfe5160a3eb024ab0d0cd14f9502842eb552872683e6738e7c2c855079d99e2",
+    "docs/research/tryfan-pilot-s2.md": "0badb0165a8064d00bc6c439ffdd53039ec22981525607d2e6e0e085d1499100",
+    "docs/research/tryfan-pilot-s3.md": "e443005b9efb4e0ce3fa7a0bf988faacd1da6f5f1fdc3e49e90d869514f2df5d",
+    "docs/research/tryfan-pilot-s4.md": "ad4885b17c802d1dc03735719b7579c1a02a2c176ce16b3165961af9933ea5f3",
+    "docs/research/tryfan-pilot-s5.md": "cc719fda3be8f8115b3f419ab1bc327ebeb0981a1b7604e534f3a5aeb5e46325",
+    "docs/research/tryfan-pilot-s6.md": "8f44bcaa535d97510cb9759653cba80fa1d5837a0db2a0a87ef8ded2678d7eef",
+    "pilots/atlas/tryfan/catalogue.mjs": "c8d52c9355bc030ae0e97f8767cb62088830606acdc39c6b32fb09e6edcbe52b",
+    "pilots/atlas/tryfan/delivery-schema.mjs": "46030ddc81374123ef9b948ea04075435567b6c5250b40a95e0083cf31e8b48f",
+    "pilots/atlas/tryfan/dependencies.mjs": "6f07d7f48e1dc94eb08e1f1a3b74de29acd3053a60ed169ee4be4c57b93940d9",
+    "pilots/atlas/tryfan/derivations.mjs": "c750339fb121626964bb20dc173bbdc4b16d30b0b8ec0bba55ad3045d4a075c3",
+    "pilots/atlas/tryfan/generations.mjs": "1b50f5d879d6ed5fc39d9a42cf56dec9ea103c8b928876fb8585795897e5d03d",
+    "pilots/atlas/tryfan/update-schema.mjs": "9bf6568762482a4bb24d20fcbb449a6a7f8db1a4d7e26791089073cb51757cfa",
+    "pilots/atlas/tryfan/world.mjs": "f2fd467bb3637e03e36a06faf44dc43bf6cdb2ed02bddcf91282b92800aba495",
+    "scripts/atlas/component-granularity/model.py": "d65e5f23e20e8f2732dcabe6e4f66aab428fa6a42939d2dd667a5797975f5295",
+    "scripts/atlas/component-membership/core.mjs": "59f4a350d3f0c3fbd95a75b1fa4a7b8ac997d9f68d79a214a687e421a76a6842",
+    "scripts/atlas/validation-reuse/core.py": "7badbe06ad94e51775e404bb046d275eb0e63c6b8ae6a2c21535ec5d1dacff88",
+    "scripts/atlas/validation-reuse/inventory.json": "e6bab993421c68297cb5d51defa90059272b04c0f791165cbd2117afa040907d"
+  },
+  "branch": "main",
+  "costOperations": [
+    "validation",
+    "receipt lookup and eligibility",
+    "current integrity",
+    "local receipt issuance",
+    "outgoing/reverse bucket maintenance",
+    "trust root serialization/hash/write",
+    "invalidation and supersession classification",
+    "historical retention and reachability audit"
+  ],
+  "decisionDepends": "Conditional receipt reuse versus repeated full validation; not backend choice.",
+  "differentOutcomes": [
+    "Retain conditional incremental direction if total measured costs repay",
+    "Prefer full validation for tested workloads without net amortization",
+    "Investigate residual integrity or receipt representation only if measured dominance motivates it"
+  ],
+  "divergence": [
+    0,
+    0
+  ],
+  "failures": [
+    "broken-identity",
+    "broken-relationship",
+    "incomplete-membership",
+    "mismatched-receipt",
+    "missing-receipt",
+    "unknown-anchor",
+    "context-policy",
+    "stale-rule",
+    "historical-stale",
+    "interrupted-before-switch"
+  ],
+  "hypotheses": {
+    "H1": "High reuse amortizes complete evidence lifecycle",
+    "H2": "Low reuse/broad updates fail to amortize",
+    "H3": "Rule revisions reduce amortization",
+    "H4": "Population integrity and completeness impose floor",
+    "H5": "Retention/lookup introduces independent pressure"
+  },
+  "initialTree": "clean",
+  "organisation": "Existing moderate family/support partitions; do not reopen universal component-size experiment. Population and dependency fanout vary; packing/coarse organisation deferred.",
+  "previousLimitation": "35e4fbd proves equivalence but prepare() always fully validates and rebuilds all receipt directories; preparation excluded from per-proposal timing.",
+  "recordsPerComponent": 64,
+  "rejection": "Any oracle discrepancy fails correctness. No elapsed break-even in range is a legitimate negative amortization result, not experiment failure.",
+  "repetitions": 3,
+  "retention": "Retain all accepted roots/receipts; share exact receipt identities. Reachability analysis only, no deletion/GC.",
+  "ruleInterval": 8,
+  "rules": "Fixed existing scientific predicates. Independent experimental family-local, relationship and publication revision identities bind complete current adapter and reused validator/helper sources. Version rotations conservatively require relevant revalidation.",
+  "schema": "atlas-validation-maintenance-plan/v1",
+  "sequences": [
+    {
+      "fanout": 1,
+      "id": "unchanged",
+      "length": 32,
+      "n": 64,
+      "pattern": "none",
+      "revision": "stable"
+    },
+    {
+      "fanout": 1,
+      "id": "high-small",
+      "length": 32,
+      "n": 16,
+      "pattern": "local",
+      "revision": "stable"
+    },
+    {
+      "fanout": 1,
+      "id": "high-medium",
+      "length": 32,
+      "n": 64,
+      "pattern": "local",
+      "revision": "stable"
+    },
+    {
+      "fanout": 1,
+      "id": "high-large",
+      "length": 32,
+      "n": 256,
+      "pattern": "local",
+      "revision": "stable"
+    },
+    {
+      "fanout": 1,
+      "id": "high-long",
+      "length": 112,
+      "n": 64,
+      "pattern": "local",
+      "revision": "stable"
+    },
+    {
+      "fanout": 4,
+      "id": "scattered",
+      "length": 32,
+      "n": 64,
+      "pattern": "scattered",
+      "revision": "stable"
+    },
+    {
+      "fanout": 1,
+      "id": "moderate",
+      "length": 16,
+      "n": 16,
+      "pattern": "half",
+      "revision": "stable"
+    },
+    {
+      "fanout": 1,
+      "id": "low",
+      "length": 16,
+      "n": 16,
+      "pattern": "all",
+      "revision": "stable"
+    },
+    {
+      "fanout": 1,
+      "id": "local-rule",
+      "length": 32,
+      "n": 64,
+      "pattern": "local",
+      "revision": "terrain"
+    },
+    {
+      "fanout": 1,
+      "id": "cross-rule",
+      "length": 32,
+      "n": 64,
+      "pattern": "local",
+      "revision": "cross"
+    },
+    {
+      "fanout": 1,
+      "id": "broad-rule",
+      "length": 16,
+      "n": 16,
+      "pattern": "local",
+      "revision": "all"
+    },
+    {
+      "fanout": 1,
+      "id": "publication-rule",
+      "length": 32,
+      "n": 64,
+      "pattern": "local",
+      "revision": "publication"
+    },
+    {
+      "fanout": 1,
+      "id": "context",
+      "length": 16,
+      "n": 64,
+      "pattern": "local",
+      "revision": "context"
+    }
+  ],
+  "startingCommit": "35e4fbd6730acf43ad3e0e33c69111f7431ec896",
+  "stateRoot": "C:/Users/gbsam/Documents/Codex/atlas-validation-maintenance-v1",
+  "timing": "Three independent stores per sequence, paired alternating full/incremental order. Shared fixture creation excluded; initial receipt issuance included. Reset request caches; OS not forcibly cold. Final fresh processes read old/current anchors. Paired cumulative median/min/max, no SLA.",
+  "trust": "Known local verifier supplies immutable root anchor independently of candidate; digest alone is integrity, not issuer authority. Compromised issuer/anchor and hostile concurrent writes excluded.",
+  "uncertainty": "Whether total trusted receipt creation, lookup, eligibility, selective maintenance, immutable root issuance and retained-history cost repay avoided validation across publications.",
+  "upstream": "origin/main"
+}
