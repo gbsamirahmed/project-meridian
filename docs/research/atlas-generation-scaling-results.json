@@ -1,0 +1,3575 @@
+{
+  "comparisonCorrection": "Only post-timing normalization changed: exact request generation IDs inside provenanceRefs were initially omitted. Original raw timing receipts preserved; all18 cases rechecked with v2. Timed loader/payload checks unchanged.",
+  "decision": "C - EXPERIMENT RESOLVED",
+  "elapsedRunMilliseconds": 216577.61929999106,
+  "elapsedRunQualification": "Elapsed orchestration invocation; resumed raw receipts are not retimed. See raw fresh/startup/request measurements for campaign costs.",
+  "equivalence": [
+    {
+      "case": "H7-Q05-accepted",
+      "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\measurements\\H7-Q05-accepted-equivalence-v2.json",
+      "qualifiedSha256": "6ae398e1fe9f5dab5f98acb694af7ddb858cd4d210bb4f972a564482ddf94431",
+      "sha256": "754522a74137f3a947681e3626150f55877669a7c2d7a692238ab636cf7d238f"
+    },
+    {
+      "case": "H7-Q05-request-reuse",
+      "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\measurements\\H7-Q05-request-reuse-equivalence-v2.json",
+      "qualifiedSha256": "6ae398e1fe9f5dab5f98acb694af7ddb858cd4d210bb4f972a564482ddf94431",
+      "sha256": "fe663c44c8fa4f3400850ad696c9aed1fd27b7710a83d5cc474ff0538ea73293"
+    },
+    {
+      "case": "H7-Q21-accepted",
+      "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\measurements\\H7-Q21-accepted-equivalence-v2.json",
+      "qualifiedSha256": "b9dda67f0472ad9cc086b8a36074b8e2a643ea92614a38bab782e6bfb9ce8918",
+      "sha256": "c2b99c34f28876a5867dec31941c3868c1f527c1de77bfb21315d43caa893ea3"
+    },
+    {
+      "case": "H7-Q21-request-reuse",
+      "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\measurements\\H7-Q21-request-reuse-equivalence-v2.json",
+      "qualifiedSha256": "b9dda67f0472ad9cc086b8a36074b8e2a643ea92614a38bab782e6bfb9ce8918",
+      "sha256": "2a330f89cfdd1eed8f4f562dc29f720939a82ffe3c261130f03969c821ecf891"
+    },
+    {
+      "case": "H7-Q18-accepted",
+      "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\measurements\\H7-Q18-accepted-equivalence-v2.json",
+      "qualifiedSha256": "cc4df91a6a313986e6f91c76a30c6c66a0ea6a32927cc1a2b70671bee017f54d",
+      "sha256": "258a53ff4671fefa09f2d36d63b58519ac456a6fe7b3eba5451641b72132b5c3"
+    },
+    {
+      "case": "H7-Q18-request-reuse",
+      "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\measurements\\H7-Q18-request-reuse-equivalence-v2.json",
+      "qualifiedSha256": "cc4df91a6a313986e6f91c76a30c6c66a0ea6a32927cc1a2b70671bee017f54d",
+      "sha256": "23d0bc812f8b8661d7e7cf7839aeb9b58e681b15178d3feeb69bf035bb2610eb"
+    },
+    {
+      "case": "H28-Q05-accepted",
+      "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\measurements\\H28-Q05-accepted-equivalence-v2.json",
+      "qualifiedSha256": "6ae398e1fe9f5dab5f98acb694af7ddb858cd4d210bb4f972a564482ddf94431",
+      "sha256": "10f857f6a5a7734321299c6101bbf560d1f321478253eae59f827f1174070ad4"
+    },
+    {
+      "case": "H28-Q05-request-reuse",
+      "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\measurements\\H28-Q05-request-reuse-equivalence-v2.json",
+      "qualifiedSha256": "6ae398e1fe9f5dab5f98acb694af7ddb858cd4d210bb4f972a564482ddf94431",
+      "sha256": "963271427fddf00fec505b3c7cb2db592168e570bbf48208b21af1530d2425a0"
+    },
+    {
+      "case": "H28-Q21-accepted",
+      "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\measurements\\H28-Q21-accepted-equivalence-v2.json",
+      "qualifiedSha256": "b9dda67f0472ad9cc086b8a36074b8e2a643ea92614a38bab782e6bfb9ce8918",
+      "sha256": "955959805afdacc1b74179ff20bfeb451b9a31373f5a5ca9471effc525e39d2d"
+    },
+    {
+      "case": "H28-Q21-request-reuse",
+      "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\measurements\\H28-Q21-request-reuse-equivalence-v2.json",
+      "qualifiedSha256": "b9dda67f0472ad9cc086b8a36074b8e2a643ea92614a38bab782e6bfb9ce8918",
+      "sha256": "3f3c2f0c5e699c7c17c42e424bb6d469c8978501341984b154079a4648f63528"
+    },
+    {
+      "case": "H28-Q18-accepted",
+      "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\measurements\\H28-Q18-accepted-equivalence-v2.json",
+      "qualifiedSha256": "cc4df91a6a313986e6f91c76a30c6c66a0ea6a32927cc1a2b70671bee017f54d",
+      "sha256": "de0b290c9f28b42d8e5123383d1fa7efaa85873be6a3fce25699c5658b9ec25c"
+    },
+    {
+      "case": "H28-Q18-request-reuse",
+      "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\measurements\\H28-Q18-request-reuse-equivalence-v2.json",
+      "qualifiedSha256": "cc4df91a6a313986e6f91c76a30c6c66a0ea6a32927cc1a2b70671bee017f54d",
+      "sha256": "3d890341700043984166444f84f2277a37d26d2c66ce016b635a28a4e13bc34b"
+    },
+    {
+      "case": "H112-Q05-accepted",
+      "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\measurements\\H112-Q05-accepted-equivalence-v2.json",
+      "qualifiedSha256": "6ae398e1fe9f5dab5f98acb694af7ddb858cd4d210bb4f972a564482ddf94431",
+      "sha256": "9e6668a9636d9d978443fc9e31cb3d0472c75f897bc9bbf5453590e986844bbc"
+    },
+    {
+      "case": "H112-Q05-request-reuse",
+      "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\measurements\\H112-Q05-request-reuse-equivalence-v2.json",
+      "qualifiedSha256": "6ae398e1fe9f5dab5f98acb694af7ddb858cd4d210bb4f972a564482ddf94431",
+      "sha256": "bcaa0f28bb5c80b6997847eb357b45cea138a40ca8832e8cf5ac8e454b7cf5c9"
+    },
+    {
+      "case": "H112-Q21-accepted",
+      "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\measurements\\H112-Q21-accepted-equivalence-v2.json",
+      "qualifiedSha256": "b9dda67f0472ad9cc086b8a36074b8e2a643ea92614a38bab782e6bfb9ce8918",
+      "sha256": "acb6bc32ad8a2d40b558442561d3d0749e81d84655f0b3ad4221f62f432171cb"
+    },
+    {
+      "case": "H112-Q21-request-reuse",
+      "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\measurements\\H112-Q21-request-reuse-equivalence-v2.json",
+      "qualifiedSha256": "b9dda67f0472ad9cc086b8a36074b8e2a643ea92614a38bab782e6bfb9ce8918",
+      "sha256": "c5aed883ce9feb72f20b634f89d590ff77900677746d9d8606de11a530ecb033"
+    },
+    {
+      "case": "H112-Q18-accepted",
+      "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\measurements\\H112-Q18-accepted-equivalence-v2.json",
+      "qualifiedSha256": "cc4df91a6a313986e6f91c76a30c6c66a0ea6a32927cc1a2b70671bee017f54d",
+      "sha256": "e42624e8493f1b6092fb2c14aefe754ab450dd2db7957a94b62e1c6cf8182814"
+    },
+    {
+      "case": "H112-Q18-request-reuse",
+      "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\measurements\\H112-Q18-request-reuse-equivalence-v2.json",
+      "qualifiedSha256": "cc4df91a6a313986e6f91c76a30c6c66a0ea6a32927cc1a2b70671bee017f54d",
+      "sha256": "5ff441ecdaaabb70e5208aac22b86f425df94f7bab83708149b8ddd6317d991d"
+    }
+  ],
+  "failureEvidence": {
+    "cases": [
+      {
+        "expected": "generation-integrity",
+        "results": [
+          {
+            "code": "generation-integrity",
+            "current": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+            "diagnosticSha": "667f9b9e88f81c947e21fe5f814b0d5e4fc5b4fb86fa92d4cb17d67c7eb579fd",
+            "expectedCurrent": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+            "fixture": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\failure-fixtures\\corrupt-ancestor-accepted-be5dad22-685e-4f36-8099-78b042487067",
+            "loaderHash": "1b50f5d879d6ed5fc39d9a42cf56dec9ea103c8b928876fb8585795897e5d03d",
+            "rootUnchanged": true,
+            "scenario": "corrupt-ancestor",
+            "variant": "accepted"
+          },
+          {
+            "code": "generation-integrity",
+            "current": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+            "diagnosticSha": "667f9b9e88f81c947e21fe5f814b0d5e4fc5b4fb86fa92d4cb17d67c7eb579fd",
+            "expectedCurrent": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+            "fixture": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\failure-fixtures\\corrupt-ancestor-request-reuse-842837b7-02b8-4bf8-8d04-ca2f253e7c3d",
+            "loaderHash": "1b50f5d879d6ed5fc39d9a42cf56dec9ea103c8b928876fb8585795897e5d03d",
+            "rootUnchanged": true,
+            "scenario": "corrupt-ancestor",
+            "variant": "request-reuse"
+          }
+        ],
+        "scenario": "corrupt-ancestor"
+      },
+      {
+        "expected": "artifact-unavailable",
+        "results": [
+          {
+            "code": "artifact-unavailable",
+            "current": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+            "diagnosticSha": "ca821d86ed92c944d02d3fbb83f08bd70adbdc7e516156d89b8bab20f11db300",
+            "expectedCurrent": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+            "fixture": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\failure-fixtures\\missing-artifact-accepted-9803b908-1bb2-4705-9f03-5315ee44d748",
+            "loaderHash": "1b50f5d879d6ed5fc39d9a42cf56dec9ea103c8b928876fb8585795897e5d03d",
+            "rootUnchanged": true,
+            "scenario": "missing-artifact",
+            "variant": "accepted"
+          },
+          {
+            "code": "artifact-unavailable",
+            "current": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+            "diagnosticSha": "ca821d86ed92c944d02d3fbb83f08bd70adbdc7e516156d89b8bab20f11db300",
+            "expectedCurrent": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+            "fixture": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\failure-fixtures\\missing-artifact-request-reuse-64772b2f-04e0-4dda-88b8-626b8e76b229",
+            "loaderHash": "1b50f5d879d6ed5fc39d9a42cf56dec9ea103c8b928876fb8585795897e5d03d",
+            "rootUnchanged": true,
+            "scenario": "missing-artifact",
+            "variant": "request-reuse"
+          }
+        ],
+        "scenario": "missing-artifact"
+      },
+      {
+        "expected": "generation-missing",
+        "results": [
+          {
+            "code": "generation-missing",
+            "current": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+            "diagnosticSha": "b7a73093272df28fa9b08df203196bdb03502e27ff26d1ac9a467db035e4813f",
+            "expectedCurrent": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+            "fixture": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\failure-fixtures\\orphan-accepted-04d84bed-1aa8-4ccf-8148-749baa5a79f7",
+            "loaderHash": "1b50f5d879d6ed5fc39d9a42cf56dec9ea103c8b928876fb8585795897e5d03d",
+            "rootUnchanged": true,
+            "scenario": "orphan",
+            "variant": "accepted"
+          },
+          {
+            "code": "generation-missing",
+            "current": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+            "diagnosticSha": "b7a73093272df28fa9b08df203196bdb03502e27ff26d1ac9a467db035e4813f",
+            "expectedCurrent": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+            "fixture": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\failure-fixtures\\orphan-request-reuse-2545cb78-ad52-4bf9-bfec-6dc1dc2639d6",
+            "loaderHash": "1b50f5d879d6ed5fc39d9a42cf56dec9ea103c8b928876fb8585795897e5d03d",
+            "rootUnchanged": true,
+            "scenario": "orphan",
+            "variant": "request-reuse"
+          }
+        ],
+        "scenario": "orphan"
+      },
+      {
+        "expected": "generation-integrity",
+        "results": [
+          {
+            "code": "generation-integrity",
+            "current": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+            "diagnosticSha": "667f9b9e88f81c947e21fe5f814b0d5e4fc5b4fb86fa92d4cb17d67c7eb579fd",
+            "expectedCurrent": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+            "fixture": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\failure-fixtures\\between-requests-accepted-4baa9930-4040-4b0e-ae7c-aa00de97c2f6",
+            "loaderHash": "1b50f5d879d6ed5fc39d9a42cf56dec9ea103c8b928876fb8585795897e5d03d",
+            "rootUnchanged": true,
+            "scenario": "between-requests",
+            "variant": "accepted"
+          },
+          {
+            "code": "generation-integrity",
+            "current": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+            "diagnosticSha": "667f9b9e88f81c947e21fe5f814b0d5e4fc5b4fb86fa92d4cb17d67c7eb579fd",
+            "expectedCurrent": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+            "fixture": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\failure-fixtures\\between-requests-request-reuse-1a0e56b3-d4b3-41dd-a1d9-b1e2f9ee6455",
+            "loaderHash": "1b50f5d879d6ed5fc39d9a42cf56dec9ea103c8b928876fb8585795897e5d03d",
+            "rootUnchanged": true,
+            "scenario": "between-requests",
+            "variant": "request-reuse"
+          }
+        ],
+        "scenario": "between-requests"
+      },
+      {
+        "expected": "generation-missing",
+        "results": [
+          {
+            "code": "generation-missing",
+            "current": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+            "diagnosticSha": "b7a73093272df28fa9b08df203196bdb03502e27ff26d1ac9a467db035e4813f",
+            "expectedCurrent": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+            "fixture": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\failure-fixtures\\unknown-accepted-1be7f6ff-c5fe-4e37-ac8f-c80cf2fc73db",
+            "loaderHash": "1b50f5d879d6ed5fc39d9a42cf56dec9ea103c8b928876fb8585795897e5d03d",
+            "rootUnchanged": true,
+            "scenario": "unknown",
+            "variant": "accepted"
+          },
+          {
+            "code": "generation-missing",
+            "current": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+            "diagnosticSha": "b7a73093272df28fa9b08df203196bdb03502e27ff26d1ac9a467db035e4813f",
+            "expectedCurrent": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+            "fixture": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\failure-fixtures\\unknown-request-reuse-71decfce-46e2-4a76-93d2-26b2c2eb66db",
+            "loaderHash": "1b50f5d879d6ed5fc39d9a42cf56dec9ea103c8b928876fb8585795897e5d03d",
+            "rootUnchanged": true,
+            "scenario": "unknown",
+            "variant": "request-reuse"
+          }
+        ],
+        "scenario": "unknown"
+      }
+    ],
+    "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\failure-matrix.json",
+    "sha256": "4f0b73c35c0f064356a753778e2d27d7ecea4ee77ee774f9cd90ca80fd6936eb"
+  },
+  "fixtureSha256": "d28c37d1e275143edba963c12b19cbffd20119d9bb08dac9d39981ea2da8219a",
+  "fixtures": [
+    {
+      "changedScientificArtifacts": 0,
+      "componentHashes": {
+        "catalogue": "d1664f3f553a44478112e0fa8755c11f48ceb9c9d5e0d47e565cdb3b116d45ff",
+        "knowledge": "9bbaa0c10db1a1f03810ef3a4e708eca09e25a94c9a8474f07ab944e162438a5",
+        "serving": "884ff76d6785fc899625360ec2e9fbd51e010a58c3db9c5a0170134489752fa7",
+        "understanding": "e85a1417814b2977a0622f6ae0a2de7ae3ddefaf0cf206955c35671a8a654608"
+      },
+      "current": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+      "currentBytes": 1241281,
+      "depth": 7,
+      "metadataBytes": 5658085,
+      "objects": 310,
+      "publication": {
+        "assemblyTotalMilliseconds": null,
+        "first": null,
+        "last": null,
+        "observations": 0,
+        "switchMilliseconds": null,
+        "validationMilliseconds": null
+      },
+      "retainedGenerations": 7,
+      "reusedArtifacts": 310,
+      "storageClasses": {
+        "artifacts": {
+          "bytes": 3057491,
+          "files": 2
+        },
+        "generations": {
+          "bytes": 5658085,
+          "files": 7
+        },
+        "locators": {
+          "bytes": 328020,
+          "files": 7
+        },
+        "staging": {
+          "bytes": 0,
+          "files": 0
+        }
+      },
+      "store": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\history-7"
+    },
+    {
+      "changedScientificArtifacts": 0,
+      "componentHashes": {
+        "catalogue": "d1664f3f553a44478112e0fa8755c11f48ceb9c9d5e0d47e565cdb3b116d45ff",
+        "knowledge": "9bbaa0c10db1a1f03810ef3a4e708eca09e25a94c9a8474f07ab944e162438a5",
+        "serving": "884ff76d6785fc899625360ec2e9fbd51e010a58c3db9c5a0170134489752fa7",
+        "understanding": "e85a1417814b2977a0622f6ae0a2de7ae3ddefaf0cf206955c35671a8a654608"
+      },
+      "current": "57d9bad9fd75381ed3ed98d58c7fdffede3d91eafb667ea9a45b4d20bc13d3fb",
+      "currentBytes": 1241281,
+      "depth": 28,
+      "metadataBytes": 31724986,
+      "objects": 310,
+      "publication": {
+        "assemblyTotalMilliseconds": {
+          "max": 1684.0430000000015,
+          "median": 1013.219000000001,
+          "min": 688.5843000000004,
+          "p95": 1526.992299999998
+        },
+        "first": {
+          "catalogueBytes": 324627,
+          "depth": 8,
+          "generationBytes": 1241281,
+          "pointerBytes": 130,
+          "publicationMilliseconds": 4.266099999999824,
+          "totalMilliseconds": 699.3291999999999,
+          "validationMilliseconds": 611.7609999999997
+        },
+        "last": {
+          "catalogueBytes": 324627,
+          "depth": 28,
+          "generationBytes": 1241281,
+          "pointerBytes": 130,
+          "publicationMilliseconds": 4.613199999999779,
+          "totalMilliseconds": 1133.254499999999,
+          "validationMilliseconds": 1050.4532
+        },
+        "observations": 21,
+        "switchMilliseconds": {
+          "max": 8.559100000000399,
+          "median": 4.864700000000084,
+          "min": 4.061000000000149,
+          "p95": 8.366099999999733
+        },
+        "validationMilliseconds": {
+          "max": 1585.5113999999994,
+          "median": 932.4813999999988,
+          "min": 608.4789000000001,
+          "p95": 1425.615099999999
+        }
+      },
+      "retainedGenerations": 28,
+      "reusedArtifacts": 310,
+      "storageClasses": {
+        "artifacts": {
+          "bytes": 3057491,
+          "files": 2
+        },
+        "generations": {
+          "bytes": 31724986,
+          "files": 28
+        },
+        "locators": {
+          "bytes": 1312080,
+          "files": 28
+        },
+        "staging": {
+          "bytes": 27050961,
+          "files": 42
+        }
+      },
+      "store": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\history-28"
+    },
+    {
+      "changedScientificArtifacts": 0,
+      "componentHashes": {
+        "catalogue": "d1664f3f553a44478112e0fa8755c11f48ceb9c9d5e0d47e565cdb3b116d45ff",
+        "knowledge": "9bbaa0c10db1a1f03810ef3a4e708eca09e25a94c9a8474f07ab944e162438a5",
+        "serving": "884ff76d6785fc899625360ec2e9fbd51e010a58c3db9c5a0170134489752fa7",
+        "understanding": "e85a1417814b2977a0622f6ae0a2de7ae3ddefaf0cf206955c35671a8a654608"
+      },
+      "current": "0fddbd10bbb5e9a29569c3c02834b5a544ba866b2c003a44909013558df8e5b1",
+      "currentBytes": 1241281,
+      "depth": 112,
+      "metadataBytes": 135992590,
+      "objects": 310,
+      "publication": {
+        "assemblyTotalMilliseconds": {
+          "max": 3480.1773000000394,
+          "median": 2014.4159999999974,
+          "min": 724.5304000000033,
+          "p95": 3245.912500000006
+        },
+        "first": {
+          "catalogueBytes": 324627,
+          "depth": 8,
+          "generationBytes": 1241281,
+          "pointerBytes": 130,
+          "publicationMilliseconds": 4.34769999999844,
+          "totalMilliseconds": 724.5304000000033,
+          "validationMilliseconds": 629.8894999999975
+        },
+        "last": {
+          "catalogueBytes": 324627,
+          "depth": 112,
+          "generationBytes": 1241281,
+          "pointerBytes": 130,
+          "publicationMilliseconds": 6.3629000000073574,
+          "totalMilliseconds": 3241.787000000011,
+          "validationMilliseconds": 3135.1598999999696
+        },
+        "observations": 105,
+        "switchMilliseconds": {
+          "max": 20.98140000004787,
+          "median": 4.858699999997043,
+          "min": 3.7792999999946915,
+          "p95": 8.971199999999953
+        },
+        "validationMilliseconds": {
+          "max": 3340.908400000015,
+          "median": 1916.3269999999902,
+          "min": 629.8894999999975,
+          "p95": 3135.1598999999696
+        }
+      },
+      "retainedGenerations": 112,
+      "reusedArtifacts": 310,
+      "storageClasses": {
+        "artifacts": {
+          "bytes": 3057491,
+          "files": 2
+        },
+        "generations": {
+          "bytes": 135992590,
+          "files": 112
+        },
+        "locators": {
+          "bytes": 5248320,
+          "files": 112
+        },
+        "staging": {
+          "bytes": 135254805,
+          "files": 210
+        }
+      },
+      "store": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\history-112"
+    }
+  ],
+  "historical": [
+    {
+      "current": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+      "depth": 7,
+      "pin": {
+        "counters": {
+          "generationValidations": 32,
+          "integrityChecks": 28,
+          "loadCalls": 4,
+          "referenceTraversals": 24
+        },
+        "milliseconds": 2070.2188,
+        "nodeRSSAfter": 229974016,
+        "nodeRSSBefore": 71438336,
+        "reads": {
+          "external": {
+            "bytes": 884692,
+            "calls": 5,
+            "distinctFiles": 5
+          },
+          "generations": {
+            "bytes": 40299556,
+            "calls": 52,
+            "distinctFiles": 7
+          },
+          "locators": {
+            "bytes": 187440,
+            "calls": 4,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 12229964,
+            "calls": 8,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 11451869,
+            "calls": 295,
+            "distinctFiles": 23
+          }
+        }
+      },
+      "query": {
+        "answerSha256": "6be643a51ffa6180ae49574d76b1d2d9b8f80c2d28aaa4cb8cc10f4d01d1c352",
+        "counters": {
+          "generationValidations": 16,
+          "integrityChecks": 14,
+          "loadCalls": 2,
+          "referenceTraversals": 12
+        },
+        "milliseconds": 274.5142000000001,
+        "nodeRSSAfter": 260292608,
+        "nodeRSSBefore": 229974016,
+        "qualifiedSha256": "6ae398e1fe9f5dab5f98acb694af7ddb858cd4d210bb4f972a564482ddf94431",
+        "reads": {
+          "external": {
+            "bytes": 1127670,
+            "calls": 4,
+            "distinctFiles": 2
+          },
+          "generations": {
+            "bytes": 20149778,
+            "calls": 26,
+            "distinctFiles": 7
+          },
+          "locators": {
+            "bytes": 93720,
+            "calls": 2,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 6114982,
+            "calls": 4,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 4337440,
+            "calls": 112,
+            "distinctFiles": 5
+          }
+        },
+        "responseBytes": 32858
+      },
+      "rawSha256": "9e82cd2a41975626af2cdadc7375f3aa563828fafb30d520f8e479fe0bf4efe2",
+      "selected": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+      "startupMilliseconds": 2220.5109,
+      "variant": "accepted"
+    },
+    {
+      "current": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+      "depth": 7,
+      "pin": {
+        "counters": {
+          "generationValidations": 8,
+          "integrityChecks": 7,
+          "loadCalls": 4,
+          "referenceTraversals": 6
+        },
+        "milliseconds": 1822.0838,
+        "nodeRSSAfter": 197574656,
+        "nodeRSSBefore": 71938048,
+        "reads": {
+          "external": {
+            "bytes": 884692,
+            "calls": 5,
+            "distinctFiles": 5
+          },
+          "generations": {
+            "bytes": 5658085,
+            "calls": 7,
+            "distinctFiles": 7
+          },
+          "locators": {
+            "bytes": 46860,
+            "calls": 1,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 3057491,
+            "calls": 2,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 4946099,
+            "calls": 130,
+            "distinctFiles": 23
+          }
+        }
+      },
+      "query": {
+        "answerSha256": "6be643a51ffa6180ae49574d76b1d2d9b8f80c2d28aaa4cb8cc10f4d01d1c352",
+        "counters": {
+          "generationValidations": 8,
+          "integrityChecks": 7,
+          "loadCalls": 2,
+          "referenceTraversals": 6
+        },
+        "milliseconds": 140.80849999999987,
+        "nodeRSSAfter": 251400192,
+        "nodeRSSBefore": 197574656,
+        "qualifiedSha256": "6ae398e1fe9f5dab5f98acb694af7ddb858cd4d210bb4f972a564482ddf94431",
+        "reads": {
+          "external": {
+            "bytes": 1127670,
+            "calls": 4,
+            "distinctFiles": 2
+          },
+          "generations": {
+            "bytes": 5658085,
+            "calls": 7,
+            "distinctFiles": 7
+          },
+          "locators": {
+            "bytes": 46860,
+            "calls": 1,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 3057491,
+            "calls": 2,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 2168850,
+            "calls": 57,
+            "distinctFiles": 5
+          }
+        },
+        "responseBytes": 32858
+      },
+      "rawSha256": "3991950c73f0da2cee80abd4af486ef3ec3bee29c322e4db0d59a6aacd022df6",
+      "selected": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+      "startupMilliseconds": 1974.9242,
+      "variant": "request-reuse"
+    },
+    {
+      "current": "57d9bad9fd75381ed3ed98d58c7fdffede3d91eafb667ea9a45b4d20bc13d3fb",
+      "depth": 28,
+      "pin": {
+        "counters": {
+          "generationValidations": 431,
+          "integrityChecks": 406,
+          "loadCalls": 25,
+          "referenceTraversals": 381
+        },
+        "milliseconds": 11457.466,
+        "nodeRSSAfter": 250642432,
+        "nodeRSSBefore": 71856128,
+        "reads": {
+          "external": {
+            "bytes": 884692,
+            "calls": 5,
+            "distinctFiles": 5
+          },
+          "generations": {
+            "bytes": 825344047,
+            "calls": 787,
+            "distinctFiles": 28
+          },
+          "locators": {
+            "bytes": 1171500,
+            "calls": 25,
+            "distinctFiles": 22
+          },
+          "portrayal": {
+            "bytes": 76437275,
+            "calls": 50,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 157181117,
+            "calls": 3991,
+            "distinctFiles": 23
+          }
+        }
+      },
+      "query": {
+        "answerSha256": "6be643a51ffa6180ae49574d76b1d2d9b8f80c2d28aaa4cb8cc10f4d01d1c352",
+        "counters": {
+          "generationValidations": 814,
+          "integrityChecks": 770,
+          "loadCalls": 44,
+          "referenceTraversals": 726
+        },
+        "milliseconds": 17033.995300000002,
+        "nodeRSSAfter": 291704832,
+        "nodeRSSBefore": 250642432,
+        "qualifiedSha256": "6ae398e1fe9f5dab5f98acb694af7ddb858cd4d210bb4f972a564482ddf94431",
+        "reads": {
+          "external": {
+            "bytes": 1127670,
+            "calls": 4,
+            "distinctFiles": 2
+          },
+          "generations": {
+            "bytes": 1590238760,
+            "calls": 1496,
+            "distinctFiles": 28
+          },
+          "locators": {
+            "bytes": 2061840,
+            "calls": 44,
+            "distinctFiles": 22
+          },
+          "portrayal": {
+            "bytes": 134529604,
+            "calls": 88,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 295795936,
+            "calls": 7504,
+            "distinctFiles": 5
+          }
+        },
+        "responseBytes": 32858
+      },
+      "rawSha256": "c46008cc8863dd8d73cca2bab7d2258152a68220922b16fcf89d39680cfa3b1f",
+      "selected": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+      "startupMilliseconds": 11606.0436,
+      "variant": "accepted"
+    },
+    {
+      "current": "57d9bad9fd75381ed3ed98d58c7fdffede3d91eafb667ea9a45b4d20bc13d3fb",
+      "depth": 28,
+      "pin": {
+        "counters": {
+          "generationValidations": 50,
+          "integrityChecks": 28,
+          "loadCalls": 25,
+          "referenceTraversals": 27
+        },
+        "milliseconds": 2608.0871,
+        "nodeRSSAfter": 331870208,
+        "nodeRSSBefore": 71946240,
+        "reads": {
+          "external": {
+            "bytes": 884692,
+            "calls": 5,
+            "distinctFiles": 5
+          },
+          "generations": {
+            "bytes": 31724986,
+            "calls": 28,
+            "distinctFiles": 28
+          },
+          "locators": {
+            "bytes": 1030920,
+            "calls": 22,
+            "distinctFiles": 22
+          },
+          "portrayal": {
+            "bytes": 67264802,
+            "calls": 44,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 23198081,
+            "calls": 613,
+            "distinctFiles": 23
+          }
+        }
+      },
+      "query": {
+        "answerSha256": "6be643a51ffa6180ae49574d76b1d2d9b8f80c2d28aaa4cb8cc10f4d01d1c352",
+        "counters": {
+          "generationValidations": 50,
+          "integrityChecks": 28,
+          "loadCalls": 44,
+          "referenceTraversals": 27
+        },
+        "milliseconds": 1246.9307000000003,
+        "nodeRSSAfter": 438226944,
+        "nodeRSSBefore": 331870208,
+        "qualifiedSha256": "6ae398e1fe9f5dab5f98acb694af7ddb858cd4d210bb4f972a564482ddf94431",
+        "reads": {
+          "external": {
+            "bytes": 1127670,
+            "calls": 4,
+            "distinctFiles": 2
+          },
+          "generations": {
+            "bytes": 31724986,
+            "calls": 28,
+            "distinctFiles": 28
+          },
+          "locators": {
+            "bytes": 1030920,
+            "calls": 22,
+            "distinctFiles": 22
+          },
+          "portrayal": {
+            "bytes": 67264802,
+            "calls": 44,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 20420832,
+            "calls": 540,
+            "distinctFiles": 5
+          }
+        },
+        "responseBytes": 32858
+      },
+      "rawSha256": "2a9b2353ee28e38e591aedccbb37fb6b2bfd7dd519e674c8413ae4fc9fcc8b42",
+      "selected": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+      "startupMilliseconds": 2766.6673,
+      "variant": "request-reuse"
+    },
+    {
+      "current": "0fddbd10bbb5e9a29569c3c02834b5a544ba866b2c003a44909013558df8e5b1",
+      "depth": 112,
+      "pin": {
+        "counters": {
+          "generationValidations": 6437,
+          "integrityChecks": 6328,
+          "loadCalls": 109,
+          "referenceTraversals": 6219
+        },
+        "milliseconds": 154697.94269999999,
+        "nodeRSSAfter": 251101184,
+        "nodeRSSBefore": 71966720,
+        "reads": {
+          "external": {
+            "bytes": 884692,
+            "calls": 5,
+            "distinctFiles": 5
+          },
+          "generations": {
+            "bytes": 14913620431,
+            "calls": 12547,
+            "distinctFiles": 112
+          },
+          "locators": {
+            "bytes": 5107740,
+            "calls": 109,
+            "distinctFiles": 106
+          },
+          "portrayal": {
+            "bytes": 333266519,
+            "calls": 218,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 2652794489,
+            "calls": 67285,
+            "distinctFiles": 23
+          }
+        }
+      },
+      "query": {
+        "answerSha256": "6be643a51ffa6180ae49574d76b1d2d9b8f80c2d28aaa4cb8cc10f4d01d1c352",
+        "counters": {
+          "generationValidations": 12826,
+          "integrityChecks": 12614,
+          "loadCalls": 212,
+          "referenceTraversals": 12402
+        },
+        "milliseconds": 298643.7465,
+        "nodeRSSAfter": 422072320,
+        "nodeRSSBefore": 251101184,
+        "qualifiedSha256": "6ae398e1fe9f5dab5f98acb694af7ddb858cd4d210bb4f972a564482ddf94431",
+        "reads": {
+          "external": {
+            "bytes": 1127670,
+            "calls": 4,
+            "distinctFiles": 2
+          },
+          "generations": {
+            "bytes": 29766791528,
+            "calls": 25016,
+            "distinctFiles": 112
+          },
+          "locators": {
+            "bytes": 9934320,
+            "calls": 212,
+            "distinctFiles": 106
+          },
+          "portrayal": {
+            "bytes": 648188092,
+            "calls": 424,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 5287022680,
+            "calls": 134092,
+            "distinctFiles": 5
+          }
+        },
+        "responseBytes": 32858
+      },
+      "rawSha256": "48c6eae16ddb05a94e51cdea45d9203f5d3aacaf90d0001650addc7b741b664f",
+      "selected": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+      "startupMilliseconds": 154862.5724,
+      "variant": "accepted"
+    },
+    {
+      "current": "0fddbd10bbb5e9a29569c3c02834b5a544ba866b2c003a44909013558df8e5b1",
+      "depth": 112,
+      "pin": {
+        "counters": {
+          "generationValidations": 218,
+          "integrityChecks": 112,
+          "loadCalls": 109,
+          "referenceTraversals": 111
+        },
+        "milliseconds": 7407.033100000001,
+        "nodeRSSAfter": 640393216,
+        "nodeRSSBefore": 72302592,
+        "reads": {
+          "external": {
+            "bytes": 884692,
+            "calls": 5,
+            "distinctFiles": 5
+          },
+          "generations": {
+            "bytes": 135992590,
+            "calls": 112,
+            "distinctFiles": 112
+          },
+          "locators": {
+            "bytes": 4967160,
+            "calls": 106,
+            "distinctFiles": 106
+          },
+          "portrayal": {
+            "bytes": 324094046,
+            "calls": 212,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 96206009,
+            "calls": 2545,
+            "distinctFiles": 23
+          }
+        }
+      },
+      "query": {
+        "answerSha256": "6be643a51ffa6180ae49574d76b1d2d9b8f80c2d28aaa4cb8cc10f4d01d1c352",
+        "counters": {
+          "generationValidations": 218,
+          "integrityChecks": 112,
+          "loadCalls": 212,
+          "referenceTraversals": 111
+        },
+        "milliseconds": 5822.458799999999,
+        "nodeRSSAfter": 1052684288,
+        "nodeRSSBefore": 640393216,
+        "qualifiedSha256": "6ae398e1fe9f5dab5f98acb694af7ddb858cd4d210bb4f972a564482ddf94431",
+        "reads": {
+          "external": {
+            "bytes": 1127670,
+            "calls": 4,
+            "distinctFiles": 2
+          },
+          "generations": {
+            "bytes": 135992590,
+            "calls": 112,
+            "distinctFiles": 112
+          },
+          "locators": {
+            "bytes": 4967160,
+            "calls": 106,
+            "distinctFiles": 106
+          },
+          "portrayal": {
+            "bytes": 324094046,
+            "calls": 212,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 93428760,
+            "calls": 2472,
+            "distinctFiles": 5
+          }
+        },
+        "responseBytes": 32858
+      },
+      "rawSha256": "aed0c7fb485337845b2c118cb2876abe90c9cb9de11f39077736b923b056e47d",
+      "selected": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+      "startupMilliseconds": 7561.335300000001,
+      "variant": "request-reuse"
+    }
+  ],
+  "hypothesisResults": {
+    "H1": "Not supported for the accepted whole-ancestry interactive path; direct self-contained controls remain bounded in history but do not prove publication closure",
+    "H2": "Supported: distinct ancestry cost persists after duplicate work is removed; historical published-membership search adds repeated closure work",
+    "H3": "Supported: carrying references, ordinary lookup and reuse integrity verification have different costs",
+    "H4": "No additional dominant regime required; observed parsed-cache RSS trade-off qualifies mitigation"
+  },
+  "limitations": [
+    "fresh process is not cold physical disk",
+    "Node synchronous read counters exclude Python/asynchronous/kernel reads",
+    "reference sweep does not simulate scientific values, payload IO or spatial query indexes",
+    "single-writer local metadata, no cloud/distributed atomicity"
+  ],
+  "measuredBoundaryMillisecondsDerived": 1553259.4435000003,
+  "measuredBoundaryQualification": "DERIVED sum of measured startup and query intervals; excludes orchestration, file serialization, fixture construction, historical supplements and equivalence rechecks; not campaign wall time.",
+  "measurementCodeHashes": {
+    "failure-worker.mjs": "8f53e86f18d8048726b972ae75d5f3b40aa1f221c734ba44f86a67b2df190fd6",
+    "fixtures.mjs": "80df2bb62707985004a42a44a4cd4ea96a8db427c8349a43a7c72e2c63d47a0e",
+    "plan.json": "1665bc54d1ac7822828cdc04b045589b8600749e51a325f4cc97acddd663cf21",
+    "plot.py": "ee49e4884a51de9b84bcf6b50350c5d89e61466dfb27145030320cedfe6f44a8",
+    "run.py": "29fb7289837fb3e00224123b9121f773e851c3d4ec81dab34c4e4928c5891489",
+    "runtime.mjs": "0b6ffb55b086bf7bb13233040723657365487de30b09a609d66de0d4d3eb38db",
+    "supplement.py": "4b9266705bd5e6baff01aee6b23cc25813e2269d24c8007c169c87ad5da1e9cd",
+    "test-experiment.mjs": "84666dc9ab4529f4aedbf88b43a7f2a6306d3874bf5952ecb1465d2adca4b2ed",
+    "worker.mjs": "19d298218da24f20566b4046cf62f1ad01d4170d8a7bfc5cb0b95c37b1336e4d"
+  },
+  "planSha256": "1665bc54d1ac7822828cdc04b045589b8600749e51a325f4cc97acddd663cf21",
+  "referenceControls": [
+    {
+      "actualReused": 99,
+      "changedReferences": 1,
+      "currentManifest": "01cf63e192efa44eb508898610540146668126cdc3b534a16fe57aaa9004d593",
+      "depth": 28,
+      "id": "R1",
+      "manifestBytes": 13172,
+      "metadataObjectBytes": 37681,
+      "objects": 100,
+      "oldestManifest": "8e1e9fd6db5a6533ea94f88825f93732c4efcc75f17ae9daab00313f7fb70461",
+      "pattern": "localized",
+      "retainedManifestBytes": 368745,
+      "reuse": 0.99,
+      "samples": {
+        "assemble-manifest": {
+          "logical": {
+            "entriesInspected": 100,
+            "historyTraversals": 0,
+            "identityHash": "01cf63e192efa44eb508898610540146668126cdc3b534a16fe57aaa9004d593",
+            "serializedBytes": 13172
+          },
+          "maxMilliseconds": 0.1556000206619501,
+          "medianMilliseconds": 0.13020006008446217,
+          "minMilliseconds": 0.1267001498490572
+        },
+        "carry-reference": {
+          "logical": {
+            "carriedReferences": 100,
+            "hashOperations": 0,
+            "historyTraversals": 0
+          },
+          "maxMilliseconds": 0.002100132405757904,
+          "medianMilliseconds": 0.0004998873919248581,
+          "minMilliseconds": 0.000400003045797348
+        },
+        "direct-current": {
+          "logical": {
+            "historyTraversals": 0,
+            "manifestReads": 1,
+            "metadataBytes": 13469,
+            "objectReads": 1,
+            "recordsInspected": 100,
+            "verificationOperations": 2
+          },
+          "maxMilliseconds": 0.3051001112908125,
+          "medianMilliseconds": 0.2280999906361103,
+          "minMilliseconds": 0.1970999874174595
+        },
+        "direct-oldest": {
+          "logical": {
+            "historyTraversals": 0,
+            "manifestReads": 1,
+            "metadataBytes": 13407,
+            "objectReads": 1,
+            "recordsInspected": 100,
+            "verificationOperations": 2
+          },
+          "maxMilliseconds": 0.6683999672532082,
+          "medianMilliseconds": 0.28380006551742554,
+          "minMilliseconds": 0.2196000423282385
+        },
+        "verify-reused-metadata": {
+          "logical": {
+            "historyTraversals": 0,
+            "metadataBytes": 29385,
+            "objectReads": 99,
+            "reusedRecords": 99,
+            "verificationOperations": 99
+          },
+          "maxMilliseconds": 7.361300056800246,
+          "medianMilliseconds": 7.04250019043684,
+          "minMilliseconds": 6.636099889874458
+        }
+      },
+      "uniqueMetadataObjects": 127
+    },
+    {
+      "actualReused": 990,
+      "changedReferences": 10,
+      "currentManifest": "03c34ec0d2f1e5201a52d1a9a1ccaaf5f65437697befe8f9d8a85a83fbdfa8b6",
+      "depth": 28,
+      "id": "R2",
+      "manifestBytes": 131083,
+      "metadataObjectBytes": 378790,
+      "objects": 1000,
+      "oldestManifest": "4a0368fb4f4c98957ace7d536377950ef31a655f5ef912802e3fe06fee65ec6e",
+      "pattern": "localized",
+      "retainedManifestBytes": 3670162,
+      "reuse": 0.99,
+      "samples": {
+        "assemble-manifest": {
+          "logical": {
+            "entriesInspected": 1000,
+            "historyTraversals": 0,
+            "identityHash": "03c34ec0d2f1e5201a52d1a9a1ccaaf5f65437697befe8f9d8a85a83fbdfa8b6",
+            "serializedBytes": 131083
+          },
+          "maxMilliseconds": 2.0139000844210386,
+          "medianMilliseconds": 1.8354000058025122,
+          "minMilliseconds": 1.1965001467615366
+        },
+        "carry-reference": {
+          "logical": {
+            "carriedReferences": 1000,
+            "hashOperations": 0,
+            "historyTraversals": 0
+          },
+          "maxMilliseconds": 0.007400056347250938,
+          "medianMilliseconds": 0.004200031980872154,
+          "minMilliseconds": 0.00400003045797348
+        },
+        "direct-current": {
+          "logical": {
+            "historyTraversals": 0,
+            "manifestReads": 1,
+            "metadataBytes": 131382,
+            "objectReads": 1,
+            "recordsInspected": 1000,
+            "verificationOperations": 2
+          },
+          "maxMilliseconds": 1.7123001161962748,
+          "medianMilliseconds": 1.4176999684423208,
+          "minMilliseconds": 0.9463999886065722
+        },
+        "direct-oldest": {
+          "logical": {
+            "historyTraversals": 0,
+            "manifestReads": 1,
+            "metadataBytes": 131310,
+            "objectReads": 1,
+            "recordsInspected": 1000,
+            "verificationOperations": 2
+          },
+          "maxMilliseconds": 1.3564000837504864,
+          "medianMilliseconds": 1.24439992941916,
+          "minMilliseconds": 1.2367998715490103
+        },
+        "verify-reused-metadata": {
+          "logical": {
+            "historyTraversals": 0,
+            "metadataBytes": 295830,
+            "objectReads": 990,
+            "reusedRecords": 990,
+            "verificationOperations": 990
+          },
+          "maxMilliseconds": 115.44859991408885,
+          "medianMilliseconds": 101.14609985612333,
+          "minMilliseconds": 80.41470008902252
+        }
+      },
+      "uniqueMetadataObjects": 1270
+    },
+    {
+      "actualReused": 9900,
+      "changedReferences": 100,
+      "currentManifest": "f8112e922949f0e6f0d90e255de832dbbd3e856b6841d5df73642de43118a8a7",
+      "depth": 28,
+      "id": "R3",
+      "manifestBytes": 1319175,
+      "metadataObjectBytes": 3812740,
+      "objects": 10000,
+      "oldestManifest": "282193b9e0b94510eb7b54a699da3823358593e8277cfa428e709f51dcddf914",
+      "pattern": "localized",
+      "retainedManifestBytes": 36935837,
+      "reuse": 0.99,
+      "samples": {
+        "assemble-manifest": {
+          "logical": {
+            "entriesInspected": 10000,
+            "historyTraversals": 0,
+            "identityHash": "f8112e922949f0e6f0d90e255de832dbbd3e856b6841d5df73642de43118a8a7",
+            "serializedBytes": 1319175
+          },
+          "maxMilliseconds": 19.273200072348118,
+          "medianMilliseconds": 15.801899833604693,
+          "minMilliseconds": 15.177299967035651
+        },
+        "carry-reference": {
+          "logical": {
+            "carriedReferences": 10000,
+            "hashOperations": 0,
+            "historyTraversals": 0
+          },
+          "maxMilliseconds": 0.08330005221068859,
+          "medianMilliseconds": 0.027799978852272034,
+          "minMilliseconds": 0.02659996971487999
+        },
+        "direct-current": {
+          "logical": {
+            "historyTraversals": 0,
+            "manifestReads": 1,
+            "metadataBytes": 1319476,
+            "objectReads": 1,
+            "recordsInspected": 10000,
+            "verificationOperations": 2
+          },
+          "maxMilliseconds": 8.590499870479107,
+          "medianMilliseconds": 7.734999991953373,
+          "minMilliseconds": 6.515200017020106
+        },
+        "direct-oldest": {
+          "logical": {
+            "historyTraversals": 0,
+            "manifestReads": 1,
+            "metadataBytes": 1319313,
+            "objectReads": 1,
+            "recordsInspected": 10000,
+            "verificationOperations": 2
+          },
+          "maxMilliseconds": 9.029499953612685,
+          "medianMilliseconds": 7.049399893730879,
+          "minMilliseconds": 6.547600030899048
+        },
+        "verify-reused-metadata": {
+          "logical": {
+            "historyTraversals": 0,
+            "metadataBytes": 2978100,
+            "objectReads": 9900,
+            "reusedRecords": 9900,
+            "verificationOperations": 9900
+          },
+          "maxMilliseconds": 1249.3094000965357,
+          "medianMilliseconds": 979.2359001003206,
+          "minMilliseconds": 875.1441000495106
+        }
+      },
+      "uniqueMetadataObjects": 12700
+    },
+    {
+      "actualReused": 500,
+      "changedReferences": 500,
+      "currentManifest": "cc8ddea9c4314a101c432d79d75acd42e9d1581faa692686db43073313e870dd",
+      "depth": 28,
+      "id": "R4",
+      "manifestBytes": 131574,
+      "metadataObjectBytes": 4347340,
+      "objects": 1000,
+      "oldestManifest": "4a0368fb4f4c98957ace7d536377950ef31a655f5ef912802e3fe06fee65ec6e",
+      "pattern": "localized",
+      "retainedManifestBytes": 3679009,
+      "reuse": 0.5,
+      "samples": {
+        "assemble-manifest": {
+          "logical": {
+            "entriesInspected": 1000,
+            "historyTraversals": 0,
+            "identityHash": "cc8ddea9c4314a101c432d79d75acd42e9d1581faa692686db43073313e870dd",
+            "serializedBytes": 131574
+          },
+          "maxMilliseconds": 1.6395000275224447,
+          "medianMilliseconds": 1.214300049468875,
+          "minMilliseconds": 1.196499913930893
+        },
+        "carry-reference": {
+          "logical": {
+            "carriedReferences": 1000,
+            "hashOperations": 0,
+            "historyTraversals": 0
+          },
+          "maxMilliseconds": 0.0067998189479112625,
+          "medianMilliseconds": 0.002200016751885414,
+          "minMilliseconds": 0.00209989957511425
+        },
+        "direct-current": {
+          "logical": {
+            "historyTraversals": 0,
+            "manifestReads": 1,
+            "metadataBytes": 131873,
+            "objectReads": 1,
+            "recordsInspected": 1000,
+            "verificationOperations": 2
+          },
+          "maxMilliseconds": 1.0505998507142067,
+          "medianMilliseconds": 0.7710999343544245,
+          "minMilliseconds": 0.7412999402731657
+        },
+        "direct-oldest": {
+          "logical": {
+            "historyTraversals": 0,
+            "manifestReads": 1,
+            "metadataBytes": 131310,
+            "objectReads": 1,
+            "recordsInspected": 1000,
+            "verificationOperations": 2
+          },
+          "maxMilliseconds": 0.853799981996417,
+          "medianMilliseconds": 0.7617000956088305,
+          "minMilliseconds": 0.7555000483989716
+        },
+        "verify-reused-metadata": {
+          "logical": {
+            "historyTraversals": 0,
+            "metadataBytes": 149500,
+            "objectReads": 500,
+            "reusedRecords": 500,
+            "verificationOperations": 500
+          },
+          "maxMilliseconds": 48.644599970430136,
+          "medianMilliseconds": 39.50769989751279,
+          "minMilliseconds": 34.51309981755912
+        }
+      },
+      "uniqueMetadataObjects": 14500
+    },
+    {
+      "actualReused": 900,
+      "changedReferences": 100,
+      "currentManifest": "c6d0602d817358be2cd8e977cf2c1de14e0b5ba8f4627366a324b844d238d191",
+      "depth": 28,
+      "id": "R5",
+      "manifestBytes": 131174,
+      "metadataObjectBytes": 1103740,
+      "objects": 1000,
+      "oldestManifest": "4a0368fb4f4c98957ace7d536377950ef31a655f5ef912802e3fe06fee65ec6e",
+      "pattern": "localized",
+      "retainedManifestBytes": 3671809,
+      "reuse": 0.9,
+      "samples": {
+        "assemble-manifest": {
+          "logical": {
+            "entriesInspected": 1000,
+            "historyTraversals": 0,
+            "identityHash": "c6d0602d817358be2cd8e977cf2c1de14e0b5ba8f4627366a324b844d238d191",
+            "serializedBytes": 131174
+          },
+          "maxMilliseconds": 2.1390998736023903,
+          "medianMilliseconds": 1.2228998821228743,
+          "minMilliseconds": 1.1737998574972153
+        },
+        "carry-reference": {
+          "logical": {
+            "carriedReferences": 1000,
+            "hashOperations": 0,
+            "historyTraversals": 0
+          },
+          "maxMilliseconds": 0.00809994526207447,
+          "medianMilliseconds": 0.002100132405757904,
+          "minMilliseconds": 0.001800013706088066
+        },
+        "direct-current": {
+          "logical": {
+            "historyTraversals": 0,
+            "manifestReads": 1,
+            "metadataBytes": 131473,
+            "objectReads": 1,
+            "recordsInspected": 1000,
+            "verificationOperations": 2
+          },
+          "maxMilliseconds": 0.9838000405579805,
+          "medianMilliseconds": 0.8162001613527536,
+          "minMilliseconds": 0.7193000055849552
+        },
+        "direct-oldest": {
+          "logical": {
+            "historyTraversals": 0,
+            "manifestReads": 1,
+            "metadataBytes": 131310,
+            "objectReads": 1,
+            "recordsInspected": 1000,
+            "verificationOperations": 2
+          },
+          "maxMilliseconds": 0.7996000349521637,
+          "medianMilliseconds": 0.7164999842643738,
+          "minMilliseconds": 0.6907000206410885
+        },
+        "verify-reused-metadata": {
+          "logical": {
+            "historyTraversals": 0,
+            "metadataBytes": 269100,
+            "objectReads": 900,
+            "reusedRecords": 900,
+            "verificationOperations": 900
+          },
+          "maxMilliseconds": 109.33979996480048,
+          "medianMilliseconds": 76.96630014106631,
+          "minMilliseconds": 69.56610013730824
+        }
+      },
+      "uniqueMetadataObjects": 3700
+    },
+    {
+      "actualReused": 990,
+      "changedReferences": 10,
+      "currentManifest": "0a563db41e6bfa94aa795b35c20cd08fbcf3be9daa7e7ee29d973f966c65d216",
+      "depth": 7,
+      "id": "R6",
+      "manifestBytes": 131073,
+      "metadataObjectBytes": 316480,
+      "objects": 1000,
+      "oldestManifest": "4a0368fb4f4c98957ace7d536377950ef31a655f5ef912802e3fe06fee65ec6e",
+      "pattern": "localized",
+      "retainedManifestBytes": 917449,
+      "reuse": 0.99,
+      "samples": {
+        "assemble-manifest": {
+          "logical": {
+            "entriesInspected": 1000,
+            "historyTraversals": 0,
+            "identityHash": "0a563db41e6bfa94aa795b35c20cd08fbcf3be9daa7e7ee29d973f966c65d216",
+            "serializedBytes": 131073
+          },
+          "maxMilliseconds": 2.740300027653575,
+          "medianMilliseconds": 2.3427000269293785,
+          "minMilliseconds": 1.110499957576394
+        },
+        "carry-reference": {
+          "logical": {
+            "carriedReferences": 1000,
+            "hashOperations": 0,
+            "historyTraversals": 0
+          },
+          "maxMilliseconds": 0.0074999406933784485,
+          "medianMilliseconds": 0.0018998980522155762,
+          "minMilliseconds": 0.001800013706088066
+        },
+        "direct-current": {
+          "logical": {
+            "historyTraversals": 0,
+            "manifestReads": 1,
+            "metadataBytes": 131372,
+            "objectReads": 1,
+            "recordsInspected": 1000,
+            "verificationOperations": 2
+          },
+          "maxMilliseconds": 1.4475001953542233,
+          "medianMilliseconds": 0.7803000044077635,
+          "minMilliseconds": 0.7470001000910997
+        },
+        "direct-oldest": {
+          "logical": {
+            "historyTraversals": 0,
+            "manifestReads": 1,
+            "metadataBytes": 131310,
+            "objectReads": 1,
+            "recordsInspected": 1000,
+            "verificationOperations": 2
+          },
+          "maxMilliseconds": 0.8523000869899988,
+          "medianMilliseconds": 0.7611999753862619,
+          "minMilliseconds": 0.7137998472899199
+        },
+        "verify-reused-metadata": {
+          "logical": {
+            "historyTraversals": 0,
+            "metadataBytes": 295830,
+            "objectReads": 990,
+            "reusedRecords": 990,
+            "verificationOperations": 990
+          },
+          "maxMilliseconds": 106.43470007926226,
+          "medianMilliseconds": 103.72620006091893,
+          "minMilliseconds": 79.01320001110435
+        }
+      },
+      "uniqueMetadataObjects": 1060
+    },
+    {
+      "actualReused": 990,
+      "changedReferences": 10,
+      "currentManifest": "86657d2069323f402be05a020aa0e0d39fcef1b955be5d75122fd8f2441c763c",
+      "depth": 112,
+      "id": "R7",
+      "manifestBytes": 131093,
+      "metadataObjectBytes": 632506,
+      "objects": 1000,
+      "oldestManifest": "4a0368fb4f4c98957ace7d536377950ef31a655f5ef912802e3fe06fee65ec6e",
+      "pattern": "spread",
+      "retainedManifestBytes": 14681254,
+      "reuse": 0.99,
+      "samples": {
+        "assemble-manifest": {
+          "logical": {
+            "entriesInspected": 1000,
+            "historyTraversals": 0,
+            "identityHash": "86657d2069323f402be05a020aa0e0d39fcef1b955be5d75122fd8f2441c763c",
+            "serializedBytes": 131093
+          },
+          "maxMilliseconds": 1.3003000058233738,
+          "medianMilliseconds": 1.1813000310212374,
+          "minMilliseconds": 1.175799872726202
+        },
+        "carry-reference": {
+          "logical": {
+            "carriedReferences": 1000,
+            "hashOperations": 0,
+            "historyTraversals": 0
+          },
+          "maxMilliseconds": 0.023799948394298553,
+          "medianMilliseconds": 0.004300149157643318,
+          "minMilliseconds": 0.00400003045797348
+        },
+        "direct-current": {
+          "logical": {
+            "historyTraversals": 0,
+            "manifestReads": 1,
+            "metadataBytes": 131392,
+            "objectReads": 1,
+            "recordsInspected": 1000,
+            "verificationOperations": 2
+          },
+          "maxMilliseconds": 1.7178000416606665,
+          "medianMilliseconds": 1.6852000262588263,
+          "minMilliseconds": 1.345600001513958
+        },
+        "direct-oldest": {
+          "logical": {
+            "historyTraversals": 0,
+            "manifestReads": 1,
+            "metadataBytes": 131310,
+            "objectReads": 1,
+            "recordsInspected": 1000,
+            "verificationOperations": 2
+          },
+          "maxMilliseconds": 1.4567000325769186,
+          "medianMilliseconds": 1.2820998672395945,
+          "minMilliseconds": 1.2444001622498035
+        },
+        "verify-reused-metadata": {
+          "logical": {
+            "historyTraversals": 0,
+            "metadataBytes": 295794,
+            "objectReads": 990,
+            "reusedRecords": 990,
+            "verificationOperations": 990
+          },
+          "maxMilliseconds": 91.75939997658134,
+          "medianMilliseconds": 79.18010000139475,
+          "minMilliseconds": 70.43550000526011
+        }
+      },
+      "uniqueMetadataObjects": 2110
+    }
+  ],
+  "rows": [
+    {
+      "change": "administrative parent only",
+      "depth": 7,
+      "freshFirstQueryMilliseconds": {
+        "max": 294.8348000000001,
+        "median": 272.09990000000016,
+        "min": 270.68370000000004,
+        "p95": 294.8348000000001
+      },
+      "freshStartupMilliseconds": {
+        "max": 2321.4312,
+        "median": 2110.5564999999997,
+        "min": 2090.2165,
+        "p95": 2321.4312
+      },
+      "generation": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+      "historyLookup": "current",
+      "id": "H7-Q05-accepted",
+      "nodeRSSAfterRange": [
+        252231680,
+        350007296
+      ],
+      "objects": 310,
+      "originalComparisonSha256": "6ae398e1fe9f5dab5f98acb694af7ddb858cd4d210bb4f972a564482ddf94431",
+      "pin": {
+        "counters": {
+          "generationValidations": 32,
+          "integrityChecks": 28,
+          "loadCalls": 4,
+          "referenceTraversals": 24
+        },
+        "milliseconds": 1974.8591,
+        "nodeRSSAfter": 228143104,
+        "nodeRSSBefore": 71950336,
+        "reads": {
+          "external": {
+            "bytes": 884692,
+            "calls": 5,
+            "distinctFiles": 5
+          },
+          "generations": {
+            "bytes": 40299556,
+            "calls": 52,
+            "distinctFiles": 7
+          },
+          "locators": {
+            "bytes": 187440,
+            "calls": 4,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 12229964,
+            "calls": 8,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 11451869,
+            "calls": 295,
+            "distinctFiles": 23
+          }
+        }
+      },
+      "qualifiedSha256": "6ae398e1fe9f5dab5f98acb694af7ddb858cd4d210bb4f972a564482ddf94431",
+      "query": "Q05",
+      "raw": {
+        "bytes": 37483,
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\measurements\\H7-Q05-accepted.json",
+        "sha256": "f8f0860c1b3a86f9da4fe5e5d13da10f9da37c81e98be0e22d808af863aad41b"
+      },
+      "scientificReuse": 1.0,
+      "structural": {
+        "counters": {
+          "generationValidations": 16,
+          "integrityChecks": 14,
+          "loadCalls": 2,
+          "referenceTraversals": 12
+        },
+        "reads": {
+          "external": {
+            "bytes": 1127670,
+            "calls": 4,
+            "distinctFiles": 2
+          },
+          "generations": {
+            "bytes": 20149778,
+            "calls": 26,
+            "distinctFiles": 7
+          },
+          "locators": {
+            "bytes": 93720,
+            "calls": 2,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 6114982,
+            "calls": 4,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 4337440,
+            "calls": 112,
+            "distinctFiles": 5
+          }
+        },
+        "responseBytes": 32858
+      },
+      "variant": "accepted",
+      "warmMilliseconds": {
+        "max": 316.0752999999995,
+        "median": 271.19630000000006,
+        "min": 256.7512999999999,
+        "p95": 316.0752999999995
+      }
+    },
+    {
+      "change": "administrative parent only",
+      "depth": 7,
+      "freshFirstQueryMilliseconds": {
+        "max": 159.4672999999998,
+        "median": 140.9139,
+        "min": 138.64469999999983,
+        "p95": 159.4672999999998
+      },
+      "freshStartupMilliseconds": {
+        "max": 2040.6625999999999,
+        "median": 1977.9214000000002,
+        "min": 1951.8183000000001,
+        "p95": 2040.6625999999999
+      },
+      "generation": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+      "historyLookup": "current",
+      "id": "H7-Q05-request-reuse",
+      "nodeRSSAfterRange": [
+        252207104,
+        509820928
+      ],
+      "objects": 310,
+      "originalComparisonSha256": "6ae398e1fe9f5dab5f98acb694af7ddb858cd4d210bb4f972a564482ddf94431",
+      "pin": {
+        "counters": {
+          "generationValidations": 8,
+          "integrityChecks": 7,
+          "loadCalls": 4,
+          "referenceTraversals": 6
+        },
+        "milliseconds": 1802.9751,
+        "nodeRSSAfter": 197361664,
+        "nodeRSSBefore": 71741440,
+        "reads": {
+          "external": {
+            "bytes": 884692,
+            "calls": 5,
+            "distinctFiles": 5
+          },
+          "generations": {
+            "bytes": 5658085,
+            "calls": 7,
+            "distinctFiles": 7
+          },
+          "locators": {
+            "bytes": 46860,
+            "calls": 1,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 3057491,
+            "calls": 2,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 4946099,
+            "calls": 130,
+            "distinctFiles": 23
+          }
+        }
+      },
+      "qualifiedSha256": "6ae398e1fe9f5dab5f98acb694af7ddb858cd4d210bb4f972a564482ddf94431",
+      "query": "Q05",
+      "raw": {
+        "bytes": 37329,
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\measurements\\H7-Q05-request-reuse.json",
+        "sha256": "8d6a65601dfe0888e3e9dde4f3d202aa442c71065da676565d79a11d537cb15a"
+      },
+      "scientificReuse": 1.0,
+      "structural": {
+        "counters": {
+          "generationValidations": 8,
+          "integrityChecks": 7,
+          "loadCalls": 2,
+          "referenceTraversals": 6
+        },
+        "reads": {
+          "external": {
+            "bytes": 1127670,
+            "calls": 4,
+            "distinctFiles": 2
+          },
+          "generations": {
+            "bytes": 5658085,
+            "calls": 7,
+            "distinctFiles": 7
+          },
+          "locators": {
+            "bytes": 46860,
+            "calls": 1,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 3057491,
+            "calls": 2,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 2168850,
+            "calls": 57,
+            "distinctFiles": 5
+          }
+        },
+        "responseBytes": 32858
+      },
+      "variant": "request-reuse",
+      "warmMilliseconds": {
+        "max": 189.1914999999999,
+        "median": 139.59969999999998,
+        "min": 118.62199999999984,
+        "p95": 189.1914999999999
+      }
+    },
+    {
+      "change": "administrative parent only",
+      "depth": 7,
+      "freshFirstQueryMilliseconds": {
+        "max": 396.2419,
+        "median": 375.1401999999998,
+        "min": 369.8910999999998,
+        "p95": 396.2419
+      },
+      "freshStartupMilliseconds": {
+        "max": 2145.3918000000003,
+        "median": 2127.8291999999997,
+        "min": 2089.2463000000002,
+        "p95": 2145.3918000000003
+      },
+      "generation": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+      "historyLookup": "current",
+      "id": "H7-Q21-accepted",
+      "nodeRSSAfterRange": [
+        249847808,
+        335421440
+      ],
+      "objects": 310,
+      "originalComparisonSha256": "1a1a6d97ddfdc364a71c0a6513cfa4136260778ba4afda37d544abeea34bdcb7",
+      "pin": {
+        "counters": {
+          "generationValidations": 32,
+          "integrityChecks": 28,
+          "loadCalls": 4,
+          "referenceTraversals": 24
+        },
+        "milliseconds": 2039.7353999999998,
+        "nodeRSSAfter": 228675584,
+        "nodeRSSBefore": 71671808,
+        "reads": {
+          "external": {
+            "bytes": 884692,
+            "calls": 5,
+            "distinctFiles": 5
+          },
+          "generations": {
+            "bytes": 40299556,
+            "calls": 52,
+            "distinctFiles": 7
+          },
+          "locators": {
+            "bytes": 187440,
+            "calls": 4,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 12229964,
+            "calls": 8,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 11451869,
+            "calls": 295,
+            "distinctFiles": 23
+          }
+        }
+      },
+      "qualifiedSha256": "b9dda67f0472ad9cc086b8a36074b8e2a643ea92614a38bab782e6bfb9ce8918",
+      "query": "Q21",
+      "raw": {
+        "bytes": 37582,
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\measurements\\H7-Q21-accepted.json",
+        "sha256": "37b1c4463368971425b44ba0bfd058b971bf74ae576526fcecd4b1ef734deeb1"
+      },
+      "scientificReuse": 1.0,
+      "structural": {
+        "counters": {
+          "generationValidations": 16,
+          "integrityChecks": 14,
+          "loadCalls": 2,
+          "referenceTraversals": 12
+        },
+        "reads": {
+          "external": {
+            "bytes": 9262300,
+            "calls": 42,
+            "distinctFiles": 12
+          },
+          "generations": {
+            "bytes": 20149778,
+            "calls": 26,
+            "distinctFiles": 7
+          },
+          "locators": {
+            "bytes": 93720,
+            "calls": 2,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 6114982,
+            "calls": 4,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 6929512,
+            "calls": 172,
+            "distinctFiles": 5
+          }
+        },
+        "responseBytes": 142590
+      },
+      "variant": "accepted",
+      "warmMilliseconds": {
+        "max": 569.9698000000008,
+        "median": 395.42004999999995,
+        "min": 359.44039999999995,
+        "p95": 569.9698000000008
+      }
+    },
+    {
+      "change": "administrative parent only",
+      "depth": 7,
+      "freshFirstQueryMilliseconds": {
+        "max": 256.14260000000013,
+        "median": 245.38350000000014,
+        "min": 241.00519999999983,
+        "p95": 256.14260000000013
+      },
+      "freshStartupMilliseconds": {
+        "max": 1981.5405,
+        "median": 1969.7425999999998,
+        "min": 1949.9406,
+        "p95": 1981.5405
+      },
+      "generation": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+      "historyLookup": "current",
+      "id": "H7-Q21-request-reuse",
+      "nodeRSSAfterRange": [
+        252178432,
+        447393792
+      ],
+      "objects": 310,
+      "originalComparisonSha256": "1a1a6d97ddfdc364a71c0a6513cfa4136260778ba4afda37d544abeea34bdcb7",
+      "pin": {
+        "counters": {
+          "generationValidations": 8,
+          "integrityChecks": 7,
+          "loadCalls": 4,
+          "referenceTraversals": 6
+        },
+        "milliseconds": 1799.9021,
+        "nodeRSSAfter": 196747264,
+        "nodeRSSBefore": 72097792,
+        "reads": {
+          "external": {
+            "bytes": 884692,
+            "calls": 5,
+            "distinctFiles": 5
+          },
+          "generations": {
+            "bytes": 5658085,
+            "calls": 7,
+            "distinctFiles": 7
+          },
+          "locators": {
+            "bytes": 46860,
+            "calls": 1,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 3057491,
+            "calls": 2,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 4946099,
+            "calls": 130,
+            "distinctFiles": 23
+          }
+        }
+      },
+      "qualifiedSha256": "b9dda67f0472ad9cc086b8a36074b8e2a643ea92614a38bab782e6bfb9ce8918",
+      "query": "Q21",
+      "raw": {
+        "bytes": 37410,
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\measurements\\H7-Q21-request-reuse.json",
+        "sha256": "391703e7bd53bdbd591fc6ed0de7d112a76607fa7279cf8e0c69a9fec12aae5c"
+      },
+      "scientificReuse": 1.0,
+      "structural": {
+        "counters": {
+          "generationValidations": 8,
+          "integrityChecks": 7,
+          "loadCalls": 2,
+          "referenceTraversals": 6
+        },
+        "reads": {
+          "external": {
+            "bytes": 9262300,
+            "calls": 42,
+            "distinctFiles": 12
+          },
+          "generations": {
+            "bytes": 5658085,
+            "calls": 7,
+            "distinctFiles": 7
+          },
+          "locators": {
+            "bytes": 46860,
+            "calls": 1,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 3057491,
+            "calls": 2,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 4760922,
+            "calls": 117,
+            "distinctFiles": 5
+          }
+        },
+        "responseBytes": 142590
+      },
+      "variant": "request-reuse",
+      "warmMilliseconds": {
+        "max": 289.9184000000005,
+        "median": 240.7547999999997,
+        "min": 226.8833999999997,
+        "p95": 289.9184000000005
+      }
+    },
+    {
+      "change": "administrative parent only",
+      "depth": 7,
+      "freshFirstQueryMilliseconds": {
+        "max": 635.0436000000004,
+        "median": 628.7136,
+        "min": 617.3594000000003,
+        "p95": 635.0436000000004
+      },
+      "freshStartupMilliseconds": {
+        "max": 2138.4821,
+        "median": 2113.6048,
+        "min": 2080.8908,
+        "p95": 2138.4821
+      },
+      "generation": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+      "historyLookup": "current",
+      "id": "H7-Q18-accepted",
+      "nodeRSSAfterRange": [
+        295129088,
+        442105856
+      ],
+      "objects": 310,
+      "originalComparisonSha256": "cc4df91a6a313986e6f91c76a30c6c66a0ea6a32927cc1a2b70671bee017f54d",
+      "pin": {
+        "counters": {
+          "generationValidations": 32,
+          "integrityChecks": 28,
+          "loadCalls": 4,
+          "referenceTraversals": 24
+        },
+        "milliseconds": 1973.1934999999999,
+        "nodeRSSAfter": 227438592,
+        "nodeRSSBefore": 71688192,
+        "reads": {
+          "external": {
+            "bytes": 884692,
+            "calls": 5,
+            "distinctFiles": 5
+          },
+          "generations": {
+            "bytes": 40299556,
+            "calls": 52,
+            "distinctFiles": 7
+          },
+          "locators": {
+            "bytes": 187440,
+            "calls": 4,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 12229964,
+            "calls": 8,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 11451869,
+            "calls": 295,
+            "distinctFiles": 23
+          }
+        }
+      },
+      "qualifiedSha256": "cc4df91a6a313986e6f91c76a30c6c66a0ea6a32927cc1a2b70671bee017f54d",
+      "query": "Q18",
+      "raw": {
+        "bytes": 34451,
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\measurements\\H7-Q18-accepted.json",
+        "sha256": "2229b5a35451ae67d89ffd13e0bb694557e673e3915eb8bd3403469cb0e8e599"
+      },
+      "scientificReuse": 1.0,
+      "structural": {
+        "counters": {
+          "generationValidations": 40,
+          "integrityChecks": 35,
+          "loadCalls": 5,
+          "referenceTraversals": 30
+        },
+        "reads": {
+          "generations": {
+            "bytes": 50374445,
+            "calls": 65,
+            "distinctFiles": 7
+          },
+          "locators": {
+            "bytes": 234300,
+            "calls": 5,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 15287455,
+            "calls": 10,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 10843600,
+            "calls": 280,
+            "distinctFiles": 5
+          }
+        },
+        "responseBytes": 23473
+      },
+      "variant": "accepted",
+      "warmMilliseconds": {
+        "max": 816.7509000000009,
+        "median": 691.8208999999997,
+        "min": 623.1552000000001,
+        "p95": 816.7509000000009
+      }
+    },
+    {
+      "change": "administrative parent only",
+      "depth": 7,
+      "freshFirstQueryMilliseconds": {
+        "max": 141.16960000000017,
+        "median": 133.7575999999999,
+        "min": 131.45409999999993,
+        "p95": 141.16960000000017
+      },
+      "freshStartupMilliseconds": {
+        "max": 2035.0632999999998,
+        "median": 1981.4375,
+        "min": 1949.5256000000002,
+        "p95": 2035.0632999999998
+      },
+      "generation": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+      "historyLookup": "current",
+      "id": "H7-Q18-request-reuse",
+      "nodeRSSAfterRange": [
+        240197632,
+        473260032
+      ],
+      "objects": 310,
+      "originalComparisonSha256": "cc4df91a6a313986e6f91c76a30c6c66a0ea6a32927cc1a2b70671bee017f54d",
+      "pin": {
+        "counters": {
+          "generationValidations": 8,
+          "integrityChecks": 7,
+          "loadCalls": 4,
+          "referenceTraversals": 6
+        },
+        "milliseconds": 1963.6025,
+        "nodeRSSAfter": 193675264,
+        "nodeRSSBefore": 72138752,
+        "reads": {
+          "external": {
+            "bytes": 884692,
+            "calls": 5,
+            "distinctFiles": 5
+          },
+          "generations": {
+            "bytes": 5658085,
+            "calls": 7,
+            "distinctFiles": 7
+          },
+          "locators": {
+            "bytes": 46860,
+            "calls": 1,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 3057491,
+            "calls": 2,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 4946099,
+            "calls": 130,
+            "distinctFiles": 23
+          }
+        }
+      },
+      "qualifiedSha256": "cc4df91a6a313986e6f91c76a30c6c66a0ea6a32927cc1a2b70671bee017f54d",
+      "query": "Q18",
+      "raw": {
+        "bytes": 34255,
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\measurements\\H7-Q18-request-reuse.json",
+        "sha256": "34ac276f61f9f73e824e7ad7a3a461b19c07cdfe4fa94498483087bc1875c018"
+      },
+      "scientificReuse": 1.0,
+      "structural": {
+        "counters": {
+          "generationValidations": 8,
+          "integrityChecks": 7,
+          "loadCalls": 5,
+          "referenceTraversals": 6
+        },
+        "reads": {
+          "generations": {
+            "bytes": 5658085,
+            "calls": 7,
+            "distinctFiles": 7
+          },
+          "locators": {
+            "bytes": 46860,
+            "calls": 1,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 3057491,
+            "calls": 2,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 2169240,
+            "calls": 60,
+            "distinctFiles": 5
+          }
+        },
+        "responseBytes": 23473
+      },
+      "variant": "request-reuse",
+      "warmMilliseconds": {
+        "max": 144.86260000000038,
+        "median": 131.81884999999966,
+        "min": 121.53639999999996,
+        "p95": 144.86260000000038
+      }
+    },
+    {
+      "change": "administrative parent only",
+      "depth": 28,
+      "freshFirstQueryMilliseconds": {
+        "max": 1384.4880999999996,
+        "median": 1340.4204,
+        "min": 1295.4597999999996,
+        "p95": 1384.4880999999996
+      },
+      "freshStartupMilliseconds": {
+        "max": 4435.8022,
+        "median": 4370.397599999999,
+        "min": 4260.8640000000005,
+        "p95": 4435.8022
+      },
+      "generation": "57d9bad9fd75381ed3ed98d58c7fdffede3d91eafb667ea9a45b4d20bc13d3fb",
+      "historyLookup": "current",
+      "id": "H28-Q05-accepted",
+      "nodeRSSAfterRange": [
+        276525056,
+        366280704
+      ],
+      "objects": 310,
+      "originalComparisonSha256": "6ae398e1fe9f5dab5f98acb694af7ddb858cd4d210bb4f972a564482ddf94431",
+      "pin": {
+        "counters": {
+          "generationValidations": 116,
+          "integrityChecks": 112,
+          "loadCalls": 4,
+          "referenceTraversals": 108
+        },
+        "milliseconds": 4153.2372,
+        "nodeRSSAfter": 262172672,
+        "nodeRSSBefore": 71827456,
+        "reads": {
+          "external": {
+            "bytes": 884692,
+            "calls": 5,
+            "distinctFiles": 5
+          },
+          "generations": {
+            "bytes": 248834764,
+            "calls": 220,
+            "distinctFiles": 28
+          },
+          "locators": {
+            "bytes": 187440,
+            "calls": 4,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 12229964,
+            "calls": 8,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 47884181,
+            "calls": 1219,
+            "distinctFiles": 23
+          }
+        }
+      },
+      "qualifiedSha256": "6ae398e1fe9f5dab5f98acb694af7ddb858cd4d210bb4f972a564482ddf94431",
+      "query": "Q05",
+      "raw": {
+        "bytes": 37625,
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\measurements\\H28-Q05-accepted.json",
+        "sha256": "e6231cd4f55c3a543d38fdb7bf5d64c0de53452558a23c262ef0874182222083"
+      },
+      "scientificReuse": 1.0,
+      "structural": {
+        "counters": {
+          "generationValidations": 58,
+          "integrityChecks": 56,
+          "loadCalls": 2,
+          "referenceTraversals": 54
+        },
+        "reads": {
+          "external": {
+            "bytes": 1127670,
+            "calls": 4,
+            "distinctFiles": 2
+          },
+          "generations": {
+            "bytes": 124417382,
+            "calls": 110,
+            "distinctFiles": 28
+          },
+          "locators": {
+            "bytes": 93720,
+            "calls": 2,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 6114982,
+            "calls": 4,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 22553596,
+            "calls": 574,
+            "distinctFiles": 5
+          }
+        },
+        "responseBytes": 32858
+      },
+      "variant": "accepted",
+      "warmMilliseconds": {
+        "max": 1417.2907000000014,
+        "median": 1319.5505000000007,
+        "min": 1263.3640000000014,
+        "p95": 1417.2907000000014
+      }
+    },
+    {
+      "change": "administrative parent only",
+      "depth": 28,
+      "freshFirstQueryMilliseconds": {
+        "max": 555.9668999999999,
+        "median": 549.3982000000001,
+        "min": 543.2995000000001,
+        "p95": 555.9668999999999
+      },
+      "freshStartupMilliseconds": {
+        "max": 2247.2284,
+        "median": 2156.041,
+        "min": 2124.5009,
+        "p95": 2247.2284
+      },
+      "generation": "57d9bad9fd75381ed3ed98d58c7fdffede3d91eafb667ea9a45b4d20bc13d3fb",
+      "historyLookup": "current",
+      "id": "H28-Q05-request-reuse",
+      "nodeRSSAfterRange": [
+        429428736,
+        1164730368
+      ],
+      "objects": 310,
+      "originalComparisonSha256": "6ae398e1fe9f5dab5f98acb694af7ddb858cd4d210bb4f972a564482ddf94431",
+      "pin": {
+        "counters": {
+          "generationValidations": 29,
+          "integrityChecks": 28,
+          "loadCalls": 4,
+          "referenceTraversals": 27
+        },
+        "milliseconds": 1996.0928,
+        "nodeRSSAfter": 328724480,
+        "nodeRSSBefore": 71602176,
+        "reads": {
+          "external": {
+            "bytes": 884692,
+            "calls": 5,
+            "distinctFiles": 5
+          },
+          "generations": {
+            "bytes": 31724986,
+            "calls": 28,
+            "distinctFiles": 28
+          },
+          "locators": {
+            "bytes": 46860,
+            "calls": 1,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 3057491,
+            "calls": 2,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 14054177,
+            "calls": 361,
+            "distinctFiles": 23
+          }
+        }
+      },
+      "qualifiedSha256": "6ae398e1fe9f5dab5f98acb694af7ddb858cd4d210bb4f972a564482ddf94431",
+      "query": "Q05",
+      "raw": {
+        "bytes": 37535,
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\measurements\\H28-Q05-request-reuse.json",
+        "sha256": "f4a6db68f0665e4e653bce09f16af4615c46d649d7be6176353e01f660f0bf9b"
+      },
+      "scientificReuse": 1.0,
+      "structural": {
+        "counters": {
+          "generationValidations": 29,
+          "integrityChecks": 28,
+          "loadCalls": 2,
+          "referenceTraversals": 27
+        },
+        "reads": {
+          "external": {
+            "bytes": 1127670,
+            "calls": 4,
+            "distinctFiles": 2
+          },
+          "generations": {
+            "bytes": 31724986,
+            "calls": 28,
+            "distinctFiles": 28
+          },
+          "locators": {
+            "bytes": 46860,
+            "calls": 1,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 3057491,
+            "calls": 2,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 11276928,
+            "calls": 288,
+            "distinctFiles": 5
+          }
+        },
+        "responseBytes": 32858
+      },
+      "variant": "request-reuse",
+      "warmMilliseconds": {
+        "max": 667.7399000000005,
+        "median": 614.8965500000006,
+        "min": 565.8498,
+        "p95": 667.7399000000005
+      }
+    },
+    {
+      "change": "administrative parent only",
+      "depth": 28,
+      "freshFirstQueryMilliseconds": {
+        "max": 1559.6832000000004,
+        "median": 1482.6341000000002,
+        "min": 1442.8177000000005,
+        "p95": 1559.6832000000004
+      },
+      "freshStartupMilliseconds": {
+        "max": 4330.3531,
+        "median": 4282.8804,
+        "min": 4252.4314,
+        "p95": 4330.3531
+      },
+      "generation": "57d9bad9fd75381ed3ed98d58c7fdffede3d91eafb667ea9a45b4d20bc13d3fb",
+      "historyLookup": "current",
+      "id": "H28-Q21-accepted",
+      "nodeRSSAfterRange": [
+        272252928,
+        325103616
+      ],
+      "objects": 310,
+      "originalComparisonSha256": "2c574fb7d6cf6f30f97c279a65be5ed834e50dd5bcd92e58125fca02f51eed1f",
+      "pin": {
+        "counters": {
+          "generationValidations": 116,
+          "integrityChecks": 112,
+          "loadCalls": 4,
+          "referenceTraversals": 108
+        },
+        "milliseconds": 4128.9685,
+        "nodeRSSAfter": 263905280,
+        "nodeRSSBefore": 72065024,
+        "reads": {
+          "external": {
+            "bytes": 884692,
+            "calls": 5,
+            "distinctFiles": 5
+          },
+          "generations": {
+            "bytes": 248834764,
+            "calls": 220,
+            "distinctFiles": 28
+          },
+          "locators": {
+            "bytes": 187440,
+            "calls": 4,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 12229964,
+            "calls": 8,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 47884181,
+            "calls": 1219,
+            "distinctFiles": 23
+          }
+        }
+      },
+      "qualifiedSha256": "b9dda67f0472ad9cc086b8a36074b8e2a643ea92614a38bab782e6bfb9ce8918",
+      "query": "Q21",
+      "raw": {
+        "bytes": 37699,
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\measurements\\H28-Q21-accepted.json",
+        "sha256": "69c6536dc522a060374cfe53e643a5a93df7ffb007af715599cc01bea7b02419"
+      },
+      "scientificReuse": 1.0,
+      "structural": {
+        "counters": {
+          "generationValidations": 58,
+          "integrityChecks": 56,
+          "loadCalls": 2,
+          "referenceTraversals": 54
+        },
+        "reads": {
+          "external": {
+            "bytes": 9262300,
+            "calls": 42,
+            "distinctFiles": 12
+          },
+          "generations": {
+            "bytes": 124417382,
+            "calls": 110,
+            "distinctFiles": 28
+          },
+          "locators": {
+            "bytes": 93720,
+            "calls": 2,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 6114982,
+            "calls": 4,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 25145668,
+            "calls": 634,
+            "distinctFiles": 5
+          }
+        },
+        "responseBytes": 142590
+      },
+      "variant": "accepted",
+      "warmMilliseconds": {
+        "max": 1638.1764000000003,
+        "median": 1491.1257499999997,
+        "min": 1405.990099999999,
+        "p95": 1638.1764000000003
+      }
+    },
+    {
+      "change": "administrative parent only",
+      "depth": 28,
+      "freshFirstQueryMilliseconds": {
+        "max": 681.7916,
+        "median": 653.2910000000002,
+        "min": 648.3496,
+        "p95": 681.7916
+      },
+      "freshStartupMilliseconds": {
+        "max": 2296.5273,
+        "median": 2129.0212,
+        "min": 2127.0281999999997,
+        "p95": 2296.5273
+      },
+      "generation": "57d9bad9fd75381ed3ed98d58c7fdffede3d91eafb667ea9a45b4d20bc13d3fb",
+      "historyLookup": "current",
+      "id": "H28-Q21-request-reuse",
+      "nodeRSSAfterRange": [
+        430084096,
+        1009221632
+      ],
+      "objects": 310,
+      "originalComparisonSha256": "2c574fb7d6cf6f30f97c279a65be5ed834e50dd5bcd92e58125fca02f51eed1f",
+      "pin": {
+        "counters": {
+          "generationValidations": 29,
+          "integrityChecks": 28,
+          "loadCalls": 4,
+          "referenceTraversals": 27
+        },
+        "milliseconds": 1994.6580000000001,
+        "nodeRSSAfter": 328994816,
+        "nodeRSSBefore": 72007680,
+        "reads": {
+          "external": {
+            "bytes": 884692,
+            "calls": 5,
+            "distinctFiles": 5
+          },
+          "generations": {
+            "bytes": 31724986,
+            "calls": 28,
+            "distinctFiles": 28
+          },
+          "locators": {
+            "bytes": 46860,
+            "calls": 1,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 3057491,
+            "calls": 2,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 14054177,
+            "calls": 361,
+            "distinctFiles": 23
+          }
+        }
+      },
+      "qualifiedSha256": "b9dda67f0472ad9cc086b8a36074b8e2a643ea92614a38bab782e6bfb9ce8918",
+      "query": "Q21",
+      "raw": {
+        "bytes": 37631,
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\measurements\\H28-Q21-request-reuse.json",
+        "sha256": "1830bd1175f70b256e6c457f11615d6656c9963505eab35ec4dd7ce5a72589a8"
+      },
+      "scientificReuse": 1.0,
+      "structural": {
+        "counters": {
+          "generationValidations": 29,
+          "integrityChecks": 28,
+          "loadCalls": 2,
+          "referenceTraversals": 27
+        },
+        "reads": {
+          "external": {
+            "bytes": 9262300,
+            "calls": 42,
+            "distinctFiles": 12
+          },
+          "generations": {
+            "bytes": 31724986,
+            "calls": 28,
+            "distinctFiles": 28
+          },
+          "locators": {
+            "bytes": 46860,
+            "calls": 1,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 3057491,
+            "calls": 2,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 13869000,
+            "calls": 348,
+            "distinctFiles": 5
+          }
+        },
+        "responseBytes": 142590
+      },
+      "variant": "request-reuse",
+      "warmMilliseconds": {
+        "max": 781.1694000000007,
+        "median": 714.342200000001,
+        "min": 657.8093999999996,
+        "p95": 781.1694000000007
+      }
+    },
+    {
+      "change": "administrative parent only",
+      "depth": 28,
+      "freshFirstQueryMilliseconds": {
+        "max": 3274.9188000000004,
+        "median": 3166.6193999999996,
+        "min": 3128.7715,
+        "p95": 3274.9188000000004
+      },
+      "freshStartupMilliseconds": {
+        "max": 4332.4024,
+        "median": 4278.1917,
+        "min": 4142.1633,
+        "p95": 4332.4024
+      },
+      "generation": "57d9bad9fd75381ed3ed98d58c7fdffede3d91eafb667ea9a45b4d20bc13d3fb",
+      "historyLookup": "current",
+      "id": "H28-Q18-accepted",
+      "nodeRSSAfterRange": [
+        280797184,
+        454848512
+      ],
+      "objects": 310,
+      "originalComparisonSha256": "cc4df91a6a313986e6f91c76a30c6c66a0ea6a32927cc1a2b70671bee017f54d",
+      "pin": {
+        "counters": {
+          "generationValidations": 116,
+          "integrityChecks": 112,
+          "loadCalls": 4,
+          "referenceTraversals": 108
+        },
+        "milliseconds": 4148.0042,
+        "nodeRSSAfter": 262385664,
+        "nodeRSSBefore": 72187904,
+        "reads": {
+          "external": {
+            "bytes": 884692,
+            "calls": 5,
+            "distinctFiles": 5
+          },
+          "generations": {
+            "bytes": 248834764,
+            "calls": 220,
+            "distinctFiles": 28
+          },
+          "locators": {
+            "bytes": 187440,
+            "calls": 4,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 12229964,
+            "calls": 8,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 47884181,
+            "calls": 1219,
+            "distinctFiles": 23
+          }
+        }
+      },
+      "qualifiedSha256": "cc4df91a6a313986e6f91c76a30c6c66a0ea6a32927cc1a2b70671bee017f54d",
+      "query": "Q18",
+      "raw": {
+        "bytes": 34676,
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\measurements\\H28-Q18-accepted.json",
+        "sha256": "e2b926fe34c3a4162eb846ef9eb399631a60c60727188be222bc7391d07e77b2"
+      },
+      "scientificReuse": 1.0,
+      "structural": {
+        "counters": {
+          "generationValidations": 145,
+          "integrityChecks": 140,
+          "loadCalls": 5,
+          "referenceTraversals": 135
+        },
+        "reads": {
+          "generations": {
+            "bytes": 311043455,
+            "calls": 275,
+            "distinctFiles": 28
+          },
+          "locators": {
+            "bytes": 234300,
+            "calls": 5,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 15287455,
+            "calls": 10,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 56383990,
+            "calls": 1435,
+            "distinctFiles": 5
+          }
+        },
+        "responseBytes": 23473
+      },
+      "variant": "accepted",
+      "warmMilliseconds": {
+        "max": 4107.9130000000005,
+        "median": 3228.780649999999,
+        "min": 3093.8800999999985,
+        "p95": 4107.9130000000005
+      }
+    },
+    {
+      "change": "administrative parent only",
+      "depth": 28,
+      "freshFirstQueryMilliseconds": {
+        "max": 572.3408,
+        "median": 550.8919000000001,
+        "min": 547.6968999999999,
+        "p95": 572.3408
+      },
+      "freshStartupMilliseconds": {
+        "max": 2210.6341,
+        "median": 2193.6069,
+        "min": 2155.3028999999997,
+        "p95": 2210.6341
+      },
+      "generation": "57d9bad9fd75381ed3ed98d58c7fdffede3d91eafb667ea9a45b4d20bc13d3fb",
+      "historyLookup": "current",
+      "id": "H28-Q18-request-reuse",
+      "nodeRSSAfterRange": [
+        436936704,
+        982110208
+      ],
+      "objects": 310,
+      "originalComparisonSha256": "cc4df91a6a313986e6f91c76a30c6c66a0ea6a32927cc1a2b70671bee017f54d",
+      "pin": {
+        "counters": {
+          "generationValidations": 29,
+          "integrityChecks": 28,
+          "loadCalls": 4,
+          "referenceTraversals": 27
+        },
+        "milliseconds": 2000.7718,
+        "nodeRSSAfter": 328847360,
+        "nodeRSSBefore": 71741440,
+        "reads": {
+          "external": {
+            "bytes": 884692,
+            "calls": 5,
+            "distinctFiles": 5
+          },
+          "generations": {
+            "bytes": 31724986,
+            "calls": 28,
+            "distinctFiles": 28
+          },
+          "locators": {
+            "bytes": 46860,
+            "calls": 1,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 3057491,
+            "calls": 2,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 14054177,
+            "calls": 361,
+            "distinctFiles": 23
+          }
+        }
+      },
+      "qualifiedSha256": "cc4df91a6a313986e6f91c76a30c6c66a0ea6a32927cc1a2b70671bee017f54d",
+      "query": "Q18",
+      "raw": {
+        "bytes": 34503,
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\measurements\\H28-Q18-request-reuse.json",
+        "sha256": "dc3c5e94b4cdfc2ab19424505ffd5d51c521bec2350506c62f2320bacd3d97bb"
+      },
+      "scientificReuse": 1.0,
+      "structural": {
+        "counters": {
+          "generationValidations": 29,
+          "integrityChecks": 28,
+          "loadCalls": 5,
+          "referenceTraversals": 27
+        },
+        "reads": {
+          "generations": {
+            "bytes": 31724986,
+            "calls": 28,
+            "distinctFiles": 28
+          },
+          "locators": {
+            "bytes": 46860,
+            "calls": 1,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 3057491,
+            "calls": 2,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 11277318,
+            "calls": 291,
+            "distinctFiles": 5
+          }
+        },
+        "responseBytes": 23473
+      },
+      "variant": "request-reuse",
+      "warmMilliseconds": {
+        "max": 700.4905999999996,
+        "median": 601.7080000000001,
+        "min": 545.1497999999997,
+        "p95": 700.4905999999996
+      }
+    },
+    {
+      "change": "administrative parent only",
+      "depth": 112,
+      "freshFirstQueryMilliseconds": {
+        "max": 5763.912400000001,
+        "median": 5572.465400000001,
+        "min": 5401.6235,
+        "p95": 5763.912400000001
+      },
+      "freshStartupMilliseconds": {
+        "max": 13350.5019,
+        "median": 13166.174500000001,
+        "min": 12520.063100000001,
+        "p95": 13350.5019
+      },
+      "generation": "0fddbd10bbb5e9a29569c3c02834b5a544ba866b2c003a44909013558df8e5b1",
+      "historyLookup": "current",
+      "id": "H112-Q05-accepted",
+      "nodeRSSAfterRange": [
+        326848512,
+        427044864
+      ],
+      "objects": 310,
+      "originalComparisonSha256": "6ae398e1fe9f5dab5f98acb694af7ddb858cd4d210bb4f972a564482ddf94431",
+      "pin": {
+        "counters": {
+          "generationValidations": 452,
+          "integrityChecks": 448,
+          "loadCalls": 4,
+          "referenceTraversals": 444
+        },
+        "milliseconds": 12718.8933,
+        "nodeRSSAfter": 246218752,
+        "nodeRSSBefore": 72101888,
+        "reads": {
+          "external": {
+            "bytes": 884692,
+            "calls": 5,
+            "distinctFiles": 5
+          },
+          "generations": {
+            "bytes": 1082975596,
+            "calls": 892,
+            "distinctFiles": 112
+          },
+          "locators": {
+            "bytes": 187440,
+            "calls": 4,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 12229964,
+            "calls": 8,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 193613429,
+            "calls": 4915,
+            "distinctFiles": 23
+          }
+        }
+      },
+      "qualifiedSha256": "6ae398e1fe9f5dab5f98acb694af7ddb858cd4d210bb4f972a564482ddf94431",
+      "query": "Q05",
+      "raw": {
+        "bytes": 37906,
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\measurements\\H112-Q05-accepted.json",
+        "sha256": "9be3012947a999981f9785a4fed4044dd3060f16d78d92972f9e2377e9ed1fa5"
+      },
+      "scientificReuse": 1.0,
+      "structural": {
+        "counters": {
+          "generationValidations": 226,
+          "integrityChecks": 224,
+          "loadCalls": 2,
+          "referenceTraversals": 222
+        },
+        "reads": {
+          "external": {
+            "bytes": 1127670,
+            "calls": 4,
+            "distinctFiles": 2
+          },
+          "generations": {
+            "bytes": 541487798,
+            "calls": 446,
+            "distinctFiles": 112
+          },
+          "locators": {
+            "bytes": 93720,
+            "calls": 2,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 6114982,
+            "calls": 4,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 95418220,
+            "calls": 2422,
+            "distinctFiles": 5
+          }
+        },
+        "responseBytes": 32858
+      },
+      "variant": "accepted",
+      "warmMilliseconds": {
+        "max": 5842.629700000005,
+        "median": 5440.864249999995,
+        "min": 5254.7641,
+        "p95": 5842.629700000005
+      }
+    },
+    {
+      "change": "administrative parent only",
+      "depth": 112,
+      "freshFirstQueryMilliseconds": {
+        "max": 2940.3516,
+        "median": 2523.0152,
+        "min": 2440.5912,
+        "p95": 2940.3516
+      },
+      "freshStartupMilliseconds": {
+        "max": 4417.2627999999995,
+        "median": 4089.52,
+        "min": 3979.3393,
+        "p95": 4417.2627999999995
+      },
+      "generation": "0fddbd10bbb5e9a29569c3c02834b5a544ba866b2c003a44909013558df8e5b1",
+      "historyLookup": "current",
+      "id": "H112-Q05-request-reuse",
+      "nodeRSSAfterRange": [
+        1034129408,
+        2396807168
+      ],
+      "objects": 310,
+      "originalComparisonSha256": "6ae398e1fe9f5dab5f98acb694af7ddb858cd4d210bb4f972a564482ddf94431",
+      "pin": {
+        "counters": {
+          "generationValidations": 113,
+          "integrityChecks": 112,
+          "loadCalls": 4,
+          "referenceTraversals": 111
+        },
+        "milliseconds": 3961.9596,
+        "nodeRSSAfter": 629395456,
+        "nodeRSSBefore": 72118272,
+        "reads": {
+          "external": {
+            "bytes": 884692,
+            "calls": 5,
+            "distinctFiles": 5
+          },
+          "generations": {
+            "bytes": 135992590,
+            "calls": 112,
+            "distinctFiles": 112
+          },
+          "locators": {
+            "bytes": 46860,
+            "calls": 1,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 3057491,
+            "calls": 2,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 50486489,
+            "calls": 1285,
+            "distinctFiles": 23
+          }
+        }
+      },
+      "qualifiedSha256": "6ae398e1fe9f5dab5f98acb694af7ddb858cd4d210bb4f972a564482ddf94431",
+      "query": "Q05",
+      "raw": {
+        "bytes": 37982,
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\measurements\\H112-Q05-request-reuse.json",
+        "sha256": "2af92b8f3e8967cd9d35bebae8618325d4478d2e051b42343ba87c7fb45260e8"
+      },
+      "scientificReuse": 1.0,
+      "structural": {
+        "counters": {
+          "generationValidations": 113,
+          "integrityChecks": 112,
+          "loadCalls": 2,
+          "referenceTraversals": 111
+        },
+        "reads": {
+          "external": {
+            "bytes": 1127670,
+            "calls": 4,
+            "distinctFiles": 2
+          },
+          "generations": {
+            "bytes": 135992590,
+            "calls": 112,
+            "distinctFiles": 112
+          },
+          "locators": {
+            "bytes": 46860,
+            "calls": 1,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 3057491,
+            "calls": 2,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 47709240,
+            "calls": 1212,
+            "distinctFiles": 5
+          }
+        },
+        "responseBytes": 32858
+      },
+      "variant": "request-reuse",
+      "warmMilliseconds": {
+        "max": 3263.694300000003,
+        "median": 2656.1143999999986,
+        "min": 2365.131000000001,
+        "p95": 3263.694300000003
+      }
+    },
+    {
+      "change": "administrative parent only",
+      "depth": 112,
+      "freshFirstQueryMilliseconds": {
+        "max": 5688.369500000001,
+        "median": 5534.464100000001,
+        "min": 5478.912400000001,
+        "p95": 5688.369500000001
+      },
+      "freshStartupMilliseconds": {
+        "max": 13229.564,
+        "median": 12796.7204,
+        "min": 12691.557499999999,
+        "p95": 13229.564
+      },
+      "generation": "0fddbd10bbb5e9a29569c3c02834b5a544ba866b2c003a44909013558df8e5b1",
+      "historyLookup": "current",
+      "id": "H112-Q21-accepted",
+      "nodeRSSAfterRange": [
+        325124096,
+        392138752
+      ],
+      "objects": 310,
+      "originalComparisonSha256": "b9dda67f0472ad9cc086b8a36074b8e2a643ea92614a38bab782e6bfb9ce8918",
+      "pin": {
+        "counters": {
+          "generationValidations": 452,
+          "integrityChecks": 448,
+          "loadCalls": 4,
+          "referenceTraversals": 444
+        },
+        "milliseconds": 12733.6443,
+        "nodeRSSAfter": 244408320,
+        "nodeRSSBefore": 71716864,
+        "reads": {
+          "external": {
+            "bytes": 884692,
+            "calls": 5,
+            "distinctFiles": 5
+          },
+          "generations": {
+            "bytes": 1082975596,
+            "calls": 892,
+            "distinctFiles": 112
+          },
+          "locators": {
+            "bytes": 187440,
+            "calls": 4,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 12229964,
+            "calls": 8,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 193613429,
+            "calls": 4915,
+            "distinctFiles": 23
+          }
+        }
+      },
+      "qualifiedSha256": "b9dda67f0472ad9cc086b8a36074b8e2a643ea92614a38bab782e6bfb9ce8918",
+      "query": "Q21",
+      "raw": {
+        "bytes": 38020,
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\measurements\\H112-Q21-accepted.json",
+        "sha256": "33da7b0c67509ca2ec81f0dc6fa0d7b36df5fe96cb5539caccc593c8331aa060"
+      },
+      "scientificReuse": 1.0,
+      "structural": {
+        "counters": {
+          "generationValidations": 226,
+          "integrityChecks": 224,
+          "loadCalls": 2,
+          "referenceTraversals": 222
+        },
+        "reads": {
+          "external": {
+            "bytes": 9262300,
+            "calls": 42,
+            "distinctFiles": 12
+          },
+          "generations": {
+            "bytes": 541487798,
+            "calls": 446,
+            "distinctFiles": 112
+          },
+          "locators": {
+            "bytes": 93720,
+            "calls": 2,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 6114982,
+            "calls": 4,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 98010292,
+            "calls": 2482,
+            "distinctFiles": 5
+          }
+        },
+        "responseBytes": 142590
+      },
+      "variant": "accepted",
+      "warmMilliseconds": {
+        "max": 5660.333600000002,
+        "median": 5512.315549999999,
+        "min": 5374.963099999994,
+        "p95": 5660.333600000002
+      }
+    },
+    {
+      "change": "administrative parent only",
+      "depth": 112,
+      "freshFirstQueryMilliseconds": {
+        "max": 2867.4604,
+        "median": 2621.1201999999994,
+        "min": 2525.8671000000004,
+        "p95": 2867.4604
+      },
+      "freshStartupMilliseconds": {
+        "max": 4362.732599999999,
+        "median": 4183.506399999999,
+        "min": 4067.9696,
+        "p95": 4362.732599999999
+      },
+      "generation": "0fddbd10bbb5e9a29569c3c02834b5a544ba866b2c003a44909013558df8e5b1",
+      "historyLookup": "current",
+      "id": "H112-Q21-request-reuse",
+      "nodeRSSAfterRange": [
+        1027059712,
+        2634887168
+      ],
+      "objects": 310,
+      "originalComparisonSha256": "b9dda67f0472ad9cc086b8a36074b8e2a643ea92614a38bab782e6bfb9ce8918",
+      "pin": {
+        "counters": {
+          "generationValidations": 113,
+          "integrityChecks": 112,
+          "loadCalls": 4,
+          "referenceTraversals": 111
+        },
+        "milliseconds": 3884.4792,
+        "nodeRSSAfter": 634580992,
+        "nodeRSSBefore": 71880704,
+        "reads": {
+          "external": {
+            "bytes": 884692,
+            "calls": 5,
+            "distinctFiles": 5
+          },
+          "generations": {
+            "bytes": 135992590,
+            "calls": 112,
+            "distinctFiles": 112
+          },
+          "locators": {
+            "bytes": 46860,
+            "calls": 1,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 3057491,
+            "calls": 2,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 50486489,
+            "calls": 1285,
+            "distinctFiles": 23
+          }
+        }
+      },
+      "qualifiedSha256": "b9dda67f0472ad9cc086b8a36074b8e2a643ea92614a38bab782e6bfb9ce8918",
+      "query": "Q21",
+      "raw": {
+        "bytes": 38073,
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\measurements\\H112-Q21-request-reuse.json",
+        "sha256": "6357b4fbbef30a6cda2fde447ca16a1fdfb5358878ccfe98be7b349aa51d3385"
+      },
+      "scientificReuse": 1.0,
+      "structural": {
+        "counters": {
+          "generationValidations": 113,
+          "integrityChecks": 112,
+          "loadCalls": 2,
+          "referenceTraversals": 111
+        },
+        "reads": {
+          "external": {
+            "bytes": 9262300,
+            "calls": 42,
+            "distinctFiles": 12
+          },
+          "generations": {
+            "bytes": 135992590,
+            "calls": 112,
+            "distinctFiles": 112
+          },
+          "locators": {
+            "bytes": 46860,
+            "calls": 1,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 3057491,
+            "calls": 2,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 50301312,
+            "calls": 1272,
+            "distinctFiles": 5
+          }
+        },
+        "responseBytes": 142590
+      },
+      "variant": "request-reuse",
+      "warmMilliseconds": {
+        "max": 2878.7302999999993,
+        "median": 2652.788850000001,
+        "min": 2458.6661999999997,
+        "p95": 2878.7302999999993
+      }
+    },
+    {
+      "change": "administrative parent only",
+      "depth": 112,
+      "freshFirstQueryMilliseconds": {
+        "max": 13855.1568,
+        "median": 13580.986399999998,
+        "min": 12921.3525,
+        "p95": 13855.1568
+      },
+      "freshStartupMilliseconds": {
+        "max": 13183.269999999999,
+        "median": 12971.7222,
+        "min": 12332.086500000001,
+        "p95": 13183.269999999999
+      },
+      "generation": "0fddbd10bbb5e9a29569c3c02834b5a544ba866b2c003a44909013558df8e5b1",
+      "historyLookup": "current",
+      "id": "H112-Q18-accepted",
+      "nodeRSSAfterRange": [
+        269426688,
+        443236352
+      ],
+      "objects": 310,
+      "originalComparisonSha256": "cc4df91a6a313986e6f91c76a30c6c66a0ea6a32927cc1a2b70671bee017f54d",
+      "pin": {
+        "counters": {
+          "generationValidations": 452,
+          "integrityChecks": 448,
+          "loadCalls": 4,
+          "referenceTraversals": 444
+        },
+        "milliseconds": 12548.9495,
+        "nodeRSSAfter": 245346304,
+        "nodeRSSBefore": 71860224,
+        "reads": {
+          "external": {
+            "bytes": 884692,
+            "calls": 5,
+            "distinctFiles": 5
+          },
+          "generations": {
+            "bytes": 1082975596,
+            "calls": 892,
+            "distinctFiles": 112
+          },
+          "locators": {
+            "bytes": 187440,
+            "calls": 4,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 12229964,
+            "calls": 8,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 193613429,
+            "calls": 4915,
+            "distinctFiles": 23
+          }
+        }
+      },
+      "qualifiedSha256": "cc4df91a6a313986e6f91c76a30c6c66a0ea6a32927cc1a2b70671bee017f54d",
+      "query": "Q18",
+      "raw": {
+        "bytes": 35001,
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\measurements\\H112-Q18-accepted.json",
+        "sha256": "3815a5b5609147ab4b3897572062caf8bcf4fb6ca20b78469e90ab4d7794640a"
+      },
+      "scientificReuse": 1.0,
+      "structural": {
+        "counters": {
+          "generationValidations": 565,
+          "integrityChecks": 560,
+          "loadCalls": 5,
+          "referenceTraversals": 555
+        },
+        "reads": {
+          "generations": {
+            "bytes": 1353719495,
+            "calls": 1115,
+            "distinctFiles": 112
+          },
+          "locators": {
+            "bytes": 234300,
+            "calls": 5,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 15287455,
+            "calls": 10,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 238545550,
+            "calls": 6055,
+            "distinctFiles": 5
+          }
+        },
+        "responseBytes": 23473
+      },
+      "variant": "accepted",
+      "warmMilliseconds": {
+        "max": 14152.72980000003,
+        "median": 13533.460199999994,
+        "min": 13020.08990000002,
+        "p95": 14152.72980000003
+      }
+    },
+    {
+      "change": "administrative parent only",
+      "depth": 112,
+      "freshFirstQueryMilliseconds": {
+        "max": 2672.2754000000004,
+        "median": 2575.6359,
+        "min": 2428.126,
+        "p95": 2672.2754000000004
+      },
+      "freshStartupMilliseconds": {
+        "max": 4308.0743,
+        "median": 4190.1801000000005,
+        "min": 4088.9402000000005,
+        "p95": 4308.0743
+      },
+      "generation": "0fddbd10bbb5e9a29569c3c02834b5a544ba866b2c003a44909013558df8e5b1",
+      "historyLookup": "current",
+      "id": "H112-Q18-request-reuse",
+      "nodeRSSAfterRange": [
+        1040998400,
+        2614366208
+      ],
+      "objects": 310,
+      "originalComparisonSha256": "cc4df91a6a313986e6f91c76a30c6c66a0ea6a32927cc1a2b70671bee017f54d",
+      "pin": {
+        "counters": {
+          "generationValidations": 113,
+          "integrityChecks": 112,
+          "loadCalls": 4,
+          "referenceTraversals": 111
+        },
+        "milliseconds": 4144.664699999999,
+        "nodeRSSAfter": 629968896,
+        "nodeRSSBefore": 71954432,
+        "reads": {
+          "external": {
+            "bytes": 884692,
+            "calls": 5,
+            "distinctFiles": 5
+          },
+          "generations": {
+            "bytes": 135992590,
+            "calls": 112,
+            "distinctFiles": 112
+          },
+          "locators": {
+            "bytes": 46860,
+            "calls": 1,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 3057491,
+            "calls": 2,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 50486489,
+            "calls": 1285,
+            "distinctFiles": 23
+          }
+        }
+      },
+      "qualifiedSha256": "cc4df91a6a313986e6f91c76a30c6c66a0ea6a32927cc1a2b70671bee017f54d",
+      "query": "Q18",
+      "raw": {
+        "bytes": 34921,
+        "path": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-generation-scaling-v1\\measurements\\H112-Q18-request-reuse.json",
+        "sha256": "e3275ee0dfb00cd734a699abfda1ae1663d159d2023f7227ab9714ff7de6e536"
+      },
+      "scientificReuse": 1.0,
+      "structural": {
+        "counters": {
+          "generationValidations": 113,
+          "integrityChecks": 112,
+          "loadCalls": 5,
+          "referenceTraversals": 111
+        },
+        "reads": {
+          "generations": {
+            "bytes": 135992590,
+            "calls": 112,
+            "distinctFiles": 112
+          },
+          "locators": {
+            "bytes": 46860,
+            "calls": 1,
+            "distinctFiles": 1
+          },
+          "portrayal": {
+            "bytes": 3057491,
+            "calls": 2,
+            "distinctFiles": 2
+          },
+          "runtime": {
+            "bytes": 47709630,
+            "calls": 1215,
+            "distinctFiles": 5
+          }
+        },
+        "responseBytes": 23473
+      },
+      "variant": "request-reuse",
+      "warmMilliseconds": {
+        "max": 2681.992100000003,
+        "median": 2471.6149000000028,
+        "min": 2358.2695999999996,
+        "p95": 2681.992100000003
+      }
+    }
+  ],
+  "runtime": {
+    "cache": "Fresh processes / warmed OS file cache; no physical cache eviction",
+    "memoryBoundary": "Observed Node RSS, not peak or total process tree",
+    "node": "v24.11.0",
+    "platform": "win32",
+    "timingBoundary": "S4 delivery library operation, not HTTP/network; startup includes Python native initialization"
+  },
+  "schema": "atlas-generation-scaling-results/v1",
+  "startingCommit": "c4f50a40369c2e43c48cebb53c1de13b4c2bb4f3",
+  "testedPinTransition": "Both accepted and request-reuse paths publish an actual administrative successor inside one pinned request; old/new qualified answers remain separate and semantically equivalent (focused test).",
+  "timedLoaderPrefixSha256": "d5bb6b5bfd65ffb517e278b9ee5fa735c04c06bd0a09055c0d441e07630c6182"
+}

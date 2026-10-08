@@ -1,0 +1,85 @@
+{
+  "architectureDirection": "C - ARCHITECTURE DIRECTION ESTABLISHED",
+  "decision": "C - EXPERIMENT RESOLVED",
+  "hypothesisResults": {
+    "H1": "Not supported for the accepted whole-ancestry interactive path; direct self-contained controls remain bounded in history but do not prove publication closure",
+    "H2": "Supported: distinct ancestry cost persists after duplicate work is removed; historical published-membership search adds repeated closure work",
+    "H3": "Supported: carrying references, ordinary lookup and reuse integrity verification have different costs",
+    "H4": "No additional dominant regime required; observed parsed-cache RSS trade-off qualifies mitigation"
+  },
+  "nextTask": "Atlas retained component-manifest and publication-membership resolution proof",
+  "nextTaskScope": "One isolated retained proof of shared immutable scientific metadata components plus publication-membership/ancestry resolution; preserve exact qualifications, dependencies, per-request integrity, explicit historical pins and pre-switch orphan rejection. Compare7/28/112 administrative histories and a bounded component change using existing retained applicability state. No accepted-pilot mutation or production infrastructure.",
+  "nextTaskStatus": "NOT BEGUN",
+  "pilot": "CLOSED / ACCEPTED",
+  "records": [
+    {
+      "classification": "DECIDE NOW",
+      "conclusion": "Separate and count request resolution, historical eligibility, metadata verification, payload integrity and publication costs; reuse verified immutable metadata within one pinned request without trusting mutable paths across requests.",
+      "evidence": "18 cases, empty verification context for every request, exact answer parity and failure tests; source-specific checks unchanged.",
+      "id": "N07",
+      "updates": [
+        "N04",
+        "N05"
+      ]
+    },
+    {
+      "classification": "DECIDE NOW",
+      "conclusion": "Retained history/payload reuse must not imply copying scientific payloads or recomputing unaffected claims; immutable identity, provenance, history and orphan rejection remain acceptance conditions for every optimization.",
+      "evidence": "310 artifacts reused, unchanged component hashes; actual parent-only S1 successors and historical pins.",
+      "id": "N08",
+      "updates": [
+        "N01",
+        "N02",
+        "N03"
+      ]
+    },
+    {
+      "classification": "PROVISIONAL DIRECTION",
+      "conclusion": "Prioritize shared immutable metadata components and lightweight publication manifests; request reuse is useful but whole parsed ancestry remains expensive and memory-heavy at112 generations.",
+      "evidence": "135.99MB distinct metadata per request,2.47\u20132.66s reuse medians and observed warm RSS maxima2.40\u20132.64GB; stored whole metadata grows with history.",
+      "id": "P05",
+      "updates": [
+        "P01",
+        "P02",
+        "D02"
+      ]
+    },
+    {
+      "classification": "PROVISIONAL DIRECTION",
+      "conclusion": "Publication membership/historical resolution needs a bounded verified view or lightweight ancestry traversal rather than repeatedly validating each remaining full closure.",
+      "evidence": "Historical112 query25,016 reads/29.77GB/298.64s accepted versus112 reads/135.99MB/5.82s reuse.",
+      "id": "P06",
+      "updates": [
+        "P02",
+        "P03",
+        "D02"
+      ]
+    },
+    {
+      "classification": "DEFER PENDING EVIDENCE",
+      "conclusion": "Component granularity, trusted immutability boundary, durable membership/index/checkpoint choices, spatial selectivity, many distinct revisions, database/vendor, remote durability and concurrency remain unresolved.",
+      "evidence": "One local region, fixed scientific components, administrative history and small synthetic metadata objects.",
+      "id": "D06",
+      "updates": [
+        "D01",
+        "D02",
+        "D03",
+        "D04",
+        "D05"
+      ]
+    },
+    {
+      "classification": "REJECT",
+      "conclusion": "Unbounded repeated whole-ancestor closure validation as the preferred interactive default; permanent trusted mutable-file caches or skipping checks to obtain attractive timings; heavyweight graph/workflow/distributed infrastructure solely from this evidence.",
+      "evidence": "Measured structural amplification and preserved corruption/missing/orphan behaviour; simple reference controls separate history from lookup.",
+      "id": "R06",
+      "updates": [
+        "R02",
+        "R03",
+        "R04",
+        "R05"
+      ]
+    }
+  ],
+  "schema": "atlas-generation-scaling-decisions/v1"
+}

@@ -1,0 +1,340 @@
+{
+  "authoritativeHashes": {
+    "docs/research/atlas-measured-architecture-decisions.json": "6a6b344032c534ab319dc6509e3b0c94f2465f3075f03ed0cb5426de31b6eca2",
+    "docs/research/atlas-measured-storage-processing-serving.md": "1696fa267595d6974adbe09a77f616ebc61de1e770372e34478b0db61916b9a7",
+    "docs/research/tryfan-pilot-s6-baseline.json": "a7bcae1b3fdf31c4100b295991b776ab98af8fc29cbedec41ad980e633492e34",
+    "docs/research/tryfan-pilot-s6-results.json": "e7a9474fc702ba3f3ab15a7d04b1fbbce127ba58174fe12c4fb49208ca78bafc",
+    "pilots/atlas/tryfan/delivery.mjs": "23a4e8be8d449ad57956472d333fb7eeda9cc4b177f195d749d15154f3e6e61d",
+    "pilots/atlas/tryfan/generations.mjs": "1b50f5d879d6ed5fc39d9a42cf56dec9ea103c8b928876fb8585795897e5d03d",
+    "pilots/atlas/tryfan/identity.mjs": "04eaf65fa268a6ad875cadb4dfe04ee6892686844069555186f05d3858ddc5f2"
+  },
+  "branch": "main",
+  "cases": [
+    {
+      "change": "administrative parent only",
+      "depth": 7,
+      "historyLookup": "current",
+      "id": "H7-Q05-accepted",
+      "objects": 310,
+      "query": "Q05",
+      "scientificReuse": 1.0,
+      "variant": "accepted"
+    },
+    {
+      "change": "administrative parent only",
+      "depth": 7,
+      "historyLookup": "current",
+      "id": "H7-Q05-request-reuse",
+      "objects": 310,
+      "query": "Q05",
+      "scientificReuse": 1.0,
+      "variant": "request-reuse"
+    },
+    {
+      "change": "administrative parent only",
+      "depth": 7,
+      "historyLookup": "current",
+      "id": "H7-Q21-accepted",
+      "objects": 310,
+      "query": "Q21",
+      "scientificReuse": 1.0,
+      "variant": "accepted"
+    },
+    {
+      "change": "administrative parent only",
+      "depth": 7,
+      "historyLookup": "current",
+      "id": "H7-Q21-request-reuse",
+      "objects": 310,
+      "query": "Q21",
+      "scientificReuse": 1.0,
+      "variant": "request-reuse"
+    },
+    {
+      "change": "administrative parent only",
+      "depth": 7,
+      "historyLookup": "current",
+      "id": "H7-Q18-accepted",
+      "objects": 310,
+      "query": "Q18",
+      "scientificReuse": 1.0,
+      "variant": "accepted"
+    },
+    {
+      "change": "administrative parent only",
+      "depth": 7,
+      "historyLookup": "current",
+      "id": "H7-Q18-request-reuse",
+      "objects": 310,
+      "query": "Q18",
+      "scientificReuse": 1.0,
+      "variant": "request-reuse"
+    },
+    {
+      "change": "administrative parent only",
+      "depth": 28,
+      "historyLookup": "current",
+      "id": "H28-Q05-accepted",
+      "objects": 310,
+      "query": "Q05",
+      "scientificReuse": 1.0,
+      "variant": "accepted"
+    },
+    {
+      "change": "administrative parent only",
+      "depth": 28,
+      "historyLookup": "current",
+      "id": "H28-Q05-request-reuse",
+      "objects": 310,
+      "query": "Q05",
+      "scientificReuse": 1.0,
+      "variant": "request-reuse"
+    },
+    {
+      "change": "administrative parent only",
+      "depth": 28,
+      "historyLookup": "current",
+      "id": "H28-Q21-accepted",
+      "objects": 310,
+      "query": "Q21",
+      "scientificReuse": 1.0,
+      "variant": "accepted"
+    },
+    {
+      "change": "administrative parent only",
+      "depth": 28,
+      "historyLookup": "current",
+      "id": "H28-Q21-request-reuse",
+      "objects": 310,
+      "query": "Q21",
+      "scientificReuse": 1.0,
+      "variant": "request-reuse"
+    },
+    {
+      "change": "administrative parent only",
+      "depth": 28,
+      "historyLookup": "current",
+      "id": "H28-Q18-accepted",
+      "objects": 310,
+      "query": "Q18",
+      "scientificReuse": 1.0,
+      "variant": "accepted"
+    },
+    {
+      "change": "administrative parent only",
+      "depth": 28,
+      "historyLookup": "current",
+      "id": "H28-Q18-request-reuse",
+      "objects": 310,
+      "query": "Q18",
+      "scientificReuse": 1.0,
+      "variant": "request-reuse"
+    },
+    {
+      "change": "administrative parent only",
+      "depth": 112,
+      "historyLookup": "current",
+      "id": "H112-Q05-accepted",
+      "objects": 310,
+      "query": "Q05",
+      "scientificReuse": 1.0,
+      "variant": "accepted"
+    },
+    {
+      "change": "administrative parent only",
+      "depth": 112,
+      "historyLookup": "current",
+      "id": "H112-Q05-request-reuse",
+      "objects": 310,
+      "query": "Q05",
+      "scientificReuse": 1.0,
+      "variant": "request-reuse"
+    },
+    {
+      "change": "administrative parent only",
+      "depth": 112,
+      "historyLookup": "current",
+      "id": "H112-Q21-accepted",
+      "objects": 310,
+      "query": "Q21",
+      "scientificReuse": 1.0,
+      "variant": "accepted"
+    },
+    {
+      "change": "administrative parent only",
+      "depth": 112,
+      "historyLookup": "current",
+      "id": "H112-Q21-request-reuse",
+      "objects": 310,
+      "query": "Q21",
+      "scientificReuse": 1.0,
+      "variant": "request-reuse"
+    },
+    {
+      "change": "administrative parent only",
+      "depth": 112,
+      "historyLookup": "current",
+      "id": "H112-Q18-accepted",
+      "objects": 310,
+      "query": "Q18",
+      "scientificReuse": 1.0,
+      "variant": "accepted"
+    },
+    {
+      "change": "administrative parent only",
+      "depth": 112,
+      "historyLookup": "current",
+      "id": "H112-Q18-request-reuse",
+      "objects": 310,
+      "query": "Q18",
+      "scientificReuse": 1.0,
+      "variant": "request-reuse"
+    }
+  ],
+  "controls": [
+    "all native evidence, methods, rights, result identities, support and qualified answers fixed",
+    "answers compared after explicitly normalizing only generation-bearing identifiers",
+    "per-request scope discarded; no cross-request parsed/verified generation cache",
+    "prototype loader replaces only read-only load in experiment processes via guarded Node module hook; accepted files unchanged",
+    "single request at a time; immutable contract during request; mutation between requests must be detected",
+    "no new scientific revision; same update receipt retained honestly as carried state"
+  ],
+  "decisionBranches": {
+    "historyStillDominates": "Prioritize component publication manifests or selective immutable metadata indexing in the next separately authorized task.",
+    "integrityCannotBePreserved": "Reject reuse variant; retain validation semantics and reassess storage trust boundary.",
+    "reuseSuffices": "Keep simple catalogue plus verified request contexts; defer database adoption to selective/cardinality evidence."
+  },
+  "dependentDecision": "Request-context reuse alone versus component/selective publication metadata; not database/vendor selection",
+  "divergence": [
+    0,
+    0
+  ],
+  "failureCases": [
+    "missing required portrayal artifact",
+    "corrupt retained ancestor",
+    "complete pre-switch orphan rejected",
+    "mutation between requests detected",
+    "unknown generation rejected"
+  ],
+  "freshProcesses": 5,
+  "historicalSupplement": {
+    "depths": [
+      7,
+      28,
+      112
+    ],
+    "qualification": "Single-run timing plus deterministic operation counts; no production percentile",
+    "samples": 1,
+    "selection": "accepted current generation retained as history in extended roots",
+    "variants": [
+      "accepted",
+      "request-reuse"
+    ]
+  },
+  "historyDepths": [
+    7,
+    28,
+    112
+  ],
+  "hypotheses": {
+    "H1": "Simple self-contained manifests and direct verified reuse remain bounded over tested range",
+    "H2": "Distinct ancestry/whole metadata cost still increases structurally after duplicated work is removed",
+    "H3": "Verification dominates ordinary direct resolution; separate integrity/publication treatment needed",
+    "H4": "Only report another regime if measured"
+  },
+  "initialWorkingTree": "clean",
+  "limitations": [
+    "fresh process is not cold physical disk",
+    "Node synchronous read counters exclude Python/asynchronous/kernel reads",
+    "reference sweep does not simulate scientific values, payload IO or spatial query indexes",
+    "single-writer local metadata, no cloud/distributed atomicity"
+  ],
+  "metrics": {
+    "distinctFiles": "unique generation paths consulted per request",
+    "generationIntegrityChecks": "SHA256 equality checks of generation bytes",
+    "generationReads": "readFileSync calls to generation JSON; repeats count",
+    "generationValidations": "calls to frozen structural validator",
+    "memory": "observed Node RSS before/after, not peak nor total Python memory",
+    "metadataBytes": "requested synchronous Node bytes, independent of OS cache",
+    "payloadVerification": "unchanged accepted per-family/materialized integrity checks; no cross-request trust",
+    "referenceTraversals": "parent edges examined, repeated visits count",
+    "timing": "elapsed full serving-boundary operation; setup/pin separate"
+  },
+  "queries": [
+    "Q05",
+    "Q21",
+    "Q18"
+  ],
+  "schema": "atlas-generation-scaling-plan/v1",
+  "startingCommit": "c4f50a40369c2e43c48cebb53c1de13b4c2bb4f3",
+  "stateRoot": "C:/Users/gbsam/Documents/Codex/atlas-generation-scaling-v1",
+  "supplement": {
+    "cases": [
+      {
+        "depth": 28,
+        "id": "R1",
+        "objects": 100,
+        "pattern": "localized",
+        "reuse": 0.99
+      },
+      {
+        "depth": 28,
+        "id": "R2",
+        "objects": 1000,
+        "pattern": "localized",
+        "reuse": 0.99
+      },
+      {
+        "depth": 28,
+        "id": "R3",
+        "objects": 10000,
+        "pattern": "localized",
+        "reuse": 0.99
+      },
+      {
+        "depth": 28,
+        "id": "R4",
+        "objects": 1000,
+        "pattern": "localized",
+        "reuse": 0.5
+      },
+      {
+        "depth": 28,
+        "id": "R5",
+        "objects": 1000,
+        "pattern": "localized",
+        "reuse": 0.9
+      },
+      {
+        "depth": 7,
+        "id": "R6",
+        "objects": 1000,
+        "pattern": "localized",
+        "reuse": 0.99
+      },
+      {
+        "depth": 112,
+        "id": "R7",
+        "objects": 1000,
+        "pattern": "spread",
+        "reuse": 0.99
+      }
+    ],
+    "modes": [
+      "direct-current",
+      "direct-oldest",
+      "carry-reference",
+      "verify-reused-metadata",
+      "assemble-manifest"
+    ],
+    "purpose": "Isolate reference cardinality and reuse ratio from actual pilot history/knowledge; labelled metadata-only model, not evidence or payload capacity",
+    "repetitions": 5
+  },
+  "uncertainty": "Repeated whole-closure reads versus distinct ancestry verification cost at fixed scientific evidence",
+  "variants": [
+    "accepted",
+    "request-reuse"
+  ],
+  "warmRequests": 20,
+  "whyTryfanInsufficient": "Only seven retained ancestors; substantial duplicate reads already observed, no controlled history variation"
+}
