@@ -1,0 +1,29 @@
+{
+  "acceptanceCriteria": [
+    "consume exact completed preparation and fail unavailable/mismatched artifacts clearly",
+    "distinguish native support, transformed core eligibility, crop envelope and full features",
+    "return native meanings, identities, provenance, rights and time qualifiers",
+    "preserve outside support, nodata/no observation and unknown inventory completeness",
+    "keep DTM/LN02 and DSM/EGM2008 independent without subtraction/fusion",
+    "retain source-scoped feature IDs and glacier/debris associations",
+    "known2015/2016/2021 references and unknown GeoCover survey times remain explicit",
+    "fresh-process answers agree with unchanged protected pilot and production"
+  ],
+  "deliverable": "Qualified retrieval proof and decision; no Atlas publication, production API or new physical derivation.",
+  "permittedWork": [
+    "bounded offline qualified native cell/point and small-area retrieval",
+    "native feature-ID/area intersection and glacier/debris relationship access",
+    "explicit known/unknown observation and release-time retrieval",
+    "small focused failure/reproduction tests, measurements, report/navigation"
+  ],
+  "prerequisites": [
+    "verified preparation revision recorded in the results receipt",
+    "exact twelve retained public inputs",
+    "frozen semantic/world-model contracts and offline toolchain"
+  ],
+  "status": "NOT BEGUN",
+  "stopCondition": "Judge and document this bounded retrieval question, with measurements/protections and one next task. Do not register/publish a multi-region world or start runtime/infrastructure integration.",
+  "title": "Atlas prepared Riffelhorn qualified spatial, feature and temporal retrieval proof",
+  "uncertainty": "Can realistic native cell/support, full-feature identity/intersection and observation/release-time retrieval consume the prepared second-region evidence while preserving qualifications, gaps, associations and independent height references?",
+  "why": "Prepared real evidence now exists; actual retrieval is a prerequisite to coherent multi-region integration. No further preparation or validation blocker is demonstrated."
+}

@@ -1,0 +1,225 @@
+{
+  "buildSeconds": {
+    "max": 0.3817007001489401,
+    "median": 0.38101560017094016,
+    "min": 0.37995770014822483,
+    "runs": 3
+  },
+  "byteCounters": "Each build hashes120347916input bytes and reads native headers, existing JSON, ZIP selection and68016WorldCoveruint8samples. First preparation+verification performs two builds. Physical cache/GDAL/archive I/O not instrumented. Encoding writes five artifacts plus completion manifest; verification rereads artifact hashes. Retry additionally reconstructs prior complete revision and retains staging metadata.",
+  "byteIdenticalEmptyRebuilds": true,
+  "claims": 50,
+  "decision": "C - PROOF SUCCESS",
+  "externalRootRelative": "derived/atlas/riffelhorn/riffelhorn-qualified-fixture-v1/357b28e705f7c2647cdf2d54467fc9ee851465814d8ed645cae30713ef9187bb",
+  "freshProcessRuns": [
+    {
+      "artifactCount": 6,
+      "complete": true,
+      "processElapsedSeconds": 2.000781200127676,
+      "published": false,
+      "registered": false,
+      "revision": "357b28e705f7c2647cdf2d54467fc9ee851465814d8ed645cae30713ef9187bb",
+      "verificationSeconds": 1.3888383999001235
+    },
+    {
+      "artifactCount": 6,
+      "complete": true,
+      "processElapsedSeconds": 2.005323600023985,
+      "published": false,
+      "registered": false,
+      "revision": "357b28e705f7c2647cdf2d54467fc9ee851465814d8ed645cae30713ef9187bb",
+      "verificationSeconds": 1.3016981999389827
+    },
+    {
+      "artifactCount": 6,
+      "complete": true,
+      "processElapsedSeconds": 1.827557799872011,
+      "published": false,
+      "registered": false,
+      "revision": "357b28e705f7c2647cdf2d54467fc9ee851465814d8ed645cae30713ef9187bb",
+      "verificationSeconds": 1.250611700117588
+    }
+  ],
+  "freshProcessVerificationSeconds": {
+    "max": 1.3888383999001235,
+    "median": 1.3016981999389827,
+    "min": 1.250611700117588,
+    "runs": 3
+  },
+  "freshProcessWallSeconds": {
+    "max": 2.005323600023985,
+    "median": 2.000781200127676,
+    "min": 1.827557799872011,
+    "runs": 3
+  },
+  "independentEmptyRuns": [
+    {
+      "artifactCount": 6,
+      "byteAccounting": "Input hash bytes exact per build; verification repeats build. GDAL/Fiona header/archive reads are not reliably counted physical I/O. Outputs exact UTF8 bytes; no raster payload copying.",
+      "inputArtifactCount": 12,
+      "inputHashBytesPerBuild": 120347916,
+      "outputBytes": 5605110,
+      "preparedRoot": "C:\\Users\\gbsam\\AppData\\Local\\Temp\\riffelhorn-reproduction-m2am3qjt\\0\\357b28e705f7c2647cdf2d54467fc9ee851465814d8ed645cae30713ef9187bb",
+      "retry": false,
+      "revision": "357b28e705f7c2647cdf2d54467fc9ee851465814d8ed645cae30713ef9187bb",
+      "timingSeconds": {
+        "build": 0.38101560017094016,
+        "encodingAndSemanticValidation": 1.0084927999414504,
+        "freshVerificationAndFinalize": 1.2957518000621349,
+        "total": 2.6852602001745254
+      }
+    },
+    {
+      "artifactCount": 6,
+      "byteAccounting": "Input hash bytes exact per build; verification repeats build. GDAL/Fiona header/archive reads are not reliably counted physical I/O. Outputs exact UTF8 bytes; no raster payload copying.",
+      "inputArtifactCount": 12,
+      "inputHashBytesPerBuild": 120347916,
+      "outputBytes": 5605110,
+      "preparedRoot": "C:\\Users\\gbsam\\AppData\\Local\\Temp\\riffelhorn-reproduction-m2am3qjt\\1\\357b28e705f7c2647cdf2d54467fc9ee851465814d8ed645cae30713ef9187bb",
+      "retry": false,
+      "revision": "357b28e705f7c2647cdf2d54467fc9ee851465814d8ed645cae30713ef9187bb",
+      "timingSeconds": {
+        "build": 0.37995770014822483,
+        "encodingAndSemanticValidation": 1.1746218998450786,
+        "freshVerificationAndFinalize": 1.3687507000286132,
+        "total": 2.9233303000219166
+      }
+    },
+    {
+      "artifactCount": 6,
+      "byteAccounting": "Input hash bytes exact per build; verification repeats build. GDAL/Fiona header/archive reads are not reliably counted physical I/O. Outputs exact UTF8 bytes; no raster payload copying.",
+      "inputArtifactCount": 12,
+      "inputHashBytesPerBuild": 120347916,
+      "outputBytes": 5605110,
+      "preparedRoot": "C:\\Users\\gbsam\\AppData\\Local\\Temp\\riffelhorn-reproduction-m2am3qjt\\2\\357b28e705f7c2647cdf2d54467fc9ee851465814d8ed645cae30713ef9187bb",
+      "retry": false,
+      "revision": "357b28e705f7c2647cdf2d54467fc9ee851465814d8ed645cae30713ef9187bb",
+      "timingSeconds": {
+        "build": 0.3817007001489401,
+        "encodingAndSemanticValidation": 1.1164268997963518,
+        "freshVerificationAndFinalize": 1.36289620003663,
+        "total": 2.861023799981922
+      }
+    }
+  ],
+  "inputBytes": 120347916,
+  "integrationReady": "prepared qualified native records and bindings only; no world-model registration/query/publication/consumer integration",
+  "manifest": {
+    "artifacts": [
+      {
+        "bytes": 6100,
+        "path": "input-manifest.json",
+        "sha256": "ff1e462486ab49a7c5b961298f4b393f9dd679d48ef94fd4e450e5300c13e829"
+      },
+      {
+        "bytes": 22667,
+        "path": "raster-bindings.json",
+        "sha256": "81ddecfaa894afbcf5730c3fb471ccabdd51dd1f58179e49f39c1e7972c5ab6a"
+      },
+      {
+        "bytes": 5386941,
+        "path": "features.json",
+        "sha256": "3929964622f6eaaf3ba0251d2a686ca53effc50174ed84cd2fa314d645a6d923"
+      },
+      {
+        "bytes": 171368,
+        "path": "semantic-evidence.json",
+        "sha256": "24b0d84802d8804d51b6fd4edd0fa3c74dc0019a6fecc7315005e430906416a2"
+      },
+      {
+        "bytes": 16843,
+        "path": "qualification.json",
+        "sha256": "c7b9c91d49a5b44887ac60569d1fd6b6d2dab0e989ce818286bf941a106c1e02"
+      }
+    ],
+    "method": "atlas-riffelhorn-native-preparation/v1",
+    "planSha256": "8d58e1771626cf7f39ea712368b6494c62945717cf947d6b8698a6c052c2b2ab",
+    "revision": "357b28e705f7c2647cdf2d54467fc9ee851465814d8ed645cae30713ef9187bb",
+    "schema": "atlas-riffelhorn-preparation-complete/v1",
+    "specificationSha256": "4e3dfc5d462e721f91cdb9ad5ae3af3917ee3ca6af300124568c0f5ba6720d35",
+    "status": "COMPLETE"
+  },
+  "memoryLimit": "tracemalloc Python allocation peak for one separate build, excludes native GDAL/Fiona/PROJ and Node child RSS; not whole-process peak",
+  "nativeFeatures": 38,
+  "nextTask": {
+    "acceptanceCriteria": [
+      "consume exact completed preparation and fail unavailable/mismatched artifacts clearly",
+      "distinguish native support, transformed core eligibility, crop envelope and full features",
+      "return native meanings, identities, provenance, rights and time qualifiers",
+      "preserve outside support, nodata/no observation and unknown inventory completeness",
+      "keep DTM/LN02 and DSM/EGM2008 independent without subtraction/fusion",
+      "retain source-scoped feature IDs and glacier/debris associations",
+      "known2015/2016/2021 references and unknown GeoCover survey times remain explicit",
+      "fresh-process answers agree with unchanged protected pilot and production"
+    ],
+    "deliverable": "Qualified retrieval proof and decision; no Atlas publication, production API or new physical derivation.",
+    "permittedWork": [
+      "bounded offline qualified native cell/point and small-area retrieval",
+      "native feature-ID/area intersection and glacier/debris relationship access",
+      "explicit known/unknown observation and release-time retrieval",
+      "small focused failure/reproduction tests, measurements, report/navigation"
+    ],
+    "prerequisites": [
+      "verified preparation revision recorded in the results receipt",
+      "exact twelve retained public inputs",
+      "frozen semantic/world-model contracts and offline toolchain"
+    ],
+    "status": "NOT BEGUN",
+    "stopCondition": "Judge and document this bounded retrieval question, with measurements/protections and one next task. Do not register/publish a multi-region world or start runtime/infrastructure integration.",
+    "title": "Atlas prepared Riffelhorn qualified spatial, feature and temporal retrieval proof",
+    "uncertainty": "Can realistic native cell/support, full-feature identity/intersection and observation/release-time retrieval consume the prepared second-region evidence while preserving qualifications, gaps, associations and independent height references?",
+    "why": "Prepared real evidence now exists; actual retrieval is a prerequisite to coherent multi-region integration. No further preparation or validation blocker is demonstrated."
+  },
+  "outputBytes": 5605110,
+  "planSha256": "8d58e1771626cf7f39ea712368b6494c62945717cf947d6b8698a6c052c2b2ab",
+  "preparationSeconds": {
+    "max": 2.9233303000219166,
+    "median": 2.861023799981922,
+    "min": 2.6852602001745254,
+    "runs": 3
+  },
+  "pythonBuildPeakTrackedBytes": 9457110,
+  "rasterPayloadCopies": 0,
+  "retainedPreparation": {
+    "artifactCount": 6,
+    "byteAccounting": "Input hash bytes exact per build; verification repeats build. GDAL/Fiona header/archive reads are not reliably counted physical I/O. Outputs exact UTF8 bytes; no raster payload copying.",
+    "inputArtifactCount": 12,
+    "inputHashBytesPerBuild": 120347916,
+    "outputBytes": 5605110,
+    "preparedRoot": "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\derived\\atlas\\riffelhorn\\riffelhorn-qualified-fixture-v1\\357b28e705f7c2647cdf2d54467fc9ee851465814d8ed645cae30713ef9187bb",
+    "retry": false,
+    "revision": "357b28e705f7c2647cdf2d54467fc9ee851465814d8ed645cae30713ef9187bb",
+    "timingSeconds": {
+      "build": 0.36750200018286705,
+      "encodingAndSemanticValidation": 1.1449416999239475,
+      "freshVerificationAndFinalize": 1.3677900999318808,
+      "total": 2.8802338000386953
+    }
+  },
+  "revision": "357b28e705f7c2647cdf2d54467fc9ee851465814d8ed645cae30713ef9187bb",
+  "schema": "atlas-riffelhorn-preparation-observations/v1",
+  "semanticCounts": {
+    "collections": 5,
+    "definitions": 18,
+    "mappings": 2,
+    "resources": 10
+  },
+  "semanticValidatorTools": {
+    "node": "v24.11.0",
+    "vite": "8.0.16"
+  },
+  "sourceImplementationHashes": {
+    "scripts/atlas/riffelhorn-fixture/prepare.py": "31aa73be6807fa310b31b4c4858d9081289f864ad3aee339888e840ced33514f",
+    "scripts/atlas/riffelhorn-fixture/verify_semantic.mjs": "8910cf0ba6ec5dbbfeb5214087e9576123e7c0bc3d41172fd6b1c10b8c6838d5"
+  },
+  "startingCheckpoint": "c53c478babbedd7aac609cf091503a8fd7fbe287",
+  "storageAmplificationAdditional": 0.04657421737157459,
+  "tools": {
+    "fiona": "1.10.1",
+    "gdal": "3.9.3",
+    "proj": "9.5.1",
+    "pyproj": "3.7.2",
+    "python": "3.12.6",
+    "rasterio": "1.4.3",
+    "shapely": "2.1.2"
+  }
+}
