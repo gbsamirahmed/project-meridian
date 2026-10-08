@@ -1,0 +1,11 @@
+{
+  "title": "Atlas local runtime deterministic derivation and scoped lifecycle integration",
+  "status": "NOT BEGUN",
+  "uncertainty": "Can one accepted real deterministic regional method and its dependency closure move from research orchestration into reusable runtime interfaces while preserving immutable output, qualified lineage, selective lifecycle and coherent historical publication?",
+  "importance": "The first runtime operates retained publications; it does not yet execute or coordinate scientific processing. This is the next concrete gap toward a usable local workflow.",
+  "prerequisites": ["accepted local architecture and first runtime", "unchanged retained inputs and accepted regional derivation methods", "accepted dependency/lifecycle and multi-region publication contracts"],
+  "scope": ["one existing deterministic terrain-derived method and one downstream accepted summary on bounded retained regional inputs", "explicit TypeScript-to-Python processing contract", "immutable output staging and identity", "scoped invalidation/recomputation", "minimal isolated component-publication coordinator using accepted full guards", "pinned runtime queries and historical replay", "no generic ingestion/orchestration platform or production changes"],
+  "deliverable": "A documented runtime processing vertical slice with focused oracle, interruption and replay tests; no new physical source or scientific algorithm.",
+  "acceptance": ["real retained method reproduces accepted full derivation", "exact affected closure and unchanged regional reuse", "qualifications and method/parameter/input identity retained", "invalid/incomplete processing remains unpublished", "new and old pins query coherent source/output states after restart", "catalogue remains disposable", "accepted evidence/contracts/statuses/production unchanged"],
+  "stop": "Stop after this one processing/lifecycle vertical slice is measured, tested, documented and committed; do not begin wider ingestion, runtime migration or service work."
+}
