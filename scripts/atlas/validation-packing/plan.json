@@ -1,0 +1,170 @@
+{
+  "acceptance": {
+    "correctness": "Every candidate agrees with full on each sequence and deliberately invalid control; expected verdicts asserted. Missing/corrupt optimization evidence falls back to full, never grants acceptance. Current root cannot advance on rejection/interruption. Historical direct lookup stays zero ancestry.",
+    "performance": "Material win requires >=10% median paired cumulative saving versus freshly reproduced full, positive savings in every repetition of both high-medium and high-long; all initial and ongoing evidence maintenance included. Other conditions reported without universal adoption.",
+    "stop": "If neither packed representation passes material-win criterion, provisionally default to full validation for these cheap-rule workloads and close receipt optimisation pending new evidence; no further receipt representation proposed."
+  },
+  "authoritativeHashes": {
+    "docs/research/atlas-component-granularity.md": "831e3965d7cdc871e9883cdd73f3fdca8c0dc8be5bfa20a1547dc95aaa11b56b",
+    "docs/research/atlas-component-membership.md": "3c72d52657455abeb0a126cdc5c4f889f1897271ca166d02943fc33368e48c66",
+    "docs/research/atlas-derived-understanding-lifecycle.md": "aee8a563754e3471cbb24a25ea1463eb9cee3d1606be4ed2e3cb1fe62414b3a3",
+    "docs/research/atlas-generation-scaling.md": "bf75df02b2945507bbf94cf5c241145b52e168ecb4f5ae6ca5dbc15f81c1d981",
+    "docs/research/atlas-measured-storage-processing-serving.md": "1696fa267595d6974adbe09a77f616ebc61de1e770372e34478b0db61916b9a7",
+    "docs/research/atlas-storage-processing-serving-requirements.md": "826ce49eab42c37d62b0a74762fdd6fa0636ebc1cbd2ad5d8ef3704ef829978a",
+    "docs/research/atlas-validation-maintenance-results.json": "480519597058ca9b58c171d17d92f25603884683c8040ac65266504b25918fb2",
+    "docs/research/atlas-validation-reuse.md": "a846c6ab8e8beadf4bb4d7542b9715bc9c44eba110ad996821354031548e88d0",
+    "docs/research/atlas-world-model-architecture-synthesis.md": "ba074a8a1fa88c256780281314b3a1ca4a8bc2d3e0bcdcf75ad512b733d2d8c1",
+    "docs/research/tryfan-pilot-s1.md": "acfe5160a3eb024ab0d0cd14f9502842eb552872683e6738e7c2c855079d99e2",
+    "docs/research/tryfan-pilot-s2.md": "0badb0165a8064d00bc6c439ffdd53039ec22981525607d2e6e0e085d1499100",
+    "docs/research/tryfan-pilot-s3.md": "e443005b9efb4e0ce3fa7a0bf988faacd1da6f5f1fdc3e49e90d869514f2df5d",
+    "docs/research/tryfan-pilot-s4.md": "ad4885b17c802d1dc03735719b7579c1a02a2c176ce16b3165961af9933ea5f3",
+    "docs/research/tryfan-pilot-s5.md": "cc719fda3be8f8115b3f419ab1bc327ebeb0981a1b7604e534f3a5aeb5e46325",
+    "docs/research/tryfan-pilot-s6.md": "8f44bcaa535d97510cb9759653cba80fa1d5837a0db2a0a87ef8ded2678d7eef",
+    "pilots/atlas/tryfan/catalogue.mjs": "c8d52c9355bc030ae0e97f8767cb62088830606acdc39c6b32fb09e6edcbe52b",
+    "pilots/atlas/tryfan/delivery-schema.mjs": "46030ddc81374123ef9b948ea04075435567b6c5250b40a95e0083cf31e8b48f",
+    "pilots/atlas/tryfan/dependencies.mjs": "6f07d7f48e1dc94eb08e1f1a3b74de29acd3053a60ed169ee4be4c57b93940d9",
+    "pilots/atlas/tryfan/derivations.mjs": "c750339fb121626964bb20dc173bbdc4b16d30b0b8ec0bba55ad3045d4a075c3",
+    "pilots/atlas/tryfan/generations.mjs": "1b50f5d879d6ed5fc39d9a42cf56dec9ea103c8b928876fb8585795897e5d03d",
+    "pilots/atlas/tryfan/update-schema.mjs": "9bf6568762482a4bb24d20fcbb449a6a7f8db1a4d7e26791089073cb51757cfa",
+    "pilots/atlas/tryfan/world.mjs": "f2fd467bb3637e03e36a06faf44dc43bf6cdb2ed02bddcf91282b92800aba495",
+    "scripts/atlas/validation-maintenance/plan.json": "cc67c4c513d9233d966143fafa2004fe7f2b49a7b80c5dfb9c1d8ffe4b9d2564",
+    "scripts/atlas/validation-maintenance/test_model.py": "2f25e38b6055433a5229eb80eedb846b3273e49c7aaa61c6efcf614fee4b8f2f"
+  },
+  "candidates": [
+    "full",
+    "individual",
+    "packed",
+    "shared"
+  ],
+  "hypotheses": {
+    "H1": "Per-receipt object overhead dominates and packing reduces cumulative cost.",
+    "H2": "Shared group directories improve high-reuse economics.",
+    "H3": "Pack decoding, integrity and maintenance erase reduced object counts.",
+    "H4": "Unchanged mandatory population checks impose the remaining floor.",
+    "H5": "Outcome depends on update locality, rules, granularity or retention."
+  },
+  "mechanism": {
+    "directory": "Flat candidate repeats slot-to-pack membership and old component membership. Shared candidate references one immutable group pack per family/group and derives prior membership from independently hashed publication. Both roots are independently caller-pinned verifier outputs, not candidate-selected authority.",
+    "measured": "Individual lookup adds one receipt object per eligible component; four root maps duplicate population metadata each publication. Initial receipt issuance is expensive. Prior timings isolate validation and maintenance, not a causal disk/parse split.",
+    "nonReducible": "Hash every current component, always check publication completeness and qualifier, rerun affected/contextual edges, authenticate exact rule/component/guarantee, retain all historical evidence.",
+    "packing": "Group sorted family slots by numeric partition // K. Each slot contains an addressable local receipt with its own canonical digest, outgoing dependencies and reverse sources. Partial change rewrites whole immutable group. No pack ancestry.",
+    "reducible": "Coalesce local receipt and anchored adjacency metadata into immutable family-local groups; share unchanged groups. Replace slot-expanded directory with group-to-pack membership."
+  },
+  "packSize": 16,
+  "repetitions": 3,
+  "schema": "atlas-validation-packing-plan/v1",
+  "sensitivity": [
+    4,
+    64
+  ],
+  "sensitivitySequence": "high-medium",
+  "sequences": [
+    {
+      "fanout": 1,
+      "id": "unchanged",
+      "length": 32,
+      "n": 64,
+      "pattern": "none",
+      "revision": "stable"
+    },
+    {
+      "fanout": 1,
+      "id": "high-small",
+      "length": 32,
+      "n": 16,
+      "pattern": "local",
+      "revision": "stable"
+    },
+    {
+      "fanout": 1,
+      "id": "high-medium",
+      "length": 32,
+      "n": 64,
+      "pattern": "local",
+      "revision": "stable"
+    },
+    {
+      "fanout": 1,
+      "id": "high-large",
+      "length": 32,
+      "n": 256,
+      "pattern": "local",
+      "revision": "stable"
+    },
+    {
+      "fanout": 1,
+      "id": "high-long",
+      "length": 112,
+      "n": 64,
+      "pattern": "local",
+      "revision": "stable"
+    },
+    {
+      "fanout": 4,
+      "id": "scattered",
+      "length": 32,
+      "n": 64,
+      "pattern": "scattered",
+      "revision": "stable"
+    },
+    {
+      "fanout": 1,
+      "id": "moderate",
+      "length": 16,
+      "n": 16,
+      "pattern": "half",
+      "revision": "stable"
+    },
+    {
+      "fanout": 1,
+      "id": "low",
+      "length": 16,
+      "n": 16,
+      "pattern": "all",
+      "revision": "stable"
+    },
+    {
+      "fanout": 1,
+      "id": "local-rule",
+      "length": 32,
+      "n": 64,
+      "pattern": "local",
+      "revision": "terrain"
+    },
+    {
+      "fanout": 1,
+      "id": "cross-rule",
+      "length": 32,
+      "n": 64,
+      "pattern": "local",
+      "revision": "cross"
+    },
+    {
+      "fanout": 1,
+      "id": "broad-rule",
+      "length": 16,
+      "n": 16,
+      "pattern": "local",
+      "revision": "all"
+    },
+    {
+      "fanout": 1,
+      "id": "publication-rule",
+      "length": 32,
+      "n": 64,
+      "pattern": "local",
+      "revision": "publication"
+    },
+    {
+      "fanout": 1,
+      "id": "context",
+      "length": 16,
+      "n": 64,
+      "pattern": "local",
+      "revision": "context"
+    }
+  ],
+  "startingCheckpoint": "a027ec76d1d9f34325a4b4d1023c81ae6ff27a60",
+  "stateRoot": "C:/Users/gbsam/Documents/Codex/atlas-validation-packing-v1",
+  "timing": "Three independent stores. Rotate four candidate order by step+repetition; reset request caches. Common fixture/manifest construction and atomic publication cost separated and apply equally. Retain fsync and current hash guards. OS cache uncontrolled; same-process warm and separate-process historical controls. RSS UNKNOWN, tracemalloc peak only labelled Python allocations."
+}

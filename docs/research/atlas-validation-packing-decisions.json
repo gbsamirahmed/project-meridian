@@ -1,0 +1,38 @@
+{
+  "architectureDirection": "C - ARCHITECTURE DIRECTION ESTABLISHED",
+  "decision": "C - PROOF SUCCESS",
+  "materialWins": [],
+  "nextTask": "Atlas retained payload-integrity and publication-validation cost assessment",
+  "nextTaskScope": "Assessment and measurement only: recover actual retained payload/current-integrity and publication guard costs and failure/custody assumptions, separate metadata predicates from file/payload availability and hashing, identify which guarantees could justify later optimisation. Do not weaken guards, optimise receipts again, implement production infrastructure, acquire data or change accepted pilot.",
+  "nextTaskStatus": "NOT BEGUN",
+  "pilot": "CLOSED / ACCEPTED",
+  "receiptOptimisationClosed": true,
+  "records": [
+    {
+      "classification": "DECIDE NOW",
+      "conclusion": "Evaluate end-to-end lifecycle cost, not receipt count; retain exact content/rule/guarantee/trust binding and current integrity/completeness. A corrupt pack write collision is an explicit evidence-issuance failure, never permission to overwrite immutable evidence.",
+      "evidence": "4464 sequence oracle comparisons, 36 boundary comparisons and corrupt pack publication guard.",
+      "id": "N17"
+    },
+    {
+      "classification": "PROVISIONAL DIRECTION",
+      "conclusion": "Full validation is the provisional default for the measured lightweight-rule workloads; this receipt-optimisation line is CLOSED pending new evidence.",
+      "evidence": "The frozen criterion requires at least 10% median paired saving and positive savings in every repeat at both high-medium and high-long. Neither representation passes: [].",
+      "id": "P11"
+    },
+    {
+      "classification": "DEFER PENDING EVIDENCE",
+      "conclusion": "Real payload-integrity/availability costs, more expensive predicates, custody/trust boundaries, deployed latency, arbitrary graphs and retention/retirement obligations. No database, cloud or production receipt store selected.",
+      "evidence": "Metadata-only synthetic model and unchanged population-wide integrity floor; RSS unknown.",
+      "id": "D11"
+    },
+    {
+      "classification": "REJECT",
+      "conclusion": "Adopting incremental validation from row savings alone, excluding pack/directory costs, permanent valid booleans, untrusted candidate-selected anchors, skipped current hashes, stale-as-false or ancestry-dependent history. No further receipt representation to prolong this optimisation line after a negative materiality result.",
+      "evidence": "Four independently stored representations; all earlier negative evidence remains authoritative.",
+      "id": "R11"
+    }
+  ],
+  "schema": "atlas-validation-packing-decisions/v1",
+  "strategy": "Full validation is the provisional default for the measured lightweight-rule workloads; this receipt-optimisation line is CLOSED pending new evidence."
+}
