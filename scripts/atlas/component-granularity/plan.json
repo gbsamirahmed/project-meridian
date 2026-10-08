@@ -1,0 +1,131 @@
+{
+  "authoritativeHashes": {
+    "docs/research/atlas-component-membership-decisions.json": "6261a700f50ca37dadb88aeb0398cf706ff095cfeaa4901aeb8dba7f3aa50794",
+    "docs/research/atlas-component-membership-results.json": "3942a85bc87a36f4bc2b470f7d19b0c8b0563ee5f05af76ed48dafc697740bfb",
+    "docs/research/atlas-component-membership.md": "3c72d52657455abeb0a126cdc5c4f889f1897271ca166d02943fc33368e48c66",
+    "docs/research/atlas-derived-understanding-lifecycle.md": "aee8a563754e3471cbb24a25ea1463eb9cee3d1606be4ed2e3cb1fe62414b3a3",
+    "docs/research/atlas-generation-scaling.md": "bf75df02b2945507bbf94cf5c241145b52e168ecb4f5ae6ca5dbc15f81c1d981",
+    "docs/research/atlas-measured-storage-processing-serving.md": "1696fa267595d6974adbe09a77f616ebc61de1e770372e34478b0db61916b9a7",
+    "docs/research/atlas-storage-processing-serving-requirements.md": "826ce49eab42c37d62b0a74762fdd6fa0636ebc1cbd2ad5d8ef3704ef829978a",
+    "docs/research/atlas-world-model-architecture-synthesis.md": "ba074a8a1fa88c256780281314b3a1ca4a8bc2d3e0bcdcf75ad512b733d2d8c1",
+    "docs/research/tryfan-pilot-s6.md": "8f44bcaa535d97510cb9759653cba80fa1d5837a0db2a0a87ef8ded2678d7eef",
+    "pilots/atlas/tryfan/dependencies.mjs": "6f07d7f48e1dc94eb08e1f1a3b74de29acd3053a60ed169ee4be4c57b93940d9",
+    "pilots/atlas/tryfan/query.mjs": "27d3e686b00537d28a0c558ead4f5840fc92df07eab92716e20ede0046e4d623",
+    "scripts/atlas/component-membership/core.mjs": "59f4a350d3f0c3fbd95a75b1fa4a7b8ac997d9f68d79a214a687e421a76a6842"
+  },
+  "branch": "main",
+  "decisionDepends": "Whether to favour collection materialization, family/support/dependency partitions or authenticated internal pages; no backend selected.",
+  "divergence": [
+    0,
+    0
+  ],
+  "families": [
+    "terrain",
+    "worldcover",
+    "inventory",
+    "derived"
+  ],
+  "fresh": "one worker for every primary cell; three independent processes for2048 narrow/broad",
+  "history": {
+    "depths": [
+      7,
+      112
+    ],
+    "family": "terrain",
+    "population": 512,
+    "reuse": "same scientific metadata except three controlled synthetic applicability revisions distributed through sequence",
+    "selectors": [
+      "current",
+      "recent",
+      "oldest"
+    ]
+  },
+  "hypotheses": {
+    "H1": "Coarse collections remain sufficient or internal selective organisation makes them sufficient",
+    "H2": "Finer independently identified partitions reduce irrelevant reads and localized replacement",
+    "H3": "Excessively fine direct memberships offset gains with directories/files/verification",
+    "H4": "Different families/access dimensions favour different organisation",
+    "H5": "Only if another observed mechanism dominates"
+  },
+  "initialTree": "clean",
+  "integrity": "SHA-check root publication, committed fixed32-byte eligibility path, selected components/tree paths and shared qualifier per request; full current closure audit/eligibility validation before each publication, separately measured; no payload rereads except established regression",
+  "inventoryExtra": "one explicit feature-key lookup at2048, all strategies",
+  "metrics": [
+    "required/candidate/irrelevant records",
+    "publication membership entries inspected",
+    "component/page/directory reads and bytes",
+    "hash checks and hashed bytes",
+    "references/ancestry",
+    "new/reused objects bytes",
+    "full publication validation reads",
+    "elapsed median min max",
+    "fresh process RSS where available"
+  ],
+  "outcomes": [
+    "Coarse if selectivity cannot repay directory costs",
+    "Moderate if localized reads/updates repay overhead",
+    "Internal lookup if direct fine membership scales poorly",
+    "Family-specific if feature-ID/spatial/dependency workloads differ"
+  ],
+  "populations": [
+    128,
+    512,
+    2048
+  ],
+  "previousInsufficient": "Five fixed collections and six results; every served request hydrated1.287MB, with660KB knowledge and coarse replacement duplication.",
+  "publication": "Direct immutable memberships and32-byte path-copy eligible trie; atomic current/eligibility root; no component/publication parent traversal",
+  "queries": [
+    "narrow",
+    "area",
+    "broad"
+  ],
+  "rejection": [
+    "Answer/reference/qualification mismatch between organisations",
+    "Unselected-state trust used to omit selected SHA/path verification",
+    "Publication or component ancestry in normal resolution",
+    "Pre-switch state considered published",
+    "Component replacement treated as physical recomputation",
+    "Incomplete/bbox lookup silently drops required records"
+  ],
+  "repetitions": 5,
+  "schema": "atlas-component-granularity-plan/v1",
+  "spatial": "Synthetic unit support explicitly separated from preserved native CRS/support; exact model interval predicate after conservative bbox candidates. Not a GIS/physical accuracy benchmark.",
+  "startingCommit": "97c31c839b6269a7b19193de77f737682eb4f5f8",
+  "stateRoot": "C:/Users/gbsam/Documents/Codex/atlas-component-granularity-v1",
+  "strategies": {
+    "coarse": {
+      "membership": "all component references explicit",
+      "recordsPerLeaf": "all"
+    },
+    "fine": {
+      "membership": "all component references explicit",
+      "recordsPerLeaf": 1
+    },
+    "moderate": {
+      "order": "spatial support, paired derived dependency units",
+      "recordsPerLeaf": 64
+    },
+    "selective": {
+      "fanout": 16,
+      "membership": "one authenticated internal tree root",
+      "order": "logical/native key",
+      "recordsPerLeaf": 64
+    }
+  },
+  "uncertainty": "Collection boundaries versus authenticated selective metadata lookup under population/query/update locality; publication discovery is already bounded.",
+  "updates": {
+    "counts": [
+      2,
+      32,
+      512
+    ],
+    "patterns": [
+      "local",
+      "scattered",
+      "broad"
+    ],
+    "population": 2048,
+    "revisions": "labelled synthetic applicability metadata only; no physical inputs or results changed"
+  },
+  "upstream": "origin/main"
+}

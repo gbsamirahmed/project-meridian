@@ -1,0 +1,58 @@
+{
+  "schema": "atlas-component-granularity-decisions/v1",
+  "decision": "C - EXPERIMENT RESOLVED",
+  "pilot": "CLOSED / ACCEPTED",
+  "architectureDirection": "C - ARCHITECTURE DIRECTION ESTABLISHED",
+  "nextTask": "Atlas retained validated-component reuse and incremental publication-validation proof",
+  "nextTaskStatus": "NOT BEGUN",
+  "nextTaskScope": "Isolated proof of reusable prior validation receipts plus changed-path/reference checks versus full-closure validation. Preserve completeness, selected corruption detection, dependencies, history and pre-switch rejection. No backend, new evidence/methods or production infrastructure.",
+  "records": [
+    {
+      "id": "N11",
+      "classification": "DECIDE NOW",
+      "updates": [
+        "N09",
+        "N10"
+      ],
+      "conclusion": "Separate publication membership, logical component identity and selective internal materialization. Authenticate selected paths, retain conservative eligibility followed by exact selection, and separate replacement from physical recomputation.",
+      "evidence": "148answers match brute-force qualified selections; false bounds fail validation;172query/history observations retain33eligibility reads and zero ancestry."
+    },
+    {
+      "id": "N12",
+      "classification": "DECIDE NOW",
+      "updates": [
+        "N08"
+      ],
+      "conclusion": "Account separately for directories, selected metadata, shared qualifiers, integrity checks and full publication validation; reduced candidate records alone do not prove efficient access.",
+      "evidence": "Terrain fine reads1record/263232B;moderate64/25715B. All48updates construct/audit2048records."
+    },
+    {
+      "id": "P08",
+      "classification": "PROVISIONAL DIRECTION",
+      "updates": [
+        "P07",
+        "D07"
+      ],
+      "conclusion": "Family/access-specific moderate immutable partitions or authenticated internal lookup, shared qualifiers and direct membership. Spatial, native-key and dependency boundaries differ;64records/16fanout are witnesses, not universal sizes.",
+      "evidence": "Inventory moderate spatial128/8inspected/required; key-tree feature64/1but spatial2048/8. Broad fine2083objects;coarse36."
+    },
+    {
+      "id": "D08",
+      "classification": "DEFER PENDING EVIDENCE",
+      "updates": [
+        "D07"
+      ],
+      "conclusion": "Exact page/component sizes, real2D geometry, dual spatial/key lookup, qualifier selection, backend, remote concurrency/durability, registry packing and incremental validation remain undecided. Next test reuse of prior validated immutable state without scanning every unchanged record.",
+      "evidence": "Synthetic128/512/2048population; fixed native templates. Full closure scans total population for2/32/512changes; no trusted validation receipts implemented."
+    },
+    {
+      "id": "R08",
+      "classification": "REJECT",
+      "updates": [
+        "R07"
+      ],
+      "conclusion": "Blanket one-record flat memberships, universal geographic partitioning, whole-family-only hydration, hidden ancestry, existence-as-publication and weakened qualification/integrity. This does not reject every possible fine partition.",
+      "evidence": "Fine directory offsets narrow savings and broad access costs~201-208ms versus~9-10ms coarse; inventory spatial and key organisation favour different questions."
+    }
+  ]
+}

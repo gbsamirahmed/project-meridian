@@ -1,0 +1,161 @@
+{
+  "acceptedStoreHashes": {
+    "artifacts/208cc2a8ac76aa06e448c841558cf5136a1881354854417db99bac083f1766b9.png": "208cc2a8ac76aa06e448c841558cf5136a1881354854417db99bac083f1766b9",
+    "artifacts/6ead2e9b3a44acc35506c376a58d36dfad2695a02e02f2111fecea4f446d2475.json": "6ead2e9b3a44acc35506c376a58d36dfad2695a02e02f2111fecea4f446d2475",
+    "current.json": "29ccaafa92093133e8db461c4863e3ec78d154481e36caa336599a915f38ca77",
+    "generations/2ffa20f9ac33123c3babb62381ba4559cbd045fb180d978a9ed6228514ed9b92.json": "2ffa20f9ac33123c3babb62381ba4559cbd045fb180d978a9ed6228514ed9b92",
+    "generations/3408e5e9909c47b7e16d9d136f39cffa548c86808893468aa4a0de3d599c1f8c.json": "3408e5e9909c47b7e16d9d136f39cffa548c86808893468aa4a0de3d599c1f8c",
+    "generations/5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06.json": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+    "generations/6d8a127e4924d3b165f143fbeaab39467e4b0e45addf706e648e9c2c2bc948b6.json": "6d8a127e4924d3b165f143fbeaab39467e4b0e45addf706e648e9c2c2bc948b6",
+    "generations/76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431.json": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+    "generations/e0e2d20a1d065c713e954283443c8a7762dd91ab00fa5856b1fe75d1860a51be.json": "e0e2d20a1d065c713e954283443c8a7762dd91ab00fa5856b1fe75d1860a51be",
+    "generations/e967c5066f42839b5cd50bd76df225c2bc0736b3ebd65706f9fd0adad3b2f53f.json": "e967c5066f42839b5cd50bd76df225c2bc0736b3ebd65706f9fd0adad3b2f53f",
+    "locators/2ffa20f9ac33123c3babb62381ba4559cbd045fb180d978a9ed6228514ed9b92.json": "14d703d77c17cff88f06eb14eed753d06fbbc1a1594cd617292974f869faaf78",
+    "locators/3408e5e9909c47b7e16d9d136f39cffa548c86808893468aa4a0de3d599c1f8c.json": "14d703d77c17cff88f06eb14eed753d06fbbc1a1594cd617292974f869faaf78",
+    "locators/5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06.json": "14d703d77c17cff88f06eb14eed753d06fbbc1a1594cd617292974f869faaf78",
+    "locators/6d8a127e4924d3b165f143fbeaab39467e4b0e45addf706e648e9c2c2bc948b6.json": "14d703d77c17cff88f06eb14eed753d06fbbc1a1594cd617292974f869faaf78",
+    "locators/76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431.json": "14d703d77c17cff88f06eb14eed753d06fbbc1a1594cd617292974f869faaf78",
+    "locators/e0e2d20a1d065c713e954283443c8a7762dd91ab00fa5856b1fe75d1860a51be.json": "14d703d77c17cff88f06eb14eed753d06fbbc1a1594cd617292974f869faaf78",
+    "locators/e967c5066f42839b5cd50bd76df225c2bc0736b3ebd65706f9fd0adad3b2f53f.json": "14d703d77c17cff88f06eb14eed753d06fbbc1a1594cd617292974f869faaf78"
+  },
+  "architecture": "C - ARCHITECTURE DIRECTION ESTABLISHED",
+  "branch": "main",
+  "canonicalThreads": 42,
+  "clean": true,
+  "current": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+  "divergence": [
+    0,
+    0
+  ],
+  "generationBytes": {
+    "bytes": 5658085,
+    "files": 7
+  },
+  "historicalLimitations": [
+    "Single-writer/local process failures, not power loss or distributed atomicity",
+    "Current-ancestry serving only;16context limit",
+    "No query/byte cache;conservative metadata validation",
+    "Two probes/two methods;no arbitrary derivation engine",
+    "Unknown epochs/datum/source rights remain qualified",
+    "Appearance unresolved/non-blocking;Swiss multiview parked",
+    "Lab010 original fixed-camera gate pending, separate from pilot portrayal"
+  ],
+  "history": [
+    {
+      "bytes": 1241281,
+      "generation": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+      "parent": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+      "results": 6,
+      "serving": true,
+      "sha256": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+      "stage": "regional"
+    },
+    {
+      "bytes": 1212494,
+      "generation": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+      "parent": "6d8a127e4924d3b165f143fbeaab39467e4b0e45addf706e648e9c2c2bc948b6",
+      "results": 4,
+      "serving": true,
+      "sha256": "76e6561b7b670796d111c36981ccb976cb101dbeeacddf7301ca83dc91f80431",
+      "stage": "common"
+    },
+    {
+      "bytes": 1091184,
+      "generation": "6d8a127e4924d3b165f143fbeaab39467e4b0e45addf706e648e9c2c2bc948b6",
+      "parent": "e0e2d20a1d065c713e954283443c8a7762dd91ab00fa5856b1fe75d1860a51be",
+      "results": 4,
+      "serving": true,
+      "sha256": "6d8a127e4924d3b165f143fbeaab39467e4b0e45addf706e648e9c2c2bc948b6",
+      "stage": "common"
+    },
+    {
+      "bytes": 1085705,
+      "generation": "e0e2d20a1d065c713e954283443c8a7762dd91ab00fa5856b1fe75d1860a51be",
+      "parent": "2ffa20f9ac33123c3babb62381ba4559cbd045fb180d978a9ed6228514ed9b92",
+      "results": 4,
+      "serving": false,
+      "sha256": "e0e2d20a1d065c713e954283443c8a7762dd91ab00fa5856b1fe75d1860a51be",
+      "stage": "common"
+    },
+    {
+      "bytes": 343264,
+      "generation": "2ffa20f9ac33123c3babb62381ba4559cbd045fb180d978a9ed6228514ed9b92",
+      "parent": "3408e5e9909c47b7e16d9d136f39cffa548c86808893468aa4a0de3d599c1f8c",
+      "results": 0,
+      "serving": false,
+      "sha256": "2ffa20f9ac33123c3babb62381ba4559cbd045fb180d978a9ed6228514ed9b92",
+      "stage": "registration"
+    },
+    {
+      "bytes": 342954,
+      "generation": "3408e5e9909c47b7e16d9d136f39cffa548c86808893468aa4a0de3d599c1f8c",
+      "parent": "e967c5066f42839b5cd50bd76df225c2bc0736b3ebd65706f9fd0adad3b2f53f",
+      "results": 0,
+      "serving": false,
+      "sha256": "3408e5e9909c47b7e16d9d136f39cffa548c86808893468aa4a0de3d599c1f8c",
+      "stage": "registration"
+    },
+    {
+      "bytes": 341203,
+      "generation": "e967c5066f42839b5cd50bd76df225c2bc0736b3ebd65706f9fd0adad3b2f53f",
+      "parent": null,
+      "results": 0,
+      "serving": false,
+      "sha256": "e967c5066f42839b5cd50bd76df225c2bc0736b3ebd65706f9fd0adad3b2f53f",
+      "stage": "registration"
+    }
+  ],
+  "inventory": {
+    "artifacts": 310,
+    "families": 5,
+    "representations": 8
+  },
+  "locators": {
+    "bytes": 328020,
+    "files": 7
+  },
+  "originalS6Reads": {
+    "milliseconds": 250.02179999999998,
+    "phase": "initialized",
+    "reads": {
+      "external-artifacts": {
+        "bytes": 7242912,
+        "calls": 10
+      },
+      "generations": {
+        "bytes": 20149778,
+        "calls": 26
+      },
+      "locators": {
+        "bytes": 93720,
+        "calls": 2
+      },
+      "runtime-code-and-metadata": {
+        "bytes": 4337180,
+        "calls": 110
+      }
+    },
+    "responseBytes": 32836
+  },
+  "pilot": "CLOSED / ACCEPTED",
+  "planSha256": "618ee0064a84ecf224f70b0028a532d55c4f28b7666f5de456fd0075ed416df3",
+  "portrayals": {
+    "bytes": 3057491,
+    "files": 2
+  },
+  "previousExperiment": "e88b575",
+  "productionHashes": 113,
+  "reuse": {
+    "derivedRecomputedPerS5Update": 2,
+    "derivedReusedPerS5Update": 2,
+    "scientificArtifactsChanged": 0,
+    "scientificArtifactsReused": 310
+  },
+  "schema": "atlas-component-granularity-baseline/v1",
+  "sources": {
+    "artifacts": 310,
+    "bytes": 42473107
+  },
+  "startingCommit": "97c31c839b6269a7b19193de77f737682eb4f5f8",
+  "upstream": "origin/main"
+}
