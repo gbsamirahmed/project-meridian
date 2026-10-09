@@ -362,3 +362,156 @@ follows explicit supersession records and reports its cost; normal publication m
 still uses zero ancestry traversal. No history deletion, GC, backups, remote service or
 power-loss guarantee is implemented. [Exactly one next task](registration-next-task.json)
 is selected, not begun.
+
+## Unified qualified source and derived retrieval
+
+Use `AtlasContext.retrieve` or CLI `retrieve` for one pinned answer containing native
+source/prepared records and qualified derived results. The SQLite catalogue contains
+selectors only. Canonical files determine identities, values, scientific qualifications,
+dependencies and publication truth. Opening still performs full authoritative validation,
+including native integrity and supported numerical replay. No SQL row advances a root.
+
+```ts
+import { openAtlas, type EvidenceQuery } from './runtime/atlas/index.ts'
+
+const atlas = await openAtlas({
+  dataRoot, publicationRoot, catalogueRoot, python,
+  generation, // optional explicit committed SHA; omission pins current at open
+})
+try {
+  await atlas.buildCatalogue({ qualified: true })
+  const query: EvidenceQuery = {
+    region: 'riffelhorn', point: [2624350.25, 1091350.25], crs: 'EPSG:2056',
+  }
+  const answer = await atlas.retrieve(query)
+  for (const result of answer.results) {
+    console.log(answer.generation, result.evidenceClass, result.identity, result.revision)
+    console.log(answer.documents[result.qualificationRef])
+    console.log(answer.documents[result.provenanceRef])
+  }
+} finally { await atlas.close() }
+```
+
+Run TypeScript using the repository's supported Node version; the Python path is the
+existing GIS environment described above. Keep catalogue paths outside both the code
+repository and canonical/publication roots. Every command below also requires
+`--data-root DATA --publication-root WORLD --catalogue CACHE --python GIS_PYTHON`.
+Use `--generation SHA` to select a committed historical generation and `--json` for
+the complete structured answer. These commands never change canonical evidence:
+
+```text
+node runtime/atlas/cli.ts validate ... --generation SHA --json
+node runtime/atlas/cli.ts catalogue build ... --qualified --generation SHA --json
+node runtime/atlas/cli.ts catalogue verify ... --qualified --generation SHA --json
+node runtime/atlas/cli.ts retrieve ... --generation SHA --query '{}' --json
+node runtime/atlas/cli.ts retrieve ... --query '{"evidenceClass":"source"}' --json
+node runtime/atlas/cli.ts retrieve ... --query '{"evidenceClass":"derived"}' --json
+node runtime/atlas/cli.ts retrieve ... --query '{"identity":"dtm-cluster-0-0|slope"}' --json
+node runtime/atlas/cli.ts retrieve ... --query '{"region":"riffelhorn","feature":"glaciers:683"}' --json
+node runtime/atlas/cli.ts retrieve ... --query '{"relatedTo":{"identity":"dtm-cluster-0-0|area-ratio","direction":"inputs","depth":"transitive"}}' --json
+```
+
+In PowerShell, pass the JSON as one single-quoted argument. `...` denotes the four
+explicit configuration flags, not an executable argument. To run a complete example
+without constructing those command lines, save an external configuration:
+
+```json
+{
+  "dataRoot": "PATH_TO_MERIDIAN_DATA",
+  "publicationRoot": "EXISTING_OWNED_RUNTIME_WORLD",
+  "catalogueRoot": "SEPARATE_DISPOSABLE_CACHE",
+  "python": "PATH_TO_GIS_PYTHON",
+  "generation": "EXACT_COMMITTED_GENERATION_SHA",
+  "historicalGeneration": "OPTIONAL_OLDER_COMMITTED_SHA"
+}
+```
+
+Paths resolve against that configuration file. Omit either optional selector field
+rather than supplying a placeholder. Use a world produced by the registration example
+above, or an existing retained runtime publication. Generation identities are in its
+authoritative `current.json` and committed membership; the example does not invent or
+register evidence.
+
+```text
+node runtime/atlas/example-retrieval.mjs CONFIG.json
+node --test runtime/atlas/test-retrieval.mjs
+```
+
+The [example](example-retrieval.mjs) validates, builds/verifies the qualified catalogue,
+queries both classes, inspects a derived result, follows its exact lineage, queries a
+historical pin if supplied, and restores the selected pin's catalogue. Each CLI call
+opens a fresh fully validated process. `check-retrieval.py`, run with the GIS Python,
+executes inherited and new tests, types, lint, build and that example. Measurements
+use [measure-retrieval.mjs](measure-retrieval.mjs); they write disposable caches outside
+Git and compact raw receipts, never source payloads.
+
+### Supported predicates and honest limitations
+
+- Exact `identity`; exact SHA `revision`; `evidenceClass: source | derived`; `region`;
+  `families`; `representation`; exact `product` (native source identity or derived
+  method revision). Derived families are `terrain-slope` and `planar-area-ratio`;
+  representation is `local-scalar`. Source families/representations remain native.
+- Native feature identities only. Scalars do not acquire feature IDs by proximity.
+- Spatial `point` or `area: [minX,minY,maxX,maxY]` requires a region and a supported
+  explicit CRS. Native source geometries/raster support use accepted exact predicates.
+  A scalar's default `spatialSupport: location` selects its exact anchor, with
+  half-open area upper bounds. It never claims the scalar is valid everywhere in a
+  bounding box. Point equality is exact after the declared support transform; no
+  fuzzy nearest-location tolerance is implied. Derived-only `spatialSupport: consumed` selects actual consumed
+  0.5m native cell footprints; coarse RTree bounds shortlist and exact filtering
+  excludes gaps. This describes input use, not continuous physical applicability.
+- `time: {role: evidence-epoch | product-reference, start: YEAR, end: YEAR}` uses
+  closed calendar-year native qualification. Alternatively `{role, unknown:true}`
+  selects explicitly unknown qualification. Current scalar observation/product-reference
+  years are unknown; method identity/execution time does not supply them. No open-ended
+  interval, arbitrary precision, validity-throughout or physical-change inference.
+- `knowledge: {revision: SHA}` selects the active regional registration revision
+  **within this pin**. `{start: UTC_MILLISECOND, end: UTC_MILLISECOND}` selects its
+  closed acceptance-clock interval, e.g. `2026-10-09T12:00:00.000Z`.
+  `{unknown:true}` selects older contexts lacking an accepted registration clock.
+  Knowledge filters do not switch generations or reconstruct an earlier knowledge
+  state inside a later publication. Select the earlier `generation` explicitly.
+- `relatedTo: {identity, direction: inputs | dependents, depth: direct | transitive}`
+  follows authoritative evidence adjacency. Source→slope is mediated by the exact
+  qualified-use identity (`via`, recording both underlying dependency edges);
+  slope→area-ratio consumes the exact slope revision. Other predicates filter the
+  reachable evidence. Unknown relationship seeds fail explicitly; ordinary absent
+  identity queries return a qualified gap. No location/property-based inferred lineage.
+
+The response is `atlas-qualified-retrieval/v1`: stable keyed records, exact generation
+and component membership, relationship records, and shared `documents` addressed by
+response content fingerprints. These document fingerprints are references within the
+answer, not new canonical artifacts or physical observation identities. Source `revision`
+selects the accepted/prepared regional source representation; original source fingerprints
+remain in provenance/shared native metadata. Derived `revision` is its canonical content
+identity. The distinct `knowledgeRef` exposes immutable acceptance/supersession lineage.
+Qualifications, CRS/datums, source/preparation lineage, method/parameters/execution,
+uncertainty and rights remain available through those references. Shared `regions` native
+metadata provides retained source/preparation time fields where actually documented.
+
+`relationships` includes incident lineage for returned evidence and the traversed path.
+`traversal.relationshipRefs` distinguishes the path actually selected; incident neighbour
+edges need not have both endpoints in the filtered result. `EvidenceQuery`,
+`EvidenceAnswer`, `EvidenceRecord` and `EvidenceRelationship` are exported from `index.ts`.
+`scanEvidence` is the diagnostic authoritative full-scan reference, not a silent fallback.
+All results are evidence-qualified; no matching record is never proof of physical absence.
+
+### Catalogue recovery and compatibility
+
+`--qualified` / `{qualified:true}` builds schema2 of the **same** catalogue/epoch/worker,
+extending native selectors with derived, active knowledge and dependency rows. It stores
+no raster, scalar numerical payload or authoritative document. Default schema1 preserves
+existing `query` and lifecycle callers; those native queries require schema1, while unified
+`retrieve` requires schema2. Rebuild explicitly for the intended interface. Incompatible,
+missing, wrong-pin or corrupt catalogues fail with actionable diagnostics. A failed build
+does not replace a valid pointer. Delete the disposable cache and rebuild for the same
+pin to reproduce identical answers; no accepted source/history is repaired or rewritten.
+
+Queries still audit canonical metadata, registration supersession, derived freshness and
+catalogue selectors. That work is population-wide in this bounded implementation, and
+native extra selector checks visit49 records. The index narrows exact geometry/results;
+it does not establish constant-cost lookup or avoid full validation on open. There is no
+production/global-scale claim, remote service, multiple-writer or power-loss guarantee.
+Tryfan DTM/unknown datum, Swiss LN02 DTM, independent EGM2008 DSM, classifications and
+dated features remain separate. See the [retrieval report](../../docs/research/atlas-local-retrieval.md)
+and [exactly one next unbegun task](retrieval-next-task.json).

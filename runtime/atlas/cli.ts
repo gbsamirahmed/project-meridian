@@ -1,6 +1,6 @@
 import { openAtlas } from './index.ts'
 import { diagnostic, requireAtlas } from './errors.ts'
-import type { Query, QueryAnswer, RuntimeConfig } from './types.ts'
+import type { Query, QueryAnswer, EvidenceQuery, EvidenceAnswer, RuntimeConfig } from './types.ts'
 import { createWorld, stageDerivation, inspectLifecycle, validateStage, publishStage, recoverWorld } from './lifecycle.ts'
 import type { Change } from './lifecycle.ts'
 import fs from 'node:fs'
@@ -11,21 +11,22 @@ import type { RegistrationRequest } from './registration.ts'
 async function main(): Promise<void> {
   const args = process.argv.slice(2), command = args.shift()
   if (!command || command === '--help') {
-    console.log('Atlas local runtime: validate | catalogue build/verify | query | derived | world init/recover | derive stage/inspect | stage validate/publish | evidence inspect/register/revise | update plan/validate/publish\nRequired: --data-root PATH --publication-root PATH --catalogue PATH --python PATH\nOptional: --generation SHA256 --json\nquery: --query JSON; derived: optional --query JSON\nworld init: --source-publication PATH; derive: optional --change JSON; stage/update validate/publish: --stage SHA256\nevidence inspect/register: --tryfan-root PATH --prepared-root PATH; register/revise/update plan: --request PATH\nCanonical writes require a separate owned runtime world. See runtime/atlas/README.md.')
+    console.log('Atlas local runtime: validate | catalogue build/verify | query | retrieve | derived | world init/recover | derive stage/inspect | stage validate/publish | evidence inspect/register/revise | update plan/validate/publish\nRequired: --data-root PATH --publication-root PATH --catalogue PATH --python PATH\nOptional: --generation SHA256 --json\nquery/retrieve: --query JSON; catalogue: optional --qualified; derived: optional --query JSON\nworld init: --source-publication PATH; derive: optional --change JSON; stage/update validate/publish: --stage SHA256\nevidence inspect/register: --tryfan-root PATH --prepared-root PATH; register/revise/update plan: --request PATH\nCanonical writes require a separate owned runtime world. See runtime/atlas/README.md.')
     return
   }
   const actions: Record<string, string[]> = { catalogue: ['build', 'verify'], world: ['init', 'recover'], derive: ['stage', 'inspect'], stage: ['validate', 'publish'], evidence: ['inspect', 'register', 'revise'], update: ['plan', 'validate', 'publish'] }
   const action = actions[command] ? args.shift() : undefined
-  requireAtlas(['validate', 'query', 'derived', ...Object.keys(actions)].includes(command) && (!actions[command] || actions[command].includes(action ?? '')), 'command-invalid', 'Unknown command/action; see --help.')
-  const flags: Record<string, string> = {}; let json = false
+  requireAtlas(['validate', 'query', 'retrieve', 'derived', ...Object.keys(actions)].includes(command) && (!actions[command] || actions[command].includes(action ?? '')), 'command-invalid', 'Unknown command/action; see --help.')
+  const flags: Record<string, string> = {}; let json = false, qualified = false
   while (args.length) {
     const key = args.shift()!
     if (key === '--json') { json = true; continue }
+    if (key === '--qualified') { requireAtlas(!qualified && command === 'catalogue', 'argument-invalid', '--qualified applies once to catalogue build/verify only.'); qualified = true; continue }
     requireAtlas(['--data-root', '--publication-root', '--catalogue', '--python', '--generation', '--query', '--change', '--source-publication', '--stage', '--request', '--tryfan-root', '--prepared-root'].includes(key) && !flags[key], 'argument-invalid', 'Unknown or duplicate flag; see --help.')
     const value = args.shift(); requireAtlas(value && !value.startsWith('--'), 'argument-invalid', 'Flag requires a value; see --help.'); flags[key] = value
   }
   for (const key of ['--data-root', '--publication-root', '--catalogue', '--python']) requireAtlas(flags[key], 'argument-invalid', 'Missing ' + key + '; use explicit public paths.')
-  requireAtlas(command === 'query' ? !!flags['--query'] : command === 'derived' || !flags['--query'], 'argument-invalid', '--query is required for query and optional for derived only.')
+  requireAtlas(['query', 'retrieve'].includes(command) ? !!flags['--query'] : command === 'derived' || !flags['--query'], 'argument-invalid', '--query is required for query/retrieve and optional for derived only.')
   const isStage = command === 'stage' || command === 'update' && action !== 'plan', needsRequest = command === 'evidence' && action !== 'inspect' || command === 'update' && action === 'plan'
   requireAtlas((command === 'world' && action === 'init') === !!flags['--source-publication'] && isStage === !!flags['--stage'] && (command === 'derive' || !flags['--change']) && needsRequest === !!flags['--request'], 'argument-invalid', 'Source, stage, request and change flags must match their commands.')
   requireAtlas((!!flags['--tryfan-root'] === !!flags['--prepared-root']) && (command === 'evidence' && action !== 'revise' || !flags['--tryfan-root']), 'argument-invalid', 'Both retained input roots apply only to evidence inspect/register.')
@@ -52,12 +53,12 @@ async function main(): Promise<void> {
   }
   const context = await openAtlas(config)
   try {
-    const result = command === 'validate' ? { generation: context.generation, members: context.members, validation: context.validation, native: context.nativeSetup } : command === 'derived' ? context.derived(query as never) : command === 'catalogue' ? action === 'build' ? await context.buildCatalogue() : await context.verifyCatalogue() : await context.query(query)
+    const result = command === 'validate' ? { generation: context.generation, members: context.members, validation: context.validation, native: context.nativeSetup } : command === 'retrieve' ? await context.retrieve(query as EvidenceQuery) : command === 'derived' ? context.derived(query as never) : command === 'catalogue' ? action === 'build' ? await context.buildCatalogue({ qualified }) : await context.verifyCatalogue({ qualified }) : await context.query(query)
     if (json) console.log(JSON.stringify(result))
     else {
       console.log('Pinned generation: ' + context.generation)
-      if (command === 'query') {
-        const answer = result as QueryAnswer
+      if (command === 'query' || command === 'retrieve') {
+        const answer = result as QueryAnswer | EvidenceAnswer
         console.log('Qualified results: ' + answer.results.length)
         for (const r of answer.results) console.log(r.region + ' ' + r.identity)
         console.log('Use --json to inspect native evidence, support, time, lineage and rights.')

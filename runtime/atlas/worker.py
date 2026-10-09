@@ -1,6 +1,7 @@
 """Native accepted predicates and disposable SQLite selectors, never publication writes."""
 from pathlib import Path
 import hashlib,json,math,os,sqlite3,sys,time
+from retrieval_query import Qualified
 R=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(R/'scripts/atlas/riffelhorn-retrieval'))
 import query as Q
@@ -41,6 +42,7 @@ def valid_query(q,families):
   else:need(set(t)=={'role','start','end'} and all(isinstance(t[k],int) and not isinstance(t[k],bool) and 1<=t[k]<=9999 for k in ['start','end']) and t['start']<=t['end'],'query-invalid','Only inclusive calendar-year qualification is supported in this adapter.')
 
 class Adapter:
+ def validate(self,q):valid_query(q,{r['family'] for r in self.records})
  def __init__(self,a):
   start=time.perf_counter();self.s=Q.Session(data=Path(a['dataRoot']),root=Path(a['preparedRoot']))
   expected=accepted.describe(self.s);actual=a['registration'];expected.pop('administrative');actual={k:v for k,v in actual.items() if k!='administrative'}
@@ -86,7 +88,7 @@ CREATE VIRTUAL TABLE bounds USING rtree(rowid,minx,maxx,miny,maxy);''')
   db=sqlite3.connect(p.resolve().as_uri()+'?mode=ro',uri=True)
   try:
    rows=list(db.execute('SELECT schemaVersion,generation,fingerprint FROM binding'))
-   need(rows==[(1,a['generation'],a['fingerprint'])],'catalogue-stale','Catalogue schema/generation/closure differs; rebuild explicitly.')
+   need(rows==[(2 if a.get('qualified') else 1,a['generation'],a['fingerprint'])],'catalogue-stale','Catalogue schema/generation/closure differs; rebuild explicitly.')
    need(db.execute('PRAGMA quick_check').fetchone()[0]=='ok','catalogue-integrity','Catalogue check failed; rebuild.')
    need(sorted(r[0] for r in db.execute('SELECT key FROM record'))==sorted(self.bykey),'catalogue-integrity','Catalogue incomplete; rebuild.')
    expected=[(i,r['key'],r['identity'],r['region'],r['feature'],r['family'],r['representation'],r['product']) for i,r in enumerate(self.records,1)]
@@ -140,13 +142,16 @@ CREATE VIRTUAL TABLE bounds USING rtree(rowid,minx,maxx,miny,maxy);''')
     support={'registryApplicability':self.tryfan['core'],'meaning':'Registered core eligibility for metadata inspection; full native source support remains in original records, not inferred equivalent.'};rights={'nativeMetadata':f['nativeMetadata'],'source':evidence['source'],'product':evidence['product']};provenance={'catalogueSelector':f['id'],'source':f['source'],'product':f['product'],'basis':cat['basis']}
    out.append({'identity':r['identity'],'region':r['region'],'evidence':evidence,'support':support,'temporal':r['temporal'],'provenance':provenance,'rights':rights})
   return {'results':out,'metrics':m,'gap':None if out else {'reason':'no-matching-retained-evidence','physicalAbsenceInferred':False}}
- def query(self,a):
+ def query(self,a,verified=False,allowed_keys=None):
   q=a['query'];valid_query(q,{r['family'] for r in self.records});start=time.perf_counter()
   if a.get('scan'):keys=list(self.bykey)
   else:
-   self.verify(a);db=sqlite3.connect(Path(a['file']).resolve().as_uri()+'?mode=ro',uri=True)
+   if not verified:self.verify(a)
+   db=sqlite3.connect(Path(a['file']).resolve().as_uri()+'?mode=ro',uri=True)
    try:
     clauses=[];params=[]
+    if allowed_keys is not None:
+     clauses.append('r.key IN ('+','.join('?' for _ in allowed_keys)+')');params.extend(allowed_keys)
     for k in ['region','identity','feature','representation','product']:
      if k in q:clauses.append('r.'+k+'=?');params.append(q[k])
     if 'families' in q:clauses.append('r.family IN ('+','.join('?' for _ in q['families'])+')');params.extend(q['families'])
@@ -164,7 +169,7 @@ CREATE VIRTUAL TABLE bounds USING rtree(rowid,minx,maxx,miny,maxy);''')
   return result
 
 def main():
- adapter=None
+ adapter=None;qualified=None
  for line in sys.stdin:
   req=json.loads(line)
   try:
@@ -174,8 +179,14 @@ def main():
    elif op=='initialize':adapter=Adapter(a);result=adapter.setup
    else:
     need(adapter is not None,'worker-unavailable','Initialize the pinned adapter first.')
-    if op=='build':result=adapter.build(a)
-    elif op=='verify':result=adapter.verify(a)
+    if op=='qualify':qualified=Qualified(adapter,a,need);result={'records':49+len(qualified.rows)}
+    elif op=='build':
+     result=adapter.build(a)
+     if a.get('qualified'):
+      need(qualified is not None,'query-invalid','Initialize qualified selectors.');result=qualified.build(a,result)
+    elif op=='verify':result=qualified.verify(a) if a.get('qualified') else adapter.verify(a)
+    elif op=='retrieve':
+     need(qualified is not None,'query-invalid','Initialize qualified selectors.');result=qualified.query(a)
     elif op=='query':result=adapter.query(a)
     elif op=='terrain':result=terrain.sample(adapter.s,a)
     else:raise Failure('query-invalid','Unsupported worker operation.')

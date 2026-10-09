@@ -10,6 +10,9 @@ import { validateDerived, readArtifact, probes } from './lifecycle-model.ts'
 import type { Policy, DerivedState } from './lifecycle-model.ts'
 import type { Json, Query, QueryAnswer, QualifiedResult, RuntimeConfig, DerivedQuery, DerivedAnswer } from './types.ts'
 import { validateRegistrations } from './registration-model.ts'
+import { retrievalView, evidenceAnswer } from './retrieval-model.ts'
+import type { EvidenceQuery, EvidenceAnswer } from './types.ts'
+export type { EvidenceQuery, EvidenceAnswer, EvidenceRecord, EvidenceRelationship } from './types.ts'
 export type { Query, QueryAnswer, RuntimeConfig, QualifiedResult, DerivationStage, DerivedQuery, DerivedAnswer } from './types.ts'
 export { AtlasError } from './errors.ts'
 export { createWorld, stageDerivation, inspectLifecycle, validateStage, publishStage, fullDerivationReference, recoverWorld } from './lifecycle.ts'
@@ -96,7 +99,7 @@ export class AtlasContext {
     requireAtlas(current.fingerprint === this.snapshot.fingerprint, 'canonical-integrity', 'Pinned canonical closure changed; reopen and fully validate authoritative evidence.')
     return current
   }
-  private catalogue(): ObjectJson {
+  private catalogue(qualified = false): ObjectJson {
     try {
       if (!this.epoch) {
         const pointer = readJson(path.join(this.config.catalogueRoot, 'current.json'))
@@ -104,10 +107,10 @@ export class AtlasContext {
         this.epoch = pointer.epoch
       }
       const folder = publicPath(path.join(this.config.catalogueRoot, 'epochs', this.epoch)), seal = readJson(publicPath(path.join(folder, 'seal.json')))
-      requireAtlas(seal.schema === 'atlas-local-catalogue-seal/v1' && seal.schemaVersion === 1 && seal.records === 49, 'catalogue-schema', 'Incompatible catalogue schema; rebuild explicitly.')
+      requireAtlas(seal.schema === 'atlas-local-catalogue-seal/v1' && seal.schemaVersion === (qualified ? 2 : 1) && seal.records === (qualified && this.snapshot.values.terrainDerived ? 81 : 49), 'catalogue-schema', 'Incompatible catalogue schema; rebuild for native queries or catalogue build --qualified for unified retrieval.')
       requireAtlas(seal.generation === this.generation && seal.fingerprint === this.snapshot.fingerprint, 'catalogue-stale', 'Catalogue belongs to another generation/closure; rebuild for the selected generation.')
       requireAtlas(typeof seal.sha256 === 'string' && /^[a-f0-9]{64}$/.test(seal.sha256), 'catalogue-invalid', 'Malformed catalogue seal; rebuild.')
-      return { file: publicPath(path.join(folder, 'index.sqlite')), sha256: seal.sha256, generation: this.generation, fingerprint: this.snapshot.fingerprint }
+      return { file: publicPath(path.join(folder, 'index.sqlite')), sha256: seal.sha256, generation: this.generation, fingerprint: this.snapshot.fingerprint, ...(qualified ? { qualified: true } : {}) }
     } catch (error) {
       if (error instanceof AtlasError) throw error
       throw new AtlasError('catalogue-missing', 'Catalogue or its seal is missing/malformed; run catalogue build for this exact generation.')
@@ -115,14 +118,16 @@ export class AtlasContext {
   }
   /** Build a new disposable epoch, replacing the catalogue pointer only after success.
    * failAt is a bounded fault-injection seam for tests; never a CLI option. */
-  async buildCatalogue(options: { failAt?: 'beforeInstall' | 'beforePointer' } = {}): Promise<ObjectJson> {
+  async buildCatalogue(options: { failAt?: 'beforeInstall' | 'beforePointer'; qualified?: boolean } = {}): Promise<ObjectJson> {
     const start = performance.now(); this.checkAuthority()
     const epoch = randomUUID(), staging = path.join(this.config.catalogueRoot, 'staging', epoch), destination = path.join(this.config.catalogueRoot, 'epochs', epoch)
     fs.mkdirSync(staging, { recursive: true }); fs.mkdirSync(path.dirname(destination), { recursive: true })
     const file = path.join(staging, 'index.sqlite')
-    const built = object(await this.worker.call('build', { file, generation: this.generation, fingerprint: this.snapshot.fingerprint }))
-    durableJson(path.join(staging, 'seal.json'), { schema: 'atlas-local-catalogue-seal/v1', schemaVersion: 1, generation: this.generation, fingerprint: this.snapshot.fingerprint, members: this.snapshot.members, records: built.records, sha256: built.sha256 })
-    await this.worker.call('verify', { file, sha256: built.sha256, generation: this.generation, fingerprint: this.snapshot.fingerprint })
+    if (options.qualified) await this.worker.call('qualify', retrievalView(this.checkAuthority(), this.config.publicationRoot).worker as unknown as Json)
+    const extra: ObjectJson = options.qualified ? { qualified: true } : {}
+    const built = object(await this.worker.call('build', { file, generation: this.generation, fingerprint: this.snapshot.fingerprint, ...extra }))
+    durableJson(path.join(staging, 'seal.json'), { schema: 'atlas-local-catalogue-seal/v1', schemaVersion: built.schemaVersion, generation: this.generation, fingerprint: this.snapshot.fingerprint, members: this.snapshot.members, records: built.records, sha256: built.sha256 })
+    await this.worker.call('verify', { file, sha256: built.sha256, generation: this.generation, fingerprint: this.snapshot.fingerprint, ...extra })
     this.checkAuthority()
     requireAtlas(options.failAt !== 'beforeInstall', 'build-interrupted', 'Simulated interruption before completed catalogue installation.')
     fs.renameSync(staging, destination)
@@ -133,9 +138,10 @@ export class AtlasContext {
     this.epoch = epoch
     return { ...built, generation: this.generation, milliseconds: performance.now() - start, epoch }
   }
-  async verifyCatalogue(): Promise<ObjectJson> {
+  async verifyCatalogue(options: { qualified?: boolean } = {}): Promise<ObjectJson> {
     this.checkAuthority()
-    return object(await this.worker.call('verify', this.catalogue()))
+    if (options.qualified) await this.worker.call('qualify', retrievalView(this.checkAuthority(), this.config.publicationRoot).worker as unknown as Json)
+    return object(await this.worker.call('verify', this.catalogue(options.qualified)))
   }
   private async run(query: Query, scan: boolean): Promise<QueryAnswer> {
     const current = this.checkAuthority()
@@ -148,6 +154,16 @@ export class AtlasContext {
   query(query: Query): Promise<QueryAnswer> { return this.run(query, false) }
   /** Diagnostic full-scan reference, never an automatic catalogue fallback. */
   scanReference(query: Query): Promise<QueryAnswer> { return this.run(query, true) }
+  private async qualified(query: EvidenceQuery, scan: boolean): Promise<EvidenceAnswer> {
+    const current = this.checkAuthority(), view = retrievalView(current, this.config.publicationRoot)
+    await this.worker.call('qualify', view.worker as unknown as Json)
+    const selected = object(await this.worker.call('retrieve', { ...(scan ? { scan: true } : this.catalogue(true)), query: query as unknown as Json }))
+    return evidenceAnswer(current, view, selected, query?.relatedTo)
+  }
+  /** Unified source/derived retrieval; exact canonical qualifications follow index selection. */
+  retrieve(query: EvidenceQuery = {}): Promise<EvidenceAnswer> { return this.qualified(query, false) }
+  /** Diagnostic authoritative full scan, never a fallback from a broken catalogue. */
+  scanEvidence(query: EvidenceQuery = {}): Promise<EvidenceAnswer> { return this.qualified(query, true) }
   /** Narrow processing contract on fully verified native inputs; no hidden data roots. */
   async terrainSamples(tasks: { id: string; stride: number }[]): Promise<ObjectJson> {
     this.checkAuthority()

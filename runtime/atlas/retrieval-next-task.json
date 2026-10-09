@@ -1,0 +1,39 @@
+{
+  "title": "Atlas local runtime retained Exe water-evidence registration and qualified retrieval integration",
+  "status": "NOT BEGUN",
+  "uncertainty": "Can the maintainable local registration/publication/retrieval workflow accommodate a third disconnected region with native reference, event and monthly observation evidence, without forcing it into two-region terrain or calendar-year semantics?",
+  "why": "Unified retrieval is adequate for the present49 source selectors/32 scalar products. Its real limitation is finite two-region adapters and year-qualified source evidence. Existing accepted Exe water/temporal proofs already establish qualified native geometry, monthly detection/non-detection/no-observation and dated event/reference distinctions using retained offline bytes. Moving that supported population into the runtime adds genuine geography, physical evidence and temporal capability rather than another index optimisation.",
+  "prerequisites": [
+    "this unified runtime retrieval workflow and accepted source/derivation/publication contracts",
+    "unchanged retained Exe31 source/document receipts,66 files and accepted water/temporal proofs",
+    "source-specific local-research rights and qualifications rechecked against retained records before registration",
+    "explicit bounded support EPSG:27700[295000,86000,298500,89000], with P1[296600,86550,296800,86750]; no new acquisition"
+  ],
+  "supportingEvidence": [
+    "docs/research/atlas-local-retrieval.md",
+    "docs/research/atlas-regional-expansion.md",
+    "docs/atlas/water-feature-state-check.md",
+    "docs/atlas/water-check-sources.json",
+    "docs/research/exe-water-query-proof.md",
+    "docs/research/atlas-temporal-integration.md"
+  ],
+  "permittedScope": [
+    "use accepted native readers and evidence contracts through a narrow runtime adapter for WFDGB510804505600,RFO31383/group4124 and March/September2024 P1 point/support evidence",
+    "register actual retained reference/event/monthly source/prepared identities, native support, provenance, rights and honest unknowns through library/CLI",
+    "extend coherent component membership and generation-pinned qualified retrieval only as needed for this third region and month/event/reference predicates",
+    "demonstrate old/new histories, current-region isolation, catalogue rebuild and failure/restart recovery",
+    "retain existing accepted methods; any native-code counts are accepted summaries with exact support, not new physical inference"
+  ],
+  "deliverable": "One documented maintainable runtime workflow that registers and retrieves the bounded retained Exe water population alongside unchanged Tryfan/Riffelhorn, with source-qualified time/geometry and coherent historical publication.",
+  "acceptance": [
+    "source identities/current bytes/support/rights agree with accepted native receipts; no fabricated observation or acquired dataset",
+    "reference, flood-event footprint and monthly detection meanings remain distinct; no-observation/non-detection/absent evidence/physical absence remain distinct",
+    "indexed qualified results agree with independent retained native/full-scan oracles including actual March0/0/77 and September76/1/0 P1 counts where selected",
+    "existing Tryfan/Riffelhorn source and derived identities/qualifications remain unchanged across regional registration",
+    "staged/invalid/incomplete evidence remains unpublished; pinned old/new generations and fresh replay/rebuild are coherent",
+    "library/CLI workflow, actual cost/storage and finite coverage limitations documented",
+    "accepted evidence/contracts/statuses/production protections and relevant tests/types/lint/build pass"
+  ],
+  "exclusions": ["new datasets or physical observations","source fusion/physical-change inference","general ingestion/temporal database","new scientific methods","validation/receipt/index optimisation","production Atlas/Weather/Traverse/S7/private/cloud/public service"],
+  "stop": "Stop after this bounded third-region native-evidence workflow is implemented, verified, documented, committed/pushed or a precise blocker established. Do not broaden Exe, acquire products or begin a subsequent task."
+}

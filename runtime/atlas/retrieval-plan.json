@@ -1,0 +1,61 @@
+{
+  "schema": "atlas-runtime-retrieval-plan/v1",
+  "frozenBeforeImplementation": true,
+  "startingCheckpoint": "dc4b4b45e45029a42bf206bef5c3bde0c5e38f9d",
+  "uncertainty": "One qualified pinned SQLite retrieval workflow for actual native and derived evidence, exact lineage, regional knowledge revision and historical semantics without duplicate authority.",
+  "publication": {
+    "root": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-registration-measured-puKirx\\world-0",
+    "history": [
+      "beffc7a2761fd19a1ca1d2cbe99e20ba45cb1ca4232b16b04b526445e052032b",
+      "e056353e9d38fc6940e9bd5d8bb476233f6a549c105121d358d44d83b2948231",
+      "65989736a06f72182fba9d9ad9d47955869f51ce943ef120effcad2df91352fd",
+      "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289",
+      "22ff4e063d031c5ccf47c1570eb1bdafaf155f148539655b35901d0f99b4883c"
+    ],
+    "nativeRecords": 49,
+    "derivedRecords": 32,
+    "regions": [
+      "tryfan",
+      "riffelhorn"
+    ],
+    "realInputs": "Unchanged accepted Tryfan canonical reference and prepared Riffelhorn357b28;32 accepted Horn/ratio quantities,16 actual stencils; no invented observations."
+  },
+  "api": "AtlasContext.retrieve / scanEvidence and CLI retrieve; existing native query and derived APIs remain compatibility. buildCatalogue({qualified:true}) / catalogue build --qualified uses schema2 extension of same native catalogue/worker; no second engine.",
+  "predicates": [
+    "exact stable evidence identity and exact source-preparation/derived content revision",
+    "source/derived class, region, family, representation/product; native feature where present",
+    "existing native point/area/CRS predicates; derived default exact location point or area half-open anchor inclusion",
+    "derived-only spatialSupport consumed selects actual native cell footprints, not coarse bounds or homogeneous patch; native geometry unchanged",
+    "native physical/product calendar year inclusive or explicit unknown; derived physical/product unknown, no invented dates",
+    "knowledge active regional registration revision or closed UTC-millisecond acceptance interval or unknown; no historical generation switch",
+    "direct/transitive evidence dependencies, source->slope via explicit qualified-use identity and slope->ratio; via represents two underlying source/use edges, not new inferred science"
+  ],
+  "relationships": "32 evidence-adjacency edges,16 source/slope with explicit qualified-use provenance and16 slope/ratio;52 canonical dependency nodes/48 underlying edges. Unknown relationship seed rejected; no property/location based fusion.",
+  "result": "Stable evidence DTO, canonical/accepted-envelope documents deduplicated by content fingerprint within answer, shared regional registration and knowledge references; method/parameters/execution/dependencies/support/rights/unknowns retained. Fingerprints of documents are response references, not invented physical observation IDs.",
+  "authority": "Full open and canonical/derived/registration rechecks; SQLite schema2 native49 plus separate32 derived selectors, knowledge selectors and exact dependency rows only. Safe epoch/seal/root pin unchanged; legacy schema1/49 remains for accepted callers.",
+  "oracle": "Diagnostic full scan without catalogue plus independent literal identities, cell-footprint/anchor selection, source/slope/ratio reachability, year/knowledge expectations and accepted native envelopes/scalar receipts. Indexed/full compare complete response excluding counters; no count-only success.",
+  "cases": [
+    "all source/derived/mixed, family/representation, identity/revision, feature/no-result",
+    "anchor and consumed support including boundaries and stride gaps in labelled structural test if needed",
+    "physical known/unknown, knowledge revision/interval/unknown and combined",
+    "source dependents/slope inputs/ratio transitive ancestors, current and old content revisions",
+    "catalogue delete/corrupt/wrong schema/wrong pin/incomplete build; canonical tamper/missing/invalid dependency/stage invisible/interrupted publication inherited and fresh restart"
+  ],
+  "measurements": "Three repeats across five actual retained generations, structural counts/candidates/predicates/metadata/hash/relationship rows, median spread/build/query/full scan/replay/RSS/SQLite bytes. External disposable caches only; estimate under5MB plus small receipts.",
+  "acceptance": [
+    "exact qualified answer identities/docs/relationships agree with scan and independent expectations",
+    "native predicates and frozen scientific semantics unchanged",
+    "derived anchor distinct from consumed support and source feature IDs",
+    "unknown times do not match arbitrary intervals; knowledge distinct from physical time/publication",
+    "active knowledge and requalified/unchanged content revision comparisons preserve history",
+    "root/generation/catalogue failures explicit, no repair/fallback or unpublished visibility",
+    "all accepted evidence/contracts/42 statuses/113 protected hashes unchanged; relevant tests/types/lint/build pass"
+  ],
+  "exclusions": [
+    "new observations/datasets/methods/source fusion",
+    "generic query engine/arbitrary SQL/geospatial algebra/event platform",
+    "publication/validation/receipt optimization",
+    "production Atlas/Weather/Traverse/S7/private/cloud"
+  ],
+  "stop": "Implement and document one usable unified retrieval workflow, measure/verify, select one unbegun next task, commit/push/clean; do not begin next."
+}
