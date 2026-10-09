@@ -1,0 +1,65 @@
+{
+  "schema": "atlas-runtime-registration-plan/v1",
+  "frozenBeforeImplementation": true,
+  "startingCheckpoint": "0a2c7177ece0e7092214ca6e1a81ee25e2c92c36",
+  "uncertainty": "Can retained source/preparation evidence be registered without a research multi-region store, revised with accountable knowledge identity and served/published with exact scoped dependency effects?",
+  "population": {
+    "tryfanGeneration": "5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06",
+    "preparedRevision": "357b28e705f7c2647cdf2d54467fc9ee851465814d8ed645cae30713ef9187bb",
+    "riffelhornInputs": 12,
+    "preparedArtifacts": 6,
+    "records": 44,
+    "tryfanFamilies": 5,
+    "derivedOutputs": 32
+  },
+  "operations": [
+    "inspect verified native registration/template",
+    "initial registration from unchanged Tryfan canonical reference and prepared Riffelhorn manifests; no copied research world",
+    "repeat exact registration is no-op",
+    "knowledge-only revision, no numerical dependency effect",
+    "controlled source-scoped qualification correction; requalify exactly8 scalar outputs using verified immutable samples; no invented physical observation",
+    "unrelated Tryfan knowledge revision; no Swiss effect",
+    "unsupported new observation/source product/method revisions rejected"
+  ],
+  "identities": "Separate native source/product, original artifact, preparation, regional registration claim, immutable knowledge revision, derived content, component and publication IDs. Registration ledger is canonical; SQLite remains disposable. Existing7/9-component readers preserved; additive8/10 registration context.",
+  "qualifications": "Exact verified native describe envelope; EPSG2056 Swiss and EPSG27700 Welsh support separate; LN02 not reconciled; unknown physical time/source dates remain as retained; rights/uncertainty/source references unchanged. Knowledge acceptance clock recorded by runtime, not assigned to physical observations.",
+  "request": "Versioned explicit-root file request, exact expected publication/revision for changes; verified native registration envelope required; labelled knowledge events and optional bounded exact DTM-source notice only. No scientific field overrides.",
+  "dependencies": "Source notice projects through exact consumed cell footprints, source-use->slope->ratio; requalification changes content/qualification but reuses numeric inputs/values. Independent native resampling/full recomputation validates all current outputs. Informational knowledge note/unrelated update0, source-local8/reuse24, no-op0.",
+  "publication": "New separate owned world created via staged canonical assembly plus validation before atomic installation; existing world stage is invisible until full validation and root-last commit. Exact predecessor and revision guards. Immutable registration revision chain, historical component membership/pins, fresh-process replay.",
+  "oracle": "Accepted native registration descriptor/hashes, source preparation verification, full-scan result identities/qualifications, independent probe-centre closure enumeration, NumPy and accepted numerical receipts, full recomputation canonical identity.",
+  "cases": [
+    "initial",
+    "repeat/no-op",
+    "knowledge-only",
+    "source-scoped qualification",
+    "unrelated-region",
+    "missing/tampered input/fingerprint/provenance/rights/CRS/time",
+    "stale expected revision",
+    "unsupported observation/method/fusion",
+    "cycle/missing registration history",
+    "incomplete derived/component closure",
+    "actual interrupted staging/publication",
+    "catalogue deletion/corruption/restart"
+  ],
+  "metrics": "Three repeated isolated runtime sequences; artifact/metadata bytes/hashes, knowledge revisions, closure/requalified/recomputed/reused, changed components, timings/spread/RSS observations, generated storage and fresh-process replay. Setup/full verification distinct from query/processing; no global SLA.",
+  "storageEstimate": "Canonical JSON and two existing portrayal assets under15MB per world, three sequences plus isolated tests well under500MB; no new data/raster processing.",
+  "acceptance": [
+    "native identities/qualifications identical to retained oracle",
+    "initial world without copied research publication or invoked research harness",
+    "no-op no writes/root change",
+    "knowledge-only and other region reuse all32 outputs",
+    "source qualification exact8 requalified/reuse24 and full output identity agreement",
+    "old/new pinned registration/dependency states reproduce fresh",
+    "invalid/incomplete/interrupted state unpublished and catalogue disposable",
+    "accepted evidence/contracts/42 statuses/113 production hashes and regressions unchanged"
+  ],
+  "exclusions": [
+    "new datasets or observations",
+    "source product replacement not supported by retained evidence",
+    "generic ingestion or workflow engine",
+    "frozen contract changes",
+    "production Atlas/Weather/Traverse/S7/private/cloud",
+    "receipt/validation optimization"
+  ],
+  "stop": "Document one reusable runtime registration/update workflow, tests/measurements/protections, exactly one unbegun next task, commit/push/clean. No next-task implementation."
+}

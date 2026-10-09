@@ -61,6 +61,21 @@ export function affected(root: string, policy: Policy, state?: DerivedState, met
   }
   return stale.sort()
 }
+function qualificationFor(policy: Policy, uses: ObjectJson[]) {
+  return { sources: uses.map(u => policy.sources[String(u.key)]), notes: uses.flatMap(u => projection(policy, u).notes as Json[]), physicalTime: { kind: 'unknown', reason: 'Stencil observation epoch unknown; product edition is not observation.' }, knowledge: 'Administrative qualification revisions are not physical changes.', rights: uses.map(u => policy.sources[String(u.key)].rights), vertical: 'LN02 / EPSG:5728, source documented; no vertical transformation', uncertainty: 'Native represented DTM, not a guarantee of physical accuracy; no source fusion.' }
+}
+/** Metadata-only qualification revision: never invoke a scientific method or read new cells. */
+export function requalifyOutputs(policy: Policy, pairs: { slope: ObjectJson; ratio: ObjectJson }[]): Record<string, ObjectJson> {
+  validatePolicy(policy); const made: Record<string, ObjectJson> = {}
+  for (const { slope, ratio } of pairs) {
+    const sampling = object(slope.sampling), uses = sampling.uses as ObjectJson[]
+    requireAtlas(slope.methodRevision === METHOD && ratio.methodRevision === METHOD && object(slope.parameters).stride === (policy.parameters[String(slope.task)] ?? 1), 'requalification-invalid', 'Changed methods/parameters require numerical recomputation, not requalification.')
+    const next = { ...slope, qualification: qualificationFor(policy, uses), inputs: uses.map(u => ({ kind: 'qualified-input-use', identity: digest({ ...u, qualification: projection(policy, u) }) })) }
+    made[String(slope.id)] = next as unknown as ObjectJson
+    made[String(ratio.id)] = { ...ratio, qualification: next.qualification, inputs: [{ kind: 'derived', identity: digest(next) }] } as unknown as ObjectJson
+  }
+  return made
+}
 export async function outputs(policy: Policy, rows: TerrainRow[]): Promise<Record<string, ObjectJson>> {
   validatePolicy(policy); const accepted = await methods(), artifacts: Record<string, ObjectJson> = {}
   for (const row of rows) {
@@ -68,7 +83,7 @@ export async function outputs(policy: Policy, rows: TerrainRow[]): Promise<Recor
     const slope = accepted.horn(row.samples, row.spacing), ratio = accepted.ratio(slope)
     requireAtlas(Number.isFinite(slope) && Number.isFinite(ratio) && Math.abs(slope - row.oracle.slope) <= 1e-10 && Math.abs(ratio - row.oracle['area-ratio']) <= 1e-12, 'oracle-disagreement', 'Frozen method disagrees with independent native arithmetic; output remains unpublished.')
     const qualifiedUses = row.uses.map(u => ({ ...u, qualification: projection(policy, u) }))
-    const qualification = { sources: row.uses.map(u => policy.sources[String(u.key)]), notes: qualifiedUses.flatMap(u => u.qualification.notes as Json[]), physicalTime: { kind: 'unknown', reason: 'Stencil observation epoch unknown; product edition is not observation.' }, knowledge: 'Administrative qualification revisions are not physical changes.', rights: row.uses.map(u => policy.sources[String(u.key)].rights), vertical: 'LN02 / EPSG:5728, source documented; no vertical transformation', uncertainty: 'Native represented DTM, not a guarantee of physical accuracy; no source fusion.' }
+    const qualification = qualificationFor(policy, row.uses)
     const sampling = { id: row.id, point: row.point, stride: row.stride, spacing: row.spacing, samples: row.samples, uses: row.uses }
     const common = { schema: 'atlas-runtime-derived-artifact/v1', region: 'riffelhorn', task: row.id, methodRevision: METHOD, parameters: { stride: row.stride, spacingM: row.spacing, sampling: 'exact native cell centres; stride2 is declared subsampling' }, support: { crs: 'EPSG:2056', point: row.point, meaning: 'Local derivative, not a homogeneous patch', consumed: row.uses.map(u => u.scope) }, qualification }
     const a = { ...common, id: key(row.id, 'slope'), property: 'slope', method: 'Horn-3x3-grid-slope', value: slope, unit: 'degree', inputs: qualifiedUses.map(u => ({ kind: 'qualified-input-use', identity: digest(u) })), sampling, meaning: 'Local represented-heightfield slope; not accuracy, traversability or independent observation.' }
@@ -95,9 +110,15 @@ export function validateDerived(root: string, policy: Policy, state: DerivedStat
     if (!runs.has(runId)) runs.set(runId, readArtifact(root, runId, metrics, 'executions'))
     const run = runs.get(runId)!, worker = object(run.worker), coordinator = object(run.coordinator)
     const tasks = run.tasks as ObjectJson[]
-    requireAtlas(Object.keys(run).sort().join(',') === 'coordinator,methodRevision,outputs,schema,tasks,worker' && Array.isArray(tasks) && tasks.length > 0 && tasks.length <= 16 && new Set(tasks.map(t => t.id)).size === tasks.length && tasks.every(t => Object.keys(t).sort().join(',') === 'id,stride' && probes.some(p => p.id === t.id) && [1, 2].includes(Number(t.stride))) && encode(Object.keys(object(run.outputs)).sort()) === encode(tasks.flatMap(t => [key(String(t.id), 'slope'), key(String(t.id), 'area-ratio')]).sort()), 'execution-invalid', 'Incomplete or malformed execution task/output provenance.')
+    const requalified = run.schema === 'atlas-runtime-terrain-requalification/v1'
+    requireAtlas(Object.keys(run).sort().join(',') === (requalified ? 'coordinator,methodRevision,outputs,reusedInputs,schema,tasks,worker' : 'coordinator,methodRevision,outputs,schema,tasks,worker') && Array.isArray(tasks) && tasks.length > 0 && tasks.length <= 16 && new Set(tasks.map(t => t.id)).size === tasks.length && tasks.every(t => Object.keys(t).sort().join(',') === 'id,stride' && probes.some(p => p.id === t.id) && [1, 2].includes(Number(t.stride))) && encode(Object.keys(object(run.outputs)).sort()) === encode(tasks.flatMap(t => [key(String(t.id), 'slope'), key(String(t.id), 'area-ratio')]).sort()), 'execution-invalid', 'Incomplete or malformed execution task/output provenance.')
     requireAtlas(tasks.some(t => t.id === artifacts.get(id)!.task && t.stride === object(artifacts.get(id)!.parameters).stride), 'execution-invalid', 'Recorded execution parameters differ from the actual result.')
-    requireAtlas(run.schema === 'atlas-runtime-terrain-execution/v1' && run.methodRevision === METHOD && object(run.outputs)[id] === state.active[id] && coordinator.methodSourceSha256 === plan.method.sha256 && typeof coordinator.node === 'string' && ['python', 'numpy', 'rasterio', 'pyproj'].every(k => typeof worker[k] === 'string' && String(worker[k]).length > 0), 'execution-invalid', 'Missing or mismatched immutable processing provenance.')
+    requireAtlas((requalified || run.schema === 'atlas-runtime-terrain-execution/v1') && run.methodRevision === METHOD && object(run.outputs)[id] === state.active[id] && coordinator.methodSourceSha256 === plan.method.sha256 && typeof coordinator.node === 'string' && ['python', 'numpy', 'rasterio', 'pyproj'].every(k => typeof worker[k] === 'string' && String(worker[k]).length > 0), 'execution-invalid', 'Missing or mismatched immutable processing provenance.')
+    if (requalified) {
+      requireAtlas(encode(Object.keys(object(run.reusedInputs)).sort()) === encode(Object.keys(object(run.outputs)).sort()), 'execution-invalid', 'Requalification must identify every reused numerical input.')
+      const previous = readArtifact(root, String(object(run.reusedInputs)[id]), metrics), next = artifacts.get(id)!
+      requireAtlas(['id', 'value', 'property', 'method', 'methodRevision', 'parameters', 'sampling', 'support'].every(k => encode(previous[k]) === encode(next[k])), 'execution-invalid', 'Requalification cannot silently change numerical values, samples, method, parameters or support.')
+    }
     address(worker.samplingWorkerSha256)
     requireAtlas(worker.oracleSha256 === '9a2c914c272b8f010ee92293bd82fd056af922da9c74966d2eb2d6f4462f6bbb', 'execution-invalid', 'Unknown independent oracle identity.')
   }

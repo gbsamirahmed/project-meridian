@@ -11,6 +11,7 @@ export type ObjectJson = { [key: string]: Json }
 const HEX = /^[a-f0-9]{64}$/
 export const KINDS = ['catalogue', 'knowledge', 'locators', 'riffelhornRegistration', 'serving', 'tryfanRegistration', 'understanding']
 export const LIFECYCLE_KINDS = [...KINDS, 'terrainLifecycle', 'terrainDerived'].sort()
+export const REGISTRATION_KINDS = [KINDS, LIFECYCLE_KINDS].map(k => [...k, 'registrationLedger'].sort().join(','))
 export function object(v: unknown): ObjectJson {
   requireAtlas(v && typeof v === 'object' && !Array.isArray(v), 'canonical-malformed', 'Expected structured canonical metadata.')
   return v as ObjectJson
@@ -71,7 +72,7 @@ export function resolveAuthoritative(config: RuntimeConfig, generation?: string,
   const publication = readObject('publications', selected), members = object(publication.members)
   requireAtlas(publication.schema === 'atlas-component-publication/v1' && Object.keys(publication).sort().join(',') === 'header,legacyGeneration,members,ordinal,predecessor,schema', 'publication-format', 'Unsupported publication format; use a complete accepted or runtime lifecycle world.')
   const kinds = Object.keys(members).sort()
-  requireAtlas(Number.isSafeInteger(publication.ordinal) && Number(publication.ordinal) > 0 && [KINDS.join(','), LIFECYCLE_KINDS.join(',')].includes(kinds.join(',')), 'closure-invalid', 'Complete accepted seven- or runtime nine-component membership required.')
+  requireAtlas(Number.isSafeInteger(publication.ordinal) && Number(publication.ordinal) > 0 && [KINDS.join(','), LIFECYCLE_KINDS.join(','), ...REGISTRATION_KINDS].includes(kinds.join(',')), 'closure-invalid', 'Complete accepted or runtime registration/lifecycle membership required.')
   address(publication.legacyGeneration)
   if (publication.predecessor !== null) address(publication.predecessor)
   const values: Record<string, ObjectJson> = {}, refs: Record<string, string> = {}
@@ -85,7 +86,7 @@ export function resolveAuthoritative(config: RuntimeConfig, generation?: string,
   const science = Object.fromEntries(Object.entries(values).filter(([kind]) => KINDS.includes(kind) && !['locators', 'tryfanRegistration', 'riffelhornRegistration'].includes(kind)))
   const native = object(canonicalGeneration({ ...object(publication.header), ...science }))
   requireAtlas(sha(encode(native)) === '5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06', 'registration-invalid', 'This adapter requires the unchanged accepted Tryfan scientific state.')
-  const reconstructed = { ...native, tryfanRegistration, riffelhornRegistration, ...(values.terrainLifecycle ? { terrainLifecycle: values.terrainLifecycle, terrainDerived: values.terrainDerived } : {}) }
+  const reconstructed = { ...native, tryfanRegistration, riffelhornRegistration, ...(values.terrainLifecycle ? { terrainLifecycle: values.terrainLifecycle, terrainDerived: values.terrainDerived } : {}), ...(values.registrationLedger ? { registrationLedger: values.registrationLedger } : {}) }
   requireAtlas(sha(encode(reconstructed)) === publication.legacyGeneration, 'closure-invalid', 'Exact publication closure reconstruction differs.')
   const expectedTry = { schema: 'atlas-regional-evidence-registration/v1', region: 'tryfan', acceptedGeneration: sha(encode(native)), support: { crs: object(native.core).crs, bounds: object(native.core).bounds }, catalogueIdentity: sha(encode(native.catalogue)), knowledgeIdentity: sha(encode(native.knowledge)), understandingIdentity: sha(encode(native.understanding)), nativeFamilies: (object(native.catalogue).families as ObjectJson[]).map(f => f.id), administrative: tryfanRegistration.administrative }
   requireAtlas(encode(expectedTry) === encode(tryfanRegistration), 'registration-invalid', 'Tryfan registration/source identity differs.')

@@ -9,10 +9,13 @@ import { NativeWorker } from './worker.ts'
 import { validateDerived, readArtifact, probes } from './lifecycle-model.ts'
 import type { Policy, DerivedState } from './lifecycle-model.ts'
 import type { Json, Query, QueryAnswer, QualifiedResult, RuntimeConfig, DerivedQuery, DerivedAnswer } from './types.ts'
+import { validateRegistrations } from './registration-model.ts'
 export type { Query, QueryAnswer, RuntimeConfig, QualifiedResult, DerivationStage, DerivedQuery, DerivedAnswer } from './types.ts'
 export { AtlasError } from './errors.ts'
 export { createWorld, stageDerivation, inspectLifecycle, validateStage, publishStage, fullDerivationReference, recoverWorld } from './lifecycle.ts'
 export type { Change, Notice } from './lifecycle.ts'
+export { inspectEvidence, registerEvidence, planEvidenceUpdate, stageEvidenceUpdate } from './registration.ts'
+export type { RegistrationInputs, RegistrationRequest } from './registration.ts'
 
 const EPOCH = /^[a-f0-9-]{36}$/
 function resolvedLocation(p: string): string {
@@ -68,6 +71,10 @@ export class AtlasContext {
       snapshot.metrics.metadataBytes += Number(setup.nativeMetadataBytesParsed)
       snapshot.metrics.milliseconds = performance.now() - start
       snapshot.metrics.parentRssBytes = process.memoryUsage().rss
+      const registrationMetrics = { records: 0, bytes: 0 }
+      validateRegistrations(snapshot, config.publicationRoot, registrationMetrics)
+      snapshot.metrics.metadataRecords += registrationMetrics.records
+      snapshot.metrics.metadataBytes += registrationMetrics.bytes
       if (snapshot.values.terrainLifecycle) {
         const artifactMetrics = { records: 0, bytes: 0 }
         validateDerived(config.publicationRoot, snapshot.values.terrainLifecycle as unknown as Policy, snapshot.values.terrainDerived as unknown as DerivedState, artifactMetrics)
@@ -80,6 +87,7 @@ export class AtlasContext {
         snapshot.metrics.metadataBytes += artifactMetrics.bytes
         snapshot.metrics.milliseconds = performance.now() - start
       }
+      snapshot.metrics.milliseconds = performance.now() - start
       return new AtlasContext(config, snapshot, worker, setup)
     } catch (error) { await worker.close(); throw error }
   }
@@ -132,7 +140,9 @@ export class AtlasContext {
   private async run(query: Query, scan: boolean): Promise<QueryAnswer> {
     const current = this.checkAuthority()
     const answer = object(await this.worker.call('query', { ...(scan ? { scan: true } : this.catalogue()), query: query as Json }))
-    const results = (answer.results as ObjectJson[]).map(r => ({ ...r, componentIdentity: this.members[r.region === 'tryfan' ? 'tryfanRegistration' : 'riffelhornRegistration'] })) as unknown as QualifiedResult[]
+    const registrationMetrics = { records: 0, bytes: 0 }, registrations = validateRegistrations(current, this.config.publicationRoot, registrationMetrics)
+    const results = (answer.results as ObjectJson[]).map(r => ({ ...r, componentIdentity: this.members[r.region === 'tryfan' ? 'tryfanRegistration' : 'riffelhornRegistration'], ...(registrations[String(r.region)] ? { registration: registrations[String(r.region)] } : {}) })) as unknown as QualifiedResult[]
+    current.metrics.metadataRecords += registrationMetrics.records; current.metrics.metadataBytes += registrationMetrics.bytes
     return { schema: 'atlas-local-query/v1', generation: this.generation, members: { ...this.members }, results, gap: answer.gap, metrics: { ...(answer.metrics as Record<string, number>), canonicalMetadataReads: current.metrics.metadataRecords, canonicalMetadataBytes: current.metrics.metadataBytes } }
   }
   query(query: Query): Promise<QueryAnswer> { return this.run(query, false) }
@@ -149,7 +159,9 @@ export class AtlasContext {
   derived(query: DerivedQuery = {}): DerivedAnswer {
     const current = this.checkAuthority()
     requireAtlas(query && typeof query === 'object' && !Array.isArray(query) && Object.keys(query).every(k => ['identity', 'property'].includes(k)) && (query.property === undefined || ['slope', 'area-ratio'].includes(query.property)) && (query.identity === undefined || typeof query.identity === 'string' && query.identity.length > 0), 'query-invalid', 'Only nonempty exact derived identity/property predicates are supported.')
-    const regionalRegistration = { componentIdentity: this.members.riffelhornRegistration, evidence: current.values.riffelhornRegistration }
+    const registrationMetrics = { records: 0, bytes: 0 }
+    const regionalRegistration = { componentIdentity: this.members.riffelhornRegistration, evidence: current.values.riffelhornRegistration, knowledgeRegistration: validateRegistrations(current, this.config.publicationRoot, registrationMetrics).riffelhorn ?? null }
+    current.metrics.metadataRecords += registrationMetrics.records; current.metrics.metadataBytes += registrationMetrics.bytes
     if (!current.values.terrainDerived) return { generation: this.generation, regionalRegistration, results: [], status: 'no-runtime-derived-state' }
     const artifactMetrics = { records: 0, bytes: 0 }
     validateDerived(this.config.publicationRoot, current.values.terrainLifecycle as unknown as Policy, current.values.terrainDerived as unknown as DerivedState, artifactMetrics)

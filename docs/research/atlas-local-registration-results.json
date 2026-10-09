@@ -1,0 +1,2845 @@
+{
+  "schema": "atlas-runtime-registration-results/v1",
+  "startingCheckpoint": "0a2c7177ece0e7092214ca6e1a81ee25e2c92c36",
+  "planSha256": "7e02a70f7b13415a1b6338d9a9a861aaed263b4ad17dc9f68d7d51b7a762da68",
+  "agreement": true,
+  "scopedFullComparisons": 9,
+  "queryComparisons": 6,
+  "environment": {
+    "node": "v24.11.0",
+    "platform": "win32",
+    "hardware": {
+      "processor": "12th Gen Intel(R) Core(TM) i7-12700H",
+      "logicalProcessors": 20,
+      "totalMemoryBytes": 16830959616
+    },
+    "outputRoot": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-registration-measured-puKirx",
+    "timing": "Three sequential isolated worlds, session-owned fresh Python opens; accepted Node method loader warm after first use. Full native validation retained. RSS observations not combined peak. Knowledge acceptance timestamps intentionally differ; native identities/results compare independently."
+  },
+  "summary": {
+    "inspectionMs": {
+      "median": 2266.6449999999895,
+      "min": 2222.1147999999957,
+      "max": 2300.5485
+    },
+    "registrationMs": {
+      "median": 4819.5923999999995,
+      "min": 4755.342399999994,
+      "max": 4869.746899999998
+    },
+    "openMs": {
+      "median": 2322.378399999987,
+      "min": 2316.6136000000115,
+      "max": 2358.614200000011
+    },
+    "buildMs": {
+      "median": 234.86599999999453,
+      "min": 211.74549999999,
+      "max": 259.17759999999544
+    },
+    "rebuildMs": {
+      "median": 227.09339999999793,
+      "min": 224.38120000000345,
+      "max": 243.97529999999097
+    },
+    "featureQueryMs": {
+      "median": 103.04839999999967,
+      "min": 88.96789999998873,
+      "max": 139.81520000001183
+    },
+    "derivedQueryMs": {
+      "median": 133.0222000000067,
+      "min": 120.597299999994,
+      "max": 134.35399999999208
+    },
+    "freshReplayMs": {
+      "median": 27919.34030000001,
+      "min": 27066.736999999994,
+      "max": 28609.382899999968
+    },
+    "noOpMs": {
+      "median": 2446.9897,
+      "min": 2432.577099999995,
+      "max": 2452.3852000000043
+    },
+    "knowledge-only": {
+      "planningMs": {
+        "median": 2501.5548000000126,
+        "min": 2457.6779000000097,
+        "max": 2517.741399999999
+      },
+      "stagingMs": {
+        "median": 2657.247100000008,
+        "min": 2517.3752999999997,
+        "max": 3495.008700000006
+      },
+      "validationMs": {
+        "median": 2873.367299999998,
+        "min": 2871.6872000000003,
+        "max": 2873.392900000006
+      },
+      "publicationMs": {
+        "median": 3099.9641999999985,
+        "min": 3064.363400000002,
+        "max": 3134.6152
+      },
+      "fullReferenceMs": {
+        "median": 3579.1132,
+        "min": 2596.829700000002,
+        "max": 3621.9244999999937
+      }
+    },
+    "source-qualification": {
+      "planningMs": {
+        "median": 2493.3430999999982,
+        "min": 2468.666499999992,
+        "max": 2547.693800000001
+      },
+      "stagingMs": {
+        "median": 2767.232799999998,
+        "min": 2702.432299999986,
+        "max": 2818.120200000005
+      },
+      "validationMs": {
+        "median": 3035.7642999999807,
+        "min": 2958.2799000000014,
+        "max": 3833.7996000000276
+      },
+      "publicationMs": {
+        "median": 3210.5190000000002,
+        "min": 3034.5785000000033,
+        "max": 3245.0346000000136
+      },
+      "fullReferenceMs": {
+        "median": 2696.971099999995,
+        "min": 2646.0558999999994,
+        "max": 2741.7312000000093
+      }
+    },
+    "unrelated-region": {
+      "planningMs": {
+        "median": 2444.1213999999964,
+        "min": 2430.0148000000045,
+        "max": 2451.3058999999776
+      },
+      "stagingMs": {
+        "median": 2506.701000000001,
+        "min": 2500.7878999999957,
+        "max": 2597.0273999999918
+      },
+      "validationMs": {
+        "median": 2912.5032999999967,
+        "min": 2910.4302000000025,
+        "max": 3954.9320000000007
+      },
+      "publicationMs": {
+        "median": 3016.112699999998,
+        "min": 3007.0832999999984,
+        "max": 3104.8953000000038
+      },
+      "fullReferenceMs": {
+        "median": 2632.9320999999763,
+        "min": 2596.642599999992,
+        "max": 2690.0550000000003
+      }
+    }
+  },
+  "samples": [
+    {
+      "repeat": 0,
+      "world": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-registration-measured-puKirx\\world-0",
+      "inspectionMs": 2300.5485,
+      "inspection": {
+        "milliseconds": 2255.7624,
+        "payloadBytesHashed": 171482433,
+        "payloadHashOperations": 329,
+        "nativeSetup": {
+          "elapsedSeconds": 1.4244520999491215,
+          "organisationSeconds": 0.13424529996700585,
+          "loadedRecords": 44,
+          "geometryRecordsBuilt": 38,
+          "metadataMembersParsed": 5,
+          "metadataMemberBytes": 5603919,
+          "verificationInputHashBytes": 120347916,
+          "persistentIndexBytes": 0,
+          "physicalIO": "current verification/reconstruction and GDAL/archive reads are additional; member parse bytes and hash bytes are logical, not cold disk traffic",
+          "inputHashOperations": 17,
+          "inputBytesHashed": 125951835
+        }
+      },
+      "registrationMs": 4819.5923999999995,
+      "initial": {
+        "generation": "beffc7a2761fd19a1ca1d2cbe99e20ba45cb1ca4232b16b04b526445e052032b",
+        "nativeIdentities": {
+          "riffelhorn": "866d992723a4b9114dac1fba92c3173767c4a59ec089c6f1d8d5d1aa58aad386",
+          "tryfan": "5105aae85cd62ba9093075b8d8a40221ea60d158ac3f659d387c355e6d00ba8a"
+        },
+        "validation": {
+          "milliseconds": 2317.0248,
+          "metadataRecords": 44,
+          "metadataBytes": 6984556,
+          "payloadHashOperations": 329,
+          "payloadBytesHashed": 171482433,
+          "ancestryTraversals": 0,
+          "parentRssBytes": 121819136
+        },
+        "writes": {
+          "recordsWritten": 46,
+          "bytesWritten": 4438128,
+          "recordsRead": 0,
+          "bytesRead": 0,
+          "bytesEncoded": 1380637
+        },
+        "registrationMetadataBytes": 42867
+      },
+      "derived": {
+        "generation": "e056353e9d38fc6940e9bd5d8bb476233f6a549c105121d358d44d83b2948231",
+        "metrics": {
+          "totalMs": 4124.616900000001,
+          "processingMs": 1255.868699999999,
+          "fullValidationMs": 2475.7403999999997,
+          "artifactMetadataReads": 49,
+          "artifactMetadataBytes": 377994,
+          "artifactWriteAttempts": 32,
+          "writes": {
+            "recordsWritten": 36,
+            "bytesWritten": 264940,
+            "recordsRead": 8,
+            "bytesRead": 1329709,
+            "bytesEncoded": 1594649
+          },
+          "milliseconds": 14.374899910762906,
+          "cellsRead": 144,
+          "decodedBytes": 576,
+          "filesOpened": 1,
+          "physicalIO": "Decoded requested cells; compressed block traffic and full input verification are additional"
+        },
+        "published": {
+          "generation": "e056353e9d38fc6940e9bd5d8bb476233f6a549c105121d358d44d83b2948231",
+          "membership": "9e7404c3508f5a793680486b3df5b9271deb2a81fd171cc1ee03109dd88abb78",
+          "authority": "filesystem-root",
+          "writes": {
+            "recordsWritten": 33,
+            "bytesWritten": 5433,
+            "recordsRead": 1,
+            "bytesRead": 162,
+            "bytesEncoded": 5433,
+            "rootBytesWritten": 210
+          },
+          "validation": {
+            "generation": "e056353e9d38fc6940e9bd5d8bb476233f6a549c105121d358d44d83b2948231",
+            "status": "fully-validated-unpublished",
+            "outputChecks": 32,
+            "metadataRecords": 142,
+            "artifactMetadataReads": 81,
+            "artifactMetadataBytes": 613971,
+            "registrationMetadata": {
+              "records": 6,
+              "bytes": 128601
+            },
+            "payloadBytesHashed": 217013031,
+            "payloadHashOperations": 641,
+            "milliseconds": 3050.4706000000006,
+            "sampling": {
+              "milliseconds": 13.911199988797307,
+              "cellsRead": 144,
+              "decodedBytes": 576,
+              "filesOpened": 1,
+              "physicalIO": "Decoded requested cells; compressed block traffic and full input verification are additional"
+            }
+          },
+          "milliseconds": 3176.302300000001
+        }
+      },
+      "noOp": {
+        "generation": "e056353e9d38fc6940e9bd5d8bb476233f6a549c105121d358d44d83b2948231",
+        "status": "no-op",
+        "affected": [],
+        "recomputed": [],
+        "requalified": [],
+        "reused": 32,
+        "metrics": {
+          "milliseconds": 2446.9897,
+          "validation": {
+            "milliseconds": 2342.5776000000005,
+            "metadataRecords": 95,
+            "metadataBytes": 7384095,
+            "payloadHashOperations": 329,
+            "payloadBytesHashed": 171482433,
+            "ancestryTraversals": 0,
+            "parentRssBytes": 245321728
+          },
+          "bytesWritten": 0
+        },
+        "registrationRevision": null
+      },
+      "cases": [
+        {
+          "case": "knowledge-only",
+          "agreement": true,
+          "numericalValuesUnchanged": true,
+          "planningMs": 2517.741399999999,
+          "plan": {
+            "generation": "e056353e9d38fc6940e9bd5d8bb476233f6a549c105121d358d44d83b2948231",
+            "status": "dry-run",
+            "affected": [],
+            "recomputed": [],
+            "requalified": [],
+            "reused": 32,
+            "reason": "Informational knowledge accountability only; no numerical/scientific input qualification change.",
+            "metrics": {
+              "milliseconds": 2472.7595,
+              "validation": {
+                "milliseconds": 2356.7358999999997,
+                "metadataRecords": 95,
+                "metadataBytes": 7384095,
+                "payloadHashOperations": 329,
+                "payloadBytesHashed": 171482433,
+                "ancestryTraversals": 0,
+                "parentRssBytes": 245264384
+              },
+              "closureArtifactReads": 16,
+              "artifactMetadataReads": 16,
+              "artifactMetadataBytes": 137227,
+              "registrationReads": {
+                "records": 2,
+                "bytes": 42867
+              },
+              "baseMetadataReads": 44,
+              "baseMetadataBytes": 1359315,
+              "processingCellsRead": 0
+            },
+            "registrationRevision": null
+          },
+          "stagingMs": 2517.3752999999997,
+          "stage": {
+            "generation": "65989736a06f72182fba9d9ad9d47955869f51ce943ef120effcad2df91352fd",
+            "status": "staged-unpublished",
+            "affected": [],
+            "recomputed": [],
+            "requalified": [],
+            "reused": 32,
+            "reason": "Informational knowledge accountability only; no numerical/scientific input qualification change.",
+            "metrics": {
+              "milliseconds": 2473.532800000001,
+              "validation": {
+                "milliseconds": 2311.876699999997,
+                "metadataRecords": 95,
+                "metadataBytes": 7384095,
+                "payloadHashOperations": 329,
+                "payloadBytesHashed": 171482433,
+                "ancestryTraversals": 0,
+                "parentRssBytes": 245477376
+              },
+              "closureArtifactReads": 16,
+              "artifactMetadataReads": 16,
+              "artifactMetadataBytes": 137227,
+              "registrationReads": {
+                "records": 2,
+                "bytes": 42867
+              },
+              "baseMetadataReads": 44,
+              "baseMetadataBytes": 1359315,
+              "processingCellsRead": 0,
+              "writes": {
+                "recordsWritten": 3,
+                "bytesWritten": 44804,
+                "recordsRead": 9,
+                "bytesRead": 1350589,
+                "bytesEncoded": 1395393
+              }
+            },
+            "registrationRevision": "6d9afddb7cbfc70daecb35185a4bc26dbdae3ec6e9a02b4762c0d492e7a92d4b"
+          },
+          "fullReferenceMs": 3579.1132,
+          "validation": {
+            "generation": "65989736a06f72182fba9d9ad9d47955869f51ce943ef120effcad2df91352fd",
+            "status": "fully-validated-unpublished",
+            "outputChecks": 32,
+            "metadataRecords": 195,
+            "artifactMetadataReads": 81,
+            "artifactMetadataBytes": 613971,
+            "registrationMetadata": {
+              "records": 8,
+              "bytes": 211623
+            },
+            "payloadBytesHashed": 217013031,
+            "payloadHashOperations": 641,
+            "milliseconds": 2871.6872000000003,
+            "sampling": {
+              "milliseconds": 13.48229986615479,
+              "cellsRead": 144,
+              "decodedBytes": 576,
+              "filesOpened": 1,
+              "physicalIO": "Decoded requested cells; compressed block traffic and full input verification are additional"
+            }
+          },
+          "published": {
+            "generation": "65989736a06f72182fba9d9ad9d47955869f51ce943ef120effcad2df91352fd",
+            "membership": "e50fc56c89124aec51ebbc8bbfd1e71d95a523693da4996e11e63de871611b70",
+            "authority": "filesystem-root",
+            "writes": {
+              "recordsWritten": 33,
+              "bytesWritten": 5511,
+              "recordsRead": 1,
+              "bytesRead": 240,
+              "bytesEncoded": 5511,
+              "rootBytesWritten": 210
+            },
+            "validation": {
+              "generation": "65989736a06f72182fba9d9ad9d47955869f51ce943ef120effcad2df91352fd",
+              "status": "fully-validated-unpublished",
+              "outputChecks": 32,
+              "metadataRecords": 195,
+              "artifactMetadataReads": 81,
+              "artifactMetadataBytes": 613971,
+              "registrationMetadata": {
+                "records": 8,
+                "bytes": 211623
+              },
+              "payloadBytesHashed": 217013031,
+              "payloadHashOperations": 641,
+              "milliseconds": 2952.649800000003,
+              "sampling": {
+                "milliseconds": 17.435699934139848,
+                "cellsRead": 144,
+                "decodedBytes": 576,
+                "filesOpened": 1,
+                "physicalIO": "Decoded requested cells; compressed block traffic and full input verification are additional"
+              }
+            },
+            "milliseconds": 3099.9641999999985
+          },
+          "componentsChanged": [
+            "registrationLedger"
+          ],
+          "componentsReused": [
+            "catalogue",
+            "knowledge",
+            "locators",
+            "riffelhornRegistration",
+            "serving",
+            "terrainDerived",
+            "terrainLifecycle",
+            "tryfanRegistration",
+            "understanding"
+          ]
+        },
+        {
+          "case": "source-qualification",
+          "agreement": true,
+          "numericalValuesUnchanged": true,
+          "planningMs": 2547.693800000001,
+          "plan": {
+            "generation": "65989736a06f72182fba9d9ad9d47955869f51ce943ef120effcad2df91352fd",
+            "status": "dry-run",
+            "affected": [
+              "dtm-cluster-0-0|area-ratio",
+              "dtm-cluster-0-0|slope",
+              "dtm-cluster-0-1|area-ratio",
+              "dtm-cluster-0-1|slope",
+              "dtm-cluster-1-0|area-ratio",
+              "dtm-cluster-1-0|slope",
+              "dtm-cluster-1-1|area-ratio",
+              "dtm-cluster-1-1|slope"
+            ],
+            "recomputed": [],
+            "requalified": [
+              "dtm-cluster-0-0|area-ratio",
+              "dtm-cluster-0-0|slope",
+              "dtm-cluster-0-1|area-ratio",
+              "dtm-cluster-0-1|slope",
+              "dtm-cluster-1-0|area-ratio",
+              "dtm-cluster-1-0|slope",
+              "dtm-cluster-1-1|area-ratio",
+              "dtm-cluster-1-1|slope"
+            ],
+            "reused": 24,
+            "reason": "Source bytes/method/parameters unchanged: reuse verified samples/numerical values; requalify exact claims and downstream identities.",
+            "metrics": {
+              "milliseconds": 2500.6278999999995,
+              "validation": {
+                "milliseconds": 2367.972099999999,
+                "metadataRecords": 96,
+                "metadataBytes": 7425684,
+                "payloadHashOperations": 329,
+                "payloadBytesHashed": 171482433,
+                "ancestryTraversals": 0,
+                "parentRssBytes": 245956608
+              },
+              "closureArtifactReads": 16,
+              "artifactMetadataReads": 16,
+              "artifactMetadataBytes": 137227,
+              "registrationReads": {
+                "records": 3,
+                "bytes": 84378
+              },
+              "baseMetadataReads": 44,
+              "baseMetadataBytes": 1359393,
+              "processingCellsRead": 0
+            },
+            "registrationRevision": null
+          },
+          "stagingMs": 2818.120200000005,
+          "stage": {
+            "generation": "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289",
+            "status": "staged-unpublished",
+            "affected": [
+              "dtm-cluster-0-0|area-ratio",
+              "dtm-cluster-0-0|slope",
+              "dtm-cluster-0-1|area-ratio",
+              "dtm-cluster-0-1|slope",
+              "dtm-cluster-1-0|area-ratio",
+              "dtm-cluster-1-0|slope",
+              "dtm-cluster-1-1|area-ratio",
+              "dtm-cluster-1-1|slope"
+            ],
+            "recomputed": [],
+            "requalified": [
+              "dtm-cluster-0-0|area-ratio",
+              "dtm-cluster-0-0|slope",
+              "dtm-cluster-0-1|area-ratio",
+              "dtm-cluster-0-1|slope",
+              "dtm-cluster-1-0|area-ratio",
+              "dtm-cluster-1-0|slope",
+              "dtm-cluster-1-1|area-ratio",
+              "dtm-cluster-1-1|slope"
+            ],
+            "reused": 24,
+            "reason": "Source bytes/method/parameters unchanged: reuse verified samples/numerical values; requalify exact claims and downstream identities.",
+            "metrics": {
+              "milliseconds": 2771.9804000000004,
+              "validation": {
+                "milliseconds": 2449.924199999994,
+                "metadataRecords": 96,
+                "metadataBytes": 7425684,
+                "payloadHashOperations": 329,
+                "payloadBytesHashed": 171482433,
+                "ancestryTraversals": 0,
+                "parentRssBytes": 245813248
+              },
+              "closureArtifactReads": 16,
+              "artifactMetadataReads": 82,
+              "artifactMetadataBytes": 639405,
+              "registrationReads": {
+                "records": 3,
+                "bytes": 84378
+              },
+              "baseMetadataReads": 44,
+              "baseMetadataBytes": 1359393,
+              "processingCellsRead": 0,
+              "requalificationMs": 158.773199999996,
+              "writes": {
+                "recordsWritten": 14,
+                "bytesWritten": 130558,
+                "recordsRead": 7,
+                "bytesRead": 1329366,
+                "bytesEncoded": 1459924
+              }
+            },
+            "registrationRevision": "fcbac3e76a5e15da463361e57161c4d6a6a24377f5c2bef9be322d6301012a0f"
+          },
+          "fullReferenceMs": 2646.0558999999994,
+          "validation": {
+            "generation": "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289",
+            "status": "fully-validated-unpublished",
+            "outputChecks": 32,
+            "metadataRecords": 208,
+            "artifactMetadataReads": 90,
+            "artifactMetadataBytes": 681617,
+            "registrationMetadata": {
+              "records": 11,
+              "bytes": 336702
+            },
+            "payloadBytesHashed": 217013031,
+            "payloadHashOperations": 641,
+            "milliseconds": 2958.2799000000014,
+            "sampling": {
+              "milliseconds": 13.719999929890037,
+              "cellsRead": 144,
+              "decodedBytes": 576,
+              "filesOpened": 1,
+              "physicalIO": "Decoded requested cells; compressed block traffic and full input verification are additional"
+            }
+          },
+          "published": {
+            "generation": "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289",
+            "membership": "a1cac35d7af9b773e24eec64d2e02f380dfef844bb7dc5d10ba4a6a69fbfae9e",
+            "authority": "filesystem-root",
+            "writes": {
+              "recordsWritten": 33,
+              "bytesWritten": 5589,
+              "recordsRead": 1,
+              "bytesRead": 318,
+              "bytesEncoded": 5589,
+              "rootBytesWritten": 210
+            },
+            "validation": {
+              "generation": "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289",
+              "status": "fully-validated-unpublished",
+              "outputChecks": 32,
+              "metadataRecords": 208,
+              "artifactMetadataReads": 90,
+              "artifactMetadataBytes": 681617,
+              "registrationMetadata": {
+                "records": 11,
+                "bytes": 336702
+              },
+              "payloadBytesHashed": 217013031,
+              "payloadHashOperations": 641,
+              "milliseconds": 3038.731899999999,
+              "sampling": {
+                "milliseconds": 12.685599969699979,
+                "cellsRead": 144,
+                "decodedBytes": 576,
+                "filesOpened": 1,
+                "physicalIO": "Decoded requested cells; compressed block traffic and full input verification are additional"
+              }
+            },
+            "milliseconds": 3210.5190000000002
+          },
+          "componentsChanged": [
+            "registrationLedger",
+            "terrainDerived",
+            "terrainLifecycle"
+          ],
+          "componentsReused": [
+            "catalogue",
+            "knowledge",
+            "locators",
+            "riffelhornRegistration",
+            "serving",
+            "tryfanRegistration",
+            "understanding"
+          ]
+        },
+        {
+          "case": "unrelated-region",
+          "agreement": true,
+          "numericalValuesUnchanged": true,
+          "planningMs": 2444.1213999999964,
+          "plan": {
+            "generation": "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289",
+            "status": "dry-run",
+            "affected": [],
+            "recomputed": [],
+            "requalified": [],
+            "reused": 32,
+            "reason": "Informational knowledge accountability only; no numerical/scientific input qualification change.",
+            "metrics": {
+              "milliseconds": 2403.1598000000013,
+              "validation": {
+                "milliseconds": 2304.8050999999978,
+                "metadataRecords": 106,
+                "metadataBytes": 7533036,
+                "payloadHashOperations": 329,
+                "payloadBytesHashed": 171482433,
+                "ancestryTraversals": 0,
+                "parentRssBytes": 244789248
+              },
+              "closureArtifactReads": 16,
+              "artifactMetadataReads": 16,
+              "artifactMetadataBytes": 138459,
+              "registrationReads": {
+                "records": 4,
+                "bytes": 126162
+              },
+              "baseMetadataReads": 44,
+              "baseMetadataBytes": 1359779,
+              "processingCellsRead": 0
+            },
+            "registrationRevision": null
+          },
+          "stagingMs": 2500.7878999999957,
+          "stage": {
+            "generation": "22ff4e063d031c5ccf47c1570eb1bdafaf155f148539655b35901d0f99b4883c",
+            "status": "staged-unpublished",
+            "affected": [],
+            "recomputed": [],
+            "requalified": [],
+            "reused": 32,
+            "reason": "Informational knowledge accountability only; no numerical/scientific input qualification change.",
+            "metrics": {
+              "milliseconds": 2455.814299999998,
+              "validation": {
+                "milliseconds": 2302.0001000000047,
+                "metadataRecords": 106,
+                "metadataBytes": 7533036,
+                "payloadHashOperations": 329,
+                "payloadBytesHashed": 171482433,
+                "ancestryTraversals": 0,
+                "parentRssBytes": 244498432
+              },
+              "closureArtifactReads": 16,
+              "artifactMetadataReads": 16,
+              "artifactMetadataBytes": 138459,
+              "registrationReads": {
+                "records": 4,
+                "bytes": 126162
+              },
+              "baseMetadataReads": 44,
+              "baseMetadataBytes": 1359779,
+              "processingCellsRead": 0,
+              "writes": {
+                "recordsWritten": 3,
+                "bytesWritten": 4789,
+                "recordsRead": 9,
+                "bytesRead": 1350897,
+                "bytesEncoded": 1355686
+              }
+            },
+            "registrationRevision": "19a47c0f1dc57979978b49d7ee2be60cb51a124719d26c8f57d765939f9ca8ed"
+          },
+          "fullReferenceMs": 2690.0550000000003,
+          "validation": {
+            "generation": "22ff4e063d031c5ccf47c1570eb1bdafaf155f148539655b35901d0f99b4883c",
+            "status": "fully-validated-unpublished",
+            "outputChecks": 32,
+            "metadataRecords": 221,
+            "artifactMetadataReads": 90,
+            "artifactMetadataBytes": 681617,
+            "registrationMetadata": {
+              "records": 14,
+              "bytes": 381478
+            },
+            "payloadBytesHashed": 217013031,
+            "payloadHashOperations": 641,
+            "milliseconds": 2912.5032999999967,
+            "sampling": {
+              "milliseconds": 13.479199958965182,
+              "cellsRead": 144,
+              "decodedBytes": 576,
+              "filesOpened": 1,
+              "physicalIO": "Decoded requested cells; compressed block traffic and full input verification are additional"
+            }
+          },
+          "published": {
+            "generation": "22ff4e063d031c5ccf47c1570eb1bdafaf155f148539655b35901d0f99b4883c",
+            "membership": "098cd37ecd98e6cc84651ad681082fe929870c49a727920d411391d8d0003af3",
+            "authority": "filesystem-root",
+            "writes": {
+              "recordsWritten": 33,
+              "bytesWritten": 5667,
+              "recordsRead": 1,
+              "bytesRead": 396,
+              "bytesEncoded": 5667,
+              "rootBytesWritten": 210
+            },
+            "validation": {
+              "generation": "22ff4e063d031c5ccf47c1570eb1bdafaf155f148539655b35901d0f99b4883c",
+              "status": "fully-validated-unpublished",
+              "outputChecks": 32,
+              "metadataRecords": 221,
+              "artifactMetadataReads": 90,
+              "artifactMetadataBytes": 681617,
+              "registrationMetadata": {
+                "records": 14,
+                "bytes": 381478
+              },
+              "payloadBytesHashed": 217013031,
+              "payloadHashOperations": 641,
+              "milliseconds": 2876.1062999999995,
+              "sampling": {
+                "milliseconds": 13.37259984575212,
+                "cellsRead": 144,
+                "decodedBytes": 576,
+                "filesOpened": 1,
+                "physicalIO": "Decoded requested cells; compressed block traffic and full input verification are additional"
+              }
+            },
+            "milliseconds": 3007.0832999999984
+          },
+          "componentsChanged": [
+            "registrationLedger"
+          ],
+          "componentsReused": [
+            "catalogue",
+            "knowledge",
+            "locators",
+            "riffelhornRegistration",
+            "serving",
+            "terrainDerived",
+            "terrainLifecycle",
+            "tryfanRegistration",
+            "understanding"
+          ]
+        }
+      ],
+      "history": [
+        "beffc7a2761fd19a1ca1d2cbe99e20ba45cb1ca4232b16b04b526445e052032b",
+        "e056353e9d38fc6940e9bd5d8bb476233f6a549c105121d358d44d83b2948231",
+        "65989736a06f72182fba9d9ad9d47955869f51ce943ef120effcad2df91352fd",
+        "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289",
+        "22ff4e063d031c5ccf47c1570eb1bdafaf155f148539655b35901d0f99b4883c"
+      ],
+      "openMs": 2316.6136000000115,
+      "built": {
+        "milliseconds": 234.86599999999453,
+        "records": 49,
+        "bytes": 81920,
+        "sha256": "1095116818a821d44db57ef8270de19c55c9bd4686ad2b736e0a3bb6e81b240e",
+        "schemaVersion": 1,
+        "generation": "22ff4e063d031c5ccf47c1570eb1bdafaf155f148539655b35901d0f99b4883c",
+        "epoch": "5fedb6f4-4c3f-41be-bc1c-e2e51fad6c0c"
+      },
+      "rebuilt": {
+        "milliseconds": 227.09339999999793,
+        "records": 49,
+        "bytes": 81920,
+        "sha256": "1095116818a821d44db57ef8270de19c55c9bd4686ad2b736e0a3bb6e81b240e",
+        "schemaVersion": 1,
+        "generation": "22ff4e063d031c5ccf47c1570eb1bdafaf155f148539655b35901d0f99b4883c",
+        "epoch": "76a928d3-df55-41dc-bd86-456ad66e6c5d"
+      },
+      "queryMs": 103.04839999999967,
+      "queryMetrics": {
+        "recordsConsidered": 1,
+        "qualificationChecks": 1,
+        "exactSpatialChecks": 0,
+        "spatialFalsePositiveCandidates": 0,
+        "provenanceChecks": 1,
+        "resourceReferencesResolved": 2,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "decodedPayloadBytes": 0,
+        "nativeSamplesRead": 0,
+        "cellCentrePredicates": 0,
+        "candidates": 1,
+        "availableRecords": 49,
+        "milliseconds": 2.367899985983968,
+        "ancestryTraversals": 0,
+        "catalogueSelectorAuditRecords": 49,
+        "catalogueBytesHashed": 81920,
+        "canonicalMetadataReads": 49,
+        "canonicalMetadataBytes": 1487515
+      },
+      "derivedMs": 133.0222000000067,
+      "derivedMetrics": {
+        "outputMembershipChecks": 32,
+        "artifactMetadataReads": 60,
+        "artifactMetadataBytes": 454543,
+        "canonicalMetadataReads": 49,
+        "canonicalMetadataBytes": 1487515,
+        "returned": 1,
+        "ancestryTraversals": 0
+      },
+      "storage": {
+        "bytes": 4905755,
+        "records": 236
+      },
+      "rss": 257916928
+    },
+    {
+      "repeat": 1,
+      "world": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-registration-measured-puKirx\\world-1",
+      "inspectionMs": 2222.1147999999957,
+      "inspection": {
+        "milliseconds": 2180.350600000005,
+        "payloadBytesHashed": 171482433,
+        "payloadHashOperations": 329,
+        "nativeSetup": {
+          "elapsedSeconds": 1.3646527999080718,
+          "organisationSeconds": 0.13217130000703037,
+          "loadedRecords": 44,
+          "geometryRecordsBuilt": 38,
+          "metadataMembersParsed": 5,
+          "metadataMemberBytes": 5603919,
+          "verificationInputHashBytes": 120347916,
+          "persistentIndexBytes": 0,
+          "physicalIO": "current verification/reconstruction and GDAL/archive reads are additional; member parse bytes and hash bytes are logical, not cold disk traffic",
+          "inputHashOperations": 17,
+          "inputBytesHashed": 125951835
+        }
+      },
+      "registrationMs": 4869.746899999998,
+      "initial": {
+        "generation": "7b794a7b848c65bbca533c742d5e15ecaa14ceee1452727b86f4824ef258e2d8",
+        "nativeIdentities": {
+          "riffelhorn": "866d992723a4b9114dac1fba92c3173767c4a59ec089c6f1d8d5d1aa58aad386",
+          "tryfan": "5105aae85cd62ba9093075b8d8a40221ea60d158ac3f659d387c355e6d00ba8a"
+        },
+        "validation": {
+          "milliseconds": 2316.6612999999925,
+          "metadataRecords": 44,
+          "metadataBytes": 6984556,
+          "payloadHashOperations": 329,
+          "payloadBytesHashed": 171482433,
+          "ancestryTraversals": 0,
+          "parentRssBytes": 152330240
+        },
+        "writes": {
+          "recordsWritten": 46,
+          "bytesWritten": 4438128,
+          "recordsRead": 0,
+          "bytesRead": 0,
+          "bytesEncoded": 1380637
+        },
+        "registrationMetadataBytes": 42867
+      },
+      "derived": {
+        "generation": "925251eb9d48a313469d8cafc7225dd1c0f0fb69bb360f3f0f9fd043aa2c313a",
+        "metrics": {
+          "totalMs": 2857.0193,
+          "processingMs": 123.51170000000275,
+          "fullValidationMs": 2366.3264999999956,
+          "artifactMetadataReads": 49,
+          "artifactMetadataBytes": 377994,
+          "artifactWriteAttempts": 32,
+          "writes": {
+            "recordsWritten": 36,
+            "bytesWritten": 264940,
+            "recordsRead": 8,
+            "bytesRead": 1329709,
+            "bytesEncoded": 1594649
+          },
+          "milliseconds": 13.182200025767088,
+          "cellsRead": 144,
+          "decodedBytes": 576,
+          "filesOpened": 1,
+          "physicalIO": "Decoded requested cells; compressed block traffic and full input verification are additional"
+        },
+        "published": {
+          "generation": "925251eb9d48a313469d8cafc7225dd1c0f0fb69bb360f3f0f9fd043aa2c313a",
+          "membership": "f234e59754311d18adbde80181fbecf7bf5fa04654f8fa0f4b212a89e126cbeb",
+          "authority": "filesystem-root",
+          "writes": {
+            "recordsWritten": 33,
+            "bytesWritten": 5433,
+            "recordsRead": 1,
+            "bytesRead": 162,
+            "bytesEncoded": 5433,
+            "rootBytesWritten": 210
+          },
+          "validation": {
+            "generation": "925251eb9d48a313469d8cafc7225dd1c0f0fb69bb360f3f0f9fd043aa2c313a",
+            "status": "fully-validated-unpublished",
+            "outputChecks": 32,
+            "metadataRecords": 142,
+            "artifactMetadataReads": 81,
+            "artifactMetadataBytes": 613971,
+            "registrationMetadata": {
+              "records": 6,
+              "bytes": 128601
+            },
+            "payloadBytesHashed": 217013031,
+            "payloadHashOperations": 641,
+            "milliseconds": 2856.0499999999884,
+            "sampling": {
+              "milliseconds": 12.938900152221322,
+              "cellsRead": 144,
+              "decodedBytes": 576,
+              "filesOpened": 1,
+              "physicalIO": "Decoded requested cells; compressed block traffic and full input verification are additional"
+            }
+          },
+          "milliseconds": 2988.2693
+        }
+      },
+      "noOp": {
+        "generation": "925251eb9d48a313469d8cafc7225dd1c0f0fb69bb360f3f0f9fd043aa2c313a",
+        "status": "no-op",
+        "affected": [],
+        "recomputed": [],
+        "requalified": [],
+        "reused": 32,
+        "metrics": {
+          "milliseconds": 2452.3852000000043,
+          "validation": {
+            "milliseconds": 2355.159400000004,
+            "metadataRecords": 95,
+            "metadataBytes": 7384095,
+            "payloadHashOperations": 329,
+            "payloadBytesHashed": 171482433,
+            "ancestryTraversals": 0,
+            "parentRssBytes": 230604800
+          },
+          "bytesWritten": 0
+        },
+        "registrationRevision": null
+      },
+      "cases": [
+        {
+          "case": "knowledge-only",
+          "agreement": true,
+          "numericalValuesUnchanged": true,
+          "planningMs": 2457.6779000000097,
+          "plan": {
+            "generation": "925251eb9d48a313469d8cafc7225dd1c0f0fb69bb360f3f0f9fd043aa2c313a",
+            "status": "dry-run",
+            "affected": [],
+            "recomputed": [],
+            "requalified": [],
+            "reused": 32,
+            "reason": "Informational knowledge accountability only; no numerical/scientific input qualification change.",
+            "metrics": {
+              "milliseconds": 2413.3007999999973,
+              "validation": {
+                "milliseconds": 2301.8940000000002,
+                "metadataRecords": 95,
+                "metadataBytes": 7384095,
+                "payloadHashOperations": 329,
+                "payloadBytesHashed": 171482433,
+                "ancestryTraversals": 0,
+                "parentRssBytes": 239058944
+              },
+              "closureArtifactReads": 16,
+              "artifactMetadataReads": 16,
+              "artifactMetadataBytes": 137227,
+              "registrationReads": {
+                "records": 2,
+                "bytes": 42867
+              },
+              "baseMetadataReads": 44,
+              "baseMetadataBytes": 1359315,
+              "processingCellsRead": 0
+            },
+            "registrationRevision": null
+          },
+          "stagingMs": 3495.008700000006,
+          "stage": {
+            "generation": "6268fd7a0c0c73d366967bb68d3af801351403535683aa9489ace0bc3c4311bf",
+            "status": "staged-unpublished",
+            "affected": [],
+            "recomputed": [],
+            "requalified": [],
+            "reused": 32,
+            "reason": "Informational knowledge accountability only; no numerical/scientific input qualification change.",
+            "metrics": {
+              "milliseconds": 3445.4533000000083,
+              "validation": {
+                "milliseconds": 3310.345199999996,
+                "metadataRecords": 95,
+                "metadataBytes": 7384095,
+                "payloadHashOperations": 329,
+                "payloadBytesHashed": 171482433,
+                "ancestryTraversals": 0,
+                "parentRssBytes": 238895104
+              },
+              "closureArtifactReads": 16,
+              "artifactMetadataReads": 16,
+              "artifactMetadataBytes": 137227,
+              "registrationReads": {
+                "records": 2,
+                "bytes": 42867
+              },
+              "baseMetadataReads": 44,
+              "baseMetadataBytes": 1359315,
+              "processingCellsRead": 0,
+              "writes": {
+                "recordsWritten": 3,
+                "bytesWritten": 44804,
+                "recordsRead": 9,
+                "bytesRead": 1350589,
+                "bytesEncoded": 1395393
+              }
+            },
+            "registrationRevision": "78c4d75b3ea0cc235f17085b2d61a66cf07bfc82ccbc20baf9145f3d7be6c6ef"
+          },
+          "fullReferenceMs": 3621.9244999999937,
+          "validation": {
+            "generation": "6268fd7a0c0c73d366967bb68d3af801351403535683aa9489ace0bc3c4311bf",
+            "status": "fully-validated-unpublished",
+            "outputChecks": 32,
+            "metadataRecords": 195,
+            "artifactMetadataReads": 81,
+            "artifactMetadataBytes": 613971,
+            "registrationMetadata": {
+              "records": 8,
+              "bytes": 211623
+            },
+            "payloadBytesHashed": 217013031,
+            "payloadHashOperations": 641,
+            "milliseconds": 2873.367299999998,
+            "sampling": {
+              "milliseconds": 15.227600000798702,
+              "cellsRead": 144,
+              "decodedBytes": 576,
+              "filesOpened": 1,
+              "physicalIO": "Decoded requested cells; compressed block traffic and full input verification are additional"
+            }
+          },
+          "published": {
+            "generation": "6268fd7a0c0c73d366967bb68d3af801351403535683aa9489ace0bc3c4311bf",
+            "membership": "48656004c15a5cbcdc8a536b471edd8823fb06b4b5bf88164182ea1498f54702",
+            "authority": "filesystem-root",
+            "writes": {
+              "recordsWritten": 33,
+              "bytesWritten": 5511,
+              "recordsRead": 1,
+              "bytesRead": 240,
+              "bytesEncoded": 5511,
+              "rootBytesWritten": 210
+            },
+            "validation": {
+              "generation": "6268fd7a0c0c73d366967bb68d3af801351403535683aa9489ace0bc3c4311bf",
+              "status": "fully-validated-unpublished",
+              "outputChecks": 32,
+              "metadataRecords": 195,
+              "artifactMetadataReads": 81,
+              "artifactMetadataBytes": 613971,
+              "registrationMetadata": {
+                "records": 8,
+                "bytes": 211623
+              },
+              "payloadBytesHashed": 217013031,
+              "payloadHashOperations": 641,
+              "milliseconds": 3003.7513000000035,
+              "sampling": {
+                "milliseconds": 13.77050019800663,
+                "cellsRead": 144,
+                "decodedBytes": 576,
+                "filesOpened": 1,
+                "physicalIO": "Decoded requested cells; compressed block traffic and full input verification are additional"
+              }
+            },
+            "milliseconds": 3134.6152
+          },
+          "componentsChanged": [
+            "registrationLedger"
+          ],
+          "componentsReused": [
+            "catalogue",
+            "knowledge",
+            "locators",
+            "riffelhornRegistration",
+            "serving",
+            "terrainDerived",
+            "terrainLifecycle",
+            "tryfanRegistration",
+            "understanding"
+          ]
+        },
+        {
+          "case": "source-qualification",
+          "agreement": true,
+          "numericalValuesUnchanged": true,
+          "planningMs": 2468.666499999992,
+          "plan": {
+            "generation": "6268fd7a0c0c73d366967bb68d3af801351403535683aa9489ace0bc3c4311bf",
+            "status": "dry-run",
+            "affected": [
+              "dtm-cluster-0-0|area-ratio",
+              "dtm-cluster-0-0|slope",
+              "dtm-cluster-0-1|area-ratio",
+              "dtm-cluster-0-1|slope",
+              "dtm-cluster-1-0|area-ratio",
+              "dtm-cluster-1-0|slope",
+              "dtm-cluster-1-1|area-ratio",
+              "dtm-cluster-1-1|slope"
+            ],
+            "recomputed": [],
+            "requalified": [
+              "dtm-cluster-0-0|area-ratio",
+              "dtm-cluster-0-0|slope",
+              "dtm-cluster-0-1|area-ratio",
+              "dtm-cluster-0-1|slope",
+              "dtm-cluster-1-0|area-ratio",
+              "dtm-cluster-1-0|slope",
+              "dtm-cluster-1-1|area-ratio",
+              "dtm-cluster-1-1|slope"
+            ],
+            "reused": 24,
+            "reason": "Source bytes/method/parameters unchanged: reuse verified samples/numerical values; requalify exact claims and downstream identities.",
+            "metrics": {
+              "milliseconds": 2426.4088000000047,
+              "validation": {
+                "milliseconds": 2317.7655999999843,
+                "metadataRecords": 96,
+                "metadataBytes": 7425684,
+                "payloadHashOperations": 329,
+                "payloadBytesHashed": 171482433,
+                "ancestryTraversals": 0,
+                "parentRssBytes": 244236288
+              },
+              "closureArtifactReads": 16,
+              "artifactMetadataReads": 16,
+              "artifactMetadataBytes": 137227,
+              "registrationReads": {
+                "records": 3,
+                "bytes": 84378
+              },
+              "baseMetadataReads": 44,
+              "baseMetadataBytes": 1359393,
+              "processingCellsRead": 0
+            },
+            "registrationRevision": null
+          },
+          "stagingMs": 2702.432299999986,
+          "stage": {
+            "generation": "6bae44651e943416245484fa05742f6a2f13cb9b7c1ef85cb073983f1aaf5f13",
+            "status": "staged-unpublished",
+            "affected": [
+              "dtm-cluster-0-0|area-ratio",
+              "dtm-cluster-0-0|slope",
+              "dtm-cluster-0-1|area-ratio",
+              "dtm-cluster-0-1|slope",
+              "dtm-cluster-1-0|area-ratio",
+              "dtm-cluster-1-0|slope",
+              "dtm-cluster-1-1|area-ratio",
+              "dtm-cluster-1-1|slope"
+            ],
+            "recomputed": [],
+            "requalified": [
+              "dtm-cluster-0-0|area-ratio",
+              "dtm-cluster-0-0|slope",
+              "dtm-cluster-0-1|area-ratio",
+              "dtm-cluster-0-1|slope",
+              "dtm-cluster-1-0|area-ratio",
+              "dtm-cluster-1-0|slope",
+              "dtm-cluster-1-1|area-ratio",
+              "dtm-cluster-1-1|slope"
+            ],
+            "reused": 24,
+            "reason": "Source bytes/method/parameters unchanged: reuse verified samples/numerical values; requalify exact claims and downstream identities.",
+            "metrics": {
+              "milliseconds": 2659.6140000000014,
+              "validation": {
+                "milliseconds": 2348.689400000003,
+                "metadataRecords": 96,
+                "metadataBytes": 7425684,
+                "payloadHashOperations": 329,
+                "payloadBytesHashed": 171482433,
+                "ancestryTraversals": 0,
+                "parentRssBytes": 264421376
+              },
+              "closureArtifactReads": 16,
+              "artifactMetadataReads": 82,
+              "artifactMetadataBytes": 639405,
+              "registrationReads": {
+                "records": 3,
+                "bytes": 84378
+              },
+              "baseMetadataReads": 44,
+              "baseMetadataBytes": 1359393,
+              "processingCellsRead": 0,
+              "requalificationMs": 131.53680000000168,
+              "writes": {
+                "recordsWritten": 14,
+                "bytesWritten": 130558,
+                "recordsRead": 7,
+                "bytesRead": 1329366,
+                "bytesEncoded": 1459924
+              }
+            },
+            "registrationRevision": "b5f28417fa68fa992c8c5d66eb3877a90379f04c7e0095ba56e607ecdb14f0ad"
+          },
+          "fullReferenceMs": 2696.971099999995,
+          "validation": {
+            "generation": "6bae44651e943416245484fa05742f6a2f13cb9b7c1ef85cb073983f1aaf5f13",
+            "status": "fully-validated-unpublished",
+            "outputChecks": 32,
+            "metadataRecords": 208,
+            "artifactMetadataReads": 90,
+            "artifactMetadataBytes": 681617,
+            "registrationMetadata": {
+              "records": 11,
+              "bytes": 336702
+            },
+            "payloadBytesHashed": 217013031,
+            "payloadHashOperations": 641,
+            "milliseconds": 3035.7642999999807,
+            "sampling": {
+              "milliseconds": 13.202000176534057,
+              "cellsRead": 144,
+              "decodedBytes": 576,
+              "filesOpened": 1,
+              "physicalIO": "Decoded requested cells; compressed block traffic and full input verification are additional"
+            }
+          },
+          "published": {
+            "generation": "6bae44651e943416245484fa05742f6a2f13cb9b7c1ef85cb073983f1aaf5f13",
+            "membership": "db217131b777c75a7183add7a1c3690bb2ab950062991331c9e2023ab1a5f1a7",
+            "authority": "filesystem-root",
+            "writes": {
+              "recordsWritten": 33,
+              "bytesWritten": 5589,
+              "recordsRead": 1,
+              "bytesRead": 318,
+              "bytesEncoded": 5589,
+              "rootBytesWritten": 210
+            },
+            "validation": {
+              "generation": "6bae44651e943416245484fa05742f6a2f13cb9b7c1ef85cb073983f1aaf5f13",
+              "status": "fully-validated-unpublished",
+              "outputChecks": 32,
+              "metadataRecords": 208,
+              "artifactMetadataReads": 90,
+              "artifactMetadataBytes": 681617,
+              "registrationMetadata": {
+                "records": 11,
+                "bytes": 336702
+              },
+              "payloadBytesHashed": 217013031,
+              "payloadHashOperations": 641,
+              "milliseconds": 3084.4893999999913,
+              "sampling": {
+                "milliseconds": 12.902599992230535,
+                "cellsRead": 144,
+                "decodedBytes": 576,
+                "filesOpened": 1,
+                "physicalIO": "Decoded requested cells; compressed block traffic and full input verification are additional"
+              }
+            },
+            "milliseconds": 3245.0346000000136
+          },
+          "componentsChanged": [
+            "registrationLedger",
+            "terrainDerived",
+            "terrainLifecycle"
+          ],
+          "componentsReused": [
+            "catalogue",
+            "knowledge",
+            "locators",
+            "riffelhornRegistration",
+            "serving",
+            "tryfanRegistration",
+            "understanding"
+          ]
+        },
+        {
+          "case": "unrelated-region",
+          "agreement": true,
+          "numericalValuesUnchanged": true,
+          "planningMs": 2430.0148000000045,
+          "plan": {
+            "generation": "6bae44651e943416245484fa05742f6a2f13cb9b7c1ef85cb073983f1aaf5f13",
+            "status": "dry-run",
+            "affected": [],
+            "recomputed": [],
+            "requalified": [],
+            "reused": 32,
+            "reason": "Informational knowledge accountability only; no numerical/scientific input qualification change.",
+            "metrics": {
+              "milliseconds": 2384.9870999999985,
+              "validation": {
+                "milliseconds": 2280.116100000014,
+                "metadataRecords": 106,
+                "metadataBytes": 7533036,
+                "payloadHashOperations": 329,
+                "payloadBytesHashed": 171482433,
+                "ancestryTraversals": 0,
+                "parentRssBytes": 261640192
+              },
+              "closureArtifactReads": 16,
+              "artifactMetadataReads": 16,
+              "artifactMetadataBytes": 138459,
+              "registrationReads": {
+                "records": 4,
+                "bytes": 126162
+              },
+              "baseMetadataReads": 44,
+              "baseMetadataBytes": 1359779,
+              "processingCellsRead": 0
+            },
+            "registrationRevision": null
+          },
+          "stagingMs": 2597.0273999999918,
+          "stage": {
+            "generation": "34c4c9c0f7a1d41ec3272e9b9c474502a3ade6166b5bced76be9afbd0a4ea071",
+            "status": "staged-unpublished",
+            "affected": [],
+            "recomputed": [],
+            "requalified": [],
+            "reused": 32,
+            "reason": "Informational knowledge accountability only; no numerical/scientific input qualification change.",
+            "metrics": {
+              "milliseconds": 2553.896399999998,
+              "validation": {
+                "milliseconds": 2375.697199999995,
+                "metadataRecords": 106,
+                "metadataBytes": 7533036,
+                "payloadHashOperations": 329,
+                "payloadBytesHashed": 171482433,
+                "ancestryTraversals": 0,
+                "parentRssBytes": 262561792
+              },
+              "closureArtifactReads": 16,
+              "artifactMetadataReads": 16,
+              "artifactMetadataBytes": 138459,
+              "registrationReads": {
+                "records": 4,
+                "bytes": 126162
+              },
+              "baseMetadataReads": 44,
+              "baseMetadataBytes": 1359779,
+              "processingCellsRead": 0,
+              "writes": {
+                "recordsWritten": 3,
+                "bytesWritten": 4789,
+                "recordsRead": 9,
+                "bytesRead": 1350897,
+                "bytesEncoded": 1355686
+              }
+            },
+            "registrationRevision": "e0e264b44a47f06f3162e87e706c086a2a5aa968326f053e78fb4128192c9441"
+          },
+          "fullReferenceMs": 2596.642599999992,
+          "validation": {
+            "generation": "34c4c9c0f7a1d41ec3272e9b9c474502a3ade6166b5bced76be9afbd0a4ea071",
+            "status": "fully-validated-unpublished",
+            "outputChecks": 32,
+            "metadataRecords": 221,
+            "artifactMetadataReads": 90,
+            "artifactMetadataBytes": 681617,
+            "registrationMetadata": {
+              "records": 14,
+              "bytes": 381478
+            },
+            "payloadBytesHashed": 217013031,
+            "payloadHashOperations": 641,
+            "milliseconds": 3954.9320000000007,
+            "sampling": {
+              "milliseconds": 14.232099987566471,
+              "cellsRead": 144,
+              "decodedBytes": 576,
+              "filesOpened": 1,
+              "physicalIO": "Decoded requested cells; compressed block traffic and full input verification are additional"
+            }
+          },
+          "published": {
+            "generation": "34c4c9c0f7a1d41ec3272e9b9c474502a3ade6166b5bced76be9afbd0a4ea071",
+            "membership": "cf55861a8ece60d6294545b8147d4f097774eab000b679ccb6a68eb7f83fdbf9",
+            "authority": "filesystem-root",
+            "writes": {
+              "recordsWritten": 33,
+              "bytesWritten": 5667,
+              "recordsRead": 1,
+              "bytesRead": 396,
+              "bytesEncoded": 5667,
+              "rootBytesWritten": 210
+            },
+            "validation": {
+              "generation": "34c4c9c0f7a1d41ec3272e9b9c474502a3ade6166b5bced76be9afbd0a4ea071",
+              "status": "fully-validated-unpublished",
+              "outputChecks": 32,
+              "metadataRecords": 221,
+              "artifactMetadataReads": 90,
+              "artifactMetadataBytes": 681617,
+              "registrationMetadata": {
+                "records": 14,
+                "bytes": 381478
+              },
+              "payloadBytesHashed": 217013031,
+              "payloadHashOperations": 641,
+              "milliseconds": 2936.050499999983,
+              "sampling": {
+                "milliseconds": 12.851399835199118,
+                "cellsRead": 144,
+                "decodedBytes": 576,
+                "filesOpened": 1,
+                "physicalIO": "Decoded requested cells; compressed block traffic and full input verification are additional"
+              }
+            },
+            "milliseconds": 3104.8953000000038
+          },
+          "componentsChanged": [
+            "registrationLedger"
+          ],
+          "componentsReused": [
+            "catalogue",
+            "knowledge",
+            "locators",
+            "riffelhornRegistration",
+            "serving",
+            "terrainDerived",
+            "terrainLifecycle",
+            "tryfanRegistration",
+            "understanding"
+          ]
+        }
+      ],
+      "history": [
+        "7b794a7b848c65bbca533c742d5e15ecaa14ceee1452727b86f4824ef258e2d8",
+        "925251eb9d48a313469d8cafc7225dd1c0f0fb69bb360f3f0f9fd043aa2c313a",
+        "6268fd7a0c0c73d366967bb68d3af801351403535683aa9489ace0bc3c4311bf",
+        "6bae44651e943416245484fa05742f6a2f13cb9b7c1ef85cb073983f1aaf5f13",
+        "34c4c9c0f7a1d41ec3272e9b9c474502a3ade6166b5bced76be9afbd0a4ea071"
+      ],
+      "openMs": 2322.378399999987,
+      "built": {
+        "milliseconds": 211.74549999999,
+        "records": 49,
+        "bytes": 81920,
+        "sha256": "d3d55e6846e264a4c8e940b53362473fc45bb6cc8a24bae0b0cfe74f0e363aa2",
+        "schemaVersion": 1,
+        "generation": "34c4c9c0f7a1d41ec3272e9b9c474502a3ade6166b5bced76be9afbd0a4ea071",
+        "epoch": "6a1c231b-4ccd-408e-b5cd-1433818bb593"
+      },
+      "rebuilt": {
+        "milliseconds": 224.38120000000345,
+        "records": 49,
+        "bytes": 81920,
+        "sha256": "d3d55e6846e264a4c8e940b53362473fc45bb6cc8a24bae0b0cfe74f0e363aa2",
+        "schemaVersion": 1,
+        "generation": "34c4c9c0f7a1d41ec3272e9b9c474502a3ade6166b5bced76be9afbd0a4ea071",
+        "epoch": "d7d0375e-7207-4a50-96cd-4878d7d8a742"
+      },
+      "queryMs": 88.96789999998873,
+      "queryMetrics": {
+        "recordsConsidered": 1,
+        "qualificationChecks": 1,
+        "exactSpatialChecks": 0,
+        "spatialFalsePositiveCandidates": 0,
+        "provenanceChecks": 1,
+        "resourceReferencesResolved": 2,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "decodedPayloadBytes": 0,
+        "nativeSamplesRead": 0,
+        "cellCentrePredicates": 0,
+        "candidates": 1,
+        "availableRecords": 49,
+        "milliseconds": 2.126300008967519,
+        "ancestryTraversals": 0,
+        "catalogueSelectorAuditRecords": 49,
+        "catalogueBytesHashed": 81920,
+        "canonicalMetadataReads": 49,
+        "canonicalMetadataBytes": 1487515
+      },
+      "derivedMs": 120.597299999994,
+      "derivedMetrics": {
+        "outputMembershipChecks": 32,
+        "artifactMetadataReads": 60,
+        "artifactMetadataBytes": 454543,
+        "canonicalMetadataReads": 49,
+        "canonicalMetadataBytes": 1487515,
+        "returned": 1,
+        "ancestryTraversals": 0
+      },
+      "storage": {
+        "bytes": 4905755,
+        "records": 236
+      },
+      "rss": 257007616
+    },
+    {
+      "repeat": 2,
+      "world": "C:\\Users\\gbsam\\Documents\\Codex\\atlas-registration-measured-puKirx\\world-2",
+      "inspectionMs": 2266.6449999999895,
+      "inspection": {
+        "milliseconds": 2224.290000000008,
+        "payloadBytesHashed": 171482433,
+        "payloadHashOperations": 329,
+        "nativeSetup": {
+          "elapsedSeconds": 1.3666606999468058,
+          "organisationSeconds": 0.1272876998409629,
+          "loadedRecords": 44,
+          "geometryRecordsBuilt": 38,
+          "metadataMembersParsed": 5,
+          "metadataMemberBytes": 5603919,
+          "verificationInputHashBytes": 120347916,
+          "persistentIndexBytes": 0,
+          "physicalIO": "current verification/reconstruction and GDAL/archive reads are additional; member parse bytes and hash bytes are logical, not cold disk traffic",
+          "inputHashOperations": 17,
+          "inputBytesHashed": 125951835
+        }
+      },
+      "registrationMs": 4755.342399999994,
+      "initial": {
+        "generation": "6ffc6c467ef78ad5865f801f96fd952ce30b7edf8143adf236c6ea28ccb3b6bc",
+        "nativeIdentities": {
+          "riffelhorn": "866d992723a4b9114dac1fba92c3173767c4a59ec089c6f1d8d5d1aa58aad386",
+          "tryfan": "5105aae85cd62ba9093075b8d8a40221ea60d158ac3f659d387c355e6d00ba8a"
+        },
+        "validation": {
+          "milliseconds": 2270.0216000000073,
+          "metadataRecords": 44,
+          "metadataBytes": 6984556,
+          "payloadHashOperations": 329,
+          "payloadBytesHashed": 171482433,
+          "ancestryTraversals": 0,
+          "parentRssBytes": 261251072
+        },
+        "writes": {
+          "recordsWritten": 46,
+          "bytesWritten": 4438128,
+          "recordsRead": 0,
+          "bytesRead": 0,
+          "bytesEncoded": 1380637
+        },
+        "registrationMetadataBytes": 42867
+      },
+      "derived": {
+        "generation": "06be88f4535e829ea234a9a75f8fe4e05589b55e49b05e2c72d80ff8627b091c",
+        "metrics": {
+          "totalMs": 2867.325299999997,
+          "processingMs": 108.6192999999912,
+          "fullValidationMs": 2409.683799999999,
+          "artifactMetadataReads": 49,
+          "artifactMetadataBytes": 377994,
+          "artifactWriteAttempts": 32,
+          "writes": {
+            "recordsWritten": 36,
+            "bytesWritten": 264940,
+            "recordsRead": 8,
+            "bytesRead": 1329709,
+            "bytesEncoded": 1594649
+          },
+          "milliseconds": 13.071299996227026,
+          "cellsRead": 144,
+          "decodedBytes": 576,
+          "filesOpened": 1,
+          "physicalIO": "Decoded requested cells; compressed block traffic and full input verification are additional"
+        },
+        "published": {
+          "generation": "06be88f4535e829ea234a9a75f8fe4e05589b55e49b05e2c72d80ff8627b091c",
+          "membership": "88e582c8fc285b01e41692276c655efcdaeead7d601f4e225e898ff0850fe285",
+          "authority": "filesystem-root",
+          "writes": {
+            "recordsWritten": 33,
+            "bytesWritten": 5433,
+            "recordsRead": 1,
+            "bytesRead": 162,
+            "bytesEncoded": 5433,
+            "rootBytesWritten": 210
+          },
+          "validation": {
+            "generation": "06be88f4535e829ea234a9a75f8fe4e05589b55e49b05e2c72d80ff8627b091c",
+            "status": "fully-validated-unpublished",
+            "outputChecks": 32,
+            "metadataRecords": 142,
+            "artifactMetadataReads": 81,
+            "artifactMetadataBytes": 613971,
+            "registrationMetadata": {
+              "records": 6,
+              "bytes": 128601
+            },
+            "payloadBytesHashed": 217013031,
+            "payloadHashOperations": 641,
+            "milliseconds": 2785.708899999998,
+            "sampling": {
+              "milliseconds": 12.86889985203743,
+              "cellsRead": 144,
+              "decodedBytes": 576,
+              "filesOpened": 1,
+              "physicalIO": "Decoded requested cells; compressed block traffic and full input verification are additional"
+            }
+          },
+          "milliseconds": 2927.435599999997
+        }
+      },
+      "noOp": {
+        "generation": "06be88f4535e829ea234a9a75f8fe4e05589b55e49b05e2c72d80ff8627b091c",
+        "status": "no-op",
+        "affected": [],
+        "recomputed": [],
+        "requalified": [],
+        "reused": 32,
+        "metrics": {
+          "milliseconds": 2432.577099999995,
+          "validation": {
+            "milliseconds": 2327.7868000000017,
+            "metadataRecords": 95,
+            "metadataBytes": 7384095,
+            "payloadHashOperations": 329,
+            "payloadBytesHashed": 171482433,
+            "ancestryTraversals": 0,
+            "parentRssBytes": 262172672
+          },
+          "bytesWritten": 0
+        },
+        "registrationRevision": null
+      },
+      "cases": [
+        {
+          "case": "knowledge-only",
+          "agreement": true,
+          "numericalValuesUnchanged": true,
+          "planningMs": 2501.5548000000126,
+          "plan": {
+            "generation": "06be88f4535e829ea234a9a75f8fe4e05589b55e49b05e2c72d80ff8627b091c",
+            "status": "dry-run",
+            "affected": [],
+            "recomputed": [],
+            "requalified": [],
+            "reused": 32,
+            "reason": "Informational knowledge accountability only; no numerical/scientific input qualification change.",
+            "metrics": {
+              "milliseconds": 2457.9272000000055,
+              "validation": {
+                "milliseconds": 2343.6745999999985,
+                "metadataRecords": 95,
+                "metadataBytes": 7384095,
+                "payloadHashOperations": 329,
+                "payloadBytesHashed": 171482433,
+                "ancestryTraversals": 0,
+                "parentRssBytes": 244670464
+              },
+              "closureArtifactReads": 16,
+              "artifactMetadataReads": 16,
+              "artifactMetadataBytes": 137227,
+              "registrationReads": {
+                "records": 2,
+                "bytes": 42867
+              },
+              "baseMetadataReads": 44,
+              "baseMetadataBytes": 1359315,
+              "processingCellsRead": 0
+            },
+            "registrationRevision": null
+          },
+          "stagingMs": 2657.247100000008,
+          "stage": {
+            "generation": "da609bc521353dcd13590fef0649a2ffca6d21f86545bdda971a9af4f27c401c",
+            "status": "staged-unpublished",
+            "affected": [],
+            "recomputed": [],
+            "requalified": [],
+            "reused": 32,
+            "reason": "Informational knowledge accountability only; no numerical/scientific input qualification change.",
+            "metrics": {
+              "milliseconds": 2613.2410999999847,
+              "validation": {
+                "milliseconds": 2470.5646000000124,
+                "metadataRecords": 95,
+                "metadataBytes": 7384095,
+                "payloadHashOperations": 329,
+                "payloadBytesHashed": 171482433,
+                "ancestryTraversals": 0,
+                "parentRssBytes": 264155136
+              },
+              "closureArtifactReads": 16,
+              "artifactMetadataReads": 16,
+              "artifactMetadataBytes": 137227,
+              "registrationReads": {
+                "records": 2,
+                "bytes": 42867
+              },
+              "baseMetadataReads": 44,
+              "baseMetadataBytes": 1359315,
+              "processingCellsRead": 0,
+              "writes": {
+                "recordsWritten": 3,
+                "bytesWritten": 44804,
+                "recordsRead": 9,
+                "bytesRead": 1350589,
+                "bytesEncoded": 1395393
+              }
+            },
+            "registrationRevision": "5a501d4b0e94e3fd466060179af1b6120abb8e8ddd4d6d0c9cc2218cf534b7d0"
+          },
+          "fullReferenceMs": 2596.829700000002,
+          "validation": {
+            "generation": "da609bc521353dcd13590fef0649a2ffca6d21f86545bdda971a9af4f27c401c",
+            "status": "fully-validated-unpublished",
+            "outputChecks": 32,
+            "metadataRecords": 195,
+            "artifactMetadataReads": 81,
+            "artifactMetadataBytes": 613971,
+            "registrationMetadata": {
+              "records": 8,
+              "bytes": 211623
+            },
+            "payloadBytesHashed": 217013031,
+            "payloadHashOperations": 641,
+            "milliseconds": 2873.392900000006,
+            "sampling": {
+              "milliseconds": 12.806100072339177,
+              "cellsRead": 144,
+              "decodedBytes": 576,
+              "filesOpened": 1,
+              "physicalIO": "Decoded requested cells; compressed block traffic and full input verification are additional"
+            }
+          },
+          "published": {
+            "generation": "da609bc521353dcd13590fef0649a2ffca6d21f86545bdda971a9af4f27c401c",
+            "membership": "52c5debf7f046c017f695845e04a4e7d3766ff5d6ef7dd90ac3a139e22a69509",
+            "authority": "filesystem-root",
+            "writes": {
+              "recordsWritten": 33,
+              "bytesWritten": 5511,
+              "recordsRead": 1,
+              "bytesRead": 240,
+              "bytesEncoded": 5511,
+              "rootBytesWritten": 210
+            },
+            "validation": {
+              "generation": "da609bc521353dcd13590fef0649a2ffca6d21f86545bdda971a9af4f27c401c",
+              "status": "fully-validated-unpublished",
+              "outputChecks": 32,
+              "metadataRecords": 195,
+              "artifactMetadataReads": 81,
+              "artifactMetadataBytes": 613971,
+              "registrationMetadata": {
+                "records": 8,
+                "bytes": 211623
+              },
+              "payloadBytesHashed": 217013031,
+              "payloadHashOperations": 641,
+              "milliseconds": 2919.497700000007,
+              "sampling": {
+                "milliseconds": 12.741399928927422,
+                "cellsRead": 144,
+                "decodedBytes": 576,
+                "filesOpened": 1,
+                "physicalIO": "Decoded requested cells; compressed block traffic and full input verification are additional"
+              }
+            },
+            "milliseconds": 3064.363400000002
+          },
+          "componentsChanged": [
+            "registrationLedger"
+          ],
+          "componentsReused": [
+            "catalogue",
+            "knowledge",
+            "locators",
+            "riffelhornRegistration",
+            "serving",
+            "terrainDerived",
+            "terrainLifecycle",
+            "tryfanRegistration",
+            "understanding"
+          ]
+        },
+        {
+          "case": "source-qualification",
+          "agreement": true,
+          "numericalValuesUnchanged": true,
+          "planningMs": 2493.3430999999982,
+          "plan": {
+            "generation": "da609bc521353dcd13590fef0649a2ffca6d21f86545bdda971a9af4f27c401c",
+            "status": "dry-run",
+            "affected": [
+              "dtm-cluster-0-0|area-ratio",
+              "dtm-cluster-0-0|slope",
+              "dtm-cluster-0-1|area-ratio",
+              "dtm-cluster-0-1|slope",
+              "dtm-cluster-1-0|area-ratio",
+              "dtm-cluster-1-0|slope",
+              "dtm-cluster-1-1|area-ratio",
+              "dtm-cluster-1-1|slope"
+            ],
+            "recomputed": [],
+            "requalified": [
+              "dtm-cluster-0-0|area-ratio",
+              "dtm-cluster-0-0|slope",
+              "dtm-cluster-0-1|area-ratio",
+              "dtm-cluster-0-1|slope",
+              "dtm-cluster-1-0|area-ratio",
+              "dtm-cluster-1-0|slope",
+              "dtm-cluster-1-1|area-ratio",
+              "dtm-cluster-1-1|slope"
+            ],
+            "reused": 24,
+            "reason": "Source bytes/method/parameters unchanged: reuse verified samples/numerical values; requalify exact claims and downstream identities.",
+            "metrics": {
+              "milliseconds": 2448.674399999989,
+              "validation": {
+                "milliseconds": 2344.525499999989,
+                "metadataRecords": 96,
+                "metadataBytes": 7425684,
+                "payloadHashOperations": 329,
+                "payloadBytesHashed": 171482433,
+                "ancestryTraversals": 0,
+                "parentRssBytes": 264941568
+              },
+              "closureArtifactReads": 16,
+              "artifactMetadataReads": 16,
+              "artifactMetadataBytes": 137227,
+              "registrationReads": {
+                "records": 3,
+                "bytes": 84378
+              },
+              "baseMetadataReads": 44,
+              "baseMetadataBytes": 1359393,
+              "processingCellsRead": 0
+            },
+            "registrationRevision": null
+          },
+          "stagingMs": 2767.232799999998,
+          "stage": {
+            "generation": "885ca742a45cd0c866001e0a9254f5e2250f1fac9cc76d20a167bf599afcceb9",
+            "status": "staged-unpublished",
+            "affected": [
+              "dtm-cluster-0-0|area-ratio",
+              "dtm-cluster-0-0|slope",
+              "dtm-cluster-0-1|area-ratio",
+              "dtm-cluster-0-1|slope",
+              "dtm-cluster-1-0|area-ratio",
+              "dtm-cluster-1-0|slope",
+              "dtm-cluster-1-1|area-ratio",
+              "dtm-cluster-1-1|slope"
+            ],
+            "recomputed": [],
+            "requalified": [
+              "dtm-cluster-0-0|area-ratio",
+              "dtm-cluster-0-0|slope",
+              "dtm-cluster-0-1|area-ratio",
+              "dtm-cluster-0-1|slope",
+              "dtm-cluster-1-0|area-ratio",
+              "dtm-cluster-1-0|slope",
+              "dtm-cluster-1-1|area-ratio",
+              "dtm-cluster-1-1|slope"
+            ],
+            "reused": 24,
+            "reason": "Source bytes/method/parameters unchanged: reuse verified samples/numerical values; requalify exact claims and downstream identities.",
+            "metrics": {
+              "milliseconds": 2717.7669999999925,
+              "validation": {
+                "milliseconds": 2401.8935000000056,
+                "metadataRecords": 96,
+                "metadataBytes": 7425684,
+                "payloadHashOperations": 329,
+                "payloadBytesHashed": 171482433,
+                "ancestryTraversals": 0,
+                "parentRssBytes": 265908224
+              },
+              "closureArtifactReads": 16,
+              "artifactMetadataReads": 82,
+              "artifactMetadataBytes": 639405,
+              "registrationReads": {
+                "records": 3,
+                "bytes": 84378
+              },
+              "baseMetadataReads": 44,
+              "baseMetadataBytes": 1359393,
+              "processingCellsRead": 0,
+              "requalificationMs": 154.52530000000843,
+              "writes": {
+                "recordsWritten": 14,
+                "bytesWritten": 130558,
+                "recordsRead": 7,
+                "bytesRead": 1329366,
+                "bytesEncoded": 1459924
+              }
+            },
+            "registrationRevision": "7d05c3866ea345eeb8b46ef21152d91cb708a75a1e4ebc56eaf6f7f6c339fbe9"
+          },
+          "fullReferenceMs": 2741.7312000000093,
+          "validation": {
+            "generation": "885ca742a45cd0c866001e0a9254f5e2250f1fac9cc76d20a167bf599afcceb9",
+            "status": "fully-validated-unpublished",
+            "outputChecks": 32,
+            "metadataRecords": 208,
+            "artifactMetadataReads": 90,
+            "artifactMetadataBytes": 681617,
+            "registrationMetadata": {
+              "records": 11,
+              "bytes": 336702
+            },
+            "payloadBytesHashed": 217013031,
+            "payloadHashOperations": 641,
+            "milliseconds": 3833.7996000000276,
+            "sampling": {
+              "milliseconds": 13.095499947667122,
+              "cellsRead": 144,
+              "decodedBytes": 576,
+              "filesOpened": 1,
+              "physicalIO": "Decoded requested cells; compressed block traffic and full input verification are additional"
+            }
+          },
+          "published": {
+            "generation": "885ca742a45cd0c866001e0a9254f5e2250f1fac9cc76d20a167bf599afcceb9",
+            "membership": "6eb499bcc79b71eef09b9facec2f5556c502550a4d86bd119daf5bce9f69db91",
+            "authority": "filesystem-root",
+            "writes": {
+              "recordsWritten": 33,
+              "bytesWritten": 5589,
+              "recordsRead": 1,
+              "bytesRead": 318,
+              "bytesEncoded": 5589,
+              "rootBytesWritten": 210
+            },
+            "validation": {
+              "generation": "885ca742a45cd0c866001e0a9254f5e2250f1fac9cc76d20a167bf599afcceb9",
+              "status": "fully-validated-unpublished",
+              "outputChecks": 32,
+              "metadataRecords": 208,
+              "artifactMetadataReads": 90,
+              "artifactMetadataBytes": 681617,
+              "registrationMetadata": {
+                "records": 11,
+                "bytes": 336702
+              },
+              "payloadBytesHashed": 217013031,
+              "payloadHashOperations": 641,
+              "milliseconds": 2889.9187000000093,
+              "sampling": {
+                "milliseconds": 13.834800105541945,
+                "cellsRead": 144,
+                "decodedBytes": 576,
+                "filesOpened": 1,
+                "physicalIO": "Decoded requested cells; compressed block traffic and full input verification are additional"
+              }
+            },
+            "milliseconds": 3034.5785000000033
+          },
+          "componentsChanged": [
+            "registrationLedger",
+            "terrainDerived",
+            "terrainLifecycle"
+          ],
+          "componentsReused": [
+            "catalogue",
+            "knowledge",
+            "locators",
+            "riffelhornRegistration",
+            "serving",
+            "tryfanRegistration",
+            "understanding"
+          ]
+        },
+        {
+          "case": "unrelated-region",
+          "agreement": true,
+          "numericalValuesUnchanged": true,
+          "planningMs": 2451.3058999999776,
+          "plan": {
+            "generation": "885ca742a45cd0c866001e0a9254f5e2250f1fac9cc76d20a167bf599afcceb9",
+            "status": "dry-run",
+            "affected": [],
+            "recomputed": [],
+            "requalified": [],
+            "reused": 32,
+            "reason": "Informational knowledge accountability only; no numerical/scientific input qualification change.",
+            "metrics": {
+              "milliseconds": 2408.651899999997,
+              "validation": {
+                "milliseconds": 2305.541899999982,
+                "metadataRecords": 106,
+                "metadataBytes": 7533036,
+                "payloadHashOperations": 329,
+                "payloadBytesHashed": 171482433,
+                "ancestryTraversals": 0,
+                "parentRssBytes": 277385216
+              },
+              "closureArtifactReads": 16,
+              "artifactMetadataReads": 16,
+              "artifactMetadataBytes": 138459,
+              "registrationReads": {
+                "records": 4,
+                "bytes": 126162
+              },
+              "baseMetadataReads": 44,
+              "baseMetadataBytes": 1359779,
+              "processingCellsRead": 0
+            },
+            "registrationRevision": null
+          },
+          "stagingMs": 2506.701000000001,
+          "stage": {
+            "generation": "c80e49dd2a15530234d5d3a53a3b9ea0d7eb41a5bb01121300376e03b768452c",
+            "status": "staged-unpublished",
+            "affected": [],
+            "recomputed": [],
+            "requalified": [],
+            "reused": 32,
+            "reason": "Informational knowledge accountability only; no numerical/scientific input qualification change.",
+            "metrics": {
+              "milliseconds": 2463.700200000021,
+              "validation": {
+                "milliseconds": 2315.931600000011,
+                "metadataRecords": 106,
+                "metadataBytes": 7533036,
+                "payloadHashOperations": 329,
+                "payloadBytesHashed": 171482433,
+                "ancestryTraversals": 0,
+                "parentRssBytes": 249069568
+              },
+              "closureArtifactReads": 16,
+              "artifactMetadataReads": 16,
+              "artifactMetadataBytes": 138459,
+              "registrationReads": {
+                "records": 4,
+                "bytes": 126162
+              },
+              "baseMetadataReads": 44,
+              "baseMetadataBytes": 1359779,
+              "processingCellsRead": 0,
+              "writes": {
+                "recordsWritten": 3,
+                "bytesWritten": 4789,
+                "recordsRead": 9,
+                "bytesRead": 1350897,
+                "bytesEncoded": 1355686
+              }
+            },
+            "registrationRevision": "f66f439ca77a23a66fa6c3f00d323d4f97e32a0f163d799b8f6a5216a50fa8a9"
+          },
+          "fullReferenceMs": 2632.9320999999763,
+          "validation": {
+            "generation": "c80e49dd2a15530234d5d3a53a3b9ea0d7eb41a5bb01121300376e03b768452c",
+            "status": "fully-validated-unpublished",
+            "outputChecks": 32,
+            "metadataRecords": 221,
+            "artifactMetadataReads": 90,
+            "artifactMetadataBytes": 681617,
+            "registrationMetadata": {
+              "records": 14,
+              "bytes": 381478
+            },
+            "payloadBytesHashed": 217013031,
+            "payloadHashOperations": 641,
+            "milliseconds": 2910.4302000000025,
+            "sampling": {
+              "milliseconds": 12.932399986311793,
+              "cellsRead": 144,
+              "decodedBytes": 576,
+              "filesOpened": 1,
+              "physicalIO": "Decoded requested cells; compressed block traffic and full input verification are additional"
+            }
+          },
+          "published": {
+            "generation": "c80e49dd2a15530234d5d3a53a3b9ea0d7eb41a5bb01121300376e03b768452c",
+            "membership": "b84aa5ba49df4eb35c5e61d7167dff2e46193541e33c2cb394b1d42f94a87b5f",
+            "authority": "filesystem-root",
+            "writes": {
+              "recordsWritten": 33,
+              "bytesWritten": 5667,
+              "recordsRead": 1,
+              "bytesRead": 396,
+              "bytesEncoded": 5667,
+              "rootBytesWritten": 210
+            },
+            "validation": {
+              "generation": "c80e49dd2a15530234d5d3a53a3b9ea0d7eb41a5bb01121300376e03b768452c",
+              "status": "fully-validated-unpublished",
+              "outputChecks": 32,
+              "metadataRecords": 221,
+              "artifactMetadataReads": 90,
+              "artifactMetadataBytes": 681617,
+              "registrationMetadata": {
+                "records": 14,
+                "bytes": 381478
+              },
+              "payloadBytesHashed": 217013031,
+              "payloadHashOperations": 641,
+              "milliseconds": 2874.684399999969,
+              "sampling": {
+                "milliseconds": 13.120499905198812,
+                "cellsRead": 144,
+                "decodedBytes": 576,
+                "filesOpened": 1,
+                "physicalIO": "Decoded requested cells; compressed block traffic and full input verification are additional"
+              }
+            },
+            "milliseconds": 3016.112699999998
+          },
+          "componentsChanged": [
+            "registrationLedger"
+          ],
+          "componentsReused": [
+            "catalogue",
+            "knowledge",
+            "locators",
+            "riffelhornRegistration",
+            "serving",
+            "terrainDerived",
+            "terrainLifecycle",
+            "tryfanRegistration",
+            "understanding"
+          ]
+        }
+      ],
+      "history": [
+        "6ffc6c467ef78ad5865f801f96fd952ce30b7edf8143adf236c6ea28ccb3b6bc",
+        "06be88f4535e829ea234a9a75f8fe4e05589b55e49b05e2c72d80ff8627b091c",
+        "da609bc521353dcd13590fef0649a2ffca6d21f86545bdda971a9af4f27c401c",
+        "885ca742a45cd0c866001e0a9254f5e2250f1fac9cc76d20a167bf599afcceb9",
+        "c80e49dd2a15530234d5d3a53a3b9ea0d7eb41a5bb01121300376e03b768452c"
+      ],
+      "openMs": 2358.614200000011,
+      "built": {
+        "milliseconds": 259.17759999999544,
+        "records": 49,
+        "bytes": 81920,
+        "sha256": "d90388c32fdd57feb26ae92cd71d23ba25fd30723aa2fe7e1ed57b1c88d79a58",
+        "schemaVersion": 1,
+        "generation": "c80e49dd2a15530234d5d3a53a3b9ea0d7eb41a5bb01121300376e03b768452c",
+        "epoch": "ba2d29cd-744c-49ed-b7b0-b7eef7bcb020"
+      },
+      "rebuilt": {
+        "milliseconds": 243.97529999999097,
+        "records": 49,
+        "bytes": 81920,
+        "sha256": "d90388c32fdd57feb26ae92cd71d23ba25fd30723aa2fe7e1ed57b1c88d79a58",
+        "schemaVersion": 1,
+        "generation": "c80e49dd2a15530234d5d3a53a3b9ea0d7eb41a5bb01121300376e03b768452c",
+        "epoch": "bf1e28ab-2b1a-4f85-b1b9-e2bd25b2aa97"
+      },
+      "queryMs": 139.81520000001183,
+      "queryMetrics": {
+        "recordsConsidered": 1,
+        "qualificationChecks": 1,
+        "exactSpatialChecks": 0,
+        "spatialFalsePositiveCandidates": 0,
+        "provenanceChecks": 1,
+        "resourceReferencesResolved": 2,
+        "payloadAvailabilityChecks": 0,
+        "payloadReadCalls": 0,
+        "decodedPayloadBytes": 0,
+        "nativeSamplesRead": 0,
+        "cellCentrePredicates": 0,
+        "candidates": 1,
+        "availableRecords": 49,
+        "milliseconds": 2.339400118216872,
+        "ancestryTraversals": 0,
+        "catalogueSelectorAuditRecords": 49,
+        "catalogueBytesHashed": 81920,
+        "canonicalMetadataReads": 49,
+        "canonicalMetadataBytes": 1487515
+      },
+      "derivedMs": 134.35399999999208,
+      "derivedMetrics": {
+        "outputMembershipChecks": 32,
+        "artifactMetadataReads": 60,
+        "artifactMetadataBytes": 454543,
+        "canonicalMetadataReads": 49,
+        "canonicalMetadataBytes": 1487515,
+        "returned": 1,
+        "ancestryTraversals": 0
+      },
+      "storage": {
+        "bytes": 4905755,
+        "records": 236
+      },
+      "rss": 261693440
+    }
+  ],
+  "replays": [
+    {
+      "repeat": 0,
+      "milliseconds": 27066.736999999994,
+      "results": [
+        {
+          "generation": "beffc7a2761fd19a1ca1d2cbe99e20ba45cb1ca4232b16b04b526445e052032b",
+          "count": 0,
+          "resultIdentity": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+          "registrations": {
+            "riffelhorn": {
+              "identity": "2d26c2923731fef9a039ddbc1e5202afe609e61818d251b5f8653a2cf21af714",
+              "nativeIdentity": "866d992723a4b9114dac1fba92c3173767c4a59ec089c6f1d8d5d1aa58aad386",
+              "sequence": 0,
+              "supersedes": null,
+              "knowledgeTime": {
+                "acceptedAt": "2026-10-09T02:06:28.794Z",
+                "basis": "runtime acceptance clock; not physical observation or source publication"
+              },
+              "sourceNotice": null
+            },
+            "tryfan": {
+              "identity": "4e7a2932795b0128c4aebecc3cdaedf9e6263e53eba1acf1ca78d5a1b783dcb5",
+              "nativeIdentity": "5105aae85cd62ba9093075b8d8a40221ea60d158ac3f659d387c355e6d00ba8a",
+              "sequence": 0,
+              "supersedes": null,
+              "knowledgeTime": {
+                "acceptedAt": "2026-10-09T02:06:28.807Z",
+                "basis": "runtime acceptance clock; not physical observation or source publication"
+              },
+              "sourceNotice": null
+            }
+          },
+          "validation": {
+            "milliseconds": 2290.611,
+            "metadataRecords": 44,
+            "metadataBytes": 6984868,
+            "payloadHashOperations": 329,
+            "payloadBytesHashed": 171482433,
+            "ancestryTraversals": 0,
+            "parentRssBytes": 151207936
+          }
+        },
+        {
+          "generation": "e056353e9d38fc6940e9bd5d8bb476233f6a549c105121d358d44d83b2948231",
+          "count": 32,
+          "resultIdentity": "3bc0da7ece2f878756a475b28fd86bf80ff7c0f8bd7932ab858e874b27f3c7da",
+          "registrations": {
+            "riffelhorn": {
+              "identity": "2d26c2923731fef9a039ddbc1e5202afe609e61818d251b5f8653a2cf21af714",
+              "nativeIdentity": "866d992723a4b9114dac1fba92c3173767c4a59ec089c6f1d8d5d1aa58aad386",
+              "sequence": 0,
+              "supersedes": null,
+              "knowledgeTime": {
+                "acceptedAt": "2026-10-09T02:06:28.794Z",
+                "basis": "runtime acceptance clock; not physical observation or source publication"
+              },
+              "sourceNotice": null
+            },
+            "tryfan": {
+              "identity": "4e7a2932795b0128c4aebecc3cdaedf9e6263e53eba1acf1ca78d5a1b783dcb5",
+              "nativeIdentity": "5105aae85cd62ba9093075b8d8a40221ea60d158ac3f659d387c355e6d00ba8a",
+              "sequence": 0,
+              "supersedes": null,
+              "knowledgeTime": {
+                "acceptedAt": "2026-10-09T02:06:28.807Z",
+                "basis": "runtime acceptance clock; not physical observation or source publication"
+              },
+              "sourceNotice": null
+            }
+          },
+          "validation": {
+            "milliseconds": 3440.4620999999997,
+            "metadataRecords": 95,
+            "metadataBytes": 7384329,
+            "payloadHashOperations": 329,
+            "payloadBytesHashed": 171482433,
+            "ancestryTraversals": 0,
+            "parentRssBytes": 155496448
+          }
+        },
+        {
+          "generation": "65989736a06f72182fba9d9ad9d47955869f51ce943ef120effcad2df91352fd",
+          "count": 32,
+          "resultIdentity": "3bc0da7ece2f878756a475b28fd86bf80ff7c0f8bd7932ab858e874b27f3c7da",
+          "registrations": {
+            "riffelhorn": {
+              "identity": "6d9afddb7cbfc70daecb35185a4bc26dbdae3ec6e9a02b4762c0d492e7a92d4b",
+              "nativeIdentity": "866d992723a4b9114dac1fba92c3173767c4a59ec089c6f1d8d5d1aa58aad386",
+              "sequence": 1,
+              "supersedes": "2d26c2923731fef9a039ddbc1e5202afe609e61818d251b5f8653a2cf21af714",
+              "knowledgeTime": {
+                "acceptedAt": "2026-10-09T02:06:48.746Z",
+                "basis": "runtime acceptance clock; not physical observation or source publication"
+              },
+              "sourceNotice": null
+            },
+            "tryfan": {
+              "identity": "4e7a2932795b0128c4aebecc3cdaedf9e6263e53eba1acf1ca78d5a1b783dcb5",
+              "nativeIdentity": "5105aae85cd62ba9093075b8d8a40221ea60d158ac3f659d387c355e6d00ba8a",
+              "sequence": 0,
+              "supersedes": null,
+              "knowledgeTime": {
+                "acceptedAt": "2026-10-09T02:06:28.807Z",
+                "basis": "runtime acceptance clock; not physical observation or source publication"
+              },
+              "sourceNotice": null
+            }
+          },
+          "validation": {
+            "milliseconds": 2321.0025000000005,
+            "metadataRecords": 96,
+            "metadataBytes": 7425840,
+            "payloadHashOperations": 329,
+            "payloadBytesHashed": 171482433,
+            "ancestryTraversals": 0,
+            "parentRssBytes": 246579200
+          }
+        },
+        {
+          "generation": "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289",
+          "count": 32,
+          "resultIdentity": "0bab861fe71818d2f881ceabc8320b837641f4062366fd54d24dcea4d3791f00",
+          "registrations": {
+            "riffelhorn": {
+              "identity": "fcbac3e76a5e15da463361e57161c4d6a6a24377f5c2bef9be322d6301012a0f",
+              "nativeIdentity": "866d992723a4b9114dac1fba92c3173767c4a59ec089c6f1d8d5d1aa58aad386",
+              "sequence": 2,
+              "supersedes": "6d9afddb7cbfc70daecb35185a4bc26dbdae3ec6e9a02b4762c0d492e7a92d4b",
+              "knowledgeTime": {
+                "acceptedAt": "2026-10-09T02:07:06.400Z",
+                "basis": "runtime acceptance clock; not physical observation or source publication"
+              },
+              "sourceNotice": {
+                "bounds": [
+                  2624350,
+                  1091350,
+                  2624350.5,
+                  1091350.5
+                ],
+                "key": "dtm:c68c305e4a142da416b46b555a80916ecc52f8fa50bf1efd5cd2c3f24f9cd4bc",
+                "text": "Controlled retained-source qualification correction; no physical change"
+              }
+            },
+            "tryfan": {
+              "identity": "4e7a2932795b0128c4aebecc3cdaedf9e6263e53eba1acf1ca78d5a1b783dcb5",
+              "nativeIdentity": "5105aae85cd62ba9093075b8d8a40221ea60d158ac3f659d387c355e6d00ba8a",
+              "sequence": 0,
+              "supersedes": null,
+              "knowledgeTime": {
+                "acceptedAt": "2026-10-09T02:06:28.807Z",
+                "basis": "runtime acceptance clock; not physical observation or source publication"
+              },
+              "sourceNotice": null
+            }
+          },
+          "validation": {
+            "milliseconds": 2371.5249000000003,
+            "metadataRecords": 106,
+            "metadataBytes": 7533114,
+            "payloadHashOperations": 329,
+            "payloadBytesHashed": 171482433,
+            "ancestryTraversals": 0,
+            "parentRssBytes": 246743040
+          }
+        },
+        {
+          "generation": "22ff4e063d031c5ccf47c1570eb1bdafaf155f148539655b35901d0f99b4883c",
+          "count": 32,
+          "resultIdentity": "0bab861fe71818d2f881ceabc8320b837641f4062366fd54d24dcea4d3791f00",
+          "registrations": {
+            "riffelhorn": {
+              "identity": "fcbac3e76a5e15da463361e57161c4d6a6a24377f5c2bef9be322d6301012a0f",
+              "nativeIdentity": "866d992723a4b9114dac1fba92c3173767c4a59ec089c6f1d8d5d1aa58aad386",
+              "sequence": 2,
+              "supersedes": "6d9afddb7cbfc70daecb35185a4bc26dbdae3ec6e9a02b4762c0d492e7a92d4b",
+              "knowledgeTime": {
+                "acceptedAt": "2026-10-09T02:07:06.400Z",
+                "basis": "runtime acceptance clock; not physical observation or source publication"
+              },
+              "sourceNotice": {
+                "bounds": [
+                  2624350,
+                  1091350,
+                  2624350.5,
+                  1091350.5
+                ],
+                "key": "dtm:c68c305e4a142da416b46b555a80916ecc52f8fa50bf1efd5cd2c3f24f9cd4bc",
+                "text": "Controlled retained-source qualification correction; no physical change"
+              }
+            },
+            "tryfan": {
+              "identity": "19a47c0f1dc57979978b49d7ee2be60cb51a124719d26c8f57d765939f9ca8ed",
+              "nativeIdentity": "5105aae85cd62ba9093075b8d8a40221ea60d158ac3f659d387c355e6d00ba8a",
+              "sequence": 1,
+              "supersedes": "4e7a2932795b0128c4aebecc3cdaedf9e6263e53eba1acf1ca78d5a1b783dcb5",
+              "knowledgeTime": {
+                "acceptedAt": "2026-10-09T02:07:23.152Z",
+                "basis": "runtime acceptance clock; not physical observation or source publication"
+              },
+              "sourceNotice": null
+            }
+          },
+          "validation": {
+            "milliseconds": 2426.8584999999985,
+            "metadataRecords": 107,
+            "metadataBytes": 7534610,
+            "payloadHashOperations": 329,
+            "payloadBytesHashed": 171482433,
+            "ancestryTraversals": 0,
+            "parentRssBytes": 246956032
+          }
+        }
+      ]
+    },
+    {
+      "repeat": 1,
+      "milliseconds": 27919.34030000001,
+      "results": [
+        {
+          "generation": "7b794a7b848c65bbca533c742d5e15ecaa14ceee1452727b86f4824ef258e2d8",
+          "count": 0,
+          "resultIdentity": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+          "registrations": {
+            "riffelhorn": {
+              "identity": "ab807c4237f275e7ccac358565d58e62f81fd181939afcae6ad77dfb161f97f9",
+              "nativeIdentity": "866d992723a4b9114dac1fba92c3173767c4a59ec089c6f1d8d5d1aa58aad386",
+              "sequence": 0,
+              "supersedes": null,
+              "knowledgeTime": {
+                "acceptedAt": "2026-10-09T02:08:06.977Z",
+                "basis": "runtime acceptance clock; not physical observation or source publication"
+              },
+              "sourceNotice": null
+            },
+            "tryfan": {
+              "identity": "52d41a32c53d499613b62ed981d029071e2a4fbb014a7f45aa0d400fa37f321f",
+              "nativeIdentity": "5105aae85cd62ba9093075b8d8a40221ea60d158ac3f659d387c355e6d00ba8a",
+              "sequence": 0,
+              "supersedes": null,
+              "knowledgeTime": {
+                "acceptedAt": "2026-10-09T02:08:06.991Z",
+                "basis": "runtime acceptance clock; not physical observation or source publication"
+              },
+              "sourceNotice": null
+            }
+          },
+          "validation": {
+            "milliseconds": 2301.4303999999997,
+            "metadataRecords": 44,
+            "metadataBytes": 6984868,
+            "payloadHashOperations": 329,
+            "payloadBytesHashed": 171482433,
+            "ancestryTraversals": 0,
+            "parentRssBytes": 150851584
+          }
+        },
+        {
+          "generation": "925251eb9d48a313469d8cafc7225dd1c0f0fb69bb360f3f0f9fd043aa2c313a",
+          "count": 32,
+          "resultIdentity": "3bc0da7ece2f878756a475b28fd86bf80ff7c0f8bd7932ab858e874b27f3c7da",
+          "registrations": {
+            "riffelhorn": {
+              "identity": "ab807c4237f275e7ccac358565d58e62f81fd181939afcae6ad77dfb161f97f9",
+              "nativeIdentity": "866d992723a4b9114dac1fba92c3173767c4a59ec089c6f1d8d5d1aa58aad386",
+              "sequence": 0,
+              "supersedes": null,
+              "knowledgeTime": {
+                "acceptedAt": "2026-10-09T02:08:06.977Z",
+                "basis": "runtime acceptance clock; not physical observation or source publication"
+              },
+              "sourceNotice": null
+            },
+            "tryfan": {
+              "identity": "52d41a32c53d499613b62ed981d029071e2a4fbb014a7f45aa0d400fa37f321f",
+              "nativeIdentity": "5105aae85cd62ba9093075b8d8a40221ea60d158ac3f659d387c355e6d00ba8a",
+              "sequence": 0,
+              "supersedes": null,
+              "knowledgeTime": {
+                "acceptedAt": "2026-10-09T02:08:06.991Z",
+                "basis": "runtime acceptance clock; not physical observation or source publication"
+              },
+              "sourceNotice": null
+            }
+          },
+          "validation": {
+            "milliseconds": 4291.631800000001,
+            "metadataRecords": 95,
+            "metadataBytes": 7384329,
+            "payloadHashOperations": 329,
+            "payloadBytesHashed": 171482433,
+            "ancestryTraversals": 0,
+            "parentRssBytes": 155303936
+          }
+        },
+        {
+          "generation": "6268fd7a0c0c73d366967bb68d3af801351403535683aa9489ace0bc3c4311bf",
+          "count": 32,
+          "resultIdentity": "3bc0da7ece2f878756a475b28fd86bf80ff7c0f8bd7932ab858e874b27f3c7da",
+          "registrations": {
+            "riffelhorn": {
+              "identity": "78c4d75b3ea0cc235f17085b2d61a66cf07bfc82ccbc20baf9145f3d7be6c6ef",
+              "nativeIdentity": "866d992723a4b9114dac1fba92c3173767c4a59ec089c6f1d8d5d1aa58aad386",
+              "sequence": 1,
+              "supersedes": "ab807c4237f275e7ccac358565d58e62f81fd181939afcae6ad77dfb161f97f9",
+              "knowledgeTime": {
+                "acceptedAt": "2026-10-09T02:08:26.467Z",
+                "basis": "runtime acceptance clock; not physical observation or source publication"
+              },
+              "sourceNotice": null
+            },
+            "tryfan": {
+              "identity": "52d41a32c53d499613b62ed981d029071e2a4fbb014a7f45aa0d400fa37f321f",
+              "nativeIdentity": "5105aae85cd62ba9093075b8d8a40221ea60d158ac3f659d387c355e6d00ba8a",
+              "sequence": 0,
+              "supersedes": null,
+              "knowledgeTime": {
+                "acceptedAt": "2026-10-09T02:08:06.991Z",
+                "basis": "runtime acceptance clock; not physical observation or source publication"
+              },
+              "sourceNotice": null
+            }
+          },
+          "validation": {
+            "milliseconds": 2348.777900000001,
+            "metadataRecords": 96,
+            "metadataBytes": 7425840,
+            "payloadHashOperations": 329,
+            "payloadBytesHashed": 171482433,
+            "ancestryTraversals": 0,
+            "parentRssBytes": 247623680
+          }
+        },
+        {
+          "generation": "6bae44651e943416245484fa05742f6a2f13cb9b7c1ef85cb073983f1aaf5f13",
+          "count": 32,
+          "resultIdentity": "0bab861fe71818d2f881ceabc8320b837641f4062366fd54d24dcea4d3791f00",
+          "registrations": {
+            "riffelhorn": {
+              "identity": "b5f28417fa68fa992c8c5d66eb3877a90379f04c7e0095ba56e607ecdb14f0ad",
+              "nativeIdentity": "866d992723a4b9114dac1fba92c3173767c4a59ec089c6f1d8d5d1aa58aad386",
+              "sequence": 2,
+              "supersedes": "78c4d75b3ea0cc235f17085b2d61a66cf07bfc82ccbc20baf9145f3d7be6c6ef",
+              "knowledgeTime": {
+                "acceptedAt": "2026-10-09T02:08:43.957Z",
+                "basis": "runtime acceptance clock; not physical observation or source publication"
+              },
+              "sourceNotice": {
+                "bounds": [
+                  2624350,
+                  1091350,
+                  2624350.5,
+                  1091350.5
+                ],
+                "key": "dtm:c68c305e4a142da416b46b555a80916ecc52f8fa50bf1efd5cd2c3f24f9cd4bc",
+                "text": "Controlled retained-source qualification correction; no physical change"
+              }
+            },
+            "tryfan": {
+              "identity": "52d41a32c53d499613b62ed981d029071e2a4fbb014a7f45aa0d400fa37f321f",
+              "nativeIdentity": "5105aae85cd62ba9093075b8d8a40221ea60d158ac3f659d387c355e6d00ba8a",
+              "sequence": 0,
+              "supersedes": null,
+              "knowledgeTime": {
+                "acceptedAt": "2026-10-09T02:08:06.991Z",
+                "basis": "runtime acceptance clock; not physical observation or source publication"
+              },
+              "sourceNotice": null
+            }
+          },
+          "validation": {
+            "milliseconds": 2362.8979999999974,
+            "metadataRecords": 106,
+            "metadataBytes": 7533114,
+            "payloadHashOperations": 329,
+            "payloadBytesHashed": 171482433,
+            "ancestryTraversals": 0,
+            "parentRssBytes": 247808000
+          }
+        },
+        {
+          "generation": "34c4c9c0f7a1d41ec3272e9b9c474502a3ade6166b5bced76be9afbd0a4ea071",
+          "count": 32,
+          "resultIdentity": "0bab861fe71818d2f881ceabc8320b837641f4062366fd54d24dcea4d3791f00",
+          "registrations": {
+            "riffelhorn": {
+              "identity": "b5f28417fa68fa992c8c5d66eb3877a90379f04c7e0095ba56e607ecdb14f0ad",
+              "nativeIdentity": "866d992723a4b9114dac1fba92c3173767c4a59ec089c6f1d8d5d1aa58aad386",
+              "sequence": 2,
+              "supersedes": "78c4d75b3ea0cc235f17085b2d61a66cf07bfc82ccbc20baf9145f3d7be6c6ef",
+              "knowledgeTime": {
+                "acceptedAt": "2026-10-09T02:08:43.957Z",
+                "basis": "runtime acceptance clock; not physical observation or source publication"
+              },
+              "sourceNotice": {
+                "bounds": [
+                  2624350,
+                  1091350,
+                  2624350.5,
+                  1091350.5
+                ],
+                "key": "dtm:c68c305e4a142da416b46b555a80916ecc52f8fa50bf1efd5cd2c3f24f9cd4bc",
+                "text": "Controlled retained-source qualification correction; no physical change"
+              }
+            },
+            "tryfan": {
+              "identity": "e0e264b44a47f06f3162e87e706c086a2a5aa968326f053e78fb4128192c9441",
+              "nativeIdentity": "5105aae85cd62ba9093075b8d8a40221ea60d158ac3f659d387c355e6d00ba8a",
+              "sequence": 1,
+              "supersedes": "52d41a32c53d499613b62ed981d029071e2a4fbb014a7f45aa0d400fa37f321f",
+              "knowledgeTime": {
+                "acceptedAt": "2026-10-09T02:09:01.027Z",
+                "basis": "runtime acceptance clock; not physical observation or source publication"
+              },
+              "sourceNotice": null
+            }
+          },
+          "validation": {
+            "milliseconds": 2360.5933000000005,
+            "metadataRecords": 107,
+            "metadataBytes": 7534610,
+            "payloadHashOperations": 329,
+            "payloadBytesHashed": 171482433,
+            "ancestryTraversals": 0,
+            "parentRssBytes": 247812096
+          }
+        }
+      ]
+    },
+    {
+      "repeat": 2,
+      "milliseconds": 28609.382899999968,
+      "results": [
+        {
+          "generation": "6ffc6c467ef78ad5865f801f96fd952ce30b7edf8143adf236c6ea28ccb3b6bc",
+          "count": 0,
+          "resultIdentity": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+          "registrations": {
+            "riffelhorn": {
+              "identity": "9539784e1777bfbfb006a4a78658df76f3de6441a6b92a71e14f65dc84adc8e5",
+              "nativeIdentity": "866d992723a4b9114dac1fba92c3173767c4a59ec089c6f1d8d5d1aa58aad386",
+              "sequence": 0,
+              "supersedes": null,
+              "knowledgeTime": {
+                "acceptedAt": "2026-10-09T02:09:46.662Z",
+                "basis": "runtime acceptance clock; not physical observation or source publication"
+              },
+              "sourceNotice": null
+            },
+            "tryfan": {
+              "identity": "11e4ff9a02415dceecc4a0dff99f1a0a6039370ba7a697bc827a62838ee9630d",
+              "nativeIdentity": "5105aae85cd62ba9093075b8d8a40221ea60d158ac3f659d387c355e6d00ba8a",
+              "sequence": 0,
+              "supersedes": null,
+              "knowledgeTime": {
+                "acceptedAt": "2026-10-09T02:09:46.665Z",
+                "basis": "runtime acceptance clock; not physical observation or source publication"
+              },
+              "sourceNotice": null
+            }
+          },
+          "validation": {
+            "milliseconds": 3254.6699000000003,
+            "metadataRecords": 44,
+            "metadataBytes": 6984868,
+            "payloadHashOperations": 329,
+            "payloadBytesHashed": 171482433,
+            "ancestryTraversals": 0,
+            "parentRssBytes": 151244800
+          }
+        },
+        {
+          "generation": "06be88f4535e829ea234a9a75f8fe4e05589b55e49b05e2c72d80ff8627b091c",
+          "count": 32,
+          "resultIdentity": "3bc0da7ece2f878756a475b28fd86bf80ff7c0f8bd7932ab858e874b27f3c7da",
+          "registrations": {
+            "riffelhorn": {
+              "identity": "9539784e1777bfbfb006a4a78658df76f3de6441a6b92a71e14f65dc84adc8e5",
+              "nativeIdentity": "866d992723a4b9114dac1fba92c3173767c4a59ec089c6f1d8d5d1aa58aad386",
+              "sequence": 0,
+              "supersedes": null,
+              "knowledgeTime": {
+                "acceptedAt": "2026-10-09T02:09:46.662Z",
+                "basis": "runtime acceptance clock; not physical observation or source publication"
+              },
+              "sourceNotice": null
+            },
+            "tryfan": {
+              "identity": "11e4ff9a02415dceecc4a0dff99f1a0a6039370ba7a697bc827a62838ee9630d",
+              "nativeIdentity": "5105aae85cd62ba9093075b8d8a40221ea60d158ac3f659d387c355e6d00ba8a",
+              "sequence": 0,
+              "supersedes": null,
+              "knowledgeTime": {
+                "acceptedAt": "2026-10-09T02:09:46.665Z",
+                "basis": "runtime acceptance clock; not physical observation or source publication"
+              },
+              "sourceNotice": null
+            }
+          },
+          "validation": {
+            "milliseconds": 3310.527400000001,
+            "metadataRecords": 95,
+            "metadataBytes": 7384329,
+            "payloadHashOperations": 329,
+            "payloadBytesHashed": 171482433,
+            "ancestryTraversals": 0,
+            "parentRssBytes": 155607040
+          }
+        },
+        {
+          "generation": "da609bc521353dcd13590fef0649a2ffca6d21f86545bdda971a9af4f27c401c",
+          "count": 32,
+          "resultIdentity": "3bc0da7ece2f878756a475b28fd86bf80ff7c0f8bd7932ab858e874b27f3c7da",
+          "registrations": {
+            "riffelhorn": {
+              "identity": "5a501d4b0e94e3fd466060179af1b6120abb8e8ddd4d6d0c9cc2218cf534b7d0",
+              "nativeIdentity": "866d992723a4b9114dac1fba92c3173767c4a59ec089c6f1d8d5d1aa58aad386",
+              "sequence": 1,
+              "supersedes": "9539784e1777bfbfb006a4a78658df76f3de6441a6b92a71e14f65dc84adc8e5",
+              "knowledgeTime": {
+                "acceptedAt": "2026-10-09T02:10:05.148Z",
+                "basis": "runtime acceptance clock; not physical observation or source publication"
+              },
+              "sourceNotice": null
+            },
+            "tryfan": {
+              "identity": "11e4ff9a02415dceecc4a0dff99f1a0a6039370ba7a697bc827a62838ee9630d",
+              "nativeIdentity": "5105aae85cd62ba9093075b8d8a40221ea60d158ac3f659d387c355e6d00ba8a",
+              "sequence": 0,
+              "supersedes": null,
+              "knowledgeTime": {
+                "acceptedAt": "2026-10-09T02:09:46.665Z",
+                "basis": "runtime acceptance clock; not physical observation or source publication"
+              },
+              "sourceNotice": null
+            }
+          },
+          "validation": {
+            "milliseconds": 2282.1389,
+            "metadataRecords": 96,
+            "metadataBytes": 7425840,
+            "payloadHashOperations": 329,
+            "payloadBytesHashed": 171482433,
+            "ancestryTraversals": 0,
+            "parentRssBytes": 245960704
+          }
+        },
+        {
+          "generation": "885ca742a45cd0c866001e0a9254f5e2250f1fac9cc76d20a167bf599afcceb9",
+          "count": 32,
+          "resultIdentity": "0bab861fe71818d2f881ceabc8320b837641f4062366fd54d24dcea4d3791f00",
+          "registrations": {
+            "riffelhorn": {
+              "identity": "7d05c3866ea345eeb8b46ef21152d91cb708a75a1e4ebc56eaf6f7f6c339fbe9",
+              "nativeIdentity": "866d992723a4b9114dac1fba92c3173767c4a59ec089c6f1d8d5d1aa58aad386",
+              "sequence": 2,
+              "supersedes": "5a501d4b0e94e3fd466060179af1b6120abb8e8ddd4d6d0c9cc2218cf534b7d0",
+              "knowledgeTime": {
+                "acceptedAt": "2026-10-09T02:10:21.622Z",
+                "basis": "runtime acceptance clock; not physical observation or source publication"
+              },
+              "sourceNotice": {
+                "bounds": [
+                  2624350,
+                  1091350,
+                  2624350.5,
+                  1091350.5
+                ],
+                "key": "dtm:c68c305e4a142da416b46b555a80916ecc52f8fa50bf1efd5cd2c3f24f9cd4bc",
+                "text": "Controlled retained-source qualification correction; no physical change"
+              }
+            },
+            "tryfan": {
+              "identity": "11e4ff9a02415dceecc4a0dff99f1a0a6039370ba7a697bc827a62838ee9630d",
+              "nativeIdentity": "5105aae85cd62ba9093075b8d8a40221ea60d158ac3f659d387c355e6d00ba8a",
+              "sequence": 0,
+              "supersedes": null,
+              "knowledgeTime": {
+                "acceptedAt": "2026-10-09T02:09:46.665Z",
+                "basis": "runtime acceptance clock; not physical observation or source publication"
+              },
+              "sourceNotice": null
+            }
+          },
+          "validation": {
+            "milliseconds": 2308.0140999999967,
+            "metadataRecords": 106,
+            "metadataBytes": 7533114,
+            "payloadHashOperations": 329,
+            "payloadBytesHashed": 171482433,
+            "ancestryTraversals": 0,
+            "parentRssBytes": 246145024
+          }
+        },
+        {
+          "generation": "c80e49dd2a15530234d5d3a53a3b9ea0d7eb41a5bb01121300376e03b768452c",
+          "count": 32,
+          "resultIdentity": "0bab861fe71818d2f881ceabc8320b837641f4062366fd54d24dcea4d3791f00",
+          "registrations": {
+            "riffelhorn": {
+              "identity": "7d05c3866ea345eeb8b46ef21152d91cb708a75a1e4ebc56eaf6f7f6c339fbe9",
+              "nativeIdentity": "866d992723a4b9114dac1fba92c3173767c4a59ec089c6f1d8d5d1aa58aad386",
+              "sequence": 2,
+              "supersedes": "5a501d4b0e94e3fd466060179af1b6120abb8e8ddd4d6d0c9cc2218cf534b7d0",
+              "knowledgeTime": {
+                "acceptedAt": "2026-10-09T02:10:21.622Z",
+                "basis": "runtime acceptance clock; not physical observation or source publication"
+              },
+              "sourceNotice": {
+                "bounds": [
+                  2624350,
+                  1091350,
+                  2624350.5,
+                  1091350.5
+                ],
+                "key": "dtm:c68c305e4a142da416b46b555a80916ecc52f8fa50bf1efd5cd2c3f24f9cd4bc",
+                "text": "Controlled retained-source qualification correction; no physical change"
+              }
+            },
+            "tryfan": {
+              "identity": "f66f439ca77a23a66fa6c3f00d323d4f97e32a0f163d799b8f6a5216a50fa8a9",
+              "nativeIdentity": "5105aae85cd62ba9093075b8d8a40221ea60d158ac3f659d387c355e6d00ba8a",
+              "sequence": 1,
+              "supersedes": "11e4ff9a02415dceecc4a0dff99f1a0a6039370ba7a697bc827a62838ee9630d",
+              "knowledgeTime": {
+                "acceptedAt": "2026-10-09T02:10:39.195Z",
+                "basis": "runtime acceptance clock; not physical observation or source publication"
+              },
+              "sourceNotice": null
+            }
+          },
+          "validation": {
+            "milliseconds": 3362.0761999999995,
+            "metadataRecords": 107,
+            "metadataBytes": 7534610,
+            "payloadHashOperations": 329,
+            "payloadBytesHashed": 171482433,
+            "ancestryTraversals": 0,
+            "parentRssBytes": 246149120
+          }
+        }
+      ]
+    }
+  ]
+}

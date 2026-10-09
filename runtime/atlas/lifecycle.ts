@@ -7,6 +7,7 @@ import type { Policy, DerivedState, Change, TerrainRow } from './lifecycle-model
 import type { RuntimeConfig, Json, DerivationStage } from './types.ts'
 import { requireAtlas } from './errors.ts'
 import path from 'node:path'
+import { validateRegistrations, validateRegistrationTransition } from './registration-model.ts'
 
 export type { Change, Notice } from './lifecycle-model.ts'
 export { recover as recoverWorld }
@@ -72,11 +73,18 @@ export async function inspectLifecycle(config: RuntimeConfig, change: Change = {
 }
 export async function validateStage(config: RuntimeConfig, generation: string): Promise<ObjectJson> {
   const start = performance.now(), root = owned(config), candidate = resolveAuthoritative(config, generation, false), active = resolveAuthoritative({ ...config, generation: undefined })
-  requireAtlas(candidate.publication.predecessor === active.generation && Number(candidate.publication.ordinal) === Number(active.publication.ordinal) + 1 && candidate.values.terrainLifecycle && candidate.values.terrainDerived, 'stage-invalid', 'Only a complete next-generation lifecycle stage can publish.')
+  requireAtlas(candidate.publication.predecessor === active.generation && Number(candidate.publication.ordinal) === Number(active.publication.ordinal) + 1 && (candidate.values.terrainLifecycle && candidate.values.terrainDerived || candidate.values.registrationLedger), 'stage-invalid', 'Only a complete next-generation lifecycle/registration stage can publish.')
   validateNativeFiles(candidate, config)
   const context = await openAtlas({ ...config, generation: active.generation })
   try {
     requireAtlas(digest(candidate.values.riffelhornRegistration) === digest(active.values.riffelhornRegistration), 'registration-invalid', 'This slice cannot replace regional sources/preparation.')
+    const registrationMetrics = { records: 0, bytes: 0 }
+    validateRegistrations(candidate, root, registrationMetrics)
+    validateRegistrationTransition(active, candidate, root, registrationMetrics)
+    if (!candidate.values.terrainLifecycle) {
+      requireAtlas(!active.values.terrainLifecycle, 'derived-incomplete', 'A registration update cannot discard existing derived evidence.')
+      return { generation, status: 'fully-validated-unpublished', outputChecks: 0, payloadBytesHashed: candidate.metrics.payloadBytesHashed + context.validation.payloadBytesHashed, registrationMetadata: registrationMetrics as unknown as ObjectJson, milliseconds: performance.now() - start }
+    }
     const policy = candidate.values.terrainLifecycle as unknown as Policy, state = candidate.values.terrainDerived as unknown as DerivedState
     const metadata = { records: 0, bytes: 0 }, runs = validateDerived(root, policy, state, metadata)
     const sampled = await context.terrainSamples(probes.map(p => ({ id: p.id, stride: policy.parameters[p.id] ?? 1 })))
@@ -91,7 +99,7 @@ export async function validateStage(config: RuntimeConfig, generation: string): 
         requireAtlas(digest(run.worker) === digest(sampled.environment) && object(run.coordinator).node === process.version, 'execution-invalid', 'New output must record the actual configured worker/coordinator environment.')
       }
     }
-    return { generation, status: 'fully-validated-unpublished', outputChecks: 32, metadataRecords: candidate.metrics.metadataRecords + context.validation.metadataRecords + metadata.records, artifactMetadataReads: metadata.records, artifactMetadataBytes: metadata.bytes, payloadBytesHashed: candidate.metrics.payloadBytesHashed + context.validation.payloadBytesHashed, payloadHashOperations: candidate.metrics.payloadHashOperations + context.validation.payloadHashOperations, milliseconds: performance.now() - start, sampling: sampled.metrics }
+    return { generation, status: 'fully-validated-unpublished', outputChecks: 32, metadataRecords: candidate.metrics.metadataRecords + context.validation.metadataRecords + metadata.records + registrationMetrics.records, artifactMetadataReads: metadata.records, artifactMetadataBytes: metadata.bytes, registrationMetadata: registrationMetrics as unknown as ObjectJson, payloadBytesHashed: candidate.metrics.payloadBytesHashed + context.validation.payloadBytesHashed, payloadHashOperations: candidate.metrics.payloadHashOperations + context.validation.payloadHashOperations, milliseconds: performance.now() - start, sampling: sampled.metrics }
   } finally { await context.close() }
 }
 export async function publishStage(config: RuntimeConfig, generation: string, options: { failAt?: 'beforeRoot' | 'crashBeforeRoot' } = {}): Promise<ObjectJson> {

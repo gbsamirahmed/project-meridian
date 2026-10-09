@@ -169,7 +169,9 @@ def main():
   req=json.loads(line)
   try:
    op=req['operation'];a=req['args']
-   if op=='initialize':adapter=Adapter(a);result=adapter.setup
+   if op=='describe':
+    s=Q.Session(data=Path(a['dataRoot']),root=Path(a['preparedRoot']));result={'native':accepted.describe(s),'setup':{**s.setup,'inputHashOperations':len(s.input_manifest['inputs'])+len(s.manifest['artifacts']),'inputBytesHashed':sum(i['bytes'] for i in s.input_manifest['inputs'])+sum(i['bytes'] for i in s.manifest['artifacts'])}}
+   elif op=='initialize':adapter=Adapter(a);result=adapter.setup
    else:
     need(adapter is not None,'worker-unavailable','Initialize the pinned adapter first.')
     if op=='build':result=adapter.build(a)
@@ -179,6 +181,6 @@ def main():
     else:raise Failure('query-invalid','Unsupported worker operation.')
    print(json.dumps({'id':req['id'],'result':result},ensure_ascii=False,allow_nan=False),flush=True)
   except Failure as e:print(json.dumps({'id':req['id'],'error':{'code':e.code,'message':str(e)}}),flush=True)
-  except (ValueError,KeyError,TypeError,OSError,sqlite3.Error):print(json.dumps({'id':req['id'],'error':{'code':'authoritative-invalid' if req['operation']=='initialize' else 'processing-invalid' if req['operation']=='terrain' else 'catalogue-or-query-invalid','message':'Required retained metadata/payload, processing request or catalogue is missing, malformed or incompatible. Validate explicit identities and parameters; rebuild only disposable catalogues.'}}),flush=True)
+  except (ValueError,KeyError,TypeError,OSError,sqlite3.Error):print(json.dumps({'id':req['id'],'error':{'code':'authoritative-invalid' if req['operation']=='initialize' else 'registration-invalid' if req['operation']=='describe' else 'processing-invalid' if req['operation']=='terrain' else 'catalogue-or-query-invalid','message':'Required retained metadata/payload, processing request or catalogue is missing, malformed or incompatible. Validate explicit identities and parameters; rebuild only disposable catalogues.'}}),flush=True)
 if __name__=='__main__':
  sys.stdout.reconfigure(encoding='utf-8');main()

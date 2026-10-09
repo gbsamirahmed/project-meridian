@@ -9,13 +9,13 @@ import type { ObjectJson, Snapshot } from './authority.ts'
 import { requireAtlas } from './errors.ts'
 import type { RuntimeConfig } from './types.ts'
 const marker = 'atlas-local-owned-world/v1'
-function real(p: string): string {
+export function real(p: string): string {
   const a = publicPath(p); if (fs.existsSync(a)) return fs.realpathSync(a)
   const parent = path.dirname(a)
   requireAtlas(parent !== a, 'path-unavailable', 'Configured local volume is unavailable; restore the explicit path.')
   return path.join(real(parent), path.basename(a))
 }
-function inside(a: string, b: string): boolean { const r = path.relative(b, a); return !r || !r.startsWith('..') && !path.isAbsolute(r) }
+export function inside(a: string, b: string): boolean { const r = path.relative(b, a); return !r || !r.startsWith('..') && !path.isAbsolute(r) }
 export function owned(config: RuntimeConfig): string {
   const root = real(config.publicationRoot), data = real(config.dataRoot), repo = fileURLToPath(new URL('../../', import.meta.url))
   requireAtlas(!inside(root, data) && !inside(data, root) && !inside(root, repo) && !inside(repo, root), 'world-path', 'Writable proof world must be separate from retained public inputs and the repository.')
@@ -61,10 +61,10 @@ export function initializeWorld(config: RuntimeConfig, source: string, selected:
 }
 export function stageObject(root: string, base: Snapshot, values: Record<string, ObjectJson>, metrics?: WriteMetrics): string {
   const members = Object.fromEntries(Object.entries(values).sort(([a], [b]) => a.localeCompare(b)).map(([kind, value]) => [kind, immutable(root, 'components', { schema: 'atlas-retained-component/v1', kind, value }, metrics)]))
-  const reconstructed = { ...base.native, tryfanRegistration: values.tryfanRegistration, riffelhornRegistration: values.riffelhornRegistration, terrainLifecycle: values.terrainLifecycle, terrainDerived: values.terrainDerived }
+  const reconstructed = { ...base.native, tryfanRegistration: values.tryfanRegistration, riffelhornRegistration: values.riffelhornRegistration, ...(values.terrainLifecycle ? { terrainLifecycle: values.terrainLifecycle, terrainDerived: values.terrainDerived } : {}), ...(values.registrationLedger ? { registrationLedger: values.registrationLedger } : {}) }
   return immutable(root, 'publications', { schema: 'atlas-component-publication/v1', ordinal: Number(base.publication.ordinal) + 1, predecessor: base.generation, legacyGeneration: sha(encode(reconstructed)), header: base.publication.header, members }, metrics)
 }
-function member(root: string, previous: string | null, generation: string, depth = 0, metrics?: WriteMetrics): string {
+export function member(root: string, previous: string | null, generation: string, depth = 0, metrics?: WriteMetrics): string {
   if (depth === 32) return immutable(root, 'membership', { schema: 'atlas-publication-membership/v1', depth, generation }, metrics)
   let children: ObjectJson = {}
   if (previous) {

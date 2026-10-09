@@ -28,6 +28,7 @@ export interface QualifiedResult {
   temporal: Json
   provenance: Json
   rights: Json
+  registration?: Json
 }
 export interface QueryAnswer {
   schema: 'atlas-local-query/v1'
@@ -64,7 +65,7 @@ export interface DerivationStage {
 export interface DerivedQuery { identity?: string; property?: 'slope' | 'area-ratio' }
 export interface DerivedAnswer {
   generation: string
-  regionalRegistration: { componentIdentity: string; evidence: Json }
+  regionalRegistration: { componentIdentity: string; evidence: Json; knowledgeRegistration?: Json }
   status: 'no-runtime-derived-state' | 'current-in-pinned-context'
   results: Array<{ [key: string]: Json }>
   metrics?: Record<string, number>

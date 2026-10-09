@@ -1,6 +1,7 @@
-# Local Atlas runtime: qualified read/query and deterministic lifecycle
+# Local Atlas runtime: qualified evidence, queries and lifecycle
 
-The runtime opens accepted seven-component publications and its compatible nine-component
+The runtime opens accepted seven-component publications and compatible eight-component registration,
+nine-component derivation and ten-component registration/derivation
 lifecycle extension. Canonical qualified files and the filesystem publication root
 remain authoritative; SQLite is a disposable candidate catalogue. It can now execute
 one accepted native Riffelhorn slope method and its planar-area summary, inspect scoped
@@ -253,4 +254,111 @@ machine-readable qualifications. Use a new destination for each example run.
 For focused integration checks use `node --test runtime/atlas/test-lifecycle.mjs`.
 For the inherited regression set plus lifecycle checks use the existing GIS Python to
 run `runtime/atlas/check-lifecycle.py`. Tests and measurements retain payload/cache worlds
-outside this repository. [The next task](lifecycle-next-task.json) is selected but not begun.
+outside this repository. [The task selected at that checkpoint](lifecycle-next-task.json)
+is completed by the registration/update workflow below.
+
+
+## Qualified evidence registration and regional updates
+
+[The registration report](../../docs/research/atlas-local-registration.md) documents
+this bounded native adapter. Initial onboarding uses the accepted Tryfan canonical
+reference and verified Riffelhorn preparation files directly, without copying a
+multi-region research publication. Source/prepared payloads remain in the configured
+public data root; only canonical metadata and two existing portrayal assets are copied.
+Use a new world outside public inputs, the repository and the disposable catalogue.
+
+Library exports from `index.ts`: `inspectEvidence(config, inputs?)`,
+`registerEvidence(config, inputs, request)`, `planEvidenceUpdate(config, request)` and
+`stageEvidenceUpdate(config, request)`. Existing `validateStage` and `publishStage`
+accept the proposed generation. `RegistrationInputs` contains explicit `tryfanRoot`
+and `preparedRoot`; `RegistrationRequest` is a versioned typed DTO. Native and derived
+answers now expose canonical registration knowledge separately from observation time.
+
+### Inspect, register and revise
+
+Use the existing four runtime flags for every command. Initial `evidence inspect`
+also takes `--tryfan-root` and `--prepared-root` and emits **verified native templates**.
+Write the `templates.riffelhorn` object to an external request JSON file. Preserve its
+native identity/fields exactly. Register with the same two input flags and `--request`.
+
+```text
+node runtime/atlas/cli.ts evidence inspect ... --tryfan-root PATH --prepared-root PATH
+node runtime/atlas/cli.ts evidence register ... --tryfan-root PATH --prepared-root PATH --request REQUEST.json
+node runtime/atlas/cli.ts derive stage ...
+node runtime/atlas/cli.ts stage validate ... --stage STAGED_SHA
+node runtime/atlas/cli.ts stage publish ... --stage STAGED_SHA
+node runtime/atlas/cli.ts evidence inspect ...
+node runtime/atlas/cli.ts update plan ... --request REVISION.json
+node runtime/atlas/cli.ts evidence revise ... --request REVISION.json
+node runtime/atlas/cli.ts update validate ... --stage STAGED_SHA
+node runtime/atlas/cli.ts update publish ... --stage STAGED_SHA
+```
+
+Request fields:
+
+- `schema`: `atlas-runtime-registration-request/v1`.
+- `operation`: `register`, `knowledge`, or `source-qualification`.
+- `region`: `riffelhorn` or `tryfan`; initial world registration uses Riffelhorn.
+- `expectedGeneration`: exact current SHA, or `null` for a new world.
+- `expectedRevision`: exact current region revision from `evidence inspect`, or `null`
+  on first registration. Repeated identity-based `register` may use `null`; it cannot
+  overwrite knowledge or scientific metadata. A non-null stale revision is rejected.
+- `native`: the complete verified template, including source/preparation/support/time/
+  rights/uncertainty. Scientific overrides are rejected, never silently repaired.
+- `explanation`: nonempty bounded accountability text.
+- `sourceNotice`: required only for `source-qualification`; exact DTM source key,
+  native EPSG:2056 `bounds` within that source or explicit whole-source `null`, and text.
+
+`knowledge` appends an informational review and requires no numerical recomputation.
+`source-qualification` describes a controlled qualification of existing retained source
+bytes, not a new observation or product replacement. It requalifies only claims using
+those exact native cell footprints. Numeric values/samples/method/support are reused;
+immutable audit records identify them. Full publication validation independently samples
+current native bytes and recomputes all supported quantities before root advancement.
+An unused source qualification is retained without forcing computation.
+
+The runtime records a separate knowledge acceptance clock and immutable direct
+supersession. It never assigns that timestamp to physical observations. New observation,
+source replacement, method replacement, licence/CRS/time overrides and unknown families
+are unsupported by this adapter. A stale generation/revision requires explicit inspection
+and restaging. Plans do not write; revisions stage only. No invalid/incomplete state is
+visible until full validation and the existing filesystem-root commit protocol succeeds.
+Historical pins remain unchanged, and the native SQLite catalogue must be rebuilt for a
+new pin. No database row becomes evidence or publication authority.
+
+### Complete CLI example
+
+Save an external six-path configuration. Relative paths resolve against its directory.
+Use a new destination for each run:
+
+```json
+{
+  "dataRoot": "PATH_TO_MERIDIAN_DATA",
+  "publicationRoot": "NEW_RUNTIME_WORLD_PATH",
+  "catalogueRoot": "SEPARATE_DISPOSABLE_CACHE_PATH",
+  "python": "PATH_TO_GIS_PYTHON",
+  "tryfanRoot": "PATH_TO_ACCEPTED_TRYFAN_REFERENCE",
+  "preparedRoot": "PATH_TO_VERIFIED_RIFFELHORN_PREPARATION_REVISION"
+}
+```
+
+The existing relative input locations under the public data root are
+`experiments/atlas/tryfan-regional-pilot-v1` and
+`derived/atlas/riffelhorn/riffelhorn-qualified-fixture-v1/357b28e705f7c2647cdf2d54467fc9ee851465814d8ed645cae30713ef9187bb`.
+
+```text
+node runtime/atlas/example-registration.mjs PATH_TO_CONFIG.json
+node --test runtime/atlas/test-registration.mjs
+```
+
+[The example](example-registration.mjs) executes actual CLI inspection/registration,
+derivation, local eight-output qualification update, validation/publication, catalogue
+build and old/new queries in fresh processes. It creates external request files and
+prints complete qualified results. Use the existing GIS Python to run
+`runtime/atlas/check-registration.py` for inherited protections and all tests.
+Source inspection has real integrity/reconstruction cost; a query or registration does
+not establish physical truth or permanent custody. Full registration-history validation
+follows explicit supersession records and reports its cost; normal publication membership
+still uses zero ancestry traversal. No history deletion, GC, backups, remote service or
+power-loss guarantee is implemented. [Exactly one next task](registration-next-task.json)
+is selected, not begun.

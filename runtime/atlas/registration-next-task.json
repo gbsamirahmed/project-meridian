@@ -1,0 +1,29 @@
+{
+  "title": "Atlas local runtime qualified retrieval across registered source and derived evidence",
+  "status": "NOT BEGUN",
+  "uncertainty": "Can one usable pinned runtime query workflow retrieve the registered native population and accepted derived scalar evidence by explicit support, identity and honest temporal/knowledge qualification without conflating native support, sampled quantity or observation time?",
+  "importance": "Accountable onboarding and revisions now work, but native spatial/feature/year queries and the32 derived quantities still have separate lookup interfaces; derived selection is identity/property only. That demonstrated usability gap limits asking qualified physical-world questions through the runtime.",
+  "prerequisites": [
+    "accepted registration/lifecycle runtime and unchanged Tryfan/Riffelhorn retained inputs",
+    "accepted native retrieval, derived method/support and temporal contracts",
+    "canonical authority, full validation and disposable SQLite boundaries"
+  ],
+  "scope": [
+    "one documented runtime library/CLI qualified retrieval interface over the existing49 native selectors and32 derived results",
+    "source/derived identity, region, representation and explicit geographic support semantics; candidate selection followed by exact qualification checks",
+    "native known/unknown year qualifications and separate immutable registration knowledge revision/publication pin inspection",
+    "honest distinction between native raster/vector support, consumed stencil footprint and a local derived quantity; no source fusion or physical change inference",
+    "bounded catalogue adapter only if required; no new dataset/method, arbitrary query engine, production app or service"
+  ],
+  "deliverable": "A usable qualified source/derived retrieval vertical slice with documented predicates, independent full-scan oracle, pinned historical and failure tests, measurements and protections.",
+  "acceptance": [
+    "exact identities/provenance/rights/time/support match accepted native and scalar oracles",
+    "spatial/identity/qualification predicates cannot silently change scientific meaning",
+    "unknown observation time remains explicitly unknown",
+    "registration knowledge revisions and publication pins remain distinct from physical time",
+    "current and historical queries replay after restart and catalogue rebuild",
+    "missing/staged/incompatible state fails explicitly without fallback or mutation",
+    "accepted evidence/contracts/42 statuses/113 production hashes and regressions unchanged"
+  ],
+  "stop": "Stop after that one bounded retrieval workflow is implemented, measured, tested, documented, committed and pushed. Do not begin regional preparation, new derivations, ingestion platform or public/cloud service."
+}
