@@ -66,7 +66,7 @@ class Reader:
     def __init__(self, root, generation, expected_projection=None):
         from verification import Snapshot
         start=time.perf_counter(); self.root=Path(root).absolute(); self.closed=True
-        self.snapshot=Snapshot(self.root, expected_projection)
+        self.snapshot=getattr(self, "snapshot_type", Snapshot)(self.root, expected_projection)
         try:
             self.manifest=self.snapshot.manifest
             require(isinstance(generation,str) and generation in self.snapshot.generations,'projection-generation','Selected generation is unavailable; no fallback.')

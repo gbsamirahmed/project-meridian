@@ -1,0 +1,1471 @@
+{
+  "allTwelveMembersReproduced": true,
+  "baselineBytes": 116692961,
+  "baselineDsmBytes": 42594792,
+  "baselineIdentity": "a34ac6745abe92904d6af089ae8dff888d3527d6588c395ee3b03750d9e08a1c",
+  "builds": [
+    {
+      "buildMs": 3227.2499001119286,
+      "bytes": 77412208,
+      "dsmBytes": 3306806,
+      "projectionIdentity": "ec6308b7c195af38190eebd4239fcfbe32b416308e2404b80777c598538363f9",
+      "sourceWindow": [
+        2554,
+        0,
+        366,
+        3600
+      ]
+    },
+    {
+      "buildMs": 3283.9654001872987,
+      "bytes": 77412208,
+      "dsmBytes": 3306806,
+      "projectionIdentity": "ec6308b7c195af38190eebd4239fcfbe32b416308e2404b80777c598538363f9",
+      "sourceWindow": [
+        2554,
+        0,
+        366,
+        3600
+      ]
+    }
+  ],
+  "experiment": "atlas-native-window-experiment/v1",
+  "experimentalBytes": 77412208,
+  "experimentalDsmBytes": 3306806,
+  "experimentalIdentity": "ec6308b7c195af38190eebd4239fcfbe32b416308e2404b80777c598538363f9",
+  "frozenConformance": {
+    "cases": 60,
+    "expectedErrorsPerReplay": 9,
+    "failed": 0,
+    "freshProcessesPerMode": 3,
+    "passedPerMode": 180,
+    "pins": 3,
+    "skipped": 0
+  },
+  "lifecycle": {
+    "baselineInstallMs": {
+      "finalVerificationMs": {
+        "max": 1497.4134999793023,
+        "median": 1328.712500166148,
+        "min": 1055.233299965039,
+        "p95": 1497.4134999793023
+      },
+      "readyPublicationMs": {
+        "max": 5.586300045251846,
+        "median": 4.360000137239695,
+        "min": 3.6810997407883406,
+        "p95": 5.586300045251846
+      },
+      "selectionMs": {
+        "max": 1482.6826001517475,
+        "median": 1407.4754000175744,
+        "min": 1281.4318998716772,
+        "p95": 1482.6826001517475
+      },
+      "stagingMs": {
+        "max": 634.2164999805391,
+        "median": 606.4704998861998,
+        "min": 549.8775998130441,
+        "p95": 634.2164999805391
+      },
+      "totalMs": {
+        "max": 4975.509100127965,
+        "median": 4822.078199824318,
+        "min": 4081.6355999559164,
+        "p95": 4975.509100127965
+      },
+      "verificationMs": {
+        "max": 1430.817099986598,
+        "median": 1400.5313999950886,
+        "min": 1190.7327000517398,
+        "p95": 1430.817099986598
+      }
+    },
+    "failedStageCleanupAndWindowReopenMs": {
+      "max": 1392.497800057754,
+      "median": 1319.7806000243872,
+      "min": 1228.372000157833,
+      "p95": 1392.497800057754
+    },
+    "freshWindowProcessReopenMs": {
+      "max": 1765.7566999550909,
+      "median": 1717.590400017798,
+      "min": 1672.7349001448601,
+      "p95": 1765.7566999550909
+    },
+    "observedOwnedBytesAfterFailedStage": [
+      194110205,
+      194110205,
+      194110205
+    ],
+    "peakWorkingSetBytes": 422903808,
+    "platform": "win32",
+    "python": "3.12.6",
+    "repetitions": 3,
+    "sharedThreePinReopenAndIdentityMs": {
+      "max": 1362.2382001485676,
+      "median": 1292.4154999200255,
+      "min": 1120.751799782738,
+      "p95": 1362.2382001485676
+    },
+    "windowReplacementMs": {
+      "finalVerificationMs": {
+        "max": 1385.8953001908958,
+        "median": 1260.1081000175327,
+        "min": 1233.2544000819325,
+        "p95": 1385.8953001908958
+      },
+      "readyPublicationMs": {
+        "max": 15.737699810415506,
+        "median": 15.495199942961335,
+        "min": 4.174300003796816,
+        "p95": 15.737699810415506
+      },
+      "selectionMs": {
+        "max": 1375.9182000067085,
+        "median": 1306.2499999068677,
+        "min": 1305.2329001948237,
+        "p95": 1375.9182000067085
+      },
+      "stagingMs": {
+        "max": 588.7331999838352,
+        "median": 546.8650998082012,
+        "min": 520.1457999646664,
+        "p95": 588.7331999838352
+      },
+      "totalMs": {
+        "max": 4766.94820006378,
+        "median": 4611.131599871442,
+        "min": 4565.679399995133,
+        "p95": 4766.94820006378
+      },
+      "verificationMs": {
+        "max": 1480.8143998961896,
+        "median": 1467.398599954322,
+        "min": 1437.7350001595914,
+        "p95": 1480.8143998961896
+      }
+    }
+  },
+  "measurements": {
+    "baseline-1": {
+      "openMs": {
+        "max": 1114.046499831602,
+        "median": 1095.4138000961393,
+        "min": 1068.9179000910372
+      },
+      "peakWorkingSetBytes": {
+        "max": 333348864,
+        "median": 333307904,
+        "min": 332500992
+      },
+      "rawTrials": [
+        {
+          "cacheState": "fresh process; OS storage caches retained",
+          "completeOpenAndViewsMs": 1095.4138000961393,
+          "mode": "baseline",
+          "ownerVerificationAndGeometryMs": 1095.37240001373,
+          "peakWorkingSetBytes": {
+            "afterOpen": 333307904,
+            "afterQueries": 333307904
+          },
+          "platform": "win32",
+          "projectionBytes": 116692961,
+          "projectionIdentity": "a34ac6745abe92904d6af089ae8dff888d3527d6588c395ee3b03750d9e08a1c",
+          "python": "3.12.6",
+          "queriesMs": {
+            "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+              "identity": {
+                "max": 1.4724999200552702,
+                "median": 1.1271999683231115,
+                "min": 1.055500004440546,
+                "p95": 1.4724999200552702,
+                "resultCount": 1
+              },
+              "lineage": {
+                "max": 15.299499966204166,
+                "median": 14.244599966332316,
+                "min": 13.666599988937378,
+                "p95": 15.299499966204166,
+                "resultCount": 32
+              },
+              "nativeArea": {
+                "max": 18.379800021648407,
+                "median": 16.796499956399202,
+                "min": 16.15389995276928,
+                "p95": 18.379800021648407,
+                "resultCount": 6
+              },
+              "nativePoint": {
+                "max": 44.96189998462796,
+                "median": 32.18980017118156,
+                "min": 30.586899956688285,
+                "p95": 44.96189998462796,
+                "resultCount": 5
+              }
+            }
+          },
+          "readerCount": 1,
+          "warmRepetitionsPerQueryPerPin": 15
+        },
+        {
+          "cacheState": "fresh process; OS storage caches retained",
+          "completeOpenAndViewsMs": 1068.9179000910372,
+          "mode": "baseline",
+          "ownerVerificationAndGeometryMs": 1068.8825000543147,
+          "peakWorkingSetBytes": {
+            "afterOpen": 332500992,
+            "afterQueries": 332500992
+          },
+          "platform": "win32",
+          "projectionBytes": 116692961,
+          "projectionIdentity": "a34ac6745abe92904d6af089ae8dff888d3527d6588c395ee3b03750d9e08a1c",
+          "python": "3.12.6",
+          "queriesMs": {
+            "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+              "identity": {
+                "max": 1.630699960514903,
+                "median": 1.0575000196695328,
+                "min": 1.0283999145030975,
+                "p95": 1.630699960514903,
+                "resultCount": 1
+              },
+              "lineage": {
+                "max": 17.304499866440892,
+                "median": 13.82909994572401,
+                "min": 12.910200050100684,
+                "p95": 17.304499866440892,
+                "resultCount": 32
+              },
+              "nativeArea": {
+                "max": 19.35700001195073,
+                "median": 16.79089991375804,
+                "min": 15.925199957564473,
+                "p95": 19.35700001195073,
+                "resultCount": 6
+              },
+              "nativePoint": {
+                "max": 45.483099995180964,
+                "median": 32.42910001426935,
+                "min": 31.06650011613965,
+                "p95": 45.483099995180964,
+                "resultCount": 5
+              }
+            }
+          },
+          "readerCount": 1,
+          "warmRepetitionsPerQueryPerPin": 15
+        },
+        {
+          "cacheState": "fresh process; OS storage caches retained",
+          "completeOpenAndViewsMs": 1114.046499831602,
+          "mode": "baseline",
+          "ownerVerificationAndGeometryMs": 1114.011700032279,
+          "peakWorkingSetBytes": {
+            "afterOpen": 333348864,
+            "afterQueries": 333348864
+          },
+          "platform": "win32",
+          "projectionBytes": 116692961,
+          "projectionIdentity": "a34ac6745abe92904d6af089ae8dff888d3527d6588c395ee3b03750d9e08a1c",
+          "python": "3.12.6",
+          "queriesMs": {
+            "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+              "identity": {
+                "max": 1.1909001041203737,
+                "median": 1.1410999577492476,
+                "min": 1.0979999788105488,
+                "p95": 1.1909001041203737,
+                "resultCount": 1
+              },
+              "lineage": {
+                "max": 15.399500029161572,
+                "median": 13.925999868661165,
+                "min": 12.867400189861655,
+                "p95": 15.399500029161572,
+                "resultCount": 32
+              },
+              "nativeArea": {
+                "max": 21.925299894064665,
+                "median": 16.60890015773475,
+                "min": 15.94840013422072,
+                "p95": 21.925299894064665,
+                "resultCount": 6
+              },
+              "nativePoint": {
+                "max": 45.020499965175986,
+                "median": 32.31559996493161,
+                "min": 31.082900008186698,
+                "p95": 45.020499965175986,
+                "resultCount": 5
+              }
+            }
+          },
+          "readerCount": 1,
+          "warmRepetitionsPerQueryPerPin": 15
+        }
+      ],
+      "warmQueryMedianMsByPin": {
+        "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+          "identity": {
+            "max": 1.1410999577492476,
+            "median": 1.1271999683231115,
+            "min": 1.0575000196695328
+          },
+          "lineage": {
+            "max": 14.244599966332316,
+            "median": 13.925999868661165,
+            "min": 13.82909994572401
+          },
+          "nativeArea": {
+            "max": 16.796499956399202,
+            "median": 16.79089991375804,
+            "min": 16.60890015773475
+          },
+          "nativePoint": {
+            "max": 32.42910001426935,
+            "median": 32.31559996493161,
+            "min": 32.18980017118156
+          }
+        }
+      }
+    },
+    "baseline-3": {
+      "openMs": {
+        "max": 1066.1015000659972,
+        "median": 1050.3972000442445,
+        "min": 1048.1232001911849
+      },
+      "peakWorkingSetBytes": {
+        "max": 333459456,
+        "median": 332865536,
+        "min": 332767232
+      },
+      "rawTrials": [
+        {
+          "cacheState": "fresh process; OS storage caches retained",
+          "completeOpenAndViewsMs": 1048.1232001911849,
+          "mode": "baseline",
+          "ownerVerificationAndGeometryMs": 1048.064200207591,
+          "peakWorkingSetBytes": {
+            "afterOpen": 332865536,
+            "afterQueries": 332865536
+          },
+          "platform": "win32",
+          "projectionBytes": 116692961,
+          "projectionIdentity": "a34ac6745abe92904d6af089ae8dff888d3527d6588c395ee3b03750d9e08a1c",
+          "python": "3.12.6",
+          "queriesMs": {
+            "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+              "identity": {
+                "max": 1.2670999858528376,
+                "median": 1.146000111475587,
+                "min": 1.1078000534325838,
+                "p95": 1.2670999858528376,
+                "resultCount": 1
+              },
+              "lineage": {
+                "max": 26.640099938958883,
+                "median": 14.824999962002039,
+                "min": 13.586699962615967,
+                "p95": 26.640099938958883,
+                "resultCount": 32
+              },
+              "nativeArea": {
+                "max": 29.13279994390905,
+                "median": 19.34240013360977,
+                "min": 16.156000085175037,
+                "p95": 29.13279994390905,
+                "resultCount": 6
+              },
+              "nativePoint": {
+                "max": 38.74689992517233,
+                "median": 32.42980013601482,
+                "min": 30.908700078725815,
+                "p95": 38.74689992517233,
+                "resultCount": 5
+              }
+            },
+            "65989736a06f72182fba9d9ad9d47955869f51ce943ef120effcad2df91352fd": {
+              "identity": {
+                "max": 1.1417001951485872,
+                "median": 1.1171998921781778,
+                "min": 1.096599968150258,
+                "p95": 1.1417001951485872,
+                "resultCount": 1
+              },
+              "lineage": {
+                "max": 16.572399996221066,
+                "median": 13.609900139272213,
+                "min": 12.87649990990758,
+                "p95": 16.572399996221066,
+                "resultCount": 32
+              },
+              "nativeArea": {
+                "max": 18.550300039350986,
+                "median": 17.292100004851818,
+                "min": 15.910099959000945,
+                "p95": 18.550300039350986,
+                "resultCount": 6
+              },
+              "nativePoint": {
+                "max": 42.33399988152087,
+                "median": 31.90500009804964,
+                "min": 30.813199933618307,
+                "p95": 42.33399988152087,
+                "resultCount": 5
+              }
+            },
+            "7f956d3bb640fb7262a3c46b1666306c88aff3418e966d39536882530350acf8": {
+              "identity": {
+                "max": 1.2498002033680677,
+                "median": 1.0812000837177038,
+                "min": 1.0265999007970095,
+                "p95": 1.2498002033680677,
+                "resultCount": 1
+              },
+              "lineage": {
+                "max": 0.39849989116191864,
+                "median": 0.382099999114871,
+                "min": 0.3625000827014446,
+                "p95": 0.39849989116191864,
+                "resultCount": 0
+              },
+              "nativeArea": {
+                "max": 30.968999955803156,
+                "median": 16.603499883785844,
+                "min": 15.283199958503246,
+                "p95": 30.968999955803156,
+                "resultCount": 6
+              },
+              "nativePoint": {
+                "max": 45.507899951189756,
+                "median": 35.226100124418736,
+                "min": 31.044799834489822,
+                "p95": 45.507899951189756,
+                "resultCount": 5
+              }
+            }
+          },
+          "readerCount": 3,
+          "warmRepetitionsPerQueryPerPin": 15
+        },
+        {
+          "cacheState": "fresh process; OS storage caches retained",
+          "completeOpenAndViewsMs": 1050.3972000442445,
+          "mode": "baseline",
+          "ownerVerificationAndGeometryMs": 1050.3357001580298,
+          "peakWorkingSetBytes": {
+            "afterOpen": 333459456,
+            "afterQueries": 333459456
+          },
+          "platform": "win32",
+          "projectionBytes": 116692961,
+          "projectionIdentity": "a34ac6745abe92904d6af089ae8dff888d3527d6588c395ee3b03750d9e08a1c",
+          "python": "3.12.6",
+          "queriesMs": {
+            "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+              "identity": {
+                "max": 1.3055999297648668,
+                "median": 1.132400007918477,
+                "min": 1.1048000305891037,
+                "p95": 1.3055999297648668,
+                "resultCount": 1
+              },
+              "lineage": {
+                "max": 25.076800025999546,
+                "median": 14.002799987792969,
+                "min": 13.247900176793337,
+                "p95": 25.076800025999546,
+                "resultCount": 32
+              },
+              "nativeArea": {
+                "max": 28.899400029331446,
+                "median": 20.997200161218643,
+                "min": 15.742999967187643,
+                "p95": 28.899400029331446,
+                "resultCount": 6
+              },
+              "nativePoint": {
+                "max": 34.57759995944798,
+                "median": 31.813599867746234,
+                "min": 30.875399941578507,
+                "p95": 34.57759995944798,
+                "resultCount": 5
+              }
+            },
+            "65989736a06f72182fba9d9ad9d47955869f51ce943ef120effcad2df91352fd": {
+              "identity": {
+                "max": 1.3237998355180025,
+                "median": 1.116700004786253,
+                "min": 1.101600006222725,
+                "p95": 1.3237998355180025,
+                "resultCount": 1
+              },
+              "lineage": {
+                "max": 14.370799995958805,
+                "median": 13.550799805670977,
+                "min": 12.877100147306919,
+                "p95": 14.370799995958805,
+                "resultCount": 32
+              },
+              "nativeArea": {
+                "max": 19.966700114309788,
+                "median": 16.543000005185604,
+                "min": 15.255500096827745,
+                "p95": 19.966700114309788,
+                "resultCount": 6
+              },
+              "nativePoint": {
+                "max": 44.97239994816482,
+                "median": 32.42649999447167,
+                "min": 30.383900040760636,
+                "p95": 44.97239994816482,
+                "resultCount": 5
+              }
+            },
+            "7f956d3bb640fb7262a3c46b1666306c88aff3418e966d39536882530350acf8": {
+              "identity": {
+                "max": 1.3446998782455921,
+                "median": 1.0968998540192842,
+                "min": 1.0284001473337412,
+                "p95": 1.3446998782455921,
+                "resultCount": 1
+              },
+              "lineage": {
+                "max": 1.2089998926967382,
+                "median": 0.6891000084578991,
+                "min": 0.3622998483479023,
+                "p95": 1.2089998926967382,
+                "resultCount": 0
+              },
+              "nativeArea": {
+                "max": 30.10470001026988,
+                "median": 20.899099996313453,
+                "min": 14.80280002579093,
+                "p95": 30.10470001026988,
+                "resultCount": 6
+              },
+              "nativePoint": {
+                "max": 46.03359987959266,
+                "median": 38.207100005820394,
+                "min": 30.997100053355098,
+                "p95": 46.03359987959266,
+                "resultCount": 5
+              }
+            }
+          },
+          "readerCount": 3,
+          "warmRepetitionsPerQueryPerPin": 15
+        },
+        {
+          "cacheState": "fresh process; OS storage caches retained",
+          "completeOpenAndViewsMs": 1066.1015000659972,
+          "mode": "baseline",
+          "ownerVerificationAndGeometryMs": 1066.0357000306249,
+          "peakWorkingSetBytes": {
+            "afterOpen": 332767232,
+            "afterQueries": 332767232
+          },
+          "platform": "win32",
+          "projectionBytes": 116692961,
+          "projectionIdentity": "a34ac6745abe92904d6af089ae8dff888d3527d6588c395ee3b03750d9e08a1c",
+          "python": "3.12.6",
+          "queriesMs": {
+            "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+              "identity": {
+                "max": 2.049800008535385,
+                "median": 1.158999977633357,
+                "min": 1.1203999165445566,
+                "p95": 2.049800008535385,
+                "resultCount": 1
+              },
+              "lineage": {
+                "max": 26.598199969157577,
+                "median": 14.966699993237853,
+                "min": 13.5152000002563,
+                "p95": 26.598199969157577,
+                "resultCount": 32
+              },
+              "nativeArea": {
+                "max": 27.759799966588616,
+                "median": 18.596499925479293,
+                "min": 16.236900119110942,
+                "p95": 27.759799966588616,
+                "resultCount": 6
+              },
+              "nativePoint": {
+                "max": 43.413500068709254,
+                "median": 32.79690002091229,
+                "min": 30.363500118255615,
+                "p95": 43.413500068709254,
+                "resultCount": 5
+              }
+            },
+            "65989736a06f72182fba9d9ad9d47955869f51ce943ef120effcad2df91352fd": {
+              "identity": {
+                "max": 1.171699957922101,
+                "median": 1.1199000291526318,
+                "min": 1.1020000092685223,
+                "p95": 1.171699957922101,
+                "resultCount": 1
+              },
+              "lineage": {
+                "max": 18.367699813097715,
+                "median": 13.887299923226237,
+                "min": 13.403699966147542,
+                "p95": 18.367699813097715,
+                "resultCount": 32
+              },
+              "nativeArea": {
+                "max": 23.648099973797798,
+                "median": 16.248200088739395,
+                "min": 15.601000050082803,
+                "p95": 23.648099973797798,
+                "resultCount": 6
+              },
+              "nativePoint": {
+                "max": 44.14040013216436,
+                "median": 32.58279990404844,
+                "min": 31.064199982210994,
+                "p95": 44.14040013216436,
+                "resultCount": 5
+              }
+            },
+            "7f956d3bb640fb7262a3c46b1666306c88aff3418e966d39536882530350acf8": {
+              "identity": {
+                "max": 2.0137999672442675,
+                "median": 1.052499981597066,
+                "min": 1.0268001351505518,
+                "p95": 2.0137999672442675,
+                "resultCount": 1
+              },
+              "lineage": {
+                "max": 0.38439990021288395,
+                "median": 0.354300020262599,
+                "min": 0.3494999837130308,
+                "p95": 0.38439990021288395,
+                "resultCount": 0
+              },
+              "nativeArea": {
+                "max": 29.415700118988752,
+                "median": 16.726500121876597,
+                "min": 15.573299955576658,
+                "p95": 29.415700118988752,
+                "resultCount": 6
+              },
+              "nativePoint": {
+                "max": 43.62899996340275,
+                "median": 37.31509996578097,
+                "min": 31.137200072407722,
+                "p95": 43.62899996340275,
+                "resultCount": 5
+              }
+            }
+          },
+          "readerCount": 3,
+          "warmRepetitionsPerQueryPerPin": 15
+        }
+      ],
+      "warmQueryMedianMsByPin": {
+        "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+          "identity": {
+            "max": 1.158999977633357,
+            "median": 1.146000111475587,
+            "min": 1.132400007918477
+          },
+          "lineage": {
+            "max": 14.966699993237853,
+            "median": 14.824999962002039,
+            "min": 14.002799987792969
+          },
+          "nativeArea": {
+            "max": 20.997200161218643,
+            "median": 19.34240013360977,
+            "min": 18.596499925479293
+          },
+          "nativePoint": {
+            "max": 32.79690002091229,
+            "median": 32.42980013601482,
+            "min": 31.813599867746234
+          }
+        },
+        "65989736a06f72182fba9d9ad9d47955869f51ce943ef120effcad2df91352fd": {
+          "identity": {
+            "max": 1.1199000291526318,
+            "median": 1.1171998921781778,
+            "min": 1.116700004786253
+          },
+          "lineage": {
+            "max": 13.887299923226237,
+            "median": 13.609900139272213,
+            "min": 13.550799805670977
+          },
+          "nativeArea": {
+            "max": 17.292100004851818,
+            "median": 16.543000005185604,
+            "min": 16.248200088739395
+          },
+          "nativePoint": {
+            "max": 32.58279990404844,
+            "median": 32.42649999447167,
+            "min": 31.90500009804964
+          }
+        },
+        "7f956d3bb640fb7262a3c46b1666306c88aff3418e966d39536882530350acf8": {
+          "identity": {
+            "max": 1.0968998540192842,
+            "median": 1.0812000837177038,
+            "min": 1.052499981597066
+          },
+          "lineage": {
+            "max": 0.6891000084578991,
+            "median": 0.382099999114871,
+            "min": 0.354300020262599
+          },
+          "nativeArea": {
+            "max": 20.899099996313453,
+            "median": 16.726500121876597,
+            "min": 16.603499883785844
+          },
+          "nativePoint": {
+            "max": 38.207100005820394,
+            "median": 37.31509996578097,
+            "min": 35.226100124418736
+          }
+        }
+      }
+    },
+    "window-1": {
+      "openMs": {
+        "max": 1100.0296999700367,
+        "median": 1071.552500128746,
+        "min": 1069.3228000309318
+      },
+      "peakWorkingSetBytes": {
+        "max": 320409600,
+        "median": 320372736,
+        "min": 320184320
+      },
+      "rawTrials": [
+        {
+          "cacheState": "fresh process; OS storage caches retained",
+          "completeOpenAndViewsMs": 1069.3228000309318,
+          "mode": "window",
+          "ownerVerificationAndGeometryMs": 1069.2888000048697,
+          "peakWorkingSetBytes": {
+            "afterOpen": 320409600,
+            "afterQueries": 320409600
+          },
+          "platform": "win32",
+          "projectionBytes": 77412208,
+          "projectionIdentity": "ec6308b7c195af38190eebd4239fcfbe32b416308e2404b80777c598538363f9",
+          "python": "3.12.6",
+          "queriesMs": {
+            "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+              "identity": {
+                "max": 1.6511001158505678,
+                "median": 1.0472999420017004,
+                "min": 1.0307999327778816,
+                "p95": 1.6511001158505678,
+                "resultCount": 1
+              },
+              "lineage": {
+                "max": 15.046600019559264,
+                "median": 13.831299962475896,
+                "min": 12.983100023120642,
+                "p95": 15.046600019559264,
+                "resultCount": 32
+              },
+              "nativeArea": {
+                "max": 21.179499803110957,
+                "median": 16.28399989567697,
+                "min": 15.87229990400374,
+                "p95": 21.179499803110957,
+                "resultCount": 6
+              },
+              "nativePoint": {
+                "max": 23.092799820005894,
+                "median": 12.538899900391698,
+                "min": 11.576199904084206,
+                "p95": 23.092799820005894,
+                "resultCount": 5
+              }
+            }
+          },
+          "readerCount": 1,
+          "warmRepetitionsPerQueryPerPin": 15
+        },
+        {
+          "cacheState": "fresh process; OS storage caches retained",
+          "completeOpenAndViewsMs": 1071.552500128746,
+          "mode": "window",
+          "ownerVerificationAndGeometryMs": 1071.5214000083506,
+          "peakWorkingSetBytes": {
+            "afterOpen": 320372736,
+            "afterQueries": 320372736
+          },
+          "platform": "win32",
+          "projectionBytes": 77412208,
+          "projectionIdentity": "ec6308b7c195af38190eebd4239fcfbe32b416308e2404b80777c598538363f9",
+          "python": "3.12.6",
+          "queriesMs": {
+            "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+              "identity": {
+                "max": 1.3129999861121178,
+                "median": 1.0480000637471676,
+                "min": 1.0245998855680227,
+                "p95": 1.3129999861121178,
+                "resultCount": 1
+              },
+              "lineage": {
+                "max": 20.8794001955539,
+                "median": 13.63489986397326,
+                "min": 12.868299847468734,
+                "p95": 20.8794001955539,
+                "resultCount": 32
+              },
+              "nativeArea": {
+                "max": 19.706299994140863,
+                "median": 17.106899991631508,
+                "min": 16.067099990323186,
+                "p95": 19.706299994140863,
+                "resultCount": 6
+              },
+              "nativePoint": {
+                "max": 24.493200005963445,
+                "median": 12.168799992650747,
+                "min": 11.624200036749244,
+                "p95": 24.493200005963445,
+                "resultCount": 5
+              }
+            }
+          },
+          "readerCount": 1,
+          "warmRepetitionsPerQueryPerPin": 15
+        },
+        {
+          "cacheState": "fresh process; OS storage caches retained",
+          "completeOpenAndViewsMs": 1100.0296999700367,
+          "mode": "window",
+          "ownerVerificationAndGeometryMs": 1099.998400080949,
+          "peakWorkingSetBytes": {
+            "afterOpen": 320184320,
+            "afterQueries": 320184320
+          },
+          "platform": "win32",
+          "projectionBytes": 77412208,
+          "projectionIdentity": "ec6308b7c195af38190eebd4239fcfbe32b416308e2404b80777c598538363f9",
+          "python": "3.12.6",
+          "queriesMs": {
+            "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+              "identity": {
+                "max": 1.2852000072598457,
+                "median": 1.1223000474274158,
+                "min": 1.1057998053729534,
+                "p95": 1.2852000072598457,
+                "resultCount": 1
+              },
+              "lineage": {
+                "max": 16.12869999371469,
+                "median": 13.801799854263663,
+                "min": 12.987600173801184,
+                "p95": 16.12869999371469,
+                "resultCount": 32
+              },
+              "nativeArea": {
+                "max": 17.904400127008557,
+                "median": 16.833200119435787,
+                "min": 15.387499937787652,
+                "p95": 17.904400127008557,
+                "resultCount": 6
+              },
+              "nativePoint": {
+                "max": 25.23329993709922,
+                "median": 12.630700133740902,
+                "min": 11.691800085827708,
+                "p95": 25.23329993709922,
+                "resultCount": 5
+              }
+            }
+          },
+          "readerCount": 1,
+          "warmRepetitionsPerQueryPerPin": 15
+        }
+      ],
+      "warmQueryMedianMsByPin": {
+        "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+          "identity": {
+            "max": 1.1223000474274158,
+            "median": 1.0480000637471676,
+            "min": 1.0472999420017004
+          },
+          "lineage": {
+            "max": 13.831299962475896,
+            "median": 13.801799854263663,
+            "min": 13.63489986397326
+          },
+          "nativeArea": {
+            "max": 17.106899991631508,
+            "median": 16.833200119435787,
+            "min": 16.28399989567697
+          },
+          "nativePoint": {
+            "max": 12.630700133740902,
+            "median": 12.538899900391698,
+            "min": 12.168799992650747
+          }
+        }
+      }
+    },
+    "window-3": {
+      "openMs": {
+        "max": 1086.703399894759,
+        "median": 1075.1819999422878,
+        "min": 1070.536300074309
+      },
+      "peakWorkingSetBytes": {
+        "max": 320507904,
+        "median": 320315392,
+        "min": 319995904
+      },
+      "rawTrials": [
+        {
+          "cacheState": "fresh process; OS storage caches retained",
+          "completeOpenAndViewsMs": 1075.1819999422878,
+          "mode": "window",
+          "ownerVerificationAndGeometryMs": 1075.1263999845833,
+          "peakWorkingSetBytes": {
+            "afterOpen": 320315392,
+            "afterQueries": 320315392
+          },
+          "platform": "win32",
+          "projectionBytes": 77412208,
+          "projectionIdentity": "ec6308b7c195af38190eebd4239fcfbe32b416308e2404b80777c598538363f9",
+          "python": "3.12.6",
+          "queriesMs": {
+            "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+              "identity": {
+                "max": 1.4089001342654228,
+                "median": 1.1446999851614237,
+                "min": 1.0671000927686691,
+                "p95": 1.4089001342654228,
+                "resultCount": 1
+              },
+              "lineage": {
+                "max": 27.912700083106756,
+                "median": 14.839400071650743,
+                "min": 13.342400081455708,
+                "p95": 27.912700083106756,
+                "resultCount": 32
+              },
+              "nativeArea": {
+                "max": 19.17019998654723,
+                "median": 17.16729998588562,
+                "min": 15.410299878567457,
+                "p95": 19.17019998654723,
+                "resultCount": 6
+              },
+              "nativePoint": {
+                "max": 12.690099887549877,
+                "median": 12.056699953973293,
+                "min": 11.695499997586012,
+                "p95": 12.690099887549877,
+                "resultCount": 5
+              }
+            },
+            "65989736a06f72182fba9d9ad9d47955869f51ce943ef120effcad2df91352fd": {
+              "identity": {
+                "max": 1.2366999872028828,
+                "median": 1.140599837526679,
+                "min": 1.0466000530868769,
+                "p95": 1.2366999872028828,
+                "resultCount": 1
+              },
+              "lineage": {
+                "max": 14.678100124001503,
+                "median": 13.674899935722351,
+                "min": 13.044500024989247,
+                "p95": 14.678100124001503,
+                "resultCount": 32
+              },
+              "nativeArea": {
+                "max": 18.534000031650066,
+                "median": 16.796499956399202,
+                "min": 15.656700124964118,
+                "p95": 18.534000031650066,
+                "resultCount": 6
+              },
+              "nativePoint": {
+                "max": 24.052900029346347,
+                "median": 12.480200035497546,
+                "min": 11.781000066548586,
+                "p95": 24.052900029346347,
+                "resultCount": 5
+              }
+            },
+            "7f956d3bb640fb7262a3c46b1666306c88aff3418e966d39536882530350acf8": {
+              "identity": {
+                "max": 1.461199950426817,
+                "median": 1.07849994674325,
+                "min": 1.0551998857408762,
+                "p95": 1.461199950426817,
+                "resultCount": 1
+              },
+              "lineage": {
+                "max": 0.48459996469318867,
+                "median": 0.3706999123096466,
+                "min": 0.36419997923076153,
+                "p95": 0.48459996469318867,
+                "resultCount": 0
+              },
+              "nativeArea": {
+                "max": 28.189399978145957,
+                "median": 22.998400032520294,
+                "min": 16.075799940153956,
+                "p95": 28.189399978145957,
+                "resultCount": 6
+              },
+              "nativePoint": {
+                "max": 19.460800103843212,
+                "median": 12.830800144001842,
+                "min": 11.527700116857886,
+                "p95": 19.460800103843212,
+                "resultCount": 5
+              }
+            }
+          },
+          "readerCount": 3,
+          "warmRepetitionsPerQueryPerPin": 15
+        },
+        {
+          "cacheState": "fresh process; OS storage caches retained",
+          "completeOpenAndViewsMs": 1070.536300074309,
+          "mode": "window",
+          "ownerVerificationAndGeometryMs": 1070.4795999918133,
+          "peakWorkingSetBytes": {
+            "afterOpen": 320507904,
+            "afterQueries": 320507904
+          },
+          "platform": "win32",
+          "projectionBytes": 77412208,
+          "projectionIdentity": "ec6308b7c195af38190eebd4239fcfbe32b416308e2404b80777c598538363f9",
+          "python": "3.12.6",
+          "queriesMs": {
+            "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+              "identity": {
+                "max": 1.4337999746203423,
+                "median": 1.0667000897228718,
+                "min": 1.0363999754190445,
+                "p95": 1.4337999746203423,
+                "resultCount": 1
+              },
+              "lineage": {
+                "max": 23.794099921360612,
+                "median": 14.06350010074675,
+                "min": 13.031499926000834,
+                "p95": 23.794099921360612,
+                "resultCount": 32
+              },
+              "nativeArea": {
+                "max": 18.793600145727396,
+                "median": 17.19730021432042,
+                "min": 16.641100170090795,
+                "p95": 18.793600145727396,
+                "resultCount": 6
+              },
+              "nativePoint": {
+                "max": 15.243200119584799,
+                "median": 12.457399861887097,
+                "min": 11.684899916872382,
+                "p95": 15.243200119584799,
+                "resultCount": 5
+              }
+            },
+            "65989736a06f72182fba9d9ad9d47955869f51ce943ef120effcad2df91352fd": {
+              "identity": {
+                "max": 1.272199908271432,
+                "median": 1.1135998647660017,
+                "min": 1.0313999373465776,
+                "p95": 1.272199908271432,
+                "resultCount": 1
+              },
+              "lineage": {
+                "max": 15.03519993275404,
+                "median": 13.628199929371476,
+                "min": 12.831700034439564,
+                "p95": 15.03519993275404,
+                "resultCount": 32
+              },
+              "nativeArea": {
+                "max": 19.96879978105426,
+                "median": 17.987800063565373,
+                "min": 15.039699850603938,
+                "p95": 19.96879978105426,
+                "resultCount": 6
+              },
+              "nativePoint": {
+                "max": 22.564200218766928,
+                "median": 11.767599964514375,
+                "min": 11.50909997522831,
+                "p95": 22.564200218766928,
+                "resultCount": 5
+              }
+            },
+            "7f956d3bb640fb7262a3c46b1666306c88aff3418e966d39536882530350acf8": {
+              "identity": {
+                "max": 3.0824001878499985,
+                "median": 1.4541998971253633,
+                "min": 1.0591000318527222,
+                "p95": 3.0824001878499985,
+                "resultCount": 1
+              },
+              "lineage": {
+                "max": 0.43969997204840183,
+                "median": 0.3583999350667,
+                "min": 0.3518001176416874,
+                "p95": 0.43969997204840183,
+                "resultCount": 0
+              },
+              "nativeArea": {
+                "max": 31.070200027897954,
+                "median": 17.085399944335222,
+                "min": 14.610599959269166,
+                "p95": 31.070200027897954,
+                "resultCount": 6
+              },
+              "nativePoint": {
+                "max": 20.231700036674738,
+                "median": 12.947200099006295,
+                "min": 11.661199852824211,
+                "p95": 20.231700036674738,
+                "resultCount": 5
+              }
+            }
+          },
+          "readerCount": 3,
+          "warmRepetitionsPerQueryPerPin": 15
+        },
+        {
+          "cacheState": "fresh process; OS storage caches retained",
+          "completeOpenAndViewsMs": 1086.703399894759,
+          "mode": "window",
+          "ownerVerificationAndGeometryMs": 1086.6433000192046,
+          "peakWorkingSetBytes": {
+            "afterOpen": 319995904,
+            "afterQueries": 319995904
+          },
+          "platform": "win32",
+          "projectionBytes": 77412208,
+          "projectionIdentity": "ec6308b7c195af38190eebd4239fcfbe32b416308e2404b80777c598538363f9",
+          "python": "3.12.6",
+          "queriesMs": {
+            "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+              "identity": {
+                "max": 1.2759000528603792,
+                "median": 1.13800005055964,
+                "min": 1.09810009598732,
+                "p95": 1.2759000528603792,
+                "resultCount": 1
+              },
+              "lineage": {
+                "max": 24.18869989924133,
+                "median": 14.119099825620651,
+                "min": 13.344799866899848,
+                "p95": 24.18869989924133,
+                "resultCount": 32
+              },
+              "nativeArea": {
+                "max": 19.70420009456575,
+                "median": 18.387200077995658,
+                "min": 17.382000107318163,
+                "p95": 19.70420009456575,
+                "resultCount": 6
+              },
+              "nativePoint": {
+                "max": 14.1847999766469,
+                "median": 13.307900168001652,
+                "min": 11.702700052410364,
+                "p95": 14.1847999766469,
+                "resultCount": 5
+              }
+            },
+            "65989736a06f72182fba9d9ad9d47955869f51ce943ef120effcad2df91352fd": {
+              "identity": {
+                "max": 1.6584000550210476,
+                "median": 1.0640001855790615,
+                "min": 1.0240001138299704,
+                "p95": 1.6584000550210476,
+                "resultCount": 1
+              },
+              "lineage": {
+                "max": 15.69009991362691,
+                "median": 13.522899942472577,
+                "min": 12.842699885368347,
+                "p95": 15.69009991362691,
+                "resultCount": 32
+              },
+              "nativeArea": {
+                "max": 24.592499947175384,
+                "median": 17.36109983175993,
+                "min": 16.261199954897165,
+                "p95": 24.592499947175384,
+                "resultCount": 6
+              },
+              "nativePoint": {
+                "max": 22.742199944332242,
+                "median": 13.413999928161502,
+                "min": 11.99090015143156,
+                "p95": 22.742199944332242,
+                "resultCount": 5
+              }
+            },
+            "7f956d3bb640fb7262a3c46b1666306c88aff3418e966d39536882530350acf8": {
+              "identity": {
+                "max": 3.303500125184655,
+                "median": 1.3045999221503735,
+                "min": 1.0838001035153866,
+                "p95": 3.303500125184655,
+                "resultCount": 1
+              },
+              "lineage": {
+                "max": 0.4158997908234596,
+                "median": 0.3635999746620655,
+                "min": 0.340400030836463,
+                "p95": 0.4158997908234596,
+                "resultCount": 0
+              },
+              "nativeArea": {
+                "max": 22.233099909499288,
+                "median": 16.666200011968613,
+                "min": 15.808100113645196,
+                "p95": 22.233099909499288,
+                "resultCount": 6
+              },
+              "nativePoint": {
+                "max": 21.05159987695515,
+                "median": 15.531100099906325,
+                "min": 11.393100023269653,
+                "p95": 21.05159987695515,
+                "resultCount": 5
+              }
+            }
+          },
+          "readerCount": 3,
+          "warmRepetitionsPerQueryPerPin": 15
+        }
+      ],
+      "warmQueryMedianMsByPin": {
+        "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+          "identity": {
+            "max": 1.1446999851614237,
+            "median": 1.13800005055964,
+            "min": 1.0667000897228718
+          },
+          "lineage": {
+            "max": 14.839400071650743,
+            "median": 14.119099825620651,
+            "min": 14.06350010074675
+          },
+          "nativeArea": {
+            "max": 18.387200077995658,
+            "median": 17.19730021432042,
+            "min": 17.16729998588562
+          },
+          "nativePoint": {
+            "max": 13.307900168001652,
+            "median": 12.457399861887097,
+            "min": 12.056699953973293
+          }
+        },
+        "65989736a06f72182fba9d9ad9d47955869f51ce943ef120effcad2df91352fd": {
+          "identity": {
+            "max": 1.140599837526679,
+            "median": 1.1135998647660017,
+            "min": 1.0640001855790615
+          },
+          "lineage": {
+            "max": 13.674899935722351,
+            "median": 13.628199929371476,
+            "min": 13.522899942472577
+          },
+          "nativeArea": {
+            "max": 17.987800063565373,
+            "median": 17.36109983175993,
+            "min": 16.796499956399202
+          },
+          "nativePoint": {
+            "max": 13.413999928161502,
+            "median": 12.480200035497546,
+            "min": 11.767599964514375
+          }
+        },
+        "7f956d3bb640fb7262a3c46b1666306c88aff3418e966d39536882530350acf8": {
+          "identity": {
+            "max": 1.4541998971253633,
+            "median": 1.3045999221503735,
+            "min": 1.07849994674325
+          },
+          "lineage": {
+            "max": 0.3706999123096466,
+            "median": 0.3635999746620655,
+            "min": 0.3583999350667
+          },
+          "nativeArea": {
+            "max": 22.998400032520294,
+            "median": 17.085399944335222,
+            "min": 16.666200011968613
+          },
+          "nativePoint": {
+            "max": 15.531100099906325,
+            "median": 12.947200099006295,
+            "min": 12.830800144001842
+          }
+        }
+      }
+    }
+  },
+  "methodology": {
+    "cache": "process-cold; OS storage caches retained; no storage-cold claim",
+    "gdal": "3.9.3",
+    "geos": "3.13.1",
+    "host": "Intel Core i7-12700H, Windows NT 10.0.26200, NTFS C:, approximately 16 GiB",
+    "memory": "Windows process peak working set, decimal MB in report; GIS libraries included",
+    "node": "24.11.0",
+    "numpy": "2.5.3",
+    "openRepetitionsPerModeAndReaderCount": 3,
+    "proj": "9.5.1",
+    "pyproj": "3.7.2",
+    "python": "3.12.6",
+    "rasterio": "1.4.3",
+    "readerModes": "one or three views sharing one captured snapshot in either representation",
+    "shapely": "2.1.2",
+    "warmRepetitionsPerTypeAndPin": 15
+  },
+  "novelCompleteEnvelopeComparisons": 436,
+  "scope": "Pinned PROJ 9.5.1, finite retained Riffelhorn profile, desktop Windows/NTFS; no mobile or release clearance",
+  "startingCheckpoint": "ebbc0cc305dc9f31c443d8c2a916da12722bddf4",
+  "storageBinding": {
+    "closure": {
+      "besselLongitudeEnclosure": [
+        7.734525455871762,
+        7.787331344588186
+      ],
+      "core": [
+        2624000,
+        1091000,
+        2626000,
+        1093000
+      ],
+      "inputGuardMetres": 1,
+      "operation": "proj=pipeline step inv proj=somerc lat_0=46.9524055555556 lon_0=7.43958333333333 k_0=1 x_0=2600000 y_0=1200000 ellps=bessel step proj=push v_3 step proj=cart ellps=bessel step proj=helmert x=674.374 y=15.056 z=405.346 step inv proj=cart ellps=WGS84 step proj=pop v_3 step proj=unitconvert xy_in=rad xy_out=deg",
+      "proj": "9.5.1",
+      "proof": "whole-core-longitude-strip/v1",
+      "reservedLongitudeDegrees": [
+        7.71,
+        7.81
+      ],
+      "rows": "all source rows retained; no latitude/corner-extremum approximation",
+      "sourceWindow": [
+        2554,
+        0,
+        366,
+        3600
+      ],
+      "translationAngleDegrees": 0.012269337387549942
+    },
+    "pixelEncoding": "IEEE754-binary32-le-row-major/v1",
+    "pixelSha256": "931449248b5517d9dc73ed093c2c87a5c0fda2b50ee0f671342ae9b6180263dc",
+    "processing": {
+      "method": "native-grid-window-storage/v1",
+      "notice": "Modified Copernicus DEM: lossless native-grid subset; original scientific source identity retained. Upstream attribution and licence obligations remain applicable. No redistribution clearance is asserted.",
+      "resampling": "none",
+      "terms": "https://s3.waw3-1.cloudferro.com/swift/v1/portal_uploads_prod/CSCDA_ESA_Mission-specific_Annex_31_Oct_22_latest.pdf"
+    },
+    "sourceIdentity": "dsm:638c155dd9a5f0b7ee818146def740093da33cee4606071b2bbf7ce3fa00ab95",
+    "sourceMember": "638c155dd9a5f0b7ee818146def740093da33cee4606071b2bbf7ce3fa00ab95.tif",
+    "sourceNative": {
+      "bands": 1,
+      "bounds": [
+        6.9998611111111115,
+        45.00013888888889,
+        7.9998611111111115,
+        46.00013888888889
+      ],
+      "crs": "EPSG:4326",
+      "dtypes": [
+        "float32"
+      ],
+      "nodata": null,
+      "resolution": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "shape": [
+        3600,
+        3600
+      ],
+      "tags": {
+        "AREA_OR_POINT": "Point"
+      },
+      "transform": [
+        0.0002777777777777778,
+        0,
+        6.9998611111111115,
+        0,
+        -0.0002777777777777778,
+        46.00013888888889,
+        0,
+        0,
+        1
+      ]
+    },
+    "sourceSeal": {
+      "bytes": 42594792,
+      "sha256": "638c155dd9a5f0b7ee818146def740093da33cee4606071b2bbf7ce3fa00ab95"
+    },
+    "sourceWindow": [
+      2554,
+      0,
+      366,
+      3600
+    ],
+    "storedMember": "ebf729998643aa287b590625de9db59acd512ce27e3e62c537db33cc0df09d90.tif",
+    "storedNative": {
+      "crs": "EPSG:4326",
+      "dtype": "float32",
+      "nodata": null,
+      "shape": [
+        3600,
+        366
+      ],
+      "transform": [
+        0.0002777777777777778,
+        0.0,
+        7.709305555555556,
+        0.0,
+        -0.0002777777777777778,
+        46.00013888888889,
+        0.0,
+        0.0,
+        1.0
+      ]
+    }
+  },
+  "validation": {
+    "additionalSharedComparisons": 159,
+    "applicationOnlyBuildExitCode": 0,
+    "authorityIndexedFullComparisons": 120,
+    "baselineTests": 44,
+    "fixtureTests": 12,
+    "lintExitCode": 0,
+    "nativeTests": 31,
+    "runtimeTests": 259,
+    "sharedTests": 9,
+    "testFailures": 0,
+    "testSkips": 0,
+    "typescriptExitCode": 0,
+    "windowTests": 8
+  },
+  "verdict": "DEMONSTRATED"
+}

@@ -322,3 +322,26 @@ Exactly one next bounded task, **NOT BEGUN**: **MERIDIAN ATLAS NATIVE-GRID WINDO
 PROJECTION AND SCIENTIFIC-CLOSURE FEASIBILITY**, limited to proving whole-profile
 Copernicus window support, original grid identities and exact semantic/lifecycle
 conformance. No mobile, private repository, production or framework decision.
+
+
+## Atlas native-grid window feasibility — 9 October 2026
+
+[Bounded experiment](docs/research/atlas-native-grid-window.md): **DEMONSTRATED** for the retained Riffelhorn read profile
+and checked PROJ 9.5.1 operation. A conservative 366-column strip retains all original
+rows/grid identities; no adoption of the unproved 94 × 66 crop. Package size falls
+from 116,692,961 to 77,412,208 bytes; DSM from 42,594,792 to 3,306,806 bytes. All 60
+unchanged cases pass in three isolated processes per representation, plus 436 novel
+complete-envelope comparisons. Three-pin shared peak memory falls modestly from
+332.87 to 320.32 MB; verified opening is essentially unchanged. Exact native indices,
+full qualifications, all other members, historical pins, readiness, failed-replacement
+preservation, restart and captured post-open consistency remain intact.
+
+The isolated implementation/commands and scientific closure argument are linked from
+the report. Canonical Atlas authority, accepted research, 42 status rows, 113 protected
+hashes and Swiss/AWS negative reconciliation remain unchanged. This does not resolve
+F04/F11 mobile rendering/framework or F17 legal distribution gates; F03/F05/F12 gain
+bounded desktop evidence only. No mobile, Weather, UI, private or production integration.
+
+Exactly one subsequent bounded task — **MERIDIAN ATLAS PORTABLE READER GEOMETRY AND
+CRS DEPENDENCY FEASIBILITY — NOT BEGUN**, addressing the unchanged desktop GIS stack
+and its deployment/semantic constraints rather than another minimum-crop optimisation.

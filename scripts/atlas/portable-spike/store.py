@@ -31,14 +31,18 @@ def event(hook, name):
     if hook: hook(name)
 
 class Store:
-    @staticmethod
-    def create(root):
+    snapshot_type = Snapshot
+    reader_type = Reader
+    manifest_reader = staticmethod(manifest_at)
+
+    @classmethod
+    def create(cls, root):
         root = Path(root).absolute()
         require(not root.exists(), 'store-owned', 'Initialise a new owned store; existing paths are not adopted.')
         root.mkdir(parents=True)
         for name in ['staging','packages','ready']: (root/name).mkdir()
         record(root/'store.json', {'schema':STORE_SCHEMA})
-        return Store(root)
+        return cls(root)
 
     def __init__(self, root):
         self.root = Path(root).absolute()
@@ -69,7 +73,7 @@ class Store:
                     'store-ready', 'Invalid ready receipt.')
             raw = bounded_bytes(package/'manifest.json',65536)
             require(hashlib.sha256(raw).hexdigest() == r['manifestSha256'], 'store-ready', 'Ready manifest changed.')
-            m = manifest_at(package,identifier)
+            m = self.manifest_reader(package,identifier)
             require(r['profile'] == m['profile'] and r['generations'] == sorted(m['pins']), 'store-ready', 'Ready compatibility differs.')
             return r
         except (OSError,ValueError,TypeError) as e: raise ReadError('store-ready','Package is not completely ready.') from e
@@ -77,7 +81,7 @@ class Store:
     def open(self, generation, identifier=None):
         identifier = self.selected() if identifier is None else identifier
         self.receipt(identifier)
-        return Reader(self.package(identifier), generation, identifier)
+        return self.reader_type(self.package(identifier), generation, identifier)
 
     def select(self, identifier, hook=None):
         receipt = self.receipt(identifier)
@@ -91,7 +95,7 @@ class Store:
         source = Path(source).absolute(); self.package(expected)
         start = time.perf_counter()
         try:
-            m = manifest_at(source,expected)
+            m = self.manifest_reader(source,expected)
             required_bytes = sum(s['bytes'] for s in m['files'].values()) + (source/'manifest.json').stat().st_size
             occupied = sum(p.stat().st_size for p in self.root.rglob('*') if p.is_file())
             require(occupied + required_bytes <= MAX_STORE, 'store-budget', 'Owned store exceeds 512 MiB experiment bound; explicitly delete obsolete/staged copies.')
@@ -107,17 +111,17 @@ class Store:
                 event(hook,'staged-member:'+name)
             staged = time.perf_counter()
             event(hook,'before-verify')
-            snapshot = Snapshot(stage,expected); snapshot.close()
+            snapshot = self.snapshot_type(stage,expected); snapshot.close()
             verified = time.perf_counter()
             package = self.package(expected)
             if package.exists():
                 # Never overwrite an immutable identity directory, including a corrupt one.
-                existing = Snapshot(package,expected); existing.close()
+                existing = self.snapshot_type(package,expected); existing.close()
                 shutil.rmtree(stage)
             else: os.rename(stage,package)
             event(hook,'before-final-verify')
             final_start = time.perf_counter()
-            final = Snapshot(package,expected); final.close()
+            final = self.snapshot_type(package,expected); final.close()
             final_ms = (time.perf_counter()-final_start)*1000
             event(hook,'before-ready')
             receipt = {'schema':READY_SCHEMA,'projectionIdentity':expected,'manifestSha256':hashlib.sha256((package/'manifest.json').read_bytes()).hexdigest(),

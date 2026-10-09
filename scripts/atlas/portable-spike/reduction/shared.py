@@ -44,7 +44,7 @@ class SharedProjection:
     def __init__(self, root, expected_identity):
         start = time.perf_counter()
         self.root = Path(root).absolute(); self.closed = True; self._views = set()
-        self._snapshot = Snapshot(self.root, expected_identity)
+        self._snapshot = getattr(self, "snapshot_type", Snapshot)(self.root, expected_identity)
         try:
             self._features = {k: shape(f['native']['geometry']) for k, f in self._snapshot.features.items()}
             self.closed = False
