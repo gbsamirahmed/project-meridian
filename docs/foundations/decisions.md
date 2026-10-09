@@ -75,3 +75,17 @@ These four policies are **DECIDED**, not declarations that implementation, relea
 The next task is **only** the feasibility study scoped in the [summary](summary.md), not all tests listed here. F04/F05 are the highest-priority unresolved technical decisions. F07/F17/F21/F23 remain review gates, not claims that rights are cleared. Private-repository contents, hardware and team capacity remain unknown. Each authorised follow-up should update the affected rows with actual evidence, an owner and a revisit trigger, without rewriting accepted scientific contracts.
 
 Amendment dependency clarification: F03 is a provisional input to the F04/F05 study; its final boundary depends on their results. This is a joint design/feasibility loop, not a circular blocking prerequisite. F25 provider selection and F29 billing remain deferred; F32 decides the gate now while actual prices, budget approval and control effectiveness remain unestablished. F31/F34 do not change accepted scientific readiness results or authorise any next stage.
+
+
+## Portable Atlas read reference — 9 October 2026
+
+[Reference contract and fixtures established](../research/atlas-portable-read.md): 60 cases, three exact historical
+pins and complete qualifications; three fresh replays passed 360 indexed/full comparisons.
+F03/F12 gain an executable reference target; their portable/production decisions remain
+provisional. Accepted evidence and statuses are unchanged; mobile, offline and renderer
+feasibility remain unproven.
+
+The user-authorised contract task supersedes prerequisite resolution as the current
+engineering path, without resolving the physical-device gate. Exactly one next task:
+**MERIDIAN ATLAS PORTABLE READ-ONLY PROJECTION AND INDEPENDENT READER SPIKE — NOT BEGUN**.
+The linked report specifies its bounded, platform/framework-neutral scope and safeguards.

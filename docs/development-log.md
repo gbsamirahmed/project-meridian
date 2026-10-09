@@ -4644,3 +4644,34 @@ whitespace checks passed. No executable
 tests, types, lint or build rerun; no physical/emulator performance, battery/thermal,
 portable 25-case query or offline package recovery results claimed. Historical accepted
 test totals are not new study results. This task stops at its documented prerequisite gate.
+
+
+## Portable Atlas read reference — 9 October 2026
+
+**REFERENCE CONTRACT AND FIXTURES ESTABLISHED.** The [report](research/atlas-portable-read.md) records
+the user-authorised foundational engineering task from `984e7d2b8ebe3b3fe5a358ba7087af5a19d5f282`.
+The v1 Riffelhorn read profile reuses authoritative `retrieve`/`scanEvidence`, with
+60 generated request/expected cases, complete shared qualification documents and
+three exact retained historical pins. Three fresh full replays passed 60/60 each
+(360 indexed/full comparisons, nine expected rejections per run, no failures/skips).
+Native support/time, source/preparation/method lineage, rights, knowledge correction
+and qualified revision identity are preserved. No scientific or publication changes.
+
+F03/F12 gain an executable reference target but remain provisional for portable and
+production choices. The physical mobile/offline/renderer gate remains unresolved;
+no independent reader, mobile result, package-readiness or cross-platform claim.
+This authorised read-contract task supersedes the earlier prerequisite-resolution
+task as the current engineering path, without resolving or beginning device work.
+
+Exactly one next bounded task: **MERIDIAN ATLAS PORTABLE READ-ONLY PROJECTION AND
+INDEPENDENT READER SPIKE — NOT BEGUN**. Consume the unchanged conformance fixtures;
+preserve authoritative semantics, remain platform/framework-neutral and stop at one
+bounded independent-reader result or precise blocker. No private access or production UI.
+
+Validation: 40/40 preservation/navigation safeguards; 12 new fixture tests, 92 existing
+unified retrieval tests and 31 native-reader tests passed. Independent regeneration
+reproduced all four files byte-for-byte; one historical case also replayed separately.
+Six driver syntax/lint checks, root lint, TypeScript and application-only Vite build
+passed. The full Weather/data build and unrelated historical suites were not rerun.
+All 42 status rows, 113 production hashes, accepted evidence/contracts and retained
+publication hashes remain unchanged. The report records exact commands and limits.

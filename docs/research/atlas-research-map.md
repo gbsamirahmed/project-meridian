@@ -964,3 +964,17 @@ PHYSICAL DEVICES AND BUILD ACCESS — NOT BEGUN**. Confirm named hardware and bu
 report resource requirements before installation, and preserve the original study's
 real-device, qualified-conformance, offline-completeness, hardware-limit and no-private-access
 criteria. No framework selection, payload packaging, production change or private audit.
+
+
+## Portable Atlas read reference — 9 October 2026
+
+[Reference contract and fixtures established](atlas-portable-read.md): 60 cases, three exact historical
+pins and complete qualifications; three fresh replays passed 360 indexed/full comparisons.
+F03/F12 gain an executable reference target; their portable/production decisions remain
+provisional. Accepted evidence and statuses are unchanged; mobile, offline and renderer
+feasibility remain unproven.
+
+The user-authorised contract task supersedes prerequisite resolution as the current
+engineering path, without resolving the physical-device gate. Exactly one next task:
+**MERIDIAN ATLAS PORTABLE READ-ONLY PROJECTION AND INDEPENDENT READER SPIKE — NOT BEGUN**.
+The linked report specifies its bounded, platform/framework-neutral scope and safeguards.
