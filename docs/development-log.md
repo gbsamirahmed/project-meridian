@@ -4598,3 +4598,24 @@ production hashes remain protected; no S7 or Atlas/Weather/Traverse code change.
 Documentation/protection verification: **59 safeguards passed**; all 1,119 tracked
 files outside six navigation updates, 42 statuses, 113 production hashes and retained
 evidence/history unchanged. No executable suites were needed or claimed as rerun.
+
+## Foundations amendment — 9 October 2026
+
+**C — FOUNDATIONS AMENDMENT READY** from `6c83603d72c33bdac2d1c7d3302c0cc47ab76ad8`.
+See the [amended summary](foundations/summary.md) for F31–F34: eight maturity stages,
+[public-exposure economics](foundations/economics.md), [subsystem evolution](foundations/evolution.md)
+and historical-planning precedence. One terrain prototype is not external-beta readiness;
+new UI and feasibility-first sequencing supersede incompatible old planning, preserving science.
+Exactly one next task: **MERIDIAN MOBILE TERRAIN AND OFFLINE EVIDENCE FEASIBILITY STUDY — NOT BEGUN**.
+Its existing device/conformance/offline/hardware/no-private-access scope remains unchanged.
+
+This documentation-only amendment requires user-approved operating budget/exposure limits,
+verified spending/abuse controls and suspension/recovery before unrestricted access.
+F22/F26/F29 and F03/F05 wording are reconciled; no provider, framework or budget approved.
+The existing next-task section is preserved in full. No code, infrastructure, acquisition
+or private access occurred; historical reports and scientific/publication authority remain intact.
+
+Verification: **78 safeguards passed**; 1,119 protected tracked files, 42 canonical status
+rows, 113 production hashes and accepted retained evidence/history unchanged. Links/anchors,
+statuses/dependencies, lifecycle/financial/evolution consistency and full diff checked.
+No executable suites were rerun; no unrelated changes committed.

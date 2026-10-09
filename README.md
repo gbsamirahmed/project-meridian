@@ -230,3 +230,13 @@ is planned; no application implementation or private access occurred. Atlas and
 Weather remain distinct. Exactly one next task: **MERIDIAN MOBILE TERRAIN AND OFFLINE
 EVIDENCE FEASIBILITY STUDY — NOT BEGUN**. Final framework, rights and private
 restructuring remain gated; the previously selected private audit is deferred.
+
+## Foundations amendment — 9 October 2026
+
+**C — FOUNDATIONS AMENDMENT READY** from `6c83603d72c33bdac2d1c7d3302c0cc47ab76ad8`.
+See the [amended summary](docs/foundations/summary.md) for F31–F34: eight maturity stages,
+[public-exposure economics](docs/foundations/economics.md), [subsystem evolution](docs/foundations/evolution.md)
+and historical-planning precedence. One terrain prototype is not external-beta readiness;
+new UI and feasibility-first sequencing supersede incompatible old planning, preserving science.
+Exactly one next task: **MERIDIAN MOBILE TERRAIN AND OFFLINE EVIDENCE FEASIBILITY STUDY — NOT BEGUN**.
+Its existing device/conformance/offline/hardware/no-private-access scope remains unchanged.

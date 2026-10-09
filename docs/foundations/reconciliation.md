@@ -71,3 +71,15 @@ The old plan's initial AWS visual context remains a possible **labelled desktop 
 ## What remains deferred
 
 Private application structure, reusable private utilities, build host, secrets, CI and deployment are unknown. Do not assume the public hierarchy exists privately. Mobile device/build availability, native terrain parity, package reader/format and actual offline performance remain unresolved. Commercial and redistribution rights, final brand and provider choice require their own gates. These bounded uncertainties do not invalidate accepted Atlas readiness or require more geographical evidence before a prototype.
+
+## Documentation precedence
+
+**F34**, amended 9 October 2026: resolve authority by subject, not simply by newest date.
+
+1. Frozen scientific contracts, canonical evidence, exact publications and accepted positive/negative research results retain their scientific authority. Source code remains evidence of what is actually implemented; a plan cannot declare an absent capability implemented.
+2. For future engineering/product/platform decisions, the current Foundations documents and decision register supersede incompatible experimental-frontend and earlier prototype recommendations. This amendment's F31–F34, revised F22/F26 and product monetisation wording govern the relevant lifecycle, exposure and evolution questions.
+3. The unchanged [prototype architecture report](../research/meridian-prototype-architecture.md) and older architecture/product entries remain valuable historical evidence with checkpoint-specific recommendations. Read them through this reconciliation. A historical next-task statement is not the current task authority.
+
+In particular, the **new application UI must be designed from scratch**. The old React component hierarchy, workspace layout, styling and interaction design are references, not migration requirements. Evaluate individual technical utilities on their own merits. **MapLibre GL JS is the existing experimental web renderer**, not a final cross-platform engine selection; mobile framework/native terrain capabilities remain unresolved. Offline correctness and qualified Atlas semantics are mandatory, with supported capabilities honestly bounded rather than claimed complete.
+
+The old immediate-private-audit sequence is superseded by the bounded feasibility study in the [summary](summary.md). Private access still requires explicit authorisation. The eight-stage lifecycle refines product maturity without withdrawing accepted prototype readiness: that result permits a bounded internal integration, not external tester invitations or public exposure. F32 adds a separate operational gate; F33 allows evidence-led implementation evolution without weakening canonical/publication authority. No historical conclusion is rewritten to pretend it was never proposed.

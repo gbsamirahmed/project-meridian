@@ -688,3 +688,13 @@ that audit remains deferred and requires separate explicit authorisation. No fin
 mobile framework, private restructuring, prototype, cloud service or acquisition
 was implemented. Accepted research/contracts, all 42 canonical statuses and 113
 production hashes remain protected; no S7 or Atlas/Weather/Traverse code change.
+
+## Foundations amendment — 9 October 2026
+
+**C — FOUNDATIONS AMENDMENT READY** from `6c83603d72c33bdac2d1c7d3302c0cc47ab76ad8`.
+See the [amended summary](../foundations/summary.md) for F31–F34: eight maturity stages,
+[public-exposure economics](../foundations/economics.md), [subsystem evolution](../foundations/evolution.md)
+and historical-planning precedence. One terrain prototype is not external-beta readiness;
+new UI and feasibility-first sequencing supersede incompatible old planning, preserving science.
+Exactly one next task: **MERIDIAN MOBILE TERRAIN AND OFFLINE EVIDENCE FEASIBILITY STUDY — NOT BEGUN**.
+Its existing device/conformance/offline/hardware/no-private-access scope remains unchanged.

@@ -80,3 +80,9 @@ AI-generated work has the same review standard as other code. Give agents scoped
 - Only intended files are committed; requested push and clean-state verification complete.
 
 No implementation of these standards is claimed by this review.
+
+## Stage evidence and evolving architecture
+
+Use the [eight-stage roadmap](roadmap.md) to distinguish feasibility, core engineering, technical prototypes, integrated alpha and beta/release readiness. Keep a dated scoped evidence note rather than inventing an enterprise approval process. Major changes remain possible through beta, with reviewed compatibility, user-data preservation/export and recovery. A prototype demonstration is not permission to invite testers.
+
+Material subsystem changes follow the [evolution register](evolution.md): measure the actual limitation, record alternatives and preserve authoritative semantics through migration. Before unrestricted public exposure, the [financial and operational gate](economics.md) requires budget/exposure approval and tested controls; passing code review is not spending authorisation. Resolve planning conflicts through [documentation precedence](reconciliation.md#documentation-precedence), not by changing frozen scientific contracts or deleting old reports.

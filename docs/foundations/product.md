@@ -77,6 +77,10 @@ Personal data collection/use is explicit opt-in with a clear purpose. No account
 
 Complement trusted regional services. Prefer source-labelled links to Met Office, swisstopo, Walkhighlands and SAIS until display, API and offline rights are established. Do not scrape or white-label their advice, and do not imply their endorsement. Link availability is not evidence that Meridian can reproduce a specialist's forecasts or judgement.
 
-Do not charge for data or capabilities Meridian can provide at no cost. Any future charge must correspond to a genuinely incurred licensed-data, API, computation, storage or other provision cost, explained transparently. Service terms may change when charging or commercial use begins; review them before that transition. No billing is required now.
+Do not charge merely for information, data or functionality Meridian can provide at no cost. Genuine licensed-data, paid-service, computation and delivery costs may be recovered transparently; new value created by Meridian may also support a sustainable business model. This amends the earlier cost-recovery-only wording, not source rights or opt-in privacy. Service terms may change when charging or commercial use begins; review them before that transition. Billing remains deferred under F29. Before unrestricted access, pass the [operational economics and exposure gate](economics.md), including owner-approved budget, exposure controls and safe suspension. No price, business model or expenditure is approved here.
 
 A future Research section should publish cited sources, methods, limitations and suitable evidence, with rights review and clear distinction between research and operational products. Personal data, restricted payloads and unreviewed claims stay excluded. Community forums are not an initial requirement.
+
+## Development readiness
+
+A scientifically honest terrain/evidence demonstration is an internal technical milestone. It does not establish integrated alpha, tester support, reliable offline use or beta readiness. The [eight-stage roadmap](roadmap.md) permits substantial development and redesign while preserving qualifications, user data, upgrade compatibility and recovery.

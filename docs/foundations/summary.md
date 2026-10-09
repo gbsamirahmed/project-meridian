@@ -15,9 +15,11 @@ The most important choice is to share **scientific meaning and data contracts**,
 | [Engineering foundations](engineering.md) | Human-readable code, staged standards, tests, review, reproducibility, security and AI-assisted definition of done |
 | [Product principles](product.md) | Mobile/desktop tasks, scientific presentation, accessibility, outdoor reliability, opt-in privacy and monetisation |
 | [Platform and infrastructure options](platform.md) | Six architecture families, three feasibility candidates, offline packages, local/provider choices and performance limits |
-| [Decision register](decisions.md) | Thirty prioritised decisions with alternatives, evidence, risk, reversibility, dependencies, event-based deadlines and status |
-| [Private-beta and pre-release roadmap](roadmap.md) | Five maturity stages, rights register proposal, naming/privacy/security gates and prototype checklist |
+| [Decision register](decisions.md) | Thirty-four prioritised decisions with alternatives, evidence, risk, reversibility, dependencies, event-based deadlines and status |
+| [Private-beta and pre-release roadmap](roadmap.md) | Eight maturity stages, rights register proposal, naming/privacy/security gates and prototype checklist |
 | [Architecture reconciliation](reconciliation.md) | Ten explicit retain/revise/supersede/defer findings and authority/package diagrams |
+| [Operational economics](economics.md) | Public-exposure gate, cost drivers, scenario worksheet, budget approval and spending-control limitations |
+| [Subsystem evolution](evolution.md) | Stable responsibilities, replaceable implementations, measured revisit triggers and compatible migration paths |
 | [Source ledger](sources.md) | Dated primary external references and repository evidence; verified claims separated from inference |
 
 These documents distribute responsibilities rather than duplicate the accepted Atlas research. They are a planning foundation, not a claim that CI, packages, offline readers or new UI already exist.
@@ -62,6 +64,21 @@ The latest accepted baseline is 9.11 s median full open, 838 ms catalogue build 
 **59 safeguards passed.** The external, uncommitted runner checked the exact checkpoint/upstream; all 1,119 tracked files outside six append-only navigation files; accepted retained-store/source hashes; all 42 canonical research status rows; all 113 production hashes; unchanged prototype report, runtime, Weather, Traverse and frozen contracts; new-document links, bounded scope and whitespace. New review content was also inspected against the evidence and the requested boundaries.
 
 No executable application changes were made. The inherited 903 tests are **not reported as freshly rerun**. Appropriate documentation/scope/protection checks replace unrelated expensive test suites. No private repository, new geographical data, S7, cloud service or generated payload enters the change. Accepted research results remain historical and unchanged.
+
+## Foundations amendment — 9 October 2026
+
+**C — FOUNDATIONS AMENDMENT READY.** Starting checkpoint `6c83603d72c33bdac2d1c7d3302c0cc47ab76ad8`, public `main` / `origin/main`, clean tree and fetched 0/0 divergence. This is a narrow amendment to the accepted review, not a new review or implementation.
+
+- **F31:** eight evidence-led maturity stages, including core engineering, internal technical prototypes and integrated alpha before controlled/extended beta. A terrain prototype alone is insufficient to invite testers; long internal development and beta are legitimate.
+- **F32:** before unrestricted access, document delivery/dependencies, cost assumptions/scenarios and controls; obtain user-approved budget/exposure ceiling, prove safe degradation/suspension and recovery, and identify residual liability. Budget estimates and alerts are not enforceable universal caps.
+- **F33:** eight subsystem evolution records preserve long-lived responsibilities and identify measured revisit triggers, migration paths and compatibility/data protections. No current pilot establishes national capacity.
+- **F34:** current foundations supersede incompatible historical planning, while scientific contracts, accepted results and the old prototype report remain intact. New UI from scratch, unresolved cross-platform renderer, offline correctness and the feasibility-first sequence remain explicit.
+
+F22/F26 now refer to lifecycle/financial gates; F25 remains deferred to a real delivery requirement. F29 remains deferred, with transparent genuine cost recovery and new Meridian value permitted alongside the free-at-no-cost principle. F03/F05 dependency wording distinguishes joint feasibility inputs from circular prerequisites. No provider, budget, final framework, package format, mobile result or public-readiness claim is invented.
+
+Verification: **78 safeguards passed**; documentation links/anchors, decision statuses/references, lifecycle/financial/evolution consistency, byte-identical next-task scope, unchanged historical prototype and protected repository/retained evidence, and whitespace/scope checks. No executable tests, types, lint or build were rerun for this documentation-only change. The earlier 59-check/903-test statements remain historical evidence, not new results. See [development log](../development-log.md) for the bounded amendment record.
+
+Remaining questions are unchanged platform/device/offline feasibility, privately audited package/host boundaries, exact redistribution rights and later delivery/financial controls. The next task below is preserved in full and **not begun**.
 
 ## Exactly one next bounded task — NOT BEGUN
 

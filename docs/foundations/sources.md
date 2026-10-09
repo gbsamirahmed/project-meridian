@@ -78,3 +78,13 @@ Rights for all retained Atlas products still refer to their accepted source-acco
 ## Method and limits
 
 The review combined repository inspection, retained manifest/hash checks and primary-source browsing. It did not benchmark mobile frameworks, download full maps, run a legal clearance search, audit private code or establish closed-product architecture. Derived recommendations are marked provisional or feasibility/legal gates in the decision register. Before a consequential choice, recheck exact SDK version, source terms, platform rules and jurisdiction rather than treating this dated ledger as perpetual authority.
+
+## Amendment sources — operational spending controls
+
+The original S01–S36 ledger remains unchanged. The narrow amendment checked the following primary documentation on **9 October 2026**; no prices, services or accounts were selected. No wider technology/legal research was rerun.
+
+| ID | Primary references | Supported conclusion and limit |
+|---|---|---|
+| S37 | [AWS budget limitations](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html), [Azure budgets](https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/tutorial-acm-create-budgets), [Google budgets](https://docs.cloud.google.com/billing/docs/how-to/budgets) | AWS describes alert delay/continued accrual; Azure budgets do not stop consumption; Google distinguishes alerts-only from supported spend-cap budgets. Verify exact service, scope, exclusions and response before claiming an enforceable cap. Not a provider recommendation or guarantee for Meridian |
+
+The [economics gate](economics.md) derives project controls from those limitations; the [evolution register](evolution.md) uses accepted repository/runtime findings, not new scaling experiments.
