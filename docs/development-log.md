@@ -4675,3 +4675,27 @@ Six driver syntax/lint checks, root lint, TypeScript and application-only Vite b
 passed. The full Weather/data build and unrelated historical suites were not rerun.
 All 42 status rows, 113 production hashes, accepted evidence/contracts and retained
 publication hashes remain unchanged. The report records exact commands and limits.
+
+
+## Portable Atlas projection spike — 9 October 2026
+
+[SEMANTIC PORTABILITY DEMONSTRATED](research/atlas-portable-projection.md), bounded to the frozen Riffelhorn
+profile and desktop GIS toolchain: three isolated 60/60 replays, exact full-envelope
+agreement, 14 novel behaviour/failure tests and byte-identical 116.7 MB projection
+reproduction. The independent Python reader requires no original source files,
+authoritative query implementation, Node or network during tested reads.
+
+F03/F12 gain semantic feasibility evidence; format/framework, mobile and robust offline
+lifecycle remain provisional or unproven. Canonical authority, accepted evidence,
+frozen fixtures and research statuses remain unchanged. Exactly one next bounded task:
+**MERIDIAN ATLAS PORTABLE PROJECTION HARDENING AND OFFLINE FAILURE VALIDATION — NOT BEGUN**.
+Its scope follows observed incomplete-install/post-open consistency gaps, not production
+or private-repository integration. The linked report records commands, costs and limits.
+
+Validation executed: 14 new reader tests, 12 frozen fixture tests, 31 native-reader
+tests and 92 existing unified runtime tests passed; 180 final isolated comparisons,
+zero failures/skips. New driver syntax/lint, root lint/types and application-only
+bundle passed. Full Weather/data materialisation and unrelated historical suites
+were not rerun. 38/38 preservation/navigation safeguards passed, including all 42 frozen status rows,
+113 protected production hashes, unchanged accepted evidence/publications and frozen
+conformance files. No payload or catalogue is committed.

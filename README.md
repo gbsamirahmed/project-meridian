@@ -271,3 +271,19 @@ The user-authorised contract task supersedes prerequisite resolution as the curr
 engineering path, without resolving the physical-device gate. Exactly one next task:
 **MERIDIAN ATLAS PORTABLE READ-ONLY PROJECTION AND INDEPENDENT READER SPIKE — NOT BEGUN**.
 The linked report specifies its bounded, platform/framework-neutral scope and safeguards.
+
+
+## Portable Atlas projection spike — 9 October 2026
+
+[SEMANTIC PORTABILITY DEMONSTRATED](docs/research/atlas-portable-projection.md), bounded to the frozen Riffelhorn
+profile and desktop GIS toolchain: three isolated 60/60 replays, exact full-envelope
+agreement, 14 novel behaviour/failure tests and byte-identical 116.7 MB projection
+reproduction. The independent Python reader requires no original source files,
+authoritative query implementation, Node or network during tested reads.
+
+F03/F12 gain semantic feasibility evidence; format/framework, mobile and robust offline
+lifecycle remain provisional or unproven. Canonical authority, accepted evidence,
+frozen fixtures and research statuses remain unchanged. Exactly one next bounded task:
+**MERIDIAN ATLAS PORTABLE PROJECTION HARDENING AND OFFLINE FAILURE VALIDATION — NOT BEGUN**.
+Its scope follows observed incomplete-install/post-open consistency gaps, not production
+or private-repository integration. The linked report records commands, costs and limits.
