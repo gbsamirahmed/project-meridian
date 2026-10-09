@@ -240,3 +240,20 @@ and historical-planning precedence. One terrain prototype is not external-beta r
 new UI and feasibility-first sequencing supersede incompatible old planning, preserving science.
 Exactly one next task: **MERIDIAN MOBILE TERRAIN AND OFFLINE EVIDENCE FEASIBILITY STUDY — NOT BEGUN**.
 Its existing device/conformance/offline/hardware/no-private-access scope remains unchanged.
+
+
+## Mobile feasibility prerequisite gate — 9 October 2026
+
+**PREREQUISITE GATE — MOBILE FEASIBILITY NOT ESTABLISHED.** The [study record](docs/research/meridian-mobile-feasibility-gate.md)
+documents the clean `f2c1e3db8dd78eb592a07745e1b4645b241f1408` start, bounded Windows
+device/tool inventory and source-level capability review. No connected phone was detected;
+Android build tools were absent in the checked locations and off-host device/Mac access
+remains unconfirmed. Inventory has begun; physical terrain, portable-reader conformance
+and offline/recovery experiments have not been performed. This does not change accepted
+prototype readiness or establish mobile readiness. F03/F04/F05/F11/F12/F16 remain open.
+
+Exactly one subsequent task: **MERIDIAN MOBILE FEASIBILITY PREREQUISITE RESOLUTION —
+PHYSICAL DEVICES AND BUILD ACCESS — NOT BEGUN**. Confirm named hardware and build access,
+report resource requirements before installation, and preserve the original study's
+real-device, qualified-conformance, offline-completeness, hardware-limit and no-private-access
+criteria. No framework selection, payload packaging, production change or private audit.

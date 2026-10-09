@@ -4619,3 +4619,28 @@ Verification: **78 safeguards passed**; 1,119 protected tracked files, 42 canoni
 rows, 113 production hashes and accepted retained evidence/history unchanged. Links/anchors,
 statuses/dependencies, lifecycle/financial/evolution consistency and full diff checked.
 No executable suites were rerun; no unrelated changes committed.
+
+
+## Mobile terrain and offline evidence study — prerequisite gate — 9 October 2026
+
+**PREREQUISITE GATE — MOBILE FEASIBILITY NOT ESTABLISHED.** The [study record](research/meridian-mobile-feasibility-gate.md)
+documents the clean `f2c1e3db8dd78eb592a07745e1b4645b241f1408` start, bounded Windows
+device/tool inventory and source-level capability review. No connected phone was detected;
+Android build tools were absent in the checked locations and off-host device/Mac access
+remains unconfirmed. Inventory has begun; physical terrain, portable-reader conformance
+and offline/recovery experiments have not been performed. This does not change accepted
+prototype readiness or establish mobile readiness. F03/F04/F05/F11/F12/F16 remain open.
+
+Exactly one subsequent task: **MERIDIAN MOBILE FEASIBILITY PREREQUISITE RESOLUTION —
+PHYSICAL DEVICES AND BUILD ACCESS — NOT BEGUN**. Confirm named hardware and build access,
+report resource requirements before installation, and preserve the original study's
+real-device, qualified-conformance, offline-completeness, hardware-limit and no-private-access
+criteria. No framework selection, payload packaging, production change or private audit.
+
+Verification: **37 safeguards passed**: documentation links/anchors, append-only navigation,
+exact six-document scope, unchanged accepted retained evidence/publications, 42 canonical
+status rows, 113 protected production hashes and all 1,130 other existing tracked files;
+whitespace checks passed. No executable
+tests, types, lint or build rerun; no physical/emulator performance, battery/thermal,
+portable 25-case query or offline package recovery results claimed. Historical accepted
+test totals are not new study results. This task stops at its documented prerequisite gate.
