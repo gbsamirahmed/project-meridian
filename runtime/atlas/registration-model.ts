@@ -8,7 +8,7 @@ import { requireAtlas } from './errors.ts'
 export interface RegistrationRequest {
   schema: 'atlas-runtime-registration-request/v1'
   operation: 'register' | 'knowledge' | 'source-qualification'
-  region: 'tryfan' | 'riffelhorn'
+  region: 'tryfan' | 'riffelhorn' | 'exe'
   expectedGeneration: string | null
   expectedRevision: string | null
   native: ObjectJson
@@ -17,19 +17,19 @@ export interface RegistrationRequest {
 }
 export function validateRequest(input: RegistrationRequest): void {
   requireAtlas(input && typeof input === 'object' && !Array.isArray(input) && Object.keys(input).every(k => ['schema', 'operation', 'region', 'expectedGeneration', 'expectedRevision', 'native', 'explanation', 'sourceNotice'].includes(k)), 'registration-request', 'Use the documented versioned registration request; scientific overrides are unsupported.')
-  requireAtlas(input.schema === 'atlas-runtime-registration-request/v1' && ['register', 'knowledge', 'source-qualification'].includes(input.operation) && ['tryfan', 'riffelhorn'].includes(input.region), 'registration-request', 'Unsupported operation/region; new observations, product replacement and method changes need separate qualified admission.')
+  requireAtlas(input.schema === 'atlas-runtime-registration-request/v1' && ['register', 'knowledge', 'source-qualification'].includes(input.operation) && ['tryfan', 'riffelhorn', 'exe'].includes(input.region), 'registration-request', 'Unsupported operation/region; new observations, product replacement and method changes need separate qualified admission.')
   object(input.native)
   for (const k of ['expectedGeneration', 'expectedRevision'] as const) if (input[k] !== null) address(input[k])
   requireAtlas(typeof input.explanation === 'string' && input.explanation.trim().length > 0 && input.explanation.length <= 1000, 'registration-request', 'An explicit accountability explanation is required.')
   requireAtlas((input.operation === 'source-qualification') === (input.sourceNotice !== undefined) && (input.operation !== 'source-qualification' || input.region === 'riffelhorn'), 'registration-request', 'Only a declared Riffelhorn source qualification may affect the Swiss derivation.')
 }
 export function nativeFor(snapshot: Snapshot, region: string): ObjectJson {
-  return snapshot.values[region === 'tryfan' ? 'tryfanRegistration' : 'riffelhornRegistration']
+  return snapshot.values[region + 'Registration']
 }
 export function validateRegistrations(snapshot: Snapshot, root: string, metrics?: ArtifactMetrics): Record<string, ObjectJson> {
   const ledger = snapshot.values.registrationLedger
   if (!ledger) return {}
-  requireAtlas(ledger.schema === 'atlas-runtime-registration-ledger/v1' && Object.keys(ledger).sort().join(',') === 'active,schema' && Object.keys(object(ledger.active)).sort().join(',') === 'riffelhorn,tryfan', 'registration-invalid', 'Both exact regional registration references are required.')
+  requireAtlas(ledger.schema === 'atlas-runtime-registration-ledger/v1' && Object.keys(ledger).sort().join(',') === 'active,schema' && Object.keys(object(ledger.active)).sort().join(',') === (snapshot.values.exeRegistration ? 'exe,riffelhorn,tryfan' : 'riffelhorn,tryfan'), 'registration-invalid', 'Exact regional registration references for every admitted region are required.')
   const current: Record<string, ObjectJson> = {}
   for (const [region, ref] of Object.entries(object(ledger.active))) {
     let id = String(ref), child: ObjectJson | undefined
@@ -57,6 +57,7 @@ export function validateRegistrations(snapshot: Snapshot, root: string, metrics?
 export function validateRegistrationTransition(before: Snapshot, after: Snapshot, root: string, metrics?: ArtifactMetrics): void {
   requireAtlas(!before.values.registrationLedger || after.values.registrationLedger, 'registration-incomplete', 'Publication cannot discard accepted registration history.')
   const prior = validateRegistrations(before, root, metrics), next = validateRegistrations(after, root, metrics)
+  requireAtlas(Object.keys(prior).every(region => next[region]), 'registration-incomplete', 'Publication cannot discard a retained regional registration.')
   for (const [region, value] of Object.entries(next)) {
     if (prior[region]?.identity === value.identity) continue
     const revision = object(value.revision)

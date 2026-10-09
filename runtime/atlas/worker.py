@@ -2,6 +2,7 @@
 from pathlib import Path
 import hashlib,json,math,os,sqlite3,sys,time
 from retrieval_query import Qualified
+from exe_worker import describe as describe_exe
 R=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(R/'scripts/atlas/riffelhorn-retrieval'))
 import query as Q
@@ -21,11 +22,11 @@ def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def normalized(v):return json.dumps(v,sort_keys=True,separators=(',',':'),ensure_ascii=False)
 def valid_query(q,families):
  need(isinstance(q,dict) and not set(q)-{'region','identity','feature','families','representation','product','point','area','crs','time'},'query-invalid','Unsupported query fields; use the documented finite predicates.')
- need(q.get('region') in [None,'tryfan','riffelhorn'],'query-invalid','Unknown region; no fallback.')
+ need(q.get('region') in [None,'tryfan','riffelhorn','exe'],'query-invalid','Unknown region; no fallback.')
  for k in ['identity','feature','product']:
   if k in q:need(isinstance(q[k],str) and bool(q[k]),'query-invalid','Expected a nonempty '+k+' identity.')
  if 'families' in q:need(isinstance(q['families'],list) and bool(q['families']) and all(f in families for f in q['families']),'query-invalid','Unsupported evidence family.')
- if 'representation' in q:need(q['representation'] in ['vector','raster','source-product-metadata'],'query-invalid','Unsupported representation.')
+ if 'representation' in q:need(q['representation'] in ['vector','raster','source-product-metadata','native-cell-summary'],'query-invalid','Unsupported representation.')
  need(not ('point' in q and 'area' in q),'query-invalid','Point and area are exclusive.')
  if 'point' in q or 'area' in q:
   need(q.get('region') is not None,'query-invalid','Spatial queries require an explicit region and native query CRS.')
@@ -58,7 +59,16 @@ class Adapter:
    elif f['id']=='worldcover':
     temporal['evidence-epoch']={'status':'known','year':2021,'role':'nominal-epoch','basis':'Accepted native WorldCover2021 context; not continuous physical validity.'}
    self.records.append({'key':'tryfan:'+f['product'],'identity':f['product'],'region':'tryfan','feature':None,'family':f['id'],'representation':'source-product-metadata','product':f['product'],'bounds':self.tryfan['core']['bounds'],'temporal':temporal,'record':f})
-  self.bykey={r['key']:r for r in self.records};need(len(self.bykey)==49,'registration-invalid','Unexpected retained population.')
+  self.exe=a.get('exe')
+  if self.exe:
+   from shapely.geometry import shape
+   for r in self.exe['records']:
+    g=shape(r['support']['geometry']);crs=r['support']['crs'];bng=Q.project(g,crs,'EPSG:27700');epoch={'status':'unknown','reason':'Reference classification is not physical observation; native water-time roles remain separate.'}
+    times=r['waterTime'];event=next((x['extent'] for x in times if x['role'] in ['observation','event'] and x['extent']['kind']=='interval'),None)
+    if event and event['start'][:4]==event['end'][:4]:epoch={'status':'known','year':int(event['start'][:4]),'basis':'Native monthly/event interval calendar-year projection only; exact interval remains attached.'}
+    reference={'status':'known','year':2019,'basis':'WFD classification reference2019, not observation or publication.'} if r['identity']=='exe:wfd' else {'status':'unknown','reason':'No product-reference year admitted as an observation timestamp.'}
+    self.records.append({'key':'exe:'+r['identity'],'identity':r['identity'],'region':'exe','feature':r['feature'],'family':r['family'],'representation':r['representation'],'product':r['product'],'bounds':list(bng.intersection(Q.box(*self.exe['support']['bounds'])).bounds),'temporal':{'evidence-epoch':epoch,'product-reference':reference},'record':r,'geometry':bng,'evidenceClass':r['evidenceClass']})
+  self.bykey={r['key']:r for r in self.records};need(len(self.bykey)==49+(8 if self.exe else 0),'registration-invalid','Unexpected retained population.')
   self.setup={**self.s.setup,'milliseconds':(time.perf_counter()-start)*1000,'records':len(self.records),'nativeMetadataBytesParsed':self.s.setup['metadataMemberBytes'],'inputHashOperations':len(self.s.input_manifest['inputs'])+len(self.s.manifest['artifacts']),'inputBytesHashed':sum(i['bytes'] for i in self.s.input_manifest['inputs'])+sum(i['bytes'] for i in self.s.manifest['artifacts'])}
  def build(self,a):
   start=time.perf_counter();p=Path(a['file']);db=sqlite3.connect(p)
@@ -101,7 +111,7 @@ CREATE VIRTUAL TABLE bounds USING rtree(rowid,minx,maxx,miny,maxy);''')
    for i,b in expected_boxes.items():
     x0,x1,y0,y1=boxes[i];need(x0<=b[0] and x1>=b[2] and y0<=b[1] and y1>=b[3],'catalogue-integrity','Catalogue bounds could omit canonical support; rebuild.')
   finally:db.close()
-  return {'records':49,'bytes':p.stat().st_size,'schemaVersion':1}
+  return {'records':len(self.records),'bytes':p.stat().st_size,'schemaVersion':1}
  def geometry(self,q,region):
   if 'point' not in q and 'area' not in q:return None
   if q['region']!=region:return None
@@ -110,7 +120,7 @@ CREATE VIRTUAL TABLE bounds USING rtree(rowid,minx,maxx,miny,maxy);''')
   g=Q.project(g,crs,'EPSG:27700');need(g.is_valid and not g.is_empty and all(math.isfinite(x) for x in g.bounds),'query-invalid','Invalid transformed spatial support.');return g
  def selected(self,q,keys):
   m={k:0 for k in ['recordsConsidered','qualificationChecks','exactSpatialChecks','spatialFalsePositiveCandidates','provenanceChecks','resourceReferencesResolved','payloadAvailabilityChecks','payloadReadCalls','decodedPayloadBytes','nativeSamplesRead','cellCentrePredicates']};out=[]
-  gs={region:self.geometry(q,region) for region in ['tryfan','riffelhorn']}
+  gs={region:self.geometry(q,region) for region in ['tryfan','riffelhorn','exe']}
   for key in sorted(keys):
    r=self.bykey[key];m['recordsConsidered']+=1
    if q.get('region') and q['region']!=r['region']:continue
@@ -133,6 +143,19 @@ CREATE VIRTUAL TABLE bounds USING rtree(rowid,minx,maxx,miny,maxy);''')
      if not ok:continue
     evidence=self.s.envelope(r['record'],selection,m);native=r['record']['record'];support=evidence['detail'].get('geometry',native.get('native'));rights=evidence['detail'].get('resources',native.get('rights'))
     provenance={'preparationRevision':self.s.manifest['revision'],'preparationMethod':self.s.manifest['method'],'inputs':self.s.input_manifest['inputs'],'preparedArtifacts':self.s.manifest['artifacts'],'selector':r['identity'],'rightsBoundary':self.s.qual['rightsBoundary']}
+   elif r['region']=='exe':
+    rec=r['record'];support=rec['support'];rights=rec['rights'];provenance=rec['provenance'];evidence=rec['evidence']
+    if g is not None:
+     m['exactSpatialChecks']+=1
+     study=Q.box(*self.exe['support']['bounds']);bounded=g.intersection(study)
+     if bounded.is_empty:continue
+     geometry=r['geometry']
+     if g.geom_type=='Point':
+      b=self.exe['support']['bounds']
+      if not(b[0]<=g.x<b[2] and b[1]<=g.y<b[3] and geometry.covers(g)):continue
+     elif geometry.geom_type=='MultiPoint':
+      if not any(bounded.contains(p) for p in geometry.geoms):continue
+     elif geometry.intersection(bounded).area<=0:continue
    else:
     if g is not None:
      m['exactSpatialChecks']+=1;core=Q.box(*self.tryfan['core']['bounds'])
@@ -140,7 +163,7 @@ CREATE VIRTUAL TABLE bounds USING rtree(rowid,minx,maxx,miny,maxy);''')
      if not (b[0]<=g.x<b[2] and b[1]<=g.y<b[3] if g.geom_type=='Point' else core.intersection(g).area>0):continue
     f=r['record'];cat=self.tryfan['catalogue'];evidence={'identity':r['identity'],'family':f['id'],'representation':r['representation'],'evidenceKind':'qualified source-product metadata, not physical measurement at query point','nativeMetadata':f['nativeMetadata'],'qualification':f['qualification'],'source':next(s for s in cat['sources'] if s['id']==f['source']),'product':next(p for p in cat['products'] if p['id']==f['product']),'representations':[v for v in cat['representations'] if v['id'] in f['representations']]}
     support={'registryApplicability':self.tryfan['core'],'meaning':'Registered core eligibility for metadata inspection; full native source support remains in original records, not inferred equivalent.'};rights={'nativeMetadata':f['nativeMetadata'],'source':evidence['source'],'product':evidence['product']};provenance={'catalogueSelector':f['id'],'source':f['source'],'product':f['product'],'basis':cat['basis']}
-   out.append({'identity':r['identity'],'region':r['region'],'evidence':evidence,'support':support,'temporal':r['temporal'],'provenance':provenance,'rights':rights})
+   out.append({'identity':r['identity'],'region':r['region'],'evidence':evidence,'support':support,'temporal':{**r['temporal'],'native':r['record']['waterTime'],'retention':r['record']['provenance']['source'],'sourceRecordDates':r['record']['provenance']['resource'].get('dates',[]),'preparationTime':{'status':'unknown','reason':'Exact preparation completion clock not independently established; subset acquisition receipt remains distinct.'}} if r['region']=='exe' else r['temporal'],'provenance':provenance,'rights':rights})
   return {'results':out,'metrics':m,'gap':None if out else {'reason':'no-matching-retained-evidence','physicalAbsenceInferred':False}}
  def query(self,a,verified=False,allowed_keys=None):
   q=a['query'];valid_query(q,{r['family'] for r in self.records});start=time.perf_counter()
@@ -165,7 +188,7 @@ CREATE VIRTUAL TABLE bounds USING rtree(rowid,minx,maxx,miny,maxy);''')
       x0,y0,x1,y1=g.bounds;clauses.append("(r.representation='raster' OR r.rowid IN (SELECT rowid FROM bounds WHERE minx<=? AND maxx>=? AND miny<=? AND maxy>=?))");params.extend([x1,x0,y1,y0]);keys=[row[0] for row in db.execute('SELECT r.key FROM record r'+(' WHERE '+' AND '.join(clauses) if clauses else ''),params)]
     else:keys=[row[0] for row in db.execute('SELECT r.key FROM record r'+(' WHERE '+' AND '.join(clauses) if clauses else ''),params)]
    finally:db.close()
-  result=self.selected(q,keys);result['metrics'].update({'candidates':len(keys),'availableRecords':49,'milliseconds':(time.perf_counter()-start)*1000,'ancestryTraversals':0,'catalogueSelectorAuditRecords':0 if a.get('scan') else 49,'catalogueBytesHashed':0 if a.get('scan') else Path(a['file']).stat().st_size})
+  result=self.selected(q,keys);result['metrics'].update({'candidates':len(keys),'availableRecords':len(self.records),'milliseconds':(time.perf_counter()-start)*1000,'ancestryTraversals':0,'catalogueSelectorAuditRecords':0 if a.get('scan') else len(self.records),'catalogueBytesHashed':0 if a.get('scan') else Path(a['file']).stat().st_size})
   return result
 
 def main():
@@ -174,12 +197,13 @@ def main():
   req=json.loads(line)
   try:
    op=req['operation'];a=req['args']
-   if op=='describe':
+   if op=='describe-exe':result=describe_exe(a['dataRoot'])
+   elif op=='describe':
     s=Q.Session(data=Path(a['dataRoot']),root=Path(a['preparedRoot']));result={'native':accepted.describe(s),'setup':{**s.setup,'inputHashOperations':len(s.input_manifest['inputs'])+len(s.manifest['artifacts']),'inputBytesHashed':sum(i['bytes'] for i in s.input_manifest['inputs'])+sum(i['bytes'] for i in s.manifest['artifacts'])}}
    elif op=='initialize':adapter=Adapter(a);result=adapter.setup
    else:
     need(adapter is not None,'worker-unavailable','Initialize the pinned adapter first.')
-    if op=='qualify':qualified=Qualified(adapter,a,need);result={'records':49+len(qualified.rows)}
+    if op=='qualify':qualified=Qualified(adapter,a,need);result={'records':len(adapter.records)+len(qualified.rows)}
     elif op=='build':
      result=adapter.build(a)
      if a.get('qualified'):

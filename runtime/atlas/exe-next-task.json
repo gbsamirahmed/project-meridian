@@ -1,0 +1,34 @@
+{
+  "title": "Atlas local runtime retained Exe habitat and planning-reference evidence population integration",
+  "status": "NOT BEGUN",
+  "uncertainty": "Can the existing runtime admit the substantially larger, heterogeneous retained PHI component and Flood Zone populations while preserving contributor qualifications, scenario/reference conventions, independent immutable source revisions and pinned history?",
+  "importance": "Advances real scientific diversity and useful retained regional coverage beyond the eight selected water selectors, without new acquisition or a new optimisation programme.",
+  "prerequisites": [
+    "Completed bounded Exe water integration and shared runtime registration/retrieval interfaces",
+    "Unchanged accepted water source receipts, PHI contributor notices and Flood Zone definitions",
+    "Freeze actual positive-area claim population and additive admission/history boundary before implementation"
+  ],
+  "supportingEvidence": [
+    "docs/research/atlas-local-exe.md",
+    "docs/atlas/water-feature-state-check.md",
+    "docs/atlas/water-check-sources.json",
+    "docs/research/exe-water-query-proof.md"
+  ],
+  "permittedScope": [
+    "Use existing retained PHI280 source features/336 component claims and Flood546 returned/492 positive-area features, verifying actual bounded eligibility first",
+    "Add the smallest compatible source-family admission adapters and explicit additive immutable membership through the existing runtime; do not change past native registrations",
+    "Preserve PHI multiple categories and explicitly associated contributor vintages/unknown survey time; preserve Flood Zone annual-probability/reference/defence convention and mixed model/recorded Origin",
+    "Demonstrate qualified current/historical/spatial/feature/provenance queries, independent accepted full-scan agreement, recovery and real-population costs through library/CLI"
+  ],
+  "deliverable": "One repeatable runtime population-registration and qualified query workflow, tests, safe measurements, report/navigation and one subsequent bounded task.",
+  "acceptance": [
+    "Actual retained identities, rights and preparation lineage verified without acquisition",
+    "Source-native categories, contributor uncertainty and scenario/reference meaning preserved; no current-water/absence/fractional-cover inference",
+    "Existing eight Exe selectors, Tryfan/Riffelhorn components,32 terrain results and historical generations remain exact",
+    "Additive admission preserves immutable old revisions and coherent pinned publication; SQLite remains disposable",
+    "Indexed answers match independent accepted native answers; invalid/incomplete updates stay unpublished",
+    "Library/CLI examples, real counts, timing/spread, amplification and limitations documented; safeguards/tests/types/lint/build pass"
+  ],
+  "exclusions": ["new data or scientific methods", "expanded study footprint", "hydrology simulation or source fusion", "private data", "production applications", "cloud/services", "index/publication microoptimisation"],
+  "stop": "Stop after the bounded retained PHI/Flood population integration or one precise blocker; do not acquire more sources, enlarge the region or start another task."
+}

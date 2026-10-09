@@ -1,0 +1,86 @@
+{
+  "title": "Atlas local runtime retained Exe water-evidence registration and qualified retrieval integration",
+  "checkpoint": "a71dc7192333af56a186d0b67891340d9394fa92",
+  "frozenBeforeImplementation": true,
+  "uncertainty": "Admit accepted reference, event and monthly water evidence through existing runtime authority and query interfaces.",
+  "support": {
+    "crs": "EPSG:27700",
+    "study": [
+      295000,
+      86000,
+      298500,
+      89000
+    ],
+    "P1": [
+      296600,
+      86550,
+      296800,
+      86750
+    ]
+  },
+  "population": [
+    "exe:wfd",
+    "exe:rfo",
+    "exe:2024-03:point",
+    "exe:2024-03:support",
+    "exe:2024-09:point",
+    "exe:2024-09:support",
+    "exe:2024-03:product",
+    "exe:2024-09:product"
+  ],
+  "inputBoundary": "31 retained source/document receipts,66 files; no acquisition. Exact hashes, URLs, native claims, subset lineage, licences and accepted method identities. WFD GB510804505600; RFO31383/group4124.",
+  "semantics": "Native polygons; monthly crop products; exact containing-cell classifications; derived P1 centre-count summaries, never fractional cover. Codes0/1/2 = no observation/non-detection/detection, never physical absence. Expected March0/0/77 and September76/1/0.",
+  "time": "Monthly observation intervals, RFO event interval, WFD observation unknown plus reference2019. Source publication, retention, preparation, knowledge and publication are separate. No timestamps invented.",
+  "operations": [
+    "inspect verified request",
+    "register",
+    "no-op repeat",
+    "administrative knowledge revision",
+    "plan/stage/validate/publish using existing runtime"
+  ],
+  "query": "Existing region/class/family/identity/feature/spatial/knowledge predicates. Optional waterTime observation/event/reference qualifiers; inclusive overlap at native day or year precision, explicit unknown. Exact geometry after candidate selection.",
+  "authority": "Optional exeRegistration component; existing immutable ledger, explicit composite membership and atomic filesystem root. Full validation at opening and candidate publication. Disposable generation-bound schema2 SQLite; no payload copying.",
+  "oracle": "Frozen accepted Exe semantic build/resolveQuery, literal P1 counts and independently reconstructed native geometry. Indexed versus authoritative scan identity/qualification/provenance comparison on pre/post/revised generations in three fresh processes. Other regions and32 outputs unchanged.",
+  "failureCases": [
+    "missing/tampered sources",
+    "identity/source/rights/time/support/classification overrides",
+    "stale generation",
+    "conflicting duplicate",
+    "unsupported physical inference",
+    "unpublished staging",
+    "interrupted publication/catalogue",
+    "corrupt/missing cache",
+    "invalid canonical closure",
+    "restart/historical replay"
+  ],
+  "measurements": [
+    "artifact/source/prepared bytes",
+    "source/derived/edge counts",
+    "validation and registration/publication time",
+    "catalogue size/build/rebuild",
+    "indexed/scan latency/candidates",
+    "fresh replay",
+    "external generated footprint",
+    "RSS observation"
+  ],
+  "acceptance": [
+    "Retained source identity verified",
+    "Native semantics/rights/support/time preserved",
+    "Independent expected and indexed/scan answers agree",
+    "Tryfan/Riffelhorn components and32 outputs unchanged",
+    "Immutable history and knowledge supersession survive restart/rebuild",
+    "Invalid/incomplete update cannot advance root",
+    "Repeatable library/CLI",
+    "Safeguards/tests/types/lint/build pass"
+  ],
+  "exclusions": [
+    "new water research/data",
+    "private",
+    "production applications/infrastructure",
+    "frozen contracts",
+    "general ingestion/temporal/water engine",
+    "flow/depth/tide/currentstate/absence inference",
+    "optimisation"
+  ],
+  "stop": "Complete only bounded third-region integration, report/navigation and one unbegun next task; commit/push clean."
+}

@@ -1,3 +1,4 @@
+import { verifyExe } from './exe-model.ts'
 import fs from 'node:fs'
 import path from 'node:path'
 import { randomUUID } from 'node:crypto'
@@ -68,7 +69,13 @@ export class AtlasContext {
       const registration = snapshot.values.riffelhornRegistration
       const revision = registration.preparationRevision
       requireAtlas(typeof revision === 'string' && /^[a-f0-9]{64}$/.test(revision), 'registration-invalid', 'Expected immutable prepared revision identity.')
-      const setup = object(await worker.call('initialize', { dataRoot: config.dataRoot, preparedRoot: publicPath(path.join(config.dataRoot, 'derived/atlas/riffelhorn/riffelhorn-qualified-fixture-v1', revision)), registration, tryfan: { catalogue: snapshot.native.catalogue, core: snapshot.native.core } }))
+      const setup = object(await worker.call('initialize', { dataRoot: config.dataRoot, preparedRoot: publicPath(path.join(config.dataRoot, 'derived/atlas/riffelhorn/riffelhorn-qualified-fixture-v1', revision)), registration, tryfan: { catalogue: snapshot.native.catalogue, core: snapshot.native.core }, ...(snapshot.values.exeRegistration ? { exe: snapshot.values.exeRegistration } : {}) }))
+      if (snapshot.values.exeRegistration) {
+        const exe = await verifyExe(config, snapshot.values.exeRegistration)
+        snapshot.metrics.payloadHashOperations += Number(exe.sourceHashOperations) + Number(exe.directoryHashOperations)
+        snapshot.metrics.payloadBytesHashed += Number(exe.sourceBytesHashed) + Number(exe.directoryBytesHashed)
+        setup.exe = exe
+      }
       snapshot.metrics.payloadHashOperations += Number(setup.inputHashOperations)
       snapshot.metrics.payloadBytesHashed += Number(setup.inputBytesHashed)
       snapshot.metrics.metadataBytes += Number(setup.nativeMetadataBytesParsed)
@@ -107,7 +114,7 @@ export class AtlasContext {
         this.epoch = pointer.epoch
       }
       const folder = publicPath(path.join(this.config.catalogueRoot, 'epochs', this.epoch)), seal = readJson(publicPath(path.join(folder, 'seal.json')))
-      requireAtlas(seal.schema === 'atlas-local-catalogue-seal/v1' && seal.schemaVersion === (qualified ? 2 : 1) && seal.records === (qualified && this.snapshot.values.terrainDerived ? 81 : 49), 'catalogue-schema', 'Incompatible catalogue schema; rebuild for native queries or catalogue build --qualified for unified retrieval.')
+      requireAtlas(seal.schema === 'atlas-local-catalogue-seal/v1' && seal.schemaVersion === (qualified ? 2 : 1) && seal.records === ((qualified && this.snapshot.values.terrainDerived ? 81 : 49) + (this.snapshot.values.exeRegistration ? 8 : 0)), 'catalogue-schema', 'Incompatible catalogue schema; rebuild for native queries or catalogue build --qualified for unified retrieval.')
       requireAtlas(seal.generation === this.generation && seal.fingerprint === this.snapshot.fingerprint, 'catalogue-stale', 'Catalogue belongs to another generation/closure; rebuild for the selected generation.')
       requireAtlas(typeof seal.sha256 === 'string' && /^[a-f0-9]{64}$/.test(seal.sha256), 'catalogue-invalid', 'Malformed catalogue seal; rebuild.')
       return { file: publicPath(path.join(folder, 'index.sqlite')), sha256: seal.sha256, generation: this.generation, fingerprint: this.snapshot.fingerprint, ...(qualified ? { qualified: true } : {}) }
@@ -147,7 +154,7 @@ export class AtlasContext {
     const current = this.checkAuthority()
     const answer = object(await this.worker.call('query', { ...(scan ? { scan: true } : this.catalogue()), query: query as Json }))
     const registrationMetrics = { records: 0, bytes: 0 }, registrations = validateRegistrations(current, this.config.publicationRoot, registrationMetrics)
-    const results = (answer.results as ObjectJson[]).map(r => ({ ...r, componentIdentity: this.members[r.region === 'tryfan' ? 'tryfanRegistration' : 'riffelhornRegistration'], ...(registrations[String(r.region)] ? { registration: registrations[String(r.region)] } : {}) })) as unknown as QualifiedResult[]
+    const results = (answer.results as ObjectJson[]).map(r => ({ ...r, componentIdentity: this.members[String(r.region) + 'Registration'], ...(registrations[String(r.region)] ? { registration: registrations[String(r.region)] } : {}) })) as unknown as QualifiedResult[]
     current.metrics.metadataRecords += registrationMetrics.records; current.metrics.metadataBytes += registrationMetrics.bytes
     return { schema: 'atlas-local-query/v1', generation: this.generation, members: { ...this.members }, results, gap: answer.gap, metrics: { ...(answer.metrics as Record<string, number>), canonicalMetadataReads: current.metrics.metadataRecords, canonicalMetadataBytes: current.metrics.metadataBytes } }
   }

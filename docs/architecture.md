@@ -881,3 +881,38 @@ Tryfan remains CLOSED / ACCEPTED; accepted Riffelhorn/multi-region/dependency/te
 **Exactly one current next task: Atlas local runtime retained Exe water-evidence registration and qualified retrieval integration — NOT BEGUN.** [Task boundary](../runtime/atlas/retrieval-next-task.json): bring already retained, independently qualified WFD reference/RFO event/March–September2024 monthly P1 evidence into the maintainable runtime, with native geometry/month/event/reference semantics, third-region publication, honest no-observation/non-detection and unchanged Tryfan/Riffelhorn. Existing Exe source/temporal proofs establish the local boundary; no acquisition/new method/universal ingestion or another index optimisation. This completed retrieval result supersedes the preceding unbegun task entry while preserving research history.
 
 Final measurements: **780 complete indexed/full comparisons agree across three fresh processes/five retained pins**. Current full open median2.40s, qualified build312ms /160KiB, mixed point145ms; timing ranges overlap scan results and no blanket speedup is claimed. **73 safeguards and 705 tests passed; types, lint and build passed.** Source/derived qualifications and all accepted protections remain intact.
+
+
+## 2026-10-09 — Atlas local runtime Exe water-evidence integration
+
+**C — EXE INTEGRATION SUCCESS**, bounded to accepted retained Exe evidence, an
+administrative knowledge revision and the local single-writer model. The
+[durable result](research/atlas-local-exe.md) extends the existing runtime registration,
+publication and qualified retrieval interfaces; no separate water serving system.
+All357 indexed/full comparisons agree across three fresh processes. Median full
+open5.45s, catalogue build415ms, disposable SQLite160KiB;794 tests pass.
+Eight Exe selectors (six source/two derived summaries) join49 source/32 derived
+Tryfan/Riffelhorn records. WFD/reference, RFO/event and JRC/monthly meanings,
+unknowns, source/preparation identity, rights and provenance remain distinct.
+P1 native counts March0/0/77 and September76/1/0 never imply physical absence.
+
+Canonical files/full validation/filesystem root remain authoritative. SQLite remains
+rebuildable, generation-pinned schema2. The shared runtime/CLI preserves unchanged
+regional components,32 numerical outputs, old generations and catalogue restart/
+rebuild; invalid or interrupted updates stay unpublished. Measured costs and
+population-wide verification/amplification are explicit in the report/raw receipt;
+no global performance or hydrological-truth claim.
+
+Tryfan remains CLOSED / ACCEPTED. Earlier positive/negative proofs, frozen contracts,
+42 canonical research statuses and113 protected production hashes are preserved.
+Receipt optimisation remains CLOSED. No S7, new acquisition, private/production
+Atlas/Weather/Traverse/cloud/service work.
+
+Exactly one next bounded task: **Atlas local runtime retained Exe habitat and planning-reference evidence population integration — NOT BEGUN**.
+Use retained PHI/Flood native populations through compatible additive registration,
+qualified/history retrieval and existing publication; preserve contributor uncertainty
+and scenario/reference conditions. Existing Exe/Tryfan/Riffelhorn/history remain
+exact. The [task boundary](../runtime/atlas/exe-next-task.json) supersedes the preceding
+unbegun-task entry while retaining its history. Do not begin it here.
+
+Final protections: **76 safeguards and 794 tests passed; types, lint and build passed.**

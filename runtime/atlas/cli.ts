@@ -11,7 +11,7 @@ import type { RegistrationRequest } from './registration.ts'
 async function main(): Promise<void> {
   const args = process.argv.slice(2), command = args.shift()
   if (!command || command === '--help') {
-    console.log('Atlas local runtime: validate | catalogue build/verify | query | retrieve | derived | world init/recover | derive stage/inspect | stage validate/publish | evidence inspect/register/revise | update plan/validate/publish\nRequired: --data-root PATH --publication-root PATH --catalogue PATH --python PATH\nOptional: --generation SHA256 --json\nquery/retrieve: --query JSON; catalogue: optional --qualified; derived: optional --query JSON\nworld init: --source-publication PATH; derive: optional --change JSON; stage/update validate/publish: --stage SHA256\nevidence inspect/register: --tryfan-root PATH --prepared-root PATH; register/revise/update plan: --request PATH\nCanonical writes require a separate owned runtime world. See runtime/atlas/README.md.')
+    console.log('Atlas local runtime: validate | catalogue build/verify | query | retrieve | derived | world init/recover | derive stage/inspect | stage validate/publish | evidence inspect/register/revise | update plan/validate/publish\nRequired: --data-root PATH --publication-root PATH --catalogue PATH --python PATH\nOptional: --generation SHA256 --json\nquery/retrieve: --query JSON; catalogue: optional --qualified; derived: optional --query JSON\nworld init: --source-publication PATH; derive: optional --change JSON; stage/update validate/publish: --stage SHA256\nevidence inspect/register: --tryfan-root PATH --prepared-root PATH OR --family exe-water; register/revise/update plan: --request PATH\nCanonical writes require a separate owned runtime world. See runtime/atlas/README.md.')
     return
   }
   const actions: Record<string, string[]> = { catalogue: ['build', 'verify'], world: ['init', 'recover'], derive: ['stage', 'inspect'], stage: ['validate', 'publish'], evidence: ['inspect', 'register', 'revise'], update: ['plan', 'validate', 'publish'] }
@@ -22,7 +22,7 @@ async function main(): Promise<void> {
     const key = args.shift()!
     if (key === '--json') { json = true; continue }
     if (key === '--qualified') { requireAtlas(!qualified && command === 'catalogue', 'argument-invalid', '--qualified applies once to catalogue build/verify only.'); qualified = true; continue }
-    requireAtlas(['--data-root', '--publication-root', '--catalogue', '--python', '--generation', '--query', '--change', '--source-publication', '--stage', '--request', '--tryfan-root', '--prepared-root'].includes(key) && !flags[key], 'argument-invalid', 'Unknown or duplicate flag; see --help.')
+    requireAtlas(['--data-root', '--publication-root', '--catalogue', '--python', '--generation', '--query', '--change', '--source-publication', '--stage', '--request', '--tryfan-root', '--prepared-root', '--family'].includes(key) && !flags[key], 'argument-invalid', 'Unknown or duplicate flag; see --help.')
     const value = args.shift(); requireAtlas(value && !value.startsWith('--'), 'argument-invalid', 'Flag requires a value; see --help.'); flags[key] = value
   }
   for (const key of ['--data-root', '--publication-root', '--catalogue', '--python']) requireAtlas(flags[key], 'argument-invalid', 'Missing ' + key + '; use explicit public paths.')
@@ -40,8 +40,9 @@ async function main(): Promise<void> {
     if (needsRequest) {
       try { request = JSON.parse(fs.readFileSync(publicPath(flags['--request']), 'utf8')) as RegistrationRequest } catch { requireAtlas(false, 'registration-request', 'Request must be a readable versioned JSON file; use evidence inspect for a verified template.') }
     }
-    const inputs = flags['--tryfan-root'] ? { tryfanRoot: flags['--tryfan-root'], preparedRoot: flags['--prepared-root'] } : undefined
-    requireAtlas(!(command === 'evidence' && action === 'register') || inputs, 'argument-invalid', 'Initial/register command requires both retained input roots.')
+    requireAtlas(!flags['--family'] || flags['--family'] === 'exe-water' && command === 'evidence' && action !== 'revise' && !flags['--tryfan-root'], 'argument-invalid', 'Only --family exe-water is supported for evidence inspect/register; existing world required.')
+    const inputs = flags['--family'] ? { family: 'exe-water' as const } : flags['--tryfan-root'] ? { tryfanRoot: flags['--tryfan-root'], preparedRoot: flags['--prepared-root'] } : undefined
+    requireAtlas(!(command === 'evidence' && action === 'register') || inputs, 'argument-invalid', 'Register requires retained input roots or --family exe-water in an existing world.')
     const result = command === 'evidence' ? action === 'inspect' ? await inspectEvidence(config, inputs) : action === 'register' ? await registerEvidence(config, inputs!, request!) : await stageEvidenceUpdate(config, request!) : action === 'plan' ? await planEvidenceUpdate(config, request!) : action === 'validate' ? await validateStage(config, flags['--stage']) : await publishStage(config, flags['--stage'])
     console.log(JSON.stringify(result, null, json ? undefined : 2)); return
   }

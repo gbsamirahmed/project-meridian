@@ -19,7 +19,7 @@ class Qualified:
      k=self.v['knowledge'][region];db.execute('INSERT INTO knowledge VALUES(?,?,?,?)',(region,k['revision'] if k else None,k['acceptedAt'] if k else None,rev))
     db.executemany('INSERT INTO relationship VALUES(?,?,?,?)',[(e['identity'],e['from'],e['to'],e['kind']) for e in self.edges])
   finally:db.close()
-  return {**result,'records':49+len(self.rows),'nativeRecords':49,'derivedRecords':len(self.rows),'relationships':len(self.edges),'schemaVersion':2,'bytes':Path(a['file']).stat().st_size,'sha256':hashlib.sha256(Path(a['file']).read_bytes()).hexdigest()}
+  return {**result,'records':len(self.native)+len(self.rows),'nativeRecords':len(self.native),'derivedRecords':len(self.rows)+sum(r.get('evidenceClass')=='derived' for r in self.native.values()),'relationships':len(self.edges),'schemaVersion':2,'bytes':Path(a['file']).stat().st_size,'sha256':hashlib.sha256(Path(a['file']).read_bytes()).hexdigest()}
  def verify(self,a):
   result=self.o.verify(a);db=sqlite3.connect(Path(a['file']).resolve().as_uri()+'?mode=ro',uri=True)
   try:
@@ -33,15 +33,25 @@ class Qualified:
      b=[r['point'][0],r['point'][1],r['point'][0],r['point'][1]] if table=='derived_bounds' else [min(c[0] for c in r['cells'])-.25,min(c[1] for c in r['cells'])-.25,max(c[0] for c in r['cells'])+.25,max(c[1] for c in r['cells'])+.25]
      x0,x1,y0,y1=actual[i];self.need(x0<=b[0] and x1>=b[2] and y0<=b[1] and y1>=b[3],'catalogue-integrity','Derived bounds could omit exact support.')
   finally:db.close()
-  return {**result,'records':49+len(self.rows),'derivedRecords':len(self.rows),'relationships':len(self.edges),'schemaVersion':2}
+  return {**result,'records':len(self.native)+len(self.rows),'derivedRecords':len(self.rows)+sum(r.get('evidenceClass')=='derived' for r in self.native.values()),'relationships':len(self.edges),'schemaVersion':2}
  def validate(self,q):
   self.need(isinstance(q,dict),'query-invalid','Query must be a structured object.')
   base={k:v for k,v in q.items() if k in ['region','identity','feature','product','point','area','crs','time']};self.o.validate(base)
-  self.need(isinstance(q,dict) and not set(q)-set(base)-{'families','representation','evidenceClass','revision','spatialSupport','knowledge','relatedTo'},'query-invalid','Unsupported qualified predicates.')
-  self.need(q.get('evidenceClass') in [None,'source','derived'] and q.get('representation') in [None,'vector','raster','source-product-metadata','local-scalar'],'query-invalid','Unsupported evidence class/representation.')
+  self.need(isinstance(q,dict) and not set(q)-set(base)-{'families','representation','evidenceClass','revision','spatialSupport','knowledge','relatedTo','waterTime'},'query-invalid','Unsupported qualified predicates.')
+  self.need(q.get('evidenceClass') in [None,'source','derived'] and q.get('representation') in [None,'vector','raster','source-product-metadata','local-scalar','native-cell-summary'],'query-invalid','Unsupported evidence class/representation.')
   if 'families' in q:self.need(isinstance(q['families'],list) and bool(q['families']) and all(isinstance(f,str) and f in self.families for f in q['families']),'query-invalid','Unsupported family.')
   if 'revision' in q:self.need(isinstance(q['revision'],str) and len(q['revision'])==64 and all(c in '0123456789abcdef' for c in q['revision']),'query-invalid','Revision must be an exact SHA256.')
   self.need(q.get('spatialSupport') in [None,'location','consumed'] and ('spatialSupport' not in q or ('point' in q or 'area' in q)) and (q.get('spatialSupport')!='consumed' or q.get('evidenceClass')=='derived'),'query-invalid','Consumed support requires a derived spatial query; scalar location is not a patch.')
+  if 'waterTime' in q:
+   t=q['waterTime'];self.need(isinstance(t,dict) and t.get('role') in ['observation','event','reference'],'query-invalid','Use native observation/event/reference role.')
+   if t.get('unknown') is True:self.need(set(t)=={'role','unknown'},'query-invalid','Unknown is not unrestricted time.')
+   else:
+    self.need(set(t)=={'role','start','end'},'query-invalid','Closed native interval required.')
+    for v in [t['start'],t['end']]:
+     try:valid=isinstance(v,str) and (len(v)==4 and v.isdigit() and 1<=int(v)<=9999 if t['role']=='reference' else datetime.date.fromisoformat(v).isoformat()==v)
+     except (ValueError,TypeError):valid=False
+     self.need(valid,'query-invalid','Use native year precision for reference, ISO day for observation/event; no exposure precision inference.')
+    self.need(t['start']<=t['end'],'query-invalid','Interval ordering invalid.')
   if 'knowledge' in q:
    k=q['knowledge'];self.need(isinstance(k,dict),'query-invalid','Invalid knowledge qualification.')
    if set(k)=={'unknown'}:self.need(k['unknown'] is True,'query-invalid','Unknown must be explicit.')
@@ -62,9 +72,15 @@ class Qualified:
   for k in ['region','identity','representation','product']:
    if k in q and q[k]!=r[k]:return False
   if 'families' in q and r['family'] not in q['families']:return False
-  revision=r['revision'] if cls=='derived' else self.v['nativeRevisions'][r['region']]
+  revision=r['revision'] if cls=='derived' and r['region']!='exe' else self.v['nativeRevisions'][r['region']]
   if 'revision' in q and q['revision']!=revision:return False
   if 'feature' in q and (cls=='derived' or r['feature']!=q['feature']):return False
+  if 'waterTime' in q:
+   if r['region']!='exe':return False
+   t=q['waterTime'];wanted='nominal-epoch' if t['role']=='reference' else t['role'];times=[x['extent'] for x in r['record']['waterTime'] if x['role']==wanted]
+   if t.get('unknown'):
+    if times and not all(x['kind']=='unknown' for x in times):return False
+   elif not any((t['start']<=x['end'] and t['end']>=x['start']) if x['kind']=='interval' else (t['start']<=x['value']<=t['end'] if x['kind']=='epoch' else False) for x in times):return False
   if 'knowledge' in q:
    k=q['knowledge'];v=self.v['knowledge'][r['region']]
    if k.get('unknown'):return v is None
@@ -91,7 +107,7 @@ class Qualified:
   q=a['query'];self.validate(q);start=time.perf_counter();scan=a.get('scan',False);db=None
   if not scan:self.verify(a);db=sqlite3.connect(Path(a['file']).resolve().as_uri()+'?mode=ro',uri=True)
   try:
-   reachable,traversed=self.traversal(q,db);nativekeys=[k for k,r in self.native.items() if self.allowed(q,r,'source') and (reachable is None or k in reachable)]
+   reachable,traversed=self.traversal(q,db);nativekeys=[k for k,r in self.native.items() if self.allowed(q,r,r.get('evidenceClass','source')) and (reachable is None or k in reachable)]
    nq={k:v for k,v in q.items() if k in ['region','identity','feature','product','point','area','crs','time']}
    if 'families' in q:nq['families']=[f for f in q['families'] if f in {r['family'] for r in self.native.values()}]
    if q.get('representation') and q['representation']!='local-scalar':nq['representation']=q['representation']
@@ -100,7 +116,7 @@ class Qualified:
    out=[]
    for r in native['results']:
     key=r['region']+':'+r['identity']
-    if key in nativekeys:out.append({**r,'key':key,'revision':self.v['nativeRevisions'][r['region']],'evidenceClass':'source','family':self.native[key]['family'],'representation':self.native[key]['representation']})
+    if key in nativekeys:out.append({**r,'key':key,'revision':self.v['nativeRevisions'][r['region']],'evidenceClass':self.native[key].get('evidenceClass','source'),'family':self.native[key]['family'],'representation':self.native[key]['representation']})
    candidates=list(self.rows)
    if db:
     clauses=['0'] if q.get('evidenceClass')=='source' or 'feature' in q else [];args=[]
@@ -131,6 +147,6 @@ class Qualified:
       x,y=r['point']
       if not (g.x==x and g.y==y if g.geom_type=='Point' else g.contains(Point(x,y)) or (g.covers(Point(x,y)) and x<g.bounds[2] and y<g.bounds[3])):continue
     out.append({**r,'evidenceClass':'derived','temporal':{'evidence-epoch':{'status':'unknown','reason':'Exact native stencil observation epoch is unknown.'},'product-reference':{'status':'unknown','reason':'No source product-reference calendar year is declared for this derived quantity; method identity and execution time remain separate.'}}})
-   out.sort(key=lambda r:r['key']);return {'results':out,'traversed':traversed,'metrics':{**native['metrics'],'nativeSelectorPredicates':49,'derivedCandidates':len(candidates),'derivedPredicates':considered,'derivedSpatialPredicates':exact,'availableRecords':49+len(self.rows),'relationshipRowsAudited':len(self.edges),'relationshipResults':len(traversed),'milliseconds':(time.perf_counter()-start)*1000,'catalogueBytesHashed':0 if scan else Path(a['file']).stat().st_size}}
+   out.sort(key=lambda r:r['key']);return {'results':out,'traversed':traversed,'metrics':{**native['metrics'],'nativeSelectorPredicates':len(self.native),'derivedCandidates':len(candidates),'derivedPredicates':considered,'derivedSpatialPredicates':exact,'availableRecords':len(self.native)+len(self.rows),'relationshipRowsAudited':len(self.edges),'relationshipResults':len(traversed),'milliseconds':(time.perf_counter()-start)*1000,'catalogueBytesHashed':0 if scan else Path(a['file']).stat().st_size}}
   finally:
    if db:db.close()

@@ -7,7 +7,7 @@ export interface RuntimeConfig {
   generation?: string
 }
 export interface Query {
-  region?: 'tryfan' | 'riffelhorn'
+  region?: 'tryfan' | 'riffelhorn' | 'exe'
   identity?: string
   feature?: string
   families?: string[]
@@ -72,8 +72,9 @@ export interface DerivedAnswer {
 }
 /** A finite qualified query; publication selection belongs to RuntimeConfig. */
 export interface EvidenceQuery extends Omit<Query, 'representation'> {
+  waterTime?: { role: 'observation' | 'event' | 'reference'; start: string; end: string } | { role: 'observation' | 'event' | 'reference'; unknown: true }
   evidenceClass?: 'source' | 'derived'
-  representation?: Query['representation'] | 'local-scalar'
+  representation?: Query['representation'] | 'local-scalar' | 'native-cell-summary'
   revision?: string
   spatialSupport?: 'location' | 'consumed'
   knowledge?: { revision: string } | { start: string; end: string } | { unknown: true }

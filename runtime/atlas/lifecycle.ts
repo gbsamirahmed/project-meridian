@@ -1,3 +1,4 @@
+import { verifyExe } from './exe-model.ts'
 import { openAtlas } from './index.ts'
 import { object, resolveAuthoritative, validateNativeFiles, readJson } from './authority.ts'
 import type { ObjectJson } from './authority.ts'
@@ -75,6 +76,11 @@ export async function validateStage(config: RuntimeConfig, generation: string): 
   const start = performance.now(), root = owned(config), candidate = resolveAuthoritative(config, generation, false), active = resolveAuthoritative({ ...config, generation: undefined })
   requireAtlas(candidate.publication.predecessor === active.generation && Number(candidate.publication.ordinal) === Number(active.publication.ordinal) + 1 && (candidate.values.terrainLifecycle && candidate.values.terrainDerived || candidate.values.registrationLedger), 'stage-invalid', 'Only a complete next-generation lifecycle/registration stage can publish.')
   validateNativeFiles(candidate, config)
+  if (candidate.values.exeRegistration) {
+    const exe = await verifyExe(config, candidate.values.exeRegistration)
+    candidate.metrics.payloadHashOperations += Number(exe.sourceHashOperations) + Number(exe.directoryHashOperations)
+    candidate.metrics.payloadBytesHashed += Number(exe.sourceBytesHashed) + Number(exe.directoryBytesHashed)
+  }
   const context = await openAtlas({ ...config, generation: active.generation })
   try {
     requireAtlas(digest(candidate.values.riffelhornRegistration) === digest(active.values.riffelhornRegistration), 'registration-invalid', 'This slice cannot replace regional sources/preparation.')

@@ -2,10 +2,13 @@
 
 The runtime opens accepted seven-component publications and compatible eight-component registration,
 nine-component derivation and ten-component registration/derivation
-lifecycle extension. Canonical qualified files and the filesystem publication root
+lifecycle extension, plus optional retained Exe water registration. Canonical qualified files and the filesystem publication root
 remain authoritative; SQLite is a disposable candidate catalogue. It can now execute
 one accepted native Riffelhorn slope method and its planar-area summary, inspect scoped
 invalidation, stage/validate/publish immutable generations, and query their history.
+
+The [Exe integration](../../docs/research/atlas-local-exe.md) extends those same
+registration and retrieval interfaces; it is not a water service or simulation.
 
 The [first read slice](../../docs/research/atlas-local-runtime.md) remains authoritative
 for its original boundary. The [lifecycle report](../../docs/research/atlas-local-lifecycle.md)
@@ -515,3 +518,102 @@ production/global-scale claim, remote service, multiple-writer or power-loss gua
 Tryfan DTM/unknown datum, Swiss LN02 DTM, independent EGM2008 DSM, classifications and
 dated features remain separate. See the [retrieval report](../../docs/research/atlas-local-retrieval.md)
 and [exactly one next unbegun task](retrieval-next-task.json).
+
+## Retained Exe water evidence through the shared runtime
+
+Prerequisites: the accepted public water-check-v1 directory, existing retained
+Tryfan/Riffelhorn runtime publication, Node/Python setup above and an empty owned
+world destination. No acquisition/preparation campaign is performed. The adapter
+admits WFD GB510804505600, RFO31383/group4124, March/September2024 P1 containing-cell
+assignments and centre-count summaries, plus their two monthly crop products.
+There are six source selectors and two derived summaries, not eight independent
+physical observations. Other retained PHI/planning products are verified for
+source accountability but are not admitted into this finite query population.
+
+```powershell
+# Set explicit relocated paths. The receipt is a locator, never publication authority.
+$atlasSource = (Get-Content docs/research/atlas-local-exe-baseline.json -Raw | ConvertFrom-Json).selectedWorld
+$atlasWorld = Join-Path $env:LOCALAPPDATA 'Meridian/atlas-exe-owned-world'
+$atlasCache = Join-Path $env:LOCALAPPDATA 'Meridian/atlas-exe-disposable-catalogue'
+$atlasFlags = @('--data-root', $atlasData, '--publication-root', $atlasWorld,
+  '--catalogue', $atlasCache, '--python', $atlasPython)
+node runtime/atlas/cli.ts world init @atlasFlags --source-publication $atlasSource --json
+$atlasBefore = (node runtime/atlas/cli.ts validate @atlasFlags --json | ConvertFrom-Json).generation
+$atlasInspect = node runtime/atlas/cli.ts evidence inspect @atlasFlags --family exe-water --json | ConvertFrom-Json
+$atlasRequest = Join-Path $env:LOCALAPPDATA 'Meridian/exe-registration-request.json'
+[IO.File]::WriteAllText($atlasRequest, ($atlasInspect.templates.exe | ConvertTo-Json -Depth 100), [Text.UTF8Encoding]::new($false))
+node runtime/atlas/cli.ts update plan @atlasFlags --request $atlasRequest --json
+$atlasStage = node runtime/atlas/cli.ts evidence register @atlasFlags --family exe-water --request $atlasRequest --json | ConvertFrom-Json
+node runtime/atlas/cli.ts update validate @atlasFlags --stage $atlasStage.generation --json
+node runtime/atlas/cli.ts update publish @atlasFlags --stage $atlasStage.generation --json
+node runtime/atlas/cli.ts catalogue build @atlasFlags --qualified --json
+node runtime/atlas/cli.ts retrieve @atlasFlags --query '{"region":"exe"}' --json
+node runtime/atlas/cli.ts retrieve @atlasFlags --query '{"identity":"exe:wfd"}' --json
+node runtime/atlas/cli.ts retrieve @atlasFlags --query '{"region":"exe","feature":"rfo:31383"}' --json
+node runtime/atlas/cli.ts retrieve @atlasFlags --query '{"region":"exe","area":[296600,86550,296800,86750],"crs":"EPSG:27700","waterTime":{"role":"observation","start":"2024-03-01","end":"2024-03-31"}}' --json
+node runtime/atlas/cli.ts retrieve @atlasFlags --query '{"relatedTo":{"identity":"exe:2024-03:support","direction":"inputs","depth":"direct"}}' --json
+# Historical pin needs its own rebuilt catalogue; no generation fallback occurs.
+node runtime/atlas/cli.ts catalogue build @atlasFlags --qualified --generation $atlasBefore --json
+node runtime/atlas/cli.ts retrieve @atlasFlags --generation $atlasBefore --query '{"region":"exe"}' --json
+```
+
+For repeat registration, inspect a fresh template. Identical register is no-op;
+do not validate/publish a no-op stage. For a knowledge-only revision, inspect a
+fresh template and change only operation to `knowledge` and explanation. Use
+`evidence revise`, then existing update validate/publish. The source/time/support
+body cannot be overridden. Knowledge acceptance changes, physical observations
+and source content do not. Missing/corrupt/stale catalogues require explicit
+rebuild. Deleting the catalogue pointer or SQLite files does not affect authority.
+
+Library: `inspectEvidence(config, {family:'exe-water'})` returns a verified
+request; `registerEvidence(config, {family:'exe-water'}, request)` stages it.
+`planEvidenceUpdate`, `stageEvidenceUpdate`, `validateStage`, `publishStage` and
+`openAtlas(config).retrieve(query)` retain their existing roles. A current context
+pins at open. `config.generation` selects exact history, including pre-Exe states.
+The complete CLI-only example is `node runtime/atlas/example-exe.mjs CONFIG.json`.
+Its config has dataRoot, publicationRoot (new destination), catalogueRoot, python
+and sourcePublication. It demonstrates registration, old/new queries, an explicitly
+administrative knowledge revision, restart and deleted-pointer rebuilding.
+
+Qualified predicates add region `exe`, families `water-reference`, `water-event`,
+`water-monthly` and representation `native-cell-summary`. The optional `waterTime`
+profile applies to admitted Exe records: observation/event use inclusive ISO day
+interval overlap; reference uses an exact calendar-year qualifier. `unknown:true`
+means the requested role is unavailable, not all-time applicability. Combined
+predicates are conjunctions, including knowledge. Existing year-only `time` stays
+separate and compatible; knowledge selects active immutable ledger revision/time
+in a pinned generation. WFD classification2019 is not observation time; RFO
+February4-5,2014 is a published event interval, not local inundation seconds;
+monthly bins are not exact Landsat exposures or continuous validity.
+
+Spatial predicates select existing evidence support rather than recomputing a
+new water measurement. EPSG:27700 or4326/CRS84 queries use original polygons,
+native raster-cell rectangles and exact P1 centre populations after coarse index
+selection. Vector/cell point support uses covers (closed geometric boundary);
+area selection requires positive intersection. Summary area queries require an
+actual selected centre strictly within the area; a point query must match an
+actual centre. The study upper bounds are excluded for point eligibility. Native
+geometries can extend beyond the10.5km² study without extending proof eligibility.
+A smaller query returns the unchanged P1 summary when its support intersects;
+it does not turn the77-cell composition into a new subarea summary.
+
+Every returned record exposes native geometry/CRS, legacy year projections plus
+native observation/event/reference qualifiers, retained acquisition/source dates,
+unknown preparation completion time, immutable knowledge and publication identity,
+source/product/retained/derived identities, accepted method/parameters and rights.
+Two explicit summary-to-monthly-product dependencies are available. Single-cell
+observations are not fabricated as inputs to77-cell summaries. WFD/event records
+remain independent evidence, with no invented cross-source lineage.
+
+March P1 counts0/0/77 and September76/1/0 refer respectively to code0 no observation,
+code1 non-detection and code2 detection. Point codes2 and0 remain distinct from
+summary counts. No-result means no matching evidence, never dry/physical absence.
+Current water, flood level, discharge, tide and physical-change predicates are
+unsupported. Keep EA/OS and JRC/Google/Pekel attribution and retained source notices;
+local research admission is not blanket redistribution/service clearance.
+
+Full opening and candidate validation verify current retained bytes and independently
+rebuild accepted Exe claims/supports. Later queries retain the accepted immutable
+local-custody assumption, with canonical closure/metadata and catalogue audits;
+they are not a fresh full-payload hash sweep. The existing session-owned Python
+worker performs GIS/SQLite work; no daemon, remote API or new database authority.
