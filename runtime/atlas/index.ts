@@ -6,15 +6,21 @@ import { object, publicPath, readJson, resolveAuthoritative, validateNativeFiles
 import type { ObjectJson, Snapshot } from './authority.ts'
 import { requireAtlas, AtlasError } from './errors.ts'
 import { NativeWorker } from './worker.ts'
-import type { Json, Query, QueryAnswer, QualifiedResult, RuntimeConfig } from './types.ts'
-export type { Query, QueryAnswer, RuntimeConfig, QualifiedResult } from './types.ts'
+import { validateDerived, readArtifact, probes } from './lifecycle-model.ts'
+import type { Policy, DerivedState } from './lifecycle-model.ts'
+import type { Json, Query, QueryAnswer, QualifiedResult, RuntimeConfig, DerivedQuery, DerivedAnswer } from './types.ts'
+export type { Query, QueryAnswer, RuntimeConfig, QualifiedResult, DerivationStage, DerivedQuery, DerivedAnswer } from './types.ts'
 export { AtlasError } from './errors.ts'
+export { createWorld, stageDerivation, inspectLifecycle, validateStage, publishStage, fullDerivationReference, recoverWorld } from './lifecycle.ts'
+export type { Change, Notice } from './lifecycle.ts'
 
 const EPOCH = /^[a-f0-9-]{36}$/
 function resolvedLocation(p: string): string {
   const absolute = publicPath(p)
   if (fs.existsSync(absolute)) return fs.realpathSync(absolute)
-  return path.join(resolvedLocation(path.dirname(absolute)), path.basename(absolute))
+  const parent = path.dirname(absolute)
+  requireAtlas(parent !== absolute, 'path-unavailable', 'Configured local volume is unavailable; restore the explicit data path. No generation fallback is permitted.')
+  return path.join(resolvedLocation(parent), path.basename(absolute))
 }
 function inside(child: string, parent: string): boolean {
   const relative = path.relative(parent, child)
@@ -62,6 +68,18 @@ export class AtlasContext {
       snapshot.metrics.metadataBytes += Number(setup.nativeMetadataBytesParsed)
       snapshot.metrics.milliseconds = performance.now() - start
       snapshot.metrics.parentRssBytes = process.memoryUsage().rss
+      if (snapshot.values.terrainLifecycle) {
+        const artifactMetrics = { records: 0, bytes: 0 }
+        validateDerived(config.publicationRoot, snapshot.values.terrainLifecycle as unknown as Policy, snapshot.values.terrainDerived as unknown as DerivedState, artifactMetrics)
+        const samples = object(await worker.call('terrain', { schema: 'atlas-runtime-terrain-request/v1', tasks: probes.map(p => ({ id: p.id, stride: object(snapshot.values.terrainLifecycle.parameters)[p.id] ?? 1 })) }))
+        const { outputs, digest } = await import('./lifecycle-model.ts')
+        requireAtlas(digest(samples.registry) === digest(snapshot.values.terrainLifecycle.sources), 'source-invalid', 'Lifecycle source qualification differs from verified retained evidence.')
+        const full = await outputs(snapshot.values.terrainLifecycle as unknown as Policy, samples.rows as never)
+        for (const [id, body] of Object.entries(full)) requireAtlas(digest(body) === object(snapshot.values.terrainDerived.active)[id], 'derived-invalid', 'Full native recomputation disagrees with authoritative derived output.')
+        snapshot.metrics.metadataRecords += artifactMetrics.records
+        snapshot.metrics.metadataBytes += artifactMetrics.bytes
+        snapshot.metrics.milliseconds = performance.now() - start
+      }
       return new AtlasContext(config, snapshot, worker, setup)
     } catch (error) { await worker.close(); throw error }
   }
@@ -120,6 +138,30 @@ export class AtlasContext {
   query(query: Query): Promise<QueryAnswer> { return this.run(query, false) }
   /** Diagnostic full-scan reference, never an automatic catalogue fallback. */
   scanReference(query: Query): Promise<QueryAnswer> { return this.run(query, true) }
+  /** Narrow processing contract on fully verified native inputs; no hidden data roots. */
+  async terrainSamples(tasks: { id: string; stride: number }[]): Promise<ObjectJson> {
+    this.checkAuthority()
+    const response = object(await this.worker.call('terrain', { schema: 'atlas-runtime-terrain-request/v1', tasks }))
+    requireAtlas(response.schema === 'atlas-runtime-terrain-response/v1' && Array.isArray(response.rows) && response.rows.length === tasks.length && (response.rows as ObjectJson[]).every((r, i) => r.id === tasks[i].id && r.stride === tasks[i].stride), 'processing-invalid', 'Worker response identity/schema differs from the exact requested task set.')
+    object(response.environment); return response
+  }
+  /** Finite canonical scalar lookup, separate from the 49-record native SQLite catalogue. */
+  derived(query: DerivedQuery = {}): DerivedAnswer {
+    const current = this.checkAuthority()
+    requireAtlas(query && typeof query === 'object' && !Array.isArray(query) && Object.keys(query).every(k => ['identity', 'property'].includes(k)) && (query.property === undefined || ['slope', 'area-ratio'].includes(query.property)) && (query.identity === undefined || typeof query.identity === 'string' && query.identity.length > 0), 'query-invalid', 'Only nonempty exact derived identity/property predicates are supported.')
+    const regionalRegistration = { componentIdentity: this.members.riffelhornRegistration, evidence: current.values.riffelhornRegistration }
+    if (!current.values.terrainDerived) return { generation: this.generation, regionalRegistration, results: [], status: 'no-runtime-derived-state' }
+    const artifactMetrics = { records: 0, bytes: 0 }
+    validateDerived(this.config.publicationRoot, current.values.terrainLifecycle as unknown as Policy, current.values.terrainDerived as unknown as DerivedState, artifactMetrics)
+    const active = object(current.values.terrainDerived.active)
+    const executions = object(current.values.terrainDerived.executions), runCache = new Map<string, ObjectJson>()
+    const results = Object.entries(active).sort(([a], [b]) => a.localeCompare(b)).filter(([id]) => !query.identity || query.identity === id).map(([id, revision]): ObjectJson => {
+      const runId = String(executions[id])
+      if (!runCache.has(runId)) runCache.set(runId, readArtifact(this.config.publicationRoot, runId, artifactMetrics, 'executions'))
+      return { ...readArtifact(this.config.publicationRoot, String(revision), artifactMetrics), revision, componentIdentity: this.members.terrainDerived, execution: { identity: runId, record: runCache.get(runId)! } }
+    }).filter(a => !query.property || a.property === query.property)
+    return { generation: this.generation, regionalRegistration, status: 'current-in-pinned-context', results, metrics: { outputMembershipChecks: 32, artifactMetadataReads: artifactMetrics.records, artifactMetadataBytes: artifactMetrics.bytes, canonicalMetadataReads: current.metrics.metadataRecords, canonicalMetadataBytes: current.metrics.metadataBytes, returned: results.length, ancestryTraversals: 0 } }
+  }
   close(): Promise<void> { return this.worker.close() }
 }
 export const openAtlas = AtlasContext.open

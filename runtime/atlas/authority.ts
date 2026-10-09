@@ -10,6 +10,7 @@ import type { Json, RuntimeConfig, ValidationMetrics } from './types.ts'
 export type ObjectJson = { [key: string]: Json }
 const HEX = /^[a-f0-9]{64}$/
 export const KINDS = ['catalogue', 'knowledge', 'locators', 'riffelhornRegistration', 'serving', 'tryfanRegistration', 'understanding']
+export const LIFECYCLE_KINDS = [...KINDS, 'terrainLifecycle', 'terrainDerived'].sort()
 export function object(v: unknown): ObjectJson {
   requireAtlas(v && typeof v === 'object' && !Array.isArray(v), 'canonical-malformed', 'Expected structured canonical metadata.')
   return v as ObjectJson
@@ -33,8 +34,9 @@ export interface Snapshot {
   fingerprint: string
   metrics: ValidationMetrics
 }
-/** Read-only adapter for the accepted seven-component publication format. */
-export function resolveAuthoritative(config: RuntimeConfig, generation?: string): Snapshot {
+/** Read-only closure adapter: accepted base plus the finite runtime lifecycle extension.
+ * committed=false is stage inspection only; serving always uses committed eligibility. */
+export function resolveAuthoritative(config: RuntimeConfig, generation?: string, committed = true): Snapshot {
   const start = performance.now(), root = publicPath(config.publicationRoot)
   let metadataRecords = 0, metadataBytes = 0
   function readObject(folder: string, id: string): ObjectJson {
@@ -52,7 +54,7 @@ export function resolveAuthoritative(config: RuntimeConfig, generation?: string)
   const selected = generation ?? config.generation ?? active.generation
   address(selected)
   let nodeId = active.membership
-  for (let depth = 0; depth <= 32; depth++) {
+  for (let depth = 0; committed && depth <= 32; depth++) {
     const node = readObject('membership', nodeId)
     requireAtlas(node.schema === 'atlas-publication-membership/v1' && node.depth === depth, 'closure-invalid', 'Invalid committed membership path.')
     if (depth === 32) {
@@ -67,22 +69,23 @@ export function resolveAuthoritative(config: RuntimeConfig, generation?: string)
     }
   }
   const publication = readObject('publications', selected), members = object(publication.members)
-  requireAtlas(publication.schema === 'atlas-component-publication/v1' && Object.keys(publication).sort().join(',') === 'header,legacyGeneration,members,ordinal,predecessor,schema', 'publication-format', 'Unsupported publication format; this adapter supports the accepted seven-component world.')
-  requireAtlas(Number.isSafeInteger(publication.ordinal) && Number(publication.ordinal) > 0 && Object.keys(members).sort().join(',') === KINDS.join(','), 'closure-invalid', 'Complete seven-component membership required.')
+  requireAtlas(publication.schema === 'atlas-component-publication/v1' && Object.keys(publication).sort().join(',') === 'header,legacyGeneration,members,ordinal,predecessor,schema', 'publication-format', 'Unsupported publication format; use a complete accepted or runtime lifecycle world.')
+  const kinds = Object.keys(members).sort()
+  requireAtlas(Number.isSafeInteger(publication.ordinal) && Number(publication.ordinal) > 0 && [KINDS.join(','), LIFECYCLE_KINDS.join(',')].includes(kinds.join(',')), 'closure-invalid', 'Complete accepted seven- or runtime nine-component membership required.')
   address(publication.legacyGeneration)
   if (publication.predecessor !== null) address(publication.predecessor)
   const values: Record<string, ObjectJson> = {}, refs: Record<string, string> = {}
-  for (const kind of KINDS) {
+  for (const kind of kinds) {
     const id = members[kind]; address(id); refs[kind] = id
     const component = readObject('components', id)
     requireAtlas(component.schema === 'atlas-retained-component/v1' && component.kind === kind && Object.keys(component).sort().join(',') === 'kind,schema,value', 'closure-invalid', 'Component kind/schema mismatch.')
     values[kind] = object(component.value)
   }
   const { tryfanRegistration, riffelhornRegistration } = values
-  const science = Object.fromEntries(Object.entries(values).filter(([kind]) => !['locators', 'tryfanRegistration', 'riffelhornRegistration'].includes(kind)))
+  const science = Object.fromEntries(Object.entries(values).filter(([kind]) => KINDS.includes(kind) && !['locators', 'tryfanRegistration', 'riffelhornRegistration'].includes(kind)))
   const native = object(canonicalGeneration({ ...object(publication.header), ...science }))
   requireAtlas(sha(encode(native)) === '5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06', 'registration-invalid', 'This adapter requires the unchanged accepted Tryfan scientific state.')
-  const reconstructed = { ...native, tryfanRegistration, riffelhornRegistration }
+  const reconstructed = { ...native, tryfanRegistration, riffelhornRegistration, ...(values.terrainLifecycle ? { terrainLifecycle: values.terrainLifecycle, terrainDerived: values.terrainDerived } : {}) }
   requireAtlas(sha(encode(reconstructed)) === publication.legacyGeneration, 'closure-invalid', 'Exact publication closure reconstruction differs.')
   const expectedTry = { schema: 'atlas-regional-evidence-registration/v1', region: 'tryfan', acceptedGeneration: sha(encode(native)), support: { crs: object(native.core).crs, bounds: object(native.core).bounds }, catalogueIdentity: sha(encode(native.catalogue)), knowledgeIdentity: sha(encode(native.knowledge)), understandingIdentity: sha(encode(native.understanding)), nativeFamilies: (object(native.catalogue).families as ObjectJson[]).map(f => f.id), administrative: tryfanRegistration.administrative }
   requireAtlas(encode(expectedTry) === encode(tryfanRegistration), 'registration-invalid', 'Tryfan registration/source identity differs.')

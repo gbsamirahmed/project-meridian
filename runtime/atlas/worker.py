@@ -4,6 +4,9 @@ import hashlib,json,math,os,sqlite3,sys,time
 R=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(R/'scripts/atlas/riffelhorn-retrieval'))
 import query as Q
+from importlib.util import spec_from_file_location,module_from_spec
+terrain_spec=spec_from_file_location('runtime_terrain',Path(__file__).parent/'terrain-worker.py')
+terrain=module_from_spec(terrain_spec);terrain_spec.loader.exec_module(terrain)
 sys.path.insert(0,str(R/'scripts/atlas/multi-region'))
 from importlib.util import spec_from_file_location,module_from_spec
 spec=spec_from_file_location('accepted_native',R/'scripts/atlas/multi-region/native-worker.py')
@@ -172,9 +175,10 @@ def main():
     if op=='build':result=adapter.build(a)
     elif op=='verify':result=adapter.verify(a)
     elif op=='query':result=adapter.query(a)
+    elif op=='terrain':result=terrain.sample(adapter.s,a)
     else:raise Failure('query-invalid','Unsupported worker operation.')
    print(json.dumps({'id':req['id'],'result':result},ensure_ascii=False,allow_nan=False),flush=True)
   except Failure as e:print(json.dumps({'id':req['id'],'error':{'code':e.code,'message':str(e)}}),flush=True)
-  except (ValueError,KeyError,TypeError,OSError,sqlite3.Error):print(json.dumps({'id':req['id'],'error':{'code':'authoritative-invalid' if req['operation']=='initialize' else 'catalogue-or-query-invalid','message':'Required retained metadata/payload or catalogue is missing, malformed or incompatible. Validate explicit paths; rebuild only disposable catalogues.'}}),flush=True)
+  except (ValueError,KeyError,TypeError,OSError,sqlite3.Error):print(json.dumps({'id':req['id'],'error':{'code':'authoritative-invalid' if req['operation']=='initialize' else 'processing-invalid' if req['operation']=='terrain' else 'catalogue-or-query-invalid','message':'Required retained metadata/payload, processing request or catalogue is missing, malformed or incompatible. Validate explicit identities and parameters; rebuild only disposable catalogues.'}}),flush=True)
 if __name__=='__main__':
  sys.stdout.reconfigure(encoding='utf-8');main()

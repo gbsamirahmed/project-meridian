@@ -1,0 +1,623 @@
+{
+  "schema": "atlas-local-lifecycle-validation/v1",
+  "startingCheckpoint": "5842fde7d86c5623906721cd21e67aeb80552c6f",
+  "decision": "C \u2014 LIFECYCLE INTEGRATION SUCCESS",
+  "checks": [
+    {
+      "check": "starting clean main checkpoint/upstream recorded",
+      "passed": true
+    },
+    {
+      "check": "all original files outside narrow runtime/navigation edits unchanged",
+      "passed": true
+    },
+    {
+      "check": "frozen plan predates implementation and remains exact",
+      "passed": true
+    },
+    {
+      "check": "all113 protected production hashes unchanged",
+      "passed": true
+    },
+    {
+      "check": "all42 canonical research statuses unchanged",
+      "passed": true
+    },
+    {
+      "check": "retained original source admission unchanged",
+      "passed": true
+    },
+    {
+      "check": "all17 accepted Tryfan files unchanged",
+      "passed": true
+    },
+    {
+      "check": "all6 accepted prepared Riffelhorn artifacts unchanged",
+      "passed": true
+    },
+    {
+      "check": "native unit/source receipts unchanged",
+      "passed": true
+    },
+    {
+      "check": "all66 retained Exe temporal files unchanged",
+      "passed": true
+    },
+    {
+      "check": "complete accepted temporal state unchanged",
+      "passed": true
+    },
+    {
+      "check": "all115 accepted multi-region publication files unchanged",
+      "passed": true
+    },
+    {
+      "check": "atlas-multi-region root/history retained",
+      "passed": true
+    },
+    {
+      "check": "atlas-regional-dependencies root/history retained",
+      "passed": true
+    },
+    {
+      "check": "accepted S1 report unchanged and present",
+      "passed": true
+    },
+    {
+      "check": "accepted S2 report unchanged and present",
+      "passed": true
+    },
+    {
+      "check": "accepted S3 report unchanged and present",
+      "passed": true
+    },
+    {
+      "check": "accepted S4 report unchanged and present",
+      "passed": true
+    },
+    {
+      "check": "accepted S5 report unchanged and present",
+      "passed": true
+    },
+    {
+      "check": "accepted S6 report unchanged and present",
+      "passed": true
+    },
+    {
+      "check": "atlas-component-membership primary evidence unchanged and present",
+      "passed": true
+    },
+    {
+      "check": "atlas-component-granularity primary evidence unchanged and present",
+      "passed": true
+    },
+    {
+      "check": "atlas-validation-packing primary evidence unchanged and present",
+      "passed": true
+    },
+    {
+      "check": "atlas-integrity-cost primary evidence unchanged and present",
+      "passed": true
+    },
+    {
+      "check": "atlas-regional-expansion primary evidence unchanged and present",
+      "passed": true
+    },
+    {
+      "check": "atlas-riffelhorn-preparation primary evidence unchanged and present",
+      "passed": true
+    },
+    {
+      "check": "atlas-riffelhorn-retrieval primary evidence unchanged and present",
+      "passed": true
+    },
+    {
+      "check": "atlas-multi-region primary evidence unchanged and present",
+      "passed": true
+    },
+    {
+      "check": "atlas-regional-dependencies primary evidence unchanged and present",
+      "passed": true
+    },
+    {
+      "check": "atlas-temporal-integration primary evidence unchanged and present",
+      "passed": true
+    },
+    {
+      "check": "atlas-local-architecture primary evidence unchanged and present",
+      "passed": true
+    },
+    {
+      "check": "atlas-local-runtime primary evidence unchanged and present",
+      "passed": true
+    },
+    {
+      "check": "population is16 actual accepted probes/32 outputs",
+      "passed": true
+    },
+    {
+      "check": "three isolated deterministic initial publications identical",
+      "passed": true
+    },
+    {
+      "check": "all21 selective/full comparisons agree",
+      "passed": true
+    },
+    {
+      "check": "96 actual accepted numerical comparisons recorded",
+      "passed": true
+    },
+    {
+      "check": "no-op exact closure/reuse/processing cells",
+      "passed": true
+    },
+    {
+      "check": "local-qualification exact closure/reuse/processing cells",
+      "passed": true
+    },
+    {
+      "check": "parameter exact closure/reuse/processing cells",
+      "passed": true
+    },
+    {
+      "check": "unrelated-region exact closure/reuse/processing cells",
+      "passed": true
+    },
+    {
+      "check": "global-qualification exact closure/reuse/processing cells",
+      "passed": true
+    },
+    {
+      "check": "identical-notice exact closure/reuse/processing cells",
+      "passed": true
+    },
+    {
+      "check": "every full comparison samples all144 native cells",
+      "passed": true
+    },
+    {
+      "check": "initial complete current payload validation retained",
+      "passed": true
+    },
+    {
+      "check": "full native publication validation is not receipt-based",
+      "passed": true
+    },
+    {
+      "check": "native and derived query measurements present",
+      "passed": true
+    },
+    {
+      "check": "all catalogue builds/rebuilds disposable80KB/49 records",
+      "passed": true
+    },
+    {
+      "check": "metadata reads and write counters explicit",
+      "passed": true
+    },
+    {
+      "check": "no-op writes no canonical object",
+      "passed": true
+    },
+    {
+      "check": "source-use-slope-ratio graph explicit and finite",
+      "passed": true
+    },
+    {
+      "check": "local/parameter notices replace two components and reuse seven",
+      "passed": true
+    },
+    {
+      "check": "unrelated region only replaces its registration",
+      "passed": true
+    },
+    {
+      "check": "three fresh historical processes each reproduce six pinned generations",
+      "passed": true
+    },
+    {
+      "check": "historical exact result identities repeat",
+      "passed": true
+    },
+    {
+      "check": "all generated worlds external and bounded under10MB each",
+      "passed": true
+    },
+    {
+      "check": "method and independent oracle frozen content unchanged",
+      "passed": true
+    },
+    {
+      "check": "all32 required durable report sections",
+      "passed": true
+    },
+    {
+      "check": "scientific and operation boundaries explicit",
+      "passed": true
+    },
+    {
+      "check": "one specific next task selected but not begun",
+      "passed": true
+    },
+    {
+      "check": "current result/next-task preserved in docs/research/atlas-research-map.md",
+      "passed": true
+    },
+    {
+      "check": "current result/next-task preserved in docs/product-direction.md",
+      "passed": true
+    },
+    {
+      "check": "current result/next-task preserved in docs/architecture.md",
+      "passed": true
+    },
+    {
+      "check": "current result/next-task preserved in docs/development-log.md",
+      "passed": true
+    },
+    {
+      "check": "current result/next-task preserved in docs/research/atlas-research-state.md",
+      "passed": true
+    },
+    {
+      "check": "development log append-only",
+      "passed": true
+    },
+    {
+      "check": "only exact authorized runtime/report/navigation boundary",
+      "passed": true
+    },
+    {
+      "check": "no unnecessary large committed payloads",
+      "passed": true
+    },
+    {
+      "check": "all changed documentation links resolve",
+      "passed": true
+    },
+    {
+      "check": "all inherited508-test commands freshly passed",
+      "passed": true
+    },
+    {
+      "check": "61 lifecycle tests freshly passed",
+      "passed": true
+    },
+    {
+      "check": "documented full CLI example freshly passed",
+      "passed": true
+    },
+    {
+      "check": "types lint and build passed",
+      "passed": true
+    },
+    {
+      "check": "git diff whitespace clean",
+      "passed": true
+    }
+  ],
+  "passed": 73,
+  "failed": [],
+  "tests": 569,
+  "commands": [
+    {
+      "name": "temporal-focused",
+      "args": [
+        "node",
+        "--test",
+        "C:\\Users\\gbsam\\Documents\\Projects\\project-meridian\\scripts\\atlas\\temporal-integration\\test-proof.mjs"
+      ],
+      "exitCode": 0,
+      "tests": 39,
+      "elapsedSeconds": 96.6796389000956
+    },
+    {
+      "name": "regional-dependencies-focused",
+      "args": [
+        "node",
+        "--test",
+        "C:\\Users\\gbsam\\Documents\\Projects\\project-meridian\\scripts\\atlas\\regional-dependencies\\test-proof.mjs"
+      ],
+      "exitCode": 0,
+      "tests": 26,
+      "elapsedSeconds": 139.0948546999134
+    },
+    {
+      "name": "accepted-multi-region-focused",
+      "args": [
+        "node",
+        "--test",
+        "scripts/atlas/multi-region/test-proof.mjs"
+      ],
+      "exitCode": 0,
+      "tests": 24,
+      "elapsedSeconds": 131.84982749982737
+    },
+    {
+      "name": "retrieval-focused",
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/riffelhorn-retrieval/test_query.py"
+      ],
+      "exitCode": 0,
+      "tests": 31,
+      "elapsedSeconds": 8.679765499895439
+    },
+    {
+      "name": "preparation-focused",
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/riffelhorn-fixture/test_prepare.py"
+      ],
+      "exitCode": 0,
+      "tests": 30,
+      "elapsedSeconds": 29.305024300003424
+    },
+    {
+      "name": "preparation-fresh-verification",
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/riffelhorn-fixture/prepare.py",
+        "verify",
+        "--output",
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\derived\\atlas\\riffelhorn\\riffelhorn-qualified-fixture-v1\\357b28e705f7c2647cdf2d54467fc9ee851465814d8ed645cae30713ef9187bb"
+      ],
+      "exitCode": 0,
+      "tests": null,
+      "elapsedSeconds": 1.8501953000668436
+    },
+    {
+      "name": "assessment-inventory-reproduction",
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/regional-expansion/inventory.py",
+        "--check"
+      ],
+      "exitCode": 0,
+      "tests": null,
+      "elapsedSeconds": 9.251607600133866
+    },
+    {
+      "name": "assessment",
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/measured-architecture/test_assess.py"
+      ],
+      "exitCode": 0,
+      "tests": 10,
+      "elapsedSeconds": 1.110201200004667
+    },
+    {
+      "name": "s6",
+      "args": [
+        "node",
+        "--test",
+        "pilots/atlas/tryfan/tests/acceptance.test.mjs"
+      ],
+      "exitCode": 0,
+      "tests": 7,
+      "elapsedSeconds": 2.388604500098154
+    },
+    {
+      "name": "s1-s5",
+      "args": [
+        "node",
+        "--test",
+        "pilots/atlas/tryfan/tests/catalogue.test.mjs",
+        "pilots/atlas/tryfan/tests/query.test.mjs",
+        "pilots/atlas/tryfan/tests/lifecycle.test.mjs",
+        "pilots/atlas/tryfan/tests/http.test.mjs",
+        "pilots/atlas/tryfan/tests/publication.test.mjs",
+        "pilots/atlas/tryfan/tests/restart.test.mjs"
+      ],
+      "exitCode": 0,
+      "tests": 121,
+      "elapsedSeconds": 159.24113219999708
+    },
+    {
+      "name": "native",
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "pilots/atlas/tryfan/adapters/test_native.py"
+      ],
+      "exitCode": 0,
+      "tests": 9,
+      "elapsedSeconds": 0.7149809000547975
+    },
+    {
+      "name": "planning",
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "scripts/atlas/regional-pilot-plan/test_plan.py"
+      ],
+      "exitCode": 0,
+      "tests": 22,
+      "elapsedSeconds": 0.26237200014293194
+    },
+    {
+      "name": "frozen",
+      "args": [
+        "node",
+        "--test",
+        "scripts/atlas/test_semantic_evidence_contract.mjs",
+        "scripts/atlas/test_terrain_hierarchy_contract.mjs",
+        "scripts/atlas/test_terrain_runtime.mjs",
+        "scripts/atlas/test_tryfan_terrain.mjs"
+      ],
+      "exitCode": 0,
+      "tests": 64,
+      "elapsedSeconds": 2.419046700000763
+    },
+    {
+      "name": "qualified",
+      "args": [
+        "node",
+        "--test",
+        "scripts/atlas/test_qualified_query_proof.mjs"
+      ],
+      "exitCode": 0,
+      "tests": 17,
+      "elapsedSeconds": 1.107298000017181
+    },
+    {
+      "name": "persistent",
+      "args": [
+        "node",
+        "--test",
+        "scripts/atlas/test_local_persistent_tryfan.mjs"
+      ],
+      "exitCode": 0,
+      "tests": 18,
+      "elapsedSeconds": 23.415455900132656
+    },
+    {
+      "name": "exe",
+      "args": [
+        "node",
+        "--test",
+        "scripts/atlas/exe-water-query-proof/test-proof.mjs"
+      ],
+      "exitCode": 0,
+      "tests": 20,
+      "elapsedSeconds": 4.272278999909759
+    },
+    {
+      "name": "semantic-types",
+      "args": [
+        "npx.cmd",
+        "tsc",
+        "-p",
+        "scripts/atlas/semantic-evidence/tsconfig.json"
+      ],
+      "exitCode": 0,
+      "tests": null,
+      "elapsedSeconds": 10.983982099918649
+    },
+    {
+      "name": "lint",
+      "args": [
+        "npm.cmd",
+        "run",
+        "lint"
+      ],
+      "exitCode": 0,
+      "tests": null,
+      "elapsedSeconds": 6.611021499847993
+    },
+    {
+      "name": "build",
+      "args": [
+        "npm.cmd",
+        "run",
+        "build"
+      ],
+      "exitCode": 0,
+      "tests": null,
+      "elapsedSeconds": 58.71760549978353
+    },
+    {
+      "name": "diff",
+      "args": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0,
+      "tests": null,
+      "elapsedSeconds": 0.09063460002653301
+    },
+    {
+      "name": "application-types",
+      "args": [
+        "node",
+        "node_modules/typescript/bin/tsc",
+        "-b",
+        "--pretty",
+        "false"
+      ],
+      "exitCode": 0,
+      "tests": null,
+      "elapsedSeconds": 2.539654499851167
+    },
+    {
+      "name": "comparison-focused",
+      "args": [
+        "C:\\Users\\gbsam\\Documents\\Projects\\meridian-data\\earth-lab\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\gbsam\\Documents\\Projects\\project-meridian\\scripts\\atlas\\local-architecture\\test_compare.py"
+      ],
+      "exitCode": 0,
+      "tests": 8,
+      "elapsedSeconds": 1.273449899861589
+    },
+    {
+      "name": "runtime-types",
+      "args": [
+        "node",
+        "node_modules/typescript/bin/tsc",
+        "-p",
+        "runtime/atlas/tsconfig.json"
+      ],
+      "exitCode": 0,
+      "tests": null,
+      "elapsedSeconds": 0.9793763000052422
+    },
+    {
+      "name": "runtime-focused",
+      "args": [
+        "node",
+        "--test",
+        "runtime/atlas/test-runtime.mjs"
+      ],
+      "exitCode": 0,
+      "tests": 62,
+      "elapsedSeconds": 62.85043509979732
+    },
+    {
+      "name": "runtime-lifecycle",
+      "args": [
+        "node",
+        "--test",
+        "runtime/atlas/test-lifecycle.mjs"
+      ],
+      "exitCode": 0,
+      "tests": 61,
+      "elapsedSeconds": 307.4845418999903
+    },
+    {
+      "name": "runtime-cli-example",
+      "args": [
+        "node",
+        "runtime/atlas/example-lifecycle.mjs",
+        "C:\\Users\\gbsam\\Documents\\Codex\\atlas-local-lifecycle-v1\\regression\\example-config.json"
+      ],
+      "exitCode": 0,
+      "tests": null,
+      "elapsedSeconds": 59.18663170002401
+    }
+  ],
+  "runtimeHashes": {
+    "docs/research/atlas-local-lifecycle-baseline.json": "356f569401a3ffb7791b968677e7aa62b863359f61cba40d56de02ce554ae859",
+    "docs/research/atlas-local-lifecycle-results.json": "e6f568dc7cafaa1a9ead21aec1750919af5a7974086ccf3d76eb83b49d31525d",
+    "docs/research/atlas-local-lifecycle.md": "47b79402171a08d95f806255d09c31649b13506ebb329c3a541b4eadf836539e",
+    "runtime/atlas/README.md": "7fee1bf17b2fe428e4f96ccbb27f6105a0db953007186031e504503f2db68bcb",
+    "runtime/atlas/authority.ts": "0f9920f6df4fe8bbff3193bbd074406ad27508a86d1af5a972c38d36ed44d1ef",
+    "runtime/atlas/check-lifecycle.py": "c742e05d6a0fb5a55821f8da93ffecf87507de6318fd5b789c5293f30ac768ea",
+    "runtime/atlas/cli.ts": "5d5dc8e7658b13390ada11fa688cb708b8659ecc6887260cd2b6adc919599651",
+    "runtime/atlas/example-lifecycle.mjs": "05dd76d5c3ec599fa31252fc9f0a4a8f0e71d3cdab79542c9fcabca55c24c2c8",
+    "runtime/atlas/index.ts": "80e63c0f594a6f9d782cfe69f0817688e1cc584d465425414e868c6d48109d64",
+    "runtime/atlas/lifecycle-model.ts": "984a0b0e5025042e5f457207631681f1975adf1f5dc5bd466eb611f71007aa6e",
+    "runtime/atlas/lifecycle-next-task.json": "f1c466291b2b530da4194c3f562883e6756fed056037f7a38f12c4c47600a039",
+    "runtime/atlas/lifecycle-plan.json": "a44e3b0a7c17c50d72c0221f605c37eeb488270db6fd6edcb62d1c5d620c1c80",
+    "runtime/atlas/lifecycle.ts": "373e2cd39ca43f279477e9e4429137a74feeadb46b32d54063692a2372237ae6",
+    "runtime/atlas/measure-lifecycle.mjs": "5c70535adf7e9f99da7c28170a9aaa073c7c2298c07656086e4e9126582912f4",
+    "runtime/atlas/publication.ts": "3ba1a2ac676340570b31c3a00eb88b914a5a4e25049bc259dea3d193e21e7e22",
+    "runtime/atlas/terrain-worker.py": "d1e47012e8d5176c9294eaac8020499589c0dfdbf170faf78584354e71166b70",
+    "runtime/atlas/test-lifecycle.mjs": "f71030192b95a8c8e645c4ce233e5cff09b9f6d2286997c949a6a0df39f9ffda",
+    "runtime/atlas/types.ts": "932839c051b983d4b5cb69dcfcbbd1cd62653dd3f1a99d07405d33886b2a10dc",
+    "runtime/atlas/validate-lifecycle.py": "4a9edc338d276a50cdcfa0541c1d6126a4429a57627a3845e588e6e31019a4b8",
+    "runtime/atlas/worker.py": "99ddf0d62dcb778a87face995ca2238914639b608afa4124ffb4aabc4c953fe9",
+    "runtime/atlas/worker.ts": "4afc743dc68401e0bf7172b7b65885a1b081145f636861e3697c4f8d6330d7c0"
+  },
+  "navigationMissing": [],
+  "review": "Bounded runtime processing/writer/library/CLI, tests, safe reports/navigation only. No accepted files/contracts/status/production edits, acquisition/private/S7/cloud; full diff and untracked review before commit."
+}

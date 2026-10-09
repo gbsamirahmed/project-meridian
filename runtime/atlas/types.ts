@@ -46,3 +46,26 @@ export interface ValidationMetrics {
   ancestryTraversals: number
   parentRssBytes: number
 }
+/** Versioned finite lifecycle DTO; scientific qualifications remain canonical metadata. */
+export interface DerivationStage {
+  schema: 'atlas-runtime-lifecycle-stage/v1'
+  generation: string
+  predecessor: string
+  status: 'no-op' | 'staged-unpublished' | 'full-oracle-only'
+  affected: string[]
+  recomputed: string[]
+  reused: number
+  active: Record<string, string>
+  policy: import('./lifecycle-model.ts').Policy
+  environment: Json
+  metrics: Record<string, Json>
+  validation: ValidationMetrics
+}
+export interface DerivedQuery { identity?: string; property?: 'slope' | 'area-ratio' }
+export interface DerivedAnswer {
+  generation: string
+  regionalRegistration: { componentIdentity: string; evidence: Json }
+  status: 'no-runtime-derived-state' | 'current-in-pinned-context'
+  results: Array<{ [key: string]: Json }>
+  metrics?: Record<string, number>
+}

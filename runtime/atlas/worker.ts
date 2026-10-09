@@ -29,6 +29,7 @@ export class NativeWorker {
   }
   private fail(message: string) {
     this.closed = true
+    if (!this.child.killed) this.child.kill()
     for (const p of this.pending.values()) p.reject(new AtlasError('worker-unavailable', message))
     this.pending.clear()
   }

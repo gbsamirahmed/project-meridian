@@ -1,11 +1,15 @@
-# Local Atlas runtime: first read/index/query slice
+# Local Atlas runtime: qualified read/query and deterministic lifecycle
 
-This entry point opens the accepted seven-component Tryfan/Riffelhorn retained
-publication. It fully validates canonical metadata and retained payloads, builds a
-disposable SQLite catalogue, and answers pinned qualified queries. It does not
-register new evidence, run derivations, write publications, or change production
-Atlas. The [frozen scope](slice-plan.json) and
-[result report](../../docs/research/atlas-local-runtime.md) describe the boundary.
+The runtime opens accepted seven-component publications and its compatible nine-component
+lifecycle extension. Canonical qualified files and the filesystem publication root
+remain authoritative; SQLite is a disposable candidate catalogue. It can now execute
+one accepted native Riffelhorn slope method and its planar-area summary, inspect scoped
+invalidation, stage/validate/publish immutable generations, and query their history.
+
+The [first read slice](../../docs/research/atlas-local-runtime.md) remains authoritative
+for its original boundary. The [lifecycle report](../../docs/research/atlas-local-lifecycle.md)
+and [frozen design](lifecycle-plan.json) describe this extension. No production application,
+new physical observations or general workflow engine is involved.
 
 ## Setup and paths
 
@@ -107,7 +111,8 @@ replace advisory `current.json` last. The seal binds schema, generation, canonic
 closure fingerprint and database bytes. Build verification checks the complete
 record/temporal selector population and conservative bounds against canonical
 records. Failed builds leave the previous pointer and catalogue intact. The
-filesystem **publication** root is never written. No cross-filesystem transaction
+read/query/catalogue commands never write the filesystem **publication** root;
+only the explicit owned-world publication commands described below may advance it. No cross-filesystem transaction
 or power-loss durability guarantee is claimed.
 
 Missing, stale, incompatible or corrupt catalogues produce a nonzero CLI exit and
@@ -137,6 +142,115 @@ node --test runtime/atlas/test-runtime.mjs
 
 `measure.mjs` and `run-checks.py` are repository-local assessment tooling, not
 runtime prerequisites. Their outputs use the external Codex assessment directory;
-operational CLI/library paths are entirely explicit. The first adapter is bounded
-to three committed generations, seven components and 49 real selectors. See the
+operational CLI/library paths are entirely explicit. The original read adapter covers three accepted generations, seven components
+and 49 real selectors; the lifecycle extension adds nine-component generations
+and 32 finite derived quantities. See the
 report for measured costs and limitations before extrapolating.
+
+
+## Deterministic derivation and scoped lifecycle
+
+Use a **new separate publication directory** for canonical runtime outputs. Neither
+accepted research stores nor retained meridian-data inputs may be writer destinations.
+`world init` fully validates and forks the selected existing publication (current by
+default, exact historical pin with `--generation`). Source history remains unchanged.
+It copies the small canonical store and portrayal assets; the 171 MB verified public
+inputs remain externally referenced. A runtime ownership marker distinguishes the fork.
+A missing marker is an error, not an instruction to adopt an accepted store.
+
+The library exports `createWorld`, `stageDerivation`, `inspectLifecycle`,
+`validateStage`, `publishStage`, `recoverWorld`, and `fullDerivationReference` from
+[index.ts](index.ts). `openAtlas(config).derived({identity?, property?})` returns the
+finite canonical scalar results, exact revisions, source/preparation/rights/support/time
+qualifications, dependencies and pinned generation. Derived lookup currently performs
+bounded canonical checks over 32 outputs; it is separate from the 49 native SQLite
+selectors. Unknown physical observation time stays unknown. No arbitrary temporal
+inference or physical-change claim is supported.
+
+`stageDerivation(config, change)` accepts only declared per-probe stride1/2 parameters,
+an exact source administrative qualification notice, and a labelled unrelated Tryfan
+registration notice toggle. A notice has `key`, `bounds` and `text`: bounded support
+matches exact consumed cell footprints; `bounds: null` explicitly means the whole
+source, not unknown support. Notices do not change source payload bytes. New observations
+and general evidence registration are outside this slice. Repeating a notice is a no-op.
+The worker version1 DTO uses explicit verified data/preparation roots and returns native
+cells plus an independent NumPy arithmetic oracle and interpreter/library versions.
+Immutable `executions/<sha>.json` records retain those actual versions, sampler/oracle
+source identities, Node/method identity and exact output references. They are processing
+audit records, not reusable validation evidence; full validation still recomputes current
+quantities. Historical execution versions remain recorded without requiring the currently
+installed interpreter to have the same version string.
+
+Full validation is mandatory. It rechecks all accepted payloads and all 32 outputs with
+fresh native samples, even when processing reuses them. Processing saves selected work;
+this slice makes no end-to-end speedup promise. `fullDerivationReference` performs a
+clean all-probe comparison without writing output or switching a root.
+
+### CLI commands
+
+All commands use the existing `--data-root`, `--publication-root`, `--catalogue`,
+`--python` flags and optional `--json`. Writer commands target the owned fork.
+
+```text
+node runtime/atlas/cli.ts world init ... --source-publication EXISTING_STORE
+node runtime/atlas/cli.ts derive stage ...
+node runtime/atlas/cli.ts derive inspect ... --change CHANGE_JSON
+node runtime/atlas/cli.ts derive stage ... --change CHANGE_JSON
+node runtime/atlas/cli.ts stage validate ... --stage STAGED_SHA256
+node runtime/atlas/cli.ts stage publish ... --stage STAGED_SHA256
+node runtime/atlas/cli.ts derived ... --generation COMMITTED_SHA256
+node runtime/atlas/cli.ts catalogue build ... --generation COMMITTED_SHA256
+node runtime/atlas/cli.ts query ... --generation COMMITTED_SHA256 --query QUERY_JSON
+node runtime/atlas/cli.ts world recover ...
+```
+
+`derive stage` returns the proposed generation, exact affected closure, immutable output
+references, reuse and processing counters. It never switches the root. Use its generation
+with `stage validate` and `stage publish`. Publication repeats full validation under a
+local writer lock, rejects a changed predecessor, installs committed membership, and
+atomically replaces `current.json` last. A staged SHA is not queryable as published.
+No-op stages return the unchanged current generation; they need no new publication.
+After a real publication the old catalogue is explicitly stale. Rebuild for each pin.
+Historical contexts never follow the moving current generation.
+
+Recovery only removes a lock whose process is demonstrably dead; it will not steal a
+live or ambiguous lock. Incomplete initialization directories, temporary objects and
+unreferenced staging objects remain harmless for inspection/retry. No garbage collector,
+backup policy, power-loss durability, hostile mutation or multi-writer guarantee is claimed.
+Immutable object installation uses same-volume atomic no-overwrite links after file sync;
+publication replacement relies on a local filesystem supporting these operations. A missing
+or disconnected volume fails explicitly. An external disk is not a backup.
+
+### Repeatable complete example
+
+Create an external configuration file with five paths. Relative paths resolve against
+that file's directory, making the example independent of the invocation directory:
+
+```json
+{
+  "dataRoot": "PATH_TO_EXISTING_MERIDIAN_DATA",
+  "publicationRoot": "NEW_EMPTY_RUNTIME_WORLD_PATH",
+  "catalogueRoot": "SEPARATE_DISPOSABLE_CACHE_PATH",
+  "python": "PATH_TO_EXISTING_GIS_PYTHON",
+  "sourcePublication": "EXISTING_ACCEPTED_PUBLICATION_STORE_PATH"
+}
+```
+
+The selected existing store location is recorded in
+[the first runtime baseline](../../docs/research/atlas-local-runtime-baseline.json).
+It is a locator, not scientific identity. Invoke:
+
+```text
+node runtime/atlas/example-lifecycle.mjs PATH_TO_CONFIG.json
+```
+
+The [example](example-lifecycle.mjs) invokes public CLI commands in fresh processes:
+validate/fork, initial derivation, stage validation/publication, inspect a labelled local
+knowledge correction, recompute eight outputs/reuse24, publish, build the disposable
+catalogue, query native evidence, and query old/new derived pins. It prints complete
+machine-readable qualifications. Use a new destination for each example run.
+
+For focused integration checks use `node --test runtime/atlas/test-lifecycle.mjs`.
+For the inherited regression set plus lifecycle checks use the existing GIS Python to
+run `runtime/atlas/check-lifecycle.py`. Tests and measurements retain payload/cache worlds
+outside this repository. [The next task](lifecycle-next-task.json) is selected but not begun.

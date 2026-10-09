@@ -1,0 +1,183 @@
+{
+  "schema": "atlas-runtime-lifecycle-plan/v1",
+  "frozenBeforeImplementation": true,
+  "startingCheckpoint": "5842fde7d86c5623906721cd21e67aeb80552c6f",
+  "uncertainty": "Can accepted native terrain processing and scoped qualification dependencies run through reusable runtime interfaces and coherent filesystem publication?",
+  "selectedGeneration": "d58e5c911f1baaaec90f2d8a863ad070c6cc28b750f45709bf1b09d633d2e905",
+  "population": {
+    "region": "riffelhorn",
+    "probes": [
+      {
+        "id": "dtm-cluster-0-0",
+        "point": [
+          2624350.25,
+          1091350.25
+        ]
+      },
+      {
+        "id": "dtm-cluster-0-1",
+        "point": [
+          2624350.75,
+          1091350.25
+        ]
+      },
+      {
+        "id": "dtm-cluster-0-2",
+        "point": [
+          2624351.25,
+          1091350.25
+        ]
+      },
+      {
+        "id": "dtm-cluster-0-3",
+        "point": [
+          2624351.75,
+          1091350.25
+        ]
+      },
+      {
+        "id": "dtm-cluster-1-0",
+        "point": [
+          2624350.25,
+          1091350.75
+        ]
+      },
+      {
+        "id": "dtm-cluster-1-1",
+        "point": [
+          2624350.75,
+          1091350.75
+        ]
+      },
+      {
+        "id": "dtm-cluster-1-2",
+        "point": [
+          2624351.25,
+          1091350.75
+        ]
+      },
+      {
+        "id": "dtm-cluster-1-3",
+        "point": [
+          2624351.75,
+          1091350.75
+        ]
+      },
+      {
+        "id": "dtm-cluster-2-0",
+        "point": [
+          2624350.25,
+          1091351.25
+        ]
+      },
+      {
+        "id": "dtm-cluster-2-1",
+        "point": [
+          2624350.75,
+          1091351.25
+        ]
+      },
+      {
+        "id": "dtm-cluster-2-2",
+        "point": [
+          2624351.25,
+          1091351.25
+        ]
+      },
+      {
+        "id": "dtm-cluster-2-3",
+        "point": [
+          2624351.75,
+          1091351.25
+        ]
+      },
+      {
+        "id": "dtm-cluster-3-0",
+        "point": [
+          2624350.25,
+          1091351.75
+        ]
+      },
+      {
+        "id": "dtm-cluster-3-1",
+        "point": [
+          2624350.75,
+          1091351.75
+        ]
+      },
+      {
+        "id": "dtm-cluster-3-2",
+        "point": [
+          2624351.25,
+          1091351.75
+        ]
+      },
+      {
+        "id": "dtm-cluster-3-3",
+        "point": [
+          2624351.75,
+          1091351.75
+        ]
+      }
+    ],
+    "outputs": 32,
+    "source": "four retained Swiss DTM bindings; actual selected stencils consume one original tile",
+    "baseRecords": 49
+  },
+  "method": {
+    "revision": "7fe3f0c3ed6152177dfcb97b7be190dcda8fd45ddb18b27c2a8eb2b2b398f8d9",
+    "file": "scripts/atlas/qualified-query-proof/proof.ts",
+    "sha256": "bcd85ff5101ddd079e2e4d3c0c32054b6a75c0525797bc9258a8cfe9e59e3bcc",
+    "names": [
+      "Horn-3x3-grid-slope",
+      "planar-area-ratio-from-slope"
+    ],
+    "parameters": "stride1 or2; native spacing0.5m times stride; exact native cell centres; no interpolation"
+  },
+  "qualification": "Native Swiss DTM EPSG2056 metre grid/band; LN02 documented not transformed; source-specific survey uncertainty and rights propagated; physical time unknown; administrative notices are knowledge corrections, not physical observations",
+  "identity": "Content-addressed scoped input-use, method/parameter/result bodies; immutable JSON artifacts, two added lifecycle/derived components; unchanged seven accepted base components",
+  "worker": "Versioned JSON operation on existing session-owned Python worker with explicit verified data/preparation roots; rasterio cell reads and independent NumPy arithmetic oracle; Node calls frozen accepted methods",
+  "lifecycle": "Initial; no-op; cell-local administrative upstream qualification notice; global source notice; one-probe stride2; unrelated Tryfan administrative revision; repeated identical notice. Exact consumed cells determine local effects; ratio depends on exact slope revision",
+  "oracle": "Accepted algorithm SHA and method identity; independent NumPy dot kernels (1e-10 degrees/1e-12 ratio); clean full state equals selective canonical artifacts; independently enumerated cell closure",
+  "publication": "Owned fork of accepted store only; same immutable object/membership schemas; nine-member extension leaves native reconstruction unchanged; staged candidate not root-visible; writer lock, full validation, predecessor guard, membership installation, atomic current-root replacement last",
+  "queries": "Existing native49 SQLite selectors remain rebuildable; derived scalar query is explicit bounded canonical lookup with support/time/provenance/dependencies and pinned generation; no unsupported temporal inference",
+  "failures": [
+    "missing/mismatched upstream",
+    "invalid stride/method",
+    "unsupported fusion/datum",
+    "worker failure",
+    "nondeterminism/oracle disagreement",
+    "incomplete/tampered artifact",
+    "dependency identity/cycle",
+    "stale output",
+    "incomplete stage",
+    "interrupted processing/publication",
+    "concurrent root change",
+    "corrupt catalogue",
+    "restart/historical query"
+  ],
+  "metrics": "Three repeated initial/no-op/local/global/parameter/unrelated/full executions; timing medians and range, decoded cells vs full verification bytes, immutable storage, metadata/population validation, replay and catalogue costs; RSS observations not claimed peaks",
+  "storageEstimate": "JSON-only generated outputs under10MB per world; fault copies under500MB; no new dataset or raster campaign",
+  "acceptance": [
+    "all32 outputs accountable and independently checked",
+    "exact selective/full canonical equivalence",
+    "local notice affects8 outputs and retains24",
+    "one-probe parameter affects2 and retains30",
+    "global source notice affects32",
+    "unrelated Tryfan update affects0",
+    "full source/output validation precedes root switch",
+    "historical pins reproduce in three fresh processes",
+    "negative/interrupted states unpublished",
+    "all accepted protections and regressions pass"
+  ],
+  "exclusions": [
+    "accepted evidence/contracts mutation",
+    "physical changes invented",
+    "terrain fusion",
+    "generic workflows/ingestion/plugins",
+    "production Atlas/Weather/Traverse/S7",
+    "cloud/private/new acquisition",
+    "validation/receipt optimization"
+  ],
+  "stop": "One usable processing/lifecycle library and CLI workflow, report/nav/tests/commit/push; choose exactly one next task without beginning it."
+}
