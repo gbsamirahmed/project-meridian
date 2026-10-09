@@ -14,7 +14,7 @@ repo=Path(__file__).resolve().parents[3]
 forbidden=[str(repo),config['registrationWorld'],config['legacyWorld']]+[str(Path(config['dataRoot'])/name) for name in ['sources','derived','experiments']]
 with tempfile.TemporaryDirectory(prefix='atlas-independent-process-') as folder:
     root=Path(folder)
-    for name in ['reader.py','conformance.py']: shutil.copyfile(Path(__file__).parent/name,root/name)
+    for name in ['reader.py','verification.py','conformance.py']: shutil.copyfile(Path(__file__).parent/name,root/name)
     shutil.copytree(a.fixtures,root/'fixtures')
     bootstrap='''import sys,os
 forbidden=[os.path.normcase(os.path.realpath(p)) for p in FORBIDDEN]

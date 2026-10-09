@@ -44,6 +44,7 @@ def run():
         print(json.dumps({'case':case['id'],'status':'FAIL' if difference else 'PASS','difference':difference,'actualCode':actual.get('code')},separators=(',',':')))
     print(json.dumps({'summary':{'selected':len(requests),'passed':passed,'failed':failed,'skipped':0,'expectedErrors':errors},
                       'coldOpenMs':{k:r.startup_ms for k,r in readers.items()},'queryMs':{'min':min(times),'median':sorted(times)[len(times)//2],'max':max(times)}}))
+    for reader in readers.values(): reader.close()
     return 1 if failed else 0
 
 if __name__=='__main__':

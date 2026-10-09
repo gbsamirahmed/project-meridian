@@ -115,3 +115,52 @@ installer, download protocol, ready-state manager, delta or mobile storage guara
 `build.mjs` validates authority fully; opening a projection verifies the exported closure,
 not the original scientific publication afresh. Staged output/rename has not yet been
 fault-injection tested. A passing finite corpus does not establish arbitrary predicates.
+
+## Hardened desktop store experiment
+
+The [hardening design](HARDENING.md) and [measured report](../../../docs/research/atlas-portable-projection-hardening.md)
+supplement the original spike; its frozen semantic profile and projection identity
+remain unchanged. `verification.py` bounds parsing/closure, `reader.py` captures sealed
+native rasters in memory, and `store.py` keeps staging, ready receipts and selection
+separate. Exact scientific generation is always supplied independently.
+
+```powershell
+$spikePython = 'EXISTING_GIS_PYTHON'
+$projection = 'EXISTING_EXTERNAL_PROJECTION'
+$store = 'NEW_OWNED_EXTERNAL_STORE'
+$projectionIdentity = 'a34ac6745abe92904d6af089ae8dff888d3527d6588c395ee3b03750d9e08a1c'
+$generation = '5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289'
+& $spikePython -B scripts/atlas/portable-spike/store.py init --store $store
+& $spikePython -B scripts/atlas/portable-spike/store.py install --store $store --projection $projection --identity $projectionIdentity
+& $spikePython -B scripts/atlas/portable-spike/store.py open --store $store --generation $generation
+# Explicit selection or historical installation; never a generation fallback.
+& $spikePython -B scripts/atlas/portable-spike/store.py select --store $store --identity $projectionIdentity
+& $spikePython -B scripts/atlas/portable-spike/store.py open --store $store --identity $projectionIdentity --generation $generation
+$env:ATLAS_SPIKE_PROJECTION = $projection
+& $spikePython -B -m unittest discover -s scripts/atlas/portable-spike -p 'test_*.py' -v
+& $spikePython -B scripts/atlas/portable-spike/measure_store.py --projection $projection
+& $spikePython -B scripts/atlas/portable-spike/benchmark.py --projection $projection
+& $spikePython -B scripts/atlas/portable-spike/isolation.py --projection $projection --config LOCAL_CONFIG_JSON --fixtures fixtures/atlas-read/v1
+```
+
+Library queries: `with Store(store_root).open(exact_generation) as reader:` then
+`reader.read(query)` or `outcome(query)`. Keep that context open for pinned reads;
+`close()` releases native snapshots and later queries fail. An open snapshot survives
+file replacement/deletion; fresh opens reject corrupted files. All pins are verified
+before readiness. Direct `Reader(...)` still accepts the same exact generation and
+optional expected projection identity.
+
+Explicit destructive operations operate **only on the initialised owned store**:
+`store.py delete --store OWNED_STORE --identity EXACT_PACKAGE_ID`; deleting the selected
+package clears selection, with no automatic fallback. `discard-stage --store OWNED_STORE
+--stage candidate-NAME` removes a named abandoned stage. Close existing readers to
+release their snapshots. Never point fault trials/deletion at canonical data or the
+original generated projection. Tests make full disposable copies; no raster hard
+links are mutated. `measure_store.py` cleans its own temporary stores/candidate copies.
+
+The 512 MiB store ceiling counts current packages and abandoned stages before a new
+full copy; it is a spike bound, not an offline product quota. Ready and selection
+records are flushed/fsynced then replaced in the same directory. Windows/NTFS
+process interruptions are tested; power-loss/directory durability, hostile writers,
+trusted origin and mobile storage are not. No automatic repair, downloader or
+production format commitment. The report states measured storage/memory limits.

@@ -4699,3 +4699,24 @@ bundle passed. Full Weather/data materialisation and unrelated historical suites
 were not rerun. 38/38 preservation/navigation safeguards passed, including all 42 frozen status rows,
 113 protected production hashes, unchanged accepted evidence/publications and frozen
 conformance files. No payload or catalogue is committed.
+
+
+## Atlas projection hardening and offline failure validation — 9 October 2026
+
+[DESKTOP OFFLINE CONSISTENCY DEMONSTRATED](research/atlas-portable-projection-hardening.md), bounded to Windows/NTFS and the
+retained finite read profile: complete closure before ready, separate installation
+selection/exact scientific generation, failed-replacement preservation, restart,
+explicit deletion and verified in-memory raster snapshots. Frozen semantic cases,
+canonical authority and accepted research remain unchanged. The report records
+commands, failure tests, measured storage/memory and unproven power-loss/authenticity/
+mobile guarantees. Implementation stays under scripts/atlas/portable-spike; the
+Atlas authority, Weather and production application are unchanged.
+
+F03/F05/F12 and E02/E05 gain bounded desktop evidence; final formats/frameworks,
+physical-device feasibility and legal redistribution remain open. Exactly one
+subsequent task: **MERIDIAN ATLAS OFFLINE PROJECTION PORTABILITY AND RESOURCE-REDUCTION
+STUDY — NOT BEGUN**. Its scope follows observed source-raster overhead, desktop GIS
+dependencies and unresolved offline rights; no mobile deployment, production or
+private-repository integration is begun.
+
+Starting checkpoint `5528dda72acb41f641966d5c269c5a30b6a8562e`; clean public main, fetched origin/main 0/0. Full validation and the frozen scientific expectations remain unchanged. Final verification and measurements are in the linked report.

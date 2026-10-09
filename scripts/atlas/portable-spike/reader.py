@@ -55,12 +55,6 @@ def canonical(value, level=0):
 def identity(value):
     return hashlib.sha256((canonical(value)+'\n').encode()).hexdigest()
 
-def file_hash(file):
-    h=hashlib.sha256()
-    with file.open('rb') as stream:
-        for chunk in iter(lambda: stream.read(1024*1024),b''): h.update(chunk)
-    return h.hexdigest()
-
 def projected(geometry,source,target):
     if source == target: return geometry
     return transform(pyproj.Transformer.from_crs(source,target,always_xy=True).transform,geometry)
@@ -70,57 +64,30 @@ def finite_numbers(v,n):
 
 class Reader:
     def __init__(self, root, generation, expected_projection=None):
-        start=time.perf_counter(); self.root=Path(root).resolve()
+        from verification import Snapshot
+        start=time.perf_counter(); self.root=Path(root).absolute(); self.closed=True
+        self.snapshot=Snapshot(self.root, expected_projection)
         try:
-            self.manifest=json.loads((self.root/'manifest.json').read_text(encoding='utf-8-sig'))
-            m=self.manifest
-            require(m.get('schema')=='atlas-read-projection-spike/v1' and m.get('profile')=='meridian-atlas-read-contract/v1','projection-incompatible','Unsupported projection schema/profile.')
-            require(identity({k:v for k,v in m.items() if k!='projectionIdentity'})==m.get('projectionIdentity'),'projection-integrity','Projection manifest identity differs.')
-            if expected_projection is not None: require(m['projectionIdentity']==expected_projection,'projection-integrity','Expected projection identity differs.')
-            require(m.get('core')==[2624000,1091000,2626000,1093000] and m.get('crs')=='EPSG:2056','projection-incompatible','Unsupported profile applicability.')
-            required={'features.json','worldcover.json'}|{p['file'] for p in m['pins'].values()}|set(m['rasterFiles'].values())
-            require(set(m['files'])==required,'projection-integrity','Required projection closure differs.')
-            require(generation in m['pins'],'projection-generation','Selected generation is unavailable; no fallback.')
-            require(len(m['files'])<=16 and sum(v['bytes'] for v in m['files'].values())<=160*1024*1024,'projection-integrity','Projection exceeds declared bound.')
-            for name,seal in m['files'].items():
-                p=self.root/name
-                require(isinstance(name,str) and p.resolve().parent==self.root and not p.is_symlink(),'projection-integrity','Unsafe projection member.')
-                require(p.stat().st_size==seal['bytes'] and file_hash(p)==seal['sha256'],'projection-integrity','Projection member identity differs.')
-            pin=m['pins'][generation]
-            require(pin['file'] in m['files'],'projection-integrity','Generation metadata is not sealed.')
-            data=json.loads((self.root/pin['file']).read_text(encoding='utf-8'))
-            require(data.get('schema')=='atlas-read-projection-generation/v1' and data['answer']['generation']==generation,'projection-integrity','Generation metadata identity differs.')
+            self.manifest=self.snapshot.manifest
+            require(isinstance(generation,str) and generation in self.snapshot.generations,'projection-generation','Selected generation is unavailable; no fallback.')
+            data=self.snapshot.generations[generation]
             self.base=data['answer']; self.pool=self.base['documents']; self.knowledge=data['knowledge']
             self.records={r['key']:r for r in self.base['results']}
             self.selectors={s['key']:s for s in data['selectors']}
-            self.features={f['identity']:shape(f['native']['geometry']) for f in json.loads((self.root/'features.json').read_text(encoding='utf-8'))['features']}
-            require(len(self.records)==len(self.base['results'])==pin['records'],'projection-integrity','Duplicate or missing record.')
-            for id,body in self.pool.items(): require(identity(body)==id,'projection-integrity','Qualified document identity differs.')
-            for r in self.records.values():
-                for ref in ['evidenceRef','qualificationRef','provenanceRef','rightsRef']:
-                    require(r[ref] in self.pool,'projection-integrity','Missing qualified document.')
-                if r['representation']=='raster': require(m['rasterFiles'].get(r['identity']) in m['files'],'projection-integrity','Native raster closure missing.')
-                if r['representation']=='vector': require(r['identity'] in self.features,'projection-integrity','Native geometry missing.')
-            self.worldcover=json.loads((self.root/'worldcover.json').read_text(encoding='utf-8'))
-            self.edges=self.base['relationships']
-            require(all(e['from'] in self.records and e['to'] in self.records for e in self.edges),'projection-integrity','Relationship endpoint missing.')
-            self._check_cycles()
-            self.generation=generation
+            self.features={k:shape(f['native']['geometry']) for k,f in self.snapshot.features.items()}
+            self.worldcover=self.snapshot.worldcover; self.edges=self.base['relationships']
+            self.generation=generation; self.closed=False
             self.startup_ms=(time.perf_counter()-start)*1000
-        except ReadError: raise
-        except (OSError,ValueError,KeyError,TypeError) as e:
-            raise ReadError('projection-unavailable','Missing or malformed projection member.') from e
+        except Exception:
+            self.snapshot.close()
+            raise
 
-    def _check_cycles(self):
-        active=set(); done=set()
-        def visit(key):
-            require(key not in active,'projection-integrity','Dependency cycle.')
-            if key in done: return
-            active.add(key)
-            for edge in self.edges:
-                if edge['from']==key: visit(edge['to'])
-            active.remove(key); done.add(key)
-        for key in self.records: visit(key)
+    def close(self):
+        self.snapshot.close(); self.closed=True
+
+    def __enter__(self): return self
+
+    def __exit__(self, *_): self.close()
 
     def validate(self,q):
         need=lambda ok,msg: require(ok,'query-invalid',msg)
@@ -224,7 +191,7 @@ class Reader:
         if selection['kind']!='native-cell' and r['family']!='worldcover':
             payload={'kind':'support-selection','selection':selection,'value':'not requested; no height aggregation/interpolation'}
         else:
-            with rasterio.open(self.root/self.manifest['rasterFiles'][r['identity']]) as src:
+            with self.snapshot.rasters[self.manifest['rasterFiles'][r['identity']]].open(driver='GTiff') as src:
                 require(str(src.crs)==crs and list(src.shape)==native['shape'] and list(src.transform)==native['transform'],'projection-integrity','Native raster header differs.')
                 values=src.read(1,window=window)
                 if selection['kind']=='native-cell':
@@ -244,6 +211,7 @@ class Reader:
         return result
 
     def read(self,q):
+        require(not self.closed,'projection-closed','Reader snapshot is closed.')
         self.validate(q); g=self.geometry(q)
         reached, traversed=self.closure(q['relatedTo']) if 'relatedTo' in q else (None,[])
         documents={ref:self.pool[ref] for region in self.base['regions'].values() for ref in region.values() if ref is not None}
@@ -293,8 +261,9 @@ def main():
     parser=argparse.ArgumentParser(); parser.add_argument('--projection',required=True); parser.add_argument('--generation',required=True); parser.add_argument('--query',required=True); parser.add_argument('--identity')
     args=parser.parse_args()
     try:
-        reader=Reader(args.projection,args.generation,args.identity)
-        result=reader.outcome(json.loads(args.query)); print(json.dumps(result,ensure_ascii=False,allow_nan=False))
+        with Reader(args.projection,args.generation,args.identity) as reader:
+            result=reader.outcome(json.loads(args.query))
+        print(json.dumps(result,ensure_ascii=False,allow_nan=False))
         return 1 if result['kind']=='error' else 0
     except (ReadError,OSError,ValueError) as error:
         print(json.dumps({'kind':'error','code':error.code if isinstance(error,ReadError) else 'query-malformed','message':str(error) if isinstance(error,ReadError) else 'Use a valid JSON query and available projection.'})); return 1
