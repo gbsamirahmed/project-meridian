@@ -1,0 +1,917 @@
+{
+  "core": [
+    2624000,
+    1091000,
+    2626000,
+    1093000
+  ],
+  "dependencies": {
+    "gdal": "3.9.3",
+    "geos": "3.13.1",
+    "installedLicenceMetadata": {
+      "numpy": {
+        "License": null,
+        "License-Expression": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0"
+      },
+      "pyproj": {
+        "License": null,
+        "License-Expression": "MIT"
+      },
+      "rasterio": {
+        "License": "BSD",
+        "License-Expression": null
+      },
+      "shapely": {
+        "License": "BSD 3-Clause",
+        "License-Expression": null
+      }
+    },
+    "platform": "Windows-11-10.0.26200-SP0",
+    "proj": "9.5.1",
+    "python": "3.12.6",
+    "versions": {
+      "numpy": "2.5.3",
+      "pyproj": "3.7.2",
+      "rasterio": "1.4.3",
+      "shapely": "2.1.2"
+    }
+  },
+  "manifestSha256": "f5621ac8d0a4f34519d3b4f25917b69872d8bd20227a3e3823fdc60953f4cc9a",
+  "memberBytes": 116692961,
+  "members": [
+    {
+      "bytes": 15925644,
+      "name": "0d2ebc6d0b4fd06ab2191cbf2a2f5ab77728249fa8c835075040bce4dc4899de.tif",
+      "sha256": "0d2ebc6d0b4fd06ab2191cbf2a2f5ab77728249fa8c835075040bce4dc4899de"
+    },
+    {
+      "bytes": 16329103,
+      "name": "4dffaad9efb82d3bf327a86b4f82d55762165ea5f825c386c23380a9320ff875.tif",
+      "sha256": "4dffaad9efb82d3bf327a86b4f82d55762165ea5f825c386c23380a9320ff875"
+    },
+    {
+      "bytes": 1132636,
+      "name": "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289.json",
+      "sha256": "bf70fe73254249a64016a0af9c0a7dae06154135f9bf18f13755ddd35d0a3a6a"
+    },
+    {
+      "bytes": 42594792,
+      "name": "638c155dd9a5f0b7ee818146def740093da33cee4606071b2bbf7ce3fa00ab95.tif",
+      "sha256": "638c155dd9a5f0b7ee818146def740093da33cee4606071b2bbf7ce3fa00ab95"
+    },
+    {
+      "bytes": 1123949,
+      "name": "65989736a06f72182fba9d9ad9d47955869f51ce943ef120effcad2df91352fd.json",
+      "sha256": "22f8bbece4068232c390b92f1f5ed4caad9d6daa1465c7969125926261b85bcc"
+    },
+    {
+      "bytes": 829497,
+      "name": "7f956d3bb640fb7262a3c46b1666306c88aff3418e966d39536882530350acf8.json",
+      "sha256": "a418ecedd3d6024bbfba933b38407c6b821350c769710f24bb9db63e7c106ecc"
+    },
+    {
+      "bytes": 5046,
+      "name": "86579f0b5f87e9c50e499c3ab0752b39357fe7379ab227a11c31c2dee1e676ee.tif",
+      "sha256": "86579f0b5f87e9c50e499c3ab0752b39357fe7379ab227a11c31c2dee1e676ee"
+    },
+    {
+      "bytes": 16862345,
+      "name": "9fa4a4391e2e1bfd650f2f31c7d38ed9a5a94494a967011468e6c44559bbcb2c.tif",
+      "sha256": "9fa4a4391e2e1bfd650f2f31c7d38ed9a5a94494a967011468e6c44559bbcb2c"
+    },
+    {
+      "bytes": 16490312,
+      "name": "c68c305e4a142da416b46b555a80916ecc52f8fa50bf1efd5cd2c3f24f9cd4bc.tif",
+      "sha256": "c68c305e4a142da416b46b555a80916ecc52f8fa50bf1efd5cd2c3f24f9cd4bc"
+    },
+    {
+      "bytes": 5386941,
+      "name": "features.json",
+      "sha256": "3929964622f6eaaf3ba0251d2a686ca53effc50174ed84cd2fa314d645a6d923"
+    },
+    {
+      "bytes": 8798,
+      "name": "worldcover.json",
+      "sha256": "b332b46ca591a2ad71bc971a90afb25601c8ab39d93e960d18820cceaf8ee753"
+    }
+  ],
+  "pins": {
+    "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+      "alias": "after",
+      "file": "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289.json",
+      "fingerprint": "16a4992f9cf8eadb7f033e8031608a4863cd7468755604205d5912f0974898dc",
+      "records": 81
+    },
+    "65989736a06f72182fba9d9ad9d47955869f51ce943ef120effcad2df91352fd": {
+      "alias": "before",
+      "file": "65989736a06f72182fba9d9ad9d47955869f51ce943ef120effcad2df91352fd.json",
+      "fingerprint": "4e84c0f01982a8b4e435896ef0cc21e359a89272d4a4b3369cabbd0c0d2f5b4b",
+      "records": 81
+    },
+    "7f956d3bb640fb7262a3c46b1666306c88aff3418e966d39536882530350acf8": {
+      "alias": "legacy",
+      "file": "7f956d3bb640fb7262a3c46b1666306c88aff3418e966d39536882530350acf8.json",
+      "fingerprint": "705457abddecb3c35fdbf119a1a710f91125e35d4239966d4a33757293a8a136",
+      "records": 49
+    }
+  },
+  "preparedRevision": "357b28e705f7c2647cdf2d54467fc9ee851465814d8ed645cae30713ef9187bb",
+  "projectionIdentity": "a34ac6745abe92904d6af089ae8dff888d3527d6588c395ee3b03750d9e08a1c",
+  "rasterBytes": 108207242,
+  "rasters": [
+    {
+      "blockShapes": [
+        [
+          1024,
+          1024
+        ]
+      ],
+      "compression": "Compression.deflate",
+      "coreEnvelopeWindowEstimate": [
+        2694,
+        43,
+        94,
+        66
+      ],
+      "estimateMeaning": "128-segment transformed core envelope; inventory estimate, not whole-profile crop completeness proof",
+      "family": "dsm",
+      "identity": "dsm:638c155dd9a5f0b7ee818146def740093da33cee4606071b2bbf7ce3fa00ab95",
+      "imageStructure": {
+        "COMPRESSION": "DEFLATE",
+        "INTERLEAVE": "BAND",
+        "LAYOUT": "COG",
+        "PREDICTOR": "3"
+      },
+      "input": {
+        "artifactIdentity": "sha256:638c155dd9a5f0b7ee818146def740093da33cee4606071b2bbf7ce3fa00ab95",
+        "bytes": 42594792,
+        "locatorRoot": "configured public meridian-data",
+        "path": "sources/atlas/riffelhorn/global-reference-assessment-v1/cop45/Copernicus_DSM_COG_10_N45_00_E007_00_DEM.tif",
+        "role": "independent coarse DSM",
+        "sha256": "638c155dd9a5f0b7ee818146def740093da33cee4606071b2bbf7ce3fa00ab95",
+        "upstreamAuthenticity": "not established by content hash"
+      },
+      "member": "638c155dd9a5f0b7ee818146def740093da33cee4606071b2bbf7ce3fa00ab95.tif",
+      "native": {
+        "bands": 1,
+        "bounds": [
+          6.9998611111111115,
+          45.00013888888889,
+          7.9998611111111115,
+          46.00013888888889
+        ],
+        "crs": "EPSG:4326",
+        "dtypes": [
+          "float32"
+        ],
+        "nodata": null,
+        "resolution": [
+          0.0002777777777777778,
+          0.0002777777777777778
+        ],
+        "shape": [
+          3600,
+          3600
+        ],
+        "tags": {
+          "AREA_OR_POINT": "Point"
+        },
+        "transform": [
+          0.0002777777777777778,
+          0,
+          6.9998611111111115,
+          0,
+          -0.0002777777777777778,
+          46.00013888888889,
+          0,
+          0,
+          1
+        ]
+      },
+      "overviews": [
+        2,
+        4,
+        8
+      ],
+      "preparationRevision": "357b28e705f7c2647cdf2d54467fc9ee851465814d8ed645cae30713ef9187bb",
+      "qualification": {
+        "meaning": "Independent Copernicus DSM including surface objects and possible infill",
+        "time": "2010-2015 observations plus infill;2021 distribution, exact subrelease/per-cell dates unknown",
+        "vertical": "EGM2008 / EPSG:3855 documented provider provenance"
+      },
+      "rights": {
+        "attribution": [
+          "Use the applicable full unmodified/modified notice and Article 6 obligations in the licence; this summary is not the legal delivery notice."
+        ],
+        "licence": {
+          "status": "known",
+          "value": "Copernicus DEM GLO-30 F free/open licence, Annex pp.20-22"
+        },
+        "limitations": "Derivative hosting permitted subject to attribution, liability, non-endorsement and downstream obligations. Do not substitute restricted GLO-30 R terms or the mirror software licence.",
+        "preparationNotice": "Native support bindings only; unchanged DEM bytes; local proof, no legal delivery notice or source redistribution.",
+        "references": [
+          "https://s3.waw3-1.cloudferro.com/swift/v1/portal_uploads_prod/CSCDA_ESA_Mission-specific_Annex_31_Oct_22_latest.pdf",
+          "docs/atlas/copernicus-common-metadata.json"
+        ]
+      },
+      "rightsRef": "5160928fea47d302d53d8ed7fb639e5cf272b664bca7756eda202a9a4c85bb99",
+      "seal": {
+        "bytes": 42594792,
+        "sha256": "638c155dd9a5f0b7ee818146def740093da33cee4606071b2bbf7ce3fa00ab95"
+      },
+      "source": {
+        "dataset": "Copernicus GLO30-F DSM distribution2021",
+        "organisation": "Copernicus DEM provider",
+        "productRecord": "2026-10-04T15:51:22.654094+00:00",
+        "properties": {},
+        "retainedArtifactIdentity": "638c155dd9a5f0b7ee818146def740093da33cee4606071b2bbf7ce3fa00ab95",
+        "sourceRecord": "docs/atlas/copernicus-common-acquisition.json",
+        "upstreamByteIdentity": "not established by current hash alone",
+        "upstreamUrl": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N45_00_E007_00_DEM/Copernicus_DSM_COG_10_N45_00_E007_00_DEM.tif"
+      },
+      "temporal": {
+        "evidence-epoch": {
+          "reason": "2010-2015 observations plus infill;2021 distribution, exact subrelease/per-cell dates unknown",
+          "status": "unknown"
+        },
+        "product-reference": {
+          "basis": "documented2021 distribution; exact subrelease unknown",
+          "status": "known",
+          "year": 2021
+        }
+      }
+    },
+    {
+      "blockShapes": [
+        [
+          128,
+          128
+        ]
+      ],
+      "compression": "Compression.lzw",
+      "coreEnvelopeWindowEstimate": [
+        0,
+        0,
+        2000,
+        2000
+      ],
+      "estimateMeaning": "128-segment transformed core envelope; inventory estimate, not whole-profile crop completeness proof",
+      "family": "dtm",
+      "identity": "dtm:0d2ebc6d0b4fd06ab2191cbf2a2f5ab77728249fa8c835075040bce4dc4899de",
+      "imageStructure": {
+        "COMPRESSION": "LZW",
+        "INTERLEAVE": "BAND",
+        "LAYOUT": "COG"
+      },
+      "input": {
+        "artifactIdentity": "sha256:0d2ebc6d0b4fd06ab2191cbf2a2f5ab77728249fa8c835075040bce4dc4899de",
+        "bytes": 15925644,
+        "locatorRoot": "configured public meridian-data",
+        "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2625-1091_0.5_2056_5728.tif",
+        "role": "native DTM",
+        "sha256": "0d2ebc6d0b4fd06ab2191cbf2a2f5ab77728249fa8c835075040bce4dc4899de",
+        "upstreamAuthenticity": "not established by content hash"
+      },
+      "member": "0d2ebc6d0b4fd06ab2191cbf2a2f5ab77728249fa8c835075040bce4dc4899de.tif",
+      "native": {
+        "bands": 1,
+        "bounds": [
+          2625000,
+          1091000,
+          2626000,
+          1092000
+        ],
+        "crs": "EPSG:2056",
+        "dtypes": [
+          "float32"
+        ],
+        "nodata": -9999,
+        "resolution": [
+          0.5,
+          0.5
+        ],
+        "shape": [
+          2000,
+          2000
+        ],
+        "tags": {
+          "AREA_OR_POINT": "Area"
+        },
+        "transform": [
+          0.5,
+          0,
+          2625000,
+          0,
+          -0.5,
+          1092000,
+          0,
+          0,
+          1
+        ]
+      },
+      "overviews": [
+        2,
+        4,
+        8
+      ],
+      "preparationRevision": "357b28e705f7c2647cdf2d54467fc9ee851465814d8ed645cae30713ef9187bb",
+      "qualification": {
+        "meaning": "swissALTI3D bare-earth DTM; sampling is not accuracy",
+        "time": "2024 product; mixed2021/2022 lidar and2023 imagery; per-cell dates unknown",
+        "vertical": "LN02 / EPSG:5728 documented provider provenance; not embedded compound CRS"
+      },
+      "rights": {
+        "attribution": [
+          "© swisstopo; Meridian native support bindings, no elevation transformation."
+        ],
+        "licence": {
+          "status": "known",
+          "value": "swisstopo OGD source-credit terms"
+        },
+        "limitations": "Local retained research/transformation with source-specific credits and applicable terms. Source/derivative redistribution subject to notices/licence obligations, not package MIT or a blanket commercial-service clearance; no source payloads in Git.",
+        "references": [
+          "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-and-geoservices",
+          "https://esa-worldcover.org/en/data-access",
+          "https://doi.glamos.ch/data/inventory/inventory_sgi2016_r2020.html",
+          "https://copernicus-dem-30m.s3.amazonaws.com/readme.html",
+          "https://s3.waw3-1.cloudferro.com/swift/v1/portal_uploads_prod/CSCDA_ESA_Mission-specific_Annex_31_Oct_22_latest.pdf"
+        ]
+      },
+      "rightsRef": "cb9f4e74c8060a54336c17eb2f9c8ded7c6355abbaddbfaf61562f970a1ca032",
+      "seal": {
+        "bytes": 15925644,
+        "sha256": "0d2ebc6d0b4fd06ab2191cbf2a2f5ab77728249fa8c835075040bce4dc4899de"
+      },
+      "source": {
+        "dataset": "swissALTI3D2024 DTM",
+        "organisation": "swisstopo",
+        "productRecord": "swissalti3d_2024_2625-1091",
+        "properties": {
+          "created": "2024-12-19T06:29:37.677084Z",
+          "datetime": "2024-01-01T00:00:00Z",
+          "updated": "2024-12-19T10:38:00.116595Z"
+        },
+        "retainedArtifactIdentity": "0d2ebc6d0b4fd06ab2191cbf2a2f5ab77728249fa8c835075040bce4dc4899de",
+        "sourceRecord": "docs/atlas/riffelhorn-support-acquisition.json",
+        "upstreamByteIdentity": "not established by current hash alone",
+        "upstreamUrl": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2625-1091/swissalti3d_2024_2625-1091_0.5_2056_5728.tif"
+      },
+      "temporal": {
+        "evidence-epoch": {
+          "reason": "2024 product; mixed2021/2022 lidar and2023 imagery; per-cell dates unknown",
+          "status": "unknown"
+        },
+        "product-reference": {
+          "basis": "documented2024 product",
+          "status": "known",
+          "year": 2024
+        }
+      }
+    },
+    {
+      "blockShapes": [
+        [
+          128,
+          128
+        ]
+      ],
+      "compression": "Compression.lzw",
+      "coreEnvelopeWindowEstimate": [
+        0,
+        0,
+        2000,
+        2000
+      ],
+      "estimateMeaning": "128-segment transformed core envelope; inventory estimate, not whole-profile crop completeness proof",
+      "family": "dtm",
+      "identity": "dtm:4dffaad9efb82d3bf327a86b4f82d55762165ea5f825c386c23380a9320ff875",
+      "imageStructure": {
+        "COMPRESSION": "LZW",
+        "INTERLEAVE": "BAND",
+        "LAYOUT": "COG"
+      },
+      "input": {
+        "artifactIdentity": "sha256:4dffaad9efb82d3bf327a86b4f82d55762165ea5f825c386c23380a9320ff875",
+        "bytes": 16329103,
+        "locatorRoot": "configured public meridian-data",
+        "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2625-1092_0.5_2056_5728.tif",
+        "role": "native DTM",
+        "sha256": "4dffaad9efb82d3bf327a86b4f82d55762165ea5f825c386c23380a9320ff875",
+        "upstreamAuthenticity": "not established by content hash"
+      },
+      "member": "4dffaad9efb82d3bf327a86b4f82d55762165ea5f825c386c23380a9320ff875.tif",
+      "native": {
+        "bands": 1,
+        "bounds": [
+          2625000,
+          1092000,
+          2626000,
+          1093000
+        ],
+        "crs": "EPSG:2056",
+        "dtypes": [
+          "float32"
+        ],
+        "nodata": -9999,
+        "resolution": [
+          0.5,
+          0.5
+        ],
+        "shape": [
+          2000,
+          2000
+        ],
+        "tags": {
+          "AREA_OR_POINT": "Area"
+        },
+        "transform": [
+          0.5,
+          0,
+          2625000,
+          0,
+          -0.5,
+          1093000,
+          0,
+          0,
+          1
+        ]
+      },
+      "overviews": [
+        2,
+        4,
+        8
+      ],
+      "preparationRevision": "357b28e705f7c2647cdf2d54467fc9ee851465814d8ed645cae30713ef9187bb",
+      "qualification": {
+        "meaning": "swissALTI3D bare-earth DTM; sampling is not accuracy",
+        "time": "2024 product; mixed2021/2022 lidar and2023 imagery; per-cell dates unknown",
+        "vertical": "LN02 / EPSG:5728 documented provider provenance; not embedded compound CRS"
+      },
+      "rights": {
+        "attribution": [
+          "© swisstopo; Meridian native support bindings, no elevation transformation."
+        ],
+        "licence": {
+          "status": "known",
+          "value": "swisstopo OGD source-credit terms"
+        },
+        "limitations": "Local retained research/transformation with source-specific credits and applicable terms. Source/derivative redistribution subject to notices/licence obligations, not package MIT or a blanket commercial-service clearance; no source payloads in Git.",
+        "references": [
+          "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-and-geoservices",
+          "https://esa-worldcover.org/en/data-access",
+          "https://doi.glamos.ch/data/inventory/inventory_sgi2016_r2020.html",
+          "https://copernicus-dem-30m.s3.amazonaws.com/readme.html",
+          "https://s3.waw3-1.cloudferro.com/swift/v1/portal_uploads_prod/CSCDA_ESA_Mission-specific_Annex_31_Oct_22_latest.pdf"
+        ]
+      },
+      "rightsRef": "cb9f4e74c8060a54336c17eb2f9c8ded7c6355abbaddbfaf61562f970a1ca032",
+      "seal": {
+        "bytes": 16329103,
+        "sha256": "4dffaad9efb82d3bf327a86b4f82d55762165ea5f825c386c23380a9320ff875"
+      },
+      "source": {
+        "dataset": "swissALTI3D2024 DTM",
+        "organisation": "swisstopo",
+        "productRecord": "swissalti3d_2024_2625-1092",
+        "properties": {
+          "created": "2024-12-19T06:29:37.778992Z",
+          "datetime": "2024-01-01T00:00:00Z",
+          "updated": "2024-12-19T10:38:00.177268Z"
+        },
+        "retainedArtifactIdentity": "4dffaad9efb82d3bf327a86b4f82d55762165ea5f825c386c23380a9320ff875",
+        "sourceRecord": "docs/atlas/riffelhorn-support-acquisition.json",
+        "upstreamByteIdentity": "not established by current hash alone",
+        "upstreamUrl": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2625-1092/swissalti3d_2024_2625-1092_0.5_2056_5728.tif"
+      },
+      "temporal": {
+        "evidence-epoch": {
+          "reason": "2024 product; mixed2021/2022 lidar and2023 imagery; per-cell dates unknown",
+          "status": "unknown"
+        },
+        "product-reference": {
+          "basis": "documented2024 product",
+          "status": "known",
+          "year": 2024
+        }
+      }
+    },
+    {
+      "blockShapes": [
+        [
+          128,
+          128
+        ]
+      ],
+      "compression": "Compression.lzw",
+      "coreEnvelopeWindowEstimate": [
+        0,
+        0,
+        2000,
+        2000
+      ],
+      "estimateMeaning": "128-segment transformed core envelope; inventory estimate, not whole-profile crop completeness proof",
+      "family": "dtm",
+      "identity": "dtm:9fa4a4391e2e1bfd650f2f31c7d38ed9a5a94494a967011468e6c44559bbcb2c",
+      "imageStructure": {
+        "COMPRESSION": "LZW",
+        "INTERLEAVE": "BAND",
+        "LAYOUT": "COG"
+      },
+      "input": {
+        "artifactIdentity": "sha256:9fa4a4391e2e1bfd650f2f31c7d38ed9a5a94494a967011468e6c44559bbcb2c",
+        "bytes": 16862345,
+        "locatorRoot": "configured public meridian-data",
+        "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2624-1092_0.5_2056_5728.tif",
+        "role": "native DTM",
+        "sha256": "9fa4a4391e2e1bfd650f2f31c7d38ed9a5a94494a967011468e6c44559bbcb2c",
+        "upstreamAuthenticity": "not established by content hash"
+      },
+      "member": "9fa4a4391e2e1bfd650f2f31c7d38ed9a5a94494a967011468e6c44559bbcb2c.tif",
+      "native": {
+        "bands": 1,
+        "bounds": [
+          2624000,
+          1092000,
+          2625000,
+          1093000
+        ],
+        "crs": "EPSG:2056",
+        "dtypes": [
+          "float32"
+        ],
+        "nodata": -9999,
+        "resolution": [
+          0.5,
+          0.5
+        ],
+        "shape": [
+          2000,
+          2000
+        ],
+        "tags": {
+          "AREA_OR_POINT": "Area"
+        },
+        "transform": [
+          0.5,
+          0,
+          2624000,
+          0,
+          -0.5,
+          1093000,
+          0,
+          0,
+          1
+        ]
+      },
+      "overviews": [
+        2,
+        4,
+        8
+      ],
+      "preparationRevision": "357b28e705f7c2647cdf2d54467fc9ee851465814d8ed645cae30713ef9187bb",
+      "qualification": {
+        "meaning": "swissALTI3D bare-earth DTM; sampling is not accuracy",
+        "time": "2024 product; mixed2021/2022 lidar and2023 imagery; per-cell dates unknown",
+        "vertical": "LN02 / EPSG:5728 documented provider provenance; not embedded compound CRS"
+      },
+      "rights": {
+        "attribution": [
+          "© swisstopo; Meridian native support bindings, no elevation transformation."
+        ],
+        "licence": {
+          "status": "known",
+          "value": "swisstopo OGD source-credit terms"
+        },
+        "limitations": "Local retained research/transformation with source-specific credits and applicable terms. Source/derivative redistribution subject to notices/licence obligations, not package MIT or a blanket commercial-service clearance; no source payloads in Git.",
+        "references": [
+          "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-and-geoservices",
+          "https://esa-worldcover.org/en/data-access",
+          "https://doi.glamos.ch/data/inventory/inventory_sgi2016_r2020.html",
+          "https://copernicus-dem-30m.s3.amazonaws.com/readme.html",
+          "https://s3.waw3-1.cloudferro.com/swift/v1/portal_uploads_prod/CSCDA_ESA_Mission-specific_Annex_31_Oct_22_latest.pdf"
+        ]
+      },
+      "rightsRef": "cb9f4e74c8060a54336c17eb2f9c8ded7c6355abbaddbfaf61562f970a1ca032",
+      "seal": {
+        "bytes": 16862345,
+        "sha256": "9fa4a4391e2e1bfd650f2f31c7d38ed9a5a94494a967011468e6c44559bbcb2c"
+      },
+      "source": {
+        "dataset": "swissALTI3D2024 DTM",
+        "organisation": "swisstopo",
+        "productRecord": "swissalti3d_2024_2624-1092",
+        "properties": {
+          "created": "2024-12-19T06:29:18.580437Z",
+          "datetime": "2024-01-01T00:00:00Z",
+          "updated": "2024-12-19T10:37:49.322944Z"
+        },
+        "retainedArtifactIdentity": "9fa4a4391e2e1bfd650f2f31c7d38ed9a5a94494a967011468e6c44559bbcb2c",
+        "sourceRecord": "docs/atlas/riffelhorn-support-acquisition.json",
+        "upstreamByteIdentity": "not established by current hash alone",
+        "upstreamUrl": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2624-1092/swissalti3d_2024_2624-1092_0.5_2056_5728.tif"
+      },
+      "temporal": {
+        "evidence-epoch": {
+          "reason": "2024 product; mixed2021/2022 lidar and2023 imagery; per-cell dates unknown",
+          "status": "unknown"
+        },
+        "product-reference": {
+          "basis": "documented2024 product",
+          "status": "known",
+          "year": 2024
+        }
+      }
+    },
+    {
+      "blockShapes": [
+        [
+          128,
+          128
+        ]
+      ],
+      "compression": "Compression.lzw",
+      "coreEnvelopeWindowEstimate": [
+        0,
+        0,
+        2000,
+        2000
+      ],
+      "estimateMeaning": "128-segment transformed core envelope; inventory estimate, not whole-profile crop completeness proof",
+      "family": "dtm",
+      "identity": "dtm:c68c305e4a142da416b46b555a80916ecc52f8fa50bf1efd5cd2c3f24f9cd4bc",
+      "imageStructure": {
+        "COMPRESSION": "LZW",
+        "INTERLEAVE": "BAND",
+        "LAYOUT": "COG"
+      },
+      "input": {
+        "artifactIdentity": "sha256:c68c305e4a142da416b46b555a80916ecc52f8fa50bf1efd5cd2c3f24f9cd4bc",
+        "bytes": 16490312,
+        "locatorRoot": "configured public meridian-data",
+        "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2624-1091_0.5_2056_5728.tif",
+        "role": "native DTM",
+        "sha256": "c68c305e4a142da416b46b555a80916ecc52f8fa50bf1efd5cd2c3f24f9cd4bc",
+        "upstreamAuthenticity": "not established by content hash"
+      },
+      "member": "c68c305e4a142da416b46b555a80916ecc52f8fa50bf1efd5cd2c3f24f9cd4bc.tif",
+      "native": {
+        "bands": 1,
+        "bounds": [
+          2624000,
+          1091000,
+          2625000,
+          1092000
+        ],
+        "crs": "EPSG:2056",
+        "dtypes": [
+          "float32"
+        ],
+        "nodata": -9999,
+        "resolution": [
+          0.5,
+          0.5
+        ],
+        "shape": [
+          2000,
+          2000
+        ],
+        "tags": {
+          "AREA_OR_POINT": "Area"
+        },
+        "transform": [
+          0.5,
+          0,
+          2624000,
+          0,
+          -0.5,
+          1092000,
+          0,
+          0,
+          1
+        ]
+      },
+      "overviews": [
+        2,
+        4,
+        8
+      ],
+      "preparationRevision": "357b28e705f7c2647cdf2d54467fc9ee851465814d8ed645cae30713ef9187bb",
+      "qualification": {
+        "meaning": "swissALTI3D bare-earth DTM; sampling is not accuracy",
+        "time": "2024 product; mixed2021/2022 lidar and2023 imagery; per-cell dates unknown",
+        "vertical": "LN02 / EPSG:5728 documented provider provenance; not embedded compound CRS"
+      },
+      "rights": {
+        "attribution": [
+          "© swisstopo; Meridian native support bindings, no elevation transformation."
+        ],
+        "licence": {
+          "status": "known",
+          "value": "swisstopo OGD source-credit terms"
+        },
+        "limitations": "Local retained research/transformation with source-specific credits and applicable terms. Source/derivative redistribution subject to notices/licence obligations, not package MIT or a blanket commercial-service clearance; no source payloads in Git.",
+        "references": [
+          "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-and-geoservices",
+          "https://esa-worldcover.org/en/data-access",
+          "https://doi.glamos.ch/data/inventory/inventory_sgi2016_r2020.html",
+          "https://copernicus-dem-30m.s3.amazonaws.com/readme.html",
+          "https://s3.waw3-1.cloudferro.com/swift/v1/portal_uploads_prod/CSCDA_ESA_Mission-specific_Annex_31_Oct_22_latest.pdf"
+        ]
+      },
+      "rightsRef": "cb9f4e74c8060a54336c17eb2f9c8ded7c6355abbaddbfaf61562f970a1ca032",
+      "seal": {
+        "bytes": 16490312,
+        "sha256": "c68c305e4a142da416b46b555a80916ecc52f8fa50bf1efd5cd2c3f24f9cd4bc"
+      },
+      "source": {
+        "dataset": "swissALTI3D2024 DTM",
+        "organisation": "swisstopo",
+        "productRecord": "swissalti3d_2024_2624-1091",
+        "properties": {
+          "created": "2024-12-19T06:29:18.392792Z",
+          "datetime": "2024-01-01T00:00:00Z",
+          "updated": "2024-12-19T10:37:49.146955Z"
+        },
+        "retainedArtifactIdentity": "c68c305e4a142da416b46b555a80916ecc52f8fa50bf1efd5cd2c3f24f9cd4bc",
+        "sourceRecord": "docs/atlas/riffelhorn-support-acquisition.json",
+        "upstreamByteIdentity": "not established by current hash alone",
+        "upstreamUrl": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2624-1091/swissalti3d_2024_2624-1091_0.5_2056_5728.tif"
+      },
+      "temporal": {
+        "evidence-epoch": {
+          "reason": "2024 product; mixed2021/2022 lidar and2023 imagery; per-cell dates unknown",
+          "status": "unknown"
+        },
+        "product-reference": {
+          "basis": "documented2024 product",
+          "status": "known",
+          "year": 2024
+        }
+      }
+    },
+    {
+      "blockShapes": [
+        [
+          218,
+          312
+        ]
+      ],
+      "compression": "Compression.lzw",
+      "coreEnvelopeWindowEstimate": [
+        0,
+        0,
+        312,
+        218
+      ],
+      "estimateMeaning": "128-segment transformed core envelope; inventory estimate, not whole-profile crop completeness proof",
+      "family": "worldcover",
+      "identity": "worldcover:86579f0b5f87e9c50e499c3ab0752b39357fe7379ab227a11c31c2dee1e676ee",
+      "imageStructure": {
+        "COMPRESSION": "LZW",
+        "INTERLEAVE": "BAND"
+      },
+      "input": {
+        "artifactIdentity": "sha256:86579f0b5f87e9c50e499c3ab0752b39357fe7379ab227a11c31c2dee1e676ee",
+        "bytes": 5046,
+        "locatorRoot": "configured public meridian-data",
+        "path": "derived/atlas/semantic-comparison-v1/riffelhorn-worldcover.tif",
+        "role": "native semantic original/subset/selection record",
+        "sha256": "86579f0b5f87e9c50e499c3ab0752b39357fe7379ab227a11c31c2dee1e676ee",
+        "upstreamAuthenticity": "not established by content hash"
+      },
+      "member": "86579f0b5f87e9c50e499c3ab0752b39357fe7379ab227a11c31c2dee1e676ee.tif",
+      "native": {
+        "bands": 1,
+        "bounds": [
+          7.74825,
+          45.97,
+          7.774249999999999,
+          45.988166666666665
+        ],
+        "crs": "EPSG:4326",
+        "dtypes": [
+          "uint8"
+        ],
+        "nodata": 0,
+        "resolution": [
+          8.333333333333333e-05,
+          8.333333333333333e-05
+        ],
+        "shape": [
+          218,
+          312
+        ],
+        "tags": {
+          "AREA_OR_POINT": "Area"
+        },
+        "transform": [
+          8.333333333333333e-05,
+          0,
+          7.74825,
+          0,
+          -8.333333333333333e-05,
+          45.988166666666665,
+          0,
+          0,
+          1
+        ]
+      },
+      "overviews": [],
+      "preparationRevision": "357b28e705f7c2647cdf2d54467fc9ee851465814d8ed645cae30713ef9187bb",
+      "qualification": {
+        "meaning": "2021 v200 native categorical classification; not cell truth, fraction or confidence",
+        "time": "nominal2021 epoch; exact pixel observation dates unknown"
+      },
+      "rights": {
+        "attribution": [
+          "© ESA WorldCover project 2021 / Contains modified Copernicus Sentinel data (2021) processed by the ESA WorldCover consortium. Native-grid subsets and analysis by Meridian."
+        ],
+        "licence": {
+          "status": "known",
+          "value": "CC-BY-4.0"
+        },
+        "limitations": "Local retained research/transformation with source-specific credits and applicable terms. Source/derivative redistribution subject to notices/licence obligations, not package MIT or a blanket commercial-service clearance; no source payloads in Git.",
+        "references": [
+          "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-and-geoservices",
+          "https://esa-worldcover.org/en/data-access",
+          "https://doi.glamos.ch/data/inventory/inventory_sgi2016_r2020.html",
+          "https://copernicus-dem-30m.s3.amazonaws.com/readme.html",
+          "https://s3.waw3-1.cloudferro.com/swift/v1/portal_uploads_prod/CSCDA_ESA_Mission-specific_Annex_31_Oct_22_latest.pdf"
+        ]
+      },
+      "rightsRef": "567a819cb6701a78f3a48d4daa4a32fd31c4fb5852319ee41c28dadba41ec0bc",
+      "seal": {
+        "bytes": 5046,
+        "sha256": "86579f0b5f87e9c50e499c3ab0752b39357fe7379ab227a11c31c2dee1e676ee"
+      },
+      "source": {
+        "dataset": "ESA WorldCover2021v200",
+        "organisation": "ESA WorldCover consortium",
+        "preparation": "existing native-grid window; no resampling",
+        "retainedExtractIdentity": "86579f0b5f87e9c50e499c3ab0752b39357fe7379ab227a11c31c2dee1e676ee",
+        "sourceRecord": "docs/atlas/semantic-comparison-sources.json",
+        "upstreamByteIdentity": {
+          "reason": "complete parent hash not established",
+          "status": "unknown"
+        },
+        "upstreamRecord": {
+          "completeParentHashKnown": false,
+          "operation": "Native grid window read, no reprojection/resampling; lossless uint8 GeoTIFF re-encoding; mask is applied only in analysis.",
+          "parentHeadersCheckedUtc": "2026-10-06T10:35:24.879761+00:00",
+          "retainedUtcFromFilesystem": "2026-10-06T10:25:28.578001+00:00",
+          "subsetDefinition": {
+            "sourceCrs": "EPSG:4326",
+            "sourceShape": [
+              36000,
+              36000
+            ],
+            "sourceTransform": [
+              8.333333333333333e-05,
+              0,
+              6,
+              0,
+              -8.333333333333333e-05,
+              48,
+              0,
+              0,
+              1
+            ],
+            "url": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N45E006_Map.tif",
+            "window": [
+              20979,
+              24142,
+              312,
+              218
+            ],
+            "windowTransform": [
+              8.333333333333333e-05,
+              0,
+              7.74825,
+              0,
+              -8.333333333333333e-05,
+              45.988166666666665,
+              0,
+              0,
+              1
+            ]
+          },
+          "url": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N45E006_Map.tif"
+        }
+      },
+      "temporal": {
+        "evidence-epoch": {
+          "basis": "prepared nominal2021v200 context",
+          "role": "nominal-epoch",
+          "status": "known",
+          "year": 2021
+        },
+        "product-reference": {
+          "basis": "nominal product2021v200",
+          "status": "known",
+          "year": 2021
+        }
+      }
+    }
+  ],
+  "schema": "atlas-projection-resource-inventory/v1"
+}

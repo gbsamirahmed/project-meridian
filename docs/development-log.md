@@ -4720,3 +4720,19 @@ dependencies and unresolved offline rights; no mobile deployment, production or
 private-repository integration is begun.
 
 Starting checkpoint `5528dda72acb41f641966d5c269c5a30b6a8562e`; clean public main, fetched origin/main 0/0. Full validation and the frozen scientific expectations remain unchanged. Final verification and measurements are in the linked report.
+
+## Atlas projection resource study — 9 October 2026
+
+[Bounded study](research/atlas-portable-projection-reduction.md): **PARTIALLY DEMONSTRATED**. One verified captured snapshot
+serves three explicit Riffelhorn historical pins; median peak working set fell from
+599.45 MB to 332.74 MB (about 45%). One-reader memory, the 116,692,961-byte package
+and GIS dependencies remain unchanged. All 60 frozen cases passed in each of three
+fresh processes per mode, plus 159 novel comparisons; full-grid qualifications,
+readiness, restart and post-open consistency are preserved. This is desktop evidence,
+not mobile or redistribution clearance; all accepted authority remains unchanged.
+Implementation and reproducible commands are linked from the report.
+
+Exactly one next bounded task, **NOT BEGUN**: **MERIDIAN ATLAS NATIVE-GRID WINDOW
+PROJECTION AND SCIENTIFIC-CLOSURE FEASIBILITY**, limited to proving whole-profile
+Copernicus window support, original grid identities and exact semantic/lifecycle
+conformance. No mobile, private repository, production or framework decision.

@@ -1,0 +1,408 @@
+{
+  "byteIdenticalRegeneratedMembers": 12,
+  "checkpoint": "d006e4515794909d2e5ad00d8617aabdb6abbd4e",
+  "experiment": "shared-snapshot-experiment/v1",
+  "isolated60CaseReplayMs": {
+    "baseline": [
+      4808.821399929002,
+      4769.554099999368,
+      4840.413199970499
+    ],
+    "shared": [
+      2587.2219000011683,
+      2376.9541999790817,
+      2341.8757000472397
+    ]
+  },
+  "lifecycle": {
+    "failedStageCleanupAndSharedReopenMs": {
+      "max": 1334.0959998313338,
+      "median": 1197.5304000079632,
+      "min": 1179.0436999872327,
+      "p95": 1334.0959998313338
+    },
+    "freshSharedProcessReopenMs": {
+      "max": 1590.077199973166,
+      "median": 1581.3563000410795,
+      "min": 1572.0798999536783,
+      "p95": 1590.077199973166
+    },
+    "observedOwnedBytesAfterFailedStage": [
+      116697519,
+      116697519,
+      116697519
+    ],
+    "peakWorkingSetBytes": 418459648,
+    "platform": "win32",
+    "python": "3.12.6",
+    "repetitions": 3,
+    "sharedThreePinReopenAndIdentityMs": {
+      "max": 1255.8521998580545,
+      "median": 1238.5229000356048,
+      "min": 1237.541199894622,
+      "p95": 1255.8521998580545
+    },
+    "unchangedInstallMs": {
+      "finalVerificationMs": {
+        "max": 1255.3425000514835,
+        "median": 1237.5151999294758,
+        "min": 1109.5712000969797,
+        "p95": 1255.3425000514835
+      },
+      "readyPublicationMs": {
+        "max": 16.120599815621972,
+        "median": 15.865000197663903,
+        "min": 5.206399830058217,
+        "p95": 16.120599815621972
+      },
+      "selectionMs": {
+        "max": 1342.2224998939782,
+        "median": 1321.009400067851,
+        "min": 1280.0887001212686,
+        "p95": 1342.2224998939782
+      },
+      "stagingMs": {
+        "max": 595.9592999424785,
+        "median": 580.9141001664102,
+        "min": 567.2079999931157,
+        "p95": 595.9592999424785
+      },
+      "totalMs": {
+        "max": 4537.298599956557,
+        "median": 4469.638000009581,
+        "min": 4173.70849987492,
+        "p95": 4537.298599956557
+      },
+      "verificationMs": {
+        "max": 1345.736299874261,
+        "median": 1307.1653998922557,
+        "min": 1200.7196999620646,
+        "p95": 1345.736299874261
+      }
+    }
+  },
+  "measurements": {
+    "baseline-1": {
+      "completeOpenAndViewsMs": {
+        "max": 1050.6507998798043,
+        "median": 1049.8055999632925,
+        "min": 1045.8056000061333
+      },
+      "peakWorkingSetBytes": {
+        "max": 332500992,
+        "median": 332210176,
+        "min": 332136448
+      },
+      "queriesMedianMs": {
+        "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+          "identity": {
+            "max": 1.0741001460701227,
+            "median": 1.0663000866770744,
+            "min": 1.047800062224269
+          },
+          "lineage": {
+            "max": 14.055399922654033,
+            "median": 13.857699930667877,
+            "min": 13.682599877938628
+          },
+          "nativeArea": {
+            "max": 16.715000150725245,
+            "median": 16.405800124630332,
+            "min": 16.24109991826117
+          },
+          "nativePoint": {
+            "max": 32.0051999296993,
+            "median": 31.931400066241622,
+            "min": 31.386000104248524
+          }
+        }
+      },
+      "queryResultCounts": {
+        "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+          "identity": 1,
+          "lineage": 32,
+          "nativeArea": 6,
+          "nativePoint": 5
+        }
+      }
+    },
+    "baseline-3": {
+      "completeOpenAndViewsMs": {
+        "max": 3286.468999926001,
+        "median": 3257.7162999659777,
+        "min": 3234.919099835679
+      },
+      "peakWorkingSetBytes": {
+        "max": 599633920,
+        "median": 599445504,
+        "min": 599027712
+      },
+      "queriesMedianMs": {
+        "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+          "identity": {
+            "max": 1.4927000738680363,
+            "median": 1.138199819251895,
+            "min": 1.1286998633295298
+          },
+          "lineage": {
+            "max": 16.847999999299645,
+            "median": 15.872500138357282,
+            "min": 15.129099832847714
+          },
+          "nativeArea": {
+            "max": 27.23970008082688,
+            "median": 18.647899851202965,
+            "min": 17.115100054070354
+          },
+          "nativePoint": {
+            "max": 37.114999955520034,
+            "median": 35.13920004479587,
+            "min": 33.53170002810657
+          }
+        },
+        "65989736a06f72182fba9d9ad9d47955869f51ce943ef120effcad2df91352fd": {
+          "identity": {
+            "max": 1.8213000148534775,
+            "median": 1.492300070822239,
+            "min": 1.0601000394672155
+          },
+          "lineage": {
+            "max": 15.893400181084871,
+            "median": 13.789699878543615,
+            "min": 13.76880006864667
+          },
+          "nativeArea": {
+            "max": 21.169199841096997,
+            "median": 19.99119995161891,
+            "min": 18.39519990608096
+          },
+          "nativePoint": {
+            "max": 34.78899993933737,
+            "median": 34.706100123003125,
+            "min": 32.686399994418025
+          }
+        },
+        "7f956d3bb640fb7262a3c46b1666306c88aff3418e966d39536882530350acf8": {
+          "identity": {
+            "max": 1.047399826347828,
+            "median": 1.0451998095959425,
+            "min": 1.0418000165373087
+          },
+          "lineage": {
+            "max": 0.3474999684840441,
+            "median": 0.3428999334573746,
+            "min": 0.3426999319344759
+          },
+          "nativeArea": {
+            "max": 19.953700015321374,
+            "median": 19.59119993261993,
+            "min": 16.577899921685457
+          },
+          "nativePoint": {
+            "max": 45.286300126463175,
+            "median": 40.34750000573695,
+            "min": 36.10199992544949
+          }
+        }
+      },
+      "queryResultCounts": {
+        "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+          "identity": 1,
+          "lineage": 32,
+          "nativeArea": 6,
+          "nativePoint": 5
+        },
+        "65989736a06f72182fba9d9ad9d47955869f51ce943ef120effcad2df91352fd": {
+          "identity": 1,
+          "lineage": 32,
+          "nativeArea": 6,
+          "nativePoint": 5
+        },
+        "7f956d3bb640fb7262a3c46b1666306c88aff3418e966d39536882530350acf8": {
+          "identity": 1,
+          "lineage": 0,
+          "nativeArea": 6,
+          "nativePoint": 5
+        }
+      }
+    },
+    "shared-1": {
+      "completeOpenAndViewsMs": {
+        "max": 1160.4933000635356,
+        "median": 1061.980300117284,
+        "min": 1042.8210999816656
+      },
+      "peakWorkingSetBytes": {
+        "max": 332931072,
+        "median": 332775424,
+        "min": 332623872
+      },
+      "queriesMedianMs": {
+        "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+          "identity": {
+            "max": 1.1545000597834587,
+            "median": 1.1265999637544155,
+            "min": 1.1132999788969755
+          },
+          "lineage": {
+            "max": 15.368100022897124,
+            "median": 14.174700016155839,
+            "min": 13.882200000807643
+          },
+          "nativeArea": {
+            "max": 17.749299993738532,
+            "median": 16.54500002041459,
+            "min": 16.4812000002712
+          },
+          "nativePoint": {
+            "max": 32.7176998835057,
+            "median": 32.522400142624974,
+            "min": 31.80069988593459
+          }
+        }
+      },
+      "queryResultCounts": {
+        "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+          "identity": 1,
+          "lineage": 32,
+          "nativeArea": 6,
+          "nativePoint": 5
+        }
+      }
+    },
+    "shared-3": {
+      "completeOpenAndViewsMs": {
+        "max": 1081.9282000884414,
+        "median": 1075.909499777481,
+        "min": 1071.9222000334412
+      },
+      "peakWorkingSetBytes": {
+        "max": 332881920,
+        "median": 332742656,
+        "min": 332328960
+      },
+      "queriesMedianMs": {
+        "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+          "identity": {
+            "max": 1.8293000757694244,
+            "median": 1.1045001447200775,
+            "min": 1.0873000137507915
+          },
+          "lineage": {
+            "max": 16.333000035956502,
+            "median": 14.243100071325898,
+            "min": 13.821000000461936
+          },
+          "nativeArea": {
+            "max": 18.85790005326271,
+            "median": 17.291099997237325,
+            "min": 17.261100001633167
+          },
+          "nativePoint": {
+            "max": 33.36030011996627,
+            "median": 32.60269993916154,
+            "min": 32.56610012613237
+          }
+        },
+        "65989736a06f72182fba9d9ad9d47955869f51ce943ef120effcad2df91352fd": {
+          "identity": {
+            "max": 1.444599824026227,
+            "median": 1.0700998827815056,
+            "min": 1.0671000927686691
+          },
+          "lineage": {
+            "max": 14.536899980157614,
+            "median": 14.095099875703454,
+            "min": 13.980200048536062
+          },
+          "nativeArea": {
+            "max": 16.683099791407585,
+            "median": 16.366200055927038,
+            "min": 16.331200022250414
+          },
+          "nativePoint": {
+            "max": 32.684999983757734,
+            "median": 32.1259000338614,
+            "min": 31.88399993814528
+          }
+        },
+        "7f956d3bb640fb7262a3c46b1666306c88aff3418e966d39536882530350acf8": {
+          "identity": {
+            "max": 1.792500028386712,
+            "median": 1.7874999903142452,
+            "min": 1.1171000078320503
+          },
+          "lineage": {
+            "max": 0.6003000307828188,
+            "median": 0.5922999698668718,
+            "min": 0.3806999884545803
+          },
+          "nativeArea": {
+            "max": 20.82499978132546,
+            "median": 18.63440009765327,
+            "min": 17.274699872359633
+          },
+          "nativePoint": {
+            "max": 38.24549983255565,
+            "median": 37.785500055179,
+            "min": 32.51000004820526
+          }
+        }
+      },
+      "queryResultCounts": {
+        "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+          "identity": 1,
+          "lineage": 32,
+          "nativeArea": 6,
+          "nativePoint": 5
+        },
+        "65989736a06f72182fba9d9ad9d47955869f51ce943ef120effcad2df91352fd": {
+          "identity": 1,
+          "lineage": 32,
+          "nativeArea": 6,
+          "nativePoint": 5
+        },
+        "7f956d3bb640fb7262a3c46b1666306c88aff3418e966d39536882530350acf8": {
+          "identity": 1,
+          "lineage": 0,
+          "nativeArea": 6,
+          "nativePoint": 5
+        }
+      }
+    }
+  },
+  "methodology": {
+    "freshProcessesPerModeAndReaderCount": 3,
+    "host": "Intel Core i7-12700H",
+    "lifecycleTrials": 3,
+    "platform": "Windows NT 10.0.26200 / NTFS",
+    "python": "3.12.6",
+    "storageCold": false,
+    "warmQueryRepetitionsPerPinPerProcess": 15
+  },
+  "projectionBytes": 116692961,
+  "projectionIdentity": "a34ac6745abe92904d6af089ae8dff888d3527d6588c395ee3b03750d9e08a1c",
+  "regeneration": {
+    "buildMs": 13754.1423,
+    "bytes": 116692961,
+    "files": 12,
+    "generations": 3,
+    "nodeRssBytes": 278290432,
+    "projectionIdentity": "a34ac6745abe92904d6af089ae8dff888d3527d6588c395ee3b03750d9e08a1c"
+  },
+  "schema": "atlas-projection-resource-results/v1",
+  "validation": {
+    "baselineFrozenCasesPerProcess": 60,
+    "baselineReaderAndLifecycleTests": 44,
+    "expectedErrorsPerProcess": 9,
+    "fixtureTests": 12,
+    "freshReplayProcessesPerMode": 3,
+    "frozenFailures": 0,
+    "frozenSkipped": 0,
+    "nativeTests": 31,
+    "novelCompleteEnvelopeComparisons": 159,
+    "runtimeTests": 92,
+    "sharedFrozenCasesPerProcess": 60,
+    "sharedTests": 9
+  }
+}
