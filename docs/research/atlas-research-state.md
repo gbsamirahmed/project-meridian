@@ -634,3 +634,40 @@ full open 9.113 s; catalogue build 838 ms; catalogue 220 KiB. Candidate selectio
 exact work, but measured end-to-end scans/indexed queries are similar. Three external
 worlds/caches occupy about 59.1 MiB; the frozen metadata estimate was too low.
 Prototype readiness and the public-only unbegun next task above remain the decision.
+
+
+## Meridian prototype architecture transition — 2026-10-09
+
+The [first integrated prototype architecture and boundary plan](meridian-prototype-architecture.md) is
+**C — PROTOTYPE ARCHITECTURE PLAN READY**. This completes the public-only planning
+task selected by the accepted habitat/planning integration. The prototype itself
+is **not implemented**; the private repository has not been accessed.
+
+The preferred first experience is a **Riffelhorn 4 km² terrain-first evidence explorer**:
+existing visual terrain context, real qualified native retrieval and a provenance/
+uncertainty inspector. Visual DEMs remain distinct from analytical evidence; the
+unaccepted Swiss/AWS join is not adopted. Exe and Tryfan remain later validation
+cases. More Atlas evidence families or global coverage are not prerequisites.
+
+Canonical Atlas files, scientific contracts and filesystem publication roots remain
+authoritative; SQLite and application caches remain rebuildable. Preferred public
+versioned runtime/browser-client boundaries and a read-only adapter inside the local
+application host require packaging/host confirmation during the audit. Browser code
+never reads canonical files/SQLite or publishes evidence. Weather remains independent
+and follows the first Atlas milestone with its own model/run/valid-time semantics.
+
+The plan records actual public frontend KEEP/ADAPT/REPLACE/DEFER findings, a minimal
+application contract, startup/query budgets, two boundary diagrams, prototype acceptance
+criteria and staged migration. No application code, packages or services were changed.
+Tryfan remains CLOSED / ACCEPTED; prior accepted positive/negative research, all 42
+canonical statuses and 113 protected production hashes remain preserved. No S7,
+private access, acquisition, or production Atlas/Weather/Traverse change.
+
+Exactly one next task: **PRIVATE MERIDIAN REPOSITORY AUDIT AND ARCHITECTURE
+RECONCILIATION — NOT BEGUN**. It requires separate explicit private-repository
+authorisation, performs a bounded read-only code/configuration reconciliation, and
+scopes the first implementation task. Do not begin it under this public-only plan.
+
+Documentation/protection verification: **47 safeguards passed**; accepted retained
+evidence, contracts, 42 statuses and 113 production hashes unchanged. No executable
+changes; inherited application test results are not reported as freshly rerun.
