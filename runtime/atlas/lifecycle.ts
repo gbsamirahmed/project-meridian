@@ -1,4 +1,5 @@
 import { verifyExe } from './exe-model.ts'
+import { verifyReferences } from './references-model.ts'
 import { openAtlas } from './index.ts'
 import { object, resolveAuthoritative, validateNativeFiles, readJson } from './authority.ts'
 import type { ObjectJson } from './authority.ts'
@@ -80,6 +81,11 @@ export async function validateStage(config: RuntimeConfig, generation: string): 
     const exe = await verifyExe(config, candidate.values.exeRegistration)
     candidate.metrics.payloadHashOperations += Number(exe.sourceHashOperations) + Number(exe.directoryHashOperations)
     candidate.metrics.payloadBytesHashed += Number(exe.sourceBytesHashed) + Number(exe.directoryBytesHashed)
+  }
+  if (candidate.values.exeReferencesRegistration) {
+    const references = await verifyReferences(config, candidate.values.exeReferencesRegistration)
+    candidate.metrics.payloadHashOperations += Number(references.sourceHashOperations) + Number(references.directoryHashOperations)
+    candidate.metrics.payloadBytesHashed += Number(references.sourceBytesHashed) + Number(references.directoryBytesHashed)
   }
   const context = await openAtlas({ ...config, generation: active.generation })
   try {

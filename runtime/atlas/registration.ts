@@ -8,6 +8,7 @@ import { verifyArtifacts } from '../../pilots/atlas/tryfan/catalogue.mjs'
 import { verifyDelivery } from '../../pilots/atlas/tryfan/delivery-schema.mjs'
 import { encode, sha } from '../../pilots/atlas/tryfan/identity.mjs'
 import { describeExe } from './exe-model.ts'
+import { describeReferences } from './references-model.ts'
 import { openAtlas } from './index.ts'
 import { NativeWorker } from './worker.ts'
 import { object, publicPath, readJson, resolveAuthoritative } from './authority.ts'
@@ -21,7 +22,7 @@ import { requireAtlas } from './errors.ts'
 import type { RuntimeConfig } from './types.ts'
 export type { RegistrationRequest } from './registration-model.ts'
 
-export type RegistrationInputs = { tryfanRoot: string; preparedRoot: string } | { family: 'exe-water' }
+export type RegistrationInputs = { tryfanRoot: string; preparedRoot: string } | { family: 'exe-water' | 'exe-references' }
 const TRYFAN = '5f2c1b1f25c45ddea7e640f8c286a6caec5dc61aa55e8f678062bdc5704fca06'
 async function inputs(config: RuntimeConfig, input: { tryfanRoot: string; preparedRoot: string }) {
   const start = performance.now(), data = real(config.dataRoot), tryfan = real(input.tryfanRoot), prepared = real(input.preparedRoot)
@@ -41,18 +42,19 @@ async function inputs(config: RuntimeConfig, input: { tryfanRoot: string; prepar
 function revision(request: RegistrationRequest, previous?: ObjectJson, supersedes?: string): ObjectJson {
   const acceptedAt = new Date().toISOString()
   requireAtlas(!previous || acceptedAt > String(object(previous.knowledgeTime).acceptedAt), 'registration-time', 'Acceptance clock has not advanced beyond the previous revision; retry with a correct local clock.')
-  return { schema: 'atlas-runtime-registration-revision/v1', operation: request.operation, region: request.region, native: request.native, nativeIdentity: digest(request.native), sequence: previous ? Number(previous.sequence) + 1 : 0, supersedes: supersedes ?? null, knowledgeTime: { acceptedAt, basis: 'runtime acceptance clock; not physical observation or source publication' }, physicalChangeInferred: false, explanation: request.explanation, sourceNotice: request.sourceNotice as unknown as ObjectJson ?? null }
+  return { schema: 'atlas-runtime-registration-revision/v1', operation: request.operation, region: request.region, ...(request.scope ? { scope: request.scope } : {}), native: request.native, nativeIdentity: digest(request.native), sequence: previous ? Number(previous.sequence) + 1 : 0, supersedes: supersedes ?? null, knowledgeTime: { acceptedAt, basis: 'runtime acceptance clock; not physical observation or source publication' }, physicalChangeInferred: false, explanation: request.explanation, sourceNotice: request.sourceNotice as unknown as ObjectJson ?? null }
 }
 function template(native: ObjectJson, region: RegistrationRequest['region'], generation: string | null, id: string | null): RegistrationRequest {
   return { schema: 'atlas-runtime-registration-request/v1', operation: 'register', region, expectedGeneration: generation, expectedRevision: id, native, explanation: 'Register retained qualified evidence; no new physical observation' }
 }
 export async function inspectEvidence(config: RuntimeConfig, selected?: RegistrationInputs): Promise<ObjectJson> {
   if (selected && 'family' in selected) {
-    requireAtlas(selected.family === 'exe-water', 'registration-request', 'Only the accepted retained Exe water family adapter is supported.')
+    requireAtlas(['exe-water', 'exe-references'].includes(selected.family), 'registration-request', 'Only accepted retained Exe water/reference adapters are supported.')
     const context = await openAtlas(config)
     try {
-      const verified = await describeExe(config), snapshot = resolveAuthoritative(config), registrations = validateRegistrations(snapshot, config.publicationRoot)
-      return { verified: true, templates: { exe: template(verified.native, 'exe', snapshot.generation, registrations.exe ? String(registrations.exe.identity) : null) as unknown as ObjectJson }, metrics: verified.metrics }
+      const scoped = selected.family === 'exe-references', verified = scoped ? await describeReferences(config) : await describeExe(config), snapshot = resolveAuthoritative(config), registrations = validateRegistrations(snapshot, config.publicationRoot), key = scoped ? 'exeReferences' : 'exe'
+      requireAtlas(!scoped || snapshot.values.exeRegistration, 'registration-required', 'Reference admission requires the existing Exe water publication.')
+      return { verified: true, templates: { [key]: { ...template(verified.native, 'exe', snapshot.generation, registrations[key] ? String(registrations[key].identity) : null), ...(scoped ? { scope: 'exeReferences' } : {}) } as unknown as ObjectJson }, metrics: verified.metrics }
     } finally { await context.close() }
   }
   if (selected) {
@@ -63,7 +65,7 @@ export async function inspectEvidence(config: RuntimeConfig, selected?: Registra
     return { verified: true, templates: Object.fromEntries(Object.entries(verified.registrations).map(([region, native]) => [region, template(snapshot ? nativeFor(snapshot, region) : native, region as RegistrationRequest['region'], snapshot?.generation ?? null, registrations[region] ? String(registrations[region].identity) : null)])) as unknown as ObjectJson, metrics: verified.metrics }
   }
   const context = await openAtlas(config)
-  try { const snapshot = resolveAuthoritative(config); return { generation: context.generation, registrations: validateRegistrations(snapshot, config.publicationRoot), native: { tryfan: snapshot.values.tryfanRegistration, riffelhorn: snapshot.values.riffelhornRegistration, ...(snapshot.values.exeRegistration ? { exe: snapshot.values.exeRegistration } : {}) }, validation: context.validation as unknown as ObjectJson } }
+  try { const snapshot = resolveAuthoritative(config); return { generation: context.generation, registrations: validateRegistrations(snapshot, config.publicationRoot), native: { tryfan: snapshot.values.tryfanRegistration, riffelhorn: snapshot.values.riffelhornRegistration, ...(snapshot.values.exeRegistration ? { exe: snapshot.values.exeRegistration } : {}), ...(snapshot.values.exeReferencesRegistration ? { exeReferences: snapshot.values.exeReferencesRegistration } : {}) }, validation: context.validation as unknown as ObjectJson } }
   finally { await context.close() }
 }
 /** Assemble from canonical pilot/reference and preparation manifests, never copy a research world. */
@@ -103,10 +105,11 @@ export async function registerEvidence(config: RuntimeConfig, selected: Registra
 async function update(config: RuntimeConfig, request: RegistrationRequest, write: boolean, options: { failAt?: 'afterArtifacts' } = {}): Promise<ObjectJson> {
   validateRequest(request); const start = performance.now(), root = owned(config), context = await openAtlas(config)
   try {
-    const base = resolveAuthoritative({ ...config, generation: undefined }), registrationReads = { records: 0, bytes: 0 }, prior = validateRegistrations(base, root, registrationReads), current = prior[request.region]
+    const key = request.scope ?? request.region, base = resolveAuthoritative({ ...config, generation: undefined }), registrationReads = { records: 0, bytes: 0 }, prior = validateRegistrations(base, root, registrationReads), current = prior[key]
     requireAtlas(context.generation === base.generation, 'registration-conflict', 'Publication changed during opening; inspect and restage explicitly.')
-    const expectedNative = request.region === 'exe' ? (await describeExe(config)).native : nativeFor(base, request.region)
-    requireAtlas(request.expectedGeneration === base.generation && digest(request.native) === digest(expectedNative) && (!base.values.exeRegistration || request.region !== 'exe' || digest(expectedNative) === digest(base.values.exeRegistration)), 'registration-conflict', 'Expected generation or exact verified native registration differs; inspect and restage explicitly.')
+    requireAtlas(!request.scope || base.values.exeRegistration, 'registration-required', 'Reference admission requires an existing Exe water publication.')
+    const expectedNative = request.scope ? (await describeReferences(config)).native : request.region === 'exe' ? (await describeExe(config)).native : nativeFor(base, request.region)
+    requireAtlas(request.expectedGeneration === base.generation && digest(request.native) === digest(expectedNative) && (!nativeFor(base, key) || digest(expectedNative) === digest(nativeFor(base, key))), 'registration-conflict', 'Expected generation or exact verified native registration differs; inspect and restage explicitly.')
     const oldId = current ? String(current.identity) : null, old = current ? object(current.revision) : undefined
     requireAtlas(request.operation !== 'register' || request.expectedRevision === null || request.expectedRevision === oldId, 'registration-conflict', 'Repeated registration must identify the current exact revision or explicitly request identity-based idempotence.')
     if (request.operation === 'register' && current) return { generation: base.generation, status: 'no-op', affected: [], recomputed: [], requalified: [], reused: base.values.terrainDerived ? 32 : 0, registration: current, metrics: { milliseconds: performance.now() - start, validation: context.validation as unknown as ObjectJson, bytesWritten: 0 } }
@@ -125,10 +128,10 @@ async function update(config: RuntimeConfig, request: RegistrationRequest, write
     const active = base.values.registrationLedger ? { ...object(base.values.registrationLedger.active) } : {}
     // Existing accepted worlds may adopt the ledger from their independently verified native contexts.
     for (const region of ['riffelhorn', 'tryfan'] as const) if (!active[region]) active[region] = immutable(root, 'registrations', revision(region === request.region && request.operation === 'register' ? request : template(nativeFor(base, region), region, base.generation, null)), writes)
-    if (request.region === 'exe' && !active.exe) active.exe = immutable(root, 'registrations', revision(request), writes)
-    active[request.region] = request.operation === 'register' ? active[request.region] : immutable(root, 'registrations', revision(request, old, oldId ?? undefined), writes)
+    if (request.region === 'exe' && !active[key]) active[key] = immutable(root, 'registrations', revision(request), writes)
+    active[key] = request.operation === 'register' ? active[key] : immutable(root, 'registrations', revision(request, old, oldId ?? undefined), writes)
     const values = { ...base.values, registrationLedger: { schema: 'atlas-runtime-registration-ledger/v1', active } } as Record<string, ObjectJson>
-    if (request.region === 'exe') values.exeRegistration = request.native
+    if (request.region === 'exe') values[key + 'Registration'] = request.native
     if (request.sourceNotice && nextPolicy) values.terrainLifecycle = nextPolicy as unknown as ObjectJson
     if (closure.length && state && nextPolicy) {
       const pairs = closure.filter(id => id.endsWith('|slope')).map(id => ({ slope: readArtifact(root, state.active[id], metadata), ratio: readArtifact(root, state.active[id.replace('|slope', '|area-ratio')], metadata) }))
@@ -141,7 +144,7 @@ async function update(config: RuntimeConfig, request: RegistrationRequest, write
       object(result.metrics).requalificationMs = performance.now() - processingStart
     }
     if (options.failAt === 'afterArtifacts') process.exit(94)
-    result.generation = stageObject(root, base, values, writes); result.registrationRevision = active[request.region]
+    result.generation = stageObject(root, base, values, writes); result.registrationRevision = active[key]
     object(result.metrics).artifactMetadataReads = metadata.records; object(result.metrics).artifactMetadataBytes = metadata.bytes
     object(result.metrics).writes = writes as unknown as ObjectJson; object(result.metrics).milliseconds = performance.now() - start
     return result

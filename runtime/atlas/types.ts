@@ -72,6 +72,8 @@ export interface DerivedAnswer {
 }
 /** A finite qualified query; publication selection belongs to RuntimeConfig. */
 export interface EvidenceQuery extends Omit<Query, 'representation'> {
+  nativeClassification?: string
+  referenceTime?: { role: 'survey' | 'effective' | 'contributor' | 'publication'; start: string; end: string } | { role: 'survey' | 'effective' | 'contributor' | 'publication'; unknown: true }
   waterTime?: { role: 'observation' | 'event' | 'reference'; start: string; end: string } | { role: 'observation' | 'event' | 'reference'; unknown: true }
   evidenceClass?: 'source' | 'derived'
   representation?: Query['representation'] | 'local-scalar' | 'native-cell-summary'
@@ -81,6 +83,7 @@ export interface EvidenceQuery extends Omit<Query, 'representation'> {
   relatedTo?: { identity: string; direction: 'inputs' | 'dependents'; depth: 'direct' | 'transitive' }
 }
 export interface EvidenceRecord {
+  registrationScope?: 'exeReferences'
   key: string
   identity: string
   revision: string

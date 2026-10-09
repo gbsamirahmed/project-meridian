@@ -617,3 +617,81 @@ rebuild accepted Exe claims/supports. Later queries retain the accepted immutabl
 local-custody assumption, with canonical closure/metadata and catalogue audits;
 they are not a fresh full-payload hash sweep. The existing session-owned Python
 worker performs GIS/SQLite work; no daemon, remote API or new database authority.
+
+## Exe habitat inventory and planning references
+
+The [integration report](../../docs/research/atlas-local-references.md) describes
+52 additional source-native claims: 15 habitat components on 13 original PHI
+features and 37 planning-zone features intersecting the six original 200m Exe probes.
+This is selected coverage, not the complete 280/546 source feature population.
+Original polygon support is retained. Two combined habitat features yield four
+component claims without inventing fractions, dominant classes or new observations.
+
+Use an owned copy of the existing retained Exe water world; accepted source worlds
+remain read-only. Paths below use the setup variables defined above.
+
+```powershell
+$atlasSource = (Get-Content docs/research/atlas-local-references-baseline.json -Raw | ConvertFrom-Json).selectedWorld
+$atlasWorld = Join-Path $env:LOCALAPPDATA 'Meridian/atlas-references-owned-world'
+$atlasCache = Join-Path $env:LOCALAPPDATA 'Meridian/atlas-references-catalogue'
+$atlasFlags = @('--data-root', $atlasData, '--publication-root', $atlasWorld,
+  '--catalogue', $atlasCache, '--python', $atlasPython)
+node runtime/atlas/cli.ts world init @atlasFlags --source-publication $atlasSource --json
+$atlasBefore = (node runtime/atlas/cli.ts validate @atlasFlags --json | ConvertFrom-Json).generation
+$atlasInspection = node runtime/atlas/cli.ts evidence inspect @atlasFlags --family exe-references --json | ConvertFrom-Json
+$atlasRequest = Join-Path $env:LOCALAPPDATA 'Meridian/references-request.json'
+[IO.File]::WriteAllText($atlasRequest, ($atlasInspection.templates.exeReferences | ConvertTo-Json -Depth 100), [Text.UTF8Encoding]::new($false))
+node runtime/atlas/cli.ts update plan @atlasFlags --request $atlasRequest --json
+$atlasStage = node runtime/atlas/cli.ts evidence register @atlasFlags --family exe-references --request $atlasRequest --json | ConvertFrom-Json
+node runtime/atlas/cli.ts update validate @atlasFlags --stage $atlasStage.generation --json
+node runtime/atlas/cli.ts update publish @atlasFlags --stage $atlasStage.generation --json
+node runtime/atlas/cli.ts catalogue build @atlasFlags --qualified --json
+node runtime/atlas/cli.ts retrieve @atlasFlags --query '{"families":["priority-habitat","planning-flood-zone","water-reference"]}' --json
+node runtime/atlas/cli.ts retrieve @atlasFlags --query '{"nativeClassification":"SALTM","referenceTime":{"role":"survey","unknown":true}}' --json
+node runtime/atlas/cli.ts retrieve @atlasFlags --query '{"families":["planning-flood-zone"],"nativeClassification":"FZ2","referenceTime":{"role":"effective","unknown":true}}' --json
+node runtime/atlas/cli.ts retrieve @atlasFlags --query '{"region":"exe","area":[296600,86550,296800,86750],"crs":"EPSG:27700"}' --json
+node runtime/atlas/cli.ts catalogue build @atlasFlags --qualified --generation $atlasBefore --json
+node runtime/atlas/cli.ts retrieve @atlasFlags --generation $atlasBefore --query '{}' --json
+```
+
+Identical repeated registration is no-op; it has no stage to publish. Inspect a
+fresh template before updates. For administrative knowledge revision, preserve
+`scope:"exeReferences"`, region `exe` and native body, change only operation to
+`knowledge` and explanation, then evidence revise/update validate/publish. This
+supersedes reference knowledge only; the existing water knowledge is unchanged.
+The complete CLI-only example is `node runtime/atlas/example-references.mjs CONFIG.json`,
+with dataRoot, python, new publicationRoot, catalogueRoot and sourcePublication.
+
+Library: existing `inspectEvidence(config,{family:'exe-references'})`,
+`registerEvidence`, `planEvidenceUpdate`, `stageEvidenceUpdate`, `validateStage`,
+`publishStage`, `openAtlas(config).retrieve()` and `scanEvidence()` are used.
+Requests add an optional finite registration scope, not a new geography. Returned
+reference records have region `exe` and registrationScope `exeReferences`; their
+component, knowledge and native document refs identify that independent population.
+`answer.regions.exeReferences` is a registration-scope context, not a fourth region.
+Old records and contracts retain their prior shape. Schema 2 catalogue remains
+disposable and exact-generation-bound; no canonical payload is stored in SQLite.
+
+`nativeClassification` selects one admitted source code (CFPGM,LFENS,MUDFL,RBEDS,
+SALTM,FZ2,FZ3), with exact source-specific meaning in the returned claim. The finite
+`referenceTime` profile accepts survey/effective/publication ISO-day intervals,
+contributor calendar-year intervals, or explicit unknown. Survey and contributor
+apply to habitat; effective applies to planning; publication applies to both.
+Unknown includes an unavailable applicable qualifier, never universal time.
+Not-applicable roles are excluded. Survey/effective/publication dates are unknown
+in this accepted claim projection. Contributor years are descriptive vintages,
+not survey/validity dates. Native fields/retained notices carry snapshot/catalogue
+dates separately; Atlas acceptance and publication are different clocks.
+
+Original exact geometry is filtered after spatial candidates. The spatial query
+selects a source record, not a claim of its current state or an analysis of planning
+law. A no-result gap never proves no species, habitat, water or restriction. PHI
+does not establish species presence or current ecological condition; Flood FZ2/FZ3
+retains annual-probability, ignored-defence and native mixed Origin conventions.
+It is not a current flood footprint or statutory restriction. Rights/attribution
+and limitations remain attached; local research is not unrestricted public reuse.
+
+The runtime is a Node/Python library/CLI, not browser code. First-prototype readiness
+means a narrow application boundary can now be planned; it does not authorize private
+access, a remote service or changes to production Atlas/Weather/Traverse. See the
+[exactly one unbegun next task](references-next-task.json).

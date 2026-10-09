@@ -9,6 +9,7 @@ export interface RegistrationRequest {
   schema: 'atlas-runtime-registration-request/v1'
   operation: 'register' | 'knowledge' | 'source-qualification'
   region: 'tryfan' | 'riffelhorn' | 'exe'
+  scope?: 'exeReferences'
   expectedGeneration: string | null
   expectedRevision: string | null
   native: ObjectJson
@@ -16,7 +17,8 @@ export interface RegistrationRequest {
   sourceNotice?: Notice
 }
 export function validateRequest(input: RegistrationRequest): void {
-  requireAtlas(input && typeof input === 'object' && !Array.isArray(input) && Object.keys(input).every(k => ['schema', 'operation', 'region', 'expectedGeneration', 'expectedRevision', 'native', 'explanation', 'sourceNotice'].includes(k)), 'registration-request', 'Use the documented versioned registration request; scientific overrides are unsupported.')
+  requireAtlas(input && typeof input === 'object' && !Array.isArray(input) && Object.keys(input).every(k => ['schema', 'operation', 'region', 'scope', 'expectedGeneration', 'expectedRevision', 'native', 'explanation', 'sourceNotice'].includes(k)), 'registration-request', 'Use the documented versioned registration request; scientific overrides are unsupported.')
+  requireAtlas(input.scope === undefined || input.scope === 'exeReferences' && input.region === 'exe' && input.operation !== 'source-qualification', 'registration-request', 'Only the additive Exe reference scope is supported; actual region remains Exe.')
   requireAtlas(input.schema === 'atlas-runtime-registration-request/v1' && ['register', 'knowledge', 'source-qualification'].includes(input.operation) && ['tryfan', 'riffelhorn', 'exe'].includes(input.region), 'registration-request', 'Unsupported operation/region; new observations, product replacement and method changes need separate qualified admission.')
   object(input.native)
   for (const k of ['expectedGeneration', 'expectedRevision'] as const) if (input[k] !== null) address(input[k])
@@ -29,7 +31,8 @@ export function nativeFor(snapshot: Snapshot, region: string): ObjectJson {
 export function validateRegistrations(snapshot: Snapshot, root: string, metrics?: ArtifactMetrics): Record<string, ObjectJson> {
   const ledger = snapshot.values.registrationLedger
   if (!ledger) return {}
-  requireAtlas(ledger.schema === 'atlas-runtime-registration-ledger/v1' && Object.keys(ledger).sort().join(',') === 'active,schema' && Object.keys(object(ledger.active)).sort().join(',') === (snapshot.values.exeRegistration ? 'exe,riffelhorn,tryfan' : 'riffelhorn,tryfan'), 'registration-invalid', 'Exact regional registration references for every admitted region are required.')
+  const expected = ['riffelhorn', 'tryfan', ...(snapshot.values.exeRegistration ? ['exe'] : []), ...(snapshot.values.exeReferencesRegistration ? ['exeReferences'] : [])].sort().join(',')
+  requireAtlas(ledger.schema === 'atlas-runtime-registration-ledger/v1' && Object.keys(ledger).sort().join(',') === 'active,schema' && Object.keys(object(ledger.active)).sort().join(',') === expected, 'registration-invalid', 'Exact regional/scoped registration references for every admitted population are required.')
   const current: Record<string, ObjectJson> = {}
   for (const [region, ref] of Object.entries(object(ledger.active))) {
     let id = String(ref), child: ObjectJson | undefined
@@ -37,8 +40,9 @@ export function validateRegistrations(snapshot: Snapshot, root: string, metrics?
     while (id) {
       requireAtlas(!seen.has(id), 'registration-cycle', 'Registration supersession cycle is invalid.'); seen.add(id)
       const v = readArtifact(root, id, metrics, 'registrations')
-      requireAtlas(Object.keys(v).sort().join(',') === 'explanation,knowledgeTime,native,nativeIdentity,operation,physicalChangeInferred,region,schema,sequence,sourceNotice,supersedes' && v.schema === 'atlas-runtime-registration-revision/v1' && v.region === region && v.physicalChangeInferred === false && Number.isSafeInteger(v.sequence) && Number(v.sequence) >= 0, 'registration-invalid', 'Malformed immutable registration revision.')
-      validateRequest({ schema: 'atlas-runtime-registration-request/v1', operation: v.operation as RegistrationRequest['operation'], region: region as RegistrationRequest['region'], expectedGeneration: null, expectedRevision: null, native: object(v.native), explanation: String(v.explanation), ...(v.sourceNotice === null ? {} : { sourceNotice: v.sourceNotice as unknown as Notice }) })
+      const scoped = region === 'exeReferences'
+      requireAtlas(Object.keys(v).sort().join(',') === (scoped ? 'explanation,knowledgeTime,native,nativeIdentity,operation,physicalChangeInferred,region,schema,scope,sequence,sourceNotice,supersedes' : 'explanation,knowledgeTime,native,nativeIdentity,operation,physicalChangeInferred,region,schema,sequence,sourceNotice,supersedes') && v.schema === 'atlas-runtime-registration-revision/v1' && v.region === (scoped ? 'exe' : region) && (!scoped || v.scope === region) && v.physicalChangeInferred === false && Number.isSafeInteger(v.sequence) && Number(v.sequence) >= 0, 'registration-invalid', 'Malformed immutable registration revision.')
+      validateRequest({ schema: 'atlas-runtime-registration-request/v1', operation: v.operation as RegistrationRequest['operation'], region: (scoped ? 'exe' : region) as RegistrationRequest['region'], ...(scoped ? { scope: 'exeReferences' as const } : {}), expectedGeneration: null, expectedRevision: null, native: object(v.native), explanation: String(v.explanation), ...(v.sourceNotice === null ? {} : { sourceNotice: v.sourceNotice as unknown as Notice }) })
       const time = object(v.knowledgeTime)
       requireAtlas(Object.keys(time).sort().join(',') === 'acceptedAt,basis' && time.basis === 'runtime acceptance clock; not physical observation or source publication' && typeof time.acceptedAt === 'string' && /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/.test(time.acceptedAt) && new Date(time.acceptedAt).toISOString() === time.acceptedAt, 'registration-time', 'Invalid knowledge acceptance clock; native physical time must remain separate.')
       requireAtlas(v.nativeIdentity === digest(v.native) && digest(v.native) === digest(nativeFor(snapshot, region)), 'registration-native', 'Registration cannot alter source/native support, time, provenance, rights or prepared identities.')

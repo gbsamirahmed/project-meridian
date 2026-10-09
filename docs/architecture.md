@@ -916,3 +916,48 @@ exact. The [task boundary](../runtime/atlas/exe-next-task.json) supersedes the p
 unbegun-task entry while retaining its history. Do not begin it here.
 
 Final protections: **76 safeguards and 794 tests passed; types, lint and build passed.**
+
+## 2026-10-09 — Exe habitat/planning runtime integration and prototype readiness
+
+**C — HABITAT AND PLANNING-REFERENCE INTEGRATION SUCCESS** within retained selected
+evidence and the local single-writer model. The [durable report](research/atlas-local-references.md) records
+15 PHI component claims on 13 original features and 37 planning features intersecting
+the six original Exe probes. They join the existing 89-record world as 141 qualified
+records (107 source/34 derived), preserving all 8 Exe water selectors, 32 numerical
+terrain outputs, old regional components and historical knowledge generations.
+
+Mapped habitat inventory is not current ecological condition/species presence;
+FZ2/FZ3 planning references are not observed water or current legal restrictions.
+Native combined categories, contributor vintages/unknown survey time, AEP/ignored
+defences and mixed Origin remain explicit. Partial selected coverage, CRS, time,
+rights and attribution accompany separately qualified overlapping records.
+
+The shared runtime adds a finite independent registration scope, not another region
+or serving system. Canonical files/filesystem root/full validation remain authoritative;
+schema 2 SQLite remains disposable. Library/CLI support classification, applicable
+unknown/reference-time, spatial/feature, knowledge and pinned historical queries.
+Measurements, independent source oracle and all regression protections are recorded
+in the report and receipts. No accepted scientific contract or production code changed.
+
+Prototype readiness: **READY FOR BOUNDED PROTOTYPE INTEGRATION**. A selected-region
+evidence explorer is defensible; national coverage or every family is not required.
+Node/browser integration, display CRS, qualified inspection, packaging and actual
+private-application ownership need a concrete plan and later explicitly authorized
+audit. No private repository access or transition occurred. Readiness is not public
+service, production durability, current-world truth or unrestricted redistribution.
+
+Tryfan remains CLOSED / ACCEPTED; earlier positive/negative research, all 42 statuses
+and 113 protected production hashes are preserved. Receipt optimisation remains CLOSED.
+No S7, new acquisition, Weather/Traverse/production Atlas/cloud/service changes.
+
+Exactly one next task: **Atlas first integrated Meridian prototype architecture and public/private integration-boundary plan — NOT BEGUN**.
+The [task boundary](../runtime/atlas/references-next-task.json) supersedes the previous unbegun integration entry
+while retaining research history. It is public-only planning: no private access,
+migration or application implementation is authorized here. Do not begin it now.
+
+Final result: **378 measured indexed/full comparisons agreed across three fresh processes;
+84 safeguards and 903 tests passed; types, lint and build passed.** Median revised-pin
+full open 9.113 s; catalogue build 838 ms; catalogue 220 KiB. Candidate selection reduces
+exact work, but measured end-to-end scans/indexed queries are similar. Three external
+worlds/caches occupy about 59.1 MiB; the frozen metadata estimate was too low.
+Prototype readiness and the public-only unbegun next task above remain the decision.

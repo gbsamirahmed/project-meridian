@@ -2,7 +2,7 @@
 from pathlib import Path
 import hashlib,json,math,os,sqlite3,sys,time
 from retrieval_query import Qualified
-from exe_worker import describe as describe_exe
+from exe_worker import describe as describe_exe,describe_references
 R=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(R/'scripts/atlas/riffelhorn-retrieval'))
 import query as Q
@@ -62,13 +62,13 @@ class Adapter:
   self.exe=a.get('exe')
   if self.exe:
    from shapely.geometry import shape
-   for r in self.exe['records']:
+   for r in self.exe['records']+(a.get('references',{}).get('records',[])):
     g=shape(r['support']['geometry']);crs=r['support']['crs'];bng=Q.project(g,crs,'EPSG:27700');epoch={'status':'unknown','reason':'Reference classification is not physical observation; native water-time roles remain separate.'}
     times=r['waterTime'];event=next((x['extent'] for x in times if x['role'] in ['observation','event'] and x['extent']['kind']=='interval'),None)
     if event and event['start'][:4]==event['end'][:4]:epoch={'status':'known','year':int(event['start'][:4]),'basis':'Native monthly/event interval calendar-year projection only; exact interval remains attached.'}
     reference={'status':'known','year':2019,'basis':'WFD classification reference2019, not observation or publication.'} if r['identity']=='exe:wfd' else {'status':'unknown','reason':'No product-reference year admitted as an observation timestamp.'}
-    self.records.append({'key':'exe:'+r['identity'],'identity':r['identity'],'region':'exe','feature':r['feature'],'family':r['family'],'representation':r['representation'],'product':r['product'],'bounds':list(bng.intersection(Q.box(*self.exe['support']['bounds'])).bounds),'temporal':{'evidence-epoch':epoch,'product-reference':reference},'record':r,'geometry':bng,'evidenceClass':r['evidenceClass']})
-  self.bykey={r['key']:r for r in self.records};need(len(self.bykey)==49+(8 if self.exe else 0),'registration-invalid','Unexpected retained population.')
+    self.records.append({'key':'exe:'+r['identity'],'identity':r['identity'],'region':'exe','feature':r['feature'],'family':r['family'],'representation':r['representation'],'product':r['product'],'bounds':list(bng.intersection(Q.box(*self.exe['support']['bounds'])).bounds),'temporal':{'evidence-epoch':epoch,'product-reference':reference},'record':r,'geometry':bng,'evidenceClass':r['evidenceClass'],**({'scope':'exeReferences','nativeClassification':r['nativeClassification']} if 'referenceTime' in r else {})})
+  self.bykey={r['key']:r for r in self.records};need(len(self.bykey)==49+(8 if self.exe else 0)+(52 if a.get('references') else 0),'registration-invalid','Unexpected retained population.')
   self.setup={**self.s.setup,'milliseconds':(time.perf_counter()-start)*1000,'records':len(self.records),'nativeMetadataBytesParsed':self.s.setup['metadataMemberBytes'],'inputHashOperations':len(self.s.input_manifest['inputs'])+len(self.s.manifest['artifacts']),'inputBytesHashed':sum(i['bytes'] for i in self.s.input_manifest['inputs'])+sum(i['bytes'] for i in self.s.manifest['artifacts'])}
  def build(self,a):
   start=time.perf_counter();p=Path(a['file']);db=sqlite3.connect(p)
@@ -163,7 +163,7 @@ CREATE VIRTUAL TABLE bounds USING rtree(rowid,minx,maxx,miny,maxy);''')
      if not (b[0]<=g.x<b[2] and b[1]<=g.y<b[3] if g.geom_type=='Point' else core.intersection(g).area>0):continue
     f=r['record'];cat=self.tryfan['catalogue'];evidence={'identity':r['identity'],'family':f['id'],'representation':r['representation'],'evidenceKind':'qualified source-product metadata, not physical measurement at query point','nativeMetadata':f['nativeMetadata'],'qualification':f['qualification'],'source':next(s for s in cat['sources'] if s['id']==f['source']),'product':next(p for p in cat['products'] if p['id']==f['product']),'representations':[v for v in cat['representations'] if v['id'] in f['representations']]}
     support={'registryApplicability':self.tryfan['core'],'meaning':'Registered core eligibility for metadata inspection; full native source support remains in original records, not inferred equivalent.'};rights={'nativeMetadata':f['nativeMetadata'],'source':evidence['source'],'product':evidence['product']};provenance={'catalogueSelector':f['id'],'source':f['source'],'product':f['product'],'basis':cat['basis']}
-   out.append({'identity':r['identity'],'region':r['region'],'evidence':evidence,'support':support,'temporal':{**r['temporal'],'native':r['record']['waterTime'],'retention':r['record']['provenance']['source'],'sourceRecordDates':r['record']['provenance']['resource'].get('dates',[]),'preparationTime':{'status':'unknown','reason':'Exact preparation completion clock not independently established; subset acquisition receipt remains distinct.'}} if r['region']=='exe' else r['temporal'],'provenance':provenance,'rights':rights})
+   out.append({'identity':r['identity'],'region':r['region'],**({'scope':r['scope']} if r.get('scope') else {}),'evidence':evidence,'support':support,'temporal':{**r['temporal'],'native':r['record'].get('referenceTime',r['record']['waterTime']),'retention':r['record']['provenance']['source'],'sourceRecordDates':r['record']['provenance']['resource'].get('dates',[]),'preparationTime':{'status':'unknown','reason':'Exact preparation completion clock not independently established; subset acquisition receipt remains distinct.'}} if r['region']=='exe' else r['temporal'],'provenance':provenance,'rights':rights})
   return {'results':out,'metrics':m,'gap':None if out else {'reason':'no-matching-retained-evidence','physicalAbsenceInferred':False}}
  def query(self,a,verified=False,allowed_keys=None):
   q=a['query'];valid_query(q,{r['family'] for r in self.records});start=time.perf_counter()
@@ -198,6 +198,7 @@ def main():
   try:
    op=req['operation'];a=req['args']
    if op=='describe-exe':result=describe_exe(a['dataRoot'])
+   elif op=='describe-references':result=describe_references(a['dataRoot'])
    elif op=='describe':
     s=Q.Session(data=Path(a['dataRoot']),root=Path(a['preparedRoot']));result={'native':accepted.describe(s),'setup':{**s.setup,'inputHashOperations':len(s.input_manifest['inputs'])+len(s.manifest['artifacts']),'inputBytesHashed':sum(i['bytes'] for i in s.input_manifest['inputs'])+sum(i['bytes'] for i in s.manifest['artifacts'])}}
    elif op=='initialize':adapter=Adapter(a);result=adapter.setup

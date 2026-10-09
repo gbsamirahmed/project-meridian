@@ -29,3 +29,17 @@ def describe(data):
    selected=contains_xy(box(296600,86550,296800,86750),x,y)
    add('exe:'+month+':support',MultiPoint(list(zip(x[selected],y[selected]))),'EPSG:27700','Exactly selected native cell centres in P1, not continuous area or fractional cover.')
  return {'raw':raw,'supports':supports,'metrics':{'milliseconds':(time.perf_counter()-start)*1000,'sourceHashOperations':len(raw['sources']),'sourceBytesHashed':sum(s['bytes'] for s in raw['sources'].values()),'directoryHashOperations':len(raw['directorySha256']),'directoryBytesHashed':sum(p.stat().st_size for p in root.iterdir() if p.is_file()),'nativeCellsPerMonth':22624,'selectedCentresPerMonth':77}}
+
+def describe_references(data):
+ start=time.perf_counter();root=Path(data)/'derived/atlas/water-check-v1';raw=reader.read(root)
+ # Exact six accepted supports; no newly selected observation area.
+ probes=[box(*b) for b in [[296600,86550,296800,86750],[296750,87000,296950,87200],[297050,87250,297250,87450],[297550,87500,297750,87700],[295700,87050,295900,87250],[296750,88250,296950,88450]]]
+ supports={};counts={}
+ for kind in ['phi','flood']:
+  supports[kind]={}
+  for g,p in reader.W.read_vectors(root,kind):
+   if not any(g.intersection(b).area>0 for b in probes):continue
+   if not g.is_valid or g.is_empty:raise ValueError('Invalid original reference geometry; no silent repair')
+   supports[kind][str(p['featureId'])]={'geometry':mapping(g),'crs':'EPSG:27700','meaning':'Original inventory/planning geometry; selected via frozen probes, not present physical extent or legal restriction.'}
+  counts[kind]=len(supports[kind])
+ return {'raw':raw,'supports':supports,'metrics':{'milliseconds':(time.perf_counter()-start)*1000,'sourceHashOperations':len(raw['sources']),'sourceBytesHashed':sum(s['bytes'] for s in raw['sources'].values()),'directoryHashOperations':len(raw['directorySha256']),'directoryBytesHashed':sum(p.stat().st_size for p in root.iterdir() if p.is_file()),'selectedFeatures':counts}}

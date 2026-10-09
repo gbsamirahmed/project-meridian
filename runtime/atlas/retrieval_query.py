@@ -37,7 +37,18 @@ class Qualified:
  def validate(self,q):
   self.need(isinstance(q,dict),'query-invalid','Query must be a structured object.')
   base={k:v for k,v in q.items() if k in ['region','identity','feature','product','point','area','crs','time']};self.o.validate(base)
-  self.need(isinstance(q,dict) and not set(q)-set(base)-{'families','representation','evidenceClass','revision','spatialSupport','knowledge','relatedTo','waterTime'},'query-invalid','Unsupported qualified predicates.')
+  self.need(isinstance(q,dict) and not set(q)-set(base)-{'families','representation','evidenceClass','revision','spatialSupport','knowledge','relatedTo','waterTime','nativeClassification','referenceTime'},'query-invalid','Unsupported qualified predicates.')
+  if 'nativeClassification' in q:self.need(isinstance(q['nativeClassification'],str) and q['nativeClassification'] in {r.get('nativeClassification') for r in self.native.values()},'query-invalid','Unsupported native code; no ecological or legal interpretation.')
+  if 'referenceTime' in q:
+   t=q['referenceTime'];self.need(isinstance(t,dict) and t.get('role') in ['survey','effective','contributor','publication'],'query-invalid','Use survey/effective/contributor/publication qualifier.')
+   if t.get('unknown') is True:self.need(set(t)=={'role','unknown'},'query-invalid','Unknown does not establish continuous validity.')
+   else:
+    self.need(set(t)=={'role','start','end'},'query-invalid','Explicit closed native interval required.')
+    for v in [t['start'],t['end']]:
+     try:valid=isinstance(v,str) and (len(v)==4 and v.isdigit() and 1<=int(v)<=9999 if t['role']=='contributor' else datetime.date.fromisoformat(v).isoformat()==v)
+     except (ValueError,TypeError):valid=False
+     self.need(valid,'query-invalid','Contributor vintage is year precision; survey/effective/publication use ISO days when known.')
+    self.need(t['start']<=t['end'],'query-invalid','Invalid reference interval ordering.')
   self.need(q.get('evidenceClass') in [None,'source','derived'] and q.get('representation') in [None,'vector','raster','source-product-metadata','local-scalar','native-cell-summary'],'query-invalid','Unsupported evidence class/representation.')
   if 'families' in q:self.need(isinstance(q['families'],list) and bool(q['families']) and all(isinstance(f,str) and f in self.families for f in q['families']),'query-invalid','Unsupported family.')
   if 'revision' in q:self.need(isinstance(q['revision'],str) and len(q['revision'])==64 and all(c in '0123456789abcdef' for c in q['revision']),'query-invalid','Revision must be an exact SHA256.')
@@ -72,17 +83,26 @@ class Qualified:
   for k in ['region','identity','representation','product']:
    if k in q and q[k]!=r[k]:return False
   if 'families' in q and r['family'] not in q['families']:return False
-  revision=r['revision'] if cls=='derived' and r['region']!='exe' else self.v['nativeRevisions'][r['region']]
+  scope=r.get('scope',r['region']);revision=r['revision'] if cls=='derived' and r['region']!='exe' else self.v['nativeRevisions'][scope]
   if 'revision' in q and q['revision']!=revision:return False
   if 'feature' in q and (cls=='derived' or r['feature']!=q['feature']):return False
+  if 'nativeClassification' in q and r.get('nativeClassification')!=q['nativeClassification']:return False
+  if 'referenceTime' in q:
+   if r.get('scope')!='exeReferences':return False
+   if q['referenceTime']['role'] in ['survey','contributor'] and r['family']!='priority-habitat':return False
+   if q['referenceTime']['role']=='effective' and r['family']!='planning-flood-zone':return False
+   t=q['referenceTime'];role='nominal-epoch' if t['role']=='contributor' else t['role'];times=r['record']['provenance']['resource'].get('dates',[]) if role=='publication' else r['record']['referenceTime'];extents=[x['extent'] for x in times if x['role']==role]
+   if t.get('unknown'):
+    if extents and not all(x['kind']=='unknown' for x in extents):return False
+   elif not any((t['start']<=x['end'] and t['end']>=x['start']) if x['kind']=='interval' else (t['start']<=x['value']<=t['end'] if x['kind']=='epoch' else False) for x in extents):return False
   if 'waterTime' in q:
-   if r['region']!='exe':return False
+   if r['region']!='exe' or r.get('scope'):return False
    t=q['waterTime'];wanted='nominal-epoch' if t['role']=='reference' else t['role'];times=[x['extent'] for x in r['record']['waterTime'] if x['role']==wanted]
    if t.get('unknown'):
     if times and not all(x['kind']=='unknown' for x in times):return False
    elif not any((t['start']<=x['end'] and t['end']>=x['start']) if x['kind']=='interval' else (t['start']<=x['value']<=t['end'] if x['kind']=='epoch' else False) for x in times):return False
   if 'knowledge' in q:
-   k=q['knowledge'];v=self.v['knowledge'][r['region']]
+   k=q['knowledge'];v=self.v['knowledge'][scope]
    if k.get('unknown'):return v is None
    if v is None:return False
    if 'revision' in k:return v['revision']==k['revision']
@@ -116,7 +136,7 @@ class Qualified:
    out=[]
    for r in native['results']:
     key=r['region']+':'+r['identity']
-    if key in nativekeys:out.append({**r,'key':key,'revision':self.v['nativeRevisions'][r['region']],'evidenceClass':self.native[key].get('evidenceClass','source'),'family':self.native[key]['family'],'representation':self.native[key]['representation']})
+    if key in nativekeys:out.append({**r,'key':key,'revision':self.v['nativeRevisions'][self.native[key].get('scope',r['region'])],'evidenceClass':self.native[key].get('evidenceClass','source'),'family':self.native[key]['family'],'representation':self.native[key]['representation']})
    candidates=list(self.rows)
    if db:
     clauses=['0'] if q.get('evidenceClass')=='source' or 'feature' in q else [];args=[]
