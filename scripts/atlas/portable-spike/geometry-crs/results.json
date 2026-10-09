@@ -1,0 +1,1522 @@
+{
+  "study": "atlas-geometry-crs-binding-experiment/v1",
+  "date": "2026-10-10",
+  "checkpoint": "695b855c1440206f2082db28fe1eefbadba71e54",
+  "inventory": {
+    "python": "3.12.6",
+    "os": "Windows-11-10.0.26200-SP0",
+    "packages": {
+      "numpy": {
+        "version": "2.5.3",
+        "installedBytes": 53695241,
+        "packageBytes": 32531129,
+        "companionBytes": 21164112,
+        "nativeVersion": null,
+        "licenceFiles": [
+          "numpy-2.5.3.dist-info/licenses/LICENSE.txt",
+          "numpy-2.5.3.dist-info/licenses/numpy/_core/include/numpy/libdivide/LICENSE.txt",
+          "numpy-2.5.3.dist-info/licenses/numpy/_core/src/common/pythoncapi-compat/COPYING",
+          "numpy-2.5.3.dist-info/licenses/numpy/_core/src/highway/LICENSE",
+          "numpy-2.5.3.dist-info/licenses/numpy/_core/src/multiarray/dragon4_LICENSE.txt",
+          "numpy-2.5.3.dist-info/licenses/numpy/_core/src/npysort/x86-simd-sort/LICENSE.md",
+          "numpy-2.5.3.dist-info/licenses/numpy/_core/src/umath/svml/LICENSE",
+          "numpy-2.5.3.dist-info/licenses/numpy/fft/pocketfft/LICENSE.md",
+          "numpy-2.5.3.dist-info/licenses/numpy/linalg/lapack_lite/LICENSE.txt",
+          "numpy-2.5.3.dist-info/licenses/numpy/ma/LICENSE",
+          "numpy-2.5.3.dist-info/licenses/numpy/random/LICENSE.md",
+          "numpy-2.5.3.dist-info/licenses/numpy/random/src/distributions/LICENSE.md",
+          "numpy-2.5.3.dist-info/licenses/numpy/random/src/mt19937/LICENSE.md",
+          "numpy-2.5.3.dist-info/licenses/numpy/random/src/pcg64/LICENSE.md",
+          "numpy-2.5.3.dist-info/licenses/numpy/random/src/philox/LICENSE.md",
+          "numpy-2.5.3.dist-info/licenses/numpy/random/src/sfc64/LICENSE.md",
+          "numpy-2.5.3.dist-info/licenses/numpy/random/src/splitmix64/LICENSE.md",
+          "numpy/_core/include/numpy/random/LICENSE.txt",
+          "numpy/ma/LICENSE",
+          "numpy/random/LICENSE.md"
+        ],
+        "dlls": [
+          {
+            "name": "libscipy_openblas64_-ed4f167a5330424524f45258e7ca2c8d.dll",
+            "bytes": 20589056,
+            "sha256": "ed4f167a5330424524f45258e7ca2c8d7f03c0cba1f30ee4985553ac1f88ecf8"
+          },
+          {
+            "name": "msvcp140-a4c2229bdc2a2a630acdc095b4d86008.dll",
+            "bytes": 575056,
+            "sha256": "a4c2229bdc2a2a630acdc095b4d86008e5c3e3bc7773174354f3da4f5beb9cde"
+          }
+        ]
+      },
+      "shapely": {
+        "version": "2.1.2",
+        "installedBytes": 6365854,
+        "packageBytes": 2792470,
+        "companionBytes": 3573384,
+        "nativeVersion": "3.13.1",
+        "licenceFiles": [
+          "shapely-2.1.2.dist-info/licenses/LICENSE.txt",
+          "shapely-2.1.2.dist-info/licenses/LICENSE_GEOS",
+          "shapely-2.1.2.dist-info/licenses/LICENSE_win32"
+        ],
+        "dlls": [
+          {
+            "name": "geos-ae6efa0782962b98e358f10ea539ae5f.dll",
+            "bytes": 2564608,
+            "sha256": "094508747b6bb6eb785b2aa67d7899724ce78ee6cc375e7a66e11be3bcf5a08e"
+          },
+          {
+            "name": "geos_c-072b7a9224d16d3e4ab2395bb855b2d3.dll",
+            "bytes": 451072,
+            "sha256": "7e4d87ccb640eda92f150b7cee178ef13abe282acd36af08f6dca5eddaf931a4"
+          },
+          {
+            "name": "msvcp140-90bc62d4947a5878f1dc1057312f3be2.dll",
+            "bytes": 557704,
+            "sha256": "90bc62d4947a5878f1dc1057312f3be2137eb376039f4afda2f64c06353f2198"
+          }
+        ]
+      },
+      "pyproj": {
+        "version": "3.7.2",
+        "installedBytes": 25463599,
+        "packageBytes": 18389135,
+        "companionBytes": 7074464,
+        "nativeVersion": "9.5.1",
+        "licenceFiles": [
+          "pyproj-3.7.2.dist-info/licenses/LICENSE",
+          "pyproj-3.7.2.dist-info/licenses/LICENSE_proj"
+        ],
+        "dlls": [
+          {
+            "name": "jpeg62-6af98f759afc6cea2ea01a24bea0bc98.dll",
+            "bytes": 683520,
+            "sha256": "6af98f759afc6cea2ea01a24bea0bc981a067ebf2f6f0093faa7352139c998b6"
+          },
+          {
+            "name": "libcurl-50d401113827f0f3a5d90c6a7176c6ad.dll",
+            "bytes": 594944,
+            "sha256": "75e38231d04a2be3ccf7c7e6e7fb08e65af487c4fda4ef3ab927e529581280c1"
+          },
+          {
+            "name": "liblzma-0b4d0ddf0e0758305b1b8162225048f8.dll",
+            "bytes": 187904,
+            "sha256": "0b4d0ddf0e0758305b1b8162225048f8cd90267cbc5500b94d7e5147a0893e5d"
+          },
+          {
+            "name": "msvcp140-0f885b509a685d2bbfa652fed26b5fb3.dll",
+            "bytes": 557728,
+            "sha256": "0f885b509a685d2bbfa652fed26b5fb31d88fbdab0a978c641d1c7b8aa460aa9"
+          },
+          {
+            "name": "proj_9-c635a7dcf1c2f5308514f46a54311e70.dll",
+            "bytes": 3417088,
+            "sha256": "f7c0e557890e501e33545c3406f167810faed118c79b6c0de25100b29058af80"
+          },
+          {
+            "name": "sqlite3-fe7be31bbec5a4ba375dbf7916a37e96.dll",
+            "bytes": 1075200,
+            "sha256": "fe7be31bbec5a4ba375dbf7916a37e96084defdce56b0d41c09a59c563394147"
+          },
+          {
+            "name": "tiff-04898ba48a3f57dbaae85579a67d7489.dll",
+            "bytes": 467968,
+            "sha256": "fd6adc86ecc8796fe362777334356b99cb3ed0397f11070a5f2a945ad7e0b974"
+          },
+          {
+            "name": "zlib1-9b024f7633a4f81dfeedce1958c40759.dll",
+            "bytes": 90112,
+            "sha256": "9b024f7633a4f81dfeedce1958c407591ebbfc3109ed312fb88d445597e00d74"
+          }
+        ]
+      },
+      "rasterio": {
+        "version": "1.4.3",
+        "installedBytes": 69886974,
+        "packageBytes": 16298838,
+        "companionBytes": 53588136,
+        "nativeVersion": "3.9.3",
+        "licenceFiles": [
+          "rasterio-1.4.3.dist-info/LICENSE.txt",
+          "rasterio/gdal_data/LICENSE.TXT"
+        ],
+        "dlls": [
+          {
+            "name": "freexl-1-af8378f9f54baeee60ba29a2eb4be3a9.dll",
+            "bytes": 66048,
+            "sha256": "630c1a71c339f8b5e738a5b7be83113aa46c00825b97b12e2169129e96e4106a"
+          },
+          {
+            "name": "gdal-0c91f8aa17bf5518bc6a69e15438cc5c.dll",
+            "bytes": 19130368,
+            "sha256": "0ec06c1a0fb46eb0fdde9d18f2ba87cef8ebb6f40ab4beaa7a47e8812d28a58a"
+          },
+          {
+            "name": "geos-1045aa18488ed886193a206783279614.dll",
+            "bytes": 2539520,
+            "sha256": "e209a9e93ab1d7767aaabd45d989753ef0044895368566784c91cdec8ad70eb3"
+          },
+          {
+            "name": "geos_c-1ac3788ee13753d93ff9184dbeebdd92.dll",
+            "bytes": 455168,
+            "sha256": "6e5062b8b70eba32d817df81c99c8219cd6928fc7af4eaa015df70e40253077f"
+          },
+          {
+            "name": "geotiff-ac8f46fb743754d67b935ac3d1ca3018.dll",
+            "bytes": 160768,
+            "sha256": "7713ee3999304bf6e0b51f6f02ec24370d1c88d72ba3a2dcadfff4fd0bccd0cb"
+          },
+          {
+            "name": "gif-cd7dfb88992600f7246b8a1d93973a5f.dll",
+            "bytes": 36352,
+            "sha256": "385e9bf8af627bf587cb93da65dbb12e08fc5359dddb9888c58300e7df13f6fb"
+          },
+          {
+            "name": "hdf5-7d3a7692f9b0267de16dbc0c740dbd23.dll",
+            "bytes": 3537408,
+            "sha256": "46903f00344f98e6ad8678b11d334726e21a425aa1e4480183a7c8e60c742c8a"
+          },
+          {
+            "name": "hdf5_hl-b157875d2402d925e457744c04ba1b41.dll",
+            "bytes": 118784,
+            "sha256": "94f6fa2bd2da42b1416b0378d1076134a7f0b9c86b9a881a678e240baa363186"
+          },
+          {
+            "name": "iconv-2-718e10f74b34deb5d5a517ae81f56bb3.dll",
+            "bytes": 1075200,
+            "sha256": "6714f3567bf9552b7d030404506e7b596a4b34d128d4a1be84a8518a0f5c7317"
+          },
+          {
+            "name": "jpeg62-7b22aad5185b3090ec96fafc56df898c.dll",
+            "bytes": 673792,
+            "sha256": "5d9c843f1cc4edc0465317ae6f04e223e93627288f475b188d5bcb5bf21e002b"
+          },
+          {
+            "name": "json-c-f682e0885e5b3db071744ca2dd4e1500.dll",
+            "bytes": 57344,
+            "sha256": "233f9caccf397b2f3e1cb6a115832345d95302284599e194d71de13d9ec5b20a"
+          },
+          {
+            "name": "Lerc-31ee1bcc53aa5c2e21402901329d5b90.dll",
+            "bytes": 513536,
+            "sha256": "ada7eae34f125629775c1446c924a86cc6e457913ae7b85b9d6ac9b8d35ca887"
+          },
+          {
+            "name": "libcrypto-3-x64-2c2d24f46e8912647ae707b62db93852.dll",
+            "bytes": 4659712,
+            "sha256": "e2663de074b15e37ab7393fcc226d47ba5fa2dfbb3d5cc0bb1b954e8cb0fa9f3"
+          },
+          {
+            "name": "libcurl-38ee3c0b265a01505d13483e9e02fdd4.dll",
+            "bytes": 584192,
+            "sha256": "376e42322697c3bab1ec1abc7ca6e52b42444b6e6e358633a3c204bc3a686c6a"
+          },
+          {
+            "name": "libexpat-6fdd21e1d08cc2ad28ac127cbf891fb7.dll",
+            "bytes": 153600,
+            "sha256": "c81900fe0cac0f8949047a59871a7a3b1e471759e03c82261be7fbdb3b9407c7"
+          },
+          {
+            "name": "liblzma-8fb058033d3cf38ae3060739b3a14302.dll",
+            "bytes": 186368,
+            "sha256": "05b0f59789a5aac79a4dba7bc5641fbbb79dff7380d65a40a33ba29b65d3c6b9"
+          },
+          {
+            "name": "libpng16-fdac1beb1acf6794fff1690e0a579a9d.dll",
+            "bytes": 197120,
+            "sha256": "451a5ed21062fbc75eae8590448b37911656ae67cd2dd9d933f3e3a60c44bef7"
+          },
+          {
+            "name": "libpq-b8ca67b316eedd8fb662787b9253351c.dll",
+            "bytes": 305664,
+            "sha256": "abe0ef352f428b4d9f8005625725cb4c3f9842c704805233870157847e155124"
+          },
+          {
+            "name": "libsharpyuv-2e5182496a1bb260ca73afe264fe5a79.dll",
+            "bytes": 25088,
+            "sha256": "7eff57e795ffa2948481162fd1332d898131c6d31ef4d83b4429f241e997609e"
+          },
+          {
+            "name": "libssl-3-x64-b799ebf482c1da262d14a3764d7ee551.dll",
+            "bytes": 819200,
+            "sha256": "6558199b71bffb09cca5d6b6665c3b10ab6d3c395f2f12ad67570b813a03af05"
+          },
+          {
+            "name": "libwebp-22e4b075635059d80eb6faee67251802.dll",
+            "bytes": 367616,
+            "sha256": "fd334f5511b9ca1fa2c0f4c25ef759576c0c13b68d6923c9e8679781e450d194"
+          },
+          {
+            "name": "libxml2-562d9e91bad4f07edac6bba0ef3687f1.dll",
+            "bytes": 1392640,
+            "sha256": "a7a4119ac0261758690524606d37b9494924276c7877c824f481697f4b83eca4"
+          },
+          {
+            "name": "minizip-373a37b173dcdb89415db1d87c7b132b.dll",
+            "bytes": 46592,
+            "sha256": "10d35cc05c740007753e0306daa840c0a4484648acb21b6fb9fafca1ab11a6ff"
+          },
+          {
+            "name": "msvcp140-0e70a616186a640ed2eed9fda9f9a89f.dll",
+            "bytes": 585384,
+            "sha256": "66fa570bd6b879aa491f6e45a3e576c3ec7f5fe31ed0eba8b7d81f88c3b01680"
+          },
+          {
+            "name": "netcdf-4dcb25369f09ddb6aefeee3a493ac659.dll",
+            "bytes": 1105920,
+            "sha256": "738aa7eb697c5adfb377edca2ed29a7993f3320e465f5bdfa07d761dd7c62809"
+          },
+          {
+            "name": "openjp2-ebedeb79a4649b7e040ea211fc6ce2b7.dll",
+            "bytes": 353280,
+            "sha256": "986f7a8b222ab6a52202e02e8fe0c676de1070081714126cc208a6f69e565285"
+          },
+          {
+            "name": "pcre2-8-0ac0971c4cbb5db129c3e021bdf5d9c2.dll",
+            "bytes": 568320,
+            "sha256": "166f78a07af503dc4c7e17637b7af45f37c60237903f085596cb76ee9a0a2d5c"
+          },
+          {
+            "name": "proj_9-139fcbe1c06b2292f008acabcc19b1c1.dll",
+            "bytes": 3451392,
+            "sha256": "2a9c29a2fe25c1bfd27a6a1a8303c7d817ececf9fc1bd435cbbbe8699cf94ba9"
+          },
+          {
+            "name": "qhull_r-475a92433d384c8b2e36eefd5b24f1f7.dll",
+            "bytes": 448000,
+            "sha256": "608913b3e37c0ac0806ebbbdbb5291e0835319ceb43a06fc9067adc452f17ba7"
+          },
+          {
+            "name": "spatialite-928196e5c1a0f4a6cb7fcba59ca34118.dll",
+            "bytes": 7562752,
+            "sha256": "a7b588326ef631406801a16f471c009712af8cbd30d3f63b4c7853822ef9cf83"
+          },
+          {
+            "name": "sqlite3-8aeeb35f58b0004b9afadb4b97984877.dll",
+            "bytes": 1128960,
+            "sha256": "e00d672f693f72273ce5c1ff2238a21738e17888948bae16f83e9b5fc0d84521"
+          },
+          {
+            "name": "szip-c3c2fd778fcb3f99c51fef2ebf43efab.dll",
+            "bytes": 50688,
+            "sha256": "126f2316e39cee1a90e9a30b91b80f98c85bb0c58763aaa539211625516158a2"
+          },
+          {
+            "name": "tiff-5d0bd3e78e0e701d23907f9882f83833.dll",
+            "bytes": 487936,
+            "sha256": "a8dedf027ec8655a073cb4e0f66f78136653f4a70d87dc21b2e2df71515dab49"
+          },
+          {
+            "name": "zlib1-d643b916c0d5b64e42c135bb9f40adf6.dll",
+            "bytes": 89088,
+            "sha256": "42972d03917538d7b84dcdfaee38f1a94eac17c849845f21df4ee3180bcb6342"
+          },
+          {
+            "name": "zstd-5e6345ecaba60462a7b81731fea22d58.dll",
+            "bytes": 654336,
+            "sha256": "53b578ff88276e414fc20fc095f2eb17375f07af3e55aa6bab09bbf59dc942f6"
+          }
+        ]
+      }
+    },
+    "tools": {
+      "node": true,
+      "java": true,
+      "javac": true,
+      "gradle": false,
+      "cmake": false,
+      "clang": false,
+      "gcc": false,
+      "adb": false,
+      "dotnet": true,
+      "emcc": false,
+      "xcodebuild": false
+    },
+    "localCandidates": {
+      "osgeoPython": false,
+      "jsts": false,
+      "proj4": false,
+      "geos-wasm": false,
+      "gdal3.js": false
+    },
+    "projDatabase": {
+      "bytes": 9261056,
+      "sha256": "47a7205d83ba6b7774b763f276ab57331f4dade2b2cfbcc0d486677e6543350b"
+    },
+    "operations": [
+      {
+        "pipeline": "proj=pipeline step inv proj=somerc lat_0=46.9524055555556 lon_0=7.43958333333333 k_0=1 x_0=2600000 y_0=1200000 ellps=bessel step proj=push v_3 step proj=cart ellps=bessel step proj=helmert x=674.374 y=15.056 z=405.346 step inv proj=cart ellps=WGS84 step proj=pop v_3 step proj=unitconvert xy_in=rad xy_out=deg",
+        "accuracyMetres": 1.0
+      }
+    ]
+  },
+  "imports": {
+    "reference": [
+      {
+        "mode": "imports",
+        "stages": [
+          {
+            "stage": "standardLibrary",
+            "memory": {
+              "current": 25124864,
+              "peak": 25124864
+            }
+          },
+          {
+            "stage": "numpy",
+            "ms": 62.4762000516057,
+            "memory": {
+              "current": 34607104,
+              "peak": 34607104
+            }
+          },
+          {
+            "stage": "shapely",
+            "ms": 21.782999858260155,
+            "memory": {
+              "current": 37150720,
+              "peak": 37150720
+            }
+          },
+          {
+            "stage": "pyproj",
+            "ms": 61.094600008800626,
+            "memory": {
+              "current": 52441088,
+              "peak": 52441088
+            }
+          },
+          {
+            "stage": "rasterio",
+            "ms": 150.3403999377042,
+            "memory": {
+              "current": 66170880,
+              "peak": 66170880
+            }
+          }
+        ],
+        "method": "sequential imports; current/peak working set, not allocation attribution"
+      },
+      {
+        "mode": "imports",
+        "stages": [
+          {
+            "stage": "standardLibrary",
+            "memory": {
+              "current": 25141248,
+              "peak": 25141248
+            }
+          },
+          {
+            "stage": "numpy",
+            "ms": 58.472500182688236,
+            "memory": {
+              "current": 34512896,
+              "peak": 34512896
+            }
+          },
+          {
+            "stage": "shapely",
+            "ms": 20.581899909302592,
+            "memory": {
+              "current": 37011456,
+              "peak": 37011456
+            }
+          },
+          {
+            "stage": "pyproj",
+            "ms": 59.7163001075387,
+            "memory": {
+              "current": 52445184,
+              "peak": 52445184
+            }
+          },
+          {
+            "stage": "rasterio",
+            "ms": 151.75239997915924,
+            "memory": {
+              "current": 66326528,
+              "peak": 66326528
+            }
+          }
+        ],
+        "method": "sequential imports; current/peak working set, not allocation attribution"
+      },
+      {
+        "mode": "imports",
+        "stages": [
+          {
+            "stage": "standardLibrary",
+            "memory": {
+              "current": 24895488,
+              "peak": 24895488
+            }
+          },
+          {
+            "stage": "numpy",
+            "ms": 55.878200102597475,
+            "memory": {
+              "current": 34553856,
+              "peak": 34553856
+            }
+          },
+          {
+            "stage": "shapely",
+            "ms": 21.693299990147352,
+            "memory": {
+              "current": 37060608,
+              "peak": 37060608
+            }
+          },
+          {
+            "stage": "pyproj",
+            "ms": 59.60209993645549,
+            "memory": {
+              "current": 52404224,
+              "peak": 52404224
+            }
+          },
+          {
+            "stage": "rasterio",
+            "ms": 155.21949995309114,
+            "memory": {
+              "current": 66256896,
+              "peak": 66256896
+            }
+          }
+        ],
+        "method": "sequential imports; current/peak working set, not allocation attribution"
+      }
+    ],
+    "nativeXYOnly": [
+      {
+        "mode": "native",
+        "stages": [
+          {
+            "stage": "standardLibrary",
+            "memory": {
+              "current": 25128960,
+              "peak": 25128960
+            }
+          },
+          {
+            "stage": "ctypesPROJDatabaseTransform",
+            "ms": 29.456600081175566,
+            "memory": {
+              "current": 36569088,
+              "peak": 39079936
+            },
+            "identity": {
+              "version": "9.5.1",
+              "dllSha256": "f7c0e557890e501e33545c3406f167810faed118c79b6c0de25100b29058af80",
+              "databaseSha256": "47a7205d83ba6b7774b763f276ab57331f4dade2b2cfbcc0d486677e6543350b"
+            }
+          }
+        ],
+        "method": "sequential imports; current/peak working set, not allocation attribution"
+      },
+      {
+        "mode": "native",
+        "stages": [
+          {
+            "stage": "standardLibrary",
+            "memory": {
+              "current": 25292800,
+              "peak": 25292800
+            }
+          },
+          {
+            "stage": "ctypesPROJDatabaseTransform",
+            "ms": 30.34180006943643,
+            "memory": {
+              "current": 36659200,
+              "peak": 39305216
+            },
+            "identity": {
+              "version": "9.5.1",
+              "dllSha256": "f7c0e557890e501e33545c3406f167810faed118c79b6c0de25100b29058af80",
+              "databaseSha256": "47a7205d83ba6b7774b763f276ab57331f4dade2b2cfbcc0d486677e6543350b"
+            }
+          }
+        ],
+        "method": "sequential imports; current/peak working set, not allocation attribution"
+      },
+      {
+        "mode": "native",
+        "stages": [
+          {
+            "stage": "standardLibrary",
+            "memory": {
+              "current": 25153536,
+              "peak": 25153536
+            }
+          },
+          {
+            "stage": "ctypesPROJDatabaseTransform",
+            "ms": 29.400500003248453,
+            "memory": {
+              "current": 36651008,
+              "peak": 39161856
+            },
+            "identity": {
+              "version": "9.5.1",
+              "dllSha256": "f7c0e557890e501e33545c3406f167810faed118c79b6c0de25100b29058af80",
+              "databaseSha256": "47a7205d83ba6b7774b763f276ab57331f4dade2b2cfbcc0d486677e6543350b"
+            }
+          }
+        ],
+        "method": "sequential imports; current/peak working set, not allocation attribution"
+      }
+    ]
+  },
+  "readerTrials": {
+    "reference-1": {
+      "trials": [
+        {
+          "mode": "reference",
+          "viewCount": 1,
+          "openMs": 1186.3416000269353,
+          "openMemory": {
+            "current": 168304640,
+            "peak": 320933888
+          },
+          "queryMemory": {
+            "current": 170536960,
+            "peak": 320933888
+          },
+          "geometry": {
+            "features": 38,
+            "vertices": 45383,
+            "wkbBytes": 990868,
+            "validFeatures": 38
+          },
+          "queries": {
+            "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+              "point": {
+                "medianMs": 12.812999775633216,
+                "minMs": 11.662099976092577,
+                "maxMs": 24.981499882414937
+              },
+              "area": {
+                "medianMs": 16.576299909502268,
+                "minMs": 15.539099927991629,
+                "maxMs": 25.517999893054366
+              },
+              "identity": {
+                "medianMs": 1.125300070270896,
+                "minMs": 1.0956998448818922,
+                "maxMs": 1.408000010997057
+              },
+              "lineage": {
+                "medianMs": 13.496299972757697,
+                "minMs": 12.935600010678172,
+                "maxMs": 23.762600030750036
+              }
+            }
+          },
+          "projectionBytes": 77412208,
+          "cacheState": "fresh process; OS storage caches retained; owned verified snapshot"
+        },
+        {
+          "mode": "reference",
+          "viewCount": 1,
+          "openMs": 1100.9978000074625,
+          "openMemory": {
+            "current": 168677376,
+            "peak": 320995328
+          },
+          "queryMemory": {
+            "current": 171151360,
+            "peak": 320995328
+          },
+          "geometry": {
+            "features": 38,
+            "vertices": 45383,
+            "wkbBytes": 990868,
+            "validFeatures": 38
+          },
+          "queries": {
+            "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+              "point": {
+                "medianMs": 13.945899903774261,
+                "minMs": 12.210399843752384,
+                "maxMs": 24.30859999731183
+              },
+              "area": {
+                "medianMs": 17.739600036293268,
+                "minMs": 16.4769000839442,
+                "maxMs": 19.431499997153878
+              },
+              "identity": {
+                "medianMs": 1.2395000085234642,
+                "minMs": 1.1758999899029732,
+                "maxMs": 2.3908999282866716
+              },
+              "lineage": {
+                "medianMs": 14.734300086274743,
+                "minMs": 13.81599996238947,
+                "maxMs": 17.564200097694993
+              }
+            }
+          },
+          "projectionBytes": 77412208,
+          "cacheState": "fresh process; OS storage caches retained; owned verified snapshot"
+        },
+        {
+          "mode": "reference",
+          "viewCount": 1,
+          "openMs": 1072.320400038734,
+          "openMemory": {
+            "current": 168570880,
+            "peak": 321540096
+          },
+          "queryMemory": {
+            "current": 171225088,
+            "peak": 321540096
+          },
+          "geometry": {
+            "features": 38,
+            "vertices": 45383,
+            "wkbBytes": 990868,
+            "validFeatures": 38
+          },
+          "queries": {
+            "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+              "point": {
+                "medianMs": 11.913200141862035,
+                "minMs": 11.565099935978651,
+                "maxMs": 22.41250011138618
+              },
+              "area": {
+                "medianMs": 16.951599856838584,
+                "minMs": 15.991599997505546,
+                "maxMs": 22.071499843150377
+              },
+              "identity": {
+                "medianMs": 2.1460000425577164,
+                "minMs": 1.5667998231947422,
+                "maxMs": 2.211399842053652
+              },
+              "lineage": {
+                "medianMs": 13.515899889171124,
+                "minMs": 13.04570003412664,
+                "maxMs": 14.775800053030252
+              }
+            }
+          },
+          "projectionBytes": 77412208,
+          "cacheState": "fresh process; OS storage caches retained; owned verified snapshot"
+        }
+      ],
+      "openMs": {
+        "median": 1100.9978000074625,
+        "min": 1072.320400038734,
+        "max": 1186.3416000269353
+      },
+      "peakBytes": {
+        "median": 320995328,
+        "min": 320933888,
+        "max": 321540096
+      }
+    },
+    "reference-3": {
+      "trials": [
+        {
+          "mode": "reference",
+          "viewCount": 3,
+          "openMs": 1134.132199920714,
+          "openMemory": {
+            "current": 168824832,
+            "peak": 320724992
+          },
+          "queryMemory": {
+            "current": 171798528,
+            "peak": 320724992
+          },
+          "geometry": {
+            "features": 38,
+            "vertices": 45383,
+            "wkbBytes": 990868,
+            "validFeatures": 38
+          },
+          "queries": {
+            "65989736a06f72182fba9d9ad9d47955869f51ce943ef120effcad2df91352fd": {
+              "point": {
+                "medianMs": 12.581299990415573,
+                "minMs": 11.548199923709035,
+                "maxMs": 25.142999831587076
+              },
+              "area": {
+                "medianMs": 16.297899885103106,
+                "minMs": 15.6097998842597,
+                "maxMs": 17.582499887794256
+              },
+              "identity": {
+                "medianMs": 1.0637999512255192,
+                "minMs": 1.037099864333868,
+                "maxMs": 1.4748999383300543
+              },
+              "lineage": {
+                "medianMs": 13.249700190499425,
+                "minMs": 12.818400049582124,
+                "maxMs": 15.09630004875362
+              }
+            },
+            "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+              "point": {
+                "medianMs": 12.916299980133772,
+                "minMs": 11.504299938678741,
+                "maxMs": 15.856999903917313
+              },
+              "area": {
+                "medianMs": 17.516599968075752,
+                "minMs": 15.988899860531092,
+                "maxMs": 27.659300016239285
+              },
+              "identity": {
+                "medianMs": 1.087700016796589,
+                "minMs": 1.0407001245766878,
+                "maxMs": 1.3535998295992613
+              },
+              "lineage": {
+                "medianMs": 14.075199840590358,
+                "minMs": 12.92679994367063,
+                "maxMs": 24.90999992005527
+              }
+            },
+            "7f956d3bb640fb7262a3c46b1666306c88aff3418e966d39536882530350acf8": {
+              "point": {
+                "medianMs": 15.748299891129136,
+                "minMs": 11.947100050747395,
+                "maxMs": 22.04199996776879
+              },
+              "area": {
+                "medianMs": 16.149899922311306,
+                "minMs": 14.917999971657991,
+                "maxMs": 26.677400106564164
+              },
+              "identity": {
+                "medianMs": 1.0812999680638313,
+                "minMs": 1.0654001962393522,
+                "maxMs": 2.1782999392598867
+              },
+              "lineage": {
+                "medianMs": 0.7189998868852854,
+                "minMs": 0.6848999764770269,
+                "maxMs": 0.7369001396000385
+              }
+            }
+          },
+          "projectionBytes": 77412208,
+          "cacheState": "fresh process; OS storage caches retained; owned verified snapshot"
+        },
+        {
+          "mode": "reference",
+          "viewCount": 3,
+          "openMs": 1070.0716997962445,
+          "openMemory": {
+            "current": 168861696,
+            "peak": 321191936
+          },
+          "queryMemory": {
+            "current": 171896832,
+            "peak": 321191936
+          },
+          "geometry": {
+            "features": 38,
+            "vertices": 45383,
+            "wkbBytes": 990868,
+            "validFeatures": 38
+          },
+          "queries": {
+            "65989736a06f72182fba9d9ad9d47955869f51ce943ef120effcad2df91352fd": {
+              "point": {
+                "medianMs": 12.08730018697679,
+                "minMs": 11.33430004119873,
+                "maxMs": 25.638800114393234
+              },
+              "area": {
+                "medianMs": 15.920500038191676,
+                "minMs": 15.15390002168715,
+                "maxMs": 20.041299983859062
+              },
+              "identity": {
+                "medianMs": 1.1106999590992928,
+                "minMs": 1.0915999300777912,
+                "maxMs": 1.2533999979496002
+              },
+              "lineage": {
+                "medianMs": 13.451500097289681,
+                "minMs": 12.80570006929338,
+                "maxMs": 17.205199925228953
+              }
+            },
+            "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+              "point": {
+                "medianMs": 12.179599842056632,
+                "minMs": 11.456100037321448,
+                "maxMs": 13.08669988065958
+              },
+              "area": {
+                "medianMs": 16.781300073489547,
+                "minMs": 15.924999956041574,
+                "maxMs": 17.402299912646413
+              },
+              "identity": {
+                "medianMs": 1.1329001281410456,
+                "minMs": 1.106299925595522,
+                "maxMs": 1.2406001333147287
+              },
+              "lineage": {
+                "medianMs": 13.706999830901623,
+                "minMs": 12.755000032484531,
+                "maxMs": 17.076600110158324
+              }
+            },
+            "7f956d3bb640fb7262a3c46b1666306c88aff3418e966d39536882530350acf8": {
+              "point": {
+                "medianMs": 12.797700008377433,
+                "minMs": 11.81429997086525,
+                "maxMs": 19.21739988029003
+              },
+              "area": {
+                "medianMs": 16.12379983998835,
+                "minMs": 15.25759999640286,
+                "maxMs": 19.058599835261703
+              },
+              "identity": {
+                "medianMs": 1.1044000275433064,
+                "minMs": 1.0834999848157167,
+                "maxMs": 1.1760001070797443
+              },
+              "lineage": {
+                "medianMs": 0.37400005385279655,
+                "minMs": 0.36830012686550617,
+                "maxMs": 0.38490002043545246
+              }
+            }
+          },
+          "projectionBytes": 77412208,
+          "cacheState": "fresh process; OS storage caches retained; owned verified snapshot"
+        },
+        {
+          "mode": "reference",
+          "viewCount": 3,
+          "openMs": 1112.825500080362,
+          "openMemory": {
+            "current": 169025536,
+            "peak": 321499136
+          },
+          "queryMemory": {
+            "current": 172810240,
+            "peak": 321499136
+          },
+          "geometry": {
+            "features": 38,
+            "vertices": 45383,
+            "wkbBytes": 990868,
+            "validFeatures": 38
+          },
+          "queries": {
+            "65989736a06f72182fba9d9ad9d47955869f51ce943ef120effcad2df91352fd": {
+              "point": {
+                "medianMs": 12.112899916246533,
+                "minMs": 11.358600109815598,
+                "maxMs": 21.799799986183643
+              },
+              "area": {
+                "medianMs": 16.48089988157153,
+                "minMs": 15.246600145474076,
+                "maxMs": 23.67160003632307
+              },
+              "identity": {
+                "medianMs": 1.0676998645067215,
+                "minMs": 1.047499943524599,
+                "maxMs": 1.1245999485254288
+              },
+              "lineage": {
+                "medianMs": 13.798499945551157,
+                "minMs": 12.935900129377842,
+                "maxMs": 16.3055001758039
+              }
+            },
+            "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+              "point": {
+                "medianMs": 12.066199909895658,
+                "minMs": 11.446000076830387,
+                "maxMs": 12.965200003236532
+              },
+              "area": {
+                "medianMs": 16.32279995828867,
+                "minMs": 15.60729998163879,
+                "maxMs": 22.474699886515737
+              },
+              "identity": {
+                "medianMs": 1.109299948439002,
+                "minMs": 1.0342998430132866,
+                "maxMs": 1.4214999973773956
+              },
+              "lineage": {
+                "medianMs": 13.658100040629506,
+                "minMs": 13.17910011857748,
+                "maxMs": 16.58069994300604
+              }
+            },
+            "7f956d3bb640fb7262a3c46b1666306c88aff3418e966d39536882530350acf8": {
+              "point": {
+                "medianMs": 11.430000187829137,
+                "minMs": 11.07220002450049,
+                "maxMs": 19.105799961835146
+              },
+              "area": {
+                "medianMs": 15.057299984619021,
+                "minMs": 14.57010000012815,
+                "maxMs": 18.530899891629815
+              },
+              "identity": {
+                "medianMs": 1.1014000046998262,
+                "minMs": 1.0313000530004501,
+                "maxMs": 2.6030000299215317
+              },
+              "lineage": {
+                "medianMs": 0.37180003710091114,
+                "minMs": 0.35699992440640926,
+                "maxMs": 0.38240011781454086
+              }
+            }
+          },
+          "projectionBytes": 77412208,
+          "cacheState": "fresh process; OS storage caches retained; owned verified snapshot"
+        }
+      ],
+      "openMs": {
+        "median": 1112.825500080362,
+        "min": 1070.0716997962445,
+        "max": 1134.132199920714
+      },
+      "peakBytes": {
+        "median": 321191936,
+        "min": 320724992,
+        "max": 321499136
+      }
+    },
+    "native-1": {
+      "trials": [
+        {
+          "mode": "native",
+          "viewCount": 1,
+          "openMs": 1184.938299935311,
+          "openMemory": {
+            "current": 168243200,
+            "peak": 320942080
+          },
+          "queryMemory": {
+            "current": 171782144,
+            "peak": 320942080
+          },
+          "geometry": {
+            "features": 38,
+            "vertices": 45383,
+            "wkbBytes": 990868,
+            "validFeatures": 38
+          },
+          "queries": {
+            "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+              "point": {
+                "medianMs": 11.151100043207407,
+                "minMs": 9.901300072669983,
+                "maxMs": 24.73410009406507
+              },
+              "area": {
+                "medianMs": 14.144199900329113,
+                "minMs": 12.945199850946665,
+                "maxMs": 18.535099923610687
+              },
+              "identity": {
+                "medianMs": 1.0985000990331173,
+                "minMs": 1.032399944961071,
+                "maxMs": 1.4643999747931957
+              },
+              "lineage": {
+                "medianMs": 13.60259996727109,
+                "minMs": 12.894200161099434,
+                "maxMs": 14.432300115004182
+              }
+            }
+          },
+          "projectionBytes": 77412208,
+          "cacheState": "fresh process; OS storage caches retained; owned verified snapshot"
+        },
+        {
+          "mode": "native",
+          "viewCount": 1,
+          "openMs": 1099.198300158605,
+          "openMemory": {
+            "current": 168775680,
+            "peak": 320667648
+          },
+          "queryMemory": {
+            "current": 171462656,
+            "peak": 320667648
+          },
+          "geometry": {
+            "features": 38,
+            "vertices": 45383,
+            "wkbBytes": 990868,
+            "validFeatures": 38
+          },
+          "queries": {
+            "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+              "point": {
+                "medianMs": 9.758299915120006,
+                "minMs": 9.338000090792775,
+                "maxMs": 20.276400027796626
+              },
+              "area": {
+                "medianMs": 14.805299928411841,
+                "minMs": 13.447599951177835,
+                "maxMs": 16.48470014333725
+              },
+              "identity": {
+                "medianMs": 1.2080001179128885,
+                "minMs": 1.1209000367671251,
+                "maxMs": 1.3772000093013048
+              },
+              "lineage": {
+                "medianMs": 13.80409998819232,
+                "minMs": 13.018099823966622,
+                "maxMs": 14.961800072342157
+              }
+            }
+          },
+          "projectionBytes": 77412208,
+          "cacheState": "fresh process; OS storage caches retained; owned verified snapshot"
+        },
+        {
+          "mode": "native",
+          "viewCount": 1,
+          "openMs": 1108.1815999932587,
+          "openMemory": {
+            "current": 168845312,
+            "peak": 321396736
+          },
+          "queryMemory": {
+            "current": 171581440,
+            "peak": 321396736
+          },
+          "geometry": {
+            "features": 38,
+            "vertices": 45383,
+            "wkbBytes": 990868,
+            "validFeatures": 38
+          },
+          "queries": {
+            "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+              "point": {
+                "medianMs": 10.42760000564158,
+                "minMs": 9.460299974307418,
+                "maxMs": 22.332999855279922
+              },
+              "area": {
+                "medianMs": 15.36109996959567,
+                "minMs": 14.025800162926316,
+                "maxMs": 19.27549997344613
+              },
+              "identity": {
+                "medianMs": 1.1517999228090048,
+                "minMs": 1.0846001096069813,
+                "maxMs": 1.6548000276088715
+              },
+              "lineage": {
+                "medianMs": 14.379699947312474,
+                "minMs": 13.599500060081482,
+                "maxMs": 16.607699915766716
+              }
+            }
+          },
+          "projectionBytes": 77412208,
+          "cacheState": "fresh process; OS storage caches retained; owned verified snapshot"
+        }
+      ],
+      "openMs": {
+        "median": 1108.1815999932587,
+        "min": 1099.198300158605,
+        "max": 1184.938299935311
+      },
+      "peakBytes": {
+        "median": 320942080,
+        "min": 320667648,
+        "max": 321396736
+      }
+    },
+    "native-3": {
+      "trials": [
+        {
+          "mode": "native",
+          "viewCount": 3,
+          "openMs": 1161.3342000637203,
+          "openMemory": {
+            "current": 168513536,
+            "peak": 320876544
+          },
+          "queryMemory": {
+            "current": 171917312,
+            "peak": 320876544
+          },
+          "geometry": {
+            "features": 38,
+            "vertices": 45383,
+            "wkbBytes": 990868,
+            "validFeatures": 38
+          },
+          "queries": {
+            "65989736a06f72182fba9d9ad9d47955869f51ce943ef120effcad2df91352fd": {
+              "point": {
+                "medianMs": 10.82600001245737,
+                "minMs": 10.197200113907456,
+                "maxMs": 22.583300014957786
+              },
+              "area": {
+                "medianMs": 13.939300086349249,
+                "minMs": 13.129600090906024,
+                "maxMs": 15.114899957552552
+              },
+              "identity": {
+                "medianMs": 1.094600185751915,
+                "minMs": 1.019099960103631,
+                "maxMs": 1.1770999990403652
+              },
+              "lineage": {
+                "medianMs": 13.523000059649348,
+                "minMs": 12.609499972313643,
+                "maxMs": 14.877100009471178
+              }
+            },
+            "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+              "point": {
+                "medianMs": 9.591999929398298,
+                "minMs": 9.231599979102612,
+                "maxMs": 13.588299974799156
+              },
+              "area": {
+                "medianMs": 13.744399882853031,
+                "minMs": 12.859600130468607,
+                "maxMs": 16.613699961453676
+              },
+              "identity": {
+                "medianMs": 1.061399932950735,
+                "minMs": 1.0396998841315508,
+                "maxMs": 1.2957998551428318
+              },
+              "lineage": {
+                "medianMs": 13.485099887475371,
+                "minMs": 12.943799840286374,
+                "maxMs": 21.060199942439795
+              }
+            },
+            "7f956d3bb640fb7262a3c46b1666306c88aff3418e966d39536882530350acf8": {
+              "point": {
+                "medianMs": 9.604199789464474,
+                "minMs": 9.080399991944432,
+                "maxMs": 15.423799864947796
+              },
+              "area": {
+                "medianMs": 14.9167999625206,
+                "minMs": 13.367099920287728,
+                "maxMs": 23.48230010829866
+              },
+              "identity": {
+                "medianMs": 1.1166001204401255,
+                "minMs": 1.0501998476684093,
+                "maxMs": 2.5489998515695333
+              },
+              "lineage": {
+                "medianMs": 0.624299980700016,
+                "minMs": 0.5971998907625675,
+                "maxMs": 1.1469998862594366
+              }
+            }
+          },
+          "projectionBytes": 77412208,
+          "cacheState": "fresh process; OS storage caches retained; owned verified snapshot"
+        },
+        {
+          "mode": "native",
+          "viewCount": 3,
+          "openMs": 1065.8511000219733,
+          "openMemory": {
+            "current": 168747008,
+            "peak": 321269760
+          },
+          "queryMemory": {
+            "current": 172470272,
+            "peak": 321269760
+          },
+          "geometry": {
+            "features": 38,
+            "vertices": 45383,
+            "wkbBytes": 990868,
+            "validFeatures": 38
+          },
+          "queries": {
+            "65989736a06f72182fba9d9ad9d47955869f51ce943ef120effcad2df91352fd": {
+              "point": {
+                "medianMs": 9.88570018671453,
+                "minMs": 9.34419990517199,
+                "maxMs": 20.96330001950264
+              },
+              "area": {
+                "medianMs": 14.410000061616302,
+                "minMs": 13.304799795150757,
+                "maxMs": 15.220799949020147
+              },
+              "identity": {
+                "medianMs": 1.1378000490367413,
+                "minMs": 1.11140008084476,
+                "maxMs": 1.294800080358982
+              },
+              "lineage": {
+                "medianMs": 13.74520012177527,
+                "minMs": 13.076199917122722,
+                "maxMs": 14.512100024148822
+              }
+            },
+            "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+              "point": {
+                "medianMs": 9.843700099736452,
+                "minMs": 9.444500086829066,
+                "maxMs": 11.680299881845713
+              },
+              "area": {
+                "medianMs": 13.612299924716353,
+                "minMs": 12.902199989184737,
+                "maxMs": 15.523100038990378
+              },
+              "identity": {
+                "medianMs": 1.2613001745194197,
+                "minMs": 1.0611999314278364,
+                "maxMs": 2.264800015836954
+              },
+              "lineage": {
+                "medianMs": 13.829799834638834,
+                "minMs": 13.057200005277991,
+                "maxMs": 17.433200031518936
+              }
+            },
+            "7f956d3bb640fb7262a3c46b1666306c88aff3418e966d39536882530350acf8": {
+              "point": {
+                "medianMs": 9.25099989399314,
+                "minMs": 8.944399887695909,
+                "maxMs": 9.77539992891252
+              },
+              "area": {
+                "medianMs": 13.881399994716048,
+                "minMs": 12.993099866434932,
+                "maxMs": 25.36820014938712
+              },
+              "identity": {
+                "medianMs": 1.331700012087822,
+                "minMs": 1.0828000959008932,
+                "maxMs": 2.045599976554513
+              },
+              "lineage": {
+                "medianMs": 0.6836999673396349,
+                "minMs": 0.6564001087099314,
+                "maxMs": 0.7579000666737556
+              }
+            }
+          },
+          "projectionBytes": 77412208,
+          "cacheState": "fresh process; OS storage caches retained; owned verified snapshot"
+        },
+        {
+          "mode": "native",
+          "viewCount": 3,
+          "openMs": 1074.6794000733644,
+          "openMemory": {
+            "current": 168947712,
+            "peak": 321253376
+          },
+          "queryMemory": {
+            "current": 171646976,
+            "peak": 321253376
+          },
+          "geometry": {
+            "features": 38,
+            "vertices": 45383,
+            "wkbBytes": 990868,
+            "validFeatures": 38
+          },
+          "queries": {
+            "65989736a06f72182fba9d9ad9d47955869f51ce943ef120effcad2df91352fd": {
+              "point": {
+                "medianMs": 9.902300080284476,
+                "minMs": 9.37539990991354,
+                "maxMs": 21.00139996036887
+              },
+              "area": {
+                "medianMs": 13.890799833461642,
+                "minMs": 13.105199905112386,
+                "maxMs": 18.464599968865514
+              },
+              "identity": {
+                "medianMs": 1.0874001309275627,
+                "minMs": 1.0607000440359116,
+                "maxMs": 1.3488999102264643
+              },
+              "lineage": {
+                "medianMs": 13.504499802365899,
+                "minMs": 12.718900106847286,
+                "maxMs": 15.384499914944172
+              }
+            },
+            "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+              "point": {
+                "medianMs": 9.892400121316314,
+                "minMs": 9.408199926838279,
+                "maxMs": 11.212100042030215
+              },
+              "area": {
+                "medianMs": 13.969499850645661,
+                "minMs": 12.92110001668334,
+                "maxMs": 15.300099970772862
+              },
+              "identity": {
+                "medianMs": 1.1038000229746103,
+                "minMs": 1.0883999057114124,
+                "maxMs": 1.1777000036090612
+              },
+              "lineage": {
+                "medianMs": 13.48560000769794,
+                "minMs": 13.036099961027503,
+                "maxMs": 15.731400111690164
+              }
+            },
+            "7f956d3bb640fb7262a3c46b1666306c88aff3418e966d39536882530350acf8": {
+              "point": {
+                "medianMs": 9.33280005119741,
+                "minMs": 9.00100008584559,
+                "maxMs": 10.216699913144112
+              },
+              "area": {
+                "medianMs": 21.041999803856015,
+                "minMs": 13.105400139465928,
+                "maxMs": 36.048500100150704
+              },
+              "identity": {
+                "medianMs": 1.9712999928742647,
+                "minMs": 1.0778000578284264,
+                "maxMs": 2.316199941560626
+              },
+              "lineage": {
+                "medianMs": 0.7499998901039362,
+                "minMs": 0.726599944755435,
+                "maxMs": 0.7736000698059797
+              }
+            }
+          },
+          "projectionBytes": 77412208,
+          "cacheState": "fresh process; OS storage caches retained; owned verified snapshot"
+        }
+      ],
+      "openMs": {
+        "median": 1074.6794000733644,
+        "min": 1065.8511000219733,
+        "max": 1161.3342000637203
+      },
+      "peakBytes": {
+        "median": 321253376,
+        "min": 320876544,
+        "max": 321269760
+      }
+    }
+  },
+  "coordinateBatch": [
+    {
+      "coordinatePairs": 2000,
+      "exactAgreement": true,
+      "repetitions": 30,
+      "cachedBatchMs": {
+        "reference": {
+          "medianMs": 0.8047999581322074,
+          "minMs": 0.7623001001775265,
+          "maxMs": 0.8682000916451216
+        },
+        "native": {
+          "medianMs": 1.6519001219421625,
+          "minMs": 1.6157000791281462,
+          "maxMs": 1.7967000603675842
+        }
+      },
+      "memory": {
+        "current": 42397696,
+        "peak": 51048448
+      }
+    },
+    {
+      "coordinatePairs": 2000,
+      "exactAgreement": true,
+      "repetitions": 30,
+      "cachedBatchMs": {
+        "reference": {
+          "medianMs": 0.824199989438057,
+          "minMs": 0.812100013718009,
+          "maxMs": 0.9244999382644892
+        },
+        "native": {
+          "medianMs": 1.7658500000834465,
+          "minMs": 1.7522999551147223,
+          "maxMs": 2.189700026065111
+        }
+      },
+      "memory": {
+        "current": 42393600,
+        "peak": 51052544
+      }
+    },
+    {
+      "coordinatePairs": 2000,
+      "exactAgreement": true,
+      "repetitions": 30,
+      "cachedBatchMs": {
+        "reference": {
+          "medianMs": 0.7822000188753009,
+          "minMs": 0.7620998658239841,
+          "maxMs": 0.8912999182939529
+        },
+        "native": {
+          "medianMs": 1.7194501124322414,
+          "minMs": 1.6128001734614372,
+          "maxMs": 2.4561998434364796
+        }
+      },
+      "memory": {
+        "current": 42397696,
+        "peak": 51060736
+      }
+    }
+  ],
+  "conformance": {
+    "reference": {
+      "selected": 60,
+      "passed": 60,
+      "failed": 0,
+      "skipped": 0,
+      "expectedErrors": 9
+    },
+    "native": {
+      "selected": 60,
+      "passed": 60,
+      "failed": 0,
+      "skipped": 0,
+      "expectedErrors": 9
+    }
+  },
+  "novel": {
+    "completeEnvelopes": 220,
+    "exactCoordinatePairs": 524,
+    "tests": 5,
+    "failed": 0,
+    "skipped": 0,
+    "geometryAdversarialScope": "reference GEOS only, no alternative geometry kernel"
+  }
+}

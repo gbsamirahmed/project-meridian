@@ -4759,3 +4759,29 @@ bounded desktop evidence only. No mobile, Weather, UI, private or production int
 Exactly one subsequent bounded task — **MERIDIAN ATLAS PORTABLE READER GEOMETRY AND
 CRS DEPENDENCY FEASIBILITY — NOT BEGUN**, addressing the unchanged desktop GIS stack
 and its deployment/semantic constraints rather than another minimum-crop optimisation.
+
+
+## Atlas geometry and CRS dependency feasibility — 10 October 2026
+
+[Bounded study](research/atlas-geometry-crs-feasibility.md): **PARTIALLY DEMONSTRATED**. The complete retained operation
+inventory and dependency/rights comparison are documented. One direct binding to the
+already installed PROJ 9.5.1 C API agrees exactly with the accepted Windows reader:
+60 frozen cases per path across three pins, 524 coordinate comparisons and 220 novel
+complete envelopes. This is the same CRS engine with a different binding; GEOS/raster
+operations remain unchanged. Full-reader peaks remain approximately 321 MB; no mobile,
+Python-free reader, replacement geometry kernel or distribution clearance is established.
+
+Accepted authority, window/shared-store implementation, frozen fixtures, 42 status rows,
+113 protected hashes and negative Swiss/AWS reconciliation remain unchanged. F03/F12 gain
+bounded binding evidence; mobile/framework, packaging and rights decisions remain open.
+The report links isolated code, raw measurements, commands and exact validation limits.
+
+Exactly one subsequent bounded task — **MERIDIAN ATLAS NATIVE GEOMETRY C-API CONFORMANCE
+SPIKE — NOT BEGUN**, limited to the existing reference kernel's predicate, encoding,
+ownership and complete-envelope compatibility. No custom GIS engine, private access,
+SDK installation, mobile deployment or production integration.
+
+Verification for this study: **52/52 safeguards and 368/368 runner tests passed**,
+plus both 60-case independent frozen replays and the 120 authoritative indexed/full
+comparisons. Lint, types and the application-only build passed. No full Weather build,
+cross-build, mobile test or different geometry kernel was run; see the linked report.
