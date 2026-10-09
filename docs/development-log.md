@@ -4577,3 +4577,24 @@ scopes the first implementation task. Do not begin it under this public-only pla
 Documentation/protection verification: **47 safeguards passed**; accepted retained
 evidence, contracts, 42 statuses and 113 production hashes unchanged. No executable
 changes; inherited application test results are not reported as freshly rerun.
+
+## Current foundations review — 9 October 2026
+
+The [Meridian foundations review](foundations/summary.md) records **C — FOUNDATIONS REVIEW READY**
+at starting checkpoint `68756976467aeef4bc647bc2b5fe11cae5bfd904`. Its engineering,
+product, platform/offline, decision-register and beta/release documents reconcile
+the accepted prototype architecture explicitly. Riffelhorn remains the provisional
+pilot; a new UI supersedes default experimental-component migration. Canonical Atlas
+authority and independent Weather responsibilities remain. The desktop read-only
+adapter is retained; portable offline device readers require feasibility evidence.
+
+Exactly one current next task: **MERIDIAN MOBILE TERRAIN AND OFFLINE EVIDENCE
+FEASIBILITY STUDY — NOT BEGUN**. This supersedes immediate private-audit sequencing;
+that audit remains deferred and requires separate explicit authorisation. No final
+mobile framework, private restructuring, prototype, cloud service or acquisition
+was implemented. Accepted research/contracts, all 42 canonical statuses and 113
+production hashes remain protected; no S7 or Atlas/Weather/Traverse code change.
+
+Documentation/protection verification: **59 safeguards passed**; all 1,119 tracked
+files outside six navigation updates, 42 statuses, 113 production hashes and retained
+evidence/history unchanged. No executable suites were needed or claimed as rerun.

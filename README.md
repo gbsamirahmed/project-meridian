@@ -220,3 +220,13 @@ Provider availability, acceptable-use policies, rate limits, attribution require
 ## Licence
 
 Source is available for portfolio review. No open-source licence is currently granted. Third-party software, services, and datasets retain their own licences and terms.
+
+## Meridian foundations review — 9 October 2026
+
+The [foundations review](docs/foundations/summary.md) records **C — FOUNDATIONS REVIEW READY**.
+It establishes engineering/product standards, mobile and offline feasibility gates,
+a private-beta roadmap and explicit reconciliation of the prototype plan. A new UI
+is planned; no application implementation or private access occurred. Atlas and
+Weather remain distinct. Exactly one next task: **MERIDIAN MOBILE TERRAIN AND OFFLINE
+EVIDENCE FEASIBILITY STUDY — NOT BEGUN**. Final framework, rights and private
+restructuring remain gated; the previously selected private audit is deferred.
