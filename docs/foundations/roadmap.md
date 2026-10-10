@@ -112,3 +112,22 @@ its own evidence/safety gates. Long internal alpha/beta remains legitimate; one 
 Atlas result is not field, tester or release readiness. The original physical-device
 scope, rights/privacy requirements and F32 exposure gate remain unchanged. No stage begins
 through this note, and no private access, implementation or Weather R&D occurs here.
+
+
+## Architecture comparison complete; prerequisite gate next — 10 October 2026
+
+The [Meridian web/mobile feasibility study](../research/meridian-cross-platform-architecture.md)
+has compared presentation, shared logic, native/WASM science, rendering and offline
+responsibilities. It selects no final framework, renderer, provider or package format.
+No implementation or maturity-stage entry is implied; scientific semantics remain
+stable while target implementations require conformance and real-device evidence.
+
+Exactly one next task is **MERIDIAN MOBILE FEASIBILITY PREREQUISITE RESOLUTION — PHYSICAL
+DEVICES AND BUILD ACCESS — NOT BEGUN**. Resolve G0 access, renderer/source rights and
+bounded trial resources. G1 terrain/2D field measurements and G2 target reader/offline
+recovery can share later trials rather than become an indefinite Atlas optimisation
+programme. The original mobile-study safeguards, integrated-alpha/beta gates and F32
+financial approval before exposure remain unchanged. Interaction research precedes
+substantial UI; separately authorised private audit follows sufficient platform evidence.
+Weather foundations can later proceed as an early parallel scientific programme; Guide
+retains its own routing/navigation evidence gates. No later stage has begun here.

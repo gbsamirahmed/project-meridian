@@ -4859,3 +4859,34 @@ Exactly one next bounded task: **MERIDIAN WEB/MOBILE ARCHITECTURE AND CODE-SHARI
 FEASIBILITY STUDY — NOT BEGUN**. Whole-system sharing/deployment comparison with explicit
 hardware/rights/build gates; architecture research is not physical-device validation.
 The principal report defines scope, deliverables, acceptance and stopping criteria.
+
+
+## 10 October 2026 — Meridian web/mobile architecture and code-sharing feasibility
+
+Starting checkpoint `0c20512432fd572c5f8a36f89683daba6afebba9`; clean public `main`,
+fetched `origin/main`, 0/0 divergence. Research/documentation only, following the
+accepted Atlas portability handoff; no scientific experiment or new implementation.
+
+[Principal report](research/meridian-cross-platform-architecture.md): confirmed initial/
+later requirements, component A/B/C/D matrix, five architectural families plus PWA
+and optional native/WASM computation, dated primary-source framework/renderer/OS
+research, offline custody, new replaceable UI, small-team maintenance, rights/privacy
+and F32 boundaries. Native MapLibre terrain is currently documented unsupported;
+Mapbox native and GL JS paths require different rights/device evidence. Shared contracts
+and selected pure logic with separate presentation are the conditional direction,
+not a final framework/renderer/core decision. Windows resource measurements retain
+their original workloads and limitations; no new benchmark or mobile parity claim.
+
+Exactly one next task: **MERIDIAN MOBILE FEASIBILITY PREREQUISITE RESOLUTION — PHYSICAL
+DEVICES AND BUILD ACCESS — NOT BEGUN**. Confirm G0 access/rights/resources; preserve
+original real-device/2D/offline/conformance safeguards before any G1/G2 trial. No
+private access, SDK installation, mobile build, application, Weather/Guide research,
+new data or infrastructure. Earlier next-task entries remain historical.
+
+Validation: **61/61 documentation and preservation safeguards passed**. Exact nine-file
+scope and all 1,195 existing tracked files outside the append-only navigation notes
+were checked. Documentation links/anchors/commits, source-grounded
+measurements, unchanged decision rows, 42 canonical status rows, 113 protected hashes,
+canonical evidence/publications and frozen fixture/projection integrity were checked.
+Runtime/scientific test suites, lint, TypeScript and builds were deliberately not rerun
+because only documentation changed; no Weather/data-materialising build.

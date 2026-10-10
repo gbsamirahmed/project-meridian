@@ -840,3 +840,16 @@ interface or command is introduced.
 
 Exactly one next task: **MERIDIAN WEB/MOBILE ARCHITECTURE AND CODE-SHARING FEASIBILITY STUDY —
 NOT BEGUN**; no further Atlas optimisation, framework selection or production integration.
+
+
+## Cross-platform architectural context — 10 October 2026
+
+The [Meridian-wide feasibility study](../../docs/research/meridian-cross-platform-architecture.md)
+separates this authoritative desktop runtime, portable scientific contracts/readers,
+rendering and platform storage/device services. Shared native kernels are provisional
+boundaries; the browser/mobile application must not depend on direct Node filesystem
+access or a mandatory network service for field queries. No runtime interface changed.
+
+Exactly one next task: **MERIDIAN MOBILE FEASIBILITY PREREQUISITE RESOLUTION — PHYSICAL
+DEVICES AND BUILD ACCESS — NOT BEGUN**. Named hardware/build availability and lawful
+trial resources precede mobile terrain, target-reader and offline recovery evidence.

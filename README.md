@@ -405,3 +405,17 @@ NOT BEGUN**. This supersedes historical next-step sequencing only. It must inclu
 Weather, Guide, terrain, offline storage, state and a new replaceable UI; architectural
 research is distinct from later physical-device validation. No final framework or private
 access is authorised by the handoff.
+
+
+## Web/mobile architecture feasibility — 10 October 2026
+
+The [Meridian-wide comparison](docs/research/meridian-cross-platform-architecture.md)
+separates scientific contracts and selected shared logic from platform renderers,
+storage, device services and new UI. Native presentation and native-file/GL JS
+shell paths remain credible conditional alternatives; no final framework or renderer
+is selected. Current native MapLibre terrain limitations, physical-device/build access,
+target reader conformance and offline resource custody remain evidence gates.
+
+Exactly one next task: **MERIDIAN MOBILE FEASIBILITY PREREQUISITE RESOLUTION — PHYSICAL
+DEVICES AND BUILD ACCESS — NOT BEGUN**. No application, device trial, private access,
+Weather programme, data acquisition or infrastructure was begun.

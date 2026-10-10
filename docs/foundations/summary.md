@@ -271,3 +271,24 @@ Exactly one subsequent task: **MERIDIAN WEB/MOBILE ARCHITECTURE AND CODE-SHARING
 STUDY — NOT BEGUN**. No further prerequisite Atlas experiment is demonstrated. The original
 physical-device study's real-device, scientific conformance, offline completeness, hardware
 limits and no-private-access safeguards remain applicable to later device validation.
+
+
+## Whole-Meridian web/mobile feasibility — 10 October 2026
+
+The [architecture and code-sharing study](../research/meridian-cross-platform-architecture.md)
+completes the whole-product comparison authorised after the Atlas handoff. Share
+scientific contracts/conformance and selected pure logic; keep scientific domains,
+rendering products, platform custody/services and new presentation distinct.
+Separate presentation with useful shared logic and a native-file/GL JS terrain shell
+remain conditional directions; no final language, framework, engine or core is selected.
+
+Native terrain capability and named physical-device/build access remain the most
+important decision-changing gates. F04/F05/F11 remain REQUIRES FEASIBILITY TEST;
+F03/F12 remain PROVISIONAL, F13 DEFERRED. The original device-study scope, 250 MB
+trial-payload aim, real-device/2D comparison, conformance, recovery, privacy, rights
+and F32 exposure protections are not relaxed. Earlier next-task entries are historical.
+
+Exactly one current next task: **MERIDIAN MOBILE FEASIBILITY PREREQUISITE RESOLUTION —
+PHYSICAL DEVICES AND BUILD ACCESS — NOT BEGUN**. Resolve availability and a lawful
+bounded trial plan before experiments or private restructuring. No mobile deployment,
+prototype implementation or Weather scientific research began through this note.

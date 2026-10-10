@@ -1112,3 +1112,16 @@ storage/terrain, trusted distribution and rights remain unresolved. Exactly one 
 It covers the whole product, separates architecture research from device validation and
 preserves independently developed Atlas, Weather and future Guide. No implementation,
 private access, physical-device experiment or Weather R&D is begun.
+
+
+## Meridian web/mobile architecture comparison — 10 October 2026
+
+[Whole-product architecture and code-sharing feasibility](meridian-cross-platform-architecture.md)
+uses the accepted Atlas handoff without further GIS experiments. Qualified models,
+validation, pin/lineage logic and fixtures are sharing candidates; CRS/geometry/raster
+require equivalent target implementations, while storage/device/render services are
+platform-dependent. Same-engine Windows bindings are not mobile/browser conformance.
+
+Exactly one next task: **MERIDIAN MOBILE FEASIBILITY PREREQUISITE RESOLUTION — PHYSICAL
+DEVICES AND BUILD ACCESS — NOT BEGUN**. All accepted research/status rows remain
+unchanged; no framework, renderer, scientific contract or production core is chosen.

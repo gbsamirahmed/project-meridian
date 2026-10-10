@@ -223,3 +223,19 @@ next-task wording is historical. F20's Atlas-before-Weather user-facing mileston
 retained; it does not require postponing separately authorised ground-up Weather research,
 which is intended as an early parallel programme. No final framework, native core, package
 format, renderer, provider or production contract is decided by this documentation handoff.
+
+
+## Web/mobile architectural comparison — 10 October 2026
+
+The [whole-system study](../research/meridian-cross-platform-architecture.md) provides
+component-level A/B/C/D sharing categories, architecture trade-offs and G0–G2 evidence
+gates. It supports F01/F02/F10/F33/F34: new replaceable UI, scientific authority,
+readable boundaries and evidence-led evolution. It does not change any decision row
+or resolve F04/F05/F11, F03/F12, F13 or F07/F17 licensing. Current native MapLibre
+terrain documentation is a renderer constraint, not a reason to choose a UI framework.
+
+The current single next task is **MERIDIAN MOBILE FEASIBILITY PREREQUISITE RESOLUTION —
+PHYSICAL DEVICES AND BUILD ACCESS — NOT BEGUN**. Physical terrain/combined offline
+resource trials follow access and rights checks; exact scoped acceptance is in the
+study. Weather remains an early separately authorised scientific programme with later
+qualified application integration; no Weather work is authorised by this record.

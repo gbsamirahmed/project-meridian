@@ -863,3 +863,17 @@ it examines Atlas/Weather/Guide, terrain, offline ownership, application state a
 UI composition before platform decisions. Device/build and redistribution gates remain
 explicit. No prerequisite Atlas experiment, scientific reopening, Weather R&D, private
 access or production implementation is authorised or begun by this handoff.
+
+
+## Meridian architecture feasibility handoff — 10 October 2026
+
+The [cross-platform comparison](meridian-cross-platform-architecture.md) extends the
+architectural handoff to Atlas, Weather, provisional Guide, terrain and new UI.
+It introduces no scientific finding/status revision: all 42 canonical rows and
+accepted historical classifications remain intact. Shared semantic contracts and
+selected pure logic are preferred; native kernels and offline lifecycle still need
+platform conformance, physical resources and redistribution evidence.
+
+Exactly one subsequent bounded task: **MERIDIAN MOBILE FEASIBILITY PREREQUISITE
+RESOLUTION — PHYSICAL DEVICES AND BUILD ACCESS — NOT BEGUN**. No new Atlas experiment,
+private audit, renderer/framework selection, mobile implementation or Weather R&D.
