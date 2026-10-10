@@ -122,3 +122,8 @@ The next programme stage is a finite semantic/verification design with an archiv
 The proposed paired metrics/weights, eligibility and dependence-aware design do not close actual metadata, rights, sample sufficiency or preregistration parameters. Opportunity A and B remain conditional; no superiority, resolution benefit, outdoor fitness or blending claim. Exact acquisition gates are now [T01–T10](temperature-acquisition-gates.md#gates-before-acquisition-or-errors).
 
 Exactly one current next task: **WEATHER RESEARCH 004 — REFERENCE MEASUREMENT METADATA AND HISTORICAL TEMPERATURE PRODUCT CLOSURE — NOT BEGUN**, [defined here](temperature-acquisition-gates.md#exactly-one-next-bounded-task). The earlier WR003 next-task definition remains historical; no numerical experiment begins automatically.
+
+
+## WR004 reference refinement — 10 October 2026
+
+[WR004](reference-metadata-and-historical-product-closure.md) provides selected-object evidence for G2/R1 and more specific O2 manual semantics. Catalogue/listing identity is distinguished from inspected fields and station-era records. The common physical-time/QC/history gate remains; a nominal-time or network-height proxy would require a named pre-error protocol revision. The historical matrix above is not a claim that public listings have verified complete scientific inputs. Regional archive failure does not prevent an independently viable global study; reference interpretation can block both. Exactly one current next task: **WEATHER RESEARCH 005 — MIDAS OPEN REFERENCE INTERPRETATION AND ERROR-BLIND ELIGIBILITY PILOT — NOT BEGUN**, [definition](reference-metadata-and-historical-product-closure.md#13-programme-implication-and-exactly-one-next-bounded-task).

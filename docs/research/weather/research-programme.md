@@ -89,3 +89,12 @@ Exactly one current next task: **WEATHER RESEARCH 003 — NEAR-SURFACE TEMPERATU
 The next finite gate is reference measurement/QC/history and historical-product metadata closure. It is higher-value than automatic numerical work or another provider survey. If the reference cannot be justified, revise cohort/reference before errors; if only regional archive rights fail, global validation remains a separate conditional track. Too few effective blocks can restrict the next experiment proposal to descriptive decoding/interpretation. No universal Weather schema, provider, model or delivery format follows.
 
 The broad atmospheric/global/regional/ensemble/observations/nowcast/ML/mountain/uncertainty/engineering/offline/Atlas–Guide programme stays intact. Exactly one next task: **WEATHER RESEARCH 004 — REFERENCE MEASUREMENT METADATA AND HISTORICAL TEMPERATURE PRODUCT CLOSURE — NOT BEGUN**, with [objective, evidence, dependencies, acceptance and stopping conditions](temperature-acquisition-gates.md#exactly-one-next-bounded-task). No acquisition, error calculation or subsequent programme stage has begun.
+
+
+## WR004 completed: interpretation pilot before skill comparison
+
+10 October 2026. [WR004](reference-metadata-and-historical-product-closure.md) records **OUTCOME B — PARTIAL CLOSURE**. Current guide/QC component and selected historical-object evidence improve documentary feasibility, while authorised station-era/dictionary/header inspection is now the highest-value gate. Another provider survey, model ranking or urgent rolling-archive acquisition would not resolve that common reference uncertainty.
+
+The broader global/regional, ensemble, nowcast, ML/hybrid, mountains, uncertainty, engineering, offline and Atlas/Guide tracks remain. No broad topic is experimentally validated and no final provider/format/architecture is selected. A negative reference pilot may revise the reference/question; a nominal-time or network-proxy comparison requires explicit pre-error change. Historic stages and next-task definitions above remain records, not concurrent instructions.
+
+Exactly one current next task: **WEATHER RESEARCH 005 — MIDAS OPEN REFERENCE INTERPRETATION AND ERROR-BLIND ELIGIBILITY PILOT — NOT BEGUN**, [objective, required evidence, scope, dependencies, acceptance, resource boundaries and stops](reference-metadata-and-historical-product-closure.md#13-programme-implication-and-exactly-one-next-bounded-task). No acquisition or implementation begins here.

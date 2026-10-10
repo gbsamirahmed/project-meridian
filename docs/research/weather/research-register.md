@@ -86,3 +86,19 @@ Prioritise W11/W30/W36/W38 semantic/reference design alongside W10 rights/archiv
 | WR3-Q06 / W30, W39 | A/B/C protocol design differs from D skill/E outdoor suitability; January/00 UTC pilot is nocturnal and cannot establish regional/global superiority | RESEARCHED (claim-boundary design); parameters prevent full preregistration, broad programme remains intact |
 
 No broad topic is promoted to RESEARCHED or VALIDATED. Parameter statuses FIXED BY EVIDENCE / PROVISIONAL / BLOCKED / NOT APPLICABLE in the protocol describe a design, not Weather register maturity. Exactly one current next task: **WEATHER RESEARCH 004 — REFERENCE MEASUREMENT METADATA AND HISTORICAL TEMPERATURE PRODUCT CLOSURE — NOT BEGUN**, [scope and stop gate](temperature-acquisition-gates.md#exactly-one-next-bounded-task).
+
+
+## WR004 bounded documentary closure
+
+10 October 2026. [WR004](reference-metadata-and-historical-product-closure.md) records the following finite answers, **OUTCOME B — PARTIAL CLOSURE**. All W01–W40 rows and **23 SCOPED, 11 IDENTIFIED, 6 DEFERRED** statuses, WR2 and WR3 rows remain unchanged. No broad topic is promoted to RESEARCHED or VALIDATED; these documentary questions do not establish observed skill.
+
+| Identifier / parents | Bounded finding | Status / remaining gate |
+|---|---|---|
+| WR4-Q01 / W11, W38 | Current MIDAS guide retrieved; message/equipment clocks and minute support prevent universal nominal-hour correction | RESEARCHED (documentary); 2025 station-era applicability and exact physical matching unresolved |
+| WR4-Q02 / W11, W24, W38 | Nominal 1.25 m screen practice distinguished from actual historical height/exposure; release changes do not establish sensor history | RESEARCHED (documentary); strict eligible cohort unproven |
+| WR4-Q03 / W30, W38 | QC components/revisions documented; v202607 CSV packing, temperature J/state/missing dictionaries still required | RESEARCHED (conditional rule design); no actual accepted-QC records or dictionary encoding validated |
+| WR4-Q04 / W10, W31 | Two GDEX and three UKV historical paths observed; corrected UKV valid-time lookup avoids false absence | RESEARCHED (public non-value metadata); no scientific content or complete 62-object inventories verified |
+| WR4-Q05 / W10, W38 | Public listing, registered retrieval, source licences and redistribution remain separate; current manuals/OGL retrieval gap refined | RESEARCHED (documentary); no authentication, service entitlement or legal clearance |
+| WR4-Q06 / W30, W39, W40 | Deterministic error-blind selection and bounded metadata-first handoff can return a meaningful negative result | RESEARCHED (design); no acquisition, ten-station guarantee or preregistered skill experiment |
+
+Exactly one current next task: **WEATHER RESEARCH 005 — MIDAS OPEN REFERENCE INTERPRETATION AND ERROR-BLIND ELIGIBILITY PILOT — NOT BEGUN**, [finite definition](reference-metadata-and-historical-product-closure.md#13-programme-implication-and-exactly-one-next-bounded-task). Earlier next-task notes remain historical.

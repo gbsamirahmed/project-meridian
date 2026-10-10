@@ -161,3 +161,10 @@ Exactly one next bounded task: **WEATHER RESEARCH 003 — NEAR-SURFACE TEMPERATU
 [WR003](../research/weather/temperature-verification-protocol.md) establishes a conditional documentary station-proxy verification design, not forecast skill, a fully preregistered experiment or Weather/application maturity. Measurement time/height, element QC, actual historical products/terms and sample/uncertainty parameters prevent automatic acquisition. No alpha/beta, provider/platform selection or scientific-readiness gate is passed. Original privacy, preservation, physical-device, new-UI and F32 requirements remain unchanged.
 
 Exactly one next bounded task: **WEATHER RESEARCH 004 — REFERENCE MEASUREMENT METADATA AND HISTORICAL TEMPERATURE PRODUCT CLOSURE — NOT BEGUN**, [scope](../research/weather/temperature-acquisition-gates.md#exactly-one-next-bounded-task). Weather's broader research programme and distinct global/regional tracks remain; no later task or implementation starts through this note.
+
+
+## Weather reference/product closure — 10 October 2026
+
+[WR004](../research/weather/reference-metadata-and-historical-product-closure.md) reaches **OUTCOME B — PARTIAL CLOSURE**, with selected historical object identifiers and current observation-manual semantics documented. Scientific input contents, reference station-era/QC interpretation and full preregistration remain open. This is research progress, not empirical forecast skill, Weather readiness or application-stage entry. No provider/framework, acquisition, deployment or distribution choice follows; preservation, privacy and F32 exposure safeguards remain unchanged.
+
+Exactly one next bounded task: **WEATHER RESEARCH 005 — MIDAS OPEN REFERENCE INTERPRETATION AND ERROR-BLIND ELIGIBILITY PILOT — NOT BEGUN**, [definition](../research/weather/reference-metadata-and-historical-product-closure.md#13-programme-implication-and-exactly-one-next-bounded-task). It is a conditional reference interpretation pilot with lawful-access and resource gates, independent of regional archive urgency. No subsequent task begins here.
