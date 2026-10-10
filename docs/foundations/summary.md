@@ -299,3 +299,10 @@ prototype implementation or Weather scientific research began through this note.
 [Prerequisite report](../research/meridian-non-device-prerequisites.md) closes useful documentary work and classifies remaining target-build, physical-device and distribution gates. No genuine non-device blocker remains before Weather's independent scope/evidence review. This is not mobile, application or beta readiness. The user-authorised sequence now places Weather foundations before physical-device trials; this supersedes earlier sequencing only. Original real-device/2D/conformance/offline/hardware/rights safeguards, new UI, maturity and F32 gates remain intact.
 
 Exactly one current next task: **MERIDIAN WEATHER FOUNDATIONAL RESEARCH PROGRAMME — SCOPE, SCIENTIFIC REQUIREMENTS AND EVIDENCE INVENTORY — NOT BEGUN**. The report defines its bounded scope; no Weather programme or later implementation began here.
+
+
+## Weather Research 001 — 10 October 2026
+
+[Independent scientific landscape and programme](../research/weather/README.md) begins the separately authorised Weather foundations at documentary discovery scope. Scientific identity, distinct time/support/quantity roles, uncertainty, reference independence, rights and operating cost are investigation requirements, not a final Weather contract. Existing GFS engineering is historical evidence, not the organising architecture. The new UI, platform/device, maturity and F32 gates remain intact; no decision-row status changes.
+
+Exactly one current next task: **WEATHER RESEARCH 002 — FORECAST AND OBSERVATION SOURCE FEASIBILITY FOR A BOUNDED UK/ALPINE VALIDATION STUDY — NOT BEGUN**. It asks whether lawful forecasts and suitable observations can support one finite validation question; no acquisition, implementation or provider commitment. Earlier next-task wording remains historical.

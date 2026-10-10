@@ -426,3 +426,10 @@ Weather programme, data acquisition or infrastructure was begun.
 [Platform prerequisite closure](docs/research/meridian-non-device-prerequisites.md) records build requirements, renderer/source constraints, offline resource closure and target-specific tests. No final framework, reader or renderer is selected. Current priorities are non-device closure, Weather scientific foundations, physical-device feasibility, then implementation decisions and the new application. Earlier next-task wording is historical; scientific findings and release gates remain unchanged.
 
 Exactly one next task: **MERIDIAN WEATHER FOUNDATIONAL RESEARCH PROGRAMME — SCOPE, SCIENTIFIC REQUIREMENTS AND EVIDENCE INVENTORY — NOT BEGUN**. Its scope is defined in the report; no Weather R&D, private access or device testing began here.
+
+
+## Independent Weather research programme — 10 October 2026
+
+[Weather Research 001](docs/research/weather/README.md) establishes a primary-source scientific landscape before detailed legacy assessment, a broad quantity/source taxonomy, preliminary access/rights/cost register and dependency-led programme. Discovery is complete within this documentary scope; no numerical validation, provider selection, pipeline change or Weather readiness is claimed. Atlas's accepted evidence and statuses remain unchanged.
+
+Exactly one next bounded task: **WEATHER RESEARCH 002 — FORECAST AND OBSERVATION SOURCE FEASIBILITY FOR A BOUNDED UK/ALPINE VALIDATION STUDY — NOT BEGUN**. Scope and stop condition are in the programme. No acquisition, private access, application/device work or infrastructure is authorised by this navigation note.

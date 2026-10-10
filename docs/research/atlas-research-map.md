@@ -1132,3 +1132,10 @@ unchanged; no framework, renderer, scientific contract or production core is cho
 [Meridian prerequisite closure](meridian-non-device-prerequisites.md) uses the accepted Atlas handoff without new scientific experiments. Scientific contracts and complete-profile conformance remain transferable obligations; target kernels, decoder, custody and combined resources remain unproved. All accepted reports, 42 research statuses and negative Swiss/AWS finding are preserved.
 
 Useful non-device work is complete; no further Atlas optimisation prerequisite is demonstrated. Exactly one next task: **MERIDIAN WEATHER FOUNDATIONAL RESEARCH PROGRAMME — SCOPE, SCIENTIFIC REQUIREMENTS AND EVIDENCE INVENTORY — NOT BEGUN**. Physical-device validation follows independently scoped Weather foundations under the revised priorities; no Weather R&D began here.
+
+
+## Independent Weather programme entry — 10 October 2026
+
+[Weather Research 001](weather/README.md) is a separate scientific programme with its own W-topic register. It uses Atlas's discipline of traceability and negative results without adopting Atlas's technical schema or changing its 42 canonical research statuses. All accepted Atlas findings, historical pins, contracts and negative Swiss/AWS reconciliation remain unchanged. Weather evidence does not retrospectively alter Atlas science.
+
+Exactly one next task: **WEATHER RESEARCH 002 — FORECAST AND OBSERVATION SOURCE FEASIBILITY FOR A BOUNDED UK/ALPINE VALIDATION STUDY — NOT BEGUN**. No new Atlas experiment, acquisition or Weather implementation is part of this note.

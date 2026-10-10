@@ -140,3 +140,10 @@ The [prerequisite closure](../research/meridian-non-device-prerequisites.md) res
 The current user-authorised priority order is: **Phase 1** useful non-device closure; **Phase 2** substantial Weather scientific research/foundational engineering; **Phase 3** physical-device terrain/scientific-runtime/offline/lifecycle feasibility; **Phase 4** evidence-based choices, separately authorised repository reconciliation and new modular application foundation/integration. This is dependency-informed, not calendar-led; no stage begins automatically. G0–G2, original trial limits, new UI, integrated-alpha/beta and F32 financial gates remain intact. F20 concerns user-facing Weather integration, not the timing of independent scientific research.
 
 Exactly one next task: **MERIDIAN WEATHER FOUNDATIONAL RESEARCH PROGRAMME — SCOPE, SCIENTIFIC REQUIREMENTS AND EVIDENCE INVENTORY — NOT BEGUN**. Scope and acceptance are in the report; no Weather implementation, device experiment, private audit or infrastructure is authorised by this note.
+
+
+## Weather independent discovery complete — 10 October 2026
+
+[WR001 entry](../research/weather/README.md) records broad scientific discovery, selective-depth priorities, source/access/rights/economics findings and an independent legacy inventory. This is research progress, not Weather scientific readiness or entry into internal alpha/beta. The programme places lawful source/reference feasibility, semantic design and validation methods ahead of numerical/preparation engineering; they can be investigated in parallel where dependencies permit. It does not require every identified discipline to be completed first. Weather research remains distinct from later application integration and from physical-device/platform evidence.
+
+Exactly one next task: **WEATHER RESEARCH 002 — FORECAST AND OBSERVATION SOURCE FEASIBILITY FOR A BOUNDED UK/ALPINE VALIDATION STUDY — NOT BEGUN**. Rights, retrospective coverage and observation suitability can change candidate region/quantity/source. Original device-study, new-UI, maturity, privacy and F32 financial gates remain unchanged. No later stage begins automatically.
