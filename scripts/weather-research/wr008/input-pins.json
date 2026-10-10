@@ -1,0 +1,12 @@
+{
+  "authority": "WR007 input pins and actual message metadata; no copied or substituted field",
+  "query_profile_sha256": "adaf7d3ae0365906302d1d56f8e73399bb40be50dc1879bc666d8acb3fc574be",
+  "raw_input_bytes": 874115,
+  "raw_input_sha256": "0b95fc06fe9ca08de57f9c5089b8fcd5d7b6a42977b35f669da65ec0f43f40e4",
+  "schema": "meridian-weather-wr008-input-pins-v1",
+  "wr007_files": {
+    "gfs_field_pilot.py": "faa31e3f6960a5e26b24a0084cb898e63c2165649b232d4d39af20f06e54e0cc",
+    "input-pins.json": "56cd8ff334f5c1365cb8fbd3e9fe2fd0e4d9678ce53a7a079159c1eb40b912f3",
+    "integrity-receipt.json": "54e7c78fda6f47fe6ce8cf8b17a0efcbb1fdf7c4ac3df4c4075c91ca4e962f82"
+  }
+}

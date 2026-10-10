@@ -1,0 +1,758 @@
+{
+  "comparison": {
+    "arithmetic_tolerance": "128 eps64 * maximum node magnitude * (1+360/dx+180/dy)",
+    "bilinear_comparisons": 15,
+    "boundary_status_comparisons": 4,
+    "compared_queries": 34,
+    "exact_node_input_comparisons": 2,
+    "independence": "Distinct decoding and GDAL sampling kernel; shared finite boundary policy, independent affine indexing; no independent polar/missing-data kernel validation",
+    "maximum_GDAL_kernel_vs_independent_dot_difference_K": 0.0,
+    "maximum_difference_K": 1.8310546863631316e-05,
+    "maximum_weight_difference": 0.0,
+    "mean_absolute_difference_K": 7.35700540718319e-06,
+    "native_node_value_comparisons": 20,
+    "nearest_comparisons": 19,
+    "unexplained_disagreements": 0,
+    "weight_tolerance": "32 eps64 * (1+360/dx+180/dy)"
+  },
+  "decoded_array_sha256": "01dad7249c0f441c65a4677455ce1340797dab82d0045a1e6fba95620fdb91e3",
+  "field": {
+    "fixed_surface": [
+      103,
+      2
+    ],
+    "lead_hours": 24,
+    "parameter": [
+      0,
+      0,
+      0
+    ],
+    "reference_time": "2025-01-15T00:00:00Z",
+    "units": "K",
+    "valid_time": "2025-01-16T00:00:00Z",
+    "variable": "Temperature"
+  },
+  "full_receipt_bytes": 50170,
+  "full_receipt_sha256": "f2bfcbc338217744b5aafaa1311ab0a0b76ce500a0e6527729c2ffd65e720a21",
+  "grid": {
+    "Earth_radius_m": 6371229,
+    "bilinear_latitude_domain": [
+      -89.75,
+      89.75
+    ],
+    "columns": 1440,
+    "duplicate_360_endpoint": false,
+    "east": 359.75,
+    "latitude_periodic": false,
+    "latitude_step": -0.25,
+    "longitude_periodic": true,
+    "longitude_step": 0.25,
+    "north": 90.0,
+    "registration": "native grid nodes",
+    "rows": 721,
+    "scan_mode": 0,
+    "south": -90.0,
+    "type": "regular_ll",
+    "west": 0.0
+  },
+  "independent_decoder": {
+    "gdal": "3.9.3",
+    "numpy": "2.5.3",
+    "python": "3.12.6",
+    "rasterio": "1.4.3"
+  },
+  "input": {
+    "bytes": 874115,
+    "filename": "gfs-2025011500-f024-t2m.grib2",
+    "sha256": "0b95fc06fe9ca08de57f9c5089b8fcd5d7b6a42977b35f669da65ec0f43f40e4"
+  },
+  "input_and_arrays_unchanged": true,
+  "limitations": [
+    "grid-axis nearest, not spherical/geodesic nearest",
+    "bilinear angular-coordinate estimate; no finer meteorological resolution",
+    "bilinear excludes polar caps; nearest pole canonical column zero",
+    "all four bilinear nodes required even at zero weight; no missing-value renormalisation",
+    "model-ground-relative 2 m diagnostic; not actual mountain/valley sensor support",
+    "no terrain correction, skill, reference pairing or production API"
+  ],
+  "outcome": "A \u2014 VERIFIED NATIVE-GRID QUERY SEMANTICS",
+  "primary_decoder": {
+    "eccodes_native": "2.48.0",
+    "eccodes_python": "2.48.0",
+    "numpy": "2.5.2",
+    "python": "3.12.6"
+  },
+  "query_profile_sha256": "adaf7d3ae0365906302d1d56f8e73399bb40be50dc1879bc666d8acb3fc574be",
+  "query_summary": [
+    {
+      "id": "native-node:NEAREST",
+      "independent_comparison": {
+        "arithmetic_bound_K": 1.735267164959531e-08,
+        "difference_K": 6.103515659106051e-06,
+        "status": "PASS",
+        "weighted_decoder_bound_K": 6.103515659106051e-06
+      },
+      "method": "NEAREST",
+      "normalised_coordinate": {
+        "latitude": 50.0,
+        "longitude_0_360": 0.0,
+        "longitude_minus180_180": 0.0
+      },
+      "status": "OK",
+      "temperature_K": 282.52792968750003
+    },
+    {
+      "id": "native-node:BILINEAR",
+      "independent_comparison": {
+        "arithmetic_bound_K": 1.7363727126129547e-08,
+        "difference_K": 6.103515659106051e-06,
+        "status": "PASS",
+        "weighted_decoder_bound_K": 6.103515659106051e-06
+      },
+      "method": "BILINEAR",
+      "normalised_coordinate": {
+        "latitude": 50.0,
+        "longitude_0_360": 0.0,
+        "longitude_minus180_180": 0.0
+      },
+      "status": "OK",
+      "temperature_K": 282.52792968750003
+    },
+    {
+      "id": "longitude-half:NEAREST",
+      "independent_comparison": {
+        "arithmetic_bound_K": 1.7337316821075533e-08,
+        "difference_K": 6.103515659106051e-06,
+        "status": "PASS",
+        "weighted_decoder_bound_K": 6.103515659106051e-06
+      },
+      "method": "NEAREST",
+      "normalised_coordinate": {
+        "latitude": 50.0,
+        "longitude_0_360": 0.125,
+        "longitude_minus180_180": 0.125
+      },
+      "status": "OK",
+      "temperature_K": 282.27792968750003
+    },
+    {
+      "id": "longitude-half:BILINEAR",
+      "independent_comparison": {
+        "arithmetic_bound_K": 1.7363727126129547e-08,
+        "difference_K": 6.103515659106051e-06,
+        "status": "PASS",
+        "weighted_decoder_bound_K": 6.103515659106051e-06
+      },
+      "method": "BILINEAR",
+      "normalised_coordinate": {
+        "latitude": 50.0,
+        "longitude_0_360": 0.125,
+        "longitude_minus180_180": 0.125
+      },
+      "status": "OK",
+      "temperature_K": 282.40292968750003
+    },
+    {
+      "id": "latitude-half:NEAREST",
+      "independent_comparison": {
+        "arithmetic_bound_K": 1.7363727126129547e-08,
+        "difference_K": 1.3427734359083843e-05,
+        "status": "PASS",
+        "weighted_decoder_bound_K": 1.3427734359083843e-05
+      },
+      "method": "NEAREST",
+      "normalised_coordinate": {
+        "latitude": 49.875,
+        "longitude_0_360": 0.0,
+        "longitude_minus180_180": 0.0
+      },
+      "status": "OK",
+      "temperature_K": 282.7079296875
+    },
+    {
+      "id": "latitude-half:BILINEAR",
+      "independent_comparison": {
+        "arithmetic_bound_K": 1.7363727126129547e-08,
+        "difference_K": 9.765625009094947e-06,
+        "status": "PASS",
+        "weighted_decoder_bound_K": 9.765625009094947e-06
+      },
+      "method": "BILINEAR",
+      "normalised_coordinate": {
+        "latitude": 49.875,
+        "longitude_0_360": 0.0,
+        "longitude_minus180_180": 0.0
+      },
+      "status": "OK",
+      "temperature_K": 282.6179296875
+    },
+    {
+      "id": "four-node-interior:NEAREST",
+      "independent_comparison": {
+        "arithmetic_bound_K": 1.735267164959531e-08,
+        "difference_K": 6.103515659106051e-06,
+        "status": "PASS",
+        "weighted_decoder_bound_K": 6.103515659106051e-06
+      },
+      "method": "NEAREST",
+      "normalised_coordinate": {
+        "latitude": 49.9,
+        "longitude_0_360": 0.1,
+        "longitude_minus180_180": 0.1
+      },
+      "status": "OK",
+      "temperature_K": 282.52792968750003
+    },
+    {
+      "id": "four-node-interior:BILINEAR",
+      "independent_comparison": {
+        "arithmetic_bound_K": 1.7363727126129547e-08,
+        "difference_K": 7.275390657923708e-06,
+        "status": "PASS",
+        "weighted_decoder_bound_K": 7.275390642007568e-06
+      },
+      "method": "BILINEAR",
+      "normalised_coordinate": {
+        "latitude": 49.9,
+        "longitude_0_360": 0.1,
+        "longitude_minus180_180": 0.1
+      },
+      "status": "OK",
+      "temperature_K": 282.29672968750003
+    },
+    {
+      "id": "northern:NEAREST",
+      "independent_comparison": {
+        "arithmetic_bound_K": 1.7307221357176772e-08,
+        "difference_K": 3.6621093499888957e-06,
+        "status": "PASS",
+        "weighted_decoder_bound_K": 3.6621093499888957e-06
+      },
+      "method": "NEAREST",
+      "normalised_coordinate": {
+        "latitude": 62.3,
+        "longitude_0_360": 353.6,
+        "longitude_minus180_180": -6.399999999999977
+      },
+      "status": "OK",
+      "temperature_K": 281.7879296875
+    },
+    {
+      "id": "northern:BILINEAR",
+      "independent_comparison": {
+        "arithmetic_bound_K": 1.7362498739847966e-08,
+        "difference_K": 6.005859404467628e-06,
+        "status": "PASS",
+        "weighted_decoder_bound_K": 9.521484357720101e-06
+      },
+      "method": "BILINEAR",
+      "normalised_coordinate": {
+        "latitude": 62.3,
+        "longitude_0_360": 353.6,
+        "longitude_minus180_180": -6.399999999999977
+      },
+      "status": "OK",
+      "temperature_K": 281.9255296875
+    },
+    {
+      "id": "southern:NEAREST",
+      "independent_comparison": {
+        "arithmetic_bound_K": 1.8172005299410543e-08,
+        "difference_K": 9.765625009094947e-06,
+        "status": "PASS",
+        "weighted_decoder_bound_K": 9.765625009094947e-06
+      },
+      "method": "NEAREST",
+      "normalised_coordinate": {
+        "latitude": -40.12,
+        "longitude_0_360": 175.13,
+        "longitude_minus180_180": 175.13
+      },
+      "status": "OK",
+      "temperature_K": 295.8679296875
+    },
+    {
+      "id": "southern:BILINEAR",
+      "independent_comparison": {
+        "arithmetic_bound_K": 1.8172005299410543e-08,
+        "difference_K": 3.8124999832689355e-06,
+        "status": "PASS",
+        "weighted_decoder_bound_K": 5.03125000468558e-06
+      },
+      "method": "BILINEAR",
+      "normalised_coordinate": {
+        "latitude": -40.12,
+        "longitude_0_360": 175.13,
+        "longitude_minus180_180": 175.13
+      },
+      "status": "OK",
+      "temperature_K": 292.1264256874999
+    },
+    {
+      "id": "antimeridian:NEAREST",
+      "independent_comparison": {
+        "arithmetic_bound_K": 1.8384516126124238e-08,
+        "difference_K": 1.8310546863631316e-05,
+        "status": "PASS",
+        "weighted_decoder_bound_K": 1.8310546863631316e-05
+      },
+      "method": "NEAREST",
+      "normalised_coordinate": {
+        "latitude": 12.3,
+        "longitude_0_360": 179.875,
+        "longitude_minus180_180": 179.875
+      },
+      "status": "OK",
+      "temperature_K": 299.3279296875
+    },
+    {
+      "id": "antimeridian:BILINEAR",
+      "independent_comparison": {
+        "arithmetic_bound_K": 1.8386972898687404e-08,
+        "difference_K": 1.4160156240450306e-05,
+        "status": "PASS",
+        "weighted_decoder_bound_K": 1.4160156251818982e-05
+      },
+      "method": "BILINEAR",
+      "normalised_coordinate": {
+        "latitude": 12.3,
+        "longitude_0_360": 179.875,
+        "longitude_minus180_180": 179.875
+      },
+      "status": "OK",
+      "temperature_K": 299.3509296875
+    },
+    {
+      "id": "antimeridian-negative-equivalent:NEAREST",
+      "independent_comparison": {
+        "arithmetic_bound_K": 1.8384516126124238e-08,
+        "difference_K": 1.8310546863631316e-05,
+        "status": "PASS",
+        "weighted_decoder_bound_K": 1.8310546863631316e-05
+      },
+      "method": "NEAREST",
+      "normalised_coordinate": {
+        "latitude": 12.3,
+        "longitude_0_360": 179.875,
+        "longitude_minus180_180": 179.875
+      },
+      "status": "OK",
+      "temperature_K": 299.3279296875
+    },
+    {
+      "id": "antimeridian-negative-equivalent:BILINEAR",
+      "independent_comparison": {
+        "arithmetic_bound_K": 1.8386972898687404e-08,
+        "difference_K": 1.4160156240450306e-05,
+        "status": "PASS",
+        "weighted_decoder_bound_K": 1.4160156251818982e-05
+      },
+      "method": "BILINEAR",
+      "normalised_coordinate": {
+        "latitude": 12.3,
+        "longitude_0_360": 179.875,
+        "longitude_minus180_180": 179.875
+      },
+      "status": "OK",
+      "temperature_K": 299.3509296875
+    },
+    {
+      "id": "antimeridian-plus360-equivalent:NEAREST",
+      "independent_comparison": {
+        "arithmetic_bound_K": 1.8384516126124238e-08,
+        "difference_K": 1.8310546863631316e-05,
+        "status": "PASS",
+        "weighted_decoder_bound_K": 1.8310546863631316e-05
+      },
+      "method": "NEAREST",
+      "normalised_coordinate": {
+        "latitude": 12.3,
+        "longitude_0_360": 179.875,
+        "longitude_minus180_180": 179.875
+      },
+      "status": "OK",
+      "temperature_K": 299.3279296875
+    },
+    {
+      "id": "antimeridian-plus360-equivalent:BILINEAR",
+      "independent_comparison": {
+        "arithmetic_bound_K": 1.8386972898687404e-08,
+        "difference_K": 1.4160156240450306e-05,
+        "status": "PASS",
+        "weighted_decoder_bound_K": 1.4160156251818982e-05
+      },
+      "method": "BILINEAR",
+      "normalised_coordinate": {
+        "latitude": 12.3,
+        "longitude_0_360": 179.875,
+        "longitude_minus180_180": 179.875
+      },
+      "status": "OK",
+      "temperature_K": 299.3509296875
+    },
+    {
+      "id": "periodic-seam:NEAREST",
+      "independent_comparison": {
+        "arithmetic_bound_K": 1.8472345745257355e-08,
+        "difference_K": 4.8828125045474735e-06,
+        "status": "PASS",
+        "weighted_decoder_bound_K": 4.8828125045474735e-06
+      },
+      "method": "NEAREST",
+      "normalised_coordinate": {
+        "latitude": 3.3,
+        "longitude_0_360": 359.875,
+        "longitude_minus180_180": -0.125
+      },
+      "status": "OK",
+      "temperature_K": 300.7579296875
+    },
+    {
+      "id": "periodic-seam:BILINEAR",
+      "independent_comparison": {
+        "arithmetic_bound_K": 1.8478487676665268e-08,
+        "difference_K": 5.1269531127218215e-06,
+        "status": "PASS",
+        "weighted_decoder_bound_K": 1.0498046884777165e-05
+      },
+      "method": "BILINEAR",
+      "normalised_coordinate": {
+        "latitude": 3.3,
+        "longitude_0_360": 359.875,
+        "longitude_minus180_180": -0.125
+      },
+      "status": "OK",
+      "temperature_K": 300.8039296875
+    },
+    {
+      "id": "periodic-seam-equivalent:NEAREST",
+      "independent_comparison": {
+        "arithmetic_bound_K": 1.8472345745257355e-08,
+        "difference_K": 4.8828125045474735e-06,
+        "status": "PASS",
+        "weighted_decoder_bound_K": 4.8828125045474735e-06
+      },
+      "method": "NEAREST",
+      "normalised_coordinate": {
+        "latitude": 3.3,
+        "longitude_0_360": 359.875,
+        "longitude_minus180_180": -0.125
+      },
+      "status": "OK",
+      "temperature_K": 300.7579296875
+    },
+    {
+      "id": "periodic-seam-equivalent:BILINEAR",
+      "independent_comparison": {
+        "arithmetic_bound_K": 1.8478487676665268e-08,
+        "difference_K": 5.1269531127218215e-06,
+        "status": "PASS",
+        "weighted_decoder_bound_K": 1.0498046884777165e-05
+      },
+      "method": "BILINEAR",
+      "normalised_coordinate": {
+        "latitude": 3.3,
+        "longitude_0_360": 359.875,
+        "longitude_minus180_180": -0.125
+      },
+      "status": "OK",
+      "temperature_K": 300.8039296875
+    },
+    {
+      "id": "north-polar-cap:NEAREST",
+      "independent_comparison": {
+        "arithmetic_bound_K": 1.54634135485221e-08,
+        "difference_K": 6.103515772792889e-07,
+        "status": "PASS",
+        "weighted_decoder_bound_K": 6.103515772792889e-07
+      },
+      "method": "NEAREST",
+      "normalised_coordinate": {
+        "latitude": 89.875,
+        "longitude_0_360": 20.0,
+        "longitude_minus180_180": 20.0
+      },
+      "status": "OK",
+      "temperature_K": 251.76792968750001
+    },
+    {
+      "id": "north-polar-cap:BILINEAR",
+      "method": "BILINEAR",
+      "normalised_coordinate": {
+        "latitude": 89.875,
+        "longitude_0_360": 20.0,
+        "longitude_minus180_180": 20.0
+      },
+      "status": "UNSUPPORTED_POLAR_CAP_BILINEAR"
+    },
+    {
+      "id": "south-polar-cap:NEAREST",
+      "independent_comparison": {
+        "arithmetic_bound_K": 1.521282274707936e-08,
+        "difference_K": 2.4414062522737368e-06,
+        "status": "PASS",
+        "weighted_decoder_bound_K": 2.4414062522737368e-06
+      },
+      "method": "NEAREST",
+      "normalised_coordinate": {
+        "latitude": -89.875,
+        "longitude_0_360": 20.0,
+        "longitude_minus180_180": 20.0
+      },
+      "status": "OK",
+      "temperature_K": 247.6879296875
+    },
+    {
+      "id": "south-polar-cap:BILINEAR",
+      "method": "BILINEAR",
+      "normalised_coordinate": {
+        "latitude": -89.875,
+        "longitude_0_360": 20.0,
+        "longitude_minus180_180": 20.0
+      },
+      "status": "UNSUPPORTED_POLAR_CAP_BILINEAR"
+    },
+    {
+      "id": "north-pole:NEAREST",
+      "independent_comparison": {
+        "arithmetic_bound_K": 1.5457271617114186e-08,
+        "difference_K": 6.713867179541921e-06,
+        "status": "PASS",
+        "weighted_decoder_bound_K": 6.713867179541921e-06
+      },
+      "method": "NEAREST",
+      "normalised_coordinate": {
+        "latitude": 90.0,
+        "longitude_0_360": 123.0,
+        "longitude_minus180_180": 123.0
+      },
+      "status": "OK",
+      "temperature_K": 251.6679296875
+    },
+    {
+      "id": "north-pole:BILINEAR",
+      "method": "BILINEAR",
+      "normalised_coordinate": {
+        "latitude": 90.0,
+        "longitude_0_360": 123.0,
+        "longitude_minus180_180": 123.0
+      },
+      "status": "UNSUPPORTED_POLAR_CAP_BILINEAR"
+    },
+    {
+      "id": "south-pole:NEAREST",
+      "independent_comparison": {
+        "arithmetic_bound_K": 1.521282274707936e-08,
+        "difference_K": 2.4414062522737368e-06,
+        "status": "PASS",
+        "weighted_decoder_bound_K": 2.4414062522737368e-06
+      },
+      "method": "NEAREST",
+      "normalised_coordinate": {
+        "latitude": -90.0,
+        "longitude_0_360": 316.0,
+        "longitude_minus180_180": -44.0
+      },
+      "status": "OK",
+      "temperature_K": 247.6879296875
+    },
+    {
+      "id": "south-pole:BILINEAR",
+      "method": "BILINEAR",
+      "normalised_coordinate": {
+        "latitude": -90.0,
+        "longitude_0_360": 316.0,
+        "longitude_minus180_180": -44.0
+      },
+      "status": "UNSUPPORTED_POLAR_CAP_BILINEAR"
+    },
+    {
+      "id": "north-bilinear-boundary:NEAREST",
+      "independent_comparison": {
+        "arithmetic_bound_K": 1.54634135485221e-08,
+        "difference_K": 6.103515772792889e-07,
+        "status": "PASS",
+        "weighted_decoder_bound_K": 6.103515772792889e-07
+      },
+      "method": "NEAREST",
+      "normalised_coordinate": {
+        "latitude": 89.75,
+        "longitude_0_360": 20.125,
+        "longitude_minus180_180": 20.125
+      },
+      "status": "OK",
+      "temperature_K": 251.76792968750001
+    },
+    {
+      "id": "north-bilinear-boundary:BILINEAR",
+      "independent_comparison": {
+        "arithmetic_bound_K": 1.54634135485221e-08,
+        "difference_K": 6.103515772792889e-07,
+        "status": "PASS",
+        "weighted_decoder_bound_K": 6.103515772792889e-07
+      },
+      "method": "BILINEAR",
+      "normalised_coordinate": {
+        "latitude": 89.75,
+        "longitude_0_360": 20.125,
+        "longitude_minus180_180": 20.125
+      },
+      "status": "OK",
+      "temperature_K": 251.76792968750001
+    },
+    {
+      "id": "south-bilinear-boundary:NEAREST",
+      "independent_comparison": {
+        "arithmetic_bound_K": 1.5195625339137208e-08,
+        "difference_K": 1.2207031261368684e-06,
+        "status": "PASS",
+        "weighted_decoder_bound_K": 1.2207031261368684e-06
+      },
+      "method": "NEAREST",
+      "normalised_coordinate": {
+        "latitude": -89.75,
+        "longitude_0_360": 20.125,
+        "longitude_minus180_180": 20.125
+      },
+      "status": "OK",
+      "temperature_K": 247.4079296875
+    },
+    {
+      "id": "south-bilinear-boundary:BILINEAR",
+      "independent_comparison": {
+        "arithmetic_bound_K": 1.5195625339137208e-08,
+        "difference_K": 1.2207031261368684e-06,
+        "status": "PASS",
+        "weighted_decoder_bound_K": 1.2207031261368684e-06
+      },
+      "method": "BILINEAR",
+      "normalised_coordinate": {
+        "latitude": -89.75,
+        "longitude_0_360": 20.125,
+        "longitude_minus180_180": 20.125
+      },
+      "status": "OK",
+      "temperature_K": 247.4079296875
+    },
+    {
+      "id": "scottish-highlands-fixture:NEAREST",
+      "independent_comparison": {
+        "arithmetic_bound_K": 1.713217631205133e-08,
+        "difference_K": 2.4414062522737368e-06,
+        "status": "PASS",
+        "weighted_decoder_bound_K": 2.4414062522737368e-06
+      },
+      "method": "NEAREST",
+      "normalised_coordinate": {
+        "latitude": 56.8,
+        "longitude_0_360": 355.0,
+        "longitude_minus180_180": -5.0
+      },
+      "status": "OK",
+      "temperature_K": 278.9379296875
+    },
+    {
+      "id": "scottish-highlands-fixture:BILINEAR",
+      "independent_comparison": {
+        "arithmetic_bound_K": 1.713217631205133e-08,
+        "difference_K": 3.1738281336401997e-06,
+        "status": "PASS",
+        "weighted_decoder_bound_K": 3.173828133640158e-06
+      },
+      "method": "BILINEAR",
+      "normalised_coordinate": {
+        "latitude": 56.8,
+        "longitude_0_360": 355.0,
+        "longitude_minus180_180": -5.0
+      },
+      "status": "OK",
+      "temperature_K": 278.9059296875
+    },
+    {
+      "id": "alpine-fixture:NEAREST",
+      "independent_comparison": {
+        "arithmetic_bound_K": 1.599898996729188e-08,
+        "difference_K": 1.464843751364242e-05,
+        "status": "PASS",
+        "weighted_decoder_bound_K": 1.464843751364242e-05
+      },
+      "method": "NEAREST",
+      "normalised_coordinate": {
+        "latitude": 45.975,
+        "longitude_0_360": 7.775,
+        "longitude_minus180_180": 7.775
+      },
+      "status": "OK",
+      "temperature_K": 260.4879296875
+    },
+    {
+      "id": "alpine-fixture:BILINEAR",
+      "independent_comparison": {
+        "arithmetic_bound_K": 1.6580016678480192e-08,
+        "difference_K": 1.2341308661234507e-05,
+        "status": "PASS",
+        "weighted_decoder_bound_K": 1.2487792982938156e-05
+      },
+      "method": "BILINEAR",
+      "normalised_coordinate": {
+        "latitude": 45.975,
+        "longitude_0_360": 7.775,
+        "longitude_minus180_180": 7.775
+      },
+      "status": "OK",
+      "temperature_K": 261.5437296875
+    },
+    {
+      "id": "invalid-0",
+      "status": "LATITUDE_OUT_OF_RANGE"
+    },
+    {
+      "id": "invalid-1",
+      "status": "INVALID_COORDINATE_TYPE"
+    },
+    {
+      "id": "invalid-2",
+      "status": "INVALID_COORDINATE_TYPE"
+    },
+    {
+      "id": "invalid-3",
+      "status": "UNSUPPORTED_METHOD"
+    },
+    {
+      "id": "invalid-4",
+      "status": "MALFORMED_QUERY"
+    },
+    {
+      "id": "invalid-5",
+      "status": "MALFORMED_QUERY"
+    },
+    {
+      "id": "invalid-6",
+      "status": "INVALID_COORDINATE_TYPE"
+    },
+    {
+      "id": "invalid-7",
+      "status": "INVALID_COORDINATE_TYPE"
+    },
+    {
+      "id": "invalid-8",
+      "status": "MALFORMED_QUERY"
+    }
+  ],
+  "schema": "meridian-weather-wr008-sampling-v1",
+  "source": {
+    "inventory_line": "581:415390073:d=2025011500:TMP:2 m above ground:24 hour fcst:",
+    "inventory_message_number": 581,
+    "inventory_sha256": "fa11be72ab29ea43520dc6a6fc8de81bd8e0e024c96da94ed05495bc43b39dcb",
+    "inventory_url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20250115/00/atmos/gfs.t00z.pgrb2.0p25.f024.idx",
+    "object_url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20250115/00/atmos/gfs.t00z.pgrb2.0p25.f024",
+    "parent_bytes": 537858357,
+    "parent_etag": "e9f55c2f3f45d6cdb3aac9e4b7a36aba",
+    "processing_version": "UNRESOLVED; generating process 96, not exact binary/suite version",
+    "provider": "NOAA/NCEP GFS through NOAA Open Data Dissemination",
+    "range_end_inclusive": 416264187,
+    "range_start": 415390073,
+    "rights_checked": "2026-10-10",
+    "rights_url": "https://registry.opendata.aws/noaa-gfs-bdp-pds/"
+  }
+}

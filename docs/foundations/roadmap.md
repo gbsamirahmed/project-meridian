@@ -202,3 +202,14 @@ production readiness or mobile feasibility. WR006 reference Decision C remains
 blocked. No platform/framework/provider decision changes. The sole recommended
 next bounded Weather task is native-grid point-sampling/query semantics using the
 existing field, **NOT BEGUN**; broader Weather tracks and later device gates remain.
+
+
+### WR008 finite numerical query evidence — 10 October 2026
+
+[WR008](../research/weather/gfs-native-grid-point-sampling.md) verifies angular-grid
+nearest and qualified bilinear queries on the pinned real WR007 field. This advances
+bounded Weather numerical evidence, not application readiness, local forecast skill,
+mobile/route/offline suitability or a provider/framework decision. MIDAS reference
+Decision C stays blocked. Exactly one next task is **historical GFS precipitation-
+interval semantics and decoding pilot — NOT BEGUN**, under the report's separate
+acquisition/rights/resource gates. Broader scientific tracks remain revisable.

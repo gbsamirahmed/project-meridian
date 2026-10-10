@@ -1,0 +1,37 @@
+{
+  "schema": "meridian-weather-wr008-query-profile-v1",
+  "selection": "Frozen before WR008 temperature queries; coordinate fixtures, not validated local forecasts or precise summit positions",
+  "methods": ["NEAREST", "BILINEAR"],
+  "locations": [
+    {"id": "native-node", "latitude": 50.0, "longitude": 0.0},
+    {"id": "longitude-half", "latitude": 50.0, "longitude": 0.125},
+    {"id": "latitude-half", "latitude": 49.875, "longitude": 0.0},
+    {"id": "four-node-interior", "latitude": 49.9, "longitude": 0.1},
+    {"id": "northern", "latitude": 62.3, "longitude": -6.4},
+    {"id": "southern", "latitude": -40.12, "longitude": 175.13},
+    {"id": "antimeridian", "latitude": 12.3, "longitude": 179.875},
+    {"id": "antimeridian-negative-equivalent", "latitude": 12.3, "longitude": -180.125},
+    {"id": "antimeridian-plus360-equivalent", "latitude": 12.3, "longitude": 539.875},
+    {"id": "periodic-seam", "latitude": 3.3, "longitude": -0.125},
+    {"id": "periodic-seam-equivalent", "latitude": 3.3, "longitude": 359.875},
+    {"id": "north-polar-cap", "latitude": 89.875, "longitude": 20.0},
+    {"id": "south-polar-cap", "latitude": -89.875, "longitude": 20.0},
+    {"id": "north-pole", "latitude": 90.0, "longitude": 123.0},
+    {"id": "south-pole", "latitude": -90.0, "longitude": -44.0},
+    {"id": "north-bilinear-boundary", "latitude": 89.75, "longitude": 20.125},
+    {"id": "south-bilinear-boundary", "latitude": -89.75, "longitude": 20.125},
+    {"id": "scottish-highlands-fixture", "latitude": 56.8, "longitude": -5.0},
+    {"id": "alpine-fixture", "latitude": 45.975, "longitude": 7.775}
+  ],
+  "invalid_queries": [
+    {"latitude": 90.01, "longitude": 0.0, "method": "NEAREST"},
+    {"latitude": null, "longitude": 0.0, "method": "NEAREST"},
+    {"latitude": 0.0, "longitude": "Infinity", "method": "NEAREST"},
+    {"latitude": 0.0, "longitude": 0.0, "method": "CUBIC"},
+    {"longitude": 0.0, "method": "NEAREST"},
+    {"latitude": 0.0, "longitude": 0.0, "method": "NEAREST", "valid_time": "2025-01-16T00:00:00Z"},
+    {"latitude": "50", "longitude": 0.0, "method": "NEAREST"},
+    {"latitude": 0.0, "longitude": true, "method": "NEAREST"},
+    null
+  ]
+}

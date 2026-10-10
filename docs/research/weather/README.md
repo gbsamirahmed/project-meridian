@@ -106,3 +106,20 @@ and reference Decision C stay BLOCKED. [Reproducible isolated utility](../../../
 Exactly one current next task: **GFS native-grid point-sampling and query-semantics
 pilot — NOT BEGUN**, [finite scope and stops](historical-gfs-temperature-field-pilot.md#9-exactly-one-next-bounded-task--not-begun).
 Historical next-task notes remain records, not concurrent instructions.
+
+
+## WR008 qualified native-grid queries — 10 October 2026
+
+[WR008](gfs-native-grid-point-sampling.md): **Outcome A — VERIFIED NATIVE-GRID QUERY
+SEMANTICS**, confined to the pinned WR007 real temperature field and checked Windows
+profile. Nineteen angular-axis nearest and fifteen qualified bilinear queries pass
+independent GDAL comparisons; four polar-cap bilinear requests explicitly unsupported,
+nine invalid queries rejected. Maximum difference 0.000018310546863631316 K, explained
+by independently verified contributing-node decoding; weights and GDAL kernel/dot
+agreement exact. No local forecast accuracy, resolution gain or reference/skill claim.
+[Isolated utility and commands](../../../scripts/weather-research/wr008/README.md).
+
+WR006 reference Decision C remains BLOCKED. WR008's authorised bilinear scope is an
+explicit expansion of the earlier WR007 proposal, not a historical rewrite. Exactly
+one current next task: **historical GFS precipitation-interval semantics and decoding
+pilot — NOT BEGUN**, [finite scope and gates](gfs-native-grid-point-sampling.md#8-exactly-one-next-bounded-task--not-begun).

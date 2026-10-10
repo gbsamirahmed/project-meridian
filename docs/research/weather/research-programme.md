@@ -145,3 +145,22 @@ Global/regional, ensembles, observations/nowcast, ML, mountains, other quantitie
 uncertainty, rights/economics and offline delivery remain independent programme tracks.
 Exactly one next task: **GFS native-grid point-sampling and query-semantics pilot —
 NOT BEGUN**, [definition](historical-gfs-temperature-field-pilot.md#9-exactly-one-next-bounded-task--not-begun).
+
+
+## WR008 completed: qualified sampling, then expand quantity semantics
+
+10 October 2026. [WR008](gfs-native-grid-point-sampling.md) establishes finite
+angular-grid nearest and bilinear querying using the already pinned temperature
+field. This task explicitly authorises interpolation beyond WR007's historical
+next-task scope. The canonical query semantics include method, source nodes/weights,
+cyclic longitude, qualified polar limits and missing/error outcomes. Their numerical
+validation is distinct from meteorological resolution, terrain representativeness,
+route performance and predictive skill. WR006's blocked reference is unchanged.
+
+Next information value is an accumulated quantity's time support and decoding,
+rather than another round of temperature interpolation or premature route integration.
+Global/regional, ensemble, nowcasting/observations, ML, mountain and other quantities,
+rights, economics and offline tracks remain open. Exactly one next task:
+**historical GFS precipitation-interval semantics and decoding pilot — NOT BEGUN**,
+[objective, prerequisites, acceptance, resources and stop](gfs-native-grid-point-sampling.md#8-exactly-one-next-bounded-task--not-begun).
+No new acquisition is authorised or begun in WR008.

@@ -205,3 +205,19 @@ installation or second forecast payload. [Exact request/body/hash ledger](../../
 
 All requested external bodies were accessible; no authentication gate encountered.
 Catalogue availability still does not imply complete historical retention or skill.
+
+
+## WR008 local numerical and sampling evidence
+
+Inspected **10 October 2026**; **zero external documentation or scientific retrievals**.
+Prior external access dates/rights remain WR007's, not newly claimed fetches.
+
+| Identifier / inspected source | Evidence and qualification |
+|---|---|
+| WR8-S01 / [WR007 pins/receipt](../../../scripts/weather-research/wr007/README.md) and actual local GRIB | Raw/input/decoded identity and actual grid/time/unit rechecked; no new payload or model/reference substitution |
+| WR8-S02 / installed rasterio 1.4.3 `warp.reproject` documentation, GDAL 3.9.3 georeferenced sample/warp runtime | API inspected locally; affine synthetic probe and independent real interpolation executed. Boundary/polar/missing policy is explicit Meridian research policy; no new library/platform licence clearance |
+| WR8-S03 / [frozen profile](../../../scripts/weather-research/wr008/query-profile.json), [focused tests](../../../scripts/weather-research/wr008/test_gfs_point_sampling.py) and [numerical receipt](../../../scripts/weather-research/wr008/sampling-receipt.json) | Real and synthetic evidence separated, profile frozen before returned temperatures; no meteorological skill, resolution gain or terrain-support proof |
+
+The NOAA-derived query samples carry original source identity/credit and WR007 reuse
+qualifications. Zero scientific requests does not certify zero total network traffic:
+required Git control and unrelated OS activity are unmetered. No packages installed.

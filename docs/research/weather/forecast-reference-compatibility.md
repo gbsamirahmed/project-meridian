@@ -159,3 +159,14 @@ rounding. This closes a finite numerical-format prerequisite, not the original
 cohort's historical coverage or GFS/UKV/reference pairing. WR006 strict/revised
 reference Decision C remains BLOCKED. No UKV or observation values were inspected.
 No equal-height, exact-time station equivalence or forecast skill follows.
+
+
+## WR008 point-query refinement — 10 October 2026
+
+[WR008](gfs-native-grid-point-sampling.md) establishes axis-nearest and qualified
+bilinear numerical querying of the one WR007 field; their source nodes, weights,
+cyclic coordinate and polar/missing rules are explicit. Interpolation is a scientific
+sampling choice, not additional model resolution or station-support equivalence.
+No empirical errors were calculated; original strict/reference-proxy designs remain
+BLOCKED under WR006 Decision C. Forecast/reference pairing cannot silently adopt
+these methods or reinterpret model-relative 2 m as actual terrain-relative 2 m.

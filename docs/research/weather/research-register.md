@@ -151,3 +151,21 @@ Experimental status below applies only to this field/profile, never forecast ski
 
 Exactly one next task: [native-grid point-sampling and query-semantics pilot](historical-gfs-temperature-field-pilot.md#9-exactly-one-next-bounded-task--not-begun),
 **NOT BEGUN**. The historical MIDAS reference decision remains blocked.
+
+
+## WR008 bounded query-semantics evidence
+
+10 October 2026. [WR008](gfs-native-grid-point-sampling.md): **Outcome A**, the finite
+real temperature grid/profile only. All W01–W40 and WR2–WR7 historical rows unchanged.
+No broad topic, station reference, forecast skill or application maturity promoted.
+
+| Identifier / parents | Bounded result | Status / remaining gate |
+|---|---|---|
+| WR8-Q01 / W11, W31, W38 | Actual grid-derived axis-nearest nodes, explicit south/east ties, periodic longitude and canonical pole representative; 19 real comparisons | EXPERIMENTALLY VALIDATED (this grid/query profile); geographic-nearest contract not implemented |
+| WR8-Q02 / W11, W31, W38 | Fifteen real bilinear queries agree with independent GDAL kernel and contributing decoding; four polar-cap requests explicitly unsupported | EXPERIMENTALLY VALIDATED (qualified angular interpolation only); other grids/polar schemes unresolved, no resolution/skill claim |
+| WR8-Q03 / W30, W38 | 36 synthetic guards/invariants plus real replay; 47 receipts, input/arrays immutable, invalid/masked queries fail explicitly | EXPERIMENTALLY VALIDATED (finite numerical/error protocol); actual bitmap interpolation not demonstrated |
+| WR8-Q04 / W24, W31, W39, W40 | Method/node/time/height/source qualifications separate query coordinates from model terrain and real-world measurement support | RESEARCHED (engineering interpretation); no terrain correction, route performance or production API validated |
+
+Exactly one next task: [historical GFS precipitation-interval semantics and decoding
+pilot](gfs-native-grid-point-sampling.md#8-exactly-one-next-bounded-task--not-begun),
+**NOT BEGUN**. No reference/skill or later task began.
