@@ -123,3 +123,10 @@ WR006 reference Decision C remains BLOCKED. WR008's authorised bilinear scope is
 explicit expansion of the earlier WR007 proposal, not a historical rewrite. Exactly
 one current next task: **historical GFS precipitation-interval semantics and decoding
 pilot — NOT BEGUN**, [finite scope and gates](gfs-native-grid-point-sampling.md#8-exactly-one-next-bounded-task--not-begun).
+
+
+## WR009 precipitation-interval experiment — 10 October 2026
+
+[WR009 report](historical-gfs-precipitation-interval-pilot.md), [isolated utility](../../../scripts/weather-research/wr009/README.md) and [interval receipt](../../../scripts/weather-research/wr009/interval-interpretation-receipt.json): **Outcome A — VERIFIED PRECIPITATION FIELD AND INTERVAL SEMANTICS**, one real NOAA GFS Jan 15 2025 00 UTC f024 message. Actual **18–24 h / six-hour accumulation**, kg/m²; 1,038,240 independent decoder values bit-identical. Native grid definition matches WR007; no new point-sampling or forecast-skill claim. WR006 reference Decision C remains BLOCKED. Historical reports/statuses remain unchanged.
+
+Exactly one next task: **WR010 — MULTI-VARIABLE FIELD-COMPATIBILITY AND SCIENTIFIC-CONTRACT PILOT — NOT BEGUN**, [finite evidence/resource/stopping gates](historical-gfs-precipitation-interval-pilot.md#8-remaining-limits-and-exactly-one-next-task--not-begun). Broaden representative field-family semantics without a permanent per-variable research sequence; no further acquisition or implementation begins here.

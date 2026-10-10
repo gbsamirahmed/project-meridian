@@ -221,3 +221,18 @@ Prior external access dates/rights remain WR007's, not newly claimed fetches.
 The NOAA-derived query samples carry original source identity/credit and WR007 reuse
 qualifications. Zero scientific requests does not certify zero total network traffic:
 required Git control and unrelated OS activity are unmetered. No packages installed.
+
+
+## WR009 exact precipitation and GRIB interval evidence
+
+Accessed **10 October 2026**: nine anonymous controlled requests, **503,483 response-body bytes**, one 343,228-byte GRIB payload, no redirects/retries/accounts/installations. [Complete ledger and actual metadata](../../../scripts/weather-research/wr009/integrity-receipt.json); [interpretation/report](historical-gfs-precipitation-interval-pilot.md). Git/HTTP/TLS overhead unmetered, no total-network certification.
+
+| Identifier / primary source | Inspected evidence and qualification |
+|---|---|
+| WR9-S01 / [NOAA exact f024 index](https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20250115/00/atmos/gfs.t00z.pgrb2.0p25.f024.idx), parent HEAD and range | Two APCP intervals listed; message 596 18–24 h selected before values, range 426116442–426459669 verified. Message 597 not acquired; filename/index alone not content authority |
+| WR9-S02 / [NOAA NODD notice](https://registry.opendata.aws/noaa-gfs-bdp-pds/) | Anonymous research use/credit/no implied endorsement/modified-product qualification reviewed afresh; no complete distribution or future access clearance |
+| WR9-S03 / [PDT 4.8](https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/grib2_temp4-8.shtml), [time 4.4](https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/grib2_table4-4.shtml), [increment 4.11](https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/grib2_table4-11.shtml) | Reference+forecastTime defines interval beginning; explicit end/range duration checked against actual raw octets. Zero increment documented; missing increment unit does not specify cadence |
+| WR9-S04 / [statistical 4.10](https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/grib2_table4-10.shtml), [moisture 0/1](https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/grib2_table4-2-0-1.shtml) | Code 1 accumulation; total precipitation 0/1/8 native kg/m² and parameter note 3 exception to general unit-times-seconds rule. No rate/phase/intensity interpretation |
+| WR9-S05 / retained WR7-S03–S04 source/native evidence and actual installed ecCodes/GDAL | Re-read locally, no repeat transfer; binary32 scaling exact for inspected R=0/E=−4/D=0 proof domain. Version/resource notices remain separate redistribution gates |
+
+Metadata/raw/numerical/derived/publication identities remain distinct. Current definitions interpret encoded codes, not an exact historical executable revision. No new MIDAS evidence, third-party proxy or other forecast-variable acquisition.

@@ -169,3 +169,17 @@ No broad topic, station reference, forecast skill or application maturity promot
 Exactly one next task: [historical GFS precipitation-interval semantics and decoding
 pilot](gfs-native-grid-point-sampling.md#8-exactly-one-next-bounded-task--not-begun),
 **NOT BEGUN**. No reference/skill or later task began.
+
+
+## WR009 finite precipitation and field-family evidence
+
+10 October 2026. [WR009](historical-gfs-precipitation-interval-pilot.md): **Outcome A**, one actual accumulated total-precipitation message/grid/packing/profile. All W01–W40 and WR2–WR8 historical rows unchanged; no forecast skill or general field family validated.
+
+| Identifier / parents | Bounded result | Status / remaining gate |
+|---|---|---|
+| WR9-Q01 / W10, W38, W40 | Frozen message 596 APCP 18–24 h; checked NOAA HTTP 206 extraction, 343,228 bytes pinned | EXPERIMENTALLY VALIDATED (one object's bounded acquisition); archive continuity/suite build unresolved |
+| WR9-Q02 / W11, W31, W38 | Actual PDT 4.8/raw octets/decoder aliases establish 18 UTC–00 UTC six-hour accumulation, parameter 0/1/8 at surface native kg/m² | EXPERIMENTALLY VALIDATED (this one-range temporal/unit profile); nested/other statistics untested |
+| WR9-Q03 / W30, W38 | 1,038,240 ecCodes/GDAL cells/masks compared bit-identically under pre-value zero-tolerance scaling proof; immutable input and deterministic receipts | EXPERIMENTALLY VALIDATED (finite numerical interpretation); actual bitmap/internal missingness not demonstrated |
+| WR9-Q04 / W11, W31, W39 | Byte-identical temperature/precipitation Section 3 and native geometry; common field identity versus distinct temporal/unit/level semantics | RESEARCHED (compatibility implications backed by checked grid identity); precipitation point queries and multi-variable join framework not implemented |
+
+Exactly one next task: [WR010 multi-variable field-compatibility and scientific-contract pilot](historical-gfs-precipitation-interval-pilot.md#8-remaining-limits-and-exactly-one-next-task--not-begun), **NOT BEGUN**. WR006 reference Decision C remains blocked; source decoding is not observational skill.

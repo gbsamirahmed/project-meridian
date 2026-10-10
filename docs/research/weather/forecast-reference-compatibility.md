@@ -170,3 +170,8 @@ sampling choice, not additional model resolution or station-support equivalence.
 No empirical errors were calculated; original strict/reference-proxy designs remain
 BLOCKED under WR006 Decision C. Forecast/reference pairing cannot silently adopt
 these methods or reinterpret model-relative 2 m as actual terrain-relative 2 m.
+
+
+## WR009 accumulated-field refinement — 10 October 2026
+
+[WR009](historical-gfs-precipitation-interval-pilot.md) establishes a real surface total-precipitation **18–24 h accumulation** ending at the same valid time as the pinned temperature, not an instantaneous or full 24-hour value. Its native grid is byte-identical and numerical decoders agree. Shared valid-time/grid labels do not make temporal supports or physical quantities interchangeable; reference precipitation would require its own interval/measurement/QC/representativeness design. No such comparison is authorised or performed. WR006 strict and revised MIDAS temperature targets remain BLOCKED, with no protocol revision or accuracy claim.

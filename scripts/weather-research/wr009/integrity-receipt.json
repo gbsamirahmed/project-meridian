@@ -1,0 +1,487 @@
+{
+  "acquisition": {
+    "access_date": "2026-10-10",
+    "budget_qualification": "All controlled scientific/documentation response bodies counted; Git traffic and HTTP/TLS overhead unmetered. No package/update lookup/installation.",
+    "controlled_requests": 9,
+    "http_range_evidence": {
+      "Content-Length": "343228",
+      "Content-Range": "bytes 426116442-426459669/537858357",
+      "ETag": "\"e9f55c2f3f45d6cdb3aac9e4b7a36aba\"",
+      "Last-Modified": "Wed, 15 Jan 2025 03:44:04 GMT"
+    },
+    "raw_payload_bytes": 343228,
+    "redirects_or_retries": 0,
+    "request_ledger": [
+      {
+        "attempt": 1,
+        "body_bytes": 41250,
+        "method": "GET",
+        "sha256": "fa11be72ab29ea43520dc6a6fc8de81bd8e0e024c96da94ed05495bc43b39dcb",
+        "status": 200,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20250115/00/atmos/gfs.t00z.pgrb2.0p25.f024.idx",
+        "utc": "2026-10-10T16:58:50.669480+00:00"
+      },
+      {
+        "attempt": 2,
+        "body_bytes": 15298,
+        "method": "GET",
+        "sha256": "efc644aba94501635c6c9fa92afcb4e696b816ac5b6c9cfebfdeb74581a98b82",
+        "status": 200,
+        "url": "https://registry.opendata.aws/noaa-gfs-bdp-pds/",
+        "utc": "2026-10-10T16:58:51.357259+00:00"
+      },
+      {
+        "attempt": 3,
+        "body_bytes": 0,
+        "method": "HEAD",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "status": 200,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20250115/00/atmos/gfs.t00z.pgrb2.0p25.f024",
+        "utc": "2026-10-10T16:59:38.390016+00:00"
+      },
+      {
+        "attempt": 4,
+        "body_bytes": 343228,
+        "method": "GET",
+        "sha256": "e2a311fa2089ab1982d9b09e7ec82f483e07ef06f38457d9e379fe9cef970848",
+        "status": 206,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20250115/00/atmos/gfs.t00z.pgrb2.0p25.f024",
+        "utc": "2026-10-10T16:59:38.869336+00:00"
+      },
+      {
+        "attempt": 5,
+        "body_bytes": 10078,
+        "method": "GET",
+        "sha256": "60c95a9f1344046f51d0b1de26276a2546f151a4b95ef3ae3afdac85a984803a",
+        "status": 200,
+        "url": "https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/grib2_temp4-8.shtml",
+        "utc": "2026-10-10T16:59:39.869990+00:00"
+      },
+      {
+        "attempt": 6,
+        "body_bytes": 11572,
+        "method": "GET",
+        "sha256": "6baf3da6d17a1ec705c66799bcc7fbafd4d7b8ab6dddd8928d38423d48ee2172",
+        "status": 200,
+        "url": "https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/grib2_table4-10.shtml",
+        "utc": "2026-10-10T16:59:40.632533+00:00"
+      },
+      {
+        "attempt": 7,
+        "body_bytes": 3781,
+        "method": "GET",
+        "sha256": "383b61064e1f7e82d1fb0681d084bb9ea389f98476b026f773b878f370fbd962",
+        "status": 200,
+        "url": "https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/grib2_table4-4.shtml",
+        "utc": "2026-10-10T16:59:41.115776+00:00"
+      },
+      {
+        "attempt": 8,
+        "body_bytes": 3611,
+        "method": "GET",
+        "sha256": "3be377ebc2ce24b41ba9dba5034ab17c1d3dbcc0fb4bab1f752af91660253165",
+        "status": 200,
+        "url": "https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/grib2_table4-11.shtml",
+        "utc": "2026-10-10T16:59:41.609401+00:00"
+      },
+      {
+        "attempt": 9,
+        "body_bytes": 74665,
+        "method": "GET",
+        "sha256": "cbed0cf834436ad2f4c65756143d8d89156cc2246a57dc4cf57d46aba24c23e4",
+        "status": 200,
+        "url": "https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/grib2_table4-2-0-1.shtml",
+        "utc": "2026-10-10T16:59:42.115976+00:00"
+      }
+    ],
+    "response_body_bytes": 503483
+  },
+  "decoded_float64_little_endian_sha256": "fe7903e822f06a612c6b28c84bd0ed58348393af547974f79dd404e4234856fd",
+  "full_scientific_receipt": {
+    "bytes": 11360,
+    "sha256": "3fd4ca223e8377872c0c77fb99b758240c2a6cddfb55976e7b354a0b63405451"
+  },
+  "grid_compatibility": {
+    "metadata": {
+      "Ni": 1440,
+      "Nj": 721,
+      "alternativeRowScanning": 0,
+      "gridDefinitionTemplateNumber": 0,
+      "gridType": "regular_ll",
+      "iDirectionIncrementInDegrees": 0.25,
+      "iScansNegatively": 0,
+      "jDirectionIncrementInDegrees": 0.25,
+      "jPointsAreConsecutive": 0,
+      "jScansPositively": 0,
+      "latitudeOfFirstGridPointInDegrees": 90.0,
+      "latitudeOfLastGridPointInDegrees": -90.0,
+      "longitudeOfFirstGridPointInDegrees": 0.0,
+      "longitudeOfLastGridPointInDegrees": 359.75,
+      "numberOfPoints": 1038240,
+      "radius": 6371229,
+      "scanningMode": 0,
+      "shapeOfTheEarth": 6
+    },
+    "point_sampling_executed": false,
+    "reuse": "WR008 angular-nearest/qualified-bilinear geometry only; accumulation support must accompany every value",
+    "section3_sha256": "2f05f13897b18b42bb2790905e2476fce9a2e07b89f63499a12da9e202f3367f",
+    "status": "IDENTICAL ENCODED SECTION 3 AND CHECKED NATIVE COORDINATES",
+    "temperature_input": {
+      "bytes": 874115,
+      "filename": "gfs-2025011500-f024-t2m.grib2",
+      "sha256": "0b95fc06fe9ca08de57f9c5089b8fcd5d7b6a42977b35f669da65ec0f43f40e4"
+    }
+  },
+  "independent_comparison": {
+    "basis": "R=0, D=0, E=-4: exact binary32 integers below 2**24 scaled by exact 1/16; all cells satisfy the proof domain",
+    "bit_identical_cells": 1038240,
+    "compared_cells": 1038240,
+    "mask_agreement": true,
+    "maximum_absolute_difference_native": 0.0,
+    "mean_absolute_difference_native": 0.0,
+    "nonzero_difference_cells": 0,
+    "tolerance_native": 0,
+    "unexplained_disagreements": 0
+  },
+  "independent_decoder": {
+    "crs_wkt": "GEOGCS[\"Coordinate System imported from GRIB file\",DATUM[\"unnamed\",SPHEROID[\"Sphere\",6371229,0]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AXIS[\"Latitude\",NORTH],AXIS[\"Longitude\",EAST]]",
+    "gdal": "3.9.3",
+    "interval": {
+      "forecast_lead_to_end_seconds": 86400,
+      "forecast_lead_to_start_seconds": 64800,
+      "increment_unit": "255: missing/not specified; zero increment denotes continuous or near-continuous processing",
+      "interval_duration_seconds": 21600,
+      "interval_end": "2025-01-16T00:00:00Z",
+      "interval_start": "2025-01-15T18:00:00Z",
+      "kind": "accumulation",
+      "reference_time": "2025-01-15T00:00:00Z",
+      "statistical_process_code": 1,
+      "support_qualification": "model accumulation over the encoded interval; no within-interval intensity/timing",
+      "time_increment": 0,
+      "time_increment_type_code": 2,
+      "valid_time": "2025-01-16T00:00:00Z"
+    },
+    "metadata": {
+      "GRIB_COMMENT": "06 hr Total precipitation [kg/(m^2)]",
+      "GRIB_DISCIPLINE": "0(Meteorological)",
+      "GRIB_ELEMENT": "APCP06",
+      "GRIB_FORECAST_SECONDS": "64800",
+      "GRIB_IDS": "CENTER=7(US-NCEP) SUBCENTER=0 MASTER_TABLE=2 LOCAL_TABLE=1 SIGNF_REF_TIME=1(Start_of_Forecast) REF_TIME=2025-01-15T00:00:00Z PROD_STATUS=0(Operational) TYPE=1(Forecast)",
+      "GRIB_PDS_PDTN": "8",
+      "GRIB_PDS_TEMPLATE_ASSEMBLED_VALUES": "1 8 2 0 96 0 0 1 18 1 0 0 255 0 0 2025 1 16 0 0 0 1 0 1 2 1 6 255 0",
+      "GRIB_PDS_TEMPLATE_NUMBERS": "1 8 2 0 96 0 0 0 1 0 0 0 18 1 0 0 0 0 0 255 0 0 0 0 0 7 233 1 16 0 0 0 1 0 0 0 0 1 2 1 0 0 0 6 255 0 0 0 0",
+      "GRIB_REF_TIME": "1736899200",
+      "GRIB_SHORT_NAME": "0-SFC",
+      "GRIB_UNIT": "[kg/(m^2)]",
+      "GRIB_VALID_TIME": "1736985600"
+    },
+    "numpy": "2.5.3",
+    "python": "3.12.6",
+    "rasterio": "1.4.3",
+    "raw_template_octets_agree": true,
+    "sample_lon_lat": [
+      [
+        0.0,
+        50.0
+      ],
+      [
+        0.0,
+        -40.0
+      ],
+      [
+        179.75,
+        0.0
+      ],
+      [
+        180.0,
+        0.0
+      ],
+      [
+        359.75,
+        0.0
+      ],
+      [
+        0.0,
+        90.0
+      ],
+      [
+        0.0,
+        -90.0
+      ],
+      [
+        357.0,
+        55.0
+      ]
+    ],
+    "transform": [
+      0.25,
+      0.0,
+      -0.125,
+      0.0,
+      -0.25,
+      90.125,
+      0.0,
+      0.0,
+      1.0
+    ]
+  },
+  "input": {
+    "bytes": 343228,
+    "filename": "gfs-2025011500-f024-apcp-18-24h.grib2",
+    "sha256": "e2a311fa2089ab1982d9b09e7ec82f483e07ef06f38457d9e379fe9cef970848"
+  },
+  "limitations": [
+    "one actual accumulation/packing/grid; no bitmap or internal missing values",
+    "no forecast skill, observations, phase/local intensity or terrain suitability",
+    "exact suite/build revision unresolved; preserved-input replay is distinct from future archive availability"
+  ],
+  "message_metadata": {
+    "Ni": 1440,
+    "Nj": 721,
+    "alternativeRowScanning": 0,
+    "backgroundProcess": 0,
+    "binaryScaleFactor": -4,
+    "bitmapPresent": 0,
+    "bitsPerValue": 12,
+    "centre": 7,
+    "dataDate": 20250115,
+    "dataRepresentationTemplateNumber": 3,
+    "dataTime": 0,
+    "dayOfEndOfOverallTimeInterval": 16,
+    "decimalScaleFactor": 0,
+    "discipline": 0,
+    "edition": 2,
+    "endStep": 24,
+    "forecastTime": 18,
+    "generatingProcessIdentifier": 96,
+    "gridDefinitionTemplateNumber": 0,
+    "gridType": "regular_ll",
+    "hourOfEndOfOverallTimeInterval": 0,
+    "iDirectionIncrementInDegrees": 0.25,
+    "iScansNegatively": 0,
+    "indicatorOfUnitForTimeIncrement": 255,
+    "indicatorOfUnitForTimeRange": 1,
+    "indicatorOfUnitOfTimeRange": 1,
+    "jDirectionIncrementInDegrees": 0.25,
+    "jPointsAreConsecutive": 0,
+    "jScansPositively": 0,
+    "latitudeOfFirstGridPointInDegrees": 90.0,
+    "latitudeOfLastGridPointInDegrees": -90.0,
+    "lengthOfTimeRange": 6,
+    "level": 0,
+    "localTablesVersion": 1,
+    "longitudeOfFirstGridPointInDegrees": 0.0,
+    "longitudeOfLastGridPointInDegrees": 359.75,
+    "minuteOfEndOfOverallTimeInterval": 0,
+    "missingValue": 9999,
+    "missingValueManagementUsed": 0,
+    "monthOfEndOfOverallTimeInterval": 1,
+    "name": "Total Precipitation",
+    "numberOfGroupsOfDataValues": 24575,
+    "numberOfMissing": 0,
+    "numberOfMissingInStatisticalProcess": 0,
+    "numberOfPoints": 1038240,
+    "numberOfTimeRange": 1,
+    "numberOfValues": 1038240,
+    "orderOfSpatialDifferencing": 2,
+    "packingType": "grid_complex_spatial_differencing",
+    "parameterCategory": 1,
+    "parameterNumber": 8,
+    "productDefinitionTemplateNumber": 8,
+    "productionStatusOfProcessedData": 0,
+    "radius": 6371229,
+    "referenceValue": 0.0,
+    "scaleFactorOfFirstFixedSurface": 0,
+    "scaledValueOfFirstFixedSurface": 0,
+    "scanningMode": 0,
+    "secondOfEndOfOverallTimeInterval": 0,
+    "section4Length": 58,
+    "shapeOfTheEarth": 6,
+    "shortName": "tp",
+    "significanceOfReferenceTime": 1,
+    "startStep": 18,
+    "stepRange": "18-24",
+    "stepType": "accum",
+    "stepUnits": 1,
+    "subCentre": 0,
+    "tablesVersion": 2,
+    "timeIncrement": 0,
+    "totalLength": 343228,
+    "typeOfFirstFixedSurface": 1,
+    "typeOfGeneratingProcess": 2,
+    "typeOfLevel": "surface",
+    "typeOfProcessedData": 1,
+    "typeOfStatisticalProcessing": 1,
+    "typeOfTimeIncrement": 2,
+    "units": "kg m**-2",
+    "validityDate": 20250116,
+    "validityTime": 0,
+    "yearOfEndOfOverallTimeInterval": 2025
+  },
+  "outcome": "A",
+  "primary_decoder": {
+    "eccodes_native": "2.48.0",
+    "eccodes_python": "2.48.0",
+    "numpy": "2.5.2",
+    "python": "3.12.6"
+  },
+  "raw_section4_interpretation": {
+    "dayOfEndOfOverallTimeInterval": 16,
+    "forecastTime": 18,
+    "hourOfEndOfOverallTimeInterval": 0,
+    "indicatorOfUnitForTimeIncrement": 255,
+    "indicatorOfUnitForTimeRange": 1,
+    "indicatorOfUnitOfTimeRange": 1,
+    "lengthOfTimeRange": 6,
+    "minuteOfEndOfOverallTimeInterval": 0,
+    "monthOfEndOfOverallTimeInterval": 1,
+    "numberOfMissingInStatisticalProcess": 0,
+    "numberOfTimeRange": 1,
+    "parameterCategory": 1,
+    "parameterNumber": 8,
+    "secondOfEndOfOverallTimeInterval": 0,
+    "timeIncrement": 0,
+    "typeOfFirstFixedSurface": 1,
+    "typeOfStatisticalProcessing": 1,
+    "typeOfTimeIncrement": 2,
+    "yearOfEndOfOverallTimeInterval": 2025
+  },
+  "resource_observation": {
+    "elapsed_seconds": 1.315443600062281,
+    "messages_per_run": {
+      "GDAL": 1,
+      "ecCodes": 1
+    },
+    "primary_after": {
+      "pagefile_bytes": 750366720,
+      "peak_pagefile_bytes": 801738752,
+      "peak_working_set_bytes": 176742400,
+      "working_set_bytes": 125931520
+    },
+    "primary_baseline": {
+      "pagefile_bytes": 664801280,
+      "peak_pagefile_bytes": 665370624,
+      "peak_working_set_bytes": 36511744,
+      "working_set_bytes": 35471360
+    },
+    "reference": {
+      "after": {
+        "pagefile_bytes": 687140864,
+        "peak_pagefile_bytes": 706351104,
+        "peak_working_set_bytes": 89546752,
+        "working_set_bytes": 71913472
+      },
+      "baseline": {
+        "pagefile_bytes": 670216192,
+        "peak_pagefile_bytes": 670216192,
+        "peak_working_set_bytes": 49963008,
+        "working_set_bytes": 49963008
+      }
+    },
+    "retrievals_during_run": 0,
+    "temporary_bytes": 9347284
+  },
+  "samples": [
+    {
+      "column": 0,
+      "latitude": 50.0,
+      "longitude_0_360": 0.0,
+      "native_kg_per_m2": 0.125,
+      "row": 160
+    },
+    {
+      "column": 0,
+      "latitude": -40.0,
+      "longitude_0_360": 0.0,
+      "native_kg_per_m2": 0.0625,
+      "row": 520
+    },
+    {
+      "column": 719,
+      "latitude": 0.0,
+      "longitude_0_360": 179.75,
+      "native_kg_per_m2": 0.0625,
+      "row": 360
+    },
+    {
+      "column": 720,
+      "latitude": 0.0,
+      "longitude_0_360": 180.0,
+      "native_kg_per_m2": 0.0625,
+      "row": 360
+    },
+    {
+      "column": 1439,
+      "latitude": 0.0,
+      "longitude_0_360": 359.75,
+      "native_kg_per_m2": 0.4375,
+      "row": 360
+    },
+    {
+      "column": 0,
+      "latitude": 90.0,
+      "longitude_0_360": 0.0,
+      "native_kg_per_m2": 0.125,
+      "row": 0
+    },
+    {
+      "column": 0,
+      "latitude": -90.0,
+      "longitude_0_360": 0.0,
+      "native_kg_per_m2": 0.0,
+      "row": 720
+    },
+    {
+      "column": 1428,
+      "latitude": 55.0,
+      "longitude_0_360": 357.0,
+      "native_kg_per_m2": 0.0,
+      "row": 140
+    }
+  ],
+  "schema": "meridian-weather-wr009-integrity-v1",
+  "source": {
+    "inventory_line": "596:426116442:d=2025011500:APCP:surface:18-24 hour acc fcst:",
+    "inventory_message_number": 596,
+    "inventory_sha256": "fa11be72ab29ea43520dc6a6fc8de81bd8e0e024c96da94ed05495bc43b39dcb",
+    "inventory_url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20250115/00/atmos/gfs.t00z.pgrb2.0p25.f024.idx",
+    "object_url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20250115/00/atmos/gfs.t00z.pgrb2.0p25.f024",
+    "parent_bytes": 537858357,
+    "parent_etag": "e9f55c2f3f45d6cdb3aac9e4b7a36aba",
+    "processing_version": "UNRESOLVED; generating process 96, not exact binary/suite version",
+    "provider": "NOAA/NCEP GFS through NOAA Open Data Dissemination",
+    "range_end_inclusive": 426459669,
+    "range_start": 426116442,
+    "rights_checked": "2026-10-10",
+    "rights_url": "https://registry.opendata.aws/noaa-gfs-bdp-pds/"
+  },
+  "statistics_native_kg_per_m2": {
+    "finite_cells": 1038240,
+    "maximum": 139.9375,
+    "mean": 0.5714223108337186,
+    "minimum": 0.0,
+    "missing_cells": 0,
+    "negative_cells": 0,
+    "population_standard_deviation": 2.0321239347103286,
+    "valid_cells": 1038240,
+    "zero_cells": 525253
+  },
+  "temporal_support": {
+    "forecast_lead_to_end_seconds": 86400,
+    "forecast_lead_to_start_seconds": 64800,
+    "increment_unit": "255: missing/not specified; zero increment denotes continuous or near-continuous processing",
+    "interval_duration_seconds": 21600,
+    "interval_end": "2025-01-16T00:00:00Z",
+    "interval_start": "2025-01-15T18:00:00Z",
+    "kind": "accumulation",
+    "reference_time": "2025-01-15T00:00:00Z",
+    "statistical_process_code": 1,
+    "support_qualification": "model accumulation over the encoded interval; no within-interval intensity/timing",
+    "time_increment": 0,
+    "time_increment_type_code": 2,
+    "valid_time": "2025-01-16T00:00:00Z"
+  },
+  "transformations": [
+    "reshape original scan order; native kg/m2 retained; no conversion, clamping, sampling or resampling"
+  ]
+}

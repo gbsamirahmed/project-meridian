@@ -213,3 +213,10 @@ mobile/route/offline suitability or a provider/framework decision. MIDAS referen
 Decision C stays blocked. Exactly one next task is **historical GFS precipitation-
 interval semantics and decoding pilot — NOT BEGUN**, under the report's separate
 acquisition/rights/resource gates. Broader scientific tracks remain revisable.
+
+
+## WR009 field-family interpretation gate — 10 October 2026
+
+[Weather WR009](../research/weather/historical-gfs-precipitation-interval-pilot.md) reaches finite **Outcome A** for one historical six-hour APCP accumulation and exact independent numerical agreement. This complements instantaneous temperature/native-grid evidence; it does not establish skill, global operational readiness, mobile feasibility, distribution clearance or final architecture. Existing decisions/priorities remain unchanged.
+
+Exactly one next bounded task: **WR010 — MULTI-VARIABLE FIELD-COMPATIBILITY AND SCIENTIFIC-CONTRACT PILOT — NOT BEGUN**. Reuse accepted inputs and test a few representative field families under separate acquisition authority, preserving distinct units/time/levels/vector basis. Categories/vertical/ensemble scope remains explicitly gated rather than mandatory completion. No subsequent task, MIDAS re-investigation or application integration begins here.

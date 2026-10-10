@@ -1,0 +1,51 @@
+{
+  "encoded_pdt_octets": {
+    "dayOfEndOfOverallTimeInterval": 16,
+    "forecastTime": 18,
+    "hourOfEndOfOverallTimeInterval": 0,
+    "indicatorOfUnitForTimeIncrement": 255,
+    "indicatorOfUnitForTimeRange": 1,
+    "indicatorOfUnitOfTimeRange": 1,
+    "lengthOfTimeRange": 6,
+    "minuteOfEndOfOverallTimeInterval": 0,
+    "monthOfEndOfOverallTimeInterval": 1,
+    "numberOfMissingInStatisticalProcess": 0,
+    "numberOfTimeRange": 1,
+    "parameterCategory": 1,
+    "parameterNumber": 8,
+    "secondOfEndOfOverallTimeInterval": 0,
+    "timeIncrement": 0,
+    "typeOfFirstFixedSurface": 1,
+    "typeOfStatisticalProcessing": 1,
+    "typeOfTimeIncrement": 2,
+    "yearOfEndOfOverallTimeInterval": 2025
+  },
+  "input": {
+    "bytes": 343228,
+    "filename": "gfs-2025011500-f024-apcp-18-24h.grib2",
+    "sha256": "e2a311fa2089ab1982d9b09e7ec82f483e07ef06f38457d9e379fe9cef970848"
+  },
+  "native_units": "kg m**-2",
+  "parameter_codes": [
+    0,
+    1,
+    8
+  ],
+  "qualification": "Metadata-only derivation from one PDT4.8 range; no rate or phase/intensity inference",
+  "schema": "meridian-weather-wr009-interval-v1",
+  "temporal_support": {
+    "forecast_lead_to_end_seconds": 86400,
+    "forecast_lead_to_start_seconds": 64800,
+    "increment_unit": "255: missing/not specified; zero increment denotes continuous or near-continuous processing",
+    "interval_duration_seconds": 21600,
+    "interval_end": "2025-01-16T00:00:00Z",
+    "interval_start": "2025-01-15T18:00:00Z",
+    "kind": "accumulation",
+    "reference_time": "2025-01-15T00:00:00Z",
+    "statistical_process_code": 1,
+    "support_qualification": "model accumulation over the encoded interval; no within-interval intensity/timing",
+    "time_increment": 0,
+    "time_increment_type_code": 2,
+    "valid_time": "2025-01-16T00:00:00Z"
+  }
+}

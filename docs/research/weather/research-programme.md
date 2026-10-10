@@ -164,3 +164,12 @@ rights, economics and offline tracks remain open. Exactly one next task:
 **historical GFS precipitation-interval semantics and decoding pilot — NOT BEGUN**,
 [objective, prerequisites, acceptance, resources and stop](gfs-native-grid-point-sampling.md#8-exactly-one-next-bounded-task--not-begun).
 No new acquisition is authorised or begun in WR008.
+
+
+## WR009 interval-valued field closure — 10 October 2026
+
+[WR009](historical-gfs-precipitation-interval-pilot.md) establishes one actual six-hour accumulation ending at f024, native kg/m², independently decoded bit-identically; the raw native grid matches the earlier instantaneous scalar. Forecast start offset, end lead and duration require separate meanings. Do not collapse fields to either an instant or an accumulation universally; no production schema or provider is selected. WR006 reference Decision C stays BLOCKED, and independent numerical format work is not forecast verification.
+
+Combined WR007–009 evidence supports a bounded representative **multi-variable compatibility** pilot, rather than repeating standalone acquisition research for every variable. Common raw/source/grid/packing/decoder/identity guards can coexist with quantity-specific time/unit/level and vector/fraction/category/member interpretation. Wind basis, fractions, categories, vertical levels and ensembles remain unvalidated; regional/mountain/observation/nowcast/offline/cost tracks remain active.
+
+Exactly one next task: **WR010 — MULTI-VARIABLE FIELD-COMPATIBILITY AND SCIENTIFIC-CONTRACT PILOT — NOT BEGUN**, [definition](historical-gfs-precipitation-interval-pilot.md#8-remaining-limits-and-exactly-one-next-task--not-begun). Reuse the two pins; separately authorise at most three representative new messages, 50 MB/20 requests/150 MB scratch, with explicit compatibility failures. No next field was acquired/decoded, no broad topic status or readiness promoted.
