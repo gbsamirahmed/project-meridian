@@ -239,3 +239,10 @@ PHYSICAL DEVICES AND BUILD ACCESS — NOT BEGUN**. Physical terrain/combined off
 resource trials follow access and rights checks; exact scoped acceptance is in the
 study. Weather remains an early separately authorised scientific programme with later
 qualified application integration; no Weather work is authorised by this record.
+
+
+## Non-device platform closure — 10 October 2026
+
+[Prerequisite crosswalk](../research/meridian-non-device-prerequisites.md) reconciles X01–X09, U01–U14 and G0–G2 without changing any decision row. F04/F05/F11 still require feasibility tests, F03/F12 remain provisional, F13 deferred and F07/F17 rights gates unresolved. Renderer wrappers do not supply undocumented terrain. Package hashes do not authenticate publishers. F32 still gates unrestricted exposure.
+
+Current priority: non-device closure, Weather scientific foundations, physical-device evidence, then implementation decisions/reconciliation/new foundation. This supersedes old next-task sequencing, not accepted science or F20's later user-facing integration milestone. Exactly one next task: **MERIDIAN WEATHER FOUNDATIONAL RESEARCH PROGRAMME — SCOPE, SCIENTIFIC REQUIREMENTS AND EVIDENCE INVENTORY — NOT BEGUN**.

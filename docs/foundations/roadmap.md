@@ -131,3 +131,12 @@ financial approval before exposure remain unchanged. Interaction research preced
 substantial UI; separately authorised private audit follows sufficient platform evidence.
 Weather foundations can later proceed as an early parallel scientific programme; Guide
 retains its own routing/navigation evidence gates. No later stage has begun here.
+
+
+## Non-device phase complete; revised priorities — 10 October 2026
+
+The [prerequisite closure](../research/meridian-non-device-prerequisites.md) resolves useful manuals/build/resource questions and assigns remaining evidence to target builds, physical hardware or concrete distribution decisions. No further generic Atlas optimisation or platform catalogue is required before Weather scope research.
+
+The current user-authorised priority order is: **Phase 1** useful non-device closure; **Phase 2** substantial Weather scientific research/foundational engineering; **Phase 3** physical-device terrain/scientific-runtime/offline/lifecycle feasibility; **Phase 4** evidence-based choices, separately authorised repository reconciliation and new modular application foundation/integration. This is dependency-informed, not calendar-led; no stage begins automatically. G0–G2, original trial limits, new UI, integrated-alpha/beta and F32 financial gates remain intact. F20 concerns user-facing Weather integration, not the timing of independent scientific research.
+
+Exactly one next task: **MERIDIAN WEATHER FOUNDATIONAL RESEARCH PROGRAMME — SCOPE, SCIENTIFIC REQUIREMENTS AND EVIDENCE INVENTORY — NOT BEGUN**. Scope and acceptance are in the report; no Weather implementation, device experiment, private audit or infrastructure is authorised by this note.

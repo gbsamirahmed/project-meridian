@@ -4890,3 +4890,16 @@ measurements, unchanged decision rows, 42 canonical status rows, 113 protected h
 canonical evidence/publications and frozen fixture/projection integrity were checked.
 Runtime/scientific test suites, lint, TypeScript and builds were deliberately not rerun
 because only documentation changed; no Weather/data-materialising build.
+
+
+## 10 October 2026 — Non-device platform prerequisite closure
+
+Starting checkpoint `44807b9e98cbcd9082fb2a9f1321931c5566bdf2`; clean public main, fetched origin/main, 0/0 divergence. Documentation/research only. Read accepted Foundations, architecture, Atlas handoff and mobile gate; inspected public renderer, Weather processing/publication, read projection/store and build configuration, plus host tools and retained inventories. Current primary platform/renderer/build documentation checked on 10 October 2026.
+
+[Principal report](research/meridian-non-device-prerequisites.md) crosswalks all X01–X09/U01–U14 and G0–G2 into non-device/partial/target/decision/distribution classes. Records build versus signing/testing requirements, documented native-terrain/source constraints, complete offline-resource checklist, scientific packaging/custody, rights/cost gates and an unexecuted physical-test matrix. Existing Swiss assets and Weather publications were read/hash checked, not copied, prepared or published. No genuine non-device blocker remains before Weather scope research.
+
+Priorities now are non-device closure, Weather scientific foundations, physical-device feasibility, then implementation decisions/reconciliation/new foundation. This supersedes earlier ordering only: conditional architecture, new UI, complete scientific semantics, device/rights/beta and F32 gates remain. No SDK, application, device test, Weather R&D, private access, acquisition, paid resource or infrastructure.
+
+Exactly one next task: **MERIDIAN WEATHER FOUNDATIONAL RESEARCH PROGRAMME — SCOPE, SCIENTIFIC REQUIREMENTS AND EVIDENCE INVENTORY — NOT BEGUN**. The report defines scope, existing evidence, requirements and stopping criteria; it does not perform that programme.
+
+Verification: **67/67 documentation and preservation safeguards passed**. Exact nine-file documentation scope, eight append-only notes and all 1,196 existing tracked files outside them verified; internal links/anchors, historical checkpoints/classifications, source-grounded measurements, unchanged decision rows, 42 canonical status rows and 113 protected hashes checked. Frozen fixtures/pins, accepted evidence/publications, original/window/reproduced projections, all 100 Swiss source hashes, 11,429 render tile seals and 40,842 existing Weather publication files remain unchanged. No redistribution/authenticity, target-build or physical-device guarantee is inferred. Scientific/runtime regression suites, conformance replay, lint, TypeScript and builds are deliberately omitted because no executable code/data/contracts/dependencies changed. No full Weather/data-materialising build.

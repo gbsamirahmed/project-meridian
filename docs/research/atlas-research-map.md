@@ -1125,3 +1125,10 @@ platform-dependent. Same-engine Windows bindings are not mobile/browser conforma
 Exactly one next task: **MERIDIAN MOBILE FEASIBILITY PREREQUISITE RESOLUTION — PHYSICAL
 DEVICES AND BUILD ACCESS — NOT BEGUN**. All accepted research/status rows remain
 unchanged; no framework, renderer, scientific contract or production core is chosen.
+
+
+## Non-device platform prerequisites — 10 October 2026
+
+[Meridian prerequisite closure](meridian-non-device-prerequisites.md) uses the accepted Atlas handoff without new scientific experiments. Scientific contracts and complete-profile conformance remain transferable obligations; target kernels, decoder, custody and combined resources remain unproved. All accepted reports, 42 research statuses and negative Swiss/AWS finding are preserved.
+
+Useful non-device work is complete; no further Atlas optimisation prerequisite is demonstrated. Exactly one next task: **MERIDIAN WEATHER FOUNDATIONAL RESEARCH PROGRAMME — SCOPE, SCIENTIFIC REQUIREMENTS AND EVIDENCE INVENTORY — NOT BEGUN**. Physical-device validation follows independently scoped Weather foundations under the revised priorities; no Weather R&D began here.

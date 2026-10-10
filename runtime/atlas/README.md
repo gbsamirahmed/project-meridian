@@ -853,3 +853,10 @@ access or a mandatory network service for field queries. No runtime interface ch
 Exactly one next task: **MERIDIAN MOBILE FEASIBILITY PREREQUISITE RESOLUTION — PHYSICAL
 DEVICES AND BUILD ACCESS — NOT BEGUN**. Named hardware/build availability and lawful
 trial resources precede mobile terrain, target-reader and offline recovery evidence.
+
+
+## Non-device packaging prerequisites — 10 October 2026
+
+[Platform closure and scientific packaging requirements](../../docs/research/meridian-non-device-prerequisites.md) distinguish versioned read semantics, native kernels/resources and platform custody. The desktop Python/Node reference remains authoritative for its accepted role; no complete Python-free target reader is established. No runtime, projection, query or publication changes accompany this report.
+
+Exactly one next project task: **MERIDIAN WEATHER FOUNDATIONAL RESEARCH PROGRAMME — SCOPE, SCIENTIFIC REQUIREMENTS AND EVIDENCE INVENTORY — NOT BEGUN**. No additional Atlas optimisation prerequisite remains; target scientific conformance and physical-device resource/recovery gates still apply before deployment.

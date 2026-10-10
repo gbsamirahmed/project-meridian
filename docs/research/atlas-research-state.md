@@ -877,3 +877,10 @@ platform conformance, physical resources and redistribution evidence.
 Exactly one subsequent bounded task: **MERIDIAN MOBILE FEASIBILITY PREREQUISITE
 RESOLUTION — PHYSICAL DEVICES AND BUILD ACCESS — NOT BEGUN**. No new Atlas experiment,
 private audit, renderer/framework selection, mobile implementation or Weather R&D.
+
+
+## Non-device architectural prerequisite closure — 10 October 2026
+
+[Scoped report](meridian-non-device-prerequisites.md) classifies target-build/device/distribution gaps and documents build, rendering, offline closure and custody requirements. It adds no scientific finding or status revision; the 42 canonical rows and accepted classifications remain unchanged. Windows conformance is not target portability or redistribution clearance.
+
+Current next task: **MERIDIAN WEATHER FOUNDATIONAL RESEARCH PROGRAMME — SCOPE, SCIENTIFIC REQUIREMENTS AND EVIDENCE INVENTORY — NOT BEGUN**. This supersedes dated task ordering only; Atlas authority and the physical-device/rights/maturity gates are retained. No new Atlas experiment, Weather implementation, private access or device test.

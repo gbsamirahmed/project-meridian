@@ -292,3 +292,10 @@ Exactly one current next task: **MERIDIAN MOBILE FEASIBILITY PREREQUISITE RESOLU
 PHYSICAL DEVICES AND BUILD ACCESS — NOT BEGUN**. Resolve availability and a lawful
 bounded trial plan before experiments or private restructuring. No mobile deployment,
 prototype implementation or Weather scientific research began through this note.
+
+
+## Non-device closure and Weather scope handoff — 10 October 2026
+
+[Prerequisite report](../research/meridian-non-device-prerequisites.md) closes useful documentary work and classifies remaining target-build, physical-device and distribution gates. No genuine non-device blocker remains before Weather's independent scope/evidence review. This is not mobile, application or beta readiness. The user-authorised sequence now places Weather foundations before physical-device trials; this supersedes earlier sequencing only. Original real-device/2D/conformance/offline/hardware/rights safeguards, new UI, maturity and F32 gates remain intact.
+
+Exactly one current next task: **MERIDIAN WEATHER FOUNDATIONAL RESEARCH PROGRAMME — SCOPE, SCIENTIFIC REQUIREMENTS AND EVIDENCE INVENTORY — NOT BEGUN**. The report defines its bounded scope; no Weather programme or later implementation began here.

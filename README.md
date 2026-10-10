@@ -419,3 +419,10 @@ target reader conformance and offline resource custody remain evidence gates.
 Exactly one next task: **MERIDIAN MOBILE FEASIBILITY PREREQUISITE RESOLUTION — PHYSICAL
 DEVICES AND BUILD ACCESS — NOT BEGUN**. No application, device trial, private access,
 Weather programme, data acquisition or infrastructure was begun.
+
+
+## Non-device prerequisites closed — 10 October 2026
+
+[Platform prerequisite closure](docs/research/meridian-non-device-prerequisites.md) records build requirements, renderer/source constraints, offline resource closure and target-specific tests. No final framework, reader or renderer is selected. Current priorities are non-device closure, Weather scientific foundations, physical-device feasibility, then implementation decisions and the new application. Earlier next-task wording is historical; scientific findings and release gates remain unchanged.
+
+Exactly one next task: **MERIDIAN WEATHER FOUNDATIONAL RESEARCH PROGRAMME — SCOPE, SCIENTIFIC REQUIREMENTS AND EVIDENCE INVENTORY — NOT BEGUN**. Its scope is defined in the report; no Weather R&D, private access or device testing began here.
