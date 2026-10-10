@@ -4814,3 +4814,48 @@ or skips. Frozen native, reference and preceding PROJ replays each pass 60/60;
 authoritative replay passes 60/60 with 120 indexed/full comparisons. Lint, types and
 the application-only build passed. Full Weather build, mobile/cross-builds, native
 allocator instrumentation and power-loss tests were not run; see the report.
+
+
+## 2026-10-10 — Atlas portability consolidation and cross-platform handoff
+
+Starting checkpoint `e560464c35094742cb523709bf6e553d12d1d009`, clean public main;
+fetched origin/main and confirmed 0/0 before edits. The [principal report](research/atlas-portability-handoff.md)
+consolidates the seven accepted primary stages without new experiments or changed
+scientific classifications. It adds explicit responsibility/dependency boundaries,
+provisional A/B/C/D portability matrix, correctly separated resource measurements,
+GEOS/PROJ ownership/rights limits, architecture criteria and prioritised open questions.
+
+Conclusion: enough bounded Atlas evidence to proceed to whole-Meridian architecture
+research; no further Atlas optimisation is a demonstrated prerequisite. Sharing candidates
+are scientific models/filtering/lineage, affine selection and bounded verification;
+kernel bindings/snapshot custody need equivalent target semantics, and installation/
+selection/lifecycle/resource facilities need platform evidence. Python/GDAL dependence,
+~321 MB Windows peaks, phone/browser builds, terrain capability, power-loss and concrete
+redistribution remain open. New UI remains from scratch; no framework/shared core chosen.
+
+Navigation/Foundations notes preserve history and refine the dependency-informed sequence:
+whole-system architecture study, device feasibility, provisional sharing/platform choices,
+separately authorised repository reconciliation, adaptable foundation and Atlas/offline.
+Substantial Weather scientific foundations are an early separately authorised parallel
+programme, distinct from its subsequent UI milestone. Weather R&D does not begin here.
+
+Verification: **56/56 read-only documentation/preservation safeguards passed**, zero failures.
+All seven completed commit/report/classification bindings and consolidated numerical
+values match primary evidence; new links/anchors resolve, decision rows are unchanged,
+eight navigation notes are append-only. All **1,194 pre-existing files outside those
+notes**, 42 canonical statuses, 113 production hashes, frozen fixture seals/three pins,
+twelve input fingerprints, accepted retained source/preparation/world hashes and both
+projection seals remain unchanged; window members also match the prior independent
+regeneration. Complete diff, scope, encoding, obvious credential patterns and
+`git diff --check` inspected. An initial whitespace-sensitive classification check
+was corrected to recognise a wrapped label, with no scientific change.
+
+Documentation-only scope; executable scientific suites, lint, types and builds were not rerun because implementations/dependencies/data
+are unchanged. No full Weather build, projection generation, new data, private access,
+S7, SDK, paid resource, endpoint or production change. Full scope/diff/links/whitespace
+and protected scientific/retained identities are checked before commit.
+
+Exactly one next bounded task: **MERIDIAN WEB/MOBILE ARCHITECTURE AND CODE-SHARING
+FEASIBILITY STUDY — NOT BEGUN**. Whole-system sharing/deployment comparison with explicit
+hardware/rights/build gates; architecture research is not physical-device validation.
+The principal report defines scope, deliverables, acceptance and stopping criteria.

@@ -94,3 +94,21 @@ Screen emerging product obligations rather than discovering them at store submis
 - [ ] No route-safety, global coverage or production-readiness claim is made.
 
 These are future internal-prototype acceptance criteria, not results claimed in this review and not sufficient by themselves to invite external testers. Integrated alpha and controlled-beta entry require the broader evidence above. The [financial gate](economics.md) applies before any unrestricted public access; budget, provider, controls and approval are not established by this checklist.
+
+
+## Current architecture-study handoff — 10 October 2026
+
+The [Atlas portability consolidation](../research/atlas-portability-handoff.md) supplies
+sufficient bounded evidence for **MERIDIAN WEB/MOBILE ARCHITECTURE AND CODE-SHARING
+FEASIBILITY STUDY — NOT BEGUN**, the current single next task. This refines the historical
+staged-development ordering above; it neither erases earlier decisions nor relaxes gates.
+
+Proceed by dependencies: whole-system architecture comparison; physical-device terrain/
+offline validation; provisional platform/sharing decisions; separately authorised repository
+reconciliation; new minimal adaptable foundation; Atlas/verified offline integration.
+Substantial Weather foundations are intended as an early parallel scientific programme,
+with separately validated incremental application integration. Guide/route planning follows
+its own evidence/safety gates. Long internal alpha/beta remains legitimate; one desktop
+Atlas result is not field, tester or release readiness. The original physical-device
+scope, rights/privacy requirements and F32 exposure gate remain unchanged. No stage begins
+through this note, and no private access, implementation or Weather R&D occurs here.

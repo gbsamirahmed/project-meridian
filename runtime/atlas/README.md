@@ -826,3 +826,17 @@ Exactly one subsequent bounded task — **MERIDIAN ATLAS PORTABILITY CONSOLIDATI
 CROSS-PLATFORM ARCHITECTURE HANDOFF — NOT BEGUN**. Consolidate accepted semantic,
 closure, ownership, resource and platform evidence for the dedicated architecture
 study; no new GIS optimisation, private access, SDK, mobile deployment or implementation.
+
+
+## Portability consolidation — 10 October 2026
+
+The [architecture handoff](../../docs/research/atlas-portability-handoff.md) is the current
+cross-platform evidence index. Canonical publications and this supported desktop authority
+remain authoritative; projections remain read-only representations. Windows GEOS/PROJ
+C bindings do not make the complete Python/GDAL reader mobile-ready or replace this runtime.
+The handoff distinguishes semantics, kernels, decoding, verified ownership and OS installation,
+with source-linked measurements and unresolved resource/rights requirements. No new runtime
+interface or command is introduced.
+
+Exactly one next task: **MERIDIAN WEB/MOBILE ARCHITECTURE AND CODE-SHARING FEASIBILITY STUDY —
+NOT BEGUN**; no further Atlas optimisation, framework selection or production integration.

@@ -846,3 +846,20 @@ Exactly one subsequent bounded task — **MERIDIAN ATLAS PORTABILITY CONSOLIDATI
 CROSS-PLATFORM ARCHITECTURE HANDOFF — NOT BEGUN**. Consolidate accepted semantic,
 closure, ownership, resource and platform evidence for the dedicated architecture
 study; no new GIS optimisation, private access, SDK, mobile deployment or implementation.
+
+
+## Current Atlas portability research handoff — 10 October 2026
+
+The [consolidated evidence ledger and portability matrix](atlas-portability-handoff.md)
+conclude that Atlas can now hand off to wider Meridian architecture research. Existing
+scientific authority, all 42 canonical statuses and original experiment classifications
+remain unchanged. Native C APIs provide tested Windows binding boundaries, not complete
+Python-free/mobile/browser readers or legal clearance. Readiness is for architectural
+investigation only; no production, device, beta or power-loss guarantee is added.
+
+Current exactly-one next task: **MERIDIAN WEB/MOBILE ARCHITECTURE AND CODE-SHARING
+FEASIBILITY STUDY — NOT BEGUN**. This supersedes dated next-task sequencing only;
+it examines Atlas/Weather/Guide, terrain, offline ownership, application state and new
+UI composition before platform decisions. Device/build and redistribution gates remain
+explicit. No prerequisite Atlas experiment, scientific reopening, Weather R&D, private
+access or production implementation is authorised or begun by this handoff.
