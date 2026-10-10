@@ -113,3 +113,12 @@ The next programme stage is a finite semantic/verification design with an archiv
 **Acceptance criteria:** temperature and time roles are source-specific; no unsupported height correction or equivalence; station QC/exposure requirements and missingness explicit; lawful archive route and unresolved gates distinguished; proposed metrics/baselines/sample limits defensible; one finite protocol or precise blocker, with no empirical skill claim. Preserve all accepted science, Weather publications and Atlas statuses/hashes.
 
 **Stop conditions:** stop when the design or a reproducible scientific/access blocker is documented. If metadata cannot support the estimand, archive terms fail or sample/resources cannot be bounded, recommend changing/narrowing the later experiment rather than acquiring data. Do not begin acquisition, implementation, benchmarking or any subsequent task.
+
+
+## WR003 refinement: compatibility is still conditional
+
+10 October 2026. The [semantic assessment](temperature-semantics.md) and [draft protocol](temperature-verification-protocol.md) refine the G2/R1/O2 opportunity above without rewriting its historical proposal. Met Office's documented 1.25 m instruments differ from both forecast heights; the defensible target is a qualified station-proxy discrepancy, not identical-height validation. Historic nominal reporting hours may differ from physical measurement times, so +24/+48 hourly matching requires message-specific evidence. `qc-version-1` does not prove passed element QC. January 2025 00 UTC testing is nocturnal; station and archive completeness remain unverified.
+
+The proposed paired metrics/weights, eligibility and dependence-aware design do not close actual metadata, rights, sample sufficiency or preregistration parameters. Opportunity A and B remain conditional; no superiority, resolution benefit, outdoor fitness or blending claim. Exact acquisition gates are now [T01–T10](temperature-acquisition-gates.md#gates-before-acquisition-or-errors).
+
+Exactly one current next task: **WEATHER RESEARCH 004 — REFERENCE MEASUREMENT METADATA AND HISTORICAL TEMPERATURE PRODUCT CLOSURE — NOT BEGUN**, [defined here](temperature-acquisition-gates.md#exactly-one-next-bounded-task). The earlier WR003 next-task definition remains historical; no numerical experiment begins automatically.

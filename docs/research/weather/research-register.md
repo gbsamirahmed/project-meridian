@@ -70,3 +70,19 @@ The [programme](research-programme.md) groups these topics into manageable evide
 | WR2-Q06 / W10, W38 | Are access, reuse and offline pathways identical? Thirteen exact delivery/edition rows distinguish nine intentions and remaining terms | RESEARCHED (documentary); no legal clearance, acquisition authorisation or production costing |
 
 Prioritise W11/W30/W36/W38 semantic/reference design alongside W10 rights/archive gates. Station height/exposure, actual QC, version migration and rolling history are now more useful than another provider catalogue. ML/ensemble, mountains and wider geography remain important alternatives, not excluded capabilities. Exactly one next bounded task: **WEATHER RESEARCH 003 — NEAR-SURFACE TEMPERATURE SEMANTICS AND FORECAST–REFERENCE VERIFICATION DESIGN — NOT BEGUN**, defined in the [compatibility report](forecast-reference-compatibility.md#exactly-one-next-bounded-task). No later investigation has begun.
+
+
+## WR003 bounded documentary answers and open parameters
+
+10 October 2026. W01–W40 and their **23 SCOPED, 11 IDENTIFIED, 6 DEFERRED** statuses, and all WR2 rows, remain unchanged. [WR003 design](temperature-verification-protocol.md) researches the following finite documentary questions; it does not experimentally validate their parent topics or declare the draft fully preregistered.
+
+| Identifier / parents | Bounded answer / evidence | Status and remaining gate |
+|---|---|---|
+| WR3-Q01 / W11, W12, W24 | Same-height temperature equivalence is not established: 2 m GFS, 1.5 m UKV and documented 1.25 m reference practice. Qualified unit conversion/proxy estimand distinguish constructs | RESEARCHED (documentary); actual station-height/history and forecast diagnostic metadata unresolved |
+| WR3-Q02 / W11, W38 | Nominal hour need not be effective observation time; historic HH−10/CDL differences and short averaging need message-era evidence | RESEARCHED (documentary prerequisite); exact-time eligible cohort unproven |
+| WR3-Q03 / W30, W38 | Version directory is not passed QC; define field-specific acceptance, duplicate/era audit, error-blind completeness and paired exclusions | RESEARCHED (design); current dictionaries and station metadata BLOCKED, no QC counts measured |
+| WR3-Q04 / W30, W36, W40 | Station-balanced paired MAE contrast, separate leads and descriptive diagnostics specified; joint blocks address weather dependence conditional on cohort | RESEARCHED (design); L/B/GAMMA/minimum-block and sample sufficiency open, no interval/skill finding |
+| WR3-Q05 / W10, W31, W33 | Exact historical editions, actual object closure, terms and bounded resource authority remain acquisition gates; ≤620 planned triplets is not independent sample size | RESEARCHED (gate specification); no archive completeness, approved acquisition or redistribution clearance |
+| WR3-Q06 / W30, W39 | A/B/C protocol design differs from D skill/E outdoor suitability; January/00 UTC pilot is nocturnal and cannot establish regional/global superiority | RESEARCHED (claim-boundary design); parameters prevent full preregistration, broad programme remains intact |
+
+No broad topic is promoted to RESEARCHED or VALIDATED. Parameter statuses FIXED BY EVIDENCE / PROVISIONAL / BLOCKED / NOT APPLICABLE in the protocol describe a design, not Weather register maturity. Exactly one current next task: **WEATHER RESEARCH 004 — REFERENCE MEASUREMENT METADATA AND HISTORICAL TEMPERATURE PRODUCT CLOSURE — NOT BEGUN**, [scope and stop gate](temperature-acquisition-gates.md#exactly-one-next-bounded-task).

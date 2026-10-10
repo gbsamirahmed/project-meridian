@@ -154,3 +154,10 @@ Exactly one next task: **WEATHER RESEARCH 002 — FORECAST AND OBSERVATION SOURC
 [WR002](../research/weather/global-regional-source-feasibility.md) establishes documentary global/regional opportunities and product-specific access/rights gaps. It does not demonstrate forecast skill, Weather readiness or advance alpha/beta maturity. UK GFS/UKV/MIDAS retrospective design is conditional; selected Alpine forecast history is blocked. Source-specific height/support, station QC, assimilation and archive identity govern the next evidence gate. Original device, new-UI, privacy, rights and F32 controls remain unchanged.
 
 Exactly one next bounded task: **WEATHER RESEARCH 003 — NEAR-SURFACE TEMPERATURE SEMANTICS AND FORECAST–REFERENCE VERIFICATION DESIGN — NOT BEGUN**, [defined here](../research/weather/forecast-reference-compatibility.md#exactly-one-next-bounded-task). No data acquisition, experiment, later programme stage or application implementation begins automatically.
+
+
+## Weather temperature protocol design — 10 October 2026
+
+[WR003](../research/weather/temperature-verification-protocol.md) establishes a conditional documentary station-proxy verification design, not forecast skill, a fully preregistered experiment or Weather/application maturity. Measurement time/height, element QC, actual historical products/terms and sample/uncertainty parameters prevent automatic acquisition. No alpha/beta, provider/platform selection or scientific-readiness gate is passed. Original privacy, preservation, physical-device, new-UI and F32 requirements remain unchanged.
+
+Exactly one next bounded task: **WEATHER RESEARCH 004 — REFERENCE MEASUREMENT METADATA AND HISTORICAL TEMPERATURE PRODUCT CLOSURE — NOT BEGUN**, [scope](../research/weather/temperature-acquisition-gates.md#exactly-one-next-bounded-task). Weather's broader research programme and distinct global/regional tracks remain; no later task or implementation starts through this note.

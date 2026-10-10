@@ -80,3 +80,12 @@ A candidate UK GFS/UKV/MIDAS temperature comparison moves the next gate to **sou
 The stages remain dependency-informed. Design can stop with a reference/height/QC blocker and redirect the experiment; later acquisition still needs its own authority, rights and bounded resource plan. No empirical comparison, provider ranking, blending, preparation system, offline package or production architecture follows automatically.
 
 Exactly one current next task: **WEATHER RESEARCH 003 — NEAR-SURFACE TEMPERATURE SEMANTICS AND FORECAST–REFERENCE VERIFICATION DESIGN — NOT BEGUN**. The [complete task definition](forecast-reference-compatibility.md#exactly-one-next-bounded-task) specifies evidence, scope, dependencies, deliverables, acceptance and stopping criteria. The old WR002 next-task definition is preserved as historical scoping evidence; it is not another active task.
+
+
+## WR003 completed: reference-metadata closure before execution
+
+10 October 2026. [WR003](temperature-semantics.md) supplies a qualified temperature estimand and [draft verification design](temperature-verification-protocol.md), not an executed or fully preregistered experiment. It refines WR002's candidate exact-hour cohort through actual physical-time/message support, documented height differences and element QC. Equal-lead pairing, station weighting, dependence-aware uncertainty and deviations are specified; unresolved parameters and rights remain explicit.
+
+The next finite gate is reference measurement/QC/history and historical-product metadata closure. It is higher-value than automatic numerical work or another provider survey. If the reference cannot be justified, revise cohort/reference before errors; if only regional archive rights fail, global validation remains a separate conditional track. Too few effective blocks can restrict the next experiment proposal to descriptive decoding/interpretation. No universal Weather schema, provider, model or delivery format follows.
+
+The broad atmospheric/global/regional/ensemble/observations/nowcast/ML/mountain/uncertainty/engineering/offline/Atlas–Guide programme stays intact. Exactly one next task: **WEATHER RESEARCH 004 — REFERENCE MEASUREMENT METADATA AND HISTORICAL TEMPERATURE PRODUCT CLOSURE — NOT BEGUN**, with [objective, evidence, dependencies, acceptance and stopping conditions](temperature-acquisition-gates.md#exactly-one-next-bounded-task). No acquisition, error calculation or subsequent programme stage has begun.
