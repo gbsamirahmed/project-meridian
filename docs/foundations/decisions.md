@@ -184,3 +184,25 @@ Exactly one subsequent bounded task — **MERIDIAN ATLAS NATIVE GEOMETRY C-API C
 SPIKE — NOT BEGUN**, limited to the existing reference kernel's predicate, encoding,
 ownership and complete-envelope compatibility. No custom GIS engine, private access,
 SDK installation, mobile deployment or production integration.
+
+
+## Atlas native geometry C-API conformance — 10 October 2026
+
+[Bounded spike](../research/atlas-native-geometry.md): **DEMONSTRATED** for the installed Windows GEOS 3.13.1 /
+CAPI 1.19.2 binding and retained Riffelhorn profile. A separately owned native context
+preserves boundary-inclusive covers, positive-area clipping, holes/multipart, XY/XYZ
+serialisation, ownership and explicit errors. All 60 frozen, 153 new and 436 adapted
+window complete envelopes agree exactly. This is the same GEOS engine through another
+binding, not independent algorithm validation or mobile portability.
+
+The report links isolated code, commands, raw trials and validation receipts. Three-pin
+peak memory remains about 321 MB; the accepted Python/NumPy/GDAL validation/raster stack
+and one-time Shapely interchange remain. No production interface or kernel replacement.
+Scientific authority, native-window/shared-store implementation, frozen fixtures,
+42 status rows, 113 protected hashes and negative Swiss/AWS reconciliation are unchanged.
+F03/F12 gain binding evidence; framework, renderer, packaging and rights gates remain open.
+
+Exactly one subsequent bounded task — **MERIDIAN ATLAS PORTABILITY CONSOLIDATION AND
+CROSS-PLATFORM ARCHITECTURE HANDOFF — NOT BEGUN**. Consolidate accepted semantic,
+closure, ownership, resource and platform evidence for the dedicated architecture
+study; no new GIS optimisation, private access, SDK, mobile deployment or implementation.

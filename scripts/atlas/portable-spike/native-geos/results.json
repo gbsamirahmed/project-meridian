@@ -1,0 +1,1337 @@
+{
+  "schema": "meridian-native-geos-measurements-v1",
+  "checked": "2026-10-10",
+  "startingCheckpoint": "e7a655cc2f2c9d41381fae71680dc1cf4b2149bd",
+  "environment": {
+    "platform": "Windows 11 10.0.26200, NTFS",
+    "processor": "Intel Core i7-12700H",
+    "physicalMemoryApproxGiB": 16,
+    "python": "3.12.6",
+    "shapely": "2.1.2",
+    "geos": "3.13.1-CAPI-1.19.2",
+    "numpy": "2.5.3",
+    "rasterio": "1.4.3",
+    "gdal": "3.9.3",
+    "pyproj": "3.7.2",
+    "proj": "9.5.1",
+    "node": "24.11.0"
+  },
+  "projectionIdentity": "ec6308b7c195af38190eebd4239fcfbe32b416308e2404b80777c598538363f9",
+  "projectionBytes": 77412208,
+  "method": [
+    "Serial trials, fresh interpreter, existing OS file caches; no storage-cold or mobile claim.",
+    "Primitive reference initialisation imports Shapely and NumPy; native initialisation loads/hashes existing DLLs and creates a context. These are different import workloads.",
+    "Primitive wkbRead includes writing g.wkb and decoding it; interpret as roundtrip, not isolated decoding.",
+    "ConstructDestroy includes box, point, covers and disposal, including native arena overhead.",
+    "Intersection includes area evaluation and transient geometry disposal.",
+    "Complete reader opening includes captured projection verification/decoding, views, native context and WKB copies of all 38 features; imports precede the timer.",
+    "Warm query repetitions include complete envelope assembly. Each reported pin/query median uses 10 repetitions, after an unmeasured warm-up.",
+    "Memory is Windows process working set, decimal bytes; allocation attribution, leaks under native instrumentation and mobile budgets are unproven."
+  ],
+  "primitiveTrials": {
+    "reference": {
+      "trials": [
+        {
+          "mode": "reference",
+          "initialisationMs": 84.81700019910932,
+          "before": {
+            "current": 25956352,
+            "peak": 27086848
+          },
+          "afterInitialisation": {
+            "current": 37146624,
+            "peak": 37146624
+          },
+          "afterOperations": {
+            "current": 38084608,
+            "peak": 38084608
+          },
+          "operations": {
+            "constructDestroy": {
+              "medianMs": 0.018300022929906845,
+              "minMs": 0.01750001683831215,
+              "maxMs": 0.18640002235770226,
+              "repetitions": 1000
+            },
+            "covers": {
+              "medianMs": 0.00300002284348011,
+              "minMs": 0.0027997884899377823,
+              "maxMs": 0.0078000593930482864,
+              "repetitions": 1000
+            },
+            "intersection": {
+              "medianMs": 0.022399937734007835,
+              "minMs": 0.021200161427259445,
+              "maxMs": 0.1550000160932541,
+              "repetitions": 500
+            },
+            "wkbWrite": {
+              "medianMs": 0.004500150680541992,
+              "minMs": 0.004299916326999664,
+              "maxMs": 0.07279985584318638,
+              "repetitions": 500
+            },
+            "mapping": {
+              "medianMs": 0.020999927073717117,
+              "minMs": 0.020099803805351257,
+              "maxMs": 0.1246999017894268,
+              "repetitions": 500
+            },
+            "wkbRead": {
+              "medianMs": 0.006800051778554916,
+              "minMs": 0.006499933078885078,
+              "maxMs": 0.03069988451898098,
+              "repetitions": 500
+            }
+          },
+          "identity": null,
+          "runtimeImports": {
+            "shapely": true,
+            "numpy": true,
+            "pyproj": false,
+            "rasterio": false
+          },
+          "afterClose": {
+            "current": 38084608,
+            "peak": 38084608
+          }
+        },
+        {
+          "mode": "reference",
+          "initialisationMs": 83.55950005352497,
+          "before": {
+            "current": 25784320,
+            "peak": 26931200
+          },
+          "afterInitialisation": {
+            "current": 36753408,
+            "peak": 36753408
+          },
+          "afterOperations": {
+            "current": 37904384,
+            "peak": 37904384
+          },
+          "operations": {
+            "constructDestroy": {
+              "medianMs": 0.01950003206729889,
+              "minMs": 0.01750001683831215,
+              "maxMs": 0.16070017591118813,
+              "repetitions": 1000
+            },
+            "covers": {
+              "medianMs": 0.003200024366378784,
+              "minMs": 0.0029001384973526,
+              "maxMs": 0.07740012370049953,
+              "repetitions": 1000
+            },
+            "intersection": {
+              "medianMs": 0.021700048819184303,
+              "minMs": 0.02059992402791977,
+              "maxMs": 0.2397000789642334,
+              "repetitions": 500
+            },
+            "wkbWrite": {
+              "medianMs": 0.004500150680541992,
+              "minMs": 0.004299916326999664,
+              "maxMs": 0.09290012530982494,
+              "repetitions": 500
+            },
+            "mapping": {
+              "medianMs": 0.020900042727589607,
+              "minMs": 0.020099803805351257,
+              "maxMs": 0.1434998121112585,
+              "repetitions": 500
+            },
+            "wkbRead": {
+              "medianMs": 0.006700167432427406,
+              "minMs": 0.006400048732757568,
+              "maxMs": 0.02310005947947502,
+              "repetitions": 500
+            }
+          },
+          "identity": null,
+          "runtimeImports": {
+            "shapely": true,
+            "numpy": true,
+            "pyproj": false,
+            "rasterio": false
+          },
+          "afterClose": {
+            "current": 37904384,
+            "peak": 37904384
+          }
+        },
+        {
+          "mode": "reference",
+          "initialisationMs": 78.7238001357764,
+          "before": {
+            "current": 25669632,
+            "peak": 26783744
+          },
+          "afterInitialisation": {
+            "current": 36884480,
+            "peak": 36884480
+          },
+          "afterOperations": {
+            "current": 37773312,
+            "peak": 37773312
+          },
+          "operations": {
+            "constructDestroy": {
+              "medianMs": 0.017999904230237007,
+              "minMs": 0.016300007700920105,
+              "maxMs": 0.1330999657511711,
+              "repetitions": 1000
+            },
+            "covers": {
+              "medianMs": 0.002800021320581436,
+              "minMs": 0.002600019797682762,
+              "maxMs": 0.022499822080135345,
+              "repetitions": 1000
+            },
+            "intersection": {
+              "medianMs": 0.02010003663599491,
+              "minMs": 0.01950003206729889,
+              "maxMs": 0.18400000408291817,
+              "repetitions": 500
+            },
+            "wkbWrite": {
+              "medianMs": 0.004200031980872154,
+              "minMs": 0.00400003045797348,
+              "maxMs": 0.05570007488131523,
+              "repetitions": 500
+            },
+            "mapping": {
+              "medianMs": 0.01969980075955391,
+              "minMs": 0.018900027498602867,
+              "maxMs": 0.2117999829351902,
+              "repetitions": 500
+            },
+            "wkbRead": {
+              "medianMs": 0.006300164386630058,
+              "minMs": 0.00609993003308773,
+              "maxMs": 0.03350013867020607,
+              "repetitions": 500
+            }
+          },
+          "identity": null,
+          "runtimeImports": {
+            "shapely": true,
+            "numpy": true,
+            "pyproj": false,
+            "rasterio": false
+          },
+          "afterClose": {
+            "current": 37773312,
+            "peak": 37773312
+          }
+        }
+      ]
+    },
+    "native": {
+      "trials": [
+        {
+          "mode": "native",
+          "initialisationMs": 9.85249993391335,
+          "before": {
+            "current": 26009600,
+            "peak": 27062272
+          },
+          "afterInitialisation": {
+            "current": 27226112,
+            "peak": 29843456
+          },
+          "afterOperations": {
+            "current": 27963392,
+            "peak": 29843456
+          },
+          "operations": {
+            "constructDestroy": {
+              "medianMs": 0.018900027498602867,
+              "minMs": 0.01759990118443966,
+              "maxMs": 0.6796000525355339,
+              "repetitions": 1000
+            },
+            "covers": {
+              "medianMs": 0.0016998965293169022,
+              "minMs": 0.0015997793525457382,
+              "maxMs": 0.015500001609325409,
+              "repetitions": 1000
+            },
+            "intersection": {
+              "medianMs": 0.01859990879893303,
+              "minMs": 0.01719989813864231,
+              "maxMs": 0.15400000847876072,
+              "repetitions": 500
+            },
+            "wkbWrite": {
+              "medianMs": 0.003600027412176132,
+              "minMs": 0.003400025889277458,
+              "maxMs": 1.3441999908536673,
+              "repetitions": 500
+            },
+            "mapping": {
+              "medianMs": 0.025399960577487946,
+              "minMs": 0.023300061002373695,
+              "maxMs": 0.2744002267718315,
+              "repetitions": 500
+            },
+            "wkbRead": {
+              "medianMs": 0.0070999376475811005,
+              "minMs": 0.006499933078885078,
+              "maxMs": 0.0738000962883234,
+              "repetitions": 500
+            }
+          },
+          "identity": {
+            "version": "3.13.1-CAPI-1.19.2",
+            "libraries": [
+              {
+                "name": "geos-ae6efa0782962b98e358f10ea539ae5f.dll",
+                "bytes": 2564608,
+                "sha256": "094508747b6bb6eb785b2aa67d7899724ce78ee6cc375e7a66e11be3bcf5a08e"
+              },
+              {
+                "name": "geos_c-072b7a9224d16d3e4ab2395bb855b2d3.dll",
+                "bytes": 451072,
+                "sha256": "7e4d87ccb640eda92f150b7cee178ef13abe282acd36af08f6dca5eddaf931a4"
+              },
+              {
+                "name": "msvcp140-90bc62d4947a5878f1dc1057312f3be2.dll",
+                "bytes": 557704,
+                "sha256": "90bc62d4947a5878f1dc1057312f3be2137eb376039f4afda2f64c06353f2198"
+              }
+            ]
+          },
+          "runtimeImports": {
+            "shapely": false,
+            "numpy": false,
+            "pyproj": false,
+            "rasterio": false
+          },
+          "remainingOwnedGeometries": 0,
+          "afterClose": {
+            "current": 27975680,
+            "peak": 29843456
+          }
+        },
+        {
+          "mode": "native",
+          "initialisationMs": 9.466900024563074,
+          "before": {
+            "current": 25927680,
+            "peak": 27078656
+          },
+          "afterInitialisation": {
+            "current": 27049984,
+            "peak": 29696000
+          },
+          "afterOperations": {
+            "current": 27766784,
+            "peak": 29696000
+          },
+          "operations": {
+            "constructDestroy": {
+              "medianMs": 0.0195999164134264,
+              "minMs": 0.01759990118443966,
+              "maxMs": 0.8151000365614891,
+              "repetitions": 1000
+            },
+            "covers": {
+              "medianMs": 0.0017997808754444122,
+              "minMs": 0.0015997793525457382,
+              "maxMs": 0.00600004568696022,
+              "repetitions": 1000
+            },
+            "intersection": {
+              "medianMs": 0.01869979314506054,
+              "minMs": 0.017900019884109497,
+              "maxMs": 0.13340008445084095,
+              "repetitions": 500
+            },
+            "wkbWrite": {
+              "medianMs": 0.0034999102354049683,
+              "minMs": 0.0030999071896076202,
+              "maxMs": 0.07569999434053898,
+              "repetitions": 500
+            },
+            "mapping": {
+              "medianMs": 0.026399968191981316,
+              "minMs": 0.02459995448589325,
+              "maxMs": 0.7620998658239841,
+              "repetitions": 500
+            },
+            "wkbRead": {
+              "medianMs": 0.007100170478224754,
+              "minMs": 0.0068999361246824265,
+              "maxMs": 0.07779989391565323,
+              "repetitions": 500
+            }
+          },
+          "identity": {
+            "version": "3.13.1-CAPI-1.19.2",
+            "libraries": [
+              {
+                "name": "geos-ae6efa0782962b98e358f10ea539ae5f.dll",
+                "bytes": 2564608,
+                "sha256": "094508747b6bb6eb785b2aa67d7899724ce78ee6cc375e7a66e11be3bcf5a08e"
+              },
+              {
+                "name": "geos_c-072b7a9224d16d3e4ab2395bb855b2d3.dll",
+                "bytes": 451072,
+                "sha256": "7e4d87ccb640eda92f150b7cee178ef13abe282acd36af08f6dca5eddaf931a4"
+              },
+              {
+                "name": "msvcp140-90bc62d4947a5878f1dc1057312f3be2.dll",
+                "bytes": 557704,
+                "sha256": "90bc62d4947a5878f1dc1057312f3be2137eb376039f4afda2f64c06353f2198"
+              }
+            ]
+          },
+          "runtimeImports": {
+            "shapely": false,
+            "numpy": false,
+            "pyproj": false,
+            "rasterio": false
+          },
+          "remainingOwnedGeometries": 0,
+          "afterClose": {
+            "current": 27779072,
+            "peak": 29696000
+          }
+        },
+        {
+          "mode": "native",
+          "initialisationMs": 9.900799952447414,
+          "before": {
+            "current": 25882624,
+            "peak": 27009024
+          },
+          "afterInitialisation": {
+            "current": 27107328,
+            "peak": 29708288
+          },
+          "afterOperations": {
+            "current": 27754496,
+            "peak": 29708288
+          },
+          "operations": {
+            "constructDestroy": {
+              "medianMs": 0.019300030544400215,
+              "minMs": 0.017399899661540985,
+              "maxMs": 0.7998999208211899,
+              "repetitions": 1000
+            },
+            "covers": {
+              "medianMs": 0.001800013706088066,
+              "minMs": 0.0015997793525457382,
+              "maxMs": 0.038400059565901756,
+              "repetitions": 1000
+            },
+            "intersection": {
+              "medianMs": 0.019399914890527725,
+              "minMs": 0.018900027498602867,
+              "maxMs": 0.18319999799132347,
+              "repetitions": 500
+            },
+            "wkbWrite": {
+              "medianMs": 0.003600027412176132,
+              "minMs": 0.0031997915357351303,
+              "maxMs": 0.08130003698170185,
+              "repetitions": 500
+            },
+            "mapping": {
+              "medianMs": 0.02519995905458927,
+              "minMs": 0.02310005947947502,
+              "maxMs": 0.19260006956756115,
+              "repetitions": 500
+            },
+            "wkbRead": {
+              "medianMs": 0.00700005330145359,
+              "minMs": 0.006500165909528732,
+              "maxMs": 0.1129999291151762,
+              "repetitions": 500
+            }
+          },
+          "identity": {
+            "version": "3.13.1-CAPI-1.19.2",
+            "libraries": [
+              {
+                "name": "geos-ae6efa0782962b98e358f10ea539ae5f.dll",
+                "bytes": 2564608,
+                "sha256": "094508747b6bb6eb785b2aa67d7899724ce78ee6cc375e7a66e11be3bcf5a08e"
+              },
+              {
+                "name": "geos_c-072b7a9224d16d3e4ab2395bb855b2d3.dll",
+                "bytes": 451072,
+                "sha256": "7e4d87ccb640eda92f150b7cee178ef13abe282acd36af08f6dca5eddaf931a4"
+              },
+              {
+                "name": "msvcp140-90bc62d4947a5878f1dc1057312f3be2.dll",
+                "bytes": 557704,
+                "sha256": "90bc62d4947a5878f1dc1057312f3be2137eb376039f4afda2f64c06353f2198"
+              }
+            ]
+          },
+          "runtimeImports": {
+            "shapely": false,
+            "numpy": false,
+            "pyproj": false,
+            "rasterio": false
+          },
+          "remainingOwnedGeometries": 0,
+          "afterClose": {
+            "current": 27766784,
+            "peak": 29708288
+          }
+        }
+      ]
+    }
+  },
+  "readerTrials": {
+    "reference-1": {
+      "trials": [
+        {
+          "mode": "reference",
+          "views": 1,
+          "completeOpenMs": 1107.4206000193954,
+          "initialMemory": {
+            "current": 167862272,
+            "peak": 320577536
+          },
+          "finalMemory": {
+            "current": 169537536,
+            "peak": 320577536
+          },
+          "queries": {
+            "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+              "point": {
+                "medianMs": 12.306799995712936,
+                "minMs": 11.52239996008575,
+                "maxMs": 23.20749987848103,
+                "repetitions": 10
+              },
+              "area": {
+                "medianMs": 16.68914989568293,
+                "minMs": 15.579500002786517,
+                "maxMs": 17.262700013816357,
+                "repetitions": 10
+              },
+              "identity": {
+                "medianMs": 1.0937500046566129,
+                "minMs": 1.055500004440546,
+                "maxMs": 1.3124998658895493,
+                "repetitions": 10
+              },
+              "lineage": {
+                "medianMs": 13.275649980641901,
+                "minMs": 13.029800029471517,
+                "maxMs": 14.434400014579296,
+                "repetitions": 10
+              }
+            }
+          },
+          "nativeOwnedGeometries": null,
+          "method": "fresh interpreter; retained OS file caches; shared owner and explicit pins; native context and WKB feature copies included"
+        },
+        {
+          "mode": "reference",
+          "views": 1,
+          "completeOpenMs": 1153.8165998645127,
+          "initialMemory": {
+            "current": 168505344,
+            "peak": 321236992
+          },
+          "finalMemory": {
+            "current": 169967616,
+            "peak": 321236992
+          },
+          "queries": {
+            "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+              "point": {
+                "medianMs": 13.340550125576556,
+                "minMs": 12.007900048047304,
+                "maxMs": 25.702800136059523,
+                "repetitions": 10
+              },
+              "area": {
+                "medianMs": 16.379500040784478,
+                "minMs": 15.48729999922216,
+                "maxMs": 17.15410011820495,
+                "repetitions": 10
+              },
+              "identity": {
+                "medianMs": 1.126050017774105,
+                "minMs": 1.0714998934417963,
+                "maxMs": 1.1688999366015196,
+                "repetitions": 10
+              },
+              "lineage": {
+                "medianMs": 13.49965005647391,
+                "minMs": 12.882000068202615,
+                "maxMs": 19.740400137379766,
+                "repetitions": 10
+              }
+            }
+          },
+          "nativeOwnedGeometries": null,
+          "method": "fresh interpreter; retained OS file caches; shared owner and explicit pins; native context and WKB feature copies included"
+        },
+        {
+          "mode": "reference",
+          "views": 1,
+          "completeOpenMs": 1064.1013998538256,
+          "initialMemory": {
+            "current": 168366080,
+            "peak": 320794624
+          },
+          "finalMemory": {
+            "current": 171257856,
+            "peak": 320794624
+          },
+          "queries": {
+            "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+              "point": {
+                "medianMs": 12.203549966216087,
+                "minMs": 11.526199989020824,
+                "maxMs": 23.761900141835213,
+                "repetitions": 10
+              },
+              "area": {
+                "medianMs": 16.28774998243898,
+                "minMs": 15.3717000503093,
+                "maxMs": 17.526899930089712,
+                "repetitions": 10
+              },
+              "identity": {
+                "medianMs": 1.1436999775469303,
+                "minMs": 1.1178001295775175,
+                "maxMs": 1.4631000813096762,
+                "repetitions": 10
+              },
+              "lineage": {
+                "medianMs": 13.502199901267886,
+                "minMs": 13.111799955368042,
+                "maxMs": 14.696599915623665,
+                "repetitions": 10
+              }
+            }
+          },
+          "nativeOwnedGeometries": null,
+          "method": "fresh interpreter; retained OS file caches; shared owner and explicit pins; native context and WKB feature copies included"
+        }
+      ]
+    },
+    "reference-3": {
+      "trials": [
+        {
+          "mode": "reference",
+          "views": 3,
+          "completeOpenMs": 1120.2715998515487,
+          "initialMemory": {
+            "current": 168255488,
+            "peak": 320819200
+          },
+          "finalMemory": {
+            "current": 171356160,
+            "peak": 320819200
+          },
+          "queries": {
+            "65989736a06f72182fba9d9ad9d47955869f51ce943ef120effcad2df91352fd": {
+              "point": {
+                "medianMs": 13.156500062905252,
+                "minMs": 11.96389994584024,
+                "maxMs": 24.669199949130416,
+                "repetitions": 10
+              },
+              "area": {
+                "medianMs": 16.01675001438707,
+                "minMs": 15.219399938359857,
+                "maxMs": 18.689899938181043,
+                "repetitions": 10
+              },
+              "identity": {
+                "medianMs": 1.0696500539779663,
+                "minMs": 1.0355999693274498,
+                "maxMs": 1.1571000795811415,
+                "repetitions": 10
+              },
+              "lineage": {
+                "medianMs": 13.426900026388466,
+                "minMs": 12.664299923926592,
+                "maxMs": 14.293699990957975,
+                "repetitions": 10
+              }
+            },
+            "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+              "point": {
+                "medianMs": 11.824149987660348,
+                "minMs": 11.516999918967485,
+                "maxMs": 13.62899993546307,
+                "repetitions": 10
+              },
+              "area": {
+                "medianMs": 16.767250024713576,
+                "minMs": 15.199100133031607,
+                "maxMs": 21.562600042670965,
+                "repetitions": 10
+              },
+              "identity": {
+                "medianMs": 1.0779500007629395,
+                "minMs": 1.0482000652700663,
+                "maxMs": 1.2675998732447624,
+                "repetitions": 10
+              },
+              "lineage": {
+                "medianMs": 13.610049965791404,
+                "minMs": 13.002699939534068,
+                "maxMs": 15.164699871093035,
+                "repetitions": 10
+              }
+            },
+            "7f956d3bb640fb7262a3c46b1666306c88aff3418e966d39536882530350acf8": {
+              "point": {
+                "medianMs": 11.536250007338822,
+                "minMs": 11.19059999473393,
+                "maxMs": 12.936899904161692,
+                "repetitions": 10
+              },
+              "area": {
+                "medianMs": 16.011850093491375,
+                "minMs": 15.190399950370193,
+                "maxMs": 17.75710005313158,
+                "repetitions": 10
+              },
+              "identity": {
+                "medianMs": 1.0435499716550112,
+                "minMs": 1.0188999585807323,
+                "maxMs": 1.1106999590992928,
+                "repetitions": 10
+              },
+              "lineage": {
+                "medianMs": 0.3488000947982073,
+                "minMs": 0.34140003845095634,
+                "maxMs": 0.35399990156292915,
+                "repetitions": 10
+              }
+            }
+          },
+          "nativeOwnedGeometries": null,
+          "method": "fresh interpreter; retained OS file caches; shared owner and explicit pins; native context and WKB feature copies included"
+        },
+        {
+          "mode": "reference",
+          "views": 3,
+          "completeOpenMs": 1127.9949999880046,
+          "initialMemory": {
+            "current": 168505344,
+            "peak": 321036288
+          },
+          "finalMemory": {
+            "current": 170401792,
+            "peak": 321036288
+          },
+          "queries": {
+            "65989736a06f72182fba9d9ad9d47955869f51ce943ef120effcad2df91352fd": {
+              "point": {
+                "medianMs": 13.960950076580048,
+                "minMs": 12.917499989271164,
+                "maxMs": 24.07160005532205,
+                "repetitions": 10
+              },
+              "area": {
+                "medianMs": 17.753200023435056,
+                "minMs": 15.909200068563223,
+                "maxMs": 22.352299885824323,
+                "repetitions": 10
+              },
+              "identity": {
+                "medianMs": 1.053999993018806,
+                "minMs": 1.0295999236404896,
+                "maxMs": 1.1396000627428293,
+                "repetitions": 10
+              },
+              "lineage": {
+                "medianMs": 13.207350042648613,
+                "minMs": 12.620100053027272,
+                "maxMs": 13.65879992954433,
+                "repetitions": 10
+              }
+            },
+            "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+              "point": {
+                "medianMs": 11.976500041782856,
+                "minMs": 11.65140001103282,
+                "maxMs": 13.104500016197562,
+                "repetitions": 10
+              },
+              "area": {
+                "medianMs": 16.87035011127591,
+                "minMs": 15.668899985030293,
+                "maxMs": 20.388999953866005,
+                "repetitions": 10
+              },
+              "identity": {
+                "medianMs": 1.0518000926822424,
+                "minMs": 1.0367999784648418,
+                "maxMs": 1.0711001232266426,
+                "repetitions": 10
+              },
+              "lineage": {
+                "medianMs": 13.891150010749698,
+                "minMs": 12.768000131472945,
+                "maxMs": 20.552500151097775,
+                "repetitions": 10
+              }
+            },
+            "7f956d3bb640fb7262a3c46b1666306c88aff3418e966d39536882530350acf8": {
+              "point": {
+                "medianMs": 11.775650084018707,
+                "minMs": 11.058800155296922,
+                "maxMs": 13.414100045338273,
+                "repetitions": 10
+              },
+              "area": {
+                "medianMs": 16.118799918331206,
+                "minMs": 15.427000122144818,
+                "maxMs": 17.140100011602044,
+                "repetitions": 10
+              },
+              "identity": {
+                "medianMs": 1.0356999700888991,
+                "minMs": 1.0170999448746443,
+                "maxMs": 1.057199900969863,
+                "repetitions": 10
+              },
+              "lineage": {
+                "medianMs": 0.34975004382431507,
+                "minMs": 0.34270016476511955,
+                "maxMs": 0.3771998453885317,
+                "repetitions": 10
+              }
+            }
+          },
+          "nativeOwnedGeometries": null,
+          "method": "fresh interpreter; retained OS file caches; shared owner and explicit pins; native context and WKB feature copies included"
+        },
+        {
+          "mode": "reference",
+          "views": 3,
+          "completeOpenMs": 1112.4366000294685,
+          "initialMemory": {
+            "current": 168394752,
+            "peak": 320724992
+          },
+          "finalMemory": {
+            "current": 170487808,
+            "peak": 320724992
+          },
+          "queries": {
+            "65989736a06f72182fba9d9ad9d47955869f51ce943ef120effcad2df91352fd": {
+              "point": {
+                "medianMs": 14.055399922654033,
+                "minMs": 13.514499878510833,
+                "maxMs": 24.278499884530902,
+                "repetitions": 10
+              },
+              "area": {
+                "medianMs": 17.956100055016577,
+                "minMs": 17.3569000326097,
+                "maxMs": 19.700199831277132,
+                "repetitions": 10
+              },
+              "identity": {
+                "medianMs": 1.0668999748304486,
+                "minMs": 1.0444000363349915,
+                "maxMs": 1.6034001018851995,
+                "repetitions": 10
+              },
+              "lineage": {
+                "medianMs": 14.316850109025836,
+                "minMs": 13.451899867504835,
+                "maxMs": 17.477199900895357,
+                "repetitions": 10
+              }
+            },
+            "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+              "point": {
+                "medianMs": 12.0162001112476,
+                "minMs": 11.755199870094657,
+                "maxMs": 13.41119990684092,
+                "repetitions": 10
+              },
+              "area": {
+                "medianMs": 16.73289993777871,
+                "minMs": 15.104599995538592,
+                "maxMs": 17.3654998652637,
+                "repetitions": 10
+              },
+              "identity": {
+                "medianMs": 1.0783500038087368,
+                "minMs": 1.058999914675951,
+                "maxMs": 1.291999826207757,
+                "repetitions": 10
+              },
+              "lineage": {
+                "medianMs": 14.119150000624359,
+                "minMs": 14.038699911907315,
+                "maxMs": 14.498500153422356,
+                "repetitions": 10
+              }
+            },
+            "7f956d3bb640fb7262a3c46b1666306c88aff3418e966d39536882530350acf8": {
+              "point": {
+                "medianMs": 12.110450072214007,
+                "minMs": 11.744300136342645,
+                "maxMs": 12.89849984459579,
+                "repetitions": 10
+              },
+              "area": {
+                "medianMs": 16.47809997666627,
+                "minMs": 15.05749998614192,
+                "maxMs": 18.161699874326587,
+                "repetitions": 10
+              },
+              "identity": {
+                "medianMs": 1.107499934732914,
+                "minMs": 1.036499859765172,
+                "maxMs": 1.21779995970428,
+                "repetitions": 10
+              },
+              "lineage": {
+                "medianMs": 0.38020010106265545,
+                "minMs": 0.36729988642036915,
+                "maxMs": 0.38499990478157997,
+                "repetitions": 10
+              }
+            }
+          },
+          "nativeOwnedGeometries": null,
+          "method": "fresh interpreter; retained OS file caches; shared owner and explicit pins; native context and WKB feature copies included"
+        }
+      ]
+    },
+    "native-1": {
+      "trials": [
+        {
+          "mode": "native",
+          "views": 1,
+          "completeOpenMs": 1133.382000029087,
+          "initialMemory": {
+            "current": 170192896,
+            "peak": 321036288
+          },
+          "finalMemory": {
+            "current": 172802048,
+            "peak": 321036288
+          },
+          "queries": {
+            "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+              "point": {
+                "medianMs": 10.119349928572774,
+                "minMs": 9.52069996856153,
+                "maxMs": 20.648200064897537,
+                "repetitions": 10
+              },
+              "area": {
+                "medianMs": 18.825049977749586,
+                "minMs": 18.255900125950575,
+                "maxMs": 20.254699978977442,
+                "repetitions": 10
+              },
+              "identity": {
+                "medianMs": 1.1917499359697104,
+                "minMs": 1.168699935078621,
+                "maxMs": 1.3210000470280647,
+                "repetitions": 10
+              },
+              "lineage": {
+                "medianMs": 13.617349904961884,
+                "minMs": 12.841499876230955,
+                "maxMs": 16.127699986100197,
+                "repetitions": 10
+              }
+            }
+          },
+          "nativeOwnedGeometries": 38,
+          "method": "fresh interpreter; retained OS file caches; shared owner and explicit pins; native context and WKB feature copies included"
+        },
+        {
+          "mode": "native",
+          "views": 1,
+          "completeOpenMs": 1138.283499982208,
+          "initialMemory": {
+            "current": 170307584,
+            "peak": 320962560
+          },
+          "finalMemory": {
+            "current": 173494272,
+            "peak": 320962560
+          },
+          "queries": {
+            "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+              "point": {
+                "medianMs": 9.599899989552796,
+                "minMs": 9.361599804833531,
+                "maxMs": 20.882500102743506,
+                "repetitions": 10
+              },
+              "area": {
+                "medianMs": 18.559099989943206,
+                "minMs": 17.396599985659122,
+                "maxMs": 19.34670004993677,
+                "repetitions": 10
+              },
+              "identity": {
+                "medianMs": 1.1027500731870532,
+                "minMs": 1.0629999451339245,
+                "maxMs": 1.2779999524354935,
+                "repetitions": 10
+              },
+              "lineage": {
+                "medianMs": 14.064499991945922,
+                "minMs": 12.966400012373924,
+                "maxMs": 15.164100099354982,
+                "repetitions": 10
+              }
+            }
+          },
+          "nativeOwnedGeometries": 38,
+          "method": "fresh interpreter; retained OS file caches; shared owner and explicit pins; native context and WKB feature copies included"
+        },
+        {
+          "mode": "native",
+          "views": 1,
+          "completeOpenMs": 1153.8203000091016,
+          "initialMemory": {
+            "current": 170795008,
+            "peak": 321179648
+          },
+          "finalMemory": {
+            "current": 172519424,
+            "peak": 321179648
+          },
+          "queries": {
+            "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+              "point": {
+                "medianMs": 10.746250045485795,
+                "minMs": 9.489299962297082,
+                "maxMs": 22.683200193569064,
+                "repetitions": 10
+              },
+              "area": {
+                "medianMs": 20.047300029546022,
+                "minMs": 16.577400034293532,
+                "maxMs": 28.62350014038384,
+                "repetitions": 10
+              },
+              "identity": {
+                "medianMs": 1.05854996945709,
+                "minMs": 1.03859999217093,
+                "maxMs": 1.0786999482661486,
+                "repetitions": 10
+              },
+              "lineage": {
+                "medianMs": 14.112449949607253,
+                "minMs": 13.557299971580505,
+                "maxMs": 16.320499824360013,
+                "repetitions": 10
+              }
+            }
+          },
+          "nativeOwnedGeometries": 38,
+          "method": "fresh interpreter; retained OS file caches; shared owner and explicit pins; native context and WKB feature copies included"
+        }
+      ]
+    },
+    "native-3": {
+      "trials": [
+        {
+          "mode": "native",
+          "views": 3,
+          "completeOpenMs": 1104.6168999746442,
+          "initialMemory": {
+            "current": 169975808,
+            "peak": 320573440
+          },
+          "finalMemory": {
+            "current": 173125632,
+            "peak": 320573440
+          },
+          "queries": {
+            "65989736a06f72182fba9d9ad9d47955869f51ce943ef120effcad2df91352fd": {
+              "point": {
+                "medianMs": 9.69570002052933,
+                "minMs": 9.163800161331892,
+                "maxMs": 20.242600003257394,
+                "repetitions": 10
+              },
+              "area": {
+                "medianMs": 17.775600077584386,
+                "minMs": 16.966800205409527,
+                "maxMs": 18.1706000585109,
+                "repetitions": 10
+              },
+              "identity": {
+                "medianMs": 1.1024001287296414,
+                "minMs": 1.0590001475065947,
+                "maxMs": 1.215500058606267,
+                "repetitions": 10
+              },
+              "lineage": {
+                "medianMs": 13.507449999451637,
+                "minMs": 12.795999879017472,
+                "maxMs": 14.174200128763914,
+                "repetitions": 10
+              }
+            },
+            "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+              "point": {
+                "medianMs": 9.74620005581528,
+                "minMs": 9.482600027695298,
+                "maxMs": 9.988999925553799,
+                "repetitions": 10
+              },
+              "area": {
+                "medianMs": 18.315299996174872,
+                "minMs": 17.000500112771988,
+                "maxMs": 21.731700049713254,
+                "repetitions": 10
+              },
+              "identity": {
+                "medianMs": 1.1000999948009849,
+                "minMs": 1.077400054782629,
+                "maxMs": 1.2022999580949545,
+                "repetitions": 10
+              },
+              "lineage": {
+                "medianMs": 14.025400043465197,
+                "minMs": 13.410599902272224,
+                "maxMs": 20.7979001570493,
+                "repetitions": 10
+              }
+            },
+            "7f956d3bb640fb7262a3c46b1666306c88aff3418e966d39536882530350acf8": {
+              "point": {
+                "medianMs": 9.437549975700676,
+                "minMs": 8.957299869507551,
+                "maxMs": 10.29969984665513,
+                "repetitions": 10
+              },
+              "area": {
+                "medianMs": 17.590650008060038,
+                "minMs": 16.449799994006753,
+                "maxMs": 23.1029000133276,
+                "repetitions": 10
+              },
+              "identity": {
+                "medianMs": 1.205500098876655,
+                "minMs": 1.1303999926894903,
+                "maxMs": 1.3072998262941837,
+                "repetitions": 10
+              },
+              "lineage": {
+                "medianMs": 0.40120002813637257,
+                "minMs": 0.3822001162916422,
+                "maxMs": 0.5206998903304338,
+                "repetitions": 10
+              }
+            }
+          },
+          "nativeOwnedGeometries": 38,
+          "method": "fresh interpreter; retained OS file caches; shared owner and explicit pins; native context and WKB feature copies included"
+        },
+        {
+          "mode": "native",
+          "views": 3,
+          "completeOpenMs": 1162.8326999489218,
+          "initialMemory": {
+            "current": 170758144,
+            "peak": 321400832
+          },
+          "finalMemory": {
+            "current": 173621248,
+            "peak": 321400832
+          },
+          "queries": {
+            "65989736a06f72182fba9d9ad9d47955869f51ce943ef120effcad2df91352fd": {
+              "point": {
+                "medianMs": 10.851150029338896,
+                "minMs": 9.647099999710917,
+                "maxMs": 22.56929990835488,
+                "repetitions": 10
+              },
+              "area": {
+                "medianMs": 16.918899957090616,
+                "minMs": 16.23099995777011,
+                "maxMs": 19.810199970379472,
+                "repetitions": 10
+              },
+              "identity": {
+                "medianMs": 1.0678998660296202,
+                "minMs": 1.0577000211924314,
+                "maxMs": 1.5756001230329275,
+                "repetitions": 10
+              },
+              "lineage": {
+                "medianMs": 13.978150091134012,
+                "minMs": 13.669299893081188,
+                "maxMs": 15.372399939224124,
+                "repetitions": 10
+              }
+            },
+            "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+              "point": {
+                "medianMs": 9.482249966822565,
+                "minMs": 9.145299904048443,
+                "maxMs": 11.126399971544743,
+                "repetitions": 10
+              },
+              "area": {
+                "medianMs": 17.551050055772066,
+                "minMs": 16.799800097942352,
+                "maxMs": 18.73289979994297,
+                "repetitions": 10
+              },
+              "identity": {
+                "medianMs": 1.2214999878779054,
+                "minMs": 1.1412000749260187,
+                "maxMs": 2.05329991877079,
+                "repetitions": 10
+              },
+              "lineage": {
+                "medianMs": 14.199850033037364,
+                "minMs": 13.957699993625283,
+                "maxMs": 15.012500109151006,
+                "repetitions": 10
+              }
+            },
+            "7f956d3bb640fb7262a3c46b1666306c88aff3418e966d39536882530350acf8": {
+              "point": {
+                "medianMs": 9.141949936747551,
+                "minMs": 8.678399957716465,
+                "maxMs": 10.3471998590976,
+                "repetitions": 10
+              },
+              "area": {
+                "medianMs": 17.262900015339255,
+                "minMs": 16.129800118505955,
+                "maxMs": 30.169800156727433,
+                "repetitions": 10
+              },
+              "identity": {
+                "medianMs": 1.1488000163808465,
+                "minMs": 1.1044000275433064,
+                "maxMs": 1.2574999127537012,
+                "repetitions": 10
+              },
+              "lineage": {
+                "medianMs": 0.38620003033429384,
+                "minMs": 0.3784000873565674,
+                "maxMs": 0.587299931794405,
+                "repetitions": 10
+              }
+            }
+          },
+          "nativeOwnedGeometries": 38,
+          "method": "fresh interpreter; retained OS file caches; shared owner and explicit pins; native context and WKB feature copies included"
+        },
+        {
+          "mode": "native",
+          "views": 3,
+          "completeOpenMs": 1152.1394001320004,
+          "initialMemory": {
+            "current": 170434560,
+            "peak": 320651264
+          },
+          "finalMemory": {
+            "current": 173207552,
+            "peak": 320651264
+          },
+          "queries": {
+            "65989736a06f72182fba9d9ad9d47955869f51ce943ef120effcad2df91352fd": {
+              "point": {
+                "medianMs": 10.642150067724288,
+                "minMs": 10.264100041240454,
+                "maxMs": 21.870399825274944,
+                "repetitions": 10
+              },
+              "area": {
+                "medianMs": 19.981499994173646,
+                "minMs": 19.159700023010373,
+                "maxMs": 20.874799927696586,
+                "repetitions": 10
+              },
+              "identity": {
+                "medianMs": 1.0781999444589019,
+                "minMs": 1.047399826347828,
+                "maxMs": 1.2580000329762697,
+                "repetitions": 10
+              },
+              "lineage": {
+                "medianMs": 13.93374998588115,
+                "minMs": 13.530800119042397,
+                "maxMs": 17.527800053358078,
+                "repetitions": 10
+              }
+            },
+            "5d364e9947040f705699416e9094d8ad59463b5b2c2fcae2e3efdf79a7410289": {
+              "point": {
+                "medianMs": 9.410649887286127,
+                "minMs": 9.087999816983938,
+                "maxMs": 10.343699948862195,
+                "repetitions": 10
+              },
+              "area": {
+                "medianMs": 17.841650056652725,
+                "minMs": 17.212599981576204,
+                "maxMs": 18.881000112742186,
+                "repetitions": 10
+              },
+              "identity": {
+                "medianMs": 1.129849930293858,
+                "minMs": 1.1054999195039272,
+                "maxMs": 1.258700154721737,
+                "repetitions": 10
+              },
+              "lineage": {
+                "medianMs": 13.992800028063357,
+                "minMs": 13.442999916151166,
+                "maxMs": 14.741499908268452,
+                "repetitions": 10
+              }
+            },
+            "7f956d3bb640fb7262a3c46b1666306c88aff3418e966d39536882530350acf8": {
+              "point": {
+                "medianMs": 9.364199941046536,
+                "minMs": 8.89890012331307,
+                "maxMs": 11.005799984559417,
+                "repetitions": 10
+              },
+              "area": {
+                "medianMs": 18.02209997549653,
+                "minMs": 17.05939997918904,
+                "maxMs": 21.233299979940057,
+                "repetitions": 10
+              },
+              "identity": {
+                "medianMs": 1.1475000064820051,
+                "minMs": 1.092500053346157,
+                "maxMs": 1.2795999646186829,
+                "repetitions": 10
+              },
+              "lineage": {
+                "medianMs": 0.391000066883862,
+                "minMs": 0.38579991087317467,
+                "maxMs": 0.42569986544549465,
+                "repetitions": 10
+              }
+            }
+          },
+          "nativeOwnedGeometries": 38,
+          "method": "fresh interpreter; retained OS file caches; shared owner and explicit pins; native context and WKB feature copies included"
+        }
+      ]
+    }
+  }
+}
