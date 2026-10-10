@@ -175,3 +175,19 @@ Exactly one next bounded task: **WEATHER RESEARCH 005 — MIDAS OPEN REFERENCE I
 [WR005](../research/weather/midas-reference-interpretation-pilot.md) completes the authorised real metadata pilot, **OUTCOME B — PARTIAL INTERPRETATION**. Three local files are pinned; metadata/year-range and change-log joins reproduce. Historical thermometer/clock/QC support does not establish a strict eligible era; no annual observation or forecast acquisition occurs. The isolated research utility is not a production Weather subsystem. All accepted Atlas and Weather evidence remains; no application/platform/maturity/provider decision changes.
 
 Exactly one subsequent task is the report's **WR006 historical measurement support and reference-target decision — NOT BEGUN**. No physical-device work, framework/renderer implementation or forecast benchmarking begins.
+
+
+## WR006 reference decision and independent global engineering — 10 October 2026
+
+[WR006](../research/weather/midas-historical-measurement-support.md) reaches **scientific
+Outcome C — EVIDENCE BLOCKED; reference-target Decision C**. One pinned metadata
+nominee was investigated; height/history/clock and actual record interpretation do
+not establish a strict or revised eligible reference. No annual file or forecast
+magnitudes were inspected. Generic QC documentation retrieval improved; no skill,
+Weather readiness, application-stage or provider decision follows.
+
+The next independent evidence gate is [one bounded historical GFS temperature-field
+acquisition/decoding/integrity pilot](../research/weather/midas-historical-measurement-support.md#9-programme-consequence-and-exactly-one-next-task),
+**NOT BEGUN**. It can progress global source-format research without replacing
+independent reference verification. Device/application/F32 gates and the broader
+Weather scientific programme remain unchanged; no further task starts here.

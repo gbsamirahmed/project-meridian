@@ -105,3 +105,26 @@ Exactly one current next task: **WEATHER RESEARCH 005 — MIDAS OPEN REFERENCE I
 10 October 2026. [WR005](midas-reference-interpretation-pilot.md) inspects real supplied metadata with a reproducible isolated utility. **OUTCOME B — PARTIAL INTERPRETATION**: 390 year-range nominations match release-listed qcv-1 IDs, but no actual January 2025 station-era is characterised. Zero observation files opened. Current location/year-range metadata cannot supply historical sensor/clock/QC facts. This is an actionable evidence insufficiency, not a weather negative result or a justification to relax the strict protocol silently.
 
 Prioritise one historical-support/reference-target decision before asking for an arbitrary annual file. The global/regional, ensemble, observations/nowcast, ML, mountain, wind/cloud/precipitation, uncertainty, engineering and offline tracks remain; no provider or architecture is selected. Exactly one next task: **WEATHER RESEARCH 006 — MIDAS HISTORICAL MEASUREMENT SUPPORT AND REFERENCE-TARGET DECISION — NOT BEGUN**, [scope, dependencies, acceptance, resources and stops](midas-reference-interpretation-pilot.md#9-exactly-one-subsequent-task--not-begun).
+
+
+## WR006 completed: close the reference decision, separate decoding from skill
+
+10 October 2026. [WR006](midas-historical-measurement-support.md) reaches **Outcome C —
+EVIDENCE BLOCKED / reference-target Decision C** for one error-blind Wick audit nominee.
+The strict protocol stays BLOCKED; nominal-report/unknown-height alternatives remain
+PROPOSED, not adopted. Historical QC/J documentation retrieval improved, but this
+cannot substitute for dated instrument/clock support and actual record interpretation.
+
+Refinement to stage dependencies: **source-format and numerical-integrity experiments
+can proceed without a qualified observation reference**, once lawful finite acquisition,
+semantic identity, independent decoding and resource gates are satisfied. Forecast
+verification still requires that reference; internal numerical consistency cannot
+prove skill. Do not create another indefinite MIDAS-only documentary chain. The small
+manual evidence checklist remains recorded, without sending a request or making it
+a prerequisite for all global work. Global/regional/ensemble/nowcast/ML/mountain and
+other quantity research remain first-class; no architecture or provider is frozen.
+
+Exactly one current next task: **bounded historical GFS temperature-field acquisition,
+decoding and integrity pilot — NOT BEGUN**, [objective, evidence, scope, dependencies,
+acceptance, resources and stops](midas-historical-measurement-support.md#9-programme-consequence-and-exactly-one-next-task).
+Historical task definitions remain records, not concurrent instructions.

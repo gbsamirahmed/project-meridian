@@ -1,0 +1,60 @@
+{
+  "checked_date": "2026-10-10",
+  "interpretation": "Anonymous public documents/listings and redirect bodies, NOT station history or observation content",
+  "requests": [
+    {
+      "request": 1,
+      "url": "https://data.ceda.ac.uk/badc/ukmo-midas-open/data/uk-hourly-weather-obs/dataset-version-202607/caithness/00032_wick-airport/",
+      "date": "2026-10-10",
+      "body_bytes": 17706,
+      "status": 200,
+      "sha256": "384798a5da3038597c9ab09622ddcd9e99c5816d54f8d1c50c928d1e23e583ac",
+      "saved_as": "wick-directory.html"
+    },
+    {
+      "request": 2,
+      "url": "https://dap.ceda.ac.uk/badc/ukmo-midas-open/data/uk-hourly-weather-obs/dataset-version-202607/caithness/00032_wick-airport/midas-open_uk-hourly-weather-obs_dv-202607_caithness_00032_wick-airport_capability.csv?download=1",
+      "date": "2026-10-10",
+      "body_bytes": 15,
+      "status": 302,
+      "sha256": "76f4e015467e2ad3550fc408bcf4f7d2a391d363e9993df7b0d95e4859ed5c53",
+      "saved_as": "capability-response.html"
+    },
+    {
+      "request": 3,
+      "url": "https://artefacts.ceda.ac.uk/badc_datadocs/ukmo-midas/WH_Table.html",
+      "date": "2026-10-10",
+      "body_bytes": 42114,
+      "status": 200,
+      "sha256": "a27f51ea2e6c83435252cbb0b93e233809c425bd891c097724015a57fb4b4df8",
+      "saved_as": "wh-table.html"
+    },
+    {
+      "request": 4,
+      "url": "https://data.ceda.ac.uk/badc/ukmo-midas-open/data/uk-hourly-weather-obs/dataset-version-202607/caithness/00032_wick-airport/qc-version-1/",
+      "date": "2026-10-10",
+      "body_bytes": 79291,
+      "status": 200,
+      "sha256": "4c2e2a10d89c6b68fc368b295e53959834548c8922e63e5e09fc6c169be6d3ca",
+      "saved_as": "wick-qcv1-directory.html"
+    },
+    {
+      "request": 5,
+      "url": "https://data.ceda.ac.uk/badc/ukmo-midas/metadata/doc/QC_J_flags.html",
+      "date": "2026-10-10",
+      "body_bytes": 0,
+      "status": 302,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "saved_as": "qc-dictionary-page.html"
+    },
+    {
+      "request": 6,
+      "url": "https://dap.ceda.ac.uk/badc/ukmo-midas/metadata/doc/QC_J_flags.html",
+      "date": "2026-10-10",
+      "body_bytes": 25668,
+      "status": 200,
+      "sha256": "a9561fbaf15d537cacd3287429850e21ee5370333c9e4f5fb9fba393cd650d67",
+      "saved_as": "qc-dictionary-response.html"
+    }
+  ]
+}

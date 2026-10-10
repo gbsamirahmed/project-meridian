@@ -93,3 +93,21 @@ Outcome **B — PARTIAL CLOSURE** supports a smaller interpretation pilot, with 
 [WR005](midas-reference-interpretation-pilot.md) advances T03 to real edition metadata/change-log inspection: 1,544 IDs, 390 year-range nominations and matching qcv-1 IDs. T04 historical sensor/clock/location and T05 exact temperature dictionaries remain unresolved; zero strict eras are established and the annual-file gate stays BLOCKED. T07/T10 cohort/domain/freeze remain blocked. T01/T02/T06/T08 forecast/independence evidence is unchanged; no forecast body was acquired. T09 local metadata-use notices were inspected, but no commercial/offline legal clearance follows.
 
 **OUTCOME B — PARTIAL INTERPRETATION**, zero observation files/values examined. Do not obtain an arbitrary annual file to bypass missing historical support, assign network 1.25 m as observed height, treat year endpoints as continuity, or infer passed QC from qcv-1. The sole next task is [WR006 historical measurement support/reference-target decision](midas-reference-interpretation-pilot.md#9-exactly-one-subsequent-task--not-begun), **NOT BEGUN**. Historical gate rows and next-task notes above remain unchanged records.
+
+
+## WR006 formal closure of the reference-target decision — 10 October 2026
+
+[WR006](midas-historical-measurement-support.md) fixes source 00032 as one audit nominee
+and records **Outcome C / reference-target Decision C**. T04 history/height/physical
+clock remains BLOCKED. T05 improves to inspected historical MESQL/J documentation,
+but actual v202607 header, missing encodings, dictionary applicability and revision
+handling remain unverified; it is not closed. T03 pinned metadata, T07 cohort and
+T10 preregistration retain their prior distinctions. No historical field bodies,
+cohort, reference pair or production rights are silently established.
+
+The [smallest outstanding manual checklist](midas-historical-measurement-support.md#smallest-outstanding-manual-evidence-checklist)
+is retained without initiating an account, enquiry or another MIDAS task. Strict
+support stays BLOCKED; a nominal-hour proxy stays PROPOSED. Independent forecast
+format/decoding evidence can proceed under its own acquisition/rights/byte gates.
+Exactly one next task: [bounded historical GFS temperature-field pilot](midas-historical-measurement-support.md#9-programme-consequence-and-exactly-one-next-task),
+**NOT BEGUN**. No skill evaluation or full January forecast acquisition is approved here.

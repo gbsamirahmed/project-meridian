@@ -134,3 +134,18 @@ Exactly one current next task: **WEATHER RESEARCH 004 — REFERENCE MEASUREMENT 
 [Real MIDAS metadata inspection](midas-reference-interpretation-pilot.md) establishes local edition/schema and release-filename joins, not a compatible observation population. Current locations and year endpoints cannot close January 2025 historical height/time/QC support. Zero strict station-eras established; no annual observation or forecast body opened. Both GFS-only and GFS/UKV comparisons remain conditional; failure of a regional branch does not block unrelated global work. The original strict estimand is not silently replaced with nominal-hour or network-height assumptions.
 
 The sole current next task is [WR006 historical measurement support/reference-target decision](midas-reference-interpretation-pilot.md#9-exactly-one-subsequent-task--not-begun), **NOT BEGUN**. No new reference target is adopted here.
+
+
+## WR006 reference-target decision — 10 October 2026
+
+[WR006](midas-historical-measurement-support.md#6-formal-decision-and-possible-protocol-change)
+records **Decision C — STRICT AND REVISED TARGETS BLOCKED / scientific Outcome C**.
+One Wick metadata nominee is audited, not accepted as a historical station-era.
+A generic QC/J document is now readable; selected historical height/clock/history
+and actual edition record interpretation remain unresolved. A nominal-report proxy
+is still only PROPOSED. The strict protocol is preserved as BLOCKED, not superseded.
+
+Both GFS-only reference and paired GFS/UKV verification share this problem. Independent
+global one-field decoding does not require declaring a reference eligible and does
+not measure skill. The sole next task is [the bounded historical GFS field pilot](midas-historical-measurement-support.md#9-programme-consequence-and-exactly-one-next-task),
+**NOT BEGUN**; no forecast or observation magnitudes were inspected in WR006.

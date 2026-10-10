@@ -165,3 +165,23 @@ Inspected **10 October 2026**, no new external retrieval. Source identities/size
 | WR5-S04 / 2021 MIDAS guide, WR4-S05 | Retained verified PDF re-read, §§2.5.7, 3.2–3.4, 4.3–4.4, 5; network/equipment rules, no new download or historical station proof |
 
 The prior Open guide/WH/licence/catalogue references retain their WR004 access date; WR005 does not present them as freshly fetched. No registered dictionary or annual observation body was acquired. Actual manual-download date/session and provider checksum remain unresolved.
+
+
+## WR006 selected-station and QC evidence
+
+Checked **10 October 2026**. Six bounded anonymous GETs, 164,794 response-body bytes;
+no automatic redirects, credentials, observation body or scientific forecast download.
+Exact statuses/body identities are in [the WR006 ledger](midas-historical-measurement-support.md#3-bounded-public-evidence-attempt)
+and [public response pins](../../../scripts/weather-research/wr006/public-evidence-pins.json).
+
+| ID / primary source | Evidence and limitation |
+|---|---|
+| WR6-S01 / [Wick v202607 directory](https://data.ceda.ac.uk/badc/ukmo-midas-open/data/uk-hourly-weather-obs/dataset-version-202607/caithness/00032_wick-airport/) and its listed capability CSV | Directory read; exact 2.0 KB displayed capability body request redirects to sign-in, not followed. No historical capability contents |
+| WR6-S02 / [Wick qcv-1 directory](https://data.ceda.ac.uk/badc/ukmo-midas-open/data/uk-hourly-weather-obs/dataset-version-202607/caithness/00032_wick-airport/qc-version-1/) | Exact 2025 annual filename listed at displayed 3.1 MB; no annual header or records inspected |
+| WR6-S03 / [WH table](https://artefacts.ceda.ac.uk/badc_datadocs/ukmo-midas/WH_Table.html) and [QC/J document](https://dap.ceda.ac.uk/badc/ukmo-midas/metadata/doc/QC_J_flags.html) | Public linked delivery anonymously readable despite registered-user wording. Historical five-position MESQL/temperature descriptors documented; no page revision/date or v202607 binding stated. Earlier unread-document limitation refined, not all QC gates closed |
+| WR6-S04 / WR5-S01–S04 pinned local metadata/change log/README and retained 2021 guide | Byte identities rechecked, selected row/filename nomination reproduced; current snapshot/network guidance do not establish January 2025 instrument history |
+
+The accessible QC page's version-1 shorthand is retained as conflicting with the
+Open guide/2021 manual's ingestion caveat. Do not use it as temperature acceptance.
+Historical reports remain unchanged. No present-day or nominal network fact becomes
+station-era evidence; no redistribution clearance or publisher authenticity follows.

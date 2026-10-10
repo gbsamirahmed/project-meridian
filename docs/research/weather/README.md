@@ -74,3 +74,20 @@ WR001–003 remain historical; current refinements and T01–T10 reconciliation 
 10 October 2026. [WR005](midas-reference-interpretation-pilot.md) records **OUTCOME B — PARTIAL INTERPRETATION**: three manually supplied v202607 files inspected, 1,544 unique metadata IDs, 390 year-range nominations and matching 692 change-log filenames (302 qcv-0 / 390 qcv-1). None establishes a strict historical station-era; selected era null, zero annual files/observation values opened. The isolated metadata utility and 22 synthetic tests validate parsing/closure boundaries, not temperature QC or forecast skill. No source data moved or altered, no new data transfer.
 
 WR001–004 conclusions and W01–W40 statuses remain historical and unchanged. Timing/height/history and exact dictionaries remain scientific gates. Exactly one current next task is **WEATHER RESEARCH 006 — MIDAS HISTORICAL MEASUREMENT SUPPORT AND REFERENCE-TARGET DECISION — NOT BEGUN**, [finite scope and stops](midas-reference-interpretation-pilot.md#9-exactly-one-subsequent-task--not-begun). No subsequent task has begun.
+
+
+## WR006 historical-support decision — 10 October 2026
+
+[WR006](midas-historical-measurement-support.md) completes one frozen audit nomination,
+source 00032 WICK AIRPORT. **Scientific Outcome C — EVIDENCE BLOCKED; reference-target
+Decision C — STRICT AND REVISED TARGETS BLOCKED.** Current metadata and public filenames
+do not establish January 2025 height, clock or instrument history. The capability
+body requires sign-in. The historical QC/J document was anonymously readable through
+its public delivery route, refining the earlier retrieval gap; actual edition/header/
+missing/revision applicability remains unresolved. No annual file or forecast values
+were opened. The reproducible isolated audit is not a reference-validation engine.
+
+The sole recommended next task is a **bounded historical GFS temperature-field
+acquisition, decoding and integrity pilot — NOT BEGUN**, [full definition and stops](midas-historical-measurement-support.md#9-programme-consequence-and-exactly-one-next-task).
+It progresses global format/numerical research independently of the reference blocker;
+no skill comparison, production provider choice or later work begins here.

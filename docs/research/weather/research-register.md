@@ -116,3 +116,21 @@ Exactly one current next task: **WEATHER RESEARCH 005 — MIDAS OPEN REFERENCE I
 | WR5-Q04 / W30, W38 | Isolated parser/pins/receipt reproducibility tested; 22 synthetic cases; annual acceptance path intentionally unavailable | PARTIALLY VALIDATED (metadata utility only); temperature encoding/missingness/revisions/time not validated |
 
 The next single gate is [WR006 historical measurement support/reference-target decision](midas-reference-interpretation-pilot.md#9-exactly-one-subsequent-task--not-begun), **NOT BEGUN**. It does not automatically authorise another station, an annual file or forecast verification.
+
+
+## WR006 bounded historical-support decision
+
+10 October 2026. [WR006](midas-historical-measurement-support.md): **Outcome C — EVIDENCE
+BLOCKED**, separately **reference-target Decision C**. All W01–W40 statuses and historic
+WR2–WR5 rows remain unchanged; no reference/skill topic is experimentally validated.
+
+| Identifier / parents | Bounded result | Status / remaining gate |
+|---|---|---|
+| WR6-Q01 / W11, W38 | Frozen Caithness metadata-group order nominates source 00032; repeat selection content and pinned audit receipts agree | PARTIALLY VALIDATED (selection/audit utility only); no historically eligible era |
+| WR6-Q02 / W11, W24, W38 | Selected capability listed but body redirects to sign-in; dated height/location/equipment/clock unsupported | RESEARCHED (bounded evidence/access decision); historical support BLOCKED, not station ineligibility |
+| WR6-Q03 / W30, W38 | Historical public QC/J document read: MESQL layout and temperature descriptors; prior retrieval gap refined | RESEARCHED (documentary); exact v202607 header/missing/revision applicability and real-record decoding unresolved |
+| WR6-Q04 / W30, W31, W40 | Strict and nominal-proxy targets blocked; independent one-field global decode is a legitimate next experiment distinct from skill | RESEARCHED (decision/dependency boundary); no acquisition, decoder or forecast skill begun |
+
+The sole next task is [the bounded historical GFS field pilot](midas-historical-measurement-support.md#9-programme-consequence-and-exactly-one-next-task),
+**NOT BEGUN**. Missing reference evidence does not automatically block source-format
+engineering, or permit a skill claim based on model agreement.
