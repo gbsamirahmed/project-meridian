@@ -1139,3 +1139,10 @@ Useful non-device work is complete; no further Atlas optimisation prerequisite i
 [Weather Research 001](weather/README.md) is a separate scientific programme with its own W-topic register. It uses Atlas's discipline of traceability and negative results without adopting Atlas's technical schema or changing its 42 canonical research statuses. All accepted Atlas findings, historical pins, contracts and negative Swiss/AWS reconciliation remain unchanged. Weather evidence does not retrospectively alter Atlas science.
 
 Exactly one next task: **WEATHER RESEARCH 002 — FORECAST AND OBSERVATION SOURCE FEASIBILITY FOR A BOUNDED UK/ALPINE VALIDATION STUDY — NOT BEGUN**. No new Atlas experiment, acquisition or Weather implementation is part of this note.
+
+
+## Weather global/regional source feasibility — 10 October 2026
+
+[Weather Research 002](weather/global-regional-source-feasibility.md) distinguishes worldwide forecast products from regional enhancements and qualified observations. It borrows Atlas's traceability and negative-result discipline without changing its scientific semantics, source identities, 42 canonical statuses, historical findings or protected evidence. Weather documentary feasibility is not Atlas or Weather scientific validation.
+
+Exactly one next Weather task: **WEATHER RESEARCH 003 — NEAR-SURFACE TEMPERATURE SEMANTICS AND FORECAST–REFERENCE VERIFICATION DESIGN — NOT BEGUN**, scoped in the [compatibility report](weather/forecast-reference-compatibility.md#exactly-one-next-bounded-task). No Atlas work or later Weather experiment begins here.

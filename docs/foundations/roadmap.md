@@ -147,3 +147,10 @@ Exactly one next task: **MERIDIAN WEATHER FOUNDATIONAL RESEARCH PROGRAMME — SC
 [WR001 entry](../research/weather/README.md) records broad scientific discovery, selective-depth priorities, source/access/rights/economics findings and an independent legacy inventory. This is research progress, not Weather scientific readiness or entry into internal alpha/beta. The programme places lawful source/reference feasibility, semantic design and validation methods ahead of numerical/preparation engineering; they can be investigated in parallel where dependencies permit. It does not require every identified discipline to be completed first. Weather research remains distinct from later application integration and from physical-device/platform evidence.
 
 Exactly one next task: **WEATHER RESEARCH 002 — FORECAST AND OBSERVATION SOURCE FEASIBILITY FOR A BOUNDED UK/ALPINE VALIDATION STUDY — NOT BEGUN**. Rights, retrospective coverage and observation suitability can change candidate region/quantity/source. Original device-study, new-UI, maturity, privacy and F32 financial gates remain unchanged. No later stage begins automatically.
+
+
+## Weather source/reference feasibility — 10 October 2026
+
+[WR002](../research/weather/global-regional-source-feasibility.md) establishes documentary global/regional opportunities and product-specific access/rights gaps. It does not demonstrate forecast skill, Weather readiness or advance alpha/beta maturity. UK GFS/UKV/MIDAS retrospective design is conditional; selected Alpine forecast history is blocked. Source-specific height/support, station QC, assimilation and archive identity govern the next evidence gate. Original device, new-UI, privacy, rights and F32 controls remain unchanged.
+
+Exactly one next bounded task: **WEATHER RESEARCH 003 — NEAR-SURFACE TEMPERATURE SEMANTICS AND FORECAST–REFERENCE VERIFICATION DESIGN — NOT BEGUN**, [defined here](../research/weather/forecast-reference-compatibility.md#exactly-one-next-bounded-task). No data acquisition, experiment, later programme stage or application implementation begins automatically.

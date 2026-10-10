@@ -69,3 +69,14 @@ Choose representations per justified profile using semantic conformance, measure
 **Direction-change trigger:** no lawful overlapping forecast/observation archive, inadequate reference exposure/QC, source-dependent interpretation, prohibitive volume or uncertain redistribution can change region, variable, methods or candidate source. If no meaningful empirical comparison is feasible, design a narrower semantic/decoder investigation rather than pretend to assess skill.
 
 **Stop:** after that documentary feasibility decision and one next task; no acquisition or experiment begins automatically. This subsequent task has not begun in WR001.
+
+
+## WR002 completed: refined programme dependencies
+
+10 October 2026. [WR002 findings](global-regional-source-feasibility.md) complete a bounded documentary global/regional/reference comparison under the actual authorised 3/3/3 ceilings (3/2/3 used). This refines the narrower historical WR001 proposal above; its no-acquisition/implementation and scientific-preservation boundaries remain.
+
+A candidate UK GFS/UKV/MIDAS temperature comparison moves the next gate to **source-specific quantity/reference semantics and preregistered verification design**. Exact historical rights/access and file/metadata closure remain parallel acquisition prerequisites, not facts silently deemed satisfied. Alpine retrospective ICON work is blocked within the selected public feed; prospective capture or separate archive research can be reconsidered later. ISD supersession requires explicit reference-edition work before expansion. Neither negative finding forces abandonment of the whole programme.
+
+The stages remain dependency-informed. Design can stop with a reference/height/QC blocker and redirect the experiment; later acquisition still needs its own authority, rights and bounded resource plan. No empirical comparison, provider ranking, blending, preparation system, offline package or production architecture follows automatically.
+
+Exactly one current next task: **WEATHER RESEARCH 003 — NEAR-SURFACE TEMPERATURE SEMANTICS AND FORECAST–REFERENCE VERIFICATION DESIGN — NOT BEGUN**. The [complete task definition](forecast-reference-compatibility.md#exactly-one-next-bounded-task) specifies evidence, scope, dependencies, deliverables, acceptance and stopping criteria. The old WR002 next-task definition is preserved as historical scoping evidence; it is not another active task.

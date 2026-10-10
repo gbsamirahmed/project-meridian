@@ -54,3 +54,19 @@ Evidence quality: **P** primary science/standard/agency documentation, discovery
 This version has **40 topics: 23 SCOPED, 11 IDENTIFIED, 6 DEFERRED**. Counts are status bookkeeping, not measures of scientific achievement. Twenty-five capability families and twenty source families cross-reference these questions. Revise priorities with reasons, retain identifiers and record negative findings; split a topic only when a bounded question genuinely needs separate evidence. Preserve source dates and study limitations. Weather statuses never update Atlas's canonical ledger.
 
 The [programme](research-programme.md) groups these topics into manageable evidence gates. The only recommended subsequent task is defined there and is **NOT BEGUN**. Identified/deferred rows are alternatives to revisit, not concurrent instructions or an implementation backlog.
+
+
+## WR002 documentary findings and priorities
+
+10 October 2026. This append-only refinement retains W01–W40 and the original **23 SCOPED, 11 IDENTIFIED, 6 DEFERRED** statuses. The following finite questions are **RESEARCHED at documentary feasibility scope**, not validation of their parent disciplines. Sources and limitations are in [WR002](global-regional-source-feasibility.md); current access/rights are in its companion register.
+
+| Bounded identifier / parent | Question and evidence | Status / outstanding gate |
+|---|---|---|
+| WR2-Q01 / W10, W31, W35 | Are there distinct global physical/ensemble/ML product opportunities? G1/G2/G3 exact delivery and history distinctions documented | RESEARCHED (documentary); historic permissions, version and finite field profile unresolved; no skill finding |
+| WR2-Q02 / W10, W38, W40 | Can a UK regional forecast have retrospective overlap with a global forecast and stations? R1/G2/O2 documentary ranges support a candidate January 2025 cohort | RESEARCHED (documentary); files, heights, station exposure/QC and historic licence still conditional |
+| WR2-Q03 / W10, W38, W40 | Does the selected Alpine feed supply retrospective forecasts? R2's 24-hour retrieval window does not establish such an archive | RESEARCHED (negative documentary finding); retrospective opportunity blocked, not proof that no separate archive exists |
+| WR2-Q04 / W38, W40 | Can ISD be assumed current? NOAA's 23 June 2026 notice supersedes that assumption and directs GHCNh use | RESEARCHED (documentary correction); exact successor edition, QC and contributing rights need investigation |
+| WR2-Q05 / W11, W30, W36, W38 | Can shared observations establish global–regional skill or independence automatically? Height/support and assimilation/initial-boundary dependencies prevent that shortcut | RESEARCHED (requirements analysis); semantic/verification protocol SCOPED, no numerical or empirical validation |
+| WR2-Q06 / W10, W38 | Are access, reuse and offline pathways identical? Thirteen exact delivery/edition rows distinguish nine intentions and remaining terms | RESEARCHED (documentary); no legal clearance, acquisition authorisation or production costing |
+
+Prioritise W11/W30/W36/W38 semantic/reference design alongside W10 rights/archive gates. Station height/exposure, actual QC, version migration and rolling history are now more useful than another provider catalogue. ML/ensemble, mountains and wider geography remain important alternatives, not excluded capabilities. Exactly one next bounded task: **WEATHER RESEARCH 003 — NEAR-SURFACE TEMPERATURE SEMANTICS AND FORECAST–REFERENCE VERIFICATION DESIGN — NOT BEGUN**, defined in the [compatibility report](forecast-reference-compatibility.md#exactly-one-next-bounded-task). No later investigation has begun.

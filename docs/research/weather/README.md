@@ -42,3 +42,12 @@ Validation is documentation/preservation work: internal paths/anchors, reference
 ## Exactly one next bounded task — NOT BEGUN
 
 **WEATHER RESEARCH 002 — FORECAST AND OBSERVATION SOURCE FEASIBILITY FOR A BOUNDED UK/ALPINE VALIDATION STUDY — NOT BEGUN.** Its [scope, acceptance and stop condition](research-programme.md#exactly-one-recommended-subsequent-bounded-task) limit it to product-level documentary comparison, with no acquisition or experiment. It will establish a feasible forecast–reference pair/question or precise blockers. Missing legal access, incompatible support/history, observational dependence or prohibitive volume can change the region, quantity, method or source direction. No subsequent task has begun.
+
+
+## WR002: complementary global and regional foundations
+
+[Product feasibility](global-regional-source-feasibility.md), [forecast/reference compatibility](forecast-reference-compatibility.md) and [product-level rights](source-rights-detail.md) document three global, two regional and three reference families, checked 10 October 2026. Global baseline and regional enhancement are separate research tracks, neither experimentally validated. GFS/UKV/MIDAS Open support conditional UK retrospective design; Alpine ICON retrospective work is blocked by forecast-archive/static-domain closure. NOAA's ISD supersession, UKV's specifically licensed rolling archive and MeteoSwiss's short forecast retrieval window refine WR001 explicitly. No provider, model, format or architecture is selected.
+
+The WR001 next-task note above is historical. The actual authorised WR002 scope includes global and regional tracks; it expands that note's candidate ceilings without changing research safeguards. Broad W-topic rows/statuses remain unchanged. Exactly one current next task: **WEATHER RESEARCH 003 — NEAR-SURFACE TEMPERATURE SEMANTICS AND FORECAST–REFERENCE VERIFICATION DESIGN — NOT BEGUN**. Its objective, evidence, scope, dependencies, acceptance and stop conditions are in the [compatibility report](forecast-reference-compatibility.md#exactly-one-next-bounded-task).
+
+WR002 uses documentation and preservation checks. No executable scientific regression, lint, TypeScript or build is rerun; no code/data/contracts/dependencies changed. No numerical validation, acquisition, accounts, private access, data-materialising commands, mobile tests or infrastructure. External retrieval gaps remain explicit in the [dated source ledger](sources.md#wr002-product-level-evidence-ledger).
