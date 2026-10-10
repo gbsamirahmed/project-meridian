@@ -98,3 +98,10 @@ The broad atmospheric/global/regional/ensemble/observations/nowcast/ML/mountain/
 The broader global/regional, ensemble, nowcast, ML/hybrid, mountains, uncertainty, engineering, offline and Atlas/Guide tracks remain. No broad topic is experimentally validated and no final provider/format/architecture is selected. A negative reference pilot may revise the reference/question; a nominal-time or network-proxy comparison requires explicit pre-error change. Historic stages and next-task definitions above remain records, not concurrent instructions.
 
 Exactly one current next task: **WEATHER RESEARCH 005 — MIDAS OPEN REFERENCE INTERPRETATION AND ERROR-BLIND ELIGIBILITY PILOT — NOT BEGUN**, [objective, required evidence, scope, dependencies, acceptance, resource boundaries and stops](reference-metadata-and-historical-product-closure.md#13-programme-implication-and-exactly-one-next-bounded-task). No acquisition or implementation begins here.
+
+
+## WR005 completed: real metadata and a failed strict-eligibility gate
+
+10 October 2026. [WR005](midas-reference-interpretation-pilot.md) inspects real supplied metadata with a reproducible isolated utility. **OUTCOME B — PARTIAL INTERPRETATION**: 390 year-range nominations match release-listed qcv-1 IDs, but no actual January 2025 station-era is characterised. Zero observation files opened. Current location/year-range metadata cannot supply historical sensor/clock/QC facts. This is an actionable evidence insufficiency, not a weather negative result or a justification to relax the strict protocol silently.
+
+Prioritise one historical-support/reference-target decision before asking for an arbitrary annual file. The global/regional, ensemble, observations/nowcast, ML, mountain, wind/cloud/precipitation, uncertainty, engineering and offline tracks remain; no provider or architecture is selected. Exactly one next task: **WEATHER RESEARCH 006 — MIDAS HISTORICAL MEASUREMENT SUPPORT AND REFERENCE-TARGET DECISION — NOT BEGUN**, [scope, dependencies, acceptance, resources and stops](midas-reference-interpretation-pilot.md#9-exactly-one-subsequent-task--not-begun).

@@ -168,3 +168,10 @@ Exactly one next bounded task: **WEATHER RESEARCH 004 — REFERENCE MEASUREMENT 
 [WR004](../research/weather/reference-metadata-and-historical-product-closure.md) reaches **OUTCOME B — PARTIAL CLOSURE**, with selected historical object identifiers and current observation-manual semantics documented. Scientific input contents, reference station-era/QC interpretation and full preregistration remain open. This is research progress, not empirical forecast skill, Weather readiness or application-stage entry. No provider/framework, acquisition, deployment or distribution choice follows; preservation, privacy and F32 exposure safeguards remain unchanged.
 
 Exactly one next bounded task: **WEATHER RESEARCH 005 — MIDAS OPEN REFERENCE INTERPRETATION AND ERROR-BLIND ELIGIBILITY PILOT — NOT BEGUN**, [definition](../research/weather/reference-metadata-and-historical-product-closure.md#13-programme-implication-and-exactly-one-next-bounded-task). It is a conditional reference interpretation pilot with lawful-access and resource gates, independent of regional archive urgency. No subsequent task begins here.
+
+
+## WR005 reference-metadata pilot checkpoint — 10 October 2026
+
+[WR005](../research/weather/midas-reference-interpretation-pilot.md) completes the authorised real metadata pilot, **OUTCOME B — PARTIAL INTERPRETATION**. Three local files are pinned; metadata/year-range and change-log joins reproduce. Historical thermometer/clock/QC support does not establish a strict eligible era; no annual observation or forecast acquisition occurs. The isolated research utility is not a production Weather subsystem. All accepted Atlas and Weather evidence remains; no application/platform/maturity/provider decision changes.
+
+Exactly one subsequent task is the report's **WR006 historical measurement support and reference-target decision — NOT BEGUN**. No physical-device work, framework/renderer implementation or forecast benchmarking begins.

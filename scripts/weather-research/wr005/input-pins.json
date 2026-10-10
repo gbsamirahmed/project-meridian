@@ -1,0 +1,18 @@
+{
+  "edition": "202607",
+  "doi": "10.5285/d04207b551674c07801b7d4e6d883e50",
+  "files": {
+    "00README_catalogue_and_licence.txt": {
+      "bytes": 843,
+      "sha256": "bbdaa4ca60d0d9c2a261ab1b72df814c2e3bbf57cf2c4715283b03400f028737"
+    },
+    "midas-open_uk-hourly-weather-obs_dv-202607_station-metadata.csv": {
+      "bytes": 134123,
+      "sha256": "3c98d20c4b9a8aba3270280c8692b72a54d66df05d178c5fed27eb70e6fd3acc"
+    },
+    "midas-open_uk-hourly-weather-obs_dv-202607_change_log.txt": {
+      "bytes": 73638,
+      "sha256": "5ee2036336d7c36e7aeb7142d6be0f1e08f3bec7e658de2bc598688898e0c26c"
+    }
+  }
+}

@@ -127,3 +127,10 @@ Exactly one current next task: **WEATHER RESEARCH 004 — REFERENCE MEASUREMENT 
 ## WR004 reference refinement — 10 October 2026
 
 [WR004](reference-metadata-and-historical-product-closure.md) provides selected-object evidence for G2/R1 and more specific O2 manual semantics. Catalogue/listing identity is distinguished from inspected fields and station-era records. The common physical-time/QC/history gate remains; a nominal-time or network-height proxy would require a named pre-error protocol revision. The historical matrix above is not a claim that public listings have verified complete scientific inputs. Regional archive failure does not prevent an independently viable global study; reference interpretation can block both. Exactly one current next task: **WEATHER RESEARCH 005 — MIDAS OPEN REFERENCE INTERPRETATION AND ERROR-BLIND ELIGIBILITY PILOT — NOT BEGUN**, [definition](reference-metadata-and-historical-product-closure.md#13-programme-implication-and-exactly-one-next-bounded-task).
+
+
+## WR005 refinement — 10 October 2026
+
+[Real MIDAS metadata inspection](midas-reference-interpretation-pilot.md) establishes local edition/schema and release-filename joins, not a compatible observation population. Current locations and year endpoints cannot close January 2025 historical height/time/QC support. Zero strict station-eras established; no annual observation or forecast body opened. Both GFS-only and GFS/UKV comparisons remain conditional; failure of a regional branch does not block unrelated global work. The original strict estimand is not silently replaced with nominal-hour or network-height assumptions.
+
+The sole current next task is [WR006 historical measurement support/reference-target decision](midas-reference-interpretation-pilot.md#9-exactly-one-subsequent-task--not-begun), **NOT BEGUN**. No new reference target is adopted here.

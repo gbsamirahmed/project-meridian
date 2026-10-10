@@ -102,3 +102,17 @@ No broad topic is promoted to RESEARCHED or VALIDATED. Parameter statuses FIXED 
 | WR4-Q06 / W30, W39, W40 | Deterministic error-blind selection and bounded metadata-first handoff can return a meaningful negative result | RESEARCHED (design); no acquisition, ten-station guarantee or preregistered skill experiment |
 
 Exactly one current next task: **WEATHER RESEARCH 005 — MIDAS OPEN REFERENCE INTERPRETATION AND ERROR-BLIND ELIGIBILITY PILOT — NOT BEGUN**, [finite definition](reference-metadata-and-historical-product-closure.md#13-programme-implication-and-exactly-one-next-bounded-task). Earlier next-task notes remain historical.
+
+
+## WR005 bounded real-metadata evidence
+
+10 October 2026. [WR005](midas-reference-interpretation-pilot.md): **OUTCOME B — PARTIAL INTERPRETATION**. All W01–W40 rows/statuses and historical WR2–WR4 rows remain unchanged. No forecast-skill or reference-record topic is experimentally validated.
+
+| Identifier / parents | Bounded result | Status / remaining gate |
+|---|---|---|
+| WR5-Q01 / W10, W11, W38 | Three real supplied v202607 files pinned; actual ten-column BADC metadata schema inspected, 1,544 unique IDs | RESEARCHED (real metadata inspection); provider authenticity/download session not independently captured |
+| WR5-Q02 / W11, W31, W38 | 390 year-range nominations exactly match qcv-1 source IDs in 692 release-listed 2025 filenames; county/stem/ID joins pass | RESEARCHED (real metadata join); annual objects/slots/QC contents uninspected |
+| WR5-Q03 / W11, W24, W38 | Current locations/year endpoints lack historical height, instrument, exposure, capability and physical-time support; zero strict eras established | RESEARCHED (bounded negative evidence); no proof that suitable stations do not exist |
+| WR5-Q04 / W30, W38 | Isolated parser/pins/receipt reproducibility tested; 22 synthetic cases; annual acceptance path intentionally unavailable | PARTIALLY VALIDATED (metadata utility only); temperature encoding/missingness/revisions/time not validated |
+
+The next single gate is [WR006 historical measurement support/reference-target decision](midas-reference-interpretation-pilot.md#9-exactly-one-subsequent-task--not-begun), **NOT BEGUN**. It does not automatically authorise another station, an annual file or forecast verification.

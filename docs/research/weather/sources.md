@@ -151,3 +151,17 @@ All sources checked **10 October 2026**. Living pages have no inferred publicati
 | WR4-S19 | [CC BY-SA 4.0 legal code](https://creativecommons.org/licenses/by-sa/4.0/legalcode.en), version 4 | Adaptation/database/share-alike/attribution requirements reviewed; no legal classification of Meridian package or code |
 
 Refinements to WR001–003 retrieval limits: current MIDAS guide/release note, GDEX policy/day catalogue, unsigned UKV listings and full OGL were accessible through public HTTP even where web extraction failed. Registered CEDA metadata/dictionaries remain unread; no auth or access-control bypass. Station history/field/QC applicability, 62-object inventories, historical static grids and actual field contents remain UNRESOLVED. A single new-stations register is not a full sensor-era history. No scientific-data download, decoder or forecast experiment occurred.
+
+
+## WR005 inspected local source evidence
+
+Inspected **10 October 2026**, no new external retrieval. Source identities/sizes/SHA256 and provenance limits are in [WR005](midas-reference-interpretation-pilot.md#1-discovery-immutable-inputs-and-provenance); original files remain outside Git.
+
+| ID / source | Actual evidence and limit |
+|---|---|
+| WR5-S01 / exact v202607 `00README_catalogue_and_licence.txt` | Supplied local contents identify exact catalogue, OGL v3, registered access and mandatory citation; local SHA256, not publisher signature |
+| WR5-S02 / exact v202607 station metadata CSV | 13 July 2026 snapshot, ten-column BADC schema, WGS84 current coordinates, elevation MSL and first/last years inspected; no station-era or temperature QC columns |
+| WR5-S03 / exact v202607 change log | Release 202607 versus 202507, 692 new 2025 filenames and metadata join inspected; file listing is not annual content or physical station history |
+| WR5-S04 / 2021 MIDAS guide, WR4-S05 | Retained verified PDF re-read, §§2.5.7, 3.2–3.4, 4.3–4.4, 5; network/equipment rules, no new download or historical station proof |
+
+The prior Open guide/WH/licence/catalogue references retain their WR004 access date; WR005 does not present them as freshly fetched. No registered dictionary or annual observation body was acquired. Actual manual-download date/session and provider checksum remain unresolved.
