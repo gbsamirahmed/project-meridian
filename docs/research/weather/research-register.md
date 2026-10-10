@@ -134,3 +134,20 @@ WR2–WR5 rows remain unchanged; no reference/skill topic is experimentally vali
 The sole next task is [the bounded historical GFS field pilot](midas-historical-measurement-support.md#9-programme-consequence-and-exactly-one-next-task),
 **NOT BEGUN**. Missing reference evidence does not automatically block source-format
 engineering, or permit a skill claim based on model agreement.
+
+
+## WR007 single-field numerical integrity
+
+10 October 2026. [WR007](historical-gfs-temperature-field-pilot.md) reaches **Outcome A —
+VERIFIED NUMERICAL FIELD**. W01–W40 and WR2–WR6 historical rows remain unchanged.
+Experimental status below applies only to this field/profile, never forecast skill.
+
+| Identifier / parents | Bounded result | Status / remaining gate |
+|---|---|---|
+| WR7-Q01 / W10, W38, W40 | Exact Jan 15 2025 00 UTC f024 NOAA inventory and HTTP 206 message extraction; 874,115 bytes pinned | EXPERIMENTALLY VALIDATED (one object's bounded acquisition); continuity/suite revision unresolved |
+| WR7-Q02 / W11, W31, W38 | Actual numeric parameter/2 m/time/K, 1440×721 scan/coordinates/sphere and no-missingness profile checked | EXPERIMENTALLY VALIDATED (retained field interpretation); other grids/packing/masks unsupported |
+| WR7-Q03 / W30, W38 | 1,038,240 independent ecCodes/GDAL values compared; every rounding residual explained; repeat receipts/input seals exact | EXPERIMENTALLY VALIDATED (decoding integrity only); no observational accuracy or skill |
+| WR7-Q04 / W31, W39, W40 | Field/source/decoder metadata must remain distinct from downstream querying, derived products and rendering | RESEARCHED (bounded engineering implications); no production architecture or global economics validated |
+
+Exactly one next task: [native-grid point-sampling and query-semantics pilot](historical-gfs-temperature-field-pilot.md#9-exactly-one-next-bounded-task--not-begun),
+**NOT BEGUN**. The historical MIDAS reference decision remains blocked.

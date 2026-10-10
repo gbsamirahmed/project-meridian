@@ -128,3 +128,20 @@ Exactly one current next task: **bounded historical GFS temperature-field acquis
 decoding and integrity pilot — NOT BEGUN**, [objective, evidence, scope, dependencies,
 acceptance, resources and stops](midas-historical-measurement-support.md#9-programme-consequence-and-exactly-one-next-task).
 Historical task definitions remain records, not concurrent instructions.
+
+
+## WR007 completed: independent numerical integrity before downstream queries
+
+10 October 2026. [WR007](historical-gfs-temperature-field-pilot.md) establishes
+**Outcome A** for one actual historical GFS field, independently decoded by ecCodes
+and GDAL/degrib/g2clib. Source-format experiments can progress while reference-based
+skill verification stays blocked; no broad topic, model accuracy or production
+readiness is promoted. Actual native float32 unpacking explains the cross-decoder
+residual, so an apparent Float64 output type is not sufficient precision evidence.
+
+Next information value lies in a finite native-grid point-query contract using this
+existing field, without new acquisition, interpolation or product infrastructure.
+Global/regional, ensembles, observations/nowcast, ML, mountains, other quantities,
+uncertainty, rights/economics and offline delivery remain independent programme tracks.
+Exactly one next task: **GFS native-grid point-sampling and query-semantics pilot —
+NOT BEGUN**, [definition](historical-gfs-temperature-field-pilot.md#9-exactly-one-next-bounded-task--not-begun).

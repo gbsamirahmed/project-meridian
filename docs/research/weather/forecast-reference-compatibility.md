@@ -149,3 +149,13 @@ Both GFS-only reference and paired GFS/UKV verification share this problem. Inde
 global one-field decoding does not require declaring a reference eligible and does
 not measure skill. The sole next task is [the bounded historical GFS field pilot](midas-historical-measurement-support.md#9-programme-consequence-and-exactly-one-next-task),
 **NOT BEGUN**; no forecast or observation magnitudes were inspected in WR006.
+
+
+## WR007 field integrity refinement — 10 October 2026
+
+[WR007](historical-gfs-temperature-field-pilot.md) verifies one actual GFS 2025-01-15
+00 UTC +24 h 2 m K field, including independent decoding with explained binary32
+rounding. This closes a finite numerical-format prerequisite, not the original
+cohort's historical coverage or GFS/UKV/reference pairing. WR006 strict/revised
+reference Decision C remains BLOCKED. No UKV or observation values were inspected.
+No equal-height, exact-time station equivalence or forecast skill follows.

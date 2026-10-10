@@ -1,0 +1,307 @@
+{
+  "acquisition": {
+    "automatic_redirects": false,
+    "content_range": "bytes 415390073-416264187/537858357",
+    "index_last_modified": "Wed, 15 Jan 2025 03:44:38 GMT",
+    "parent_last_modified": "Wed, 15 Jan 2025 03:44:04 GMT",
+    "requests": [
+      {
+        "body_bytes": 41250,
+        "method": "GET",
+        "number": 1,
+        "sha256": "fa11be72ab29ea43520dc6a6fc8de81bd8e0e024c96da94ed05495bc43b39dcb",
+        "status": 200,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20250115/00/atmos/gfs.t00z.pgrb2.0p25.f024.idx"
+      },
+      {
+        "body_bytes": 15298,
+        "method": "GET",
+        "number": 2,
+        "sha256": "efc644aba94501635c6c9fa92afcb4e696b816ac5b6c9cfebfdeb74581a98b82",
+        "status": 200,
+        "url": "https://registry.opendata.aws/noaa-gfs-bdp-pds/"
+      },
+      {
+        "body_bytes": 0,
+        "method": "HEAD",
+        "number": 3,
+        "sha256": null,
+        "status": 200,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20250115/00/atmos/gfs.t00z.pgrb2.0p25.f024"
+      },
+      {
+        "body_bytes": 874115,
+        "method": "GET",
+        "number": 4,
+        "sha256": "0b95fc06fe9ca08de57f9c5089b8fcd5d7b6a42977b35f669da65ec0f43f40e4",
+        "status": 206,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20250115/00/atmos/gfs.t00z.pgrb2.0p25.f024"
+      },
+      {
+        "body_bytes": 24093,
+        "method": "GET",
+        "number": 5,
+        "sha256": "58f69dd738891658168567711201a2447d4b3f98ed384a810d92438bc43cf368",
+        "status": 200,
+        "url": "https://pypi.org/pypi/eccodes/2.48.0/json"
+      },
+      {
+        "body_bytes": 60662,
+        "method": "GET",
+        "number": 6,
+        "sha256": "a3c50782bcc6d71bc887f7da1349b0e2a21a7d053b997ed55e965bff4b32259a",
+        "status": 200,
+        "url": "https://gdal.org/en/stable/drivers/raster/grib.html"
+      },
+      {
+        "body_bytes": 107939,
+        "method": "GET",
+        "number": 7,
+        "sha256": "41b2fc33b97f3fe11164a41150aa29fb37bf3f86a9ab6be72d15c0a4add7458a",
+        "status": 200,
+        "url": "https://raw.githubusercontent.com/OSGeo/gdal/v3.9.3/frmts/grib/gribdataset.cpp"
+      },
+      {
+        "body_bytes": 15509,
+        "method": "GET",
+        "number": 8,
+        "sha256": "46898e6fb0c3bfd5620a1ae691afe4c8f2feabfd696db571d22886a8060b96fd",
+        "status": 200,
+        "url": "https://raw.githubusercontent.com/OSGeo/gdal/v3.9.3/frmts/grib/degrib/g2clib/comunpack.c"
+      },
+      {
+        "body_bytes": 15927,
+        "method": "GET",
+        "number": 9,
+        "sha256": "394b0927b96857e42af8028f1d8214b19c8b48552a4273dfa3f7a2fd0a67873a",
+        "status": 200,
+        "url": "https://raw.githubusercontent.com/OSGeo/gdal/v3.9.3/frmts/grib/degrib/g2clib/grib2.h"
+      },
+      {
+        "body_bytes": 17059,
+        "method": "GET",
+        "number": 10,
+        "sha256": "d13586cc4bcae8f66b089e1a2a2ba74f69262ab65afc24341e7af5339efe3e6e",
+        "status": 200,
+        "url": "https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/grib2_table4-2-0-0.shtml"
+      },
+      {
+        "body_bytes": 39204,
+        "method": "GET",
+        "number": 11,
+        "sha256": "1bf90a7f6f3dccaae9bf5e5da5b68e7568bd9a7be7411bd6c047549c9589d2a5",
+        "status": 200,
+        "url": "https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/grib2_table4-5.shtml"
+      },
+      {
+        "body_bytes": 7545,
+        "method": "GET",
+        "number": 12,
+        "sha256": "a1861641b9b83a14a154b962802cfb681f22f57715a554e46db3c62e3d3fc8bb",
+        "status": 200,
+        "url": "https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/grib2_temp5-3.shtml"
+      }
+    ],
+    "response_body_bytes": 1218601,
+    "source_and_metadata_request_count": 12,
+    "status": 206,
+    "utc": "2026-10-10T14:33:13.202647+00:00"
+  },
+  "decoded_float64_little_endian_sha256": "01dad7249c0f441c65a4677455ce1340797dab82d0045a1e6fba95620fdb91e3",
+  "full_local_receipt": {
+    "bytes": 8018,
+    "contains_numerical_samples": true,
+    "filename": "receipt-final.json",
+    "sha256": "108a6d1e6930dc4e8d6df821732601cb733fff57ebeecc8b12913e0198d17e21"
+  },
+  "grid": {
+    "native_longitudes": "[0,360), no duplicate 360 endpoint",
+    "pole_rows_present": true,
+    "registration": "grid points; GDAL pixel centres",
+    "shape_rows_columns": [
+      721,
+      1440
+    ]
+  },
+  "independent_comparison": {
+    "bit_identical_cells": 41322,
+    "compared_cells": 1038240,
+    "g2clib_rounding_profile_exact_cells": 1038240,
+    "mask_agreement": true,
+    "maximum_absolute_difference_K": 2.197265627046363e-05,
+    "maximum_derived_rounding_bound_K": 3.198380645266968e-05,
+    "maximum_integer_lattice_residual": 3.637978807091713e-12,
+    "mean_absolute_difference_K": 8.251567011652562e-06,
+    "non_identical_cells": 996918,
+    "status": "INDEPENDENT AGREEMENT WITH EXPLAINED BINARY32 ROUNDING",
+    "tolerance_policy": "per-cell two-operation binary32 bound; exact g2clib profile also required"
+  },
+  "input": {
+    "bytes": 874115,
+    "filename": "gfs-2025011500-f024-t2m.grib2",
+    "sha256": "0b95fc06fe9ca08de57f9c5089b8fcd5d7b6a42977b35f669da65ec0f43f40e4"
+  },
+  "limitations": [
+    "one field/grid/packing, no bitmap or internal missing values",
+    "delivered grid, not FV3 computational mesh",
+    "no forecast skill/reference evaluation",
+    "no station support or mobile/browser runtime demonstrated"
+  ],
+  "message_metadata": {
+    "Ni": 1440,
+    "Nj": 721,
+    "alternativeRowScanning": 0,
+    "backgroundProcess": 0,
+    "binaryScaleFactor": 0,
+    "bitmapPresent": 0,
+    "bitsPerValue": 13,
+    "centre": 7,
+    "dataDate": 20250115,
+    "dataRepresentationTemplateNumber": 3,
+    "dataTime": 0,
+    "decimalScaleFactor": 2,
+    "discipline": 0,
+    "edition": 2,
+    "endStep": 24,
+    "forecastTime": 24,
+    "generatingProcessIdentifier": 96,
+    "gridDefinitionTemplateNumber": 0,
+    "gridType": "regular_ll",
+    "iDirectionIncrementInDegrees": 0.25,
+    "iScansNegatively": 0,
+    "jDirectionIncrementInDegrees": 0.25,
+    "jPointsAreConsecutive": 0,
+    "jScansPositively": 0,
+    "latitudeOfFirstGridPointInDegrees": 90.0,
+    "latitudeOfLastGridPointInDegrees": -90.0,
+    "level": 2,
+    "localTablesVersion": 1,
+    "longitudeOfFirstGridPointInDegrees": 0.0,
+    "longitudeOfLastGridPointInDegrees": 359.75,
+    "missingValue": 9999,
+    "missingValueManagementUsed": 0,
+    "name": "2 metre temperature",
+    "numberOfGroupsOfDataValues": 32065,
+    "numberOfMissing": 0,
+    "numberOfPoints": 1038240,
+    "numberOfValues": 1038240,
+    "orderOfSpatialDifferencing": 2,
+    "packingType": "grid_complex_spatial_differencing",
+    "parameterCategory": 0,
+    "parameterNumber": 0,
+    "productDefinitionTemplateNumber": 0,
+    "productionStatusOfProcessedData": 0,
+    "radius": 6371229,
+    "referenceValue": 22276.79296875,
+    "scaleFactorOfFirstFixedSurface": 0,
+    "scaledValueOfFirstFixedSurface": 2,
+    "scanningMode": 0,
+    "shapeOfTheEarth": 6,
+    "shortName": "2t",
+    "significanceOfReferenceTime": 1,
+    "startStep": 24,
+    "stepType": "instant",
+    "stepUnits": 1,
+    "subCentre": 0,
+    "tablesVersion": 2,
+    "typeOfFirstFixedSurface": 103,
+    "typeOfGeneratingProcess": 2,
+    "typeOfLevel": "heightAboveGround",
+    "typeOfProcessedData": 1,
+    "units": "K",
+    "validityDate": 20250116,
+    "validityTime": 0
+  },
+  "native_libraries": [
+    {
+      "bytes": 3819008,
+      "filename": "eccodes.dll",
+      "sha256": "d11f2a2e977eb1e89774475a40ece996fb37353fca9d08db518f88c732e87880"
+    },
+    {
+      "bytes": 19130368,
+      "filename": "gdal-0c91f8aa17bf5518bc6a69e15438cc5c.dll",
+      "sha256": "0ec06c1a0fb46eb0fdde9d18f2ba87cef8ebb6f40ab4beaa7a47e8812d28a58a"
+    }
+  ],
+  "outcome": "A \u2014 VERIFIED NUMERICAL FIELD",
+  "primary_decoder": {
+    "eccodes_native": "2.48.0",
+    "eccodes_python": "2.48.0",
+    "numpy": "2.5.2",
+    "python": "3.12.6"
+  },
+  "resource_accounting_limitation": {
+    "automatic_lookup_body_bytes": null,
+    "automatic_lookup_retries": null,
+    "automatic_npm_update_lookup": true,
+    "fully_measured_task_network_total": false,
+    "further_update_checks_disabled": true,
+    "known_research_and_tooling_attempts": 13,
+    "package_installed": false
+  },
+  "schema": "meridian-weather-wr007-integrity-v1",
+  "secondary_decoder": {
+    "configuration": {
+      "GRIB_ADJUST_LONGITUDE_RANGE": "NO",
+      "GRIB_NORMALIZE_UNITS": "NO"
+    },
+    "crs_wkt": "GEOGCS[\"Coordinate System imported from GRIB file\",DATUM[\"unnamed\",SPHEROID[\"Sphere\",6371229,0]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AXIS[\"Latitude\",NORTH],AXIS[\"Longitude\",EAST]]",
+    "gdal": "3.9.3",
+    "metadata": {
+      "GRIB_COMMENT": "Temperature [K]",
+      "GRIB_DISCIPLINE": "0(Meteorological)",
+      "GRIB_ELEMENT": "TMP",
+      "GRIB_FORECAST_SECONDS": "86400",
+      "GRIB_IDS": "CENTER=7(US-NCEP) SUBCENTER=0 MASTER_TABLE=2 LOCAL_TABLE=1 SIGNF_REF_TIME=1(Start_of_Forecast) REF_TIME=2025-01-15T00:00:00Z PROD_STATUS=0(Operational) TYPE=1(Forecast)",
+      "GRIB_PDS_PDTN": "0",
+      "GRIB_PDS_TEMPLATE_ASSEMBLED_VALUES": "0 0 2 0 96 0 0 1 24 103 0 2 255 0 0",
+      "GRIB_PDS_TEMPLATE_NUMBERS": "0 0 2 0 96 0 0 0 1 0 0 0 24 103 0 0 0 0 2 255 0 0 0 0 0",
+      "GRIB_REF_TIME": "1736899200",
+      "GRIB_SHORT_NAME": "2-HTGL",
+      "GRIB_UNIT": "[K]",
+      "GRIB_VALID_TIME": "1736985600"
+    },
+    "numpy": "2.5.3",
+    "python": "3.12.6",
+    "rasterio": "1.4.3",
+    "transform": [
+      0.25,
+      0.0,
+      -0.125,
+      0.0,
+      -0.25,
+      90.125,
+      0.0,
+      0.0,
+      1.0
+    ]
+  },
+  "source": {
+    "inventory_line": "581:415390073:d=2025011500:TMP:2 m above ground:24 hour fcst:",
+    "inventory_message_number": 581,
+    "inventory_sha256": "fa11be72ab29ea43520dc6a6fc8de81bd8e0e024c96da94ed05495bc43b39dcb",
+    "inventory_url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20250115/00/atmos/gfs.t00z.pgrb2.0p25.f024.idx",
+    "object_url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20250115/00/atmos/gfs.t00z.pgrb2.0p25.f024",
+    "parent_bytes": 537858357,
+    "parent_etag": "e9f55c2f3f45d6cdb3aac9e4b7a36aba",
+    "processing_version": "UNRESOLVED; generating process 96, not exact binary/suite version",
+    "provider": "NOAA/NCEP GFS through NOAA Open Data Dissemination",
+    "range_end_inclusive": 416264187,
+    "range_start": 415390073,
+    "rights_checked": "2026-10-10",
+    "rights_url": "https://registry.opendata.aws/noaa-gfs-bdp-pds/"
+  },
+  "statistics_K": {
+    "maximum": 311.3579296875,
+    "mean": 277.1364545276141,
+    "minimum": 222.76792968750001,
+    "missing_cells": 0,
+    "population_standard_deviation": 20.013496061472782,
+    "valid_cells": 1038240
+  },
+  "transformations": [
+    "reshape in original scanning order",
+    "reversible longitude labels for samples only"
+  ]
+}

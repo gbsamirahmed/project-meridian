@@ -111,3 +111,19 @@ support stays BLOCKED; a nominal-hour proxy stays PROPOSED. Independent forecast
 format/decoding evidence can proceed under its own acquisition/rights/byte gates.
 Exactly one next task: [bounded historical GFS temperature-field pilot](midas-historical-measurement-support.md#9-programme-consequence-and-exactly-one-next-task),
 **NOT BEGUN**. No skill evaluation or full January forecast acquisition is approved here.
+
+
+## WR007 numerical acquisition refinement — 10 October 2026
+
+[WR007](historical-gfs-temperature-field-pilot.md) closes **T01/T06 only for one actual
+NOAA NODD message**: 2025-01-15 00 UTC f024 TMP, fixed-surface 103/2 m, instantaneous
+K, original 1440×721 regular grid, template 5.3 and zero missingness. HTTP 206 and
+actual raw identity/metadata/values are verified, unlike prior catalogue-only evidence.
+GDEX access and a complete January cohort remain unverified; source paths have
+distinct terms. T09 supports this finite anonymous NOAA research use and resource
+receipt, not production/offline legal clearance or economics. T04/T05 MIDAS remain
+BLOCKED; T07/T08/T10 cohort, independence and preregistration are not closed.
+
+One numerical field is **Outcome A**, not a skill experiment or an adopted reference
+protocol. The sole next task is [native-grid point-sampling and query-semantics](historical-gfs-temperature-field-pilot.md#9-exactly-one-next-bounded-task--not-begun),
+**NOT BEGUN**; historical gate rows above remain unchanged.

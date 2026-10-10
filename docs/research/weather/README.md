@@ -91,3 +91,18 @@ The sole recommended next task is a **bounded historical GFS temperature-field
 acquisition, decoding and integrity pilot — NOT BEGUN**, [full definition and stops](midas-historical-measurement-support.md#9-programme-consequence-and-exactly-one-next-task).
 It progresses global format/numerical research independently of the reference blocker;
 no skill comparison, production provider choice or later work begins here.
+
+
+## WR007 historical numerical-field result — 10 October 2026
+
+[WR007](historical-gfs-temperature-field-pilot.md) completes the authorised single-field
+experiment: **Outcome A — VERIFIED NUMERICAL FIELD**, actual GFS 2025-01-15 00 UTC
+f024 2 m temperature. NOAA anonymous indexed range: 874,115 bytes; ecCodes 2.48.0
+and independent GDAL 3.9.3 agree across 1,038,240 cells with completely explained
+binary32 rounding (maximum 0.00002197265627046363 K). Grid, time, Kelvin and masks
+are checked; no skill/reference result or provider choice follows. WR006 Outcome C
+and reference Decision C stay BLOCKED. [Reproducible isolated utility](../../../scripts/weather-research/wr007/README.md).
+
+Exactly one current next task: **GFS native-grid point-sampling and query-semantics
+pilot — NOT BEGUN**, [finite scope and stops](historical-gfs-temperature-field-pilot.md#9-exactly-one-next-bounded-task--not-begun).
+Historical next-task notes remain records, not concurrent instructions.

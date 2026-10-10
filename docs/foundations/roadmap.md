@@ -191,3 +191,14 @@ acquisition/decoding/integrity pilot](../research/weather/midas-historical-measu
 **NOT BEGUN**. It can progress global source-format research without replacing
 independent reference verification. Device/application/F32 gates and the broader
 Weather scientific programme remain unchanged; no further task starts here.
+
+
+### Weather WR007 checkpoint — 10 October 2026
+
+[One actual historical GFS temperature field](../research/weather/historical-gfs-temperature-field-pilot.md)
+now has **Outcome A numerical integrity evidence** through independent ecCodes/GDAL
+decoding. This advances global source-format research, not observation-based skill,
+production readiness or mobile feasibility. WR006 reference Decision C remains
+blocked. No platform/framework/provider decision changes. The sole recommended
+next bounded Weather task is native-grid point-sampling/query semantics using the
+existing field, **NOT BEGUN**; broader Weather tracks and later device gates remain.

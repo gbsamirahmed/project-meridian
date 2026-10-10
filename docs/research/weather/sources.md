@@ -185,3 +185,23 @@ The accessible QC page's version-1 shorthand is retained as conflicting with the
 Open guide/2021 manual's ingestion caveat. Do not use it as temperature acceptance.
 Historical reports remain unchanged. No present-day or nominal network fact becomes
 station-era evidence; no redistribution clearance or publisher authenticity follows.
+
+
+## WR007 exact-field and independent-decoder evidence
+
+Accessed **10 October 2026**. **12 bounded requests, 1,218,601 response-body bytes**,
+including one HEAD and one scientific message. No redirects/retries/authentication,
+installation or second forecast payload. [Exact request/body/hash ledger](../../../scripts/weather-research/wr007/integrity-receipt.json);
+[report](historical-gfs-temperature-field-pilot.md).
+
+| ID / primary source | Evidence and limitation |
+|---|---|
+| WR7-S01 / [exact NOAA index](https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20250115/00/atmos/gfs.t00z.pgrb2.0p25.f024.idx) and [parent](https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20250115/00/atmos/gfs.t00z.pgrb2.0p25.f024) | Index read; parent HEAD; message 581 range 206, 874,115 bytes actually decoded. Parent not downloaded; actual binary/suite revision unresolved |
+| WR7-S02 / [NOAA NODD registry](https://registry.opendata.aws/noaa-gfs-bdp-pds/) | Named anonymous bucket/reuse/credit/non-endorsement notice read. Dated operational descriptions not used as current/historical executable pins; no production clearance |
+| WR7-S03 / [GDAL GRIB docs](https://gdal.org/en/stable/drivers/raster/grib.html) and [3.9.3 driver](https://raw.githubusercontent.com/OSGeo/gdal/v3.9.3/frmts/grib/gribdataset.cpp) | Actual GDAL path/configuration checked; unit and longitude defaults disabled; degrib/g2clib distinct from ecCodes |
+| WR7-S04 / [3.9.3 unpack source](https://raw.githubusercontent.com/OSGeo/gdal/v3.9.3/frmts/grib/degrib/g2clib/comunpack.c) and [type header](https://raw.githubusercontent.com/OSGeo/gdal/v3.9.3/frmts/grib/degrib/g2clib/grib2.h) | Binary32 coefficient/output calculation explains every actual template 5.3 discrepancy; not a new GRIB decoder |
+| WR7-S05 / [ecCodes 2.48.0 package metadata](https://pypi.org/pypi/eccodes/2.48.0/json) and inspected existing binary/notices | Package availability reviewed; already installed Python/native 2.48.0 used, no wheels acquired. Apache 2.0 notice inspected; transitive redistribution review remains |
+| WR7-S06 / [NCEP temperature](https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/grib2_table4-2-0-0.shtml), [surface](https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/grib2_table4-5.shtml), [packing](https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/grib2_temp5-3.shtml) | Actual numeric parameter, height and representation checked against primary definitions; living table documentation is not a suite/version pin |
+
+All requested external bodies were accessible; no authentication gate encountered.
+Catalogue availability still does not imply complete historical retention or skill.
