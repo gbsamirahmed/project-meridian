@@ -130,3 +130,8 @@ pilot — NOT BEGUN**, [finite scope and gates](gfs-native-grid-point-sampling.m
 [WR009 report](historical-gfs-precipitation-interval-pilot.md), [isolated utility](../../../scripts/weather-research/wr009/README.md) and [interval receipt](../../../scripts/weather-research/wr009/interval-interpretation-receipt.json): **Outcome A — VERIFIED PRECIPITATION FIELD AND INTERVAL SEMANTICS**, one real NOAA GFS Jan 15 2025 00 UTC f024 message. Actual **18–24 h / six-hour accumulation**, kg/m²; 1,038,240 independent decoder values bit-identical. Native grid definition matches WR007; no new point-sampling or forecast-skill claim. WR006 reference Decision C remains BLOCKED. Historical reports/statuses remain unchanged.
 
 Exactly one next task: **WR010 — MULTI-VARIABLE FIELD-COMPATIBILITY AND SCIENTIFIC-CONTRACT PILOT — NOT BEGUN**, [finite evidence/resource/stopping gates](historical-gfs-precipitation-interval-pilot.md#8-remaining-limits-and-exactly-one-next-task--not-begun). Broaden representative field-family semantics without a permanent per-variable research sequence; no further acquisition or implementation begins here.
+
+
+## WR010 representative compatibility — 10 October 2026
+
+[WR010](multi-variable-field-compatibility-pilot.md): **Outcome A**, finite scalar/accumulation/wind/continuous-cloud evidence and a candidate scientific contract. [Utility/replay](../../../scripts/weather-research/wr010/README.md). Categories, upper-air, ensembles and real bitmap cases remain unvalidated. WR006 stays blocked. Exactly one current next task: cross-provider field-contract conformance, **NOT BEGUN**, defined in the report; historical task records above remain unchanged.

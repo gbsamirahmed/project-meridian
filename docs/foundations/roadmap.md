@@ -220,3 +220,8 @@ acquisition/rights/resource gates. Broader scientific tracks remain revisable.
 [Weather WR009](../research/weather/historical-gfs-precipitation-interval-pilot.md) reaches finite **Outcome A** for one historical six-hour APCP accumulation and exact independent numerical agreement. This complements instantaneous temperature/native-grid evidence; it does not establish skill, global operational readiness, mobile feasibility, distribution clearance or final architecture. Existing decisions/priorities remain unchanged.
 
 Exactly one next bounded task: **WR010 — MULTI-VARIABLE FIELD-COMPATIBILITY AND SCIENTIFIC-CONTRACT PILOT — NOT BEGUN**. Reuse accepted inputs and test a few representative field families under separate acquisition authority, preserving distinct units/time/levels/vector basis. Categories/vertical/ensemble scope remains explicitly gated rather than mandatory completion. No subsequent task, MIDAS re-investigation or application integration begins here.
+
+
+## WR010 representative field-contract evidence — 10 October 2026
+
+[WR010](../research/weather/multi-variable-field-compatibility-pilot.md) reaches finite **Outcome A** for five messages and a candidate contract with explicit temporal/vertical/unit/vector distinctions. This advances Weather interpretation, not production/application maturity, provider/framework/renderer choice or mobile evidence. Existing decisions/device gates remain. Exactly one subsequent bounded task: **cross-provider field-contract conformance — NOT BEGUN**, testing source-specific assumptions rather than a permanent GFS-only sequence. No application integration begins.

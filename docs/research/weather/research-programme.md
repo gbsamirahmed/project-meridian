@@ -173,3 +173,10 @@ No new acquisition is authorised or begun in WR008.
 Combined WR007–009 evidence supports a bounded representative **multi-variable compatibility** pilot, rather than repeating standalone acquisition research for every variable. Common raw/source/grid/packing/decoder/identity guards can coexist with quantity-specific time/unit/level and vector/fraction/category/member interpretation. Wind basis, fractions, categories, vertical levels and ensembles remain unvalidated; regional/mountain/observation/nowcast/offline/cost tracks remain active.
 
 Exactly one next task: **WR010 — MULTI-VARIABLE FIELD-COMPATIBILITY AND SCIENTIFIC-CONTRACT PILOT — NOT BEGUN**, [definition](historical-gfs-precipitation-interval-pilot.md#8-remaining-limits-and-exactly-one-next-task--not-begun). Reuse the two pins; separately authorise at most three representative new messages, 50 MB/20 requests/150 MB scratch, with explicit compatibility failures. No next field was acquired/decoded, no broad topic status or readiness promoted.
+
+
+## WR010 completed: common responsibilities, distinct meanings
+
+10 October 2026. [WR010](multi-variable-field-compatibility-pilot.md) reaches finite **Outcome A**, two retained and three new messages. Same grid/end-time does not erase interval/level/unit distinctions; wind pairing requires a coordinate basis. Query reuse is checked on new fields. Candidate contract is not a production schema, provider or platform choice. Global/regional/ensemble/observation/nowcast/ML/mountain/uncertainty/offline tracks remain.
+
+Further single-variable GFS repetition now has less information value than testing a second producer/product lineage. Exactly one next task: **CROSS-PROVIDER FIELD-CONTRACT CONFORMANCE PILOT — NOT BEGUN**, [evidence, dependencies, finite scope, acceptance and stops](multi-variable-field-compatibility-pilot.md#9-programme-implications-and-exactly-one-next-task--not-begun). WR006 stays blocked; no later task or skill study starts here.

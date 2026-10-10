@@ -1,0 +1,1887 @@
+{
+  "acquisition": [
+    {
+      "Content-Length": "537858357",
+      "Content-Range": null,
+      "attempt": 1,
+      "body_bytes": 0,
+      "method": "HEAD",
+      "owned_filename": "parent-head",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": 200,
+      "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20250115/00/atmos/gfs.t00z.pgrb2.0p25.f024",
+      "utc": "2026-10-10T17:38:07.368321+00:00"
+    },
+    {
+      "Content-Length": "963506",
+      "Content-Range": "bytes 421036204-421999709/537858357",
+      "attempt": 2,
+      "body_bytes": 963506,
+      "method": "GET",
+      "owned_filename": "u10.grib2",
+      "sha256": "6ed439d0b10e5cdeb2ab81b452f2f27f4afc93e4f06a0988b38122e56ada2fcf",
+      "status": 206,
+      "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20250115/00/atmos/gfs.t00z.pgrb2.0p25.f024",
+      "utc": "2026-10-10T17:38:07.804425+00:00"
+    },
+    {
+      "Content-Length": "944636",
+      "Content-Range": "bytes 421999710-422944345/537858357",
+      "attempt": 3,
+      "body_bytes": 944636,
+      "method": "GET",
+      "owned_filename": "v10.grib2",
+      "sha256": "d0113e2831a29ec6095a3eb139bb7d9d57947b4f36da3b46a3b5f70425e05e58",
+      "status": 206,
+      "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20250115/00/atmos/gfs.t00z.pgrb2.0p25.f024",
+      "utc": "2026-10-10T17:38:08.818473+00:00"
+    },
+    {
+      "Content-Length": "834705",
+      "Content-Range": "bytes 444289883-445124587/537858357",
+      "attempt": 4,
+      "body_bytes": 834705,
+      "method": "GET",
+      "owned_filename": "cloud.grib2",
+      "sha256": "752e73b0170ecbf7689ad0970219a138286249b2bacc0d2b753952a10e3b1b5c",
+      "status": 206,
+      "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20250115/00/atmos/gfs.t00z.pgrb2.0p25.f024",
+      "utc": "2026-10-10T17:38:09.744362+00:00"
+    },
+    {
+      "Content-Length": "39554",
+      "Content-Range": null,
+      "attempt": 5,
+      "body_bytes": 39554,
+      "method": "GET",
+      "owned_filename": "wind.html",
+      "sha256": "c36be7bd69898da45fe25e08734d617029f633ee4acc6e7eb1f4200fa28f906f",
+      "status": 200,
+      "url": "https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/grib2_table4-2-0-2.shtml",
+      "utc": "2026-10-10T17:38:11.440949+00:00"
+    },
+    {
+      "Content-Length": "20373",
+      "Content-Range": null,
+      "attempt": 6,
+      "body_bytes": 20373,
+      "method": "GET",
+      "owned_filename": "cloud.html",
+      "sha256": "87b367d2b9019f5635466ed55ea122d5985f5f3c3784221f84e9f2e9aeeddf46",
+      "status": 200,
+      "url": "https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/grib2_table4-2-0-6.shtml",
+      "utc": "2026-10-10T17:38:12.148835+00:00"
+    },
+    {
+      "Content-Length": "3255",
+      "Content-Range": null,
+      "attempt": 7,
+      "body_bytes": 3255,
+      "method": "GET",
+      "owned_filename": "basis.html",
+      "sha256": "286f92ef7b5c7da4028254d7e89460a4fd36a3e4885559cd3f13b4c1d379244b",
+      "status": 200,
+      "url": "https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/grib2_table3-3.shtml",
+      "utc": "2026-10-10T17:38:12.657916+00:00"
+    }
+  ],
+  "deterministic_receipt_bytes": 58383,
+  "deterministic_receipt_sha256": "112c4ffa01e1eae0a850cc2c4d0b3bebba9de8cae34cebbba9e3d8f82bbb7216",
+  "resource_observation": {
+    "fields": [
+      {
+        "field": "cloud",
+        "secondary": {
+          "after": {
+            "pagefile_bytes": 688562176,
+            "peak_pagefile_bytes": 708218880,
+            "peak_working_set_bytes": 91095040,
+            "working_set_bytes": 72724480
+          },
+          "before": {
+            "pagefile_bytes": 672444416,
+            "peak_pagefile_bytes": 672444416,
+            "peak_working_set_bytes": 52183040,
+            "working_set_bytes": 52183040
+          }
+        },
+        "temporary_bytes": 9346162
+      },
+      {
+        "field": "u10",
+        "secondary": {
+          "after": {
+            "pagefile_bytes": 687738880,
+            "peak_pagefile_bytes": 708599808,
+            "peak_working_set_bytes": 91373568,
+            "working_set_bytes": 72384512
+          },
+          "before": {
+            "pagefile_bytes": 672612352,
+            "peak_pagefile_bytes": 672612352,
+            "peak_working_set_bytes": 52408320,
+            "working_set_bytes": 52408320
+          }
+        },
+        "temporary_bytes": 9346173
+      },
+      {
+        "field": "v10",
+        "secondary": {
+          "after": {
+            "pagefile_bytes": 687689728,
+            "peak_pagefile_bytes": 708534272,
+            "peak_working_set_bytes": 91090944,
+            "working_set_bytes": 72396800
+          },
+          "before": {
+            "pagefile_bytes": 672550912,
+            "peak_pagefile_bytes": 672550912,
+            "peak_working_set_bytes": 52424704,
+            "working_set_bytes": 52424704
+          }
+        },
+        "temporary_bytes": 9346173
+      }
+    ],
+    "primary_after": {
+      "pagefile_bytes": 717500416,
+      "peak_pagefile_bytes": 818401280,
+      "peak_working_set_bytes": 193986560,
+      "working_set_bytes": 93417472
+    },
+    "primary_before": {
+      "pagefile_bytes": 664772608,
+      "peak_pagefile_bytes": 665255936,
+      "peak_working_set_bytes": 36532224,
+      "working_set_bytes": 35680256
+    },
+    "retrievals_during_run": 0
+  },
+  "rights": "Credit NOAA/NCEP GFS through NOAA NODD. Meridian-derived research receipts; no implied endorsement. Retained WR009 notice reviewed 2026-10-10; not a new notice retrieval, or complete distribution/SDK licence clearance.",
+  "scientific_receipt": {
+    "candidate_contracts": {
+      "cloud": {
+        "ensemble": {
+          "kind": "deterministic",
+          "member": null,
+          "qualification": "no ensemble structure validated"
+        },
+        "evidence": "new_independent_numerical",
+        "grid_section3_sha256": "2f05f13897b18b42bb2790905e2476fce9a2e07b89f63499a12da9e202f3367f",
+        "input_sha256": "752e73b0170ecbf7689ad0970219a138286249b2bacc0d2b753952a10e3b1b5c",
+        "model": "NOAA/NCEP GFS delivered product",
+        "native_unit": "%",
+        "parameter": [
+          0,
+          6,
+          1
+        ],
+        "product": {
+          "centre": 7,
+          "generatingProcessIdentifier": 96,
+          "localTablesVersion": 1,
+          "subCentre": 0,
+          "tablesVersion": 2
+        },
+        "quality": "decoding integrity; forecast accuracy untested",
+        "temporal": {
+          "forecast_lead_seconds": 86400,
+          "kind": "instant",
+          "reference_time": "2025-01-15T00:00:00Z",
+          "valid_time": "2025-01-16T00:00:00Z"
+        },
+        "vertical": {
+          "first_surface_code": 10,
+          "level": 0,
+          "type": "atmosphere"
+        }
+      },
+      "precipitation": {
+        "ensemble": {
+          "kind": "deterministic",
+          "member": null,
+          "qualification": "no ensemble structure validated"
+        },
+        "evidence": "retained_independent_numerical",
+        "grid_section3_sha256": "2f05f13897b18b42bb2790905e2476fce9a2e07b89f63499a12da9e202f3367f",
+        "input_sha256": "e2a311fa2089ab1982d9b09e7ec82f483e07ef06f38457d9e379fe9cef970848",
+        "model": "NOAA/NCEP GFS delivered product",
+        "native_unit": "kg m**-2",
+        "parameter": [
+          0,
+          1,
+          8
+        ],
+        "product": {
+          "centre": 7,
+          "generatingProcessIdentifier": 96,
+          "localTablesVersion": 1,
+          "subCentre": 0,
+          "tablesVersion": 2
+        },
+        "quality": "decoding integrity; forecast accuracy untested",
+        "temporal": {
+          "forecast_lead_to_end_seconds": 86400,
+          "forecast_lead_to_start_seconds": 64800,
+          "increment_unit": "255: missing/not specified; zero increment denotes continuous or near-continuous processing",
+          "interval_duration_seconds": 21600,
+          "interval_end": "2025-01-16T00:00:00Z",
+          "interval_start": "2025-01-15T18:00:00Z",
+          "kind": "accumulation",
+          "reference_time": "2025-01-15T00:00:00Z",
+          "statistical_process_code": 1,
+          "support_qualification": "model accumulation over the encoded interval; no within-interval intensity/timing",
+          "time_increment": 0,
+          "time_increment_type_code": 2,
+          "valid_time": "2025-01-16T00:00:00Z"
+        },
+        "vertical": {
+          "first_surface_code": 1,
+          "level": 0,
+          "type": "surface"
+        }
+      },
+      "temperature": {
+        "ensemble": {
+          "kind": "deterministic",
+          "member": null,
+          "qualification": "no ensemble structure validated"
+        },
+        "evidence": "retained_independent_numerical",
+        "grid_section3_sha256": "2f05f13897b18b42bb2790905e2476fce9a2e07b89f63499a12da9e202f3367f",
+        "input_sha256": "0b95fc06fe9ca08de57f9c5089b8fcd5d7b6a42977b35f669da65ec0f43f40e4",
+        "model": "NOAA/NCEP GFS delivered product",
+        "native_unit": "K",
+        "parameter": [
+          0,
+          0,
+          0
+        ],
+        "product": {
+          "centre": 7,
+          "generatingProcessIdentifier": 96,
+          "localTablesVersion": 1,
+          "subCentre": 0,
+          "tablesVersion": 2
+        },
+        "quality": "decoding integrity; forecast accuracy untested",
+        "temporal": {
+          "forecast_lead_seconds": 86400,
+          "kind": "instant",
+          "reference_time": "2025-01-15T00:00:00Z",
+          "valid_time": "2025-01-16T00:00:00Z"
+        },
+        "vertical": {
+          "first_surface_code": 103,
+          "level": 2,
+          "type": "heightAboveGround"
+        }
+      },
+      "u10": {
+        "ensemble": {
+          "kind": "deterministic",
+          "member": null,
+          "qualification": "no ensemble structure validated"
+        },
+        "evidence": "new_independent_numerical",
+        "grid_section3_sha256": "2f05f13897b18b42bb2790905e2476fce9a2e07b89f63499a12da9e202f3367f",
+        "input_sha256": "6ed439d0b10e5cdeb2ab81b452f2f27f4afc93e4f06a0988b38122e56ada2fcf",
+        "model": "NOAA/NCEP GFS delivered product",
+        "native_unit": "m s**-1",
+        "parameter": [
+          0,
+          2,
+          2
+        ],
+        "product": {
+          "centre": 7,
+          "generatingProcessIdentifier": 96,
+          "localTablesVersion": 1,
+          "subCentre": 0,
+          "tablesVersion": 2
+        },
+        "quality": "decoding integrity; forecast accuracy untested",
+        "temporal": {
+          "forecast_lead_seconds": 86400,
+          "kind": "instant",
+          "reference_time": "2025-01-15T00:00:00Z",
+          "valid_time": "2025-01-16T00:00:00Z"
+        },
+        "vertical": {
+          "first_surface_code": 103,
+          "level": 10,
+          "type": "heightAboveGround"
+        }
+      },
+      "v10": {
+        "ensemble": {
+          "kind": "deterministic",
+          "member": null,
+          "qualification": "no ensemble structure validated"
+        },
+        "evidence": "new_independent_numerical",
+        "grid_section3_sha256": "2f05f13897b18b42bb2790905e2476fce9a2e07b89f63499a12da9e202f3367f",
+        "input_sha256": "d0113e2831a29ec6095a3eb139bb7d9d57947b4f36da3b46a3b5f70425e05e58",
+        "model": "NOAA/NCEP GFS delivered product",
+        "native_unit": "m s**-1",
+        "parameter": [
+          0,
+          2,
+          3
+        ],
+        "product": {
+          "centre": 7,
+          "generatingProcessIdentifier": 96,
+          "localTablesVersion": 1,
+          "subCentre": 0,
+          "tablesVersion": 2
+        },
+        "quality": "decoding integrity; forecast accuracy untested",
+        "temporal": {
+          "forecast_lead_seconds": 86400,
+          "kind": "instant",
+          "reference_time": "2025-01-15T00:00:00Z",
+          "valid_time": "2025-01-16T00:00:00Z"
+        },
+        "vertical": {
+          "first_surface_code": 103,
+          "level": 10,
+          "type": "heightAboveGround"
+        }
+      }
+    },
+    "compatibility_matrix": {
+      "cloud:precipitation": {
+        "interchangeable_quantity": false,
+        "same_encoded_grid": true,
+        "same_ensemble_structure": true,
+        "same_native_units": false,
+        "same_parameter": false,
+        "same_reference": true,
+        "same_temporal_support": false,
+        "same_valid_endpoint": true,
+        "same_vertical_support": false
+      },
+      "cloud:temperature": {
+        "interchangeable_quantity": false,
+        "same_encoded_grid": true,
+        "same_ensemble_structure": true,
+        "same_native_units": false,
+        "same_parameter": false,
+        "same_reference": true,
+        "same_temporal_support": true,
+        "same_valid_endpoint": true,
+        "same_vertical_support": false
+      },
+      "cloud:u10": {
+        "interchangeable_quantity": false,
+        "same_encoded_grid": true,
+        "same_ensemble_structure": true,
+        "same_native_units": false,
+        "same_parameter": false,
+        "same_reference": true,
+        "same_temporal_support": true,
+        "same_valid_endpoint": true,
+        "same_vertical_support": false
+      },
+      "cloud:v10": {
+        "interchangeable_quantity": false,
+        "same_encoded_grid": true,
+        "same_ensemble_structure": true,
+        "same_native_units": false,
+        "same_parameter": false,
+        "same_reference": true,
+        "same_temporal_support": true,
+        "same_valid_endpoint": true,
+        "same_vertical_support": false
+      },
+      "precipitation:temperature": {
+        "interchangeable_quantity": false,
+        "same_encoded_grid": true,
+        "same_ensemble_structure": true,
+        "same_native_units": false,
+        "same_parameter": false,
+        "same_reference": true,
+        "same_temporal_support": false,
+        "same_valid_endpoint": true,
+        "same_vertical_support": false
+      },
+      "precipitation:u10": {
+        "interchangeable_quantity": false,
+        "same_encoded_grid": true,
+        "same_ensemble_structure": true,
+        "same_native_units": false,
+        "same_parameter": false,
+        "same_reference": true,
+        "same_temporal_support": false,
+        "same_valid_endpoint": true,
+        "same_vertical_support": false
+      },
+      "precipitation:v10": {
+        "interchangeable_quantity": false,
+        "same_encoded_grid": true,
+        "same_ensemble_structure": true,
+        "same_native_units": false,
+        "same_parameter": false,
+        "same_reference": true,
+        "same_temporal_support": false,
+        "same_valid_endpoint": true,
+        "same_vertical_support": false
+      },
+      "temperature:u10": {
+        "interchangeable_quantity": false,
+        "same_encoded_grid": true,
+        "same_ensemble_structure": true,
+        "same_native_units": false,
+        "same_parameter": false,
+        "same_reference": true,
+        "same_temporal_support": true,
+        "same_valid_endpoint": true,
+        "same_vertical_support": false
+      },
+      "temperature:v10": {
+        "interchangeable_quantity": false,
+        "same_encoded_grid": true,
+        "same_ensemble_structure": true,
+        "same_native_units": false,
+        "same_parameter": false,
+        "same_reference": true,
+        "same_temporal_support": true,
+        "same_valid_endpoint": true,
+        "same_vertical_support": false
+      },
+      "u10:v10": {
+        "interchangeable_quantity": false,
+        "same_encoded_grid": true,
+        "same_ensemble_structure": true,
+        "same_native_units": true,
+        "same_parameter": false,
+        "same_reference": true,
+        "same_temporal_support": true,
+        "same_valid_endpoint": true,
+        "same_vertical_support": true
+      }
+    },
+    "fields": {
+      "cloud": {
+        "candidate_contract": {
+          "ensemble": {
+            "kind": "deterministic",
+            "member": null,
+            "qualification": "no ensemble structure validated"
+          },
+          "evidence": "new_independent_numerical",
+          "grid_section3_sha256": "2f05f13897b18b42bb2790905e2476fce9a2e07b89f63499a12da9e202f3367f",
+          "input_sha256": "752e73b0170ecbf7689ad0970219a138286249b2bacc0d2b753952a10e3b1b5c",
+          "model": "NOAA/NCEP GFS delivered product",
+          "native_unit": "%",
+          "parameter": [
+            0,
+            6,
+            1
+          ],
+          "product": {
+            "centre": 7,
+            "generatingProcessIdentifier": 96,
+            "localTablesVersion": 1,
+            "subCentre": 0,
+            "tablesVersion": 2
+          },
+          "quality": "decoding integrity; forecast accuracy untested",
+          "temporal": {
+            "forecast_lead_seconds": 86400,
+            "kind": "instant",
+            "reference_time": "2025-01-15T00:00:00Z",
+            "valid_time": "2025-01-16T00:00:00Z"
+          },
+          "vertical": {
+            "first_surface_code": 10,
+            "level": 0,
+            "type": "atmosphere"
+          }
+        },
+        "decoded_float64_sha256": "f39fbcdc81acd99ee3fc8decac5db4b0abadc99d070870d7e8f882759afe1b94",
+        "input": {
+          "bytes": 834705,
+          "filename": "cloud.grib2",
+          "sha256": "752e73b0170ecbf7689ad0970219a138286249b2bacc0d2b753952a10e3b1b5c"
+        },
+        "metadata": {
+          "Ni": 1440,
+          "Nj": 721,
+          "alternativeRowScanning": 0,
+          "backgroundProcess": 0,
+          "binaryScaleFactor": 0,
+          "bitmapPresent": 0,
+          "bitsPerValue": 12,
+          "centre": 7,
+          "dataDate": 20250115,
+          "dataRepresentationTemplateNumber": 3,
+          "dataTime": 0,
+          "decimalScaleFactor": 1,
+          "discipline": 0,
+          "edition": 2,
+          "endStep": 24,
+          "forecastTime": 24,
+          "generatingProcessIdentifier": 96,
+          "gridDefinitionTemplateNumber": 0,
+          "gridType": "regular_ll",
+          "iDirectionIncrementInDegrees": 0.25,
+          "iScansNegatively": 0,
+          "indicatorOfUnitOfTimeRange": 1,
+          "jDirectionIncrementInDegrees": 0.25,
+          "jPointsAreConsecutive": 0,
+          "jScansPositively": 0,
+          "latitudeOfFirstGridPointInDegrees": 90.0,
+          "latitudeOfLastGridPointInDegrees": -90.0,
+          "level": 0,
+          "localTablesVersion": 1,
+          "longitudeOfFirstGridPointInDegrees": 0.0,
+          "longitudeOfLastGridPointInDegrees": 359.75,
+          "missingValue": 9999,
+          "missingValueManagementUsed": 0,
+          "name": "Total Cloud Cover",
+          "numberOfGroupsOfDataValues": 47338,
+          "numberOfMissing": 0,
+          "numberOfPoints": 1038240,
+          "numberOfValues": 1038240,
+          "orderOfSpatialDifferencing": 2,
+          "packingType": "grid_complex_spatial_differencing",
+          "parameterCategory": 6,
+          "parameterNumber": 1,
+          "productDefinitionTemplateNumber": 0,
+          "productionStatusOfProcessedData": 0,
+          "radius": 6371229,
+          "referenceValue": 0.0,
+          "resolutionAndComponentFlags": 48,
+          "scaleFactorOfFirstFixedSurface": 0,
+          "scaledValueOfFirstFixedSurface": 0,
+          "scanningMode": 0,
+          "section4Length": 34,
+          "shapeOfTheEarth": 6,
+          "shortName": "tcc",
+          "significanceOfReferenceTime": 1,
+          "startStep": 24,
+          "stepRange": "24",
+          "stepType": "instant",
+          "stepUnits": 1,
+          "subCentre": 0,
+          "tablesVersion": 2,
+          "totalLength": 834705,
+          "typeOfFirstFixedSurface": 10,
+          "typeOfGeneratingProcess": 2,
+          "typeOfLevel": "atmosphere",
+          "typeOfProcessedData": 1,
+          "units": "%",
+          "uvRelativeToGrid": 0,
+          "validityDate": 20250116,
+          "validityTime": 0
+        },
+        "numerical_agreement": {
+          "compared_cells": 1038240,
+          "exact_predicted_binary32_cells": 1038240,
+          "mask_agreement": true,
+          "maximum_absolute_difference_native": 4.577636715907829e-06,
+          "maximum_analytic_bound_native": 8.35657141506907e-06,
+          "mean_absolute_difference_native": 5.266405473655092e-07,
+          "tolerance": "predeclared per-cell binary32 sum/coefficient/product bound AND exact g2clib profile",
+          "unexplained_disagreements": 0
+        },
+        "primary_decoder": {
+          "eccodes_native": "2.48.0",
+          "eccodes_python": "2.48.0",
+          "numpy": "2.5.2",
+          "python": "3.12.6"
+        },
+        "queries": [
+          {
+            "comparison": {
+              "bound_native": 6.141931407910306e-09,
+              "difference_native": 0.0,
+              "mechanism": "independent GDAL decoding/affine and separately implemented NumPy dot; not independent GDAL warp",
+              "native_value": 100.0
+            },
+            "input_coordinate": {
+              "latitude": 50.0,
+              "longitude": 0.0,
+              "method": "NEAREST"
+            },
+            "method": "NEAREST",
+            "native_value": 100.0,
+            "nodes": [
+              {
+                "column": 0,
+                "latitude": 50.0,
+                "longitude_0_360": 0.0,
+                "missing": false,
+                "native_value": 100.0,
+                "row": 160,
+                "weight": 1.0
+              }
+            ],
+            "normalised_coordinate": {
+              "latitude": 50.0,
+              "longitude_0_360": 0.0,
+              "longitude_minus180_180": 0.0
+            },
+            "pole_column_canonicalised": false,
+            "status": "OK",
+            "weight_sum": 1.0
+          },
+          {
+            "comparison": {
+              "bound_native": 1.348915368453182e-06,
+              "difference_native": 1.342773444434897e-06,
+              "mechanism": "independent GDAL decoding/affine and separately implemented NumPy dot; not independent GDAL warp",
+              "native_value": 89.35200134277329
+            },
+            "input_coordinate": {
+              "latitude": 49.9,
+              "longitude": 0.1,
+              "method": "BILINEAR"
+            },
+            "method": "BILINEAR",
+            "native_value": 89.35199999999985,
+            "nodes": [
+              {
+                "column": 0,
+                "latitude": 50.0,
+                "longitude_0_360": 0.0,
+                "missing": false,
+                "native_value": 100.0,
+                "row": 160,
+                "weight": 0.3599999999999966
+              },
+              {
+                "column": 1,
+                "latitude": 50.0,
+                "longitude_0_360": 0.25,
+                "missing": false,
+                "native_value": 100.0,
+                "row": 160,
+                "weight": 0.23999999999999774
+              },
+              {
+                "column": 0,
+                "latitude": 49.75,
+                "longitude_0_360": 0.0,
+                "missing": false,
+                "native_value": 98.7,
+                "row": 161,
+                "weight": 0.2400000000000034
+              },
+              {
+                "column": 1,
+                "latitude": 49.75,
+                "longitude_0_360": 0.25,
+                "missing": false,
+                "native_value": 35.4,
+                "row": 161,
+                "weight": 0.16000000000000228
+              }
+            ],
+            "normalised_coordinate": {
+              "latitude": 49.9,
+              "longitude_0_360": 0.1,
+              "longitude_minus180_180": 0.1
+            },
+            "pole_column_canonicalised": false,
+            "status": "OK",
+            "weight_sum": 1.0
+          },
+          {
+            "comparison": {
+              "bound_native": 1.3028441897201338e-06,
+              "difference_native": 9.002685459336135e-07,
+              "mechanism": "independent GDAL decoding/affine and separately implemented NumPy dot; not independent GDAL warp",
+              "native_value": 61.056000900262774
+            },
+            "input_coordinate": {
+              "latitude": -40.1,
+              "longitude": 359.9,
+              "method": "BILINEAR"
+            },
+            "method": "BILINEAR",
+            "native_value": 61.05599999999423,
+            "nodes": [
+              {
+                "column": 1439,
+                "latitude": -40.0,
+                "longitude_0_360": 359.75,
+                "missing": false,
+                "native_value": 33.300000000000004,
+                "row": 520,
+                "weight": 0.24000000000006366
+              },
+              {
+                "column": 0,
+                "latitude": -40.0,
+                "longitude_0_360": 0.0,
+                "missing": false,
+                "native_value": 81.0,
+                "row": 520,
+                "weight": 0.3599999999999591
+              },
+              {
+                "column": 1439,
+                "latitude": -40.25,
+                "longitude_0_360": 359.75,
+                "missing": false,
+                "native_value": 6.6000000000000005,
+                "row": 521,
+                "weight": 0.1600000000000273
+              },
+              {
+                "column": 0,
+                "latitude": -40.25,
+                "longitude_0_360": 0.0,
+                "missing": false,
+                "native_value": 95.2,
+                "row": 521,
+                "weight": 0.23999999999994998
+              }
+            ],
+            "normalised_coordinate": {
+              "latitude": -40.1,
+              "longitude_0_360": 359.9,
+              "longitude_minus180_180": -0.10000000000002274
+            },
+            "pole_column_canonicalised": false,
+            "status": "OK",
+            "weight_sum": 1.0
+          },
+          {
+            "comparison": {
+              "bound_native": 1.3028441897201338e-06,
+              "difference_native": 9.002685459336135e-07,
+              "mechanism": "independent GDAL decoding/affine and separately implemented NumPy dot; not independent GDAL warp",
+              "native_value": 61.056000900262774
+            },
+            "input_coordinate": {
+              "latitude": -40.1,
+              "longitude": -0.1,
+              "method": "BILINEAR"
+            },
+            "method": "BILINEAR",
+            "native_value": 61.05599999999423,
+            "nodes": [
+              {
+                "column": 1439,
+                "latitude": -40.0,
+                "longitude_0_360": 359.75,
+                "missing": false,
+                "native_value": 33.300000000000004,
+                "row": 520,
+                "weight": 0.24000000000006366
+              },
+              {
+                "column": 0,
+                "latitude": -40.0,
+                "longitude_0_360": 0.0,
+                "missing": false,
+                "native_value": 81.0,
+                "row": 520,
+                "weight": 0.3599999999999591
+              },
+              {
+                "column": 1439,
+                "latitude": -40.25,
+                "longitude_0_360": 359.75,
+                "missing": false,
+                "native_value": 6.6000000000000005,
+                "row": 521,
+                "weight": 0.1600000000000273
+              },
+              {
+                "column": 0,
+                "latitude": -40.25,
+                "longitude_0_360": 0.0,
+                "missing": false,
+                "native_value": 95.2,
+                "row": 521,
+                "weight": 0.23999999999994998
+              }
+            ],
+            "normalised_coordinate": {
+              "latitude": -40.1,
+              "longitude_0_360": 359.9,
+              "longitude_minus180_180": -0.10000000000002274
+            },
+            "pole_column_canonicalised": false,
+            "status": "OK",
+            "weight_sum": 1.0
+          },
+          {
+            "comparison": {
+              "bound_native": 6.141931407910306e-09,
+              "difference_native": 0.0,
+              "mechanism": "independent GDAL decoding/affine and separately implemented NumPy dot; not independent GDAL warp",
+              "native_value": 100.0
+            },
+            "input_coordinate": {
+              "latitude": 90.0,
+              "longitude": 40.0,
+              "method": "NEAREST"
+            },
+            "method": "NEAREST",
+            "native_value": 100.0,
+            "nodes": [
+              {
+                "column": 0,
+                "latitude": 90.0,
+                "longitude_0_360": 0.0,
+                "missing": false,
+                "native_value": 100.0,
+                "row": 0,
+                "weight": 1.0
+              }
+            ],
+            "normalised_coordinate": {
+              "latitude": 90.0,
+              "longitude_0_360": 40.0,
+              "longitude_minus180_180": 40.0
+            },
+            "pole_column_canonicalised": true,
+            "status": "OK",
+            "weight_sum": 1.0
+          },
+          {
+            "input_coordinate": {
+              "latitude": 89.875,
+              "longitude": 0.0,
+              "method": "BILINEAR"
+            },
+            "method": "BILINEAR",
+            "normalised_coordinate": {
+              "latitude": 89.875,
+              "longitude_0_360": 0.0,
+              "longitude_minus180_180": 0.0
+            },
+            "status": "UNSUPPORTED_POLAR_CAP_BILINEAR"
+          },
+          {
+            "input_coordinate": {
+              "latitude": 91.0,
+              "longitude": 0.0,
+              "method": "NEAREST"
+            },
+            "status": "LATITUDE_OUT_OF_RANGE"
+          }
+        ],
+        "secondary_decoder": {
+          "crs": "GEOGCS[\"Coordinate System imported from GRIB file\",DATUM[\"unnamed\",SPHEROID[\"Sphere\",6371229,0]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AXIS[\"Latitude\",NORTH],AXIS[\"Longitude\",EAST]]",
+          "tags": {
+            "GRIB_COMMENT": "Total cloud cover [%]",
+            "GRIB_DISCIPLINE": "0(Meteorological)",
+            "GRIB_ELEMENT": "TCDC",
+            "GRIB_FORECAST_SECONDS": "86400",
+            "GRIB_IDS": "CENTER=7(US-NCEP) SUBCENTER=0 MASTER_TABLE=2 LOCAL_TABLE=1 SIGNF_REF_TIME=1(Start_of_Forecast) REF_TIME=2025-01-15T00:00:00Z PROD_STATUS=0(Operational) TYPE=1(Forecast)",
+            "GRIB_PDS_PDTN": "0",
+            "GRIB_PDS_TEMPLATE_ASSEMBLED_VALUES": "6 1 2 0 96 0 0 1 24 10 0 0 255 0 0",
+            "GRIB_PDS_TEMPLATE_NUMBERS": "6 1 2 0 96 0 0 0 1 0 0 0 24 10 0 0 0 0 0 255 0 0 0 0 0",
+            "GRIB_REF_TIME": "1736899200",
+            "GRIB_SHORT_NAME": "0-EATM",
+            "GRIB_UNIT": "[%]",
+            "GRIB_VALID_TIME": "1736985600"
+          },
+          "transform": [
+            0.25,
+            0.0,
+            -0.125,
+            0.0,
+            -0.25,
+            90.125,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "versions": {
+            "GDAL": "3.9.3",
+            "numpy": "2.5.3",
+            "python": "3.12.6",
+            "rasterio": "1.4.3"
+          }
+        },
+        "source": {
+          "inventory_line": "636:444289883:d=2025011500:TCDC:entire atmosphere:24 hour fcst:",
+          "inventory_sha256": "fa11be72ab29ea43520dc6a6fc8de81bd8e0e024c96da94ed05495bc43b39dcb",
+          "inventory_url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20250115/00/atmos/gfs.t00z.pgrb2.0p25.f024.idx",
+          "object_url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20250115/00/atmos/gfs.t00z.pgrb2.0p25.f024",
+          "parent_bytes": 537858357,
+          "parent_etag": "e9f55c2f3f45d6cdb3aac9e4b7a36aba",
+          "processing_version": "UNRESOLVED; generating process 96, not exact binary/suite version",
+          "provider": "NOAA/NCEP GFS through NOAA Open Data Dissemination",
+          "range_end_inclusive": 445124587,
+          "range_start": 444289883,
+          "rights_checked": "2026-10-10",
+          "rights_url": "https://registry.opendata.aws/noaa-gfs-bdp-pds/"
+        },
+        "statistics_native": {
+          "maximum": 100.0,
+          "mean_unweighted_nodes": 63.38923428109108,
+          "minimum": 0.0,
+          "missing_cells": 0,
+          "negative_cells": 0,
+          "valid_cells": 1038240,
+          "zero_cells": 77381
+        }
+      },
+      "u10": {
+        "candidate_contract": {
+          "ensemble": {
+            "kind": "deterministic",
+            "member": null,
+            "qualification": "no ensemble structure validated"
+          },
+          "evidence": "new_independent_numerical",
+          "grid_section3_sha256": "2f05f13897b18b42bb2790905e2476fce9a2e07b89f63499a12da9e202f3367f",
+          "input_sha256": "6ed439d0b10e5cdeb2ab81b452f2f27f4afc93e4f06a0988b38122e56ada2fcf",
+          "model": "NOAA/NCEP GFS delivered product",
+          "native_unit": "m s**-1",
+          "parameter": [
+            0,
+            2,
+            2
+          ],
+          "product": {
+            "centre": 7,
+            "generatingProcessIdentifier": 96,
+            "localTablesVersion": 1,
+            "subCentre": 0,
+            "tablesVersion": 2
+          },
+          "quality": "decoding integrity; forecast accuracy untested",
+          "temporal": {
+            "forecast_lead_seconds": 86400,
+            "kind": "instant",
+            "reference_time": "2025-01-15T00:00:00Z",
+            "valid_time": "2025-01-16T00:00:00Z"
+          },
+          "vertical": {
+            "first_surface_code": 103,
+            "level": 10,
+            "type": "heightAboveGround"
+          }
+        },
+        "decoded_float64_sha256": "5d69d41353700ac90eef52241e98c4c25365d8362f66c29701dc6f0da7073ccd",
+        "input": {
+          "bytes": 963506,
+          "filename": "u10.grib2",
+          "sha256": "6ed439d0b10e5cdeb2ab81b452f2f27f4afc93e4f06a0988b38122e56ada2fcf"
+        },
+        "metadata": {
+          "Ni": 1440,
+          "Nj": 721,
+          "alternativeRowScanning": 0,
+          "backgroundProcess": 0,
+          "binaryScaleFactor": 0,
+          "bitmapPresent": 0,
+          "bitsPerValue": 12,
+          "centre": 7,
+          "dataDate": 20250115,
+          "dataRepresentationTemplateNumber": 3,
+          "dataTime": 0,
+          "decimalScaleFactor": 2,
+          "discipline": 0,
+          "edition": 2,
+          "endStep": 24,
+          "forecastTime": 24,
+          "generatingProcessIdentifier": 96,
+          "gridDefinitionTemplateNumber": 0,
+          "gridType": "regular_ll",
+          "iDirectionIncrementInDegrees": 0.25,
+          "iScansNegatively": 0,
+          "indicatorOfUnitOfTimeRange": 1,
+          "jDirectionIncrementInDegrees": 0.25,
+          "jPointsAreConsecutive": 0,
+          "jScansPositively": 0,
+          "latitudeOfFirstGridPointInDegrees": 90.0,
+          "latitudeOfLastGridPointInDegrees": -90.0,
+          "level": 10,
+          "localTablesVersion": 1,
+          "longitudeOfFirstGridPointInDegrees": 0.0,
+          "longitudeOfLastGridPointInDegrees": 359.75,
+          "missingValue": 9999,
+          "missingValueManagementUsed": 0,
+          "name": "10 metre U wind component",
+          "numberOfGroupsOfDataValues": 31248,
+          "numberOfMissing": 0,
+          "numberOfPoints": 1038240,
+          "numberOfValues": 1038240,
+          "orderOfSpatialDifferencing": 2,
+          "packingType": "grid_complex_spatial_differencing",
+          "parameterCategory": 2,
+          "parameterNumber": 2,
+          "productDefinitionTemplateNumber": 0,
+          "productionStatusOfProcessedData": 0,
+          "radius": 6371229,
+          "referenceValue": -2591.633544921875,
+          "resolutionAndComponentFlags": 48,
+          "scaleFactorOfFirstFixedSurface": 0,
+          "scaledValueOfFirstFixedSurface": 10,
+          "scanningMode": 0,
+          "section4Length": 34,
+          "shapeOfTheEarth": 6,
+          "shortName": "10u",
+          "significanceOfReferenceTime": 1,
+          "startStep": 24,
+          "stepRange": "24",
+          "stepType": "instant",
+          "stepUnits": 1,
+          "subCentre": 0,
+          "tablesVersion": 2,
+          "totalLength": 963506,
+          "typeOfFirstFixedSurface": 103,
+          "typeOfGeneratingProcess": 2,
+          "typeOfLevel": "heightAboveGround",
+          "typeOfProcessedData": 1,
+          "units": "m s**-1",
+          "uvRelativeToGrid": 0,
+          "validityDate": 20250116,
+          "validityTime": 0
+        },
+        "numerical_agreement": {
+          "compared_cells": 1038240,
+          "exact_predicted_binary32_cells": 1038240,
+          "mask_agreement": true,
+          "maximum_absolute_difference_native": 1.4495849605111744e-06,
+          "maximum_analytic_bound_native": 2.753652698821516e-06,
+          "mean_absolute_difference_native": 1.168833915607145e-07,
+          "tolerance": "predeclared per-cell binary32 sum/coefficient/product bound AND exact g2clib profile",
+          "unexplained_disagreements": 0
+        },
+        "primary_decoder": {
+          "eccodes_native": "2.48.0",
+          "eccodes_python": "2.48.0",
+          "numpy": "2.5.2",
+          "python": "3.12.6"
+        },
+        "queries": [
+          {
+            "comparison": {
+              "bound_native": 1.718601506058747e-07,
+              "difference_native": 1.7166137711299712e-07,
+              "mechanism": "independent GDAL decoding/affine and separately implemented NumPy dot; not independent GDAL warp",
+              "native_value": -3.236335277557373
+            },
+            "input_coordinate": {
+              "latitude": 50.0,
+              "longitude": 0.0,
+              "method": "NEAREST"
+            },
+            "method": "NEAREST",
+            "native_value": -3.23633544921875,
+            "nodes": [
+              {
+                "column": 0,
+                "latitude": 50.0,
+                "longitude_0_360": 0.0,
+                "missing": false,
+                "native_value": -3.23633544921875,
+                "row": 160,
+                "weight": 1.0
+              }
+            ],
+            "normalised_coordinate": {
+              "latitude": 50.0,
+              "longitude_0_360": 0.0,
+              "longitude_minus180_180": 0.0
+            },
+            "pole_column_canonicalised": false,
+            "status": "OK",
+            "weight_sum": 1.0
+          },
+          {
+            "comparison": {
+              "bound_native": 9.329888368281799e-08,
+              "difference_native": 9.30786132613548e-08,
+              "mechanism": "independent GDAL decoding/affine and separately implemented NumPy dot; not independent GDAL warp",
+              "native_value": -3.233935356140135
+            },
+            "input_coordinate": {
+              "latitude": 49.9,
+              "longitude": 0.1,
+              "method": "BILINEAR"
+            },
+            "method": "BILINEAR",
+            "native_value": -3.233935449218748,
+            "nodes": [
+              {
+                "column": 0,
+                "latitude": 50.0,
+                "longitude_0_360": 0.0,
+                "missing": false,
+                "native_value": -3.23633544921875,
+                "row": 160,
+                "weight": 0.3599999999999966
+              },
+              {
+                "column": 1,
+                "latitude": 50.0,
+                "longitude_0_360": 0.25,
+                "missing": false,
+                "native_value": -3.5863354492187502,
+                "row": 160,
+                "weight": 0.23999999999999774
+              },
+              {
+                "column": 0,
+                "latitude": 49.75,
+                "longitude_0_360": 0.0,
+                "missing": false,
+                "native_value": -3.13633544921875,
+                "row": 161,
+                "weight": 0.2400000000000034
+              },
+              {
+                "column": 1,
+                "latitude": 49.75,
+                "longitude_0_360": 0.25,
+                "missing": false,
+                "native_value": -2.84633544921875,
+                "row": 161,
+                "weight": 0.16000000000000228
+              }
+            ],
+            "normalised_coordinate": {
+              "latitude": 49.9,
+              "longitude_0_360": 0.1,
+              "longitude_minus180_180": 0.1
+            },
+            "pole_column_canonicalised": false,
+            "status": "OK",
+            "weight_sum": 1.0
+          },
+          {
+            "comparison": {
+              "bound_native": 1.5288845616885324e-07,
+              "difference_native": 1.403808598254841e-07,
+              "mechanism": "independent GDAL decoding/affine and separately implemented NumPy dot; not independent GDAL warp",
+              "native_value": 4.700864410400357
+            },
+            "input_coordinate": {
+              "latitude": -40.1,
+              "longitude": 359.9,
+              "method": "BILINEAR"
+            },
+            "method": "BILINEAR",
+            "native_value": 4.700864550781217,
+            "nodes": [
+              {
+                "column": 1439,
+                "latitude": -40.0,
+                "longitude_0_360": 359.75,
+                "missing": false,
+                "native_value": 4.64366455078125,
+                "row": 520,
+                "weight": 0.24000000000006366
+              },
+              {
+                "column": 0,
+                "latitude": -40.0,
+                "longitude_0_360": 0.0,
+                "missing": false,
+                "native_value": 4.89366455078125,
+                "row": 520,
+                "weight": 0.3599999999999591
+              },
+              {
+                "column": 1439,
+                "latitude": -40.25,
+                "longitude_0_360": 359.75,
+                "missing": false,
+                "native_value": 4.15366455078125,
+                "row": 521,
+                "weight": 0.1600000000000273
+              },
+              {
+                "column": 0,
+                "latitude": -40.25,
+                "longitude_0_360": 0.0,
+                "missing": false,
+                "native_value": 4.83366455078125,
+                "row": 521,
+                "weight": 0.23999999999994998
+              }
+            ],
+            "normalised_coordinate": {
+              "latitude": -40.1,
+              "longitude_0_360": 359.9,
+              "longitude_minus180_180": -0.10000000000002274
+            },
+            "pole_column_canonicalised": false,
+            "status": "OK",
+            "weight_sum": 1.0
+          },
+          {
+            "comparison": {
+              "bound_native": 1.5288845616885324e-07,
+              "difference_native": 1.403808598254841e-07,
+              "mechanism": "independent GDAL decoding/affine and separately implemented NumPy dot; not independent GDAL warp",
+              "native_value": 4.700864410400357
+            },
+            "input_coordinate": {
+              "latitude": -40.1,
+              "longitude": -0.1,
+              "method": "BILINEAR"
+            },
+            "method": "BILINEAR",
+            "native_value": 4.700864550781217,
+            "nodes": [
+              {
+                "column": 1439,
+                "latitude": -40.0,
+                "longitude_0_360": 359.75,
+                "missing": false,
+                "native_value": 4.64366455078125,
+                "row": 520,
+                "weight": 0.24000000000006366
+              },
+              {
+                "column": 0,
+                "latitude": -40.0,
+                "longitude_0_360": 0.0,
+                "missing": false,
+                "native_value": 4.89366455078125,
+                "row": 520,
+                "weight": 0.3599999999999591
+              },
+              {
+                "column": 1439,
+                "latitude": -40.25,
+                "longitude_0_360": 359.75,
+                "missing": false,
+                "native_value": 4.15366455078125,
+                "row": 521,
+                "weight": 0.1600000000000273
+              },
+              {
+                "column": 0,
+                "latitude": -40.25,
+                "longitude_0_360": 0.0,
+                "missing": false,
+                "native_value": 4.83366455078125,
+                "row": 521,
+                "weight": 0.23999999999994998
+              }
+            ],
+            "normalised_coordinate": {
+              "latitude": -40.1,
+              "longitude_0_360": 359.9,
+              "longitude_minus180_180": -0.10000000000002274
+            },
+            "pole_column_canonicalised": false,
+            "status": "OK",
+            "weight_sum": 1.0
+          },
+          {
+            "comparison": {
+              "bound_native": 1.5277008104635625e-07,
+              "difference_native": 1.5258789076710855e-07,
+              "mechanism": "independent GDAL decoding/affine and separately implemented NumPy dot; not independent GDAL warp",
+              "native_value": -2.9663352966308594
+            },
+            "input_coordinate": {
+              "latitude": 90.0,
+              "longitude": 40.0,
+              "method": "NEAREST"
+            },
+            "method": "NEAREST",
+            "native_value": -2.96633544921875,
+            "nodes": [
+              {
+                "column": 0,
+                "latitude": 90.0,
+                "longitude_0_360": 0.0,
+                "missing": false,
+                "native_value": -2.96633544921875,
+                "row": 0,
+                "weight": 1.0
+              }
+            ],
+            "normalised_coordinate": {
+              "latitude": 90.0,
+              "longitude_0_360": 40.0,
+              "longitude_minus180_180": 40.0
+            },
+            "pole_column_canonicalised": true,
+            "status": "OK",
+            "weight_sum": 1.0
+          },
+          {
+            "input_coordinate": {
+              "latitude": 89.875,
+              "longitude": 0.0,
+              "method": "BILINEAR"
+            },
+            "method": "BILINEAR",
+            "normalised_coordinate": {
+              "latitude": 89.875,
+              "longitude_0_360": 0.0,
+              "longitude_minus180_180": 0.0
+            },
+            "status": "UNSUPPORTED_POLAR_CAP_BILINEAR"
+          },
+          {
+            "input_coordinate": {
+              "latitude": 91.0,
+              "longitude": 0.0,
+              "method": "NEAREST"
+            },
+            "status": "LATITUDE_OUT_OF_RANGE"
+          }
+        ],
+        "secondary_decoder": {
+          "crs": "GEOGCS[\"Coordinate System imported from GRIB file\",DATUM[\"unnamed\",SPHEROID[\"Sphere\",6371229,0]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AXIS[\"Latitude\",NORTH],AXIS[\"Longitude\",EAST]]",
+          "tags": {
+            "GRIB_COMMENT": "u-component of wind [m/s]",
+            "GRIB_DISCIPLINE": "0(Meteorological)",
+            "GRIB_ELEMENT": "UGRD",
+            "GRIB_FORECAST_SECONDS": "86400",
+            "GRIB_IDS": "CENTER=7(US-NCEP) SUBCENTER=0 MASTER_TABLE=2 LOCAL_TABLE=1 SIGNF_REF_TIME=1(Start_of_Forecast) REF_TIME=2025-01-15T00:00:00Z PROD_STATUS=0(Operational) TYPE=1(Forecast)",
+            "GRIB_PDS_PDTN": "0",
+            "GRIB_PDS_TEMPLATE_ASSEMBLED_VALUES": "2 2 2 0 96 0 0 1 24 103 0 10 255 0 0",
+            "GRIB_PDS_TEMPLATE_NUMBERS": "2 2 2 0 96 0 0 0 1 0 0 0 24 103 0 0 0 0 10 255 0 0 0 0 0",
+            "GRIB_REF_TIME": "1736899200",
+            "GRIB_SHORT_NAME": "10-HTGL",
+            "GRIB_UNIT": "[m/s]",
+            "GRIB_VALID_TIME": "1736985600"
+          },
+          "transform": [
+            0.25,
+            0.0,
+            -0.125,
+            0.0,
+            -0.25,
+            90.125,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "versions": {
+            "GDAL": "3.9.3",
+            "numpy": "2.5.3",
+            "python": "3.12.6",
+            "rasterio": "1.4.3"
+          }
+        },
+        "source": {
+          "inventory_line": "588:421036204:d=2025011500:UGRD:10 m above ground:24 hour fcst:",
+          "inventory_sha256": "fa11be72ab29ea43520dc6a6fc8de81bd8e0e024c96da94ed05495bc43b39dcb",
+          "inventory_url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20250115/00/atmos/gfs.t00z.pgrb2.0p25.f024.idx",
+          "object_url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20250115/00/atmos/gfs.t00z.pgrb2.0p25.f024",
+          "parent_bytes": 537858357,
+          "parent_etag": "e9f55c2f3f45d6cdb3aac9e4b7a36aba",
+          "processing_version": "UNRESOLVED; generating process 96, not exact binary/suite version",
+          "provider": "NOAA/NCEP GFS through NOAA Open Data Dissemination",
+          "range_end_inclusive": 421999709,
+          "range_start": 421036204,
+          "rights_checked": "2026-10-10",
+          "rights_url": "https://registry.opendata.aws/noaa-gfs-bdp-pds/"
+        },
+        "statistics_native": {
+          "maximum": 24.97366455078125,
+          "mean_unweighted_nodes": -0.14961697372175511,
+          "minimum": -25.91633544921875,
+          "missing_cells": 0,
+          "negative_cells": 572138,
+          "valid_cells": 1038240,
+          "zero_cells": 0
+        }
+      },
+      "v10": {
+        "candidate_contract": {
+          "ensemble": {
+            "kind": "deterministic",
+            "member": null,
+            "qualification": "no ensemble structure validated"
+          },
+          "evidence": "new_independent_numerical",
+          "grid_section3_sha256": "2f05f13897b18b42bb2790905e2476fce9a2e07b89f63499a12da9e202f3367f",
+          "input_sha256": "d0113e2831a29ec6095a3eb139bb7d9d57947b4f36da3b46a3b5f70425e05e58",
+          "model": "NOAA/NCEP GFS delivered product",
+          "native_unit": "m s**-1",
+          "parameter": [
+            0,
+            2,
+            3
+          ],
+          "product": {
+            "centre": 7,
+            "generatingProcessIdentifier": 96,
+            "localTablesVersion": 1,
+            "subCentre": 0,
+            "tablesVersion": 2
+          },
+          "quality": "decoding integrity; forecast accuracy untested",
+          "temporal": {
+            "forecast_lead_seconds": 86400,
+            "kind": "instant",
+            "reference_time": "2025-01-15T00:00:00Z",
+            "valid_time": "2025-01-16T00:00:00Z"
+          },
+          "vertical": {
+            "first_surface_code": 103,
+            "level": 10,
+            "type": "heightAboveGround"
+          }
+        },
+        "decoded_float64_sha256": "c6f2600a34283f49d883eda5e66cb153f8ab99f9b0cffc6d1fb8ffb623c529cd",
+        "input": {
+          "bytes": 944636,
+          "filename": "v10.grib2",
+          "sha256": "d0113e2831a29ec6095a3eb139bb7d9d57947b4f36da3b46a3b5f70425e05e58"
+        },
+        "metadata": {
+          "Ni": 1440,
+          "Nj": 721,
+          "alternativeRowScanning": 0,
+          "backgroundProcess": 0,
+          "binaryScaleFactor": 0,
+          "bitmapPresent": 0,
+          "bitsPerValue": 13,
+          "centre": 7,
+          "dataDate": 20250115,
+          "dataRepresentationTemplateNumber": 3,
+          "dataTime": 0,
+          "decimalScaleFactor": 2,
+          "discipline": 0,
+          "edition": 2,
+          "endStep": 24,
+          "forecastTime": 24,
+          "generatingProcessIdentifier": 96,
+          "gridDefinitionTemplateNumber": 0,
+          "gridType": "regular_ll",
+          "iDirectionIncrementInDegrees": 0.25,
+          "iScansNegatively": 0,
+          "indicatorOfUnitOfTimeRange": 1,
+          "jDirectionIncrementInDegrees": 0.25,
+          "jPointsAreConsecutive": 0,
+          "jScansPositively": 0,
+          "latitudeOfFirstGridPointInDegrees": 90.0,
+          "latitudeOfLastGridPointInDegrees": -90.0,
+          "level": 10,
+          "localTablesVersion": 1,
+          "longitudeOfFirstGridPointInDegrees": 0.0,
+          "longitudeOfLastGridPointInDegrees": 359.75,
+          "missingValue": 9999,
+          "missingValueManagementUsed": 0,
+          "name": "10 metre V wind component",
+          "numberOfGroupsOfDataValues": 31304,
+          "numberOfMissing": 0,
+          "numberOfPoints": 1038240,
+          "numberOfValues": 1038240,
+          "orderOfSpatialDifferencing": 2,
+          "packingType": "grid_complex_spatial_differencing",
+          "parameterCategory": 2,
+          "parameterNumber": 3,
+          "productDefinitionTemplateNumber": 0,
+          "productionStatusOfProcessedData": 0,
+          "radius": 6371229,
+          "referenceValue": -3136.997314453125,
+          "resolutionAndComponentFlags": 48,
+          "scaleFactorOfFirstFixedSurface": 0,
+          "scaledValueOfFirstFixedSurface": 10,
+          "scanningMode": 0,
+          "section4Length": 34,
+          "shapeOfTheEarth": 6,
+          "shortName": "10v",
+          "significanceOfReferenceTime": 1,
+          "startStep": 24,
+          "stepRange": "24",
+          "stepType": "instant",
+          "stepUnits": 1,
+          "subCentre": 0,
+          "tablesVersion": 2,
+          "totalLength": 944636,
+          "typeOfFirstFixedSurface": 103,
+          "typeOfGeneratingProcess": 2,
+          "typeOfLevel": "heightAboveGround",
+          "typeOfProcessedData": 1,
+          "units": "m s**-1",
+          "uvRelativeToGrid": 0,
+          "validityDate": 20250116,
+          "validityTime": 0
+        },
+        "numerical_agreement": {
+          "compared_cells": 1038240,
+          "exact_predicted_binary32_cells": 1038240,
+          "mask_agreement": true,
+          "maximum_absolute_difference_native": 1.4495849605111744e-06,
+          "maximum_analytic_bound_native": 2.8755510102086924e-06,
+          "mean_absolute_difference_native": 9.287936716104447e-08,
+          "tolerance": "predeclared per-cell binary32 sum/coefficient/product bound AND exact g2clib profile",
+          "unexplained_disagreements": 0
+        },
+        "primary_decoder": {
+          "eccodes_native": "2.48.0",
+          "eccodes_python": "2.48.0",
+          "numpy": "2.5.2",
+          "python": "3.12.6"
+        },
+        "queries": [
+          {
+            "comparison": {
+              "bound_native": 6.574657623881208e-10,
+              "difference_native": 5.960464483090178e-10,
+              "mechanism": "independent GDAL decoding/affine and separately implemented NumPy dot; not independent GDAL warp",
+              "native_value": -0.019973143935203552
+            },
+            "input_coordinate": {
+              "latitude": 50.0,
+              "longitude": 0.0,
+              "method": "NEAREST"
+            },
+            "method": "NEAREST",
+            "native_value": -0.01997314453125,
+            "nodes": [
+              {
+                "column": 0,
+                "latitude": 50.0,
+                "longitude_0_360": 0.0,
+                "missing": false,
+                "native_value": -0.01997314453125,
+                "row": 160,
+                "weight": 1.0
+              }
+            ],
+            "normalised_coordinate": {
+              "latitude": 50.0,
+              "longitude_0_360": 0.0,
+              "longitude_minus180_180": 0.0
+            },
+            "pole_column_canonicalised": false,
+            "status": "OK",
+            "weight_sum": 1.0
+          },
+          {
+            "comparison": {
+              "bound_native": 1.0957148375845407e-08,
+              "difference_native": 1.0895729068982618e-08,
+              "mechanism": "independent GDAL decoding/affine and separately implemented NumPy dot; not independent GDAL warp",
+              "native_value": -0.18077313363552278
+            },
+            "input_coordinate": {
+              "latitude": 49.9,
+              "longitude": 0.1,
+              "method": "BILINEAR"
+            },
+            "method": "BILINEAR",
+            "native_value": -0.18077314453125184,
+            "nodes": [
+              {
+                "column": 0,
+                "latitude": 50.0,
+                "longitude_0_360": 0.0,
+                "missing": false,
+                "native_value": -0.01997314453125,
+                "row": 160,
+                "weight": 0.3599999999999966
+              },
+              {
+                "column": 1,
+                "latitude": 50.0,
+                "longitude_0_360": 0.25,
+                "missing": false,
+                "native_value": -0.09997314453125,
+                "row": 160,
+                "weight": 0.23999999999999774
+              },
+              {
+                "column": 0,
+                "latitude": 49.75,
+                "longitude_0_360": 0.0,
+                "missing": false,
+                "native_value": -0.50997314453125,
+                "row": 161,
+                "weight": 0.2400000000000034
+              },
+              {
+                "column": 1,
+                "latitude": 49.75,
+                "longitude_0_360": 0.25,
+                "missing": false,
+                "native_value": -0.16997314453125,
+                "row": 161,
+                "weight": 0.16000000000000228
+              }
+            ],
+            "normalised_coordinate": {
+              "latitude": 49.9,
+              "longitude_0_360": 0.1,
+              "longitude_minus180_180": 0.1
+            },
+            "pole_column_canonicalised": false,
+            "status": "OK",
+            "weight_sum": 1.0
+          },
+          {
+            "comparison": {
+              "bound_native": 1.7042662399334153e-07,
+              "difference_native": 1.7013549857836097e-07,
+              "mechanism": "independent GDAL decoding/affine and separately implemented NumPy dot; not independent GDAL warp",
+              "native_value": -4.028372974395785
+            },
+            "input_coordinate": {
+              "latitude": -40.1,
+              "longitude": 359.9,
+              "method": "BILINEAR"
+            },
+            "method": "BILINEAR",
+            "native_value": -4.028373144531283,
+            "nodes": [
+              {
+                "column": 1439,
+                "latitude": -40.0,
+                "longitude_0_360": 359.75,
+                "missing": false,
+                "native_value": -4.06997314453125,
+                "row": 520,
+                "weight": 0.24000000000006366
+              },
+              {
+                "column": 0,
+                "latitude": -40.0,
+                "longitude_0_360": 0.0,
+                "missing": false,
+                "native_value": -3.58997314453125,
+                "row": 520,
+                "weight": 0.3599999999999591
+              },
+              {
+                "column": 1439,
+                "latitude": -40.25,
+                "longitude_0_360": 359.75,
+                "missing": false,
+                "native_value": -4.73997314453125,
+                "row": 521,
+                "weight": 0.1600000000000273
+              },
+              {
+                "column": 0,
+                "latitude": -40.25,
+                "longitude_0_360": 0.0,
+                "missing": false,
+                "native_value": -4.16997314453125,
+                "row": 521,
+                "weight": 0.23999999999994998
+              }
+            ],
+            "normalised_coordinate": {
+              "latitude": -40.1,
+              "longitude_0_360": 359.9,
+              "longitude_minus180_180": -0.10000000000002274
+            },
+            "pole_column_canonicalised": false,
+            "status": "OK",
+            "weight_sum": 1.0
+          },
+          {
+            "comparison": {
+              "bound_native": 1.7042662399334153e-07,
+              "difference_native": 1.7013549857836097e-07,
+              "mechanism": "independent GDAL decoding/affine and separately implemented NumPy dot; not independent GDAL warp",
+              "native_value": -4.028372974395785
+            },
+            "input_coordinate": {
+              "latitude": -40.1,
+              "longitude": -0.1,
+              "method": "BILINEAR"
+            },
+            "method": "BILINEAR",
+            "native_value": -4.028373144531283,
+            "nodes": [
+              {
+                "column": 1439,
+                "latitude": -40.0,
+                "longitude_0_360": 359.75,
+                "missing": false,
+                "native_value": -4.06997314453125,
+                "row": 520,
+                "weight": 0.24000000000006366
+              },
+              {
+                "column": 0,
+                "latitude": -40.0,
+                "longitude_0_360": 0.0,
+                "missing": false,
+                "native_value": -3.58997314453125,
+                "row": 520,
+                "weight": 0.3599999999999591
+              },
+              {
+                "column": 1439,
+                "latitude": -40.25,
+                "longitude_0_360": 359.75,
+                "missing": false,
+                "native_value": -4.73997314453125,
+                "row": 521,
+                "weight": 0.1600000000000273
+              },
+              {
+                "column": 0,
+                "latitude": -40.25,
+                "longitude_0_360": 0.0,
+                "missing": false,
+                "native_value": -4.16997314453125,
+                "row": 521,
+                "weight": 0.23999999999994998
+              }
+            ],
+            "normalised_coordinate": {
+              "latitude": -40.1,
+              "longitude_0_360": 359.9,
+              "longitude_minus180_180": -0.10000000000002274
+            },
+            "pole_column_canonicalised": false,
+            "status": "OK",
+            "weight_sum": 1.0
+          },
+          {
+            "comparison": {
+              "bound_native": 3.62751856284609e-07,
+              "difference_native": 3.623962401277936e-07,
+              "mechanism": "independent GDAL decoding/affine and separately implemented NumPy dot; not independent GDAL warp",
+              "native_value": -5.78997278213501
+            },
+            "input_coordinate": {
+              "latitude": 90.0,
+              "longitude": 40.0,
+              "method": "NEAREST"
+            },
+            "method": "NEAREST",
+            "native_value": -5.78997314453125,
+            "nodes": [
+              {
+                "column": 0,
+                "latitude": 90.0,
+                "longitude_0_360": 0.0,
+                "missing": false,
+                "native_value": -5.78997314453125,
+                "row": 0,
+                "weight": 1.0
+              }
+            ],
+            "normalised_coordinate": {
+              "latitude": 90.0,
+              "longitude_0_360": 40.0,
+              "longitude_minus180_180": 40.0
+            },
+            "pole_column_canonicalised": true,
+            "status": "OK",
+            "weight_sum": 1.0
+          },
+          {
+            "input_coordinate": {
+              "latitude": 89.875,
+              "longitude": 0.0,
+              "method": "BILINEAR"
+            },
+            "method": "BILINEAR",
+            "normalised_coordinate": {
+              "latitude": 89.875,
+              "longitude_0_360": 0.0,
+              "longitude_minus180_180": 0.0
+            },
+            "status": "UNSUPPORTED_POLAR_CAP_BILINEAR"
+          },
+          {
+            "input_coordinate": {
+              "latitude": 91.0,
+              "longitude": 0.0,
+              "method": "NEAREST"
+            },
+            "status": "LATITUDE_OUT_OF_RANGE"
+          }
+        ],
+        "secondary_decoder": {
+          "crs": "GEOGCS[\"Coordinate System imported from GRIB file\",DATUM[\"unnamed\",SPHEROID[\"Sphere\",6371229,0]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AXIS[\"Latitude\",NORTH],AXIS[\"Longitude\",EAST]]",
+          "tags": {
+            "GRIB_COMMENT": "v-component of wind [m/s]",
+            "GRIB_DISCIPLINE": "0(Meteorological)",
+            "GRIB_ELEMENT": "VGRD",
+            "GRIB_FORECAST_SECONDS": "86400",
+            "GRIB_IDS": "CENTER=7(US-NCEP) SUBCENTER=0 MASTER_TABLE=2 LOCAL_TABLE=1 SIGNF_REF_TIME=1(Start_of_Forecast) REF_TIME=2025-01-15T00:00:00Z PROD_STATUS=0(Operational) TYPE=1(Forecast)",
+            "GRIB_PDS_PDTN": "0",
+            "GRIB_PDS_TEMPLATE_ASSEMBLED_VALUES": "2 3 2 0 96 0 0 1 24 103 0 10 255 0 0",
+            "GRIB_PDS_TEMPLATE_NUMBERS": "2 3 2 0 96 0 0 0 1 0 0 0 24 103 0 0 0 0 10 255 0 0 0 0 0",
+            "GRIB_REF_TIME": "1736899200",
+            "GRIB_SHORT_NAME": "10-HTGL",
+            "GRIB_UNIT": "[m/s]",
+            "GRIB_VALID_TIME": "1736985600"
+          },
+          "transform": [
+            0.25,
+            0.0,
+            -0.125,
+            0.0,
+            -0.25,
+            90.125,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "versions": {
+            "GDAL": "3.9.3",
+            "numpy": "2.5.3",
+            "python": "3.12.6",
+            "rasterio": "1.4.3"
+          }
+        },
+        "source": {
+          "inventory_line": "589:421999710:d=2025011500:VGRD:10 m above ground:24 hour fcst:",
+          "inventory_sha256": "fa11be72ab29ea43520dc6a6fc8de81bd8e0e024c96da94ed05495bc43b39dcb",
+          "inventory_url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20250115/00/atmos/gfs.t00z.pgrb2.0p25.f024.idx",
+          "object_url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20250115/00/atmos/gfs.t00z.pgrb2.0p25.f024",
+          "parent_bytes": 537858357,
+          "parent_etag": "e9f55c2f3f45d6cdb3aac9e4b7a36aba",
+          "processing_version": "UNRESOLVED; generating process 96, not exact binary/suite version",
+          "provider": "NOAA/NCEP GFS through NOAA Open Data Dissemination",
+          "range_end_inclusive": 422944345,
+          "range_start": 421999710,
+          "rights_checked": "2026-10-10",
+          "rights_url": "https://registry.opendata.aws/noaa-gfs-bdp-pds/"
+        },
+        "statistics_native": {
+          "maximum": 22.31002685546875,
+          "mean_unweighted_nodes": -0.24399057787999404,
+          "minimum": -31.36997314453125,
+          "missing_cells": 0,
+          "negative_cells": 553032,
+          "valid_cells": 1038240,
+          "zero_cells": 0
+        }
+      }
+    },
+    "limitations": [
+      "one deterministic delivered GFS grid/run/end-time",
+      "no real bitmap, categories, upper-air or ensemble validation",
+      "component basis at poles is degenerate; canonical pole node is numerical only",
+      "interpolation adds no model resolution; no forecast skill, reference or terrain correction"
+    ],
+    "outcome": "A",
+    "reused_evidence": {
+      "precipitation": {
+        "bytes": 343228,
+        "filename": "gfs-2025011500-f024-apcp-18-24h.grib2",
+        "sha256": "e2a311fa2089ab1982d9b09e7ec82f483e07ef06f38457d9e379fe9cef970848"
+      },
+      "temperature": {
+        "bytes": 874115,
+        "filename": "gfs-2025011500-f024-t2m.grib2",
+        "sha256": "0b95fc06fe9ca08de57f9c5089b8fcd5d7b6a42977b35f669da65ec0f43f40e4"
+      }
+    },
+    "schema": "meridian-wr010-evidence-v1",
+    "vector_pair": {
+      "basis": "eastward/northward, encoded Table3.3 bit5=0",
+      "components": [
+        "6ed439d0b10e5cdeb2ab81b452f2f27f4afc93e4f06a0988b38122e56ada2fcf",
+        "d0113e2831a29ec6095a3eb139bb7d9d57947b4f36da3b46a3b5f70425e05e58"
+      ],
+      "limitations": "no derived speed/direction, gusts, local wind accuracy or pole-vector transport",
+      "status": "aligned numerical component pair"
+    }
+  }
+}

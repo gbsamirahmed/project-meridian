@@ -175,3 +175,8 @@ these methods or reinterpret model-relative 2 m as actual terrain-relative 2 m.
 ## WR009 accumulated-field refinement — 10 October 2026
 
 [WR009](historical-gfs-precipitation-interval-pilot.md) establishes a real surface total-precipitation **18–24 h accumulation** ending at the same valid time as the pinned temperature, not an instantaneous or full 24-hour value. Its native grid is byte-identical and numerical decoders agree. Shared valid-time/grid labels do not make temporal supports or physical quantities interchangeable; reference precipitation would require its own interval/measurement/QC/representativeness design. No such comparison is authorised or performed. WR006 strict and revised MIDAS temperature targets remain BLOCKED, with no protocol revision or accuracy claim.
+
+
+## WR010 support distinctions — 10 October 2026
+
+[WR010](multi-variable-field-compatibility-pilot.md) verifies finite common geometry/provenance with distinct instantaneous temperature, interval precipitation, paired wind and cloud percentage. Same endpoint is not equal temporal support; same grid is not equal height/column support. Independent numerical/query agreement is not station equivalence, observed cloud/wind truth, terrain skill or model superiority. WR006 strict/revised MIDAS targets remain BLOCKED; original protocol unchanged.

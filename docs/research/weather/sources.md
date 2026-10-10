@@ -236,3 +236,16 @@ Accessed **10 October 2026**: nine anonymous controlled requests, **503,483 resp
 | WR9-S05 / retained WR7-S03–S04 source/native evidence and actual installed ecCodes/GDAL | Re-read locally, no repeat transfer; binary32 scaling exact for inspected R=0/E=−4/D=0 proof domain. Version/resource notices remain separate redistribution gates |
 
 Metadata/raw/numerical/derived/publication identities remain distinct. Current definitions interpret encoded codes, not an exact historical executable revision. No new MIDAS evidence, third-party proxy or other forecast-variable acquisition.
+
+
+## WR010 exact field and component evidence — 10 October 2026
+
+[WR010](multi-variable-field-compatibility-pilot.md) reuses retained NOAA index/notice and WR007–009 sources locally. Seven anonymous controlled requests, **2,806,029 body bytes** including documentation; three scientific messages, no redirects/retries. [Pins/ledger/receipts](../../../scripts/weather-research/wr010/integrity-receipt.json). Git/protocol overhead unmetered.
+
+| Identifier / primary source | Evidence / qualification |
+|---|---|
+| WR10-S01 / [NCEP momentum](https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/grib2_table4-2-0-2.shtml) | 0/2/2 U, 0/2/3 V native m/s; actual instantaneous 10 m fields independently decoded |
+| WR10-S02 / [NCEP cloud](https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/grib2_table4-2-0-6.shtml) | 0/6/1 total cloud percent, entire atmosphere; instant message, not adjacent mean/category/observation |
+| WR10-S03 / [NCEP component flags](https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/grib2_table3-3.shtml) | Actual flags48/bit5=0: east/north basis, not decreasing array-row direction |
+
+Tables retrieved on the stated date; retained surface/time/packing authority read without repeat transfer. No exact historical suite binary, other-family validation, future archive continuity or complete distribution clearance inferred.

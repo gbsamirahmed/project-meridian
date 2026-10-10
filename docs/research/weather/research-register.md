@@ -183,3 +183,17 @@ pilot](gfs-native-grid-point-sampling.md#8-exactly-one-next-bounded-task--not-be
 | WR9-Q04 / W11, W31, W39 | Byte-identical temperature/precipitation Section 3 and native geometry; common field identity versus distinct temporal/unit/level semantics | RESEARCHED (compatibility implications backed by checked grid identity); precipitation point queries and multi-variable join framework not implemented |
 
 Exactly one next task: [WR010 multi-variable field-compatibility and scientific-contract pilot](historical-gfs-precipitation-interval-pilot.md#8-remaining-limits-and-exactly-one-next-task--not-begun), **NOT BEGUN**. WR006 reference Decision C remains blocked; source decoding is not observational skill.
+
+
+## WR010 finite multi-variable evidence — 10 October 2026
+
+[WR010](multi-variable-field-compatibility-pilot.md): **Outcome A** for the inspected cases only. W01–W40 and all historical rows remain unchanged; no broad capability or model skill promoted.
+
+| Identifier / parents | Bounded result | Status / remaining gate |
+|---|---|---|
+| WR10-Q01 / W11, W31, W38 | Three instantaneous messages: Earth-relative 10 m U/V, atmospheric-column cloud percent; independent full-field checks | EXPERIMENTALLY VALIDATED (one run/grid/packing profile); other providers/members/bitmap cases unresolved |
+| WR10-Q02 / W11, W31 | U/V supports/basis align; five encoded grids identical; interval/instant, height/surface/column, units and member distinctions explicit | EXPERIMENTALLY VALIDATED (finite numerical/metadata joins); no category or vertical interpolation |
+| WR10-Q03 / W30, W38 | Fifteen queries checked against independent decoding/affine and separate arithmetic; six polar/invalid rejections; deterministic double replay | EXPERIMENTALLY VALIDATED (finite query reuse); no new GDAL-warp or meteorological-resolution evidence |
+| WR10-Q04 / W31, W39, W40 | Candidate contract separates intrinsic science from presentation/context; explicit unsupported-family seams | RESEARCHED (engineering inference from tested cases); not an accepted production API |
+
+Exactly one next task: cross-provider field-contract conformance, **NOT BEGUN**, [defined in the report](multi-variable-field-compatibility-pilot.md#9-programme-implications-and-exactly-one-next-task--not-begun).
