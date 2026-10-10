@@ -225,3 +225,14 @@ Exactly one next bounded task: **WR010 — MULTI-VARIABLE FIELD-COMPATIBILITY AN
 ## WR010 representative field-contract evidence — 10 October 2026
 
 [WR010](../research/weather/multi-variable-field-compatibility-pilot.md) reaches finite **Outcome A** for five messages and a candidate contract with explicit temporal/vertical/unit/vector distinctions. This advances Weather interpretation, not production/application maturity, provider/framework/renderer choice or mobile evidence. Existing decisions/device gates remain. Exactly one subsequent bounded task: **cross-provider field-contract conformance — NOT BEGUN**, testing source-specific assumptions rather than a permanent GFS-only sequence. No application integration begins.
+
+
+## WR011 portability evidence gate — 10 October 2026
+
+[Weather WR011](../research/weather/cross-provider-ifs-field-conformance.md) reaches
+**Outcome B**: finite independent ECMWF producer evidence supports candidate scientific
+concepts with explicit mappings; independent CCSDS numerical validation is blocked by
+installed tooling. This is neither application maturity nor a provider/framework/renderer
+choice. All accepted priorities, device gates and MIDAS reference blockers remain.
+Sole next bounded task: independent CCSDS numerical-decoding conformance, **NOT BEGUN**.
+No new application/production integration starts here.

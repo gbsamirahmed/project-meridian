@@ -197,3 +197,18 @@ Exactly one next task: [WR010 multi-variable field-compatibility and scientific-
 | WR10-Q04 / W31, W39, W40 | Candidate contract separates intrinsic science from presentation/context; explicit unsupported-family seams | RESEARCHED (engineering inference from tested cases); not an accepted production API |
 
 Exactly one next task: cross-provider field-contract conformance, **NOT BEGUN**, [defined in the report](multi-variable-field-compatibility-pilot.md#9-programme-implications-and-exactly-one-next-task--not-begun).
+
+
+## WR011 cross-provider evidence — 10 October 2026
+
+[WR011](cross-provider-ifs-field-conformance.md): **Outcome B**. Historical W01–W40
+and WR002–010 rows unchanged; no broad field family or forecast skill promoted.
+
+| Identifier / parents | Bounded result | Status / remaining gate |
+|---|---|---|
+| WR11-Q01 / W10, W38, W40 | Public AWS historical IFS index and three verified206 messages, pinned one run | EXPERIMENTALLY VALIDATED (one finite acquisition); archive continuity and production service rights untested |
+| WR11-Q02 / W11, W31, W38 | ecCodes real2t/tp/U values, independent GDAL raw PDT/grid metadata, deterministic replay | PARTIALLY VALIDATED (primary numerical and independent metadata); GDAL CCSDS missing-libaec numerical blocker, no independent cell comparison |
+| WR11-Q03 / W31, W39 | Scoped parameter authority, native longitude origin, accumulation qualifiers and evidence distinctions | RESEARCHED (candidate refinement grounded in finite evidence); other grids/ensembles/categories and full IFS compatibility untested |
+
+Exactly one next task: **independent CCSDS numerical-decoding conformance — NOT BEGUN**,
+[defined in the report](cross-provider-ifs-field-conformance.md#8-exactly-one-next-bounded-task--not-begun).

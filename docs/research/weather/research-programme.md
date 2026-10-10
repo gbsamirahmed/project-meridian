@@ -180,3 +180,18 @@ Exactly one next task: **WR010 — MULTI-VARIABLE FIELD-COMPATIBILITY AND SCIENT
 10 October 2026. [WR010](multi-variable-field-compatibility-pilot.md) reaches finite **Outcome A**, two retained and three new messages. Same grid/end-time does not erase interval/level/unit distinctions; wind pairing requires a coordinate basis. Query reuse is checked on new fields. Candidate contract is not a production schema, provider or platform choice. Global/regional/ensemble/observation/nowcast/ML/mountain/uncertainty/offline tracks remain.
 
 Further single-variable GFS repetition now has less information value than testing a second producer/product lineage. Exactly one next task: **CROSS-PROVIDER FIELD-CONTRACT CONFORMANCE PILOT — NOT BEGUN**, [evidence, dependencies, finite scope, acceptance and stops](multi-variable-field-compatibility-pilot.md#9-programme-implications-and-exactly-one-next-task--not-begun). WR006 stays blocked; no later task or skill study starts here.
+
+
+## WR011 refinement — 10 October 2026
+
+[WR011](cross-provider-ifs-field-conformance.md) adds independent ECMWF producer
+evidence for three historical IFS fields, **Outcome B**, preserving WR007–010 and
+WR006's blocked MIDAS decision. Scientific instant/interval/vertical/unit concepts
+carry over; GFS-specific adapters do not. Parameter authority, longitude origin and
+encoded statistical increment need explicit mappings; independent numerical evidence
+is blocked by this GDAL build's absent libaec, rather than model incompatibility.
+Resolve that finite decoder gap before treating these IFS numerical values as independently
+verified. Broader regional, ensemble, cloud/category, mountain, observation/nowcasting,
+offline and operational-cost tracks remain; no permanent provider or implementation chosen.
+Sole next task: **independent CCSDS numerical-decoding conformance — NOT BEGUN**,
+[scope and evidence gates](cross-provider-ifs-field-conformance.md#8-exactly-one-next-bounded-task--not-begun).

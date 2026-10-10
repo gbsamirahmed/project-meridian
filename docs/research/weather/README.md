@@ -135,3 +135,14 @@ Exactly one next task: **WR010 — MULTI-VARIABLE FIELD-COMPATIBILITY AND SCIENT
 ## WR010 representative compatibility — 10 October 2026
 
 [WR010](multi-variable-field-compatibility-pilot.md): **Outcome A**, finite scalar/accumulation/wind/continuous-cloud evidence and a candidate scientific contract. [Utility/replay](../../../scripts/weather-research/wr010/README.md). Categories, upper-air, ensembles and real bitmap cases remain unvalidated. WR006 stays blocked. Exactly one current next task: cross-provider field-contract conformance, **NOT BEGUN**, defined in the report; historical task records above remain unchanged.
+
+
+## WR011 independent-provider conformance — 10 October 2026
+
+[Historical IFS conformance](cross-provider-ifs-field-conformance.md): **Outcome B**.
+Three genuine ECMWF fields decoded with ecCodes; independent GDAL metadata/geometry
+checked, but CCSDS numerical decoding blocked by missing libaec in the installed build.
+Provider-independent concepts survive with scoped parameter definitions, longitude
+origin and interval qualifiers. No forecast skill, complete vector or production API.
+Exactly one next task: **independent CCSDS numerical-decoding conformance — NOT BEGUN**,
+[bounded in the report](cross-provider-ifs-field-conformance.md#8-exactly-one-next-bounded-task--not-begun).

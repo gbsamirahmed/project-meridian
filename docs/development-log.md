@@ -5023,3 +5023,45 @@ Validation: **33/33 preflight preservation checks**, **25 WR010 tests (24 synthe
 Controlled **7 requests / 2,806,029 response-body bytes**, raw messages2,742,847 bytes; borrowed documentation/index, no installs/auth/paid/cloud. Git/HTTP/TLS/OS traffic unmetered. Sequential temporary GDAL output≤9,346,173 bytes, removed. Standalone primary/reference peak working sets193,986,560/91,373,568 bytes (separate lifetime peaks, not simultaneous). Input hashes unchanged, external data root unchanged; owned research scratch/inputs outside Git only. No raw GRIB/array/credentials/machine-specific path committed. Sole next task: cross-provider field-contract conformance, **NOT BEGUN**.
 
 Final WR010 gates: **39/39 preservation checks**, all 42 Atlas status rows, 113 hashes, 40,842 Weather publications, frozen fixtures/projections and WR007–009 raw/receipt identities unchanged; **36/36 documentation checks**, 432 internal links/anchors resolve. Complete thirteen-file diff reviewed (seven append-only notes plus six isolated research files). Owned scratch at review **5,516,640 bytes**; with a conservative 40,000,000-byte concurrent temporary allowance, **45,516,640 bytes**, below150 MB. This is an audit-point/conservative bound, not a continuously sampled filesystem high-water mark. No external data-directory moves or changes.
+
+
+## 10 October 2026 — WR011 IFS cross-provider conformance
+
+Started clean public main `ae1d72475d24a9a9f16f157c7a480d26f4601fea`, fetched/aligned0/0;
+33/33 preflight preservation checks passed. [Report](research/weather/cross-provider-ifs-field-conformance.md):
+**Outcome B — PARTIAL CONFORMANCE**. Three actual Jan15 2025 00 UTC IFS messages,
+instant2m temperatureK, surface tp0–24 h in metres, instant10m eastward U m/s. ecCodes2.48.0
+decoded1,038,240 finite cells per field; GDAL3.9.3 independently checked metadata/raw PDT/
+geometry but cannot unpack5.42 without libaec. **Zero independent numerical cells compared**.
+No dependency installed, new provider selected, forecast errors or complete wind pair claimed.
+
+Exact scoped producer definitions, origin180 grid/storage labels,450 s accumulation
+qualifier and per-axis evidence refine the research candidate; old GFS adapters and
+all accepted reports/pins/receipts remain unchanged. First replay exposed ecCodes signed
+longitude labels; modulo360 label comparison preserved native array order. Default
+replay fails on unavailable independent decoding; explicit partial mode records only
+the known missing-libaec failure after metadata checks. GDAL's secondary Out of memory
+diagnostic is not proof of RAM exhaustion. Synthetic constant-field exact-equality
+assertion corrected for float64 arithmetic, no empirical tolerance fitted.
+
+34 focused tests (33 synthetic + one genuine three-field double replay) pass, zero skips.
+Scientific deterministic JSON55,996 bytes, SHA256
+`b35534194aa168e8750363f348b74551139fd8f8a14194bdd33d3c8d379ab31b`.
+Input/array hashes unchanged. 14 controlled requests/3,427,413 body bytes, including
+one zero-body TLS failure; three raw messages2,402,866 bytes, no retries/redirects.
+Git/HTTP/TLS/OS traffic unmetered, no certified total-network claim. No accounts,
+private access, cloud, paid services, bulk acquisition or external data-root changes.
+Owned inputs/scratch outside Git only. Standalone primary/reference lifetime peaks
+154,886,144/64,241,664 working-set bytes; separate peaks, not simultaneous total or
+mobile budget. Sequential temporary metadata≤1,652 bytes, removed. Final regression,
+publication, documentation, preservation, build and scratch accounting follows below.
+
+Exactly one next task: **independent CCSDS numerical-decoding conformance — NOT BEGUN**.
+No WR012, MIDAS reinterpretation, production code or application work began.
+
+
+Final WR011 validation: **34 WR011, 30 WR007, 37 WR008, 49 WR009, 25 WR010 tests**, all passing with genuine inputs and zero skips; **7 publication tests**, installed ESLint, TypeScript and isolated application-only build pass. Existing optional-esbuild/large-chunk warnings retained. **36/36 documentation/evidence checks, 435 internal links/anchors**, **33/33 preflight and 41/41 final preservation checks** pass. All42 statuses/113 hashes/40,842 Weather files, accepted projections/frozen fixtures/inputs and WR007-010 raw/pin/receipt identities remain unchanged. Exact13-file scope: six new isolated research files/report and seven append-only historical notes; all1,250 other tracked baseline files unchanged. No production code, dependencies, observation verification, expensive unrelated scientific replays or full data-materialising build. Full diff, hashes, source notices, Outcome B qualifications, request ledger, raw-data/secret/path exclusions and preservation reviewed before commit. Owned scratch/conservative storage at final review follows; process memory and storage are different measurements. External data root untouched; only owned research scratch created. Independent numerical comparison remains blocked, not concealed by passing synthetic or documentation tests.
+
+WR011 new pins/receipt use the repository LF convention so a fresh checkout preserves pin identity; earlier scientific files were not normalised or changed. Final scientific receipt and genuine double-replay tests were regenerated after this serialisation fix, with unchanged values/metadata/Outcome B. The resource measurement retains the first complete partial run, separate from deterministic science.
+
+WR011 final documentation-review scratch audit: **6,169,581 bytes**; plus a conservative **40,000,000-byte** allowance for concurrent regression temporary outputs gives **46,169,581 bytes**, below150 MB. This is an audit-point/conservative bound, not a continuously measured filesystem high-water mark; final log/review receipts add only small text files. A checker-only UTF-8 literal was repaired after local default-codepage conversion; all36 documentation checks then passed, with no scientific or protocol-rule change.

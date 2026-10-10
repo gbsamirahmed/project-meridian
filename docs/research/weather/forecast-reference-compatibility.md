@@ -180,3 +180,15 @@ these methods or reinterpret model-relative 2 m as actual terrain-relative 2 m.
 ## WR010 support distinctions — 10 October 2026
 
 [WR010](multi-variable-field-compatibility-pilot.md) verifies finite common geometry/provenance with distinct instantaneous temperature, interval precipitation, paired wind and cloud percentage. Same endpoint is not equal temporal support; same grid is not equal height/column support. Independent numerical/query agreement is not station equivalence, observed cloud/wind truth, terrain skill or model superiority. WR006 strict/revised MIDAS targets remain BLOCKED; original protocol unchanged.
+
+
+## WR011 independent-provider boundary — 10 October 2026
+
+[IFS contract pilot](cross-provider-ifs-field-conformance.md): **Outcome B**.
+All three Jan15 2025 00 UTC IFS fields share the Jan16 00 UTC endpoint and their
+encoded grid; the grid's longitude origin differs from GFS despite matching geographic
+nodes. IFS tp accumulates0–24 h in metres with450 s increment metadata, whereas WR009
+GFS APCP accumulates18–24 h in kg/m². Equal endpoints do not make these quantities
+exchangeable. Temperature/U are instantaneous, distinct2/10 m support. No V pair,
+observation matching, model-error comparison or reopened MIDAS Decision C. Independent
+GDAL metadata/geometry passes; numerical decoding is blocked by absent libaec.

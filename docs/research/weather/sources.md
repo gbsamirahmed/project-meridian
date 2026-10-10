@@ -249,3 +249,17 @@ Metadata/raw/numerical/derived/publication identities remain distinct. Current d
 | WR10-S03 / [NCEP component flags](https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/grib2_table3-3.shtml) | Actual flags48/bit5=0: east/north basis, not decreasing array-row direction |
 
 Tables retrieved on the stated date; retained surface/time/packing authority read without repeat transfer. No exact historical suite binary, other-family validation, future archive continuity or complete distribution clearance inferred.
+
+
+## WR011 source-specific refinement — 10 October 2026
+
+[WR011 source/access evidence](cross-provider-ifs-field-conformance.md#2-exact-source-rights-and-predeclaration)
+confirms the ECMWF-managed anonymous AWS replica actually serves the selected
+2025-01-15 IFS object/index. A portal rolling-window limit must not be generalised
+to every replica; this one object does not prove complete historic coverage or retention.
+CC BY4.0, attribution/copyright/modification notices and additional ECMWF conditions
+were inspected; future service agreements/commercial/offline delivery remain separately
+qualified, no legal clearance. Exact centre98/master33/local1 precipitation definitions
+give metres for local0/1/193; GDAL's unknown unit label is retained. No new provider
+selection, credentials or forecast-skill evidence. TLS failure on the public portal
+was recorded without bypass/retry; other precise primary sources were accessible.

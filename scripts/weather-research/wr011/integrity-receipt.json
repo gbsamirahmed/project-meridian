@@ -1,0 +1,1804 @@
+{
+  "acquisition": [
+    {
+      "attempt": 1,
+      "body_bytes": 23951,
+      "method": "GET",
+      "owned_filename": "ecmwf-opendata-readme.md",
+      "sha256": "4c2835dc3af7aab9a11c55db23d5766ceb7aabadb64aa981560957f8af091243",
+      "status": 200,
+      "url": "https://raw.githubusercontent.com/ecmwf/ecmwf-opendata/main/README.md",
+      "utc": "2026-10-10T18:05:18.304827+00:00"
+    },
+    {
+      "attempt": 2,
+      "body_bytes": 0,
+      "failure": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)>",
+      "method": "GET",
+      "url": "https://www.ecmwf.int/en/forecasts/datasets/open-data",
+      "utc": "2026-10-10T18:05:18.728424+00:00"
+    },
+    {
+      "attempt": 3,
+      "body_bytes": 12268,
+      "method": "GET",
+      "owned_filename": "ecmwf-general-terms.html",
+      "sha256": "db3f16b5f21f681cc00acb3cc8dfb1944a362a051f7c13ab391dadb9df456a07",
+      "status": 200,
+      "url": "https://apps.ecmwf.int/datasets/licences/general/",
+      "utc": "2026-10-10T18:05:59.745810+00:00"
+    },
+    {
+      "attempt": 4,
+      "body_bytes": 9463,
+      "method": "GET",
+      "owned_filename": "aws-ecmwf-catalogue.html",
+      "sha256": "b6c76a79c581252f64e93f5eaf4b1d2e4bb18847486cc28dd78d5c301033154e",
+      "status": 200,
+      "url": "https://registry.opendata.aws/ecmwf-forecasts/",
+      "utc": "2026-10-10T18:06:00.069417+00:00"
+    },
+    {
+      "attempt": 5,
+      "body_bytes": 21286,
+      "method": "GET",
+      "owned_filename": "ecmwf-client-source.py",
+      "sha256": "d95f8f6be3f5ef606a73683242445b60103f3d7ccf4bb8da97b5d1610bdda000",
+      "status": 200,
+      "url": "https://raw.githubusercontent.com/ecmwf/ecmwf-opendata/main/ecmwf/opendata/client.py",
+      "utc": "2026-10-10T18:06:20.345128+00:00"
+    },
+    {
+      "attempt": 6,
+      "body_bytes": 48742,
+      "method": "GET",
+      "owned_filename": "cc-by4-legalcode.html",
+      "sha256": "58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650",
+      "status": 200,
+      "url": "https://creativecommons.org/licenses/by/4.0/legalcode.en",
+      "utc": "2026-10-10T18:06:20.587997+00:00"
+    },
+    {
+      "attempt": 7,
+      "body_bytes": 0,
+      "method": "HEAD",
+      "owned_filename": "january-parent-head",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": 200,
+      "url": "https://ecmwf-forecasts.s3.eu-central-1.amazonaws.com/20250115/00z/ifs/0p25/oper/20250115000000-24h-oper-fc.grib2",
+      "utc": "2026-10-10T18:07:01.702537+00:00"
+    },
+    {
+      "attempt": 8,
+      "body_bytes": 34292,
+      "method": "GET",
+      "owned_filename": "january-f024.index",
+      "sha256": "67bd79565b0e018e2f0aa82c7e769655e1f2a45fd11d14522ef71b5732415521",
+      "status": 200,
+      "url": "https://ecmwf-forecasts.s3.eu-central-1.amazonaws.com/20250115/00z/ifs/0p25/oper/20250115000000-24h-oper-fc.index",
+      "utc": "2026-10-10T18:07:34.561940+00:00"
+    },
+    {
+      "attempt": 9,
+      "body_bytes": 650860,
+      "method": "GET",
+      "owned_filename": "temperature.grib2",
+      "sha256": "7f7e40c92f5375d4af52f68428c02820105bafa10ad29cf2404ad0c37e7a5f30",
+      "status": 206,
+      "url": "https://ecmwf-forecasts.s3.eu-central-1.amazonaws.com/20250115/00z/ifs/0p25/oper/20250115000000-24h-oper-fc.grib2",
+      "utc": "2026-10-10T18:08:44.711621+00:00"
+    },
+    {
+      "attempt": 10,
+      "body_bytes": 886088,
+      "method": "GET",
+      "owned_filename": "precipitation.grib2",
+      "sha256": "bbe7a629c06579c27e64a181d2066ed1b36af14544238728d0eda4442083c884",
+      "status": 206,
+      "url": "https://ecmwf-forecasts.s3.eu-central-1.amazonaws.com/20250115/00z/ifs/0p25/oper/20250115000000-24h-oper-fc.grib2",
+      "utc": "2026-10-10T18:08:45.054340+00:00"
+    },
+    {
+      "attempt": 11,
+      "body_bytes": 865918,
+      "method": "GET",
+      "owned_filename": "wind_u.grib2",
+      "sha256": "4b153144cdb6623906501ddfcc915e16e1d593ce4f0ef821d4a0d62524ea9cfc",
+      "status": 206,
+      "url": "https://ecmwf-forecasts.s3.eu-central-1.amazonaws.com/20250115/00z/ifs/0p25/oper/20250115000000-24h-oper-fc.grib2",
+      "utc": "2026-10-10T18:08:45.440741+00:00"
+    },
+    {
+      "attempt": 12,
+      "body_bytes": 435013,
+      "method": "GET",
+      "owned_filename": "ecmf-paramId.def",
+      "sha256": "301a5e4937c8b571077921b87d97d634e4834ecccd9918591d3e74e16b8a0adc",
+      "status": 200,
+      "url": "https://raw.githubusercontent.com/ecmwf/eccodes/2.48.0/definitions/grib2/localConcepts/ecmf/paramId.def",
+      "utc": "2026-10-10T18:10:33.383728+00:00"
+    },
+    {
+      "attempt": 13,
+      "body_bytes": 436940,
+      "method": "GET",
+      "owned_filename": "ecmf-units.def",
+      "sha256": "a967870aa72a6f02867ba71603a0762dc0c19c0bcde6022d66f3f75486af941f",
+      "status": 200,
+      "url": "https://raw.githubusercontent.com/ecmwf/eccodes/2.48.0/definitions/grib2/localConcepts/ecmf/units.def",
+      "utc": "2026-10-10T18:10:33.799478+00:00"
+    },
+    {
+      "attempt": 14,
+      "body_bytes": 2592,
+      "method": "GET",
+      "owned_filename": "gdal-aecunpack.c",
+      "sha256": "dead870de68a4c97e16d4b81088187b33562bd6a5e783dbe452797e81acba8b8",
+      "status": 200,
+      "url": "https://raw.githubusercontent.com/OSGeo/gdal/v3.9.3/frmts/grib/degrib/g2clib/aecunpack.c",
+      "utc": "2026-10-10T18:10:34.129078+00:00"
+    }
+  ],
+  "resource_measurement": {
+    "elapsed_seconds": 3.0935734000522643,
+    "network_in_replay": "no acquisition code executed; external OS/Git traffic not metered",
+    "primary_after": {
+      "pagefile_bytes": 743374848,
+      "peak_pagefile_bytes": 778002432,
+      "peak_working_set_bytes": 154886144,
+      "working_set_bytes": 120598528
+    },
+    "primary_before": {
+      "pagefile_bytes": 666095616,
+      "peak_pagefile_bytes": 666398720,
+      "peak_working_set_bytes": 36831232,
+      "working_set_bytes": 36003840
+    },
+    "secondary_processes": [
+      {
+        "after": {
+          "pagefile_bytes": 678506496,
+          "peak_pagefile_bytes": 699342848,
+          "peak_working_set_bytes": 63221760,
+          "working_set_bytes": 63221760
+        },
+        "before": {
+          "pagefile_bytes": 672006144,
+          "peak_pagefile_bytes": 672006144,
+          "peak_working_set_bytes": 51949568,
+          "working_set_bytes": 51949568
+        }
+      },
+      {
+        "after": {
+          "pagefile_bytes": 679579648,
+          "peak_pagefile_bytes": 700407808,
+          "peak_working_set_bytes": 64241664,
+          "working_set_bytes": 64241664
+        },
+        "before": {
+          "pagefile_bytes": 672874496,
+          "peak_pagefile_bytes": 672874496,
+          "peak_working_set_bytes": 52764672,
+          "working_set_bytes": 52764672
+        }
+      },
+      {
+        "after": {
+          "pagefile_bytes": 679456768,
+          "peak_pagefile_bytes": 700284928,
+          "peak_working_set_bytes": 64061440,
+          "working_set_bytes": 64061440
+        },
+        "before": {
+          "pagefile_bytes": 672804864,
+          "peak_pagefile_bytes": 672804864,
+          "peak_working_set_bytes": 52551680,
+          "working_set_bytes": 52551680
+        }
+      }
+    ],
+    "temporary_peak_bytes": 1652
+  },
+  "resource_measurement_provenance": "Initial complete partial run; deterministic scientific receipt subsequently uses repository LF pins, with unchanged numerical fields/semantics. Resources are separate observations.",
+  "schema": "wr011-committed-integrity-v1",
+  "scientific_receipt": {
+    "attribution": "This research is based on data and products of the European Centre for Medium-Range Weather Forecasts (ECMWF).",
+    "copyright": "Copyright 2025 ECMWF; CC BY4.0 with source notices; modified derived research receipts, no endorsement",
+    "fields": {
+      "precipitation": {
+        "actual_metadata": {
+          "Ni": 1440,
+          "Nj": 721,
+          "alternativeRowScanning": 0,
+          "backgroundProcess": 255,
+          "binaryScaleFactor": -18,
+          "bitmapPresent": 0,
+          "bitsPerValue": 16,
+          "ccsdsBlockSize": 32,
+          "ccsdsFlags": 14,
+          "ccsdsRsi": 128,
+          "centre": 98,
+          "class": 1,
+          "dataDate": 20250115,
+          "dataRepresentationTemplateNumber": 42,
+          "dataTime": 0,
+          "dayOfEndOfOverallTimeInterval": 16,
+          "decimalScaleFactor": 0,
+          "decoded_longitude_labels": {
+            "comparison_mapping": "labels modulo360; arrays retain native order",
+            "maximum": 179.75,
+            "minimum": -180.0
+          },
+          "discipline": 0,
+          "edition": 2,
+          "endStep": 24,
+          "expver": "0001",
+          "forecastTime": 0,
+          "generatingProcessIdentifier": 158,
+          "gridDefinitionTemplateNumber": 0,
+          "gridType": "regular_ll",
+          "hourOfEndOfOverallTimeInterval": 0,
+          "iDirectionIncrementInDegrees": 0.25,
+          "iScansNegatively": 0,
+          "indicatorOfUnitForTimeIncrement": 13,
+          "indicatorOfUnitForTimeRange": 1,
+          "indicatorOfUnitOfTimeRange": 1,
+          "isConstant": 0.0,
+          "jDirectionIncrementInDegrees": 0.25,
+          "jPointsAreConsecutive": 0,
+          "jScansPositively": 0,
+          "latitudeOfFirstGridPointInDegrees": 90.0,
+          "latitudeOfLastGridPointInDegrees": -90.0,
+          "lengthOfTimeRange": 24,
+          "level": 0,
+          "localDefinitionNumber": 1,
+          "localTablesVersion": 1,
+          "longitudeOfFirstGridPointInDegrees": 180.0,
+          "longitudeOfLastGridPointInDegrees": 179.75,
+          "marsClass": "od",
+          "marsStream": "oper",
+          "marsType": "fc",
+          "minuteOfEndOfOverallTimeInterval": 0,
+          "missingValue": 9999,
+          "monthOfEndOfOverallTimeInterval": 1,
+          "name": "Total precipitation",
+          "numberOfMissing": 0,
+          "numberOfMissingInStatisticalProcess": 0,
+          "numberOfPoints": 1038240,
+          "numberOfTimeRange": 1,
+          "numberOfValues": 1038240,
+          "packingType": "grid_ccsds",
+          "paramId": 228,
+          "parameterCategory": 1,
+          "parameterNumber": 193,
+          "productDefinitionTemplateNumber": 8,
+          "productionStatusOfProcessedData": 0,
+          "radius": 6371229,
+          "referenceValue": 0.0,
+          "resolutionAndComponentFlags": 48,
+          "scaleFactorOfFirstFixedSurface": 2147483647,
+          "scaledValueOfFirstFixedSurface": 2147483647,
+          "scanningMode": 0,
+          "secondOfEndOfOverallTimeInterval": 0,
+          "section2Length": 17,
+          "section4Length": 58,
+          "setLocalDefinition": 0,
+          "shapeOfTheEarth": 6,
+          "shortName": "tp",
+          "significanceOfReferenceTime": 1,
+          "startStep": 0,
+          "stepRange": "0-24",
+          "stepType": "accum",
+          "stepUnits": 1,
+          "stream": 1025,
+          "subCentre": 0,
+          "tablesVersion": 33,
+          "timeIncrement": 450,
+          "totalLength": 886088,
+          "type": 9,
+          "typeOfFirstFixedSurface": 1,
+          "typeOfGeneratingProcess": 2,
+          "typeOfLevel": "surface",
+          "typeOfProcessedData": 1,
+          "typeOfSecondFixedSurface": 255,
+          "typeOfStatisticalProcessing": 1,
+          "typeOfTimeIncrement": 2,
+          "units": "m",
+          "uvRelativeToGrid": 0,
+          "validityDate": 20250116,
+          "validityTime": 0,
+          "yearOfEndOfOverallTimeInterval": 2025
+        },
+        "concept": {
+          "ensemble": {
+            "ensemble_structures": "NOT TESTED",
+            "kind": "deterministic",
+            "member": null
+          },
+          "evidence": "genuine primary numerical decoding; independent numerical verification separately recorded; not forecast skill",
+          "grid": {
+            "Earth_radius_m": 6371229,
+            "bilinear_latitude_domain": [
+              -89.75,
+              89.75
+            ],
+            "columns": 1440,
+            "duplicate_360_endpoint": false,
+            "east": 179.75,
+            "latitude_periodic": false,
+            "latitude_step": -0.25,
+            "longitude_periodic": true,
+            "longitude_step": 0.25,
+            "north": 90.0,
+            "registration": "native grid nodes",
+            "rows": 721,
+            "scan_mode": 0,
+            "south": -90.0,
+            "type": "regular_ll",
+            "west": 180.0
+          },
+          "grid_section3_sha256": "6e8229bf09d191ccf7d719ef88dc9e848fe663cf45a91d0691b7e17815a03036",
+          "historical_executable_version": "UNKNOWN; process158 is not an executable version",
+          "input_sha256": "bbe7a629c06579c27e64a181d2066ed1b36af14544238728d0eda4442083c884",
+          "model": "IFS Open Data deterministic oper fc",
+          "native_unit": "m",
+          "parameter": {
+            "centre": 98,
+            "codes": [
+              0,
+              1,
+              193
+            ],
+            "ecCodes_paramId": 228,
+            "local_table": 1,
+            "master_table": 33,
+            "namespace": "ECMWF local"
+          },
+          "physical_quantity": "Total precipitation",
+          "producer": "ECMWF",
+          "query_limitations": [
+            "grid-axis nearest, not geodesic nearest",
+            "bilinear excludes polar caps",
+            "no terrain correction, no temporal interpolation or physical accuracy inference"
+          ],
+          "temporal": {
+            "duration_seconds": 86400,
+            "forecast_lead_to_end_seconds": 86400,
+            "forecast_lead_to_start_seconds": 0,
+            "increment": {
+              "qualification": "encoded increment; no inferred internal sample count or endpoint algorithm",
+              "seconds": 450,
+              "type_code": 2,
+              "unit_code": 13,
+              "value": 450
+            },
+            "interval_end": "2025-01-16T00:00:00Z",
+            "interval_start": "2025-01-15T00:00:00Z",
+            "kind": "accumulation",
+            "reference_time": "2025-01-15T00:00:00Z",
+            "statistical_process_code": 1,
+            "valid_time": "2025-01-16T00:00:00Z"
+          },
+          "vector": null,
+          "vertical": {
+            "first_surface_code": 1,
+            "height_m": null,
+            "reference": "surface, no encoded altitude",
+            "second_surface": null
+          }
+        },
+        "decoded_float64_sha256": "6a782c590e042189e126429e10ffe0da190e893794fdc94e7f3b5b2712d316e8",
+        "independent_decoder": {
+          "crs": "GEOGCS[\"Coordinate System imported from GRIB file\",DATUM[\"unnamed\",SPHEROID[\"Sphere\",6371229,0]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AXIS[\"Latitude\",NORTH],AXIS[\"Longitude\",EAST]]",
+          "tags": {
+            "GRIB_COMMENT": "(prodType 0, cat 1, subcat 193) [-]",
+            "GRIB_DISCIPLINE": "0(Meteorological)",
+            "GRIB_ELEMENT": "unknown",
+            "GRIB_FORECAST_SECONDS": "0",
+            "GRIB_IDS": "CENTER=98(ECMWF) SUBCENTER=0 MASTER_TABLE=33 LOCAL_TABLE=1 SIGNF_REF_TIME=1(Start_of_Forecast) REF_TIME=2025-01-15T00:00:00Z PROD_STATUS=0(Operational) TYPE=1(Forecast)",
+            "GRIB_PDS_PDTN": "8",
+            "GRIB_PDS_TEMPLATE_ASSEMBLED_VALUES": "1 193 2 255 158 0 0 1 0 1 -127 -2147483647 255 -127 -2147483647 2025 1 16 0 0 0 1 0 1 2 1 24 13 450",
+            "GRIB_PDS_TEMPLATE_NUMBERS": "1 193 2 255 158 0 0 0 1 0 0 0 0 1 255 255 255 255 255 255 255 255 255 255 255 7 233 1 16 0 0 0 1 0 0 0 0 1 2 1 0 0 0 24 13 0 0 1 194",
+            "GRIB_REF_TIME": "1736899200",
+            "GRIB_SHORT_NAME": "0-SFC",
+            "GRIB_UNIT": "[-]",
+            "GRIB_VALID_TIME": "1736985600"
+          },
+          "transform": [
+            0.25,
+            0.0,
+            179.875,
+            0.0,
+            -0.25,
+            90.125,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "versions": {
+            "GDAL": "3.9.3",
+            "numpy": "2.5.3",
+            "python": "3.12.6",
+            "rasterio": "1.4.3"
+          }
+        },
+        "input": {
+          "bytes": 886088,
+          "filename": "precipitation.grib2",
+          "sha256": "bbe7a629c06579c27e64a181d2066ed1b36af14544238728d0eda4442083c884"
+        },
+        "input_and_decoded_array_unchanged": true,
+        "numerical_comparison": {
+          "compared_cells": 0,
+          "failure": "GDAL3.9.3 g2_unpack7: Data Representation Template5.42 decoding requires building against libaec",
+          "qualification": "subsequent Out of memory diagnostic is not evidence of exhausted RAM; no independent numerical/mask agreement",
+          "status": "UNAVAILABLE"
+        },
+        "physical_unit_confirmation": "producer definitions; GDAL vocabulary unknown",
+        "primary_decoder": {
+          "ecCodes": "2.48.0",
+          "eccodes_python": "2.48.0",
+          "numpy": "2.5.2",
+          "python": "3.12.6"
+        },
+        "queries": [
+          {
+            "comparison": {
+              "geometry": "GDAL affine node and weight agreement",
+              "numerical": "NOT TESTED: independent decoder unavailable",
+              "qualification": "ecCodes values with reused WR008 arithmetic; not independent numerical query validation"
+            },
+            "input_coordinate": {
+              "latitude": 50.0,
+              "longitude": 0.0,
+              "method": "NEAREST"
+            },
+            "method": "NEAREST",
+            "native_value": 0.000492095947265625,
+            "nodes": [
+              {
+                "column": 720,
+                "latitude": 50.0,
+                "longitude_0_360": 0.0,
+                "missing": false,
+                "native_value": 0.000492095947265625,
+                "row": 160,
+                "weight": 1.0
+              }
+            ],
+            "normalised_coordinate": {
+              "latitude": 50.0,
+              "longitude_0_360": 0.0,
+              "longitude_minus180_180": 0.0
+            },
+            "pole_column_canonicalised": false,
+            "status": "OK",
+            "weight_sum": 1.0
+          },
+          {
+            "comparison": {
+              "geometry": "GDAL affine node and weight agreement",
+              "numerical": "NOT TESTED: independent decoder unavailable",
+              "qualification": "ecCodes values with reused WR008 arithmetic; not independent numerical query validation"
+            },
+            "input_coordinate": {
+              "latitude": 49.9,
+              "longitude": 0.1,
+              "method": "BILINEAR"
+            },
+            "method": "BILINEAR",
+            "native_value": 0.000589447021484378,
+            "nodes": [
+              {
+                "column": 720,
+                "latitude": 50.0,
+                "longitude_0_360": 0.0,
+                "missing": false,
+                "native_value": 0.000492095947265625,
+                "row": 160,
+                "weight": 0.36000000000001026
+              },
+              {
+                "column": 721,
+                "latitude": 50.0,
+                "longitude_0_360": 0.25,
+                "missing": false,
+                "native_value": 0.000453948974609375,
+                "row": 160,
+                "weight": 0.2399999999999841
+              },
+              {
+                "column": 720,
+                "latitude": 49.75,
+                "longitude_0_360": 0.0,
+                "missing": false,
+                "native_value": 0.00079345703125,
+                "row": 161,
+                "weight": 0.2400000000000125
+              },
+              {
+                "column": 721,
+                "latitude": 49.75,
+                "longitude_0_360": 0.25,
+                "missing": false,
+                "native_value": 0.000705718994140625,
+                "row": 161,
+                "weight": 0.15999999999999318
+              }
+            ],
+            "normalised_coordinate": {
+              "latitude": 49.9,
+              "longitude_0_360": 0.1,
+              "longitude_minus180_180": 0.1
+            },
+            "pole_column_canonicalised": false,
+            "status": "OK",
+            "weight_sum": 1.0
+          },
+          {
+            "comparison": {
+              "geometry": "GDAL affine node and weight agreement",
+              "numerical": "NOT TESTED: independent decoder unavailable",
+              "qualification": "ecCodes values with reused WR008 arithmetic; not independent numerical query validation"
+            },
+            "input_coordinate": {
+              "latitude": -40.1,
+              "longitude": 179.9,
+              "method": "BILINEAR"
+            },
+            "method": "BILINEAR",
+            "native_value": 0.0008290100097656269,
+            "nodes": [
+              {
+                "column": 1439,
+                "latitude": -40.0,
+                "longitude_0_360": 179.75,
+                "missing": false,
+                "native_value": 0.0009307861328125,
+                "row": 520,
+                "weight": 0.24000000000006366
+              },
+              {
+                "column": 0,
+                "latitude": -40.0,
+                "longitude_0_360": 180.0,
+                "missing": false,
+                "native_value": 0.000881195068359375,
+                "row": 520,
+                "weight": 0.3599999999999591
+              },
+              {
+                "column": 1439,
+                "latitude": -40.25,
+                "longitude_0_360": 179.75,
+                "missing": false,
+                "native_value": 0.000640869140625,
+                "row": 521,
+                "weight": 0.1600000000000273
+              },
+              {
+                "column": 0,
+                "latitude": -40.25,
+                "longitude_0_360": 180.0,
+                "missing": false,
+                "native_value": 0.000774383544921875,
+                "row": 521,
+                "weight": 0.23999999999994998
+              }
+            ],
+            "normalised_coordinate": {
+              "latitude": -40.1,
+              "longitude_0_360": 179.9,
+              "longitude_minus180_180": 179.9
+            },
+            "pole_column_canonicalised": false,
+            "status": "OK",
+            "weight_sum": 1.0
+          },
+          {
+            "comparison": {
+              "geometry": "GDAL affine node and weight agreement",
+              "numerical": "NOT TESTED: independent decoder unavailable",
+              "qualification": "ecCodes values with reused WR008 arithmetic; not independent numerical query validation"
+            },
+            "input_coordinate": {
+              "latitude": -40.1,
+              "longitude": -180.1,
+              "method": "BILINEAR"
+            },
+            "method": "BILINEAR",
+            "native_value": 0.0008290100097656269,
+            "nodes": [
+              {
+                "column": 1439,
+                "latitude": -40.0,
+                "longitude_0_360": 179.75,
+                "missing": false,
+                "native_value": 0.0009307861328125,
+                "row": 520,
+                "weight": 0.24000000000006366
+              },
+              {
+                "column": 0,
+                "latitude": -40.0,
+                "longitude_0_360": 180.0,
+                "missing": false,
+                "native_value": 0.000881195068359375,
+                "row": 520,
+                "weight": 0.3599999999999591
+              },
+              {
+                "column": 1439,
+                "latitude": -40.25,
+                "longitude_0_360": 179.75,
+                "missing": false,
+                "native_value": 0.000640869140625,
+                "row": 521,
+                "weight": 0.1600000000000273
+              },
+              {
+                "column": 0,
+                "latitude": -40.25,
+                "longitude_0_360": 180.0,
+                "missing": false,
+                "native_value": 0.000774383544921875,
+                "row": 521,
+                "weight": 0.23999999999994998
+              }
+            ],
+            "normalised_coordinate": {
+              "latitude": -40.1,
+              "longitude_0_360": 179.9,
+              "longitude_minus180_180": 179.9
+            },
+            "pole_column_canonicalised": false,
+            "status": "OK",
+            "weight_sum": 1.0
+          },
+          {
+            "input_coordinate": {
+              "latitude": 89.875,
+              "longitude": 0.0,
+              "method": "BILINEAR"
+            },
+            "method": "BILINEAR",
+            "normalised_coordinate": {
+              "latitude": 89.875,
+              "longitude_0_360": 0.0,
+              "longitude_minus180_180": 0.0
+            },
+            "status": "UNSUPPORTED_POLAR_CAP_BILINEAR"
+          },
+          {
+            "input_coordinate": {
+              "latitude": 91.0,
+              "longitude": 0.0,
+              "method": "NEAREST"
+            },
+            "status": "LATITUDE_OUT_OF_RANGE"
+          }
+        ],
+        "section_sha256": {
+          "2": "75170cf66c4c5a8ac56fca014c7c2b2fc4fea93cca50a086c3cee3bbff39b3e2",
+          "3": "6e8229bf09d191ccf7d719ef88dc9e848fe663cf45a91d0691b7e17815a03036",
+          "4": "b7a1e8925deaa1217c5128887e75bc5c4b1be9e80568a6431bd2bc65b5b552d0",
+          "5": "3069bff3d3698de9d02899cc6c6d33a2729595127ee502c318ab47d916fc3f73",
+          "6": "c2dc6153f4dc277f902b2b8e9f64f957e4de897eef89081b0de598f7b8fb3fac"
+        },
+        "source_index": {
+          "_length": 886088,
+          "_offset": 24451999,
+          "class": "od",
+          "date": "20250115",
+          "domain": "g",
+          "expver": "0001",
+          "levtype": "sfc",
+          "param": "tp",
+          "step": "24",
+          "stream": "oper",
+          "time": "0000",
+          "type": "fc"
+        },
+        "summary": {
+          "cells": 1038240,
+          "finite": 1038240,
+          "maximum_native": 0.20748138427734375,
+          "mean_native": 0.0024342310742763145,
+          "minimum_native": 0.0,
+          "missing": 0,
+          "negative_cells": 0,
+          "valid": 1038240,
+          "zero_cells": 184798
+        }
+      },
+      "temperature": {
+        "actual_metadata": {
+          "Ni": 1440,
+          "Nj": 721,
+          "alternativeRowScanning": 0,
+          "backgroundProcess": 255,
+          "binaryScaleFactor": -5,
+          "bitmapPresent": 0,
+          "bitsPerValue": 12,
+          "ccsdsBlockSize": 32,
+          "ccsdsFlags": 14,
+          "ccsdsRsi": 128,
+          "centre": 98,
+          "class": 1,
+          "dataDate": 20250115,
+          "dataRepresentationTemplateNumber": 42,
+          "dataTime": 0,
+          "decimalScaleFactor": 0,
+          "decoded_longitude_labels": {
+            "comparison_mapping": "labels modulo360; arrays retain native order",
+            "maximum": 179.75,
+            "minimum": -180.0
+          },
+          "discipline": 0,
+          "edition": 2,
+          "endStep": 24,
+          "expver": "0001",
+          "forecastTime": 24,
+          "generatingProcessIdentifier": 158,
+          "gridDefinitionTemplateNumber": 0,
+          "gridType": "regular_ll",
+          "iDirectionIncrementInDegrees": 0.25,
+          "iScansNegatively": 0,
+          "indicatorOfUnitOfTimeRange": 1,
+          "isConstant": 0.0,
+          "jDirectionIncrementInDegrees": 0.25,
+          "jPointsAreConsecutive": 0,
+          "jScansPositively": 0,
+          "latitudeOfFirstGridPointInDegrees": 90.0,
+          "latitudeOfLastGridPointInDegrees": -90.0,
+          "level": 2,
+          "localDefinitionNumber": 1,
+          "localTablesVersion": 1,
+          "longitudeOfFirstGridPointInDegrees": 180.0,
+          "longitudeOfLastGridPointInDegrees": 179.75,
+          "marsClass": "od",
+          "marsStream": "oper",
+          "marsType": "fc",
+          "missingValue": 9999,
+          "name": "2 metre temperature",
+          "numberOfMissing": 0,
+          "numberOfPoints": 1038240,
+          "numberOfValues": 1038240,
+          "packingType": "grid_ccsds",
+          "paramId": 167,
+          "parameterCategory": 0,
+          "parameterNumber": 0,
+          "productDefinitionTemplateNumber": 0,
+          "productionStatusOfProcessedData": 0,
+          "radius": 6371229,
+          "referenceValue": 217.9665069580078,
+          "resolutionAndComponentFlags": 48,
+          "scaleFactorOfFirstFixedSurface": 0,
+          "scaledValueOfFirstFixedSurface": 2,
+          "scanningMode": 0,
+          "section2Length": 17,
+          "section4Length": 34,
+          "setLocalDefinition": 0,
+          "shapeOfTheEarth": 6,
+          "shortName": "2t",
+          "significanceOfReferenceTime": 1,
+          "startStep": 24,
+          "stepRange": "24",
+          "stepType": "instant",
+          "stepUnits": 1,
+          "stream": 1025,
+          "subCentre": 0,
+          "tablesVersion": 33,
+          "totalLength": 650860,
+          "type": 9,
+          "typeOfFirstFixedSurface": 103,
+          "typeOfGeneratingProcess": 2,
+          "typeOfLevel": "heightAboveGround",
+          "typeOfProcessedData": 1,
+          "typeOfSecondFixedSurface": 255,
+          "units": "K",
+          "uvRelativeToGrid": 0,
+          "validityDate": 20250116,
+          "validityTime": 0
+        },
+        "concept": {
+          "ensemble": {
+            "ensemble_structures": "NOT TESTED",
+            "kind": "deterministic",
+            "member": null
+          },
+          "evidence": "genuine primary numerical decoding; independent numerical verification separately recorded; not forecast skill",
+          "grid": {
+            "Earth_radius_m": 6371229,
+            "bilinear_latitude_domain": [
+              -89.75,
+              89.75
+            ],
+            "columns": 1440,
+            "duplicate_360_endpoint": false,
+            "east": 179.75,
+            "latitude_periodic": false,
+            "latitude_step": -0.25,
+            "longitude_periodic": true,
+            "longitude_step": 0.25,
+            "north": 90.0,
+            "registration": "native grid nodes",
+            "rows": 721,
+            "scan_mode": 0,
+            "south": -90.0,
+            "type": "regular_ll",
+            "west": 180.0
+          },
+          "grid_section3_sha256": "6e8229bf09d191ccf7d719ef88dc9e848fe663cf45a91d0691b7e17815a03036",
+          "historical_executable_version": "UNKNOWN; process158 is not an executable version",
+          "input_sha256": "7f7e40c92f5375d4af52f68428c02820105bafa10ad29cf2404ad0c37e7a5f30",
+          "model": "IFS Open Data deterministic oper fc",
+          "native_unit": "K",
+          "parameter": {
+            "centre": 98,
+            "codes": [
+              0,
+              0,
+              0
+            ],
+            "ecCodes_paramId": 167,
+            "local_table": 1,
+            "master_table": 33,
+            "namespace": "WMO"
+          },
+          "physical_quantity": "2 metre temperature",
+          "producer": "ECMWF",
+          "query_limitations": [
+            "grid-axis nearest, not geodesic nearest",
+            "bilinear excludes polar caps",
+            "no terrain correction, no temporal interpolation or physical accuracy inference"
+          ],
+          "temporal": {
+            "forecast_lead_seconds": 86400,
+            "kind": "instant",
+            "reference_time": "2025-01-15T00:00:00Z",
+            "valid_time": "2025-01-16T00:00:00Z"
+          },
+          "vector": null,
+          "vertical": {
+            "first_surface_code": 103,
+            "height_m": 2,
+            "reference": "model ground",
+            "second_surface": null
+          }
+        },
+        "decoded_float64_sha256": "f77dd347a58919ca5a2388b7f1be7e2e32f5d379dd88335415ddf24a959cf475",
+        "independent_decoder": {
+          "crs": "GEOGCS[\"Coordinate System imported from GRIB file\",DATUM[\"unnamed\",SPHEROID[\"Sphere\",6371229,0]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AXIS[\"Latitude\",NORTH],AXIS[\"Longitude\",EAST]]",
+          "tags": {
+            "GRIB_COMMENT": "Temperature [K]",
+            "GRIB_DISCIPLINE": "0(Meteorological)",
+            "GRIB_ELEMENT": "TMP",
+            "GRIB_FORECAST_SECONDS": "86400",
+            "GRIB_IDS": "CENTER=98(ECMWF) SUBCENTER=0 MASTER_TABLE=33 LOCAL_TABLE=1 SIGNF_REF_TIME=1(Start_of_Forecast) REF_TIME=2025-01-15T00:00:00Z PROD_STATUS=0(Operational) TYPE=1(Forecast)",
+            "GRIB_PDS_PDTN": "0",
+            "GRIB_PDS_TEMPLATE_ASSEMBLED_VALUES": "0 0 2 255 158 0 0 1 24 103 0 2 255 -127 -2147483647",
+            "GRIB_PDS_TEMPLATE_NUMBERS": "0 0 2 255 158 0 0 0 1 0 0 0 24 103 0 0 0 0 2 255 255 255 255 255 255",
+            "GRIB_REF_TIME": "1736899200",
+            "GRIB_SHORT_NAME": "2-HTGL",
+            "GRIB_UNIT": "[K]",
+            "GRIB_VALID_TIME": "1736985600"
+          },
+          "transform": [
+            0.25,
+            0.0,
+            179.875,
+            0.0,
+            -0.25,
+            90.125,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "versions": {
+            "GDAL": "3.9.3",
+            "numpy": "2.5.3",
+            "python": "3.12.6",
+            "rasterio": "1.4.3"
+          }
+        },
+        "input": {
+          "bytes": 650860,
+          "filename": "temperature.grib2",
+          "sha256": "7f7e40c92f5375d4af52f68428c02820105bafa10ad29cf2404ad0c37e7a5f30"
+        },
+        "input_and_decoded_array_unchanged": true,
+        "numerical_comparison": {
+          "compared_cells": 0,
+          "failure": "GDAL3.9.3 g2_unpack7: Data Representation Template5.42 decoding requires building against libaec",
+          "qualification": "subsequent Out of memory diagnostic is not evidence of exhausted RAM; no independent numerical/mask agreement",
+          "status": "UNAVAILABLE"
+        },
+        "physical_unit_confirmation": "ecCodes and GDAL native unit agreement",
+        "primary_decoder": {
+          "ecCodes": "2.48.0",
+          "eccodes_python": "2.48.0",
+          "numpy": "2.5.2",
+          "python": "3.12.6"
+        },
+        "queries": [
+          {
+            "comparison": {
+              "geometry": "GDAL affine node and weight agreement",
+              "numerical": "NOT TESTED: independent decoder unavailable",
+              "qualification": "ecCodes values with reused WR008 arithmetic; not independent numerical query validation"
+            },
+            "input_coordinate": {
+              "latitude": 50.0,
+              "longitude": 0.0,
+              "method": "NEAREST"
+            },
+            "method": "NEAREST",
+            "native_value": 282.2790069580078,
+            "nodes": [
+              {
+                "column": 720,
+                "latitude": 50.0,
+                "longitude_0_360": 0.0,
+                "missing": false,
+                "native_value": 282.2790069580078,
+                "row": 160,
+                "weight": 1.0
+              }
+            ],
+            "normalised_coordinate": {
+              "latitude": 50.0,
+              "longitude_0_360": 0.0,
+              "longitude_minus180_180": 0.0
+            },
+            "pole_column_canonicalised": false,
+            "status": "OK",
+            "weight_sum": 1.0
+          },
+          {
+            "comparison": {
+              "geometry": "GDAL affine node and weight agreement",
+              "numerical": "NOT TESTED: independent decoder unavailable",
+              "qualification": "ecCodes values with reused WR008 arithmetic; not independent numerical query validation"
+            },
+            "input_coordinate": {
+              "latitude": 49.9,
+              "longitude": 0.1,
+              "method": "BILINEAR"
+            },
+            "method": "BILINEAR",
+            "native_value": 281.2065069580078,
+            "nodes": [
+              {
+                "column": 720,
+                "latitude": 50.0,
+                "longitude_0_360": 0.0,
+                "missing": false,
+                "native_value": 282.2790069580078,
+                "row": 160,
+                "weight": 0.36000000000001026
+              },
+              {
+                "column": 721,
+                "latitude": 50.0,
+                "longitude_0_360": 0.25,
+                "missing": false,
+                "native_value": 281.4977569580078,
+                "row": 160,
+                "weight": 0.2399999999999841
+              },
+              {
+                "column": 720,
+                "latitude": 49.75,
+                "longitude_0_360": 0.0,
+                "missing": false,
+                "native_value": 280.7790069580078,
+                "row": 161,
+                "weight": 0.2400000000000125
+              },
+              {
+                "column": 721,
+                "latitude": 49.75,
+                "longitude_0_360": 0.25,
+                "missing": false,
+                "native_value": 278.9977569580078,
+                "row": 161,
+                "weight": 0.15999999999999318
+              }
+            ],
+            "normalised_coordinate": {
+              "latitude": 49.9,
+              "longitude_0_360": 0.1,
+              "longitude_minus180_180": 0.1
+            },
+            "pole_column_canonicalised": false,
+            "status": "OK",
+            "weight_sum": 1.0
+          },
+          {
+            "comparison": {
+              "geometry": "GDAL affine node and weight agreement",
+              "numerical": "NOT TESTED: independent decoder unavailable",
+              "qualification": "ecCodes values with reused WR008 arithmetic; not independent numerical query validation"
+            },
+            "input_coordinate": {
+              "latitude": -40.1,
+              "longitude": 179.9,
+              "method": "BILINEAR"
+            },
+            "method": "BILINEAR",
+            "native_value": 289.5327569580078,
+            "nodes": [
+              {
+                "column": 1439,
+                "latitude": -40.0,
+                "longitude_0_360": 179.75,
+                "missing": false,
+                "native_value": 289.4977569580078,
+                "row": 520,
+                "weight": 0.24000000000006366
+              },
+              {
+                "column": 0,
+                "latitude": -40.0,
+                "longitude_0_360": 180.0,
+                "missing": false,
+                "native_value": 289.6227569580078,
+                "row": 520,
+                "weight": 0.3599999999999591
+              },
+              {
+                "column": 1439,
+                "latitude": -40.25,
+                "longitude_0_360": 179.75,
+                "missing": false,
+                "native_value": 289.4352569580078,
+                "row": 521,
+                "weight": 0.1600000000000273
+              },
+              {
+                "column": 0,
+                "latitude": -40.25,
+                "longitude_0_360": 180.0,
+                "missing": false,
+                "native_value": 289.4977569580078,
+                "row": 521,
+                "weight": 0.23999999999994998
+              }
+            ],
+            "normalised_coordinate": {
+              "latitude": -40.1,
+              "longitude_0_360": 179.9,
+              "longitude_minus180_180": 179.9
+            },
+            "pole_column_canonicalised": false,
+            "status": "OK",
+            "weight_sum": 1.0
+          },
+          {
+            "comparison": {
+              "geometry": "GDAL affine node and weight agreement",
+              "numerical": "NOT TESTED: independent decoder unavailable",
+              "qualification": "ecCodes values with reused WR008 arithmetic; not independent numerical query validation"
+            },
+            "input_coordinate": {
+              "latitude": -40.1,
+              "longitude": -180.1,
+              "method": "BILINEAR"
+            },
+            "method": "BILINEAR",
+            "native_value": 289.5327569580078,
+            "nodes": [
+              {
+                "column": 1439,
+                "latitude": -40.0,
+                "longitude_0_360": 179.75,
+                "missing": false,
+                "native_value": 289.4977569580078,
+                "row": 520,
+                "weight": 0.24000000000006366
+              },
+              {
+                "column": 0,
+                "latitude": -40.0,
+                "longitude_0_360": 180.0,
+                "missing": false,
+                "native_value": 289.6227569580078,
+                "row": 520,
+                "weight": 0.3599999999999591
+              },
+              {
+                "column": 1439,
+                "latitude": -40.25,
+                "longitude_0_360": 179.75,
+                "missing": false,
+                "native_value": 289.4352569580078,
+                "row": 521,
+                "weight": 0.1600000000000273
+              },
+              {
+                "column": 0,
+                "latitude": -40.25,
+                "longitude_0_360": 180.0,
+                "missing": false,
+                "native_value": 289.4977569580078,
+                "row": 521,
+                "weight": 0.23999999999994998
+              }
+            ],
+            "normalised_coordinate": {
+              "latitude": -40.1,
+              "longitude_0_360": 179.9,
+              "longitude_minus180_180": 179.9
+            },
+            "pole_column_canonicalised": false,
+            "status": "OK",
+            "weight_sum": 1.0
+          },
+          {
+            "input_coordinate": {
+              "latitude": 89.875,
+              "longitude": 0.0,
+              "method": "BILINEAR"
+            },
+            "method": "BILINEAR",
+            "normalised_coordinate": {
+              "latitude": 89.875,
+              "longitude_0_360": 0.0,
+              "longitude_minus180_180": 0.0
+            },
+            "status": "UNSUPPORTED_POLAR_CAP_BILINEAR"
+          },
+          {
+            "input_coordinate": {
+              "latitude": 91.0,
+              "longitude": 0.0,
+              "method": "NEAREST"
+            },
+            "status": "LATITUDE_OUT_OF_RANGE"
+          }
+        ],
+        "section_sha256": {
+          "2": "75170cf66c4c5a8ac56fca014c7c2b2fc4fea93cca50a086c3cee3bbff39b3e2",
+          "3": "6e8229bf09d191ccf7d719ef88dc9e848fe663cf45a91d0691b7e17815a03036",
+          "4": "05305dc99b0f6aaa750e6528cc06b2562388bd8e7adfba7d2b7c813a8c214316",
+          "5": "e6ae822998a5285be3a62c7af63929d15aab4919d766c5eba5c7a4a9cc037d29",
+          "6": "c2dc6153f4dc277f902b2b8e9f64f957e4de897eef89081b0de598f7b8fb3fac"
+        },
+        "source_index": {
+          "_length": 650860,
+          "_offset": 30668984,
+          "class": "od",
+          "date": "20250115",
+          "domain": "g",
+          "expver": "0001",
+          "levtype": "sfc",
+          "param": "2t",
+          "step": "24",
+          "stream": "oper",
+          "time": "0000",
+          "type": "fc"
+        },
+        "summary": {
+          "cells": 1038240,
+          "finite": 1038240,
+          "maximum_native": 313.1227569580078,
+          "mean_native": 277.4459813569907,
+          "minimum_native": 217.9665069580078,
+          "missing": 0,
+          "negative_cells": 0,
+          "valid": 1038240,
+          "zero_cells": 0
+        }
+      },
+      "wind_u": {
+        "actual_metadata": {
+          "Ni": 1440,
+          "Nj": 721,
+          "alternativeRowScanning": 0,
+          "backgroundProcess": 255,
+          "binaryScaleFactor": -6,
+          "bitmapPresent": 0,
+          "bitsPerValue": 12,
+          "ccsdsBlockSize": 32,
+          "ccsdsFlags": 14,
+          "ccsdsRsi": 128,
+          "centre": 98,
+          "class": 1,
+          "dataDate": 20250115,
+          "dataRepresentationTemplateNumber": 42,
+          "dataTime": 0,
+          "decimalScaleFactor": 0,
+          "decoded_longitude_labels": {
+            "comparison_mapping": "labels modulo360; arrays retain native order",
+            "maximum": 179.75,
+            "minimum": -180.0
+          },
+          "discipline": 0,
+          "edition": 2,
+          "endStep": 24,
+          "expver": "0001",
+          "forecastTime": 24,
+          "generatingProcessIdentifier": 158,
+          "gridDefinitionTemplateNumber": 0,
+          "gridType": "regular_ll",
+          "iDirectionIncrementInDegrees": 0.25,
+          "iScansNegatively": 0,
+          "indicatorOfUnitOfTimeRange": 1,
+          "isConstant": 0.0,
+          "jDirectionIncrementInDegrees": 0.25,
+          "jPointsAreConsecutive": 0,
+          "jScansPositively": 0,
+          "latitudeOfFirstGridPointInDegrees": 90.0,
+          "latitudeOfLastGridPointInDegrees": -90.0,
+          "level": 10,
+          "localDefinitionNumber": 1,
+          "localTablesVersion": 1,
+          "longitudeOfFirstGridPointInDegrees": 180.0,
+          "longitudeOfLastGridPointInDegrees": 179.75,
+          "marsClass": "od",
+          "marsStream": "oper",
+          "marsType": "fc",
+          "missingValue": 9999,
+          "name": "10 metre U wind component",
+          "numberOfMissing": 0,
+          "numberOfPoints": 1038240,
+          "numberOfValues": 1038240,
+          "packingType": "grid_ccsds",
+          "paramId": 165,
+          "parameterCategory": 2,
+          "parameterNumber": 2,
+          "productDefinitionTemplateNumber": 0,
+          "productionStatusOfProcessedData": 0,
+          "radius": 6371229,
+          "referenceValue": -26.932388305664062,
+          "resolutionAndComponentFlags": 48,
+          "scaleFactorOfFirstFixedSurface": 0,
+          "scaledValueOfFirstFixedSurface": 10,
+          "scanningMode": 0,
+          "section2Length": 17,
+          "section4Length": 34,
+          "setLocalDefinition": 0,
+          "shapeOfTheEarth": 6,
+          "shortName": "10u",
+          "significanceOfReferenceTime": 1,
+          "startStep": 24,
+          "stepRange": "24",
+          "stepType": "instant",
+          "stepUnits": 1,
+          "stream": 1025,
+          "subCentre": 0,
+          "tablesVersion": 33,
+          "totalLength": 865918,
+          "type": 9,
+          "typeOfFirstFixedSurface": 103,
+          "typeOfGeneratingProcess": 2,
+          "typeOfLevel": "heightAboveGround",
+          "typeOfProcessedData": 1,
+          "typeOfSecondFixedSurface": 255,
+          "units": "m s**-1",
+          "uvRelativeToGrid": 0,
+          "validityDate": 20250116,
+          "validityTime": 0
+        },
+        "concept": {
+          "ensemble": {
+            "ensemble_structures": "NOT TESTED",
+            "kind": "deterministic",
+            "member": null
+          },
+          "evidence": "genuine primary numerical decoding; independent numerical verification separately recorded; not forecast skill",
+          "grid": {
+            "Earth_radius_m": 6371229,
+            "bilinear_latitude_domain": [
+              -89.75,
+              89.75
+            ],
+            "columns": 1440,
+            "duplicate_360_endpoint": false,
+            "east": 179.75,
+            "latitude_periodic": false,
+            "latitude_step": -0.25,
+            "longitude_periodic": true,
+            "longitude_step": 0.25,
+            "north": 90.0,
+            "registration": "native grid nodes",
+            "rows": 721,
+            "scan_mode": 0,
+            "south": -90.0,
+            "type": "regular_ll",
+            "west": 180.0
+          },
+          "grid_section3_sha256": "6e8229bf09d191ccf7d719ef88dc9e848fe663cf45a91d0691b7e17815a03036",
+          "historical_executable_version": "UNKNOWN; process158 is not an executable version",
+          "input_sha256": "4b153144cdb6623906501ddfcc915e16e1d593ce4f0ef821d4a0d62524ea9cfc",
+          "model": "IFS Open Data deterministic oper fc",
+          "native_unit": "m s**-1",
+          "parameter": {
+            "centre": 98,
+            "codes": [
+              0,
+              2,
+              2
+            ],
+            "ecCodes_paramId": 165,
+            "local_table": 1,
+            "master_table": 33,
+            "namespace": "WMO"
+          },
+          "physical_quantity": "10 metre U wind component",
+          "producer": "ECMWF",
+          "query_limitations": [
+            "grid-axis nearest, not geodesic nearest",
+            "bilinear excludes polar caps",
+            "no terrain correction, no temporal interpolation or physical accuracy inference"
+          ],
+          "temporal": {
+            "forecast_lead_seconds": 86400,
+            "kind": "instant",
+            "reference_time": "2025-01-15T00:00:00Z",
+            "valid_time": "2025-01-16T00:00:00Z"
+          },
+          "vector": {
+            "component": "eastward U",
+            "paired_vector": false,
+            "partner": "NOT ACQUIRED"
+          },
+          "vertical": {
+            "first_surface_code": 103,
+            "height_m": 10,
+            "reference": "model ground",
+            "second_surface": null
+          }
+        },
+        "decoded_float64_sha256": "b4555a21cec220a4e1f8619f5a496b49bdfaf985ddf9753f71d40b9a78992349",
+        "independent_decoder": {
+          "crs": "GEOGCS[\"Coordinate System imported from GRIB file\",DATUM[\"unnamed\",SPHEROID[\"Sphere\",6371229,0]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AXIS[\"Latitude\",NORTH],AXIS[\"Longitude\",EAST]]",
+          "tags": {
+            "GRIB_COMMENT": "u-component of wind [m/s]",
+            "GRIB_DISCIPLINE": "0(Meteorological)",
+            "GRIB_ELEMENT": "UGRD",
+            "GRIB_FORECAST_SECONDS": "86400",
+            "GRIB_IDS": "CENTER=98(ECMWF) SUBCENTER=0 MASTER_TABLE=33 LOCAL_TABLE=1 SIGNF_REF_TIME=1(Start_of_Forecast) REF_TIME=2025-01-15T00:00:00Z PROD_STATUS=0(Operational) TYPE=1(Forecast)",
+            "GRIB_PDS_PDTN": "0",
+            "GRIB_PDS_TEMPLATE_ASSEMBLED_VALUES": "2 2 2 255 158 0 0 1 24 103 0 10 255 -127 -2147483647",
+            "GRIB_PDS_TEMPLATE_NUMBERS": "2 2 2 255 158 0 0 0 1 0 0 0 24 103 0 0 0 0 10 255 255 255 255 255 255",
+            "GRIB_REF_TIME": "1736899200",
+            "GRIB_SHORT_NAME": "10-HTGL",
+            "GRIB_UNIT": "[m/s]",
+            "GRIB_VALID_TIME": "1736985600"
+          },
+          "transform": [
+            0.25,
+            0.0,
+            179.875,
+            0.0,
+            -0.25,
+            90.125,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "versions": {
+            "GDAL": "3.9.3",
+            "numpy": "2.5.3",
+            "python": "3.12.6",
+            "rasterio": "1.4.3"
+          }
+        },
+        "input": {
+          "bytes": 865918,
+          "filename": "wind_u.grib2",
+          "sha256": "4b153144cdb6623906501ddfcc915e16e1d593ce4f0ef821d4a0d62524ea9cfc"
+        },
+        "input_and_decoded_array_unchanged": true,
+        "numerical_comparison": {
+          "compared_cells": 0,
+          "failure": "GDAL3.9.3 g2_unpack7: Data Representation Template5.42 decoding requires building against libaec",
+          "qualification": "subsequent Out of memory diagnostic is not evidence of exhausted RAM; no independent numerical/mask agreement",
+          "status": "UNAVAILABLE"
+        },
+        "physical_unit_confirmation": "ecCodes and GDAL native unit agreement",
+        "primary_decoder": {
+          "ecCodes": "2.48.0",
+          "eccodes_python": "2.48.0",
+          "numpy": "2.5.2",
+          "python": "3.12.6"
+        },
+        "queries": [
+          {
+            "comparison": {
+              "geometry": "GDAL affine node and weight agreement",
+              "numerical": "NOT TESTED: independent decoder unavailable",
+              "qualification": "ecCodes values with reused WR008 arithmetic; not independent numerical query validation"
+            },
+            "input_coordinate": {
+              "latitude": 50.0,
+              "longitude": 0.0,
+              "method": "NEAREST"
+            },
+            "method": "NEAREST",
+            "native_value": -2.4948883056640625,
+            "nodes": [
+              {
+                "column": 720,
+                "latitude": 50.0,
+                "longitude_0_360": 0.0,
+                "missing": false,
+                "native_value": -2.4948883056640625,
+                "row": 160,
+                "weight": 1.0
+              }
+            ],
+            "normalised_coordinate": {
+              "latitude": 50.0,
+              "longitude_0_360": 0.0,
+              "longitude_minus180_180": 0.0
+            },
+            "pole_column_canonicalised": false,
+            "status": "OK",
+            "weight_sum": 1.0
+          },
+          {
+            "comparison": {
+              "geometry": "GDAL affine node and weight agreement",
+              "numerical": "NOT TESTED: independent decoder unavailable",
+              "qualification": "ecCodes values with reused WR008 arithmetic; not independent numerical query validation"
+            },
+            "input_coordinate": {
+              "latitude": 49.9,
+              "longitude": 0.1,
+              "method": "BILINEAR"
+            },
+            "method": "BILINEAR",
+            "native_value": -2.561138305664074,
+            "nodes": [
+              {
+                "column": 720,
+                "latitude": 50.0,
+                "longitude_0_360": 0.0,
+                "missing": false,
+                "native_value": -2.4948883056640625,
+                "row": 160,
+                "weight": 0.36000000000001026
+              },
+              {
+                "column": 721,
+                "latitude": 50.0,
+                "longitude_0_360": 0.25,
+                "missing": false,
+                "native_value": -2.4948883056640625,
+                "row": 160,
+                "weight": 0.2399999999999841
+              },
+              {
+                "column": 720,
+                "latitude": 49.75,
+                "longitude_0_360": 0.0,
+                "missing": false,
+                "native_value": -3.1355133056640625,
+                "row": 161,
+                "weight": 0.2400000000000125
+              },
+              {
+                "column": 721,
+                "latitude": 49.75,
+                "longitude_0_360": 0.25,
+                "missing": false,
+                "native_value": -1.9480133056640625,
+                "row": 161,
+                "weight": 0.15999999999999318
+              }
+            ],
+            "normalised_coordinate": {
+              "latitude": 49.9,
+              "longitude_0_360": 0.1,
+              "longitude_minus180_180": 0.1
+            },
+            "pole_column_canonicalised": false,
+            "status": "OK",
+            "weight_sum": 1.0
+          },
+          {
+            "comparison": {
+              "geometry": "GDAL affine node and weight agreement",
+              "numerical": "NOT TESTED: independent decoder unavailable",
+              "qualification": "ecCodes values with reused WR008 arithmetic; not independent numerical query validation"
+            },
+            "input_coordinate": {
+              "latitude": -40.1,
+              "longitude": 179.9,
+              "method": "BILINEAR"
+            },
+            "method": "BILINEAR",
+            "native_value": 2.786361694335965,
+            "nodes": [
+              {
+                "column": 1439,
+                "latitude": -40.0,
+                "longitude_0_360": 179.75,
+                "missing": false,
+                "native_value": 3.0676116943359375,
+                "row": 520,
+                "weight": 0.24000000000006366
+              },
+              {
+                "column": 0,
+                "latitude": -40.0,
+                "longitude_0_360": 180.0,
+                "missing": false,
+                "native_value": 2.9113616943359375,
+                "row": 520,
+                "weight": 0.3599999999999591
+              },
+              {
+                "column": 1439,
+                "latitude": -40.25,
+                "longitude_0_360": 179.75,
+                "missing": false,
+                "native_value": 2.6457366943359375,
+                "row": 521,
+                "weight": 0.1600000000000273
+              },
+              {
+                "column": 0,
+                "latitude": -40.25,
+                "longitude_0_360": 180.0,
+                "missing": false,
+                "native_value": 2.4113616943359375,
+                "row": 521,
+                "weight": 0.23999999999994998
+              }
+            ],
+            "normalised_coordinate": {
+              "latitude": -40.1,
+              "longitude_0_360": 179.9,
+              "longitude_minus180_180": 179.9
+            },
+            "pole_column_canonicalised": false,
+            "status": "OK",
+            "weight_sum": 1.0
+          },
+          {
+            "comparison": {
+              "geometry": "GDAL affine node and weight agreement",
+              "numerical": "NOT TESTED: independent decoder unavailable",
+              "qualification": "ecCodes values with reused WR008 arithmetic; not independent numerical query validation"
+            },
+            "input_coordinate": {
+              "latitude": -40.1,
+              "longitude": -180.1,
+              "method": "BILINEAR"
+            },
+            "method": "BILINEAR",
+            "native_value": 2.786361694335965,
+            "nodes": [
+              {
+                "column": 1439,
+                "latitude": -40.0,
+                "longitude_0_360": 179.75,
+                "missing": false,
+                "native_value": 3.0676116943359375,
+                "row": 520,
+                "weight": 0.24000000000006366
+              },
+              {
+                "column": 0,
+                "latitude": -40.0,
+                "longitude_0_360": 180.0,
+                "missing": false,
+                "native_value": 2.9113616943359375,
+                "row": 520,
+                "weight": 0.3599999999999591
+              },
+              {
+                "column": 1439,
+                "latitude": -40.25,
+                "longitude_0_360": 179.75,
+                "missing": false,
+                "native_value": 2.6457366943359375,
+                "row": 521,
+                "weight": 0.1600000000000273
+              },
+              {
+                "column": 0,
+                "latitude": -40.25,
+                "longitude_0_360": 180.0,
+                "missing": false,
+                "native_value": 2.4113616943359375,
+                "row": 521,
+                "weight": 0.23999999999994998
+              }
+            ],
+            "normalised_coordinate": {
+              "latitude": -40.1,
+              "longitude_0_360": 179.9,
+              "longitude_minus180_180": 179.9
+            },
+            "pole_column_canonicalised": false,
+            "status": "OK",
+            "weight_sum": 1.0
+          },
+          {
+            "input_coordinate": {
+              "latitude": 89.875,
+              "longitude": 0.0,
+              "method": "BILINEAR"
+            },
+            "method": "BILINEAR",
+            "normalised_coordinate": {
+              "latitude": 89.875,
+              "longitude_0_360": 0.0,
+              "longitude_minus180_180": 0.0
+            },
+            "status": "UNSUPPORTED_POLAR_CAP_BILINEAR"
+          },
+          {
+            "input_coordinate": {
+              "latitude": 91.0,
+              "longitude": 0.0,
+              "method": "NEAREST"
+            },
+            "status": "LATITUDE_OUT_OF_RANGE"
+          }
+        ],
+        "section_sha256": {
+          "2": "75170cf66c4c5a8ac56fca014c7c2b2fc4fea93cca50a086c3cee3bbff39b3e2",
+          "3": "6e8229bf09d191ccf7d719ef88dc9e848fe663cf45a91d0691b7e17815a03036",
+          "4": "0dc3a1e45c596cebd7d05feae66777fb17e35e230b348bba4211e41ee8d899f8",
+          "5": "fc9d2e457225c3806e5a6b5507b15818be68bc10143d2314c622c8a0c61f76ff",
+          "6": "c2dc6153f4dc277f902b2b8e9f64f957e4de897eef89081b0de598f7b8fb3fac"
+        },
+        "source_index": {
+          "_length": 865918,
+          "_offset": 18957935,
+          "class": "od",
+          "date": "20250115",
+          "domain": "g",
+          "expver": "0001",
+          "levtype": "sfc",
+          "param": "10u",
+          "step": "24",
+          "stream": "oper",
+          "time": "0000",
+          "type": "fc"
+        },
+        "summary": {
+          "cells": 1038240,
+          "finite": 1038240,
+          "maximum_native": 26.520736694335938,
+          "mean_native": -0.23637805032810935,
+          "minimum_native": -26.932388305664062,
+          "missing": 0,
+          "negative_cells": 569300,
+          "valid": 1038240,
+          "zero_cells": 0
+        }
+      }
+    },
+    "limitations": [
+      "only three deterministic delivered IFS fields; not full internal model grid or all IFS products",
+      "no complete vector, ensemble, cloud, reduced/rotated/projected grid or real bitmap evidence",
+      "GDAL local precipitation name/unit unavailable; raw PDT metadata checked; independent numerical status recorded per field",
+      "no forecast skill, model comparison, terrain accuracy, production API or observation verification"
+    ],
+    "outcome": "B",
+    "pins_sha256": "5d66f639489417a9350580ba3edfee47fdb7a4643fa45bceb3e32083f4cb16f3",
+    "schema": "meridian-weather-wr011-ifs-conformance-v1",
+    "source": {
+      "cases": [
+        {
+          "acceptance": "centre98/ECMWF IFS oper fc source plus actual parameter/vertical/time/unit definitions; exactly one GRIB2 message; no unsupported/ambiguous statistical profile or ensemble; grid actual metadata and independent geometry; fail on decoding or unaccounted numerical disagreement",
+          "expected_native_units": "K",
+          "expected_temporal_support": "instantaneous +24h",
+          "grid": "documented 0p25 delivery; actual encoded geometry/order/Earth shape must be derived without forcing GFS geometry",
+          "id": "temperature",
+          "index": {
+            "_length": 650860,
+            "_offset": 30668984,
+            "class": "od",
+            "date": "20250115",
+            "domain": "g",
+            "expver": "0001",
+            "levtype": "sfc",
+            "param": "2t",
+            "step": "24",
+            "stream": "oper",
+            "time": "0000",
+            "type": "fc"
+          },
+          "intended_quantity": "2m above model ground"
+        },
+        {
+          "acceptance": "centre98/ECMWF IFS oper fc source plus actual parameter/vertical/time/unit definitions; exactly one GRIB2 message; no unsupported/ambiguous statistical profile or ensemble; grid actual metadata and independent geometry; fail on decoding or unaccounted numerical disagreement",
+          "expected_native_units": "m",
+          "expected_temporal_support": "accumulation; explicit encoded start/end/duration must be established, not assumed 24h",
+          "grid": "documented 0p25 delivery; actual encoded geometry/order/Earth shape must be derived without forcing GFS geometry",
+          "id": "precipitation",
+          "index": {
+            "_length": 886088,
+            "_offset": 24451999,
+            "class": "od",
+            "date": "20250115",
+            "domain": "g",
+            "expver": "0001",
+            "levtype": "sfc",
+            "param": "tp",
+            "step": "24",
+            "stream": "oper",
+            "time": "0000",
+            "type": "fc"
+          },
+          "intended_quantity": "surface accumulated water-equivalent depth"
+        },
+        {
+          "acceptance": "centre98/ECMWF IFS oper fc source plus actual parameter/vertical/time/unit definitions; exactly one GRIB2 message; no unsupported/ambiguous statistical profile or ensemble; grid actual metadata and independent geometry; fail on decoding or unaccounted numerical disagreement",
+          "expected_native_units": "m s**-1",
+          "expected_temporal_support": "instantaneous +24h, single component; basis required, no paired vector",
+          "grid": "documented 0p25 delivery; actual encoded geometry/order/Earth shape must be derived without forcing GFS geometry",
+          "id": "wind_u",
+          "index": {
+            "_length": 865918,
+            "_offset": 18957935,
+            "class": "od",
+            "date": "20250115",
+            "domain": "g",
+            "expver": "0001",
+            "levtype": "sfc",
+            "param": "10u",
+            "step": "24",
+            "stream": "oper",
+            "time": "0000",
+            "type": "fc"
+          },
+          "intended_quantity": "10m above model ground"
+        }
+      ],
+      "comparison_predeclaration": "After metadata but before values, require encoding lattice and exact integer domain<2**24. Fixed binary32 rounding error envelope for scaling/multiply/add, with float64 guard, derived from representation and existing GDAL source; never adjust using observed decoder differences. Where source arithmetic supports exact predicted float32 require that too. Unknown packing/grid yields limitation or blocker. Native units retained.",
+      "etag": "\"dc1ba435377f76b6dbda3d4c44414ee3\"",
+      "index_sha256": "67bd79565b0e018e2f0aa82c7e769655e1f2a45fd11d14522ef71b5732415521",
+      "model": "ECMWF IFS independent NWP, oper deterministic fc, classod expver0001 from source index",
+      "parent_bytes": 125566280,
+      "queries": [
+        {
+          "latitude": 50.0,
+          "longitude": 0.0,
+          "method": "NEAREST"
+        },
+        {
+          "latitude": 49.9,
+          "longitude": 0.1,
+          "method": "BILINEAR"
+        },
+        {
+          "latitude": -40.1,
+          "longitude": 179.9,
+          "method": "BILINEAR"
+        },
+        {
+          "latitude": -40.1,
+          "longitude": -180.1,
+          "method": "BILINEAR"
+        },
+        {
+          "latitude": 89.875,
+          "longitude": 0.0,
+          "method": "BILINEAR"
+        },
+        {
+          "latitude": 91.0,
+          "longitude": 0.0,
+          "method": "NEAREST"
+        }
+      ],
+      "rights_decision": "Official managed public AWS replica documented anonymous/no-account/free, exact CC BY4 licence and additional ECMWF notices reviewed. Internal retention/processing and attributed derived receipts within licence; no operational services requested, service agreement not signed, no production/legal clearance. Service-agreement wording retained as future delivery qualification.",
+      "run": "2025-01-15T00:00:00Z",
+      "source": "https://ecmwf-forecasts.s3.eu-central-1.amazonaws.com/20250115/00z/ifs/0p25/oper/20250115000000-24h-oper-fc.grib2",
+      "utc": "2026-10-10T18:08:44.710605+00:00",
+      "valid_endpoint": "2025-01-16T00:00:00Z"
+    }
+  },
+  "scientific_receipt_bytes": 55996,
+  "scientific_receipt_sha256": "b35534194aa168e8750363f348b74551139fd8f8a14194bdd33d3c8d379ab31b"
+}
