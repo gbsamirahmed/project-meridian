@@ -251,3 +251,8 @@ No new application/production integration starts here.
 ## WR014 finite ensemble evidence — 11 October 2026
 
 [Weather WR014](../research/weather/ensemble-member-identity-uncertainty-semantics.md) reaches **Outcome A** for three GEFS members and selected-subset conformance. No complete distribution/calibration/skill/architecture/device maturity follows. First integrated Atlas prerequisites/preservation/device gates unchanged. Exactly one next direction: **model-ground and real-terrain support mismatch pilot — NOT BEGUN**, terrain-first evidence without integration.
+
+
+## WR015 support-comparison decision — 11 October 2026
+
+[Weather WR015](../research/weather/model-ground-real-terrain-support-mismatch.md) reaches **Outcome B**: matched GFS height/Atlas sampling evidence, scientific differences withheld for unresolved vertical equivalence. Numerical interpretation is not correction/skill/architecture/device maturity. Exactly one next task: **scientific-to-application roadmap decision checkpoint — NOT BEGUN**, assessing remaining Weather gaps versus genuine integration blockers, minimal Atlas application foundations and independent Weather continuation. Existing preservation, scientific, device, economic, privacy and parity gates remain authoritative. No application or further datum experiment begins here.

@@ -1,0 +1,958 @@
+{
+  "actual_metadata": {
+    "Ni": 1440,
+    "Nj": 721,
+    "alternativeRowScanning": 0,
+    "backgroundProcess": 0,
+    "binaryScaleFactor": 4,
+    "bitmapPresent": 0,
+    "bitsPerValue": 16,
+    "centre": 7,
+    "dataDate": 20250115,
+    "dataRepresentationTemplateNumber": 3,
+    "dataTime": 0,
+    "decimalScaleFactor": 2,
+    "discipline": 0,
+    "edition": 2,
+    "endStep": 24,
+    "forecastTime": 24,
+    "generatingProcessIdentifier": 96,
+    "gridDefinitionTemplateNumber": 0,
+    "gridType": "regular_ll",
+    "iDirectionIncrementInDegrees": 0.25,
+    "iScansNegatively": 0,
+    "jDirectionIncrementInDegrees": 0.25,
+    "jPointsAreConsecutive": 0,
+    "jScansPositively": 0,
+    "latitudeOfFirstGridPointInDegrees": 90.0,
+    "latitudeOfLastGridPointInDegrees": -90.0,
+    "level": 0,
+    "localTablesVersion": 1,
+    "longitudeOfFirstGridPointInDegrees": 0.0,
+    "longitudeOfLastGridPointInDegrees": 359.75,
+    "missingValue": 9999,
+    "missingValueManagementUsed": 0,
+    "name": "Orography",
+    "numberOfGroupsOfDataValues": 16674,
+    "numberOfMissing": 0,
+    "numberOfPoints": 1038240,
+    "numberOfValues": 1038240,
+    "orderOfSpatialDifferencing": 2,
+    "packingType": "grid_complex_spatial_differencing",
+    "parameterCategory": 3,
+    "parameterNumber": 5,
+    "productDefinitionTemplateNumber": 0,
+    "productionStatusOfProcessedData": 0,
+    "radius": 6371229,
+    "referenceValue": -35514.0625,
+    "scaleFactorOfFirstFixedSurface": 0,
+    "scaledValueOfFirstFixedSurface": 0,
+    "scanningMode": 0,
+    "shapeOfTheEarth": 6,
+    "shortName": "orog",
+    "significanceOfReferenceTime": 1,
+    "startStep": 24,
+    "stepType": "instant",
+    "stepUnits": 1,
+    "subCentre": 0,
+    "tablesVersion": 2,
+    "typeOfFirstFixedSurface": 1,
+    "typeOfGeneratingProcess": 2,
+    "typeOfLevel": "surface",
+    "typeOfProcessedData": 1,
+    "units": "m",
+    "validityDate": 20250116,
+    "validityTime": 0
+  },
+  "atlas_source": {
+    "coverage": [
+      2620000,
+      1087000,
+      2630000,
+      1097000
+    ],
+    "horizontal_crs": "EPSG:2056",
+    "id": "swissalti3d-riffelhorn-support-selection",
+    "kind": "DTM without vegetation/buildings; dated ice/glaciated surface may remain",
+    "native_unit": "m",
+    "nodata": -9999,
+    "posting_m": 0.5,
+    "release": "2024 / 2024-2 Valais",
+    "source_identity": "b24a4fdc7b378ba79d442d0ce216a031dfb95a6bc6eed5ad9c33be61175651f4",
+    "vertical_reference": "LN02 EPSG:5728"
+  },
+  "coordinates": {
+    "height_transformed": false,
+    "identity": {
+      "databaseSha256": "47a7205d83ba6b7774b763f276ab57331f4dade2b2cfbcc0d486677e6543350b",
+      "dllSha256": "f7c0e557890e501e33545c3406f167810faed118c79b6c0de25100b29058af80",
+      "version": "9.5.1"
+    },
+    "interface_agreement": "exact; shared PROJ kernel, not independent CRS implementation",
+    "network_enabled": false,
+    "operation": "proj=pipeline step inv proj=somerc lat_0=46.9524055555556 lon_0=7.43958333333333 k_0=1 x_0=2600000 y_0=1200000 ellps=bessel step proj=push v_3 step proj=cart ellps=bessel step proj=helmert x=674.374 y=15.056 z=405.346 step inv proj=cart ellps=WGS84 step proj=pop v_3 step proj=unitconvert xy_in=rad xy_out=deg",
+    "reference_labels": "OGC:CRS84 longitude-first; GFS spherical grid labels; no 3D Earth reconciliation"
+  },
+  "forecast_relationship": {
+    "grid_section3_sha256": "2f05f13897b18b42bb2790905e2476fce9a2e07b89f63499a12da9e202f3367f",
+    "historical_executable_version": "UNKNOWN; encoded process96 is not a suite version",
+    "internal_orography_generation": "NOT TESTED",
+    "static_across_runs_or_steps": "NOT TESTED",
+    "status": "VERIFIED SAME DELIVERED PRODUCT"
+  },
+  "grid": {
+    "Earth_radius_m": 6371229,
+    "bilinear_latitude_domain": [
+      -89.75,
+      89.75
+    ],
+    "columns": 1440,
+    "duplicate_360_endpoint": false,
+    "east": 359.75,
+    "latitude_periodic": false,
+    "latitude_step": -0.25,
+    "longitude_periodic": true,
+    "longitude_step": 0.25,
+    "north": 90.0,
+    "registration": "native grid nodes",
+    "rows": 721,
+    "scan_mode": 0,
+    "south": -90.0,
+    "type": "regular_ll",
+    "west": 0.0
+  },
+  "independent_comparison": {
+    "compared_cells": 1038240,
+    "exact_binary32_profile_cells": 1038240,
+    "exact_equality_cells": 15295,
+    "mask_agreement": true,
+    "maximum_absolute_difference_native": 0.0003515625003274181,
+    "maximum_analytic_bound_native": 0.0006889141992848537,
+    "maximum_integer_lattice_residual": 3.637978807091713e-12,
+    "mean_absolute_difference_native": 1.0345554992646233e-05,
+    "policy": "prospective per-cell bound and exact g2clib arithmetic profile; no fitted tolerance",
+    "status": "INDEPENDENT AGREEMENT; EXPLAINED BINARY32 ROUNDING"
+  },
+  "independent_decoder": {
+    "crs": "GEOGCS[\"Coordinate System imported from GRIB file\",DATUM[\"unnamed\",SPHEROID[\"Sphere\",6371229,0]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AXIS[\"Latitude\",NORTH],AXIS[\"Longitude\",EAST]]",
+    "gdal": "3.9.3",
+    "independence": "GDAL/degrib/g2clib GRIB unpacking, not ecCodes",
+    "metadata": {
+      "GRIB_COMMENT": "Geopotential height [gpm]",
+      "GRIB_DISCIPLINE": "0(Meteorological)",
+      "GRIB_ELEMENT": "HGT",
+      "GRIB_FORECAST_SECONDS": "86400",
+      "GRIB_IDS": "CENTER=7(US-NCEP) SUBCENTER=0 MASTER_TABLE=2 LOCAL_TABLE=1 SIGNF_REF_TIME=1(Start_of_Forecast) REF_TIME=2025-01-15T00:00:00Z PROD_STATUS=0(Operational) TYPE=1(Forecast)",
+      "GRIB_PDS_PDTN": "0",
+      "GRIB_PDS_TEMPLATE_ASSEMBLED_VALUES": "3 5 2 0 96 0 0 1 24 1 0 0 255 0 0",
+      "GRIB_PDS_TEMPLATE_NUMBERS": "3 5 2 0 96 0 0 0 1 0 0 0 24 1 0 0 0 0 0 255 0 0 0 0 0",
+      "GRIB_REF_TIME": "1736899200",
+      "GRIB_SHORT_NAME": "0-SFC",
+      "GRIB_UNIT": "[gpm]",
+      "GRIB_VALID_TIME": "1736985600"
+    },
+    "numpy": "2.5.3",
+    "python": "3.12.6",
+    "rasterio": "1.4.3",
+    "transform": [
+      0.25,
+      0.0,
+      -0.125,
+      0.0,
+      -0.25,
+      90.125,
+      0.0,
+      0.0,
+      1.0
+    ]
+  },
+  "input": {
+    "bytes": 492443,
+    "filename": "gfs-2025011500-f024-surface-hgt.grib2",
+    "sha256": "867da86f7971c8123bd799a90eb5bec0bd9c2ca751452067b7319ef9adec394f"
+  },
+  "limitations": [
+    "No datum/height equivalence established; all scientific differences withheld",
+    "No model-cell terrain mean or internal orography-generation evidence",
+    "No lapse rate, forecast correction, skill or mountain safety inference",
+    "One delivered GFS profile only; no IFS/GEFS orography match tested"
+  ],
+  "locations": [
+    {
+      "comparison": {
+        "absolute_difference": null,
+        "reason": "No established quantity/reference equivalence or vertical transformation",
+        "signed_difference": null,
+        "status": "UNRESOLVED VERTICAL COMPARABILITY"
+      },
+      "geographic_lon_lat": [
+        7.761213293330552,
+        45.97910793931709
+      ],
+      "horizontal_crs": "EPSG:2056",
+      "location": "benchmark-centre",
+      "model_queries": {
+        "BILINEAR": {
+          "decoder_unit_label": "m",
+          "input_coordinate": {
+            "latitude": 45.97910793931709,
+            "longitude": 7.761213293330552,
+            "method": "BILINEAR"
+          },
+          "method": "BILINEAR",
+          "native_value": 2734.6163975204477,
+          "nodes": [
+            {
+              "column": 31,
+              "latitude": 46.0,
+              "longitude_0_360": 7.75,
+              "missing": false,
+              "native_value": 2845.339375,
+              "row": 176,
+              "weight": 0.875326884821621
+            },
+            {
+              "column": 32,
+              "latitude": 46.0,
+              "longitude_0_360": 8.0,
+              "missing": false,
+              "native_value": 2295.0993750000002,
+              "row": 176,
+              "weight": 0.041104872446734796
+            },
+            {
+              "column": 31,
+              "latitude": 45.75,
+              "longitude_0_360": 7.75,
+              "missing": false,
+              "native_value": 1801.179375,
+              "row": 177,
+              "weight": 0.07981994185616928
+            },
+            {
+              "column": 32,
+              "latitude": 45.75,
+              "longitude_0_360": 8.0,
+              "missing": false,
+              "native_value": 1575.259375,
+              "row": 177,
+              "weight": 0.003748300875474931
+            }
+          ],
+          "normalised_coordinate": {
+            "latitude": 45.97910793931709,
+            "longitude_0_360": 7.761213293330552,
+            "longitude_minus180_180": 7.761213293330552
+          },
+          "physical_quantity": "geopotential height; authoritative table unit gpm",
+          "pole_column_canonicalised": false,
+          "status": "OK",
+          "weight_sum": 1.0
+        },
+        "NEAREST": {
+          "decoder_unit_label": "m",
+          "input_coordinate": {
+            "latitude": 45.97910793931709,
+            "longitude": 7.761213293330552,
+            "method": "NEAREST"
+          },
+          "method": "NEAREST",
+          "native_value": 2845.339375,
+          "nodes": [
+            {
+              "column": 31,
+              "latitude": 46.0,
+              "longitude_0_360": 7.75,
+              "missing": false,
+              "native_value": 2845.339375,
+              "row": 176,
+              "weight": 1.0
+            }
+          ],
+          "normalised_coordinate": {
+            "latitude": 45.97910793931709,
+            "longitude_0_360": 7.761213293330552,
+            "longitude_minus180_180": 7.761213293330552
+          },
+          "physical_quantity": "geopotential height; authoritative table unit gpm",
+          "pole_column_canonicalised": false,
+          "status": "OK",
+          "weight_sum": 1.0
+        }
+      },
+      "original_coordinate": [
+        2625000,
+        1092000
+      ],
+      "setting": "accepted Riffelhorn/Riffelsee benchmark context",
+      "support_qualification": "native model nodes/interpolated orography versus 0.5m DTM cell; no cell-mean equivalence",
+      "terrain": {
+        "cell_centre": [
+          2625000.25,
+          1091999.75
+        ],
+        "column": 0,
+        "footprint": [
+          2625000.0,
+          1091999.5,
+          2625000.5,
+          1092000.0
+        ],
+        "precision": "native float32",
+        "row": 0,
+        "sampling": "nearest native centre, exact tie east/south; equivalently containing half-open cell",
+        "source": {
+          "bounds": [
+            2625000,
+            1091000,
+            2626000,
+            1092000
+          ],
+          "bytes": 15925644,
+          "nodataCells": 0,
+          "officialItem": "swissalti3d_2024_2625-1091",
+          "officialProperties": {
+            "created": "2024-12-19T06:29:37.677084Z",
+            "datetime": "2024-01-01T00:00:00Z",
+            "updated": "2024-12-19T10:38:00.116595Z"
+          },
+          "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2625-1091_0.5_2056_5728.tif",
+          "reused": true,
+          "sha256": "0d2ebc6d0b4fd06ab2191cbf2a2f5ab77728249fa8c835075040bce4dc4899de",
+          "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2625-1091/swissalti3d_2024_2625-1091_0.5_2056_5728.tif"
+        },
+        "value_m": 2587.48291015625,
+        "vertical_reference": "LN02 EPSG:5728"
+      }
+    },
+    {
+      "comparison": {
+        "absolute_difference": null,
+        "reason": "No established quantity/reference equivalence or vertical transformation",
+        "signed_difference": null,
+        "status": "UNRESOLVED VERTICAL COMPARABILITY"
+      },
+      "geographic_lon_lat": [
+        7.76136159197739,
+        46.00429492611648
+      ],
+      "horizontal_crs": "EPSG:2056",
+      "location": "north-support",
+      "model_queries": {
+        "BILINEAR": {
+          "decoder_unit_label": "m",
+          "input_coordinate": {
+            "latitude": 46.00429492611648,
+            "longitude": 7.76136159197739,
+            "method": "BILINEAR"
+          },
+          "method": "BILINEAR",
+          "native_value": 2806.1950399527705,
+          "nodes": [
+            {
+              "column": 31,
+              "latitude": 46.25,
+              "longitude_0_360": 7.75,
+              "missing": false,
+              "native_value": 1993.019375,
+              "row": 175,
+              "weight": 0.016398949296181645
+            },
+            {
+              "column": 32,
+              "latitude": 46.25,
+              "longitude_0_360": 8.0,
+              "missing": false,
+              "native_value": 2089.179375,
+              "row": 175,
+              "weight": 0.0007807551697355659
+            },
+            {
+              "column": 31,
+              "latitude": 46.0,
+              "longitude_0_360": 7.75,
+              "missing": false,
+              "native_value": 2845.339375,
+              "row": 176,
+              "weight": 0.9381546827942594
+            },
+            {
+              "column": 32,
+              "latitude": 46.0,
+              "longitude_0_360": 8.0,
+              "missing": false,
+              "native_value": 2295.0993750000002,
+              "row": 176,
+              "weight": 0.04466561273982335
+            }
+          ],
+          "normalised_coordinate": {
+            "latitude": 46.00429492611648,
+            "longitude_0_360": 7.76136159197739,
+            "longitude_minus180_180": 7.76136159197739
+          },
+          "physical_quantity": "geopotential height; authoritative table unit gpm",
+          "pole_column_canonicalised": false,
+          "status": "OK",
+          "weight_sum": 1.0
+        },
+        "NEAREST": {
+          "decoder_unit_label": "m",
+          "input_coordinate": {
+            "latitude": 46.00429492611648,
+            "longitude": 7.76136159197739,
+            "method": "NEAREST"
+          },
+          "method": "NEAREST",
+          "native_value": 2845.339375,
+          "nodes": [
+            {
+              "column": 31,
+              "latitude": 46.0,
+              "longitude_0_360": 7.75,
+              "missing": false,
+              "native_value": 2845.339375,
+              "row": 176,
+              "weight": 1.0
+            }
+          ],
+          "normalised_coordinate": {
+            "latitude": 46.00429492611648,
+            "longitude_0_360": 7.76136159197739,
+            "longitude_minus180_180": 7.76136159197739
+          },
+          "physical_quantity": "geopotential height; authoritative table unit gpm",
+          "pole_column_canonicalised": false,
+          "status": "OK",
+          "weight_sum": 1.0
+        }
+      },
+      "original_coordinate": [
+        2625000,
+        1094800
+      ],
+      "setting": "accepted northern lower/valley context; not a survey classification",
+      "support_qualification": "native model nodes/interpolated orography versus 0.5m DTM cell; no cell-mean equivalence",
+      "terrain": {
+        "cell_centre": [
+          2625000.25,
+          1094799.75
+        ],
+        "column": 0,
+        "footprint": [
+          2625000.0,
+          1094799.5,
+          2625000.5,
+          1094800.0
+        ],
+        "precision": "native float32",
+        "row": 400,
+        "sampling": "nearest native centre, exact tie east/south; equivalently containing half-open cell",
+        "source": {
+          "bounds": [
+            2625000,
+            1094000,
+            2626000,
+            1095000
+          ],
+          "bytes": 16897280,
+          "nodataCells": 0,
+          "officialItem": "swissalti3d_2024_2625-1094",
+          "officialProperties": {
+            "created": "2024-12-19T06:29:38.149226Z",
+            "datetime": "2024-01-01T00:00:00Z",
+            "updated": "2024-12-19T10:38:00.515119Z"
+          },
+          "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2625-1094_0.5_2056_5728.tif",
+          "reused": false,
+          "sha256": "a40fbf29d431c827faac57fd5b06819593de3f14f94fa0767fdef4ea7a67fa48",
+          "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2625-1094/swissalti3d_2024_2625-1094_0.5_2056_5728.tif"
+        },
+        "value_m": 2272.895751953125,
+        "vertical_reference": "LN02 EPSG:5728"
+      }
+    },
+    {
+      "comparison": {
+        "absolute_difference": null,
+        "reason": "No established quantity/reference equivalence or vertical transformation",
+        "signed_difference": null,
+        "status": "UNRESOLVED VERTICAL COMPARABILITY"
+      },
+      "geographic_lon_lat": [
+        7.761065130016671,
+        45.95392102824902
+      ],
+      "horizontal_crs": "EPSG:2056",
+      "location": "south-support",
+      "model_queries": {
+        "BILINEAR": {
+          "decoder_unit_label": "m",
+          "input_coordinate": {
+            "latitude": 45.95392102824902,
+            "longitude": 7.761065130016671,
+            "method": "BILINEAR"
+          },
+          "method": "BILINEAR",
+          "native_value": 2631.1759655109136,
+          "nodes": [
+            {
+              "column": 31,
+              "latitude": 46.0,
+              "longitude_0_360": 7.75,
+              "missing": false,
+              "native_value": 2845.339375,
+              "row": 176,
+              "weight": 0.7795815099447438
+            },
+            {
+              "column": 32,
+              "latitude": 46.0,
+              "longitude_0_360": 8.0,
+              "missing": false,
+              "native_value": 2295.0993750000002,
+              "row": 176,
+              "weight": 0.036102603051337216
+            },
+            {
+              "column": 31,
+              "latitude": 45.75,
+              "longitude_0_360": 7.75,
+              "missing": false,
+              "native_value": 1801.179375,
+              "row": 177,
+              "weight": 0.17615796998857364
+            },
+            {
+              "column": 32,
+              "latitude": 45.75,
+              "longitude_0_360": 8.0,
+              "missing": false,
+              "native_value": 1575.259375,
+              "row": 177,
+              "weight": 0.008157917015345354
+            }
+          ],
+          "normalised_coordinate": {
+            "latitude": 45.95392102824902,
+            "longitude_0_360": 7.761065130016671,
+            "longitude_minus180_180": 7.761065130016671
+          },
+          "physical_quantity": "geopotential height; authoritative table unit gpm",
+          "pole_column_canonicalised": false,
+          "status": "OK",
+          "weight_sum": 1.0
+        },
+        "NEAREST": {
+          "decoder_unit_label": "m",
+          "input_coordinate": {
+            "latitude": 45.95392102824902,
+            "longitude": 7.761065130016671,
+            "method": "NEAREST"
+          },
+          "method": "NEAREST",
+          "native_value": 2845.339375,
+          "nodes": [
+            {
+              "column": 31,
+              "latitude": 46.0,
+              "longitude_0_360": 7.75,
+              "missing": false,
+              "native_value": 2845.339375,
+              "row": 176,
+              "weight": 1.0
+            }
+          ],
+          "normalised_coordinate": {
+            "latitude": 45.95392102824902,
+            "longitude_0_360": 7.761065130016671,
+            "longitude_minus180_180": 7.761065130016671
+          },
+          "physical_quantity": "geopotential height; authoritative table unit gpm",
+          "pole_column_canonicalised": false,
+          "status": "OK",
+          "weight_sum": 1.0
+        }
+      },
+      "original_coordinate": [
+        2625000,
+        1089200
+      ],
+      "setting": "accepted southern high/glaciated context; source epoch/surface caveat",
+      "support_qualification": "native model nodes/interpolated orography versus 0.5m DTM cell; no cell-mean equivalence",
+      "terrain": {
+        "cell_centre": [
+          2625000.25,
+          1089199.75
+        ],
+        "column": 0,
+        "footprint": [
+          2625000.0,
+          1089199.5,
+          2625000.5,
+          1089200.0
+        ],
+        "precision": "native float32",
+        "row": 1600,
+        "sampling": "nearest native centre, exact tie east/south; equivalently containing half-open cell",
+        "source": {
+          "bounds": [
+            2625000,
+            1089000,
+            2626000,
+            1090000
+          ],
+          "bytes": 16581503,
+          "nodataCells": 0,
+          "officialItem": "swissalti3d_2024_2625-1089",
+          "officialProperties": {
+            "created": "2024-12-19T06:29:37.357932Z",
+            "datetime": "2024-01-01T00:00:00Z",
+            "updated": "2024-12-19T10:37:59.930919Z"
+          },
+          "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2625-1089_0.5_2056_5728.tif",
+          "reused": false,
+          "sha256": "6917ceb87a5a58a8f5787c7222286902dca1f0ceee973b80dcfdeebb19acb9da",
+          "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2625-1089/swissalti3d_2024_2625-1089_0.5_2056_5728.tif"
+        },
+        "value_m": 2941.1328125,
+        "vertical_reference": "LN02 EPSG:5728"
+      }
+    },
+    {
+      "comparison": {
+        "absolute_difference": null,
+        "reason": "No established quantity/reference equivalence or vertical transformation",
+        "signed_difference": null,
+        "status": "UNRESOLVED VERTICAL COMPARABILITY"
+      },
+      "geographic_lon_lat": [
+        7.725086450430299,
+        45.97920547962389
+      ],
+      "horizontal_crs": "EPSG:2056",
+      "location": "west-support",
+      "model_queries": {
+        "BILINEAR": {
+          "decoder_unit_label": "m",
+          "input_coordinate": {
+            "latitude": 45.97920547962389,
+            "longitude": 7.725086450430299,
+            "method": "BILINEAR"
+          },
+          "method": "BILINEAR",
+          "native_value": 2748.119342501444,
+          "nodes": [
+            {
+              "column": 30,
+              "latitude": 46.0,
+              "longitude_0_360": 7.5,
+              "missing": false,
+              "native_value": 2744.219375,
+              "row": 176,
+              "weight": 0.09136515325210971
+            },
+            {
+              "column": 31,
+              "latitude": 46.0,
+              "longitude_0_360": 7.75,
+              "missing": false,
+              "native_value": 2845.339375,
+              "row": 176,
+              "weight": 0.825456765243462
+            },
+            {
+              "column": 30,
+              "latitude": 45.75,
+              "longitude_0_360": 7.5,
+              "missing": false,
+              "native_value": 1664.859375,
+              "row": 177,
+              "weight": 0.008289045026692683
+            },
+            {
+              "column": 31,
+              "latitude": 45.75,
+              "longitude_0_360": 7.75,
+              "missing": false,
+              "native_value": 1801.179375,
+              "row": 177,
+              "weight": 0.07488903647773561
+            }
+          ],
+          "normalised_coordinate": {
+            "latitude": 45.97920547962389,
+            "longitude_0_360": 7.725086450430299,
+            "longitude_minus180_180": 7.725086450430299
+          },
+          "physical_quantity": "geopotential height; authoritative table unit gpm",
+          "pole_column_canonicalised": false,
+          "status": "OK",
+          "weight_sum": 1.0
+        },
+        "NEAREST": {
+          "decoder_unit_label": "m",
+          "input_coordinate": {
+            "latitude": 45.97920547962389,
+            "longitude": 7.725086450430299,
+            "method": "NEAREST"
+          },
+          "method": "NEAREST",
+          "native_value": 2845.339375,
+          "nodes": [
+            {
+              "column": 31,
+              "latitude": 46.0,
+              "longitude_0_360": 7.75,
+              "missing": false,
+              "native_value": 2845.339375,
+              "row": 176,
+              "weight": 1.0
+            }
+          ],
+          "normalised_coordinate": {
+            "latitude": 45.97920547962389,
+            "longitude_0_360": 7.725086450430299,
+            "longitude_minus180_180": 7.725086450430299
+          },
+          "physical_quantity": "geopotential height; authoritative table unit gpm",
+          "pole_column_canonicalised": false,
+          "status": "OK",
+          "weight_sum": 1.0
+        }
+      },
+      "original_coordinate": [
+        2622200,
+        1092000
+      ],
+      "setting": "accepted western contrasting hillside context",
+      "support_qualification": "native model nodes/interpolated orography versus 0.5m DTM cell; no cell-mean equivalence",
+      "terrain": {
+        "cell_centre": [
+          2622200.25,
+          1091999.75
+        ],
+        "column": 400,
+        "footprint": [
+          2622200.0,
+          1091999.5,
+          2622200.5,
+          1092000.0
+        ],
+        "precision": "native float32",
+        "row": 0,
+        "sampling": "nearest native centre, exact tie east/south; equivalently containing half-open cell",
+        "source": {
+          "bounds": [
+            2622000,
+            1091000,
+            2623000,
+            1092000
+          ],
+          "bytes": 16274480,
+          "nodataCells": 0,
+          "officialItem": "swissalti3d_2024_2622-1091",
+          "officialProperties": {
+            "created": "2024-12-19T06:28:45.777685Z",
+            "datetime": "2024-01-01T00:00:00Z",
+            "updated": "2024-12-19T10:35:49.636936Z"
+          },
+          "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1091_0.5_2056_5728.tif",
+          "reused": false,
+          "sha256": "014d778f4b3cd0dadb17c1ac0b19df0f6e4ada7c212bdc82ab825207fc6cb92d",
+          "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2622-1091/swissalti3d_2024_2622-1091_0.5_2056_5728.tif"
+        },
+        "value_m": 2644.354248046875,
+        "vertical_reference": "LN02 EPSG:5728"
+      }
+    },
+    {
+      "comparison": {
+        "absolute_difference": null,
+        "reason": "No established quantity/reference equivalence or vertical transformation",
+        "signed_difference": null,
+        "status": "UNRESOLVED VERTICAL COMPARABILITY"
+      },
+      "geographic_lon_lat": [
+        7.797340000897246,
+        45.97899879165961
+      ],
+      "horizontal_crs": "EPSG:2056",
+      "location": "east-support",
+      "model_queries": {
+        "BILINEAR": {
+          "decoder_unit_label": "m",
+          "input_coordinate": {
+            "latitude": 45.97899879165961,
+            "longitude": 7.797340000897246,
+            "method": "BILINEAR"
+          },
+          "method": "BILINEAR",
+          "native_value": 2658.590448509354,
+          "nodes": [
+            {
+              "column": 31,
+              "latitude": 46.0,
+              "longitude_0_360": 7.75,
+              "missing": false,
+              "native_value": 2845.339375,
+              "row": 176,
+              "weight": 0.7425423185963035
+            },
+            {
+              "column": 32,
+              "latitude": 46.0,
+              "longitude_0_360": 8.0,
+              "missing": false,
+              "native_value": 2295.0993750000002,
+              "row": 176,
+              "weight": 0.17345284804214942
+            },
+            {
+              "column": 31,
+              "latitude": 45.75,
+              "longitude_0_360": 7.75,
+              "missing": false,
+              "native_value": 1801.179375,
+              "row": 177,
+              "weight": 0.06809767781471252
+            },
+            {
+              "column": 32,
+              "latitude": 45.75,
+              "longitude_0_360": 8.0,
+              "missing": false,
+              "native_value": 1575.259375,
+              "row": 177,
+              "weight": 0.015907155546834553
+            }
+          ],
+          "normalised_coordinate": {
+            "latitude": 45.97899879165961,
+            "longitude_0_360": 7.797340000897246,
+            "longitude_minus180_180": 7.797340000897246
+          },
+          "physical_quantity": "geopotential height; authoritative table unit gpm",
+          "pole_column_canonicalised": false,
+          "status": "OK",
+          "weight_sum": 1.0
+        },
+        "NEAREST": {
+          "decoder_unit_label": "m",
+          "input_coordinate": {
+            "latitude": 45.97899879165961,
+            "longitude": 7.797340000897246,
+            "method": "NEAREST"
+          },
+          "method": "NEAREST",
+          "native_value": 2845.339375,
+          "nodes": [
+            {
+              "column": 31,
+              "latitude": 46.0,
+              "longitude_0_360": 7.75,
+              "missing": false,
+              "native_value": 2845.339375,
+              "row": 176,
+              "weight": 1.0
+            }
+          ],
+          "normalised_coordinate": {
+            "latitude": 45.97899879165961,
+            "longitude_0_360": 7.797340000897246,
+            "longitude_minus180_180": 7.797340000897246
+          },
+          "physical_quantity": "geopotential height; authoritative table unit gpm",
+          "pole_column_canonicalised": false,
+          "status": "OK",
+          "weight_sum": 1.0
+        }
+      },
+      "original_coordinate": [
+        2627800,
+        1092000
+      ],
+      "setting": "accepted eastern contrasting hillside context",
+      "support_qualification": "native model nodes/interpolated orography versus 0.5m DTM cell; no cell-mean equivalence",
+      "terrain": {
+        "cell_centre": [
+          2627800.25,
+          1091999.75
+        ],
+        "column": 1600,
+        "footprint": [
+          2627800.0,
+          1091999.5,
+          2627800.5,
+          1092000.0
+        ],
+        "precision": "native float32",
+        "row": 0,
+        "sampling": "nearest native centre, exact tie east/south; equivalently containing half-open cell",
+        "source": {
+          "bounds": [
+            2627000,
+            1091000,
+            2628000,
+            1092000
+          ],
+          "bytes": 15761686,
+          "nodataCells": 0,
+          "officialItem": "swissalti3d_2024_2627-1091",
+          "officialProperties": {
+            "created": "2024-12-19T06:30:18.613680Z",
+            "datetime": "2024-01-01T00:00:00Z",
+            "updated": "2024-12-19T10:38:18.538403Z"
+          },
+          "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1091_0.5_2056_5728.tif",
+          "reused": false,
+          "sha256": "10e84994bf3012e8a06460725a2c131a1372554ab600502fb59506182d729f04",
+          "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2627-1091/swissalti3d_2024_2627-1091_0.5_2056_5728.tif"
+        },
+        "value_m": 2703.971435546875,
+        "vertical_reference": "LN02 EPSG:5728"
+      }
+    }
+  ],
+  "model_height": {
+    "NCEP_authoritative_unit": "gpm",
+    "eccodes_unit_label": "m",
+    "native_conversion": "none",
+    "quantity": "geopotential height WMO0/3/5",
+    "vertical_reference": "UNRESOLVED exact relation to LN02; no vertical transformation"
+  },
+  "numerical_summary_native": {
+    "dtype": "float64",
+    "finite": 1038240,
+    "maximum": 5917.819375,
+    "mean": 380.32041383495147,
+    "minimum": -355.140625,
+    "missing": 0
+  },
+  "outcome": "B \u2014 PARTIAL SUPPORT COMPARISON",
+  "pins_sha256": "09c75e14522cad596ba65064f08a706c467b47d8b4c18bd6e7925c97ed5db1f3",
+  "primary_decoder": {
+    "eccodes_native": "2.48.0",
+    "eccodes_python": "2.48.0",
+    "numpy": "2.5.2",
+    "python": "3.12.6"
+  },
+  "schema": "meridian-wr015-support-v1",
+  "signed_difference_convention": "model-ground height minus Atlas terrain height",
+  "source": {
+    "inventory_line": "562:407176421:d=2025011500:HGT:surface:24 hour fcst:",
+    "inventory_message_number": 562,
+    "inventory_sha256": "fa11be72ab29ea43520dc6a6fc8de81bd8e0e024c96da94ed05495bc43b39dcb",
+    "inventory_url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20250115/00/atmos/gfs.t00z.pgrb2.0p25.f024.idx",
+    "object_url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20250115/00/atmos/gfs.t00z.pgrb2.0p25.f024",
+    "parent_bytes": 537858357,
+    "parent_etag": "e9f55c2f3f45d6cdb3aac9e4b7a36aba",
+    "processing_version": "UNRESOLVED; generating process 96, not exact binary/suite version",
+    "provider": "NOAA/NCEP GFS through NOAA Open Data Dissemination",
+    "range_end_inclusive": 407668863,
+    "range_start": 407176421,
+    "rights_checked": "2026-10-10",
+    "rights_url": "https://registry.opendata.aws/noaa-gfs-bdp-pds/"
+  },
+  "utility_sha256": "8768c56db450ef776e4b727e3732541db4cc4d3d1e877a74d73b94851378d141"
+}

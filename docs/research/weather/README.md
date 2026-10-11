@@ -161,3 +161,8 @@ Exactly one next task: **independent CCSDS numerical-decoding conformance — NO
 ## WR014 bounded ensemble evidence — 11 October 2026
 
 [WR014](ensemble-member-identity-uncertainty-semantics.md) reaches **Outcome A** for three genuine GEFS members: encoded control0/positive1/positive2, one instantaneous2mK profile, independent full-grid decoding and selected-subset arithmetic. Raw30/documented31/registry21 remain distinct; no complete probabilistic validity/skill. Prior results/MIDAS blockers unchanged. Exactly one next task: **model-ground and real-terrain support mismatch pilot — NOT BEGUN**, [scope](ensemble-member-identity-uncertainty-semantics.md#8-programme-reassessment-and-exactly-one-next-task).
+
+
+## WR015 model-ground support decision — 11 October 2026
+
+[WR015](model-ground-real-terrain-support-mismatch.md): **Outcome B**, genuine matched GFS surface geopotential height independently decoded and five retained Swiss DTM cells sampled. LN02 equivalence remains unresolved; all scientific elevation differences withheld. Near-surface forecasts refer to model ground. No correction/skill/production readiness. Exactly one next task: **scientific-to-application roadmap decision checkpoint — NOT BEGUN**, defined in the report; no WR016 starts.

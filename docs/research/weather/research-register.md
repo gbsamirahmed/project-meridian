@@ -250,3 +250,16 @@ Exactly one next task: **ensemble-member identity and bounded uncertainty-semant
 | WR14-Q03 / W31, W39 | Scoped member identity and raw/documented/selected population distinctions | RESEARCHED (finite candidate refinement); not a production API/framework |
 
 Exactly one next task: **model-ground and real-terrain support mismatch pilot — NOT BEGUN**, [report](ensemble-member-identity-uncertainty-semantics.md#8-programme-reassessment-and-exactly-one-next-task).
+
+
+## WR015 bounded support evidence — 11 October 2026
+
+[WR015](model-ground-real-terrain-support-mismatch.md): **Outcome B**. Historical rows,42 Atlas statuses and WR006 blockers unchanged; no broad scientific readiness promoted.
+
+| Identifier / parents | Bounded result | Status / remaining gate |
+|---|---|---|
+| WR15-Q01 / W11, W31 | Same delivered GFS parent/time/process/grid HGT match and1,038,240 independently compared native values | EXPERIMENTALLY VALIDATED (one E4/D2 no-missing profile); exact suite/internal orography/static-history untested |
+| WR15-Q02 / W03, W24, W30 | Five fixed LV95/native DTM cells and qualified XY/model-nearest/bilinear support receipts | EXPERIMENTALLY VALIDATED (sampling only); datum/quantity bridge UNRESOLVED, every signed/absolute difference null |
+| WR15-Q03 / W11, W24, W39 | Independent model/terrain support and explicit comparison-eligibility gate | RESEARCHED (bounded candidate refinement); no correction, forecast skill or production schema |
+
+Exactly one next task: **scientific-to-application roadmap decision checkpoint — NOT BEGUN**, [report](model-ground-real-terrain-support-mismatch.md#7-programme-decision-and-exactly-one-next-task).

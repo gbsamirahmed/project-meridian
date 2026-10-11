@@ -207,3 +207,8 @@ GDAL metadata/geometry passes; numerical decoding is blocked by absent libaec.
 ## WR014 ensemble refinement — 11 October 2026
 
 [WR014](ensemble-member-identity-uncertainty-semantics.md) adds **verified** comparability: GEFS control0/positive1/positive2, same run/+24h/instantaneous2mK/0.5° grid. Raw30→documented31 remains **UNRESOLVED**, selected-subset arithmetic only. Identity cannot derive from deterministic lineage/filename. Grid differs from WR008; concepts transfer with explicit geometry, not fixed implementation. No forecast-reference skill; strict/revised MIDAS remains **BLOCKED**.
+
+
+## WR015 model-ground and real terrain — 11 October 2026
+
+[WR015](model-ground-real-terrain-support-mismatch.md): **Outcome B**. Genuine GFS surface geopotential height matches WR007's delivered forecast product/grid and is independently numerically decoded. Five retained Swiss DTM cell samples support horizontal interpretation; model-node/interpolated orography differs in support from0.5m terrain cells. GFS height quantity/reference has no established LN02 bridge; all scientific elevation differences remain null. Neither metre labels nor XY reprojection justify vertical subtraction, temperature correction or local accuracy claims. IFS/GEFS orography relationships untested, WR006 unchanged. Candidate contracts need independent support/transform identities and explicit comparison eligibility; no new production contract.

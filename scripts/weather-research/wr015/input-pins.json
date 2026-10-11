@@ -1,0 +1,781 @@
+{
+  "acquisition": [
+    {
+      "attempt": 1,
+      "body_bytes": 26384,
+      "filename": "ncep-height-table.html",
+      "headers": {
+        "Content-Length": "26384",
+        "Content-Range": null,
+        "Content-Type": "text/html; charset=utf-8",
+        "ETag": null,
+        "Last-Modified": null
+      },
+      "method": "GET",
+      "sha256": "17bc8d54e7ae0dbfe7bf559d83b25c921be919e220debcc2dfe581a81554780e",
+      "status": 200,
+      "url": "https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/grib2_table4-2-0-3.shtml",
+      "utc": "2026-10-11T08:19:18.659115+00:00"
+    },
+    {
+      "attempt": 2,
+      "body_bytes": 0,
+      "failure": "HTTP Error 404: Not Found",
+      "method": "GET",
+      "status": 404,
+      "url": "https://www.nco.ncep.noaa.gov/pmb/products/gfs/gfs.t00z.pgrb2.0p25.f024.shtml",
+      "utc": "2026-10-11T08:19:19.524825+00:00"
+    },
+    {
+      "attempt": 3,
+      "body_bytes": 67610,
+      "filename": "ncep-products.html",
+      "headers": {
+        "Content-Length": null,
+        "Content-Range": null,
+        "Content-Type": "text/html; charset=UTF-8",
+        "ETag": null,
+        "Last-Modified": null
+      },
+      "method": "GET",
+      "sha256": "a23925fc60c71604d234557d7caaa26cd17ec38c667185a9d4467560c7907686",
+      "status": 200,
+      "url": "https://www.nco.ncep.noaa.gov/pmb/products/gfs/",
+      "utc": "2026-10-11T08:19:50.665621+00:00"
+    },
+    {
+      "attempt": 4,
+      "body_bytes": 492443,
+      "filename": "gfs-2025011500-f024-surface-hgt.grib2",
+      "headers": {
+        "Content-Length": "492443",
+        "Content-Range": "bytes 407176421-407668863/537858357",
+        "Content-Type": "binary/octet-stream",
+        "ETag": "\"e9f55c2f3f45d6cdb3aac9e4b7a36aba\"",
+        "Last-Modified": "Wed, 15 Jan 2025 03:44:04 GMT"
+      },
+      "method": "GET",
+      "requested_range": [
+        407176421,
+        407668863
+      ],
+      "sha256": "867da86f7971c8123bd799a90eb5bec0bd9c2ca751452067b7319ef9adec394f",
+      "status": 206,
+      "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20250115/00/atmos/gfs.t00z.pgrb2.0p25.f024",
+      "utc": "2026-10-11T08:24:27.705944+00:00"
+    }
+  ],
+  "atlas_source": {
+    "coverage": [
+      2620000,
+      1087000,
+      2630000,
+      1097000
+    ],
+    "horizontal_crs": "EPSG:2056",
+    "id": "swissalti3d-riffelhorn-support-selection",
+    "kind": "DTM without vegetation/buildings; dated ice/glaciated surface may remain",
+    "native_unit": "m",
+    "nodata": -9999,
+    "posting_m": 0.5,
+    "release": "2024 / 2024-2 Valais",
+    "source_identity": "b24a4fdc7b378ba79d442d0ce216a031dfb95a6bc6eed5ad9c33be61175651f4",
+    "vertical_reference": "LN02 EPSG:5728"
+  },
+  "checkpoint": "e368a020c8a1f84bcd597cd57ba255b4b54193a2",
+  "comparison": "full-grid independent masks/values, alignment before arithmetic; exact predicted binary32 profile + analytic two-operation bound for E0/D2 complex packing per unchanged WR007; otherwise numerical independence unresolved until prospective evidence review",
+  "dependencies": {
+    "docs/atlas/riffelhorn-support-acquisition.json": "06a5f816bb5098096ad185c39cd2c154502391308733089ebc5cd535ed4b007f",
+    "docs/atlas/riffelhorn-support-cameras.json": "d8e1f3a6b5a3c216401aded997691043556c8eec6efe57202ff1675c71dbeaa5",
+    "docs/atlas/riffelhorn-support-official-verification.json": "4967bb00b67733d15594b9d4ded3813e147618d9b825bc1810406f082ecb7e4b",
+    "docs/atlas/riffelhorn-support-product.json": "9e68fc417bce9a3f2c93d7f0cd07cb940c00b0229ba1f9ae63624613310926e5",
+    "scripts/atlas/portable-spike/geometry-crs/native_proj.py": "0f59280d280571532cc1bfe6f6389c43178db290eef81fa8a4d7882101df4ffe",
+    "scripts/weather-research/wr007/README.md": "e6f07a42000bdce93c8b58d9f4cc633a4a54907dc4baec28b9bd8f6ab52e43d0",
+    "scripts/weather-research/wr007/gfs_field_pilot.py": "faa31e3f6960a5e26b24a0084cb898e63c2165649b232d4d39af20f06e54e0cc",
+    "scripts/weather-research/wr007/input-pins.json": "56cd8ff334f5c1365cb8fbd3e9fe2fd0e4d9678ce53a7a079159c1eb40b912f3",
+    "scripts/weather-research/wr007/integrity-receipt.json": "54e7c78fda6f47fe6ce8cf8b17a0efcbb1fdf7c4ac3df4c4075c91ca4e962f82",
+    "scripts/weather-research/wr007/test_gfs_field_pilot.py": "9796cfa2f12fbc5dcd096bd2ff534c20ef3efda7b7060ad318ecbc0d8290ae23",
+    "scripts/weather-research/wr008/README.md": "3b7a5f88c8b5c6089eb733acd01558a4e7f69dbc7cc281cf138ff88fcaa577fd",
+    "scripts/weather-research/wr008/gfs_point_sampling.py": "835c28f179bd1aa4d97f9326a59399ea076eb8b96816121bfe83e343372ded50",
+    "scripts/weather-research/wr008/input-pins.json": "a7057a2a65565082fa4beb3c4502c5b33228e9a73771a8ed7ac7d0cf7a0c29b3",
+    "scripts/weather-research/wr008/query-profile.json": "adaf7d3ae0365906302d1d56f8e73399bb40be50dc1879bc666d8acb3fc574be",
+    "scripts/weather-research/wr008/sampling-receipt.json": "d85458c62b80991b6a1908b446d246f59d6ff5f34e325f5e3a67b4de230d1a3a",
+    "scripts/weather-research/wr008/test_gfs_point_sampling.py": "0631844a8f1ae2dc167907ee8c4e86e59031b7cef2533c7612af52b8278dba32",
+    "scripts/weather-research/wr009/README.md": "f97d90028759cbab9762d028da65b4a6deb7b96b9387cf8eaaf32b238a95f956",
+    "scripts/weather-research/wr009/gfs_precipitation_pilot.py": "263ab41a9529a98e8c0fa76d93a03b2c24e4a22aa4333c434857f61950311835",
+    "scripts/weather-research/wr009/input-pins.json": "607cde2d6b77f45962530c38fad19c24ad272a5a7b40c125cec6d1af879a0357",
+    "scripts/weather-research/wr009/integrity-receipt.json": "443d339db55c7354c6c5e68ce1f47416a7ceb0eb8415ba64abb441975a7fc665",
+    "scripts/weather-research/wr009/interval-interpretation-receipt.json": "86268e5f5dec40b6244f226e5979a595b793f907e7d49cb87fbd668a520296fc",
+    "scripts/weather-research/wr009/test_gfs_precipitation_pilot.py": "a3a179230b937a1b1cb5fb3c531ce08fec57c9a8237c5f633f9493fe5ff502d5",
+    "scripts/weather-research/wr010/README.md": "62256e5229a5809653af2260df96a26ec80699fdfe9a77297bb96f47eb6925e6",
+    "scripts/weather-research/wr010/field_compatibility.py": "7b0b13ff1face2ff75ca828c2e0e15f98cfcf57c7c29a3b034ce8cd430286116",
+    "scripts/weather-research/wr010/input-pins.json": "dcd2e24ef79c4d074d13b04de00cb08311f13d6ae2abaa065f6bebe1fe965949",
+    "scripts/weather-research/wr010/integrity-receipt.json": "7fd9c7cbce79994e14d573743de3273079172d3bf1406e5b880523e49ccc40f5",
+    "scripts/weather-research/wr010/test_field_compatibility.py": "1512ae6d6d1e82ad67673ec8ca1f5920636468811656a7aaa590e2b80df8bab5",
+    "scripts/weather-research/wr011/README.md": "dc155ac000b944b80b9fa937336143264fb31869d75c60a140997a750cf7271f",
+    "scripts/weather-research/wr011/ifs_contract_pilot.py": "5679730fa0cac848b3748dfc699bb2f61d1312466e065f500eca9300cea88271",
+    "scripts/weather-research/wr011/input-pins.json": "5d66f639489417a9350580ba3edfee47fdb7a4643fa45bceb3e32083f4cb16f3",
+    "scripts/weather-research/wr011/integrity-receipt.json": "99b588908a444e248a1e64e33ce7561096f98fc0958db23214cbd768fe69c06f",
+    "scripts/weather-research/wr011/test_ifs_contract_pilot.py": "414fdb482ff60b66d96af09aed86e17f318e5eae5bb0c92657a2775f23efefcd",
+    "scripts/weather-research/wr012/README.md": "16e42ee3e404bb265e8efe818317a2095bd1d93ad7f41407723206f7c1c0cb14",
+    "scripts/weather-research/wr012/ccsds_conformance.py": "b045d4d92fff00279872a29c55c8e9537a0e3ecb3acbc34b55e510e44fc9dea1",
+    "scripts/weather-research/wr012/decoder-capability-receipt.json": "5759da86a1ae0506d6815ed931754290615a9c2ed3aa558486ca7423f9986a81",
+    "scripts/weather-research/wr012/input-pins.json": "d9b7b535ceec18be27694d430ac41b5acdcc67aa10bd759e319ec32ae75f98c0",
+    "scripts/weather-research/wr012/numerical-comparison-receipt.json": "962a914411e7a428e12a9c328a467eb5f31984a703f3ec0555c4cdb12ffeb531",
+    "scripts/weather-research/wr012/reference_ccsds.py": "dfa23fda3f9e32895f826efcb6838618612a76732f1c3277e49d510b2e900a29",
+    "scripts/weather-research/wr012/test_ccsds_conformance.py": "4e7e985fbf128c8affa68f1e7e8301a3ad106a2323b2e7f7be759ed6548e99f6",
+    "scripts/weather-research/wr013/README.md": "c3cab702c78d1e0cd5d60339c8ffff09b2a6b69a2dabb0c37311c14bc825920b",
+    "scripts/weather-research/wr013/input-pins.json": "f7b8ea4dc57a73cdce1941891a9a6f45f6477a4cab8137ab31391a661b2917cd",
+    "scripts/weather-research/wr013/offline-query-replay-receipt.json": "88185fe21ae445d592ac7a879ed48b0e980dbd3cceee6fafdff5b4704169df3f",
+    "scripts/weather-research/wr013/offline_reader.py": "0de91e38cfa0fc29a0e05e1b09edccf718e9391871cb720e2f56f1b83e3ca752",
+    "scripts/weather-research/wr013/package-integrity-receipt.json": "d78150b8235f92a9f9b6b94dc505c871bdf8025d6022c3bb794df63b7521a426",
+    "scripts/weather-research/wr013/package_pilot.py": "8389df362df9844e7498ac4da57ee8bf4783431dedb1938eb2586852bd10dd7f",
+    "scripts/weather-research/wr013/test_offline_replay.py": "9c1865a23025f454d9f76b368d6defaac6d87548c5e25a209fb2c3fc52b899b3",
+    "scripts/weather-research/wr014/README.md": "42073b28735dd5063362bb466603f72620830b7e7dfd739f53aa81c8f9147838",
+    "scripts/weather-research/wr014/ensemble_pilot.py": "59e0c1a85827ab8f6af3504be2fe99b107ac6f5fb935ef83fd3fadf4d08661b8",
+    "scripts/weather-research/wr014/input-pins.json": "83d0a77cd78f61853681d1eb39ccee1ba2315e3050cea988f31609e9da58cfa3",
+    "scripts/weather-research/wr014/integrity-receipt.json": "2823d733d69a774ccfe60cfb81f3b117f8dbfcb325460490298d11fd4d00421a",
+    "scripts/weather-research/wr014/test_ensemble_pilot.py": "a97d6d11a2d1647d5ddda33f3fac42451cd2912ecab66e3f474b1dc6ba69ded2"
+  },
+  "expected": {
+    "Ni": 1440,
+    "Nj": 721,
+    "alternativeRowScanning": 0,
+    "backgroundProcess": 0,
+    "binaryScaleFactor": 4,
+    "bitmapPresent": 0,
+    "bitsPerValue": 16,
+    "centre": 7,
+    "dataDate": 20250115,
+    "dataRepresentationTemplateNumber": 3,
+    "dataTime": 0,
+    "decimalScaleFactor": 2,
+    "discipline": 0,
+    "edition": 2,
+    "endStep": 24,
+    "forecastTime": 24,
+    "generatingProcessIdentifier": 96,
+    "gridDefinitionTemplateNumber": 0,
+    "gridType": "regular_ll",
+    "iDirectionIncrementInDegrees": 0.25,
+    "iScansNegatively": 0,
+    "jDirectionIncrementInDegrees": 0.25,
+    "jPointsAreConsecutive": 0,
+    "jScansPositively": 0,
+    "latitudeOfFirstGridPointInDegrees": 90.0,
+    "latitudeOfLastGridPointInDegrees": -90.0,
+    "level": 0,
+    "localTablesVersion": 1,
+    "longitudeOfFirstGridPointInDegrees": 0.0,
+    "longitudeOfLastGridPointInDegrees": 359.75,
+    "missingValue": 9999,
+    "missingValueManagementUsed": 0,
+    "name": "Orography",
+    "numberOfGroupsOfDataValues": 16674,
+    "numberOfMissing": 0,
+    "numberOfPoints": 1038240,
+    "numberOfValues": 1038240,
+    "orderOfSpatialDifferencing": 2,
+    "packingType": "grid_complex_spatial_differencing",
+    "parameterCategory": 3,
+    "parameterNumber": 5,
+    "productDefinitionTemplateNumber": 0,
+    "productionStatusOfProcessedData": 0,
+    "radius": 6371229,
+    "referenceValue": -35514.0625,
+    "scaleFactorOfFirstFixedSurface": 0,
+    "scaledValueOfFirstFixedSurface": 0,
+    "scanningMode": 0,
+    "shapeOfTheEarth": 6,
+    "shortName": "orog",
+    "significanceOfReferenceTime": 1,
+    "startStep": 24,
+    "stepType": "instant",
+    "stepUnits": 1,
+    "subCentre": 0,
+    "tablesVersion": 2,
+    "typeOfFirstFixedSurface": 1,
+    "typeOfGeneratingProcess": 2,
+    "typeOfLevel": "surface",
+    "typeOfProcessedData": 1,
+    "units": "m",
+    "validityDate": 20250116,
+    "validityTime": 0
+  },
+  "expected_grid": {
+    "Ni": 1440,
+    "Nj": 721,
+    "gridDefinitionTemplateNumber": 0,
+    "gridType": "regular_ll",
+    "iDirectionIncrementInDegrees": 0.25,
+    "jDirectionIncrementInDegrees": 0.25,
+    "latitudeOfFirstGridPointInDegrees": 90.0,
+    "latitudeOfLastGridPointInDegrees": -90.0,
+    "longitudeOfFirstGridPointInDegrees": 0.0,
+    "longitudeOfLastGridPointInDegrees": 359.75,
+    "numberOfPoints": 1038240,
+    "radius": 6371229,
+    "scanningMode": 0,
+    "shapeOfTheEarth": 6
+  },
+  "forecast": {
+    "expected": {
+      "Ni": 1440,
+      "Nj": 721,
+      "alternativeRowScanning": 0,
+      "backgroundProcess": 0,
+      "binaryScaleFactor": 0,
+      "bitmapPresent": 0,
+      "bitsPerValue": 13,
+      "centre": 7,
+      "dataDate": 20250115,
+      "dataRepresentationTemplateNumber": 3,
+      "dataTime": 0,
+      "decimalScaleFactor": 2,
+      "discipline": 0,
+      "edition": 2,
+      "endStep": 24,
+      "forecastTime": 24,
+      "generatingProcessIdentifier": 96,
+      "gridDefinitionTemplateNumber": 0,
+      "gridType": "regular_ll",
+      "iDirectionIncrementInDegrees": 0.25,
+      "iScansNegatively": 0,
+      "jDirectionIncrementInDegrees": 0.25,
+      "jPointsAreConsecutive": 0,
+      "jScansPositively": 0,
+      "latitudeOfFirstGridPointInDegrees": 90.0,
+      "latitudeOfLastGridPointInDegrees": -90.0,
+      "level": 2,
+      "localTablesVersion": 1,
+      "longitudeOfFirstGridPointInDegrees": 0.0,
+      "longitudeOfLastGridPointInDegrees": 359.75,
+      "missingValue": 9999,
+      "missingValueManagementUsed": 0,
+      "name": "2 metre temperature",
+      "numberOfGroupsOfDataValues": 32065,
+      "numberOfMissing": 0,
+      "numberOfPoints": 1038240,
+      "numberOfValues": 1038240,
+      "orderOfSpatialDifferencing": 2,
+      "packingType": "grid_complex_spatial_differencing",
+      "parameterCategory": 0,
+      "parameterNumber": 0,
+      "productDefinitionTemplateNumber": 0,
+      "productionStatusOfProcessedData": 0,
+      "radius": 6371229,
+      "referenceValue": 22276.79296875,
+      "scaleFactorOfFirstFixedSurface": 0,
+      "scaledValueOfFirstFixedSurface": 2,
+      "scanningMode": 0,
+      "shapeOfTheEarth": 6,
+      "shortName": "2t",
+      "significanceOfReferenceTime": 1,
+      "startStep": 24,
+      "stepType": "instant",
+      "stepUnits": 1,
+      "subCentre": 0,
+      "tablesVersion": 2,
+      "typeOfFirstFixedSurface": 103,
+      "typeOfGeneratingProcess": 2,
+      "typeOfLevel": "heightAboveGround",
+      "typeOfProcessedData": 1,
+      "units": "K",
+      "validityDate": 20250116,
+      "validityTime": 0
+    },
+    "input": {
+      "bytes": 874115,
+      "filename": "gfs-2025011500-f024-t2m.grib2",
+      "sha256": "0b95fc06fe9ca08de57f9c5089b8fcd5d7b6a42977b35f669da65ec0f43f40e4"
+    },
+    "metadata_keys": [
+      "edition",
+      "centre",
+      "subCentre",
+      "tablesVersion",
+      "localTablesVersion",
+      "significanceOfReferenceTime",
+      "productionStatusOfProcessedData",
+      "typeOfProcessedData",
+      "typeOfGeneratingProcess",
+      "backgroundProcess",
+      "generatingProcessIdentifier",
+      "dataDate",
+      "dataTime",
+      "stepUnits",
+      "forecastTime",
+      "stepType",
+      "startStep",
+      "endStep",
+      "validityDate",
+      "validityTime",
+      "discipline",
+      "parameterCategory",
+      "parameterNumber",
+      "name",
+      "shortName",
+      "typeOfLevel",
+      "level",
+      "typeOfFirstFixedSurface",
+      "scaleFactorOfFirstFixedSurface",
+      "scaledValueOfFirstFixedSurface",
+      "units",
+      "productDefinitionTemplateNumber",
+      "gridType",
+      "gridDefinitionTemplateNumber",
+      "Ni",
+      "Nj",
+      "numberOfPoints",
+      "scanningMode",
+      "iScansNegatively",
+      "jScansPositively",
+      "jPointsAreConsecutive",
+      "alternativeRowScanning",
+      "shapeOfTheEarth",
+      "radius",
+      "latitudeOfFirstGridPointInDegrees",
+      "longitudeOfFirstGridPointInDegrees",
+      "latitudeOfLastGridPointInDegrees",
+      "longitudeOfLastGridPointInDegrees",
+      "iDirectionIncrementInDegrees",
+      "jDirectionIncrementInDegrees",
+      "packingType",
+      "dataRepresentationTemplateNumber",
+      "referenceValue",
+      "binaryScaleFactor",
+      "decimalScaleFactor",
+      "bitsPerValue",
+      "bitmapPresent",
+      "missingValue",
+      "numberOfMissing",
+      "numberOfValues",
+      "missingValueManagementUsed",
+      "orderOfSpatialDifferencing",
+      "numberOfGroupsOfDataValues"
+    ],
+    "numeric_code_keys": [
+      "centre",
+      "typeOfProcessedData",
+      "typeOfFirstFixedSurface"
+    ],
+    "sample_indices": [
+      [
+        160,
+        0
+      ],
+      [
+        520,
+        0
+      ],
+      [
+        360,
+        719
+      ],
+      [
+        360,
+        720
+      ],
+      [
+        360,
+        1439
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        720,
+        0
+      ],
+      [
+        140,
+        1428
+      ]
+    ],
+    "source": {
+      "inventory_line": "581:415390073:d=2025011500:TMP:2 m above ground:24 hour fcst:",
+      "inventory_message_number": 581,
+      "inventory_sha256": "fa11be72ab29ea43520dc6a6fc8de81bd8e0e024c96da94ed05495bc43b39dcb",
+      "inventory_url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20250115/00/atmos/gfs.t00z.pgrb2.0p25.f024.idx",
+      "object_url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20250115/00/atmos/gfs.t00z.pgrb2.0p25.f024",
+      "parent_bytes": 537858357,
+      "parent_etag": "e9f55c2f3f45d6cdb3aac9e4b7a36aba",
+      "processing_version": "UNRESOLVED; generating process 96, not exact binary/suite version",
+      "provider": "NOAA/NCEP GFS through NOAA Open Data Dissemination",
+      "range_end_inclusive": 416264187,
+      "range_start": 415390073,
+      "rights_checked": "2026-10-10",
+      "rights_url": "https://registry.opendata.aws/noaa-gfs-bdp-pds/"
+    }
+  },
+  "horizontal_pipeline": "proj=pipeline step inv proj=somerc lat_0=46.9524055555556 lon_0=7.43958333333333 k_0=1 x_0=2600000 y_0=1200000 ellps=bessel step proj=push v_3 step proj=cart ellps=bessel step proj=helmert x=674.374 y=15.056 z=405.346 step inv proj=cart ellps=WGS84 step proj=pop v_3 step proj=unitconvert xy_in=rad xy_out=deg",
+  "horizontal_rule": "accepted XY-only native CRS operation, no elevation argument/transformation; geographic labels query actual spherical model grid; not an exact model-Earth-to-survey reference reconciliation",
+  "input": {
+    "bytes": 492443,
+    "filename": "gfs-2025011500-f024-surface-hgt.grib2",
+    "sha256": "867da86f7971c8123bd799a90eb5bec0bd9c2ca751452067b7319ef9adec394f"
+  },
+  "lead_hours": 24,
+  "limits": {
+    "locations": 5,
+    "new_messages": 1,
+    "requests": 15,
+    "response_body_bytes": 20000000,
+    "scratch_bytes": 150000000
+  },
+  "locations": [
+    {
+      "atlas_asset": {
+        "bounds": [
+          2625000,
+          1091000,
+          2626000,
+          1092000
+        ],
+        "bytes": 15925644,
+        "nodataCells": 0,
+        "officialItem": "swissalti3d_2024_2625-1091",
+        "officialProperties": {
+          "created": "2024-12-19T06:29:37.677084Z",
+          "datetime": "2024-01-01T00:00:00Z",
+          "updated": "2024-12-19T10:38:00.116595Z"
+        },
+        "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2625-1091_0.5_2056_5728.tif",
+        "reused": true,
+        "sha256": "0d2ebc6d0b4fd06ab2191cbf2a2f5ab77728249fa8c835075040bce4dc4899de",
+        "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2625-1091/swissalti3d_2024_2625-1091_0.5_2056_5728.tif"
+      },
+      "atlas_sampling": "nearest native centre, exact tie east/south; equivalently containing half-open cell",
+      "crs": "EPSG:2056",
+      "easting": 2625000,
+      "id": "benchmark-centre",
+      "limitations": [
+        "different supports; no model-cell terrain mean inferred",
+        "vertical comparability unresolved until evidence checked"
+      ],
+      "model_sampling": [
+        "NEAREST",
+        "BILINEAR"
+      ],
+      "northing": 1092000,
+      "selection": "unchanged accepted Atlas benchmark/camera coordinates, before numerical heights",
+      "setting": "accepted Riffelhorn/Riffelsee benchmark context"
+    },
+    {
+      "atlas_asset": {
+        "bounds": [
+          2625000,
+          1094000,
+          2626000,
+          1095000
+        ],
+        "bytes": 16897280,
+        "nodataCells": 0,
+        "officialItem": "swissalti3d_2024_2625-1094",
+        "officialProperties": {
+          "created": "2024-12-19T06:29:38.149226Z",
+          "datetime": "2024-01-01T00:00:00Z",
+          "updated": "2024-12-19T10:38:00.515119Z"
+        },
+        "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2625-1094_0.5_2056_5728.tif",
+        "reused": false,
+        "sha256": "a40fbf29d431c827faac57fd5b06819593de3f14f94fa0767fdef4ea7a67fa48",
+        "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2625-1094/swissalti3d_2024_2625-1094_0.5_2056_5728.tif"
+      },
+      "atlas_sampling": "nearest native centre, exact tie east/south; equivalently containing half-open cell",
+      "crs": "EPSG:2056",
+      "easting": 2625000,
+      "id": "north-support",
+      "limitations": [
+        "different supports; no model-cell terrain mean inferred",
+        "vertical comparability unresolved until evidence checked"
+      ],
+      "model_sampling": [
+        "NEAREST",
+        "BILINEAR"
+      ],
+      "northing": 1094800,
+      "selection": "unchanged accepted Atlas benchmark/camera coordinates, before numerical heights",
+      "setting": "accepted northern lower/valley context; not a survey classification"
+    },
+    {
+      "atlas_asset": {
+        "bounds": [
+          2625000,
+          1089000,
+          2626000,
+          1090000
+        ],
+        "bytes": 16581503,
+        "nodataCells": 0,
+        "officialItem": "swissalti3d_2024_2625-1089",
+        "officialProperties": {
+          "created": "2024-12-19T06:29:37.357932Z",
+          "datetime": "2024-01-01T00:00:00Z",
+          "updated": "2024-12-19T10:37:59.930919Z"
+        },
+        "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2625-1089_0.5_2056_5728.tif",
+        "reused": false,
+        "sha256": "6917ceb87a5a58a8f5787c7222286902dca1f0ceee973b80dcfdeebb19acb9da",
+        "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2625-1089/swissalti3d_2024_2625-1089_0.5_2056_5728.tif"
+      },
+      "atlas_sampling": "nearest native centre, exact tie east/south; equivalently containing half-open cell",
+      "crs": "EPSG:2056",
+      "easting": 2625000,
+      "id": "south-support",
+      "limitations": [
+        "different supports; no model-cell terrain mean inferred",
+        "vertical comparability unresolved until evidence checked"
+      ],
+      "model_sampling": [
+        "NEAREST",
+        "BILINEAR"
+      ],
+      "northing": 1089200,
+      "selection": "unchanged accepted Atlas benchmark/camera coordinates, before numerical heights",
+      "setting": "accepted southern high/glaciated context; source epoch/surface caveat"
+    },
+    {
+      "atlas_asset": {
+        "bounds": [
+          2622000,
+          1091000,
+          2623000,
+          1092000
+        ],
+        "bytes": 16274480,
+        "nodataCells": 0,
+        "officialItem": "swissalti3d_2024_2622-1091",
+        "officialProperties": {
+          "created": "2024-12-19T06:28:45.777685Z",
+          "datetime": "2024-01-01T00:00:00Z",
+          "updated": "2024-12-19T10:35:49.636936Z"
+        },
+        "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2622-1091_0.5_2056_5728.tif",
+        "reused": false,
+        "sha256": "014d778f4b3cd0dadb17c1ac0b19df0f6e4ada7c212bdc82ab825207fc6cb92d",
+        "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2622-1091/swissalti3d_2024_2622-1091_0.5_2056_5728.tif"
+      },
+      "atlas_sampling": "nearest native centre, exact tie east/south; equivalently containing half-open cell",
+      "crs": "EPSG:2056",
+      "easting": 2622200,
+      "id": "west-support",
+      "limitations": [
+        "different supports; no model-cell terrain mean inferred",
+        "vertical comparability unresolved until evidence checked"
+      ],
+      "model_sampling": [
+        "NEAREST",
+        "BILINEAR"
+      ],
+      "northing": 1092000,
+      "selection": "unchanged accepted Atlas benchmark/camera coordinates, before numerical heights",
+      "setting": "accepted western contrasting hillside context"
+    },
+    {
+      "atlas_asset": {
+        "bounds": [
+          2627000,
+          1091000,
+          2628000,
+          1092000
+        ],
+        "bytes": 15761686,
+        "nodataCells": 0,
+        "officialItem": "swissalti3d_2024_2627-1091",
+        "officialProperties": {
+          "created": "2024-12-19T06:30:18.613680Z",
+          "datetime": "2024-01-01T00:00:00Z",
+          "updated": "2024-12-19T10:38:18.538403Z"
+        },
+        "path": "sources/atlas/riffelhorn/swissalti3d-2024-support-v1/originals/swissalti3d_2024_2627-1091_0.5_2056_5728.tif",
+        "reused": false,
+        "sha256": "10e84994bf3012e8a06460725a2c131a1372554ab600502fb59506182d729f04",
+        "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2627-1091/swissalti3d_2024_2627-1091_0.5_2056_5728.tif"
+      },
+      "atlas_sampling": "nearest native centre, exact tie east/south; equivalently containing half-open cell",
+      "crs": "EPSG:2056",
+      "easting": 2627800,
+      "id": "east-support",
+      "limitations": [
+        "different supports; no model-cell terrain mean inferred",
+        "vertical comparability unresolved until evidence checked"
+      ],
+      "model_sampling": [
+        "NEAREST",
+        "BILINEAR"
+      ],
+      "northing": 1092000,
+      "selection": "unchanged accepted Atlas benchmark/camera coordinates, before numerical heights",
+      "setting": "accepted eastern contrasting hillside context"
+    }
+  ],
+  "metadata_amendment": {
+    "comparison_rule": "Recover integer lattice from primary ((value*100-reference)/16); require integral residual within 64eps scaled bound, scaled integers exactly representable in binary32; independently decoded GDAL must exactly equal binary32 (integer*16+reference)*float32(.01), with per-cell two-rounding plus decimal coefficient error bound. All fields/masks/coordinates must align. No tolerance fitted to independent differences.",
+    "original_freeze_sha256": "c7d53f2dbfbbe172972d0b3076ea6bba3d3adb773c782c27b9082149c9a46bb0",
+    "reason": "Metadata-only inspection found E4/D2 packing and ecCodes units m for WMO0/3/5 geopotential height; no numerical values inspected",
+    "schema": "meridian-wr015-prospective-metadata-amendment-v1",
+    "scope": "only actual complex spatial-differencing E4 D2 message; E0 WR007 unchanged",
+    "unit_rule": "Preserve ecCodes m label and NCEP table gpm separately; identify geopotential height by WMO0/3/5, never infer LN02/geometric equivalence",
+    "utc": "2026-10-11T08:25:27.679476+00:00",
+    "vertical_rule": "No authorised vertical transformation; all differences null unless equivalence independently established"
+  },
+  "metadata_amendment_sha256": "ebbecd664846df5835d9c7789cc525366516ad77da645bfaa9613b0e0153a997",
+  "metadata_keys": [
+    "edition",
+    "centre",
+    "subCentre",
+    "tablesVersion",
+    "localTablesVersion",
+    "significanceOfReferenceTime",
+    "productionStatusOfProcessedData",
+    "typeOfProcessedData",
+    "typeOfGeneratingProcess",
+    "backgroundProcess",
+    "generatingProcessIdentifier",
+    "dataDate",
+    "dataTime",
+    "stepUnits",
+    "forecastTime",
+    "stepType",
+    "startStep",
+    "endStep",
+    "validityDate",
+    "validityTime",
+    "discipline",
+    "parameterCategory",
+    "parameterNumber",
+    "name",
+    "shortName",
+    "typeOfLevel",
+    "level",
+    "typeOfFirstFixedSurface",
+    "scaleFactorOfFirstFixedSurface",
+    "scaledValueOfFirstFixedSurface",
+    "units",
+    "productDefinitionTemplateNumber",
+    "gridType",
+    "gridDefinitionTemplateNumber",
+    "Ni",
+    "Nj",
+    "numberOfPoints",
+    "scanningMode",
+    "iScansNegatively",
+    "jScansPositively",
+    "jPointsAreConsecutive",
+    "alternativeRowScanning",
+    "shapeOfTheEarth",
+    "radius",
+    "latitudeOfFirstGridPointInDegrees",
+    "longitudeOfFirstGridPointInDegrees",
+    "latitudeOfLastGridPointInDegrees",
+    "longitudeOfLastGridPointInDegrees",
+    "iDirectionIncrementInDegrees",
+    "jDirectionIncrementInDegrees",
+    "packingType",
+    "dataRepresentationTemplateNumber",
+    "referenceValue",
+    "binaryScaleFactor",
+    "decimalScaleFactor",
+    "bitsPerValue",
+    "bitmapPresent",
+    "missingValue",
+    "numberOfMissing",
+    "numberOfValues",
+    "missingValueManagementUsed",
+    "orderOfSpatialDifferencing",
+    "numberOfGroupsOfDataValues"
+  ],
+  "model": "NOAA/NCEP GFS",
+  "model_decoder": "ecCodes2.48.0 and independent GDAL3.9.3/degrib/g2clib",
+  "model_field": {
+    "expected_bytes": 492443,
+    "expected_units": "gpm",
+    "first_surface_code": 1,
+    "inventory_line": "562:407176421:d=2025011500:HGT:surface:24 hour fcst:",
+    "meaning": "surface geopotential height; not skin temperature, pressure or geometric height",
+    "object_url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20250115/00/atmos/gfs.t00z.pgrb2.0p25.f024",
+    "parameter": [
+      0,
+      3,
+      5
+    ],
+    "parent_bytes": 537858357,
+    "parent_etag": "e9f55c2f3f45d6cdb3aac9e4b7a36aba",
+    "range_end_inclusive": 407668863,
+    "range_start": 407176421
+  },
+  "numeric_code_keys": [
+    "centre",
+    "typeOfProcessedData",
+    "typeOfFirstFixedSurface"
+  ],
+  "original_freeze_sha256": "c7d53f2dbfbbe172972d0b3076ea6bba3d3adb773c782c27b9082149c9a46bb0",
+  "product": "same historical pgrb2 0.25-degree +24h object as WR007",
+  "reference_time": "2025-01-15T00:00:00Z",
+  "rejections": [
+    "unverified same-object/grid/configuration relationship",
+    "wrong parameter/unit/level/time",
+    "unsupported coordinate operation",
+    "out-of-coverage/nodata/nonfinite",
+    "unresolved vertical reference",
+    "unsupported terrain aggregation",
+    "temperature correction or skill inference"
+  ],
+  "sample_indices": [
+    [
+      160,
+      0
+    ],
+    [
+      520,
+      0
+    ],
+    [
+      360,
+      719
+    ],
+    [
+      360,
+      720
+    ],
+    [
+      360,
+      1439
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      720,
+      0
+    ],
+    [
+      140,
+      1428
+    ]
+  ],
+  "schema": "meridian-wr015-predeclaration-v1",
+  "signed_difference_convention": "model-ground height minus Atlas terrain height",
+  "source": {
+    "inventory_line": "562:407176421:d=2025011500:HGT:surface:24 hour fcst:",
+    "inventory_message_number": 562,
+    "inventory_sha256": "fa11be72ab29ea43520dc6a6fc8de81bd8e0e024c96da94ed05495bc43b39dcb",
+    "inventory_url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20250115/00/atmos/gfs.t00z.pgrb2.0p25.f024.idx",
+    "object_url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20250115/00/atmos/gfs.t00z.pgrb2.0p25.f024",
+    "parent_bytes": 537858357,
+    "parent_etag": "e9f55c2f3f45d6cdb3aac9e4b7a36aba",
+    "processing_version": "UNRESOLVED; generating process 96, not exact binary/suite version",
+    "provider": "NOAA/NCEP GFS through NOAA Open Data Dissemination",
+    "range_end_inclusive": 407668863,
+    "range_start": 407176421,
+    "rights_checked": "2026-10-10",
+    "rights_url": "https://registry.opendata.aws/noaa-gfs-bdp-pds/"
+  },
+  "terrain_read": "only one native cell per frozen location, no full-raster arrays, no terrain aggregation",
+  "utc": "2026-10-11T08:21:08.568086+00:00",
+  "valid_time": "2025-01-16T00:00:00Z",
+  "vertical_gate": "no scientific difference until exact vertical quantity/reference equivalence or supported transformation; unknown => signed/absolute differences null; no exploratory subtraction"
+}
