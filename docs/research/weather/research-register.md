@@ -212,3 +212,15 @@ and WR002–010 rows unchanged; no broad field family or forecast skill promoted
 
 Exactly one next task: **independent CCSDS numerical-decoding conformance — NOT BEGUN**,
 [defined in the report](cross-provider-ifs-field-conformance.md#8-exactly-one-next-bounded-task--not-begun).
+
+
+## WR012 qualified numerical evidence — 10 October 2026
+
+[WR012](independent-ccsds-numerical-conformance.md): **Outcome A** for three pinned fields and independence B only. All historical rows remain unchanged, including WR011's partial result. No broad topic or forecast skill promoted.
+
+| Identifier / parents | Bounded result | Status / remaining gate |
+|---|---|---|
+| WR12-Q01 / W31, W38 | Independent raw-section/grid/time/scaling reader plus shared libaec exactly matches all 1,038,240 cells in each preserved IFS field; deterministic double replay | EXPERIMENTALLY VALIDATED (three no-bitmap Windows64 profiles; qualified independence B); separate CCSDS algorithm and other encodings untested |
+| WR12-Q02 / W31, W39 | Identified existing DLL/RECORD and primary loaded-module SHA; numerical evidence distinguished from metadata, parameter authority and skill | RESEARCHED (bounded evidence classification); installed libaec upstream version unknown, GDAL binary still lacks support |
+
+Exactly one next task: **scientific field-packaging and offline query replay — NOT BEGUN**, [defined in the report](independent-ccsds-numerical-conformance.md#7-programme-reassessment-and-exactly-one-next-task--not-begun).

@@ -1,0 +1,418 @@
+{
+  "attribution": "This research is based on data and products of the European Centre for Medium-Range Weather Forecasts (ECMWF).",
+  "copyright": "Copyright 2025 ECMWF; CC BY4.0 with source notices; modified derived research receipts, no endorsement",
+  "fields": {
+    "precipitation": {
+      "comparison": {
+        "absolute_tolerance": 0,
+        "compared_cells": 1038240,
+        "exact_equal_cells": 1038240,
+        "largest_difference": {
+          "column": 0,
+          "latitude": 90.0,
+          "longitude_modulo360": 180.0,
+          "primary": 8.7738037109375e-05,
+          "reference": 8.7738037109375e-05,
+          "row": 0,
+          "tie_rule": "first native row-major cell; zero means no disagreement"
+        },
+        "mask_agreement": true,
+        "maximum_absolute_difference": 0.0,
+        "maximum_difference_in_quantisation_steps": 0.0,
+        "maximum_relative_difference_nonzero_primary": 0.0,
+        "mean_absolute_difference": 0.0,
+        "passed": true,
+        "primary_finite": 1038240,
+        "primary_missing": 0,
+        "reference_finite": 1038240,
+        "reference_missing": 0,
+        "zero_primary_differences": 0
+      },
+      "metadata_alignment": "raw Section3 and independent geometry/time/parameter checked before same-native-index comparison; no rotation",
+      "primary_decoded_sha256": "6a782c590e042189e126429e10ffe0da190e893794fdc94e7f3b5b2712d316e8",
+      "primary_decoder": {
+        "ecCodes": "2.48.0",
+        "eccodes_python": "2.48.0",
+        "numpy": "2.5.2",
+        "python": "3.12.6"
+      },
+      "primary_matches_preserved_WR011": true,
+      "reference": {
+        "decompression": {
+          "flags_used": 14,
+          "input_bytes_consumed": 885864,
+          "integer_maximum": 54390,
+          "integer_minimum": 0,
+          "output_integer_bytes": 2076480,
+          "output_integer_order": "big endian uint16",
+          "output_values": "little endian binary64",
+          "status": 0
+        },
+        "ecCodes_loaded_in_reference": false,
+        "implementation": "WR012 stdlib raw-section/scale reader plus existing libaec buffer API",
+        "independence": "B: independent GRIB interpretation with shared low-level CCSDS libaec, not an independent CCSDS algorithm",
+        "libaec": {
+          "bytes": 31232,
+          "distribution": "eccodes2.48.0 RECORD matched",
+          "sha256": "99dccaf5fe3e03f1dc47ebefb83fa7772754bfcb5bc002c517fec244b28884a8",
+          "shared_with_primary": true,
+          "upstream_version": "UNKNOWN; header documentation v1.1.3 is not installed binary version"
+        },
+        "metadata": {
+          "bitmap": "none",
+          "centre": 98,
+          "edition": 2,
+          "grid": {
+            "basic_angle": 0,
+            "dx": 0.25,
+            "dy": 0.25,
+            "earth_shape": 6,
+            "last_longitude": 179.75,
+            "north": 90.0,
+            "nx": 1440,
+            "ny": 721,
+            "origin": 180.0,
+            "points": 1038240,
+            "resolution_component_flags": 48,
+            "scan": 0,
+            "section3_sha256": "6e8229bf09d191ccf7d719ef88dc9e848fe663cf45a91d0691b7e17815a03036",
+            "south": -90.0,
+            "subdivisions": 4294967295,
+            "template": 0
+          },
+          "local_table": 1,
+          "master_table": 33,
+          "native_unit": "m",
+          "packing": {
+            "binary_scale": -18,
+            "bits": 16,
+            "block_size": 32,
+            "decimal_scale": 0,
+            "flags": 14,
+            "original_type": 0,
+            "points": 1038240,
+            "reference": 0.0,
+            "rsi": 128,
+            "template": 42
+          },
+          "parameter": [
+            0,
+            1,
+            193
+          ],
+          "process": 158,
+          "process_type": 2,
+          "processed_type": 1,
+          "production_status": 0,
+          "section2_sha256": "75170cf66c4c5a8ac56fca014c7c2b2fc4fea93cca50a086c3cee3bbff39b3e2",
+          "significance_reference": 1,
+          "subcentre": 0,
+          "temporal": {
+            "duration_seconds": 86400,
+            "increment_seconds": 450,
+            "interval_end": "2025-01-16T00:00:00Z",
+            "interval_start": "2025-01-15T00:00:00Z",
+            "kind": "accumulation",
+            "lead_to_start_hours": 0,
+            "reference_time": "2025-01-15T00:00:00Z",
+            "statistic": 1,
+            "template": 8,
+            "valid_time": "2025-01-16T00:00:00Z"
+          },
+          "unit_authority": "retained WR011 scoped WMO/ECMWF definitions; not a new independent parameter dictionary",
+          "vertical": {
+            "height_m": null,
+            "reference": "surface without encoded altitude",
+            "surface_code": 1
+          }
+        },
+        "python": "3.12.6",
+        "raw_input": {
+          "bytes": 886088,
+          "filename": "precipitation.grib2",
+          "sha256": "bbe7a629c06579c27e64a181d2066ed1b36af14544238728d0eda4442083c884"
+        },
+        "values_bytes": 8305920,
+        "values_sha256": "6a782c590e042189e126429e10ffe0da190e893794fdc94e7f3b5b2712d316e8"
+      }
+    },
+    "temperature": {
+      "comparison": {
+        "absolute_tolerance": 0,
+        "compared_cells": 1038240,
+        "exact_equal_cells": 1038240,
+        "largest_difference": {
+          "column": 0,
+          "latitude": 90.0,
+          "longitude_modulo360": 180.0,
+          "primary": 246.3415069580078,
+          "reference": 246.3415069580078,
+          "row": 0,
+          "tie_rule": "first native row-major cell; zero means no disagreement"
+        },
+        "mask_agreement": true,
+        "maximum_absolute_difference": 0.0,
+        "maximum_difference_in_quantisation_steps": 0.0,
+        "maximum_relative_difference_nonzero_primary": 0.0,
+        "mean_absolute_difference": 0.0,
+        "passed": true,
+        "primary_finite": 1038240,
+        "primary_missing": 0,
+        "reference_finite": 1038240,
+        "reference_missing": 0,
+        "zero_primary_differences": 0
+      },
+      "metadata_alignment": "raw Section3 and independent geometry/time/parameter checked before same-native-index comparison; no rotation",
+      "primary_decoded_sha256": "f77dd347a58919ca5a2388b7f1be7e2e32f5d379dd88335415ddf24a959cf475",
+      "primary_decoder": {
+        "ecCodes": "2.48.0",
+        "eccodes_python": "2.48.0",
+        "numpy": "2.5.2",
+        "python": "3.12.6"
+      },
+      "primary_matches_preserved_WR011": true,
+      "reference": {
+        "decompression": {
+          "flags_used": 14,
+          "input_bytes_consumed": 650660,
+          "integer_maximum": 3045,
+          "integer_minimum": 0,
+          "output_integer_bytes": 2076480,
+          "output_integer_order": "big endian uint16",
+          "output_values": "little endian binary64",
+          "status": 0
+        },
+        "ecCodes_loaded_in_reference": false,
+        "implementation": "WR012 stdlib raw-section/scale reader plus existing libaec buffer API",
+        "independence": "B: independent GRIB interpretation with shared low-level CCSDS libaec, not an independent CCSDS algorithm",
+        "libaec": {
+          "bytes": 31232,
+          "distribution": "eccodes2.48.0 RECORD matched",
+          "sha256": "99dccaf5fe3e03f1dc47ebefb83fa7772754bfcb5bc002c517fec244b28884a8",
+          "shared_with_primary": true,
+          "upstream_version": "UNKNOWN; header documentation v1.1.3 is not installed binary version"
+        },
+        "metadata": {
+          "bitmap": "none",
+          "centre": 98,
+          "edition": 2,
+          "grid": {
+            "basic_angle": 0,
+            "dx": 0.25,
+            "dy": 0.25,
+            "earth_shape": 6,
+            "last_longitude": 179.75,
+            "north": 90.0,
+            "nx": 1440,
+            "ny": 721,
+            "origin": 180.0,
+            "points": 1038240,
+            "resolution_component_flags": 48,
+            "scan": 0,
+            "section3_sha256": "6e8229bf09d191ccf7d719ef88dc9e848fe663cf45a91d0691b7e17815a03036",
+            "south": -90.0,
+            "subdivisions": 4294967295,
+            "template": 0
+          },
+          "local_table": 1,
+          "master_table": 33,
+          "native_unit": "K",
+          "packing": {
+            "binary_scale": -5,
+            "bits": 12,
+            "block_size": 32,
+            "decimal_scale": 0,
+            "flags": 14,
+            "original_type": 0,
+            "points": 1038240,
+            "reference": 217.9665069580078,
+            "rsi": 128,
+            "template": 42
+          },
+          "parameter": [
+            0,
+            0,
+            0
+          ],
+          "process": 158,
+          "process_type": 2,
+          "processed_type": 1,
+          "production_status": 0,
+          "section2_sha256": "75170cf66c4c5a8ac56fca014c7c2b2fc4fea93cca50a086c3cee3bbff39b3e2",
+          "significance_reference": 1,
+          "subcentre": 0,
+          "temporal": {
+            "kind": "instant",
+            "lead_to_start_hours": 24,
+            "reference_time": "2025-01-15T00:00:00Z",
+            "template": 0,
+            "valid_time": "2025-01-16T00:00:00Z"
+          },
+          "unit_authority": "retained WR011 scoped WMO/ECMWF definitions; not a new independent parameter dictionary",
+          "vertical": {
+            "height_m": 2,
+            "reference": "model ground",
+            "surface_code": 103
+          }
+        },
+        "python": "3.12.6",
+        "raw_input": {
+          "bytes": 650860,
+          "filename": "temperature.grib2",
+          "sha256": "7f7e40c92f5375d4af52f68428c02820105bafa10ad29cf2404ad0c37e7a5f30"
+        },
+        "values_bytes": 8305920,
+        "values_sha256": "f77dd347a58919ca5a2388b7f1be7e2e32f5d379dd88335415ddf24a959cf475"
+      }
+    },
+    "wind_u": {
+      "comparison": {
+        "absolute_tolerance": 0,
+        "compared_cells": 1038240,
+        "exact_equal_cells": 1038240,
+        "largest_difference": {
+          "column": 0,
+          "latitude": 90.0,
+          "longitude_modulo360": 180.0,
+          "primary": 4.2238616943359375,
+          "reference": 4.2238616943359375,
+          "row": 0,
+          "tie_rule": "first native row-major cell; zero means no disagreement"
+        },
+        "mask_agreement": true,
+        "maximum_absolute_difference": 0.0,
+        "maximum_difference_in_quantisation_steps": 0.0,
+        "maximum_relative_difference_nonzero_primary": 0.0,
+        "mean_absolute_difference": 0.0,
+        "passed": true,
+        "primary_finite": 1038240,
+        "primary_missing": 0,
+        "reference_finite": 1038240,
+        "reference_missing": 0,
+        "zero_primary_differences": 0
+      },
+      "metadata_alignment": "raw Section3 and independent geometry/time/parameter checked before same-native-index comparison; no rotation",
+      "primary_decoded_sha256": "b4555a21cec220a4e1f8619f5a496b49bdfaf985ddf9753f71d40b9a78992349",
+      "primary_decoder": {
+        "ecCodes": "2.48.0",
+        "eccodes_python": "2.48.0",
+        "numpy": "2.5.2",
+        "python": "3.12.6"
+      },
+      "primary_matches_preserved_WR011": true,
+      "reference": {
+        "decompression": {
+          "flags_used": 14,
+          "input_bytes_consumed": 865718,
+          "integer_maximum": 3421,
+          "integer_minimum": 0,
+          "output_integer_bytes": 2076480,
+          "output_integer_order": "big endian uint16",
+          "output_values": "little endian binary64",
+          "status": 0
+        },
+        "ecCodes_loaded_in_reference": false,
+        "implementation": "WR012 stdlib raw-section/scale reader plus existing libaec buffer API",
+        "independence": "B: independent GRIB interpretation with shared low-level CCSDS libaec, not an independent CCSDS algorithm",
+        "libaec": {
+          "bytes": 31232,
+          "distribution": "eccodes2.48.0 RECORD matched",
+          "sha256": "99dccaf5fe3e03f1dc47ebefb83fa7772754bfcb5bc002c517fec244b28884a8",
+          "shared_with_primary": true,
+          "upstream_version": "UNKNOWN; header documentation v1.1.3 is not installed binary version"
+        },
+        "metadata": {
+          "bitmap": "none",
+          "centre": 98,
+          "edition": 2,
+          "grid": {
+            "basic_angle": 0,
+            "dx": 0.25,
+            "dy": 0.25,
+            "earth_shape": 6,
+            "last_longitude": 179.75,
+            "north": 90.0,
+            "nx": 1440,
+            "ny": 721,
+            "origin": 180.0,
+            "points": 1038240,
+            "resolution_component_flags": 48,
+            "scan": 0,
+            "section3_sha256": "6e8229bf09d191ccf7d719ef88dc9e848fe663cf45a91d0691b7e17815a03036",
+            "south": -90.0,
+            "subdivisions": 4294967295,
+            "template": 0
+          },
+          "local_table": 1,
+          "master_table": 33,
+          "native_unit": "m s**-1",
+          "packing": {
+            "binary_scale": -6,
+            "bits": 12,
+            "block_size": 32,
+            "decimal_scale": 0,
+            "flags": 14,
+            "original_type": 0,
+            "points": 1038240,
+            "reference": -26.932388305664062,
+            "rsi": 128,
+            "template": 42
+          },
+          "parameter": [
+            0,
+            2,
+            2
+          ],
+          "process": 158,
+          "process_type": 2,
+          "processed_type": 1,
+          "production_status": 0,
+          "section2_sha256": "75170cf66c4c5a8ac56fca014c7c2b2fc4fea93cca50a086c3cee3bbff39b3e2",
+          "significance_reference": 1,
+          "subcentre": 0,
+          "temporal": {
+            "kind": "instant",
+            "lead_to_start_hours": 24,
+            "reference_time": "2025-01-15T00:00:00Z",
+            "template": 0,
+            "valid_time": "2025-01-16T00:00:00Z"
+          },
+          "unit_authority": "retained WR011 scoped WMO/ECMWF definitions; not a new independent parameter dictionary",
+          "vertical": {
+            "height_m": 10,
+            "reference": "model ground",
+            "surface_code": 103
+          }
+        },
+        "python": "3.12.6",
+        "raw_input": {
+          "bytes": 865918,
+          "filename": "wind_u.grib2",
+          "sha256": "4b153144cdb6623906501ddfcc915e16e1d593ce4f0ef821d4a0d62524ea9cfc"
+        },
+        "values_bytes": 8305920,
+        "values_sha256": "b4555a21cec220a4e1f8619f5a496b49bdfaf985ddf9753f71d40b9a78992349"
+      }
+    }
+  },
+  "independence": "B: independent GRIB unpacking interpretation and scaling; same low-level libaec DLL as ecCodes",
+  "limitations": [
+    "No independent CCSDS entropy algorithm validation",
+    "Only three pinned no-bitmap D0 Windows64 profiles; no general decoder or GDAL upgrade",
+    "Retained producer unit/parameter dictionaries; no new independent local-parameter vocabulary",
+    "No forecast skill, observation validation or production-readiness claim"
+  ],
+  "outcome": "A",
+  "pins_sha256": "d9b7b535ceec18be27694d430ac41b5acdcc67aa10bd759e319ec32ae75f98c0",
+  "predeclaration": {
+    "absolute_tolerance": 0,
+    "comparison_freeze_sha256": "dbd1366639e31c7e3aa43f4fd86fa73850772d6301d9cf99404fc23b98b231a7",
+    "method": "Complete 1038240 cells per field; independent stdlib section/parser + existing pinned libaec buffer API, big-endian integer output; no ecCodes imports/calls in reference process. Primary ecCodes separate process path preserved. Native binary64 scaling for actual D0,E-5/-18/-6,Rbinary32; integer<=16bits and dyadic operations fit binary64 => exact agreement required; zero absolute tolerance, no fitted threshold. Shared libaec implementation explicitly independence B, not separate CCSDS algorithm. No array roll; raw scan0/native180 origin verified before alignment. Unsupported profiles fail before native library call.",
+    "utc": "2026-10-10T18:47:40.912479+00:00"
+  },
+  "schema": "wr012-qualified-numerical-conformance-v1",
+  "utility_sha256": {
+    "ccsds_conformance.py": "b045d4d92fff00279872a29c55c8e9537a0e3ecb3acbc34b55e510e44fc9dea1",
+    "reference_ccsds.py": "dfa23fda3f9e32895f826efcb6838618612a76732f1c3277e49d510b2e900a29"
+  }
+}

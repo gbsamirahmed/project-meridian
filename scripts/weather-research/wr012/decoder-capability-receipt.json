@@ -1,0 +1,130 @@
+{
+  "documentation": [
+    {
+      "body_bytes": 11164,
+      "owned_filename": "libaec-readme.md",
+      "sha256": "96e3c0bf30218711f40d493c93505a8f53721a6e0748a6eed57ba58cf4519af7",
+      "url": "https://raw.githubusercontent.com/MathisRosenhauer/libaec/v1.1.3/README.md",
+      "utc": "2026-10-10T18:46:01.950852+00:00"
+    },
+    {
+      "body_bytes": 5265,
+      "owned_filename": "grib-template5-42.html",
+      "sha256": "531db7178914916b5a01ae61109b7f5aeafcddd75bb3df4c170d0c36def8f78c",
+      "url": "https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/grib2_temp5-42.shtml",
+      "utc": "2026-10-10T18:46:02.440009+00:00"
+    },
+    {
+      "body_bytes": 1346,
+      "owned_filename": "libaec-license.txt",
+      "sha256": "e831d176bf03288ca15c0a07298b250d9b6e9695750add499cc545513f06aec0",
+      "url": "https://raw.githubusercontent.com/MathisRosenhauer/libaec/v1.1.3/LICENSE.txt",
+      "utc": "2026-10-10T18:46:33.556947+00:00"
+    },
+    {
+      "body_bytes": 2350,
+      "owned_filename": "grib-template5-0.html",
+      "sha256": "fc9de3fda206da6c98b37518a0a4d4d35324947f5f62bcd075a399e8eeebffc5",
+      "url": "https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/grib2_temp5-0.shtml",
+      "utc": "2026-10-10T18:46:33.815997+00:00"
+    },
+    {
+      "body_bytes": 23367,
+      "owned_filename": "eccodes-ccsds-source.cc",
+      "sha256": "14cd99e547a5c27d70b39b5bc8fdf4f5709bce0d0a5885c62ddd2bc48130c6ab",
+      "url": "https://raw.githubusercontent.com/ecmwf/eccodes/2.48.0/src/eccodes/accessor/DataCcsdsPacking.cc",
+      "utc": "2026-10-10T18:46:34.210642+00:00"
+    },
+    {
+      "body_bytes": 6532,
+      "owned_filename": "libaec-v1.1.3.h.in",
+      "sha256": "902cc9f3a378e3fb4d7e4194723260668f541bd1f458a2601bf82477cce777ac",
+      "url": "https://raw.githubusercontent.com/MathisRosenhauer/libaec/v1.1.3/include/libaec.h.in",
+      "utc": "2026-10-10T18:46:51.046746+00:00"
+    },
+    {
+      "body_bytes": 7409,
+      "owned_filename": "grib-template3-0.html",
+      "sha256": "ca623f89f3e29fd6078be45ef6937867102f17879843e867cf83b14b5bdd27ca",
+      "url": "https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/grib2_temp3-0.shtml",
+      "utc": "2026-10-10T18:47:39.630378+00:00"
+    },
+    {
+      "body_bytes": 4669,
+      "owned_filename": "grib-template4-0.html",
+      "sha256": "e4fe536bfb093a574daf1076aa91d8607039e9e7cba064597ff48e92c1a5d916",
+      "url": "https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/grib2_temp4-0.shtml",
+      "utc": "2026-10-10T18:47:40.033757+00:00"
+    },
+    {
+      "body_bytes": 10078,
+      "owned_filename": "grib-template4-8.html",
+      "sha256": "60c95a9f1344046f51d0b1de26276a2546f151a4b95ef3ae3afdac85a984803a",
+      "url": "https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/grib2_temp4-8.shtml",
+      "utc": "2026-10-10T18:47:40.438128+00:00"
+    }
+  ],
+  "local_discovery": {
+    "WSL_installed_libaec": "Ubuntu libaec0:amd64 1.0.6-1; not used or altered",
+    "existing_local_windows_AEC": {
+      "bytes": 31232,
+      "distribution": "eccodes2.48.0 RECORD matched",
+      "sha256": "99dccaf5fe3e03f1dc47ebefb83fa7772754bfcb5bc002c517fec244b28884a8",
+      "shared_with_primary": true,
+      "upstream_version": "UNKNOWN; header documentation v1.1.3 is not installed binary version"
+    },
+    "portable_binary_acquisition": false,
+    "scope": "limited PATH/install-directory/WSL package discovery, not exhaustive machine inventory",
+    "standalone_gdal_or_wgrib2_on_PATH": false
+  },
+  "original_GDAL": {
+    "GDAL": "3.9.3",
+    "GRIB_driver_available": true,
+    "failure": "g2_unpack7: Data Representation Template 5.42 decoding requires building against libaec.",
+    "implementation": "independent GDAL/degrib/g2clib, lacking libaec support in this installed build",
+    "native_DLL": {
+      "bytes": 19130368,
+      "filename": "gdal-0c91f8aa17bf5518bc6a69e15438cc5c.dll",
+      "sha256": "0ec06c1a0fb46eb0fdde9d18f2ba87cef8ebb6f40ab4beaa7a47e8812d28a58a"
+    },
+    "numerical_band_read": false,
+    "open_and_metadata": true,
+    "rasterio": "1.4.3",
+    "secondary_error": "g2_getfld error4, Out of memory; not evidence of measured RAM exhaustion",
+    "stage": "ds.read(1), after successful open and metadata/geometry inspection"
+  },
+  "primary": {
+    "ecCodes": "2.48.0",
+    "ecCodes_DLL_sha256": "d11f2a2e977eb1e89774475a40ece996fb37353fca9d08db518f88c732e87880",
+    "eccodes_python": "2.48.0",
+    "encoded_flags": 14,
+    "loaded_AEC_SHA_verified": true,
+    "source_host_output_flags": 8
+  },
+  "reference": {
+    "Python": "3.12.6",
+    "accepted_abi": "Windows64, aec_stream72 bytes",
+    "accepted_profiles": "only three raw-checksummed WR011 inputs, template5.42,12/16bits,D0,E-5/-18/-6,nobitmap",
+    "encoded_and_API_flags": 14,
+    "implementation": "WR012 standard-library Python section parser, ctypes libaec ABI, integer storage and binary64 scaling",
+    "integer_output": "big endian unsigned16",
+    "loads_ecCodes": false,
+    "numeric_implementation_independence": "B: independent GRIB interpretation using same existing low-level libaec DLL",
+    "upstream_libaec_version": "UNKNOWN; installed eccodes2.48.0 RECORD pins DLL bytes; v1.1.3 header is documentation, not binary-version proof",
+    "version_identity": "utility SHA256s in numerical-comparison-receipt.json"
+  },
+  "resource_accounting": {
+    "controlled_HTTP_attempts": 12,
+    "failed_HTTP_attempts": 3,
+    "new_binary_packages": 0,
+    "new_forecast_messages": 0,
+    "response_body_bytes_read": 72180,
+    "unmetered": "Git traffic, HTTP/TLS headers/protocol and OS traffic; not a certified total network measurement"
+  },
+  "rights": {
+    "ecCodes": "existing official ECMWF distribution RECORD verified; no installation or modification",
+    "forecast_data": "WR011 retained CC BY4.0 and source notices; no new acquisition or changed service rights",
+    "libaec": "BSD-2-Clause upstream licence, local experimental use; no binary redistributed"
+  },
+  "schema": "wr012-decoder-capability-v1"
+}

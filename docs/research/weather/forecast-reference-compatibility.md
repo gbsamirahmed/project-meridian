@@ -192,3 +192,8 @@ GFS APCP accumulates18–24 h in kg/m². Equal endpoints do not make these quant
 exchangeable. Temperature/U are instantaneous, distinct2/10 m support. No V pair,
 observation matching, model-error comparison or reopened MIDAS Decision C. Independent
 GDAL metadata/geometry passes; numerical decoding is blocked by absent libaec.
+
+
+## WR012 numerical-evidence refinement — 10 October 2026
+
+[WR012](independent-ccsds-numerical-conformance.md) establishes complete-grid exact agreement on unchanged WR011 2t/tp/U inputs using independent GRIB interpretation and shared libaec (independence B). Native units, longitude origin/order, masks and interval qualifiers remain explicit. This strengthens numerical integrity only; it does not supply independent physical observations, a V component, model interchangeability or forecast skill. GDAL's metadata-only result and WR011 Outcome B remain historical facts; WR006 strict/revised MIDAS targets stay BLOCKED.

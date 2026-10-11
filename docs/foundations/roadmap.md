@@ -236,3 +236,8 @@ installed tooling. This is neither application maturity nor a provider/framework
 choice. All accepted priorities, device gates and MIDAS reference blockers remain.
 Sole next bounded task: independent CCSDS numerical-decoding conformance, **NOT BEGUN**.
 No new application/production integration starts here.
+
+
+## WR012 finite numerical closure — 10 October 2026
+
+[Weather WR012](../research/weather/independent-ccsds-numerical-conformance.md) reaches **Outcome A**, qualified independent GRIB interpretation with shared libaec, all three preserved IFS grids exactly matching. No production decoder, provider selection, application maturity or device evidence follows. Existing accepted architecture/preservation/device gates and MIDAS blockers remain. The next bounded research direction is scientific field-packaging and offline query replay, **NOT BEGUN**, testing preservation of meaning before implementation commitments.

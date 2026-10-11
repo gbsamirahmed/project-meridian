@@ -146,3 +146,8 @@ Provider-independent concepts survive with scoped parameter definitions, longitu
 origin and interval qualifiers. No forecast skill, complete vector or production API.
 Exactly one next task: **independent CCSDS numerical-decoding conformance — NOT BEGUN**,
 [bounded in the report](cross-provider-ifs-field-conformance.md#8-exactly-one-next-bounded-task--not-begun).
+
+
+## WR012 qualified numerical closure — 10 October 2026
+
+[Independent CCSDS conformance](independent-ccsds-numerical-conformance.md): **Outcome A**, all three unchanged WR011 IFS fields exactly equal across complete grids. Independence B means separate GRIB interpretation/scaling with shared libaec; no independent entropy-algorithm, forecast-skill or general decoder claim. Historical WR011 Outcome B and WR006 blockers remain. [Utility/replay](../../../scripts/weather-research/wr012/README.md). Sole current next task: **scientific field-packaging and offline query replay — NOT BEGUN**, [scope](independent-ccsds-numerical-conformance.md#7-programme-reassessment-and-exactly-one-next-task--not-begun).

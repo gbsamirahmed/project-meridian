@@ -195,3 +195,8 @@ verified. Broader regional, ensemble, cloud/category, mountain, observation/nowc
 offline and operational-cost tracks remain; no permanent provider or implementation chosen.
 Sole next task: **independent CCSDS numerical-decoding conformance — NOT BEGUN**,
 [scope and evidence gates](cross-provider-ifs-field-conformance.md#8-exactly-one-next-bounded-task--not-begun).
+
+
+## WR012 decision — 10 October 2026
+
+[WR012](independent-ccsds-numerical-conformance.md) closes the finite independent numerical gate using qualified independence B: separate GRIB interpretation, shared existing libaec. All three IFS arrays agree exactly; installed GDAL remains unable to unpack CCSDS. Do not rewrite WR011's historical Outcome B or treat source integrity as observational skill. A further decoder-only task now has less information value than testing preservation of scientific meaning in a bounded offline subset. Regional, ensembles, mountains, other quantities, observations/nowcasting, ML, uncertainty, rights/economics and offline tracks remain open; no provider or architecture selected. Exactly one next task: **scientific field-packaging and offline query replay — NOT BEGUN**, [evidence and stop](independent-ccsds-numerical-conformance.md#7-programme-reassessment-and-exactly-one-next-task--not-begun).

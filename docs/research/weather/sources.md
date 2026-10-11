@@ -263,3 +263,8 @@ qualified, no legal clearance. Exact centre98/master33/local1 precipitation defi
 give metres for local0/1/193; GDAL's unknown unit label is retained. No new provider
 selection, credentials or forecast-skill evidence. TLS failure on the public portal
 was recorded without bypass/retry; other precise primary sources were accessible.
+
+
+## WR012 decoder-source refinement — 10 October 2026
+
+[WR012 authoritative sources and capability pins](independent-ccsds-numerical-conformance.md#6-contract-consequences-validation-and-resources) identify NOAA GRIB templates, ecCodes 2.48.0 CCSDS implementation and upstream libaec ABI/licence. The existing local AEC DLL is pinned by checksum and installed distribution RECORD; upstream binary version remains unknown. A separate GRIB reader shares that decompressor, so evidence is independence B. No forecast/binary acquisition, new accounts or new source rights; WR011 ECMWF attribution, parameter scope and service qualifications remain. No additional archive retrievability claim.
