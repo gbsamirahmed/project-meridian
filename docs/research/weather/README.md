@@ -1,5 +1,7 @@
 # Meridian Weather research
 
+> **Current planning authority — 11 October 2026:** WR001–WR015 are complete within their recorded scopes. The [scientific-to-application checkpoint](../../foundations/scientific-to-application-roadmap-decision.md) selects a minimal Atlas map-shell engineering task, **NOT BEGUN**, rather than another Weather experiment. Older next-task paragraphs are historical. WR006 reference targets and WR015 vertical comparison remain blocked; neither blocks the bare Atlas map. No scientific status or prior outcome is promoted.
+
 ## Weather Research 001 — independent landscape and programme established
 
 **10 October 2026.** Starting checkpoint `6944bcd444c9645191f815c6eb6f2e78fe2e7f83`, public `gbsamirahmed/project-meridian`, clean main/origin/main at 0/0 after fetch. This is the first independent Weather research programme entry, not a final architecture, maintained forecast service or scientific-readiness claim.

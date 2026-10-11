@@ -1,5 +1,7 @@
 # Meridian private-beta and pre-release roadmap
 
+> **Current planning authority — 11 October 2026:** [Scientific-to-application decision](scientific-to-application-roadmap-decision.md): **A — READY FOR BOUNDED APPLICATION FOUNDATION**, limited to a reversible local M1 map prototype. Its single next engineering task is **NOT BEGUN**. This supersedes historical next-task sequencing below, not scientific findings, F03/F04/F05/F11/F12 statuses, G0–G2 capability gates or release requirements. Native mobile, terrain, inspection and offline readiness remain separately gated.
+
 Reviewed 9 October 2026. Gates are evidence-based, not calendar commitments. See [engineering](engineering.md), [product](product.md), [platform](platform.md) and [decisions](decisions.md) for detailed requirements. The extended private beta can include substantial redesign.
 
 ## Maturity stages

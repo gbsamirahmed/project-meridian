@@ -1,5 +1,7 @@
 # Atlas portability consolidation and cross-platform architecture handoff
 
+> **Current planning authority — 11 October 2026:** [Scientific-to-application roadmap decision](../foundations/scientific-to-application-roadmap-decision.md). It permits a thin reversible local M1 map prototype while retaining target reader, physical-device, terrain and offline capability gates. Historical next-stage statements below are superseded for sequencing; accepted scientific meanings and results are unchanged. Its sole next engineering task is **NOT BEGUN**.
+
 10 October 2026. Starting checkpoint **e560464c35094742cb523709bf6e553d12d1d009**,
 public `gbsamirahmed/project-meridian`, clean `main`, fetched `origin/main`, divergence
 0/0. Documentation synthesis only: no new experiment, production interface or revision

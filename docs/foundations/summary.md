@@ -1,5 +1,7 @@
 # Meridian foundations review summary
 
+> **Current planning authority — 11 October 2026:** [Scientific-to-application roadmap decision](scientific-to-application-roadmap-decision.md). **A — READY FOR BOUNDED APPLICATION FOUNDATION** means a small local M1 map prototype, with one next engineering task **NOT BEGUN**. The 9 October review and subsequent recommendations below remain historical evidence; their sequencing is superseded by this checkpoint. No final technology, native-device, offline or release readiness is claimed.
+
 9 October 2026. Starting checkpoint **68756976467aeef4bc647bc2b5fe11cae5bfd904**; public `project-meridian`, `main`, upstream `origin/main`, clean initial tree, origin fetched and 0/0 divergence.
 
 ## Executive result
