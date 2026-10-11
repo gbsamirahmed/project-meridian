@@ -224,3 +224,16 @@ Exactly one next task: **independent CCSDS numerical-decoding conformance — NO
 | WR12-Q02 / W31, W39 | Identified existing DLL/RECORD and primary loaded-module SHA; numerical evidence distinguished from metadata, parameter authority and skill | RESEARCHED (bounded evidence classification); installed libaec upstream version unknown, GDAL binary still lacks support |
 
 Exactly one next task: **scientific field-packaging and offline query replay — NOT BEGUN**, [defined in the report](independent-ccsds-numerical-conformance.md#7-programme-reassessment-and-exactly-one-next-task--not-begun).
+
+
+## WR013 bounded offline evidence — 11 October 2026
+
+[WR013](scientific-field-packaging-offline-replay.md): **Outcome A** for three 525-node subsets; all historical rows and WR006 blockers unchanged. No broad topic, format readiness or forecast skill promoted.
+
+| Identifier / parents | Bounded result | Status / remaining gate |
+|---|---|---|
+| WR13-Q01 / W31, W38, W39 | Native binary64 extraction/serialisation and 1,575 reopened values exact; original seals unchanged | EXPERIMENTALLY VALIDATED (three all-finite regular-grid profiles); masks/other geometry and families untested |
+| WR13-Q02 / W30, W39, W40 | 66 exact native-grid queries, 18 explicit rejections, package-only isolated stdlib double replay | EXPERIMENTALLY VALIDATED (bounded domain/cooperative guard); no OS sandbox, global subset periodicity, mobile performance or physical accuracy claim |
+| WR13-Q03 / W31, W39, W40 | Source encoding, interpreted field, subset encoding and query-domain identity separated | RESEARCHED (candidate refinement grounded in finite evidence); not a production schema or distribution approval |
+
+Exactly one next task: **ensemble-member identity and bounded uncertainty-semantics pilot — NOT BEGUN**, [defined in the report](scientific-field-packaging-offline-replay.md#8-programme-reassessment-and-exactly-one-next-task).

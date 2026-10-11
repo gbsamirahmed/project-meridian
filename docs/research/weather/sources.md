@@ -268,3 +268,8 @@ was recorded without bypass/retry; other precise primary sources were accessible
 ## WR012 decoder-source refinement — 10 October 2026
 
 [WR012 authoritative sources and capability pins](independent-ccsds-numerical-conformance.md#6-contract-consequences-validation-and-resources) identify NOAA GRIB templates, ecCodes 2.48.0 CCSDS implementation and upstream libaec ABI/licence. The existing local AEC DLL is pinned by checksum and installed distribution RECORD; upstream binary version remains unknown. A separate GRIB reader shares that decompressor, so evidence is independence B. No forecast/binary acquisition, new accounts or new source rights; WR011 ECMWF attribution, parameter scope and service qualifications remain. No additional archive retrievability claim.
+
+
+## WR013 preserved-source replay — 11 October 2026
+
+[WR013](scientific-field-packaging-offline-replay.md) reuses the exact WR007 GFS temperature, WR009 GFS APCP and WR011 IFS precipitation inputs and WR012 qualified numerical evidence; zero new source/documentation retrievals. Original access dates, object identity, parameter/table authority and source notices remain. Local extraction and transparent binary64 packaging create transformed research material, not new commercial/offline redistribution clearance. ECMWF attribution/copyright and modification notice accompany the package and report; no endorsement or new source-availability claim. The scientific package stays outside Git. No source file or external data-root layout changed.

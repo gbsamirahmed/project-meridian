@@ -197,3 +197,8 @@ GDAL metadata/geometry passes; numerical decoding is blocked by absent libaec.
 ## WR012 numerical-evidence refinement — 10 October 2026
 
 [WR012](independent-ccsds-numerical-conformance.md) establishes complete-grid exact agreement on unchanged WR011 2t/tp/U inputs using independent GRIB interpretation and shared libaec (independence B). Native units, longitude origin/order, masks and interval qualifiers remain explicit. This strengthens numerical integrity only; it does not supply independent physical observations, a V component, model interchangeability or forecast skill. GDAL's metadata-only result and WR011 Outcome B remain historical facts; WR006 strict/revised MIDAS targets stay BLOCKED.
+
+
+## WR013 representation versus physical reference — 11 October 2026
+
+[WR013](scientific-field-packaging-offline-replay.md) verifies exact package-only replay for GFS K temperature, GFS kg/m² precipitation over18–24 h and IFS metres precipitation over0–24 h. A common geographic subset/end time does not make their parameters, vertical meaning or intervals equivalent. The offline representation preserves those differences and rejects incompatible assumptions; it adds no observations, reference eligibility, model accuracy or terrain downscaling. WR006 strict/revised targets remain BLOCKED. Native-grid subset identity/query bounds are explicit; coincident geographic nodes do not erase different source longitude origins.

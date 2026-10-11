@@ -241,3 +241,8 @@ No new application/production integration starts here.
 ## WR012 finite numerical closure — 10 October 2026
 
 [Weather WR012](../research/weather/independent-ccsds-numerical-conformance.md) reaches **Outcome A**, qualified independent GRIB interpretation with shared libaec, all three preserved IFS grids exactly matching. No production decoder, provider selection, application maturity or device evidence follows. Existing accepted architecture/preservation/device gates and MIDAS blockers remain. The next bounded research direction is scientific field-packaging and offline query replay, **NOT BEGUN**, testing preservation of meaning before implementation commitments.
+
+
+## WR013 scientific offline evidence — 11 October 2026
+
+[Weather WR013](../research/weather/scientific-field-packaging-offline-replay.md) reaches **Outcome A** for three small preserved field subsets and standard-library package-only query replay. It establishes scientific preservation semantics, not production storage/offline mobile performance, application maturity or provider/framework/renderer choice. All accepted architecture, preservation, device gates and MIDAS blockers remain. Exactly one next bounded research direction is **ensemble-member identity and bounded uncertainty-semantics — NOT BEGUN**; no application or next-task work begins here.

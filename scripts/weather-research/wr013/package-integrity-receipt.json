@@ -1,0 +1,117 @@
+{
+  "components": {
+    "gfs-apcp.f64": {
+      "bytes": 4200,
+      "sha256": "519e0f062b3b4224f0f5c34385c04be0f5315395cd4603e73a917e3270ce86a9"
+    },
+    "gfs-temperature.f64": {
+      "bytes": 4200,
+      "sha256": "3c1c25149ea87f0d35e1b8df3a527d32882e6f563b2fd8b67e1979428c694890"
+    },
+    "ifs-precipitation.f64": {
+      "bytes": 4200,
+      "sha256": "9a7664e5540518e654463534160ae3eefa56a10761924210f0770bb7d795f821"
+    },
+    "manifest.json": {
+      "bytes": 29996,
+      "sha256": "4836d64d2800ca396b3684256f0302734626da41d94e0a2942f45b7dadee2687"
+    }
+  },
+  "fields": {
+    "gfs-apcp": {
+      "accepted_full_float64_sha256": "fe7903e822f06a612c6b28c84bd0ed58348393af547974f79dd404e4234856fd",
+      "comparison": "every reopened standalone-reader value against accepted ecCodes subset",
+      "exact_equal_cells": 525,
+      "finite_cells": 525,
+      "input_unchanged": true,
+      "maximum_absolute_difference": 0.0,
+      "mean_absolute_difference": 0.0,
+      "missing_cells": 0,
+      "package_precision": "IEEE754 binary64 little-endian",
+      "packaged_cells": 525,
+      "payload_bytes": 4200,
+      "payload_sha256": "519e0f062b3b4224f0f5c34385c04be0f5315395cd4603e73a917e3270ce86a9",
+      "primary_decoder": {
+        "eccodes_native": "2.48.0",
+        "eccodes_python": "2.48.0",
+        "numpy": "2.5.2",
+        "python": "3.12.6"
+      },
+      "raw_input": {
+        "bytes": 343228,
+        "filename": "gfs-2025011500-f024-apcp-18-24h.grib2",
+        "sha256": "e2a311fa2089ab1982d9b09e7ec82f483e07ef06f38457d9e379fe9cef970848"
+      },
+      "source_precision": "ecCodes IEEE754 binary64"
+    },
+    "gfs-temperature": {
+      "accepted_full_float64_sha256": "01dad7249c0f441c65a4677455ce1340797dab82d0045a1e6fba95620fdb91e3",
+      "comparison": "every reopened standalone-reader value against accepted ecCodes subset",
+      "exact_equal_cells": 525,
+      "finite_cells": 525,
+      "input_unchanged": true,
+      "maximum_absolute_difference": 0.0,
+      "mean_absolute_difference": 0.0,
+      "missing_cells": 0,
+      "package_precision": "IEEE754 binary64 little-endian",
+      "packaged_cells": 525,
+      "payload_bytes": 4200,
+      "payload_sha256": "3c1c25149ea87f0d35e1b8df3a527d32882e6f563b2fd8b67e1979428c694890",
+      "primary_decoder": {
+        "eccodes_native": "2.48.0",
+        "eccodes_python": "2.48.0",
+        "numpy": "2.5.2",
+        "python": "3.12.6"
+      },
+      "raw_input": {
+        "bytes": 874115,
+        "filename": "gfs-2025011500-f024-t2m.grib2",
+        "sha256": "0b95fc06fe9ca08de57f9c5089b8fcd5d7b6a42977b35f669da65ec0f43f40e4"
+      },
+      "source_precision": "ecCodes IEEE754 binary64"
+    },
+    "ifs-precipitation": {
+      "accepted_full_float64_sha256": "6a782c590e042189e126429e10ffe0da190e893794fdc94e7f3b5b2712d316e8",
+      "comparison": "every reopened standalone-reader value against accepted ecCodes subset",
+      "exact_equal_cells": 525,
+      "finite_cells": 525,
+      "input_unchanged": true,
+      "maximum_absolute_difference": 0.0,
+      "mean_absolute_difference": 0.0,
+      "missing_cells": 0,
+      "package_precision": "IEEE754 binary64 little-endian",
+      "packaged_cells": 525,
+      "payload_bytes": 4200,
+      "payload_sha256": "9a7664e5540518e654463534160ae3eefa56a10761924210f0770bb7d795f821",
+      "primary_decoder": {
+        "ecCodes": "2.48.0",
+        "eccodes_python": "2.48.0",
+        "numpy": "2.5.2",
+        "python": "3.12.6"
+      },
+      "raw_input": {
+        "bytes": 886088,
+        "filename": "precipitation.grib2",
+        "sha256": "bbe7a629c06579c27e64a181d2066ed1b36af14544238728d0eda4442083c884"
+      },
+      "source_precision": "ecCodes IEEE754 binary64"
+    }
+  },
+  "final_package_bytes": 42596,
+  "limitations": [
+    "exact source-preserving subset, not forecast accuracy or a commercial distribution licence",
+    "independent stdlib representation/replay reader, not a new independent meteorological decoder",
+    "tested regular grids only; no bitmap/missing payload, vector, category, ensemble or vertical profiles"
+  ],
+  "metadata_bytes": 29996,
+  "outcome": "A",
+  "package_identity": "4836d64d2800ca396b3684256f0302734626da41d94e0a2942f45b7dadee2687",
+  "payload_bytes": 12600,
+  "pins_sha256": "f7b8ea4dc57a73cdce1941891a9a6f45f6477a4cab8137ab31391a661b2917cd",
+  "predeclaration_sha256": "50ec81a7041b65d62f34110b32ed40d2396945ccefdfb2ce71f695559c99aad0",
+  "schema": "meridian-wr013-package-integrity-v1",
+  "utility_sha256": {
+    "offline_reader.py": "0de91e38cfa0fc29a0e05e1b09edccf718e9391871cb720e2f56f1b83e3ca752",
+    "package_pilot.py": "8389df362df9844e7498ac4da57ee8bf4783431dedb1938eb2586852bd10dd7f"
+  }
+}

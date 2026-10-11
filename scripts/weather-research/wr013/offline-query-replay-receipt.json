@@ -1,0 +1,3260 @@
+{
+  "absolute_tolerance": 0,
+  "edge_qualification": "closed south/east edges use inward stencil; global zero-weight outside nodes are not packaged",
+  "isolation": {
+    "audit_guard_enabled": true,
+    "opened_components": [
+      "package/gfs-apcp.f64",
+      "package/gfs-temperature.f64",
+      "package/ifs-precipitation.f64",
+      "package/manifest.json",
+      "requests.json"
+    ],
+    "python_isolated": true,
+    "python_no_site": true,
+    "qualification": "cooperative audit guard and isolated stdlib process; not hostile-code OS sandbox",
+    "scientific_modules_loaded": []
+  },
+  "isolation_directory_contents": [
+    "package/",
+    "offline_reader.py",
+    "requests.json"
+  ],
+  "maximum_absolute_difference": 0.0,
+  "outcome": "A",
+  "package_identity": "4836d64d2800ca396b3684256f0302734626da41d94e0a2942f45b7dadee2687",
+  "queries": [
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-temperature",
+      "index": 0,
+      "label": "exact-node",
+      "method": "NEAREST",
+      "native_unit": "K",
+      "native_value": 278.4979296875,
+      "nodes": [
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.0,
+          "native_value": 278.4979296875,
+          "source_column": 1420,
+          "source_row": 134,
+          "weight": 1.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 278.4979296875,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_seconds": 86400,
+        "kind": "instant",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-temperature",
+      "index": 1,
+      "label": "exact-node",
+      "method": "BILINEAR",
+      "native_unit": "K",
+      "native_value": 278.4979296875,
+      "nodes": [
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.0,
+          "native_value": 278.4979296875,
+          "source_column": 1420,
+          "source_row": 134,
+          "weight": 1.0
+        },
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.25,
+          "native_value": 277.6379296875,
+          "source_column": 1421,
+          "source_row": 134,
+          "weight": 0.0
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.0,
+          "native_value": 276.8279296875,
+          "source_column": 1420,
+          "source_row": 135,
+          "weight": 0.0
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.25,
+          "native_value": 276.1479296875,
+          "source_column": 1421,
+          "source_row": 135,
+          "weight": 0.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 278.4979296875,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_seconds": 86400,
+        "kind": "instant",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-temperature",
+      "index": 2,
+      "label": "half-longitude",
+      "method": "NEAREST",
+      "native_unit": "K",
+      "native_value": 277.6379296875,
+      "nodes": [
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.25,
+          "native_value": 277.6379296875,
+          "source_column": 1421,
+          "source_row": 134,
+          "weight": 1.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 277.6379296875,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_seconds": 86400,
+        "kind": "instant",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-temperature",
+      "index": 3,
+      "label": "half-longitude",
+      "method": "BILINEAR",
+      "native_unit": "K",
+      "native_value": 278.0679296875,
+      "nodes": [
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.0,
+          "native_value": 278.4979296875,
+          "source_column": 1420,
+          "source_row": 134,
+          "weight": 0.5
+        },
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.25,
+          "native_value": 277.6379296875,
+          "source_column": 1421,
+          "source_row": 134,
+          "weight": 0.5
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.0,
+          "native_value": 276.8279296875,
+          "source_column": 1420,
+          "source_row": 135,
+          "weight": 0.0
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.25,
+          "native_value": 276.1479296875,
+          "source_column": 1421,
+          "source_row": 135,
+          "weight": 0.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 278.0679296875,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_seconds": 86400,
+        "kind": "instant",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-temperature",
+      "index": 4,
+      "label": "half-latitude",
+      "method": "NEAREST",
+      "native_unit": "K",
+      "native_value": 276.8279296875,
+      "nodes": [
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.0,
+          "native_value": 276.8279296875,
+          "source_column": 1420,
+          "source_row": 135,
+          "weight": 1.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 276.8279296875,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_seconds": 86400,
+        "kind": "instant",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-temperature",
+      "index": 5,
+      "label": "half-latitude",
+      "method": "BILINEAR",
+      "native_unit": "K",
+      "native_value": 277.66292968749997,
+      "nodes": [
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.0,
+          "native_value": 278.4979296875,
+          "source_column": 1420,
+          "source_row": 134,
+          "weight": 0.5
+        },
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.25,
+          "native_value": 277.6379296875,
+          "source_column": 1421,
+          "source_row": 134,
+          "weight": 0.0
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.0,
+          "native_value": 276.8279296875,
+          "source_column": 1420,
+          "source_row": 135,
+          "weight": 0.5
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.25,
+          "native_value": 276.1479296875,
+          "source_column": 1421,
+          "source_row": 135,
+          "weight": 0.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 277.66292968749997,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_seconds": 86400,
+        "kind": "instant",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-temperature",
+      "index": 6,
+      "label": "interior",
+      "method": "NEAREST",
+      "native_unit": "K",
+      "native_value": 276.8279296875,
+      "nodes": [
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.0,
+          "native_value": 276.8279296875,
+          "source_column": 1420,
+          "source_row": 135,
+          "weight": 1.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 276.8279296875,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_seconds": 86400,
+        "kind": "instant",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-temperature",
+      "index": 7,
+      "label": "interior",
+      "method": "BILINEAR",
+      "native_unit": "K",
+      "native_value": 277.26165768749996,
+      "nodes": [
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.0,
+          "native_value": 278.4979296875,
+          "source_column": 1420,
+          "source_row": 134,
+          "weight": 0.24959999999998594
+        },
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.25,
+          "native_value": 277.6379296875,
+          "source_column": 1421,
+          "source_row": 134,
+          "weight": 0.23040000000000382
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.0,
+          "native_value": 276.8279296875,
+          "source_column": 1420,
+          "source_row": 135,
+          "weight": 0.27039999999999587
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.25,
+          "native_value": 276.1479296875,
+          "source_column": 1421,
+          "source_row": 135,
+          "weight": 0.24960000000001437
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 277.26165768749996,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_seconds": 86400,
+        "kind": "instant",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-temperature",
+      "index": 8,
+      "label": "Highland-fixture",
+      "method": "NEAREST",
+      "native_unit": "K",
+      "native_value": 278.9379296875,
+      "nodes": [
+        {
+          "latitude": 56.75,
+          "longitude_0_360": 355.0,
+          "native_value": 278.9379296875,
+          "source_column": 1420,
+          "source_row": 133,
+          "weight": 1.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 278.9379296875,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_seconds": 86400,
+        "kind": "instant",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-temperature",
+      "index": 9,
+      "label": "Highland-fixture",
+      "method": "BILINEAR",
+      "native_unit": "K",
+      "native_value": 278.91008321478,
+      "nodes": [
+        {
+          "latitude": 57.0,
+          "longitude_0_360": 354.75,
+          "native_value": 278.9879296875,
+          "source_column": 1419,
+          "source_row": 132,
+          "weight": 0.002616103999999449
+        },
+        {
+          "latitude": 57.0,
+          "longitude_0_360": 355.0,
+          "native_value": 278.77792968750003,
+          "source_column": 1420,
+          "source_row": 132,
+          "weight": 0.18478389599999723
+        },
+        {
+          "latitude": 56.75,
+          "longitude_0_360": 354.75,
+          "native_value": 279.0779296875,
+          "source_column": 1419,
+          "source_row": 133,
+          "weight": 0.011343895999997858
+        },
+        {
+          "latitude": 56.75,
+          "longitude_0_360": 355.0,
+          "native_value": 278.9379296875,
+          "source_column": 1420,
+          "source_row": 133,
+          "weight": 0.8012561040000055
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 278.91008321478,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_seconds": 86400,
+        "kind": "instant",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-temperature",
+      "index": 10,
+      "label": "longitude-355",
+      "method": "NEAREST",
+      "native_unit": "K",
+      "native_value": 278.4979296875,
+      "nodes": [
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.0,
+          "native_value": 278.4979296875,
+          "source_column": 1420,
+          "source_row": 134,
+          "weight": 1.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 278.4979296875,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_seconds": 86400,
+        "kind": "instant",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-temperature",
+      "index": 11,
+      "label": "longitude-355",
+      "method": "BILINEAR",
+      "native_unit": "K",
+      "native_value": 278.4979296875,
+      "nodes": [
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.0,
+          "native_value": 278.4979296875,
+          "source_column": 1420,
+          "source_row": 134,
+          "weight": 1.0
+        },
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.25,
+          "native_value": 277.6379296875,
+          "source_column": 1421,
+          "source_row": 134,
+          "weight": 0.0
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.0,
+          "native_value": 276.8279296875,
+          "source_column": 1420,
+          "source_row": 135,
+          "weight": 0.0
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.25,
+          "native_value": 276.1479296875,
+          "source_column": 1421,
+          "source_row": 135,
+          "weight": 0.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 278.4979296875,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_seconds": 86400,
+        "kind": "instant",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-temperature",
+      "index": 12,
+      "label": "longitude-715",
+      "method": "NEAREST",
+      "native_unit": "K",
+      "native_value": 278.4979296875,
+      "nodes": [
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.0,
+          "native_value": 278.4979296875,
+          "source_column": 1420,
+          "source_row": 134,
+          "weight": 1.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 278.4979296875,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_seconds": 86400,
+        "kind": "instant",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-temperature",
+      "index": 13,
+      "label": "longitude-715",
+      "method": "BILINEAR",
+      "native_unit": "K",
+      "native_value": 278.4979296875,
+      "nodes": [
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.0,
+          "native_value": 278.4979296875,
+          "source_column": 1420,
+          "source_row": 134,
+          "weight": 1.0
+        },
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.25,
+          "native_value": 277.6379296875,
+          "source_column": 1421,
+          "source_row": 134,
+          "weight": 0.0
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.0,
+          "native_value": 276.8279296875,
+          "source_column": 1420,
+          "source_row": 135,
+          "weight": 0.0
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.25,
+          "native_value": 276.1479296875,
+          "source_column": 1421,
+          "source_row": 135,
+          "weight": 0.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 278.4979296875,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_seconds": 86400,
+        "kind": "instant",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-temperature",
+      "index": 14,
+      "label": "northwest",
+      "method": "NEAREST",
+      "native_unit": "K",
+      "native_value": 283.6779296875,
+      "nodes": [
+        {
+          "latitude": 59.0,
+          "longitude_0_360": 352.0,
+          "native_value": 283.6779296875,
+          "source_column": 1408,
+          "source_row": 124,
+          "weight": 1.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 283.6779296875,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_seconds": 86400,
+        "kind": "instant",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-temperature",
+      "index": 15,
+      "label": "northwest",
+      "method": "BILINEAR",
+      "native_unit": "K",
+      "native_value": 283.6779296875,
+      "nodes": [
+        {
+          "latitude": 59.0,
+          "longitude_0_360": 352.0,
+          "native_value": 283.6779296875,
+          "source_column": 1408,
+          "source_row": 124,
+          "weight": 1.0
+        },
+        {
+          "latitude": 59.0,
+          "longitude_0_360": 352.25,
+          "native_value": 283.6779296875,
+          "source_column": 1409,
+          "source_row": 124,
+          "weight": 0.0
+        },
+        {
+          "latitude": 58.75,
+          "longitude_0_360": 352.0,
+          "native_value": 283.7479296875,
+          "source_column": 1408,
+          "source_row": 125,
+          "weight": 0.0
+        },
+        {
+          "latitude": 58.75,
+          "longitude_0_360": 352.25,
+          "native_value": 283.71792968750003,
+          "source_column": 1409,
+          "source_row": 125,
+          "weight": 0.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 283.6779296875,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_seconds": 86400,
+        "kind": "instant",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-temperature",
+      "index": 16,
+      "label": "southeast",
+      "method": "NEAREST",
+      "native_unit": "K",
+      "native_value": 276.6279296875,
+      "nodes": [
+        {
+          "latitude": 54.0,
+          "longitude_0_360": 358.0,
+          "native_value": 276.6279296875,
+          "source_column": 1432,
+          "source_row": 144,
+          "weight": 1.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 276.6279296875,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_seconds": 86400,
+        "kind": "instant",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-temperature",
+      "index": 17,
+      "label": "southeast",
+      "method": "BILINEAR",
+      "native_unit": "K",
+      "native_value": 276.6279296875,
+      "nodes": [
+        {
+          "latitude": 54.25,
+          "longitude_0_360": 357.75,
+          "native_value": 276.27792968750003,
+          "source_column": 1431,
+          "source_row": 143,
+          "weight": 0.0
+        },
+        {
+          "latitude": 54.25,
+          "longitude_0_360": 358.0,
+          "native_value": 277.0879296875,
+          "source_column": 1432,
+          "source_row": 143,
+          "weight": 0.0
+        },
+        {
+          "latitude": 54.0,
+          "longitude_0_360": 357.75,
+          "native_value": 276.3879296875,
+          "source_column": 1431,
+          "source_row": 144,
+          "weight": 0.0
+        },
+        {
+          "latitude": 54.0,
+          "longitude_0_360": 358.0,
+          "native_value": 276.6279296875,
+          "source_column": 1432,
+          "source_row": 144,
+          "weight": 1.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 276.6279296875,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_seconds": 86400,
+        "kind": "instant",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-temperature",
+      "index": 18,
+      "label": "north-edge",
+      "method": "NEAREST",
+      "native_unit": "K",
+      "native_value": 282.0479296875,
+      "nodes": [
+        {
+          "latitude": 59.0,
+          "longitude_0_360": 355.0,
+          "native_value": 282.0479296875,
+          "source_column": 1420,
+          "source_row": 124,
+          "weight": 1.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 282.0479296875,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_seconds": 86400,
+        "kind": "instant",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-temperature",
+      "index": 19,
+      "label": "north-edge",
+      "method": "BILINEAR",
+      "native_unit": "K",
+      "native_value": 282.0479296875,
+      "nodes": [
+        {
+          "latitude": 59.0,
+          "longitude_0_360": 355.0,
+          "native_value": 282.0479296875,
+          "source_column": 1420,
+          "source_row": 124,
+          "weight": 1.0
+        },
+        {
+          "latitude": 59.0,
+          "longitude_0_360": 355.25,
+          "native_value": 282.15792968750003,
+          "source_column": 1421,
+          "source_row": 124,
+          "weight": 0.0
+        },
+        {
+          "latitude": 58.75,
+          "longitude_0_360": 355.0,
+          "native_value": 282.2979296875,
+          "source_column": 1420,
+          "source_row": 125,
+          "weight": 0.0
+        },
+        {
+          "latitude": 58.75,
+          "longitude_0_360": 355.25,
+          "native_value": 282.96792968750003,
+          "source_column": 1421,
+          "source_row": 125,
+          "weight": 0.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 282.0479296875,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_seconds": 86400,
+        "kind": "instant",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-temperature",
+      "index": 20,
+      "label": "east-edge",
+      "method": "NEAREST",
+      "native_unit": "K",
+      "native_value": 281.1079296875,
+      "nodes": [
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 358.0,
+          "native_value": 281.1079296875,
+          "source_column": 1432,
+          "source_row": 134,
+          "weight": 1.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 281.1079296875,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_seconds": 86400,
+        "kind": "instant",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-temperature",
+      "index": 21,
+      "label": "east-edge",
+      "method": "BILINEAR",
+      "native_unit": "K",
+      "native_value": 281.1079296875,
+      "nodes": [
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 357.75,
+          "native_value": 280.6879296875,
+          "source_column": 1431,
+          "source_row": 134,
+          "weight": 0.0
+        },
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 358.0,
+          "native_value": 281.1079296875,
+          "source_column": 1432,
+          "source_row": 134,
+          "weight": 1.0
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 357.75,
+          "native_value": 281.1079296875,
+          "source_column": 1431,
+          "source_row": 135,
+          "weight": 0.0
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 358.0,
+          "native_value": 281.1479296875,
+          "source_column": 1432,
+          "source_row": 135,
+          "weight": 0.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 281.1079296875,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_seconds": 86400,
+        "kind": "instant",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "field_id": "gfs-temperature",
+      "index": 22,
+      "label": "north-outside",
+      "method": "BILINEAR",
+      "status": "OUTSIDE_EXTENT"
+    },
+    {
+      "field_id": "gfs-temperature",
+      "index": 23,
+      "label": "east-outside",
+      "method": "BILINEAR",
+      "status": "OUTSIDE_EXTENT"
+    },
+    {
+      "field_id": "gfs-temperature",
+      "index": 24,
+      "label": "pole-outside",
+      "method": "BILINEAR",
+      "status": "OUTSIDE_EXTENT"
+    },
+    {
+      "field_id": "gfs-temperature",
+      "index": 25,
+      "label": "invalid-latitude",
+      "method": "BILINEAR",
+      "status": "INVALID_QUERY"
+    },
+    {
+      "field_id": "gfs-temperature",
+      "index": 26,
+      "label": "unsupported-method",
+      "method": "CUBIC",
+      "status": "UNSUPPORTED_METHOD"
+    },
+    {
+      "field_id": "gfs-temperature",
+      "index": 27,
+      "label": "incorrect-temporal-assumption",
+      "method": "NEAREST",
+      "status": "ASSUMPTION_MISMATCH"
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-apcp",
+      "index": 28,
+      "label": "exact-node",
+      "method": "NEAREST",
+      "native_unit": "kg m**-2",
+      "native_value": 0.0,
+      "nodes": [
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.0,
+          "native_value": 0.0,
+          "source_column": 1420,
+          "source_row": 134,
+          "weight": 1.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.0,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 64800,
+        "increment_unit": "255: missing/not specified; zero increment denotes continuous or near-continuous processing",
+        "interval_duration_seconds": 21600,
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T18:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "support_qualification": "model accumulation over the encoded interval; no within-interval intensity/timing",
+        "time_increment": 0,
+        "time_increment_type_code": 2,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-apcp",
+      "index": 29,
+      "label": "exact-node",
+      "method": "BILINEAR",
+      "native_unit": "kg m**-2",
+      "native_value": 0.0,
+      "nodes": [
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.0,
+          "native_value": 0.0,
+          "source_column": 1420,
+          "source_row": 134,
+          "weight": 1.0
+        },
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.25,
+          "native_value": 0.0,
+          "source_column": 1421,
+          "source_row": 134,
+          "weight": 0.0
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.0,
+          "native_value": 0.0,
+          "source_column": 1420,
+          "source_row": 135,
+          "weight": 0.0
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.25,
+          "native_value": 0.0,
+          "source_column": 1421,
+          "source_row": 135,
+          "weight": 0.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.0,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 64800,
+        "increment_unit": "255: missing/not specified; zero increment denotes continuous or near-continuous processing",
+        "interval_duration_seconds": 21600,
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T18:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "support_qualification": "model accumulation over the encoded interval; no within-interval intensity/timing",
+        "time_increment": 0,
+        "time_increment_type_code": 2,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-apcp",
+      "index": 30,
+      "label": "half-longitude",
+      "method": "NEAREST",
+      "native_unit": "kg m**-2",
+      "native_value": 0.0,
+      "nodes": [
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.25,
+          "native_value": 0.0,
+          "source_column": 1421,
+          "source_row": 134,
+          "weight": 1.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.0,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 64800,
+        "increment_unit": "255: missing/not specified; zero increment denotes continuous or near-continuous processing",
+        "interval_duration_seconds": 21600,
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T18:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "support_qualification": "model accumulation over the encoded interval; no within-interval intensity/timing",
+        "time_increment": 0,
+        "time_increment_type_code": 2,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-apcp",
+      "index": 31,
+      "label": "half-longitude",
+      "method": "BILINEAR",
+      "native_unit": "kg m**-2",
+      "native_value": 0.0,
+      "nodes": [
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.0,
+          "native_value": 0.0,
+          "source_column": 1420,
+          "source_row": 134,
+          "weight": 0.5
+        },
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.25,
+          "native_value": 0.0,
+          "source_column": 1421,
+          "source_row": 134,
+          "weight": 0.5
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.0,
+          "native_value": 0.0,
+          "source_column": 1420,
+          "source_row": 135,
+          "weight": 0.0
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.25,
+          "native_value": 0.0,
+          "source_column": 1421,
+          "source_row": 135,
+          "weight": 0.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.0,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 64800,
+        "increment_unit": "255: missing/not specified; zero increment denotes continuous or near-continuous processing",
+        "interval_duration_seconds": 21600,
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T18:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "support_qualification": "model accumulation over the encoded interval; no within-interval intensity/timing",
+        "time_increment": 0,
+        "time_increment_type_code": 2,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-apcp",
+      "index": 32,
+      "label": "half-latitude",
+      "method": "NEAREST",
+      "native_unit": "kg m**-2",
+      "native_value": 0.0,
+      "nodes": [
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.0,
+          "native_value": 0.0,
+          "source_column": 1420,
+          "source_row": 135,
+          "weight": 1.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.0,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 64800,
+        "increment_unit": "255: missing/not specified; zero increment denotes continuous or near-continuous processing",
+        "interval_duration_seconds": 21600,
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T18:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "support_qualification": "model accumulation over the encoded interval; no within-interval intensity/timing",
+        "time_increment": 0,
+        "time_increment_type_code": 2,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-apcp",
+      "index": 33,
+      "label": "half-latitude",
+      "method": "BILINEAR",
+      "native_unit": "kg m**-2",
+      "native_value": 0.0,
+      "nodes": [
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.0,
+          "native_value": 0.0,
+          "source_column": 1420,
+          "source_row": 134,
+          "weight": 0.5
+        },
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.25,
+          "native_value": 0.0,
+          "source_column": 1421,
+          "source_row": 134,
+          "weight": 0.0
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.0,
+          "native_value": 0.0,
+          "source_column": 1420,
+          "source_row": 135,
+          "weight": 0.5
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.25,
+          "native_value": 0.0,
+          "source_column": 1421,
+          "source_row": 135,
+          "weight": 0.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.0,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 64800,
+        "increment_unit": "255: missing/not specified; zero increment denotes continuous or near-continuous processing",
+        "interval_duration_seconds": 21600,
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T18:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "support_qualification": "model accumulation over the encoded interval; no within-interval intensity/timing",
+        "time_increment": 0,
+        "time_increment_type_code": 2,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-apcp",
+      "index": 34,
+      "label": "interior",
+      "method": "NEAREST",
+      "native_unit": "kg m**-2",
+      "native_value": 0.0,
+      "nodes": [
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.0,
+          "native_value": 0.0,
+          "source_column": 1420,
+          "source_row": 135,
+          "weight": 1.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.0,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 64800,
+        "increment_unit": "255: missing/not specified; zero increment denotes continuous or near-continuous processing",
+        "interval_duration_seconds": 21600,
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T18:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "support_qualification": "model accumulation over the encoded interval; no within-interval intensity/timing",
+        "time_increment": 0,
+        "time_increment_type_code": 2,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-apcp",
+      "index": 35,
+      "label": "interior",
+      "method": "BILINEAR",
+      "native_unit": "kg m**-2",
+      "native_value": 0.0,
+      "nodes": [
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.0,
+          "native_value": 0.0,
+          "source_column": 1420,
+          "source_row": 134,
+          "weight": 0.24959999999998594
+        },
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.25,
+          "native_value": 0.0,
+          "source_column": 1421,
+          "source_row": 134,
+          "weight": 0.23040000000000382
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.0,
+          "native_value": 0.0,
+          "source_column": 1420,
+          "source_row": 135,
+          "weight": 0.27039999999999587
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.25,
+          "native_value": 0.0,
+          "source_column": 1421,
+          "source_row": 135,
+          "weight": 0.24960000000001437
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.0,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 64800,
+        "increment_unit": "255: missing/not specified; zero increment denotes continuous or near-continuous processing",
+        "interval_duration_seconds": 21600,
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T18:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "support_qualification": "model accumulation over the encoded interval; no within-interval intensity/timing",
+        "time_increment": 0,
+        "time_increment_type_code": 2,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-apcp",
+      "index": 36,
+      "label": "Highland-fixture",
+      "method": "NEAREST",
+      "native_unit": "kg m**-2",
+      "native_value": 0.0,
+      "nodes": [
+        {
+          "latitude": 56.75,
+          "longitude_0_360": 355.0,
+          "native_value": 0.0,
+          "source_column": 1420,
+          "source_row": 133,
+          "weight": 1.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.0,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 64800,
+        "increment_unit": "255: missing/not specified; zero increment denotes continuous or near-continuous processing",
+        "interval_duration_seconds": 21600,
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T18:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "support_qualification": "model accumulation over the encoded interval; no within-interval intensity/timing",
+        "time_increment": 0,
+        "time_increment_type_code": 2,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-apcp",
+      "index": 37,
+      "label": "Highland-fixture",
+      "method": "BILINEAR",
+      "native_unit": "kg m**-2",
+      "native_value": 0.0,
+      "nodes": [
+        {
+          "latitude": 57.0,
+          "longitude_0_360": 354.75,
+          "native_value": 0.0,
+          "source_column": 1419,
+          "source_row": 132,
+          "weight": 0.002616103999999449
+        },
+        {
+          "latitude": 57.0,
+          "longitude_0_360": 355.0,
+          "native_value": 0.0,
+          "source_column": 1420,
+          "source_row": 132,
+          "weight": 0.18478389599999723
+        },
+        {
+          "latitude": 56.75,
+          "longitude_0_360": 354.75,
+          "native_value": 0.0,
+          "source_column": 1419,
+          "source_row": 133,
+          "weight": 0.011343895999997858
+        },
+        {
+          "latitude": 56.75,
+          "longitude_0_360": 355.0,
+          "native_value": 0.0,
+          "source_column": 1420,
+          "source_row": 133,
+          "weight": 0.8012561040000055
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.0,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 64800,
+        "increment_unit": "255: missing/not specified; zero increment denotes continuous or near-continuous processing",
+        "interval_duration_seconds": 21600,
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T18:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "support_qualification": "model accumulation over the encoded interval; no within-interval intensity/timing",
+        "time_increment": 0,
+        "time_increment_type_code": 2,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-apcp",
+      "index": 38,
+      "label": "longitude-355",
+      "method": "NEAREST",
+      "native_unit": "kg m**-2",
+      "native_value": 0.0,
+      "nodes": [
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.0,
+          "native_value": 0.0,
+          "source_column": 1420,
+          "source_row": 134,
+          "weight": 1.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.0,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 64800,
+        "increment_unit": "255: missing/not specified; zero increment denotes continuous or near-continuous processing",
+        "interval_duration_seconds": 21600,
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T18:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "support_qualification": "model accumulation over the encoded interval; no within-interval intensity/timing",
+        "time_increment": 0,
+        "time_increment_type_code": 2,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-apcp",
+      "index": 39,
+      "label": "longitude-355",
+      "method": "BILINEAR",
+      "native_unit": "kg m**-2",
+      "native_value": 0.0,
+      "nodes": [
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.0,
+          "native_value": 0.0,
+          "source_column": 1420,
+          "source_row": 134,
+          "weight": 1.0
+        },
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.25,
+          "native_value": 0.0,
+          "source_column": 1421,
+          "source_row": 134,
+          "weight": 0.0
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.0,
+          "native_value": 0.0,
+          "source_column": 1420,
+          "source_row": 135,
+          "weight": 0.0
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.25,
+          "native_value": 0.0,
+          "source_column": 1421,
+          "source_row": 135,
+          "weight": 0.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.0,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 64800,
+        "increment_unit": "255: missing/not specified; zero increment denotes continuous or near-continuous processing",
+        "interval_duration_seconds": 21600,
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T18:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "support_qualification": "model accumulation over the encoded interval; no within-interval intensity/timing",
+        "time_increment": 0,
+        "time_increment_type_code": 2,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-apcp",
+      "index": 40,
+      "label": "longitude-715",
+      "method": "NEAREST",
+      "native_unit": "kg m**-2",
+      "native_value": 0.0,
+      "nodes": [
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.0,
+          "native_value": 0.0,
+          "source_column": 1420,
+          "source_row": 134,
+          "weight": 1.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.0,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 64800,
+        "increment_unit": "255: missing/not specified; zero increment denotes continuous or near-continuous processing",
+        "interval_duration_seconds": 21600,
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T18:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "support_qualification": "model accumulation over the encoded interval; no within-interval intensity/timing",
+        "time_increment": 0,
+        "time_increment_type_code": 2,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-apcp",
+      "index": 41,
+      "label": "longitude-715",
+      "method": "BILINEAR",
+      "native_unit": "kg m**-2",
+      "native_value": 0.0,
+      "nodes": [
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.0,
+          "native_value": 0.0,
+          "source_column": 1420,
+          "source_row": 134,
+          "weight": 1.0
+        },
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.25,
+          "native_value": 0.0,
+          "source_column": 1421,
+          "source_row": 134,
+          "weight": 0.0
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.0,
+          "native_value": 0.0,
+          "source_column": 1420,
+          "source_row": 135,
+          "weight": 0.0
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.25,
+          "native_value": 0.0,
+          "source_column": 1421,
+          "source_row": 135,
+          "weight": 0.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.0,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 64800,
+        "increment_unit": "255: missing/not specified; zero increment denotes continuous or near-continuous processing",
+        "interval_duration_seconds": 21600,
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T18:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "support_qualification": "model accumulation over the encoded interval; no within-interval intensity/timing",
+        "time_increment": 0,
+        "time_increment_type_code": 2,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-apcp",
+      "index": 42,
+      "label": "northwest",
+      "method": "NEAREST",
+      "native_unit": "kg m**-2",
+      "native_value": 0.5,
+      "nodes": [
+        {
+          "latitude": 59.0,
+          "longitude_0_360": 352.0,
+          "native_value": 0.5,
+          "source_column": 1408,
+          "source_row": 124,
+          "weight": 1.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.5,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 64800,
+        "increment_unit": "255: missing/not specified; zero increment denotes continuous or near-continuous processing",
+        "interval_duration_seconds": 21600,
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T18:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "support_qualification": "model accumulation over the encoded interval; no within-interval intensity/timing",
+        "time_increment": 0,
+        "time_increment_type_code": 2,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-apcp",
+      "index": 43,
+      "label": "northwest",
+      "method": "BILINEAR",
+      "native_unit": "kg m**-2",
+      "native_value": 0.5,
+      "nodes": [
+        {
+          "latitude": 59.0,
+          "longitude_0_360": 352.0,
+          "native_value": 0.5,
+          "source_column": 1408,
+          "source_row": 124,
+          "weight": 1.0
+        },
+        {
+          "latitude": 59.0,
+          "longitude_0_360": 352.25,
+          "native_value": 0.5625,
+          "source_column": 1409,
+          "source_row": 124,
+          "weight": 0.0
+        },
+        {
+          "latitude": 58.75,
+          "longitude_0_360": 352.0,
+          "native_value": 0.5625,
+          "source_column": 1408,
+          "source_row": 125,
+          "weight": 0.0
+        },
+        {
+          "latitude": 58.75,
+          "longitude_0_360": 352.25,
+          "native_value": 0.5625,
+          "source_column": 1409,
+          "source_row": 125,
+          "weight": 0.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.5,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 64800,
+        "increment_unit": "255: missing/not specified; zero increment denotes continuous or near-continuous processing",
+        "interval_duration_seconds": 21600,
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T18:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "support_qualification": "model accumulation over the encoded interval; no within-interval intensity/timing",
+        "time_increment": 0,
+        "time_increment_type_code": 2,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-apcp",
+      "index": 44,
+      "label": "southeast",
+      "method": "NEAREST",
+      "native_unit": "kg m**-2",
+      "native_value": 0.0,
+      "nodes": [
+        {
+          "latitude": 54.0,
+          "longitude_0_360": 358.0,
+          "native_value": 0.0,
+          "source_column": 1432,
+          "source_row": 144,
+          "weight": 1.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.0,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 64800,
+        "increment_unit": "255: missing/not specified; zero increment denotes continuous or near-continuous processing",
+        "interval_duration_seconds": 21600,
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T18:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "support_qualification": "model accumulation over the encoded interval; no within-interval intensity/timing",
+        "time_increment": 0,
+        "time_increment_type_code": 2,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-apcp",
+      "index": 45,
+      "label": "southeast",
+      "method": "BILINEAR",
+      "native_unit": "kg m**-2",
+      "native_value": 0.0,
+      "nodes": [
+        {
+          "latitude": 54.25,
+          "longitude_0_360": 357.75,
+          "native_value": 0.0,
+          "source_column": 1431,
+          "source_row": 143,
+          "weight": 0.0
+        },
+        {
+          "latitude": 54.25,
+          "longitude_0_360": 358.0,
+          "native_value": 0.0,
+          "source_column": 1432,
+          "source_row": 143,
+          "weight": 0.0
+        },
+        {
+          "latitude": 54.0,
+          "longitude_0_360": 357.75,
+          "native_value": 0.0,
+          "source_column": 1431,
+          "source_row": 144,
+          "weight": 0.0
+        },
+        {
+          "latitude": 54.0,
+          "longitude_0_360": 358.0,
+          "native_value": 0.0,
+          "source_column": 1432,
+          "source_row": 144,
+          "weight": 1.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.0,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 64800,
+        "increment_unit": "255: missing/not specified; zero increment denotes continuous or near-continuous processing",
+        "interval_duration_seconds": 21600,
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T18:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "support_qualification": "model accumulation over the encoded interval; no within-interval intensity/timing",
+        "time_increment": 0,
+        "time_increment_type_code": 2,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-apcp",
+      "index": 46,
+      "label": "north-edge",
+      "method": "NEAREST",
+      "native_unit": "kg m**-2",
+      "native_value": 0.3125,
+      "nodes": [
+        {
+          "latitude": 59.0,
+          "longitude_0_360": 355.0,
+          "native_value": 0.3125,
+          "source_column": 1420,
+          "source_row": 124,
+          "weight": 1.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.3125,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 64800,
+        "increment_unit": "255: missing/not specified; zero increment denotes continuous or near-continuous processing",
+        "interval_duration_seconds": 21600,
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T18:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "support_qualification": "model accumulation over the encoded interval; no within-interval intensity/timing",
+        "time_increment": 0,
+        "time_increment_type_code": 2,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-apcp",
+      "index": 47,
+      "label": "north-edge",
+      "method": "BILINEAR",
+      "native_unit": "kg m**-2",
+      "native_value": 0.3125,
+      "nodes": [
+        {
+          "latitude": 59.0,
+          "longitude_0_360": 355.0,
+          "native_value": 0.3125,
+          "source_column": 1420,
+          "source_row": 124,
+          "weight": 1.0
+        },
+        {
+          "latitude": 59.0,
+          "longitude_0_360": 355.25,
+          "native_value": 0.3125,
+          "source_column": 1421,
+          "source_row": 124,
+          "weight": 0.0
+        },
+        {
+          "latitude": 58.75,
+          "longitude_0_360": 355.0,
+          "native_value": 0.4375,
+          "source_column": 1420,
+          "source_row": 125,
+          "weight": 0.0
+        },
+        {
+          "latitude": 58.75,
+          "longitude_0_360": 355.25,
+          "native_value": 0.375,
+          "source_column": 1421,
+          "source_row": 125,
+          "weight": 0.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.3125,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 64800,
+        "increment_unit": "255: missing/not specified; zero increment denotes continuous or near-continuous processing",
+        "interval_duration_seconds": 21600,
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T18:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "support_qualification": "model accumulation over the encoded interval; no within-interval intensity/timing",
+        "time_increment": 0,
+        "time_increment_type_code": 2,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-apcp",
+      "index": 48,
+      "label": "east-edge",
+      "method": "NEAREST",
+      "native_unit": "kg m**-2",
+      "native_value": 0.0,
+      "nodes": [
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 358.0,
+          "native_value": 0.0,
+          "source_column": 1432,
+          "source_row": 134,
+          "weight": 1.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.0,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 64800,
+        "increment_unit": "255: missing/not specified; zero increment denotes continuous or near-continuous processing",
+        "interval_duration_seconds": 21600,
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T18:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "support_qualification": "model accumulation over the encoded interval; no within-interval intensity/timing",
+        "time_increment": 0,
+        "time_increment_type_code": 2,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "gfs-apcp",
+      "index": 49,
+      "label": "east-edge",
+      "method": "BILINEAR",
+      "native_unit": "kg m**-2",
+      "native_value": 0.0,
+      "nodes": [
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 357.75,
+          "native_value": 0.0,
+          "source_column": 1431,
+          "source_row": 134,
+          "weight": 0.0
+        },
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 358.0,
+          "native_value": 0.0,
+          "source_column": 1432,
+          "source_row": 134,
+          "weight": 1.0
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 357.75,
+          "native_value": 0.0,
+          "source_column": 1431,
+          "source_row": 135,
+          "weight": 0.0
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 358.0,
+          "native_value": 0.0,
+          "source_column": 1432,
+          "source_row": 135,
+          "weight": 0.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.0,
+      "status": "OK",
+      "temporal": {
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 64800,
+        "increment_unit": "255: missing/not specified; zero increment denotes continuous or near-continuous processing",
+        "interval_duration_seconds": 21600,
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T18:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "support_qualification": "model accumulation over the encoded interval; no within-interval intensity/timing",
+        "time_increment": 0,
+        "time_increment_type_code": 2,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "field_id": "gfs-apcp",
+      "index": 50,
+      "label": "north-outside",
+      "method": "BILINEAR",
+      "status": "OUTSIDE_EXTENT"
+    },
+    {
+      "field_id": "gfs-apcp",
+      "index": 51,
+      "label": "east-outside",
+      "method": "BILINEAR",
+      "status": "OUTSIDE_EXTENT"
+    },
+    {
+      "field_id": "gfs-apcp",
+      "index": 52,
+      "label": "pole-outside",
+      "method": "BILINEAR",
+      "status": "OUTSIDE_EXTENT"
+    },
+    {
+      "field_id": "gfs-apcp",
+      "index": 53,
+      "label": "invalid-latitude",
+      "method": "BILINEAR",
+      "status": "INVALID_QUERY"
+    },
+    {
+      "field_id": "gfs-apcp",
+      "index": 54,
+      "label": "unsupported-method",
+      "method": "CUBIC",
+      "status": "UNSUPPORTED_METHOD"
+    },
+    {
+      "field_id": "gfs-apcp",
+      "index": 55,
+      "label": "incorrect-temporal-assumption",
+      "method": "NEAREST",
+      "status": "ASSUMPTION_MISMATCH"
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "ifs-precipitation",
+      "index": 56,
+      "label": "exact-node",
+      "method": "NEAREST",
+      "native_unit": "m",
+      "native_value": 0.00083160400390625,
+      "nodes": [
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.0,
+          "native_value": 0.00083160400390625,
+          "source_column": 700,
+          "source_row": 134,
+          "weight": 1.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.00083160400390625,
+      "status": "OK",
+      "temporal": {
+        "duration_seconds": 86400,
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 0,
+        "increment": {
+          "qualification": "encoded increment; no inferred internal sample count or endpoint algorithm",
+          "seconds": 450,
+          "type_code": 2,
+          "unit_code": 13,
+          "value": 450
+        },
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T00:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "ifs-precipitation",
+      "index": 57,
+      "label": "exact-node",
+      "method": "BILINEAR",
+      "native_unit": "m",
+      "native_value": 0.00083160400390625,
+      "nodes": [
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.0,
+          "native_value": 0.00083160400390625,
+          "source_column": 700,
+          "source_row": 134,
+          "weight": 1.0
+        },
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.25,
+          "native_value": 0.00054168701171875,
+          "source_column": 701,
+          "source_row": 134,
+          "weight": 0.0
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.0,
+          "native_value": 0.0001983642578125,
+          "source_column": 700,
+          "source_row": 135,
+          "weight": 0.0
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.25,
+          "native_value": 0.000335693359375,
+          "source_column": 701,
+          "source_row": 135,
+          "weight": 0.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.00083160400390625,
+      "status": "OK",
+      "temporal": {
+        "duration_seconds": 86400,
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 0,
+        "increment": {
+          "qualification": "encoded increment; no inferred internal sample count or endpoint algorithm",
+          "seconds": 450,
+          "type_code": 2,
+          "unit_code": 13,
+          "value": 450
+        },
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T00:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "ifs-precipitation",
+      "index": 58,
+      "label": "half-longitude",
+      "method": "NEAREST",
+      "native_unit": "m",
+      "native_value": 0.00054168701171875,
+      "nodes": [
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.25,
+          "native_value": 0.00054168701171875,
+          "source_column": 701,
+          "source_row": 134,
+          "weight": 1.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.00054168701171875,
+      "status": "OK",
+      "temporal": {
+        "duration_seconds": 86400,
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 0,
+        "increment": {
+          "qualification": "encoded increment; no inferred internal sample count or endpoint algorithm",
+          "seconds": 450,
+          "type_code": 2,
+          "unit_code": 13,
+          "value": 450
+        },
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T00:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "ifs-precipitation",
+      "index": 59,
+      "label": "half-longitude",
+      "method": "BILINEAR",
+      "native_unit": "m",
+      "native_value": 0.0006866455078125,
+      "nodes": [
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.0,
+          "native_value": 0.00083160400390625,
+          "source_column": 700,
+          "source_row": 134,
+          "weight": 0.5
+        },
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.25,
+          "native_value": 0.00054168701171875,
+          "source_column": 701,
+          "source_row": 134,
+          "weight": 0.5
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.0,
+          "native_value": 0.0001983642578125,
+          "source_column": 700,
+          "source_row": 135,
+          "weight": 0.0
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.25,
+          "native_value": 0.000335693359375,
+          "source_column": 701,
+          "source_row": 135,
+          "weight": 0.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.0006866455078125,
+      "status": "OK",
+      "temporal": {
+        "duration_seconds": 86400,
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 0,
+        "increment": {
+          "qualification": "encoded increment; no inferred internal sample count or endpoint algorithm",
+          "seconds": 450,
+          "type_code": 2,
+          "unit_code": 13,
+          "value": 450
+        },
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T00:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "ifs-precipitation",
+      "index": 60,
+      "label": "half-latitude",
+      "method": "NEAREST",
+      "native_unit": "m",
+      "native_value": 0.0001983642578125,
+      "nodes": [
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.0,
+          "native_value": 0.0001983642578125,
+          "source_column": 700,
+          "source_row": 135,
+          "weight": 1.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.0001983642578125,
+      "status": "OK",
+      "temporal": {
+        "duration_seconds": 86400,
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 0,
+        "increment": {
+          "qualification": "encoded increment; no inferred internal sample count or endpoint algorithm",
+          "seconds": 450,
+          "type_code": 2,
+          "unit_code": 13,
+          "value": 450
+        },
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T00:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "ifs-precipitation",
+      "index": 61,
+      "label": "half-latitude",
+      "method": "BILINEAR",
+      "native_unit": "m",
+      "native_value": 0.000514984130859375,
+      "nodes": [
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.0,
+          "native_value": 0.00083160400390625,
+          "source_column": 700,
+          "source_row": 134,
+          "weight": 0.5
+        },
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.25,
+          "native_value": 0.00054168701171875,
+          "source_column": 701,
+          "source_row": 134,
+          "weight": 0.0
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.0,
+          "native_value": 0.0001983642578125,
+          "source_column": 700,
+          "source_row": 135,
+          "weight": 0.5
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.25,
+          "native_value": 0.000335693359375,
+          "source_column": 701,
+          "source_row": 135,
+          "weight": 0.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.000514984130859375,
+      "status": "OK",
+      "temporal": {
+        "duration_seconds": 86400,
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 0,
+        "increment": {
+          "qualification": "encoded increment; no inferred internal sample count or endpoint algorithm",
+          "seconds": 450,
+          "type_code": 2,
+          "unit_code": 13,
+          "value": 450
+        },
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T00:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "ifs-precipitation",
+      "index": 62,
+      "label": "interior",
+      "method": "NEAREST",
+      "native_unit": "m",
+      "native_value": 0.0001983642578125,
+      "nodes": [
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.0,
+          "native_value": 0.0001983642578125,
+          "source_column": 700,
+          "source_row": 135,
+          "weight": 1.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.0001983642578125,
+      "status": "OK",
+      "temporal": {
+        "duration_seconds": 86400,
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 0,
+        "increment": {
+          "qualification": "encoded increment; no inferred internal sample count or endpoint algorithm",
+          "seconds": 450,
+          "type_code": 2,
+          "unit_code": 13,
+          "value": 450
+        },
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T00:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "ifs-precipitation",
+      "index": 63,
+      "label": "interior",
+      "method": "BILINEAR",
+      "native_unit": "m",
+      "native_value": 0.0004697998046874944,
+      "nodes": [
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.0,
+          "native_value": 0.00083160400390625,
+          "source_column": 700,
+          "source_row": 134,
+          "weight": 0.24959999999998594
+        },
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.25,
+          "native_value": 0.00054168701171875,
+          "source_column": 701,
+          "source_row": 134,
+          "weight": 0.23040000000000382
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.0,
+          "native_value": 0.0001983642578125,
+          "source_column": 700,
+          "source_row": 135,
+          "weight": 0.27039999999999587
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.25,
+          "native_value": 0.000335693359375,
+          "source_column": 701,
+          "source_row": 135,
+          "weight": 0.24960000000001437
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.0004697998046874944,
+      "status": "OK",
+      "temporal": {
+        "duration_seconds": 86400,
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 0,
+        "increment": {
+          "qualification": "encoded increment; no inferred internal sample count or endpoint algorithm",
+          "seconds": 450,
+          "type_code": 2,
+          "unit_code": 13,
+          "value": 450
+        },
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T00:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "ifs-precipitation",
+      "index": 64,
+      "label": "Highland-fixture",
+      "method": "NEAREST",
+      "native_unit": "m",
+      "native_value": 0.001018524169921875,
+      "nodes": [
+        {
+          "latitude": 56.75,
+          "longitude_0_360": 355.0,
+          "native_value": 0.001018524169921875,
+          "source_column": 700,
+          "source_row": 133,
+          "weight": 1.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.001018524169921875,
+      "status": "OK",
+      "temporal": {
+        "duration_seconds": 86400,
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 0,
+        "increment": {
+          "qualification": "encoded increment; no inferred internal sample count or endpoint algorithm",
+          "seconds": 450,
+          "type_code": 2,
+          "unit_code": 13,
+          "value": 450
+        },
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T00:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "ifs-precipitation",
+      "index": 65,
+      "label": "Highland-fixture",
+      "method": "BILINEAR",
+      "native_unit": "m",
+      "native_value": 0.0009666405734558105,
+      "nodes": [
+        {
+          "latitude": 57.0,
+          "longitude_0_360": 354.75,
+          "native_value": 0.0009765625,
+          "source_column": 699,
+          "source_row": 132,
+          "weight": 0.002616103999999449
+        },
+        {
+          "latitude": 57.0,
+          "longitude_0_360": 355.0,
+          "native_value": 0.00070953369140625,
+          "source_column": 700,
+          "source_row": 132,
+          "weight": 0.18478389599999723
+        },
+        {
+          "latitude": 56.75,
+          "longitude_0_360": 354.75,
+          "native_value": 0.00148773193359375,
+          "source_column": 699,
+          "source_row": 133,
+          "weight": 0.011343895999997858
+        },
+        {
+          "latitude": 56.75,
+          "longitude_0_360": 355.0,
+          "native_value": 0.001018524169921875,
+          "source_column": 700,
+          "source_row": 133,
+          "weight": 0.8012561040000055
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.0009666405734558105,
+      "status": "OK",
+      "temporal": {
+        "duration_seconds": 86400,
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 0,
+        "increment": {
+          "qualification": "encoded increment; no inferred internal sample count or endpoint algorithm",
+          "seconds": 450,
+          "type_code": 2,
+          "unit_code": 13,
+          "value": 450
+        },
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T00:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "ifs-precipitation",
+      "index": 66,
+      "label": "longitude-355",
+      "method": "NEAREST",
+      "native_unit": "m",
+      "native_value": 0.00083160400390625,
+      "nodes": [
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.0,
+          "native_value": 0.00083160400390625,
+          "source_column": 700,
+          "source_row": 134,
+          "weight": 1.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.00083160400390625,
+      "status": "OK",
+      "temporal": {
+        "duration_seconds": 86400,
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 0,
+        "increment": {
+          "qualification": "encoded increment; no inferred internal sample count or endpoint algorithm",
+          "seconds": 450,
+          "type_code": 2,
+          "unit_code": 13,
+          "value": 450
+        },
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T00:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "ifs-precipitation",
+      "index": 67,
+      "label": "longitude-355",
+      "method": "BILINEAR",
+      "native_unit": "m",
+      "native_value": 0.00083160400390625,
+      "nodes": [
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.0,
+          "native_value": 0.00083160400390625,
+          "source_column": 700,
+          "source_row": 134,
+          "weight": 1.0
+        },
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.25,
+          "native_value": 0.00054168701171875,
+          "source_column": 701,
+          "source_row": 134,
+          "weight": 0.0
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.0,
+          "native_value": 0.0001983642578125,
+          "source_column": 700,
+          "source_row": 135,
+          "weight": 0.0
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.25,
+          "native_value": 0.000335693359375,
+          "source_column": 701,
+          "source_row": 135,
+          "weight": 0.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.00083160400390625,
+      "status": "OK",
+      "temporal": {
+        "duration_seconds": 86400,
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 0,
+        "increment": {
+          "qualification": "encoded increment; no inferred internal sample count or endpoint algorithm",
+          "seconds": 450,
+          "type_code": 2,
+          "unit_code": 13,
+          "value": 450
+        },
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T00:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "ifs-precipitation",
+      "index": 68,
+      "label": "longitude-715",
+      "method": "NEAREST",
+      "native_unit": "m",
+      "native_value": 0.00083160400390625,
+      "nodes": [
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.0,
+          "native_value": 0.00083160400390625,
+          "source_column": 700,
+          "source_row": 134,
+          "weight": 1.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.00083160400390625,
+      "status": "OK",
+      "temporal": {
+        "duration_seconds": 86400,
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 0,
+        "increment": {
+          "qualification": "encoded increment; no inferred internal sample count or endpoint algorithm",
+          "seconds": 450,
+          "type_code": 2,
+          "unit_code": 13,
+          "value": 450
+        },
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T00:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "ifs-precipitation",
+      "index": 69,
+      "label": "longitude-715",
+      "method": "BILINEAR",
+      "native_unit": "m",
+      "native_value": 0.00083160400390625,
+      "nodes": [
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.0,
+          "native_value": 0.00083160400390625,
+          "source_column": 700,
+          "source_row": 134,
+          "weight": 1.0
+        },
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 355.25,
+          "native_value": 0.00054168701171875,
+          "source_column": 701,
+          "source_row": 134,
+          "weight": 0.0
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.0,
+          "native_value": 0.0001983642578125,
+          "source_column": 700,
+          "source_row": 135,
+          "weight": 0.0
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 355.25,
+          "native_value": 0.000335693359375,
+          "source_column": 701,
+          "source_row": 135,
+          "weight": 0.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.00083160400390625,
+      "status": "OK",
+      "temporal": {
+        "duration_seconds": 86400,
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 0,
+        "increment": {
+          "qualification": "encoded increment; no inferred internal sample count or endpoint algorithm",
+          "seconds": 450,
+          "type_code": 2,
+          "unit_code": 13,
+          "value": 450
+        },
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T00:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "ifs-precipitation",
+      "index": 70,
+      "label": "northwest",
+      "method": "NEAREST",
+      "native_unit": "m",
+      "native_value": 0.00380706787109375,
+      "nodes": [
+        {
+          "latitude": 59.0,
+          "longitude_0_360": 352.0,
+          "native_value": 0.00380706787109375,
+          "source_column": 688,
+          "source_row": 124,
+          "weight": 1.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.00380706787109375,
+      "status": "OK",
+      "temporal": {
+        "duration_seconds": 86400,
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 0,
+        "increment": {
+          "qualification": "encoded increment; no inferred internal sample count or endpoint algorithm",
+          "seconds": 450,
+          "type_code": 2,
+          "unit_code": 13,
+          "value": 450
+        },
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T00:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "ifs-precipitation",
+      "index": 71,
+      "label": "northwest",
+      "method": "BILINEAR",
+      "native_unit": "m",
+      "native_value": 0.00380706787109375,
+      "nodes": [
+        {
+          "latitude": 59.0,
+          "longitude_0_360": 352.0,
+          "native_value": 0.00380706787109375,
+          "source_column": 688,
+          "source_row": 124,
+          "weight": 1.0
+        },
+        {
+          "latitude": 59.0,
+          "longitude_0_360": 352.25,
+          "native_value": 0.00397491455078125,
+          "source_column": 689,
+          "source_row": 124,
+          "weight": 0.0
+        },
+        {
+          "latitude": 58.75,
+          "longitude_0_360": 352.0,
+          "native_value": 0.0034637451171875,
+          "source_column": 688,
+          "source_row": 125,
+          "weight": 0.0
+        },
+        {
+          "latitude": 58.75,
+          "longitude_0_360": 352.25,
+          "native_value": 0.003475189208984375,
+          "source_column": 689,
+          "source_row": 125,
+          "weight": 0.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.00380706787109375,
+      "status": "OK",
+      "temporal": {
+        "duration_seconds": 86400,
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 0,
+        "increment": {
+          "qualification": "encoded increment; no inferred internal sample count or endpoint algorithm",
+          "seconds": 450,
+          "type_code": 2,
+          "unit_code": 13,
+          "value": 450
+        },
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T00:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "ifs-precipitation",
+      "index": 72,
+      "label": "southeast",
+      "method": "NEAREST",
+      "native_unit": "m",
+      "native_value": 6.4849853515625e-05,
+      "nodes": [
+        {
+          "latitude": 54.0,
+          "longitude_0_360": 358.0,
+          "native_value": 6.4849853515625e-05,
+          "source_column": 712,
+          "source_row": 144,
+          "weight": 1.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 6.4849853515625e-05,
+      "status": "OK",
+      "temporal": {
+        "duration_seconds": 86400,
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 0,
+        "increment": {
+          "qualification": "encoded increment; no inferred internal sample count or endpoint algorithm",
+          "seconds": 450,
+          "type_code": 2,
+          "unit_code": 13,
+          "value": 450
+        },
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T00:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "ifs-precipitation",
+      "index": 73,
+      "label": "southeast",
+      "method": "BILINEAR",
+      "native_unit": "m",
+      "native_value": 6.4849853515625e-05,
+      "nodes": [
+        {
+          "latitude": 54.25,
+          "longitude_0_360": 357.75,
+          "native_value": 0.00018310546875,
+          "source_column": 711,
+          "source_row": 143,
+          "weight": 0.0
+        },
+        {
+          "latitude": 54.25,
+          "longitude_0_360": 358.0,
+          "native_value": 3.4332275390625e-05,
+          "source_column": 712,
+          "source_row": 143,
+          "weight": 0.0
+        },
+        {
+          "latitude": 54.0,
+          "longitude_0_360": 357.75,
+          "native_value": 7.62939453125e-05,
+          "source_column": 711,
+          "source_row": 144,
+          "weight": 0.0
+        },
+        {
+          "latitude": 54.0,
+          "longitude_0_360": 358.0,
+          "native_value": 6.4849853515625e-05,
+          "source_column": 712,
+          "source_row": 144,
+          "weight": 1.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 6.4849853515625e-05,
+      "status": "OK",
+      "temporal": {
+        "duration_seconds": 86400,
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 0,
+        "increment": {
+          "qualification": "encoded increment; no inferred internal sample count or endpoint algorithm",
+          "seconds": 450,
+          "type_code": 2,
+          "unit_code": 13,
+          "value": 450
+        },
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T00:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "ifs-precipitation",
+      "index": 74,
+      "label": "north-edge",
+      "method": "NEAREST",
+      "native_unit": "m",
+      "native_value": 0.0007781982421875,
+      "nodes": [
+        {
+          "latitude": 59.0,
+          "longitude_0_360": 355.0,
+          "native_value": 0.0007781982421875,
+          "source_column": 700,
+          "source_row": 124,
+          "weight": 1.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.0007781982421875,
+      "status": "OK",
+      "temporal": {
+        "duration_seconds": 86400,
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 0,
+        "increment": {
+          "qualification": "encoded increment; no inferred internal sample count or endpoint algorithm",
+          "seconds": 450,
+          "type_code": 2,
+          "unit_code": 13,
+          "value": 450
+        },
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T00:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "ifs-precipitation",
+      "index": 75,
+      "label": "north-edge",
+      "method": "BILINEAR",
+      "native_unit": "m",
+      "native_value": 0.0007781982421875,
+      "nodes": [
+        {
+          "latitude": 59.0,
+          "longitude_0_360": 355.0,
+          "native_value": 0.0007781982421875,
+          "source_column": 700,
+          "source_row": 124,
+          "weight": 1.0
+        },
+        {
+          "latitude": 59.0,
+          "longitude_0_360": 355.25,
+          "native_value": 0.001049041748046875,
+          "source_column": 701,
+          "source_row": 124,
+          "weight": 0.0
+        },
+        {
+          "latitude": 58.75,
+          "longitude_0_360": 355.0,
+          "native_value": 0.00081634521484375,
+          "source_column": 700,
+          "source_row": 125,
+          "weight": 0.0
+        },
+        {
+          "latitude": 58.75,
+          "longitude_0_360": 355.25,
+          "native_value": 0.00106048583984375,
+          "source_column": 701,
+          "source_row": 125,
+          "weight": 0.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 0.0007781982421875,
+      "status": "OK",
+      "temporal": {
+        "duration_seconds": 86400,
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 0,
+        "increment": {
+          "qualification": "encoded increment; no inferred internal sample count or endpoint algorithm",
+          "seconds": 450,
+          "type_code": 2,
+          "unit_code": 13,
+          "value": 450
+        },
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T00:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "ifs-precipitation",
+      "index": 76,
+      "label": "east-edge",
+      "method": "NEAREST",
+      "native_unit": "m",
+      "native_value": 4.57763671875e-05,
+      "nodes": [
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 358.0,
+          "native_value": 4.57763671875e-05,
+          "source_column": 712,
+          "source_row": 134,
+          "weight": 1.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 4.57763671875e-05,
+      "status": "OK",
+      "temporal": {
+        "duration_seconds": 86400,
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 0,
+        "increment": {
+          "qualification": "encoded increment; no inferred internal sample count or endpoint algorithm",
+          "seconds": 450,
+          "type_code": 2,
+          "unit_code": 13,
+          "value": 450
+        },
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T00:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "absolute_difference": 0.0,
+      "field_id": "ifs-precipitation",
+      "index": 77,
+      "label": "east-edge",
+      "method": "BILINEAR",
+      "native_unit": "m",
+      "native_value": 4.57763671875e-05,
+      "nodes": [
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 357.75,
+          "native_value": 6.4849853515625e-05,
+          "source_column": 711,
+          "source_row": 134,
+          "weight": 0.0
+        },
+        {
+          "latitude": 56.5,
+          "longitude_0_360": 358.0,
+          "native_value": 4.57763671875e-05,
+          "source_column": 712,
+          "source_row": 134,
+          "weight": 1.0
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 357.75,
+          "native_value": 4.57763671875e-05,
+          "source_column": 711,
+          "source_row": 135,
+          "weight": 0.0
+        },
+        {
+          "latitude": 56.25,
+          "longitude_0_360": 358.0,
+          "native_value": 3.4332275390625e-05,
+          "source_column": 712,
+          "source_row": 135,
+          "weight": 0.0
+        }
+      ],
+      "nonzero_node_and_weight_agreement": true,
+      "source_native_value": 4.57763671875e-05,
+      "status": "OK",
+      "temporal": {
+        "duration_seconds": 86400,
+        "forecast_lead_to_end_seconds": 86400,
+        "forecast_lead_to_start_seconds": 0,
+        "increment": {
+          "qualification": "encoded increment; no inferred internal sample count or endpoint algorithm",
+          "seconds": 450,
+          "type_code": 2,
+          "unit_code": 13,
+          "value": 450
+        },
+        "interval_end": "2025-01-16T00:00:00Z",
+        "interval_start": "2025-01-15T00:00:00Z",
+        "kind": "accumulation",
+        "reference_time": "2025-01-15T00:00:00Z",
+        "statistical_process_code": 1,
+        "valid_time": "2025-01-16T00:00:00Z"
+      }
+    },
+    {
+      "field_id": "ifs-precipitation",
+      "index": 78,
+      "label": "north-outside",
+      "method": "BILINEAR",
+      "status": "OUTSIDE_EXTENT"
+    },
+    {
+      "field_id": "ifs-precipitation",
+      "index": 79,
+      "label": "east-outside",
+      "method": "BILINEAR",
+      "status": "OUTSIDE_EXTENT"
+    },
+    {
+      "field_id": "ifs-precipitation",
+      "index": 80,
+      "label": "pole-outside",
+      "method": "BILINEAR",
+      "status": "OUTSIDE_EXTENT"
+    },
+    {
+      "field_id": "ifs-precipitation",
+      "index": 81,
+      "label": "invalid-latitude",
+      "method": "BILINEAR",
+      "status": "INVALID_QUERY"
+    },
+    {
+      "field_id": "ifs-precipitation",
+      "index": 82,
+      "label": "unsupported-method",
+      "method": "CUBIC",
+      "status": "UNSUPPORTED_METHOD"
+    },
+    {
+      "field_id": "ifs-precipitation",
+      "index": 83,
+      "label": "incorrect-temporal-assumption",
+      "method": "NEAREST",
+      "status": "ASSUMPTION_MISMATCH"
+    }
+  ],
+  "reader_sha256": "0de91e38cfa0fc29a0e05e1b09edccf718e9391871cb720e2f56f1b83e3ca752",
+  "rejected_queries": 18,
+  "schema": "meridian-wr013-query-comparison-v1",
+  "successful_queries": 66
+}

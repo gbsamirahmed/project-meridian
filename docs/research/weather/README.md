@@ -151,3 +151,8 @@ Exactly one next task: **independent CCSDS numerical-decoding conformance — NO
 ## WR012 qualified numerical closure — 10 October 2026
 
 [Independent CCSDS conformance](independent-ccsds-numerical-conformance.md): **Outcome A**, all three unchanged WR011 IFS fields exactly equal across complete grids. Independence B means separate GRIB interpretation/scaling with shared libaec; no independent entropy-algorithm, forecast-skill or general decoder claim. Historical WR011 Outcome B and WR006 blockers remain. [Utility/replay](../../../scripts/weather-research/wr012/README.md). Sole current next task: **scientific field-packaging and offline query replay — NOT BEGUN**, [scope](independent-ccsds-numerical-conformance.md#7-programme-reassessment-and-exactly-one-next-task--not-begun).
+
+
+## WR013 offline scientific replay — 11 October 2026
+
+[WR013](scientific-field-packaging-offline-replay.md): **Outcome A**, three genuine GFS/IFS subsets, all 1,575 binary64 values preserved exactly and 66 supported queries/18 explicit rejections replayed using only a standard-library reader and a 42,596-byte package. Source-native origins, K/kg per m²/m and instant/six-hour/24-hour time supports remain distinct. This is a bounded research representation, not a production format, offline mobile proof or commercial clearance. [Utility](../../../scripts/weather-research/wr013/README.md). WR006 remains blocked. Exactly one next task: **ensemble-member identity and bounded uncertainty-semantics pilot — NOT BEGUN**, [scope and stops](scientific-field-packaging-offline-replay.md#8-programme-reassessment-and-exactly-one-next-task).
