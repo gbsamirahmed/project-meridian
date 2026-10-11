@@ -156,3 +156,8 @@ Exactly one next task: **independent CCSDS numerical-decoding conformance — NO
 ## WR013 offline scientific replay — 11 October 2026
 
 [WR013](scientific-field-packaging-offline-replay.md): **Outcome A**, three genuine GFS/IFS subsets, all 1,575 binary64 values preserved exactly and 66 supported queries/18 explicit rejections replayed using only a standard-library reader and a 42,596-byte package. Source-native origins, K/kg per m²/m and instant/six-hour/24-hour time supports remain distinct. This is a bounded research representation, not a production format, offline mobile proof or commercial clearance. [Utility](../../../scripts/weather-research/wr013/README.md). WR006 remains blocked. Exactly one next task: **ensemble-member identity and bounded uncertainty-semantics pilot — NOT BEGUN**, [scope and stops](scientific-field-packaging-offline-replay.md#8-programme-reassessment-and-exactly-one-next-task).
+
+
+## WR014 bounded ensemble evidence — 11 October 2026
+
+[WR014](ensemble-member-identity-uncertainty-semantics.md) reaches **Outcome A** for three genuine GEFS members: encoded control0/positive1/positive2, one instantaneous2mK profile, independent full-grid decoding and selected-subset arithmetic. Raw30/documented31/registry21 remain distinct; no complete probabilistic validity/skill. Prior results/MIDAS blockers unchanged. Exactly one next task: **model-ground and real-terrain support mismatch pilot — NOT BEGUN**, [scope](ensemble-member-identity-uncertainty-semantics.md#8-programme-reassessment-and-exactly-one-next-task).

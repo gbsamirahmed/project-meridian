@@ -202,3 +202,8 @@ GDAL metadata/geometry passes; numerical decoding is blocked by absent libaec.
 ## WR013 representation versus physical reference — 11 October 2026
 
 [WR013](scientific-field-packaging-offline-replay.md) verifies exact package-only replay for GFS K temperature, GFS kg/m² precipitation over18–24 h and IFS metres precipitation over0–24 h. A common geographic subset/end time does not make their parameters, vertical meaning or intervals equivalent. The offline representation preserves those differences and rejects incompatible assumptions; it adds no observations, reference eligibility, model accuracy or terrain downscaling. WR006 strict/revised targets remain BLOCKED. Native-grid subset identity/query bounds are explicit; coincident geographic nodes do not erase different source longitude origins.
+
+
+## WR014 ensemble refinement — 11 October 2026
+
+[WR014](ensemble-member-identity-uncertainty-semantics.md) adds **verified** comparability: GEFS control0/positive1/positive2, same run/+24h/instantaneous2mK/0.5° grid. Raw30→documented31 remains **UNRESOLVED**, selected-subset arithmetic only. Identity cannot derive from deterministic lineage/filename. Grid differs from WR008; concepts transfer with explicit geometry, not fixed implementation. No forecast-reference skill; strict/revised MIDAS remains **BLOCKED**.

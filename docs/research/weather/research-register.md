@@ -237,3 +237,16 @@ Exactly one next task: **scientific field-packaging and offline query replay —
 | WR13-Q03 / W31, W39, W40 | Source encoding, interpreted field, subset encoding and query-domain identity separated | RESEARCHED (candidate refinement grounded in finite evidence); not a production schema or distribution approval |
 
 Exactly one next task: **ensemble-member identity and bounded uncertainty-semantics pilot — NOT BEGUN**, [defined in the report](scientific-field-packaging-offline-replay.md#8-programme-reassessment-and-exactly-one-next-task).
+
+
+## WR014 bounded member evidence — 11 October 2026
+
+[WR014](ensemble-member-identity-uncertainty-semantics.md): **Outcome A**, three-member delivered profile only; historical statuses/WR006 blockers unchanged.
+
+| Identifier / parents | Bounded result | Status / remaining gate |
+|---|---|---|
+| WR14-Q01 / W11, W31, W36 | Actual GEFS PDT1 control0/positive1/positive2 identity/support/grid and 779,760 independent numerical comparisons | EXPERIMENTALLY VALIDATED (one instantaneous0.5° profile); full population/count mapping/other structures unresolved |
+| WR14-Q02 / W36, W39 | Five frozen native-node selected-subset arithmetic receipts and mismatch/full-ensemble rejection | EXPERIMENTALLY VALIDATED (selected subset only); no operational weights/calibrated distribution/skill |
+| WR14-Q03 / W31, W39 | Scoped member identity and raw/documented/selected population distinctions | RESEARCHED (finite candidate refinement); not a production API/framework |
+
+Exactly one next task: **model-ground and real-terrain support mismatch pilot — NOT BEGUN**, [report](ensemble-member-identity-uncertainty-semantics.md#8-programme-reassessment-and-exactly-one-next-task).

@@ -1,0 +1,990 @@
+{
+  "comparison_amendment_sha256": "a7a270c83490f215ae715d942a251b5214983f3b77e57c154ead02ea73cdbde3",
+  "conformance": {
+    "encoded_count_agreement": 30,
+    "encoded_to_full_population_mapping": "Unresolved",
+    "full_distribution_and_operational_weights": "Not tested",
+    "member_role_mapping": "Verified through explicit encoded provider/table mapping",
+    "requirements": {
+      "coordinate_order": "Verified",
+      "distinct_members": "Verified",
+      "identical_encoded_grid": "Verified",
+      "instantaneous_support": "Verified",
+      "lead_validity": "Verified",
+      "no_bitmap_missingness": "Verified",
+      "product": "Verified",
+      "quantity_authority_unit": "Verified",
+      "reference": "Verified",
+      "system": "Verified",
+      "vertical": "Verified"
+    },
+    "selection_size": 3
+  },
+  "limitations": [
+    "three selected members; no full-ensemble weighting, distribution, probability, calibration or skill",
+    "raw encoded30/documented31/outdated registry21 distinguished; complete count mapping unresolved",
+    "one actual delivery grid/run/lead/height/packing/no-bitmap profile; no production/member-universality claim"
+  ],
+  "members": {
+    "control": {
+      "actual_metadata": {
+        "Ni": 720,
+        "Nj": 361,
+        "alternativeRowScanning": 0,
+        "binaryScaleFactor": 0,
+        "bitmapPresent": 0,
+        "bitsPerValue": 12,
+        "centre": 7,
+        "dataDate": 20250115,
+        "dataRepresentationTemplateNumber": 3,
+        "dataTime": 0,
+        "decimalScaleFactor": 2,
+        "discipline": 0,
+        "edition": 2,
+        "endStep": 24,
+        "forecastTime": 24,
+        "generatingProcessIdentifier": 107,
+        "gridDefinitionTemplateNumber": 0,
+        "gridType": "regular_ll",
+        "iDirectionIncrementInDegrees": 0.5,
+        "iScansNegatively": 0,
+        "indicatorOfUnitOfTimeRange": 1,
+        "jDirectionIncrementInDegrees": 0.5,
+        "jPointsAreConsecutive": 0,
+        "jScansPositively": 0,
+        "latitudeOfFirstGridPointInDegrees": 90.0,
+        "latitudeOfLastGridPointInDegrees": -90.0,
+        "level": 2,
+        "localTablesVersion": 1,
+        "longitudeOfFirstGridPointInDegrees": 0.0,
+        "longitudeOfLastGridPointInDegrees": 359.5,
+        "missingValue": 9999,
+        "missingValueManagementUsed": 0,
+        "name": "2 metre temperature",
+        "numberOfForecastsInEnsemble": 30,
+        "numberOfMissing": 0,
+        "numberOfPoints": 259920,
+        "numberOfValues": 259920,
+        "orderOfSpatialDifferencing": 2,
+        "packingType": "grid_complex_spatial_differencing",
+        "paramId": 167,
+        "parameterCategory": 0,
+        "parameterNumber": 0,
+        "perturbationNumber": 0,
+        "productDefinitionTemplateNumber": 1,
+        "productionStatusOfProcessedData": 0,
+        "radius": 6371229,
+        "referenceValue": 22887.24609375,
+        "scaleFactorOfFirstFixedSurface": 0,
+        "scaleFactorOfSecondFixedSurface": 0,
+        "scaledValueOfFirstFixedSurface": 2,
+        "scaledValueOfSecondFixedSurface": 0,
+        "scanningMode": 0,
+        "shapeOfTheEarth": 6,
+        "shortName": "2t",
+        "significanceOfReferenceTime": 1,
+        "startStep": 24,
+        "stepType": "instant",
+        "stepUnits": 1,
+        "subCentre": 2,
+        "tablesVersion": 2,
+        "typeOfEnsembleForecast": 1,
+        "typeOfFirstFixedSurface": 103,
+        "typeOfGeneratingProcess": 4,
+        "typeOfLevel": "heightAboveGround",
+        "typeOfProcessedData": 3,
+        "typeOfSecondFixedSurface": 255,
+        "units": "K",
+        "validityDate": 20250116,
+        "validityTime": 0
+      },
+      "concept": {
+        "evidence": "genuine encoded member and primary numerical interpretation; independent check separate",
+        "grid": {
+          "columns": 720,
+          "earth_radius_m": 6371229,
+          "last_longitude": 359.5,
+          "longitude_origin": 0,
+          "north": 90,
+          "registration": "delivered native grid nodes; not model computational resolution",
+          "rows": 361,
+          "scan": 0,
+          "section3_sha256": "45f032582fad6270b54ba8c883ccfcd67e7b7297d80f487ee0ad52a8d975f9ab",
+          "south": -90,
+          "spacing_degrees": 0.5,
+          "type": "regular_ll"
+        },
+        "historical_executable_version": "UNKNOWN; process107 is not an executable version",
+        "member": {
+          "authority": "encoded PDT4.1 octets35-37; NOAA/WMO code table4.6",
+          "count_mapping": "UNRESOLVED: raw30 is not silently normalised to documented31 or registry21",
+          "documented_GEFS_v12_population": 31,
+          "encoded_number_of_forecasts": 30,
+          "full_population_inspected": false,
+          "number": 0,
+          "operational_weight": "UNKNOWN",
+          "role": "unperturbed low-resolution control",
+          "type_code": 1
+        },
+        "missingness": {
+          "bitmap": false,
+          "missing_cells": 0
+        },
+        "native_unit": "K",
+        "parameter": {
+          "authority": "WMO temperature",
+          "centre": 7,
+          "codes": [
+            0,
+            0,
+            0
+          ],
+          "local_table": 1,
+          "master_table": 2
+        },
+        "producer": {
+          "centre": 7,
+          "generating_process": 107,
+          "subcentre": 2
+        },
+        "product": "pgrb2ap5/pgrb2a 0.50-degree atmospheric forecast delivery",
+        "system": "NOAA/NCEP GEFS operational ensemble",
+        "temporal": {
+          "kind": "instant",
+          "lead_seconds": 86400,
+          "reference_time": "2025-01-15T00:00:00Z",
+          "valid_time": "2025-01-16T00:00:00Z"
+        },
+        "vertical": {
+          "height_m": 2,
+          "reference": "model ground; not actual local terrain",
+          "type_code": 103
+        }
+      },
+      "decoded_float64_sha256": "3fb580b1dd8bb7c5067f513d53fb0a11b5d1db2991b0039fb6b4925ca67e6deb",
+      "independent_comparison": {
+        "bit_identical_cells": 10329,
+        "compared_cells": 259920,
+        "g2clib_rounding_profile_exact_cells": 259920,
+        "mask_agreement": true,
+        "maximum_absolute_difference_K": 2.197265627046363e-05,
+        "maximum_derived_rounding_bound_K": 3.198569587349485e-05,
+        "maximum_integer_lattice_residual": 3.637978807091713e-12,
+        "mean_absolute_difference_K": 8.254391995819989e-06,
+        "non_identical_cells": 249591,
+        "status": "INDEPENDENT AGREEMENT WITH EXPLAINED BINARY32 ROUNDING",
+        "tolerance_policy": "per-cell two-operation binary32 bound; exact g2clib profile also required"
+      },
+      "independent_decoder": {
+        "gdal": "3.9.3",
+        "implementation": "GDAL GRIB driver/degrib/g2clib, separate from ecCodes",
+        "metadata": {
+          "GRIB_COMMENT": "Temperature [K]",
+          "GRIB_DISCIPLINE": "0(Meteorological)",
+          "GRIB_ELEMENT": "TMP",
+          "GRIB_FORECAST_SECONDS": "86400",
+          "GRIB_IDS": "CENTER=7(US-NCEP) SUBCENTER=2(NCEP Ensemble Products) MASTER_TABLE=2 LOCAL_TABLE=1 SIGNF_REF_TIME=1(Start_of_Forecast) REF_TIME=2025-01-15T00:00:00Z PROD_STATUS=0(Operational) TYPE=3(Control_forecast)",
+          "GRIB_PDS_PDTN": "1",
+          "GRIB_PDS_TEMPLATE_ASSEMBLED_VALUES": "0 0 4 0 107 0 0 1 24 103 0 2 255 0 0 1 0 30",
+          "GRIB_PDS_TEMPLATE_NUMBERS": "0 0 4 0 107 0 0 0 1 0 0 0 24 103 0 0 0 0 2 255 0 0 0 0 0 1 0 30",
+          "GRIB_REF_TIME": "1736899200",
+          "GRIB_SHORT_NAME": "2-HTGL",
+          "GRIB_UNIT": "[K]",
+          "GRIB_VALID_TIME": "1736985600"
+        },
+        "native_sample_coordinates": [
+          [
+            355.0,
+            56.5
+          ],
+          [
+            8.0,
+            46.0
+          ],
+          [
+            18.5,
+            -33.5
+          ],
+          [
+            179.5,
+            0.0
+          ],
+          [
+            0.0,
+            89.5
+          ]
+        ],
+        "numpy": "2.5.3",
+        "python": "3.12.6",
+        "rasterio": "1.4.3",
+        "transform": [
+          0.5,
+          0.0,
+          -0.25,
+          0.0,
+          -0.5,
+          90.25,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "input": {
+        "bytes": 237105,
+        "filename": "control.grib2",
+        "sha256": "6ad704158ed29f984fdc2f0dbbbe132fbe06b519b2e2a4396b0ec2dc9265634e"
+      },
+      "primary_decoder": {
+        "ecCodes": "2.48.0",
+        "eccodes_python": "2.48.0",
+        "numpy": "2.5.2",
+        "python": "3.12.6"
+      },
+      "raw_input_unchanged": true,
+      "raw_member_octets": [
+        1,
+        0,
+        30
+      ],
+      "samples": [
+        {
+          "column": 710,
+          "label": "Highland-native",
+          "latitude": 56.5,
+          "longitude_0_360": 355.0,
+          "native_value_K": 277.2424609375,
+          "row": 67
+        },
+        {
+          "column": 16,
+          "label": "Alpine-native",
+          "latitude": 46.0,
+          "longitude_0_360": 8.0,
+          "native_value_K": 266.7824609375,
+          "row": 88
+        },
+        {
+          "column": 37,
+          "label": "Southern-native",
+          "latitude": -33.5,
+          "longitude_0_360": 18.5,
+          "native_value_K": 286.0024609375,
+          "row": 247
+        },
+        {
+          "column": 359,
+          "label": "antimeridian-native",
+          "latitude": 0.0,
+          "longitude_0_360": 179.5,
+          "native_value_K": 300.0124609375,
+          "row": 180
+        },
+        {
+          "column": 0,
+          "label": "near-polar-native",
+          "latitude": 89.5,
+          "longitude_0_360": 0.0,
+          "native_value_K": 251.1824609375,
+          "row": 1
+        }
+      ],
+      "summary_K": {
+        "finite_cells": 259920,
+        "invalid_cells": 0,
+        "maximum": 311.4424609375,
+        "mean": 277.3809211560288,
+        "minimum": 228.8724609375,
+        "missing_cells": 0
+      }
+    },
+    "perturbed01": {
+      "actual_metadata": {
+        "Ni": 720,
+        "Nj": 361,
+        "alternativeRowScanning": 0,
+        "binaryScaleFactor": 0,
+        "bitmapPresent": 0,
+        "bitsPerValue": 12,
+        "centre": 7,
+        "dataDate": 20250115,
+        "dataRepresentationTemplateNumber": 3,
+        "dataTime": 0,
+        "decimalScaleFactor": 2,
+        "discipline": 0,
+        "edition": 2,
+        "endStep": 24,
+        "forecastTime": 24,
+        "generatingProcessIdentifier": 107,
+        "gridDefinitionTemplateNumber": 0,
+        "gridType": "regular_ll",
+        "iDirectionIncrementInDegrees": 0.5,
+        "iScansNegatively": 0,
+        "indicatorOfUnitOfTimeRange": 1,
+        "jDirectionIncrementInDegrees": 0.5,
+        "jPointsAreConsecutive": 0,
+        "jScansPositively": 0,
+        "latitudeOfFirstGridPointInDegrees": 90.0,
+        "latitudeOfLastGridPointInDegrees": -90.0,
+        "level": 2,
+        "localTablesVersion": 1,
+        "longitudeOfFirstGridPointInDegrees": 0.0,
+        "longitudeOfLastGridPointInDegrees": 359.5,
+        "missingValue": 9999,
+        "missingValueManagementUsed": 0,
+        "name": "2 metre temperature",
+        "numberOfForecastsInEnsemble": 30,
+        "numberOfMissing": 0,
+        "numberOfPoints": 259920,
+        "numberOfValues": 259920,
+        "orderOfSpatialDifferencing": 2,
+        "packingType": "grid_complex_spatial_differencing",
+        "paramId": 167,
+        "parameterCategory": 0,
+        "parameterNumber": 0,
+        "perturbationNumber": 1,
+        "productDefinitionTemplateNumber": 1,
+        "productionStatusOfProcessedData": 0,
+        "radius": 6371229,
+        "referenceValue": 22911.703125,
+        "scaleFactorOfFirstFixedSurface": 0,
+        "scaleFactorOfSecondFixedSurface": 0,
+        "scaledValueOfFirstFixedSurface": 2,
+        "scaledValueOfSecondFixedSurface": 0,
+        "scanningMode": 0,
+        "shapeOfTheEarth": 6,
+        "shortName": "2t",
+        "significanceOfReferenceTime": 1,
+        "startStep": 24,
+        "stepType": "instant",
+        "stepUnits": 1,
+        "subCentre": 2,
+        "tablesVersion": 2,
+        "typeOfEnsembleForecast": 3,
+        "typeOfFirstFixedSurface": 103,
+        "typeOfGeneratingProcess": 4,
+        "typeOfLevel": "heightAboveGround",
+        "typeOfProcessedData": 4,
+        "typeOfSecondFixedSurface": 255,
+        "units": "K",
+        "validityDate": 20250116,
+        "validityTime": 0
+      },
+      "concept": {
+        "evidence": "genuine encoded member and primary numerical interpretation; independent check separate",
+        "grid": {
+          "columns": 720,
+          "earth_radius_m": 6371229,
+          "last_longitude": 359.5,
+          "longitude_origin": 0,
+          "north": 90,
+          "registration": "delivered native grid nodes; not model computational resolution",
+          "rows": 361,
+          "scan": 0,
+          "section3_sha256": "45f032582fad6270b54ba8c883ccfcd67e7b7297d80f487ee0ad52a8d975f9ab",
+          "south": -90,
+          "spacing_degrees": 0.5,
+          "type": "regular_ll"
+        },
+        "historical_executable_version": "UNKNOWN; process107 is not an executable version",
+        "member": {
+          "authority": "encoded PDT4.1 octets35-37; NOAA/WMO code table4.6",
+          "count_mapping": "UNRESOLVED: raw30 is not silently normalised to documented31 or registry21",
+          "documented_GEFS_v12_population": 31,
+          "encoded_number_of_forecasts": 30,
+          "full_population_inspected": false,
+          "number": 1,
+          "operational_weight": "UNKNOWN",
+          "role": "positively perturbed forecast",
+          "type_code": 3
+        },
+        "missingness": {
+          "bitmap": false,
+          "missing_cells": 0
+        },
+        "native_unit": "K",
+        "parameter": {
+          "authority": "WMO temperature",
+          "centre": 7,
+          "codes": [
+            0,
+            0,
+            0
+          ],
+          "local_table": 1,
+          "master_table": 2
+        },
+        "producer": {
+          "centre": 7,
+          "generating_process": 107,
+          "subcentre": 2
+        },
+        "product": "pgrb2ap5/pgrb2a 0.50-degree atmospheric forecast delivery",
+        "system": "NOAA/NCEP GEFS operational ensemble",
+        "temporal": {
+          "kind": "instant",
+          "lead_seconds": 86400,
+          "reference_time": "2025-01-15T00:00:00Z",
+          "valid_time": "2025-01-16T00:00:00Z"
+        },
+        "vertical": {
+          "height_m": 2,
+          "reference": "model ground; not actual local terrain",
+          "type_code": 103
+        }
+      },
+      "decoded_float64_sha256": "4feaf911eda27de308f0f812bd6cca045c9b60e41d9b5e76d08d2362807ebf02",
+      "independent_comparison": {
+        "bit_identical_cells": 10411,
+        "compared_cells": 259920,
+        "g2clib_rounding_profile_exact_cells": 259920,
+        "mask_agreement": true,
+        "maximum_absolute_difference_K": 2.197265627046363e-05,
+        "maximum_derived_rounding_bound_K": 3.200055017871601e-05,
+        "maximum_integer_lattice_residual": 3.637978807091713e-12,
+        "mean_absolute_difference_K": 8.23452128581934e-06,
+        "non_identical_cells": 249509,
+        "status": "INDEPENDENT AGREEMENT WITH EXPLAINED BINARY32 ROUNDING",
+        "tolerance_policy": "per-cell two-operation binary32 bound; exact g2clib profile also required"
+      },
+      "independent_decoder": {
+        "gdal": "3.9.3",
+        "implementation": "GDAL GRIB driver/degrib/g2clib, separate from ecCodes",
+        "metadata": {
+          "GRIB_COMMENT": "Temperature [K]",
+          "GRIB_DISCIPLINE": "0(Meteorological)",
+          "GRIB_ELEMENT": "TMP",
+          "GRIB_FORECAST_SECONDS": "86400",
+          "GRIB_IDS": "CENTER=7(US-NCEP) SUBCENTER=2(NCEP Ensemble Products) MASTER_TABLE=2 LOCAL_TABLE=1 SIGNF_REF_TIME=1(Start_of_Forecast) REF_TIME=2025-01-15T00:00:00Z PROD_STATUS=0(Operational) TYPE=4(Perturbed_forecast)",
+          "GRIB_PDS_PDTN": "1",
+          "GRIB_PDS_TEMPLATE_ASSEMBLED_VALUES": "0 0 4 0 107 0 0 1 24 103 0 2 255 0 0 3 1 30",
+          "GRIB_PDS_TEMPLATE_NUMBERS": "0 0 4 0 107 0 0 0 1 0 0 0 24 103 0 0 0 0 2 255 0 0 0 0 0 3 1 30",
+          "GRIB_REF_TIME": "1736899200",
+          "GRIB_SHORT_NAME": "2-HTGL",
+          "GRIB_UNIT": "[K]",
+          "GRIB_VALID_TIME": "1736985600"
+        },
+        "native_sample_coordinates": [
+          [
+            355.0,
+            56.5
+          ],
+          [
+            8.0,
+            46.0
+          ],
+          [
+            18.5,
+            -33.5
+          ],
+          [
+            179.5,
+            0.0
+          ],
+          [
+            0.0,
+            89.5
+          ]
+        ],
+        "numpy": "2.5.3",
+        "python": "3.12.6",
+        "rasterio": "1.4.3",
+        "transform": [
+          0.5,
+          0.0,
+          -0.25,
+          0.0,
+          -0.5,
+          90.25,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "input": {
+        "bytes": 238088,
+        "filename": "perturbed01.grib2",
+        "sha256": "da8c47f8801fda48fbcdfa31d03eeb44ed4caa10562698e9ea5e04252d4ac20a"
+      },
+      "primary_decoder": {
+        "ecCodes": "2.48.0",
+        "eccodes_python": "2.48.0",
+        "numpy": "2.5.2",
+        "python": "3.12.6"
+      },
+      "raw_input_unchanged": true,
+      "raw_member_octets": [
+        3,
+        1,
+        30
+      ],
+      "samples": [
+        {
+          "column": 710,
+          "label": "Highland-native",
+          "latitude": 56.5,
+          "longitude_0_360": 355.0,
+          "native_value_K": 277.28703125,
+          "row": 67
+        },
+        {
+          "column": 16,
+          "label": "Alpine-native",
+          "latitude": 46.0,
+          "longitude_0_360": 8.0,
+          "native_value_K": 268.22703125,
+          "row": 88
+        },
+        {
+          "column": 37,
+          "label": "Southern-native",
+          "latitude": -33.5,
+          "longitude_0_360": 18.5,
+          "native_value_K": 285.54703125000003,
+          "row": 247
+        },
+        {
+          "column": 359,
+          "label": "antimeridian-native",
+          "latitude": 0.0,
+          "longitude_0_360": 179.5,
+          "native_value_K": 300.09703125,
+          "row": 180
+        },
+        {
+          "column": 0,
+          "label": "near-polar-native",
+          "latitude": 89.5,
+          "longitude_0_360": 0.0,
+          "native_value_K": 251.08703125,
+          "row": 1
+        }
+      ],
+      "summary_K": {
+        "finite_cells": 259920,
+        "invalid_cells": 0,
+        "maximum": 312.10703125000003,
+        "mean": 277.40292379385966,
+        "minimum": 229.11703125,
+        "missing_cells": 0
+      }
+    },
+    "perturbed02": {
+      "actual_metadata": {
+        "Ni": 720,
+        "Nj": 361,
+        "alternativeRowScanning": 0,
+        "binaryScaleFactor": 0,
+        "bitmapPresent": 0,
+        "bitsPerValue": 12,
+        "centre": 7,
+        "dataDate": 20250115,
+        "dataRepresentationTemplateNumber": 3,
+        "dataTime": 0,
+        "decimalScaleFactor": 2,
+        "discipline": 0,
+        "edition": 2,
+        "endStep": 24,
+        "forecastTime": 24,
+        "generatingProcessIdentifier": 107,
+        "gridDefinitionTemplateNumber": 0,
+        "gridType": "regular_ll",
+        "iDirectionIncrementInDegrees": 0.5,
+        "iScansNegatively": 0,
+        "indicatorOfUnitOfTimeRange": 1,
+        "jDirectionIncrementInDegrees": 0.5,
+        "jPointsAreConsecutive": 0,
+        "jScansPositively": 0,
+        "latitudeOfFirstGridPointInDegrees": 90.0,
+        "latitudeOfLastGridPointInDegrees": -90.0,
+        "level": 2,
+        "localTablesVersion": 1,
+        "longitudeOfFirstGridPointInDegrees": 0.0,
+        "longitudeOfLastGridPointInDegrees": 359.5,
+        "missingValue": 9999,
+        "missingValueManagementUsed": 0,
+        "name": "2 metre temperature",
+        "numberOfForecastsInEnsemble": 30,
+        "numberOfMissing": 0,
+        "numberOfPoints": 259920,
+        "numberOfValues": 259920,
+        "orderOfSpatialDifferencing": 2,
+        "packingType": "grid_complex_spatial_differencing",
+        "paramId": 167,
+        "parameterCategory": 0,
+        "parameterNumber": 0,
+        "perturbationNumber": 2,
+        "productDefinitionTemplateNumber": 1,
+        "productionStatusOfProcessedData": 0,
+        "radius": 6371229,
+        "referenceValue": 22816.8046875,
+        "scaleFactorOfFirstFixedSurface": 0,
+        "scaleFactorOfSecondFixedSurface": 0,
+        "scaledValueOfFirstFixedSurface": 2,
+        "scaledValueOfSecondFixedSurface": 0,
+        "scanningMode": 0,
+        "shapeOfTheEarth": 6,
+        "shortName": "2t",
+        "significanceOfReferenceTime": 1,
+        "startStep": 24,
+        "stepType": "instant",
+        "stepUnits": 1,
+        "subCentre": 2,
+        "tablesVersion": 2,
+        "typeOfEnsembleForecast": 3,
+        "typeOfFirstFixedSurface": 103,
+        "typeOfGeneratingProcess": 4,
+        "typeOfLevel": "heightAboveGround",
+        "typeOfProcessedData": 4,
+        "typeOfSecondFixedSurface": 255,
+        "units": "K",
+        "validityDate": 20250116,
+        "validityTime": 0
+      },
+      "concept": {
+        "evidence": "genuine encoded member and primary numerical interpretation; independent check separate",
+        "grid": {
+          "columns": 720,
+          "earth_radius_m": 6371229,
+          "last_longitude": 359.5,
+          "longitude_origin": 0,
+          "north": 90,
+          "registration": "delivered native grid nodes; not model computational resolution",
+          "rows": 361,
+          "scan": 0,
+          "section3_sha256": "45f032582fad6270b54ba8c883ccfcd67e7b7297d80f487ee0ad52a8d975f9ab",
+          "south": -90,
+          "spacing_degrees": 0.5,
+          "type": "regular_ll"
+        },
+        "historical_executable_version": "UNKNOWN; process107 is not an executable version",
+        "member": {
+          "authority": "encoded PDT4.1 octets35-37; NOAA/WMO code table4.6",
+          "count_mapping": "UNRESOLVED: raw30 is not silently normalised to documented31 or registry21",
+          "documented_GEFS_v12_population": 31,
+          "encoded_number_of_forecasts": 30,
+          "full_population_inspected": false,
+          "number": 2,
+          "operational_weight": "UNKNOWN",
+          "role": "positively perturbed forecast",
+          "type_code": 3
+        },
+        "missingness": {
+          "bitmap": false,
+          "missing_cells": 0
+        },
+        "native_unit": "K",
+        "parameter": {
+          "authority": "WMO temperature",
+          "centre": 7,
+          "codes": [
+            0,
+            0,
+            0
+          ],
+          "local_table": 1,
+          "master_table": 2
+        },
+        "producer": {
+          "centre": 7,
+          "generating_process": 107,
+          "subcentre": 2
+        },
+        "product": "pgrb2ap5/pgrb2a 0.50-degree atmospheric forecast delivery",
+        "system": "NOAA/NCEP GEFS operational ensemble",
+        "temporal": {
+          "kind": "instant",
+          "lead_seconds": 86400,
+          "reference_time": "2025-01-15T00:00:00Z",
+          "valid_time": "2025-01-16T00:00:00Z"
+        },
+        "vertical": {
+          "height_m": 2,
+          "reference": "model ground; not actual local terrain",
+          "type_code": 103
+        }
+      },
+      "decoded_float64_sha256": "fc904cd68b8296574c72ce1f63c093c4a879a7d132478691e95e855ae44c0cb8",
+      "independent_comparison": {
+        "bit_identical_cells": 10218,
+        "compared_cells": 259920,
+        "g2clib_rounding_profile_exact_cells": 259920,
+        "mask_agreement": true,
+        "maximum_absolute_difference_K": 2.197265627046363e-05,
+        "maximum_derived_rounding_bound_K": 3.1983362037142875e-05,
+        "maximum_integer_lattice_residual": 3.637978807091713e-12,
+        "mean_absolute_difference_K": 8.227997906890822e-06,
+        "non_identical_cells": 249702,
+        "status": "INDEPENDENT AGREEMENT WITH EXPLAINED BINARY32 ROUNDING",
+        "tolerance_policy": "per-cell two-operation binary32 bound; exact g2clib profile also required"
+      },
+      "independent_decoder": {
+        "gdal": "3.9.3",
+        "implementation": "GDAL GRIB driver/degrib/g2clib, separate from ecCodes",
+        "metadata": {
+          "GRIB_COMMENT": "Temperature [K]",
+          "GRIB_DISCIPLINE": "0(Meteorological)",
+          "GRIB_ELEMENT": "TMP",
+          "GRIB_FORECAST_SECONDS": "86400",
+          "GRIB_IDS": "CENTER=7(US-NCEP) SUBCENTER=2(NCEP Ensemble Products) MASTER_TABLE=2 LOCAL_TABLE=1 SIGNF_REF_TIME=1(Start_of_Forecast) REF_TIME=2025-01-15T00:00:00Z PROD_STATUS=0(Operational) TYPE=4(Perturbed_forecast)",
+          "GRIB_PDS_PDTN": "1",
+          "GRIB_PDS_TEMPLATE_ASSEMBLED_VALUES": "0 0 4 0 107 0 0 1 24 103 0 2 255 0 0 3 2 30",
+          "GRIB_PDS_TEMPLATE_NUMBERS": "0 0 4 0 107 0 0 0 1 0 0 0 24 103 0 0 0 0 2 255 0 0 0 0 0 3 2 30",
+          "GRIB_REF_TIME": "1736899200",
+          "GRIB_SHORT_NAME": "2-HTGL",
+          "GRIB_UNIT": "[K]",
+          "GRIB_VALID_TIME": "1736985600"
+        },
+        "native_sample_coordinates": [
+          [
+            355.0,
+            56.5
+          ],
+          [
+            8.0,
+            46.0
+          ],
+          [
+            18.5,
+            -33.5
+          ],
+          [
+            179.5,
+            0.0
+          ],
+          [
+            0.0,
+            89.5
+          ]
+        ],
+        "numpy": "2.5.3",
+        "python": "3.12.6",
+        "rasterio": "1.4.3",
+        "transform": [
+          0.5,
+          0.0,
+          -0.25,
+          0.0,
+          -0.5,
+          90.25,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "input": {
+        "bytes": 237755,
+        "filename": "perturbed02.grib2",
+        "sha256": "beb60bd3efbb3eb0d6af527907c25d05d1b7ed4d5e462ba39a8130614d332813"
+      },
+      "primary_decoder": {
+        "ecCodes": "2.48.0",
+        "eccodes_python": "2.48.0",
+        "numpy": "2.5.2",
+        "python": "3.12.6"
+      },
+      "raw_input_unchanged": true,
+      "raw_member_octets": [
+        3,
+        2,
+        30
+      ],
+      "samples": [
+        {
+          "column": 710,
+          "label": "Highland-native",
+          "latitude": 56.5,
+          "longitude_0_360": 355.0,
+          "native_value_K": 275.918046875,
+          "row": 67
+        },
+        {
+          "column": 16,
+          "label": "Alpine-native",
+          "latitude": 46.0,
+          "longitude_0_360": 8.0,
+          "native_value_K": 266.038046875,
+          "row": 88
+        },
+        {
+          "column": 37,
+          "label": "Southern-native",
+          "latitude": -33.5,
+          "longitude_0_360": 18.5,
+          "native_value_K": 284.468046875,
+          "row": 247
+        },
+        {
+          "column": 359,
+          "label": "antimeridian-native",
+          "latitude": 0.0,
+          "longitude_0_360": 179.5,
+          "native_value_K": 300.168046875,
+          "row": 180
+        },
+        {
+          "column": 0,
+          "label": "near-polar-native",
+          "latitude": 89.5,
+          "longitude_0_360": 0.0,
+          "native_value_K": 250.658046875,
+          "row": 1
+        }
+      ],
+      "summary_K": {
+        "finite_cells": 259920,
+        "invalid_cells": 0,
+        "maximum": 311.33804687500003,
+        "mean": 277.3775318703832,
+        "minimum": 228.16804687500002,
+        "missing_cells": 0
+      }
+    }
+  },
+  "original_freeze_sha256": "49d9fdb6885ecd26afcc156ca941950edaf55b77e072fd7b0ecf35d16c30b7ff",
+  "outcome": "A",
+  "pins_sha256": "83d0a77cd78f61853681d1eb39ccee1ba2315e3050cea988f31609e9da58cfa3",
+  "schema": "meridian-wr014-bounded-ensemble-integrity-v1",
+  "selected_subset_statistics": [
+    {
+      "arithmetic_selected_subset_mean_K": 276.8158463541667,
+      "location": {
+        "column": 710,
+        "label": "Highland-native",
+        "latitude": 56.5,
+        "longitude_0_360": 355.0,
+        "row": 67
+      },
+      "maximum_K": 277.28703125,
+      "member_order": [
+        "control",
+        "perturbed01",
+        "perturbed02"
+      ],
+      "member_values_K": [
+        277.2424609375,
+        277.28703125,
+        275.918046875
+      ],
+      "minimum_K": 275.918046875,
+      "population": "SELECTED SUBSET ONLY",
+      "population_standard_deviation_selected_subset_K": 0.6351008092069743,
+      "prohibited_interpretation": "not full-ensemble mean, spread distribution, calibrated bounds or skill",
+      "range_K": 1.3689843749999682,
+      "selected_members": 3,
+      "weighting": "equal descriptive weights; not inferred operational member probabilities"
+    },
+    {
+      "arithmetic_selected_subset_mean_K": 267.0158463541666,
+      "location": {
+        "column": 16,
+        "label": "Alpine-native",
+        "latitude": 46.0,
+        "longitude_0_360": 8.0,
+        "row": 88
+      },
+      "maximum_K": 268.22703125,
+      "member_order": [
+        "control",
+        "perturbed01",
+        "perturbed02"
+      ],
+      "member_values_K": [
+        266.7824609375,
+        268.22703125,
+        266.038046875
+      ],
+      "minimum_K": 266.038046875,
+      "population": "SELECTED SUBSET ONLY",
+      "population_standard_deviation_selected_subset_K": 0.9087591221121251,
+      "prohibited_interpretation": "not full-ensemble mean, spread distribution, calibrated bounds or skill",
+      "range_K": 2.1889843749999613,
+      "selected_members": 3,
+      "weighting": "equal descriptive weights; not inferred operational member probabilities"
+    },
+    {
+      "arithmetic_selected_subset_mean_K": 285.3391796875,
+      "location": {
+        "column": 37,
+        "label": "Southern-native",
+        "latitude": -33.5,
+        "longitude_0_360": 18.5,
+        "row": 247
+      },
+      "maximum_K": 286.0024609375,
+      "member_order": [
+        "control",
+        "perturbed01",
+        "perturbed02"
+      ],
+      "member_values_K": [
+        286.0024609375,
+        285.54703125000003,
+        284.468046875
+      ],
+      "minimum_K": 284.468046875,
+      "population": "SELECTED SUBSET ONLY",
+      "population_standard_deviation_selected_subset_K": 0.6434326345597244,
+      "prohibited_interpretation": "not full-ensemble mean, spread distribution, calibrated bounds or skill",
+      "range_K": 1.534414062499991,
+      "selected_members": 3,
+      "weighting": "equal descriptive weights; not inferred operational member probabilities"
+    },
+    {
+      "arithmetic_selected_subset_mean_K": 300.09251302083334,
+      "location": {
+        "column": 359,
+        "label": "antimeridian-native",
+        "latitude": 0.0,
+        "longitude_0_360": 179.5,
+        "row": 180
+      },
+      "maximum_K": 300.168046875,
+      "member_order": [
+        "control",
+        "perturbed01",
+        "perturbed02"
+      ],
+      "member_values_K": [
+        300.0124609375,
+        300.09703125,
+        300.168046875
+      ],
+      "minimum_K": 300.0124609375,
+      "population": "SELECTED SUBSET ONLY",
+      "population_standard_deviation_selected_subset_K": 0.06359799149365634,
+      "prohibited_interpretation": "not full-ensemble mean, spread distribution, calibrated bounds or skill",
+      "range_K": 0.15558593750000682,
+      "selected_members": 3,
+      "weighting": "equal descriptive weights; not inferred operational member probabilities"
+    },
+    {
+      "arithmetic_selected_subset_mean_K": 250.9758463541667,
+      "location": {
+        "column": 0,
+        "label": "near-polar-native",
+        "latitude": 89.5,
+        "longitude_0_360": 0.0,
+        "row": 1
+      },
+      "maximum_K": 251.1824609375,
+      "member_order": [
+        "control",
+        "perturbed01",
+        "perturbed02"
+      ],
+      "member_values_K": [
+        251.1824609375,
+        251.08703125,
+        250.658046875
+      ],
+      "minimum_K": 250.658046875,
+      "population": "SELECTED SUBSET ONLY",
+      "population_standard_deviation_selected_subset_K": 0.2280702933060189,
+      "prohibited_interpretation": "not full-ensemble mean, spread distribution, calibrated bounds or skill",
+      "range_K": 0.5244140625,
+      "selected_members": 3,
+      "weighting": "equal descriptive weights; not inferred operational member probabilities"
+    }
+  ],
+  "utility_sha256": "59e0c1a85827ab8f6af3504be2fe99b107ac6f5fb935ef83fd3fadf4d08661b8"
+}

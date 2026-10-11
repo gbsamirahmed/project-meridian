@@ -246,3 +246,8 @@ No new application/production integration starts here.
 ## WR013 scientific offline evidence — 11 October 2026
 
 [Weather WR013](../research/weather/scientific-field-packaging-offline-replay.md) reaches **Outcome A** for three small preserved field subsets and standard-library package-only query replay. It establishes scientific preservation semantics, not production storage/offline mobile performance, application maturity or provider/framework/renderer choice. All accepted architecture, preservation, device gates and MIDAS blockers remain. Exactly one next bounded research direction is **ensemble-member identity and bounded uncertainty-semantics — NOT BEGUN**; no application or next-task work begins here.
+
+
+## WR014 finite ensemble evidence — 11 October 2026
+
+[Weather WR014](../research/weather/ensemble-member-identity-uncertainty-semantics.md) reaches **Outcome A** for three GEFS members and selected-subset conformance. No complete distribution/calibration/skill/architecture/device maturity follows. First integrated Atlas prerequisites/preservation/device gates unchanged. Exactly one next direction: **model-ground and real-terrain support mismatch pilot — NOT BEGUN**, terrain-first evidence without integration.
