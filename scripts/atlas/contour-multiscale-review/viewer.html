@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-CODE_HASH'; style-src 'unsafe-inline'; connect-src 'none'; img-src data:; font-src 'none'; worker-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Riffelhorn — offline multiscale contours over hillshade</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f4f1e8;color:#262d2c;font:14px system-ui,sans-serif;display:flex;flex-direction:column;height:100dvh}
+header{padding:12px 18px;background:#fff;border-bottom:1px solid #deded5}h1{font-size:18px;margin:0 0 4px}p{margin:4px 0;line-height:1.4}.muted{color:#505854;font-size:12px}
+.controls{display:flex;flex-wrap:wrap;align-items:end;gap:8px;margin-top:10px}label{display:grid;gap:3px;font-size:12px}select,button{font:inherit;color:inherit;background:#fff;border:1px solid #afb7b1;border-radius:4px;min-height:34px;padding:5px 8px}button{cursor:pointer}button:focus-visible,select:focus-visible,canvas:focus-visible{outline:2px solid #285c99;outline-offset:2px}
+main{position:relative;flex:1;min-height:180px;overflow:hidden}canvas{display:block;width:100%;height:100%;touch-action:none;cursor:grab}canvas:active{cursor:grabbing}
+.scale{position:absolute;bottom:10px;left:14px;font-size:12px;pointer-events:none;background:#ffffffdb;padding:4px 6px}.scale span{display:block;border:1px solid #3b4440;border-top:0;height:5px;margin-bottom:3px}
+footer{padding:9px 18px;background:#fff;border-top:1px solid #deded5;font-size:12px}#selection{min-height:20px;font-weight:600}details{margin-top:4px;max-height:130px;overflow:auto}summary{cursor:pointer}.swatch{display:inline-block;width:20px;border-top:1px solid #786044;margin:0 4px 3px 10px}.swatch.index{border-top-width:2px}
+@media(max-width:500px){header,footer{padding:9px 10px}h1{font-size:16px}.controls{gap:5px}select{max-width:190px}.muted{font-size:11px}}
+</style>
+</head>
+<body>
+<header>
+<h1>Riffelhorn · multiscale contours over hillshade</h1>
+<p class="muted">Existing Swiss DTM products · EPSG:2056 · heights in metres LN02 · 2 × 2 km retained subset</p>
+<div class="controls">
+<label>Selection<select id="mode"><option value="auto">Automatic scale</option><option value="manual">Manual comparison</option></select></label>
+<label>Contour source<select id="variant"><option value="0">Native 0.5 m</option><option value="1">Strict 2 m aggregation</option><option value="2" selected>Smoothed 2 m</option></select></label>
+<label>Interval<select id="interval"><option value="10">10 m</option><option value="20" selected>20 m</option></select></label>
+<label><span>Background</span><span><input type="checkbox" id="background" checked> Hillshade</span></label>
+<button id="fit">Fit study area</button><button id="out" aria-label="Zoom out">−</button><button id="in" aria-label="Zoom in">+</button>
+</div>
+<p id="statistics" class="muted" aria-live="polite">Reading local contour data…</p>
+<p id="background-state" class="muted" role="status">Decoding embedded hillshade…</p>
+</header>
+<main>
+<canvas id="map" tabindex="0" aria-label="North-up contour comparison. Drag or use arrow keys to pan. Wheel, plus or minus zoom. Click a line to inspect its retained contour elevation."></canvas>
+<div class="scale"><span id="scale-line"></span><div id="scale-label"></div></div>
+</main>
+<footer>
+<div id="selection" role="status">Click a contour to inspect its elevation. No height is inferred between lines.</div>
+<div><span class="swatch"></span>Ordinary contours<span class="swatch index"></span>100 m index contours · Swiss native DTM hillshade · north up</div>
+<details><summary>Sources and scientific limitations</summary>
+<p>©swisstopo · Swiss Open Government Data · swissALTI3D 2024/2 DTM. Heights remain LN02 (EPSG:5728); coordinates remain LV95 (EPSG:2056). Exact per-cell acquisition epoch and accuracy remain qualified.</p>
+<p>The 2 m variants are different reconstructed fields: strict 4 × 4 block means, then optional Gaussian sigma 2 m / radius 6 m smoothing. No geometric simplification is applied. The 20 m view is the retained even-level subset.</p>
+<p>Single-run evidence only. Genuine mixed-source comparisons and repeatability remain incomplete. This boundary is a retained subset/support boundary, not national source coverage. A separate native-grid visual hillshade was rendered locally from the same four pinned DTM tiles; Horn gradients, grid azimuth 315°, light altitude 45°, z factor 1. Transparent nodata/rim and outside support show neutral background. This is not the Mapterhorn mosaic used by the application. No contours were regenerated, heights transformed, online tiles requested or application files changed.</p>
+<p>Provisional bands: ≥2 m/CSS px smoothed 2 m / 20 m; 0.75–2 strict 2 m / 20 m; 0.25–0.75 strict 2 m / 10 m; below 0.25 native 0.5 m / 10 m. A 12% hysteresis and 180 ms settling delay reduce threshold oscillation. Source swaps preserve the camera, but genuinely different fields may shift line positions; there is no source morphing or scientific fusion. Manual overrides compare at the same view.</p>
+</details>
+</footer>
+<img id="hillshade-image" src="HILLSHADE_DATA" hidden alt="">
+<script type="application/json" id="contour-data">DATA_PAYLOAD</script>
+<script>VIEWER_CODE</script>
+</body></html>
