@@ -1,0 +1,30 @@
+{
+  "approved": false,
+  "scope": "genuine",
+  "stage": 1,
+  "status": "PROPOSAL ONLY — not an execution permission",
+  "budget": {
+    "final": 1250000,
+    "stored": 3500000,
+    "written": 6500000,
+    "extracted": 2000000,
+    "loaded": 6000000,
+    "stitched": 2000000,
+    "temporary": 200000,
+    "scratch": 150000000,
+    "working": 536870912,
+    "seconds": 1200,
+    "receipt_reserve": 65536
+  },
+  "memory": {
+    "memberBytes": 134217728,
+    "jobCommitBytes": 402653184,
+    "maxProcesses": 3,
+    "controllerBytes": 134217728,
+    "genuineCompatibilityEstablished": false
+  },
+  "blockers": [
+    "128 MiB member cap is below the previously logged genuine worker peak",
+    "256-quad contour preallocation reserves 262144 coordinates, above the proposed 200000 temporary ceiling"
+  ]
+}

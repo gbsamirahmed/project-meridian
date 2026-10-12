@@ -1,0 +1,142 @@
+{
+  "date": "2026-10-12",
+  "status": "synthetic recovery verified; genuine replay unrun",
+  "scientificInputsOpened": 0,
+  "largeWorkload": {
+    "bytesBeforeFinalReceipt": 37634574,
+    "childProcesses": 0,
+    "elapsedSeconds": 26.171000000002095,
+    "guard": {
+      "overLimitPrivateCommitRejected": true,
+      "privateCommitMaximum": 402653184,
+      "workingSetFlags": 6,
+      "workingSetMaximum": 536870912
+    },
+    "limitations": "Synthetic density, not genuine Riffelhorn success or worldwide performance. Real source adapters/transformation/delivery remain gated.",
+    "maximumContourWindowSamples": 66049,
+    "products": [
+      "native-0.5m",
+      "strict-2m",
+      "smoothed-2m"
+    ],
+    "receiptSha256": "4c4b10581b2c27bfd22d7047c9f44b4398e072a48ab29c799edef034c7cf8a3c",
+    "requests": 0,
+    "scientificInputsOpened": 0,
+    "status": "synthetic recovery passed",
+    "storedVertices": 1190706,
+    "testsPassed": 12,
+    "threads": 1,
+    "twoRunReceiptsIdentical": true,
+    "windowsMaximumSide": 257,
+    "workingSetPeakBytes": 114532352
+  },
+  "focusedControls": {
+    "maxTemporaryFileBytes": 32038,
+    "storedVertexWritesDuringChecks": 6962,
+    "tests": 28,
+    "passed": true,
+    "elapsedSeconds": 1.0310000000026776,
+    "peakWorkingSetBytes": 96354304,
+    "guard": {
+      "workingSetMaximum": 536870912,
+      "workingSetFlags": 6,
+      "privateCommitMaximum": 402653184,
+      "baselinePrivateCommit": 37445632
+    },
+    "scientificInputsOpened": 0,
+    "requests": 0,
+    "childProcesses": 0
+  },
+  "scaledDiagnosis": {
+    "contourpySourceSha256": "effb0016bbc58917d251fa8849b71f7edc0533bc2f4b8a779cf4337d38665f36",
+    "known4000SquareAllocationBytes": {
+      "coarseFloat64Height": 8000000,
+      "convertedHeightFloat64": 128000000,
+      "inputFloat32": 64000000,
+      "oneBooleanMask": 16000000,
+      "orientationCopyFloat32": 64000000,
+      "twoInternalCoordinateMeshesFloat64": 256000000
+    },
+    "qualification": "Scaled current/peak measurements and exact array byte counts; no full-size legacy reproduction or attribution of all C++ caches.",
+    "stages": [
+      {
+        "processPeakBytes": 63545344,
+        "stage": "baseline",
+        "tracedCurrentBytes": 8209,
+        "tracedPeakBytes": 8597,
+        "workingSetBytes": 63545344
+      },
+      {
+        "processPeakBytes": 67747840,
+        "stage": "float32 input",
+        "tracedCurrentBytes": 4206662,
+        "tracedPeakBytes": 4207074,
+        "workingSetBytes": 67747840
+      },
+      {
+        "processPeakBytes": 71979008,
+        "stage": "orientation copy retained",
+        "tracedCurrentBytes": 8405187,
+        "tracedPeakBytes": 8405599,
+        "workingSetBytes": 71979008
+      },
+      {
+        "processPeakBytes": 73146368,
+        "stage": "2 m block mean retained",
+        "tracedCurrentBytes": 8933915,
+        "tracedPeakBytes": 10045255,
+        "workingSetBytes": 72110080
+      },
+      {
+        "processPeakBytes": 78667776,
+        "stage": "explicit masked-invalid copy retained",
+        "tracedCurrentBytes": 15158851,
+        "tracedPeakBytes": 15159207,
+        "workingSetBytes": 77623296
+      },
+      {
+        "processPeakBytes": 109264896,
+        "stage": "ContourPy float64 height and full XY meshes",
+        "tracedCurrentBytes": 41381291,
+        "tracedPeakBytes": 41393278,
+        "workingSetBytes": 109264896
+      },
+      {
+        "processPeakBytes": 114532352,
+        "stage": "finite mask and advanced-index statistic",
+        "tracedCurrentBytes": 42434654,
+        "tracedPeakBytes": 46624747,
+        "workingSetBytes": 110333952
+      },
+      {
+        "processPeakBytes": 114532352,
+        "stage": "released Python references",
+        "tracedCurrentBytes": 984749,
+        "tracedPeakBytes": 46624747,
+        "workingSetBytes": 65204224
+      }
+    ],
+    "syntheticSide": 1024
+  },
+  "externalRoot": "experiments/atlas/source-aware-contours-synthetic-recovery-v1",
+  "ownedRetainedBytes": 37660884,
+  "measuredMethodFiles": {
+    "resource_guard.py": "4bf54a40c38dd04777210c8a6695a9bec106efd9b901629b98371a183c8ea5a7",
+    "synthetic_recovery.py": "8f4537fee8e6f61b221ee9adb127d113169898d7162790da61cea3f470d3d972",
+    "windowed.py": "327e8b7688806136f4bb8c34c4e825f38a100a6b46ec015a1c8ad48503267eca"
+  },
+  "currentMethodFiles": {
+    "check_synthetic.py": "60fa33bf210498d75582bdc0247aa5e8991e023e2af609ab032a487413d522c4",
+    "pilot.py": "7b07a0eec2363f0f173978fba28126d35d5b6d0abd98dd8d0621d07451c9fee2",
+    "readers.py": "24f7721fed026190f8062892c0640e41e54d18a51df9514537c9ead031bff118",
+    "rerun.py": "c8b0cb9c17177835aeba2f88289fe99908b8afa64390b184e3b250022dfb2344",
+    "resource_guard.py": "ed5717365a7e82b3af9b0a40b7ba42ecd6dce04862a328376bd2daaec027e19d",
+    "supervise.py": "d4ed8b47fd62dd84ce2ad1bd5414f31c84cbe9120697dff952680cb3fb035d06",
+    "synthetic_recovery.py": "8f4537fee8e6f61b221ee9adb127d113169898d7162790da61cea3f470d3d972",
+    "test_pilot.py": "26a173f1ccad60d0a23b20b476ea366fdc67e7740a0e49b2dc4925aca2927e62",
+    "test_readers.py": "215b4eb40689b4bde0f6d3138813812396a4e77f2590fcb0caa810d2f4bed536",
+    "test_windowed.py": "793bbbebd2eb86811ef499a9d8c7ebee5839dc2c2ecb890aba41dbeaf0aec8d4",
+    "windowed.py": "327e8b7688806136f4bb8c34c4e825f38a100a6b46ec015a1c8ad48503267eca"
+  },
+  "qualification": "Two benchmark receipts and frozen method match. Current resource guard adds a tested baseline-commit preflight; source adapters and replay driver are synthetically/static validated only. No genuine repeat."
+}

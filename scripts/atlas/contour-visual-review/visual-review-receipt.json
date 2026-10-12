@@ -1,0 +1,118 @@
+{
+  "date": "2026-10-12",
+  "scope": "preservation and offline display only",
+  "genuineOutcome": "C unchanged",
+  "sourceHashesVerified": 7,
+  "genuineFilesPreserved": 867,
+  "genuineBytesPreserved": 64250005,
+  "protectedHashesVerified": 113,
+  "canonicalStatusesUnchanged": 42,
+  "researchTests": {
+    "maxTemporaryFileBytes": 383538,
+    "storedVertexWritesDuringChecks": 19568,
+    "adapterPeakOwnedRootBytes": 383538,
+    "adapterPeakReservedCoordinates": 262548,
+    "adapterObservedGeneratedCoordinates": 202,
+    "tests": 74,
+    "passed": true,
+    "elapsedSeconds": 45.828000000008615,
+    "peakWorkingSetBytes": 98185216,
+    "guard": {
+      "workingSetMaximum": 536870912,
+      "workingSetFlags": 6,
+      "privateCommitMaximum": 402653184,
+      "baselinePrivateCommit": 38739968
+    },
+    "scientificInputsOpened": 0,
+    "requests": 0,
+    "childProcesses": "contained synthetic workers; see worker-controls receipts",
+    "retainedControlBytes": 11353
+  },
+  "researchReceiptSha256": "3196f7d1b2ae013fd24ba2e91ca9e1c968ccbbf56f676635128aba895a502276",
+  "viewerTests": {
+    "python": 6,
+    "node": 6,
+    "failures": 0,
+    "skips": 0,
+    "focusedEslint": "passed",
+    "coordinatesRoundTripped": 953147,
+    "maximumRoundtripMetres": 0,
+    "nodeCurrentRssBytes": 253296640
+  },
+  "bundle": {
+    "outputBytes": 30140131,
+    "outputSha256": "22856bb0be2f3b75060e820ef115791a5398d4c9e518372f2ab175e42dd0231a",
+    "elapsedSeconds": 3.9689999999827705,
+    "coordinateDisplay": "EPSG:2056 local translation, uniform scale and north-up Y inversion; no reprojection",
+    "elevationDisplay": "unchanged metre LN02 values; no vertical transformation"
+  },
+  "products": [
+    {
+      "id": "swiss-native",
+      "counts10m": [
+        662196,
+        1596
+      ],
+      "counts20m": [
+        332486,
+        762
+      ],
+      "sourcePayloadBytes": 21119144,
+      "manifestSha256": "dcb339931df6c8814aefd1f516db828d2845f0bcce16aa4ef5c4a1d56bb5aace"
+    },
+    {
+      "id": "swiss-2m",
+      "counts10m": [
+        150389,
+        356
+      ],
+      "counts20m": [
+        75518,
+        176
+      ],
+      "sourcePayloadBytes": 4658774,
+      "manifestSha256": "16ba42a96a516c1c1454654ba50f9443a3293a29faa6cc90e9571841e45fae6a"
+    },
+    {
+      "id": "swiss-smoothed",
+      "counts10m": [
+        140562,
+        203
+      ],
+      "counts20m": [
+        70484,
+        101
+      ],
+      "sourcePayloadBytes": 4344643,
+      "manifestSha256": "b76a1d96fa8d1ca0ec75c5c00c58d3ce0715da2570447ec027331ad05c061c97"
+    }
+  ],
+  "figureFiles": [
+    {
+      "name": "whole-study.png",
+      "bytes": 360470,
+      "sha256": "ce2a220f0b82ee48873eb074534d16639881d6473d207b63370ebe3e267e0485"
+    },
+    {
+      "name": "centre-detail.png",
+      "bytes": 237668,
+      "sha256": "d60ba32c59f6a06f6ccbb700ec9c195736707c6f7f8b2facd5c1dfe584345d60"
+    }
+  ],
+  "implementationSha256": {
+    "build.py": "2ff0bfab047c52dca624eb2851fab0371574405caaf73e8e202801d01c4ef236",
+    "eslint.config.mjs": "5294dd9b02bdd399b8d4ea34b30dc9b50040177d523b880cda2316154e8278e2",
+    "README.md": "3965d655f5cd12b03f525a7349c4f5c781dbd1ca0d311a5c88d3bab6c5e7024e",
+    "render_comparison.py": "a8d485c2097c483d3e3aa5ad2b31230ced581683e5b3ca6814aaf02a8054b935",
+    "test_bundle.py": "45baa8c4488fd32c42797fcb624d9ee73c3555e38d75dcd94bd2864cc4b34b49",
+    "test_viewer.mjs": "56a491c9e4d76da9b399f00a630d7b55aeb2be3b5e5b326a4ed1fb6d7979528a",
+    "viewer.html": "f1202518e82b2826119dda2b7662d2b244f871a61ff23b6fa67929a4a0eed9e3",
+    "viewer.js": "094f254c5d90e624c45effefd046a198026f83f33f97d88ee900482c293fa20c"
+  },
+  "browserValidation": "Not observed; Chrome unavailable and in-app browser rejects local file URLs. Owner review pending.",
+  "genuineContoursGenerated": 0,
+  "providerRequests": 0,
+  "newDependencies": 0,
+  "applicationAccessed": false,
+  "externalEvidence": "${MERIDIAN_DATA_ROOT}/experiments/atlas/contour-visual-review-v1"
+}

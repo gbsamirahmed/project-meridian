@@ -1,0 +1,48 @@
+{
+  "protocol": "source-aware-contours-v1",
+  "inputs": [
+    {
+      "id": "swiss-2624-1091",
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2624-1091_0.5_2056_5728.tif",
+      "bytes": 16490312,
+      "sha256": "c68c305e4a142da416b46b555a80916ecc52f8fa50bf1efd5cd2c3f24f9cd4bc"
+    },
+    {
+      "id": "swiss-2624-1092",
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2624-1092_0.5_2056_5728.tif",
+      "bytes": 16862345,
+      "sha256": "9fa4a4391e2e1bfd650f2f31c7d38ed9a5a94494a967011468e6c44559bbcb2c"
+    },
+    {
+      "id": "swiss-2625-1091",
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2625-1091_0.5_2056_5728.tif",
+      "bytes": 15925644,
+      "sha256": "0d2ebc6d0b4fd06ab2191cbf2a2f5ab77728249fa8c835075040bce4dc4899de"
+    },
+    {
+      "id": "swiss-2625-1092",
+      "path": "sources/atlas/riffelhorn/swisstopo-2021-2024/originals/swissalti3d/swissalti3d_2024_2625-1092_0.5_2056_5728.tif",
+      "bytes": 16329103,
+      "sha256": "4dffaad9efb82d3bf327a86b4f82d55762165ea5f825c386c23380a9320ff875"
+    },
+    {
+      "id": "copernicus",
+      "path": "sources/atlas/riffelhorn/global-reference-assessment-v1/cop45/Copernicus_DSM_COG_10_N45_00_E007_00_DEM.tif",
+      "bytes": 42594792,
+      "sha256": "638c155dd9a5f0b7ee818146def740093da33cee4606071b2bbf7ce3fa00ab95"
+    },
+    {
+      "id": "chgeo2004",
+      "path": "sources/atlas/riffelhorn/global-reference-assessment-v1/ln02-grid/ch_swisstopo_chgeo2004_ETRS89_LN02.tif",
+      "bytes": 295192,
+      "sha256": "ec9638c152f4519278b3e7a781d1a7c2769bd54de39accec099bd5036f4fd214"
+    },
+    {
+      "id": "egm2008",
+      "path": "sources/atlas/riffelhorn/global-reference-assessment-v1/egm2008-grid/us_nga_egm08_25.tif",
+      "bytes": 80585622,
+      "sha256": "4191d471eefebf24091b56dbc604353cb3b8cf8cc70e448bb9ae56a272bef17a"
+    }
+  ],
+  "compoundPipeline": "proj=pipeline step inv proj=somerc lat_0=46.9524055555556 lon_0=7.43958333333333 k_0=1 x_0=2600000 y_0=1200000 ellps=bessel step proj=unitconvert xy_in=rad xy_out=deg step proj=axisswap order=2,1 step proj=push v_1 v_2 step proj=axisswap order=2,1 step proj=unitconvert xy_in=deg xy_out=rad step proj=push v_3 step proj=cart ellps=bessel step proj=helmert x=674.374 y=15.056 z=405.346 step inv proj=cart ellps=GRS80 step proj=pop v_3 step proj=vgridshift grids=ch_swisstopo_chgeo2004_ETRS89_LN02.tif multiplier=1 step proj=cart ellps=GRS80 step proj=helmert x=-674.374 y=-15.056 z=-405.346 step inv proj=cart ellps=bessel step proj=unitconvert xy_in=rad xy_out=deg step proj=axisswap order=2,1 step proj=pop v_1 v_2 step proj=axisswap order=2,1 step proj=unitconvert xy_in=deg z_in=m xy_out=rad z_out=m step proj=cart ellps=bessel step proj=helmert x=674.374 y=15.056 z=405.346 step inv proj=cart ellps=WGS84 step inv proj=vgridshift grids=us_nga_egm08_25.tif multiplier=1 step proj=unitconvert xy_in=rad xy_out=deg"
+}

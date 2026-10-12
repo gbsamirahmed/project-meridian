@@ -1,0 +1,93 @@
+{
+  "date": "2026-10-12",
+  "scope": "adapter implementation and synthetic validation only",
+  "genuineOutcome": "C unchanged",
+  "genuineStagesExecuted": 0,
+  "requests": 0,
+  "tests": {
+    "maxTemporaryFileBytes": 383540,
+    "storedVertexWritesDuringChecks": 19568,
+    "adapterPeakOwnedRootBytes": 383540,
+    "adapterPeakReservedCoordinates": 262548,
+    "adapterObservedGeneratedCoordinates": 202,
+    "tests": 74,
+    "passed": true,
+    "elapsedSeconds": 65.25,
+    "peakWorkingSetBytes": 98316288,
+    "guard": {
+      "workingSetMaximum": 536870912,
+      "workingSetFlags": 6,
+      "privateCommitMaximum": 402653184,
+      "baselinePrivateCommit": 39055360
+    },
+    "scientificInputsOpened": 0,
+    "requests": 0,
+    "childProcesses": "contained synthetic workers; see worker-controls receipts",
+    "retainedControlBytes": 10918
+  },
+  "syntheticReceiptSha256": "082c8bb8d514966fc94d47d0533abeafcc666748eb42ec363af151b8ab4431b3",
+  "affectedSupervisionRetest": {
+    "tests": 9,
+    "passed": true,
+    "elapsedSeconds": 2.752,
+    "receiptSha256": {
+      "supervision-focused-2/commit/supervision.json": "c6389360e15a3eb58ffaf15ee291cce40413003e5378bb451afe112761586623",
+      "supervision-focused-2/failed-termination/supervision.json": "3c736c17f001f1285dbd815d22ddc60962889ddd5fbbfe4fd85b9b25b3bd73ea",
+      "supervision-focused-2/failure/supervision.json": "82452e359d757c3f17815fa8a123e0c6127a6cd5ec19e0f395e6588cc3cee297",
+      "supervision-focused-2/guard-refusal/supervision.json": "ab9e3c555935188ac25e56e143dfb3c6568cf41e8975a49f6dcdf75947e81617",
+      "supervision-focused-2/memory/supervision.json": "8a52682bf3eafaf5a501f41cad950907e235a41f334f556f925df2054b35add6",
+      "supervision-focused-2/normal/supervision.json": "2b7e5bb148ebd0e6bcb9c06d318e614e8deee7d90d54059e59b7c6dd2f716e74",
+      "supervision-focused-2/override/supervision.json": "3ad4a2c401dadef0fd30c6017c354af8886533a70aefdad7a9972e8a23a7f39d",
+      "supervision-focused-2/tree/supervision.json": "1749395022f7dad4068a13421c64a070368baea920d1462cbf14f44a6af118ec"
+    }
+  },
+  "syntheticTreePeakUpperBoundBytes": 162086912,
+  "inputHashesVerified": 7,
+  "genuineFilesPreserved": 867,
+  "genuineBytesPreserved": 64250005,
+  "historicalCanonicalVertices": 953147,
+  "historicalStoredVertices": 1992909,
+  "historicalWrittenVertices": 1999871,
+  "protectedHashesVerified": 113,
+  "canonicalResearchStatusesUnchanged": 42,
+  "methodSha256": {
+    "accounting.py": "8db229f52af96f8b8a7524ff002fbec9de2929e6d35e59ae4e80342103589ca5",
+    "check_synthetic.py": "3aa03069534b46f15356bf72144261a11e30cf3f9a04f30c99a9c12de5f82df0",
+    "pilot.py": "7b07a0eec2363f0f173978fba28126d35d5b6d0abd98dd8d0621d07451c9fee2",
+    "readers.py": "24f7721fed026190f8062892c0640e41e54d18a51df9514537c9ead031bff118",
+    "rerun.py": "88346af0561891eed365ce5f474ca11ef16a3deddd3cab89ccda2e48c6d14f7f",
+    "resource_guard.py": "871e9e121ba8a4695d8fc83cb19d44ab7fedac03ceb65345dd640732300b7c42",
+    "retained_checks.py": "d370841787b10ce832c9b3725f8f469111be0753ac23b8a2f3a228b5876b6ded",
+    "riffelhorn_sources.py": "e91e7a35e0313165981923a450aca2f28a56f04196d8ba9a44d10ef4d23b533f",
+    "staged_continuation.py": "407972bb87068d2268252accfcf52648991ac700a9be097f78b73f8fac05a6ec",
+    "staged_store.py": "465640582700c73361f7000c4b7deac39ec38849495559f7370ab90415a8ca4a",
+    "stage_worker.py": "bc7ba8226248ee300618c619b8d5e9c5372edb7e9c7691b62e88b2ea0082443f",
+    "supervise.py": "d4ed8b47fd62dd84ce2ad1bd5414f31c84cbe9120697dff952680cb3fb035d06",
+    "supervise_retained.py": "49de169803542ee88c4f32a041ec4a3f854b908bdfed865ab8c1a0440dc0c2af",
+    "supervise_stage.py": "cf736a4bb12295d5a69a578a0eb23ff6bf6898b713d46db919a4b4f777715917",
+    "synthetic_recovery.py": "8f4537fee8e6f61b221ee9adb127d113169898d7162790da61cea3f470d3d972",
+    "synthetic_worker.py": "58fca1ec71244d3a85050a0cfde6d3c986c24fa0652235e3d0ac68d2ebf6d673",
+    "test_pilot.py": "26a173f1ccad60d0a23b20b476ea366fdc67e7740a0e49b2dc4925aca2927e62",
+    "test_readers.py": "215b4eb40689b4bde0f6d3138813812396a4e77f2590fcb0caa810d2f4bed536",
+    "test_recovery.py": "81b7daf93f80c2c8e28814ee4e38b209a41553fceed9fb80ec21562f9adcac7d",
+    "test_staged_adapter.py": "5f5883ad42bcac4ddb6ce0708b0091a1116f67aed1b3a2d5c820e76e1b404948",
+    "test_supervision.py": "a5ee07fab7129385135136760142f645d4f10662161d14704a57892d41019f91",
+    "test_windowed.py": "793bbbebd2eb86811ef499a9d8c7ebee5839dc2c2ecb890aba41dbeaf0aec8d4",
+    "topology_generalisation.py": "350eae5b666c2277c5563db5185f09f6af240796a59f93b8213021efbf6bd892",
+    "windowed.py": "cb3962f3c5ea5a45754728b2cd9f8e363deb708dd23b374a367028dec49e4c03",
+    "worker_bootstrap.py": "82901e8cd974221662f91afa583741c6bb890839809705729cabd1064e42cc15",
+    "worker_supervision.py": "97d564a74e34d96d8915d3720d5e3ca221617c84e69ff7e1056ce8a13ce6bd11"
+  },
+  "unapprovedProfileSha256": "ad30de3450c1df86c120f22aaeb62747b90fecce2ec47c7081b5c4976f21295b",
+  "stage1ReadyUnderProposal": false,
+  "blockers": [
+    "262144 native endpoint reservation exceeds 200000 temporary ceiling; serialisation adds workspace",
+    "128 MiB member cap below recorded 132.7 MiB genuine peak; stricter private-commit cap unqualified"
+  ],
+  "limitations": [
+    "synthetic-only evidence; genuine density/runtime unknown",
+    "temporary reservations are not a census of all native allocations",
+    "all previous failed controls retained externally"
+  ],
+  "evidenceRoot": "${MERIDIAN_DATA_ROOT}/experiments/atlas/staged-contour-adapter-v1"
+}

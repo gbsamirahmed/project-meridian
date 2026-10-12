@@ -1,0 +1,78 @@
+{
+  "status": "resource-blocked; no genuine contour products",
+  "date": "2026-10-12",
+  "baseline": "c952b8050c1259fe6d3f674e6f84195a3491d95a",
+  "attempts": [
+    {
+      "elapsedSeconds": 0.6719999999913853,
+      "peakWorkingSetBytes": 0,
+      "reason": "Working-set measurement unavailable",
+      "status": "stopped",
+      "storedVertices": 0
+    },
+    {
+      "elapsedSeconds": 0.9839999999967404,
+      "peakWorkingSetBytes": 693637120,
+      "reason": "Process working-set/time limit reached",
+      "status": "stopped",
+      "storedVertices": 0
+    }
+  ],
+  "scratchBytes": 305,
+  "storedContourVertices": 0,
+  "networkRequests": 0,
+  "newResponseBodyBytes": 0,
+  "limits": {
+    "scratchBytes": 150000000,
+    "workingSetBytes": 536870912,
+    "storedVertices": 2000000,
+    "seconds": 1200
+  },
+  "workingSetGatePassed": false,
+  "deterministicReplayCompleted": false,
+  "genuineContourConformanceEstablished": false,
+  "syntheticControlsPassed": 11,
+  "artifacts": [
+    {
+      "path": "execution-2/run-1/swiss-native/master.ndjson",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "execution-2/run-1/swiss-native/partition-0.ndjson",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "execution-2/run-1/swiss-native/partition-1.ndjson",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "execution-2/run-1/swiss-native/partition-2.ndjson",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "execution-2/run-1/swiss-native/partition-3.ndjson",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "execution-2/stopped.json",
+      "bytes": 158,
+      "sha256": "fc177c4b2f6518644616f19b046389767c7a234377dfb2e88ceb58124dbaf7c8"
+    },
+    {
+      "path": "stopped.json",
+      "bytes": 147,
+      "sha256": "d18befb50b1766e6a0579d994202be640d7b2e2e0b0174824668f84772cc3105"
+    }
+  ],
+  "currentUtilityFiles": {
+    "pilot.py": "7b07a0eec2363f0f173978fba28126d35d5b6d0abd98dd8d0621d07451c9fee2",
+    "supervise.py": "d4ed8b47fd62dd84ce2ad1bd5414f31c84cbe9120697dff952680cb3fb035d06",
+    "test_pilot.py": "26a173f1ccad60d0a23b20b476ea366fdc67e7740a0e49b2dc4925aca2927e62"
+  },
+  "utilityRevisionQualification": "Current files include the post-stop allocation preflight; the executed pre-guard utility hash was not captured before the failed run. No successful genuine rerun is claimed."
+}

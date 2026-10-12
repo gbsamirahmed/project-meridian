@@ -1,0 +1,141 @@
+{
+  "outcome": "C",
+  "reason": "Shared stored-vertex gate reached in run 1 Swiss EGM2008 diagnostic extraction",
+  "retainedContourVertices": 1992909,
+  "chargedTemporaryVertexWrites": 6962,
+  "chargedVertices": 1999871,
+  "ndjsonFiles": 847,
+  "records": 8074,
+  "fileCount": 866,
+  "rootBytesBeforeInventory": 63944136,
+  "allSevenHashesMatchAfter": true,
+  "completedProducts": [
+    "swiss-2m",
+    "swiss-native",
+    "swiss-smoothed"
+  ],
+  "completeRuns": 0,
+  "run2Started": false,
+  "deterministicRepeatabilityEstablished": false,
+  "supervision": {
+    "probe": false,
+    "stopReason": null,
+    "exitCode": 1,
+    "elapsedSeconds": 192.2103538,
+    "precedingSecondsCharged": 5.0,
+    "supervisorPeakBytes": 106962944,
+    "processingThreads": 1,
+    "workerResidentMaximumBytes": 402653184,
+    "supervisorAllowanceBytes": 134217728,
+    "requests": 0,
+    "stdoutBytes": 781,
+    "stderrBytes": 1127,
+    "launcherSampledPeakBytes": 4395008,
+    "launcherPlusSupervisorSampleSumBytes": 111357952
+  },
+  "workerPeakQualification": "Validated-product logs report up to 139104256 bytes; final worker peak was not recorded. The supervisor sampled the venv launcher, not the actual Python worker.",
+  "rootBytesIncludingInventory": 64250005,
+  "rootFilesIncludingInventory": 867,
+  "inventorySha256": "44dd7740b36baefca97d8e2261205885e2eecd4ca816ade9feb2fb312206d481",
+  "workingSetAccountingConclusive": false,
+  "deadlineTerminationQualification": "Probe/monitor target was the Windows venv launcher; actual worker termination on a deadline was not established. Execution exited normally with its vertex-limit exception before the deadline.",
+  "numericalMethodSealsPreserved": true,
+  "currentOperationalMethodHashes": {
+    "rerun.py": "f6e0577f99f8c48967e2ee1ccddab1e9e1538fb5989ab88f6353b4e685c7f27c",
+    "supervise-genuine.ps1": "fb8d57b92a4f6076a76097969910a2ec310e29d5b283a386ec0f4a370df0d4bd"
+  },
+  "productsSummary": {
+    "swiss-2m": {
+      "extraction": {
+        "fragments": 798,
+        "maxEdgeResidualMetres": 1.0355961421737447e-08,
+        "vertices": 150831,
+        "windows": 16
+      },
+      "lines10m": 356,
+      "vertices10m": 150389,
+      "closed10m": 228,
+      "lines20m": 176,
+      "vertices20m": 75518,
+      "closed20m": 111,
+      "length10mMetresXY": 236565.5213431331,
+      "controls": {
+        "partitionMaxDisplacement": 0.0,
+        "partitionMaxLengthDifference": 1.9099388737231493e-11,
+        "roundtripMaxMetres": 0.00125015874646059,
+        "simplification2m": {
+          "accepted": false,
+          "allPairsTested": true,
+          "collapsedRings": 0,
+          "introducedCrossings": 64,
+          "levelPairsTested": 3081,
+          "maxDisplacement": 1.999902506872568
+        }
+      }
+    },
+    "swiss-native": {
+      "extraction": {
+        "fragments": 4023,
+        "maxEdgeResidualMetres": 5.800256985821761e-08,
+        "vertices": 664623,
+        "windows": 256
+      },
+      "lines10m": 1596,
+      "vertices10m": 662196,
+      "closed10m": 1463,
+      "lines20m": 762,
+      "vertices20m": 332486,
+      "closed20m": 696,
+      "length10mMetresXY": 257396.3216812082,
+      "controls": {
+        "partitionMaxDisplacement": 0.0,
+        "partitionMaxLengthDifference": 2.2737367544323206e-11,
+        "roundtripMaxMetres": 0.0012501616888754656,
+        "simplification2m": {
+          "accepted": false,
+          "allPairsTested": true,
+          "collapsedRings": 0,
+          "introducedCrossings": 252,
+          "levelPairsTested": 3081,
+          "maxDisplacement": 1.9999756034626008
+        }
+      }
+    },
+    "swiss-smoothed": {
+      "extraction": {
+        "fragments": 618,
+        "maxEdgeResidualMetres": 7.488324627047405e-09,
+        "vertices": 140977,
+        "windows": 16
+      },
+      "lines10m": 203,
+      "vertices10m": 140562,
+      "closed10m": 85,
+      "lines20m": 101,
+      "vertices20m": 70484,
+      "closed20m": 43,
+      "length10mMetresXY": 223327.6053843633,
+      "controls": {
+        "partitionMaxDisplacement": 0.0,
+        "partitionMaxLengthDifference": 1.4551915228366852e-11,
+        "roundtripMaxMetres": 0.001250159761749197,
+        "simplification2m": {
+          "accepted": false,
+          "allPairsTested": true,
+          "collapsedRings": 0,
+          "introducedCrossings": 18,
+          "levelPairsTested": 3081,
+          "maxDisplacement": 1.9998131102344459
+        }
+      }
+    }
+  },
+  "preservation": {
+    "protectedHashes": 113,
+    "atlasStatuses": 42,
+    "existingPublicTrackedFilesUnchanged": 1292,
+    "priorExperimentArtifactsUnchanged": true
+  },
+  "supervisionRawRecordRef": "experiments/atlas/source-aware-contours-v1/execution-3/genuine-supervision.json",
+  "supervisionQualification": "Launcher/supervisor samples do not include the actual worker peak; renamed here to avoid an invalid aggregate-bound claim."
+}
