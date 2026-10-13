@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self'; img-src 'self' data: blob:; worker-src 'self' blob:; object-src 'none'; base-uri 'none'">
+<title>Riffelhorn — source-aware contour tiles</title></head>
+<body><header><h1>Riffelhorn · offline contour tiles</h1>
+<label>Representation <select id="mode"><option value="auto">Automatic scale</option><option value="swiss-smoothed">Smoothed 2 m</option><option value="swiss-2m">Strict 2 m</option><option value="swiss-native">Native 0.5 m</option></select></label>
+<label>Manual interval <select id="interval" disabled><option>100</option><option>50</option><option selected>20</option><option>10</option></select> m</label>
+<button id="fit">Study area</button><button id="regional">Regional scale</button>
+<label><input id="shading" type="checkbox" checked>Hillshade</label>
+<a href="/comparison" target="_blank" rel="noopener">Previous offline viewer (45 MB)</a>
+</header><main id="map" aria-label="Flat contour map. Drag to pan, wheel or pinch to zoom."></main>
+<footer><div id="status" role="status">Loading local map…</div><div id="picked">Click a line to inspect its retained elevation.</div>
+<div>©swisstopo · Swiss OGD · 2024/2 DTM · heights: metres LN02 / EPSG:5728 · retained 2 × 2 km subset only</div>
+<div>Visual prototype: no global coverage or inferred heights between lines. Source swaps may shift reconstructed contours.</div></footer>
+<script type="module" src="./demo.js"></script></body></html>
