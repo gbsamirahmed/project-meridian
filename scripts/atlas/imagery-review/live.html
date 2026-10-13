@@ -1,0 +1,9 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://api.maptiler.com; connect-src 'self' https://api.maptiler.com; worker-src 'self' blob:">
+<title>Bounded imagery comparison</title></head><body><main id="map" aria-label="Experimental imagery comparison"></main>
+<aside><strong>Approved imagery trial</strong><div id="places"></div>
+<button id="wide">3 m per pixel</button><button id="detail">0.5 m per pixel</button>
+<label><input id="swiss" type="checkbox">Local Swiss image (Riffelhorn only)</label>
+<output id="status">Checking one-document permission…</output>
+<p>Imagery alone: no elevation, paths or labels. Local Swiss image: 2023 aerial / ©swisstopo. Pixel dates and native global resolution unknown.</p>
+<button id="stop">Stop requests</button></aside><script type="module" src="/live.js"></script></body></html>

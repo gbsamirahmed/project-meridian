@@ -5147,3 +5147,44 @@ Final validation: **23/23 documentation/evidence/scope checks,469 internal links
 ## 13 October 2026 — vector-tile experiment acceptance and preservation review
 
 [Preservation record](atlas/contour-vector-tile-feasibility.md): record owner acceptance of the Riffelhorn MVT feasibility prototype and refined index opacity, with tolerated reconstructed-field ghosting. Preserve the full fifteen-file utility/test/documentation inventory, including original packaging and subsequent opacity checks. Revalidate eight focused tests, scoped lint, source/data-product seals and historical evidence; no contour/tile regeneration or accepted styling changes. LN02 provenance, limited coverage, coarse-tile/image costs and untested Android pinch/mobile performance remain qualified. Generated products, assets, screenshots and partial attempts stay external. No application access, staging, commit or push; preservation commit and later integration require separate owner approval.
+
+
+## 13 October 2026 - satellite/aerial imagery foundations and offline Swiss review
+
+Starting public main 2440382b, clean and fetched 0/0. The
+[imagery review](atlas/satellite-imagery-foundations-review.md) distinguishes the
+public reference MapTiler implementation from the private prototype, which has no
+satellite subsystem. Current primary provider documentation covers MapTiler,
+Esri, Mapbox, Swiss OGD and relevant UK imagery rights. Request-based tariffs,
+public/offline restrictions, account uncertainty and five representative camera
+areas are recorded without inventing local GSD, pixel dates or licence grants.
+No new paid service/account/key, source-data acquisition or private application change.
+
+A small loopback-only offline viewer reads existing pinned SWISSIMAGE and contour
+products, with optional retained Swiss shaded imagery. New flat-rendered frames
+show brown-contour contrast limitations over rock texture and no consistent reason
+to add hillshade to photographs by default. This is local cartographic evidence,
+not source accuracy or a global provider ranking. All generated frames/builds remain
+outside Git; no imagery or contour reprocessing, static MapTiler export or Android
+launch. Binding Mapbox terms and public/offline delivery permissions remain gates.
+
+Ten focused tests,29 existing UI tests, root TypeScript/lint, scoped utility lint and isolated viewer
+build pass. Actual Chromium/SwiftShader at desktop and reference-mobile sizes
+passes controls, panning, zoom, flatness and network isolation: 26 local requests,
+16,346,814 body bytes served, zero page/map errors and external HTTP attempts.
+Four original imagery hashes (186,259,028 bytes), 113 protected production hashes
+and 11 dependency renderer hashes match. Historical records/statuses and private
+working files remain unchanged. A worker packaging issue was corrected within the
+new viewer only. Existing large-chunk advisory remains; no sustained/mobile or
+Android performance claim. After owner confirmation of Free-plan/quota, one bounded
+live document sampled five locations at3 m and0.5 m per CSS pixel, with a local
+Swiss comparison at Riffelhorn. Chrome automation was unavailable; the live check
+used the available Chromium-based in-app browser. Final counters:60 imagery
+attempts plus one metadata request,3,396,618 metered body bytes, no captured browser
+warnings/errors. Direct existing-key API access retained logo/credits, conservative
+request/byte limits and one-document permission; no global imagery screenshots or
+tile files exported. Captured observations show geographically varying detail,
+not measured optical resolution or image dates. The live tab was stopped/closed;
+the server returns to no-key offline mode. The single useful next experiment is a
+bounded Swiss-versus-global imagery/contour comparison in the private flat map,
+with renewed global scope/quota permission and path/label legibility checks.

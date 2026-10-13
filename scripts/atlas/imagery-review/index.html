@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; worker-src 'self' blob:; img-src 'self' data: blob:; connect-src 'self'; object-src 'none'; base-uri 'self'">
+<title>Meridian imagery review — offline Swiss evidence</title></head>
+<body><main id="map" aria-label="Offline Riffelhorn comparison"></main>
+<aside><strong>Riffelhorn imagery review</strong><p>Retained 2023 SWISSIMAGE aerial orthophoto · nominal25 cm information / 10 cm distributed grid. No satellite-service requests.</p>
+<label><input id="contours" type="checkbox" checked> Contours (LN02 metres)</label>
+<label><input id="shade" type="checkbox"> Add Swiss visual hillshade (18%)</label>
+<label><input id="photo" type="checkbox" checked> Orthophoto</label>
+<button id="overview">Overview</button><button id="close">Close terrain</button>
+<p id="status" role="status">Loading local evidence…</p><output id="picked" aria-live="polite"></output>
+<p><a href="https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-and-geoservices" target="_blank" rel="noopener noreferrer">©swisstopo / Swiss OGD</a>. Separate image and DTM-derived products; no point-elevation or absolute alignment claim.</p></aside>
+<script type="module" src="/demo.js"></script></body></html>
